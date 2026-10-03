@@ -95,11 +95,12 @@ void mysmb_objects_draw_large_platform(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[MYSMB_SMALL_PLATFORM_ENEMY_X + slot]);
 
     for (column = 0U; column < 6U; ++column) {
-        mysmb_u8 row_offset;
+        mysmb_u16 row_address;
 
-        row_offset = (mysmb_u8)(oam + column * 4U);
+        /* SChk2-SChk6 keep Y fixed and change the absolute store base. */
+        row_address = (mysmb_u16)(0x0200U + oam + column * 4U);
         if ((offscreen & 0x80U) != 0U)
-            game->ram[0x0200U + row_offset] = 0xf8U;
+            game->ram[row_address] = 0xf8U;
         offscreen = (mysmb_u8)(offscreen << 1U);
     }
     if ((game->ram[MYSMB_SMALL_PLATFORM_OFFSCREEN] & 0x80U) != 0U)

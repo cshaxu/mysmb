@@ -124,5 +124,25 @@ int main(void)
     for (row = 0U; row < 6U; ++row) {
         if (game.ram[0x0220U + row * 4U] != 0xf8U) return 5;
     }
+
+    /* The clipping stores use fixed Y and absolute bases. A high OAM
+     * offset crosses $02ff; it must not hide unrelated low OAM entries.
+     * SixSpriteStacker's actual INY loop still wraps independently. */
+    mysmb_large_platform_fixture(&game);
+    game.ram[0x06e5U] = 0xf0U;
+    /* The object is one page beyond the right edge; original raw bits are
+     * $ff, which hides all six columns through absolute indexed stores. */
+    game.ram[0x071bU] = 0U;
+    game.ram[0x071dU] = 0U;
+    game.ram[0x006eU] = 1U;
+    game.ram[0x0087U] = 0U;
+    game.ram[0x0200U] = 0x11U;
+    game.ram[0x0204U] = 0x22U;
+    mysmb_objects_draw_large_platform(&game, 0U);
+    for (row = 0U; row < 6U; ++row) {
+        if (game.ram[0x02f0U + row * 4U] != 0xf8U) return 6;
+    }
+    if (game.ram[0x0200U] != 0x11U || game.ram[0x0204U] != 0x22U)
+        return 7;
     return 0;
 }

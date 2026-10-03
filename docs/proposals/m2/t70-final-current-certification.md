@@ -8463,3 +8463,56 @@ Seven8192-root modes execute unmodified original enemy/misc/fireball/feet/head/s
 Current src/game/world/block_buffer.c normalizedSHA256:5bbbbc0fdf2431d1d913149eec6b734dcdab36e0c7ba12b32b24a4b2b99257b7.
 
 Current src/game/area/block_buffer.c normalizedSHA256:8663c142ea3951ca47de2709f127c50f270d4a7d4e136a6e2f61204f1f474f8d.
+
+## S17 P81 admission - vine hammer flag platform and coin OAM chains
+
+Existing E435-E6BD gap:282instructions/117directRAM sites/35labels: DrawVine,VineTL,SkpVTop,ChkFTop,NextVSp,SixSpriteStacker,StkLp,DrawHammer,ForceHPose,GetHPose,RenderH,NoHOffscr,FlagpoleGfxHandler,ChkFlagOffscreen,MoveSixSpritesOffscreen,DumpSixSpr,DumpFourSpr,DumpThreeSpr,DumpTwoSpr,ExitDumpSpr,DrawLargePlatform,ShrinkPlatform,SetLast2Platform,SetPlatformTilenum,SChk2,SChk3,SChk4,SChk5,SChk6,SLChk,ExDLPl,DrawFloateyNumber_Coin,NotRsNum,JCoinGfxHandler,ExJCGfx. Shared oam/vine_gfx.c,sprite_stacker.c,hammer_gfx.c,flagpole_gfx.c,sprite_dump.c,small_platform_gfx.c andobjects.c coinproducer;retained sprite-row andhorizontaloffscreenchildren. Vineindex0-1,flagscores0-4,enemy0-5/misc0-8;rawOAMbyte/corner/frame/state/offscreen fixtures compare allRAM exceptactualCPUstack,APU/writes andoriginalreturnregisterseams. Original absoluteindexedstores vsbyteINYloops,carryacrossDumpTwoSpr,liveOAMreloads andGetXOffscreenBits scratch required;allPC/feasiblebranches beforecredit. Fresh0/max1992,local1991/1992nodes4261/4262controls retained. ROM/ASM ownerreadonly protected,4096records128MiB/120sec deletedbelowignoredbuild. Any mismatch remainsS17,exactcustody beforefix/threeEXEs afterproductedit;producer/inter-frame/finalpackages pending.
+
+### P81 corrective amendment - platform absolute indexed clipping
+
+Original E611-E64A horizontal-column hide writes use fixed byte Y and separate absolute base+0/4/8/12/16/20;native loop cast oam+column*4 tobyte first. Baseline first4096original roots yields1064RAM differences at0200-0213/0300-0312,startingOAMEC. Retained normal-offset local evidence missedthisbyte-versusaddress-boundary clause;no prior proof is promoted toallbyteOAM. Accept11labels:DrawLargePlatform,ShrinkPlatform,SetLast2Platform,SetPlatformTilenum,SChk2,SChk3,SChk4,SChk5,SChk6,SLChk,ExDLPl. Replaceonlycolumnhideaddress withfullabsoluteaddition;originalSixSpriteStacker INYloop wrapping anddumpabsoluteaddresses stayas-is. TestcontrolledhighOAMin sourcecontract;whole-gameallocatorreachability isstillpending,notinventedvisiblefailureclaim. SameS17 repair/re-audit andthreeproductrefresh. Similarclasssweep reviewsallbyte-indexedOAMloops againstactualASM,not blanketconversion.
+
+## S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled
+
+S17 P81:35OAM stack/clip labels/282instructions/117RAM joined12boundedclauses;356352actualroots eachwidth0diff/all282PC/22branchpairs plusmandatoryE4EE,8tests each. Scope1301/fresh0;7826/10691instruction receipts,2781/3773RAM receipts;2865instructions/992RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;largeplatformabsoluteindexedclip repaired,threeEXEsrefreshed,producer/inter-frame/finalpackages pending,M2 incomplete.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| V1 | DrawVine | IncomingYvineindex0-1 publishes00;originaltwo-byteYadder gives0/30,actualVineObjOffsetselectsspritepool06E5;publish02beforeactualSixSpriteStacker. SourceabsoluteX/attribute storesretainbase+Y+4/8/12/16/20 past02FF. Nativephaseorder stack,coordinates,attributes,tileloop,cap,clipmatchesoriginal,no rowinterleaving. |
+| V2 | VineTL,SkpVTop,ChkFTop,NextVSp | Six byteINYtileiterationswrapY;caponlyincomingindex0 afterrestoreY02. SeparatecliploopdoeswrappedstartY-minusliveSpriteY CMP64,eachqualifyingYbecomesF8. RelativeYaddition androwcoordinateswrapbytes. No signcomparisonorclamp ofstartYdistance. OriginalreturnYvineindex asserted;loopcountX6 isimplicitnativeiteration capability,notglobalCPUstate. |
+| S1 | SixSpriteStacker,StkLp | Six storesSprite_Data+byteY,ADC8withCLC eachiteration thenfourINYbytewrap,finallyLDY02. Caller DrawVine/DrawLarge overwriteA/Xbeforeconsumption anduseoriginalsavedOAM;directoriginalX0/Y02seam asserted. NativevoidABIexcludesunexposedA/flags whileallnonstackRAM unchangedaswellaswritescompared. |
+| H1 | DrawHammer,ForceHPose,GetHPose | InitialMiscSprOffsetinputslot beforeTimerControl;nonzeroTimer or(state&7F)!=1 forcespose0,otherwiseframeLSR2&3. LDX0 immediatelysetsZ soE4EE BEQ RenderH mandatory;retainedcontrol02778 infeasible. Allbyte state/frame/timer andmiscslots0-8 controlled,originalObjectOffsetrestorechecked. |
+| H2 | RenderH,NoHOffscr | Two absoluteindexed sprites:relativeY+firstY thensecondY,relativeX+firstX thensecondX,CLCbeforeeachADC;posefourtables/attributes exact. RestoreObjectOffset beforefixedMiscOffscreen FC test. Offscreen clearsliveMiscState thenactualDumpTwoF8;no nibble-onlytest orobjectworldrange. Scratch04-07unchangedatthispreparedentry;prepare-hammerconstoffscreenpathoutsidecurrentreceipt. |
+| F1 | FlagpoleGfxHandler | InputObjectOffsetselectsEnemySprOffset;relativeX then+8,thenCLC+0C writes05. DumpTwo preserveslastcarry,thirdSpriteY usesEnemyY+8+carry. Publish02fnumY/03flip1/04attr1 beforecollisionYgate;flagtiles7E/7F fixed. LegalFlagscores0-4 ASLselectpair;actualDrawOneSpriteRow consumes00/02-05 andupdates01/02/05,not syntheticnumberdrawing. |
+| F2 | ChkFlagOffscreen | ReloadObjectOffset andEnemySprOffset afteractualrowchild,fixedEnemyOffscreen AND0E;zeroExitDumpSprotherwisefallthroughMoveSixF8. OriginalfullreturnXrestored;scoreOAMbyteaddition+0C wraps beforechild whileflagabsolute+8storesretainbasecarry. ControlledallOAM doesnotproveallocatorreachability. |
+| D1 | MoveSixSpritesOffscreen,DumpSixSpr,DumpFourSpr,DumpThreeSpr,DumpTwoSpr,ExitDumpSpr | MoveSix setsA F8;dumpentrysharedfallthrough exactdescendingstoreorder20,16,12,8,4,0. Absolutebase+Y carries beyond02FF,without advancingY. AllnonstackRAM comparedforallfiveentries;originalX/Yunchangedassertions. Carry/flag preservation consumedbyFlagpole thirdY isexplicitcaller formula andactualcanonicalroute,not assumedvoidhelperequivalence. |
+| L1 | DrawLargePlatform,ShrinkPlatform,SetLast2Platform,SetPlatformTilenum | Save02OAMthenbyteINY3 beforeactualsixXstack;restoreObjectOffset,EnemyYnotrelativeY dumpsfirst4. Castle3/SecondaryHard nonzero selectF8 last2;ordinarylast2usesliveEnemyY. Last2absolute16/20storeorderretained. Cloud nonzerotile75else5B;byteINY1/2dump6 tile/attr. ActualGetXOffscreenBits withSprslot+1publishes04-07;no value-onlyconsthelper. |
+| L2 | SChk2,SChk3,SChk4,SChk5,SChk6,SLChk,ExDLPl | Rawhorizontalbitsshift6timeshighbitcarryselectscolumn0-5,F8absoluteSpritebase+0/4/8/12/16/20withfixedY. Nativebytewrappedcolumnaddressrepairedto16bitabsoluteaddition;SixSpriteStackerloopbytewrapnotchanged. ThenliveEnemyOffscreen signbit hidesall6throughactualMoveSix. Same65536originalroots postrepair0diff;newF0OAMregression rejectsoldownerexit6 eachwidth. Earliernormaloffsetreceipts missedaddressboundary;whole-gameallocatorreachabilitystillpending. |
+| C1 | DrawFloateyNumber_Coin,NotRsNum | Framebit0clear decrementsliveMiscYbyte,otherwiseunchanged;DumpTwo usesupdatedMiscY. RelativeX absolutefirstX,CLC+8secondX;attributes2 andtilesF7/FB200. Inputslot remainsliveX fromJCoinState>=2;no coinanimationtableornewphysics. |
+| C2 | JCoinGfxHandler,ExJCGfx | State>=2tailsfloatey chain;state0/1absoluteMiscYfirst andCLC+8second,sharedrelativeXboth. FrameLSR&3 picks4coinbytes60-63,byteINYtileoffsetthenDumpTwo,DEYrestoresrawOAM. Attributes02/82 andObjectOffsetXrestorebeforeRTS. OAMwrapbetweenYincrementsdistinctfromabsolutebase+4carry. |
+
+Original DrawVine/SixSpriteStacker/DrawHammer/FlagpoleGfxHandler/DrawLargePlatform/JCoinGfxHandler plusfiveMoveSix/dumpentries,actualchildren execute unmodified boundROM. Five65536roots,one8192 andfive4096 total356352 eachwidth. AllnonstackRAM/APU/writes compared,minSPF9;nativevoidCPU A/flags excludedwhere actualcaller overwritesorexplicitformula preservesconsumption,originalY/Xseams asserted. All282scopedPC/22two-sidedbranches;E4EEbranchretainedmandatoryLDX0/BEQcontrol02778. Baselinefirst4096platformroots1064RAMdifferences;repairedsame65536roots0diff. Regression oldsourceexit6 bothwidths/currentpass;all8focusedtests eachwidthpass,fournegativeaccountingmutants rejected. Similarclasssweep:small_platform_gfx.c onlycolumnsfixedYstore changed;vine/tile/stackerloopsactualINYbytewrap retained,hammer/flag/dumpabsoluteindexedstores already16bit. Existing cheep_gfx.c,bullet_bill_gfx.c,goomba_gfx.c byte row offsets belongtoDrawEnemyObjRow/DrawOneSpriteRow advancingY8;theirfusedoffscreen output/consthelperfamilies keepnamedpendingobligations forlaternormal-enemy chain,no samebug conclusion inferredbygrep. DOSoriginalOpenNTlinkpassedexistingOLDNAMESwarning,noDOSruntimeproof. Protectedproductsremainlocal/uncommitted. ControlledrawOAMdoesnotestablishwhole-gameallocationreachability;globalmaterial,pixels,routes,snapshot remainopen.
+
+Current src/game/oam/vine_gfx.c normalizedSHA256:e35e049a2a303d4e9c24d1730e7dd6328058eb191a9665d88791e56d0ef65724.
+
+Current src/game/oam/sprite_stacker.c normalizedSHA256:473bbcfd3b1323ff69ccc8de80045c1103d78cd1cb58358af79dd930e67bd7cb.
+
+Current src/game/oam/hammer_gfx.c normalizedSHA256:c7b4eacb180b0128911ee3c580d63274dbe980b3260e1ea0c7fb1f7855928010.
+
+Current src/game/oam/flagpole_gfx.c normalizedSHA256:6b67ee98248638897ff00f055f21a5d223bce1a0e094818afcb2856b946f6b77.
+
+Current src/game/oam/sprite_dump.c normalizedSHA256:a269d505b932e0c1f8735536be7ebfd1512e9351f1b06289eecc8b40422fe3fa.
+
+Current src/game/oam/small_platform_gfx.c normalizedSHA256:e4c72c53613d8f1a637cb42d155daa3ccba840608dc6a8329778d7a35a226456.
+
+Current src/game/objects.c normalizedSHA256:7820f9d8da742bb9b1d36806dd51c858c8b43e120bd9e680b18b8a64c332fc09.
+
+Current src/game/oam/object_position.c normalizedSHA256:1fdb3149c5d4ca6159550a0ed9e13247734987199343ecb1c90aa77d3cf39225.
+
+Current src/game/oam/sprite_row.c normalizedSHA256:c48564ca7adfdd578115ff8014961eb48da784ff6f8ab3115216b2255c1081e5.
+
+Local product mysmb16.exe:259803bytes,SHA256:df5ab97fa13ed15a62bb84d63155ffe0310fe01f987086b3f33341d2869d65bb.
+
+Local product mysmb32.exe:374219bytes,SHA256:d9c3223296505dfc7820ba2f8c06b2c92172c030cb85c5836a7ae70dc8614d68.
+
+Local product mysmb64.exe:380216bytes,SHA256:b15052f7709c0538a1b3181c57ca4ff105fa370a356ed63a2e1630f260c77216.

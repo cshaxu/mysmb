@@ -55594,11 +55594,13 @@
       "semanticEvidence": [
         "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
         "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/history/M2-T65-block-query-object-output-current-proof.md; Saves vine index to $00 and OAM base to $02, calls SixSpriteStacker, then writes original alternating X and attributes before tile, cap and clipping phases.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Saves vine index to $00 and OAM base to $02, calls SixSpriteStacker, then writes original alternating X and attributes before tile, cap and clipping phases.",
       "currentSourcePaths": [
@@ -55614,10 +55616,12 @@
       "currentCounterpart": "mysmb_objects_draw_vine source-ordered phases",
       "semanticEvidence": [
         "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
-        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/history/M2-T65-block-query-object-output-current-proof.md; Completes exactly six byte-indexed $E1 tile stores before reloading the original OAM offset and choosing the vine cap."
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/history/M2-T65-block-query-object-output-current-proof.md; Completes exactly six byte-indexed $E1 tile stores before reloading the original OAM offset and choosing the vine cap.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Completes exactly six byte-indexed $E1 tile stores before reloading the original OAM offset and choosing the vine cap.",
       "currentSourcePaths": [
@@ -55633,10 +55637,12 @@
       "currentCounterpart": "mysmb_objects_draw_vine source-ordered phases",
       "semanticEvidence": [
         "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
-        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/history/M2-T65-block-query-object-output-current-proof.md; Only saved index zero replaces the first tile with $E0; starts a separate clipping loop at sprite zero."
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/history/M2-T65-block-query-object-output-current-proof.md; Only saved index zero replaces the first tile with $E0; starts a separate clipping loop at sprite zero.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Only saved index zero replaces the first tile with $E0; starts a separate clipping loop at sprite zero.",
       "currentSourcePaths": [
@@ -55652,10 +55658,12 @@
       "currentCounterpart": "mysmb_objects_draw_vine source-ordered phases",
       "semanticEvidence": [
         "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
-        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/history/M2-T65-block-query-object-output-current-proof.md; Unsigned byte subtraction VineStart_Y_Position minus sprite Y is compared with $64; only the non-below branch writes $F8."
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/history/M2-T65-block-query-object-output-current-proof.md; Unsigned byte subtraction VineStart_Y_Position minus sprite Y is compared with $64; only the non-below branch writes $F8.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Unsigned byte subtraction VineStart_Y_Position minus sprite Y is compared with $64; only the non-below branch writes $F8.",
       "currentSourcePaths": [
@@ -55671,10 +55679,12 @@
       "currentCounterpart": "mysmb_objects_draw_vine source-ordered phases",
       "semanticEvidence": [
         "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
-        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/history/M2-T65-block-query-object-output-current-proof.md; Advances OAM index by four and count by one, repeats clipping exactly six times and restores the saved vine index at the source return."
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/history/M2-T65-block-query-object-output-current-proof.md; Advances OAM index by four and count by one, repeats clipping exactly six times and restores the saved vine index at the source return.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Advances OAM index by four and count by one, repeats clipping exactly six times and restores the saved vine index at the source return.",
       "currentSourcePaths": [
@@ -55690,10 +55700,12 @@
       "currentCounterpart": "mysmb_oam_stack_six_sprite_data",
       "semanticEvidence": [
         "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
-        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/history/M2-T65-block-query-object-output-current-proof.md; Stacks six coordinate bytes from original A and byte Y; actual source restores Y from $02 at return. Native caller explicitly reloads saved OAM, with no emulated register state."
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/history/M2-T65-block-query-object-output-current-proof.md; Stacks six coordinate bytes from original A and byte Y; actual source restores Y from $02 at return. Native caller explicitly reloads saved OAM, with no emulated register state.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Stacks six coordinate bytes from original A and byte Y; actual source restores Y from $02 at return. Native caller explicitly reloads saved OAM, with no emulated register state.",
       "currentSourcePaths": [
@@ -55709,10 +55721,12 @@
       "currentCounterpart": "mysmb_oam_stack_six_sprite_data",
       "semanticEvidence": [
         "Td S9 B16v static audit: SMB1 vine OAM chain compared with shared oam/vine_gfx.c and oam/sprite_stacker.c; controlled original-ROM/x86/x64 route pending.",
-        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/history/M2-T65-block-query-object-output-current-proof.md; Six stores each add eight to the byte coordinate and four to the byte OAM index with wrapping; source X exits zero and A is initial value plus 48."
+        "M2 T65 S2 static original $E433-$E4BF audit, separate tile/cap/clip loops and saved scratch writes; docs/history/M2-T65-block-query-object-output-current-proof.md; Six stores each add eight to the byte coordinate and four to the byte OAM index with wrapping; source X exits zero and A is initial value plus 48.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S2 current x86/x64 each replay 16384 actual original-ROM roots (12288 vine plus 4096 stacker), zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; other CPU stack excluded. Actual stacker RTS at $E4BF resumes DrawVine $E449 12288 times; both indexed table reads and both cap/clip branches observed. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Six stores each add eight to the byte coordinate and four to the byte OAM index with wrapping; source X exits zero and A is initial value plus 48.",
       "currentSourcePaths": [
@@ -55862,11 +55876,13 @@
       "semanticEvidence": [
         "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
         "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/history/M2-T65-block-query-object-output-current-proof.md; Loads incoming-slot OAM offset; TimerControl and masked Misc_State select forced or animated pose before original Y/X/tile/attribute stages and offscreen tail.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Loads incoming-slot OAM offset; TimerControl and masked Misc_State select forced or animated pose before original Y/X/tile/attribute stages and offscreen tail.",
       "currentSourcePaths": [
@@ -55882,10 +55898,12 @@
       "currentCounterpart": "mysmb_objects_draw_hammer indexed pose/output/offscreen stages",
       "semanticEvidence": [
         "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
-        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/history/M2-T65-block-query-object-output-current-proof.md; Source LDX #0 establishes zero and forces BEQ RenderH. Native forced pose is zero and bypasses frame-index calculation."
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/history/M2-T65-block-query-object-output-current-proof.md; Source LDX #0 establishes zero and forces BEQ RenderH. Native forced pose is zero and bypasses frame-index calculation.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Source LDX #0 establishes zero and forces BEQ RenderH. Native forced pose is zero and bypasses frame-index calculation.",
       "currentSourcePaths": [
@@ -55901,10 +55919,12 @@
       "currentCounterpart": "mysmb_objects_draw_hammer indexed pose/output/offscreen stages",
       "semanticEvidence": [
         "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
-        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/history/M2-T65-block-query-object-output-current-proof.md; Only timer zero and masked state one use FrameCounter bits 3-2 to select one of four pose indices."
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/history/M2-T65-block-query-object-output-current-proof.md; Only timer zero and masked state one use FrameCounter bits 3-2 to select one of four pose indices.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Only timer zero and masked state one use FrameCounter bits 3-2 to select one of four pose indices.",
       "currentSourcePaths": [
@@ -55920,10 +55940,12 @@
       "currentCounterpart": "mysmb_objects_draw_hammer indexed pose/output/offscreen stages",
       "semanticEvidence": [
         "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
-        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/history/M2-T65-block-query-object-output-current-proof.md; Writes coordinates, tiles and attributes in original order, restores ObjectOffset and tests $FC offscreen mask. Hidden path clears state then calls actual shared DumpTwoSpr with A=$F8 and source OAM Y."
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/history/M2-T65-block-query-object-output-current-proof.md; Writes coordinates, tiles and attributes in original order, restores ObjectOffset and tests $FC offscreen mask. Hidden path clears state then calls actual shared DumpTwoSpr with A=$F8 and source OAM Y.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Writes coordinates, tiles and attributes in original order, restores ObjectOffset and tests $FC offscreen mask. Hidden path clears state then calls actual shared DumpTwoSpr with A=$F8 and source OAM Y.",
       "currentSourcePaths": [
@@ -55940,10 +55962,12 @@
       "currentCounterpart": "mysmb_objects_draw_hammer indexed pose/output/offscreen stages",
       "semanticEvidence": [
         "Td S9 K1 hammer OAM node-semantics and independent integration audit: SMB1 lines 13203-13268 compared with shared hammer_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 pose, timer, state and offscreen routes remain required.",
-        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/history/M2-T65-block-query-object-output-current-proof.md; Visible path and actual DumpTwoSpr return both finish without further game-state writes. Register-only native ABI is explicit."
+        "M2 T65 S3 static $E4C0-$E540 source/table/control audit and restored shared DumpTwoSpr call; docs/history/M2-T65-block-query-object-output-current-proof.md; Visible path and actual DumpTwoSpr return both finish without further game-state writes. Register-only native ABI is explicit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S3 current x86/x64 full and child-sequence checkers each replay 13824 original-ROM roots with zero differences across 1841 RAM bytes including all scratch/OAM and $0109-$0139 aliases; remaining CPU stack excluded. All seven tables/all four indices read; actual DumpTwoSpr RTS $E5C7 resumes $E540 13608 times. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Visible path and actual DumpTwoSpr return both finish without further game-state writes. Register-only native ABI is explicit.",
       "currentSourcePaths": [
@@ -55979,10 +56003,12 @@
       "currentCounterpart": "shared flagpole output phases",
       "semanticEvidence": [
         "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
-        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Original ordered X, Y, attributes, tiles and scratch writes; X+8 wraps then CLC X+12 carry survives DumpTwoSpr and contributes to third Y+8. Score path calls DrawOneSpriteRow with original pre-child RAM."
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Original ordered X, Y, attributes, tiles and scratch writes; X+8 wraps then CLC X+12 carry survives DumpTwoSpr and contributes to third Y+8. Score path calls DrawOneSpriteRow with original pre-child RAM.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Original ordered X, Y, attributes, tiles and scratch writes; X+8 wraps then CLC X+12 carry survives DumpTwoSpr and contributes to third Y+8. Score path calls DrawOneSpriteRow with original pre-child RAM.",
       "currentSourcePaths": [
@@ -56000,10 +56026,12 @@
       "currentCounterpart": "shared flagpole output phases",
       "semanticEvidence": [
         "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
-        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Reload ObjectOffset and its OAM offset, test Enemy_OffscreenBits AND $0e; zero exits, nonzero enters MoveSixSpritesOffscreen."
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Reload ObjectOffset and its OAM offset, test Enemy_OffscreenBits AND $0e; zero exits, nonzero enters MoveSixSpritesOffscreen.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Reload ObjectOffset and its OAM offset, test Enemy_OffscreenBits AND $0e; zero exits, nonzero enters MoveSixSpritesOffscreen.",
       "currentSourcePaths": [
@@ -56019,10 +56047,12 @@
       "currentCounterpart": "shared ordered sprite dump entry/fall-through/return",
       "semanticEvidence": [
         "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
-        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Load $f8 as dump value then enter DumpSixSpr with unchanged OAM offset."
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Load $f8 as dump value then enter DumpSixSpr with unchanged OAM offset.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Load $f8 as dump value then enter DumpSixSpr with unchanged OAM offset.",
       "currentSourcePaths": [
@@ -56038,10 +56068,12 @@
       "currentCounterpart": "shared ordered sprite dump entry/fall-through/return",
       "semanticEvidence": [
         "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
-        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Write value at absolute $0214+Y and $0210+Y, then continue DumpFourSpr without changing carry or index."
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Write value at absolute $0214+Y and $0210+Y, then continue DumpFourSpr without changing carry or index.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Write value at absolute $0214+Y and $0210+Y, then continue DumpFourSpr without changing carry or index.",
       "currentSourcePaths": [
@@ -56057,10 +56089,12 @@
       "currentCounterpart": "shared ordered sprite dump entry/fall-through/return",
       "semanticEvidence": [
         "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
-        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Write value at absolute $020c+Y then continue DumpThreeSpr."
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Write value at absolute $020c+Y then continue DumpThreeSpr.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Write value at absolute $020c+Y then continue DumpThreeSpr.",
       "currentSourcePaths": [
@@ -56076,10 +56110,12 @@
       "currentCounterpart": "shared ordered sprite dump entry/fall-through/return",
       "semanticEvidence": [
         "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
-        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Write value at absolute $0208+Y then continue DumpTwoSpr."
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Write value at absolute $0208+Y then continue DumpTwoSpr.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Write value at absolute $0208+Y then continue DumpTwoSpr.",
       "currentSourcePaths": [
@@ -56095,10 +56131,12 @@
       "currentCounterpart": "shared ordered sprite dump entry/fall-through/return",
       "semanticEvidence": [
         "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
-        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Write value at absolute $0204+Y then $0200+Y; preserve source carry and A/X/Y for caller continuation."
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Write value at absolute $0204+Y then $0200+Y; preserve source carry and A/X/Y for caller continuation.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Write value at absolute $0204+Y then $0200+Y; preserve source carry and A/X/Y for caller continuation.",
       "currentSourcePaths": [
@@ -56114,10 +56152,12 @@
       "currentCounterpart": "shared ordered sprite dump entry/fall-through/return",
       "semanticEvidence": [
         "Td S9 K2 flagpole graphics and multi-sprite-dump node-semantics and independent integration audit: SMB1 lines 13277-13352 compared with shared flagpole_gfx.c and sprite_dump.c; controlled original-ROM/x86/x64 flag-visible, score-visible and offscreen routes remain required.",
-        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Original RTS returns after the ordered dump writes; native void return retains explicit caller value/offset and carry variables."
+        "M2 T65 S4 static $E541-$E5C7 source, carry, table and graph audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Original RTS returns after the ordered dump writes; native void return retains explicit caller value/offset and carry variables.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S4 current x86/x64 full checkers replay 4608 flagpole and 12288 direct-dump original-ROM roots; independent 4608-root caller checker verifies child order/input/effects; zero differences across 1841 RAM bytes, true CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Original RTS returns after the ordered dump writes; native void return retains explicit caller value/offset and carry variables.",
       "currentSourcePaths": [
@@ -56134,13 +56174,15 @@
       "semanticEvidence": [
         "S6 H9 source audit: SMBDIS.ASM lines 13357-13435 require DrawLargePlatform to restore ObjectOffset after SixSpriteStacker and load Enemy_Y_Position,x ($00cf+x) before DumpFourSpr; Enemy_Rel_YPos ($03b9) is not the first-four-row source.",
         "S6 differential fixture gives $00cf+x=$40 and $03b9=$70; the focused shared-C check proves first-four OAM Y bytes are $40 while castle, secondary-hard, cloud and full-offscreen tails retain their original branches.",
-        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/history/M2-T65-block-query-object-output-current-proof.md; Save OAM to RAM02; stack relative X; restore slot and load absolute Enemy_Y_Position; call DumpFourSpr before castle/hard shrink decision."
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/history/M2-T65-block-query-object-output-current-proof.md; Save OAM to RAM02; stack relative X; restore slot and load absolute Enemy_Y_Position; call DumpFourSpr before castle/hard shrink decision.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
         "S6 x64 and x86 isolated builds: mysmb_large_platform_graphics_smoke passes with deliberately distinct world/relative Y values.",
         "S6 original-ROM parent route replay: x64 and x86 mysmb_large_platform_snapshot_check pass 12 retained M2 T44 S5 RunLargePlatform -> DrawLargePlatform records (normal, castle and variants 0-9), comparing every non-stack RAM byte.",
         "S6 platform-purity audit passes; owner-ROM raw records and build outputs remain under ignored build/m2-t52-s6/.",
-        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Save OAM to RAM02; stack relative X; restore slot and load absolute Enemy_Y_Position; call DumpFourSpr before castle/hard shrink decision.",
       "repairCandidate": "H9",
@@ -56157,10 +56199,12 @@
       "currentCounterpart": "mysmb_objects_draw_large_platform ordered output and six-column clipping phases",
       "semanticEvidence": [
         "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
-        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/history/M2-T65-block-query-object-output-current-proof.md; Castle or nonzero secondary hard mode substitutes $f8 for last two Y values; other path retains absolute enemy Y."
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/history/M2-T65-block-query-object-output-current-proof.md; Castle or nonzero secondary hard mode substitutes $f8 for last two Y values; other path retains absolute enemy Y.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Castle or nonzero secondary hard mode substitutes $f8 for last two Y values; other path retains absolute enemy Y.",
       "currentSourcePaths": [
@@ -56176,10 +56220,12 @@
       "currentCounterpart": "mysmb_objects_draw_large_platform ordered output and six-column clipping phases",
       "semanticEvidence": [
         "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
-        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/history/M2-T65-block-query-object-output-current-proof.md; Direct absolute indexed stores at OAM+16 then +20; no DumpTwoSpr call. Cloud override selects $75 versus $5b before common tile output."
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/history/M2-T65-block-query-object-output-current-proof.md; Direct absolute indexed stores at OAM+16 then +20; no DumpTwoSpr call. Cloud override selects $75 versus $5b before common tile output.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Direct absolute indexed stores at OAM+16 then +20; no DumpTwoSpr call. Cloud override selects $75 versus $5b before common tile output.",
       "currentSourcePaths": [
@@ -56195,10 +56241,13 @@
       "currentCounterpart": "mysmb_objects_draw_large_platform ordered output and six-column clipping phases",
       "semanticEvidence": [
         "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
-        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/history/M2-T65-block-query-object-output-current-proof.md; Restore original slot; DumpSixSpr tile then attributes $02; increment common-array slot for GetXOffscreenBits, restore slot/OAM before clipping."
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/history/M2-T65-block-query-object-output-current-proof.md; Restore original slot; DumpSixSpr tile then attributes $02; increment common-array slot for GetXOffscreenBits, restore slot/OAM before clipping.",
+        "docs/proposals/m2/t70-final-current-certification.md P81 corrective amendment - fixed-Y absoluteindexedcolumnstore wasprematurelybytewrapped;normal-offset oldreceipt insufficient.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Restore original slot; DumpSixSpr tile then attributes $02; increment common-array slot for GetXOffscreenBits, restore slot/OAM before clipping.",
       "currentSourcePaths": [
@@ -56214,10 +56263,13 @@
       "currentCounterpart": "mysmb_objects_draw_large_platform ordered output and six-column clipping phases",
       "semanticEvidence": [
         "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
-        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/history/M2-T65-block-query-object-output-current-proof.md; Consume shifted bit6 and clear second sprite Y only when set, then continue third-bit stage."
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/history/M2-T65-block-query-object-output-current-proof.md; Consume shifted bit6 and clear second sprite Y only when set, then continue third-bit stage.",
+        "docs/proposals/m2/t70-final-current-certification.md P81 corrective amendment - fixed-Y absoluteindexedcolumnstore wasprematurelybytewrapped;normal-offset oldreceipt insufficient.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Consume shifted bit6 and clear second sprite Y only when set, then continue third-bit stage.",
       "currentSourcePaths": [
@@ -56233,10 +56285,13 @@
       "currentCounterpart": "mysmb_objects_draw_large_platform ordered output and six-column clipping phases",
       "semanticEvidence": [
         "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
-        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/history/M2-T65-block-query-object-output-current-proof.md; Consume shifted bit5 and clear third sprite Y only when set, then continue fourth-bit stage."
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/history/M2-T65-block-query-object-output-current-proof.md; Consume shifted bit5 and clear third sprite Y only when set, then continue fourth-bit stage.",
+        "docs/proposals/m2/t70-final-current-certification.md P81 corrective amendment - fixed-Y absoluteindexedcolumnstore wasprematurelybytewrapped;normal-offset oldreceipt insufficient.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Consume shifted bit5 and clear third sprite Y only when set, then continue fourth-bit stage.",
       "currentSourcePaths": [
@@ -56252,10 +56307,13 @@
       "currentCounterpart": "mysmb_objects_draw_large_platform ordered output and six-column clipping phases",
       "semanticEvidence": [
         "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
-        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/history/M2-T65-block-query-object-output-current-proof.md; Consume shifted bit4 and clear fourth sprite Y only when set, then continue fifth-bit stage."
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/history/M2-T65-block-query-object-output-current-proof.md; Consume shifted bit4 and clear fourth sprite Y only when set, then continue fifth-bit stage.",
+        "docs/proposals/m2/t70-final-current-certification.md P81 corrective amendment - fixed-Y absoluteindexedcolumnstore wasprematurelybytewrapped;normal-offset oldreceipt insufficient.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Consume shifted bit4 and clear fourth sprite Y only when set, then continue fifth-bit stage.",
       "currentSourcePaths": [
@@ -56271,10 +56329,13 @@
       "currentCounterpart": "mysmb_objects_draw_large_platform ordered output and six-column clipping phases",
       "semanticEvidence": [
         "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
-        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/history/M2-T65-block-query-object-output-current-proof.md; Consume shifted bit3 and clear fifth sprite Y only when set, then continue sixth-bit stage."
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/history/M2-T65-block-query-object-output-current-proof.md; Consume shifted bit3 and clear fifth sprite Y only when set, then continue sixth-bit stage.",
+        "docs/proposals/m2/t70-final-current-certification.md P81 corrective amendment - fixed-Y absoluteindexedcolumnstore wasprematurelybytewrapped;normal-offset oldreceipt insufficient.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Consume shifted bit3 and clear fifth sprite Y only when set, then continue sixth-bit stage.",
       "currentSourcePaths": [
@@ -56290,10 +56351,13 @@
       "currentCounterpart": "mysmb_objects_draw_large_platform ordered output and six-column clipping phases",
       "semanticEvidence": [
         "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
-        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/history/M2-T65-block-query-object-output-current-proof.md; Consume shifted bit2 and clear sixth sprite Y only when set before final vertical mask."
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/history/M2-T65-block-query-object-output-current-proof.md; Consume shifted bit2 and clear sixth sprite Y only when set before final vertical mask.",
+        "docs/proposals/m2/t70-final-current-certification.md P81 corrective amendment - fixed-Y absoluteindexedcolumnstore wasprematurelybytewrapped;normal-offset oldreceipt insufficient.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Consume shifted bit2 and clear sixth sprite Y only when set before final vertical mask.",
       "currentSourcePaths": [
@@ -56309,10 +56373,12 @@
       "currentCounterpart": "mysmb_objects_draw_large_platform ordered output and six-column clipping phases",
       "semanticEvidence": [
         "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
-        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/history/M2-T65-block-query-object-output-current-proof.md; Test Enemy_OffscreenBits bit7 after horizontal clipping; call MoveSixSpritesOffscreen only when set."
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/history/M2-T65-block-query-object-output-current-proof.md; Test Enemy_OffscreenBits bit7 after horizontal clipping; call MoveSixSpritesOffscreen only when set.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Test Enemy_OffscreenBits bit7 after horizontal clipping; call MoveSixSpritesOffscreen only when set.",
       "currentSourcePaths": [
@@ -56328,10 +56394,12 @@
       "currentCounterpart": "mysmb_objects_draw_large_platform ordered output and six-column clipping phases",
       "semanticEvidence": [
         "Td S9 K3 large-platform OAM node-semantics and independent integration audit: SMB1 lines 13357-13435 compared with shared small_platform_gfx.c and OAM helpers; controlled original-ROM/x86/x64 castle, hard-mode, cloud and six-column-offscreen routes remain required.",
-        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/history/M2-T65-block-query-object-output-current-proof.md; Return only after ordered clipping and any actual final hide call, with no further game-state mutation."
+        "M2 T65 S5 static $E5C8-$E654 ordered output/call/branch audit and removal of non-ROM dump call; docs/history/M2-T65-block-query-object-output-current-proof.md; Return only after ordered clipping and any actual final hide call, with no further game-state mutation.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S5 current x86/x64 full actual-child and independent child-input/order checkers each replay 6144 original-ROM roots, zero differences across 1841 RAM bytes. All ten branches both alternatives; all six actual child continuations verified. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Return only after ordered clipping and any actual final hide call, with no further game-state mutation.",
       "currentSourcePaths": [
@@ -56347,10 +56415,12 @@
       "currentCounterpart": "mysmb_objects_draw_jump_coin ordered floating/coin paths and jumping_coin_tiles",
       "semanticEvidence": [
         "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required.",
-        "M2 T65 S6 static $E655-$E6BD parity/state/table/order/call audit with restored real DumpTwoSpr calls; docs/history/M2-T65-block-query-object-output-current-proof.md; FrameCounter LSR carry skips decrement on odd frames; even frames decrement byte-wrapped Misc_Y_Position before common NotRsNum."
+        "M2 T65 S6 static $E655-$E6BD parity/state/table/order/call audit with restored real DumpTwoSpr calls; docs/history/M2-T65-block-query-object-output-current-proof.md; FrameCounter LSR carry skips decrement on odd frames; even frames decrement byte-wrapped Misc_Y_Position before common NotRsNum.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S6 current x86/x64 full actual-child and independent wrapped caller checkers each replay 9216 original-ROM roots with zero differences across 1841 RAM bytes; all four indexed reads, both parity/state routes and actual child returns proved. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S6 current x86/x64 full actual-child and independent wrapped caller checkers each replay 9216 original-ROM roots with zero differences across 1841 RAM bytes; all four indexed reads, both parity/state routes and actual child returns proved. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "FrameCounter LSR carry skips decrement on odd frames; even frames decrement byte-wrapped Misc_Y_Position before common NotRsNum.",
       "currentSourcePaths": [
@@ -56367,10 +56437,12 @@
       "currentCounterpart": "mysmb_objects_draw_jump_coin ordered floating/coin paths and jumping_coin_tiles",
       "semanticEvidence": [
         "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required.",
-        "M2 T65 S6 static $E655-$E6BD parity/state/table/order/call audit with restored real DumpTwoSpr calls; docs/history/M2-T65-block-query-object-output-current-proof.md; Actual DumpTwoSpr Y call precedes relative X/X+8, paired attributes $02, tiles $f7/$fb and direct ExJCGfx exit."
+        "M2 T65 S6 static $E655-$E6BD parity/state/table/order/call audit with restored real DumpTwoSpr calls; docs/history/M2-T65-block-query-object-output-current-proof.md; Actual DumpTwoSpr Y call precedes relative X/X+8, paired attributes $02, tiles $f7/$fb and direct ExJCGfx exit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S6 current x86/x64 full actual-child and independent wrapped caller checkers each replay 9216 original-ROM roots with zero differences across 1841 RAM bytes; all four indexed reads, both parity/state routes and actual child returns proved. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S6 current x86/x64 full actual-child and independent wrapped caller checkers each replay 9216 original-ROM roots with zero differences across 1841 RAM bytes; all four indexed reads, both parity/state routes and actual child returns proved. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Actual DumpTwoSpr Y call precedes relative X/X+8, paired attributes $02, tiles $f7/$fb and direct ExJCGfx exit.",
       "currentSourcePaths": [
@@ -56408,11 +56480,13 @@
       "semanticEvidence": [
         "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required.",
         "M2 T65 S6 static $E655-$E6BD parity/state/table/order/call audit with restored real DumpTwoSpr calls; docs/history/M2-T65-block-query-object-output-current-proof.md; Load slot OAM, unsigned state >=2 dispatches floating path; otherwise Y/Y+8, paired X, indexed tile DumpTwoSpr at OAM+1 then $02/$82 attributes and restored source slot.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S6 current x86/x64 full actual-child and independent wrapped caller checkers each replay 9216 original-ROM roots with zero differences across 1841 RAM bytes; all four indexed reads, both parity/state routes and actual child returns proved. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Load slot OAM, unsigned state >=2 dispatches floating path; otherwise Y/Y+8, paired X, indexed tile DumpTwoSpr at OAM+1 then $02/$82 attributes and restored source slot.",
       "currentSourcePaths": [
@@ -56429,10 +56503,12 @@
       "currentCounterpart": "mysmb_objects_draw_jump_coin ordered floating/coin paths and jumping_coin_tiles",
       "semanticEvidence": [
         "Td S9 K4 jumping-coin and floatey-number OAM node-semantics and independent integration audit: SMB1 lines 13439-13489 compared with shared objects.c and sprite_dump.c; controlled original-ROM/x86/x64 coin-rise, floatey and frame-phase routes remain required.",
-        "M2 T65 S6 static $E655-$E6BD parity/state/table/order/call audit with restored real DumpTwoSpr calls; docs/history/M2-T65-block-query-object-output-current-proof.md; Coin fallthrough and floating jump return without further RAM effects; native return has no emulated CPU stack."
+        "M2 T65 S6 static $E655-$E6BD parity/state/table/order/call audit with restored real DumpTwoSpr calls; docs/history/M2-T65-block-query-object-output-current-proof.md; Coin fallthrough and floating jump return without further RAM effects; native return has no emulated CPU stack.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S6 current x86/x64 full actual-child and independent wrapped caller checkers each replay 9216 original-ROM roots with zero differences across 1841 RAM bytes; all four indexed reads, both parity/state routes and actual child returns proved. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S6 current x86/x64 full actual-child and independent wrapped caller checkers each replay 9216 original-ROM roots with zero differences across 1841 RAM bytes; all four indexed reads, both parity/state routes and actual child returns proved. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:356352actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all282PC/22branchpairs plusE4EEmandatorybranch,8tests eachpass,oldownerregressionexit6;OpenNT16link/Win32x86/x64/threeEXEsrefreshed."
       ],
       "semanticContract": "Coin fallthrough and floating jump return without further RAM effects; native return has no emulated CPU stack.",
       "currentSourcePaths": [
@@ -169335,16 +169411,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:17labels/125instructions/48RAM joined7clauses;offset/mask/midpoint/cornerbyte semantics;LargePlatform actualGetXOffscreenBits scratch04-07 restored. Control0-11 contract only;rawcontrol producer/alias andinter-frame pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:11labels/64instructions/15RAM joined5clauses;slot/index/bytecarry/parity/pointerrow/contactflag/rawmetatile seams. ControlledboundPRG rawindexdomain,producer/inter-frame pending,no newnode/controlcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:11labels/64instructions/15RAM joined5clauses;slot/index/bytecarry/parity/pointerrow/contactflag/rawmetatile seams. ControlledboundPRG rawindexdomain,producer/inter-frame pending,no newnode/controlcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 7544,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 3147,
+        "localInstructionReceiptSites": 7826,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 2865,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 2664,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 1109,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 2781,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 992,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -169354,28 +169431,25 @@
           "src/game/terminal_modes.c": 81,
           "src/game/oam/player_gfx.c": 81,
           "src/game/oam/block_gfx.c": 54,
-          "src/game/objects.c": 48,
           "src/game/frame_root.c": 46,
           "src/game/title_modes.c": 46,
-          "src/game/oam/small_platform_gfx.c": 40,
           "src/game/player_control.c shared C90 player-control owner": 39,
           "src/game/oam/object_position.c": 35,
           "src/game/area/block_metatile.c": 34,
           "src/game/scroll.c shared C90 scroll owner": 32,
           "src/game/enemy/hammer_bro.c": 30,
           "src/game/player.c": 28,
+          "src/game/objects.c": 26,
           "src/game/player_movement.c shared C90 movement owner": 26,
-          "src/game/oam/vine_gfx.c": 26,
           "src/game/game.c": 25,
           "src/game/status.c": 25,
           "src/game/oam/power_up_gfx.c": 25,
           "src/game/player_end_level.c shared C90 end-level owner": 24,
-          "src/game/oam/flagpole_gfx.c": 24,
           "src/game/entry.c shared C90 entry owner": 21,
+          "src/game/oam/small_platform_gfx.c": 20,
           "src/game/oam/sprite_row.c": 19,
           "src/game/player_modes.c shared C90 player-mode owner": 18,
           "src/game/player_transition.c shared C90 transition owner": 17,
-          "src/game/oam/hammer_gfx.c": 17,
           "src/game/area.c": 15,
           "src/game/oam/fireworks_gfx.c": 15,
           "src/game/boot.c": 13,
@@ -169383,7 +169457,6 @@
           "src/game/area.c plus src/game/oam/flagpole_gfx.c": 9,
           "src/game/oam/fireball_gfx.c": 9,
           "src/game/fireball/bubble.c": 9,
-          "src/game/oam/sprite_dump.c": 6,
           "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c": 5,
           "src/game/enemy/{lifecycle,podoboo}.c": 5,
           "src/game/dispatcher.c": 4,
@@ -169392,7 +169465,6 @@
           "src/game/oam/firebar_gfx.c": 3,
           "src/game/frame_root.c and src/game/terminal_modes.c": 2,
           "src/game/enemy/platform_callers.c": 2,
-          "src/game/oam/sprite_stacker.c": 2,
           "src/game/oam/sprite_dump.c and src/game/oam/block_offscreen.c": 2,
           "src/game/frame_root.c and src/game/title_modes.c": 1,
           "src/game/oam/normal_enemy_gfx.c and src/game/oam/sprite_row.c": 1,

@@ -49668,8 +49668,8 @@
     {
       "label": "DrawLargePlatform",
       "line": 13357,
-      "receiver": "M2 T52 S6",
-      "receivingBasis": "Owner-approved T52 corrective continuation under the continuing M2 ROM-equivalence mandate.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P81 accepted large platform absolute indexed clipping repair.",
       "futurePackage": null,
       "history": [
         {
@@ -49689,8 +49689,8 @@
     {
       "label": "ShrinkPlatform",
       "line": 13374,
-      "receiver": "M2 T44 S5",
-      "receivingBasis": "M2 T44 S5 admitted contiguous source-order large-platform graphics chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P81 accepted large platform absolute indexed clipping repair.",
       "futurePackage": null,
       "history": [
         {
@@ -49710,8 +49710,8 @@
     {
       "label": "SetLast2Platform",
       "line": 13377,
-      "receiver": "M2 T44 S5",
-      "receivingBasis": "M2 T44 S5 admitted contiguous source-order large-platform graphics chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P81 accepted large platform absolute indexed clipping repair.",
       "futurePackage": null,
       "history": [
         {
@@ -49731,8 +49731,8 @@
     {
       "label": "SetPlatformTilenum",
       "line": 13386,
-      "receiver": "M2 T44 S5",
-      "receivingBasis": "M2 T44 S5 admitted contiguous source-order large-platform graphics chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P81 accepted large platform absolute indexed clipping repair.",
       "futurePackage": null,
       "history": [
         {
@@ -49752,8 +49752,8 @@
     {
       "label": "SChk2",
       "line": 13402,
-      "receiver": "M2 T44 S5",
-      "receivingBasis": "M2 T44 S5 admitted contiguous source-order large-platform graphics chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P81 accepted large platform absolute indexed clipping repair.",
       "futurePackage": null,
       "history": [
         {
@@ -49773,8 +49773,8 @@
     {
       "label": "SChk3",
       "line": 13408,
-      "receiver": "M2 T44 S5",
-      "receivingBasis": "M2 T44 S5 admitted contiguous source-order large-platform graphics chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P81 accepted large platform absolute indexed clipping repair.",
       "futurePackage": null,
       "history": [
         {
@@ -49794,8 +49794,8 @@
     {
       "label": "SChk4",
       "line": 13414,
-      "receiver": "M2 T44 S5",
-      "receivingBasis": "M2 T44 S5 admitted contiguous source-order large-platform graphics chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P81 accepted large platform absolute indexed clipping repair.",
       "futurePackage": null,
       "history": [
         {
@@ -49815,8 +49815,8 @@
     {
       "label": "SChk5",
       "line": 13420,
-      "receiver": "M2 T44 S5",
-      "receivingBasis": "M2 T44 S5 admitted contiguous source-order large-platform graphics chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P81 accepted large platform absolute indexed clipping repair.",
       "futurePackage": null,
       "history": [
         {
@@ -49836,8 +49836,8 @@
     {
       "label": "SChk6",
       "line": 13426,
-      "receiver": "M2 T44 S5",
-      "receivingBasis": "M2 T44 S5 admitted contiguous source-order large-platform graphics chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P81 accepted large platform absolute indexed clipping repair.",
       "futurePackage": null,
       "history": [
         {
@@ -49857,8 +49857,8 @@
     {
       "label": "SLChk",
       "line": 13431,
-      "receiver": "M2 T44 S5",
-      "receivingBasis": "M2 T44 S5 admitted contiguous source-order large-platform graphics chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P81 accepted large platform absolute indexed clipping repair.",
       "futurePackage": null,
       "history": [
         {
@@ -49878,8 +49878,8 @@
     {
       "label": "ExDLPl",
       "line": 13435,
-      "receiver": "M2 T44 S5",
-      "receivingBasis": "M2 T44 S5 admitted contiguous source-order large-platform graphics chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P81 accepted large platform absolute indexed clipping repair.",
       "futurePackage": null,
       "history": [
         {
@@ -69863,6 +69863,37 @@
       "to": "M2 T70 S17",
       "nodes": [
         "LargePlatformBoundBox"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-platform-oam-index-1",
+      "type": "transfer",
+      "from": "M2 T52 S6",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "DrawLargePlatform"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-platform-oam-index-2",
+      "type": "transfer",
+      "from": "M2 T44 S5",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "ShrinkPlatform",
+        "SetLast2Platform",
+        "SetPlatformTilenum",
+        "SChk2",
+        "SChk3",
+        "SChk4",
+        "SChk5",
+        "SChk6",
+        "SLChk",
+        "ExDLPl"
       ],
       "acceptedBy": "Coordinator under owner same-S repair mandate.",
       "evidence": "docs/proposals/m2/t70-final-current-certification.md"
@@ -767728,7 +767759,42 @@
         "BBChk_E",
         "BlockBufferColli_Feet",
         "BlockBufferColli_Head",
-        "BlockBufferColli_Side"
+        "BlockBufferColli_Side",
+        "DrawVine",
+        "VineTL",
+        "SkpVTop",
+        "ChkFTop",
+        "NextVSp",
+        "SixSpriteStacker",
+        "StkLp",
+        "DrawHammer",
+        "ForceHPose",
+        "GetHPose",
+        "RenderH",
+        "NoHOffscr",
+        "FlagpoleGfxHandler",
+        "ChkFlagOffscreen",
+        "MoveSixSpritesOffscreen",
+        "DumpSixSpr",
+        "DumpFourSpr",
+        "DumpThreeSpr",
+        "DumpTwoSpr",
+        "ExitDumpSpr",
+        "DrawLargePlatform",
+        "ShrinkPlatform",
+        "SetLast2Platform",
+        "SetPlatformTilenum",
+        "SChk2",
+        "SChk3",
+        "SChk4",
+        "SChk5",
+        "SChk6",
+        "SLChk",
+        "ExDLPl",
+        "DrawFloateyNumber_Coin",
+        "NotRsNum",
+        "JCoinGfxHandler",
+        "ExJCGfx"
       ],
       "baseline": 1992,
       "incomingComplete": [

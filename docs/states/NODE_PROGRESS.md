@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P81 OAM stack uses](../proposals/m2/t70-final-current-certification.md#s17-p81-checkpoint---oam-stack-and-indexed-clipping-uses-reconciled).
+S17 P81:35OAM stack/clip labels/282instructions/117RAM joined12boundedclauses;356352actualroots eachwidth0diff/all282PC/22branchpairs plusmandatoryE4EE,8tests each. Scope1301/fresh0;7826/10691instruction receipts,2781/3773RAM receipts;2865instructions/992RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;largeplatformabsoluteindexedclip repaired,threeEXEsrefreshed,producer/inter-frame/finalpackages pending,M2 incomplete.
+
 [P80 block query uses](../proposals/m2/t70-final-current-certification.md#s17-p80-checkpoint---block-query-entry-and-scratch-uses-reconciled).
 S17 P80:11block query labels/64instructions/15RAM joined5boundedclauses;57344actualroots eachwidth0diff/all64PC/onebranchpair,6tests each. Scope1266/fresh0;7544/10691instruction receipts,2664/3773RAM receipts;3147instructions/1109RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP79unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
