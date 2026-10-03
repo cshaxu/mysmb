@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 698,
+    "enumeratedCount": 702,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -15356,6 +15356,98 @@
       "currentSourcePaths": [
         "src/game/area.c"
       ]
+    },
+    {
+      "id": "material-00699",
+      "producer": "UpdateScreen",
+      "consumer": "WriteBufferToScreen",
+      "storage": "00/01 current packet pointer and high-address byte",
+      "feasiblePath": "8ee2 reads nonzero header then branches to8e92;packet pointer unchanged.",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands and boot.c display primitives",
+      "semanticContract": "Bounded RAM packets/valid counts1..63,one/two headers,repeat/literal and stride1/32;initial physical/mirror alignment. No malformed packet,PPU cycle/v/t/latch or whole-frame alias claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass."
+      ],
+      "cohort": "C",
+      "cohortBasis": "VRAM packet producer inventory label",
+      "currentSourcePaths": [
+        "src/game/game.c",
+        "src/game/boot.c",
+        "src/game/frame_root.c"
+      ]
+    },
+    {
+      "id": "material-00700",
+      "producer": "WriteBufferToScreen",
+      "consumer": "RepeatByte",
+      "storage": "00/01 payload pointer;repeat/literal Y",
+      "feasiblePath": "8e96/8e9c read low/control;8eb9 uses source Y increment or retained repeat Y. No CPU pointer/packet writer intervenes.",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands and boot.c display primitives",
+      "semanticContract": "Bounded RAM packets/valid counts1..63,one/two headers,repeat/literal and stride1/32;initial physical/mirror alignment. No malformed packet,PPU cycle/v/t/latch or whole-frame alias claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass."
+      ],
+      "cohort": "C",
+      "cohortBasis": "VRAM packet producer inventory label",
+      "currentSourcePaths": [
+        "src/game/game.c",
+        "src/game/boot.c",
+        "src/game/frame_root.c"
+      ]
+    },
+    {
+      "id": "material-00701",
+      "producer": "WriteBufferToScreen",
+      "consumer": "UpdateScreen",
+      "storage": "advanced00/01 points to next header or terminator",
+      "feasiblePath": "Payload loop completes before SEC/TYA/ADC pointer low/high stores;next8ee2 reads through the updated pointer including carry.",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands and boot.c display primitives",
+      "semanticContract": "Bounded RAM packets/valid counts1..63,one/two headers,repeat/literal and stride1/32;initial physical/mirror alignment. No malformed packet,PPU cycle/v/t/latch or whole-frame alias claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass."
+      ],
+      "cohort": "C",
+      "cohortBasis": "VRAM packet producer inventory label",
+      "currentSourcePaths": [
+        "src/game/game.c",
+        "src/game/boot.c",
+        "src/game/frame_root.c"
+      ]
+    },
+    {
+      "id": "material-00702",
+      "producer": "WritePPUReg1",
+      "consumer": "WriteBufferToScreen",
+      "storage": "0778 control mirror across packet boundaries",
+      "feasiblePath": "Each packet writes physical2000 then0778;next packet reads actual mirror and changes only increment bit before its payload.",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands and boot.c display primitives",
+      "semanticContract": "Bounded RAM packets/valid counts1..63,one/two headers,repeat/literal and stride1/32;initial physical/mirror alignment. No malformed packet,PPU cycle/v/t/latch or whole-frame alias claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass."
+      ],
+      "cohort": "C",
+      "cohortBasis": "VRAM packet producer inventory label",
+      "currentSourcePaths": [
+        "src/game/game.c",
+        "src/game/boot.c",
+        "src/game/frame_root.c"
+      ]
     }
   ],
   "cohorts": [
@@ -20036,10 +20128,12 @@
       "currentOwner": "src/game/game.c",
       "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order."
+        "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required."
       ],
       "operationalEvidence": [
-        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass."
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass."
       ],
       "semanticContract": "ROM $8e92: decodes one VRAM packet header, increment/repeat mode and payload length.",
       "currentSourcePaths": [
@@ -20055,10 +20149,12 @@
       "currentOwner": "src/game/game.c",
       "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order."
+        "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required."
       ],
       "operationalEvidence": [
-        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass."
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass."
       ],
       "semanticContract": "ROM $8ea7: commits $2000 increment mode then selects repeat/nonrepeat length behavior.",
       "currentSourcePaths": [
@@ -20074,10 +20170,12 @@
       "currentOwner": "src/game/game.c",
       "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order."
+        "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required."
       ],
       "operationalEvidence": [
-        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass."
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass."
       ],
       "semanticContract": "ROM $8eb2: recovers packet length and repeat flag.",
       "currentSourcePaths": [
@@ -20093,10 +20191,12 @@
       "currentOwner": "src/game/game.c",
       "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order."
+        "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required."
       ],
       "operationalEvidence": [
-        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass."
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass."
       ],
       "semanticContract": "ROM $8eb5: emits packet payload until count expires.",
       "currentSourcePaths": [
@@ -20112,10 +20212,12 @@
       "currentOwner": "src/game/game.c",
       "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order."
+        "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required."
       ],
       "operationalEvidence": [
-        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass."
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass."
       ],
       "semanticContract": "ROM $8eb7: loads repeated or advancing source byte then continues packet output.",
       "currentSourcePaths": [
@@ -20131,10 +20233,12 @@
       "currentOwner": "src/game/game.c",
       "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order."
+        "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required."
       ],
       "operationalEvidence": [
-        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass."
+        "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass."
       ],
       "semanticContract": "ROM $8ece: selects next packet until zero terminator, otherwise reaches InitScroll.",
       "currentSourcePaths": [
@@ -20153,11 +20257,13 @@
         "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order.",
         "docs/proposals/m2/t70-final-current-certification.md S15 source finding:Canonical shared source child join is missing.",
         "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:Two ordered physical2005 stores of incoming A,then original RTS. Pending:Canonical shared child missing;PPU latch/address exclusions require source-use proof.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required."
       ],
       "operationalEvidence": [
         "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass."
       ],
       "semanticContract": "ROM $8ed6: writes zero/current accumulator to both scroll registers.",
       "currentSourcePaths": [
@@ -20176,11 +20282,13 @@
         "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order.",
         "docs/proposals/m2/t70-final-current-certification.md S15 source finding:Canonical shared source child counterpart is missing.",
         "docs/proposals/m2/t70-final-current-certification.md S15 P1 source clause:Physical2000 store precedes mirror0778 store,then RTS to real caller. Pending:Duplicated inline writes in reset/name-table owner;shared counterpart and source order pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required."
       ],
       "operationalEvidence": [
         "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass."
       ],
       "semanticContract": "ROM $8edb: writes PPU control register and its mirror.",
       "currentSourcePaths": [
@@ -159087,7 +159195,15 @@
         "ExitCastle",
         "IntroPipe",
         "NoBlankP",
-        "ExitPipe"
+        "ExitPipe",
+        "WriteBufferToScreen",
+        "SetupWrites",
+        "GetLength",
+        "OutputToVRAM",
+        "RepeatByte",
+        "UpdateScreen",
+        "InitScroll",
+        "WritePPUReg1"
       ],
       "controlEdgeIds": [],
       "status": "in-progress-material-use-completeness",
@@ -159110,7 +159226,9 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P9 corrective scope amendment - castle row counter",
         "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter",
         "docs/proposals/m2/t70-final-current-certification.md S17 P10 corrective admission - sideways pipe scratch outputs",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 bounded admission - VRAM pointer and packet handoff",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",

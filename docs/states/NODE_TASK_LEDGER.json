@@ -766327,7 +766327,15 @@
         "ExitCastle",
         "IntroPipe",
         "NoBlankP",
-        "ExitPipe"
+        "ExitPipe",
+        "WriteBufferToScreen",
+        "SetupWrites",
+        "GetLength",
+        "OutputToVRAM",
+        "RepeatByte",
+        "UpdateScreen",
+        "InitScroll",
+        "WritePPUReg1"
       ],
       "baseline": 1992,
       "incomingComplete": [

@@ -3687,3 +3687,71 @@ mysmb16.exe:258699 bytes,SHA256 a06ee31f5a4005bd75b5007278db6de9f22ffdb41e8e6e8b
 mysmb32.exe:373107 bytes,SHA256 94abebc0ab963c46c1e2ce0d76dcd1b78dccedcc2c0a7de02812fe740acca2a9.
 
 mysmb64.exe:379113 bytes,SHA256 06b8648b678b8e717b7a4d0f48366cfcb2118afe3476583fa275edc1a94979d0.
+
+## S17 P11 bounded admission - VRAM pointer and packet handoff
+
+Audit eight retained labels: `WriteBufferToScreen`, `SetupWrites`,
+`GetLength`, `OutputToVRAM`, `RepeatByte`, `UpdateScreen`, `InitScroll`,
+`WritePPUReg1`. Original8e92-8ef5,shared game.c output primitive and display
+register helpers. Expected fresh0,historical/current local1992/1992,max1992;
+overlap audit,no corrective custody until a named difference.
+
+Four indirect00/01 reads:packet address low/control/payload/terminal header.
+S4/S16 bind the NMI selector to its RAM or ROM stream;this P adds current
+original8edd UpdateScreen roots over neutral bounded RAM command packets,
+length1..63,literal/repeat,horizontal/vertical increments,one/two packets,
+pointer page carry and nametable/palette mirroring. Initial physical control
+equals RAM0778 under the accepted output-mirror invariant. Compare full
+RAM,CIRAM,palette,physical control and logical scroll outputs;only actual
+stack pushes excluded. PPU v/t/latch/cycle timing are outside this primitive
+ABI and remain in the pixel/timing package. No malformed zero-length or
+CHR-address packet equivalence inferred. CPU packet ranges do not alias
+00/01 or0778;PPU writes cannot overwrite those CPU command bytes.
+
+Packet records/logs below ignored build,1024 roots/batch,128MiB/120sec per
+process,raw cleanup after comparisons. Focused buffer/PPU/native checks
+independent of original RAM/PPU proof. No product refresh for audit only.
+An observed difference receives same-S corrective admission before edits.
+
+## S17 P11 checkpoint - VRAM packet pointer paths
+
+Current original8edd UpdateScreen roots cover3600 bounded RAM packet cases
+per width:three CPU starts0301/0341/03f8,seven nametable/palette addresses,
+counts1/2/4/16/32/63,four repeat/increment flags,two mirror values,one/two
+packets,two neutral seeds. Target combinations that would cross4000 are
+excluded from this nametable/palette ABI. All2048 RAM,CIRAM2048,palette32,
+physical2000 and visible scroll x/y bytes compare with zero differences;
+only actually observed physical stack pushes excluded. Four indirect reads
+actually observed:8e96=5400,8e9c=5400,8eb9=68712,8ee2=9000.
+
+Source8e92-8ef3 distinguishes literal Y increments and repeated-byte Y,
+publishes pointer low/high after payload,and loops through updated00/01.
+Current local pointer and command cursor remain equivalent because these
+CPU packet ranges cannot alias00/01/0778,and PPU writes cannot mutate CPU
+command bytes. The control shim publishes physical2000 then actual0778;
+the next packet consumes that mirror under the entry-alignment invariant.
+Terminator reaches InitScroll and clears visible hardware scroll. Initial
+probe accidentally read logical scroll fields initialized at zero;that
+scroll evidence is discarded. Final probe reads visible_scroll_x/y,starts
+both nonzero,and repeats every case. No production edit was needed.
+The first native compile also used nonexistent field names;no cases from
+that failed compile were accepted. Source/control checker spelling fixed
+before its final four actual current integration checks each width passed.
+
+Four checker negatives reject missing read,early pointer store,unaligned
+entry mirror and CPU packet/mirror alias;these check the evidence contract,
+not independent game semantics. Existing S4/S16 selector binding proves
+which source stream the NMI selects in its declared domains;this new proof
+starts at UpdateScreen and does not re-certify the complete NMI caller.
+PPU address v/t/latch,counters,CHR target writes and malformed zero-length
+packets remain outside this ABI. No whole-frame timing or pixel certificate.
+Raw outputs deleted,neutral logs/scripts/summaries remain ignored in build.
+
+Material699-702 bind four explicit pointer/payload/advance/mirror paths;
+fresh node/control0. Historical1992/1992;local scoped nodes1992/1992,
+controls4274/4274(raw4342,infeasible68);material702 partial,total unknown.
+Products remain P10 unchanged. S17 still open for the12 RAM/3 dispatch
+indirect sites and mutable/register/flag/stack/inter-frame path clauses.
+The46 other indirect sites now have named scoped contracts,not a global
+absence-of-alias or full material completeness conclusion. Pixels,routes,
+snapshot packages remain pending.
