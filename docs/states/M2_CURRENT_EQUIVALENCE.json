@@ -42538,12 +42538,14 @@
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Gates on frenzy timer and controller slot, arms timer $80, then reverse-searches Lakitu or begins reappearance handling.",
       "currentSourcePaths": [
@@ -42561,10 +42563,12 @@
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Searches slots four down to zero for Lakitu; without one it increments the reappearance counter and begins inactive-slot search only from seven.",
       "currentSourcePaths": [
@@ -42582,10 +42586,12 @@
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Searches slots four down to zero for an inactive flag and reaches the no-slot return only after the loop exhausts.",
       "currentSourcePaths": [
@@ -42604,11 +42610,13 @@
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Initializes the selected Lakitu slot, calls setup and right-extent positioning, then restores the caller object offset.",
       "currentSourcePaths": [
@@ -42626,10 +42634,12 @@
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Restores ObjectOffset after Lakitu creation before the common return.",
       "currentSourcePaths": [
@@ -42647,10 +42657,12 @@
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Returns from every timer, controller-slot, availability and player/state gate.",
       "currentSourcePaths": [
@@ -42668,10 +42680,12 @@
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Gates player Y and Lakitu normal state, copies Lakitu coordinates, seeds the three adjustment bytes and begins velocity selection.",
       "currentSourcePaths": [
@@ -42690,11 +42704,13 @@
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Copies one value from each four-byte PRDiffAdjustData band into scratch $03/$02/$01, calls PlayerLakituDiff and selects speed sign path.",
       "currentSourcePaths": [
@@ -42712,10 +42728,12 @@
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Restores the selected signed difference to A before the common Spiny setup entry.",
       "currentSourcePaths": [
@@ -42734,11 +42752,13 @@
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Calls SmallBBox, intentionally loses the computed A value to the common tail, writes zero X speed and selects right-moving direction.",
       "currentSourcePaths": [
@@ -42756,10 +42776,12 @@
       "currentCounterpart": "enemy/init_targets.c, enemy/frenzy.c and enemy/lakitu.c",
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners."
+        "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width."
+        "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Writes Spiny direction, upward Y speed, active flag and egg state five in source order.",
       "currentSourcePaths": [
@@ -42779,12 +42801,14 @@
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Returns after a completed Spiny egg setup or upstream early exit.",
       "currentSourcePaths": [
@@ -43425,11 +43449,13 @@
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
         "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
         "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Gates frenzy timer, resets it to $20, decrements FireworksCounter and begins star-flag lookup.",
       "currentSourcePaths": [
@@ -43444,10 +43470,12 @@
       "currentOwner": "shared fireworks frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Reverse-searches slots five through zero for StarFlagObject, then preserves subtract-$30 borrow into page and uses the counter/state index for both tables.",
       "currentSourcePaths": [
@@ -43462,10 +43490,12 @@
       "currentOwner": "shared fireworks frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Returns after timer gating or complete explosion initialization.",
       "currentSourcePaths": [
@@ -43535,11 +43565,13 @@
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
         "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
         "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Gates frenzy timer then selects water Cheep or land Bullet Bill path.",
       "currentSourcePaths": [
@@ -43554,10 +43586,12 @@
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Applies world-two exception to the water ID selector.",
       "currentSourcePaths": [
@@ -43572,10 +43606,12 @@
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Masks selector to one bit and reads SwimCC_IDData.",
       "currentSourcePaths": [
@@ -43590,10 +43626,12 @@
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Stores actor ID and resets full BitMFilter before unique-height selection.",
       "currentSourcePaths": [
@@ -43608,10 +43646,12 @@
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Masks first random register to height index 0..7.",
       "currentSourcePaths": [
@@ -43626,10 +43666,12 @@
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Finds an unset one-hot height bit by wrapped retry.",
       "currentSourcePaths": [
@@ -43645,11 +43687,13 @@
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
         "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
         "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Sets selected filter bit, positions/activates actor, clears dummy, arms timer and tail-initializes actor.",
       "currentSourcePaths": [
@@ -43664,10 +43708,12 @@
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Begins land route scan for an existing frenzy Bullet Bill.",
       "currentSourcePaths": [
@@ -43682,10 +43728,12 @@
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Scans slots zero through four, exits if found, otherwise reaches FireBulletBill after all slots.",
       "currentSourcePaths": [
@@ -43700,10 +43748,12 @@
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Returns on timer, capacity or existing-bill gate.",
       "currentSourcePaths": [
@@ -43720,13 +43770,15 @@
       "semanticEvidence": [
         "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "operationalEvidence": [
         "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "ORs blast SFX bit and assigns Bullet Bill frenzy ID before common actor setup.",
       "currentSourcePaths": [
@@ -168342,16 +168394,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:37fresh originalROM roots,74caller and74production checks acrossx86/x64 match1788RAM bytes;fourwrongreturn/selector/missingcall/binding mutations rejected. Both all-targetbuilds andtwofocusedtests eachpass. AssetsP57unchanged.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 4371,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 6320,
+        "localInstructionReceiptSites": 4553,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 6138,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 1545,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2228,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 1607,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2166,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -168385,7 +168438,6 @@
           "src/game/player/terrain.c and terrain children": 30,
           "src/game/player/pipe_entry.c and terrain children": 30,
           "src/game/player.c": 28,
-          "shared Lakitu/Spiny initializer and frenzy core": 28,
           "src/game/enemy/platform_collision.c and src/game/enemy/platform_position.c": 28,
           "src/game/player_movement.c shared C90 movement owner": 26,
           "src/game/oam/vine_gfx.c": 26,
@@ -168408,11 +168460,9 @@
           "src/game/oam/sprite_row.c": 19,
           "src/game/player_modes.c shared C90 player-mode owner": 18,
           "src/game/player_transition.c shared C90 transition owner": 17,
-          "shared fireworks frenzy core": 17,
           "src/game/oam/hammer_gfx.c": 17,
           "src/game/enemy/movement.c": 16,
           "src/game/area.c": 15,
-          "shared Bullet Bill/Cheep frenzy core": 15,
           "src/game/world/collision.c": 15,
           "src/game/player/terrain_metatiles.c and climbing.c": 15,
           "src/game/player/climbing.c and terrain_metatiles.c": 15,
@@ -168445,7 +168495,6 @@
           "src/game/oam/enemy_offscreen.c and src/game/oam/sprite_dump.c": 3,
           "src/game/oam/firebar_gfx.c": 3,
           "src/game/frame_root.c and src/game/terminal_modes.c": 2,
-          "src/game/enemy/frenzy.c": 2,
           "src/game/enemy/platform_callers.c": 2,
           "shared game core: enemy/loop.c": 2,
           "src/game/world/collision.c:mysmb_world_land_enemy": 2,
