@@ -2060,3 +2060,31 @@ title pause/focus pause commits remain intact;10 focused tests each pass.
 Bounded ignored raw/probe cleanup by coordinator;neutral summaries retained.
 Registry/ledger/progress/documentation/diff gates required before local P2
 commit,no push;unrelated presentation-planning edits preserved.
+
+## S15 P1 admission - NMI screen and final integration
+
+Scope10 existing exact labels: NonMaskableInterrupt; InitBuffer; OperModeExecutionTree; MoveAllSpritesOffscreen; InitScreen; SetupIntermediate; GetPlayerColors; UpdateTopScore; GameOverMode; SoundEngine.
+Expected fresh0,max1992/1992;8 pending controls: control-00022; control-00025; control-03489; control-03492; control-03516; control-03518; control-04095; control-04099.
+No pending material targets;incoming1992/1992 scoped-exact nodes,4268/4276
+controls(raw4342,infeasible66),557/557 material partial;historical1992/1992
+separate. No admission credit,maintenance custody retained. S14 closed;
+T70 certification unadmitted. Entry/exit:NMI physical vector through buffer,
+audio,joypad,pause,top-score,timers/random,mode dispatch and RTI;screen
+initialization/palette real children through caller continuation. Existing
+accepted children remain real and preserve source ordering;no child mocks.
+Shared owners frame_root.c,game.c,boot.c,area.c,status.c,terminal_modes.c
+and audio.c. Neutral harnesses may expose physical entry/call/return records.
+ROM track: Byte-bound original NMI vector and InitBuffer SoundEngine/UpdateTopScore call-return pairs; actual InitScreen/SetupIntermediate child returns; actual OperModeExecutionTree selector3 to GameOverMode; controlled original roots and source-reachable frame recorder versus current x86/x64 RAM/APU/PPU/OAM output with explicit hardware/CPU-stack ABI boundaries..
+Operational: focused NMI/screen/status/audio/terminal tests,current x86/x64
+builds,original OpenNT DOS16 link,purity and integrated route matrix.
+Product changes refresh all3 EXEs under standing owner local-commit exception;
+pure audit retains3 byte-identical. No push,unrelated work preserved.
+Owner-local ROM/reviewed ASM nonredistributable;ignored build/m2-t69-s15
+contains all traces,logs and intermediate files.128MiB raw,1024 roots/batch,
+120seconds/process,524288steps/root;coordinator deletes raw at each batch.
+Similar-issue sweep: actual caller return,selector/stack/vector semantics,
+audio-before-input/pause and score-before-timers,NMI output timing,screen
+child scratch and post-return writes;retained offscreen value-query callers
+reviewed for explicit original child contract,not mechanically replaced.
+Any scoped feasible diff remains active until repair and repeated dual proof;
+no whole-game certification or enumeration-complete inference from counters.
