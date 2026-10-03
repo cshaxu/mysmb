@@ -2,12 +2,10 @@
 
 ## Translation Debt
 
-- [ ] **Shared sprite-clear child graph:** T70 S6 P1 final source review finds
-  duplicated SprInitLoop bodies in boot.c/frame_root.c and an inlined NMI
-  MoveSpritesOffscreen call. S6 stays open;its P2 must accept the exact entry
-  family,restore one shared child/loop and verify original calls/returns/OAM.
-  [P2 receipt plan](../proposals/m2/t70-final-current-certification.md#s6-remaining-child-graph-debt---next-p2-receipt).
-
+- [x] **Shared sprite-clear child graph:** T70 S6 P2 restores one shared
+  SprInitLoop,zero/four entry selectors and the actual NMI child call/return.
+  512 full RAM roots and64 complete OAM NMI cases match both widths.
+  [Closure proof](../proposals/m2/t70-final-current-certification.md#s6-p2-closure---shared-sprite-clear-child-graph).
 
 - [ ] **Within-scanline split output proof (High):** T70 S6 observes original
   physical scroll writes inside scanline31 after sprite-zero hit/delay;the

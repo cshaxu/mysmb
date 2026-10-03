@@ -77,7 +77,6 @@ mysmb_u8 mysmb_frame_root_begin(struct mysmb_game *game,
                             const struct mysmb_input *input,
                             mysmb_u8 *mode_before, mysmb_u8 *task_before)
 {
-    mysmb_u8 oam_offset;
     mysmb_u8 paused;
 
     *mode_before = game->ram[MYSMB_ROOT_OPERATING_MODE];
@@ -99,11 +98,8 @@ mysmb_u8 mysmb_frame_root_begin(struct mysmb_game *game,
     game->visible_sprite0_split =
         game->ram[MYSMB_ROOT_SPRITE0_HIT] != 0U ? 1U : 0U;
     if (game->visible_sprite0_split != 0U && paused == 0U) {
-        oam_offset = 4U;
-        do {
-            game->ram[(mysmb_u16)(MYSMB_ROOT_OAM + oam_offset)] = 0xf8U;
-            oam_offset = (mysmb_u8)(oam_offset + 4U);
-        } while (oam_offset != 0U);
+        /* ROM $814a calls $8223 after DMA, before $814d SpriteShuffler. */
+        mysmb_game_move_sprites_offscreen(game);
         mysmb_game_shuffle_sprite_offsets(game);
     }
     mysmb_frame_root_commit_scene_scroll(game);

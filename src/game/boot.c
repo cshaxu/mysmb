@@ -125,16 +125,27 @@ void mysmb_game_initialize_memory(struct mysmb_game *game, mysmb_u8 initial_y)
     } while (page != 0xffU);
 }
 
-/* Translation of ROM $8220-$8230 (MoveAllSpritesOffscreen). */
-void mysmb_game_move_all_sprites_offscreen(struct mysmb_game *game)
+/* ROM $8225-$8230 SprInitLoop. Both source entry selectors share this
+ * owner; only Y bytes are written and the eight-bit index wraps to zero. */
+static void mysmb_game_sprite_init_loop(struct mysmb_game *game,
+                                        mysmb_u8 offset)
 {
-    mysmb_u8 offset;
-
-    offset = 0U;
     do {
         game->ram[(mysmb_u16)(MYSMB_BOOT_OAM + offset)] = 0xf8U;
         offset = (mysmb_u8)(offset + 4U);
     } while (offset != 0U);
+}
+
+/* ROM $8220: LDY #0 followed by BIT skips the other entry's LDY #4. */
+void mysmb_game_move_all_sprites_offscreen(struct mysmb_game *game)
+{
+    mysmb_game_sprite_init_loop(game, 0U);
+}
+
+/* ROM $8223: LDY #4 preserves sprite zero before the common loop. */
+void mysmb_game_move_sprites_offscreen(struct mysmb_game *game)
+{
+    mysmb_game_sprite_init_loop(game, 4U);
 }
 
 /* ROM NMI $4014 transfer after PPU_SPR_ADDR is reset to zero. */

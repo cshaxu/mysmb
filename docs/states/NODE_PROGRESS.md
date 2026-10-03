@@ -1,18 +1,19 @@
 # M2 ROM conformance node progress
 
-## M2 T70 S6 - P1 verified,child graph repair pending
+## M2 T70 S6 - closed conditional phase and shared sprite-clear graph
 
-[Verified phase portion](../proposals/m2/t70-final-current-certification.md#s6-p1-verified-part---conditional-visible-scroll-and-saved-control-handoff),
-[remaining original child graph debt](../proposals/m2/t70-final-current-certification.md#s6-remaining-child-graph-debt---next-p2-receipt).
-Conditional no-split/active-split publication repaired;64 original phase fields,
-32 real RTI and synthetic background/priority checks pass.248 tests each/full
-builds/OpenNT/purity and531 mask/3840 timer/6x600 routes pass;3 EXEs refreshed.
-S6 remains open:MoveSpritesOffscreen/SprInitLoop andcontrol00044/03493 reopened
-because duplicate C loops are not a real shared original child call/return.
-Historical1992/1992,current1990/1992 exact nodes,4274/4276 feasible controls
+[Phase repair](../proposals/m2/t70-final-current-certification.md#s6-p1-verified-part---conditional-visible-scroll-and-saved-control-handoff),
+[shared child graph repair and closure](../proposals/m2/t70-final-current-certification.md#s6-p2-closure---shared-sprite-clear-child-graph).
+All9 named scope labels exact;MoveSpritesOffscreen/SprInitLoop and controls
+00044/03493 repaired/re-audited,one shared loop and real NMI child call.
+512 full RAM roots and64 complete OAM NMI cases per width zero diff;actual
+16 source call/return pairs and16 native calls,248 tests each/full native
+builds,purity,6x600 integration and original OpenNT current OMF link pass.
+All3 EXEs refreshed;existing optional linker warning,DOS runtime unqualified.
+Historical1992/1992,current1992/1992 exact nodes,4276/4276 feasible controls
 (raw4342,infeasible66),material563/563 partial;expected/actual fresh0.
-P2 must accept the3-node entry family and repair/re-audit before S6 closure.
-Within-line fine-X/fetch pixel proof and final T70/M2 duties remain open.
+No deferred scoped label;S6 maintains all9. T70/M2 remain open for global
+material/numeric binding,within-line pixels and full end-to-end proof.
 
 ## M2 T70 S5 - closed timer/random material audit
 

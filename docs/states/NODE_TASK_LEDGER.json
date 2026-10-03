@@ -11724,8 +11724,8 @@
     {
       "label": "MoveAllSpritesOffscreen",
       "line": 965,
-      "receiver": "M2 T22 S26",
-      "receivingBasis": "T22/S19 completed source contract; T22/S26 independently reviews controlled-ROM equivalence.",
+      "receiver": "M2 T70 S6",
+      "receivingBasis": "Accepted common sprite-clear entry/loop maintenance;prior evidence retained.",
       "futurePackage": null,
       "history": [
         {
@@ -11759,8 +11759,8 @@
     {
       "label": "MoveSpritesOffscreen",
       "line": 969,
-      "receiver": "M2 T22 S26",
-      "receivingBasis": "T22/S19 completed source contract; T22/S26 independently reviews controlled-ROM equivalence.",
+      "receiver": "M2 T70 S6",
+      "receivingBasis": "Accepted common sprite-clear entry/loop maintenance;prior evidence retained.",
       "futurePackage": null,
       "history": [
         {
@@ -11794,8 +11794,8 @@
     {
       "label": "SprInitLoop",
       "line": 972,
-      "receiver": "M2 T22 S26",
-      "receivingBasis": "T22/S19 completed source contract; T22/S26 independently reviews controlled-ROM equivalence.",
+      "receiver": "M2 T70 S6",
+      "receivingBasis": "Accepted common sprite-clear entry/loop maintenance;prior evidence retained.",
       "futurePackage": null,
       "history": [
         {
@@ -68908,6 +68908,19 @@
         "SkipMainOper"
       ],
       "acceptedBy": "Coordinator accepts bounded sprite-zero visible-phase maintenance repair under owner ongoing M2 mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s6-child-1",
+      "type": "transfer",
+      "from": "M2 T22 S26",
+      "to": "M2 T70 S6",
+      "nodes": [
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop"
+      ],
+      "acceptedBy": "Coordinator accepts shared sprite-clear entry dependencies under owner ongoing M2 corrective mandate.",
       "evidence": "docs/proposals/m2/t70-final-current-certification.md"
     }
   ],
@@ -743317,7 +743330,10 @@
         "Sprite0Hit",
         "HBlankDelay",
         "SkipSprite0",
-        "SkipMainOper"
+        "SkipMainOper",
+        "MoveAllSpritesOffscreen",
+        "MoveSpritesOffscreen",
+        "SprInitLoop"
       ],
       "baseline": 1992,
       "incomingComplete": [
@@ -745318,7 +745334,7 @@
       "maximumComplete": 1992,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t70-final-current-certification.md",
-      "state": "admitted"
+      "state": "closed"
     }
   ]
 }

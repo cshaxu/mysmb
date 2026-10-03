@@ -12471,12 +12471,10 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1990,
-    "mismatch": 2
+    "exact": 1992
   },
   "controlEdgeCounts": {
-    "exact": 4274,
-    "mismatch": 2,
+    "exact": 4276,
     "infeasible": 66
   },
   "controlEdgeTypeCounts": {
@@ -13210,62 +13208,66 @@
       "asmLine": 965,
       "cohort": "A",
       "status": "exact",
-      "currentOwner": "src/game/boot.c and src/game/frame_root.c",
-      "currentCounterpart": "mysmb_game_reset OAM clear and mysmb_frame_root_begin sprite-zero path",
+      "currentOwner": "src/game/boot.c",
+      "currentCounterpart": "mysmb_game_move_all_sprites_offscreen selects0 then mysmb_game_sprite_init_loop",
       "semanticEvidence": [
         "Td S9 A5 node-semantics pass: SMB1 lines 954-981 was compared label-by-label with named shared C owners; controlled mode-dispatch and sprite-zero hardware routes remain pending.",
         "M2 T53 S1 source audit: the shared C OAM loop selects the same initial byte offset, writes $f8 to each Y byte, advances by four and terminates only on byte wrap; the nonzero-sprite entry preserves sprite zero.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P2:one boot.c SprInitLoop owner with zero/four selectors;actual frame_root_begin nonzero child call then shuffle;source8220 BIT skip/8223 selector/8227 store loop/8230 return preserved."
       ],
       "operationalEvidence": [
         "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P2:512 original/native complete RAM roots per width zero diff,64 natural NMI full OAM cases zero diff,16 actual original call/RTS and16 native child calls;248 tests each/full native builds/original OpenNT current OMF link/3 artifacts pass."
       ],
       "semanticContract": "Selects OAM offset $00, uses the shared loop, and writes $f8 to every OAM Y byte including sprite zero.",
       "currentSourcePaths": [
-        "src/game/boot.c",
-        "src/game/frame_root.c"
+        "src/game/boot.c"
       ]
     },
     {
       "label": "MoveSpritesOffscreen",
       "asmLine": 969,
       "cohort": "A",
-      "status": "mismatch",
-      "currentOwner": "src/game/frame_root.c",
-      "currentCounterpart": "mysmb_frame_root_begin sprite-zero branch",
+      "status": "exact",
+      "currentOwner": "src/game/boot.c",
+      "currentCounterpart": "mysmb_game_move_sprites_offscreen selects4 then mysmb_game_sprite_init_loop",
       "semanticEvidence": [
         "Td S9 A5 node-semantics pass: SMB1 lines 954-981 was compared label-by-label with named shared C owners; controlled mode-dispatch and sprite-zero hardware routes remain pending.",
         "M2 T53 S1 source audit: the shared C OAM loop selects the same initial byte offset, writes $f8 to each Y byte, advances by four and terminates only on byte wrap; the nonzero-sprite entry preserves sprite zero.",
-        "docs/proposals/m2/t70-final-current-certification.md S6 P1 final graph audit:MoveSpritesOffscreen lacks a real shared C child entry;SprInitLoop is duplicated in boot.c and frame_root.c. Inlined matching OAM effects do not prove original JSR/RTS graph or one source owner."
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1 final graph audit:MoveSpritesOffscreen lacks a real shared C child entry;SprInitLoop is duplicated in boot.c and frame_root.c. Inlined matching OAM effects do not prove original JSR/RTS graph or one source owner.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P2:one boot.c SprInitLoop owner with zero/four selectors;actual frame_root_begin nonzero child call then shuffle;source8220 BIT skip/8223 selector/8227 store loop/8230 return preserved."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P2:512 original/native complete RAM roots per width zero diff,64 natural NMI full OAM cases zero diff,16 actual original call/RTS and16 native child calls;248 tests each/full native builds/original OpenNT current OMF link/3 artifacts pass."
       ],
       "semanticContract": "Selects OAM offset $04 and uses the shared loop to write $f8 to every nonzero sprite Y byte while preserving sprite zero.",
       "currentSourcePaths": [
-        "src/game/frame_root.c"
+        "src/game/boot.c"
       ]
     },
     {
       "label": "SprInitLoop",
       "asmLine": 972,
       "cohort": "A",
-      "status": "mismatch",
-      "currentOwner": "src/game/boot.c and src/game/frame_root.c",
-      "currentCounterpart": "shared OAM Y-byte loop",
+      "status": "exact",
+      "currentOwner": "src/game/boot.c",
+      "currentCounterpart": "mysmb_game_sprite_init_loop",
       "semanticEvidence": [
         "Td S9 A5 node-semantics pass: SMB1 lines 954-981 was compared label-by-label with named shared C owners; controlled mode-dispatch and sprite-zero hardware routes remain pending.",
         "M2 T53 S1 source audit: the shared C OAM loop selects the same initial byte offset, writes $f8 to each Y byte, advances by four and terminates only on byte wrap; the nonzero-sprite entry preserves sprite zero.",
-        "docs/proposals/m2/t70-final-current-certification.md S6 P1 final graph audit:MoveSpritesOffscreen lacks a real shared C child entry;SprInitLoop is duplicated in boot.c and frame_root.c. Inlined matching OAM effects do not prove original JSR/RTS graph or one source owner."
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1 final graph audit:MoveSpritesOffscreen lacks a real shared C child entry;SprInitLoop is duplicated in boot.c and frame_root.c. Inlined matching OAM effects do not prove original JSR/RTS graph or one source owner.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P2:one boot.c SprInitLoop owner with zero/four selectors;actual frame_root_begin nonzero child call then shuffle;source8220 BIT skip/8223 selector/8227 store loop/8230 return preserved."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P2:512 original/native complete RAM roots per width zero diff,64 natural NMI full OAM cases zero diff,16 actual original call/RTS and16 native child calls;248 tests each/full native builds/original OpenNT current OMF link/3 artifacts pass."
       ],
       "semanticContract": "Writes $f8, advances OAM offset by four, and repeats until the byte offset wraps to zero.",
       "currentSourcePaths": [
-        "src/game/boot.c",
-        "src/game/frame_root.c"
+        "src/game/boot.c"
       ]
     },
     {
@@ -51908,19 +51910,22 @@
       "instruction": "jsr",
       "id": "control-00044",
       "cohort": "A",
-      "status": "mismatch",
-      "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin calls src/game/boot.c:mysmb_game_move_sprites_offscreen and resumes before mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
         "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched.",
-        "docs/proposals/m2/t70-final-current-certification.md S6 P1 final graph audit:MoveSpritesOffscreen lacks a real shared C child entry;SprInitLoop is duplicated in boot.c and frame_root.c. Inlined matching OAM effects do not prove original JSR/RTS graph or one source owner."
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1 final graph audit:MoveSpritesOffscreen lacks a real shared C child entry;SprInitLoop is duplicated in boot.c and frame_root.c. Inlined matching OAM effects do not prove original JSR/RTS graph or one source owner.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P2:one boot.c SprInitLoop owner with zero/four selectors;actual frame_root_begin nonzero child call then shuffle;source8220 BIT skip/8223 selector/8227 store loop/8230 return preserved."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P2:512 original/native complete RAM roots per width zero diff,64 natural NMI full OAM cases zero diff,16 actual original call/RTS and16 native child calls;248 tests each/full native builds/original OpenNT current OMF link/3 artifacts pass."
       ],
       "semanticContract": "Original call relation Sprite0Clr -> MoveSpritesOffscreen at source line 849 (jsr) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit.",
       "currentSourcePaths": [
-        "src/game/frame_root.c"
+        "src/game/frame_root.c",
+        "src/game/boot.c"
       ]
     },
     {
@@ -52625,18 +52630,19 @@
       "id": "control-00077",
       "cohort": "A",
       "status": "exact",
-      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared OAM Y-byte loop",
+      "currentCounterpart": "src/game/boot.c:zero/four entry selectors reach mysmb_game_sprite_init_loop without changing selected offset;loop byte-wrap condition repeats or returns",
       "semanticEvidence": [
         "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
-        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P2:one boot.c SprInitLoop owner with zero/four selectors;actual frame_root_begin nonzero child call then shuffle;source8220 BIT skip/8223 selector/8227 store loop/8230 return preserved."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P2:512 original/native complete RAM roots per width zero diff,64 natural NMI full OAM cases zero diff,16 actual original call/RTS and16 native child calls;248 tests each/full native builds/original OpenNT current OMF link/3 artifacts pass."
       ],
       "semanticContract": "Original fallthrough relation MoveAllSpritesOffscreen -> MoveSpritesOffscreen at source line 966 (ldy) must preserve the source mode-dispatch or OAM-loop predecessor, successor and return behavior.",
       "currentSourcePaths": [
-        "src/game/boot.c",
-        "src/game/frame_root.c"
+        "src/game/boot.c"
       ]
     },
     {
@@ -52648,18 +52654,19 @@
       "id": "control-00078",
       "cohort": "A",
       "status": "exact",
-      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared OAM Y-byte loop",
+      "currentCounterpart": "src/game/boot.c:zero/four entry selectors reach mysmb_game_sprite_init_loop without changing selected offset;loop byte-wrap condition repeats or returns",
       "semanticEvidence": [
         "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
-        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P2:one boot.c SprInitLoop owner with zero/four selectors;actual frame_root_begin nonzero child call then shuffle;source8220 BIT skip/8223 selector/8227 store loop/8230 return preserved."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P2:512 original/native complete RAM roots per width zero diff,64 natural NMI full OAM cases zero diff,16 actual original call/RTS and16 native child calls;248 tests each/full native builds/original OpenNT current OMF link/3 artifacts pass."
       ],
       "semanticContract": "Original fallthrough relation MoveSpritesOffscreen -> SprInitLoop at source line 971 (lda) must preserve the source mode-dispatch or OAM-loop predecessor, successor and return behavior.",
       "currentSourcePaths": [
-        "src/game/boot.c",
-        "src/game/frame_root.c"
+        "src/game/boot.c"
       ]
     },
     {
@@ -52671,18 +52678,19 @@
       "id": "control-00079",
       "cohort": "A",
       "status": "exact",
-      "currentCounterpart": "src/game/boot.c and src/game/frame_root.c shared OAM Y-byte loop",
+      "currentCounterpart": "src/game/boot.c:zero/four entry selectors reach mysmb_game_sprite_init_loop without changing selected offset;loop byte-wrap condition repeats or returns",
       "semanticEvidence": [
         "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
-        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P2:one boot.c SprInitLoop owner with zero/four selectors;actual frame_root_begin nonzero child call then shuffle;source8220 BIT skip/8223 selector/8227 store loop/8230 return preserved."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P2:512 original/native complete RAM roots per width zero diff,64 natural NMI full OAM cases zero diff,16 actual original call/RTS and16 native child calls;248 tests each/full native builds/original OpenNT current OMF link/3 artifacts pass."
       ],
       "semanticContract": "Original branch relation SprInitLoop -> SprInitLoop at source line 977 (bne) must preserve the source mode-dispatch or OAM-loop predecessor, successor and return behavior.",
       "currentSourcePaths": [
-        "src/game/boot.c",
-        "src/game/frame_root.c"
+        "src/game/boot.c"
       ]
     },
     {
@@ -128926,19 +128934,22 @@
       "instruction": "rts/rti",
       "id": "control-03493",
       "cohort": "A",
-      "status": "mismatch",
-      "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin calls src/game/boot.c:mysmb_game_move_sprites_offscreen and resumes before mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
         "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched.",
-        "docs/proposals/m2/t70-final-current-certification.md S6 P1 final graph audit:MoveSpritesOffscreen lacks a real shared C child entry;SprInitLoop is duplicated in boot.c and frame_root.c. Inlined matching OAM effects do not prove original JSR/RTS graph or one source owner."
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1 final graph audit:MoveSpritesOffscreen lacks a real shared C child entry;SprInitLoop is duplicated in boot.c and frame_root.c. Inlined matching OAM effects do not prove original JSR/RTS graph or one source owner.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P2:one boot.c SprInitLoop owner with zero/four selectors;actual frame_root_begin nonzero child call then shuffle;source8220 BIT skip/8223 selector/8227 store loop/8230 return preserved."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P2:512 original/native complete RAM roots per width zero diff,64 natural NMI full OAM cases zero diff,16 actual original call/RTS and16 native child calls;248 tests each/full native builds/original OpenNT current OMF link/3 artifacts pass."
       ],
       "semanticContract": "Original return relation MoveSpritesOffscreen -> Sprite0Clr at source line 849 (rts/rti) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit.",
       "currentSourcePaths": [
-        "src/game/frame_root.c"
+        "src/game/frame_root.c",
+        "src/game/boot.c"
       ]
     },
     {

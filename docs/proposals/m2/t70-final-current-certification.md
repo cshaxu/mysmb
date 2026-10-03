@@ -815,3 +815,126 @@ diff. No new T or S number,source progression or invented node credit.
 The newly detected source-family custody stays with existing receivers until
 P2 acceptance;P1 does not edit those child owners. Within-line fine-X output
 proof and broader T70 certification remain explicitly separate and pending.
+
+## S6 P2 admission - shared sprite-clear entry family
+
+Accept the source-order maintenance dependencies MoveAllSpritesOffscreen,
+MoveSpritesOffscreen,SprInitLoop into the same open S6. Scope9:RotPRandomBit,
+Sprite0Clr,Sprite0Hit,HBlankDelay,SkipSprite0,SkipMainOper,MoveAllSpritesOffscreen,
+MoveSpritesOffscreen,SprInitLoop. Historical1992/1992;current exact1990/1992
+nodes,4274/4276 feasible controls(raw4342,infeasible66),material563/563 partial.
+Expected fresh historical0,max1992;current repair target2 nodes and2 controls.
+The all-sprite entry is already exact but joins as a shared-loop dependency.
+
+Source8220 LDY0 and BIT operand skip selects zero;source8223 LDY4 selects
+nonzero;both reach8225 LDA-derived F8 Y-byte loop with four INY and eight-bit
+wrap,return8230. One boot.c owner will expose both meaningful selectors and
+one shared loop;frame_root_begin calls the nonzero entry after DMA and before
+SpriteShuffler,only for active split and unpaused state. No platform edits.
+
+ROM-logic proof:execute both original entries with bounded complete RAM/OAM
+fixtures;observe actual writes and return plus real NMI814a/814d call/return.
+Native compares complete RAM and all OAM bytes,including unchanged sprite0
+and tile/attribute/X lanes;active/paused/no-split NMI paths retain source order.
+Operational proof:focused owner checks,both native widths,original OpenNT
+DOS16 link,platform purity,and all3 products for this source-changing part.
+Existing S6 read-only owner-ROM/ASM provenance,128MiB/120second budgets and
+ignored raw containment/cleanup apply;no imported code or product emulator.
+Similar sweep:all production F8 OAM Y clears,entry call sites and shared loop
+owners. Other algorithm-specific sprite writes are reviewed,not replaced.
+
+## S6 P2 source and original-child checkpoint
+
+Source8225 is LDA F8;the actual SprInitLoop store starts8227 and RTS is8230.
+The first oracle assertion counted8225 as the loop head and failed despite
+correct writes;byte-level instruction review corrected that harness address.
+No product logic adjustment was made to obtain that oracle result.
+
+Current boot.c has one loop and meaningful zero/four selectors;frame_root.c
+has the real nonzero child call before shuffle.512 original roots exercise
+both entries with256 complete-RAM patterns each,32512 ordered Y writes,
+512 real RTS and Y-wrap observations. Both widths compare all2048 RAM bytes
+per case without excluding stack RAM:the controlled sentinel stack bytes are
+identical input,RTS reads without writing them. CPU A/X/Y/P/S are outside the
+C ABI;original A F8,Y0 and returned stack position are separately asserted.
+Native owned tests cover tile/attribute/X preservation and prior DMA image.
+
+64 natural active-title baseline NMI alternatives compare all256 OAM bytes
+at the pre-mode boundary. Actual source814a->8223 and8230->814d pairs occur16
+times;native link interception observes16 real shared child calls,none for
+paused/no-split cases. Each width has zero child RAM and NMI OAM differences.
+No CPU/ROM/child code patches in natural NMI routes;standalone8220/8223 cases
+are explicitly controlled roots. Raw RAM/OAM files removed after comparisons.
+Six600-frame integration routes also pass both widths and are byte-identical
+under the existing frame ABI;this is not full pixel or end-to-end proof.
+
+Similar sweep:only boot.c and frame_root.c had generic all/nonzero OAM Y
+clear loops. All-sprite reset/title/screen callers retain their existing
+meaningful selector;the NMI duplicate is replaced. F8 writes in individual
+object graphics/offscreen functions are source-owned per-object clipping,
+not duplicate full-OAM clear entries,and stay unchanged. F8 speed/mask/data
+constants outside OAM are unrelated. Both full native builds exit0;248/248 CTests pass per width and the six
+integration routes pass. Original OpenNT DOS16 build remains live without a
+terminal result;three-product packaging and P2 commit are pending. Registry
+rows retain mismatch until the complete P2 verification finishes.
+
+## S6 P2 closure - shared sprite-clear child graph
+
+All9 scoped labels retain current exact contracts:RotPRandomBit,Sprite0Clr,
+Sprite0Hit,HBlankDelay,SkipSprite0,SkipMainOper,MoveAllSpritesOffscreen,
+MoveSpritesOffscreen,SprInitLoop. Current repair completes MoveSpritesOffscreen
+and SprInitLoop plus actual call control00044 and return control03493.
+Expected/actual fresh historical0;no deferred or transferred scoped labels.
+All9 have accepted S6 maintenance custody;all prior history/events remain.
+Historical1992/1992;current exact1992/1992 nodes,4276/4276 feasible controls
+(raw4342,infeasible66);563/563 enumerated material exact,enumeration partial.
+S6 closes;T70/M2 remain open for complete material paths,numeric data binding,
+within-scanline output and full end-to-end routes. Exact nodes/controls do
+not certify these still-open global output and completeness requirements.
+
+Shared boot.c owns the only generic SprInitLoop and the two meaningful
+entry selectors.8220 selects Y0 and BIT skips8223's LDY4;8223 selects Y4;
+8225 loads F8;8227 stores the Y byte;four INY wrap;822e BNE selects repeat
+or8230 RTS. The all-entry C selector reaches the common body without running
+the nonzero selector,matching the source BIT operand skip. The NMI calls the
+real nonzero entry before SpriteShuffler;there is no second loop or platform
+branch. Retained boot/title/screen all-entry callers still use the canonical
+child. Adjacent selector/loop registry counterparts now name the actual owner.
+
+ROM/source and native evidence is the preceding P2 checkpoint:512 original
+controlled roots per width compare every2048 RAM byte with zero exclusions;
+32512 original ordered Y writes and512 actual RTS/byte-wrap observations.
+64 natural-baseline NMI alternatives compare complete256-byte OAM;16 original
+call/return pairs and16 actual native child invocations per width. Zero scoped
+differences. CPU register/stack-pointer status is outside portable C ABI;
+original A/Y/return checks are separate from the full RAM compare. Synthetic
+owned tests assert unchanged non-Y lanes and prior visible DMA image.
+Natural NMI source uses unmodified original code/CHR/child. Original whole
+pixels and instruction timing are not inferred from OAM or RAM equality.
+
+Both full native builds exit0 and248/248 CTests pass per width,including
+sprite/NMI/PPU,purity and product self-tests. Six600-frame input routes pass
+the retained scoped frame ABI and x86/x64 files are byte-identical. OpenNT
+compiler/OMF-library work produced all9 libraries and the final response file;
+new shared child symbol is present and changed owner objects postdate their
+source. The outer Ninja had no live compiler/librarian/linker child and never
+returned a result. Identical library/entry/stack/response inputs were copied
+to an isolated ignored output,then the same original OpenNT linker with
+NOE/SEGMENTS2048 and terminal NUL completed exit0. The obsolete childless
+wrapper was then retired (wrapper exit-1,not reported as a successful build).
+This is completion of the missing link,not another compiler/toolchain or
+another whole build. Existing optional OLDNAMES.LIB warning retained.
+DOS MZ file page length and all3 source-to-assets hashes match. Real DOS
+runtime/486 performance qualification is still M3/M4,not claimed here.
+
+All temporary inputs,logs,local runners and raw captures stay ignored below
+build;raw ROM/OAM/RAM captures were deleted after comparison. No emulator or
+third-party implementation added to products. Standing owner authorization
+covers local commit of the3 refreshed EXEs;no push. Unrelated queued I/O,
+presentation proposals and existing terrain whitespace remain untouched.
+
+| Product | Bytes | SHA256 |
+| --- | --- | --- |
+| mysmb16.exe | 258831 | 64d64dfad4a6a06b5393f35acb69e14e4871a72836b2f55458b504f0a0455bcf |
+| mysmb32.exe | 372392 | a9fc14a1a9361d5653f025a9ccc24f35e11c34e136801f868bc399012f32a5d7 |
+| mysmb64.exe | 379424 | b4d361b8eaff9f7fb72b44da7d2542f25f25481ec717098c235e8fb15ba49db9 |

@@ -117,6 +117,7 @@ struct mysmb_checkpoint {
 void mysmb_game_initialize_memory(struct mysmb_game *game, mysmb_u8 initial_y);
 /* ROM $8220-$8230. */
 void mysmb_game_move_all_sprites_offscreen(struct mysmb_game *game);
+void mysmb_game_move_sprites_offscreen(struct mysmb_game *game);
 /* ROM $8e19-$8e5b: name tables and scroll variables.  Its InitScroll tail
  * writes physical PPU scroll during the current NMI. */
 void mysmb_game_initialize_name_tables(struct mysmb_game *game);
