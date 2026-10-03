@@ -23197,11 +23197,13 @@
       "semanticEvidence": [
         "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required.",
         "M2 T53 S1 source audit: both paused and ordinary paths restore the saved pre-dispatch PPU-control mirror with NMI enabled at the NMI tail; C restores the same saved control after either path.",
-        "docs/proposals/m2/t70-final-current-certification.md S6 P1:source8138 conditional split latched at NMI and consumed by shared compositor;64 original physical-scroll/control phases and32 actual RTI returns match native,synthetic top/priority checks pass after live flag mutation;within-line pixel timing not certified."
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:source8138 conditional split latched at NMI and consumed by shared compositor;64 original physical-scroll/control phases and32 actual RTI returns match native,synthetic top/priority checks pass after live flag mutation;within-line pixel timing not certified.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:11labels/44instructions/16RAM joined7boundedclauses;mode/RTI/savedcontrol/RunDemo/Victory/Core/parser/animation lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical.",
-        "docs/proposals/m2/t70-final-current-certification.md S6 P1:full x86/x64 and248 tests/width,original OpenNT DOS16 link,3 fresh products;531 mask/3840 timer roots and6x600 frame regressions match,purity pass."
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:full x86/x64 and248 tests/width,original OpenNT DOS16 link,3 fresh products;531 mask/3840 timer roots and6x600 frame regressions match,purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:83712actualroots eachwidth/all44PC/5branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Restores saved PPU control with NMI enable and ends the frame after either paused or normal operating-mode path.",
       "currentSourcePaths": [
@@ -23507,12 +23509,14 @@
         "M2 T53 S1 source audit: NonMaskableInterrupt prefix callees commit display/buffer, audio, input, pause, score, timers, LFSR, OAM and scroll but do not write OperMode or OperMode_Task; frame_root.c therefore captures the same selector values that ROM loads at OperModeExecutionTree.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
         "S17 P15 original JumpEngine source writes04-07 but eight native callers omit publication;fresh256 victory/256 entrance roots show1020 scratch differences each width. Other six require bounded source/order applicability review.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:11labels/44instructions/16RAM joined7boundedclauses;mode/RTI/savedcontrol/RunDemo/Victory/Core/parser/animation lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T53 S1 controlled four-case owner-ROM dispatch route: original JumpEngine reached each of the four inline vector targets and both post-child continuations; current x86/x64 records had zero non-scratch RAM and output differences for all cases. Two paired 600-frame idle/start routes also passed exact work-RAM and output checks.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:83712actualroots eachwidth/all44PC/5branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Loads the source operating mode and dispatches exactly one inline JumpEngine vector: title, game, victory or game-over, returning to the NMI tail. P15 original call-site04-07 publication now included;compositional kernel/caller proof retains prior child/input contracts,not arbitrary-target execution.",
       "currentSourcePaths": [
@@ -23603,11 +23607,13 @@
         "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending.",
         "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart.",
         "S17 P15 original JumpEngine source writes04-07 but eight native callers omit publication;fresh256 victory/256 entrance roots show1020 scratch differences each width. Other six require bounded source/order applicability review.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:11labels/44instructions/16RAM joined7boundedclauses;mode/RTI/savedcontrol/RunDemo/Victory/Core/parser/animation lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:83712actualroots eachwidth/all44PC/5branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Reads OperMode_Task and dispatches exactly one title vector: initialization, screen routine, primary setup or game menu. P15 original call-site04-07 publication now included;compositional kernel/caller proof retains prior child/input contracts,not arbitrary-target execution.",
       "currentSourcePaths": [
@@ -23840,11 +23846,13 @@
       "semanticEvidence": [
         "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required.",
         "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart.",
-        "docs/proposals/m2/t70-final-current-certification.md S10 P1:source8245-838a title menu/continue/world/icon/demo source and declared data domains audited;InitScores8307 now preserves07d7-07dc and clears07dd+X for X17..0;three constant tables match original49 bytes and icon binds original8 bytes."
+        "docs/proposals/m2/t70-final-current-certification.md S10 P1:source8245-838a title menu/continue/world/icon/demo source and declared data domains audited;InitScores8307 now preserves07d7-07dc and clears07dd+X for X17..0;three constant tables match original49 bytes and icon binds original8 bytes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:11labels/44instructions/16RAM joined7boundedclauses;mode/RTI/savedcontrol/RunDemo/Victory/Core/parser/animation lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S10 P1:8532 actual original pre-GameCore ingress states equal current native return1;post-child82c7 outcomes retain earlier original owner proof and current title-demo life-route test,not freshly observed by cutoff roots."
+        "docs/proposals/m2/t70-final-current-certification.md S10 P1:8532 actual original pre-GameCore ingress states equal current native return1;post-child82c7 outcomes retain earlier original owner proof and current title-demo life-route test,not freshly observed by cutoff roots.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:83712actualroots eachwidth/all44PC/5branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Calls GameCoreRoutine in the same title-menu frame, then resets title only when game-engine subroutine equals six.",
       "currentSourcePaths": [
@@ -24216,10 +24224,12 @@
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step victory branch plus src/game/terminal_modes.c:mysmb_game_step_victory",
       "semanticEvidence": [
         "Td S9 A7 static node-semantics pass: SMB1 lines 1137-1165 was compared with the named shared-C owner; controlled original-ROM/x86/x64 victory routes remain required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:11labels/44instructions/16RAM joined7boundedclauses;mode/RTI/savedcontrol/RunDemo/Victory/Core/parser/animation lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:83712actualroots eachwidth/all44PC/5branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "ROM $8471: calls the selected VictoryModeSubroutines leaf, then reads OperMode_Task; task zero bypasses enemy work, every nonzero task writes ObjectOffset=0 and executes one EnemiesAndLoopsCore turn, then all paths compute relative player coordinates and tail-enter player graphics.",
       "currentSourcePaths": [
@@ -24236,10 +24246,12 @@
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step victory tail",
       "semanticEvidence": [
         "Td S9 A7 static node-semantics pass: SMB1 lines 1137-1165 was compared with the named shared-C owner; controlled original-ROM/x86/x64 victory routes remain required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:11labels/44instructions/16RAM joined7boundedclauses;mode/RTI/savedcontrol/RunDemo/Victory/Core/parser/animation lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:83712actualroots eachwidth/all44PC/5branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "ROM $847c: after the selected victory leaf and any required enemy turn, calls RelativePlayerPosition and tail-jumps PlayerGfxHandler. The task-zero bridge-collapse path uses the same tail.",
       "currentSourcePaths": [
@@ -34794,11 +34806,13 @@
         "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
         "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order.",
         "S17 P15 original JumpEngine source writes04-07 but eight native callers omit publication;fresh256 victory/256 entrance roots show1020 scratch differences each width. Other six require bounded source/order applicability review.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:11labels/44instructions/16RAM joined7boundedclauses;mode/RTI/savedcontrol/RunDemo/Victory/Core/parser/animation lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:83712actualroots eachwidth/all44PC/5branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering. P15 original call-site04-07 publication now included;compositional kernel/caller proof retains prior child/input contracts,not arbitrary-target execution.",
       "currentSourcePaths": [
@@ -34814,10 +34828,12 @@
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
         "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
-        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:11labels/44instructions/16RAM joined7boundedclauses;mode/RTI/savedcontrol/RunDemo/Victory/Core/parser/animation lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:83712actualroots eachwidth/all44PC/5branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
@@ -34966,11 +34982,13 @@
       "semanticEvidence": [
         "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
         "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:ColorRotation/GetAreaPal omittedRAM00 STA3/DECtoFF repaired;41 color/44 observed parent instruction receipts in explicitcontrolleddomains. Parser continuation andother child/caller lifetime remainpending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:ColorRotation/GetAreaPal omittedRAM00 STA3/DECtoFF repaired;41 color/44 observed parent instruction receipts in explicitcontrolleddomains. Parser continuation andother child/caller lifetime remainpending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:11labels/44instructions/16RAM joined7boundedclauses;mode/RTI/savedcontrol/RunDemo/Victory/Core/parser/animation lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:65536 standalone color+8192 fullGameEngine roots eachwidth0diff,11focusedtests eachpass,regression failsbefore repair;threeproductEXEs refreshed,originalDOScompile/linkonly. Otherunrelatedcaller test linkage remainsopen."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:65536 standalone color+8192 fullGameEngine roots eachwidth0diff,11focusedtests eachpass,regression failsbefore repair;threeproductEXEs refreshed,originalDOScompile/linkonly. Otherunrelatedcaller test linkage remainsopen.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:83712actualroots eachwidth/all44PC/5branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
@@ -34986,10 +35004,12 @@
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
         "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
-        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:11labels/44instructions/16RAM joined7boundedclauses;mode/RTI/savedcontrol/RunDemo/Victory/Core/parser/animation lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:83712actualroots eachwidth/all44PC/5branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
@@ -37553,12 +37573,14 @@
       "semanticEvidence": [
         "M2 T59 S5 static audit: SMB1 PlayerAnimTmrData through SetAnimSpd compared with shared src/game/player.c; timer bytes, thresholds, input masks, direction test, skid reset writes and common timer store preserve source semantics.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 original B3CF-B5C5 table/selector/branch/read/write/call-order audit;MoveOnVine stores sign extension00 before ADCs;X_Physics initializes/increments00 before FrictionData lookup;12 existing native tables/55 bytes independently equal original.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:250instructions/110RAM joined12manualcarry/sign/index/jump/climb/skid/frictionclauses;fullplayer.c identicalacceptedfad46182;196864 supplementalarithmeticassertions.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:11labels/44instructions/16RAM joined7boundedclauses;mode/RTI/savedcontrol/RunDemo/Victory/Core/parser/animation lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T59 S5 controlled original-ROM replay: 64 movement child-call streams each replay through fresh C90 x86/x64 owners, for 128 passing entry-return comparisons over 1,784 persistent bytes with CPU scratch and stack excluded; exhaustive animation smoke, DOS16 link and platform-purity pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S7 P2 262144 original returning roots each width zero diff,all55 declared table bytes read;9 tests each/purity/current products/OpenNT link;21 existing labels zero fresh credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins:262144currentactualoriginalmode66-69 roots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;12tables/55bytesequalandread. Separate65536 B5CC roots eachwidth zero2048RAM/noexclusions,all39frictionPCsobserved,inputA=000Ccallercontract. C90bothwidths/5focusedtests each;productsP39unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:83712actualroots eachwidth/all44PC/5branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "M2 T59 S5 preserves this source animation-speed, skid and timer-table contract.",
       "currentSourcePaths": [
@@ -170314,27 +170336,22 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P107 checkpoint - inline dispatch kernel uses reconciled:JumpEngine13instructions/4RAM scratchABI joinedJ1; actualgame.c owner,return/index/immutablepointer/alias lifetime reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P108 checkpoint - platform and Podoboo caller uses reconciled:6labels/34instructions/7RAM joined3boundedclauses;realchildorder/liveTimer/slotrestore/vector/postinitializerRandom/gravity lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:10labels/36instructions/5RAM joined4boundedclauses;selectorcarry/vector/orderedchild/liveTimer/postcollisionID/terminaltails reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P110 checkpoint - flagpole parser and slot uses reconciled:FlagpoleObject23instructions/9RAM joined1boundedclause;UnderPart/coordinates/carry/slot5/liveflag counterlifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P110 checkpoint - flagpole parser and slot uses reconciled:FlagpoleObject23instructions/9RAM joined1boundedclause;UnderPart/coordinates/carry/slot5/liveflag counterlifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:11labels/44instructions/16RAM joined7boundedclauses;mode/RTI/savedcontrol/RunDemo/Victory/Core/parser/animation lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 10646,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 45,
+        "localInstructionReceiptSites": 10690,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 1,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 3757,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 16,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 3773,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 0,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
         "directExternalQueueWriterPaths": 48,
-        "pendingDirectRamOwners": {
-          "src/game shared dispatcher/engine/scroll owners": 10,
-          "src/game/frame_root.c": 2,
-          "src/game/frame_root.c and src/game/terminal_modes.c": 2,
-          "src/game/frame_root.c and src/game/title_modes.c": 1,
-          "src/game/player.c": 1
-        },
+        "pendingDirectRamOwners": {},
         "materialPathsEnumerated": 993,
         "globalMaterialPathDenominator": "unknown",
         "nodeOrControlPromotion": 0,

@@ -768156,7 +768156,11 @@
         "NoMoveCode",
         "RunBowserFlame",
         "RunFirebarObj",
-        "FlagpoleObject"
+        "FlagpoleObject",
+        "RunDemo",
+        "VictoryMode",
+        "AutoPlayer",
+        "GameCoreRoutine"
       ],
       "baseline": 1992,
       "incomingComplete": [
