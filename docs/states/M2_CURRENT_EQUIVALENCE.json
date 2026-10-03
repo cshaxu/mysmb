@@ -170338,7 +170338,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:10labels/36instructions/5RAM joined4boundedclauses;selectorcarry/vector/orderedchild/liveTimer/postcollisionID/terminaltails reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P110 checkpoint - flagpole parser and slot uses reconciled:FlagpoleObject23instructions/9RAM joined1boundedclause;UnderPart/coordinates/carry/slot5/liveflag counterlifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:11labels/44instructions/16RAM joined7boundedclauses;mode/RTI/savedcontrol/RunDemo/Victory/Core/parser/animation lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P112 checkpoint - stream writer receipts joined with explicit limits"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P112 checkpoint - stream writer receipts joined with explicit limits",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P113 checkpoint - intrinsic loop bounds and area record domains"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
@@ -170360,8 +170361,8 @@
       },
       "streamWriterReceiptReconciliation": {
         "indexedWriterReceiptsJoined": 374,
-        "entryLocalIndexExclusions": 12,
-        "callerDomainFlowsPending": 362,
+        "entryLocalIndexExclusions": 15,
+        "callerDomainFlowsPending": 359,
         "directWriterReceiptsJoined": 8,
         "indirectWriterReceiptsJoined": 9,
         "nodeCredit": 0,
