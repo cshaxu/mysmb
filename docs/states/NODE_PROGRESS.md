@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P61 frenzy initializer chains](../proposals/m2/t70-final-current-certification.md#s17-p61-checkpoint---flying-cheep-and-bowser-flame-frenzy-reconciled).
+S17 P61:21initializerlabels,171instructions/75RAM joined11boundedclauses;200960freshroots eachwidth0diff/170PC/15branchpairs,retained131072C485tailvisits,5tests each. Scope834/fresh0;4371instruction/1545RAM receipts,6320instruction/2228RAM pending. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72),material993partial,totalunknown;source/productsP57unchanged,caller/inter-frame domains pending,M2 incomplete.
+
 [P60 firebar and Bowser duplicate chain](../proposals/m2/t70-final-current-certification.md#s17-p60-checkpoint---firebar-and-bowser-duplicate-chain-reconciled).
 S17 P60:6initializerlabels,58instructions/32RAM joined5boundedclauses;262144actualroots eachwidth0diff/all58PC/bothscanbranches,actualX==input08,6tests each. Scope815/fresh0;4200instruction/1470RAM receipts,6491instruction/2303RAM pending. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72),material993partial,totalunknown;source/productsP57unchanged,caller/inter-frame domains pending,M2 incomplete.
 

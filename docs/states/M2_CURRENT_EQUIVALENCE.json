@@ -42873,13 +42873,15 @@
         "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:262144original returning roots eachwidth2032RAM/24APU/orderedwrites0diff,all58PC/bothscanbranches,actualCPU X==input08;6focusedtests eachpass;source/productsP57unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:262144original returning roots eachwidth2032RAM/24APU/orderedwrites0diff,all58PC/bothscanbranches,actualCPU X==input08;6focusedtests eachpass;source/productsP57unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Clears low spin state, selects speed/direction tables, adds four to Y and X with page carry, then tail-selects box-only TallBBox2.",
       "currentSourcePaths": [
@@ -42958,12 +42960,14 @@
         "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Gates on frenzy timer, initializes small box and timer, applies hard-mode slot limit and begins random/player-speed selection.",
       "currentSourcePaths": [
@@ -42981,11 +42985,13 @@
       "semanticEvidence": [
         "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Stores the three/four enemy limit, rejects slots at or beyond it, then selects player-speed bias zero, four or eight.",
       "currentSourcePaths": [
@@ -43002,10 +43008,12 @@
       "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
       "semanticEvidence": [
         "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners."
+        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths."
+        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Adds player-speed bias to first random seed and conditionally replaces position seed with the third-register low nybble.",
       "currentSourcePaths": [
@@ -43022,10 +43030,12 @@
       "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
       "semanticEvidence": [
         "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners."
+        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths."
+        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Restores player-speed bias, selects X speed, optionally reverses stationary-player direction and enters positional sign dispatch.",
       "currentSourcePaths": [
@@ -43042,10 +43052,12 @@
       "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
       "semanticEvidence": [
         "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners."
+        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths."
+        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "For position bit d1 set, adds selected offset to player X and propagates carry into player page before the common final state.",
       "currentSourcePaths": [
@@ -43062,10 +43074,12 @@
       "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
       "semanticEvidence": [
         "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners."
+        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths."
+        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "For position bit d1 clear, subtracts selected offset from player X and propagates borrow into player page before the common final state.",
       "currentSourcePaths": [
@@ -43082,10 +43096,12 @@
       "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
       "semanticEvidence": [
         "Td S9 B14m firebar and flying-Cheep initializer node-semantics and independent integration audit: SMB1 lines 8394-8527 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners."
+        "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths."
+        "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Stores computed page, enables actor and Y-high, sets Y=$f8 and returns.",
       "currentSourcePaths": [
@@ -43238,13 +43254,15 @@
         "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Gates timer, clears Y force, queues flame sound, then selects mouth or right-extent generation by Bowser front object ID.",
       "currentSourcePaths": [
@@ -43261,11 +43279,13 @@
       "semanticEvidence": [
         "Td S9 B14o Bowser-flame node-semantics and independent integration audit: SMB1 lines 8573-8649 compared with shared enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Stores SetFlameTimer plus $20, subtracting $10 only in secondary hard mode, then selects random flame height.",
       "currentSourcePaths": [
@@ -43282,12 +43302,14 @@
       "semanticEvidence": [
         "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Stores supplied Y, adds $20 to screen-right X with page carry and tail-jumps FinishFlame.",
       "currentSourcePaths": [
@@ -43303,11 +43325,13 @@
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
         "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Copies Bowser-relative X/page/Y, selects random force direction against target Y and clears the frenzy buffer.",
       "currentSourcePaths": [
@@ -43323,11 +43347,13 @@
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
         "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Stores the selected FlameYMFAdderData value before falling through to FinishFlame.",
       "currentSourcePaths": [
@@ -43342,10 +43368,12 @@
       "currentOwner": "shared Bowser flame frenzy core",
       "currentCounterpart": "enemy/frenzy.c",
       "semanticEvidence": [
-        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree."
+        "M2 T62 S6: static original-ROM audit of SMB1 $C39C-$C43F against shared src/game/enemy/frenzy.c: table bindings, branch predicates, byte-width arithmetic, read/write sequence and call/tail/return counterparts agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass."
+        "M2 T62 S6: fresh all-current-source original-ROM/current x86/x64 snapshot replay: 120 fireworks + 160 Bowser-flame + 182 Bullet Bill/Cheep paths per width match whole compared RAM; focused full-RAM C90 footprints also pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Writes box $08, activates Y-high/flag, and clears X force/state through the source LSR result.",
       "currentSourcePaths": [
@@ -43916,12 +43944,14 @@
         "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Stores current ID in frenzy buffer, subtracts $12 and dispatches exactly six frenzy targets through JumpEngine.",
       "currentSourcePaths": [
@@ -43938,10 +43968,12 @@
       "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
       "semanticEvidence": [
         "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan."
+        "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width."
+        "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Returns without further writes for selector one.",
       "currentSourcePaths": [
@@ -43960,12 +43992,14 @@
         "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Scans all six slots, sets every Lakitu state to one, clears frenzy buffer and only controller flag.",
       "currentSourcePaths": [
@@ -43982,10 +44016,12 @@
       "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
       "semanticEvidence": [
         "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan."
+        "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width."
+        "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Tests current slot ID and conditionally writes state one.",
       "currentSourcePaths": [
@@ -44002,10 +44038,12 @@
       "currentCounterpart": "enemy/init_targets.c and enemy/frenzy.c",
       "semanticEvidence": [
         "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Decrements slot and loops while nonnegative before final clear/disable.",
       "currentSourcePaths": [
@@ -47769,11 +47807,13 @@
       "semanticEvidence": [
         "Td S9 B15s Bowser flame-timer node-semantics and independent integration audit: SMB1 lines 10337-10347 compared with shared enemy/frenzy.c and both named Bowser flame callers; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S18 static source-order audit: SMB1 $D1DD-$D1E7 (11 instruction bytes) plus both caller relations compared with shared enemy/frenzy.c, enemy/init_targets.c and enemy/bowser.c; all eight bytes, old-index read, increment/mask order, return and caller boundaries agree.",
-        "M2 T63 S18 static source-order audit: SMB1 $D1DD-$D1E7 (11 instruction bytes) plus both caller relations compared with shared enemy/frenzy.c, enemy/frenzy.c and enemy/bowser.c; all eight bytes, old-index read, increment/mask order, return and caller boundaries agree."
+        "M2 T63 S18 static source-order audit: SMB1 $D1DD-$D1E7 (11 instruction bytes) plus both caller relations compared with shared enemy/frenzy.c, enemy/frenzy.c and enemy/bowser.c; all eight bytes, old-index read, increment/mask order, return and caller boundaries agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
       ],
       "operationalEvidence": [
         "M2 T63 S18 original-ROM/current operational proof: 256 recorded original-ROM SetFlameTimer child calls replayed by one x86 and one x64 process with zero differences in return A and complete RAM; platform purity and OpenNT DOS16 shared-source link pass.",
-        "M2 T63 S18 original-ROM/current operational proof: 256 recorded original-ROM SetFlameTimer child calls replayed by one x86 and one x64 process with zero differences in return A and complete RAM; platform purity and OpenNT DOS16 shared-source link pass."
+        "M2 T63 S18 original-ROM/current operational proof: 256 recorded original-ROM SetFlameTimer child calls replayed by one x86 and one x64 process with zero differences in return A and complete RAM; platform purity and OpenNT DOS16 shared-source link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Reads the old BowserFlameTimerCtrl as table index, increments it, masks only the stored new value to three bits, then returns the old-index table byte.",
       "currentSourcePaths": [
@@ -47790,11 +47830,13 @@
       "semanticEvidence": [
         "Td S9 B15s Bowser flame-timer node-semantics and independent integration audit: SMB1 lines 10337-10347 compared with shared enemy/frenzy.c and both named Bowser flame callers; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S18 static source-order audit: SMB1 $D1DD-$D1E7 (11 instruction bytes) plus both caller relations compared with shared enemy/frenzy.c, enemy/init_targets.c and enemy/bowser.c; all eight bytes, old-index read, increment/mask order, return and caller boundaries agree.",
-        "M2 T63 S18 static source-order audit: SMB1 $D1DD-$D1E7 (11 instruction bytes) plus both caller relations compared with shared enemy/frenzy.c, enemy/frenzy.c and enemy/bowser.c; all eight bytes, old-index read, increment/mask order, return and caller boundaries agree."
+        "M2 T63 S18 static source-order audit: SMB1 $D1DD-$D1E7 (11 instruction bytes) plus both caller relations compared with shared enemy/frenzy.c, enemy/frenzy.c and enemy/bowser.c; all eight bytes, old-index read, increment/mask order, return and caller boundaries agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
       ],
       "operationalEvidence": [
         "M2 T63 S18 original-ROM/current operational proof: 256 recorded original-ROM SetFlameTimer child calls replayed by one x86 and one x64 process with zero differences in return A and complete RAM; platform purity and OpenNT DOS16 shared-source link pass.",
-        "M2 T63 S18 original-ROM/current operational proof: 256 recorded original-ROM SetFlameTimer child calls replayed by one x86 and one x64 process with zero differences in return A and complete RAM; platform purity and OpenNT DOS16 shared-source link pass."
+        "M2 T63 S18 original-ROM/current operational proof: 256 recorded original-ROM SetFlameTimer child calls replayed by one x86 and one x64 process with zero differences in return A and complete RAM; platform purity and OpenNT DOS16 shared-source link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Is the common return endpoint for timer selection and non-normal Bowser-flame state exit; it adds no state mutation.",
       "currentSourcePaths": [
@@ -168299,16 +168341,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:ColorRotation/GetAreaPal omittedRAM00 STA3/DECtoFF repaired;41 color/44 observed parent instruction receipts in explicitcontrolleddomains. Parser continuation andother child/caller lifetime remainpending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:37fresh originalROM roots,74caller and74production checks acrossx86/x64 match1788RAM bytes;fourwrongreturn/selector/missingcall/binding mutations rejected. Both all-targetbuilds andtwofocusedtests eachpass. AssetsP57unchanged.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 4200,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 6491,
+        "localInstructionReceiptSites": 4371,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 6320,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 1470,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2303,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 1545,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2228,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -168332,12 +168375,10 @@
           "src/game/enemy/bloober.c": 37,
           "src/game/oam/object_position.c": 35,
           "src/game/area/block_metatile.c": 34,
-          "shared firebar and flying-Cheep initializer core": 34,
           "src/game/enemy/{bullet_bill,swimming_cheep}.c": 33,
           "src/game/world/bounding_box.c": 33,
           "src/game/scroll.c shared C90 scroll owner": 32,
           "src/game/enemy/lakitu.c": 32,
-          "shared Bowser flame frenzy core": 31,
           "shared game core: enemy/star_flag.c": 31,
           "src/game/enemy/hammer_bro.c": 30,
           "shared game core: enemy/platform.c": 30,
@@ -168391,7 +168432,6 @@
           "src/game/oam/fireball_gfx.c": 9,
           "src/game/fireball/bubble.c": 9,
           "src/game/enemy/flying_cheep.c": 7,
-          "shared Piranha and frenzy-dispatch core": 6,
           "src/game/oam/sprite_dump.c": 6,
           "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c": 5,
           "src/game/enemy/{lifecycle,podoboo}.c": 5,
@@ -168399,7 +168439,6 @@
           "src/game/enemy/distance.c:mysmb_enemy_player_difference": 5,
           "src/game/objects.c:mysmb_objects_step_hammer_terrain": 5,
           "src/game/dispatcher.c": 4,
-          "shared game core: enemy/frenzy.c": 4,
           "src/game/objects.c:mysmb_objects_bump_enemy": 4,
           "src/game/oam/sprite_row.c and src/game/oam/enemy_offscreen.c": 4,
           "src/game/enemy/jump_terrain.c:mysmb_objects_step_enemy_jump_terrain": 3,
