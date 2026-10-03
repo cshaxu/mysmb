@@ -66,6 +66,35 @@ int main(void)
         }
         ++cases;
     }
+    /* X=$ff wraps each zero-page source independently. Y destinations
+     * remain absolute, including a duplicate beyond the zero page. */
+    for (value = 0U; value < 2U; ++value) {
+        target = value == 0U ? 0U : 250U;
+        memset(&game, 0, sizeof(game));
+        for (i = 0U; i < 256U; ++i) game.ram[0x0fU + i] = 1U;
+        game.ram[0x0fU + target] = 0U;
+        game.ram[0x6dU] = 3U;
+        game.ram[0x86U] = 0x44U;
+        game.ram[0xceU] = 0x88U;
+        game.ram[0x16dU] = 9U;
+        game.ram[0x186U] = 0xaaU;
+        game.ram[0x1ceU] = 0xbbU;
+        game.ram[0x0eU] = 0xccU;
+        mysmb_enemy_duplicate_object(&game, 255U);
+        if (game.ram[0x6cfU] != target ||
+            game.ram[0x0fU + target] != 255U ||
+            game.ram[0x6eU + target] != 3U ||
+            game.ram[0x87U + target] != 0x44U ||
+            game.ram[0xb6U + target] != 1U ||
+            game.ram[0xcfU + target] != 0x88U ||
+            game.ram[0x0eU] != 1U ||
+            game.ram[0x16dU] != 9U || game.ram[0x186U] != 0xaaU ||
+            game.ram[0x1ceU] != 0xbbU) {
+            printf("duplicate zero-page X/absolute Y mismatch target=%u\n",target);
+            return 3;
+        }
+        ++cases;
+    }
     printf("%u firebar and duplicate footprints match\n",cases);
     return 0;
 }

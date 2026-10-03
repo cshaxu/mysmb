@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P114 duplicate byte addresses](../proposals/m2/t70-final-current-certification.md#s17-p114-checkpoint---duplicate-object-byte-addresses-repaired).
+S17 P114:DuplicateEnemyObj/FSLoop/FlmEx18 instructions reviewed;four zero-page-X address expressions repaired. 65536 actual original roots eachwidth0diff/all18PC/bothC57Bbranches;5 focused tests eachwidthpass,new boundary regression failsoldsource. Three localEXEs rebuilt/refreshed;originalOpenNT16 compile/link only. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),instruction10690/10691,RAM3773/3773 scoped receipts;indexed caller conditions359,material993partial,totalunknown;M2 incomplete.
+
 [P113 index and area domains](../proposals/m2/t70-final-current-certification.md#s17-p113-checkpoint---intrinsic-loop-bounds-and-area-record-domains).
 S17 P113:three intrinsic loops discharge caller-domain conditions atC412/CF4A/EFA9;15 entry-local exclusions/359 indexed caller-domain conditions remain. All34 immutable area streams/1669 aligned record states inspected;36 castle heights0/6,7 exit-pipe heights7/10. Four negative checks and7 focused regressions each width pass. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),instruction10690/10691,RAM3773/3773 scoped receipts;material993 partial,totalunknown;M2 incomplete.
 

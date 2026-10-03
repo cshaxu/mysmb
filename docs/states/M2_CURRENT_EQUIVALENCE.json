@@ -43702,13 +43702,15 @@
         "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P114 checkpoint - duplicate-object byte addresses repaired:four zero-page-X accesses preserve bytewrap;absolute-Y scan/destinations unchanged;all-byteX leafcontract expanded,no natural reachability claim."
       ],
       "operationalEvidence": [
         "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:262144original returning roots eachwidth2032RAM/24APU/orderedwrites0diff,all58PC/bothscanbranches,actualCPU X==input08;6focusedtests eachpass;source/productsP57unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:262144original returning roots eachwidth2032RAM/24APU/orderedwrites0diff,all58PC/bothscanbranches,actualCPU X==input08;6focusedtests eachpass;source/productsP57unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P114 checkpoint - duplicate-object byte addresses repaired:65536 actualroots eachwidth0diff/all18PC/bothbranchsides;old-regression red/newgreen,5tests eachwidth,threeEXEs refreshed."
       ],
       "semanticContract": "Wraps upward from Y=$ff until an inactive Enemy_Flag slot, records DuplicateObj_Offset and copies exactly the source fields in source order.",
       "currentSourcePaths": [
@@ -43725,11 +43727,13 @@
       "semanticEvidence": [
         "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P114 checkpoint - duplicate-object byte addresses repaired:four zero-page-X accesses preserve bytewrap;absolute-Y scan/destinations unchanged;all-byteX leafcontract expanded,no natural reachability claim."
       ],
       "operationalEvidence": [
         "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:262144original returning roots eachwidth2032RAM/24APU/orderedwrites0diff,all58PC/bothscanbranches,actualCPU X==input08;6focusedtests eachpass;source/productsP57unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:262144original returning roots eachwidth2032RAM/24APU/orderedwrites0diff,all58PC/bothscanbranches,actualCPU X==input08;6focusedtests eachpass;source/productsP57unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P114 checkpoint - duplicate-object byte addresses repaired:65536 actualroots eachwidth0diff/all18PC/bothbranchsides;old-regression red/newgreen,5tests eachwidth,threeEXEs refreshed."
       ],
       "semanticContract": "Increments the duplicate slot and loops while Enemy_Flag is nonzero; the first zero slot enters the copy sequence.",
       "currentSourcePaths": [
@@ -43746,11 +43750,13 @@
       "semanticEvidence": [
         "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P114 checkpoint - duplicate-object byte addresses repaired:four zero-page-X accesses preserve bytewrap;absolute-Y scan/destinations unchanged;all-byteX leafcontract expanded,no natural reachability claim."
       ],
       "operationalEvidence": [
         "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:262144original returning roots eachwidth2032RAM/24APU/orderedwrites0diff,all58PC/bothscanbranches,actualCPU X==input08;6focusedtests eachpass;source/productsP57unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:262144original returning roots eachwidth2032RAM/24APU/orderedwrites0diff,all58PC/bothscanbranches,actualCPU X==input08;6focusedtests eachpass;source/productsP57unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P114 checkpoint - duplicate-object byte addresses repaired:65536 actualroots eachwidth0diff/all18PC/bothbranchsides;old-regression red/newgreen,5tests eachwidth,threeEXEs refreshed."
       ],
       "semanticContract": "Returns after duplication or the upstream flame-timer early exit.",
       "currentSourcePaths": [
@@ -170339,7 +170345,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P110 checkpoint - flagpole parser and slot uses reconciled:FlagpoleObject23instructions/9RAM joined1boundedclause;UnderPart/coordinates/carry/slot5/liveflag counterlifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:11labels/44instructions/16RAM joined7boundedclauses;mode/RTI/savedcontrol/RunDemo/Victory/Core/parser/animation lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P112 checkpoint - stream writer receipts joined with explicit limits",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P113 checkpoint - intrinsic loop bounds and area record domains"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P113 checkpoint - intrinsic loop bounds and area record domains",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P114 checkpoint - duplicate-object byte addresses repaired"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,

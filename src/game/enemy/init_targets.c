@@ -231,11 +231,15 @@ void mysmb_enemy_duplicate_object(struct mysmb_game *game, mysmb_u8 slot)
         duplicate = (mysmb_u8)(duplicate + 1U);
     game->ram[0x06cfU] = duplicate;
     game->ram[MYSMB_ENEMY_FLAG + duplicate] = (mysmb_u8)(slot | 0x80U);
-    game->ram[MYSMB_ENEMY_PAGE + duplicate] = game->ram[MYSMB_ENEMY_PAGE + slot];
-    game->ram[MYSMB_ENEMY_X + duplicate] = game->ram[MYSMB_ENEMY_X + slot];
-    game->ram[MYSMB_ENEMY_FLAG + slot] = 1U;
+    /* Source X operands are zero-page indexed; Y destinations are absolute. */
+    game->ram[MYSMB_ENEMY_PAGE + duplicate] =
+        game->ram[(mysmb_u8)(MYSMB_ENEMY_PAGE + slot)];
+    game->ram[MYSMB_ENEMY_X + duplicate] =
+        game->ram[(mysmb_u8)(MYSMB_ENEMY_X + slot)];
+    game->ram[(mysmb_u8)(MYSMB_ENEMY_FLAG + slot)] = 1U;
     game->ram[MYSMB_ENEMY_Y_HIGH + duplicate] = 1U;
-    game->ram[MYSMB_ENEMY_Y + duplicate] = game->ram[MYSMB_ENEMY_Y + slot];
+    game->ram[MYSMB_ENEMY_Y + duplicate] =
+        game->ram[(mysmb_u8)(MYSMB_ENEMY_Y + slot)];
 }
 
 /* ROM $C459/$C45C entries. Long falls through short after the shared child. */

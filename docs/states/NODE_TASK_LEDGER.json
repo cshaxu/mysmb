@@ -34940,8 +34940,8 @@
     {
       "label": "DuplicateEnemyObj",
       "line": 8551,
-      "receiver": "M2 T39 S1",
-      "receivingBasis": "Accepted transfer-173: Bowser/flame initializer chain and dependency.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P114 duplicate-object original zero-page X address correction.",
       "futurePackage": null,
       "history": [
         {
@@ -34961,8 +34961,8 @@
     {
       "label": "FSLoop",
       "line": 8553,
-      "receiver": "M2 T39 S1",
-      "receivingBasis": "Accepted transfer-173: Bowser/flame initializer chain and dependency.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P114 duplicate-object original zero-page X address correction.",
       "futurePackage": null,
       "history": [
         {
@@ -34982,8 +34982,8 @@
     {
       "label": "FlmEx",
       "line": 8569,
-      "receiver": "M2 T39 S1",
-      "receivingBasis": "Accepted transfer-173: Bowser/flame initializer chain and dependency.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P114 duplicate-object original zero-page X address correction.",
       "futurePackage": null,
       "history": [
         {
@@ -69894,6 +69894,19 @@
         "SChk6",
         "SLChk",
         "ExDLPl"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-p114-duplicate",
+      "type": "transfer",
+      "from": "M2 T39 S1",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "DuplicateEnemyObj",
+        "FSLoop",
+        "FlmEx"
       ],
       "acceptedBy": "Coordinator under owner same-S repair mandate.",
       "evidence": "docs/proposals/m2/t70-final-current-certification.md"
