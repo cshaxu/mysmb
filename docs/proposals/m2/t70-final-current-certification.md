@@ -6123,3 +6123,103 @@ Current src/game/boot.c normalizedSHA256:5ed50c00b7848387b4798e2f658e21110396b16
 Current src/game/scroll.c normalizedSHA256:f4f7b0df4a870cb31290309652d043e536a375334702f7f2eda73a561fba3036.
 
 Current src/game/area/area_data.c normalizedSHA256:9f4d6fbb22af69b28977276ff999484956c3db3e859ee15cc6e915356b4b6176.
+
+## S17 P37 scope amendment - style ledge and rope child lifetimes
+
+Exact auditparticipants:`AreaStyleObject`,`TreeLedge`,`MidTreeL`,`EndTreeL`,`MushroomLedge`,`EndMushL`,`AllUnder`,`NoUnder`,`PulleyRopeObject`,`RenderPul`,`MushLExit`,`EndlessRope`,`BalancePlatRope`,`DrawRope`.
+
+73 instructions/20 directRAM sites,9740-97CE and99D0-99EB;shared area.c style ledge/pulley/endless/balance rope owners. Real JumpEngine state publisher(P15),attributes/length/UnderPart(P33),cannon(P35) retained as explicit dependencies. Reconcile cached oldlength versus actual childstores,06 roles/halflength,07row,save/restore slot around blanking and zero/nonzero page-column gates. 12 added auditparticipants,S17 scope470,fresh0/max1992.
+
+Original returning entries and unchanged native private entry bodies compare fullRAM;actual source children,no mocks. Style0-2,slot0-2=RAM08,cannonring0-5,alloldlengthbytes,independenthalflength bytes,original34 pointer views/cursorwrap. Native style-dispatch adapter selects same already-decoded large-object entry with classification arguments;original AreaStyleObject root starts after that classification. Actual area parser parent receipts remain for decoder reachability;direct fixtures do not claimallnormalgame states. Physicalpush exclusions only,2048 batches/128MiB/120seconds perprocess,rawcleanup ignoredbuild. No code repair without exactchain amendment/threeproducts/re-audit. Owner final overnight boundary remains in force,no new full-project round.
+
+## S17 P37 checkpoint - style ledge and rope child lifetimes reconciled
+
+14 admitted labels,73 instructions/20 directRAM sites assigned12 manually
+reviewed clauses;12 new auditparticipants,S17 scope470/fresh0/max1992.
+49840 actual original returning parents EACH currentx86/x64 zero completeRAM
+differences;all73 scopePC observed. Native ignored currentarea.c copy only
+removesstaticlinkage on5 entry declarations/definitions;unchanged bodies
+and actualJumpEngine/attribute/length/render/cannon children. No mocks,
+ROMpatches,sourcePCnativeinjection or between-call RAMedits. Only actual
+originalphysicalpushbytes excluded;slot/length/metatile consumerlifetimes
+separatelyreviewed,not excluded. VoidparentfinalCPUregisters/flags notnative
+API;requiredchildcarry/Y/Xconsumption reconciled in concrete clauses.
+
+| Fixture family | Actual original roots perwidth |
+| --- | --- |
+| tree-mushroom | 36864 |
+| style-dispatch | 4608 |
+| pulley | 768 |
+| ledge-pointer-wrap | 2448 |
+| balance-rope | 4896 |
+| endless-rope | 256 |
+
+Tree/mushroom coverall256 oldlengths/3 slots/6 independenthalflengthbytes/
+zero-or-nonzero page-column/twooverlayclasses/twoentries. Style dispatch
+coversall256oldlengths/3slots/styles0-2/twostartpositions,cannonring0-5.
+Pulleycoversalloldlengths/3slots;pointer supplement34 originalviews/8cursor
+boundaries/3slots/threeentries. Balance covers34views/8cursors/3slots/6
+overlaypriorities,endlesscoversall256 existingmetatilebytes.
+
+Style native adapter passes classificationarguments first0/second10 solely
+to enter the already-decoded large style branch. Originalroot starts at9740
+afterclassification;the same RAM/cursor/children thenexecute. This is not
+proof that everycontrolledfixture is decoder-reachable. Current P28 real
+parser-parentmanifest retained for its actual source/decoder/outputcontract.
+
+| Clause | Original instructions | Alias/lifetime disposition |
+| --- | --- | --- |
+| D1 | 9740-9743 | Actual AreaStyle0733 selects0/1/2 sourceJumpEngine table9746 (JSR savedreturn9745 plus1) ->tree/mushroom/cannon. Current applier publishesactual04-07 atsamecall theninvokes realchild. P15 kernel receipt retained;direct nativeadapter first0/second10 onlyselects this alreadydecoded largeentry andwritesnoRAM. Source root starts atcallee9740,not decoder;actual decoderparent reachability remains P28 scopedmanifest. AreaType1 validguard andslotX=RAM08 admitted. |
+| T1 | 974c-9764 | Real attributes writes07/returnsdecodedlengthY,doesnotwriteRAM0730+slot. Thusnative oldlengthcapturedbeforechild equals sourceafterchildread. Old0end,positive middle,negative initializesactualslot withY andtestsCurrentPage0725 ORColumn0726;atbeginning0 middleotherwiseleftcap16. SourceY survivesLDA/BPL untilTYA;native returnedlengthlocal same. Slots0-2 arrayscannotalias07/coordinates/staging. |
+| T2 | 9767-9770 | Middle tree loadsactual07row andunconditionallywrites17;native cachedrow equals07 since nointerveningwriter. UnderPart thenstartsrow+1 withheight15/tile4C,priority onlybelowcap. Directcapoverwrite deliberatelynot convertedinto UnderPartpriority. |
+| T3 | 9773-9775 | Treeend selects18 andNoUnder actualrow07/height0. Native samebranch on oldlength0;attribute remainsdecoded,doesnotinitializezero length. Source decoderowns laterdecrement,notthishelper. |
+| M1 | 9778-9788 | Actual CheckLargeLengthreturnsdecodedY andinitcarry,thenactual06=Y beforebranch. Initpath reloadsnewlystored0730+slot,LSR ->0736+slot half,select19. Native localdecodedlength equalsactualnewlength because helperstoresit andno writerintervenes;06publishedbeforehalfstore/render. Halfarray0736-738 disjointheight0735/length730-732/row07. |
+| M2 | 978b-97a0 | No-init source actualslot length staysoldbyte,so native precoordinate cachedold valid. Old0 selects1B;otherwise half0736+slot replaces06,actual07row thenunconditional1Acap. SourceYoldlengthsurvivesLDA/STA/LDX andCPY06 exactbyteequality pickscenter. Native oldlength/actual06same,staging06A1+row cannotalias06/07/half. Source06initialdecoded value intentionallyoverwrittenonlynonzero continuingbranch. |
+| M3 | 97a2-97a8 | Centerwrites4F atrow+1 thenholdsA50 acrossAllUnder torealrenderrow+2,height15. Native sameunconditionalstemtop andpriority-renderedstem;row0-15 directstaging+2bounded,not everynormalgame reachable row asserted. |
+| U1 | 97aa-97b4 | AllUnder incrementscurrentX thenY15;NoUnder reloadsactual07 thenY0. Native explicit(row+1or+2,height15)/(row,height0) same. Source metatileA survivesindex/Ymoves;C parameter/local surviveschildren. P33 actual UnderPart loop/priority/heightRAMreceipt retained. |
+| P1 | 97ba-97ce | Pulley child returnsinitcarry;left42 oninit,elseactualslotnonzero41,zero43. Native cachedold beforechild onlyusedwhennoinit,where childdoesnotwriteslot;thereforeactualafterchildvalue identical. Directstoretop06A1 unconditional,no UnderPartcall/heightwrite. Immutable3 tablebytes validatedoriginalROM;sourceYindex chosen0/1/2. |
+| R1 | 99d0-99d4 | EndlessRope entersDrawRope X0/Y15 withA40. Native exact(row0,height15,tile40) actualrender;all13rows undergooriginalpriority,not directmemset. Originalactualheight0735 retainedfromloop. |
+| R2 | 99d7-99e7 | Source TXA/PHA savescaller slotX beforeblankingUnderPart row1/height15/tile44;PLA/TAX restoresX beforeattributescall,thenX1. Native RAM08 slot isread afterblanking;blankingstaging06A2-06AD andheight0735 cannotalias08,so sameoriginalsavedslot. Attrchild suppliesdecodedY;native returnedheightlocal andactual07sideeffect. Bothrealrenderscompose,no between-call RAMreset. |
+| R3 | 99e9-99eb | DrawRope loadsA40 andtailcalls UnderPart with caller Xrow/Yheight. Native helperexplicitparametersrepresentthoseCPUvalues;balance startsrow1/decodedheight,endlessrow0/15. Firstblanking canpreservemiddletiles17/1A;secondrope priorityreadsactualpostblankbuffer,not originalprecopiedbuffer. |
+
+1126406 assertions include3 dispatchtargets/3 pulleybytes,65536 page-column
+ORpredicates,8192 treeold/decodedlength/startchoices,1048576 mushroom old/
+decodedlength/halfchoices and4096 pulleydecisions. Static checker originally
+used savedJSRreturn9745 as tablebase;sourcePC9743+3 derives actual9746,
+matching P15 publisher's savedreturn+1 rule. Corrected checker passes,
+no product or runtime comparison discrepancy. These scalar/accounting
+checks supplement manualclauses,not automatic whole-program proofs.
+
+Six missing actual local paths970-975:
+
+970: GetLrgObjAttrib -> TreeLedge; Y decoded length across old-length and sign checks. 9bc9 TAY ->9bca RTS ->974f LDA0730+slot/9752 BEQ/9754 BPL ->9756 TYA/9757 STA0730+slot whennegative. LDA/branches do notmodifyY;native decodedlengthlocal survives andinitializesactualslot. Attributes07store disjointlength730-732.
+
+971: GetLrgObjAttrib -> MidTreeL; RAM0007 decoded ledge row after length and start-position decisions. 9bc2 STA07 ->974f oldlength/sign/possiblelengthstore ->975A page/columnOR ->9767 LDX07. Interveningreadonlycoordinates andslot730-732write cannotalias07;native rowcapturedafterattributechild equalslateractualsource reload.
+
+972: ChkLrgObjFixedLength -> MushroomLedge; RAM0730-0732 newly initialized length reloaded for half-length. 9bb6 STA0730+slot/SEC ->977b STY06 ->977d carrybranch ->977f LDA0730+slot ->9782 LSR/9783 halfstore. STY06 cannotalias730-732;helperreturnedY equalsnewslot byte. Native lengthlocal>>1 matchesactualoriginalreload without assumingprecalloldlength.
+
+973: EndMushL -> EndMushL; RAM0006 half-length store to center comparison. 9792 LDA0736+slot ->9795 STA06 ->9797 LDX07/9799 LDA1A/979b stage06A1+rowwrite ->979e CPY06. Stagingrow0-15 disjoint06;sourceYoldresidentlength unchanged;native actual06 write/reload andcachedold same because noinitchild leaveslengthunchanged. This local self-path is actualstore/read,not a cartesian event pair.
+
+974: BalancePlatRope -> GetLrgObjAttrib; X object slot saved across blanking render. 99d7 TXA/99d8 PHA ->blanking99DF realUnderPart ->99e2 PLA/99e3 TAX ->99e4 realattributes. Native readsRAM08 slotafterblanking;blanking onlystage06A2-06AD/height0735writes,not08. Source Xslot=RAM08 admitted,so savedslot selectsidenticalcursor despiteUnderPartCPU Xchanges.
+
+975: GetLrgObjAttrib -> DrawRope; Y decoded rope extent across fixed starting-row load. 9bc9 TAY ->9bca return99e7 LDX1 ->99e9 LDA40 ->99eb JMPUnderPart. LDX/LDA preserveY;native returnedheightlocal passedbyvalue,row1/tile40. Secondrender consumesactualpostblanking staging,not an earliercopiedbuffer.
+
+The continuingMushroomLedge initial06 decoded-lengthstore is overwritten
+withhalf beforeCPY;its old value is not credited as consumed on that path.
+Initialized/endbranches retain06 asdeclaredRAMoutput butdo not invent a
+same-parent read or cross-frame edge. Half-arraytofutureframe producer is
+not inferred from standalone roots. P15 dispatcher/P33 leaves/P35 cannon
+dependencies retained. No node/controlpromotion or product sourcechange.
+All3 P28 hashesunchanged;strictC90 probes linkbothwidths,P28 actual10checks
+each/six600-frame regressions retained;DOS OpenNT compile/link only.
+2048-case/128MiB/120seconds perprocess,rawrecords deletedafterbatch.
+Fournegative accounting and governance gates pass,no protecteddata tracked.
+
+Complete local1646/10691 instructions and503/3773 directRAM receipts;
+9045 otherinstructions/3270 otherRAM clauses requireexact retainedjoins or
+missingclause proof. Historical/local1992/1992,controls4274/4274(raw4342,
+infeasible68) unchanged,material975 partial,totalunknown. S17/fourfinal
+packages open,M2 NOT certified;ownerovernightboundary retained.
+
+Current area.c normalizedSHA256:827e23180ee8d409c3fcd3f12323179e62aa3151ab516bbd5b3c095925202e48.
+Current block_buffer.c normalizedSHA256:8663c142ea3951ca47de2709f127c50f270d4a7d4e136a6e2f61204f1f474f8d.

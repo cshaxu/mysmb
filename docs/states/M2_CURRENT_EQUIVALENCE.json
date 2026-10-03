@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 969,
+    "enumeratedCount": 975,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -21776,6 +21776,138 @@
         "src/game/boot.c",
         "src/game/scroll.c",
         "src/game/area/area_data.c"
+      ]
+    },
+    {
+      "id": "material-00970",
+      "producer": "GetLrgObjAttrib",
+      "consumer": "TreeLedge",
+      "storage": "Y decoded length across old-length and sign checks",
+      "feasiblePath": "9bc9 TAY ->9bca RTS ->974f LDA0730+slot/9752 BEQ/9754 BPL ->9756 TYA/9757 STA0730+slot whennegative. LDA/branches do notmodifyY;native decodedlengthlocal survives andinitializesactualslot. Attributes07store disjointlength730-732.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_style_ledge / mysmb_area_balance_platform_rope / mysmb_area_draw_rope with actual children",
+      "semanticContract": "P37 controlled style0-2/slot0-2/row0-15/byte-oldlength/half-length and actual child lifetime domains;no whole-game/cross-frame completion.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P37 checkpoint - style ledge and rope child lifetimes reconciled",
+        "9bc9 TAY ->9bca RTS ->974f LDA0730+slot/9752 BEQ/9754 BPL ->9756 TYA/9757 STA0730+slot whennegative. LDA/branches do notmodifyY;native decodedlengthlocal survives andinitializesactualslot. Attributes07store disjointlength730-732."
+      ],
+      "operationalEvidence": [
+        "49840 actual original returning parent roots each current x86/x64 zero fullRAM diff;all73 scopePC observed;1126406 scalar/table assertions;actual child/interval/alias evidence,no invented writer-event counts."
+      ],
+      "cohort": "D",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00971",
+      "producer": "GetLrgObjAttrib",
+      "consumer": "MidTreeL",
+      "storage": "RAM0007 decoded ledge row after length and start-position decisions",
+      "feasiblePath": "9bc2 STA07 ->974f oldlength/sign/possiblelengthstore ->975A page/columnOR ->9767 LDX07. Interveningreadonlycoordinates andslot730-732write cannotalias07;native rowcapturedafterattributechild equalslateractualsource reload.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_style_ledge / mysmb_area_balance_platform_rope / mysmb_area_draw_rope with actual children",
+      "semanticContract": "P37 controlled style0-2/slot0-2/row0-15/byte-oldlength/half-length and actual child lifetime domains;no whole-game/cross-frame completion.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P37 checkpoint - style ledge and rope child lifetimes reconciled",
+        "9bc2 STA07 ->974f oldlength/sign/possiblelengthstore ->975A page/columnOR ->9767 LDX07. Interveningreadonlycoordinates andslot730-732write cannotalias07;native rowcapturedafterattributechild equalslateractualsource reload."
+      ],
+      "operationalEvidence": [
+        "49840 actual original returning parent roots each current x86/x64 zero fullRAM diff;all73 scopePC observed;1126406 scalar/table assertions;actual child/interval/alias evidence,no invented writer-event counts."
+      ],
+      "cohort": "D",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00972",
+      "producer": "ChkLrgObjFixedLength",
+      "consumer": "MushroomLedge",
+      "storage": "RAM0730-0732 newly initialized length reloaded for half-length",
+      "feasiblePath": "9bb6 STA0730+slot/SEC ->977b STY06 ->977d carrybranch ->977f LDA0730+slot ->9782 LSR/9783 halfstore. STY06 cannotalias730-732;helperreturnedY equalsnewslot byte. Native lengthlocal>>1 matchesactualoriginalreload without assumingprecalloldlength.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_style_ledge / mysmb_area_balance_platform_rope / mysmb_area_draw_rope with actual children",
+      "semanticContract": "P37 controlled style0-2/slot0-2/row0-15/byte-oldlength/half-length and actual child lifetime domains;no whole-game/cross-frame completion.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P37 checkpoint - style ledge and rope child lifetimes reconciled",
+        "9bb6 STA0730+slot/SEC ->977b STY06 ->977d carrybranch ->977f LDA0730+slot ->9782 LSR/9783 halfstore. STY06 cannotalias730-732;helperreturnedY equalsnewslot byte. Native lengthlocal>>1 matchesactualoriginalreload without assumingprecalloldlength."
+      ],
+      "operationalEvidence": [
+        "49840 actual original returning parent roots each current x86/x64 zero fullRAM diff;all73 scopePC observed;1126406 scalar/table assertions;actual child/interval/alias evidence,no invented writer-event counts."
+      ],
+      "cohort": "D",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00973",
+      "producer": "EndMushL",
+      "consumer": "EndMushL",
+      "storage": "RAM0006 half-length store to center comparison",
+      "feasiblePath": "9792 LDA0736+slot ->9795 STA06 ->9797 LDX07/9799 LDA1A/979b stage06A1+rowwrite ->979e CPY06. Stagingrow0-15 disjoint06;sourceYoldresidentlength unchanged;native actual06 write/reload andcachedold same because noinitchild leaveslengthunchanged. This local self-path is actualstore/read,not a cartesian event pair.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_style_ledge / mysmb_area_balance_platform_rope / mysmb_area_draw_rope with actual children",
+      "semanticContract": "P37 controlled style0-2/slot0-2/row0-15/byte-oldlength/half-length and actual child lifetime domains;no whole-game/cross-frame completion.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P37 checkpoint - style ledge and rope child lifetimes reconciled",
+        "9792 LDA0736+slot ->9795 STA06 ->9797 LDX07/9799 LDA1A/979b stage06A1+rowwrite ->979e CPY06. Stagingrow0-15 disjoint06;sourceYoldresidentlength unchanged;native actual06 write/reload andcachedold same because noinitchild leaveslengthunchanged. This local self-path is actualstore/read,not a cartesian event pair."
+      ],
+      "operationalEvidence": [
+        "49840 actual original returning parent roots each current x86/x64 zero fullRAM diff;all73 scopePC observed;1126406 scalar/table assertions;actual child/interval/alias evidence,no invented writer-event counts."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00974",
+      "producer": "BalancePlatRope",
+      "consumer": "GetLrgObjAttrib",
+      "storage": "X object slot saved across blanking render",
+      "feasiblePath": "99d7 TXA/99d8 PHA ->blanking99DF realUnderPart ->99e2 PLA/99e3 TAX ->99e4 realattributes. Native readsRAM08 slotafterblanking;blanking onlystage06A2-06AD/height0735writes,not08. Source Xslot=RAM08 admitted,so savedslot selectsidenticalcursor despiteUnderPartCPU Xchanges.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_style_ledge / mysmb_area_balance_platform_rope / mysmb_area_draw_rope with actual children",
+      "semanticContract": "P37 controlled style0-2/slot0-2/row0-15/byte-oldlength/half-length and actual child lifetime domains;no whole-game/cross-frame completion.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P37 checkpoint - style ledge and rope child lifetimes reconciled",
+        "99d7 TXA/99d8 PHA ->blanking99DF realUnderPart ->99e2 PLA/99e3 TAX ->99e4 realattributes. Native readsRAM08 slotafterblanking;blanking onlystage06A2-06AD/height0735writes,not08. Source Xslot=RAM08 admitted,so savedslot selectsidenticalcursor despiteUnderPartCPU Xchanges."
+      ],
+      "operationalEvidence": [
+        "49840 actual original returning parent roots each current x86/x64 zero fullRAM diff;all73 scopePC observed;1126406 scalar/table assertions;actual child/interval/alias evidence,no invented writer-event counts."
+      ],
+      "cohort": "D",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00975",
+      "producer": "GetLrgObjAttrib",
+      "consumer": "DrawRope",
+      "storage": "Y decoded rope extent across fixed starting-row load",
+      "feasiblePath": "9bc9 TAY ->9bca return99e7 LDX1 ->99e9 LDA40 ->99eb JMPUnderPart. LDX/LDA preserveY;native returnedheightlocal passedbyvalue,row1/tile40. Secondrender consumesactualpostblanking staging,not an earliercopiedbuffer.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_style_ledge / mysmb_area_balance_platform_rope / mysmb_area_draw_rope with actual children",
+      "semanticContract": "P37 controlled style0-2/slot0-2/row0-15/byte-oldlength/half-length and actual child lifetime domains;no whole-game/cross-frame completion.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P37 checkpoint - style ledge and rope child lifetimes reconciled",
+        "9bc9 TAY ->9bca return99e7 LDX1 ->99e9 LDA40 ->99eb JMPUnderPart. LDX/LDA preserveY;native returnedheightlocal passedbyvalue,row1/tile40. Secondrender consumesactualpostblanking staging,not an earliercopiedbuffer."
+      ],
+      "operationalEvidence": [
+        "49840 actual original returning parent roots each current x86/x64 zero fullRAM diff;all73 scopePC observed;1126406 scalar/table assertions;actual child/interval/alias evidence,no invented writer-event counts."
+      ],
+      "cohort": "D",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
       ]
     }
   ],
@@ -166564,24 +166696,25 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P33 checkpoint - shared area leaf lifetimes and return ABI reconciled",
         "docs/proposals/m2/t70-final-current-certification.md S17 P34 checkpoint - row column and castle-object parent handoffs reconciled",
         "docs/proposals/m2/t70-final-current-certification.md S17 P35 checkpoint - cannon staircase spring block and hole handoffs reconciled",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P37 checkpoint - style ledge and rope child lifetimes reconciled"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 1573,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 9118,
+        "localInstructionReceiptSites": 1646,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 9045,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 483,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 3290,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 503,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 3270,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
         "directExternalQueueWriterPaths": 48,
         "pendingDirectRamOwners": {
-          "src/game/area.c": 146,
           "src/game/player.c": 138,
           "src/game/oam/normal_enemy_gfx.c": 128,
+          "src/game/area.c": 126,
           "src/game/terminal_modes.c": 81,
           "src/game/oam/player_gfx.c": 81,
           "src/game/enemy/firebar.c": 79,
@@ -166709,7 +166842,7 @@
           "src/game/oam/normal_enemy_gfx.c and src/game/oam/sprite_row.c": 1,
           "src/game/oam/sprite_row.c and src/game/oam/sprite_draw.c": 1
         },
-        "materialPathsEnumerated": 969,
+        "materialPathsEnumerated": 975,
         "globalMaterialPathDenominator": "unknown",
         "nodeOrControlPromotion": 0,
         "scope": "Retained scoped receipts and named open material obligations;not new global audit,whole-program proof or new material denominator."

@@ -766802,7 +766802,19 @@
         "SetInitNTHigh",
         "SetSecHard",
         "CheckHalfway",
-        "GetScreenPosition"
+        "GetScreenPosition",
+        "TreeLedge",
+        "MidTreeL",
+        "EndTreeL",
+        "MushroomLedge",
+        "EndMushL",
+        "AllUnder",
+        "NoUnder",
+        "PulleyRopeObject",
+        "MushLExit",
+        "EndlessRope",
+        "BalancePlatRope",
+        "DrawRope"
       ],
       "baseline": 1992,
       "incomingComplete": [
