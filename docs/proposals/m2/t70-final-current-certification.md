@@ -315,3 +315,103 @@ only neutral evidence retained. Unrelated I/O/presentation work preserved.
 | mysmb16.exe | 258639 | 6fa441e6c48d194618a54e367736b774c453525f7df3f5b2320cd1593c124ad9 |
 | mysmb32.exe | 372187 | aa19d23f795d47aad6b7e54336ad4887c48707db881d947423e4de7d99736681 |
 | mysmb64.exe | 379222 | 83158827aa92f8ec334ddc4967254ed90a7c27ac7842ccc3f2596eb0339152a9 |
+
+## S3 P1 admission - current source provenance reconciliation
+
+Infrastructure audit with empty node scope,expected/actual fresh0,max1992.
+Concrete missing evidence:historic C ROM-address annotations have not been
+reconciled against the corrected byte-bound listing. Audit all342 numeric
+ROM range comments and adjudicate25 flagged label/range candidates,including
+call-site,vector/table and child references that are not entry claims. Correct
+only proven wrong provenance comments in shared game sources;no game control,
+RAM/table read/write,constant or platform modification. Check the early
+VRAM low/high/buffer annotations separately even though the first-label scan
+does not flag them. This is source freshness infrastructure,not a cross-owner
+semantic implementation chain or node-credit lifecycle. No custody transfers.
+
+Before/after comment-stripped C tokens must be identical for every changed
+source. Original ROM/listing is owner-local,byte-bound and nonredistributable;
+no protected byte data imported. Existing per-node semantic proof stays
+retained,not newly certified by annotation matching. Any actual executable
+constant/table/logic discrepancy requires a bounded exact owning-chain packet
+before repair. The historic inline-data debt stays open until numeric C data
+bindings as well as annotations have been exhaustively reconciled.
+
+Operational track:focused shared frame/title/provenance tests,all existing
+x86/x64 CTests,product builds and original OpenNT DOS16 link,purity and3
+refreshed EXEs because source files change. ROM track:corrected ASM byte
+binding,each changed annotation's actual label/range and identical C tokens;
+retained S2 normal NMI/original parser proof is unchanged by comments. No new
+route/branch/node/control/material credit. Neutral audit summaries/scripts
+and logs stay ignored under build,no raw trace needed. Standing owner local
+commit authorization;no push. Current1992/1992 exact nodes,4276/4276 feasible
+controls(raw4342,infeasible66),557/557 material partial;historical1992 separate.
+T70 remains open. Similar-issue sweep records every25 candidate disposition
+and additional mixed-table comments,not blind label/range replacement.
+
+## S3 P1 closure - corrected current provenance without semantic changes
+
+Empty infrastructure scope closed;expected/actual fresh0,no scoped node
+credit,deferral or transfer. Current exact1992/1992 nodes,4276/4276 feasible
+controls(raw4342,infeasible66),557/557 material partial;historical1992 separate.
+T70 remains open;source-name/range checks are not final semantic certification.
+
+All342 numeric ROM range comments scanned. All25 flagged candidates received
+manual source-bound disposition:14 incorrect entry/range claims corrected,
+11 legitimate caller/vector/table/child references retained. Additional VRAM
+low/high/buffer addresses corrected and title/menu/start multi-address claim
+clarified.16 comment edits in8 shared files;every changed source retains its
+identical comment-stripped executable C token stream. No data constant,game
+control,read/write,ABI or platform change. No new original execution credit.
+
+| Corrected claim | Original bound address/range |
+| --- | --- |
+| PutBlockMetatile | 8a97-8acc;RemBridge successor8acd |
+| RemBridge | 8acd |
+| SetVRAMAddr_A | 85c5 |
+| RenderAreaGraphics | 88ae-8969;RenderAttributeTables successor896a |
+| MoveD_EnemyVertically | bf63 |
+| OffscreenBoundsCheck | d67a |
+| PauseRoutine | 8182-81c5;SpriteShuffler successor81c6 |
+| VictoryMode | 838b |
+| WriteBufferToScreen / UpdateScreen | 8e92 / 8edd |
+| KillEnemyAboveBlock | e18e |
+| IconDataRead | 8327 |
+| ResetTitle | 82c9 |
+| ClearBounceFlag | e1ef |
+| InitFireballExplode | e1f4 |
+| VRAM low / high / buffer-offset | 805a / 806d / 8080 |
+| Title / menu / StartGame clarification | 8231 / 8245 / 8255 |
+
+Valid-reference dispositions:area.c row15 JumpEngine child reference;
+blocks/bump.c explicit BDBD JSR call-site;dispatcher.c GameRoutines caller
+prefix;enemy/frenzy.c frenzy vector;enemy/init.c initializer targets;
+enemy/init_targets.c PosPlatform low/high tables;enemy/normal.c actor vectors;
+engine_slots.c ProcFireball_Bubble caller schedule;engine_tail.c interior
+GameEngine branch range;player.c X_Physics range with separate animation child;
+title_modes.c mixed title/menu/start entries clarified. They are not wrong
+child-entry constants and were not blindly relocated to the child's address.
+
+Operational track:current Win32 x86/x64 product builds and original OpenNT
+DOS16 link pass,248 existing CTests per width pass including platform purity
+and product self-test. Existing test binaries cover unchanged executable
+semantics;current product builds independently recompile the comment-changed
+sources. Before replacing S2 products,the x86/x64 .text/.data/.rdata/.bss
+section hashes are identical and the DOS16 EXE is wholly byte-identical.
+Thus S2 original parser and six600-frame route evidence stays applicable to
+these unchanged executable contents;no short replay is promoted to full
+end-to-end evidence. DOS graphical runtime/486 qualification stays M3/M4.
+All3 fresh products copied;DOS16 has no binary diff because bytes identical.
+
+Historic inline-data debt remains open:the name/range heuristic does not
+certify unflagged comments or executable numeric PRG/table bindings. Next
+source-order work must reconcile those actual bindings and complete feasible
+material enumeration,fresh route matrix and gameplay/death/warp/completion.
+Only neutral source/identity summaries retained under ignored build,no raw
+trace/third-party import or push. Unrelated work preserved.
+
+| Product | Bytes | SHA256 |
+| --- | --- | --- |
+| mysmb16.exe | 258639 | 6fa441e6c48d194618a54e367736b774c453525f7df3f5b2320cd1593c124ad9 |
+| mysmb32.exe | 372187 | a1d4219f9f4a768bc7d089389950a2b70d74f98b7b77afa2346c03d9fa41576e |
+| mysmb64.exe | 379222 | f45a7862b727ae16a65904fa234b3364b652b0bbf1a6e08f494f0cef7437254f |

@@ -35,14 +35,14 @@ mysmb_u8 mysmb_world_land_player_on_solid(struct mysmb_game *game,
     return 1U;
 }
 
-/* ROM $E1E0 ClearBounceFlag. */
+/* ROM $E1EF ClearBounceFlag. */
 static void mysmb_world_clear_fireball_bounce(struct mysmb_game *game,
                                               mysmb_u8 slot)
 {
     game->ram[(mysmb_u16)(0x003aU + slot)] = 0U;
 }
 
-/* ROM $E1E7 InitFireballExplode. */
+/* ROM $E1F4 InitFireballExplode. */
 static void mysmb_world_init_fireball_explode(struct mysmb_game *game,
                                               mysmb_u8 slot)
 {

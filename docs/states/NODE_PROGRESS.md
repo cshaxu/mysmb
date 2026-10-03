@@ -1,5 +1,16 @@
 # M2 ROM conformance node progress
 
+## M2 T70 S3 - closed source provenance reconciliation
+
+[Infrastructure scope and25 dispositions](../proposals/m2/t70-final-current-certification.md#s3-p1-closure---corrected-current-provenance-without-semantic-changes).
+16 provenance comments corrected/clarified in8 sources;executable C tokens
+unchanged,current Windows runtime section hashes and full DOS16 EXE match S2.
+Current product builds/OpenNT link and248 CTests each/purity pass;3 EXEs
+refreshed. Empty scope,expected/actual fresh0,no semantic promotion:
+current1992/1992 nodes,4276/4276 feasible controls(raw4342,infeasible66),
+557/557 material partial;historical1992 separate. T70 remains open;actual
+numeric data binding,material completeness and full end-to-end proof remain.
+
 ## M2 T70 S2 - closed authoritative parser cleanup
 
 [Exact29 retained labels and dual proof](../proposals/m2/t70-final-current-certification.md#s2-p1-closure---one-active-parser-and-retained-original-semantics).

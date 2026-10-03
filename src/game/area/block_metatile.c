@@ -21,7 +21,7 @@ static mysmb_u8 mysmb_area_block_gfx(struct mysmb_game *game, mysmb_u8 index)
     return game->area_prg[MYSMB_BLOCK_GFX_DATA + index];
 }
 
-/* ROM $8ab1-$8adf PutBlockMetatile -> RemBridge.  The temporary zero-page
+/* ROM $8a97-$8acc PutBlockMetatile -> RemBridge.  The temporary zero-page
  * cells are part of the ROM routine's observable machine state, so preserve
  * the source stores instead of using private C-only temporaries. */
 static void mysmb_area_put_block_metatile(struct mysmb_game *game,
@@ -124,7 +124,7 @@ void mysmb_area_replace_block_metatile(struct mysmb_game *game,
     game->ram[MYSMB_BLOCK_REPLACE_FLAG + slot]--;
 }
 
-/* ROM $8ad0 RemBridge.  BridgeCollapse supplies $04/$05 directly, while
+/* ROM $8acd RemBridge.  BridgeCollapse supplies $04/$05 directly, while
  * PutBlockMetatile supplies them through its preceding address calculation. */
 void mysmb_area_rem_bridge(struct mysmb_game *game, mysmb_u8 graphics_offset,
                            mysmb_u8 buffer_offset, mysmb_u8 address_low,

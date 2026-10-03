@@ -232,7 +232,7 @@ void mysmb_game_draw_mushroom_icon(struct mysmb_game *game)
     if (game->title_icon_data == 0 || game->title_icon_data_size != 8U) {
         return;
     }
-    /* ROM $8328 IconDataRead copies MushroomIconData[7..0] to
+    /* ROM $8327 IconDataRead copies MushroomIconData[7..0] to
      * VRAM_Buffer1-1[7..0].  Keep the first data byte as the source-owned
      * Buffer1 offset instead of synthesizing it from a payload length. */
     index = 8U;
@@ -247,7 +247,7 @@ void mysmb_game_draw_mushroom_icon(struct mysmb_game *game)
     }
 }
 
-/* ROM $8224, ResetTitle. */
+/* ROM $82c9, ResetTitle. */
 void mysmb_game_reset_title(struct mysmb_game *game)
 {
     game->ram[MYSMB_RAM_OPER_MODE] = 0U;
@@ -286,7 +286,7 @@ static mysmb_u8 mysmb_game_step_title_demo(struct mysmb_game *game)
     return 0U;
 }
 
-/* ROM $8231/$8245/$8255 GameMenuRoutine.  The title menu still runs
+/* ROM $8245 GameMenuRoutine (TitleScreenMode $8231, StartGame $8255).  The title menu still runs
  * GameCoreRoutine every frame; once DemoTimer expires DemoEngine replaces the
  * latched controller byte before that common route consumes it. */
 mysmb_u8 mysmb_game_title_step(struct mysmb_game *game, const struct mysmb_input *input)

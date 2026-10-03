@@ -47,7 +47,7 @@ enum {
 
 enum { MYSMB_FRAME_GAME_ENGINE_SUBROUTINE = 0x000eU };
 
-/* ROM $805a-$8070 VRAM_AddrTable_Low/High and $8071 Buffer_Offset.  These
+/* ROM $805a/$806d VRAM_AddrTable_Low/High and $8080 Buffer_Offset.  These
  * are source CPU addresses, retained because NMI writes the selected pointer
  * to zero page before UpdateScreen consumes it. */
 static const mysmb_u8 mysmb_vram_address_low[19] = {
@@ -176,7 +176,7 @@ mysmb_u8 mysmb_game_pause_input_state(const struct mysmb_game *game)
     return MYSMB_PAUSE_INPUT_READY;
 }
 
-/* ROM $821c-$8244 PauseRoutine.  T14 later invokes this at its NMI site. */
+/* ROM $8182-$81c5 PauseRoutine, invoked at the shared NMI site. */
 mysmb_u8 mysmb_frame_root_pause_step(struct mysmb_game *game)
 {
     mysmb_u8 status;
@@ -226,7 +226,7 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
      * that selector: non-title modes never enter TitleScreenMode. */
     if (mode_before == 2U) {
         mysmb_game_step_victory(game);
-        /* ROM $8471 VictoryMode: after the selected victory leaf, task zero
+        /* ROM $838b VictoryMode: after the selected victory leaf, task zero
          * branches directly to AutoPlayer.  Every other task resets
          * ObjectOffset to zero and runs exactly one EnemiesAndLoopsCore
          * turn.  It is not GameEngine's fireball/six-slot/floatey schedule. */
@@ -369,7 +369,7 @@ void mysmb_game_shuffle_sprite_offsets(struct mysmb_game *game)
     } while (index != 0U);
 }
 
-/* ROM $8e92-$8eb6 UpdateScreen/WriteBufferToScreen at the NMI boundary.
+/* ROM $8e92/$8edd WriteBufferToScreen/UpdateScreen at the NMI boundary.
  * The buffer is owned by game routines during the preceding frame and is
  * cleared only after its terminal command has reached PPU-visible state. */
 void mysmb_game_commit_vram_buffer(struct mysmb_game *game)

@@ -172,6 +172,6 @@ void mysmb_platform_box_large(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[MYSMB_ENEMY_PAGE + slot], game->ram[MYSMB_ENEMY_X + slot]);
 }
 
-/* ROM $d91e OffscreenBoundsCheck / EraseEnemyObject.  The source uses the
+/* ROM $d67a OffscreenBoundsCheck / EraseEnemyObject.  The source uses the
  * processor carry from its byte-wise ADC/SBC sequence; retain that sequence
  * here instead of comparing host-width world coordinates. */

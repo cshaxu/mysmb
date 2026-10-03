@@ -593,7 +593,7 @@ void mysmb_objects_step_bowser_flames(struct mysmb_game *game)
         mysmb_objects_step_bowser_flames_slot(game, slot);
 }
 
-/* ROM $E164 KillEnemyAboveBlock: ShellOrBlockDefeat precedes the upward
+/* ROM $E18E KillEnemyAboveBlock: ShellOrBlockDefeat precedes the upward
  * velocity write.  This stays shared game logic for every target. */
 void mysmb_objects_kill_enemy_above_block(struct mysmb_game *game,
                                           mysmb_u8 enemy_slot)

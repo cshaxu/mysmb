@@ -159,7 +159,7 @@ void mysmb_enemy_init_lakitu_spiny_frenzy(struct mysmb_game *game,
     game->ram[MYSMB_ENEMY_STATE + slot] = 5U;
 }
 
-/* ROM $bb28 MoveD_EnemyVertically, selected by Enemy_State=$05 for eggs. */
+/* ROM $bf63 MoveD_EnemyVertically, selected by Enemy_State=$05 for eggs. */
 void mysmb_enemy_step_spiny_eggs_slot(struct mysmb_game *game, mysmb_u8 slot)
 {
     struct mysmb_enemy_terrain terrain;

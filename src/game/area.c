@@ -520,7 +520,7 @@ mysmb_u8 mysmb_area_sync_player_palette(struct mysmb_game *game)
     return mysmb_area_queue_player_palette(game);
 }
 
-/* ROM $8567 SetVRAMAddr_A selects one of the four static area palette streams.
+/* ROM $85c5 SetVRAMAddr_A selects one of the four static area palette streams.
  * The bound owner-local PRG is the source; no palette bytes enter tracked C. */
 mysmb_u8 mysmb_area_apply_palette(struct mysmb_game *game, mysmb_u8 area_type)
 {
@@ -703,7 +703,7 @@ mysmb_u8 mysmb_area_render_scenery_terrain_column(struct mysmb_game *game)
     return 1U;
 }
 
-/* ROM $88ae-$889c RenderAreaGraphics.  The original writes two vertical
+/* ROM $88ae-$8969 RenderAreaGraphics.  The original writes two vertical
  * tiles for every metatile into VRAM_Buffer2, then accumulates seven
  * attribute bytes for RenderAttributeTables. */
 mysmb_u8 mysmb_area_render_graphics(struct mysmb_game *game)
