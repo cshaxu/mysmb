@@ -2810,3 +2810,65 @@ Local reproducible producers are run-header-bindings.py,pointer-domain-bindings.
 and music-reader-domains.py beneath the S16 build directory. The original
 reference probe and product sources remain unmodified;unrelated owner work
 is preserved,no ROM/data import and no push.
+
+## S16 P4 checkpoint - grouped helper and output-resource bindings
+
+Continue the same bindings S,no new audit round. No product source diff or
+artifact refresh. Historical1992/1992;local scoped nodes1992/1992 and
+controls4275/4275(raw4342,infeasible67);material625 partial,total unknown.
+No node/control/material promotion. S16/T70 remain open.
+
+Reconciled37 caller address contracts across11 actual resource helpers:
+background_data,data_at,mysmb_bubble_lookup,climbing_byte,pipe_byte,terrain_byte,
+mysmb_block_adder,collision_mask,bowser_identity,threshold and contact_data.
+Each fixed original CPU/PRG base plus every8-bit index remains inside full
+PRG;native address subtraction/addition agrees. Original source locations
+and table bindings reuse the P2/P3 manifests. Climbing table-1,terrain interior
+de04 and conditional SetBitsMask/ClearBitsMask bases are explicit. Production
+must bind the full PRG;resource-free fallback array domains remain limited,
+and their unit-test compatibility is not a new production route certificate.
+Bubble's normal two-byte shortcuts retain P2 original byte bindings;aliases
+use bound PRG. Firebar,fly-cheep,small-platform,staircase and hidden-1UP data
+address contracts retain original pointer/table origins and their prior
+scoped owner/index/branch receipts,not a blanket all-state certification.
+
+Player graphics source bases retain original symbolic operands/interiors;
+all8-bit indexed addresses stay in full PRG,including adjacent-table reads.
+Original DrawPlayerLoop uses PlayerGraphicsTable+1,x for its right sprite,
+not INX before its second read. Current base+tile_index+1 is correct even
+at indexff;no invented index-wrap repair was made. DrawOneSpriteRow's later
+index update remains the existing T66 contract. Change-size/swim/intermediate
+bindings retain their original tables and reviewed consumers.
+
+The four JumpEngine literals are verified original JSR return operand-byte
+addresses. All256 selector values use ASL's8-bit result and two separate INY
+wraps for original target-byte reads;native scratch pointer selection agrees.
+This proves target-read addresses,not feasibility of every C dispatch route;
+existing vector/dispatch receipts retain that separate responsibility.
+
+Title generator offset1ec0 equals the original TitleScreenDataOffset;314
+bytes equal the original256-byte plus3a-byte transfer after the dummy PPU
+read. Icon PRG slice binds MushroomIconData and all8 bytes. Both native build
+trees'generated full PRG32768,CHR8192,title314 and icon8 arrays equal the
+owner ROM inputs. All CHR pattern banks/tiles/rows/planes stay within8192
+bytes. This establishes source-input origin/address bounds;scanline split,
+fine-X,sprite priority and pixel timing remain the already named pixels gap.
+No protected bytes or generated source are imported into tracked evidence.
+
+Current manifest has53/93 direct read address clauses and88/134 caller
+address clauses reconciled within declared original/bound-resource domains,
+leaving40 direct reads and46 callers. These lists overlap and do not count
+new graph edges. Remaining direct owners are area/block-metatile and area
+scenery/metatile/text/palette/object reads. Coverage/header/alias and retained
+proof applicability must still be completed before bindings closure.
+
+Operational:rebuilt six focused targets each width;block-buffer-core,
+Firebar-chain,bubble-core-chain,local-title smoke/oracle/bootstrap tests all
+pass(6 each). These are native smoke/fixture checks,not new original-ROM
+runtime proof. No DOS rebuild for audit-only work;three committed products
+byte-identical to P1. Metadata gates(node admission,registry,documentation/
+ledger and whitespace) check accounting only. Local producer and evidence
+are helper-output-bindings.py,p4-helper-output-summary.json and
+p4-binding-domains.json beneath the S16 ignored build directory.
+No new semantic mismatch found in this scoped address/source-input pass;
+no successor/global restart,push,ROM import or unrelated owner edits.

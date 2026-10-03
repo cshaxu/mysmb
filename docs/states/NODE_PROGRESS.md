@@ -13,6 +13,13 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S16 - active executable data-binding reconciliation
 
+[P4 grouped resource checkpoint](../proposals/m2/t70-final-current-certification.md#s16-p4-checkpoint---grouped-helper-and-output-resource-bindings).
+53/93 direct and88/134 caller address clauses reconciled;remaining40/46
+uses overlap.37 helper caller contracts,player graphics/vector target reads
+and native generated PRG/CHR/title/icon origin checks complete in declared
+domains.6 focused native tests each width pass;no new original runtime route,
+node/control/material credit or product source change. S16 remains open.
+
 [P3 dynamic-domain checkpoint](../proposals/m2/t70-final-current-certification.md#s16-p3-checkpoint---dynamic-header-and-stream-address-domains).
 256 original LoadHeader cases each width match all RAM/APU fields and writes;
 34 area/enemy pointer domains and21 audio read-call address contracts checked.

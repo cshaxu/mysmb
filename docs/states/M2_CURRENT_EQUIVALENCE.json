@@ -157115,7 +157115,8 @@
       "evidence": [
         "docs/proposals/m2/t70-final-current-certification.md S16 P1 checkpoint - table census and inactive-helper removal",
         "docs/proposals/m2/t70-final-current-certification.md S16 P2 checkpoint - original binding locations and extended read uses",
-        "docs/proposals/m2/t70-final-current-certification.md S16 P3 checkpoint - dynamic header and stream address domains"
+        "docs/proposals/m2/t70-final-current-certification.md S16 P3 checkpoint - dynamic header and stream address domains",
+        "docs/proposals/m2/t70-final-current-certification.md S16 P4 checkpoint - grouped helper and output-resource bindings"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",
@@ -157133,7 +157134,8 @@
         "evidence": [
           "docs/proposals/m2/t70-final-current-certification.md S16 P1 checkpoint - table census and inactive-helper removal",
           "docs/proposals/m2/t70-final-current-certification.md S16 P2 checkpoint - original binding locations and extended read uses",
-          "docs/proposals/m2/t70-final-current-certification.md S16 P3 checkpoint - dynamic header and stream address domains"
+          "docs/proposals/m2/t70-final-current-certification.md S16 P3 checkpoint - dynamic header and stream address domains",
+          "docs/proposals/m2/t70-final-current-certification.md S16 P4 checkpoint - grouped helper and output-resource bindings"
         ]
       },
       {
