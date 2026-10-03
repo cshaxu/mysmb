@@ -6223,3 +6223,121 @@ packages open,M2 NOT certified;ownerovernightboundary retained.
 
 Current area.c normalizedSHA256:827e23180ee8d409c3fcd3f12323179e62aa3151ab516bbd5b3c095925202e48.
 Current block_buffer.c normalizedSHA256:8663c142ea3951ca47de2709f127c50f270d4a7d4e136a6e2f61204f1f474f8d.
+
+## S17 P38 scope amendment - castle and pipe saved-value lifetimes
+
+Exact auditparticipants:`CastleObject`,`CRendLoop`,`ChkCFloor`,`NotTall`,`PlayerStop`,`ExitCastle`,`WaterPipe`,`IntroPipe`,`VPipeSectLoop`,`NoBlankP`,`ExitPipe`,`RenderSidewaysPipe`,`DrawSidePart`,`VerticalPipe`,`WarpPipe`,`DrawPipe`,`GetPipeHeight`.
+
+147 instructions/48 RAM sites,9806-9949;shared area.c castle/water/intro/exit/vertical pipe owners. Real P33 attribute/fixedlength/coordinate/UnderPart, P35 pool and retained InitPiranhaPlant dependencies. Reconcile savedslot/metatile/selector,05/06/07 roles,castle rowloop/counter,sideways carry/vertical return and spawn gate. 5 added auditparticipants,S17 scope475,fresh0/max1992.
+
+Actual source returning parents and unchanged native applier compare fullRAM afterrealchildren;nativeclassificationarguments selectthe same alreadydecoded entry. Controlled source entrydomains explicitly separate from decoderreachability:castle start0-10 and counter0-4/negativeinit;water/vertical rows0-11;sideexitheight2-12/counter0-3/negativeinit;introfixedheight10;verticalcounter0-1/negativeinit,usage selector00=0or7 consistentwithsecondbit3,ordinarypoolfirstfree0/4/full5. Original34 pointerviews/cursorwrap,allchildren real. Existing actual parser-parent receipts retained,not replacedbydirectfixtures. Guard equivalence outsidevalidcaller domains isnot assumed;any source-reachable counterexample requires exactscope amendment/repair/threeproducts/re-audit. Stream2048 cases below128MiB/120seconds perprocess,rawcleanup belowbuild. Owner lastovernightboundary remains;no new whole-projectround.
+
+## S17 P38 checkpoint - bounded castle and pipe child lifetimes reconciled
+
+17 admitted labels,147 instructions/48 directRAM sites assigned15 manual
+clauses;5 newlyaddedparticipants,S17 scope475/fresh0/max1992.95706 actual
+original returning parents EACH currentx86/x64 zero completeRAM diff;
+all147 originalPC observed. Onlystaticlinkage tokens onthe native applier
+declaration/definition removedinignoredcopy,bodies/realchildrenunchanged.
+No mocks,ROMpatches,sourcePCnativeinjection or between-call RAM edits.
+Only originalactualphysicalpushbytes excluded;savedslot/selector/metatile
+consumers separatelyproved. Voidnativeparent finalCPUregisters/flags
+outsideAPI;child requiredcarry/X/Y explicitlyreconciled.
+
+| Fixture family | Actual original roots perwidth |
+| --- | --- |
+| castle | 24822 |
+| water-pipe | 7200 |
+| vertical-pipe | 57600 |
+| exit-pipe | 5976 |
+| intro-pipe | 108 |
+
+Original34 pointerviews/eightcursorboundaries give197 castleviews(start0-10),
+200 water/verticalviews(row0-11),166 exitviews(height2-12). Castlecovers7
+counterrepresentatives/3 slots/2 pages/firstfree0/4/full5. Watercovers2
+oldlengths/3 slots/6 priorities. Verticalcovers4 counterrepresentatives/
+3 slots/2 usagebits/2worldgates/3poolcases/columns15/16. Exitcovers6
+counterrepresentatives/3 slots/2 priorities,intro6counter/3slots/6priorities.
+Nativeclassificationarguments select samealreadydecodedentry;originalroot
+startsafterdecoder. These are controlled ABI domains,not allgame-reachable
+states or proofs of everyoriginal callerinvariant. Existing actualP28 parser
+receipts retained with theirstated limits.
+
+| Clause | Original instructions | Alias/lifetime disposition |
+| --- | --- | --- |
+| C1 | 9806-9819 | AttributesY lowF deliberatelyreplaces07row,then fixedlength4 initializesnegativecounter. SourceXslot savedviaTXA/PHA,renderYactualcounter/Xdecoded07,06=11. Native decodedheight/slotparameters equalrequiredsavedvalues;fixedchild writes0730+slot only,disjoint07/06. Current castle cachepreservesYrowafteroverwrite,not attributefirstbyte row. |
+| C2 | 981b-9832 | ActualcastleROMtable read then directstagingwrite,X++ and06read/optionalY+=5/DEC06,stopwhenX11. Native sameactual06 androw/tableorder. Start0-10/counter0-4 usesonly55tablebytes;06equalsstartingrow afterloop. Source06zero-branch cannotbe takenbeforeexitin this domain;no newglobalinfeasiblecontrolclaim. Source savedslotPLA/TAX matches native slot survivingloop;stagingcannotalias06/07/counter. |
+| C3 | 9833-9845 | Actualpage0 skipsstop/spawn. Otherwiseactualcounter1 stopsatfloor52;counter3 stopsif07row0;othercasesfallNotTall. Native cachedheight equals07becauseonlystaging/06 changed;counter isactualreloadafterrender. Bothsource/C priority order same,not independentunorderedgates. |
+| C4 | 9847-986e | Counter2 only spawnsstarflag. OriginalGetX A savedPHA acrossFindEmpty,thenrestoredXcoordinate storedusingnewCPU Xslot. Native computescoordinateafterpoolcall;poolreadonlyRAMflags doesnotchangeCurrentColumn0726,so equal. Fullpoolreturns5 andcarryignored deliberately. EnemyX/Page/YHigh/Flag/Y/ID arraysslot0-5 disjoint07/06/column/counter;floorstore06AB disjointthem. |
+| W1 | 986f-9881 | Actualattributesrow07,thenunusedresidentlengthY read,then direct6B/6C atrow/row+1. Native omitsunusedreadwithno callback/buscontract,andwritesboth for admittedrow0-11. Source decoderrow12-15 distinctentryroutes;native row<12 guard not certified forarbitrarydirectinvalidrow. FullRAMsameactualstores,no priorityfilter. |
+| I1 | 9882-988c | Fixedlength3 andheightY10 thenrealRenderSidewaysPipe. Its source carry1 when shaftA0 (CMP0),carry0explicitCLCaftershaftrealrender. Native shafttable!=0 branchcorrespondsexactlyto !carry forvalidresident0-3,not initialfixedhelpercarry. No childwriteslength/05/06;selectedposition survives. |
+| I2 | 988e-989e | Ifshaftdrawn,sourceblankrows6down0 then VerticalPipeData[Yresident] directrow7. Native zeros0..6 withsame finalRAM androw7tableposition. Source descendingvsnativeascending clears are unobservable withinloop:no callbacks/reads ofearlierblankrow;tableimmutableandfieldsdisjoint. SourceYSavedresident restoredbyDrawSidePart beforeIntroreturn;native stablevalue parameter same. |
+| E1 | 98ab-98b0 | Exitfixedlength3 thenactualattrs;childYheight drivesSideways. Native samecallorder/attributes beforegeometry,withcounter0-3ornegativeinit,height2-12. Guards outsidetheseoriginalentrycontracts remainoutside newreceipt,not silentlyclaimedexact. |
+| S1 | 98b3-98c4 | TwoDEY ->actual05,height-2;actualcounterY ->06;X=05+1 andimmutableShaft[Y]. Native sameactual05/06 before render,source tablespositions0-3. SourceCMP0 determining carry/branch matchedby shaftnonzero predicate. 05/06 disjoint0730+slot/staging/07;oldheight andhorizontalposition roles separated. |
+| S2 | 98c6-98dc | Shaftnonzero startsrealUnderPart row0/Y05;sourcepostrenderX=height-1 for admittedheight2-12,thenCLC. Shaftzero retainsinitialXheight-1,carry1. DrawSidePart reloads06Y beforepairedimmutabletop/bottom stores. Native sameheight-1 androw+1,withstablecountercache becauseUnderPartwritesstage/0735 only. Conditionalnativebottomguard alwaystruein this admittedheightdomain. |
+| V1 | 98e5-98ef | ActualGetPipeHeight publishes06 andreturnsresidentcounterY;source00usage0 usesY0/1,nonzeroadds4. Native secondbit3 predicateadmittedconsistentwithsource00=0or7. No inferencethat arbitrary00/argumentdisagreement is legitimate. Current applierclassification selectsalreadydecodedverticalentry,source root98E5 startsafterdecoder. |
+| V2 | 98f0-9902 | SelectorY savedPHA before sourceWorld/Area OR andresidentlength/poolgates. Native selectedlocal survivesactualchildcalls. World1-1nevercreatesplant,secondcolumnlength0skip,fullregularpoolcarry1skip. SourceXslot counterread occursbeforepooloverwritesX;native callerobjectslot separatefromreturned enemy slot. |
+| V3 | 9904-9922 | GetX AbytefourASL thenCLC ADC8; pageADC0 consumescarry acrossEnemyXstore/LDApage. Native plus8 and(xresult<8) wrap carry sameallcolumns/pages. Coordinatealwaysmultiple16,maxF0,so no carry1underGetXcontract. GetY actual07row usedbeforeInitPiranha;realinitializer mutatesonly enemyarrays/speed/state/box,not05/06/07 or selectorlocal. Originalrequired writes keptsameRAM values/order. |
+| V4 | 9925-9936 | SavedselectorPLA/TAY after optionalplantchildren;sourceLDX07 thentopunconditional,INX/baseimmutabletile,LDY06/DEY toUnderPart. Native storedselectorlocal surviveschildren;actual07/06 remainstable bychildwrite-set;toprow0-11/base startsrow+1,extentbyte(h-1)&FF includesheight0->FF. RealUnderPartpriority/heightRAM retained,P33. |
+| V5 | 9939-9949 | Fixedwidth1 thenattrs;TYA&7 ->actual06,thenactualresidentlength ->Y. Native sameactualcounterinitialization beforeattribute decode,06low3bits andactualcounterreload;not useverticalheightasleft/rightselector. Counter0-1ornegativeinit admissible,otherresidentvalues not silentlyproved. |
+
+80626 assertions:75 original/currenttablebytes,55 castleorderedrowtraces,
+14080 castlepage/counter/startgates,768 fixedlengthchoices,44 shaft/carry/
+heightidentities,65536 plantX/pagecarrypairs and68 selector/heightchoices.
+GetX yieldsmultiple16,maxF0,so +8nevercarries in thisspecificcallercontract;
+no newglobal controlstatus credit. Castle06zero branch is nottakenfor
+start0-10 butall147 instructionPCs execute;unobservedoutside-domainbranch
+not claimedinfeasibleglobally. Scalars supplement manualsourceprose.
+
+Nine actual local missing paths976-984:
+
+976: GetLrgObjAttrib -> CastleObject; Y decoded castle start overwrites RAM0007. 9bc9 TAY ->return9809 STY07. Source firstbyte row intentionallydiscarded,replacedbysecondlowF;native returnedheight storedactual07 beforefixedchild. This doesnot cacheinitialattributerowby mistake.
+
+977: CastleObject -> ChkCFloor; X caller slot saved across castle row loop. 9810 TXA/9811 PHA ->realcastleloop ->9831 PLA/9832 TAX ->9838 residentlengthread. Native slotparameter survivesloop,stagingcannotaliascallerstack/local,sourceXslot=parameter0-2. Actual sourcepushbytesexcluded,butrestoredslotconsumption proven.
+
+978: GetAreaObjXPosition -> NotTall; A star-flag X coordinate saved across pool scan. 984b realGetX ->984e PHA ->984f realFindEmpty ->9852 PLA ->9853 EnemyX[newslot] store. Native computesGetXafterpool,whichreadonlyflagarraycannotchange0726column. Selectedslot0-5 fromsameprimitive,fullpoolcarryignored;actual restored coordinate matchesfullRAM.
+
+979: RenderSidewaysPipe -> IntroPipe; C shaft-presence return to optional blanking. 98c2 CMP0 ->shaftzero carry1/BEQDrawSidePart orshaftdraw98cd CLCcarry0 ->98dc return988c BCS. Sidepairedloads/stores do notmodifycarry. Native same shafttable!=0 test controlsblanking,withinresident0-3,independentfixed-initcarry.
+
+980: GetPipeHeight -> VerticalPipe; Y resident horizontal length before usage add-four. 9946 LDY0730+slot ->9949 RTS ->98e8 LDA00/98ea BEQ ->optional fourINY. Native actualresidentcounterreload andusagebit3 selection,source00consistent0or7. Height06notusedasleft/rightselector.
+
+981: WarpPipe -> DrawPipe; Y pipe selector saved across optional plant creation. 98f0 TYA/98f1 PHA ->world/area/resident/pool/coordinate/realinitializer ->9925 PLA/9926 TAY ->9929 tableindex. Native selectedvalue localstable acrosschildren;no pointeraliasto it,not recomputedfrom clobberedCPUY.
+
+982: GetPipeHeight -> DrawPipe; RAM0006 vertical extent across optional enemy children. 9944 STA06 ->sourcegates/pool/GetX/GetY/InitPiranha ->9933 LDY06/9935 DEY. Allchildwritefields enemyarrays/state/speed/box disjoint06. Native actualRAM06 reload/decrement in draw_pipe equalsoriginalbyte(h-1)&FF.
+
+983: GetLrgObjAttrib -> DrawPipe; RAM0007 pipe row through height setup and enemy creation. 9bc2 STA07 ->GetPipeHeight06store/residentreload ->warp/realenemychildren ->9927 LDX07. No07writer inbetween underrealinitializerwrite-set. Native draw_pipe reloadsactual07,savedselectorindependent.
+
+984: WarpPipe -> InitPiranhaPlant; Enemy Y coordinate produced before plant endpoint setup. 9919 GetY fromactual07 ->991c STA EnemyY+slot ->9920 IDstore ->9922 realInitPiranha. Native sameRAMYpublication thenrealinitializerreadsEnemyY tofixedlowerendpoint and subtract18 upperendpoint. Indexedarraysvalidslot0-4,scalarcoordinatecontract retained.
+
+Existing696/697/698 castle06/sideways05/06 and60/61/62 table/pool receipts
+retained,not duplicated. RealInitPiranha changesenemyphysics/state/box
+fields butnot05/06/07,savedselector orcurrentcolumn;actualfullRAM verifies
+the composedparent. Current sourcefamilyclaims remain bounded asstated.
+
+Named unresolved source-ABI clause discovered by this review:WaterPipe's
+native row<12 second-storeguard andExitPipe's height<2/bottomrow<12 guards
+have no correspondinginstructions in originalcallee. They match this
+receipt's domains,butdo not prove arbitrarylow-nibbleinputs or thecomplete
+callerinput invariant. Sidewaystoprow computedheight-1 also fails torepresent
+realUnderPartreturnedX forout-of-domainextents. Native side/castle/vertical
+staticarrays likewise requirecallerwidthbounds whereasoriginalindexedROM
+readsadjacentbytes. These missingclauses remain explicitlyopen inS17;
+no whole equivalence or observednormalplaybug is asserted. Nextsame-S
+correctivepart must probeexpandedoriginalentryinputs andrepair concrete
+differences ratherthan infer missingbounds or closeS17 with these gaps.
+
+No productsourcechangeinthisP;all3 P28 hashesunchanged,strictC90probes link
+bothwidths;P28 actual10checks each/six600-frame regressions retained;DOS
+OpenNT compile/linkonly.2048-case/128MiB/120seconds perprocess,rawrecords
+deletedafterbatch. Fournegative accounting/governancechecks pass.
+
+Complete boundedlocal1793/10691 instructions and551/3773 RAMreceipts;
+8898 otherinstructions/3222 otherRAM clauses requireexactretainedjoins or
+missingclauseproof. Historical/local1992/1992,controls4274/4274(raw4342,
+infeasible68) unchanged,material984 partial,totalunknown. S17/fourfinal
+packages remainopen,M2 NOT certified,ownerovernightboundary retained.
+
+Current area.c normalizedSHA256:827e23180ee8d409c3fcd3f12323179e62aa3151ab516bbd5b3c095925202e48.
+Current block_buffer.c normalizedSHA256:8663c142ea3951ca47de2709f127c50f270d4a7d4e136a6e2f61204f1f474f8d.
+
+Current src/game/enemy/init_targets.c normalizedSHA256:8a34758094db74077901f976a10cf8adae354645938cb4f8d3e0dc6cc8d5a5ae.

@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 975,
+    "enumeratedCount": 984,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -21908,6 +21908,213 @@
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00976",
+      "producer": "GetLrgObjAttrib",
+      "consumer": "CastleObject",
+      "storage": "Y decoded castle start overwrites RAM0007",
+      "feasiblePath": "9bc9 TAY ->return9809 STY07. Source firstbyte row intentionallydiscarded,replacedbysecondlowF;native returnedheight storedactual07 beforefixedchild. This doesnot cacheinitialattributerowby mistake.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:castle/intro/exit/vertical pipe owners and actual enemy initializer",
+      "semanticContract": "P38 admitted entrycounter/row/height domains only;raw guard equivalence and source caller invariants not certified. Source saved-value/childwrite-set joins explicit.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P38 checkpoint - bounded castle and pipe child lifetimes reconciled",
+        "9bc9 TAY ->return9809 STY07. Source firstbyte row intentionallydiscarded,replacedbysecondlowF;native returnedheight storedactual07 beforefixedchild. This doesnot cacheinitialattributerowby mistake."
+      ],
+      "operationalEvidence": [
+        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts."
+      ],
+      "cohort": "D",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/enemy/init_targets.c"
+      ]
+    },
+    {
+      "id": "material-00977",
+      "producer": "CastleObject",
+      "consumer": "ChkCFloor",
+      "storage": "X caller slot saved across castle row loop",
+      "feasiblePath": "9810 TXA/9811 PHA ->realcastleloop ->9831 PLA/9832 TAX ->9838 residentlengthread. Native slotparameter survivesloop,stagingcannotaliascallerstack/local,sourceXslot=parameter0-2. Actual sourcepushbytesexcluded,butrestoredslotconsumption proven.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:castle/intro/exit/vertical pipe owners and actual enemy initializer",
+      "semanticContract": "P38 admitted entrycounter/row/height domains only;raw guard equivalence and source caller invariants not certified. Source saved-value/childwrite-set joins explicit.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P38 checkpoint - bounded castle and pipe child lifetimes reconciled",
+        "9810 TXA/9811 PHA ->realcastleloop ->9831 PLA/9832 TAX ->9838 residentlengthread. Native slotparameter survivesloop,stagingcannotaliascallerstack/local,sourceXslot=parameter0-2. Actual sourcepushbytesexcluded,butrestoredslotconsumption proven."
+      ],
+      "operationalEvidence": [
+        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/enemy/init_targets.c"
+      ]
+    },
+    {
+      "id": "material-00978",
+      "producer": "GetAreaObjXPosition",
+      "consumer": "NotTall",
+      "storage": "A star-flag X coordinate saved across pool scan",
+      "feasiblePath": "984b realGetX ->984e PHA ->984f realFindEmpty ->9852 PLA ->9853 EnemyX[newslot] store. Native computesGetXafterpool,whichreadonlyflagarraycannotchange0726column. Selectedslot0-5 fromsameprimitive,fullpoolcarryignored;actual restored coordinate matchesfullRAM.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:castle/intro/exit/vertical pipe owners and actual enemy initializer",
+      "semanticContract": "P38 admitted entrycounter/row/height domains only;raw guard equivalence and source caller invariants not certified. Source saved-value/childwrite-set joins explicit.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P38 checkpoint - bounded castle and pipe child lifetimes reconciled",
+        "984b realGetX ->984e PHA ->984f realFindEmpty ->9852 PLA ->9853 EnemyX[newslot] store. Native computesGetXafterpool,whichreadonlyflagarraycannotchange0726column. Selectedslot0-5 fromsameprimitive,fullpoolcarryignored;actual restored coordinate matchesfullRAM."
+      ],
+      "operationalEvidence": [
+        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts."
+      ],
+      "cohort": "D",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/enemy/init_targets.c"
+      ]
+    },
+    {
+      "id": "material-00979",
+      "producer": "RenderSidewaysPipe",
+      "consumer": "IntroPipe",
+      "storage": "C shaft-presence return to optional blanking",
+      "feasiblePath": "98c2 CMP0 ->shaftzero carry1/BEQDrawSidePart orshaftdraw98cd CLCcarry0 ->98dc return988c BCS. Sidepairedloads/stores do notmodifycarry. Native same shafttable!=0 test controlsblanking,withinresident0-3,independentfixed-initcarry.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:castle/intro/exit/vertical pipe owners and actual enemy initializer",
+      "semanticContract": "P38 admitted entrycounter/row/height domains only;raw guard equivalence and source caller invariants not certified. Source saved-value/childwrite-set joins explicit.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P38 checkpoint - bounded castle and pipe child lifetimes reconciled",
+        "98c2 CMP0 ->shaftzero carry1/BEQDrawSidePart orshaftdraw98cd CLCcarry0 ->98dc return988c BCS. Sidepairedloads/stores do notmodifycarry. Native same shafttable!=0 test controlsblanking,withinresident0-3,independentfixed-initcarry."
+      ],
+      "operationalEvidence": [
+        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/enemy/init_targets.c"
+      ]
+    },
+    {
+      "id": "material-00980",
+      "producer": "GetPipeHeight",
+      "consumer": "VerticalPipe",
+      "storage": "Y resident horizontal length before usage add-four",
+      "feasiblePath": "9946 LDY0730+slot ->9949 RTS ->98e8 LDA00/98ea BEQ ->optional fourINY. Native actualresidentcounterreload andusagebit3 selection,source00consistent0or7. Height06notusedasleft/rightselector.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:castle/intro/exit/vertical pipe owners and actual enemy initializer",
+      "semanticContract": "P38 admitted entrycounter/row/height domains only;raw guard equivalence and source caller invariants not certified. Source saved-value/childwrite-set joins explicit.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P38 checkpoint - bounded castle and pipe child lifetimes reconciled",
+        "9946 LDY0730+slot ->9949 RTS ->98e8 LDA00/98ea BEQ ->optional fourINY. Native actualresidentcounterreload andusagebit3 selection,source00consistent0or7. Height06notusedasleft/rightselector."
+      ],
+      "operationalEvidence": [
+        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/enemy/init_targets.c"
+      ]
+    },
+    {
+      "id": "material-00981",
+      "producer": "WarpPipe",
+      "consumer": "DrawPipe",
+      "storage": "Y pipe selector saved across optional plant creation",
+      "feasiblePath": "98f0 TYA/98f1 PHA ->world/area/resident/pool/coordinate/realinitializer ->9925 PLA/9926 TAY ->9929 tableindex. Native selectedvalue localstable acrosschildren;no pointeraliasto it,not recomputedfrom clobberedCPUY.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:castle/intro/exit/vertical pipe owners and actual enemy initializer",
+      "semanticContract": "P38 admitted entrycounter/row/height domains only;raw guard equivalence and source caller invariants not certified. Source saved-value/childwrite-set joins explicit.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P38 checkpoint - bounded castle and pipe child lifetimes reconciled",
+        "98f0 TYA/98f1 PHA ->world/area/resident/pool/coordinate/realinitializer ->9925 PLA/9926 TAY ->9929 tableindex. Native selectedvalue localstable acrosschildren;no pointeraliasto it,not recomputedfrom clobberedCPUY."
+      ],
+      "operationalEvidence": [
+        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/enemy/init_targets.c"
+      ]
+    },
+    {
+      "id": "material-00982",
+      "producer": "GetPipeHeight",
+      "consumer": "DrawPipe",
+      "storage": "RAM0006 vertical extent across optional enemy children",
+      "feasiblePath": "9944 STA06 ->sourcegates/pool/GetX/GetY/InitPiranha ->9933 LDY06/9935 DEY. Allchildwritefields enemyarrays/state/speed/box disjoint06. Native actualRAM06 reload/decrement in draw_pipe equalsoriginalbyte(h-1)&FF.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:castle/intro/exit/vertical pipe owners and actual enemy initializer",
+      "semanticContract": "P38 admitted entrycounter/row/height domains only;raw guard equivalence and source caller invariants not certified. Source saved-value/childwrite-set joins explicit.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P38 checkpoint - bounded castle and pipe child lifetimes reconciled",
+        "9944 STA06 ->sourcegates/pool/GetX/GetY/InitPiranha ->9933 LDY06/9935 DEY. Allchildwritefields enemyarrays/state/speed/box disjoint06. Native actualRAM06 reload/decrement in draw_pipe equalsoriginalbyte(h-1)&FF."
+      ],
+      "operationalEvidence": [
+        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/enemy/init_targets.c"
+      ]
+    },
+    {
+      "id": "material-00983",
+      "producer": "GetLrgObjAttrib",
+      "consumer": "DrawPipe",
+      "storage": "RAM0007 pipe row through height setup and enemy creation",
+      "feasiblePath": "9bc2 STA07 ->GetPipeHeight06store/residentreload ->warp/realenemychildren ->9927 LDX07. No07writer inbetween underrealinitializerwrite-set. Native draw_pipe reloadsactual07,savedselectorindependent.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:castle/intro/exit/vertical pipe owners and actual enemy initializer",
+      "semanticContract": "P38 admitted entrycounter/row/height domains only;raw guard equivalence and source caller invariants not certified. Source saved-value/childwrite-set joins explicit.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P38 checkpoint - bounded castle and pipe child lifetimes reconciled",
+        "9bc2 STA07 ->GetPipeHeight06store/residentreload ->warp/realenemychildren ->9927 LDX07. No07writer inbetween underrealinitializerwrite-set. Native draw_pipe reloadsactual07,savedselectorindependent."
+      ],
+      "operationalEvidence": [
+        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts."
+      ],
+      "cohort": "D",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/enemy/init_targets.c"
+      ]
+    },
+    {
+      "id": "material-00984",
+      "producer": "WarpPipe",
+      "consumer": "InitPiranhaPlant",
+      "storage": "Enemy Y coordinate produced before plant endpoint setup",
+      "feasiblePath": "9919 GetY fromactual07 ->991c STA EnemyY+slot ->9920 IDstore ->9922 realInitPiranha. Native sameRAMYpublication thenrealinitializerreadsEnemyY tofixedlowerendpoint and subtract18 upperendpoint. Indexedarraysvalidslot0-4,scalarcoordinatecontract retained.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:castle/intro/exit/vertical pipe owners and actual enemy initializer",
+      "semanticContract": "P38 admitted entrycounter/row/height domains only;raw guard equivalence and source caller invariants not certified. Source saved-value/childwrite-set joins explicit.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P38 checkpoint - bounded castle and pipe child lifetimes reconciled",
+        "9919 GetY fromactual07 ->991c STA EnemyY+slot ->9920 IDstore ->9922 realInitPiranha. Native sameRAMYpublication thenrealinitializerreadsEnemyY tofixedlowerendpoint and subtract18 upperendpoint. Indexedarraysvalidslot0-4,scalarcoordinatecontract retained."
+      ],
+      "operationalEvidence": [
+        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/enemy/init_targets.c"
       ]
     }
   ],
@@ -166697,16 +166904,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P34 checkpoint - row column and castle-object parent handoffs reconciled",
         "docs/proposals/m2/t70-final-current-certification.md S17 P35 checkpoint - cannon staircase spring block and hole handoffs reconciled",
         "docs/proposals/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P37 checkpoint - style ledge and rope child lifetimes reconciled"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P37 checkpoint - style ledge and rope child lifetimes reconciled",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P38 checkpoint - bounded castle and pipe child lifetimes reconciled"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 1646,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 9045,
+        "localInstructionReceiptSites": 1793,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 8898,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 503,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 3270,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 551,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 3222,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -166714,10 +166922,10 @@
         "pendingDirectRamOwners": {
           "src/game/player.c": 138,
           "src/game/oam/normal_enemy_gfx.c": 128,
-          "src/game/area.c": 126,
           "src/game/terminal_modes.c": 81,
           "src/game/oam/player_gfx.c": 81,
           "src/game/enemy/firebar.c": 79,
+          "src/game/area.c": 78,
           "shared game core: enemy/balance_platform.c": 78,
           "src/game/world/player_enemy_collision.c": 72,
           "src/game/game.c": 67,
@@ -166842,7 +167050,7 @@
           "src/game/oam/normal_enemy_gfx.c and src/game/oam/sprite_row.c": 1,
           "src/game/oam/sprite_row.c and src/game/oam/sprite_draw.c": 1
         },
-        "materialPathsEnumerated": 975,
+        "materialPathsEnumerated": 984,
         "globalMaterialPathDenominator": "unknown",
         "nodeOrControlPromotion": 0,
         "scope": "Retained scoped receipts and named open material obligations;not new global audit,whole-program proof or new material denominator."

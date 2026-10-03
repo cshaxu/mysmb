@@ -766814,7 +766814,12 @@
         "MushLExit",
         "EndlessRope",
         "BalancePlatRope",
-        "DrawRope"
+        "DrawRope",
+        "WaterPipe",
+        "VerticalPipe",
+        "WarpPipe",
+        "DrawPipe",
+        "GetPipeHeight"
       ],
       "baseline": 1992,
       "incomingComplete": [
