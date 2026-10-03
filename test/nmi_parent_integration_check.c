@@ -65,10 +65,11 @@ static int check_unpaused_nmi_order(void)
         game.ppu_mask != 0x1fU || game.visible_ppu_control_0 != 0x11U ||
         game.visible_ppu_name_table != 1U || game.visible_scroll_x != 0x34U ||
         game.visible_scroll_y != 0x56U) return 3;
+    /* SpriteShuffler follows random rotation and overwrites its RAM00 scratch. */
     if (game.ram[0x0009U] != 0x25U || game.ram[0x0780U] != 2U ||
         game.ram[0x0794U] != 4U ||
         game.ram[0x07a7U] != rotate_first_byte(0x03U, 0x02U) ||
-        game.ram[0U] != 0x02U) return 4;
+        game.ram[0U] != 0x28U) return 4;
     return 0;
 }
 

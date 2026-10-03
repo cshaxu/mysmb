@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 563,
+    "enumeratedCount": 566,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -12396,6 +12396,69 @@
       "currentSourcePaths": [
         "src/game/frame_root.c"
       ]
+    },
+    {
+      "id": "material-00564",
+      "producer": "SpriteShuffler",
+      "consumer": "ShuffleLoop",
+      "storage": "preset RAM00 written28 to threshold/carry-adjusted add",
+      "feasiblePath": "Entry publishes28 before every CMP00 and overflow ADC00;no intervening RAM00 write or child call.",
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_game_shuffle_sprite_offsets RAM00 store then equivalent stable28 threshold/overflow constant",
+      "semanticContract": "Entry publishes28 before every CMP00 and overflow ADC00;no intervening RAM00 write or child call.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:source81c6-8211 full chain audit restores STA00=28;mutable amount/index aliases,carry-selected add28,byte selector increment and descending misc store order preserved."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:1024 original/current full RAM roots each width zero differences after1020 scratch00 failures before fix;all10 internal source controls actually observed;5 focused tests each,6x600 routes,current product/library builds,original OpenNT compile/link and3 fresh EXEs pass."
+      ],
+      "cohort": "A",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/frame_root.c"
+      ]
+    },
+    {
+      "id": "material-00565",
+      "producer": "ShuffleLoop",
+      "consumer": "StrSprOffset",
+      "storage": "live RAM06e1+RAM06e0 amount and carry-selected accumulator to RAM06e4+X",
+      "feasiblePath": "Descending loop reads current indexed amount for each eligible offset,performs CLC ADC then carry-only add28,before storing the result.",
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_game_shuffle_sprite_offsets live RAM sum,carry test and byte store",
+      "semanticContract": "Descending loop reads current indexed amount for each eligible offset,performs CLC ADC then carry-only add28,before storing the result.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:source81c6-8211 full chain audit restores STA00=28;mutable amount/index aliases,carry-selected add28,byte selector increment and descending misc store order preserved."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:1024 original/current full RAM roots each width zero differences after1020 scratch00 failures before fix;all10 internal source controls actually observed;5 focused tests each,6x600 routes,current product/library builds,original OpenNT compile/link and3 fresh EXEs pass."
+      ],
+      "cohort": "A",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/frame_root.c"
+      ]
+    },
+    {
+      "id": "material-00566",
+      "producer": "StrSprOffset",
+      "consumer": "SetMiscOffset",
+      "storage": "completed RAM06e9-06eb offset values to misc groups RAM06f3-06fb",
+      "feasiblePath": "After completing all15 indexed offsets,SetMiscOffset reads offsets5..7 in descending Y order and writes each value,+8,+16 to descending groups.",
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_game_shuffle_sprite_offsets first-loop stores then descending misc copy",
+      "semanticContract": "After completing all15 indexed offsets,SetMiscOffset reads offsets5..7 in descending Y order and writes each value,+8,+16 to descending groups.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:source81c6-8211 full chain audit restores STA00=28;mutable amount/index aliases,carry-selected add28,byte selector increment and descending misc store order preserved."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:1024 original/current full RAM roots each width zero differences after1020 scratch00 failures before fix;all10 internal source controls actually observed;5 focused tests each,6x600 routes,current product/library builds,original OpenNT compile/link and3 fresh EXEs pass."
+      ],
+      "cohort": "A",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/frame_root.c"
+      ]
     }
   ],
   "cohorts": [
@@ -13077,10 +13140,13 @@
       "currentCounterpart": "mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
-        "M2 T53 S1 source audit: the shared C routine preserves the descending $0e..$00 offset scan, $28 threshold/wrap addition, modulo-three amount selector, and three groups of misc-offset writes in original order."
+        "M2 T53 S1 source audit: the shared C routine preserves the descending $0e..$00 offset scan, $28 threshold/wrap addition, modulo-three amount selector, and three groups of misc-offset writes in original order.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 source audit:original entry writes preset28 toRAM00;current C has no equivalent scratch store. Prior frame ABI excludes zero page.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:source81c6-8211 full chain audit restores STA00=28;mutable amount/index aliases,carry-selected add28,byte selector increment and descending misc store order preserved."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:1024 original/current full RAM roots each width zero differences after1020 scratch00 failures before fix;all10 internal source controls actually observed;5 focused tests each,6x600 routes,current product/library builds,original OpenNT compile/link and3 fresh EXEs pass."
       ],
       "semanticContract": "Uses preset $28 and the source descending OAM-data-offset loop, then advances SprShuffleAmtOffset modulo three and populates misc sprite offsets.",
       "currentSourcePaths": [
@@ -13096,10 +13162,12 @@
       "currentCounterpart": "mysmb_game_shuffle_sprite_offsets first loop",
       "semanticEvidence": [
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
-        "M2 T53 S1 source audit: the shared C routine preserves the descending $0e..$00 offset scan, $28 threshold/wrap addition, modulo-three amount selector, and three groups of misc-offset writes in original order."
+        "M2 T53 S1 source audit: the shared C routine preserves the descending $0e..$00 offset scan, $28 threshold/wrap addition, modulo-three amount selector, and three groups of misc-offset writes in original order.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:source81c6-8211 full chain audit restores STA00=28;mutable amount/index aliases,carry-selected add28,byte selector increment and descending misc store order preserved."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:1024 original/current full RAM roots each width zero differences after1020 scratch00 failures before fix;all10 internal source controls actually observed;5 focused tests each,6x600 routes,current product/library builds,original OpenNT compile/link and3 fresh EXEs pass."
       ],
       "semanticContract": "Traverses SprDataOffset indices $0e through $00, adding the selected shuffle amount only when the offset is at least $28 and adding the preset on overflow.",
       "currentSourcePaths": [
@@ -13115,10 +13183,12 @@
       "currentCounterpart": "mysmb_game_shuffle_sprite_offsets first loop store",
       "semanticEvidence": [
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
-        "M2 T53 S1 source audit: the shared C routine preserves the descending $0e..$00 offset scan, $28 threshold/wrap addition, modulo-three amount selector, and three groups of misc-offset writes in original order."
+        "M2 T53 S1 source audit: the shared C routine preserves the descending $0e..$00 offset scan, $28 threshold/wrap addition, modulo-three amount selector, and three groups of misc-offset writes in original order.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:source81c6-8211 full chain audit restores STA00=28;mutable amount/index aliases,carry-selected add28,byte selector increment and descending misc store order preserved."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:1024 original/current full RAM roots each width zero differences after1020 scratch00 failures before fix;all10 internal source controls actually observed;5 focused tests each,6x600 routes,current product/library builds,original OpenNT compile/link and3 fresh EXEs pass."
       ],
       "semanticContract": "Stores either the unmodified low offset or the computed wrapped shuffle value before advancing to the next index.",
       "currentSourcePaths": [
@@ -13134,10 +13204,12 @@
       "currentCounterpart": "mysmb_game_shuffle_sprite_offsets loop/index transition",
       "semanticEvidence": [
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
-        "M2 T53 S1 source audit: the shared C routine preserves the descending $0e..$00 offset scan, $28 threshold/wrap addition, modulo-three amount selector, and three groups of misc-offset writes in original order."
+        "M2 T53 S1 source audit: the shared C routine preserves the descending $0e..$00 offset scan, $28 threshold/wrap addition, modulo-three amount selector, and three groups of misc-offset writes in original order.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:source81c6-8211 full chain audit restores STA00=28;mutable amount/index aliases,carry-selected add28,byte selector increment and descending misc store order preserved."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:1024 original/current full RAM roots each width zero differences after1020 scratch00 failures before fix;all10 internal source controls actually observed;5 focused tests each,6x600 routes,current product/library builds,original OpenNT compile/link and3 fresh EXEs pass."
       ],
       "semanticContract": "Decrements the offset index through zero, then advances SprShuffleAmtOffset and selects either its incremented value or reset zero.",
       "currentSourcePaths": [
@@ -13153,10 +13225,12 @@
       "currentCounterpart": "mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
-        "M2 T53 S1 source audit: the shared C routine preserves the descending $0e..$00 offset scan, $28 threshold/wrap addition, modulo-three amount selector, and three groups of misc-offset writes in original order."
+        "M2 T53 S1 source audit: the shared C routine preserves the descending $0e..$00 offset scan, $28 threshold/wrap addition, modulo-three amount selector, and three groups of misc-offset writes in original order.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:source81c6-8211 full chain audit restores STA00=28;mutable amount/index aliases,carry-selected add28,byte selector increment and descending misc store order preserved."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:1024 original/current full RAM roots each width zero differences after1020 scratch00 failures before fix;all10 internal source controls actually observed;5 focused tests each,6x600 routes,current product/library builds,original OpenNT compile/link and3 fresh EXEs pass."
       ],
       "semanticContract": "Stores the modulo-three shuffle amount selector before the misc-offset copy phase.",
       "currentSourcePaths": [
@@ -13172,10 +13246,12 @@
       "currentCounterpart": "mysmb_game_shuffle_sprite_offsets misc-offset loop",
       "semanticEvidence": [
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
-        "M2 T53 S1 source audit: the shared C routine preserves the descending $0e..$00 offset scan, $28 threshold/wrap addition, modulo-three amount selector, and three groups of misc-offset writes in original order."
+        "M2 T53 S1 source audit: the shared C routine preserves the descending $0e..$00 offset scan, $28 threshold/wrap addition, modulo-three amount selector, and three groups of misc-offset writes in original order.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:source81c6-8211 full chain audit restores STA00=28;mutable amount/index aliases,carry-selected add28,byte selector increment and descending misc store order preserved."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:1024 original/current full RAM roots each width zero differences after1020 scratch00 failures before fix;all10 internal source controls actually observed;5 focused tests each,6x600 routes,current product/library builds,original OpenNT compile/link and3 fresh EXEs pass."
       ],
       "semanticContract": "Copies SprDataOffset+5 through +7 into three groups of Misc_SprDataOffset, adding eight between each group member in source write order.",
       "currentSourcePaths": [
@@ -52370,10 +52446,12 @@
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
         "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
-        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:source81c6-8211 full chain audit restores STA00=28;mutable amount/index aliases,carry-selected add28,byte selector increment and descending misc store order preserved."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:1024 original/current full RAM roots each width zero differences after1020 scratch00 failures before fix;all10 internal source controls actually observed;5 focused tests each,6x600 routes,current product/library builds,original OpenNT compile/link and3 fresh EXEs pass."
       ],
       "semanticContract": "Original fallthrough relation SpriteShuffler -> ShuffleLoop at source line 916 (ldx) must preserve descending OAM-offset loop control, overflow selection, modulo-three selector and misc-offset copy order.",
       "currentSourcePaths": [
@@ -52392,10 +52470,12 @@
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
         "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
-        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:source81c6-8211 full chain audit restores STA00=28;mutable amount/index aliases,carry-selected add28,byte selector increment and descending misc store order preserved."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:1024 original/current full RAM roots each width zero differences after1020 scratch00 failures before fix;all10 internal source controls actually observed;5 focused tests each,6x600 routes,current product/library builds,original OpenNT compile/link and3 fresh EXEs pass."
       ],
       "semanticContract": "Original branch relation ShuffleLoop -> NextSprOffset at source line 919 (bcc) must preserve descending OAM-offset loop control, overflow selection, modulo-three selector and misc-offset copy order.",
       "currentSourcePaths": [
@@ -52414,10 +52494,12 @@
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
         "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
-        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:source81c6-8211 full chain audit restores STA00=28;mutable amount/index aliases,carry-selected add28,byte selector increment and descending misc store order preserved."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:1024 original/current full RAM roots each width zero differences after1020 scratch00 failures before fix;all10 internal source controls actually observed;5 focused tests each,6x600 routes,current product/library builds,original OpenNT compile/link and3 fresh EXEs pass."
       ],
       "semanticContract": "Original branch relation ShuffleLoop -> StrSprOffset at source line 923 (bcc) must preserve descending OAM-offset loop control, overflow selection, modulo-three selector and misc-offset copy order.",
       "currentSourcePaths": [
@@ -52436,10 +52518,12 @@
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
         "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
-        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:source81c6-8211 full chain audit restores STA00=28;mutable amount/index aliases,carry-selected add28,byte selector increment and descending misc store order preserved."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:1024 original/current full RAM roots each width zero differences after1020 scratch00 failures before fix;all10 internal source controls actually observed;5 focused tests each,6x600 routes,current product/library builds,original OpenNT compile/link and3 fresh EXEs pass."
       ],
       "semanticContract": "Original fallthrough relation ShuffleLoop -> StrSprOffset at source line 925 (adc) must preserve descending OAM-offset loop control, overflow selection, modulo-three selector and misc-offset copy order.",
       "currentSourcePaths": [
@@ -52458,10 +52542,12 @@
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
         "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
-        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:source81c6-8211 full chain audit restores STA00=28;mutable amount/index aliases,carry-selected add28,byte selector increment and descending misc store order preserved."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:1024 original/current full RAM roots each width zero differences after1020 scratch00 failures before fix;all10 internal source controls actually observed;5 focused tests each,6x600 routes,current product/library builds,original OpenNT compile/link and3 fresh EXEs pass."
       ],
       "semanticContract": "Original fallthrough relation StrSprOffset -> NextSprOffset at source line 926 (sta) must preserve descending OAM-offset loop control, overflow selection, modulo-three selector and misc-offset copy order.",
       "currentSourcePaths": [
@@ -52480,10 +52566,12 @@
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
         "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
-        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:source81c6-8211 full chain audit restores STA00=28;mutable amount/index aliases,carry-selected add28,byte selector increment and descending misc store order preserved."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:1024 original/current full RAM roots each width zero differences after1020 scratch00 failures before fix;all10 internal source controls actually observed;5 focused tests each,6x600 routes,current product/library builds,original OpenNT compile/link and3 fresh EXEs pass."
       ],
       "semanticContract": "Original branch relation NextSprOffset -> ShuffleLoop at source line 928 (bpl) must preserve descending OAM-offset loop control, overflow selection, modulo-three selector and misc-offset copy order.",
       "currentSourcePaths": [
@@ -52502,10 +52590,12 @@
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
         "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
-        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:source81c6-8211 full chain audit restores STA00=28;mutable amount/index aliases,carry-selected add28,byte selector increment and descending misc store order preserved."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:1024 original/current full RAM roots each width zero differences after1020 scratch00 failures before fix;all10 internal source controls actually observed;5 focused tests each,6x600 routes,current product/library builds,original OpenNT compile/link and3 fresh EXEs pass."
       ],
       "semanticContract": "Original branch relation NextSprOffset -> SetAmtOffset at source line 932 (bne) must preserve descending OAM-offset loop control, overflow selection, modulo-three selector and misc-offset copy order.",
       "currentSourcePaths": [
@@ -52524,10 +52614,12 @@
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
         "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
-        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:source81c6-8211 full chain audit restores STA00=28;mutable amount/index aliases,carry-selected add28,byte selector increment and descending misc store order preserved."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:1024 original/current full RAM roots each width zero differences after1020 scratch00 failures before fix;all10 internal source controls actually observed;5 focused tests each,6x600 routes,current product/library builds,original OpenNT compile/link and3 fresh EXEs pass."
       ],
       "semanticContract": "Original fallthrough relation NextSprOffset -> SetAmtOffset at source line 933 (ldx) must preserve descending OAM-offset loop control, overflow selection, modulo-three selector and misc-offset copy order.",
       "currentSourcePaths": [
@@ -52546,10 +52638,12 @@
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
         "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
-        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:source81c6-8211 full chain audit restores STA00=28;mutable amount/index aliases,carry-selected add28,byte selector increment and descending misc store order preserved."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:1024 original/current full RAM roots each width zero differences after1020 scratch00 failures before fix;all10 internal source controls actually observed;5 focused tests each,6x600 routes,current product/library builds,original OpenNT compile/link and3 fresh EXEs pass."
       ],
       "semanticContract": "Original fallthrough relation SetAmtOffset -> SetMiscOffset at source line 936 (ldy) must preserve descending OAM-offset loop control, overflow selection, modulo-three selector and misc-offset copy order.",
       "currentSourcePaths": [
@@ -52568,10 +52662,12 @@
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_shuffle_sprite_offsets",
       "semanticEvidence": [
         "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
-        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:source81c6-8211 full chain audit restores STA00=28;mutable amount/index aliases,carry-selected add28,byte selector increment and descending misc store order preserved."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants.",
+        "docs/proposals/m2/t70-final-current-certification.md S7 P1:1024 original/current full RAM roots each width zero differences after1020 scratch00 failures before fix;all10 internal source controls actually observed;5 focused tests each,6x600 routes,current product/library builds,original OpenNT compile/link and3 fresh EXEs pass."
       ],
       "semanticContract": "Original branch relation SetMiscOffset -> SetMiscOffset at source line 949 (bpl) must preserve descending OAM-offset loop control, overflow selection, modulo-three selector and misc-offset copy order.",
       "currentSourcePaths": [

@@ -12,6 +12,7 @@ static int verify_case(mysmb_u8 control, const mysmb_u8 *expected_offsets,
     mysmb_u8 index;
 
     mysmb_game_initialize(&game);
+    game.ram[0x0000U] = 0xafU;
     game.ram[0x06e0U] = control;
     game.ram[0x06e1U] = 0x10U;
     game.ram[0x06e2U] = 0x20U;
@@ -21,6 +22,7 @@ static int verify_case(mysmb_u8 control, const mysmb_u8 *expected_offsets,
 
     mysmb_game_shuffle_sprite_offsets(&game);
 
+    if (game.ram[0x0000U] != 0x28U) return 4;
     if (game.ram[0x06e0U] != (mysmb_u8)((control + 1U) % 3U)) return 1;
     for (index = 0U; index < 15U; ++index)
         if (game.ram[0x06e4U + index] != expected_offsets[index]) return 2;

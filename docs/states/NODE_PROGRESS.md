@@ -1,5 +1,17 @@
 # M2 ROM conformance node progress
 
+## M2 T70 S7 - closed original shuffle preset/material chain
+
+[Six-node closure and dual proof](../proposals/m2/t70-final-current-certification.md#s7-p1-closure---original-shuffle-preset-and-material-paths).
+Missing RAM00 preset28 restored;full byte-bound81c6-8211 range corrected;
+unpaused NMI test expects the later shuffle scratch,paused expectation retained.
+1024 original/full RAM roots each width zero diff;10 actual internal controls,
+3 source-proven material paths,5 focused tests each,6x600 frame routes,
+current targeted native builds/original OpenNT compile-link and3 EXEs pass.
+Historical1992/1992,current1992/1992 exact nodes,4276/4276 feasible controls
+(raw4342,infeasible66),material566/566 partial;expected/actual fresh0.
+No scoped deferrals;S7 maintenance custody6. T70/M2 global certification open.
+
 ## M2 T70 S6 - closed conditional phase and shared sprite-clear graph
 
 [Phase repair](../proposals/m2/t70-final-current-certification.md#s6-p1-verified-part---conditional-visible-scroll-and-saved-control-handoff),

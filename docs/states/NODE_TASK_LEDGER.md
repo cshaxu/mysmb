@@ -19,7 +19,6 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T22 S14 | 7 | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeMemory` |
 | M2 T22 S24 | 6 | `PauseRoutine`, `ChkPauseTimer`, `ChkStart`, `ClrPauseTimer`, `SetPause`, `ExitPause` |
 | M2 T22 S25 | 5 | `DecTimers`, `DecTimersLoop`, `SkipExpTimer`, `NoDecTimers`, `PauseSkip` |
-| M2 T22 S27 | 6 | `SpriteShuffler`, `ShuffleLoop`, `StrSprOffset`, `NextSprOffset`, `SetAmtOffset`, `SetMiscOffset` |
 | M2 T22 S28 | 1 | `OperModeExecutionTree` |
 | M2 T22 S5 | 8 | `FlagpoleObject`, `FlagpoleScoreMods`, `FlagpoleScoreDigits`, `FlagpoleRoutine`, `SkipScore`, `GiveFPScr`, `FPGfx`, `ExitFlagP` |
 | M2 T25 S12 | 1 | `SelectBLogic` |
@@ -225,6 +224,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T70 S2 | 29 | `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj` |
 | M2 T70 S4 | 6 | `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`, `NonMaskableInterrupt`, `ScreenOff`, `InitBuffer` |
 | M2 T70 S6 | 9 | `RotPRandomBit`, `Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipSprite0`, `SkipMainOper`, `MoveAllSpritesOffscreen`, `MoveSpritesOffscreen`, `SprInitLoop` |
+| M2 T70 S7 | 6 | `SpriteShuffler`, `ShuffleLoop`, `StrSprOffset`, `NextSprOffset`, `SetAmtOffset`, `SetMiscOffset` |
 
 ## Future admission packages and queued plans
 
@@ -274,12 +274,12 @@ transfer existing ownership or allocate a numeric T.
 | 904 | `ClrPauseTimer` | M2 T22 S24 | existing closure backlog; T22/S17 completed the pause source contract; T22/S24 accepts independent controlled-NMI equivalence review. | M2 T14 / S not recorded; M2 T22 S17; M2 T22 S24; M2 T24 S1 |
 | 906 | `SetPause` | M2 T22 S24 | existing closure backlog; T22/S17 completed the pause source contract; T22/S24 accepts independent controlled-NMI equivalence review. | M2 T14 / S not recorded; M2 T22 S17; M2 T22 S24; M2 T24 S1 |
 | 907 | `ExitPause` | M2 T22 S24 | existing closure backlog; T22/S17 completed the pause source contract; T22/S24 accepts independent controlled-NMI equivalence review. | M2 T14 / S not recorded; M2 T22 S17; M2 T22 S24; M2 T24 S1 |
-| 912 | `SpriteShuffler` | M2 T22 S27 | existing closure backlog; T22/S20 completed source contract; T22/S27 independently reviews controlled-ROM equivalence. | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1; M2 T9 / S not recorded |
-| 917 | `ShuffleLoop` | M2 T22 S27 | existing closure backlog; T22/S20 completed source contract; T22/S27 independently reviews controlled-ROM equivalence. | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1 |
-| 926 | `StrSprOffset` | M2 T22 S27 | existing closure backlog; T22/S20 completed source contract; T22/S27 independently reviews controlled-ROM equivalence. | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1 |
-| 927 | `NextSprOffset` | M2 T22 S27 | existing closure backlog; T22/S20 completed source contract; T22/S27 independently reviews controlled-ROM equivalence. | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1 |
-| 934 | `SetAmtOffset` | M2 T22 S27 | existing closure backlog; T22/S20 completed source contract; T22/S27 independently reviews controlled-ROM equivalence. | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1 |
-| 937 | `SetMiscOffset` | M2 T22 S27 | existing closure backlog; T22/S20 completed source contract; T22/S27 independently reviews controlled-ROM equivalence. | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1 |
+| 912 | `SpriteShuffler` | M2 T70 S7 | existing closure backlog; Accepted shared sprite-shuffle preset/index/material maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1; M2 T9 / S not recorded |
+| 917 | `ShuffleLoop` | M2 T70 S7 | existing closure backlog; Accepted shared sprite-shuffle preset/index/material maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1 |
+| 926 | `StrSprOffset` | M2 T70 S7 | existing closure backlog; Accepted shared sprite-shuffle preset/index/material maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1 |
+| 927 | `NextSprOffset` | M2 T70 S7 | existing closure backlog; Accepted shared sprite-shuffle preset/index/material maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1 |
+| 934 | `SetAmtOffset` | M2 T70 S7 | existing closure backlog; Accepted shared sprite-shuffle preset/index/material maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1 |
+| 937 | `SetMiscOffset` | M2 T70 S7 | existing closure backlog; Accepted shared sprite-shuffle preset/index/material maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1 |
 | 954 | `OperModeExecutionTree` | M2 T22 S28 | existing closure backlog; T22/S28 independently proved the original selector table and shared C dispatch; retained for completed-node maintenance. | M2 T14 / S not recorded; M2 T22 S21; M2 T22 S28; M2 T24 S1 |
 | 965 | `MoveAllSpritesOffscreen` | M2 T70 S6 | existing closure backlog; Accepted common sprite-clear entry/loop maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
 | 969 | `MoveSpritesOffscreen` | M2 T70 S6 | existing closure backlog; Accepted common sprite-clear entry/loop maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
@@ -2331,7 +2331,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T22 S24 | 6 | 6 | pause-route-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S25 | 6 | 5 | timer-lfsr-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S26 | 8 | 0 | sprite-oam-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
-| M2 T22 S27 | 6 | 6 | sprite-shuffle-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
+| M2 T22 S27 | 6 | 0 | sprite-shuffle-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S28 | 1 | 1 | owner-approved-independent-proof; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T23 | 5 | - | [record](../../docs/proposals/m2/player-route.md); [record](../../docs/states/CURRENT.md); [record](../../docs/states/QUEUE.md) |
 | M2 T23 S1 | 4 | 0 | declared-plan, recorded-section; [record](../../docs/proposals/m2/player-route.md) |
@@ -2833,6 +2833,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T70 S4 | 0 | 6 | nmi-prefix-material-phase-proof; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S5 | 0 | 0 | timer-random-material-audit; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S6 | 0 | 9 | sprite-zero-scroll-phase-audit; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S7 | 0 | 6 | sprite-shuffle-material-audit; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M2 T9 | 1 | - | [record](../../docs/etc/architecture/smb1-frame-output-ledger.md); [record](../../docs/history/M2-T9-frame-output-ledger-and-reference-recorder.md); S not recorded |
 | M2 Td | 0 | - | [record](../../docs/proposals/m2-rom-structural-recovery.md); [record](../../docs/states/QUEUE.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -3179,6 +3180,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-t70-s6-phase-1 | M2 T52 S1 | M2 T70 S6 | 2 | Coordinator accepts bounded sprite-zero visible-phase maintenance repair under owner ongoing M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s6-phase-2 | M2 T22 S26 | M2 T70 S6 | 4 | Coordinator accepts bounded sprite-zero visible-phase maintenance repair under owner ongoing M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s6-child-1 | M2 T22 S26 | M2 T70 S6 | 3 | Coordinator accepts shared sprite-clear entry dependencies under owner ongoing M2 corrective mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s7-shuffle-1 | M2 T22 S27 | M2 T70 S7 | 6 | Coordinator accepts bounded shared shuffle/preset repair under owner ongoing M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3672,3 +3674,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T70 S4 | 6 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S5 | 7 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S6 | 9 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S7 | 6 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |

@@ -938,3 +938,127 @@ presentation proposals and existing terrain whitespace remain untouched.
 | mysmb16.exe | 258831 | 64d64dfad4a6a06b5393f35acb69e14e4871a72836b2f55458b504f0a0455bcf |
 | mysmb32.exe | 372392 | a9fc14a1a9361d5653f025a9ccc24f35e11c34e136801f868bc399012f32a5d7 |
 | mysmb64.exe | 379424 | b4d361b8eaff9f7fb72b44da7d2542f25f25481ec717098c235e8fb15ba49db9 |
+
+## S7 P1 admission - sprite-shuffle index and material paths
+
+Scope6 in original order:SpriteShuffler,ShuffleLoop,StrSprOffset,NextSprOffset,
+SetAmtOffset,SetMiscOffset. All historical complete/current exact at admission;
+historical1992/1992,current1992/1992 nodes,4276/4276 feasible controls(raw4342,
+infeasible66),563/563 material partially enumerated. Expected fresh0,max1992.
+Entry81c6 through actual8211 RTS;shared frame_root.c shuffle owner;S6 supplies
+accepted preceding clear child,NMI calls shuffle at814d before sprite-hit phase.
+Scope includes internal preset/index/wrap/offset-to-misc producer-consumer
+paths. Cross-subsystem object/OAM consumers retain custody for later proofs.
+
+Source inspection identifies missing original STA00=28 at entry;current C
+compares against literal28 but does not store the source scratch output.
+Reopen SpriteShuffler until full-RAM repair/re-audit. Coordinator accepts all6
+maintenance nodes under owner ongoing M2 mandate before any source edits.
+1024 controlled original roots:768 cases across valid selectors0/1/2 and full
+byte offset patterns with distinct mutable amounts,256 cases exercising all
+selector bytes and alias reads;every2048 RAM byte compared without zero-page
+or stack-RAM exclusions. Record original branch successors/ordered writes;
+CPU register outputs outside C ABI. Source controls,carry and selector wrap
+are audited first,not inferred from final images. AreaType residual LDY has
+no memory side effect and is overwritten before any observable use;record
+that dead CPU-register read rather than inventing gameplay behavior.
+
+Owner original ROM/reviewed ASM read-only,nonredistributable and local-only;
+no imports. Unique ignored build,128MiB/process120seconds/root1024 steps,
+<=1024 roots per batch;delete raw comparison RAM after admitted use. Native
+C90 probes both widths;focused shuffle/NMI/PPU/purity/product checks,original
+OpenNT shared-source compile/link and3 refreshed products if source changes.
+Existing S6 full248 tests retained unless a changed dependency needs broader
+checks. Similar sweep:all other source STA00 preset/threshold/count handoffs
+inside this admitted owner are reviewed;unrelated routines not silently changed.
+
+S7 address-bound review correction:81f9 is SetMiscOffset's loop entry,not RTS;
+the routine ends8211. The prior frame_root.c range comment is truncated and
+will be corrected with the scratch-store repair. ROM label index and actual
+8211 RTS bind the complete six-node chain;no coverage claim ends at81f9.
+
+## S7 P1 closure - original shuffle preset and material paths
+
+All6 scope labels exact:SpriteShuffler,ShuffleLoop,StrSprOffset,NextSprOffset,
+SetAmtOffset,SetMiscOffset. Missing entry scratch store restored and its
+original write contract re-audited;expected/actual fresh historical0,no
+scoped deferral/transfer. Maintenance custody of6 remains S7. Historical
+1992/1992,current1992/1992 exact nodes,4276/4276 feasible controls(raw4342,
+infeasible66);material566/566 enumerated exact,global enumeration partial.
+S7 closes;T70/M2 global data binding,material completeness,within-line pixels
+and end-to-end obligations remain open. Current exact contracts are scoped
+semantic proofs,not a full-frame/gameplay completion certificate.
+
+Source81c6 residual LDY AreaType only writes a dead CPU Y value,overwritten
+before a used Y input;it does not mutate RAM.81c9 LDA28/81cb STA00 publishes
+preset before the descending14..0 loop. Original CMP00 and overflow ADC00
+read that stable28;C constant folding is valid since no intervening write or
+child call can change00. The missing source output store is now explicit.
+RAM amount lookup6e1+selector remains mutable on every iteration;aliasing
+with previously updated offsets is not replaced by a cached/default table.
+CLC initial sum,carry-selected second add28,and final eight-bit truncation
+match unsigned16 sum and byte casts. Selector increments as an eight-bit
+byte and resets only on exact3,not arbitrary modulo3 for out-of-domain RAM.
+Misc copies consume offsets+5..+7 in descending2,1,0 order and write groups
+6..8,3..5,0..2 with wrapping additions8/16. Routine ends8211;81f9 is loop
+entry. The current source annotation is corrected to the full byte-bound range.
+
+1024 controlled roots each width compare all2048 RAM bytes,including zero
+page/stack RAM;no RAM exclusions.768 fixtures combine valid selectors0/1/2
+with full-byte patterns/distinct mutable amounts;256 fixtures cover every
+selector byte including lookup aliases and255 wrap. These are controlled
+state fixtures,not claimed exhaustive combinations or naturally reached
+invalid-selector gameplay. Original child runs its real instructions and
+RTS8211 to the controlled8057 sentinel;CPU register/stack-pointer outcomes
+are outside C ABI. Source branch/loop observations cover all10 internal
+controls00065-00074 with counts1024,2400,5491,7469,12960,14336,767,257,1024,
+2048.1024 real RTS and24224 actual RAM writes observed. The initially wrong
+probe branch address81dc was corrected to actual81dd before claiming that
+edge coverage. Existing original NMI call/return evidence is retained;these
+standalone roots do not invent fresh observations of controls00045/03494.
+
+Before repair1020/1024 cases per width differ only at00;four inputs already
+contain28. After repair all2097152 compared RAM bytes per width match.
+The focused NMI test's unpaused old expectation02 was also source-wrong:
+random rotation writes02,then the actual shuffle child overwrites00 with28.
+The corrected assertion expects28 there;paused branch skips shuffle and
+retains its02 assertion. Fixture correction follows original source order
+and the full-RAM oracle,it does not weaken or exclude the failing byte.
+
+Three actual material paths added:564 SpriteShuffler -> ShuffleLoop binds
+published preset00 to threshold/carry adjustment;565 ShuffleLoop ->
+StrSprOffset binds each live indexed RAM amount and carry-conditioned result
+to its byte store;566 StrSprOffset -> SetMiscOffset binds completed indices
+5..7 to their three misc groups. Source-path/index proofs and actual branch
+observations support them. Cross-subsystem initializers/object/OAM consumers
+are not automatically credited from matching local offsets and remain final
+material-enumeration work. No writer-reader Cartesian completion claim.
+
+Similar sweep covers all00 stores in frame_root.c:random scratch publication
+and VRAM pointer-low stores already exist and retain their prior S4/S5 source
+proof;the shuffle preset was the missing site. Within shuffle,the only28
+threshold/overflow consumers receive a stable source preset. Descending
+alias/table reads,second-add truncation,selector increment and misc store
+order match source;no further scoped difference remains. No host API,game.h
+layout change,platform branch or emulator is introduced.
+
+Operational:rebuild current shared library/products and impacted shuffle,
+NMI,sprite-root/recorder targets both widths.5/5 focused tests per width pass,
+including product self-test/purity. Prior S6 full248-test proof remains
+accepted for unchanged chains;it is not claimed a new full-suite run here.
+Six600-frame routes zero scoped differences and byte-identical both widths
+under the retained frame ABI (0200-07FF except0778/0779,all CIRAM/palette/OAM,
+audio/PPU scalars;zero-page and physical stack excluded there and covered
+locally above). Original OpenNT shared-core full compilation/link via the
+existing build script returns0 directly,without the previous outer Ninja
+wrapper;optional OLDNAMES.LIB warning remains.3 refreshed products match
+build outputs;DOS MZ page length validated. DOS runtime/486 not qualified.
+Raw RAM outputs removed after use;all probes/logs/intermediates stay ignored
+below build. Owner standing authorization covers local3-EXE commit;no push.
+Unrelated I/O/presentation/terrain work preserved.
+
+| Product | Bytes | SHA256 |
+| --- | --- | --- |
+| mysmb16.exe | 258847 | 3bd83fc02682ddfd7c6e135d6b1ab514bb23579ce3555f8064735f48909d6575 |
+| mysmb32.exe | 372392 | e03bd0b27b31db423f396a6f576f460fdba9c0ba7d192b83289c08bc2a2f2501 |
+| mysmb64.exe | 379424 | 48e6433da55a4f806bdae676b206a5398e41a0476d89c51845e0e371db51502a |

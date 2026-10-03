@@ -329,7 +329,7 @@ void mysmb_game_tick_player_timers(struct mysmb_game *game)
     }
 }
 
-/* ROM $81c6-$81f9 SpriteShuffler. */
+/* ROM $81c6-$8211 SpriteShuffler, including SetMiscOffset. */
 void mysmb_game_shuffle_sprite_offsets(struct mysmb_game *game)
 {
     mysmb_u8 index;
@@ -337,6 +337,8 @@ void mysmb_game_shuffle_sprite_offsets(struct mysmb_game *game)
     mysmb_u8 value;
     mysmb_u16 sum;
 
+    /* Source $81c9-$81cc publishes the preset even if all offsets skip. */
+    game->ram[0x0000U] = 0x28U;
     for (index = 15U; index != 0U; --index) {
         offset = (mysmb_u8)(index - 1U);
         value = game->ram[(mysmb_u16)(MYSMB_ROOT_SPRITE_OFFSETS + offset)];
