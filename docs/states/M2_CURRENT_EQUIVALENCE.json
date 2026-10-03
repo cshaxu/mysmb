@@ -22881,13 +22881,15 @@
         "M2 T52 S1 source re-read: lines 826-872 store the first masked LFSR bit to $00, write the saved $2000 mirror before the OperModeExecutionTree JSR, and OR d7 only at SkipMainOper after return.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
         "docs/proposals/m2/t70-final-current-certification.md S4 original531 cases confirm256 pre-VRAM2001 phase differences per width;native final value matches but intermediate phase/post-consumer graph is absent.",
-        "docs/proposals/m2/t70-final-current-certification.md S4 P1: original531 roots and byte-bound source audit restore pre-VRAM mirror&E7 and post-InitBuffer RAM0779 reload;four actual source calls/returns observed;38 pointer bytes,2 offsets and15 PRG bindings match. Explicit probe/ABI limits recorded."
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1: original531 roots and byte-bound source audit restore pre-VRAM mirror&E7 and post-InitBuffer RAM0779 reload;four actual source calls/returns observed;38 pointer bytes,2 offsets and15 PRG bindings match. Explicit probe/ABI limits recorded.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:8labels/69instructions/20RAM joined5boundedclauses;mask/pointer/header/childorder/cachedmode-pause/flag-phase/savedcontrol lifetimes reviewed;perdot andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T52 S1 controlled owner-ROM capture at source $8175, immediately before OperModeExecutionTree, applied one NMI-entry mirror precondition ($0778=$10) and recorded $00=$02, rotated LFSR $a9/$40, and physical $2000=$10. Raw trace remains ignored below build.",
         "M2 T52 S1 ROM-configured x86/x64 builds passed mysmb.nmi-parent-integration, Win32 self-test and platform-purity. The focused regression proves the scratch write, d7-clear dispatch boundary and d7 restoration at the RTI-equivalent tail; OpenNT DOS16 links the same shared frame_root.c.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S4 P1:512 native phase/reload cases;248 CTests each;current full x86/x64 and original OpenNT DOS16 builds;3 refreshed EXEs;6x600 original/native frame regressions,purity pass."
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1:512 native phase/reload cases;248 CTests each;current full x86/x64 and original OpenNT DOS16 builds;3 refreshed EXEs;6x600 original/native frame regressions,purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:531actualprefix+64naturalspritephase+8192actualNMIparents eachwidth0diff,all69PC/8branchpairs,5tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "Preserves the source NMI phase boundary: d7-clear control during pre-dispatch work and main-mode execution, then d7 re-enable only at the RTI tail.",
       "currentSourcePaths": [
@@ -22906,11 +22908,13 @@
         "M2 T53 S1 static audit: SMB1 lines 776-790 write the ScreenOff mask transaction before InitScroll and UpdateScreen, while current frame_root.c invokes mysmb_game_commit_vram_buffer before mysmb_game_commit_display_state. The source-required NMI transaction order is reversed.",
         "M2 T53 S3 ScreenOff corrective source audit: ROM NonMaskableInterrupt lines 764-814 writes the temporary $2001 mask before InitScroll, OAM DMA and UpdateScreen; frame_root.c now calls mysmb_game_commit_display_state before mysmb_game_commit_vram_buffer in the same order.",
         "docs/proposals/m2/t70-final-current-certification.md S4 original531 cases confirm256 pre-VRAM2001 phase differences per width;native final value matches but intermediate phase/post-consumer graph is absent.",
-        "docs/proposals/m2/t70-final-current-certification.md S4 P1: original531 roots and byte-bound source audit restore pre-VRAM mirror&E7 and post-InitBuffer RAM0779 reload;four actual source calls/returns observed;38 pointer bytes,2 offsets and15 PRG bindings match. Explicit probe/ABI limits recorded."
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1: original531 roots and byte-bound source audit restore pre-VRAM mirror&E7 and post-InitBuffer RAM0779 reload;four actual source calls/returns observed;38 pointer bytes,2 offsets and15 PRG bindings match. Explicit probe/ABI limits recorded.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:8labels/69instructions/20RAM joined5boundedclauses;mask/pointer/header/childorder/cachedmode-pause/flag-phase/savedcontrol lifetimes reviewed;perdot andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T53 S3 corrective operational evidence: focused x86/x64 NMI-parent checks pass; refreshed x86/x64 outputs and shared OpenNT DOS16 link use the same frame_root.c. Controlled owner-local NMI route is retained only as ignored build evidence.",
-        "docs/proposals/m2/t70-final-current-certification.md S4 P1:512 native phase/reload cases;248 CTests each;current full x86/x64 and original OpenNT DOS16 builds;3 refreshed EXEs;6x600 original/native frame regressions,purity pass."
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1:512 native phase/reload cases;248 CTests each;current full x86/x64 and original OpenNT DOS16 builds;3 refreshed EXEs;6x600 original/native frame regressions,purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:531actualprefix+64naturalspritephase+8192actualNMIparents eachwidth0diff,all69PC/8branchpairs,5tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "Writes the source $2001 display-mask transaction before InitScroll, OAM DMA and UpdateScreen; only after selected-buffer clearing does the NMI restore the mirror mask for sound/input/pause work.",
       "currentSourcePaths": [
@@ -22932,7 +22936,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S4 P1: original531 roots and byte-bound source audit restore pre-VRAM mirror&E7 and post-InitBuffer RAM0779 reload;four actual source calls/returns observed;38 pointer bytes,2 offsets and15 PRG bindings match. Explicit probe/ABI limits recorded.",
         "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:37instructions/11RAM joined6bounded source-use clauses;landing1/timer3,NMIfrozenholds/timerloops andgraphicsframeconsumer exact in singlefreezeepisode. Fourowners source-identical acceptedcommits;notallgameplayproducer-invariants.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:5labels/20instructions/7RAM joined4boundedclauses;P89TopScore nonalias/P90pausedbit/P48timers joined,INCframe gate/RAM00/XOR/ROR reviewed;wholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:5labels/20instructions/7RAM joined4boundedclauses;P89TopScore nonalias/P90pausedbit/P48timers joined,INCframe gate/RAM00/XOR/ROR reviewed;wholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:8labels/69instructions/20RAM joined5boundedclauses;mask/pointer/header/childorder/cachedmode-pause/flag-phase/savedcontrol lifetimes reviewed;perdot andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC $80d0 (InitBuffer) was reached in all 600 samples and current x86/x64 records had zero work-RAM, selected NMI-state and visible-output differences. This proves InitBuffer local semantics; it does not clear the earlier ScreenOff order mismatch.",
@@ -22940,7 +22945,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S4 P1:512 native phase/reload cases;248 CTests each;current full x86/x64 and original OpenNT DOS16 builds;3 refreshed EXEs;6x600 original/native frame regressions,purity pass.",
         "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:20480actualroots eachwidth2032RAM/24APU/order0diff,physical1F0-1FFexcluded/minSP>=EF;64x256 continuousframes plus4096 allbyte-metatilelanding roots;all37PC/8branchpairs inclunchangedP47complementaryrendererbranch;6focusedtests each pass. Model4366states/25239transitions singleepisode;no newgraphcredit orproductchange.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:3840originalroots eachwidth47bytephaseABI0diff/all20PC/4branchpairs,4tests each;otherRAM/hardware/stack explicitlyoutsidecapture,source/threeP81productsunchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:3840originalroots eachwidth47bytephaseABI0diff/all20PC/4branchpairs,4tests each;otherRAM/hardware/stack explicitlyoutsidecapture,source/threeP81productsunchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:531actualprefix+64naturalspritephase+8192actualNMIparents eachwidth0diff,all69PC/8branchpairs,5tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "After VRAM consumption clears the source-selected header and selector, restores the display mask, then invokes sound, input, pause and top-score work before timer handling.",
       "currentSourcePaths": [
@@ -23072,14 +23078,16 @@
         "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded.",
         "docs/proposals/m2/t70-final-current-certification.md S6 original flag0 early-vblank scroll versus flag1 actual synchronization confirmed;32 synthetic compositor conditional-top mismatches each native width.",
         "docs/proposals/m2/t70-final-current-certification.md S6 P1:source8138 conditional split latched at NMI and consumed by shared compositor;64 original physical-scroll/control phases and32 actual RTI returns match native,synthetic top/priority checks pass after live flag mutation;within-line pixel timing not certified.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:5labels/20instructions/7RAM joined4boundedclauses;P89TopScore nonalias/P90pausedbit/P48timers joined,INCframe gate/RAM00/XOR/ROR reviewed;wholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:5labels/20instructions/7RAM joined4boundedclauses;P89TopScore nonalias/P90pausedbit/P48timers joined,INCframe gate/RAM00/XOR/ROR reviewed;wholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:8labels/69instructions/20RAM joined5boundedclauses;mask/pointer/header/childorder/cachedmode-pause/flag-phase/savedcontrol lifetimes reviewed;perdot andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T52 S1 controlled owner-ROM capture at source $8175, immediately before OperModeExecutionTree, applied one NMI-entry mirror precondition ($0778=$10) and recorded $00=$02, rotated LFSR $a9/$40, and physical $2000=$10. Raw trace remains ignored below build.",
         "M2 T52 S1 ROM-configured x86/x64 builds passed mysmb.nmi-parent-integration, Win32 self-test and platform-purity. The focused regression proves the scratch write, d7-clear dispatch boundary and d7 restoration at the RTI-equivalent tail; OpenNT DOS16 links the same shared frame_root.c.",
         "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width.",
         "docs/proposals/m2/t70-final-current-certification.md S6 P1:full x86/x64 and248 tests/width,original OpenNT DOS16 link,3 fresh products;531 mask/3840 timer roots and6x600 frame regressions match,purity pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:3840originalroots eachwidth47bytephaseABI0diff/all20PC/4branchpairs,4tests each;otherRAM/hardware/stack explicitlyoutsidecapture,source/threeP81productsunchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:3840originalroots eachwidth47bytephaseABI0diff/all20PC/4branchpairs,4tests each;otherRAM/hardware/stack explicitlyoutsidecapture,source/threeP81productsunchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:531actualprefix+64naturalspritephase+8192actualNMIparents eachwidth0diff,all69PC/8branchpairs,5tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "Performs the source seven-byte LFSR rotation and leaves the source scratch $00 equal to the first masked bit while passing control to sprite-zero processing.",
       "currentSourcePaths": [
@@ -23096,11 +23104,13 @@
       "semanticEvidence": [
         "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
         "M2 T53 S1 source audit: the Sprite0 flag path clears only nonzero OAM rows while unpaused, performs the source synchronization/delay phase, then reaches the shared scroll split. C owns that state transition and the shared compositor owns the resulting fixed-top/scrolling scene phase without an adapter decision.",
-        "docs/proposals/m2/t70-final-current-certification.md S6 P1:source8138 conditional split latched at NMI and consumed by shared compositor;64 original physical-scroll/control phases and32 actual RTI returns match native,synthetic top/priority checks pass after live flag mutation;within-line pixel timing not certified."
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:source8138 conditional split latched at NMI and consumed by shared compositor;64 original physical-scroll/control phases and32 actual RTI returns match native,synthetic top/priority checks pass after live flag mutation;within-line pixel timing not certified.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:8labels/69instructions/20RAM joined5boundedclauses;mask/pointer/header/childorder/cachedmode-pause/flag-phase/savedcontrol lifetimes reviewed;perdot andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical.",
-        "docs/proposals/m2/t70-final-current-certification.md S6 P1:full x86/x64 and248 tests/width,original OpenNT DOS16 link,3 fresh products;531 mask/3840 timer roots and6x600 frame regressions match,purity pass."
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:full x86/x64 and248 tests/width,original OpenNT DOS16 link,3 fresh products;531 mask/3840 timer roots and6x600 frame regressions match,purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:531actualprefix+64naturalspritephase+8192actualNMIparents eachwidth0diff,all69PC/8branchpairs,5tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "When Sprite0HitDetectFlag is set, performs the source pre-split sprite-zero path: while unpaused, moves nonzero OAM sprites offscreen and shuffles offsets before hit synchronization.",
       "currentSourcePaths": [
@@ -23117,11 +23127,13 @@
       "semanticEvidence": [
         "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
         "M2 T53 S1 source audit: the Sprite0 flag path clears only nonzero OAM rows while unpaused, performs the source synchronization/delay phase, then reaches the shared scroll split. C owns that state transition and the shared compositor owns the resulting fixed-top/scrolling scene phase without an adapter decision.",
-        "docs/proposals/m2/t70-final-current-certification.md S6 P1:source8138 conditional split latched at NMI and consumed by shared compositor;64 original physical-scroll/control phases and32 actual RTI returns match native,synthetic top/priority checks pass after live flag mutation;within-line pixel timing not certified."
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:source8138 conditional split latched at NMI and consumed by shared compositor;64 original physical-scroll/control phases and32 actual RTI returns match native,synthetic top/priority checks pass after live flag mutation;within-line pixel timing not certified.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:8labels/69instructions/20RAM joined5boundedclauses;mask/pointer/header/childorder/cachedmode-pause/flag-phase/savedcontrol lifetimes reviewed;perdot andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical.",
-        "docs/proposals/m2/t70-final-current-certification.md S6 P1:full x86/x64 and248 tests/width,original OpenNT DOS16 link,3 fresh products;531 mask/3840 timer roots and6x600 frame regressions match,purity pass."
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:full x86/x64 and248 tests/width,original OpenNT DOS16 link,3 fresh products;531 mask/3840 timer roots and6x600 frame regressions match,purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:531actualprefix+64naturalspritephase+8192actualNMIparents eachwidth0diff,all69PC/8branchpairs,5tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "Uses the source sprite-zero synchronization condition before the scrolling/main-operation split; current shared state exposes the resulting split rather than host-owned game decisions.",
       "currentSourcePaths": [
@@ -23138,11 +23150,13 @@
       "semanticEvidence": [
         "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
         "M2 T53 S1 source audit: the Sprite0 flag path clears only nonzero OAM rows while unpaused, performs the source synchronization/delay phase, then reaches the shared scroll split. C owns that state transition and the shared compositor owns the resulting fixed-top/scrolling scene phase without an adapter decision.",
-        "docs/proposals/m2/t70-final-current-certification.md S6 P1:source8138 conditional split latched at NMI and consumed by shared compositor;64 original physical-scroll/control phases and32 actual RTI returns match native,synthetic top/priority checks pass after live flag mutation;within-line pixel timing not certified."
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:source8138 conditional split latched at NMI and consumed by shared compositor;64 original physical-scroll/control phases and32 actual RTI returns match native,synthetic top/priority checks pass after live flag mutation;within-line pixel timing not certified.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:8labels/69instructions/20RAM joined5boundedclauses;mask/pointer/header/childorder/cachedmode-pause/flag-phase/savedcontrol lifetimes reviewed;perdot andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical.",
-        "docs/proposals/m2/t70-final-current-certification.md S6 P1:full x86/x64 and248 tests/width,original OpenNT DOS16 link,3 fresh products;531 mask/3840 timer roots and6x600 frame regressions match,purity pass."
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:full x86/x64 and248 tests/width,original OpenNT DOS16 link,3 fresh products;531 mask/3840 timer roots and6x600 frame regressions match,purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:531actualprefix+64naturalspritephase+8192actualNMIparents eachwidth0diff,all69PC/8branchpairs,5tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "Represents the fixed source post-sprite-zero delay before scroll writes; its observable contract is that scrolling and mode dispatch start only after the sprite-zero synchronization phase.",
       "currentSourcePaths": [
@@ -23159,12 +23173,14 @@
       "semanticEvidence": [
         "M2 T52 S1 source re-read: lines 826-872 store the first masked LFSR bit to $00, write the saved $2000 mirror before the OperModeExecutionTree JSR, and OR d7 only at SkipMainOper after return.",
         "docs/proposals/m2/t70-final-current-certification.md S6 original flag0 early-vblank scroll versus flag1 actual synchronization confirmed;32 synthetic compositor conditional-top mismatches each native width.",
-        "docs/proposals/m2/t70-final-current-certification.md S6 P1:source8138 conditional split latched at NMI and consumed by shared compositor;64 original physical-scroll/control phases and32 actual RTI returns match native,synthetic top/priority checks pass after live flag mutation;within-line pixel timing not certified."
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:source8138 conditional split latched at NMI and consumed by shared compositor;64 original physical-scroll/control phases and32 actual RTI returns match native,synthetic top/priority checks pass after live flag mutation;within-line pixel timing not certified.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:8labels/69instructions/20RAM joined5boundedclauses;mask/pointer/header/childorder/cachedmode-pause/flag-phase/savedcontrol lifetimes reviewed;perdot andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T52 S1 controlled owner-ROM capture at source $8175, immediately before OperModeExecutionTree, applied one NMI-entry mirror precondition ($0778=$10) and recorded $00=$02, rotated LFSR $a9/$40, and physical $2000=$10. Raw trace remains ignored below build.",
         "M2 T52 S1 ROM-configured x86/x64 builds passed mysmb.nmi-parent-integration, Win32 self-test and platform-purity. The focused regression proves the scratch write, d7-clear dispatch boundary and d7 restoration at the RTI-equivalent tail; OpenNT DOS16 links the same shared frame_root.c.",
-        "docs/proposals/m2/t70-final-current-certification.md S6 P1:full x86/x64 and248 tests/width,original OpenNT DOS16 link,3 fresh products;531 mask/3840 timer roots and6x600 frame regressions match,purity pass."
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:full x86/x64 and248 tests/width,original OpenNT DOS16 link,3 fresh products;531 mask/3840 timer roots and6x600 frame regressions match,purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:531actualprefix+64naturalspritephase+8192actualNMIparents eachwidth0diff,all69PC/8branchpairs,5tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "Writes horizontal/vertical scroll and the d7-cleared $2000 mirror before the unpaused OperModeExecutionTree call; only the RTI tail restores d7.",
       "currentSourcePaths": [
@@ -170257,27 +170273,28 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P102 checkpoint - floatey score award and sprite uses reconciled:8labels/74instructions/26RAM joined4boundedclauses;oldtimer2B/controlclamp/score-child-readwrite/stablecontrol/ID-altOAM/Y-SBCcarry/absoluteOAM-order reviewed;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:10labels/91instructions/34RAM joined4boundedclauses;callerinputs/bytecarry/tablebounds/outputalias/postchildcounter/stableY/storecommutation reviewed;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:8labels/69instructions/20RAM joined5boundedclauses;mask/pointer/header/childorder/cachedmode-pause/flag-phase/savedcontrol lifetimes reviewed;perdot andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 10471,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 220,
+        "localInstructionReceiptSites": 10540,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 151,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 3712,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 61,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 3732,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 41,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
         "directExternalQueueWriterPaths": 48,
         "pendingDirectRamOwners": {
-          "src/game/frame_root.c": 22,
           "src/game shared dispatcher/engine/scroll owners": 10,
           "src/game/area.c plus src/game/oam/flagpole_gfx.c": 9,
           "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c": 5,
           "src/game/enemy/{lifecycle,podoboo}.c": 5,
           "src/game/dispatcher.c": 4,
+          "src/game/frame_root.c": 2,
           "src/game/frame_root.c and src/game/terminal_modes.c": 2,
           "src/game/enemy/platform_callers.c": 2,
           "src/game/frame_root.c and src/game/title_modes.c": 1,

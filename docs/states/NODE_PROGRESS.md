@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P106 NMI output uses](../proposals/m2/t70-final-current-certification.md#s17-p106-checkpoint---nmi-output-and-scroll-uses-reconciled).
+S17 P106:8NMI-output labels/69instructions/20RAM joined5boundedclauses;8787actualroots eachwidth0diff/all69PC/8branchpairs,5tests each. Scope1646/fresh0;10540/10691instruction receipts,3732/3773RAM receipts;151instructions/41RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,producer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
+
 [P105 screen output uses](../proposals/m2/t70-final-current-certification.md#s17-p105-checkpoint---screen-output-and-music-uses-reconciled).
 S17 P105:22screen/music labels/110instructions/24RAM joined7boundedclauses;69520actualroots eachwidth0diff/all110PC/17branchpairs,7tests each. Scope1645/fresh0;10471/10691instruction receipts,3712/3773RAM receipts;220instructions/61RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,producer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
 
