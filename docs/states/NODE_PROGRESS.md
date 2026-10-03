@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P115 platform byte addresses](../proposals/m2/t70-final-current-certification.md#s17-p115-checkpoint---platform-initializer-byte-addresses-repaired).
+S17 P115:18 initializer/platform labels,75 original instructions and5 conditionalbranch pairs reviewed;14 zero-page-X C expressions corrected across7bodies. EightactualreturningROM families,524288roots eachwidth0scopedRAM/APU/orderedwrite diff/all75PC/10branchsides;5focusedtests eachwidthpass. ThreeEXEs refreshed(originalOpenNT16 compile/linkonly). Historical1992/1992,local1991/1992nodes and4260/4261controls(raw4342,infeasible81),material993partial/totalunknown;M2 incomplete.
+
 [P114 duplicate byte addresses](../proposals/m2/t70-final-current-certification.md#s17-p114-checkpoint---duplicate-object-byte-addresses-repaired).
 S17 P114:DuplicateEnemyObj/FSLoop/FlmEx18 instructions reviewed;four zero-page-X address expressions repaired. 65536 actual original roots eachwidth0diff/all18PC/bothC57Bbranches;5 focused tests eachwidthpass,new boundary regression failsoldsource. Three localEXEs rebuilt/refreshed;originalOpenNT16 compile/link only. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),instruction10690/10691,RAM3773/3773 scoped receipts;indexed caller conditions359,material993partial,totalunknown;M2 incomplete.
 

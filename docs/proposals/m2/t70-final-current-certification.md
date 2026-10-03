@@ -9422,3 +9422,33 @@ Local product mysmb32.exe:bytes374219,SHA256:7e730cf1dac2f65492c43ca1d03ad3dbb5e
 Local product mysmb64.exe:bytes380216,SHA256:03344b8e97545861429582524e6bea738353417c7907736a11a33ba8ba4af745.
 
 Current init_targets.c normalizedSHA256:1933a410a1939d0fa40a9584c084ad206151d29a5cb4158c91c3cc5a55af02ef.
+
+## S17 P115 corrective admission - platform initializer byte addresses
+
+Same-owner initializer dependency chain:InitBalPlatform/InitDropPlatform/InitHoriPlatform/InitVertPlatform andfourliftentries throughCommonPlatCode/InitVStf/SPBBox/PosPlatform. Exactlabels:InitVStf,InitBalPlatform,AlignP,SetBPA,InitDropPlatform,InitHoriPlatform,InitVertPlatform,SetYO,CommonPlatCode,SPBBox,CasPBB,LargeLiftUp,LargeLiftDown,LargeLiftBBox,PlatLiftUp,PlatLiftDown,CommonSmallLift,PosPlatform. Existing narrow-slot receipts remain valid, but do not prove rawbyteX address arithmetic. Inspect original addressing modes; correct only zero-page-X arithmetic in these bodies,retain absolute-X writes,ROM position table selectors0/1/2,carry andsource order. Eight unmodified returning original root families coverall256incomingX and256fixturepayloads each;fullnonphysical-stackRAM/APU/orderedwrites,currentstrictC90 owners bothwidths. RawX reachability/globalaliases not inferred. Expectedfresh0/baseline1992/max1992;S17scope1667unchanged. Transfer correctivecustody under owner same-S mandate beforeedit. Focusedplatform-init/enemy-vector/engine-slots/platform-purity tests andoriginalOpenNT16/link plusthree localEXEs required. ROM/ASM read-only,protectedresearch belowignoredbuild,batches4096/128MiB/120s/rawcleanup.
+
+## S17 P115 checkpoint - platform initializer byte addresses repaired
+
+S17 P115:18 initializer/platform labels,75 original instructions and5 conditionalbranch pairs reviewed;14 zero-page-X C expressions corrected across7bodies. EightactualreturningROM families,524288roots eachwidth0scopedRAM/APU/orderedwrite diff/all75PC/10branchsides;5focusedtests eachwidthpass. ThreeEXEs refreshed(originalOpenNT16 compile/linkonly). Historical1992/1992,local1991/1992nodes and4260/4261controls(raw4342,infeasible81),material993partial/totalunknown;M2 incomplete.
+
+Corrective scope staysS17. Original addressing modes audited for everyaccess C363-C36A/C7DF-C880. Absolute-X stores andROMtableY unchanged;only14zero-page-X C expressions castbyte. Beforefix correctedABI comparator reports508 RAM differences inmode181batch12288;firstloggedglobalroot14592,X57. This provesrawinput mismatch,notnaturalgame slot overflow. Initial comparator accidentally comparedvoidCPU A andwas correctedbeforeaccepting RAM evidence;the first4080A-onlydifferences are discarded.
+
+- InitVStf:C363-C36A stores0 to byte(A0+X) andabsolute434+X;voidCPU return is notnativeABI. No children/readbeforestore.
+- InitBalPlatform:C7DF-C802:twoDEC byte(CF+X),hardmode selectsPosPlatformY2,then live3A0alignment published byte(1E+X);sign selectsFF orincomingX for3A0,byte46+X zero,PosPlatformY0 thenactual drop/common tail. No read08 reload;incomingX remains register even iflowwrites alias08.
+- InitVertPlatform:C812-C827 readsbyte(CF+X);sign choosesabsY and40/C0adder,absolute401+X cannotaliaszero-pageYread;cachednativeY equivalent throughhighstore. byte58+X center store before actualcommon tail.
+- PosPlatform:C871-C880 byte87+X read/add/store,carry savedinsum then livebyte6E+X page add/store. Two byteaddresses havefixednonzerodifference25 andneveralias;tableY0/1/2 is immediate callerchoice. Absolute tableadds andbyteADC behavior retained.
+- CommonPlatCode:C828-C83E actualInitVStf first,thenarea3 ornonzerohard selectsbox5 else6;absolute49A+X store. Lowzero-page tail cannotaliashigharea/hard. No invented resets.
+- Lift:C83F-C86A actualsmallliftchild beforelargebox tail;smallupforce10/speedFF,downforceF0/speed0;forceabsolute434+X,speedbyteA0+X. CommonSmallLift setsY1,actualPosPlatform,box4absolute49A+X. Speed/force writes do notaliasbyteX/page reads. Highfields retained fulladdress.
+- Other:C803-C811 absolute3A2+X collisionFF fordrop orbyte58+X speed0 forhorizontal,thenactualcommon tail. No other fieldreset.
+
+Retainedlocalcontract:all256X times256 deterministicRAMpayloads perentry,eighthardmode/area/align/sign/carry paths observed,fullRAM exceptphysical1F0-1FF stack storage plus24APU/orderedwrites. OtherRAMvalues fixturederived;notcartesianallstates ornaturalreachability proof. ExistingX0-5 consumers retain unchangedaddress arithmetic;otherownerbodies unchanged. Sourceproof/finiteexecution do not closeglobalproducer/alias lifetime orremainingmaterial/pixel/route/snapshot packages. No node/control promotion.
+
+Boundaryunitcases explicitly distinguishzero-page andabsoluteaddresses atXFF andpositioncarry;oldsourcefailsverticalboundary exit2,newfull245762case suite passes. Focusedmodernproducts/testtargets completed,Win32/x64productselftest exit0;originalDOS16 compile/link exit0 retainsOLDNAMESwarning,noDOSruntimeclaim. PackageMZ/PEmachinechecks pass;noROM/derivedproducts committed.
+
+Local product mysmb16.exe:bytes259851,SHA256:a038ec4773263d4677dd1fb67196fe301d3937da3180bf472e688a56ee9548a9.
+
+Local product mysmb32.exe:bytes374219,SHA256:47fcc30c8ee11df72ccf88fc625967a7e55525f638292d2f3f0e60ec64d5242b.
+
+Local product mysmb64.exe:bytes380216,SHA256:42323e4e8b70baf322e0ba3738b1d27ca89cd4541dad0f83d82c75d239b2e8ae.
+
+Current init_targets.c normalizedSHA256:d12e09c0283898d29a0bc5b4a00a47676eb556d6799b695e72bdfea254473c65.

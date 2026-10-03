@@ -74,6 +74,32 @@ int main(void)
         }
         ++cases;
     }
+    /* ROM zero-page X wraps; absolute X destinations retain their high byte. */
+    memset(game.ram, 0x39, 2048U);
+    game.ram[0x6ccU] = 0U; game.ram[0x74eU] = 0U;
+    game.ram[0xceU] = 0x90U;
+    memcpy(expected, game.ram, 2048U);
+    expected[0x500U] = 0x70U; expected[0x57U] = 0x50U;
+    expected[0x9fU] = 0U; expected[0x533U] = 0U;
+    expected[0x599U] = 6U;
+    mysmb_enemy_init_vertical_platform(&game, 0xffU);
+    if (memcmp(expected, game.ram, 2048U)) {
+        puts("platform zero-page boundary: vertical");
+        return 2;
+    }
+    ++cases;
+    memset(game.ram, 0x39, 2048U);
+    game.ram[0x86U] = 0xfcU; game.ram[0x6dU] = 0xfeU;
+    memcpy(expected, game.ram, 2048U);
+    expected[0x86U] = 8U; expected[0x6dU] = 0xffU;
+    expected[0x9fU] = 0xffU; expected[0x533U] = 0x10U;
+    expected[0x599U] = 4U;
+    mysmb_enemy_init_small_lift_up(&game, 0xffU);
+    if (memcmp(expected, game.ram, 2048U)) {
+        puts("platform zero-page boundary: lift carry");
+        return 3;
+    }
+    ++cases;
     printf("platform initialization: %lu full-RAM contracts\n", cases);
     return 0;
 }

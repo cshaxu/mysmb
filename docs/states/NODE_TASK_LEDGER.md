@@ -90,7 +90,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T38 S1 | 17 | `AreaDataOfsLoopback`, `EnemiesAndLoopsCore`, `ChkAreaTsk`, `ChkBowserF`, `ExitELCore`, `LoopCmdWorldNumber`, `LoopCmdPageNumber`, `LoopCmdYPosition`, `ExecGameLoopback`, `ProcLoopCommand`, `FindLoop`, `IncMLoop`, `WrongChk`, `DoLpBack`, `InitMLp`, `InitLCmd`, `ChkEnemyFrenzy` |
 | M2 T38 S2 | 19 | `ProcessEnemyData`, `CheckEndofBuffer`, `CheckRightBounds`, `CheckPageCtrlRow`, `PositionEnemyObj`, `CheckRightExtBounds`, `CheckForEnemyGroup`, `BuzzyBeetleMutate`, `StrID`, `CheckFrenzyBuffer`, `StrFre`, `InitEnemyObject`, `ExEPar`, `DoGroup`, `ParseRow0e`, `NotUse`, `CheckThreeBytes`, `Inc3B`, `Inc2B` |
 | M2 T38 S3 | 3 | `CheckpointEnemyID`, `InitEnemyRoutines`, `NoInitCode` |
-| M2 T38 S4 | 23 | `InitGoomba`, `InitPodoboo`, `InitRetainerObj`, `NormalXSpdData`, `InitNormalEnemy`, `GetESpd`, `SetESpd`, `InitRedKoopa`, `HBroWalkingTimerData`, `InitHammerBro`, `InitHorizFlySwimEnemy`, `InitBloober`, `SmallBBox`, `InitRedPTroopa`, `GetCent`, `TallBBox`, `SetBBox`, `InitVStf`, `InitBulletBill`, `InitCheepCheep`, `InitLakitu`, `SetupLakitu`, `KillLakitu` |
+| M2 T38 S4 | 22 | `InitGoomba`, `InitPodoboo`, `InitRetainerObj`, `NormalXSpdData`, `InitNormalEnemy`, `GetESpd`, `SetESpd`, `InitRedKoopa`, `HBroWalkingTimerData`, `InitHammerBro`, `InitHorizFlySwimEnemy`, `InitBloober`, `SmallBBox`, `InitRedPTroopa`, `GetCent`, `TallBBox`, `SetBBox`, `InitBulletBill`, `InitCheepCheep`, `InitLakitu`, `SetupLakitu`, `KillLakitu` |
 | M2 T38 S5 | 13 | `PRDiffAdjustData`, `LakituAndSpinyHandler`, `ChkLak`, `ChkNoEn`, `CreateL`, `RetEOfs`, `ExLSHand`, `CreateSpiny`, `DifLoop`, `UsePosv`, `SetSpSpd`, `SpinyRte`, `ChpChpEx` |
 | M2 T38 S6 | 4 | `FirebarSpinSpdData`, `FirebarSpinDirData`, `InitLongFirebar`, `InitShortFirebar` |
 | M2 T38 S7 | 10 | `FlyCCXPositionData`, `FlyCCXSpeedData`, `FlyCCTimerData`, `InitFlyingCheepCheep`, `MaxCC`, `GSeed`, `RSeed`, `D2XPos1`, `D2XPos2`, `FinCCSt` |
@@ -99,7 +99,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T39 S3 | 14 | `Bitmasks`, `Enemy17YPosData`, `SwimCC_IDData`, `BulletBillCheepCheep`, `ChkW2`, `Get17ID`, `Set17ID`, `GetRBit`, `ChkRBit`, `AddFBit`, `DoBulletBills`, `BB_SLoop`, `ExF17`, `FireBulletBill` |
 | M2 T39 S4 | 8 | `HandleGroupEnemies`, `PullID`, `SnglID`, `SetYGp`, `CntGrp`, `GrLoop`, `GSltLp`, `NextED` |
 | M2 T39 S5 | 9 | `InitPiranhaPlant`, `InitEnemyFrenzy`, `NoFrenzyCode`, `EndFrenzy`, `LakituChk`, `NextFSlot`, `InitJumpGPTroopa`, `TallBBox2`, `SetBBox2` |
-| M2 T39 S6 | 20 | `InitBalPlatform`, `AlignP`, `SetBPA`, `InitDropPlatform`, `InitHoriPlatform`, `InitVertPlatform`, `SetYO`, `CommonPlatCode`, `SPBBox`, `CasPBB`, `LargeLiftUp`, `LargeLiftDown`, `LargeLiftBBox`, `PlatLiftUp`, `PlatLiftDown`, `CommonSmallLift`, `PlatPosDataLow`, `PlatPosDataHigh`, `PosPlatform`, `EndOfEnemyInitCode` |
+| M2 T39 S6 | 3 | `PlatPosDataLow`, `PlatPosDataHigh`, `EndOfEnemyInitCode` |
 | M2 T39 S7 | 4 | `RunEnemyObjectsCore`, `JmpEO`, `NoRunCode`, `RunRetainerObj` |
 | M2 T39 S8 | 4 | `RunNormalEnemies`, `SkipMove`, `EnemyMovementSubs`, `NoMoveCode` |
 | M2 T39 S9 | 7 | `RunBowserFlame`, `RunFirebarObj`, `RunSmallPlatform`, `RunLargePlatform`, `SkipPT`, `LargePlatformSubroutines`, `EraseEnemyObject` |
@@ -199,7 +199,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T70 S13 | 13 | `SetupIntermediate`, `AreaPalette`, `GetAreaPalette`, `SetVRAMAddr_A`, `NextSubtask`, `BGColorCtrl_Addr`, `BackgroundColors`, `PlayerColors`, `GetBackgroundColor`, `NoBGColor`, `GetAlternatePalette1`, `SetVRAMAddr_B`, `NoAltPal` |
 | M2 T70 S14 | 12 | `WriteTopStatusLine`, `WriteBottomStatusLine`, `DisplayTimeUp`, `NoTimeUp`, `DisplayIntermediate`, `PlayerInter`, `OutputInter`, `GameOverInter`, `NoInter`, `ResetSpritesAndScreenTimer`, `ResetScreenTimer`, `NoReset` |
 | M2 T70 S15 | 17 | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeNameTables`, `WriteNTAddr`, `InitNTLoop`, `InitATLoop`, `InitScroll`, `WritePPUReg1`, `InitializeMemory`, `InitPageLoop`, `InitByteLoop`, `InitByte`, `SkipByte` |
-| M2 T70 S17 | 129 | `OperModeExecutionTree`, `TitleScreenMode`, `VictoryModeSubroutines`, `GetPlayerColors`, `ChkFiery`, `StartClrGet`, `ClrGetLoop`, `SetBGColor`, `SetVRAMOffset`, `DrawTitleScreen`, `OutputTScr`, `ChkHiByte`, `RenderAreaGraphics`, `DrawMTLoop`, `RightCheck`, `LLeft`, `NextMTRow`, `SetAttrib`, `ExitDrawM`, `RenderAttributeTables`, `SetATHigh`, `AttribLoop`, `SetVRAMCtrl`, `ColorRotation`, `GetBlankPal`, `GetAreaPal`, `ExitColorRot`, `AreaParserTasks`, `RenderSceneryTerrain`, `ClrMTBuf`, `ThirdP`, `RendBack`, `SceLoop1`, `RendFore`, `SceLoop2`, `NoFore`, `RendTerr`, `TerMTile`, `StoreMT`, `TerrLoop`, `NoCloud2`, `TerrBChk`, `NextTBit`, `EndUChk`, `RendBBuf`, `ChkMTLow`, `StrBlock`, `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj`, `AlterAreaAttributes`, `Alter2`, `SetFore`, `AreaStyleObject`, `CastleObject`, `CRendLoop`, `ChkCFloor`, `NotTall`, `PlayerStop`, `ExitCastle`, `WaterPipe`, `IntroPipe`, `VPipeSectLoop`, `NoBlankP`, `ExitPipe`, `RenderSidewaysPipe`, `DrawSidePart`, `VerticalPipe`, `WarpPipe`, `DrawPipe`, `GetPipeHeight`, `RenderUnderPart`, `DrawThisRow`, `WaitOneRow`, `ExitUPartR`, `GameMode`, `GameRoutines`, `PlayerHole`, `HoleBottom`, `MoveSubs`, `FireballXSpdData`, `FireballObjCore`, `WhLoop`, `WhirlpoolActivate`, `WhPull`, `DuplicateEnemyObj`, `FSLoop`, `FlmEx`, `FlameTimerData`, `SetFlameTimer`, `ExFl`, `LargePlatformBoundBox`, `DrawLargePlatform`, `ShrinkPlatform`, `SetLast2Platform`, `SetPlatformTilenum`, `SChk2`, `SChk3`, `SChk4`, `SChk5`, `SChk6`, `SLChk`, `ExDLPl` |
+| M2 T70 S17 | 147 | `OperModeExecutionTree`, `TitleScreenMode`, `VictoryModeSubroutines`, `GetPlayerColors`, `ChkFiery`, `StartClrGet`, `ClrGetLoop`, `SetBGColor`, `SetVRAMOffset`, `DrawTitleScreen`, `OutputTScr`, `ChkHiByte`, `RenderAreaGraphics`, `DrawMTLoop`, `RightCheck`, `LLeft`, `NextMTRow`, `SetAttrib`, `ExitDrawM`, `RenderAttributeTables`, `SetATHigh`, `AttribLoop`, `SetVRAMCtrl`, `ColorRotation`, `GetBlankPal`, `GetAreaPal`, `ExitColorRot`, `AreaParserTasks`, `RenderSceneryTerrain`, `ClrMTBuf`, `ThirdP`, `RendBack`, `SceLoop1`, `RendFore`, `SceLoop2`, `NoFore`, `RendTerr`, `TerMTile`, `StoreMT`, `TerrLoop`, `NoCloud2`, `TerrBChk`, `NextTBit`, `EndUChk`, `RendBBuf`, `ChkMTLow`, `StrBlock`, `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj`, `AlterAreaAttributes`, `Alter2`, `SetFore`, `AreaStyleObject`, `CastleObject`, `CRendLoop`, `ChkCFloor`, `NotTall`, `PlayerStop`, `ExitCastle`, `WaterPipe`, `IntroPipe`, `VPipeSectLoop`, `NoBlankP`, `ExitPipe`, `RenderSidewaysPipe`, `DrawSidePart`, `VerticalPipe`, `WarpPipe`, `DrawPipe`, `GetPipeHeight`, `RenderUnderPart`, `DrawThisRow`, `WaitOneRow`, `ExitUPartR`, `GameMode`, `GameRoutines`, `PlayerHole`, `HoleBottom`, `MoveSubs`, `FireballXSpdData`, `FireballObjCore`, `WhLoop`, `WhirlpoolActivate`, `WhPull`, `InitVStf`, `DuplicateEnemyObj`, `FSLoop`, `FlmEx`, `InitBalPlatform`, `AlignP`, `SetBPA`, `InitDropPlatform`, `InitHoriPlatform`, `InitVertPlatform`, `SetYO`, `CommonPlatCode`, `SPBBox`, `CasPBB`, `LargeLiftUp`, `LargeLiftDown`, `LargeLiftBBox`, `PlatLiftUp`, `PlatLiftDown`, `CommonSmallLift`, `PosPlatform`, `FlameTimerData`, `SetFlameTimer`, `ExFl`, `LargePlatformBoundBox`, `DrawLargePlatform`, `ShrinkPlatform`, `SetLast2Platform`, `SetPlatformTilenum`, `SChk2`, `SChk3`, `SChk4`, `SChk5`, `SChk6`, `SLChk`, `ExDLPl` |
 | M2 T70 S4 | 6 | `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`, `NonMaskableInterrupt`, `ScreenOff`, `InitBuffer` |
 | M2 T70 S6 | 9 | `RotPRandomBit`, `Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipSprite0`, `SkipMainOper`, `MoveAllSpritesOffscreen`, `MoveSpritesOffscreen`, `SprInitLoop` |
 | M2 T70 S7 | 6 | `SpriteShuffler`, `ShuffleLoop`, `StrSprOffset`, `NextSprOffset`, `SetAmtOffset`, `SetMiscOffset` |
@@ -1169,7 +1169,7 @@ transfer existing ownership or allocate a numeric T.
 | 8245 | `GetCent` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
 | 8248 | `TallBBox` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
 | 8249 | `SetBBox` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
-| 8252 | `InitVStf` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T17 S5; M2 T21 S5; M2 T24 S1 |
+| 8252 | `InitVStf` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T17 S5; M2 T21 S5; M2 T24 S1 |
 | 8259 | `InitBulletBill` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
 | 8268 | `InitCheepCheep` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
 | 8279 | `InitLakitu` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
@@ -1250,25 +1250,25 @@ transfer existing ownership or allocate a numeric T.
 | 8893 | `InitJumpGPTroopa` | M2 T39 S5 | existing closure backlog; Accepted transfer-177: small initializers and frenzy dispatch/stop chain. | M2 T21 S5; M2 T24 S1 |
 | 8898 | `TallBBox2` | M2 T39 S5 | existing closure backlog; Accepted transfer-177: small initializers and frenzy dispatch/stop chain. | M2 T21 S5; M2 T24 S1 |
 | 8899 | `SetBBox2` | M2 T39 S5 | existing closure backlog; Accepted transfer-177: small initializers and frenzy dispatch/stop chain. | M2 T21 S5; M2 T24 S1 |
-| 8904 | `InitBalPlatform` | M2 T39 S6 | existing closure backlog; Accepted transfer-178: original platform initialization and positioning chain. | M2 T21 S5; M2 T24 S1 |
-| 8911 | `AlignP` | M2 T39 S6 | existing closure backlog; Accepted transfer-178: original platform initialization and positioning chain. | M2 T21 S5; M2 T24 S1 |
-| 8917 | `SetBPA` | M2 T39 S6 | existing closure backlog; Accepted transfer-178: original platform initialization and positioning chain. | M2 T21 S5; M2 T24 S1 |
-| 8925 | `InitDropPlatform` | M2 T39 S6 | existing closure backlog; Accepted transfer-178: original platform initialization and positioning chain. | M2 T21 S5; M2 T24 S1 |
-| 8932 | `InitHoriPlatform` | M2 T39 S6 | existing closure backlog; Accepted transfer-178: original platform initialization and positioning chain. | M2 T21 S5; M2 T24 S1 |
-| 8939 | `InitVertPlatform` | M2 T39 S6 | existing closure backlog; Accepted transfer-178: original platform initialization and positioning chain. | M2 T21 S5; M2 T24 S1 |
-| 8947 | `SetYO` | M2 T39 S6 | existing closure backlog; Accepted transfer-178: original platform initialization and positioning chain. | M2 T21 S5; M2 T24 S1 |
-| 8955 | `CommonPlatCode` | M2 T39 S6 | existing closure backlog; Accepted transfer-178: original platform initialization and positioning chain. | M2 T21 S5; M2 T24 S1 |
-| 8957 | `SPBBox` | M2 T39 S6 | existing closure backlog; Accepted transfer-178: original platform initialization and positioning chain. | M2 T21 S5; M2 T24 S1 |
-| 8964 | `CasPBB` | M2 T39 S6 | existing closure backlog; Accepted transfer-178: original platform initialization and positioning chain. | M2 T21 S5; M2 T24 S1 |
-| 8969 | `LargeLiftUp` | M2 T39 S6 | existing closure backlog; Accepted transfer-178: original platform initialization and positioning chain. | M2 T21 S5; M2 T24 S1 |
-| 8973 | `LargeLiftDown` | M2 T39 S6 | existing closure backlog; Accepted transfer-178: original platform initialization and positioning chain. | M2 T21 S5; M2 T24 S1 |
-| 8976 | `LargeLiftBBox` | M2 T39 S6 | existing closure backlog; Accepted transfer-178: original platform initialization and positioning chain. | M2 T21 S5; M2 T24 S1 |
-| 8981 | `PlatLiftUp` | M2 T39 S6 | existing closure backlog; Accepted transfer-178: original platform initialization and positioning chain. | M2 T21 S5; M2 T24 S1 |
-| 8990 | `PlatLiftDown` | M2 T39 S6 | existing closure backlog; Accepted transfer-178: original platform initialization and positioning chain. | M2 T21 S5; M2 T24 S1 |
-| 8998 | `CommonSmallLift` | M2 T39 S6 | existing closure backlog; Accepted transfer-178: original platform initialization and positioning chain. | M2 T21 S5; M2 T24 S1 |
+| 8904 | `InitBalPlatform` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
+| 8911 | `AlignP` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
+| 8917 | `SetBPA` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
+| 8925 | `InitDropPlatform` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
+| 8932 | `InitHoriPlatform` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
+| 8939 | `InitVertPlatform` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
+| 8947 | `SetYO` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
+| 8955 | `CommonPlatCode` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
+| 8957 | `SPBBox` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
+| 8964 | `CasPBB` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
+| 8969 | `LargeLiftUp` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
+| 8973 | `LargeLiftDown` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
+| 8976 | `LargeLiftBBox` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
+| 8981 | `PlatLiftUp` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
+| 8990 | `PlatLiftDown` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
+| 8998 | `CommonSmallLift` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
 | 9007 | `PlatPosDataLow` | M2 T39 S6 | existing closure backlog; Accepted transfer-178: original platform initialization and positioning chain. | M2 T21 S5; M2 T24 S1 |
 | 9010 | `PlatPosDataHigh` | M2 T39 S6 | existing closure backlog; Accepted transfer-178: original platform initialization and positioning chain. | M2 T21 S5; M2 T24 S1 |
-| 9013 | `PosPlatform` | M2 T39 S6 | existing closure backlog; Accepted transfer-178: original platform initialization and positioning chain. | M2 T21 S5; M2 T24 S1 |
+| 9013 | `PosPlatform` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
 | 9025 | `EndOfEnemyInitCode` | M2 T39 S6 | existing closure backlog; Accepted transfer-178: original platform initialization and positioning chain. | M2 T21 S5; M2 T24 S1 |
 | 9030 | `RunEnemyObjectsCore` | M2 T39 S7 | existing closure backlog; Accepted transfer-179: actor vector and retainer call boundaries. | M2 T21 S5; M2 T24 S1 |
 | 9038 | `JmpEO` | M2 T39 S7 | existing closure backlog; Accepted transfer-179: actor vector and retainer call boundaries. | M2 T21 S5; M2 T24 S1 |
@@ -2445,7 +2445,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T38 S1 | 0 | 17 | owner-approved-source-order, enemy-loop-dispatch-chain; [record](../../docs/history/M2-T38-enemy-stream-initialization.md) |
 | M2 T38 S2 | 0 | 19 | owner-approved-source-order, enemy-record-parser-chain; [record](../../docs/history/M2-T38-enemy-stream-initialization.md) |
 | M2 T38 S3 | 0 | 3 | owner-approved-source-order, initializer-vector-chain; [record](../../docs/history/M2-T38-enemy-stream-initialization.md) |
-| M2 T38 S4 | 0 | 23 | owner-approved-source-order, common-initializer-chain; [record](../../docs/history/M2-T38-enemy-stream-initialization.md) |
+| M2 T38 S4 | 0 | 22 | owner-approved-source-order, common-initializer-chain; [record](../../docs/history/M2-T38-enemy-stream-initialization.md) |
 | M2 T38 S5 | 0 | 13 | owner-approved-source-order, lakitu-spiny-allocation-chain; [record](../../docs/history/M2-T38-enemy-stream-initialization.md) |
 | M2 T38 S6 | 0 | 4 | owner-approved-source-order, firebar-initialization-and-duplicate-dependency; [record](../../docs/history/M2-T38-enemy-stream-initialization.md) |
 | M2 T38 S7 | 0 | 10 | owner-approved-source-order, complete-flying-fish-initializer; [record](../../docs/history/M2-T38-enemy-stream-initialization.md) |
@@ -2455,7 +2455,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T39 S3 | 0 | 14 | owner-approved-source-order, bullet-swimming-fish-allocation; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
 | M2 T39 S4 | 0 | 8 | owner-approved-source-order, group-enemy-allocation; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
 | M2 T39 S5 | 0 | 9 | owner-approved-source-order, small-initializers-frenzy-dispatch; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
-| M2 T39 S6 | 0 | 20 | owner-approved-source-order, platform-initialization-chain; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
+| M2 T39 S6 | 0 | 3 | owner-approved-source-order, platform-initialization-chain; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
 | M2 T39 S7 | 0 | 4 | owner-approved-source-order, actor-vector-retainer-chain; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
 | M2 T39 S8 | 0 | 4 | owner-approved-source-order, normal-actor-movement-vector; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
 | M2 T39 S9 | 0 | 7 | owner-approved-source-order, special-actor-platform-callers; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
@@ -2822,7 +2822,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T70 S14 | 0 | 12 | hud-intermediate-timer-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S15 | 0 | 17 | final-reset-startup-source-and-graph-review; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S16 | 0 | 0 | executable-data-binding-manifest; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S17 | 0 | 129 | material-use-completeness-and-path-reconciliation, corrective-title-pointer-output-chain, corrective-column-output-chain, corrective-parser-output-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S17 | 0 | 147 | material-use-completeness-and-path-reconciliation, corrective-title-pointer-output-chain, corrective-column-output-chain, corrective-parser-output-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M2 T9 | 1 | - | [record](../../docs/etc/architecture/smb1-frame-output-ledger.md); [record](../../docs/history/M2-T9-frame-output-ledger-and-reference-recorder.md); S not recorded |
 | M2 Td | 0 | - | [record](../../docs/proposals/m2-rom-structural-recovery.md); [record](../../docs/states/QUEUE.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -3230,6 +3230,8 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-t70-s17-platform-oam-index-1 | M2 T52 S6 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s17-platform-oam-index-2 | M2 T44 S5 | M2 T70 S17 | 10 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s17-p114-duplicate | M2 T39 S1 | M2 T70 S17 | 3 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-p115-platform-0 | M2 T38 S4 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-p115-platform-1 | M2 T39 S6 | M2 T70 S17 | 17 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 
 ## Recorded S estimates and actual matches
 

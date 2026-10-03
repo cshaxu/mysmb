@@ -34170,8 +34170,8 @@
     {
       "label": "InitVStf",
       "line": 8252,
-      "receiver": "M2 T38 S4",
-      "receivingBasis": "Accepted transfer-168: common initializers and shared reset tails.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P115 platform initializer zero-page address correction.",
       "futurePackage": null,
       "history": [
         {
@@ -36095,8 +36095,8 @@
     {
       "label": "InitBalPlatform",
       "line": 8904,
-      "receiver": "M2 T39 S6",
-      "receivingBasis": "Accepted transfer-178: original platform initialization and positioning chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P115 platform initializer zero-page address correction.",
       "futurePackage": null,
       "history": [
         {
@@ -36116,8 +36116,8 @@
     {
       "label": "AlignP",
       "line": 8911,
-      "receiver": "M2 T39 S6",
-      "receivingBasis": "Accepted transfer-178: original platform initialization and positioning chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P115 platform initializer zero-page address correction.",
       "futurePackage": null,
       "history": [
         {
@@ -36137,8 +36137,8 @@
     {
       "label": "SetBPA",
       "line": 8917,
-      "receiver": "M2 T39 S6",
-      "receivingBasis": "Accepted transfer-178: original platform initialization and positioning chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P115 platform initializer zero-page address correction.",
       "futurePackage": null,
       "history": [
         {
@@ -36158,8 +36158,8 @@
     {
       "label": "InitDropPlatform",
       "line": 8925,
-      "receiver": "M2 T39 S6",
-      "receivingBasis": "Accepted transfer-178: original platform initialization and positioning chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P115 platform initializer zero-page address correction.",
       "futurePackage": null,
       "history": [
         {
@@ -36179,8 +36179,8 @@
     {
       "label": "InitHoriPlatform",
       "line": 8932,
-      "receiver": "M2 T39 S6",
-      "receivingBasis": "Accepted transfer-178: original platform initialization and positioning chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P115 platform initializer zero-page address correction.",
       "futurePackage": null,
       "history": [
         {
@@ -36200,8 +36200,8 @@
     {
       "label": "InitVertPlatform",
       "line": 8939,
-      "receiver": "M2 T39 S6",
-      "receivingBasis": "Accepted transfer-178: original platform initialization and positioning chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P115 platform initializer zero-page address correction.",
       "futurePackage": null,
       "history": [
         {
@@ -36221,8 +36221,8 @@
     {
       "label": "SetYO",
       "line": 8947,
-      "receiver": "M2 T39 S6",
-      "receivingBasis": "Accepted transfer-178: original platform initialization and positioning chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P115 platform initializer zero-page address correction.",
       "futurePackage": null,
       "history": [
         {
@@ -36242,8 +36242,8 @@
     {
       "label": "CommonPlatCode",
       "line": 8955,
-      "receiver": "M2 T39 S6",
-      "receivingBasis": "Accepted transfer-178: original platform initialization and positioning chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P115 platform initializer zero-page address correction.",
       "futurePackage": null,
       "history": [
         {
@@ -36263,8 +36263,8 @@
     {
       "label": "SPBBox",
       "line": 8957,
-      "receiver": "M2 T39 S6",
-      "receivingBasis": "Accepted transfer-178: original platform initialization and positioning chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P115 platform initializer zero-page address correction.",
       "futurePackage": null,
       "history": [
         {
@@ -36284,8 +36284,8 @@
     {
       "label": "CasPBB",
       "line": 8964,
-      "receiver": "M2 T39 S6",
-      "receivingBasis": "Accepted transfer-178: original platform initialization and positioning chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P115 platform initializer zero-page address correction.",
       "futurePackage": null,
       "history": [
         {
@@ -36305,8 +36305,8 @@
     {
       "label": "LargeLiftUp",
       "line": 8969,
-      "receiver": "M2 T39 S6",
-      "receivingBasis": "Accepted transfer-178: original platform initialization and positioning chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P115 platform initializer zero-page address correction.",
       "futurePackage": null,
       "history": [
         {
@@ -36326,8 +36326,8 @@
     {
       "label": "LargeLiftDown",
       "line": 8973,
-      "receiver": "M2 T39 S6",
-      "receivingBasis": "Accepted transfer-178: original platform initialization and positioning chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P115 platform initializer zero-page address correction.",
       "futurePackage": null,
       "history": [
         {
@@ -36347,8 +36347,8 @@
     {
       "label": "LargeLiftBBox",
       "line": 8976,
-      "receiver": "M2 T39 S6",
-      "receivingBasis": "Accepted transfer-178: original platform initialization and positioning chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P115 platform initializer zero-page address correction.",
       "futurePackage": null,
       "history": [
         {
@@ -36368,8 +36368,8 @@
     {
       "label": "PlatLiftUp",
       "line": 8981,
-      "receiver": "M2 T39 S6",
-      "receivingBasis": "Accepted transfer-178: original platform initialization and positioning chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P115 platform initializer zero-page address correction.",
       "futurePackage": null,
       "history": [
         {
@@ -36389,8 +36389,8 @@
     {
       "label": "PlatLiftDown",
       "line": 8990,
-      "receiver": "M2 T39 S6",
-      "receivingBasis": "Accepted transfer-178: original platform initialization and positioning chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P115 platform initializer zero-page address correction.",
       "futurePackage": null,
       "history": [
         {
@@ -36410,8 +36410,8 @@
     {
       "label": "CommonSmallLift",
       "line": 8998,
-      "receiver": "M2 T39 S6",
-      "receivingBasis": "Accepted transfer-178: original platform initialization and positioning chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P115 platform initializer zero-page address correction.",
       "futurePackage": null,
       "history": [
         {
@@ -36473,8 +36473,8 @@
     {
       "label": "PosPlatform",
       "line": 9013,
-      "receiver": "M2 T39 S6",
-      "receivingBasis": "Accepted transfer-178: original platform initialization and positioning chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P115 platform initializer zero-page address correction.",
       "futurePackage": null,
       "history": [
         {
@@ -69907,6 +69907,44 @@
         "DuplicateEnemyObj",
         "FSLoop",
         "FlmEx"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-p115-platform-0",
+      "type": "transfer",
+      "from": "M2 T38 S4",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "InitVStf"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-p115-platform-1",
+      "type": "transfer",
+      "from": "M2 T39 S6",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "InitBalPlatform",
+        "AlignP",
+        "SetBPA",
+        "InitDropPlatform",
+        "InitHoriPlatform",
+        "InitVertPlatform",
+        "SetYO",
+        "CommonPlatCode",
+        "SPBBox",
+        "CasPBB",
+        "LargeLiftUp",
+        "LargeLiftDown",
+        "LargeLiftBBox",
+        "PlatLiftUp",
+        "PlatLiftDown",
+        "CommonSmallLift",
+        "PosPlatform"
       ],
       "acceptedBy": "Coordinator under owner same-S repair mandate.",
       "evidence": "docs/proposals/m2/t70-final-current-certification.md"

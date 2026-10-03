@@ -73,7 +73,7 @@ static const mysmb_u8 hammer_walking_timer[2] = { 0x80U, 0x50U };
 /* ROM $C363 InitVStf. */
 void mysmb_enemy_init_vertical_state(struct mysmb_game *game, mysmb_u8 slot)
 {
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+    game->ram[(mysmb_u8)(MYSMB_ENEMY_Y_SPEED + slot)] = 0U;
     game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0U;
 }
 
@@ -272,11 +272,11 @@ static void mysmb_enemy_position_platform(struct mysmb_game *game,
                                           mysmb_u8 slot, mysmb_u8 index)
 {
     mysmb_u16 sum;
-    sum = (mysmb_u16)(game->ram[MYSMB_ENEMY_X + slot] +
+    sum = (mysmb_u16)(game->ram[(mysmb_u8)(MYSMB_ENEMY_X + slot)] +
                      platform_position_low[index]);
-    game->ram[MYSMB_ENEMY_X + slot] = (mysmb_u8)sum;
-    game->ram[MYSMB_ENEMY_PAGE + slot] = (mysmb_u8)(
-        game->ram[MYSMB_ENEMY_PAGE + slot] + platform_position_high[index] +
+    game->ram[(mysmb_u8)(MYSMB_ENEMY_X + slot)] = (mysmb_u8)sum;
+    game->ram[(mysmb_u8)(MYSMB_ENEMY_PAGE + slot)] = (mysmb_u8)(
+        game->ram[(mysmb_u8)(MYSMB_ENEMY_PAGE + slot)] + platform_position_high[index] +
         (sum >> 8U));
 }
 
@@ -306,15 +306,15 @@ void mysmb_enemy_init_drop_platform(struct mysmb_game *game, mysmb_u8 slot)
 void mysmb_enemy_init_balance_platform(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_u8 alignment;
-    game->ram[MYSMB_ENEMY_Y + slot] =
-        (mysmb_u8)(game->ram[MYSMB_ENEMY_Y + slot] - 2U);
+    game->ram[(mysmb_u8)(MYSMB_ENEMY_Y + slot)] =
+        (mysmb_u8)(game->ram[(mysmb_u8)(MYSMB_ENEMY_Y + slot)] - 2U);
     if (game->ram[MYSMB_SECONDARY_HARD] == 0U)
         mysmb_enemy_position_platform(game, slot, 2U);
     alignment = game->ram[MYSMB_BALANCE_PLATFORM_ALIGNMENT];
-    game->ram[MYSMB_ENEMY_STATE + slot] = alignment;
+    game->ram[(mysmb_u8)(MYSMB_ENEMY_STATE + slot)] = alignment;
     game->ram[MYSMB_BALANCE_PLATFORM_ALIGNMENT] =
         alignment < 0x80U ? 0xffU : slot;
-    game->ram[MYSMB_ENEMY_MOVING_DIRECTION + slot] = 0U;
+    game->ram[(mysmb_u8)(MYSMB_ENEMY_MOVING_DIRECTION + slot)] = 0U;
     mysmb_enemy_position_platform(game, slot, 0U);
     mysmb_enemy_init_drop_platform(game, slot);
 }
@@ -322,7 +322,7 @@ void mysmb_enemy_init_balance_platform(struct mysmb_game *game, mysmb_u8 slot)
 /* ROM $C80B InitHoriPlatform: XMoveSecondaryCounter aliases X speed. */
 void mysmb_enemy_init_horizontal_platform(struct mysmb_game *game, mysmb_u8 slot)
 {
-    game->ram[MYSMB_ENEMY_X_SPEED + slot] = 0U;
+    game->ram[(mysmb_u8)(MYSMB_ENEMY_X_SPEED + slot)] = 0U;
     mysmb_enemy_common_platform(game, slot);
 }
 
@@ -330,10 +330,10 @@ void mysmb_enemy_init_horizontal_platform(struct mysmb_game *game, mysmb_u8 slot
 void mysmb_enemy_init_vertical_platform(struct mysmb_game *game, mysmb_u8 slot)
 {
     mysmb_u8 y;
-    y = game->ram[MYSMB_ENEMY_Y + slot];
+    y = game->ram[(mysmb_u8)(MYSMB_ENEMY_Y + slot)];
     game->ram[MYSMB_PLATFORM_TOP_Y + slot] =
         y < 0x80U ? y : (mysmb_u8)(0U - y);
-    game->ram[MYSMB_PLATFORM_CENTER_Y + slot] =
+    game->ram[(mysmb_u8)(MYSMB_PLATFORM_CENTER_Y + slot)] =
         (mysmb_u8)(y + (y < 0x80U ? 0x40U : 0xc0U));
     mysmb_enemy_common_platform(game, slot);
 }
@@ -349,7 +349,7 @@ static void mysmb_enemy_common_small_lift(struct mysmb_game *game, mysmb_u8 slot
 void mysmb_enemy_init_small_lift_up(struct mysmb_game *game, mysmb_u8 slot)
 {
     game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0x10U;
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0xffU;
+    game->ram[(mysmb_u8)(MYSMB_ENEMY_Y_SPEED + slot)] = 0xffU;
     mysmb_enemy_common_small_lift(game, slot);
 }
 
@@ -357,7 +357,7 @@ void mysmb_enemy_init_small_lift_up(struct mysmb_game *game, mysmb_u8 slot)
 void mysmb_enemy_init_small_lift_down(struct mysmb_game *game, mysmb_u8 slot)
 {
     game->ram[MYSMB_ENEMY_Y_FORCE + slot] = 0xf0U;
-    game->ram[MYSMB_ENEMY_Y_SPEED + slot] = 0U;
+    game->ram[(mysmb_u8)(MYSMB_ENEMY_Y_SPEED + slot)] = 0U;
     mysmb_enemy_common_small_lift(game, slot);
 }
 
