@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P29 active;P28 parser phase correction checkpoint,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P30 active;P29 parser lifetime reconciliation checkpoint,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
@@ -56,7 +56,6 @@
 
 
 
-S17 P21:14336 controlled original parent-to-SoundEngine roots each width zero pre/post RAM/APU/ordered commands;7 new queue PCs,union20/48,28 named pending. Two invalid preliminary fixtures corrected with source caller preconditions,not product patches. No source/products/node/control/material credit. Local1992/1992,controls4274/4274,material879 partial,total unknown;S17/four packages open.
 
 S17 P22:22528 original actor/terminal parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands;17 new write PCs,union37/48,11 named pending. No product/source/node/control/material credit. Local1992/1992,controls4274/4274,material879 partial,total unknown;S17/four final packages open.
 
@@ -73,3 +72,5 @@ S17 P27:10691-use/4171-memory index complete and four negative checks pass;774 i
 
 
 S17 P28:original parser00/07 phases restored;27139 real original roots each width zero complete RAM/ordered-write differences after874/1024 baseline phase failures despite final-RAM equality. Seven stores reconciled;four local nodes restored1992/1992,one raw00 path947 added.10 checks each/six600-frame routes/three products pass,DOS compile/link only. Controls4274/4274,material947 partial,total unknown;other parser lifetimes/3552 direct RAM index clauses/four final packages remain open.
+
+S17 P29:existing32 parser/attribute labels,191 instructions/54 direct RAM sites reconciled into19 bounded local clauses;P28 current27139 roots each width retained,69 feasible branch outcomes observed,393728 scalar checks/four index rejection checks pass. No source/products/new nodes/edges. Local1992/1992,controls4274/4274,material947 partial,total unknown;965 instruction/275 RAM receipts,3498 other direct RAM index clauses/four final packages open.

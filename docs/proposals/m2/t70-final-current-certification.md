@@ -5412,3 +5412,77 @@ mysmb16.exe:259275 bytes,SHA256 2a6850ecc639f2a052941967c90529fdae777016a381d260
 mysmb32.exe:373619 bytes,SHA256 47fb669139d1d22f1748cffd6a45a47b09b7a7db90f5d3f39cded04efa570161.
 
 mysmb64.exe:379625 bytes,SHA256 bd9c78504e7d62be3e078d664b2b362dd5e433197c6383e63381520c522cc9af.
+
+## S17 P29 checkpoint - parser consumed-value clauses reconciled
+
+Continue the existing P28 admitted32-label parser/attribute scope;no new
+whole-project audit,node admission or maintenance transfer. P29 joins every
+191 original instruction to one of19 manually reviewed value-lifetime
+clauses. Their54 direct RAM sites now have complete local core receipts;
+15 indirect ROM reads retain P6/S16/P28 pointer/read-only/index domains.
+No source change,no new path credit,no product refresh:current P28 three
+products and10 focused checks each width/six600-frame routes are retained.
+
+The source and C were read side by side. Clause-index/scalar tools enforce
+coverage and numeric identities;they do not automatically prove the written
+contracts. Actual P28 original parents/real children execute for27139 roots
+each width with zero complete RAM and ordered parser00/07 differences.
+All32 source label entries and69 feasible conditional outcomes observed;
+95c1 fallthrough is impossible because LDA2E makes BNE unconditional.
+No claim that log entry coverage individually recorded every instruction.
+
+| Clause | Original instructions | Reviewed value lifetime/current counterpart |
+| --- | --- | --- |
+| C1 | 9508-9518 | Source X starts2, publishes ObjectOffset and clears Behind before reading the global cursor. Native slot2 and actual RAM writes agree. Source initial FD branches to Decode, not a global termination: active length still selects its buffered first byte. Native may eagerly choose buffered offset because on non-FD the intervening length BPL also enters Decode; on FD Decode makes the same length choice. Inactive offsets remain global. No child/write between these reads. |
+| C2 | 951a-952d | Negative length alone permits page bookkeeping. Source INY wraps Y modulo256; ASL carry is exactly second bit7. Native second uses byte(offset+1); cached second is immutable ROM. PageSelect zero gates byte increments of select/page, including FF wrap; active objects skip bookkeeping. |
+| C3 | 9530-9551 | DEY restores cursor; row13 and bit6 clear and PageSelect0 alone publish second&1F/page select and advance cursor. Native else-if uses PageSelect after C2 increment, preserving exclusion for bit7 page selection. Mask bit6 and bit7 are distinct, no signed host comparison. |
+| C4 | 9554-956e | Row14 backloading bypasses page check; otherwise unsigned CMP/BCC means object page<current page. Behind increment is from just-cleared zero; Next increments cursor twice and clears PageSelect. Decode real children or skip/advance occur before ChkLength. |
+| C5 | 9571-9588 | Source reloads ObjectOffset after every child and InitRear; native reloads actual RAM8, not original private slot. For valid slot0-2 length bit7 selects decrement; decrement0 becomesFF. DEX/BPL over initial/reloaded0-2 equals break at0 else slot--. Behind then Backloading determine restart with fresh slot2. No cached flag survives child calls. Final CPU registers/flags not native RAM contract. |
+| C6 | 9589-9594 | Two actual byte increments of global cursor preserve FE->00 and FF->01, then PageSelect0. Inlined native sites reproduce RAM values/order; original JSR/RTS physical return-address stores are ABI mechanics, actual pushes excluded only at touched bytes. |
+| C7 | 9595-95b1 | Nonnegative length loads buffered cursor, negative retains global cursor. Cached first is the same immutable source byte; no intervening pointer/data mutation or callback. FD exits before07/00 writes. RowF selects10,rowC08,others00; native classified addend agrees for all16 rows. Temporary source X addend is restored by ObjectOffset before slot-indexed uses. |
+| C8 | 95b3-95c1 | P28 actual07 initial store, ObjectOffset reload and row14 explicit07=0/ID2E preserve phases. CMP row uses earlier low nibble; row14 BNE after LDA2E is unconditional, its fallthrough outcome39 is instruction-infeasible. Native direct branch equivalent without promising CPU flag identity. |
+| C9 | 95c3-95df | Row13 publishes22 before page-control LeavePar; bit6 clear retains00. Loop increments only (second&7F)==4B; resulting ID second&3F. Cached second remains immutable across LoopCommand write; page/loop/scratch addresses distinct. Byte increment wrap preserved. |
+| C10 | 95e2-95f5 | Rows>=C use special-object shift; normal rows with70 mask0 publish07=16 then second&F. Native row/mask tests preserve CMP carry/AND zero branch; no page bookkeeping rerun here. |
+| C11 | 95f8-960a | P28 raw00 store, optional warp00 reset, actual00 reload before four shifts preserve source lifetime. No callback/intervening00 writer. Warp iff raw70 and bit3 set. Native integer promotion bounded112; shift cannot overflow16-bit int. |
+| C12 | 960d-9615 | Special rows read second with wrapped INY and apply70 mask/four logical LSRs, without invented raw00 store. Native immutable second cache and unsigned >>4 equivalent; C remains platform independent. |
+| C13 | 9616-9635 | Normalized00 publishes before page/column early exits. Active length invokes leaf immediately. Inactive off-page only row14/backload may invoke; source reloads global first, identical to cached first because inactive cursor unchanged so far. Other exits leave00/07 unchanged. Native predicates preserve equality and bit checks. |
+| C14 | 9636-9645 | Same-page/backload clears Backloading,Behind,ObjectOffset in that order then returns; native writes actual globals, does not call leaf. Following ChkLength deliberately reloads slot0. No local original slot may escape this join. |
+| C15 | 9646-9654 | Same-page without backload reloads global cursor/first, shifts high nibble and compares CurrentColumn. Cached first equal because no cursor/pointer/ROM write since first load. Native current column read remains actual RAM; CurrentColumn outside0-15 simply fails equality. |
+| C16 | 9656-965c | Inactive matched object stores global cursor into slot buffer before two cursor increments/PageSelect clear. No scratch00/07 writer in IncAreaObjOffset; cached object_id/addend still equal actual RAM inputs to RunAObj. Active objects bypass this publication, retain buffer cursor. |
+| C17 | 965f-9664 | Source LDA00/CLC/ADC07 equals byte ID+addend; current jump_engine_state receives that value and reproduces dispatch scratch; leaf selection derives same immutable first/second. Source X is same slot, saved buffer points to same object. After child neither cached first/second/ID/addend used; ChkLength reloads actual slot. Out-of-range object vectors/corrupted pointers outside declared returning-ROM fixture contract, not certified by these clauses. |
+| C18 | 96c5-96e1 | Attribute leaf rereads buffer+1, equal cached second: active uses original buffer; inactive writes old cursor to buffer before advancing. PHA/PLA save second across AND; native second parameter immutable, no callback. Bit6 clear stores terrain lowF then scenery mask30>>4; these addresses distinct from pointer/buffer/second. Physical PHA stores are excluded only actual touched stack bytes, value lifetime explicitly preserved. |
+| C19 | 96e2-96f1 | Bit6 set restores original second then low7; value>=4 publishes color then0 foreground, below4 only foreground=value. Native value local matches saved stack A, old color retained in below4 path; unsigned CMP carry predicate equivalent. No subsequent consumption of final CPU A/X/Y flags in this native return ABI. |
+
+393728 finite scalar assertions check byte increment/carry/page comparison,
+ASL-bit7 and masked-shift identities. They supplement source review;they
+are not arbitrary-pointer/all-game-input proof. Normal object slot0-2,
+34 original pointer views,nine retained fixture families and their explicit
+returning/preload constraints remain unchanged. Entry null/invalid pointers,
+corrupt dispatch IDs and arbitrary physical CPU stack/register outputs are
+not silently added to this contract. Actual stack pushes alone are excluded
+from RAM comparison;attribute saved byte lifetime is separately reviewed.
+RunAObj ID/addend cache spans only IncAreaObjOffset,which writes neither00
+nor07. Child calls precede fresh ObjectOffset/length/flag reads;no first,
+second,ID or addend local survives for use after the child.
+
+P28 source delta is checked against its committed parent:all area.c bytes
+before the sole trailing parser function are identical. Corrected parser
+receipt uses current source SHA below;unchanged preceding indirect/scenery/
+leaf receipts retain their dependencies rather than triggering a re-audit.
+All other recorded source identities still match. Current phase probe uses
+independent native statement IDs and original write PCs,not fabricated
+original IDs in translated production. Four index negative checks still
+reject missing/duplicate rows,false global certification and ungrounded
+nearest-label local credit.
+
+Consumed-use accounting is now965/10691 instruction sites with complete
+bounded local receipts and275/3773 direct RAM sites. Remaining9726 other
+instruction and3498 direct RAM sites need exact retained-receipt joins or
+missing-clause completion;these are not asserted mismatches or new work.
+Whole-program lifetimes remain pending,including these965 sites,until
+inter-owner/inter-frame composition is closed. Material947 partial,total
+unknown;no invented producer/consumer edges from overwrite-only phases.
+Historical/local1992/1992,feasible controls4274/4274(raw4342,infeasible68).
+S17/material/pixels/routes/snapshot remain open;M2 not certified.
+
+Current area.c normalized SHA256:827e23180ee8d409c3fcd3f12323179e62aa3151ab516bbd5b3c095925202e48.

@@ -13,6 +13,11 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P29 parser lifetime receipts](../proposals/m2/t70-final-current-certification.md#s17-p29-checkpoint---parser-consumed-value-clauses-reconciled).
+Existing191 instructions/54 direct RAM sites now have local clauses;
+965 instruction/275 RAM receipts,3498 direct RAM index clauses pending.
+No node/edge credit or whole-game certification.
+
 [P28 parser phase repair](../proposals/m2/t70-final-current-certification.md#s17-p28-checkpoint---parser-original-phase-publications-restored).
 Four reopened local nodes repaired;27139 roots each width zero RAM/write
 sequence diff,10 checks each/six scoped routes/three products pass.
