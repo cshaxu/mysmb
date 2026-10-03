@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P95 player control uses](../proposals/m2/t70-final-current-certification.md#s17-p95-checkpoint---player-control-parent-and-real-child-uses-reconciled).
+S17 P95:13player control labels/102instructions/39RAM joined7boundedclauses;143872actualroots eachwidth0diff/all102PC/23branchpairs,4tests each. Scope1530/fresh0;9628/10691instruction receipts,3407/3773RAM receipts;1063instructions/366RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
 [P94 NMI timer uses](../proposals/m2/t70-final-current-certification.md#s17-p94-checkpoint---nmi-pause-timer-gate-and-random-shift-uses-reconciled).
 S17 P94:5NMI timer labels/20instructions/7RAM joined4boundedclauses;3840actualroots eachwidth47bytephaseABI0diff/all20PC/4branchpairs,4tests each. Scope1530/fresh0;9526/10691instruction receipts,3368/3773RAM receipts;1165instructions/405RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 

@@ -35236,10 +35236,12 @@
       "currentOwner": "src/game/player_control.c shared C90 player-control owner",
       "currentCounterpart": "mysmb_player_latch_input and mysmb_player_step",
       "semanticEvidence": [
-        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics."
+        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:13labels/102instructions/39RAM joined7boundedclauses;postchildreload/orderedrealchildren/wrappedCMP-BMI/07threshold/music/cloudexit reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:143872originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all102PC/23branchpairs,4tests each;no childmock/ROMpatch,source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
       "currentSourcePaths": [
@@ -35254,10 +35256,12 @@
       "currentOwner": "src/game/player_control.c shared C90 player-control owner",
       "currentCounterpart": "mysmb_player_latch_input and mysmb_player_step",
       "semanticEvidence": [
-        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics."
+        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:13labels/102instructions/39RAM joined7boundedclauses;postchildreload/orderedrealchildren/wrappedCMP-BMI/07threshold/music/cloudexit reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:143872originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all102PC/23branchpairs,4tests each;no childmock/ROMpatch,source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
       "currentSourcePaths": [
@@ -35272,10 +35276,12 @@
       "currentOwner": "src/game/player_control.c shared C90 player-control owner",
       "currentCounterpart": "mysmb_player_latch_input and mysmb_player_step",
       "semanticEvidence": [
-        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics."
+        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:13labels/102instructions/39RAM joined7boundedclauses;postchildreload/orderedrealchildren/wrappedCMP-BMI/07threshold/music/cloudexit reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:143872originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all102PC/23branchpairs,4tests each;no childmock/ROMpatch,source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
       "currentSourcePaths": [
@@ -35290,10 +35296,12 @@
       "currentOwner": "src/game/player_control.c shared C90 player-control owner",
       "currentCounterpart": "mysmb_player_latch_input and mysmb_player_step",
       "semanticEvidence": [
-        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics."
+        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:13labels/102instructions/39RAM joined7boundedclauses;postchildreload/orderedrealchildren/wrappedCMP-BMI/07threshold/music/cloudexit reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:143872originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all102PC/23branchpairs,4tests each;no childmock/ROMpatch,source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
       "currentSourcePaths": [
@@ -35308,10 +35316,12 @@
       "currentOwner": "src/game/player_control.c shared C90 player-control owner",
       "currentCounterpart": "mysmb_player_latch_input and mysmb_player_step",
       "semanticEvidence": [
-        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics."
+        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:13labels/102instructions/39RAM joined7boundedclauses;postchildreload/orderedrealchildren/wrappedCMP-BMI/07threshold/music/cloudexit reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:143872originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all102PC/23branchpairs,4tests each;no childmock/ROMpatch,source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
       "currentSourcePaths": [
@@ -35326,10 +35336,12 @@
       "currentOwner": "src/game/player_control.c shared C90 player-control owner",
       "currentCounterpart": "mysmb_player_latch_input and mysmb_player_step",
       "semanticEvidence": [
-        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics."
+        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:13labels/102instructions/39RAM joined7boundedclauses;postchildreload/orderedrealchildren/wrappedCMP-BMI/07threshold/music/cloudexit reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:143872originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all102PC/23branchpairs,4tests each;no childmock/ROMpatch,source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
       "currentSourcePaths": [
@@ -35344,10 +35356,12 @@
       "currentOwner": "src/game/player_control.c shared C90 player-control owner",
       "currentCounterpart": "mysmb_player_latch_input and mysmb_player_step",
       "semanticEvidence": [
-        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics."
+        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:13labels/102instructions/39RAM joined7boundedclauses;postchildreload/orderedrealchildren/wrappedCMP-BMI/07threshold/music/cloudexit reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:143872originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all102PC/23branchpairs,4tests each;no childmock/ROMpatch,source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
       "currentSourcePaths": [
@@ -35364,11 +35378,13 @@
       "semanticEvidence": [
         "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P23 corrective amendment - PlayerHole RAM07 threshold:original4/6 publication absent from native owner;matching local predicate alone fails RAM output contract. Same-S custody accepted.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:original b186 writes07=4 before death/cloud partition and b1a8 overwrites07=6 in HoleBottom;native publishes at the identical source phases. Cached threshold equals07,no callback/alias write intervenes before wrapped high-Y subtraction predicate. Other owner stores/exits retain previous source contracts."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:original b186 writes07=4 before death/cloud partition and b1a8 overwrites07=6 in HoleBottom;native publishes at the identical source phases. Cached threshold equals07,no callback/alias write intervenes before wrapped high-Y subtraction predicate. Other owner stores/exits retain previous source contracts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:13labels/102instructions/39RAM joined7boundedclauses;postchildreload/orderedrealchildren/wrappedCMP-BMI/07threshold/music/cloudexit reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:143872originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all102PC/23branchpairs,4tests each;no childmock/ROMpatch,source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract. P23 includes original RAM07 threshold publication4/6 before ChkHoleX;current local output/cache contract restored.",
       "currentSourcePaths": [
@@ -35384,12 +35400,14 @@
       "currentCounterpart": "mysmb_player_latch_input and mysmb_player_step",
       "semanticEvidence": [
         "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:13labels/102instructions/39RAM joined7boundedclauses;postchildreload/orderedrealchildren/wrappedCMP-BMI/07threshold/music/cloudexit reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only. Actual queue-write PC observed in declared player/terrain/exit fixture partition;other callers and intervening overwrite lifetimes not inferred.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:143872originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all102PC/23branchpairs,4tests each;no childmock/ROMpatch,source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
       "currentSourcePaths": [
@@ -35406,11 +35424,13 @@
       "semanticEvidence": [
         "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P23 corrective amendment - PlayerHole RAM07 threshold:original4/6 publication absent from native owner;matching local predicate alone fails RAM output contract. Same-S custody accepted.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:original b186 writes07=4 before death/cloud partition and b1a8 overwrites07=6 in HoleBottom;native publishes at the identical source phases. Cached threshold equals07,no callback/alias write intervenes before wrapped high-Y subtraction predicate. Other owner stores/exits retain previous source contracts."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:original b186 writes07=4 before death/cloud partition and b1a8 overwrites07=6 in HoleBottom;native publishes at the identical source phases. Cached threshold equals07,no callback/alias write intervenes before wrapped high-Y subtraction predicate. Other owner stores/exits retain previous source contracts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:13labels/102instructions/39RAM joined7boundedclauses;postchildreload/orderedrealchildren/wrappedCMP-BMI/07threshold/music/cloudexit reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:143872originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all102PC/23branchpairs,4tests each;no childmock/ROMpatch,source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract. P23 includes original RAM07 threshold publication4/6 before ChkHoleX;current local output/cache contract restored.",
       "currentSourcePaths": [
@@ -35425,10 +35445,12 @@
       "currentOwner": "src/game/player_control.c shared C90 player-control owner",
       "currentCounterpart": "mysmb_player_latch_input and mysmb_player_step",
       "semanticEvidence": [
-        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics."
+        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:13labels/102instructions/39RAM joined7boundedclauses;postchildreload/orderedrealchildren/wrappedCMP-BMI/07threshold/music/cloudexit reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:143872originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all102PC/23branchpairs,4tests each;no childmock/ROMpatch,source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
       "currentSourcePaths": [
@@ -35443,10 +35465,12 @@
       "currentOwner": "src/game/player_control.c shared C90 player-control owner",
       "currentCounterpart": "mysmb_player_latch_input and mysmb_player_step",
       "semanticEvidence": [
-        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics."
+        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:13labels/102instructions/39RAM joined7boundedclauses;postchildreload/orderedrealchildren/wrappedCMP-BMI/07threshold/music/cloudexit reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:143872originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all102PC/23branchpairs,4tests each;no childmock/ROMpatch,source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
       "currentSourcePaths": [
@@ -35461,10 +35485,12 @@
       "currentOwner": "src/game/player_control.c shared C90 player-control owner",
       "currentCounterpart": "mysmb_player_latch_input and mysmb_player_step",
       "semanticEvidence": [
-        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics."
+        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:13labels/102instructions/39RAM joined7boundedclauses;postchildreload/orderedrealchildren/wrappedCMP-BMI/07threshold/music/cloudexit reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:143872originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all102PC/23branchpairs,4tests each;no childmock/ROMpatch,source/threeP81productsunchanged."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
       "currentSourcePaths": [
@@ -169942,22 +169968,22 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P91 checkpoint - two-port serial sampling and debounce uses reconciled:4labels/30instructions/6RAM joined3boundedclauses;standardD0/D1hardwarefold/00publication/strobe/twoportdebounce reviewed;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:14labels/96instructions/41RAM joined7boundedclauses;life sign/checkpoint16bytes/descendingsevenbyteexchange/carry/LoadAreaPointerbeforeContinue resets reviewed;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P93 checkpoint - victory messages counters and world completion uses reconciled:16labels/84instructions/29RAM joined7boundedclauses;sourcemessageSBC/carry/queue/counter/timer/Bexit order reviewed;8421falsecontrol00153 reclassifiedinfeasible,oldscopedframeproofdidnotobserveit;wholeproducer/inter-frame pending,no newnodecredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:5labels/20instructions/7RAM joined4boundedclauses;P89TopScore nonalias/P90pausedbit/P48timers joined,INCframe gate/RAM00/XOR/ROR reviewed;wholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:5labels/20instructions/7RAM joined4boundedclauses;P89TopScore nonalias/P90pausedbit/P48timers joined,INCframe gate/RAM00/XOR/ROR reviewed;wholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:13labels/102instructions/39RAM joined7boundedclauses;postchildreload/orderedrealchildren/wrappedCMP-BMI/07threshold/music/cloudexit reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 9526,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 1165,
+        "localInstructionReceiptSites": 9628,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 1063,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 3368,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 405,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 3407,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 366,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
         "directExternalQueueWriterPaths": 48,
         "pendingDirectRamOwners": {
-          "src/game/player_control.c shared C90 player-control owner": 39,
           "src/game/area/block_metatile.c": 34,
           "src/game/scroll.c shared C90 scroll owner": 32,
           "src/game/enemy/hammer_bro.c": 30,

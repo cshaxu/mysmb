@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P94 NMI timer checkpoint;S17 remains active,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P95 player control checkpoint;S17 remains active,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
@@ -126,7 +126,6 @@
 
 
 
-S17 P87:15bootstrap labels/83instructions/14RAM joined9boundedclauses;3600actualroots eachwidth0diff/all83PC/9branchpairs,4tests each. Scope1462/fresh0;9059/10691instruction receipts,3203/3773RAM receipts;1632instructions/570RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
 S17 P88:20title menu labels/112instructions/46RAM joined8boundedclauses;9824actualroots eachwidth0diff/all112PC/18branchpairs,1120persistentdemo calls/all43bytesread,4tests each. Scope1482/fresh0;9171/10691instruction receipts,3249/3773RAM receipts;1520instructions/524RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
@@ -141,3 +140,5 @@ S17 P92:14terminal labels/96instructions/41RAM joined7boundedclauses;196608actua
 S17 P93:16victory labels/84instructions/29RAM joined7boundedclauses;264192actualroots eachwidth0diff/all84PC/16branchpairs plusmandatory8421,4tests each. Scope1527/fresh0;9506/10691instruction receipts,3361/3773RAM receipts;1185instructions/412RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81);00153priorfalseexact reclassifiedinfeasible withoriginalinstructionproof. Material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
 S17 P94:5NMI timer labels/20instructions/7RAM joined4boundedclauses;3840actualroots eachwidth47bytephaseABI0diff/all20PC/4branchpairs,4tests each. Scope1530/fresh0;9526/10691instruction receipts,3368/3773RAM receipts;1165instructions/405RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
+S17 P95:13player control labels/102instructions/39RAM joined7boundedclauses;143872actualroots eachwidth0diff/all102PC/23branchpairs,4tests each. Scope1530/fresh0;9628/10691instruction receipts,3407/3773RAM receipts;1063instructions/366RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.

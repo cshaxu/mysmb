@@ -8871,3 +8871,39 @@ S17 P94:5NMI timer labels/20instructions/7RAM joined4boundedclauses;3840actualro
 FreshcurrentS5mechanism3840original80F0-to-8138cuts/nativeactualframe_root_begin,47bytephaseABI RAM00/09/0747/077F/0780-07A3/07A7-07AD only. All20PC visited/fourbothsidedbranchpairs;otherRAM/hardware/CPUstack notcomparedbythisfixture. Timer2048profilesinclude pause/unpause/mastercontrol0/1/2/FF/intervalallbytes andfourtimerboundaryvalues;1792individualrandombyteprofiles. P89TopScorewritebounds guaranteePauseStatusnonalias,P90pauseboolandP48timerreceipt retainedinjoinedsourceclauses. ExtraPCandbranchinstrumentationrequiredonecheaprepeat;initiallogparserdidnotacceptnewbranchline,repairedparserwithunchangedfixtures/assertions beforecredit. Fourfreshfocusedtests eachwidthpass/fournegativeaccountingmutantsrejected. Source/P81productsunchanged,DOScompile/linkonly. Sprite0/scroll/modeingress andwholeproducer/inter-frame/material/pixels/routes/snapshotremainpending.
 
 Current src/game/frame_root.c normalizedSHA256:beed1afea957c4290247a6d3178b168337b8ac2b992274dee76535cc72611b2b.
+
+## S17 P95 admission - full player control parent and real child uses
+
+ExistingPlayerCtrlRoutine102instructions/39RAM/13labels PlayerCtrlRoutine,DisJoyp,SaveJoyp,SizeChk,ChkMoveDir,SetMoveDir,PlayerSubs,PlayerHole,HoleDie,HoleBottom,ChkHoleX,ExitCtrl,CloudExit. ActualB0E9root/RTS,sharedplayer_control.c andactualphysics/movement/scroll/offscreen/relative/boundingbox/terrain/entrance children. Reuseproject-owned50scenario sourceRAMfixture for12800allbuttonprofiles,plus65536unfrozenstate0-3/button/positionprofiles and65536fullhighY/death-cloudgateprofiles. Scopelegalmovement/table domains;originalCPU/children unmodified. Allnonphysical-stackRAM/APU/orderedwritescompared,nativevoidCPUreturnexcluded actualcallerreloadsinputs. Postchildsize/speed/Y/GameSub mustbe reloaded;P23threshold07sourcewrites retained;cachehighY only afterlastchild before07predicate. ProtectedROMreadonly/raw4096batch128MiB/120sec cleanupbelowbuild. Fresh0/max1992,source/productsunchangedunlessconcretemismatch requirescorrectivechain/threeEXEs. Wholeproducer/inter-frame/finalpackagespending.
+
+## S17 P95 checkpoint - player control parent and real child uses reconciled
+
+S17 P95:13player control labels/102instructions/39RAM joined7boundedclauses;143872actualroots eachwidth0diff/all102PC/23branchpairs,4tests each. Scope1530/fresh0;9628/10691instruction receipts,3407/3773RAM receipts;1063instructions/366RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| C1 | PlayerCtrlRoutine,DisJoyp,SaveJoyp | GameSub0B skipslatching entirely. OtherstatesAreaType0 gateYhigh==1/Ylow<D0 beforecopybuttonfields0A/0C/0B. NativeAPIbuttons suppliedfromactualSaved06FC,extraidempotentSavedstoreonordinarypath hasnoalias/callbackconsumer. Down4 whileState0 andLRnonzero clears0C/0B;original Y/A lifetimesnotnativehostkey interpretation. |
+| C2 | SizeChk,ChkMoveDir,SetMoveDir | Actualmovementchild runsbeforeSize/Crouch/Speedreads,so boundboxctrl0499 gets small1 orbig0/crouch2fromreturnedstate. Speed0preservesoldmovingdir45;positive1/negative2otherwise. Realchild RAMresultinfullcomparison,notreplayedmockoutput;focusedcaller mutationtest independentlyenforcesreload/order. |
+| C3 | PlayerSubs | ActualScrollHandler/GetPlayerOffscreen/RelativePlayer/BoundingBox/PlayerBGCollision order retained. OriginalX0 beforeBoundingBox mapsnativeaddress04AC/control0499/relative03AD,03B8;sharedhelper publishes00/01/02. ActualPRG/worldblockbuffers passedthrough,allRAMmatched. PostcollisionreloadYlow/GameSub beforeprioritybit20clear;GameSub5/7/<4 orY<40 preservepriority. |
+| C4 | PlayerHole | ReadpostchildYhigh;CMP2/BMI meansbit7ofwrappedbyte difference,notunsignedless. EnteredpathScrollLock1 thenpublish07=4 beforetimer/cloudpartition. P23scratchrepair retained;cachedhighY afterlastchild isunchangedbyfollowing00723/07/queuewrites,so subsequentCMP07usesoriginalvalue. |
+| C5 | HoleDie,HoleBottom | TimerExpirednonzero orCloudType0 selectsdeathflag1. GameSub0B skipsmusiclatch andkeeps07=4;othersDeathMusicLoadednonzero skipsqueuebutstill07=6. OtherwisequeueEvent1andLoaded1before07=6. Actualsourcequeue state andmusicbuffer included,notjustvisibleMariooutcome. |
+| C6 | ChkHoleX,ExitCtrl | CMP07/BMIwrappedcomparisonpreserved. Ifthresholdmet,sourceDEXflag0becomesFF/cloud branch;deathflag1becomes0,MusicBuffer nonzeroreturnelseGameSub6. Nativebooleanpartitionequivalenttothis0/1 Xcapability;thresholdlocal equalspublished07 andcannotaliaschangingwriterbeforeuse. |
+| C7 | CloudExit | ClearJoypadOverride0758 thenactualSetEntr resetssourceentrance state beforeINCAltEntrance0752. SourceCloudType/Timerbranch precedence retained. WholeactualparentandchildRAMoutputs compared;CPU A/X/Y/CvoidABIexcluded,actualGameRoutines callersreloadTask/GameSub afterreturn. |
+
+ActualB0E9parent12800roots for50sourceRAMscenarios/allbuttonbytes,65536unfrozenstate0-3/button/positionprofiles,65536allYhigh/death-cloudgateprofiles,total143872eachwidth. All102PC/23two-sidedbranches. Actualmovement/scroll/offscreen/relative/boundbox/terrain/entrance children,notmocked/cut/replayedoutputs. All2048RAMexceptobservedactualphysicalCPUstackpushrange,24APU/orderedwrites0diff. Legalmovement/table/playerarea fixture domains explicit;notrawallRAMcartesianclaim. Sourcepostchildreloads/control/bounds/storeorder reviewed;CPU A/X/Y/CoutsidevoidAPI only,actualparentsreloadselectors. Parentfingerprints boundtoconcretecurrentchildsources. Fourfreshfocusedtests eachwidthpass/fournegativeaccountingmutantsrejected. Source/P81productsunchanged,DOScompile/linkonly. Wholeproducer/inter-frame/material/pixels/routes/snapshotremainpending;parentroute alsoobserveschildnodesbutdoesnotautomaticallypromotetheirunrevieweduseclauses.
+
+Current src/game/player_control.c normalizedSHA256:750be06040838c76fcee09fbb13dd4cee7069b456bd6808bd383ea44053a0347.
+
+Current src/game/player_movement.c normalizedSHA256:ce7cea88da5e76af3a7916fc64e44343cd04b39fcb65af3715064e2f8ab9d5d7.
+
+Current src/game/scroll.c normalizedSHA256:f4f7b0df4a870cb31290309652d043e536a375334702f7f2eda73a561fba3036.
+
+Current src/game/player_transition.c normalizedSHA256:7200cf5b9c4cca2593c34c16699e2a086f17e585e30071b2edddf23fc4b89a7b.
+
+Current src/game/player/terrain.c normalizedSHA256:e36d6b6dcc2985551943f0ff6df416c61d3fceb65a564e90bae7ce2bd286d18a.
+
+Current src/game/oam/object_position.c normalizedSHA256:1fdb3149c5d4ca6159550a0ed9e13247734987199343ecb1c90aa77d3cf39225.
+
+Current src/game/world/bounding_box.c normalizedSHA256:709d3acfbae67935aff24865393f0ddb0bcf173a70a57601f7d6a59f4a6459c0.
+
+Current src/game/player.c normalizedSHA256:23e17c99ffe8e540a162f7031617f08a1fec46bea70fab2ae24394876f2a0d41.
