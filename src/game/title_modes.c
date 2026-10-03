@@ -166,6 +166,7 @@ mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,
     if (game->area_prg == 0) {
         game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
         mysmb_game_commit_display_state(game);
+        mysmb_game_restore_display_mask(game);
         return 1U;
     }
     if (mysmb_area_apply_palette(game, 1U) == 0U ||
@@ -178,6 +179,7 @@ mysmb_u8 mysmb_game_apply_title_commands(struct mysmb_game *game,
      * the game-area sequence. */
     game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
     mysmb_game_commit_display_state(game);
+    mysmb_game_restore_display_mask(game);
     return 1U;
 }
 

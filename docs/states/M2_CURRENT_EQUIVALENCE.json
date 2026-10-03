@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 557,
+    "enumeratedCount": 558,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -12268,6 +12268,28 @@
         "src/game/enemy/init_targets.c",
         "src/game/enemy/frenzy.c"
       ]
+    },
+    {
+      "id": "material-00558",
+      "producer": "ScreenOff",
+      "consumer": "InitBuffer",
+      "storage": "RAM0779 display mirror to physical2001 after VRAM/header clearing",
+      "feasiblePath": "ScreenOff809e stores the selected mirror;UpdateScreen does not change0779;InitBuffer80de reloads0779 and80e1 writes2001 before SoundEngine80e4.",
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c:commit_display_state writes RAM0779;commit_vram_buffer clears headers/selector then calls restore_display_mask,which reloads RAM0779 into physical/visible mask before SoundEngine.",
+      "semanticContract": "The temporary pre-UpdateScreen physical mask is mirror&E7;after buffer/header/selector clearing physical2001 restores the actual RAM0779 mirror.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S4 original531 cases confirm256 pre-VRAM2001 phase differences per width;native final value matches but intermediate phase/post-consumer graph is absent.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1: original531 roots and byte-bound source audit restore pre-VRAM mirror&E7 and post-InitBuffer RAM0779 reload;four actual source calls/returns observed;38 pointer bytes,2 offsets and15 PRG bindings match. Explicit probe/ABI limits recorded."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1:512 native phase/reload cases;248 CTests each;current full x86/x64 and original OpenNT DOS16 builds;3 refreshed EXEs;6x600 original/native frame regressions,purity pass."
+      ],
+      "cohort": "A",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/frame_root.c"
+      ]
     }
   ],
   "cohorts": [
@@ -12475,10 +12497,12 @@
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "src/game/frame_root.c:mysmb_vram_address_low",
       "semanticEvidence": [
-        "Td S9 A1 static audit: SMB1 lines 743-761 and NMI lines 784-800 map selector-indexed table loads and InitBuffer routing to frame_root.c table arrays and mysmb_game_commit_vram_buffer."
+        "Td S9 A1 static audit: SMB1 lines 743-761 and NMI lines 784-800 map selector-indexed table loads and InitBuffer routing to frame_root.c table arrays and mysmb_game_commit_vram_buffer.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1: original531 roots and byte-bound source audit restore pre-VRAM mirror&E7 and post-InitBuffer RAM0779 reload;four actual source calls/returns observed;38 pointer bytes,2 offsets and15 PRG bindings match. Explicit probe/ABI limits recorded."
       ],
       "operationalEvidence": [
-        "Td S9 A1 controlled 19-selector matrix: owner-local ROM captures at $80c3, after both table loads and before UpdateScreen, match current x86 and x64 low/high bytes $00/$01 for selectors 0-18; x86 and x64 agree on every selector."
+        "Td S9 A1 controlled 19-selector matrix: owner-local ROM captures at $80c3, after both table loads and before UpdateScreen, match current x86 and x64 low/high bytes $00/$01 for selectors 0-18; x86 and x64 agree on every selector.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1:512 native phase/reload cases;248 CTests each;current full x86/x64 and original OpenNT DOS16 builds;3 refreshed EXEs;6x600 original/native frame regressions,purity pass."
       ],
       "semanticContract": "Binds all 19 low-byte entries selected by VRAM_Buffer_AddrCtrl into zero-page $00 before UpdateScreen.",
       "currentSourcePaths": [
@@ -12493,10 +12517,12 @@
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "src/game/frame_root.c:mysmb_vram_address_high",
       "semanticEvidence": [
-        "Td S9 A1 static audit: SMB1 lines 743-761 and NMI lines 784-800 map selector-indexed table loads and InitBuffer routing to frame_root.c table arrays and mysmb_game_commit_vram_buffer."
+        "Td S9 A1 static audit: SMB1 lines 743-761 and NMI lines 784-800 map selector-indexed table loads and InitBuffer routing to frame_root.c table arrays and mysmb_game_commit_vram_buffer.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1: original531 roots and byte-bound source audit restore pre-VRAM mirror&E7 and post-InitBuffer RAM0779 reload;four actual source calls/returns observed;38 pointer bytes,2 offsets and15 PRG bindings match. Explicit probe/ABI limits recorded."
       ],
       "operationalEvidence": [
-        "Td S9 A1 controlled 19-selector matrix: owner-local ROM captures at $80c3, after both table loads and before UpdateScreen, match current x86 and x64 low/high bytes $00/$01 for selectors 0-18; x86 and x64 agree on every selector."
+        "Td S9 A1 controlled 19-selector matrix: owner-local ROM captures at $80c3, after both table loads and before UpdateScreen, match current x86 and x64 low/high bytes $00/$01 for selectors 0-18; x86 and x64 agree on every selector.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1:512 native phase/reload cases;248 CTests each;current full x86/x64 and original OpenNT DOS16 builds;3 refreshed EXEs;6x600 original/native frame regressions,purity pass."
       ],
       "semanticContract": "Binds all 19 high-byte entries selected by VRAM_Buffer_AddrCtrl into zero-page $01 before UpdateScreen.",
       "currentSourcePaths": [
@@ -12511,10 +12537,12 @@
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_commit_vram_buffer selector branch",
       "semanticEvidence": [
-        "Td S9 A1 static audit: SMB1 lines 743-761 and NMI lines 784-800 map selector-indexed table loads and InitBuffer routing to frame_root.c table arrays and mysmb_game_commit_vram_buffer."
+        "Td S9 A1 static audit: SMB1 lines 743-761 and NMI lines 784-800 map selector-indexed table loads and InitBuffer routing to frame_root.c table arrays and mysmb_game_commit_vram_buffer.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1: original531 roots and byte-bound source audit restore pre-VRAM mirror&E7 and post-InitBuffer RAM0779 reload;four actual source calls/returns observed;38 pointer bytes,2 offsets and15 PRG bindings match. Explicit probe/ABI limits recorded."
       ],
       "operationalEvidence": [
-        "Td S9 A1 controlled 19-selector matrix: owner-local ROM captures at $80de, after UpdateScreen and InitBuffer, match current x86 and x64 buffer headers $0300/$0301 and $0340/$0341 plus cleared selector $0773 for selectors 0-18; x86 and x64 agree on every selector."
+        "Td S9 A1 controlled 19-selector matrix: owner-local ROM captures at $80de, after UpdateScreen and InitBuffer, match current x86 and x64 buffer headers $0300/$0301 and $0340/$0341 plus cleared selector $0773 for selectors 0-18; x86 and x64 agree on every selector.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1:512 native phase/reload cases;248 CTests each;current full x86/x64 and original OpenNT DOS16 builds;3 refreshed EXEs;6x600 original/native frame regressions,purity pass."
       ],
       "semanticContract": "Selects the second buffer header only when selector equals $06; selector $07 transfers buffer two but clears the ordinary buffer-one header.",
       "currentSourcePaths": [
@@ -12530,12 +12558,15 @@
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin / mysmb_frame_root_step",
       "semanticEvidence": [
         "M2 T52 S1 source re-read: lines 826-872 store the first masked LFSR bit to $00, write the saved $2000 mirror before the OperModeExecutionTree JSR, and OR d7 only at SkipMainOper after return.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 original531 cases confirm256 pre-VRAM2001 phase differences per width;native final value matches but intermediate phase/post-consumer graph is absent.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1: original531 roots and byte-bound source audit restore pre-VRAM mirror&E7 and post-InitBuffer RAM0779 reload;four actual source calls/returns observed;38 pointer bytes,2 offsets and15 PRG bindings match. Explicit probe/ABI limits recorded."
       ],
       "operationalEvidence": [
         "M2 T52 S1 controlled owner-ROM capture at source $8175, immediately before OperModeExecutionTree, applied one NMI-entry mirror precondition ($0778=$10) and recorded $00=$02, rotated LFSR $a9/$40, and physical $2000=$10. Raw trace remains ignored below build.",
         "M2 T52 S1 ROM-configured x86/x64 builds passed mysmb.nmi-parent-integration, Win32 self-test and platform-purity. The focused regression proves the scratch write, d7-clear dispatch boundary and d7 restoration at the RTI-equivalent tail; OpenNT DOS16 links the same shared frame_root.c.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1:512 native phase/reload cases;248 CTests each;current full x86/x64 and original OpenNT DOS16 builds;3 refreshed EXEs;6x600 original/native frame regressions,purity pass."
       ],
       "semanticContract": "Preserves the source NMI phase boundary: d7-clear control during pre-dispatch work and main-mode execution, then d7 re-enable only at the RTI tail.",
       "currentSourcePaths": [
@@ -12552,10 +12583,13 @@
       "semanticEvidence": [
         "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
         "M2 T53 S1 static audit: SMB1 lines 776-790 write the ScreenOff mask transaction before InitScroll and UpdateScreen, while current frame_root.c invokes mysmb_game_commit_vram_buffer before mysmb_game_commit_display_state. The source-required NMI transaction order is reversed.",
-        "M2 T53 S3 ScreenOff corrective source audit: ROM NonMaskableInterrupt lines 764-814 writes the temporary $2001 mask before InitScroll, OAM DMA and UpdateScreen; frame_root.c now calls mysmb_game_commit_display_state before mysmb_game_commit_vram_buffer in the same order."
+        "M2 T53 S3 ScreenOff corrective source audit: ROM NonMaskableInterrupt lines 764-814 writes the temporary $2001 mask before InitScroll, OAM DMA and UpdateScreen; frame_root.c now calls mysmb_game_commit_display_state before mysmb_game_commit_vram_buffer in the same order.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 original531 cases confirm256 pre-VRAM2001 phase differences per width;native final value matches but intermediate phase/post-consumer graph is absent.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1: original531 roots and byte-bound source audit restore pre-VRAM mirror&E7 and post-InitBuffer RAM0779 reload;four actual source calls/returns observed;38 pointer bytes,2 offsets and15 PRG bindings match. Explicit probe/ABI limits recorded."
       ],
       "operationalEvidence": [
-        "M2 T53 S3 corrective operational evidence: focused x86/x64 NMI-parent checks pass; refreshed x86/x64 outputs and shared OpenNT DOS16 link use the same frame_root.c. Controlled owner-local NMI route is retained only as ignored build evidence."
+        "M2 T53 S3 corrective operational evidence: focused x86/x64 NMI-parent checks pass; refreshed x86/x64 outputs and shared OpenNT DOS16 link use the same frame_root.c. Controlled owner-local NMI route is retained only as ignored build evidence.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1:512 native phase/reload cases;248 CTests each;current full x86/x64 and original OpenNT DOS16 builds;3 refreshed EXEs;6x600 original/native frame regressions,purity pass."
       ],
       "semanticContract": "Writes the source $2001 display-mask transaction before InitScroll, OAM DMA and UpdateScreen; only after selected-buffer clearing does the NMI restore the mirror mask for sound/input/pause work.",
       "currentSourcePaths": [
@@ -12572,11 +12606,14 @@
       "semanticEvidence": [
         "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
         "M2 T53 S1 source audit: after UpdateScreen, InitBuffer selects buffer-offset entry zero except selector six, clears both selected offset/header bytes, resets the address selector, and then permits display restore and the NMI service tail. The C VRAM commit has the same selector-six distinction and clear/reset writes; display restoration is the following shared call.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 original531 cases confirm256 pre-VRAM2001 phase differences per width;native final value matches but intermediate phase/post-consumer graph is absent.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1: original531 roots and byte-bound source audit restore pre-VRAM mirror&E7 and post-InitBuffer RAM0779 reload;four actual source calls/returns observed;38 pointer bytes,2 offsets and15 PRG bindings match. Explicit probe/ABI limits recorded."
       ],
       "operationalEvidence": [
         "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC $80d0 (InitBuffer) was reached in all 600 samples and current x86/x64 records had zero work-RAM, selected NMI-state and visible-output differences. This proves InitBuffer local semantics; it does not clear the earlier ScreenOff order mismatch.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1:512 native phase/reload cases;248 CTests each;current full x86/x64 and original OpenNT DOS16 builds;3 refreshed EXEs;6x600 original/native frame regressions,purity pass."
       ],
       "semanticContract": "After VRAM consumption clears the source-selected header and selector, restores the display mask, then invokes sound, input, pause and top-score work before timer handling.",
       "currentSourcePaths": [
@@ -51133,10 +51170,13 @@
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
         "M2 T53 S1 static audit: the source ScreenOff -> InitScroll -> UpdateScreen call/return transaction precedes buffer-header clear, but current frame_root.c executes VRAM commit before display-mask commit. The counterpart exists but its required order is reversed.",
-        "M2 T53 S3 ScreenOff corrective source audit: ROM NonMaskableInterrupt lines 764-814 writes the temporary $2001 mask before InitScroll, OAM DMA and UpdateScreen; frame_root.c now calls mysmb_game_commit_display_state before mysmb_game_commit_vram_buffer in the same order."
+        "M2 T53 S3 ScreenOff corrective source audit: ROM NonMaskableInterrupt lines 764-814 writes the temporary $2001 mask before InitScroll, OAM DMA and UpdateScreen; frame_root.c now calls mysmb_game_commit_display_state before mysmb_game_commit_vram_buffer in the same order.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 original531 cases confirm256 pre-VRAM2001 phase differences per width;native final value matches but intermediate phase/post-consumer graph is absent.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1: original531 roots and byte-bound source audit restore pre-VRAM mirror&E7 and post-InitBuffer RAM0779 reload;four actual source calls/returns observed;38 pointer bytes,2 offsets and15 PRG bindings match. Explicit probe/ABI limits recorded."
       ],
       "operationalEvidence": [
-        "M2 T53 S3 corrective operational evidence: focused x86/x64 NMI-parent checks pass; refreshed x86/x64 outputs and shared OpenNT DOS16 link use the same frame_root.c. Controlled owner-local NMI route is retained only as ignored build evidence."
+        "M2 T53 S3 corrective operational evidence: focused x86/x64 NMI-parent checks pass; refreshed x86/x64 outputs and shared OpenNT DOS16 link use the same frame_root.c. Controlled owner-local NMI route is retained only as ignored build evidence.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1:512 native phase/reload cases;248 CTests each;current full x86/x64 and original OpenNT DOS16 builds;3 refreshed EXEs;6x600 original/native frame regressions,purity pass."
       ],
       "semanticContract": "Preserves the source ScreenOff display-mask transaction and its InitScroll/UpdateScreen call-return order before selected-buffer initialization.",
       "currentSourcePaths": [
@@ -51157,10 +51197,13 @@
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
         "M2 T53 S1 static audit: the source ScreenOff -> InitScroll -> UpdateScreen call/return transaction precedes buffer-header clear, but current frame_root.c executes VRAM commit before display-mask commit. The counterpart exists but its required order is reversed.",
-        "M2 T53 S3 ScreenOff corrective source audit: ROM NonMaskableInterrupt lines 764-814 writes the temporary $2001 mask before InitScroll, OAM DMA and UpdateScreen; frame_root.c now calls mysmb_game_commit_display_state before mysmb_game_commit_vram_buffer in the same order."
+        "M2 T53 S3 ScreenOff corrective source audit: ROM NonMaskableInterrupt lines 764-814 writes the temporary $2001 mask before InitScroll, OAM DMA and UpdateScreen; frame_root.c now calls mysmb_game_commit_display_state before mysmb_game_commit_vram_buffer in the same order.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 original531 cases confirm256 pre-VRAM2001 phase differences per width;native final value matches but intermediate phase/post-consumer graph is absent.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1: original531 roots and byte-bound source audit restore pre-VRAM mirror&E7 and post-InitBuffer RAM0779 reload;four actual source calls/returns observed;38 pointer bytes,2 offsets and15 PRG bindings match. Explicit probe/ABI limits recorded."
       ],
       "operationalEvidence": [
-        "M2 T53 S3 corrective operational evidence: focused x86/x64 NMI-parent checks pass; refreshed x86/x64 outputs and shared OpenNT DOS16 link use the same frame_root.c. Controlled owner-local NMI route is retained only as ignored build evidence."
+        "M2 T53 S3 corrective operational evidence: focused x86/x64 NMI-parent checks pass; refreshed x86/x64 outputs and shared OpenNT DOS16 link use the same frame_root.c. Controlled owner-local NMI route is retained only as ignored build evidence.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1:512 native phase/reload cases;248 CTests each;current full x86/x64 and original OpenNT DOS16 builds;3 refreshed EXEs;6x600 original/native frame regressions,purity pass."
       ],
       "semanticContract": "Preserves the source ScreenOff display-mask transaction and its InitScroll/UpdateScreen call-return order before selected-buffer initialization.",
       "currentSourcePaths": [
@@ -128573,10 +128616,13 @@
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
         "M2 T53 S1 static audit: the source ScreenOff -> InitScroll -> UpdateScreen call/return transaction precedes buffer-header clear, but current frame_root.c executes VRAM commit before display-mask commit. The counterpart exists but its required order is reversed.",
-        "M2 T53 S3 ScreenOff corrective source audit: ROM NonMaskableInterrupt lines 764-814 writes the temporary $2001 mask before InitScroll, OAM DMA and UpdateScreen; frame_root.c now calls mysmb_game_commit_display_state before mysmb_game_commit_vram_buffer in the same order."
+        "M2 T53 S3 ScreenOff corrective source audit: ROM NonMaskableInterrupt lines 764-814 writes the temporary $2001 mask before InitScroll, OAM DMA and UpdateScreen; frame_root.c now calls mysmb_game_commit_display_state before mysmb_game_commit_vram_buffer in the same order.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 original531 cases confirm256 pre-VRAM2001 phase differences per width;native final value matches but intermediate phase/post-consumer graph is absent.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1: original531 roots and byte-bound source audit restore pre-VRAM mirror&E7 and post-InitBuffer RAM0779 reload;four actual source calls/returns observed;38 pointer bytes,2 offsets and15 PRG bindings match. Explicit probe/ABI limits recorded."
       ],
       "operationalEvidence": [
-        "M2 T53 S3 corrective operational evidence: focused x86/x64 NMI-parent checks pass; refreshed x86/x64 outputs and shared OpenNT DOS16 link use the same frame_root.c. Controlled owner-local NMI route is retained only as ignored build evidence."
+        "M2 T53 S3 corrective operational evidence: focused x86/x64 NMI-parent checks pass; refreshed x86/x64 outputs and shared OpenNT DOS16 link use the same frame_root.c. Controlled owner-local NMI route is retained only as ignored build evidence.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1:512 native phase/reload cases;248 CTests each;current full x86/x64 and original OpenNT DOS16 builds;3 refreshed EXEs;6x600 original/native frame regressions,purity pass."
       ],
       "semanticContract": "Preserves the source ScreenOff display-mask transaction and its InitScroll/UpdateScreen call-return order before selected-buffer initialization.",
       "currentSourcePaths": [
@@ -128597,10 +128643,13 @@
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
         "M2 T53 S1 static audit: the source ScreenOff -> InitScroll -> UpdateScreen call/return transaction precedes buffer-header clear, but current frame_root.c executes VRAM commit before display-mask commit. The counterpart exists but its required order is reversed.",
-        "M2 T53 S3 ScreenOff corrective source audit: ROM NonMaskableInterrupt lines 764-814 writes the temporary $2001 mask before InitScroll, OAM DMA and UpdateScreen; frame_root.c now calls mysmb_game_commit_display_state before mysmb_game_commit_vram_buffer in the same order."
+        "M2 T53 S3 ScreenOff corrective source audit: ROM NonMaskableInterrupt lines 764-814 writes the temporary $2001 mask before InitScroll, OAM DMA and UpdateScreen; frame_root.c now calls mysmb_game_commit_display_state before mysmb_game_commit_vram_buffer in the same order.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 original531 cases confirm256 pre-VRAM2001 phase differences per width;native final value matches but intermediate phase/post-consumer graph is absent.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1: original531 roots and byte-bound source audit restore pre-VRAM mirror&E7 and post-InitBuffer RAM0779 reload;four actual source calls/returns observed;38 pointer bytes,2 offsets and15 PRG bindings match. Explicit probe/ABI limits recorded."
       ],
       "operationalEvidence": [
-        "M2 T53 S3 corrective operational evidence: focused x86/x64 NMI-parent checks pass; refreshed x86/x64 outputs and shared OpenNT DOS16 link use the same frame_root.c. Controlled owner-local NMI route is retained only as ignored build evidence."
+        "M2 T53 S3 corrective operational evidence: focused x86/x64 NMI-parent checks pass; refreshed x86/x64 outputs and shared OpenNT DOS16 link use the same frame_root.c. Controlled owner-local NMI route is retained only as ignored build evidence.",
+        "docs/proposals/m2/t70-final-current-certification.md S4 P1:512 native phase/reload cases;248 CTests each;current full x86/x64 and original OpenNT DOS16 builds;3 refreshed EXEs;6x600 original/native frame regressions,purity pass."
       ],
       "semanticContract": "Preserves the source ScreenOff display-mask transaction and its InitScroll/UpdateScreen call-return order before selected-buffer initialization.",
       "currentSourcePaths": [

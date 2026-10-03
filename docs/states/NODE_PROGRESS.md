@@ -1,5 +1,17 @@
 # M2 ROM conformance node progress
 
+## M2 T70 S4 - closed NMI display transaction repair
+
+[Exact6 labels and dual proof](../proposals/m2/t70-final-current-certification.md#s4-p1-closure---original-two-phase-display-transaction-restored).
+Temporary pre-VRAM mask and actual post-header RAM0779 reload restored in
+shared C;531 original/native roots both widths zero scoped diff,38 pointer
+bytes/2 offsets/15 PRG bindings match.3 reopened nodes/4 controls restored;
+expected/actual fresh0,historical1992/1992,current1992/1992 exact nodes,
+4276/4276 feasible controls(raw4342,infeasible66),material558/558 partial.
+512 focused phase/reload cases,248 tests each,6x600 frame regressions,purity,
+full native builds/original OpenNT link pass;3 EXEs refreshed. T70 open,
+remaining data enumeration/numeric bindings/full end-to-end certification.
+
 ## M2 T70 S3 - closed source provenance reconciliation
 
 [Infrastructure scope and25 dispositions](../proposals/m2/t70-final-current-certification.md#s3-p1-closure---corrected-current-provenance-without-semantic-changes).

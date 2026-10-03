@@ -17,8 +17,6 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | Receiving S | Exact node count | Exact node set |
 | --- | ---: | --- |
 | M2 T22 S14 | 7 | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeMemory` |
-| M2 T22 S15 | 3 | `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset` |
-| M2 T22 S23 | 1 | `InitBuffer` |
 | M2 T22 S24 | 6 | `PauseRoutine`, `ChkPauseTimer`, `ChkStart`, `ClrPauseTimer`, `SetPause`, `ExitPause` |
 | M2 T22 S25 | 5 | `DecTimers`, `DecTimersLoop`, `SkipExpTimer`, `NoDecTimers`, `PauseSkip` |
 | M2 T22 S26 | 7 | `Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipMainOper`, `MoveAllSpritesOffscreen`, `MoveSpritesOffscreen`, `SprInitLoop` |
@@ -220,14 +218,14 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T51 S2 | 4 | `ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol` |
 | M2 T51 S3 | 1 | `KillEnemies` |
 | M2 T51 S4 | 34 | `E_CastleArea1`, `E_CastleArea2`, `E_CastleArea3`, `E_CastleArea4`, `E_CastleArea5`, `E_CastleArea6`, `E_GroundArea1`, `E_GroundArea2`, `E_GroundArea3`, `E_GroundArea4`, `E_GroundArea5`, `E_GroundArea6`, `E_GroundArea7`, `E_GroundArea8`, `E_GroundArea9`, `E_GroundArea10`, `E_GroundArea11`, `E_GroundArea12`, `E_GroundArea13`, `E_GroundArea14`, `E_GroundArea15`, `E_GroundArea16`, `E_GroundArea17`, `E_GroundArea18`, `E_GroundArea19`, `E_GroundArea20`, `E_GroundArea21`, `E_GroundArea22`, `E_UndergroundArea1`, `E_UndergroundArea2`, `E_UndergroundArea3`, `E_WaterArea1`, `E_WaterArea2`, `E_WaterArea3` |
-| M2 T52 S1 | 3 | `NonMaskableInterrupt`, `RotPRandomBit`, `SkipSprite0` |
+| M2 T52 S1 | 2 | `RotPRandomBit`, `SkipSprite0` |
 | M2 T52 S2 | 2 | `ChkSelect`, `ChkWorldSel` |
 | M2 T52 S3 | 4 | `FloateyNumbersRoutine`, `DecNumTimer`, `LoadNumTiles`, `AddToScore` |
 | M2 T52 S4 | 3 | `GetBackgroundColor`, `NoBGColor`, `GetPlayerColors` |
 | M2 T52 S5 | 3 | `DisplayTimeUp`, `NoTimeUp`, `OutputInter` |
 | M2 T52 S6 | 1 | `DrawLargePlatform` |
-| M2 T53 S3 | 1 | `ScreenOff` |
 | M2 T70 S2 | 29 | `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj` |
+| M2 T70 S4 | 6 | `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`, `NonMaskableInterrupt`, `ScreenOff`, `InitBuffer` |
 
 ## Future admission packages and queued plans
 
@@ -254,12 +252,12 @@ transfer existing ownership or allocate a numeric T.
 | 712 | `WBootCheck` | M2 T22 S14 | existing closure backlog; Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary. | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
 | 721 | `ColdBoot` | M2 T22 S14 | existing closure backlog; Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary. | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
 | 737 | `EndlessLoop` | M2 T22 S14 | existing closure backlog; Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary. | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
-| 743 | `VRAM_AddrTable_Low` | M2 T22 S15 | existing closure backlog; T22/S12 completed the source-owned selector-table migration; T22/S15 accepts independent controlled-NMI equivalence review before any conformance credit. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S15; M2 T24 S1 |
-| 752 | `VRAM_AddrTable_High` | M2 T22 S15 | existing closure backlog; T22/S12 completed the source-owned selector-table migration; T22/S15 accepts independent controlled-NMI equivalence review before any conformance credit. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S15; M2 T24 S1 |
-| 761 | `VRAM_Buffer_Offset` | M2 T22 S15 | existing closure backlog; T22/S12 completed the source-owned selector-table migration; T22/S15 accepts independent controlled-NMI equivalence review before any conformance credit. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S15; M2 T24 S1 |
-| 764 | `NonMaskableInterrupt` | M2 T52 S1 | existing closure backlog; T52 S1 accepted current-equivalence corrective transfer. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S22; M2 T24 S1 |
-| 776 | `ScreenOff` | M2 T53 S3 | existing closure backlog; Owner-directed T53 S3 corrective receipt after current S1 audit found the shared frame-root transaction order mismatch. | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
-| 796 | `InitBuffer` | M2 T22 S23 | existing closure backlog; T22/S16 completed the InitBuffer source branch/write contract; T22/S23 accepts independent controlled-NMI equivalence review. | M2 T14 / S not recorded; M2 T22 S16; M2 T22 S23; M2 T24 S1 |
+| 743 | `VRAM_AddrTable_Low` | M2 T70 S4 | existing closure backlog; Accepted bounded NMI pointer/display transaction maintenance;prior proof retained. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S15; M2 T24 S1 |
+| 752 | `VRAM_AddrTable_High` | M2 T70 S4 | existing closure backlog; Accepted bounded NMI pointer/display transaction maintenance;prior proof retained. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S15; M2 T24 S1 |
+| 761 | `VRAM_Buffer_Offset` | M2 T70 S4 | existing closure backlog; Accepted bounded NMI pointer/display transaction maintenance;prior proof retained. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S15; M2 T24 S1 |
+| 764 | `NonMaskableInterrupt` | M2 T70 S4 | existing closure backlog; Accepted bounded NMI pointer/display transaction maintenance;prior proof retained. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S22; M2 T24 S1 |
+| 776 | `ScreenOff` | M2 T70 S4 | existing closure backlog; Accepted bounded NMI pointer/display transaction maintenance;prior proof retained. | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
+| 796 | `InitBuffer` | M2 T70 S4 | existing closure backlog; Accepted bounded NMI pointer/display transaction maintenance;prior proof retained. | M2 T14 / S not recorded; M2 T22 S16; M2 T22 S23; M2 T24 S1 |
 | 814 | `DecTimers` | M2 T22 S25 | existing closure backlog; T22/S18 completed the timer/LFSR source contract and source-order repair; T22/S25 independently reviews ROM equivalence. | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
 | 820 | `DecTimersLoop` | M2 T22 S25 | existing closure backlog; T22/S18 completed the timer/LFSR source contract and source-order repair; T22/S25 independently reviews ROM equivalence. | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
 | 823 | `SkipExpTimer` | M2 T22 S25 | existing closure backlog; T22/S18 completed the timer/LFSR source contract and source-order repair; T22/S25 independently reviews ROM equivalence. | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
@@ -2322,7 +2320,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T22 S12 | 0 | 0 | vram-table-migration; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S13 | 0 | 0 | nmi-integration-proof; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S14 | 0 | 7 | boot-root-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
-| M2 T22 S15 | 3 | 3 | vram-table-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
+| M2 T22 S15 | 3 | 0 | vram-table-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S16 | 1 | 0 | nmi-buffer-clear; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S17 | 6 | 0 | nmi-pause-route; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S18 | 6 | 0 | nmi-timer-lfsr-route; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -2330,7 +2328,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T22 S20 | 6 | 0 | nmi-sprite-shuffle-route; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S21 | 1 | 0 | nmi-operation-dispatch; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S22 | 1 | 0 | nmi-parent-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
-| M2 T22 S23 | 1 | 1 | initbuffer-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
+| M2 T22 S23 | 1 | 0 | initbuffer-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S24 | 6 | 6 | pause-route-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S25 | 6 | 5 | timer-lfsr-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S26 | 8 | 7 | sprite-oam-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -2590,7 +2588,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T51 S4 | 0 | 34 | owner-approved-completion, enemy-stream-data-chain-and-consumer; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T51 S5 | 0 | 0 | cross-route-integration-certification; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T52 | 0 | - | [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
-| M2 T52 S1 | 0 | 3 | owner-approved-current-equivalence-remediation, a2-nmi-prefix-state-handoff; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
+| M2 T52 S1 | 0 | 2 | owner-approved-current-equivalence-remediation, a2-nmi-prefix-state-handoff; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S2 | 0 | 2 | owner-approved-current-equivalence-remediation, a6-title-demo-world-select-order; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S3 | 0 | 4 | owner-approved-current-equivalence-remediation, a7-floatey-score-timer-order; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S4 | 0 | 3 | owner-approved-current-equivalence-remediation, b2-background-player-palette-fallthrough; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
@@ -2600,7 +2598,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T53 | 0 | - | [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
 | M2 T53 S1 | 0 | 0 | owner-directed-source-order-current-equivalence, cohort-a-reset-nmi-dispatch-chain, closed-s1-current-equivalence-audit; [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
 | M2 T53 S2 | 0 | 0 | owner-directed-source-order-current-equivalence, cohort-a-title-menu-demo-chain, closed-s2-current-equivalence-audit; [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
-| M2 T53 S3 | 0 | 1 | owner-directed-screenoff-corrective, cohort-a-screenoff-transaction-order, closed-screenoff-current-equivalence; [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
+| M2 T53 S3 | 0 | 0 | owner-directed-screenoff-corrective, cohort-a-screenoff-transaction-order, closed-screenoff-current-equivalence; [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
 | M2 T53 S4 | 0 | 0 | owner-directed-source-order-current-equivalence, cohort-a-victory-chain, closed-s4-current-equivalence-audit; [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
 | M2 T53 S5 | 0 | 0 | owner-directed-source-order-current-equivalence, cohort-a-floatey-number-chain; [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
 | M2 T54 | 0 | - | [record](../../docs/proposals/m2/t54-cohort-b-current-proof.md) |
@@ -2833,6 +2831,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T70 S1 | 0 | 0 | owner-approved-source-order, final-current-certification; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S2 | 0 | 29 | owner-approved-source-order, final-current-certification; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S3 | 0 | 0 | source-provenance-reconciliation; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S4 | 0 | 6 | nmi-prefix-material-phase-proof; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M2 T9 | 1 | - | [record](../../docs/etc/architecture/smb1-frame-output-ledger.md); [record](../../docs/history/M2-T9-frame-output-ledger-and-reference-recorder.md); S not recorded |
 | M2 Td | 0 | - | [record](../../docs/proposals/m2-rom-structural-recovery.md); [record](../../docs/states/QUEUE.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -3172,6 +3171,10 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-t70-s2-parser-1 | M2 T29 S7 | M2 T70 S2 | 27 | Coordinator under owner ongoing original-source M2 mandate accepts bounded29-node parser maintenance receipt before implementation.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s2-parser-2 | M2 T30 S11 | M2 T70 S2 | 1 | Coordinator under owner ongoing original-source M2 mandate accepts bounded29-node parser maintenance receipt before implementation.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s2-parser-3 | M2 T30 S16 | M2 T70 S2 | 1 | Coordinator under owner ongoing original-source M2 mandate accepts bounded29-node parser maintenance receipt before implementation.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s4-nmi-1 | M2 T22 S15 | M2 T70 S4 | 3 | Coordinator under owner ongoing M2 mandate accepts6-node NMI prefix maintenance before shared repair.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s4-nmi-2 | M2 T52 S1 | M2 T70 S4 | 1 | Coordinator under owner ongoing M2 mandate accepts6-node NMI prefix maintenance before shared repair.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s4-nmi-3 | M2 T53 S3 | M2 T70 S4 | 1 | Coordinator under owner ongoing M2 mandate accepts6-node NMI prefix maintenance before shared repair.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s4-nmi-4 | M2 T22 S23 | M2 T70 S4 | 1 | Coordinator under owner ongoing M2 mandate accepts6-node NMI prefix maintenance before shared repair.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3662,3 +3665,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T70 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S2 | 29 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S3 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S4 | 6 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |

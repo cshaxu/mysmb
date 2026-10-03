@@ -422,6 +422,7 @@ void mysmb_game_commit_vram_buffer(struct mysmb_game *game)
         game->ram[MYSMB_ROOT_VRAM_BUFFER1] = 0U;
     }
     game->ram[MYSMB_ROOT_VRAM_ADDRESS_CONTROL] = 0U;
+    mysmb_game_restore_display_mask(game);
 }
 
 /* ROM NonMaskableInterrupt ($740-$842) restores the selected display mask,
@@ -431,6 +432,14 @@ static void mysmb_frame_root_commit_scene_scroll(struct mysmb_game *game)
 {
     game->visible_scroll_x = game->ram[MYSMB_ROOT_HORIZONTAL_SCROLL];
     game->visible_scroll_y = game->ram[MYSMB_ROOT_VERTICAL_SCROLL];
+}
+
+/* ROM InitBuffer $80de-$80e3 reloads the mirror after VRAM/header work.
+ * ScreenOff keeps physical $2001 masked until this source-owned phase. */
+void mysmb_game_restore_display_mask(struct mysmb_game *game)
+{
+    game->ppu_mask = game->ram[MYSMB_ROOT_PPU_MASK_MIRROR];
+    game->visible_ppu_mask = game->ppu_mask;
 }
 
 void mysmb_game_commit_display_state(struct mysmb_game *game)
@@ -451,7 +460,7 @@ void mysmb_game_commit_display_state(struct mysmb_game *game)
     else
         mask_mirror |= 0x1eU;
     game->ram[MYSMB_ROOT_PPU_MASK_MIRROR] = mask_mirror;
-    game->ppu_mask = mask_mirror;
+    game->ppu_mask = (mysmb_u8)(mask_mirror & 0xe7U);
     /* The original writes these values before OperModeExecutionTree with
      * NMI disabled.  The RTI-equivalent tail restores d7. */
     game->visible_ppu_control_0 = game->ppu_control_0;

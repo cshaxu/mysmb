@@ -121,10 +121,46 @@ static int check_rti_control_restore(void)
     return 0;
 }
 
+/* Original $808f-$80a5 and $80de-$80e3 have distinct physical-mask phases. */
+static int check_display_mask_phases(void)
+{
+    struct mysmb_game game;
+    mysmb_u16 mask;
+    mysmb_u8 disabled;
+    mysmb_u8 mirror;
+
+    for (disabled = 0U; disabled < 2U; ++disabled) {
+        for (mask = 0U; mask < 256U; ++mask) {
+            mysmb_game_power_on(&game);
+            mysmb_game_reset(&game);
+            game.ram[0x0779U] = (mysmb_u8)mask;
+            game.ram[0x0774U] = disabled;
+            game.ram[0x0773U] = 0U;
+            game.ram[0x0301U] = 0U;
+            mirror = disabled != 0U ? (mysmb_u8)(mask & 0xe6U) :
+                                     (mysmb_u8)(mask | 0x1eU);
+            mysmb_game_commit_display_state(&game);
+            if (game.ram[0x0779U] != mirror ||
+                game.ppu_mask != (mysmb_u8)(mirror & 0xe7U) ||
+                game.visible_ppu_mask != game.ppu_mask) return 8;
+            /* Change the source mirror to prove a reload, not cached restore. */
+            game.ram[0x0779U] = (mysmb_u8)(mirror ^ 1U);
+            mysmb_game_commit_vram_buffer(&game);
+            if (game.ppu_mask != game.ram[0x0779U] ||
+                game.visible_ppu_mask != game.ppu_mask ||
+                game.ram[0x0773U] != 0U || game.ram[0x0300U] != 0U ||
+                game.ram[0x0301U] != 0U) return 9;
+        }
+    }
+    return 0;
+}
+
 int main(void)
 {
     int result;
 
+    result = check_display_mask_phases();
+    if (result != 0) return 40 + result;
     result = check_unpaused_nmi_order();
     if (result != 0) return 10 + result;
     result = check_pause_gate_order();

@@ -415,3 +415,143 @@ trace/third-party import or push. Unrelated work preserved.
 | mysmb16.exe | 258639 | 6fa441e6c48d194618a54e367736b774c453525f7df3f5b2320cd1593c124ad9 |
 | mysmb32.exe | 372187 | a1d4219f9f4a768bc7d089389950a2b70d74f98b7b77afa2346c03d9fa41576e |
 | mysmb64.exe | 379222 | f45a7862b727ae16a65904fa234b3364b652b0bbf1a6e08f494f0cef7437254f |
+
+## S4 P1 admission - original NMI pointer and display transaction
+
+Exact6 existing labels in original order:VRAM_AddrTable_Low;
+VRAM_AddrTable_High;VRAM_Buffer_Offset;NonMaskableInterrupt;ScreenOff;InitBuffer.
+All incoming exact,expected fresh0,max1992,historical1992/1992. Current
+1992/1992 nodes,4276/4276 feasible controls(raw4342,infeasible66),557/557
+material partial. Maintenance receipt accepted before shared-owner repair.
+Entry805a tables through ordinary NMI8082 and prefix exit80e4 before
+SoundEngine. ColdBoot predecessor and UpdateScreen/InitScroll children are
+accepted dependencies;SoundEngine is the successor. Shared frame_root.c is
+this chain's owner,no platform code or alternate implementation.
+
+Audit actual19 selector bindings,zero-page pointer publication/consumption,
+buffer6 versus7 header clearing and the two physical2001 writes around
+UpdateScreen. Static finding to verify:current C publishes final mask before
+VRAM consumption and lacks the original post-InitBuffer mirror reload.
+Original source first computes either mirror&E6 (screen disabled) or reloads
+unmasked mirror then OR1E (enabled);ScreenOff stores the mirror and writes
+mirror&E7 physically,InitBuffer later reloads mirror and writes2001 after
+UpdateScreen and header clears. Do not remove the enabled-branch reload.
+
+ROM track:original unmodified ROM reaches real first NMI entry,fixture changes
+RAM only;capture80c3 before UpdateScreen,80de after header clearing,and80e4 after the final2001 write.19 selectors
+plus all256 mask inputs for both DisableScreenFlag branches;compare named
+pointer/header/mirror/physical-mask fields and actual consumption/order.
+Native runs actual current shared methods;no child/CPU/ROM patch or inference
+of unobserved edges. Byte-check38 table entries/two offset bytes and current
+selected PRG constants. Material00001-00003 retained;candidate ScreenOff
+mirror0779 -> InitBuffer physical2001 reload must have actual shared C path
+before any new material credit. Global enumeration remains partial.
+
+Operational:focused NMI/VRAM/table/boot/root tests on x86/x64,purity,current
+products/original OpenNT link and3 EXEs if shared code repaired. Any confirmed
+scoped discrepancy stays open until repaired and repeated static/ROM/native
+comparison has no scoped diff. Neutral tools/summaries and bounded raw output
+stay ignored under build:128MiB,120seconds/process,524288steps/root,cleanup
+per batch. Owner ROM/ASM nonredistributable,no import;standing local3 EXE
+commit authorization,no push. Similar sweep covers direct display-state
+callers,mask consumers and before/after packet display transaction ordering.
+
+## S4 confirmed phase gap and repair scope
+
+Original531 cases (19 selectors plus256 masks x2 display branches) compared
+with actual current shared C on x86/x64:all pointer/header/selector/mirror/post
+mask fields match;pre-UpdateScreen physical2001 differs in all256 enabled
+cases,ROM06 versus native1e for input00,ROM07 versus native1f for input01.
+Original80c3 and80de retain the same temporary mask;80e4 restores mirror in
+all531 cases. No game/CPU/child patch made;raw neutral records deleted.
+First observable debugger NMI boundary is8085 after entry8082's first LDA;
+fixture touches0773/0774/0779/buffers only,not the earlier0778 accumulator.
+
+Reopen NonMaskableInterrupt,ScreenOff,InitBuffer and the four existing
+ScreenOff transaction calls/returns control00018,00019,03487,03488 until
+repaired. Other scoped table/header proof remains exact. Candidate material
+00558:ScreenOff writes0779,InitBuffer reloads it after UpdateScreen and header
+clears to publish physical2001. No new edge credit from matching final mask
+when the native consumer is missing. Existing557 material exact remains;
+new row pending makes558 enumerated,global enumeration still partial.
+
+Repair scope adds the shared frame_root.h mask-restoration primitive and the
+two title_modes.c compatibility loader callers. These callers have no product
+composition-root consumer or new original-node claim;preserve their existing
+final-visible-title contract by using the same shared InitBuffer restoration
+primitive after their explicit display-prefix call. No host/API/platform or
+RAM-container ABI change. Native prefix/full-root regressions cover pre and
+post phases;actual source read/call path must exist before new material credit.
+
+## S4 P1 closure - original two-phase display transaction restored
+
+All six scoped labels retained exact:VRAM_AddrTable_Low,VRAM_AddrTable_High,
+VRAM_Buffer_Offset,NonMaskableInterrupt,ScreenOff,InitBuffer. Expected/actual
+fresh0,no scoped deferral or transfer. Three reopened phase nodes and four
+transaction controls restored by repair and repeated source/ROM audit,not
+new historical credit. Historical1992/1992;current1992/1992 nodes,4276/4276
+feasible controls(raw4342,infeasible66). Material558/558 exact within the
+partial enumeration;material00558 is newly documented,not a global total.
+T70 remains open for complete data-path enumeration,actual remaining numeric
+bindings,full route matrix and end-to-end gameplay/death/warp/completion.
+
+ROM logic track:ScreenOff809e stores the selected RAM0779 mirror and writes
+physical2001 with mirror&E7 before InitScroll/UpdateScreen;InitBuffer80de
+reloads RAM0779 after buffer-header/selector clearing and80e1 writes2001.
+Shared commit_display_state now exposes the temporary physical mask;shared
+restore_display_mask owns the actual RAM reload and is called at the end of
+commit_vram_buffer,before SoundEngine. Enabled branch still reloads the
+unmasked mirror then OR1E;disabled branch uses mirror&E6. No host branch,
+CPU emulator,extra packet consumption or invented game behavior introduced.
+
+Original531 roots (19 selectors plus256 masks x2 flags) execute from the
+natural first NMI debugger boundary8085 after original entry8082's first LDA;
+fixtures do not alter that earlier0778/accumulator. Captures80c3/80de/80e4
+prove temporary/final phases. Both native widths use an exact current owner
+translation-unit copy and actual methods;all named fields match and native
+records are identical. Before repair256 enabled preMask differences/width
+were retained as the negative control. Actual original transitions80ab->8ee6,
+return80ae,80c3->8edd,return80c6 are observed in each root;source graph maps
+the same ordered shared transaction. No coverage inferred for other edges.
+
+Low/high38 C entries match the original805a/806d bytes;the8080 table is00/40,
+matching the selector6 versus7 clearing branch.15 actual palette/message
+PRG offsets match the original selected pointers. Native low/high probe
+fields expose the compiled table binding,not independent native zero-page
+publication;the actual RAM00/01 stores and consumer dispatch were separately
+source-audited and retained prior pointer evidence. Original physical mask
+is sampled before/after actual VRAM processing;no full intermediate native
+PPU timing trace or arbitrary malformed-command proof is claimed.
+
+Material00558 is source-proven:ScreenOff produces RAM0779,UpdateScreen does
+not modify it,InitBuffer consumes the actual mirror after header clearing.
+The shared reload primitive is present on the live root path;512 focused
+native cases additionally change the mirror between phases to distinguish
+an actual read from a cached final mask. Existing material00001-00003 pointer
+and header contracts remain valid. Global material enumeration stays partial.
+
+Similar-issue sweep:all commit_display_state callers are frame_root_begin
+and two explicit title-loader branches. The live root restores only after
+VRAM;both compatibility loaders use the same restoration primitive after
+their explicit prefix to preserve their final-visible-title contract without
+consuming another packet. No composition root uses that compatibility loader,
+no new ROM-node credit claimed for it. Mask writes/VRAM phase order reviewed;
+platform sources and game-container ABI unchanged.
+
+Operational track:all248 CTests pass per width including NMI phases,product
+self-test and platform purity. Full current x86/x64 builds and original
+OpenNT DOS16 compilation/link pass (existing optional OLDNAMES.LIB warning).
+Six normal cold-bootstrap routes,idle/start/pause/right/run-jump/select,
+600 frames each match original ROM and both native widths. Frame comparison
+covers RAM0200-07ff except0778/0779 and all CIRAM/palette/OAM/audio/PPU scalars;
+zero-page/stack and ordinal are outside that frame ABI,the scoped phase
+probe covers0779 separately. Short routes are regression evidence,not full
+completion proof. DOS graphical runtime/486 qualification remains deferred.
+Three current products refreshed with owner-authorized local commit;no push.
+Neutral summaries/scripts stay under ignored build;raw records deleted.
+
+| Product | Bytes | SHA256 |
+| --- | --- | --- |
+| mysmb16.exe | 258735 | e7d455565419b59dda4a8862efba18359eb71ca3363010b4707a030c33d32476 |
+| mysmb32.exe | 372256 | ba58c9818855530d531ea9ad83b7e472201c47a236747dd3e2b9d1f2922021e8 |
+| mysmb64.exe | 379290 | 58ced651503a6bcaae16c911c919468057e2a487b3e2bb4850feca939b63b550 |

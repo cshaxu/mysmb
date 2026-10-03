@@ -33,6 +33,7 @@ void mysmb_frame_root_finish(const struct mysmb_game *game,
 void mysmb_game_submit_oam(struct mysmb_game *game);
 void mysmb_game_commit_vram_buffer(struct mysmb_game *game);
 void mysmb_game_commit_display_state(struct mysmb_game *game);
+void mysmb_game_restore_display_mask(struct mysmb_game *game);
 void mysmb_game_tick_player_timers(struct mysmb_game *game);
 void mysmb_game_rotate_pseudorandom(struct mysmb_game *game);
 void mysmb_game_shuffle_sprite_offsets(struct mysmb_game *game);
