@@ -7622,7 +7622,8 @@
           "recordKinds": [
             "material-use-completeness-and-path-reconciliation",
             "corrective-title-pointer-output-chain",
-            "corrective-column-output-chain"
+            "corrective-column-output-chain",
+            "corrective-parser-output-chain"
           ],
           "canReceive": true,
           "admissionRole": "audit",
@@ -19688,8 +19689,8 @@
     {
       "label": "ProcessAreaData",
       "line": 3326,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -19717,8 +19718,8 @@
     {
       "label": "ProcADLoop",
       "line": 3328,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -19738,8 +19739,8 @@
     {
       "label": "Chk1Row13",
       "line": 3345,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -19759,8 +19760,8 @@
     {
       "label": "Chk1Row14",
       "line": 3363,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -19780,8 +19781,8 @@
     {
       "label": "CheckRear",
       "line": 3367,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -19801,8 +19802,8 @@
     {
       "label": "RdyDecode",
       "line": 3370,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -19822,8 +19823,8 @@
     {
       "label": "SetBehind",
       "line": 3372,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -19843,8 +19844,8 @@
     {
       "label": "NextAObj",
       "line": 3373,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -19864,8 +19865,8 @@
     {
       "label": "ChkLength",
       "line": 3374,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -19885,8 +19886,8 @@
     {
       "label": "ProcLoopb",
       "line": 3378,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -19906,8 +19907,8 @@
     {
       "label": "EndAParse",
       "line": 3384,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -19927,8 +19928,8 @@
     {
       "label": "IncAreaObjOffset",
       "line": 3386,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -19948,8 +19949,8 @@
     {
       "label": "DecodeAreaData",
       "line": 3393,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -19983,8 +19984,8 @@
     {
       "label": "Chk1stB",
       "line": 3397,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -20004,8 +20005,8 @@
     {
       "label": "ChkRow14",
       "line": 3408,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -20025,8 +20026,8 @@
     {
       "label": "ChkRow13",
       "line": 3416,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -20052,8 +20053,8 @@
     {
       "label": "Mask2MSB",
       "line": 3429,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -20073,8 +20074,8 @@
     {
       "label": "ChkSRows",
       "line": 3431,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -20094,8 +20095,8 @@
     {
       "label": "LrgObj",
       "line": 3442,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -20115,8 +20116,8 @@
     {
       "label": "NotWPipe",
       "line": 3450,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -20136,8 +20137,8 @@
     {
       "label": "SpecObj",
       "line": 3452,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -20157,8 +20158,8 @@
     {
       "label": "MoveAOId",
       "line": 3455,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -20178,8 +20179,8 @@
     {
       "label": "NormObj",
       "line": 3459,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -20199,8 +20200,8 @@
     {
       "label": "LeavePar",
       "line": 3472,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -20220,8 +20221,8 @@
     {
       "label": "InitRear",
       "line": 3473,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -20241,8 +20242,8 @@
     {
       "label": "LoopCmdE",
       "line": 3479,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -20262,8 +20263,8 @@
     {
       "label": "BackColC",
       "line": 3480,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -20283,8 +20284,8 @@
     {
       "label": "StrAObj",
       "line": 3489,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -20304,8 +20305,8 @@
     {
       "label": "RunAObj",
       "line": 3492,
-      "receiver": "M2 T70 S2",
-      "receivingBasis": "Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -20325,8 +20326,8 @@
     {
       "label": "AlterAreaAttributes",
       "line": 3561,
-      "receiver": "M2 T29 S7",
-      "receivingBasis": "Owner-approved source-order continuation for the ProcessAreaData through SetFore area-stream decoder chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -20346,8 +20347,8 @@
     {
       "label": "Alter2",
       "line": 3580,
-      "receiver": "M2 T29 S7",
-      "receivingBasis": "Owner-approved source-order continuation for the ProcessAreaData through SetFore area-stream decoder chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -20367,8 +20368,8 @@
     {
       "label": "SetFore",
       "line": 3586,
-      "receiver": "M2 T29 S7",
-      "receivingBasis": "Owner-approved source-order continuation for the ProcessAreaData through SetFore area-stream decoder chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P6 complete parser output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -69531,6 +69532,58 @@
         "SetATHigh",
         "AttribLoop",
         "SetVRAMCtrl"
+      ],
+      "acceptedBy": "Coordinator under owner same-S M2 repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-parser-output-1",
+      "type": "transfer",
+      "from": "M2 T70 S2",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "ProcessAreaData",
+        "ProcADLoop",
+        "Chk1Row13",
+        "Chk1Row14",
+        "CheckRear",
+        "RdyDecode",
+        "SetBehind",
+        "NextAObj",
+        "ChkLength",
+        "ProcLoopb",
+        "EndAParse",
+        "IncAreaObjOffset",
+        "DecodeAreaData",
+        "Chk1stB",
+        "ChkRow14",
+        "ChkRow13",
+        "Mask2MSB",
+        "ChkSRows",
+        "LrgObj",
+        "NotWPipe",
+        "SpecObj",
+        "MoveAOId",
+        "NormObj",
+        "LeavePar",
+        "InitRear",
+        "LoopCmdE",
+        "BackColC",
+        "StrAObj",
+        "RunAObj"
+      ],
+      "acceptedBy": "Coordinator under owner same-S M2 repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-parser-output-2",
+      "type": "transfer",
+      "from": "M2 T29 S7",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "AlterAreaAttributes",
+        "Alter2",
+        "SetFore"
       ],
       "acceptedBy": "Coordinator under owner same-S M2 repair mandate.",
       "evidence": "docs/proposals/m2/t70-final-current-certification.md"
@@ -766183,7 +766236,39 @@
         "RenderAttributeTables",
         "SetATHigh",
         "AttribLoop",
-        "SetVRAMCtrl"
+        "SetVRAMCtrl",
+        "ProcessAreaData",
+        "ProcADLoop",
+        "Chk1Row13",
+        "Chk1Row14",
+        "CheckRear",
+        "RdyDecode",
+        "SetBehind",
+        "NextAObj",
+        "ChkLength",
+        "ProcLoopb",
+        "EndAParse",
+        "IncAreaObjOffset",
+        "DecodeAreaData",
+        "Chk1stB",
+        "ChkRow14",
+        "ChkRow13",
+        "Mask2MSB",
+        "ChkSRows",
+        "LrgObj",
+        "NotWPipe",
+        "SpecObj",
+        "MoveAOId",
+        "NormObj",
+        "LeavePar",
+        "InitRear",
+        "LoopCmdE",
+        "BackColC",
+        "StrAObj",
+        "RunAObj",
+        "AlterAreaAttributes",
+        "Alter2",
+        "SetFore"
       ],
       "baseline": 1992,
       "incomingComplete": [

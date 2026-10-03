@@ -38,7 +38,6 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T29 S4 | 16 | `HalfwayPageNybbles`, `PlayerLoseLife`, `StillInGame`, `GetHalfway`, `MaskHPNyb`, `SetHalfway`, `GameOverMode`, `SetupGameOver`, `RunGameOver`, `ContinueGame`, `GameIsOn`, `TransposePlayers`, `TransLoop`, `ExTrans`, `DoNothing1`, `DoNothing2` |
 | M2 T29 S5 | 14 | `AreaParserTaskHandler`, `DoAPTasks`, `SkipATRender`, `AreaParserTasks`, `IncrementColumnPos`, `NoColWrap`, `BSceneDataOffsets`, `BackSceneryData`, `BackSceneryMetatiles`, `FSceneDataOffsets`, `ForeSceneryData`, `TerrainMetatiles`, `TerrainRenderBits`, `AreaParserCore` |
 | M2 T29 S6 | 20 | `RenderSceneryTerrain`, `ClrMTBuf`, `ThirdP`, `RendBack`, `SceLoop1`, `RendFore`, `SceLoop2`, `NoFore`, `RendTerr`, `TerMTile`, `StoreMT`, `TerrLoop`, `NoCloud2`, `TerrBChk`, `NextTBit`, `EndUChk`, `RendBBuf`, `ChkMTLow`, `StrBlock`, `BlockBuffLowBounds` |
-| M2 T29 S7 | 3 | `AlterAreaAttributes`, `Alter2`, `SetFore` |
 | M2 T29 S8 | 21 | `ScrollLockObject_Warp`, `WarpNum`, `ScrollLockObject`, `KillELoop`, `NoKillE`, `FrenzyIDData`, `AreaFrenzy`, `FreCompLoop`, `ExitAFrenzy`, `AreaStyleObject`, `TreeLedge`, `MidTreeL`, `EndTreeL`, `MushroomLedge`, `EndMushL`, `AllUnder`, `NoUnder`, `PulleyRopeMetatiles`, `PulleyRopeObject`, `RenderPul`, `MushLExit` |
 | M2 T29 S9 | 21 | `CastleMetatiles`, `CastleObject`, `CRendLoop`, `ChkCFloor`, `NotTall`, `PlayerStop`, `ExitCastle`, `WaterPipe`, `IntroPipe`, `VPipeSectLoop`, `NoBlankP`, `SidePipeShaftData`, `SidePipeTopPart`, `SidePipeBottomPart`, `ExitPipe`, `RenderSidewaysPipe`, `DrawSidePart`, `VerticalPipeData`, `VerticalPipe`, `WarpPipe`, `GetPipeHeight` |
 | M2 T30 S1 | 3 | `EndlessRope`, `BalancePlatRope`, `DrawRope` |
@@ -205,8 +204,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T70 S13 | 19 | `SetupIntermediate`, `AreaPalette`, `GetAreaPalette`, `SetVRAMAddr_A`, `NextSubtask`, `BGColorCtrl_Addr`, `BackgroundColors`, `PlayerColors`, `GetBackgroundColor`, `NoBGColor`, `GetPlayerColors`, `ChkFiery`, `StartClrGet`, `ClrGetLoop`, `SetBGColor`, `SetVRAMOffset`, `GetAlternatePalette1`, `SetVRAMAddr_B`, `NoAltPal` |
 | M2 T70 S14 | 12 | `WriteTopStatusLine`, `WriteBottomStatusLine`, `DisplayTimeUp`, `NoTimeUp`, `DisplayIntermediate`, `PlayerInter`, `OutputInter`, `GameOverInter`, `NoInter`, `ResetSpritesAndScreenTimer`, `ResetScreenTimer`, `NoReset` |
 | M2 T70 S15 | 17 | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeNameTables`, `WriteNTAddr`, `InitNTLoop`, `InitATLoop`, `InitScroll`, `WritePPUReg1`, `InitializeMemory`, `InitPageLoop`, `InitByteLoop`, `InitByte`, `SkipByte` |
-| M2 T70 S17 | 14 | `DrawTitleScreen`, `OutputTScr`, `ChkHiByte`, `RenderAreaGraphics`, `DrawMTLoop`, `RightCheck`, `LLeft`, `NextMTRow`, `SetAttrib`, `ExitDrawM`, `RenderAttributeTables`, `SetATHigh`, `AttribLoop`, `SetVRAMCtrl` |
-| M2 T70 S2 | 29 | `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj` |
+| M2 T70 S17 | 46 | `DrawTitleScreen`, `OutputTScr`, `ChkHiByte`, `RenderAreaGraphics`, `DrawMTLoop`, `RightCheck`, `LLeft`, `NextMTRow`, `SetAttrib`, `ExitDrawM`, `RenderAttributeTables`, `SetATHigh`, `AttribLoop`, `SetVRAMCtrl`, `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj`, `AlterAreaAttributes`, `Alter2`, `SetFore` |
 | M2 T70 S4 | 6 | `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`, `NonMaskableInterrupt`, `ScreenOff`, `InitBuffer` |
 | M2 T70 S6 | 9 | `RotPRandomBit`, `Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipSprite0`, `SkipMainOper`, `MoveAllSpritesOffscreen`, `MoveSpritesOffscreen`, `SprInitLoop` |
 | M2 T70 S7 | 6 | `SpriteShuffler`, `ShuffleLoop`, `StrSprOffset`, `NextSprOffset`, `SetAmtOffset`, `SetMiscOffset` |
@@ -569,38 +567,38 @@ transfer existing ownership or allocate a numeric T.
 | 3295 | `ChkMTLow` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
 | 3306 | `StrBlock` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
 | 3319 | `BlockBuffLowBounds` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
-| 3326 | `ProcessAreaData` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T18 S2; M2 T21 S4; M2 T24 S1 |
-| 3328 | `ProcADLoop` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3345 | `Chk1Row13` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3363 | `Chk1Row14` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3367 | `CheckRear` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3370 | `RdyDecode` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3372 | `SetBehind` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3373 | `NextAObj` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3374 | `ChkLength` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3378 | `ProcLoopb` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3384 | `EndAParse` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3386 | `IncAreaObjOffset` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3393 | `DecodeAreaData` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1; M2 T3 / S not recorded; M2 T30 S11 |
-| 3397 | `Chk1stB` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3408 | `ChkRow14` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3416 | `ChkRow13` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1; M2 T30 S16 |
-| 3429 | `Mask2MSB` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3431 | `ChkSRows` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3442 | `LrgObj` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3450 | `NotWPipe` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3452 | `SpecObj` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3455 | `MoveAOId` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3459 | `NormObj` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3472 | `LeavePar` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3473 | `InitRear` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3479 | `LoopCmdE` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3480 | `BackColC` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3489 | `StrAObj` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3492 | `RunAObj` | M2 T70 S2 | existing closure backlog; Accepted bounded parser maintenance receipt for removal of inactive alternatives;prior proof preserved. | M2 T21 S4; M2 T24 S1 |
-| 3561 | `AlterAreaAttributes` | M2 T29 S7 | existing closure backlog; Owner-approved source-order continuation for the ProcessAreaData through SetFore area-stream decoder chain. | M2 T21 S4; M2 T24 S1 |
-| 3580 | `Alter2` | M2 T29 S7 | existing closure backlog; Owner-approved source-order continuation for the ProcessAreaData through SetFore area-stream decoder chain. | M2 T21 S4; M2 T24 S1 |
-| 3586 | `SetFore` | M2 T29 S7 | existing closure backlog; Owner-approved source-order continuation for the ProcessAreaData through SetFore area-stream decoder chain. | M2 T21 S4; M2 T24 S1 |
+| 3326 | `ProcessAreaData` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T18 S2; M2 T21 S4; M2 T24 S1 |
+| 3328 | `ProcADLoop` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3345 | `Chk1Row13` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3363 | `Chk1Row14` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3367 | `CheckRear` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3370 | `RdyDecode` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3372 | `SetBehind` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3373 | `NextAObj` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3374 | `ChkLength` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3378 | `ProcLoopb` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3384 | `EndAParse` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3386 | `IncAreaObjOffset` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3393 | `DecodeAreaData` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1; M2 T3 / S not recorded; M2 T30 S11 |
+| 3397 | `Chk1stB` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3408 | `ChkRow14` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3416 | `ChkRow13` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1; M2 T30 S16 |
+| 3429 | `Mask2MSB` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3431 | `ChkSRows` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3442 | `LrgObj` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3450 | `NotWPipe` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3452 | `SpecObj` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3455 | `MoveAOId` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3459 | `NormObj` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3472 | `LeavePar` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3473 | `InitRear` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3479 | `LoopCmdE` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3480 | `BackColC` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3489 | `StrAObj` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3492 | `RunAObj` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3561 | `AlterAreaAttributes` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3580 | `Alter2` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 3586 | `SetFore` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
 | 3591 | `ScrollLockObject_Warp` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
 | 3600 | `WarpNum` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
 | 3606 | `ScrollLockObject` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
@@ -2382,7 +2380,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T29 S4 | 0 | 16 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S5 | 0 | 14 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S6 | 0 | 20 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
-| M2 T29 S7 | 0 | 3 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
+| M2 T29 S7 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S8 | 0 | 21 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S9 | 22 | 21 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S10 | 10 | 10 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
@@ -2814,7 +2812,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T7 | 1 | - | [record](../../docs/history/M2-T7-audio-command-routes.md); S not recorded |
 | M2 T70 | 0 | - | [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S1 | 0 | 0 | owner-approved-source-order, final-current-certification; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S2 | 0 | 29 | owner-approved-source-order, final-current-certification; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S2 | 0 | 0 | owner-approved-source-order, final-current-certification; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S3 | 0 | 0 | source-provenance-reconciliation; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S4 | 0 | 6 | nmi-prefix-material-phase-proof; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S5 | 0 | 0 | timer-random-material-audit; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
@@ -2829,7 +2827,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T70 S14 | 0 | 12 | hud-intermediate-timer-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S15 | 0 | 17 | final-reset-startup-source-and-graph-review; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S16 | 0 | 0 | executable-data-binding-manifest; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S17 | 0 | 14 | material-use-completeness-and-path-reconciliation, corrective-title-pointer-output-chain, corrective-column-output-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S17 | 0 | 46 | material-use-completeness-and-path-reconciliation, corrective-title-pointer-output-chain, corrective-column-output-chain, corrective-parser-output-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M2 T9 | 1 | - | [record](../../docs/etc/architecture/smb1-frame-output-ledger.md); [record](../../docs/history/M2-T9-frame-output-ledger-and-reference-recorder.md); S not recorded |
 | M2 Td | 0 | - | [record](../../docs/proposals/m2-rom-structural-recovery.md); [record](../../docs/states/QUEUE.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -3211,6 +3209,8 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-t70-s15-startup-4 | M2 T29 S1 | M2 T70 S15 | 4 | Coordinator accepts original reset/startup subtree under owner M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s17-title-pointer-1 | M2 T27 S2 | M2 T70 S17 | 3 | Coordinator under standing owner M2 repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s17-column-output-1 | M2 T28 S1 | M2 T70 S17 | 11 | Coordinator under owner same-S M2 repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-parser-output-1 | M2 T70 S2 | M2 T70 S17 | 29 | Coordinator under owner same-S M2 repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-parser-output-2 | M2 T29 S7 | M2 T70 S17 | 3 | Coordinator under owner same-S M2 repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3714,4 +3714,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T70 S14 | 12 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S15 | 17 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S16 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S17 | 53 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S17 | 85 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t70-final-current-certification.md) |

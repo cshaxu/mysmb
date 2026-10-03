@@ -82,9 +82,9 @@ int main(void)
     if (mysmb_area_render_scenery_terrain_column(&game) == 0U ||
         game.ram[0x05b1U] != 0x88U || game.ram[0x05c1U] != 0U) return 1;
 
-    /* AreaParserCore's backloading path processes row-14 control data before
-     * it renders scenery and terrain.  The first stream object must therefore
-     * select terrain control five in time for this same staging column. */
+    /* Same-page InitRear first ends backloading without running row14.
+     * RenderSceneryTerrain stages the old terrain, then ProcessAreaData
+     * applies row14's attributes for following columns before RendBBuf. */
     prg[0x0040U] = 0x0eU;
     prg[0x0041U] = 0x25U;
     prg[0x0042U] = 0x10U;
@@ -114,7 +114,7 @@ int main(void)
     if (game.ram[0x071fU] != 7U) return 3;
     if (game.ram[0x0727U] != 5U) return 4;
     if (game.ram[0x0742U] != 2U) return 5;
-    if (game.ram[0x06a1U] != 0x54U) return 6;
+    if (game.ram[0x06a1U] != 0U) return 6;
     game.ram[0x0728U] = 0U;
 
     game.ram[0x0725U] = 0U;

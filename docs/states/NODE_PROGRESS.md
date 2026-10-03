@@ -8,10 +8,18 @@ for remaining work/exit conditions. Historical1992/1992 means mapping coverage.
 Prior aggregate exact counts below retain their closure-time local-contract
 meaning;they are not full current-build certification. The attempted zero-based final-review restart is superseded;reuse retained
 scoped evidence and track only named unresolved/invalidated clauses.
-Material660 is a partial enumerated set;its global denominator is unknown.
+Material668 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
+
+[P6 parser repair](../proposals/m2/t70-final-current-certification.md#s17-p6-checkpoint---parser-decoder-and-return-order-repair).
+32 parser nodes repaired/re-audited;27139 original roots each width zero RAM
+differences including zero-page,observed physical pushes excluded.32 labels,
+34 feasible predicate pairs observed;constant-BNE control-00561 reclassified
+infeasible. Local nodes1992/1992,controls4274/4274(raw4342,infeasible68).
+10 checks each,six600-frame routes,3 refreshed products;material668 partial,
+total unknown. S17 remains open;no full equivalence certificate.
 
 [P5 indirect inventory](../proposals/m2/t70-final-current-certification.md#s17-p5-checkpoint---indirect-use-and-pointer-alias-inventory).
 61 indirect sites grouped;5 current shared source identities bound to accepted

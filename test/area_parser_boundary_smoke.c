@@ -77,5 +77,30 @@ int main(void)
     if (game.ram[0x0728U] != 0U) return 10;
     if (game.ram[0x072bU] != 0U) return 11;
     if (game.ram[0x072aU] != 0U) return 12;
+    if (game.ram[0U] != 3U || game.ram[7U] != 0x16U) return 13;
+    /* A column mismatch still publishes NormObj's decoder outputs. */
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0726U] = 1U;
+    game.ram[0U] = 0xa5U;
+    game.ram[7U] = 0x5aU;
+    if (!mysmb_area_process_object_state(&game)) return 14;
+    if (game.ram[0U] != 3U || game.ram[7U] != 0x16U) return 15;
+    if (game.ram[0x072cU] != 0U) return 16;
+    /* A same-page row14 must finish InitRear before AlterAreaAttributes. */
+    prg[0x40U] = 0x2eU;
+    prg[0x41U] = 0x03U;
+    game.ram[0x0728U] = 1U;
+    game.ram[0x0727U] = 0xa5U;
+    if (!mysmb_area_process_object_state(&game)) return 17;
+    if (game.ram[0x0728U] != 0U || game.ram[0x0727U] != 0xa5U) return 18;
+    if (game.ram[0U] != 0x2eU || game.ram[7U] != 0U) return 19;
+    /* Resident row13 D6-clear leaves the decoder, then decrements length. */
+    prg[0x40U] = 0x2dU;
+    prg[0x41U] = 0x03U;
+    game.ram[0x0730U] = 2U;
+    game.ram[0x072dU] = 0U;
+    game.ram[0U] = 0xa5U;
+    if (!mysmb_area_process_object_state(&game)) return 20;
+    if (game.ram[0x0730U] != 1U || game.ram[0U] != 0xa5U || game.ram[7U] != 0x22U) return 21;
     return 0;
 }

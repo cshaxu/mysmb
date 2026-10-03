@@ -3306,3 +3306,81 @@ unchanged;no refresh required. S17 remains open:indirect receipt applicability,
 mutable RAM/hardware/register/flag/stack and cross-frame consumed-value joins
 remain;material,pixels,routes and final snapshot are not certified. The
 deadline does not convert this inventory into a completed equivalence proof.
+
+## S17 P6 corrective scope amendment - complete parser output chain
+
+Source9508-96f1 ProcessAreaData/DecodeAreaData/AlterAreaAttributes shows
+00/07 decoder writes before NormObj page/column/InitRear exits. Current C
+publishes them only when drawing. Row14 backloading also bypasses the
+source same-page InitRear exit;resident row13 D6-clear must return from
+DecodeAreaData without dispatch but still reach caller ChkLength.
+Reconcile the complete32-node parser chain in shared area.c before edits;
+its actual object-handler successors retain separately accepted contracts.
+No new T/S or whole-project audit round. Source-order scope:
+
+`ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj`, `AlterAreaAttributes`, `Alter2`, `SetFore`.
+
+Coordinator accepts corrective custody for32 labels. Expected fresh0,
+baseline/max1992. Source-first predicates/store/order review,then original
+9508 returning roots over valid stream pointers/selected byte offsets,
+non-render/InitRear/resident-control domains. Compare all2048 RAM bytes;
+exclude only actual observed physical stack stores. Returning root fixtures
+prove their explicit input domain,not every gameplay route. Any difference
+stays this S;code changes rebuild three products with original OpenNT16
+tools. No arbitrary pointer alias or malformed vector reachability credit.
+
+## S17 P6 checkpoint - parser decoder and return order repair
+
+The admitted32-node parser controller/decoder is repaired in its shared C
+owner. Only mysmb_area_process_object_state changes;all leaf renderers and
+platform code remain byte-identical after newline normalization. Decoder00/07
+outputs now precede non-render returns. Same-page InitRear precedes row14
+attribute rendering. Resident row13 D6-clear returns without dispatch,then
+caller ChkLength reloads ObjectOffset and decrements the selected slot. All
+source predicates,byte cursor increments,loopback and child order reviewed.
+Cached PRG reads are reused only in the existing immutable stream domain.
+
+The old original first batch returned1024 roots;old x86 native remained busy
+without completing that batch and was terminated after observed sustained
+CPU use. This is a failed baseline,not a zero-difference receipt or a precise
+single-case attribution. No baseline total difference count is claimed.
+
+Final original27139 returning roots each width compare RAM including00-07,
+excluding only physical stack bytes actually written by original pushes.
+Zero differences on both widths.34 stream pointers/all selected byte offsets,
+non-render,page/column returns,resident page controls and actual row14 child
+paths are explicit domains. Cases:8622 wrong-page,8548 same-page preload,
+8622 column mismatch,82 resident page controls,7 selected-page controls,
+610 resident row14,610 newly allocated row14,34 behind scans,4 preload scans.
+The34 behind scans use columnFF to isolate controller semantics;this is a
+controlled routine input,not normal-gameplay reachability proof.
+
+All32 labels observed;34 of35 predicates execute both outcomes. The remaining
+outcome is impossible:95bf LDA#2e sets Z=0 before95c1 BNE NormObj. Raw
+control-00561 had incorrectly been called exact;it is now infeasible,kept in
+the raw ledger. Control raw4342,infeasible68,feasible/exact4274/4274. This is
+an extractor classification correction,not removal of a possible ROM path.
+No unobserved feasible outcome is credited from label coverage.
+
+Ten focused checks each width pass after correcting one stale column-test
+expectation:Same-page InitRear finishes preload before staging the old terrain;
+RenderSceneryTerrain's subsequent parser call applies row14 attributes for
+following columns. The old test expected the removed premature control write.
+New neutral regressions cover decoder output on column rejection,InitRear
+row14 without attribute changes,and resident page-control length decrement.
+All six600-frame scoped original/native integration routes pass;native records
+are identical across widths. Their existing zero-page/physical-stack frame ABI
+limits remain;the dedicated parser roots cover zero-page separately.
+
+Original OpenNT16 compile/link passes;no DOS gameplay claim. Three products
+refreshed under standing owner delivery authorization. Material661-668 record
+eight actual decoder/slot/cursor/loopback flows. Historical1992/1992;local
+scoped1992/1992 restored,control4274/4274,material668 partial,total unknown.
+Fresh node0;32 corrected/re-audited,one raw edge reclassified,eight material
+paths added. S17/T70 remain open;no full certification or new audit round.
+
+| Local product | Bytes | SHA256 |
+| --- | ---: | --- |
+| mysmb16.exe | 258651 | a8440c84f64ed9b2a79d8a097ff511f22758b2f84ee4893d5bb38faedb407e13 |
+| mysmb32.exe | 373107 | 6aba0141541c9b9bbdeb13e417a7d8e2d1b86272c7bf553a63896fa3395071b5 |
+| mysmb64.exe | 379113 | ff1c5df7fbd8b222d7ed531fe2d6f8fd43a6c425144c1e34578bfd00248e0b5d |

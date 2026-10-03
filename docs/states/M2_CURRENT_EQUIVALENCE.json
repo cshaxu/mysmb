@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 660,
+    "enumeratedCount": 668,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -14527,6 +14527,174 @@
       "currentSourcePaths": [
         "src/game/area.c"
       ]
+    },
+    {
+      "id": "material-00661",
+      "producer": "ChkRow14",
+      "consumer": "NormObj",
+      "storage": "07 decoder addend",
+      "feasiblePath": "Each nonterminal decoder assigns the row addend before NormObj,page comparison or return;34 valid pointers and byte-offset domains preserve its lifetime.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_process_object_state",
+      "semanticContract": "Declared original parser root value flow and scratch/slot lifetime;not arbitrary-state or full gameplay certification.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "parser producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00662",
+      "producer": "ChkRow13",
+      "consumer": "LeavePar",
+      "storage": "07=22 with preserved00",
+      "feasiblePath": "Resident or already-page-selected row13 D6-clear takes LeavePar before NormObj/dispatch;82 resident and7 inactive selected-page roots exercise this output.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_process_object_state",
+      "semanticContract": "Declared original parser root value flow and scratch/slot lifetime;not arbitrary-state or full gameplay certification.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "parser producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00663",
+      "producer": "NormObj",
+      "consumer": "InitRear",
+      "storage": "00 object ID and07 addend on preload exit",
+      "feasiblePath": "8548 same-page preload roots include row14;decoder outputs precede clearing Backloading/Behind/ObjectOffset and returning to ChkLength.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_process_object_state",
+      "semanticContract": "Declared original parser root value flow and scratch/slot lifetime;not arbitrary-state or full gameplay certification.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "parser producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00664",
+      "producer": "NormObj",
+      "consumer": "BackColC",
+      "storage": "00/07 before column rejection",
+      "feasiblePath": "8622 same-page column-mismatch roots retain00/07 without allocating or dispatching an object;immutable PRG reads cannot overwrite these RAM bytes.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_process_object_state",
+      "semanticContract": "Declared original parser root value flow and scratch/slot lifetime;not arbitrary-state or full gameplay certification.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "parser producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00665",
+      "producer": "InitRear",
+      "consumer": "ChkLength",
+      "storage": "ObjectOffset zero selects resident slot0",
+      "feasiblePath": "InitRear stores zero to ObjectOffset;caller reloads it before length decrement and loop termination. Focused neutral regression covers a resident slot0.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_process_object_state",
+      "semanticContract": "Declared original parser root value flow and scratch/slot lifetime;not arbitrary-state or full gameplay certification.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "parser producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00666",
+      "producer": "NormObj",
+      "consumer": "RunAObj",
+      "storage": "00/07 dispatcher selector",
+      "feasiblePath": "610 resident row14 roots consume the decoder ID/addend through actual original JumpEngine before AlterAreaAttributes;RAM pointer/scenery result compared.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_process_object_state",
+      "semanticContract": "Declared original parser root value flow and scratch/slot lifetime;not arbitrary-state or full gameplay certification.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "parser producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00667",
+      "producer": "StrAObj",
+      "consumer": "RunAObj",
+      "storage": "saved object offset and advanced AreaDataOffset",
+      "feasiblePath": "610 new row14 roots publish saved slot offset and increment the byte cursor twice/reset page select before actual JumpEngine/attribute child.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_process_object_state",
+      "semanticContract": "Declared original parser root value flow and scratch/slot lifetime;not arbitrary-state or full gameplay certification.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "parser producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00668",
+      "producer": "SetBehind",
+      "consumer": "ProcLoopb",
+      "storage": "BehindAreaParserFlag causes source loopback",
+      "feasiblePath": "34 bounded stream scans isolate source behind-page loopback with controlled columnFF;four valid preload scans also exercise Backloading loopback until actual InitRear. No normal-gameplay reachability claim for columnFF.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_process_object_state",
+      "semanticContract": "Declared original parser root value flow and scratch/slot lifetime;not arbitrary-state or full gameplay certification.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "parser producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     }
   ],
   "cohorts": [
@@ -14609,8 +14777,11 @@
     "unclassified": 0
   },
   "controlEdgeCounts": {
-    "exact": 4275,
-    "infeasible": 67
+    "exact": 4274,
+    "infeasible": 68,
+    "mismatch": 0,
+    "needs-evidence": 0,
+    "unclassified": 0
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -21418,13 +21589,16 @@
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
         "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Actual descending three persistent slots execute source DecodeAreaData and post-child length decrement; admitted real resident scenery paths match full persistent RAM."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Actual descending three persistent slots execute source DecodeAreaData and post-child length decrement; admitted real resident scenery paths match full persistent RAM.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
         "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Actual descending three persistent slots execute source DecodeAreaData and post-child length decrement; admitted real resident scenery paths match full persistent RAM.",
+      "semanticContract": "Actual descending three persistent slots execute source DecodeAreaData and post-child length decrement; admitted real resident scenery paths match full persistent RAM. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21438,12 +21612,15 @@
       "currentCounterpart": "mysmb_area_process_object_state",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Resets BehindAreaParserFlag for every descending slot and selects resident buffered offset or AreaDataOffset before record inspection.",
+      "semanticContract": "Resets BehindAreaParserFlag for every descending slot and selects resident buffered offset or AreaDataOffset before record inspection. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21457,12 +21634,15 @@
       "currentCounterpart": "mysmb_area_process_object_state",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Recognizes row-13 page controls before decode, preserving d6 page-control versus object distinction.",
+      "semanticContract": "Recognizes row-13 page controls before decode, preserving d6 page-control versus object distinction. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21476,12 +21656,15 @@
       "currentCounterpart": "mysmb_area_process_object_state",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Sends row 14 directly to decode only when backloading; otherwise continues page-behind testing.",
+      "semanticContract": "Sends row 14 directly to decode only when backloading; otherwise continues page-behind testing. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21495,12 +21678,15 @@
       "currentCounterpart": "mysmb_area_process_object_state",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Compares object page with current renderer page and marks only prior-page records as behind.",
+      "semanticContract": "Compares object page with current renderer page and marks only prior-page records as behind. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21514,12 +21700,15 @@
       "currentCounterpart": "mysmb_area_process_object_state",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Calls DecodeAreaData then tails to object-length accounting.",
+      "semanticContract": "Calls DecodeAreaData then tails to object-length accounting. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21533,12 +21722,15 @@
       "currentCounterpart": "mysmb_area_process_object_state",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Sets the behind flag before advancing to the next area record.",
+      "semanticContract": "Sets the behind flag before advancing to the next area record. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21552,12 +21744,15 @@
       "currentCounterpart": "mysmb_area_process_object_state",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Advances the source area-data offset by two and clears page-select state before length accounting.",
+      "semanticContract": "Advances the source area-data offset by two and clears page-select state before length accounting. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21571,12 +21766,15 @@
       "currentCounterpart": "mysmb_area_process_object_state",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Leaves negative/resident object lengths intact or decrements an active length before the slot loop tail.",
+      "semanticContract": "Leaves negative/resident object lengths intact or decrements an active length before the slot loop tail. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21590,12 +21788,15 @@
       "currentCounterpart": "mysmb_area_process_object_state",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Moves from slot two to zero then repeats the stream pass only for behind records or active backloading.",
+      "semanticContract": "Moves from slot two to zero then repeats the stream pass only for behind records or active backloading. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21609,12 +21810,15 @@
       "currentCounterpart": "mysmb_area_process_object_state",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Common parser return without additional stream state mutation.",
+      "semanticContract": "Common parser return without additional stream state mutation. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21628,12 +21832,15 @@
       "currentCounterpart": "mysmb_area_process_object_state",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Advances AreaDataOffset by exactly two and clears AreaObjectPageSel.",
+      "semanticContract": "Advances AreaDataOffset by exactly two and clears AreaObjectPageSel. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21648,13 +21855,16 @@
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
         "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Actual row and object-ID decode supplies00/07 and invokes original vector-state helper before native selected child, without replacing the child."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Actual row and object-ID decode supplies00/07 and invokes original vector-state helper before native selected child, without replacing the child.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
         "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Actual row and object-ID decode supplies00/07 and invokes original vector-state helper before native selected child, without replacing the child.",
+      "semanticContract": "Actual row and object-ID decode supplies00/07 and invokes original vector-state helper before native selected child, without replacing the child. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21668,12 +21878,15 @@
       "currentCounterpart": "mysmb_area_process_object_state",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Ends decode on $fd; otherwise selects special row-15/row-12/default addends.",
+      "semanticContract": "Ends decode on $fd; otherwise selects special row-15/row-12/default addends. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21687,12 +21900,15 @@
       "currentCounterpart": "mysmb_area_process_object_state",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Maps row 14 to $2e identity with zero addend, otherwise proceeds to row 13 classification.",
+      "semanticContract": "Maps row 14 to $2e identity with zero addend, otherwise proceeds to row 13 classification. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21706,12 +21922,15 @@
       "currentCounterpart": "mysmb_area_process_object_state",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Maps row-13 object/control records, loop command and page-control return behavior.",
+      "semanticContract": "Maps row-13 object/control records, loop command and page-control return behavior. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21725,12 +21944,15 @@
       "currentCounterpart": "mysmb_area_process_object_state",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Masks page-control bits before normal object normalization.",
+      "semanticContract": "Masks page-control bits before normal object normalization. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21744,12 +21966,15 @@
       "currentCounterpart": "mysmb_area_process_object_state",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Separates special rows, large d6-d4 objects and small-object identities.",
+      "semanticContract": "Separates special rows, large d6-d4 objects and small-object identities. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21763,12 +21988,15 @@
       "currentCounterpart": "mysmb_area_process_object_state",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Applies the vertical-pipe warp d3 override before object-id normalization.",
+      "semanticContract": "Applies the vertical-pipe warp d3 override before object-id normalization. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21782,12 +22010,15 @@
       "currentCounterpart": "mysmb_area_process_object_state",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Transfers normalized large-object class into common four-bit move.",
+      "semanticContract": "Transfers normalized large-object class into common four-bit move. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21801,12 +22032,15 @@
       "currentCounterpart": "mysmb_area_process_object_state",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Loads special-row d6-d4 class before common normalization.",
+      "semanticContract": "Loads special-row d6-d4 class before common normalization. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21820,12 +22054,15 @@
       "currentCounterpart": "mysmb_area_process_object_state",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Moves source class bits d6-d4 into low-nibble object identity.",
+      "semanticContract": "Moves source class bits d6-d4 into low-nibble object identity. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21839,12 +22076,15 @@
       "currentCounterpart": "mysmb_area_process_object_state",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Chooses resident execution versus page/column/rear initialization for normalized object identity.",
+      "semanticContract": "Chooses resident execution versus page/column/rear initialization for normalized object identity. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21858,12 +22098,15 @@
       "currentCounterpart": "mysmb_area_apply_parser_object / shared object helper",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Returns without consuming or rendering a noncurrent object.",
+      "semanticContract": "Returns without consuming or rendering a noncurrent object. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21877,12 +22120,15 @@
       "currentCounterpart": "mysmb_area_apply_parser_object / shared object helper",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Ends backloading on the first current-page object or proceeds to column matching.",
+      "semanticContract": "Ends backloading on the first current-page object or proceeds to column matching. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21896,12 +22142,15 @@
       "currentCounterpart": "mysmb_area_apply_parser_object / shared object helper",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Residual loop-command leaf returns after its earlier control effects.",
+      "semanticContract": "Residual loop-command leaf returns after its earlier control effects. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21915,12 +22164,15 @@
       "currentCounterpart": "mysmb_area_apply_parser_object / shared object helper",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Compares source high-nibble column to CurrentColumnPos before staging an object.",
+      "semanticContract": "Compares source high-nibble column to CurrentColumnPos before staging an object. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21934,12 +22186,15 @@
       "currentCounterpart": "mysmb_area_apply_parser_object / shared object helper",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Stores the object record offset, advances source offset, then enters object dispatch.",
+      "semanticContract": "Stores the object record offset, advances source offset, then enters object dispatch. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21954,13 +22209,16 @@
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
         "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Native fixed object dispatcher now records original9666 return/vector target04-07 before actual handler; selector is byte sum of ID/addend."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Native fixed object dispatcher now records original9666 return/vector target04-07 before actual handler; selector is byte sum of ID/addend.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
         "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Native fixed object dispatcher now records original9666 return/vector target04-07 before actual handler; selector is byte sum of ID/addend.",
+      "semanticContract": "Native fixed object dispatcher now records original9666 return/vector target04-07 before actual handler; selector is byte sum of ID/addend. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21974,12 +22232,15 @@
       "currentCounterpart": "mysmb_area_apply_parser_object / shared object helper",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Updates terrain/background values for row-14 attribute records with d6 clear.",
+      "semanticContract": "Updates terrain/background values for row-14 attribute records with d6 clear. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -21993,12 +22254,15 @@
       "currentCounterpart": "mysmb_area_apply_parser_object / shared object helper",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Uses d6-set row-14 records to select foreground or background-color control.",
+      "semanticContract": "Uses d6-set row-14 records to select foreground or background-color control. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -22012,12 +22276,15 @@
       "currentCounterpart": "mysmb_area_apply_parser_object / shared object helper",
       "semanticEvidence": [
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
       ],
-      "semanticContract": "Stores the selected foreground scenery control.",
+      "semanticContract": "Stores the selected foreground scenery control. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -66037,16 +66304,18 @@
       "instruction": "bne",
       "id": "control-00561",
       "cohort": "C",
-      "status": "exact",
-      "currentCounterpart": "area.c mysmb_area_process_object_state preserves source fallthrough relation ChkRow14 -> ChkRow13 at line 3415.",
+      "status": "infeasible",
+      "currentCounterpart": "src/game/area.c:mysmb_area_process_object_state row14 assigns object_id2e and proceeds through NormObj logic without a row13 fallthrough",
       "semanticEvidence": [
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
-        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement."
+        "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes. Raw control-00561 reclassified by bound LDA/BNE instruction semantics,not by absence of hits alone."
       ],
       "operationalEvidence": [
-        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree."
+        "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass. All row14 observed95c1 transitions take NormObj;constant nonzero proof discharges the unobserved fallthrough."
       ],
-      "semanticContract": "area.c mysmb_area_process_object_state preserves source fallthrough relation ChkRow14 -> ChkRow13 at line 3415.",
+      "semanticContract": "Original95bf LDA#2e immediately precedes95c1 BNE NormObj;Z=0 for every input,so95c3 fallthrough is impossible. The separate95b9 row-not14 branch to ChkRow13 remains feasible.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -151431,6 +151700,7 @@
     "control-00081",
     "control-00372",
     "control-00457",
+    "control-00561",
     "control-01339",
     "control-01405",
     "control-01408",
@@ -151494,16 +151764,16 @@
     "control-03784",
     "control-03868"
   ],
-  "infeasibleControlEdgeTotal": 67,
-  "feasibleControlEdgeTotal": 4275,
+  "infeasibleControlEdgeTotal": 68,
+  "feasibleControlEdgeTotal": 4274,
   "finalCertification": {
     "status": "incomplete",
     "authority": "docs/states/CURRENT.md",
     "localExactMeaning": "Accepted scoped semantic/route contracts in retained evidence;not exhaustive current-build or end-to-end certification.",
     "nodeUniverse": 1992,
-    "feasibleControlUniverse": 4275,
+    "feasibleControlUniverse": 4274,
     "rawControlUniverse": 4342,
-    "infeasibleControls": 67,
+    "infeasibleControls": 68,
     "reviewedNodeLabels": [],
     "reviewedControlEdgeIds": [],
     "reviewedMeaning": "Superseded restart accounting;not an active progress counter. Retained scoped proofs remain accepted within their stated limits.",
@@ -152592,7 +152862,6 @@
           "control-00558",
           "control-00559",
           "control-00560",
-          "control-00561",
           "control-00562",
           "control-00563",
           "control-00564",
@@ -158004,7 +158273,39 @@
         "RenderAttributeTables",
         "SetATHigh",
         "AttribLoop",
-        "SetVRAMCtrl"
+        "SetVRAMCtrl",
+        "ProcessAreaData",
+        "ProcADLoop",
+        "Chk1Row13",
+        "Chk1Row14",
+        "CheckRear",
+        "RdyDecode",
+        "SetBehind",
+        "NextAObj",
+        "ChkLength",
+        "ProcLoopb",
+        "EndAParse",
+        "IncAreaObjOffset",
+        "DecodeAreaData",
+        "Chk1stB",
+        "ChkRow14",
+        "ChkRow13",
+        "Mask2MSB",
+        "ChkSRows",
+        "LrgObj",
+        "NotWPipe",
+        "SpecObj",
+        "MoveAOId",
+        "NormObj",
+        "LeavePar",
+        "InitRear",
+        "LoopCmdE",
+        "BackColC",
+        "StrAObj",
+        "RunAObj",
+        "AlterAreaAttributes",
+        "Alter2",
+        "SetFore"
       ],
       "controlEdgeIds": [],
       "status": "in-progress-material-use-completeness",
@@ -158016,7 +158317,9 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P3 corrective scope amendment - title copy pointer outputs",
         "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair",
         "docs/proposals/m2/t70-final-current-certification.md S17 P4 corrective scope amendment - complete column output chain",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 corrective scope amendment - complete parser output chain",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",
