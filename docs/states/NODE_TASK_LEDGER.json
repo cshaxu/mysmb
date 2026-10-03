@@ -766702,7 +766702,10 @@
         "HandlePipeEntry",
         "CoinSd",
         "ChkForBump_HammerBroJ",
-        "InitFireballExplode"
+        "InitFireballExplode",
+        "PauseRoutine",
+        "SetupPowerUp",
+        "FireballBGCollision"
       ],
       "baseline": 1992,
       "incomingComplete": [

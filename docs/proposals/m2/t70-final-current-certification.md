@@ -4605,3 +4605,60 @@ Evidence metadata correction:SetupVictoryMode's retained semantic clause
 named ROM8493 in error. Its actual queue-write instruction is83b8;the value,
 destination-page calculation and mode-task increment remain the same clause.
 This corrects a citation,not a new execution or whole-node promotion.
+
+## S17 P21 admission - missing queue producer root domains
+
+Within the P20 external-writer scope,add controlled original roots at8182,
+83a0,b74f,bc49,e1c8,b624 andbbfe. Named entry labels:`PauseRoutine`,`VictoryModeSubroutines`,`RunGameTimer`,`SetupPowerUp`,`FireballBGCollision`,`ProcFireball_Bubble`,`GiveOneCoin`.
+Compare producer full RAM before SoundEngine and full RAM/APU/ordered commands
+after it,with actual physical push masks only. Fixtures target pause Start,
+victory setup/message phases,timer100/zero/ordinary digits,power-up creation,
+solid/non-solid fireball bottom probes,firebutton gates and coin99 carry.
+Sampling is bounded and exact observed queue PCs are reported. Any difference
+must be classified against original calling ABI before product repair,which
+requires a separate explicit affected-chain amendment and all three products.
+No new node/control/material credit;fresh0,max1992. Same process/raw bounds
+and local-probe provenance as P20. All unobserved writers/overwrite lifetimes
+remain open;this is neither a new audit round nor full input-domain proof.
+
+## S17 P21 checkpoint - targeted queue producer boundaries
+
+Seven targeted controlled original parent entries each cross256 high-byte
+fixture patterns with eight low-byte samples;14336 returning roots per width.
+Whole2048 RAM pre/post SoundEngine,24 APU shadow bytes and ordered commands
+match x86/x64 with zero differences. Actual physical pushes alone are excluded.
+These are declared input domains rather than full gameplay/caller coverage.
+
+Two failed preliminary probes were fixture-contract failures,not silently
+accepted differences. FireballBGCollision X1 had ObjectOffset0,so its original
+BBChk_E child restored X0;the native API retains its explicit slot. The final
+fixture sets ObjectOffset=X,as the real FireballObjCore caller does. The second
+probe used PlayerFacingDir0;original DEY indexes preceding PRG while native
+two-element speed table requires the declared right1/left2 partition. Final
+fixture exercises both1/2. No equivalence is claimed for corrupted facing0
+or an inconsistent object offset. Source code was not changed to fit a probe.
+Fireball bounce fixture also corrected its field address from03a0 to003a;
+both paths now exercise bounce/explosion gates with source-owned state.
+
+| Original queue writer | PC | Queue | Actual visits | Fixture mode |
+| --- | --- | --- | --- | --- |
+| ChkStart | 81b5 | 00fa | 120 | 121 |
+| SetupVictoryMode | 83b8 | 00fc | 2048 | 122 |
+| ProcFireball_Bubble | b651 | 00ff | 10 | 126 |
+| RunGameTimer | b784 | 00fc | 128 | 123 |
+| GiveOneCoin | bc20 | 00fe | 2048 | 127 |
+| PutBehind | bc82 | 00fe | 2048 | 124 |
+| InitFireballExplode | e1fa | 00ff | 687 | 125 |
+
+P20/P21 union20/48 observed sites. Remaining28: EvalForMusic@843a, DecNumTimer@84eb, HoleDie@b1a1, FlagpoleSlide@b2ad, PlayerEndLevel@b2dc, NextArea@b326, NextVO@b946, SetM2@d007, RemoveBridge@d043, RemoveBridge@d047, RemoveBridge@d05c, FireworksSoundScore@d2c3, AwardGameTimerPoints@d325, SetDBSte@d781, EnemySmackScore@d7c1, HandlePowerUpCollision@d80a, HandlePowerUpCollision@d81d, HandlePECollisions@d8d5, ForceInjury@d93f, KillPlayer@d95b, EnemyStomped@d971, SolidOrClimb@dcf0, PipeDwnS@ddd5, FlagpoleCollision@de5b, HandlePipeEntry@df05, GetWNum@df34, CoinSd@dfad, ChkForBump_HammerBroJ@e12f.
+
+Original parent order and downstream SoundEngine composition use real calls;
+there is no intervening game write. Exact site presence never proves all
+overwrite/caller lifetimes or unobserved branches. No new material edges are
+credited without native producer/consumer joins. Eight P20 focused checks per
+width are retained against unchanged product owners;this checkpoint adds the
+current C90 probe builds and new original/native comparisons,not duplicate
+claims of newly run unit tests. Fourteen batches below7MiB raw/120sec per
+process,records removed. No product/source repair or three-EXE refresh.
+Local nodes1992/1992,controls4274/4274(raw4342,infeasible68),historical1992/1992;
+material879 partial,total unknown. S17 and full M2 remain open.

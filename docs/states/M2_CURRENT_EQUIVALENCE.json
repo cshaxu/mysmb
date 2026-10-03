@@ -20311,7 +20311,8 @@
       "operationalEvidence": [
         "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner.",
         "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P21 checkpoint - targeted queue producer boundaries:actual write PC observed within14336 controlled original parent-to-SoundEngine roots each width;full RAM pre/post/APU/ordered commands zero diff,physical pushes only. Declared facing1/2 and X=ObjectOffset for fireball;other callers/input domains not inferred."
       ],
       "semanticContract": "Reads controller-one Start, honors the d7 debounce flag, initializes the $2b pause timer and sound queue, then toggles pause bit and sets d7.",
       "currentSourcePaths": [
@@ -21250,7 +21251,8 @@
         "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P21 checkpoint - targeted queue producer boundaries:actual write PC observed within14336 controlled original parent-to-SoundEngine roots each width;full RAM pre/post/APU/ordered commands zero diff,physical pushes only. Declared facing1/2 and X=ObjectOffset for fireball;other callers/input domains not inferred."
       ],
       "semanticContract": "ROM queue-write PC $83b8: writes DestinationPageLoc as ScreenRight_PageLoc+1, queues EndOfCastleMusic ($08), then tail-enters IncModeTask_B to advance OperMode_Task exactly once.",
       "currentSourcePaths": [
@@ -33859,7 +33861,8 @@
         "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
       ],
       "operationalEvidence": [
-        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P21 checkpoint - targeted queue producer boundaries:actual write PC observed within14336 controlled original parent-to-SoundEngine roots each width;full RAM pre/post/APU/ordered commands zero diff,physical pushes only. Declared facing1/2 and X=ObjectOffset for fireball;other callers/input domains not inferred."
       ],
       "semanticContract": "Partitions PlayerStatus before one-shot B eligibility, alternating-slot selection, Y-high/crouch/climb gates and creation writes.",
       "currentSourcePaths": [
@@ -34242,7 +34245,8 @@
         "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
       ],
       "operationalEvidence": [
-        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P21 checkpoint - targeted queue producer boundaries:actual write PC observed within14336 controlled original parent-to-SoundEngine roots each width;full RAM pre/post/APU/ordered commands zero diff,physical pushes only. Declared facing1/2 and X=ObjectOffset for fireball;other callers/input domains not inferred."
       ],
       "semanticContract": "Preserves title/engine/death/Y/timer gates, 100 music gate, BCD decrement, status update and zero-time death order.",
       "currentSourcePaths": [
@@ -35749,7 +35753,8 @@
       ],
       "operationalEvidence": [
         "T61 S5: 112 original x86/x64 caller and full-product score/HUD route checks plus focused smoke pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P21 checkpoint - targeted queue producer boundaries:actual write PC observed within14336 controlled original parent-to-SoundEngine roots each width;full RAM pre/post/APU/ordered commands zero diff,physical pushes only. Declared facing1/2 and X=ObjectOffset for fireball;other callers/input domains not inferred."
       ],
       "semanticContract": "Updates BCD coin tally, hundred-coin life/sound path, then score points.",
       "currentSourcePaths": [
@@ -35933,7 +35938,8 @@
         "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
       ],
       "operationalEvidence": [
-        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass."
+        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P21 checkpoint - targeted queue producer boundaries:actual write PC observed within14336 controlled original parent-to-SoundEngine roots each width;full RAM pre/post/APU/ordered commands zero diff,physical pushes only. Declared facing1/2 and X=ObjectOffset for fireball;other callers/input domains not inferred."
       ],
       "semanticContract": "Sets slot-five background-priority attribute and queues GrowPowerUp sound before return.",
       "currentSourcePaths": [
@@ -49812,7 +49818,8 @@
         "M2 T64 S31 controlled original-ROM $E1C8 route: seven status-bar, empty, non-solid, bounce and explosion cases compare source-visible RAM writes with current x86/x64 owners; all results agree."
       ],
       "operationalEvidence": [
-        "M2 T64 S31 x86/x64 fireball background actual checks, fireball OAM smoke and platform-purity tests pass; OpenNT DOS16 shared-source link completes."
+        "M2 T64 S31 x86/x64 fireball background actual checks, fireball OAM smoke and platform-purity tests pass; OpenNT DOS16 shared-source link completes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P21 checkpoint - targeted queue producer boundaries:actual write PC observed within14336 controlled original parent-to-SoundEngine roots each width;full RAM pre/post/APU/ordered commands zero diff,physical pushes only. Declared facing1/2 and X=ObjectOffset for fireball;other callers/input domains not inferred."
       ],
       "semanticContract": "Sets Fireball_State to $80, queues Sfx_Bump on Square1SoundQueue, and returns.",
       "currentSourcePaths": [
@@ -164157,7 +164164,10 @@
         "HandlePipeEntry",
         "CoinSd",
         "ChkForBump_HammerBroJ",
-        "InitFireballExplode"
+        "InitFireballExplode",
+        "PauseRoutine",
+        "SetupPowerUp",
+        "FireballBGCollision"
       ],
       "controlEdgeIds": [],
       "status": "in-progress-material-use-completeness",
@@ -164198,7 +164208,9 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P19 admission - complete sound-chain mutable use census",
         "docs/proposals/m2/t70-final-current-certification.md S17 P19 checkpoint - sound-chain mutable and cross-frame lifetimes",
         "docs/proposals/m2/t70-final-current-certification.md S17 P20 admission - external audio queue writer and consumer boundary",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P21 admission - missing queue producer root domains",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P21 checkpoint - targeted queue producer boundaries"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",
