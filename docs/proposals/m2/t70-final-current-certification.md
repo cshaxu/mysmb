@@ -4831,3 +4831,127 @@ mysmb16.exe:259211 bytes,SHA256 dc54df59a802c1550e11b46525cb77559652d7a5e31abc29
 mysmb32.exe:373619 bytes,SHA256 bfbc4065a61241234aa763ac9de254e9318c08fb787ca11d1196b53d3f3916a1.
 
 mysmb64.exe:379625 bytes,SHA256 d9c8ae62ac48a9ed5ceecdea782c0a1b4e446a15d5b708a7bee7847e9335e7c7.
+
+## S17 P24 admission - actual external queue consumer joins
+
+Within P20-P23's same48 original external direct queue stores and SoundEngine
+scope,collect actual original last-writer/reader PC/address events through
+the declared42 parent fixture families. Independently instrument ignored
+copies of current49 native queue assignments and69 sound functions;track
+native actual writer-site/reader-function/address rather than assigning
+original writer IDs to C. Original source PC and native site are reconciled
+by the retained source value/guard/store contracts and explicit current
+function/address/statement binding. Current instrumented parents and sound
+must retain complete pre/post RAM/APU/ordered commands against real ROM.
+Missing producer/reader joins remain named;48 observed write PCs alone never
+imply48 consumed paths. Bulk/index aliases,intervening game writes and other
+owners' mutable/register/flag/stack/cross-frame use remain outside this local
+composition and pending. No new audit round,no product source changes or
+EXE refresh. Fresh0,max1992;current394 labels unchanged.1024-root batches,
+128MiB/120sec,raw cleanup and existing local research provenance apply.
+
+## S17 P24 checkpoint - actual external queue consumption
+
+Independently instrumented current49 direct C queue assignments across29
+parent owners and69 sound functions. Actual C site IDs never inherit source
+PC IDs. Original trace records last physical queue writer and sound reader;
+native write/read/cache callbacks record actual current statement/function
+identity. All output bytes remain unchanged against real original parents
+and children. Fixed queue addresses FA-FF and source statement value/guard
+contracts bind the two independently collected event sets. Explicit binding
+separates swim/dry jump stores,bridge8/80 stores,end-level/next-area owners.
+MusicHandler's actual current reader is mysmb_audio_select_music;the initial
+14 missing event bindings were shortened metadata names,not product defects.
+
+42 initial parent families plus4 targeted1024-root batches produce90112
+roots each width. Complete2048 RAM before/after SoundEngine,24 APU bytes and
+ordered commands have zero differences. Only physically observed pushes
+are excluded. All76 observed source writer/read pairs match native events
+in the same batch on both widths;not merely somewhere in the aggregate.
+This is finite sampled-domain evidence,not every individual event pairing
+or arbitrary input/caller equivalence. Native repeated/cache/eager pure
+queue reads can change counts without changing the source branch/state.
+
+StoreMusic9113 and TerminateGame924a initially lacked consumed events.
+Before parent entry,the4 added batches explicitly set pause queue/mode/buffer
+inactive. Area-music fixtures enable OperMode and clear event priority;
+game-over fixtures enable two players with offscreen lives. No game RAM is
+patched between parent and sound. Actual original ContinueGame enables
+OperMode1,allowing924a's Silence80 to be consumed. Single-player title exit
+instead makes SoundEngine mute before any music queue read;that path is
+non-consumption,not an invented read. Initial paused/priority fixtures and
+the added normal-entry fixtures all retain zero output differences.
+
+All48 direct queue write PCs now have scoped consumed counterparts. Grouping
+by producer/consumer/address adds48 distinct material paths882-929;no prior
+material path has the same endpoints/address. One StoreMusic source store
+has two conditional native assignments,so49 C sites do not imply49 ROM nodes.
+The table records exact identities. Native site IDs are ignored probe-local
+identifiers;current file/function/statements are retained in the registry.
+
+| Material | Producer | Consumer | RAM | Original writer/read PCs | Native write sites | Native readers |
+| --- | --- | --- | --- | --- | --- | --- |
+| material-00882 | ChkStart | SndOn | 00fa | 81b5>f2e8 | 7 | mysmb_audio_step |
+| material-00883 | ChkStart | InPause | 00fa | 81b5>f2f3 | 7 | mysmb_audio_step |
+| material-00884 | SetupVictoryMode | MusicHandler | 00fc | 83b8>f694 | 23 | mysmb_audio_select_music |
+| material-00885 | EvalForMusic | MusicHandler | 00fc | 843a>f694 | 24 | mysmb_audio_select_music |
+| material-00886 | DecNumTimer | Square2SfxHandler | 00fe | 84eb>f582,84eb>f58a | 11 | mysmb_audio_step_square2 |
+| material-00887 | DoneInitArea | MusicHandler | 00fb | 9056>f698 | 0 | mysmb_audio_select_music |
+| material-00888 | StoreMusic | MusicHandler | 00fb | 9113>f698 | 8,9 | mysmb_audio_select_music |
+| material-00889 | PlayerLoseLife | MusicHandler | 00fc | 91d7>f694 | 20 | mysmb_audio_select_music |
+| material-00890 | SetupGameOver | MusicHandler | 00fc | 922e>f694 | 21 | mysmb_audio_select_music |
+| material-00891 | TerminateGame | MusicHandler | 00fc | 924a>f694 | 22 | mysmb_audio_select_music |
+| material-00892 | HoleDie | MusicHandler | 00fc | b1a1>f694 | 14 | mysmb_audio_select_music |
+| material-00893 | FlagpoleSlide | Square1SfxHandler | 00ff | b2ad>f41b,b2ad>f423 | 16 | mysmb_audio_step_square1 |
+| material-00894 | PlayerEndLevel | MusicHandler | 00fc | b2dc>f694 | 17 | mysmb_audio_select_music |
+| material-00895 | NextArea | MusicHandler | 00fc | b326>f694 | 15 | mysmb_audio_select_music |
+| material-00896 | GetYPhy | Square1SfxHandler | 00ff | b502>f41b,b502>f423 | 12 | mysmb_audio_step_square1 |
+| material-00897 | SJumpSnd | Square1SfxHandler | 00ff | b51a>f41b | 13 | mysmb_audio_step_square1 |
+| material-00898 | ProcFireball_Bubble | Square1SfxHandler | 00ff | b651>f41b,b651>f423 | 33 | mysmb_audio_step_square1 |
+| material-00899 | RunGameTimer | MusicHandler | 00fc | b784>f694 | 25 | mysmb_audio_select_music |
+| material-00900 | NextVO | Square2SfxHandler | 00fe | b946>f582,b946>f58a | 26 | mysmb_audio_step_square2 |
+| material-00901 | SetupBB | Square2SfxHandler | 00fe | ba68>f582,ba68>f58a | 5 | mysmb_audio_step_square2 |
+| material-00902 | JCoinC | Square2SfxHandler | 00fe | bb79>f582,bb79>f58a | 6 | mysmb_audio_step_square2 |
+| material-00903 | GiveOneCoin | Square2SfxHandler | 00fe | bc20>f582,bc20>f58a | 19 | mysmb_audio_step_square2 |
+| material-00904 | PutBehind | Square2SfxHandler | 00fe | bc82>f582,bc82>f58a | 18 | mysmb_audio_step_square2 |
+| material-00905 | BumpBlock | Square1SfxHandler | 00ff | bda0>f41b,bda0>f423 | 27 | mysmb_audio_step_square1 |
+| material-00906 | BrickShatter | NoiseSfxHandler | 00fd | be0a>f667,be0a>f66d | 28 | mysmb_audio_step_noise |
+| material-00907 | InitBowserFlame | NoiseSfxHandler | 00fd | c5af>f667,c5af>f66d | 30 | mysmb_audio_step_noise |
+| material-00908 | FireBulletBill | Square2SfxHandler | 00fe | c715>f582 | 31 | mysmb_audio_step_square2 |
+| material-00909 | SetM2 | MusicHandler | 00fc | d007>f694 | 4 | mysmb_audio_select_music |
+| material-00910 | RemoveBridge | Square2SfxHandler | 00fe | d043>f582,d043>f58a,d05c>f582 | 1,3 | mysmb_audio_step_square2 |
+| material-00911 | RemoveBridge | NoiseSfxHandler | 00fd | d047>f667,d047>f66d | 2 | mysmb_audio_step_noise |
+| material-00912 | FireworksSoundScore | Square2SfxHandler | 00fe | d2c3>f582,d2c3>f58a | 29 | mysmb_audio_step_square2 |
+| material-00913 | AwardGameTimerPoints | Square2SfxHandler | 00fe | d325>f582,d325>f58a | 32 | mysmb_audio_step_square2 |
+| material-00914 | SetDBSte | Square2SfxHandler | 00fe | d781>f582 | 41 | mysmb_audio_step_square2 |
+| material-00915 | EnemySmackScore | Square1SfxHandler | 00ff | d7c1>f41b,d7c1>f423 | 40 | mysmb_audio_step_square1 |
+| material-00916 | HandlePowerUpCollision | Square2SfxHandler | 00fe | d80a>f582,d80a>f58a | 47 | mysmb_audio_step_square2 |
+| material-00917 | HandlePowerUpCollision | MusicHandler | 00fb | d81d>f698 | 48 | mysmb_audio_select_music |
+| material-00918 | HandlePECollisions | Square1SfxHandler | 00ff | d8d5>f41b,d8d5>f423 | 46 | mysmb_audio_step_square1 |
+| material-00919 | ForceInjury | Square1SfxHandler | 00ff | d93f>f41b,d93f>f423 | 44 | mysmb_audio_step_square1 |
+| material-00920 | KillPlayer | MusicHandler | 00fc | d95b>f694 | 43 | mysmb_audio_select_music |
+| material-00921 | EnemyStomped | Square1SfxHandler | 00ff | d971>f41b,d971>f423 | 45 | mysmb_audio_step_square1 |
+| material-00922 | SolidOrClimb | Square1SfxHandler | 00ff | dcf0>f41b,dcf0>f423 | 38 | mysmb_audio_step_square1 |
+| material-00923 | PipeDwnS | Square1SfxHandler | 00ff | ddd5>f41b,ddd5>f423 | 37 | mysmb_audio_step_square1 |
+| material-00924 | FlagpoleCollision | MusicHandler | 00fc | de5b>f694 | 34 | mysmb_audio_select_music |
+| material-00925 | HandlePipeEntry | Square1SfxHandler | 00ff | df05>f41b,df05>f423 | 35 | mysmb_audio_step_square1 |
+| material-00926 | GetWNum | MusicHandler | 00fc | df34>f694 | 36 | mysmb_audio_select_music |
+| material-00927 | CoinSd | Square2SfxHandler | 00fe | dfad>f582,dfad>f58a | 42 | mysmb_audio_step_square2 |
+| material-00928 | ChkForBump_HammerBroJ | Square1SfxHandler | 00ff | e12f>f41b,e12f>f423 | 10 | mysmb_audio_step_square1 |
+| material-00929 | InitFireballExplode | Square1SfxHandler | 00ff | e1fa>f41b,e1fa>f423 | 39 | mysmb_audio_step_square1 |
+
+
+Six other source joins originate at InitializeMemory's indexed store90dc:
+FA reads f2e8/f2f3,FF f41b,FE f582,FD f667,FC f694. This bulk/index writer is
+outside the direct-store probe;no native tagged counterpart or path credit
+is inferred. It remains a named alias/use obligation. Intervening gameplay
+writers across whole frames,cross-frame external queues and other owners'
+mutable/register/flag/stack lifetimes remain pending. Sound internal lifetime
+evidence from P19 is retained within its declared independent sequences.
+
+88 bounded batches,raw records deleted;strict C90 current probe compilation
+and execution pass both widths. Source hash checks cover30 current owners;
+no product source change,EXEs remain P23. No new node/control credit.
+Historical1992/1992;local scoped1992/1992 nodes,4274/4274 feasible controls
+(raw4342,infeasible68);material929 partial,global denominator unknown.
+S17/material,pixels,routes,snapshot remain open;M2 is not certified complete.
