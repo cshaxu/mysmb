@@ -13,6 +13,12 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P47 retained object-use joins](../proposals/m2/t70-final-current-certification.md#s17-p47-checkpoint---retained-flag-spring-vine-and-cannon-source-use-joins).
+247instructions/96RAM joined boundedclauses,241664currentroots eachwidth
+zero scoped differences,allPC/branchsides;2817instruction/963RAM receipts,
+2810otherRAMjoins remain. Springfreeze/index lifetime pending,material993
+partial,totalunknown;source/productsunchanged,whole M2 incomplete.
+
 [P46 original indexed-speed repair](../proposals/m2/t70-final-current-certification.md#s17-p46-checkpoint---original-byte-indexed-fireball-speed-repaired).
 Two contracts restored;2048baselineeachwidth3962RAMdiff->0,12288currentroots
 zero scoped differences,all256 speed addresses observed.2570instruction/867RAM

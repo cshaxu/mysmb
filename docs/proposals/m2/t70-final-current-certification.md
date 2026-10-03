@@ -6876,3 +6876,83 @@ Current src/game/frame_root.c normalizedSHA256:beed1afea957c4290247a6d3178b16833
 Current src/game/engine_slots.c normalizedSHA256:8cb4682243253529fb2514b3a50670d838cb056d62faffbf621b1b492a048d25.
 
 Historical/local1992/1992,controls4274/4274(raw4342,infeasible68);material993 partial,totalunknown.2570instruction/867RAM bounded receipts,8121otherinstruction/2906otherRAMjoins remain,not new discovered defects. Allwhole-program lifetime fields and four final packages remain open. M2 NOT COMPLETE.
+
+## S17 P47 admission - retained flag spring vine and cannon source-use joins
+
+Originalexistingusecensus B855-BA88:247instructions/96RAM sites;participants:FlagpoleRoutine,SkipScore,GiveFPScr,FPGfx,ExitFlagP,JumpspringHandler,DownJSpr,PosJSpr,BounceJS,DrawJSpr,ExJSpring,Setup_Vine,NextVO,VineObjectHandler,RunVSubs,VDrawLoop,KillVine,WrCMTile,ExitVH,ProcessCannons,ThreeSChk,FireCannon,Chk_BB,Next3Slt,ExCannon,BulletBillHandler,SetupBB,ChkDSte,BBFly,RunBBSubs,KillBB. Scope611,fresh0/max1992. Sharedflagpole_gfx/jumpspring/vine/cannon owners,sourceidentity againstretained T69 receipt. Originalreal returnrootsfor flagmovement/award,gatedspringanimation,vinesetup/growth/erase/tile,cannonspawn/countdown/bulletdirection/collision. No new audit round or inventory growth. Bound inputdomains flagscore0-4,springframe0-4,activevinecount1-2,validslots0-5/hardmode0-1 are not wholeproducer invariants;unproveninter-frame domains retain pending dispositions. Existingmaterialpaths reused unlessactualproducer/liveconsumer interval proven. Node-localcount1992/1992,controls4274/4274,material993partial,totalunknown. No product/sourcechange planned;any discovered mismatch remainsinthisS forrepairbeforeacceptance. Rawfixture/trace belowbuild,128MiB/120sprocessbound,ownerROMreadonly.
+
+## S17 P47 checkpoint - retained flag spring vine and cannon source-use joins
+
+Existing census B855-BA88,247instructions/96RAM,31labels,scope611;
+fresh0/max1992. Four source owners are byte-identical to retained accepted
+4b8a8ee3(flagpole/jumpspring) and72717038(vine/cannon). No production code,
+platform logic,ROM data or product changed;three assets remainP46.
+Admission participants:
+FlagpoleRoutine,SkipScore,GiveFPScr,FPGfx,ExitFlagP,JumpspringHandler,DownJSpr,PosJSpr,BounceJS,DrawJSpr,ExJSpring,Setup_Vine,NextVO,VineObjectHandler,RunVSubs,VDrawLoop,KillVine,WrCMTile,ExitVH,ProcessCannons,ThreeSChk,FireCannon,Chk_BB,Next3Slt,ExCannon,BulletBillHandler,SetupBB,ChkDSte,BBFly,RunBBSubs,KillBB.
+
+| Clause | Original PCs | Source-use/lifetime/alias disposition |
+| --- | --- | --- |
+| O1 | b855-b875 | Fixed slot5 published to08 beforeID test;ID30/subroutine4/state3 gates;unsignedflagAA/playerA2 thresholds route to award;otherwise incomingADC carry is clear from last CMP. Slots/coordinates/state fields disjoint. |
+| O2 | b877-b896 | ADCFF updates dummy041C by minus1,carry iff originaldummy nonzero;nextADC1 movesD4 by1+carry. SEC/SBCFF updates10E plus1,carry iff oldFF;SBC1 moves10D minus1 minusborrow. No child between paired publications,then graphics tail. |
+| O3 | b899-b8b5 | Score010F0..4 selectsB84Bmods/B850digits;modifier0134+digit published before realAddToScore;child restores08slot5 beforeoffscreen/relative/graphics. Digit andRAM/OAM sideeffects covered by actualparent. Scoreproducer range and completechildlifetimes not inferred fromboundedroot. |
+| O4 | b8ba-b8d7 | Actualoffscreen child beforeTimerControl gate;anim070E0 skips,1..4 DEY byteframe;framebit1 determines twiceINC/DECplayerCE. Originalinputbyte wraps preserveCE,frame local remains live until index. Timerfreeze skip excludesmovementbutnotbottomtimeradvance. |
+| O5 | b8d9-b8f1 | EnemyfixedY58+slot plusB8B6+frame0..3 CLC byteaddition->CF+slot;CPY1 skipsnewA detection whenframe0;otherwise currentA80 andpreviousA80 suppress repeatedpress before6DBF4 publication. Sourceframe immutable across disjoint RAM writes. |
+| O6 | b8f4-b91d | Frame3 transfers6DBforce to9Fspeed then070E0 before realrelative/gfx/bounds. Postchildren reread070E then786timer;ifactive andtimer0 write4 thenincrement070E,evenwhenTimerControl!=0. Inputframe0..4 only;freeze4/timer0 maypublish5,subsequentrawindex producer lifetime remains pending,not certified safe. |
+| O7 | b91e-b948 | Setup enemyID2F/flag1 thenblockY0..1 page76/x8F/yD7 toslot0..5;count398 read afterCFwrite,initialzero saves39D;39A+count=slot beforecountincrement398;FEqueue4 last. Count0..1 avoidsalias39D/398;nochild betweenpairedstores. Outgoingqueue path900 retained. |
+| O8 | b94b-b967 | Slot5 only;count3981..2 minus1 selectsB949height;equal skipsgrowth,otherwise frame9 bit1 yieldscarry1 atSBC1,D4minus1 and399plus1. Bothfields are disjoint from frame/count;nochild beforegrowth. Rawcount invariants not established by fixture. |
+| O9 | b96a-b996 | Height>=8 then realrelative/offscreen;Y loop starts0 andDrawVine preserves callerY,terminatescount1..2;03D1mask0C gates reverse erase39A/Y slots;EraseEnemyObject returnsA0 and preservesY,store0count/height afterlast erase. Activevine slots4/5 andOAM disjoint;drawchildscratch not modeledaway. |
+| O10 | b999-b9b9 | Aftererasure reread399 height32gate;BlockBufferCollision actualX6/A1/Y1B sets06/07pointer/02row;CPYrowD0 skips;readindirectsamepointerrow andwrite26 onlyzero. Nointerveningpointeroverwrite;terrain structure mapsreturnedpointer/row,material711 actualproducer retained. Exit restoresObjectOffset. |
+| O11 | b9bc-b9e6 | AreaType0 exits before08write;slots2..0 publish08;occupied skipsrandom;hardmode0..1 tableB9BA masksLSFR7A8+slot,selection<6/page!=0 gates;CMP6 suppliescarry0 toSBC0 timer decrement includingTimerControlblockedspawn. Timer and random/cannon arrays disjoint in validdomain. |
+| O12 | b9e9-ba17 | Unoccupiedtimer0 andTimerControl0 publishtimer0E,page46B/Y->6E/X,x471/Y->87/X,y477/Yminus8->CF/X,highB6/flagF1,state1E0,bbox49A9,ID16=33 thennextslot. Order preserved;newlyspawnedbullet not handledinthisiteration,not an invented immediatecall. |
+| O13 | ba1a-ba30 | ID33 only realbounds child;flag reread afterpossibleerase;onlyactive actualoffscreen thenBulletBillHandler;DEX/BPL iterates exactly2,1,0 withObjectOffset left0. Actualchildren maymutateenemyfields;sourceconditions useRAM afterreturn,notcachedflag. |
+| O14 | ba33-ba68 | TimerControl skipsmotion;state0 offscreen0C kill;PlayerEnemyDiff00low andpageSBC carry/sign survive LDY/INY/STY/DEY/LDA beforeADC28. Highnegative dir1/+18,otherwise2/E8;distance low+28+carry byte<50 kill,else state1/timerA/FE8. Differencepageborrow calculated unsigned16 thenbytefold,notnewworlddistance. Retainqueuepath901. |
+| O15 | ba6a-ba88 | State20 gates real downward child;horizontal movement follows,then offscreen/relative/bbox/playercollision/gfx tail in exactorder. Earlyerasecallreturns andnomotion/drawafter. Stateandtimer frozen pathstillruns essential children;no cachedbbox or invented spritechild. |
+
+Current actual-original roots:flag130=16384,spring131=16384,Setup_Vine132=4096,
+vine73/bullet74/cannons75 each65536;source-identical native current sharedlib,
+strictC90 checkers. Initial union233472 roots/all247PC hadthreeuncovered
+branchsidesB875(playerthreshold),B9BF(water),B9DA(cannonpagezero).
+Additional133flag4096/134cannons4096 decouplethosegates. First extra134
+fixture accidentally matched genericactor initializer instead of cannon
+initializer;itstillreturned equality butdidnotcoverB9DA. It wasrejected
+asbranchproof,dispatchconditioncorrected andsame134 rerun;onlycorrected
+run retained asacceptance. Finalunion241664 eachwidth zero2032RAM/24APU/
+ordered-write differences,all247PC/allconditionalpairs bothsides observed.
+Physical1F0-1FF excluded/minSP>=EF;void native API doesnotexport CPU A/X/Y.
+No originalcode/childpatched,noalgorithmstub,nativefixtureorROMpatched.
+The initial actor-root checker fallback also excluded100-108/13A-1FF.
+Those weaker130/131/132/133 results are superseded:the checker now routes
+these entries to only1F0-1FF exclusion,and all40960affectedroots eachwidth
+were rerun with zero2032RAM differences. Other modes already used that
+strict exclusion. No acceptancefromthe broader fallback.
+
+Thirteen rebuiltfocusedtests eachwidthpass;65536 supplementalcarry/borrow
+scalarchecks/fournegativeaccounting checks. Thosechecksdo notsubstitute
+forsourceclauses ororiginalroots. No full-suite claim.
+
+Bound domains:flagscore0..4,activeanim1..4 plusidle0,activevines1..2,
+setupcount0..1,hardmode0..1,slots0..5/blockslots0..1,validoriginalOAM.
+Repeatedroot sourceequality doesnotprove thosewholeframeproducerinvariants.
+In particular DrawJSpr advances070E evenwhenTimerControl freezesmovement;
+frame4/timer0 canpublish5. Whether thatphase isreachable beforeunfreeze,
+and itsadjacent-PRG index consumption,remains a namedpendingproducer-
+lifetime clause. No extraexactmaterial/globalproof credit fromboundedpass.
+Similarly setup-to-growth crossframe count lifetime ispending;isolated
+returnroots do notcreate aninventedmaterialedge. Existingmaterial92-98,
+711,900,901 reused,material993partial/globaltotalunknownunchanged.
+
+Similar-class inspection:flagdummy ADC/SBC carry,CPY/Anewpress gates,
+vineDrawY/EraseA returncontracts,query06/07+02 unchangedbeforeindirect
+read/write,cannoncarryfromCMP6 toSBC0,spawnskipsame-framehandler,
+PlayerEnemyDiff pagecarry toADC28,childrenreloads reviewed. Child owners
+retain theirown broader domains;no generalstate/aliascertificate inferred.
+
+Current src/game/oam/flagpole_gfx.c normalizedSHA256:6b67ee98248638897ff00f055f21a5d223bce1a0e094818afcb2856b946f6b77.
+
+Current src/game/jumpspring.c normalizedSHA256:f1941a910c1da856975f48e85368b35e7fd51090989548ed0e603eb8bc89f5b4.
+
+Current src/game/vine.c normalizedSHA256:079acf2621b59a9fedcaa297218e79fbf045ff8e34fca848807b123b6c8d8366.
+
+Current src/game/cannon.c normalizedSHA256:447512bdf43eee743b78d7919398dd18e8e630eb938b8e4e65c411bcd569bde1.
+
+Historical/local1992/1992,controls4274/4274(raw4342,infeasible68);material993partial,totalunknown.2817instruction/963RAM boundedreceipts,7874otherinstructions/2810otherRAMjoins remain,not new discoveredbugs.Allwhole-programlifetimefields/fourfinalpackages open,M2 NOT COMPLETE.

@@ -2075,10 +2075,12 @@
       "semanticContract": "Preserves source table selection and consuming write/order.",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
-        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "cohort": "G",
       "cohortBasis": "producer inventory label",
@@ -2097,10 +2099,12 @@
       "semanticContract": "Preserves source table selection and consuming write/order.",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
-        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "cohort": "G",
       "cohortBasis": "producer inventory label",
@@ -2119,10 +2123,12 @@
       "semanticContract": "Preserves source table selection and consuming write/order.",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
-        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "cohort": "G",
       "cohortBasis": "producer inventory label",
@@ -2140,10 +2146,12 @@
       "currentCounterpart": "mysmb_vine_height_data[index] in mysmb_objects_step_vine",
       "semanticContract": "Preserves the two height thresholds and decrement-before-index ordering.",
       "semanticEvidence": [
-        "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
-        "T61 S1: 42 original actor snapshots replayed as 84 current x86/x64 calls with zero differences."
+        "T61 S1: 42 original actor snapshots replayed as 84 current x86/x64 calls with zero differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "cohort": "G",
       "cohortBasis": "producer inventory label",
@@ -2162,10 +2170,12 @@
       "semanticContract": "Preserves threshold selection and source growth gate.",
       "semanticEvidence": [
         "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 originalB949/B94A independently equal existing30/60;VineFlagOffset-minus1 index,exact-height stop and LSR carry-bit1 SBC1 growth preserved before children."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 originalB949/B94A independently equal existing30/60;VineFlagOffset-minus1 index,exact-height stop and LSR carry-bit1 SBC1 growth preserved before children.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 actual original each height-table byte read16384 times;65536 VineObjectHandler roots per width zero persistent RAM/APU/write diff;12 tests each,current3 products/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 actual original each height-table byte read16384 times;65536 VineObjectHandler roots per width zero persistent RAM/APU/write diff;12 tests each,current3 products/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "cohort": "G",
       "cohortBasis": "producer inventory label",
@@ -2184,10 +2194,12 @@
       "semanticContract": "Preserves source table selection and consuming write/order.",
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
-        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "cohort": "H",
       "cohortBasis": "producer inventory label",
@@ -2206,10 +2218,12 @@
       "semanticContract": "Preserves source table selection and consuming write/order.",
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
-        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "cohort": "H",
       "cohortBasis": "producer inventory label",
@@ -15767,10 +15781,12 @@
       "currentCounterpart": "src/game/vine.c",
       "semanticContract": "Declared valid slot/query-buffer roots and current source order;caller entry equality inherits P12 query ABI and direct-call-site review,not all gameplay routes. Replacement flags0/1/3;head sizes0/1 and54/58;top coin/miss;axe;enemy23 IDs0/6/15;vine count1/2.",
       "semanticEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "cohort": "K",
       "cohortBasis": "original producer inventory label",
@@ -20276,11 +20292,13 @@
       "semanticContract": "Same-parent-to-sound fixed RAM queue lifetime in declared sampled entry domains;actual last-write tagging survives until audio read,internal sound overwrites reset tags. Stores the selected enemy slot at VineObjOffset[VineFlagOffset], increments the offset and queues the grow-vine sound. Native statements:src/game/vine.c:mysmb_objects_start_vine = 4U. Source store/reader identities tied to actual native owner/address events,not injected original IDs. No full-frame game-writer closure or arbitrary caller/input/cross-frame proof inferred.",
       "semanticEvidence": [
         "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
-        "Same-parent-to-sound fixed RAM queue lifetime in declared sampled entry domains;actual last-write tagging survives until audio read,internal sound overwrites reset tags. Stores the selected enemy slot at VineObjOffset[VineFlagOffset], increments the offset and queues the grow-vine sound. Native statements:src/game/vine.c:mysmb_objects_start_vine = 4U. Source store/reader identities tied to actual native owner/address events,not injected original IDs. No full-frame game-writer closure or arbitrary caller/input/cross-frame proof inferred."
+        "Same-parent-to-sound fixed RAM queue lifetime in declared sampled entry domains;actual last-write tagging survives until audio read,internal sound overwrites reset tags. Stores the selected enemy slot at VineObjOffset[VineFlagOffset], increments the offset and queues the grow-vine sound. Native statements:src/game/vine.c:mysmb_objects_start_vine = 4U. Source store/reader identities tied to actual native owner/address events,not injected original IDs. No full-frame game-writer closure or arbitrary caller/input/cross-frame proof inferred.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
         "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
-        "Source event visits:4096;native independently aggregated visits x86/x64:12288/12288. Same-batch existence checked;finite samples do not prove every event pairing."
+        "Source event visits:4096;native independently aggregated visits x86/x64:12288/12288. Same-batch existence checked;finite samples do not prove every event pairing.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "cohort": "G",
       "cohortBasis": "producer inventory label",
@@ -20300,11 +20318,13 @@
       "semanticContract": "Same-parent-to-sound fixed RAM queue lifetime in declared sampled entry domains;actual last-write tagging survives until audio read,internal sound overwrites reset tags. Writes selected direction/speed and kills only within the source $50 proximity test. Native statements:src/game/cannon.c:mysmb_game_handle_cannon_bullet = 8U. Source store/reader identities tied to actual native owner/address events,not injected original IDs. No full-frame game-writer closure or arbitrary caller/input/cross-frame proof inferred.",
       "semanticEvidence": [
         "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
-        "Same-parent-to-sound fixed RAM queue lifetime in declared sampled entry domains;actual last-write tagging survives until audio read,internal sound overwrites reset tags. Writes selected direction/speed and kills only within the source $50 proximity test. Native statements:src/game/cannon.c:mysmb_game_handle_cannon_bullet = 8U. Source store/reader identities tied to actual native owner/address events,not injected original IDs. No full-frame game-writer closure or arbitrary caller/input/cross-frame proof inferred."
+        "Same-parent-to-sound fixed RAM queue lifetime in declared sampled entry domains;actual last-write tagging survives until audio read,internal sound overwrites reset tags. Writes selected direction/speed and kills only within the source $50 proximity test. Native statements:src/game/cannon.c:mysmb_game_handle_cannon_bullet = 8U. Source store/reader identities tied to actual native owner/address events,not injected original IDs. No full-frame game-writer closure or arbitrary caller/input/cross-frame proof inferred.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
         "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
-        "Source event visits:222;native independently aggregated visits x86/x64:666/666. Same-batch existence checked;finite samples do not prove every event pairing."
+        "Source event visits:222;native independently aggregated visits x86/x64:666/666. Same-batch existence checked;finite samples do not prove every event pairing.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "cohort": "H",
       "cohortBasis": "producer inventory label",
@@ -37710,11 +37730,13 @@
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
         "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Preserves slot-five setup, slide/climb gates, carry-sensitive flag/floatey motion, score handoff and graphics order.",
       "currentSourcePaths": [
@@ -37730,10 +37752,12 @@
       "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_step_flagpole",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
-        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Skips score mutation and enters graphics.",
       "currentSourcePaths": [
@@ -37749,10 +37773,12 @@
       "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_step_flagpole",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
-        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Writes indexed score modifier, adds score, sets end-level subroutine then enters graphics.",
       "currentSourcePaths": [
@@ -37770,11 +37796,13 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
         "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Computes flag offscreen bits, relative position and flag graphics in source order.",
       "currentSourcePaths": [
@@ -37790,10 +37818,12 @@
       "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_step_flagpole",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
-        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Returns after no-flag or graphics path.",
       "currentSourcePaths": [
@@ -37830,11 +37860,13 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
         "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Preserves timer/animation gates, frame direction, A-edge force override, bounce handoff and animation cadence.",
       "currentSourcePaths": [
@@ -37850,10 +37882,12 @@
       "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
-        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Moves player Y up two then shares spring-position work.",
       "currentSourcePaths": [
@@ -37869,10 +37903,12 @@
       "currentCounterpart": "mysmb_objects_step_jumpspring",
       "semanticEvidence": [
         "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required.",
-        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
-        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Positions jumpspring from fixed Y plus frame table, and only arms force on new A press at applicable frame.",
       "currentSourcePaths": [
@@ -37888,10 +37924,12 @@
       "currentCounterpart": "mysmb_objects_step_jumpspring",
       "semanticEvidence": [
         "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required.",
-        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
-        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "At final frame transfers stored force to player Y speed and clears animation control.",
       "currentSourcePaths": [
@@ -37907,10 +37945,12 @@
       "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
-        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Draws/checks spring before timer-gated animation advance.",
       "currentSourcePaths": [
@@ -37926,10 +37966,12 @@
       "currentCounterpart": "mysmb_objects_step_jumpspring",
       "semanticEvidence": [
         "Td S9 K41 jumpspring tail node/edge audit: SMB1 lines 6669-6698 compared with shared src/game/jumpspring.c; controlled original-ROM/x86/x64 animation and bounce routes remain required.",
-        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match."
+        "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
-        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Returns after rendering/offscreen handling and conditional animation timer advance.",
       "currentSourcePaths": [
@@ -37947,12 +37989,14 @@
         "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S8 static SMB1 $B91E-$B94A comparison plus fresh controlled original-ROM/current x86/x64 vine-setup routes: initialization writes, offset branch, registration, sound queue, return and raw height bytes match.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
         "M2 T60 S8: 16 fresh original-ROM setup routes cover both offset-branch outcomes and registrations 0, 1, 2 and 255; 32 actual x86/x64 returns match 1,791 persistent bytes. Focused 12,288-case setup smoke, shared DOS16 link and platform-purity pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Copies source block page/X/Y into the selected vine enemy slot, initializes identity/flag, records first-vine start Y only at zero offset, appends the slot and queues grow-vine sound.",
       "currentSourcePaths": [
@@ -37969,12 +38013,14 @@
       "semanticEvidence": [
         "Td S9 B13c vine initialization node-semantics and integration audit: SMB1 lines 6702-6729 compared with the shared vine owner; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S8 static SMB1 $B91E-$B94A comparison plus fresh controlled original-ROM/current x86/x64 vine-setup routes: initialization writes, offset branch, registration, sound queue, return and raw height bytes match.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
         "M2 T60 S8: 16 fresh original-ROM setup routes cover both offset-branch outcomes and registrations 0, 1, 2 and 255; 32 actual x86/x64 returns match 1,791 persistent bytes. Focused 12,288-case setup smoke, shared DOS16 link and platform-purity pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Stores the selected enemy slot at VineObjOffset[VineFlagOffset], increments the offset and queues the grow-vine sound.",
       "currentSourcePaths": [
@@ -38013,12 +38059,14 @@
         "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S1 current original-ROM/current x86/x64 actor route: 84 caller and 84 full calls, zero differences.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
         "T61 S1: 2,560 focused state combinations per x86/x64; 42 original actor snapshots give 84 caller and 84 complete current-source calls with zero differences; platform purity and DOS16 link pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Restricts growth to slot five, selects VineFlagOffset-1 threshold, applies the source two-of-four-frame growth gate and restores ObjectOffset on exit.",
       "currentSourcePaths": [
@@ -38035,11 +38083,13 @@
       "semanticEvidence": [
         "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S1 current original-ROM/current x86/x64 actor route: 84 caller and 84 full calls, zero differences.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
         "T61 S1: 2,560 focused state combinations per x86/x64; 42 original actor snapshots give 84 caller and 84 complete current-source calls with zero differences; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Gates rendering below height eight, computes relative/offscreen state, then enters the ordered vine draw loop.",
       "currentSourcePaths": [
@@ -38056,11 +38106,13 @@
       "semanticEvidence": [
         "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S1 current original-ROM/current x86/x64 actor route: 84 caller and 84 full calls, zero differences.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
         "T61 S1: 2,560 focused state combinations per x86/x64; 42 original actor snapshots give 84 caller and 84 complete current-source calls with zero differences; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Draws each registered vine in ascending index order, then selects normal buffer write or offscreen cleanup.",
       "currentSourcePaths": [
@@ -38077,11 +38129,13 @@
       "semanticEvidence": [
         "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S1 current original-ROM/current x86/x64 actor route: 84 caller and 84 full calls, zero differences.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
         "T61 S1: 2,560 focused state combinations per x86/x64; 42 original actor snapshots give 84 caller and 84 complete current-source calls with zero differences; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Erases registered vine slots in descending order and resets offset/height only after the final erase result.",
       "currentSourcePaths": [
@@ -38099,12 +38153,14 @@
         "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S1 current original-ROM/current x86/x64 actor route: 84 caller and 84 full calls, zero differences.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
         "T61 S1: 2,560 focused state combinations per x86/x64; 42 original actor snapshots give 84 caller and 84 complete current-source calls with zero differences; platform purity and DOS16 link pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "At height at least $20, performs the source block-buffer probe and writes climbing metatile $26 only to an empty qualified cell.",
       "currentSourcePaths": [
@@ -38120,10 +38176,12 @@
       "currentCounterpart": "mysmb_objects_step_vine with named world/OAM children",
       "semanticEvidence": [
         "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S1 current original-ROM/current x86/x64 actor route: 84 caller and 84 full calls, zero differences."
+        "T61 S1 current original-ROM/current x86/x64 actor route: 84 caller and 84 full calls, zero differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
-        "T61 S1: 2,560 focused state combinations per x86/x64; 42 original actor snapshots give 84 caller and 84 complete current-source calls with zero differences; platform purity and DOS16 link pass."
+        "T61 S1: 2,560 focused state combinations per x86/x64; 42 original actor snapshots give 84 caller and 84 complete current-source calls with zero differences; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Restores ObjectOffset and returns after every vine gate.",
       "currentSourcePaths": [
@@ -38159,11 +38217,13 @@
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
         "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Runs water gate and descending slots two through zero with source ObjectOffset ownership.",
       "currentSourcePaths": [
@@ -38179,10 +38239,12 @@
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
-        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Selects an inactive cannon candidate, decrements its timer with source carry semantics, or reaches existing-bullet handling.",
       "currentSourcePaths": [
@@ -38198,10 +38260,12 @@
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
-        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Creates a cannon Bullet Bill with exact timer, coordinates, state, box and identity writes.",
       "currentSourcePaths": [
@@ -38218,11 +38282,13 @@
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
         "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Bounds-checks only cannon bullets before offscreen bits and BulletBillHandler.",
       "currentSourcePaths": [
@@ -38238,10 +38304,12 @@
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
-        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Decrements through the three cannon slots.",
       "currentSourcePaths": [
@@ -38257,10 +38325,12 @@
       "currentCounterpart": "mysmb_game_process_cannons/mysmb_game_handle_cannon_bullet with named children",
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics."
+        "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
-        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route."
+        "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Returns after water or slot exhaustion.",
       "currentSourcePaths": [
@@ -38298,11 +38368,13 @@
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
         "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Preserves timer gate, initial direction/distance choice, defeated movement, common offscreen/relative/box/collision/draw order.",
       "currentSourcePaths": [
@@ -38319,12 +38391,14 @@
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
         "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Writes selected direction/speed and kills only within the source $50 proximity test.",
       "currentSourcePaths": [
@@ -38341,11 +38415,13 @@
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
         "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Selects defeated vertical movement only when bit five is set.",
       "currentSourcePaths": [
@@ -38362,11 +38438,13 @@
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
         "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Runs horizontal movement.",
       "currentSourcePaths": [
@@ -38383,11 +38461,13 @@
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
         "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Runs offscreen, relative position, bounding box, player collision then graphics in order.",
       "currentSourcePaths": [
@@ -38404,11 +38484,13 @@
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
       ],
       "operationalEvidence": [
         "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:241664actualroots eachwidth zero2032RAM/24APU/orderdifferences,physical1F0-1FFexcluded/minSP>=EF;all247PC and40branchpairs observed,13focusedtests each pass. Source/productsunchanged;bounded score0-4/springframe0-4/vinecount1-2/hardmode0-1;noall-frameproducer-proof."
       ],
       "semanticContract": "Erases selected cannon Bullet Bill and returns.",
       "currentSourcePaths": [
@@ -167571,16 +167653,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins",
         "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - retained player physics climb animation and friction joins",
         "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P46 checkpoint - original byte indexed fireball speed repaired"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P46 checkpoint - original byte indexed fireball speed repaired",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 2570,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 8121,
+        "localInstructionReceiptSites": 2817,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 7874,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 867,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2906,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 963,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2810,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -167610,7 +167693,6 @@
           "src/game/enemy/bloober.c": 37,
           "src/game/oam/object_position.c": 35,
           "src/game/area/block_metatile.c": 34,
-          "shared cannon, world, enemy and OAM core": 33,
           "src/game/enemy/{bullet_bill,swimming_cheep}.c": 33,
           "src/game/world/bounding_box.c": 33,
           "src/game/scroll.c shared C90 scroll owner": 32,
@@ -167655,12 +167737,10 @@
           "src/game/oam/sprite_row.c": 19,
           "src/game/player_modes.c shared C90 player-mode owner": 18,
           "src/game/player_transition.c shared C90 transition owner": 17,
-          "shared flagpole/OAM core": 17,
           "shared fireworks frenzy core": 17,
           "src/game/oam/hammer_gfx.c": 17,
           "shared platform initializer core": 16,
           "src/game/enemy/movement.c": 16,
-          "shared vine, world and OAM core": 15,
           "shared Bullet Bill/Cheep frenzy core": 15,
           "src/game/world/collision.c": 15,
           "src/game/player/terrain_metatiles.c and climbing.c": 15,
@@ -167669,12 +167749,10 @@
           "src/game/oam/fireworks_gfx.c": 15,
           "shared game core: enemy/bowser_flame.c": 14,
           "src/game/boot.c": 13,
-          "shared vine core": 13,
           "src/game/enemy/{lifecycle,podoboo}.c": 13,
           "shared game core: enemy/fireworks.c": 13,
           "shared game core: world/fireball_enemy.c": 13,
           "shared Piranha and frenzy-dispatch core": 12,
-          "shared timer, enemy, world, flagpole and jumpspring core": 10,
           "shared game core: enemy/firebar_children.c": 10,
           "src/game/world/hammer_collision.c": 10,
           "src/game/world/powerup_collision.c": 10,
@@ -167683,7 +167761,6 @@
           "src/game/enemy/{movement,paratroopa}.c": 9,
           "src/game/oam/fireball_gfx.c": 9,
           "src/game/fireball/bubble.c": 9,
-          "src/game/jumpspring.c": 8,
           "src/game/enemy/flying_cheep.c": 7,
           "src/game/oam/sprite_dump.c": 6,
           "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c": 5,
