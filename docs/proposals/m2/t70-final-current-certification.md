@@ -2203,3 +2203,148 @@ remains pending under the fixed acceptance plan.
 | mysmb16.exe | 258687 | ce47ea4071e704adc71783362313ef8a5a0af6b37804bd6eb9e0ce85c53979d6 |
 | mysmb32.exe | 372606 | 76e5e51cd150f15886b6bdc8f9713dd5c8232ff42c4afe56110e0db7ee9201ff |
 | mysmb64.exe | 379635 | 29b81ecb2ca50445e4538dfd56468c184ca100d2de691cf6aaeff3a73a79eb4f |
+
+## S15 P1 admission - final reset/startup subtree review
+
+First source-order final-review chain starts at Start and ends at EndlessLoop,
+including its actual memory/name-table/PPU children under shared boot.c.
+Exact17 labels in listing order:Start,VBlank1,VBlank2,WBootCheck,ColdBoot,
+EndlessLoop,InitializeNameTables,WriteNTAddr,InitNTLoop,InitATLoop,InitScroll,
+WritePPUReg1,InitializeMemory,InitPageLoop,InitByteLoop,InitByte,SkipByte.
+Child labels join this same root route;this is not a separate tiny-node S.
+Scope contains42 outgoing listed feasible relations,identified below.
+Incoming historical1992/1992,local ledger1992 accepted nodes/4275 feasible
+controls(raw4342,infeasible67),617 material paths partial,total unknown.
+Final review incoming0/1992 and0/4275;target17 nodes and scoped controls only
+after complete contracts pass. Historical expected fresh0,max1992. No final
+promotion at admission. Coordinator receives maintenance custody under owner
+ongoing M2 mandate. S14 is closed;no other S active.
+
+Scope includes both composition roots solely to remove any startup game
+decisions:platforms may supply clock/input/presentation,not own original
+VBlank1/VBlank2/ColdBoot progression. Actual first-NMI successor retains its
+accepted owner and is an integration dependency,not fresh NMI certification.
+CPU status/stack and PPU polling cycles require explicit non-game hardware
+ABI treatment;neither broad frame equality nor a scheduler constant proves
+those source edges. Cold power allocation and reset of an existing RAM image
+must be distinguished explicitly. No runtime NES emulator is permitted.
+
+Source review already finds:WBootCheck always reads warm marker after an
+invalid digit in C,but original branches directly to ColdBoot;both platforms
+own a literal two-wait startup counter and reset/first-NMI gate;name-table
+helper writes control after clearing tables whereas original writes control
+first,and buffer/scroll reset occurs after both tables instead of inside each
+WriteNTAddr route. Original actual WritePPUReg1/InitScroll/WriteNTAddr child
+joins need canonical shared counterparts,not duplicate inline final values.
+These differences are source read/order/ownership contracts;no unsupported
+visible symptom is claimed. They keep S15 open until corrected and re-audited.
+
+ROM track:rebind17 original addresses to actual owner ROM bytes;review each
+instruction block,full score-byte comparisons/descending early exits/warm
+marker domain,memory page/stack exclusion/index wrap,PPU/table clear order,
+real call/return and startup gates. Use a controlled WBootCheck→EndlessLoop
+original route over invalid-digit positions and all marker bytes with real
+children,plus unmodified full Start trace for the two polling barriers. Bind
+all compared RAM/CIRAM/palette/OAM/APU/PPU fields and exclusions. Enumerate
+every consumed startup value and its producer/lifetime/overwrite domain;
+do not certify unknown alias domains or unobserved hardware conditions.
+Bound outputs:ignored build128MiB,process120seconds,instruction budgets named
+before each runner,batches at most512,raw cleanup after comparison. ROM/ASM
+read-only local nonredistributable inputs;no patched original children.
+
+Operational track:reset/boot/NMI/core/platform startup/purity tests both native
+widths,retained startup/frame routes,original OpenNT shared-source DOS link;
+three refreshed EXEs whenever product source changes. Audit-only P does not
+refresh products. Any diff remains this S through repair/re-audit. Current
+source identities,exact pending clauses and reuse decisions are recorded,
+not inferred from old exact status. Unrelated queued I/O/terrain changes
+preserved;standing EXE authorization,no push. Global M2 certificate incomplete.
+
+Scoped control identities:control-00001,control-00002,control-00003,control-00004,control-00005,control-00006,control-00007,control-00008,control-00009,control-00010,control-00011,control-00012,control-00013,control-00014,control-00015,control-00328,control-00329,control-00330,control-00331,control-00332,control-00333,control-00334,control-00335,control-00336,control-00414,control-00415,control-00416,control-00417,control-00418,control-00419,control-00420,control-00421,control-03483,control-03485,control-03486,control-03487,control-03517,control-03532,control-03533,control-03535,control-03538,control-03540.
+
+## S15 P1 source/actual startup observation checkpoint
+
+Admission gate passes:ScopeCount17,ExpectedMatchCount0,baseline1992,total1992,
+maximum1992,historical incoming labels all ROM-match complete. Scope's42
+outgoing feasible IDs stay explicitly named above;no final node/edge promotion.
+Original listing addresses byte-bound to owner ROM,including corrected Start/
+ColdBoot extent through8059. Shared reset comment ending8035 is incomplete
+provenance,not the actual ColdBoot instruction boundary.
+
+Three unmodified full Start→EndlessLoop runs(cold marker,warm valid digits,
+invalid highest digit10) use identical patterned incoming RAM and actual PPU
+timing/children,250000-instruction budget/process120seconds,negligible bounded
+neutral stdout,no raw frame/RAM export. Actual steps35645/35406/35615;all17
+entry labels observed. Each reaches two WriteNTAddr entries,1920 tile stores,
+128 attribute stores,four physical scroll writes and three control writes.
+InitializeNameTables physical control write occurs before first PPU data.
+Marker reads1/1/0 prove invalid-score branch does not read07ff. Each executes
+one real8057 self-jump with no bus write. Observed memory loop2047 cold/
+2007 warm iterations includes stack skips;writes1887/1847 because0160-01ff
+is160 bytes. These observations prove the listed source facts only,not full
+score-byte domain,native equivalence or final startup certification.
+
+Additional evidence gap:Start contains no RAM clearing before WBootCheck,
+whereas its C counterpart is also the container allocator. Old warm/invalid
+native fixtures set RAM after constructor and call reset directly;they do not
+prove full Start over the same preexisting RAM image. Separate construction
+from source startup entry and state its input domain. Start is needs-evidence,
+not accepted by borrowing the warm reset-only result. Eight source contracts
+remain mismatches;local accepted nodes1983,needs-evidence1,mismatch8. Local
+controls4269 accepted,6 needs-evidence;raw4342,feasible4275,infeasible67.
+Historical1992/1992 unchanged;final reviewed0/1992 and0/4275;material617 partial.
+
+| Node | Original contract and outstanding C/evidence clause |
+| --- | --- |
+| Start | SEI/CLD/LDXff/TXS and physical2000=10;no source RAM clear before warm inputs. Allocation memset is currently mapped as Start;separate constructor/input-state contract and source startup entry before final acceptance. |
+| VBlank1 | Repeated2002 reads until bit7,then next barrier;reading status clears hardware VBlank. Source conditions observed;portable ownership is duplicated in platform counters;full shared-gate contract pending. |
+| VBlank2 | Second actual2002 wait precedes Yfe/X5 and warm-score check. Same platform ownership difference;hardware-cycle abstraction must be explicit,not claimed exact from literal2. |
+| WBootCheck | Read07dc down to07d7,any >=10 exits immediately without07ff read;only six valid digits permit marker compareA5;Yd6 if warm,otherwisefe. C unconditionally reads marker after invalid-score exit;all byte/position/marker domains need source compositional review and controlled batch. |
+| ColdBoot | Actual InitializeMemory(Y),4011=0,0770=0,07ff/07a7=A5,4015=0f,2001=06,sprite clear,name clear,INC0774,mirror OR80 and real WritePPUReg1. Real source children observed;canonical control child missing in C;ordered host-neutral APU/PPU output and original source range8000-8059 must be checked. |
+| EndlessLoop | 8057 JMP8057,no RAM/PPU write;independent NMI interrupt owns subsequent work. One real source loop iteration observed no writes;native reset-to-first-tick gate still platform-owned. |
+| InitializeNameTables | Read2002 reset latch;mirror OR10 ANDf0;real WritePPUReg1 before table24 then20. C publishes control after both name tables;canonical child order requires correction. |
+| WriteNTAddr | Set PPU addr(table high,0);X4/Yc0;960 tiles24;buffer0300/0301=0 before attributes;64 attributes0;scroll RAM073f/0740=0 and actual InitScroll per table. C has two-table flat loop and buffer/scroll only after both;restore shared per-table leaf/continuation. |
+| InitNTLoop | First192 writes then three256 loops=960 tiles;Y/X byte wrap;PPU address increments. Final table fill C matches count,value,but entire ordered child needs new proof. |
+| InitATLoop | Exactly64 zero attributes after buffer resets;following scroll tail executes for each table. Final fill C matches but buffer/attribute/scroll order differs. |
+| InitScroll | Two ordered physical2005 stores of incoming A,then original RTS. Canonical shared child missing;PPU latch/address exclusions require source-use proof. |
+| WritePPUReg1 | Physical2000 store precedes mirror0778 store,then RTS to real caller. Duplicated inline writes in reset/name-table owner;shared counterpart and source order pending. |
+| InitializeMemory | X7/A0;06=0;Y supplied by actual caller. C byte types and page loop match;full legal source input/alias contract not yet finally reviewed. |
+| InitPageLoop | Persist X in07 before each page;Y remainsff after prior page exit;page7 begins caller Y. C uses same byte page/index evolution;current-source proof reusable after complete domain check. |
+| InitByteLoop | If X1 and Y>=60 skip;all other pages/indexes write through pointer06/07. Original stack exclusion is160 bytes0160-01ff,not exclusion of entire stack page;indirect pointer alias review pending. |
+| InitByte | STA(06),Y with06=0 and07 current page;zero-page self-clears must preserve effective pointer invariants. C direct page*256+offset needs compositional pointer-alias justification for original caller domains. |
+| SkipByte | DEY untilff;DEX until negative;RTS with A0 and residual scratch06/07. Observed cold2047/warm2007 loop passes include skipped bytes;source return/physical-stack exclusions need comparison. |
+
+Bounded correction within this same S:one shared source-startup gate after
+separate construction,preserving the original two waits/reset/first-NMI
+sequence;platforms supply clock boundaries only. Restore WBootCheck early
+marker-read exclusion;restore canonical WritePPUReg1/InitScroll/WriteNTAddr
+children and source control/buffer/attribute/scroll order. Review all listed
+source predicates/carry/index/address domains;then compare controlled byte-
+domain reset batches and persistent startup/first-NMI routes,with actual
+children and explicit hardware/stack ABI. Every remaining clause in the table
+requires a disposition before these17 nodes/42 controls enter final review.
+No unrelated node can be promoted by adjacent output equality.
+
+Material-use obligations for this subtree:incoming score/marker→warm/cold Y;
+Y/X→indirect clear domains,06/07 pointer aliases and stack-preserved region;
+InitializeMemory A0→DMC/mode stores;marker/random seed→first NMI readers;
+mirror→control read/OR/write;table/loop counters→PPU output and buffer/scroll
+reset;DisableScreen increment→first NMI output gate. Source CPU stack/flags/
+PPU status/address latch exclusions need demonstrated non-game or preserved
+consumer semantics,not blanket byte removal. Consumers outside this subtree
+retain their named A-N final-review duties;no global material closure claimed.
+
+Current-source SHA256 identities are recorded below for reuse/freshness review;
+they are source identities,not equivalence proof. Existing source/test/product
+files are unchanged in P1 and S14 EXEs remain byte-identical;no product refresh
+is required. This P completes the source/evidence checkpoint,not S15 closure.
+S15 stays active for repair and dual verification;no successor admitted.
+
+| Current source | SHA256 |
+| --- | --- |
+| src/game/boot.c | 0161a453cd9c1c6008802b8d688c0969f360810106619fe988cbfe10748b279f |
+| src/game/game.h | e434257957c9b0d0ad426ebf506821fd7fdc99dc848a839b852345860776082e |
+| src/platform/win32/main_win32.c | 06deb24e6780e9065a2f79159f80fb231c4b6c6839579732d3de40d31a5f33a2 |
+| src/platform/dos16/dos16_root.c | cf2bde3bd8e62a763e920a535ed83384b57158e09904131df9190a82af09207f |
+| src/platform/dos16/dos16_root.h | 17cf1887ae24302cb8e1c1241354e247611d8e3bb1bd2110fc39989376587d79 |
+| src/platform/startup_timing.h | 6ac5277d76ae0f0b4a535d646602342ddc513c0808fecd6602cb961f1afea5a8 |

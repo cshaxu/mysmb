@@ -16,7 +16,6 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 
 | Receiving S | Exact node count | Exact node set |
 | --- | ---: | --- |
-| M2 T22 S14 | 7 | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeMemory` |
 | M2 T22 S25 | 5 | `DecTimers`, `DecTimersLoop`, `SkipExpTimer`, `NoDecTimers`, `PauseSkip` |
 | M2 T22 S28 | 1 | `OperModeExecutionTree` |
 | M2 T22 S5 | 8 | `FlagpoleObject`, `FlagpoleScoreMods`, `FlagpoleScoreDigits`, `FlagpoleRoutine`, `SkipScore`, `GiveFPScr`, `FPGfx`, `ExitFlagP` |
@@ -29,11 +28,10 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T28 S2 | 7 | `ColorRotatePalette`, `BlankPalette`, `Palette3Data`, `ColorRotation`, `GetBlankPal`, `GetAreaPal`, `ExitColorRot` |
 | M2 T28 S3 | 11 | `BlockGfxData`, `RemoveCoin_Axe`, `WriteBlankMT`, `ReplaceBlockMetatile`, `DestroyBlockMetatile`, `WriteBlockMetatile`, `UseBOffset`, `MoveVOffset`, `PutBlockMetatile`, `SaveHAdder`, `RemBridge` |
 | M2 T28 S4 | 19 | `Palette0_MTiles`, `Palette1_MTiles`, `Palette2_MTiles`, `Palette3_MTiles`, `WaterPaletteData`, `GroundPaletteData`, `UndergroundPaletteData`, `CastlePaletteData`, `DaySnowPaletteData`, `NightSnowPaletteData`, `MushroomPaletteData`, `BowserPaletteData`, `MarioThanksMessage`, `LuigiThanksMessage`, `MushroomRetainerSaved`, `PrincessSaved1`, `PrincessSaved2`, `WorldSelectMessage1`, `WorldSelectMessage2` |
-| M2 T28 S5 | 5 | `JumpEngine`, `InitializeNameTables`, `WriteNTAddr`, `InitNTLoop`, `InitATLoop` |
-| M2 T28 S6 | 8 | `WriteBufferToScreen`, `SetupWrites`, `GetLength`, `OutputToVRAM`, `RepeatByte`, `UpdateScreen`, `InitScroll`, `WritePPUReg1` |
+| M2 T28 S5 | 1 | `JumpEngine` |
+| M2 T28 S6 | 6 | `WriteBufferToScreen`, `SetupWrites`, `GetLength`, `OutputToVRAM`, `RepeatByte`, `UpdateScreen` |
 | M2 T28 S7 | 19 | `StatusBarData`, `StatusBarOffset`, `PrintStatusBarNumbers`, `OutputNumbers`, `SetupNums`, `DigitPLoop`, `ExitOutputN`, `DigitsMathRoutine`, `AddModLoop`, `StoreNewD`, `EraseDMods`, `EraseMLoop`, `BorrowOne`, `CarryOne`, `UpdateTopScore`, `TopScoreCheck`, `GetScoreDiff`, `CopyScore`, `NoTopSc` |
 | M2 T28 S8 | 15 | `DefaultSprOffsets`, `Sprite0Data`, `InitializeGame`, `ClrSndLoop`, `InitializeArea`, `ClrTimersLoop`, `StartPage`, `SetSecHard`, `CheckHalfway`, `DoneInitArea`, `PrimaryGameSetup`, `SecondaryGameSetup`, `ClearVRLoop`, `ShufAmtLoop`, `ISpr0Loop` |
-| M2 T29 S1 | 4 | `InitPageLoop`, `InitByteLoop`, `InitByte`, `SkipByte` |
 | M2 T29 S10 | 10 | `FindEmptyEnemySlot`, `EmptyChkLoop`, `ExitEmptyChk`, `Hole_Water`, `QuestionBlockRow_High`, `QuestionBlockRow_Low`, `Bridge_High`, `Bridge_Middle`, `Bridge_Low`, `FlagBalls_Residual` |
 | M2 T29 S2 | 5 | `MusicSelectData`, `GetAreaMusic`, `ChkAreaType`, `StoreMusic`, `ExitGetM` |
 | M2 T29 S3 | 11 | `PlayerStarting_X_Pos`, `AltYPosOffset`, `PlayerStarting_Y_Pos`, `PlayerBGPriorityData`, `GameTimerData`, `Entrance_GameTimerSetup`, `ChkStPos`, `SetStPos`, `ChkOverR`, `ChkSwimE`, `SetPESub` |
@@ -206,6 +204,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T70 S12 | 10 | `FloateyNumTileData`, `ScoreUpdateData`, `FloateyNumbersRoutine`, `ChkNumTimer`, `DecNumTimer`, `LoadNumTiles`, `ChkTallEnemy`, `GetAltOffset`, `FloateyPart`, `SetupNumSpr` |
 | M2 T70 S13 | 19 | `SetupIntermediate`, `AreaPalette`, `GetAreaPalette`, `SetVRAMAddr_A`, `NextSubtask`, `BGColorCtrl_Addr`, `BackgroundColors`, `PlayerColors`, `GetBackgroundColor`, `NoBGColor`, `GetPlayerColors`, `ChkFiery`, `StartClrGet`, `ClrGetLoop`, `SetBGColor`, `SetVRAMOffset`, `GetAlternatePalette1`, `SetVRAMAddr_B`, `NoAltPal` |
 | M2 T70 S14 | 12 | `WriteTopStatusLine`, `WriteBottomStatusLine`, `DisplayTimeUp`, `NoTimeUp`, `DisplayIntermediate`, `PlayerInter`, `OutputInter`, `GameOverInter`, `NoInter`, `ResetSpritesAndScreenTimer`, `ResetScreenTimer`, `NoReset` |
+| M2 T70 S15 | 17 | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeNameTables`, `WriteNTAddr`, `InitNTLoop`, `InitATLoop`, `InitScroll`, `WritePPUReg1`, `InitializeMemory`, `InitPageLoop`, `InitByteLoop`, `InitByte`, `SkipByte` |
 | M2 T70 S2 | 29 | `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj` |
 | M2 T70 S4 | 6 | `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`, `NonMaskableInterrupt`, `ScreenOff`, `InitBuffer` |
 | M2 T70 S6 | 9 | `RotPRandomBit`, `Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipSprite0`, `SkipMainOper`, `MoveAllSpritesOffscreen`, `MoveSpritesOffscreen`, `SprInitLoop` |
@@ -231,12 +230,12 @@ transfer existing ownership or allocate a numeric T.
 
 | ROM line | Node | Current receiving S | Future package / basis | Historical T/S records |
 | ---: | --- | --- | --- | --- |
-| 699 | `Start` | M2 T22 S14 | existing closure backlog; Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary. | M2 T11 / S not recorded; M2 T14 / S not recorded; M2 T15 / S not recorded; M2 T15 S4; M2 T17 S6; M2 T19 S5; M2 T2 / S not recorded; M2 T21 S1; M2 T21 S2; M2 T24 S1; M2 T3 / S not recorded; M2 T8 / S not recorded |
-| 706 | `VBlank1` | M2 T22 S14 | existing closure backlog; Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary. | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
-| 708 | `VBlank2` | M2 T22 S14 | existing closure backlog; Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary. | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
-| 712 | `WBootCheck` | M2 T22 S14 | existing closure backlog; Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary. | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
-| 721 | `ColdBoot` | M2 T22 S14 | existing closure backlog; Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary. | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
-| 737 | `EndlessLoop` | M2 T22 S14 | existing closure backlog; Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary. | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
+| 699 | `Start` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T11 / S not recorded; M2 T14 / S not recorded; M2 T15 / S not recorded; M2 T15 S4; M2 T17 S6; M2 T19 S5; M2 T2 / S not recorded; M2 T21 S1; M2 T21 S2; M2 T24 S1; M2 T3 / S not recorded; M2 T8 / S not recorded |
+| 706 | `VBlank1` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
+| 708 | `VBlank2` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
+| 712 | `WBootCheck` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
+| 721 | `ColdBoot` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
+| 737 | `EndlessLoop` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
 | 743 | `VRAM_AddrTable_Low` | M2 T70 S4 | existing closure backlog; Accepted bounded NMI pointer/display transaction maintenance;prior proof retained. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S15; M2 T24 S1 |
 | 752 | `VRAM_AddrTable_High` | M2 T70 S4 | existing closure backlog; Accepted bounded NMI pointer/display transaction maintenance;prior proof retained. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S15; M2 T24 S1 |
 | 761 | `VRAM_Buffer_Offset` | M2 T70 S4 | existing closure backlog; Accepted bounded NMI pointer/display transaction maintenance;prior proof retained. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S15; M2 T24 S1 |
@@ -446,10 +445,10 @@ transfer existing ownership or allocate a numeric T.
 | 2375 | `WorldSelectMessage1` | M2 T28 S4 | existing closure backlog; owner-approved T28 S4 source-order data-chain receipt | M2 T21 S4; M2 T24 S1 |
 | 2382 | `WorldSelectMessage2` | M2 T28 S4 | existing closure backlog; owner-approved T28 S4 source-order data-chain receipt | M2 T21 S4; M2 T24 S1 |
 | 2395 | `JumpEngine` | M2 T28 S5 | existing closure backlog; owner-approved T28 S5 source-order receipt | M2 T21 S4; M2 T24 S1 |
-| 2412 | `InitializeNameTables` | M2 T28 S5 | existing closure backlog; owner-approved T28 S5 source-order receipt | M2 T21 S4; M2 T24 S1 |
-| 2421 | `WriteNTAddr` | M2 T28 S5 | existing closure backlog; owner-approved T28 S5 source-order receipt | M2 T21 S4; M2 T24 S1 |
-| 2427 | `InitNTLoop` | M2 T28 S5 | existing closure backlog; owner-approved T28 S5 source-order receipt | M2 T21 S4; M2 T24 S1 |
-| 2436 | `InitATLoop` | M2 T28 S5 | existing closure backlog; owner-approved T28 S5 source-order receipt | M2 T21 S4; M2 T24 S1 |
+| 2412 | `InitializeNameTables` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T21 S4; M2 T24 S1 |
+| 2421 | `WriteNTAddr` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T21 S4; M2 T24 S1 |
+| 2427 | `InitNTLoop` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T21 S4; M2 T24 S1 |
+| 2436 | `InitATLoop` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T21 S4; M2 T24 S1 |
 | 2446 | `ReadJoypads` | M2 T70 S9 | existing closure backlog; Accepted input-to-pause material maintenance;prior evidence retained. | M2 T21 S4; M2 T24 S1 |
 | 2454 | `ReadPortBits` | M2 T70 S9 | existing closure backlog; Accepted input-to-pause material maintenance;prior evidence retained. | M2 T21 S4; M2 T24 S1 |
 | 2455 | `PortLoop` | M2 T70 S9 | existing closure backlog; Accepted input-to-pause material maintenance;prior evidence retained. | M2 T21 S4; M2 T24 S1 |
@@ -460,8 +459,8 @@ transfer existing ownership or allocate a numeric T.
 | 2504 | `OutputToVRAM` | M2 T28 S6 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
 | 2506 | `RepeatByte` | M2 T28 S6 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
 | 2523 | `UpdateScreen` | M2 T28 S6 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T14 / S not recorded; M2 T15 S2; M2 T21 S4; M2 T24 S1 |
-| 2527 | `InitScroll` | M2 T28 S6 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2533 | `WritePPUReg1` | M2 T28 S6 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
+| 2527 | `InitScroll` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T21 S4; M2 T24 S1 |
+| 2533 | `WritePPUReg1` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T21 S4; M2 T24 S1 |
 | 2544 | `StatusBarData` | M2 T28 S7 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
 | 2552 | `StatusBarOffset` | M2 T28 S7 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
 | 2555 | `PrintStatusBarNumbers` | M2 T28 S7 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T19 S5; M2 T21 S4; M2 T24 S1 |
@@ -497,11 +496,11 @@ transfer existing ownership or allocate a numeric T.
 | 2754 | `ClearVRLoop` | M2 T28 S8 | existing closure backlog; owner-approved source-order T28 S8 initialization/bootstrap receipt | M2 T21 S4; M2 T24 S1 |
 | 2775 | `ShufAmtLoop` | M2 T28 S8 | existing closure backlog; owner-approved source-order T28 S8 initialization/bootstrap receipt | M2 T21 S4; M2 T24 S1 |
 | 2780 | `ISpr0Loop` | M2 T28 S8 | existing closure backlog; owner-approved source-order T28 S8 initialization/bootstrap receipt | M2 T21 S4; M2 T24 S1 |
-| 2795 | `InitializeMemory` | M2 T22 S14 | existing closure backlog; Accepted source-order T22 S6 intake for the integrated boot-to-first-NMI boundary. | M2 T14 / S not recorded; M2 T15 S3; M2 T18 / S not recorded; M2 T21 S1; M2 T24 S1 |
-| 2799 | `InitPageLoop` | M2 T29 S1 | existing closure backlog; owner-approved source-order T29 S1 InitializeMemory loop receipt | M2 T21 S4; M2 T24 S1 |
-| 2800 | `InitByteLoop` | M2 T29 S1 | existing closure backlog; owner-approved source-order T29 S1 InitializeMemory loop receipt | M2 T21 S4; M2 T24 S1 |
-| 2804 | `InitByte` | M2 T29 S1 | existing closure backlog; owner-approved source-order T29 S1 InitializeMemory loop receipt | M2 T21 S4; M2 T24 S1 |
-| 2805 | `SkipByte` | M2 T29 S1 | existing closure backlog; owner-approved source-order T29 S1 InitializeMemory loop receipt | M2 T21 S4; M2 T24 S1 |
+| 2795 | `InitializeMemory` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T14 / S not recorded; M2 T15 S3; M2 T18 / S not recorded; M2 T21 S1; M2 T24 S1 |
+| 2799 | `InitPageLoop` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T21 S4; M2 T24 S1 |
+| 2800 | `InitByteLoop` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T21 S4; M2 T24 S1 |
+| 2804 | `InitByte` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T21 S4; M2 T24 S1 |
+| 2805 | `SkipByte` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T21 S4; M2 T24 S1 |
 | 2814 | `MusicSelectData` | M2 T29 S2 | existing closure backlog; owner-approved source-order T29 S2 area-music chain receipt | M2 T21 S4; M2 T24 S1 |
 | 2818 | `GetAreaMusic` | M2 T29 S2 | existing closure backlog; owner-approved source-order T29 S2 area-music chain receipt | M2 T21 S4; M2 T24 S1 |
 | 2830 | `ChkAreaType` | M2 T29 S2 | existing closure backlog; owner-approved source-order T29 S2 area-music chain receipt | M2 T21 S4; M2 T24 S1 |
@@ -2304,7 +2303,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T22 S11 | 0 | 0 | boot-root-proof; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S12 | 0 | 0 | vram-table-migration; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S13 | 0 | 0 | nmi-integration-proof; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
-| M2 T22 S14 | 0 | 7 | boot-root-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
+| M2 T22 S14 | 0 | 0 | boot-root-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S15 | 3 | 0 | vram-table-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S16 | 1 | 0 | nmi-buffer-clear; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S17 | 6 | 0 | nmi-pause-route; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -2371,12 +2370,12 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T28 S2 | 0 | 7 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
 | M2 T28 S3 | 0 | 11 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
 | M2 T28 S4 | 0 | 19 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
-| M2 T28 S5 | 0 | 5 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
-| M2 T28 S6 | 0 | 8 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
+| M2 T28 S5 | 0 | 1 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
+| M2 T28 S6 | 0 | 6 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
 | M2 T28 S7 | 0 | 19 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
 | M2 T28 S8 | 0 | 15 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
 | M2 T29 | 32 | - | [record](../../docs/proposals/m2/t29-area-parser-geometry.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
-| M2 T29 S1 | 0 | 4 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
+| M2 T29 S1 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S2 | 0 | 5 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S3 | 0 | 11 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S4 | 0 | 16 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
@@ -2827,6 +2826,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T70 S12 | 0 | 10 | floatey-score-oam-material-repair; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S13 | 0 | 19 | screen-palette-material-order-repair; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S14 | 0 | 12 | hud-intermediate-timer-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S15 | 0 | 17 | final-reset-startup-source-and-graph-review; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M2 T9 | 1 | - | [record](../../docs/etc/architecture/smb1-frame-output-ledger.md); [record](../../docs/history/M2-T9-frame-output-ledger-and-reference-recorder.md); S not recorded |
 | M2 Td | 0 | - | [record](../../docs/proposals/m2-rom-structural-recovery.md); [record](../../docs/states/QUEUE.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -3202,6 +3202,10 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-t70-s13-palette-2 | M2 T52 S4 | M2 T70 S13 | 3 | Coordinator accepts screen palette source-order maintenance under owner M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s14-hud-1 | M2 T27 S2 | M2 T70 S14 | 9 | Coordinator accepts under owner ongoing M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s14-hud-2 | M2 T52 S5 | M2 T70 S14 | 3 | Coordinator accepts under owner ongoing M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s15-startup-1 | M2 T22 S14 | M2 T70 S15 | 7 | Coordinator accepts original reset/startup subtree under owner M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s15-startup-2 | M2 T28 S5 | M2 T70 S15 | 4 | Coordinator accepts original reset/startup subtree under owner M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s15-startup-3 | M2 T28 S6 | M2 T70 S15 | 2 | Coordinator accepts original reset/startup subtree under owner M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s15-startup-4 | M2 T29 S1 | M2 T70 S15 | 4 | Coordinator accepts original reset/startup subtree under owner M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3703,3 +3707,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T70 S12 | 10 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S13 | 19 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S14 | 12 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S15 | 17 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t70-final-current-certification.md) |

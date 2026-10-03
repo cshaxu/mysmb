@@ -11,6 +11,17 @@ has a separate registry with an explicit fixed1992-node/4275-control universe.
 Material617 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
+## M2 T70 S15 - active reset/startup final-review scope
+
+[17-node/42-control source checkpoint](../proposals/m2/t70-final-current-certification.md#s15-p1-sourceactual-startup-observation-checkpoint).
+Full original Start runs confirm marker early exit and control/table/scroll
+ordering with actual children. Eight contracts mismatch;Start initial RAM
+domain needs evidence. Repairs and full source/native contract proof remain
+inside S15;no successor admitted. Historical1992/1992,local accepted1983
+nodes/4269 feasible controls,8 node mismatches/1 needs-evidence and6 control
+needs-evidence(raw4342,feasible4275,infeasible67). Final review0/1992 and0/4275;
+material617 partial,total unknown. Product sources and S14 EXEs unchanged.
+
 ## M2 T70 S14 - locally closed;global final certificate incomplete
 
 [Scoped repair and reporting correction](../proposals/m2/t70-final-current-certification.md#s14-p1-closure---scoped-hudintermediate-repair-and-honest-certificate-boundary).
