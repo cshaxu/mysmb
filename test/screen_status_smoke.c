@@ -66,6 +66,21 @@ int main(void)
         game.ram[0x0305U] != 0x16U || game.ram[0x0306U] != 0x27U ||
         game.ram[0x0307U] != 0x18U || game.ram[0x0308U] != 0U) return 1;
 
+    /* Bottom status appends after score/coins with fixed-X absolute writes.
+     * An initial $f0 cursor reaches X=$fe: the header spans $03ff-$0405,
+     * while only the final persisted cursor wraps to four. */
+    game.ram[0x073cU] = 3U;
+    game.ram[0x0300U] = 0xf0U;
+    game.ram[0x0753U] = 0U;
+    game.ram[0x075fU] = 0xffU;
+    game.ram[0x075cU] = 0xffU;
+    mysmb_game_step_screen_routine(&game);
+    if (game.ram[0x073cU] != 4U || game.ram[0x0300U] != 4U ||
+        game.ram[0x03ffU] != 0x20U || game.ram[0x0400U] != 0x73U ||
+        game.ram[0x0401U] != 3U || game.ram[0x0402U] != 0U ||
+        game.ram[0x0403U] != 0x28U || game.ram[0x0404U] != 0U ||
+        game.ram[0x0405U] != 0U) return 1;
+
     /* ROM DisplayTimeUp clears its latch and OutputInter restores screen
      * output before the later ResetSpritesAndScreenTimer task. */
     game.ram[0x073cU] = 4U;

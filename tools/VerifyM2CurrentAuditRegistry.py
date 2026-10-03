@@ -90,11 +90,52 @@ def main():
               for status in sorted(STATUSES)}
     edge_counts = {status: sum(edge["status"] == status for edge in edges)
                    for status in sorted(STATUSES)}
+    final = registry.get("finalCertification")
+    require(final is not None, "final-certificate boundary must be explicit")
+    reviewed_nodes = final["reviewedNodeLabels"]
+    reviewed_edges = final["reviewedControlEdgeIds"]
+    node_labels = {node["label"] for node in nodes}
+    feasible_ids = {edge["id"] for edge in edges
+                    if edge["status"] != "infeasible"}
+    require(len(set(reviewed_nodes)) == len(reviewed_nodes) and
+            set(reviewed_nodes) <= node_labels,
+            "final reviewed nodes must be unique known labels")
+    require(len(set(reviewed_edges)) == len(reviewed_edges) and
+            set(reviewed_edges) <= feasible_ids,
+            "final reviewed controls must be unique feasible identities")
+    require(final["nodeUniverse"] == len(nodes) and
+            final["feasibleControlUniverse"] == len(feasible_ids),
+            "final-review universe must agree with source registry")
+    cohort_nodes = [label for cohort in final["cohortReview"]
+                    for label in cohort["nodeLabels"]]
+    cohort_edges = [identity for cohort in final["cohortReview"]
+                    for identity in cohort["feasibleControlIds"]]
+    require(len(cohort_nodes) == len(nodes) and set(cohort_nodes) == node_labels,
+            "final review groups must partition all nodes exactly once")
+    require(len(cohort_edges) == len(feasible_ids) and
+            set(cohort_edges) == feasible_ids,
+            "final review groups must partition feasible controls exactly once")
+    require(final["status"] in ("incomplete", "complete"),
+            "unknown final-certificate status")
+    if final["status"] == "complete":
+        require(set(reviewed_nodes) == node_labels and
+                set(reviewed_edges) == feasible_ids and
+                registry["dataEdges"]["status"] == "complete" and
+                final["materialTotal"] == len(material) and
+                not final["blockers"] and
+                all(record["status"] in ("exact", "infeasible")
+                    for record in nodes + edges + material),
+                "partial evidence cannot be a complete final certificate")
     print(json.dumps({"nodes": counts, "controlEdges": edge_counts,
                       "rawControlEdges": len(edges),
                       "feasibleControlEdges": len(edges) - len(infeasible),
                       "materialEdges": len(material),
-                      "materialEnumeration": registry["dataEdges"]["status"]},
+                      "materialEnumeration": registry["dataEdges"]["status"],
+                      "ledgerMeaning": "Scoped evidence dispositions, not full certification",
+                      "metadataValidationOnly": True,
+                      "finalCertificate": final["status"],
+                      "finalReviewedNodes": len(reviewed_nodes),
+                      "finalReviewedControls": len(reviewed_edges)},
                      indent=2))
 
 

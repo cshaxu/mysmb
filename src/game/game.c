@@ -145,6 +145,32 @@ void mysmb_game_jump_engine_state(struct mysmb_game *game,
     game->ram[7U] = game->area_prg[address - 0x8000U];
 }
 
+/* ROM $88a5-$88ad ResetScreenTimer/NoReset. OutputInter and the sprite
+ * reset entry share this child, including task advancement before output. */
+static void mysmb_game_reset_screen_timer(struct mysmb_game *game)
+{
+    game->ram[MYSMB_RAM_SCREEN_TIMER] = 7U;
+    game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK]++;
+}
+
+/* ROM $889d-$88ad ResetSpritesAndScreenTimer. A live timer leaves both
+ * sprites and task untouched; expiry falls into the canonical timer child. */
+static void mysmb_game_reset_sprites_and_screen_timer(struct mysmb_game *game)
+{
+    if (game->ram[MYSMB_RAM_SCREEN_TIMER] != 0U) return;
+    mysmb_game_move_all_sprites_offscreen(game);
+    mysmb_game_reset_screen_timer(game);
+}
+
+/* ROM $86c7-$86d2 OutputInter. Time-up and lives output converge here. */
+static void mysmb_game_output_intermediate(struct mysmb_game *game,
+                                         mysmb_u8 selector)
+{
+    (void)mysmb_area_queue_game_text(game, selector);
+    mysmb_game_reset_screen_timer(game);
+    game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
+}
+
 void mysmb_game_step_screen_routine(struct mysmb_game *game)
 {
     mysmb_u16 index;
@@ -193,21 +219,14 @@ void mysmb_game_step_screen_routine(struct mysmb_game *game)
              * OutputInter then writes the text, resets the screen timer and
              * reenables output in that source order. */
             game->ram[MYSMB_RAM_TIMER_EXPIRED] = 0U;
-            (void)mysmb_area_queue_game_text(game, 2U);
-            game->ram[MYSMB_RAM_SCREEN_TIMER] = 7U;
-            game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
-            game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 5U;
+            mysmb_game_output_intermediate(game, 2U);
         }
         else {
             game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 6U;
         }
         break;
     case 5U:
-        if (game->ram[MYSMB_RAM_SCREEN_TIMER] == 0U) {
-            mysmb_game_move_all_sprites_offscreen(game);
-            game->ram[MYSMB_RAM_SCREEN_TIMER] = 7U;
-            game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 6U;
-        }
+        mysmb_game_reset_sprites_and_screen_timer(game);
         break;
     case 6U:
         /* ROM DisplayIntermediate: title mode skips the intermediate-lives
@@ -232,21 +251,14 @@ void mysmb_game_step_screen_routine(struct mysmb_game *game)
             /* PlayerInter draws the OAM player before OutputInter writes
              * the lives text command. */
             mysmb_oam_draw_intermediate_player(game);
-            (void)mysmb_area_queue_game_text(game, 1U);
-            game->ram[MYSMB_RAM_SCREEN_TIMER] = 7U;
-            game->ram[MYSMB_RAM_DISABLE_SCREEN] = 0U;
-            game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 7U;
+            mysmb_game_output_intermediate(game, 1U);
         }
         else {
             game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 8U;
         }
         break;
     case 7U:
-        if (game->ram[MYSMB_RAM_SCREEN_TIMER] == 0U) {
-            mysmb_game_move_all_sprites_offscreen(game);
-            game->ram[MYSMB_RAM_SCREEN_TIMER] = 7U;
-            game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 8U;
-        }
+        mysmb_game_reset_sprites_and_screen_timer(game);
         break;
     case 8U:
         /* AreaParserTaskControl owns the source-order final-set transition:

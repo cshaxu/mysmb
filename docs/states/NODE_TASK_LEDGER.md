@@ -24,7 +24,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T26 S5 | 6 | `VictoryModeSubroutines`, `SetupVictoryMode`, `PlayerVictoryWalk`, `PerformWalk`, `DontWalk`, `ExitVWalk` |
 | M2 T26 S7 | 2 | `VictoryMode`, `AutoPlayer` |
 | M2 T27 S1 | 1 | `InitScreen` |
-| M2 T27 S2 | 40 | `WriteTopStatusLine`, `WriteBottomStatusLine`, `DisplayIntermediate`, `PlayerInter`, `GameOverInter`, `NoInter`, `DrawTitleScreen`, `OutputTScr`, `ChkHiByte`, `ClearBuffersDrawIcon`, `TScrClear`, `IncSubtask`, `WriteTopScore`, `IncModeTask_B`, `GameText`, `TopStatusBarLine`, `WorldLivesDisplay`, `TwoPlayerTimeUp`, `OnePlayerTimeUp`, `TwoPlayerGameOver`, `OnePlayerGameOver`, `WarpZoneWelcome`, `LuigiName`, `WarpZoneNumbers`, `GameTextOffsets`, `WriteGameText`, `Chk2Players`, `LdGameText`, `GameTextLoop`, `EndGameText`, `PutLives`, `CheckPlayerName`, `ChkLuigi`, `NameLoop`, `ExitChkName`, `PrintWarpZoneNumbers`, `WarpNumLoop`, `ResetSpritesAndScreenTimer`, `ResetScreenTimer`, `NoReset` |
+| M2 T27 S2 | 31 | `DrawTitleScreen`, `OutputTScr`, `ChkHiByte`, `ClearBuffersDrawIcon`, `TScrClear`, `IncSubtask`, `WriteTopScore`, `IncModeTask_B`, `GameText`, `TopStatusBarLine`, `WorldLivesDisplay`, `TwoPlayerTimeUp`, `OnePlayerTimeUp`, `TwoPlayerGameOver`, `OnePlayerGameOver`, `WarpZoneWelcome`, `LuigiName`, `WarpZoneNumbers`, `GameTextOffsets`, `WriteGameText`, `Chk2Players`, `LdGameText`, `GameTextLoop`, `EndGameText`, `PutLives`, `CheckPlayerName`, `ChkLuigi`, `NameLoop`, `ExitChkName`, `PrintWarpZoneNumbers`, `WarpNumLoop` |
 | M2 T28 S1 | 13 | `RenderAreaGraphics`, `DrawMTLoop`, `RightCheck`, `LLeft`, `NextMTRow`, `SetAttrib`, `ExitDrawM`, `RenderAttributeTables`, `SetATHigh`, `AttribLoop`, `SetVRAMCtrl`, `MetatileGraphics_Low`, `MetatileGraphics_High` |
 | M2 T28 S2 | 7 | `ColorRotatePalette`, `BlankPalette`, `Palette3Data`, `ColorRotation`, `GetBlankPal`, `GetAreaPal`, `ExitColorRot` |
 | M2 T28 S3 | 11 | `BlockGfxData`, `RemoveCoin_Axe`, `WriteBlankMT`, `ReplaceBlockMetatile`, `DestroyBlockMetatile`, `WriteBlockMetatile`, `UseBOffset`, `MoveVOffset`, `PutBlockMetatile`, `SaveHAdder`, `RemBridge` |
@@ -200,12 +200,12 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T51 S3 | 1 | `KillEnemies` |
 | M2 T51 S4 | 34 | `E_CastleArea1`, `E_CastleArea2`, `E_CastleArea3`, `E_CastleArea4`, `E_CastleArea5`, `E_CastleArea6`, `E_GroundArea1`, `E_GroundArea2`, `E_GroundArea3`, `E_GroundArea4`, `E_GroundArea5`, `E_GroundArea6`, `E_GroundArea7`, `E_GroundArea8`, `E_GroundArea9`, `E_GroundArea10`, `E_GroundArea11`, `E_GroundArea12`, `E_GroundArea13`, `E_GroundArea14`, `E_GroundArea15`, `E_GroundArea16`, `E_GroundArea17`, `E_GroundArea18`, `E_GroundArea19`, `E_GroundArea20`, `E_GroundArea21`, `E_GroundArea22`, `E_UndergroundArea1`, `E_UndergroundArea2`, `E_UndergroundArea3`, `E_WaterArea1`, `E_WaterArea2`, `E_WaterArea3` |
 | M2 T52 S3 | 1 | `AddToScore` |
-| M2 T52 S5 | 3 | `DisplayTimeUp`, `NoTimeUp`, `OutputInter` |
 | M2 T52 S6 | 1 | `DrawLargePlatform` |
 | M2 T70 S10 | 25 | `WSelectBufferTemplate`, `GameMenuRoutine`, `StartGame`, `ChkSelect`, `ChkWorldSel`, `SelectBLogic`, `IncWorldSel`, `UpdateShroom`, `NullJoypad`, `RunDemo`, `ResetTitle`, `ChkContinue`, `StartWorld1`, `InitScores`, `ExitMenu`, `GoContinue`, `MushroomIconData`, `DrawMushroomIcon`, `IconDataRead`, `ExitIcon`, `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver` |
 | M2 T70 S11 | 15 | `PrintVictoryMessages`, `MRetainerMsg`, `ThankPlayer`, `SecondPartMsg`, `EvalForMusic`, `PrintMsg`, `IncMsgCounter`, `SetEndTimer`, `IncModeTask_A`, `ExitMsgs`, `PlayerEndWorld`, `EndExitOne`, `EndChkBButton`, `EndExitTwo`, `TerminateGame` |
 | M2 T70 S12 | 10 | `FloateyNumTileData`, `ScoreUpdateData`, `FloateyNumbersRoutine`, `ChkNumTimer`, `DecNumTimer`, `LoadNumTiles`, `ChkTallEnemy`, `GetAltOffset`, `FloateyPart`, `SetupNumSpr` |
 | M2 T70 S13 | 19 | `SetupIntermediate`, `AreaPalette`, `GetAreaPalette`, `SetVRAMAddr_A`, `NextSubtask`, `BGColorCtrl_Addr`, `BackgroundColors`, `PlayerColors`, `GetBackgroundColor`, `NoBGColor`, `GetPlayerColors`, `ChkFiery`, `StartClrGet`, `ClrGetLoop`, `SetBGColor`, `SetVRAMOffset`, `GetAlternatePalette1`, `SetVRAMAddr_B`, `NoAltPal` |
+| M2 T70 S14 | 12 | `WriteTopStatusLine`, `WriteBottomStatusLine`, `DisplayTimeUp`, `NoTimeUp`, `DisplayIntermediate`, `PlayerInter`, `OutputInter`, `GameOverInter`, `NoInter`, `ResetSpritesAndScreenTimer`, `ResetScreenTimer`, `NoReset` |
 | M2 T70 S2 | 29 | `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj` |
 | M2 T70 S4 | 6 | `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`, `NonMaskableInterrupt`, `ScreenOff`, `InitBuffer` |
 | M2 T70 S6 | 9 | `RotPRandomBit`, `Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipSprite0`, `SkipMainOper`, `MoveAllSpritesOffscreen`, `MoveSpritesOffscreen`, `SprInitLoop` |
@@ -349,15 +349,15 @@ transfer existing ownership or allocate a numeric T.
 | 1507 | `GetAlternatePalette1` | M2 T70 S13 | existing closure backlog; Accepted source-order screen palette maintenance;prior evidence retained. | M2 T24 S1 |
 | 1512 | `SetVRAMAddr_B` | M2 T70 S13 | existing closure backlog; Accepted source-order screen palette maintenance;prior evidence retained. | M2 T24 S1 |
 | 1513 | `NoAltPal` | M2 T70 S13 | existing closure backlog; Accepted source-order screen palette maintenance;prior evidence retained. | M2 T24 S1 |
-| 1517 | `WriteTopStatusLine` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1524 | `WriteBottomStatusLine` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T19 S5; M2 T24 S1 |
-| 1553 | `DisplayTimeUp` | M2 T52 S5 | existing closure backlog; Owner-approved T52 corrective continuation under the continuing M2 ROM-equivalence mandate. | M2 T24 S1 |
-| 1560 | `NoTimeUp` | M2 T52 S5 | existing closure backlog; Owner-approved T52 corrective continuation under the continuing M2 ROM-equivalence mandate. | M2 T24 S1 |
-| 1565 | `DisplayIntermediate` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T15 S3; M2 T24 S1 |
-| 1577 | `PlayerInter` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1579 | `OutputInter` | M2 T52 S5 | existing closure backlog; Owner-approved T52 corrective continuation under the continuing M2 ROM-equivalence mandate. | M2 T24 S1 |
-| 1584 | `GameOverInter` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1589 | `NoInter` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
+| 1517 | `WriteTopStatusLine` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
+| 1524 | `WriteBottomStatusLine` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T19 S5; M2 T24 S1 |
+| 1553 | `DisplayTimeUp` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
+| 1560 | `NoTimeUp` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
+| 1565 | `DisplayIntermediate` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T15 S3; M2 T24 S1 |
+| 1577 | `PlayerInter` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
+| 1579 | `OutputInter` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
+| 1584 | `GameOverInter` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
+| 1589 | `NoInter` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
 | 1595 | `AreaParserTaskControl` | M2 T51 S2 | existing closure backlog; Accepted T51 S2 source-contiguous screen/parser output transfer. | M2 T24 S1 |
 | 1597 | `TaskLoop` | M2 T51 S2 | existing closure backlog; Accepted T51 S2 source-contiguous screen/parser output transfer. | M2 T24 S1 |
 | 1603 | `OutputCol` | M2 T51 S2 | existing closure backlog; Accepted T51 S2 source-contiguous screen/parser output transfer. | M2 T24 S1 |
@@ -392,9 +392,9 @@ transfer existing ownership or allocate a numeric T.
 | 1782 | `ExitChkName` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
 | 1784 | `PrintWarpZoneNumbers` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
 | 1790 | `WarpNumLoop` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1804 | `ResetSpritesAndScreenTimer` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1809 | `ResetScreenTimer` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1813 | `NoReset` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
+| 1804 | `ResetSpritesAndScreenTimer` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
+| 1809 | `ResetScreenTimer` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
+| 1813 | `NoReset` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
 | 1825 | `RenderAreaGraphics` | M2 T28 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T18 S2; M2 T21 S4; M2 T24 S1 |
 | 1840 | `DrawMTLoop` | M2 T28 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
 | 1878 | `RightCheck` | M2 T28 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
@@ -2364,7 +2364,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T26 S7 | 2 | 2 | planned-outer-victory-route-equivalence; [record](../../docs/proposals/m2/t26-victory-terminal.md) |
 | M2 T27 | 0 | - | [record](../../docs/proposals/m2/screen-status.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T27 S1 | 0 | 1 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/screen-status.md) |
-| M2 T27 S2 | 0 | 40 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/screen-status.md) |
+| M2 T27 S2 | 0 | 31 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/screen-status.md) |
 | M2 T27 S3 | 0 | 0 | planned-dispatch-integration; [record](../../docs/proposals/m2/screen-status.md) |
 | M2 T28 | 0 | - | [record](../../docs/proposals/m2/t28-area-output-bootstrap.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T28 S1 | 0 | 13 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
@@ -2577,7 +2577,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T52 S2 | 0 | 0 | owner-approved-current-equivalence-remediation, a6-title-demo-world-select-order; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S3 | 0 | 1 | owner-approved-current-equivalence-remediation, a7-floatey-score-timer-order; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S4 | 0 | 0 | owner-approved-current-equivalence-remediation, b2-background-player-palette-fallthrough; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
-| M2 T52 S5 | 0 | 3 | owner-approved-current-equivalence-remediation, b3-timeup-task-handoff; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
+| M2 T52 S5 | 0 | 0 | owner-approved-current-equivalence-remediation, b3-timeup-task-handoff; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S6 | 0 | 1 | owner-approved-current-equivalence-remediation, h9-large-platform-y-source; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S7 | 0 | 0 | owner-approved-current-equivalence-remediation, h1-h8-infeasible-control-edge-disposition; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T53 | 0 | - | [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
@@ -2826,6 +2826,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T70 S11 | 0 | 15 | victory-message-termination-material-repair; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S12 | 0 | 10 | floatey-score-oam-material-repair; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S13 | 0 | 19 | screen-palette-material-order-repair; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S14 | 0 | 12 | hud-intermediate-timer-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M2 T9 | 1 | - | [record](../../docs/etc/architecture/smb1-frame-output-ledger.md); [record](../../docs/history/M2-T9-frame-output-ledger-and-reference-recorder.md); S not recorded |
 | M2 Td | 0 | - | [record](../../docs/proposals/m2-rom-structural-recovery.md); [record](../../docs/states/QUEUE.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -3199,6 +3200,8 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-t70-s12-floatey-2 | M2 T52 S3 | M2 T70 S12 | 3 | Coordinator receives original floating-score chain under owner ongoing M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s13-palette-1 | M2 T27 S1 | M2 T70 S13 | 16 | Coordinator accepts screen palette source-order maintenance under owner M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s13-palette-2 | M2 T52 S4 | M2 T70 S13 | 3 | Coordinator accepts screen palette source-order maintenance under owner M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s14-hud-1 | M2 T27 S2 | M2 T70 S14 | 9 | Coordinator accepts under owner ongoing M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s14-hud-2 | M2 T52 S5 | M2 T70 S14 | 3 | Coordinator accepts under owner ongoing M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3699,3 +3702,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T70 S11 | 15 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S12 | 10 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S13 | 19 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S14 | 12 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |

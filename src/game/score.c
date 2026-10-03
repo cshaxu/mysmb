@@ -67,17 +67,18 @@ mysmb_u8 mysmb_status_queue_title_score(struct mysmb_game *game)
 mysmb_u8 mysmb_status_queue_bottom_line(struct mysmb_game *game)
 {
     mysmb_u8 offset;
-    if (game->ram[0x0300U] != 0U) return 0U;
-    if (mysmb_status_queue_score_coin(game) == 0U) return 0U;
+    /* ROM $865a-$8692 WriteBottomStatusLine always calls GetSBNybbles.
+     * X stays fixed for all absolute indexed writes, even near page end. */
+    (void)mysmb_status_queue_score_coin(game);
     offset = game->ram[0x0300U];
-    game->ram[0x0301U + offset++] = 0x20U;
-    game->ram[0x0301U + offset++] = 0x73U;
-    game->ram[0x0301U + offset++] = 3U;
-    game->ram[0x0301U + offset++] = (mysmb_u8)(game->ram[0x075fU] + 1U);
-    game->ram[0x0301U + offset++] = 0x28U;
-    game->ram[0x0301U + offset++] = (mysmb_u8)(game->ram[0x075cU] + 1U);
-    game->ram[0x0301U + offset] = 0U;
-    game->ram[0x0300U] = offset;
+    game->ram[0x0301U + offset] = 0x20U;
+    game->ram[0x0302U + offset] = 0x73U;
+    game->ram[0x0303U + offset] = 3U;
+    game->ram[0x0304U + offset] = (mysmb_u8)(game->ram[0x075fU] + 1U);
+    game->ram[0x0305U + offset] = 0x28U;
+    game->ram[0x0306U + offset] = (mysmb_u8)(game->ram[0x075cU] + 1U);
+    game->ram[0x0307U + offset] = 0U;
+    game->ram[0x0300U] = (mysmb_u8)(offset + 6U);
     return 1U;
 }
 

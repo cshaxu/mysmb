@@ -1,5 +1,30 @@
 # M2 ROM conformance node progress
 
+## Current reporting boundary
+
+See [CURRENT](CURRENT.md) for current counts and the
+[bounded final-audit contract](../proposals/m2/t70-final-current-certification.md#owner-directed-bounded-final-audit-contract)
+for remaining work/exit conditions. Historical1992/1992 means mapping coverage.
+Prior aggregate exact counts below retain their closure-time local-contract
+meaning;they are not full current-build certification. Final contract review
+has a separate registry with an explicit fixed1992-node/4275-control universe.
+Material617 is a partial enumerated set;its global denominator is unknown.
+The full current-build node/edge/output/gameplay certificate is **not issued**.
+
+## M2 T70 S14 - locally closed;global final certificate incomplete
+
+[Scoped repair and reporting correction](../proposals/m2/t70-final-current-certification.md#s14-p1-closure---scoped-hudintermediate-repair-and-honest-certificate-boundary).
+12 HUD/intermediate nodes and24 listed feasible relations re-audited;fixed
+bottom writer cursor/guard and canonical shared output/timer order.8192
+original roots+448 persistent records match both widths;seven source branch
+sites both outcomes.5 focused tests each,six600-frame regressions,original
+DOS16 link and3 refreshed EXEs pass. Historical mapping1992/1992;local ledger
+1992 accepted nodes/4275 accepted feasible controls(raw4342,infeasible67).
+Material617 partial,global total unknown. Final contract review is separately
+0/1992 and0/4275;no full-current-build certificate. S14 closed,T70 open,
+no successor admitted;fixed remaining A-N/data/output/gameplay obligations
+are in CURRENT and the bounded final-audit contract.
+
 ## M2 T70 S13 - closed screen palette material/order proof
 
 [19-node palette proof](../proposals/m2/t70-final-current-certification.md#s13-p1-closure---source-ordered-screen-palette-material-chain).

@@ -1,31 +1,41 @@
 # Project Status
 
-## M2 T70 S13 Packet
+## M2 T70 S14 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S13 P1 closed;T70 open,next S unadmitted. |
-| Admission And Approval | Coordinator receives19 source-order screen palette nodes under owner ongoing M2 mandate. |
-| Objective | Restore original temporary status/background and address-control/task write order;prove palette table/cursor/material chains. |
+| Identifier Mode | Continuation:M2 T70 S14 P1 closed;T70 open,no successor S admitted. |
+| Admission And Approval | Coordinator receives12 HUD/intermediate timer nodes under ongoing owner M2 mandate. |
+| Objective | Restore original shared timer child and task/output write order;prove HUD/intermediate material handoffs. |
 | Non-goals | No emulator/platform game logic,global material completeness or fresh historical credit. |
-| Reference Baseline | Historical1992/1992,incoming1992/1992 nodes,4275/4275 controls(raw4342,infeasible67),604/604 material partial. |
-| Candidate Proposal | [S13 palette chain](../proposals/m2/t70-final-current-certification.md#s13-p1-admission---screen-palette-selection-and-command-material-chain). |
-| Files And ABI Surface | game.c screen leaves1/9/10/11 with actual area.c palette child;accepted JumpEngine/IncSubtask dependency,no ABI/platform fork. |
+| Reference Baseline | Historical1992/1992,incoming1992/1992 nodes,4275/4275 controls(raw4342,infeasible67),613/613 material partial. |
+| Candidate Proposal | [S14 HUD chain](../proposals/m2/t70-final-current-certification.md#s14-p1-admission---hud-and-intermediate-screen-timer-chain). |
+| Files And ABI Surface | game.c tasks2-7 with actual area/status/score/OAM children;no platform or ABI fork. |
 | Applicable Rules | [Execution](../rules/EXECUTION.md), [Architecture](../rules/ARCHITECTURE.md), [Coding](../rules/CODING.md), [Documentation](../rules/DOCUMENT.md), [Source policy](../etc/operations/policy/source-policy.md); README Task Reading Set and current-equivalence proof program. |
-| Verification | 36864 original roots+1440 persistent records both widths zero full scoped RAM diff;6 conditionals both outcomes,28 table bytes read,29184 source-order checks,5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass. |
-| Expected Markers | Scope19 exact names in proposal,fresh0,max1992;two reopened write-order contracts restored/re-audited. |
+| Verification | 8192 original roots+448 persistent records match both widths;12 entries/7 branches,1468 order checks;5 focused checks each,6x600 routes,original DOS link and3 EXEs. |
+| Expected Markers | Scope12 locally re-audited;fresh0,max1992;three reopened discrepancies repaired,no unresolved local diff. |
 | Asset Needs | Owner ROM/ASM read-only local nonredistributable;ignored build128MiB/process120seconds/root4096steps/batch1024,raw cleanup. |
-| Reporting Requirements | Historical1992/1992,current1992/1992 exact nodes,4275/4275 controls(raw4342,infeasible67),613/613 material partial. |
+| Reporting Requirements | Separate historical mapping,local ledger dispositions,final-reviewed node/control totals,partial material denominator and named remaining work;no aggregate exact as full certification. |
 | Stop Conditions | Scoped diff requires repair receipt and repeat source/ROM audit;no source edits during builds. |
-| Exit Criteria | Met:19 scoped node/graph/material contracts exact after order restoration,9 new paths proved,dual checks/products/gates complete;global certificate open. |
+| Exit Criteria | Met for scoped12-node contracts only;final global contract review/material/bindings/pixels/full-route certification remains incomplete. |
 | Original Owner Request | Complete M2 by original-ROM node and edge alignment in planned source order; repair within each S and report cumulative totals. |
-| Similar-Issue Sweep | Palette temporary state/write order,all palette callers,absolute indexed VRAM/cursor and source table binding. |
+| Similar-Issue Sweep | All screen timer reset callers and HUD/intermediate task/output write order. |
 
 ## Current Technical Baseline
 
-- Historical mapping: **1992/1992**, not current certification.
-- Current exact nodes: **1992/1992**;two screen-palette write-order contracts restored/re-audited.
-- Current exact feasible controls: **4275/4275** (raw4342,infeasible67);actual floatey DumpTwoSpr call restored.
-- Exact material relations: **613/613**, enumeration partial;9 screen palette paths added.
-- Latest three products are T70 S13 P1 builds with original palette write order.
-- T70 S13 closed;global material/numeric binding/output/end-to-end duties remain.
+- **Full M2 certification: NOT COMPLETE.** Existing exact rows are scoped
+  proof acceptance,not a certificate of all source semantics or integration.
+- Historical mapping1992/1992;retained local-contract ledger1992 accepted nodes and
+  4275 accepted feasible controls,no unresolved S14 discrepancy(raw4342,
+  feasible4275,infeasible67). These are ledger dispositions,not final coverage.
+- Final contract-review register:0/1992 nodes and0/4275 feasible controls
+  explicitly adjudicated under the new complete contract. Previous proofs
+  remain reusable,not discarded;earlier final-review completion is uncounted.
+- Material617 locally accepted paths;enumeration partial,global total unknown.
+- S14 three discrepancies repaired and scoped checks complete;8192 original
+  roots+64 protocols/448 records,focused/frame/native/DOS link checks pass.
+  Three refreshed assets include existing audio/title/focus pause changes.
+- Remaining:final source/branch/alias and control review A-N;complete material
+  use/producer enumeration;all numeric bindings;split pixels;full gameplay
+  matrix;one final source/build snapshot. No successor S admitted.
+- [Remaining scope and exit contract](../proposals/m2/t70-final-current-certification.md#owner-directed-bounded-final-audit-contract).

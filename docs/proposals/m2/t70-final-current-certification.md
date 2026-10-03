@@ -1935,3 +1935,271 @@ I/O/presentation/terrain work preserved.
 | mysmb16.exe | 258719 | 3164819f0d6ac0cfeecc84bc350efa967a69858319445e6ffa5a499d051e7739 |
 | mysmb32.exe | 372392 | 52200477007169e08e676a423cf2d4d5224419201941ca96c624d1d061d76eec |
 | mysmb64.exe | 379424 | c31c9c462da3801d7e18186a99b829157912d286057e2c6e38a5d631d76d15cd |
+
+## S14 P1 admission - HUD and intermediate screen timer chain
+
+Scope12 in source order:WriteTopStatusLine,WriteBottomStatusLine,DisplayTimeUp,
+NoTimeUp,DisplayIntermediate,PlayerInter,OutputInter,GameOverInter,NoInter,
+ResetSpritesAndScreenTimer,ResetScreenTimer,NoReset. Incoming historical and
+current exact1992/1992,controls4275/4275(raw4342,infeasible67),material613/613
+partial. All scope labels incoming exact;fresh expected0,max1992. Coordinator
+receives these maintenance nodes under continuing owner M2 authorization.
+S13 palette chain closed;this cohort-B screen chain owns game.c tasks2-7.
+Accepted actual area.c text,score.c/status.c number writer and OAM intermediate
+player dependencies execute real bodies. JumpEngine,IncSubtask,IncModeTask_B
+and sprite clearing retain accepted dependency evidence;no new child credit.
+Entry ScreenRoutines tasks2-7;exit next task or mode increment/NoReset return.
+Area parser task8 is the accepted successor and not executed by this scope.
+
+Source audit finds duplicated ResetScreenTimer logic and reversed task/output
+enable ordering in OutputInter. Restore one shared timer child plus its sprite
+reset caller. Reopen OutputInter and ResetScreenTimer and their actual call
+relation before repair. Final-RAM equivalence cannot prove source write order;
+do not invent a visible symptom for this deviation.
+
+ROM track:controlled unmodified original dispatches with actual text/status/
+OAM children,patterned full RAM,byte boundary buffer offsets/world/level/lives,
+all mode/entrance/castle/disable and expired/nonexpired timer alternatives.
+Record scoped entries/conditional outcomes and original task-before-output
+write order;compare both native C90 widths,excluding only opcode-confirmed
+physical stack pushes. Source budgets128MiB/process120seconds/root4096steps,
+batch1024,unique ignored outputs and raw cleanup. Original local ROM/ASM are
+read-only nonredistributable research inputs,not imported or patched.
+
+Operational track:focused screen/core/NMI/purity/Win32 checks each width,
+six600-frame retained routes,original OpenNT DOS16 compile/link and all three
+refreshed EXEs when source changes. Similar sweep covers all ResetScreenTimer
+and ResetSpritesAndScreenTimer callers and status/intermediate task writes.
+No platform/ABI fork or runtime emulator. Standing owner EXE commit approval;
+no push and unrelated I/O/presentation/terrain work preserved. Global material
+enumeration,output fidelity and end-to-end M2 certificate remain open.
+
+S14 pre-repair original8192-root comparison:only task3 nonzero buffer cases differ.
+Source audit confirms invented nonzero-buffer guard and moving byte cursor
+instead of fixed-X absolute operands in score.c bottom writer. Reopen this
+scoped node,remove guard and restore original fixed-X writes;repeat same
+matrix. These are controlled legal indexed inputs,not a claim normal screen
+startup naturally presents a full buffer. All other task routes match RAM
+but OutputInter source order/shared call still requires its admitted repair.
+
+## Owner-directed bounded final-audit contract
+
+This section corrects the interpretation of prior aggregate exact reports.
+It does not rewrite historical closure evidence. CURRENT is the sole current
+dashboard;the registry finalCertification section records final-review work
+separately from retained node/control/material status rows. Existing exact
+rows are accepted **scoped contracts**,not a full current-build certificate.
+Historical1992/1992 is mapping coverage only. Neither count proves complete
+source semantics,all material links,all output pixels or playable end-to-end
+behavior. Earlier final-review progress was not explicitly counted;do not
+invent it retroactively. The new final contract-review register starts with
+0 reviewed nodes and0 reviewed feasible controls;all prior proofs remain
+available for reuse after their limits and freshness are checked.
+
+### Trust and evidence limits
+
+The1992-label inventory and4342 raw extracted controls are countable source
+records.67 instruction-proven infeasible relations remain in that raw ledger;
+4275 is its feasible subset. These establish a fixed listed review universe,
+not semantic correctness. No claim is made that metadata validation proves
+extractor completeness or resolves dynamic data flow.
+
+Accepted original-ROM/native routes remain useful for their exact fixture,
+source/child entries,compared fields and listed exclusions. S12 floatey and
+S13 palette proofs demonstrate their tested byte-domain contracts;their
+repairs and zero-diff results are not withdrawn. They do not prove arbitrary
+unexecuted state,unreviewed branches,caller interactions or full output.
+Older proofs may be reused only after current owner/data/dependency changes
+are checked. A passing evidence-file existence gate proves no such freshness.
+There is presently no evidence-backed number for globally certified nodes
+or edges. Report that as **not certified**,not1992/1992 exact. The617 existing
+material rows are locally accepted paths;the complete material denominator
+is unknown and must not be reported as613 total possible paths.
+
+S14 currently holds three reopened discrepancies. Bottom status invented a
+nonzero-buffer early return and wrapped absolute write addresses;under a
+nonempty legal controlled cursor it suppresses/corrupts the expected command.
+No assertion that normal cold startup reaches that cursor is justified.
+OutputInter reversed the task/output-enable stores;ResetScreenTimer was
+duplicated instead of called as the shared original child. These last two
+have source-order/graph differences without an established prior visible
+RAM symptom. Shared fixes are in progress;full S closure/products are pending.
+Do not call a repair complete solely because a local RAM replay is equal.
+
+### Fixed remaining review universe
+
+Each row below uses exact labels/control IDs from the existing registry,
+copied into finalCertification.cohortReview. Review A through N in original
+source order. These are bounded work groups inside open T70,not new admitted
+T/S identifiers. An implementation S receives its exact chain and ledger
+custody before edits. Split a group at real owner/route boundaries,typically
+20-50 nodes per chain;do not create one lifecycle per tiny data label.
+
+| Source group | Listed nodes | Listed feasible controls | Existing material paths | Final-review disposition |
+| --- | --- | --- | --- | --- |
+| A: reset/NMI/title/demo/victory | 97 | 235 | 50 | Pending final contract review |
+| B: screen/HUD/text | 67 | 122 | 20 | Pending final contract review |
+| C: area setup/parser/VRAM | 260 | 519 | 54 | Pending final contract review |
+| D: metatiles/block buffer | 146 | 111 | 12 | Pending final contract review |
+| E: game dispatcher/transitions | 80 | 239 | 1 | Pending final contract review |
+| F: player physics | 62 | 122 | 12 | Pending final contract review |
+| G: fireballs/bubbles/timers | 49 | 133 | 8 | Pending final contract review |
+| H: blocks/items/movement | 129 | 339 | 20 | Pending final contract review |
+| I: enemy stream/initialization | 165 | 412 | 62 | Pending final contract review |
+| J: enemy movement/collisions | 497 | 1257 | 245 | Pending final contract review |
+| K: block queries/OAM objects | 154 | 307 | 26 | Pending final contract review |
+| L: player graphics/relative/offscreen | 83 | 164 | 10 | Pending final contract review |
+| M: effects/music dispatch | 126 | 266 | 5 | Pending final contract review |
+| N: music streams/data | 77 | 49 | 92 | Pending final contract review |
+
+All1992 nodes and4275 listed feasible controls require an explicit final
+contract disposition. Reuse accepted proofs rather than re-running identical
+cases blindly. Review all67 infeasibility justifications when closing the
+control universe. The table's material counts are existing paths,not bounds
+on remaining work;additional feasible paths are added only by source proof.
+Out-of-scope discoveries receive one named pending entry/receiver and are
+included in the relevant remaining group. They cannot silently reopen a
+closed group or be hidden by its local exact counter.
+
+### Work and acceptance contracts
+
+1. **Node/source audit:** for each label,record exact original address/range,
+   current C body and live data binding,all source branches and byte/carry/
+   wrap/alias domains,reads,writes,store order and return contract. Every
+   clause has source evidence and a test/proof disposition;uncovered clauses
+   remain pending. Current-source/dependency identities bind reused evidence.
+2. **Control audit:** for each feasible ID,prove real caller/callee or tail/
+   branch/fallthrough/vector counterpart,parameters,scratch/state and return
+   propagation. Actual children run;no fixture substitution certifies them.
+   Cycles are closed through persistent protocols,not isolated call equality.
+3. **Material enumeration:** cover every original consumed RAM/register/table
+   value,its feasible producers,overwrite/alias paths,slot/page/index domains
+   and lifetime across calls/cycles. Log unresolved uses and alias domains.
+   Do not use a writer-reader cartesian product. Each use resolves to proved
+   material IDs or a source-backed non-game/immutable/ABI explanation. Close
+   enumeration only when every source group has zero unresolved uses;then
+   freeze the denominator and audit every enumerated feasible path.
+4. **Data bindings:** derive the complete original table/pointer use manifest,
+   reconcile executable numeric addresses with the corrected listing,prove
+   legal byte ranges/page carry/aliasing and current bound bytes. Annotation
+   correction or1992 ASM address checks alone cannot close this obligation.
+5. **Output and operational matrix:** compare actual completed pixels under
+   real sprite-zero/fine-X scroll alternatives,and retained palette/OAM/audio
+   output. Run source-bound title/start/play,power-ups/collisions/fireballs,
+   pause/death/restart,pipes/vines/warps,end-world and final completion routes.
+   Publish compared fields,coverage and exclusions. Six600-frame smoke routes
+   are regression evidence,not a full-game matrix. x86/x64 must agree with
+   original scoped contracts;original DOS16 shared-source compilation/link
+   stays required. DOS graphical/486 qualification remains explicitly M3/M4.
+6. **Final snapshot:** bind all accepted contracts and regression to reviewed
+   source/data identities and the three build identities. Any source change
+   invalidates affected/dependent contracts until reviewed,not unrelated
+   evidence automatically. Platform purity is mandatory;platform code cannot
+   supply missing game logic.
+
+Per-S result is no-diff or named-diff,plus exact reviewed labels/edges/material
+and remaining clauses. A diff stays in that S through repair and repeat audit;
+code changes require three refreshed EXEs. Unchanged audit work does not.
+Report cumulative final-reviewed/total separately from local ledger status.
+
+**T70/M2 exit:** all1992 node contracts and4275 feasible control contracts
+reviewed on the final snapshot;67 infeasible proofs retained;complete material
+denominator frozen with every feasible path accepted;zero unresolved table,
+alias,output or route differences;full matrix and cross-width operational/
+platform checks pass;no pending S/deferred M2 semantic obligation. The later
+DOS hardware obligations stay visibly in M3/M4 and cannot be represented as
+already validated by a successful link. Until all of these hold,the project
+is not fully certified,regardless of existing exact rows.
+
+## S14 P1 closure - scoped HUD/intermediate repair and honest certificate boundary
+
+All12 admitted labels retain locally accepted scoped contracts:
+WriteTopStatusLine,WriteBottomStatusLine,DisplayTimeUp,NoTimeUp,
+DisplayIntermediate,PlayerInter,OutputInter,GameOverInter,NoInter,
+ResetSpritesAndScreenTimer,ResetScreenTimer,NoReset.24 outgoing listed feasible
+relations reviewed with actual children. Fresh expected/actual historical0,
+no deferred local labels;maintenance custody remains S14. T70 stays open,
+no successor S admitted. These local acceptances do not close the separate
+final contract review or global M2 obligations described above.
+
+WriteBottomStatusLine source865a-8692 always enters GetSBNybbles,then reloads
+buffer cursor into fixed X. Its seven absolute indexed writes may span pages;
+only final TXA/ADC6 wraps the persisted cursor. Removed invented nonzero
+cursor return and moving-byte cursor addresses. New neutral regression uses
+initialf0→post-scorefe,header03ff..0405,world/levelff→0,finalcursor4. Both
+players/all256 initial cursors and byte-boundary world/level pairs compared
+with unmodified original ROM. Do not claim normal startup naturally hits a
+nonempty boundary cursor solely from these controlled states.
+
+Actual shared OutputInter child now joins lives/time-up callers and invokes
+one ResetScreenTimer. Timer7 store then task increment precede DisableScreen0.
+Sprite-wait tasks5/7 call one ResetSpritesAndScreenTimer,which reads timer,
+returns unchanged when nonzero or clears real sprites then calls timer child.
+Source order/graph is proven by source review and actual original entries;
+prior equal final RAM was not proof of these operation/call orders. Source
+NoTimeUp advances twice,GameOverInter increments live mode task after real
+text,castle branches precede disable-intermediate,NoInter jumps to task8.
+Accepted actual WriteGameText,GetSBNybbles,DrawPlayer_Intermediate,
+MoveAllSpritesOffscreen,JumpEngine/IncSubtask/IncModeTask_B are not stubbed.
+
+8192 original ScreenRoutines roots:1024 top-status player/name/mode cases,
+2048 bottom-status cursor/player/world/level pairs,1024 expiration/mode cases,
+2048 mode/entry/area/disable/lives combinations,2048 wait-timer5/7 cases.
+64 persistent7-call protocols add448 records through tasks2→3→4→5(wait)→
+5(expired)→6→7→8. Produced command cursor and timer7 survive between calls;
+fixture injects expiration0 before reset leaves. No NMI buffer drain/decrement
+or task8 execution is claimed. Four life values include0/9/10/255. All12
+scoped entries and seven conditional sites both outcomes observed;1468
+original output routes confirm task-before-output enable. Both actual C90
+widths match all2048 RAM plus return discriminator,excluding only physically
+observed opcode JSR/PHA/PHP pushes(case mask,cumulative within each protocol,
+union01f7-01fd). All other zero-page/stack-page game bytes remain compared.
+Original PC return8057 and SPff checked;native records byte-identical. Source
+RAM patterns catch omitted writes. Original program/children are unmodified.
+No general claim that every possible RAM/alias input is covered by this set.
+
+Four actual material paths614-617 register score-cursor consumption,lives/
+time-up selectors and produced timer7 wait consumption. Total617 is partial
+enumeration;global denominator unknown. No command→IncSubtask edge invented
+where that leaf does not consume commands. Final contract review remains
+explicitly0/1992 nodes and0/4275 feasible controls;this starts a new acceptance
+register,does not discard prior scoped proofs or retroactively invent credit.
+
+Operational:five focused screen/core/NMI/purity/Win32 self-tests pass each
+width after final source rebuild;original OpenNT shared-source DOS16 link0
+retains optional OLDNAMES.LIB warning. Six600-frame retained source/native
+idle/start/pause/right/run-jump/select routes match their declared ABI:
+RAM0200-07ff except0778/0779,all CIRAM/palette/OAM/audio/PPU scalars;ordinal,
+zero-page and physical stack outside frame ABI. Local roots compare full RAM
+separately. These are short regression routes,not full gameplay or per-pixel
+output evidence. Three final MZ products copied/hash-verified. Audio/title
+and focus-loss pause are already committed changes included in these builds;
+no unrelated I/O/presentation/terrain work included.
+
+Similar sweep:tasks4/6 converge into one output child;tasks5/7 into one sprite
+timer leaf;no remaining inline ScreenTimer7 reset found in screen owner.
+Bottom writer source guard/cursor repaired;accepted status numeric child
+already uses source absolute +3 operands and byte-X loop. All source game
+logic remains shared;no platform,ABI or runtime emulator changes.
+
+Report correction is now mandatory in Execution and CURRENT. Registry has
+fixed exact label/edge review groups separate from local status;checker
+prints metadata-only and final-incomplete explicitly. Four negative fixtures
+reject false complete-with-partial-evidence,unknown/duplicate reviewed labels
+and a missing cohort label. This validates accounting,not source semantics.
+Whole-project audit is not claimed complete and no further S is admitted.
+
+Initial all-target native builds were stopped after owner requested boundary
+reconciliation;targeted final product/recorder/focused targets succeed. One
+target attempt used product OUTPUT_NAME instead of CMake target name and was
+corrected to mysmb_win32. Neither failed/stopped attempt is accepted evidence.
+Temporary code/trace/log/test metadata stays ignored below build;raw RAM and
+frame records deleted. Standing owner authorization permits three EXE commits,
+no ROM import or push. Full final-review/material/data/output/route certificate
+remains pending under the fixed acceptance plan.
+
+| Product | Bytes | SHA256 |
+| --- | --- | --- |
+| mysmb16.exe | 258687 | ce47ea4071e704adc71783362313ef8a5a0af6b37804bd6eb9e0ce85c53979d6 |
+| mysmb32.exe | 372606 | 76e5e51cd150f15886b6bdc8f9713dd5c8232ff42c4afe56110e0db7ee9201ff |
+| mysmb64.exe | 379635 | 29b81ecb2ca50445e4538dfd56468c184ca100d2de691cf6aaeff3a73a79eb4f |

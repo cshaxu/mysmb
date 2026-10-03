@@ -181,3 +181,17 @@ Build trees, generated C/data, traces, and ROM-derived executables are local out
 ## Recorder Trace Containment
 
 An owner-ROM trace run declares a unique ignored output path, time/no-progress and byte budgets, checkpoints, and cleanup owner. Raw traces are never fixtures or committed evidence; retain only neutral summaries needed by an admitted S.
+
+## Final-certificate reporting boundary
+
+Retained `exact` rows accept the scoped contract and route in their evidence;
+they do not establish exhaustive current-build or end-to-end equivalence.
+Every report distinguishes historical mapping,local evidence dispositions,
+final contract-reviewed nodes/feasible controls and material enumeration.
+Never use an aggregate exact count to imply that unreviewed branch/alias,
+material,table,output or integration obligations are complete. Final review
+records current source/dependency identities and each obligation's evidence
+or named pending clause. Unknown material totals remain explicitly unknown.
+CURRENT and the registry finalCertification section own this distinction;
+the active final-certification proposal owns the fixed remaining scope and
+exit contract. Prior closure counts remain historical rather than rewritten.
