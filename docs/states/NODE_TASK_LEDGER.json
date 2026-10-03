@@ -767514,7 +767514,20 @@
         "LimitB",
         "ExtendLB",
         "TooFar",
-        "ExScrnBd"
+        "ExScrnBd",
+        "FireballEnemyCollision",
+        "FireballEnemyCDLoop",
+        "GoombaDie",
+        "NotGoomba",
+        "NoFToECol",
+        "ExitFBallEnemy",
+        "ChkBuzzyBeetle",
+        "HurtBowser",
+        "ChkOtherEnemies",
+        "ShellOrBlockDefeat",
+        "StnE",
+        "GoombaPoints",
+        "ExHCF"
       ],
       "baseline": 1992,
       "incomingComplete": [

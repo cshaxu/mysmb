@@ -22653,8 +22653,8 @@
     "unclassified": 0
   },
   "controlEdgeCounts": {
-    "exact": 4263,
-    "infeasible": 78,
+    "exact": 4262,
+    "infeasible": 79,
     "needs-evidence": 1
   },
   "controlEdgeTypeCounts": {
@@ -50091,10 +50091,12 @@
       "currentCounterpart": "src/game/world/fireball_enemy.c:mysmb_world_fireball_enemy_collision",
       "semanticEvidence": [
         "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns for zero/d7 fireball state or odd frame; otherwise computes fireball box slot*4+$1c and scans enemy slots four down to zero.",
       "currentSourcePaths": [
@@ -50110,10 +50112,12 @@
       "currentCounterpart": "src/game/world/fireball_enemy.c:mysmb_world_fireball_enemy_collision",
       "semanticEvidence": [
         "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Saves enemy and fireball box identity each iteration, excludes defeated/inactive/ID-range/ineligible-Goomba/offscreen enemies, tests boxes and marks fireball d7 on hit without ending scan.",
       "currentSourcePaths": [
@@ -50129,10 +50133,12 @@
       "currentCounterpart": "src/game/world/fireball_enemy.c:mysmb_world_fireball_enemy_collision",
       "semanticEvidence": [
         "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "For Goomba only rejects state >=2 before common masked-offscreen and box path.",
       "currentSourcePaths": [
@@ -50148,10 +50154,12 @@
       "currentCounterpart": "src/game/world/fireball_enemy.c:mysmb_world_fireball_enemy_collision",
       "semanticEvidence": [
         "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Rejects nonzero masked offscreen bits then computes enemy box slot*4+4 for collision child.",
       "currentSourcePaths": [
@@ -50167,10 +50175,12 @@
       "currentCounterpart": "src/game/world/fireball_enemy.c:mysmb_world_fireball_enemy_collision",
       "semanticEvidence": [
         "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Restores fireball box and decrements enemy slot; high-bit termination follows slot zero.",
       "currentSourcePaths": [
@@ -50186,10 +50196,12 @@
       "currentCounterpart": "src/game/world/fireball_enemy.c:mysmb_world_fireball_enemy_collision",
       "semanticEvidence": [
         "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint."
+        "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass."
+        "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Restores source ObjectOffset-equivalent fireball slot and returns.",
       "currentSourcePaths": [
@@ -50224,10 +50236,12 @@
       "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
       "semanticEvidence": [
         "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Computes the relative enemy sprite position, starts from live $01, and only substitutes the low-nibble paired slot when its ID is Bowser before the immunity and defeat dispatch.",
       "currentSourcePaths": [
@@ -50243,10 +50257,12 @@
       "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
       "semanticEvidence": [
         "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Rejects Buzzy Beetle immediately, sends Bowser to the hit-point chain, and forwards every other selected ID to the fireball eligibility filters.",
       "currentSourcePaths": [
@@ -50262,10 +50278,12 @@
       "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
       "semanticEvidence": [
         "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Decrements BowserHitPoints; only the zero transition initializes vertical state, clears horizontal/frenzy state, assigns vertical speed, selects the world replacement ID and starts the Bowser-fall score tail.",
       "currentSourcePaths": [
@@ -50282,12 +50300,14 @@
       "semanticEvidence": [
         "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
         "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Writes $23 for worlds below three and $20 otherwise, queues BowserFall, restores current enemy offset and routes score modifier nine to the common smack-score tail.",
       "currentSourcePaths": [
@@ -50303,10 +50323,12 @@
       "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
       "semanticEvidence": [
         "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Rejects BulletBill frenzy ID, Podoboo and IDs at or above $15 before shell/block defeat handling.",
       "currentSourcePaths": [
@@ -50322,10 +50344,12 @@
       "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
       "semanticEvidence": [
         "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "For Piranha, preserves CMP carry into ADC #$18, producing Y+$19 before stun; all eligible enemies are stunned, given defeat-state d5 and routed to source score selection.",
       "currentSourcePaths": [
@@ -50341,10 +50365,12 @@
       "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
       "semanticEvidence": [
         "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Calls the common stun routine, masks state with $1f, sets d5, assigns default score two and uses Hammer Bro score six before the Goomba discriminator.",
       "currentSourcePaths": [
@@ -50360,10 +50386,12 @@
       "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
       "semanticEvidence": [
         "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Replaces the default score with one only for Goomba, otherwise preserving the score selected by the preceding branch.",
       "currentSourcePaths": [
@@ -50380,12 +50408,14 @@
       "semanticEvidence": [
         "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
         "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Uses the current enemy slot and score modifier for floatey-number setup, then queues EnemySmack on Square1 before the common return.",
       "currentSourcePaths": [
@@ -50401,10 +50431,12 @@
       "currentCounterpart": "src/game/world/fireball_hit.c:mysmb_world_handle_fireball_enemy_hit / mysmb_world_shell_or_block_defeat",
       "semanticEvidence": [
         "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns to each caller without altering the selected enemy slot or the completed fireball-hit result.",
       "currentSourcePaths": [
@@ -113381,16 +113413,18 @@
       "instruction": "bne",
       "id": "control-02222",
       "cohort": "J",
-      "status": "exact",
-      "currentCounterpart": "shared world/fireball_hit.c response path with named OAM/enemy-init/score children",
+      "status": "infeasible",
+      "currentCounterpart": "none: impossible original fallthrough; shared C preserves Bowser score tail",
       "semanticEvidence": [
         "Td S9 B16i fireball-hit response integration audit: source endpoint, predicate, slot/register handoff and call/return ordering compared with the shared fireball_hit.c response path; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
+        "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
       ],
       "operationalEvidence": [
-        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
       ],
-      "semanticContract": "Preserves original fallthrough relation SetDBSte -> ChkOtherEnemies with its source predicate, selected slot and state/table handoff ordering.",
+      "semanticContract": "Original D785 LDA #09 sets Z0; D787 BNE EnemySmackScore immediately consumes unchanged Z and must branch. Extracted SetDBSte -> ChkOtherEnemies fallthrough is infeasible;no interior incoming original reference.",
       "currentSourcePaths": [
         "src/game/world/fireball_hit.c"
       ]
@@ -161851,6 +161885,7 @@
     "control-01929",
     "control-02036",
     "control-02100",
+    "control-02222",
     "control-02708",
     "control-02757",
     "control-02778",
@@ -161902,16 +161937,16 @@
     "control-03784",
     "control-03868"
   ],
-  "infeasibleControlEdgeTotal": 78,
-  "feasibleControlEdgeTotal": 4264,
+  "infeasibleControlEdgeTotal": 79,
+  "feasibleControlEdgeTotal": 4263,
   "finalCertification": {
     "status": "incomplete",
     "authority": "docs/states/CURRENT.md",
     "localExactMeaning": "Accepted scoped semantic/route contracts in retained evidence;not exhaustive current-build or end-to-end certification.",
     "nodeUniverse": 1992,
-    "feasibleControlUniverse": 4264,
+    "feasibleControlUniverse": 4263,
     "rawControlUniverse": 4342,
-    "infeasibleControls": 78,
+    "infeasibleControls": 79,
     "reviewedNodeLabels": [],
     "reviewedControlEdgeIds": [],
     "reviewedMeaning": "Superseded restart accounting;not an active progress counter. Retained scoped proofs remain accepted within their stated limits.",
@@ -166326,7 +166361,6 @@
           "control-02219",
           "control-02220",
           "control-02221",
-          "control-02222",
           "control-02223",
           "control-02224",
           "control-02225",
@@ -168856,16 +168890,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:19labels/94instructions/39RAM joined9boundedclauses;horizontal carry/rider/move order,lift timer/fraction andbounds CPY/ADC/SBC flag lifetimes. Producer/inter-frame pending,no newnode/control credit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:19labels/94instructions/39RAM joined9boundedclauses;horizontal carry/rider/move order,lift timer/fraction andbounds CPY/ADC/SBC flag lifetimes. Producer/inter-frame pending,no newnode/control credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 5986,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 4705,
+        "localInstructionReceiptSites": 6104,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 4587,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 2174,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 1599,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 2208,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 1565,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -168902,7 +168937,6 @@
           "src/game/oam/flagpole_gfx.c": 24,
           "src/game/world/geometry.c": 22,
           "src/game/entry.c shared C90 entry owner": 21,
-          "src/game/world/fireball_hit.c": 21,
           "src/game/enemy/platform_collision.c": 19,
           "src/game/oam/sprite_row.c": 19,
           "src/game/player_modes.c shared C90 player-mode owner": 18,
@@ -168916,7 +168950,6 @@
           "src/game/world/block_buffer.c": 15,
           "src/game/oam/fireworks_gfx.c": 15,
           "src/game/boot.c": 13,
-          "shared game core: world/fireball_enemy.c": 13,
           "src/game shared dispatcher/engine/scroll owners": 10,
           "src/game/world/hammer_collision.c": 10,
           "src/game/world/powerup_collision.c": 10,
