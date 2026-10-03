@@ -1062,3 +1062,139 @@ Unrelated I/O/presentation/terrain work preserved.
 | mysmb16.exe | 258847 | 3bd83fc02682ddfd7c6e135d6b1ab514bb23579ce3555f8064735f48909d6575 |
 | mysmb32.exe | 372392 | e03bd0b27b31db423f396a6f576f460fdba9c0ba7d192b83289c08bc2a2f2501 |
 | mysmb64.exe | 379424 | 48e6433da55a4f806bdae676b206a5398e41a0476d89c51845e0e371db51502a |
+
+## S8 P1 admission - pause state and delayed input material paths
+
+Scope6 original labels:PauseRoutine,ChkPauseTimer,ChkStart,ClrPauseTimer,
+SetPause,ExitPause. Historical1992/1992,current1992/1992 exact nodes,4276/4276
+feasible controls(raw4342,infeasible66),566/566 enumerated material partial.
+Incoming all6 exact;expected fresh0,max1992. Shared frame_root.c pause owner;
+entry8182 through81c5 or the timer's early RTS. Accepted NMI/ReadJoypads caller
+and subsequent top-score/timer/shuffle owners remain separate. This is the
+remaining local pause branch-state proof in the same cohort A NMI owner.
+Existing coarse frame routes do not prove all held-key/timer/status paths.
+
+Audit source mode/task eligibility before timer mutation;nonzero timer only
+decrements;zero timer consumes saved Start and bit7 lock. Source queue gets
+oldstatus+1 before XOR1/OR80 status publication. Releasing Start clears only
+bit7. No title/host focus pause policy or audio handler implementation is in
+scope. Those consumers keep their accepted contracts and ownership.
+
+16384 controlled original roots in16 batches of1024:all4 modes,tasks2/3,
+all256 pause-status bytes,start absent/present,timers0/1/43/255. Compare all
+2048 RAM bytes per case with no zero-page/stack exclusions;source branch
+successors and ordered writes observed separately. CPU register status is
+outside C ABI. Native boolean return is the source RAM0776 d0 used by the
+NMI gate,not a claim to emulate discarded source A/X/Y/P.
+
+Original owner ROM/reviewed ASM read-only,nonredistributable;no imports.
+Unique ignored build,128MiB,120seconds/process,root<=1024 steps,batch<=1024;
+delete raw RAM per batch,retain neutral summaries. Source audit first;any
+confirmed mismatch becomes a received corrective chain in this S and is
+repaired/re-audited before proceeding. No product edits initially,existing
+maintenance receivers retain custody. C90 probes both widths and focused
+pause/NMI/purity/product tests;accepted S7 products retained for audit-only.
+If product code changes,refresh all3 via the existing native/OpenNT toolchain.
+Similar sweep:mode/task bypass,timer hold,bit7 locks,status d0 and queue wrap;
+all local producer-consumer paths require branch/index proof rather than
+writer-reader Cartesian enumeration. T70/M2 remain globally incomplete.
+
+S8 bounded persistent-path extension before execution:128 controlled pause
+protocols (all low7 initial statuses),each47 actual calls:press,43 timer
+decrements,held Start at zero timer,release,repress. Eight batches of16
+protocols/752 roots,each under the same128MiB/120second/root1024-step budget.
+Compare full RAM after each call to prove the persisted bit7/timer/queue
+connection rather than treating arbitrary isolated inputs as a history proof.
+No ReadJoypads or next-frame sound-consumer coverage is inferred from direct
+saved-Start input. Source61 BNE at81bb follows ORA80:Z=0 for all A,so raw
+control00062 fallthrough is infeasible;16k cases observe384 taken/0 false
+but the instruction proof,not zero samples alone,establishes impossibility.
+
+## S8 P1 closure - pause state history and feasible-edge correction
+
+All6 scope labels retain exact source contracts:PauseRoutine,ChkPauseTimer,
+ChkStart,ClrPauseTimer,SetPause,ExitPause. No product mismatch;no game or
+platform edits;expected/actual fresh0,no scoped deferral. Existing maintenance
+receivers retained,the audit S does not take implementation custody.
+Historical1992/1992,current1992/1992 exact nodes,4275/4275 feasible controls
+(raw4342,infeasible67). Three material paths added:569/569 enumerated exact,
+global enumeration partial. S8 closes;T70/M2 global certification remains
+open for complete material paths,numeric binding,within-line output and
+full end-to-end gameplay. Full local state coverage does not replace those.
+
+Source8182-81c5 has these six labels;ChkPauseTimer8194,ChkStart819d,
+ClrPauseTimer81bd,SetPause81c2,ExitPause81c5. Victory mode bypasses task check;
+game mode requires task3;other modes/task return without timer/status/queue
+mutation. Nonzero timer uses DEC and returns without sampling Start. At zero,
+Start present with d7 set returns unchanged;d7 clear sets timer2b,queues
+oldstatus+1 before computing(oldstatus XOR1) OR80,then writes status. Start
+absent clears only bit7. Original INY queue increment cannot wrap fromff on
+that path:the prior bit7 guard restricts oldstatus to0..127. Scope sweep
+records this condition,not a false claim to have observed unreachable wrap.
+The C byte cast remains correct. Local native return is RAM0776 d0,matching
+the source NMI gate reload rather than discarded child A/flags. No audio
+consumer or host title/focus policy is inferred from these shared RAM paths.
+
+Graph correction control00062:source81b9 ORA80 always produces a nonzero
+8-bit A and clears Z;81bb BNE therefore always reaches81c2 SetPause. Its raw
+false/fallthrough edge to81bd ClrPauseTimer is infeasible for every incoming
+A/P. The actual release path is the distinct Start-absent branch control00059.
+Previous broad route evidence incorrectly called this fallthrough covered;
+retain that history with this explicit superseding instruction proof. Do not
+mark it exact or invent a C counterpart. The C Start-present branch publishes
+status and returns;its clear-lock path is a separate Start-absent branch.
+Raw edge identity remains;feasible denominator decreases4276 to4275 and
+infeasible count increases66 to67. No node credit or source behavior changes.
+
+16384 controlled input combinations in16x1024 batches cover4 modes,tasks2/3,
+256 status bytes,Start absent/present and timer0/1/43/255. Full2048 RAM plus
+native gate byte compared per root,without zero-page or stack-RAM exclusions.
+Native gate compares with sourceRAM0776&1,not the source discarded A output.
+CPU registers/stack pointer outside C ABI;sentinel stack input identical,
+real RTS reads those bytes without writing them. Original branch observations
+(taken,fallthrough) at8187,818b,8192,8197,81a2,81a9,81bb are
+(4096,12288),(8192,4096),(2048,2048),(1536,4608),(768,768),(384,384),(384,0).
+All feasible conditional outcomes observed;unreachable last fallthrough is
+proven by OR80 flag semantics,not merely by zero observed samples. Physical
+DEC RAM write-back stages are RAM-only with no device side effects;portable
+C preserves their final decrement/store and original state-machine order.
+The source unconditional branch is omitted by structured C without altering
+its successor. Source byte binding/branch predicates precede these captures.
+
+128 controlled persistent protocols in8 batches of16 (752 calls/batch) each
+perform47 real child calls:press,43 timer decrements,held Start at zero,
+release,repress. Same RAM persists between calls;only saved Start input and
+controlled call stack/PC are supplied.6016 actual returns per width,zero RAM
+or gate differences at every step;no selected-byte
+shortcut:each record contains2048 RAM bytes plus1 gate byte. x86/x64 records
+are byte-identical for all independent and persistent cases. Direct saved
+Start fixtures are explicit controlled routes;ReadJoypads naturally filters
+held input separately,so these are not claimed full controller/NMI/audio runs.
+All raw per-batch RAM outputs deleted;only neutral logs/counts retained.
+
+Material567 ChkStart -> SetPause:old unlocked0776 and saved Start produce
+queue(old+1),then the toggled/locked A stored0776;the C local status and three
+ordered assignments preserve this. Material568 ClrPauseTimer -> SetPause:
+original AND7f result is stored back0776,leaving d0 and lower reserved bits
+unchanged. Material569 SetPause -> ChkStart:published d7 survives43 countdown
+calls and blocks held Start at zero,then release clears it before reactivation.
+Its proof uses actual persistent source/C histories,not independent input
+samples. These are feasible local data paths only;queue-to-SoundEngine and
+pause-to-NMI timer/mode/output consumer connections remain separately owned
+and are not declared complete from this local audit.
+
+Similar sweep covers every local mode/task bypass,timer early return,d7
+lock,release mask,d0 toggle and queue publication. No unresolved local diff.
+Both C90 native probes use the accepted S7 shared library and source owner;
+4/4 focused pause/NMI/purity/product-self-tests per width pass. Accepted S7
+native/OpenNT compilation and3 products retained byte-for-byte,no source
+change and no unnecessary product rebuild. Previous full248-test proof remains
+limited to its accepted unchanged chains. Original CPU reference tool stays
+validation-only,no runtime emulator. Owner ROM/ASM local nonredistributable,
+no imports,ignored budgets upheld. No push;unrelated workspace work preserved.
+
+| Retained S7 product | Bytes | SHA256 |
+| --- | --- | --- |
+| mysmb16.exe | 258847 | 3bd83fc02682ddfd7c6e135d6b1ab514bb23579ce3555f8064735f48909d6575 |
+| mysmb32.exe | 372392 | e03bd0b27b31db423f396a6f576f460fdba9c0ba7d192b83289c08bc2a2f2501 |
+| mysmb64.exe | 379424 | 48e6433da55a4f806bdae676b206a5398e41a0476d89c51845e0e371db51502a |

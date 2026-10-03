@@ -1,5 +1,16 @@
 # M2 ROM conformance node progress
 
+## M2 T70 S8 - closed pause state/material and feasibility audit
+
+[Six-node source/state proof](../proposals/m2/t70-final-current-certification.md#s8-p1-closure---pause-state-history-and-feasible-edge-correction).
+16384 independent full RAM/gate roots and128 persistent47-call protocols
+(6016 calls) per width zero diff;all feasible local branch outcomes observed.
+Rawcontrol00062 OR80/BNE false edge proven infeasible;no C changes required.
+4 focused checks each pass;3 products unchanged from S7.3 material paths added.
+Historical1992/1992,current1992/1992 nodes,4275/4275 feasible controls
+(raw4342,infeasible67),569/569 material partially enumerated;fresh0.
+No scoped deferral or custody transfers;T70/M2 global certification open.
+
 ## M2 T70 S7 - closed original shuffle preset/material chain
 
 [Six-node closure and dual proof](../proposals/m2/t70-final-current-certification.md#s7-p1-closure---original-shuffle-preset-and-material-paths).

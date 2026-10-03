@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 566,
+    "enumeratedCount": 569,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -12459,6 +12459,69 @@
       "currentSourcePaths": [
         "src/game/frame_root.c"
       ]
+    },
+    {
+      "id": "material-00567",
+      "producer": "ChkStart",
+      "consumer": "SetPause",
+      "storage": "old unlocked RAM0776 to queue00fa then toggled/locked RAM0776",
+      "feasiblePath": "After Start and d7 checks,source sets timer2b,queues oldstatus+1,computes XOR1/OR80 and SetPause stores it;C local status and ordered stores preserve the same bytes.",
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step status local,timer/queue/status assignments",
+      "semanticContract": "After Start and d7 checks,source sets timer2b,queues oldstatus+1,computes XOR1/OR80 and SetPause stores it;C local status and ordered stores preserve the same bytes.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
+      ],
+      "cohort": "A",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/frame_root.c"
+      ]
+    },
+    {
+      "id": "material-00568",
+      "producer": "ClrPauseTimer",
+      "consumer": "SetPause",
+      "storage": "RAM0776 bit7 clear-mask to stored RAM0776",
+      "feasiblePath": "With zero timer and no Start,source LDA0776 AND7f flows to SetPause STA0776;C clears only bit7 and preserves d0/lower bits.",
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step RAM0776 &=7f",
+      "semanticContract": "With zero timer and no Start,source LDA0776 AND7f flows to SetPause STA0776;C clears only bit7 and preserves d0/lower bits.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
+      ],
+      "cohort": "A",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/frame_root.c"
+      ]
+    },
+    {
+      "id": "material-00569",
+      "producer": "SetPause",
+      "consumer": "ChkStart",
+      "storage": "persistent RAM0776 d7 input lock across countdown to next zero-timer Start check",
+      "feasiblePath": "A source press sets d7;43 early countdown returns preserve it;the next zero-timer held-Start path tests it and cannot retrigger until a Start-absent clear.128 actual47-call histories prove this path.",
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step persisted status bit7/timer test and later Start guard",
+      "semanticContract": "A source press sets d7;43 early countdown returns preserve it;the next zero-timer held-Start path tests it and cannot retrigger until a Start-absent clear.128 actual47-call histories prove this path.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
+      ],
+      "cohort": "A",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/frame_root.c"
+      ]
     }
   ],
   "cohorts": [
@@ -12537,8 +12600,8 @@
     "exact": 1992
   },
   "controlEdgeCounts": {
-    "exact": 4276,
-    "infeasible": 66
+    "exact": 4275,
+    "infeasible": 67
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -13031,10 +13094,12 @@
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_frame_root_pause_step",
       "semanticEvidence": [
-        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending."
+        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
       ],
       "operationalEvidence": [
-        "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner."
+        "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
       ],
       "semanticContract": "Permits pause only in VictoryMode or GameMode task $03; otherwise returns existing pause bit without changing timer/status.",
       "currentSourcePaths": [
@@ -13049,10 +13114,12 @@
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_frame_root_pause_step",
       "semanticEvidence": [
-        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending."
+        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
       ],
       "operationalEvidence": [
-        "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner."
+        "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
       ],
       "semanticContract": "When GamePauseTimer is nonzero decrements it and returns; when zero proceeds to Start input processing.",
       "currentSourcePaths": [
@@ -13067,10 +13134,12 @@
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_frame_root_pause_step",
       "semanticEvidence": [
-        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending."
+        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
       ],
       "operationalEvidence": [
-        "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner."
+        "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
       ],
       "semanticContract": "Reads controller-one Start, honors the d7 debounce flag, initializes the $2b pause timer and sound queue, then toggles pause bit and sets d7.",
       "currentSourcePaths": [
@@ -13085,10 +13154,12 @@
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_frame_root_pause_step",
       "semanticEvidence": [
-        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending."
+        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
       ],
       "operationalEvidence": [
-        "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner."
+        "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
       ],
       "semanticContract": "When Start is absent at timer zero, clears d7 while preserving the pause bit before storing GamePauseStatus.",
       "currentSourcePaths": [
@@ -13103,10 +13174,12 @@
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_frame_root_pause_step",
       "semanticEvidence": [
-        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending."
+        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
       ],
       "operationalEvidence": [
-        "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner."
+        "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
       ],
       "semanticContract": "Stores the source-computed pause status and falls through to the common return.",
       "currentSourcePaths": [
@@ -13121,10 +13194,12 @@
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_frame_root_pause_step return",
       "semanticEvidence": [
-        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending."
+        "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
       ],
       "operationalEvidence": [
-        "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner."
+        "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
       ],
       "semanticContract": "Returns with GamePauseStatus and GamePauseTimer exactly as selected by the source branch.",
       "currentSourcePaths": [
@@ -52214,10 +52289,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step",
       "semanticEvidence": [
-        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
       ],
       "operationalEvidence": [
-        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths."
+        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
       ],
       "semanticContract": "Original branch relation PauseRoutine -> ChkPauseTimer at source line 879 (beq) must preserve the pause-mode/timer/Start/debounce predicate and resulting status/timer/sound handoff.",
       "currentSourcePaths": [
@@ -52235,10 +52312,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step",
       "semanticEvidence": [
-        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
       ],
       "operationalEvidence": [
-        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths."
+        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
       ],
       "semanticContract": "Original branch relation PauseRoutine -> ExitPause at source line 881 (bne) must preserve the pause-mode/timer/Start/debounce predicate and resulting status/timer/sound handoff.",
       "currentSourcePaths": [
@@ -52256,10 +52335,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step",
       "semanticEvidence": [
-        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
       ],
       "operationalEvidence": [
-        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths."
+        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
       ],
       "semanticContract": "Original branch relation PauseRoutine -> ExitPause at source line 884 (bne) must preserve the pause-mode/timer/Start/debounce predicate and resulting status/timer/sound handoff.",
       "currentSourcePaths": [
@@ -52277,10 +52358,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step",
       "semanticEvidence": [
-        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
       ],
       "operationalEvidence": [
-        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths."
+        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
       ],
       "semanticContract": "Original fallthrough relation PauseRoutine -> ChkPauseTimer at source line 884 (bne) must preserve the pause-mode/timer/Start/debounce predicate and resulting status/timer/sound handoff.",
       "currentSourcePaths": [
@@ -52298,10 +52381,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step",
       "semanticEvidence": [
-        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
       ],
       "operationalEvidence": [
-        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths."
+        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
       ],
       "semanticContract": "Original branch relation ChkPauseTimer -> ChkStart at source line 886 (beq) must preserve the pause-mode/timer/Start/debounce predicate and resulting status/timer/sound handoff.",
       "currentSourcePaths": [
@@ -52319,10 +52404,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step",
       "semanticEvidence": [
-        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
       ],
       "operationalEvidence": [
-        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths."
+        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
       ],
       "semanticContract": "Original branch relation ChkStart -> ClrPauseTimer at source line 891 (beq) must preserve the pause-mode/timer/Start/debounce predicate and resulting status/timer/sound handoff.",
       "currentSourcePaths": [
@@ -52340,10 +52427,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step",
       "semanticEvidence": [
-        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
       ],
       "operationalEvidence": [
-        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths."
+        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
       ],
       "semanticContract": "Original branch relation ChkStart -> ExitPause at source line 894 (bne) must preserve the pause-mode/timer/Start/debounce predicate and resulting status/timer/sound handoff.",
       "currentSourcePaths": [
@@ -52361,10 +52450,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step",
       "semanticEvidence": [
-        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
       ],
       "operationalEvidence": [
-        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths."
+        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
       ],
       "semanticContract": "Original branch relation ChkStart -> SetPause at source line 903 (bne) must preserve the pause-mode/timer/Start/debounce predicate and resulting status/timer/sound handoff.",
       "currentSourcePaths": [
@@ -52379,15 +52470,17 @@
       "instruction": "bne",
       "id": "control-00062",
       "cohort": "A",
-      "status": "exact",
-      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step",
+      "status": "infeasible",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step has no Start-present fallthrough into the separate Start-absent clear-lock path",
       "semanticEvidence": [
-        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
       ],
       "operationalEvidence": [
-        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths."
+        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
       ],
-      "semanticContract": "Original fallthrough relation ChkStart -> ClrPauseTimer at source line 903 (bne) must preserve the pause-mode/timer/Start/debounce predicate and resulting status/timer/sound handoff.",
+      "semanticContract": "Raw81bb BNE false/fallthrough is impossible:preceding ORA80 forces nonzero A and Z=0 for every input;release uses distinct Start-absent branch.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
       ]
@@ -52403,10 +52496,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step",
       "semanticEvidence": [
-        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
       ],
       "operationalEvidence": [
-        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths."
+        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
       ],
       "semanticContract": "Original fallthrough relation ClrPauseTimer -> SetPause at source line 905 (and) must preserve the pause-mode/timer/Start/debounce predicate and resulting status/timer/sound handoff.",
       "currentSourcePaths": [
@@ -52424,10 +52519,12 @@
       "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step",
       "semanticEvidence": [
-        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
       ],
       "operationalEvidence": [
-        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths."
+        "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged."
       ],
       "semanticContract": "Original fallthrough relation SetPause -> ExitPause at source line 906 (sta) must preserve the pause-mode/timer/Start/debounce predicate and resulting status/timer/sound handoff.",
       "currentSourcePaths": [
@@ -148695,6 +148792,7 @@
   ],
   "rawControlEdgeTotal": 4342,
   "infeasibleControlEdgeIds": [
+    "control-00062",
     "control-00076",
     "control-00081",
     "control-00372",
@@ -148707,6 +148805,7 @@
     "control-01515",
     "control-01537",
     "control-01552",
+    "control-01613",
     "control-01632",
     "control-01711",
     "control-02036",
@@ -148759,9 +148858,8 @@
     "control-03743",
     "control-03769",
     "control-03784",
-    "control-03868",
-    "control-01613"
+    "control-03868"
   ],
-  "infeasibleControlEdgeTotal": 66,
-  "feasibleControlEdgeTotal": 4276
+  "infeasibleControlEdgeTotal": 67,
+  "feasibleControlEdgeTotal": 4275
 }
