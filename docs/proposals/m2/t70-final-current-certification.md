@@ -7034,3 +7034,91 @@ Current src/game/oam/normal_enemy_gfx.c normalizedSHA256:9c9e764cd4a0f8bf68aa59a
 Current src/game/jumpspring.c normalizedSHA256:f1941a910c1da856975f48e85368b35e7fd51090989548ed0e603eb8bc89f5b4.
 
 Historical/local1992/1992,controls4274/4274(raw4342,infeasible68);material993partial,totalunknown.2854instruction/974RAM boundedreceipts,7837otherinstructions/2799otherRAMjoins remain,not new discoveredbugs.Allwhole-programlifetimefields/fourfinalpackages open,M2 NOT COMPLETE.
+
+## S17 P49 admission - hammer misc coin score and powerup source-use joins
+
+Existingoriginalcensus BA94-BCEA:273instructions/110RAM,36labels;participants:SpawnHammerObj,SetMOfs,NoHammer,ProcHammerObj,SetHSpd,SetHPos,RunAllH,RunHSubs,CoinBlock,SetupJumpCoin,JCoinC,FindEmptyMiscSlot,FMiscLoop,UseMiscS,MiscObjectsCore,MiscLoop,ProcJumpCoin,JCoinRun,RunJCSubs,MiscLoopBack,GiveOneCoin,CoinPoints,AddToScore,GetSBNybbles,UpdateNumber,NoZSup,SetupPowerUp,PwrUpJmp,StrType,PutBehind,PowerUpObjHandler,ShroomM,GrowThePowerUp,ChkPUSte,RunPUSubs,ExitPUp. Scope652,fresh0/max1992. Sharedhammer/misc/coin/score/power_up_init/power_up owners,retainedsourceidentity andactualoriginalreturnroots,nominalslots0-8/block0-1/parents4-5/direction1-2/players0-1/type0-3,allbytepowerupstate. Existingmode76-82 currentrootsplusrealSpawnHammerObj/SetupPowerUp/PwrUpJmp entries forallocationcarry andinitialization domains. Auditentrycarry throughFindEmptyMiscSlot,ASLcarry throughcoinY,gravity00/01/02publication,childrestore08 andordering,PowerUp state6pickablegrowth andstate11activation. Parent/type/tableproducer lifetime remainspendingbeyondscopedroots. No new auditround orROMimport;originalownerreadonly,rawonlybuild,128MiB/120sperprocess. ActualmismatchstaysS17forrepairbeforeacceptance;codechange requires3products. Local1992/1992,controls4274/4274,material993partial/globaltotalunknown,wholeM2notcomplete.
+
+## S17 P49 checkpoint - hammer misc coin score and powerup source-use joins
+
+ExistingcensusBA94-BCEA:273instructions/110RAM,36labels,scope652;
+fresh0/max1992. Sixsourceowners unchangedfromretainedacceptedcommits,
+hashesbelow. No nativebusinesslogic/platform/product changed,threeEXEsP46.
+Participants:
+SpawnHammerObj,SetMOfs,NoHammer,ProcHammerObj,SetHSpd,SetHPos,RunAllH,RunHSubs,CoinBlock,SetupJumpCoin,JCoinC,FindEmptyMiscSlot,FMiscLoop,UseMiscS,MiscObjectsCore,MiscLoop,ProcJumpCoin,JCoinRun,RunJCSubs,MiscLoopBack,GiveOneCoin,CoinPoints,AddToScore,GetSBNybbles,UpdateNumber,NoZSup,SetupPowerUp,PwrUpJmp,StrType,PutBehind,PowerUpObjHandler,ShroomM,GrowThePowerUp,ChkPUSte,RunPUSubs,ExitPUp.
+
+| Clause | Original PCs | Source-use/lifetime/alias disposition |
+| --- | --- | --- |
+| M1 | ba94-bac2 | Random7A8 masked7 exceptzero selectsbit3,soonlyindices0..8 intoBA89 parentdependence table. Misc2A+index gate beforeEnemy_FlagF+tableoffset gate;successreloads08parent then6AE+indexparent/2A90/4A27 inoriginalorder andSEC;failureCLC. Nativebool comparesactualoriginalcarry,CPU A/X notAPI. Slotdependency6 isflatRAM15,notclampedtofive. |
+| M2 | bac3-baf0 | TimerControl747freezesallhammermovement;state2A+slot&7F andparent6AE areloadedbeforeCMP2;less2 convertsobjectindexslot+0D,sets00=10/01=0F/02=4 thenactualgravity0/horizontalmovement. OriginalLDX08 restoredbeforeplayerhammercollision. Helperrepeat00/02 stores samevalues withoutinterposedobserver,01 remains0F untilrealgravity overwritesits own scratch. |
+| M3 | baf3-bb07 | State2 setsmiscAC+slotFE,clearsenemy1E+parent bit3,reads46+parent direction1/2 minus1 intoBA92speed;thenreload08 before64+slot speedpublication. ParentcapturedoriginalY isnotchangedbywrites;validparent4/5,slots0..8 disjoint1E/2A/6AE. Rawdirection andparentproducer domains remainpending beyondrootfixture. |
+| M4 | bb09-bb26 | State>=2 decrements2A beforeparent87+2 CLC lowstore93+slot;page6E+parent pluslowcarry->7A+slot;parentCFminus0A SEC->DB+slot;C2high1. ParentYlive throughout,nochild/interveningparentstore. Low/page bytewrap preserved,notinventedworldrange. |
+| M5 | bb28-bb37 | Onlystate<2 path performsrealPlayerHammerCollision;allpaths thenGetMiscOffscreenBits,RelativeMiscPosition,GetMiscBoundBox,DrawHammer inthatorder. SourceX/current08 restored aftergravity/movement,children actualRAM/scratch/OAM included. Frozenpathstillessentialchildren,notnew state gate. |
+| M6 | bb38-bb4e | CoinBlock entrycarry fromBlockCode reachesrealFindEmptyMiscSlot;free8preservescarry,anyDEY/CPY5 makescarry1. Page76+block->7A+misc,x8F OR5->93 (not+5),yD7 SBC10 consumesreturnedcarry ->DB. ParentX remainsblock0/1 before sharedfinish;alloccupancy/carry combinations incurrentroots. |
+| M7 | bb51-bb69 | SetupJumpCoin page03EA+block->misc7A;RAM06 fourASL yieldslowbyte(col<<4),carryoriginalbit4. OR5 andLDA02 preservecarry forADC20 ->DB,includingallbytecolumnwrap. RAM02/06 stable beforechildfinish;allocationcarry overwrittenbyASLs,not reused. |
+| M8 | bb6c-bb83 | FinishACFB/C2high1/2Astate1/FEcoin1 before08blockpublication andactualGiveOneCoin;748 tallyincrement onlyafterchildreturns. 100thcoin childmayreplaceFE1with40;callerdoesnotoverwriteit. SourceXrestore mapsblock08,coinmiscslot stayslocal anddoesnotreplace08. |
+| M9 | bb84-bb95 | Search8,7,6 via2A+Y;DEY thenCPY5 changescarry evenifalloccupied. Reaching5 wrapsYback8,updates6B7 residual selectedslot;immediatefree8leavesentrycarry. Onlyvalid3slotsearch,notarbitrary scan orinventedemptyfallback. Returningcarry andslot consumedbyCoinBlock separately. |
+| M10 | bb96-bba4 | Corewrites08for every descending8..0 before2Astate load;empty skip,initialbit7 routeshammer elsecoin. ASL state consumedonlyforcarry,ProcJumpCoin rereadsraw2A. ChildmayrestoreX/08 andnative reloads08afterreturn;no cachedslot skips originalcallerABI. |
+| M11 | bba7-bbc6 | Nonhammerstate1 routesgravity;otherstatesincrement2A thenCLC93+Scroll775 andpage7A+carry;postincrement==30 retiresstate0 andskipsdraw. Initial7F mayincrement80 yetstillfinishescoin paththisinvocation;no redispatch midframe. Coordinates/carry beforeretirement store arepreserved. |
+| M12 | bbc9-bbe6 | Coinstate1 sets00=50,02=6,01=3,objectindexslot+0D,A0 andactualgravity;reload08 thenACspeed==5 incrementsstate. Thiscoinpath hasnoTimerControl gate despitehammerpathhavingone. Originalscratchpublicationorder00/02/01 preserved beforecanonicalhelper;anyretirement handledonlyotherpath. |
+| M13 | bbe8-bbf7 | Nonretiredcoin realRelativeMiscPosition thenoffscreen,bbox,JCoinGfx;thenDEX/BPLback throughMiscLoop. Originaleight-to-zero order,allactive/current08 changes included;retiredpathskipsallfourchildren. Childbbox/OAMeffects notsynthetic,slot restore from08 afterrealcoinchildren. |
+| M14 | bbfe-bc20 | 0139modifier1 beforeCurrentPlayer0753 tableBBF8offset andactualdigitsmath;75Ecoinincrement bytewrap then==100reset0/lives75Aincrement/FE40. Player0/1 affectsvalidcoinBCDoffsets;unrelated0134-138 modifiers preserved untilrealmath clears them. FE40 conditional happensafterdigitmath,notbefore. |
+| M15 | bc22-bc24 | CoinPoints0138modifier2 publishes200point award beforefallthroughAddToScore. EarlierFE1/40 remainslive aftercaller;noaudioengine invokedbycoinroutine itself. Outgoingqueue consumption retainedinpaths902/903,not assertedcurrentframeconsumedhere. |
+| M16 | bc27-bc48 | AddToScore rereadsCurrentPlayer0753 selectsBBFA scoreoffset,actualdigitsmath;GetSBNybbles rereadsplayer thenBBFCpackedHUDdescriptor;realPrintStatusBarNumbers mutates0300cursor. UpdateNumber reads02FB+bytecursor (absolute16bitaddress,not bytewrapped),zero suppresses24;NoZSup restores08. Child output andalias whencursorwrap included inactualroots. |
+| M17 | bc49-bc5e | SetupPowerUp fixedslot5 ID2E,page76+block->73,x8F+block->8C,BBhigh1,yD7minus8->D4 beforefallthroughPwrUpJmp. Blockslots0/1 explicitinput;coordinatesbytewrap allsourcebytes;no caller-normalizedworldoffset. |
+| M18 | bc60-bc84 | Residualentry preservesexistingID/coordinates;sets23state1/14flag1/49Fbbox3 thentype39<2 selectsPlayerStatus756,>=2 LSRstatusbyone,storetype;other typesunchanged. 03CApriority20/FE2 arelaststores. RawallbytePlayerStatus verifiedinitonly,notqualifiedasdrawabletype;actualactor fixturetype0..3 remainsseparate. |
+| M19 | bc85-bcb0 | Handler08=5beforestate23zeroexit;initialbit7 active branch usesTimerControl gate forshroom0/3normalmotion/backgroundcollision,star2jumpingmotion/EnemyJump,flowerothernomotion. State/type rereads actualRAM atoriginalgates;allpathsmaintainrealchildsequence andfalltoessentialsubs. |
+| M20 | bcb3-bcd6 | Growingstate ignoresTimerControl;frame9&3==0 decrementsD4 thenincrements23,comparesoldstate>=11 before5D10/2380/03CA0/4B1 activation. Initiallow7bit127 canstore80butcurrentquarter rulesretained. Postgrowthstate>=6 runsessentialchildren,notonlybit80;under6exit includesafterincrementboundary5->6. |
+| M21 | bcd8-bcea | Essentialchildren exactRelativeEnemyPosition/offscreen/bbox/DrawPowerUp/PlayerEnemyCollision/OffscreenBoundsCheck,sixwithoutinterposedID/stategate. Playercollision receivescurrentRAM andvalidslot5 afterdraw;offscreen lastcanerase. Movementcollisionchildinvariants retainseparateproof;wholeGameCoreproducer/consumerlifetimesnotinferredfromreturnroots. |
+
+Currentoriginalmodes76..82 each65536realreturnroots(hammer,misc,coinblock,
+jumpcoin,givecoin,addscore,powerup),plus137SpawnHammerObj/138SetupPowerUp/
+139PwrUpJmp each4096. Total471040 eachwidth zero2032RAM/24APU/orderedwrite
+differences;physical1F0-1FF excluded,minSP>=EF;CPU A/X/Y notexported byvoid
+nativeAPIs. Spawnactualcarryreturns separatelycomparedtoCbool,notROMA.
+Every273PC observed;27conditional sites bothsides,oneconstant branch.
+Sourceorder/carry/RAMlifetimes inspected separatelyfromreturned-state
+equality. Initialpreparationfailedstringmatchbeforeexecution,noevidence
+credit fromfailedattempt. No originalROM/childpatch,nofakealgorithmstub.
+
+Controlledger correction:control-01236 SetHPos->RunAllH wasincorrectly
+exact. OriginalBB22 LDA1,BB24 STA,BB26 BNE cannotfallthroughbecauseZ0
+survivesSTA. ActualROMinstructionbytesverifiedagainstsource;22528taken
+observationsarecorroboration,notinfeasibilityproof alone. Nativeanchored
+path already skipsPlayerHammerCollision andrunsessentialchildren.
+Thisisaclassificationdefect,no productionrepair. Historicaledges/raw4342
+retained;infeasible69,feasible4273,localexact4273/4273. Prior4274/68 counts
+arehistoricalclosure-timefacts,andare explicitlycorrectedhere,notrewritten.
+Finalreviewcohortfeasiblepartition removesonlycontrol-01236;nomapping,
+nodeorretainedcompatibleevidence reset,no newwholeauditround.
+
+69632 supplementalcarrychecks cover16 allocation/carry configurations
+andall256column/256row bytecombinations;fournegativeaccountingchecks.
+Ten rebuiltfocusedtests eachwidthpass(hammerchain,coinallocation,misc
+lifetime,scoreHUD,powerupinit/actor/initdispatch,misc/powerupOAM,purity).
+No full-suite/currentall-levelpixel certificate. Validdomains misc0..8,
+block0..1,parent4/5,direction1/2,CurrentPlayer0/1,actor type0..3;allbyte
+powerupstate verified. RawallbytePlayerStatus root139 testsinitializer
+only:outgoingtypeoutside0..3 doesnotqualifyDrawPowerUp orprovegamestate
+reachability. Broaderparent/direction/typeproducerlifetimes remainpending.
+Similar-classsweep:allocationcarrypreservation/CPYoverwrite,fourASLcarry,
+00/01/02gravity-publication/08restore,miscwrap-to80withoutredispatch,
+scorefixed-address02FB+bytecursor,PowerUpoldstate11/6pickup/sixchildorder
+reviewed. Childcollision/bbox/graphics retainseparatebroadercontracts.
+Existingmaterial99-105/598/614/715/902-904 reused,no inventedpaired-
+constructor-to-handler path fromisolatedreturnroots;material993partial,
+globaltotalunknown. Allwhole-programlifetimefields remainpending.
+
+Current src/game/hammer.c normalizedSHA256:c8e87932754f358603f2e93d8b71cba2d1e35da37c9a2b55ce5338d8d2885f8a.
+
+Current src/game/misc.c normalizedSHA256:0db1f26202d737db8116dad65d77ce07496a35dbb69d9b32518c200b77bbf462.
+
+Current src/game/coin.c normalizedSHA256:d70cd1e004f147df10ef7cd4f21a1e32a9a7920695168aa9ed2fb89371394684.
+
+Current src/game/score.c normalizedSHA256:90ad2d2c11708edcc6326fb190b253d9e32e2cc51885a531a5d1182654f3b341.
+
+Current src/game/power_up.c normalizedSHA256:4df8f451bb25eedfeb5e6ab85dde4dce82fdd9a7732284a1c7e58d2e99283991.
+
+Current src/game/power_up_init.c normalizedSHA256:a7ed5f66137abe0b588e27e290a8bf54aca8446b25141f7b07e40221a55f3a80.
+
+Historical/local1992/1992,controls4273/4273(raw4342,infeasible69);material993partial,totalunknown.3127instruction/1084RAM boundedreceipts,7564otherinstructions/2689otherRAMjoins remain,not new discoveredbugs.Fourfinalpackages open,M2 NOT COMPLETE.

@@ -2244,10 +2244,12 @@
       "semanticContract": "Preserves source table selection and consuming write/order.",
       "semanticEvidence": [
         "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "cohort": "H",
       "cohortBasis": "producer inventory label",
@@ -2266,10 +2268,12 @@
       "semanticContract": "Preserves source table selection and consuming write/order.",
       "semanticEvidence": [
         "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "cohort": "H",
       "cohortBasis": "producer inventory label",
@@ -2288,10 +2292,12 @@
       "semanticContract": "Preserves source table selection and consuming write/order.",
       "semanticEvidence": [
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BBF8-BBFD six bytes independently equal native constants;CurrentPlayer selected at each original entry after earlier math,coin rollover/lives/sound and zero suppression retain original order."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BBF8-BBFD six bytes independently equal native constants;CurrentPlayer selected at each original entry after earlier math,coin rollover/lives/sound and zero suppression retain original order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 actual original both source-valid indices0/1 observed for each table,393216 original/native roots each width zero diff;12 tests each/current builds/OpenNT link;3 existing products retained byte-identical."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 actual original both source-valid indices0/1 observed for each table,393216 original/native roots each width zero diff;12 tests each/current builds/OpenNT link;3 existing products retained byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "cohort": "H",
       "cohortBasis": "producer inventory label",
@@ -2310,10 +2316,12 @@
       "semanticContract": "Preserves source table selection and consuming write/order.",
       "semanticEvidence": [
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BBF8-BBFD six bytes independently equal native constants;CurrentPlayer selected at each original entry after earlier math,coin rollover/lives/sound and zero suppression retain original order."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BBF8-BBFD six bytes independently equal native constants;CurrentPlayer selected at each original entry after earlier math,coin rollover/lives/sound and zero suppression retain original order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 actual original both source-valid indices0/1 observed for each table,393216 original/native roots each width zero diff;12 tests each/current builds/OpenNT link;3 existing products retained byte-identical."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 actual original both source-valid indices0/1 observed for each table,393216 original/native roots each width zero diff;12 tests each/current builds/OpenNT link;3 existing products retained byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "cohort": "H",
       "cohortBasis": "producer inventory label",
@@ -2332,10 +2340,12 @@
       "semanticContract": "Preserves source table selection and consuming write/order.",
       "semanticEvidence": [
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BBF8-BBFD six bytes independently equal native constants;CurrentPlayer selected at each original entry after earlier math,coin rollover/lives/sound and zero suppression retain original order."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BBF8-BBFD six bytes independently equal native constants;CurrentPlayer selected at each original entry after earlier math,coin rollover/lives/sound and zero suppression retain original order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 actual original both source-valid indices0/1 observed for each table,393216 original/native roots each width zero diff;12 tests each/current builds/OpenNT link;3 existing products retained byte-identical."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 actual original both source-valid indices0/1 observed for each table,393216 original/native roots each width zero diff;12 tests each/current builds/OpenNT link;3 existing products retained byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "cohort": "H",
       "cohortBasis": "producer inventory label",
@@ -2354,10 +2364,12 @@
       "semanticContract": "Preserves source producer write, consumer read and feasible frame-to-frame handoff order.",
       "semanticEvidence": [
         "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "M2 T61 S6 fixed-slot producer/consumer routes pass on current x86/x64."
+        "M2 T61 S6 fixed-slot producer/consumer routes pass on current x86/x64.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "cohort": "H",
       "cohortBasis": "producer inventory label",
@@ -2377,10 +2389,12 @@
       "semanticContract": "Preserves source producer write, consumer read and feasible frame-to-frame handoff order.",
       "semanticEvidence": [
         "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "M2 T61 S6 fixed-slot producer/consumer routes pass on current x86/x64."
+        "M2 T61 S6 fixed-slot producer/consumer routes pass on current x86/x64.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "cohort": "H",
       "cohortBasis": "producer inventory label",
@@ -13197,10 +13211,12 @@
       "currentCounterpart": "src/game/objects.c:step_floatey_number digit modifier then mysmb_score_add",
       "semanticContract": "Control1..11 reads original score byte twice;high nybble selects modifier digit,low nybble supplies increment. Actual original AddToScore and current canonical score_add run full math/HUD descendants;all modifiers and score scratch remain compared.",
       "semanticEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S12 P1:actual849f-8566 table/branch/store/call audit;source IDs Spiny12,HammerBro05,TallEnemy09;preserve CMP18 carry through one-pixel decrement;canonical DumpTwoSpr call and absolute OAM stores in original order;all36 table bytes bound."
+        "docs/proposals/m2/t70-final-current-certification.md S12 P1:actual849f-8566 table/branch/store/call audit;source IDs Spiny12,HammerBro05,TallEnemy09;preserve CMP18 carry through one-pixel decrement;canonical DumpTwoSpr call and absolute OAM stores in original order;all36 table bytes bound.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S12 P1:15624 original roots plus132 persistent45-call lifecycles/5940 records both widths zero full-RAM diff;only opcode-confirmed physical pushes01f7-01fd excluded(case-specific or protocol-cumulative);13 conditional sites both outcomes,33 reachable table bytes read;1794 real score and14070 real dump calls;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
+        "docs/proposals/m2/t70-final-current-certification.md S12 P1:15624 original roots plus132 persistent45-call lifecycles/5940 records both widths zero full-RAM diff;only opcode-confirmed physical pushes01f7-01fd excluded(case-specific or protocol-cumulative);13 conditional sites both outcomes,33 reachable table bytes read;1794 real score and14070 real dump calls;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "cohort": "A",
       "cohortBasis": "producer original inventory label",
@@ -13564,11 +13580,13 @@
       "semanticContract": "Actual status-number child produces cursor,then bottom writer reloads it as fixed X for all seven absolute stores;final cursor+6 wraps only persisted byte. All256 initial cursors and both players are controlled original/native inputs.",
       "semanticEvidence": [
         "docs/proposals/m2/t70-final-current-certification.md S14 P1 scoped source8652-86e5 and889d-88ad:fixed-X bottom status writes without invented buffer guard;canonical OutputInter and ResetScreenTimer;task advances before output enable;actual accepted text/status/OAM children. Final global contract review remains pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P42 checkpoint - retained HUD timer and text source-use joins:146instructions/39RAM joined12manualsavedselector/name/lives/bufferwrap/alias/gate/timer/order clauses;queue_game_text unchanged1634594c,game screen2-7/canonicalhelpersandscorebottom unchanged2cdc23d9. Puremutuallyexclusive mode0/3 testordering equivalence explicitlyreviewed;requiredpublicationorders unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P42 checkpoint - retained HUD timer and text source-use joins:146instructions/39RAM joined12manualsavedselector/name/lives/bufferwrap/alias/gate/timer/order clauses;queue_game_text unchanged1634594c,game screen2-7/canonicalhelpersandscorebottom unchanged2cdc23d9. Puremutuallyexclusive mode0/3 testordering equivalence explicitlyreviewed;requiredpublicationorders unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "docs/proposals/m2/t70-final-current-certification.md S14 P1 scoped8192 original dispatches plus64 persistent protocols/448 records,both C90 widths zero full RAM diff except opcode-confirmed physical stack pushes01f7-01fd;12 entries/seven branch sites both outcomes,1468 ordered original output routes;5 focused tests each,six600-frame scoped regressions,original OpenNT link and3 EXEs. Not full-game/pixel certification.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P42 checkpoint - retained HUD timer and text source-use joins:8192 currentoriginalScreenRoutines roots plus64protocols/448records eachwidth zeroallRAM/declaredABI excludingactualpushbytes01F7-01FD;12entries/7branchpairs/1468sourceorderchecks.65536 WriteGameText originalroots eachwidth zero2032RAM/APU/order,minSP>=EF/reserved1F0-1FF excluded.2checks each,C90bothwidths;source/productsunchanged,P39hashes retained."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P42 checkpoint - retained HUD timer and text source-use joins:8192 currentoriginalScreenRoutines roots plus64protocols/448records eachwidth zeroallRAM/declaredABI excludingactualpushbytes01F7-01FD;12entries/7branchpairs/1468sourceorderchecks.65536 WriteGameText originalroots eachwidth zero2032RAM/APU/order,minSP>=EF/reserved1F0-1FF excluded.2checks each,C90bothwidths;source/productsunchanged,P39hashes retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "cohort": "H",
       "cohortBasis": "producer original inventory label",
@@ -15877,10 +15895,12 @@
       "currentCounterpart": "src/game/blocks/chunks.c",
       "semanticContract": "Declared valid slot/query-buffer roots and current source order;caller entry equality inherits P12 query ABI and direct-call-site review,not all gameplay routes. Replacement flags0/1/3;head sizes0/1 and54/58;top coin/miss;axe;enemy23 IDs0/6/15;vine count1/2.",
       "semanticEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "cohort": "H",
       "cohortBasis": "original producer inventory label",
@@ -20346,11 +20366,13 @@
       "semanticContract": "Same-parent-to-sound fixed RAM queue lifetime in declared sampled entry domains;actual last-write tagging survives until audio read,internal sound overwrites reset tags. Initializes coin state/audio, preserves ObjectOffset for GiveOneCoin, then increments one-up tally. Native statements:src/game/coin.c:mysmb_coin_finish_setup = 1U. Source store/reader identities tied to actual native owner/address events,not injected original IDs. No full-frame game-writer closure or arbitrary caller/input/cross-frame proof inferred.",
       "semanticEvidence": [
         "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
-        "Same-parent-to-sound fixed RAM queue lifetime in declared sampled entry domains;actual last-write tagging survives until audio read,internal sound overwrites reset tags. Initializes coin state/audio, preserves ObjectOffset for GiveOneCoin, then increments one-up tally. Native statements:src/game/coin.c:mysmb_coin_finish_setup = 1U. Source store/reader identities tied to actual native owner/address events,not injected original IDs. No full-frame game-writer closure or arbitrary caller/input/cross-frame proof inferred."
+        "Same-parent-to-sound fixed RAM queue lifetime in declared sampled entry domains;actual last-write tagging survives until audio read,internal sound overwrites reset tags. Initializes coin state/audio, preserves ObjectOffset for GiveOneCoin, then increments one-up tally. Native statements:src/game/coin.c:mysmb_coin_finish_setup = 1U. Source store/reader identities tied to actual native owner/address events,not injected original IDs. No full-frame game-writer closure or arbitrary caller/input/cross-frame proof inferred.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
-        "Source event visits:6928;native independently aggregated visits x86/x64:20784/20784. Same-batch existence checked;finite samples do not prove every event pairing."
+        "Source event visits:6928;native independently aggregated visits x86/x64:20784/20784. Same-batch existence checked;finite samples do not prove every event pairing.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "cohort": "H",
       "cohortBasis": "producer inventory label",
@@ -20370,11 +20392,13 @@
       "semanticContract": "Same-parent-to-sound fixed RAM queue lifetime in declared sampled entry domains;actual last-write tagging survives until audio read,internal sound overwrites reset tags. Updates BCD coin tally, hundred-coin life/sound path, then score points. Native statements:src/game/score.c:mysmb_objects_give_one_coin = 0x40U. Source store/reader identities tied to actual native owner/address events,not injected original IDs. No full-frame game-writer closure or arbitrary caller/input/cross-frame proof inferred.",
       "semanticEvidence": [
         "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
-        "Same-parent-to-sound fixed RAM queue lifetime in declared sampled entry domains;actual last-write tagging survives until audio read,internal sound overwrites reset tags. Updates BCD coin tally, hundred-coin life/sound path, then score points. Native statements:src/game/score.c:mysmb_objects_give_one_coin = 0x40U. Source store/reader identities tied to actual native owner/address events,not injected original IDs. No full-frame game-writer closure or arbitrary caller/input/cross-frame proof inferred."
+        "Same-parent-to-sound fixed RAM queue lifetime in declared sampled entry domains;actual last-write tagging survives until audio read,internal sound overwrites reset tags. Updates BCD coin tally, hundred-coin life/sound path, then score points. Native statements:src/game/score.c:mysmb_objects_give_one_coin = 0x40U. Source store/reader identities tied to actual native owner/address events,not injected original IDs. No full-frame game-writer closure or arbitrary caller/input/cross-frame proof inferred.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
-        "Source event visits:4096;native independently aggregated visits x86/x64:12288/12288. Same-batch existence checked;finite samples do not prove every event pairing."
+        "Source event visits:4096;native independently aggregated visits x86/x64:12288/12288. Same-batch existence checked;finite samples do not prove every event pairing.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "cohort": "H",
       "cohortBasis": "producer inventory label",
@@ -20394,11 +20418,13 @@
       "semanticContract": "Same-parent-to-sound fixed RAM queue lifetime in declared sampled entry domains;actual last-write tagging survives until audio read,internal sound overwrites reset tags. Sets slot-five background-priority attribute and queues GrowPowerUp sound before return. Native statements:src/game/power_up_init.c:mysmb_objects_initialize_power_up = 2U. Source store/reader identities tied to actual native owner/address events,not injected original IDs. No full-frame game-writer closure or arbitrary caller/input/cross-frame proof inferred.",
       "semanticEvidence": [
         "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
-        "Same-parent-to-sound fixed RAM queue lifetime in declared sampled entry domains;actual last-write tagging survives until audio read,internal sound overwrites reset tags. Sets slot-five background-priority attribute and queues GrowPowerUp sound before return. Native statements:src/game/power_up_init.c:mysmb_objects_initialize_power_up = 2U. Source store/reader identities tied to actual native owner/address events,not injected original IDs. No full-frame game-writer closure or arbitrary caller/input/cross-frame proof inferred."
+        "Same-parent-to-sound fixed RAM queue lifetime in declared sampled entry domains;actual last-write tagging survives until audio read,internal sound overwrites reset tags. Sets slot-five background-priority attribute and queues GrowPowerUp sound before return. Native statements:src/game/power_up_init.c:mysmb_objects_initialize_power_up = 2U. Source store/reader identities tied to actual native owner/address events,not injected original IDs. No full-frame game-writer closure or arbitrary caller/input/cross-frame proof inferred.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
-        "Source event visits:4096;native independently aggregated visits x86/x64:12288/12288. Same-batch existence checked;finite samples do not prove every event pairing."
+        "Source event visits:4096;native independently aggregated visits x86/x64:12288/12288. Same-batch existence checked;finite samples do not prove every event pairing.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "cohort": "H",
       "cohortBasis": "producer inventory label",
@@ -22583,8 +22609,8 @@
     "unclassified": 0
   },
   "controlEdgeCounts": {
-    "exact": 4274,
-    "infeasible": 68,
+    "exact": 4273,
+    "infeasible": 69,
     "mismatch": 0,
     "needs-evidence": 0,
     "unclassified": 0
@@ -38562,10 +38588,12 @@
       "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
       "semanticEvidence": [
         "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Uses the source random selector, rejects occupied misc/parent slots, then preserves carry-result allocation semantics.",
       "currentSourcePaths": [
@@ -38581,10 +38609,12 @@
       "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
       "semanticEvidence": [
         "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Uses the selected misc slot before parent-flag eligibility.",
       "currentSourcePaths": [
@@ -38600,10 +38630,12 @@
       "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
       "semanticEvidence": [
         "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Restores ObjectOffset and returns the source carry-clear failure result.",
       "currentSourcePaths": [
@@ -38620,11 +38652,13 @@
       "semanticEvidence": [
         "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Partitions timer and masked hammer state before gravity, setup or common tail.",
       "currentSourcePaths": [
@@ -38640,10 +38674,12 @@
       "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
       "semanticEvidence": [
         "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Sets vertical speed, clears parent d3 and selects horizontal speed from parent direction.",
       "currentSourcePaths": [
@@ -38659,10 +38695,12 @@
       "currentCounterpart": "mysmb_objects_spawn_hammer/mysmb_objects_step_hammer with named children",
       "semanticEvidence": [
         "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Decrements state and initializes carry-correct hammer position from parent coordinates.",
       "currentSourcePaths": [
@@ -38679,11 +38717,13 @@
       "semanticEvidence": [
         "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Runs hammer-player collision after movement.",
       "currentSourcePaths": [
@@ -38700,11 +38740,13 @@
       "semanticEvidence": [
         "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Runs offscreen, relative, bounding box and draw children in source order.",
       "currentSourcePaths": [
@@ -38722,12 +38764,14 @@
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Allocates a misc slot and derives normal block coin coordinates with incoming allocation carry.",
       "currentSourcePaths": [
@@ -38745,12 +38789,14 @@
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Allocates a misc slot and derives jump-coin coordinates using four-ASL carry.",
       "currentSourcePaths": [
@@ -38768,13 +38814,15 @@
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Initializes coin state/audio, preserves ObjectOffset for GiveOneCoin, then increments one-up tally.",
       "currentSourcePaths": [
@@ -38791,11 +38839,13 @@
       "semanticEvidence": [
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Starts at slot eight and searches descending through six before source fallback.",
       "currentSourcePaths": [
@@ -38811,10 +38861,12 @@
       "currentCounterpart": "shared coin/misc/score owners with named children",
       "semanticEvidence": [
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics."
+        "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass."
+        "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Checks each misc state and preserves the CPY-after-DEY carry behavior.",
       "currentSourcePaths": [
@@ -38830,10 +38882,12 @@
       "currentCounterpart": "shared coin/misc/score owners with named children",
       "semanticEvidence": [
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics."
+        "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass."
+        "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Stores JumpCoinMiscOffset and returns selected slot.",
       "currentSourcePaths": [
@@ -38850,11 +38904,13 @@
       "semanticEvidence": [
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Processes slots eight through zero, writing ObjectOffset before every state read.",
       "currentSourcePaths": [
@@ -38871,11 +38927,13 @@
       "semanticEvidence": [
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Dispatches inactive, jump-coin/floatey and hammer states by d7.",
       "currentSourcePaths": [
@@ -38891,10 +38949,12 @@
       "currentCounterpart": "shared coin/misc/score owners with named children",
       "semanticEvidence": [
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics."
+        "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass."
+        "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Distinguishes jump state one from floatey ageing, including scroll page carry and state $30 retirement.",
       "currentSourcePaths": [
@@ -38911,11 +38971,13 @@
       "semanticEvidence": [
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Uses misc offset plus thirteen for gravity and changes state only at Y speed five.",
       "currentSourcePaths": [
@@ -38932,11 +38994,13 @@
       "semanticEvidence": [
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Runs relative/offscreen/box/graphics tail in source order.",
       "currentSourcePaths": [
@@ -38952,10 +39016,12 @@
       "currentCounterpart": "shared coin/misc/score owners with named children",
       "semanticEvidence": [
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics."
+        "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass."
+        "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Decrements through all misc slots before returning.",
       "currentSourcePaths": [
@@ -39036,13 +39102,15 @@
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S5: original $BBF8-$BC48/current score.c table, branch, RAM write, child-order and ObjectOffset-return mapping.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "T61 S5: 112 original x86/x64 caller and full-product score/HUD route checks plus focused smoke pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P21 checkpoint - targeted queue producer boundaries:actual write PC observed within14336 controlled original parent-to-SoundEngine roots each width;full RAM pre/post/APU/ordered commands zero diff,physical pushes only. Declared facing1/2 and X=ObjectOffset for fireball;other callers/input domains not inferred.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Updates BCD coin tally, hundred-coin life/sound path, then score points.",
       "currentSourcePaths": [
@@ -39058,10 +39126,12 @@
       "currentCounterpart": "shared coin/misc/score owners with named children",
       "semanticEvidence": [
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S5: original $BBF8-$BC48/current score.c table, branch, RAM write, child-order and ObjectOffset-return mapping."
+        "T61 S5: original $BBF8-$BC48/current score.c table, branch, RAM write, child-order and ObjectOffset-return mapping.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "T61 S5: 112 original x86/x64 caller and full-product score/HUD route checks plus focused smoke pass."
+        "T61 S5: 112 original x86/x64 caller and full-product score/HUD route checks plus focused smoke pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Writes 200-point digit modifier before score update.",
       "currentSourcePaths": [
@@ -39079,13 +39149,15 @@
         "M2 T52 S3 ROM logic: controlled normal-NMI floatey 1-UP route covers $84c3-$84e4 and AddToScore $bc27-$bc48; source lines 1320-1337 show DEC RAM write before the $2b comparison, score-table access and JSR.",
         "T61 S5: original $BBF8-$BC48/current score.c table, branch, RAM write, child-order and ObjectOffset-return mapping.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "M2 T52 S3 operational: mysmb.floatey-oam-smoke covers initial $2b award with RAM timer $2a before score effects and initial $2a non-award with RAM timer $29; x86/x64 platform-purity and Win32 self-tests pass; OpenNT DOS16 links shared objects.c.",
         "T61 S5: 112 original x86/x64 caller and full-product score/HUD route checks plus focused smoke pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "ROM $bc27 selects the current-player score offset and calls BCD math. On the floatey route it is reached after LoadNumTiles and the timer decrement.",
       "currentSourcePaths": [
@@ -39102,11 +39174,13 @@
       "semanticEvidence": [
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S5: original $BBF8-$BC48/current score.c table, branch, RAM write, child-order and ObjectOffset-return mapping.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "T61 S5: 112 original x86/x64 caller and full-product score/HUD route checks plus focused smoke pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Selects player status nybbles before status printing.",
       "currentSourcePaths": [
@@ -39123,11 +39197,13 @@
       "semanticEvidence": [
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S5: original $BBF8-$BC48/current score.c table, branch, RAM write, child-order and ObjectOffset-return mapping.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "T61 S5: 112 original x86/x64 caller and full-product score/HUD route checks plus focused smoke pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Prints status then performs source top-score zero suppression.",
       "currentSourcePaths": [
@@ -39143,10 +39219,12 @@
       "currentCounterpart": "shared coin/misc/score owners with named children",
       "semanticEvidence": [
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S5: original $BBF8-$BC48/current score.c table, branch, RAM write, child-order and ObjectOffset-return mapping."
+        "T61 S5: original $BBF8-$BC48/current score.c table, branch, RAM write, child-order and ObjectOffset-return mapping.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "T61 S5: 112 original x86/x64 caller and full-product score/HUD route checks plus focused smoke pass."
+        "T61 S5: 112 original x86/x64 caller and full-product score/HUD route checks plus focused smoke pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Restores ObjectOffset after number update.",
       "currentSourcePaths": [
@@ -39163,11 +39241,13 @@
       "semanticEvidence": [
         "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Initializes fixed enemy slot five from the selected block: ID, page, X, Y-high and Y minus eight, then enters the residual initializer.",
       "currentSourcePaths": [
@@ -39184,11 +39264,13 @@
       "semanticEvidence": [
         "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Initializes slot-five state, flag and bounding-box control; derives mushroom/flower type from PlayerStatus only when incoming PowerUpType is below two.",
       "currentSourcePaths": [
@@ -39204,10 +39286,12 @@
       "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
       "semanticEvidence": [
         "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass."
+        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Stores the selected player-status-derived power-up type before the common priority and sound tail.",
       "currentSourcePaths": [
@@ -39224,12 +39308,14 @@
       "semanticEvidence": [
         "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P21 checkpoint - targeted queue producer boundaries:actual write PC observed within14336 controlled original parent-to-SoundEngine roots each width;full RAM pre/post/APU/ordered commands zero diff,physical pushes only. Declared facing1/2 and X=ObjectOffset for fireball;other callers/input domains not inferred.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Sets slot-five background-priority attribute and queues GrowPowerUp sound before return.",
       "currentSourcePaths": [
@@ -39246,11 +39332,13 @@
       "semanticEvidence": [
         "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Selects fixed slot five; gates inactive, emerging and active state; dispatches mushroom, star and flower behavior using the original state-bit and TimerControl predicates.",
       "currentSourcePaths": [
@@ -39267,11 +39355,13 @@
       "semanticEvidence": [
         "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Runs normal-enemy motion followed by enemy-to-background collision, then enters the common power-up tail.",
       "currentSourcePaths": [
@@ -39287,10 +39377,12 @@
       "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
       "semanticEvidence": [
         "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass."
+        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "On every fourth frame raises the item, increments emergence state, and at the original threshold installs active speed/state, foreground priority and rightward direction.",
       "currentSourcePaths": [
@@ -39306,10 +39398,12 @@
       "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
       "semanticEvidence": [
         "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass."
+        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Suppresses relative position, drawing and player collision until the current emergence state reaches six.",
       "currentSourcePaths": [
@@ -39326,11 +39420,13 @@
       "semanticEvidence": [
         "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
         "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Runs relative position, offscreen bits, bounding box, graphics, player collision and offscreen bounds check in source order without an intervening type gate.",
       "currentSourcePaths": [
@@ -39346,10 +39442,12 @@
       "currentCounterpart": "power_up_init.c and power_up.c with named shared children",
       "semanticEvidence": [
         "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass."
+        "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
       ],
       "operationalEvidence": [
-        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass."
+        "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
       ],
       "semanticContract": "Returns from the current fixed-slot power-up invocation without further writes.",
       "currentSourcePaths": [
@@ -90050,16 +90148,18 @@
       "instruction": "bne",
       "id": "control-01236",
       "cohort": "H",
-      "status": "exact",
-      "currentCounterpart": "shared hammer branch, call, return and ordering counterpart",
+      "status": "infeasible",
+      "currentCounterpart": "src/game/hammer.c state>=2 anchor path goes directly to essentialchildren;no playerhammercollision fallthrough",
       "semanticEvidence": [
         "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics."
+        "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits. OriginalimmutableBB22/BB24/BB26 instructionbytes verified;Z0 preserved untilBNE;control-01236 reclassifiedinfeasible,retaininghistoricalreceipts asinvalidatedclassification."
       ],
       "operationalEvidence": [
-        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width."
+        "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof. BB26->BB2B observed22528times;noBB26->BB28. Zero observationalone isnotproof;constantZ instructionsemantics establishesinfeasibility."
       ],
-      "semanticContract": "Preserves original fallthrough relation SetHPos -> RunAllH with source predicate, ordering and state handoff.",
+      "semanticContract": "RawBB26 BNE false/fallthrough toBB28 impossible:BB22 LDA1 setsZ0,BB24 STA preservesZ0. OriginalownerROMopcodes/source andcurrentstructuredbranch agree. Previousexact entry was incorrect classification,not an implementedgameplaydiff.",
       "currentSourcePaths": [
         "src/game/hammer.c"
       ]
@@ -160745,18 +160845,19 @@
     "control-03743",
     "control-03769",
     "control-03784",
-    "control-03868"
+    "control-03868",
+    "control-01236"
   ],
-  "infeasibleControlEdgeTotal": 68,
-  "feasibleControlEdgeTotal": 4274,
+  "infeasibleControlEdgeTotal": 69,
+  "feasibleControlEdgeTotal": 4273,
   "finalCertification": {
     "status": "incomplete",
     "authority": "docs/states/CURRENT.md",
     "localExactMeaning": "Accepted scoped semantic/route contracts in retained evidence;not exhaustive current-build or end-to-end certification.",
     "nodeUniverse": 1992,
-    "feasibleControlUniverse": 4274,
+    "feasibleControlUniverse": 4273,
     "rawControlUniverse": 4342,
-    "infeasibleControls": 68,
+    "infeasibleControls": 69,
     "reviewedNodeLabels": [],
     "reviewedControlEdgeIds": [],
     "reviewedMeaning": "Superseded restart accounting;not an active progress counter. Retained scoped proofs remain accepted within their stated limits.",
@@ -163284,7 +163385,6 @@
           "control-01233",
           "control-01234",
           "control-01235",
-          "control-01236",
           "control-01237",
           "control-01238",
           "control-01239",
@@ -167193,7 +167293,8 @@
     "knownScopedDiscrepancies": [],
     "evidence": [
       "docs/proposals/m2/t70-final-current-certification.md Owner-directed bounded final-audit contract",
-      "docs/proposals/m2/t70-final-current-certification.md Owner-directed bounded final-audit contract:owner rejects repeated audit rounds;named gap closure supersedes A-N restart."
+      "docs/proposals/m2/t70-final-current-certification.md Owner-directed bounded final-audit contract:owner rejects repeated audit rounds;named gap closure supersedes A-N restart.",
+      "docs/proposals/m2/t70-final-current-certification.md S17 P49 reclassifiescontrol-01236 impossibleBB26falseedge;raw4342 retained,feasible4273/infeasible69. Historical4274/68 receipts retainclosuretimecounts."
     ],
     "resolvedScopedEvidence": [
       "docs/proposals/m2/t70-final-current-certification.md S14 P1 scoped source8652-86e5 and889d-88ad:fixed-X bottom status writes without invented buffer guard;canonical OutputInter and ResetScreenTimer;task advances before output enable;actual accepted text/status/OAM children. Final global contract review remains pending.",
@@ -167683,16 +167784,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired",
         "docs/proposals/m2/t70-final-current-certification.md S17 P46 checkpoint - original byte indexed fireball speed repaired",
         "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 2854,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 7837,
+        "localInstructionReceiptSites": 3127,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 7564,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 974,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2799,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 1084,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2689,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -167706,7 +167808,6 @@
           "src/game/world/player_enemy_collision.c": 72,
           "src/game/frame_root.c": 60,
           "src/game/oam/block_gfx.c": 54,
-          "shared coin, misc, score, world and OAM core": 51,
           "src/game/objects.c": 48,
           "shared enemy stream and initializer core": 48,
           "src/game/title_modes.c": 46,
@@ -167729,13 +167830,11 @@
           "src/game/area.c": 31,
           "shared Bowser flame frenzy core": 31,
           "shared game core: enemy/star_flag.c": 31,
-          "shared hammer, world and OAM core": 30,
           "shared Lakitu/Spiny initializer and frenzy core": 30,
           "src/game/enemy/hammer_bro.c": 30,
           "shared game core: enemy/platform.c": 30,
           "src/game/player/terrain.c and terrain children": 30,
           "src/game/player/pipe_entry.c and terrain children": 30,
-          "shared power-up and game-object core": 29,
           "src/game/player.c": 28,
           "src/game/enemy/platform_collision.c and src/game/enemy/platform_position.c": 28,
           "shared enemy initializer target core": 27,
