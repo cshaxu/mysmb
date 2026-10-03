@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P110 flagpole uses](../proposals/m2/t70-final-current-certification.md#s17-p110-checkpoint---flagpole-parser-and-slot-uses-reconciled).
+S17 P110:FlagpoleObject23instructions/9RAM joined1boundedclause;65536actual9508parserparents eachwidth0diff/all23PC,5tests each. Scope1663/fresh0;10646/10691instruction receipts,3757/3773RAM receipts;45instructions/16RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,wholeproducer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
+
 [P109 enemy caller uses](../proposals/m2/t70-final-current-certification.md#s17-p109-checkpoint---enemy-dispatch-and-caller-uses-reconciled).
 S17 P109:10enemy-caller labels/36instructions/5RAM joined4boundedclauses;65536actualC882parents+3072actualC905roots eachwidth0diff/all36PC/2branchpairs,5tests each. Scope1662/fresh0;10623/10691instruction receipts,3748/3773RAM receipts;68instructions/25RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,wholeproducer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
 

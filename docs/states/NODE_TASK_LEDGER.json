@@ -768155,7 +768155,8 @@
         "EnemyMovementSubs",
         "NoMoveCode",
         "RunBowserFlame",
-        "RunFirebarObj"
+        "RunFirebarObj",
+        "FlagpoleObject"
       ],
       "baseline": 1992,
       "incomingComplete": [

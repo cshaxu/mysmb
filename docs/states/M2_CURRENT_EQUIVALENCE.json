@@ -31982,10 +31982,12 @@
       "currentCounterpart": "mysmb_area_apply_parser_object -> mysmb_objects_start_flagpole",
       "semanticEvidence": [
         "Td S9 B11a flagpole/rope/row-column static node-and-edge audit: SMB1 lines 3991-4119 compared with shared area.c and oam/flagpole_gfx.c; controlled original-ROM/x86/x64 parser routes remain required.",
-        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state."
+        "M2 T57 S1 static audit: SMB1 lines 3991-4147 and shared src/game/area.c plus src/game/oam/flagpole_gfx.c were compared in source order. P1 restored FlagpoleObject shaft entry through RenderUnderPart, preserving overlay priority and ObjectHeight state.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P110 checkpoint - flagpole parser and slot uses reconciled:FlagpoleObject23instructions/9RAM joined1boundedclause;UnderPart/coordinates/carry/slot5/liveflag counterlifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass."
+        "M2 T57 S1 controlled original-ROM/current x86/x64 routes: t22-flagpole, t29-special-object and t29-geometry-castle are byte-identical between native widths and exact for enemy flag state, cannon ring, metatile staging and parser state. Focused flagpole/rope/object/cannon tests, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P110 checkpoint - flagpole parser and slot uses reconciled:65536actualparserroots eachwidth/all23PC/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Writes ball, shaft and base metatiles, then initializes slot five as the flag using object X minus eight with source borrow into page.",
       "currentSourcePaths": [
@@ -170311,23 +170313,23 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:8labels/69instructions/20RAM joined5boundedclauses;mask/pointer/header/childorder/cachedmode-pause/flag-phase/savedcontrol lifetimes reviewed;perdot andwholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P107 checkpoint - inline dispatch kernel uses reconciled:JumpEngine13instructions/4RAM scratchABI joinedJ1; actualgame.c owner,return/index/immutablepointer/alias lifetime reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P108 checkpoint - platform and Podoboo caller uses reconciled:6labels/34instructions/7RAM joined3boundedclauses;realchildorder/liveTimer/slotrestore/vector/postinitializerRandom/gravity lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:10labels/36instructions/5RAM joined4boundedclauses;selectorcarry/vector/orderedchild/liveTimer/postcollisionID/terminaltails reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P109 checkpoint - enemy dispatch and caller uses reconciled:10labels/36instructions/5RAM joined4boundedclauses;selectorcarry/vector/orderedchild/liveTimer/postcollisionID/terminaltails reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P110 checkpoint - flagpole parser and slot uses reconciled:FlagpoleObject23instructions/9RAM joined1boundedclause;UnderPart/coordinates/carry/slot5/liveflag counterlifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 10623,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 68,
+        "localInstructionReceiptSites": 10646,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 45,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 3748,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 25,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 3757,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 16,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
         "directExternalQueueWriterPaths": 48,
         "pendingDirectRamOwners": {
           "src/game shared dispatcher/engine/scroll owners": 10,
-          "src/game/area.c plus src/game/oam/flagpole_gfx.c": 9,
           "src/game/frame_root.c": 2,
           "src/game/frame_root.c and src/game/terminal_modes.c": 2,
           "src/game/frame_root.c and src/game/title_modes.c": 1,

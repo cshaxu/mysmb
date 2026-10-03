@@ -9318,3 +9318,21 @@ Current src/game/enemy/podoboo.c normalizedSHA256:72d85e484ad3bc0d4f5c7d7a8d855c
 Current src/game/enemy/movement.c normalizedSHA256:7ca92616e9557096e30833bbfb6ab2e06d907f6fdffc67f8406a72d3ed9b7c28.
 
 Current src/game/objects.c normalizedSHA256:7820f9d8da742bb9b1d36806dd51c858c8b43e120bd9e680b18b8a64c332fc09.
+
+## S17 P110 admission - flagpole parser and fifth-slot publication
+
+ExistingFlagpoleObject23instructions/9RAM;sharedarea.c plusoam/flagpole_gfx.c source999E-99CF. Real9508parser parent readsimmutable ownerarea pair intoFlagpoleObject withthree controlledresident slots,all16column/all256page/byte flagcounter/13rowoverlays/ObjectHeight. OriginalUnderPart shaft versusunconditionalball/base,GetAreaObjXPosition fourASL thenSEC/SBC8/highSBC0,livepage and INCEnemyFlag+5 reviewed.65536actualroots/fullnonphysical-stackRAM/APU/writes,all23PC;currentowners directcompile,fivefocusedtests eachwidth. Controlledresidentpair isnotproof ofallnaturalstreams orinterframe use. Scope1663/fresh0/max1992;ROMreadonly/raw4096batch128MiB/120sec/deletebelowbuild,source/P104productsunchangedunlessmismatch.
+
+## S17 P110 checkpoint - flagpole parser and slot uses reconciled
+
+S17 P110:FlagpoleObject23instructions/9RAM joined1boundedclause;65536actual9508parserparents eachwidth0diff/all23PC,5tests each. Scope1663/fresh0;10646/10691instruction receipts,3757/3773RAM receipts;45instructions/16RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,wholeproducer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
+
+| Clause | Labels | Source disposition |
+| --- | --- | --- |
+| F1 | FlagpoleObject | Original999Eball row0STA24,RenderUnderPart startingrow1/height8/tile25,thenunconditionalrow10STA61. Native actualparser row13/type1 sameorderedstores andsameUnderPartchild overlay/height/scratch00 policy; childreceiptP78/P104retainedandactualexecuted. GetAreaObjXPosition reads726/fourASL(bytecol16),SEC/SBC8 lowX andcarry retainedthroughLDA725 intoSBC0highpage. Nativetypedbyte x-8/page-(x<8) equivalent,includingcolumn0/page0 wrapping. Nativepage argumentmayloadbeforex helper,commutes becausehelperonlyreads726/noRAMwritesandnochildobserver. Bothinputs sampled afterUnderPart; no page/column cachedbeforemutablechild. Finalstores lastenemy slot5 Y30/FNumYB0/ID30hex thenliveINCflag+5 modulo256,notSTA1; no extra erasure/initialization. Threecontrolledresident parser slots readoriginalimmutablepairA9C9 atactual9508parent;all16columns/256pages/byteflagcounts/sixoverlaytypes/rawObjectHeight,snapshotfullRAM/APU/writes.65536actualroots eachwidthall23PC0diff,overlaysverifynotdirectfill. Controlledpairdoesnotproveallnaturalstream/cursorreachability orlaterflagpoleconsumer; acceptedchild/finalpixel/inter-frame proofremains separate. |
+
+Fresh9508ProcessAreaData controlledresidentFlagpoleObjectroots65536eachwidth;RAMexceptonlyactualobservedphysicalstackspan+24APU+orderedwrites,voidCPUregisters outsideABI. Actualcurrentarea/flagpole_gfx owners compiled directly,realchildren fromcurrentgame library. All23PC/noscopedconditionalbranch;fivefocusedtests eachwidthandfouraccountingmutants pass. ThreeP104producthashes unchanged;DOSlinkretained,no newruntimeclaim. Scope1663/fresh0/no graphpromotion;wholeproducer/inter-frame/material/pixels/routes/snapshot pending.
+
+Current src/game/area.c normalizedSHA256:4f82e262ae480e1c8f5581fabf0490d9754be85855e1d6b893e6ec6081cd511a.
+
+Current src/game/oam/flagpole_gfx.c normalizedSHA256:6b67ee98248638897ff00f055f21a5d223bce1a0e094818afcb2856b946f6b77.
