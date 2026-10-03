@@ -768139,7 +768139,13 @@
         "ExitGetM",
         "DoNothing1",
         "DoNothing2",
-        "HBlankDelay"
+        "HBlankDelay",
+        "RunSmallPlatform",
+        "RunLargePlatform",
+        "SkipPT",
+        "LargePlatformSubroutines",
+        "MovePodoboo",
+        "PdbM"
       ],
       "baseline": 1992,
       "incomingComplete": [

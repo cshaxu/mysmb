@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P108 platform/Podoboo uses](../proposals/m2/t70-final-current-certification.md#s17-p108-checkpoint---platform-and-podoboo-caller-uses-reconciled).
+S17 P108:6platform/Podoboo labels/34instructions/7RAM joined3boundedclauses;102400actualcallerroots eachwidth0diff/all34PC/2branchpairs,5tests each. Scope1652/fresh0;10587/10691instruction receipts,3743/3773RAM receipts;104instructions/30RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,wholeproducer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
+
 [P107 inline dispatch uses](../proposals/m2/t70-final-current-certification.md#s17-p107-checkpoint---inline-dispatch-kernel-uses-reconciled).
 S17 P107:JumpEngine13instructions/4RAM joined1bounded scratchABI clause;9216actualkernelroots eachwidth0diff/all13PC,14tests each. Scope1646/fresh0;10553/10691instruction receipts,3736/3773RAM receipts;138instructions/37RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,wholeproducer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
 

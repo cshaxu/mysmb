@@ -45333,12 +45333,14 @@
         "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing.",
         "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P108 checkpoint - platform and Podoboo caller uses reconciled:6labels/34instructions/7RAM joined3boundedclauses;realchildorder/liveTimer/slotrestore/vector/postinitializerRandom/gravity lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass.",
         "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P108 checkpoint - platform and Podoboo caller uses reconciled:102400actualcallerroots eachwidth/all34PC/2branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Executes offscreen, relative position, small box, small collision, relative position, drawing, small-platform movement and terminal bounds in source order.",
       "currentSourcePaths": [
@@ -45357,12 +45359,14 @@
         "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing.",
         "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P108 checkpoint - platform and Podoboo caller uses reconciled:6labels/34instructions/7RAM joined3boundedclauses;realchildorder/liveTimer/slotrestore/vector/postinitializerRandom/gravity lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass.",
         "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P108 checkpoint - platform and Podoboo caller uses reconciled:102400actualcallerroots eachwidth/all34PC/2branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Executes offscreen, relative position, large box, large collision, timer-gated movement dispatch, relative position, drawing and terminal bounds in source order.",
       "currentSourcePaths": [
@@ -45379,11 +45383,13 @@
       "semanticEvidence": [
         "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing.",
-        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md"
+        "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P108 checkpoint - platform and Podoboo caller uses reconciled:6labels/34instructions/7RAM joined3boundedclauses;realchildorder/liveTimer/slotrestore/vector/postinitializerRandom/gravity lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass.",
-        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P108 checkpoint - platform and Podoboo caller uses reconciled:102400actualcallerroots eachwidth/all34PC/2branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "After either timer path, calls relative position then large-platform drawing and tail-jumps to terminal bounds.",
       "currentSourcePaths": [
@@ -45399,10 +45405,12 @@
       "currentCounterpart": "shared platform runner and movement dispatcher",
       "semanticEvidence": [
         "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing."
+        "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P108 checkpoint - platform and Podoboo caller uses reconciled:6labels/34instructions/7RAM joined3boundedclauses;realchildorder/liveTimer/slotrestore/vector/postinitializerRandom/gravity lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P108 checkpoint - platform and Podoboo caller uses reconciled:102400actualcallerroots eachwidth/all34PC/2branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Computes Enemy_ID-$24, preserves JumpEngine scratch and selects the seven-entry large-platform movement vector.",
       "currentSourcePaths": [
@@ -45448,11 +45456,13 @@
       "semanticEvidence": [
         "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P108 checkpoint - platform and Podoboo caller uses reconciled:6labels/34instructions/7RAM joined3boundedclauses;realchildorder/liveTimer/slotrestore/vector/postinitializerRandom/gravity lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P108 checkpoint - platform and Podoboo caller uses reconciled:102400actualcallerroots eachwidth/all34PC/2branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "When interval timer is zero, calls InitPodoboo, reads LFSR byte, sets Y force bit seven, derives interval (low nibble OR six), writes Y speed $f9; both paths tail-jump to vertical gravity.",
       "currentSourcePaths": [
@@ -45468,10 +45478,12 @@
       "currentCounterpart": "shared lifecycle and Podoboo slot path",
       "semanticEvidence": [
         "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns."
+        "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P108 checkpoint - platform and Podoboo caller uses reconciled:6labels/34instructions/7RAM joined3boundedclauses;realchildorder/liveTimer/slotrestore/vector/postinitializerRandom/gravity lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P108 checkpoint - platform and Podoboo caller uses reconciled:102400actualcallerroots eachwidth/all34PC/2branchpairs/fullnonphysical-stackRAM-APU-writes0diff;5freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Tail-jumps to MoveJ_EnemyVertically after either nonzero-timer branch or completed Podoboo reinitialization.",
       "currentSourcePaths": [
@@ -170277,16 +170289,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:8labels/69instructions/20RAM joined5boundedclauses;mask/pointer/header/childorder/cachedmode-pause/flag-phase/savedcontrol lifetimes reviewed;perdot andwholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P107 checkpoint - inline dispatch kernel uses reconciled:JumpEngine13instructions/4RAM scratchABI joinedJ1; actualgame.c owner,return/index/immutablepointer/alias lifetime reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P107 checkpoint - inline dispatch kernel uses reconciled:JumpEngine13instructions/4RAM scratchABI joinedJ1; actualgame.c owner,return/index/immutablepointer/alias lifetime reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P108 checkpoint - platform and Podoboo caller uses reconciled:6labels/34instructions/7RAM joined3boundedclauses;realchildorder/liveTimer/slotrestore/vector/postinitializerRandom/gravity lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 10553,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 138,
+        "localInstructionReceiptSites": 10587,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 104,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 3736,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 37,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 3743,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 30,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -170295,10 +170308,8 @@
           "src/game shared dispatcher/engine/scroll owners": 10,
           "src/game/area.c plus src/game/oam/flagpole_gfx.c": 9,
           "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c": 5,
-          "src/game/enemy/{lifecycle,podoboo}.c": 5,
           "src/game/frame_root.c": 2,
           "src/game/frame_root.c and src/game/terminal_modes.c": 2,
-          "src/game/enemy/platform_callers.c": 2,
           "src/game/frame_root.c and src/game/title_modes.c": 1,
           "src/game/player.c": 1
         },
