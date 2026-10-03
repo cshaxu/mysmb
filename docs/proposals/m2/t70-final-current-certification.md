@@ -9480,3 +9480,39 @@ Current src/game/enemy/init.c normalizedSHA256:b154847ffaf647e43d39c14f5dc26818a
 Current src/game/enemy/init_targets.c normalizedSHA256:d12e09c0283898d29a0bc5b4a00a47676eb556d6799b695e72bdfea254473c65.
 
 Current src/game/enemy/stream.c normalizedSHA256:64420800e1e049dcc6f4dbbe58d942a9692b5210e3d2efeea298c8a682d05049.
+
+## S17 P117 admission - ObjectOffset publisher and alias joins
+
+Existing slot-domain dependency audit:no sourcechange. Exact17labels:BridgeCollapse,BublLoop,CopyFToR,DifLoop,FireballObjCore,FlagpoleRoutine,InitRear,JCoinC,LdLDa,MiscLoop,PIntLoop,PowerUpObjHandler,ProcADLoop,ProcELoop,ThreeSChk,UpdateLoop,VictoryMode. Complete17direct008publisher clauses/currentretainedreceipt joins;344 rawindexed008aliascandidates fromcensus withzero-pagewrap and2KiBRAMmirror arithmetic,3intrinsicexclusions reused,9indirectwrite sitesexplicit. Candidate extractiondoesnotclaim334 additionalnodes reviewed. ExistingS17scope1667,fresh0/max1992. Source123currentidentities mustmatch retainedindex;joinparentconditions separatelyfromglobalproof. RetainedROM receipts plusfocused5checks eachwidth,negativeaccountingchecks andgovernance;no productrebuildrequired. ROMsourcepolicy/ignoredbuild containmentunchanged.
+
+## S17 P117 checkpoint - ObjectOffset producer dependency matrix
+
+S17 P117:17ObjectOffset publishers/17labels source/retainedreceipt joins complete,123currentowner identities match. Extracted344indexed008aliascandidates includingzero-pagewrap/RAMmirror;3intrinsicloops excluded,341callerconditions and9indirectlifetimes pending. Loopchildreturn and3dynamicstorage prerequisitesexplicit;no globalpromotion. Fivefocusedtests eachwidthpass,no code/productchange,P115threeproducts retained. Historical1992/1992,local1991/1992nodes/4260/4261controls(raw4342/infeasible81),material993partial/totalunknown,M2 incomplete.
+
+| Publisher PC | Source domain and prerequisite |
+| --- | --- |
+| 8395 | constant0;Victory publishesX0 after childtask gate;zero/immediate store unaffected by prior childCPU X. |
+| 950A | loop2..0;return prerequisite;ProcessAreaData seedsX2 andloopback reloads08/decrements;child08 preservation or source InitRear0 branch must bejoined,not inferred fromlocal C loop. |
+| 9643 | constant0;InitRear LDA0 also publishesbackloading/behindparser0 thenObjectOffset0;this intentionalchild mutation is retained. |
+| AF03 | loop0..5;return prerequisite;GameEngine seedsX0 then EnemyCore/Floatey children,INX/CMP6;C local forslot is validonly whenactualchild returnsXcorrespondingcurrent08. Range alone doesnot prove iteration sequence. |
+| AF1E | constant1;LDX1 thenObjectOffset1 beforeactualBlockObjectsCore child. |
+| AF24 | childX1 thenDEX0 prerequisite;DEX after firstblockchild then08publication0;requires childXrestore contract,not merely precedingLDX1. |
+| B675 | loop2..0;return prerequisite;ProcAirBubbles seedsX2;Bubble/relative/offscreen/draw childreturns08/X beforeDEX/BPL. |
+| B689 | caller0/1;FireballObjCore publishesincomingX;twoactualProcFireball_Bubble callerturns0and1,doesnot clamp arbitrarydirectcall. |
+| B857 | constant5;FlagpoleRoutine LDX5 beforeID/state checks publishes08=5 evenearlyexit. |
+| B9C3 | loop2..0;return prerequisite;NonwaterProcessCannons seedsX2,ThreeSChk returns/updates currentX beforeDEX/BPL;water branchdoesnot publish08. |
+| BB7B | blockcontrol0/1 prerequisite;JCoinC X is SprDataOffset_Ctrl fromblockcaller,not allocatedmiscY. PublishblockX beforeactualGiveOneCoin,child RAMwrites/order retained. |
+| BB98 | loop8..0;return prerequisite;MiscObjectsCore seedsX8,children/loopback restore08/currentX beforeDEX/BPL;unallocated misc slot never changespublisher source. |
+| BC87 | constant5;PowerUpObjHandler LDX5/store08 beforeinactive/state/physics branches. |
+| BED6 | loop1..0;return prerequisite;BlockObjMT_Updater seedsX1,loopNextBUpd decrementscurrentX andusesBPL;actualindirectwrites/pointerchildren remainseparate obligations. |
+| CFF5 | BowserFront0368 prerequisite;BridgeCollapse readsfront0368,checksactualID2D,thenpublishes08;C54C producesfront onlyafterrealdupchild. Title/alias/interframe overwrites stillneed lifetime proof. |
+| D1A9 | Duplicate06CF<=20 conditional;CopyFToR loads06CF thenpublishesrear08;P116 boundsallocatorY20 onlyunderactualinitparent/front0-5. 06CF aliases/interframe overwrites remainpending. |
+| D1B3 | savedcurrent08 prerequisite;OriginalPHA/child/PLA restoresfront08;C local savedbyte matches stack lifetime onlywith childstack integrity andactual saved08 contract. Restoredoesnot certifyinitialvalue. |
+
+All17exactdirectstore locations arejoined tocurrentretainedoriginal-ROM clauses;123 normalizedsourceidentities match theacceptedindex. This usesacceptedboundedruntime evidence without rerunning everyunchangedchain. Newfivefocusedtests eachwidth areoperationalregressions,notnew originalparentcoverage. CurrentCline/range facts do notestablishglobalinputcontracts;no nodeorcontrolcredit.
+
+Completebyteaddress arithmetic independently checksall8-bit index values forRAM-base writes:zero-pageoperand wraps256;absolute operand uses2KiBphysicalRAMmirror. Thereare344008aliascandidates,not344observedwrites. OnlyC412/CF4A/EFA9 canhit008 under theconditionalindex<=24 envelope;theiractualintrinsicindices2..0/2..0/5..0 excludehitindices7/7/6. Other341needtheirown domain proofs;we do notassertallindices<=24. Explicit350indirect/callerconditions belongto008target inventory,not the359 E9/EA/739writer ledger ormaterialedge denominator. Indirect9 includesstartupreset/titleandblockpointer lifetimes;physicalCPUstack is01xx andcannot directlywrite008.
+
+Critical integration distinction:InitRearC9643 deliberatelyclearsObjectOffset0;itmust beaccountedfor inparserloopchildreturns. NativeGameEngineactors localfor(slot0..5) matchesoriginalProcELoop onlyunderactualEnemyCore/Floatey returnedX/current08 contract;retainedfrozen/nonfrozenfixture equalityisnotallstates proof. AF24DEX also requiresfirstblockchildXrestore. Three dynamicstorage obligations are03EEblockcontrol forJCoinC,0368Bowserfront forBridgeCollapse and06CFduplicate forCopyFToR;P116 constrainsallocator06CF atbirth,butoverwrites/lifetime stillpending. SavedfrontrestoreD1B3 doesnotprovesavedinputdomain. These nameddependencies arethe nextwork,notanotherwhole-projectround.
+
+Negativeaccountingchecks rejectmissing/duplicatepublisher andemptyclause. No runtimeaddress clamp,platformlogic orproductsourcechanged;P115threeproduct identities verifiedunchanged.

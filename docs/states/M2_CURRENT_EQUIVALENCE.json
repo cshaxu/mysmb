@@ -24225,7 +24225,8 @@
       "semanticEvidence": [
         "Td S9 A7 static node-semantics pass: SMB1 lines 1137-1165 was compared with the named shared-C owner; controlled original-ROM/x86/x64 victory routes remain required.",
         "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:11labels/44instructions/16RAM joined7boundedclauses;mode/RTI/savedcontrol/RunDemo/Victory/Core/parser/animation lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled:11labels/44instructions/16RAM joined7boundedclauses;mode/RTI/savedcontrol/RunDemo/Victory/Core/parser/animation lifetimes reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix:currentlocalpublisher/index scope joined;explicitcaller/return/alias prerequisites remain pending,notglobalexact."
       ],
       "operationalEvidence": [
         "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
@@ -30111,7 +30112,8 @@
         "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
         "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix:currentlocalpublisher/index scope joined;explicitcaller/return/alias prerequisites remain pending,notglobalexact."
       ],
       "operationalEvidence": [
         "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
@@ -30648,7 +30650,8 @@
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
         "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
         "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix:currentlocalpublisher/index scope joined;explicitcaller/return/alias prerequisites remain pending,notglobalexact."
       ],
       "operationalEvidence": [
         "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
@@ -34878,7 +34881,8 @@
         "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
         "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P56 checkpoint - continuous actor parent and group integration:8 instructions/1RAM bounded parent clause;ordered fireball then six enemy/floatey pairs. Frozen controlled child-return integration only;nonfrozen and other child states remain pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:ColorRotation/GetAreaPal omittedRAM00 STA3/DECtoFF repaired;41 color/44 observed parent instruction receipts in explicitcontrolleddomains. Parser continuation andother child/caller lifetime remainpending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:ColorRotation/GetAreaPal omittedRAM00 STA3/DECtoFF repaired;41 color/44 observed parent instruction receipts in explicitcontrolleddomains. Parser continuation andother child/caller lifetime remainpending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix:currentlocalpublisher/index scope joined;explicitcaller/return/alias prerequisites remain pending,notglobalexact."
       ],
       "operationalEvidence": [
         "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical.",
@@ -37785,7 +37789,8 @@
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix:currentlocalpublisher/index scope joined;explicitcaller/return/alias prerequisites remain pending,notglobalexact."
       ],
       "operationalEvidence": [
         "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results.",
@@ -37854,7 +37859,8 @@
         "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P46 admission - actualgroundcanpublishFacing3;B6AE originalbyte-indexedadjacentPRGreadnotpreservedbytwo-element C array.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P46 checkpoint - original byte indexed fireball speed repaired:actual ground publishes rawLR toFacing33;B6AB LDY/DEY byte index selects B687+index,including adjacentPRG;two-element hostarray overflow removed without input filtering."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P46 checkpoint - original byte indexed fireball speed repaired:actual ground publishes rawLR toFacing33;B6AB LDY/DEY byte index selects B687+index,including adjacentPRG;two-element hostarray overflow removed without input filtering.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix:currentlocalpublisher/index scope joined;explicitcaller/return/alias prerequisites remain pending,notglobalexact."
       ],
       "operationalEvidence": [
         "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results.",
@@ -38461,7 +38467,8 @@
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix:currentlocalpublisher/index scope joined;explicitcaller/return/alias prerequisites remain pending,notglobalexact."
       ],
       "operationalEvidence": [
         "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes.",
@@ -38978,7 +38985,8 @@
       "semanticEvidence": [
         "Td S9 B14b cannon and Bullet Bill node-semantics and independent integration audit: SMB1 lines 6785-6888 compared with shared cannon, world, enemy and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S2: original $B9BA-$BA56/current `src/game/cannon.c` static mapping preserves scheduler, spawn, carry, handler and retirement semantics.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P47 checkpoint - retained flag spring vine and cannon source-use joins:247instructions/96RAM joined15bounded source-use clauses,flagdummycarry/bounceAedge/vinegrowth/erase/indirecttile/cannonCMPcarry/countdown/spawnsequence/bulletpagecarry reviewed;4owners source-identical retainedcommits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix:currentlocalpublisher/index scope joined;explicitcaller/return/alias prerequisites remain pending,notglobalexact."
       ],
       "operationalEvidence": [
         "T61 S2: 25 original-ROM routes replayed as 50 current x86/x64 runs; 1,782 persistent RAM bytes and full output match in every route.",
@@ -39513,7 +39521,8 @@
         "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix:currentlocalpublisher/index scope joined;explicitcaller/return/alias prerequisites remain pending,notglobalexact."
       ],
       "operationalEvidence": [
         "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass.",
@@ -39626,7 +39635,8 @@
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix:currentlocalpublisher/index scope joined;explicitcaller/return/alias prerequisites remain pending,notglobalexact."
       ],
       "operationalEvidence": [
         "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass.",
@@ -40031,7 +40041,8 @@
         "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix:currentlocalpublisher/index scope joined;explicitcaller/return/alias prerequisites remain pending,notglobalexact."
       ],
       "operationalEvidence": [
         "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass.",
@@ -40914,7 +40925,8 @@
         "M2 T61 S8 static $BE70-$BF01 audit: state mask/stacked state, paired-child offsets, branch carry flow, metatile-pointer write and signed two-slot loop match original assembly; 32 controlled original-ROM snapshots exercise every scoped node and feasible branch.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P50 checkpoint - block head contents chunks and replacement source-use joins:240 instructions/87RAM joined16 bounded clauses;full pointer/row,ADC carry,stacked metatile/state,JumpEngine content,actual child order and0301 replacement gate audited;six owners unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix:currentlocalpublisher/index scope joined;explicitcaller/return/alias prerequisites remain pending,notglobalexact."
       ],
       "operationalEvidence": [
         "M2 T61 S8 fresh x86/x64 ROM caller and complete-current routes: 64 caller comparisons and 64 complete-current checks per width pass with zero differences; focused lifetime (131,090) and replacement (131,072) C90 cases per width, platform purity and DOS16 link pass.",
@@ -43247,7 +43259,8 @@
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix:currentlocalpublisher/index scope joined;explicitcaller/return/alias prerequisites remain pending,notglobalexact."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
@@ -47852,7 +47865,8 @@
       "semanticEvidence": [
         "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix:currentlocalpublisher/index scope joined;explicitcaller/return/alias prerequisites remain pending,notglobalexact."
       ],
       "operationalEvidence": [
         "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
@@ -48125,7 +48139,8 @@
       "semanticEvidence": [
         "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix:currentlocalpublisher/index scope joined;explicitcaller/return/alias prerequisites remain pending,notglobalexact."
       ],
       "operationalEvidence": [
         "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
@@ -48661,7 +48676,8 @@
       "semanticEvidence": [
         "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S17 static source-order audit: SMB1 $D17B-$D1D0 (86 instruction bytes) compared with shared src/game/oam/bowser_gfx.c; both-half order, direction wrap, rear transfer, ObjectOffset restoration, state gate, bounds and collision tail agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix:currentlocalpublisher/index scope joined;explicitcaller/return/alias prerequisites remain pending,notglobalexact."
       ],
       "operationalEvidence": [
         "M2 T63 S17 original-ROM/current operational proof: 512 Bowser graphics snapshots replayed by one x86 and one x64 manifest process with zero differences; focused C90 front/rear contract, platform purity and OpenNT DOS16 shared-source link pass.",
@@ -59553,7 +59569,8 @@
       "semanticEvidence": [
         "Td S9 K17 intermediate-player and shared player-row-rendering node-semantics and independent control/material-edge audit: SMB1 lines 14561-14608 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 world/lives intermediate-player and ordinary player-row routes remain required.",
         "M2 T66 S1 P2 static original EEE9-F129 source/RAM/table/control audit: injury blink, death/change-size priority, preselected swimming return, action/timer/ASL carry, original size CPY>=0A, attributes and real shared DrawPlayerLoop/DrawOneSpriteRow/DumpTwoSpr connections. docs/history/M2-T66-player-relative-offscreen-current-proof.md Copies one descending IntermediatePlayerData byte to scratch $02 through $07 and loops until all six bytes are present before DrawPlayerLoop.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P84 checkpoint - player graphics action size animation uses reconciled:42labels/255instructions/81RAM joined14boundedclauses;actualspritechildren/carry/timer/swimcontinuation/offscreen/index semantics reviewed;producer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P84 checkpoint - player graphics action size animation uses reconciled:42labels/255instructions/81RAM joined14boundedclauses;actualspritechildren/carry/timer/swimcontinuation/offscreen/index semantics reviewed;producer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix:currentlocalpublisher/index scope joined;explicitcaller/return/alias prerequisites remain pending,notglobalexact."
       ],
       "operationalEvidence": [
         "M2 T66 S1 P2 current x86/x64 each match75040 original roots, zero differences across1841 RAM bytes including scratch/OAM/aliases0109-0139. All44 labels/103 listed edges observed; every branch has taken/fall coverage, indexed tables20/20 and6/6,127104 actual row/erase returns independently checked. Native12/12 focused tests per width, purity and original DOS16 link pass; three products refreshed. docs/history/M2-T66-player-relative-offscreen-current-proof.md Source addressefa6 observed192 times (table nodes use actual indexed reads).",
@@ -170402,7 +170419,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P113 checkpoint - intrinsic loop bounds and area record domains",
         "docs/proposals/m2/t70-final-current-certification.md S17 P114 checkpoint - duplicate-object byte addresses repaired",
         "docs/proposals/m2/t70-final-current-certification.md S17 P115 checkpoint - platform initializer byte addresses repaired",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P116 checkpoint - duplicate allocation parent bound proved"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P116 checkpoint - duplicate allocation parent bound proved",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
