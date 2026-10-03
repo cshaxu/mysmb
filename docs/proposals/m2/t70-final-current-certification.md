@@ -6536,3 +6536,68 @@ Participants:InitializeGame,ClrSndLoop,PrimaryGameSetup,SecondaryGameSetup,Clear
 Current src/game/title_modes.c normalizedSHA256:c6ddc65709f17bed3f3397e8fbbb064031d33b047e61ff750bf36cfecd2de914.
 
 Current src/game/game.c normalizedSHA256:1f1663c3ab2e1351bef6a454d4860af6d0ea696543aa9cc320e29567285b87e9.
+
+## S17 P42 scope amendment - retained HUD timer and text source-use joins
+
+Exact auditparticipants:`WriteTopStatusLine`,`WriteBottomStatusLine`,`DisplayTimeUp`,`NoTimeUp`,`DisplayIntermediate`,`PlayerInter`,`OutputInter`,`GameOverInter`,`NoInter`,`WriteGameText`,`Chk2Players`,`LdGameText`,`GameTextLoop`,`EndGameText`,`PutLives`,`CheckPlayerName`,`ChkLuigi`,`NameLoop`,`ExitChkName`,`PrintWarpZoneNumbers`,`WarpNumLoop`,`ResetSpritesAndScreenTimer`,`ResetScreenTimer`,`NoReset`.
+
+146 instructions/39RAM accesses,8652-86E5/8808-88AD. Shared game.c screen2-7/output/timer,area.c actualtext producer,score.c bottomstatus owner. Match accepted2cdc23d9 screen/timer/bottomstatus segments and1634594c text function;join savedselector/name/lives,bytecursor,branch gates,timer/task/output order and actualchild return clauses. 24 addedauditparticipants,scope521,fresh0/max1992. Real retained JumpEngine/status/OAM dependencies andownerPRG tables execute;no inventednewdataedgepairs.
+
+Current nativeC90 bothwidths compare8192 originalScreenRoutines rootsand64 persistentprotocols/448 records;allRAM exceptactualsourceopcode-confirmedphysicalstack pushes. AlsoactualWriteGameText8808 fullbyte mode64/65536roots withretained ABI2032RAM/24APU/order,physical1F0-1FF excluded withminimumSPproof;sourceCPUregisters outsideAPI,savedselector consumption ismanualclause. Stream1024roots/128MiB/120s/process,rawcleanup underbuild. Checkexactknown exclusions andreuseoldproofonlyifsourcesegmentsstillmatch. No productedit/EXErefresh unlessboundedcorrective amendment;no newwholeauditround.
+
+## S17 P42 checkpoint - retained HUD timer and text source-use joins
+
+146instructions/39RAM and24existinglabels join12 manualclauses. S17 scope521,
+fresh0/max1992. Sixrelevantsource segments exactlymatchaccepted1634594c
+textand2cdc23d9 screen2-7/timer/output/bottomstatus;hash wholecurrentfiles
+separately,do not reuseobsoletewholefile hash asidentityproof.
+
+Currentactual C90 bothwidths8192 ScreenRoutines roots and64 persistent
+protocols/448 calls:zeroallRAM/returnABI differences excludingonlyactual
+originalopcode-confirmedpushbytes01F7-01FD.12 scopedentrypoints,seven
+conditional sitesbothoutcomes,1468 sourceorderedtask/outputwrite checks.
+C sourcepublicationorder provedbyunchangedaccepted segments andmanual
+contracts,not finalRAMequalityalone. Realstatus/OAM/text/dispatchchildren.
+Also65536 actualWriteGameText entryroots currentbothwidths zero2032RAM/
+24APU/orderedwrite diffs,reservedphysical1F0-1FF excluded,minSP>=EF. This
+secondaryABI isnot anall2048-byteclaim. Patternedfullbyte selector/player/
+lives/cursor classes andbothNumberPlayers/OperMode alternatives. No mocked
+ROMchild ornative sourcePCinjection;rawrecords removedafter1024-root batches.
+
+| Clause | Original PCs | Source-use/lifetime/alias disposition |
+| --- | --- | --- |
+| H1 | 0x8652-0x8659 | Topstatus setsselector0,realWriteGameText thentaskincrement. Textwrites0301..0400 do notaliasScreenTask73C. Native screenleaf2 samecall andtask3;table/copy preservedsource selector,not guardedbybufferoffset. |
+| H2 | 0x865a-0x8692 | BottomstatusrealGetSBNybbles produces0300;reloadasfixedX forheader/world/level/null absolute stores0301+X..0307+X. Nativeactualcursorreloadafterchild;world/level byte+1,separator28,alladdresses fixedbase+offset. Terminator beforebyteoffset+6 publication andIncSubtask. Bufferstoresdisjointworld75F/level75C/73C/0300untilfinalpublication;no movingX ornonzerooffsetguard. |
+| H3 | 0x8693-0x86a7 | Expiredflag759 zero skips twotaskincrements4->6;nonzero stores0beforeselector2 andrealOutputInter. Native explicit4->6 andclear-beforetext same. Textcallee notallowedto observe unclearedflag;realparent comparison includes759. |
+| H4 | 0x86a8-0x86c6 | DisplayIntermediate checksmode0/3 beforealtentrance752,area74Ecastle3 bypassesdisable769. Nativeordersmode3test beforemode0insideonenode,puretests ofsameunchangedbyte aremutuallyexclusive;allmode/alt/area/disable branchalgebra sameleaf. No interveningwrites orcallbacks. PlayerInter realOAMchild precedestextselector1;CPUregisters not usedtoinventC player state. |
+| H5 | 0x86c7-0x86d2 | OutputInter realtext thencanonicalResetScreenTimer stores7,incrementsscreen task,thenDisableScreen774=0. Native sameorder;helperdoesnotwrite774,bufferrange disjointtimer7A0/task73C. Requiredtask-before-enable publication preserved,samechildforbothlives/timeup. |
+| H6 | 0x86d3-0x86e5 | GameOverInter timer12 ->selector3 realtext ->modeTask772increment. NoInter setsScreenTask8 only. Native sameexclusivepaths;constantselectedtask8 not arithmeticfallback. Timer/sourcefieldsnotaliasedtext/name/lives writes. |
+| T1 | 0x8808-0x881f | PHA savesrawselector whilebyteASL/TAY derivesindex. CPY4 thencapindex8 for>=8;NumberPlayerszero incrementsonlyafterthreshold. Nativebyte(selector<<1) beforethreshold andsameNPtest. Savedrawparameter survivesROMstream,cannotaliasRAM orROM. Accepted boundoffsettable index0/2/4/5/6/7/8/9;unused1/3 remainnotinvented reads. |
+| T2 | 0x8820-0x883a | GameText[X] immutablebyte,FFstopbeforewrite;else0301+Y write thenbyteX/Y++ andstopYwrap. NativetwoU8cursorsandabsolutebase preserveboth wraps;finalnullattheactualY beforeoriginalPLA/rawselector dispatch. Copyrange0301..0400 disjointsource savedstackframe,mutable077A/753/770/75A/75F/75C and0300. Selector raw>=4 warp,raw1 lives,others0/2/3 name. |
+| T3 | 0x883c-0x885e | NumberLivesbyte+1 afterCLC;CMP10 clearsprioradditioncarry;if>=10 SBC10 hascarry1 soone subtractiononly andtens9F store. NativeU8wrapandone subtraction sameall256. SourceWorld/Levelbyte+1 publishedfixed offsets19/21 afterlife8;ROMdoesnotdecimal-normalizearbitraryhigherlifevalues. |
+| T4 | 0x885f-0x8881 | NumberPlayers0 exits,nameCurrentPlayersrawA testedbyLSRbit0. OriginaltwoDEX distinguishrawselector2;timeup2 flipsbit0unlessmode3. Native same(selector2 &&mode!=3) xor1 andbit0 test,notnonzero-player shortcut. Namecopies5immutablebytesdescending4..0 at0304..0308,disjointplayer/mode/NPfields. No2playernamepatchonraw1lives/warp. |
+| T5 | 0x8882-0x889c | Rawselector>=4 CMP suppliescarry1 toSBC4,twobyteASL ->X. NativeU8((selector-4)<<2) samebyteindex;originalthreeROMreadswithbyteINX/storeY0/4/8. Storesfixed0301+27/31/35. Final2C ->sharedSetVRAMOffset writes0300 withoutchangingcopiedterminator. ExistingdirectownerPRG reads preserveadjacenttablebytes forlargeoffsets. |
+| H7 | 0x889d-0x88ad | LiveScreenTimer exitswithno sprite/taskwrite;zero callsactualMoveAllSpritesOffscreen thencanonicaltimer7/taskINC. Bothdirectscreen5/7 andOutputInter useonehelper. U8task increment wraps;noextraDisableScreen writeonResetSprites entry. Savedownerlocalsnot consumedacrosschild. |
+
+69888 supplementalselector/numberplayers/lives/modegate assertions,four
+negativeindex accountingchecks. Existingtable/name/text material10-13 and
+screenpath614-647 reusedintheirexactoldscope;no newnode/control/material
+credit. ChildPC/loop/table receipts boundcurrentsource;no Cartesianedge
+inference orclaimof allinter-frameproducer invariants. Protocoltimer/expired
+inputs areexplicit externalfixtureevents,not proof ofNMI timer production.
+Twofocused tests eachwidth pass;no source/productchange,all3 P39hashes
+unchanged,originalDOScompile/link statusunchanged/runtimeunqualified.
+
+Historical/local1992/1992,controls4274/4274(raw4342,infeasible68);material986
+partial,totalunknown.2057instruction/640RAM boundedreceipts,8634 other
+instructions/3133 otherRAM entries needretainedjoins ormissingclauseproof,
+not3133 discovereddefects. Allwhole-program lifetime clausespending,four
+finalpackages open,M2 NOT COMPLETE. No newwholeauditround.
+
+Participants:WriteTopStatusLine,WriteBottomStatusLine,DisplayTimeUp,NoTimeUp,DisplayIntermediate,PlayerInter,OutputInter,GameOverInter,NoInter,WriteGameText,Chk2Players,LdGameText,GameTextLoop,EndGameText,PutLives,CheckPlayerName,ChkLuigi,NameLoop,ExitChkName,PrintWarpZoneNumbers,WarpNumLoop,ResetSpritesAndScreenTimer,ResetScreenTimer,NoReset.
+
+Current src/game/area.c normalizedSHA256:9e482d3c43db74d1b338726e5c4e9f69721e27b931f3fd6ac6c55ea5d48c24f3.
+
+Current src/game/game.c normalizedSHA256:1f1663c3ab2e1351bef6a454d4860af6d0ea696543aa9cc320e29567285b87e9.
+
+Current src/game/score.c normalizedSHA256:90ad2d2c11708edcc6326fb190b253d9e32e2cc51885a531a5d1182654f3b341.

@@ -13,6 +13,12 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P42 retainedHUD/text/timer source-use joins](../proposals/m2/t70-final-current-certification.md#s17-p42-checkpoint---retained-hud-timer-and-text-source-use-joins).
+146instructions/39RAM,current8192roots+64protocols/448records allRAM/ABI0diff;
+65536textroots2032RAM/APU/order0diff eachwidth,sixsource segmentsunchanged.
+2057instruction/640RAM boundedreceipts,3133otherRAM joins pending;material986
+partial,totalunknown;all3 P39products unchanged.
+
 [P41 retainedinitialization/setup source-use joins](../proposals/m2/t70-final-current-certification.md#s17-p41-checkpoint---retained-initialization-and-setup-source-use-joins).
 53instructions/22RAM,5888realroots eachwidthzero2032RAM/APU/orderdiff;five
 bodies unchanged,21entries/42controls/19tablebytes observed.Path986 A0return
