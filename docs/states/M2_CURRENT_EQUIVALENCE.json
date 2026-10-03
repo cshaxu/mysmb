@@ -49688,10 +49688,12 @@
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
       "semanticEvidence": [
         "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:19labels/94instructions/39RAM joined9boundedclauses;horizontal carry/rider/move order,lift timer/fraction andbounds CPY/ADC/SBC flag lifetimes. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:394752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all94PC/16branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Sets X-counter maximum $0e, updates counter then applies movement; only nonnegative collision flag enters player horizontal/vertical positioning.",
       "currentSourcePaths": [
@@ -49707,10 +49709,12 @@
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
       "semanticEvidence": [
         "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:19labels/94instructions/39RAM joined9boundedclauses;horizontal carry/rider/move order,lift timer/fraction andbounds CPY/ADC/SBC flag lifetimes. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:394752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all94PC/16branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Adds movement delta to player X, uses source add carry for positive page update or its borrow complement for negative page subtraction, stores Platform_X_Scroll, then positions vertically.",
       "currentSourcePaths": [
@@ -49726,10 +49730,12 @@
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
       "semanticEvidence": [
         "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:19labels/94instructions/39RAM joined9boundedclauses;horizontal carry/rider/move order,lift timer/fraction andbounds CPY/ADC/SBC flag lifetimes. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:394752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all94PC/16branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Consumes the carry from adding a negative delta with SBC #0 to update player page exactly as source.",
       "currentSourcePaths": [
@@ -49745,10 +49751,12 @@
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
       "semanticEvidence": [
         "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:19labels/94instructions/39RAM joined9boundedclauses;horizontal carry/rider/move order,lift timer/fraction andbounds CPY/ADC/SBC flag lifetimes. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:394752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all94PC/16branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Stores page and X scroll before vertical rider positioning.",
       "currentSourcePaths": [
@@ -49764,10 +49772,12 @@
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
       "semanticEvidence": [
         "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:19labels/94instructions/39RAM joined9boundedclauses;horizontal carry/rider/move order,lift timer/fraction andbounds CPY/ADC/SBC flag lifetimes. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:394752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all94PC/16branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Common return after optional horizontal/vertical rider positioning.",
       "currentSourcePaths": [
@@ -49783,10 +49793,12 @@
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
       "semanticEvidence": [
         "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:19labels/94instructions/39RAM joined9boundedclauses;horizontal carry/rider/move order,lift timer/fraction andbounds CPY/ADC/SBC flag lifetimes. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:394752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all94PC/16branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Only an existing collision calls fast downward movement then vertical rider position.",
       "currentSourcePaths": [
@@ -49802,10 +49814,12 @@
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
       "semanticEvidence": [
         "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:19labels/94instructions/39RAM joined9boundedclauses;horizontal carry/rider/move order,lift timer/fraction andbounds CPY/ADC/SBC flag lifetimes. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:394752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all94PC/16branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns after untouched no-collision or completed drop route.",
       "currentSourcePaths": [
@@ -49821,10 +49835,12 @@
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
       "semanticEvidence": [
         "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:19labels/94instructions/39RAM joined9boundedclauses;horizontal carry/rider/move order,lift timer/fraction andbounds CPY/ADC/SBC flag lifetimes. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:394752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all94PC/16branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Moves horizontally first, retains returned delta, then only with collision sets speed $10 and invokes shared horizontal/vertical rider positioning.",
       "currentSourcePaths": [
@@ -49840,10 +49856,12 @@
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_x/move_drop/move_right",
       "semanticEvidence": [
         "Td S9 B16e X/drop/right platform node-semantics and independent integration audit: SMB1 lines 10952-10995 compared with shared enemy/platform.c and named X-counter/movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:19labels/94instructions/39RAM joined9boundedclauses;horizontal carry/rider/move order,lift timer/fraction andbounds CPY/ADC/SBC flag lifetimes. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:394752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all94PC/16branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns after untouched no-collision or right-platform route.",
       "currentSourcePaths": [
@@ -49859,10 +49877,12 @@
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_large_lift/move_small/move_lift",
       "semanticEvidence": [
         "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:19labels/94instructions/39RAM joined9boundedclauses;horizontal carry/rider/move order,lift timer/fraction andbounds CPY/ADC/SBC flag lifetimes. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:394752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all94PC/16branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Calls common lift movement then always tails to large-platform rider collision gate.",
       "currentSourcePaths": [
@@ -49878,10 +49898,12 @@
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_large_lift/move_small/move_lift",
       "semanticEvidence": [
         "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:19labels/94instructions/39RAM joined9boundedclauses;horizontal carry/rider/move order,lift timer/fraction andbounds CPY/ADC/SBC flag lifetimes. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:394752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all94PC/16branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Calls common lift movement then tails to small-platform nonzero-counter collision gate.",
       "currentSourcePaths": [
@@ -49897,10 +49919,12 @@
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_large_lift/move_small/move_lift",
       "semanticEvidence": [
         "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:19labels/94instructions/39RAM joined9boundedclauses;horizontal carry/rider/move order,lift timer/fraction andbounds CPY/ADC/SBC flag lifetimes. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:394752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all94PC/16branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "TimerControl nonzero leaves fractional/Y unchanged; otherwise adds force into dummy then speed plus resulting carry into Y.",
       "currentSourcePaths": [
@@ -49916,10 +49940,12 @@
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_large_lift/move_small/move_lift",
       "semanticEvidence": [
         "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:19labels/94instructions/39RAM joined9boundedclauses;horizontal carry/rider/move order,lift timer/fraction andbounds CPY/ADC/SBC flag lifetimes. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:394752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all94PC/16branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Only nonzero small-platform collision counter invokes small-rider positioning.",
       "currentSourcePaths": [
@@ -49935,10 +49961,12 @@
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_large_lift/move_small/move_lift",
       "semanticEvidence": [
         "Td S9 B16f lift-platform node-semantics and independent integration audit: SMB1 lines 10999-11023 compared with shared enemy/platform.c and large/small rider children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:19labels/94instructions/39RAM joined9boundedclauses;horizontal carry/rider/move order,lift timer/fraction andbounds CPY/ADC/SBC flag lifetimes. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:394752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all94PC/16branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Common no-op/child return endpoint.",
       "currentSourcePaths": [
@@ -49956,12 +49984,14 @@
         "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:19labels/94instructions/39RAM joined9boundedclauses;horizontal carry/rider/move order,lift timer/fraction andbounds CPY/ADC/SBC flag lifetimes. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
         "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:394752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all94PC/16branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Immediately retains Flying Cheep; otherwise preserves CPY carry through special left-edge arithmetic, constructs extended bounds, performs source X/page subtract comparisons and applies right-side exception IDs before erase.",
       "currentSourcePaths": [
@@ -49977,10 +50007,12 @@
       "currentCounterpart": "src/game/enemy/actor_slots.c:mysmb_objects_check_enemy_offscreen_bounds",
       "semanticEvidence": [
         "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:19labels/94instructions/39RAM joined9boundedclauses;horizontal carry/rider/move order,lift timer/fraction andbounds CPY/ADC/SBC flag lifetimes. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:394752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all94PC/16branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "For Hammer Bro/Piranha preserves CPY equality carry into ADC $38 before common SBC $48, yielding source-special left bound.",
       "currentSourcePaths": [
@@ -49996,10 +50028,12 @@
       "currentCounterpart": "src/game/enemy/actor_slots.c:mysmb_objects_check_enemy_offscreen_bounds",
       "semanticEvidence": [
         "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:19labels/94instructions/39RAM joined9boundedclauses;horizontal carry/rider/move order,lift timer/fraction andbounds CPY/ADC/SBC flag lifetimes. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:394752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all94PC/16branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Consumes CPY carry through SBC $48 and stores left X/page before right bound ADC consumes final carry.",
       "currentSourcePaths": [
@@ -50015,10 +50049,12 @@
       "currentCounterpart": "src/game/enemy/actor_slots.c:mysmb_objects_check_enemy_offscreen_bounds",
       "semanticEvidence": [
         "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:19labels/94instructions/39RAM joined9boundedclauses;horizontal carry/rider/move order,lift timer/fraction andbounds CPY/ADC/SBC flag lifetimes. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:394752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all94PC/16branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Calls lifecycle erase after left-outside or non-exempt right-outside determination.",
       "currentSourcePaths": [
@@ -50034,10 +50070,12 @@
       "currentCounterpart": "src/game/enemy/actor_slots.c:mysmb_objects_check_enemy_offscreen_bounds",
       "semanticEvidence": [
         "Td S9 B16g offscreen-bounds node-semantics and independent integration audit: SMB1 lines 11031-11075 compared with shared enemy/actor_slots.c and lifecycle child; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return."
+        "M2 T64 S1 static source audit: SMB1 $D67A-$D6D5 and shared enemy/actor_slots.c preserve Flying-Cheep return, CPY carry, special ADC/SBC left bounds, scratch writes, signed page tests, five right exceptions and erase return.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:19labels/94instructions/39RAM joined9boundedclauses;horizontal carry/rider/move order,lift timer/fraction andbounds CPY/ADC/SBC flag lifetimes. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass."
+        "M2 T64 S1 controlled original-ROM/current route: 1,024 offscreen records replayed in one x86 process and one x64 process with zero RAM/call differences; exhaustive bounds oracle, product self-tests, DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:394752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all94PC/16branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Common retained-object/erase return endpoint.",
       "currentSourcePaths": [
@@ -168817,16 +168855,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P72 checkpoint - horizontal lift and bounds uses reconciled:19labels/94instructions/39RAM joined9boundedclauses;horizontal carry/rider/move order,lift timer/fraction andbounds CPY/ADC/SBC flag lifetimes. Producer/inter-frame pending,no newnode/control credit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 5892,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 4799,
+        "localInstructionReceiptSites": 5986,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 4705,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 2135,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 1638,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 2174,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 1599,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -168864,8 +168903,6 @@
           "src/game/world/geometry.c": 22,
           "src/game/entry.c shared C90 entry owner": 21,
           "src/game/world/fireball_hit.c": 21,
-          "shared game core: enemy/platform.c": 20,
-          "shared game core: enemy/actor_slots.c": 19,
           "src/game/enemy/platform_collision.c": 19,
           "src/game/oam/sprite_row.c": 19,
           "src/game/player_modes.c shared C90 player-mode owner": 18,
