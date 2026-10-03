@@ -8559,3 +8559,46 @@ Current src/game/oam/sprite_draw.c normalizedSHA256:38d45cf19d2e7cf63863002c0072
 Current src/game/oam/sprite_dump.c normalizedSHA256:a269d505b932e0c1f8735536be7ebfd1512e9351f1b06289eecc8b40422fe3fa.
 
 Current src/game/enemy/lifecycle.c normalizedSHA256:b97d001de830f02c7899d66a5445f5e9ccd8764820f5518011365106738891a6.
+
+## S17 P83 admission - block chunk fireball platform and bubble drawing
+
+Existing EBD1-EE06 gap:259instructions/112directRAM sites/27labels: DrawBlock,DBlkLoop,ChkRep,SetBFlip,BlkOffscr,PullOfsB,ChkLeftCo,MoveColOffscreen,ExDBlk,DrawBrickChunks,DChunks,ChnkOfs,ExBCDr,DrawFireball,DrawFirebar,FireA,DrawExplosion_Fireball,DrawExplosion_Fireworks,KillFireBall,DrawSmallPlatform,TopSP,BotSP,SOfs,SOfs2,ExSPl,DrawBubble,ExDBub. Shared oam/block_gfx.c,block_offscreen.c,sprite_dump.c,fireball_gfx.c,firebar_gfx.c,fireworks_gfx.c,small_platform_gfx.c andfireball/bubble.c drawleaf;retained actualrow/dumpchildren. Blockslots0-1,fireball0-1,platform0-5,bubble0-2;explosionframe0-2 fromrawstate extraction guardedbyindex>=3kill. ByteOAM/state/coordinates/frame/offscreen fixtures compareallnonstackRAM/APU/writes andsourceX/Y/Firebarreturncapabilities. ReflectionSBC/ADCcarrychain,absolutevsbyteindex,liveoffsetreload andbubblegate required;allPC/feasiblebranches beforecredit. Fresh0/max1992,local1991/1992nodes4261/4262controls retained. ROM/ASMreadonly protected,raw4096batch128MiB/120sec deletedbelowignored build. Any difference remainsS17 withcustody/3EXErepair;pureauditretainsP81products,producer/inter-frame/finalpackages pending.
+
+## S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled
+
+S17 P83:27misc graphics labels/259instructions/112RAM joined10boundedclauses;249856actualroots eachwidth0diff/all259PC/19branchpairs,6tests each. Scope1383/fresh0;8530/10691instruction receipts,3054/3773RAM receipts;2161instructions/719RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| B1 | DrawBlock,DBlkLoop | Publish02Y/05X/04attr3/03dir1. Fourfixedtiles consumedbytwoactualDrawOneSpriteRow calls withindices0,2 andbyteOAMadvances. ReloadObjectOffset/liveOAM afterchildren;allchildscratch compared. |
+| B2 | ChkRep,SetBFlip | AreaType!=1 replacesfirstrow86. MetatileC4 dumpfour87 atbyteY+1,restoreY;palette3forarea1else1. Attribute stores0/4/12/8 with40/C0/80 flips preserveoriginalorder. |
+| B3 | BlkOffscr,PullOfsB,ChkLeftCo,MoveColOffscreen,ExDBlk | Bit4 hidesrightrows absolute+4/+12 thenbit8 actualcolumnchild hidesleft0/+8. InputA consumedbyChkLeftCo;MoveCol returnsF8 exactly. No extraRAMscratch orwrappedabsoluteindexedaddress. |
+| C1 | DrawBrickChunks,DChunks | Engine5 publishes00=2/tile75 else00=3/tile84. ByteINY tile/attribute dumpfour calls thenDEY2;frameASL4ANDC0OR00. FirstY actualDumpTwo thenX;00originalX-screenX byte. |
+| C2 | ChnkOfs,ExBCDr | Reflection SEC/SBC thenADC original andADC6 withoutCLC retainsbothcarries. SecondXYfourabsoluteindexedstores thenactualChkLeftCo. Reloadoffscreenbit80 hidesfirst2;00negative plusfirstX>=reflectedX hidesright2. No algebraiccarryloss orcapturedoldoffscreen. |
+| F1 | DrawFireball,DrawFirebar,FireA | FireballOAM6F1+slot,relativeY/X thenactualFirebar. Tile64XOR(frameLSR2AND1),attribute2/C2fromframebit3. NativeFirebarreturnY equalsoriginalCPUY;DrawFireballvoidA/flags excludeddeclared. |
+| F2 | DrawExplosion_Fireball,KillFireBall | CaptureOAM6EC+slot beforeINCrawstate,deriveoldstateLSR1AND7. Index>=3 clearsstate0withoutdraw;0-2 actualfireworksbody. FFstatewrapINC andkill remainexact;noalternatefireballoffset. |
+| F3 | DrawExplosion_Fireworks | Frame0-2 controlledoriginaltable. ByteINY tileDumpFour thenDEY restore. RelY-4left2/+8right2,relX-4top2/+8bottom2;absoluteindexedstores attributes2/82/42/C2 sourceorder. ObjectOffsetXrestore originalABIasserted. |
+| S1 | DrawSmallPlatform,TopSP,BotSP,SOfs,SOfs2,ExSPl | Tile5B/attr2 actualDumpSix atbyteINY1/2 thenrestore. RelativeX columns+8/+8. WorldEnemyY topF8if<20;bottombyteY+80 F8if<20 withabsolute12/16/20 stores. Offscreen8/4/2 columnpairs preserveoriginalorder. RawOAMFFtestedwithoutclamping. |
+| U1 | DrawBubble,ExDBub | PlayerYhigh==1 andoffscreenbit8clear only. CaptureOAM6EE+slot thenstoresX/Y/tile74/attr2sourceorder. No enemyYhigh orworldrange gate;slots0-2. Producer/lifetime ofoffsets/coordinates stayspending. |
+
+Tenrootfamilies total249856 eachwidth. UnmodifiedROM withactualchildren,allnonstackRAM/24APU/orderedwrites compared. All259PC/19branchpairs. FirebaroriginalY equalsnativeYreturn;MoveColoriginalA equalsnativeF8return;originalXObjectOffsetrestoreasserted. VoidCPU A/remainingflags excludedonlyunexposedABI withcallerbranches reviewed. Sixfocusedtests eachwidthpass;fournegativeaccountingmutants rejected. Block/fireball slots0-1,platform0-5,bubble0-2,explosionframe0-2 controlleddomains;rawstate/coordinates/OAM exerciseinstructionuses,notproducerreachability. No product/sourcechange;P81threeproducts hashesunchanged,DOScompile/linkonly. WholeProgramLifetime/material/pixels/routes/snapshot remainpending.
+
+Current src/game/oam/block_gfx.c normalizedSHA256:ade0d78e3b298c32425aab609bce62df1028d16ac07681def4014f19cc9353da.
+
+Current src/game/oam/block_offscreen.c normalizedSHA256:fa8e405752e2c3e35dfb04ed3b200c583758f5766e25601a8194bbaaf3dc254f.
+
+Current src/game/oam/sprite_dump.c normalizedSHA256:a269d505b932e0c1f8735536be7ebfd1512e9351f1b06289eecc8b40422fe3fa.
+
+Current src/game/oam/fireball_gfx.c normalizedSHA256:722c4d221e5146c25a2a1d0fc6336f9c27e8a31471fec667612d32451640268a.
+
+Current src/game/oam/firebar_gfx.c normalizedSHA256:f4c27054e144e891411658f8baf6fcb395aa433415a0848ab00efa5a59cbdacb.
+
+Current src/game/oam/fireworks_gfx.c normalizedSHA256:c132c45c7617f6550777939047b8ee2fdcdbc74b7f8d2a53ca4c83f317b213e5.
+
+Current src/game/oam/small_platform_gfx.c normalizedSHA256:e4c72c53613d8f1a637cb42d155daa3ccba840608dc6a8329778d7a35a226456.
+
+Current src/game/fireball/bubble.c normalizedSHA256:bb95774c8ad52eda835e1c09cff3cfa883912d23241f1da5bdda20a6f9d3f536.
+
+Current src/game/oam/sprite_row.c normalizedSHA256:c48564ca7adfdd578115ff8014961eb48da784ff6f8ab3115216b2255c1081e5.
+
+Current src/game/oam/sprite_draw.c normalizedSHA256:38d45cf19d2e7cf63863002c007244765bd9b4901ef3be8bca45464eb32e0588.

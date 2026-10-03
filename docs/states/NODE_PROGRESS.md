@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P83 misc graphics uses](../proposals/m2/t70-final-current-certification.md#s17-p83-checkpoint---block-fireball-platform-bubble-drawing-uses-reconciled).
+S17 P83:27misc graphics labels/259instructions/112RAM joined10boundedclauses;249856actualroots eachwidth0diff/all259PC/19branchpairs,6tests each. Scope1383/fresh0;8530/10691instruction receipts,3054/3773RAM receipts;2161instructions/719RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
 [P82 enemy graphics uses](../proposals/m2/t70-final-current-certification.md#s17-p82-checkpoint---enemy-selection-drawing-and-offscreen-uses-reconciled).
 S17 P82:55enemy graphics labels/445instructions/161RAM joined16boundedclauses;286720actualroots eachwidth0diff/all445PC/80branchpairs plus4retainedsingle-sidedproofs,8tests each. Scope1356/fresh0;8271/10691instruction receipts,2942/3773RAM receipts;2420instructions/831RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 

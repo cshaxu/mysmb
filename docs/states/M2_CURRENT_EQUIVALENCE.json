@@ -57946,11 +57946,13 @@
       "semanticEvidence": [
         "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
         "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Load relative Y/X to RAM02/05, set RAM04=3 and RAM03=1, then load OAM offset and reset graphics X0 before the row loop.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Load relative Y/X to RAM02/05, set RAM04=3 and RAM03=1, then load OAM offset and reset graphics X0 before the row loop.",
       "currentSourcePaths": [
@@ -57967,10 +57969,12 @@
       "semanticEvidence": [
         "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
         "M2 T65 S10 source finding: Original calls DrawOneSpriteRow after RAM00 load; current native stores RAM01 then calls DrawSpriteObject directly. Restore the actual child entry and original X-driven loop. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Actual DrawOneSpriteRow updates byte X/Y; loop while X!=4. Restore ObjectOffset/OAM, then non-ground replaces top row with86 before ChkRep."
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Actual DrawOneSpriteRow updates byte X/Y; loop while X!=4. Restore ObjectOffset/OAM, then non-ground replaces top row with86 before ChkRep.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Actual DrawOneSpriteRow updates byte X/Y; loop while X!=4. Restore ObjectOffset/OAM, then non-ground replaces top row with86 before ChkRep.",
       "currentSourcePaths": [
@@ -57987,10 +57991,12 @@
       "semanticEvidence": [
         "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
         "M2 T65 S10 source finding: Original wraps Y+1 once before actual DumpFourSpr; current per-row tile loop wraps each row and omits meaningful call. Restore real child and saved offset. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Only metatileC4 invokes real DumpFourSpr with87 and byte-wrapped Y+1. Restore Y, then ground palette3/non-ground palette1 reaches SetBFlip."
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Only metatileC4 invokes real DumpFourSpr with87 and byte-wrapped Y+1. Restore Y, then ground palette3/non-ground palette1 reaches SetBFlip.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Only metatileC4 invokes real DumpFourSpr with87 and byte-wrapped Y+1. Restore Y, then ground palette3/non-ground palette1 reaches SetBFlip.",
       "currentSourcePaths": [
@@ -58007,10 +58013,12 @@
       "semanticEvidence": [
         "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
         "M2 T65 S10 source finding: Original writes attributes first,second,fourth,third; current writes first,second,third,fourth. Restore ordered writes. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Reload ObjectOffset, store first attribute, horizontal second, both flips fourth, vertical third in original order."
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Reload ObjectOffset, store first attribute, horizontal second, both flips fourth, vertical third in original order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Reload ObjectOffset, store first attribute, horizontal second, both flips fourth, vertical third in original order.",
       "currentSourcePaths": [
@@ -58026,10 +58034,12 @@
       "currentCounterpart": "actual shared block/chunk, row/dump and conditional left-column entries",
       "semanticEvidence": [
         "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
-        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Read and preserve mask; bit2 hides right column with two ordered absolute indexed stores."
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Read and preserve mask; bit2 hides right column with two ordered absolute indexed stores.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Read and preserve mask; bit2 hides right column with two ordered absolute indexed stores.",
       "currentSourcePaths": [
@@ -58045,10 +58055,12 @@
       "currentCounterpart": "actual shared block/chunk, row/dump and conditional left-column entries",
       "semanticEvidence": [
         "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
-        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Resume with saved original mask and meaningful shared ChkLeftCo entry."
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Resume with saved original mask and meaningful shared ChkLeftCo entry.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Resume with saved original mask and meaningful shared ChkLeftCo entry.",
       "currentSourcePaths": [
@@ -58065,10 +58077,12 @@
       "semanticEvidence": [
         "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
         "M2 T65 S10 source finding: Original meaningful mask8 entry is shared by block/chunks and falls through MoveColOffscreen; native duplicates direct clipping. Restore shared entry. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Mask bit3, return if clear, otherwise enter actual MoveColOffscreen with the same byte Y."
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Mask bit3, return if clear, otherwise enter actual MoveColOffscreen with the same byte Y.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Mask bit3, return if clear, otherwise enter actual MoveColOffscreen with the same byte Y.",
       "currentSourcePaths": [
@@ -58085,10 +58099,12 @@
       "currentCounterpart": "actual shared block/chunk, row/dump and conditional left-column entries",
       "semanticEvidence": [
         "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
-        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Load F8, store first then second row at absolute Sprite_Data+Y/+8+Y, return F8; both block and enemy column callers use this single leaf."
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Load F8, store first then second row at absolute Sprite_Data+Y/+8+Y, return F8; both block and enemy column callers use this single leaf.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Load F8, store first then second row at absolute Sprite_Data+Y/+8+Y, return F8; both block and enemy column callers use this single leaf.",
       "currentSourcePaths": [
@@ -58105,10 +58121,12 @@
       "currentCounterpart": "actual shared block/chunk, row/dump and conditional left-column entries",
       "semanticEvidence": [
         "Td S9 K11 bouncing-block OAM node-semantics and independent integration audit: SMB1 lines 14119-14182 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/used block, ground/non-ground and offscreen routes remain required.",
-        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Shared block/column return follows the original conditional leaf stores, with no extra game writes."
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Shared block/column return follows the original conditional leaf stores, with no extra game writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Shared block/column return follows the original conditional leaf stores, with no extra game writes.",
       "currentSourcePaths": [
@@ -58127,11 +58145,13 @@
         "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
         "Additional S10 source-order finding repaired: native formerly omitted initial RAM00=2 on non-state5 path; current code preserves the write before testing engine state and possible palette3 replacement.",
         "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Write initial palette2 before testing engine state5; other states write palette3 and tile84, state5 retains tile75 before DChunks.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Write initial palette2 before testing engine state5; other states write palette3 and tile84, state5 retains tile75 before DChunks.",
       "currentSourcePaths": [
@@ -58148,10 +58168,12 @@
       "semanticEvidence": [
         "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
         "M2 T65 S10 source finding: Original real DumpFourSpr(tile), DumpFourSpr(attribute), DumpTwoSpr(Y), ChkLeftCo and optional DumpTwoSpr(offscreen) calls are replaced by interleaved loops/raw stores; Y+1/Y+2 wrapping differs at high OAM offsets. Restore original calls/order and carry-preserving arithmetic. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Actual tile/attribute DumpFourSpr calls use consecutive byte Y increments; restore Y and actual DumpTwoSpr for top Y. Preserve coordinate write order and SEC/SBC plus both ADC carries, then actual ChkLeftCo and optional offscreen DumpTwoSpr."
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Actual tile/attribute DumpFourSpr calls use consecutive byte Y increments; restore Y and actual DumpTwoSpr for top Y. Preserve coordinate write order and SEC/SBC plus both ADC carries, then actual ChkLeftCo and optional offscreen DumpTwoSpr.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Actual tile/attribute DumpFourSpr calls use consecutive byte Y increments; restore Y and actual DumpTwoSpr for top Y. Preserve coordinate write order and SEC/SBC plus both ADC carries, then actual ChkLeftCo and optional offscreen DumpTwoSpr.",
       "currentSourcePaths": [
@@ -58167,10 +58189,12 @@
       "currentCounterpart": "actual shared block/chunk, row/dump and conditional left-column entries",
       "semanticEvidence": [
         "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
-        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Only negative original relative X compares left and right sprite X; left>=right hides right column in original ordered stores."
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Only negative original relative X compares left and right sprite X; left>=right hides right column in original ordered stores.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Only negative original relative X compares left and right sprite X; left>=right hides right column in original ordered stores.",
       "currentSourcePaths": [
@@ -58186,10 +58210,12 @@
       "currentCounterpart": "actual shared block/chunk, row/dump and conditional left-column entries",
       "semanticEvidence": [
         "Td S9 K12 brick-chunk OAM node-semantics and independent integration audit: SMB1 lines 14187-14250 compared with shared block_gfx.c; controlled original-ROM/x86/x64 normal/end-level, phase, mirror and offscreen routes remain required.",
-        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Return after selected column/top-row clipping; no additional native clipping rule."
+        "M2 T65 S10 P2 original lines14119-14250 node/control/table/read-write/carry/order audit; docs/history/M2-T65-block-query-object-output-current-proof.md; Return after selected column/top-row clipping; no additional native clipping rule.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S10 P2:656384 controlled original roots, full and independent child checks on x86/x64 compare1841 RAM bytes plus relevant child A/X/Y and row X/Y returns with zero differences. Identical pre-repair2048 block/chunk fixtures also pass both widths/checkers after repair. All13 code labels and36 owned controls observed; four-byte table binding exact. Complete C90 builds,14/14 focused tests each width, original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Return after selected column/top-row clipping; no additional native clipping rule.",
       "currentSourcePaths": [
@@ -58206,10 +58232,12 @@
       "semanticEvidence": [
         "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required.",
         "M2 T65 S11 source finding: Native duplicates DrawFirebar and stores X after tile/attributes; original stores Y then X and enters shared DrawFirebar. Consolidate to actual shared entry/order. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S11 P2 source audit and repair: original ECDE-ED65 branches, state/offset reads, table binding, byte INY, shared entries, meaningful DumpFourSpr call and ordered stores match the current shared C owners. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S11 P2 source audit and repair: original ECDE-ED65 branches, state/offset reads, table binding, byte INY, shared entries, meaningful DumpFourSpr call and ordered stores match the current shared C owners. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S11 P2:393216 controlled original roots; full output and independent selected-child input/return checking on current x86/x64 compare1841 RAM bytes/root with zero differences. All256 OAM/frame/state values and valid explosion indices0-2 execute both frame and kill alternatives; original DumpFourSpr returns ED1F. Separate14/14 tests per width, complete builds, original OpenNT DOS16 link and purity pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S11 P2:393216 controlled original roots; full output and independent selected-child input/return checking on current x86/x64 compare1841 RAM bytes/root with zero differences. All256 OAM/frame/state values and valid explosion indices0-2 execute both frame and kill alternatives; original DumpFourSpr returns ED1F. Separate14/14 tests per width, complete builds, original OpenNT DOS16 link and purity pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "ECDE loads byte sprite offset, writes relative Y then X, then enters actual shared DrawFirebar with that Y.",
       "currentSourcePaths": [
@@ -58225,10 +58253,12 @@
       "currentCounterpart": "src/game/oam/firebar_gfx.c:mysmb_oam_draw_firebar",
       "semanticEvidence": [
         "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required.",
-        "M2 T65 S11 P2 source audit and repair: original ECDE-ED65 branches, state/offset reads, table binding, byte INY, shared entries, meaningful DumpFourSpr call and ordered stores match the current shared C owners. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S11 P2 source audit and repair: original ECDE-ED65 branches, state/offset reads, table binding, byte INY, shared entries, meaningful DumpFourSpr call and ordered stores match the current shared C owners. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S11 P2:393216 controlled original roots; full output and independent selected-child input/return checking on current x86/x64 compare1841 RAM bytes/root with zero differences. All256 OAM/frame/state values and valid explosion indices0-2 execute both frame and kill alternatives; original DumpFourSpr returns ED1F. Separate14/14 tests per width, complete builds, original OpenNT DOS16 link and purity pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S11 P2:393216 controlled original roots; full output and independent selected-child input/return checking on current x86/x64 compare1841 RAM bytes/root with zero differences. All256 OAM/frame/state values and valid explosion indices0-2 execute both frame and kill alternatives; original DumpFourSpr returns ED1F. Separate14/14 tests per width, complete builds, original OpenNT DOS16 link and purity pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "ECED reads FrameCounter once; source d2 selects tile64/65 before d3 selects attributes2/C2; Y preserved.",
       "currentSourcePaths": [
@@ -58244,10 +58274,12 @@
       "currentCounterpart": "src/game/oam/firebar_gfx.c:mysmb_oam_draw_firebar",
       "semanticEvidence": [
         "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required.",
-        "M2 T65 S11 P2 source audit and repair: original ECDE-ED65 branches, state/offset reads, table binding, byte INY, shared entries, meaningful DumpFourSpr call and ordered stores match the current shared C owners. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S11 P2 source audit and repair: original ECDE-ED65 branches, state/offset reads, table binding, byte INY, shared entries, meaningful DumpFourSpr call and ordered stores match the current shared C owners. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S11 P2:393216 controlled original roots; full output and independent selected-child input/return checking on current x86/x64 compare1841 RAM bytes/root with zero differences. All256 OAM/frame/state values and valid explosion indices0-2 execute both frame and kill alternatives; original DumpFourSpr returns ED1F. Separate14/14 tests per width, complete builds, original OpenNT DOS16 link and purity pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S11 P2:393216 controlled original roots; full output and independent selected-child input/return checking on current x86/x64 compare1841 RAM bytes/root with zero differences. All256 OAM/frame/state values and valid explosion indices0-2 execute both frame and kill alternatives; original DumpFourSpr returns ED1F. Separate14/14 tests per width, complete builds, original OpenNT DOS16 link and purity pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "ED02 receives both source BCC and ORA paths and stores the selected attribute before returning.",
       "currentSourcePaths": [
@@ -58283,10 +58315,12 @@
       "semanticEvidence": [
         "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required.",
         "M2 T65 S11 source finding: Native duplicates shared explosion layout and bypasses original ExplosionTiles/DumpFourSpr entry. Preserve offset/state increment/kill selection and use the canonical shared body. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S11 P2 source audit and repair: original ECDE-ED65 branches, state/offset reads, table binding, byte INY, shared entries, meaningful DumpFourSpr call and ordered stores match the current shared C owners. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S11 P2 source audit and repair: original ECDE-ED65 branches, state/offset reads, table binding, byte INY, shared entries, meaningful DumpFourSpr call and ordered stores match the current shared C owners. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S11 P2:393216 controlled original roots; full output and independent selected-child input/return checking on current x86/x64 compare1841 RAM bytes/root with zero differences. All256 OAM/frame/state values and valid explosion indices0-2 execute both frame and kill alternatives; original DumpFourSpr returns ED1F. Separate14/14 tests per width, complete builds, original OpenNT DOS16 link and purity pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S11 P2:393216 controlled original roots; full output and independent selected-child input/return checking on current x86/x64 compare1841 RAM bytes/root with zero differences. All256 OAM/frame/state values and valid explosion indices0-2 execute both frame and kill alternatives; original DumpFourSpr returns ED1F. Separate14/14 tests per width, complete builds, original OpenNT DOS16 link and purity pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "ED09 loads alternate OAM offset before state, increments byte state, selects using pre-increment bits d3-d1 and enters shared explosion or KillFireBall.",
       "currentSourcePaths": [
@@ -58303,10 +58337,12 @@
       "semanticEvidence": [
         "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required.",
         "M2 T65 S11 source finding: Native raw tile stores omit DumpFourSpr with byte-wrapped Y+1, and coordinate/attribute store order differs. Restore actual child and ordered original stores. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S11 P2 source audit and repair: original ECDE-ED65 branches, state/offset reads, table binding, byte INY, shared entries, meaningful DumpFourSpr call and ordered stores match the current shared C owners. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S11 P2 source audit and repair: original ECDE-ED65 branches, state/offset reads, table binding, byte INY, shared entries, meaningful DumpFourSpr call and ordered stores match the current shared C owners. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S11 P2:393216 controlled original roots; full output and independent selected-child input/return checking on current x86/x64 compare1841 RAM bytes/root with zero differences. All256 OAM/frame/state values and valid explosion indices0-2 execute both frame and kill alternatives; original DumpFourSpr returns ED1F. Separate14/14 tests per width, complete builds, original OpenNT DOS16 link and purity pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S11 P2:393216 controlled original roots; full output and independent selected-child input/return checking on current x86/x64 compare1841 RAM bytes/root with zero differences. All256 OAM/frame/state values and valid explosion indices0-2 execute both frame and kill alternatives; original DumpFourSpr returns ED1F. Separate14/14 tests per width, complete builds, original OpenNT DOS16 link and purity pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "ED17 loads the shared table, wraps byte Y+1 before actual DumpFourSpr, restores Y, then performs ordered Y/X/attribute stores; ObjectOffset CPU-X restoration uses the explicit native caller-slot ABI.",
       "currentSourcePaths": [
@@ -58322,10 +58358,12 @@
       "currentCounterpart": "src/game/oam/fireball_gfx.c:mysmb_oam_draw_fireball_explosion:index >= 3",
       "semanticEvidence": [
         "Td S9 K13 fireball/firebar/explosion OAM node-semantics and independent integration audit: SMB1 lines 14254-14332 compared with shared fireball_gfx.c, firebar_gfx.c and fireworks_gfx.c; controlled original-ROM/x86/x64 fireball, phase and explosion routes remain required.",
-        "M2 T65 S11 P2 source audit and repair: original ECDE-ED65 branches, state/offset reads, table binding, byte INY, shared entries, meaningful DumpFourSpr call and ordered stores match the current shared C owners. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S11 P2 source audit and repair: original ECDE-ED65 branches, state/offset reads, table binding, byte INY, shared entries, meaningful DumpFourSpr call and ordered stores match the current shared C owners. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S11 P2:393216 controlled original roots; full output and independent selected-child input/return checking on current x86/x64 compare1841 RAM bytes/root with zero differences. All256 OAM/frame/state values and valid explosion indices0-2 execute both frame and kill alternatives; original DumpFourSpr returns ED1F. Separate14/14 tests per width, complete builds, original OpenNT DOS16 link and purity pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S11 P2:393216 controlled original roots; full output and independent selected-child input/return checking on current x86/x64 compare1841 RAM bytes/root with zero differences. All256 OAM/frame/state values and valid explosion indices0-2 execute both frame and kill alternatives; original DumpFourSpr returns ED1F. Separate14/14 tests per width, complete builds, original OpenNT DOS16 link and purity pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "ED61 clears the original slot state after source increment when pre-increment masked index>=3, including state overflow.",
       "currentSourcePaths": [
@@ -58342,10 +58380,12 @@
       "semanticEvidence": [
         "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
         "M2 T65 S12 source finding: missing actual two DumpSixSpr/one DumpThreeSpr calls, wrong per-column byte-wrapped store bases/order. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "ED66 loads source OAM, calls DumpSixSpr with tile at byte Y+1 then attributes at byte Y+2, restores Y and writes paired relative X/X+8/X+16 coordinates before loading enemy Y.",
       "currentSourcePaths": [
@@ -58362,10 +58402,12 @@
       "semanticEvidence": [
         "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
         "M2 T65 S12 source finding: missing actual two DumpSixSpr/one DumpThreeSpr calls, wrong per-column byte-wrapped store bases/order. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "ED9C calls actual DumpThreeSpr with original Y if >=20 or F8 otherwise, then wraps original Y+80 and applies the second status-area test.",
       "currentSourcePaths": [
@@ -58381,10 +58423,12 @@
       "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_small_platform",
       "semanticEvidence": [
         "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
-        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "EDAA stores bottom-row Y at absolute-indexed +12/+16/+20, then reads the offscreen mask and conditionally hides first/fourth sprites from d3.",
       "currentSourcePaths": [
@@ -58400,10 +58444,12 @@
       "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_small_platform",
       "semanticEvidence": [
         "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
-        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "EDC3 retains original mask and conditionally hides second/fifth sprites from d2 in source order.",
       "currentSourcePaths": [
@@ -58419,10 +58465,12 @@
       "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_small_platform",
       "semanticEvidence": [
         "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
-        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "EDD1 retains original mask and conditionally hides third/sixth sprites from d1 in source order.",
       "currentSourcePaths": [
@@ -58438,10 +58486,12 @@
       "currentCounterpart": "src/game/oam/small_platform_gfx.c:mysmb_objects_draw_small_platform",
       "semanticEvidence": [
         "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
-        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S12 P2 static source audit and repair: ED66-EDE1 actual dump sequence, byte INY offsets, absolute indexed store bases, paired coordinates, source status-Y and d3/d2/d1 clipping match shared small_platform_gfx.c. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S12 P2:69632 original ED66 roots and208896 actual dump returns ED6F/ED75/ED9F match current x86/x64 full output and independent A/Y/input-RAM/return checks across1841 RAM bytes; all five branch alternatives observed, zero differences. Separate12/12 tests per width, current Win32 builds, purity and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "EDDE restores original ObjectOffset CPU-X and returns; native caller slot remains an explicit immutable argument, with no additional clipping or motion.",
       "currentSourcePaths": [
@@ -58458,10 +58508,12 @@
       "semanticEvidence": [
         "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
         "M2 T65 S13 source-only finding: native X store comes after Y/tile/attributes; source X/Y/tile/attributes order must be restored. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S13 P2 source audit: EDE1-EE06 byte DEY/nonzero is Player_Y_HighPos!=1; d3 short-circuit reads match. Shared bubble.c restores original X/Y/tile/attributes load/store order; all exits return without additional work. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S13 P2 source audit: EDE1-EE06 byte DEY/nonzero is Player_Y_HighPos!=1; d3 short-circuit reads match. Shared bubble.c restores original X/Y/tile/attributes load/store order; all exits return without additional work. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S13 P2:131072 original EDE1 roots match x86/x64 current C across1841 RAM bytes, all256 high-position x256 masks and drawable all256 OAM x256 relative-coordinate patterns; both early branches and drawing fallthrough observed. Leaf has no child calls. Current builds,9/9 tests per width, purity and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S13 P2:131072 original EDE1 roots match x86/x64 current C across1841 RAM bytes, all256 high-position x256 masks and drawable all256 OAM x256 relative-coordinate patterns; both early branches and drawing fallthrough observed. Leaf has no child calls. Current builds,9/9 tests per width, purity and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Original high-position and offscreen-d3 gates short circuit; if drawable, stores relative X, relative Y, tile74 and attributes2 in source order.",
       "currentSourcePaths": [
@@ -58477,10 +58529,12 @@
       "currentCounterpart": "mysmb_fireball_draw_bubble",
       "semanticEvidence": [
         "Td S9 K14 small-platform and bubble OAM node-semantics and independent integration audit: SMB1 lines 14334-14413 compared with shared small_platform_gfx.c and fireball/bubble.c; controlled original-ROM/x86/x64 platform/bubble routes remain required.",
-        "M2 T65 S13 P2 source audit: EDE1-EE06 byte DEY/nonzero is Player_Y_HighPos!=1; d3 short-circuit reads match. Shared bubble.c restores original X/Y/tile/attributes load/store order; all exits return without additional work. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S13 P2 source audit: EDE1-EE06 byte DEY/nonzero is Player_Y_HighPos!=1; d3 short-circuit reads match. Shared bubble.c restores original X/Y/tile/attributes load/store order; all exits return without additional work. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S13 P2:131072 original EDE1 roots match x86/x64 current C across1841 RAM bytes, all256 high-position x256 masks and drawable all256 OAM x256 relative-coordinate patterns; both early branches and drawing fallthrough observed. Leaf has no child calls. Current builds,9/9 tests per width, purity and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S13 P2:131072 original EDE1 roots match x86/x64 current C across1841 RAM bytes, all256 high-position x256 masks and drawable all256 OAM x256 relative-coordinate patterns; both early branches and drawing fallthrough observed. Leaf has no child calls. Current builds,9/9 tests per width, purity and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:249856originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all259PC/19branchpairs;originalFirebarY/MoveColA capabilitiescompared,6tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Returns after bubble draw or either early gate.",
       "currentSourcePaths": [
@@ -169527,16 +169581,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:17labels/125instructions/48RAM joined7clauses;offset/mask/midpoint/cornerbyte semantics;LargePlatform actualGetXOffscreenBits scratch04-07 restored. Control0-11 contract only;rawcontrol producer/alias andinter-frame pending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:11labels/64instructions/15RAM joined5clauses;slot/index/bytecarry/parity/pointerrow/contactflag/rawmetatile seams. ControlledboundPRG rawindexdomain,producer/inter-frame pending,no newnode/controlcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P83 checkpoint - block fireball platform bubble drawing uses reconciled:27labels/259instructions/112RAM joined10boundedclauses;actualrow/dumpchildren,byteindex/fulladdress andSBC/ADCcarry reviewed;producer/inter-frame pending,no graphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 8271,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 2420,
+        "localInstructionReceiptSites": 8530,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 2161,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 2942,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 831,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 3054,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 719,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -169544,7 +169599,6 @@
         "pendingDirectRamOwners": {
           "src/game/terminal_modes.c": 81,
           "src/game/oam/player_gfx.c": 81,
-          "src/game/oam/block_gfx.c": 54,
           "src/game/frame_root.c": 46,
           "src/game/title_modes.c": 46,
           "src/game/player_control.c shared C90 player-control owner": 39,
@@ -169559,24 +169613,18 @@
           "src/game/status.c": 25,
           "src/game/player_end_level.c shared C90 end-level owner": 24,
           "src/game/entry.c shared C90 entry owner": 21,
-          "src/game/oam/small_platform_gfx.c": 20,
           "src/game/oam/sprite_row.c": 19,
           "src/game/player_modes.c shared C90 player-mode owner": 18,
           "src/game/player_transition.c shared C90 transition owner": 17,
           "src/game/area.c": 15,
-          "src/game/oam/fireworks_gfx.c": 15,
           "src/game/boot.c": 13,
           "src/game shared dispatcher/engine/scroll owners": 10,
           "src/game/area.c plus src/game/oam/flagpole_gfx.c": 9,
-          "src/game/oam/fireball_gfx.c": 9,
-          "src/game/fireball/bubble.c": 9,
           "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c": 5,
           "src/game/enemy/{lifecycle,podoboo}.c": 5,
           "src/game/dispatcher.c": 4,
-          "src/game/oam/firebar_gfx.c": 3,
           "src/game/frame_root.c and src/game/terminal_modes.c": 2,
           "src/game/enemy/platform_callers.c": 2,
-          "src/game/oam/sprite_dump.c and src/game/oam/block_offscreen.c": 2,
           "src/game/frame_root.c and src/game/title_modes.c": 1
         },
         "materialPathsEnumerated": 993,
