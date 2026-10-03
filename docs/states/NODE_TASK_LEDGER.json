@@ -767720,7 +767720,15 @@
         "NoOfs",
         "CheckLeftScreenBBox",
         "SOLft",
-        "NoOfs2"
+        "NoOfs2",
+        "BlockBufferChk_Enemy",
+        "ResidualMiscObjectCode",
+        "BlockBufferChk_FBall",
+        "ResJmpM",
+        "BBChk_E",
+        "BlockBufferColli_Feet",
+        "BlockBufferColli_Head",
+        "BlockBufferColli_Side"
       ],
       "baseline": 1992,
       "incomingComplete": [

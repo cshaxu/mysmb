@@ -55263,10 +55263,12 @@
       "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
         "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; Preserves the A coordinate selector, adds one to the enemy object slot, then enters the shared BBChk_E query."
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; Preserves the A coordinate selector, adds one to the enemy object slot, then enters the shared BBChk_E query.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:11labels/64instructions/15RAM joined5clauses;slot/index/bytecarry/parity/pointerrow/contactflag/rawmetatile seams. ControlledboundPRG rawindexdomain,producer/inter-frame pending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:57344actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites/rawA0diff,all64PC/E422bothbranches,originalX/Yassertions,6tests eachpass;source/threeP79productsunchanged."
       ],
       "semanticContract": "Preserves the A coordinate selector, adds one to the enemy object slot, then enters the shared BBChk_E query.",
       "currentSourcePaths": [
@@ -55283,10 +55285,12 @@
       "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
         "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; Adds thirteen to the miscellaneous object slot and selects index 27 before ResJmpM."
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; Adds thirteen to the miscellaneous object slot and selects index 27 before ResJmpM.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:11labels/64instructions/15RAM joined5clauses;slot/index/bytecarry/parity/pointerrow/contactflag/rawmetatile seams. ControlledboundPRG rawindexdomain,producer/inter-frame pending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:57344actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites/rawA0diff,all64PC/E422bothbranches,originalX/Yassertions,6tests eachpass;source/threeP79productsunchanged."
       ],
       "semanticContract": "Adds thirteen to the miscellaneous object slot and selects index 27 before ResJmpM.",
       "currentSourcePaths": [
@@ -55303,10 +55307,12 @@
       "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
         "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; Adds seven to the fireball slot and selects index 26 before ResJmpM."
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; Adds seven to the fireball slot and selects index 26 before ResJmpM.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:11labels/64instructions/15RAM joined5clauses;slot/index/bytecarry/parity/pointerrow/contactflag/rawmetatile seams. ControlledboundPRG rawindexdomain,producer/inter-frame pending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:57344actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites/rawA0diff,all64PC/E422bothbranches,originalX/Yassertions,6tests eachpass;source/threeP79productsunchanged."
       ],
       "semanticContract": "Adds seven to the fireball slot and selects index 26 before ResJmpM.",
       "currentSourcePaths": [
@@ -55323,10 +55329,12 @@
       "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
         "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; Sets the vertical selector to zero before the BBChk_E call."
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; Sets the vertical selector to zero before the BBChk_E call.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:11labels/64instructions/15RAM joined5clauses;slot/index/bytecarry/parity/pointerrow/contactflag/rawmetatile seams. ControlledboundPRG rawindexdomain,producer/inter-frame pending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:57344actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites/rawA0diff,all64PC/E422bothbranches,originalX/Yassertions,6tests eachpass;source/threeP79productsunchanged."
       ],
       "semanticContract": "Sets the vertical selector to zero before the BBChk_E call.",
       "currentSourcePaths": [
@@ -55343,10 +55351,12 @@
       "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
         "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; Calls the original query, restores ObjectOffset, and compares the metatile A with zero. Native terrain.metatile preserves A; the explicit presence API alone normalizes zero/nonzero."
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; Calls the original query, restores ObjectOffset, and compares the metatile A with zero. Native terrain.metatile preserves A; the explicit presence API alone normalizes zero/nonzero.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:11labels/64instructions/15RAM joined5clauses;slot/index/bytecarry/parity/pointerrow/contactflag/rawmetatile seams. ControlledboundPRG rawindexdomain,producer/inter-frame pending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:57344actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites/rawA0diff,all64PC/E422bothbranches,originalX/Yassertions,6tests eachpass;source/threeP79productsunchanged."
       ],
       "semanticContract": "Calls the original query, restores ObjectOffset, and compares the metatile A with zero. Native terrain.metatile preserves A; the explicit presence API alone normalizes zero/nonzero.",
       "currentSourcePaths": [
@@ -55424,10 +55434,12 @@
       "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
         "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; Increments the original table index and continues through Head with a vertical coordinate selector."
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; Increments the original table index and continues through Head with a vertical coordinate selector.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:11labels/64instructions/15RAM joined5clauses;slot/index/bytecarry/parity/pointerrow/contactflag/rawmetatile seams. ControlledboundPRG rawindexdomain,producer/inter-frame pending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:57344actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites/rawA0diff,all64PC/E422bothbranches,originalX/Yassertions,6tests eachpass;source/threeP79productsunchanged."
       ],
       "semanticContract": "Increments the original table index and continues through Head with a vertical coordinate selector.",
       "currentSourcePaths": [
@@ -55444,10 +55456,12 @@
       "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
         "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; Loads the vertical selector. BIT $01A9 consumes the Side LDA bytes and continues at shared LDX #0 without executing Side entry."
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; Loads the vertical selector. BIT $01A9 consumes the Side LDA bytes and continues at shared LDX #0 without executing Side entry.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:11labels/64instructions/15RAM joined5clauses;slot/index/bytecarry/parity/pointerrow/contactflag/rawmetatile seams. ControlledboundPRG rawindexdomain,producer/inter-frame pending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:57344actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites/rawA0diff,all64PC/E422bothbranches,originalX/Yassertions,6tests eachpass;source/threeP79productsunchanged."
       ],
       "semanticContract": "Loads the vertical selector. BIT $01A9 consumes the Side LDA bytes and continues at shared LDX #0 without executing Side entry.",
       "currentSourcePaths": [
@@ -55464,10 +55478,12 @@
       "currentCounterpart": "mysmb_world_query_player_probe / enemy_block / misc_block / fireball_block and shared block-buffer collision kernel",
       "semanticEvidence": [
         "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; Direct Side entry loads the horizontal selector and selects player object zero before the query kernel."
+        "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; Direct Side entry loads the horizontal selector and selects player object zero before the query kernel.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:11labels/64instructions/15RAM joined5clauses;slot/index/bytecarry/parity/pointerrow/contactflag/rawmetatile seams. ControlledboundPRG rawindexdomain,producer/inter-frame pending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:57344actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites/rawA0diff,all64PC/E422bothbranches,originalX/Yassertions,6tests eachpass;source/threeP79productsunchanged."
       ],
       "semanticContract": "Direct Side entry loads the horizontal selector and selects player object zero before the query kernel.",
       "currentSourcePaths": [
@@ -55486,12 +55502,14 @@
         "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; Stores table index, wrapped X and carry-derived page parity; GetBlockBufferAddr returns before row/table use. Writes scratch $02-$07, reads the metatile and returns original coordinate low nibble plus metatile A.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:06 reset low0/07 page7..0;self-clearing06/07 occurs only page0 and preserves both pointer values. Collision LSR/ROR/LSR column equals page-parity/high-nibble formula;row byte wrapping/effective0500-06cf addresses proved,CPU scratch writes cannot alias buffer or cached object coordinates."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:06 reset low0/07 page7..0;self-clearing06/07 occurs only page0 and preserves both pointer values. Collision LSR/ROR/LSR column equals page-parity/high-nibble formula;row byte wrapping/effective0500-06cf addresses proved,CPU scratch writes cannot alias buffer or cached object coordinates.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:11labels/64instructions/15RAM joined5clauses;slot/index/bytecarry/parity/pointerrow/contactflag/rawmetatile seams. ControlledboundPRG rawindexdomain,producer/inter-frame pending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md",
         "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:9728 current original returning roots each width zero full RAM/returned-metatile diff;512 reset roots actually901376 indirect writes,9216 collision roots/reads across18 object profiles. Observed physical pushes only excluded;6 current focused checks each width/4 contract negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:9728 current original returning roots each width zero full RAM/returned-metatile diff;512 reset roots actually901376 indirect writes,9216 collision roots/reads across18 object profiles. Observed physical pushes only excluded;6 current focused checks each width/4 contract negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:57344actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites/rawA0diff,all64PC/E422bothbranches,originalX/Yassertions,6tests eachpass;source/threeP79productsunchanged."
       ],
       "semanticContract": "Stores table index, wrapped X and carry-derived page parity; GetBlockBufferAddr returns before row/table use. Writes scratch $02-$07, reads the metatile and returns original coordinate low nibble plus metatile A.",
       "currentSourcePaths": [
@@ -55509,11 +55527,13 @@
       "semanticEvidence": [
         "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; A nonzero source selector chooses original object X for the low-nibble return.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:06 reset low0/07 page7..0;self-clearing06/07 occurs only page0 and preserves both pointer values. Collision LSR/ROR/LSR column equals page-parity/high-nibble formula;row byte wrapping/effective0500-06cf addresses proved,CPU scratch writes cannot alias buffer or cached object coordinates."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:06 reset low0/07 page7..0;self-clearing06/07 occurs only page0 and preserves both pointer values. Collision LSR/ROR/LSR column equals page-parity/high-nibble formula;row byte wrapping/effective0500-06cf addresses proved,CPU scratch writes cannot alias buffer or cached object coordinates.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:11labels/64instructions/15RAM joined5clauses;slot/index/bytecarry/parity/pointerrow/contactflag/rawmetatile seams. ControlledboundPRG rawindexdomain,producer/inter-frame pending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:9728 current original returning roots each width zero full RAM/returned-metatile diff;512 reset roots actually901376 indirect writes,9216 collision roots/reads across18 object profiles. Observed physical pushes only excluded;6 current focused checks each width/4 contract negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:9728 current original returning roots each width zero full RAM/returned-metatile diff;512 reset roots actually901376 indirect writes,9216 collision roots/reads across18 object profiles. Observed physical pushes only excluded;6 current focused checks each width/4 contract negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:57344actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites/rawA0diff,all64PC/E422bothbranches,originalX/Yassertions,6tests eachpass;source/threeP79productsunchanged."
       ],
       "semanticContract": "A nonzero source selector chooses original object X for the low-nibble return.",
       "currentSourcePaths": [
@@ -55531,11 +55551,13 @@
       "semanticEvidence": [
         "Td S9 B16u block-buffer query node-semantics and integration audit: SMB1 lines 13023-13114 compared with shared world/block_buffer.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T65 S1 source $E388-$E434 and actual table consumers: docs/history/M2-T65-block-query-object-output-current-proof.md; Masks the selected original coordinate to four bits in $04, reloads metatile $03 and returns.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:06 reset low0/07 page7..0;self-clearing06/07 occurs only page0 and preserves both pointer values. Collision LSR/ROR/LSR column equals page-parity/high-nibble formula;row byte wrapping/effective0500-06cf addresses proved,CPU scratch writes cannot alias buffer or cached object coordinates."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:06 reset low0/07 page7..0;self-clearing06/07 occurs only page0 and preserves both pointer values. Collision LSR/ROR/LSR column equals page-parity/high-nibble formula;row byte wrapping/effective0500-06cf addresses proved,CPU scratch writes cannot alias buffer or cached object coordinates.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:11labels/64instructions/15RAM joined5clauses;slot/index/bytecarry/parity/pointerrow/contactflag/rawmetatile seams. ControlledboundPRG rawindexdomain,producer/inter-frame pending,no newnode/controlcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S1 current x86/x64 each replay 18944 original-ROM roots with zero differences across 1841 RAM bytes, including all scratch and $0109-$0139 game aliases; other CPU stack excluded. Both 28-entry table domains observed; GetBlockBufferAddr actual RTS continuation $E40B observed 18944 and BBChk_E $E3A8 observed 8576. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:9728 current original returning roots each width zero full RAM/returned-metatile diff;512 reset roots actually901376 indirect writes,9216 collision roots/reads across18 object profiles. Observed physical pushes only excluded;6 current focused checks each width/4 contract negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes:9728 current original returning roots each width zero full RAM/returned-metatile diff;512 reset roots actually901376 indirect writes,9216 collision roots/reads across18 object profiles. Observed physical pushes only excluded;6 current focused checks each width/4 contract negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:57344actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites/rawA0diff,all64PC/E422bothbranches,originalX/Yassertions,6tests eachpass;source/threeP79productsunchanged."
       ],
       "semanticContract": "Masks the selected original coordinate to four bits in $04, reloads metatile $03 and returns.",
       "currentSourcePaths": [
@@ -169312,16 +169334,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P76 checkpoint - platform positioning and geometry uses reconciled:14labels/86instructions/35RAM joined7boundedclauses;rawcounter/BIT overlap,highY borrow,verticalcarry/boxY-mask capability seams,geometry scratch/unsignedwrap. Producer/inter-frame pending,no newnode/control credit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:17labels/125instructions/48RAM joined7clauses;offset/mask/midpoint/cornerbyte semantics;LargePlatform actualGetXOffscreenBits scratch04-07 restored. Control0-11 contract only;rawcontrol producer/alias andinter-frame pending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:17labels/125instructions/48RAM joined7clauses;offset/mask/midpoint/cornerbyte semantics;LargePlatform actualGetXOffscreenBits scratch04-07 restored. Control0-11 contract only;rawcontrol producer/alias andinter-frame pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:11labels/64instructions/15RAM joined5clauses;slot/index/bytecarry/parity/pointerrow/contactflag/rawmetatile seams. ControlledboundPRG rawindexdomain,producer/inter-frame pending,no newnode/controlcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 7480,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 3211,
+        "localInstructionReceiptSites": 7544,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 3147,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 2649,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 1124,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 2664,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 1109,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -169354,7 +169377,6 @@
           "src/game/player_transition.c shared C90 transition owner": 17,
           "src/game/oam/hammer_gfx.c": 17,
           "src/game/area.c": 15,
-          "src/game/world/block_buffer.c": 15,
           "src/game/oam/fireworks_gfx.c": 15,
           "src/game/boot.c": 13,
           "src/game shared dispatcher/engine/scroll owners": 10,

@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P80 block query uses](../proposals/m2/t70-final-current-certification.md#s17-p80-checkpoint---block-query-entry-and-scratch-uses-reconciled).
+S17 P80:11block query labels/64instructions/15RAM joined5boundedclauses;57344actualroots eachwidth0diff/all64PC/onebranchpair,6tests each. Scope1266/fresh0;7544/10691instruction receipts,2664/3773RAM receipts;3147instructions/1109RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP79unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
 [P79 bounding box original outputs](../proposals/m2/t70-final-current-certification.md#s17-p79-checkpoint---bounding-box-original-child-outputs-restored).
 S17 P79:17bounding box labels/125instructions/48RAM joined7boundedclauses;90112actualroots eachwidth0diff/all125PC/10branchpairs plusmandatoryE234,5tests each. Scope1258/fresh0;7480/10691instruction receipts,2649/3773RAM receipts;3211instructions/1124RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;LargePlatformBoundBox childscratch repaired,threeEXEs refreshed,producer/inter-frame/finalpackages pending,M2 incomplete.
 

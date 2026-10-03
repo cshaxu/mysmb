@@ -8440,3 +8440,26 @@ Local product mysmb16.exe:259803bytes,SHA256:0f3a6d18d5e151db5274ff6d982779b2474
 Local product mysmb32.exe:374219bytes,SHA256:8469bf6a926d5b6faabe63ca3382b5d9fcc56bc6c7900d8c4125b50c85d039b5.
 
 Local product mysmb64.exe:380216bytes,SHA256:284a214c34ce113b2d478f3e461722e200240c3d8ffc63181b27cd9ac1779f5d.
+
+
+## S17 P80 admission - block buffer query entry and scratch seams
+
+Existing E388-E431 gap:64instructions/15directRAM sites/11labels: BlockBufferChk_Enemy,ResidualMiscObjectCode,BlockBufferChk_FBall,ResJmpM,BBChk_E,BlockBufferColli_Feet,BlockBufferColli_Head,BlockBufferColli_Side,BlockBufferCollision,RetXC,RetYC. Shared world/block_buffer.c with retained area/block_buffer addresschild. Actual enemy/misc/fireball/playerfeet/head/side roots plusdirectcore;legalcaller slots enemy0-5,misc0-8,fireball0-1;rawbyteadder reads useboundPRG andare controlledentry domains,notproducerreachability. FullRAM exceptactualstack,APU/writes,rawmetatileA andoriginalX/Yseams compared. Pagecarry/parity/column,rowwrap,pointerread/contactnibble andHead BIT skip required;allscopedPC/feasiblebranches beforecredit. Fresh0/max1992,local1991/1992nodes4261/4262controls retained. ROM/ASMreadonly protected,4096record batches128MiB/120sec deletedbelowignored build. Any difference staysS17;repaircustody/threeEXEs beforeclosure. Pureaudit keepsP79 products.
+
+## S17 P80 checkpoint - block query entry and scratch uses reconciled
+
+S17 P80:11block query labels/64instructions/15RAM joined5boundedclauses;57344actualroots eachwidth0diff/all64PC/onebranchpair,6tests each. Scope1266/fresh0;7544/10691instruction receipts,2664/3773RAM receipts;3147instructions/1109RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP79unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| Q1 | BlockBufferChk_Enemy | Push/pull incomingA aroundslot+1 byteaddition preserveshorizontalflag exactly;nativeenemyquery usesobjectoffsetslot+1 andrawadder. Slots0-5 controlledactualentry,not hostobject coordinates. TailBBChk_E returnsrawmetatileA andrestoresoriginalObjectOffsetX. |
+| Q2 | ResidualMiscObjectCode,BlockBufferChk_FBall,ResJmpM,BBChk_E | Misc usesbyteoffset+0D/index1B andfireball+07/index1A,thenA0 soverticalcontact. Nativequery boolean capability is nottheROM A:probecompares terrain.metatile rawbyte plus02-07 outputs,originalXrestoration. Miscslot0-8 andfireball0-1;no bbox+9 substitution inmiscmotionquery. |
+| Q3 | BlockBufferColli_Feet,BlockBufferColli_Head,BlockBufferColli_Side | Feet INYbytewrap thenA0;Head LDA0/BIT opcode consumes followingLDA1 bytes andfallsintoLDX0. BITreadat01A9 affectsflags overwrittenbeforeconsumer;nohorizontalflag1 fromskippedLDA. SideA1 setsX0. Nativeindex/entry preservesfeetincrement andchooseslowY/lowX. Actualsource entry originalYreturn matchesbyteindex,includingFF-to-00 feet. |
+| Q4 | BlockBufferCollision | IncomingAstackflag andYadder saved04;Xadder+objectX wraps05,carrytoPage thenparitycolumn0-31. Actual GetBlockBufferAddr writes06/07;restoredindex04 selectsYadder,Ysumbytewrapped highnibbleminus20 wrapsrow02. Indirectpointer+row readsraw03,not nametable orhostworldcell. NativefullboundPRG handlesall256adderbytes;fallback28entry domainexcludedfromrawfixtures. Originalpointer/row/object andtableproducer handoffs covered byactualchild,mappedstructfieldsderiveexactscratch. |
+| Q5 | RetXC,RetYC | Afteractualindirectreadrestoreflag;anynonzeroA selectsoriginalobjectX,zeroY. Low nibble overwrites04,rawmetatile03 loadsAreturn. CallerZfromCMP0 correspondsbooleanquery;probecomparesrawA soequaltruthvaluecannotmaskwrongtile. FullnonstackRAM comparesunchangedbytesaswellaswrites;no widenedcoordinateorreorderedpointerlookup. |
+
+Seven8192-root modes execute unmodified original enemy/misc/fireball/feet/head/side/directcore plusactualaddresschild. Each originalmetatileA,allRAM outsideactualCPUstack,24APU/writes equalsx86/x64;originalreturnregisterseams assertedatreferenceboundary ratherthan silentlydiscarded. Independent source audit joins tableboundPRG,bytecarry/pageparity/pointerrow/retflag;resource-free fallback andwhole-programproducerreachability do not inheritraw-domain proof. HeadBITinstruction consumesSideLDA bytes as01A9operand;nativeHEADselectsA0,actualsource routes confirmno sideflag leak. Sixfocusedtests eachwidthpass,fournegativeaccountingmutants rejected. No sourceorproductchanges;DOS16 retainsP79compile/linkonly. Material/pixels/routes/snapshot andallwholeProgramLifetime dispositions remainpending.
+
+Current src/game/world/block_buffer.c normalizedSHA256:5bbbbc0fdf2431d1d913149eec6b734dcdab36e0c7ba12b32b24a4b2b99257b7.
+
+Current src/game/area/block_buffer.c normalizedSHA256:8663c142ea3951ca47de2709f127c50f270d4a7d4e136a6e2f61204f1f474f8d.
