@@ -7735,3 +7735,69 @@ packagesopen,M2 NOT COMPLETE. This closesonlythetestlink/bindinggap.
 Test normalizedSHA256:61d3004a0ac89882e159d7275a4dd7e7d5b63a0601e4ebcf3adf5f3bbdcbb7d3.
 Production movement normalizedSHA256:ce7cea88da5e76af3a7916fc64e44343cd04b39fcb65af3715064e2f8ab9d5d7.
 Reference-recorder SHA256:534b9d0d129058571efd38a1436fb0a8636d4f8a2c15c1ff4a30242aecefd3c7.
+
+## S17 P59 admission - initializer dispatch and shared state tails
+
+Existing initializer/caller/material-use gap,176pending instructions/67RAM in46labels:CheckpointEnemyID,InitEnemyRoutines,NoInitCode,InitGoomba,InitPodoboo,InitRetainerObj,InitNormalEnemy,GetESpd,SetESpd,InitRedKoopa,InitHammerBro,InitHorizFlySwimEnemy,InitBloober,SmallBBox,InitRedPTroopa,GetCent,TallBBox,SetBBox,InitVStf,InitBulletBill,InitCheepCheep,InitLakitu,SetupLakitu,KillLakitu,InitPiranhaPlant,InitJumpGPTroopa,TallBBox2,SetBBox2,InitBalPlatform,AlignP,SetBPA,InitDropPlatform,InitHoriPlatform,InitVertPlatform,SetYO,CommonPlatCode,SPBBox,CasPBB,LargeLiftUp,LargeLiftDown,LargeLiftBBox,PlatLiftUp,PlatLiftDown,CommonSmallLift,PosPlatform,EndOfEnemyInitCode. Scope808,fresh0/max1992. Shared enemy/init.c/init_targets.c/lifecycle.c actualC26C checkpoint route with41 selected original vector IDs (normal/no-init/lakitu/piranha/platform/retainer/end). Full55 vector binding reviewedseparately;frenzy/firebar/bowser/powerup/vine childinteriorsretainindependentreceipts.65536 originalreturning roots,sixslots/allY/X/page wraps/PrimaryHard rawbyte/SecondaryHard0-1/AreaType rawbyte/alignment/LFSR andfrenzybufferzero/nonzero. ActualJumpEngine carry/input andchildorder preserved;no child patch. Sourcecontrol/read/write/tailclauses manuallychecked before route;gatecoverage onlyobservedpaths,constantbranches explicit. Concrete diff remainsS17,repairrequires3products. OwnerROM/ASM readonly,raw onlyignoredP59build128MiB/120seconds perprocess;batchcleanup. No newglobalround orall-gameclaim.
+
+### S17 P59 observed erasure dependency amendment
+
+KillLakitu actuallytailcalls EraseEnemyObject C998-C9AF in799current roots. Additsone label/10instructions/8RAM toauditparticipationbeforeacceptingreceipt;shared lifecycle.c sourceunchanged,eightclears individuallyreviewed,sourceX preserved. Group total47labels/186instructions/75RAM,scope809/fresh0;not a newroot/frame/graph edge. Other EraseEnemyObject callers stillneedtheir ownvalidslot/caller contracts.
+
+## S17 P59 checkpoint - initializer dispatch and shared tails reconciled
+
+ExistingS17 initializer/material-use gap;47labels/186instructions/75RAM,scope809/fresh0. Threecurrentownerfiles unchangedfromHEAD.
+
+| Clause | Original PCs | Source/C use disposition |
+| --- | --- | --- |
+| I1 | 0xc26c-0xc281 | CheckpointEnemyID readsID;CMP15 setscarry0 inlower branch,ADC8 wrapsY,sets maskedoffscreen1,restoresID forJumpEngine. OriginalASL selector<55 leavescarry0,04/05=C281 and06/07 selectedtarget arepreserved bynative55-vector dispatch. Vectorbindingall55 reviewed;currentrouteonly41selectedtargets,other14childinteriorsnotcredited. |
+| I2 | 0xc2f0-0xc325 | NoInit returnswithoutfieldreset aftercheckpoint. Goomba executesnormal/tall tailthenSmallBBox;Podoboo setsYhigh2/Y2/interval1/state0 thenSmallBBox. Retainer setsYB8only. NormalLDY1/PrimaryHardBNE/DEY selectsF4 foranynonzero orF8 zero;SetESpd publishesXspeed thenTallBBox. RedKoopa actualnormalreturn beforestate1;flags andunwrittenstate preserved. |
+| I3 | 0xc328-0xc349 | Hammer zeroesThrowTimer03A2+slot/Xspeed,readsSecondaryHard0/1 timer80/50,thenSetBBox0B. Horizontalfly/swim setsXspeed0 beforeTallBBox;Bloober setsXspeed0 thenSmallBBox9. SmallBBoxLDA9/BNE alwaysbranches toSetBBox;control01515 isalreadyinfeasible andnot missedcoverage. |
+| I4 | 0xc34a-0xc36a | RedPTroopa storesY into0401+slot;BPL chooses30 orE0,ADC receivescarry0 fromrealvectorASL forID0F,storescenter58+slot. Nativebyteaddagrees withthatcallercondition;arbitrarydirect-entrycarry1notcertified. TallBBox3/SmallBBox9/SetBBoxA publishbox,dir2,thenInitVStf setsYspeed/force0;box-only tailsmustnotresetthese. |
+| I5 | 0xc36b-0xc384 | BulletBill setsdir2/box9only. Cheep actualSmallBBox return beforeLFSR&10 ->Xspeed andY ->Yforce. Existingstate/flag/otherforcesnotreset;seededfullRAM detects extra defaultwrites. |
+| I6 | 0xc385-0xc3a3 | LakituFrenzyBuffer zero entersSetup:clearreappear06D1,actualhorizontalfly/swim init thenredundantTallBBox2. Nonzero tailcalls actualEraseEnemyObject. 08/inputslot survives eitherroute,source andnativefixedX0-5 arraysdisjointfrom08/frenzyinput. Doesnotproveotherfrenzyproducer lifetimes. |
+| I7 | 0xc787-0xc79f | Piranha publishesXspeed1/state0/Yspeed0,Yforce=currentY thenYdummy=Y-18 withSEC/bytewrap,box9only. Movingdir remainsunchanged;generic SmallBBox wouldbeincorrect. Checkpoint-providedYmayalreadyhave+8;no secondYoffset. |
+| I8 | 0xc7d1-0xc802 | JumpGreen setsdir2/XspeedF8 thenTallBBox2 onlybox3;verticalspeed/force preserved. Balance DECY twice;SecondaryHardzero invokesPosPlatformindex2 subtraction8,alignmentstate copies03A0 thenBPL selectsFF orcurrentX fornewalignment. Setdir0,actualPosPlatformindex0 add8,fallthroughDrop;no hiddencarryreuse orcachedpage. |
+| I9 | 0xc803-0xc83e | Drop setscollisionflagFF;horizontal setssecondaryXcounter0. VerticalBPL takesY orbyte-negatedY asTop0401,center=Y+40/C0 bytewrap. SharedCommonPlatCode invokesInitVStf only;SPBBox chooses5 ifAreaType==3 orSecondaryHardnonzero else6. RawAreaTypebyte tested;SecondaryHard0/1 requiredbysharedHammer tableelsewhere. |
+| I10 | 0xc83f-0xc86a | LargeLiftUp/Down actualsmalllift childbeforeSPBBox overridesbox5/6;smallup setsforce10/YspeedFF,downforceF0/Yspeed0. CommonSmallLift actualPosPlatformindex1 add12 thenbox4. Onlysourcewrites occur;state/movingdir/positionY remainasinput. |
+| I11 | 0xc871-0xc881 | PosPlatformLDYfromrealcallers0/1/2 indexes3-entry low/high tables. CLC+lowADC carriesacrossLDApage intohighADC,bytepagewrap. Native16-bit sum max503 keepssamecarry andfitsDOS16int;indexprooffromconstantcallerY,notarbitraryindexassumption. EndOfEnemyInitCode returnswithoutwrites. |
+| I12 | 0xc998-0xc9af | EraseEnemyObject writes0 toeightindexedfields:flag,ID,state,FloateyControl,IntervalTimer,ShellChainCounter,SpriteAttributes,FrameTimer078A. Nootherclear,08unchanged,Xpreserved. Currentroot actuallytailcalls799times;boundslot0-5 only,othercaller/indexdomainsindependent. |
+
+
+65536 originalC26C returns use41selectedIDs:0-17,19,25,26,32-44,48-54.
+Full55immutablevector comparescurrentexistingtableagainstownerROM;normal2,
+hammer2,platformlow3/high3 data bindings separatelyequal. Other14 child
+families(frenzy/firebar/Bowser/powerup/vine)notcreditedbythisroute. InitGoomba/
+RedKoopa/SmallBBox andLargeLift redundancies retainedinactualCcallsequence,
+not inferredsolelyfromfinalRAM. PrimaryHardrawbyte useszero/nonzeroequation;
+SecondaryHard0/1 isdeclaredhammerindexdomain;AreaTyperawbyte,CoorY/X/page/
+alignment/LFSR/frenzy0or17,initialRAM seededbytepattern. These controlled
+states arenot claimedallgameplayreachable. Sourceallarrays useX0-5;noalias
+to08 ormodeinputs;positioncarry survivesonlysource-preservinginstructions.
+Checkpoint lowerCMP15 setscarry0 forY+8;JumpEngine ASL selectedID<55 sets
+carry0 neededbyRedPTroopa ADC. No arbitrary direct-entrycarry1 certification.
+
+2032RAM/24APU/orderedhardware writes compare0diff eachwidth;onlyphysical
+1F0-1FF stack excluded,minSPF9. Originalharness assertsfinalCPU X equals
+initial08 inall65536roots;nativeRAMcomparison proves08preservation. CPU
+registers otherwiseoutsidevoidAPI. All186instruction PCs/nineconditional
+branchpairs observed;SmallBBoxC348 BNE fallthroughalreadyinfeasible01515
+becauseLDA9 forcesZ0. No new infeasible/control/materialcredit. Actual
+KillLakitu->EraseEnemyObject runs799times,alltenPC/eightstores observed.
+Sevenfocusedtests eachwidthpass,strictC90checkers,currentlibrarieslinked;
+threeEXEs remainverifiedP57 hashes,DOSruntimeunqualified. Fournegative
+accountingmutations rejected. Source/ROMreadonly,rawonlyignoredP59build,
+4096-recordbatchesdeleted;noextraROM/sourceimportorresearchlocation.
+
+Historical1992/1992;currentlocal1991/1992nodes,4269/4270controls(raw4342/
+infeasible72).4142/10691instruction and1438/3773RAM boundedreceipts;6549
+instruction/2335RAM receipts pending. Material993partial,totalunknown;
+whole-program lifetimepending,fourfinalpackagesopen,M2 NOT COMPLETE.
+CheckForEnemyGroup/control01480 stillneeds evidence;this doesnotderive
+out-of-vectorID3F unreachablefromselectedvalidinitializerroots.
+
+Current src/game/enemy/init.c normalizedSHA256:b154847ffaf647e43d39c14f5dc26818acdc6c3160f6c0a922034b2f038f63cb.
+
+Current src/game/enemy/init_targets.c normalizedSHA256:8a34758094db74077901f976a10cf8adae354645938cb4f8d3e0dc6cc8d5a5ae.
+
+Current src/game/enemy/lifecycle.c normalizedSHA256:b97d001de830f02c7899d66a5445f5e9ccd8764820f5518011365106738891a6.

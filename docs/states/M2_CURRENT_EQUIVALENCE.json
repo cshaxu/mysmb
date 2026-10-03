@@ -41918,12 +41918,14 @@
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "For IDs below $15 adds eight to Y and sets masked offscreen bit, then enters initializer vector dispatch.",
       "currentSourcePaths": [
@@ -41941,11 +41943,13 @@
       "semanticEvidence": [
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Invokes JumpEngine over the fifty-five-entry initializer vector, including aliases and residual power-up/vine entries.",
       "currentSourcePaths": [
@@ -41962,10 +41966,12 @@
       "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence."
+        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass."
+        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Returns immediately for every initializer-vector entry intentionally bound to no initialization.",
       "currentSourcePaths": [
@@ -41982,10 +41988,12 @@
       "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence."
+        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass."
+        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Calls the normal speed/tall-box initializer, then tail-selects the small-box initializer.",
       "currentSourcePaths": [
@@ -42003,11 +42011,13 @@
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Sets both Y coordinates to two, interval timer to one and state to zero before tail-selecting the small box.",
       "currentSourcePaths": [
@@ -42024,10 +42034,12 @@
       "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence."
+        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass."
+        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Sets only the retainer Y coordinate to $b8 and returns.",
       "currentSourcePaths": [
@@ -42064,10 +42076,12 @@
       "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence."
+        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass."
+        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Selects normal speed index zero or one from PrimaryHardMode and enters the shared speed tail.",
       "currentSourcePaths": [
@@ -42084,10 +42098,12 @@
       "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence."
+        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass."
+        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Reads NormalXSpdData at the selected mode index and falls through to the X-speed store.",
       "currentSourcePaths": [
@@ -42104,10 +42120,12 @@
       "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence."
+        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass."
+        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Stores selected X speed and tail-selects TallBBox.",
       "currentSourcePaths": [
@@ -42124,10 +42142,12 @@
       "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence."
+        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass."
+        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Calls normal initialization, then changes only enemy state to one before returning.",
       "currentSourcePaths": [
@@ -42164,10 +42184,12 @@
       "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence."
+        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass."
+        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Clears hammer timer and X speed, selects walking delay, then tail-selects SetBBox with $0b.",
       "currentSourcePaths": [
@@ -42185,11 +42207,13 @@
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Supplies zero X speed to the shared SetESpd tail.",
       "currentSourcePaths": [
@@ -42206,10 +42230,12 @@
       "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence."
+        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass."
+        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Clears BlooperMoveSpeed and falls through to the small-box path.",
       "currentSourcePaths": [
@@ -42227,11 +42253,13 @@
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Loads box control $09 and takes the always-true BNE branch to SetBBox.",
       "currentSourcePaths": [
@@ -42249,11 +42277,13 @@
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Stores original Y, chooses central-Y addend $30 or $e0 by Y sign, retains dispatch carry, then enters tall-box setup.",
       "currentSourcePaths": [
@@ -42270,10 +42300,12 @@
       "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence."
+        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass."
+        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Adds the selected central-Y addend with inherited carry and stores RedPTroopaCenterYPos before TallBBox.",
       "currentSourcePaths": [
@@ -42290,10 +42322,12 @@
       "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence."
+        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass."
+        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Loads box control $03 and falls through to the common box/state setup.",
       "currentSourcePaths": [
@@ -42310,10 +42344,12 @@
       "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence."
+        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass."
+        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Stores box control, sets left moving direction and falls through to vertical-state reset.",
       "currentSourcePaths": [
@@ -42330,10 +42366,12 @@
       "currentCounterpart": "enemy/init_targets.c with enemy/init.c vector dispatcher",
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence."
+        "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass."
+        "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Clears only vertical speed and vertical movement force, then returns.",
       "currentSourcePaths": [
@@ -42351,11 +42389,13 @@
       "semanticEvidence": [
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Sets left moving direction and small box control, preserving all other fields.",
       "currentSourcePaths": [
@@ -42374,12 +42414,14 @@
         "Td S9 B14k ordinary enemy initializer node-semantics and independent integration audit: SMB1 lines 8158-8275 compared with shared enemy/init_targets.c and initializer dispatch; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Calls small-box setup, copies random bit d4 into CheepCheepMoveMFlag and preserves original Y in CheepCheepOrigYPos.",
       "currentSourcePaths": [
@@ -42398,12 +42440,14 @@
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Branches to erase the Lakitu only when EnemyFrenzyBuffer is occupied; otherwise falls through to setup.",
       "currentSourcePaths": [
@@ -42422,11 +42466,13 @@
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Clears LakituReappearTimer, calls zero-speed horizontal/flying setup, then tail-selects the box-only tall setup.",
       "currentSourcePaths": [
@@ -42445,11 +42491,13 @@
       "semanticEvidence": [
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Tail-jumps to EraseEnemyObject without additional writes.",
       "currentSourcePaths": [
@@ -43831,11 +43879,13 @@
       "semanticEvidence": [
         "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Writes plant speed one, aliases state/move flag zero, records original/down and up-minus-$18 Y, then tail-selects box-only $09.",
       "currentSourcePaths": [
@@ -43961,11 +44011,13 @@
       "semanticEvidence": [
         "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Writes only left direction $02 and X speed $f8, then falls through box-only tall setup.",
       "currentSourcePaths": [
@@ -43982,11 +44034,13 @@
       "semanticEvidence": [
         "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Loads box control $03 and falls through SetBBox2.",
       "currentSourcePaths": [
@@ -44002,10 +44056,12 @@
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
         "Td S9 B14t jump-green-paratroopa box-tail node-semantics and independent integration audit: SMB1 lines 8893-8900 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Stores only Enemy_BoundBoxCtrl and returns, preserving all other fields.",
       "currentSourcePaths": [
@@ -44022,11 +44078,13 @@
       "semanticEvidence": [
         "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Raises Y two pixels, conditionally applies platform position index two, alternates global alignment, resets direction, applies index zero then falls into drop initialization.",
       "currentSourcePaths": [
@@ -44042,10 +44100,12 @@
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
         "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Copies global alignment to state and selects next global alignment from $ff or object slot.",
       "currentSourcePaths": [
@@ -44061,10 +44121,12 @@
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
         "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Stores alignment, clears direction, calls position index zero and falls through drop setup.",
       "currentSourcePaths": [
@@ -44081,11 +44143,13 @@
       "semanticEvidence": [
         "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Sets collision flag $ff then tail-selects common platform code.",
       "currentSourcePaths": [
@@ -44102,11 +44166,13 @@
       "semanticEvidence": [
         "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Clears secondary X counter then tail-selects common platform code.",
       "currentSourcePaths": [
@@ -44123,11 +44189,13 @@
       "semanticEvidence": [
         "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Sets default center offset $40; for negative Y stores its two's-complement as top and selects $c0, then stores center Y+selected offset before falling through common platform setup.",
       "currentSourcePaths": [
@@ -44143,10 +44211,12 @@
       "currentCounterpart": "shared vertical/lift platform initializer",
       "semanticEvidence": [
         "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Stores top Y and stores center Y using the branch-selected $40/$c0 offset before falling through common platform setup.",
       "currentSourcePaths": [
@@ -44162,10 +44232,12 @@
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
         "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Calls InitVStf then falls through platform box selection.",
       "currentSourcePaths": [
@@ -44181,10 +44253,12 @@
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
         "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Selects box $05 for castle/secondary hard and $06 otherwise.",
       "currentSourcePaths": [
@@ -44200,10 +44274,12 @@
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
         "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Stores selected platform box and returns.",
       "currentSourcePaths": [
@@ -44220,11 +44296,13 @@
       "semanticEvidence": [
         "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Calls upward small-lift initializer, then tail-jumps to the large-platform box selector.",
       "currentSourcePaths": [
@@ -44241,11 +44319,13 @@
       "semanticEvidence": [
         "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Calls downward small-lift initializer and falls through the large-platform box selector.",
       "currentSourcePaths": [
@@ -44261,10 +44341,12 @@
       "currentCounterpart": "shared vertical/lift platform initializer",
       "semanticEvidence": [
         "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Tail-jumps to shared platform box selection.",
       "currentSourcePaths": [
@@ -44281,11 +44363,13 @@
       "semanticEvidence": [
         "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Writes Y force $10 and speed $ff, then tail-jumps to common small-lift setup.",
       "currentSourcePaths": [
@@ -44302,11 +44386,13 @@
       "semanticEvidence": [
         "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Writes Y force $f0 and speed $00, then falls through common small-lift setup.",
       "currentSourcePaths": [
@@ -44322,10 +44408,12 @@
       "currentCounterpart": "shared vertical/lift platform initializer",
       "semanticEvidence": [
         "Td S9 B14v vertical/lift platform node-semantics and independent integration audit: SMB1 lines 8939-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Uses position offset index one before writing bounding-box control four and returning.",
       "currentSourcePaths": [
@@ -44379,10 +44467,12 @@
       "currentCounterpart": "enemy/init_targets.c",
       "semanticEvidence": [
         "Td S9 B14u balance/drop/horizontal platform node-semantics and integration audit: SMB1 lines 8904-9020 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return."
+        "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width."
+        "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Adds indexed low and high platform offsets with low-byte carry into page.",
       "currentSourcePaths": [
@@ -44399,11 +44489,13 @@
       "semanticEvidence": [
         "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S8 static original-ROM audit: SMB1 $C4AF-$C541 against shared enemy/init_targets.c preserves plant writes/box tail, frenzy-loop continuation, platform alignment, position-table carry, lift variants, box choice and terminal return.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T62 S8 all-current-source original-ROM/current x86/x64 route replay matches 96 Piranha/jump-green fixtures, 64 frenzy-loop fixtures and 240 platform-initializer fixtures per width; independent C90 full-RAM initializer contracts pass per width.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Returns immediately when the initializer jump-engine vector selects its terminal entry.",
       "currentSourcePaths": [
@@ -44718,12 +44810,14 @@
         "Td S9 B15c lifecycle/Podoboo node-semantics and independent integration audit: SMB1 lines 9198-9225 compared with shared enemy/lifecycle.c and enemy/podoboo.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S3 static audit: SMB1 $C998-$C9CD against shared enemy/lifecycle.c and enemy/podoboo.c preserves all eight current-slot clears, timer-zero branch, post-child random read, force/timer/speed writes, gravity tail and caller returns.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T63 S3 current-source original-ROM/x86/x64 evidence: 128 Podoboo caller-route comparisons (64 per width), 6,144 focused Podoboo movement footprints per width, 3,240 lifecycle/caller footprints per width, platform purity and DOS16 link pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Clears exactly Enemy_Flag, Enemy_ID, Enemy_State, FloateyNum_Control, EnemyIntervalTimer, ShellChainCounter, Enemy_SprAttrib and EnemyFrameTimer for the current slot, then returns.",
       "currentSourcePaths": [
@@ -168191,16 +168285,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:55 instructions/23RAM bounded group source clause;allocationX0-4 withreal initializerIDs0/2/6,08 preserved,Inc2B reload proves group return compatible withroot enemyX0-5/localCslot. Other ObjectOffset writers remain independent prerequisites.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P56 checkpoint - continuous actor parent and group integration:8 instructions/1RAM bounded parent clause;ordered fireball then six enemy/floatey pairs. Frozen controlled child-return integration only;nonfrozen and other child states remain pending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:ColorRotation/GetAreaPal omittedRAM00 STA3/DECtoFF repaired;41 color/44 observed parent instruction receipts in explicitcontrolleddomains. Parser continuation andother child/caller lifetime remainpending.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:37fresh originalROM roots,74caller and74production checks acrossx86/x64 match1788RAM bytes;fourwrongreturn/selector/missingcall/binding mutations rejected. Both all-targetbuilds andtwofocusedtests eachpass. AssetsP57unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:37fresh originalROM roots,74caller and74production checks acrossx86/x64 match1788RAM bytes;fourwrongreturn/selector/missingcall/binding mutations rejected. Both all-targetbuilds andtwofocusedtests eachpass. AssetsP57unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 3956,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 6735,
+        "localInstructionReceiptSites": 4142,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 6549,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 1363,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2410,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 1438,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2335,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -168231,14 +168326,13 @@
           "src/game/enemy/lakitu.c": 32,
           "shared Bowser flame frenzy core": 31,
           "shared game core: enemy/star_flag.c": 31,
-          "shared Lakitu/Spiny initializer and frenzy core": 30,
           "src/game/enemy/hammer_bro.c": 30,
           "shared game core: enemy/platform.c": 30,
           "src/game/player/terrain.c and terrain children": 30,
           "src/game/player/pipe_entry.c and terrain children": 30,
           "src/game/player.c": 28,
+          "shared Lakitu/Spiny initializer and frenzy core": 28,
           "src/game/enemy/platform_collision.c and src/game/enemy/platform_position.c": 28,
-          "shared enemy initializer target core": 27,
           "src/game/player_movement.c shared C90 movement owner": 26,
           "src/game/oam/vine_gfx.c": 26,
           "src/game/game.c": 25,
@@ -168263,7 +168357,6 @@
           "src/game/player_transition.c shared C90 transition owner": 17,
           "shared fireworks frenzy core": 17,
           "src/game/oam/hammer_gfx.c": 17,
-          "shared platform initializer core": 16,
           "src/game/enemy/movement.c": 16,
           "src/game/area.c": 15,
           "shared Bullet Bill/Cheep frenzy core": 15,
@@ -168275,31 +168368,28 @@
           "src/game/oam/fireworks_gfx.c": 15,
           "shared game core: enemy/bowser_flame.c": 14,
           "src/game/boot.c": 13,
-          "src/game/enemy/{lifecycle,podoboo}.c": 13,
           "shared game core: enemy/fireworks.c": 13,
           "shared game core: world/fireball_enemy.c": 13,
-          "shared Piranha and frenzy-dispatch core": 12,
           "src/game shared dispatcher/engine/scroll owners": 10,
           "shared game core: enemy/firebar_children.c": 10,
           "src/game/world/hammer_collision.c": 10,
           "src/game/world/powerup_collision.c": 10,
           "src/game/area.c plus src/game/oam/flagpole_gfx.c": 9,
-          "src/game/enemy/init_targets.c": 9,
           "src/game/enemy/{movement,paratroopa}.c": 9,
           "src/game/oam/fireball_gfx.c": 9,
           "src/game/fireball/bubble.c": 9,
           "src/game/enemy/flying_cheep.c": 7,
+          "shared Piranha and frenzy-dispatch core": 6,
           "src/game/oam/sprite_dump.c": 6,
           "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c": 5,
+          "src/game/enemy/{lifecycle,podoboo}.c": 5,
           "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side": 5,
           "src/game/enemy/distance.c:mysmb_enemy_player_difference": 5,
           "src/game/objects.c:mysmb_objects_step_hammer_terrain": 5,
           "src/game/dispatcher.c": 4,
-          "shared enemy stream and initializer core": 4,
           "shared game core: enemy/frenzy.c": 4,
           "src/game/objects.c:mysmb_objects_bump_enemy": 4,
           "src/game/oam/sprite_row.c and src/game/oam/enemy_offscreen.c": 4,
-          "shared box-only initializer tail": 3,
           "src/game/enemy/jump_terrain.c:mysmb_objects_step_enemy_jump_terrain": 3,
           "src/game/oam/enemy_offscreen.c and src/game/oam/sprite_dump.c": 3,
           "src/game/oam/firebar_gfx.c": 3,
