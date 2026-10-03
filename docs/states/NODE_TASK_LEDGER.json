@@ -766523,7 +766523,11 @@
         "NoDecEnv2",
         "DoAltLoad",
         "LoadTriCtrlReg",
-        "PlayBeat"
+        "PlayBeat",
+        "ReadJoypads",
+        "ReadPortBits",
+        "PortLoop",
+        "Save8Bits"
       ],
       "baseline": 1992,
       "incomingComplete": [

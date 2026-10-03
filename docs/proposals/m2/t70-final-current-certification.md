@@ -3776,7 +3776,7 @@ Each profile's Y permutation covers every byte;player/enemy table selectors
 cover0..27,fireball26/misc27. Pages0/255 distinguish carry/wrap domains.
 These profiles are not every Cartesian coordinate/adder/page combination.
 
-Allow4096 roots per batch for these small primitives,at most32MiB raw and
+Allow4096 roots per batch for these small primitives,each raw file below32MiB,aggregate below34MiB within128MiB cap,and
 120sec/process;raw inputs/reference/native files deleted after each batch.
 This raises prior1024 batch size within the existing128MiB containment bound,
 reducing process launches without changing comparison scope. Focused reset,
@@ -3794,7 +3794,7 @@ fireball26/misc27,pages0/255,normal horizontal flags0/1. Each profile Y
 permutation covers all byte values;these are not all Cartesian combinations.
 All2048 RAM compare,zero-page included;only observed physical pushes excluded.
 The reset root contains no push and preserves source page1 skip0160-01ff.
-Raw records deleted;4096 roots/batch stays below32MiB raw/120sec processes.
+Raw records deleted;4096 roots/batch stays below34MiB aggregate within128MiB cap/120sec processes.
 
 Reset publishes06=0 and07=page7..0 before indirect stores. The only writes
 that can hit06/07 are on page0,when06 and07 are already0;A=0 self-clearing
@@ -3857,7 +3857,7 @@ domain,not a claim every water/cloud/world combination is gameplay reachable.
 Source predicates/scratch order reviewed before writing C,then baseline and
 postrepair roots. Three products rebuilt,focused renderer/parser regressions
 and short routes required. Same-class area06/07/00/01 store sweep recorded.
-4096 roots/batch within32MiB raw/120sec;raw cleanup after comparisons.
+4096 roots/batch below34MiB aggregate within128MiB cap/120sec;raw cleanup after comparisons.
 
 ## S17 P13 checkpoint - scenery staging and scratch repair
 
@@ -3880,7 +3880,7 @@ EndUChk BNE fallthrough is excluded by next bitmap indices1..31 in this
 terrain domain. These are local input-contract proofs,not new global
 infeasible-edge reclassifications. Water/cloud combinations are primitive
 entry fixtures,not a claim every combination is gameplay reachable.
-Raw records deleted;two4096-case batches within32MiB/120sec process bounds.
+Raw records deleted;two4096-case batches below34MiB aggregate within128MiB cap/120sec process bounds.
 
 Same-class review covers every explicit00/01/06/07 store in this complete
 renderer and its direct child boundary. ProcessAreaData owns its overwrites;
@@ -3965,7 +3965,7 @@ focused checks each width pass(head,bump,chunks,replacement,vine actor/OAM,
 enemy terrain,terrain metatiles). Initial source-order tooling accidentally
 matched a helper declaration rather than call;checker scope corrected to
 head function and rerun. No product/source change,EXEs remain P13.
-Raw records deleted;4096-case batches below32MiB/120sec process bounds.
+Raw records deleted;4096-case batches below34MiB aggregate within128MiB cap/120sec process bounds.
 Material711-718 add8 pointer/lifetime/order paths. Fresh node/control0;
 historical1992/1992,local scoped nodes1992/1992,controls4274/4274
 (raw4342,infeasible68). Material718 partial,total unknown. All12 RAM indirect
@@ -4162,3 +4162,48 @@ Historical1992/1992,local scoped nodes1992/1992,controls4274/4274
 (raw4342,infeasible68),material726 partial,total unknown. S17 remains open
 for other hardware and mutable/register/flag/stack/inter-frame clauses;
 material/pixels/routes/snapshot packages still pending. No full certification.
+
+## S17 P17 admission - controller hardware boundary
+
+Continue the existing three controller hardware sites at8e5e,8e63,8e6d.
+ReadJoypads/ReadPortBits/PortLoop/Save8Bits remain shared game logic.
+Current single-controller production domain,port2 disconnected;256 port1
+images crossed with16 debounce masks,4096 original returning roots each
+width. Full2048 RAM,only actual physical pushes excluded;actual strobe
+order and eight serial reads per port checked. No source/product change,
+fresh node/control/material0. Nonzero port2 is outside the reference
+controller capability and receives no route coverage claim. Raw2048-root
+batches below32MiB aggregate,120sec/process,cleanup after comparison.
+
+## S17 P17 checkpoint - controller hardware boundary
+
+Three original hardware sites8e5e/8e63/8e6d receive a bounded single-controller
+disposition. ReadJoypads/ReadPortBits/PortLoop/Save8Bits shared source
+SHA256:beed1afea957c4290247a6d3178b168337b8ac2b992274dee76535cc72611b2b. Source instructions strobe4016=1 then0;
+X0/1 addresses4016/4017,eight samples each,raw sample published00 before
+d0/d1 combination,then source select/start debounce into6fc/6fd/74a/74b.
+Current helper serial extraction uses source button bit order;host adapters
+only supply decoded button image. No platform game logic or source change.
+
+4096 current original roots each width:all256 port1 images crossed with
+four select/start masks and four irrelevant-bit patterns. Original reference
+has one physical controller;port2 is disconnected. Every root checks actual
+two strobe writes in1/0 order,eight CPU hardware reads per port,and complete
+2048 RAM. Only actually observed physical pushes excluded. Both widths have
+zero differences. Current joypad-vram-chain-smoke passes each width. Raw
+2048-root batches deleted;aggregate below32MiB,120sec/process. Nonzero
+port2 has no original route claim;no arbitrary expansion-port d1 device
+behavior certified. Native C supports two decoded images,which is a larger
+API domain than this reference hardware evidence. No new path/node/control
+credit or EXE refresh. Products remain P15.
+
+Historical1992/1992;local nodes1992/1992,controls4274/4274(raw4342,
+infeasible68);material726 partial,total unknown.39 other hardware sites
+remain(37 PPU,2 reset sound),plus mutable/register/flag/stack/inter-frame
+clauses and pixels/routes/snapshot. S17 and full M2 remain open.
+
+Resource-bound correction for P12-P15:each individual4096-root raw file
+was below32MiB;the combined input/reference/two native files peaked below
+34MiB per batch(33MiB plain RAM,33.012MiB returned-byte variant),within
+the admitted128MiB cap. Earlier aggregate32MiB wording is corrected;no
+budget exceedance or change to comparison conclusions.

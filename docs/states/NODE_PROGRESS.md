@@ -13,6 +13,11 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P17 controller hardware](../proposals/m2/t70-final-current-certification.md#s17-p17-checkpoint---controller-hardware-boundary).
+4096 original roots each width zero full-RAM diff in single-controller domain;
+3 hardware sites dispositioned,39 hardware sites/other material clauses remain.
+No source/products/graph credit;material726 partial,total unknown.
+
 [P16 sound hardware](../proposals/m2/t70-final-current-certification.md#s17-p16-checkpoint---direct-sound-hardware-commands).
 23040 original live roots each width zero full-RAM/APU-shadow/ordered-write
 differences;all45 PCs observed,8 current checks each pass. No source/products/
