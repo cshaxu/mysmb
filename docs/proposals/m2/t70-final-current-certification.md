@@ -1332,3 +1332,177 @@ Unrelated queued I/O/presentation proposals and terrain whitespace preserved.
 | mysmb16.exe | 258879 | c39fe586fc50d4571f5d9f32f82dbb743dd704e1b359c48a49c0f78de811e8fe |
 | mysmb32.exe | 372392 | 9347524c3a234b432b9c6d4c24181f11cb672bceabe1561d964c0a1381b33bcc |
 | mysmb64.exe | 379424 | 334df897151da99de4aaee259fe7f0c4a34bfb78708db4954fc8239555e3e33b |
+
+## S10 P1 admission - title menu state and demo data handoffs
+
+Scope25 in original order:WSelectBufferTemplate,GameMenuRoutine,StartGame,
+ChkSelect,ChkWorldSel,SelectBLogic,IncWorldSel,UpdateShroom,NullJoypad,RunDemo,
+ResetTitle,ChkContinue,StartWorld1,InitScores,ExitMenu,GoContinue,
+MushroomIconData,DrawMushroomIcon,IconDataRead,ExitIcon,DemoActionData,
+DemoTimingData,DemoEngine,DoAction,DemoOver. All historical complete/current
+exact incoming;expected fresh0,max1992. Historical1992/1992,current1992/1992
+nodes,4275/4275 feasible controls(raw4342,infeasible67),572/572 enumerated
+material partial. Shared title_modes.c owns menu/continue/world/icon/demo;
+frame_root.c retains the RunDemo GameCore caller continuation. Audit initially,
+maintenance custody retained. Confirmed source mismatch requires received
+implementation custody,repair and repeated audit in this same S.
+
+Concrete missing proof is feasible title state/material enumeration:OR of both
+saved ports to exact Start/Select/B gates,DemoTimer-before-world-select order,
+SelectTimer debounce,continue/world publication to display/area-pointer setup,
+player-count to icon changes,and demo timer/action data to downstream saved
+input. Source branch/read/write/index review precedes testing. No global
+material-completeness inference from this subtree. Source GameCoreRoutine and
+LoadAreaPointer keep accepted distinct owners. Controlled menu stops before
+GameCoreRoutine to compare its actual input state,not a patched child;start
+paths execute real LoadAreaPointer with the same local original PRG binding.
+RunDemo post-child/loss-of-life behavior retains prior frame-root proof.
+
+8192 independent controlled menu roots in8 batches1024 cover all256 combined
+button images,port splits,demo timer/select timer/world-enable/player-count
+alternatives,valid world/continue pointers and valid demo action/timer inputs.
+Bound2560 source instructions/root,120seconds/process,128MiB;ignored S10
+scripts/logs/raw outputs,cleanup per batch. Compare all2048 RAM except only
+actual observed physical source stack writes,plus pre-GameCore route flag.
+Separate persistent full demo from initial action0/timer0 through terminal
+action22 to prove every bound table byte,retained action and decrements.
+No invalid table-index fixtures without original reachable-domain proof.
+
+Owner original ROM/reviewed ASM read-only,nonredistributable,local research;
+no CPU/ROM instructions modified and no third-party implementation import.
+Native C90 x86/x64 probes link current S9 shared core;focused title/demo/NMI,
+platform purity and product self-tests. If game code changes,build/refresh all3
+products using existing native/OpenNT toolchain;pure audit retains S9 products.
+Similar sweep:exact-button gates,world wrap,continue order,24-byte score clear,
+8-byte reverse icon copy,2-player replacement,live demo indexed table reads
+and saved-input publication before GameCoreRoutine.
+
+S10 bounded pre-execution extension:512 extra controlled roots cover all256
+world-selector bytes with enabled B/no SelectTimer,and all256 NumberOfPlayers
+bytes with Select. Total8704 roots in8x1024+512;last batch explicit512.
+These are safe byte-domain source contracts,not claims that player-count
+reserved values naturally occur. Persistent demo remains in reachable domain.
+
+S10 same-S corrective receipt before product edits:source8307 STA07dd,X with
+X17..0 clears07dd-07f4;C subtracts X and clears07c6-07dd.32 real Start roots
+of8704 expose the wrong RAM interval (only score-clear bytes differ),both
+widths. InitScores reopened mismatch;coordinator receives all25 chain nodes
+under owner ongoing mandate. Rename end-address constant to base,restore
+source base+index and descending stores;repeat all original routes and audit.
+No next S admission until this discrepancy is repaired and both tracks pass.
+
+S10 source-domain audit before closure:DemoAction starts0 with timer0 after
+initialization. Expiry increments once and loads timing[index-1]. Nonzero
+entries1-21 enter DoAction;terminal index22 has timing0,returns carry set and
+menu resets immediately. While timer remains nonzero,index stays1-21.
+Therefore the C defensive index0/>22 guard is not reached on that original
+demo state path;no equality claim is made for invalid adjacent-ROM lookup
+states. Both source arrays and the world template match every original byte
+(21/22/6),and icon pointer binds actual original8 bytes at831d. Full persistent
+sequence1120 menu calls observes all21 action bytes and all22 timing bytes;
+1119 GameCore ingress boundaries,one terminal ResetTitle return.
+
+S10 similar-issue source sweep:all production references to07dd/07d7 and score
+clear/base symbols inspected. Only title InitScores had a reversed address
+sum. status.c subtraction uses descending digit positions for the original
+SBC comparison,not this address defect;its copy uses top+index correctly.
+boot.c's high-score validation intentionally reads07d7+index. area/object
+score consumers retain their accepted numeric-output owners. game.c's old
+SCORE_AND_COIN_END enum is unused (no production read/write) and unchanged.
+No second active score-clear implementation exists. Source wrong clear range
+07c6-07dc includes audio pause state07c6 and high-score07d7-07dc;those bytes
+are now preserved. The correction zeroes source07dd-07f4 (both players' score,
+coin/status digits),with adjacent07f5 unchanged. Nonzero regression sentinels
+verify both ranges,not merely another zero-initialized start.
+
+## S10 P1 closure - title score-clear repair and menu/demo material paths
+
+All25 scoped labels retain exact source contracts after InitScores repair;
+expected/actual fresh historical0,no deferrals/transfer backlog;maintenance
+custody25 remains S10. Historical1992/1992,current1992/1992 exact nodes,
+4275/4275 feasible controls(raw4342,infeasible67),586/586 material partial.
+S10 closes;T70/M2 complete-material/output/end-to-end certification open.
+This is source-based chain repair and new material evidence,not new historical
+node credit or a full-game completion certificate.
+
+Source8307 STA07dd,X for X17..0 clears07dd-07f4. Old C used07dd-X and cleared
+07c6-07dd,including audio pause latch and top score with46 exclusive
+wrong-range locations observable on nonzero state. Rename local enum END to BASE,
+use base+offset and retain descending stores and byte underflow termination.
+32 original Start roots in8704 showed only this interval mismatch on both
+widths;all8704 repeated cases now zero diff. Source-defined test initializes
+07c6-07f5 nonzero,verifies preceding23 bytes including top score preserved,
+all24 target bytes zero,and07f5 unchanged. No source/game rules invented.
+
+Source menu ORs both saved ports and accepts exact10/90 Start,A+Start only;
+Select is exact20. Non-Select input consults DemoTimer before enabled/exact B.
+Positive timer Select/B reloads demo18;SelectTimer nonzero suppresses count/
+world changes,zero reloads10. Select byte XOR1 calls icon child;B original Y1
+selects world path. Selector increments eight-bit then AND7,GoContinue writes
+both worlds/clears both areas and returns X0 before6 template copies and
+WorldNumber+1 display. Continue invokes that same child before real area
+pointer lookup;plain Start preserves current world. Both reach source mode/
+hard/timer changes and the corrected shared InitScores child. NullJoypad
+clears only player1 saved byte;second port remains unchanged at core ingress.
+All exact-button alternatives and every256 world-selector/player-count byte
+match;controlled reserved player counts are not natural-gameplay claims.
+
+Three C arrays match all49 original bytes:world template6,actions21,timings22.
+Icon binds original8 bytes and copies7..0 before player-count patch of0304/
+0306;header,buffer offset and terminator remain source-owned. Complete demo
+starts action0/timer0 and executes1120 actual menu calls;1119 pre-GameCore
+boundaries and one terminal ResetTitle return. Every action byte21 and timing
+byte22 actually read,each dwell duration/decrement retained exactly. Timer
+nonzero retains action;expiry increments once,loads indexed timing;terminal
+22 timing0 skips DoAction and resets title. C bounds defense is unreachable
+on this proven source domain,not a claim about invalid adjacent-ROM indices.
+
+8704 independent original roots compare all RAM and outgoing core flag,
+excluding only each case's physically observed CPU-stack writes. Original
+uses1fc/1fd for menu children and1fa/1fb for nested start/pointer calls;
+other0100-01ff bytes and all zero page remain compared. CPU registers/stack
+are outside portable ABI;no child,ROM,CPU instruction or source branch patched.
+172 terminal returns/8532 actual82c0 ingress states.18 pre-core conditional
+sites have both outcomes observed;82c7 after GameCore is intentionally not
+executed by cutoff roots and retains accepted original child-return proof,
+current unchanged frame-root code and the focused life-route check. GameCore
+has its own owner,not a mocked child or fresh exact credit from this cutoff.
+1120 persistent demo calls also compare full RAM with only observed stack
+writes. Both native widths match original and each other on every record.
+These local protocols exclude GameCore side effects between demo calls and
+are controlled producer-state proof,not a naturally completed full demo game.
+
+Fourteen source-proven material rows573-586 added,each names actual index,
+branch/domain and C counterpart:icon table/copy/player-count replacement;
+B selector discrimination/world increment/returned cursor/continue-pointer;
+StartWorld1 to clear;combined Start to continue;both demo tables,action/timer
+phase handoff,persisted countdown,and expired DemoTimer priority. Existing
+world-template row refreshed. No writer-reader cartesian completion claim.
+Outside core-ingress/frame effects and other cohort material still require
+separate global audit;partial denominator remains explicit.
+
+Operational:current native libraries/products and impacted title/demo/NMI/
+recorder targets rebuilt both widths.7 focused CTests each pass,including
+native life-route test,purity,product self-test and local title/bootstrap.
+Six600-frame idle/start/pause/right/run-jump/select routes zero scoped diff,
+native files byte-identical. Frame ABI compares0200-07ff except0778/0779,
+all CIRAM/palette/OAM/audio/PPU scalars;ordinal/zero-page/physical stack excluded
+there and local RAM proof above covers menu zeros/scratch. No complete death,
+warp,world-end or pixel-within-scanline claim. Original OpenNT shared-source
+compile/link exits0,retained optional OLDNAMES.LIB warning;MZ length/products
+verified. Actual DOS graphics/486 performance remains later qualification.
+
+Source all-score-reference sweep finds no second active reversed clear;other
+status/boot/area/object numeric accesses retain source owners. Unused game.c
+END enum has no production consumer and is preserved. Shared C90 only;no
+platform/ABI/runtime emulator change. Probe header include order was corrected
+locally;an initial sequence-generator syntax error was fixed before execution,
+not counted as evidence. Temporary scripts/logs/raw frames/RAM stay ignored
+below build;raw outputs removed after comparisons. Standing owner authorization
+covers3 EXEs local commit,no push;unrelated I/O/presentation/terrain work retained.
+
+| Product | Bytes | SHA256 |
+| --- | --- | --- |
+| mysmb16.exe | 258879 | 406543451e97c77f0944c584022f0ad6eb38bdfb1c42dc6c2133c639c29c746b |
+| mysmb32.exe | 372392 | 8d1cb3dbf48cd284a8fb5c443e82b88a48cf245b700e484a9c5ea3ee1997fc07 |
+| mysmb64.exe | 379424 | 4696d6756907b730a653b09f5bdc12387ecf4ff69013ff63f728e6a53b3ba10a |

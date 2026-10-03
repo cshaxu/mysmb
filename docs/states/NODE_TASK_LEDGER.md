@@ -20,23 +20,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T22 S25 | 5 | `DecTimers`, `DecTimersLoop`, `SkipExpTimer`, `NoDecTimers`, `PauseSkip` |
 | M2 T22 S28 | 1 | `OperModeExecutionTree` |
 | M2 T22 S5 | 8 | `FlagpoleObject`, `FlagpoleScoreMods`, `FlagpoleScoreDigits`, `FlagpoleRoutine`, `SkipScore`, `GiveFPScr`, `FPGfx`, `ExitFlagP` |
-| M2 T25 S12 | 1 | `SelectBLogic` |
-| M2 T25 S13 | 1 | `IncWorldSel` |
-| M2 T25 S14 | 1 | `UpdateShroom` |
-| M2 T25 S15 | 1 | `ChkContinue` |
-| M2 T25 S16 | 1 | `StartWorld1` |
-| M2 T25 S17 | 1 | `InitScores` |
-| M2 T25 S18 | 1 | `ExitMenu` |
-| M2 T25 S19 | 1 | `GoContinue` |
-| M2 T25 S20 | 1 | `WSelectBufferTemplate` |
-| M2 T25 S21 | 1 | `MushroomIconData` |
-| M2 T25 S22 | 1 | `DrawMushroomIcon` |
-| M2 T25 S23 | 1 | `IconDataRead` |
-| M2 T25 S24 | 1 | `ExitIcon` |
-| M2 T25 S25 | 5 | `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver` |
-| M2 T25 S7 | 4 | `TitleScreenMode`, `GameMenuRoutine`, `NullJoypad`, `RunDemo` |
-| M2 T25 S8 | 1 | `ResetTitle` |
-| M2 T25 S9 | 1 | `StartGame` |
+| M2 T25 S7 | 1 | `TitleScreenMode` |
 | M2 T26 S5 | 27 | `VictoryModeSubroutines`, `SetupVictoryMode`, `PlayerVictoryWalk`, `PerformWalk`, `DontWalk`, `ExitVWalk`, `PrintVictoryMessages`, `MRetainerMsg`, `ThankPlayer`, `SecondPartMsg`, `EvalForMusic`, `PrintMsg`, `IncMsgCounter`, `SetEndTimer`, `IncModeTask_A`, `ExitMsgs`, `PlayerEndWorld`, `EndExitOne`, `EndChkBButton`, `EndExitTwo`, `FloateyNumTileData`, `ScoreUpdateData`, `ChkNumTimer`, `ChkTallEnemy`, `GetAltOffset`, `FloateyPart`, `SetupNumSpr` |
 | M2 T26 S7 | 2 | `VictoryMode`, `AutoPlayer` |
 | M2 T27 S1 | 17 | `InitScreen`, `SetupIntermediate`, `AreaPalette`, `GetAreaPalette`, `SetVRAMAddr_A`, `NextSubtask`, `BGColorCtrl_Addr`, `BackgroundColors`, `PlayerColors`, `ChkFiery`, `StartClrGet`, `ClrGetLoop`, `SetBGColor`, `SetVRAMOffset`, `GetAlternatePalette1`, `SetVRAMAddr_B`, `NoAltPal` |
@@ -215,11 +199,11 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T51 S2 | 4 | `ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol` |
 | M2 T51 S3 | 1 | `KillEnemies` |
 | M2 T51 S4 | 34 | `E_CastleArea1`, `E_CastleArea2`, `E_CastleArea3`, `E_CastleArea4`, `E_CastleArea5`, `E_CastleArea6`, `E_GroundArea1`, `E_GroundArea2`, `E_GroundArea3`, `E_GroundArea4`, `E_GroundArea5`, `E_GroundArea6`, `E_GroundArea7`, `E_GroundArea8`, `E_GroundArea9`, `E_GroundArea10`, `E_GroundArea11`, `E_GroundArea12`, `E_GroundArea13`, `E_GroundArea14`, `E_GroundArea15`, `E_GroundArea16`, `E_GroundArea17`, `E_GroundArea18`, `E_GroundArea19`, `E_GroundArea20`, `E_GroundArea21`, `E_GroundArea22`, `E_UndergroundArea1`, `E_UndergroundArea2`, `E_UndergroundArea3`, `E_WaterArea1`, `E_WaterArea2`, `E_WaterArea3` |
-| M2 T52 S2 | 2 | `ChkSelect`, `ChkWorldSel` |
 | M2 T52 S3 | 4 | `FloateyNumbersRoutine`, `DecNumTimer`, `LoadNumTiles`, `AddToScore` |
 | M2 T52 S4 | 3 | `GetBackgroundColor`, `NoBGColor`, `GetPlayerColors` |
 | M2 T52 S5 | 3 | `DisplayTimeUp`, `NoTimeUp`, `OutputInter` |
 | M2 T52 S6 | 1 | `DrawLargePlatform` |
+| M2 T70 S10 | 25 | `WSelectBufferTemplate`, `GameMenuRoutine`, `StartGame`, `ChkSelect`, `ChkWorldSel`, `SelectBLogic`, `IncWorldSel`, `UpdateShroom`, `NullJoypad`, `RunDemo`, `ResetTitle`, `ChkContinue`, `StartWorld1`, `InitScores`, `ExitMenu`, `GoContinue`, `MushroomIconData`, `DrawMushroomIcon`, `IconDataRead`, `ExitIcon`, `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver` |
 | M2 T70 S2 | 29 | `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj` |
 | M2 T70 S4 | 6 | `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`, `NonMaskableInterrupt`, `ScreenOff`, `InitBuffer` |
 | M2 T70 S6 | 9 | `RotPRandomBit`, `Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipSprite0`, `SkipMainOper`, `MoveAllSpritesOffscreen`, `MoveSpritesOffscreen`, `SprInitLoop` |
@@ -285,31 +269,31 @@ transfer existing ownership or allocate a numeric T.
 | 969 | `MoveSpritesOffscreen` | M2 T70 S6 | existing closure backlog; Accepted common sprite-clear entry/loop maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
 | 972 | `SprInitLoop` | M2 T70 S6 | existing closure backlog; Accepted common sprite-clear entry/loop maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
 | 982 | `TitleScreenMode` | M2 T25 S7 | existing closure backlog; T25 S7 is the accepted source-order successor after S6 repaired title integration; this node is in the first idle-prefix credit scope. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 993 | `WSelectBufferTemplate` | M2 T25 S20 | existing closure backlog; S20 retained title receipt after GoContinue closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 996 | `GameMenuRoutine` | M2 T25 S7 | existing closure backlog; T25 S7 is the accepted source-order successor after S6 repaired title integration; this node is in the first idle-prefix credit scope. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1004 | `StartGame` | M2 T25 S9 | existing closure backlog; T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns this start leaf. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4; M2 T25 S9 |
-| 1005 | `ChkSelect` | M2 T52 S2 | existing closure backlog; T52 S2 accepted current-equivalence corrective transfer for the A6 title-menu branch chain. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S10; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1013 | `ChkWorldSel` | M2 T52 S2 | existing closure backlog; T52 S2 accepted current-equivalence corrective transfer for the A6 title-menu branch chain. | M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1018 | `SelectBLogic` | M2 T25 S12 | existing closure backlog; M2 T25 S12 retains title/menu/demo receipt after S11. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1033 | `IncWorldSel` | M2 T25 S13 | existing closure backlog; S13 retained title receipt. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1039 | `UpdateShroom` | M2 T25 S14 | existing closure backlog; S14 retained title receipt. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1047 | `NullJoypad` | M2 T25 S7 | existing closure backlog; T25 S7 is the accepted source-order successor after S6 repaired title integration; this node is in the first idle-prefix credit scope. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1049 | `RunDemo` | M2 T25 S7 | existing closure backlog; T25 S7 is the accepted source-order successor after S6 repaired title integration; this node is in the first idle-prefix credit scope. | M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1053 | `ResetTitle` | M2 T25 S8 | existing closure backlog; T25 S7 retains the title/menu/demo receipt after S6; a later exact branch admission owns this reset leaf. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1059 | `ChkContinue` | M2 T25 S15 | existing closure backlog; S15 retained title receipt. | M2 T15 / S not recorded; M2 T15 S1; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1065 | `StartWorld1` | M2 T25 S16 | existing closure backlog; S16 retained title receipt after ChkContinue closure. | M2 T15 / S not recorded; M2 T15 S1; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1077 | `InitScores` | M2 T25 S17 | existing closure backlog; S17 retained title receipt after StartWorld1 closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1080 | `ExitMenu` | M2 T25 S18 | existing closure backlog; S18 retained title receipt after InitScores closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1081 | `GoContinue` | M2 T25 S19 | existing closure backlog; S19 retained title receipt after ExitMenu closure. | M2 T15 / S not recorded; M2 T15 S1; M2 T2 / S not recorded; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1090 | `MushroomIconData` | M2 T25 S21 | existing closure backlog; S21 retained title receipt after WSelectBufferTemplate closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1093 | `DrawMushroomIcon` | M2 T25 S22 | existing closure backlog; S22 retained title receipt after MushroomIconData closure. | M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1095 | `IconDataRead` | M2 T25 S23 | existing closure backlog; S23 retained title receipt after DrawMushroomIcon closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1105 | `ExitIcon` | M2 T25 S24 | existing closure backlog; S24 retained title receipt after IconDataRead closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1109 | `DemoActionData` | M2 T25 S25 | existing closure backlog; S25 title-idle/demo chain receipt after ExitIcon closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1114 | `DemoTimingData` | M2 T25 S25 | existing closure backlog; S25 title-idle/demo chain receipt after ExitIcon closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1119 | `DemoEngine` | M2 T25 S25 | existing closure backlog; S25 title-idle/demo chain receipt after ExitIcon closure. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T15 S4; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1129 | `DoAction` | M2 T25 S25 | existing closure backlog; S25 title-idle/demo chain receipt after ExitIcon closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1133 | `DemoOver` | M2 T25 S25 | existing closure backlog; S25 title-idle/demo chain receipt after ExitIcon closure. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 993 | `WSelectBufferTemplate` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 996 | `GameMenuRoutine` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1004 | `StartGame` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4; M2 T25 S9 |
+| 1005 | `ChkSelect` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S10; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1013 | `ChkWorldSel` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1018 | `SelectBLogic` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1033 | `IncWorldSel` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1039 | `UpdateShroom` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1047 | `NullJoypad` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1049 | `RunDemo` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1053 | `ResetTitle` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1059 | `ChkContinue` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1065 | `StartWorld1` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1077 | `InitScores` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1080 | `ExitMenu` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1081 | `GoContinue` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T2 / S not recorded; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1090 | `MushroomIconData` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1093 | `DrawMushroomIcon` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1095 | `IconDataRead` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1105 | `ExitIcon` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1109 | `DemoActionData` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1114 | `DemoTimingData` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1119 | `DemoEngine` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T15 S4; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1129 | `DoAction` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1133 | `DemoOver` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
 | 1137 | `VictoryMode` | M2 T26 S7 | existing closure backlog; accepted S6 repaired-route transfer; S7 performs the independent outer-victory equivalence decision | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S3; M2 T21 S1; M2 T24 S1; M2 T26 S5; M2 T26 S6; M2 T26 S7; M2 T6 / S not recorded |
 | 1144 | `AutoPlayer` | M2 T26 S7 | existing closure backlog; accepted S6 repaired-route transfer; S7 performs the independent outer-victory equivalence decision | M2 T21 S1; M2 T24 S1; M2 T26 S5; M2 T26 S6; M2 T26 S7 |
 | 1147 | `VictoryModeSubroutines` | M2 T26 S5 | existing closure backlog; accepted S4 route-equivalence closure; S5 performs per-label completion accounting | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S3; M2 T21 S1; M2 T24 S1; M2 T26 S5; M2 T6 / S not recorded |
@@ -2349,25 +2333,25 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T25 S4 | 26 | 0 | planned-operational-verification; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T25 S5 | 0 | 0 | planned-closure; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T25 S6 | 0 | 0 | post-dependency-integration-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S7 | 0 | 4 | source-order-title-idle-credit; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S8 | 0 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S9 | 1 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S7 | 0 | 1 | source-order-title-idle-credit; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S8 | 0 | 0 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S9 | 1 | 0 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T25 S10 | 1 | 0 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T25 S11 | 0 | 0 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S12 | 0 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S13 | 0 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S14 | 0 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S15 | 0 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S16 | 0 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S17 | 0 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S18 | 0 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S19 | 0 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S20 | 0 | 1 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S21 | 0 | 1 | source-order-title-data-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S22 | 0 | 1 | source-order-title-routine-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S23 | 0 | 1 | source-order-icon-loop-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S24 | 0 | 1 | icon-return-chain-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
-| M2 T25 S25 | 0 | 5 | title-idle-demo-chain-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S12 | 0 | 0 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S13 | 0 | 0 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S14 | 0 | 0 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S15 | 0 | 0 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S16 | 0 | 0 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S17 | 0 | 0 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S18 | 0 | 0 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S19 | 0 | 0 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S20 | 0 | 0 | source-order-title-branch-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S21 | 0 | 0 | source-order-title-data-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S22 | 0 | 0 | source-order-title-routine-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S23 | 0 | 0 | source-order-icon-loop-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S24 | 0 | 0 | icon-return-chain-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
+| M2 T25 S25 | 0 | 0 | title-idle-demo-chain-receipt; [record](../../docs/proposals/m2/t25-title-menu-demo.md) |
 | M2 T26 | 32 | - | [record](../../docs/proposals/m2/t26-victory-terminal.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T26 S1 | 0 | 0 | source-order-node-contract; [record](../../docs/proposals/m2/t26-victory-terminal.md) |
 | M2 T26 S2 | 0 | 0 | planned-shared-c-migration; [record](../../docs/proposals/m2/t26-victory-terminal.md) |
@@ -2588,7 +2572,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T51 S5 | 0 | 0 | cross-route-integration-certification; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T52 | 0 | - | [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S1 | 0 | 0 | owner-approved-current-equivalence-remediation, a2-nmi-prefix-state-handoff; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
-| M2 T52 S2 | 0 | 2 | owner-approved-current-equivalence-remediation, a6-title-demo-world-select-order; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
+| M2 T52 S2 | 0 | 0 | owner-approved-current-equivalence-remediation, a6-title-demo-world-select-order; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S3 | 0 | 4 | owner-approved-current-equivalence-remediation, a7-floatey-score-timer-order; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S4 | 0 | 3 | owner-approved-current-equivalence-remediation, b2-background-player-palette-fallthrough; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S5 | 0 | 3 | owner-approved-current-equivalence-remediation, b3-timeup-task-handoff; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
@@ -2836,6 +2820,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T70 S7 | 0 | 6 | sprite-shuffle-material-audit; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S8 | 0 | 0 | pause-state-material-audit; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S9 | 0 | 10 | serial-input-pause-material-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S10 | 0 | 25 | title-menu-demo-material-audit; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M2 T9 | 1 | - | [record](../../docs/etc/architecture/smb1-frame-output-ledger.md); [record](../../docs/history/M2-T9-frame-output-ledger-and-reference-recorder.md); S not recorded |
 | M2 Td | 0 | - | [record](../../docs/proposals/m2-rom-structural-recovery.md); [record](../../docs/states/QUEUE.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -3185,6 +3170,24 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-t70-s7-shuffle-1 | M2 T22 S27 | M2 T70 S7 | 6 | Coordinator accepts bounded shared shuffle/preset repair under owner ongoing M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s9-input-1 | M2 T22 S24 | M2 T70 S9 | 6 | Coordinator accepts shared input/pause repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s9-input-2 | M2 T28 S6 | M2 T70 S9 | 4 | Coordinator accepts shared input/pause repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-1 | M2 T25 S20 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-2 | M2 T25 S7 | M2 T70 S10 | 3 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-3 | M2 T25 S9 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-4 | M2 T52 S2 | M2 T70 S10 | 2 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-5 | M2 T25 S12 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-6 | M2 T25 S13 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-7 | M2 T25 S14 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-8 | M2 T25 S8 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-9 | M2 T25 S15 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-10 | M2 T25 S16 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-11 | M2 T25 S17 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-12 | M2 T25 S18 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-13 | M2 T25 S19 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-14 | M2 T25 S21 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-15 | M2 T25 S22 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-16 | M2 T25 S23 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-17 | M2 T25 S24 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-18 | M2 T25 S25 | M2 T70 S10 | 5 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3681,3 +3684,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T70 S7 | 6 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S8 | 6 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S9 | 10 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S10 | 25 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |

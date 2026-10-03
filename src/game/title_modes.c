@@ -34,7 +34,7 @@ enum {
     MYSMB_RAM_WORLD_SELECT_ENABLE = 0x07fcU,
     MYSMB_RAM_CONTINUE_WORLD = 0x07fdU,
     MYSMB_RAM_FETCH_NEW_TIMER = 0x0757U,
-    MYSMB_RAM_SCORE_AND_COIN_END = 0x07ddU,
+    MYSMB_RAM_SCORE_AND_COIN_BASE = 0x07ddU,
     MYSMB_RAM_VRAM_BUFFER1_OFFSET = 0x0300U
 };
 
@@ -95,14 +95,15 @@ static mysmb_u8 mysmb_game_chk_continue(struct mysmb_game *game,
 }
 
 /* ROM $8307 InitScores.  The source enters it by fallthrough from
- * StartWorld1; keep its score clear separate from the preceding mode entry. */
+ * StartWorld1; clear $07dd + X for X=$17..$00, preserving the top score
+ * at $07d7..$07dc and all bytes preceding the player-score base. */
 static void mysmb_game_init_scores(struct mysmb_game *game)
 {
     mysmb_u8 offset;
 
     offset = 0x17U;
     do {
-        game->ram[(mysmb_u16)(MYSMB_RAM_SCORE_AND_COIN_END - offset)] = 0U;
+        game->ram[(mysmb_u16)(MYSMB_RAM_SCORE_AND_COIN_BASE + offset)] = 0U;
         offset--;
     } while (offset != 0xffU);
 }

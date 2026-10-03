@@ -1,5 +1,16 @@
 # M2 ROM conformance node progress
 
+## M2 T70 S10 - closed title/menu/demo material repair
+
+[25-node source/material proof](../proposals/m2/t70-final-current-certification.md#s10-p1-closure---title-score-clear-repair-and-menudemo-material-paths).
+InitScores restored source07dd+X (X17..0);preserves audio pause/top score.
+8704 menu roots and1120 complete controlled demo calls each width zero diff,
+only case-observed source stack writes excluded;14 material rows added.
+7 focused checks each,six600-frame routes,native/OpenNT builds and3 refreshed
+EXEs pass. Historical1992/1992,current1992/1992 exact nodes,4275/4275 feasible
+controls(raw4342,infeasible67),586/586 material partial. Fresh0,no deferred
+nodes;T70/M2 global certification remains open.
+
 ## M2 T70 S9 - closed input-to-pause material repair
 
 [Ten-node source/input proof](../proposals/m2/t70-final-current-certification.md#s9-p1-closure---original-port-scratch-and-input-to-pause-connections).

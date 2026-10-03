@@ -8,6 +8,7 @@ int main(void)
     struct mysmb_game game;
     struct mysmb_input input;
     struct mysmb_frame frame;
+    mysmb_u16 score_address;
 
     mysmb_game_initialize(&game);
     input.buttons2 = 0U;
@@ -155,11 +156,23 @@ int main(void)
     game.ram[0x07a2U] = 0x55U;
     game.ram[0x06fcU] = 0U;
     game.ram[0x06fdU] = MYSMB_BUTTON_START;
+    /* ROM InitScores clears $07dd..$07f4, not the preceding score region.
+     * Nonzero sentinels expose a reversed base/index translation. */
+    for (score_address = 0x07c6U; score_address <= 0x07f5U;
+         ++score_address) game.ram[score_address] = 0xa5U;
     if (mysmb_game_title_step(&game, &input) != 0U ||
         game.ram[0x0770U] != 1U || game.ram[0x0772U] != 0U ||
         game.ram[0x07a2U] != 0U) {
         return 1;
     }
+
+    for (score_address = 0x07c6U; score_address < 0x07ddU;
+         ++score_address)
+        if (game.ram[score_address] != 0xa5U) return 19;
+    for (score_address = 0x07ddU; score_address <= 0x07f4U;
+         ++score_address)
+        if (game.ram[score_address] != 0U) return 20;
+    if (game.ram[0x07f5U] != 0xa5U) return 21;
 
     mysmb_game_initialize(&game);
     game.ram[0x0770U] = 0U;
