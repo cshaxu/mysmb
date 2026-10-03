@@ -22653,8 +22653,8 @@
     "unclassified": 0
   },
   "controlEdgeCounts": {
-    "exact": 4264,
-    "infeasible": 77,
+    "exact": 4263,
+    "infeasible": 78,
     "needs-evidence": 1
   },
   "controlEdgeTypeCounts": {
@@ -48843,10 +48843,12 @@
       "currentCounterpart": "src/game/enemy/piranha.c:mysmb_objects_step_piranha_plants_slot",
       "semanticEvidence": [
         "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "State and frame timer take immediate pipe tail; stopped/downward plants compute absolute player difference and suppress emergence within $21, while moving/rising plants bypass that gate.",
       "currentSourcePaths": [
@@ -48862,10 +48864,12 @@
       "currentCounterpart": "src/game/enemy/piranha.c:mysmb_objects_step_piranha_plants_slot",
       "semanticEvidence": [
         "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Uses the absolute difference produced by PlayerEnemyDiff, entering pipe tail only for values below $21.",
       "currentSourcePaths": [
@@ -48881,10 +48885,12 @@
       "currentCounterpart": "src/game/enemy/piranha.c:mysmb_objects_step_piranha_plants_slot",
       "semanticEvidence": [
         "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Two-complements Y speed and increments move flag before endpoint selection.",
       "currentSourcePaths": [
@@ -48900,10 +48906,12 @@
       "currentCounterpart": "src/game/enemy/piranha.c:mysmb_objects_step_piranha_plants_slot",
       "semanticEvidence": [
         "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Selects down endpoint for nonnegative speed and up endpoint for negative speed.",
       "currentSourcePaths": [
@@ -48919,10 +48927,12 @@
       "currentCounterpart": "src/game/enemy/piranha.c:mysmb_objects_step_piranha_plants_slot",
       "semanticEvidence": [
         "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Moves only on source alternate frames with TimerControl clear; on exact endpoint sets move flag zero and delay timer $40.",
       "currentSourcePaths": [
@@ -48938,10 +48948,12 @@
       "currentCounterpart": "src/game/enemy/piranha.c:mysmb_objects_step_piranha_plants_slot",
       "semanticEvidence": [
         "Td S9 B15y Piranha Plant node-semantics and independent integration audit: SMB1 lines 10602-10659 compared with shared enemy/piranha.c and player-distance child; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write."
+        "M2 T63 S24 static original-ROM audit: SMB1 $D3B0-$D40F against shared enemy/piranha.c confirms state/timer gates, signed player distance, reverse speed, endpoint selection, frame/master gates and priority write.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S24 current-source x86/x64 batch route: 512 original-ROM piranha-movement fixtures each, full compared RAM and PlayerEnemyDiff child calls, zero differences; focused C90, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Always writes background-priority sprite attribute $20 before return.",
       "currentSourcePaths": [
@@ -48957,10 +48969,12 @@
       "currentCounterpart": "src/game/enemy/firebar_children.c:mysmb_firebar_spin",
       "semanticEvidence": [
         "Td S9 B15z Firebar spin node-semantics and independent integration audit: SMB1 lines 10664-10685 compared with shared enemy/firebar_children.c and ProcFirebar caller; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S25 static audit: SMB1 $D410-$D431 against enemy/firebar_children.c confirms scratch speed, direction, byte carry/borrow and returned high byte."
+        "M2 T63 S25 static audit: SMB1 $D410-$D431 against enemy/firebar_children.c confirms scratch speed, direction, byte carry/borrow and returned high byte.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S25 x86/x64 batch replay of eight original child-record files, zero differences; 1,572,864 RAM/A C90 cases, purity and DOS16 link pass."
+        "M2 T63 S25 x86/x64 batch replay of eight original child-record files, zero differences; 1,572,864 RAM/A C90 cases, purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Stores incoming speed in scratch $07; clockwise direction zero adds low phase and propagates carry into high phase, returning the resulting high byte.",
       "currentSourcePaths": [
@@ -48976,10 +48990,12 @@
       "currentCounterpart": "src/game/enemy/firebar_children.c:mysmb_firebar_spin",
       "semanticEvidence": [
         "Td S9 B15z Firebar spin node-semantics and independent integration audit: SMB1 lines 10664-10685 compared with shared enemy/firebar_children.c and ProcFirebar caller; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S25 static audit: SMB1 $D410-$D431 against enemy/firebar_children.c confirms scratch speed, direction, byte carry/borrow and returned high byte."
+        "M2 T63 S25 static audit: SMB1 $D410-$D431 against enemy/firebar_children.c confirms scratch speed, direction, byte carry/borrow and returned high byte.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S25 x86/x64 batch replay of eight original child-record files, zero differences; 1,572,864 RAM/A C90 cases, purity and DOS16 link pass."
+        "M2 T63 S25 x86/x64 batch replay of eight original child-record files, zero differences; 1,572,864 RAM/A C90 cases, purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Counterclockwise direction nonzero subtracts low phase and propagates borrow through SBC #0 into high phase, returning the resulting high byte.",
       "currentSourcePaths": [
@@ -48996,11 +49012,13 @@
       "semanticEvidence": [
         "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
         "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Erases only when Y high equals three; otherwise enters balance handling.",
       "currentSourcePaths": [
@@ -49016,10 +49034,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Treats negative Enemy_State as non-balance and returns; nonnegative state is the paired platform offset.",
       "currentSourcePaths": [
@@ -49035,10 +49055,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Saves peer offset, collision flag and falling direction; falling direction enters paired fall, otherwise tests current platform threshold.",
       "currentSourcePaths": [
@@ -49054,10 +49076,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "For current Y <=$2d, matching peer/collision selector initializes fall; otherwise clamps current Y to $2f and stops both.",
       "currentSourcePaths": [
@@ -49073,10 +49097,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Is the no-extra-write tail jump to paired fall initialization.",
       "currentSourcePaths": [
@@ -49092,10 +49118,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Applies the same <=$2d matching-selector fall/clamp-stop logic to peer Y, otherwise joins coupled movement.",
       "currentSourcePaths": [
@@ -49111,10 +49139,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Saves old current Y, distinguishes collision from no-collision, and selects down/up/stop from force+five carry and signed speed exactly as source.",
       "currentSourcePaths": [
@@ -49130,10 +49160,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Uses collision slot equality with ObjectOffset to select down versus up movement.",
       "currentSourcePaths": [
@@ -49149,10 +49181,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Calls upward platform gravity then tails to counterpart displacement.",
       "currentSourcePaths": [
@@ -49168,10 +49202,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Calls two-platform stop initialization then tails to counterpart displacement.",
       "currentSourcePaths": [
@@ -49187,10 +49223,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Calls downward platform gravity then falls through to counterpart displacement.",
       "currentSourcePaths": [
@@ -49206,10 +49244,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Moves peer by old-current minus new-current Y difference, repositions player only for nonnegative collision flag, then joins rope update.",
       "currentSourcePaths": [
@@ -49225,10 +49265,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Skips stationary platforms and VRAM offsets >=$20; otherwise emits two two-tile rope commands using two saved speed copies and then advances Buffer1 offset by ten.",
       "currentSourcePaths": [
@@ -49244,10 +49286,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Selects blank $24,$24 for first rope when current speed is negative; nonnegative selects $a2,$a3.",
       "currentSourcePaths": [
@@ -49263,10 +49307,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Uses peer state as slot and inverted second speed to derive peer address before its complementary tile selection.",
       "currentSourcePaths": [
@@ -49282,10 +49328,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Selects blank $24,$24 for second rope when first speed is nonnegative; negative selects $a2,$a3.",
       "currentSourcePaths": [
@@ -49301,10 +49349,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Writes command terminator and advances VRAM buffer offset by ten.",
       "currentSourcePaths": [
@@ -49320,10 +49370,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Restores ObjectOffset before return.",
       "currentSourcePaths": [
@@ -49339,10 +49391,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Computes name-table low/high address from peer X/page/Y, difficulty adjustment, speed sign and bottom-screen correction while preserving source stack speed copies.",
       "currentSourcePaths": [
@@ -49358,10 +49412,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Applies X+8 and, only outside secondary hard mode, a second X+16 whose carry supersedes the first source carry.",
       "currentSourcePaths": [
@@ -49377,10 +49433,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Builds high byte from rotated Y bits and page LSB, then combines vertical/horizontal low fields.",
       "currentSourcePaths": [
@@ -49396,10 +49454,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns prepared address, including Y>= $e8 low-address bit-six clear.",
       "currentSourcePaths": [
@@ -49417,11 +49477,13 @@
         "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
         "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Uses peer offscreen bits and floatey setup, copies player relative/X-Y values, marks falling direction then stops both platforms.",
       "currentSourcePaths": [
@@ -49437,10 +49499,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Initializes source vertical state and writes zero speed/force to peer.",
       "currentSourcePaths": [
@@ -49456,10 +49520,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Moves current then peer falling platforms, then positions player only for nonnegative collision flag.",
       "currentSourcePaths": [
@@ -49475,10 +49541,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Restores ObjectOffset and returns.",
       "currentSourcePaths": [
@@ -49494,10 +49562,12 @@
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_y",
       "semanticEvidence": [
         "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "When both speed/force are zero, clears Y dummy, performs one-pixel descent only below top endpoint on every eighth frame, then takes rider gate; otherwise enters center-based gravity.",
       "currentSourcePaths": [
@@ -49513,10 +49583,12 @@
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_y",
       "semanticEvidence": [
         "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Unconditionally joins rider gate after optional eighth-frame descent.",
       "currentSourcePaths": [
@@ -49532,10 +49604,12 @@
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_y",
       "semanticEvidence": [
         "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Current Y below center chooses downward gravity; current Y at/above center chooses upward gravity.",
       "currentSourcePaths": [
@@ -49551,10 +49625,12 @@
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_y",
       "semanticEvidence": [
         "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Calls downward gravity then falls through shared rider gate.",
       "currentSourcePaths": [
@@ -49570,10 +49646,12 @@
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_y",
       "semanticEvidence": [
         "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Only nonnegative PlatformCollisionFlag positions the large-platform rider.",
       "currentSourcePaths": [
@@ -49589,10 +49667,12 @@
       "currentCounterpart": "src/game/enemy/platform.c:mysmb_platform_move_y",
       "semanticEvidence": [
         "Td S9 B16d Y-moving-platform node-semantics and independent integration audit: SMB1 lines 10921-10947 compared with shared enemy/platform.c and movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics."
+        "M2 T63 S27 static $D5D3-$D679 audit plus vertical/horizontal/lift original-ROM current x86/x64 batch routes (1,792 records per width), focused C90, platform purity and DOS16 link: exact moving-platform and lift semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns after optional rider positioning.",
       "currentSourcePaths": [
@@ -110545,16 +110625,18 @@
       "instruction": "bcs",
       "id": "control-02100",
       "cohort": "J",
-      "status": "exact",
-      "currentCounterpart": "shared enemy/balance_platform.c coupled-motion branch and player-position tail",
+      "status": "infeasible",
+      "currentCounterpart": "none: impossible original fallthrough; shared C preserves feasible force threshold path",
       "semanticEvidence": [
         "Td S9 B16b balance-platform coupled-motion node-semantics and independent integration audit: SMB1 lines 10733-10770 compared with shared enemy/balance_platform.c and named movement/player-position children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:335360actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all289PC/37branchpairs/one mandatorybranch/actualX==08,6focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
-      "semanticContract": "Preserves original fallthrough relation ChkToMoveBalPlat -> ColFlg with force/speed/collision predicate, paired Y handoff and call/tail/return ordering.",
+      "semanticContract": "Original D48E CMP #0B defines carry; D490 BCC PlatSt not taken requires C1. No carry writer before D492 BCS PlatUp,so branch mandatory. Extracted ChkToMoveBalPlat -> ColFlg fallthrough is infeasible;no original interior incoming reference.",
       "currentSourcePaths": [
         "src/game/enemy/balance_platform.c"
       ]
@@ -161730,6 +161812,7 @@
     "control-01904",
     "control-01929",
     "control-02036",
+    "control-02100",
     "control-02708",
     "control-02757",
     "control-02778",
@@ -161781,16 +161864,16 @@
     "control-03784",
     "control-03868"
   ],
-  "infeasibleControlEdgeTotal": 77,
-  "feasibleControlEdgeTotal": 4265,
+  "infeasibleControlEdgeTotal": 78,
+  "feasibleControlEdgeTotal": 4264,
   "finalCertification": {
     "status": "incomplete",
     "authority": "docs/states/CURRENT.md",
     "localExactMeaning": "Accepted scoped semantic/route contracts in retained evidence;not exhaustive current-build or end-to-end certification.",
     "nodeUniverse": 1992,
-    "feasibleControlUniverse": 4265,
+    "feasibleControlUniverse": 4264,
     "rawControlUniverse": 4342,
-    "infeasibleControls": 77,
+    "infeasibleControls": 78,
     "reviewedNodeLabels": [],
     "reviewedControlEdgeIds": [],
     "reviewedMeaning": "Superseded restart accounting;not an active progress counter. Retained scoped proofs remain accepted within their stated limits.",
@@ -166084,7 +166167,6 @@
           "control-02097",
           "control-02098",
           "control-02099",
-          "control-02100",
           "control-02101",
           "control-02102",
           "control-02103",
@@ -168734,16 +168816,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P71 checkpoint - piranha spin and platform uses reconciled:40labels/289instructions/121RAM joined12boundedclauses;distance/target/spin carry,paired gravity/rider/rope stack/address andverticalrest paths. Falsefallthrough02100 corrected infeasible. Producer/inter-frame pending,no newnode credit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 5603,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 5088,
+        "localInstructionReceiptSites": 5892,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 4799,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 2014,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 1759,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 2135,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 1638,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -168752,7 +168835,6 @@
           "src/game/oam/normal_enemy_gfx.c": 127,
           "src/game/terminal_modes.c": 81,
           "src/game/oam/player_gfx.c": 81,
-          "shared game core: enemy/balance_platform.c": 78,
           "src/game/world/player_enemy_collision.c": 72,
           "src/game/oam/block_gfx.c": 54,
           "src/game/objects.c": 48,
@@ -168767,7 +168849,6 @@
           "src/game/world/bounding_box.c": 33,
           "src/game/scroll.c shared C90 scroll owner": 32,
           "src/game/enemy/hammer_bro.c": 30,
-          "shared game core: enemy/platform.c": 30,
           "src/game/player/terrain.c and terrain children": 30,
           "src/game/player/pipe_entry.c and terrain children": 30,
           "src/game/player.c": 28,
@@ -168780,10 +168861,10 @@
           "src/game/oam/power_up_gfx.c": 25,
           "src/game/player_end_level.c shared C90 end-level owner": 24,
           "src/game/oam/flagpole_gfx.c": 24,
-          "shared game core: enemy/piranha.c": 23,
           "src/game/world/geometry.c": 22,
           "src/game/entry.c shared C90 entry owner": 21,
           "src/game/world/fireball_hit.c": 21,
+          "shared game core: enemy/platform.c": 20,
           "shared game core: enemy/actor_slots.c": 19,
           "src/game/enemy/platform_collision.c": 19,
           "src/game/oam/sprite_row.c": 19,
@@ -168800,7 +168881,6 @@
           "src/game/boot.c": 13,
           "shared game core: world/fireball_enemy.c": 13,
           "src/game shared dispatcher/engine/scroll owners": 10,
-          "shared game core: enemy/firebar_children.c": 10,
           "src/game/world/hammer_collision.c": 10,
           "src/game/world/powerup_collision.c": 10,
           "src/game/area.c plus src/game/oam/flagpole_gfx.c": 9,

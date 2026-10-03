@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P71 platform uses](../proposals/m2/t70-final-current-certification.md#s17-p71-checkpoint---piranha-spin-and-platform-uses-reconciled).
+S17 P71:40piranha/spin/platform labels/289instructions/121RAM joined12boundedclauses;335360actualroots eachwidth0diff/all289PC/37branchpairs/one mandatorybranch,6tests each. Scope1044/fresh0;5892/10691instruction receipts,2135/3773RAM receipts;4799instructions/1638RAM pending. Local1991/1992nodes,4263/4264controls(raw4342/infeasible78),material993partial,totalunknown;source/productsP69unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
 [P70 flame/star uses](../proposals/m2/t70-final-current-certification.md#s17-p70-checkpoint---flame-fireworks-and-star-flag-uses-reconciled).
 S17 P70:29flame/fireworks/star labels/199instructions/80RAM joined11boundedclauses;266752actualroots eachwidth0diff/all199PC/25branchpairs,5tests each. Scope1004/fresh0;5603/10691instruction receipts,2014/3773RAM receipts;5088instructions/1759RAM pending. Local1991/1992nodes,4264/4265controls(raw4342/infeasible77),material993partial,totalunknown;source/productsP69unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
