@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 682,
+    "enumeratedCount": 696,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -15007,6 +15007,313 @@
         "src/game/enemy/loop.c",
         "src/game/area/area_data.c"
       ]
+    },
+    {
+      "id": "material-00683",
+      "producer": "GetAreaDataAddrs",
+      "consumer": "ProcADLoop",
+      "storage": "E7/E8 post-header pointer+2",
+      "feasiblePath": "Actual source header/parser compositions observe 9514,9520",
+      "status": "exact",
+      "currentCounterpart": "shared area/header/parser owners",
+      "semanticContract": "34 table slots/high-bit aliases,column0..15,valid same-page preload and retained27139 parser domains. Raw header lifetime ends at+2 advance;per-slot parser reload and immutable PRG reads. No intervening whole-frame alias proof.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/area/area_data.c"
+      ]
+    },
+    {
+      "id": "material-00684",
+      "producer": "GetAreaDataAddrs",
+      "consumer": "Chk1Row13",
+      "storage": "E7/E8 post-header pointer+2",
+      "feasiblePath": "Actual source header/parser compositions observe 9531,953a,9547",
+      "status": "exact",
+      "currentCounterpart": "shared area/header/parser owners",
+      "semanticContract": "34 table slots/high-bit aliases,column0..15,valid same-page preload and retained27139 parser domains. Raw header lifetime ends at+2 advance;per-slot parser reload and immutable PRG reads. No intervening whole-frame alias proof.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/area/area_data.c"
+      ]
+    },
+    {
+      "id": "material-00685",
+      "producer": "GetAreaDataAddrs",
+      "consumer": "Chk1stB",
+      "storage": "E7/E8 post-header pointer+2",
+      "feasiblePath": "Actual source header/parser compositions observe 959f",
+      "status": "exact",
+      "currentCounterpart": "shared area/header/parser owners",
+      "semanticContract": "34 table slots/high-bit aliases,column0..15,valid same-page preload and retained27139 parser domains. Raw header lifetime ends at+2 advance;per-slot parser reload and immutable PRG reads. No intervening whole-frame alias proof.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/area/area_data.c"
+      ]
+    },
+    {
+      "id": "material-00686",
+      "producer": "GetAreaDataAddrs",
+      "consumer": "ChkRow13",
+      "storage": "E7/E8 post-header pointer+2",
+      "feasiblePath": "Actual source header/parser compositions observe 95cc,95d2",
+      "status": "exact",
+      "currentCounterpart": "shared area/header/parser owners",
+      "semanticContract": "34 table slots/high-bit aliases,column0..15,valid same-page preload and retained27139 parser domains. Raw header lifetime ends at+2 advance;per-slot parser reload and immutable PRG reads. No intervening whole-frame alias proof.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/area/area_data.c"
+      ]
+    },
+    {
+      "id": "material-00687",
+      "producer": "GetAreaDataAddrs",
+      "consumer": "ChkSRows",
+      "storage": "E7/E8 post-header pointer+2",
+      "feasiblePath": "Actual source header/parser compositions observe 95e7,95f1",
+      "status": "exact",
+      "currentCounterpart": "shared area/header/parser owners",
+      "semanticContract": "34 table slots/high-bit aliases,column0..15,valid same-page preload and retained27139 parser domains. Raw header lifetime ends at+2 advance;per-slot parser reload and immutable PRG reads. No intervening whole-frame alias proof.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/area/area_data.c"
+      ]
+    },
+    {
+      "id": "material-00688",
+      "producer": "GetAreaDataAddrs",
+      "consumer": "LrgObj",
+      "storage": "E7/E8 post-header pointer+2",
+      "feasiblePath": "Actual source header/parser compositions observe 95fe",
+      "status": "exact",
+      "currentCounterpart": "shared area/header/parser owners",
+      "semanticContract": "34 table slots/high-bit aliases,column0..15,valid same-page preload and retained27139 parser domains. Raw header lifetime ends at+2 advance;per-slot parser reload and immutable PRG reads. No intervening whole-frame alias proof.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/area/area_data.c"
+      ]
+    },
+    {
+      "id": "material-00689",
+      "producer": "GetAreaDataAddrs",
+      "consumer": "SpecObj",
+      "storage": "E7/E8 post-header pointer+2",
+      "feasiblePath": "Actual source header/parser compositions observe 960e",
+      "status": "exact",
+      "currentCounterpart": "shared area/header/parser owners",
+      "semanticContract": "34 table slots/high-bit aliases,column0..15,valid same-page preload and retained27139 parser domains. Raw header lifetime ends at+2 advance;per-slot parser reload and immutable PRG reads. No intervening whole-frame alias proof.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/area/area_data.c"
+      ]
+    },
+    {
+      "id": "material-00690",
+      "producer": "GetAreaDataAddrs",
+      "consumer": "NormObj",
+      "storage": "E7/E8 post-header pointer+2",
+      "feasiblePath": "Actual source header/parser compositions observe 9628",
+      "status": "exact",
+      "currentCounterpart": "shared area/header/parser owners",
+      "semanticContract": "34 table slots/high-bit aliases,column0..15,valid same-page preload and retained27139 parser domains. Raw header lifetime ends at+2 advance;per-slot parser reload and immutable PRG reads. No intervening whole-frame alias proof.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/area/area_data.c"
+      ]
+    },
+    {
+      "id": "material-00691",
+      "producer": "GetAreaDataAddrs",
+      "consumer": "BackColC",
+      "storage": "E7/E8 post-header pointer+2",
+      "feasiblePath": "Actual source header/parser compositions observe 9649",
+      "status": "exact",
+      "currentCounterpart": "shared area/header/parser owners",
+      "semanticContract": "34 table slots/high-bit aliases,column0..15,valid same-page preload and retained27139 parser domains. Raw header lifetime ends at+2 advance;per-slot parser reload and immutable PRG reads. No intervening whole-frame alias proof.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/area/area_data.c"
+      ]
+    },
+    {
+      "id": "material-00692",
+      "producer": "GetAreaDataAddrs",
+      "consumer": "AlterAreaAttributes",
+      "storage": "E7/E8 post-header pointer+2",
+      "feasiblePath": "Actual source header/parser compositions observe 96c9",
+      "status": "exact",
+      "currentCounterpart": "shared area/header/parser owners",
+      "semanticContract": "34 table slots/high-bit aliases,column0..15,valid same-page preload and retained27139 parser domains. Raw header lifetime ends at+2 advance;per-slot parser reload and immutable PRG reads. No intervening whole-frame alias proof.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/area/area_data.c"
+      ]
+    },
+    {
+      "id": "material-00693",
+      "producer": "GetAreaDataAddrs",
+      "consumer": "GetLrgObjAttrib",
+      "storage": "E7/E8 post-header pointer+2",
+      "feasiblePath": "Actual source header/parser compositions observe 9bbe,9bc5",
+      "status": "exact",
+      "currentCounterpart": "shared area/header/parser owners",
+      "semanticContract": "34 table slots/high-bit aliases,column0..15,valid same-page preload and retained27139 parser domains. Raw header lifetime ends at+2 advance;per-slot parser reload and immutable PRG reads. No intervening whole-frame alias proof.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/area/area_data.c"
+      ]
+    },
+    {
+      "id": "material-00694",
+      "producer": "GetAreaDataAddrs",
+      "consumer": "GetAreaDataAddrs",
+      "storage": "E7/E8 AreaData raw header pointer",
+      "feasiblePath": "Actual source header/parser compositions observe 9c5a",
+      "status": "exact",
+      "currentCounterpart": "shared area/header/parser owners",
+      "semanticContract": "34 table slots/high-bit aliases,column0..15,valid same-page preload and retained27139 parser domains. Raw header lifetime ends at+2 advance;per-slot parser reload and immutable PRG reads. No intervening whole-frame alias proof.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/area/area_data.c"
+      ]
+    },
+    {
+      "id": "material-00695",
+      "producer": "GetAreaDataAddrs",
+      "consumer": "StoreFore",
+      "storage": "E7/E8 AreaData raw header pointer",
+      "feasiblePath": "Actual source header/parser compositions observe 9c80",
+      "status": "exact",
+      "currentCounterpart": "shared area/header/parser owners",
+      "semanticContract": "34 table slots/high-bit aliases,column0..15,valid same-page preload and retained27139 parser domains. Raw header lifetime ends at+2 advance;per-slot parser reload and immutable PRG reads. No intervening whole-frame alias proof.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "header producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/area/area_data.c"
+      ]
+    },
+    {
+      "id": "material-00696",
+      "producer": "CastleObject",
+      "consumer": "ChkCFloor",
+      "storage": "06 row counter through CRendLoop read-modify-write",
+      "feasiblePath": "Original9819 sets11;982b decrements while rows advance;ChkCFloor tests row11.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:castle clause of mysmb_area_apply_parser_object",
+      "semanticContract": "Actual returning startup-column castle paths plus neutral legal rows0..10/five persistent columns. No malformed height/table index claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "castle producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     }
   ],
   "cohorts": [
@@ -15082,10 +15389,10 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1992,
+    "exact": 1986,
     "infeasible": 0,
     "mismatch": 0,
-    "needs-evidence": 0,
+    "needs-evidence": 6,
     "unclassified": 0
   },
   "controlEdgeCounts": {
@@ -21926,11 +22233,13 @@
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
         "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
         "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
       ],
       "operationalEvidence": [
         "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
       ],
       "semanticContract": "Resets BehindAreaParserFlag for every descending slot and selects resident buffered offset or AreaDataOffset before record inspection. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
@@ -21948,11 +22257,13 @@
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
         "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
         "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
       ],
       "operationalEvidence": [
         "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
       ],
       "semanticContract": "Recognizes row-13 page controls before decode, preserving d6 page-control versus object distinction. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
@@ -22192,11 +22503,13 @@
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
         "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
         "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
       ],
       "operationalEvidence": [
         "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
       ],
       "semanticContract": "Ends decode on $fd; otherwise selects special row-15/row-12/default addends. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
@@ -22236,11 +22549,13 @@
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
         "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
         "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
       ],
       "operationalEvidence": [
         "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
       ],
       "semanticContract": "Maps row-13 object/control records, loop command and page-control return behavior. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
@@ -22280,11 +22595,13 @@
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
         "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
         "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
       ],
       "operationalEvidence": [
         "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
       ],
       "semanticContract": "Separates special rows, large d6-d4 objects and small-object identities. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
@@ -22302,11 +22619,13 @@
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
         "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
         "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
       ],
       "operationalEvidence": [
         "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
       ],
       "semanticContract": "Applies the vertical-pipe warp d3 override before object-id normalization. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
@@ -22346,11 +22665,13 @@
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
         "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
         "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
       ],
       "operationalEvidence": [
         "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
       ],
       "semanticContract": "Loads special-row d6-d4 class before common normalization. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
@@ -22390,11 +22711,13 @@
         "Td S9 B10f area-stream entry static node-and-edge audit: SMB1 lines 3326-3480 compared with area.c; controlled original-ROM/x86/x64 object-stream and backloading routes remain required.",
         "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
         "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
       ],
       "operationalEvidence": [
         "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
       ],
       "semanticContract": "Chooses resident execution versus page/column/rear initialization for normalized object identity. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
@@ -22478,11 +22801,13 @@
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
         "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
         "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
       ],
       "operationalEvidence": [
         "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
       ],
       "semanticContract": "Compares source high-nibble column to CurrentColumnPos before staging an object. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
@@ -22546,11 +22871,13 @@
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
         "M2 T56 S3 static audit: SMB1 lines 3326-3586 and src/game/area.c were compared in source order. Stream reads, slot state, row decoding, dispatch and attribute writes match; P1 restored InitRear fall-through to ChkLength for resident slot-zero decrement.",
         "T70 S17 P6 reopened parser-chain decoder outputs and source InitRear/row13 return order;old state-only fixture omits00/07 outputs.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:source9508-96f1 stores00/07 before non-render exits,keeps same-page InitRear before row14 StrAObj,and resident row13 D6-clear LeavePar before caller ChkLength. Whole controller/decoder clause order reviewed;only this area function changes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
       ],
       "operationalEvidence": [
         "M2 T56 S3 controlled owner-local warmed original-ROM/current x86/x64 matrix: 16 parser-object fixtures are byte-identical for staging $06a0-$06ad, AreaData pointer $00e7-$00e8, parser state $0728-$0732, attributes $0741-$0745 and AreaType $074e; x86 and x64 agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P6 checkpoint - parser decoder and return order repair:27139 original returning roots each x86/x64,all RAM including zero-page,only actually observed physical push bytes excluded,zero differences;32 labels/34 feasible predicate pairs observed,one constant-BNE fallthrough impossible.10 focused checks each and six600-frame scoped routes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
       ],
       "semanticContract": "Updates terrain/background values for row-14 attribute records with d6 clear. Includes00/07 outputs before non-render exits and original same-page preload/resident page-control returns;declared original stream/slot domains.",
       "currentSourcePaths": [
@@ -23047,10 +23374,13 @@
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
         "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
-        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match.",
+        "T70 S17 P9 reopened actual CastleObject06 RAM counter output;original9806/9819/982b versus private C counter.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
       ],
       "operationalEvidence": [
-        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
       ],
       "semanticContract": "Renders castle columns and performs post-page floor/star-flag conditions.",
       "currentSourcePaths": [
@@ -23066,10 +23396,13 @@
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
         "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
-        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match.",
+        "T70 S17 P9 reopened actual CastleObject06 RAM counter output;original9806/9819/982b versus private C counter.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
       ],
       "operationalEvidence": [
-        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
       ],
       "semanticContract": "Writes a castle column in five-byte vertical source strides through row ten.",
       "currentSourcePaths": [
@@ -23085,10 +23418,13 @@
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
         "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
-        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match.",
+        "T70 S17 P9 reopened actual CastleObject06 RAM counter output;original9806/9819/982b versus private C counter.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
       ],
       "operationalEvidence": [
-        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
       ],
       "semanticContract": "Selects exit, floor brick or flag creation after castle column rendering.",
       "currentSourcePaths": [
@@ -23104,10 +23440,13 @@
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
         "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
-        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match.",
+        "T70 S17 P9 reopened actual CastleObject06 RAM counter output;original9806/9819/982b versus private C counter.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
       ],
       "operationalEvidence": [
-        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
       ],
       "semanticContract": "Applies tall/non-tall castle length gate before star-flag creation.",
       "currentSourcePaths": [
@@ -23123,10 +23462,13 @@
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
-        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
+        "T70 S17 P9 reopened actual CastleObject06 RAM counter output;original9806/9819/982b versus private C counter.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
       ],
       "operationalEvidence": [
-        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
       ],
       "semanticContract": "Writes the terminal floor brick before common castle return.",
       "currentSourcePaths": [
@@ -23142,10 +23484,13 @@
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
-        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
+        "T70 S17 P9 reopened actual CastleObject06 RAM counter output;original9806/9819/982b versus private C counter.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
       ],
       "operationalEvidence": [
-        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
       ],
       "semanticContract": "Common castle return after page/length/flag decisions.",
       "currentSourcePaths": [
@@ -23175,12 +23520,13 @@
       "label": "IntroPipe",
       "asmLine": 3810,
       "cohort": "C",
-      "status": "exact",
+      "status": "needs-evidence",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
-        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
+        "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs."
       ],
       "operationalEvidence": [
         "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
@@ -23194,12 +23540,13 @@
       "label": "VPipeSectLoop",
       "asmLine": 3817,
       "cohort": "C",
-      "status": "exact",
+      "status": "needs-evidence",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
-        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
+        "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs."
       ],
       "operationalEvidence": [
         "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
@@ -23213,12 +23560,13 @@
       "label": "NoBlankP",
       "asmLine": 3823,
       "cohort": "C",
-      "status": "exact",
+      "status": "needs-evidence",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
-        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
+        "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs."
       ],
       "operationalEvidence": [
         "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
@@ -23289,12 +23637,13 @@
       "label": "ExitPipe",
       "asmLine": 3835,
       "cohort": "C",
-      "status": "exact",
+      "status": "needs-evidence",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
-        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
+        "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs."
       ],
       "operationalEvidence": [
         "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
@@ -23308,12 +23657,13 @@
       "label": "RenderSidewaysPipe",
       "asmLine": 3840,
       "cohort": "C",
-      "status": "exact",
+      "status": "needs-evidence",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
-        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
+        "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs."
       ],
       "operationalEvidence": [
         "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
@@ -23327,12 +23677,13 @@
       "label": "DrawSidePart",
       "asmLine": 3855,
       "cohort": "C",
-      "status": "exact",
+      "status": "needs-evidence",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
-        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
+        "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs."
       ],
       "operationalEvidence": [
         "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
@@ -24603,10 +24954,12 @@
       "currentCounterpart": "shared area parser/render helper",
       "semanticEvidence": [
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T57 S3 static audit: SMB1 lines 4237-4367 compared with shared area.c/area/block_buffer.c and the shared world block-buffer caller; the hole water gate, five-slot wrap, UnderPart overlay/loop, helper call order and pointer-table selection have matching C semantics."
+        "M2 T57 S3 static audit: SMB1 lines 4237-4367 compared with shared area.c/area/block_buffer.c and the shared world block-buffer caller; the hole water gate, five-slot wrap, UnderPart overlay/loop, helper call order and pointer-table selection have matching C semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
       ],
       "operationalEvidence": [
-        "M2 T57 S3 controlled original-ROM/current x86/x64 matrix: 98 hole/UnderPart, 20 helper and 48 block-address routes have zero persistent non-ABI work-RAM differences and byte-identical native records; focused x86/x64 smokes pass."
+        "M2 T57 S3 controlled original-ROM/current x86/x64 matrix: 98 hole/UnderPart, 20 helper and 48 block-address routes have zero persistent non-ABI work-RAM differences and byte-identical native records; focused x86/x64 smokes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
       ],
       "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper.",
       "currentSourcePaths": [
@@ -24770,11 +25123,13 @@
       "currentCounterpart": "mysmb_area_get_data_addresses",
       "semanticEvidence": [
         "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
       ],
       "operationalEvidence": [
         "M2 T57 S4 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination cover all 188 source table bytes, all header predicates and the ContinueGame/SetInitNTHigh caller paths; zero persistent work-RAM differences and byte-identical native records.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
       ],
       "semanticContract": "Preserves the ROM byte-width pointer/type/header control and state contract in source order.",
       "currentSourcePaths": [
@@ -24789,10 +25144,12 @@
       "currentOwner": "src/game/area/area_data.c",
       "currentCounterpart": "mysmb_area_parse_header foreground/background branch",
       "semanticEvidence": [
-        "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match."
+        "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
       ],
       "operationalEvidence": [
-        "M2 T57 S4 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination cover all 188 source table bytes, all header predicates and the ContinueGame/SetInitNTHigh caller paths; zero persistent work-RAM differences and byte-identical native records."
+        "M2 T57 S4 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination cover all 188 source table bytes, all header predicates and the ContinueGame/SetInitNTHigh caller paths; zero persistent work-RAM differences and byte-identical native records.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
       ],
       "semanticContract": "Preserves the ROM byte-width pointer/type/header control and state contract in source order.",
       "currentSourcePaths": [
@@ -158665,7 +159022,15 @@
         "CheckRightExtBounds",
         "CheckForEnemyGroup",
         "ParseRow0e",
-        "CheckThreeBytes"
+        "CheckThreeBytes",
+        "GetLrgObjAttrib",
+        "StoreFore",
+        "CastleObject",
+        "CRendLoop",
+        "ChkCFloor",
+        "NotTall",
+        "PlayerStop",
+        "ExitCastle"
       ],
       "controlEdgeIds": [],
       "status": "in-progress-material-use-completeness",
@@ -158683,7 +159048,10 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P7 bounded scope amendment - music pointer lifetimes",
         "docs/proposals/m2/t70-final-current-certification.md S17 P7 checkpoint - retained music pointer paths",
         "docs/proposals/m2/t70-final-current-certification.md S17 P8 bounded scope amendment - enemy pointer handoff",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 bounded scope amendment - area pointer handoff",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 corrective scope amendment - castle row counter",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",

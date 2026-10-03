@@ -29,6 +29,7 @@ int main(void)
     struct mysmb_game game;
     static mysmb_u8 prg[0x100U];
     mysmb_u8 column;
+    mysmb_u8 height;
 
     /* Row 13 selector 2: AxeObj writes control eight, falls through to
      * ChainObj, selects C_Object[0], and ColObj emits one metatile at row 6. */
@@ -93,5 +94,16 @@ int main(void)
     if (game.ram[0x00d4U] != 0x30U) return 18;
     if (game.ram[0x010dU] != 0xb0U) return 19;
     if (game.ram[0x0014U] != 1U) return 20;
+    /* CastleObject's row counter is observable RAM, including on page zero.
+     * Check all legal starting rows through the five persistent columns. */
+    for (height = 0U; height < 11U; ++height) {
+        mysmb_set_object(&game, prg, 0x0fU, (mysmb_u8)(0x20U | height));
+        for (column = 0U; column < 5U; ++column) {
+            game.ram[0x0726U] = column;
+            game.ram[0x0006U] = 0xa5U;
+            if (mysmb_area_process_object_state(&game) == 0U ||
+                game.ram[0x0006U] != height) return 21;
+        }
+    }
     return 0;
 }

@@ -3507,3 +3507,126 @@ Source binding src/game/enemy/stream.c 57c1fed6:64420800e1e049dcc6f4dbbe58d942a9
 Source binding src/game/enemy/loop.c 57c1fed6:a9619ed5b897c07732fc6a6f104823fd3ba4ebc17fdad244b6a2dcd71c7caf92.
 
 Source binding src/game/area/area_data.c b3efab21a125ca22b062f126c1b94191f34c6235:9f4d6fbb22af69b28977276ff999484956c3db3e859ee15cc6e915356b4b6176.
+
+## S17 P9 bounded scope amendment - area pointer handoff
+
+Overlap audit of13 accepted labels,expected fresh0,baseline/max1992:
+`ProcADLoop`, `Chk1Row13`, `Chk1stB`, `ChkRow13`, `ChkSRows`, `LrgObj`, `SpecObj`, `NormObj`, `BackColC`, `AlterAreaAttributes`, `GetLrgObjAttrib`, `GetAreaDataAddrs`, `StoreFore`.
+Original19 AreaData indirect sites cover the two header reads,parser chain
+and large-object attribute helper. Bind raw header and post-header+2 pointer
+lifetimes separately. Current P6 parser and retained unchanged header/helper
+contracts are prerequisites. Add original9c22->9508 composed calls with
+produced RAM:34 table slots/high-bit aliases,16 columns,backload off/on,
+two neutral seeds. Compare both stage RAM/zero-page,excluding only observed
+physical pushes accumulated across the C ABI roots. Scope is startup-column
+handoff and retained parser/header/helper domains,not whole-frame alias proof.
+No source/EXE edit without a bounded corrective amendment for an observed
+diff. Four current native checks each width. Artifacts below ignored build.
+
+## S17 P9 corrective scope amendment - castle row counter
+
+Actual composed header/parser roots reveal CastleObject stores11 in06
+then CRendLoop decrements that RAM byte. Current C uses a private local
+counter and leaves the previous dispatcher06 value behind. This invalidates
+the prior output contract even where the tile bytes happen to match.
+Corrective custody covers `CastleObject`, `CRendLoop`, `ChkCFloor`,
+`NotTall`, `PlayerStop`, `ExitCastle`;expected fresh0,baseline/max1992.
+Original9806-9870 handler/source tail and current shared area.c are scope.
+Repair the actual06 stores/decrements and original loop predicate before
+rerunning full-RAM composed roots. Same-class sweep compares each local
+counter's original scratch store in the admitted area owner. No successor
+until zero scoped diff. Refresh three products using original OpenNT16.
+
+The first unrestricted backload fixture batch contains synthetic empty or
+already-next-page records from which the original root cannot clear its
+backload flag. Reject those inputs explicitly;admit backload only when its
+first nonterminal non-page-control record is on current page. Non-backload
+domains retain all34 source slots. The initial return failure is a fixture
+contract failure,not a passing result. Actual returning castle diffs remain
+valid and are repaired rather than excluded.
+
+## S17 P9 checkpoint - area pointer and castle counter
+
+19 original AreaData indirect sites/13 consumers are actually observed by
+4288 header9c22->parser9508 compositions each width,8576 returning roots.
+Raw header pointer and post-header+2 pointer have separate lifetimes;each
+parser slot reloads the active pointer,helper reads immutable PRG and no
+handler in this admitted owner stores E7/E8. All2048 RAM bytes compare at
+both ABI boundaries,including zero-page;only accumulated observed physical
+push bytes excluded.64 synthetic nonreturning preload inputs rejected under
+the declared same-page/nonterminal/non-page-control entry contract. Other
+domains retain all34 source slots and both high-bit aliases. Actual record
+use counts are neutral ignored evidence;no raw snapshots retained.
+
+The pre-repair valid batch has24 differences each width,all at06. Source
+9819/982b sets/decrements the actual RAM counter;C used a private local.
+The castle clause now stores/decrements06 and follows the source row11
+termination predicate. No unrelated production clause changed. Final batch
+zero diff;27139 parser roots independently rerun with zero diff each width.
+Six castle labels restore their scoped contracts;unchanged floor/star tails
+retain prior clause evidence,not claimed newly exercised on startup page0.
+55 neutral legal-row/persistent-column regressions validate06 outputs;the
+new test is integration evidence,not a substitute for original comparisons.
+Ten other current checks each width and six600-frame scoped routes pass.
+
+Same-class sweep inventories every direct06 writer/RMW in9508-9cb3:
+MushroomLedge977b/EndMushL9795 already store scratch6;GetPipeHeight9944
+already stores6;GetBlockBufferAddr9bf3 is in the shared buffer primitive.
+CastleObject9819/CRendLoop982b repaired. RenderSidewaysPipe98ba has the
+same omission in both inline intro/exit clauses;source98b5 also stores05.
+Those six pipe labels are reopened as needs-evidence and remain within S17
+for the next corrective P. This is not an accepted zero-diff conclusion
+for all area handlers or the whole game. No successor S admitted.
+
+Material683-695 bind13 header/parser pointer paths;696 binds castle counter.
+Historical1992/1992;current local scoped1986/1992 nodes,4274/4274 feasible
+controls(raw4342,infeasible68);material696 partial,total unknown. No fresh
+node/control credit. Three products rebuilt/copied and bound below. DOS16
+uses original OpenNT compile/link only,no new DOS runtime claim. The first
+Win32 build invocation used output filenames as target names and failed;
+corrected actual mysmb_win32 target builds passed. S17 remains open for pipe
+repair and remaining material joins;pixels,routes,snapshot packages pending.
+
+mysmb16.exe:258651 bytes,SHA256 974857de468712c53b2983351642350263c1ee2b2c4263cf89202880cf510d95.
+
+mysmb32.exe:373107 bytes,SHA256 cd9ac44b49d6a7032fd00d8a8999b54d9b6242f9dfa1fcb2a35b6069371bd440.
+
+mysmb64.exe:379113 bytes,SHA256 41ba2f759dcb65b9c5936e883d41e9bc55f05716cb4c3056f878102b5222b54f.
+
+Read site 9514:8640 observed executions.
+
+Read site 9520:8640 observed executions.
+
+Read site 9531:8640 observed executions.
+
+Read site 953a:16 observed executions.
+
+Read site 9547:8 observed executions.
+
+Read site 959f:8632 observed executions.
+
+Read site 95cc:8 observed executions.
+
+Read site 95d2:8 observed executions.
+
+Read site 95e7:2300 observed executions.
+
+Read site 95f1:192 observed executions.
+
+Read site 95fe:12 observed executions.
+
+Read site 960e:5224 observed executions.
+
+Read site 9628:208 observed executions.
+
+Read site 9649:6312 observed executions.
+
+Read site 96c9:16 observed executions.
+
+Read site 9bbe:168 observed executions.
+
+Read site 9bc5:168 observed executions.
+
+Read site 9c5a:4288 observed executions.
+
+Read site 9c80:4288 observed executions.

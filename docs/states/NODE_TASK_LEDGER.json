@@ -20895,8 +20895,8 @@
     {
       "label": "CastleObject",
       "line": 3737,
-      "receiver": "M2 T29 S9",
-      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P9 actual castle06 scratch counter correction.",
       "futurePackage": null,
       "history": [
         {
@@ -20963,8 +20963,8 @@
     {
       "label": "CRendLoop",
       "line": 3748,
-      "receiver": "M2 T29 S9",
-      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P9 actual castle06 scratch counter correction.",
       "futurePackage": null,
       "history": [
         {
@@ -20991,8 +20991,8 @@
     {
       "label": "ChkCFloor",
       "line": 3759,
-      "receiver": "M2 T29 S9",
-      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P9 actual castle06 scratch counter correction.",
       "futurePackage": null,
       "history": [
         {
@@ -21019,8 +21019,8 @@
     {
       "label": "NotTall",
       "line": 3772,
-      "receiver": "M2 T29 S9",
-      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P9 actual castle06 scratch counter correction.",
       "futurePackage": null,
       "history": [
         {
@@ -21047,8 +21047,8 @@
     {
       "label": "PlayerStop",
       "line": 3789,
-      "receiver": "M2 T29 S9",
-      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P9 actual castle06 scratch counter correction.",
       "futurePackage": null,
       "history": [
         {
@@ -21075,8 +21075,8 @@
     {
       "label": "ExitCastle",
       "line": 3791,
-      "receiver": "M2 T29 S9",
-      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P9 actual castle06 scratch counter correction.",
       "futurePackage": null,
       "history": [
         {
@@ -69586,6 +69586,22 @@
         "SetFore"
       ],
       "acceptedBy": "Coordinator under owner same-S M2 repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-castle-counter-1",
+      "type": "transfer",
+      "from": "M2 T29 S9",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "CastleObject",
+        "CRendLoop",
+        "ChkCFloor",
+        "NotTall",
+        "PlayerStop",
+        "ExitCastle"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
       "evidence": "docs/proposals/m2/t70-final-current-certification.md"
     }
   ],
@@ -766284,7 +766300,15 @@
         "CheckRightExtBounds",
         "CheckForEnemyGroup",
         "ParseRow0e",
-        "CheckThreeBytes"
+        "CheckThreeBytes",
+        "GetLrgObjAttrib",
+        "StoreFore",
+        "CastleObject",
+        "CRendLoop",
+        "ChkCFloor",
+        "NotTall",
+        "PlayerStop",
+        "ExitCastle"
       ],
       "baseline": 1992,
       "incomingComplete": [

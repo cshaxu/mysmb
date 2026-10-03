@@ -8,10 +8,17 @@ for remaining work/exit conditions. Historical1992/1992 means mapping coverage.
 Prior aggregate exact counts below retain their closure-time local-contract
 meaning;they are not full current-build certification. The attempted zero-based final-review restart is superseded;reuse retained
 scoped evidence and track only named unresolved/invalidated clauses.
-Material682 is a partial enumerated set;its global denominator is unknown.
+Material696 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
+
+[P9 area/castle](../proposals/m2/t70-final-current-certification.md#s17-p9-checkpoint---area-pointer-and-castle-counter).
+Castle06 RAM counter repaired;4288 composed roots and27139 parser roots
+each width zero diff.19 pointer sites observed/14 new material paths.
+11 current checks each/six600-frame routes and3 products pass. Sweep finds
+pipe05/06 stores still absent:6 labels reopened,local1986/1992,controls4274/4274;
+material696 partial,total unknown. S17 remains open for corrective pipe work.
 
 [P8 enemy pointers](../proposals/m2/t70-final-current-certification.md#s17-p8-checkpoint---enemy-pointer-handoff).
 14 indirect reads/nine header-to-consumer paths reconciled.1632 fresh

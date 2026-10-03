@@ -1408,7 +1408,6 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
     mysmb_u8 area_type;
     mysmb_u8 value;
     mysmb_u8 height;
-    mysmb_u8 continuation;
 
     row = (mysmb_u8)(first & 0x0fU);
     kind = (mysmb_u8)((second & 0x70U) >> 4U);
@@ -1521,14 +1520,15 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         (void)mysmb_area_check_fixed_length(game, slot, 4U);
         value = game->ram[MYSMB_AREA_OBJECT_LENGTH + slot];
         row = height;
-        continuation = 11U;
+        game->ram[6U] = 11U;
         do {
             game->ram[MYSMB_AREA_METATILE_BUFFER + row] =
                 castle_metatiles[value];
             row++;
-            if (continuation == 0U) break;
-            value = (mysmb_u8)(value + 5U);
-            continuation--;
+            if (game->ram[6U] != 0U) {
+                value = (mysmb_u8)(value + 5U);
+                game->ram[6U]--;
+            }
         } while (row != 11U);
         if (game->ram[MYSMB_AREA_CURRENT_PAGE] == 0U) return;
         value = game->ram[MYSMB_AREA_OBJECT_LENGTH + slot];
