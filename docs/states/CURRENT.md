@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S16 P2 active;S15 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S16 P3 active;S15 closed,T70 open. |
 | Admission And Approval | Coordinator admits named bindings gap under ongoing owner M2 mandate;no global restart. |
 | Objective | Enumerate and reconcile executable numeric PRG/table/pointer bindings left unresolved by S3. |
 | Non-goals | No A-N semantic re-audit,node/control promotion,unrelated product edits or unrelated I/O work. |
@@ -12,7 +12,7 @@
 | Candidate Proposal | [S16 executable binding manifest](../proposals/m2/t70-final-current-certification.md#s16-p1-admission---executable-data-binding-manifest). |
 | Files And ABI Surface | Shared-game binding census plus removal of unused synthetic initial-terrain helper in area.c/area.h;active original owners unchanged. |
 | Applicable Rules | [Execution](../rules/EXECUTION.md),[Architecture](../rules/ARCHITECTURE.md),[Coding](../rules/CODING.md),[Documentation](../rules/DOCUMENT.md),[Source policy](../etc/operations/policy/source-policy.md);README Task Reading Set and current-equivalence proof program. |
-| Verification | P1:177 table declarations accounted;11 original split pointers agree;active text outside38 removed lines unchanged;5 tests each and3 builds/products pass. Numeric/consumer/dynamic bindings remain pending. |
+| Verification | P2:177 table locations and266 candidate categories reconciled;17 omitted low bases bound;93 reads/134 calls listed with domains pending. P1:177 table declarations accounted;11 original split pointers agree;active text outside38 removed lines unchanged;5 tests each and3 builds/products pass. Numeric/consumer/dynamic bindings remain pending. |
 | Expected Markers | Infrastructure scope0,expected fresh0,max1992;named binding-use dispositions,not a new node counter. |
 | Asset Needs | Original ROM/ASM read-only local nonredistributable;ignored build128MiB/process120seconds,no raw export. |
 | Reporting Requirements | Exact resolved/unresolved binding uses and owners;total local node/control counts and partial material;no global equality claim. |
@@ -31,6 +31,6 @@
 - Material625 partial;global denominator unknown. Startup package closed;
   bindings/material/pixels/routes/snapshot packages remain. A-N restart is superseded.
 - S16 P1 removed an uncalled synthetic terrain helper with one mismatching table byte;active original owners unchanged.
-- Binding census177 tables/266 numeric candidates/79 direct reads is partial;no package closure or node/edge credit.
+- S16 P2 reconciles177 table locations/266 candidate categories and17 low bases;93 direct reads/134 calls are an explicit pending-domain inventory,not new node/edge credit.
 - Three products refreshed from S16 P1;DOS is compile/link evidence only.
 - T70 S16 open for remaining bindings;no successor admitted. [Full remaining/exit contract](../proposals/m2/t70-final-current-certification.md#owner-directed-bounded-final-audit-contract).

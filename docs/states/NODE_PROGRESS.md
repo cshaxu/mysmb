@@ -13,6 +13,13 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S16 - active executable data-binding reconciliation
 
+[P2 binding/read-use checkpoint](../proposals/m2/t70-final-current-certification.md#s16-p2-checkpoint---original-binding-locations-and-extended-read-uses).
+177 intended table-location dispositions,266 candidate-use categories and17
+additional low original bases reconciled.93 direct reads and134 caller uses
+listed;overlap and unresolved dynamic/index domains explicit. No product
+code diff or artifact refresh. Fresh nodes/controls/material0;S16 remains
+open for consumer/pointer contracts,no successor or global restart.
+
 [P1 census/cleanup checkpoint](../proposals/m2/t70-final-current-certification.md#s16-p1-checkpoint---table-census-and-inactive-helper-removal).
 Removed an uncalled synthetic terrain helper with one incorrect copied byte;
 active original owners unchanged.177 table declarations,266 numeric

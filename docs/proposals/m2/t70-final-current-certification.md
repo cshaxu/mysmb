@@ -2667,3 +2667,76 @@ bytes/source/ROM added,unrelated owner changes preserved,no push.
 | --- | --- |
 | src/game/area.c | cb21332638734ecca5165da6446f622afc9958c776af7dfa330886106c597b47 |
 | src/game/area.h | a39bcfc3173c9416e1201d05ab5f6563fbf9331d33c96463b9dd0fcb04487d6f |
+
+## S16 P2 checkpoint - original binding locations and extended read uses
+
+This is an audit-only part of the existing bindings package. S16 remains
+open;no successor,global restart,node/control promotion or product refresh.
+Historical mapping1992/1992;local accepted scoped nodes1992/1992 and feasible
+controls4275/4275(raw4342,infeasible67);material625 partial,total unknown.
+The full M2 certificate remains incomplete.
+
+All177 copied/static declarations now have intended-location dispositions:
+172 original byte bindings with consumer-domain obligations retained,
+one original unused-data fixture,two derived split-pointer arrays and two
+non-ROM layouts. Ambiguous byte matches are resolved by original symbolic
+consumer/context;the two identical Buzzy chunks inside EnemyGraphicsTable
+retain both valid offsets rather than asserting a unique location.
+mysmb_residual_x_speeds matches ResidualXSpdData;neither the original label
+nor C constant has a production reader,the native fixture alone asserts it.
+Do not convert these counts into new exact nodes or material relations.
+
+The initial266 numeric candidates have no unclassified location/use category:
+128 inline-vector words,27 NROM conversions/range checks,62 original data
+bases,13 unused local enums,11 RAM constants,eight split-pointer targets,
+four popped JumpEngine return addresses,three symbolic offset bases,three
+climb range operands,two vector guards,two snapshot identifiers,two table
+boundaries and one interior byte. This classification is not proof of every
+index or consumer domain and the initial threshold missed low addresses.
+JumpEngine's four literal operands are the last JSR operand-byte addresses,
+not vector bases;opcode and original target bytes confirm that convention.
+
+The extended census lists93 direct resource reads:79 area_prg,11 source prg,
+one title_data,one chr_data and one title_icon_data. It additionally lists134
+calls to the actual resource-reading functions across shared-game C files,
+including21 audio-reader calls and six Firebar-reader calls. Direct read and
+caller records overlap;they are not227 independently proven material edges.
+The lexical reader is not a compiler/preprocessor/dataflow proof. Symbols,
+indirection and aliases remain explicit obligations rather than automatic
+exact classifications. Every enumerated C input has a retained SHA256.
+
+Seventeen previously omitted low-offset bindings now identify actual original
+read operands:the eight area-address bases(WorldAddrOffsets,AreaAddrOffsets,
+EnemyAddrHOffsets,EnemyDataAddrLow/High,AreaDataHOffsets,AreaDataAddrLow/High),
+StaircaseRowData/HeightData,PRandomSubtracter/FlyCCBPriority,
+PlayerPosSPlatData-1,Hidden1UpCoinAmts,SetBitsMask/ClearBitsMask and
+BowserIdentities. Static origin/address agreement is established;existing
+owner branch/index-domain receipts are not broadened by those matches.
+
+Remaining bindings clauses stay in this S:reconcile direct/caller expressions
+through their source indices,byte/word wraps,adjacent-table aliases and
+resource prerequisite;join dynamic area/header/enemy and music pointers to
+their producers and original consumers;confirm helper/header coverage and
+retained proof applicability. Title/CHR byte origins belong to bindings;
+scanline pixel timing remains the already named pixels package. Material
+path completeness remains its separate named package. No new gap package.
+
+Reproducible local evidence uses build/m2-t70-s16 table-dispositions,
+address-dispositions and extended-read-bindings JSON and their matching
+Python producers. Raw original inputs remain the existing ignored/read-only
+owner inputs. The extended script verifies original read references,17 low
+bindings,source identities,unique caller locations and declared counts.
+Independent rg inspection of audio/Firebar declarations/calls exposed and
+corrected an initial cast-versus-prototype filter error before acceptance;
+the failing32-call census is superseded,not retained as successful proof.
+Comment/string masking and nested-call parsing now preserve cast arguments.
+All scripts/research/logs remain ignored below build;no ROM bytes imported.
+
+This part finds no new product semantic diff. No new ROM runtime equality
+claim is made;P1 parser/build evidence retains its previous scope. Products
+remain byte-identical to S16 P1. Metadata/accounting gates check reporting
+only. No final bindings closure while any executable-use domain is pending.
+
+P2 registry,existing S16 node-admission,documentation/ledger and diff-whitespace
+checks pass. All three current products match their committed P1 bytes and
+SHA256 values. No new compile or gameplay run is represented by those checks.

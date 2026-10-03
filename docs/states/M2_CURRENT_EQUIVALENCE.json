@@ -157113,7 +157113,8 @@
       "controlEdgeIds": [],
       "status": "in-progress-bindings",
       "evidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S16 P1 checkpoint - table census and inactive-helper removal"
+        "docs/proposals/m2/t70-final-current-certification.md S16 P1 checkpoint - table census and inactive-helper removal",
+        "docs/proposals/m2/t70-final-current-certification.md S16 P2 checkpoint - original binding locations and extended read uses"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",
@@ -157129,7 +157130,8 @@
         "key": "bindings",
         "status": "pending",
         "evidence": [
-          "docs/proposals/m2/t70-final-current-certification.md S16 P1 checkpoint - table census and inactive-helper removal"
+          "docs/proposals/m2/t70-final-current-certification.md S16 P1 checkpoint - table census and inactive-helper removal",
+          "docs/proposals/m2/t70-final-current-certification.md S16 P2 checkpoint - original binding locations and extended read uses"
         ]
       },
       {
