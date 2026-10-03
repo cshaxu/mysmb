@@ -56566,11 +56566,13 @@
       "semanticEvidence": [
         "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
         "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/history/M2-T65-block-query-object-output-current-proof.md; Fixed slot5 OAM, wrapped relativeY+8 to RAM02 and relativeX to RAM05, indexed type attributes, RAM07/RAM03=1 precede row loop.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Fixed slot5 OAM, wrapped relativeY+8 to RAM02 and relativeX to RAM05, indexed type attributes, RAM07/RAM03=1 precede row loop.",
       "currentSourcePaths": [
@@ -56587,10 +56589,12 @@
       "currentCounterpart": "mysmb_objects_draw_power_up indexed row/palette/tail phases",
       "semanticEvidence": [
         "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
-        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/history/M2-T65-block-query-object-output-current-proof.md; Two actual DrawOneSpriteRow calls load RAM00 left tile and pass right tile A before callee RAM01 store; decrement RAM07 through 0 to $ff. Types0/3 skip palette; types1/2 store type to RAM00 then set animated top pair and star-only bottom pair."
+        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/history/M2-T65-block-query-object-output-current-proof.md; Two actual DrawOneSpriteRow calls load RAM00 left tile and pass right tile A before callee RAM01 store; decrement RAM07 through 0 to $ff. Types0/3 skip palette; types1/2 store type to RAM00 then set animated top pair and star-only bottom pair.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Two actual DrawOneSpriteRow calls load RAM00 left tile and pass right tile A before callee RAM01 store; decrement RAM07 through 0 to $ff. Types0/3 skip palette; types1/2 store type to RAM00 then set animated top pair and star-only bottom pair.",
       "currentSourcePaths": [
@@ -56607,10 +56611,12 @@
       "currentCounterpart": "mysmb_objects_draw_power_up indexed row/palette/tail phases",
       "semanticEvidence": [
         "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
-        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/history/M2-T65-block-query-object-output-current-proof.md; Read/OR/store top-right attributes then bottom-right attributes with $40, preserving flower lower base attributes and star animated palette."
+        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/history/M2-T65-block-query-object-output-current-proof.md; Read/OR/store top-right attributes then bottom-right attributes with $40, preserving flower lower base attributes and star animated palette.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Read/OR/store top-right attributes then bottom-right attributes with $40, preserving flower lower base attributes and star animated palette.",
       "currentSourcePaths": [
@@ -56627,10 +56633,12 @@
       "currentCounterpart": "mysmb_objects_draw_power_up indexed row/palette/tail phases",
       "semanticEvidence": [
         "Td S9 K5 power-up OAM node-semantics and independent integration audit: SMB1 lines 13500-13562 compared with shared power_up_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 mushroom, flower, star, 1UP and offscreen routes remain required.",
-        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/history/M2-T65-block-query-object-output-current-proof.md; Tail enters actual shared SprObjectOffscrChk contract with restored fixed OAM; complete root output includes three-row clip and original non-Podoboo/highY2 erase guard."
+        "M2 T65 S7 static $E6BE-$E73B indexed table/loop/scratch/palette/call audit with restored row and offscreen entries; docs/history/M2-T65-block-query-object-output-current-proof.md; Tail enters actual shared SprObjectOffscrChk contract with restored fixed OAM; complete root output includes three-row clip and original non-Podoboo/highY2 erase guard.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S7 current x86/x64 full and independent row/tail-input checkers each replay 8192 original-ROM roots with zero differences across 1841 RAM bytes; two actual row returns, all16+4 indexed reads, all type/loop branches and1024 erase effects observed. True CPU stack excluded. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Tail enters actual shared SprObjectOffscrChk contract with restored fixed OAM; complete root output includes three-row clip and original non-Podoboo/highY2 erase guard.",
       "currentSourcePaths": [
@@ -56748,11 +56756,13 @@
       "semanticEvidence": [
         "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required.",
         "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Initializes RAM02/05/EB/0109/03/04, leaves early for Piranha only when speed is nonnegative and frame timer nonzero; all families share this actual entry.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Initializes RAM02/05/EB/0109/03/04, leaves early for Piranha only when speed is nonnegative and frame timer nonzero; all families share this actual entry.",
       "currentSourcePaths": [
@@ -56769,10 +56779,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Stores ED and saves masked state in local CPU-Y equivalent, not prematurely in EC; retainer code21 sets Y0/direction1 before common EC/EF stores."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Stores ED and saves masked state in local CPU-Y equivalent, not prematurely in EC; retainer code21 sets Y0/direction1 before common EC/EF stores.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Stores ED and saves masked state in local CPU-Y equivalent, not prematurely in EC; retainer code21 sets Y0/direction1 before common EC/EF stores.",
       "currentSourcePaths": [
@@ -56789,10 +56801,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Maps cannon bullet to code $08, decremented Y, d5 priority when its frame timer is nonzero, and zero state work bytes."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Maps cannon bullet to code $08, decremented Y, d5 priority when its frame timer is nonzero, and zero state work bytes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Maps cannon bullet to code $08, decremented Y, d5 priority when its frame timer is nonzero, and zero state work bytes.",
       "currentSourcePaths": [
@@ -56809,10 +56823,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Completes cannon attribute/state setup before common special-actor dispatch."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Completes cannon attribute/state setup before common special-actor dispatch.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Completes cannon attribute/state setup before common special-actor dispatch.",
       "currentSourcePaths": [
@@ -56851,10 +56867,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Stores selected EF then saved Y into EC, reloads ObjectOffset, and sets flip on nonnegative Podoboo Y speed before Bowser selection."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Stores selected EF then saved Y into EC, reloads ObjectOffset, and sets flip on nonnegative Podoboo Y speed before Bowser selection.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Stores selected EF then saved Y into EC, reloads ObjectOffset, and sets flip on nonnegative Podoboo Y speed before Bowser selection.",
       "currentSourcePaths": [
@@ -56872,10 +56890,12 @@
       "semanticEvidence": [
         "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required.",
         "M2 T65 S8 static source finding, original-ROM replay and repair pending: Generic EnemyGfxHandler returns0 for nonzero Bowser flag; source selects EF22/23 and continues shared selection/drawing. Specialized dispatch duplicates the original branch. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Overrides the selected code with Bowser front/rear code $16/$17 when BowserGfxFlag is nonzero."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Overrides the selected code with Bowser front/rear code $16/$17 when BowserGfxFlag is nonzero.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Overrides the selected code with Bowser front/rear code $16/$17 when BowserGfxFlag is nonzero.",
       "currentSourcePaths": [
@@ -56892,10 +56912,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K7 enemy graphics front-dispatch node-semantics and independent integration audit: SMB1 lines 13639-13711 compared with shared normal_enemy_gfx.c, bullet_bill_gfx.c, podoboo_gfx.c and bowser_gfx.c dispatch owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Stores the selected Bowser code and falls through to common graphics selection."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Stores the selected Bowser code and falls through to common graphics selection.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Stores the selected Bowser code and falls through to common graphics selection.",
       "currentSourcePaths": [
@@ -56912,10 +56934,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Selects defeated Goomba state code four or the timer/state/frame gated direction-animation path."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Selects defeated Goomba state code four or the timer/state/frame gated direction-animation path.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Selects defeated Goomba state code four or the timer/state/frame gated direction-animation path.",
       "currentSourcePaths": [
@@ -56932,10 +56956,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Flips the source direction bits only when state d5, TimerControl and FrameCounter d3 are all clear."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Flips the source direction bits only when state d5, TimerControl and FrameCounter d3 are all clear.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Flips the source direction bits only when state d5, TimerControl and FrameCounter d3 are all clear.",
       "currentSourcePaths": [
@@ -56952,10 +56978,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; ORs code-indexed attributes and selects graphics offset, then executes original shared Bowser front/rear body/state branches instead of a parallel specialized renderer."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; ORs code-indexed attributes and selects graphics offset, then executes original shared Bowser front/rear body/state branches instead of a parallel specialized renderer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "ORs code-indexed attributes and selects graphics offset, then executes original shared Bowser front/rear body/state branches instead of a parallel specialized renderer.",
       "currentSourcePaths": [
@@ -56972,10 +57000,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Uses Bowser mouth control for front frame two and marks defeated Bowser for vertical flip."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Uses Bowser mouth control for front frame two and marks defeated Bowser for vertical flip.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Uses Bowser mouth control for front frame two and marks defeated Bowser for vertical flip.",
       "currentSourcePaths": [
@@ -56992,10 +57022,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Sets the vertical flip flag and transfers to Bowser object drawing."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Sets the vertical flip flag and transfers to Bowser object drawing.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Sets the vertical flip flag and transfers to Bowser object drawing.",
       "currentSourcePaths": [
@@ -57012,10 +57044,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Tail-jumps to the common enemy-object row drawing path with selected Bowser data."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Tail-jumps to the common enemy-object row drawing path with selected Bowser data.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Tail-jumps to the common enemy-object row drawing path with selected Bowser data.",
       "currentSourcePaths": [
@@ -57032,10 +57066,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Uses Bowser feet control for rear frame two and handles defeated rear Y adjustment."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Uses Bowser feet control for rear frame two and handles defeated rear Y adjustment.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Uses Bowser feet control for rear frame two and handles defeated rear Y adjustment.",
       "currentSourcePaths": [
@@ -57052,10 +57088,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Routes normal rear drawing or subtracts 16 Y and enables vertical flip for defeated rear."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Routes normal rear drawing or subtracts 16 Y and enables vertical flip for defeated rear.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Routes normal rear drawing or subtracts 16 Y and enables vertical flip for defeated rear.",
       "currentSourcePaths": [
@@ -57072,10 +57110,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Offset24 optionally selects egg offset30, direction2 and EC5; both egg and non-egg then unconditionally take NotEgg to the HammerBro continuation."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Offset24 optionally selects egg offset30, direction2 and EC5; both egg and non-egg then unconditionally take NotEgg to the HammerBro continuation.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Offset24 optionally selects egg offset30, direction2 and EC5; both egg and non-egg then unconditionally take NotEgg to the HammerBro continuation.",
       "currentSourcePaths": [
@@ -57093,10 +57133,12 @@
       "semanticEvidence": [
         "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
         "M2 T65 S8 static source finding, original-ROM replay and repair pending: Original Spiny offset24 always jumps to HammerBro, including non-egg states; native non-egg path falls into Lakitu/shell selection. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Transfers the selected Spiny path to the Hammer-Bro continuation."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Transfers the selected Spiny path to the Hammer-Bro continuation.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Transfers the selected Spiny path to the Hammer-Bro continuation.",
       "currentSourcePaths": [
@@ -57113,10 +57155,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Selects Lakitu alternate frame only when not defeated and FrenzyEnemyTimer is below $10."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Selects Lakitu alternate frame only when not defeated and FrenzyEnemyTimer is below $10.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Selects Lakitu alternate frame only when not defeated and FrenzyEnemyTimer is below $10.",
       "currentSourcePaths": [
@@ -57133,10 +57177,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Transfers the Lakitu path to defeated-state handling."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Transfers the Lakitu path to defeated-state handling.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Transfers the Lakitu path to defeated-state handling.",
       "currentSourcePaths": [
@@ -57153,10 +57199,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Selects upside-down Koopa/Buzzy shell graphics for qualifying state and applies Buzzy one-pixel Y adjustment."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Selects upside-down Koopa/Buzzy shell graphics for qualifying state and applies Buzzy one-pixel Y adjustment.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Selects upside-down Koopa/Buzzy shell graphics for qualifying state and applies Buzzy one-pixel Y adjustment.",
       "currentSourcePaths": [
@@ -57173,10 +57221,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Selects right-side-up shell graphics for state code four, preserving the Buzzy/Koopa Y differences."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Selects right-side-up shell graphics for state code four, preserving the Buzzy/Koopa Y differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Selects right-side-up shell graphics for state code four, preserving the Buzzy/Koopa Y differences.",
       "currentSourcePaths": [
@@ -57193,10 +57243,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K8 normal-enemy/Bowser/Spiny/Lakitu/shell graphics node-semantics and independent integration audit: SMB1 lines 13713-13828 compared with shared normal_enemy_gfx.c, goomba_gfx.c, spiny_gfx.c and bowser_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Selects normal or defeated Goomba graphics and the defeated one-pixel Y adjustment before Hammer-Bro continuation."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Selects normal or defeated Goomba graphics and the defeated one-pixel Y adjustment before Hammer-Bro continuation.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Selects normal or defeated Goomba graphics and the defeated one-pixel Y adjustment before Hammer-Bro continuation.",
       "currentSourcePaths": [
@@ -57214,10 +57266,12 @@
       "semanticEvidence": [
         "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
         "M2 T65 S8 static source finding, original-ROM replay and repair pending: Original HammerBro state0 branches directly to animation; native falls into Bloober interval gate and can suppress animation. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Routes Hammer Bro state zero/d3 paths to normal animation, defeated state or its alternate graphics offset."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Routes Hammer Bro state zero/d3 paths to normal animation, defeated state or its alternate graphics offset.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Routes Hammer Bro state zero/d3 paths to normal animation, defeated state or its alternate graphics offset.",
       "currentSourcePaths": [
@@ -57234,10 +57288,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Preserves Cheep fast path and applies the source interval-timer gates and three-pixel Bloober adjustment."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Preserves Cheep fast path and applies the source interval-timer gates and three-pixel Bloober adjustment.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Preserves Cheep fast path and applies the source interval-timer gates and three-pixel Bloober adjustment.",
       "currentSourcePaths": [
@@ -57254,10 +57310,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Excludes Goomba, bullet, Podoboo and codes >=$18; maps the retainer WorldNumber branch before animation timing."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Excludes Goomba, bullet, Podoboo and codes >=$18; maps the retainer WorldNumber branch before animation timing.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Excludes Goomba, bullet, Podoboo and codes >=$18; maps the retainer WorldNumber branch before animation timing.",
       "currentSourcePaths": [
@@ -57274,10 +57332,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Uses the source animation timing mask selected by the actor path before the common animation-stop gate."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Uses the source animation timing mask selected by the actor path before the common animation-stop gate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Uses the source animation timing mask selected by the actor path before the common animation-stop gate.",
       "currentSourcePaths": [
@@ -57294,10 +57354,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Suppresses animation on state d7/d5 or TimerControl; otherwise advances the selected graphics offset by six."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Suppresses animation on state d7/d5 or TimerControl; otherwise advances the selected graphics offset by six.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Suppresses animation on state d7/d5 or TimerControl; otherwise advances the selected graphics offset by six.",
       "currentSourcePaths": [
@@ -57314,10 +57376,12 @@
       "currentCounterpart": "mysmb_objects_draw_normal_enemy_graphics shared selection/animation; mysmb_oam_draw_enemy_object_row actual indexed row entry",
       "semanticEvidence": [
         "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; For defeated codes >=4 enables vertical flip and resets alternate state before common row drawing."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; For defeated codes >=4 enables vertical flip and resets alternate state before common row drawing.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "For defeated codes >=4 enables vertical flip and resets alternate state before common row drawing.",
       "currentSourcePaths": [
@@ -57335,10 +57399,12 @@
       "semanticEvidence": [
         "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
         "M2 T65 S8 static source finding, original-ROM replay and repair pending: Original three DrawEnemyObjRow calls are replaced with direct DrawSpriteObject calls and premature RAM01 stores. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Uses saved EB, calls meaningful DrawEnemyObjRow three times; each loads RAM00 and passes original right-tile A to DrawOneSpriteRow. Restores ObjectOffset/OAM and selects BulletBill offscreen or vertical-flip continuation."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; Uses saved EB, calls meaningful DrawEnemyObjRow three times; each loads RAM00 and passes original right-tile A to DrawOneSpriteRow. Restores ObjectOffset/OAM and selects BulletBill offscreen or vertical-flip continuation.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Uses saved EB, calls meaningful DrawEnemyObjRow three times; each loads RAM00 and passes original right-tile A to DrawOneSpriteRow. Restores ObjectOffset/OAM and selects BulletBill offscreen or vertical-flip continuation.",
       "currentSourcePaths": [
@@ -57355,10 +57421,12 @@
       "currentCounterpart": "shared canonical enemy tail and meaningful row/column/dump entries",
       "semanticEvidence": [
         "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required.",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; BulletBill or Bowser flag takes the original tail to shared SprObjectOffscrChk, without a duplicate erase path."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; BulletBill or Bowser flag takes the original tail to shared SprObjectOffscrChk, without a duplicate erase path.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "BulletBill or Bowser flag takes the original tail to shared SprObjectOffscrChk, without a duplicate erase path.",
       "currentSourcePaths": [
@@ -57376,11 +57444,13 @@
         "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required.",
         "M2 T65 S9 static original child entry/call replaced by raw inline stores; repair and original-ROM child proof pending. docs/history/M2-T65-block-query-object-output-current-proof.md",
         "M2 T65 S9 P2 shared-source repair restores original byte-offset arithmetic, ordered flip/mirror stores and meaningful dump/row/column calls. Full OAM/mask Cartesian and independent helper-call/return proof remain pending; no exact credit. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Zero flip skips exchange; otherwise read first attribute, wrap Y+2 before actual DumpSixSpr and restore Y, then select first/second row by actor code."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Zero flip skips exchange; otherwise read first attribute, wrap Y+2 before actual DumpSixSpr and restore Y, then select first/second row by actor code.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S9 P2: 8192 original roots, 1841 compared RAM bytes/root, full and independent row-input/return checkers zero differences on x86/x64; 16/16 focused tests each width; original OpenNT DOS16 link passes. These sampled routes do not certify the complete scoped helper graph.",
-        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Zero flip skips exchange; otherwise read first attribute, wrap Y+2 before actual DumpSixSpr and restore Y, then select first/second row by actor code.",
       "currentSourcePaths": [
@@ -57398,11 +57468,13 @@
         "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required.",
         "M2 T65 S9 static original read/store sequence differs or retainer action is omitted before later overwrite; corrective original-ROM node/order proof pending. docs/history/M2-T65-block-query-object-output-current-proof.md",
         "M2 T65 S9 P2 shared-source repair restores original byte-offset arithmetic, ordered flip/mirror stores and meaningful dump/row/column calls. Full OAM/mask Cartesian and independent helper-call/return proof remain pending; no exact credit. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Read both saved first/second-row tiles before stores, move third-row left/right into them, then restore saved right/left into the third row."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Read both saved first/second-row tiles before stores, move third-row left/right into them, then restore saved right/left into the third row.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S9 P2: 8192 original roots, 1841 compared RAM bytes/root, full and independent row-input/return checkers zero differences on x86/x64; 16/16 focused tests each width; original OpenNT DOS16 link passes. These sampled routes do not certify the complete scoped helper graph.",
-        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Read both saved first/second-row tiles before stores, move third-row left/right into them, then restore saved right/left into the third row.",
       "currentSourcePaths": [
@@ -57418,10 +57490,12 @@
       "currentCounterpart": "shared canonical enemy tail and meaningful row/column/dump entries",
       "semanticEvidence": [
         "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required.",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Read Bowser flag before symmetry; nonzero skips to offscreen. Reload alternate state EC and skip HammerBro before type-specific checks."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Read Bowser flag before symmetry; nonzero skips to offscreen. Reload alternate state EC and skip HammerBro before type-specific checks.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Read Bowser flag before symmetry; nonzero skips to offscreen. Reload alternate state EC and skip HammerBro before type-specific checks.",
       "currentSourcePaths": [
@@ -57437,10 +57511,12 @@
       "currentCounterpart": "shared canonical enemy tail and meaningful row/column/dump entries",
       "semanticEvidence": [
         "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required.",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Bloober/Piranha/Podoboo mirror; Spiny non-egg skips retainer/state mirror gate; all other types reach ESRtnr."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Bloober/Piranha/Podoboo mirror; Spiny non-egg skips retainer/state mirror gate; all other types reach ESRtnr.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Bloober/Piranha/Podoboo mirror; Spiny non-egg skips retainer/state mirror gate; all other types reach ESRtnr.",
       "currentSourcePaths": [
@@ -57458,11 +57534,13 @@
         "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required.",
         "M2 T65 S9 static original read/store sequence differs or retainer action is omitted before later overwrite; corrective original-ROM node/order proof pending. docs/history/M2-T65-block-query-object-output-current-proof.md",
         "M2 T65 S9 P2 shared-source repair restores original byte-offset arithmetic, ordered flip/mirror stores and meaningful dump/row/column calls. Full OAM/mask Cartesian and independent helper-call/return proof remain pending; no exact credit. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Retainer writes bottom-right attribute42 before SpnySC, including paths where mirror later overwrites it."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Retainer writes bottom-right attribute42 before SpnySC, including paths where mirror later overwrites it.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S9 P2: 8192 original roots, 1841 compared RAM bytes/root, full and independent row-input/return checkers zero differences on x86/x64; 16/16 focused tests each width; original OpenNT DOS16 link passes. These sampled routes do not certify the complete scoped helper graph.",
-        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Retainer writes bottom-right attribute42 before SpnySC, including paths where mirror later overwrites it.",
       "currentSourcePaths": [
@@ -57478,10 +57556,12 @@
       "currentCounterpart": "shared canonical enemy tail and meaningful row/column/dump entries",
       "semanticEvidence": [
         "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required.",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Alternate states0/1 skip mirror; states>=2 continue into MirrorEnemyGfx."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Alternate states0/1 skip mirror; states>=2 continue into MirrorEnemyGfx.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Alternate states0/1 skip mirror; states>=2 continue into MirrorEnemyGfx.",
       "currentSourcePaths": [
@@ -57499,11 +57579,13 @@
         "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required.",
         "M2 T65 S9 static original read/store sequence differs or retainer action is omitted before later overwrite; corrective original-ROM node/order proof pending. docs/history/M2-T65-block-query-object-output-current-proof.md",
         "M2 T65 S9 P2 shared-source repair restores original byte-offset arithmetic, ordered flip/mirror stores and meaningful dump/row/column calls. Full OAM/mask Cartesian and independent helper-call/return proof remain pending; no exact credit. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Read Bowser guard; reachable source has flag0. Read/mask first attribute, store all three left rows before setting horizontal flip and possible egg vertical flip."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Read Bowser guard; reachable source has flag0. Read/mask first attribute, store all three left rows before setting horizontal flip and possible egg vertical flip.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S9 P2: 8192 original roots, 1841 compared RAM bytes/root, full and independent row-input/return checkers zero differences on x86/x64; 16/16 focused tests each width; original OpenNT DOS16 link passes. These sampled routes do not certify the complete scoped helper graph.",
-        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Read Bowser guard; reachable source has flag0. Read/mask first attribute, store all three left rows before setting horizontal flip and possible egg vertical flip.",
       "currentSourcePaths": [
@@ -57519,10 +57601,12 @@
       "currentCounterpart": "shared canonical enemy tail and meaningful row/column/dump entries",
       "semanticEvidence": [
         "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required.",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Store all three right rows, then state4 changes second/third left rows before corresponding right rows; other states continue to Lakitu check."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Store all three right rows, then state4 changes second/third left rows before corresponding right rows; other states continue to Lakitu check.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Store all three right rows, then state4 changes second/third left rows before corresponding right rows; other states continue to Lakitu check.",
       "currentSourcePaths": [
@@ -57538,10 +57622,12 @@
       "currentCounterpart": "shared canonical enemy tail and meaningful row/column/dump entries",
       "semanticEvidence": [
         "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required.",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Only code17 enters Lakitu stores; vertical flip selects NVFLak. Nonvertical path changes bottom attributes; timer>=16 exits, timer<16 also changes second row then exits unconditionally."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Only code17 enters Lakitu stores; vertical flip selects NVFLak. Nonvertical path changes bottom attributes; timer>=16 exits, timer<16 also changes second row then exits unconditionally.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Only code17 enters Lakitu stores; vertical flip selects NVFLak. Nonvertical path changes bottom attributes; timer>=16 exits, timer<16 also changes second row then exits unconditionally.",
       "currentSourcePaths": [
@@ -57557,10 +57643,12 @@
       "currentCounterpart": "shared canonical enemy tail and meaningful row/column/dump entries",
       "semanticEvidence": [
         "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required.",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Set first left attribute AND81 and right OR41 in order, then continue to spring test."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Set first left attribute AND81 and right OR41 in order, then continue to spring test.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Set first left attribute AND81 and right OR41 in order, then continue to spring test.",
       "currentSourcePaths": [
@@ -57576,10 +57664,12 @@
       "currentCounterpart": "shared canonical enemy tail and meaningful row/column/dump entries",
       "semanticEvidence": [
         "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required.",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Code<24 exits to offscreen; spring codes set second/third left82 then rightC2."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Code<24 exits to offscreen; spring codes set second/third left82 then rightC2.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Code<24 exits to offscreen; spring codes set second/third left82 then rightC2.",
       "currentSourcePaths": [
@@ -57597,11 +57687,13 @@
         "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required.",
         "M2 T65 S9 static original child entry/call replaced by raw inline stores; repair and original-ROM child proof pending. docs/history/M2-T65-block-query-object-output-current-proof.md",
         "M2 T65 S9 P2 shared-source repair restores original byte-offset arithmetic, ordered flip/mirror stores and meaningful dump/row/column calls. Full OAM/mask Cartesian and independent helper-call/return proof remain pending; no exact credit. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Load ObjectOffset and offscreen bits; bit2 calls right-column helper before continuing with saved mask."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Load ObjectOffset and offscreen bits; bit2 calls right-column helper before continuing with saved mask.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S9 P2: 8192 original roots, 1841 compared RAM bytes/root, full and independent row-input/return checkers zero differences on x86/x64; 16/16 focused tests each width; original OpenNT DOS16 link passes. These sampled routes do not certify the complete scoped helper graph.",
-        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Load ObjectOffset and offscreen bits; bit2 calls right-column helper before continuing with saved mask.",
       "currentSourcePaths": [
@@ -57620,11 +57712,13 @@
         "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required.",
         "M2 T65 S9 static original child entry/call replaced by raw inline stores; repair and original-ROM child proof pending. docs/history/M2-T65-block-query-object-output-current-proof.md",
         "M2 T65 S9 P2 shared-source repair restores original byte-offset arithmetic, ordered flip/mirror stores and meaningful dump/row/column calls. Full OAM/mask Cartesian and independent helper-call/return proof remain pending; no exact credit. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Bit3 calls left-column helper; continue with original saved mask."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Bit3 calls left-column helper; continue with original saved mask.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S9 P2: 8192 original roots, 1841 compared RAM bytes/root, full and independent row-input/return checkers zero differences on x86/x64; 16/16 focused tests each width; original OpenNT DOS16 link passes. These sampled routes do not certify the complete scoped helper graph.",
-        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Bit3 calls left-column helper; continue with original saved mask.",
       "currentSourcePaths": [
@@ -57643,11 +57737,13 @@
         "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required.",
         "M2 T65 S9 static original child entry/call replaced by raw inline stores; repair and original-ROM child proof pending. docs/history/M2-T65-block-query-object-output-current-proof.md",
         "M2 T65 S9 P2 shared-source repair restores original byte-offset arithmetic, ordered flip/mirror stores and meaningful dump/row/column calls. Full OAM/mask Cartesian and independent helper-call/return proof remain pending; no exact credit. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Bit5 calls row helper with10; continue with original saved mask."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Bit5 calls row helper with10; continue with original saved mask.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S9 P2: 8192 original roots, 1841 compared RAM bytes/root, full and independent row-input/return checkers zero differences on x86/x64; 16/16 focused tests each width; original OpenNT DOS16 link passes. These sampled routes do not certify the complete scoped helper graph.",
-        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Bit5 calls row helper with10; continue with original saved mask.",
       "currentSourcePaths": [
@@ -57666,11 +57762,13 @@
         "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required.",
         "M2 T65 S9 static original child entry/call replaced by raw inline stores; repair and original-ROM child proof pending. docs/history/M2-T65-block-query-object-output-current-proof.md",
         "M2 T65 S9 P2 shared-source repair restores original byte-offset arithmetic, ordered flip/mirror stores and meaningful dump/row/column calls. Full OAM/mask Cartesian and independent helper-call/return proof remain pending; no exact credit. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Bit6 calls row helper with08; continue with original saved mask."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Bit6 calls row helper with08; continue with original saved mask.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S9 P2: 8192 original roots, 1841 compared RAM bytes/root, full and independent row-input/return checkers zero differences on x86/x64; 16/16 focused tests each width; original OpenNT DOS16 link passes. These sampled routes do not certify the complete scoped helper graph.",
-        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Bit6 calls row helper with08; continue with original saved mask.",
       "currentSourcePaths": [
@@ -57689,11 +57787,13 @@
         "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required.",
         "M2 T65 S9 static original child entry/call replaced by raw inline stores; repair and original-ROM child proof pending. docs/history/M2-T65-block-query-object-output-current-proof.md",
         "M2 T65 S9 P2 shared-source repair restores original byte-offset arithmetic, ordered flip/mirror stores and meaningful dump/row/column calls. Full OAM/mask Cartesian and independent helper-call/return proof remain pending; no exact credit. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Bit7 calls row helper with00; only non-Podoboo with highY2 calls EraseEnemyObject. Otherwise exit unchanged."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Bit7 calls row helper with00; only non-Podoboo with highY2 calls EraseEnemyObject. Otherwise exit unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S9 P2: 8192 original roots, 1841 compared RAM bytes/root, full and independent row-input/return checkers zero differences on x86/x64; 16/16 focused tests each width; original OpenNT DOS16 link passes. These sampled routes do not certify the complete scoped helper graph.",
-        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Bit7 calls row helper with00; only non-Podoboo with highY2 calls EraseEnemyObject. Otherwise exit unchanged.",
       "currentSourcePaths": [
@@ -57710,10 +57810,12 @@
       "currentCounterpart": "shared canonical enemy tail and meaningful row/column/dump entries",
       "semanticEvidence": [
         "Td S9 K61 enemy OAM row-leaf node and integration audit: SMB1 lines 14085-14110 compared with src/game/oam/normal_enemy_gfx.c, sprite_row.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 normal-enemy OAM row/offscreen routes remain required.",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Return after original helper/erase sequence; caller state observes original stores."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Return after original helper/erase sequence; caller state observes original stores.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Return after original helper/erase sequence; caller state observes original stores.",
       "currentSourcePaths": [
@@ -57730,10 +57832,12 @@
       "currentCounterpart": "shared canonical enemy tail and meaningful row/column/dump entries",
       "semanticEvidence": [
         "Td S9 K61 enemy OAM row-leaf node and integration audit: SMB1 lines 14085-14110 compared with src/game/oam/normal_enemy_gfx.c, sprite_row.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 normal-enemy OAM row/offscreen routes remain required.",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Load graphics base+X into RAM00 and base+1+X into A (no per-index wrap), then meaningful DrawOneSpriteRow entry."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Load graphics base+X into RAM00 and base+1+X into A (no per-index wrap), then meaningful DrawOneSpriteRow entry.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Load graphics base+X into RAM00 and base+1+X into A (no per-index wrap), then meaningful DrawOneSpriteRow entry.",
       "currentSourcePaths": [
@@ -57750,10 +57854,12 @@
       "currentCounterpart": "shared canonical enemy tail and meaningful row/column/dump entries",
       "semanticEvidence": [
         "Td S9 K61 enemy OAM row-leaf node and integration audit: SMB1 lines 14085-14110 compared with src/game/oam/normal_enemy_gfx.c, sprite_row.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 normal-enemy OAM row/offscreen routes remain required.",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Store incoming A in RAM01 and tail to actual DrawSpriteObject; preserve original X+2,Y+8 byte return values."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Store incoming A in RAM01 and tail to actual DrawSpriteObject; preserve original X+2,Y+8 byte return values.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
-        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Store incoming A in RAM01 and tail to actual DrawSpriteObject; preserve original X+2,Y+8 byte return values.",
       "currentSourcePaths": [
@@ -57772,11 +57878,13 @@
         "Td S9 K61 enemy OAM row-leaf node and integration audit: SMB1 lines 14085-14110 compared with src/game/oam/normal_enemy_gfx.c, sprite_row.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 normal-enemy OAM row/offscreen routes remain required.",
         "M2 T65 S9 static original child entry/call replaced by raw inline stores; repair and original-ROM child proof pending. docs/history/M2-T65-block-query-object-output-current-proof.md",
         "M2 T65 S9 P2 shared-source repair restores original byte-offset arithmetic, ordered flip/mirror stores and meaningful dump/row/column calls. Full OAM/mask Cartesian and independent helper-call/return proof remain pending; no exact credit. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Wrap A+Enemy_SprDataOffset once into Y, then tail to actual DumpTwoSpr with F8; leaf stores absolute indexed offsets without wrapping each store."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Wrap A+Enemy_SprDataOffset once into Y, then tail to actual DumpTwoSpr with F8; leaf stores absolute indexed offsets without wrapping each store.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S9 P2: 8192 original roots, 1841 compared RAM bytes/root, full and independent row-input/return checkers zero differences on x86/x64; 16/16 focused tests each width; original OpenNT DOS16 link passes. These sampled routes do not certify the complete scoped helper graph.",
-        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Wrap A+Enemy_SprDataOffset once into Y, then tail to actual DumpTwoSpr with F8; leaf stores absolute indexed offsets without wrapping each store.",
       "currentSourcePaths": [
@@ -57795,11 +57903,13 @@
         "Td S9 K61 enemy OAM row-leaf node and integration audit: SMB1 lines 14085-14110 compared with src/game/oam/normal_enemy_gfx.c, sprite_row.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 normal-enemy OAM row/offscreen routes remain required.",
         "M2 T65 S9 static original child entry/call replaced by raw inline stores; repair and original-ROM child proof pending. docs/history/M2-T65-block-query-object-output-current-proof.md",
         "M2 T65 S9 P2 shared-source repair restores original byte-offset arithmetic, ordered flip/mirror stores and meaningful dump/row/column calls. Full OAM/mask Cartesian and independent helper-call/return proof remain pending; no exact credit. docs/history/M2-T65-block-query-object-output-current-proof.md",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Wrap A+Enemy_SprDataOffset once into Y, call actual MoveColOffscreen, then store its returned F8 at absolute Sprite_Data+16,Y."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Wrap A+Enemy_SprDataOffset once into Y, call actual MoveColOffscreen, then store its returned F8 at absolute Sprite_Data+16,Y.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S9 P2: 8192 original roots, 1841 compared RAM bytes/root, full and independent row-input/return checkers zero differences on x86/x64; 16/16 focused tests each width; original OpenNT DOS16 link passes. These sampled routes do not certify the complete scoped helper graph.",
-        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
+        "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:286720actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all445PC/80branchpairs plus4retainedsingle-sidedproofs,originalrowX/Ycapabilitiescompared,8tests eachpass;source/threeP81productsunchanged."
       ],
       "semanticContract": "Wrap A+Enemy_SprDataOffset once into Y, call actual MoveColOffscreen, then store its returned F8 at absolute Sprite_Data+16,Y.",
       "currentSourcePaths": [
@@ -128928,7 +129038,8 @@
       "currentCounterpart": "source-infeasible raw fallthrough retained",
       "semanticEvidence": [
         "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; LDX #$B4 sets Z=0 immediately before BNE CheckToAnimateEnemy at $E9DC; no fallthrough to CheckForBloober."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; LDX #$B4 sets Z=0 immediately before BNE CheckToAnimateEnemy at $E9DC; no fallthrough to CheckForBloober.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
@@ -129227,7 +129338,8 @@
       "currentCounterpart": "source-infeasible raw fallthrough retained",
       "semanticEvidence": [
         "Td S9 K9 enemy graphics animation and row-draw node-semantics and independent integration audit: SMB1 lines 13829-13915 compared with shared normal_enemy_gfx.c, hammer_bro_gfx.c, bloober_gfx.c and cheep_gfx.c owners; controlled original-ROM/x86/x64 actor routes remain required.",
-        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; LDA #$03 sets Z=0, STA $EC preserves flags, BNE CheckDefeatedState at $EA20 is always taken; no fallthrough to CheckForSecondFrame."
+        "M2 T65 S8 original $E73E-$EA61 node/branch/table/order audit, canonical EnemyGfxHandler with actual row entry; docs/history/M2-T65-block-query-object-output-current-proof.md; LDA #$03 sets Z=0, STA $EC preserves flags, BNE CheckDefeatedState at $EA20 is always taken; no fallthrough to CheckForSecondFrame.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S8 x86/x64 full and independent row-input/return checkers each match8192 original roots across1841 RAM bytes; all30 code labels and83 feasible owned controls hit;24351 row returns,75 Piranha early exits, all27 selected type indices and five spring indices, timing index0 observed. True CPU stack excluded, game aliases0109-0139 included. docs/history/M2-T65-block-query-object-output-current-proof.md"
@@ -130078,7 +130190,8 @@
       "currentCounterpart": "source-infeasible raw relation retained",
       "semanticEvidence": [
         "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required.",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Source MirrorEnemyGfx is entered only through CheckForESymmetry after BowserGfxFlag036A==0. Intervening stores are stack/OAM up to0315, never036A; no source caller jumps directly into MirrorEnemyGfx. BNE atEADA cannot take this edge."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; Source MirrorEnemyGfx is entered only through CheckForESymmetry after BowserGfxFlag036A==0. Intervening stores are stack/OAM up to0315, never036A; no source caller jumps directly into MirrorEnemyGfx. BNE atEADA cannot take this edge.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
@@ -130312,7 +130425,8 @@
       "currentCounterpart": "source-infeasible raw relation retained",
       "semanticEvidence": [
         "Td S9 K10 enemy OAM flip/mirror/offscreen node-semantics and independent integration audit: SMB1 lines 13916-14083 compared with shared normal_enemy_gfx.c and enemy_offscreen_tail.h; controlled original-ROM/x86/x64 flip, symmetry and offscreen routes remain required.",
-        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; CPX FrenzyEnemyTimer with10 branches out atEB32 when carry1. Remaining timer<16 path has carry0; STA/AND/STA do not modify carry, so BCC atEB3C always exits and cannot fall through to NVFLak."
+        "M2 T65 S9 P3 original lines13916-14110, node/control/read-write/store-order audit and source-reachability proof; docs/history/M2-T65-block-query-object-output-current-proof.md; CPX FrenzyEnemyTimer with10 branches out atEB32 when carry1. Remaining timer<16 path has carry0; STA/AND/STA do not modify carry, so BCC atEB3C always exits and cannot fall through to NVFLak.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "operationalEvidence": [
         "M2 T65 S9 P3: 337408 bounded original helper roots across six entries,432630 observed child returns; x86/x64 full and independent child-input/return checkers match1841 RAM bytes plus relevant A/X/Y arguments and row X/Y returns, zero differences. Same8192-root full enemy and three row-call-return checks remain zero after file separation. 16/16 focused tests each width, C90 builds and original OpenNT DOS16 link pass. docs/history/M2-T65-block-query-object-output-current-proof.md"
@@ -169412,22 +169526,22 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P79 checkpoint - bounding box original child outputs restored:17labels/125instructions/48RAM joined7clauses;offset/mask/midpoint/cornerbyte semantics;LargePlatform actualGetXOffscreenBits scratch04-07 restored. Control0-11 contract only;rawcontrol producer/alias andinter-frame pending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P80 checkpoint - block query entry and scratch uses reconciled:11labels/64instructions/15RAM joined5clauses;slot/index/bytecarry/parity/pointerrow/contactflag/rawmetatile seams. ControlledboundPRG rawindexdomain,producer/inter-frame pending,no newnode/controlcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P81 checkpoint - OAM stack and indexed clipping uses reconciled:35labels/282instructions/117RAM joined12boundedclauses;vine/hammer/flag/dump/platform/coin index/carry/scratchhandoffs;largeplatformabsolutecolumnwrite repaired. Producer/inter-framepending,no newgraphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P82 checkpoint - enemy selection drawing and offscreen uses reconciled:55labels/445instructions/161RAM joined16boundedclauses;selection/tables/animation/mirror/flip/rowindices/offscreen/erase actualchildren. Fourretainedinfeasiblebranches confirmed;producer/inter-frame pending,no newgraphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 7826,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 2865,
+        "localInstructionReceiptSites": 8271,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 2420,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 2781,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 992,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 2942,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 831,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
         "directExternalQueueWriterPaths": 48,
         "pendingDirectRamOwners": {
-          "src/game/oam/normal_enemy_gfx.c": 127,
           "src/game/terminal_modes.c": 81,
           "src/game/oam/player_gfx.c": 81,
           "src/game/oam/block_gfx.c": 54,
@@ -169443,7 +169557,6 @@
           "src/game/player_movement.c shared C90 movement owner": 26,
           "src/game/game.c": 25,
           "src/game/status.c": 25,
-          "src/game/oam/power_up_gfx.c": 25,
           "src/game/player_end_level.c shared C90 end-level owner": 24,
           "src/game/entry.c shared C90 entry owner": 21,
           "src/game/oam/small_platform_gfx.c": 20,
@@ -169460,15 +169573,11 @@
           "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c": 5,
           "src/game/enemy/{lifecycle,podoboo}.c": 5,
           "src/game/dispatcher.c": 4,
-          "src/game/oam/sprite_row.c and src/game/oam/enemy_offscreen.c": 4,
-          "src/game/oam/enemy_offscreen.c and src/game/oam/sprite_dump.c": 3,
           "src/game/oam/firebar_gfx.c": 3,
           "src/game/frame_root.c and src/game/terminal_modes.c": 2,
           "src/game/enemy/platform_callers.c": 2,
           "src/game/oam/sprite_dump.c and src/game/oam/block_offscreen.c": 2,
-          "src/game/frame_root.c and src/game/title_modes.c": 1,
-          "src/game/oam/normal_enemy_gfx.c and src/game/oam/sprite_row.c": 1,
-          "src/game/oam/sprite_row.c and src/game/oam/sprite_draw.c": 1
+          "src/game/frame_root.c and src/game/title_modes.c": 1
         },
         "materialPathsEnumerated": 993,
         "globalMaterialPathDenominator": "unknown",
