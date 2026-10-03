@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 985,
+    "enumeratedCount": 986,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -858,10 +858,12 @@
       "semanticContract": "Existing15 native bytes equal original8FBC-8FCB;actual SecondaryGameSetup absolute-X reads all entries descending14 to0 into6E4-6F2.",
       "semanticEvidence": [
         "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original region/native existing bytes/index/consumer audited independently."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original region/native existing bytes/index/consumer audited independently.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:53pendinginstructions/22RAM joined7manualclauses;fivecurrent setup functionbodies identicalaccepted d247f6a3. Soundclear consumesrealInitializeMemory A0 invariant;buffer03A0 intentionalalias,mirrorbitpipeline,actualmusic/noops,descendingOAM andbyteincrements proven."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 all19 bytes actually read by declared original consumer;secondary and primary original roots both widths equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 all19 bytes actually read by declared original consumer;secondary and primary original roots both widths equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:5888 actualoriginalreturning roots eachcurrentx86/x64 zero2032RAM/24APU/orderedwrite differences,21entries/42controls/19tablebytes observed. NMI-off callercondition,sourceSP>=EF andreservedphysical1F0-1FF excluded;not all2048 byte proof.3checks each,65536 mirrorbit assertions;no source/productchange,P39hashes unchanged."
       ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
@@ -880,10 +882,12 @@
       "semanticContract": "Existing4 native bytes equal original8FCB-8FCF;actual SecondaryGameSetup absolute-Y reads descending3 to0 into200-203.",
       "semanticEvidence": [
         "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original region/native existing bytes/index/consumer audited independently."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original region/native existing bytes/index/consumer audited independently.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:53pendinginstructions/22RAM joined7manualclauses;fivecurrent setup functionbodies identicalaccepted d247f6a3. Soundclear consumesrealInitializeMemory A0 invariant;buffer03A0 intentionalalias,mirrorbitpipeline,actualmusic/noops,descendingOAM andbyteincrements proven."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 all19 bytes actually read by declared original consumer;secondary and primary original roots both widths equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 all19 bytes actually read by declared original consumer;secondary and primary original roots both widths equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:5888 actualoriginalreturning roots eachcurrentx86/x64 zero2032RAM/24APU/orderedwrite differences,21entries/42controls/19tablebytes observed. NMI-off callercondition,sourceSP>=EF andreservedphysical1F0-1FF excluded;not all2048 byte proof.3checks each,65536 mirrorbit assertions;no source/productchange,P39hashes unchanged."
       ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
@@ -22175,6 +22179,30 @@
       "currentSourcePaths": [
         "src/game/area.c"
       ]
+    },
+    {
+      "id": "material-00986",
+      "producer": "InitializeMemory",
+      "consumer": "ClrSndLoop",
+      "storage": "A constant-zero return consumed by sound-memory clear",
+      "feasiblePath": "8FD1 call90CC/90CE LDA0 ->90EC return8FD4 LDY1F ->8FD6 SoundMemory[Y] stores",
+      "status": "exact",
+      "currentCounterpart": "src/game/title_modes.c:mysmb_game_begin_title_bootstrap real memoryclear then descending zero soundspan",
+      "semanticContract": "InitializeGame8FD1 realInitializeMemory call enters90CC,90CE LDA0;no subsequent A-writing opcode through90EC RTS. STA indirect/06/07 andX/Y loops leaveA0,including pointerselfclear. Return8FD4 LDY1F doesnotwriteA,so8FD6 descendingSoundMemory storesconsumeconstant0. Sharedvoid memoryhelper nativecallerwrites0 by proven return invariant;not a fabricated RAMwriter. Sourceactualsoundspan7B0-7CF persists throughsmallerInitializeArea clear4B;fullparent observedzeros aretheconsumer results.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:53pendinginstructions/22RAM joined7manualclauses;fivecurrent setup functionbodies identicalaccepted d247f6a3. Soundclear consumesrealInitializeMemory A0 invariant;buffer03A0 intentionalalias,mirrorbitpipeline,actualmusic/noops,descendingOAM andbyteincrements proven.",
+        "InitializeGame8FD1 realInitializeMemory call enters90CC,90CE LDA0;no subsequent A-writing opcode through90EC RTS. STA indirect/06/07 andX/Y loops leaveA0,including pointerselfclear. Return8FD4 LDY1F doesnotwriteA,so8FD6 descendingSoundMemory storesconsumeconstant0. Sharedvoid memoryhelper nativecallerwrites0 by proven return invariant;not a fabricated RAMwriter. Sourceactualsoundspan7B0-7CF persists throughsmallerInitializeArea clear4B;fullparent observedzeros aretheconsumer results."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:5888 actualoriginalreturning roots eachcurrentx86/x64 zero2032RAM/24APU/orderedwrite differences,21entries/42controls/19tablebytes observed. NMI-off callercondition,sourceSP>=EF andreservedphysical1F0-1FF excluded;not all2048 byte proof.3checks each,65536 mirrorbit assertions;no source/productchange,P39hashes unchanged.",
+        "InitializeGame mode59 original256 realparents includerealclear,pointer/header/area children;sourceopcode invariant provesrequiredA0,completeparent soundspan outputs match. No outgoingA ABI assertion forunrelatedroots."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/boot.c",
+        "src/game/title_modes.c"
+      ]
     }
   ],
   "cohorts": [
@@ -27498,10 +27526,12 @@
       "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
         "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: InitializeMemory Y6F;descending sound clear;demo timer18;actual LoadAreaPointer then InitializeArea fallthrough translated as actual shared child."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: InitializeMemory Y6F;descending sound clear;demo timer18;actual LoadAreaPointer then InitializeArea fallthrough translated as actual shared child.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:53pendinginstructions/22RAM joined7manualclauses;fivecurrent setup functionbodies identicalaccepted d247f6a3. Soundclear consumesrealInitializeMemory A0 invariant;buffer03A0 intentionalalias,mirrorbitpipeline,actualmusic/noops,descendingOAM andbyteincrements proven."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:5888 actualoriginalreturning roots eachcurrentx86/x64 zero2032RAM/24APU/orderedwrite differences,21entries/42controls/19tablebytes observed. NMI-off callercondition,sourceSP>=EF andreservedphysical1F0-1FF excluded;not all2048 byte proof.3checks each,65536 mirrorbit assertions;no source/productchange,P39hashes unchanged."
       ],
       "semanticContract": "InitializeMemory Y6F;descending sound clear;demo timer18;actual LoadAreaPointer then InitializeArea fallthrough translated as actual shared child.",
       "currentSourcePaths": [
@@ -27517,10 +27547,12 @@
       "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
         "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Original A0 survives InitializeMemory;clear7CF down7B0 with original descending index31 to0 before demo timer and pointer child."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Original A0 survives InitializeMemory;clear7CF down7B0 with original descending index31 to0 before demo timer and pointer child.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:53pendinginstructions/22RAM joined7manualclauses;fivecurrent setup functionbodies identicalaccepted d247f6a3. Soundclear consumesrealInitializeMemory A0 invariant;buffer03A0 intentionalalias,mirrorbitpipeline,actualmusic/noops,descendingOAM andbyteincrements proven."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:5888 actualoriginalreturning roots eachcurrentx86/x64 zero2032RAM/24APU/orderedwrite differences,21entries/42controls/19tablebytes observed. NMI-off callercondition,sourceSP>=EF andreservedphysical1F0-1FF excluded;not all2048 byte proof.3checks each,65536 mirrorbit assertions;no source/productchange,P39hashes unchanged."
       ],
       "semanticContract": "Original A0 survives InitializeMemory;clear7CF down7B0 with original descending index31 to0 before demo timer and pointer child.",
       "currentSourcePaths": [
@@ -27672,10 +27704,12 @@
       "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
         "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Store timer-fetch1/player-size1/lives2/offscreen-lives2 then original fallthrough implemented by actual SecondaryGameSetup child;frame root duplicate removed."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Store timer-fetch1/player-size1/lives2/offscreen-lives2 then original fallthrough implemented by actual SecondaryGameSetup child;frame root duplicate removed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:53pendinginstructions/22RAM joined7manualclauses;fivecurrent setup functionbodies identicalaccepted d247f6a3. Soundclear consumesrealInitializeMemory A0 invariant;buffer03A0 intentionalalias,mirrorbitpipeline,actualmusic/noops,descendingOAM andbyteincrements proven."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:5888 actualoriginalreturning roots eachcurrentx86/x64 zero2032RAM/24APU/orderedwrite differences,21entries/42controls/19tablebytes observed. NMI-off callercondition,sourceSP>=EF andreservedphysical1F0-1FF excluded;not all2048 byte proof.3checks each,65536 mirrorbit assertions;no source/productchange,P39hashes unchanged."
       ],
       "semanticContract": "Store timer-fetch1/player-size1/lives2/offscreen-lives2 then original fallthrough implemented by actual SecondaryGameSetup child;frame root duplicate removed.",
       "currentSourcePaths": [
@@ -27691,10 +27725,12 @@
       "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
         "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: DisableScreen0 first;clear command page;timer/intermediate/backloading0;balanceFF;mirror parity;actual GetAreaMusic;shuffle/OAM/no-op children;hit/task INC."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: DisableScreen0 first;clear command page;timer/intermediate/backloading0;balanceFF;mirror parity;actual GetAreaMusic;shuffle/OAM/no-op children;hit/task INC.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:53pendinginstructions/22RAM joined7manualclauses;fivecurrent setup functionbodies identicalaccepted d247f6a3. Soundclear consumesrealInitializeMemory A0 invariant;buffer03A0 intentionalalias,mirrorbitpipeline,actualmusic/noops,descendingOAM andbyteincrements proven."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:5888 actualoriginalreturning roots eachcurrentx86/x64 zero2032RAM/24APU/orderedwrite differences,21entries/42controls/19tablebytes observed. NMI-off callercondition,sourceSP>=EF andreservedphysical1F0-1FF excluded;not all2048 byte proof.3checks each,65536 mirrorbit assertions;no source/productchange,P39hashes unchanged."
       ],
       "semanticContract": "DisableScreen0 first;clear command page;timer/intermediate/backloading0;balanceFF;mirror parity;actual GetAreaMusic;shuffle/OAM/no-op children;hit/task INC.",
       "currentSourcePaths": [
@@ -27710,10 +27746,12 @@
       "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
         "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Original Y0/STA/INY/BNE clears every byte300-3FF in ascending order,then clears timer/intermediate/backloading fields."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Original Y0/STA/INY/BNE clears every byte300-3FF in ascending order,then clears timer/intermediate/backloading fields.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:53pendinginstructions/22RAM joined7manualclauses;fivecurrent setup functionbodies identicalaccepted d247f6a3. Soundclear consumesrealInitializeMemory A0 invariant;buffer03A0 intentionalalias,mirrorbitpipeline,actualmusic/noops,descendingOAM andbyteincrements proven."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:5888 actualoriginalreturning roots eachcurrentx86/x64 zero2032RAM/24APU/orderedwrite differences,21entries/42controls/19tablebytes observed. NMI-off callercondition,sourceSP>=EF andreservedphysical1F0-1FF excluded;not all2048 byte proof.3checks each,65536 mirrorbit assertions;no source/productchange,P39hashes unchanged."
       ],
       "semanticContract": "Original Y0/STA/INY/BNE clears every byte300-3FF in ascending order,then clears timer/intermediate/backloading fields.",
       "currentSourcePaths": [
@@ -27729,10 +27767,12 @@
       "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
         "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Shuffle amounts+2=38,+1=48,+0=58 first;load existing default offsets descending14 to0 into sprite offsets."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Shuffle amounts+2=38,+1=48,+0=58 first;load existing default offsets descending14 to0 into sprite offsets.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:53pendinginstructions/22RAM joined7manualclauses;fivecurrent setup functionbodies identicalaccepted d247f6a3. Soundclear consumesrealInitializeMemory A0 invariant;buffer03A0 intentionalalias,mirrorbitpipeline,actualmusic/noops,descendingOAM andbyteincrements proven."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:5888 actualoriginalreturning roots eachcurrentx86/x64 zero2032RAM/24APU/orderedwrite differences,21entries/42controls/19tablebytes observed. NMI-off callercondition,sourceSP>=EF andreservedphysical1F0-1FF excluded;not all2048 byte proof.3checks each,65536 mirrorbit assertions;no source/productchange,P39hashes unchanged."
       ],
       "semanticContract": "Shuffle amounts+2=38,+1=48,+0=58 first;load existing default offsets descending14 to0 into sprite offsets.",
       "currentSourcePaths": [
@@ -27748,10 +27788,12 @@
       "currentCounterpart": "src/game/boot.c/title_modes.c/area.c/game.c shared initialization;frame_root original primary fallthrough caller",
       "semanticEvidence": [
         "Td S9 B9b initialization static node/edge pass: SMB1 lines 2665-2808 was compared with src/game/area.c, game.c, boot.c and title_modes.c; controlled original-ROM/x86/x64 startup/restart routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Load existing sprite0 bytes descending3 to0;actual DoNothing2 then DoNothing1 leaves;INC sprite0-hit then mode-task,not fixed task3."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 original source/call/order/read/write/ABI audit: Load existing sprite0 bytes descending3 to0;actual DoNothing2 then DoNothing1 leaves;INC sprite0-hit then mode-task,not fixed task3.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:53pendinginstructions/22RAM joined7manualclauses;fivecurrent setup functionbodies identicalaccepted d247f6a3. Soundclear consumesrealInitializeMemory A0 invariant;buffer03A0 intentionalalias,mirrorbitpipeline,actualmusic/noops,descendingOAM andbyteincrements proven."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S2 P2 final5888 original returning roots x86/x64 zero RAM/APU/order differences;all21 entries/19 table bytes observed;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins:5888 actualoriginalreturning roots eachcurrentx86/x64 zero2032RAM/24APU/orderedwrite differences,21entries/42controls/19tablebytes observed. NMI-off callercondition,sourceSP>=EF andreservedphysical1F0-1FF excluded;not all2048 byte proof.3checks each,65536 mirrorbit assertions;no source/productchange,P39hashes unchanged."
       ],
       "semanticContract": "Load existing sprite0 bytes descending3 to0;actual DoNothing2 then DoNothing1 leaves;INC sprite0-hit then mode-task,not fixed task3.",
       "currentSourcePaths": [
@@ -167053,16 +167095,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P37 checkpoint - style ledge and rope child lifetimes reconciled",
         "docs/proposals/m2/t70-final-current-certification.md S17 P38 checkpoint - bounded castle and pipe child lifetimes reconciled",
         "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 1858,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 8833,
+        "localInstructionReceiptSites": 1911,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 8780,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 579,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 3194,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 601,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 3172,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -167076,13 +167119,13 @@
           "shared game core: enemy/balance_platform.c": 78,
           "src/game/world/player_enemy_collision.c": 72,
           "src/game/frame_root.c": 66,
-          "src/game/area.c": 63,
-          "src/game/game.c": 54,
           "src/game/oam/block_gfx.c": 54,
           "shared coin, misc, score, world and OAM core": 51,
+          "src/game/game.c": 49,
           "src/game/objects.c": 48,
           "shared enemy stream and initializer core": 48,
           "src/game/title_modes.c": 46,
+          "src/game/area.c": 46,
           "shared game core: enemy/bowser.c": 45,
           "shared blocks, area, world and OAM core": 44,
           "shared firebar and flying-Cheep initializer core": 44,
@@ -167198,7 +167241,7 @@
           "src/game/oam/normal_enemy_gfx.c and src/game/oam/sprite_row.c": 1,
           "src/game/oam/sprite_row.c and src/game/oam/sprite_draw.c": 1
         },
-        "materialPathsEnumerated": 985,
+        "materialPathsEnumerated": 986,
         "globalMaterialPathDenominator": "unknown",
         "nodeOrControlPromotion": 0,
         "scope": "Retained scoped receipts and named open material obligations;not new global audit,whole-program proof or new material denominator."

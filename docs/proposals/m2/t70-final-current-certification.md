@@ -6485,3 +6485,54 @@ Acceptedsegment screenleaf9 SHA256:ad4e677fb8c86aef5c7ad50aab6c2dee7fece8bb4bcb8
 Acceptedsegment screenleaf10 SHA256:5cd61bc5365a73a7b4a295d7f3d72928b95ed9bfdd8f9ecaaa9f2c053bbbf021.
 
 Acceptedsegment screenleaf11 SHA256:95cc3882d36ec3628fb8b07b91e728dd74f9230ce90ae8bea21f24c0bea48fdb.
+
+## S17 P41 scope amendment - retained primary and secondary setup use joins
+
+Exact auditparticipants:`InitializeGame`,`ClrSndLoop`,`PrimaryGameSetup`,`SecondaryGameSetup`,`ClearVRLoop`,`ShufAmtLoop`,`ISpr0Loop`.
+
+53 pending sourceinstructions/22RAM accesses from8fcf-90ec afterretainedP36clear/header receipts. Owners title_modes.c begin_title_bootstrap andgame.c primary/secondary/noop setup;realInitializeMemory/InitializeArea/pointer/header/music dependencies retained. Compare namedbody identity tod247f6a3,manually join remaining savedinput/counter/mirror/OAM/scratch/order clauses,andrerun retained5888 originalreturning rootscurrentx86/x64 plusRAM/APU orderedoutputs. 7 addedauditparticipants,S17 scope497,fresh0/max1992. Source/runtime evidence bothrequired;no source/EXEeditunlessbounded correctiveamendment.
+
+Retainedsource ABI compares2032RAM bytes plus24APU/orderedwrites,excludesphysicalstack1F0-1FF withobservedminimumSP>=EF andmanualnogamewriterproof;not anall2048physicalstackcomparison. Clear100-15F andretained160-1EF included. ControlledhardwareNMIenableoff matchesoriginalcallerprologue,not ROMpatch. Five realrootgroups includesourceLoadAreaPointer setup;sourcefields/title bindingsfacade admittedonly,no titlebytes read. Budget1024roots/128MiB/120s/process,rawcleanup underbuild. No freshwholeauditor materialCartesian edges.
+
+## S17 P41 checkpoint - retained initialization and setup source-use joins
+
+53 previouslyunjoined instructions/22RAM in7 existinglabels join7manual
+clauses. Scope497,fresh0/max1992;fivecurrent setup functionbodies identical
+toaccepted d247f6a3. Current5888 realoriginalreturning roots eachwidth pass:
+256 memoryclear,4096secondary,256primary,1024area and256gameinit. Allactual
+children useboundoriginalPRG.21 entries/42controltransitions/19tablebytes
+observed;2032RAM bytes,24APU andorderedwrite/count/index outputsmatch. Exclude
+reservedphysical1F0-1FF withobservedminimumSP>=EF andsourceclearpreserves
+160-1FF;otherlower-stackgamealiases included. NMI-enableoff isoriginal
+callerprologuecondition,not ROMpatch or completeframescheduling proof.
+
+| Clause | Original PCs | Source-use/alias disposition |
+| --- | --- | --- |
+| I1 | 0x8fcf-0x8fe3 | RealInitializeMemory(6F) setsA0 at90CE andhasno laterA writer;returnedA0 suppliesdescending32SoundMemory stores7B0-7CF. Native realchildthenconstant0loop equalsrequiredreturnvalue,incomingA irrelevant. SourceY1F thenDEY/BPL endsFF;nativeindex31..0 writesin sameorder thenunusedlocal0. DemoTimer18 publishedafterclear,beforeactualLoadAreaPointer andrealInitializeArea fallthrough;clear4B doesnotclear7B0..7CF. Accepted facade resources presenceonly,noreadtitle data. |
+| I2 | 0x9061-0x9070 | SourceA1 writesFetchTimer andPlayerSize,thenA2 writesbothlife bytes;native sameorderedfields thenrealSecondaryGameSetup once. Fouraddresses754/757/75A/761 aredisjointsubsequent300..3FF clear. Actualprimaryfallthrough retained,not duplicatedatframe-rootcaller. Native noRAMshadowstate acrosschild. |
+| I3 | 0x9071-0x908a | SourceA0 writesDisableScreen thenY0 ascending300..3FF clear,bothloops256 stores. SourceA remains0 ->timer/intermediate/backloading writes;thenFF balance alignment03A0 afterpageclear. Native sameorder,range andactualvalues;03A0 aliasinsidebuffer intentional,theFF overwritemustfollowzero clear. No scratchzero-page replacement orlostalias viahostarray. |
+| I4 | 0x908b-0x9099 | Actualleftpage71A bit0 andmirror778 feedLSR/ROR/ROL;source outgoingmirror=(old&FE)|(page&1),all65536 pairs. Native foldedexpression exactlysourcebitpipeline;intermediateLSR value hasno outsideconsumer/callback/hardwarewrite andisinsideClearVRLoop node. SourceCPUcarry notconsumedafterGetAreaMusic dispatch;field778 mirroronly,not implicitPPUcontrol. Realmusicchild readsactualRAM andwritesqueueFB withinretained validselectors;disjoint778/300..3FF/shuffle table. |
+| I5 | 0x909a-0x90aa | SourceA38/48/58 writesshuffleamounts6E3/6E2/6E1 in descendingfieldorder aftermusicreturn. Native sameactualstores;sourceX0E nexttableloop. Immutabletablesboundbyexisting19byte original/native tableproof,not importednew data. No cache offield beforeactualchildreturn. |
+| I6 | 0x90ab-0x90b5 | SourceDefaultOffsets[X] then6E4+X storesdescending14..0,DEX/BPLexitXFF. Native same15 sourcebytes/actualwriteindices;unusedX finalregister outsideAPI. SpriteY3 setupfollows,no pathconsumesdeadX. Objectshuffle6E4..6F2 disjointtwo immutabletables andSpriteData. |
+| I7 | 0x90b6-0x90cb | SourceSprite0Data[Y] ->200+Y descending3..0;native same4values andwriteorder. RealDoNothing2 thenDoNothing1 publishes6C9FF;children do nottouchhit722 ormodeTask772. SourceINCbothactualbytefields afterchildren,nativeU8incrementswrap. Savedlocalindexnotconsumedafterloop;finalCPUY/flags outsideAPI. RootfixtureNMI-off iscallerhardwarecondition,not sourceROM patch. |
+
+65536 sourceLSR/ROR/ROL versusnativebitexpression assertions;4indexnegative
+checks onlyaccounting validation. Newmaterial986 recordsactualchildreturn
+A0 ->ClrSndLoop;unchanged data39/40 reused. No Cartesianregister edges.
+Native mirrorfold provesnode-internalfinalvalue andrequiredincomingbits;
+there isno interposedobserver/callee. It doesnotclaim matchingphysicalCPU
+buswrites or expose dead outgoingcarry/registers asnativehardwareABI.
+Threefocused tests eachwidth pass. Productsandsource unchanged;all3 P39
+hashesretained,DOScompile/link statusunchanged/runtimeunqualified.
+
+Historical/local1992/1992,controls4274/4274(raw4342,infeasible68);material986
+partial,totalunknown.1911 instruction/601RAM boundedreceipts,8780 other
+instructions/3172 otherRAM entries needretainedjoins ormissingclauseproof.
+These entriesare not newdefects. Allwhole-program lifetime clausespending,
+fourfinalpackages open,M2 NOT COMPLETE,no newwholeauditround.
+
+Participants:InitializeGame,ClrSndLoop,PrimaryGameSetup,SecondaryGameSetup,ClearVRLoop,ShufAmtLoop,ISpr0Loop.
+
+Current src/game/title_modes.c normalizedSHA256:c6ddc65709f17bed3f3397e8fbbb064031d33b047e61ff750bf36cfecd2de914.
+
+Current src/game/game.c normalizedSHA256:1f1663c3ab2e1351bef6a454d4860af6d0ea696543aa9cc320e29567285b87e9.

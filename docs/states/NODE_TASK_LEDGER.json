@@ -766873,7 +766873,14 @@
         "SetVRAMOffset",
         "GetAlternatePalette1",
         "SetVRAMAddr_B",
-        "NoAltPal"
+        "NoAltPal",
+        "InitializeGame",
+        "ClrSndLoop",
+        "PrimaryGameSetup",
+        "SecondaryGameSetup",
+        "ClearVRLoop",
+        "ShufAmtLoop",
+        "ISpr0Loop"
       ],
       "baseline": 1992,
       "incomingComplete": [

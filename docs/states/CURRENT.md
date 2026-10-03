@@ -4,16 +4,16 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P40 retained palette joins checkpoint,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P41 retained initialization joins checkpoint,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
-| Reference Baseline | Historical1992/1992;local scoped1992/1992 nodes,4274/4274 controls(raw4342,infeasible68);material985 partial,total unknown. |
+| Reference Baseline | Historical1992/1992;local scoped1992/1992 nodes,4274/4274 controls(raw4342,infeasible68);material986 partial,total unknown. |
 | Candidate Proposal | [S17 material completeness](../proposals/m2/t70-final-current-certification.md#s17-p1-admission---complete-material-use-census-and-path-reconciliation). |
 | Files And ABI Surface | S17 P39 area.c raw pipe/castle/UnderPart-return repair;P28 parser00/07 phases retained;bounded corrective game.c/area.c/player_control.c,title-bootstrap/area-output/player-control-chain tests and three assets EXEs;neutral use/path index and governance,evidence below ignored build. |
 | Applicable Rules | README Task Reading Set,[Execution](../rules/EXECUTION.md),[Architecture](../rules/ARCHITECTURE.md),[Coding](../rules/CODING.md),[Documentation](../rules/DOCUMENT.md),[Source policy](../etc/operations/policy/source-policy.md),current-equivalence proof program. |
 | Verification | P2:250 direct ROM-read sites reconciled in retained domains,22 new paths;12 actual checks each width pass,zero-test attempt rejected;no product/source change. P1 inventoried10691 instructions/4171 memory sites. P19 reconciles681 sound sites/174 direct RAM sites in scoped domains,153 new paths;remaining mutable/register/flag/stack/inter-frame uses still require joins. Byte-bound access inventory and feasible path/alias/lifetime proof;retained scoped receipts,focused original/native routes for uncovered clauses;accounting gates. |
-| Expected Markers | 490 labels:retained enemy/music/immutable audit participation plus title/column/parser corrective chains and9 parser-schedule/9 shared area leaf/14 row-column/17 object-render/pool/7 initialization/12 style-ledge-rope/5 castle-pipe audit participants;expected fresh0,max1992;no material denominator until complete feasible-use disposition. |
+| Expected Markers | 497 labels:retained enemy/music/immutable audit participation plus title/column/parser corrective chains and9 parser-schedule/9 shared area leaf/14 row-column/17 object-render/pool/7 initialization/12 style-ledge-rope/5 castle-pipe audit participants;expected fresh0,max1992;no material denominator until complete feasible-use disposition. |
 | Asset Needs | Existing ROM/ASM owner-local read-only nonredistributable;ignored build128MiB/120seconds per process;raw cleanup by coordinator. |
 | Reporting Requirements | Exact resolved/pending uses and path IDs;retain total/local node/control counts and unknown material total. |
 | Stop Conditions | Source mismatch stays S17;admit exact affected chain before product edit,repair/re-audit before successor. |
@@ -28,7 +28,7 @@
 - S15 closed its17-node/42-control startup scope;identified8 mismatches and1 input-contract gap resolved.
 - Local ledger1992/1992 accepted scoped nodes and4274/4274 feasible controls
   (raw4342,infeasible68);these are scoped dispositions,not whole-game certification.
-- Material985 partial;global denominator unknown. Startup package closed;
+- Material986 partial;global denominator unknown. Startup package closed;
   material/pixels/routes/snapshot packages remain;bindings closes in S16. A-N restart is superseded.
 - S16 P1 removed an uncalled synthetic terrain helper with one mismatching table byte;active original owners unchanged.
 - S16 P2 reconciles177 table locations/266 candidate categories and17 low bases;93 direct reads/134 calls are an explicit pending-domain inventory,not new node/edge credit.
@@ -70,7 +70,6 @@
 
 
 
-S17 P33:68 shared area leaf instructions/12 RAM sites joined to9 clauses;68896 originalreturning helpers eachwidth zero fullRAM/returnABI differences,all68PC observed,135424 scalar/fourindex rejectionchecks pass. Paths952-953 added;no source/products/freshnodes/controls. Scope420,fresh0;local1992/1992,controls4274/4274,material953 partial,totalunknown.1333 instruction/404 RAM receipts,3369 otherRAM clauses/fourfinalpackages open.
 
 S17 P34:14 row/column/castle parent labels,41 instructions/11 RAM sites joined to10 clauses;44412 real original roots eachwidth zero fullRAM differences,all41PC observed,1299 scalar/table checks andfour index negatives pass. Paths954-958 added;no source/products/freshnodes/controls. Scope434,fresh0;local1992/1992,controls4274/4274,material958 partial,totalunknown.1374 instruction/415RAM receipts,3358 otherRAM clauses/fourfinalpackages open.
 
@@ -86,3 +85,5 @@ S17 P38:17 castle/pipe labels,147 instructions/48 RAM in15 boundedclauses;95706 
 S17 P39:19 rawpipe/castle/return contracts restored;3516 baseline roots14727 bytesdiff eachwidth ->0;63024 expandedparents,9216 fullRAM/returnX and95706 previousparents eachwidth0diff. Threeproducts refreshed;10tests each/six600frames pass,DOS compile/linkonly. Path985 added;historical/local1992/1992,controls4274/4274,material985 partial,totalunknown.1793 instruction/551RAM boundedreceipts,3222 otherRAM joins/fourfinalpackages open,M2 NOT COMPLETE.
 
 S17 P40:65 paletteinstructions/28RAM joined8 retainedclauses;5segments identical398f38ef.36864 currentparents eachwidth+480protocols/1440records0diff,6branchpairs/all28tablebytes/29184order checks;2tests each,productsP39 unchanged. Scope490/fresh0;1858instruction/579RAM boundedreceipts,3194otherRAM joins;local1992/1992,controls4274/4274,material985 partial,totalunknown,fourfinalpackages open.
+
+S17 P41:53setupinstructions/22RAM joined7retainedclauses;fivebodies unchangedd247f6a3,5888currentroots eachwidth0 scopedRAM/APU/orderdiff,21entries/42controls/19tablebytes observed.3tests each/productsP39 unchanged.Path986 A0return added,scope497/fresh0;1911instruction/601RAM boundedreceipts,3172otherRAM joins. Local1992/1992,controls4274/4274,material986 partial,totalunknown,fourfinalpackages open.

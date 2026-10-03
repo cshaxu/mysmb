@@ -8,10 +8,16 @@ for remaining work/exit conditions. Historical1992/1992 means mapping coverage.
 Prior aggregate exact counts below retain their closure-time local-contract
 meaning;they are not full current-build certification. The attempted zero-based final-review restart is superseded;reuse retained
 scoped evidence and track only named unresolved/invalidated clauses.
-Material985 is a partial enumerated set;its global denominator is unknown.
+Material986 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
+
+[P41 retainedinitialization/setup source-use joins](../proposals/m2/t70-final-current-certification.md#s17-p41-checkpoint---retained-initialization-and-setup-source-use-joins).
+53instructions/22RAM,5888realroots eachwidthzero2032RAM/APU/orderdiff;five
+bodies unchanged,21entries/42controls/19tablebytes observed.Path986 A0return
+added;1911instruction/601RAM boundedreceipts,3172otherRAM joins pending.
+Material986 partial,totalunknown;all3 P39products unchanged.
 
 [P40 retainedpalette source-use joins](../proposals/m2/t70-final-current-certification.md#s17-p40-checkpoint---retained-palette-contracts-joined-to-source-uses).
 65instructions/28RAM,36864 currentparents+480persistentprotocols eachwidth
