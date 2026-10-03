@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P5 active;P4 column output repair checkpoint,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P6 active;P5 indirect inventory checkpoint,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
@@ -38,3 +38,5 @@
 S17 P3: three title-pointer contracts repaired;local1992/1992 restored,control4275/4275 unchanged.32 original/native full-RAM cases zero diff each,5 tests each,6 scoped600-frame routes pass;three products refreshed. Material649 partial,total unknown;S17 remains open.
 
 S17 P4: eleven column-chain contracts repaired;12288 final roots each width compare2048 RAM bytes with zero differences/no exclusions.5 focused checks each,final3 products pass;material660 partial,total unknown. Local1992/1992 restored,controls4275/4275 unchanged;S17 remains open.
+
+S17 P5:61 indirect sites grouped,5 accepted/current source identities match;338 indexed pointer aliases conditionally excluded under stated slot bounds,caller applicability pending.8 native checks each width and inventory negative checks pass;no original trace/new graph credit/product edit. Material660 partial,total unknown;S17 remains open.

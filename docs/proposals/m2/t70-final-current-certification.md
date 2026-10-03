@@ -3266,3 +3266,43 @@ Taken/fall counts by source predicate: 53248/53248, 24576/28672, 24576/28672, 98
 | --- | --- |
 | src/game/area.c | 5b011226a54e3d05651e8abdca943bd3f3cdc6b2d01150ce3c65fa461b0cc169 |
 | test/area_output_smoke.c | d4e6c86dd8ee1fa5079853e8792fc2047b056fe8b5506fa61da446c8b21b4f92 |
+
+## S17 P5 checkpoint - indirect-use and pointer-alias inventory
+
+All61 byte-bound indirect instruction sites are grouped without new graph
+credit: title1,metatile2,dispatch3,VRAM4,reset/block RAM12,area19,enemy14,
+music6. Title/metatile applicability uses the repaired P3/P4 roots. Remaining
+families have explicit pointer source,index-wrap,update and lifetime obligations;
+grouping does not discharge their caller/input-domain applicability.
+
+Five current shared C files match their accepted source snapshots after line
+ending normalization: audio(T69 S14 P2),enemy stream(T69 S11 P2),area data
+(T57 S4),world block buffer(T69 S8 P2),area block address(T57 S3).
+This establishes source identity for retained proof reuse,not fresh ROM proof
+or validity of every dependency/caller. Area and music header pointers remain
+distinct from scratch pointers used by dispatch,VRAM,reset and terrain.
+
+The source census also identifies338 indexed RAM write/RMW sites whose
+unrestricted byte index could overlap E7/E8/E9/EA/F5/F6. Under declared source
+slot bounds,all338 arithmetic overlaps are excluded:enemy0..5,fireball0..1,
+bubble0..2,misc0..8,block0..1,combined sprite0..24,and the two bounded scratch
+loops. These are conditional exclusions;caller-domain proof must accompany
+each reuse. They are not338 infeasible graph edges. Hardware addresses must
+be classified before RAM mirroring;the two APU-store false candidates are
+removed. An artificial fourth bubble would overlap E7,demonstrating why the
+domain condition cannot be omitted.
+
+Operational inventory checks reject missing/duplicate sites,claimed in-domain
+alias and fake material credit;two boundary checks cover bubble and hardware
+classification. Eight focused current native checks per width cover area
+header/parser,enemy consumer,block buffer,music header/death,joypad/VRAM and
+VRAM address binding. Their result is operational regression only;no new
+original-ROM trace or semantic promotion is claimed.
+
+Historical1992/1992;local scoped1992/1992 nodes,4275/4275 feasible controls
+(raw4342,infeasible67),material660 partial,total unknown. Expected/actual fresh
+node/control/material credit0/0. Product sources and the three P4 EXEs are
+unchanged;no refresh required. S17 remains open:indirect receipt applicability,
+mutable RAM/hardware/register/flag/stack and cross-frame consumed-value joins
+remain;material,pixels,routes and final snapshot are not certified. The
+deadline does not convert this inventory into a completed equivalence proof.

@@ -13,6 +13,13 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P5 indirect inventory](../proposals/m2/t70-final-current-certification.md#s17-p5-checkpoint---indirect-use-and-pointer-alias-inventory).
+61 indirect sites grouped;5 current shared source identities bound to accepted
+snapshots.338 possible indexed pointer aliases excluded only under declared
+slot bounds;caller applicability remains pending. Eight focused native checks
+each width and inventory negative checks pass;no new original trace or graph
+credit. Products unchanged;material660 partial,total unknown;S17 remains open.
+
 [P4 column output repair](../proposals/m2/t70-final-current-certification.md#s17-p4-checkpoint---complete-column-output-repair).
 Eleven-node chain re-audited after scratch/order correction;12288 final original
 roots each width,2048 RAM/no exclusions,zero differences. All11 labels and7
