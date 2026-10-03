@@ -5922,3 +5922,112 @@ pending;M2 NOT certified. This checkpoint does not close the full audit.
 
 Current area.c normalizedSHA256:827e23180ee8d409c3fcd3f12323179e62aa3151ab516bbd5b3c095925202e48.
 Current block_buffer.c normalizedSHA256:8663c142ea3951ca47de2709f127c50f270d4a7d4e136a6e2f61204f1f474f8d.
+
+## S17 P35 scope amendment - object rendering and pool handoffs
+
+Exact auditparticipants:`FindEmptyEnemySlot`,`EmptyChkLoop`,`ExitEmptyChk`,`BulletBillCannon`,`SetupCannon`,`StrCOffset`,`StaircaseObject`,`NextStair`,`Jumpspring`,`Hidden1UpBlock`,`QuestionBlock`,`BrickWithCoins`,`BrickWithItem`,`BWithL`,`DrawQBlk`,`GetAreaObjectID`,`ExitDecBlock`,`Hole_Empty`,`StrWOffset`,`NoWhirlP`.
+
+123 original instructions/39 directRAM sites,source9A69-9B7B with994A-9956 real pool child. Shared area.c cannon/staircase/jumpspring/hidden/question/brick/hole owners; existing P33 attributes/length/coordinates/render and P34 DrawRow dependency receipts retained. Complete actual child returns,saved metatile/row/length,shared cannon-whirlpool ring aliases and pool allocation output. 17 added participants,S17 scope451,fresh0/max1992.
+
+Controlled original returning parents and unchanged native C90 owners compare fullRAM with actual physical push exclusions only. Slot0-2=RAM08,AreaType0-3,14 valid question indices,brick selector0-8,ring cannon0-5/whirlpool0-4,stair control1-9 or actual initialized9,ordinary pool slots0-4/full fallback5,original34 pointer views. Stream2048 cases under128MiB/120seconds perprocess,raw cleanup below ignored build. No product edits unless a concrete diff is scoped, repaired and threeproducts rebuilt within S17. No global reset/new round.
+
+## S17 P35 checkpoint - cannon staircase spring block and hole handoffs reconciled
+
+20 admitted parent/pool labels,123 original instructions/39 directRAM sites
+assigned to17 manually reviewed clauses.17 newlyadded auditparticipants,
+S17 scope451/fresh0/max1992. No product source change,new node/control credit
+or implementationcustody transfer. All3 P28 product hashes unchanged.
+
+113988 actual original returning parents EACH current x86/x64 have zero
+completeRAM differences. All123 admitted original PCs directly observed.
+Original parents and actual attributes/length/coordinates/pool/render children
+execute unmodified. Native ignored copy removes only static linkage tokens
+from8 private entry declarations/definitions;all bodies identical. No mocks,
+ROM patches, sourcePC-injected native logic or between-call RAM edits.
+Only actual source physical pushbytes excluded;source savedtile/row/length
+consumers separately proved. Voidparent CPUregister/flag returns excluded
+from native API,not fabricated asnative outputs.
+
+| Fixture family | Actual original roots perwidth |
+| --- | --- |
+| cannon | 4896 |
+| staircase | 11016 |
+| jumpspring | 4896 |
+| blocks | 73440 |
+| question-extra-indices | 60 |
+| hole-all-oldlength | 15360 |
+| hole-borrow-wrap | 4320 |
+
+Cannon/stair/spring/blocks cover34 originalpointerviews/4 cursor boundaries
+includingFF wrap/3 objectslots. Cannon includesall6 ringpositions and2
+overlayclasses. Stair has3 oldlengthsign representatives/9 controlvalues;
+spring includesfirstfree0-4/full5 andflag1/FF wrap. Blocks cover4 area types,
+IDs0-8 andquestion/coinbrick/item/hiddenoff/hiddenon;extra directquestions
+coverindices9-13. Hole coversall256 oldlengthbytes/3 slots/4 types/5 ring
+positions,with4320 independentpage/columnborrow cases. Original Xslot equals
+native RAM08 ObjectOffset throughout. These controlled ABI domains are not
+everygame-reachable state;stair continuationoutsidecontrol1-9 stays outside
+this newreceipt,retainingexisting fallbackevidence ratherthan falseproof.
+
+The first probe's final expected-count assertion retained a draft99036;
+its saved comparison finished113988 zero-diff roots. Expected manifest count
+was corrected to113988 and the same complete manifest rerun successfully.
+No production discrepancy was hidden by this harness accounting correction.
+
+| Clause | Original instructions | Consumed-value/alias disposition |
+| --- | --- | --- |
+| P1 | 994a-9956 | FindEmptyEnemySlot startsX0,CLC before everyflagread,returns firstzero in slots0-4 withC0;full pool exitsX5 withC1 fromCPX. Native outputlocal slot and Boolean found map invertedcarry,caller jumpspring intentionally ignores found. All production output pointers are local bytes. Flags0F-13 read only,no RAM side effects. |
+| C1 | 9a69-9a82 | Real attributes publishes07 row and returnsY height lowF; source Xrow then unconditional top64,DEY/BMI; middle65 only if nonnegative,secondDEY/BMI then base66 realUnderPart. Native same u8 decrements/signbit,including height0/1. Direct top/middle writes ignore overlay priority intentionally; only base uses P33 priority. Staging06A1+row+2 disjoint07,original row retained for latercoordinates. |
+| C2 | 9a85-9a97 | SetupCannon reloadsactual046A ring,then real GetY fromactual07; Xring survives this A-only child. StoresY0477+ring,Page046B+ring,X0471+ring after A-only GetX. Native localslot survives both childreturns,actual07 not replacedby rendering currentrow. Rings0-5 arrays disjoint eachother,07,column0726/page0725 andoffset046A. |
+| C3 | 9a9a-9aa4 | Increment original ringX/CPX6/BCC publishesincrement when<6,elsezero. Native byteincrement/same threshold. Validcannonring0-5; RAMsame046A aswhirlpool but each admitted child uses its own original threshold. |
+| S1 | 9ab7-9abe | Real check_large_length carry1 only when oldlengthbit7; source BCC skipsinitial9otherwise store0734=9. Native returnBoolean foundinit matchescarry,local output is nonalias. Attribute07 andlength0730+slot cannotaliascontrol0734,so initialdecision stable. |
+| S2 | 9ac1-9ad0 | Actual DEC0734 precedesbothimmutabletables; source readrow thenheight andrender61. Native publishesdecrement andsameindex/tablepair. Initialized9 orcontinuationcontrol1-9 yieldsindex0-8. Table/locals unaffectedbyUnderPartstores. Adjacent-ROM fallbackforotherindices remainsoutside these local roots;not all256-control proof. |
+| J1 | 9ad3-9ae8 | Real attributes writes07;real poolchild changesXslot only,not07. GetX/GetY leaveXslot stable; write EnemyX87+slot,Page6E+slot,YCF+slot,FixedY58+slot. Native capturesrow early which is equivalent since children andcoordinate/arraywrites cannotalias07 for slot0-5. FixedY equals justwritten EnemyY; no callback/writer beforesecondstore. |
+| J2 | 9aea-9b00 | Source ID32/YHigh1/INCflag thenreload07 to draw67/68 unconditional. Native same arrays and u8 incrementincludingFF->00 full fallbackslot5. Capturedrow equals07 since EnemyID16+slot,YHighB6+slot,flag0F+slot disjoint07. Poolcarry deliberatelyignored,not an invented no-space skip. Row0-15 stagerow+1 bounded;no gameplay normalrow-only assertion. |
+| B1 | 9b01-9b0b | Hiddenflag075D zero returns withnoattrs/render;nonzero publishes0 thenactualBrickWithItem. Native same gate andbeforechildwrite. Scalarall256flagpredicate supportedby bytecomparison,operationalroots0/1 bothbranches. Fielddisjointattributes07/length/staging so childcannotrestoreflag. |
+| B2 | 9b0e-9b16 | Question obtainsoriginal GetID Y anddirectlyDrawQBlk;coinbrick initializes06BC0 thenfalls intoitem. Native GetID returnvalue suppliedindex;counterstorebeforechild. Neitherpath invents attribute decode before source requires it. |
+| B3 | 9b19-9b2b | Source real GetIDY stores07 temporaryobjectID,thenAreaType DEY/BEQ choosesadder0onlytype1,else5. ExplicitCLC ADC07 preventsoldcarryinfluence. Native store07 thensameadder+RAM07,selector0-8 givesindex0-13;type0-3 domain. ROMtable selection precedes attributechild which intentionally overwrites07 withrow. |
+| B4 | 9b2c-9b33 | Immutable tile selected usingcomputedY thenPHAsavesA,actualattributescall overwrites07 andA/Y,tailDrawRow usesoldtile/actualnewrow/height0. Native metatilelocal surviveschild,nopointer passed,thenP34 draw_row. Source scratch07 is intentionallynotobjectID afterward. No copy of HUD or product-specific branch involved. |
+| B5 | 9b36-9b3c | Original00 read,SEC SBC0 preservesAexactbyteandTAY returnsY. Native return RAM00 equalsbothrequiredconsumedvalues;flagsfromSEC/SBC unusedcallers as documented. Native helper noRAMwrites,source physicalreturnstack excluded only whenactualpush. |
+| H1 | 9b41-9b49 | Actual check_large_length computesrow07/decodedY,carryinit;source BCC gate andAreaType nonzero gate preventwhirlpoolregistration. Native shortcircuit same gates;still rendershole regardless. Slot0-2 length writesdisjointAreaType/offset arrays;returneddecodedlength local matchesY evenwhen oldcounter nonnegative. |
+| H2 | 9b4b-9b5c | Source whirlpool ring046A heldX acrossrealGetX. SEC SBC10 lowcoordinateborrow survivesSTA0471+ring andLDA0725,thenSBC0 pagewithsameborrow. Native x-16 andpage-(x<16) modulo256 matchesall256 column/pagepairs. Legalring0-4 disjointcoordinate/page/offset stores,nointerveningcarrychangeinsource. |
+| H3 | 9b5f-9b70 | DecodedYlength survivesGetX andallwhirlpoolstores;twoINY thenTYA/fourASLs produce low8(length+2)<<4. Native local lengthstable,16-bit promotionmax272 safe. ActualringXincrement/CPX5/BCC threshold publishes0orincrement. RAMarrayaliases cannonstorage exactly,not separated invented buffers. |
+| H4 | 9b73-9b7b | NoWhirlP selectsimmutableholemetatile byAreaType0-3,thenreplacesX8/Y15 andfallsintoactualRenderUnderPart. Native height15/startrow8 sameP33loopandpriority;0735 finalheight preserved. UnrelatedCPUflags/regs aftervoidparentreturn notnativeAPIoutputs. |
+
+80467 finite assertions cover36 actual tablebytes,65536 column/pageborrow
+pairs,4096 coordinate/decodedlength cases,8192 poolmask/flag choices,256
+flag/INCwrap cases,36 blockadders,11 ringsteps and2304 stairinit/control
+decisions. Scalars/cardinalities check manually reviewed equations,not
+automatic prose or whole-program proof. Shared cannon/whirlpool RAM046A,
+046B/0471/0477 aliases preserved;different6/5 wrap limits are original.
+Seven missing concrete local materialpaths959-965 were reconciled:
+
+959: GetLrgObjAttrib -> SetupCannon; RAM0007 cannon original row after base render. 9bc2 STA07 ->9a6c readrow/top/middle ->optional9a82 UnderPart ->9a88 GetYreadsactual07 at9bd3. Staging06A1+row+2/height0735 writes do notalias07;native setup_cannon obtainscoordinatefromactual07,not finalrenderrow.
+
+960: FindEmptyEnemySlot -> Jumpspring; X allocated or full-fallback slot across coordinate children. 994A-9956 selectsfirstzero0-4 orfull5 ->9ad9 GetX ->9adc EnemyXstore ->9ae3 GetY ->remainingEnemyarrays. Bothchildren onlychangeA/flags,notX;native local slot is nonalias and survives. Sourcecarry deliberatelyignored,slot5 INCflag preservesFFwrap.
+
+961: GetLrgObjAttrib -> Jumpspring; RAM0007 jumpspring row through pool allocation and object creation. 9bc2 STA07 ->9ad6 pool ->9ad9 GetX ->9ae3 GetY ->Enemyarraywrites ->9af4 LDX07. Allslot0-5 EnemyX/Page/Y/FixedY/ID/YHigh/flag arrays disjoint07;native early rowcapture equals actual laterreload. No callback/intervening07writer.
+
+962: StaircaseObject -> NextStair; RAM0734 initialized staircase control to current-step decrement. 9abe STA0734 onoriginal carryinit ->9ac1 DEC0734 ->9ac4 LDY0734 ->pairedtablereads. Native same actualstore/decrement/readorder;attribute07/length0730+slot disjoint0734. Continuationcontrol1-9 separatelyrooted,not everyinterframe predecessor inferred.
+
+963: BrickWithItem -> BWithL; RAM0007 temporary object ID until index arithmetic. 9b1c STY07 decoded00ID ->9b1e LDA0/typeDEY/BEQ/optionalLDA5 ->9b29 ADC07 afterCLC. No writer of07 ininterval;native actual07 store/reload andtype1adder0else5. Laterattributechild intentionally replaces07 withrow,not IDretentionpastchild.
+
+964: DrawQBlk -> DrawRow; A selected question-brick metatile saved across attribute child. 9b2c selectedimmutabletile ->9b2f PHA ->9b30 actualattributes ->9b33 tailDrawRow ->9a4c PLA ->RenderUnderPart. Native local metatile capturespriorselectionandcannotaliasattributes07;DrawRow reloadsnewrow andheight0. Original physicalpush exclusion not tilevalue exclusion.
+
+965: GetLrgObjAttrib -> Hole_Empty; Y decoded hole length through fixed-length and X coordinate calls. 9bc9 TAY ->9baf fixedlength ->9b41 return/checkgates ->9b4e GetX ->low/pageborrowstores ->9b5f INY/INY/TYA/ASLs. Fixedlength/GetX do notmodifyY;arrays046B/0471/0477 do notaliasnative local returnedlength. Source Ylength lowF agreesnative(length+2)<<4 modulo256.
+
+StrictC90 probes link bothwidths;P28 actual10 focused checks each/six600-frame
+integrations retained. Pureevidence P doesnot rebuildproductEXEs,DOS original
+OpenNT remainscompile/link only.2048-case streamed batches below128MiB/
+120seconds perprocess,rawrecords deleted afterbatch. Fournegative accounting
+checks and governance gates pass;no ROM/program data imported/tracked.
+
+Complete local1497/10691 instruction and454/3773 directRAM receipts;
+9194 other instruction/3319 directRAM clauses require retained receipt joins
+or missing-clause completion. Historical/local1992/1992,controls4274/4274
+(raw4342,infeasible68) unchanged. Material965 partial,totalunknown;
+S17/material/pixels/routes/snapshot remainopen,M2 NOT certified.
+
+Current area.c normalizedSHA256:827e23180ee8d409c3fcd3f12323179e62aa3151ab516bbd5b3c095925202e48.
+Current block_buffer.c normalizedSHA256:8663c142ea3951ca47de2709f127c50f270d4a7d4e136a6e2f61204f1f474f8d.
+Current blocks/bump.c normalizedSHA256:65675f35d76b34f8f6621b4614844540cdfa090ab60f4c2b64852f2b4b176df9.
