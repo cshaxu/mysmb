@@ -7471,3 +7471,70 @@ Current src/game/world/block_buffer.c normalizedSHA256:5bbbbc0fdf2431d1d913149ee
 Current src/game/enemy/stream.c normalizedSHA256:64420800e1e049dcc6f4dbbe58d942a9692b5210e3d2efeea298c8a682d05049.
 
 Current src/game/blocks/replacement.c normalizedSHA256:f16380414f2200b6883b2f8ca36597ab9d7f7e6eefb5d584dfcd244e5d86089b.
+
+## S17 P54 admission - area pointer producers and enemy stream table domain
+
+Existing residualID3F producer gap,94 pending instructions/26RAM,six labels:LoadAreaPointer,GetAreaType,FindAreaPointer,GetAreaDataAddrs,StoreFore,StoreStyle. Scope738,fresh0/max1992. Shared area/area_data.c owner:FindAreaPointer byteADC/TAY,LoadAreaPointer/GetAreaType fallthrough,GetAreaDataAddrs pointer stores andheader fields. Source pointer-domain closure from normal world tables androw0E targets;actual original roots9C22/9C03/9C13/9C09 compare native C. Raw selector sweeps qualify address algebra,not normal gameplay reachability. OwnerROM/ASM readonly,raw only ignoredbuild128MiB/120seconds per process. Existing338+24 caller/alias constraints not promoted from this pointer proof;no new round or product change.
+
+## S17 P54 checkpoint - area pointer producers and stream target closure
+
+Existing S17 pointer producer gap,six labels/94instructions/26RAM,scope738,
+fresh0/max1992. All are bounded source-use joins,not new node/control credit.
+Current area_data.c equals HEAD and retained header owner. Source clauses:
+
+| Clause | Original PCs | Source use disposition |
+| --- | --- | --- |
+| H1 | 9c03-9c08 | RealFindAreaPointer result writes750,then falls throughGetAreaType;native helper success return is ABI status,original A type is not its API return contract. No clamp of world/area values. |
+| H2 | 9c09-9c12 | AND60 thenASL/ROL chain yields type0..3 independent of initial carry;stores74E only. C mask/shift exact,actual returned A explicitly compared for all256 incoming A values. |
+| H3 | 9c13-9c21 | WorldAddrOffsets indexed by full WorldNumber byte,CLC/ADC AreaNumber,TAY truncates to byte before AreaAddrOffsets read. Native returns result through out pointer,explicit original A comparison for65536 world/area pairs;includes controlled residual indices,not gameplay reachability. |
+| H4 | 9c22-9c57 | Reload750,realtype74E,low5->74F;two independent base+low byte indices read immutable split enemyE9/EA and areaE7/E8 tables. Y rawheader0 afterpointer install. No active enemy cursor739 mutation and no platform-dependent cache. |
+| H5 | 9c58-9c71 | Firstheader pushes saveimmutablebyte;low3>=4 writes744 andforeground0,otherwise retains744 andforegroundlow3. Playerentrance(first>>3)&7->710. Native conditionalstores preserve previousfield values. |
+| H6 | 9c72-9c9b | Firstheader high2->715;secondheader low4->727,mid2->742,high2style selected. Cachedfirst/secondimmutable inputs cannot be modified by RAM stores,so stackvalues may become C locals without changing consumer order. |
+| H7 | 9c9c-9cb3 | Style3 writes743 andstyle0,otherwise preserves743 andstoresstyle;CLC lowE7+2 thenhighE8+carry updatesarea pointer only. All actual34sourceheaders/high-bit aliases,full byte seeds tested;enemy pointer unchanged after installation. |
+
+Original roots163 GetAreaDataAddrs:4096 seeds across34 original stream table
+slots and high-bit aliases. Roots164 LoadAreaPointer and165 FindAreaPointer:
+65536 each cover every byte WorldNumber/AreaNumber pair and original8-bit
+ADC/TAY truncation. These controlled residual inputs test address semantics,
+not legitimate gameplay reachability or following every returned pointer.
+Root166 GetAreaType:4096 seeds/all256 A values. Total139264 each width,
+zero2032RAM/24APU/ordered hardware write differences;physical1F0-1FF excluded,
+minimumSP>=EF. All94PC/two conditional branch pairs observed. Find output
+pointer/GetType return explicitly compared to original A;Load/GetData use
+success-status C ABI,whose return value is not original CPU A. Header field
+preservation and low-pointer carry compared through RAM. No ROM/child patch.
+
+Original world table has36 records across8 worlds. These map to28 initial
+enemy stream indices. Enumerate all50 row0E destination records,conservatively
+allow every world-match destination;all map inside34-entry enemy table.
+Closure reaches34 streams over41 distinct target links. These model links
+are not credited as new feasible original control/material edges. Warp's
+world-first area selection is a subset of the same36 world records. Future
+row0E AreaPointer takes effect at the next InitializeArea;it does not replace
+the live E9/EA pointer during current enemy parsing. P52 establishes cursor
+boundary preservation for each selected stream;P53 retains reset/alias clauses.
+
+There are118 controlled pointer byte values yielding out-of-table selectors.
+They witness why legal-world/area and no-alias prerequisites cannot be dropped;
+none is claimed a gameplay failure. This checkpoint closes pointer-table
+address and target-set algebra,not every WorldNumber/AreaNumber producer or
+intervening overwrite. CheckForEnemyGroup/control-01480 remains needs-evidence
+until338 retained plus24 additional caller-conditional index constraints and
+pointer lifetimes are bound to producer receipts. No further audit round.
+
+Three focused tests each width pass:area-data,enemy-stream-local-consumer,
+platform purity. Current checker compiles strict C90 against unchanged shared
+libraries. Four accounting mutations reject missing/duplicate/false-full/
+false-local receipt claims. Similar-class sweep includes raw ADC/TAY byte
+wrap,high-bit pointer aliases,conditional header stores,pointer carry,
+future vs live stream pointers and invalid selector witnesses. No source
+or product edits;three EXEs remain P46,DOS runtime unqualified. All temporary
+code/logs/research/raw outputs stay below ignored build;raw batches deleted.
+
+Historical mapping1992/1992;current local1991/1992 nodes,4269/4270 feasible
+controls(raw4342/infeasible72).3808/10691 instruction and1312/3773RAM bounded
+receipts;6883 instructions/2461RAM still lack complete local receipts.
+Material993partial,global totalunknown. All whole-program lifetime fields
+pending;four final packages remain open,M2 NOT COMPLETE.
+
+Current src/game/area/area_data.c normalizedSHA256:9f4d6fbb22af69b28977276ff999484956c3db3e859ee15cc6e915356b4b6176.

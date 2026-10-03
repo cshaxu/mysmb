@@ -1562,10 +1562,12 @@
       "currentCounterpart": "area_data.c:ENEMY_BASES -> mysmb_area_get_data_addresses",
       "semanticContract": "The same 8-bit sum indexes enemy pointer tables.",
       "semanticEvidence": [
-        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
       ],
       "operationalEvidence": [
-        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim."
       ],
       "cohort": "D",
       "cohortBasis": "producer inventory label",
@@ -1583,10 +1585,12 @@
       "currentCounterpart": "area_data.c:ENEMY_LOW/ENEMY_HIGH -> mysmb_area_get_data_addresses",
       "semanticContract": "The same selected pair is stored as EnemyDataLow/High.",
       "semanticEvidence": [
-        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
       ],
       "operationalEvidence": [
-        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim."
       ],
       "cohort": "C",
       "cohortBasis": "compound/raw producer assigned to its source-order consumer family",
@@ -1604,10 +1608,12 @@
       "currentCounterpart": "area_data.c:AREA_BASES -> mysmb_area_get_data_addresses",
       "semanticContract": "The same 8-bit sum indexes area pointer tables.",
       "semanticEvidence": [
-        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
       ],
       "operationalEvidence": [
-        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim."
       ],
       "cohort": "D",
       "cohortBasis": "producer inventory label",
@@ -1625,10 +1631,12 @@
       "currentCounterpart": "area_data.c:AREA_LOW/AREA_HIGH -> mysmb_area_get_data_addresses",
       "semanticContract": "The same selected pair is stored as AreaDataLow/High then advanced after header.",
       "semanticEvidence": [
-        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches."
+        "M2 T57 S5 static audit: SMB1 lines 4485-4545 compared with generated owner-local table bytes and shared area_data.c; every region, alias, 8-bit index/base addition and paired-pointer load matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
       ],
       "operationalEvidence": [
-        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical."
+        "M2 T57 S5 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination consume all 188 table bytes; all compared persistent work RAM matches and x86/x64 records are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim."
       ],
       "cohort": "C",
       "cohortBasis": "compound/raw producer assigned to its source-order consumer family",
@@ -14987,10 +14995,12 @@
       "currentCounterpart": "shared area header and enemy stream/loop owners",
       "semanticContract": "34 source table slots/high-bit aliases and retained enemy/loop source-record domains. Per-fetch reload;no whole-frame alias or corrupted pointer claim.",
       "semanticEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
       ],
       "operationalEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim."
       ],
       "cohort": "D",
       "cohortBasis": "source header producer inventory label",
@@ -15010,10 +15020,12 @@
       "currentCounterpart": "shared area header and enemy stream/loop owners",
       "semanticContract": "34 source table slots/high-bit aliases and retained enemy/loop source-record domains. Per-fetch reload;no whole-frame alias or corrupted pointer claim.",
       "semanticEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
       ],
       "operationalEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim."
       ],
       "cohort": "D",
       "cohortBasis": "source header producer inventory label",
@@ -15033,10 +15045,12 @@
       "currentCounterpart": "shared area header and enemy stream/loop owners",
       "semanticContract": "34 source table slots/high-bit aliases and retained enemy/loop source-record domains. Per-fetch reload;no whole-frame alias or corrupted pointer claim.",
       "semanticEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
       ],
       "operationalEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim."
       ],
       "cohort": "D",
       "cohortBasis": "source header producer inventory label",
@@ -15056,10 +15070,12 @@
       "currentCounterpart": "shared area header and enemy stream/loop owners",
       "semanticContract": "34 source table slots/high-bit aliases and retained enemy/loop source-record domains. Per-fetch reload;no whole-frame alias or corrupted pointer claim.",
       "semanticEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
       ],
       "operationalEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim."
       ],
       "cohort": "D",
       "cohortBasis": "source header producer inventory label",
@@ -15079,10 +15095,12 @@
       "currentCounterpart": "shared area header and enemy stream/loop owners",
       "semanticContract": "34 source table slots/high-bit aliases and retained enemy/loop source-record domains. Per-fetch reload;no whole-frame alias or corrupted pointer claim.",
       "semanticEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
       ],
       "operationalEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim."
       ],
       "cohort": "D",
       "cohortBasis": "source header producer inventory label",
@@ -15102,10 +15120,12 @@
       "currentCounterpart": "shared area header and enemy stream/loop owners",
       "semanticContract": "34 source table slots/high-bit aliases and retained enemy/loop source-record domains. Per-fetch reload;no whole-frame alias or corrupted pointer claim.",
       "semanticEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
       ],
       "operationalEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim."
       ],
       "cohort": "D",
       "cohortBasis": "source header producer inventory label",
@@ -15125,10 +15145,12 @@
       "currentCounterpart": "shared area header and enemy stream/loop owners",
       "semanticContract": "34 source table slots/high-bit aliases and retained enemy/loop source-record domains. Per-fetch reload;no whole-frame alias or corrupted pointer claim.",
       "semanticEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
       ],
       "operationalEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim."
       ],
       "cohort": "D",
       "cohortBasis": "source header producer inventory label",
@@ -15148,10 +15170,12 @@
       "currentCounterpart": "shared area header and enemy stream/loop owners",
       "semanticContract": "34 source table slots/high-bit aliases and retained enemy/loop source-record domains. Per-fetch reload;no whole-frame alias or corrupted pointer claim.",
       "semanticEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
       ],
       "operationalEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim."
       ],
       "cohort": "D",
       "cohortBasis": "source header producer inventory label",
@@ -15171,10 +15195,12 @@
       "currentCounterpart": "shared area header and enemy stream/loop owners",
       "semanticContract": "34 source table slots/high-bit aliases and retained enemy/loop source-record domains. Per-fetch reload;no whole-frame alias or corrupted pointer claim.",
       "semanticEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
       ],
       "operationalEvidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim."
       ],
       "cohort": "D",
       "cohortBasis": "source header producer inventory label",
@@ -32691,10 +32717,12 @@
       "currentOwner": "src/game/area/area_data.c",
       "currentCounterpart": "mysmb_area_load_area_pointer",
       "semanticEvidence": [
-        "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match."
+        "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
       ],
       "operationalEvidence": [
-        "M2 T57 S4 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination cover all 188 source table bytes, all header predicates and the ContinueGame/SetInitNTHigh caller paths; zero persistent work-RAM differences and byte-identical native records."
+        "M2 T57 S4 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination cover all 188 source table bytes, all header predicates and the ContinueGame/SetInitNTHigh caller paths; zero persistent work-RAM differences and byte-identical native records.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim."
       ],
       "semanticContract": "Preserves the ROM byte-width pointer/type/header control and state contract in source order.",
       "currentSourcePaths": [
@@ -32709,10 +32737,12 @@
       "currentOwner": "src/game/area/area_data.c",
       "currentCounterpart": "mysmb_area_get_area_type",
       "semanticEvidence": [
-        "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match."
+        "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
       ],
       "operationalEvidence": [
-        "M2 T57 S4 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination cover all 188 source table bytes, all header predicates and the ContinueGame/SetInitNTHigh caller paths; zero persistent work-RAM differences and byte-identical native records."
+        "M2 T57 S4 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination cover all 188 source table bytes, all header predicates and the ContinueGame/SetInitNTHigh caller paths; zero persistent work-RAM differences and byte-identical native records.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim."
       ],
       "semanticContract": "Preserves the ROM byte-width pointer/type/header control and state contract in source order.",
       "currentSourcePaths": [
@@ -32727,10 +32757,12 @@
       "currentOwner": "src/game/area/area_data.c",
       "currentCounterpart": "mysmb_area_find_area_pointer",
       "semanticEvidence": [
-        "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match."
+        "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
       ],
       "operationalEvidence": [
-        "M2 T57 S4 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination cover all 188 source table bytes, all header predicates and the ContinueGame/SetInitNTHigh caller paths; zero persistent work-RAM differences and byte-identical native records."
+        "M2 T57 S4 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination cover all 188 source table bytes, all header predicates and the ContinueGame/SetInitNTHigh caller paths; zero persistent work-RAM differences and byte-identical native records.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim."
       ],
       "semanticContract": "Preserves the ROM byte-width pointer/type/header control and state contract in source order.",
       "currentSourcePaths": [
@@ -32747,12 +32779,14 @@
       "semanticEvidence": [
         "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
       ],
       "operationalEvidence": [
         "M2 T57 S4 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination cover all 188 source table bytes, all header predicates and the ContinueGame/SetInitNTHigh caller paths; zero persistent work-RAM differences and byte-identical native records.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim."
       ],
       "semanticContract": "Preserves the ROM byte-width pointer/type/header control and state contract in source order.",
       "currentSourcePaths": [
@@ -32768,11 +32802,13 @@
       "currentCounterpart": "mysmb_area_parse_header foreground/background branch",
       "semanticEvidence": [
         "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
       ],
       "operationalEvidence": [
         "M2 T57 S4 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination cover all 188 source table bytes, all header predicates and the ContinueGame/SetInitNTHigh caller paths; zero persistent work-RAM differences and byte-identical native records.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim."
       ],
       "semanticContract": "Preserves the ROM byte-width pointer/type/header control and state contract in source order.",
       "currentSourcePaths": [
@@ -32787,10 +32823,12 @@
       "currentOwner": "src/game/area/area_data.c",
       "currentCounterpart": "mysmb_area_parse_header area-style/cloud-override branch",
       "semanticEvidence": [
-        "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match."
+        "M2 T57 S4 static audit: SMB1 lines 4376-4479 compared in source order with shared loop.c and area_data.c; table bytes, byte-width lookup/masking, header predicates, writes and return ordering match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
       ],
       "operationalEvidence": [
-        "M2 T57 S4 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination cover all 188 source table bytes, all header predicates and the ContinueGame/SetInitNTHigh caller paths; zero persistent work-RAM differences and byte-identical native records."
+        "M2 T57 S4 controlled original-ROM/current x86/x64 pointer matrix: 70 lookup/header routes plus no-swap termination cover all 188 source table bytes, all header predicates and the ContinueGame/SetInitNTHigh caller paths; zero persistent work-RAM differences and byte-identical native records.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim."
       ],
       "semanticContract": "Preserves the ROM byte-width pointer/type/header control and state contract in source order.",
       "currentSourcePaths": [
@@ -41539,13 +41577,15 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:original9c3c/9c41 header producer,14 enemy reads;current stream/loop/header identities match accepted receipts. Per-fetch pointer reload,immutable cached PRG bytes,loop cursor reset and future row0e selector audited.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending. Previous exact evidence does not cover declared residual ID3F. Original vector target4A07 is outside PRG;native fallback differs. Legal cursor/pointer/alias reachability must be proved or a reachable counterexample repaired before exact reinstatement. No gameplay failure established by this evidence gap.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P52 checkpoint - enemy stream cursor boundary invariant:34 streams/536 boundary states/1540 overapproximated cursor transitions preserve record alignment;no ID3F at ordinary record boundaries. Pointer table and caller/alias applicability remain explicit prerequisites;no exact promotion."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P52 checkpoint - enemy stream cursor boundary invariant:34 streams/536 boundary states/1540 overapproximated cursor transitions preserve record alignment;no ID3F at ordinary record boundaries. Pointer table and caller/alias applicability remain explicit prerequisites;no exact promotion.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff:1632 actual original/native header->enemy compositions each width,3264 returning roots;both stage RAM/zero-page zero diff,only accumulated observed physical pushes excluded. Retained65536 original roots observe all14 sites;4 current checks each width and3 inventory negatives pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P52 checkpoint - enemy stream cursor boundary invariant:four wrong grammar/start/terminator mutations rejected;28 deliberately misaligned ID3F witnesses show domain necessity. Validation-only metadata/current five owner identities checked;source/products unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P52 checkpoint - enemy stream cursor boundary invariant:four wrong grammar/start/terminator mutations rejected;28 deliberately misaligned ID3F witnesses show domain necessity. Validation-only metadata/current five owner identities checked;source/products unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim."
       ],
       "semanticContract": "Classifies IDs below $37, group range $37-$3e and residual IDs at/above $3f.",
       "currentSourcePaths": [
@@ -95900,12 +95940,14 @@
         "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending. Previous exact evidence does not cover declared residual ID3F. Original vector target4A07 is outside PRG;native fallback differs. Legal cursor/pointer/alias reachability must be proved or a reachable counterexample repaired before exact reinstatement. No gameplay failure established by this evidence gap.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P52 checkpoint - enemy stream cursor boundary invariant:34 streams/536 boundary states/1540 overapproximated cursor transitions preserve record alignment;no ID3F at ordinary record boundaries. Pointer table and caller/alias applicability remain explicit prerequisites;no exact promotion.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P52 checkpoint - enemy stream cursor boundary invariant:four wrong grammar/start/terminator mutations rejected;28 deliberately misaligned ID3F witnesses show domain necessity. Validation-only metadata/current five owner identities checked;source/products unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:4096 actual roots each width,2032RAM/24APU/ordered hardware writes0diff,minSP>=EF,all38PC/5branchpairs observed;actual81E2 X0-14 and81FC/8202/8208 X2/5/8 observed;8focused tests each pass;4 invalid-domain witnesses/accounting mutations accepted as negative checks."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:4096 actual roots each width,2032RAM/24APU/ordered hardware writes0diff,minSP>=EF,all38PC/5branchpairs observed;actual81E2 X0-14 and81FC/8202/8208 X2/5/8 observed;8focused tests each pass;4 invalid-domain witnesses/accounting mutations accepted as negative checks.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim."
       ],
       "semanticContract": "Preserves original fallthrough relation CheckForEnemyGroup -> BuzzyBeetleMutate with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
@@ -168087,16 +168129,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P50 checkpoint - block head contents chunks and replacement source-use joins",
         "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P52 checkpoint - enemy stream cursor boundary invariant:34 streams/536 boundary states/1540 overapproximated cursor transitions preserve record alignment;no ID3F at ordinary record boundaries. Pointer table and caller/alias applicability remain explicit prerequisites;no exact promotion.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 3714,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 6977,
+        "localInstructionReceiptSites": 3808,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 6883,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 1286,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2487,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 1312,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2461,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -168136,7 +168179,6 @@
           "src/game/player.c": 28,
           "src/game/enemy/platform_collision.c and src/game/enemy/platform_position.c": 28,
           "shared enemy initializer target core": 27,
-          "src/game/area/area_data.c": 26,
           "src/game/player_movement.c shared C90 movement owner": 26,
           "src/game/oam/vine_gfx.c": 26,
           "src/game/game.c": 25,

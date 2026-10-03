@@ -767142,7 +767142,11 @@
         "SpriteShuffler",
         "ShuffleLoop",
         "NextSprOffset",
-        "SetAmtOffset"
+        "SetAmtOffset",
+        "LoadAreaPointer",
+        "GetAreaType",
+        "FindAreaPointer",
+        "StoreStyle"
       ],
       "baseline": 1992,
       "incomingComplete": [
