@@ -55,7 +55,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T30 S8 | 8 | `Hidden1UpBlock`, `QuestionBlock`, `BrickWithCoins`, `BrickWithItem`, `BWithL`, `DrawQBlk`, `GetAreaObjectID`, `ExitDecBlock` |
 | M2 T30 S9 | 4 | `HoleMetatiles`, `Hole_Empty`, `StrWOffset`, `NoWhirlP` |
 | M2 T31 S1 | 1 | `GameCoreRoutine` |
-| M2 T31 S2 | 39 | `GameEngine`, `ProcELoop`, `NoChgMus`, `CycleTwo`, `ClrPlrPal`, `SaveAB`, `UpdScrollVar`, `RunParser`, `ExitEng`, `WarpZoneObject`, `ProcessWhirlpools`, `WhLoop`, `NextWh`, `ExitWh`, `WhirlpoolActivate`, `LeftWh`, `SetPWh`, `WhPull`, `CannonBitmasks`, `ProcessCannons`, `ThreeSChk`, `FireCannon`, `Chk_BB`, `Next3Slt`, `ExCannon`, `BulletBillXSpdData`, `BulletBillHandler`, `SetupBB`, `ChkDSte`, `BBFly`, `RunBBSubs`, `KillBB`, `DoEnemySideCheck`, `SdeCLoop`, `NextSdeC`, `ExESdeC`, `SubtEnemyYPos`, `EnemyJump`, `DoSide` |
+| M2 T31 S2 | 36 | `GameEngine`, `ProcELoop`, `NoChgMus`, `CycleTwo`, `ClrPlrPal`, `SaveAB`, `UpdScrollVar`, `RunParser`, `ExitEng`, `WarpZoneObject`, `ProcessWhirlpools`, `NextWh`, `ExitWh`, `LeftWh`, `SetPWh`, `CannonBitmasks`, `ProcessCannons`, `ThreeSChk`, `FireCannon`, `Chk_BB`, `Next3Slt`, `ExCannon`, `BulletBillXSpdData`, `BulletBillHandler`, `SetupBB`, `ChkDSte`, `BBFly`, `RunBBSubs`, `KillBB`, `DoEnemySideCheck`, `SdeCLoop`, `NextSdeC`, `ExESdeC`, `SubtEnemyYPos`, `EnemyJump`, `DoSide` |
 | M2 T31 S3 | 10 | `ScrollHandler`, `ChkNearMid`, `ScrollScreen`, `InitScrlAmt`, `ChkPOffscr`, `KeepOnscr`, `InitPlatScrl`, `X_SubtracterData`, `OffscrJoypadBitsData`, `GetScreenPosition` |
 | M2 T31 S4 | 9 | `PlayerEntrance`, `ChkBehPipe`, `IntroEntr`, `EntrMode2`, `VineEntr`, `OffVine`, `PlayerRdy`, `ExitEntr`, `AutoControlPlayer` |
 | M2 T32 S1 | 11 | `PlayerCtrlRoutine`, `DisJoyp`, `SaveJoyp`, `SizeChk`, `ChkMoveDir`, `SetMoveDir`, `PlayerSubs`, `HoleDie`, `ChkHoleX`, `ExitCtrl`, `CloudExit` |
@@ -201,7 +201,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T70 S13 | 19 | `SetupIntermediate`, `AreaPalette`, `GetAreaPalette`, `SetVRAMAddr_A`, `NextSubtask`, `BGColorCtrl_Addr`, `BackgroundColors`, `PlayerColors`, `GetBackgroundColor`, `NoBGColor`, `GetPlayerColors`, `ChkFiery`, `StartClrGet`, `ClrGetLoop`, `SetBGColor`, `SetVRAMOffset`, `GetAlternatePalette1`, `SetVRAMAddr_B`, `NoAltPal` |
 | M2 T70 S14 | 12 | `WriteTopStatusLine`, `WriteBottomStatusLine`, `DisplayTimeUp`, `NoTimeUp`, `DisplayIntermediate`, `PlayerInter`, `OutputInter`, `GameOverInter`, `NoInter`, `ResetSpritesAndScreenTimer`, `ResetScreenTimer`, `NoReset` |
 | M2 T70 S15 | 17 | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeNameTables`, `WriteNTAddr`, `InitNTLoop`, `InitATLoop`, `InitScroll`, `WritePPUReg1`, `InitializeMemory`, `InitPageLoop`, `InitByteLoop`, `InitByte`, `SkipByte` |
-| M2 T70 S17 | 96 | `OperModeExecutionTree`, `TitleScreenMode`, `VictoryModeSubroutines`, `DrawTitleScreen`, `OutputTScr`, `ChkHiByte`, `RenderAreaGraphics`, `DrawMTLoop`, `RightCheck`, `LLeft`, `NextMTRow`, `SetAttrib`, `ExitDrawM`, `RenderAttributeTables`, `SetATHigh`, `AttribLoop`, `SetVRAMCtrl`, `AreaParserTasks`, `RenderSceneryTerrain`, `ClrMTBuf`, `ThirdP`, `RendBack`, `SceLoop1`, `RendFore`, `SceLoop2`, `NoFore`, `RendTerr`, `TerMTile`, `StoreMT`, `TerrLoop`, `NoCloud2`, `TerrBChk`, `NextTBit`, `EndUChk`, `RendBBuf`, `ChkMTLow`, `StrBlock`, `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj`, `AlterAreaAttributes`, `Alter2`, `SetFore`, `AreaStyleObject`, `CastleObject`, `CRendLoop`, `ChkCFloor`, `NotTall`, `PlayerStop`, `ExitCastle`, `WaterPipe`, `IntroPipe`, `VPipeSectLoop`, `NoBlankP`, `ExitPipe`, `RenderSidewaysPipe`, `DrawSidePart`, `VerticalPipe`, `WarpPipe`, `DrawPipe`, `GetPipeHeight`, `RenderUnderPart`, `DrawThisRow`, `WaitOneRow`, `ExitUPartR`, `GameMode`, `GameRoutines`, `PlayerHole`, `HoleBottom`, `MoveSubs` |
+| M2 T70 S17 | 99 | `OperModeExecutionTree`, `TitleScreenMode`, `VictoryModeSubroutines`, `DrawTitleScreen`, `OutputTScr`, `ChkHiByte`, `RenderAreaGraphics`, `DrawMTLoop`, `RightCheck`, `LLeft`, `NextMTRow`, `SetAttrib`, `ExitDrawM`, `RenderAttributeTables`, `SetATHigh`, `AttribLoop`, `SetVRAMCtrl`, `AreaParserTasks`, `RenderSceneryTerrain`, `ClrMTBuf`, `ThirdP`, `RendBack`, `SceLoop1`, `RendFore`, `SceLoop2`, `NoFore`, `RendTerr`, `TerMTile`, `StoreMT`, `TerrLoop`, `NoCloud2`, `TerrBChk`, `NextTBit`, `EndUChk`, `RendBBuf`, `ChkMTLow`, `StrBlock`, `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj`, `AlterAreaAttributes`, `Alter2`, `SetFore`, `AreaStyleObject`, `CastleObject`, `CRendLoop`, `ChkCFloor`, `NotTall`, `PlayerStop`, `ExitCastle`, `WaterPipe`, `IntroPipe`, `VPipeSectLoop`, `NoBlankP`, `ExitPipe`, `RenderSidewaysPipe`, `DrawSidePart`, `VerticalPipe`, `WarpPipe`, `DrawPipe`, `GetPipeHeight`, `RenderUnderPart`, `DrawThisRow`, `WaitOneRow`, `ExitUPartR`, `GameMode`, `GameRoutines`, `PlayerHole`, `HoleBottom`, `MoveSubs`, `WhLoop`, `WhirlpoolActivate`, `WhPull` |
 | M2 T70 S4 | 6 | `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`, `NonMaskableInterrupt`, `ScreenOff`, `InitBuffer` |
 | M2 T70 S6 | 9 | `RotPRandomBit`, `Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipSprite0`, `SkipMainOper`, `MoveAllSpritesOffscreen`, `MoveSpritesOffscreen`, `SprInitLoop` |
 | M2 T70 S7 | 6 | `SpriteShuffler`, `ShuffleLoop`, `StrSprOffset`, `NextSprOffset`, `SetAmtOffset`, `SetMiscOffset` |
@@ -963,13 +963,13 @@ transfer existing ownership or allocate a numeric T.
 | 6497 | `ExGTimer` | M2 T35 S2 | existing closure backlog; Accepted transfer-145: timer gate, countdown and expiry chain. | M2 T21 S6; M2 T24 S1 |
 | 6501 | `WarpZoneObject` | M2 T31 S2 | existing closure backlog; Accepted original enemy-vector missing-target dependency, transfer-126 | M2 T21 S6; M2 T24 S1 |
 | 6519 | `ProcessWhirlpools` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T22 S1; M2 T24 S1 |
-| 6526 | `WhLoop` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T24 S1 |
+| 6526 | `WhLoop` | M2 T70 S17 | existing closure backlog; P45 accepted actual whirlpool scratch publication/order fidelity repair. | M2 T24 S1 |
 | 6546 | `NextWh` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T24 S1 |
 | 6548 | `ExitWh` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T24 S1 |
-| 6550 | `WhirlpoolActivate` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T22 S1; M2 T24 S1 |
+| 6550 | `WhirlpoolActivate` | M2 T70 S17 | existing closure backlog; P45 accepted actual whirlpool scratch publication/order fidelity repair. | M2 T22 S1; M2 T24 S1 |
 | 6577 | `LeftWh` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T24 S1 |
 | 6586 | `SetPWh` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T24 S1 |
-| 6587 | `WhPull` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T24 S1 |
+| 6587 | `WhPull` | M2 T70 S17 | existing closure backlog; P45 accepted actual whirlpool scratch publication/order fidelity repair. | M2 T24 S1 |
 | 6598 | `FlagpoleScoreMods` | M2 T22 S5 | existing closure backlog; T22 cannon/whirlpool/flagpole/vine responsibility includes continuations outside its physical slice | M2 T24 S1 |
 | 6601 | `FlagpoleScoreDigits` | M2 T22 S5 | existing closure backlog; T22 cannon/whirlpool/flagpole/vine responsibility includes continuations outside its physical slice | M2 T24 S1 |
 | 6604 | `FlagpoleRoutine` | M2 T22 S5 | existing closure backlog; T22 S1/P2 label-owner map or confirmed missing scheduler obligation | M2 T17 S6; M2 T22 S1; M2 T22 S4; M2 T24 S1 |
@@ -2405,7 +2405,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T30 S20 | 0 | 0 | owner-approved-source-order, cross-chain-closure-audit; [record](../../docs/history/M2-T30-area-object-rendering.md) |
 | M2 T31 | 11 | - | [record](../../docs/history/M2-T31-game-dispatcher.md) |
 | M2 T31 S1 | 2 | 1 | owner-approved-source-order, entry-chain-implementation; [record](../../docs/history/M2-T31-game-dispatcher.md) |
-| M2 T31 S2 | 9 | 39 | owner-approved-source-order, engine-chain-implementation; [record](../../docs/history/M2-T31-game-dispatcher.md) |
+| M2 T31 S2 | 9 | 36 | owner-approved-source-order, engine-chain-implementation; [record](../../docs/history/M2-T31-game-dispatcher.md) |
 | M2 T31 S3 | 0 | 10 | owner-approved-source-order, scroll-chain-implementation; [record](../../docs/history/M2-T31-game-dispatcher.md) |
 | M2 T31 S4 | 0 | 9 | owner-approved-source-order, entry-mode-chain-implementation; [record](../../docs/history/M2-T31-game-dispatcher.md) |
 | M2 T32 | 0 | - | [record](../../docs/history/M2-T32-player-control-modes.md) |
@@ -2824,7 +2824,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T70 S14 | 0 | 12 | hud-intermediate-timer-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S15 | 0 | 17 | final-reset-startup-source-and-graph-review; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S16 | 0 | 0 | executable-data-binding-manifest; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S17 | 0 | 96 | material-use-completeness-and-path-reconciliation, corrective-title-pointer-output-chain, corrective-column-output-chain, corrective-parser-output-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S17 | 0 | 99 | material-use-completeness-and-path-reconciliation, corrective-title-pointer-output-chain, corrective-column-output-chain, corrective-parser-output-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M2 T9 | 1 | - | [record](../../docs/etc/architecture/smb1-frame-output-ledger.md); [record](../../docs/history/M2-T9-frame-output-ledger-and-reference-recorder.md); S not recorded |
 | M2 Td | 0 | - | [record](../../docs/proposals/m2-rom-structural-recovery.md); [record](../../docs/states/QUEUE.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -3223,6 +3223,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-t70-s17-raw-pipe-2 | M2 T29 S9 | M2 T70 S17 | 4 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s17-raw-pipe-3 | M2 T30 S12 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s17-raw-pipe-4 | M2 T30 S9 | M2 T70 S17 | 4 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-whirlpool-1 | M2 T31 S2 | M2 T70 S17 | 3 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3726,4 +3727,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T70 S14 | 12 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S15 | 17 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S16 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S17 | 570 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S17 | 582 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t70-final-current-certification.md) |

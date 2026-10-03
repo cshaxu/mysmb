@@ -19,9 +19,11 @@ void mysmb_game_process_whirlpools(struct mysmb_game *game)
         length = game->ram[0x0477U + slot];
         sum = (mysmb_u16)left + length;
         right = (mysmb_u8)sum;
+        game->ram[2U] = right;
         page = game->ram[0x046bU + slot];
         if (page == 0U) continue;
         right_page = (mysmb_u8)(page + (sum > 0xffU ? 1U : 0U));
+        game->ram[1U] = right_page;
         player_x = game->ram[0x0086U];
         player_page = game->ram[0x006dU];
         difference = (mysmb_u8)(player_page - page -
@@ -32,9 +34,12 @@ void mysmb_game_process_whirlpools(struct mysmb_game *game)
         if ((difference & 0x80U) != 0U) continue;
 
         /* WhirlpoolActivate: the center includes the low-byte carry. */
-        sum = (mysmb_u16)left + (length >> 1U);
+        game->ram[0U] = (mysmb_u8)(length >> 1U);
+        sum = (mysmb_u16)left + game->ram[0U];
         center = (mysmb_u8)sum;
+        game->ram[1U] = center;
         center_page = (mysmb_u8)(page + (sum > 0xffU ? 1U : 0U));
+        game->ram[0U] = center_page;
         if ((game->ram[0x0009U] & 1U) != 0U) {
             difference = (mysmb_u8)(center_page - player_page -
                 (center < player_x ? 1U : 0U));
@@ -51,8 +56,10 @@ void mysmb_game_process_whirlpools(struct mysmb_game *game)
         }
         /* WhPull tail-jumps with A=X=0, force=$10 and maximum speed=1.
          * X is a register argument; ObjectOffset is not written here. */
+        game->ram[0U] = 0x10U;
         game->ram[0x047dU] = 1U;
-        mysmb_world_impose_gravity_spr_object(game, 0U, 0x10U, 1U);
+        game->ram[2U] = 1U;
+        mysmb_world_impose_gravity(game, 0U, 0U);
         return;
     }
 }

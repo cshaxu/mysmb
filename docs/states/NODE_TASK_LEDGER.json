@@ -29292,8 +29292,8 @@
     {
       "label": "WhLoop",
       "line": 6526,
-      "receiver": "M2 T31 S2",
-      "receivingBasis": "Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P45 accepted actual whirlpool scratch publication/order fidelity repair.",
       "futurePackage": null,
       "history": [
         {
@@ -29337,8 +29337,8 @@
     {
       "label": "WhirlpoolActivate",
       "line": 6550,
-      "receiver": "M2 T31 S2",
-      "receivingBasis": "Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P45 accepted actual whirlpool scratch publication/order fidelity repair.",
       "futurePackage": null,
       "history": [
         {
@@ -29390,8 +29390,8 @@
     {
       "label": "WhPull",
       "line": 6587,
-      "receiver": "M2 T31 S2",
-      "receivingBasis": "Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P45 accepted actual whirlpool scratch publication/order fidelity repair.",
       "futurePackage": null,
       "history": [
         {
@@ -69784,6 +69784,19 @@
         "DrawThisRow",
         "WaitOneRow",
         "ExitUPartR"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-whirlpool-1",
+      "type": "transfer",
+      "from": "M2 T31 S2",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "WhLoop",
+        "WhirlpoolActivate",
+        "WhPull"
       ],
       "acceptedBy": "Coordinator under owner same-S repair mandate.",
       "evidence": "docs/proposals/m2/t70-final-current-certification.md"
@@ -766953,7 +766966,19 @@
         "PosBubl",
         "MoveBubl",
         "Y_Bubl",
-        "ExitBubl"
+        "ExitBubl",
+        "ResGTCtrl",
+        "TimeUpOn",
+        "ExGTimer",
+        "WarpZoneObject",
+        "ProcessWhirlpools",
+        "WhLoop",
+        "NextWh",
+        "ExitWh",
+        "WhirlpoolActivate",
+        "LeftWh",
+        "SetPWh",
+        "WhPull"
       ],
       "baseline": 1992,
       "incomingComplete": [

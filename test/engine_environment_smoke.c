@@ -4,12 +4,14 @@
 
 static unsigned int gravity_calls;
 static unsigned int failed;
+static mysmb_u8 expected_center;
 
-void mysmb_world_impose_gravity_spr_object(struct mysmb_game *game,
-    mysmb_u8 offset, mysmb_u8 force, mysmb_u8 maximum)
+void mysmb_world_impose_gravity(struct mysmb_game *game,
+    mysmb_u8 offset, mysmb_u8 upward)
 {
     ++gravity_calls;
-    if (offset != 0U || force != 0x10U || maximum != 1U ||
+    if (offset != 0U || upward != 0U || game->ram[0U] != 0x10U ||
+        game->ram[2U] != 1U || game->ram[1U] != expected_center ||
         game->ram[0x47dU] != 1U || game->ram[8U] != 0xa5U) failed = 1U;
 }
 
@@ -49,6 +51,7 @@ int main(void)
                 expected=(position-1UL)&65535UL;
             else if (collision) expected=(position+1UL)&65535UL;
         }
+        expected_center=(mysmb_u8)center;
         gravity_calls=0U; failed=0U;
         mysmb_game_process_whirlpools(&game);
         if (failed || gravity_calls!=active || game.ram[8U]!=0xa5U ||
@@ -62,6 +65,7 @@ int main(void)
     game.ram[0x46bU]=1U; game.ram[0x471U]=0x70U; game.ram[0x477U]=0x20U;
     game.ram[0x6dU]=1U; game.ram[0x86U]=0x90U; game.ram[9U]=1U;
     game.ram[0x490U]=1U; game.ram[8U]=0xa5U;
+    expected_center=0xa0U;
     gravity_calls=0U; failed=0U;
     mysmb_game_process_whirlpools(&game);
     return failed || gravity_calls!=1U || game.ram[0x86U]!=0x91U;

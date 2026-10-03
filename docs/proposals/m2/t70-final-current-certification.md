@@ -6724,3 +6724,95 @@ Current src/game/fireball/fireball_core.c normalizedSHA256:dad809cfd312c5930cd4c
 Current src/game/fireball/bubble.c normalizedSHA256:bb95774c8ad52eda835e1c09cff3cfa883912d23241f1da5bdda20a6f9d3f536.
 
 Current src/game/world/bounding_box.c normalizedSHA256:709d3acfbae67935aff24865393f0ddb0bcf173a70a57601f7d6a59f4a6459c0.
+
+## S17 P45 admission - timer warp and whirlpool source-use repair
+
+Exact auditparticipants:RunGameTimer,ResGTCtrl,TimeUpOn,ExGTimer,WarpZoneObject,ProcessWhirlpools,WhLoop,NextWh,ExitWh,WhirlpoolActivate,LeftWh,SetPWh,WhPull.
+
+117instructions/59RAM,sharedtimer.c/enemycoreWarpZoneObject/whirlpool.c. KnownsourceWhLoop omitsRAM02right and01page;WhirlpoolActivate omits00half/01center/00centerpage;WhPull publishesflagbeforeforce unlikeoriginal00-force thenflag/02 thenrealgravity. Admit same-S boundedcanonicalrepair,nohostchanges;acceptcustody/reopenWhLoop,WhirlpoolActivate,WhPull beforeedit. Local1989/1992 temporarily,historical1992/1992,controls4274/4274/material986partialtotalunknown. Scope582,fresh0/max1992;no resettingglobalprogress. Originaltimer B74F,warpB7A4,whirlpoolB7B8 controlledsourceinputswithactualchildren/full2032RAM/APU/order,stack1F0-1FF excluded/minSP;confirmbaseline thenrepeatidenticalcasesafterrepair. CodechangebuildsallthreeEXEsusingoriginalOpenNT16andcurrentWin32/x64 tools. Stream1024roots/128MiB/120sprocess,cleanupignoredraw. Similar-classsweep admitted03scratchsites andactual gravity/sharedtimer/erasechildren;C90sameallplatforms.
+
+P45 test-boundary amendment:engine_environment_smoke actualWhPull childstub changesfromgravity_spr_object tooriginalImposeGravity API;assert00force/02maximum/01center/47Dflag/unchanged08 atchildentry. Sameadmittedwhirlpoolrepair;no mockedchildusedforROMproof.
+
+## S17 P45 checkpoint - timer warp and whirlpool fidelity repaired
+
+Sharedwhirlpool.c onlyproductionrepair,engine_environment_smoke nowobserves
+originalactualgravityAPI,scratch00/01/02,flag47Dandunchanged08 atentry.
+117instructions/59RAM,13existinglabels,scope582,fresh0/max1992. Three
+reopenedcontractsWhLoop/WhirlpoolActivate/WhPull restoredinthissameS.
+Timer/core/gravityfilesunchangedfrom7f8945d8,correctedwhirlpool separately
+hashed. Sevenexactfeasiblelocalpaths987-993 added,noCartesianinference.
+
+Baseline2048roots eachwidth3373RAMbytedifferencesin01/02 confirmsomitted
+scratch. Repairpublishesallsevenoriginalscratchstores:WhLoop02beforepage0
+skip,01validrightpage;Activate00half/01center/00centerpage;WhPull00force,
+47Dflag,02maximum thenactualImposeGravity tail. Originalcarry/borrow/sign,
+descendingfirst-hitpriority andcoordinates unchanged. No host/gamefork.
+Thisprovesconformancedefect;retainedsixshortvisible routes didnotexposea
+visiblefault,sodonotclaimtheseomissionscausedanunobservedgameplaybug.
+
+Sameoriginalbase196608roots(65536eachwhirlpool/timer/warp) currentbothwidths
+zero2032RAM/24APU/orderedwritediffs,physical1F0-1FF excluded,minSP>=EF.
+Whirlpoolfirst2048 exactlyrepeatfailedbaseline. Coverageinitiallymissed
+blockedrightpull,becauseframeparityandcollisionbitcorrelated;additional
+16384rootmatrixdecouplesthoseinputs. Union212992 actualroots eachwidth,
+all117PC/19conditional sitesbothoutcomes. Sourceorder/publication audit
+independentoffinalstatecomparison;nativeCPUregistersnotexportedAPI.
+Baselinehelper'sgenericzerodifferenceprint/summarywasnotvalidfornegative
+runs:explicit3373-per-widthnegativehistogramretained,boguszero-summary
+removedandbaselinehelpermarkedfailed. No acceptancecreditfromthatprint.
+
+| Clause | Original PCs | Source-use/lifetime/alias disposition |
+| --- | --- | --- |
+| T1 | 0xb74f-0xb767 | Mode770nonzero,subroutine0E>=8except0B,playerB5<2,timer787zero gatesallwrites. SourceCMPcarry/sign not neededpastpuregates;nativepredicate sameunsignedthresholds. Source-control fixturevariesbothoutcomes independentlyenoughobserved19branchpairs acrosschain. |
+| T2 | 0xb769-0xb772 | OR timerdigits7F8-7FA producesA0 iff000,thenTimeUpOn status7560 beforeactualForceInjury(A0). Realchild RAMwrites/queues preservedbefore759INC bytewrap. TimerAPIboolean outsideoriginalCPU ABI;no successorconsumesCPUX/Y afterinjury return. |
+| T3 | 0xb774-0xb797 | 100warningrequiresfirstdigit1andotherOR0;FC40 publishedbefore78718. Modifier139FF thenrealDigitsMathRoutineY23,thenA A4 PrintStatusBarNumbers tail. C samecanonicaldigit/timeroutputcallorder;no cacheddigitstate afterchild. Fixturecontains000/100/001/123/999/010/200andraw255/128. |
+| T4 | 0xb79a-0xb7a3 | TimeUpOn A0 store756 beforeforce_injury_entry(0),then759INC;sharedExGTimer no furtherwrites. Originalrealchildstandalonestatecompare includesdeath/sound/effect fields. ReturnCPUregistersnotdeclarednativecontract. |
+| W1 | 0xb7a4-0xb7b5 | ScrollLock723zero leaves;otherwisebitwiseCE&B5 (not guessedYthreshold) nonzero leaves. ZeroA stores7230 then6D6INC beforeactualEraseEnemyObject(Xslot). Nativeexplicit0sameANDresult,inputslot0-5matchesactualcaller,allbyteY/high combinationsfixture. Clearsownedactorfieldswithoutplatformlogic. |
+| H1 | 0xb7b8-0xb7c5 | Nonwater74E leavesflag47D untouched;water clears47D beforeTimerControl747test. Frozenwaterreturnsafterflagclear. Descending4..0sourceY correspondsCslot5predecrement;noObjectOffset08store inthisroutine. |
+| H2 | 0xb7c7-0xb7f4 | WhLoop extentleft471+slot pluslength477+slot ->RAM02 unconditionallyevenpage0;loadpage46B,skipzero preservespriorRAM01. Validpage ADCcarry ->RAM01 beforetwoSBCpage-sign tests. Noactive casecontinues4..0,lastskippedright02stillpublished. Wrappedpage subtractionbit7,notunsignedworldordering;byte carry/borrowmodels same. Sourceinputsnonalias00-02forvalid0-4slots,allvarsremainstableuntilactivebranch. |
+| H3 | 0xb7f5-0xb80d | LengthLSR ->RAM00half,CLC left+RAM00 ->RAM01center,ADCpage+lowcarry ->RAM00centerpage. Thosepublications restoredinoriginalorder;00half overwrittenonlyafterADCconsumesit,01right overwrittenbycenter afterextenttest. Frame9 bit0 zerojumpWhPull stillpreserves01center;Ccachedvaluesarefoldedequivalentbecause00/01/02/46B/471/477/6D/86 disjoint,nochild/mutationobserverinterposed. |
+| H4 | 0xb80f-0xb839 | Oddframe comparecenter01 minusplayer86 andcenterpage00 minus6D/borrow;negative pullleft1 withborrowtocurrentpage;nonnegative checks490bit0beforepullright1/pagecarry. SetPWh6Dstore exactbothpaths. Extendedfixturedecouplesframeparityfromcollisionbit,coveringblockedrightbranch;sourceLoop exitsafterfirsthighest-slotactivation. |
+| H5 | 0xb83b-0xb848 | WhPull force10 ->RAM00 before47D1 thenRAM021;LSR A1 yieldsA=X0 ->actualImposeGravity tail. Nativeexplicitscratchstores thencanonicalmysmb_world_impose_gravity(offset0,upward0),noObjectOffset08change,no forcehelperreordering. Realgravityreads00/02 andwrites07sign/position/speed/force. Focusedchildobserverchecks00/01/02/flag/08 atentry;ROMproofrealchild(no mock). |
+
+| Material ID | Producer to consumer | Actual live path |
+| --- | --- | --- |
+| 987 | WhLoop -> WhLoop | B7CE write02 ->B7E6 read02 beforeoverwrite;pagevalid/left-testnonnegative |
+| 988 | WhLoop -> WhLoop | B7D7 write01 ->B7EB read01 beforeoverwrite;pagevalid/left-testnonnegative |
+| 989 | WhirlpoolActivate -> WhirlpoolActivate | B7F9 write00 ->B7FF ADC00 ->B808 overwrites00centerpage |
+| 990 | WhirlpoolActivate -> WhirlpoolActivate | B801 write01 ->B80F read01 onoddframe;evenframebypassesreadretains01 |
+| 991 | WhirlpoolActivate -> WhirlpoolActivate | B808 write00 ->B814 read00 onoddframe ->B83D overwriteforce |
+| 992 | WhPull -> AlterYP | B83D write00 force10 ->B848 tailBFD7 ->BFF9 ADC00 |
+| 993 | WhPull -> AlterYP | B844 write02 max1 ->B848 tailBFD7 ->C004 CMP02/conditionalC00F LDA02 |
+
+Similar-classsweep:allsevenWhLoop/Activate/Pull originalscratchstores
+restored,alllocal00/01/02 reads mapped;validslot0-4 sourcearrays disjoint
+scratchandplayerfields,nochildbetweenextent/center computations. Actual
+gravityparameterstores/remnant01 andtimerstatus/injury/warp erasure
+consumersreviewed. Broaderunrelatedscratchownersretainseparatescopes.
+262144 supplementalarithmeticchecks/fournegativeindexchecks;fivefocused
+currenttests eachwidthpass(timer-root,timer-chain,gravity,engine-environment,
+platformpurity). Six600-frameintegrations zero scopedRAM/outputdifferences
+andbyteidenticalx86/x64;frameABI excludeszero-page/stackand0778/0779,
+notcompleteall-game/pixelproof. OriginalOpenNT16compile/linkpasseswith
+inheritedOLDNAMES.LIBwarning,noDOSruntimeclaim. All3productsrefreshed:
+
+- mysmb16.exe: 259499 bytes,SHA256 `4eb86aeef15bb717d79953dfe52f942eaac3d3054f7fa25c4e0b821ede307331`.
+
+- mysmb32.exe: 373707 bytes,SHA256 `7ccc942137bc3dab043f78bcb6b1f02de5729fe834e6fb7b92762c5e1006224d`.
+
+- mysmb64.exe: 379704 bytes,SHA256 `6fc75451541c09714128ef533f5c793869e63d2198ca929a373f975374dacba3`.
+
+Participants:RunGameTimer,ResGTCtrl,TimeUpOn,ExGTimer,WarpZoneObject,ProcessWhirlpools,WhLoop,NextWh,ExitWh,WhirlpoolActivate,LeftWh,SetPWh,WhPull.
+
+Current src/game/timer.c normalizedSHA256:35b99d093933589dcfdd8a6a414d68206e37dc929a07b7b10d005e070627a0b7.
+
+Current src/game/enemy/core.c normalizedSHA256:d568c921de10cba733e2124bdfc1575f3c28b67f7d446af348f73435ebf52a27.
+
+Current src/game/world/gravity.c normalizedSHA256:4213b8f264e8794ba761d6f791bea7a89cd69add3605d97d43b66de48a95b0a7.
+
+Current src/game/whirlpool.c normalizedSHA256:29db8b6f319db49706ad2612103e20428af6a8aa27727f4a22c06f9452635d26.
+
+Historical/local1992/1992,controls4274/4274(raw4342,infeasible68);material993
+partial,totalunknown.2562instruction/864RAM boundedreceipts,8129other
+instructions/2909otherRAMjoins remain,not2909discovereddefects. Allwhole-
+programlifetimeclauses/fourfinalpackages open,M2 NOT COMPLETE.

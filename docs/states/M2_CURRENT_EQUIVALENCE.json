@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 986,
+    "enumeratedCount": 993,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -22309,6 +22309,174 @@
         "src/game/boot.c",
         "src/game/title_modes.c"
       ]
+    },
+    {
+      "id": "material-00987",
+      "producer": "WhLoop",
+      "consumer": "WhLoop",
+      "storage": "RAM02 right extent",
+      "feasiblePath": "B7CE write02 ->B7E6 read02 beforeoverwrite;pagevalid/left-testnonnegative",
+      "status": "exact",
+      "currentCounterpart": "src/game/whirlpool.c sharedscratchpublication/stablelocalconsumption;src/game/world/gravity.c canonicalactualconsumer",
+      "semanticContract": "right lowbytepluslength actual02 publication/read;C right localcopyandRAM02store,same immutablevalidslot inputs,nointervening02write",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:117instructions/59RAM joined10sourceclauses;WhLoop02right/01rightpage,WhirlpoolActivate00half/01center/00centerpage,WhPull00force->47Dflag->02max restoredbeforeoriginalsharedgravityentry. Timerzero/status/injury,100warning/digit/statusoutput,warpbitwise/erase reviewed;no platform businesslogic.",
+        "right lowbytepluslength actual02 publication/read;C right localcopyandRAM02store,same immutablevalidslot inputs,nointervening02write"
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:2048baselinewhirlpoolroots eachwidth3373RAMbytediffs->0;196608base plus16384expanded roots eachwidth zero2032RAM/APU/order,1F0-1FFexcluded/minSP>=EF. All117PC/19branchpairs observed;5currentfocusedtests each/six600-frameintegrations0scopeddiff,3productsrefreshed,originalOpenNT16compile/linkonly.",
+        "Actualsourcewrites/reads observedinoriginalrootPCs;nointerveningwriteinselectedpath,validslots0-4disjointfields;currentRAMandrequiredchildinputs matched. Boundedlocalpath,not globalinter-frameproof."
+      ],
+      "cohort": "G",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c",
+        "src/game/world/gravity.c"
+      ]
+    },
+    {
+      "id": "material-00988",
+      "producer": "WhLoop",
+      "consumer": "WhLoop",
+      "storage": "RAM01 right page",
+      "feasiblePath": "B7D7 write01 ->B7EB read01 beforeoverwrite;pagevalid/left-testnonnegative",
+      "status": "exact",
+      "currentCounterpart": "src/game/whirlpool.c sharedscratchpublication/stablelocalconsumption;src/game/world/gravity.c canonicalactualconsumer",
+      "semanticContract": "right pageincludesADCcarry;page0skipdoesnotwrite01;C actualRAM01publicationandstablelocalcomparison",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:117instructions/59RAM joined10sourceclauses;WhLoop02right/01rightpage,WhirlpoolActivate00half/01center/00centerpage,WhPull00force->47Dflag->02max restoredbeforeoriginalsharedgravityentry. Timerzero/status/injury,100warning/digit/statusoutput,warpbitwise/erase reviewed;no platform businesslogic.",
+        "right pageincludesADCcarry;page0skipdoesnotwrite01;C actualRAM01publicationandstablelocalcomparison"
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:2048baselinewhirlpoolroots eachwidth3373RAMbytediffs->0;196608base plus16384expanded roots eachwidth zero2032RAM/APU/order,1F0-1FFexcluded/minSP>=EF. All117PC/19branchpairs observed;5currentfocusedtests each/six600-frameintegrations0scopeddiff,3productsrefreshed,originalOpenNT16compile/linkonly.",
+        "Actualsourcewrites/reads observedinoriginalrootPCs;nointerveningwriteinselectedpath,validslots0-4disjointfields;currentRAMandrequiredchildinputs matched. Boundedlocalpath,not globalinter-frameproof."
+      ],
+      "cohort": "G",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c",
+        "src/game/world/gravity.c"
+      ]
+    },
+    {
+      "id": "material-00989",
+      "producer": "WhirlpoolActivate",
+      "consumer": "WhirlpoolActivate",
+      "storage": "RAM00 half length",
+      "feasiblePath": "B7F9 write00 ->B7FF ADC00 ->B808 overwrites00centerpage",
+      "status": "exact",
+      "currentCounterpart": "src/game/whirlpool.c sharedscratchpublication/stablelocalconsumption;src/game/world/gravity.c canonicalactualconsumer",
+      "semanticContract": "half-lengthconsumedbycenterADC beforeoverwrite,validslotfieldsdisjoint00;nativeusesactualRAM00",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:117instructions/59RAM joined10sourceclauses;WhLoop02right/01rightpage,WhirlpoolActivate00half/01center/00centerpage,WhPull00force->47Dflag->02max restoredbeforeoriginalsharedgravityentry. Timerzero/status/injury,100warning/digit/statusoutput,warpbitwise/erase reviewed;no platform businesslogic.",
+        "half-lengthconsumedbycenterADC beforeoverwrite,validslotfieldsdisjoint00;nativeusesactualRAM00"
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:2048baselinewhirlpoolroots eachwidth3373RAMbytediffs->0;196608base plus16384expanded roots eachwidth zero2032RAM/APU/order,1F0-1FFexcluded/minSP>=EF. All117PC/19branchpairs observed;5currentfocusedtests each/six600-frameintegrations0scopeddiff,3productsrefreshed,originalOpenNT16compile/linkonly.",
+        "Actualsourcewrites/reads observedinoriginalrootPCs;nointerveningwriteinselectedpath,validslots0-4disjointfields;currentRAMandrequiredchildinputs matched. Boundedlocalpath,not globalinter-frameproof."
+      ],
+      "cohort": "G",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c",
+        "src/game/world/gravity.c"
+      ]
+    },
+    {
+      "id": "material-00990",
+      "producer": "WhirlpoolActivate",
+      "consumer": "WhirlpoolActivate",
+      "storage": "RAM01 center low",
+      "feasiblePath": "B801 write01 ->B80F read01 onoddframe;evenframebypassesreadretains01",
+      "status": "exact",
+      "currentCounterpart": "src/game/whirlpool.c sharedscratchpublication/stablelocalconsumption;src/game/world/gravity.c canonicalactualconsumer",
+      "semanticContract": "centerlowpublication beforeframegate;centerpageupdates00not01;native01storeandstablelocalcenter consumeequivalent",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:117instructions/59RAM joined10sourceclauses;WhLoop02right/01rightpage,WhirlpoolActivate00half/01center/00centerpage,WhPull00force->47Dflag->02max restoredbeforeoriginalsharedgravityentry. Timerzero/status/injury,100warning/digit/statusoutput,warpbitwise/erase reviewed;no platform businesslogic.",
+        "centerlowpublication beforeframegate;centerpageupdates00not01;native01storeandstablelocalcenter consumeequivalent"
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:2048baselinewhirlpoolroots eachwidth3373RAMbytediffs->0;196608base plus16384expanded roots eachwidth zero2032RAM/APU/order,1F0-1FFexcluded/minSP>=EF. All117PC/19branchpairs observed;5currentfocusedtests each/six600-frameintegrations0scopeddiff,3productsrefreshed,originalOpenNT16compile/linkonly.",
+        "Actualsourcewrites/reads observedinoriginalrootPCs;nointerveningwriteinselectedpath,validslots0-4disjointfields;currentRAMandrequiredchildinputs matched. Boundedlocalpath,not globalinter-frameproof."
+      ],
+      "cohort": "G",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c",
+        "src/game/world/gravity.c"
+      ]
+    },
+    {
+      "id": "material-00991",
+      "producer": "WhirlpoolActivate",
+      "consumer": "WhirlpoolActivate",
+      "storage": "RAM00 center page",
+      "feasiblePath": "B808 write00 ->B814 read00 onoddframe ->B83D overwriteforce",
+      "status": "exact",
+      "currentCounterpart": "src/game/whirlpool.c sharedscratchpublication/stablelocalconsumption;src/game/world/gravity.c canonicalactualconsumer",
+      "semanticContract": "centerpagecarry beforeborrowcomparison;00centerpage remainsliveuntilWhPullforce10,evenframebypassesconsumer",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:117instructions/59RAM joined10sourceclauses;WhLoop02right/01rightpage,WhirlpoolActivate00half/01center/00centerpage,WhPull00force->47Dflag->02max restoredbeforeoriginalsharedgravityentry. Timerzero/status/injury,100warning/digit/statusoutput,warpbitwise/erase reviewed;no platform businesslogic.",
+        "centerpagecarry beforeborrowcomparison;00centerpage remainsliveuntilWhPullforce10,evenframebypassesconsumer"
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:2048baselinewhirlpoolroots eachwidth3373RAMbytediffs->0;196608base plus16384expanded roots eachwidth zero2032RAM/APU/order,1F0-1FFexcluded/minSP>=EF. All117PC/19branchpairs observed;5currentfocusedtests each/six600-frameintegrations0scopeddiff,3productsrefreshed,originalOpenNT16compile/linkonly.",
+        "Actualsourcewrites/reads observedinoriginalrootPCs;nointerveningwriteinselectedpath,validslots0-4disjointfields;currentRAMandrequiredchildinputs matched. Boundedlocalpath,not globalinter-frameproof."
+      ],
+      "cohort": "G",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c",
+        "src/game/world/gravity.c"
+      ]
+    },
+    {
+      "id": "material-00992",
+      "producer": "WhPull",
+      "consumer": "AlterYP",
+      "storage": "RAM00 downward force",
+      "feasiblePath": "B83D write00 force10 ->B848 tailBFD7 ->BFF9 ADC00",
+      "status": "exact",
+      "currentCounterpart": "src/game/whirlpool.c sharedscratchpublication/stablelocalconsumption;src/game/world/gravity.c canonicalactualconsumer",
+      "semanticContract": "actualforce10publication precedesflag47D andmax02,realgravitydownwardforceconsumer;noObjectOffsetrewrite",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:117instructions/59RAM joined10sourceclauses;WhLoop02right/01rightpage,WhirlpoolActivate00half/01center/00centerpage,WhPull00force->47Dflag->02max restoredbeforeoriginalsharedgravityentry. Timerzero/status/injury,100warning/digit/statusoutput,warpbitwise/erase reviewed;no platform businesslogic.",
+        "actualforce10publication precedesflag47D andmax02,realgravitydownwardforceconsumer;noObjectOffsetrewrite"
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:2048baselinewhirlpoolroots eachwidth3373RAMbytediffs->0;196608base plus16384expanded roots eachwidth zero2032RAM/APU/order,1F0-1FFexcluded/minSP>=EF. All117PC/19branchpairs observed;5currentfocusedtests each/six600-frameintegrations0scopeddiff,3productsrefreshed,originalOpenNT16compile/linkonly.",
+        "Actualsourcewrites/reads observedinoriginalrootPCs;nointerveningwriteinselectedpath,validslots0-4disjointfields;currentRAMandrequiredchildinputs matched. Boundedlocalpath,not globalinter-frameproof."
+      ],
+      "cohort": "G",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c",
+        "src/game/world/gravity.c"
+      ]
+    },
+    {
+      "id": "material-00993",
+      "producer": "WhPull",
+      "consumer": "AlterYP",
+      "storage": "RAM02 maximum speed",
+      "feasiblePath": "B844 write02 max1 ->B848 tailBFD7 ->C004 CMP02/conditionalC00F LDA02",
+      "status": "exact",
+      "currentCounterpart": "src/game/whirlpool.c sharedscratchpublication/stablelocalconsumption;src/game/world/gravity.c canonicalactualconsumer",
+      "semanticContract": "actualmax1publication afterflagbeforetail;realgravitywrappedCMP/clamp insharedowner",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:117instructions/59RAM joined10sourceclauses;WhLoop02right/01rightpage,WhirlpoolActivate00half/01center/00centerpage,WhPull00force->47Dflag->02max restoredbeforeoriginalsharedgravityentry. Timerzero/status/injury,100warning/digit/statusoutput,warpbitwise/erase reviewed;no platform businesslogic.",
+        "actualmax1publication afterflagbeforetail;realgravitywrappedCMP/clamp insharedowner"
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:2048baselinewhirlpoolroots eachwidth3373RAMbytediffs->0;196608base plus16384expanded roots eachwidth zero2032RAM/APU/order,1F0-1FFexcluded/minSP>=EF. All117PC/19branchpairs observed;5currentfocusedtests each/six600-frameintegrations0scopeddiff,3productsrefreshed,originalOpenNT16compile/linkonly.",
+        "Actualsourcewrites/reads observedinoriginalrootPCs;nointerveningwriteinselectedpath,validslots0-4disjointfields;currentRAMandrequiredchildinputs matched. Boundedlocalpath,not globalinter-frameproof."
+      ],
+      "cohort": "G",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/whirlpool.c",
+        "src/game/world/gravity.c"
+      ]
     }
   ],
   "cohorts": [
@@ -37213,12 +37381,14 @@
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:117instructions/59RAM joined10sourceclauses;WhLoop02right/01rightpage,WhirlpoolActivate00half/01center/00centerpage,WhPull00force->47Dflag->02max restoredbeforeoriginalsharedgravityentry. Timerzero/status/injury,100warning/digit/statusoutput,warpbitwise/erase reviewed;no platform businesslogic."
       ],
       "operationalEvidence": [
         "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P21 checkpoint - targeted queue producer boundaries:actual write PC observed within14336 controlled original parent-to-SoundEngine roots each width;full RAM pre/post/APU/ordered commands zero diff,physical pushes only. Declared facing1/2 and X=ObjectOffset for fireball;other callers/input domains not inferred.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:2048baselinewhirlpoolroots eachwidth3373RAMbytediffs->0;196608base plus16384expanded roots eachwidth zero2032RAM/APU/order,1F0-1FFexcluded/minSP>=EF. All117PC/19branchpairs observed;5currentfocusedtests each/six600-frameintegrations0scopeddiff,3productsrefreshed,originalOpenNT16compile/linkonly."
       ],
       "semanticContract": "Preserves title/engine/death/Y/timer gates, 100 music gate, BCD decrement, status update and zero-time death order.",
       "currentSourcePaths": [
@@ -37234,10 +37404,12 @@
       "currentCounterpart": "src/game/timer.c timer chain or src/game/enemy/core.c WarpZoneObject path",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:117instructions/59RAM joined10sourceclauses;WhLoop02right/01rightpage,WhirlpoolActivate00half/01center/00centerpage,WhPull00force->47Dflag->02max restoredbeforeoriginalsharedgravityentry. Timerzero/status/injury,100warning/digit/statusoutput,warpbitwise/erase reviewed;no platform businesslogic."
       ],
       "operationalEvidence": [
-        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:2048baselinewhirlpoolroots eachwidth3373RAMbytediffs->0;196608base plus16384expanded roots eachwidth zero2032RAM/APU/order,1F0-1FFexcluded/minSP>=EF. All117PC/19branchpairs observed;5currentfocusedtests each/six600-frameintegrations0scopeddiff,3productsrefreshed,originalOpenNT16compile/linkonly."
       ],
       "semanticContract": "Reloads control timer, writes final-digit modifier, performs BCD math then queues timer status.",
       "currentSourcePaths": [
@@ -37253,10 +37425,12 @@
       "currentCounterpart": "src/game/timer.c timer chain or src/game/enemy/core.c WarpZoneObject path",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:117instructions/59RAM joined10sourceclauses;WhLoop02right/01rightpage,WhirlpoolActivate00half/01center/00centerpage,WhPull00force->47Dflag->02max restoredbeforeoriginalsharedgravityentry. Timerzero/status/injury,100warning/digit/statusoutput,warpbitwise/erase reviewed;no platform businesslogic."
       ],
       "operationalEvidence": [
-        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:2048baselinewhirlpoolroots eachwidth3373RAMbytediffs->0;196608base plus16384expanded roots eachwidth zero2032RAM/APU/order,1F0-1FFexcluded/minSP>=EF. All117PC/19branchpairs observed;5currentfocusedtests each/six600-frameintegrations0scopeddiff,3productsrefreshed,originalOpenNT16compile/linkonly."
       ],
       "semanticContract": "Uses zero accumulator to reset PlayerStatus, forces injury, then increments expiration flag.",
       "currentSourcePaths": [
@@ -37272,10 +37446,12 @@
       "currentCounterpart": "src/game/timer.c timer chain or src/game/enemy/core.c WarpZoneObject path",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:117instructions/59RAM joined10sourceclauses;WhLoop02right/01rightpage,WhirlpoolActivate00half/01center/00centerpage,WhPull00force->47Dflag->02max restoredbeforeoriginalsharedgravityentry. Timerzero/status/injury,100warning/digit/statusoutput,warpbitwise/erase reviewed;no platform businesslogic."
       ],
       "operationalEvidence": [
-        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:2048baselinewhirlpoolroots eachwidth3373RAMbytediffs->0;196608base plus16384expanded roots eachwidth zero2032RAM/APU/order,1F0-1FFexcluded/minSP>=EF. All117PC/19branchpairs observed;5currentfocusedtests each/six600-frameintegrations0scopeddiff,3productsrefreshed,originalOpenNT16compile/linkonly."
       ],
       "semanticContract": "Returns without timer mutation on every source gate.",
       "currentSourcePaths": [
@@ -37291,10 +37467,12 @@
       "currentCounterpart": "src/game/timer.c timer chain or src/game/enemy/core.c WarpZoneObject path",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match."
+        "M2 T60 S4 static SMB1 $B74F-$B7B2 comparison plus controlled timer and WarpZoneObject ordinary-NMI ROM/current x86/x64 routes; branch, table/read-write, child-boundary and output contracts match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:117instructions/59RAM joined10sourceclauses;WhLoop02right/01rightpage,WhirlpoolActivate00half/01center/00centerpage,WhPull00force->47Dflag->02max restoredbeforeoriginalsharedgravityentry. Timerzero/status/injury,100warning/digit/statusoutput,warpbitwise/erase reviewed;no platform businesslogic."
       ],
       "operationalEvidence": [
-        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed."
+        "M2 T60 S4: timer route passed 32 caller boundaries and 32 actual shared-C runs across all 16 cases; warp route passed 20 x86/x64 frame matches across ten cases; strict C90 builds, OpenNT DOS16 shared link and platform-purity passed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:2048baselinewhirlpoolroots eachwidth3373RAMbytediffs->0;196608base plus16384expanded roots eachwidth zero2032RAM/APU/order,1F0-1FFexcluded/minSP>=EF. All117PC/19branchpairs observed;5currentfocusedtests each/six600-frameintegrations0scopeddiff,3productsrefreshed,originalOpenNT16compile/linkonly."
       ],
       "semanticContract": "Preserves ScrollLock and bitwise player Y/high gate before incrementing WarpZoneControl and erasing the source object.",
       "currentSourcePaths": [
@@ -37310,10 +37488,12 @@
       "currentCounterpart": "src/game/whirlpool.c: ProcessWhirlpools through gravity tail",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:117instructions/59RAM joined10sourceclauses;WhLoop02right/01rightpage,WhirlpoolActivate00half/01center/00centerpage,WhPull00force->47Dflag->02max restoredbeforeoriginalsharedgravityentry. Timerzero/status/injury,100warning/digit/statusoutput,warpbitwise/erase reviewed;no platform businesslogic."
       ],
       "operationalEvidence": [
-        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:2048baselinewhirlpoolroots eachwidth3373RAMbytediffs->0;196608base plus16384expanded roots eachwidth zero2032RAM/APU/order,1F0-1FFexcluded/minSP>=EF. All117PC/19branchpairs observed;5currentfocusedtests each/six600-frameintegrations0scopeddiff,3productsrefreshed,originalOpenNT16compile/linkonly."
       ],
       "semanticContract": "Scans five data slots descending and compares page/position using source SBC sign semantics.",
       "currentSourcePaths": [
@@ -37329,12 +37509,15 @@
       "currentCounterpart": "src/game/whirlpool.c: ProcessWhirlpools through gravity tail",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 admission - actualoriginal00/01/02 scratchpublication andgravitytailorder missing insharedwhirlpool owner;reopened beforerepair.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:117instructions/59RAM joined10sourceclauses;WhLoop02right/01rightpage,WhirlpoolActivate00half/01center/00centerpage,WhPull00force->47Dflag->02max restoredbeforeoriginalsharedgravityentry. Timerzero/status/injury,100warning/digit/statusoutput,warpbitwise/erase reviewed;no platform businesslogic."
       ],
       "operationalEvidence": [
-        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:2048baselinewhirlpoolroots eachwidth3373RAMbytediffs->0;196608base plus16384expanded roots eachwidth zero2032RAM/APU/order,1F0-1FFexcluded/minSP>=EF. All117PC/19branchpairs observed;5currentfocusedtests each/six600-frameintegrations0scopeddiff,3productsrefreshed,originalOpenNT16compile/linkonly."
       ],
-      "semanticContract": "Builds right extent/page with low-byte carry and selects only an in-range whirlpool.",
+      "semanticContract": "Builds right extent/page with low-byte carry and selects only an in-range whirlpool. P45 restoresoriginalsharedRAM00/01/02 publicationsandgravitytailordering;oldpersistent-onlyroutecannotcertifyomittedscratch.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
       ]
@@ -37348,10 +37531,12 @@
       "currentCounterpart": "src/game/whirlpool.c: ProcessWhirlpools through gravity tail",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:117instructions/59RAM joined10sourceclauses;WhLoop02right/01rightpage,WhirlpoolActivate00half/01center/00centerpage,WhPull00force->47Dflag->02max restoredbeforeoriginalsharedgravityentry. Timerzero/status/injury,100warning/digit/statusoutput,warpbitwise/erase reviewed;no platform businesslogic."
       ],
       "operationalEvidence": [
-        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:2048baselinewhirlpoolroots eachwidth3373RAMbytediffs->0;196608base plus16384expanded roots eachwidth zero2032RAM/APU/order,1F0-1FFexcluded/minSP>=EF. All117PC/19branchpairs observed;5currentfocusedtests each/six600-frameintegrations0scopeddiff,3productsrefreshed,originalOpenNT16compile/linkonly."
       ],
       "semanticContract": "Decrements to the next slot or exits after slot zero.",
       "currentSourcePaths": [
@@ -37367,10 +37552,12 @@
       "currentCounterpart": "src/game/whirlpool.c: ProcessWhirlpools through gravity tail",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:117instructions/59RAM joined10sourceclauses;WhLoop02right/01rightpage,WhirlpoolActivate00half/01center/00centerpage,WhPull00force->47Dflag->02max restoredbeforeoriginalsharedgravityentry. Timerzero/status/injury,100warning/digit/statusoutput,warpbitwise/erase reviewed;no platform businesslogic."
       ],
       "operationalEvidence": [
-        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:2048baselinewhirlpoolroots eachwidth3373RAMbytediffs->0;196608base plus16384expanded roots eachwidth zero2032RAM/APU/order,1F0-1FFexcluded/minSP>=EF. All117PC/19branchpairs observed;5currentfocusedtests each/six600-frameintegrations0scopeddiff,3productsrefreshed,originalOpenNT16compile/linkonly."
       ],
       "semanticContract": "Returns after non-water, timer or exhausted-slot gates.",
       "currentSourcePaths": [
@@ -37386,12 +37573,15 @@
       "currentCounterpart": "src/game/whirlpool.c: ProcessWhirlpools through gravity tail",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 admission - actualoriginal00/01/02 scratchpublication andgravitytailorder missing insharedwhirlpool owner;reopened beforerepair.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:117instructions/59RAM joined10sourceclauses;WhLoop02right/01rightpage,WhirlpoolActivate00half/01center/00centerpage,WhPull00force->47Dflag->02max restoredbeforeoriginalsharedgravityentry. Timerzero/status/injury,100warning/digit/statusoutput,warpbitwise/erase reviewed;no platform businesslogic."
       ],
       "operationalEvidence": [
-        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:2048baselinewhirlpoolroots eachwidth3373RAMbytediffs->0;196608base plus16384expanded roots eachwidth zero2032RAM/APU/order,1F0-1FFexcluded/minSP>=EF. All117PC/19branchpairs observed;5currentfocusedtests each/six600-frameintegrations0scopeddiff,3productsrefreshed,originalOpenNT16compile/linkonly."
       ],
-      "semanticContract": "Builds carry-correct center and applies horizontal pull only on alternate frames.",
+      "semanticContract": "Builds carry-correct center and applies horizontal pull only on alternate frames. P45 restoresoriginalsharedRAM00/01/02 publicationsandgravitytailordering;oldpersistent-onlyroutecannotcertifyomittedscratch.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
       ]
@@ -37405,10 +37595,12 @@
       "currentCounterpart": "src/game/whirlpool.c: ProcessWhirlpools through gravity tail",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:117instructions/59RAM joined10sourceclauses;WhLoop02right/01rightpage,WhirlpoolActivate00half/01center/00centerpage,WhPull00force->47Dflag->02max restoredbeforeoriginalsharedgravityentry. Timerzero/status/injury,100warning/digit/statusoutput,warpbitwise/erase reviewed;no platform businesslogic."
       ],
       "operationalEvidence": [
-        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:2048baselinewhirlpoolroots eachwidth3373RAMbytediffs->0;196608base plus16384expanded roots eachwidth zero2032RAM/APU/order,1F0-1FFexcluded/minSP>=EF. All117PC/19branchpairs observed;5currentfocusedtests each/six600-frameintegrations0scopeddiff,3productsrefreshed,originalOpenNT16compile/linkonly."
       ],
       "semanticContract": "Applies rightward pull only with source collision-bit permission.",
       "currentSourcePaths": [
@@ -37424,10 +37616,12 @@
       "currentCounterpart": "src/game/whirlpool.c: ProcessWhirlpools through gravity tail",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:117instructions/59RAM joined10sourceclauses;WhLoop02right/01rightpage,WhirlpoolActivate00half/01center/00centerpage,WhPull00force->47Dflag->02max restoredbeforeoriginalsharedgravityentry. Timerzero/status/injury,100warning/digit/statusoutput,warpbitwise/erase reviewed;no platform businesslogic."
       ],
       "operationalEvidence": [
-        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:2048baselinewhirlpoolroots eachwidth3373RAMbytediffs->0;196608base plus16384expanded roots eachwidth zero2032RAM/APU/order,1F0-1FFexcluded/minSP>=EF. All117PC/19branchpairs observed;5currentfocusedtests each/six600-frameintegrations0scopeddiff,3productsrefreshed,originalOpenNT16compile/linkonly."
       ],
       "semanticContract": "Stores carry-correct player page after horizontal pull.",
       "currentSourcePaths": [
@@ -37443,12 +37637,15 @@
       "currentCounterpart": "src/game/whirlpool.c: ProcessWhirlpools through gravity tail",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 admission - actualoriginal00/01/02 scratchpublication andgravitytailorder missing insharedwhirlpool owner;reopened beforerepair.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:117instructions/59RAM joined10sourceclauses;WhLoop02right/01rightpage,WhirlpoolActivate00half/01center/00centerpage,WhPull00force->47Dflag->02max restoredbeforeoriginalsharedgravityentry. Timerzero/status/injury,100warning/digit/statusoutput,warpbitwise/erase reviewed;no platform businesslogic."
       ],
       "operationalEvidence": [
-        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:2048baselinewhirlpoolroots eachwidth3373RAMbytediffs->0;196608base plus16384expanded roots eachwidth zero2032RAM/APU/order,1F0-1FFexcluded/minSP>=EF. All117PC/19branchpairs observed;5currentfocusedtests each/six600-frameintegrations0scopeddiff,3productsrefreshed,originalOpenNT16compile/linkonly."
       ],
-      "semanticContract": "Sets Whirlpool_Flag and tail-enters player gravity with force $10 and maximum $01.",
+      "semanticContract": "Sets Whirlpool_Flag and tail-enters player gravity with force $10 and maximum $01. P45 restoresoriginalsharedRAM00/01/02 publicationsandgravitytailordering;oldpersistent-onlyroutecannotcertifyomittedscratch.",
       "currentSourcePaths": [
         "src/game/whirlpool.c"
       ]
@@ -87475,17 +87672,20 @@
       "id": "control-01134",
       "cohort": "G",
       "status": "exact",
-      "currentCounterpart": "src/game/whirlpool.c shared branch/loop/tail counterpart",
+      "currentCounterpart": "src/game/whirlpool.c:explicitRAM00/47D/02stores thenmysmb_world_impose_gravity(game,0,0)",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches."
+        "M2 T60 S5 static SMB1 $B7B3-$B84A comparison and 12 controlled ordinary-NMI original-ROM/current x86/x64 water/non-water routes; every whirlpool branch, page arithmetic and gravity handoff matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:117instructions/59RAM joined10sourceclauses;WhLoop02right/01rightpage,WhirlpoolActivate00half/01center/00centerpage,WhPull00force->47Dflag->02max restoredbeforeoriginalsharedgravityentry. Timerzero/status/injury,100warning/digit/statusoutput,warpbitwise/erase reviewed;no platform businesslogic."
       ],
       "operationalEvidence": [
-        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed."
+        "M2 T60 S5: strict C90 whirlpool smoke passed exhaustive extent/position/collision/phase cases per width; 24 original-ROM/current x86/x64 frames match; OpenNT DOS16 shared link and platform-purity passed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired:2048baselinewhirlpoolroots eachwidth3373RAMbytediffs->0;196608base plus16384expanded roots eachwidth zero2032RAM/APU/order,1F0-1FFexcluded/minSP>=EF. All117PC/19branchpairs observed;5currentfocusedtests each/six600-frameintegrations0scopeddiff,3productsrefreshed,originalOpenNT16compile/linkonly."
       ],
       "semanticContract": "Preserves original jump relation WhPull -> ImposeGravity with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
-        "src/game/whirlpool.c"
+        "src/game/whirlpool.c",
+        "src/game/world/gravity.c"
       ]
     },
     {
@@ -167357,16 +167557,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins",
         "docs/proposals/m2/t70-final-current-certification.md S17 P42 checkpoint - retained HUD timer and text source-use joins",
         "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - retained player physics climb animation and friction joins"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - retained player physics climb animation and friction joins",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P45 checkpoint - timer warp and whirlpool fidelity repaired"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 2445,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 8246,
+        "localInstructionReceiptSites": 2562,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 8129,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 805,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2968,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 864,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2909,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -167391,7 +167592,6 @@
           "shared player-terrain, block and area core": 42,
           "src/game/oam/small_platform_gfx.c": 40,
           "src/game/player_control.c shared C90 player-control owner": 39,
-          "shared game whirlpool/world gravity": 39,
           "shared enemy core and loop-command core": 39,
           "src/game/enemy/background.c": 38,
           "src/game/enemy/bloober.c": 37,
@@ -167434,7 +167634,6 @@
           "src/game/entry.c shared C90 entry owner": 21,
           "src/game/enemy/{green_paratroopa,x_counter}.c": 21,
           "src/game/world/fireball_hit.c": 21,
-          "shared game timer/enemy core": 20,
           "shared world movement/gravity and actor core": 19,
           "shared game core: oam/bowser_gfx.c": 19,
           "shared game core: enemy/actor_slots.c": 19,
@@ -167499,7 +167698,7 @@
           "src/game/oam/normal_enemy_gfx.c and src/game/oam/sprite_row.c": 1,
           "src/game/oam/sprite_row.c and src/game/oam/sprite_draw.c": 1
         },
-        "materialPathsEnumerated": 986,
+        "materialPathsEnumerated": 993,
         "globalMaterialPathDenominator": "unknown",
         "nodeOrControlPromotion": 0,
         "scope": "Retained scoped receipts and named open material obligations;not new global audit,whole-program proof or new material denominator."
