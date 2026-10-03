@@ -34465,10 +34465,12 @@
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
         "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
-        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P56 checkpoint - continuous actor parent and group integration:8 instructions/1RAM bounded parent clause;ordered fireball then six enemy/floatey pairs. Frozen controlled child-return integration only;nonfrozen and other child states remain pending."
       ],
       "operationalEvidence": [
-        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P56 checkpoint - continuous actor parent and group integration:1024 uninterrupted original roots eachwidth2032RAM/24APU/ordered hardware0diff;6144 actual parent iterations,final originalX6;all8PC and both loop branches. Six focused tests eachpass;source/products unchanged."
       ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
@@ -34486,10 +34488,12 @@
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
         "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
-        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P56 checkpoint - continuous actor parent and group integration:8 instructions/1RAM bounded parent clause;ordered fireball then six enemy/floatey pairs. Frozen controlled child-return integration only;nonfrozen and other child states remain pending."
       ],
       "operationalEvidence": [
-        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P56 checkpoint - continuous actor parent and group integration:1024 uninterrupted original roots eachwidth2032RAM/24APU/ordered hardware0diff;6144 actual parent iterations,final originalX6;all8PC and both loop branches. Six focused tests eachpass;source/products unchanged."
       ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
@@ -168147,16 +168151,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P52 checkpoint - enemy stream cursor boundary invariant:34 streams/536 boundary states/1540 overapproximated cursor transitions preserve record alignment;no ID3F at ordinary record boundaries. Pointer table and caller/alias applicability remain explicit prerequisites;no exact promotion.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:55 instructions/23RAM bounded group source clause;allocationX0-4 withreal initializerIDs0/2/6,08 preserved,Inc2B reload proves group return compatible withroot enemyX0-5/localCslot. Other ObjectOffset writers remain independent prerequisites."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:55 instructions/23RAM bounded group source clause;allocationX0-4 withreal initializerIDs0/2/6,08 preserved,Inc2B reload proves group return compatible withroot enemyX0-5/localCslot. Other ObjectOffset writers remain independent prerequisites.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P56 checkpoint - continuous actor parent and group integration:8 instructions/1RAM bounded parent clause;ordered fireball then six enemy/floatey pairs. Frozen controlled child-return integration only;nonfrozen and other child states remain pending."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 3863,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 6828,
+        "localInstructionReceiptSites": 3871,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 6820,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 1335,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2438,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 1336,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2437,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -168205,11 +168210,11 @@
           "src/game/player_end_level.c shared C90 end-level owner": 24,
           "src/game/oam/flagpole_gfx.c": 24,
           "shared game core: enemy/piranha.c": 23,
-          "src/game shared dispatcher/engine/scroll owners": 22,
           "shared Bowser initializer and duplicate-object core": 22,
           "shared game core: bridge/area/enemy/OAM": 22,
           "shared game core: oam/bowser_flame_gfx.c": 22,
           "src/game/world/geometry.c": 22,
+          "src/game shared dispatcher/engine/scroll owners": 21,
           "src/game/entry.c shared C90 entry owner": 21,
           "src/game/enemy/{green_paratroopa,x_counter}.c": 21,
           "src/game/world/fireball_hit.c": 21,

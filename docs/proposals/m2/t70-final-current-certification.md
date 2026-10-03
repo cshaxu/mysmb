@@ -7597,3 +7597,31 @@ Current src/game/enemy/init_targets.c normalizedSHA256:8a34758094db74077901f976a
 Current src/game/enemy/stream.c normalizedSHA256:64420800e1e049dcc6f4dbbe58d942a9692b5210e3d2efeea298c8a682d05049.
 
 Current src/game/engine_slots.c normalizedSHA256:8cb4682243253529fb2514b3a50670d838cb056d62faffbf621b1b492a048d25.
+
+## S17 P56 admission - continuous actor parent and group integration
+
+Existing group/caller slot gap,GameEngine/ProcELoop actor fragmentAEFE-AF0F,eight instructions/oneRAM,scope748,fresh0/max1992. Actual original uninterrupted entryAEFE stopAF10;current engine_slots.c mysmb_game_engine_actors. Empty six-slot baseline andactual originalgroup records withreal children,TimerControl1/frozen actor phase;no child patch or CPU reset between children. Recordactual08 stores/child order and finalX6. Extended observed dependencies receive audit participation before any repair;concrete diff staysS17 andrequires3EXEs if product code changes. OriginalROM/ASM readonly,raw onlyignoredbuild128MiB/120seconds perprocess. No whole gameplay claim or new audit round.
+
+## S17 P56 checkpoint - continuous actor parent and group integration
+
+Existing S17 caller integration gap;GameEngine/ProcELoop actor fragment,8 instructions/1RAM,scope748,fresh0.
+
+Actor fragment AEFE-AF0F calls ProcFireball_Bubble, initializes X0, stores ObjectOffset08, calls EnemiesAndLoopsCore then FloateyNumbersRoutine, increments X and loops until6. Native engine_slots.c uses the same ordered fireball/enemy/floatey calls and six saved-slot writes. Original uninterrupted roots AEFE-AF10 assert finalX6 and observe all six iterations; actual group records reach real initializers and subsequent slots. This qualifies child-return integration only for the controlled frozen TimerControl1, AreaType1 fixtures, not arbitrary child states or inter-frame gameplay.
+
+Mode169:512 empty-slot roots with parser phase7. Mode170:512 roots using57 original group-record base/cursor views with parser phase6 and real child calls. Both use TimerControl1,AreaType1,validPrimaryHard0/1,zero initial fireball/bubble/floatey controls. Original CPU/stack remains continuous between calls;no child replacement or CPU reset. Observed6144 ObjectOffset stores/enemy calls/floatey calls,5120 repeat and1024 exit branches. Original harness asserts finalX6. Controlled single-phase roots do not establish nonfrozen movement/collision,all actor types,all caller states or cross-frame invariants.
+
+Both widths compare2032RAM/24APU/ordered hardware writes with zero differences;only physical stack1F0-1FF excluded,minSP>=EF. Other CPU registers are outside the void native ABI. Six focused tests eachwidth pass. No product or test source change,threeEXEs remainP46,DOS runtime unqualified. Four negative accounting mutations rejected. Original material remains owner-local/read-only;temporary probes and summaries ignored below build,raw batches removed. No new material-edge or node completion credit.
+
+Historical1992/1992,currentlocal1991/1992nodes,4269/4270 feasiblecontrols(raw4342/infeasible72);CheckForEnemyGroup/control01480 stillneeds evidence.3871/10691 instruction and1336/3773RAM bounded receipts;6820 instruction and2437RAM receipts pending. Material993partial,totalunknown;whole-program lifetime pending,four final packages open,M2 NOT COMPLETE.
+
+Current src/game/engine_slots.c normalizedSHA256:8cb4682243253529fb2514b3a50670d838cb056d62faffbf621b1b492a048d25.
+
+Current src/game/enemy/core.c normalizedSHA256:d568c921de10cba733e2124bdfc1575f3c28b67f7d446af348f73435ebf52a27.
+
+Current src/game/enemy/group.c normalizedSHA256:c6ebdf6d65eee53c092b80cae412cdae76ff3a20fa93e07c00d8cf3fd7abeed2.
+
+Current src/game/enemy/init.c normalizedSHA256:b154847ffaf647e43d39c14f5dc26818acdc6c3160f6c0a922034b2f038f63cb.
+
+Current src/game/enemy/init_targets.c normalizedSHA256:8a34758094db74077901f976a10cf8adae354645938cb4f8d3e0dc6cc8d5a5ae.
+
+Current src/game/enemy/stream.c normalizedSHA256:64420800e1e049dcc6f4dbbe58d942a9692b5210e3d2efeea298c8a682d05049.

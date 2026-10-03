@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P56 continuous actor parent](../proposals/m2/t70-final-current-certification.md#s17-p56-checkpoint---continuous-actor-parent-and-group-integration).
+S17 P56:8actor-parent instructions/1RAM bounded joins;1024 uninterrupted frozen roots eachwidth0diff,6144 real enemy/floatey pairs,all8PC/both loopbranches,6tests each. Scope748/fresh0;3871instruction/1336RAM receipts,6820instruction/2437RAM pending. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72),material993partial,totalunknown;other child/caller/inter-frame domains pending,source/productsP46unchanged,M2 incomplete.
+
 [P55 group caller return](../proposals/m2/t70-final-current-certification.md#s17-p55-checkpoint---group-slot-allocation-and-caller-return).
 S17 P55:55groupinstructions/23RAM bounded joins,69632actualroots eachwidth0diff/all55PC/7branchpairs,6tests each. Allocation0-4/realinit0,2,6 preserves08;originalreturnX==input08 inallroots,group caller joinqualified;17direct08writers enumerated,otherspending. Scope746/fresh0;3863instruction/1335RAM receipts,6828instruction/2438RAM pending. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72),material993partial,totalunknown;source/productsP46unchanged,M2 incomplete.
 
