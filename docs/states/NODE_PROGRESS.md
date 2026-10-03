@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P66 partial coverage](../proposals/m2/t70-final-current-certification.md#s17-p66-partial-checkpoint---swimming-coverage-gaps-retained).
+S17 P66 partial checkpoint:23 swimming-actor labels/159 instructions admitted,scope924/fresh0. Three controlled original roots,total196608 eachwidth,2032RAM/24APU/orderedwrites0diff;6 focused tests eachwidth pass. Only153/159 scope PCs observed;CCB8/CCBA/CCBC/CCBD/CCC3/CCC4 remain uncovered,swimming-height fixture couples current/anchor Y. CBA0 fallthrough control-01795 also requires independent feasibility disposition. No new node/control/use credit;local1991/1992nodes,4266/4267controls(raw4342/infeasible75),4791/10691 instruction receipts,1690/3773 directRAM receipts. Caller/producer/inter-frame lifetimes and material/pixels/routes/snapshot packages remain open;material total unknown,M2 incomplete. Product source/threeEXEs unchanged.
+
 [P65 paratroopa/counter chains](../proposals/m2/t70-final-current-certification.md#s17-p65-checkpoint---paratroopa-movement-and-shared-x-counters-reconciled).
 S17 P65:14paratroopa/counter labels,70instructions/30RAM joined6boundedclauses;393216actualroots eachwidth0diff/all70PC/11branchpairs,5tests each. Scope901/fresh0;4791instruction/1690RAM receipts,5900instruction/2083RAM pending. Local1991/1992nodes,4266/4267controls(raw4342/infeasible75),material993partial,totalunknown;source/productsP57unchanged,caller/inter-frame domains pending,M2 incomplete.
 

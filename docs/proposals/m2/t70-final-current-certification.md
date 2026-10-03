@@ -7986,3 +7986,15 @@ Current src/game/enemy/paratroopa.c normalizedSHA256:196079ff98a92c5d4ea1096967d
 Current src/game/enemy/green_paratroopa.c normalizedSHA256:1b50e002a6b6bb61325aebda687ff7ad62f2f184a358f28806dd2469c9815de8.
 
 Current src/game/enemy/x_counter.c normalizedSHA256:1b86c0b889312c32ba47d38fdec90a5cce7ca51892a290d1f50b047b53aff9ae.
+
+## S17 P66 admission - Bloober swim state and swimming Cheep movement
+
+Existing enemy movement/materialgap;159pending instructions in23labels: MoveBloober,FBLeft,SBMDir,BlooberSwim,SwimX,LeftSwim,MoveDefeatedBloober,ProcSwimmingB,BSwimE,SlowSwim,NoSSw,ChkForFloatdown,Floatdown,NoFD,ChkNearPlayer,MoveBulletBill,NotDefB,MoveSwimmingCheepCheep,CCSwim,CCSwimUpwards,ChkSwimYPos,YPDiff,ExSwCC. Shared enemy/bloober.c/bullet_bill.c/swimming_cheep.c andactualdistance/gravity/horizontalchildren. CB89 Bloober entrycarry0 frommovementvectorID7 ASL;retainedcarry fromoddslots/actualpageSBC intoChkNearPlayer ADC10,swimcounter/frame/forcephases;CC36 billstate20 andCC4A fishscratch/borrow/slot/Yturn paths reviewed. ControlledX0-5,SecondaryHard0-1/tablefishID0A-0B,rawcounter/force/coordinate/dir bytes. Scope924,fresh0/max1992. Bothwidth2032RAM/24APU/orderedwrites/focusedtests;diffstaysS17/productrepairrequires3EXEs. OwnerROM/ASMreadonlynonredistributable,raw onlyignoredbuild128MiB/120seconds perprocess,4096recordbatchesdeleted. No newauditround.
+
+## S17 P66 partial checkpoint - swimming coverage gaps retained
+
+S17 P66 partial checkpoint:23 swimming-actor labels/159 instructions admitted,scope924/fresh0. Three controlled original roots,total196608 eachwidth,2032RAM/24APU/orderedwrites0diff;6 focused tests eachwidth pass. Only153/159 scope PCs observed;CCB8/CCBA/CCBC/CCBD/CCC3/CCC4 remain uncovered,swimming-height fixture couples current/anchor Y. CBA0 fallthrough control-01795 also requires independent feasibility disposition. No new node/control/use credit;local1991/1992nodes,4266/4267controls(raw4342/infeasible75),4791/10691 instruction receipts,1690/3773 directRAM receipts. Caller/producer/inter-frame lifetimes and material/pixels/routes/snapshot packages remain open;material total unknown,M2 incomplete. Product source/threeEXEs unchanged.
+
+Zero differences applies only to the controlled input manifest, not all actor states or complete game equivalence. No instruction receipt is added until the missing paths and source-use clauses are reconciled. The original ROM is executed without child replacement; temporary records are deleted after comparison. The remaining missing fish paths concern negative height difference and the height-turn threshold; absence of coverage alone is not an implementation defect.
+
+Owner final overnight limit is binding: keep the existing scope, report pass or incomplete against its exit criteria at the cutoff; no additional whole-project acceptance round or automatic deadline extension. The present checkpoint does not close S17, T70 or M2.
