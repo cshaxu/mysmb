@@ -173,3 +173,40 @@ No source or test changes in this P;three product builds remain unchanged.
 Node-admission/ledger/documentation gates and explicit staged-file review
 required before local commit. Queue removal applies only to admitted T70;
 pre-existing I/O candidates remain unstaged and intact. No push.
+
+## S1 P2 closure - evidence baseline and historical debt reconciliation
+
+Empty infrastructure node scope completed;expected/actual fresh0,no node,
+control or material promotion. Registry remains current1992/1992 nodes,
+4276/4276 feasible controls(raw4342,infeasible66),557/557 material partial;
+historical1992/1992 separate.1992 original ASM/source bindings checked,
+9604 source-file and4506 explicit evidence-file references resolve;cached
+counts equal rows. No missing current catalog counterpart or proof array.
+
+Nine stale open TODOs reconciled with actual current code and accepted
+original/native proof,not merely green tests:dump children,cannon/whirlpool,
+throw/intermediate/swim animation,relative scroll ownership,historic missing
+label allocation,misc clip tail,retainer vector,normal movement and platforms.
+Their original findings remain in history;TODO records exact superseding
+source and proof. Current source inspections verify canonical calls,original
+throw row/timer continuation,intermediate following-sprite attribute,swimming
+freeze,0755 publisher,GetMiscBoundBox clip tail and engine scheduler calls.
+No new semantic credit from this reconciliation.
+
+Three existing debt headings remain:historic inline-data address annotations
+need current C binding/annotation reconciliation (the ASM index alone is not
+that check);inactive area alternative readers need removal/consolidation in
+the next bounded parser chain;DOS resource/graphical operation remains the
+explicit M3 roadmap obligation,not evidence from MZ linking. Other final M2
+requirements remain active:feasible material enumeration completeness,
+current-source proof freshness,full retained-route regression and native
+complete gameplay/death/warp/end-world routes. No M2 certification claim.
+
+S1 catalog/metadata work has no admitted product semantic mismatch and no
+retained implementation custody. Candidate next29-node parser cleanup chain
+is named above;admit it with original route/native fixtures and explicit
+maintenance receipt before code changes. Source files unchanged in S1;
+three committed S15 EXEs byte-identical. No build/test refresh required for
+metadata-only P. Node admission/closure,ledger,documentation and diff gates
+required before local P2 commit. All research/logs remain ignored below build;
+no raw/third-party import or push. S1 closed,T70 open,S2 next unadmitted.

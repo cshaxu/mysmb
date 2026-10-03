@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | New: M2 T70 S1 P1 active;T69 closed. |
+| Identifier Mode | Continuation: M2 T70 S1 P2 closed;T70 open,S2 next unadmitted. |
 | Admission And Approval | Owner ongoing M2 completion mandate;coordinator admits next original-plan final-certification task after T69 closure. |
 | Objective | Establish final certificate baseline;inspect actual evidence/source/address contracts and identify exact remaining certification gaps. |
 | Non-goals | No promotion from catalog/exact flags;no source change without bounded chain amendment,no M2 completion from partial material enumeration. |
@@ -17,7 +17,7 @@
 | Asset Needs | Owner-local ROM/reviewed ASM nonredistributable,read-only original byte binding;ignored build contains neutral catalog and logs,no new raw trace. Standing EXE commit authorization applies only if product repair. |
 | Reporting Requirements | Report current exact nodes/1992,feasible controls/4276,raw4342/infeasible66 and material557 partial;historical1992 separate;name concrete missing proof and exact repair scope. |
 | Stop Conditions | A concrete mismatch requires bounded repair and repeat audit within current admitted scope before closure;missing broad certification proof prevents M2 certification. |
-| Exit Criteria | Actionable evidence/source/debt catalog produced with exact labels/edges and successor boundaries;governance gates pass,no unresolved admitted product mismatch. |
+| Exit Criteria | Met:catalog checks pass,9 historical debts reconciled,3 live headings and certification duties retained,next29-node chain named;governance gates pass. |
 | Original Owner Request | Complete M2 by original-ROM node and edge alignment in planned source order; repair within each S and report cumulative totals. |
 | Similar-Issue Sweep | Missing files/counterparts,empty proofs,stale counters,old TODOs,dead alternate owners,evidence freshness and incomplete material/route denominators. |
 
@@ -28,4 +28,4 @@
 - Current exact feasible controls: **4276/4276** (raw4342,infeasible66).
 - Exact material relations: **557/557**, enumeration partial.
 - Latest three products are T69 S15 P3 builds restoring8 actual offscreen caller sites in shared game code.
-- T69 closed;T70 S1 active infrastructure certificate-baseline audit;M2 remains unproven.
+- T70 S1 closed:catalog baseline and9 stale debts reconciled;S2 parser cleanup next unadmitted,M2 remains unproven.

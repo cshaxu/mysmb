@@ -9,14 +9,8 @@
   final integrated certification remain T69 S15/T70 obligations.
   [S14 source and operational proof](../history/M2-T69-cross-cohort-current-proof.md#s14-p2-closure---original-square-music-alias-operation-order).
 
-- [ ] **Original dump-child graph fidelity (High):** T65 S3's similar-issue
-  sweep found DrawBrickChunks and PlayerOffscreenChk duplicate original
-  DumpTwoSpr stores. Final RAM equality alone does not close their call edges.
-  Admission paths: existing T65 S10 block/chunk chain and planned Cohort L
-  T66 player output chain; retain original maintenance custody, restore child
-  calls and prove actual child input/return alongside full output. Source
-  column-only writes retain their own distinct paths.
-  [Finding and scope](../history/M2-T65-block-query-object-output-current-proof.md#s3-closure---indexed-hammer-output-and-real-child-edge).
+- [x] **Original dump-child graph fidelity (High)** T70 S1 reconciles this early finding with actual shared DumpTwoSpr calls in block_gfx.c/player_gfx.c and T65 S10/T66 S1 real-child inputs, RTS returns and full output. The source store-only shortcuts are gone. Column-only paths retain distinct source semantics. [Current closure](../history/M2-T65-block-query-object-output-current-proof.md), [player row/erase proof](../history/M2-T66-player-relative-offscreen-current-proof.md).
+
 
 - [x] **Legacy core, title/demo, end-to-end, and local-area smoke fixtures:** T51 S5 P8 completed the remaining source-route adjudications. The core fixture now supplies only the table windows and caller state read by its selected ROM children; the title/demo case follows `PlayerLoseLife -> ContinueGame`; the ROM-free end-to-end case stops at the source-valid title-to-game handoff; and the local-area case runs against owner-local generated data. Native x86/x64 matrices pass 218/218. This resolves the former legacy-suite blocker only; it does not waive the separate active discrepancies below. [T51 S5 P8](../proposals/m2/t51-residual-equivalence-and-certification.md#s5-p8-legacy-suite-source-route-closure).
 
@@ -48,7 +42,8 @@
 
 - [x] **DOS16 OpenNT compiler execution:** the earlier host-observer finding is superseded.  The original OpenNT 16-bit toolchain now compiles and links the shared C target; every active M2 implementation S continues to build its MZ artifact through that route.  DOS resource binding remains separate work and an MZ link alone still does not establish DOS game playability.
 
-- [ ] **T24 missing-path finding (`TODO(High)`): cannon scheduler and whirlpool activation.** T22 owns ProcessCannons, ProcessWhirlpools and WhirlpoolActivate; BulletBillHandler and player jump parameters are only collaborators. [Audit evidence](../etc/architecture/m2-t24-s1-full-node-census.md#additional-concrete-scope-findings); admission path: [blocks/items S4](../proposals/m2/blocks-items-misc.md). No repair is admitted here.
+- [x] **T24 missing-path finding (`TODO(High)`): cannon scheduler and whirlpool activation.** T70 S1 confirms both are called by the current shared engine. cannon.c preserves descending slots, random-mask selection, timer decrement and real offscreen/bullet children; whirlpool.c preserves extent/page tests, center carry and gravity tail. T60 S5 water/NMI proof and T69 S8 original cannon child routes supersede the historic omission. [Whirlpool proof](../history/M2-T60-cohort-g-fireball-timer-proof.md), [cannon joins](../history/M2-T69-cross-cohort-current-proof.md#s8-p2-closure---actual-vinecannon-joins).
+
 
 - [x] **T24 audit D1: non-fiery fireball dispatch.** T34 S1 supersedes the
   historical snapshot: `ProcFireball_Bubble` uses the original single
@@ -59,15 +54,21 @@
   the source score-control choices. Current x86/x64 fireball scan and hit-chain
   checks pass. [T42 S1 proof](../history/M2-T42-shared-collision-and-platforms.md#s1-original-fireball-scan-proof), [T42 S2 proof](../history/M2-T42-shared-collision-and-platforms.md#s2-fireball-hit-proof).
 - [x] **T24 audit D3-D4: fireball flip phase and explosion sprite order.** T45 S3 supersedes both audits: it restores frame-bit-three attribute selection and the second/third explosion-sprite Y order, with source-reachable original OAM comparisons and current x86/x64 fireball OAM checks passing. [T45 S3 closure](../history/M2-T45-object-oam-tail-and-graphics.md#s3-closure-projectile-and-explosion-oam).
-- [ ] **T24 audit D6-D8 (`TODO(High)`): throw pose/timer, intermediate attributes and swimming animation freeze.** T45 S5 resolves former D5 swim-kick tile selection through the original table and consumer route. D6-D8 remain independently unverified; retain their exact nodes from the [77-node report](../etc/architecture/m2-t24-s1-node-verification.md) for source-route audit before closure.
-- [ ] **T24 audit D9 (`TODO(High)`): relative-position scroll write ownership.** T16/T23 owns RelativePlayerPosition versus RenderPlayerSub ordering. Evidence: [paired seeded-write probe](../etc/architecture/m2-t24-s1-node-verification.md). Admission path: [OAM](../proposals/m2/oam-graphics.md).
-- [ ] **T24 coverage debt (`TODO(High)`): missing individual proof and incomplete historic scope.** Every unfinished label, responsibility, historical S/P reference and evidence gap is named in the [full census](../etc/architecture/m2-t24-s1-full-node-census.md); the [progress ledger](NODE_PROGRESS.md) owns counts. Each responsible source-slice proposal must admit exact names and expected completions before implementation. A passing whole-route or CTest count cannot close unexecuted or unaudited nodes.
+- [x] **T24 audit D6-D8 (`TODO(High)`): throw pose/timer, intermediate attributes and swimming animation freeze.** Superseded by T66 S1: current player_gfx.c clears/restores the original throw timer and selects three/four rows, reads the following intermediate sprite attribute, and retains idle swimming animation when timer/index/A are zero. The source-bound 75040 original roots and actual row/erase returns cover all44 labels/103 controls, both outcomes of each branch. [Current player source and proof](../history/M2-T66-player-relative-offscreen-current-proof.md).
+
+
+- [x] **T24 audit D9 (`TODO(High)`): relative-position scroll write ownership.** T70 S1 source check finds the 0755 write only in RenderPlayerSub's shared row publisher; RelativePlayerPosition retains relative-coordinate/scratch ownership. T66 S1/S2 source and original/native routes supersede the historic seeded-write finding. [Current relative/render proof](../history/M2-T66-player-relative-offscreen-current-proof.md).
+
+
+- [x] **T24 coverage debt (`TODO(High)`): missing individual proof and incomplete historic scope.** The old missing-label/ownership backlog is superseded by the registered 1992 individual current node rows with source/RAM/table contracts and original/native evidence, plus the closed T53-T69 source-order program. T70 S1 checks original label bindings and evidence availability without treating those checks as semantic proof. Global material enumeration, evidence freshness and complete end-to-end certification remain explicitly open in [T70](../proposals/m2/t70-final-current-certification.md); this closes only the historic unallocated/missing-label backlog.
+
 
 - [x] **Jumpspring graphics child:** T44 S8 removed the unsupported slot-five guard and restored the source frame, flip, work-byte and OAM path. All 32 current original graphics-child records match non-stack RAM/OAM on both widths; the earlier T35 differences remain historical evidence. [Closure](../history/M2-T44-block-buffer-and-object-graphics.md#s8-closure-enemy-graphics-and-animation). The separate pre-parser screen-origin route still needs integrated revalidation.
 
 - [x] **Vine OAM wrapped clipping:** The earlier T36 child discrepancy is superseded by T44 S2. `DrawVine -> ChkFTop -> NextVSp` now consumes caller-relative coordinates, applies the source wrapped subtraction and emits all six OAM rows; original replay and current x86/x64 vine OAM checks pass. [T44 S2 closure](../history/M2-T44-block-buffer-and-object-graphics.md#s2-closure-vine-object-graphics).
 
-- [ ] **Misc bounding-box screen clipping (`TODO(High)`):** T36 S2 exposes the existing GetMiscBoundBox child unchanged; it computes the box but omits the original CheckRightScreenBBox tail. The 63 scoped hammer scenarios match and do not certify edge cases. Keep this child with its existing collision receiver and test wrapped screen edges when admitted. [Evidence](../history/M2-T36-misc-object-chains.md#s2-original-hammer-lifecycle-proof).
+- [x] **Misc bounding-box screen clipping (`TODO(High)`)** Current shared hammer/coin GetMiscBoundBox entries call BoundingBoxCore then canonical CheckRightScreenBBox with the source +9 misc slot offset. T69 S7/S9 original full parent routes and call/return joins supersede the early omitted-tail finding; current source retains midpoint scratch and wrapped clipping. [Bounds and misc proof](../history/M2-T69-cross-cohort-current-proof.md).
+
 
 - [x] **GiveOneCoin extra-life sound:** Resolved in T36 S5 and rechecked on the T36 final build. The original hundred-coin transition queues sound40; all 96 S3 actual-child comparisons now match. Historical 48 sound-only failures remain recorded as the pre-fix evidence. [Resolution](../history/M2-T36-misc-object-chains.md#s5-original-score-and-hud-proof).
 
@@ -99,26 +100,10 @@ Resolved by T37 S4: unchanged final-build S2/S3 snapshots match 264/264; sixteen
   124 Spiny differences became original/native matches. The current
   `mysmb.lakitu-smoke` route passes on x86 and x64. [T40 S10 closure](../history/M2-T40-enemy-movement-and-firebar.md#s10-lakitu-movement-and-distance-helper).
 
-- [ ] **Actor-vector and retainer actual-child gaps:** T39 S7 proves only the
-  four caller nodes (360/360); actual native children match 42/360, retaining
-  174 vector and 144 retainer failures in that historical build. T44 S8 now
-  proves the 72 retainer graphics children at zero differences; other vector
-  and actor descendants retain source-order custody. Replace the provisional
-  large/small platform seams in their receiving slice.
-  GetEnemyOffscreenBits/RelativeEnemyPosition remain with T16 S4.
-  [Original gap](../history/M2-T39-special-initialization-and-dispatch.md#s7-original-actor-vector-and-retainer-proof),
-  [graphics closure](../history/M2-T44-block-buffer-and-object-graphics.md#s8-closure-enemy-graphics-and-animation).
+- [x] **Actor-vector and retainer actual-child gaps** T70 S1 reconciles the T39 diagnostic with the real current EnemyRun vector, source-shaped retainer/graphics children and canonical relative/offscreen owners. T63/T66 and T69 S13 actual original parent/child routes supersede the historical child failures; no provisional platform seam remains in the current dispatcher. [Actor join proof](../history/M2-T69-cross-cohort-current-proof.md#s13-p3-closure---real-frenzygroupactor-consumers-and-shared-repairs).
 
-- [ ] **Normal actor/movement actual-child gaps:** T39 S8 proves its four
-  caller nodes with 252/252 original comparisons, while actual-child failures
-  remain separately recorded. T44 S8 now proves the 84 original ordinary
-  graphics children and 33 additional controlled graphics children at zero
-  differences on both widths. Preserve the separate movement and collision
-  descendants under their source-order ledger owners.
-  [Exact caller/child boundary](../history/M2-T39-special-initialization-and-dispatch.md#s8-original-normal-actor-and-movement-vector-proof).
 
-- [ ] **Special actor/platform child gaps:** T39 S9 proves six callers and
-  retains erasure, with 184/184 original comparisons but 32/184 actual-child
-  matches. Extracted platform collision/physics entries retain their existing
-  source-order owners: balance peer/second small box, positioning, X/Right
-  movement and source scratch remain unproved. [S9 exact boundary](../history/M2-T39-special-initialization-and-dispatch.md#s9-original-special-actor-and-platform-proof).
+- [x] **Normal actor/movement actual-child gaps** The current RunNormalEnemies path uses the source-shaped graphics, bounding, terrain, collision, movement and bounds children, with canonical offscreen writes restored in T69 S15. T63/T64/T65 member proofs plus T69 S15 real child inputs/returns and full parent comparison supersede the T39 caller-only boundary. [Latest actual-child proof](../history/M2-T69-cross-cohort-current-proof.md#s15-p3-closure---real-offscreen-children-and-nmi-integration).
+
+
+- [x] **Special actor/platform child gaps** The current small/large runners use the real platform box/collision/movement/OAM owners with original order and slot reloads. Source-shaped balance/position/X/right semantics are covered by T63/T64 and T69 actual children; S15 proves paired balance slots and canonical offscreen input/return states. [Latest integrated platform proof](../history/M2-T69-cross-cohort-current-proof.md#s15-p3-closure---real-offscreen-children-and-nmi-integration).
