@@ -1,6 +1,16 @@
 #include "game/player.h"
 #include <string.h>
 
+static unsigned int dispatch_bad;
+static unsigned int dispatch_count;
+void mysmb_game_jump_engine_state(struct mysmb_game *game,
+                                 mysmb_u16 ret, mysmb_u8 selector)
+{
+    if (ret != 0xb350U || selector != game->ram[0x001dU] ||
+        game->ram[0x070bU] != 0U) ++dispatch_bad;
+    ++dispatch_count;
+}
+
 static char calls[16];
 static unsigned int count;
 static mysmb_u8 mutate,force_seen,crouch_seen;
@@ -30,6 +40,8 @@ void mysmb_player_climb(struct mysmb_game *game) {(void)game;record('C');}
 
 static void setup(struct mysmb_game *game)
 {
+    dispatch_bad = 0U;
+    dispatch_count = 0U;
     memset(game->ram,0,sizeof(game->ram));count=0U;calls[0]='\0';mutate=0U;
     game->ram[0x789U]=0x5aU;game->ram[0x709U]=0x21U;game->ram[0x70aU]=0x42U;
     game->ram[0x9fU]=0xffU;game->ram[0xceU]=0x80U;game->ram[0x708U]=0x80U;
@@ -46,6 +58,8 @@ int main(void)
         setup(&game);game.ram[0x754U]=(mysmb_u8)size;game.ram[0x1dU]=(mysmb_u8)state;
         game.ram[0x70bU]=(mysmb_u8)flag;
         mysmb_player_movement_subs(&game);
+        if (dispatch_bad != 0U || dispatch_count != (flag == 0U ? 1U : 0U))
+            return 12;
         if(crouch_seen!=(size!=0U||state==0U?0U:4U)) return 1;
         if(strcmp(calls,flag!=0U?"P":sequence[state])!=0) return 2;
         if(game.ram[0x789U]!=(flag==0U && state!=3U?0x18U:0x5aU)) return 3;

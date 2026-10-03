@@ -6,6 +6,7 @@
  * OperMode_Task is a source-owned selector in the range 0..3. */
 void mysmb_game_mode(struct mysmb_game *game)
 {
+    mysmb_game_jump_engine_state(game, 0xaee1U, game->ram[0x0772U]);
     switch (game->ram[0x0772U]) {
     case 0U: mysmb_area_initialize(game); break;
     case 1U: mysmb_game_step_screen_routine(game); break;

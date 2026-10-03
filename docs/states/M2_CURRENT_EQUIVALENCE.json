@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 718,
+    "enumeratedCount": 726,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -15810,6 +15810,182 @@
         "src/game/world/block_buffer.c",
         "src/game/area/block_metatile.c"
       ]
+    },
+    {
+      "id": "material-00719",
+      "producer": "OperModeExecutionTree",
+      "consumer": "JumpEngine",
+      "storage": "selected inline return base04/05 and target06/07",
+      "feasiblePath": "Original JSR return8217,native selectormode_before,source-ordered scratch publication before unchanged selected child.",
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_game_jump_engine_state call",
+      "semanticContract": "Bounded retained source selector and child contracts;full byte selector kernel proof covers scratch arithmetic only. Caller selectors cannot alias04-07. No arbitrary dispatch target/runtime claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors."
+      ],
+      "cohort": "A",
+      "cohortBasis": "original caller inventory label",
+      "currentSourcePaths": [
+        "src/game/frame_root.c",
+        "src/game/game.c"
+      ]
+    },
+    {
+      "id": "material-00720",
+      "producer": "TitleScreenMode",
+      "consumer": "JumpEngine",
+      "storage": "selected inline return base04/05 and target06/07",
+      "feasiblePath": "Original JSR return8236,native selectortask_before,source-ordered scratch publication before unchanged selected child.",
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c:mysmb_game_jump_engine_state call",
+      "semanticContract": "Bounded retained source selector and child contracts;full byte selector kernel proof covers scratch arithmetic only. Caller selectors cannot alias04-07. No arbitrary dispatch target/runtime claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors."
+      ],
+      "cohort": "A",
+      "cohortBasis": "original caller inventory label",
+      "currentSourcePaths": [
+        "src/game/frame_root.c",
+        "src/game/game.c"
+      ]
+    },
+    {
+      "id": "material-00721",
+      "producer": "VictoryModeSubroutines",
+      "consumer": "JumpEngine",
+      "storage": "selected inline return base04/05 and target06/07",
+      "feasiblePath": "Original JSR return83a5,native selectorgame->ram[MYSMB_RAM_OPER_MODE_TASK],source-ordered scratch publication before unchanged selected child.",
+      "status": "exact",
+      "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_jump_engine_state call",
+      "semanticContract": "Bounded retained source selector and child contracts;full byte selector kernel proof covers scratch arithmetic only. Caller selectors cannot alias04-07. No arbitrary dispatch target/runtime claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors."
+      ],
+      "cohort": "A",
+      "cohortBasis": "original caller inventory label",
+      "currentSourcePaths": [
+        "src/game/terminal_modes.c",
+        "src/game/game.c"
+      ]
+    },
+    {
+      "id": "material-00722",
+      "producer": "AreaParserTasks",
+      "consumer": "JumpEngine",
+      "storage": "selected inline return base04/05 and target06/07",
+      "feasiblePath": "Original JSR return92ca,native selectortask,source-ordered scratch publication before unchanged selected child.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_game_jump_engine_state call",
+      "semanticContract": "Bounded retained source selector and child contracts;full byte selector kernel proof covers scratch arithmetic only. Caller selectors cannot alias04-07. No arbitrary dispatch target/runtime claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors."
+      ],
+      "cohort": "C",
+      "cohortBasis": "original caller inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/game.c"
+      ]
+    },
+    {
+      "id": "material-00723",
+      "producer": "AreaStyleObject",
+      "consumer": "JumpEngine",
+      "storage": "selected inline return base04/05 and target06/07",
+      "feasiblePath": "Original JSR return9745,native selectorvalue,source-ordered scratch publication before unchanged selected child.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_game_jump_engine_state call",
+      "semanticContract": "Bounded retained source selector and child contracts;full byte selector kernel proof covers scratch arithmetic only. Caller selectors cannot alias04-07. No arbitrary dispatch target/runtime claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors."
+      ],
+      "cohort": "C",
+      "cohortBasis": "original caller inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c",
+        "src/game/game.c"
+      ]
+    },
+    {
+      "id": "material-00724",
+      "producer": "GameMode",
+      "consumer": "JumpEngine",
+      "storage": "selected inline return base04/05 and target06/07",
+      "feasiblePath": "Original JSR returnaee1,native selectorgame->ram[0x0772U],source-ordered scratch publication before unchanged selected child.",
+      "status": "exact",
+      "currentCounterpart": "src/game/dispatcher.c:mysmb_game_jump_engine_state call",
+      "semanticContract": "Bounded retained source selector and child contracts;full byte selector kernel proof covers scratch arithmetic only. Caller selectors cannot alias04-07. No arbitrary dispatch target/runtime claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors."
+      ],
+      "cohort": "E",
+      "cohortBasis": "original caller inventory label",
+      "currentSourcePaths": [
+        "src/game/dispatcher.c",
+        "src/game/game.c"
+      ]
+    },
+    {
+      "id": "material-00725",
+      "producer": "GameRoutines",
+      "consumer": "JumpEngine",
+      "storage": "selected inline return base04/05 and target06/07",
+      "feasiblePath": "Original JSR returnb04e,native selectorgame->ram[0x000eU],source-ordered scratch publication before unchanged selected child.",
+      "status": "exact",
+      "currentCounterpart": "src/game/entry.c:mysmb_game_jump_engine_state call",
+      "semanticContract": "Bounded retained source selector and child contracts;full byte selector kernel proof covers scratch arithmetic only. Caller selectors cannot alias04-07. No arbitrary dispatch target/runtime claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors."
+      ],
+      "cohort": "E",
+      "cohortBasis": "original caller inventory label",
+      "currentSourcePaths": [
+        "src/game/entry.c",
+        "src/game/game.c"
+      ]
+    },
+    {
+      "id": "material-00726",
+      "producer": "MoveSubs",
+      "consumer": "JumpEngine",
+      "storage": "selected inline return base04/05 and target06/07",
+      "feasiblePath": "Original JSR returnb350,native selectorgame->ram[0x001dU],source-ordered scratch publication before unchanged selected child.",
+      "status": "exact",
+      "currentCounterpart": "src/game/player_movement.c:mysmb_game_jump_engine_state call",
+      "semanticContract": "Bounded retained source selector and child contracts;full byte selector kernel proof covers scratch arithmetic only. Caller selectors cannot alias04-07. No arbitrary dispatch target/runtime claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors."
+      ],
+      "cohort": "F",
+      "cohortBasis": "original caller inventory label",
+      "currentSourcePaths": [
+        "src/game/player_movement.c",
+        "src/game/game.c"
+      ]
     }
   ],
   "cohorts": [
@@ -16673,13 +16849,16 @@
       "semanticEvidence": [
         "Td S9 A5 node-semantics pass: SMB1 lines 954-981 was compared label-by-label with named shared C owners; controlled mode-dispatch and sprite-zero hardware routes remain pending.",
         "M2 T53 S1 source audit: NonMaskableInterrupt prefix callees commit display/buffer, audio, input, pause, score, timers, LFSR, OAM and scroll but do not write OperMode or OperMode_Task; frame_root.c therefore captures the same selector values that ROM loads at OperModeExecutionTree.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
+        "S17 P15 original JumpEngine source writes04-07 but eight native callers omit publication;fresh256 victory/256 entrance roots show1020 scratch differences each width. Other six require bounded source/order applicability review.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07."
       ],
       "operationalEvidence": [
         "M2 T53 S1 controlled four-case owner-ROM dispatch route: original JumpEngine reached each of the four inline vector targets and both post-child continuations; current x86/x64 records had zero non-scratch RAM and output differences for all cases. Two paired 600-frame idle/start routes also passed exact work-RAM and output checks.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors."
       ],
-      "semanticContract": "Loads the source operating mode and dispatches exactly one inline JumpEngine vector: title, game, victory or game-over, returning to the NMI tail.",
+      "semanticContract": "Loads the source operating mode and dispatches exactly one inline JumpEngine vector: title, game, victory or game-over, returning to the NMI tail. P15 original call-site04-07 publication now included;compositional kernel/caller proof retains prior child/input contracts,not arbitrary-target execution.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
       ]
@@ -16760,12 +16939,15 @@
       "currentCounterpart": "mysmb_frame_root_step title mode/task dispatch",
       "semanticEvidence": [
         "Td S9 A6 title-menu node-semantics pass: SMB1 lines 982-1088 was compared label-by-label with named shared title_modes.c/frame_root.c owners; title, start, select/world and demo routes remain pending.",
-        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart."
+        "M2 T53 S2 source audit: SMB1 lines 982-1136 were compared with the shared frame-root/title-modes owner. The title task selector, menu predicates, RAM writes, table bytes, loops, child call/return order and same-frame GameCore tail match the named C counterpart.",
+        "S17 P15 original JumpEngine source writes04-07 but eight native callers omit publication;fresh256 victory/256 entrance roots show1020 scratch differences each width. Other six require bounded source/order applicability review.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07."
       ],
       "operationalEvidence": [
-        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass."
+        "M2 T53 S2 current controlled original-ROM/x86/x64 evidence: six 600-frame routes (idle, Select, world-select B, Start, A+Start, expired Select) are exact in RAM $0200-$07ff excluding $0778/$0779 and in both CIRAM pages, palette, OAM, audio and PPU scalars; x86 and x64 records are byte-identical. Focused title-data and title-demo smoke checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors."
       ],
-      "semanticContract": "Reads OperMode_Task and dispatches exactly one title vector: initialization, screen routine, primary setup or game menu.",
+      "semanticContract": "Reads OperMode_Task and dispatches exactly one title vector: initialization, screen routine, primary setup or game menu. P15 original call-site04-07 publication now included;compositional kernel/caller proof retains prior child/input contracts,not arbitrary-target execution.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
       ]
@@ -17371,12 +17553,15 @@
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory OperMode_Task selector",
       "semanticEvidence": [
         "Td S9 A7 static node-semantics pass: SMB1 lines 1137-1165 was compared with the named shared-C owner; controlled original-ROM/x86/x64 victory routes remain required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "S17 P15 original JumpEngine source writes04-07 but eight native callers omit publication;fresh256 victory/256 entrance roots show1020 scratch differences each width. Other six require bounded source/order applicability review.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors."
       ],
-      "semanticContract": "ROM $8482: reads OperMode_Task and dispatches selectors 0..4 in order to BridgeCollapse, SetupVictoryMode, PlayerVictoryWalk, PrintVictoryMessages and PlayerEndWorld; control returns to VictoryMode before its post-leaf branch.",
+      "semanticContract": "ROM $8482: reads OperMode_Task and dispatches selectors 0..4 in order to BridgeCollapse, SetupVictoryMode, PlayerVictoryWalk, PrintVictoryMessages and PlayerEndWorld; control returns to VictoryMode before its post-leaf branch. P15 original call-site04-07 publication now included;compositional kernel/caller proof retains prior child/input contracts,not arbitrary-target execution.",
       "currentSourcePaths": [
         "src/game/terminal_modes.c"
       ]
@@ -20299,14 +20484,16 @@
       "semanticEvidence": [
         "M2 T55 S6 P14 static audit: SMB1 $c982 subtracts $24 and invokes JumpEngine through the seven-entry platform vector; its selected RTS resumes RunLargePlatform. SMB1 ScreenRoutines $8567 invokes the same JumpEngine continuation. Shared platform_callers.c and game.c retain those direct shared-C returns without a host-owned decision.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 zero-credit dependency repair:actual original return-address/byte-selector/PRG target writes04-07 retained in shared native dispatch owner.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Existing shared helper records original popped return9666 and selected bound-PRG target; source uses two PLA then JMP indirect, actual C child retains semantic execution."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Existing shared helper records original popped return9666 and selected bound-PRG target; source uses two PLA then JMP indirect, actual C child retains semantic execution.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07."
       ],
       "operationalEvidence": [
         "M2 T55 S6 P14 original-ROM large-platform selectors 0 through 6 each execute $c965, $c982 and $8e04. Current x86/x64 platform-caller and large-platform-graphics smokes pass. The prior controlled t28-init-screen route executes $8567, $8e04 and $8e19; current x86/x64 name-table/frame-snapshot checks and ROM/native CIRAM route checker pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original GameOverMode three branches and actual nested ScreenRoutines task13 both widths equal;scope does not claim every other dispatch family.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors."
       ],
-      "semanticContract": "Existing shared helper records original popped return9666 and selected bound-PRG target; source uses two PLA then JMP indirect, actual C child retains semantic execution.",
+      "semanticContract": "Existing shared helper records original popped return9666 and selected bound-PRG target; source uses two PLA then JMP indirect, actual C child retains semantic execution. P15 original call-site04-07 publication now included;compositional kernel/caller proof retains prior child/input contracts,not arbitrary-target execution.",
       "currentSourcePaths": [
         "src/game/dispatcher.c"
       ]
@@ -22145,13 +22332,16 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_parser_task_step selector",
       "semanticEvidence": [
-        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved."
+        "M2 T56 S1 static audit: SMBDIS.ASM lines 3060-3183 and RunParser line 5398 were compared instruction-order against shared src/game/area.c and src/game/engine_tail.c. The zero-to-eight initialization, decrement-before-dispatch, 0/4 column advance, 1/2/5/6 graphics, 3/7 parser-core, 16/32-column wraps, backloading call/return and source caller/return handoffs are preserved.",
+        "S17 P15 original JumpEngine source writes04-07 but eight native callers omit publication;fresh256 victory/256 entrance roots show1020 scratch differences each width. Other six require bounded source/order applicability review.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07."
       ],
       "operationalEvidence": [
         "M2 T56 S1 controlled original-ROM/current x86/x64 reset-area parser route: the source-reachable $a690 post-header stream records eight NMI frames. x86/x64 recordings are byte-identical, and all 32 scoped persistent parser RAM bytes ($06a0-$06ad, $0725-$0732, $0741/$0742/$0744/$0745) match ROM on every frame; $0007 is explicitly excluded as the ROM transient zero-page scratch.",
-        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes."
+        "M2 T56 S1 focused parser-column and parser-schedule smoke pass on current x86 and x64; they cover selector cadence, both column-wrap paths, scenery/terrain table staging, and controlled backloading entry. Platform-purity audit passes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors."
       ],
-      "semanticContract": "Maps source selectors 0/4 to column advance, 1/2/5/6 to graphics, and 3/7 to parser core.",
+      "semanticContract": "Maps source selectors 0/4 to column advance, 1/2/5/6 to graphics, and 3/7 to parser core. P15 original call-site04-07 publication now included;compositional kernel/caller proof retains prior child/input contracts,not arbitrary-target execution.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -23706,12 +23896,15 @@
       "currentCounterpart": "mysmb_area_queue_frenzy / mysmb_area_style_ledge / mysmb_area_apply_parser_object",
       "semanticEvidence": [
         "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
-        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match."
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match.",
+        "S17 P15 original JumpEngine source writes04-07 but eight native callers omit publication;fresh256 victory/256 entrance roots show1020 scratch differences each width. Other six require bounded source/order applicability review.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07."
       ],
       "operationalEvidence": [
-        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree."
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors."
       ],
-      "semanticContract": "Dispatches AreaStyle zero/one/two to tree ledge, mushroom ledge or bullet-bill cannon.",
+      "semanticContract": "Dispatches AreaStyle zero/one/two to tree ledge, mushroom ledge or bullet-bill cannon. P15 original call-site04-07 publication now included;compositional kernel/caller proof retains prior child/input contracts,not arbitrary-target execution.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -27356,12 +27549,15 @@
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
         "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
-        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order.",
+        "S17 P15 original JumpEngine source writes04-07 but eight native callers omit publication;fresh256 victory/256 entrance roots show1020 scratch differences each width. Other six require bounded source/order applicability review.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07."
       ],
       "operationalEvidence": [
-        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors."
       ],
-      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
+      "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering. P15 original call-site04-07 publication now included;compositional kernel/caller proof retains prior child/input contracts,not arbitrary-target execution.",
       "currentSourcePaths": [
         "src/game/dispatcher.c"
       ]
@@ -27746,12 +27942,15 @@
       "currentOwner": "src/game/entry.c shared C90 entry owner",
       "currentCounterpart": "mysmb_game_routines, mysmb_player_finish_normal_entrance and mysmb_player_auto_control",
       "semanticEvidence": [
-        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics."
+        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
+        "S17 P15 original JumpEngine source writes04-07 but eight native callers omit publication;fresh256 victory/256 entrance roots show1020 scratch differences each width. Other six require bounded source/order applicability review.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07."
       ],
       "operationalEvidence": [
-        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors."
       ],
-      "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
+      "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract. P15 original call-site04-07 publication now included;compositional kernel/caller proof retains prior child/input contracts,not arbitrary-target execution.",
       "currentSourcePaths": [
         "src/game/entry.c"
       ]
@@ -28844,12 +29043,15 @@
       "currentOwner": "src/game/player_movement.c shared C90 movement owner",
       "currentCounterpart": "mysmb_player_movement_subs state dispatch",
       "semanticEvidence": [
-        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics."
+        "M2 T59 S2 static audit: SMB1 MoveSubs through ExitMov1 compared with shared src/game/player_movement.c; state vector, freeze gate, timer reset, ground/air/swim predicates, facing writes and movement order preserve source semantics.",
+        "S17 P15 original JumpEngine source writes04-07 but eight native callers omit publication;fresh256 victory/256 entrance roots show1020 scratch differences each width. Other six require bounded source/order applicability review.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07."
       ],
       "operationalEvidence": [
-        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain."
+        "M2 T59 S2 controlled caller replay: 37 original movement snapshots and 74 fresh C90 x86/x64 caller comparisons pass over 1,784 persistent bytes with CPU scratch and stack excluded; widths are byte-identical. Platform-purity passes. Unmocked child differences remain outside this chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors."
       ],
-      "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract.",
+      "semanticContract": "M2 T59 S2 preserves this original movement-state control and handoff contract. P15 original call-site04-07 publication now included;compositional kernel/caller proof retains prior child/input contracts,not arbitrary-target execution.",
       "currentSourcePaths": [
         "src/game/player_movement.c"
       ]
@@ -159699,7 +159901,16 @@
         "UpdateLoop",
         "HandleAxeMetatile",
         "ErACM",
-        "HandleEToBGCollision"
+        "HandleEToBGCollision",
+        "OperModeExecutionTree",
+        "TitleScreenMode",
+        "VictoryModeSubroutines",
+        "AreaParserTasks",
+        "AreaStyleObject",
+        "GameMode",
+        "GameRoutines",
+        "MoveSubs",
+        "JumpEngine"
       ],
       "controlEdgeIds": [],
       "status": "in-progress-material-use-completeness",
@@ -159730,7 +159941,9 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P13 corrective admission - complete scenery/buffer scratch chain",
         "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair",
         "docs/proposals/m2/t70-final-current-certification.md S17 P14 admission - remaining mutable buffer pointers",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 admission - dispatch caller scratch correction",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",

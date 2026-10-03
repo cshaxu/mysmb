@@ -820,6 +820,7 @@ mysmb_u8 mysmb_area_parser_task_step(struct mysmb_game *game)
     if (task == 0U) task = 8U;
     game->ram[MYSMB_AREA_PARSER_TASK] = task;
     task--;
+    mysmb_game_jump_engine_state(game, 0x92caU, task);
     if (task == 4U || task == 0U) {
         game->ram[MYSMB_AREA_CURRENT_COLUMN]++;
         if ((game->ram[MYSMB_AREA_CURRENT_COLUMN] & 0x0fU) == 0U) {
@@ -1618,6 +1619,7 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
     }
     if (kind == 1U) {
         value = game->ram[MYSMB_AREA_STYLE];
+        mysmb_game_jump_engine_state(game, 0x9745U, value);
         if (value == 0U) {
             mysmb_area_style_ledge(game, slot, value);
             return;

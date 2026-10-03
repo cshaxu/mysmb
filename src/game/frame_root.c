@@ -227,6 +227,9 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
     /* ROM OperModeExecutionTree loads OperMode then JumpEngine selects one
      * of its four inline vector entries.  Do not call a title leaf before
      * that selector: non-title modes never enter TitleScreenMode. */
+    mysmb_game_jump_engine_state(game, 0x8217U, mode_before);
+    if (mode_before == 0U)
+        mysmb_game_jump_engine_state(game, 0x8236U, task_before);
     if (mode_before == 2U) {
         mysmb_game_step_victory(game);
         /* ROM $838b VictoryMode: after the selected victory leaf, task zero

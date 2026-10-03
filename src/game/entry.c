@@ -5,6 +5,7 @@
 /* ROM $b04a GameRoutines. Child bodies keep their separate proof status. */
 void mysmb_game_routines(struct mysmb_game *game)
 {
+    mysmb_game_jump_engine_state(game, 0xb04eU, game->ram[0x000eU]);
     switch (game->ram[0x000eU]) {
     case 0U: mysmb_player_initialize_entrance(game); break;
     case 1U: mysmb_player_step_auto_climb(game); break;

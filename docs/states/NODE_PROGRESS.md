@@ -8,10 +8,16 @@ for remaining work/exit conditions. Historical1992/1992 means mapping coverage.
 Prior aggregate exact counts below retain their closure-time local-contract
 meaning;they are not full current-build certification. The attempted zero-based final-review restart is superseded;reuse retained
 scoped evidence and track only named unresolved/invalidated clauses.
-Material718 is a partial enumerated set;its global denominator is unknown.
+Material726 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
+
+[P15 dispatch repair](../proposals/m2/t70-final-current-certification.md#s17-p15-checkpoint---dispatch-caller-scratch-repair).
+Eight omitted04-07 caller publications restored.9216 kernel/512 real caller
+roots per width zero diff;27139 parser rechecks/14 checks each/six600-frame
+routes/3 products pass. Material726 partial,total unknown;other material uses
+and four existing packages pending. Local1992/1992 is not certification.
 
 [P14 RAM writers](../proposals/m2/t70-final-current-certification.md#s17-p14-checkpoint---remaining-mutable-buffer-pointers).
 4992 original roots each width zero full-RAM differences;all9 sites observed,

@@ -11816,8 +11816,8 @@
     {
       "label": "OperModeExecutionTree",
       "line": 954,
-      "receiver": "M2 T22 S28",
-      "receivingBasis": "T22/S28 independently proved the original selector table and shared C dispatch; retained for completed-node maintenance.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P15 same-class omitted JumpEngine scratch call correction.",
       "futurePackage": null,
       "history": [
         {
@@ -11964,8 +11964,8 @@
     {
       "label": "TitleScreenMode",
       "line": 982,
-      "receiver": "M2 T25 S7",
-      "receivingBasis": "T25 S7 is the accepted source-order successor after S6 repaired title integration; this node is in the first idle-prefix credit scope.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P15 same-class omitted JumpEngine scratch call correction.",
       "futurePackage": null,
       "history": [
         {
@@ -13632,8 +13632,8 @@
     {
       "label": "VictoryModeSubroutines",
       "line": 1147,
-      "receiver": "M2 T26 S5",
-      "receivingBasis": "accepted S4 route-equivalence closure; S5 performs per-label completion accounting",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P15 same-class omitted JumpEngine scratch call correction.",
       "futurePackage": null,
       "history": [
         {
@@ -19038,8 +19038,8 @@
     {
       "label": "AreaParserTasks",
       "line": 3073,
-      "receiver": "M2 T29 S5",
-      "receivingBasis": "owner-approved source-order T29 S5 area-parser dispatch receipt",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P15 same-class omitted JumpEngine scratch call correction.",
       "futurePackage": null,
       "history": [
         {
@@ -20607,8 +20607,8 @@
     {
       "label": "AreaStyleObject",
       "line": 3646,
-      "receiver": "M2 T29 S8",
-      "receivingBasis": "Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P15 same-class omitted JumpEngine scratch call correction.",
       "futurePackage": null,
       "history": [
         {
@@ -26049,8 +26049,8 @@
     {
       "label": "GameMode",
       "line": 5315,
-      "receiver": "M2 T31 S1",
-      "receivingBasis": "Accepted transfer-121: exact game entry chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P15 same-class omitted JumpEngine scratch call correction.",
       "futurePackage": null,
       "history": [
         {
@@ -26590,8 +26590,8 @@
     {
       "label": "GameRoutines",
       "line": 5499,
-      "receiver": "M2 T31 S4",
-      "receivingBasis": "Accepted planned entry-mode chain, transfer-133",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P15 same-class omitted JumpEngine scratch call correction.",
       "futurePackage": null,
       "history": [
         {
@@ -27593,8 +27593,8 @@
     {
       "label": "MoveSubs",
       "line": 5916,
-      "receiver": "M2 T33 S1",
-      "receivingBasis": "Accepted transfer-138: movement dispatch and ground/air chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P15 same-class omitted JumpEngine scratch call correction.",
       "futurePackage": null,
       "history": [
         {
@@ -69645,6 +69645,94 @@
         "RendBBuf",
         "ChkMTLow",
         "StrBlock"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-dispatch-scratch-1",
+      "type": "transfer",
+      "from": "M2 T22 S28",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "OperModeExecutionTree"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-dispatch-scratch-2",
+      "type": "transfer",
+      "from": "M2 T25 S7",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "TitleScreenMode"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-dispatch-scratch-3",
+      "type": "transfer",
+      "from": "M2 T26 S5",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "VictoryModeSubroutines"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-dispatch-scratch-4",
+      "type": "transfer",
+      "from": "M2 T29 S5",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "AreaParserTasks"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-dispatch-scratch-5",
+      "type": "transfer",
+      "from": "M2 T29 S8",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "AreaStyleObject"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-dispatch-scratch-6",
+      "type": "transfer",
+      "from": "M2 T31 S1",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "GameMode"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-dispatch-scratch-7",
+      "type": "transfer",
+      "from": "M2 T31 S4",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "GameRoutines"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-dispatch-scratch-8",
+      "type": "transfer",
+      "from": "M2 T33 S1",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "MoveSubs"
       ],
       "acceptedBy": "Coordinator under owner same-S repair mandate.",
       "evidence": "docs/proposals/m2/t70-final-current-certification.md"
@@ -766401,7 +766489,16 @@
         "UpdateLoop",
         "HandleAxeMetatile",
         "ErACM",
-        "HandleEToBGCollision"
+        "HandleEToBGCollision",
+        "OperModeExecutionTree",
+        "TitleScreenMode",
+        "VictoryModeSubroutines",
+        "AreaParserTasks",
+        "AreaStyleObject",
+        "GameMode",
+        "GameRoutines",
+        "MoveSubs",
+        "JumpEngine"
       ],
       "baseline": 1992,
       "incomingComplete": [

@@ -1,4 +1,5 @@
 #include "game/player.h"
+#include "game/frame_root.h"
 
 /* ROM OnGroundStateSub/GndMove: children may change controller state. */
 static void mysmb_player_ground_state(struct mysmb_game *game)
@@ -48,6 +49,7 @@ void mysmb_player_movement_subs(struct mysmb_game *game)
     mysmb_player_physics_sub(game);
     if (game->ram[0x070bU] != 0U) return;
     if (game->ram[0x001dU] != 3U) game->ram[0x0789U] = 0x18U;
+    mysmb_game_jump_engine_state(game, 0xb350U, game->ram[0x001dU]);
     switch (game->ram[0x001dU]) {
     case 0U: mysmb_player_ground_state(game); break;
     case 1U: mysmb_player_air_state(game, 0U); break;

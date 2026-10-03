@@ -9,6 +9,14 @@
 static unsigned char children[4][4098];
 static unsigned int child_count,child_index,failures;
 
+/* This harness enters PlayerEntrance below the GameRoutines dispatch.
+ * The parent remains linked; its actual JumpEngine has separate ROM proof. */
+void mysmb_game_jump_engine_state(struct mysmb_game *game,
+                                 mysmb_u16 ret, mysmb_u8 selector)
+{
+    (void)game; (void)ret; (void)selector;
+}
+
 static void compare(const unsigned char *actual,const unsigned char *expected,
                     const char *phase)
 {

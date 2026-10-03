@@ -5,6 +5,14 @@
 
 static unsigned int events[4],count,bad,mutate;
 static mysmb_u8 seen_buttons;
+
+/* Record the dispatch seam before its leaf; generic scratch has ROM proof. */
+void mysmb_game_jump_engine_state(struct mysmb_game *game,
+                                 mysmb_u16 ret, mysmb_u8 selector)
+{
+    if (ret != 0xb04eU || selector != game->ram[0x000eU] || count != 0U)
+        ++bad;
+}
 static void record(unsigned int event)
 {
     if(count<4U) events[count]=event;

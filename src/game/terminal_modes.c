@@ -196,6 +196,9 @@ void mysmb_game_step_victory(struct mysmb_game *game)
     mysmb_u8 scroll_amount;
     mysmb_u16 fractional_sum;
 
+    mysmb_game_jump_engine_state(game, 0x83a5U,
+                                game->ram[MYSMB_RAM_OPER_MODE_TASK]);
+
     if (game->ram[MYSMB_RAM_OPER_MODE_TASK] == 0U) {
         (void)mysmb_objects_step_bridge_collapse(game);
         return;

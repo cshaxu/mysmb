@@ -7,6 +7,14 @@ static unsigned int failed;
 static mysmb_u8 post_task;
 static mysmb_u8 selected;
 
+/* Parent seam only; the real helper is checked against original ROM roots. */
+void mysmb_game_jump_engine_state(struct mysmb_game *game,
+                                 mysmb_u16 ret, mysmb_u8 selector)
+{
+    if (ret != 0xaee1U || selector != game->ram[0x0772U] || calls != 0U)
+        failed = 1U;
+}
+
 void mysmb_area_initialize(struct mysmb_game *game)
 { (void)game; ++calls; sequence = sequence * 10U + 1U; }
 void mysmb_game_step_screen_routine(struct mysmb_game *game)
@@ -32,9 +40,9 @@ int main(void)
     for (task = 0U; task < 3U; ++task) {
         memset(&game, 0, sizeof(game));
         game.ram[0x772U] = (mysmb_u8)task;
-        calls = 0U; sequence = 0U;
+        calls = 0U; sequence = 0U; failed = 0U;
         mysmb_game_mode(&game);
-        if (calls != 1U || sequence != task + 1U) return 1;
+        if (failed || calls != 1U || sequence != task + 1U) return 1;
     }
     for (player = 0U; player < 2U; ++player)
     for (task = 0U; task < 256U; ++task) {

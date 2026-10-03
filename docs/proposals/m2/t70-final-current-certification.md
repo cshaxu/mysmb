@@ -3973,3 +3973,80 @@ sites now have named root-domain dispositions(P12 reset/query,P13 StrBlock,
 P14 remaining9);three dispatch sites and other mutable/register/flag/stack/
 inter-frame clauses remain. Material/pixels/routes/snapshot still open;
 this checkpoint is not full certification or all-caller domain proof.
+
+## S17 P15 admission - dispatch caller scratch correction
+
+Source JumpEngine8E04-8E18 pops inline return base into04/05 and writes
+selected pointer06/07 before dispatch.9216 original roots(all18 inline
+return bases,256 selectors,two neutral RAM seeds) match shared helper full
+RAM. Kernels stop immediately after actual JMP;arbitrary byte selectors
+prove scratch arithmetic only,not legal target execution or flags ABI.
+Fresh256 victory83A0 roots and256 entryB04A roots each width reproduce1020
+RAM04-07 differences per family. Old whole-frame ABI excludes zero-page;
+retained local target control proofs do not discharge these caller writes.
+Same-class18-site review:four generic-helper callers and six literal-vector
+callers publish scratch;eight omit it. Correct in this same S:
+`OperModeExecutionTree`, `TitleScreenMode`, `VictoryModeSubroutines`, `AreaParserTasks`, `AreaStyleObject`, `GameMode`, `GameRoutines`, `MoveSubs`.
+Shared ownersframe_root,terminal_modes,area,dispatcher,entry,player_movement;
+no platform change. Eight labels reopened(local1984/1992),fresh0,max1992;
+JumpEngine is audit participation. Reuse existing native branch/child proofs
+only within their domains,add source-ordered helper calls at original points.
+AreaStyle uses source AreaStyle selector after parent RunAObj scratch;MoveSubs
+only after physics and freeze guard;frame mode/title dispatch after pause
+guard before selected leaves. Three EXEs and focused/affected ROM checks
+required. No new whole-project round;remaining packages stay explicit.
+
+## S17 P15 checkpoint - dispatch caller scratch repair
+
+Original JumpEngine8E04-8E18 pops the actual inline return base04/05,
+reads low/high through indexed04 pointer,stores06/07 then jumps through06.
+9216 original roots each width cover18 source call bases,256 selectors,two
+RAM seeds;all2048 RAM zero diff. Kernel stops immediately after actual JMP,
+before target execution;no stack-write exclusion is needed for its PLA-only
+body. This proves byte index/INY wrapping/address/target scratch,not arbitrary
+target behavior or host emulation. Normal source selectors are below128 and
+source ASL entry carry is zero. Six literal target tables retain reviewed
+S16 bindings/previous branch and native child contracts;four old generic
+helper callers retain their source positions. No source table/runtime target
+change. Remaining eight omitted callers now invoke the existing shared
+helper at exact original return bases:
+OperModeExecutionTree:8217, TitleScreenMode:8236, VictoryModeSubroutines:83a5, AreaParserTasks:92ca, AreaStyleObject:9745, GameMode:aee1, GameRoutines:b04e, MoveSubs:b350.
+
+Source-order review:main mode dispatch follows pause exit;title dispatch
+only mode0 before its task leaf. Victory/GameMode/GameRoutines publish before
+their selectors' targets. AreaParserTaskHandler decrements its selector then
+publishes92CA before its actual task. AreaStyle reloads733 and publishes
+9745 after parent9666 and before selected style leaf. PlayerMovement runs
+physics first,checks returned freeze flag,resets nonclimb timer,then publishes
+B350 using returned Player_State. Selector fields do not alias04-07;helper
+has no other RAM side effects. Existing target branches and child interiors
+remain unchanged,so the kernel/caller delta composes with retained local
+child contracts;this is not all-input end-to-end certification.
+
+Fresh256 victory83A0 roots/256 entranceB04A roots each width compare all2048
+RAM excluding only actual observed physical pushes. Each family had1020
+baseline differing04-07 bytes;after0.9216 kernel roots remain0. Current
+27139 parser roots per width remain0 full-RAM differences under their P6
+domains. Fourteen actual focused checks each width pass;standalone parent
+harness seams now verify return-base/selector/order/freeze before mocked
+leaves. Those stubs do not prove kernel or child internals;the original
+kernel roots and retained real child receipts do. The below-dispatch
+PlayerEntrance snapshot harness adds only its unused link seam,no new oracle
+claim. Six600-frame scoped integration routes remain zero diff/native widths
+byte-identical;zero-page/physical stack still outside their frame ABI.
+Raw records deleted,batches within32MiB/120sec. Three EXEs refreshed using
+existing Win32/OpenNT builds;DOS compile/link only.
+
+Eight reopened local caller contracts restored;fresh node/control0.
+Material719-726 record eight corrected caller-to-kernel scratch handoffs.
+All61 indirect access sites have named family-domain dispositions,but this
+does not discharge every direct mutable/register/flag/stack/inter-frame use.
+Historical1992/1992,local scoped nodes1992/1992,controls4274/4274
+(raw4342,infeasible68);material726 partial,total unknown. Material/pixels/
+routes/snapshot packages remain open;S17 stays active. No full certification.
+
+mysmb16.exe:259179 bytes,SHA256 6b994a6197ffb580c15a26a69fc26c975d1b0115ad56ae5427eccc0f110e8f69.
+
+mysmb32.exe:373619 bytes,SHA256 5fa678c28a237b4899dd81938134b3541903b586f9bf49266269cb49b03a45fc.
+
+mysmb64.exe:379625 bytes,SHA256 1c8ad80d559e0feb2736f8f99f51f8c190e9a426edd87c335adfba65f3486064.
