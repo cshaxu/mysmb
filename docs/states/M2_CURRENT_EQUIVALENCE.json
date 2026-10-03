@@ -22653,8 +22653,8 @@
     "unclassified": 0
   },
   "controlEdgeCounts": {
-    "exact": 4265,
-    "infeasible": 76,
+    "exact": 4264,
+    "infeasible": 77,
     "needs-evidence": 1
   },
   "controlEdgeTypeCounts": {
@@ -25070,7 +25070,8 @@
         "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
         "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:fivecurrentpalette source segments identicaltoaccepted398f38ef;65 originalinstructions/28RAM sites mapped8manuallyreviewed savedstate/selector/loop/bytecursor/scratch/order/alias clauses. S13 material605-613 retained,not newedges."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:fivecurrentpalette source segments identicaltoaccepted398f38ef;65 originalinstructions/28RAM sites mapped8manuallyreviewed savedstate/selector/loop/bytecursor/scratch/order/alias clauses. S13 material605-613 retained,not newedges.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
         "M2 T52 S4 controlled ordinary GameMode -> ScreenRoutines task-ten routes: owner-ROM and native x86/x64 records for BackgroundColorCtrl 0,4,5,6,7 match task 11, address control and the $3f10 length-four Buffer1 command; test/verify_screen_palette_route.py checks each bounded route.",
@@ -25079,7 +25080,8 @@
         "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:currentC90 x86/x64 both36864 original rootsand480 persistent9-10-11 protocols/1440 records zero completeRAM/declaredreturnABI differences;6branchpairs bothoutcomes/all28tablebytes/29184 originalorderedwritechecks. Actual originalpushbytes01fa-01fd onlyexcluded;realdispatch/child.2focusedchecks each pass;no product/source change,P39threehashes unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:currentC90 x86/x64 both36864 original rootsand480 persistent9-10-11 protocols/1440 records zero completeRAM/declaredreturnABI differences;6branchpairs bothoutcomes/all28tablebytes/29184 originalorderedwritechecks. Actual originalpushbytes01fa-01fd onlyexcluded;realdispatch/child.2focusedchecks each pass;no product/source change,P39threehashes unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "ROM $85F1 GetPlayerColors selects Mario/Luigi/fiery bytes and BackgroundColorCtrl-or-AreaType, preserves the four-color counter terminal RAM00=$ff, writes the $3f10 length-four Buffer1 packet and advances its offset by seven within the admitted table/buffer domain.",
       "currentSourcePaths": [
@@ -25097,12 +25099,14 @@
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
         "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
         "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:fivecurrentpalette source segments identicaltoaccepted398f38ef;65 originalinstructions/28RAM sites mapped8manuallyreviewed savedstate/selector/loop/bytecursor/scratch/order/alias clauses. S13 material605-613 retained,not newedges."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:fivecurrentpalette source segments identicaltoaccepted398f38ef;65 originalinstructions/28RAM sites mapped8manuallyreviewed savedstate/selector/loop/bytecursor/scratch/order/alias clauses. S13 material605-613 retained,not newedges.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
         "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
         "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:currentC90 x86/x64 both36864 original rootsand480 persistent9-10-11 protocols/1440 records zero completeRAM/declaredreturnABI differences;6branchpairs bothoutcomes/all28tablebytes/29184 originalorderedwritechecks. Actual originalpushbytes01fa-01fd onlyexcluded;realdispatch/child.2focusedchecks each pass;no product/source change,P39threehashes unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:currentC90 x86/x64 both36864 original rootsand480 persistent9-10-11 protocols/1440 records zero completeRAM/declaredreturnABI differences;6branchpairs bothoutcomes/all28tablebytes/29184 originalorderedwritechecks. Actual originalpushbytes01fa-01fd onlyexcluded;realdispatch/child.2focusedchecks each pass;no product/source change,P39threehashes unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "ROM $85a3: PlayerStatus $02 overrides Mario/Luigi offset with the fiery palette offset.",
       "currentSourcePaths": [
@@ -25120,12 +25124,14 @@
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
         "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
         "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:fivecurrentpalette source segments identicaltoaccepted398f38ef;65 originalinstructions/28RAM sites mapped8manuallyreviewed savedstate/selector/loop/bytecursor/scratch/order/alias clauses. S13 material605-613 retained,not newedges."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:fivecurrentpalette source segments identicaltoaccepted398f38ef;65 originalinstructions/28RAM sites mapped8manuallyreviewed savedstate/selector/loop/bytecursor/scratch/order/alias clauses. S13 material605-613 retained,not newedges.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
         "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
         "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:currentC90 x86/x64 both36864 original rootsand480 persistent9-10-11 protocols/1440 records zero completeRAM/declaredreturnABI differences;6branchpairs bothoutcomes/all28tablebytes/29184 originalorderedwritechecks. Actual originalpushbytes01fa-01fd onlyexcluded;realdispatch/child.2focusedchecks each pass;no product/source change,P39threehashes unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:currentC90 x86/x64 both36864 original rootsand480 persistent9-10-11 protocols/1440 records zero completeRAM/declaredreturnABI differences;6branchpairs bothoutcomes/all28tablebytes/29184 originalorderedwritechecks. Actual originalpushbytes01fa-01fd onlyexcluded;realdispatch/child.2focusedchecks each pass;no product/source change,P39threehashes unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "ROM $85ac: initializes exactly four palette-byte fetches.",
       "currentSourcePaths": [
@@ -25143,12 +25149,14 @@
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
         "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
         "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:fivecurrentpalette source segments identicaltoaccepted398f38ef;65 originalinstructions/28RAM sites mapped8manuallyreviewed savedstate/selector/loop/bytecursor/scratch/order/alias clauses. S13 material605-613 retained,not newedges."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:fivecurrentpalette source segments identicaltoaccepted398f38ef;65 originalinstructions/28RAM sites mapped8manuallyreviewed savedstate/selector/loop/bytecursor/scratch/order/alias clauses. S13 material605-613 retained,not newedges.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
         "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
         "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:currentC90 x86/x64 both36864 original rootsand480 persistent9-10-11 protocols/1440 records zero completeRAM/declaredreturnABI differences;6branchpairs bothoutcomes/all28tablebytes/29184 originalorderedwritechecks. Actual originalpushbytes01fa-01fd onlyexcluded;realdispatch/child.2focusedchecks each pass;no product/source change,P39threehashes unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:currentC90 x86/x64 both36864 original rootsand480 persistent9-10-11 protocols/1440 records zero completeRAM/declaredreturnABI differences;6branchpairs bothoutcomes/all28tablebytes/29184 originalorderedwritechecks. Actual originalpushbytes01fa-01fd onlyexcluded;realdispatch/child.2focusedchecks each pass;no product/source change,P39threehashes unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "ROM $85b0: copies the four selected player bytes in ascending table order.",
       "currentSourcePaths": [
@@ -25166,12 +25174,14 @@
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
         "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
         "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:fivecurrentpalette source segments identicaltoaccepted398f38ef;65 originalinstructions/28RAM sites mapped8manuallyreviewed savedstate/selector/loop/bytecursor/scratch/order/alias clauses. S13 material605-613 retained,not newedges."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:fivecurrentpalette source segments identicaltoaccepted398f38ef;65 originalinstructions/28RAM sites mapped8manuallyreviewed savedstate/selector/loop/bytecursor/scratch/order/alias clauses. S13 material605-613 retained,not newedges.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
         "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
         "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:currentC90 x86/x64 both36864 original rootsand480 persistent9-10-11 protocols/1440 records zero completeRAM/declaredreturnABI differences;6branchpairs bothoutcomes/all28tablebytes/29184 originalorderedwritechecks. Actual originalpushbytes01fa-01fd onlyexcluded;realdispatch/child.2focusedchecks each pass;no product/source change,P39threehashes unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:currentC90 x86/x64 both36864 original rootsand480 persistent9-10-11 protocols/1440 records zero completeRAM/declaredreturnABI differences;6branchpairs bothoutcomes/all28tablebytes/29184 originalorderedwritechecks. Actual originalpushbytes01fa-01fd onlyexcluded;realdispatch/child.2focusedchecks each pass;no product/source change,P39threehashes unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "ROM $85bc: chooses BackgroundColorCtrl when nonzero and AreaType otherwise before writing the universal entry.",
       "currentSourcePaths": [
@@ -25189,12 +25199,14 @@
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
         "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
         "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:fivecurrentpalette source segments identicaltoaccepted398f38ef;65 originalinstructions/28RAM sites mapped8manuallyreviewed savedstate/selector/loop/bytecursor/scratch/order/alias clauses. S13 material605-613 retained,not newedges."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:fivecurrentpalette source segments identicaltoaccepted398f38ef;65 originalinstructions/28RAM sites mapped8manuallyreviewed savedstate/selector/loop/bytecursor/scratch/order/alias clauses. S13 material605-613 retained,not newedges.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
         "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
         "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:currentC90 x86/x64 both36864 original rootsand480 persistent9-10-11 protocols/1440 records zero completeRAM/declaredreturnABI differences;6branchpairs bothoutcomes/all28tablebytes/29184 originalorderedwritechecks. Actual originalpushbytes01fa-01fd onlyexcluded;realdispatch/child.2focusedchecks each pass;no product/source change,P39threehashes unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses:currentC90 x86/x64 both36864 original rootsand480 persistent9-10-11 protocols/1440 records zero completeRAM/declaredreturnABI differences;6branchpairs bothoutcomes/all28tablebytes/29184 originalorderedwritechecks. Actual originalpushbytes01fa-01fd onlyexcluded;realdispatch/child.2focusedchecks each pass;no product/source change,P39threehashes unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "ROM $85d8: stores the Buffer1 offset after the seven-byte palette command.",
       "currentSourcePaths": [
@@ -46386,11 +46398,13 @@
       "semanticEvidence": [
         "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
         "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Gets offscreen bits; returns on bit three; otherwise timer-gates spin update, applies short-firebar axis skip, prepares anchor sprite/collision and drives the part loop.",
       "currentSourcePaths": [
@@ -46407,10 +46421,12 @@
       "currentCounterpart": "shared Firebar state/preparation and part-loop path",
       "semanticEvidence": [
         "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Uses stored high spin state and branches by firebar ID/axis-avoidance rule.",
       "currentSourcePaths": [
@@ -46426,10 +46442,12 @@
       "currentCounterpart": "shared Firebar state/preparation and part-loop path",
       "semanticEvidence": [
         "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Increments short-firebar high phase at 8 or 24 to avoid horizontal state, then falls through setup.",
       "currentSourcePaths": [
@@ -46445,10 +46463,12 @@
       "currentCounterpart": "shared Firebar state/preparation and part-loop path",
       "semanticEvidence": [
         "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Stores effective high spin phase, computes relative/initial position, draws/tests anchor, selects max part count and initializes loop counter.",
       "currentSourcePaths": [
@@ -46464,10 +46484,12 @@
       "currentCounterpart": "shared Firebar state/preparation and part-loop path",
       "semanticEvidence": [
         "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Stores max five for short or eleven for long firebar, then initializes part index zero.",
       "currentSourcePaths": [
@@ -46483,10 +46505,12 @@
       "currentCounterpart": "shared Firebar state/preparation and part-loop path",
       "semanticEvidence": [
         "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Loads phase, obtains part position, draws/tests it, switches OAM source after part four, increments and loops while below max.",
       "currentSourcePaths": [
@@ -46502,10 +46526,12 @@
       "currentCounterpart": "shared Firebar state/preparation and part-loop path",
       "semanticEvidence": [
         "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Increments part counter and branches to next part while below max.",
       "currentSourcePaths": [
@@ -46521,10 +46547,12 @@
       "currentCounterpart": "shared Firebar state/preparation and part-loop path",
       "semanticEvidence": [
         "Td S9 B15j Firebar state-preparation node-semantics and independent integration audit: SMB1 lines 9703-9783 compared with shared enemy/firebar.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Returns for bit-three offscreen path or after complete part loop.",
       "currentSourcePaths": [
@@ -46540,10 +46568,12 @@
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
         "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Applies mirror-controlled horizontal/vertical adder signs, hides segments outside horizontal range or when anchor Y is $f8, writes OAM coordinates and falls through collision.",
       "currentSourcePaths": [
@@ -46559,10 +46589,12 @@
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
         "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Adds signed horizontal adder to anchor relative X and stores segment X before absolute-distance visibility test.",
       "currentSourcePaths": [
@@ -46579,10 +46611,12 @@
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
         "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Computes absolute horizontal segment/anchor difference for left-side segment before visibility check.",
       "currentSourcePaths": [
@@ -46599,10 +46633,12 @@
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
         "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Selects visible vertical-adder handling only for horizontal difference below $59; otherwise hides Y at $f8.",
       "currentSourcePaths": [
@@ -46619,10 +46655,12 @@
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
         "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Skips vertical addition for anchor Y $f8; otherwise applies the second mirror bit to vertical adder.",
       "currentSourcePaths": [
@@ -46639,10 +46677,12 @@
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
         "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Adds signed vertical adder to relative Y before sprite Y write.",
       "currentSourcePaths": [
@@ -46659,10 +46699,12 @@
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
         "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Stores segment Y in OAM and collision scratch.",
       "currentSourcePaths": [
@@ -46679,10 +46721,12 @@
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
         "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Draws tile, skips collision for star/timer/offscreen-page conditions, probes one or three player Y bands by size/crouch, tests 8x8 proximity, injures and restores loop counter.",
       "currentSourcePaths": [
@@ -46698,10 +46742,12 @@
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
         "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Selects two extra Y probes and shifts player Y by $18 for small or crouching player.",
       "currentSourcePaths": [
@@ -46718,10 +46764,12 @@
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
         "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Uses the selected player Y to enter the collision probe loop.",
       "currentSourcePaths": [
@@ -46738,10 +46786,12 @@
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
         "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Computes absolute Y difference, then conditionally absolute X difference and branches to injury on both distances below eight.",
       "currentSourcePaths": [
@@ -46758,10 +46808,12 @@
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
         "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Skips X test when Y difference is at least eight or segment X is far right.",
       "currentSourcePaths": [
@@ -46778,10 +46830,12 @@
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
         "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Branches to injury when absolute X difference is below eight.",
       "currentSourcePaths": [
@@ -46798,10 +46852,12 @@
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
         "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Advances player Y probe unless small/crouching three-probe sequence is complete.",
       "currentSourcePaths": [
@@ -46818,10 +46874,12 @@
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
         "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Chooses player injury direction from player sprite X versus firebar segment X then invokes injury.",
       "currentSourcePaths": [
@@ -46838,10 +46896,12 @@
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
         "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Stores selected direction, preserves part loop counter across player injury and resumes collision exit.",
       "currentSourcePaths": [
@@ -46858,10 +46918,12 @@
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
         "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Restores/increments OAM stream offset by four, reloads ObjectOffset and returns.",
       "currentSourcePaths": [
@@ -46878,10 +46940,12 @@
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
         "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Derives oscillating horizontal and vertical magnitudes from phase/table rows, then selects mirror data from phase>>3.",
       "currentSourcePaths": [
@@ -46897,10 +46961,12 @@
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
         "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Stores folded horizontal phase before row-offset lookup.",
       "currentSourcePaths": [
@@ -46916,10 +46982,12 @@
       "currentCounterpart": "shared Firebar segment positioning/collision path",
       "semanticEvidence": [
         "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
       "semanticContract": "Stores folded vertical phase before row-offset lookup.",
       "currentSourcePaths": [
@@ -104952,16 +105020,18 @@
       "instruction": "bne",
       "id": "control-01860",
       "cohort": "J",
-      "status": "exact",
-      "currentCounterpart": "shared Firebar segment/collision branch, child-call, fall-through, tail-jump and return counterpart",
+      "status": "infeasible",
+      "currentCounterpart": "none: impossible original fallthrough; shared C preserves feasible direction path",
       "semanticEvidence": [
         "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly."
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "operationalEvidence": [
-        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:327680original roots eachwidth2032RAM/24APU/orderedwrites0diff including262144 postrepair roots;all205PC/26branchpairs/oneinfeasible side. Eighttests eachwidth pass,all-targetbuilds and DOS16 link pass,3EXEs refreshed."
       ],
-      "semanticContract": "Preserves original fallthrough relation ChkFOfs -> VAHandl with Firebar OAM, mirror, player probe and source call/return ordering.",
+      "semanticContract": "Original CDEA LDA #F8 sets Z=0; CDEC BNE SetVFbr immediately tests unchanged Z and must branch. Extracted ChkFOfs -> VAHandl fallthrough is infeasible; no interior incoming original reference.",
       "currentSourcePaths": [
         "src/game/enemy/firebar.c",
         "src/game/enemy/firebar_children.c"
@@ -161530,6 +161600,7 @@
     "control-01711",
     "control-01752",
     "control-01795",
+    "control-01860",
     "control-01904",
     "control-01929",
     "control-02036",
@@ -161584,16 +161655,16 @@
     "control-03784",
     "control-03868"
   ],
-  "infeasibleControlEdgeTotal": 76,
-  "feasibleControlEdgeTotal": 4266,
+  "infeasibleControlEdgeTotal": 77,
+  "feasibleControlEdgeTotal": 4265,
   "finalCertification": {
     "status": "incomplete",
     "authority": "docs/states/CURRENT.md",
     "localExactMeaning": "Accepted scoped semantic/route contracts in retained evidence;not exhaustive current-build or end-to-end certification.",
     "nodeUniverse": 1992,
-    "feasibleControlUniverse": 4266,
+    "feasibleControlUniverse": 4265,
     "rawControlUniverse": 4342,
-    "infeasibleControls": 76,
+    "infeasibleControls": 77,
     "reviewedNodeLabels": [],
     "reviewedControlEdgeIds": [],
     "reviewedMeaning": "Superseded restart accounting;not an active progress counter. Retained scoped proofs remain accepted within their stated limits.",
@@ -165651,7 +165722,6 @@
           "control-01857",
           "control-01858",
           "control-01859",
-          "control-01860",
           "control-01861",
           "control-01862",
           "control-01863",
@@ -168535,16 +168605,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:12labels/69instructions/16RAM joined6boundedclauses;statepriority/exact5gravity/postchildstate,tempstackedspeed,revival/erasure/tailorder. Falsefallthrough01752 corrected infeasible,rawretained;caller/inter-frame lifetimespending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:14labels/70instructions/30RAM joined6boundedclauses;redanchor/center/forcegates,realgreenchildorder/framebits,rawmaximum/primarybits/wraps,stackcounter lifetime/returned00. Caller/producer/inter-frame lifetimespending,no newnode/controlcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 4950,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 5741,
+        "localInstructionReceiptSites": 5155,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 5536,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 1760,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2013,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 1839,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 1934,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -168553,7 +168624,6 @@
           "src/game/oam/normal_enemy_gfx.c": 127,
           "src/game/terminal_modes.c": 81,
           "src/game/oam/player_gfx.c": 81,
-          "src/game/enemy/firebar.c": 79,
           "shared game core: enemy/balance_platform.c": 78,
           "src/game/world/player_enemy_collision.c": 72,
           "src/game/oam/block_gfx.c": 54,

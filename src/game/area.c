@@ -470,7 +470,7 @@ mysmb_u8 mysmb_area_queue_player_palette(struct mysmb_game *game)
     if (game->ram[0x0756U] == 2U) color_offset = 8U;
     background_index = game->ram[MYSMB_AREA_BACKGROUND_COLOR] != 0U ?
         game->ram[MYSMB_AREA_BACKGROUND_COLOR] : game->ram[MYSMB_AREA_TYPE];
-    if (background_index >= 8U || game->area_prg_size <=
+    if (game->area_prg_size <=
         MYSMB_AREA_BACKGROUND_COLORS + background_index) return 0U;
     /* Original ClrGetLoop stores four colors before overwriting their first
      * byte with the background color and then writing the command header.
@@ -508,7 +508,7 @@ mysmb_u8 mysmb_area_sync_player_palette(struct mysmb_game *game)
     if (game->ram[0x0756U] == 2U) color_offset = 8U;
     background_index = game->ram[MYSMB_AREA_BACKGROUND_COLOR] != 0U ?
         game->ram[MYSMB_AREA_BACKGROUND_COLOR] : game->ram[MYSMB_AREA_TYPE];
-    if (background_index >= 8U || game->area_prg_size <=
+    if (game->area_prg_size <=
         MYSMB_AREA_BACKGROUND_COLORS + background_index) return 0U;
     if (game->palette[0U] ==
         game->area_prg[MYSMB_AREA_BACKGROUND_COLORS + background_index] &&

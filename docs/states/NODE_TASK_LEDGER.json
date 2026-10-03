@@ -14830,8 +14830,8 @@
     {
       "label": "GetPlayerColors",
       "line": 1467,
-      "receiver": "M2 T70 S13",
-      "receivingBasis": "Accepted source-order screen palette maintenance;prior evidence retained.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "Accepted existing Firebar injury palette raw-index corrective chain;prior S13 evidence retained.",
       "futurePackage": null,
       "history": [
         {
@@ -14853,8 +14853,8 @@
     {
       "label": "ChkFiery",
       "line": 1473,
-      "receiver": "M2 T70 S13",
-      "receivingBasis": "Accepted source-order screen palette maintenance;prior evidence retained.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "Accepted existing Firebar injury palette raw-index corrective chain;prior S13 evidence retained.",
       "futurePackage": null,
       "history": [
         {
@@ -14868,8 +14868,8 @@
     {
       "label": "StartClrGet",
       "line": 1477,
-      "receiver": "M2 T70 S13",
-      "receivingBasis": "Accepted source-order screen palette maintenance;prior evidence retained.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "Accepted existing Firebar injury palette raw-index corrective chain;prior S13 evidence retained.",
       "futurePackage": null,
       "history": [
         {
@@ -14883,8 +14883,8 @@
     {
       "label": "ClrGetLoop",
       "line": 1479,
-      "receiver": "M2 T70 S13",
-      "receivingBasis": "Accepted source-order screen palette maintenance;prior evidence retained.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "Accepted existing Firebar injury palette raw-index corrective chain;prior S13 evidence retained.",
       "futurePackage": null,
       "history": [
         {
@@ -14898,8 +14898,8 @@
     {
       "label": "SetBGColor",
       "line": 1489,
-      "receiver": "M2 T70 S13",
-      "receivingBasis": "Accepted source-order screen palette maintenance;prior evidence retained.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "Accepted existing Firebar injury palette raw-index corrective chain;prior S13 evidence retained.",
       "futurePackage": null,
       "history": [
         {
@@ -14913,8 +14913,8 @@
     {
       "label": "SetVRAMOffset",
       "line": 1502,
-      "receiver": "M2 T70 S13",
-      "receivingBasis": "Accepted source-order screen palette maintenance;prior evidence retained.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "Accepted existing Firebar injury palette raw-index corrective chain;prior S13 evidence retained.",
       "futurePackage": null,
       "history": [
         {
@@ -69823,6 +69823,22 @@
         "GetBlankPal",
         "GetAreaPal",
         "ExitColorRot"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-injury-palette-1",
+      "type": "transfer",
+      "from": "M2 T70 S13",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "GetPlayerColors",
+        "ChkFiery",
+        "StartClrGet",
+        "ClrGetLoop",
+        "SetBGColor",
+        "SetVRAMOffset"
       ],
       "acceptedBy": "Coordinator under owner same-S repair mandate.",
       "evidence": "docs/proposals/m2/t70-final-current-certification.md"
@@ -767346,7 +767362,33 @@
         "CCSwimUpwards",
         "ChkSwimYPos",
         "YPDiff",
-        "ExSwCC"
+        "ExSwCC",
+        "ProcFirebar",
+        "SusFbar",
+        "SkpFSte",
+        "SetupGFB",
+        "SetMFbar",
+        "DrawFbar",
+        "NextFbar",
+        "SkipFBar",
+        "DrawFirebar_Collision",
+        "AddHA",
+        "SubtR1",
+        "ChkFOfs",
+        "VAHandl",
+        "AddVA",
+        "SetVFbr",
+        "FirebarCollision",
+        "AdjSm",
+        "BigJp",
+        "FBCLoop",
+        "ChkVFBD",
+        "ChkFBCl",
+        "ChgSDir",
+        "SetSDir",
+        "NoColFB",
+        "GetFirebarPosition",
+        "GetHAdder"
       ],
       "baseline": 1992,
       "incomingComplete": [

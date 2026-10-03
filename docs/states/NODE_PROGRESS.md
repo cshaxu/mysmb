@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P68 Firebar/palette repair](../proposals/m2/t70-final-current-certification.md#s17-p68-checkpoint---firebar-chain-and-raw-palette-indexing-repaired).
+S17 P68:28Firebar labels/205instructions/79RAM joined8boundedclauses;raw palette indexing repaired in sharedarea.c/sixtransferrednodes. 327680originalroots eachwidth0diff/all205PC/26branchpairs,1falseexactfallthrough corrected infeasible,8tests each. Scope950/fresh0;5155/10691 instruction receipts,1839/3773 RAM receipts;5536instructions/1934RAM pending. Local1991/1992nodes,4264/4265controls(raw4342/infeasible77),material993partial,totalunknown;threeproducts refreshed,producer/inter-frame/finalpackages pending,M2 incomplete.
+
 [P67 swimming paths](../proposals/m2/t70-final-current-certification.md#s17-p67-checkpoint---swimming-state-and-height-paths-reconciled).
 S17 P67:23swimming labels/159instructions/70RAM joined8boundedclauses;262144actualroots eachwidth0diff/all159PC/21branchpairs,onefalseexactfallthrough corrected infeasible,6tests each. Scope924/fresh0;4950/10691 instruction receipts,1760/3773 RAM receipts;5741instructions/2013RAM pending. Local1991/1992nodes,4265/4266controls(raw4342/infeasible76),material993partial,totalunknown;source/productsP57unchanged,caller/inter-frame and finalpackages pending,M2 incomplete.
 
