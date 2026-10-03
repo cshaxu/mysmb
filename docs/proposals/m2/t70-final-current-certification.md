@@ -2009,7 +2009,7 @@ a fixed effort or a proof of all possible executions from this register.
 | --- | --- | --- |
 | startup (closed) | S15's17 named nodes and42 listed controls;P1 original observations and retained reset proofs | Repair identified read/order/shared-owner differences;source-review changed clauses and affected joins;focused original/native and operational checks;no scoped unresolved diff;refresh three products for product-code changes. |
 | bindings | T70 S3 outstanding original numeric table/pointer uses | Reconcile executable uses against original listing/bytes;record exact unresolved uses and their consumer labels;zero unresolved bindings within the enumerated use manifest. |
-| material | Existing617 accepted paths;source consumed-value uses not yet fully enumerated | Finish the use census with producer/lifetime/overwrite/alias disposition;freeze the denominator only after zero unresolved uses;prove added paths without repeating unrelated accepted contracts. |
+| material | Current647 accepted scoped paths;source consumed-value joins not yet complete | Finish the use census with producer/lifetime/overwrite/alias disposition;freeze the denominator only after zero unresolved uses;prove added paths without repeating unrelated accepted contracts. |
 | pixels | T70 S6 outstanding within-scanline sprite-zero/fine-X split output | Original/shared completed-pixel comparison of the named split alternatives;fix and recheck any diff;palette/OAM metadata equality alone cannot close this. |
 | routes | Missing gameplay/death/restart/pipe/vine/warp/end-world/final-completion routes;existing six600-frame routes remain scoped regressions | Publish a finite route manifest and terminal checkpoints before execution;source/branch-based coverage and explicit exclusions;zero unexplained diff on that manifest,not a claim of all possible input sequences. |
 | snapshot | Existing chain receipts and current source/data/build identities | Reconcile receipts to final dependencies;rerun only invalidated contracts plus integrated operational regression/purity;three target identities recorded;no open M2 clause. DOS graphical/hardware qualification stays M3/M4. |
@@ -3013,3 +3013,80 @@ Historical1992/1992;local accepted scoped nodes1992/1992 and feasible controls
 4275/4275(raw4342,infeasible67),material625 partial,total unknown. S17/T70/M2
 remain open;material,pixels,routes and snapshot are the four remaining keys.
 Do not interpret this inventory or retained local counts as certification.
+
+## S17 P2 bounded scope amendment - immutable producer uses
+
+The admitted completeness index identifies23 explicit immutable-ROM read
+sites lacking an independent same-producer/current-consumer row. Register39
+already accepted original labels as overlapping audit participation,no custody
+transfer or fresh match. Existing625 rows remain unchanged. Scope is the
+read-clause/domain/dependency applicability of the retained proof,not another
+node semantics review. Exact source-order labels:
+
+`WarpZoneNumbers`, `TerrBChk`, `PulleyRopeMetatiles`, `RenderPul`, `VPipeSectLoop`, `SidePipeShaftData`, `SidePipeTopPart`, `SidePipeBottomPart`, `RenderSidewaysPipe`, `DrawSidePart`, `VerticalPipeData`, `StaircaseHeightData`, `StaircaseRowData`, `NextStair`, `DrawQBlk`, `HoleMetatiles`, `NoWhirlP`, `BlockBufferAddr`, `GetBlockBufferAddr`, `WorldAddrOffsets`, `AreaAddrOffsets`, `KeepOnscr`, `X_SubtracterData`, `OffscrJoypadBitsData`, `Hidden1UpCoinAmts`, `RdyNextA`, `BrickQBlockMetatiles`, `Bitmasks`, `FirebarMirrorData`, `FirebarYPos`, `Chk2Ofs`, `GetVAdder`, `PlayerBGUpperExtent`, `HeadChk`, `GetWNum`, `EnemyBGCStateData`, `GetSteFromD`, `PlayerGraphicsTable`, `SwimKT`.
+
+These sites form22 table-to-consumer pairs(two BlockBufferAddr reads share
+one pair). Before acceptance compare current read expressions/local enum/
+array definitions to their named accepted source snapshots;reuse only the
+original input/index/table and ABI domains documented in those receipts.
+Four pipe clauses occur inside a decoder whose unrelated branches changed;
+compare the actual unchanged pipe branch and its constants separately.
+Bindings use S16's current original-origin/domain evidence. Existing callee
+contracts remain their named scoped obligations,no domain expansion or
+inferred branch coverage. Operational checks build/run12 relevant native
+tests each width;no new original trace,product edit or EXE refresh.
+If a read clause/dependency/domain cannot be reconciled it stays pending in
+S17;no automatic exact promotion from a old node flag or an address join.
+Infrastructure and mutable/hardware/stack/flag/inter-frame use work retain
+the admitted S17 completeness scope. Expected fresh0/max1992;all39 enter exact
+only for their retained local contracts,not whole-game certification.
+
+## S17 P2 checkpoint - immutable producer joins
+
+Reconcile all250 original direct ROM-read sites to immutable producer/read
+contracts within retained source/index/alias domains.227 sites join194 existing
+material receipts through actual encoded call/branch/continuation membership,
+original named aliases and byte-checked JumpEngine vector sequences. Graph
+membership is only an address/site join,not new feasibility or route credit.
+The remaining23 sites form22 newly recorded producer/consumer pairs626-647;
+BlockBufferAddr's low/high reads share one relation. Scope39 existing labels,
+expected/actual fresh0/0,no node/control promotion or custody transfer.
+
+The new pairs bind terrain mask use,pulley/intro/side-pipe metatiles,staircase
+row/height,item and hole selection,block-buffer base selection,screen-edge
+tables,hidden-one-up threshold,firebar probe/mirror data,head extent,warp
+number/world/area lookup,enemy landed-state data and swim tile comparison.
+These original immutable producers cannot be overwritten by game-state
+writers. S16 origin/address/index clauses supply current binding evidence;
+the retained node receipts supply their exact input/index and ABI limits.
+Current source read clauses and referenced local enums/arrays agree with
+their named accepted Git snapshots.19 whole helper bodies are unchanged;
+four pipe read clauses are unchanged inside the larger decoder whose other
+branches changed. Pipe branch/index setup and table dependencies were
+reviewed separately;unrelated decoder changes do not silently reopen this
+read contract. Callee/caller/entry domains remain their accepted contracts;
+no claim extends a finite route to arbitrary RAM or global gameplay equality.
+
+The new rows reuse their original-ROM/current-native receipts:there is no new
+ROM replay in P2. Fresh current native builds and12 focused checks per width
+pass. The first local CTest invocation used an unsupported noncapturing group,
+selected zero tests and returned0;that output is rejected. Corrected ordinary
+group syntax executes all12 cases each width,and acceptance checks the exact
+executed total plus absence of zero-test/regex errors. A process exit code
+alone is insufficient evidence. No bad result is used for promotion.
+All171 S16 shared-source identities remain unchanged. No product/test source
+changes or EXE refresh;three products equal committed P1 binding-package bytes.
+
+Local accepted material paths now647,still partially enumerated,total unknown.
+The250 immutable read sites are a use-manifest slice,not250 distinct feasible
+edges. Indirect target/pointer-byte reads,RAM/hardware/register/flag/stack and
+cross-frame consumed values remain the admitted material completeness gap;
+S17 stays open. Historical1992/1992;local scoped nodes1992/1992,feasible controls
+4275/4275(raw4342,infeasible67) unchanged. M2/T70 is not certified;four named
+packages remain. No new audit round or restart counter.
+
+Neutral reproduction:retained-rom-use-joins.py,
+retained-rom-clause-stability.py,run-rom-clause-checks.py and their JSON/logs
+under ignored S17 build. Protected inputs remain read-only/untracked. Registry,
+39-label audit admission,ledger,documentation and whitespace gates validate
+accounting only;unrelated owner changes are preserved,no push.

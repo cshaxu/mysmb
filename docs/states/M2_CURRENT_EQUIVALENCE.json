@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 625,
+    "enumeratedCount": 647,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -13729,6 +13729,530 @@
       "cohortBasis": "producer original inventory label",
       "currentSourcePaths": [
         "src/game/boot.c"
+      ]
+    },
+    {
+      "id": "material-00626",
+      "producer": "Bitmasks",
+      "consumer": "TerrBChk",
+      "storage": "Immutable original Bitmasks read at source PC 94aa;source-owned index/alias domain retained",
+      "feasiblePath": "Accepted original TerrBChk route consumes Bitmasks at 94aa;unchanged current read clause and local constants preserve this value selection before its recorded output/decision.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_scenery_terrain_column",
+      "semanticContract": "Immutable producer-to-read-clause value contract within the retained source/input/index/ABI domains;not complete caller or end-to-end certification.",
+      "semanticEvidence": [
+        "M2 T56 S2 static audit: SMBDIS.ASM lines 3184-3319 were compared instruction-order against shared src/game/area.c and area/block_buffer.c. The 13-row clear, page-modulo scenery selection, foreground zero retention, terrain bit/exception ordering, AreaData-before-block-buffer order, low-bound comparison and 13-row physical-stride write all match on feasible source paths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:byte-bound read PCs and original producer labels;current read clause/local enums/arrays equal accepted source snapshot a59ccd3690c86d21a8fd2bdde03e8f399176912e;S16 current origin/index bindings retained."
+      ],
+      "operationalEvidence": [
+        "M2 T56 S2 controlled original-ROM/current x86/x64 reset-area parser route: eight frames are byte-identical across x86/x64 and zero-difference for MetatileBuffer $06a0-$06ad, physical block-buffer $0500-$06a0, parser state $0725-$0732 and scenery controls $0741-$0745. Current x86/x64 parser-column and parser-schedule smokes plus platform-purity audit pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:reuse original/native scoped route receipts of the unchanged read clause;12 current focused tests each width pass. No new original trace or input-domain expansion."
+      ],
+      "cohort": "I",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00627",
+      "producer": "PulleyRopeMetatiles",
+      "consumer": "RenderPul",
+      "storage": "Immutable original PulleyRopeMetatiles read at source PC 97c8;source-owned index/alias domain retained",
+      "feasiblePath": "Accepted original RenderPul route consumes PulleyRopeMetatiles at 97c8;unchanged current read clause and local constants preserve this value selection before its recorded output/decision.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_pulley_rope",
+      "semanticContract": "Immutable producer-to-read-clause value contract within the retained source/input/index/ABI domains;not complete caller or end-to-end certification.",
+      "semanticEvidence": [
+        "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
+        "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:byte-bound read PCs and original producer labels;current read clause/local enums/arrays equal accepted source snapshot 6dc0898f29249581a1f813f75c0f4663d165e879;S16 current origin/index bindings retained."
+      ],
+      "operationalEvidence": [
+        "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:reuse original/native scoped route receipts of the unchanged read clause;12 current focused tests each width pass. No new original trace or input-domain expansion."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00628",
+      "producer": "VerticalPipeData",
+      "consumer": "VPipeSectLoop",
+      "storage": "Immutable original VerticalPipeData read at source PC 9898;source-owned index/alias domain retained",
+      "feasiblePath": "Accepted original VPipeSectLoop route consumes VerticalPipeData at 9898;unchanged current read clause and local constants preserve this value selection before its recorded output/decision.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_apply_parser_object",
+      "semanticContract": "Immutable producer-to-read-clause value contract within the retained source/input/index/ABI domains;not complete caller or end-to-end certification.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:byte-bound read PCs and original producer labels;current read clause/local enums/arrays equal accepted source snapshot ffd656d4a6201c30e9498c980a679665153f6d30;S16 current origin/index bindings retained."
+      ],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:reuse original/native scoped route receipts of the unchanged read clause;12 current focused tests each width pass. No new original trace or input-domain expansion."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00629",
+      "producer": "SidePipeShaftData",
+      "consumer": "RenderSidewaysPipe",
+      "storage": "Immutable original SidePipeShaftData read at source PC 98bf;source-owned index/alias domain retained",
+      "feasiblePath": "Accepted original RenderSidewaysPipe route consumes SidePipeShaftData at 98bf;unchanged current read clause and local constants preserve this value selection before its recorded output/decision.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_apply_parser_object",
+      "semanticContract": "Immutable producer-to-read-clause value contract within the retained source/input/index/ABI domains;not complete caller or end-to-end certification.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:byte-bound read PCs and original producer labels;current read clause/local enums/arrays equal accepted source snapshot ffd656d4a6201c30e9498c980a679665153f6d30;S16 current origin/index bindings retained."
+      ],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:reuse original/native scoped route receipts of the unchanged read clause;12 current focused tests each width pass. No new original trace or input-domain expansion."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00630",
+      "producer": "SidePipeTopPart",
+      "consumer": "DrawSidePart",
+      "storage": "Immutable original SidePipeTopPart read at source PC 98d0;source-owned index/alias domain retained",
+      "feasiblePath": "Accepted original DrawSidePart route consumes SidePipeTopPart at 98d0;unchanged current read clause and local constants preserve this value selection before its recorded output/decision.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_apply_parser_object",
+      "semanticContract": "Immutable producer-to-read-clause value contract within the retained source/input/index/ABI domains;not complete caller or end-to-end certification.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:byte-bound read PCs and original producer labels;current read clause/local enums/arrays equal accepted source snapshot ffd656d4a6201c30e9498c980a679665153f6d30;S16 current origin/index bindings retained."
+      ],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:reuse original/native scoped route receipts of the unchanged read clause;12 current focused tests each width pass. No new original trace or input-domain expansion."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00631",
+      "producer": "SidePipeBottomPart",
+      "consumer": "DrawSidePart",
+      "storage": "Immutable original SidePipeBottomPart read at source PC 98d6;source-owned index/alias domain retained",
+      "feasiblePath": "Accepted original DrawSidePart route consumes SidePipeBottomPart at 98d6;unchanged current read clause and local constants preserve this value selection before its recorded output/decision.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_apply_parser_object",
+      "semanticContract": "Immutable producer-to-read-clause value contract within the retained source/input/index/ABI domains;not complete caller or end-to-end certification.",
+      "semanticEvidence": [
+        "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:byte-bound read PCs and original producer labels;current read clause/local enums/arrays equal accepted source snapshot ffd656d4a6201c30e9498c980a679665153f6d30;S16 current origin/index bindings retained."
+      ],
+      "operationalEvidence": [
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:reuse original/native scoped route receipts of the unchanged read clause;12 current focused tests each width pass. No new original trace or input-domain expansion."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00632",
+      "producer": "StaircaseRowData",
+      "consumer": "NextStair",
+      "storage": "Immutable original StaircaseRowData read at source PC 9ac7;source-owned index/alias domain retained",
+      "feasiblePath": "Accepted original NextStair route consumes StaircaseRowData at 9ac7;unchanged current read clause and local constants preserve this value selection before its recorded output/decision.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_staircase_object",
+      "semanticContract": "Immutable producer-to-read-clause value contract within the retained source/input/index/ABI domains;not complete caller or end-to-end certification.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:byte-bound read PCs and original producer labels;current read clause/local enums/arrays equal accepted source snapshot 0ecb54b5607ab15a72ce2c7c72480a97cac61a47;S16 current origin/index bindings retained."
+      ],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:reuse original/native scoped route receipts of the unchanged read clause;12 current focused tests each width pass. No new original trace or input-domain expansion."
+      ],
+      "cohort": "D",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00633",
+      "producer": "StaircaseHeightData",
+      "consumer": "NextStair",
+      "storage": "Immutable original StaircaseHeightData read at source PC 9aca;source-owned index/alias domain retained",
+      "feasiblePath": "Accepted original NextStair route consumes StaircaseHeightData at 9aca;unchanged current read clause and local constants preserve this value selection before its recorded output/decision.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_staircase_object",
+      "semanticContract": "Immutable producer-to-read-clause value contract within the retained source/input/index/ABI domains;not complete caller or end-to-end certification.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:byte-bound read PCs and original producer labels;current read clause/local enums/arrays equal accepted source snapshot 0ecb54b5607ab15a72ce2c7c72480a97cac61a47;S16 current origin/index bindings retained."
+      ],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:reuse original/native scoped route receipts of the unchanged read clause;12 current focused tests each width pass. No new original trace or input-domain expansion."
+      ],
+      "cohort": "D",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00634",
+      "producer": "BrickQBlockMetatiles",
+      "consumer": "DrawQBlk",
+      "storage": "Immutable original BrickQBlockMetatiles read at source PC 9b2c;source-owned index/alias domain retained",
+      "feasiblePath": "Accepted original DrawQBlk route consumes BrickQBlockMetatiles at 9b2c;unchanged current read clause and local constants preserve this value selection before its recorded output/decision.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_draw_question_block",
+      "semanticContract": "Immutable producer-to-read-clause value contract within the retained source/input/index/ABI domains;not complete caller or end-to-end certification.",
+      "semanticEvidence": [
+        "Td S9 B11b cannon/stair/spring/block static node-and-edge audit: SMB1 lines 4120-4233 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
+        "M2 T57 S2 static audit: SMB1 lines 4151-4233 and shared src/game/area.c were compared in source order. Staircase decrement/indexing, jumpspring slot/coordinate initialization, hidden-block early return, selector math and draw tails match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:byte-bound read PCs and original producer labels;current read clause/local enums/arrays equal accepted source snapshot 0ecb54b5607ab15a72ce2c7c72480a97cac61a47;S16 current origin/index bindings retained."
+      ],
+      "operationalEvidence": [
+        "M2 T57 S2 controlled original-ROM/current x86/x64 matrix: 12 staircase, 8 jumpspring and 72 item-block routes are byte-identical between native widths and exact for staging, parser, actor-slot and hidden/coin state. Focused staircase, jumpspring and item-block smokes pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:reuse original/native scoped route receipts of the unchanged read clause;12 current focused tests each width pass. No new original trace or input-domain expansion."
+      ],
+      "cohort": "H",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00635",
+      "producer": "HoleMetatiles",
+      "consumer": "NoWhirlP",
+      "storage": "Immutable original HoleMetatiles read at source PC 9b76;source-owned index/alias domain retained",
+      "feasiblePath": "Accepted original NoWhirlP route consumes HoleMetatiles at 9b76;unchanged current read clause and local constants preserve this value selection before its recorded output/decision.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_hole_empty",
+      "semanticContract": "Immutable producer-to-read-clause value contract within the retained source/input/index/ABI domains;not complete caller or end-to-end certification.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T57 S3 static audit: SMB1 lines 4237-4367 compared with shared area.c/area/block_buffer.c and the shared world block-buffer caller; the hole water gate, five-slot wrap, UnderPart overlay/loop, helper call order and pointer-table selection have matching C semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:byte-bound read PCs and original producer labels;current read clause/local enums/arrays equal accepted source snapshot 64104c3479f3ef4574507263c4f60d43be5a25a8;S16 current origin/index bindings retained."
+      ],
+      "operationalEvidence": [
+        "M2 T57 S3 controlled original-ROM/current x86/x64 matrix: 98 hole/UnderPart, 20 helper and 48 block-address routes have zero persistent non-ABI work-RAM differences and byte-identical native records; focused x86/x64 smokes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:reuse original/native scoped route receipts of the unchanged read clause;12 current focused tests each width pass. No new original trace or input-domain expansion."
+      ],
+      "cohort": "D",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00636",
+      "producer": "BlockBufferAddr",
+      "consumer": "GetBlockBufferAddr",
+      "storage": "Immutable original BlockBufferAddr read at source PC 9be7,9bf0;source-owned index/alias domain retained",
+      "feasiblePath": "Accepted original GetBlockBufferAddr route consumes BlockBufferAddr at 9be7,9bf0;unchanged current read clause and local constants preserve this value selection before its recorded output/decision.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area/block_buffer.c:mysmb_area_get_block_buffer_address",
+      "semanticContract": "Immutable producer-to-read-clause value contract within the retained source/input/index/ABI domains;not complete caller or end-to-end certification.",
+      "semanticEvidence": [
+        "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T57 S3 static audit: SMB1 lines 4237-4367 compared with shared area.c/area/block_buffer.c and the shared world block-buffer caller; the hole water gate, five-slot wrap, UnderPart overlay/loop, helper call order and pointer-table selection have matching C semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:byte-bound read PCs and original producer labels;current read clause/local enums/arrays equal accepted source snapshot 64104c3479f3ef4574507263c4f60d43be5a25a8;S16 current origin/index bindings retained."
+      ],
+      "operationalEvidence": [
+        "M2 T57 S3 controlled original-ROM/current x86/x64 matrix: 98 hole/UnderPart, 20 helper and 48 block-address routes have zero persistent non-ABI work-RAM differences and byte-identical native records; focused x86/x64 smokes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:reuse original/native scoped route receipts of the unchanged read clause;12 current focused tests each width pass. No new original trace or input-domain expansion."
+      ],
+      "cohort": "D",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area/block_buffer.c"
+      ]
+    },
+    {
+      "id": "material-00637",
+      "producer": "X_SubtracterData",
+      "consumer": "KeepOnscr",
+      "storage": "Immutable original X_SubtracterData read at source PC b017;source-owned index/alias domain retained",
+      "feasiblePath": "Accepted original KeepOnscr route consumes X_SubtracterData at b017;unchanged current read clause and local constants preserve this value selection before its recorded output/decision.",
+      "status": "exact",
+      "currentCounterpart": "src/game/scroll.c:clamp_screen_edge",
+      "semanticContract": "Immutable producer-to-read-clause value contract within the retained source/input/index/ABI domains;not complete caller or end-to-end certification.",
+      "semanticEvidence": [
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:byte-bound read PCs and original producer labels;current read clause/local enums/arrays equal accepted source snapshot c459cd3ef137767b460de4d01f4d8a31e9edf12e;S16 current origin/index bindings retained."
+      ],
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:reuse original/native scoped route receipts of the unchanged read clause;12 current focused tests each width pass. No new original trace or input-domain expansion."
+      ],
+      "cohort": "E",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/scroll.c"
+      ]
+    },
+    {
+      "id": "material-00638",
+      "producer": "OffscrJoypadBitsData",
+      "consumer": "KeepOnscr",
+      "storage": "Immutable original OffscrJoypadBitsData read at source PC b025;source-owned index/alias domain retained",
+      "feasiblePath": "Accepted original KeepOnscr route consumes OffscrJoypadBitsData at b025;unchanged current read clause and local constants preserve this value selection before its recorded output/decision.",
+      "status": "exact",
+      "currentCounterpart": "src/game/scroll.c:clamp_screen_edge",
+      "semanticContract": "Immutable producer-to-read-clause value contract within the retained source/input/index/ABI domains;not complete caller or end-to-end certification.",
+      "semanticEvidence": [
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:byte-bound read PCs and original producer labels;current read clause/local enums/arrays equal accepted source snapshot c459cd3ef137767b460de4d01f4d8a31e9edf12e;S16 current origin/index bindings retained."
+      ],
+      "operationalEvidence": [
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:reuse original/native scoped route receipts of the unchanged read clause;12 current focused tests each width pass. No new original trace or input-domain expansion."
+      ],
+      "cohort": "E",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/scroll.c"
+      ]
+    },
+    {
+      "id": "material-00639",
+      "producer": "Hidden1UpCoinAmts",
+      "consumer": "RdyNextA",
+      "storage": "Immutable original Hidden1UpCoinAmts read at source PC b30d;source-owned index/alias domain retained",
+      "feasiblePath": "Accepted original RdyNextA route consumes Hidden1UpCoinAmts at b30d;unchanged current read clause and local constants preserve this value selection before its recorded output/decision.",
+      "status": "exact",
+      "currentCounterpart": "src/game/player_end_level.c:mysmb_player_step_end_level",
+      "semanticContract": "Immutable producer-to-read-clause value contract within the retained source/input/index/ABI domains;not complete caller or end-to-end certification.",
+      "semanticEvidence": [
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:byte-bound read PCs and original producer labels;current read clause/local enums/arrays equal accepted source snapshot 5fb56a584bb4a9825d1f320aaca81f01eae90d23;S16 current origin/index bindings retained."
+      ],
+      "operationalEvidence": [
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:reuse original/native scoped route receipts of the unchanged read clause;12 current focused tests each width pass. No new original trace or input-domain expansion."
+      ],
+      "cohort": "E",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/player_end_level.c"
+      ]
+    },
+    {
+      "id": "material-00640",
+      "producer": "FirebarYPos",
+      "consumer": "Chk2Ofs",
+      "storage": "Immutable original FirebarYPos read at source PC ce67;source-owned index/alias domain retained",
+      "feasiblePath": "Accepted original Chk2Ofs route consumes FirebarYPos at ce67;unchanged current read clause and local constants preserve this value selection before its recorded output/decision.",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/firebar.c:mysmb_firebar_collision",
+      "semanticContract": "Immutable producer-to-read-clause value contract within the retained source/input/index/ABI domains;not complete caller or end-to-end certification.",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:byte-bound read PCs and original producer labels;current read clause/local enums/arrays equal accepted source snapshot 5812e32c4b918b25ccb78c92a0e37fbf1438daab;S16 current origin/index bindings retained."
+      ],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:reuse original/native scoped route receipts of the unchanged read clause;12 current focused tests each width pass. No new original trace or input-domain expansion."
+      ],
+      "cohort": "J",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/enemy/firebar.c"
+      ]
+    },
+    {
+      "id": "material-00641",
+      "producer": "FirebarMirrorData",
+      "consumer": "GetVAdder",
+      "storage": "Immutable original FirebarMirrorData read at source PC cecf;source-owned index/alias domain retained",
+      "feasiblePath": "Accepted original GetVAdder route consumes FirebarMirrorData at cecf;unchanged current read clause and local constants preserve this value selection before its recorded output/decision.",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/firebar.c:mysmb_firebar_get_position",
+      "semanticContract": "Immutable producer-to-read-clause value contract within the retained source/input/index/ABI domains;not complete caller or end-to-end certification.",
+      "semanticEvidence": [
+        "Td S9 B15k Firebar segment/collision node-semantics and independent integration audit: SMB1 lines 9784-9940 compared with shared enemy/firebar.c and oam/firebar_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T63 S10 static audit: SMB1 $CCC7-$CED4 tables, phase reflection, byte-index arithmetic, loop bounds, OAM/collision branches and injury ordering compared with src/game/enemy/firebar.c; 117/117 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:byte-bound read PCs and original producer labels;current read clause/local enums/arrays equal accepted source snapshot 5812e32c4b918b25ccb78c92a0e37fbf1438daab;S16 current origin/index bindings retained."
+      ],
+      "operationalEvidence": [
+        "M2 T63 S10 route: one current-source Firebar manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:reuse original/native scoped route receipts of the unchanged read clause;12 current focused tests each width pass. No new original trace or input-domain expansion."
+      ],
+      "cohort": "J",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/enemy/firebar.c"
+      ]
+    },
+    {
+      "id": "material-00642",
+      "producer": "PlayerBGUpperExtent",
+      "consumer": "HeadChk",
+      "storage": "Immutable original PlayerBGUpperExtent read at source PC dcbc;source-owned index/alias domain retained",
+      "feasiblePath": "Accepted original HeadChk route consumes PlayerBGUpperExtent at dcbc;unchanged current read clause and local constants preserve this value selection before its recorded output/decision.",
+      "status": "exact",
+      "currentCounterpart": "src/game/player/terrain.c:mysmb_player_check_head",
+      "semanticContract": "Immutable producer-to-read-clause value contract within the retained source/input/index/ABI domains;not complete caller or end-to-end certification.",
+      "semanticEvidence": [
+        "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:byte-bound read PCs and original producer labels;current read clause/local enums/arrays equal accepted source snapshot f8aac7e27b313ef271073198915276a83b6ca42b;S16 current origin/index bindings retained."
+      ],
+      "operationalEvidence": [
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:reuse original/native scoped route receipts of the unchanged read clause;12 current focused tests each width pass. No new original trace or input-domain expansion."
+      ],
+      "cohort": "J",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/player/terrain.c"
+      ]
+    },
+    {
+      "id": "material-00643",
+      "producer": "WarpZoneNumbers",
+      "consumer": "GetWNum",
+      "storage": "Immutable original WarpZoneNumbers read at source PC df22;source-owned index/alias domain retained",
+      "feasiblePath": "Accepted original GetWNum route consumes WarpZoneNumbers at df22;unchanged current read clause and local constants preserve this value selection before its recorded output/decision.",
+      "status": "exact",
+      "currentCounterpart": "src/game/player/pipe_entry.c:mysmb_player_handle_vertical_pipe",
+      "semanticContract": "Immutable producer-to-read-clause value contract within the retained source/input/index/ABI domains;not complete caller or end-to-end certification.",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:byte-bound read PCs and original producer labels;current read clause/local enums/arrays equal accepted source snapshot cabf903740d2a8dd7ad5a48d5b9968ba2379d0ea;S16 current origin/index bindings retained."
+      ],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:reuse original/native scoped route receipts of the unchanged read clause;12 current focused tests each width pass. No new original trace or input-domain expansion."
+      ],
+      "cohort": "B",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/player/pipe_entry.c"
+      ]
+    },
+    {
+      "id": "material-00644",
+      "producer": "WorldAddrOffsets",
+      "consumer": "GetWNum",
+      "storage": "Immutable original WorldAddrOffsets read at source PC df29;source-owned index/alias domain retained",
+      "feasiblePath": "Accepted original GetWNum route consumes WorldAddrOffsets at df29;unchanged current read clause and local constants preserve this value selection before its recorded output/decision.",
+      "status": "exact",
+      "currentCounterpart": "src/game/player/pipe_entry.c:mysmb_player_handle_vertical_pipe",
+      "semanticContract": "Immutable producer-to-read-clause value contract within the retained source/input/index/ABI domains;not complete caller or end-to-end certification.",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:byte-bound read PCs and original producer labels;current read clause/local enums/arrays equal accepted source snapshot cabf903740d2a8dd7ad5a48d5b9968ba2379d0ea;S16 current origin/index bindings retained."
+      ],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:reuse original/native scoped route receipts of the unchanged read clause;12 current focused tests each width pass. No new original trace or input-domain expansion."
+      ],
+      "cohort": "D",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/player/pipe_entry.c"
+      ]
+    },
+    {
+      "id": "material-00645",
+      "producer": "AreaAddrOffsets",
+      "consumer": "GetWNum",
+      "storage": "Immutable original AreaAddrOffsets read at source PC df2c;source-owned index/alias domain retained",
+      "feasiblePath": "Accepted original GetWNum route consumes AreaAddrOffsets at df2c;unchanged current read clause and local constants preserve this value selection before its recorded output/decision.",
+      "status": "exact",
+      "currentCounterpart": "src/game/player/pipe_entry.c:mysmb_player_handle_vertical_pipe",
+      "semanticContract": "Immutable producer-to-read-clause value contract within the retained source/input/index/ABI domains;not complete caller or end-to-end certification.",
+      "semanticEvidence": [
+        "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:byte-bound read PCs and original producer labels;current read clause/local enums/arrays equal accepted source snapshot cabf903740d2a8dd7ad5a48d5b9968ba2379d0ea;S16 current origin/index bindings retained."
+      ],
+      "operationalEvidence": [
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:reuse original/native scoped route receipts of the unchanged read clause;12 current focused tests each width pass. No new original trace or input-domain expansion."
+      ],
+      "cohort": "D",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/player/pipe_entry.c"
+      ]
+    },
+    {
+      "id": "material-00646",
+      "producer": "EnemyBGCStateData",
+      "consumer": "GetSteFromD",
+      "storage": "Immutable original EnemyBGCStateData read at source PC e0f9;source-owned index/alias domain retained",
+      "feasiblePath": "Accepted original GetSteFromD route consumes EnemyBGCStateData at e0f9;unchanged current read clause and local constants preserve this value selection before its recorded output/decision.",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/background.c:mysmb_objects_step_normal_enemy_terrain",
+      "semanticContract": "Immutable producer-to-read-clause value contract within the retained source/input/index/ABI domains;not complete caller or end-to-end certification.",
+      "semanticEvidence": [
+        "Td S9 K58 enemy landing state node/edge audit: SMB1 lines 12552-12611 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 state/facing routes remain required.",
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:byte-bound read PCs and original producer labels;current read clause/local enums/arrays equal accepted source snapshot 24355d561650adbe016e9f88f2acea2e9d149352;S16 current origin/index bindings retained."
+      ],
+      "operationalEvidence": [
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:reuse original/native scoped route receipts of the unchanged read clause;12 current focused tests each width pass. No new original trace or input-domain expansion."
+      ],
+      "cohort": "J",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/enemy/background.c"
+      ]
+    },
+    {
+      "id": "material-00647",
+      "producer": "PlayerGraphicsTable",
+      "consumer": "SwimKT",
+      "storage": "Immutable original PlayerGraphicsTable read at source PC ef27;source-owned index/alias domain retained",
+      "feasiblePath": "Accepted original SwimKT route consumes PlayerGraphicsTable at ef27;unchanged current read clause and local constants preserve this value selection before its recorded output/decision.",
+      "status": "exact",
+      "currentCounterpart": "src/game/oam/player_gfx.c:mysmb_oam_player_draw_loop",
+      "semanticContract": "Immutable producer-to-read-clause value contract within the retained source/input/index/ABI domains;not complete caller or end-to-end certification.",
+      "semanticEvidence": [
+        "Td S9 K16 player-graphics handler node-semantics and independent control-edge audit: SMB1 lines 14460-14557 compared with shared src/game/oam/player_gfx.c; controlled original-ROM/x86/x64 injury-flash, death, size-change, ordinary, swimming, throw and vertical-offscreen routes remain required.",
+        "M2 T66 S1 P2 static original EEE9-F129 source/RAM/table/control audit: injury blink, death/change-size priority, preselected swimming return, action/timer/ASL carry, original size CPY>=0A, attributes and real shared DrawPlayerLoop/DrawOneSpriteRow/DumpTwoSpr connections. docs/history/M2-T66-player-relative-offscreen-current-proof.md Chooses the applicable seventh/eighth foot sprite from facing, size and replacement-tile predicates before selecting a swim-kick tile.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:byte-bound read PCs and original producer labels;current read clause/local enums/arrays equal accepted source snapshot 00eee20598486a2df9547495535873c3606c5343;S16 current origin/index bindings retained."
+      ],
+      "operationalEvidence": [
+        "M2 T66 S1 P2 current x86/x64 each match75040 original roots, zero differences across1841 RAM bytes including scratch/OAM/aliases0109-0139. All44 labels/103 listed edges observed; every branch has taken/fall coverage, indexed tables20/20 and6/6,127104 actual row/erase returns independently checked. Native12/12 focused tests per width, purity and original DOS16 link pass; three products refreshed. docs/history/M2-T66-player-relative-offscreen-current-proof.md Source addressef1f observed11392 times (table nodes use actual indexed reads).",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins:reuse original/native scoped route receipts of the unchanged read clause;12 current focused tests each width pass. No new original trace or input-domain expansion."
+      ],
+      "cohort": "K",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/oam/player_gfx.c"
       ]
     }
   ],
@@ -157108,12 +157632,54 @@
     ],
     "activeReview": {
       "taskId": "M2 T70 S17",
-      "nodeLabels": [],
+      "nodeLabels": [
+        "WarpZoneNumbers",
+        "TerrBChk",
+        "PulleyRopeMetatiles",
+        "RenderPul",
+        "VPipeSectLoop",
+        "SidePipeShaftData",
+        "SidePipeTopPart",
+        "SidePipeBottomPart",
+        "RenderSidewaysPipe",
+        "DrawSidePart",
+        "VerticalPipeData",
+        "StaircaseHeightData",
+        "StaircaseRowData",
+        "NextStair",
+        "DrawQBlk",
+        "HoleMetatiles",
+        "NoWhirlP",
+        "BlockBufferAddr",
+        "GetBlockBufferAddr",
+        "WorldAddrOffsets",
+        "AreaAddrOffsets",
+        "KeepOnscr",
+        "X_SubtracterData",
+        "OffscrJoypadBitsData",
+        "Hidden1UpCoinAmts",
+        "RdyNextA",
+        "BrickQBlockMetatiles",
+        "Bitmasks",
+        "FirebarMirrorData",
+        "FirebarYPos",
+        "Chk2Ofs",
+        "GetVAdder",
+        "PlayerBGUpperExtent",
+        "HeadChk",
+        "GetWNum",
+        "EnemyBGCStateData",
+        "GetSteFromD",
+        "PlayerGraphicsTable",
+        "SwimKT"
+      ],
       "controlEdgeIds": [],
       "status": "in-progress-material-use-completeness",
       "evidence": [
         "docs/proposals/m2/t70-final-current-certification.md S17 P1 admission - complete material-use census and path reconciliation",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P1 checkpoint - byte-bound material-use inventory"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P1 checkpoint - byte-bound material-use inventory",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 bounded scope amendment - immutable producer uses",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",

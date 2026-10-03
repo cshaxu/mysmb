@@ -8,10 +8,19 @@ for remaining work/exit conditions. Historical1992/1992 means mapping coverage.
 Prior aggregate exact counts below retain their closure-time local-contract
 meaning;they are not full current-build certification. The attempted zero-based final-review restart is superseded;reuse retained
 scoped evidence and track only named unresolved/invalidated clauses.
-Material625 is a partial enumerated set;its global denominator is unknown.
+Material647 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
+
+[P2 immutable joins](../proposals/m2/t70-final-current-certification.md#s17-p2-checkpoint---immutable-producer-joins).
+250 direct ROM-read sites reconciled within retained input/index domains;
+227 join194 retained paths,and23 form22 new source-backed pairs626-647.
+19 helper bodies/four isolated pipe branches plus their local constants are
+unchanged from accepted proof snapshots;all171 S16 source identities remain.
+12 actual current tests each width pass;the earlier zero-test invocation is
+rejected. Material647 partial,total unknown;node/control fresh0,no products
+changed. Mutable/indirect/hardware/register/flag/stack/inter-frame uses remain.
 
 [P1 inventory](../proposals/m2/t70-final-current-certification.md#s17-p1-checkpoint---byte-bound-material-use-inventory).
 10691 byte-bound textual instructions,4171 explicit memory sites and9003
