@@ -210,3 +210,108 @@ three committed S15 EXEs byte-identical. No build/test refresh required for
 metadata-only P. Node admission/closure,ledger,documentation and diff gates
 required before local P2 commit. All research/logs remain ignored below build;
 no raw/third-party import or push. S1 closed,T70 open,S2 next unadmitted.
+
+## S2 P1 admission - one authoritative shared area parser
+
+Exact29 existing labels in original order: ProcessAreaData; ProcADLoop; Chk1Row13; Chk1Row14; CheckRear; RdyDecode; SetBehind; NextAObj; ChkLength; ProcLoopb; EndAParse; IncAreaObjOffset; DecodeAreaData; Chk1stB; ChkRow14; ChkRow13; Mask2MSB; ChkSRows; LrgObj; NotWPipe; SpecObj; MoveAOId; NormObj; LeavePar; InitRear; LoopCmdE; BackColC; StrAObj; RunAObj.
+Incoming all exact,expected fresh0,max1992/1992;current1992/1992 nodes,
+4276/4276 feasible controls(raw4342,infeasible66),557/557 material partial.
+Historical1992/1992 separate. Coordinator accepts maintenance receipt for
+all29 from their existing ledger receivers under owner ongoing mandate.
+Entry ProcessAreaData9508 through DecodeAreaData and RunAObj965f;predecessor
+accepted AreaParserCore,successors accepted real object/metatile families.
+Shared area.c/area.h owns this chain. No platform/game ABI divergence.
+
+Remove inactive flat-address next-object/decoder,lookahead/emitter and their
+unused preparation dependencies;replace legacy core/local-area test consumers
+with real ProcessAreaData state/metatile assertions. Preserve the authoritative
+parser implementation and source-shaped handlers;do not invent replacement
+object decoding. Inventory current counterparts must point only to surviving
+owners. Similar-issue sweep covers every legacy symbol/caller and duplicate
+flat readers plus cached source annotations. Exact scope amendment required
+if a concrete active parser discrepancy is found.
+
+ROM-logic track:compare original byte-bound ProcessAreaData/DecodeAreaData
+entry and shared active owner before/after cleanup. Replay24 existing real
+NMI parser-boundary fixtures (offset255 and wrapped offset0;fresh/resident
+slots) with unchanged original ROM and current x86/x64 records. Use retained
+source-shaped parser/row/page/object proofs and source-identity review for
+branches not newly exercised;no new semantic credit from the short replay.
+Operational track:real parser boundary/backloading/terminal/row/area/core
+focused tests,full x86/x64 builds,original OpenNT DOS16 link,purity and3
+refreshed EXEs for source cleanup. Three products are required even if active
+frame behavior is unchanged. No push,unrelated user files preserved.
+
+Owner ROM/reviewed ASM nonredistributable,reference runner test-only;no import
+or original CPU/child patch. Ignored build owns all scripts/logs/records:
+24 fixtures x2 frames,128MiB raw,120seconds/process;delete raw per case.
+Coordinated original/current states use fixture input RAM only;hardware/stack
+and frame ABI exclusions are recorded explicitly at comparison. Any real
+scoped difference keeps S2 active until repaired/re-audited;no silent transfer.
+Expected/actual historical matches empty;closure reports retained29 labels,
+actual source changes,original route scope and three executable identities.
+
+## S2 route-contract clarification before closure
+
+The24 retained artificial parser RAM fixtures have the original two-sample
+contract after one startup NMI. Extending them to eight samples was an
+invalid harness assumption:the unchanged original ROM case0 returns six
+samples then reaches its instruction budget(exit68),while the established
+two-sample route succeeds. No game rule is changed to accommodate this
+synthetic state. Coordinator corrects the replay duration to the accepted
+24 x2 contract and adds six600-frame ordinary cold-bootstrap input routes
+as independent integration regression. The short boundary replay alone
+cannot certify longer natural gameplay or any newly unobserved edge.
+
+## S2 P1 closure - one active parser and retained original semantics
+
+All29 admitted labels listed above retain exact status;expected/actual fresh0,
+no deferred or transferred label,no control/material promotion. Historical
+1992/1992;current exact1992/1992 nodes,4276/4276 feasible controls(raw4342,
+infeasible66),557/557 material partial. T70 remains open;M2 not certified.
+
+Removed seven inactive alternative functions:mysmb_area_apply_single_block,
+mysmb_area_emit_next_command,mysmb_area_render_terrain_page,
+mysmb_area_prepare_player_pages,mysmb_area_render_initial_objects,
+mysmb_area_next_object,mysmb_area_decode_object,their six public declarations
+and obsolete object struct. No game composition root called these functions.
+Core/local-area tests now call the real persistent-slot parser,including
+page-control state and pointer255-to0 wrapping;no new decoder rule was added.
+ProcessAreaData9508,DecodeAreaData9595 and RunAObj965f remain source-bound.
+The active process-object,scenery/terrain and parser-task function bodies
+are source-identical before/after;area.c changes are deletions only. All29
+registry counterparts and retained source/branch/table proofs remain valid.
+
+ROM track:unchanged original ROM and current x86/x64 execute24 existing
+t30-parser-boundary scenarios,two NMI-return frames each,after one cold
+startup NMI before identical fixture injection. All48 frames per width have
+zero scoped differences;native records byte-identical. Compare RAM0200-07FF
+except0778/0779,all CIRAM,palette,OAM,audio and seven PPU scalars. Ordinal,
+zero-page/physical stack are outside this frame ABI;retained original scoped
+parser proofs separately cover those contracts and branches not exercised by
+the short replay. Six ordinary600-frame idle/start/pause/right/run-jump/select
+bootstrap routes also match every scoped field on both widths,with byte-identical
+native records. These are regressions,not complete death/warp/end-world routes.
+No new node/edge credit inferred from frame equality.
+
+Operational track:full x86/x64 builds and248 CTests each pass,including
+real parser boundary/backloading/terminal/column/core/local-area and platform
+purity. Original OpenNT DOS16 link passes with the existing OLDNAMES.LIB
+warning;no DOS graphical operation or 486 qualification claim. All3 products
+refreshed under standing owner authorization,local commit only.
+
+Similar-issue sweep:all seven removed symbols and obsolete struct have zero
+src/test hits;current registry has no counterpart naming them. Retained
+background-page helper has a real area_data_smoke consumer. Unused area-command
+storage/reset remains unchanged outside this cleanup;no product ABI churn.
+No platform source/game logic introduced. Historic alternate-reader TODO
+closed;inline-table annotation reconciliation and M3 DOS runtime duty remain,
+along with T70 full material enumeration,fresh proof matrix and end-to-end
+gameplay/death/warp/completion certification. Raw records deleted per case;
+only neutral evidence retained. Unrelated I/O/presentation work preserved.
+
+| Product | Bytes | SHA256 |
+| --- | --- | --- |
+| mysmb16.exe | 258639 | 6fa441e6c48d194618a54e367736b774c453525f7df3f5b2320cd1593c124ad9 |
+| mysmb32.exe | 372187 | aa19d23f795d47aad6b7e54336ad4887c48707db881d947423e4de7d99736681 |
+| mysmb64.exe | 379222 | 83158827aa92f8ec334ddc4967254ed90a7c27ac7842ccc3f2596eb0339152a9 |

@@ -1,5 +1,15 @@
 # M2 ROM conformance node progress
 
+## M2 T70 S2 - closed authoritative parser cleanup
+
+[Exact29 retained labels and dual proof](../proposals/m2/t70-final-current-certification.md#s2-p1-closure---one-active-parser-and-retained-original-semantics).
+Seven inactive alternative functions removed;real shared parser unchanged.
+24 original NMI scenarios x2 frames match x86/x64;248 CTests each,purity,
+full native builds and original OpenNT DOS16 link pass;3 EXEs refreshed.
+Expected/actual fresh0,no deferrals,current1992/1992 exact nodes,4276/4276
+feasible controls(raw4342,infeasible66),557/557 material partial;historical
+1992/1992 separate. T70 open,final material/proof/end-to-end duties remain.
+
 ## M2 T70 S1 - closed final-certificate baseline
 
 [Exact task backlog and empty-node infrastructure scope](../proposals/m2/t70-final-current-certification.md).

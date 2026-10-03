@@ -2,6 +2,7 @@
 #include <string.h>
 
 #include "game/area.h"
+#include "parser_boundary_fixture.h"
 #include "game/game.h"
 #include "game/frame_root.h"
 #include "game/objects.h"
@@ -86,7 +87,6 @@ int main(void)
     struct mysmb_game game;
     struct mysmb_game expected;
     struct mysmb_area_source source;
-    struct mysmb_area_object object;
     struct mysmb_input input;
     struct mysmb_frame frame;
     mysmb_u8 count;
@@ -403,11 +403,12 @@ int main(void)
         mysmb_area_get_data_addresses(&game, &source) == 0U) {
         return 1;
     }
-    count = 0U;
-    while (count < 32U && mysmb_area_next_object(&game, &source, &object) != 0U) {
-        count++;
-    }
-    if (count == 0U) {
+    /* This original-ROM fixture selects pointer+255 then wrapped pointer+0
+     * in a fresh persistent slot, rather than scanning future columns. */
+    mysmb_game_bind_area_source(&game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
+    mysmb_parser_boundary_fixture(game.ram, 0U);
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x072cU] != 1U || game.ram[0x072dU + 2U] != 255U) {
         return 1;
     }
 

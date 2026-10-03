@@ -43,8 +43,7 @@ mysmb_u8 mysmb_area_parse_header(struct mysmb_game *game,
                                  const struct mysmb_area_source *source);
 /* ROM AreaParserCore terrain pass for the 24 columns prepared before play. */
 void mysmb_area_render_initial_terrain(struct mysmb_game *game);
-/* ROM AreaParserCore terrain pass when a later circular block page is loaded. */
-void mysmb_area_render_terrain_page(struct mysmb_game *game, mysmb_u8 page);
+
 /* ROM $92f7-$9376 AreaParserCore scenery/terrain pass for one physical column.
  * Object-stream processing and VRAM-buffer scheduling remain separate owners. */
 mysmb_u8 mysmb_area_render_scenery_terrain_column(struct mysmb_game *game);
@@ -83,30 +82,7 @@ mysmb_u8 mysmb_area_queue_game_text(struct mysmb_game *game, mysmb_u8 selector);
 mysmb_u8 mysmb_area_queue_player_palette(struct mysmb_game *game);
 /* Queue the player palette only when PPU-visible state differs from the ROM result. */
 mysmb_u8 mysmb_area_sync_player_palette(struct mysmb_game *game);
-/* Advance the two-page collision window to the player page. */
-void mysmb_area_prepare_player_pages(struct mysmb_game *game, mysmb_u8 player_page);
-/* ROM AreaParserCore initial object pass for the two prepared block pages. */
-void mysmb_area_render_initial_objects(struct mysmb_game *game);
 
-struct mysmb_area_object {
-    mysmb_u8 first;
-    mysmb_u8 second;
-    mysmb_u8 page;
-    mysmb_u8 behind_current_page;
-    mysmb_u8 is_page_control;
-    mysmb_u8 column;
-    mysmb_u8 row;
-    mysmb_u8 dispatch_id;
-    mysmb_u8 is_loop_command;
-};
-
-/* ROM $9508-$958f stream-selection subset; object decoding remains separate. */
-mysmb_u8 mysmb_area_next_object(struct mysmb_game *game,
-                                const struct mysmb_area_source *source,
-                                struct mysmb_area_object *object);
-/* ROM $958f-$961f DecodeAreaData classification before object dispatch. */
-void mysmb_area_decode_object(struct mysmb_area_object *object);
-mysmb_u8 mysmb_area_emit_next_command(struct mysmb_game *game);
 /* ROM BlockObjMT_Updater -> ReplaceBlockMetatile. */
 void mysmb_area_apply_block_replacements(struct mysmb_game *game);
 /* Existing ROM $8A61 child; block replacement owns the surrounding loop. */

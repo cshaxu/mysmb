@@ -18,7 +18,6 @@ int main(void)
     struct mysmb_frame frame;
     struct mysmb_checkpoint checkpoint;
     struct mysmb_area_source area_source;
-    struct mysmb_area_object area_object;
     struct mysmb_player_terrain terrain;
     struct mysmb_render_frame render_frame;
     static mysmb_u8 area_prg[0x2000U];
@@ -876,17 +875,21 @@ int main(void)
         game.ram[0x00e7U] != 2U || game.ram[0x00e8U] != 0x9fU) {
         return 1;
     }
-    if (mysmb_area_next_object(&game, &area_source, &area_object) == 0U ||
-        area_object.is_page_control != 1U || area_object.dispatch_id != 0xffU ||
-        area_object.page != 3U ||
-        game.ram[0x072cU] != 2U ||
-        mysmb_area_next_object(&game, &area_source, &area_object) == 0U ||
-        area_object.page != 4U || area_object.dispatch_id != 0x17U ||
-        area_object.behind_current_page != 0U ||
-        game.ram[0x072cU] != 4U ||
-        mysmb_area_next_object(&game, &area_source, &area_object) != 0U) {
+    /* ProcessAreaData owns page controls, slots and the live stream offset. */
+    mysmb_game_bind_area_source(&game, area_prg, (mysmb_u16)sizeof(area_prg));
+    game.ram[0x0725U] = 4U;
+    game.ram[0x0726U] = 2U;
+    game.ram[0x072aU] = 0U;
+    game.ram[0x072bU] = 0U;
+    game.ram[0x0730U] = 0xffU;
+    game.ram[0x0731U] = 0xffU;
+    game.ram[0x0732U] = 0xffU;
+    if (mysmb_area_process_object_state(&game) == 0U ||
+        game.ram[0x072aU] != 4U || game.ram[0x072cU] != 4U ||
+        game.ram[0x072bU] != 0U || game.ram[0x072dU + 1U] != 2U) {
         return 1;
     }
+    mysmb_game_bind_area_source(&game, 0, 0U);
     input.buttons2 = 0U;
     input.buttons = 0U;
     for (index = 0U; index < 120U; ++index) {
