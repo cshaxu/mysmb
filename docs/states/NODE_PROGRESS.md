@@ -2,7 +2,7 @@
 
 ## M2 T69 S13 - active frenzy/group/actor audit
 
-[Exact31 existing labels/13 controls/9 material](../proposals/m2/t69-cross-cohort-current-proof.md).
+[Exact35 existing labels/13 controls/9 material](../proposals/m2/t69-cross-cohort-current-proof.md).
 Expected fresh0,max1992/1992;current1992/1992 scoped-exact nodes,
 4256/4277 controls(raw4342,infeasible65),546/555 material partial.
 Historical1992/1992 separate;both tracks required,S14 unadmitted.

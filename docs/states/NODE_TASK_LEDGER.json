@@ -724937,7 +724937,11 @@
         "ProcFirebar",
         "RunBowser",
         "RunRetainerObj",
-        "ProcessBowserHalf"
+        "ProcessBowserHalf",
+        "GetEnemyBoundBox",
+        "GetMaskedOffScrBits",
+        "SmallPlatformBoundBox",
+        "GetEnemyOffscreenBits"
       ],
       "baseline": 1992,
       "incomingComplete": [

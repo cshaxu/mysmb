@@ -1891,3 +1891,16 @@ Similar-issue sweep:vector scratch/alias/fetch order,timer/slot gates,parent
 slot reload,byte counters/record advancement,random masks/filter,table carry,
 spawn-from-mouth page footprint,duplicate consumers,offscreen scratch and
 Bowser graphics relative/bounds/collision ordering.No admission credit.
+
+### S13 scope amendment - real actor offscreen/bounding dependencies
+
+Actual InitBowser->RunBowser->BowserGfxHandler route differs in0000/0001
+on masked-offscreen bounding path. Original GetEnemyBoundBox stores right
+mask48 to00;GetMaskedOffScrBits stores X-minus-screen low byte to01 before
+the mask branch. Shared enemy_bounds.c omits these writes on its early exit.
+Coordinator admits four existing dependencies:GetEnemyBoundBox,
+GetMaskedOffScrBits,SmallPlatformBoundBox,GetEnemyOffscreenBits;scope35,
+zero fresh credit. Repair shared mask owner and audit both ordinary/small
+mask entries;audit canonical offscreen handoff in planned firebar caller.
+No platform change. Re-run original/current chains and focused bounds/offscreen
+checks;product repairs refresh3 EXEs before commit. S13 remains active.
