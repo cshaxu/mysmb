@@ -24932,11 +24932,13 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine ScreenRoutineTask switch cases 0..14",
       "semanticEvidence": [
         "M2 T54 S7 static re-audit: SMB1 ScreenRoutines at ROM $8567 / lines 1386-1405, its $856a JumpEngine call and all 15 inline words match the shared C switch cases 0..14; source producers constrain ScreenRoutineTask to that domain, and the former synthetic out-of-domain OperMode_Task=2 write was removed.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 zero-credit dependency repair:actual original return-address/byte-selector/PRG target writes04-07 retained in shared native dispatch owner."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 zero-credit dependency repair:actual original return-address/byte-selector/PRG target writes04-07 retained in shared native dispatch owner.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T54 S7 controlled original-ROM/x86/x64 dispatcher matrix: selectors 0..14 enter ScreenRoutines with a real 6502 return frame and identical source-owned preconditions; all three records agree on ColumnSets, AreaParserTaskNum, ScreenRoutineTask, OperMode/VRAM controls, area type/style and Buffer1 prefix. Focused x86/x64 screen-status smoke and platform-purity audit pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original GameOverMode three branches and actual nested ScreenRoutines task13 both widths equal;scope does not claim every other dispatch family."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original GameOverMode three branches and actual nested ScreenRoutines task13 both widths equal;scope does not claim every other dispatch family.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:69520actualroots eachwidth0diff (128screen/3600VRAM/65536music/256secondary),all110PC/17branchpairs,7tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "ROM $8567: reads ScreenRoutineTask and JumpEngine-dispatches selectors 0..14 to the inline screen task table; each selected leaf has its own successor/return semantics.",
       "currentSourcePaths": [
@@ -24953,11 +24955,13 @@
       "semanticEvidence": [
         "Td S9 B1 ScreenRoutines static node-semantics pass: SMB1 lines 1386-1432 was compared with the named shared-C owner; controlled original-ROM/x86/x64 task routes remain required.",
         "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:69520actualroots eachwidth0diff (128screen/3600VRAM/65536music/256secondary),all110PC/17branchpairs,7tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "ROM $8555: calls MoveAllSpritesOffscreen and InitializeNameTables, then title mode increments the screen task directly while non-title mode selects VRAM address control $03 before the same task increment.",
       "currentSourcePaths": [
@@ -25686,11 +25690,13 @@
         "M2 T54 S3 static ROM/C audit: SMBDIS.ASM lines 1612-1657 and shared src/game/game.c task-12/13/14 chain, including source-order exits, copy and clear bounds, helper handoffs and live task-byte increments.",
         "M2 T54 S3 controlled owner-local title task 12/13/14 fixtures on current x86/x64: source-owned task/RAM/Buffer1 output contracts matched; recorder cold-start residues in zero page, stack and pre-existing title scene are explicit ABI exclusions, not chain outputs.",
         "T70 S17 P3 reopened: actual $00/$01 copy-pointer outputs were omitted; prior zero-page exclusion is insufficient for these outputs.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair:original $86ff-$872f vs shared case12 initializes $01=3,$00=0, advances $01 after byte256 and terminates after314 bytes. Non-title paths leave pointer bytes unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair:original $86ff-$872f vs shared case12 initializes $01=3,$00=0, advances $01 after byte256 and terminates after314 bytes. Non-title paths leave pointer bytes unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T54 S3 operational checks: focused screen-status regression on x86/x64, Win32 self-tests, shared OpenNT DOS16 link, platform-purity audit and refreshed local three-target artifacts.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair:32 original ScreenRoutines task12 cases, four OperMode values/eight patterned RAM seeds per mode;all2048 RAM bytes compared on both widths, only two observed physical return-stack bytes per case excluded. Zero differences;five focused checks each and six600-frame scoped integration routes pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair:32 original ScreenRoutines task12 cases, four OperMode values/eight patterned RAM seeds per mode;all2048 RAM bytes compared on both widths, only two observed physical return-stack bytes per case excluded. Zero differences;five focused checks each and six600-frame scoped integration routes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:69520actualroots eachwidth0diff (128screen/3600VRAM/65536music/256secondary),all110PC/17branchpairs,7tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "ROM $86ff: non-title path increments OperMode_Task; title path copies exactly $13a PPU bytes to $0300, writes address control $05 and increments ScreenRoutineTask. Title copy pointer outputs $00=0,$01=4 and original page-wrap update are included;zero-page output exclusions from earlier title fixture are superseded for this chain.",
       "currentSourcePaths": [
@@ -25709,12 +25715,14 @@
         "M2 T54 S3 controlled owner-local title task 12/13/14 fixtures on current x86/x64: source-owned task/RAM/Buffer1 output contracts matched; recorder cold-start residues in zero page, stack and pre-existing title scene are explicit ABI exclusions, not chain outputs.",
         "T70 S17 P3 reopened: actual $00/$01 copy-pointer outputs were omitted; prior zero-page exclusion is insufficient for these outputs.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair:original $86ff-$872f vs shared case12 initializes $01=3,$00=0, advances $01 after byte256 and terminates after314 bytes. Non-title paths leave pointer bytes unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T54 S3 operational checks: focused screen-status regression on x86/x64, Win32 self-tests, shared OpenNT DOS16 link, platform-purity audit and refreshed local three-target artifacts.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair:32 original ScreenRoutines task12 cases, four OperMode values/eight patterned RAM seeds per mode;all2048 RAM bytes compared on both widths, only two observed physical return-stack bytes per case excluded. Zero differences;five focused checks each and six600-frame scoped integration routes pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:4096 actual roots each width,2032RAM/24APU/ordered hardware writes0diff,minSP>=EF,all38PC/5branchpairs observed;actual81E2 X0-14 and81FC/8202/8208 X2/5/8 observed;8focused tests each pass;4 invalid-domain witnesses/accounting mutations accepted as negative checks."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:4096 actual roots each width,2032RAM/24APU/ordered hardware writes0diff,minSP>=EF,all38PC/5branchpairs observed;actual81E2 X0-14 and81FC/8202/8208 X2/5/8 observed;8focused tests each pass;4 invalid-domain witnesses/accounting mutations accepted as negative checks.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:69520actualroots eachwidth0diff (128screen/3600VRAM/65536music/256secondary),all110PC/17branchpairs,7tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "ROM $8712: copies PPU data through the $0300 indirect destination and advances Y/high byte. Title copy pointer outputs $00=0,$01=4 and original page-wrap update are included;zero-page output exclusions from earlier title fixture are superseded for this chain.",
       "currentSourcePaths": [
@@ -25732,11 +25740,13 @@
         "M2 T54 S3 static ROM/C audit: SMBDIS.ASM lines 1612-1657 and shared src/game/game.c task-12/13/14 chain, including source-order exits, copy and clear bounds, helper handoffs and live task-byte increments.",
         "M2 T54 S3 controlled owner-local title task 12/13/14 fixtures on current x86/x64: source-owned task/RAM/Buffer1 output contracts matched; recorder cold-start residues in zero page, stack and pre-existing title scene are explicit ABI exclusions, not chain outputs.",
         "T70 S17 P3 reopened: actual $00/$01 copy-pointer outputs were omitted; prior zero-page exclusion is insufficient for these outputs.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair:original $86ff-$872f vs shared case12 initializes $01=3,$00=0, advances $01 after byte256 and terminates after314 bytes. Non-title paths leave pointer bytes unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair:original $86ff-$872f vs shared case12 initializes $01=3,$00=0, advances $01 after byte256 and terminates after314 bytes. Non-title paths leave pointer bytes unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T54 S3 operational checks: focused screen-status regression on x86/x64, Win32 self-tests, shared OpenNT DOS16 link, platform-purity audit and refreshed local three-target artifacts.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair:32 original ScreenRoutines task12 cases, four OperMode values/eight patterned RAM seeds per mode;all2048 RAM bytes compared on both widths, only two observed physical return-stack bytes per case excluded. Zero differences;five focused checks each and six600-frame scoped integration routes pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair:32 original ScreenRoutines task12 cases, four OperMode values/eight patterned RAM seeds per mode;all2048 RAM bytes compared on both widths, only two observed physical return-stack bytes per case excluded. Zero differences;five focused checks each and six600-frame scoped integration routes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:69520actualroots eachwidth0diff (128screen/3600VRAM/65536music/256secondary),all110PC/17branchpairs,7tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "ROM $8717: stops only after destination reaches $043a, then selects control $05 and common task increment. Title copy pointer outputs $00=0,$01=4 and original page-wrap update are included;zero-page output exclusions from earlier title fixture are superseded for this chain.",
       "currentSourcePaths": [
@@ -25752,10 +25762,12 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 13",
       "semanticEvidence": [
         "M2 T54 S3 static ROM/C audit: SMBDIS.ASM lines 1612-1657 and shared src/game/game.c task-12/13/14 chain, including source-order exits, copy and clear bounds, helper handoffs and live task-byte increments.",
-        "M2 T54 S3 controlled owner-local title task 12/13/14 fixtures on current x86/x64: source-owned task/RAM/Buffer1 output contracts matched; recorder cold-start residues in zero page, stack and pre-existing title scene are explicit ABI exclusions, not chain outputs."
+        "M2 T54 S3 controlled owner-local title task 12/13/14 fixtures on current x86/x64: source-owned task/RAM/Buffer1 output contracts matched; recorder cold-start residues in zero page, stack and pre-existing title scene are explicit ABI exclusions, not chain outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T54 S3 operational checks: focused screen-status regression on x86/x64, Win32 self-tests, shared OpenNT DOS16 link, platform-purity audit and refreshed local three-target artifacts."
+        "M2 T54 S3 operational checks: focused screen-status regression on x86/x64, Win32 self-tests, shared OpenNT DOS16 link, platform-purity audit and refreshed local three-target artifacts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:69520actualroots eachwidth0diff (128screen/3600VRAM/65536music/256secondary),all110PC/17branchpairs,7tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "ROM $872a: non-title path increments OperMode_Task; title path clears $0300-$03ff, calls DrawMushroomIcon and increments ScreenRoutineTask.",
       "currentSourcePaths": [
@@ -25771,10 +25783,12 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 13 buffer clear loop",
       "semanticEvidence": [
         "M2 T54 S3 static ROM/C audit: SMBDIS.ASM lines 1612-1657 and shared src/game/game.c task-12/13/14 chain, including source-order exits, copy and clear bounds, helper handoffs and live task-byte increments.",
-        "M2 T54 S3 controlled owner-local title task 12/13/14 fixtures on current x86/x64: source-owned task/RAM/Buffer1 output contracts matched; recorder cold-start residues in zero page, stack and pre-existing title scene are explicit ABI exclusions, not chain outputs."
+        "M2 T54 S3 controlled owner-local title task 12/13/14 fixtures on current x86/x64: source-owned task/RAM/Buffer1 output contracts matched; recorder cold-start residues in zero page, stack and pre-existing title scene are explicit ABI exclusions, not chain outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T54 S3 operational checks: focused screen-status regression on x86/x64, Win32 self-tests, shared OpenNT DOS16 link, platform-purity audit and refreshed local three-target artifacts."
+        "M2 T54 S3 operational checks: focused screen-status regression on x86/x64, Win32 self-tests, shared OpenNT DOS16 link, platform-purity audit and refreshed local three-target artifacts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:69520actualroots eachwidth0diff (128screen/3600VRAM/65536music/256secondary),all110PC/17branchpairs,7tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "ROM $8730: descending X loop clears exactly $0300-$03ff and $0400-$04ff before icon draw.",
       "currentSourcePaths": [
@@ -25790,10 +25804,12 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine task increments",
       "semanticEvidence": [
         "M2 T54 S3 static ROM/C audit: SMBDIS.ASM lines 1612-1657 and shared src/game/game.c task-12/13/14 chain, including source-order exits, copy and clear bounds, helper handoffs and live task-byte increments.",
-        "M2 T54 S3 controlled owner-local title task 12/13/14 fixtures on current x86/x64: source-owned task/RAM/Buffer1 output contracts matched; recorder cold-start residues in zero page, stack and pre-existing title scene are explicit ABI exclusions, not chain outputs."
+        "M2 T54 S3 controlled owner-local title task 12/13/14 fixtures on current x86/x64: source-owned task/RAM/Buffer1 output contracts matched; recorder cold-start residues in zero page, stack and pre-existing title scene are explicit ABI exclusions, not chain outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T54 S3 operational checks: focused screen-status regression on x86/x64, Win32 self-tests, shared OpenNT DOS16 link, platform-purity audit and refreshed local three-target artifacts."
+        "M2 T54 S3 operational checks: focused screen-status regression on x86/x64, Win32 self-tests, shared OpenNT DOS16 link, platform-purity audit and refreshed local three-target artifacts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:69520actualroots eachwidth0diff (128screen/3600VRAM/65536music/256secondary),all110PC/17branchpairs,7tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "ROM $8739: increments ScreenRoutineTask and returns after every shared screen-task tail.",
       "currentSourcePaths": [
@@ -25809,10 +25825,12 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 14",
       "semanticEvidence": [
         "M2 T54 S3 static ROM/C audit: SMBDIS.ASM lines 1612-1657 and shared src/game/game.c task-12/13/14 chain, including source-order exits, copy and clear bounds, helper handoffs and live task-byte increments.",
-        "M2 T54 S3 controlled owner-local title task 12/13/14 fixtures on current x86/x64: source-owned task/RAM/Buffer1 output contracts matched; recorder cold-start residues in zero page, stack and pre-existing title scene are explicit ABI exclusions, not chain outputs."
+        "M2 T54 S3 controlled owner-local title task 12/13/14 fixtures on current x86/x64: source-owned task/RAM/Buffer1 output contracts matched; recorder cold-start residues in zero page, stack and pre-existing title scene are explicit ABI exclusions, not chain outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T54 S3 operational checks: focused screen-status regression on x86/x64, Win32 self-tests, shared OpenNT DOS16 link, platform-purity audit and refreshed local three-target artifacts."
+        "M2 T54 S3 operational checks: focused screen-status regression on x86/x64, Win32 self-tests, shared OpenNT DOS16 link, platform-purity audit and refreshed local three-target artifacts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:69520actualroots eachwidth0diff (128screen/3600VRAM/65536music/256secondary),all110PC/17branchpairs,7tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "ROM $873d: invokes UpdateNumber selector $fa then falls into OperMode_Task increment.",
       "currentSourcePaths": [
@@ -25828,10 +25846,12 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine OperMode_Task handoffs",
       "semanticEvidence": [
         "M2 T54 S3 static ROM/C audit: SMBDIS.ASM lines 1612-1657 and shared src/game/game.c task-12/13/14 chain, including source-order exits, copy and clear bounds, helper handoffs and live task-byte increments.",
-        "M2 T54 S3 controlled owner-local title task 12/13/14 fixtures on current x86/x64: source-owned task/RAM/Buffer1 output contracts matched; recorder cold-start residues in zero page, stack and pre-existing title scene are explicit ABI exclusions, not chain outputs."
+        "M2 T54 S3 controlled owner-local title task 12/13/14 fixtures on current x86/x64: source-owned task/RAM/Buffer1 output contracts matched; recorder cold-start residues in zero page, stack and pre-existing title scene are explicit ABI exclusions, not chain outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T54 S3 operational checks: focused screen-status regression on x86/x64, Win32 self-tests, shared OpenNT DOS16 link, platform-purity audit and refreshed local three-target artifacts."
+        "M2 T54 S3 operational checks: focused screen-status regression on x86/x64, Win32 self-tests, shared OpenNT DOS16 link, platform-purity audit and refreshed local three-target artifacts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:69520actualroots eachwidth0diff (128screen/3600VRAM/65536music/256secondary),all110PC/17branchpairs,7tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "ROM $8742: increments OperMode_Task and returns.",
       "currentSourcePaths": [
@@ -27579,11 +27599,13 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
         "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:69520actualroots eachwidth0diff (128screen/3600VRAM/65536music/256secondary),all110PC/17branchpairs,7tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "ROM $8e92: decodes one VRAM packet header, increment/repeat mode and payload length.",
       "currentSourcePaths": [
@@ -27600,11 +27622,13 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
         "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:69520actualroots eachwidth0diff (128screen/3600VRAM/65536music/256secondary),all110PC/17branchpairs,7tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "ROM $8ea7: commits $2000 increment mode then selects repeat/nonrepeat length behavior.",
       "currentSourcePaths": [
@@ -27621,11 +27645,13 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
         "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:69520actualroots eachwidth0diff (128screen/3600VRAM/65536music/256secondary),all110PC/17branchpairs,7tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "ROM $8eb2: recovers packet length and repeat flag.",
       "currentSourcePaths": [
@@ -27642,11 +27668,13 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
         "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:69520actualroots eachwidth0diff (128screen/3600VRAM/65536music/256secondary),all110PC/17branchpairs,7tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "ROM $8eb5: emits packet payload until count expires.",
       "currentSourcePaths": [
@@ -27663,11 +27691,13 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
         "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:69520actualroots eachwidth0diff (128screen/3600VRAM/65536music/256secondary),all110PC/17branchpairs,7tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "ROM $8eb7: loads repeated or advancing source byte then continues packet output.",
       "currentSourcePaths": [
@@ -27684,11 +27714,13 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
         "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:source8e92-8ef3 header/control/repeat/advance/terminal/scroll reviewed;00/01 pointer stores occur after payload. CPU packets cannot alias pointer00/01 or mirror0778;PPU outputs do not mutate CPU command memory. Entry physical/mirror alignment required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P11 checkpoint - VRAM packet pointer paths:3600 current original8edd returning roots each width,all RAM/CIRAM/palette/physical control/visible scroll zero diff;observed physical pushes only excluded. All4 indirect sites actually observed;4 focused current checks each width and4 contract-checker negatives pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:69520actualroots eachwidth0diff (128screen/3600VRAM/65536music/256secondary),all110PC/17branchpairs,7tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "ROM $8ece: selects next packet until zero terminator, otherwise reaches InitScroll.",
       "currentSourcePaths": [
@@ -28634,10 +28666,12 @@
       "currentCounterpart": "src/game/game.c mysmb_game_get_area_music and existing music_select_data",
       "semanticEvidence": [
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S3 P2 original source/branches/read/write/index/ABI audit: Mode0 returns without queue write;otherwise alternate entrance2 bypasses header-entry6/7 test;other alternate values permit pipe-intro selection5."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S3 P2 original source/branches/read/write/index/ABI audit: Mode0 returns without queue write;otherwise alternate entrance2 bypasses header-entry6/7 test;other alternate values permit pipe-intro selection5.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S3 P2 8192 original returning roots each width zero diff;all5 nodes/8 controls/6 table bytes observed;3 focused tests each/purity/current builds/OpenNT target."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S3 P2 8192 original returning roots each width zero diff;all5 nodes/8 controls/6 table bytes observed;3 focused tests each/purity/current builds/OpenNT target.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:69520actualroots eachwidth0diff (128screen/3600VRAM/65536music/256secondary),all110PC/17branchpairs,7tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "Mode0 returns without queue write;otherwise alternate entrance2 bypasses header-entry6/7 test;other alternate values permit pipe-intro selection5.",
       "currentSourcePaths": [
@@ -28653,10 +28687,12 @@
       "currentCounterpart": "src/game/game.c mysmb_game_get_area_music and existing music_select_data",
       "semanticEvidence": [
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S3 P2 original source/branches/read/write/index/ABI audit: Load source-valid area type0-3;cloud byte nonzero replaces index with4,zero retains area type;pipe path bypasses this branch."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S3 P2 original source/branches/read/write/index/ABI audit: Load source-valid area type0-3;cloud byte nonzero replaces index with4,zero retains area type;pipe path bypasses this branch.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S3 P2 8192 original returning roots each width zero diff;all5 nodes/8 controls/6 table bytes observed;3 focused tests each/purity/current builds/OpenNT target."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S3 P2 8192 original returning roots each width zero diff;all5 nodes/8 controls/6 table bytes observed;3 focused tests each/purity/current builds/OpenNT target.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:69520actualroots eachwidth0diff (128screen/3600VRAM/65536music/256secondary),all110PC/17branchpairs,7tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "Load source-valid area type0-3;cloud byte nonzero replaces index with4,zero retains area type;pipe path bypasses this branch.",
       "currentSourcePaths": [
@@ -28673,12 +28709,14 @@
       "semanticEvidence": [
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S3 P2 original source/branches/read/write/index/ABI audit: Read exactly selected original table byte and store only AreaMusicQueue FB;shared C uses existing equal table and same selector.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "docs/history/M2-T69-cross-cohort-current-proof.md S3 P2 8192 original returning roots each width zero diff;all5 nodes/8 controls/6 table bytes observed;3 focused tests each/purity/current builds/OpenNT target.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:69520actualroots eachwidth0diff (128screen/3600VRAM/65536music/256secondary),all110PC/17branchpairs,7tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "Read exactly selected original table byte and store only AreaMusicQueue FB;shared C uses existing equal table and same selector.",
       "currentSourcePaths": [
@@ -28694,10 +28732,12 @@
       "currentCounterpart": "src/game/game.c mysmb_game_get_area_music and existing music_select_data",
       "semanticEvidence": [
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S3 P2 original source/branches/read/write/index/ABI audit: Title path leaves all persistent RAM untouched;selected-music path returns after FB store. CPU A/Y/flags have no exported void-C ABI."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S3 P2 original source/branches/read/write/index/ABI audit: Title path leaves all persistent RAM untouched;selected-music path returns after FB store. CPU A/Y/flags have no exported void-C ABI.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S3 P2 8192 original returning roots each width zero diff;all5 nodes/8 controls/6 table bytes observed;3 focused tests each/purity/current builds/OpenNT target."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S3 P2 8192 original returning roots each width zero diff;all5 nodes/8 controls/6 table bytes observed;3 focused tests each/purity/current builds/OpenNT target.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:69520actualroots eachwidth0diff (128screen/3600VRAM/65536music/256secondary),all110PC/17branchpairs,7tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "Title path leaves all persistent RAM untouched;selected-music path returns after FB store. CPU A/Y/flags have no exported void-C ABI.",
       "currentSourcePaths": [
@@ -29260,10 +29300,12 @@
       "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
         "Td S9 K40 DoNothing residual leaf audit: SMB1 lines 3052-3055 compared with src/game/game.c secondary setup residual write; controlled startup route remains required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Actual game.c residual-store leaf writes6C9FF then common return point corresponding to DoNothing2;secondary calls empty leaf then residual leaf."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Actual game.c residual-store leaf writes6C9FF then common return point corresponding to DoNothing2;secondary calls empty leaf then residual leaf.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:69520actualroots eachwidth0diff (128screen/3600VRAM/65536music/256secondary),all110PC/17branchpairs,7tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "Actual game.c residual-store leaf writes6C9FF then common return point corresponding to DoNothing2;secondary calls empty leaf then residual leaf.",
       "currentSourcePaths": [
@@ -29279,10 +29321,12 @@
       "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
         "Td S9 K40 DoNothing residual leaf audit: SMB1 lines 3052-3055 compared with src/game/game.c secondary setup residual write; controlled startup route remains required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Actual empty leaf/common residual-leaf return;no persistent write;source CPU AFF from DoNothing1 is not a C return ABI."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Actual empty leaf/common residual-leaf return;no persistent write;source CPU AFF from DoNothing1 is not a C return ABI.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:69520actualroots eachwidth0diff (128screen/3600VRAM/65536music/256secondary),all110PC/17branchpairs,7tests each;source/threeP104productsunchanged."
       ],
       "semanticContract": "Actual empty leaf/common residual-leaf return;no persistent write;source CPU AFF from DoNothing1 is not a C return ABI.",
       "currentSourcePaths": [
@@ -170212,22 +170256,22 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:9labels/71instructions/30RAM joined3boundedclauses;throwcarry/timerDEC/jumpmask-table/actualObjectOffsetreload/distance-direction/movementfallthrough reviewed;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P102 checkpoint - floatey score award and sprite uses reconciled:8labels/74instructions/26RAM joined4boundedclauses;oldtimer2B/controlclamp/score-child-readwrite/stablecontrol/ID-altOAM/Y-SBCcarry/absoluteOAM-order reviewed;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:10labels/91instructions/34RAM joined4boundedclauses;callerinputs/bytecarry/tablebounds/outputalias/postchildcounter/stableY/storecommutation reviewed;wholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 10361,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 330,
+        "localInstructionReceiptSites": 10471,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 220,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 3688,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 85,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 3712,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 61,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
         "directExternalQueueWriterPaths": 48,
         "pendingDirectRamOwners": {
-          "src/game/game.c": 24,
           "src/game/frame_root.c": 22,
           "src/game shared dispatcher/engine/scroll owners": 10,
           "src/game/area.c plus src/game/oam/flagpole_gfx.c": 9,

@@ -768126,7 +768126,19 @@
         "QuestionBlockRow_High",
         "Bridge_High",
         "Bridge_Middle",
-        "FlagBalls_Residual"
+        "FlagBalls_Residual",
+        "ScreenRoutines",
+        "InitScreen",
+        "ClearBuffersDrawIcon",
+        "TScrClear",
+        "IncSubtask",
+        "WriteTopScore",
+        "IncModeTask_B",
+        "GetAreaMusic",
+        "ChkAreaType",
+        "ExitGetM",
+        "DoNothing1",
+        "DoNothing2"
       ],
       "baseline": 1992,
       "incomingComplete": [
