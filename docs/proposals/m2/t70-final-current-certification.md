@@ -8602,3 +8602,40 @@ Current src/game/fireball/bubble.c normalizedSHA256:bb95774c8ad52eda835e1c09cff3
 Current src/game/oam/sprite_row.c normalizedSHA256:c48564ca7adfdd578115ff8014961eb48da784ff6f8ab3115216b2255c1081e5.
 
 Current src/game/oam/sprite_draw.c normalizedSHA256:38d45cf19d2e7cf63863002c007244765bd9b4901ef3be8bca45464eb32e0588.
+
+## S17 P84 admission - player graphics action size animation rendering
+
+Existing EEE9-F129 gap:255instructions/81directRAM sites/42labels: PlayerGfxHandler,CntPl,SwimKT,BigKTS,ExPGH,FindPlayerAction,DoChangeSize,PlayerKilled,PlayerGfxProcessing,SUpdR,PlayerOffscreenChk,PROfsLoop,NPROffscr,DrawPlayer_Intermediate,PIntLoop,RenderPlayerSub,DrawPlayerLoop,ProcessPlayerAction,ProcOnGroundActs,NonAnimatedActs,ActionFalling,ActionWalkRun,ActionClimbing,ActionSwimming,GetCurrentAnimOffset,FourFrameExtent,ThreeFrameExtent,AnimationControl,SetAnimC,ExAnimC,GetGfxOffsetAdder,SzOfs,HandleChangeSize,CSzNext,GorSLog,GetOffsetFromAnimCtrl,ShrinkPlayer,ShrPlF,ChkForPlayerAttrib,KilledAtt,C_S_IGAtt,ExPlyrAt. Shared oam/player_gfx.c andretained actualsprite row/dumpchildren;originalrootentries PlayerGfxHandler,ProcessPlayerAction,HandleChangeSize,ChkForPlayerAttrib,DrawPlayer_Intermediate. Rawbyteanimation/timer/state/OAM domains againstfullboundPRG;injury/death/grow/shrink/swim/kick/throw/offscreen andintermediatescratchcopy sourceorder required. AllnonstackRAM/APU/writes compared;action/size resultA capabilitycompared,voidA/flags excludedonlyunexposedABI. Fresh0/max1992,local1991/1992nodes4261/4262controls retained. ROM/ASMreadonly protected,raw4096batch128MiB/120sec deletedbelowignored build. Any difference remainsS17 withcustody/3EXErepair;pureauditretainsP81products,producer/inter-frame/finalpackages pending.
+
+P84 fixturecoverage amendment:initialsixroots allnative0diff butthreeinstructions/threebranches uncovered duecorrelatedclimbingYspeed/swimbutton/state fixtures. Add independent nonzero climbingYspeed,swimAnim0/JumpTimer0/buttonA andswimmingflag1/state0 renderer roots. No sourcechange,no evidence creditbeforethese missingfeasiblepaths pass.
+
+## S17 P84 checkpoint - player graphics action size animation uses reconciled
+
+S17 P84:42player graphics labels/255instructions/81RAM joined14boundedclauses;286720actualroots eachwidth0diff/all255PC/41branchpairs,4tests each. Scope1424/fresh0;8785/10691instruction receipts,3135/3773RAM receipts;1906instructions/638RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| G1 | PlayerGfxHandler,CntPl | Injury/nonzero plusframebit0returnsbeforeallwrites. EngineBdeath precedessizeflag precedesswimming/state. Swimcontinuation chosenbeforechildren,onlyifsizeflag0/engine!=B/swimming!=0/state!=0. No GetPlayerOffscreenBits/Relative predecessorimplicitlyaddedtoVictoryentry. |
+| G2 | SwimKT,BigKTS,ExPGH | AfteractualFindPlayerAction,readliveframebit4;facingLSRcarry adds4byteOAM forleft. Largekickindex0,small1unlesscurrenttileequalsboundSwimTileRepOffset;writeabsolute0219+Y. Yadditionwrapsbeforeabsoluteaddress;drawchildmaychangeoldtile. |
+| G3 | FindPlayerAction,DoChangeSize,PlayerKilled | Actualaction orsize selector resultA entercommonprocessing. Deathselectstableindex14withoutmodifyinganimation. Sizeflagpathneverreturnstoswimcontinuationevenifsizehandlerclearsthatflag. |
+| G4 | PlayerGfxProcessing,SUpdR | PublishGfxOffsetA then4actualrows andattributeschild. Throwtimernonzero comparesliveAnimTimer,alwaysclearsThrowTimer beforecarrybranch;onlyanim<thresholdresetstimer/offsettable7 andredraw3movingor4standingrows. No replayofattributechildafterthrowredraw. |
+| G5 | PlayerOffscreenChk,PROfsLoop,NPROffscr | Offscreenhighnibblepublished00;byteOAM+18startsrow3. LSR00beforeactualDumpTwoF8,thenbyteY-8 fourrows. Scratch00updatedevenunhiddenrows;childpreservesY. FinalXFF/Ybase-8CPUonlyexcludednativevoidABI. |
+| G6 | DrawPlayer_Intermediate,PIntLoop | OriginalsixboundPRGbytescopiedreverse5..0into02..07 beforeactualDrawPlayerLoop Xb8/Y4. Finalattribute reads0226 OR40 writes0222 exactly,notcurrent0222 selfOR. Allscratchandabsolutestorescompared. |
+| G7 | RenderPlayerSub,DrawPlayerLoop | Publish07rows,liveRelativeXto0755and05,RelativeY02,facing03,attr04;actualrowchildren lefttable+X/righttable+1+X fulladdress,byteX+2/Y+8 and02+8. DEC07loop. Selectedfour/three/intermediaterowscovered;generalrawrowcountentryoutsidepublicABI pendingproducer proof. |
+| A1 | ProcessPlayerAction,ProcOnGroundActs,NonAnimatedActs | State3climb,2fall,1swim/jump,crouchotherwiseground. GroundspeedORbuttons0standingelseabs>=9andmovingANDfacing0skid. Nonanimatedselectsizeadder,clearAnimCtrl0,returnboundtable;noAnimationControlscratch00writes. |
+| A2 | ActionFalling,ActionWalkRun,ActionClimbing | Fallaction4 preservesAnimCtrl/timer anddirectGetCurrentAnimOffset;walk4frameextent3;climb5withYspeed0nonanimatedelseextent2. Sourceorder/carrychildreturnsreviewed;independentnonzeroYspeedfixture closespreviouscorrelationgap. |
+| A3 | ActionSwimming,GetCurrentAnimOffset,FourFrameExtent,ThreeFrameExtent | Swimmingaction1: JumpTimerORAnimCtrl orAbit7 entersframeextent3;otherwisecurrentoffsetwithoutadvance. CurrentAnimalwaysusesboundtable plusbyteframeASL3andlastASLcarry. IndependentAnim0/Jump0/button fixtures coverbothBCSpaths. |
+| A4 | AnimationControl,SetAnimC,ExAnimC | Publish00extentbeforecurrentoffset,saveoffsetthroughrealROMstack. Timer0reloadsTimerSet,byteAnimCtrl+1compareextentthen0ornew;timer!=0leavesanimation. Returnoldoffset regardlessadvance,notnewframeoffset. |
+| A5 | GetGfxOffsetAdder,SzOfs,GetOffsetFromAnimCtrl | Size0actionas-is,anynonzeroadds8byte. ThirdASLcarry isframebit5 andADCboundGfxTable addsitwithoutCLC;fullrawframe0-255 checked,nativeC90nohost-widthcarryloss. Tablebindings reviewednotextractedtrackeddata. |
+| Z1 | HandleChangeSize,CSzNext,GorSLog,ShrinkPlayer,ShrPlF | Everyframe&3==0byteINYAnimCtrl;>=10clearsflag/animation0,FFwrap0preservesflaguntilnormalcondition. LargeusesboundChangeAdder[animation]andtable15ASLcarry;smallbyteanimation+10indexesfullboundPRG thennonzeroindex9else1table. No clampofrawAnimCtrl. |
+| T1 | ChkForPlayerAttrib,KilledAtt,C_S_IGAtt,ExPlyrAt | EngineB oroffsetC8 changesrow3and4;50/B8/C0onlyrow4;othersnochange. Mask3FthenrightOR40,absolute0212/0216/021A/021E+capturedOAM retainsbase beyondFF. Alloldattribute values fixtures;no lowOAM wrapping. |
+
+Eightrootfamilies total286720 eachwidth. UnmodifiedROM actualchildren,allnonstackRAM/24APU/orderedwrites compared. All255PC/41branchpairs afterindependentclimbing/swim/state0fixtureamendment. Action/size originalA equalsnativeoffsetreturn;voidCPU A/flags/X/Y excludedonlyunexposedABI withcallerconditions/staticformulasreviewed. Fourfocusedtests eachwidthpass;fournegativeaccountingmutants rejected. BoundfullPRG,legalstate0-3 plusrawanimation/timer/OAM fixtures exerciseinstructionuses,notproducerreachability orwhole-gamecertificate. No product/sourcechange;P81threeproducts hashesunchanged,DOScompile/linkonly. WholeProgramLifetime/material/pixels/routes/snapshot remainpending.
+
+Current src/game/oam/player_gfx.c normalizedSHA256:36c26a719a788bf05992170f1b8b6d5a5bad95a5a1c891d70c04dc9ee7f68478.
+
+Current src/game/oam/sprite_row.c normalizedSHA256:c48564ca7adfdd578115ff8014961eb48da784ff6f8ab3115216b2255c1081e5.
+
+Current src/game/oam/sprite_draw.c normalizedSHA256:38d45cf19d2e7cf63863002c007244765bd9b4901ef3be8bca45464eb32e0588.
+
+Current src/game/oam/sprite_dump.c normalizedSHA256:a269d505b932e0c1f8735536be7ebfd1512e9351f1b06289eecc8b40422fe3fa.
