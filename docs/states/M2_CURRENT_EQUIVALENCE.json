@@ -28764,10 +28764,12 @@
       "currentCounterpart": "player.c initialize_entrance/existing tables;actual area palette/objects vine/fireball bubble children",
       "semanticEvidence": [
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 source/call/read/write/index/ABI audit: Original9131-91BD:page/force/facing/high/state/DEC-collision/halfway/swim setup,positions,real palette child,timer gates,vine/block/bubble children,subroutine7 in source order."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 source/call/read/write/index/ABI audit: Original9131-91BD:page/force/facing/high/state/DEC-collision/halfway/swim setup,positions,real palette child,timer gates,vine/block/bubble children,subroutine7 in source order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P97 checkpoint - player entrance initialization uses reconciled:6labels/58instructions/27RAM joined4boundedclauses;page/collision/swim/alternateadjacency/timer/paletteX/vine/bubble/order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 final65536 original returning roots each width zero diff;11 nodes/17 controls/27 table bytes observed;5 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 final65536 original returning roots each width zero diff;11 nodes/17 controls/27 table bytes observed;5 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P97 checkpoint - player entrance initialization uses reconciled:65536original9131roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all58PC/7branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Original9131-91BD:page/force/facing/high/state/DEC-collision/halfway/swim setup,positions,real palette child,timer gates,vine/block/bubble children,subroutine7 in source order.",
       "currentSourcePaths": [
@@ -28783,10 +28785,12 @@
       "currentCounterpart": "player.c initialize_entrance/existing tables;actual area palette/objects vine/fireball bubble children",
       "semanticEvidence": [
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 source/call/read/write/index/ABI audit: Store water swimming1 versus other0;alternate0/1 retains header index,2/3 loads original alternate8/0."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 source/call/read/write/index/ABI audit: Store water swimming1 versus other0;alternate0/1 retains header index,2/3 loads original alternate8/0.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P97 checkpoint - player entrance initialization uses reconciled:6labels/58instructions/27RAM joined4boundedclauses;page/collision/swim/alternateadjacency/timer/paletteX/vine/bubble/order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 final65536 original returning roots each width zero diff;11 nodes/17 controls/27 table bytes observed;5 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 final65536 original returning roots each width zero diff;11 nodes/17 controls/27 table bytes observed;5 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P97 checkpoint - player entrance initialization uses reconciled:65536original9131roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all58PC/7branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Store water swimming1 versus other0;alternate0/1 retains header index,2/3 loads original alternate8/0.",
       "currentSourcePaths": [
@@ -28802,10 +28806,12 @@
       "currentCounterpart": "player.c initialize_entrance/existing tables;actual area palette/objects vine/fireball bubble children",
       "semanticEvidence": [
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 source/call/read/write/index/ABI audit: Store original X/Y/priority selections then actual GetPlayerColors;retain its returned X as original buffer offset,not entrance index;timer resets only nonzero setting and fetch."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 source/call/read/write/index/ABI audit: Store original X/Y/priority selections then actual GetPlayerColors;retain its returned X as original buffer offset,not entrance index;timer resets only nonzero setting and fetch.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P97 checkpoint - player entrance initialization uses reconciled:6labels/58instructions/27RAM joined4boundedclauses;page/collision/swim/alternateadjacency/timer/paletteX/vine/bubble/order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 final65536 original returning roots each width zero diff;11 nodes/17 controls/27 table bytes observed;5 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 final65536 original returning roots each width zero diff;11 nodes/17 controls/27 table bytes observed;5 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P97 checkpoint - player entrance initialization uses reconciled:65536original9131roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all58PC/7branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Store original X/Y/priority selections then actual GetPlayerColors;retain its returned X as original buffer offset,not entrance index;timer resets only nonzero setting and fetch.",
       "currentSourcePaths": [
@@ -28821,10 +28827,12 @@
       "currentCounterpart": "player.c initialize_entrance/existing tables;actual area palette/objects vine/fireball bubble children",
       "semanticEvidence": [
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 source/call/read/write/index/ABI audit: Joypad override nonzero stores climbing3,actual InitBlock_XY_Pos slot0 then block-Y F0 and Setup_Vine slot5/block0;zero keeps palette-return X."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 source/call/read/write/index/ABI audit: Joypad override nonzero stores climbing3,actual InitBlock_XY_Pos slot0 then block-Y F0 and Setup_Vine slot5/block0;zero keeps palette-return X.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P97 checkpoint - player entrance initialization uses reconciled:6labels/58instructions/27RAM joined4boundedclauses;page/collision/swim/alternateadjacency/timer/paletteX/vine/bubble/order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 final65536 original returning roots each width zero diff;11 nodes/17 controls/27 table bytes observed;5 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 final65536 original returning roots each width zero diff;11 nodes/17 controls/27 table bytes observed;5 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P97 checkpoint - player entrance initialization uses reconciled:65536original9131roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all58PC/7branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Joypad override nonzero stores climbing3,actual InitBlock_XY_Pos slot0 then block-Y F0 and Setup_Vine slot5/block0;zero keeps palette-return X.",
       "currentSourcePaths": [
@@ -28840,10 +28848,12 @@
       "currentCounterpart": "player.c initialize_entrance/existing tables;actual area palette/objects vine/fireball bubble children",
       "semanticEvidence": [
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 source/call/read/write/index/ABI audit: Water calls actual SetupBubble with retained X;other areas skip. Zero-page object operands wrap as original;alias-modified07 uses original PRG absolute-Y table reads."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 source/call/read/write/index/ABI audit: Water calls actual SetupBubble with retained X;other areas skip. Zero-page object operands wrap as original;alias-modified07 uses original PRG absolute-Y table reads.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P97 checkpoint - player entrance initialization uses reconciled:6labels/58instructions/27RAM joined4boundedclauses;page/collision/swim/alternateadjacency/timer/paletteX/vine/bubble/order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 final65536 original returning roots each width zero diff;11 nodes/17 controls/27 table bytes observed;5 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 final65536 original returning roots each width zero diff;11 nodes/17 controls/27 table bytes observed;5 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P97 checkpoint - player entrance initialization uses reconciled:65536original9131roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all58PC/7branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Water calls actual SetupBubble with retained X;other areas skip. Zero-page object operands wrap as original;alias-modified07 uses original PRG absolute-Y table reads.",
       "currentSourcePaths": [
@@ -28859,10 +28869,12 @@
       "currentCounterpart": "player.c initialize_entrance/existing tables;actual area palette/objects vine/fireball bubble children",
       "semanticEvidence": [
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 source/call/read/write/index/ABI audit: After all actual children,store7 in GameEngineSubroutine and return;CPU transient registers/flags have no exported void-C ABI."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 source/call/read/write/index/ABI audit: After all actual children,store7 in GameEngineSubroutine and return;CPU transient registers/flags have no exported void-C ABI.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P97 checkpoint - player entrance initialization uses reconciled:6labels/58instructions/27RAM joined4boundedclauses;page/collision/swim/alternateadjacency/timer/paletteX/vine/bubble/order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 final65536 original returning roots each width zero diff;11 nodes/17 controls/27 table bytes observed;5 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 final65536 original returning roots each width zero diff;11 nodes/17 controls/27 table bytes observed;5 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P97 checkpoint - player entrance initialization uses reconciled:65536original9131roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all58PC/7branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "After all actual children,store7 in GameEngineSubroutine and return;CPU transient registers/flags have no exported void-C ABI.",
       "currentSourcePaths": [
@@ -169996,16 +170008,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P93 checkpoint - victory messages counters and world completion uses reconciled:16labels/84instructions/29RAM joined7boundedclauses;sourcemessageSBC/carry/queue/counter/timer/Bexit order reviewed;8421falsecontrol00153 reclassifiedinfeasible,oldscopedframeproofdidnotobserveit;wholeproducer/inter-frame pending,no newnodecredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:5labels/20instructions/7RAM joined4boundedclauses;P89TopScore nonalias/P90pausedbit/P48timers joined,INCframe gate/RAM00/XOR/ROR reviewed;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:13labels/102instructions/39RAM joined7boundedclauses;postchildreload/orderedrealchildren/wrappedCMP-BMI/07threshold/music/cloudexit reviewed;wholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:13labels/56instructions/26RAM joined5boundedclauses;sourcecrouch/livepostphysicsdispatch/jumpheight/water/falling/force28/order reviewed;wholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:13labels/56instructions/26RAM joined5boundedclauses;sourcecrouch/livepostphysicsdispatch/jumpheight/water/falling/force28/order reviewed;wholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P97 checkpoint - player entrance initialization uses reconciled:6labels/58instructions/27RAM joined4boundedclauses;page/collision/swim/alternateadjacency/timer/paletteX/vine/bubble/order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 9684,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 1007,
+        "localInstructionReceiptSites": 9742,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 949,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 3433,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 340,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 3460,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 313,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -170014,7 +170027,6 @@
           "src/game/area/block_metatile.c": 34,
           "src/game/scroll.c shared C90 scroll owner": 32,
           "src/game/enemy/hammer_bro.c": 30,
-          "src/game/player.c": 28,
           "src/game/objects.c": 26,
           "src/game/game.c": 24,
           "src/game/player_end_level.c shared C90 end-level owner": 24,
@@ -170031,7 +170043,8 @@
           "src/game/dispatcher.c": 4,
           "src/game/frame_root.c and src/game/terminal_modes.c": 2,
           "src/game/enemy/platform_callers.c": 2,
-          "src/game/frame_root.c and src/game/title_modes.c": 1
+          "src/game/frame_root.c and src/game/title_modes.c": 1,
+          "src/game/player.c": 1
         },
         "materialPathsEnumerated": 993,
         "globalMaterialPathDenominator": "unknown",

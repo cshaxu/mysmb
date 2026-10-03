@@ -8935,3 +8935,32 @@ Current src/game/game.c normalizedSHA256:1f1663c3ab2e1351bef6a454d4860af6d0ea696
 Current src/game/world/movement.c normalizedSHA256:618464a8d33358e1a69cd3c269e29d0db31b4c7c160ef40468ce68c3cf978b6b.
 
 Current src/game/world/gravity.c normalizedSHA256:4213b8f264e8794ba761d6f791bea7a89cd69add3605d97d43b66de48a95b0a7.
+
+## S17 P97 admission - player entrance initialization uses
+
+ExistingEntrance_GameTimerSetup58instructions/27RAM/6labels Entrance_GameTimerSetup,ChkStPos,SetStPos,ChkOverR,ChkSwimE,SetPESub. Two remaining SetAnimSpd instructions are a separate animation consumer and stay pending; retained S17 participation does not credit them. Sharedplayer.c original9131entry/9196return;actualGetPlayerColors,InitBlock_XY_Pos,Setup_Vine,SetupBubble dependencies retained. Verify sourcepage/state/collisionbyteDEC/Swim,alternate0-3/headerentrance0-7/timer0-3/tableadjacency/oldXVRAMhandoff,JoypadOverridevineandbubblecallorder. One65536controlledrootbatch varieslegalheaderfields/rawpaletteoffset/collision/page/player/status/fetch/override;fullnonphysical-stackRAM/APU/orderedwrites,CPUvoidreturnunexposed. ROMreadonly/raw4096batch128MiB/120sec cleanupbelowbuild. Fresh0/max1992;P81productsunchangedunlessscopedmismatch;wholeproducer/inter-frame/finalpackagespending.
+
+## S17 P97 checkpoint - player entrance initialization uses reconciled
+
+S17 P97:6player entrance labels/58instructions/27RAM joined4boundedclauses;65536actualroots eachwidth0diff/all58PC/7branchpairs,4tests each. Scope1545/fresh0;9742/10691instruction receipts,3460/3773RAM receipts;949instructions/313RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| E1 | Entrance_GameTimerSetup,ChkStPos | ScreenLeft_Page copied before initialization;ForceDown28/Facing1/YHigh1/State0;CollisionBits byteDEC includes0-toFF;HalfwayPage0. AreaType0 writesSwimming1 otherwisewrites0. Nochildbetweeninitialsourcepredicateandnativecachedvalue. |
+| E2 | SetStPos | HeaderEntrance0-7 plusAltEntrance0-3 are retainedreachabletableindexdomain. Alt0/1retainheaderX;Alt2/3 usesAltYPosOffset[0/1]8/0. StartingXindexedbyAlt,Y/attributesbyresolvedentrance;index8 attributes usesadjacentGameTimerDatadummy20. ActualGetPlayerColorsalwaysruns;nativecapturesoldVRAMoffsetbeforechildwrites0300 becauseoriginalXreturnsoldoffset. Rawoffset0-255/actualpalettewrites/bubblealiases compared,notassumednormaloffset. |
+| E3 | ChkOverR | TimerSetting0shortcircuitsFetchread/reset;settings1-3andFetch!=0 sethundreds4/3/2,tens0,ones1,Fetch0,Star0;elsepreservetimer/star. JoypadOverride!=0 State3 thenactualInitBlock_XY_Pos slot0,BlockYF0,actualSetup_Vine X5/Y0. Nativeentrancehelperhasexactorder andchildslot5 retainedforfollowingbubble. |
+| E4 | ChkSwimE,SetPESub | ReloadliveAreaTypeafterpalette/vine;wateralwaysactualSetupBubble witholdpaletteX unlessvineoverrodeX5;RAM07 remainsoriginalcallerselector,notinventedrandom. Actualchildzero-pagewrapping/force/timeraliases compared. FinallyGameSub7. CPUvoidA/X/Y/flagsunusedbyoriginalparentnextdispatch;physicalstackpushonlyexcluded. Wholeinter-frameproducer/lifetime pending. |
+
+Actual9131roots65536 eachwidth coverslegalAlt0-3/Entrance0-7/AreaType0-3/GameTimer0-3/Player0-1/Status0-2,rawVRAMoffset0-255/CollisionBits0-255/ScreenPage0-255,Fetch/Override0orFF. Profilesarecontrolledandcoupled,notcartesianallRAMornaturalwholegameclaim. All58PC/sevenbranchpairsobserved. ActualGetPlayerColors/vine/block/bubblechildrenunchanged,ROMunpatched. Compare2048RAMexcludingobservedphysicalCPUstackpushspan,24APUandorderedwrites;CPUvoidreturnexclusiononly. TwoSetAnimSpd instructionswerewronglyincludedbyinitialsamefilefilter;removedfromscopebeforecreditandremainpending. Source58useclausescheckedagainstASM;fourfreshfocusedtests eachwidth/fournegativeaccountingmutantspass. No source/productchange;P81hashesunchanged,DOScompile/linkonly. Producer/inter-frame/material/pixels/routes/snapshotremainopen.
+
+Current src/game/player.c normalizedSHA256:23e17c99ffe8e540a162f7031617f08a1fec46bea70fab2ae24394876f2a0d41.
+
+Current src/game/area.c normalizedSHA256:7f9125e079ae875931894d72eafec68256280f33e559bd5257d43381c8a288cd.
+
+Current src/game/objects.c normalizedSHA256:7820f9d8da742bb9b1d36806dd51c858c8b43e120bd9e680b18b8a64c332fc09.
+
+Current src/game/fireball/bubble.c normalizedSHA256:bb95774c8ad52eda835e1c09cff3cfa883912d23241f1da5bdda20a6f9d3f536.
+
+Current src/game/blocks/head.c normalizedSHA256:271d3edde9187d57173da627ba372ced4053b38f9fbd3884cd1b85c5fdcf462e.
+
+Current src/game/vine.c normalizedSHA256:079acf2621b59a9fedcaa297218e79fbf045ff8e34fca848807b123b6c8d8366.

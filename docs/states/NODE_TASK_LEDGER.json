@@ -768032,7 +768032,13 @@
         "LRWater",
         "LRAir",
         "JSMove",
-        "ExitMov1"
+        "ExitMov1",
+        "Entrance_GameTimerSetup",
+        "ChkStPos",
+        "SetStPos",
+        "ChkOverR",
+        "ChkSwimE",
+        "SetPESub"
       ],
       "baseline": 1992,
       "incomingComplete": [

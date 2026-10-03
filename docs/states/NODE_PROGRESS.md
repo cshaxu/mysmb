@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P97 player entrance uses](../proposals/m2/t70-final-current-certification.md#s17-p97-checkpoint---player-entrance-initialization-uses-reconciled).
+S17 P97:6player entrance labels/58instructions/27RAM joined4boundedclauses;65536actualroots eachwidth0diff/all58PC/7branchpairs,4tests each. Scope1545/fresh0;9742/10691instruction receipts,3460/3773RAM receipts;949instructions/313RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
 [P96 player movement uses](../proposals/m2/t70-final-current-certification.md#s17-p96-checkpoint---player-movement-dispatch-jump-and-swim-uses-reconciled).
 S17 P96:13player movement labels/56instructions/26RAM joined5boundedclauses;reuse143872parent plus65536actualleafroots eachwidth0diff/all56PC/12branchpairs,4tests each. Scope1539/fresh0;9684/10691instruction receipts,3433/3773RAM receipts;1007instructions/340RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
