@@ -767181,7 +767181,10 @@
         "ColorRotation",
         "GetBlankPal",
         "GetAreaPal",
-        "ExitColorRot"
+        "ExitColorRot",
+        "PlayerMovementSubs",
+        "ProcMove",
+        "NoMoveSub"
       ],
       "baseline": 1992,
       "incomingComplete": [

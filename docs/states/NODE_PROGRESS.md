@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P58 movement caller diagnostic binding](../proposals/m2/t70-final-current-certification.md#s17-p58-checkpoint---movement-caller-dispatch-diagnostic-restored).
+S17 P58:testmovementcaller link/dispatchbinding fixed;04-07 comparison added,37freshROM fixtures yield74caller+74production checks0diff,bothwidths;fournegativevariants rejected. Bothall-targetbuilds/twofocusedtests eachpass,productsP57unchanged. Scope762/fresh0;local1991/1992nodes,4269/4270controls(raw4342/infeasible72),3956instruction/1363RAM boundedreceipts,6735instruction/2410RAM pending;material993partial,totalunknown,M2 incomplete.
+
 [P57 shared color counter and continuous engine](../proposals/m2/t70-final-current-certification.md#s17-p57-checkpoint---shared-color-counter-repaired-and-continuous-engine-qualified).
 S17 P57:ColorRotation RAM00 counter repaired(originalSTA3/DECtoFF),regressionfailsbefore/passafter.65536color+8192fullengine roots eachwidth0diff,11tests each;41color/44observedparent joins. Scope759/fresh0;3956instruction/1363RAM receipts,6735instruction/2410RAM pending. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72),material993partial,totalunknown;3EXEs refreshed/DOScompile-linkonly. Parser/caller/inter-frameandindependentmovementcaller testlinkpending,M2 incomplete.
 

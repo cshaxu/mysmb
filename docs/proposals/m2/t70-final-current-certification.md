@@ -7689,3 +7689,49 @@ Refreshed mysmb16.exe:259659 bytes,SHA256:b76d8119234bfd5c7599a279d6b9a7923d44e8
 Refreshed mysmb32.exe:374219 bytes,SHA256:7cf6a814ed8d0745a0e5bef2e345c810d1bfe6b5504086c3bfd402282184dd0c.
 
 Refreshed mysmb64.exe:380216 bytes,SHA256:b361c9c16bab4a5c6fe723b929fca2419e4faa394f11af4ca963b77dc31accd2.
+
+## S17 P58 admission - movement caller diagnostic dispatch binding
+
+ExistingP57 fullbuild gap:player_movement_caller_check has recordedchild doubles butno JumpEngine helper symbol. Exact audit participants:PlayerMovementSubs,ProcMove,MoveSubs,NoMoveSub,JumpEngine. Scope762,fresh0/max1992. Test-only observer validatesreturnedphysics freeze/state,dispatchaddressB350 andselector0-3,publishesROMtable04-07;compare04-07 atchild boundaries/end ratherthanexcludingthem. Original37 movement roots andrecordedactualchildreturns,plusnegativewrongaddress/selector/binding mutations;this certifiescaller wiringonly,notnativechildren orproductionJumpEngine. Test/CMake buildfix only,no productedit/noEXErefreshrequired. OriginalROMreadonly,raw onlyignoreduniqueP58build path,budget4MiB/120seconds perprocess;deletefreshrawaftercomparison. Existingnode/control/material totals unchanged,no new auditround.
+
+## S17 P58 checkpoint - movement caller dispatch diagnostic restored
+
+ExistingP57 nameddiagnostic link gap resolved:test/player_movement_snapshot_check.c
+nowdefines its caller-only JumpEngine observer instead ofleavinganundefinedsymbol.
+No productcode/CMake/platform change. Exactparticipants:PlayerMovementSubs,
+ProcMove,MoveSubs,NoMoveSub,JumpEngine;scope762/fresh0,no newnode/control/material
+credit. Control-00954 MoveSubs->JumpEngine receives scopedoperational evidence.
+
+Observer validates source returnaddressB350,selector0-3 equalsthepostphysics
+RAM001D,freeze070Bzero,andplacement immediatelyafterfirstphysicsreturn. It
+publishes sourcevectorB351+2*selector intoRAM04-07. Expecteddispatcher count
+derivesfromtheactualrecordedphysicsreturn freeze:0whenfrozen,1otherwise.
+Compare nowincludesRAM04-07 atallchildboundariesandend. Thus wrongsource
+tablebindingcannotbehiddenbytheoldscratch exclusion. Other00-03 remainABI
+exclusions;physical100-1FF stack page remainsoutside this historicalcaller
+protocol.1788RAM bytes compared,not allRAM orallinter-frame state.
+
+Freshreadonly originalROM recorder executes37 controlledmovement fixtures
+withrealphysics/state children. Bothnativewidths pass74 caller-only checks
+and74 realproductionchecks. Caller doubles replay observedoriginalchild
+returns;thesechecks cannotcertify nativechildren. Separateproductionchecker
+executescurrentactualchildren underthesamefixtureandalso matches. FourC90
+negativevariants rejected:wrongreturnB351(case0),wrongselector0(case1),
+missingdispatch(case0),wrongselectedlowtarget(case0). These are meaningful
+protocol negatives,not surrogateROM-equivalence proof. Raw799285bytesbelow
+ignoredP58build path were deletedafterchecking;neutral hashes/summaries remain.
+
+Both all-targetx86/x64 builds nowpass;theP57 missingmovementcaller symbol and
+two corruptx64 objectarchives are resolved. Two focusedtests eachwidth pass
+(movementchain andplatformpurity). Test-only P,threeEXEs retainverifiedP57
+hashes;no DOSbuildorproductrefresh required. DOSruntime remainsunqualified.
+
+Historical1992/1992,currentlocal1991/1992nodes,4269/4270controls(raw4342/
+infeasible72);3956/10691instruction and1363/3773RAM boundedreceipts unchanged.
+6735instruction/2410RAM receipts remainpending. Material993partial,total
+unknown;CheckForEnemyGroup/control01480 remainsneeds-evidence,fourfinal
+packagesopen,M2 NOT COMPLETE. This closesonlythetestlink/bindinggap.
+
+Test normalizedSHA256:61d3004a0ac89882e159d7275a4dd7e7d5b63a0601e4ebcf3adf5f3bbdcbb7d3.
+Production movement normalizedSHA256:ce7cea88da5e76af3a7916fc64e44343cd04b39fcb65af3715064e2f8ab9d5d7.
+Reference-recorder SHA256:534b9d0d129058571efd38a1436fb0a8636d4f8a2c15c1ff4a30242aecefd3c7.

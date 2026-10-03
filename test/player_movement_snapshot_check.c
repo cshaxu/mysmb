@@ -9,7 +9,7 @@ static unsigned int failures;
 static void compare(const unsigned char *actual,const unsigned char *expected)
 {
     unsigned int i;
-    for(i=8U;i<2048U;++i) {
+    for(i=4U;i<2048U;++i) {
         if(i>=0x100U && i<0x200U) continue;
         if(actual[i]!=expected[i]) {
             printf("%04x original=%02x native=%02x\n",i,
@@ -21,6 +21,30 @@ static void compare(const unsigned char *actual,const unsigned char *expected)
 #ifdef MYSMB_CALLER_CHECK
 static unsigned char children[8][4098];
 static unsigned int child_count,child_calls;
+static unsigned int dispatch_calls;
+
+/* Caller diagnostic only: children use original recorded returns. This
+ * observer checks the post-physics dispatch and its scratch publication;
+ * it does not certify the production JumpEngine or native child bodies. */
+void mysmb_game_jump_engine_state(struct mysmb_game *game,
+                                 mysmb_u16 ret, mysmb_u8 selector)
+{
+    mysmb_u16 offset;
+
+    ++dispatch_calls;
+    if (ret != 0xb350U || selector >= 4U ||
+        selector != game->ram[0x001dU] || game->ram[0x070bU] != 0U ||
+        child_calls != 1U || game->area_prg == NULL ||
+        game->area_prg_size < 0x3359U) {
+        ++failures;
+        return;
+    }
+    offset = (mysmb_u16)(0x3351U + (mysmb_u16)selector * 2U);
+    game->ram[4U] = (mysmb_u8)ret;
+    game->ram[5U] = (mysmb_u8)(ret >> 8U);
+    game->ram[6U] = game->area_prg[offset];
+    game->ram[7U] = game->area_prg[offset + 1U];
+}
 static mysmb_u8 child(struct mysmb_game *game,unsigned int id)
 {
     unsigned char *record;
@@ -77,6 +101,8 @@ int main(int argc,char **argv)
     mysmb_player_movement_subs(&game);
 #ifdef MYSMB_CALLER_CHECK
     if(child_calls!=child_count) ++failures;
+    if(child_count == 0U || dispatch_calls !=
+        (children[0][2050U + 0x070bU] == 0U ? 1U : 0U)) ++failures;
 #endif
     compare(game.ram,expected);
     return failures!=0U?1:0;
