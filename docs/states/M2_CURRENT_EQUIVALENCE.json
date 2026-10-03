@@ -28856,12 +28856,14 @@
       "semanticEvidence": [
         "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: INC disable;hit0;event Silence80;DEC lives as byte;negative sets task0/mode3,nonnegative follows exact checkpoint/transpose/restart children.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:14labels/96instructions/41RAM joined7boundedclauses;life sign/checkpoint16bytes/descendingsevenbyteexchange/carry/LoadAreaPointerbeforeContinue resets reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all96PC/11branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "INC disable;hit0;event Silence80;DEC lives as byte;negative sets task0/mode3,nonnegative follows exact checkpoint/transpose/restart children.",
       "currentSourcePaths": [
@@ -28877,10 +28879,12 @@
       "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
         "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Index byte world<<1 plus1 only level bit1;source-valid world0-7 and levels0-3 produce0-15."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Index byte world<<1 plus1 only level bit1;source-valid world0-7 and levels0-3 produce0-15.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:14labels/96instructions/41RAM joined7boundedclauses;life sign/checkpoint16bytes/descendingsevenbyteexchange/carry/LoadAreaPointerbeforeContinue resets reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all96PC/11branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Index byte world<<1 plus1 only level bit1;source-valid world0-7 and levels0-3 produce0-15.",
       "currentSourcePaths": [
@@ -28896,10 +28900,12 @@
       "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
         "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Read actual table byte;level bit0 chooses low nibble or four LSRs for high nibble."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Read actual table byte;level bit0 chooses low nibble or four LSRs for high nibble.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:14labels/96instructions/41RAM joined7boundedclauses;life sign/checkpoint16bytes/descendingsevenbyteexchange/carry/LoadAreaPointerbeforeContinue resets reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all96PC/11branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Read actual table byte;level bit0 chooses low nibble or four LSRs for high nibble.",
       "currentSourcePaths": [
@@ -28915,10 +28921,12 @@
       "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
         "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Mask0F;retain checkpoint only when <=ScreenLeft_PageLoc,otherwise0;unsigned source equality/less/greater branches retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Mask0F;retain checkpoint only when <=ScreenLeft_PageLoc,otherwise0;unsigned source equality/less/greater branches retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:14labels/96instructions/41RAM joined7boundedclauses;life sign/checkpoint16bytes/descendingsevenbyteexchange/carry/LoadAreaPointerbeforeContinue resets reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all96PC/11branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Mask0F;retain checkpoint only when <=ScreenLeft_PageLoc,otherwise0;unsigned source equality/less/greater branches retained.",
       "currentSourcePaths": [
@@ -28934,10 +28942,12 @@
       "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
         "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Store selected HalfwayPage then actual TransposePlayers then ContinueGame tail successor regardless transpose carry."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Store selected HalfwayPage then actual TransposePlayers then ContinueGame tail successor regardless transpose carry.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:14labels/96instructions/41RAM joined7boundedclauses;life sign/checkpoint16bytes/descendingsevenbyteexchange/carry/LoadAreaPointerbeforeContinue resets reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all96PC/11branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Store selected HalfwayPage then actual TransposePlayers then ContinueGame tail successor regardless transpose carry.",
       "currentSourcePaths": [
@@ -28954,11 +28964,13 @@
       "semanticEvidence": [
         "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Actual source task0-2 dispatch to setup/screen/run;shared JumpEngine state stores source return921D and bound table target04-07;native C branches execute fixed owners.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:14labels/96instructions/41RAM joined7boundedclauses;life sign/checkpoint16bytes/descendingsevenbyteexchange/carry/LoadAreaPointerbeforeContinue resets reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all96PC/11branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Actual source task0-2 dispatch to setup/screen/run;shared JumpEngine state stores source return921D and bound table target04-07;native C branches execute fixed owners.",
       "currentSourcePaths": [
@@ -28975,12 +28987,14 @@
       "semanticEvidence": [
         "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Screen task0/hit0/event game-over2;INC disable and mode-task bytes,not fixed1 assignment.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:14labels/96instructions/41RAM joined7boundedclauses;life sign/checkpoint16bytes/descendingsevenbyteexchange/carry/LoadAreaPointerbeforeContinue resets reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all96PC/11branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Screen task0/hit0/event game-over2;INC disable and mode-task bytes,not fixed1 assignment.",
       "currentSourcePaths": [
@@ -28996,10 +29010,12 @@
       "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
         "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Disable0;START set terminates immediately,otherwise nonzero screen timer returns and zero timer enters termination."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Disable0;START set terminates immediately,otherwise nonzero screen timer returns and zero timer enters termination.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:14labels/96instructions/41RAM joined7boundedclauses;life sign/checkpoint16bytes/descendingsevenbyteexchange/carry/LoadAreaPointerbeforeContinue resets reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all96PC/11branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Disable0;START set terminates immediately,otherwise nonzero screen timer returns and zero timer enters termination.",
       "currentSourcePaths": [
@@ -29017,13 +29033,15 @@
         "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Queue Silence80 then actual transpose child;carry-clear equivalent resumes,carry-set stores ContinueWorld and clears task/timer/mode to title.",
         "docs/proposals/m2/t70-final-current-certification.md S11 P1:source83f6-849e and9248-9263 branch/state/call audit;EndChkBButton849b now calls canonical mysmb_game_terminate_game after flag1/livesff stores;message comment corrected to actual83f6-8460.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:14labels/96instructions/41RAM joined7boundedclauses;life sign/checkpoint16bytes/descendingsevenbyteexchange/carry/LoadAreaPointerbeforeContinue resets reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link.",
         "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all96PC/11branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Queue Silence80 then actual transpose child;carry-clear equivalent resumes,carry-set stores ContinueWorld and clears task/timer/mode to title.",
       "currentSourcePaths": [
@@ -29039,10 +29057,12 @@
       "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
         "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Actual LoadAreaPointer before size1/fetch INC/timer-control0/status0/engine-subroutine0/mode-task0/mode1 in source order."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Actual LoadAreaPointer before size1/fetch INC/timer-control0/status0/engine-subroutine0/mode-task0/mode1 in source order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:14labels/96instructions/41RAM joined7boundedclauses;life sign/checkpoint16bytes/descendingsevenbyteexchange/carry/LoadAreaPointerbeforeContinue resets reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all96PC/11branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Actual LoadAreaPointer before size1/fetch INC/timer-control0/status0/engine-subroutine0/mode-task0/mode1 in source order.",
       "currentSourcePaths": [
@@ -29058,10 +29078,12 @@
       "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
         "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Common return after ContinueGame or wait path;no added persistent writes or invented reset."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Common return after ContinueGame or wait path;no added persistent writes or invented reset.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:14labels/96instructions/41RAM joined7boundedclauses;life sign/checkpoint16bytes/descendingsevenbyteexchange/carry/LoadAreaPointerbeforeContinue resets reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all96PC/11branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Common return after ContinueGame or wait path;no added persistent writes or invented reset.",
       "currentSourcePaths": [
@@ -29077,10 +29099,12 @@
       "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
         "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: One-player or negative offscreen lives returns carry-set equivalent0 without swap;otherwise CurrentPlayer XOR1 then seven-byte descending exchange and carry-clear equivalent1."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: One-player or negative offscreen lives returns carry-set equivalent0 without swap;otherwise CurrentPlayer XOR1 then seven-byte descending exchange and carry-clear equivalent1.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:14labels/96instructions/41RAM joined7boundedclauses;life sign/checkpoint16bytes/descendingsevenbyteexchange/carry/LoadAreaPointerbeforeContinue resets reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all96PC/11branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "One-player or negative offscreen lives returns carry-set equivalent0 without swap;otherwise CurrentPlayer XOR1 then seven-byte descending exchange and carry-clear equivalent1.",
       "currentSourcePaths": [
@@ -29096,10 +29120,12 @@
       "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
         "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Offsets6 down0:save on-screen byte,write off-screen to on-screen,write saved to off-screen;source stack temporary replaced by C byte,record write order retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Offsets6 down0:save on-screen byte,write off-screen to on-screen,write saved to off-screen;source stack temporary replaced by C byte,record write order retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:14labels/96instructions/41RAM joined7boundedclauses;life sign/checkpoint16bytes/descendingsevenbyteexchange/carry/LoadAreaPointerbeforeContinue resets reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all96PC/11branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Offsets6 down0:save on-screen byte,write off-screen to on-screen,write saved to off-screen;source stack temporary replaced by C byte,record write order retained.",
       "currentSourcePaths": [
@@ -29115,10 +29141,12 @@
       "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
         "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Return preserves no-swap/swap carry-equivalent result consumed only by termination branch;PlayerLoseLife ignores result as source."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Return preserves no-swap/swap carry-equivalent result consumed only by termination branch;PlayerLoseLife ignores result as source.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:14labels/96instructions/41RAM joined7boundedclauses;life sign/checkpoint16bytes/descendingsevenbyteexchange/carry/LoadAreaPointerbeforeContinue resets reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all96PC/11branchpairs,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Return preserves no-swap/swap carry-equivalent result consumed only by termination branch;PlayerLoseLife ignores result as source.",
       "currentSourcePaths": [
@@ -169867,22 +169895,23 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P88 checkpoint - title menu start icon and persistent demo uses reconciled:20labels/112instructions/46RAM joined8boundedclauses;inputpriority/continue/scoreclear/icon/table/demo lifetime reviewed,49tablebytesboundexact;82C7/wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P90 checkpoint - pause gates timer and sound queue uses reconciled:6labels/31instructions/11RAM joined4boundedclauses;mode/task/timer/start/status/queue write order reviewed,mandatory81BB retainsinfeasible00062;wholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P91 checkpoint - two-port serial sampling and debounce uses reconciled:4labels/30instructions/6RAM joined3boundedclauses;standardD0/D1hardwarefold/00publication/strobe/twoportdebounce reviewed;wholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P91 checkpoint - two-port serial sampling and debounce uses reconciled:4labels/30instructions/6RAM joined3boundedclauses;standardD0/D1hardwarefold/00publication/strobe/twoportdebounce reviewed;wholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:14labels/96instructions/41RAM joined7boundedclauses;life sign/checkpoint16bytes/descendingsevenbyteexchange/carry/LoadAreaPointerbeforeContinue resets reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 9326,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 1365,
+        "localInstructionReceiptSites": 9422,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 1269,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 3291,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 482,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 3332,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 441,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
         "directExternalQueueWriterPaths": 48,
         "pendingDirectRamOwners": {
-          "src/game/terminal_modes.c": 81,
+          "src/game/terminal_modes.c": 40,
           "src/game/player_control.c shared C90 player-control owner": 39,
           "src/game/area/block_metatile.c": 34,
           "src/game/scroll.c shared C90 scroll owner": 32,

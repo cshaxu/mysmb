@@ -8796,3 +8796,31 @@ S17 P91:4joypad labels/30instructions/6RAM joined3boundedclauses;262144actualroo
 Four65536actual8E5Crootfamilies total262144eachwidth/all30PC/2two-sidedbranchsites. OriginalCPU+controllerserialization unchanged,S9linkerwrap suppliessecondcontroller4017read/4016strobehardware;noROMpatch/callreplacement. Fourprofiles covereachportallbutton/maskbytes withcomplement/equal/independentpatterns,notexhaustivefourbytecartesian. Compareall2048RAMexceptactualphysicalCPUstackpushrange and24APU;4016controllerstrobes arehardwaredeviceevents,notnativeAPUcommands,andexplicitlyexcludedonlyfromAPUcommandlist. StandardNESD1zero capabilityboundsFamicomfold. Fourfreshfocusedtests eachwidthpass;retainS9persistent49-callinput/pauseprotocol withinitsacceptedfixturelimits. Fournegativeaccountingmutantsrejected;nativevoidCPU A/X/Y/CoutsideAPI,actualsubsequentNMIpause reloadsinputs. Source/P81productsunchanged,DOScompile/linkonly. Wholeproducer/inter-frame/material/pixels/routes/snapshotremainpending.
 
 Current src/game/frame_root.c normalizedSHA256:beed1afea957c4290247a6d3178b168337b8ac2b992274dee76535cc72611b2b.
+
+## S17 P92 admission - loss restart game over and player record transaction uses
+
+Existingterminalmode gap:96instructions/41RAM/14labels PlayerLoseLife,StillInGame,GetHalfway,MaskHPNyb,SetHalfway,GameOverMode,SetupGameOver,RunGameOver,TerminateGame,ContinueGame,GameIsOn,TransposePlayers,TransLoop,ExTrans. Original91CDloss and9218gameoveractualroots;sharedterminal_modes.c plusactualLoadAreaPointer/JumpEngine/screenchild dependencies. Three65536profiles legalworld0-7/area0/level0-3/currentplayer0-1/task0-2,rawlife/button/timer/checkpoint/playerrecordbytes. SourceDEC/BPL signedlife transition,nibble selection/liveScreenLeft,Transpose7bytes descending,carrycapability/loadarea beforeContinue resets required. AllRAMexceptactualphysicalstack/APU/orderedwrites compared;nativevoidCPUreturnexcluded,originalcaller ignoresA/flags exceptTransposecarry representednativeboolean. ProtectedROMreadonly/raw4096batch128MiB/120sec cleanupbelowbuild. Fresh0/max1992,source/productunchangedunlessconcretemismatch requiresrepair,wholeproducer/inter-frame/finalpackagespending.
+
+## S17 P92 checkpoint - loss restart game over and player records uses reconciled
+
+S17 P92:14terminal labels/96instructions/41RAM joined7boundedclauses;196608actualroots eachwidth0diff/all96PC/11branchpairs,4tests each. Scope1514/fresh0;9422/10691instruction receipts,3332/3773RAM receipts;1269instructions/441RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| L1 | PlayerLoseLife | INCDisableScreen byte thenclearSprite0flag,queueSilence80,DEClives followedBPL onresultbit7. Negative result setsTask0/Mode3 andearlyreturnswithoutcheckpoint/swap/LoadArea. Fullrawlife0-255compared,includingDEC80to7F signedboundary. |
+| L2 | StillInGame,GetHalfway,MaskHPNyb,SetHalfway | WorldASL byte selects16byteactualHalfway table;levelbit1 adds1,levelbit0 selectsnybble. Mask0F,CMPscreenLeft equalorless keepscheckpoint,elsezero. Store075B beforeactualTransposePlayers child thenContinueGame tail. Legalworld0-7/level0-3/area0controlleddomain andrawscreenLeft covered,table16bytesexactPRG. |
+| G1 | GameOverMode,SetupGameOver | LoadliveTask andactualJumpEngine921D scratchbeforeselectedleaf. Task0clearScreenTask/Sprite0flag,queue02,INCDisable/Task. Task1actualScreenRoutines withinScreenTask13 boundfixture,notclaimedallScreenRoutinespathcoverage. Task2RunGameOver. No newgraphcreditfromleaf fixture. |
+| G2 | RunGameOver,GameIsOn | AlwaysclearDisableScreen beforeStart10 gate. Startpresent terminatesregardlessScreenTimer;absentnonzerotimerreturnswithremainingRAMunchanged. ZeroTimer terminates. RawStart/button/timerbytes acrossprofiles andbothbranchoutcomes compared. |
+| G3 | TerminateGame | QueueSilence80 beforeTranspose;sourcecarryclear resumedplayer mapsnativebool1 andContinueGame;carryset mapsnativebool0 andwritesContinueWorldfromliveWorld thenTask/ScreenTimer/Mode0. ResidualASL0affectsunexposedCPUflags only. AllgameRAMincludingplayerrecords/scratchcompared. |
+| G4 | ContinueGame | ActualLoadAreaPointer seespost-transposeWorld/Area beforeSize1/INCfetchTimer/TimerControl0/Status0/GameSub0/Task0/Mode1. Originalorder retained;dependenciesactualfullPRG/currentarea_data.c. Legalworld0-7/area0 tested,the broaderboundaddresscontracts retainedS16. |
+| X1 | TransposePlayers,TransLoop,ExTrans | InitialSEC result retainedwhenNumberPlayers0 orOffscreenLivesbit7. OtherwiseCurrentPlayerXOR1 thenX6..0exchange075A+X/0761+X;eachsourcePHA/PLA preservesonscreenoldvalue acrossoffscreenload. Recordsadjacent/nonoverlapping,descendingorder andallsevenbyteoutput checked;finalCLC exposedonlyasnativeboolean. PhysicalCPUstackexcludedbyactualminimumSP,nogamepage1blanketexclusion. |
+
+Three65536actualloss/gameoverrootfamilies total196608eachwidth/all96PC/11two-sidedbranchsites. ActualunmodifiedROM/fullPRGLoadAreaPointer/screenchildren;legalworld0-7/area0/level0-3/player0-1/task0-2,ScreenTask13fixture;rawlife/button/timer/checkpoint/playerrecordbytes acrossdeclaredprofiles,notallcartesianinputs. Compareall2048RAMexceptobservedactualphysicalCPUstackpushrange,24APU/orderedwrites0diff. SourceTransposecarrycapability mapsnativeboolean,unexposedCPU A/X/Y/Cexcludedotherwise;actualparentbranches/useorder reviewed. Bound16Halfway tablebytesexactPRG. Fourfreshfocusedtests eachwidthpass;negativeaccountingmutantsrejected. Source/P81productsunchanged,DOScompile/linkonly;fullvictorywalk/messages/world-end remainingterminalowneruses outsidethisreceipt. Wholeproducer/inter-frame/material/pixels/routes/snapshotremainpending.
+
+Current src/game/terminal_modes.c normalizedSHA256:ad4c1b051f312b80b0fd345a4056e3a2c0e110eab5e86efdb4970c6e912934f2.
+
+Current src/game/area/area_data.c normalizedSHA256:9f4d6fbb22af69b28977276ff999484956c3db3e859ee15cc6e915356b4b6176.
+
+Current src/game/game.c normalizedSHA256:1f1663c3ab2e1351bef6a454d4860af6d0ea696543aa9cc320e29567285b87e9.
+
+Current src/game/area.c normalizedSHA256:7f9125e079ae875931894d72eafec68256280f33e559bd5257d43381c8a288cd.

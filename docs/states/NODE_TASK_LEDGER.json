@@ -767996,7 +767996,18 @@
         "ChkPauseTimer",
         "ClrPauseTimer",
         "SetPause",
-        "ExitPause"
+        "ExitPause",
+        "StillInGame",
+        "GetHalfway",
+        "MaskHPNyb",
+        "SetHalfway",
+        "GameOverMode",
+        "RunGameOver",
+        "ContinueGame",
+        "GameIsOn",
+        "TransposePlayers",
+        "TransLoop",
+        "ExTrans"
       ],
       "baseline": 1992,
       "incomingComplete": [
