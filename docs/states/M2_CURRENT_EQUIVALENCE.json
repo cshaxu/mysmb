@@ -157107,16 +157107,13 @@
       "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
     ],
     "activeReview": {
-      "taskId": "M2 T70 S16",
+      "taskId": "M2 T70 S17",
       "nodeLabels": [],
       "controlEdgeIds": [],
-      "status": "closed-bindings",
+      "status": "in-progress-material-use-completeness",
       "evidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S16 P1 checkpoint - table census and inactive-helper removal",
-        "docs/proposals/m2/t70-final-current-certification.md S16 P2 checkpoint - original binding locations and extended read uses",
-        "docs/proposals/m2/t70-final-current-certification.md S16 P3 checkpoint - dynamic header and stream address domains",
-        "docs/proposals/m2/t70-final-current-certification.md S16 P4 checkpoint - grouped helper and output-resource bindings",
-        "docs/proposals/m2/t70-final-current-certification.md S16 P5 closure - executable binding package"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P1 admission - complete material-use census and path reconciliation",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P1 checkpoint - byte-bound material-use inventory"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",

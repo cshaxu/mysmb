@@ -11,6 +11,16 @@ scoped evidence and track only named unresolved/invalidated clauses.
 Material625 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
+## M2 T70 S17 - active material-use completeness
+
+[P1 inventory](../proposals/m2/t70-final-current-certification.md#s17-p1-checkpoint---byte-bound-material-use-inventory).
+10691 byte-bound textual instructions,4171 explicit memory sites and9003
+consuming sites inventoried;counts overlap and are not edges. Ten encoded BIT
+overlap reads discharge as nonmaterial after source flag-lifetime proof and
+negative probe.625 retained paths remain partial,total unknown;producer/
+lifetime/overwrite/alias joins unresolved. Fresh node/control/material0,
+no product edit or refresh. S17 remains open;four named packages remain.
+
 ## M2 T70 S16 - closed executable data-binding package
 
 [P5 scoped closure](../proposals/m2/t70-final-current-certification.md#s16-p5-closure---executable-binding-package).

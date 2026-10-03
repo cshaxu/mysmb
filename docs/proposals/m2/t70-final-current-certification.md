@@ -2931,3 +2931,85 @@ p5-binding-domains.json and p5-binding-coverage.json under ignored S16 build.
 Protected resources/raw traces remain untracked;prior raw header traces were
 deleted. Unrelated owner work preserved,no push. T70 remains open;next work
 is the already named material package,no new whole-project audit round.
+
+## S17 P1 admission - complete material-use census and path reconciliation
+
+Receive the already named material package after S16 closure under ongoing
+owner M2 mandate. Empty original-node infrastructure scope,expected fresh0,
+baseline/max1992,no custody transfer. Current material625 is a partial path
+set;missing completeness evidence is the source consumed-value inventory and
+its producer/lifetime/overwrite/alias dispositions. No whole-project restart
+or new node/edge counter. Existing scoped proofs remain valid within limits.
+
+First enumerate every byte-bound original instruction and its explicit memory,
+indirect-pointer,index,register/flag and stack uses;retain hardware/ABI handling
+separately. Reconcile source consumed values to existing625 path receipts,
+then investigate only uncovered paths. Never create writer-reader cartesian
+edges or infer feasibility from shared storage. A added path needs exact
+producer/consumer/storage,path and overwrite/alias domain plus current C owner
+and original/native evidence. A concrete mismatch stays this S through a
+bounded exact-chain amendment,repair and repeated audit before continuation.
+
+Scope owns the completeness index and path joins,not another node semantics
+pass. Original owner ROM/bound ASM read-only local nonredistributable;all
+research/scripts/traces/logs below ignored build,128MiB/120seconds per process.
+Tracked evidence is neutral counts/IDs/addresses and conclusions only. No
+product edit until affected implementation chain is admitted;any edit refreshes
+three EXEs under standing owner authorization. Preserve unrelated work,no push.
+
+ROM track:byte-bound access inventory,feasible source paths and declared
+producer/lifetime/overwrite/alias clauses,retained proof applicability.
+Operational track:inventory accounting/negative probes,original/native focused
+routes only for uncovered clauses,ledger/registry/documentation gates. Builds
+and smoke checks do not establish feasible paths. Close only after every
+consumed-value use has an explained proven/reused/nonmaterial/ABI disposition,
+zero unresolved use,and a frozen justified feasible-material denominator.
+Otherwise keep S17 open and report the concrete remaining list.
+Historical1992/1992;local scoped nodes1992/1992,controls4275/4275(raw4342,
+infeasible67),material625 partial,total unknown. No admission credit.
+
+## S17 P1 checkpoint - byte-bound material-use inventory
+
+The use census is now explicit,not a complete material proof. Original ROM
+opcodes and lengths bind10691 textual instructions across1643 instruction
+owners;4171 have explicit memory operations(read2215,read/write236,write1720).
+Base categories are3773 RAM,250 ROM,87 hardware and61 indirect-pointer uses.
+These are instruction-site counts,not feasible edge totals:one site may have
+multiple producers/aliases,and one retained path may cover several sites.
+9003 instructions have a memory/register/stack input;the1688 others define
+values or transfer without those explicit inputs.7675 sites have register/
+flag/index inputs and1118 have implicit stack operations;categories overlap.
+Pointer-derived effective addresses and their two pointer-byte reads remain
+explicit obligations. Six listing diagnostics are the known segment/header/
+CHR/p02 directives,outside indexed PRG instructions;none hides an opcode diff.
+
+All ten encoded BIT overlap sites are inventoried outside textual mnemonics.
+Their byte-bound reads address pure RAM/mirrors or immutable PRG. BIT leaves
+A/C unchanged;N/Z are overwritten before any consumer on each source path;
+there is no V branch/PHP/PLP/BRK consumer in the program. Short paths follow
+actual absolute JSR/JMP destinations to the first flag overwrite rather than
+guessing from adjacent labels. The ten reads produce no consumed game value;
+interrupt save/restore remains declared hardware ABI. An injected flag use
+before overwrite is rejected. This discharges only these ten overlap uses;
+it neither adds material rows nor removes a feasible control relation.
+
+Inventory checks independently count stripped listing mnemonics,validate
+unique PCs/IDs,read/write/RMW/pointer accounting and receipt-ID references.
+Missing-row and duplicate-row negative probes are rejected. Nearest-label
+joins to existing625 receipts are lookup candidates only:3246 instruction
+sites have one,but this is not coverage. For example ScreenOff belongs to the
+NMI pointer receipt despite having no same-label receipt. No exact promotion
+may follow from a lexical join or old node status. Producer/lifetime/
+overwrite/alias coverage of the9003 consuming sites remains to reconcile;
+the complete feasible material denominator is still unknown.
+
+Reproduction uses material-use-census.py,check-material-census.py and
+encoded-overlap-lifetimes.py in ignored S17 build. This research is read-only;
+no product/test source changes,no new original/native replay and no EXE
+refresh. All three products equal committed P1 binding-package bytes.
+Accounting/registry/documentation gates validate this checkpoint only.
+Expected/actual fresh0/0;empty original-node scope,no custody transfer.
+Historical1992/1992;local accepted scoped nodes1992/1992 and feasible controls
+4275/4275(raw4342,infeasible67),material625 partial,total unknown. S17/T70/M2
+remain open;material,pixels,routes and snapshot are the four remaining keys.
+Do not interpret this inventory or retained local counts as certification.

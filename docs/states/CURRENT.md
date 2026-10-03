@@ -1,25 +1,25 @@
 # Project Status
 
-## M2 T70 S16 Packet
+## M2 T70 S17 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S16 P5 closed;T70 open,next named material package not yet admitted. |
-| Admission And Approval | Coordinator admits named bindings gap under ongoing owner M2 mandate;no global restart. |
-| Objective | Closed executable binding package:original origins/read addresses and declared pointer/index domains reconciled. |
-| Non-goals | No A-N semantic re-audit,node/control promotion,unrelated product edits or unrelated I/O work. |
-| Reference Baseline | Historical1992/1992;local scoped nodes1992/1992,controls4275/4275(raw4342,infeasible67);625 material partial,total unknown. |
-| Candidate Proposal | [S16 executable binding manifest](../proposals/m2/t70-final-current-certification.md#s16-p1-admission---executable-data-binding-manifest). |
-| Files And ABI Surface | Shared-game binding census plus removal of unused synthetic initial-terrain helper in area.c/area.h;active original owners unchanged. |
-| Applicable Rules | [Execution](../rules/EXECUTION.md),[Architecture](../rules/ARCHITECTURE.md),[Coding](../rules/CODING.md),[Documentation](../rules/DOCUMENT.md),[Source policy](../etc/operations/policy/source-policy.md);README Task Reading Set and current-equivalence proof program. |
-| Verification | P5 closure:93/93 indexed read/view and134/134 caller address clauses;70 non-index references classified across171 C/header sources;3 focused tests each pass;prior scoped proof limits retained. P4:53/93 direct and88/134 caller address clauses;37 helper calls and generated PRG/CHR/title/icon origins reconciled;6 focused tests each pass. P3:256 original LoadHeader roots each width,zero full-RAM/APU diff;34 area/enemy pointer domains and21 audio calls reconciled;19/93 direct address clauses,21/134 caller clauses established in declared domains. P2:177 table locations and266 candidate categories reconciled;17 omitted low bases bound;93 reads/134 calls listed with domains pending. P1:177 table declarations accounted;11 original split pointers agree;active text outside38 removed lines unchanged;5 tests each and3 builds/products pass. Numeric/consumer/dynamic bindings remain pending. |
-| Expected Markers | Infrastructure scope0,expected fresh0,max1992;named binding-use dispositions,not a new node counter. |
-| Asset Needs | Original ROM/ASM read-only local nonredistributable;ignored build128MiB/process120seconds,no raw export. |
-| Reporting Requirements | Exact resolved/unresolved binding uses and owners;total local node/control counts and partial material;no global equality claim. |
-| Stop Conditions | Any source mismatch stays S16;amend exact affected chain before further product repair. |
-| Exit Criteria | S16 binding manifest/dual-track gates satisfied within declared source domains;M2 four other named packages remain incomplete. |
-| Original Owner Request | Complete source-node/edge alignment with bounded traceable gaps;no repeated whole-project audit rounds. |
-| Similar-Issue Sweep | All executable address constants,PRG-offset declarations,direct/read-helper uses,dynamic pointer derivations and copied tables. |
+| Identifier Mode | Continuation:M2 T70 S17 P2 active;P1 inventory checkpoint,S16 closed,T70 open. |
+| Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
+| Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
+| Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
+| Reference Baseline | Historical1992/1992;local scoped1992/1992 nodes,4275/4275 controls(raw4342,infeasible67);material625 partial,total unknown. |
+| Candidate Proposal | [S17 material completeness](../proposals/m2/t70-final-current-certification.md#s17-p1-admission---complete-material-use-census-and-path-reconciliation). |
+| Files And ABI Surface | Original/shared-source research read-only;neutral use/path index and governance,evidence below ignored build. |
+| Applicable Rules | README Task Reading Set,[Execution](../rules/EXECUTION.md),[Architecture](../rules/ARCHITECTURE.md),[Coding](../rules/CODING.md),[Documentation](../rules/DOCUMENT.md),[Source policy](../etc/operations/policy/source-policy.md),current-equivalence proof program. |
+| Verification | P1:10691 textual instructions/4171 memory sites,10 encoded overlaps discharged;9003 consuming sites awaiting joins. Byte-bound access inventory and feasible path/alias/lifetime proof;retained scoped receipts,focused original/native routes for uncovered clauses;accounting gates. |
+| Expected Markers | Empty original-node scope,expected fresh0,max1992;no material denominator until complete feasible-use disposition. |
+| Asset Needs | Existing ROM/ASM owner-local read-only nonredistributable;ignored build128MiB/120seconds per process;raw cleanup by coordinator. |
+| Reporting Requirements | Exact resolved/pending uses and path IDs;retain total/local node/control counts and unknown material total. |
+| Stop Conditions | Source mismatch stays S17;admit exact affected chain before product edit,repair/re-audit before successor. |
+| Exit Criteria | Complete use inventory,zero unresolved producer/lifetime/overwrite/alias clauses,frozen justified denominator,dual tracks pass. |
+| Original Owner Request | Full node/edge alignment with fixed traceable gaps,last closing window,no further whole-project audit rounds. |
+| Similar-Issue Sweep | Explicit RAM/ROM/hardware accesses,indirect pointer/index aliases,register/flag/stack lifetimes and cross-frame handoffs. |
 
 ## Current Technical Baseline
 
@@ -33,4 +33,4 @@
 - S16 P1 removed an uncalled synthetic terrain helper with one mismatching table byte;active original owners unchanged.
 - S16 P2 reconciles177 table locations/266 candidate categories and17 low bases;93 direct reads/134 calls are an explicit pending-domain inventory,not new node/edge credit.
 - S16 closes93 indexed/134 caller address clauses and70 other resource references;no new graph credit. Products remain P1;DOS is compile/link evidence only.
-- T70 S16 closed;next named material package not yet admitted. [Full remaining/exit contract](../proposals/m2/t70-final-current-certification.md#owner-directed-bounded-final-audit-contract).
+- T70 S16 closed;S17 admitted for existing material completeness gap. [Full remaining/exit contract](../proposals/m2/t70-final-current-certification.md#owner-directed-bounded-final-audit-contract).
