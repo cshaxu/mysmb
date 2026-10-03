@@ -52102,10 +52102,12 @@
       "currentCounterpart": "mysmb_player_background_collision and mysmb_player_collision_base",
       "semanticEvidence": [
         "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required.",
-        "M2 T64 S11 static $DC64-$DC8C audit: current shared C preserves the three ordered entry exits, swimming/falling state selection before the high-Y guard, collision-bits reset, bottom-screen return, and BlockBufferAdderData index/byte binding (0, 7, 14)."
+        "M2 T64 S11 static $DC64-$DC8C audit: current shared C preserves the three ordered entry exits, swimming/falling state selection before the high-Y guard, collision-bits reset, bottom-screen return, and BlockBufferAdderData index/byte binding (0, 7, 14).",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S11 retained controlled original-ROM PlayerBGCollision root route: terrain-0 through terrain-7 replayed against freshly compiled current x86 and x64 snapshot runners with mapped RAM and recorded child-call comparison; 8/8 records match per width. Focused terrain and platform-purity CTests pass on both widths."
+        "M2 T64 S11 retained controlled original-ROM PlayerBGCollision root route: terrain-0 through terrain-7 replayed against freshly compiled current x86 and x64 snapshot runners with mapped RAM and recorded child-call comparison; 8/8 records match per width. Focused terrain and platform-purity CTests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Applies disable/routine guards, selects swimming/falling state, verifies on-screen Y, initializes collision bits and begins collision probes.",
       "currentSourcePaths": [
@@ -52121,10 +52123,12 @@
       "currentCounterpart": "mysmb_player_background_collision and mysmb_player_collision_base",
       "semanticEvidence": [
         "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required.",
-        "M2 T64 S11 static $DC64-$DC8C audit: current shared C preserves the three ordered entry exits, swimming/falling state selection before the high-Y guard, collision-bits reset, bottom-screen return, and BlockBufferAdderData index/byte binding (0, 7, 14)."
+        "M2 T64 S11 static $DC64-$DC8C audit: current shared C preserves the three ordered entry exits, swimming/falling state selection before the high-Y guard, collision-bits reset, bottom-screen return, and BlockBufferAdderData index/byte binding (0, 7, 14).",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S11 retained controlled original-ROM PlayerBGCollision root route: terrain-0 through terrain-7 replayed against freshly compiled current x86 and x64 snapshot runners with mapped RAM and recorded child-call comparison; 8/8 records match per width. Focused terrain and platform-purity CTests pass on both widths."
+        "M2 T64 S11 retained controlled original-ROM PlayerBGCollision root route: terrain-0 through terrain-7 replayed against freshly compiled current x86 and x64 snapshot runners with mapped RAM and recorded child-call comparison; 8/8 records match per width. Focused terrain and platform-purity CTests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Selects falling player state two.",
       "currentSourcePaths": [
@@ -52140,10 +52144,12 @@
       "currentCounterpart": "mysmb_player_background_collision and mysmb_player_collision_base",
       "semanticEvidence": [
         "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required.",
-        "M2 T64 S11 static $DC64-$DC8C audit: current shared C preserves the three ordered entry exits, swimming/falling state selection before the high-Y guard, collision-bits reset, bottom-screen return, and BlockBufferAdderData index/byte binding (0, 7, 14)."
+        "M2 T64 S11 static $DC64-$DC8C audit: current shared C preserves the three ordered entry exits, swimming/falling state selection before the high-Y guard, collision-bits reset, bottom-screen return, and BlockBufferAdderData index/byte binding (0, 7, 14).",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S11 retained controlled original-ROM PlayerBGCollision root route: terrain-0 through terrain-7 replayed against freshly compiled current x86 and x64 snapshot runners with mapped RAM and recorded child-call comparison; 8/8 records match per width. Focused terrain and platform-purity CTests pass on both widths."
+        "M2 T64 S11 retained controlled original-ROM PlayerBGCollision root route: terrain-0 through terrain-7 replayed against freshly compiled current x86 and x64 snapshot runners with mapped RAM and recorded child-call comparison; 8/8 records match per width. Focused terrain and platform-purity CTests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Writes selected swimming/falling state before screen guard.",
       "currentSourcePaths": [
@@ -52159,10 +52165,12 @@
       "currentCounterpart": "mysmb_player_background_collision and mysmb_player_collision_base",
       "semanticEvidence": [
         "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required.",
-        "M2 T64 S11 static $DC64-$DC8C audit: current shared C preserves the three ordered entry exits, swimming/falling state selection before the high-Y guard, collision-bits reset, bottom-screen return, and BlockBufferAdderData index/byte binding (0, 7, 14)."
+        "M2 T64 S11 static $DC64-$DC8C audit: current shared C preserves the three ordered entry exits, swimming/falling state selection before the high-Y guard, collision-bits reset, bottom-screen return, and BlockBufferAdderData index/byte binding (0, 7, 14).",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S11 retained controlled original-ROM PlayerBGCollision root route: terrain-0 through terrain-7 replayed against freshly compiled current x86 and x64 snapshot runners with mapped RAM and recorded child-call comparison; 8/8 records match per width. Focused terrain and platform-purity CTests pass on both widths."
+        "M2 T64 S11 retained controlled original-ROM PlayerBGCollision root route: terrain-0 through terrain-7 replayed against freshly compiled current x86 and x64 snapshot runners with mapped RAM and recorded child-call comparison; 8/8 records match per width. Focused terrain and platform-purity CTests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Requires Player_Y_HighPos one, initializes collision bits and gates low-screen collision work.",
       "currentSourcePaths": [
@@ -52178,10 +52186,12 @@
       "currentCounterpart": "mysmb_player_background_collision and mysmb_player_collision_base",
       "semanticEvidence": [
         "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required.",
-        "M2 T64 S11 static $DC64-$DC8C audit: current shared C preserves the three ordered entry exits, swimming/falling state selection before the high-Y guard, collision-bits reset, bottom-screen return, and BlockBufferAdderData index/byte binding (0, 7, 14)."
+        "M2 T64 S11 static $DC64-$DC8C audit: current shared C preserves the three ordered entry exits, swimming/falling state selection before the high-Y guard, collision-bits reset, bottom-screen return, and BlockBufferAdderData index/byte binding (0, 7, 14).",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S11 retained controlled original-ROM PlayerBGCollision root route: terrain-0 through terrain-7 replayed against freshly compiled current x86 and x64 snapshot runners with mapped RAM and recorded child-call comparison; 8/8 records match per width. Focused terrain and platform-purity CTests pass on both widths."
+        "M2 T64 S11 retained controlled original-ROM PlayerBGCollision root route: terrain-0 through terrain-7 replayed against freshly compiled current x86 and x64 snapshot runners with mapped RAM and recorded child-call comparison; 8/8 records match per width. Focused terrain and platform-purity CTests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns without background collision work.",
       "currentSourcePaths": [
@@ -52197,10 +52207,12 @@
       "currentCounterpart": "mysmb_player_background_collision and mysmb_player_collision_base",
       "semanticEvidence": [
         "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required.",
-        "M2 T64 S11 static $DC64-$DC8C audit: current shared C preserves the three ordered entry exits, swimming/falling state selection before the high-Y guard, collision-bits reset, bottom-screen return, and BlockBufferAdderData index/byte binding (0, 7, 14)."
+        "M2 T64 S11 static $DC64-$DC8C audit: current shared C preserves the three ordered entry exits, swimming/falling state selection before the high-Y guard, collision-bits reset, bottom-screen return, and BlockBufferAdderData index/byte binding (0, 7, 14).",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S11 retained controlled original-ROM PlayerBGCollision root route: terrain-0 through terrain-7 replayed against freshly compiled current x86 and x64 snapshot runners with mapped RAM and recorded child-call comparison; 8/8 records match per width. Focused terrain and platform-purity CTests pass on both widths."
+        "M2 T64 S11 retained controlled original-ROM PlayerBGCollision root route: terrain-0 through terrain-7 replayed against freshly compiled current x86 and x64 snapshot runners with mapped RAM and recorded child-call comparison; 8/8 records match per width. Focused terrain and platform-purity CTests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Selects block-buffer probe base from crouch, size and swimming state.",
       "currentSourcePaths": [
@@ -52216,10 +52228,12 @@
       "currentCounterpart": "mysmb_player_background_collision and mysmb_player_collision_base",
       "semanticEvidence": [
         "Td S9 K46 player background collision entry node/edge audit: SMB1 lines 11924-11971 compared with src/game/player/terrain.c collision root and base selector; controlled original-ROM/x86/x64 guard/state/head routes remain required.",
-        "M2 T64 S11 static $DC64-$DC8C audit: current shared C preserves the three ordered entry exits, swimming/falling state selection before the high-Y guard, collision-bits reset, bottom-screen return, and BlockBufferAdderData index/byte binding (0, 7, 14)."
+        "M2 T64 S11 static $DC64-$DC8C audit: current shared C preserves the three ordered entry exits, swimming/falling state selection before the high-Y guard, collision-bits reset, bottom-screen return, and BlockBufferAdderData index/byte binding (0, 7, 14).",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S11 retained controlled original-ROM PlayerBGCollision root route: terrain-0 through terrain-7 replayed against freshly compiled current x86 and x64 snapshot runners with mapped RAM and recorded child-call comparison; 8/8 records match per width. Focused terrain and platform-purity CTests pass on both widths."
+        "M2 T64 S11 retained controlled original-ROM PlayerBGCollision root route: terrain-0 through terrain-7 replayed against freshly compiled current x86 and x64 snapshot runners with mapped RAM and recorded child-call comparison; 8/8 records match per width. Focused terrain and platform-purity CTests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Reads and stores selected block-buffer adder before head probe.",
       "currentSourcePaths": [
@@ -52235,10 +52249,12 @@
       "currentCounterpart": "mysmb_player_background_collision head path",
       "semanticEvidence": [
         "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
-        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Gates head probe by size/crouch extent; handles coin, upward low-nibble, solid/climb and block-bounce paths before foot check.",
       "currentSourcePaths": [
@@ -52255,12 +52271,14 @@
       "semanticEvidence": [
         "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
         "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
         "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only. Actual queue-write PC observed in declared player/terrain/exit fixture partition;other callers and intervening overwrite lifetimes not inferred.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Suppresses bump sound for climbing tile; otherwise queues bump before vertical-speed nullification.",
       "currentSourcePaths": [
@@ -52276,10 +52294,12 @@
       "currentCounterpart": "mysmb_player_background_collision head path",
       "semanticEvidence": [
         "Td S9 K47 player head-probe node/edge audit: SMB1 lines 11971-12000 compared with src/game/player/terrain.c root/terrain children; controlled original-ROM/x86/x64 head, coin, solid/climb and bump routes remain required.",
-        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Writes upward-nullifying player Y speed one then joins foot check.",
       "currentSourcePaths": [
@@ -52295,10 +52315,12 @@
       "currentCounterpart": "mysmb_player_check_feet and child handlers",
       "semanticEvidence": [
         "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
-        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Queries left then right feet, preserves source scratch ordering and routes coins or nonempty feet tile into foot processing.",
       "currentSourcePaths": [
@@ -52314,10 +52336,12 @@
       "currentCounterpart": "mysmb_player_check_feet and child handlers",
       "semanticEvidence": [
         "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
-        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Tail-jumps coin handling after a head or foot coin hit.",
       "currentSourcePaths": [
@@ -52333,10 +52357,12 @@
       "currentCounterpart": "mysmb_player_check_feet and child handlers",
       "semanticEvidence": [
         "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
-        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Applies climb, upward, axe and invisible-tile gates before jumpspring/landing decision.",
       "currentSourcePaths": [
@@ -52352,10 +52378,12 @@
       "currentCounterpart": "mysmb_player_check_feet and child handlers",
       "semanticEvidence": [
         "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
-        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Processes invisible tile result, active jumpspring and low-nibble wall/landing threshold.",
       "currentSourcePaths": [
@@ -52371,10 +52399,12 @@
       "currentCounterpart": "mysmb_player_check_feet and child handlers",
       "semanticEvidence": [
         "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
-        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Handles land-jumpspring and pipe entry, aligns Y, clears vertical motion/stomp chain and enters normal state.",
       "currentSourcePaths": [
@@ -52391,10 +52421,12 @@
       "currentCounterpart": "mysmb_player_check_feet and child handlers",
       "semanticEvidence": [
         "Td S9 K48 player feet/landing node and edge audit: SMB1 lines 12000-12051 compared with src/game/player/terrain.c and terrain children; controlled original-ROM/x86/x64 feet/coin/axe/jumpspring/landing routes remain required.",
-        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Writes normal player state before side collision checks.",
       "currentSourcePaths": [
@@ -52410,10 +52442,12 @@
       "currentCounterpart": "mysmb_player_check_sides and mysmb_player_handle_side_metatile",
       "semanticEvidence": [
         "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
-        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Initializes side-probe adder and two-half counter after foot stage.",
       "currentSourcePaths": [
@@ -52429,10 +52463,12 @@
       "currentCounterpart": "mysmb_player_check_sides and mysmb_player_handle_side_metatile",
       "semanticEvidence": [
         "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
-        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Probes first half with top/bottom bounds and side-pipe exceptions, then routes climb or second half.",
       "currentSourcePaths": [
@@ -52448,10 +52484,12 @@
       "currentCounterpart": "mysmb_player_check_sides and mysmb_player_handle_side_metatile",
       "semanticEvidence": [
         "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
-        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Probes second half within its distinct vertical bounds and loops until both halves complete.",
       "currentSourcePaths": [
@@ -52467,10 +52505,12 @@
       "currentCounterpart": "mysmb_player_check_sides and mysmb_player_handle_side_metatile",
       "semanticEvidence": [
         "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
-        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns from side collision processing.",
       "currentSourcePaths": [
@@ -52486,10 +52526,12 @@
       "currentCounterpart": "mysmb_player_check_sides and mysmb_player_handle_side_metatile",
       "semanticEvidence": [
         "Td S9 K49 player side-probe first-half node/edge audit: SMB1 lines 12052-12094 compared with src/game/player/terrain.c side probe path; controlled original-ROM/x86/x64 side/climb/boundary routes remain required.",
-        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c."
+        "M2 T64 S12 static $DC93-$DD5D audit: head, feet and side caller guards, carry-equivalent child results, scratch-byte ordering, wrapped offsets and terminal exits match src/game/player/terrain.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair."
+        "M2 T64 S12 controlled terrain-0 through terrain-7 root and child route replay: freshly compiled current x86/x64 runners compare the full mapped RAM contract with zero differences after the RemoveCoin_Axe AreaType-control repair.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Gates invisible and climbable side tiles before common side metatile handling.",
       "currentSourcePaths": [
@@ -52505,10 +52547,12 @@
       "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
       "semanticEvidence": [
         "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
-        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Routes coin/jumpspring results into normal side tile logic.",
       "currentSourcePaths": [
@@ -52524,10 +52568,12 @@
       "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
       "semanticEvidence": [
         "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
-        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Requires normal state and right-facing direction before accepting bottom-side pipe tiles; otherwise impedes movement.",
       "currentSourcePaths": [
@@ -52544,12 +52590,14 @@
       "semanticEvidence": [
         "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
         "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
         "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only. Actual queue-write PC observed in declared player/terrain/exit fixture partition;other callers and intervening overwrite lifetimes not inferred.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Queues pipe sound only before priority bit is already set.",
       "currentSourcePaths": [
@@ -52566,10 +52614,12 @@
       "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
       "semanticEvidence": [
         "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
-        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Sets player background priority and chooses change-area timer source from X low nibble/page.",
       "currentSourcePaths": [
@@ -52585,10 +52635,12 @@
       "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
       "semanticEvidence": [
         "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
-        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Loads page-dependent area-change timer.",
       "currentSourcePaths": [
@@ -52604,10 +52656,12 @@
       "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
       "semanticEvidence": [
         "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
-        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Changes to sideways-pipe entry only from permitted engine routines.",
       "currentSourcePaths": [
@@ -52623,10 +52677,12 @@
       "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
       "semanticEvidence": [
         "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
-        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Invokes horizontal impedance using current collision side.",
       "currentSourcePaths": [
@@ -52642,10 +52698,12 @@
       "currentCounterpart": "mysmb_player_handle_side_metatile and timer table binding",
       "semanticEvidence": [
         "Td S9 K50 player side pipe/impede node, edge and timer-table audit: SMB1 lines 12094-12147 compared with src/game/player/terrain.c side metatile path; controlled original-ROM/x86/x64 pipe and wall routes remain required.",
-        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c."
+        "M2 T64 S13 static $DD5E-$DDC1 audit and current original-ROM routes: side invisible, coin, jumpspring, wall, both pipe tiles, first-only sound, X low-nibble/page timer selection, engine 7/8 gate and facing/state stop routes match src/game/player/terrain.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths."
+        "M2 T64 S13: 11 fresh controlled original-ROM PlayerBGCollision routes (4 side-path and 7 pipe-path) replayed through freshly compiled x86/x64 caller runners; 22 full mapped-RAM and child-call comparisons had zero differences. Focused terrain, collision, pipe-entry and platform-purity CTests pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns from side metatile processing.",
       "currentSourcePaths": [
@@ -52679,10 +52737,12 @@
       "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
       "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
       "semanticEvidence": [
-        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Erases coin metatile, increments one-up tally and gives one coin.",
       "currentSourcePaths": [
@@ -52698,11 +52758,13 @@
       "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
         "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Sets victory operating modes and speed before common axe erase.",
       "currentSourcePaths": [
@@ -52719,12 +52781,14 @@
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
         "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:4096 actual roots each width,2032RAM/24APU/ordered hardware writes0diff,minSP>=EF,all38PC/5branchpairs observed;actual81E2 X0-14 and81FC/8202/8208 X2/5/8 observed;8focused tests each pass;4 invalid-domain witnesses/accounting mutations accepted as negative checks."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:4096 actual roots each width,2032RAM/24APU/ordered hardware writes0diff,minSP>=EF,all38PC/5branchpairs observed;actual81E2 X0-14 and81FC/8202/8208 X2/5/8 observed;8focused tests each pass;4 invalid-domain witnesses/accounting mutations accepted as negative checks.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Erases metatile at caller-provided block-buffer address then updates screen.",
       "currentSourcePaths": [
@@ -52793,10 +52857,12 @@
       "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
       "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
       "semanticEvidence": [
-        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Requires narrow collision nibble, dispatches flagpole/vine behavior and positions player on climbable object.",
       "currentSourcePaths": [
@@ -52811,10 +52877,12 @@
       "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
       "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
       "semanticEvidence": [
-        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns for out-of-band collision nibble.",
       "currentSourcePaths": [
@@ -52829,10 +52897,12 @@
       "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
       "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
       "semanticEvidence": [
-        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Distinguishes flag ball/shaft from vine metatile.",
       "currentSourcePaths": [
@@ -52848,12 +52918,14 @@
       "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
       "semanticEvidence": [
         "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
         "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only. Actual queue-write PC observed in declared player/terrain/exit fixture partition;other callers and intervening overwrite lifetimes not inferred.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Locks scroll, silences/kills enemies, starts flag music and finds score-height index before slide routine.",
       "currentSourcePaths": [
@@ -52868,10 +52940,12 @@
       "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
       "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
       "semanticEvidence": [
-        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Walks score thresholds downward until player Y qualifies.",
       "currentSourcePaths": [
@@ -52886,10 +52960,12 @@
       "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
       "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
       "semanticEvidence": [
-        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Stores selected flagpole score index.",
       "currentSourcePaths": [
@@ -52905,10 +52981,12 @@
       "currentCounterpart": "mysmb_player_handle_climbing and metatile predicates/land handler",
       "semanticEvidence": [
         "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass."
+        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass."
+        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Sets flagpole-slide routine and tail-transfers to common vine positioning.",
       "currentSourcePaths": [
@@ -52924,10 +53002,12 @@
       "currentCounterpart": "mysmb_player_handle_climbing and metatile predicates/land handler",
       "semanticEvidence": [
         "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass."
+        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass."
+        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Starts autoclimb only for vine metatile above status bar, then joins common positioning.",
       "currentSourcePaths": [
@@ -52943,10 +53023,12 @@
       "currentCounterpart": "mysmb_player_handle_climbing and metatile predicates/land handler",
       "semanticEvidence": [
         "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass."
+        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass."
+        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Sets climbing state, stops horizontal motion and aligns facing/X/page from collision block address.",
       "currentSourcePaths": [
@@ -52962,10 +53044,12 @@
       "currentCounterpart": "mysmb_player_handle_climbing and metatile predicates/land handler",
       "semanticEvidence": [
         "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass."
+        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass."
+        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Computes aligned player X from block address nibble and facing table.",
       "currentSourcePaths": [
@@ -52981,10 +53065,12 @@
       "currentCounterpart": "mysmb_player_handle_climbing and metatile predicates/land handler",
       "semanticEvidence": [
         "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass."
+        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass."
+        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns from climbing positioning.",
       "currentSourcePaths": [
@@ -53000,10 +53086,12 @@
       "currentCounterpart": "mysmb_player_handle_climbing and metatile predicates/land handler",
       "semanticEvidence": [
         "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass."
+        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass."
+        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns zero flag for hidden coin/1-up metatiles only.",
       "currentSourcePaths": [
@@ -53019,10 +53107,12 @@
       "currentCounterpart": "mysmb_player_handle_climbing and metatile predicates/land handler",
       "semanticEvidence": [
         "Td S9 K52 climbing/vine/invisible/jumpspring node and edge audit: SMB1 lines 12218-12286 compared with src/game/player/climbing.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass."
+        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass."
+        "M2 T64 S15: static SMB1 $DE5D-$DEA6 audit plus controlled original-ROM climbing routes and 177 retained source-reachable predicate records, replayed by freshly compiled current x86/x64 shared-C checkers with zero differences. Focused climbing, hidden-spring and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns invisible-metatile predicate result.",
       "currentSourcePaths": [
@@ -53145,12 +53235,14 @@
       "semanticEvidence": [
         "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
         "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only. Actual queue-write PC observed in declared player/terrain/exit fixture partition;other callers and intervening overwrite lifetimes not inferred.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Requires Down and exact two-foot pipe tiles; starts vertical entry and optionally executes warp-zone world/area selection/reset.",
       "currentSourcePaths": [
@@ -53167,12 +53259,14 @@
       "semanticEvidence": [
         "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
         "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only. Actual queue-write PC observed in declared player/terrain/exit fixture partition;other callers and intervening overwrite lifetimes not inferred.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Selects warp pipe world by zone and player X region, then maps it to area offset and resets entry state.",
       "currentSourcePaths": [
@@ -53188,10 +53282,12 @@
       "currentCounterpart": "mysmb_player_handle_vertical_pipe and mysmb_player_impede_move",
       "semanticEvidence": [
         "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns from pipe entry handling.",
       "currentSourcePaths": [
@@ -53207,10 +53303,12 @@
       "currentCounterpart": "mysmb_player_handle_vertical_pipe and mysmb_player_impede_move",
       "semanticEvidence": [
         "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Stops motion only when movement points into collision side, adjusts X/page and clears matching collision bit.",
       "currentSourcePaths": [
@@ -53226,10 +53324,12 @@
       "currentCounterpart": "mysmb_player_handle_vertical_pipe and mysmb_player_impede_move",
       "semanticEvidence": [
         "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Handles right-side collision direction test and adjustment choice.",
       "currentSourcePaths": [
@@ -53245,10 +53345,12 @@
       "currentCounterpart": "mysmb_player_handle_vertical_pipe and mysmb_player_impede_move",
       "semanticEvidence": [
         "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Sets side timer, clears horizontal speed and applies signed X/page displacement.",
       "currentSourcePaths": [
@@ -53264,10 +53366,12 @@
       "currentCounterpart": "mysmb_player_handle_vertical_pipe and mysmb_player_impede_move",
       "semanticEvidence": [
         "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Stores page carry adjustment and applies position update.",
       "currentSourcePaths": [
@@ -53283,10 +53387,12 @@
       "currentCounterpart": "mysmb_player_handle_vertical_pipe and mysmb_player_impede_move",
       "semanticEvidence": [
         "Td S9 K53 vertical-pipe and movement-impedance node/edge audit: SMB1 lines 12295-12372 compared with src/game/player/pipe_entry.c and terrain children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail."
+        "M2 T64 S17 static $DEE8-$DF8A audit: HandlePipeEntry preserves Down/right/left guards, transition stores, raw warp-table indexing, X $60/$a0 selection and reset order; ImpedePlayerMove preserves side-one and non-one signed-speed gates, correction carry/page update and collision-mask tail.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths."
+        "M2 T64 S17 controlled original-ROM route replay: 512 direct pipe-entry and 1,024 direct movement-impedance source-reachable routes compared against freshly compiled current x86 and x64 owners across all mapped 2KB RAM bytes with zero differences; focused pipe-entry, impede and platform-purity checks pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Clears appropriate collision bit and returns.",
       "currentSourcePaths": [
@@ -53321,10 +53427,12 @@
       "currentCounterpart": "mysmb_world_is_solid/is_climbable, mysmb_player_coin_metatile and attribute helper",
       "semanticEvidence": [
         "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required.",
-        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match."
+        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths."
+        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns CMP carry for tile against its group solid threshold.",
       "currentSourcePaths": [
@@ -53360,10 +53468,12 @@
       "currentCounterpart": "mysmb_world_is_solid/is_climbable, mysmb_player_coin_metatile and attribute helper",
       "semanticEvidence": [
         "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required.",
-        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match."
+        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths."
+        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns CMP carry for tile against its group climb threshold.",
       "currentSourcePaths": [
@@ -53379,10 +53489,12 @@
       "currentCounterpart": "mysmb_world_is_solid/is_climbable, mysmb_player_coin_metatile and attribute helper",
       "semanticEvidence": [
         "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required.",
-        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match."
+        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths."
+        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Recognizes regular/underwater coins and returns carry clear otherwise.",
       "currentSourcePaths": [
@@ -53399,12 +53511,14 @@
       "semanticEvidence": [
         "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required.",
         "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
         "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only. Actual queue-write PC observed in declared player/terrain/exit fixture partition;other callers and intervening overwrite lifetimes not inferred.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Queues coin-grab sound and returns match carry.",
       "currentSourcePaths": [
@@ -53420,10 +53534,12 @@
       "currentCounterpart": "mysmb_world_is_solid/is_climbable, mysmb_player_coin_metatile and attribute helper",
       "semanticEvidence": [
         "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required.",
-        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match."
+        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths."
+        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Derives group index from top two metatile bits while retaining original tile.",
       "currentSourcePaths": [
@@ -53439,10 +53555,12 @@
       "currentCounterpart": "mysmb_world_is_solid/is_climbable, mysmb_player_coin_metatile and attribute helper",
       "semanticEvidence": [
         "Td S9 K54 metatile predicate node/edge/table audit: SMB1 lines 12380-12415 compared with src/game/world/metatiles.c; controlled original-ROM/x86/x64 predicate routes remain required.",
-        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match."
+        "M2 T64 S18 static $DF8B-$DFB8 audit: both four-byte threshold tables bind by original high-bit group; shared attribute extraction preserves metatile value and group; solid/climb comparisons preserve carry; coin C2/C3 order, sound queue write and terminal returns match.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "operationalEvidence": [
-        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths."
+        "M2 T64 S18 controlled original-ROM metatile audit: 1,034 source-reachable parent routes yielded 5,050 classifier calls (DF8F 257, DF9A 1,407, DFA1 1,722, DFB0 1,664); freshly compiled current x86 and x64 owners compared every call register contract and mapped RAM with zero differences. Complete-domain classification and platform-purity checks pass on both widths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:745472actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all382PC/81branchpairs,predicatecarry/Z/attributeX compared,8focusedtests eachpass;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns metatile attribute result.",
       "currentSourcePaths": [
@@ -169054,16 +169172,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P75 checkpoint - enemy pair and platform contact uses reconciled:28labels/234instructions/82RAM joined11boundedclauses;stackbox/live01/08,moving-shell/score/dedup/turnaround,paired platform/small-box/top/side carry. Producer/inter-frame pending,no newnode/control credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P76 checkpoint - platform positioning and geometry uses reconciled:14labels/86instructions/35RAM joined7boundedclauses;rawcounter/BIT overlap,highY borrow,verticalcarry/boxY-mask capability seams,geometry scratch/unsignedwrap. Producer/inter-frame pending,no newnode/control credit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P76 checkpoint - platform positioning and geometry uses reconciled:14labels/86instructions/35RAM joined7boundedclauses;rawcounter/BIT overlap,highY borrow,verticalcarry/boxY-mask capability seams,geometry scratch/unsignedwrap. Producer/inter-frame pending,no newnode/control credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P77 checkpoint - player terrain and contact uses reconciled:59labels/382instructions/116RAM joined17boundedclauses;root/head/feet/side,lastquery/tails,coin/axe,climb/flagpole/pipe/impede/classification. Producer/inter-frame pending,no newnode/control credit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 6699,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 3992,
+        "localInstructionReceiptSites": 7081,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 3610,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 2417,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 1356,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 2533,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 1240,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -169084,14 +169203,11 @@
           "src/game/world/bounding_box.c": 33,
           "src/game/scroll.c shared C90 scroll owner": 32,
           "src/game/enemy/hammer_bro.c": 30,
-          "src/game/player/terrain.c and terrain children": 30,
-          "src/game/player/pipe_entry.c and terrain children": 30,
           "src/game/player.c": 28,
           "src/game/player_movement.c shared C90 movement owner": 26,
           "src/game/oam/vine_gfx.c": 26,
           "src/game/game.c": 25,
           "src/game/status.c": 25,
-          "src/game/player/terrain.c": 25,
           "src/game/oam/power_up_gfx.c": 25,
           "src/game/player_end_level.c shared C90 end-level owner": 24,
           "src/game/oam/flagpole_gfx.c": 24,
@@ -169101,8 +169217,6 @@
           "src/game/player_transition.c shared C90 transition owner": 17,
           "src/game/oam/hammer_gfx.c": 17,
           "src/game/area.c": 15,
-          "src/game/player/terrain_metatiles.c and climbing.c": 15,
-          "src/game/player/climbing.c and terrain_metatiles.c": 15,
           "src/game/enemy_bounds.c": 15,
           "src/game/world/block_buffer.c": 15,
           "src/game/oam/fireworks_gfx.c": 15,
@@ -169129,7 +169243,6 @@
           "src/game/oam/sprite_stacker.c": 2,
           "src/game/oam/sprite_dump.c and src/game/oam/block_offscreen.c": 2,
           "src/game/frame_root.c and src/game/title_modes.c": 1,
-          "src/game/world/metatiles.c": 1,
           "src/game/objects.c:mysmb_objects_kill_enemy_above_block": 1,
           "src/game/oam/normal_enemy_gfx.c and src/game/oam/sprite_row.c": 1,
           "src/game/oam/sprite_row.c and src/game/oam/sprite_draw.c": 1
