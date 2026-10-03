@@ -8735,3 +8735,27 @@ CurrentS10mechanism8704controlledmenu roots plus1120persistentdemo calls,9824eac
 Current src/game/title_modes.c normalizedSHA256:c6ddc65709f17bed3f3397e8fbbb064031d33b047e61ff750bf36cfecd2de914.
 
 Current src/game/area/area_data.c normalizedSHA256:9f4d6fbb22af69b28977276ff999484956c3db3e859ee15cc6e915356b4b6176.
+
+## S17 P89 admission - status digits buffer arithmetic and top score uses
+
+Existingstatus gap:94instructions/25directRAM sites/17labels: PrintStatusBarNumbers,OutputNumbers,SetupNums,DigitPLoop,ExitOutputN,DigitsMathRoutine,AddModLoop,StoreNewD,EraseDMods,EraseMLoop,BorrowOne,CarryOne,UpdateTopScore,TopScoreCheck,GetScoreDiff,CopyScore,NoTopSc. Canonicalstatus.c plusframe_root.c UpdateTopScore wrapper. Original8F06/8F5F/8F97actualroots withrawselectors/bufferbytes/digits/modifiers/borrowvalues;digitoffsets5/11/17/23/29/35onlytoavoidunprovenout-of-RAM aliasdomain. Scratch00/02/03,absoluteindexedVRAMvsbyteX,modifier0133..0139,postMario-liveLuigitopscore andSBCFF+borrow carryrequired. AllnonstackRAM/APU/writes compared;voidCPU A/flags excludedunexposedAPI,callerconsumersreviewed. Mandatory8F8CLDA09/BNE retainsinfeasible00372. Fresh0/max1992,local1991/1992nodes4261/4262controls retained. ProtectedROMreadonly,raw4096batch128MiB/120sec cleanupbelowignored build;sourcechanges require3EXEs,elseP81productsunchanged,wholeproducer/inter-frame/finalpackages pending.
+
+## S17 P89 checkpoint - status digits arithmetic and top score uses reconciled
+
+S17 P89:17status labels/94instructions/25RAM joined7boundedclauses;196608actualroots eachwidth0diff/all94PC/11branchpairs plusmandatory8F8C,4tests each. Scope1499/fresh0;9265/10691instruction receipts,3274/3773RAM receipts;1426instructions/499RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| N1 | PrintStatusBarNumbers,OutputNumbers | Publishinput00beforefirstlowselectorchild;reloadlive00LSR4thenlastOutputNumbers. ChildCLC/ADC1byteANDF/CMP6 invalidselector>=6returnsnoRAMwrites. Activeindex0uses22nametablehighelse20;source12data/6offsetbytes boundexact. Nativeboolsuccessconstant isdeliverycapability,CPU A/CnotclaimedunusedcallerABI. |
+| N2 | SetupNums | CaptureBuffer0300X;writehigh/low/lengthatabsolute0301+X/0302+X/0303+X,then03length/02unchangedX. SelectedDigitOffset-Length becomesY. OriginalASLselector/table addressing andheaderstoreorderretained,nobytewrapofabsoluteheaderbase. |
+| N3 | DigitPLoop,ExitOutputN | Live03lengthdecrements eachloop;read07D7+byteY,write0304+byteX thenINX/INYwrap. Terminator0304+finalbyteX,then3byteINXstored0300. Absolute+3remainoutsidebyteX whenXFF,notclampedbuffer/windowHUD. All256buffer/selectorpairs compareallRAM. |
+| A1 | DigitsMathRoutine,AddModLoop,StoreNewD | Mode0skipsarithmeticbutalwaysclearmodifiers. Mode!=0 X5..0 eachLDAmodifier/CLC/ADCdigitbyte,negativebit80BorrowOneelse>=10CarryOneelseunchanged. Store07D7+YthenDEY/DEX;carryresetperdigitADC,notBCDhostnumber conversion. ValidY5/11/17/23/29/35addressesstayRAM;activefixture11/23/35,inactive5/17/29,otheractiveaddressparameters coveredbysamealias-free loopformula/staticbound notwholeproducerclaim. |
+| A2 | BorrowOne,CarryOne | Borrow DECprecedingmodifier0133+X/LDA9 thenmandatoryBNE8F8C;retaininfeasible00372. Carry SEC/SBC10 byte/INCprecedingmodifier. Index0stillwrites0133 beforeclearroutine;do notskipcarry/borrowatfirstdigit orcollapsemodifiersintolocalarray. |
+| A3 | EraseDMods,EraseMLoop | LDA0/LDX6 then0133+Xdescending6..0 clears7bytesincluding0133,regardlessmode. Adjacent013Auntouched;allgamepage1comparedexceptactualCPUstackpushrange near01FF. |
+| T1 | UpdateTopScore,TopScoreCheck,GetScoreDiff,CopyScore,NoTopSc | FirstMariostartX5JSR child thenLuigiXBfallthrough,LDY5/SEC once. SixSBCs propagatecarrylowesttohighest whileDEX/DEYpreservecarry. FF+borrow remains16bit100 forcomparison,notbyte0. Ifnoborrowcopyascending0..5;LuigireadslivepostMarioupdatedtopscore. OriginalA/X/Y/Cnotexposednativevoid,actualparentnextloadsreviewed. |
+
+Three65536originalrootfamilies total196608eachwidth. Unmodifiedactualstatus/arith/topscorechildren,allnonstackRAM/24APU/orderedwrites0diff. All94PC/11two-sidedbranchsites plusmandatory8F8C LDA09/Z0 proofretainsinfeasible00372. Allselector/bufferbytes andrawdigit/modifier/borrowprofiles;activearithoffsets11/23/35/inactive5/17/29,alias-free loopaddressformula independentlyreviewedforlegalrange. Modifier0133..0139 includedincomparedRAM;physicalstackonlyobservedper-rootminimumSP excluded. NativevoidCPU A/flags/X/Y andconstantbooldeliverysuccess differfrommachineABI butareunconsumedbyactualsourcecallers. Fourfocusedtests eachwidthpass,fournegativeaccountingmutants rejected;18immutabletablebytes exactbound. No product/sourcechange;P81threeproducts hashesunchanged,DOScompile/linkonly. Wholeproducer/inter-frame/material/pixels/routes/snapshot remainpending.
+
+Current src/game/status.c normalizedSHA256:afc46297e447ad911458c1e234497fff708a73a51c9f8d47e499103d956e95ef.
+
+Current src/game/frame_root.c normalizedSHA256:beed1afea957c4290247a6d3178b168337b8ac2b992274dee76535cc72611b2b.

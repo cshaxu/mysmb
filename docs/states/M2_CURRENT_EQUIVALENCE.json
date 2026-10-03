@@ -27692,11 +27692,13 @@
       "semanticEvidence": [
         "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: STA00 then actual OutputNumbers child low selector; reload00/LSR4 then same output body high selector, preserving scratch and command order.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all94PC/11branchpairs plusmandatory8F8C,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "STA00 then actual OutputNumbers child low selector; reload00/LSR4 then same output body high selector, preserving scratch and command order.",
       "currentSourcePaths": [
@@ -27712,10 +27714,12 @@
       "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
         "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: CLC/ADC1/AND0F/CMP6; selector>=6 returns, otherwise double selector and load X300; original header base+X/+1/+2 without premature X increment/wrap."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: CLC/ADC1/AND0F/CMP6; selector>=6 returns, otherwise double selector and load X300; original header base+X/+1/+2 without premature X increment/wrap.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all94PC/11branchpairs plusmandatory8F8C,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "CLC/ADC1/AND0F/CMP6; selector>=6 returns, otherwise double selector and load X300; original header base+X/+1/+2 without premature X increment/wrap.",
       "currentSourcePaths": [
@@ -27731,10 +27735,12 @@
       "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
         "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Header high22 only selector0,otherwise20; original low/length and03 then02 stores; offset-minus-length yields original digit Y."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Header high22 only selector0,otherwise20; original low/length and03 then02 stores; offset-minus-length yields original digit Y.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all94PC/11branchpairs plusmandatory8F8C,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Header high22 only selector0,otherwise20; original low/length and03 then02 stores; offset-minus-length yields original digit Y.",
       "currentSourcePaths": [
@@ -27750,10 +27756,12 @@
       "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
         "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Read DisplayDigits+Y;store VRAM_Buffer1+3+X before byte INX/INY and DEC03;BNE loop. Absolute +3 stays outside wrapped X."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Read DisplayDigits+Y;store VRAM_Buffer1+3+X before byte INX/INY and DEC03;BNE loop. Absolute +3 stays outside wrapped X.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all94PC/11branchpairs plusmandatory8F8C,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Read DisplayDigits+Y;store VRAM_Buffer1+3+X before byte INX/INY and DEC03;BNE loop. Absolute +3 stays outside wrapped X.",
       "currentSourcePaths": [
@@ -27769,10 +27777,12 @@
       "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
         "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Invalid selector returns without output;valid output stores zero at base+3+X then byte X+3 into300. C success1 is facade, no CPU A ABI."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Invalid selector returns without output;valid output stores zero at base+3+X then byte X+3 into300. C success1 is facade, no CPU A ABI.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all94PC/11branchpairs plusmandatory8F8C,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Invalid selector returns without output;valid output stores zero at base+3+X then byte X+3 into300. C success1 is facade, no CPU A ABI.",
       "currentSourcePaths": [
@@ -27789,11 +27799,13 @@
       "semanticEvidence": [
         "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Mode0 locks arithmetic and goes erase;other modes start X5 and caller Y, each ADC begins CLC, wrapped8-bit result determines BMI/CMP10.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all94PC/11branchpairs plusmandatory8F8C,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Mode0 locks arithmetic and goes erase;other modes start X5 and caller Y, each ADC begins CLC, wrapped8-bit result determines BMI/CMP10.",
       "currentSourcePaths": [
@@ -27809,10 +27821,12 @@
       "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
         "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Load modifier+X, add actual digit+Y with byte result; negative borrow before >=10 carry; process six positions from least significant to most."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Load modifier+X, add actual digit+Y with byte result; negative borrow before >=10 carry; process six positions from least significant to most.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all94PC/11branchpairs plusmandatory8F8C,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Load modifier+X, add actual digit+Y with byte result; negative borrow before >=10 carry; process six positions from least significant to most.",
       "currentSourcePaths": [
@@ -27828,10 +27842,12 @@
       "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
         "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Store source value then decrement digit Y/index X;continue while original X nonnegative,then erase modifiers."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Store source value then decrement digit Y/index X;continue while original X nonnegative,then erase modifiers.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all94PC/11branchpairs plusmandatory8F8C,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Store source value then decrement digit Y/index X;continue while original X nonnegative,then erase modifiers.",
       "currentSourcePaths": [
@@ -27847,10 +27863,12 @@
       "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
         "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Zero fill starts original X6;includes DigitModifier-1 through+5,not adjacent013A."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Zero fill starts original X6;includes DigitModifier-1 through+5,not adjacent013A.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all94PC/11branchpairs plusmandatory8F8C,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Zero fill starts original X6;includes DigitModifier-1 through+5,not adjacent013A.",
       "currentSourcePaths": [
@@ -27866,10 +27884,12 @@
       "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
         "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Store zero from0139 down0133 in original descending order;byte loop terminates after index0."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Store zero from0139 down0133 in original descending order;byte loop terminates after index0.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all94PC/11branchpairs plusmandatory8F8C,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Store zero from0139 down0133 in original descending order;byte loop terminates after index0.",
       "currentSourcePaths": [
@@ -27885,10 +27905,12 @@
       "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
         "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: DEC preceding modifier byte,load9;BNE StoreNewD always taken because load9 fixes Z0."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: DEC preceding modifier byte,load9;BNE StoreNewD always taken because load9 fixes Z0.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all94PC/11branchpairs plusmandatory8F8C,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "DEC preceding modifier byte,load9;BNE StoreNewD always taken because load9 fixes Z0.",
       "currentSourcePaths": [
@@ -27904,10 +27926,12 @@
       "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
         "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: SEC/SBC10 from original byte result;INC preceding modifier and jump StoreNewD."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: SEC/SBC10 from original byte result;INC preceding modifier and jump StoreNewD.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all94PC/11branchpairs plusmandatory8F8C,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "SEC/SBC10 from original byte result;INC preceding modifier and jump StoreNewD.",
       "currentSourcePaths": [
@@ -27924,11 +27948,13 @@
       "semanticEvidence": [
         "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Frame root forwards shared status owner;actual C TopScoreCheck child checks Mario first then Luigi with offsets0/6 as original X5/11.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all94PC/11branchpairs plusmandatory8F8C,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Frame root forwards shared status owner;actual C TopScoreCheck child checks Mario first then Luigi with offsets0/6 as original X5/11.",
       "currentSourcePaths": [
@@ -27944,10 +27970,12 @@
       "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
         "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Independent SEC/no borrow and six least-significant-first source comparisons for each player;actual shared C child, not flattened duplicate bodies."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Independent SEC/no borrow and six least-significant-first source comparisons for each player;actual shared C child, not flattened duplicate bodies.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all94PC/11branchpairs plusmandatory8F8C,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Independent SEC/no borrow and six least-significant-first source comparisons for each player;actual shared C child, not flattened duplicate bodies.",
       "currentSourcePaths": [
@@ -27963,10 +27991,12 @@
       "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
         "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Original SBC carry uses full top digit+borrow,including FF+1=100;no premature byte truncation. Final borrow selects no-copy/copy."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Original SBC carry uses full top digit+borrow,including FF+1=100;no premature byte truncation. Final borrow selects no-copy/copy.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all94PC/11branchpairs plusmandatory8F8C,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Original SBC carry uses full top digit+borrow,including FF+1=100;no premature byte truncation. Final borrow selects no-copy/copy.",
       "currentSourcePaths": [
@@ -27982,10 +28012,12 @@
       "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
         "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: On final no-borrow,copy six player bytes to top score in ascending order;second player compares against updated first-player top."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: On final no-borrow,copy six player bytes to top score in ascending order;second player compares against updated first-player top.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all94PC/11branchpairs plusmandatory8F8C,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "On final no-borrow,copy six player bytes to top score in ascending order;second player compares against updated first-player top.",
       "currentSourcePaths": [
@@ -28001,10 +28033,12 @@
       "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
         "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Borrow path returns without copy;equal/higher copy path returns after six bytes. CPU transient registers excluded from declared C ABI."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Borrow path returns without copy;equal/higher copy path returns after six bytes. CPU transient registers excluded from declared C ABI.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all94PC/11branchpairs plusmandatory8F8C,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Borrow path returns without copy;equal/higher copy path returns after six bytes. CPU transient registers excluded from declared C ABI.",
       "currentSourcePaths": [
@@ -73193,7 +73227,8 @@
       "currentCounterpart": "src/game/status.c original status/arithmetic/top-score child and loop predicates",
       "semanticEvidence": [
         "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 manual source/operand/flag and actual shared C call/branch audit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original transition observations=0;196608 original/current roots x86/x64 equal;zero observation only accepted with independent LDA09 opcode proof."
@@ -169808,16 +169843,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P85 checkpoint - relative position and offscreen producer uses reconciled:30labels/155instructions/35RAM joined10boundedclauses;offset/borrow/sign/divide/scratch/childorder reviewed,36tablebytesboundexact;producer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P86 checkpoint - sprite drawing child retained route uses reconciled:3labels/36instructions/19RAM joined3boundedclauses;actualchildflip/order/absoluteaddress/byteX-Yincrements reviewed,mandatoryF294retainsinfeasible03162;producer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled:15labels/83instructions/14RAM joined9boundedclauses;warmdigit/marker/clear/table/scroll/control order reviewed,CPUhardwarepoll/idle ABI explicit;wholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P88 checkpoint - title menu start icon and persistent demo uses reconciled:20labels/112instructions/46RAM joined8boundedclauses;inputpriority/continue/scoreclear/icon/table/demo lifetime reviewed,49tablebytesboundexact;82C7/wholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P88 checkpoint - title menu start icon and persistent demo uses reconciled:20labels/112instructions/46RAM joined8boundedclauses;inputpriority/continue/scoreclear/icon/table/demo lifetime reviewed,49tablebytesboundexact;82C7/wholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 9171,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 1520,
+        "localInstructionReceiptSites": 9265,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 1426,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 3249,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 524,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 3274,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 499,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -169832,7 +169868,6 @@
           "src/game/player.c": 28,
           "src/game/objects.c": 26,
           "src/game/player_movement.c shared C90 movement owner": 26,
-          "src/game/status.c": 25,
           "src/game/game.c": 24,
           "src/game/player_end_level.c shared C90 end-level owner": 24,
           "src/game/entry.c shared C90 entry owner": 21,
