@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 604,
+    "enumeratedCount": 613,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -132,10 +132,12 @@
       "semanticContract": "Every valid AreaType selects the same final palette address-control entry before task handoff.",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "cohort": "B",
       "cohortBasis": "producer inventory label",
@@ -154,10 +156,12 @@
       "semanticContract": "Controls 4-7 select ordered address-control values 0,9,10,4 before the shared palette handoff.",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "cohort": "B",
       "cohortBasis": "producer inventory label",
@@ -176,10 +180,12 @@
       "semanticContract": "Every valid CurrentPlayer/PlayerStatus combination selects the same ordered player palette bytes.",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "cohort": "B",
       "cohortBasis": "producer inventory label",
@@ -198,10 +204,12 @@
       "semanticContract": "Every valid selector produces the same universal background color in the queued palette command.",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "cohort": "B",
       "cohortBasis": "producer inventory label",
@@ -13268,6 +13276,204 @@
       "currentSourcePaths": [
         "src/game/objects.c"
       ]
+    },
+    {
+      "id": "material-00605",
+      "producer": "SetupIntermediate",
+      "consumer": "GetPlayerColors",
+      "storage": "temporary RAM0756 status0 then RAM0744 background2 to actual palette child",
+      "feasiblePath": "Intermediate saves both original bytes,sets status0 before background2,then actual GetPlayerColors uses non-fiery Mario/Luigi colors with source black background index2. Afterwards status/background restore in original order.",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c case1 actual mysmb_area_queue_player_palette after source temporary stores",
+      "semanticContract": "Intermediate saves both original bytes,sets status0 before background2,then actual GetPlayerColors uses non-fiery Mario/Luigi colors with source black background index2. Afterwards status/background restore in original order.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
+      ],
+      "cohort": "B",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/game.c",
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00606",
+      "producer": "SetupIntermediate",
+      "consumer": "SetupIntermediate",
+      "storage": "saved original background/status bytes across actual palette child to restored RAM state",
+      "feasiblePath": "Original PHA background then status and matching PLA status then background restore arbitrary original bytes after child. Native local saved bytes preserve that lifetime and restore order;512 full-byte pairs plus4096 offset/status/player classes prove no persistent temporary-state leak.",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c case1 saved locals and status/background restoration",
+      "semanticContract": "Original PHA background then status and matching PLA status then background restore arbitrary original bytes after child. Native local saved bytes preserve that lifetime and restore order;512 full-byte pairs plus4096 offset/status/player classes prove no persistent temporary-state leak.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
+      ],
+      "cohort": "B",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/game.c",
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00607",
+      "producer": "GetAreaPalette",
+      "consumer": "SetVRAMAddr_A",
+      "storage": "AreaPalette table-selected X byte to RAM0773 stream control",
+      "feasiblePath": "Valid area0..3 selects source85bb values1..4;native area+1 matches all4 bound bytes before task increments9\u219210. Actual root1024 cases compare selectors and preserved RAM/offset.",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c case9 area+1 control store",
+      "semanticContract": "Valid area0..3 selects source85bb values1..4;native area+1 matches all4 bound bytes before task increments9\u219210. Actual root1024 cases compare selectors and preserved RAM/offset.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
+      ],
+      "cohort": "B",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/game.c",
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00608",
+      "producer": "GetPlayerColors",
+      "consumer": "ChkFiery",
+      "storage": "CurrentPlayer RAM0753 to Y0/4 color selector before fiery override",
+      "feasiblePath": "Source initializesY0 then selectsY4 for nonzero player;ChkFiery status2 overridesY8 independent of prior player. Native same byte choices in real palette child;both valid players/status0..2 and intermediate temporary0 observed.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c queue_player_palette color_offset then status2 override",
+      "semanticContract": "Source initializesY0 then selectsY4 for nonzero player;ChkFiery status2 overridesY8 independent of prior player. Native same byte choices in real palette child;both valid players/status0..2 and intermediate temporary0 observed.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
+      ],
+      "cohort": "B",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/game.c",
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00609",
+      "producer": "GetPlayerColors",
+      "consumer": "ClrGetLoop",
+      "storage": "Y0/4/8 initial palette selector and X buffer offset to four indexed reads/stores",
+      "feasiblePath": "Current-player/fiery selection feeds exactly4 original PlayerColors bytes while X wraps byte by byte;absolute0304+X operand remains outside wrapping. Every256 buffer offset tested includingfc..ff.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c queue_player_palette selector/cursor loop",
+      "semanticContract": "Current-player/fiery selection feeds exactly4 original PlayerColors bytes while X wraps byte by byte;absolute0304+X operand remains outside wrapping. Every256 buffer offset tested includingfc..ff.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
+      ],
+      "cohort": "B",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/game.c",
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00610",
+      "producer": "PlayerColors",
+      "consumer": "ClrGetLoop",
+      "storage": "bound original85d7-85e2 twelve bytes to indexed four-color buffer stores",
+      "feasiblePath": "All12 original palette bytes actually read under Mario/Luigi/fiery selectors and written in source order;table bound directly through current generated PRG. Intermediate reuses normal colors;no host-invented color inference.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c queue_player_palette owner PRG player color reads",
+      "semanticContract": "All12 original palette bytes actually read under Mario/Luigi/fiery selectors and written in source order;table bound directly through current generated PRG. Intermediate reuses normal colors;no host-invented color inference.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
+      ],
+      "cohort": "B",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/game.c",
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00611",
+      "producer": "BackgroundColors",
+      "consumer": "SetBGColor",
+      "storage": "nonzero background-control or zero-control AreaType to source background table byte",
+      "feasiblePath": "Background nonzero0..7 domain selects itself,zero uses AreaType0..3;intermediate explicitly uses2. All8 source85cf bytes read across routes before replacing first color/header/terminator. Buffer absolute addresses and byte-offset reset match.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c queue_player_palette background_index and bound table byte",
+      "semanticContract": "Background nonzero0..7 domain selects itself,zero uses AreaType0..3;intermediate explicitly uses2. All8 source85cf bytes read across routes before replacing first color/header/terminator. Buffer absolute addresses and byte-offset reset match.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
+      ],
+      "cohort": "B",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/game.c",
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00612",
+      "producer": "SetBGColor",
+      "consumer": "SetVRAMOffset",
+      "storage": "original buffer cursor plus7 eight-bit accumulator to persisted RAM0300",
+      "feasiblePath": "After source background/header/length/terminator stores,TXA/CLC/ADC07 wraps only final offset byte;native oldoffset+7 byte conversion matches all256 values. Neither absolute command stores nor cursor-loop operand is replaced by global modulo addressing.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c queue_player_palette final offset+7 store",
+      "semanticContract": "After source background/header/length/terminator stores,TXA/CLC/ADC07 wraps only final offset byte;native oldoffset+7 byte conversion matches all256 values. Neither absolute command stores nor cursor-loop operand is replaced by global modulo addressing.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
+      ],
+      "cohort": "B",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/game.c",
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00613",
+      "producer": "GetAlternatePalette1",
+      "consumer": "SetVRAMAddr_B",
+      "storage": "AreaStyle RAM0733 equals1 to selector accumulator11 and RAM0773 publication",
+      "feasiblePath": "Source CMP1 branches around selector store for every other style byte;native exact==1 does same before IncSubtask. All256 style bytes with offset0/ff match;only style1 publishes0b.",
+      "status": "exact",
+      "currentCounterpart": "src/game/game.c case11 exact style1 control11 store",
+      "semanticContract": "Source CMP1 branches around selector store for every other style byte;native exact==1 does same before IncSubtask. All256 style bytes with offset0/ff match;only style1 publishes0b.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
+      ],
+      "cohort": "B",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/game.c",
+        "src/game/area.c"
+      ]
     }
   ],
   "cohorts": [
@@ -15466,11 +15672,14 @@
       "semanticEvidence": [
         "Td S9 B1 ScreenRoutines static node-semantics pass: SMB1 lines 1386-1432 was compared with the named shared-C owner; controlled original-ROM/x86/x64 task routes remain required.",
         "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 source audit:temporary status/background or VRAM-control/task writes occur in reversed original order despite equal final RAM;restore and re-audit.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
         "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $8565: saves BackgroundColorCtrl and PlayerStatus, forces standard player colors/black background setup for GetPlayerColors, restores both saved values, then increments the screen task.",
       "currentSourcePaths": [
@@ -15486,10 +15695,12 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 9 AreaType + 1 selector",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $8577: four-byte AreaType-indexed address-control selector table.",
       "currentSourcePaths": [
@@ -15505,10 +15716,12 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 9",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $857b: reads AreaType, selects AreaPalette[AreaType], writes VRAM address control, then increments ScreenRoutineTask.",
       "currentSourcePaths": [
@@ -15524,10 +15737,12 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine cases 0 and 9 selector write",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $857f: writes selected X value to VRAM_Buffer_AddrCtrl then falls into common screen-task increment.",
       "currentSourcePaths": [
@@ -15543,10 +15758,12 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine task handoff",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $8582: tail-jumps to IncSubtask after its predecessor writes are complete.",
       "currentSourcePaths": [
@@ -15562,10 +15779,12 @@
       "currentCounterpart": "src/game/game.c:background_controls[4] in case 10",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $8585: BackgroundColorCtrl values 4-7 select address-control bytes 0,9,10,4.",
       "currentSourcePaths": [
@@ -15581,10 +15800,12 @@
       "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette background-index lookup",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $8589: selects the universal sprite/background color by BackgroundColorCtrl when nonzero, otherwise AreaType.",
       "currentSourcePaths": [
@@ -15600,10 +15821,12 @@
       "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette player color lookup",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $8591: Mario, Luigi and fiery player palette triples are selected by CurrentPlayer and PlayerStatus.",
       "currentSourcePaths": [
@@ -15619,11 +15842,14 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 10",
       "semanticEvidence": [
         "M2 T52 S4 source audit: SMB1 lines 1460-1503 were compared with src/game/game.c case 10 and src/game/area.c mysmb_area_queue_player_palette; the zero branch, controls 4-7 table, task increment, palette selection and ordered Buffer1 stores match the source contracts.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 source audit:temporary status/background or VRAM-control/task writes occur in reversed original order despite equal final RAM;restore and re-audit.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
         "M2 T52 S4 controlled ordinary GameMode -> ScreenRoutines task-ten routes: owner-ROM and native x86/x64 records for BackgroundColorCtrl 0,4,5,6,7 match task 11, address control and the $3f10 length-four Buffer1 command; test/verify_screen_palette_route.py checks each bounded route.",
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $8594: BackgroundColorCtrl zero branches to NoBGColor; controls 4-7 index BGColorCtrl_Addr-4; both paths increment ScreenRoutineTask then enter GetPlayerColors.",
       "currentSourcePaths": [
@@ -15639,11 +15865,13 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 10",
       "semanticEvidence": [
         "M2 T52 S4 source audit: SMB1 lines 1460-1503 were compared with src/game/game.c case 10 and src/game/area.c mysmb_area_queue_player_palette; the zero branch, controls 4-7 table, task increment, palette selection and ordered Buffer1 stores match the source contracts.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
         "M2 T52 S4 controlled ordinary GameMode -> ScreenRoutines task-ten routes: owner-ROM and native x86/x64 records for BackgroundColorCtrl 0,4,5,6,7 match task 11, address control and the $3f10 length-four Buffer1 command; test/verify_screen_palette_route.py checks each bounded route.",
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $8599: increments ScreenRoutineTask exactly once then falls through to GetPlayerColors without a control-dependent exit.",
       "currentSourcePaths": [
@@ -15662,14 +15890,16 @@
         "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
         "M2 T64 S56 full-scratch caller audit found omitted ClrGetLoop RAM00=$ff; shared area.c now restores the source terminal counter. Prior T54 output-region proof did not compare this scratch byte. Actual $D833 return and original GetPlayerColors loop confirm the correction. docs/history/M2-T64-terrain-collision-current-proof.md",
         "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
         "M2 T52 S4 controlled ordinary GameMode -> ScreenRoutines task-ten routes: owner-ROM and native x86/x64 records for BackgroundColorCtrl 0,4,5,6,7 match task 11, address control and the $3f10 length-four Buffer1 command; test/verify_screen_palette_route.py checks each bounded route.",
         "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
         "M2 T64 S56 before repair x86/x64 each have 96 RAM00 differences; after repair each matches 1536 actual pickup roots across 1841 bytes, including every scratch byte and 49 lower-stack game aliases. Ten operational regressions per width and original OpenNT DOS16 pass; three EXEs refreshed. docs/history/M2-T64-terrain-collision-current-proof.md",
         "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $85F1 GetPlayerColors selects Mario/Luigi/fiery bytes and BackgroundColorCtrl-or-AreaType, preserves the four-color counter terminal RAM00=$ff, writes the $3f10 length-four Buffer1 packet and advances its offset by seven within the admitted table/buffer domain.",
       "currentSourcePaths": [
@@ -15685,10 +15915,12 @@
       "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette PlayerStatus color_offset selection",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $85a3: PlayerStatus $02 overrides Mario/Luigi offset with the fiery palette offset.",
       "currentSourcePaths": [
@@ -15704,10 +15936,12 @@
       "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette four ordered color writes",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $85ac: initializes exactly four palette-byte fetches.",
       "currentSourcePaths": [
@@ -15723,10 +15957,12 @@
       "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette ordered palette stores",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $85b0: copies the four selected player bytes in ascending table order.",
       "currentSourcePaths": [
@@ -15742,10 +15978,12 @@
       "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette background_index selection",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $85bc: chooses BackgroundColorCtrl when nonzero and AreaType otherwise before writing the universal entry.",
       "currentSourcePaths": [
@@ -15761,10 +15999,12 @@
       "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette offset update",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $85d8: stores the Buffer1 offset after the seven-byte palette command.",
       "currentSourcePaths": [
@@ -15780,10 +16020,12 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 11",
       "semanticEvidence": [
         "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $85da: AreaStyle 1 selects VRAM address control $0b; all styles then increment ScreenRoutineTask.",
       "currentSourcePaths": [
@@ -15799,10 +16041,12 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 11 address-control write",
       "semanticEvidence": [
         "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $85e0: stores accumulator into VRAM_Buffer_AddrCtrl before common task increment.",
       "currentSourcePaths": [
@@ -15818,10 +16062,12 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 11 task increment",
       "semanticEvidence": [
         "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ROM $85e2: tail-jumps to IncSubtask.",
       "currentSourcePaths": [
@@ -56569,10 +56815,12 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 1 mysmb_area_queue_player_palette",
       "semanticEvidence": [
         "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "Original SetupIntermediate -> GetPlayerColors runs with forced PlayerStatus=0 and BackgroundColorCtrl=2 before saved state is restored.",
       "currentSourcePaths": [
@@ -56592,10 +56840,12 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 1 task increment",
       "semanticEvidence": [
         "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "Original SetupIntermediate -> IncSubtask restores both saved bytes before advancing ScreenRoutineTask.",
       "currentSourcePaths": [
@@ -56614,10 +56864,12 @@
       "currentCounterpart": "src/game/game.c:case 9 selector write",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "GetAreaPalette selects AreaPalette[AreaType], then reaches the common selector write.",
       "currentSourcePaths": [
@@ -56636,10 +56888,12 @@
       "currentCounterpart": "src/game/game.c:case 9 task increment",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "SetVRAMAddr_A selector write precedes the common ScreenRoutineTask increment.",
       "currentSourcePaths": [
@@ -56658,10 +56912,12 @@
       "currentCounterpart": "src/game/game.c:case 9 task increment",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "NextSubtask advances ScreenRoutineTask after its predecessor side effect.",
       "currentSourcePaths": [
@@ -56680,11 +56936,13 @@
       "currentCounterpart": "src/game/game.c:case 10 BackgroundColorCtrl zero path",
       "semanticEvidence": [
         "M2 T52 S4 source audit: SMB1 lines 1460-1503 were compared with src/game/game.c case 10 and src/game/area.c mysmb_area_queue_player_palette; the zero branch, controls 4-7 table, task increment, palette selection and ordered Buffer1 stores match the source contracts.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
         "M2 T52 S4 controlled ordinary GameMode -> ScreenRoutines task-ten routes: owner-ROM and native x86/x64 records for BackgroundColorCtrl 0,4,5,6,7 match task 11, address control and the $3f10 length-four Buffer1 command; test/verify_screen_palette_route.py checks each bounded route.",
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "GetBackgroundColor BEQ takes the zero BackgroundColorCtrl path to NoBGColor, skipping only the address-control table selection.",
       "currentSourcePaths": [
@@ -56703,11 +56961,13 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 10",
       "semanticEvidence": [
         "M2 T52 S4 source audit: SMB1 lines 1460-1503 were compared with src/game/game.c case 10 and src/game/area.c mysmb_area_queue_player_palette; the zero branch, controls 4-7 table, task increment, palette selection and ordered Buffer1 stores match the source contracts.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
         "M2 T52 S4 controlled ordinary GameMode -> ScreenRoutines task-ten routes: owner-ROM and native x86/x64 records for BackgroundColorCtrl 0,4,5,6,7 match task 11, address control and the $3f10 length-four Buffer1 command; test/verify_screen_palette_route.py checks each bounded route.",
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "After the nonzero control table write, GetBackgroundColor falls through to NoBGColor.",
       "currentSourcePaths": [
@@ -56726,11 +56986,13 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 10",
       "semanticEvidence": [
         "M2 T52 S4 source audit: SMB1 lines 1460-1503 were compared with src/game/game.c case 10 and src/game/area.c mysmb_area_queue_player_palette; the zero branch, controls 4-7 table, task increment, palette selection and ordered Buffer1 stores match the source contracts.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
         "M2 T52 S4 controlled ordinary GameMode -> ScreenRoutines task-ten routes: owner-ROM and native x86/x64 records for BackgroundColorCtrl 0,4,5,6,7 match task 11, address control and the $3f10 length-four Buffer1 command; test/verify_screen_palette_route.py checks each bounded route.",
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "NoBGColor increments ScreenRoutineTask then falls through to GetPlayerColors on both predecessor paths.",
       "currentSourcePaths": [
@@ -56750,10 +57012,12 @@
       "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette CurrentPlayer selection",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "GetPlayerColors chooses Mario offset for CurrentPlayer zero before PlayerStatus test.",
       "currentSourcePaths": [
@@ -56772,10 +57036,12 @@
       "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette CurrentPlayer selection",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "GetPlayerColors chooses Luigi offset for nonzero CurrentPlayer before PlayerStatus test.",
       "currentSourcePaths": [
@@ -56794,10 +57060,12 @@
       "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette PlayerStatus != 2",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ChkFiery retains Mario/Luigi offset unless PlayerStatus equals 2.",
       "currentSourcePaths": [
@@ -56816,10 +57084,12 @@
       "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette PlayerStatus == 2",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ChkFiery replaces the offset with fiery palette bytes when PlayerStatus equals 2.",
       "currentSourcePaths": [
@@ -56838,10 +57108,12 @@
       "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette palette command construction",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "StartClrGet begins four ordered selected player-color writes.",
       "currentSourcePaths": [
@@ -56860,10 +57132,12 @@
       "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette palette command construction",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "ClrGetLoop repeats until exactly four color bytes are written.",
       "currentSourcePaths": [
@@ -56882,10 +57156,12 @@
       "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette background selection",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "After four player bytes, nonzero BackgroundColorCtrl selects its background color index.",
       "currentSourcePaths": [
@@ -56904,10 +57180,12 @@
       "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette background selection",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "After four player bytes, zero BackgroundColorCtrl selects AreaType background index.",
       "currentSourcePaths": [
@@ -56926,10 +57204,12 @@
       "currentCounterpart": "src/game/area.c:mysmb_area_queue_player_palette offset update",
       "semanticEvidence": [
         "Td S9 B2 palette-chain static node-semantics pass: SMB1 lines 1436-1503 was compared with the named shared-C owners; controlled original-ROM/x86/x64 palette routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "SetBGColor writes header, terminator and falls into the seven-byte Buffer1 offset update.",
       "currentSourcePaths": [
@@ -56948,10 +57228,12 @@
       "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
       "semanticEvidence": [
         "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "Original GetAlternatePalette1 -> NoAltPal branch relation must preserve the source predicate, predecessor writes and successor/return handoff.",
       "currentSourcePaths": [
@@ -56970,10 +57252,12 @@
       "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
       "semanticEvidence": [
         "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "Original GetAlternatePalette1 -> SetVRAMAddr_B fallthrough relation must preserve the source predicate, predecessor writes and successor/return handoff.",
       "currentSourcePaths": [
@@ -56992,10 +57276,12 @@
       "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
       "semanticEvidence": [
         "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "Original SetVRAMAddr_B -> NoAltPal fallthrough relation must preserve the source predicate, predecessor writes and successor/return handoff.",
       "currentSourcePaths": [
@@ -57014,10 +57300,12 @@
       "currentCounterpart": "shared C screen-flow owner named by Td S9 B3",
       "semanticEvidence": [
         "Td S9 B3 screen-flow static node/edge pass: SMB1 lines 1507-1605 and ResetSpritesAndScreenTimer lines 1804-1814 were compared with the named shared-C owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "Original NoAltPal -> IncSubtask jump relation must preserve the source predicate, predecessor writes and successor/return handoff.",
       "currentSourcePaths": [
@@ -130713,10 +131001,12 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 1 palette helper completion",
       "semanticEvidence": [
         "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-03518\", \"kind\": \"return\", \"observedActualRTS\": {\"8642-85b0\": 1048}, \"site\": \"85ad\", \"source\": \"GetPlayerColors\", \"target\": \"SetupIntermediate\"}"
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-03518\", \"kind\": \"return\", \"observedActualRTS\": {\"8642-85b0\": 1048}, \"site\": \"85ad\", \"source\": \"GetPlayerColors\", \"target\": \"SetupIntermediate\"}",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "Original GetPlayerColors -> SetupIntermediate returns before restored PlayerStatus/BackgroundColorCtrl and task increment.",
       "currentSourcePaths": [
@@ -131332,10 +131622,12 @@
       "currentCounterpart": "Shared player entry source branches and actual palette/block/vine/bubble children",
       "semanticEvidence": [
         "Td S9 B10a entrance/music static node-and-edge audit: SMB1 lines 2795-2917 was compared with boot.c, game.c, player.c, objects.c and fireball/bubble.c; controlled original-ROM/x86/x64 entry routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 manual original opcode/predicate/read-write/child order audit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 manual original opcode/predicate/read-write/child order audit.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 transition observations=65536;65536 original/current roots both widths equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 transition observations=65536;65536 original/current roots both widths equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "Original return GetPlayerColors -> SetStPos retains shared branch/call/return and register-to-slot handoff.",
       "currentSourcePaths": [
@@ -139637,10 +139929,12 @@
       "currentCounterpart": "src/game/world/powerup_collision.c with real lifecycle/floatey/palette/routine return outputs and corrected src/game/area.c palette scratch.",
       "semanticEvidence": [
         "Td S9 B16k power-up collection integration audit: source endpoint, type/status predicate, ObjectOffset and state/score/sound handoff ordering compared with shared powerup_collision.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T64 S56 static $D800-$D84C and $85F1 GetPlayerColors and real return-consumer audit: GetPlayerColors returns at $D833 with the original VRAM offset X and advanced offset A after the source palette packet and terminal RAM00=$ff; Shroom_Flower_PUp reloads ObjectOffset before the fiery routine setup."
+        "M2 T64 S56 static $D800-$D84C and $85F1 GetPlayerColors and real return-consumer audit: GetPlayerColors returns at $D833 with the original VRAM offset X and advanced offset A after the source palette packet and terminal RAM00=$ff; Shroom_Flower_PUp reloads ObjectOffset before the fiery routine setup.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T64 S56 current x86/x64 each match 1536 actual pickup roots with zero differences across 1841 bytes after restoring palette scratch; score/palette/routine returns 1536/96/192; C90 pickup/palette/host/purity and refreshed three EXEs and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
+        "M2 T64 S56 current x86/x64 each match 1536 actual pickup roots with zero differences across 1841 bytes after restoring palette scratch; score/palette/routine returns 1536/96/192; C90 pickup/palette/host/purity and refreshed three EXEs and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "GetPlayerColors returns at $D833 with the original VRAM offset X and advanced offset A after the source palette packet and terminal RAM00=$ff; Shroom_Flower_PUp reloads ObjectOffset before the fiery routine setup.",
       "currentSourcePaths": [
@@ -139792,10 +140086,12 @@
       "status": "exact",
       "currentCounterpart": "shared world/player_enemy_collision.c with named palette, movement and routine children",
       "semanticEvidence": [
-        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required."
+        "Td S9 B16m player injury/death response integration audit: source endpoint, signed/relative predicate, timer/status/slot handoff and call/jump/return order compared with shared player_enemy_collision.c; controlled original-ROM/x86/x64 routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:source859b-8651 palette chain audit;SetupIntermediate status0 before background2 and GetBackgroundColor control store before task increment restored;four table regions28 bytes bound;shared palette child preserves byte-cursor loop and absolute addresses."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S13 P1:36864 original ScreenRoutines palette roots+480 persistent9-10-11 routes/1440 records both widths zero full RAM diff;only opcode-confirmed01fa-01fd push writes excluded(case/protocol masks);6 conditional sites both outcomes,all28 table bytes read,29184 source write-order checks;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
       ],
       "semanticContract": "Preserves original return relation GetPlayerColors -> ForceInjury with source signed/timer/status predicate and current-slot state handoff ordering.",
       "currentSourcePaths": [

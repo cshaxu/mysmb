@@ -1783,3 +1783,155 @@ local EXE commits,no push;unrelated I/O/presentation/terrain work preserved.
 | mysmb16.exe | 258719 | 36563a296d29a165e73046c0f4209168fa095c6e5a6913a73af5c36648177980 |
 | mysmb32.exe | 372392 | 27e38f51f36da61d80da1379d0f49a82e500b396048cb38dcfed6c8029fd8ca9 |
 | mysmb64.exe | 379424 | 0664ae035c92e9b18b7a9921195b401c06f7b80758fa03231431d550440f4484 |
+
+## S13 P1 admission - screen palette selection and command material chain
+
+Scope19:SetupIntermediate,AreaPalette,GetAreaPalette,SetVRAMAddr_A,NextSubtask,
+BGColorCtrl_Addr,BackgroundColors,PlayerColors,GetBackgroundColor,NoBGColor,
+GetPlayerColors,ChkFiery,StartClrGet,ClrGetLoop,SetBGColor,SetVRAMOffset,
+GetAlternatePalette1,SetVRAMAddr_B,NoAltPal. All historical/current exact
+incoming;fresh expected0,max1992. Incoming historical1992/1992,current exact
+1992/1992 nodes,4275/4275 feasible controls(raw4342,infeasible67),604/604
+material partial. Coordinator receives19 maintenance nodes under ongoing M2
+mandate. S12 closes cohort-A floatey;this next source-ordered cohort-B chain
+owns game.c screen leaves1/9/10/11 and real area.c player-palette child.
+ScreenRoutines/JumpEngine dispatch and IncSubtask return are accepted external
+dependencies and execute unmodified. InitScreen/nametable clear and later
+HUD/text tasks retain accepted owners and distinct routes,not fresh coverage.
+
+Source audit finds SetupIntermediate temporary writes reversed:source status0
+then background2;C background2 then status0. GetBackgroundColor source address
+control store precedes NoBGColor task increment;C reversed them. Reopen those
+two write-order node contracts,restore original source order and repeat both
+tracks. State-equivalent reorder is still source-order deviation;no invented
+visible failure or RAM mismatch predicted. No platform/ABI change.
+
+36864 original ScreenRoutines roots on only leaves1/9/10/11 compare all RAM
+minus opcode-confirmed physical stack pushes,with actual JumpEngine/palette
+children.4096 intermediate offset/status/player/background classes plus512
+full-byte saved status/background restores;1024 area selectors;30720 valid
+background/area/player/status/offset cases;512 full-byte style alternatives.
+Buffer offsets cover0..255 and absolute-indexed stores with byte cursor wrap.
+GetBackgroundColor source-reachable controls0/4..7,area0..3,players0/1,status
+0..2;reserved background1..3 is used only as restored intermediate state,
+not claimed as screen10 source domain. Bind all four table regions and observe
+actual table reads/call/return and conditional branches. Persistent9→10→11
+protocols(480 routes/1440 calls) prove carried cursor and address-control
+priority before source task12,without executing outside-scope title/text.
+Budgets:128MiB/process120seconds/root4096steps,batch1024,unique ignored outputs
+and raw cleanup. Original ROM/ASM read-only,local nonredistributable.
+
+Separate operational track:screen-status/palette/core/NMI/purity/Win32 checks
+both widths,native/OpenNT shared-source build and3 refreshed local EXEs for
+source changes,six retained600-frame routes. Similar sweep:screen palette
+write order,all player-palette callers,absolute VRAM cursor arithmetic and
+table address binding. Existing source-unbound fallback is not ROM proof;
+all original comparisons bind actual owner-local PRG. No source-data import,
+runtime emulator or platform game logic. Standing local EXE commit approval,
+no push;unrelated queued work preserved. Full material/output/end-to-end M2
+certification remains open,not replaced by these controlled palette roots.
+
+## S13 P1 closure - source-ordered screen palette material chain
+
+All19 labels exact:SetupIntermediate,AreaPalette,GetAreaPalette,
+SetVRAMAddr_A,NextSubtask,BGColorCtrl_Addr,BackgroundColors,PlayerColors,
+GetBackgroundColor,NoBGColor,GetPlayerColors,ChkFiery,StartClrGet,ClrGetLoop,
+SetBGColor,SetVRAMOffset,GetAlternatePalette1,SetVRAMAddr_B,NoAltPal.
+Fresh expected/actual historical0,no deferred labels/transfers;19 maintenance
+receivers remain S13. Historical1992/1992,current exact nodes1992/1992,
+feasible controls4275/4275(raw4342,infeasible67),613/613 material partial.
+S13 closes,T70/M2 global material/numeric/output/end-to-end certificate open.
+
+Original temporary intermediate writes status0 before background2,then calls
+GetPlayerColors before restoring status and background. C previously swapped
+the temporary stores. GetBackgroundColor source nonzero valid controls first
+load85cb table into VRAM address control then NoBGColor increments task before
+falling into player palette. C previously incremented task before selector
+publication. Both actual source orders restored in shared game.c. Prior final
+RAM was state-equivalent;no invented gameplay symptom or prior RAM mismatch
+claimed. Actual child is unchanged shared area.c queue_player_palette.
+
+Source current-player0 selectsY0,nonzeroY4;status2 selectsY8. Intermediate
+temporarily disables fiery selection and uses background index2 independently
+of old state. ClrGetLoop initializes00=3,reads/stores four colors with byte-X
+increments and00 decrement throughff. It reloads original buffer offset after
+loop,uses nonzero background control or area type for first color,then writes
+3f10/length4 header and absolute terminator0308+X before offset+7 byte store.
+Final00ff is compared,not excluded scratch. All256 offsets cover byte cursor
+wrap and retained absolute-address operands;full-byte saved status/background
+restore pairs cover intermediate child lifetime. Current native fallback for
+unbound/short PRG is not ROM evidence;every comparison binds actual ROM data.
+
+AreaPalette85bb size4 is exactly1..4 and native area+1 reproduces its complete
+valid domain0..3. BGColorCtrl_Addr85cb size4 matches all C constants0/9/10/4;
+source-reachable screen10 controls0/4..7 covered. BackgroundColors85cf size8
+and PlayerColors85d7 size12 bind actual original PRG addresses;all28 table
+bytes actually read across routes. Background1..3 arbitrary initial saves
+are restored by intermediate only,not an extra screen10 reachability claim.
+GetAlternatePalette1 uses exact AreaStyle1 to publish0b;all256 style bytes
+and retained selector alternatives covered. IncSubtask/JumpEngine are real
+external source/C dependencies,not fixture stubs. InitScreen/nametable clear,
+HUD/text and later output owners retain separate accepted proof.
+
+36864 unmodified original ScreenRoutines roots:4096 intermediate buffer/
+status/player/background classes,512 full-byte restored pairs,1024 area
+selectors,30720 background/area/player/status/offset combinations,512 style
+alternatives. All original returns/SPff checked.6 conditional sites both
+outcomes and15 executable scoped entries observed;four data nodes proven by
+binding and actual reads,not instruction coverage. Source traces check4608
+intermediate status-before-background and24576 nonzero-background selector-
+before-task routes:29184 actual source order checks. C actual source ordering
+review is a separate track;RAM replay alone would not prove these reorderings.
+
+480 persistent9→10→11 routes add1440 records. Valid area/background/player/
+status choices and offsets0/f9/fc/ff retain produced command/cursor/control
+state across actual dispatches,ending at task12 without executing outside
+scope title output. They include original physical stack residuals using
+only cumulative opcode-confirmed pushes within each protocol. Independent
+and persistent runs compare all2048 RAM plus return discriminator;only actual
+JSR/PHA/PHP push addresses excluded,union01fa-01fd. Other stack-page bytes,
+zero page and palette buffer scratch are compared. Both widths zero diff and
+native records byte-identical. No original ROM/instruction/child patched.
+These controlled roots/protocols omit NMI buffer drains and do not claim
+complete naturally played screen sequences or pixel-within-scanline fidelity.
+
+Nine material rows605-613 register actual temporary/saved state lifetimes,
+area selector byte,player/fiery register selector,palette reads and loop,
+background table input,final cursor accumulator and style selector input.
+Existing four table rows6-9 refreshed. No invented edge from preserved but
+unread selector to next task and no global/cartesian completeness inference.
+NMI palette-stream consumption retains separate output-owner proof and later
+global certification duty.
+
+Operational:final shared C90 libraries/products and affected screen/core/NMI/
+recorder targets rebuilt both widths.5 focused checks each pass(screen-status,
+core,NMI parent,purity,Win32 product self-test). Six600-frame retained idle/
+start/pause/right/run-jump/select routes zero scoped diff/native-identical.
+Frame ABI0200-07ff except0778/0779,all CIRAM/palette/OAM/audio/PPU scalars;
+ordinal/zero-page/CPU-stack outside that frame ABI;local roots above include
+all game RAM. Original OpenNT shared-source DOS16 compile/link exit0 retains
+optional OLDNAMES.LIB warning. MZ format/DOS declared file length and all
+copied product hashes verified. DOS graphical runtime/486 qualification stays
+later;native operational checks do not replace source equivalence.
+
+Similar sweep:screen tasks1/10 repaired;area helper's existing color-loop,
+background/header/terminator/cursor store order already matches ROM. All
+queue-player-palette callers inspected:screen1/10,entrance,color sync,local
+title bootstrap,stomp/power-up. They retain one shared child and prior owner
+evidence;no second temporary status/background reorder found. No platform,
+ABI or runtime-emulator change,no third-party implementation import.
+
+Admission script initially used host default cp1252 and failed on an arrow,
+truncating the proposal before any registration. Proposal restored exactly
+from committed HEAD under owner recovery authorization;script rerun with
+explicit UTF8 and complete registration/gate passed. This failed write is not
+proof. All subsequent evidence writes use UTF8;temporary scripts/logs/raw
+records stay ignored below build,raw RAM/frame data removed after comparison.
+Standing owner authorization covers3 local EXE commits,no push;unrelated
+I/O/presentation/terrain work preserved.
+
+| Product | Bytes | SHA256 |
+| --- | --- | --- |
+| mysmb16.exe | 258719 | 3164819f0d6ac0cfeecc84bc350efa967a69858319445e6ffa5a499d051e7739 |
+| mysmb32.exe | 372392 | 52200477007169e08e676a423cf2d4d5224419201941ca96c624d1d061d76eec |
+| mysmb64.exe | 379424 | c31c9c462da3801d7e18186a99b829157912d286057e2c6e38a5d631d76d15cd |

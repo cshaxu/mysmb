@@ -168,8 +168,8 @@ void mysmb_game_step_screen_routine(struct mysmb_game *game)
          * and background-color control 2 before restoring title/area state. */
         saved_background_color = game->ram[MYSMB_RAM_BACKGROUND_COLOR];
         saved_player_status = game->ram[MYSMB_RAM_PLAYER_STATUS];
-        game->ram[MYSMB_RAM_BACKGROUND_COLOR] = 2U;
         game->ram[MYSMB_RAM_PLAYER_STATUS] = 0U;
+        game->ram[MYSMB_RAM_BACKGROUND_COLOR] = 2U;
         (void)mysmb_area_queue_player_palette(game);
         game->ram[MYSMB_RAM_PLAYER_STATUS] = saved_player_status;
         game->ram[MYSMB_RAM_BACKGROUND_COLOR] = saved_background_color;
@@ -264,13 +264,13 @@ void mysmb_game_step_screen_routine(struct mysmb_game *game)
         /* ROM GetBackgroundColor increments ScreenRoutineTask before it
          * falls through into GetPlayerColors.  Keep that write visible to
          * the palette producer in the same source order. */
-        game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 11U;
         if (game->ram[MYSMB_RAM_BACKGROUND_COLOR] >= 4U &&
             game->ram[MYSMB_RAM_BACKGROUND_COLOR] <= 7U) {
             static const mysmb_u8 background_controls[4] = { 0U, 9U, 10U, 4U };
             game->ram[MYSMB_RAM_VRAM_ADDRESS_CONTROL] = background_controls[
                 game->ram[MYSMB_RAM_BACKGROUND_COLOR] - 4U];
         }
+        game->ram[MYSMB_RAM_SCREEN_ROUTINE_TASK] = 11U;
         /* NoBGColor falls directly into GetPlayerColors.  This is an
          * unconditional producer, not a palette-difference optimization. */
         (void)mysmb_area_queue_player_palette(game);

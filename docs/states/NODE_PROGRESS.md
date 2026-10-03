@@ -1,5 +1,15 @@
 # M2 ROM conformance node progress
 
+## M2 T70 S13 - closed screen palette material/order proof
+
+[19-node palette proof](../proposals/m2/t70-final-current-certification.md#s13-p1-closure---source-ordered-screen-palette-material-chain).
+Original temporary status/background and selector/task store order restored.
+36864 original roots+1440 persistent records each width zero full scoped RAM
+diff;28 table bytes read/bound,6 conditionals both outcomes,29184 source-order
+checks.5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass.
+Historical1992/1992,current nodes1992/1992,controls4275/4275(raw4342,infeasible67),
+material613/613 partial. Nine paths added,fresh0,no deferred labels;T70 open.
+
 ## M2 T70 S12 - closed floatey score/OAM material repair
 
 [10-node source/material proof](../proposals/m2/t70-final-current-certification.md#s12-p1-closure---source-correct-floating-score-and-shared-sprite-output).
