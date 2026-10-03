@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 710,
+    "enumeratedCount": 718,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -15626,6 +15626,190 @@
         "src/game/area.c",
         "src/game/area/block_buffer.c"
       ]
+    },
+    {
+      "id": "material-00711",
+      "producer": "BlockBufferCollision",
+      "consumer": "WrCMTile",
+      "storage": "06/07 pointer and02 row",
+      "feasiblePath": "Vine draws/erases first;actual query then validates row<D0,reads current buffer and conditionally writes26 with no intervening child.",
+      "status": "exact",
+      "currentCounterpart": "src/game/vine.c",
+      "semanticContract": "Declared valid slot/query-buffer roots and current source order;caller entry equality inherits P12 query ABI and direct-call-site review,not all gameplay routes. Replacement flags0/1/3;head sizes0/1 and54/58;top coin/miss;axe;enemy23 IDs0/6/15;vine count1/2.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
+      ],
+      "cohort": "K",
+      "cohortBasis": "original producer inventory label",
+      "currentSourcePaths": [
+        "src/game/vine.c",
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_metatile.c"
+      ]
+    },
+    {
+      "id": "material-00712",
+      "producer": "DestroyBlockMetatile",
+      "consumer": "DBlockSte",
+      "storage": "06/07 pointer and02 row through VRAM child",
+      "feasiblePath": "Child publishes same06/02 and never writes07;head reloads slot,stores03e4/03e6,then reads actual pointer. Native caches address only after child.",
+      "status": "exact",
+      "currentCounterpart": "src/game/blocks/head.c",
+      "semanticContract": "Declared valid slot/query-buffer roots and current source order;caller entry equality inherits P12 query ABI and direct-call-site review,not all gameplay routes. Replacement flags0/1/3;head sizes0/1 and54/58;top coin/miss;axe;enemy23 IDs0/6/15;vine count1/2.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
+      ],
+      "cohort": "C",
+      "cohortBasis": "original producer inventory label",
+      "currentSourcePaths": [
+        "src/game/blocks/head.c",
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_metatile.c"
+      ]
+    },
+    {
+      "id": "material-00713",
+      "producer": "DBlockSte",
+      "consumer": "PutMTileB",
+      "storage": "full buffer pointer through block initialization",
+      "feasiblePath": "BlockBumpedChk does not change02/06/07;InitBlock_XY_Pos changes object coordinates only. Native cached address is consumed before bump/shatter JumpEngine overwrites06/07.",
+      "status": "exact",
+      "currentCounterpart": "src/game/blocks/head.c",
+      "semanticContract": "Declared valid slot/query-buffer roots and current source order;caller entry equality inherits P12 query ABI and direct-call-site review,not all gameplay routes. Replacement flags0/1/3;head sizes0/1 and54/58;top coin/miss;axe;enemy23 IDs0/6/15;vine count1/2.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
+      ],
+      "cohort": "H",
+      "cohortBasis": "original producer inventory label",
+      "currentSourcePaths": [
+        "src/game/blocks/head.c",
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_metatile.c"
+      ]
+    },
+    {
+      "id": "material-00714",
+      "producer": "BlockBufferCollision",
+      "consumer": "CheckTopOfBlock",
+      "storage": "02 row and06/07 buffer pointer",
+      "feasiblePath": "Canonical caller supplies query outputs;zero row exits,other rows publish02-10 before read/conditional clear. Native arguments preserve entry values.",
+      "status": "exact",
+      "currentCounterpart": "src/game/blocks/chunks.c",
+      "semanticContract": "Declared valid slot/query-buffer roots and current source order;caller entry equality inherits P12 query ABI and direct-call-site review,not all gameplay routes. Replacement flags0/1/3;head sizes0/1 and54/58;top coin/miss;axe;enemy23 IDs0/6/15;vine count1/2.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
+      ],
+      "cohort": "K",
+      "cohortBasis": "original producer inventory label",
+      "currentSourcePaths": [
+        "src/game/blocks/chunks.c",
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_metatile.c"
+      ]
+    },
+    {
+      "id": "material-00715",
+      "producer": "CheckTopOfBlock",
+      "consumer": "SetupJumpCoin",
+      "storage": "02 row and06/07 after RemoveCoin_Axe",
+      "feasiblePath": "Coin path clears buffer before screen child;child republishes same02/06 and preserves07. Slot reloaded from03ee after child before jump coin.",
+      "status": "exact",
+      "currentCounterpart": "src/game/blocks/chunks.c",
+      "semanticContract": "Declared valid slot/query-buffer roots and current source order;caller entry equality inherits P12 query ABI and direct-call-site review,not all gameplay routes. Replacement flags0/1/3;head sizes0/1 and54/58;top coin/miss;axe;enemy23 IDs0/6/15;vine count1/2.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
+      ],
+      "cohort": "H",
+      "cohortBasis": "original producer inventory label",
+      "currentSourcePaths": [
+        "src/game/blocks/chunks.c",
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_metatile.c"
+      ]
+    },
+    {
+      "id": "material-00716",
+      "producer": "UpdateLoop",
+      "consumer": "ReplaceBlockMetatile",
+      "storage": "03e4/03e6/03e8 saved fields via02/06/07",
+      "feasiblePath": "For each descending slot1..0 and enabled flag/empty VRAM,load saved low/row/high5,write replacement before actual screen child,then clear flag. Child edits pointer after last indirect access.",
+      "status": "exact",
+      "currentCounterpart": "src/game/blocks/replacement.c",
+      "semanticContract": "Declared valid slot/query-buffer roots and current source order;caller entry equality inherits P12 query ABI and direct-call-site review,not all gameplay routes. Replacement flags0/1/3;head sizes0/1 and54/58;top coin/miss;axe;enemy23 IDs0/6/15;vine count1/2.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
+      ],
+      "cohort": "H",
+      "cohortBasis": "original producer inventory label",
+      "currentSourcePaths": [
+        "src/game/blocks/replacement.c",
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_metatile.c"
+      ]
+    },
+    {
+      "id": "material-00717",
+      "producer": "BlockBufferCollision",
+      "consumer": "ErACM",
+      "storage": "02 and06/07 full pointer",
+      "feasiblePath": "Axe/coin caller passes low/row without intervening pointer child;erase uses original07,clears buffer before tail RemoveCoin_Axe. Fresh axe root covers actual erase tail.",
+      "status": "exact",
+      "currentCounterpart": "src/game/player/terrain_metatiles.c",
+      "semanticContract": "Declared valid slot/query-buffer roots and current source order;caller entry equality inherits P12 query ABI and direct-call-site review,not all gameplay routes. Replacement flags0/1/3;head sizes0/1 and54/58;top coin/miss;axe;enemy23 IDs0/6/15;vine count1/2.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
+      ],
+      "cohort": "K",
+      "cohortBasis": "original producer inventory label",
+      "currentSourcePaths": [
+        "src/game/player/terrain_metatiles.c",
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_metatile.c"
+      ]
+    },
+    {
+      "id": "material-00718",
+      "producer": "BlockBufferCollision",
+      "consumer": "HandleEToBGCollision",
+      "storage": "query metatile and pointer/row",
+      "feasiblePath": "Normal enemy terrain caller consumes query struct immediately without intervening helper.23 path clears actual pointer before award/stun children;native caches typed query values for same lifetime.",
+      "status": "exact",
+      "currentCounterpart": "src/game/enemy/background.c",
+      "semanticContract": "Declared valid slot/query-buffer roots and current source order;caller entry equality inherits P12 query ABI and direct-call-site review,not all gameplay routes. Replacement flags0/1/3;head sizes0/1 and54/58;top coin/miss;axe;enemy23 IDs0/6/15;vine count1/2.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
+      ],
+      "cohort": "K",
+      "cohortBasis": "original producer inventory label",
+      "currentSourcePaths": [
+        "src/game/enemy/background.c",
+        "src/game/world/block_buffer.c",
+        "src/game/area/block_metatile.c"
+      ]
     }
   ],
   "cohorts": [
@@ -30751,11 +30935,13 @@
       "semanticEvidence": [
         "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S1 current original-ROM/current x86/x64 actor route: 84 caller and 84 full calls, zero differences.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
       ],
       "operationalEvidence": [
         "T61 S1: 2,560 focused state combinations per x86/x64; 42 original actor snapshots give 84 caller and 84 complete current-source calls with zero differences; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
       ],
       "semanticContract": "Restricts growth to slot five, selects VineFlagOffset-1 threshold, applies the source two-of-four-frame growth gate and restores ObjectOffset on exit.",
       "currentSourcePaths": [
@@ -30835,11 +31021,13 @@
       "semanticEvidence": [
         "Td S9 B14a vine growth node-semantics and independent integration audit: SMB1 lines 6730-6780 compared with shared vine, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S1 current original-ROM/current x86/x64 actor route: 84 caller and 84 full calls, zero differences.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
       ],
       "operationalEvidence": [
         "T61 S1: 2,560 focused state combinations per x86/x64; 42 original actor snapshots give 84 caller and 84 complete current-source calls with zero differences; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
       ],
       "semanticContract": "At height at least $20, performs the source block-buffer probe and writes climbing metatile $26 only to an empty qualified cell.",
       "currentSourcePaths": [
@@ -32010,11 +32198,13 @@
       "semanticEvidence": [
         "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T61 S7 static $BCEB-$BE6F audit plus fresh original-ROM/current x86/x64 routes: all owned branches, byte writes, tables, dispatch selectors and child order agree; 296 caller and 296 full-current routes pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
       ],
       "operationalEvidence": [
         "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
       ],
       "semanticContract": "Initializes the alternating block slot and breakability state, destroys the display metatile, captures block-buffer scratch, selects replacement behavior, then starts bump or shatter and toggles the slot.",
       "currentSourcePaths": [
@@ -32030,10 +32220,12 @@
       "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
       "semanticEvidence": [
         "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S7 static $BCEB-$BE6F audit plus fresh original-ROM/current x86/x64 routes: all owned branches, byte writes, tables, dispatch selectors and child order agree; 296 caller and 296 full-current routes pass."
+        "M2 T61 S7 static $BCEB-$BE6F audit plus fresh original-ROM/current x86/x64 routes: all owned branches, byte writes, tables, dispatch selectors and child order agree; 296 caller and 296 full-current routes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
       ],
       "operationalEvidence": [
-        "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass."
+        "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
       ],
       "semanticContract": "Stores the PlayerSize-selected block state, destroys the metatile, captures buffer coordinates/tile, and enters matched-brick handling with original size-dependent A semantics.",
       "currentSourcePaths": [
@@ -32125,10 +32317,12 @@
       "currentCounterpart": "blocks/head.c and blocks/bump.c with named shared children",
       "semanticEvidence": [
         "Td S9 B14f player-head/block-dispatch node-semantics and independent integration audit: SMB1 lines 7241-7400 compared with shared blocks, area, player terrain, coin, vine and power-up owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S7 static $BCEB-$BE6F audit plus fresh original-ROM/current x86/x64 routes: all owned branches, byte writes, tables, dispatch selectors and child order agree; 296 caller and 296 full-current routes pass."
+        "M2 T61 S7 static $BCEB-$BE6F audit plus fresh original-ROM/current x86/x64 routes: all owned branches, byte writes, tables, dispatch selectors and child order agree; 296 caller and 296 full-current routes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
       ],
       "operationalEvidence": [
-        "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass."
+        "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
       ],
       "semanticContract": "Stores selected replacement, initializes block coordinates, clears the physical buffer cell, starts bounce timing and selects the correct PlayerSize/Crouching Y addend.",
       "currentSourcePaths": [
@@ -32476,11 +32670,13 @@
       "semanticEvidence": [
         "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T61 S7 static $BCEB-$BE6F audit plus fresh original-ROM/current x86/x64 routes: all owned branches, byte writes, tables, dispatch selectors and child order agree; 296 caller and 296 full-current routes pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
       ],
       "operationalEvidence": [
         "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
       ],
       "semanticContract": "For a nonzero buffer row, probes the cell one row above; only a normal coin is cleared, rendered blank and converted to a jump coin.",
       "currentSourcePaths": [
@@ -32636,11 +32832,13 @@
       "semanticEvidence": [
         "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T61 S8 static $BE70-$BF01 audit: state mask/stacked state, paired-child offsets, branch carry flow, metatile-pointer write and signed two-slot loop match original assembly; 32 controlled original-ROM snapshots exercise every scoped node and feasible branch.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
       ],
       "operationalEvidence": [
         "M2 T61 S8 fresh x86/x64 ROM caller and complete-current routes: 64 caller comparisons and 64 complete-current checks per width pass with zero differences; focused lifetime (131,090) and replacement (131,072) C90 cases per width, platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
       ],
       "semanticContract": "Processes block slots one then zero; only when VRAM Buffer1 is free and replace flag is set does it restore buffer tile and submit replacement graphics.",
       "currentSourcePaths": [
@@ -32656,10 +32854,12 @@
       "currentCounterpart": "blocks/chunks.c, blocks/lifetime.c and blocks/replacement.c with named children",
       "semanticEvidence": [
         "Td S9 B14g brick-shatter, block-lifetime and replacement node-semantics and independent integration audit: SMB1 lines 7404-7548 compared with shared blocks, area, world gravity, OAM, coin and score owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T61 S8 static $BE70-$BF01 audit: state mask/stacked state, paired-child offsets, branch carry flow, metatile-pointer write and signed two-slot loop match original assembly; 32 controlled original-ROM snapshots exercise every scoped node and feasible branch."
+        "M2 T61 S8 static $BE70-$BF01 audit: state mask/stacked state, paired-child offsets, branch carry flow, metatile-pointer write and signed two-slot loop match original assembly; 32 controlled original-ROM snapshots exercise every scoped node and feasible branch.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
       ],
       "operationalEvidence": [
-        "M2 T61 S8 fresh x86/x64 ROM caller and complete-current routes: 64 caller comparisons and 64 complete-current checks per width pass with zero differences; focused lifetime (131,090) and replacement (131,072) C90 cases per width, platform purity and DOS16 link pass."
+        "M2 T61 S8 fresh x86/x64 ROM caller and complete-current routes: 64 caller comparisons and 64 complete-current checks per width pass with zero differences; focused lifetime (131,090) and replacement (131,072) C90 cases per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
       ],
       "semanticContract": "Owns one selected slot, both skip gates, block-buffer pointer restoration, replacement call and replace-flag clear.",
       "currentSourcePaths": [
@@ -43956,10 +44156,12 @@
       "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
       "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
       "semanticEvidence": [
-        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
       ],
       "operationalEvidence": [
-        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
       ],
       "semanticContract": "Sets victory operating modes and speed before common axe erase.",
       "currentSourcePaths": [
@@ -43974,10 +44176,12 @@
       "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
       "currentCounterpart": "coin/axe and mysmb_player_handle_climbing",
       "semanticEvidence": [
-        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required."
+        "Td S9 K51 coin/axe/climbing node, edge and table audit: SMB1 lines 12147-12217 compared with src/game/player/terrain_metatiles.c and climbing.c; controlled original-ROM/x86/x64 coin/axe/vine/flag routes remain required.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
       ],
       "operationalEvidence": [
-        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass."
+        "M2 T64 S14: controlled original-ROM entries $DE05/$DE0E and $DE2E, including coin, axe, $24/$25 flagpole, vine handoff, engine 4/5 and all five FlagpoleYPosData thresholds, replayed by current x86/x64 caller checkers with original child-call inputs/returns; zero differences. Focused climbing (515), terrain-metatile (6,144) and platform-purity checks pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
       ],
       "semanticContract": "Erases metatile at caller-provided block-buffer address then updates screen.",
       "currentSourcePaths": [
@@ -44846,10 +45050,12 @@
       "currentCounterpart": "mysmb_enemy_handle_background, mysmb_world_stun_enemy and landing helpers",
       "semanticEvidence": [
         "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
-        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain."
+        "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts."
       ],
       "operationalEvidence": [
-        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences."
+        "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain."
       ],
       "semanticContract": "Routes non-solid terrain to no-ground, ordinary solid terrain to landing, and block $23 to erase/score/stun path.",
       "currentSourcePaths": [
@@ -159482,7 +159688,18 @@
         "EndUChk",
         "RendBBuf",
         "ChkMTLow",
-        "StrBlock"
+        "StrBlock",
+        "VineObjectHandler",
+        "WrCMTile",
+        "PlayerHeadCollision",
+        "DBlockSte",
+        "PutMTileB",
+        "CheckTopOfBlock",
+        "BlockObjMT_Updater",
+        "UpdateLoop",
+        "HandleAxeMetatile",
+        "ErACM",
+        "HandleEToBGCollision"
       ],
       "controlEdgeIds": [],
       "status": "in-progress-material-use-completeness",
@@ -159511,7 +159728,9 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P12 bounded admission - reset and collision RAM pointer lifetimes",
         "docs/proposals/m2/t70-final-current-certification.md S17 P12 checkpoint - reset/collision pointer lifetimes",
         "docs/proposals/m2/t70-final-current-certification.md S17 P13 corrective admission - complete scenery/buffer scratch chain",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P13 checkpoint - scenery staging and scratch repair",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 admission - remaining mutable buffer pointers",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",

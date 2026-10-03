@@ -3909,3 +3909,67 @@ mysmb16.exe:258955 bytes,SHA256 0dec8182ad5c4fd282ad66f70dbcf8cda499092fa3db4124
 mysmb32.exe:373107 bytes,SHA256 84eba060c0ee2d79371ff326e763973b673ea4f77464b4a221bd70880bc46891.
 
 mysmb64.exe:379113 bytes,SHA256 c6b74f0d08a50469d0eab8d32e86f3e73128fdd68e07e29f517d0b426cf144c8.
+
+## S17 P14 admission - remaining mutable buffer pointers
+
+Audit-only continuation of S17's remaining9 RAM indirect-site family.
+Original rootsB94B/BCED/BE1F/BED4/DE0E/DFFA and sitesB9AF/B9B5/BD0D/BD4B/
+BE2D/BE35/BEF4/DE20/E007. Shared ownersvine,block head/chunks/replacement,
+player terrain metatiles and enemy background;actual child helpers retain
+their contracts. Read each original producer/consumer/child boundary before
+fresh original/native roots;no implementation change admitted in P14.
+Local entry fixtures are a diagnostic audit,not a whole-game reachability
+claim. Exact audit participation labels:
+`VineObjectHandler`, `WrCMTile`, `PlayerHeadCollision`, `DBlockSte`, `PutMTileB`, `CheckTopOfBlock`, `BlockObjMT_Updater`, `UpdateLoop`, `HandleAxeMetatile`, `ErACM`, `HandleEToBGCollision`.
+Fresh node/control0,incoming local1992/1992,max1992. Full RAM root output,
+observed physical pushes only excluded,plus source alias/lifetime review.
+4992 returning roots each width;32 columns,rows00/10/70/C0,legal object
+slots,head sizes0/1 and tiles54/58,top coin/miss,replacement flags0/1/3,
+axe,enemy IDs0/6/15 with23 terrain,vine count1/2. Original ROM unchanged.
+Fixtures are admitted source-root domains,not exhaustive Cartesian/gameplay
+coverage. Raw artifacts confined below ignored build and deleted after use.
+Focused native checks required;P13 products remain unless code repair needed.
+
+## S17 P14 checkpoint - remaining mutable buffer pointers
+
+The remaining9 RAM indirect sites reconcile in their declared pointer/slot
+contracts.4992 current original roots each width compare all2048 RAM,
+zero-page included,excluding only actually observed physical pushes;
+zero differences. Six real roots execute actual children,not substituted
+ROM or native stubs:head1024,top512,replacement768,axe128,enemy2304,vine256.
+All9 PCs actually observed with these aggregate original counts:
+b9af:120, b9b5:120, bd0d:1024, bd4b:1024, be2d:1152, be35:192, bef4:512, de20:128, e007:2304.
+32 columns/rows00/10/70/C0 and valid slots are root fixtures,not exhaustive
+Cartesian or whole-game reachable-path coverage. Vine draws/erases may
+exit before its write;120 write paths are actually observed. Every legal
+buffer address0500-069f excludes CPU scratch and saved03e4-03f1 fields.
+
+Vine's BlockBufferCollision follows OAM/offscreen work,so it reestablishes
+pointer outputs after drawing;row guard/read/write has no intervening child.
+DestroyBlockMetatile/PutBlockMetatile stores the same input06/02 and never07;
+head reloads slot after it and forms cached address only then. BlockBumpedChk
+and InitBlock_XY_Pos do not overwrite pointer/row.23 write occurs before
+bump/shatter and their JumpEngine pointer scratch overwrite. CheckTop's
+nonzero row publishes02-10 before read;coin clear precedes screen child,
+which preserves07/republishes same06/02;slot reload precedes SetupJumpCoin.
+Updater reconstructs02/06/07 from saved fields for each descending slot,
+writes before screen child;VRAM occupancy and flag guards preserve source
+ordering. ErACM keeps full original high byte and clears before RemoveCoin_Axe.
+Enemy query struct corresponds to RAM outputs and is consumed immediately;
+23 clear precedes floatey/stun helpers,whose later scratch writes cannot
+affect the completed access. Native direct query-call sites reviewed in
+addition to isolated roots;P12 retains query-kernel ABI proof.
+
+Seven relevant source files are unchanged from P13 HEAD. Eight current
+focused checks each width pass(head,bump,chunks,replacement,vine actor/OAM,
+enemy terrain,terrain metatiles). Initial source-order tooling accidentally
+matched a helper declaration rather than call;checker scope corrected to
+head function and rerun. No product/source change,EXEs remain P13.
+Raw records deleted;4096-case batches below32MiB/120sec process bounds.
+Material711-718 add8 pointer/lifetime/order paths. Fresh node/control0;
+historical1992/1992,local scoped nodes1992/1992,controls4274/4274
+(raw4342,infeasible68). Material718 partial,total unknown. All12 RAM indirect
+sites now have named root-domain dispositions(P12 reset/query,P13 StrBlock,
+P14 remaining9);three dispatch sites and other mutable/register/flag/stack/
+inter-frame clauses remain. Material/pixels/routes/snapshot still open;
+this checkpoint is not full certification or all-caller domain proof.

@@ -766390,7 +766390,18 @@
         "EndUChk",
         "RendBBuf",
         "ChkMTLow",
-        "StrBlock"
+        "StrBlock",
+        "VineObjectHandler",
+        "WrCMTile",
+        "PlayerHeadCollision",
+        "DBlockSte",
+        "PutMTileB",
+        "CheckTopOfBlock",
+        "BlockObjMT_Updater",
+        "UpdateLoop",
+        "HandleAxeMetatile",
+        "ErACM",
+        "HandleEToBGCollision"
       ],
       "baseline": 1992,
       "incomingComplete": [
