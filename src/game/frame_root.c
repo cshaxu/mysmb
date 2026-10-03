@@ -96,7 +96,9 @@ mysmb_u8 mysmb_frame_root_begin(struct mysmb_game *game,
         game->ram[MYSMB_ROOT_FRAME_COUNTER]++;
     }
     mysmb_game_rotate_pseudorandom(game);
-    if (game->ram[MYSMB_ROOT_SPRITE0_HIT] != 0U && paused == 0U) {
+    game->visible_sprite0_split =
+        game->ram[MYSMB_ROOT_SPRITE0_HIT] != 0U ? 1U : 0U;
+    if (game->visible_sprite0_split != 0U && paused == 0U) {
         oam_offset = 4U;
         do {
             game->ram[(mysmb_u16)(MYSMB_ROOT_OAM + oam_offset)] = 0xf8U;
@@ -425,9 +427,9 @@ void mysmb_game_commit_vram_buffer(struct mysmb_game *game)
     mysmb_game_restore_display_mask(game);
 }
 
-/* ROM NonMaskableInterrupt ($740-$842) restores the selected display mask,
- * commits scroll/name-table state, then re-enables NMI on $2000.  Gameplay
- * has already changed the source-owned scroll fields when this is called. */
+/* ROM SkipSprite0 $815c-$8167 commits the two source scroll bytes.
+ * The surrounding NMI saves/writes control at $8168-$816e before dispatch;
+ * gameplay changes these source fields for the following frame. */
 static void mysmb_frame_root_commit_scene_scroll(struct mysmb_game *game)
 {
     game->visible_scroll_x = game->ram[MYSMB_ROOT_HORIZONTAL_SCROLL];

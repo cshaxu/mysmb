@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 561,
+    "enumeratedCount": 563,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -12353,6 +12353,49 @@
       "currentSourcePaths": [
         "src/game/frame_root.c"
       ]
+    },
+    {
+      "id": "material-00562",
+      "producer": "RotPRandomBit",
+      "consumer": "SkipSprite0",
+      "storage": "source0722 flag to selected visible scroll phase and shared compositor",
+      "feasiblePath": "At8138 source LDA0722/BEQ chooses VBlank scroll directly or the real clear/hit/delay path before815c scroll writes.",
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c and src/game/ppu_frame.c:frame_root_begin samples visible_sprite0_split;ppu_frame_build consumes it for background and sprite-priority region selection.",
+      "semanticContract": "Current frame uses its sampled phase even when mode code changes live0722 for the following NMI;zero selects whole-frame scene scroll.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:source8138 conditional split latched at NMI and consumed by shared compositor;64 original physical-scroll/control phases and32 actual RTI returns match native,synthetic top/priority checks pass after live flag mutation;within-line pixel timing not certified."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:full x86/x64 and248 tests/width,original OpenNT DOS16 link,3 fresh products;531 mask/3840 timer roots and6x600 frame regressions match,purity pass."
+      ],
+      "cohort": "A",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/frame_root.c",
+        "src/game/ppu_frame.c"
+      ]
+    },
+    {
+      "id": "material-00563",
+      "producer": "SkipSprite0",
+      "consumer": "SkipMainOper",
+      "storage": "saved pre-dispatch control byte on CPU stack to final physical2000",
+      "feasiblePath": "Source8168 LDA0778,816b PHA retains control before mode dispatch;817b PLA,ORA80 andSTA2000 restore that saved byte.",
+      "status": "exact",
+      "currentCounterpart": "src/game/frame_root.c and src/game/ppu_frame.c:frame_root_step saved_control and mysmb_frame_root_restore_nmi_control.",
+      "semanticContract": "Physical control at source RTI is the saved pre-dispatch mirror with bit7 enabled,not a later mode-mutated live mirror.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:source8138 conditional split latched at NMI and consumed by shared compositor;64 original physical-scroll/control phases and32 actual RTI returns match native,synthetic top/priority checks pass after live flag mutation;within-line pixel timing not certified."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:full x86/x64 and248 tests/width,original OpenNT DOS16 link,3 fresh products;531 mask/3840 timer roots and6x600 frame regressions match,purity pass."
+      ],
+      "cohort": "A",
+      "cohortBasis": "producer original inventory label",
+      "currentSourcePaths": [
+        "src/game/frame_root.c"
+      ]
     }
   ],
   "cohorts": [
@@ -12428,10 +12471,12 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1992
+    "exact": 1990,
+    "mismatch": 2
   },
   "controlEdgeCounts": {
-    "exact": 4276,
+    "exact": 4274,
+    "mismatch": 2,
     "infeasible": 66
   },
   "controlEdgeTypeCounts": {
@@ -12795,12 +12840,15 @@
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom",
       "semanticEvidence": [
         "M2 T52 S1 source re-read: lines 826-872 store the first masked LFSR bit to $00, write the saved $2000 mirror before the OperModeExecutionTree JSR, and OR d7 only at SkipMainOper after return.",
-        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 original flag0 early-vblank scroll versus flag1 actual synchronization confirmed;32 synthetic compositor conditional-top mismatches each native width.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:source8138 conditional split latched at NMI and consumed by shared compositor;64 original physical-scroll/control phases and32 actual RTI returns match native,synthetic top/priority checks pass after live flag mutation;within-line pixel timing not certified."
       ],
       "operationalEvidence": [
         "M2 T52 S1 controlled owner-ROM capture at source $8175, immediately before OperModeExecutionTree, applied one NMI-entry mirror precondition ($0778=$10) and recorded $00=$02, rotated LFSR $a9/$40, and physical $2000=$10. Raw trace remains ignored below build.",
         "M2 T52 S1 ROM-configured x86/x64 builds passed mysmb.nmi-parent-integration, Win32 self-test and platform-purity. The focused regression proves the scratch write, d7-clear dispatch boundary and d7 restoration at the RTI-equivalent tail; OpenNT DOS16 links the same shared frame_root.c.",
-        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:full x86/x64 and248 tests/width,original OpenNT DOS16 link,3 fresh products;531 mask/3840 timer roots and6x600 frame regressions match,purity pass."
       ],
       "semanticContract": "Performs the source seven-byte LFSR rotation and leaves the source scratch $00 equal to the first masked bit while passing control to sprite-zero processing.",
       "currentSourcePaths": [
@@ -12816,10 +12864,12 @@
       "currentCounterpart": "mysmb_frame_root_begin sprite-zero branch",
       "semanticEvidence": [
         "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
-        "M2 T53 S1 source audit: the Sprite0 flag path clears only nonzero OAM rows while unpaused, performs the source synchronization/delay phase, then reaches the shared scroll split. C owns that state transition and the shared compositor owns the resulting fixed-top/scrolling scene phase without an adapter decision."
+        "M2 T53 S1 source audit: the Sprite0 flag path clears only nonzero OAM rows while unpaused, performs the source synchronization/delay phase, then reaches the shared scroll split. C owns that state transition and the shared compositor owns the resulting fixed-top/scrolling scene phase without an adapter decision.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:source8138 conditional split latched at NMI and consumed by shared compositor;64 original physical-scroll/control phases and32 actual RTI returns match native,synthetic top/priority checks pass after live flag mutation;within-line pixel timing not certified."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:full x86/x64 and248 tests/width,original OpenNT DOS16 link,3 fresh products;531 mask/3840 timer roots and6x600 frame regressions match,purity pass."
       ],
       "semanticContract": "When Sprite0HitDetectFlag is set, performs the source pre-split sprite-zero path: while unpaused, moves nonzero OAM sprites offscreen and shuffles offsets before hit synchronization.",
       "currentSourcePaths": [
@@ -12835,10 +12885,12 @@
       "currentCounterpart": "mysmb_frame_root_begin / shared frame output state",
       "semanticEvidence": [
         "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
-        "M2 T53 S1 source audit: the Sprite0 flag path clears only nonzero OAM rows while unpaused, performs the source synchronization/delay phase, then reaches the shared scroll split. C owns that state transition and the shared compositor owns the resulting fixed-top/scrolling scene phase without an adapter decision."
+        "M2 T53 S1 source audit: the Sprite0 flag path clears only nonzero OAM rows while unpaused, performs the source synchronization/delay phase, then reaches the shared scroll split. C owns that state transition and the shared compositor owns the resulting fixed-top/scrolling scene phase without an adapter decision.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:source8138 conditional split latched at NMI and consumed by shared compositor;64 original physical-scroll/control phases and32 actual RTI returns match native,synthetic top/priority checks pass after live flag mutation;within-line pixel timing not certified."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:full x86/x64 and248 tests/width,original OpenNT DOS16 link,3 fresh products;531 mask/3840 timer roots and6x600 frame regressions match,purity pass."
       ],
       "semanticContract": "Uses the source sprite-zero synchronization condition before the scrolling/main-operation split; current shared state exposes the resulting split rather than host-owned game decisions.",
       "currentSourcePaths": [
@@ -12854,10 +12906,12 @@
       "currentCounterpart": "mysmb_frame_root_begin / renderer frame boundary",
       "semanticEvidence": [
         "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
-        "M2 T53 S1 source audit: the Sprite0 flag path clears only nonzero OAM rows while unpaused, performs the source synchronization/delay phase, then reaches the shared scroll split. C owns that state transition and the shared compositor owns the resulting fixed-top/scrolling scene phase without an adapter decision."
+        "M2 T53 S1 source audit: the Sprite0 flag path clears only nonzero OAM rows while unpaused, performs the source synchronization/delay phase, then reaches the shared scroll split. C owns that state transition and the shared compositor owns the resulting fixed-top/scrolling scene phase without an adapter decision.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:source8138 conditional split latched at NMI and consumed by shared compositor;64 original physical-scroll/control phases and32 actual RTI returns match native,synthetic top/priority checks pass after live flag mutation;within-line pixel timing not certified."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:full x86/x64 and248 tests/width,original OpenNT DOS16 link,3 fresh products;531 mask/3840 timer roots and6x600 frame regressions match,purity pass."
       ],
       "semanticContract": "Represents the fixed source post-sprite-zero delay before scroll writes; its observable contract is that scrolling and mode dispatch start only after the sprite-zero synchronization phase.",
       "currentSourcePaths": [
@@ -12872,11 +12926,14 @@
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_commit_scene_scroll and mysmb_frame_root_step",
       "semanticEvidence": [
-        "M2 T52 S1 source re-read: lines 826-872 store the first masked LFSR bit to $00, write the saved $2000 mirror before the OperModeExecutionTree JSR, and OR d7 only at SkipMainOper after return."
+        "M2 T52 S1 source re-read: lines 826-872 store the first masked LFSR bit to $00, write the saved $2000 mirror before the OperModeExecutionTree JSR, and OR d7 only at SkipMainOper after return.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 original flag0 early-vblank scroll versus flag1 actual synchronization confirmed;32 synthetic compositor conditional-top mismatches each native width.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:source8138 conditional split latched at NMI and consumed by shared compositor;64 original physical-scroll/control phases and32 actual RTI returns match native,synthetic top/priority checks pass after live flag mutation;within-line pixel timing not certified."
       ],
       "operationalEvidence": [
         "M2 T52 S1 controlled owner-ROM capture at source $8175, immediately before OperModeExecutionTree, applied one NMI-entry mirror precondition ($0778=$10) and recorded $00=$02, rotated LFSR $a9/$40, and physical $2000=$10. Raw trace remains ignored below build.",
-        "M2 T52 S1 ROM-configured x86/x64 builds passed mysmb.nmi-parent-integration, Win32 self-test and platform-purity. The focused regression proves the scratch write, d7-clear dispatch boundary and d7 restoration at the RTI-equivalent tail; OpenNT DOS16 links the same shared frame_root.c."
+        "M2 T52 S1 ROM-configured x86/x64 builds passed mysmb.nmi-parent-integration, Win32 self-test and platform-purity. The focused regression proves the scratch write, d7-clear dispatch boundary and d7 restoration at the RTI-equivalent tail; OpenNT DOS16 links the same shared frame_root.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:full x86/x64 and248 tests/width,original OpenNT DOS16 link,3 fresh products;531 mask/3840 timer roots and6x600 frame regressions match,purity pass."
       ],
       "semanticContract": "Writes horizontal/vertical scroll and the d7-cleared $2000 mirror before the unpaused OperModeExecutionTree call; only the RTI tail restores d7.",
       "currentSourcePaths": [
@@ -12892,10 +12949,12 @@
       "currentCounterpart": "mysmb_frame_root_restore_nmi_control / mysmb_frame_root_step / title world-select template",
       "semanticEvidence": [
         "Td S9 K39 early NMI/title-demo node and edge audit: SMB1 lines 868, 993 and 1049-1052 compared with shared frame_root.c/title_modes.c; controlled original-ROM/x86/x64 title demo routes remain required.",
-        "M2 T53 S1 source audit: both paused and ordinary paths restore the saved pre-dispatch PPU-control mirror with NMI enabled at the NMI tail; C restores the same saved control after either path."
+        "M2 T53 S1 source audit: both paused and ordinary paths restore the saved pre-dispatch PPU-control mirror with NMI enabled at the NMI tail; C restores the same saved control after either path.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:source8138 conditional split latched at NMI and consumed by shared compositor;64 original physical-scroll/control phases and32 actual RTI returns match native,synthetic top/priority checks pass after live flag mutation;within-line pixel timing not certified."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:full x86/x64 and248 tests/width,original OpenNT DOS16 link,3 fresh products;531 mask/3840 timer roots and6x600 frame regressions match,purity pass."
       ],
       "semanticContract": "Restores saved PPU control with NMI enable and ends the frame after either paused or normal operating-mode path.",
       "currentSourcePaths": [
@@ -13172,12 +13231,13 @@
       "label": "MoveSpritesOffscreen",
       "asmLine": 969,
       "cohort": "A",
-      "status": "exact",
+      "status": "mismatch",
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "mysmb_frame_root_begin sprite-zero branch",
       "semanticEvidence": [
         "Td S9 A5 node-semantics pass: SMB1 lines 954-981 was compared label-by-label with named shared C owners; controlled mode-dispatch and sprite-zero hardware routes remain pending.",
-        "M2 T53 S1 source audit: the shared C OAM loop selects the same initial byte offset, writes $f8 to each Y byte, advances by four and terminates only on byte wrap; the nonzero-sprite entry preserves sprite zero."
+        "M2 T53 S1 source audit: the shared C OAM loop selects the same initial byte offset, writes $f8 to each Y byte, advances by four and terminates only on byte wrap; the nonzero-sprite entry preserves sprite zero.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1 final graph audit:MoveSpritesOffscreen lacks a real shared C child entry;SprInitLoop is duplicated in boot.c and frame_root.c. Inlined matching OAM effects do not prove original JSR/RTS graph or one source owner."
       ],
       "operationalEvidence": [
         "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
@@ -13191,12 +13251,13 @@
       "label": "SprInitLoop",
       "asmLine": 972,
       "cohort": "A",
-      "status": "exact",
+      "status": "mismatch",
       "currentOwner": "src/game/boot.c and src/game/frame_root.c",
       "currentCounterpart": "shared OAM Y-byte loop",
       "semanticEvidence": [
         "Td S9 A5 node-semantics pass: SMB1 lines 954-981 was compared label-by-label with named shared C owners; controlled mode-dispatch and sprite-zero hardware routes remain pending.",
-        "M2 T53 S1 source audit: the shared C OAM loop selects the same initial byte offset, writes $f8 to each Y byte, advances by four and terminates only on byte wrap; the nonzero-sprite entry preserves sprite zero."
+        "M2 T53 S1 source audit: the shared C OAM loop selects the same initial byte offset, writes $f8 to each Y byte, advances by four and terminates only on byte wrap; the nonzero-sprite entry preserves sprite zero.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1 final graph audit:MoveSpritesOffscreen lacks a real shared C child entry;SprInitLoop is duplicated in boot.c and frame_root.c. Inlined matching OAM effects do not prove original JSR/RTS graph or one source owner."
       ],
       "operationalEvidence": [
         "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
@@ -51757,10 +51818,13 @@
       "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom to mysmb_frame_root_begin sprite-zero path",
       "semanticEvidence": [
-        "M2 T52 S1 source-order audit confirms the same predecessor, source scratch handoff and d7-clear dispatch boundary in shared frame_root.c."
+        "M2 T52 S1 source-order audit confirms the same predecessor, source scratch handoff and d7-clear dispatch boundary in shared frame_root.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 original flag0 early-vblank scroll versus flag1 actual synchronization confirmed;32 synthetic compositor conditional-top mismatches each native width.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:source8138 conditional split latched at NMI and consumed by shared compositor;64 original physical-scroll/control phases and32 actual RTI returns match native,synthetic top/priority checks pass after live flag mutation;within-line pixel timing not certified."
       ],
       "operationalEvidence": [
-        "M2 T52 S1 owner-ROM capture at source $8175 and ROM-configured x86/x64 focused regression agree on the repaired handoff; DOS16 links the same shared owner."
+        "M2 T52 S1 owner-ROM capture at source $8175 and ROM-configured x86/x64 focused regression agree on the repaired handoff; DOS16 links the same shared owner.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:full x86/x64 and248 tests/width,original OpenNT DOS16 link,3 fresh products;531 mask/3840 timer roots and6x600 frame regressions match,purity pass."
       ],
       "semanticContract": "The RotPRandomBit -> SkipSprite0 branch must hand off the source scratch $00 written by the LFSR prefix before sprite-zero selection.",
       "currentSourcePaths": [
@@ -51779,10 +51843,13 @@
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
-        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 original flag0 early-vblank scroll versus flag1 actual synchronization confirmed;32 synthetic compositor conditional-top mismatches each native width.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:source8138 conditional split latched at NMI and consumed by shared compositor;64 original physical-scroll/control phases and32 actual RTI returns match native,synthetic top/priority checks pass after live flag mutation;within-line pixel timing not certified."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
+        "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:full x86/x64 and248 tests/width,original OpenNT DOS16 link,3 fresh products;531 mask/3840 timer roots and6x600 frame regressions match,purity pass."
       ],
       "semanticContract": "Original fallthrough relation RotPRandomBit -> Sprite0Clr at source line 842 (beq) must preserve LFSR loop termination and sprite-zero enabled/paused branch ordering before scroll commit.",
       "currentSourcePaths": [
@@ -51841,11 +51908,12 @@
       "instruction": "jsr",
       "id": "control-00044",
       "cohort": "A",
-      "status": "exact",
+      "status": "mismatch",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
-        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1 final graph audit:MoveSpritesOffscreen lacks a real shared C child entry;SprInitLoop is duplicated in boot.c and frame_root.c. Inlined matching OAM effects do not prove original JSR/RTS graph or one source owner."
       ],
       "operationalEvidence": [
         "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."
@@ -128858,11 +128926,12 @@
       "instruction": "rts/rti",
       "id": "control-03493",
       "cohort": "A",
-      "status": "exact",
+      "status": "mismatch",
       "currentCounterpart": "src/game/frame_root.c:mysmb_game_rotate_pseudorandom and mysmb_frame_root_begin sprite-zero branch",
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
-        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched."
+        "M2 T53 S1 internal-edge source audit: the source instruction, predicate and successor were checked against the named shared frame-root/boot counterpart. The C90 control structure preserves the same branch, loop, call, return or fall-through ordering; ScreenOff external transaction-order relations remain separately mismatched.",
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1 final graph audit:MoveSpritesOffscreen lacks a real shared C child entry;SprInitLoop is duplicated in boot.c and frame_root.c. Inlined matching OAM effects do not prove original JSR/RTS graph or one source owner."
       ],
       "operationalEvidence": [
         "M2 T53 S1 chain route evidence: controlled four-vector dispatch plus 600-frame start/move/pause/resume ROM routes reached the NMI, pause, sprite-zero, shuffle and OAM phases. Current x86/x64 traces had zero work-RAM, selected NMI-state and visible-output differences, while focused root fixtures cover selector-six, timer, pause and shuffle branch variants."

@@ -73,6 +73,7 @@ void mysmb_ppu_frame_build(const struct mysmb_game *game,
     mysmb_u16 x;
     mysmb_u16 y;
     mysmb_u16 sprite;
+    mysmb_u16 fixed_top_height;
     mysmb_u16 sprite_x;
     mysmb_u16 sprite_y;
     mysmb_u16 pixel_x;
@@ -86,13 +87,18 @@ void mysmb_ppu_frame_build(const struct mysmb_game *game,
     mysmb_u8 scroll_x;
     mysmb_u8 scroll_y;
 
+    /* Source flag zero reaches SkipSprite0 during VBlank, so the entire
+     * visible frame uses scene scroll. A synchronized frame retains its
+     * fixed top region; never reread the following frame's RAM flag here. */
+    fixed_top_height = game->visible_sprite0_split != 0U ?
+        MYSMB_PPU_STATUS_BAR_HEIGHT : 0U;
     for (y = 0U; y < MYSMB_SCREEN_HEIGHT; ++y) {
-        scroll_x = y < MYSMB_PPU_STATUS_BAR_HEIGHT ? 0U : game->visible_scroll_x;
-        scroll_y = y < MYSMB_PPU_STATUS_BAR_HEIGHT ? 0U : game->visible_scroll_y;
+        scroll_x = y < fixed_top_height ? 0U : game->visible_scroll_x;
+        scroll_y = y < fixed_top_height ? 0U : game->visible_scroll_y;
         for (x = 0U; x < MYSMB_SCREEN_WIDTH; ++x) {
             frame->pixels[y * MYSMB_SCREEN_WIDTH + x] = mysmb_ppu_background_pixel(
                 game, x, y, scroll_x, scroll_y,
-                y < MYSMB_PPU_STATUS_BAR_HEIGHT ? 0U : game->visible_ppu_name_table,
+                y < fixed_top_height ? 0U : game->visible_ppu_name_table,
                 &opaque);
         }
     }
@@ -118,10 +124,10 @@ void mysmb_ppu_frame_build(const struct mysmb_game *game,
                 y = (mysmb_u16)(sprite_y + pixel_y);
                 x = (mysmb_u16)(sprite_x + pixel_x);
                 if ((attributes & 0x20U) != 0U) {
-                    scroll_x = y < MYSMB_PPU_STATUS_BAR_HEIGHT ? 0U : game->visible_scroll_x;
-                    scroll_y = y < MYSMB_PPU_STATUS_BAR_HEIGHT ? 0U : game->visible_scroll_y;
+                    scroll_x = y < fixed_top_height ? 0U : game->visible_scroll_x;
+                    scroll_y = y < fixed_top_height ? 0U : game->visible_scroll_y;
                     (void)mysmb_ppu_background_pixel(game, x, y, scroll_x, scroll_y,
-                        y < MYSMB_PPU_STATUS_BAR_HEIGHT ? 0U : game->visible_ppu_name_table,
+                        y < fixed_top_height ? 0U : game->visible_ppu_name_table,
                         &opaque);
                     if (opaque != 0U) continue;
                 }

@@ -645,3 +645,173 @@ to S4;S4 full builds,248 tests/width,OpenNT DOS16 link and six600-frame routes
 remain applicable. Audit-only P does not rebuild/replace products. DOS runtime
 qualification remains M3/M4. Raw batches deleted;only neutral local summaries
 retained. No third-party import,push or unrelated work changes.
+
+## S6 P1 admission - sprite-zero scroll and saved-control phases
+
+Six existing exact labels in source order:RotPRandomBit,Sprite0Clr,Sprite0Hit,
+HBlankDelay,SkipSprite0,SkipMainOper. Historical1992/1992,current1992/1992 nodes,
+4276/4276 feasible controls(raw4342,infeasible66),561/561 material partial.
+Expected fresh0,max1992. Shared frame_root.c phase owner and ppu_frame.c output
+consumer;accepted MoveSpritesOffscreen/SpriteShuffler children and mode tree.
+Entry8138 after random rotation,exit8175 before mode dispatch;paused tail RTI
+and accepted normal return checked separately. S5 predecessor accepted.
+
+Missing proof:original sprite flag gates actual wait/scroll phase,while the
+compositor currently forces32 fixed top rows for every frame. Audit natural
+active-title NMI baseline with real sprite-zero/CHR/PPU state and RAM-only
+flag/pause/scroll fixtures;observe actual clear/hit/delay paths,scroll-write
+scanline/dot and saved-control return. Native uses actual shared owner and
+compositor,no clock/CPU/ROM/child patches. If a difference is confirmed,S6
+receives bounded implementation custody and repairs/re-audits before closing.
+Potential surface:shared visible-phase field in game.h plus frame_root.c,
+ppu_frame.c and owner tests;platform cannot select a game scroll branch.
+
+ROM/input provenance:owner local original/reviewed ASM,read-only and
+nonredistributable;no imports. Unique ignored build,128MiB,120seconds/process,
+2097152 warmup instructions,524288 per-root steps,<=1024 roots/batch;raw
+cleanup per batch. Compare declared phase RAM/OAM/scroll/control fields and
+source phase ordering;do not call those captures complete pixel/timing proof.
+Operational:focused NMI/sprite/shuffle/PPU/purity tests both widths;S4 products
+retained if audit-only,otherwise current native builds/original OpenNT link
+and all3 updated EXEs under standing owner authorization. No push.
+Similar sweep:all fixed-top compositor uses,phase consumers and mode mutations
+of sprite/scroll state;no live-RAM read substituting for latched visible phase.
+
+## S6 confirmed conditional scroll gap and repair receipt
+
+Original64 natural active-baseline roots with real clear/hit waits:flag0
+writes scroll at scanline259 in VBlank;flag1 writes at scanline31 after actual
+sprite-zero synchronization and20 decrement-delay iterations. Native control,
+scroll and paused saved-control fields match;synthetic shared compositor
+regression demonstrates32 wrong fixed-top outputs/width when source flag0
+selects early scroll. Synthetic colors are not original pixel captures.
+Within-scanline fine-X/fetch timing is excluded from this phase ABI;it remains
+an explicit separate final-render fidelity obligation,not proven by32-row
+coarse composition or by these scalar fields. No claim of full PPU pixel proof.
+
+Reopen RotPRandomBit's flag-to-phase handoff and SkipSprite0's conditional
+visible-scroll contract,plus control00040/00041 until shared repair/re-audit.
+Coordinator accepts all6 scoped nodes for bounded maintenance implementation
+under owner mandate. Shared game.h gains a latched visible split byte,
+frame_root_begin samples source0722 at the original flag branch,ppu_frame
+uses that captured phase for both background and behind-background sprites.
+No platform/game macro branch or generic PPU emulator. Preserve saved control,
+existing32-row coarse active-split composition and source paused OAM behavior.
+New phase-field material relation requires actual original flag paths and
+live native producer/consumer proof. Remaining subscanline output fidelity
+is not certified by a fixed32-row test and remains in final T70 work.
+
+## S6 P1 verified part - conditional visible scroll and saved-control handoff
+
+Phase portion verified;S6 remains open for the child graph debt below.
+Six originally admitted labels retain their scoped phase contracts:RotPRandomBit,Sprite0Clr,Sprite0Hit,
+HBlankDelay,SkipSprite0,SkipMainOper. Two reopened phase nodes andcontrols
+00040/00041 repaired/re-audited;expected/actual fresh0,no deferred scoped
+label. All6 accepted maintenance custody remains S6;prior events/proofs kept.
+At the phase checkpoint,before final child graph review:historical1992/1992,
+current1992/1992 nodes,4276/4276 feasible controls(raw4342,
+infeasible66). New material00562/00563 make563/563 enumerated exact;global
+material enumeration and final pixel/end-to-end certification remain open.
+T70/M2 are not closed. These exact flags retain scoped semantic contracts,
+not an assertion of complete hardware timing or full-frame pixel fidelity.
+
+Original source8138 flag gate selects early VBlank scroll when0722=0,or
+Sprite0Clr/MoveSpritesOffscreen/SpriteShuffler/Sprite0Hit/20-delay iteration
+path when nonzero. Native frame_root_begin now samples visible_sprite0_split
+at this source branch and preserves it across later mode RAM mutations.
+Shared compositor uses that captured phase in all six fixed-top tests for
+background and behind-background sprite priority. Flag0 uses scene scroll
+and nametable on the entire frame;flag1 retains existing coarse32-row split.
+One neutral byte added to game container,all owners rebuilt together;no
+platform selection,game decision or host API added. Source scroll helper's
+incorrect740-842 annotation corrected to actual815c-8167 scroll stores and
+surrounding8168-816e control save/write;that final comment change has identical
+executable C tokens and refreshed products,not another semantic migration.
+
+Unmodified original warms to its third enabled natural title NMI8138 with
+real CHR/OAM/background/sprite status.64 RAM-only roots cover flag0/1,paused
+0/1,four nametable values and scrollX0/85/170/255 (scrollY0). Flag0 physical
+2005 writes occur at scanline259;flag1 at31 after actual clear/hit waits and
+20-delay iterations. Actual original branch/call transitions observed for
+control00040-00045 and00047-00051,with counts32,32,512,16,16,16,9648,32,608,32,
+32.64 actual PHA,32 PLA and32 real RTI returns to8057 observed. Normal cases
+stop8175 before accepted mode-tree call,so no new claim for its unobserved
+call/return edges. Prior accepted normal mode/tail evidence remains separate.
+
+Current native probes invoke real frame_root_begin or paused frame_root_step
+and real shared ppu_frame_build,compiled C90 both widths. Original scrollX/Y
+are decoded from actual PPU t/fine-X state;native fields come from committed
+visible_scroll,not merely input RAM. Physical control matches source mirror
+at unpaused dispatch and saved mirror|80 after paused RTI. All64 actual phase
+fields match each width. Native latch is checked then live RAM0722 is flipped
+before synthetic composition,proving the consumer uses this frame's captured
+phase. Synthetic row-zero and behind-background marker tests pass all cases.
+Before repair32 no-split marker outputs/width failed. Synthetic colors are
+project-owned regression inputs,not original ROM pixel captures.
+
+Material00562 RotPRandomBit -> SkipSprite0:sampled0722 selects whether source
+scroll reaches the visible frame during VBlank or after hit/delay;the live
+captured field reaches both shared compositor consumers. Material00563
+SkipSprite0 -> SkipMainOper:original PHA retains pre-dispatch0778 control;
+PLA/ORA80/STA2000 restores that saved byte,not a subsequent live mirror.
+Current saved_control variable and restore_nmi_control consumer preserve the
+path;32 actual paused source returns verify physical restoration. Accepted
+ordinary child-return proof is retained,not inferred from these paused cases.
+
+ABI limits:phase comparisons cover flag/pause/input/control and committed
+scroll/physical control;do not compare full RAM/stack,original pixel buffers,
+exact per-dot register-write instant or within-line background fetch timing.
+Writes sampled before STA occur inside scanline31 on the synchronized path;
+existing32-row compositor does not prove fine-X/fetch pixel equality there.
+This concrete missing final-output proof is recorded in TODO and remains a
+T70 certification obligation. No arbitrary whole-frame image match claim.
+Warmup<=2097152 instructions,root<=524288,process120seconds,64 cases<1024,
+128MiB cap;raw original records/baseline RAM removed after admitted use.
+
+Similar sweep:all six unconditional height predicates were in ppu_frame.c;
+both background and sprite-priority paths now use one captured height.
+Only frame_root_begin writes the new phase and ppu_frame_build consumes it;
+reset clears via existing whole-container initialization. Title compatibility
+loaders have no nonzero-scroll phase production and retain existing fixtures;
+platform consumes final pixels only. Tests additionally oppose live0722 to
+captured phase and verify paused/no-split and unpaused/split publication.
+
+Operational:full current x86/x64 builds and248 CTests per width pass,including
+PPU/NMI/product/purity checks. Original OpenNT DOS16 compiles/links shared
+container/core (existing optional OLDNAMES.LIB warning);DOS graphics/486
+qualification remains M3/M4.531 original mask and3840 timer/random roots
+recompiled on the new ABI have zero scoped differences. Six600-frame original
+idle/start/pause/right/run-jump/select regressions match both widths in prior
+frame ABI:RAM0200-07ff except0778/0779,CIRAM/palette/OAM/audio/PPU scalars;
+zero-page/stack/ordinal outside frame ABI,mask separately covered. Source-
+changing P refreshes all3 EXEs under owner authorization,no push. Original
+raw records deleted;neutral summaries stay ignored under build.
+
+| Product | Bytes | SHA256 |
+| --- | --- | --- |
+| mysmb16.exe | 258815 | ab3d2b1440be7448ca0f3e86375b0b75bf8b85b046170888e8d6f16ab845b083 |
+| mysmb32.exe | 372256 | d4f81e8f0a917cd353676ba025fc7be70a5ff6104280449af452de7e924862a2 |
+| mysmb64.exe | 379290 | f79722e5869c75882dc29065add930a777d109c28f2afb8f529d6e7a4e24a0ee |
+
+## S6 remaining child graph debt - next P2 receipt
+
+P1 phase repair is a complete reviewable part,not S6 closure. Final graph
+review finds the original $8225 SprInitLoop represented twice:boot.c's
+move_all_sprites_offscreen loop and frame_root_begin's nonzero-sprite loop.
+The NMI source JSR MoveSpritesOffscreen814a has no actual shared C child
+entry;current inline output equality does not prove this required call/return
+relation. Reopen MoveSpritesOffscreen,SprInitLoop andcontrol00044/03493.
+Current exact1990/1992 nodes,4274/4276 feasible controls(raw4342,infeasible66),
+material563/563 partially enumerated;historical1992/1992 remains unchanged.
+No scalar or synthetic marker match is used to clear that graph debt.
+
+Next P2 in this same S must accept the original entry family MoveAllSpritesOffscreen,
+MoveSpritesOffscreen,SprInitLoop as explicit maintenance dependencies,extend
+scope6 to9 in original label order,and implement one shared source loop with
+zero/nonzero entry selectors and a real NMI child call. Then re-audit original
+child input/return and complete OAM effects,boot plus active/paused paths,
+refresh3 products if code changes,and only close S6 after zero scoped graph
+diff. No new T or S number,source progression or invented node credit.
+The newly detected source-family custody stays with existing receivers until
+P2 acceptance;P1 does not edit those child owners. Within-line fine-X output
+proof and broader T70 certification remain explicitly separate and pending.

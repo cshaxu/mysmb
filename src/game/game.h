@@ -66,6 +66,9 @@ struct mysmb_game {
     mysmb_u8 visible_ppu_name_table;
     mysmb_u8 visible_scroll_x;
     mysmb_u8 visible_scroll_y;
+    /* Source $8138 selects this frame's split before mode code can change
+     * RAM $0722 for the following NMI. The shared compositor consumes it. */
+    mysmb_u8 visible_sprite0_split;
     /* Portable copies of the ROM's directly-written APU output registers.
      * They are translated game output, not host audio state: adapters may
      * consume them but may not infer or replace their values. */

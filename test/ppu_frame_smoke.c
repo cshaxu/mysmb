@@ -22,8 +22,17 @@ int main(void)
     game.name_table[1][4U * 32U] = 1U;
     game.name_table[1][4U * 32U + 1U] = 2U;
     game.name_table[1][0x03c8U] = 1U;
+    game.visible_sprite0_split = 1U;
+    game.ram[0x0722U] = 0U;
     mysmb_ppu_frame_build(&game, &frame);
     if (frame.pixels[0U] != 0x16U) return 1;
     if (frame.pixels[32U * MYSMB_SCREEN_WIDTH] != 0x29U) return 2;
+    /* The no-wait phase scrolls row zero, even if mode code has already
+     * requested a split in the next frame's live RAM. */
+    game.visible_sprite0_split = 0U;
+    game.ram[0x0722U] = 1U;
+    mysmb_ppu_frame_build(&game, &frame);
+    if (frame.pixels[0U] != 0x21U) return 3;
+    if (frame.pixels[32U * MYSMB_SCREEN_WIDTH] != 0x29U) return 4;
     return 0;
 }

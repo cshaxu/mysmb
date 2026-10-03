@@ -1,5 +1,19 @@
 # M2 ROM conformance node progress
 
+## M2 T70 S6 - P1 verified,child graph repair pending
+
+[Verified phase portion](../proposals/m2/t70-final-current-certification.md#s6-p1-verified-part---conditional-visible-scroll-and-saved-control-handoff),
+[remaining original child graph debt](../proposals/m2/t70-final-current-certification.md#s6-remaining-child-graph-debt---next-p2-receipt).
+Conditional no-split/active-split publication repaired;64 original phase fields,
+32 real RTI and synthetic background/priority checks pass.248 tests each/full
+builds/OpenNT/purity and531 mask/3840 timer/6x600 routes pass;3 EXEs refreshed.
+S6 remains open:MoveSpritesOffscreen/SprInitLoop andcontrol00044/03493 reopened
+because duplicate C loops are not a real shared original child call/return.
+Historical1992/1992,current1990/1992 exact nodes,4274/4276 feasible controls
+(raw4342,infeasible66),material563/563 partial;expected/actual fresh0.
+P2 must accept the3-node entry family and repair/re-audit before S6 closure.
+Within-line fine-X/fetch pixel proof and final T70/M2 duties remain open.
+
 ## M2 T70 S5 - closed timer/random material audit
 
 [Seven exact nodes and three material paths](../proposals/m2/t70-final-current-certification.md#s5-p1-closure---timer-and-random-indexcarry-paths-match).

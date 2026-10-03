@@ -2,6 +2,22 @@
 
 ## Translation Debt
 
+- [ ] **Shared sprite-clear child graph:** T70 S6 P1 final source review finds
+  duplicated SprInitLoop bodies in boot.c/frame_root.c and an inlined NMI
+  MoveSpritesOffscreen call. S6 stays open;its P2 must accept the exact entry
+  family,restore one shared child/loop and verify original calls/returns/OAM.
+  [P2 receipt plan](../proposals/m2/t70-final-current-certification.md#s6-remaining-child-graph-debt---next-p2-receipt).
+
+
+- [ ] **Within-scanline split output proof (High):** T70 S6 observes original
+  physical scroll writes inside scanline31 after sprite-zero hit/delay;the
+  shared compositor currently represents the active split as32 complete rows.
+  This does not certify per-dot fine-X/background-fetch pixel equality.
+  Capture original completed pixels and current shared output under actual
+  scroll routes,then resolve source-proven differences before final T70/M2
+  certification. [Scoped phase proof and limits](../proposals/m2/t70-final-current-certification.md#s6-p1-verified-part---conditional-visible-scroll-and-saved-control-handoff).
+
+
 - [x] **Music fetch order beyond immutable PRG inputs:** T69 S14 restores all
   four Square1/Square2 fetch sites to original old-Y, INC, indirect-read order.
   Four original alias families and retained music integration match current

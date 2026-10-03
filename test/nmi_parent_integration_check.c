@@ -47,6 +47,9 @@ static int check_unpaused_nmi_order(void)
 
     (void)mysmb_frame_root_begin(&game, &input, &mode, &task);
 
+    if (game.visible_sprite0_split != 1U) return 10;
+    game.ram[0x0722U] = 0U;
+    if (game.visible_sprite0_split != 1U) return 11;
     /* $4014 observes old OAM before MoveSpritesOffscreen clears slots 1-63. */
     if (game.visible_oam[0U] != 0x20U || game.visible_oam[4U] != 0x21U ||
         game.ram[0x0200U] != 0x20U || game.ram[0x0204U] != 0xf8U) return 1;
@@ -116,6 +119,7 @@ static int check_rti_control_restore(void)
     input.buttons2 = 0U;
     mysmb_game_frame_initialize(&frame);
     mysmb_frame_root_step(&game, &input, &frame);
+    if (game.visible_sprite0_split != 0U) return 12;
     if (game.visible_ppu_control_0 != 0x95U ||
         game.visible_ppu_name_table != 1U) return 7;
     return 0;
