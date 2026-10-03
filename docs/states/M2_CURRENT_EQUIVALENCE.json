@@ -2001,10 +2001,12 @@
       "semanticContract": "Preserves the source table selection and consumer write/order.",
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 source-selected facing/random indices,byte carry/borrow,live07 alias and original read/write/call sequence;all6 normal table bytes independently equal owner ROM."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 source-selected facing/random indices,byte carry/borrow,live07 alias and original read/write/call sequence;all6 normal table bytes independently equal owner ROM.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 65536 FireballObjCore/65536 BubbleCheck/65536 SetupBubble original roots each width zero diff;both source-valid entries observed for each table;12 tests each/current3 products/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 65536 FireballObjCore/65536 BubbleCheck/65536 SetupBubble original roots each width zero diff;both source-valid entries observed for each table;12 tests each/current3 products/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged."
       ],
       "cohort": "G",
       "cohortBasis": "producer inventory label",
@@ -2023,10 +2025,12 @@
       "semanticContract": "Preserves the source table selection and consumer write/order.",
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 source-selected facing/random indices,byte carry/borrow,live07 alias and original read/write/call sequence;all6 normal table bytes independently equal owner ROM."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 source-selected facing/random indices,byte carry/borrow,live07 alias and original read/write/call sequence;all6 normal table bytes independently equal owner ROM.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 65536 FireballObjCore/65536 BubbleCheck/65536 SetupBubble original roots each width zero diff;both source-valid entries observed for each table;12 tests each/current3 products/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 65536 FireballObjCore/65536 BubbleCheck/65536 SetupBubble original roots each width zero diff;both source-valid entries observed for each table;12 tests each/current3 products/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged."
       ],
       "cohort": "G",
       "cohortBasis": "producer inventory label",
@@ -2045,10 +2049,12 @@
       "semanticContract": "Preserves the source table selection and consumer write/order.",
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 source-selected facing/random indices,byte carry/borrow,live07 alias and original read/write/call sequence;all6 normal table bytes independently equal owner ROM."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 source-selected facing/random indices,byte carry/borrow,live07 alias and original read/write/call sequence;all6 normal table bytes independently equal owner ROM.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 65536 FireballObjCore/65536 BubbleCheck/65536 SetupBubble original roots each width zero diff;both source-valid entries observed for each table;12 tests each/current3 products/OpenNT link."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 65536 FireballObjCore/65536 BubbleCheck/65536 SetupBubble original roots each width zero diff;both source-valid entries observed for each table;12 tests each/current3 products/OpenNT link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged."
       ],
       "cohort": "G",
       "cohortBasis": "producer inventory label",
@@ -36789,12 +36795,14 @@
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks."
       ],
       "operationalEvidence": [
         "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P21 checkpoint - targeted queue producer boundaries:actual write PC observed within14336 controlled original parent-to-SoundEngine roots each width;full RAM pre/post/APU/ordered commands zero diff,physical pushes only. Declared facing1/2 and X=ObjectOffset for fireball;other callers/input domains not inferred.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "Partitions PlayerStatus before one-shot B eligibility, alternating-slot selection, Y-high/crouch/climb gates and creation writes.",
       "currentSourcePaths": [
@@ -36810,10 +36818,12 @@
       "currentCounterpart": "src/game/fireball/fireball_spawn.c",
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks."
       ],
       "operationalEvidence": [
-        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "Runs fireball slots zero then one before entering the bubble gate.",
       "currentSourcePaths": [
@@ -36829,10 +36839,12 @@
       "currentCounterpart": "src/game/fireball/fireball_spawn.c",
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks."
       ],
       "operationalEvidence": [
-        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "Runs bubbles only in water areas.",
       "currentSourcePaths": [
@@ -36848,10 +36860,12 @@
       "currentCounterpart": "src/game/fireball/fireball_spawn.c",
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks."
       ],
       "operationalEvidence": [
-        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "Processes slots two, one and zero in descending order: update, relative position, offscreen bits, draw.",
       "currentSourcePaths": [
@@ -36867,10 +36881,12 @@
       "currentCounterpart": "src/game/fireball/fireball_spawn.c",
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract."
+        "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks."
       ],
       "operationalEvidence": [
-        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+        "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "Returns after the area gate or final bubble slot.",
       "currentSourcePaths": [
@@ -36908,11 +36924,13 @@
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks."
       ],
       "operationalEvidence": [
         "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "Preserves explosion/inactive/new/active state partition and ObjectOffset handoff.",
       "currentSourcePaths": [
@@ -36928,10 +36946,12 @@
       "currentCounterpart": "src/game/fireball/fireball_core.c",
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks."
       ],
       "operationalEvidence": [
-        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "Preserves gravity, horizontal movement, relative-position, offscreen, bounding-box, terrain, erase, enemy and draw order.",
       "currentSourcePaths": [
@@ -36947,10 +36967,12 @@
       "currentCounterpart": "src/game/fireball/fireball_core.c",
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks."
       ],
       "operationalEvidence": [
-        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "Clears only the selected Fireball_State after offscreen mask $cc is nonzero.",
       "currentSourcePaths": [
@@ -36966,10 +36988,12 @@
       "currentCounterpart": "src/game/fireball/fireball_core.c",
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks."
       ],
       "operationalEvidence": [
-        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "Returns without modifying inactive fireball state.",
       "currentSourcePaths": [
@@ -36985,10 +37009,12 @@
       "currentCounterpart": "src/game/fireball/fireball_core.c",
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract."
+        "M2 T60 S2 static audit: original SMB1 lines 6349-6408 compared against shared src/game/fireball/fireball_core.c; speed table, state partition, initialization carry, child order, CC erase mask and explosion tail preserve the source contract.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks."
       ],
       "operationalEvidence": [
-        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results."
+        "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "Computes relative position before explosion drawing.",
       "currentSourcePaths": [
@@ -37005,11 +37031,13 @@
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks."
       ],
       "operationalEvidence": [
         "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "Selects pseudo-random bit, moves active bubbles, blocks inactive bubbles while timer is nonzero, otherwise creates one.",
       "currentSourcePaths": [
@@ -37027,12 +37055,14 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks."
       ],
       "operationalEvidence": [
         "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "Preserves facing LSR carry into X placement, page carry, Y+8, timer selection and fallthrough movement.",
       "currentSourcePaths": [
@@ -37049,11 +37079,13 @@
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks."
       ],
       "operationalEvidence": [
         "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "Uses zero or eight plus retained facing carry before player X/page placement.",
       "currentSourcePaths": [
@@ -37071,12 +37103,14 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks."
       ],
       "operationalEvidence": [
         "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "Subtracts the selected fractional force and propagates its borrow to bubble Y.",
       "currentSourcePaths": [
@@ -37093,11 +37127,13 @@
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks."
       ],
       "operationalEvidence": [
         "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "Stores moved Y or the offscreen $f8 sentinel.",
       "currentSourcePaths": [
@@ -37113,10 +37149,12 @@
       "currentCounterpart": "src/game/fireball/bubble.c: BubbleCheck/SetupBubble/movement/table chain",
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution."
+        "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks."
       ],
       "operationalEvidence": [
-        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed."
+        "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged."
       ],
       "semanticContract": "Returns after bubble update.",
       "currentSourcePaths": [
@@ -167318,16 +167356,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P40 checkpoint - retained palette contracts joined to source uses",
         "docs/proposals/m2/t70-final-current-certification.md S17 P41 checkpoint - retained initialization and setup source-use joins",
         "docs/proposals/m2/t70-final-current-certification.md S17 P42 checkpoint - retained HUD timer and text source-use joins",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P43 checkpoint - retained player physics climb animation and friction joins",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - retained player physics climb animation and friction joins"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 2307,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 8384,
+        "localInstructionReceiptSites": 2445,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 8246,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 750,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 3023,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 805,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2968,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -167395,9 +167434,7 @@
           "src/game/entry.c shared C90 entry owner": 21,
           "src/game/enemy/{green_paratroopa,x_counter}.c": 21,
           "src/game/world/fireball_hit.c": 21,
-          "shared fireball core owner": 20,
           "shared game timer/enemy core": 20,
-          "shared game fireball/bubble core": 19,
           "shared world movement/gravity and actor core": 19,
           "shared game core: oam/bowser_gfx.c": 19,
           "shared game core: enemy/actor_slots.c": 19,
@@ -167409,7 +167446,6 @@
           "shared flagpole/OAM core": 17,
           "shared fireworks frenzy core": 17,
           "src/game/oam/hammer_gfx.c": 17,
-          "shared fireball dispatch owner": 16,
           "shared platform initializer core": 16,
           "src/game/enemy/movement.c": 16,
           "shared vine, world and OAM core": 15,

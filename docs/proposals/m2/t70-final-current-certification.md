@@ -6660,3 +6660,67 @@ clausesandfourfinalpackages remainopen,M2 NOT COMPLETE.No newauditround.
 Participants:ClimbingSub,MoveOnVine,ClimbFD,CSetFDir,ExitCSub,InitCSTimer,PlayerPhysicsSub,ProcClimb,SetCAnim,CheckForJumping,NoJump,ProcJumping,InitJS,ChkWtr,GetYPhy,PJumpSnd,SJumpSnd,X_Physics,ProcPRun,ChkRFast,FastXSp,SetRTmr,GetXPhy,GetXPhy2,ExitPhy,GetPlayerAnimSpeed,ChkSkid,SetRunSpd,ProcSkid,SetAnimSpd,ImposeFriction,JoypFrict,LeftFrict,RghtFrict,XSpdSign,SetAbsSpd.
 
 Current src/game/player.c normalizedSHA256:23e17c99ffe8e540a162f7031617f08a1fec46bea70fab2ae24394876f2a0d41.
+
+## S17 P44 scope amendment - fireball and bubble consumed-use joins
+
+Exact auditparticipants:ProcFireball_Bubble,ProcFireballs,ProcAirBubbles,BublLoop,BublExit,FireballObjCore,RunFB,EraseFB,NoFBall,FireballExplosion,BubbleCheck,SetupBubble,PosBubl,MoveBubl,Y_Bubl,ExitBubl.
+
+Sharedfireball spawn/core/bubble owners,B624-B74A,138instructions/55RAM;sourceidentityaccepted45b802b4 for3fireballfiles andcanonicalbox. Currentoriginalmodes70-72,196608roots eachwidth,2032RAM/APU/order andphysical1F0-1FFexcluded/minSP;additionalboundedactualB624parent roots verifyspawn/twoslots/bubble descendingintegration withactualchildren. No productedit/credit;scope570,fresh0/max1992. SameS17,originalROMreadonly,ignoredprobes/raw1024 batches/128MiB/120sprocess,cleanupaftercompare. Emptyblock/noenemy routes do notcertify collisionhitbranches;existingcollision contracts remainseparate. Anyactualdiff stayssamechain,repairbeforelaterjoins.
+
+## S17 P44 checkpoint - fireball and bubble consumed-use joins
+
+138instructions/55RAM,16existinglabels,scope570,fresh0/max1992;15added
+participants. Threefireballfilesandcanonicalbounding_box.c unchangedfrom
+accepted45b802b4. Eightmanualsource-first clauses,currententryreplay and
+actualB624parentchildren;material89-91reused,no newnode/control/data credit.
+
+CurrentoriginalB689/B6F9/B70B returningroots plusB624dispatcher:262144
+roots eachwidth,zero2032RAM/24APU/orderedwritediffs;01F0-01FF physical
+stack/sentinel excluded,minSP>=EF. All138PCs,17conditional sitesboth
+outcomes,sixnormal speed/force/timer tablebytesequalandread. Directbubble
+SetupBubbleX/07 fullbytesexercisezero-pagealias/live07andadjacentPRG
+reads;normalBubbleCheck0-2 andfireball0/1/facing1/2 domains. Dispatcher
+varyingstatus/B/previousB/Yhigh/crouch/climb/state/counter/timer/water
+coverscreationgates,actualtwofireballcallsanddescendingbubbleloop. New
+referencevariantonlyfixture/entryandobservation;ROM/childrenunchanged.
+NativeprobeextendscurrentcheckerentryB624andlinksactualcurrentgame.a,
+no nativealgorithmstub. 1024-root batchesandrawcleanup retained.
+
+Emptyblockbuffers/noenemies boundcoreconsumerproof;collisionchildren
+executebutthese matricesdo notclaim everybackground/enemyhitbranch.
+Elevenfocused tests eachwidth includehit/scan andgeometrycases,whichare
+operationalproof,not substitutesfor original-ROMcollisionroutecontracts.
+Instruction/lifetime/ordercontractssource-reviewedbelow,not inferredfrom
+finalRAMalone;normalchild ObjectOffsetpreservationstillrealdependency.
+
+| Clause | Original owner labels | Source-use disposition |
+| --- | --- | --- |
+| FB1 | ProcFireball_Bubble | PlayerStatus756readonce >=2 gatesbothfireballchildren;newB000A40 andabsent000D40,slot6CE&1,24+slotinactive,B5==1,714zero,1D!=3 gatescreation. FF20 beforestate2,70C copied711 thenbyte-1->781 then6CEINC. Slots0/1disjointinputtimerfields;Ctry_spawn reads70C twice butno interveningwrite aliases70C. Nochildbefore creationpublication. |
+| FB2 | ProcFireballs,ProcAirBubbles,BublLoop,BublExit | Actualcore slot0 thenslot1 unconditionallywithinstatuselegibility;thenreload74Eafterchildbeforewatergate. Bubble2..0eachstore08beforeCheckBubble,RelativeBubble,Offscreen,Draw inthatorder;DEX/BPLend atFF. Nativeu8loops equivalentboundedslots,actualchildRAM/queue/APUeffects retained. Neither cachedAreaType norloopparameterreads substitute mutation-sensitive RAMcontract;normalchildrenpreserve08. |
+| FB3 | FireballObjCore | 08slotpublication precedesstatepartition;ASLstate bit7carry picks explosion,zero exits;state1 skipsinit,othernonnegativevaluesinit andDECstate(not unconditional1). ASL yieldscarry0onthispath andLDY/DEYpreserveC,so ADCPlayerX+4 withzero thenADCpage+carry. Nativebyteoverflowcomparison restorescarry. SpawnXY/Yhigh1,speedtable[facing33-1],Yspeed4,boundctrl7 thenstateDECsameorder. Facing1/2 andslot0/1normaldomainexplicit;noarbitraryoutoftableclaim. |
+| FB4 | RunFB | TXA CLC ADC7 choosesSprObject7+slot;00=50/02=3 beforeactualgravityapplyup0,thenactualhorizontal;LDX08reload before relative/offscreen/box/bgcollision. Nativeworldhelper writescanonical scratch,thenRAM08reload. Sourcebbox00/02/01 andclip02/01 restoredinaccepted45b802b4;actualscratchincluded2032RAM. C localslot survivespostreload children undertheirnormalObjectOffsetpreservationcontract,not invented frame-coordinate gate. |
+| FB5 | EraseFB,NoFBall,FireballExplosion | AfterBGCollision reload3D2 &CC determineserase24+slot0 beforeexit. SourceRunFBotherwiseactualEnemyCollision thenDrawFireball tail;enemyhitmaysetstate80,drawstillrunsasoriginal. Explosionentryactualrelative thenexplosiondraw;no gravity/CC checkonthatbranch. Source/coreidentity andactualentryrecords,bothmaskoutcomes andexplosion paths;emptyblocks/noenemy routes provecallintegrationbutnotallhitbranches. |
+| BU1 | BubbleCheck | 07 <-07A8+slot &1 before E4+slot zpindexedread. NonF8 movesdirectly;F8 and792nonzero returnswithoutsetup;F8/timer0 SetupBubble fallthrough. Sourceabsolute indexedrandom addressnonwrap,zero-pagebubbleY castbyte. Actual07storecannotbe optimizedaway becauselateraliasreads consumeit. |
+| BU2 | SetupBubble,PosBubl | Facing33 LSRbit0 C;TYApreservesC,adder8+C gives9 or0;X+adder->zp9C+slot,thenreload6D forpageADCcarry ->zp83+slot. SetupY reloadCE afterprioraliaswrites,CLC+8 ->zpE4+slot,thenzpCB+slot=1. Allzero-pageindices bytewrap;slotmayalias33/6D/86/CE/07 so sequentialactualRAMreads/writes retained,not cachedinputs. Timer readsactual07afterpositionstores fromB74D+Y,normal2byteprefixotherwiseboundownerPRG. Nativehelpermustreload07separately. |
+| BU3 | MoveBubl,Y_Bubl,ExitBubl | Reload07beforeB74B+Y independentlyofprecedingtimerlookup,importantwhenaliasesoverwrite07. SEC dummy42C+slot-force byte subtraction publishesdummyandborrow intozero-pageY E4+slot minus0-borrow;wrapped Y<20 setsF8elseactualY,thenstore. HelpercomputespurePRGforce beforeactualdummyload;distinctimmutableforce read/nonalias42C cannotchange07,soorderfoldequivalent. C force lookupdoesnotcacheoldsetupselector;nochildbetweenstores. |
+
+196864 supplementalarithmeticchecks,fournegativeaccountingchecks;current
+strictC90two-width checkers,elevenfocused tests eachpass. No source/product
+change;all3P39hashesunchanged,originalDOScompile/linkretained,runtime
+unqualified. Currentfileidentityandactualroutesrebindacceptedlocalproof,
+not certifyunobservedcross-frameproducers,allRAMorwhole-gamepixels.
+
+Historical/local1992/1992,controls4274/4274(raw4342,infeasible68);material986
+partial,totalunknown.2445instruction/805RAM boundedreceipts,8246other
+instructions/2968otherRAMjoins remain,not2968discoveredbugs. Wholeprogram
+lifetimeclausesandfourfinalpackages remainopen,M2 NOT COMPLETE.
+
+Participants:ProcFireball_Bubble,ProcFireballs,ProcAirBubbles,BublLoop,BublExit,FireballObjCore,RunFB,EraseFB,NoFBall,FireballExplosion,BubbleCheck,SetupBubble,PosBubl,MoveBubl,Y_Bubl,ExitBubl.
+
+Current src/game/fireball/fireball_spawn.c normalizedSHA256:e453bc28ad1dc552f4ccab0ab8b49bca1aef5b7b875daa737dfadd6779bfacb5.
+
+Current src/game/fireball/fireball_core.c normalizedSHA256:dad809cfd312c5930cd4c229ddad4106ff54a0fe4a4c36b039a35553f8f4c3c6.
+
+Current src/game/fireball/bubble.c normalizedSHA256:bb95774c8ad52eda835e1c09cff3cfa883912d23241f1da5bdda20a6f9d3f536.
+
+Current src/game/world/bounding_box.c normalizedSHA256:709d3acfbae67935aff24865393f0ddb0bcf173a70a57601f7d6a59f4a6459c0.

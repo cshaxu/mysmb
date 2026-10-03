@@ -766938,7 +766938,22 @@
         "LeftFrict",
         "RghtFrict",
         "XSpdSign",
-        "SetAbsSpd"
+        "SetAbsSpd",
+        "ProcFireballs",
+        "ProcAirBubbles",
+        "BublLoop",
+        "BublExit",
+        "FireballObjCore",
+        "RunFB",
+        "EraseFB",
+        "NoFBall",
+        "FireballExplosion",
+        "BubbleCheck",
+        "SetupBubble",
+        "PosBubl",
+        "MoveBubl",
+        "Y_Bubl",
+        "ExitBubl"
       ],
       "baseline": 1992,
       "incomingComplete": [
