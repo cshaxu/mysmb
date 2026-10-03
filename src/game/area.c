@@ -572,41 +572,6 @@ mysmb_u8 mysmb_area_apply_message(struct mysmb_game *game,
                                           (mysmb_u16)(game->area_prg_size - offset));
 }
 
-/* ROM AreaParserCore RenderSceneryTerrain through RendBBuf, restricted to the
- * initial 24 columns completed before normal player control.  The two terrain
- * bytes describe the upper eight and lower five metatile rows respectively;
- * their least-significant-bit-first scan is preserved here. */
-void mysmb_area_render_initial_terrain(struct mysmb_game *game)
-{
-    static const mysmb_u8 terrain_metatiles[4] = { 0x69U, 0x54U, 0x52U, 0x62U };
-    static const mysmb_u8 terrain_render_bits[32] = {
-        0x00U, 0x00U, 0x00U, 0x18U, 0x01U, 0x18U, 0x07U, 0x18U,
-        0x0fU, 0x18U, 0xffU, 0x18U, 0x01U, 0x1fU, 0x07U, 0x1fU,
-        0x0fU, 0x1fU, 0x81U, 0x1fU, 0x01U, 0x00U, 0x8fU, 0x1fU,
-        0xf1U, 0x18U, 0xf9U, 0x18U, 0xf1U, 0x18U, 0xffU, 0x1fU
-    };
-    mysmb_u8 terrain;
-    mysmb_u8 column;
-    mysmb_u8 row;
-    mysmb_u8 bits;
-    mysmb_u16 address;
-
-    terrain = terrain_metatiles[game->ram[MYSMB_AREA_TYPE] & 3U];
-    if (game->ram[MYSMB_AREA_CLOUD_OVERRIDE] != 0U) terrain = 0x88U;
-    for (column = 0U; column < 24U; ++column) {
-        for (row = 0U; row < 13U; ++row) {
-            bits = terrain_render_bits[(mysmb_u16)((game->ram[MYSMB_AREA_TERRAIN] & 0x0fU) * 2U +
-                                                    (row < 8U ? 0U : 1U))];
-            address = (mysmb_u16)(column < 16U ? 0x0500U + column :
-                                  0x05d0U + (column - 16U));
-            address = (mysmb_u16)(address + (mysmb_u16)row * 16U);
-            if ((bits & (mysmb_u8)(1U << (row & 7U))) != 0U) {
-                game->ram[address] = terrain;
-            }
-        }
-    }
-}
-
 /* Translation of the RenderSceneryTerrain portion of ROM AreaParserCore
  * ($92f7-$9376).  It builds exactly one 13-metatile column, runs the original
  * ProcessAreaData owner over that staging column, then copies its

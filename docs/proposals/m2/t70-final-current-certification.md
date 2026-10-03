@@ -2533,3 +2533,137 @@ identities below supersede P1 hashes for the changed startup owners.
 | src/platform/dos16/dos16_root.c | 19347e4b6c8c8f9aa34aeba43a1b4591be15983cf626a07418a846cea9f66a29 |
 | src/platform/dos16/dos16_root.h | 677d62738870aa34706c3dc3567a0016af84c0b1b30008c7b7da625aea0629ba |
 | src/platform/win32/main_win32.c | ddfba265920b3d237affe55e659b773060910868499ce9cbdfba3d75438ba773 |
+
+## S16 P1 admission - executable data-binding manifest
+
+Receive the named bindings package after S15 closure. This is an empty-node
+infrastructure S with historical expected fresh0/max1992,no custody transfer
+and no aggregate node/control promotion. Concrete missing evidence is the
+complete executable C numeric PRG/table/pointer-use manifest left by S3;
+the342-comment scan did not enumerate executable operands. S16 first lists
+actual references and their original data-label/offset binding,not A-N
+semantic re-audit. Original byte-bound ASM/owner ROM remain read-only local,
+nonredistributable inputs;neutral metadata and all temporary scripts/logs
+stay in ignored build,128MiB/time120seconds per process,no raw trace needed
+for this static census. No imported source or protected data in tracked output.
+
+Audit C90 constant declarations,absolute CPU-address and PRG-offset literals,
+direct PRG reads,read-helper arguments and copied static table declarations;
+track dynamic pointer derivation separately. Strip comments and strings before
+lexical enumeration and retain unsupported expressions as unresolved;do not
+certify a heuristic symbol match. Bind identified addresses to original labels
+and explicit interior offsets;reuse original/native proof only for matching
+current owner/dependency contracts. Record the exact unresolved list and
+candidate repair owners before any product edit. A source-backed mismatch
+stays in this S;register the affected labels/custody and amend the packet to
+an implementation chain before repairing. No silent successor transfer.
+
+ROM track:original instruction/data label bindings,actual C uses and table/
+pointer domains;static equality is binding evidence,not gameplay correctness.
+Operational track:manifest accounting/negative probes and existing source/
+documentation/ledger gates;no product source change means no EXE refresh.
+Closure requires complete candidate accounting and explicit proven/reused/
+non-address/unresolved dispositions. The bindings package is not closed while
+any executable use is unresolved. If only a census P is complete,S16 remains
+open for the remaining named uses rather than claiming global completion.
+Incoming historical1992/1992;scoped local1992/1992 nodes,4275/4275 feasible
+controls(raw4342,infeasible67),625 material partial,total unknown. Product
+EXEs remain S15. Preserve unrelated owner work,no push,no new global round.
+
+### S16 bounded corrective amendment - inactive synthetic terrain helper
+
+The table census finds one mismatching byte at offset25 in the residual
+terrain_render_bits array:the original TerrainRenderBits value differs from
+the copied initial-terrain helper. This helper has no original inventory
+counterpart and no production/test/tool caller;only its definition and header
+declaration remain. The actual scenery/terrain column parser reads the original
+PRG table through MYSMB_AREA_TERRAIN_RENDER_BITS. No visible gameplay defect
+or mapped-node invalidation is inferred from this inactive implementation.
+S3 only checked provenance comments and S2's earlier unused-function list
+missed this remaining helper;the new census exposes that specific limit.
+
+S16 becomes empty-original-scope infrastructure implementation solely to
+remove this unsupported residual function and declaration. No original node
+body,custody or counterpart changes;historical fresh0/max1992. The exact
+affected C symbols are mysmb_area_render_initial_terrain and its two local
+arrays terrain_metatiles/terrain_render_bits. Before deletion verify only two
+whole-source references and capture identities;after deletion prove all other
+source text identical and zero residual references. Existing active parser
+proof remains applicable. Build/test affected parser products and original
+OpenNT DOS16;refresh the three EXEs for this source change. Binding manifest
+continues in this same S;no closure while its unresolved uses remain.
+
+## S16 P1 checkpoint - table census and inactive-helper removal
+
+P1 completes a reviewable census/cleanup part;S16 is NOT closed. Historical
+fresh0;local scoped nodes1992/1992,controls4275/4275(raw4342,infeasible67),
+material625 partial,total unknown remain unchanged. No original node or
+control contract is newly credited or invalidated by removing uncalled C.
+The bindings gap remains pending;no successor S is admitted.
+
+Before deletion:179 static declarations,174 same-byte ROM candidates and5
+nonmatching declarations. After deletion:177 declarations,173 same-byte
+candidates(137 unique ROM locations,36 multiple locations),four non-ROM-layout
+arrays. Exact content matches are not certification of intended address or
+consumer/index domain. The lexical sweep also lists266 address/offset
+candidates and79 direct PRG sites;these overlap tables and include RAM/mask
+false positives,so they are not266 proven original bindings or an exhaustive
+count of dynamic reads. Header macros,helper-derived pointers and symbolic
+arithmetic still require reconciliation. The complete original use manifest
+is not claimed finished. All named rows and source identities stay in ignored
+build census/table-candidate metadata while this S needs them.
+
+The only nonmatching copied ROM table in this census was terrain_render_bits
+in mysmb_area_render_initial_terrain:one wrong byte at original offset25.
+No current production/test/tool caller exists;only definition/declaration
+remained. Deleted35 source lines plus3 declaration/comment lines,including
+its two local tables. Before/after removal proves every other source text
+identical. Actual scenery/terrain-column PRG reads and parser call chain are
+unchanged. S3's annotation-only scan and S2's earlier finite unused-helper
+list did not inspect this residual body;that explains the missed finding.
+It does not imply a new visible game defect or revoke the active parser proof.
+
+Remaining four no-contiguous-byte-match declarations are adjudicated:
+
+| Declaration | Disposition |
+| --- | --- |
+| area.c palette_offsets | C PRG-offset selection array derived from original VRAM low/high entries1-4;all4 actual pointers agree. It is not an original contiguous word table. |
+| area.c message_offsets | C PRG-offset selection array derived from original VRAM low/high entries12-18;all7 actual pointers agree. |
+| frame_snapshot.c audio_offsets | Snapshot field-address layout,not a copied original ROM table;original RAM ownership remains the existing recorder ABI contract. |
+| ppu_frame.c mysmb_ppu_master_color | Identity mapping of64 output color indices,not an original ROM resource table. Actual color/pixel correctness remains the named pixel/output package. |
+
+Static checks account for all177 parsed declarations,unique source identities
+and complete nested Spiny12-element arrays;comment/string false-address probes
+are rejected. The ASM index reports six known non-PRG directives(header/
+segment/CPU/CHR directives) and no opcode-size mismatch;initial strict unknown
+assertion was rejected then changed to retain those directive diagnostics,
+not silently discard an unknown instruction. A normal sandbox write to the
+existing area file was denied;the already-authorized scoped elevated edit
+succeeded without ACL changes. Failed probes are not accepted evidence.
+
+Operational:both native product targets and three focused parser targets
+rebuilt;5 tests each width pass(parser-column,terminal-slot,boundary,purity,
+product self-test). Original OpenNT DOS16 shared-source compile/link passes
+with retained conversion/optional OLDNAMES warnings;no DOS gameplay claim.
+Three MZ artifacts refreshed. No new ROM replay is claimed or needed to prove
+that unchanged active text retains its existing parser/route receipts. That
+reuse does not cover remaining unclassified table-binding clauses.
+
+Next part stays S16:reconcile intended labels/interior offsets for copied
+tables,disposition actual numeric uses versus masks/RAM/conversions and bind
+dynamic PRG pointer derivations to original read sites. Code differences stay
+here through repair/re-audit;no bindings-package closure until all executable
+uses in the final manifest are dispositioned. No whole-project restart.
+All scripts/logs/research outputs remain ignored below build;no protected
+bytes/source/ROM added,unrelated owner changes preserved,no push.
+
+| Product | Bytes | SHA256 |
+| --- | --- | --- |
+| mysmb16.exe | 258507 | ff4e8226c786f5e8736a43c14321bd65ea835f3e757077d3ffadfa490b3b9ba8 |
+| mysmb32.exe | 372595 | 02ae6abf713b32383742c19f12e7425c2cc6518dbc5193c37bb0abb5cfd14473 |
+| mysmb64.exe | 378601 | 1d7c63d0c75cea80601129cabd91da9622170025a56364a8ca6d47bb7251cd76 |
+
+| Source | SHA256 |
+| --- | --- |
+| src/game/area.c | cb21332638734ecca5165da6446f622afc9958c776af7dfa330886106c597b47 |
+| src/game/area.h | a39bcfc3173c9416e1201d05ab5f6563fbf9331d33c96463b9dd0fcb04487d6f |

@@ -41,9 +41,6 @@ mysmb_u8 mysmb_area_get_data_addresses(struct mysmb_game *game,
 /* Original GetAreaDataAddrs header tail; isolated tests may call this seam. */
 mysmb_u8 mysmb_area_parse_header(struct mysmb_game *game,
                                  const struct mysmb_area_source *source);
-/* ROM AreaParserCore terrain pass for the 24 columns prepared before play. */
-void mysmb_area_render_initial_terrain(struct mysmb_game *game);
-
 /* ROM $92f7-$9376 AreaParserCore scenery/terrain pass for one physical column.
  * Object-stream processing and VRAM-buffer scheduling remain separate owners. */
 mysmb_u8 mysmb_area_render_scenery_terrain_column(struct mysmb_game *game);

@@ -11,6 +11,19 @@ scoped evidence and track only named unresolved/invalidated clauses.
 Material625 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
+## M2 T70 S16 - active executable data-binding reconciliation
+
+[P1 census/cleanup checkpoint](../proposals/m2/t70-final-current-certification.md#s16-p1-checkpoint---table-census-and-inactive-helper-removal).
+Removed an uncalled synthetic terrain helper with one incorrect copied byte;
+active original owners unchanged.177 table declarations,266 numeric
+candidates and79 direct PRG sites enumerated as partial binding evidence;
+173 byte-match candidates do not prove intended consumer domains.11 palette/
+message pointers bind original split tables.5 tests each,three target builds
+and refreshed products pass. Fresh node/control/material0;historical1992/1992,
+local scoped1992/1992 nodes and4275/4275 feasible controls(raw4342,infeasible67),
+material625 partial,total unknown. S16/T70 remain open,no successor admitted;
+remaining numeric/symbolic/dynamic and intended-table bindings not certified.
+
 ## M2 T70 S15 - closed identified startup gaps
 
 [Scoped closure and evidence limits](../proposals/m2/t70-final-current-certification.md#s15-p2-closure---identified-startup-gaps).

@@ -157108,75 +157108,12 @@
       "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:16 targeted unmodified original/native roots each C90 width zero scoped RAM/CIRAM/palette/OAM/APU/control/mask/scroll diff;observed physical pushes01fa-01fd only excluded;9 focused tests each,six600-frame retained regressions,OpenNT DOS16 link and3 refreshed EXEs."
     ],
     "activeReview": {
-      "taskId": "M2 T70 S15",
-      "nodeLabels": [
-        "Start",
-        "VBlank1",
-        "VBlank2",
-        "WBootCheck",
-        "ColdBoot",
-        "EndlessLoop",
-        "InitializeNameTables",
-        "WriteNTAddr",
-        "InitNTLoop",
-        "InitATLoop",
-        "InitScroll",
-        "WritePPUReg1",
-        "InitializeMemory",
-        "InitPageLoop",
-        "InitByteLoop",
-        "InitByte",
-        "SkipByte"
-      ],
-      "controlEdgeIds": [
-        "control-00001",
-        "control-00002",
-        "control-00003",
-        "control-00004",
-        "control-00005",
-        "control-00006",
-        "control-00007",
-        "control-00008",
-        "control-00009",
-        "control-00010",
-        "control-00011",
-        "control-00012",
-        "control-00013",
-        "control-00014",
-        "control-00015",
-        "control-00328",
-        "control-00329",
-        "control-00330",
-        "control-00331",
-        "control-00332",
-        "control-00333",
-        "control-00334",
-        "control-00335",
-        "control-00336",
-        "control-00414",
-        "control-00415",
-        "control-00416",
-        "control-00417",
-        "control-00418",
-        "control-00419",
-        "control-00420",
-        "control-00421",
-        "control-03483",
-        "control-03485",
-        "control-03486",
-        "control-03487",
-        "control-03517",
-        "control-03532",
-        "control-03533",
-        "control-03535",
-        "control-03538",
-        "control-03540"
-      ],
-      "status": "closed-scoped-gaps",
+      "taskId": "M2 T70 S16",
+      "nodeLabels": [],
+      "controlEdgeIds": [],
+      "status": "in-progress-bindings",
       "evidence": [
-        "docs/proposals/m2/t70-final-current-certification.md S15 P1",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P1 source/actual startup observation checkpoint",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps"
+        "docs/proposals/m2/t70-final-current-certification.md S16 P1 checkpoint - table census and inactive-helper removal"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",
@@ -157191,7 +157128,9 @@
       {
         "key": "bindings",
         "status": "pending",
-        "evidence": []
+        "evidence": [
+          "docs/proposals/m2/t70-final-current-certification.md S16 P1 checkpoint - table census and inactive-helper removal"
+        ]
       },
       {
         "key": "material",
