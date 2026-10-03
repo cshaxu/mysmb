@@ -32,8 +32,8 @@ static mysmb_u8 child(struct mysmb_game *g,unsigned int id,mysmb_u8 slot)
 }
 const mysmb_u8 mysmb_enemy_flame_y_positions[4]={0x90U,0x80U,0x70U,0x90U};
 void mysmb_oam_relative_enemy_position(struct mysmb_game *g,mysmb_u8 s) { (void)child(g,1U,s); }
-mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(const struct mysmb_game *input,mysmb_u8 s)
-{ struct mysmb_game *g;g=(struct mysmb_game *)input;(void)child(g,2U,s);return g->ram[0x3d1U]; }
+void mysmb_oam_get_enemy_offscreen_bits(struct mysmb_game *input,mysmb_u8 s)
+{ struct mysmb_game *g;g=(struct mysmb_game *)input;(void)child(g,2U,s); }
 static int run_case(const char *snapshot_path,const char *calls_path)
 {
     static struct mysmb_game g;static unsigned char expected[2048];

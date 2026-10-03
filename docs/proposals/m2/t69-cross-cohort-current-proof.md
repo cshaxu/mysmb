@@ -2096,7 +2096,7 @@ with const value-only query: FPGfx; JumpspringHandler; RunNormalEnemies; RunBows
 The pure helper cannot write original00/04/06/07 or invoke canonical child.
 Original call sites6643,6654,9095,9142,9157,9169,10409,10888 byte-bound at
 review. This is a graph/operation-order mismatch even where later writes
-hide the final-RAM difference.7 other graphics-only value queries require
+hide the final-RAM difference.6 other graphics-only value queries require
 individual source disposition,not mechanical replacement.
 
 Coordinator extends current S15 to22 existing labels by adding: FPGfx; JumpspringHandler; RunNormalEnemies; RunBowserFlame; RunSmallPlatform; RunLargePlatform; DrawFlameLoop; InitPlatformFall; GetEnemyOffscreenBits; FlagpoleRoutine; SetGfxF; BalancePlatform.
@@ -2120,3 +2120,75 @@ parent on both sides to include dispatcher scratch. Neither changed game
 logic or concealed a product mismatch. Actual256 NMI roots independently
 read FFFA/FFFB via original interrupt service and reach8082;128 dispatch
 selector3 entries observed. Full parent/child and frame proof still required.
+
+
+## S15 implementation and harness review checkpoint
+
+Eight actual caller sites now invoke the canonical shared offscreen child,
+which owns original scratch/output writes. No platform source changed.
+The remaining six const queries are retained convenience graphics paths:
+koopa/buzzy, Podoboo, Piranha, Bloober, Cheep-Cheep and the legacy Goomba
+bulk preparation branch. Source-wide caller review finds no production
+composition-root call to these legacy entry points; RunNormalEnemies uses
+the source-shaped generic EnemyGfxHandler. These helpers receive no new
+original call-edge credit and are not mechanically substituted.
+
+Eleven isolated caller harnesses now expose the canonical void/mutable child
+ABI rather than the old const value query. Their event order, slot and RAM
+assertions remain intact. Snapshot child stubs are confined to isolated
+caller checks; the new original/current parent proof wraps and executes the
+real shared child, comparing its actual inputs and returned RAM. Products
+never contain observers or child stubs.
+
+Controlled proof excludes only physical stack bytes 01F3-01FF for the new
+root families, supported by original minimum SP F2. Frame comparison starts
+both implementations at the cold-title bootstrap boundary and converts native
+button masks to NES serial bit order explicitly. These are harness contracts,
+not adjustments to game behavior. Full builds, tightened child proof and
+frame matrix remain required before closure or registry promotion.
+
+## S15 P3 closure - real offscreen children and NMI integration
+
+All22 scoped existing labels accepted: NonMaskableInterrupt; InitBuffer; OperModeExecutionTree; MoveAllSpritesOffscreen; InitScreen; SetupIntermediate; GetPlayerColors; UpdateTopScore; GameOverMode; SoundEngine; FPGfx; JumpspringHandler; RunNormalEnemies; RunBowserFlame; RunSmallPlatform; RunLargePlatform; DrawFlameLoop; InitPlatformFall; GetEnemyOffscreenBits; FlagpoleRoutine; SetGfxF; BalancePlatform.
+All24 controls accepted: control-00022; control-00025; control-03489; control-03492; control-03516; control-03518; control-04095; control-04099; control-01144; control-01148; control-01671; control-01685; control-01692; control-01700; control-02019; control-02129; control-03684; control-03687; control-03794; control-03804; control-03809; control-03816; control-03865; control-03881.
+Eight reopened mismatches repaired;16 call/return controls restored and8
+previously pending joins proven. Expected/actual fresh0;no deferred scoped
+label or edge. Current exact nodes1984->1992/1992,feasible controls4252->4276/4276
+(raw4342,infeasible66);material557/557 remains partially enumerated.
+Historical1992/1992 stays separate. This closes S15,not final M2 certification.
+T69 remains open for final cross-S evidence consolidation;T70 unadmitted.
+
+ROM logic: Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.
+Pre-fix FlagpoleRoutine proof observed1024 original children but no native
+canonical call,2042 parent-RAM differences and a missing-call failure.
+Six shared files now restore8 real source sites rather than copying scratch.
+The repaired12288 parent cases cover six actor slots,paired balance slots and
+flame double-call. Actual-child observers execute the real C child;no oracle
+child patch and no test substitute in this proof. Original return-site proof
+filters real RTS opcode60 rather than inferring returns from final state.
+
+Operational: 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.
+Idle,start,pause,right,run-jump andSelect frame scripts use explicit reversed
+NES serial input bits and identical cold-title bootstrap;no product change
+was made to accommodate the initial harness mismatches. Previous direct
+screen fixtures clear NMI enable and compare the same ScreenRoutines parent.
+Frame exclusions are explicit and not expanded to hide differences.
+Controlled actor masks tightened to13 stack bytes and the complete matrix
+reran successfully. Eleven legacy isolated stubs now use the canonical
+mutable void interface while retaining order/slot/state assertions.
+
+Similar-issue sweep and six retained convenience queries are documented above.
+No platform/game ownership change,no emulator in product. Runtime semantics
+are shared across DOS16,x86,x64. No interactive DOS claim;original OpenNT
+link exits0 with inherited OLDNAMES.LIB warning. All3 products refreshed
+under standing owner authorization:
+
+- assets/mysmb16.exe: 261367 bytes; SHA256 2f795c10247fb8d0c0d24ab857701ca0bb76ae324d2f01e37b59d66cb43f2bd8.
+- assets/mysmb32.exe: 374811 bytes; SHA256 5bc1bbec450a484228f403a19af304204e344ce1853135c7bfbe1545c9928264.
+- assets/mysmb64.exe: 382348 bytes; SHA256 57004282536a7a355d48160ed005767d76931ca6719e28cf047e71907d44aeb3.
+
+Registry cached node/control/enumerated-material counts reconciled with actual
+rows;no extra row or evidence credit inferred from those cached fields.
+Bounded ignored raw records deleted per batch/case;neutral summaries retained.
+Node/ledger/documentation/diff gates required before local P3 commit,no push.
+Unrelated presentation planning and terrain line-ending changes preserved.

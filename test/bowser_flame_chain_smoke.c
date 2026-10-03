@@ -11,15 +11,13 @@ void mysmb_oam_relative_enemy_position(struct mysmb_game *g,mysmb_u8 slot)
     if (calls++ != 0U || slot!=5U || g->ram[0U]!=expected_force) ++bad;
     g->ram[0U]=5U;g->ram[0x3aeU]=0xfcU;g->ram[0x3b9U]=0x70U;
 }
-mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(const struct mysmb_game *input,mysmb_u8 slot)
+void mysmb_oam_get_enemy_offscreen_bits(struct mysmb_game *input,mysmb_u8 slot)
 {
-    /* The underlying test object is mutable; model the original child's
-     * scratch writes despite this legacy const seam. */
     struct mysmb_game *g;
     g=(struct mysmb_game *)input;
     if (calls++ != 1U || slot!=5U || g->ram[0U]!=0x54U || g->ram[0x3aeU]!=0x14U) ++bad;
     g->ram[0U]=0xa5U;
-    return mask;
+    g->ram[0x3d1U]=mask;
 }
 int main(void)
 {

@@ -507,6 +507,14 @@ add_executable(mysmb_sound_helper_snapshot_check test/sound_helper_snapshot_chec
 target_link_libraries(mysmb_sound_helper_snapshot_check PRIVATE mysmb_game)
 add_executable(mysmb_sound_command_route_check test/sound_command_route_check.c)
 target_link_libraries(mysmb_sound_command_route_check PRIVATE mysmb_game)
+if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
+    target_sources(mysmb_sound_command_route_check PRIVATE
+        test/offscreen_child_observer.c)
+    target_compile_definitions(mysmb_sound_command_route_check PRIVATE
+        MYSMB_TEST_OFFSCREEN_OBSERVER)
+    target_link_options(mysmb_sound_command_route_check PRIVATE
+        "-Wl,--wrap=mysmb_oam_get_enemy_offscreen_bits")
+endif()
 add_executable(mysmb_sound_square1_snapshot_check test/sound_square1_snapshot_check.c)
 target_link_libraries(mysmb_sound_square1_snapshot_check PRIVATE mysmb_game)
 add_executable(mysmb_sound_square1_music_snapshot_check

@@ -51,8 +51,8 @@ CHILD(mysmb_platform_move_right,20U)
 #undef CHILD
 mysmb_u8 mysmb_enemy_proc_firebar(struct mysmb_game *g,mysmb_u8 s)
 { child(g,2U,s);return 0U; }
-mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(const struct mysmb_game *g,mysmb_u8 s)
-{ child((struct mysmb_game *)g,3U,s);return g->ram[0x3d1U]; }
+void mysmb_oam_get_enemy_offscreen_bits(struct mysmb_game *g,mysmb_u8 s)
+{ child(g,3U,s); }
 void mysmb_objects_player_enemy_current(struct mysmb_game *g,mysmb_u8 s,mysmb_u8 preserve)
 { if(preserve!=1U) ++failures;child(g,6U,s); }
 

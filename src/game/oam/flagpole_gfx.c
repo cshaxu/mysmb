@@ -92,7 +92,7 @@ void mysmb_objects_step_flagpole(struct mysmb_game *game)
 {
     static const mysmb_u8 score_modifiers[5] = { 5U, 2U, 8U, 4U, 1U };
     static const mysmb_u8 score_digits[5] = { 3U, 3U, 4U, 4U, 4U };
-    mysmb_u8 bits, carry, score_index;
+    mysmb_u8 carry, score_index;
 
     /* FlagpoleRoutine: LDX #$05 / STX ObjectOffset precedes its ID check. */
     game->ram[MYSMB_FLAG_OBJECT_OFFSET] = 5U;
@@ -119,8 +119,7 @@ void mysmb_objects_step_flagpole(struct mysmb_game *game)
     }
     /* ROM FPGfx writes fixed Enemy_OffscreenBits then calls
      * RelativeEnemyPosition with ObjectOffset=$05. */
-    bits = mysmb_objects_get_enemy_offscreen_bits(game, 5U);
-    game->ram[MYSMB_FLAG_ENEMY_OFFSCREEN] = bits;
+    mysmb_oam_get_enemy_offscreen_bits(game, 5U);
     mysmb_oam_relative_enemy_position(game, 5U);
     mysmb_objects_draw_flagpole_graphics(game);
 }

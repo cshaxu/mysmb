@@ -6,7 +6,7 @@
 /* Shared existing offscreen child seam; source scratch remains child-owned. */
 void mysmb_platform_get_offscreen(struct mysmb_game *game, mysmb_u8 slot)
 {
-    game->ram[0x03d1U] = mysmb_objects_get_enemy_offscreen_bits(game, slot);
+    mysmb_oam_get_enemy_offscreen_bits(game, slot);
 }
 
 /* ROM $C982 LargePlatformSubroutines, valid IDs $24-$2A. */
@@ -34,7 +34,7 @@ void mysmb_platform_movement_dispatch(struct mysmb_game *game, mysmb_u8 slot)
 /* ROM $C94D RunSmallPlatform: drawing precedes movement. */
 void mysmb_enemy_run_small_platform(struct mysmb_game *game, mysmb_u8 slot)
 {
-    game->ram[0x3d1U] = mysmb_objects_get_enemy_offscreen_bits(game, slot);
+    mysmb_oam_get_enemy_offscreen_bits(game, slot);
     mysmb_oam_relative_enemy_position(game, slot);
     mysmb_platform_box_small(game, slot);
     mysmb_platform_collision_small(game, slot);
@@ -47,7 +47,7 @@ void mysmb_enemy_run_small_platform(struct mysmb_game *game, mysmb_u8 slot)
 /* ROM $C965 RunLargePlatform / $C979 SkipPT: movement precedes drawing. */
 void mysmb_enemy_run_large_platform(struct mysmb_game *game, mysmb_u8 slot)
 {
-    game->ram[0x3d1U] = mysmb_objects_get_enemy_offscreen_bits(game, slot);
+    mysmb_oam_get_enemy_offscreen_bits(game, slot);
     mysmb_oam_relative_enemy_position(game, slot);
     mysmb_platform_box_large(game, slot);
     mysmb_platform_collision_large(game, slot);

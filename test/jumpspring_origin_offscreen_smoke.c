@@ -6,12 +6,12 @@
 static unsigned int erasures;
 static unsigned int errors;
 
-mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(
-    const struct mysmb_game *game, mysmb_u8 slot)
+void mysmb_oam_get_enemy_offscreen_bits(
+    struct mysmb_game *game, mysmb_u8 slot)
 {
-    (void)game;
+    game->ram[0x3d1U]=0U;
     (void)slot;
-    return 0U;
+
 }
 
 void mysmb_oam_relative_enemy_position(struct mysmb_game *game, mysmb_u8 slot)

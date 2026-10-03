@@ -15,12 +15,19 @@
 #include "game/status.h"
 #include "game/score.h"
 #include "game/frame_root.h"
+#include "game/enemy/platform.h"
+#include "game/enemy/actor_slots.h"
+#include "game/oam/oam.h"
 #include "game/area.h"
 #include "game/player.h"
 #include "game/terminal_modes.h"
 #include "game/fireball/fireball.h"
 #include <stdio.h>
 #include <string.h>
+#ifdef MYSMB_TEST_OFFSCREEN_OBSERVER
+int mysmb_test_offscreen_open(const char *);
+unsigned int mysmb_test_offscreen_finish(void);
+#endif
 #define RECORD_BYTES 4290U
 int main(int argc,char **argv)
 {
@@ -28,8 +35,15 @@ int main(int argc,char **argv)
     static unsigned char prg[32768],record[RECORD_BYTES];
     static unsigned int ram_failures[2048];
     struct mysmb_area_source source;
+    struct mysmb_input input;
+    struct mysmb_frame frame;
     unsigned char h[16];FILE *f;unsigned int count,n,i,pc,failures=0U;mysmb_u8 a;
+    if(argc!=3&&argc!=4)return 64;
+#ifdef MYSMB_TEST_OFFSCREEN_OBSERVER
+    if(argc==4&&!mysmb_test_offscreen_open(argv[3]))return 65;
+#else
     if(argc!=3)return 64;
+#endif
     f=fopen(argv[2],"rb");if(!f||fread(h,1U,16U,f)!=16U||memcmp(h,"NES\032",4U)||h[4]!=2U||fread(prg,1U,32768U,f)!=32768U)return 65;fclose(f);
     f=fopen(argv[1],"rb");if(!f||fread(h,1U,16U,f)!=16U||memcmp(h,"MSCM\1",5U))return 65;
     count=h[8]|((unsigned int)h[9]<<8U);if(!count||count>1024U)return 66;
@@ -44,6 +58,22 @@ int main(int argc,char **argv)
         game.title_icon_data=prg;game.title_icon_data_size=1U;
         a=record[2];pc=record[0]|((unsigned int)record[1]<<8U);
         switch(pc){
+        case 0xb855U:mysmb_objects_step_flagpole(&game);break;
+        case 0xb8baU:mysmb_objects_step_jumpspring(&game,record[3]);break;
+        case 0xc8e0U:mysmb_objects_step_normal_enemy(&game,record[3]);break;
+        case 0xc935U:mysmb_objects_step_bowser_flames_slot(&game,record[3]);break;
+        case 0xc94dU:mysmb_enemy_run_small_platform(&game,record[3]);break;
+        case 0xc965U:mysmb_enemy_run_large_platform(&game,record[3]);break;
+        case 0xd220U:mysmb_objects_draw_bowser_flame(&game,record[3]);break;
+        case 0xd432U:mysmb_platform_move_balance(&game,record[3]);break;
+        case 0x8567U:
+            mysmb_game_step_screen_routine(&game);break;
+        case 0x8082U:
+            input.buttons=0U;input.buttons2=0U;
+            game.ppu_control_0=game.ram[0x778U];
+            game.oam_dma_primed=1U;
+            mysmb_game_frame_initialize(&frame);
+            mysmb_frame_root_step(&game,&input,&frame);break;
         case 0xe24cU:mysmb_platform_box_small(&game,record[3]);break;
         case 0xc7a0U:mysmb_enemy_init_frenzy(&game,record[3]);break;
         case 0xc71bU:mysmb_enemy_stream_handle_group(&game,record[2]);break;
@@ -123,9 +153,11 @@ int main(int argc,char **argv)
             else if(record[8]==4U&&pc==0xc549U)mysmb_enemy_init_bowser_flame_frenzy(&game,record[10]);
             else return 66;
         }
-        if(pc!=0xf2d0U&&pc!=0xf6f5U&&pc!=0x8f06U&&pc!=0x8f5fU&&pc!=0x8f97U&&pc!=0x90ccU&&pc!=0x9071U&&pc!=0x9061U&&pc!=0x8fe4U&&pc!=0x8fcfU&&pc!=0x90edU&&pc!=0x9131U&&pc!=0x91cdU&&pc!=0x9218U&&pc!=0x8808U&&pc!=0x9508U&&pc!=0xb450U&&pc!=0xb3cfU&&pc!=0xb58fU&&pc!=0xb689U&&pc!=0xb6f9U&&pc!=0xb70bU&&pc!=0xb94bU&&pc!=0xba33U&&pc!=0xb9bcU&&pc!=0xbac3U&&pc!=0xbb96U&&pc!=0xbb38U&&pc!=0xbb51U&&pc!=0xbbfeU&&pc!=0xbc27U&&pc!=0xbc85U&&pc!=0xbcedU&&pc!=0xbe70U&&pc!=0xbed4U&&pc!=0xbf4dU&&pc!=0xbe02U&&pc!=0xbe41U&&pc!=0xc26cU&&pc!=0xc047U&&pc!=0xc0ccU&&pc!=0xc144U&&pc!=0xc385U&&pc!=0xc3a4U&&pc!=0xc459U&&pc!=0xc45cU&&pc!=0xc4a8U&&pc!=0xc9b0U&&pc!=0xc34aU&&pc!=0xc375U&&pc!=0xc7a0U&&pc!=0xc71bU&&pc!=0xc7b8U&&pc!=0xc549U&&pc!=0xe24cU&&a!=record[5]){if(failures<10U)printf("root=%u A ROM=%02x C=%02x\n",n,record[5],a);++failures;}
+        if(!(h[5]>=113U&&h[5]<=120U)&&pc!=0x8567U&&pc!=0x8082U&&pc!=0xf2d0U&&pc!=0xf6f5U&&pc!=0x8f06U&&pc!=0x8f5fU&&pc!=0x8f97U&&pc!=0x90ccU&&pc!=0x9071U&&pc!=0x9061U&&pc!=0x8fe4U&&pc!=0x8fcfU&&pc!=0x90edU&&pc!=0x9131U&&pc!=0x91cdU&&pc!=0x9218U&&pc!=0x8808U&&pc!=0x9508U&&pc!=0xb450U&&pc!=0xb3cfU&&pc!=0xb58fU&&pc!=0xb689U&&pc!=0xb6f9U&&pc!=0xb70bU&&pc!=0xb94bU&&pc!=0xba33U&&pc!=0xb9bcU&&pc!=0xbac3U&&pc!=0xbb96U&&pc!=0xbb38U&&pc!=0xbb51U&&pc!=0xbbfeU&&pc!=0xbc27U&&pc!=0xbc85U&&pc!=0xbcedU&&pc!=0xbe70U&&pc!=0xbed4U&&pc!=0xbf4dU&&pc!=0xbe02U&&pc!=0xbe41U&&pc!=0xc26cU&&pc!=0xc047U&&pc!=0xc0ccU&&pc!=0xc144U&&pc!=0xc385U&&pc!=0xc3a4U&&pc!=0xc459U&&pc!=0xc45cU&&pc!=0xc4a8U&&pc!=0xc9b0U&&pc!=0xc34aU&&pc!=0xc375U&&pc!=0xc7a0U&&pc!=0xc71bU&&pc!=0xc7b8U&&pc!=0xc549U&&pc!=0xe24cU&&a!=record[5]){if(failures<10U)printf("root=%u A ROM=%02x C=%02x\n",n,record[5],a);++failures;}
         for(i=0U;i<2048U;++i){
-            if(h[5]==109U){
+            if(h[5]>=110U&&h[5]<=120U){
+                if(i>=0x1f3U&&i<=0x1ffU)continue;
+            }else if(h[5]==109U){
                 /* Observed minimum SP F9: only actual stack FA-FF excluded. */
                 if(i>=0x1faU&&i<=0x1ffU)continue;
             }else if(pc==0x90ccU||pc==0x9071U||pc==0x9061U||pc==0x8fe4U||pc==0x8fcfU||pc==0x90edU||pc==0x9131U||pc==0x91cdU||pc==0x9218U||pc==0x8808U||pc==0x9508U||pc==0xb450U||pc==0xb3cfU||pc==0xb58fU||pc==0xb689U||pc==0xb6f9U||pc==0xb70bU||pc==0xb94bU||pc==0xba33U||pc==0xb9bcU||pc==0xbac3U||pc==0xbb96U||pc==0xbb38U||pc==0xbb51U||pc==0xbbfeU||pc==0xbc27U||pc==0xbc85U||pc==0xbcedU||pc==0xbe70U||pc==0xbed4U||pc==0xbf4dU||pc==0xbe02U||pc==0xbe41U||pc==0xc26cU||pc==0xc047U||pc==0xc0ccU||pc==0xc144U||pc==0xc385U||pc==0xc3a4U||pc==0xc459U||pc==0xc45cU||pc==0xc4a8U||pc==0xc9b0U||pc==0xc34aU||pc==0xc375U||pc==0xc7a0U||pc==0xc71bU||pc==0xc7b8U||pc==0xc549U||pc==0xe24cU){
@@ -139,6 +171,9 @@ int main(int argc,char **argv)
             if(failures<10U)printf("root=%u write=%u ROM=%u:%02x C=%u:%02x\n",n,i,record[4160U+2U*i],record[4161U+2U*i],game.apu_writes[i].index,game.apu_writes[i].value);++failures;
         }
     }
+#ifdef MYSMB_TEST_OFFSCREEN_OBSERVER
+    failures+=mysmb_test_offscreen_finish();
+#endif
     for(i=0U;i<2048U;++i)if(ram_failures[i])printf("ram-difference-address=%04x count=%u\n",i,ram_failures[i]);
     if(fgetc(f)!=EOF)return 66;fclose(f);printf("roots=%u differences=%u\n",count,failures);return failures?1:0;
 }

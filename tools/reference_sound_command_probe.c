@@ -22,6 +22,8 @@ static unsigned long status_reads[2][65536];
 static unsigned long setup_reads[2][65536];
 static unsigned long material_consumptions[3];
 static unsigned int minimum_stack=0xffu;
+static unsigned char offscreen_record[4098];
+static unsigned int offscreen_return,offscreen_pending,offscreen_calls;
 static int ready(core_machine *m)
 {
     core_run_result r;unsigned int i;
@@ -84,6 +86,56 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
         m->ram[0x7beu]=(unsigned char)(mode==16u?p*17u:(mode==17u?n*17u:n));
         m->ram[0xfdu]=0u;m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;
         m->ram[0xf4u]=0u;m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
+    }else if(mode>=113u&&mode<=120u){
+        unsigned int j,slot=p%6u,peer=(slot+1u)%6u;
+        m->ram[8u]=(unsigned char)slot;m->ram[9u]=(unsigned char)n;
+        m->ram[0xffu]=0u;m->ram[0xfeu]=0u;m->ram[0xfdu]=0u;
+        m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;m->ram[0xf4u]=0u;
+        m->ram[0x747u]=1u;m->ram[0x79fu]=1u;
+        m->ram[0x71au]=2u;m->ram[0x71bu]=3u;
+        m->ram[0x71cu]=(unsigned char)n;m->ram[0x71du]=(unsigned char)(n-1u);
+        m->ram[0x3d0u]=0xffu;m->ram[0x3d1u]=0xffu;
+        m->ram[0x3adu]=(unsigned char)(n+7u);m->ram[0xceu]=0x80u;
+        for(j=0u;j<6u;++j){
+            m->ram[0xfu+j]=1u;m->ram[0x16u+j]=0u;m->ram[0x1eu+j]=0u;
+            m->ram[0x6eu+j]=2u;m->ram[0x87u+j]=(unsigned char)(n+j*17u);
+            m->ram[0xb6u+j]=(unsigned char)((p&1u)?2u:1u);
+            m->ram[0xcfu+j]=(unsigned char)n;
+            m->ram[0x46u+j]=1u;m->ram[0x6e5u+j]=(unsigned char)(0x20u+j*24u);
+            m->ram[0x499u+j]=3u;m->ram[0x3a2u+j]=0xffu;
+            m->ram[0x58u+j]=(unsigned char)n;
+        }
+        if(mode==113u){m->ram[0x1bu]=0x30u;m->ram[0xeu]=0u;}
+        if(mode==114u){m->ram[0x16u+slot]=0x32u;m->ram[0x70eu]=0u;}
+        if(mode==116u||mode==119u)m->ram[0x16u+slot]=0x15u;
+        if(mode==117u)m->ram[0x16u+slot]=0x2bu;
+        if(mode==118u)m->ram[0x16u+slot]=0x25u;
+        if(mode==120u){
+            m->ram[0x16u+slot]=0x24u;m->ram[0x1eu+slot]=(unsigned char)peer;
+            m->ram[0xb6u+slot]=1u;m->ram[0xcfu+slot]=0x20u;
+            m->ram[0x3a2u+slot]=(unsigned char)peer;m->ram[0x46u+slot]=0u;
+        }
+    }else if(mode>=110u&&mode<=112u){
+        unsigned int j;
+        m->ram[0xffu]=0u;m->ram[0xfeu]=0u;m->ram[0xfdu]=0u;
+        m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;m->ram[0xf4u]=0u;
+        m->ram[0x770u]=(unsigned char)(mode==112u?3u:p%4u);
+        m->ram[0x772u]=(unsigned char)(mode==112u?(n>>4u)%3u:1u);
+        m->ram[0x73cu]=(unsigned char)(mode==110u?0u:1u);
+        if(mode==112u)m->ram[0x73cu]=(unsigned char)((n>>6u)&1u);
+        m->ram[0x753u]=(unsigned char)(p%2u);
+        m->ram[0x756u]=(unsigned char)(p%3u);
+        m->ram[0x744u]=(unsigned char)n;
+        m->ram[0x778u]=(unsigned char)(mode==112u?0x90u:0x10u);m->ram[0x779u]=0x1eu;
+        m->ram[0x774u]=1u;m->ram[0x722u]=0u;
+        m->ram[0x776u]=(unsigned char)(mode==112u?((n>>3u)&1u):0u);
+        m->ram[0x773u]=(unsigned char)(mode==112u&&((n&4u)!=0u)?6u:0u);
+        m->ram[0x7b2u]=0u;m->ram[0x7c6u]=0u;m->ram[0xfau]=0u;
+        if(mode==112u){m->ram[0xfcu]=(unsigned char)((n&1u)?1u:0u);m->ram[0xfau]=(unsigned char)((n&2u)?1u:0u);}
+        m->ram[0x77fu]=10u;m->ram[0x7a0u]=20u;
+        for(j=0u;j<7u;++j)m->ram[0x7a7u+j]=(unsigned char)(n+j*13u);
+        for(j=0u;j<64u;++j)m->ram[0x200u+j*4u]=(unsigned char)(n+j);
+        for(j=0u;j<6u;++j){m->ram[0x7d7u+j]=(unsigned char)((n+j)%10u);m->ram[0x7ddu+j]=(unsigned char)((n+j+1u)%10u);m->ram[0x7e3u+j]=(unsigned char)((n+j+2u)%10u);}
     }else if(mode==109u){
         unsigned int kind=p%4u;
         m->ram[0xffu]=0u;m->ram[0xfeu]=0u;m->ram[0xfdu]=0u;
@@ -651,11 +703,12 @@ int main(int argc,char **argv)
     core_driver *d=0;core_driver_options opts={0u,LIB_FALSE};core_run_result result;
     FILE *f;unsigned int mode,first,count,n,i,pc,op,addr,value,writes,steps,entry,index,bucket,attempt,boundary;
     unsigned long key;
+    FILE *offscreen_file=NULL;char offscreen_path[1024];
     time_t start=time(0);
     unsigned char h[16]={'M','S','C','M',1u};
     if(argc!=6)return 64;
     mode=(unsigned int)strtoul(argv[3],0,0);first=(unsigned int)strtoul(argv[4],0,0);count=(unsigned int)strtoul(argv[5],0,0);
-    if(mode>109u||!count||count>1024u||first+count>65536u)return 64;
+    if(mode>120u||!count||count>1024u||first+count>65536u)return 64;
     if(mode==51u&&first+count>768u)return 64;
     if(mode==24u&&(first%256u!=0u||first+count>4096u))return 64;
     if(mode==48u&&(first%1024u!=0u||count!=1024u||first+count>50176u))return 64;
@@ -676,6 +729,13 @@ int main(int argc,char **argv)
     }
     h[5]=(unsigned char)mode;for(i=0;i<4;++i)h[8+i]=(unsigned char)(count>>(i*8u));
     f=fopen(argv[2],"wb");if(!f||fwrite(h,1,16,f)!=16)return 65;
+    if(mode>=113u&&mode<=120u){
+        unsigned char call_header[8]={'M','S','O','C',1u,0u,0u,0u};
+        if(strlen(argv[2])+7u>=sizeof(offscreen_path))return 64;
+        strcpy(offscreen_path,argv[2]);strcat(offscreen_path,".calls");
+        offscreen_file=fopen(offscreen_path,"wb");
+        if(!offscreen_file||fwrite(call_header,1u,8u,offscreen_file)!=8u)return 65;
+    }
     for(n=first;n<first+count;++n){
         *d->machine=baseline;
         if((mode!=24u&&mode!=48u&&mode!=49u)||(mode==24u&&n%256u==0u)||(mode==48u&&n%1024u==0u)||(mode==49u&&n==0u))fixture(d->machine,n,mode);
@@ -751,6 +811,13 @@ int main(int argc,char **argv)
         if(mode==106u)entry=0xc459u;
         if(mode==107u)entry=0xe24cu;
         if(mode==108u)entry=0xc549u;
+        if(mode==110u)entry=0x8567u;
+        if(mode==111u)entry=0x8567u;
+        if(mode==112u)entry=0x8082u;
+        if(mode>=113u&&mode<=120u){
+            static const unsigned short actor_entries[8]={0xb855u,0xb8bau,0xc8e0u,0xc935u,0xc94du,0xc965u,0xd220u,0xd432u};
+            entry=actor_entries[mode-113u];d->machine->x=(unsigned char)((n>>8u)%6u);
+        }
         if(mode>=55u&&mode<=59u){
             static const unsigned short setup_entries[5]={0x90ccu,0x9071u,0x9061u,0x8fe4u,0x8fcfu};
             entry=setup_entries[mode-55u];
@@ -760,17 +827,34 @@ int main(int argc,char **argv)
         if(mode==48u&&boundary)d->machine->y=(unsigned char)(n/1024u+1u);
         d->machine->pc=(unsigned short)entry;d->machine->s=0xfdu;
         d->machine->ram[0x1feu]=0u;d->machine->ram[0x1ffu]=0x80u;
+        if(mode==112u){
+            lib_bool serviced=LIB_FALSE;lib_u32 cycles=0u;unsigned int attempts,k,vector_reads=0u;
+            d->machine->pc=0x8057u;
+            core_machine_set_ppu_nmi_line(d->machine,LIB_TRUE);
+            for(attempts=0u;attempts<2u&&!serviced;++attempts)
+                if(core_machine_service_interrupt(d->machine,&serviced,&cycles)!=LIB_STATUS_OK)return 67;
+            if(!serviced||d->machine->pc!=entry)return 67;
+            for(k=0u;k<d->machine->trace_count;++k){
+                const core_bus_transfer *t=&d->machine->trace[k];
+                if(t->kind==CORE_BUS_TRANSFER_READ&&(t->address==0xfffau||t->address==0xfffbu)){
+                    if(t->value!=prg[t->address-0x8000u])return 67;
+                    ++vector_reads;
+                }
+            }
+            if(vector_reads!=2u)return 67;
+            printf("physical-nmi-vector-root=%u reads=2 target=%04x\n",n,entry);
+        }
         record[0]=(unsigned char)entry;record[1]=(unsigned char)(entry>>8u);
         if(mode==78u)record[7]=(unsigned char)(d->machine->p&1u);
         record[2]=d->machine->a;record[3]=d->machine->x;record[4]=d->machine->y;
         memcpy(record+16,d->machine->ram,2048u);memcpy(record+2064,d->machine->apu.registers,24u);
-        writes=0;
+        writes=0;offscreen_pending=0u;
         if(mode>=87u&&mode<=89u)record[8]=1u;
         if(mode==100u||mode==101u)record[8]=2u;
         if(mode>=104u&&mode<=106u)record[8]=3u;
         if(mode==108u){record[8]=4u;record[10]=(unsigned char)((record[3]+1u)%5u);}
         for(steps=0;steps<524288u;++steps){
-            if(d->machine->pc==(boundary?0xf73au:0x8001u)) {
+            if(d->machine->pc==(mode==112u?0x8057u:(boundary?0xf73au:0x8001u))) {
                 if(mode>=87u&&mode<=89u&&record[9]==0u) {
                     /* Sequential original producer/consumer roots. Keep all
                      * persistent RAM, registers and hardware intact; restore
@@ -795,6 +879,21 @@ int main(int argc,char **argv)
                     d->machine->s=0xfdu;d->machine->ram[0x1feu]=0u;
                     d->machine->ram[0x1ffu]=0x80u;
                 } else break;
+            }
+            if(offscreen_file){
+                if(offscreen_pending&&d->machine->pc==offscreen_return){
+                    memcpy(offscreen_record+2050u,d->machine->ram,2048u);
+                    if(fwrite(offscreen_record,1u,sizeof(offscreen_record),offscreen_file)!=sizeof(offscreen_record))return 65;
+                    ++offscreen_calls;offscreen_pending=0u;
+                }
+                if(d->machine->pc==0xf1afu){
+                    unsigned int sp=d->machine->s;
+                    if(offscreen_pending)return 67;
+                    offscreen_record[0]=d->machine->x;offscreen_record[1]=0u;
+                    memcpy(offscreen_record+2u,d->machine->ram,2048u);
+                    offscreen_return=1u+(d->machine->ram[0x100u+((sp+1u)&255u)]|((unsigned int)d->machine->ram[0x100u+((sp+2u)&255u)]<<8u));
+                    offscreen_pending=1u;
+                }
             }
             pc=d->machine->pc;if(pc<0x8000u){fprintf(stderr,"reference low PC mode=%u root=%u pc=%04x steps=%u stack=%02x nmi=%u pending=%u control=%02x\n",mode,n,pc,steps,d->machine->s,d->machine->nmi_asserted,d->machine->nmi_pending,d->machine->ppu.control);return 67;}op=prg[pc-0x8000u];++visits[pc];
             if(d->machine->s<minimum_stack)minimum_stack=d->machine->s;
@@ -920,7 +1019,7 @@ int main(int argc,char **argv)
                 if(op==0x99u)addr=(addr+d->machine->y)&65535u;
                 value=op==0x8eu?d->machine->x:(op==0x8cu?d->machine->y:d->machine->a);
             }
-            if(addr>=0x4000u&&addr<=0x4017u){
+            if(addr>=0x4000u&&addr<=0x4017u&&!(mode==112u&&(addr==0x4014u||addr==0x4016u))){
                 if(writes>=64u)return 68;
                 record[4160u+writes*2u]=(unsigned char)(addr-0x4000u);
                 record[4161u+writes*2u]=(unsigned char)value;++writes;
@@ -936,7 +1035,7 @@ int main(int argc,char **argv)
             if(attempt==8192u)return 68;
             if(time(0)-start>110)return 69;
         }
-        if(d->machine->pc!=(boundary?0xf73au:0x8001u)){fprintf(stderr,"reference step limit mode=%u root=%u pc=%04x stack=%02x nmi=%u pending=%u control=%02x\n",mode,n,d->machine->pc,d->machine->s,d->machine->nmi_asserted,d->machine->nmi_pending,d->machine->ppu.control);return 67;}
+        if(d->machine->pc!=(mode==112u?0x8057u:(boundary?0xf73au:0x8001u))){fprintf(stderr,"reference step limit mode=%u root=%u pc=%04x stack=%02x nmi=%u pending=%u control=%02x\n",mode,n,d->machine->pc,d->machine->s,d->machine->nmi_asserted,d->machine->nmi_pending,d->machine->ppu.control);return 67;}
         record[5]=d->machine->a;record[6]=(unsigned char)writes;
         memcpy(record+2088,d->machine->ram,2048u);memcpy(record+4136,d->machine->apu.registers,24u);
         if(mode==24u||mode==48u||mode==49u){
@@ -946,6 +1045,7 @@ int main(int argc,char **argv)
         if(fwrite(record,1,sizeof(record),f)!=sizeof(record))return 65;
     }
     fclose(f);
+    if(offscreen_file){fclose(offscreen_file);printf("actual-offscreen-child-calls=%u\n",offscreen_calls);}
     printf("mode=%u roots=%u\n",mode,count);
     for(i=0;i<65536u;++i)if(visits[i])printf("pc=%04x visits=%lu transfers=%lu\n",i,visits[i],transfers[i]);
     for(i=0;i<8192u;++i)if(transition_keys[i]){

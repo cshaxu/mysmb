@@ -520,3 +520,16 @@ Current1992/1992 scoped-exact nodes,4268/4276 feasible controls(raw4342,
 infeasible66),557/557 material partial;historical1992/1992 separate.
 T69 open,S15 next unadmitted;8 controls and final integration remain.
 No all-state/whole-game certification from cumulative scoped results.
+
+## Current checkpoint after T69 S15
+
+[T69 S15](t69-cross-cohort-current-proof.md) repairs8 actual shared offscreen
+caller sites and proves24 controls,including16 reopened relations and8 final
+pending joins.22 existing labels accepted,zero fresh credit. Current exact
+1992/1992 nodes,4276/4276 feasible controls(raw4342,infeasible66),557/557
+material partial enumeration;historical1992/1992 remains separate.
+14592 original controlled roots each width and six600-frame integration
+routes zero scoped diff;248 tests per width,purity,full builds and original
+OpenNT DOS16 link pass;all3 EXEs refreshed. T69 remains open for final cross-S
+consolidation,T70 unadmitted. Scoped exact counters do not certify all states
+or complete material enumeration;final certification retains those duties.

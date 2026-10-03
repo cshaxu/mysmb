@@ -41,8 +41,8 @@ void mysmb_objects_draw_bowser_flame(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[MYSMB_FLAME_ENEMY_REL_X] = (mysmb_u8)(game->ram[MYSMB_FLAME_ENEMY_REL_X]+8U);
     }
     slot = game->ram[8U];
-    bits = mysmb_objects_get_enemy_offscreen_bits(game, slot);
-    game->ram[MYSMB_FLAME_ENEMY_OFFSCREEN] = bits;
+    mysmb_oam_get_enemy_offscreen_bits(game, slot);
+    bits = game->ram[MYSMB_FLAME_ENEMY_OFFSCREEN];
     slot = game->ram[8U];
     offset = game->ram[MYSMB_FLAME_ENEMY_SPRITE + slot];
     if ((bits & 1U) != 0U) game->ram[0x0200U + offset + 12U] = 0xf8U;

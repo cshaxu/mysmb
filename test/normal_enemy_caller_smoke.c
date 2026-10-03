@@ -11,10 +11,10 @@ static void record(struct mysmb_game *game,mysmb_u8 slot,unsigned int event)
     if(slot!=game->ram[8U] || count>=12U) {++bad;return;}
     events[count++]=event;
 }
-mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(const struct mysmb_game *game,mysmb_u8 slot)
+void mysmb_oam_get_enemy_offscreen_bits(struct mysmb_game *game,mysmb_u8 slot)
 {
     if(slot!=game->ram[8U] || game->ram[0x3c5U+slot]!=0U) ++bad;
-    events[count++]=1U;return 0x56U;
+    events[count++]=1U;game->ram[0x3d1U]=0x56U;
 }
 void mysmb_oam_relative_enemy_position(struct mysmb_game *game,mysmb_u8 slot)
 { if(game->ram[0x3d1U]!=0x56U) ++bad;record(game,slot,2U); }

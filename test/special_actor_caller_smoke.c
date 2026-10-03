@@ -19,8 +19,8 @@ void mysmb_enemy_proc_bowser_flame(struct mysmb_game *g,mysmb_u8 s)
 {record(g,s,1U);}
 mysmb_u8 mysmb_enemy_proc_firebar(struct mysmb_game *g,mysmb_u8 s)
 {record(g,s,7U);return injury;}
-mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(const struct mysmb_game *g,mysmb_u8 s)
-{record((struct mysmb_game *)g,s,2U);return 0x93U;}
+void mysmb_oam_get_enemy_offscreen_bits(struct mysmb_game *g,mysmb_u8 s)
+{record(g,s,2U);g->ram[0x3d1U]=0x93U;}
 void mysmb_oam_relative_enemy_position(struct mysmb_game *g,mysmb_u8 s)
 {if(g->ram[0x3d1U]!=0x93U) ++bad;record(g,s,3U);}
 void mysmb_objects_update_enemy_bounding_box(struct mysmb_game *g,mysmb_u8 s)

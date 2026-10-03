@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 555,
+    "enumeratedCount": 557,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -12343,13 +12343,11 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1716,
-    "needs-evidence": 276
+    "exact": 1992
   },
   "controlEdgeCounts": {
-    "exact": 3649,
-    "needs-evidence": 667,
-    "infeasible": 26
+    "exact": 4276,
+    "infeasible": 66
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -12531,11 +12529,13 @@
       "currentOwner": "src/game/frame_root.c",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin / mysmb_frame_root_step",
       "semanticEvidence": [
-        "M2 T52 S1 source re-read: lines 826-872 store the first masked LFSR bit to $00, write the saved $2000 mirror before the OperModeExecutionTree JSR, and OR d7 only at SkipMainOper after return."
+        "M2 T52 S1 source re-read: lines 826-872 store the first masked LFSR bit to $00, write the saved $2000 mirror before the OperModeExecutionTree JSR, and OR d7 only at SkipMainOper after return.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
       ],
       "operationalEvidence": [
         "M2 T52 S1 controlled owner-ROM capture at source $8175, immediately before OperModeExecutionTree, applied one NMI-entry mirror precondition ($0778=$10) and recorded $00=$02, rotated LFSR $a9/$40, and physical $2000=$10. Raw trace remains ignored below build.",
-        "M2 T52 S1 ROM-configured x86/x64 builds passed mysmb.nmi-parent-integration, Win32 self-test and platform-purity. The focused regression proves the scratch write, d7-clear dispatch boundary and d7 restoration at the RTI-equivalent tail; OpenNT DOS16 links the same shared frame_root.c."
+        "M2 T52 S1 ROM-configured x86/x64 builds passed mysmb.nmi-parent-integration, Win32 self-test and platform-purity. The focused regression proves the scratch write, d7-clear dispatch boundary and d7 restoration at the RTI-equivalent tail; OpenNT DOS16 links the same shared frame_root.c.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Preserves the source NMI phase boundary: d7-clear control during pre-dispatch work and main-mode execution, then d7 re-enable only at the RTI tail.",
       "currentSourcePaths": [
@@ -12571,10 +12571,12 @@
       "currentCounterpart": "mysmb_game_commit_vram_buffer and mysmb_frame_root_begin",
       "semanticEvidence": [
         "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
-        "M2 T53 S1 source audit: after UpdateScreen, InitBuffer selects buffer-offset entry zero except selector six, clears both selected offset/header bytes, resets the address selector, and then permits display restore and the NMI service tail. The C VRAM commit has the same selector-six distinction and clear/reset writes; display restoration is the following shared call."
+        "M2 T53 S1 source audit: after UpdateScreen, InitBuffer selects buffer-offset entry zero except selector six, clears both selected offset/header bytes, resets the address selector, and then permits display restore and the NMI service tail. The C VRAM commit has the same selector-six distinction and clear/reset writes; display restoration is the following shared call.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC $80d0 (InitBuffer) was reached in all 600 samples and current x86/x64 records had zero work-RAM, selected NMI-state and visible-output differences. This proves InitBuffer local semantics; it does not clear the earlier ScreenOff order mismatch."
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC $80d0 (InitBuffer) was reached in all 600 samples and current x86/x64 records had zero work-RAM, selected NMI-state and visible-output differences. This proves InitBuffer local semantics; it does not clear the earlier ScreenOff order mismatch.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "After VRAM consumption clears the source-selected header and selector, restores the display mask, then invokes sound, input, pause and top-score work before timer handling.",
       "currentSourcePaths": [
@@ -13018,10 +13020,12 @@
       "currentCounterpart": "mysmb_frame_root_step mode_before selector",
       "semanticEvidence": [
         "Td S9 A5 node-semantics pass: SMB1 lines 954-981 was compared label-by-label with named shared C owners; controlled mode-dispatch and sprite-zero hardware routes remain pending.",
-        "M2 T53 S1 source audit: NonMaskableInterrupt prefix callees commit display/buffer, audio, input, pause, score, timers, LFSR, OAM and scroll but do not write OperMode or OperMode_Task; frame_root.c therefore captures the same selector values that ROM loads at OperModeExecutionTree."
+        "M2 T53 S1 source audit: NonMaskableInterrupt prefix callees commit display/buffer, audio, input, pause, score, timers, LFSR, OAM and scroll but do not write OperMode or OperMode_Task; frame_root.c therefore captures the same selector values that ROM loads at OperModeExecutionTree.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 controlled four-case owner-ROM dispatch route: original JumpEngine reached each of the four inline vector targets and both post-child continuations; current x86/x64 records had zero non-scratch RAM and output differences for all cases. Two paired 600-frame idle/start routes also passed exact work-RAM and output checks."
+        "M2 T53 S1 controlled four-case owner-ROM dispatch route: original JumpEngine reached each of the four inline vector targets and both post-child continuations; current x86/x64 records had zero non-scratch RAM and output differences for all cases. Two paired 600-frame idle/start routes also passed exact work-RAM and output checks.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Loads the source operating mode and dispatches exactly one inline JumpEngine vector: title, game, victory or game-over, returning to the NMI tail.",
       "currentSourcePaths": [
@@ -13037,10 +13041,12 @@
       "currentCounterpart": "mysmb_game_reset OAM clear and mysmb_frame_root_begin sprite-zero path",
       "semanticEvidence": [
         "Td S9 A5 node-semantics pass: SMB1 lines 954-981 was compared label-by-label with named shared C owners; controlled mode-dispatch and sprite-zero hardware routes remain pending.",
-        "M2 T53 S1 source audit: the shared C OAM loop selects the same initial byte offset, writes $f8 to each Y byte, advances by four and terminates only on byte wrap; the nonzero-sprite entry preserves sprite zero."
+        "M2 T53 S1 source audit: the shared C OAM loop selects the same initial byte offset, writes $f8 to each Y byte, advances by four and terminates only on byte wrap; the nonzero-sprite entry preserves sprite zero.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
       ],
       "operationalEvidence": [
-        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical."
+        "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Selects OAM offset $00, uses the shared loop, and writes $f8 to every OAM Y byte including sprite zero.",
       "currentSourcePaths": [
@@ -14249,10 +14255,12 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 0",
       "semanticEvidence": [
         "Td S9 B1 ScreenRoutines static node-semantics pass: SMB1 lines 1386-1432 was compared with the named shared-C owner; controlled original-ROM/x86/x64 task routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "ROM $8555: calls MoveAllSpritesOffscreen and InitializeNameTables, then title mode increments the screen task directly while non-title mode selects VRAM address control $03 before the same task increment.",
       "currentSourcePaths": [
@@ -14268,10 +14276,12 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 1",
       "semanticEvidence": [
         "Td S9 B1 ScreenRoutines static node-semantics pass: SMB1 lines 1386-1432 was compared with the named shared-C owner; controlled original-ROM/x86/x64 task routes remain required.",
-        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches."
+        "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
       ],
       "operationalEvidence": [
-        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility."
+        "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "ROM $8565: saves BackgroundColorCtrl and PlayerStatus, forces standard player colors/black background setup for GetPlayerColors, restores both saved values, then increments the screen task.",
       "currentSourcePaths": [
@@ -14462,13 +14472,15 @@
         "M2 T52 S4 source audit: SMB1 lines 1460-1503 were compared with src/game/game.c case 10 and src/game/area.c mysmb_area_queue_player_palette; the zero branch, controls 4-7 table, task increment, palette selection and ordered Buffer1 stores match the source contracts.",
         "M2 T54 S1 static source-order audit: SMB1 lines 1408-1513 were compared with the named shared-C owner; every scoped table value, branch predicate, read/write, call/fall-through/return order and queued palette protocol matches.",
         "M2 T64 S56 full-scratch caller audit found omitted ClrGetLoop RAM00=$ff; shared area.c now restores the source terminal counter. Prior T54 output-region proof did not compare this scratch byte. Actual $D833 return and original GetPlayerColors loop confirm the correction. docs/history/M2-T64-terrain-collision-current-proof.md",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
       ],
       "operationalEvidence": [
         "M2 T52 S4 controlled ordinary GameMode -> ScreenRoutines task-ten routes: owner-ROM and native x86/x64 records for BackgroundColorCtrl 0,4,5,6,7 match task 11, address control and the $3f10 length-four Buffer1 command; test/verify_screen_palette_route.py checks each bounded route.",
         "M2 T54 S1 controlled original-ROM/current x86/x64 task 0/1/9/10/11 routes: init/intermediate, every AreaType, BackgroundColorCtrl 0/4/5/6/7, Mario/Luigi/fire and alternate-palette branches match in scoped game/output state. Compared work RAM $0300-$07ff excluding the established PPU mirrors $0778/$0779, plus applicable CIRAM, palette, OAM and PPU scalars; x86/x64 agree. Task-11 records stop at its boundary; the following task-12 output is T54 S3 responsibility.",
         "M2 T64 S56 before repair x86/x64 each have 96 RAM00 differences; after repair each matches 1536 actual pickup roots across 1841 bytes, including every scratch byte and 49 lower-stack game aliases. Ten operational regressions per width and original OpenNT DOS16 pass; three EXEs refreshed. docs/history/M2-T64-terrain-collision-current-proof.md",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "ROM $85F1 GetPlayerColors selects Mario/Luigi/fiery bytes and BackgroundColorCtrl-or-AreaType, preserves the four-color counter terminal RAM00=$ff, writes the $3f10 length-four Buffer1 packet and advances its offset by seven within the admitted table/buffer domain.",
       "currentSourcePaths": [
@@ -17008,10 +17020,12 @@
       "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
       "semanticEvidence": [
         "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Frame root forwards shared status owner;actual C TopScoreCheck child checks Mario first then Luigi with offsets0/6 as original X5/11."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Frame root forwards shared status owner;actual C TopScoreCheck child checks Mario first then Luigi with offsets0/6 as original X5/11.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
       ],
       "operationalEvidence": [
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Frame root forwards shared status owner;actual C TopScoreCheck child checks Mario first then Luigi with offsets0/6 as original X5/11.",
       "currentSourcePaths": [
@@ -17920,10 +17934,12 @@
       "currentCounterpart": "terminal_modes.c original life/game-over/transpose owners;game.c no-op leaves and real dispatch state",
       "semanticEvidence": [
         "Td S9 B10b terminal-mode static node-and-edge audit: SMB1 lines 2921-3049 was compared with terminal_modes.c and its shared area/frame owners; controlled original-ROM/x86/x64 death, restart, game-over and two-player routes remain required.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Actual source task0-2 dispatch to setup/screen/run;shared JumpEngine state stores source return921D and bound table target04-07;native C branches execute fixed owners."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 original source/call/read/write/table/ABI audit: Actual source task0-2 dispatch to setup/screen/run;shared JumpEngine state stores source return921D and bound table target04-07;native C branches execute fixed owners.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
       ],
       "operationalEvidence": [
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S5 P4 final82176 original returning roots each width zero diff;17 labels/16 table bytes/27 feasible controls observed;4 tests each/purity/current builds/OpenNT link.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Actual source task0-2 dispatch to setup/screen/run;shared JumpEngine state stores source return921D and bound table target04-07;native C branches execute fixed owners.",
       "currentSourcePaths": [
@@ -26456,10 +26472,12 @@
       "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_step_flagpole",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4."
+        "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
       ],
       "operationalEvidence": [
-        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Preserves slot-five setup, slide/climb gates, carry-sensitive flag/floatey motion, score handoff and graphics order.",
       "currentSourcePaths": [
@@ -26508,16 +26526,18 @@
       "label": "FPGfx",
       "asmLine": 6643,
       "cohort": "G",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "shared flagpole/OAM core",
       "currentCounterpart": "src/game/oam/flagpole_gfx.c:mysmb_objects_step_flagpole",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
       ],
       "operationalEvidence": [
-        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Computes flag offscreen bits, relative position and flag graphics in source order.",
       "currentSourcePaths": [
@@ -26566,16 +26586,18 @@
       "label": "JumpspringHandler",
       "asmLine": 6653,
       "cohort": "G",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
       "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring owner",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
       ],
       "operationalEvidence": [
-        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Preserves timer/animation gates, frame direction, A-edge force override, bounce handoff and animation cadence.",
       "currentSourcePaths": [
@@ -32593,16 +32615,18 @@
       "label": "RunNormalEnemies",
       "asmLine": 9092,
       "cohort": "I",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
       "currentCounterpart": "shared enemy object dispatcher/caller path",
       "semanticEvidence": [
         "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
       ],
       "operationalEvidence": [
-        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Clears sprite attributes, then executes offscreen, relative position, graphics, box, terrain, enemy collision, player collision, timer-gated movement and terminal bounds in source order.",
       "currentSourcePaths": [
@@ -32675,16 +32699,18 @@
       "label": "RunBowserFlame",
       "asmLine": 9140,
       "cohort": "I",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
       "currentCounterpart": "shared enemy object dispatcher/caller path",
       "semanticEvidence": [
         "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
       ],
       "operationalEvidence": [
-        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Runs Bowser flame processing before offscreen, relative position, box, player collision and terminal bounds in source order.",
       "currentSourcePaths": [
@@ -32716,18 +32742,20 @@
       "label": "RunSmallPlatform",
       "asmLine": 9156,
       "cohort": "J",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_callers.c",
       "currentCounterpart": "shared platform runner and movement dispatcher",
       "semanticEvidence": [
         "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing.",
         "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
       ],
       "operationalEvidence": [
         "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass.",
-        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Executes offscreen, relative position, small box, small collision, relative position, drawing, small-platform movement and terminal bounds in source order.",
       "currentSourcePaths": [
@@ -32738,18 +32766,20 @@
       "label": "RunLargePlatform",
       "asmLine": 9168,
       "cohort": "J",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "src/game/enemy/platform_callers.c",
       "currentCounterpart": "shared platform runner and movement dispatcher",
       "semanticEvidence": [
         "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing.",
         "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
       ],
       "operationalEvidence": [
         "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass.",
-        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Executes offscreen, relative position, large box, large collision, timer-gated movement dispatch, relative position, drawing and terminal bounds in source order.",
       "currentSourcePaths": [
@@ -35825,10 +35855,12 @@
       "currentCounterpart": "src/game/oam/bowser_flame_gfx.c:mysmb_objects_draw_bowser_flame",
       "semanticEvidence": [
         "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S20 static original-ROM audit: SMB1 $D204-$D244 against shared oam/bowser_flame_gfx.c confirms relative child ordering, normal-state exit, animation bit, three-OAM loop and ordered offscreen-bit hides."
+        "M2 T63 S20 static original-ROM audit: SMB1 $D204-$D244 against shared oam/bowser_flame_gfx.c confirms relative child ordering, normal-state exit, animation bit, three-OAM loop and ordered offscreen-bit hides.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
       ],
       "operationalEvidence": [
-        "M2 T63 S20 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded RelativeEnemyPosition/GetEnemyOffscreenBits calls, zero differences; platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S20 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded RelativeEnemyPosition/GetEnemyOffscreenBits calls, zero differences; platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Computes relative enemy position before the normal-state gate; normal state sets tile $51 and selects attribute $02/$82 from FrameCounter bit one.",
       "currentSourcePaths": [
@@ -35858,16 +35890,18 @@
       "label": "DrawFlameLoop",
       "asmLine": 10388,
       "cohort": "J",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "shared game core: oam/bowser_flame_gfx.c",
       "currentCounterpart": "src/game/oam/bowser_flame_gfx.c:mysmb_objects_draw_bowser_flame",
       "semanticEvidence": [
         "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S20 static original-ROM audit: SMB1 $D204-$D244 against shared oam/bowser_flame_gfx.c confirms relative child ordering, normal-state exit, animation bit, three-OAM loop and ordered offscreen-bit hides.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
       ],
       "operationalEvidence": [
-        "M2 T63 S20 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded RelativeEnemyPosition/GetEnemyOffscreenBits calls, zero differences; platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S20 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded RelativeEnemyPosition/GetEnemyOffscreenBits calls, zero differences; platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Writes Y,tile,attribute,X in that order for three sprites, increments tile and relative X by eight each iteration, restores ObjectOffset, then obtains offscreen bits.",
       "currentSourcePaths": [
@@ -36548,10 +36582,12 @@
       "currentCounterpart": "src/game/enemy/balance_platform.c:mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16a balance-platform entry node-semantics and independent integration audit: SMB1 lines 10692-10731 compared with shared enemy/balance_platform.c and named lifecycle/platform children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Erases only when Y high equals three; otherwise enters balance handling.",
       "currentSourcePaths": [
@@ -36961,16 +36997,18 @@
       "label": "InitPlatformFall",
       "asmLine": 10885,
       "cohort": "J",
-      "status": "mismatch",
+      "status": "exact",
       "currentOwner": "shared game core: enemy/balance_platform.c",
       "currentCounterpart": "src/game/enemy/balance_platform.c rope/fall helpers and mysmb_platform_move_balance",
       "semanticEvidence": [
         "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Uses peer offscreen bits and floatey setup, copies player relative/X-Y values, marks falling direction then stops both platforms.",
       "currentSourcePaths": [
@@ -46387,13 +46425,15 @@
         "M2 T66 S3 P2 original F180-F1E3 offscreen composition source audit: six wrappers retain byte source displacement/fixed destination, enemy/block incoming-slot scratch, real X before Y helper, nibble shifts and OR/store order. Source actual transfers and native per-node counterparts checked separately; unused CPU registers and true stack excluded. docs/history/M2-T66-player-relative-offscreen-current-proof.md Selects enemy array displacement and enemy offscreen destination before common calculation.",
         "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
         "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
       ],
       "operationalEvidence": [
         "M2 T66 S3 P2 current x86/x64 match393216 original six-family roots across1841 RAM bytes including0109-0139, zero differences, real dependencies without mocks; all11 nodes/18 controls observed, each of3 proper-offset table entries read65536 times. Focused14/14 tests each, purity and original DOS16 link pass; no product code changes, S2 products retained. docs/history/M2-T66-player-relative-offscreen-current-proof.md Original entry/tablef1af, observations65536.",
         "docs/proposals/m2/t69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
         "docs/proposals/m2/t69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Selects enemy array displacement and enemy offscreen destination before common calculation.",
       "currentSourcePaths": [
@@ -46848,10 +46888,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_step",
       "semanticEvidence": [
         "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Title OperMode=0 writes only master disable, returns without clearing queues or touching DAC; non-title enters normal/pause control."
+        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 per-node original ASM15070-15190/current source audit: Title OperMode=0 writes only master disable, returns without clearing queues or touching DAC; non-title enters normal/pause control.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass."
+        "docs/history/M2-T67-sound-command-current-proof.md S1 P2 unchanged original15,360 roots, real source transfers/returns, full1841 RAM/24 APU and ordered commands zero differences x86/x64; seven focused tests each/original DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Title OperMode=0 writes only master disable, returns without clearing queues or touching DAC; non-title enters normal/pause control.",
       "currentSourcePaths": [
@@ -51177,12 +51219,15 @@
       "instruction": "jsr",
       "id": "control-00022",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin ordered shared calls",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-00022\", \"kind\": \"call\", \"observed\": {\"80e4-f2d0\": 256}, \"site\": \"80e4\", \"source\": \"InitBuffer\", \"target\": \"SoundEngine\"}"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Original call relation InitBuffer -> SoundEngine at source line 803 (jsr) must preserve the call/return sequence from completed buffer setup through sound, joypad, pause and top-score work.",
       "currentSourcePaths": [
         "src/game/audio.c",
@@ -51241,12 +51286,15 @@
       "instruction": "jsr",
       "id": "control-00025",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin ordered shared calls",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-00025\", \"kind\": \"call\", \"observed\": {\"80ed-8f97\": 256}, \"site\": \"80ed\", \"source\": \"InitBuffer\", \"target\": \"UpdateTopScore\"}"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Original call relation InitBuffer -> UpdateTopScore at source line 806 (jsr) must preserve the call/return sequence from completed buffer setup through sound, joypad, pause and top-score work.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -75707,15 +75755,17 @@
       "instruction": "jsr",
       "id": "control-01144",
       "cohort": "G",
-      "status": "mismatch",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/flagpole_gfx.c shared branch/call/return and OAM ordering counterpart",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-01144\", \"kind\": \"call\", \"observed\": {\"b8ac-f1af\": 1536}, \"site\": \"b8ac\", \"source\": \"FPGfx\", \"target\": \"GetEnemyOffscreenBits\"}"
       ],
       "operationalEvidence": [
-        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Preserves original call relation FPGfx -> GetEnemyOffscreenBits with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
@@ -75796,15 +75846,17 @@
       "instruction": "jsr",
       "id": "control-01148",
       "cohort": "G",
-      "status": "mismatch",
+      "status": "exact",
       "currentCounterpart": "shared timer/warp/whirlpool/flagpole/jumpspring call, branch, return and ordering counterpart",
       "semanticEvidence": [
         "Td S9 B13b timer, warp, whirlpool, flagpole and jumpspring node-semantics and independent integration audit: SMB1 lines 6461-6714 compared with shared game owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-01148\", \"kind\": \"call\", \"observed\": {\"b8ba-f1af\": 1536}, \"site\": \"b8ba\", \"source\": \"JumpspringHandler\", \"target\": \"GetEnemyOffscreenBits\"}"
       ],
       "operationalEvidence": [
-        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Preserves original call relation JumpspringHandler -> GetEnemyOffscreenBits with its source predicate, ordering and state handoff.",
       "currentSourcePaths": [
@@ -87524,15 +87576,17 @@
       "instruction": "jsr",
       "id": "control-01671",
       "cohort": "I",
-      "status": "mismatch",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
         "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-01671\", \"kind\": \"call\", \"observed\": {\"c8e5-f1af\": 1536}, \"site\": \"c8e5\", \"source\": \"RunNormalEnemies\", \"target\": \"GetEnemyOffscreenBits\"}"
       ],
       "operationalEvidence": [
-        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Preserves original call relation RunNormalEnemies -> GetEnemyOffscreenBits with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
@@ -87885,15 +87939,17 @@
       "instruction": "jsr",
       "id": "control-01685",
       "cohort": "I",
-      "status": "mismatch",
+      "status": "exact",
       "currentCounterpart": "shared enemy object dispatch, child-call, branch, tail-jump and return counterpart",
       "semanticEvidence": [
         "Td S9 B15a enemy-object dispatcher node-semantics and independent integration audit: SMB1 lines 9025-9155 compared with shared enemy/core.c, normal.c, dispatch_targets.c and special_callers.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-01685\", \"kind\": \"call\", \"observed\": {\"c938-f1af\": 1536}, \"site\": \"c938\", \"source\": \"RunBowserFlame\", \"target\": \"GetEnemyOffscreenBits\"}"
       ],
       "operationalEvidence": [
-        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Preserves original call relation RunBowserFlame -> GetEnemyOffscreenBits with object selector, slot and source call/return ordering.",
       "currentSourcePaths": [
@@ -88043,15 +88099,17 @@
       "instruction": "jsr",
       "id": "control-01692",
       "cohort": "J",
-      "status": "mismatch",
+      "status": "exact",
       "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
         "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-01692\", \"kind\": \"call\", \"observed\": {\"c94d-f1af\": 1536}, \"site\": \"c94d\", \"source\": \"RunSmallPlatform\", \"target\": \"GetEnemyOffscreenBits\"}"
       ],
       "operationalEvidence": [
-        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Preserves original call relation RunSmallPlatform -> GetEnemyOffscreenBits with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
@@ -88224,15 +88282,17 @@
       "instruction": "jsr",
       "id": "control-01700",
       "cohort": "J",
-      "status": "mismatch",
+      "status": "exact",
       "currentCounterpart": "shared platform runner, timer branch, dispatch, tail-jump and return counterpart",
       "semanticEvidence": [
         "Td S9 B15b platform runner node-semantics and independent integration audit: SMB1 lines 9156-9197 compared with shared enemy/platform_callers.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S2 static original-ROM audit: SMB1 lines 9156-9194 and current src/game/enemy/platform_callers.c preserve both caller orders, TimerControl skip, Enemy_ID-$24 seven-entry JumpEngine vector, duplicated lift target and scratch/return sequencing.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-01700\", \"kind\": \"call\", \"observed\": {\"c965-f1af\": 1536}, \"site\": \"c965\", \"source\": \"RunLargePlatform\", \"target\": \"GetEnemyOffscreenBits\"}"
       ],
       "operationalEvidence": [
-        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S2 current-source original-ROM caller replay: 36 platform fixtures per x86 and x64 (72 comparisons) match across large/small IDs, slots, timer branch and child-mutated state; focused 3,240 caller footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Preserves original call relation RunLargePlatform -> GetEnemyOffscreenBits with current slot, timer predicate, platform state and call/return order.",
       "currentSourcePaths": [
@@ -95400,15 +95460,17 @@
       "instruction": "jsr",
       "id": "control-02019",
       "cohort": "J",
-      "status": "mismatch",
+      "status": "exact",
       "currentCounterpart": "shared oam/bowser_flame_gfx.c draw loop/offscreen tail with named OAM child",
       "semanticEvidence": [
         "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S20 static original-ROM audit: SMB1 $D204-$D244 against shared oam/bowser_flame_gfx.c confirms relative child ordering, normal-state exit, animation bit, three-OAM loop and ordered offscreen-bit hides.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-02019\", \"kind\": \"call\", \"observed\": {\"d265-f1af\": 3072}, \"site\": \"d265\", \"source\": \"DrawFlameLoop\", \"target\": \"GetEnemyOffscreenBits\"}"
       ],
       "operationalEvidence": [
-        "M2 T63 S20 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded RelativeEnemyPosition/GetEnemyOffscreenBits calls, zero differences; platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S20 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded RelativeEnemyPosition/GetEnemyOffscreenBits calls, zero differences; platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Preserves original call relation DrawFlameLoop -> GetEnemyOffscreenBits with state/frame/offscreen predicate, OAM offset handoff and loop/call/return ordering.",
       "currentSourcePaths": [
@@ -97838,15 +97900,17 @@
       "instruction": "jsr",
       "id": "control-02129",
       "cohort": "J",
-      "status": "mismatch",
+      "status": "exact",
       "currentCounterpart": "shared enemy/balance_platform.c rope command/fall helper sequence",
       "semanticEvidence": [
         "Td S9 B16c balance-platform rope/fall node-semantics and independent integration audit: SMB1 lines 10771-10917 compared with shared enemy/balance_platform.c and named OAM/movement/score children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-02129\", \"kind\": \"call\", \"observed\": {\"d59a-f1af\": 1536}, \"site\": \"d59a\", \"source\": \"InitPlatformFall\", \"target\": \"GetEnemyOffscreenBits\"}"
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Preserves original call relation InitPlatformFall -> GetEnemyOffscreenBits with paired slot/speed/VRAM predicate, address/state handoff and call, tail or return ordering.",
       "currentSourcePaths": [
@@ -128551,12 +128615,15 @@
       "instruction": "rts/rti",
       "id": "control-03489",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/audio.c mysmb_audio_step main/pause/dispatch control flow",
       "semanticEvidence": [
-        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required."
+        "Td S9 K24 SoundEngine main/pause/dispatch node-semantics and independent control-edge audit: SMB1 lines 15070-15151 compared with shared src/game/audio.c mysmb_audio_step; controlled original-ROM/x86/x64 title, paused, unpause, normal SFX/music and DAC-boundary routes remain required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-03489\", \"kind\": \"return\", \"observedActualRTS\": {\"f380-80e7\": 256}, \"site\": \"80e4\", \"source\": \"SoundEngine\", \"target\": \"InitBuffer\"}"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+      ],
       "semanticContract": "The source return relation SoundEngine \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 InitBuffer exposes the completed audio/APU state to its caller continuation.",
       "currentSourcePaths": [
         "src/game/audio.c",
@@ -128615,12 +128682,15 @@
       "instruction": "rts/rti",
       "id": "control-03492",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin ordered shared calls",
       "semanticEvidence": [
-        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending."
+        "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-03492\", \"kind\": \"return\", \"observedActualRTS\": {\"8fbb-80f0\": 256}, \"site\": \"80ed\", \"source\": \"UpdateTopScore\", \"target\": \"InitBuffer\"}"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Original return relation UpdateTopScore -> InitBuffer at source line 806 (rts/rti) must preserve the call/return sequence from completed buffer setup through sound, joypad, pause and top-score work.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -129156,12 +129226,15 @@
       "instruction": "rts/rti",
       "id": "control-03516",
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 0 all-sprite helper completion",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-03516\", \"kind\": \"return\", \"observedActualRTS\": {\"8230-858e\": 1040}, \"site\": \"858b\", \"source\": \"MoveAllSpritesOffscreen\", \"target\": \"InitScreen\"}"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Original MoveAllSpritesOffscreen -> InitScreen returns before InitializeNameTables.",
       "currentSourcePaths": [
         "src/game/boot.c",
@@ -129199,12 +129272,15 @@
       "instruction": "rts/rti",
       "id": "control-03518",
       "cohort": "B",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_step_screen_routine case 1 palette helper completion",
       "semanticEvidence": [
-        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required."
+        "Td S9 B1 ScreenRoutines independent integration static pass: source endpoint, selector/predicate/order and named shared-C counterpart were reviewed; controlled route evidence remains required.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-03518\", \"kind\": \"return\", \"observedActualRTS\": {\"8642-85b0\": 1048}, \"site\": \"85ad\", \"source\": \"GetPlayerColors\", \"target\": \"SetupIntermediate\"}"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Original GetPlayerColors -> SetupIntermediate returns before restored PlayerStatus/BackgroundColorCtrl and task increment.",
       "currentSourcePaths": [
         "src/game/area.c",
@@ -132918,15 +132994,17 @@
       "instruction": "rts/rti",
       "id": "control-03684",
       "cohort": "G",
-      "status": "mismatch",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/flagpole_gfx.c shared branch/call/return and OAM ordering counterpart",
       "semanticEvidence": [
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
         "M2 T60 S6 static SMB1 $B84B-$B8B9 comparison: slot-five identity, task/state/height predicates, carry-sensitive flag/floatey motion, both score tables, score handoff and the GetEnemyOffscreenBits -> RelativeEnemyPosition -> FlagpoleGfxHandler order match src/game/oam/flagpole_gfx.c. The preceding HandleClimbing writer constrains FlagpoleScore to the five legal indices 0-4.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-03684\", \"kind\": \"return\", \"observedActualRTS\": {\"f1d6-b8af\": 1536}, \"site\": \"b8ac\", \"source\": \"GetEnemyOffscreenBits\", \"target\": \"FPGfx\"}"
       ],
       "operationalEvidence": [
-        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes."
+        "M2 T60 S6: two controlled ordinary-NMI original-ROM flagpole routes (four frames each) match current x86 and x64 across 1,782 persistent bytes and complete output, with byte-identical native widths; focused flagpole score/OAM smokes pass on both widths, shared OpenNT DOS16 links, and platform-purity passes.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "The source return relation GetEnemyOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 FPGfx exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
@@ -132985,15 +133063,17 @@
       "instruction": "rts/rti",
       "id": "control-03687",
       "cohort": "G",
-      "status": "mismatch",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
         "M2 T60 S7 static SMB1 $B8B6-$B91D comparison plus fresh controlled original-ROM/current x86/x64 jumpspring routes: all table, branch, RAM-write and ordered-child-boundary contracts match.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-03687\", \"kind\": \"return\", \"observedActualRTS\": {\"f1d6-b8bd\": 1536}, \"site\": \"b8ba\", \"source\": \"GetEnemyOffscreenBits\", \"target\": \"JumpspringHandler\"}"
       ],
       "operationalEvidence": [
-        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes."
+        "M2 T60 S7: 32 fresh original-ROM paths cover both outcomes of all nine branches; 64 x86/x64 fresh current-C caller-boundary checks match 1,791 persistent bytes. Focused chain, origin-offscreen and OAM smokes pass; shared DOS16 links and platform-purity passes.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "The source return relation GetEnemyOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 JumpspringHandler exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
@@ -135398,15 +135478,17 @@
       "instruction": "rts/rti",
       "id": "control-03794",
       "cohort": "I",
-      "status": "mismatch",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
         "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-03794\", \"kind\": \"return\", \"observedActualRTS\": {\"f1d6-c8e8\": 1536}, \"site\": \"c8e5\", \"source\": \"GetEnemyOffscreenBits\", \"target\": \"RunNormalEnemies\"}"
       ],
       "operationalEvidence": [
-        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "The source return relation GetEnemyOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunNormalEnemies exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
@@ -135661,15 +135743,17 @@
       "instruction": "rts/rti",
       "id": "control-03804",
       "cohort": "I",
-      "status": "mismatch",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
         "M2 T62 S9 static original-ROM audit: SMB1 $C546-$C5B4 against shared enemy/core.c, normal.c and dispatch_targets.c preserves actor/movement vector tables, source call/return order, timer branch, retainer tail and Bowser-flame path.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-03804\", \"kind\": \"return\", \"observedActualRTS\": {\"f1d6-c93b\": 1536}, \"site\": \"c938\", \"source\": \"GetEnemyOffscreenBits\", \"target\": \"RunBowserFlame\"}"
       ],
       "operationalEvidence": [
-        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width."
+        "M2 T62 S9 all-current-source original-ROM/current x86/x64 replay matches 192 actor/normal fixtures with direct-entry $00-$07 CPU-stack and temporary-workspace ABI excluded; minimal-owner C90 dispatcher, normal caller and retainer contracts pass per width.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "The source return relation GetEnemyOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunBowserFlame exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
@@ -135774,15 +135858,17 @@
       "instruction": "rts/rti",
       "id": "control-03809",
       "cohort": "J",
-      "status": "mismatch",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/platform_callers.c native GetEnemyOffscreenBits return to RunSmallPlatform sequence with immutable slot argument",
       "semanticEvidence": [
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
         "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-03809\", \"kind\": \"return\", \"observedActualRTS\": {\"f1d6-c950\": 1536}, \"site\": \"c94d\", \"source\": \"GetEnemyOffscreenBits\", \"target\": \"RunSmallPlatform\"}"
       ],
       "operationalEvidence": [
-        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "The source return relation GetEnemyOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunSmallPlatform exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
@@ -135932,15 +136018,17 @@
       "instruction": "rts/rti",
       "id": "control-03816",
       "cohort": "J",
-      "status": "mismatch",
+      "status": "exact",
       "currentCounterpart": "src/game/enemy/platform_callers.c native GetEnemyOffscreenBits return to RunLargePlatform sequence with immutable slot argument",
       "semanticEvidence": [
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
         "M2 T64 S38: actual ROM RunSmallPlatform $C94D, RunLargePlatform $C965 and SkipPT $C979 call order matches shared platform_callers.c. Twelve descendant RTS seams each observed 256 times with the original ObjectOffset restored; box-offset producer $DC5F returns Y=slot*4+4 and A=unindexed $03D1 low nibble, consumed unchanged at PlayerCollisionCore $E325. See docs/history/M2-T64-terrain-collision-current-proof.md",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-03816\", \"kind\": \"return\", \"observedActualRTS\": {\"f1d6-c968\": 1536}, \"site\": \"c965\", \"source\": \"GetEnemyOffscreenBits\", \"target\": \"RunLargePlatform\"}"
       ],
       "operationalEvidence": [
-        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md"
+        "M2 T64 S38: neutral platform integration probe/checker, 512 actual ROM root fixtures versus current x86 and x64, each zero differences across all 1784 persistent RAM bytes including OAM; scratch $00-$07 and stack excluded as declared CPU ABI, original return-slot and box/mask seams checked explicitly. Six slots, page boundaries, timer paths, two small/seven large IDs; caller/collision/purity tests and original OpenNT DOS16 link pass. See docs/history/M2-T64-terrain-collision-current-proof.md",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "The source return relation GetEnemyOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 RunLargePlatform exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
@@ -137067,15 +137155,17 @@
       "instruction": "rts/rti",
       "id": "control-03865",
       "cohort": "J",
-      "status": "mismatch",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/bowser_flame_gfx.c:mysmb_objects_draw_bowser_flame with real shared relative/offscreen return outputs and source mask consumers.",
       "semanticEvidence": [
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
         "M2 T64 S50 static $D1EB-$D294 and real return-consumer audit: GetEnemyOffscreenBits returns at $D268 with X=ObjectOffset and A=$03D1; DrawFlameLoop reloads OAM offset then shifts the full mask to hide residual fourth, third, second and first sprites in source order.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-03865\", \"kind\": \"return\", \"observedActualRTS\": {\"f1d6-d268\": 3072}, \"site\": \"d265\", \"source\": \"GetEnemyOffscreenBits\", \"target\": \"DrawFlameLoop\"}"
       ],
       "operationalEvidence": [
-        "M2 T64 S50 current x86/x64 each match 1536 actual full/draw-only flame roots with zero differences across 1833 bytes; relative/offscreen returns 1536/768, state exits 768, eight horizontal masks and all four bit clear/set paths; C90 flame/OAM/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md"
+        "M2 T64 S50 current x86/x64 each match 1536 actual full/draw-only flame roots with zero differences across 1833 bytes; relative/offscreen returns 1536/768, state exits 768, eight horizontal masks and all four bit clear/set paths; C90 flame/OAM/purity and original OpenNT DOS16 pass. docs/history/M2-T64-terrain-collision-current-proof.md",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "GetEnemyOffscreenBits returns at $D268 with X=ObjectOffset and A=$03D1; DrawFlameLoop reloads OAM offset then shifts the full mask to hide residual fourth, third, second and first sprites in source order.",
       "currentSourcePaths": [
@@ -137431,15 +137521,17 @@
       "instruction": "rts/rti",
       "id": "control-03881",
       "cohort": "J",
-      "status": "mismatch",
+      "status": "exact",
       "currentCounterpart": "src/game/oam/object_position.c offscreen wrapper and common-combination control flow",
       "semanticEvidence": [
         "Td S9 K21 offscreen-bit entry and combination node-semantics and independent control-edge audit: SMB1 lines 14846-14918 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, fireball, bubble, misc, enemy and block offscreen routes remain required.",
         "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
-        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge."
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P2 static finding: actual original child call/return replaced by const value-only query,which cannot perform00/04/06/07 writes. Historical bounded route equality does not prove this call edge.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-03881\", \"kind\": \"return\", \"observedActualRTS\": {\"f1d6-d59d\": 1536}, \"site\": \"d59a\", \"source\": \"GetEnemyOffscreenBits\", \"target\": \"InitPlatformFall\"}"
       ],
       "operationalEvidence": [
-        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics."
+        "M2 T63 S26 static $D432-$D5D2 audit plus 1,024 original-ROM/current x86/x64 batch records, focused C90, platform purity and DOS16 link: exact paired movement, rope command, fall and player-position semantics.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "The source return relation GetEnemyOffscreenBits \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 InitPlatformFall exposes the completed offscreen byte and restored caller ObjectOffset.",
       "currentSourcePaths": [
@@ -142360,12 +142452,15 @@
       "instruction": "vector",
       "id": "control-04095",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "ROM vector table -> src/game/frame_root.c:mysmb_frame_root_begin / mysmb_frame_root_step",
       "semanticEvidence": [
-        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family."
+        "Td S9 K63 residual control-edge integration audit: every remaining extracted unclassified control edge was independently paired from its original source instruction/return/vector or JumpEngine selector with the already-audited shared-C endpoint owners; controlled original-ROM/x86/x64 routes remain required for each route family.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"actualVectorRoots\": 256, \"id\": \"control-04095\", \"kind\": \"vector\", \"site\": \"fffa/fffb\", \"source\": \"<vector>\", \"target\": \"NonMaskableInterrupt\"}"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Preserves the original interrupt-vector entry <vector> \u00c3\u00a2\u00e2\u20ac\u00a0\u00e2\u20ac\u2122 NonMaskableInterrupt, including the NMI frame-root entry convention.",
       "currentSourcePaths": [
         "src/game/frame_root.c"
@@ -142450,12 +142545,15 @@
       "selector": 3,
       "id": "control-04099",
       "cohort": "A",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_step mode selector",
       "semanticEvidence": [
-        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending."
+        "Td S9 A5 integration static pass: source control identity and named shared-C counterpart reviewed; controlled route evidence remains pending.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-04099\", \"kind\": \"jump-engine-dispatch\", \"observed\": {\"8e16-9218\": 128}, \"site\": \"8215\", \"source\": \"OperModeExecutionTree\", \"target\": \"GameOverMode\", \"vectorPair\": \"821e\"}"
       ],
-      "operationalEvidence": [],
+      "operationalEvidence": [
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+      ],
       "semanticContract": "Original jump-engine-dispatch relation OperModeExecutionTree -> GameOverMode at source line 956 (jsr JumpEngine) must preserve the source mode-dispatch or OAM-loop predecessor, successor and return behavior.",
       "currentSourcePaths": [
         "src/game/frame_root.c",

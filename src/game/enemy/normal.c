@@ -47,7 +47,7 @@ static void run_normal(struct mysmb_game *game, mysmb_u8 slot,
                         mysmb_u8 preserve_collision_boxes)
 {
     game->ram[0x03c5U + slot] = 0U;
-    game->ram[0x03d1U] = mysmb_objects_get_enemy_offscreen_bits(game, slot);
+    mysmb_oam_get_enemy_offscreen_bits(game, slot);
     mysmb_oam_relative_enemy_position(game, slot);
     (void)mysmb_objects_draw_normal_enemy_graphics(game, slot);
     mysmb_objects_update_enemy_bounding_box(game, slot);

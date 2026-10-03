@@ -10,12 +10,12 @@ static void check_child(unsigned int expected, mysmb_u8 slot)
     if (calls != expected || slot != selected) ++errors;
     ++calls;
 }
-mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(const struct mysmb_game *g,
+void mysmb_oam_get_enemy_offscreen_bits(struct mysmb_game *g,
                                                mysmb_u8 slot)
 {
     check_child(0U, slot);
     if (g->ram[0x00ceU] != original_y) ++errors;
-    return 0x5aU;
+    g->ram[0x3d1U]=0x5aU;
 }
 void mysmb_oam_relative_enemy_position(struct mysmb_game *g, mysmb_u8 slot)
 {

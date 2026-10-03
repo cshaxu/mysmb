@@ -42,8 +42,8 @@ void mysmb_oam_move_six_sprites_offscreen(struct mysmb_game *game,mysmb_u8 oam)
     memcpy(game->ram,record+2064U,2048U);
 }
 mysmb_u8 mysmb_score_add(struct mysmb_game *game){(void)game;++failures;return 0U;}
-mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(const struct mysmb_game *game,mysmb_u8 slot)
-{(void)game;(void)slot;++failures;return 0U;}
+void mysmb_oam_get_enemy_offscreen_bits(struct mysmb_game *game,mysmb_u8 slot)
+{(void)game;(void)slot;++failures;}
 void mysmb_oam_relative_enemy_position(struct mysmb_game *game,mysmb_u8 slot)
 {(void)game;(void)slot;++failures;}
 #endif

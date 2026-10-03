@@ -15,8 +15,8 @@ static void record(struct mysmb_game *g,mysmb_u8 s,unsigned int e)
         if(mutation==2U) g->ram[0x747U]^=1U;
     }
 }
-mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(const struct mysmb_game *g,mysmb_u8 s)
-{record((struct mysmb_game *)g,s,1U);return 0x64U;}
+void mysmb_oam_get_enemy_offscreen_bits(struct mysmb_game *g,mysmb_u8 s)
+{record(g,s,1U);g->ram[0x3d1U]=0x64U;}
 void mysmb_oam_relative_enemy_position(struct mysmb_game *g,mysmb_u8 s)
 {if(g->ram[0x3d1U]!=0x64U) ++bad;g->ram[0x3aeU]++;record(g,s,2U);}
 #define CHILD(n,e) void n(struct mysmb_game *g,mysmb_u8 s) {record(g,s,e);}

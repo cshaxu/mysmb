@@ -9,7 +9,7 @@ void mysmb_objects_step_jumpspring(struct mysmb_game *game, mysmb_u8 slot)
     static const mysmb_u8 y_position[4] = { 8U, 16U, 8U, 0U };
     mysmb_u8 frame;
 
-    game->ram[0x03d1U] = mysmb_objects_get_enemy_offscreen_bits(game, slot);
+    mysmb_oam_get_enemy_offscreen_bits(game, slot);
     if (game->ram[0x0747U] == 0U && game->ram[0x070eU] != 0U) {
         frame = (mysmb_u8)(game->ram[0x070eU] - 1U);
         if ((frame & 2U) != 0U)

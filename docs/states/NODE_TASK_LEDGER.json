@@ -7397,7 +7397,7 @@
           ],
           "canReceive": false,
           "admissionRole": "audit",
-          "receipt": "Coordinator admits10 existing frame/screen labels and8 remaining controls after S14;actual integration,zero fresh credit."
+          "receipt": "Coordinator admits22 existing labels and24 controls including actual offscreen repairs/integration;zero fresh credit,scope closed S15 P3."
         }
       ]
     }
@@ -731005,7 +731005,7 @@
       "maximumComplete": 1992,
       "actualMatches": [],
       "evidence": "docs/proposals/m2/t69-cross-cohort-current-proof.md",
-      "state": "admitted"
+      "state": "closed"
     }
   ]
 }

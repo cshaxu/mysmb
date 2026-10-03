@@ -31,8 +31,8 @@ static void child(struct mysmb_game *game,unsigned int id,mysmb_u8 slot)
     compare(game->ram,record+2U);
     memcpy(game->ram,record+2050U,2048U);
 }
-mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(const struct mysmb_game *g,mysmb_u8 slot)
-{child((struct mysmb_game *)g,1U,slot);return g->ram[0x3d1U];}
+void mysmb_oam_get_enemy_offscreen_bits(struct mysmb_game *g,mysmb_u8 slot)
+{child(g,1U,slot);}
 void mysmb_oam_relative_enemy_position(struct mysmb_game *g,mysmb_u8 slot)
 {child(g,2U,slot);}
 mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *g,mysmb_u8 slot)

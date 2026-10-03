@@ -1,13 +1,15 @@
 # M2 ROM conformance node progress
 
-## M2 T69 S15 - active real-child integration repair
+## M2 T69 S15 - closed real-child integration repair
 
-[Exact22 existing labels/24 controls](../proposals/m2/t69-cross-cohort-current-proof.md).
-Source audit reopens8 caller nodes/16 call-return controls: pure value query
-cannot preserve original offscreen child writes. Current1984/1992 exact
-nodes,4252/4276 feasible controls(raw4342,infeasible66),557/557 material
-partial;historical1992/1992 unchanged.8 planned controls observed but held
-for integration closure. No new nodes;3 products required after repair.
+[All22 existing labels/24 controls](../proposals/m2/t69-cross-cohort-current-proof.md)
+accepted:8 actual shared caller sites restored,16 reopened call/return edges
+and8 remaining joins independently proven. Exact nodes1984->1992/1992,
+feasible controls4252->4276/4276(raw4342,infeasible66),material557/557 partial.
+Historical1992/1992 separate;zero fresh matches,no scoped deferrals.
+14592 controlled roots each width and six600-frame routes zero scoped diff;
+248 CTests each/purity/current full builds/OpenNT link pass,3 EXEs refreshed.
+T69 cross-S closure review remains,T70 unadmitted;no M2 certification claim.
 
 ## M2 T69 S14 - closed square music alias repair
 
