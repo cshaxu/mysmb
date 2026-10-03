@@ -7625,3 +7625,67 @@ Current src/game/enemy/init.c normalizedSHA256:b154847ffaf647e43d39c14f5dc26818a
 Current src/game/enemy/init_targets.c normalizedSHA256:8a34758094db74077901f976a10cf8adae354645938cb4f8d3e0dc6cc8d5a5ae.
 
 Current src/game/enemy/stream.c normalizedSHA256:64420800e1e049dcc6f4dbbe58d942a9692b5210e3d2efeea298c8a682d05049.
+
+## S17 P57 admission - nonfrozen continuous actor integration
+
+Existing parent/caller integration gap;GameEngine/ProcELoop AEFE-AF0F,8 already bounded instruction receipts/1RAM,scope748,fresh0/max1992. Extend actual uninterrupted original AEFE-AF10 routes to TimerControl0:512 empty-slot roots and32768 original group-record roots covering57 base/cursor views with real initialization,movement,collision,drawing and following slots. Frame byte varies through256 values,PrimaryHard valid0/1;AreaType1 andzero initial fireball/bubble/floatey controls retained. Native unchanged engine_slots.c calls real children. No node/edge promotion from route alone. Admit concrete affected dependency before repair;diff remainsS17 until resolved,product code changes require3EXEs. OriginalROM/ASM readonly,raw below ignored build128MiB/120seconds perprocess. No new audit round or whole-game claim.
+
+### S17 P57 terrain amendment
+
+Same admitted parent route/labels,extend32768 controlled original group roots with eight block-buffer patterns:empty,solid61,low/high floors,solid column,non-solid26,bumped23 floor,andC2. Only13 rows perbank0500-05CF/0600-06CF initialized;no aliases into06D0 game controls. This is controlled integration coverage,not proof of reachable level geometry. No extra node/edge/local instruction credit.
+
+### S17 P57 fixture correction
+
+The initial terrain generator incorrectly used0600 as second bank base;writing208 bytes reached06CB EnemyFrenzyBuffer,selected invalid initializer61,and original ROM jumped outsidePRG atroot256. This invalid input run receives no equivalence credit andis not a product mismatch. Original BlockBufferAddr low table00/D0 high05/05 establishes second base05D0. Correct generator writes0500-05CF/05D0-069F,leaves06A0+ controls unchanged;actual native terrain queries maycarry05D0+row into0600. Raw invalid batch deleted;neutral rejection retained.
+
+### S17 P57 full-engine integration amendment
+
+Extend the same caller integration gap to uninterrupted GameEngine AEFE-AF92 native engine.c/engine_slots.c,63 original parent instructions. Exact audit labels:GameEngine,ProcELoop,NoChgMus,CycleTwo,ClrPlrPal,SaveAB,UpdScrollVar,RunParser,ExitEng. Scope755,fresh0/max1992;no receipt promotion until source and route obligations inspected. Mode174:8192 controlled original group records/nonfrozen frames/eight corrected terrain patterns,validPrimaryHard0/1;actual player/OAM,block,misc,cannon,whirlpool,flagpole,timer,palette/button tail children run without replacement. VRAM_Buffer_AddrCtrl6 gates area parser;parser continuation remains explicitly excluded. Star timer0/1/4/8 andframe byte varied;validGameEngineSubRoutine8 andOperModeTask3. Original reaches actual RTS8001 sentinel;native calls whole mysmb_game_engine. No full level/playability claim;diff staysS17,repair requires3EXEs. OriginalROM/ASM readonly,raw onlyignoredbuild128MiB/120seconds perprocess.
+
+### S17 P57 admitted ColorRotation corrective owner
+
+Concrete original/native full GameEngine mode174 mismatch:root0/every8frame roots RAM00 originalFF/native00,512 differences in4096 roots. Original8A00 STA00=3/GetAreaPal8A10 DEC00 leavesFF;native area.c localcounter omittedsharedwrite. Exactreceiving labels:ColorRotation,GetBlankPal,GetAreaPal,ExitColorRot. Scope759,41 source instructions,shared src/game/area.c;reopenColorRotation/GetAreaPal two localcontracts pendingrepair,no self-designed behavior. Existing palette smoke inspectedonly outputpacket/rotation,notRAM00,andretained isolatedpalette-output evidence cannotjustify this omittedwrite. Sourcecode publicationmustrestoreSTA/DECsign loop. Addmeaningfulregression checkingcompletedcounterFFandgatedscratchpreservation;re-runoriginalfullRAMcontinuous GameEngine andstandaloneColorRotation roots,refresh3products. Allaffected code remainsinsharedgame;platform source unchanged. Fullenginefixture star timer correction079F (prior078F was notStarInvincibleTimer);do notclaim priorvariantcoverage.
+
+## S17 P57 checkpoint - shared color counter repaired and continuous engine qualified
+
+Scope759/fresh0;13 parent/color labels admitted,original root participants retained.
+
+ColorRotation89E1 frameAND7 gate then offsetCMP31 gate preserves RAM00 on exits. GetBlankPal copies8 immutable bytes with byte X/Y increments;GetAreaPal8A00 publishes RAM00=3,area*4 Y selects4 bytes,each iteration stores then increments indices andDEC RAM00,8A12 BPL repeats untilFF. Buffer stores0301+offset<=0338 do notalias00 orcaller state in validoffset0-48 domain. Final cycling overwrite+4,publishoffset+7,incrementColorRotateOffset andresetat6. Native actualsharedRAM counter is now STA/DEC equivalent. DomainsAreaType0-3/ColorRotateOffset0-5 andboundownerPRG remain explicit;65536 controlled original roots coverall41PC/fivebranchpairs andfullRAM,notall inter-frame producers.
+
+Current engine.c/engine_slots.c/engine_tail.c preserve actualGameEngine AEFE-AF92 call order:fireball,six enemy/floatey pairs,player offscreen/relative/OAM,block replacement,block1 then0,misc,cannon,whirlpool,flagpole,timer,colorrotation,music/palette,SaveAB/clearLeftRight,area-parser gate. Real children run uninterrupted;source child-return/cache integration qualified for seeded group records/nonfrozenphase/inactive block,misc,fireball controls/AreaType1/PlayerYHigh1/Star0,1,4,8/VRAMcontrol6. BPL usesbyte subtraction sign;star/music predicates andFrameCounter shifts read child-returnedRAM;CyclePlayerPalette publishes00,ResetPalStar preserves00 includingColorRotationFF. SaveAB publishesA_B toPrevious then clearsdirection;VRAMcontrol6 returnswithoutparser. Eleven unobserved parser continuation instructions remainpending. No arbitrary child-state,all-caller orinter-frame claim.
+
+Baseline full-engine4096roots produced512 RAM00 differences;focused palette regression failed before repair. Old smoke checkedonlypacket/rotation,omittedsharedscratch. Shared area.c nowusesoriginal00 counter instead oflocalCcounter;addressprovenance corrected89E1-8A38. No platform/game partition changes. Onlythisfunctionanditscomment change inarea.c;allothercurrentarea.c functions byte-identicaltoHEAD.
+
+Afterrepair65536 ColorRotation and8192 continuousfullGameEngine roots eachwidth compare2032RAM/24APU/orderedhardware0diff. Onlyphysical1F0-1FF stack excluded,minSP>=EF;CPUregistersoutsidevoidnativeABI. Colorall41PC/fivebranchpairs covered;fullparent52/63PC observed,11parsercontinuation PCs unobserved andremainpending. YHigh1 yieldsoneBPLside only;VRAMcontrol6 gatesparser. Mode174 star variant usescorrect079F;initial078F variant didnotprovefourstars. Prioractor512empty/32768live/32768correctedterrain roots passedonpre-repairlibrary;thechangedColorRotationisnotintheiractualvisitedPCset,so retainedwithinunchangedchilddependencies,notcountedasnewpostrepairroots.
+
+Rejectedterrainfixtureusedwrong0600bankbase,overwrote06CB EnemyFrenzyBuffer andoriginaljumpedoutsidePRG. No productmismatchorcreditfrominvalidrun. CorrectROMbankbases0500/05D0,13rows each0500-069F preservegamecontrols06A0+. Correctedterrain32768roots0diff includesempty/solid61/floors/wall/non-solid26/bumped23/C2;controlledgeometrynotfulllevelreachability.
+
+Elevenfocusedtests eachwidthpass;C90checkerscompile,currentx86/x64productsandoriginalOpenNT16DOScompile/linkpass. All3 assets EXEs refreshed. DOSruntimeunqualified. Full all-targetbuild attempts were notgreen:x64two corruptedarchives/onezero-byteobject recoveredbyexactownedbuild-file cleanupandtargetrebuild;an independentx86mysmb_player_movement_caller_check stillfailslinkmissingmysmb_game_jump_engine_state. No fullbuild-passclaim;thisfixturewiring gap remainsnamedpendingforS17. Initialwrongtarget/zero-test attempt rejected,notverification. Fournegativeaccountingmutations rejected. RawROM/records remainignored/read-only;raw batches deleted.
+
+Currentlocal1991/1992nodes(twoColorRotationcontractsreopenedthenrepaired),4269/4270controls(raw4342/infeasible72),CheckForEnemyGroup/control01480 needs evidence.3956/10691instruction and1363/3773RAM boundedreceipts;6735instruction/2410RAM pending. Material993partial,totalunknown;allwhole-program lifetimepending,fourfinalpackagesopen,M2 NOT COMPLETE.
+
+Current src/game/area.c normalizedSHA256:18dbf2c52f49b1c99c3ca47c4cc69a15a7f70da994e3d36f4399d2b01e28941f.
+
+Current src/game/engine.c normalizedSHA256:eb8ccf8743e89ac6e6fbd70d38de8838d1d3eb0bce28a25af9d8e45f1b5676ad.
+
+Current src/game/engine_slots.c normalizedSHA256:8cb4682243253529fb2514b3a50670d838cb056d62faffbf621b1b492a048d25.
+
+Current src/game/engine_tail.c normalizedSHA256:8d0b1c8fcab2c268a6789f319abbb7ae2470f377ee4cacc06106fcbab427098f.
+
+Current src/game/player_modes.c normalizedSHA256:f283b78a8065d8ead2283563c3e533686d1c44c3e04275c6ef194025d5c15e3f.
+
+Current src/game/enemy/core.c normalizedSHA256:d568c921de10cba733e2124bdfc1575f3c28b67f7d446af348f73435ebf52a27.
+
+Current src/game/enemy/group.c normalizedSHA256:c6ebdf6d65eee53c092b80cae412cdae76ff3a20fa93e07c00d8cf3fd7abeed2.
+
+Current src/game/enemy/init.c normalizedSHA256:b154847ffaf647e43d39c14f5dc26818acdc6c3160f6c0a922034b2f038f63cb.
+
+Current src/game/enemy/init_targets.c normalizedSHA256:8a34758094db74077901f976a10cf8adae354645938cb4f8d3e0dc6cc8d5a5ae.
+
+Current src/game/enemy/stream.c normalizedSHA256:64420800e1e049dcc6f4dbbe58d942a9692b5210e3d2efeea298c8a682d05049.
+
+Refreshed mysmb16.exe:259659 bytes,SHA256:b76d8119234bfd5c7599a279d6b9a7923d44e8e2043b931c2886adab2816118e.
+
+Refreshed mysmb32.exe:374219 bytes,SHA256:7cf6a814ed8d0745a0e5bef2e345c810d1bfe6b5504086c3bfd402282184dd0c.
+
+Refreshed mysmb64.exe:380216 bytes,SHA256:b361c9c16bab4a5c6fe723b929fca2419e4faa394f11af4ca963b77dc31accd2.

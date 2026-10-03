@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P57 shared color counter and continuous engine](../proposals/m2/t70-final-current-certification.md#s17-p57-checkpoint---shared-color-counter-repaired-and-continuous-engine-qualified).
+S17 P57:ColorRotation RAM00 counter repaired(originalSTA3/DECtoFF),regressionfailsbefore/passafter.65536color+8192fullengine roots eachwidth0diff,11tests each;41color/44observedparent joins. Scope759/fresh0;3956instruction/1363RAM receipts,6735instruction/2410RAM pending. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72),material993partial,totalunknown;3EXEs refreshed/DOScompile-linkonly. Parser/caller/inter-frameandindependentmovementcaller testlinkpending,M2 incomplete.
+
 [P56 continuous actor parent](../proposals/m2/t70-final-current-certification.md#s17-p56-checkpoint---continuous-actor-parent-and-group-integration).
 S17 P56:8actor-parent instructions/1RAM bounded joins;1024 uninterrupted frozen roots eachwidth0diff,6144 real enemy/floatey pairs,all8PC/both loopbranches,6tests each. Scope748/fresh0;3871instruction/1336RAM receipts,6820instruction/2437RAM pending. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72),material993partial,totalunknown;other child/caller/inter-frame domains pending,source/productsP46unchanged,M2 incomplete.
 

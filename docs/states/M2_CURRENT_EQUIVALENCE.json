@@ -26530,10 +26530,13 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_step_palette_rotation",
       "semanticEvidence": [
-        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 admitted ColorRotation corrective owner:actualcontinuous GameEngine provesomittedRAM00 counterwrite;oldpacketonlyproof insufficient.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:ColorRotation/GetAreaPal omittedRAM00 STA3/DECtoFF repaired;41 color/44 observed parent instruction receipts in explicitcontrolleddomains. Parser continuation andother child/caller lifetime remainpending."
       ],
       "operationalEvidence": [
-        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:65536 standalone color+8192 fullGameEngine roots eachwidth0diff,11focusedtests eachpass,regression failsbefore repair;threeproductEXEs refreshed,originalDOScompile/linkonly. Otherunrelatedcaller test linkage remainsopen."
       ],
       "semanticContract": "ROM $89cd: every-eighth-frame, bounded Buffer1 palette command producer.",
       "currentSourcePaths": [
@@ -26549,10 +26552,12 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_step_palette_rotation base command loop",
       "semanticEvidence": [
-        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:ColorRotation/GetAreaPal omittedRAM00 STA3/DECtoFF repaired;41 color/44 observed parent instruction receipts in explicitcontrolleddomains. Parser continuation andother child/caller lifetime remainpending."
       ],
       "operationalEvidence": [
-        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:65536 standalone color+8192 fullGameEngine roots eachwidth0diff,11focusedtests eachpass,regression failsbefore repair;threeproductEXEs refreshed,originalDOScompile/linkonly. Otherunrelatedcaller test linkage remainsopen."
       ],
       "semanticContract": "ROM $89dc: copies eight BlankPalette bytes.",
       "currentSourcePaths": [
@@ -26567,10 +26572,13 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_step_palette_rotation area palette overwrite loop",
       "semanticEvidence": [
-        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 admitted ColorRotation corrective owner:actualcontinuous GameEngine provesomittedRAM00 counterwrite;oldpacketonlyproof insufficient.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:ColorRotation/GetAreaPal omittedRAM00 STA3/DECtoFF repaired;41 color/44 observed parent instruction receipts in explicitcontrolleddomains. Parser continuation andother child/caller lifetime remainpending."
       ],
       "operationalEvidence": [
-        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:65536 standalone color+8192 fullGameEngine roots eachwidth0diff,11focusedtests eachpass,regression failsbefore repair;threeproductEXEs refreshed,originalDOScompile/linkonly. Otherunrelatedcaller test linkage remainsopen."
       ],
       "semanticContract": "ROM $89e8: overwrites four bytes with Palette3Data then applies rotating color.",
       "currentSourcePaths": [
@@ -26585,10 +26593,12 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_step_palette_rotation completion/early return",
       "semanticEvidence": [
-        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c."
+        "M2 T55 S2 static audit: SMB1 lines 1970-2024 maps the frame/eight and Buffer1 capacity gates, eight-byte blank command, AreaType table overwrite, cycle byte, offset wrap, caller and return to shared src/game/area.c and engine.c.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:ColorRotation/GetAreaPal omittedRAM00 STA3/DECtoFF repaired;41 color/44 observed parent instruction receipts in explicitcontrolleddomains. Parser continuation andother child/caller lifetime remainpending."
       ],
       "operationalEvidence": [
-        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical."
+        "M2 T55 S2 controlled owner-local ROM/x86/x64 matrix: t28-palette-normal, -wrap, -frame-gate and -buffer-full agree on scoped Buffer1 bytes, Buffer1 offset and ColorRotateOffset; x86 and x64 snapshots are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:65536 standalone color+8192 fullGameEngine roots eachwidth0diff,11focusedtests eachpass,regression failsbefore repair;threeproductEXEs refreshed,originalDOScompile/linkonly. Otherunrelatedcaller test linkage remainsopen."
       ],
       "semanticContract": "ROM $8a15: returns after no-op guards or completed cycle offset wrap.",
       "currentSourcePaths": [
@@ -34466,11 +34476,13 @@
       "semanticEvidence": [
         "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
         "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P56 checkpoint - continuous actor parent and group integration:8 instructions/1RAM bounded parent clause;ordered fireball then six enemy/floatey pairs. Frozen controlled child-return integration only;nonfrozen and other child states remain pending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P56 checkpoint - continuous actor parent and group integration:8 instructions/1RAM bounded parent clause;ordered fireball then six enemy/floatey pairs. Frozen controlled child-return integration only;nonfrozen and other child states remain pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:ColorRotation/GetAreaPal omittedRAM00 STA3/DECtoFF repaired;41 color/44 observed parent instruction receipts in explicitcontrolleddomains. Parser continuation andother child/caller lifetime remainpending."
       ],
       "operationalEvidence": [
         "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P56 checkpoint - continuous actor parent and group integration:1024 uninterrupted original roots eachwidth2032RAM/24APU/ordered hardware0diff;6144 actual parent iterations,final originalX6;all8PC and both loop branches. Six focused tests eachpass;source/products unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P56 checkpoint - continuous actor parent and group integration:1024 uninterrupted original roots eachwidth2032RAM/24APU/ordered hardware0diff;6144 actual parent iterations,final originalX6;all8PC and both loop branches. Six focused tests eachpass;source/products unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:65536 standalone color+8192 fullGameEngine roots eachwidth0diff,11focusedtests eachpass,regression failsbefore repair;threeproductEXEs refreshed,originalDOScompile/linkonly. Otherunrelatedcaller test linkage remainsopen."
       ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
@@ -34489,11 +34501,13 @@
       "semanticEvidence": [
         "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
         "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P56 checkpoint - continuous actor parent and group integration:8 instructions/1RAM bounded parent clause;ordered fireball then six enemy/floatey pairs. Frozen controlled child-return integration only;nonfrozen and other child states remain pending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P56 checkpoint - continuous actor parent and group integration:8 instructions/1RAM bounded parent clause;ordered fireball then six enemy/floatey pairs. Frozen controlled child-return integration only;nonfrozen and other child states remain pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:ColorRotation/GetAreaPal omittedRAM00 STA3/DECtoFF repaired;41 color/44 observed parent instruction receipts in explicitcontrolleddomains. Parser continuation andother child/caller lifetime remainpending."
       ],
       "operationalEvidence": [
         "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P56 checkpoint - continuous actor parent and group integration:1024 uninterrupted original roots eachwidth2032RAM/24APU/ordered hardware0diff;6144 actual parent iterations,final originalX6;all8PC and both loop branches. Six focused tests eachpass;source/products unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P56 checkpoint - continuous actor parent and group integration:1024 uninterrupted original roots eachwidth2032RAM/24APU/ordered hardware0diff;6144 actual parent iterations,final originalX6;all8PC and both loop branches. Six focused tests eachpass;source/products unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:65536 standalone color+8192 fullGameEngine roots eachwidth0diff,11focusedtests eachpass,regression failsbefore repair;threeproductEXEs refreshed,originalDOScompile/linkonly. Otherunrelatedcaller test linkage remainsopen."
       ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
@@ -34509,10 +34523,12 @@
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
         "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
-        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:ColorRotation/GetAreaPal omittedRAM00 STA3/DECtoFF repaired;41 color/44 observed parent instruction receipts in explicitcontrolleddomains. Parser continuation andother child/caller lifetime remainpending."
       ],
       "operationalEvidence": [
-        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:65536 standalone color+8192 fullGameEngine roots eachwidth0diff,11focusedtests eachpass,regression failsbefore repair;threeproductEXEs refreshed,originalDOScompile/linkonly. Otherunrelatedcaller test linkage remainsopen."
       ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
@@ -34528,10 +34544,12 @@
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
         "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
-        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:ColorRotation/GetAreaPal omittedRAM00 STA3/DECtoFF repaired;41 color/44 observed parent instruction receipts in explicitcontrolleddomains. Parser continuation andother child/caller lifetime remainpending."
       ],
       "operationalEvidence": [
-        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:65536 standalone color+8192 fullGameEngine roots eachwidth0diff,11focusedtests eachpass,regression failsbefore repair;threeproductEXEs refreshed,originalDOScompile/linkonly. Otherunrelatedcaller test linkage remainsopen."
       ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
@@ -34547,10 +34565,12 @@
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
         "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
-        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:ColorRotation/GetAreaPal omittedRAM00 STA3/DECtoFF repaired;41 color/44 observed parent instruction receipts in explicitcontrolleddomains. Parser continuation andother child/caller lifetime remainpending."
       ],
       "operationalEvidence": [
-        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:65536 standalone color+8192 fullGameEngine roots eachwidth0diff,11focusedtests eachpass,regression failsbefore repair;threeproductEXEs refreshed,originalDOScompile/linkonly. Otherunrelatedcaller test linkage remainsopen."
       ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
@@ -34566,10 +34586,12 @@
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
         "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
-        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:ColorRotation/GetAreaPal omittedRAM00 STA3/DECtoFF repaired;41 color/44 observed parent instruction receipts in explicitcontrolleddomains. Parser continuation andother child/caller lifetime remainpending."
       ],
       "operationalEvidence": [
-        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:65536 standalone color+8192 fullGameEngine roots eachwidth0diff,11focusedtests eachpass,regression failsbefore repair;threeproductEXEs refreshed,originalDOScompile/linkonly. Otherunrelatedcaller test linkage remainsopen."
       ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
@@ -34585,10 +34607,12 @@
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
         "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
-        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:ColorRotation/GetAreaPal omittedRAM00 STA3/DECtoFF repaired;41 color/44 observed parent instruction receipts in explicitcontrolleddomains. Parser continuation andother child/caller lifetime remainpending."
       ],
       "operationalEvidence": [
-        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:65536 standalone color+8192 fullGameEngine roots eachwidth0diff,11focusedtests eachpass,regression failsbefore repair;threeproductEXEs refreshed,originalDOScompile/linkonly. Otherunrelatedcaller test linkage remainsopen."
       ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
@@ -34623,10 +34647,12 @@
       "currentCounterpart": "mysmb_game_mode, mysmb_game_core_routine, mysmb_game_engine and shared tail",
       "semanticEvidence": [
         "Td S9 B12a game-engine root static node-and-edge audit: SMB1 lines 5315-5505 compared with dispatcher.c, engine.c, engine_slots.c and engine_tail.c; routes remain required.",
-        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order."
+        "M2 T58 S1 static audit: ROM GameMode through ExitEng compared against dispatcher.c, engine.c, engine_slots.c and engine_tail.c; selector, task reload, six-slot actor order, tail branches, input partition and parser handoff preserve source order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:ColorRotation/GetAreaPal omittedRAM00 STA3/DECtoFF repaired;41 color/44 observed parent instruction receipts in explicitcontrolleddomains. Parser continuation andother child/caller lifetime remainpending."
       ],
       "operationalEvidence": [
-        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical."
+        "M2 T58 S1 current original-ROM/current x86/x64 replay: four GameMode vectors, two post-child outcomes, two 600-frame ordinary routes and fifteen engine-tail routes have equal declared persistent RAM and full output; x86/x64 records are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:65536 standalone color+8192 fullGameEngine roots eachwidth0diff,11focusedtests eachpass,regression failsbefore repair;threeproductEXEs refreshed,originalDOScompile/linkonly. Otherunrelatedcaller test linkage remainsopen."
       ],
       "semanticContract": "Preserves source selector, actor-loop, timer/palette and parser/scroll state ordering.",
       "currentSourcePaths": [
@@ -168152,16 +168178,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:55 instructions/23RAM bounded group source clause;allocationX0-4 withreal initializerIDs0/2/6,08 preserved,Inc2B reload proves group return compatible withroot enemyX0-5/localCslot. Other ObjectOffset writers remain independent prerequisites.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P56 checkpoint - continuous actor parent and group integration:8 instructions/1RAM bounded parent clause;ordered fireball then six enemy/floatey pairs. Frozen controlled child-return integration only;nonfrozen and other child states remain pending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P56 checkpoint - continuous actor parent and group integration:8 instructions/1RAM bounded parent clause;ordered fireball then six enemy/floatey pairs. Frozen controlled child-return integration only;nonfrozen and other child states remain pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P57 checkpoint - shared color counter repaired and continuous engine qualified:ColorRotation/GetAreaPal omittedRAM00 STA3/DECtoFF repaired;41 color/44 observed parent instruction receipts in explicitcontrolleddomains. Parser continuation andother child/caller lifetime remainpending."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 3871,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 6820,
+        "localInstructionReceiptSites": 3956,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 6735,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 1336,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2437,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 1363,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2410,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -168190,7 +168217,6 @@
           "src/game/world/bounding_box.c": 33,
           "src/game/scroll.c shared C90 scroll owner": 32,
           "src/game/enemy/lakitu.c": 32,
-          "src/game/area.c": 31,
           "shared Bowser flame frenzy core": 31,
           "shared game core: enemy/star_flag.c": 31,
           "shared Lakitu/Spiny initializer and frenzy core": 30,
@@ -168214,7 +168240,6 @@
           "shared game core: bridge/area/enemy/OAM": 22,
           "shared game core: oam/bowser_flame_gfx.c": 22,
           "src/game/world/geometry.c": 22,
-          "src/game shared dispatcher/engine/scroll owners": 21,
           "src/game/entry.c shared C90 entry owner": 21,
           "src/game/enemy/{green_paratroopa,x_counter}.c": 21,
           "src/game/world/fireball_hit.c": 21,
@@ -168228,6 +168253,7 @@
           "src/game/oam/hammer_gfx.c": 17,
           "shared platform initializer core": 16,
           "src/game/enemy/movement.c": 16,
+          "src/game/area.c": 15,
           "shared Bullet Bill/Cheep frenzy core": 15,
           "src/game/world/collision.c": 15,
           "src/game/player/terrain_metatiles.c and climbing.c": 15,
@@ -168241,6 +168267,7 @@
           "shared game core: enemy/fireworks.c": 13,
           "shared game core: world/fireball_enemy.c": 13,
           "shared Piranha and frenzy-dispatch core": 12,
+          "src/game shared dispatcher/engine/scroll owners": 10,
           "shared game core: enemy/firebar_children.c": 10,
           "src/game/world/hammer_collision.c": 10,
           "src/game/world/powerup_collision.c": 10,

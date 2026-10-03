@@ -302,7 +302,7 @@ void mysmb_area_refresh_background_page(struct mysmb_game *game,
     }
 }
 
-/* Translation of ROM $89d9-$8a15 (ColorRotation).  The original leaves the
+/* Translation of ROM $89e1-$8a38 (ColorRotation).  The original leaves the
  * completed command in VRAM_Buffer1 for the following NMI UpdateScreen;
  * this function therefore queues data and does not change the palette. */
 void mysmb_area_step_palette_rotation(struct mysmb_game *game)
@@ -312,7 +312,6 @@ void mysmb_area_step_palette_rotation(struct mysmb_game *game)
     mysmb_u8 rotation_offset;
     mysmb_u8 area_type;
     mysmb_u8 source_offset;
-    mysmb_u8 counter;
 
     if ((game->ram[MYSMB_AREA_FRAME_COUNTER] & 7U) != 0U) return;
     buffer_offset = game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET];
@@ -336,14 +335,14 @@ void mysmb_area_step_palette_rotation(struct mysmb_game *game)
      * while each store remains indexed by the original buffer position. */
     buffer_offset = game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET];
     palette_offset = (mysmb_u8)(area_type * 4U);
-    counter = 3U;
+    game->ram[0x0000U] = 3U;
     do {
         game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + buffer_offset + 3U)] =
             game->area_prg[MYSMB_AREA_PALETTE3_DATA + palette_offset];
         palette_offset++;
         buffer_offset++;
-        counter--;
-    } while ((counter & 0x80U) == 0U);
+        game->ram[0x0000U] = (mysmb_u8)(game->ram[0x0000U] - 1U);
+    } while ((game->ram[0x0000U] & 0x80U) == 0U);
     buffer_offset = game->ram[MYSMB_AREA_VRAM_BUFFER1_OFFSET];
     game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER1 + buffer_offset + 4U)] =
         game->area_prg[MYSMB_AREA_COLOR_ROTATE_PALETTE + rotation_offset];

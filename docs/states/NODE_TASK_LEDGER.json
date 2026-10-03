@@ -15997,8 +15997,8 @@
     {
       "label": "ColorRotation",
       "line": 1983,
-      "receiver": "M2 T28 S2",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P57 accepted continuous GameEngine scratch counter repair.",
       "futurePackage": null,
       "history": [
         {
@@ -16018,8 +16018,8 @@
     {
       "label": "GetBlankPal",
       "line": 1991,
-      "receiver": "M2 T28 S2",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P57 accepted continuous GameEngine scratch counter repair.",
       "futurePackage": null,
       "history": [
         {
@@ -16039,8 +16039,8 @@
     {
       "label": "GetAreaPal",
       "line": 2004,
-      "receiver": "M2 T28 S2",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P57 accepted continuous GameEngine scratch counter repair.",
       "futurePackage": null,
       "history": [
         {
@@ -16060,8 +16060,8 @@
     {
       "label": "ExitColorRot",
       "line": 2024,
-      "receiver": "M2 T28 S2",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P57 accepted continuous GameEngine scratch counter repair.",
       "futurePackage": null,
       "history": [
         {
@@ -69809,6 +69809,20 @@
       "nodes": [
         "FireballXSpdData",
         "FireballObjCore"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-color-counter-1",
+      "type": "transfer",
+      "from": "M2 T28 S2",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "ColorRotation",
+        "GetBlankPal",
+        "GetAreaPal",
+        "ExitColorRot"
       ],
       "acceptedBy": "Coordinator under owner same-S repair mandate.",
       "evidence": "docs/proposals/m2/t70-final-current-certification.md"
@@ -767156,7 +767170,18 @@
         "GSltLp",
         "NextED",
         "GameEngine",
-        "ProcELoop"
+        "ProcELoop",
+        "NoChgMus",
+        "CycleTwo",
+        "ClrPlrPal",
+        "SaveAB",
+        "UpdScrollVar",
+        "RunParser",
+        "ExitEng",
+        "ColorRotation",
+        "GetBlankPal",
+        "GetAreaPal",
+        "ExitColorRot"
       ],
       "baseline": 1992,
       "incomingComplete": [
