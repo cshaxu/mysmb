@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P119 storage domains](../proposals/m2/t70-final-current-certification.md#s17-p119-checkpoint---slot-storage-bounds-and-remaining-lifetimes).
+S17 P119:19 storage/probe labels;3 direct publishers and189 indexed alias candidates (0368:69,03EE:96,06CF:24) enumerated. Original head/feet/side and vine guard bounds exclude06CF within their pointer/selector contracts;9 indirect writers have explicit dispositions. Title overlaps0368/03EE, replacement saved-field lifetimes and terrain decoder domains remain pending. Seven focused tests each width pass;123 source identities and P115 products unchanged. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);material993 partial,total unknown. M2 incomplete.
+
 [P118 loop child returns](../proposals/m2/t70-final-current-certification.md#s17-p118-checkpoint---qualified-loop-child-returns-verified).
 S17 P118:19loop/childlabels,195PC scope;154freshPCobserved/41retainedlocal receipts with123sourceidentities match. Nineoriginalfamilies589824roots eachwidth0scopedRAM/APU/orderedwrite diff;newCPU Xreturnassertions andrealenemy-pluslive-score parentX6 pass. Sevenfocusedtests eachwidthpass,no code/productchange,P115EXEs retained. Historical1992/1992,local1991/1992nodes/4260/4261controls(raw4342/infeasible81),material993partial/totalunknown;globalcaller/alias lifetimes stillpending,M2 incomplete.
 

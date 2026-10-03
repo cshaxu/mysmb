@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P118 loop return checkpoint;S17 remains active,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P119 slot-storage checkpoint;S17 remains active,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
@@ -150,7 +150,6 @@
 
 
 
-S17 P111:11mode/parser labels/44instructions/16RAM joined7boundedclauses;83712actualroots eachwidth0diff/all44PC/5branchpairs,14tests each. Scope1667/fresh0;10690/10691instruction receipts,3773/3773RAM receipts;1instruction/0RAM pending(CheckForEnemyGroupC1FB). Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,wholeproducer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
 
 S17 P112:374 indexed alias sites and8 direct/9 indirect writers linked to current scoped receipts;12 entry-local exclusions,362 caller-domain qualifications remain. Source identities unchanged;four negative accounting checks pass. No node/control credit;local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);instruction10690/10691,RAM3773/3773 receipts. Material993 partial,totalunknown;M2 incomplete.
 
@@ -165,3 +164,5 @@ S17 P116:9parent/dispatch/duplicate labels,40originalPC reviewed;source state-ze
 S17 P117:17ObjectOffset publishers/17labels source/retainedreceipt joins complete,123currentowner identities match. Extracted344indexed008aliascandidates includingzero-pagewrap/RAMmirror;3intrinsicloops excluded,341callerconditions and9indirectlifetimes pending. Loopchildreturn and3dynamicstorage prerequisitesexplicit;no globalpromotion. Fivefocusedtests eachwidthpass,no code/productchange,P115threeproducts retained. Historical1992/1992,local1991/1992nodes/4260/4261controls(raw4342/infeasible81),material993partial/totalunknown,M2 incomplete.
 
 S17 P118:19loop/childlabels,195PC scope;154freshPCobserved/41retainedlocal receipts with123sourceidentities match. Nineoriginalfamilies589824roots eachwidth0scopedRAM/APU/orderedwrite diff;newCPU Xreturnassertions andrealenemy-pluslive-score parentX6 pass. Sevenfocusedtests eachwidthpass,no code/productchange,P115EXEs retained. Historical1992/1992,local1991/1992nodes/4260/4261controls(raw4342/infeasible81),material993partial/totalunknown;globalcaller/alias lifetimes stillpending,M2 incomplete.
+
+S17 P119:19 storage/probe labels;3 direct publishers and189 indexed alias candidates (0368:69,03EE:96,06CF:24) enumerated. Original head/feet/side and vine guard bounds exclude06CF within their pointer/selector contracts;9 indirect writers have explicit dispositions. Title overlaps0368/03EE, replacement saved-field lifetimes and terrain decoder domains remain pending. Seven focused tests each width pass;123 source identities and P115 products unchanged. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);material993 partial,total unknown. M2 incomplete.
