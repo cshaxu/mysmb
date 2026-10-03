@@ -1854,3 +1854,40 @@ Neutral route/table/control summaries/logs retained under ignored build;
 raw1024 batch/128MiB/120seconds process/524288steps root/deleted per batch.
 Probe deleted at closure.Registry/ledger/progress/docs/diff gates required
 before local P3 commit;unrelated owner work preserved,no push.
+
+## S13 admission - frenzy/flame/group and actor consumers
+
+Scope31 existing exact labels:Inc2B; CheckpointEnemyID; LakituAndSpinyHandler; ChpChpEx; InitFlyingCheepCheep; MaxCC; InitBowser; DuplicateEnemyObj; FlameYPosData; FlameYMFAdderData; InitBowserFlame; SetFrT; PutAtRightExtent; SpawnFromMouth; SetMF; InitFireworks; BulletBillCheepCheep; AddFBit; FireBulletBill; HandleGroupEnemies; GSltLp; NextED; InitEnemyFrenzy; EndFrenzy; RunFirebarObj; BowserGfxHandler; InitLongFirebar; ProcFirebar; RunBowser; RunRetainerObj; ProcessBowserHalf.Expected fresh0,
+maximum1992/1992;13 pending control targets:control-01562; control-01579; control-01583; control-01606; control-01613; control-01626; control-01629; control-03783; control-04270; control-04272; control-04273; control-04274; control-04275.
+Nine material targets:material-00138; material-00139; material-00141; material-00142; material-00143; material-00150; material-00153; material-00156; material-00157.Incoming1992/1992
+scoped-exact nodes,4256/4277 feasible controls(raw4342,infeasible65),546/555
+material partial;historical1992/1992 separate.S12 closed,S14 later unadmitted.
+Five dependency labels explicitly add actual firebar/Bowser initializer,
+movement and graphics parents/children;maintenance custody retained.
+Concrete missing proof:real frenzy vector selections,spawn/position/checkpoint
+joins,group return/stream advancement and persistent initializer-to-actor reads.
+Control-01613 provisional fallthrough must be checked against original LDA8
+then BNE Set17ID flag semantics;no infeasible credit before opcode proof.
+material-00138's broad Bowser fields/graphics consumer must be source-mapped
+to actual reads,including RunBowser where necessary;no inferred timer reads.
+Entry/exit:frenzy buffer/vector through real spawn children and returns;
+Bullet/CC filter through checkpoint;group members through each initializer
+then Inc2B;EndFrenzy through next Lakitu handler;Bowser/firebar initialization
+through actual movement/graphics/offscreen/bounds consumers.
+Shared owners:enemy/frenzy.c,group.c,init.c,init_targets.c,stream.c,bowser.c,
+firebar.c,firebar_children.c,special_callers.c and existing oam/bowser_gfx.c,
+retainer graphics,offscreen,bounds/collision/injury dependencies.Platform
+excluded. Predecessor:S12 accepted;successor:S14 audio alias audit unadmitted.
+ROM track:Original C7A0 InitEnemyFrenzy six-selector actual children,C69C BulletBillCheepCheep,C71B HandleGroupEnemies;sequential EndFrenzy to LakituAndSpinyHandler,InitBowser to actual RunBowser/BowserGfxHandler,InitLongFirebar to RunFirebarObj;unchanged persistent state and real shared children,full RAM/APU/ordered-write x86/x64 comparison.
+Operational:frenzy/group/flying Cheep/flame/fireworks/Bowser/firebar/retainer
+focused tests,x86/x64 product builds,original OpenNT DOS16 link,purity.
+Product repairs refresh3 EXEs under standing owner approval;pure audit retains
+current3 byte-identical.Any scoped diff repaired and both audits repeated
+before successor;no unobserved path or malformed state coverage inference.
+Source policy:owner-local ROM/reviewed ASM,nonredistributable,no imports.
+Ignored build/m2-t69-s13;128MiB raw,1024 batch,120seconds/process,
+524288steps/root;coordinator deletes raw per batch/probe at closure.
+Similar-issue sweep:vector scratch/alias/fetch order,timer/slot gates,parent
+slot reload,byte counters/record advancement,random masks/filter,table carry,
+spawn-from-mouth page footprint,duplicate consumers,offscreen scratch and
+Bowser graphics relative/bounds/collision ordering.No admission credit.
