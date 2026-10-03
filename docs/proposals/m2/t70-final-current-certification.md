@@ -9032,3 +9032,28 @@ Current src/game/area.c normalizedSHA256:7f9125e079ae875931894d72eafec68256280f3
 Current src/game/terminal_modes.c normalizedSHA256:5cc2ca631ad8ec956ee9a513bd0ab58807fd61a4870c5133bea250c3b99becf0.
 
 Current src/game/scroll.c normalizedSHA256:f4f7b0df4a870cb31290309652d043e536a375334702f7f2eda73a561fba3036.
+
+## S17 P100 admission - shared scroll handler and screen clamp uses
+
+ExistingAF93-B033scrollchain72instructions/32RAM/7labels ScrollHandler,ChkNearMid,ScrollScreen,InitScrlAmt,ChkPOffscr,KeepOnscr,InitPlatScrl. Sharedscroll.c actualScrollHandler/ScrollScreen/GetScreenPosition/GetXOffscreenBits/KeepOnscr. Rawforce/platformaddition/CMP-BMI gates/force2andposition70/scrollcarry/controlbit/rightedge/pageborrow/rawmask/button-speed reset/PlatformScrollclear sourceclauses. Two65536rootprofiles actualAF93 andAFC4 coverrawforce/amount/leftX/page bytes andlock/position/timer/LR/playercoordinate variants;noROMpatch/childreplacement. Fullnonphysical-stackRAM/APU/orderedwrites,CPUvoidunused;physicalPPU/cachepresentationnotclaimedbyRAMroute. ROMreadonly/raw4096batch128MiB/120sec cleanupbelowbuild. Fresh0/max1992;P98productsunchangedunlessmismatch;wholeproducer/inter-frame/finalpackagespending.
+
+## S17 P100 checkpoint - scroll handler and screen clamp uses reconciled
+
+S17 P100:7scroll labels/72instructions/32RAM joined4boundedclauses;131072actualroots eachwidth0diff/all72PC/9branchpairs,4tests each. Scope1594/fresh0;10055/10691instruction receipts,3583/3773RAM receipts;636instructions/190RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP98unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| S1 | ScrollHandler,ChkNearMid | Force06FF=byte(PlayerScroll+PlatformScroll)beforeanygate. ScrollLocknonzero/PlayerPos<50/SideCollisionTimer!=0/bit7(byteForce-1)skipscroll. ValidForce1uses1;Force>=2andPlayerPos<70 usesForce-1;elseForce. OriginalDEY/BMI includesForce0and81-FF;Cbytepredicate identical,nohostsignedcomparison. |
+| S2 | ScrollScreen | CallerYamountstores775;byteThirtyTwo+amount andLeftX+amount. LeftXcarry incrementsLeftPage byte;HorizontalScrollfromnewLeftX;MirrorCtrlpreserveFE/newPagebit0. NativeomitsintermediateRAM00bit0store:actualGetScreenPositionandGetXOffscreenBits/DividePDiffneverread00;nextChkPOffscr overwrites00beforefirstconsumer,soomittedstoreisdead withinadmittednonreentrantNMIchain. GetScreenPosition rightX=LeftX+FFbyte/rightPage=LeftPage+carry thenScrollTimer8 thenactualclamp. Cachemirrorupdatesaregame-ownedextraABIoutsideRAMroute,physicalPPU/pixelsremainpending. |
+| S3 | InitScrlAmt,ChkPOffscr | SkipscrollwritesAmount0butstillactualGetXOffscreenBits player0. Rawreturnedbitsstored00,ASLcarryfrombit7selectsleftedge;otherwisebit5selectsrightedge;neitherpreservescoordinates. Actualhelperpublishes04-07matchesretainedP85read/returncontract andfreshfullRAMroutes;worldrangeheuristicnotused. |
+| S4 | KeepOnscr,InitPlatScrl | Selectededgepixelminus[0,10]byte andpage-minusborrow;speedpreservedonlyifliveLR==[1,2]forselectededge,otherwiseSpeed0. Nochildbetweenedgecoordinate/predicate/speedwrite. AlwaysPlatformScroll0. Sourceall9branchpairscovered;rawamount/leftX/page rollover/bounds/cachedforce outcomescomparefullRAM,CPUvoidreturnnotclaimed. |
+
+ActualAF93andAFC4each65536rawbyteprofiles,combined131072eachwidth0diff/all72PC/ninebranchpairs. HandlerrawForce andPosition0-255 plusPlatformForce/Lock/CollisionTimer/LR/playerPage/Xvariants;directScrollrawamount/leftX/Page0-255 includingFF-to00pagecarry. Profilescontrolled/coupled,notallRAMcartesianorfullPPUclaim. Full2048RAMexceptactualobservedphysicalCPUstackpushspan plus24APU/orderedwrites,CPUvoidunused. ROMunpatched/actualGetScreenPosition/GetXOffscreenBitschildren. Sourceinstructionclauses reviewedagainstASM;intermediate00controlbitstorehasnoobservableconsumerbeforeoverwrittenrawbits,confirmedsourcechildreadsetsnotjustendstateequality. Fourfreshfocusedtests eachwidth/fournegativeaccountingmutants pass. No product/sourcechange;allthreeP98hashesunchanged,DOScompile/linkonly. Producer/inter-frame/material/pixels/routes/snapshotremainopen.
+
+Current src/game/scroll.c normalizedSHA256:f4f7b0df4a870cb31290309652d043e536a375334702f7f2eda73a561fba3036.
+
+Current src/game/oam/object_position.c normalizedSHA256:1fdb3149c5d4ca6159550a0ed9e13247734987199343ecb1c90aa77d3cf39225.
+
+Current src/game/player_control.c normalizedSHA256:750be06040838c76fcee09fbb13dd4cee7069b456bd6808bd383ea44053a0347.
+
+Current src/game/terminal_modes.c normalizedSHA256:5cc2ca631ad8ec956ee9a513bd0ab58807fd61a4870c5133bea250c3b99becf0.

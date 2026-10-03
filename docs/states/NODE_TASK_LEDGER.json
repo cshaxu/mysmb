@@ -768081,7 +768081,13 @@
         "NoFPObj",
         "ChkStop",
         "InCastle",
-        "ExitNA"
+        "ExitNA",
+        "ScrollHandler",
+        "ChkNearMid",
+        "ScrollScreen",
+        "InitScrlAmt",
+        "ChkPOffscr",
+        "InitPlatScrl"
       ],
       "baseline": 1992,
       "incomingComplete": [

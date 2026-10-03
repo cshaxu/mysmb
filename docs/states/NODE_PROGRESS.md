@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P100 scroll uses](../proposals/m2/t70-final-current-certification.md#s17-p100-checkpoint---scroll-handler-and-screen-clamp-uses-reconciled).
+S17 P100:7scroll labels/72instructions/32RAM joined4boundedclauses;131072actualroots eachwidth0diff/all72PC/9branchpairs,4tests each. Scope1594/fresh0;10055/10691instruction receipts,3583/3773RAM receipts;636instructions/190RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP98unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
 [P99 player dispatch uses](../proposals/m2/t70-final-current-certification.md#s17-p99-checkpoint---player-dispatch-and-state-transition-uses-reconciled).
 S17 P99:44player dispatch labels/213instructions/80RAM joined7boundedclauses;9984actualroots eachwidth0diff/all213PC/34branchpairs,6tests each. Scope1588/fresh0;9983/10691instruction receipts,3551/3773RAM receipts;708instructions/222RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP98unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 

@@ -34893,10 +34893,12 @@
       "currentOwner": "src/game/scroll.c shared C90 scroll owner",
       "currentCounterpart": "mysmb_player_update_scroll, mysmb_player_scroll_screen, clamp_screen_edge and mysmb_player_get_screen_position",
       "semanticEvidence": [
-        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P100 checkpoint - scroll handler and screen clamp uses reconciled:7labels/72instructions/32RAM joined4boundedclauses;byteforce/signgates/pagecarry/rawoffscreenmask/edgeborrow/speedbuttons/order reviewed,intermediate00deadstore justified;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P100 checkpoint - scroll handler and screen clamp uses reconciled:131072originalAF93/AFC4roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all72PC/9branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "Preserves the original scroll force, branch, table, RAM, carry and return contract in source order.",
       "currentSourcePaths": [
@@ -34911,10 +34913,12 @@
       "currentOwner": "src/game/scroll.c shared C90 scroll owner",
       "currentCounterpart": "mysmb_player_update_scroll, mysmb_player_scroll_screen, clamp_screen_edge and mysmb_player_get_screen_position",
       "semanticEvidence": [
-        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P100 checkpoint - scroll handler and screen clamp uses reconciled:7labels/72instructions/32RAM joined4boundedclauses;byteforce/signgates/pagecarry/rawoffscreenmask/edgeborrow/speedbuttons/order reviewed,intermediate00deadstore justified;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P100 checkpoint - scroll handler and screen clamp uses reconciled:131072originalAF93/AFC4roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all72PC/9branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "Preserves the original scroll force, branch, table, RAM, carry and return contract in source order.",
       "currentSourcePaths": [
@@ -34929,10 +34933,12 @@
       "currentOwner": "src/game/scroll.c shared C90 scroll owner",
       "currentCounterpart": "mysmb_player_update_scroll, mysmb_player_scroll_screen, clamp_screen_edge and mysmb_player_get_screen_position",
       "semanticEvidence": [
-        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P100 checkpoint - scroll handler and screen clamp uses reconciled:7labels/72instructions/32RAM joined4boundedclauses;byteforce/signgates/pagecarry/rawoffscreenmask/edgeborrow/speedbuttons/order reviewed,intermediate00deadstore justified;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P100 checkpoint - scroll handler and screen clamp uses reconciled:131072originalAF93/AFC4roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all72PC/9branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "Preserves the original scroll force, branch, table, RAM, carry and return contract in source order.",
       "currentSourcePaths": [
@@ -34947,10 +34953,12 @@
       "currentOwner": "src/game/scroll.c shared C90 scroll owner",
       "currentCounterpart": "mysmb_player_update_scroll, mysmb_player_scroll_screen, clamp_screen_edge and mysmb_player_get_screen_position",
       "semanticEvidence": [
-        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P100 checkpoint - scroll handler and screen clamp uses reconciled:7labels/72instructions/32RAM joined4boundedclauses;byteforce/signgates/pagecarry/rawoffscreenmask/edgeborrow/speedbuttons/order reviewed,intermediate00deadstore justified;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P100 checkpoint - scroll handler and screen clamp uses reconciled:131072originalAF93/AFC4roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all72PC/9branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "Preserves the original scroll force, branch, table, RAM, carry and return contract in source order.",
       "currentSourcePaths": [
@@ -34965,10 +34973,12 @@
       "currentOwner": "src/game/scroll.c shared C90 scroll owner",
       "currentCounterpart": "mysmb_player_update_scroll, mysmb_player_scroll_screen, clamp_screen_edge and mysmb_player_get_screen_position",
       "semanticEvidence": [
-        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P100 checkpoint - scroll handler and screen clamp uses reconciled:7labels/72instructions/32RAM joined4boundedclauses;byteforce/signgates/pagecarry/rawoffscreenmask/edgeborrow/speedbuttons/order reviewed,intermediate00deadstore justified;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P100 checkpoint - scroll handler and screen clamp uses reconciled:131072originalAF93/AFC4roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all72PC/9branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "Preserves the original scroll force, branch, table, RAM, carry and return contract in source order.",
       "currentSourcePaths": [
@@ -34983,10 +34993,12 @@
       "currentOwner": "src/game/scroll.c shared C90 scroll owner",
       "currentCounterpart": "mysmb_player_update_scroll, mysmb_player_scroll_screen, clamp_screen_edge and mysmb_player_get_screen_position",
       "semanticEvidence": [
-        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P100 checkpoint - scroll handler and screen clamp uses reconciled:7labels/72instructions/32RAM joined4boundedclauses;byteforce/signgates/pagecarry/rawoffscreenmask/edgeborrow/speedbuttons/order reviewed,intermediate00deadstore justified;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P100 checkpoint - scroll handler and screen clamp uses reconciled:131072originalAF93/AFC4roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all72PC/9branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "Preserves the original scroll force, branch, table, RAM, carry and return contract in source order.",
       "currentSourcePaths": [
@@ -35001,10 +35013,12 @@
       "currentOwner": "src/game/scroll.c shared C90 scroll owner",
       "currentCounterpart": "mysmb_player_update_scroll, mysmb_player_scroll_screen, clamp_screen_edge and mysmb_player_get_screen_position",
       "semanticEvidence": [
-        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order."
+        "M2 T58 S2 static audit: SMB1 ScrollHandler through GetScreenPosition (lines 5403-5497) compared instruction-by-instruction with shared src/game/scroll.c; force arithmetic, signed and threshold gates, page/PPU carry, raw offscreen-bit branches, table bytes, edge borrow and caller/return handoffs preserve source order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P100 checkpoint - scroll handler and screen clamp uses reconciled:7labels/72instructions/32RAM joined4boundedclauses;byteforce/signgates/pagecarry/rawoffscreenmask/edgeborrow/speedbuttons/order reviewed,intermediate00deadstore justified;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical."
+        "M2 T58 S2 original-ROM/current replay: 24 controlled natural ScrollHandler entries cover both outcomes of all nine source branches; current x86/x64 snapshot checks match all 1,784 persistent bytes after only original CPU scratch $00-$07 and stack $0100-$01ff exclusions. The two native widths are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P100 checkpoint - scroll handler and screen clamp uses reconciled:131072originalAF93/AFC4roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all72PC/9branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "Preserves the original scroll force, branch, table, RAM, carry and return contract in source order.",
       "currentSourcePaths": [
@@ -170107,23 +170121,23 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:13labels/56instructions/26RAM joined5boundedclauses;sourcecrouch/livepostphysicsdispatch/jumpheight/water/falling/force28/order reviewed;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P97 checkpoint - player entrance initialization uses reconciled:6labels/58instructions/27RAM joined4boundedclauses;page/collision/swim/alternateadjacency/timer/paletteX/vine/bubble/order reviewed;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P98 checkpoint - victory automatic walk uses repaired and reconciled:4labels/28instructions/11RAM joined3boundedclauses;originalAutoControlPlayer unconditionalinputstore repaired,livepostchildpage/fractioncarry/scroll-parser-order/exit reviewed;wholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P100 checkpoint - scroll handler and screen clamp uses reconciled:7labels/72instructions/32RAM joined4boundedclauses;byteforce/signgates/pagecarry/rawoffscreenmask/edgeborrow/speedbuttons/order reviewed,intermediate00deadstore justified;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 9983,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 708,
+        "localInstructionReceiptSites": 10055,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 636,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 3551,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 222,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 3583,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 190,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
         "directExternalQueueWriterPaths": 48,
         "pendingDirectRamOwners": {
           "src/game/area/block_metatile.c": 34,
-          "src/game/scroll.c shared C90 scroll owner": 32,
           "src/game/enemy/hammer_bro.c": 30,
           "src/game/objects.c": 26,
           "src/game/game.c": 24,
