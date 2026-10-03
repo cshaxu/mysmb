@@ -5486,3 +5486,72 @@ Historical/local1992/1992,feasible controls4274/4274(raw4342,infeasible68).
 S17/material/pixels/routes/snapshot remain open;M2 not certified.
 
 Current area.c normalized SHA256:827e23180ee8d409c3fcd3f12323179e62aa3151ab516bbd5b3c095925202e48.
+
+## S17 P30 checkpoint - retained column and attribute lifetimes reconciled
+
+Join the already admitted P4 eleven-label chain to the existing material-use
+index,not a new node re-audit. Exact existing labels in source order:
+`RenderAreaGraphics`,`DrawMTLoop`,`RightCheck`,`LLeft`,`NextMTRow`,`SetAttrib`,`ExitDrawM`,`RenderAttributeTables`,`SetATHigh`,`AttribLoop`,`SetVRAMCtrl`.
+Entry RenderAreaGraphics88ae or RenderAttributeTables896a;exit shared
+SetVRAMCtrl89c2. Shared area.c two standalone C90 owners,no child callbacks.
+Fresh0/max1992,existing S17 scope402 unchanged. No source/product change,
+custody transfer,new material path or global node/control credit.
+
+Read original/C side by side and assign every133 instruction to one of18
+reviewed clauses,including69 direct RAM sites. Two ROM table and two indirect
+read sites retain S16/P2/P4 bindings. Both current function bodies AND every
+referenced numeric area binding are identical to accepted P4 commit94507158.
+The existing12288 original returning roots each width compared all2048 RAM
+bytes with zero differences and no exclusions/physical pushes. All11 label
+entries and both outcomes of7 predicates observed. Evidence retention is
+based on those exact unchanged bodies/bindings and stated domains,not a
+freshly passing filename or nearest-label assumption. Other P28 parser
+changes cannot affect these standalone noncalling owners.
+
+| Clause | Original instructions | Source/native lifetime and alias disposition |
+| --- | --- | --- |
+| G1 | 88ae-88cf | CurrentColumn bit0 -> actual05;VRAM offset -> actual00;write header low/high/9A in source order before04=0. Native cached side reads ParserTask early but packet interval0341..043B cannot alias task071F or column0726. Scratch00-07 disjoint from packet/attribute memory,so cached buffer/side remain stable. No callback. |
+| G2 | 88d0-88dc | Publish row01 then raw palette03. ASL/ROL/ROL of metatile&C0 with incoming carry overwritten by ASL yields palette=metatile>>6,including both original carry rotations. Source first metatile and repeated byte read agree:header/previous packets cannot alias06A1 staging column. Native palette local preserves A/Y value until pointer loads. |
+| G3 | 88dd-88ec | Immutable original table low/high bytes publish06/07 in order. Two metatile ASLs byte-wrap -> actual02. Native graphics combines published06/07,source ROM indirect pointers retained. No pointer/scratch writer between loads;guards only extend native failure ABI outside declared bound ROM domains. |
+| G4 | 88ee-8903 | Task bit0 invert ASL gives0/2 with carry0;ADC02 cannot overflow because02 multiple4 <=FC and side<=2. Source Y INY maxFF since top index<=FE,so native source+1 equals actual byte Y next. Source X reload00 equals cached base+2*row under bounded no-wrap cursor. Both actual ROM tile reads precede ordered packet top/bottom stores. |
+| G5 | 8906-8917 | Source saves old04 in Y before testing column05. Even left row LSR carry0,three ROL03 move raw palette to bits1-0. Native palette<<(rowbit*4+columnbit*2) produces same03;03 integer shift max3<<6=192 safe DOS16. Actual05 reread preserves source alias contract. |
+| G6 | 891a-8927 | Right row parity LSR carry selects lower-right passthrough or upper-right four LSR03. Native column05 selects shift2/6;upper path does not increment04. Source old Y preserved across every scratch03 RMW. |
+| G7 | 892a-892e | Odd-left two LSR03 yields palette bits5-4;both odd branches increment04 after saving previous Y. Native row>>1 equals old saved attribute index while actual04 increments first,not using new04 for current OR. |
+| G8 | 8930-8941 | Read current AttributeBuffer[oldY],OR actual03,write then increment actual00 twice. Native |= reads at same point and preserves packet/attribute overlap effects. Source reload01/INX/CPX13 means next row exactly0..12;01 cannot alias attribute output. Each next row resets03/06/07/02 before consuming them. |
+| G9 | 8943-894d | Source reload00 and three INY -> original offset+29 wrappedbyte;native final cursor formula identical under bound offset<=D6 and13 rows. Terminator then publish0340 in source order. Physical cursor stores00 through last row are preserved independently of final private buffer offset. |
+| G10 | 8950-8967 | Byte increment NT low then mask1F;nonzero retains high,zero sets low80 and toggles high bit2. Native actual RAM updates match,including FF increment wrap. No cached old NT high used after potential packet write. |
+| A1 | 896a-8974 | Masklow1F,SEC/SBC4 uses original borrow,mask1F then intermediate01. Native borrow=low<4 preserves carry into high selection,even though mask changes Z/N. Integer low-4 wraps beforemask;explicit u8 conversion equivalent on16/32/64. |
+| A2 | 8976-8981 | Source LDAhigh does not change SBC carry;BCS only avoids bit2toggle. Mask4/OR23 then actual00. Native high local read and borrow variable equivalent;no dependence on high bits other thanbit2. First01 and following00 publication order preserved. |
+| A3 | 8983-8989 | Reload01,two LSR leave bit1 carry;ADC C0 must add that carry. Native includes (RAM01&2)!=0 explicitly. Result <=C8,carry0,actual01 final address published before loop. This bit1 term is required and not replaced by plain division4. |
+| A4 | 898b-899d | Source X0,Y buffer then reload00 header high,01 low/CLC+8 -> header low and actual01. Native low private recurrence equal actual01:packet0341..043B cannot alias00/01;no callback. Native pure local addition may be computed before high store but publication order/value unchanged. |
+| A5 | 899f-89ab | Read payload AttributeBuffer[row],store packet+3 BEFORE length+2,then LDA1/LSR->0 clears actual attribute slot. Native identical store order. Packet may alias attributes:the original read is not hoisted or bulk-copied,so future row values affected by earlier writes still reread from real RAM. |
+| A6 | 89ae-89b5 | Four source INY advance byte cursor,INX increments attribute row,CPX7/BCC loops0..6. Native buffer postincrements sum4,explicit row loop equals source. Declaredoffset<=DE ensures no cursor wrap before final7*4;zero saved A survives INY/INX/CMP for terminator. |
+| A7 | 89b7-89ba | Source A remains0 after LSR1;store terminator then0340 cursor. Native literal0 equals retained register value. Cached buffer has not been changed by packet writes to its0341+region;offset0340 stays distinct. |
+| J1 | 89bd-89c2 | Shared SetVRAMCtrl publishes6 to RAM0773 and returns;native both owners same value. JMP has no game-visible saved stack value;these returning roots record no physical push. Final CPU A/X/Y/flags are outside native return contract,all2048 RAM bytes have no exclusions. |
+
+77572 finite scalar checks support selector carry rotations,all256 metatile
+bytes/quadrants,tile-pair no-Y-wrap,all256 low/high attribute address bytes,
+second-LSR carry into ADC C0 and bounded cursor recurrences. This does not
+extend the old fixture to arbitrary buffer offsets or certify all callers.
+Packet domain0341-043B is disjoint from scratch00-07,task071F,column0726,
+NT0720/0721 and metatile06A1. Attributes03F9-03FF can overlap packets;
+payload-before-length and per-row actual RAM rereads preserve those aliases.
+No cache survives an unknown writer/callback. Attribute intermediate01 and
+graphics actual00/03/04 publications retain the earlier repaired contracts.
+
+Current P28 products and10 actual focused checks each width/six600-frame
+routes retained;product SHA checks pass. No redundant three-platform build
+for this evidence-only P. Original OpenNT16 remains compile/link only.
+Four consumed-use index negative checks pass;accounting gates do not prove
+the clause prose and no final-certificate promotion is inferred.
+
+Complete bounded local receipts now1098/10691 instruction sites and344/3773
+direct RAM sites. Other9593 instructions and3429 direct RAM sites need exact
+retained receipt joins or actual missing clauses;not asserted mismatches.
+Whole-program lifetime composition and material total remain unresolved.
+Historical/local1992/1992,controls4274/4274(raw4342,infeasible68),material947
+partial,total unknown. S17 and material/pixels/routes/snapshot packages open.
+
+Current unchanged mysmb_area_render_graphics body SHA256:6b3661ca523888d9f842e2d7f1d7f526ef46ebc396df45a32855ff6882d6d7d2.
+
+Current unchanged mysmb_area_render_attribute_tables body SHA256:fd02291c9deb5a9215827687ea2fd001537c53cca89fc3cf6502efd28eee36c1.

@@ -13,6 +13,11 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P30 retained column lifetimes](../proposals/m2/t70-final-current-certification.md#s17-p30-checkpoint---retained-column-and-attribute-lifetimes-reconciled).
+133 instructions/69 RAM sites joined to exact unchanged owner evidence;
+1098 instruction/344 RAM local receipts,3429 other RAM clauses pending.
+No source/new path/global certification.
+
 [P29 parser lifetime receipts](../proposals/m2/t70-final-current-certification.md#s17-p29-checkpoint---parser-consumed-value-clauses-reconciled).
 Existing191 instructions/54 direct RAM sites now have local clauses;
 965 instruction/275 RAM receipts,3498 direct RAM index clauses pending.
