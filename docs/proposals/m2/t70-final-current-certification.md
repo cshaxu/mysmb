@@ -3630,3 +3630,60 @@ Read site 9bc5:168 observed executions.
 Read site 9c5a:4288 observed executions.
 
 Read site 9c80:4288 observed executions.
+
+## S17 P10 corrective admission - sideways pipe scratch outputs
+
+Receive the six labels reopened by P9: `IntroPipe`, `VPipeSectLoop`,
+`NoBlankP`, `ExitPipe`, `RenderSidewaysPipe`, `DrawSidePart`.
+Expected fresh0,historical1992/1992,current local1986/1992,max1992.
+Source9882-98dc:RenderSidewaysPipe stores Y-2 in05 and object length in06;
+IntroPipe passes fixed Y10,ExitPipe passes GetLrgObjAttrib's low nibble.
+Current inline clauses omit both stores. Restore exactly these stores;
+original rendering/clearing/tail predicates remain source-order reviewed.
+Original9508 returning parser roots use owner ROM records discovered by
+walking34 bounded streams to their actual FD terminators,not synthetic ROM
+patches. Active/resident slot0..2,length0..3 plus new-object initialization,
+two scratch seeds. Entire RAM compared,only observed physical pushes excluded.
+Focused pipe/castle/parser checks,short integration routes,three rebuilt
+products. No successor or material package closure until scoped zero diff.
+
+## S17 P10 checkpoint - sideways pipe scratch repair
+
+Original RenderSidewaysPipe98b5 stores05=Y-2;98ba stores06=object length.
+Both inline C intro/exit clauses omitted these outputs. Intro's fixedY10
+now publishes05=8;exit publishes decoded height-2;both publish06 before
+either shaft branch. Four stores are the only production changes. The
+original shaft/blanking/table tail predicates remain unchanged. P9's
+seven direct06 store/RMW sites in this admitted area range now have explicit
+shared-RAM counterparts;this sweep does not certify other addresses/ranges.
+
+240 actual original9508 returning roots each width cover eight records from
+34 owner-ROM streams walked by two-byte records to their actual FD markers.
+All six labels observed:IntroPipe30,VPipeSectLoop84,NoBlankP30,ExitPipe210,
+RenderSidewaysPipe240,DrawSidePart240. Three slots,four resident lengths,
+new-object initialization and two neutral scratch seeds are included. All
+2048 RAM bytes compare,zero-page included;only observed physical stack
+push bytes excluded. Before:480 differences per width(240 each at05/06).
+After:zero. No ROM patch or manufactured record inserted in the oracle;
+raw outputs deleted. Isolated parser ABI does not prove every whole-frame
+caller or malformed height is reachable.
+
+48 neutral scratch regressions exercise intro fixedheight and exit heights
+2..12 through resident lengths0..3,including both shaft branches. Twelve
+actual current checks each width pass;4288 header/parser compositions rerun
+zero diff after this source change;six600-frame scoped integration routes
+remain zero diff/native byte-identical. Three products rebuilt/refreshed;
+DOS16 retains original OpenNT compile/link evidence only.
+
+Six reopened labels restore their declared local contracts. Material697-698
+add two scratch producer/consumer paths. Historical1992/1992;local scoped
+nodes1992/1992,controls4274/4274(raw4342,infeasible68);material698 partial,
+global total unknown. No fresh node/control credit. S17 remains open for
+remaining RAM/VRAM/dispatch/mutable/register/flag/stack/inter-frame joins;
+pixels,routes,snapshot packages still pending. This is not full certification.
+
+mysmb16.exe:258699 bytes,SHA256 a06ee31f5a4005bd75b5007278db6de9f22ffdb41e8e6e8bc4bc5a7c4075842e.
+
+mysmb32.exe:373107 bytes,SHA256 94abebc0ab963c46c1e2ce0d76dcd1b78dccedcc2c0a7de02812fe740acca2a9.
+
+mysmb64.exe:379113 bytes,SHA256 06b8648b678b8e717b7a4d0f48366cfcb2118afe3476583fa275edc1a94979d0.

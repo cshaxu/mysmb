@@ -1419,6 +1419,8 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
             (void)mysmb_area_check_fixed_length(game, slot, 3U);
             value = game->ram[MYSMB_AREA_OBJECT_LENGTH + slot];
             if (value > 3U) return;
+            game->ram[5U] = 8U;
+            game->ram[6U] = value;
             if (side_pipe_shaft[value] != 0U) {
                 mysmb_area_render_under_part(game, 0U, 8U, side_pipe_shaft[value]);
                 for (row = 0U; row < 7U; ++row)
@@ -1564,6 +1566,8 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         height = mysmb_area_get_large_object_attributes(game, slot);
         value = game->ram[MYSMB_AREA_OBJECT_LENGTH + slot];
         if (value > 3U || height < 2U) return;
+        game->ram[5U] = (mysmb_u8)(height - 2U);
+        game->ram[6U] = value;
         height = (mysmb_u8)(height - 1U);
         if (side_pipe_shaft[value] != 0U)
             mysmb_area_render_under_part(game, 0U, (mysmb_u8)(height - 1U),

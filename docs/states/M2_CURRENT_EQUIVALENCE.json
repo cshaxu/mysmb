@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 696,
+    "enumeratedCount": 698,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -15314,6 +15314,48 @@
       "currentSourcePaths": [
         "src/game/area.c"
       ]
+    },
+    {
+      "id": "material-00697",
+      "producer": "RenderSidewaysPipe",
+      "consumer": "RenderUnderPart",
+      "storage": "05 vertical extent",
+      "feasiblePath": "98b5 storesY-2;98c8 reloads05 as the shaft height parameter.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:inline intro/exit pipe clauses",
+      "semanticContract": "Eight bounded original records,slots0..2,length0..3/new initialization. No malformed heights/index domains or every gameplay path claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:original98b5/98ba stores05=Y-2 and06=object length. Intro fixedY10 and exit decoded height now publish these exact RAM values before either shaft branch. Original predicates/render/clearing tails unchanged."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:240 original9508 returning roots each width/eight original bounded stream records,all6 labels observed,480 baseline05/06 differences repaired to zero/all RAM excluding observed physical pushes.48 neutral scratch regressions,12 current checks each width,4288 current header/parser rechecks,six600-frame routes/3 builds pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "pipe producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00698",
+      "producer": "RenderSidewaysPipe",
+      "consumer": "DrawSidePart",
+      "storage": "06 horizontal object length",
+      "feasiblePath": "98ba stores resident/newly initialized object length;98ce reloads06 for pipe-table column selection.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:inline intro/exit pipe clauses",
+      "semanticContract": "Eight bounded original records,slots0..2,length0..3/new initialization. No malformed heights/index domains or every gameplay path claim.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:original98b5/98ba stores05=Y-2 and06=object length. Intro fixedY10 and exit decoded height now publish these exact RAM values before either shaft branch. Original predicates/render/clearing tails unchanged."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:240 original9508 returning roots each width/eight original bounded stream records,all6 labels observed,480 baseline05/06 differences repaired to zero/all RAM excluding observed physical pushes.48 neutral scratch regressions,12 current checks each width,4288 current header/parser rechecks,six600-frame routes/3 builds pass."
+      ],
+      "cohort": "D",
+      "cohortBasis": "pipe producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     }
   ],
   "cohorts": [
@@ -15389,10 +15431,10 @@
     }
   ],
   "nodeCounts": {
-    "exact": 1986,
+    "exact": 1992,
     "infeasible": 0,
     "mismatch": 0,
-    "needs-evidence": 6,
+    "needs-evidence": 0,
     "unclassified": 0
   },
   "controlEdgeCounts": {
@@ -23520,18 +23562,20 @@
       "label": "IntroPipe",
       "asmLine": 3810,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
         "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
-        "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs."
+        "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:original98b5/98ba stores05=Y-2 and06=object length. Intro fixedY10 and exit decoded height now publish these exact RAM values before either shaft branch. Original predicates/render/clearing tails unchanged."
       ],
       "operationalEvidence": [
-        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:240 original9508 returning roots each width/eight original bounded stream records,all6 labels observed,480 baseline05/06 differences repaired to zero/all RAM excluding observed physical pushes.48 neutral scratch regressions,12 current checks each width,4288 current header/parser rechecks,six600-frame routes/3 builds pass."
       ],
-      "semanticContract": "Builds fixed side pipe and conditionally clears upper vertical-pipe staging.",
+      "semanticContract": "Builds fixed side pipe and conditionally clears upper vertical-pipe staging. Includes original05/06 scratch outputs in declared intro/exit source-record and resident/new-object domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -23540,18 +23584,20 @@
       "label": "VPipeSectLoop",
       "asmLine": 3817,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
         "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
-        "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs."
+        "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:original98b5/98ba stores05=Y-2 and06=object length. Intro fixedY10 and exit decoded height now publish these exact RAM values before either shaft branch. Original predicates/render/clearing tails unchanged."
       ],
       "operationalEvidence": [
-        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:240 original9508 returning roots each width/eight original bounded stream records,all6 labels observed,480 baseline05/06 differences repaired to zero/all RAM excluding observed physical pushes.48 neutral scratch regressions,12 current checks each width,4288 current header/parser rechecks,six600-frame routes/3 builds pass."
       ],
-      "semanticContract": "Clears staged rows six through zero before intro-pipe cap placement.",
+      "semanticContract": "Clears staged rows six through zero before intro-pipe cap placement. Includes original05/06 scratch outputs in declared intro/exit source-record and resident/new-object domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -23560,18 +23606,20 @@
       "label": "NoBlankP",
       "asmLine": 3823,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
         "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
-        "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs."
+        "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:original98b5/98ba stores05=Y-2 and06=object length. Intro fixedY10 and exit decoded height now publish these exact RAM values before either shaft branch. Original predicates/render/clearing tails unchanged."
       ],
       "operationalEvidence": [
-        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:240 original9508 returning roots each width/eight original bounded stream records,all6 labels observed,480 baseline05/06 differences repaired to zero/all RAM excluding observed physical pushes.48 neutral scratch regressions,12 current checks each width,4288 current header/parser rechecks,six600-frame routes/3 builds pass."
       ],
-      "semanticContract": "Intro-pipe completion return.",
+      "semanticContract": "Intro-pipe completion return. Includes original05/06 scratch outputs in declared intro/exit source-record and resident/new-object domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -23637,18 +23685,20 @@
       "label": "ExitPipe",
       "asmLine": 3835,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
         "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
-        "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs."
+        "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:original98b5/98ba stores05=Y-2 and06=object length. Intro fixedY10 and exit decoded height now publish these exact RAM values before either shaft branch. Original predicates/render/clearing tails unchanged."
       ],
       "operationalEvidence": [
-        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:240 original9508 returning roots each width/eight original bounded stream records,all6 labels observed,480 baseline05/06 differences repaired to zero/all RAM excluding observed physical pushes.48 neutral scratch regressions,12 current checks each width,4288 current header/parser rechecks,six600-frame routes/3 builds pass."
       ],
-      "semanticContract": "Combines fixed horizontal length, decoded height and side-pipe rendering.",
+      "semanticContract": "Combines fixed horizontal length, decoded height and side-pipe rendering. Includes original05/06 scratch outputs in declared intro/exit source-record and resident/new-object domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -23657,18 +23707,20 @@
       "label": "RenderSidewaysPipe",
       "asmLine": 3840,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
         "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
-        "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs."
+        "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:original98b5/98ba stores05=Y-2 and06=object length. Intro fixedY10 and exit decoded height now publish these exact RAM values before either shaft branch. Original predicates/render/clearing tails unchanged."
       ],
       "operationalEvidence": [
-        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:240 original9508 returning roots each width/eight original bounded stream records,all6 labels observed,480 baseline05/06 differences repaired to zero/all RAM excluding observed physical pushes.48 neutral scratch regressions,12 current checks each width,4288 current header/parser rechecks,six600-frame routes/3 builds pass."
       ],
-      "semanticContract": "Separates vertical shaft height from horizontal phase and renders shaft before side pieces when present.",
+      "semanticContract": "Separates vertical shaft height from horizontal phase and renders shaft before side pieces when present. Includes original05/06 scratch outputs in declared intro/exit source-record and resident/new-object domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -23677,18 +23729,20 @@
       "label": "DrawSidePart",
       "asmLine": 3855,
       "cohort": "C",
-      "status": "needs-evidence",
+      "status": "exact",
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
         "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
-        "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs."
+        "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:original98b5/98ba stores05=Y-2 and06=object length. Intro fixedY10 and exit decoded height now publish these exact RAM values before either shaft branch. Original predicates/render/clearing tails unchanged."
       ],
       "operationalEvidence": [
-        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:240 original9508 returning roots each width/eight original bounded stream records,all6 labels observed,480 baseline05/06 differences repaired to zero/all RAM excluding observed physical pushes.48 neutral scratch regressions,12 current checks each width,4288 current header/parser rechecks,six600-frame routes/3 builds pass."
       ],
-      "semanticContract": "Writes source top/bottom side-pipe pair at selected staged row.",
+      "semanticContract": "Writes source top/bottom side-pipe pair at selected staged row. Includes original05/06 scratch outputs in declared intro/exit source-record and resident/new-object domains.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -159030,7 +159084,10 @@
         "ChkCFloor",
         "NotTall",
         "PlayerStop",
-        "ExitCastle"
+        "ExitCastle",
+        "IntroPipe",
+        "NoBlankP",
+        "ExitPipe"
       ],
       "controlEdgeIds": [],
       "status": "in-progress-material-use-completeness",
@@ -159051,7 +159108,9 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P8 checkpoint - enemy pointer handoff",
         "docs/proposals/m2/t70-final-current-certification.md S17 P9 bounded scope amendment - area pointer handoff",
         "docs/proposals/m2/t70-final-current-certification.md S17 P9 corrective scope amendment - castle row counter",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 corrective admission - sideways pipe scratch outputs",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",

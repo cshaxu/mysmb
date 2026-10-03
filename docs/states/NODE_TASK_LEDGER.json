@@ -21131,8 +21131,8 @@
     {
       "label": "IntroPipe",
       "line": 3810,
-      "receiver": "M2 T29 S9",
-      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P10 missing sideways pipe05/06 scratch outputs.",
       "futurePackage": null,
       "history": [
         {
@@ -21159,8 +21159,8 @@
     {
       "label": "VPipeSectLoop",
       "line": 3817,
-      "receiver": "M2 T29 S9",
-      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P10 missing sideways pipe05/06 scratch outputs.",
       "futurePackage": null,
       "history": [
         {
@@ -21187,8 +21187,8 @@
     {
       "label": "NoBlankP",
       "line": 3823,
-      "receiver": "M2 T29 S9",
-      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P10 missing sideways pipe05/06 scratch outputs.",
       "futurePackage": null,
       "history": [
         {
@@ -21299,8 +21299,8 @@
     {
       "label": "ExitPipe",
       "line": 3835,
-      "receiver": "M2 T29 S9",
-      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P10 missing sideways pipe05/06 scratch outputs.",
       "futurePackage": null,
       "history": [
         {
@@ -21327,8 +21327,8 @@
     {
       "label": "RenderSidewaysPipe",
       "line": 3840,
-      "receiver": "M2 T29 S9",
-      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P10 missing sideways pipe05/06 scratch outputs.",
       "futurePackage": null,
       "history": [
         {
@@ -21355,8 +21355,8 @@
     {
       "label": "DrawSidePart",
       "line": 3855,
-      "receiver": "M2 T29 S9",
-      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P10 missing sideways pipe05/06 scratch outputs.",
       "futurePackage": null,
       "history": [
         {
@@ -69600,6 +69600,22 @@
         "NotTall",
         "PlayerStop",
         "ExitCastle"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-pipe-scratch-1",
+      "type": "transfer",
+      "from": "M2 T29 S9",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "IntroPipe",
+        "VPipeSectLoop",
+        "NoBlankP",
+        "ExitPipe",
+        "RenderSidewaysPipe",
+        "DrawSidePart"
       ],
       "acceptedBy": "Coordinator under owner same-S repair mandate.",
       "evidence": "docs/proposals/m2/t70-final-current-certification.md"
@@ -766308,7 +766324,10 @@
         "ChkCFloor",
         "NotTall",
         "PlayerStop",
-        "ExitCastle"
+        "ExitCastle",
+        "IntroPipe",
+        "NoBlankP",
+        "ExitPipe"
       ],
       "baseline": 1992,
       "incomingComplete": [

@@ -47,5 +47,27 @@ int main(void)
         if (game.ram[0x732U] != (side == 0U ? 0U : 255U)) return 4;
         if (game.ram[0xfU] != 0U) return 5;
     }
+    /* The sideways helper publishes both scratch bytes before either shaft
+     * branch. Intro supplies Y=10; exit supplies the encoded vertical extent. */
+    for (height = 0U; height < 12U; ++height)
+    for (side = 0U; side < 4U; ++side) {
+        mysmb_game_initialize(&game);
+        memset(prg, 0xfd, sizeof(prg));
+        prg[0x40U] = height == 0U ? 0x0dU : 0x0fU;
+        prg[0x41U] = height == 0U ? 0x40U :
+            (mysmb_u8)(0x40U | (height + 1U));
+        mysmb_game_bind_area_source(&game, prg, sizeof(prg));
+        game.ram[0xe7U] = 0x40U;
+        game.ram[0xe8U] = 0x80U;
+        game.ram[0x730U] = game.ram[0x731U] = 0xffU;
+        game.ram[0x732U] = (mysmb_u8)side;
+        game.ram[0x72fU] = 0U;
+        game.ram[0x72cU] = 2U;
+        game.ram[5U] = 0xa5U;
+        game.ram[6U] = 0x69U;
+        if (!mysmb_area_process_object_state(&game)) return 6;
+        if (game.ram[5U] != (height == 0U ? 8U : height - 1U) ||
+            game.ram[6U] != side) return 7;
+    }
     return 0;
 }
