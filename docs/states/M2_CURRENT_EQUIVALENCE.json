@@ -27395,14 +27395,16 @@
         "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 zero-credit dependency repair:actual original return-address/byte-selector/PRG target writes04-07 retained in shared native dispatch owner.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Existing shared helper records original popped return9666 and selected bound-PRG target; source uses two PLA then JMP indirect, actual C child retains semantic execution.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:caller-only helper validatesB350/selector0-3/postphysicsfreeze andstate,bindsoriginal04-07 vector bytes;dispatcher count testedagainstactualphysicsreturnedRAM. Productownerunchanged,no nativehelper orchildcreditfromdoubles."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:caller-only helper validatesB350/selector0-3/postphysicsfreeze andstate,bindsoriginal04-07 vector bytes;dispatcher count testedagainstactualphysicsreturnedRAM. Productownerunchanged,no nativehelper orchildcreditfromdoubles.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P107 checkpoint - inline dispatch kernel uses reconciled:JumpEngine13instructions/4RAM scratchABI joinedJ1; actualgame.c owner,return/index/immutablepointer/alias lifetime reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T55 S6 P14 original-ROM large-platform selectors 0 through 6 each execute $c965, $c982 and $8e04. Current x86/x64 platform-caller and large-platform-graphics smokes pass. The prior controlled t28-init-screen route executes $8567, $8e04 and $8e19; current x86/x64 name-table/frame-snapshot checks and ROM/native CIRAM route checker pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S5 P4 original GameOverMode three branches and actual nested ScreenRoutines task13 both widths equal;scope does not claim every other dispatch family.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:37fresh originalROM roots,74caller and74production checks acrossx86/x64 match1788RAM bytes;fourwrongreturn/selector/missingcall/binding mutations rejected. Both all-targetbuilds andtwofocusedtests eachpass. AssetsP57unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:37fresh originalROM roots,74caller and74production checks acrossx86/x64 match1788RAM bytes;fourwrongreturn/selector/missingcall/binding mutations rejected. Both all-targetbuilds andtwofocusedtests eachpass. AssetsP57unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P107 checkpoint - inline dispatch kernel uses reconciled:9216actualkernelroots eachwidth/all13PC/full2048RAM0diff,no stackexclusion;14freshfocusedchecks eachwidth;source/productsP104unchanged."
       ],
       "semanticContract": "Existing shared helper records original popped return9666 and selected bound-PRG target; source uses two PLA then JMP indirect, actual C child retains semantic execution. P15 original call-site04-07 publication now included;compositional kernel/caller proof retains prior child/input contracts,not arbitrary-target execution.",
       "currentSourcePaths": [
@@ -170274,16 +170276,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:10labels/91instructions/34RAM joined4boundedclauses;callerinputs/bytecarry/tablebounds/outputalias/postchildcounter/stableY/storecommutation reviewed;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P105 checkpoint - screen output and music uses reconciled:22labels/110instructions/24RAM joined7boundedclauses;sourcecallorder/clearcommutation/titlebytewrap/packetcontrol-pointer/mirror/musicdomain reviewed;hardwareabstraction andwholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:8labels/69instructions/20RAM joined5boundedclauses;mask/pointer/header/childorder/cachedmode-pause/flag-phase/savedcontrol lifetimes reviewed;perdot andwholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:8labels/69instructions/20RAM joined5boundedclauses;mask/pointer/header/childorder/cachedmode-pause/flag-phase/savedcontrol lifetimes reviewed;perdot andwholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P107 checkpoint - inline dispatch kernel uses reconciled:JumpEngine13instructions/4RAM scratchABI joinedJ1; actualgame.c owner,return/index/immutablepointer/alias lifetime reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 10540,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 151,
+        "localInstructionReceiptSites": 10553,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 138,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 3732,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 41,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 3736,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 37,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -170293,7 +170296,6 @@
           "src/game/area.c plus src/game/oam/flagpole_gfx.c": 9,
           "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c": 5,
           "src/game/enemy/{lifecycle,podoboo}.c": 5,
-          "src/game/dispatcher.c": 4,
           "src/game/frame_root.c": 2,
           "src/game/frame_root.c and src/game/terminal_modes.c": 2,
           "src/game/enemy/platform_callers.c": 2,

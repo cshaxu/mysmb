@@ -9241,3 +9241,15 @@ Current src/game/area.c normalizedSHA256:4f82e262ae480e1c8f5581fabf0490d9754be85
 Current src/game/audio.c normalizedSHA256:b02bed93dffecc3c205b04801abe85054af28dab7fc83518205915befd43b1b4.
 
 Current src/game/status.c normalizedSHA256:afc46297e447ad911458c1e234497fff708a73a51c9f8d47e499103d956e95ef.
+
+## S17 P107 admission - inline dispatch kernel use join
+
+Existing JumpEngine8E04-8E16 thirteen pending instructions;actual shared implementation is game.c mysmb_game_jump_engine_state,not the coarse census dispatcher.c owner. Review original stack return to04/05,byte ASL/INY indexing,immutable PRG low/high reads to06/07 and target handoff. Fresh9216 original kernel roots cover18 original inline return bases/256 selectors/two RAM seeds;stop after JMP before arbitrary target execution. Compare complete2048RAM with no stack exclusion;no global register/target/inter-frame claim. Current kernel owner recompiled from exact current source and fourteen focused dispatcher checks eachwidth. Source/productP104unchanged unless mismatch;scope1646/fresh0/max1992. ROMreadonly,rawbelowbuild128MiB/120sec perprocess anddeleteafteruse.
+
+## S17 P107 checkpoint - inline dispatch kernel uses reconciled
+
+S17 P107:JumpEngine13instructions/4RAM joined1bounded scratchABI clause;9216actualkernelroots eachwidth0diff/all13PC,14tests each. Scope1646/fresh0;10553/10691instruction receipts,3736/3773RAM receipts;138instructions/37RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,wholeproducer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
+
+J1: Original8E04ASL/TAY computes byte2selector,PLA low/high inline return to04/05,INY before each indexed immutablePRG read,stores06/07 thenJMPindirect06. Nativeactualowner game.c mysmb_game_jump_engine_state receives exactcaller returnbase/byte selector,casts shift andincrements to byte before each16bitaddress addition; secondINY wraps independently,includingselector127/255. Reads04/05 precede06/07 writes andare disjoint; immutablePRG cannotaliasCPU scratch,helperhasno child orintermediateobserver. Referencephysicalstack isread-onlyPLA andcomparesall2048RAM without exclusions; Creturn_address parameterrepresentspoppedreturnbase,notphysicalstack emulation. Fresh18callbases/256selectors/twoseeds cover9216kernelroots eachwidth/all13PC andzeroRAMdiff. StopafteroriginalJMP,not targetexecution; unmodeledCPUA/Y/P/SP areoutside declared scratchABI. Normalcallers ownlegal selectors and theirtarget dispatch; P15caller joins retained,not arbitraryselector targetproof. Wholeproducer/inter-frame/material-route/pixel packages remainpending.
+
+Current exactgame.c directlycompiled into nativekernel harness,unusedparentsections discarded; sourcehash/assertion andthreeP104hashes unchanged. Initial relocatedscript censuspath failedbefore anycase;correctedparentcensus path andrerancleanly,not aROMdiff. Currentkernel owner revalidated instead of creditingPCvisitalone; fournegativeaccountingmutants rejected. Remaining dispatchparent/enemy/platform/player/flagpole uses staypending; no node/controlpromotion orwholelifetime claim.

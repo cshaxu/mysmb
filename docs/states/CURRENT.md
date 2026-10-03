@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P106 NMI output checkpoint;S17 remains active,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P107 inline dispatch checkpoint;S17 remains active,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
@@ -138,7 +138,6 @@
 
 
 
-S17 P99:44player dispatch labels/213instructions/80RAM joined7boundedclauses;9984actualroots eachwidth0diff/all213PC/34branchpairs,6tests each. Scope1588/fresh0;9983/10691instruction receipts,3551/3773RAM receipts;708instructions/222RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP98unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
 S17 P100:7scroll labels/72instructions/32RAM joined4boundedclauses;131072actualroots eachwidth0diff/all72PC/9branchpairs,4tests each. Scope1594/fresh0;10055/10691instruction receipts,3583/3773RAM receipts;636instructions/190RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP98unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
@@ -153,3 +152,5 @@ S17 P104:16area-callback labels/70instructions/15RAM joined7boundedclauses;bridg
 S17 P105:22screen/music labels/110instructions/24RAM joined7boundedclauses;69520actualroots eachwidth0diff/all110PC/17branchpairs,7tests each. Scope1645/fresh0;10471/10691instruction receipts,3712/3773RAM receipts;220instructions/61RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,producer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
 
 S17 P106:8NMI-output labels/69instructions/20RAM joined5boundedclauses;8787actualroots eachwidth0diff/all69PC/8branchpairs,5tests each. Scope1646/fresh0;10540/10691instruction receipts,3732/3773RAM receipts;151instructions/41RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,producer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
+
+S17 P107:JumpEngine13instructions/4RAM joined1bounded scratchABI clause;9216actualkernelroots eachwidth0diff/all13PC,14tests each. Scope1646/fresh0;10553/10691instruction receipts,3736/3773RAM receipts;138instructions/37RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,wholeproducer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
