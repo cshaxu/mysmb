@@ -9516,3 +9516,39 @@ Completebyteaddress arithmetic independently checksall8-bit index values forRAM-
 Critical integration distinction:InitRearC9643 deliberatelyclearsObjectOffset0;itmust beaccountedfor inparserloopchildreturns. NativeGameEngineactors localfor(slot0..5) matchesoriginalProcELoop onlyunderactualEnemyCore/Floatey returnedX/current08 contract;retainedfrozen/nonfrozenfixture equalityisnotallstates proof. AF24DEX also requiresfirstblockchildXrestore. Three dynamicstorage obligations are03EEblockcontrol forJCoinC,0368Bowserfront forBridgeCollapse and06CFduplicate forCopyFToR;P116 constrainsallocator06CF atbirth,butoverwrites/lifetime stillpending. SavedfrontrestoreD1B3 doesnotprovesavedinputdomain. These nameddependencies arethe nextwork,notanotherwhole-projectround.
 
 Negativeaccountingchecks rejectmissing/duplicatepublisher andemptyclause. No runtimeaddress clamp,platformlogic orproductsourcechanged;P115threeproduct identities verifiedunchanged.
+
+## S17 P118 admission - loop child-return contracts
+
+ExistingP117return-dependency gap,no globalrestart. Auditparticipants 19:BlockObjectsCore,BouncingBlockHandler,BublLoop,ChkNumTimer,ChkTallEnemy,ChkTop,Chk_BB,DecNumTimer,FloateyNumbersRoutine,FloateyPart,GetAltOffset,KillBlock,LoadNumTiles,MiscLoopBack,NextBUpd,ProcADLoop,ProcELoop,SetupNumSpr,UpdSte. Scope originalFloatey84C3-8566/BlockBE70-BED3 andlistedloop control owners;allhistoricalmatched,expectedfresh0/max1992/S17scope1667 unchanged. Source earlyreturn Xpreservation vsLDX08 tail andoriginalscore/relative/offscreen/draw childreturns;actualreturning roots65(parser),71(bubble),75(cannon),77(misc),84(block),85(updater),171(actor-loop stop beforeengine tail) reuseexplicitoldinputmanifests withnewCPU X assertions. New190Floatey rootvariesX0-20 andcontrol/timer/OAM/ID/state/fullRAMpayloads,currentplayer0/1. Fullnonphysical-stackRAM/APU/orderedwrites bothwidths;no privatecopies/ROMpatches. NativevoidABI excludesCPUregisterreturn,butROMassertion verifiesvalueusedbyparentloop;C loop/childread-order review separate. Noallstates/global008proof inferred. Freshfocusedchecks andaccountinggates;productsunchangedunlessboundedsource mismatch requiresamendment/repair/rebuildthree. Rawtrace containment4096/128MiB/120s belowbuild.
+
+S17 P118 same-scope manifest amendment:mode191 actualAEFE-AF10 parent usesmode172 realgroup-parser fixture withsixlivefloateycontrols/timer2B andrealAddToScore aftereachEnemyCore. Currentplayer0/1,scoredecimalfixtures/OAMgroups/VRAMoffset0 explicit. AssertoriginalfinalX6,fullnonphysical-stackRAM/APU/orderedwrites,currentactualCowners;65536roots eachwidth. Separate eightcompletedfamilies retained,onlynewcoupledmanifest runs. No source/productchange ornewS/scopecredit.
+
+## S17 P118 checkpoint - qualified loop child returns verified
+
+S17 P118:19loop/childlabels,195PC scope;154freshPCobserved/41retainedlocal receipts with123sourceidentities match. Nineoriginalfamilies589824roots eachwidth0scopedRAM/APU/orderedwrite diff;newCPU Xreturnassertions andrealenemy-pluslive-score parentX6 pass. Sevenfocusedtests eachwidthpass,no code/productchange,P115EXEs retained. Historical1992/1992,local1991/1992nodes/4260/4261controls(raw4342/infeasible81),material993partial/totalunknown;globalcaller/alias lifetimes stillpending,M2 incomplete.
+
+- floatey:84C3control0 branch and84D7timer0 return before anyX reassignment,soearlyX=input. Scorepath modifiesXdigit butactualAddToScore tailBC46 reloads08;alternateOAM path8529reloads08;final8564reloads08. Nativecachedslot matches whenincomingX==08 andchild08 preserved. Freshroot190X0-20/rawcontrol/timer/OAM/scopedcurrentPlayer andactualparent191 provesqualifiedreturnintegration,notarbitrary08 alias freedom.
+- blocks:BE70inactive path onlyreads/storesBlock_State,returnsinitialX. ActivepathGravity/horizontal mayusecombinedX9..12,butBE91/BEB6 restores08 before relative/offscreen/OAMchildren. Nativeexplicit slot=08 reloads atoriginalchild boundaries. Mode84assertsfinalXinitial0/1,bothbounce/chunks fixturepaths;inactiveintrinsic path retained. AF24DEX/local0 equivalence conditional onsamechild08 bound.
+- parser:Actual9508roots65 finishXFF afterProcADLoop decrement/reload scheduling. InitRear maypublish08=0 deliberately;fixture equality/FF assertion confirmsselectedimmutablepairs/state domains,doesnotderivearbitraryparserchild preservation froma genericforloop.
+- bubble:B6F9root71 preservesincomingX0-2 acrossactualbubblecreate/movechildren. DrawBubble hasnoXmodification;relative/offscreen sourcechildren reload08 underretainedP44dispatcher contract. WholeBublLoop notfreshlycovered here;P44 actualB624parent evidence/sourceidentity retained.
+- cannon:ActualB9BCroots75 returnXFF afterthree slots;nativecurrentcannon ownerreloads08 afterchildren beforedecrement,scopedhardmode/ID/coordinates/timer/OAM fixtures retained. Notall rawfrenzyselectors.
+- misc-updater:ActualBB96roots77 andBED4roots85 returnXFF;localRAM matchincludesfinal08 andall childresults. Misc reloads08 fromhammer/movement/relative/offscreen/OAMchildren beforeloopback. Updater sourceNextBUpdDEX/BPL followsactualwrite/VRAM capacity gates. Pointer/slotproducer lifetimes remainsindependent obligation.
+- actors:ActualAEFE-AF10 roots171 frozenidle and191 realgroup-parser withsixlivefloatey2B score paths returnX6. NativeactualEnemyCore/Floatey sequence/fullRAM/APU/order match. Parent191 runsunmodifiedchildren uninterrupted,nobetween-call writes. Sourcecurrentlocalforloop isqualifiedinthesemanifests,notbyrangealone orfullgameallstates.
+
+| Original root family | Roots eachwidth | CPU return assertion |
+| --- | --- | --- |
+| 190 84C3 floatey | 65536 | inputX0-20 |
+| 65 9508 parser | 65536 | FF |
+| 71 B6F9 bubble | 65536 | inputX0-2 |
+| 75 B9BC cannons | 65536 | FF |
+| 77 BB96 misc | 65536 | FF |
+| 84 BE70 block | 65536 | inputX0/1 |
+| 85 BED4 updater | 65536 | FF |
+| 171 AEFE-AF10 idleactors | 65536 | 06 |
+| 191 AEFE-AF10 realgroup/live-score | 65536 | 06 |
+
+These assertionsrunonactualoriginalCPU;nativevoidAPI doesnot exposeX. Fullnonphysical-stackRAM/24APU/orderedwrites comparebothwidths. Physical1F0-1FF excludedbydeclaredABI;minimumSP retainedperroute. Casecountsarecontrolledinputmanifests,notexhaustive machine states. NewFloatey fixturevariesrawcontrols,sixtimers,21 incomingX values anddeterministicRAM/OAMpayloads;currentplayer0/1 andsource immutabletables explicitlybound. Parent191usesactualsource172groupdecoder/initializers andsixlivecontrols/timer2B,validscoredecimalpayloads/OAMgroups/VRAMstart0. NoROMinstructionpatches,mockchildren orbetween-call fixturewrites.
+
+Scope coverageis154/195freshPC,not195freshlyexecuted. Retained41:951f,9520,9522,9523,9525,9528,952a,952d,af10,af13,af16,af19,af1c,af1e,af20,af23,af24,af26,af29,af2c,af2f,af32,af35,af38,af3b,af3d,af3f,af41,af44,af46,af48,af4a,af4d,af4f,b675,b677,b67a,b67d,b680,b683,b684. These includeparserdiscardbranches,enginecontinuationbeyondAF10,andwholebubblecaller. ExistingP29/P44/P57/P111 localreceipts remainwiththeir originaldomains andsourceidentities;no silentglobalpromotionorclaimofnewcoverage. All123currentnormalizedowner hashes matchacceptedindex. Sourceproofandcurrentboundedparentrunsclose the namedqualifiedreturn checks;globalproducer/alias/interframe clauses stayopen.
+
+Firsttestbuild used nonexistentbubbletarget andfailed;correctmysmb_bubble_core_chain_smoke target subsequentlybuilt,theinitialfailedlogsretainno passingcredit. Sevenactualchecks eachwidthpass;threeP115productidentities verifiedunchanged,originalDOS16compile/link evidence retainedwithoutnewruntimeclaim. No product/sourcechangeornewnode/controlcredit.

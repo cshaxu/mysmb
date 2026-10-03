@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P118 loop child returns](../proposals/m2/t70-final-current-certification.md#s17-p118-checkpoint---qualified-loop-child-returns-verified).
+S17 P118:19loop/childlabels,195PC scope;154freshPCobserved/41retainedlocal receipts with123sourceidentities match. Nineoriginalfamilies589824roots eachwidth0scopedRAM/APU/orderedwrite diff;newCPU Xreturnassertions andrealenemy-pluslive-score parentX6 pass. Sevenfocusedtests eachwidthpass,no code/productchange,P115EXEs retained. Historical1992/1992,local1991/1992nodes/4260/4261controls(raw4342/infeasible81),material993partial/totalunknown;globalcaller/alias lifetimes stillpending,M2 incomplete.
+
 [P117 ObjectOffset dependencies](../proposals/m2/t70-final-current-certification.md#s17-p117-checkpoint---objectoffset-producer-dependency-matrix).
 S17 P117:17ObjectOffset publishers/17labels source/retainedreceipt joins complete,123currentowner identities match. Extracted344indexed008aliascandidates includingzero-pagewrap/RAMmirror;3intrinsicloops excluded,341callerconditions and9indirectlifetimes pending. Loopchildreturn and3dynamicstorage prerequisitesexplicit;no globalpromotion. Fivefocusedtests eachwidthpass,no code/productchange,P115threeproducts retained. Historical1992/1992,local1991/1992nodes/4260/4261controls(raw4342/infeasible81),material993partial/totalunknown,M2 incomplete.
 

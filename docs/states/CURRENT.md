@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P117 ObjectOffset publisher checkpoint;S17 remains active,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P118 loop return checkpoint;S17 remains active,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
@@ -149,7 +149,6 @@
 
 
 
-S17 P110:FlagpoleObject23instructions/9RAM joined1boundedclause;65536actual9508parserparents eachwidth0diff/all23PC,5tests each. Scope1663/fresh0;10646/10691instruction receipts,3757/3773RAM receipts;45instructions/16RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,wholeproducer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
 
 S17 P111:11mode/parser labels/44instructions/16RAM joined7boundedclauses;83712actualroots eachwidth0diff/all44PC/5branchpairs,14tests each. Scope1667/fresh0;10690/10691instruction receipts,3773/3773RAM receipts;1instruction/0RAM pending(CheckForEnemyGroupC1FB). Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,wholeproducer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
 
@@ -164,3 +163,5 @@ S17 P115:18 initializer/platform labels,75 original instructions and5 conditiona
 S17 P116:9parent/dispatch/duplicate labels,40originalPC reviewed;source state-zero sentinel boundsrear<=15+front<=20 forfront0-5. Five absolute-Y writer bounds corrected fromconditional5 to20;359globalcaller-domain flows stillpending. 65536actualC226parents eachwidth0scopedRAM/APU/orderedwrite diff,all40PC/maximum20witness;5tests eachwidthpass,no source/productchange,P115threeproducts retained. Historical1992/1992,local1991/1992nodes and4260/4261controls(raw4342,infeasible81);material993partial/totalunknown,M2 incomplete.
 
 S17 P117:17ObjectOffset publishers/17labels source/retainedreceipt joins complete,123currentowner identities match. Extracted344indexed008aliascandidates includingzero-pagewrap/RAMmirror;3intrinsicloops excluded,341callerconditions and9indirectlifetimes pending. Loopchildreturn and3dynamicstorage prerequisitesexplicit;no globalpromotion. Fivefocusedtests eachwidthpass,no code/productchange,P115threeproducts retained. Historical1992/1992,local1991/1992nodes/4260/4261controls(raw4342/infeasible81),material993partial/totalunknown,M2 incomplete.
+
+S17 P118:19loop/childlabels,195PC scope;154freshPCobserved/41retainedlocal receipts with123sourceidentities match. Nineoriginalfamilies589824roots eachwidth0scopedRAM/APU/orderedwrite diff;newCPU Xreturnassertions andrealenemy-pluslive-score parentX6 pass. Sevenfocusedtests eachwidthpass,no code/productchange,P115EXEs retained. Historical1992/1992,local1991/1992nodes/4260/4261controls(raw4342/infeasible81),material993partial/totalunknown;globalcaller/alias lifetimes stillpending,M2 incomplete.
