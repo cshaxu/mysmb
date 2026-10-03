@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P116 allocation sentinel](../proposals/m2/t70-final-current-certification.md#s17-p116-checkpoint---duplicate-allocation-parent-bound-proved).
+S17 P116:9parent/dispatch/duplicate labels,40originalPC reviewed;source state-zero sentinel boundsrear<=15+front<=20 forfront0-5. Five absolute-Y writer bounds corrected fromconditional5 to20;359globalcaller-domain flows stillpending. 65536actualC226parents eachwidth0scopedRAM/APU/orderedwrite diff,all40PC/maximum20witness;5tests eachwidthpass,no source/productchange,P115threeproducts retained. Historical1992/1992,local1991/1992nodes and4260/4261controls(raw4342,infeasible81);material993partial/totalunknown,M2 incomplete.
+
 [P115 platform byte addresses](../proposals/m2/t70-final-current-certification.md#s17-p115-checkpoint---platform-initializer-byte-addresses-repaired).
 S17 P115:18 initializer/platform labels,75 original instructions and5 conditionalbranch pairs reviewed;14 zero-page-X C expressions corrected across7bodies. EightactualreturningROM families,524288roots eachwidth0scopedRAM/APU/orderedwrite diff/all75PC/10branchsides;5focusedtests eachwidthpass. ThreeEXEs refreshed(originalOpenNT16 compile/linkonly). Historical1992/1992,local1991/1992nodes and4260/4261controls(raw4342,infeasible81),material993partial/totalunknown;M2 incomplete.
 

@@ -9452,3 +9452,31 @@ Local product mysmb32.exe:bytes374219,SHA256:47fcc30c8ee11df72ccf88fc625967a7e55
 Local product mysmb64.exe:bytes380216,SHA256:42323e4e8b70baf322e0ba3738b1d27ca89cd4541dad0f83d82c75d239b2e8ae.
 
 Current init_targets.c normalizedSHA256:d12e09c0283898d29a0bc5b4a00a47676eb556d6799b695e72bdfea254473c65.
+
+## S17 P116 admission - duplicate allocation state-zero sentinel
+
+Existing material slot-domain gap,audit-only parentchain InitEnemyObject/CheckpointEnemyID/InitEnemyRoutines/JumpEngine ->InitLongFirebar orInitBowser ->DuplicateEnemyObj/FSLoop/FlmEx. Exact9labels,existingS17scope1667,fresh0/max1992. Prove sourceC228 zero state1E+X survives legal31/45dispatch untilfirst C578searchread. ForincomingX0-5,sentinel isFlag0F+(15+X),soallocationY<=20 regardlessotherRAMvalues. This is a parentdomain theorem,notrawleaf clamp andnotyetglobalObjectOffset closure. Sourcebothactualcallers andvectorbindings,allinterposedwrites,then65536actualunmodifiedC226parents/currentx86/x64 fullnonphysical-stackRAM/APU/orderedwrites. ObserveallocatedY bounddirectly;negativeall-nonzero/rawentrycounterexample retainsP114leafcontract. No productchange/buildrequired exceptfocusedcheckers/tests;ROM readonly,batches4096/128MiB/120s,rawcleanup belowbuild.
+
+## S17 P116 checkpoint - duplicate allocation parent bound proved
+
+S17 P116:9parent/dispatch/duplicate labels,40originalPC reviewed;source state-zero sentinel boundsrear<=15+front<=20 forfront0-5. Five absolute-Y writer bounds corrected fromconditional5 to20;359globalcaller-domain flows stillpending. 65536actualC226parents eachwidth0scopedRAM/APU/orderedwrite diff,all40PC/maximum20witness;5tests eachwidthpass,no source/productchange,P115threeproducts retained. Historical1992/1992,local1991/1992nodes and4260/4261controls(raw4342,infeasible81);material993partial/totalunknown,M2 incomplete.
+
+Proof:originalC226/C228 writeszero to1E+X beforeC22A. ID31/45 takesC270 BCS directlytoC27F;originalvectors bindC459/C549,eachfirstinstructionJSR C575. JumpEngine writesonly04/05/06/07;actualstackwritesarehigh01xx,so1E+X survivesforX0-5. Firstsearchzero occursat orbeforeY=(1E+X)-0F=15+X. Arbitraryprefix values cannot remove thiszero;allnonzero prefix achievesbound. This establishesparentallocationrange without assuminganyof6flags free.
+
+| Writer PC | Original destination | Maximum withY20 | Pointer/cursor alias |
+| --- | --- | --- | --- |
+| C583 | 000F+Y | 0023 | disjointE9/EA/739 |
+| C588 | 006E+Y | 0082 | disjointE9/EA/739 |
+| C58D | 0087+Y | 009B | disjointE9/EA/739 |
+| C594 | 00B6+Y | 00CA | disjointE9/EA/739 |
+| C599 | 00CF+Y | 00E3 | disjointE9/EA/739 |
+
+ActualC226parents includeboth31/45targets,incomingX0-5 anddeterministicfullRAMpayloads;addedallnonzero-prefix profiles attain15+X forallsixfronts,observedallocationmaximum20. Fullnonphysical-stackRAM/24APU/orderedwrites comparisons;nativeadapter suppliesoriginaltwoinstructionstate-zero publication thenlinksactualcurrentCheckpointEnemyID/initializer children. Adapterisnotclaimedasa newproductionentryorprivatecopyofchildlogic. ArbitrarydirectC575all-byteY evidence retainedP114. Inputdomain andABI areexplicit;notnormalgamefull-lifetime proof.
+
+OriginalDuplicateEnemyObj hasexactlytwoJSRcall sitesC459/C549. OtherCheckpoint callsitesC6FA/ C77C producefish/Bill orgroup IDs anddo notprovide31/45intheirretainedlegalcontracts;theirglobalproducer prerequisites remainexplicit. This checkpoint replacesinvalidrear0-5assumption withconditionalrear0-20 andleavesfrontObjectOffset proof asnextdependency. No clamp,slotcapacityrule orproductlogic invented. Three accountingnegativechecks rejectmissingfront,artificial6-slot bound andlostzero sentinel. Source/branch proof isindependentof finiteRAMpayload coverage. No globalnode/edge promotion ormaterialdenominator change.
+
+Current src/game/enemy/init.c normalizedSHA256:b154847ffaf647e43d39c14f5dc26818acdc6c3160f6c0a922034b2f038f63cb.
+
+Current src/game/enemy/init_targets.c normalizedSHA256:d12e09c0283898d29a0bc5b4a00a47676eb556d6799b695e72bdfea254473c65.
+
+Current src/game/enemy/stream.c normalizedSHA256:64420800e1e049dcc6f4dbbe58d942a9692b5210e3d2efeea298c8a682d05049.

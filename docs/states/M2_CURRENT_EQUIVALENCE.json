@@ -27408,7 +27408,8 @@
         "docs/history/M2-T69-cross-cohort-current-proof.md S6 P3 source/byte-width/read/write/order/ABI audit: Existing shared helper records original popped return9666 and selected bound-PRG target; source uses two PLA then JMP indirect, actual C child retains semantic execution.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:caller-only helper validatesB350/selector0-3/postphysicsfreeze andstate,bindsoriginal04-07 vector bytes;dispatcher count testedagainstactualphysicsreturnedRAM. Productownerunchanged,no nativehelper orchildcreditfromdoubles.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P107 checkpoint - inline dispatch kernel uses reconciled:JumpEngine13instructions/4RAM scratchABI joinedJ1; actualgame.c owner,return/index/immutablepointer/alias lifetime reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P107 checkpoint - inline dispatch kernel uses reconciled:JumpEngine13instructions/4RAM scratchABI joinedJ1; actualgame.c owner,return/index/immutablepointer/alias lifetime reviewed;arbitrarytarget andwholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P116 checkpoint - duplicate allocation parent bound proved:statezero parent theorem boundsallocatedY20 forfrontX0-5;rawleaf/globaldomain distinct."
       ],
       "operationalEvidence": [
         "M2 T55 S6 P14 original-ROM large-platform selectors 0 through 6 each execute $c965, $c982 and $8e04. Current x86/x64 platform-caller and large-platform-graphics smokes pass. The prior controlled t28-init-screen route executes $8567, $8e04 and $8e19; current x86/x64 name-table/frame-snapshot checks and ROM/native CIRAM route checker pass.",
@@ -27416,7 +27417,8 @@
         "docs/history/M2-T69-cross-cohort-current-proof.md S6 P3 final67584 original roots per width zero persistent-RAM/APU/write diff;18 labels zero fresh credit;9 tests each/purity/current builds/OpenNT link.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P58 checkpoint - movement caller dispatch diagnostic restored:37fresh originalROM roots,74caller and74production checks acrossx86/x64 match1788RAM bytes;fourwrongreturn/selector/missingcall/binding mutations rejected. Both all-targetbuilds andtwofocusedtests eachpass. AssetsP57unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P107 checkpoint - inline dispatch kernel uses reconciled:9216actualkernelroots eachwidth/all13PC/full2048RAM0diff,no stackexclusion;14freshfocusedchecks eachwidth;source/productsP104unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P107 checkpoint - inline dispatch kernel uses reconciled:9216actualkernelroots eachwidth/all13PC/full2048RAM0diff,no stackexclusion;14freshfocusedchecks eachwidth;source/productsP104unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P116 checkpoint - duplicate allocation parent bound proved:65536actualC226parents eachwidth0diff/all40PC/max20observed;5focusedtests eachwidth;P115products unchanged."
       ],
       "semanticContract": "Existing shared helper records original popped return9666 and selected bound-PRG target; source uses two PLA then JMP indirect, actual C child retains semantic execution. P15 original call-site04-07 publication now included;compositional kernel/caller proof retains prior child/input contracts,not arbitrary-target execution.",
       "currentSourcePaths": [
@@ -42264,12 +42266,14 @@
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S2 static $C0D7-$C175 audit plus controlled original-ROM stream records: end/slot-five gates, page and extended-right arithmetic, position-before-bounds, row and hard-mode predicates, group/frenzy handoffs, cursor advance, initializer call/return ordering and RAM writes match the source instruction sequence.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P116 checkpoint - duplicate allocation parent bound proved:statezero parent theorem boundsallocatedY20 forfrontX0-5;rawleaf/globaldomain distinct."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P116 checkpoint - duplicate allocation parent bound proved:65536actualC226parents eachwidth0diff/all40PC/max20observed;5focusedtests eachwidth;P115products unchanged."
       ],
       "semanticContract": "Clears current enemy state, calls CheckpointEnemyID and falls into return exit.",
       "currentSourcePaths": [
@@ -42451,13 +42455,15 @@
         "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P116 checkpoint - duplicate allocation parent bound proved:statezero parent theorem boundsallocatedY20 forfrontX0-5;rawleaf/globaldomain distinct."
       ],
       "operationalEvidence": [
         "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P116 checkpoint - duplicate allocation parent bound proved:65536actualC226parents eachwidth0diff/all40PC/max20observed;5focusedtests eachwidth;P115products unchanged."
       ],
       "semanticContract": "For IDs below $15 adds eight to Y and sets masked offscreen bit, then enters initializer vector dispatch.",
       "currentSourcePaths": [
@@ -42476,12 +42482,14 @@
         "Td S9 B14j enemy-stream and initializer-vector node-semantics and independent integration audit: SMB1 lines 7911-8094 compared with shared enemy stream, initialization, group, loop and frenzy owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P116 checkpoint - duplicate allocation parent bound proved:statezero parent theorem boundsallocatedY20 forfrontX0-5;rawleaf/globaldomain distinct."
       ],
       "operationalEvidence": [
         "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P116 checkpoint - duplicate allocation parent bound proved:65536actualC226parents eachwidth0diff/all40PC/max20observed;5focusedtests eachwidth;P115products unchanged."
       ],
       "semanticContract": "Invokes JumpEngine over the fifty-five-entry initializer vector, including aliases and residual power-up/vine entries.",
       "currentSourcePaths": [
@@ -43404,14 +43412,16 @@
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P116 checkpoint - duplicate allocation parent bound proved:statezero parent theorem boundsallocatedY20 forfrontX0-5;rawleaf/globaldomain distinct."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:262144original returning roots eachwidth2032RAM/24APU/orderedwrites0diff,all58PC/bothscanbranches,actualCPU X==input08;6focusedtests eachpass;source/productsP57unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:262144original returning roots eachwidth2032RAM/24APU/orderedwrites0diff,all58PC/bothscanbranches,actualCPU X==input08;6focusedtests eachpass;source/productsP57unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P116 checkpoint - duplicate allocation parent bound proved:65536actualC226parents eachwidth0diff/all40PC/max20observed;5focusedtests eachwidth;P115products unchanged."
       ],
       "semanticContract": "Calls DuplicateEnemyObj, then falls through into the short-firebar initialization body.",
       "currentSourcePaths": [
@@ -43679,13 +43689,15 @@
         "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P116 checkpoint - duplicate allocation parent bound proved:statezero parent theorem boundsallocatedY20 forfrontX0-5;rawleaf/globaldomain distinct."
       ],
       "operationalEvidence": [
         "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:262144original returning roots eachwidth2032RAM/24APU/orderedwrites0diff,all58PC/bothscanbranches,actualCPU X==input08;6focusedtests eachpass;source/productsP57unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:262144original returning roots eachwidth2032RAM/24APU/orderedwrites0diff,all58PC/bothscanbranches,actualCPU X==input08;6focusedtests eachpass;source/productsP57unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P116 checkpoint - duplicate allocation parent bound proved:65536actualC226parents eachwidth0diff/all40PC/max20observed;5focusedtests eachwidth;P115products unchanged."
       ],
       "semanticContract": "Calls DuplicateEnemyObj then writes front offset, body/bridge controls, origin X, breath/direction $df, paired $20 timers, hit points five and movement speed two.",
       "currentSourcePaths": [
@@ -43705,14 +43717,16 @@
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P114 checkpoint - duplicate-object byte addresses repaired:four zero-page-X accesses preserve bytewrap;absolute-Y scan/destinations unchanged;all-byteX leafcontract expanded,no natural reachability claim."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P114 checkpoint - duplicate-object byte addresses repaired:four zero-page-X accesses preserve bytewrap;absolute-Y scan/destinations unchanged;all-byteX leafcontract expanded,no natural reachability claim.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P116 checkpoint - duplicate allocation parent bound proved:statezero parent theorem boundsallocatedY20 forfrontX0-5;rawleaf/globaldomain distinct."
       ],
       "operationalEvidence": [
         "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:262144original returning roots eachwidth2032RAM/24APU/orderedwrites0diff,all58PC/bothscanbranches,actualCPU X==input08;6focusedtests eachpass;source/productsP57unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P114 checkpoint - duplicate-object byte addresses repaired:65536 actualroots eachwidth0diff/all18PC/bothbranchsides;old-regression red/newgreen,5tests eachwidth,threeEXEs refreshed."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P114 checkpoint - duplicate-object byte addresses repaired:65536 actualroots eachwidth0diff/all18PC/bothbranchsides;old-regression red/newgreen,5tests eachwidth,threeEXEs refreshed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P116 checkpoint - duplicate allocation parent bound proved:65536actualC226parents eachwidth0diff/all40PC/max20observed;5focusedtests eachwidth;P115products unchanged."
       ],
       "semanticContract": "Wraps upward from Y=$ff until an inactive Enemy_Flag slot, records DuplicateObj_Offset and copies exactly the source fields in source order.",
       "currentSourcePaths": [
@@ -43730,12 +43744,14 @@
         "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P114 checkpoint - duplicate-object byte addresses repaired:four zero-page-X accesses preserve bytewrap;absolute-Y scan/destinations unchanged;all-byteX leafcontract expanded,no natural reachability claim."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P114 checkpoint - duplicate-object byte addresses repaired:four zero-page-X accesses preserve bytewrap;absolute-Y scan/destinations unchanged;all-byteX leafcontract expanded,no natural reachability claim.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P116 checkpoint - duplicate allocation parent bound proved:statezero parent theorem boundsallocatedY20 forfrontX0-5;rawleaf/globaldomain distinct."
       ],
       "operationalEvidence": [
         "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:262144original returning roots eachwidth2032RAM/24APU/orderedwrites0diff,all58PC/bothscanbranches,actualCPU X==input08;6focusedtests eachpass;source/productsP57unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P114 checkpoint - duplicate-object byte addresses repaired:65536 actualroots eachwidth0diff/all18PC/bothbranchsides;old-regression red/newgreen,5tests eachwidth,threeEXEs refreshed."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P114 checkpoint - duplicate-object byte addresses repaired:65536 actualroots eachwidth0diff/all18PC/bothbranchsides;old-regression red/newgreen,5tests eachwidth,threeEXEs refreshed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P116 checkpoint - duplicate allocation parent bound proved:65536actualC226parents eachwidth0diff/all40PC/max20observed;5focusedtests eachwidth;P115products unchanged."
       ],
       "semanticContract": "Increments the duplicate slot and loops while Enemy_Flag is nonzero; the first zero slot enters the copy sequence.",
       "currentSourcePaths": [
@@ -43753,12 +43769,14 @@
         "Td S9 B14n Bowser initializer and object-duplication node-semantics and independent integration audit: SMB1 lines 8529-8569 compared with shared enemy/init_targets.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S5 static $C2EA-$C395 audit: exact Flying Cheep random/table/index/borrow and Bowser/Bowser-flame duplicate, timer, table, branch and source-order write semantics in shared C90 game owners.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P114 checkpoint - duplicate-object byte addresses repaired:four zero-page-X accesses preserve bytewrap;absolute-Y scan/destinations unchanged;all-byteX leafcontract expanded,no natural reachability claim."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P114 checkpoint - duplicate-object byte addresses repaired:four zero-page-X accesses preserve bytewrap;absolute-Y scan/destinations unchanged;all-byteX leafcontract expanded,no natural reachability claim.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P116 checkpoint - duplicate allocation parent bound proved:statezero parent theorem boundsallocatedY20 forfrontX0-5;rawleaf/globaldomain distinct."
       ],
       "operationalEvidence": [
         "M2 T62 S5 current full-game x86/x64 owner-ROM routes: 624 actual snapshot comparisons match (304 Flying Cheep and 320 Bowser/flame); focused full-RAM footprints pass on both widths.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:262144original returning roots eachwidth2032RAM/24APU/orderedwrites0diff,all58PC/bothscanbranches,actualCPU X==input08;6focusedtests eachpass;source/productsP57unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P114 checkpoint - duplicate-object byte addresses repaired:65536 actualroots eachwidth0diff/all18PC/bothbranchsides;old-regression red/newgreen,5tests eachwidth,threeEXEs refreshed."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P114 checkpoint - duplicate-object byte addresses repaired:65536 actualroots eachwidth0diff/all18PC/bothbranchsides;old-regression red/newgreen,5tests eachwidth,threeEXEs refreshed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P116 checkpoint - duplicate allocation parent bound proved:65536actualC226parents eachwidth0diff/all40PC/max20observed;5focusedtests eachwidth;P115products unchanged."
       ],
       "semanticContract": "Returns after duplication or the upstream flame-timer early exit.",
       "currentSourcePaths": [
@@ -170383,7 +170401,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P112 checkpoint - stream writer receipts joined with explicit limits",
         "docs/proposals/m2/t70-final-current-certification.md S17 P113 checkpoint - intrinsic loop bounds and area record domains",
         "docs/proposals/m2/t70-final-current-certification.md S17 P114 checkpoint - duplicate-object byte addresses repaired",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P115 checkpoint - platform initializer byte addresses repaired"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P115 checkpoint - platform initializer byte addresses repaired",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P116 checkpoint - duplicate allocation parent bound proved"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
