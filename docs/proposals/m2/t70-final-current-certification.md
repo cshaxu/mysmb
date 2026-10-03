@@ -8994,3 +8994,41 @@ Current src/game/scroll.c normalizedSHA256:f4f7b0df4a870cb31290309652d043e536a37
 Current src/game/engine_tail.c normalizedSHA256:8d0b1c8fcab2c268a6789f319abbb7ae2470f377ee4cacc06106fcbab427098f.
 
 Current test/local_victory_message_smoke.c normalizedSHA256:8e59e8aad8c569e5a749c5f3d0ddf9c11767741ee9ff3c31c64c96ca30d206ca.
+
+## S17 P99 admission - player game-routine dispatch and state transitions
+
+ExistingcontiguousGameRoutinesB04AthroughNextAreaB328chain213instructions/80RAM/44labels GameRoutines,PlayerEntrance,ChkBehPipe,IntroEntr,EntrMode2,VineEntr,OffVine,PlayerRdy,ExitEntr,AutoControlPlayer,Vine_AutoClimb,AutoClimb,SetEntr,VerticalPipeEntry,MovePlayerYAxis,SideExitPipeEntry,ChgAreaPipe,ChgAreaMode,ExitCAPipe,EnterSidePipe,RightPipe,PlayerChangeSize,EndChgSize,ExitChgSize,PlayerInjuryBlink,ExitBlink,InitChangeSize,ExitBoth,PlayerDeath,DonePlayerTask,PlayerFireFlower,CyclePlayerPalette,ResetPalFireFlower,ResetPalStar,ExitDeath,FlagpoleSlide,SlidePlayer,NoFPObj,PlayerEndLevel,ChkStop,InCastle,RdyNextA,NextArea,ExitNA. Sharedentry/player_transition/player_modes/player_end_level owners;actualB04AJumpEngine thirteenlegalstateentries0-12,actualplayer/area/blockchildren. Initial6656controlledrootprofiles:rawTimer/Y/X/pipeCountdown0-255 andfreeze0or1,coherentarea/world/player/headerdomain. Reuseacceptedchildrenonlywithsource-dependencyreview,notautomaticreceipt;sourcecallerorder/livepostchildreads/bytecountdowns/palette/size/injury/death/flagpole/endlevel/NextArea required. MissingPC/branchedges receiveonlyfocusedsupplement beforecredit. Fullnonphysical-stackRAM/APU/orderedwrites,CPUvoidunexposed;ROMunpatched/read-only/raw4096batch128MiB/120sec cleanupbelowbuild. Fresh0/max1992;P98productsretainedunlessscopedmismatch. Wholeproducer/inter-frame/finalpackagespending.
+
+## S17 P99 checkpoint - player dispatch and state transition uses reconciled
+
+S17 P99:44player dispatch labels/213instructions/80RAM joined7boundedclauses;9984actualroots eachwidth0diff/all213PC/34branchpairs,6tests each. Scope1588/fresh0;9983/10691instruction receipts,3551/3773RAM receipts;708instructions/222RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP98unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| D1 | GameRoutines,AutoControlPlayer | ActualB04A dispatchusesliveGameSub0-12 andoriginalB04Evector;nativeJumpEngine04-07publicationcomparedforeachstate. AutoControlPlayerwritesSaved06FCunconditionallybeforeactualPlayerCtrl;ordinaryCtrl/Injury/DeathcallskeepordinarySavedinput,notautocontrol. CPUvoidflags/registersunusedbyparent;sourcefunctionskeepcanonicalentry. |
+| D2 | PlayerEntrance,ChkBehPipe,IntroEntr,EntrMode2,VineEntr,OffVine,PlayerRdy,ExitEntr | Alt2selectsvine/pipe-up;otheraltsY<30actualAuto0tail,header6/7andAttrib0actualAuto1tail,elseEnterSidePipe thenDECChangeAreaTimer bytewrap/zeroDisableIntermediate++/actualNextArea. Alt2Override0 addYFF thenliveY<91PlayerRdy;Override!=0 onlyHeight60runsvine. Y<99defaultbuttons1/collisionDisable0,elseState3/block05B4=8/buttons8/Disable1. AfteractualAutoControl reloadX<48 leaveselseRdyGameSub8/Facing1/Alt0/Disable0/Override0. Nochildpoststatecache. |
+| D3 | Vine_AutoClimb,AutoClimb,SetEntr | YHigh0andYlow<E4SetEntr Alt2 thenactualChgAreaMode;allotherinputsOverride8/State3 thenAutoControl8tail. ChgAreaMode INCDisableScreen rawbyte,OperTask0/Sprite0Flag0. PredicateCunsignedCMPmatchesoriginalBCCandzeroTest. |
+| D4 | VerticalPipeEntry,MovePlayerYAxis,SideExitPipeEntry,ChgAreaPipe,ChgAreaMode,ExitCAPipe,EnterSidePipe,RightPipe | VerticaladdY1lowbyteonly thenactualScrollHandler thenreadliveWarpZone/AreaType:Warp!=0mode0 elsecastle3mode2 elsemode1. ChangeAreaTimerDECincludes0-toFF;onlynewzero writesselectedAlt andChgAreaMode. SideExitactualEnterSidePipe thenmode2. SidePipeXSpeed8,originalXlowNibble0setsSpeed0/buttons0 elsebuttons1;actualAutoControl thenreturn. Modechoice/counterreadoccursafterchild,notcachedbefore. |
+| D5 | PlayerChangeSize,EndChgSize,ExitChgSize,PlayerInjuryBlink,ExitBlink,InitChangeSize,ExitBoth,PlayerDeath,DonePlayerTask,PlayerFireFlower,CyclePlayerPalette,ResetPalFireFlower,ResetPalStar,ExitDeath | SizeTimerF8InitChange,TimerC4Done,otherwiseleave. InjuryTimer>=F0 leavesexceptexactF0inheritsoriginalZ andInitChange;TimerC8Done otherwiseactualCtrl. InitChangeflag0 AnimCtrl0/flagINC/SizeXOR1 elsepreserve. DeathTimer<F0actualCtrl elseleave. DoneTimer0/GameSub8. FlowerTimerC0Done+ResetPal elseFrame>>2 thenmask3/scratch00/AttribpreserveFC. ResetStarAttribAND FC. AllrawTimer256/freeze0or1 plusactualchildrencompared;noinventedframe/timerdecrementhere. |
+| D6 | FlagpoleSlide,SlidePlayer,NoFPObj | EnemyIDslot5!=30 GameSubbyteINC;elsecopyFlagpoleSoundQueue toSquare1 thenclear,liveY>=9Eauto0 elselowYauto4. SourceA0atSlidePlayercomespreviousLDA0forFlagpoleSoundQueue,correctnativebuttons0. ActualAutoControl child,notdirectCtrl. |
+| D7 | PlayerEndLevel,ChkStop,InCastle,RdyNextA,NextArea,ExitNA | AlwaysAuto1 first;liveY>=AEandScrollLock!=0Music20/ScrollLock0. LiveCollisionbit0clear:StarTask0INC1 thenAttrib20;bit1preserves. StarTask5byteINCLevel;newLevel3 liveCoinTally>=boundHidden1UpCoinAmts[World0-7] byteINCHidden;elsetailNextArea. NextArea INCArea beforeactualLoadAreaPointer,INCFetchTimer,actualChgAreaMode returnsA0capability mappedHalfway0,Music80. Tableall8WorldindicesandCoinall256coveredbysupplement;actualareaindices0to1/legalworld/headerdomain,notallrawareaaddresses. |
+
+ActualB04AROMdispatch useslegalGameSub0-12. First6656profilesrawTimer/Y/X/Countdown256andfreeze0or1passedbutonly185/213PCand23/34branchpairs;unobserved28instructions/11brancheswerewithheld. Focused3328supplementcoversattributedpipeintro/vineHeight60/Y98or99/postchildX48,AutoClimbYhigh0/E4,castleWarp0/1,postchildcollision0/1/StarTask0/1/5,all8WorldHidden1Upthresholdsandall256CoinTally. Combined9984rootsbothwidths0diff/all213PC/34two-sidedbranchsites,actualJumpEngine/area/player/scroll/vinechildren/ROMunpatched. Full2048RAMexceptobservedphysicalCPUstackpushspan plus24APU/orderedwrites;CPUvoidunexposed. Domainscontrolled/legalheaders/world0-7/area0to1,notallRAMcartesianornaturalreachabilityclaim. Source213instruction-useclausesreviewedagainstASM andcurrentowners;sevenpartitionclauses/fournegativeaccountingmutants pass. Sixfreshfocusedtests eachwidthpass. No product/sourcechange;allthreeP98hashesunchanged,DOScompile/linkonly. Wholeproducer/inter-frame/material/pixels/routes/snapshotremainopen.
+
+Current src/game/entry.c normalizedSHA256:b91aa817bdecac64328091365f33741cce0dfe1c36217d391bba0f4fa882e2a9.
+
+Current src/game/player_transition.c normalizedSHA256:7200cf5b9c4cca2593c34c16699e2a086f17e585e30071b2edddf23fc4b89a7b.
+
+Current src/game/player_modes.c normalizedSHA256:f283b78a8065d8ead2283563c3e533686d1c44c3e04275c6ef194025d5c15e3f.
+
+Current src/game/player_end_level.c normalizedSHA256:09ba4899d6b8bc5f3d6e763bf0d2026c4f7f3ef7a98d40ae5ffb79b0da2917c0.
+
+Current src/game/player_control.c normalizedSHA256:750be06040838c76fcee09fbb13dd4cee7069b456bd6808bd383ea44053a0347.
+
+Current src/game/player.c normalizedSHA256:23e17c99ffe8e540a162f7031617f08a1fec46bea70fab2ae24394876f2a0d41.
+
+Current src/game/area.c normalizedSHA256:7f9125e079ae875931894d72eafec68256280f33e559bd5257d43381c8a288cd.
+
+Current src/game/terminal_modes.c normalizedSHA256:5cc2ca631ad8ec956ee9a513bd0ab58807fd61a4870c5133bea250c3b99becf0.
+
+Current src/game/scroll.c normalizedSHA256:f4f7b0df4a870cb31290309652d043e536a375334702f7f2eda73a561fba3036.

@@ -35075,11 +35075,13 @@
       "semanticEvidence": [
         "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
         "S17 P15 original JumpEngine source writes04-07 but eight native callers omit publication;fresh256 victory/256 entrance roots show1020 scratch differences each width. Other six require bounded source/order applicability review.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:source18 JumpEngine bases reconciled;four existing helper/six literal callers retained,eight omitted04-07 publishers repaired at original call positions. Byte selector offset and pointer high wrap match original kernel. Existing native target selection/children unchanged;selector state does not alias04-07.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair:9216 original kernel roots each width zero full-RAM diff;256 victory/256 entrance roots repair1020 differences each family to zero.27139 parser roots each width remain zero RAM diff,14 focused checks each/six600-frame routes/3 products pass. Kernel route stops after JMP and does not certify target execution for arbitrary selectors.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract. P15 original call-site04-07 publication now included;compositional kernel/caller proof retains prior child/input contracts,not arbitrary-target execution.",
       "currentSourcePaths": [
@@ -35094,10 +35096,12 @@
       "currentOwner": "src/game/entry.c shared C90 entry owner",
       "currentCounterpart": "mysmb_game_routines, mysmb_player_finish_normal_entrance and mysmb_player_auto_control",
       "semanticEvidence": [
-        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics."
+        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
       "currentSourcePaths": [
@@ -35112,10 +35116,12 @@
       "currentOwner": "src/game/entry.c shared C90 entry owner",
       "currentCounterpart": "mysmb_game_routines, mysmb_player_finish_normal_entrance and mysmb_player_auto_control",
       "semanticEvidence": [
-        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics."
+        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
       "currentSourcePaths": [
@@ -35130,10 +35136,12 @@
       "currentOwner": "src/game/entry.c shared C90 entry owner",
       "currentCounterpart": "mysmb_game_routines, mysmb_player_finish_normal_entrance and mysmb_player_auto_control",
       "semanticEvidence": [
-        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics."
+        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
       "currentSourcePaths": [
@@ -35148,10 +35156,12 @@
       "currentOwner": "src/game/entry.c shared C90 entry owner",
       "currentCounterpart": "mysmb_game_routines, mysmb_player_finish_normal_entrance and mysmb_player_auto_control",
       "semanticEvidence": [
-        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics."
+        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
       "currentSourcePaths": [
@@ -35166,10 +35176,12 @@
       "currentOwner": "src/game/entry.c shared C90 entry owner",
       "currentCounterpart": "mysmb_game_routines, mysmb_player_finish_normal_entrance and mysmb_player_auto_control",
       "semanticEvidence": [
-        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics."
+        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
       "currentSourcePaths": [
@@ -35184,10 +35196,12 @@
       "currentOwner": "src/game/entry.c shared C90 entry owner",
       "currentCounterpart": "mysmb_game_routines, mysmb_player_finish_normal_entrance and mysmb_player_auto_control",
       "semanticEvidence": [
-        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics."
+        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
       "currentSourcePaths": [
@@ -35202,10 +35216,12 @@
       "currentOwner": "src/game/entry.c shared C90 entry owner",
       "currentCounterpart": "mysmb_game_routines, mysmb_player_finish_normal_entrance and mysmb_player_auto_control",
       "semanticEvidence": [
-        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics."
+        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
       "currentSourcePaths": [
@@ -35220,10 +35236,12 @@
       "currentOwner": "src/game/entry.c shared C90 entry owner",
       "currentCounterpart": "mysmb_game_routines, mysmb_player_finish_normal_entrance and mysmb_player_auto_control",
       "semanticEvidence": [
-        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics."
+        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
       "currentSourcePaths": [
@@ -35238,10 +35256,12 @@
       "currentOwner": "src/game/entry.c shared C90 entry owner",
       "currentCounterpart": "mysmb_game_routines, mysmb_player_finish_normal_entrance and mysmb_player_auto_control",
       "semanticEvidence": [
-        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics."
+        "M2 T58 S3 static audit: SMB1 GameRoutines through CloudExit (lines 5499-5687) compared instruction-by-instruction with shared src/game/entry.c and src/game/player_control.c; dispatch, entrance, input, child order, signed hole, death/music and cloud contracts preserve the ROM semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S3 controlled caller replay: 23 original t31-entrance and 50 t32 player-control snapshots replay actual child entry/return records through fresh C90 x86/x64 owners. All 1,784-byte persistent-state comparisons pass with only CPU scratch $00-$07 and stack $0100-$01ff exclusions; widths are byte-identical. Focused tests, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S3 preserves this ROM branch, state write, table-free control and source-order caller contract.",
       "currentSourcePaths": [
@@ -35525,10 +35545,12 @@
       "currentOwner": "src/game/player_transition.c shared C90 transition owner",
       "currentCounterpart": "mysmb_player_step_auto_climb, mysmb_player_set_entrance, mysmb_player_move_y_axis, mysmb_player_step_vertical_pipe, mysmb_player_step_side_pipe and mysmb_player_enter_side_pipe",
       "semanticEvidence": [
-        "M2 T58 S4 static audit: SMB1 Vine_AutoClimb through RightPipe (lines 5691-5753) compared instruction-by-instruction with shared src/game/player_transition.c; vine gate, controller/state writes, Y addition, pipe selector, timer decrement, area-mode writes and side-pipe control preserve ROM order."
+        "M2 T58 S4 static audit: SMB1 Vine_AutoClimb through RightPipe (lines 5691-5753) compared instruction-by-instruction with shared src/game/player_transition.c; vine gate, controller/state writes, Y addition, pipe selector, timer decrement, area-mode writes and side-pipe control preserve ROM order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S4 controlled caller replay: all 28 original t32 transition snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 56 width-specific caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Transition chain, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S4 controlled caller replay: all 28 original t32 transition snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 56 width-specific caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Transition chain, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S4 preserves this original transition branch, state write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35543,10 +35565,12 @@
       "currentOwner": "src/game/player_transition.c shared C90 transition owner",
       "currentCounterpart": "mysmb_player_step_auto_climb, mysmb_player_set_entrance, mysmb_player_move_y_axis, mysmb_player_step_vertical_pipe, mysmb_player_step_side_pipe and mysmb_player_enter_side_pipe",
       "semanticEvidence": [
-        "M2 T58 S4 static audit: SMB1 Vine_AutoClimb through RightPipe (lines 5691-5753) compared instruction-by-instruction with shared src/game/player_transition.c; vine gate, controller/state writes, Y addition, pipe selector, timer decrement, area-mode writes and side-pipe control preserve ROM order."
+        "M2 T58 S4 static audit: SMB1 Vine_AutoClimb through RightPipe (lines 5691-5753) compared instruction-by-instruction with shared src/game/player_transition.c; vine gate, controller/state writes, Y addition, pipe selector, timer decrement, area-mode writes and side-pipe control preserve ROM order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S4 controlled caller replay: all 28 original t32 transition snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 56 width-specific caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Transition chain, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S4 controlled caller replay: all 28 original t32 transition snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 56 width-specific caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Transition chain, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S4 preserves this original transition branch, state write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35561,10 +35585,12 @@
       "currentOwner": "src/game/player_transition.c shared C90 transition owner",
       "currentCounterpart": "mysmb_player_step_auto_climb, mysmb_player_set_entrance, mysmb_player_move_y_axis, mysmb_player_step_vertical_pipe, mysmb_player_step_side_pipe and mysmb_player_enter_side_pipe",
       "semanticEvidence": [
-        "M2 T58 S4 static audit: SMB1 Vine_AutoClimb through RightPipe (lines 5691-5753) compared instruction-by-instruction with shared src/game/player_transition.c; vine gate, controller/state writes, Y addition, pipe selector, timer decrement, area-mode writes and side-pipe control preserve ROM order."
+        "M2 T58 S4 static audit: SMB1 Vine_AutoClimb through RightPipe (lines 5691-5753) compared instruction-by-instruction with shared src/game/player_transition.c; vine gate, controller/state writes, Y addition, pipe selector, timer decrement, area-mode writes and side-pipe control preserve ROM order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S4 controlled caller replay: all 28 original t32 transition snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 56 width-specific caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Transition chain, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S4 controlled caller replay: all 28 original t32 transition snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 56 width-specific caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Transition chain, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S4 preserves this original transition branch, state write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35579,10 +35605,12 @@
       "currentOwner": "src/game/player_transition.c shared C90 transition owner",
       "currentCounterpart": "mysmb_player_step_auto_climb, mysmb_player_set_entrance, mysmb_player_move_y_axis, mysmb_player_step_vertical_pipe, mysmb_player_step_side_pipe and mysmb_player_enter_side_pipe",
       "semanticEvidence": [
-        "M2 T58 S4 static audit: SMB1 Vine_AutoClimb through RightPipe (lines 5691-5753) compared instruction-by-instruction with shared src/game/player_transition.c; vine gate, controller/state writes, Y addition, pipe selector, timer decrement, area-mode writes and side-pipe control preserve ROM order."
+        "M2 T58 S4 static audit: SMB1 Vine_AutoClimb through RightPipe (lines 5691-5753) compared instruction-by-instruction with shared src/game/player_transition.c; vine gate, controller/state writes, Y addition, pipe selector, timer decrement, area-mode writes and side-pipe control preserve ROM order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S4 controlled caller replay: all 28 original t32 transition snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 56 width-specific caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Transition chain, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S4 controlled caller replay: all 28 original t32 transition snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 56 width-specific caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Transition chain, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S4 preserves this original transition branch, state write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35597,10 +35625,12 @@
       "currentOwner": "src/game/player_transition.c shared C90 transition owner",
       "currentCounterpart": "mysmb_player_step_auto_climb, mysmb_player_set_entrance, mysmb_player_move_y_axis, mysmb_player_step_vertical_pipe, mysmb_player_step_side_pipe and mysmb_player_enter_side_pipe",
       "semanticEvidence": [
-        "M2 T58 S4 static audit: SMB1 Vine_AutoClimb through RightPipe (lines 5691-5753) compared instruction-by-instruction with shared src/game/player_transition.c; vine gate, controller/state writes, Y addition, pipe selector, timer decrement, area-mode writes and side-pipe control preserve ROM order."
+        "M2 T58 S4 static audit: SMB1 Vine_AutoClimb through RightPipe (lines 5691-5753) compared instruction-by-instruction with shared src/game/player_transition.c; vine gate, controller/state writes, Y addition, pipe selector, timer decrement, area-mode writes and side-pipe control preserve ROM order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S4 controlled caller replay: all 28 original t32 transition snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 56 width-specific caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Transition chain, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S4 controlled caller replay: all 28 original t32 transition snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 56 width-specific caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Transition chain, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S4 preserves this original transition branch, state write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35615,10 +35645,12 @@
       "currentOwner": "src/game/player_transition.c shared C90 transition owner",
       "currentCounterpart": "mysmb_player_step_auto_climb, mysmb_player_set_entrance, mysmb_player_move_y_axis, mysmb_player_step_vertical_pipe, mysmb_player_step_side_pipe and mysmb_player_enter_side_pipe",
       "semanticEvidence": [
-        "M2 T58 S4 static audit: SMB1 Vine_AutoClimb through RightPipe (lines 5691-5753) compared instruction-by-instruction with shared src/game/player_transition.c; vine gate, controller/state writes, Y addition, pipe selector, timer decrement, area-mode writes and side-pipe control preserve ROM order."
+        "M2 T58 S4 static audit: SMB1 Vine_AutoClimb through RightPipe (lines 5691-5753) compared instruction-by-instruction with shared src/game/player_transition.c; vine gate, controller/state writes, Y addition, pipe selector, timer decrement, area-mode writes and side-pipe control preserve ROM order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S4 controlled caller replay: all 28 original t32 transition snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 56 width-specific caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Transition chain, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S4 controlled caller replay: all 28 original t32 transition snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 56 width-specific caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Transition chain, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S4 preserves this original transition branch, state write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35633,10 +35665,12 @@
       "currentOwner": "src/game/player_transition.c shared C90 transition owner",
       "currentCounterpart": "mysmb_player_step_auto_climb, mysmb_player_set_entrance, mysmb_player_move_y_axis, mysmb_player_step_vertical_pipe, mysmb_player_step_side_pipe and mysmb_player_enter_side_pipe",
       "semanticEvidence": [
-        "M2 T58 S4 static audit: SMB1 Vine_AutoClimb through RightPipe (lines 5691-5753) compared instruction-by-instruction with shared src/game/player_transition.c; vine gate, controller/state writes, Y addition, pipe selector, timer decrement, area-mode writes and side-pipe control preserve ROM order."
+        "M2 T58 S4 static audit: SMB1 Vine_AutoClimb through RightPipe (lines 5691-5753) compared instruction-by-instruction with shared src/game/player_transition.c; vine gate, controller/state writes, Y addition, pipe selector, timer decrement, area-mode writes and side-pipe control preserve ROM order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S4 controlled caller replay: all 28 original t32 transition snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 56 width-specific caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Transition chain, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S4 controlled caller replay: all 28 original t32 transition snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 56 width-specific caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Transition chain, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S4 preserves this original transition branch, state write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35651,10 +35685,12 @@
       "currentOwner": "src/game/player_transition.c shared C90 transition owner",
       "currentCounterpart": "mysmb_player_step_auto_climb, mysmb_player_set_entrance, mysmb_player_move_y_axis, mysmb_player_step_vertical_pipe, mysmb_player_step_side_pipe and mysmb_player_enter_side_pipe",
       "semanticEvidence": [
-        "M2 T58 S4 static audit: SMB1 Vine_AutoClimb through RightPipe (lines 5691-5753) compared instruction-by-instruction with shared src/game/player_transition.c; vine gate, controller/state writes, Y addition, pipe selector, timer decrement, area-mode writes and side-pipe control preserve ROM order."
+        "M2 T58 S4 static audit: SMB1 Vine_AutoClimb through RightPipe (lines 5691-5753) compared instruction-by-instruction with shared src/game/player_transition.c; vine gate, controller/state writes, Y addition, pipe selector, timer decrement, area-mode writes and side-pipe control preserve ROM order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S4 controlled caller replay: all 28 original t32 transition snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 56 width-specific caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Transition chain, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S4 controlled caller replay: all 28 original t32 transition snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 56 width-specific caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Transition chain, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S4 preserves this original transition branch, state write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35669,10 +35705,12 @@
       "currentOwner": "src/game/player_transition.c shared C90 transition owner",
       "currentCounterpart": "mysmb_player_step_auto_climb, mysmb_player_set_entrance, mysmb_player_move_y_axis, mysmb_player_step_vertical_pipe, mysmb_player_step_side_pipe and mysmb_player_enter_side_pipe",
       "semanticEvidence": [
-        "M2 T58 S4 static audit: SMB1 Vine_AutoClimb through RightPipe (lines 5691-5753) compared instruction-by-instruction with shared src/game/player_transition.c; vine gate, controller/state writes, Y addition, pipe selector, timer decrement, area-mode writes and side-pipe control preserve ROM order."
+        "M2 T58 S4 static audit: SMB1 Vine_AutoClimb through RightPipe (lines 5691-5753) compared instruction-by-instruction with shared src/game/player_transition.c; vine gate, controller/state writes, Y addition, pipe selector, timer decrement, area-mode writes and side-pipe control preserve ROM order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S4 controlled caller replay: all 28 original t32 transition snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 56 width-specific caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Transition chain, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S4 controlled caller replay: all 28 original t32 transition snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 56 width-specific caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Transition chain, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S4 preserves this original transition branch, state write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35687,10 +35725,12 @@
       "currentOwner": "src/game/player_transition.c shared C90 transition owner",
       "currentCounterpart": "mysmb_player_step_auto_climb, mysmb_player_set_entrance, mysmb_player_move_y_axis, mysmb_player_step_vertical_pipe, mysmb_player_step_side_pipe and mysmb_player_enter_side_pipe",
       "semanticEvidence": [
-        "M2 T58 S4 static audit: SMB1 Vine_AutoClimb through RightPipe (lines 5691-5753) compared instruction-by-instruction with shared src/game/player_transition.c; vine gate, controller/state writes, Y addition, pipe selector, timer decrement, area-mode writes and side-pipe control preserve ROM order."
+        "M2 T58 S4 static audit: SMB1 Vine_AutoClimb through RightPipe (lines 5691-5753) compared instruction-by-instruction with shared src/game/player_transition.c; vine gate, controller/state writes, Y addition, pipe selector, timer decrement, area-mode writes and side-pipe control preserve ROM order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S4 controlled caller replay: all 28 original t32 transition snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 56 width-specific caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Transition chain, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S4 controlled caller replay: all 28 original t32 transition snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 56 width-specific caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Transition chain, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S4 preserves this original transition branch, state write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35705,10 +35745,12 @@
       "currentOwner": "src/game/player_transition.c shared C90 transition owner",
       "currentCounterpart": "mysmb_player_step_auto_climb, mysmb_player_set_entrance, mysmb_player_move_y_axis, mysmb_player_step_vertical_pipe, mysmb_player_step_side_pipe and mysmb_player_enter_side_pipe",
       "semanticEvidence": [
-        "M2 T58 S4 static audit: SMB1 Vine_AutoClimb through RightPipe (lines 5691-5753) compared instruction-by-instruction with shared src/game/player_transition.c; vine gate, controller/state writes, Y addition, pipe selector, timer decrement, area-mode writes and side-pipe control preserve ROM order."
+        "M2 T58 S4 static audit: SMB1 Vine_AutoClimb through RightPipe (lines 5691-5753) compared instruction-by-instruction with shared src/game/player_transition.c; vine gate, controller/state writes, Y addition, pipe selector, timer decrement, area-mode writes and side-pipe control preserve ROM order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S4 controlled caller replay: all 28 original t32 transition snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 56 width-specific caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Transition chain, platform-purity and shared OpenNT DOS16 MZ link pass."
+        "M2 T58 S4 controlled caller replay: all 28 original t32 transition snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 56 width-specific caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Transition chain, platform-purity and shared OpenNT DOS16 MZ link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S4 preserves this original transition branch, state write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35723,10 +35765,12 @@
       "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
       "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35741,10 +35785,12 @@
       "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
       "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35759,10 +35805,12 @@
       "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
       "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35777,10 +35825,12 @@
       "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
       "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35795,10 +35845,12 @@
       "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
       "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35813,10 +35865,12 @@
       "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
       "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35831,10 +35885,12 @@
       "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
       "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35849,10 +35905,12 @@
       "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
       "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35867,10 +35925,12 @@
       "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
       "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35885,10 +35945,12 @@
       "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
       "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35903,10 +35965,12 @@
       "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
       "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35921,10 +35985,12 @@
       "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
       "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35939,10 +36005,12 @@
       "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
       "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35957,10 +36025,12 @@
       "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
       "currentCounterpart": "mysmb_player_step_change_size, mysmb_player_step_injury_blink, mysmb_player_step_death, mysmb_player_step_fire_flower, palette helpers",
       "semanticEvidence": [
-        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics."
+        "M2 T58 S5 static audit: SMB1 PlayerChangeSize through ExitDeath (lines 5757-5830) compared instruction-by-instruction with shared src/game/player_modes.c; timer predicates, task writes, size toggle, blink/death paths and palette bits retain source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source."
+        "M2 T58 S5 controlled caller replay: all 22 original t32 mode snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 44 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; widths are byte-identical. Focused modes chain and platform-purity pass; shared DOS16 core remains linked from unchanged source.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S5 preserves this original timer branch, task/palette write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35976,12 +36046,14 @@
       "currentCounterpart": "mysmb_player_step_flagpole_slide, mysmb_player_step_end_level and mysmb_game_next_area",
       "semanticEvidence": [
         "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only. Actual queue-write PC observed in declared player/terrain/exit fixture partition;other callers and intervening overwrite lifetimes not inferred.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S6 preserves this original end-level branch, table binding, state write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -35996,10 +36068,12 @@
       "currentOwner": "src/game/player_end_level.c shared C90 end-level owner",
       "currentCounterpart": "mysmb_player_step_flagpole_slide, mysmb_player_step_end_level and mysmb_game_next_area",
       "semanticEvidence": [
-        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S6 preserves this original end-level branch, table binding, state write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -36014,10 +36088,12 @@
       "currentOwner": "src/game/player_end_level.c shared C90 end-level owner",
       "currentCounterpart": "mysmb_player_step_flagpole_slide, mysmb_player_step_end_level and mysmb_game_next_area",
       "semanticEvidence": [
-        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S6 preserves this original end-level branch, table binding, state write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -36051,12 +36127,14 @@
       "currentCounterpart": "mysmb_player_step_flagpole_slide, mysmb_player_step_end_level and mysmb_game_next_area",
       "semanticEvidence": [
         "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only. Actual queue-write PC observed in declared player/terrain/exit fixture partition;other callers and intervening overwrite lifetimes not inferred.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S6 preserves this original end-level branch, table binding, state write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -36071,10 +36149,12 @@
       "currentOwner": "src/game/player_end_level.c shared C90 end-level owner",
       "currentCounterpart": "mysmb_player_step_flagpole_slide, mysmb_player_step_end_level and mysmb_game_next_area",
       "semanticEvidence": [
-        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S6 preserves this original end-level branch, table binding, state write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -36089,10 +36169,12 @@
       "currentOwner": "src/game/player_end_level.c shared C90 end-level owner",
       "currentCounterpart": "mysmb_player_step_flagpole_slide, mysmb_player_step_end_level and mysmb_game_next_area",
       "semanticEvidence": [
-        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S6 preserves this original end-level branch, table binding, state write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -36107,10 +36189,12 @@
       "currentOwner": "src/game/player_end_level.c shared C90 end-level owner",
       "currentCounterpart": "mysmb_player_step_flagpole_slide, mysmb_player_step_end_level and mysmb_game_next_area",
       "semanticEvidence": [
-        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S6 preserves this original end-level branch, table binding, state write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -36126,12 +36210,14 @@
       "currentCounterpart": "mysmb_player_step_flagpole_slide, mysmb_player_step_end_level and mysmb_game_next_area",
       "semanticEvidence": [
         "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P23 checkpoint - PlayerHole original scratch repair:18432 current original parent-to-SoundEngine roots each width zero full pre/post RAM/APU/ordered commands after2048 baseline RAM07 differences per1024 PlayerCtrl roots.12 focused checks each,six600-frame scoped routes and three products pass;physical pushes only for roots,zero-page excluded separately from frame ABI;DOS compile/link only. Actual queue-write PC observed in declared player/terrain/exit fixture partition;other callers and intervening overwrite lifetimes not inferred.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S6 preserves this original end-level branch, table binding, state write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -36146,10 +36232,12 @@
       "currentOwner": "src/game/player_end_level.c shared C90 end-level owner",
       "currentCounterpart": "mysmb_player_step_flagpole_slide, mysmb_player_step_end_level and mysmb_game_next_area",
       "semanticEvidence": [
-        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics."
+        "M2 T58 S6 static audit: SMB1 FlagpoleSlide through ExitNA (lines 5835-5895) compared instruction-by-instruction with shared src/game/player_end_level.c; flag object gate, sound queue transfer, slide input, scroll-lock music gate, star task, hidden one-up table threshold, area load and reset writes retain source semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof."
+        "M2 T58 S6 controlled caller replay: all 29 original t32 end-level snapshots replay actual child boundaries through fresh C90 x86/x64 owners. All 58 caller comparisons pass over 1,784 persistent bytes with only CPU scratch $00-$07 and stack $0100-$01ff excluded; all nine source branches have both outcomes and widths are byte-identical. Focused chain, platform-purity and unchanged shared DOS16 link pass. Unmocked calls retain downstream child differences outside this chain and are not used as whole-call proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:9984originalB04Aroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all213PC/34branchpairs,6tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "M2 T58 S6 preserves this original end-level branch, table binding, state write and source-order call/return contract.",
       "currentSourcePaths": [
@@ -170018,16 +170106,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:13labels/102instructions/39RAM joined7boundedclauses;postchildreload/orderedrealchildren/wrappedCMP-BMI/07threshold/music/cloudexit reviewed;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:13labels/56instructions/26RAM joined5boundedclauses;sourcecrouch/livepostphysicsdispatch/jumpheight/water/falling/force28/order reviewed;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P97 checkpoint - player entrance initialization uses reconciled:6labels/58instructions/27RAM joined4boundedclauses;page/collision/swim/alternateadjacency/timer/paletteX/vine/bubble/order reviewed;wholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P98 checkpoint - victory automatic walk uses repaired and reconciled:4labels/28instructions/11RAM joined3boundedclauses;originalAutoControlPlayer unconditionalinputstore repaired,livepostchildpage/fractioncarry/scroll-parser-order/exit reviewed;wholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P98 checkpoint - victory automatic walk uses repaired and reconciled:4labels/28instructions/11RAM joined3boundedclauses;originalAutoControlPlayer unconditionalinputstore repaired,livepostchildpage/fractioncarry/scroll-parser-order/exit reviewed;wholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 9770,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 921,
+        "localInstructionReceiptSites": 9983,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 708,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 3471,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 302,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 3551,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 222,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -170038,11 +170127,7 @@
           "src/game/enemy/hammer_bro.c": 30,
           "src/game/objects.c": 26,
           "src/game/game.c": 24,
-          "src/game/player_end_level.c shared C90 end-level owner": 24,
           "src/game/frame_root.c": 22,
-          "src/game/entry.c shared C90 entry owner": 21,
-          "src/game/player_modes.c shared C90 player-mode owner": 18,
-          "src/game/player_transition.c shared C90 transition owner": 17,
           "src/game/area.c": 15,
           "src/game shared dispatcher/engine/scroll owners": 10,
           "src/game/area.c plus src/game/oam/flagpole_gfx.c": 9,
