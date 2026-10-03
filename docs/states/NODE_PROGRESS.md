@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P70 flame/star uses](../proposals/m2/t70-final-current-certification.md#s17-p70-checkpoint---flame-fireworks-and-star-flag-uses-reconciled).
+S17 P70:29flame/fireworks/star labels/199instructions/80RAM joined11boundedclauses;266752actualroots eachwidth0diff/all199PC/25branchpairs,5tests each. Scope1004/fresh0;5603/10691instruction receipts,2014/3773RAM receipts;5088instructions/1759RAM pending. Local1991/1992nodes,4264/4265controls(raw4342/infeasible77),material993partial,totalunknown;source/productsP69unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
 [P69 Bowser/timer repair](../proposals/m2/t70-final-current-certification.md#s17-p69-checkpoint---bowser-chain-and-raw-flame-timer-repaired).
 S17 P69:31actor/bridge/Bowser labels/249instructions/95RAM joined11clauses;rawtimer array overrun repaired in sharedfrenzy.c/3transferrednodes. 459008originalroots eachwidth0diff/all249PC/36branchpairs,10tests each. Scope979/fresh0;5404/10691instruction receipts,1934/3773RAM receipts;5287instructions/1839RAM pending. Local1991/1992nodes,4264/4265controls(raw4342/infeasible77),material993partial,totalunknown;3EXEs refreshed,producer/inter-frame/finalpackages pending,M2 incomplete.
 

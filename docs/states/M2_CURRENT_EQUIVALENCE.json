@@ -48166,10 +48166,12 @@
       "currentCounterpart": "src/game/enemy/bowser_flame.c:mysmb_enemy_proc_bowser_flame",
       "semanticEvidence": [
         "Td S9 B15t Bowser-flame motion node-semantics and independent integration audit: SMB1 lines 10349-10373 compared with shared enemy/bowser_flame.c and the named OAM child; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S19 static original-ROM audit: SMB1 $D1E9-$D203 against shared enemy/bowser_flame.c confirms TimerControl graphics tail, $40/$60 selection, SBC carry into X/page and FlameYPosData Y gate."
+        "M2 T63 S19 static original-ROM audit: SMB1 $D1E9-$D203 against shared enemy/bowser_flame.c confirms TimerControl graphics tail, $40/$60 selection, SBC carry into X/page and FlameYPosData Y gate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S19 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded graphics-child calls, zero differences; focused C90 movement contract, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S19 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded graphics-child calls, zero differences; focused C90 movement contract, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "TimerControl freezes motion but still takes the graphics child; otherwise selects force $40/$60 by hard mode, preserves force-subtraction carry through X minus one and page borrow, and applies Y force only when current Y differs from the random target.",
       "currentSourcePaths": [
@@ -48185,10 +48187,12 @@
       "currentCounterpart": "src/game/enemy/bowser_flame.c:mysmb_enemy_proc_bowser_flame",
       "semanticEvidence": [
         "Td S9 B15t Bowser-flame motion node-semantics and independent integration audit: SMB1 lines 10349-10373 compared with shared enemy/bowser_flame.c and the named OAM child; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S19 static original-ROM audit: SMB1 $D1E9-$D203 against shared enemy/bowser_flame.c confirms TimerControl graphics tail, $40/$60 selection, SBC carry into X/page and FlameYPosData Y gate."
+        "M2 T63 S19 static original-ROM audit: SMB1 $D1E9-$D203 against shared enemy/bowser_flame.c confirms TimerControl graphics tail, $40/$60 selection, SBC carry into X/page and FlameYPosData Y gate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S19 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded graphics-child calls, zero differences; focused C90 movement contract, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S19 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded graphics-child calls, zero differences; focused C90 movement contract, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Consumes the selected force, executes source carry-dependent horizontal/page movement, selects FlameYPosData through the stored random offset and joins the graphics tail whether or not vertical movement occurs.",
       "currentSourcePaths": [
@@ -48205,11 +48209,13 @@
       "semanticEvidence": [
         "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S20 static original-ROM audit: SMB1 $D204-$D244 against shared oam/bowser_flame_gfx.c confirms relative child ordering, normal-state exit, animation bit, three-OAM loop and ordered offscreen-bit hides.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
         "M2 T63 S20 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded RelativeEnemyPosition/GetEnemyOffscreenBits calls, zero differences; platform purity and OpenNT DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Computes relative enemy position before the normal-state gate; normal state sets tile $51 and selects attribute $02/$82 from FrameCounter bit one.",
       "currentSourcePaths": [
@@ -48225,10 +48231,12 @@
       "currentCounterpart": "src/game/oam/bowser_flame_gfx.c:mysmb_objects_draw_bowser_flame",
       "semanticEvidence": [
         "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S20 static original-ROM audit: SMB1 $D204-$D244 against shared oam/bowser_flame_gfx.c confirms relative child ordering, normal-state exit, animation bit, three-OAM loop and ordered offscreen-bit hides."
+        "M2 T63 S20 static original-ROM audit: SMB1 $D204-$D244 against shared oam/bowser_flame_gfx.c confirms relative child ordering, normal-state exit, animation bit, three-OAM loop and ordered offscreen-bit hides.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S20 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded RelativeEnemyPosition/GetEnemyOffscreenBits calls, zero differences; platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S20 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded RelativeEnemyPosition/GetEnemyOffscreenBits calls, zero differences; platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Stores the selected attribute, loads the sprite-data offset and initializes the exact three-iteration OAM loop.",
       "currentSourcePaths": [
@@ -48246,11 +48254,13 @@
         "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S20 static original-ROM audit: SMB1 $D204-$D244 against shared oam/bowser_flame_gfx.c confirms relative child ordering, normal-state exit, animation bit, three-OAM loop and ordered offscreen-bit hides.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P2 original call source versus const query proves missing child write/order contract;requires real-child pre/post and full parent proof.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
         "M2 T63 S20 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded RelativeEnemyPosition/GetEnemyOffscreenBits calls, zero differences; platform purity and OpenNT DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Writes Y,tile,attribute,X in that order for three sprites, increments tile and relative X by eight each iteration, restores ObjectOffset, then obtains offscreen bits.",
       "currentSourcePaths": [
@@ -48266,10 +48276,12 @@
       "currentCounterpart": "src/game/oam/bowser_flame_gfx.c:mysmb_objects_draw_bowser_flame",
       "semanticEvidence": [
         "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S20 static original-ROM audit: SMB1 $D204-$D244 against shared oam/bowser_flame_gfx.c confirms relative child ordering, normal-state exit, animation bit, three-OAM loop and ordered offscreen-bit hides."
+        "M2 T63 S20 static original-ROM audit: SMB1 $D204-$D244 against shared oam/bowser_flame_gfx.c confirms relative child ordering, normal-state exit, animation bit, three-OAM loop and ordered offscreen-bit hides.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S20 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded RelativeEnemyPosition/GetEnemyOffscreenBits calls, zero differences; platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S20 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded RelativeEnemyPosition/GetEnemyOffscreenBits calls, zero differences; platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Consumes offscreen bit zero and hides OAM Y at offset +12 before testing bit one.",
       "currentSourcePaths": [
@@ -48285,10 +48297,12 @@
       "currentCounterpart": "src/game/oam/bowser_flame_gfx.c:mysmb_objects_draw_bowser_flame",
       "semanticEvidence": [
         "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S20 static original-ROM audit: SMB1 $D204-$D244 against shared oam/bowser_flame_gfx.c confirms relative child ordering, normal-state exit, animation bit, three-OAM loop and ordered offscreen-bit hides."
+        "M2 T63 S20 static original-ROM audit: SMB1 $D204-$D244 against shared oam/bowser_flame_gfx.c confirms relative child ordering, normal-state exit, animation bit, three-OAM loop and ordered offscreen-bit hides.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S20 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded RelativeEnemyPosition/GetEnemyOffscreenBits calls, zero differences; platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S20 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded RelativeEnemyPosition/GetEnemyOffscreenBits calls, zero differences; platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Consumes offscreen bit one and hides OAM Y at offset +8 before testing bit two.",
       "currentSourcePaths": [
@@ -48304,10 +48318,12 @@
       "currentCounterpart": "src/game/oam/bowser_flame_gfx.c:mysmb_objects_draw_bowser_flame",
       "semanticEvidence": [
         "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S20 static original-ROM audit: SMB1 $D204-$D244 against shared oam/bowser_flame_gfx.c confirms relative child ordering, normal-state exit, animation bit, three-OAM loop and ordered offscreen-bit hides."
+        "M2 T63 S20 static original-ROM audit: SMB1 $D204-$D244 against shared oam/bowser_flame_gfx.c confirms relative child ordering, normal-state exit, animation bit, three-OAM loop and ordered offscreen-bit hides.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S20 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded RelativeEnemyPosition/GetEnemyOffscreenBits calls, zero differences; platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S20 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded RelativeEnemyPosition/GetEnemyOffscreenBits calls, zero differences; platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Consumes offscreen bit two and hides OAM Y at offset +4 before testing bit three.",
       "currentSourcePaths": [
@@ -48323,10 +48339,12 @@
       "currentCounterpart": "src/game/oam/bowser_flame_gfx.c:mysmb_objects_draw_bowser_flame",
       "semanticEvidence": [
         "Td S9 B15u Bowser-flame OAM node-semantics and independent integration audit: SMB1 lines 10374-10434 compared with shared oam/bowser_flame_gfx.c and named relative/offscreen children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S20 static original-ROM audit: SMB1 $D204-$D244 against shared oam/bowser_flame_gfx.c confirms relative child ordering, normal-state exit, animation bit, three-OAM loop and ordered offscreen-bit hides."
+        "M2 T63 S20 static original-ROM audit: SMB1 $D204-$D244 against shared oam/bowser_flame_gfx.c confirms relative child ordering, normal-state exit, animation bit, three-OAM loop and ordered offscreen-bit hides.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S20 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded RelativeEnemyPosition/GetEnemyOffscreenBits calls, zero differences; platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S20 current-source x86/x64 batch route: 1,024 original-ROM flame-actor fixtures each, full compared RAM and recorded RelativeEnemyPosition/GetEnemyOffscreenBits calls, zero differences; platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Consumes offscreen bit three and conditionally hides the first OAM Y entry before return.",
       "currentSourcePaths": [
@@ -48342,10 +48360,12 @@
       "currentCounterpart": "src/game/enemy/fireworks.c:mysmb_objects_step_fireworks_slot",
       "semanticEvidence": [
         "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S21 static original-ROM audit: SMB1 $D246-$D267 against shared enemy/fireworks.c confirms timer/graphics branches, relative-coordinate transfer, terminal sound/score writes and child order."
+        "M2 T63 S21 static original-ROM audit: SMB1 $D246-$D267 against shared enemy/fireworks.c confirms timer/graphics branches, relative-coordinate transfer, terminal sound/score writes and child order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S21 current-source x86/x64 batch route: 512 original-ROM fireworks-lifetime fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 lifetime contract, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S21 current-source x86/x64 batch route: 512 original-ROM fireworks-lifetime fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 lifetime contract, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Decrements the per-slot explosion timer; zero reloads $08 and increments graphics frame, and frame >=3 takes the terminal sound/score path while all other cases set up the current explosion.",
       "currentSourcePaths": [
@@ -48361,10 +48381,12 @@
       "currentCounterpart": "src/game/enemy/fireworks.c:mysmb_objects_step_fireworks_slot",
       "semanticEvidence": [
         "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S21 static original-ROM audit: SMB1 $D246-$D267 against shared enemy/fireworks.c confirms timer/graphics branches, relative-coordinate transfer, terminal sound/score writes and child order."
+        "M2 T63 S21 static original-ROM audit: SMB1 $D246-$D267 against shared enemy/fireworks.c confirms timer/graphics branches, relative-coordinate transfer, terminal sound/score writes and child order.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S21 current-source x86/x64 batch route: 512 original-ROM fireworks-lifetime fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 lifetime contract, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S21 current-source x86/x64 batch route: 512 original-ROM fireworks-lifetime fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 lifetime contract, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Computes relative enemy position, copies relative Y then X to the fireball scratch pair, selects current OAM and graphics frame, invokes exactly one explosion draw child and returns.",
       "currentSourcePaths": [
@@ -48381,12 +48403,14 @@
       "semanticEvidence": [
         "Td S9 B15v fireworks actor node-semantics and independent integration audit: SMB1 lines 10438-10464 compared with shared enemy/fireworks.c, oam/fireworks_gfx.c and enemy/star_flag.c score tail; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S21 static original-ROM audit: SMB1 $D246-$D267 against shared enemy/fireworks.c confirms timer/graphics branches, relative-coordinate transfer, terminal sound/score writes and child order.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
         "M2 T63 S21 current-source x86/x64 batch route: 512 original-ROM fireworks-lifetime fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 lifetime contract, platform purity and OpenNT DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Clears the enemy flag, queues Sfx_Blast, writes the 500-point digit modifier at +4, then tails to EndAreaPoints.",
       "currentSourcePaths": [
@@ -48459,10 +48483,12 @@
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot",
       "semanticEvidence": [
         "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Clears EnemyFrenzyBuffer, exits task >=5, otherwise dispatches exactly five task selectors through the source JumpEngine vector without sequential table fall-through.",
       "currentSourcePaths": [
@@ -48478,10 +48504,12 @@
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot",
       "semanticEvidence": [
         "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Selects state five/three/zero for timer last digit 1/3/6 respectively; every other digit writes FireworksCounter $ff, then advances the star-flag task.",
       "currentSourcePaths": [
@@ -48497,10 +48525,12 @@
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot",
       "semanticEvidence": [
         "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Writes FireworksCounter before Enemy_State, preserving the selected state Y value and fall-through task increment.",
       "currentSourcePaths": [
@@ -48516,10 +48546,12 @@
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot",
       "semanticEvidence": [
         "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Increments StarFlagTaskControl exactly once before common return.",
       "currentSourcePaths": [
@@ -48535,10 +48567,12 @@
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot",
       "semanticEvidence": [
         "Td S9 B15w star-flag dispatcher-front node-semantics and independent integration audit: SMB1 lines 10468-10510 compared with shared enemy/star_flag.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Is the non-mutating common task exit.",
       "currentSourcePaths": [
@@ -48555,12 +48589,14 @@
       "semanticEvidence": [
         "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
         "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "ORs all three timer digits for zero exit; otherwise queues TimerTick only on FrameCounter bit two, subtracts one from the last digit through DigitModifier+5, then sets the same slot to five before score award.",
       "currentSourcePaths": [
@@ -48576,10 +48612,12 @@
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
       "semanticEvidence": [
         "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Sets digit offset $23 and modifier $ff before the decrement math call, then changes only modifier+5 to five for subsequent score addition.",
       "currentSourcePaths": [
@@ -48595,10 +48633,12 @@
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
       "semanticEvidence": [
         "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Selects Mario score offset $0b or Luigi $11, applies digit math, composes current-player high nibble plus four and tails to UpdateNumber.",
       "currentSourcePaths": [
@@ -48614,10 +48654,12 @@
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
       "semanticEvidence": [
         "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Is the selected-player digit-math call site shared by timer conversion and fireworks score tails.",
       "currentSourcePaths": [
@@ -48633,10 +48675,12 @@
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
       "semanticEvidence": [
         "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Raises star flag one pixel while Y >=$72; once above, only nonzero nonnegative FireworksCounter queues the Fireworks frenzy object before draw.",
       "currentSourcePaths": [
@@ -48652,10 +48696,12 @@
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
       "semanticEvidence": [
         "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Rejects zero and negative fireworks counters, otherwise writes Fireworks to EnemyFrenzyBuffer then joins draw.",
       "currentSourcePaths": [
@@ -48671,10 +48717,12 @@
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
       "semanticEvidence": [
         "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Computes relative position, writes exactly four sprites from descending index three through zero using three source tables, fixed attribute $22 and OAM stride four, then restores ObjectOffset.",
       "currentSourcePaths": [
@@ -48690,10 +48738,12 @@
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
       "semanticEvidence": [
         "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "One iteration reads matching Y/tile/X table entries at current descending index and writes ordered OAM fields before decremented loop continuation.",
       "currentSourcePaths": [
@@ -48709,10 +48759,12 @@
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
       "semanticEvidence": [
         "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Draws the flag, writes EnemyIntervalTimer $06, then advances task two.",
       "currentSourcePaths": [
@@ -48728,10 +48780,12 @@
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
       "semanticEvidence": [
         "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Increments StarFlagTaskControl once and returns.",
       "currentSourcePaths": [
@@ -48747,10 +48801,12 @@
       "currentCounterpart": "src/game/enemy/star_flag.c:mysmb_objects_step_star_flags_slot and draw_star_flag",
       "semanticEvidence": [
         "Td S9 B15x star-flag endgame node-semantics and independent integration audit: SMB1 lines 10512-10597 compared with shared enemy/star_flag.c, score/status and OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
+        "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Draws the flag; nonzero interval returns, zero EventMusicBuffer advances task two, otherwise returns.",
       "currentSourcePaths": [
@@ -48766,10 +48822,12 @@
       "currentCounterpart": "mysmb_objects_step_star_flags_slot return path",
       "semanticEvidence": [
         "Td S9 K43 StarFlagExit2 node audit: SMB1 line 10596 compared with shared src/game/enemy/star_flag.c task return; controlled flag route remains required.",
-        "M2 T63 S23 static original-ROM audit: SMB1 $D3A2-$D3AF against shared enemy/star_flag.c confirms the shared return after nonzero interval timer or nonempty event-music buffer."
+        "M2 T63 S23 static original-ROM audit: SMB1 $D3A2-$D3AF against shared enemy/star_flag.c confirms the shared return after nonzero interval timer or nonempty event-music buffer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "operationalEvidence": [
-        "M2 T63 S23 reused current-source x86/x64 1,024-record star-flag manifest, zero differences; identical shared source also passed S22 focused C90, purity and OpenNT DOS16 link."
+        "M2 T63 S23 reused current-source x86/x64 1,024-record star-flag manifest, zero differences; identical shared source also passed S22 focused C90, purity and OpenNT DOS16 link.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:266752actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all199PC/25branchpairs/actualX==08,5focusedtests eachpass,strictC90 checkers/current libraries;source/threeproductsP69unchanged."
       ],
       "semanticContract": "Returns while interval timer or event music blocks advancement of the star-flag task.",
       "currentSourcePaths": [
@@ -168675,16 +168733,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:14labels/70instructions/30RAM joined6boundedclauses;redanchor/center/forcegates,realgreenchildorder/framebits,rawmaximum/primarybits/wraps,stackcounter lifetime/returned00. Caller/producer/inter-frame lifetimespending,no newnode/controlcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P70 checkpoint - flame fireworks and star flag uses reconciled:29labels/199instructions/80RAM joined11boundedclauses;movement/pageborrow/targetY,three-sprite wrap/offscreen stack,explosion/score,star vector/task/score/timer order. Producer/inter-frame lifetimespending,no new node/control credit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 5404,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 5287,
+        "localInstructionReceiptSites": 5603,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 5088,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 1934,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 1839,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 2014,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 1759,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -168707,7 +168766,6 @@
           "src/game/area/block_metatile.c": 34,
           "src/game/world/bounding_box.c": 33,
           "src/game/scroll.c shared C90 scroll owner": 32,
-          "shared game core: enemy/star_flag.c": 31,
           "src/game/enemy/hammer_bro.c": 30,
           "shared game core: enemy/platform.c": 30,
           "src/game/player/terrain.c and terrain children": 30,
@@ -168723,7 +168781,6 @@
           "src/game/player_end_level.c shared C90 end-level owner": 24,
           "src/game/oam/flagpole_gfx.c": 24,
           "shared game core: enemy/piranha.c": 23,
-          "shared game core: oam/bowser_flame_gfx.c": 22,
           "src/game/world/geometry.c": 22,
           "src/game/entry.c shared C90 entry owner": 21,
           "src/game/world/fireball_hit.c": 21,
@@ -168740,9 +168797,7 @@
           "src/game/enemy_bounds.c": 15,
           "src/game/world/block_buffer.c": 15,
           "src/game/oam/fireworks_gfx.c": 15,
-          "shared game core: enemy/bowser_flame.c": 14,
           "src/game/boot.c": 13,
-          "shared game core: enemy/fireworks.c": 13,
           "shared game core: world/fireball_enemy.c": 13,
           "src/game shared dispatcher/engine/scroll owners": 10,
           "shared game core: enemy/firebar_children.c": 10,
