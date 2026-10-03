@@ -1,6 +1,32 @@
 #include "game/game.h"
 #include "game/area.h"
+#include "game/terminal_modes.h"
 #include "smb1_local_rom.h"
+#include "player_control_fixture.h"
+
+static int mysmb_test_victory_automatic_input(void)
+{
+    struct mysmb_game game;
+    mysmb_u8 walk;
+
+    for (walk = 0U; walk < 2U; ++walk) {
+        mysmb_game_initialize(&game);
+        mysmb_game_bind_area_source(&game, mysmb_local_prg,
+                                   MYSMB_LOCAL_PRG_SIZE);
+        mysmb_player_control_fixture(game.ram, 0U);
+        game.ram[0x0770U] = 2U;
+        game.ram[0x0772U] = 2U;
+        game.ram[0x000eU] = 11U;
+        game.ram[0x0034U] = 7U;
+        game.ram[0x0086U] = walk != 0U ? 0x40U : 0x60U;
+        game.ram[0x06fcU] = 0xc1U;
+        mysmb_game_step_victory(&game);
+        /* AutoControlPlayer stores its input before PlayerCtrlRoutine can
+         * skip controller loading in the death substate. */
+        if (game.ram[0x06fcU] != walk) return 1;
+    }
+    return 0;
+}
 
 static void mysmb_test_start_victory(struct mysmb_game *game)
 {
@@ -17,6 +43,8 @@ int main(void)
     struct mysmb_frame frame;
 
     input.buttons2 = 0U;
+
+    if (mysmb_test_victory_automatic_input() != 0) return 1;
 
     input.buttons = 0U;
     mysmb_test_start_victory(&game);

@@ -24287,10 +24287,12 @@
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 2 branch",
       "semanticEvidence": [
         "Td S9 A7 PlayerVictoryWalk static node-semantics pass: SMB1 lines 1169-1197 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P98 checkpoint - victory automatic walk uses repaired and reconciled:4labels/28instructions/11RAM joined3boundedclauses;originalAutoControlPlayer unconditionalinputstore repaired,livepostchildpage/fractioncarry/scroll-parser-order/exit reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P98 checkpoint - victory automatic walk uses repaired and reconciled:baseline2048RAM06FCdiff in4096roots,postrepair8192original83A0roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all28PC/4branchpairs,red-to-greenregression/fourtests each/threeP98productsrebuilt;DOScompile-linkonly."
       ],
       "semanticContract": "ROM $84a1: clears VictoryWalkControl; selects walking when Player_PageLoc differs from DestinationPageLoc or same-page Player_X_Position is below $60; always invokes AutoControlPlayer with 0/1; if ScreenLeft_PageLoc differs from destination, adds $80 to ScrollFractional, scrolls by 1+carry, runs UpdScrollVar, and retains the victory task. A zero control at exit advances OperMode_Task.",
       "currentSourcePaths": [
@@ -24306,10 +24308,12 @@
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 2 walk predicate",
       "semanticEvidence": [
         "Td S9 A7 PlayerVictoryWalk static node-semantics pass: SMB1 lines 1169-1197 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P98 checkpoint - victory automatic walk uses repaired and reconciled:4labels/28instructions/11RAM joined3boundedclauses;originalAutoControlPlayer unconditionalinputstore repaired,livepostchildpage/fractioncarry/scroll-parser-order/exit reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P98 checkpoint - victory automatic walk uses repaired and reconciled:baseline2048RAM06FCdiff in4096roots,postrepair8192original83A0roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all28PC/4branchpairs,red-to-greenregression/fourtests each/threeP98productsrebuilt;DOScompile-linkonly."
       ],
       "semanticContract": "ROM $84af: increments VictoryWalkControl and selects the rightward auto-control value before the shared DontWalk continuation.",
       "currentSourcePaths": [
@@ -24325,10 +24329,12 @@
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 2 AutoControlPlayer/scroll continuation",
       "semanticEvidence": [
         "Td S9 A7 PlayerVictoryWalk static node-semantics pass: SMB1 lines 1169-1197 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P98 checkpoint - victory automatic walk uses repaired and reconciled:4labels/28instructions/11RAM joined3boundedclauses;originalAutoControlPlayer unconditionalinputstore repaired,livepostchildpage/fractioncarry/scroll-parser-order/exit reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P98 checkpoint - victory automatic walk uses repaired and reconciled:baseline2048RAM06FCdiff in4096roots,postrepair8192original83A0roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all28PC/4branchpairs,red-to-greenregression/fourtests each/threeP98productsrebuilt;DOScompile-linkonly."
       ],
       "semanticContract": "ROM $84b1: invokes AutoControlPlayer with the selected 0/1 value, conditionally applies fixed-point $80 scroll and parser update, and hands the resulting VictoryWalkControl to ExitVWalk.",
       "currentSourcePaths": [
@@ -24344,10 +24350,12 @@
       "currentCounterpart": "src/game/terminal_modes.c:mysmb_game_step_victory task == 2 terminal condition",
       "semanticEvidence": [
         "Td S9 A7 PlayerVictoryWalk static node-semantics pass: SMB1 lines 1169-1197 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart."
+        "M2 T53 S4 static victory-chain audit: SMB1 lines 1137-1281 was compared branch-by-branch with the shared terminal_modes.c/frame_root.c owner; every scoped selector, state/table write and source-order control path has its named C counterpart.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P98 checkpoint - victory automatic walk uses repaired and reconciled:4labels/28instructions/11RAM joined3boundedclauses;originalAutoControlPlayer unconditionalinputstore repaired,livepostchildpage/fractioncarry/scroll-parser-order/exit reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
-        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical."
+        "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P98 checkpoint - victory automatic walk uses repaired and reconciled:baseline2048RAM06FCdiff in4096roots,postrepair8192original83A0roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all28PC/4branchpairs,red-to-greenregression/fourtests each/threeP98productsrebuilt;DOScompile-linkonly."
       ],
       "semanticContract": "ROM $84d0: advances OperMode_Task only when VictoryWalkControl remains zero; otherwise returns to VictoryMode without another task change.",
       "currentSourcePaths": [
@@ -170009,16 +170017,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:5labels/20instructions/7RAM joined4boundedclauses;P89TopScore nonalias/P90pausedbit/P48timers joined,INCframe gate/RAM00/XOR/ROR reviewed;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P95 checkpoint - player control parent and real child uses reconciled:13labels/102instructions/39RAM joined7boundedclauses;postchildreload/orderedrealchildren/wrappedCMP-BMI/07threshold/music/cloudexit reviewed;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P96 checkpoint - player movement dispatch jump and swim uses reconciled:13labels/56instructions/26RAM joined5boundedclauses;sourcecrouch/livepostphysicsdispatch/jumpheight/water/falling/force28/order reviewed;wholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P97 checkpoint - player entrance initialization uses reconciled:6labels/58instructions/27RAM joined4boundedclauses;page/collision/swim/alternateadjacency/timer/paletteX/vine/bubble/order reviewed;wholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P97 checkpoint - player entrance initialization uses reconciled:6labels/58instructions/27RAM joined4boundedclauses;page/collision/swim/alternateadjacency/timer/paletteX/vine/bubble/order reviewed;wholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P98 checkpoint - victory automatic walk uses repaired and reconciled:4labels/28instructions/11RAM joined3boundedclauses;originalAutoControlPlayer unconditionalinputstore repaired,livepostchildpage/fractioncarry/scroll-parser-order/exit reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 9742,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 949,
+        "localInstructionReceiptSites": 9770,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 921,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 3460,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 313,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 3471,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 302,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -170035,7 +170044,6 @@
           "src/game/player_modes.c shared C90 player-mode owner": 18,
           "src/game/player_transition.c shared C90 transition owner": 17,
           "src/game/area.c": 15,
-          "src/game/terminal_modes.c": 11,
           "src/game shared dispatcher/engine/scroll owners": 10,
           "src/game/area.c plus src/game/oam/flagpole_gfx.c": 9,
           "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c": 5,

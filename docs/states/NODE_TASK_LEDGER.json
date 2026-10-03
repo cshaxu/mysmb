@@ -768038,7 +768038,11 @@
         "SetStPos",
         "ChkOverR",
         "ChkSwimE",
-        "SetPESub"
+        "SetPESub",
+        "PlayerVictoryWalk",
+        "PerformWalk",
+        "DontWalk",
+        "ExitVWalk"
       ],
       "baseline": 1992,
       "incomingComplete": [

@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P98 victory walk uses](../proposals/m2/t70-final-current-certification.md#s17-p98-checkpoint---victory-automatic-walk-uses-repaired-and-reconciled).
+S17 P98:4victory walk labels/28instructions/11RAM joined3boundedclauses;AutoControlPlayer caller repaired,8192actualroots eachwidth0diff/all28PC/4branchpairs,4tests each andthreeproducts rebuilt. Scope1549/fresh0;9770/10691instruction receipts,3471/3773RAM receipts;921instructions/302RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;producer/inter-frame/finalpackages pending,M2 incomplete.
+
 [P97 player entrance uses](../proposals/m2/t70-final-current-certification.md#s17-p97-checkpoint---player-entrance-initialization-uses-reconciled).
 S17 P97:6player entrance labels/58instructions/27RAM joined4boundedclauses;65536actualroots eachwidth0diff/all58PC/7branchpairs,4tests each. Scope1545/fresh0;9742/10691instruction receipts,3460/3773RAM receipts;949instructions/313RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 

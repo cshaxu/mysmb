@@ -220,7 +220,7 @@ void mysmb_game_step_victory(struct mysmb_game *game)
         }
         /* ROM PlayerVictoryWalk always enters AutoControlPlayer, including
          * the no-walk case after Mario has reached x=$60. */
-        mysmb_player_step(game, auto_buttons);
+        mysmb_player_auto_control(game, auto_buttons);
         if (game->ram[MYSMB_RAM_SCREEN_LEFT_PAGE] !=
             game->ram[MYSMB_RAM_DESTINATION_PAGE]) {
             fractional_sum = (mysmb_u16)game->ram[MYSMB_RAM_SCROLL_FRACTION] +
