@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P124 queued handoff](../proposals/m2/t70-final-current-certification.md#s17-p124-checkpoint---queued-status-palette-and-nmi-handoff).
+S17 P124:22 status/palette/commit labels,163 original PC observed;2048 eight-turn chains eachwidth zero scoped RAM/APU/order difference. First selector6 retains27-byte queue,next selector0 commits54 bytes;ordinary queue27 bytes. Slot0368/03EE/06CF preserved. Six focused tests eachwidth pass;123 source identities and P123 three EXEs unchanged. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);material993 partial,total unknown,M2 incomplete.
+
 [P123 buffer1 producers](../proposals/m2/t70-final-current-certification.md#s17-p123-checkpoint---buffer1-producer-operand-semantics-repaired).
 S17 P123:12 buffer1 producer labels,106 original instructions/7 branch pairs. RemBridge absolute-X graphics displacements widened outside byteX;original11-write order restored. Three65536-root families,196608 original roots eachwidth0scoped RAM/APU/order diff;all106PC/14branch sides. New boundary regression rejects predecessor exit2;7focusedtests eachwidthpass. Three EXEs refreshed via modern targets/originalOpenNT16 compile/link. Historical1992/1992,local1991/1992 nodes,4260/4261 controls(raw4342,infeasible81);material993 partial,total unknown;M2 incomplete.
 
