@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P18 active;P17 controller checkpoint,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P19 active;P18 hardware identity checkpoint,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
@@ -13,7 +13,7 @@
 | Files And ABI Surface | S17 bounded corrective game.c/area.c,title-bootstrap/area-output tests and three assets EXEs;neutral use/path index and governance,evidence below ignored build. |
 | Applicable Rules | README Task Reading Set,[Execution](../rules/EXECUTION.md),[Architecture](../rules/ARCHITECTURE.md),[Coding](../rules/CODING.md),[Documentation](../rules/DOCUMENT.md),[Source policy](../etc/operations/policy/source-policy.md),current-equivalence proof program. |
 | Verification | P2:250 direct ROM-read sites reconciled in retained domains,22 new paths;12 actual checks each width pass,zero-test attempt rejected;no product/source change. P1:10691 textual instructions/4171 memory sites,10 encoded overlaps discharged;9003 consuming sites awaiting joins. Byte-bound access inventory and feasible path/alias/lifetime proof;retained scoped receipts,focused original/native routes for uncovered clauses;accounting gates. |
-| Expected Markers | 195 labels:retained enemy/music/immutable audit participation plus title/column/parser corrective chains;expected fresh0,max1992;no material denominator until complete feasible-use disposition. |
+| Expected Markers | 210 labels:retained enemy/music/immutable audit participation plus title/column/parser corrective chains;expected fresh0,max1992;no material denominator until complete feasible-use disposition. |
 | Asset Needs | Existing ROM/ASM owner-local read-only nonredistributable;ignored build128MiB/120seconds per process;raw cleanup by coordinator. |
 | Reporting Requirements | Exact resolved/pending uses and path IDs;retain total/local node/control counts and unknown material total. |
 | Stop Conditions | Source mismatch stays S17;admit exact affected chain before product edit,repair/re-audit before successor. |
@@ -43,7 +43,6 @@
 
 
 
-S17 P10:sideways pipe05/06 stores restored;240 original roots each width/all6 labels zero diff after480 baseline differences.12 tests each,4288 handoff rechecks,six600-frame routes/3 products pass. Local1992/1992 restored;controls4274/4274,material698 partial,total unknown,S17 open.
 
 S17 P11:4 VRAM indirect reads/4 pointer-payload-mirror paths reconciled;3600 original roots each width zero RAM/CIRAM/palette/control/visible-scroll diff,4 current checks each/4 contract negatives pass. No product/source/node/control change;material702 partial,total unknown,S17 open.
 
@@ -60,3 +59,5 @@ S17 P15:eight omitted dispatch04-07 calls restored;9216 kernel/512 real caller r
 S17 P16:45 direct sound hardware sites reconciled;23040 original live roots each width zero full-RAM/APU-shadow/ordered-write differences,all45 PCs observed,8 current checks each pass. No source/products/graph credit.42 other hardware sites/other material uses pending;local1992/1992,controls4274/4274,material726 partial,total unknown,S17 open.
 
 S17 P17:3 controller hardware sites reconciled in single-controller domain;4096 original roots each width zero full-RAM diff,actual strobe1/0 and8 reads each port checked,joypad-vram check each width passes. No source/products/graph credit.39 hardware sites/other material uses pending;local1992/1992,controls4274/4274,material726 partial,total unknown,S17 open.
+
+S17 P18:39 remaining hardware command-use sites linked to retained startup/NMI/title/VRAM/split receipts and current unchanged function identities;all87 hardware sites have bounded dispositions. No new execution/source/products/graph credit. Pixel timing and other material lifetime clauses remain;local1992/1992,controls4274/4274,material726 partial,total unknown,S17 open.

@@ -13,6 +13,11 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P18 retained hardware contracts](../proposals/m2/t70-final-current-certification.md#s17-p18-admission-and-checkpoint---retained-hardware-command-contracts).
+39 hardware sites mapped to retained scoped receipts/current source identities;
+all87 hardware sites have bounded dispositions,pixel timing remains pending.
+No new execution/source/products/graph credit;material726 partial,total unknown.
+
 [P17 controller hardware](../proposals/m2/t70-final-current-certification.md#s17-p17-checkpoint---controller-hardware-boundary).
 4096 original roots each width zero full-RAM diff in single-controller domain;
 3 hardware sites dispositioned,39 hardware sites/other material clauses remain.

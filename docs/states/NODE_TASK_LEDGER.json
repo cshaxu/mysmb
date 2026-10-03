@@ -766527,7 +766527,22 @@
         "ReadJoypads",
         "ReadPortBits",
         "PortLoop",
-        "Save8Bits"
+        "Save8Bits",
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "ColdBoot",
+        "NonMaskableInterrupt",
+        "ScreenOff",
+        "InitBuffer",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "SkipSprite0",
+        "SkipMainOper",
+        "InitializeNameTables",
+        "WriteNTAddr",
+        "InitNTLoop",
+        "InitATLoop"
       ],
       "baseline": 1992,
       "incomingComplete": [

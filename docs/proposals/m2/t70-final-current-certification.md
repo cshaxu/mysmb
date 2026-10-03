@@ -4207,3 +4207,81 @@ was below32MiB;the combined input/reference/two native files peaked below
 34MiB per batch(33MiB plain RAM,33.012MiB returned-byte variant),within
 the admitted128MiB cap. Earlier aggregate32MiB wording is corrected;no
 budget exceedance or change to comparison conclusions.
+
+## S17 P18 admission and checkpoint - retained hardware command contracts
+
+Continue the39 remaining hardware sites(37 PPU,2 reset sound),using retained
+accepted contracts rather than another audit round. All sites below have an
+explicit receipt,shared counterpart family and proof boundary. Startup
+boot.c matches accepted6aded679 exactly;game.c matches accepted P11
+57274991 exactly. frame_root.c differs from P11 only in the three P15
+mode-dispatch scratch statements after the hardware phase;no changed
+hardware producer/consumer functions. Current normalized identities:
+
+| Shared owner | SHA256 |
+| --- | --- |
+| src/game/boot.c | 5ed50c00b7848387b4798e2f658e21110396b165149edbe66521c5289bf4e3a9 |
+| src/game/game.c | 1f1663c3ab2e1351bef6a454d4860af6d0ea696543aa9cc320e29567285b87e9 |
+| src/game/frame_root.c | beed1afea957c4290247a6d3178b168337b8ac2b992274dee76535cc72611b2b |
+
+Retained original/native receipts:16 startup roots compare RAM/CIRAM/
+palette/OAM/APU/control/mask/scroll;531 NMI display roots prove before/
+after physical-mask phases;64 split roots prove actual original hit-wait
+and scroll phase plus saved control;32 title roots include314-byte transfer
+and pointer scratch;3600 VRAM roots compare RAM/CIRAM/palette/control/
+logical scroll. They keep their explicit physical-stack/hardware exclusions.
+No new original execution,coverage,material path or source/product credit
+is inferred from this identity reconciliation. Every hardware instruction
+site belongs to the following bounded command contract;status/latch/cycle
+behavior is a neutral adapter boundary. Final subscanline pixel output
+remains the separately named open pixel package,not silently certified by
+matching final fields or these retained command receipts.
+
+| Use | PC | Owner | Operand | Counterpart/receipt | Explicit boundary |
+| --- | --- | --- | --- | --- | --- |
+| use-00004 | 8004 | Start | PPU_CTRL_REG1 | startup/canonical control and scroll; S15 P2 closure - identified startup gaps | neutral VBlank events/canonical state writes;polling cycles and PPU latch ABI excluded |
+| use-00007 | 800a | VBlank1 | PPU_STATUS | startup/canonical control and scroll; S15 P2 closure - identified startup gaps | neutral VBlank events/canonical state writes;polling cycles and PPU latch ABI excluded |
+| use-00009 | 800f | VBlank2 | PPU_STATUS | startup/canonical control and scroll; S15 P2 closure - identified startup gaps | neutral VBlank events/canonical state writes;polling cycles and PPU latch ABI excluded |
+| use-00023 | 802e | ColdBoot | SND_DELTA_REG+1 | startup/canonical control and scroll; S15 P2 closure - identified startup gaps | neutral VBlank events/canonical state writes;polling cycles and PPU latch ABI excluded |
+| use-00029 | 803e | ColdBoot | SND_MASTERCTRL_REG | startup/canonical control and scroll; S15 P2 closure - identified startup gaps | neutral VBlank events/canonical state writes;polling cycles and PPU latch ABI excluded |
+| use-00031 | 8043 | ColdBoot | PPU_CTRL_REG2 | startup/canonical control and scroll; S15 P2 closure - identified startup gaps | neutral VBlank events/canonical state writes;polling cycles and PPU latch ABI excluded |
+| use-00043 | 808c | NonMaskableInterrupt | PPU_CTRL_REG1 | NMI display/OAM transaction; S4 P1 closure - original two-phase display transaction restored | mask/pointer/header phases and accepted OAM copy;not subscanline pixels |
+| use-00052 | 80a3 | ScreenOff | PPU_CTRL_REG2 | NMI display/OAM transaction; S4 P1 closure - original two-phase display transaction restored | mask/pointer/header phases and accepted OAM copy;not subscanline pixels |
+| use-00053 | 80a6 | ScreenOff | PPU_STATUS | NMI display/OAM transaction; S4 P1 closure - original two-phase display transaction restored | mask/pointer/header phases and accepted OAM copy;not subscanline pixels |
+| use-00056 | 80ae | ScreenOff | PPU_SPR_ADDR | NMI display/OAM transaction; S4 P1 closure - original two-phase display transaction restored | mask/pointer/header phases and accepted OAM copy;not subscanline pixels |
+| use-00058 | 80b3 | ScreenOff | SPR_DMA | NMI display/OAM transaction; S4 P1 closure - original two-phase display transaction restored | mask/pointer/header phases and accepted OAM copy;not subscanline pixels |
+| use-00076 | 80e1 | InitBuffer | PPU_CTRL_REG2 | NMI display/OAM transaction; S4 P1 closure - original two-phase display transaction restored | mask/pointer/header phases and accepted OAM copy;not subscanline pixels |
+| use-00117 | 813d | Sprite0Clr | PPU_STATUS | NMI sprite0 split/control restore; S6 P1 verified part - conditional visible scroll and saved-control handoff | flag gate,actual original hit waits/scroll phase and saved-control fields;subscanline pixels pending |
+| use-00125 | 8150 | Sprite0Hit | PPU_STATUS | NMI sprite0 split/control restore; S6 P1 verified part - conditional visible scroll and saved-control handoff | flag gate,actual original hit waits/scroll phase and saved-control fields;subscanline pixels pending |
+| use-00132 | 815f | SkipSprite0 | PPU_SCROLL_REG | NMI sprite0 split/control restore; S6 P1 verified part - conditional visible scroll and saved-control handoff | flag gate,actual original hit waits/scroll phase and saved-control fields;subscanline pixels pending |
+| use-00134 | 8165 | SkipSprite0 | PPU_SCROLL_REG | NMI sprite0 split/control restore; S6 P1 verified part - conditional visible scroll and saved-control handoff | flag gate,actual original hit waits/scroll phase and saved-control fields;subscanline pixels pending |
+| use-00137 | 816c | SkipSprite0 | PPU_CTRL_REG1 | NMI sprite0 split/control restore; S6 P1 verified part - conditional visible scroll and saved-control handoff | flag gate,actual original hit waits/scroll phase and saved-control fields;subscanline pixels pending |
+| use-00142 | 8178 | SkipMainOper | PPU_STATUS | NMI sprite0 split/control restore; S6 P1 verified part - conditional visible scroll and saved-control handoff | flag gate,actual original hit waits/scroll phase and saved-control fields;subscanline pixels pending |
+| use-00145 | 817e | SkipMainOper | PPU_CTRL_REG1 | NMI sprite0 split/control restore; S6 P1 verified part - conditional visible scroll and saved-control handoff | flag gate,actual original hit waits/scroll phase and saved-control fields;subscanline pixels pending |
+| use-00688 | 8706 | DrawTitleScreen | PPU_ADDRESS | title CHR read bootstrap; S17 P3 checkpoint - title pointer repair | valid task12/mode0 and fixed read1000 dummy/refill;not generic PPU readback |
+| use-00690 | 870b | DrawTitleScreen | PPU_ADDRESS | title CHR read bootstrap; S17 P3 checkpoint - title pointer repair | valid task12/mode0 and fixed read1000 dummy/refill;not generic PPU readback |
+| use-00695 | 8716 | DrawTitleScreen | PPU_DATA | title CHR read bootstrap; S17 P3 checkpoint - title pointer repair | valid task12/mode0 and fixed read1000 dummy/refill;not generic PPU readback |
+| use-00696 | 8719 | OutputTScr | PPU_DATA | title CHR read bootstrap; S17 P3 checkpoint - title pointer repair | valid task12/mode0 and fixed read1000 dummy/refill;not generic PPU readback |
+| use-01084 | 8e19 | InitializeNameTables | PPU_STATUS | startup/canonical control and scroll; S15 P2 closure - identified startup gaps | neutral VBlank events/canonical state writes;polling cycles and PPU latch ABI excluded |
+| use-01092 | 8e2d | WriteNTAddr | PPU_ADDRESS | startup/canonical control and scroll; S15 P2 closure - identified startup gaps | neutral VBlank events/canonical state writes;polling cycles and PPU latch ABI excluded |
+| use-01094 | 8e32 | WriteNTAddr | PPU_ADDRESS | startup/canonical control and scroll; S15 P2 closure - identified startup gaps | neutral VBlank events/canonical state writes;polling cycles and PPU latch ABI excluded |
+| use-01098 | 8e3b | InitNTLoop | PPU_DATA | startup/canonical control and scroll; S15 P2 closure - identified startup gaps | neutral VBlank events/canonical state writes;polling cycles and PPU latch ABI excluded |
+| use-01107 | 8e4d | InitATLoop | PPU_DATA | startup/canonical control and scroll; S15 P2 closure - identified startup gaps | neutral VBlank events/canonical state writes;polling cycles and PPU latch ABI excluded |
+| use-01143 | 8e92 | WriteBufferToScreen | PPU_ADDRESS | VRAM command writer; S17 P11 checkpoint - VRAM indirect pointer consumers | valid admitted streams/physical control and logical CIRAM/palette/scroll;v/t/latch/cycles excluded |
+| use-01146 | 8e98 | WriteBufferToScreen | PPU_ADDRESS | VRAM command writer; S17 P11 checkpoint - VRAM indirect pointer consumers | valid admitted streams/physical control and logical CIRAM/palette/scroll;v/t/latch/cycles excluded |
+| use-01167 | 8ebb | RepeatByte | PPU_DATA | VRAM command writer; S17 P11 checkpoint - VRAM indirect pointer consumers | valid admitted streams/physical control and logical CIRAM/palette/scroll;v/t/latch/cycles excluded |
+| use-01178 | 8ecf | RepeatByte | PPU_ADDRESS | VRAM command writer; S17 P11 checkpoint - VRAM indirect pointer consumers | valid admitted streams/physical control and logical CIRAM/palette/scroll;v/t/latch/cycles excluded |
+| use-01180 | 8ed4 | RepeatByte | PPU_ADDRESS | VRAM command writer; S17 P11 checkpoint - VRAM indirect pointer consumers | valid admitted streams/physical control and logical CIRAM/palette/scroll;v/t/latch/cycles excluded |
+| use-01181 | 8ed7 | RepeatByte | PPU_ADDRESS | VRAM command writer; S17 P11 checkpoint - VRAM indirect pointer consumers | valid admitted streams/physical control and logical CIRAM/palette/scroll;v/t/latch/cycles excluded |
+| use-01182 | 8eda | RepeatByte | PPU_ADDRESS | VRAM command writer; S17 P11 checkpoint - VRAM indirect pointer consumers | valid admitted streams/physical control and logical CIRAM/palette/scroll;v/t/latch/cycles excluded |
+| use-01183 | 8edd | UpdateScreen | PPU_STATUS | VRAM command writer; S17 P11 checkpoint - VRAM indirect pointer consumers | valid admitted streams/physical control and logical CIRAM/palette/scroll;v/t/latch/cycles excluded |
+| use-01187 | 8ee6 | InitScroll | PPU_SCROLL_REG | startup/canonical control and scroll; S15 P2 closure - identified startup gaps | neutral VBlank events/canonical state writes;polling cycles and PPU latch ABI excluded |
+| use-01188 | 8ee9 | InitScroll | PPU_SCROLL_REG | startup/canonical control and scroll; S15 P2 closure - identified startup gaps | neutral VBlank events/canonical state writes;polling cycles and PPU latch ABI excluded |
+| use-01190 | 8eed | WritePPUReg1 | PPU_CTRL_REG1 | startup/canonical control and scroll; S15 P2 closure - identified startup gaps | neutral VBlank events/canonical state writes;polling cycles and PPU latch ABI excluded |
+
+All87 hardware-base instruction sites now have named bounded command-use
+dispositions:45 audio P16,3 controller P17,39 retained families here. This
+closes only the missing hardware-use lookup,not unresolved timing/pixel or
+mutable/register/flag/stack/inter-frame obligations. Historical1992/1992,
+local nodes1992/1992,controls4274/4274(raw4342,infeasible68),material726
+partial,total unknown. S17 remains open;full M2 certification incomplete.

@@ -160003,7 +160003,22 @@
         "ReadJoypads",
         "ReadPortBits",
         "PortLoop",
-        "Save8Bits"
+        "Save8Bits",
+        "Start",
+        "VBlank1",
+        "VBlank2",
+        "ColdBoot",
+        "NonMaskableInterrupt",
+        "ScreenOff",
+        "InitBuffer",
+        "Sprite0Clr",
+        "Sprite0Hit",
+        "SkipSprite0",
+        "SkipMainOper",
+        "InitializeNameTables",
+        "WriteNTAddr",
+        "InitNTLoop",
+        "InitATLoop"
       ],
       "controlEdgeIds": [],
       "status": "in-progress-material-use-completeness",
@@ -160039,7 +160054,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P15 checkpoint - dispatch caller scratch repair",
         "docs/proposals/m2/t70-final-current-certification.md S17 P16 admission - direct sound hardware commands",
         "docs/proposals/m2/t70-final-current-certification.md S17 P16 checkpoint - direct sound hardware commands",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P17 checkpoint - controller hardware boundary"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P17 checkpoint - controller hardware boundary",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P18 admission and checkpoint - retained hardware command contracts"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",
