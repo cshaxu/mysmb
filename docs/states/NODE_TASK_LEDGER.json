@@ -766858,7 +766858,22 @@
         "VerticalPipe",
         "WarpPipe",
         "DrawPipe",
-        "GetPipeHeight"
+        "GetPipeHeight",
+        "SetupIntermediate",
+        "GetAreaPalette",
+        "SetVRAMAddr_A",
+        "NextSubtask",
+        "GetBackgroundColor",
+        "NoBGColor",
+        "GetPlayerColors",
+        "ChkFiery",
+        "StartClrGet",
+        "ClrGetLoop",
+        "SetBGColor",
+        "SetVRAMOffset",
+        "GetAlternatePalette1",
+        "SetVRAMAddr_B",
+        "NoAltPal"
       ],
       "baseline": 1992,
       "incomingComplete": [

@@ -13,6 +13,12 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P40 retainedpalette source-use joins](../proposals/m2/t70-final-current-certification.md#s17-p40-checkpoint---retained-palette-contracts-joined-to-source-uses).
+65instructions/28RAM,36864 currentparents+480persistentprotocols eachwidth
+zeroRAM/declaredABI diff;five source segmentsunchanged,existingpaths605-613
+retained.1858instruction/579RAM boundedreceipts,3194otherRAM joins pending;
+material985 partial,totalunknown;all3 P39products unchanged.
+
 [P39 source-faithful raw pipe andcastle repair](../proposals/m2/t70-final-current-certification.md#s17-p39-checkpoint---raw-pipe-and-castle-source-fidelity-repaired).
 19 reopened localcontracts restored;63024 expandedparents/9216 returnedX roots/
 95706 retainedparents eachwidth zero RAM/declaredABI differences. Threeproducts

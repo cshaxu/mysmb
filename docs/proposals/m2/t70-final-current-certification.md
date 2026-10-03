@@ -6417,3 +6417,71 @@ mysmb16.exe bytes259435 SHA256:d3059d8615056e0d70c8cd57026a6c891470582ad2be049a5
 mysmb32.exe bytes373707 SHA256:a050a910e6926f63f84cc3d43349baa0ff53e8036016dc6f970a9a53c06fc6d0.
 
 mysmb64.exe bytes379704 SHA256:d3a85fd30980d85069e310f0ed6f0183555556921b00e3ad50d80138bc01c2bb.
+
+## S17 P40 scope amendment - retained screen palette source-use joins
+
+Exact auditparticipants:`SetupIntermediate`,`GetAreaPalette`,`SetVRAMAddr_A`,`NextSubtask`,`GetBackgroundColor`,`NoBGColor`,`GetPlayerColors`,`ChkFiery`,`StartClrGet`,`ClrGetLoop`,`SetBGColor`,`SetVRAMOffset`,`GetAlternatePalette1`,`SetVRAMAddr_B`,`NoAltPal`.
+
+65 instructions/28 RAM sites,original859b-85ba/85bf-85ca/85e3-8651. Shared game.c screen leaves1/9/10/11 andarea.c playerpalette. Reconcile existing S13 source-order,savedstatus/background,selector,bytecursor andscratch clauses toexact source use PCs. Compare scoped currentbody identity with398f38ef andfreshly linkcurrent C90 native roots/protocols toretained originaldrivers. Reuseactual source proof without freshnode/control credit or inventingnewmaterialproducer pairs. 15 addedauditparticipants,S17 scope490,fresh0/max1992.
+
+Retain S13 caller/table domains:area0-3,bg0/4-7,player0/1,status0-2 andfullbytesavedstates underintermediate;all256 outputoffsets,allstylebytes. Prefixguard forbackground>=8 notcertified forarbitrarycorruptRAM;global writer/reachability clauses remainexplicit. RealScreenRoutines/JumpEngine/palette children,36864 rootsand480 persistent9-10-11 protocols/1440 records bothwidths. AllRAM minusactualphysicalpushbytes plusreturn discriminator,sourcebranch/table/writeorder receipts. No product edits orEXErefresh;sourcecodechangedifanyneeds separatecorrective amendment andthreeproducts. Budgets1024roots/4096instructions/128MiB/120s perprocess,rawcleanup underbuild. No newwholeauditround.
+
+## S17 P40 checkpoint - retained palette contracts joined to source uses
+
+65 instructions/28 RAM sites and15 existinglabels join8 manualsource clauses.
+No freshnodes/control/material paths;S17 scope490. Fiveaccepted source
+segments(queue_player_palette andscreen leaves1/9/10/11) exactlyequal398f38ef;
+wholearea/game fileschangedelsewhere,so theiroldwholehashes are notusedas
+identityproof. Currentgame/area normalized hashes andsegmenthashes recorded.
+FreshC90 nativeprobes linkcurrentcore withrealScreenRoutines/JumpEngine/palette;
+originaldrivers retained unchanged.36864 originalroots eachwidth plus480
+persistent9-10-11 protocols/1440 records matchfullRAM/returnABI;onlyactual
+physicalpush01fa-01fd bytesexcluded,scratch00 andotherstackpagebytes compared.
+All15 executablenodeentries,sixconditional pairs bothoutcomes,28 tablebytes
+read,29184 originalorder checks. Source/C order proved separatelybyretained
+source-segment equality andmanualclauses,not inferredfromfinalRAM equality.
+
+| Clause | Original PCs | Retained source-use disposition |
+| --- | --- | --- |
+| P1 | 0x859b-0x85ba | Source A saved background then savedstatus viaPHA;storesstatus0 beforebg2;realpalettechild returns thenPLA restoresstatus andbg inthatorder. Native locals saveequivalent values andsourceorder retained. Palette writes0304..0403/header..0407,scratch00 andcursor0300 disjoint744/756 andsourcepush01fa..01fd;no childwriter canclobber savedfields. Sourceprevioussavedregistervalues noalias withhostlocals. Nativeconstanttask2 equalsactual sourceIncSubtask forscreenleaf1 only. |
+| P2 | 0x85bf-0x85ca | LDY area0-3/immutable table1-4 ->X ->control773 beforeIncSubtask. Native area+1 equalfull tabledomain;nativeconstanttask10 validactualcaller9. No intervening773writer inthisleaf. AreaPalette0-3 iscallercontract,not proof ofadjacentindexedROM readsforarbitrarycorruptAreaType. |
+| P3 | 0x85e3-0x85f0 | Actualbg744zero branchesNoBGColor;nonzero valid4-7 readsBGtablebase-4+Y thencontrol773 store. Source INC73c precedesplayerchild. Native sameorderedcontrol/task beforechild,withtask10 ->11. Guardsoutsidevalidbgdomain notcertified;original absoluteindexedbase expression matchedfour tablebytes. Realchildcannotwrite773/73c,bufferrange disjoint. |
+| P4 | 0x85f1-0x8609 | SourceX initial0300,Y0 thenanynonzero CurrentPlayer->Y4,PlayerStatus2->Y8. Native samepriority selector. RAM00=3 afterselector. Declared0/1players/0-2status andfull savedintermediatebytes;scalar predicate algebra additionallyallbytevalues. Realinputfields consumedbeforeonlychildloopwrites,disjoint0300/00. |
+| P5 | 0x860a-0x8617 | Immutable PlayerColors indexedY thenabsolute0304+X store,INY andbyteINX,DEC00/BPL untilFF. NativeactualRAM00 decrementedandnegativepredicate,height-independentloop4;coloroffset0/4/8 incrementsthrough3/7/11. Xwrap keeps absolute+3 outsidebytecursor;writescanenter0400 regionbutnever0300,saved744/756,physicalstack or00. RAM00terminalFF provennot excluded. |
+| P6 | 0x8619-0x863e | Source reload0300 andbg744afterloop;fallbackArea74eonlybgzero;tablecolor overwritesfirstpalettebyte beforeheaders3f/10/4/null. Native cached0300/bg equalactualreload becauseprecedingloopwrite domain0304..0403/scratch00 disjoint0300/744/74e. Directabsoluteheader+offset writes0301..0400 andterminator0308..0407,orderpreserved. SourceTXA/CLC/ADC7 andnativebyte(offset+7) equalall256;carrynotconsumedbycaller. |
+| P7 | 0x863f-0x8642 | STA0300 publishesbytecursorafterallbufferwrites thenRTS. ChildrequiredRAM/commandABI only;finalCPU A/C notnativeABI. Savedintermediatefields restoredafterchild publication,taskincrement last. |
+| P8 | 0x8643-0x8651 | AreaStyleactual733,CMP1 thenonlyequalstores0B to773 beforeIncSubtask. Native leaf11 sameallstylebytes;task11->12. No fabricateddataedge fromuntouched773tonexttask;onlyactualstyle->selector inputpathretained. |
+
+65792 supplemental selector/cursor/write-domain assertions;4 negativeindex
+accountingchecks rejectmissing/duplicate/falsewhole/false local. Thosechecks
+are accounting gates,not automaticsemanticproof. Reuseexactexisting material
+605-613 withactualsource intervals;do notinventnearest-label/Cartesian edges.
+Background0/4-7,area0-3,player0/1,status0-2,fullbytesavedintermediatestates,
+all256offsetsandstyle bytes aredeclared routecontracts. Prefixguardfor
+background>=8 not certifiedforarbitrarycorruptRAM;source-reachable producer
+invariants/inter-frame/globalmaterial lifetimes remain distinct unresolved
+whole-program clauses. Persistentprotocols endattask12,notfullgamereachability.
+Twofocused tests eachwidth andbuildcurrentstatusprobe pass. Productsource
+unchanged,all3 P39producthashes retained;no repeatDOSbuildornewEXE required.
+
+Local receipts1858/10691 instructions,579/3773 directRAM;8833 otherinstructions/
+3194 otherRAM entries needapplicable retainedjoins ormissingclauseproof,not
+3194 discovereddefects. Historical/local1992/1992;controls4274/4274(raw4342,
+infeasible68),material985 partial,totalunknown. Fourfinalpackages remainopen,
+allwhole-program lifetime fields pending,M2 NOT COMPLETE,no newauditround.
+
+Participant labels:SetupIntermediate,GetAreaPalette,SetVRAMAddr_A,NextSubtask,GetBackgroundColor,NoBGColor,GetPlayerColors,ChkFiery,StartClrGet,ClrGetLoop,SetBGColor,SetVRAMOffset,GetAlternatePalette1,SetVRAMAddr_B,NoAltPal.
+
+Current src/game/area.c normalizedSHA256:9e482d3c43db74d1b338726e5c4e9f69721e27b931f3fd6ac6c55ea5d48c24f3.
+
+Acceptedsegment queue_player_palette SHA256:727457c3bb60125a81f31ba3c8517503c7e08cf2177fb9cd2a37df9cf3050c2f.
+
+Current src/game/game.c normalizedSHA256:1f1663c3ab2e1351bef6a454d4860af6d0ea696543aa9cc320e29567285b87e9.
+
+Acceptedsegment screenleaf1 SHA256:2d45ad4cd28c6b7f4086138d12b2e9dfdbd97338efecf182c1a310dfe34afe8d.
+
+Acceptedsegment screenleaf9 SHA256:ad4e677fb8c86aef5c7ad50aab6c2dee7fece8bb4bcb8513192cb3fd3de33da6.
+
+Acceptedsegment screenleaf10 SHA256:5cd61bc5365a73a7b4a295d7f3d72928b95ed9bfdd8f9ecaaa9f2c053bbbf021.
+
+Acceptedsegment screenleaf11 SHA256:95cc3882d36ec3628fb8b07b91e728dd74f9230ce90ae8bea21f24c0bea48fdb.
