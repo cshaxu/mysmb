@@ -767297,7 +767297,19 @@
         "SubDifAdj",
         "SPixelLak",
         "ExMoveLak",
-        "PlayerEnemyDiff"
+        "PlayerEnemyDiff",
+        "MoveNormalEnemy",
+        "FallE",
+        "MEHor",
+        "SlowM",
+        "SteadM",
+        "AddHS",
+        "ReviveStunned",
+        "SetRSpd",
+        "MoveDefeatedEnemy",
+        "ChkKillGoomba",
+        "NKGmba",
+        "MoveJumpingEnemy"
       ],
       "baseline": 1992,
       "incomingComplete": [

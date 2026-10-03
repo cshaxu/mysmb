@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P64 normal enemy movement](../proposals/m2/t70-final-current-certification.md#s17-p64-checkpoint---normal-defeated-and-jumping-enemy-movement-reconciled).
+S17 P64:12movementlabels,69instructions/16RAM joined6boundedclauses;196608actualroots eachwidth0diff/all69PC/14branchpairs,384erasecalls,1falseexactfallthrough correctedinfeasible,5tests each. Scope887/fresh0;4721instruction/1660RAM receipts,5970instruction/2113RAM pending. Local1991/1992nodes,4266/4267controls(raw4342/infeasible75),material993partial,totalunknown;source/productsP57unchanged,caller/inter-frame domains pending,M2 incomplete.
+
 [P63 Lakitu distance/movement](../proposals/m2/t70-final-current-certification.md#s17-p63-checkpoint---lakitu-distance-and-movement-reconciled).
 S17 P63:16Lakitu/distance labels,99instructions/37RAM joined6boundedclauses;196608actualroots eachwidth0diff/all99PC/17branchpairs,2falseexactfallthroughs correctedinfeasible,5tests each. Scope875/fresh0;4652instruction/1644RAM receipts,6039instruction/2129RAM pending. Local1991/1992nodes,4267/4268controls(raw4342/infeasible74),material993partial,totalunknown;source/productsP57unchanged,caller/inter-frame domains pending,M2 incomplete.
 

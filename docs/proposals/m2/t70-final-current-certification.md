@@ -7931,3 +7931,29 @@ S17 P63:16Lakitu/distance labels,99instructions/37RAM joined6boundedclauses;1966
 Current src/game/enemy/lakitu.c normalizedSHA256:63fdbda735e04db52138656f47788a1dda2e1bd0f8f91eb9727c6a9757d2f5de.
 
 Current src/game/enemy/distance.c normalizedSHA256:260ed46333bf7de18963cce9e5b309f6285b320b97a85e183497a120b6a117aa.
+
+## S17 P64 admission - normal defeated and jumping enemy movement
+
+Existing enemy material/caller gap;69pending instructions: MoveNormalEnemy,FallE,MEHor,SlowM,SteadM,AddHS,ReviveStunned,SetRSpd,MoveDefeatedEnemy,ChkKillGoomba,NKGmba,MoveJumpingEnemy. Shared enemy/movement.c,actualhorizontal/gravity/erasurechildren;CA77 normal/CAE5 defeated/CAF9 jumping return routes. Reviewstatebit priority,fullstate5 gravityvs lowbits5,postchildstate reread,PowerUp slowdownexception,temp speed PHA/PLA,revival/deletion/tableindex andtailorder. ControlledcurrentX0-5/allstatebytes,speed/coordinate/forcewraps,timers0/1/0E/FF,ID6/00/2E,Frameparity andPrimaryHard0/FF. Scope887,fresh0/max1992. Bothwidth2032RAM/24APU/orderedwrites/focusedtests;diffstaysS17/productrepairrequires3EXEs. OwnerROM/ASMreadonly/nonredistributable,raw onlyignored build128MiB/120seconds perprocess,4096recordbatchesdeleted. No newauditround.
+
+P64 graph amendment: control01752 FallE->MEHor fallthrough atCAADwasbroadlymarkedexact. OriginalCAA9CMP PowerUp/CAABBEQ SteadM excludesZ1;CAAD immediatelyBNE SlowM mustbranchwithunchangedZ0. Keeprawedge/oldreceipts,addsourceproofandinfeasibledisposition. Raw4342/infeasible75/feasible4267/localexact4266. No gamecodefix ornewglobalround.
+
+## S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled
+
+ExistingS17 enemy material/caller gap;12labels/69instructions,scope887/fresh0,unchangedmovement.c.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| N1 | MoveNormalEnemy | Originalprioritystate40 ->FallE before80 ->SteadM before20 ->defeated beforelowbits. Lowbits0 steady,5 fall,3/4/6/7 revive,1/2 fall. Nativeunsignedmaskedconditions/gotosretainpriorityincludingcombinedbits,notcomment-onlystates3/4. OriginalLDY0 initialadderindex mirrored;callerownsTimerControl/collisions/offscreen,no syntheticgate. |
+| N2 | FallE,MEHor,SlowM | ActualMoveD_EnemyVertically checksfullstate5 forforce20,else3D. AfterreturnreadStateagain;exact2 tailshorizontalwithouttempadder;elsestate40offsteady,PowerUpID2Esteady,other40statesSlow index1. OriginalCAA9CMP2E/CAABBEQ excludesZ1,CAADBNE alwaysSlow;falseMEHorfallthrough01752 infeasible. Nativeactualchild beforestate reread andsameexception;slot0-5 stores disjointfromstate/ID. |
+| N3 | SteadM,AddHS | SaveoldXspeedonrealPHA;negativebyteadds2 toindex0/1,reads4byteadder00/E8/00/18. PublishtemporarywrappedXspeed,actualhorizontalchildmoveswithit,thenPLA restoresoriginal58+X withoutundoingcoordinate/fraction/page changes. Nativecapturedspeed livesacrosschildsameasstack;observedindices0-3,rawbytes/pagecarry/Fractionwrap,unchangedoldspeedverifiedafterroute. |
+| N4 | ReviveStunned,SetRSpd | Timerzero isstoredasstate0beforeFrame9&1 selectsdir1/2;PrimaryHard anynonzeroadds2 toindex,4revivedspeedbytes8/F8/C/F4. Returnwithoutmovingthisframe. Timernonzero entersChkKillGoomba withtimerAunchanged. Nativetableindexproofparity0/1+hard0/2,rawFFnonzerohard tested;sourceorder state/dir/speed publication preserved. |
+| N5 | MoveDefeatedEnemy,MoveJumpingEnemy | Directdefeatedentry alwaysactualMoveDvertical then tailhorizontal,doesnotapplynormal40/80precedence ortempadder. DirectjumpingalwaysMoveJverticalforce1C thenhorizontal. SourceXobjectslot+1withinchildandrestore08retainsparentX0-5. Gravity/horizontalchildinteriorsretainindependentreceipts,notcreditedfromparentPCcoverage. |
+| N6 | ChkKillGoomba,NKGmba | TimerA==0E andID6 invokesactualEraseEnemyObject;othercasesreturnwithoutreset. Realerase384times clearsoriginaleightfields includingtimer078A,doesnotclearcoordinate/fraction/08. Currentnativeidenticaltwo predicates,zero-state revivalcannotfallthroughhere. ExistingP59erase/sourcebindingreceipt retained,actualparentjoins allchildRAM effects. |
+
+ThreeoriginalreturningroutesCA77/CAE5/CAF9,65536each,total196608eachwidth. FullRAMseed,currentX0-5/all256statebytes,ID6/00/2E/timers0/1/0E/FF,Frameparity/PrimaryHard0orFF,rawspeed/X/page/Y/Yhigh/fraction/force bytes inseededcoupledstates. Actualgravity/horizontal/erasurechildren untouched;finalCPU X==initial08assertedfor eachreturn. These controlledroots arenotallcartesianstate/coordinate or legalgameplayproducerproof.
+
+All69PC/14branchpairsobserved;singleCAADBNEalwaysbranchsourceproofcorrects01752 fromoldexacttoinfeasible. Existingraw4342 preserved,infeasible74->75/feasible4268->4267/localexact4267->4266;no newgraphcredit. RealEraseEnemyObject384calls joinsunchangedP59child. 2032RAM/24APU/orderedwrites0diff eachwidth,minSP0xf7,only1F0-1FFphysicalstackexcluded. Original3-entryroots havevoidnativeABI,CPU A/Y/flags excluded. Four-byte speedadder/revival arrays bindoriginalPRG exactly;strictC90checkerslinkunchangedlibraries. Fivefocusedtests eachwidthpass,platformpurityincluded,fournegativeaccountingmutationsrejected. ThreeEXEs remainverifiedP57hashes,DOScompile/linkonly;raw4096recordbatchesdeletedbelowignored build,neutralmetadata onlytracked.
+
+S17 P64:12movementlabels,69instructions/16RAM joined6boundedclauses;196608actualroots eachwidth0diff/all69PC/14branchpairs,384erasecalls,1falseexactfallthrough correctedinfeasible,5tests each. Scope887/fresh0;4721instruction/1660RAM receipts,5970instruction/2113RAM pending. Local1991/1992nodes,4266/4267controls(raw4342/infeasible75),material993partial,totalunknown;source/productsP57unchanged,caller/inter-frame domains pending,M2 incomplete.
+Current src/game/enemy/movement.c normalizedSHA256:7ca92616e9557096e30833bbfb6ab2e06d907f6fdffc67f8406a72d3ed9b7c28.

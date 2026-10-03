@@ -22653,8 +22653,8 @@
     "unclassified": 0
   },
   "controlEdgeCounts": {
-    "exact": 4267,
-    "infeasible": 74,
+    "exact": 4266,
+    "infeasible": 75,
     "needs-evidence": 1
   },
   "controlEdgeTypeCounts": {
@@ -45229,11 +45229,13 @@
       "semanticEvidence": [
         "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:12labels/69instructions/16RAM joined6boundedclauses;statepriority/exact5gravity/postchildstate,tempstackedspeed,revival/erasure/tailorder. Falsefallthrough01752 corrected infeasible,rawretained;caller/inter-frame lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all69PC/14branchpairs/oneproveninfeasible side,384realerasecalls;actualX==08,5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Orders state handling as d6 fall, d7 steady, d5 defeated, low state normal/egg/fall/revive; preserves source vertical/horizontal and temporary-speed restore behavior.",
       "currentSourcePaths": [
@@ -45249,10 +45251,12 @@
       "currentCounterpart": "shared normal enemy movement state machine",
       "semanticEvidence": [
         "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:12labels/69instructions/16RAM joined6boundedclauses;statepriority/exact5gravity/postchildstate,tempstackedspeed,revival/erasure/tailorder. Falsefallthrough01752 corrected infeasible,rawretained;caller/inter-frame lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all69PC/14branchpairs/oneproveninfeasible side,384realerasecalls;actualX==08,5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Calls downward vertical movement, then selects direct horizontal, steady, or slowed horizontal path from post-gravity state and object ID.",
       "currentSourcePaths": [
@@ -45268,10 +45272,12 @@
       "currentCounterpart": "shared normal enemy movement state machine",
       "semanticEvidence": [
         "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:12labels/69instructions/16RAM joined6boundedclauses;statepriority/exact5gravity/postchildstate,tempstackedspeed,revival/erasure/tailorder. Falsefallthrough01752 corrected infeasible,rawretained;caller/inter-frame lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all69PC/14branchpairs/oneproveninfeasible side,384realerasecalls;actualX==08,5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Tail-jumps to horizontal movement for state two after vertical movement.",
       "currentSourcePaths": [
@@ -45287,10 +45293,12 @@
       "currentCounterpart": "shared normal enemy movement state machine",
       "semanticEvidence": [
         "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:12labels/69instructions/16RAM joined6boundedclauses;statepriority/exact5gravity/postchildstate,tempstackedspeed,revival/erasure/tailorder. Falsefallthrough01752 corrected infeasible,rawretained;caller/inter-frame lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all69PC/14branchpairs/oneproveninfeasible side,384realerasecalls;actualX==08,5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Selects slow-horizontal addend index one before falling through steady movement.",
       "currentSourcePaths": [
@@ -45306,10 +45314,12 @@
       "currentCounterpart": "shared normal enemy movement state machine",
       "semanticEvidence": [
         "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:12labels/69instructions/16RAM joined6boundedclauses;statepriority/exact5gravity/postchildstate,tempstackedspeed,revival/erasure/tailorder. Falsefallthrough01752 corrected infeasible,rawretained;caller/inter-frame lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all69PC/14branchpairs/oneproveninfeasible side,384realerasecalls;actualX==08,5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Saves X speed, selects signed speed addend, moves horizontally, then restores the saved speed.",
       "currentSourcePaths": [
@@ -45325,10 +45335,12 @@
       "currentCounterpart": "shared normal enemy movement state machine",
       "semanticEvidence": [
         "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:12labels/69instructions/16RAM joined6boundedclauses;statepriority/exact5gravity/postchildstate,tempstackedspeed,revival/erasure/tailorder. Falsefallthrough01752 corrected infeasible,rawretained;caller/inter-frame lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all69PC/14branchpairs/oneproveninfeasible side,384realerasecalls;actualX==08,5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Adds selected temporary X-speed addend, calls horizontal movement and restores the pre-addition speed on return.",
       "currentSourcePaths": [
@@ -45344,10 +45356,12 @@
       "currentCounterpart": "shared normal enemy movement state machine",
       "semanticEvidence": [
         "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:12labels/69instructions/16RAM joined6boundedclauses;statepriority/exact5gravity/postchildstate,tempstackedspeed,revival/erasure/tailorder. Falsefallthrough01752 corrected infeasible,rawretained;caller/inter-frame lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all69PC/14branchpairs/oneproveninfeasible side,384realerasecalls;actualX==08,5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "If interval timer is nonzero delegates Goomba expiry check; otherwise clears state, selects direction and hard-mode-aware revived speed, then returns.",
       "currentSourcePaths": [
@@ -45363,10 +45377,12 @@
       "currentCounterpart": "shared normal enemy movement state machine",
       "semanticEvidence": [
         "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:12labels/69instructions/16RAM joined6boundedclauses;statepriority/exact5gravity/postchildstate,tempstackedspeed,revival/erasure/tailorder. Falsefallthrough01752 corrected infeasible,rawretained;caller/inter-frame lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all69PC/14branchpairs/oneproveninfeasible side,384realerasecalls;actualX==08,5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Stores selected revived X speed and returns.",
       "currentSourcePaths": [
@@ -45382,10 +45398,12 @@
       "currentCounterpart": "shared normal enemy movement state machine",
       "semanticEvidence": [
         "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:12labels/69instructions/16RAM joined6boundedclauses;statepriority/exact5gravity/postchildstate,tempstackedspeed,revival/erasure/tailorder. Falsefallthrough01752 corrected infeasible,rawretained;caller/inter-frame lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all69PC/14branchpairs/oneproveninfeasible side,384realerasecalls;actualX==08,5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Calls downward vertical movement then tail-jumps to horizontal movement.",
       "currentSourcePaths": [
@@ -45401,10 +45419,12 @@
       "currentCounterpart": "shared normal enemy movement state machine",
       "semanticEvidence": [
         "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:12labels/69instructions/16RAM joined6boundedclauses;statepriority/exact5gravity/postchildstate,tempstackedspeed,revival/erasure/tailorder. Falsefallthrough01752 corrected infeasible,rawretained;caller/inter-frame lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all69PC/14branchpairs/oneproveninfeasible side,384realerasecalls;actualX==08,5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Erases only a Goomba whose incoming interval timer comparison equals $0e; otherwise falls through terminal return.",
       "currentSourcePaths": [
@@ -45420,10 +45440,12 @@
       "currentCounterpart": "shared normal enemy movement state machine",
       "semanticEvidence": [
         "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:12labels/69instructions/16RAM joined6boundedclauses;statepriority/exact5gravity/postchildstate,tempstackedspeed,revival/erasure/tailorder. Falsefallthrough01752 corrected infeasible,rawretained;caller/inter-frame lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all69PC/14branchpairs/oneproveninfeasible side,384realerasecalls;actualX==08,5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Returns without further state change.",
       "currentSourcePaths": [
@@ -45440,11 +45462,13 @@
       "semanticEvidence": [
         "Td S9 B15f jumping/red-paratroopa node-semantics and independent integration audit: SMB1 lines 9396-9422 compared with shared enemy/movement.c and paratroopa.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S6 static audit: SMB1 $CAF9-$CB24 against shared enemy/movement.c and enemy/paratroopa.c preserves jumping child order, zero speed/force dummy reset, anchor/frame increment gate, center dispatch and red-gravity direction.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:12labels/69instructions/16RAM joined6boundedclauses;statepriority/exact5gravity/postchildstate,tempstackedspeed,revival/erasure/tailorder. Falsefallthrough01752 corrected infeasible,rawretained;caller/inter-frame lifetimespending."
       ],
       "operationalEvidence": [
         "M2 T63 S6 current-source original-ROM/x86/x64 evidence: 320 jumping/red-Paratroopa route comparisons (160 per width), exhaustive red-Paratroopa contract per width, platform purity and DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all69PC/14branchpairs/oneproveninfeasible side,384realerasecalls;actualX==08,5focusedtests eachpass,source/productsP57unchanged."
       ],
       "semanticContract": "Calls jumping vertical gravity then tail-jumps to horizontal movement.",
       "currentSourcePaths": [
@@ -102440,16 +102464,18 @@
       "instruction": "bne",
       "id": "control-01752",
       "cohort": "J",
-      "status": "exact",
-      "currentCounterpart": "shared normal movement branch, child-call, tail-jump and return counterpart",
+      "status": "infeasible",
+      "currentCounterpart": "none: impossible original fallthrough; current shared C preserves only feasible paths",
       "semanticEvidence": [
         "Td S9 B15e normal-enemy movement node-semantics and independent integration audit: SMB1 lines 9318-9395 compared with shared enemy/movement.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate."
+        "M2 T63 S5 static audit: SMB1 $CA77-$CAF8 against shared enemy/movement.c preserves state-bit priority, post-gravity state reread, temporary speed adjustment and restoration, revive timer/hard-mode tables, defeated tail and Goomba erase gate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:12labels/69instructions/16RAM joined6boundedclauses;statepriority/exact5gravity/postchildstate,tempstackedspeed,revival/erasure/tailorder. Falsefallthrough01752 corrected infeasible,rawretained;caller/inter-frame lifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass."
+        "M2 T63 S5 current-source original-ROM/x86/x64 evidence: 264 direct normal-movement route comparisons (132 per width), 1,253,376 focused movement footprints per width, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all69PC/14branchpairs/oneproveninfeasible side,384realerasecalls;actualX==08,5focusedtests eachpass,source/productsP57unchanged."
       ],
-      "semanticContract": "Preserves original fallthrough relation FallE -> MEHor with enemy state, timer, speed/index and source call/return ordering.",
+      "semanticContract": "Original CAA9 CMP #PowerUpObject sets Z. CAAB BEQ SteadM excludes Z=1; CAAD BNE SlowM immediately tests unchanged Z=0 and must branch. Extracted FallE -> MEHor fallthrough is infeasible; prior generic edge acceptance did not supply side-specific feasibility proof.",
       "currentSourcePaths": [
         "src/game/enemy/movement.c"
       ]
@@ -161426,6 +161452,7 @@
     "control-01613",
     "control-01632",
     "control-01711",
+    "control-01752",
     "control-01904",
     "control-01929",
     "control-02036",
@@ -161480,16 +161507,16 @@
     "control-03784",
     "control-03868"
   ],
-  "infeasibleControlEdgeTotal": 74,
-  "feasibleControlEdgeTotal": 4268,
+  "infeasibleControlEdgeTotal": 75,
+  "feasibleControlEdgeTotal": 4267,
   "finalCertification": {
     "status": "incomplete",
     "authority": "docs/states/CURRENT.md",
     "localExactMeaning": "Accepted scoped semantic/route contracts in retained evidence;not exhaustive current-build or end-to-end certification.",
     "nodeUniverse": 1992,
-    "feasibleControlUniverse": 4268,
+    "feasibleControlUniverse": 4267,
     "rawControlUniverse": 4342,
-    "infeasibleControls": 74,
+    "infeasibleControls": 75,
     "reviewedNodeLabels": [],
     "reviewedControlEdgeIds": [],
     "reviewedMeaning": "Superseded restart accounting;not an active progress counter. Retained scoped proofs remain accepted within their stated limits.",
@@ -165441,7 +165468,6 @@
           "control-01749",
           "control-01750",
           "control-01751",
-          "control-01752",
           "control-01753",
           "control-01754",
           "control-01755",
@@ -168430,16 +168456,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:12labels/69instructions/16RAM joined6boundedclauses;statepriority/exact5gravity/postchildstate,tempstackedspeed,revival/erasure/tailorder. Falsefallthrough01752 corrected infeasible,rawretained;caller/inter-frame lifetimespending."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 4652,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 6039,
+        "localInstructionReceiptSites": 4721,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 5970,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 1644,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2129,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 1660,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2113,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -168495,7 +168522,6 @@
           "src/game/player_modes.c shared C90 player-mode owner": 18,
           "src/game/player_transition.c shared C90 transition owner": 17,
           "src/game/oam/hammer_gfx.c": 17,
-          "src/game/enemy/movement.c": 16,
           "src/game/area.c": 15,
           "src/game/world/collision.c": 15,
           "src/game/player/terrain_metatiles.c and climbing.c": 15,
