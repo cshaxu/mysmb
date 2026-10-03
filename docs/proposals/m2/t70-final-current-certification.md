@@ -5555,3 +5555,84 @@ partial,total unknown. S17 and material/pixels/routes/snapshot packages open.
 Current unchanged mysmb_area_render_graphics body SHA256:6b3661ca523888d9f842e2d7f1d7f526ef46ebc396df45a32855ff6882d6d7d2.
 
 Current unchanged mysmb_area_render_attribute_tables body SHA256:fd02291c9deb5a9215827687ea2fd001537c53cca89fc3cf6502efd28eee36c1.
+
+## S17 P31 admission - scenery terrain and block-buffer handoff lifetimes
+
+Existing P13 labels:`RenderSceneryTerrain`,`ClrMTBuf`,`ThirdP`,`RendBack`,`SceLoop1`,`RendFore`,`SceLoop2`,`NoFore`,`RendTerr`,`TerMTile`,`StoreMT`,`TerrLoop`,`NoCloud2`,`TerrBChk`,`NextTBit`,`EndUChk`,`RendBBuf`,`ChkMTLow`,`StrBlock`.
+Entry9404 RenderSceneryTerrain through9503 block-buffer return;131
+instructions/32 direct RAM sites. Shared area.c owner;ProcessAreaData and
+GetBlockBufferAddr child contracts retained separately. Audit local cached
+page/scene/stack/bitmap/terrain values and actual child overwrite boundaries.
+P28 changed parser child phases:rebuild current scenery native roots and
+repeat existing8192 controlled original roots each width,full2048 RAM with
+only actual physical pushes excluded. Original local34MiB batch/128MiB cap,
+120seconds/process;raws cleanup after batch. All temporary outputs in build.
+Fresh0/max1992,scope402 unchanged,no code edit or global re-audit. Reuse
+unchanged owner source/bindings where exact;concrete diff requires bounded
+corrective amendment before repair/three products. P28 products retained if
+no source change. Operational/current parser tests retained;accounting gates.
+
+## S17 P31 checkpoint - scenery terrain and block-buffer handoffs reconciled
+
+Existing19-label/131-instruction/32-direct-RAM scope joined to15 reviewed
+local clauses. Current scenery owner body and all its numeric area bindings
+are byte-identical to accepted P13 commit e41eb7fd;P28 changed its actual
+parser child,so retained final-output receipt was supplemented by rebuilding
+the current native parent probe and rerunning the existing8192 original
+returning roots EACH x86/x64. Zero complete2048-RAM differences,including
+zero page;only actually pushed physical stack bytes excluded. All19 label
+entries and21/23 branch pairs observed. ThirdP fallthrough absent locally
+under pages0-5;EndUChk bitmap-loop fallthrough absent with indices1-31.
+These input-contract dispositions do not alter global infeasible counts.
+
+Original ROM/ASM and current C were compared side by side. Each instruction
+has one named clause,not a inferred nearest-label semantic check. Scalar/
+accounting tools check identities and coverage,not the truth of clause prose.
+
+| Clause | Original instructions | Consumed value/lifetime/current source disposition |
+| --- | --- | --- |
+| S1 | 9404-940c | Clear exactly13 metatiles descending12..0;native predecrement index preserves original order. No callback;source DEX/BPL stops atFF,not host signed underflow. |
+| S2 | 940e-941d | Nonzero background selector1-3 enters page reduction. Source CMP3/BMI is bit7 of wrapped page-3,not general unsigned<3. Native byte(page-3)<80 loop exactly preserves N predicate and SEC/SBC3/BPL. Retained roots pages0-5;finite equation checks allbyte page traces without asserting all such pages gameplay reachable. |
+| S3 | 941f-942d | Four ASLs yield bytepage<<4 and carry originalbit4;first ADC consumes it and second ADC consumes first carry. Native sum then index includes BOTH carries and wraps byte. Cached selector/page remains safe:cleared staging06A1 cannot alias page0725/background0742/current column0726 or immutable ROM tables. |
+| S4 | 942f-9443 | PHA saves packed scenery across lowF-1/STA00/ASL+ADC00. If lowF0 then subtractionFF,ASL carry1 matters in triple index;native includes RAM00>>7. PLA restoredhigh nibble becomes startingrow,00 reset3. No call or hidden writer,local scene preserves source saved stack value. |
+| S5 | 9445-9453 | Read background ROM actualindex then store staging row BEFORE INX/INY/row11 exit. Counter00 decrements only if row!=11;native actual00 and byteindex/row increments identical. Entry packeddata retained original tabledomain;zero first entry bypasses pushes/writes. |
+| S6 | 9455-946b | Foreground selector0 skips,1-3 picks immutable offset;13 rows reread actual ROM and overwrite staging only nonzero. Native source+index equals originalY byte recurrence because reviewed tableoffsets+12<=FF;source X row0-12 distinct from ROM cursorY. No staging store can change ROM/selector. |
+| S7 | 946d-947b | Water type0/world7 selects62 and jumps directly to StoreMT,never reads cloud override for terrain choice. Native firstbranch same precedence;host scene logic cannot substitute cloudyblock here. |
+| S8 | 947e-9490 | Other terrain paths read immutable pertype table,nonzero cloud overrides88. Publish actual07 before index initialization;terrainControl ASL wrapsbyte. Native bounds type0-3/terrain0-15 retain original binding and scalar equations. |
+| S9 | 9491-94a6 | Read bitmap at current index,store00,byte increment/publish01. Cloud and nonzero row alone mask actual00 with08;native actual RAM writes and read-after-write identical. Bitmap/nextindex locals do not substitute for actual consumed00/01,which remain distinct from staging. |
+| S10 | 94a8-94b3 | Original Bitmasks[Y] BIT00 uses Z only;native RAM00&(1<<carry) same eight ROMmask bytes verified. Source N/V outputs unused before overwritten flags. Only setbit reads current07 and writes stagingrow;07 may laterchange to54. |
+| S11 | 94b6-94c8 | Increment row then13 exits BEFORE underground override. Otherwise areaType2 and row11 publish07=54. Native same order;does not cache terrain across this write. Type RAM reload unaffected by staging06A1 writes. |
+| S12 | 94ca-94d1 | Eight mask iterations then reload actual01 for next bitmap. Native innerloop8 and index=RAM01 equivalent;row13 terminates early on secondbyte. In terrain0-15 nextindices1..31 imply BNE TerrLoop fallthrough unavailable locally,not a new global infeasible edge. |
+| S13 | 94d3-94de | Actual ProcessAreaData runs BEFORE buffer copy;P28 corrected current child freshly linked into8192 parent roots. Native caches from earlier scenery are not used after child;column read occurs after return. GetBlockBufferAddr publishes06/07 from actual column0-31;shared block-buffer helper retained separate receipt,not credited131 scope. Native address local equal final RAMpointer,no later pointer writer/callback. |
+| S14 | 94e0-94f3 | Each row publishes00=row*16,reads child-mutated stagingmetatile,rotates rawC0 into palette selector,then reloads same metatile and compares immutable bound. Block-buffer prior rows0500-069F cannot alias staging06A1-06AD/type/pointer/scratch. Native metatile cache stable and unsigned comparison reproduces CMP carry,zero when below bound. |
+| S15 | 94f5-9503 | Reload00 actualrowoffset then indirectstore pointer+offset. Native address+row16 same no16-bit overflow;row0..12 andcol0..31 yield0500-069F. CLC+10 byteoffset thenX++/CPX13/BCC bounds identical. Source final YD0/X0D/flags not native game-output ABI;physical helper/parser pushes excluded only touched bytes,final all other RAM compared. |
+
+1049504 finite scalar assertions check allbyte page reduction traces/ADC
+carry equations,scenery low-nibble subtraction/triple index and32x13 physical
+buffer addresses. Original eight bitmask bytes equal the C shift masks;
+three original foreground offsets cannot overflowY within13 rows. No data
+bytes imported or tracked. These equations supplement exact source clauses,
+not arbitrary corrupted selector/pointer or whole-game reachability proof.
+
+The actual terminal/inactive-slot parser child runs before collision copy;
+no mocked child or patch between calls. The native parent rereads staging
+RAM after parser return,and block pointer after the shared helper. No saved
+scene/page/terrain local is consumed across an unknown child overwrite.
+Buffer0500-069F cannot alias staging06A1-06AD or scratch00/01/06/07. Original
+nonterminal parser leaf compositions retain P6/P15/P28 receipts within their
+own domains;this parent fixture is not described as testing all such leaves.
+Other callers/inter-frame composition remains a named global obligation.
+
+No production/test source change or new material path;P28 three products
+remain current and its10 checks each/six600-frame scoped routes retained.
+No unnecessary product build for evidence-only P;DOS compile/link only.
+Raw records deleted after two bounded batches,original logs/scalars/index
+below ignored build. Four index rejection checks pass,no global promotion.
+
+Complete bounded local receipts1229/10691 instructions and376/3773 direct
+RAM sites;other9462 instruction and3397 direct RAM index clauses pending.
+Not asserted new mismatches or a new audit round. Historical/local1992/1992,
+controls4274/4274(raw4342,infeasible68),material947 partial,total unknown.
+S17 and material/pixels/routes/snapshot packages remain open,M2 uncertified.
+
+Current scenery owner body SHA256:edda364a02e75ec7937d39afbb3ed72df476307367a3bce84f93dd464e3ef725.

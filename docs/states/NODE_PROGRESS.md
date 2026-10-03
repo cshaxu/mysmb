@@ -13,6 +13,11 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P31 scenery and buffer handoffs](../proposals/m2/t70-final-current-certification.md#s17-p31-checkpoint---scenery-terrain-and-block-buffer-handoffs-reconciled).
+131 instructions/32 RAM sites reconciled,current8192 original roots each
+width zero full RAM diff;1229 instruction/376 RAM local receipts,3397
+other direct RAM clauses pending. No new graph credit/global certification.
+
 [P30 retained column lifetimes](../proposals/m2/t70-final-current-certification.md#s17-p30-checkpoint---retained-column-and-attribute-lifetimes-reconciled).
 133 instructions/69 RAM sites joined to exact unchanged owner evidence;
 1098 instruction/344 RAM local receipts,3429 other RAM clauses pending.
