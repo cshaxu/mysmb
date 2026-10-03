@@ -11,7 +11,14 @@ scoped evidence and track only named unresolved/invalidated clauses.
 Material625 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
-## M2 T70 S16 - active executable data-binding reconciliation
+## M2 T70 S16 - closed executable data-binding package
+
+[P5 scoped closure](../proposals/m2/t70-final-current-certification.md#s16-p5-closure---executable-binding-package).
+93 indexed read/view and134 caller address clauses reconciled in declared
+original source domains;70 other references classified across171 C/header
+sources.3 focused tests each pass. Expected/actual fresh0/0,empty original
+scope/no transfers;prior owner/index/ABI proof limits retained. Bindings gap
+closed;material/pixels/routes/snapshot remain. Products unchanged since P1.
 
 [P4 grouped resource checkpoint](../proposals/m2/t70-final-current-certification.md#s16-p4-checkpoint---grouped-helper-and-output-resource-bindings).
 53/93 direct and88/134 caller address clauses reconciled;remaining40/46

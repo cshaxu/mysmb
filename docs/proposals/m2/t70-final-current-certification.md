@@ -2872,3 +2872,62 @@ are helper-output-bindings.py,p4-helper-output-summary.json and
 p4-binding-domains.json beneath the S16 ignored build directory.
 No new semantic mismatch found in this scoped address/source-input pass;
 no successor/global restart,push,ROM import or unrelated owner edits.
+
+## S16 P5 closure - executable binding package
+
+Close the admitted bindings package,not M2 or T70. Expected/actual fresh
+matches0/0;scope/completed/deferred/transferred original labels are all empty.
+Historical1992/1992;local scoped accepted nodes1992/1992 and feasible controls
+4275/4275(raw4342,infeasible67);material625 partial,total unknown unchanged.
+No new graph credit from address-use counts. No whole-game equality claim.
+
+Remaining40 direct read clauses and46 reader-caller clauses now have source
+address/domain dispositions. Checked four original metatile split pointers
+against Palette0-3_MTiles and all256 metatiles/four bytes;12288 background
+page/column addresses,foreground offsets/13 rows,16 terrain patterns and13
+rows remain within original8-bit indexed domains.512 selector/player-count
+text choices reproduce ASL/TAY wrap and offset selection;all original text
+commands terminate before256 bytes,with X wrap before GameText pointer add.
+Warp-number reads retain8-bit index increments and adjacent PRG bytes.
+Player/background/rotating palette sources and eight main/special palette
+views bind original symbols/VRAM split pointers;11 palette/message derived
+pointers retain P1 proof. Initial temporary probe used wrong special-selector
+numbers;original source confirmed Bowser8/day9/night10/mushroom11 and the
+probe was corrected before acceptance. Product code was already correct.
+BlockGfxData and area object streams retain their original bases and P3
+34-pointer/byte-offset domains. The reader-state/caller proofs remain their
+existing scoped receipts;source/data-address evidence does not broaden them.
+
+Coverage sweep scans171 current shared C/header files after masking comments
+and strings.93 indexed resource references all correspond to the93 completed
+read/view records;70 other references are55 prerequisite guards,eight
+area-source view assignments and seven bind/reset assignments. No unmatched
+field-reference,resource macro or alternate direct game-resource object use
+remains. Constant/table/header and named-helper coverage joins P1-P4 manifests:
+177 static-table dispositions,266 initial numeric candidates plus17 omitted
+low bases,134 reader caller records and all93 indexed read/view records.
+Records overlap;none is a new node/control/material denominator.
+Native-only refresh-background/sync-palette helpers have test consumers only;
+their data origins are classified without inventing original counterparts.
+Command views retain existing shared VRAM-decoder proof and resource budgets.
+
+Acceptance combines current source inspection/address algebra,original byte/
+symbol bindings and explicitly retained owner/index/alias/dispatch contracts.
+P3 adds256 actual original LoadHeader entries each width with zero full-RAM/
+APU/order differences and two negative-checker probes. No arbitrary corrupted
+RAM/partial-resource-state or all-input/cycle proof is inferred. Original
+source-produced domains and prior ABI exclusions remain explicit. Scope is
+the missing executable binding evidence;material reachability,per-pixel timing,
+complete gameplay routes and final snapshot applicability remain separate
+named packages. No table content match or lexical count closes those packages.
+
+P5 rebuilds/tests area-parser-column,area-data and local-area targets:3 tests
+each width pass. P1 had shared product/DOS16 builds and three refreshed EXEs;
+P2-P5 have no product code changes and all three remain P1 bytes. Registry,
+node admission/closure,ledger,documentation and whitespace gates validate
+this accounting. Neutral reproducible local receipts/producers are
+area-resource-bindings.py,check-binding-coverage.py,p5-area-summary.json,
+p5-binding-domains.json and p5-binding-coverage.json under ignored S16 build.
+Protected resources/raw traces remain untracked;prior raw header traces were
+deleted. Unrelated owner work preserved,no push. T70 remains open;next work
+is the already named material package,no new whole-project audit round.

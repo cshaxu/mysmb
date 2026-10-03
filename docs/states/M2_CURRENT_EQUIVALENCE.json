@@ -157090,7 +157090,6 @@
       }
     ],
     "blockers": [
-      "Reconcile outstanding original numeric data bindings",
       "Complete feasible material-use enumeration",
       "Prove outstanding shared per-pixel split alternatives",
       "Complete declared gameplay/death/restart/warp/end-world/end-game routes",
@@ -157111,12 +157110,13 @@
       "taskId": "M2 T70 S16",
       "nodeLabels": [],
       "controlEdgeIds": [],
-      "status": "in-progress-bindings",
+      "status": "closed-bindings",
       "evidence": [
         "docs/proposals/m2/t70-final-current-certification.md S16 P1 checkpoint - table census and inactive-helper removal",
         "docs/proposals/m2/t70-final-current-certification.md S16 P2 checkpoint - original binding locations and extended read uses",
         "docs/proposals/m2/t70-final-current-certification.md S16 P3 checkpoint - dynamic header and stream address domains",
-        "docs/proposals/m2/t70-final-current-certification.md S16 P4 checkpoint - grouped helper and output-resource bindings"
+        "docs/proposals/m2/t70-final-current-certification.md S16 P4 checkpoint - grouped helper and output-resource bindings",
+        "docs/proposals/m2/t70-final-current-certification.md S16 P5 closure - executable binding package"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",
@@ -157130,12 +157130,13 @@
       },
       {
         "key": "bindings",
-        "status": "pending",
+        "status": "closed",
         "evidence": [
           "docs/proposals/m2/t70-final-current-certification.md S16 P1 checkpoint - table census and inactive-helper removal",
           "docs/proposals/m2/t70-final-current-certification.md S16 P2 checkpoint - original binding locations and extended read uses",
           "docs/proposals/m2/t70-final-current-certification.md S16 P3 checkpoint - dynamic header and stream address domains",
-          "docs/proposals/m2/t70-final-current-certification.md S16 P4 checkpoint - grouped helper and output-resource bindings"
+          "docs/proposals/m2/t70-final-current-certification.md S16 P4 checkpoint - grouped helper and output-resource bindings",
+          "docs/proposals/m2/t70-final-current-certification.md S16 P5 closure - executable binding package"
         ]
       },
       {
