@@ -48930,10 +48930,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square2_music",
       "semanticEvidence": [
         "Td S9 K32 square-two music stream node-semantics and independent control-edge audit: SMB1 lines 15720-15787 compared with shared src/game/audio.c square-two stream helpers; controlled original-ROM/x86/x64 note, length, terminator, loopback, SFX-owned and envelope routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Byte decrement; nonzero runs tail. Zero increments stream offset before CPU pointer read; zero ends, positive note, negative length followed by next note."
+        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Byte decrement; nonzero runs tail. Zero increments stream offset before CPU pointer read; zero ends, positive note, negative length followed by next note.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S14 P2 Original byte-bound F73F/F780/F7C5 LDY old offset,INC offset,indirect load;four shared fetch sites preserve old offset and write before read. Actual Square2 first/length-second and Square1 first/null-refetch alias paths observed,including FFFF+Y wrap. All3 scoped entries visited."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S14 P2 59394 original roots each x86/x64 zero RAM/APU/ordered-write diff;1024 alias roots compare2042 RAM bytes excluding only actual01FA-01FF stack(minSP F9). Other retained routes use documented existing sound ABI stack exclusions;CPU return registers outside C ABI.49 headers1024 live frames each,4096 Square1/4096 Square2 length paths,2 triangle/noise aliases;10 tests each including audio,pause,focus,purity;current x86/x64 products and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Byte decrement; nonzero runs tail. Zero increments stream offset before CPU pointer read; zero ends, positive note, negative length followed by next note.",
       "currentSourcePaths": [
@@ -49139,10 +49141,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1_music",
       "semanticEvidence": [
         "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: OffsetF8 zero goes straight to triangle; else byte counter decrement decides fetch vs tail."
+        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: OffsetF8 zero goes straight to triangle; else byte counter decrement decides fetch vs tail.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S14 P2 Original byte-bound F73F/F780/F7C5 LDY old offset,INC offset,indirect load;four shared fetch sites preserve old offset and write before read. Actual Square2 first/length-second and Square1 first/null-refetch alias paths observed,including FFFF+Y wrap. All3 scoped entries visited."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S14 P2 59394 original roots each x86/x64 zero RAM/APU/ordered-write diff;1024 alias roots compare2042 RAM bytes excluding only actual01FA-01FF stack(minSP F9). Other retained routes use documented existing sound ABI stack exclusions;CPU return registers outside C ABI.49 headers1024 live frames each,4096 Square1/4096 Square2 length paths,2 triangle/noise aliases;10 tests each including audio,pause,focus,purity;current x86/x64 products and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "OffsetF8 zero goes straight to triangle; else byte counter decrement decides fetch vs tail.",
       "currentSourcePaths": [
@@ -49177,10 +49181,12 @@
       "currentCounterpart": "src/game/audio.c mysmb_audio_step_square1_music",
       "semanticEvidence": [
         "Td S9 K33 square-one music stream node-semantics and independent control-edge audit: SMB1 lines 15788-15834 compared with shared src/game/audio.c square-one stream helper; controlled original-ROM/x86/x64 null-byte, length, SFX-owned, death/D4 and envelope routes remain required.",
-        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Actual alternate length bits0/7/6 produce lookup/count; active F1 goes directly triangle, else masked note SetFreq/LoadControlRegs."
+        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 source15632-15826/current manual audit: Actual alternate length bits0/7/6 produce lookup/count; active F1 goes directly triangle, else masked note SetFreq/LoadControlRegs.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S14 P2 Original byte-bound F73F/F780/F7C5 LDY old offset,INC offset,indirect load;four shared fetch sites preserve old offset and write before read. Actual Square2 first/length-second and Square1 first/null-refetch alias paths observed,including FFFF+Y wrap. All3 scoped entries visited."
       ],
       "operationalEvidence": [
-        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link."
+        "docs/history/M2-T67-sound-command-current-proof.md S5 P2 unchanged original20736 roots/full RAM/APU/ordered commands agree x86/x64; all scoped feasible transitions;248 tests each,256 header selectors each/original DOS16 link.",
+        "docs/proposals/m2/t69-cross-cohort-current-proof.md S14 P2 59394 original roots each x86/x64 zero RAM/APU/ordered-write diff;1024 alias roots compare2042 RAM bytes excluding only actual01FA-01FF stack(minSP F9). Other retained routes use documented existing sound ABI stack exclusions;CPU return registers outside C ABI.49 headers1024 live frames each,4096 Square1/4096 Square2 length paths,2 triangle/noise aliases;10 tests each including audio,pause,focus,purity;current x86/x64 products and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Actual alternate length bits0/7/6 produce lookup/count; active F1 goes directly triangle, else masked note SetFreq/LoadControlRegs.",
       "currentSourcePaths": [

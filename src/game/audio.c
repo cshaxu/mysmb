@@ -532,6 +532,7 @@ static mysmb_u8 mysmb_audio_end_square2_music(struct mysmb_game *game)
 static mysmb_u8 mysmb_audio_step_square2_music(struct mysmb_game *game)
 {
     mysmb_u16 music_data;
+    mysmb_u8 offset;
     mysmb_u8 data;
     mysmb_u8 control_x;
     mysmb_u8 control_y;
@@ -545,9 +546,9 @@ static mysmb_u8 mysmb_audio_step_square2_music(struct mysmb_game *game)
         if (game->ram[MYSMB_RAM_SQUARE2_NOTE_COUNTER] != 0U) break;
         music_data = (mysmb_u16)(((mysmb_u16)game->ram[0x00f6U] << 8U) |
                                   game->ram[0x00f5U]);
-        data = mysmb_audio_read_cpu(game, (mysmb_u16)(music_data +
-            game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2]));
+        offset = game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2];
         game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2]++;
+        data = mysmb_audio_read_cpu(game, (mysmb_u16)(music_data + offset));
         if (data == 0U) {
             if (mysmb_audio_end_square2_music(game) != 0U) return 1U;
             continue;
@@ -555,9 +556,9 @@ static mysmb_u8 mysmb_audio_step_square2_music(struct mysmb_game *game)
         if ((data & 0x80U) != 0U) {
             game->ram[MYSMB_RAM_SQUARE2_NOTE_LENGTH] =
                 mysmb_audio_process_music_length(game, data);
-            data = mysmb_audio_read_cpu(game, (mysmb_u16)(music_data +
-                game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2]));
+            offset = game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2];
             game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE2]++;
+            data = mysmb_audio_read_cpu(game, (mysmb_u16)(music_data + offset));
         }
         if (game->ram[MYSMB_RAM_SQUARE2_BUFFER] == 0U) {
             control_x = 4U;
@@ -642,6 +643,7 @@ static void mysmb_audio_step_triangle_music(struct mysmb_game *game)
 static void mysmb_audio_step_square1_music(struct mysmb_game *game)
 {
     mysmb_u16 music_data;
+    mysmb_u8 offset;
     mysmb_u8 data;
     mysmb_u8 control_x;
     mysmb_u8 control_y;
@@ -655,18 +657,18 @@ static void mysmb_audio_step_square1_music(struct mysmb_game *game)
     if (game->ram[MYSMB_RAM_SQUARE1_NOTE_COUNTER] == 0U) {
         music_data = (mysmb_u16)(((mysmb_u16)game->ram[0x00f6U] << 8U) |
                                   game->ram[0x00f5U]);
-        data = mysmb_audio_read_cpu(game, (mysmb_u16)(music_data +
-            game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE1]));
+        offset = game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE1];
         game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE1]++;
+        data = mysmb_audio_read_cpu(game, (mysmb_u16)(music_data + offset));
         while (data == 0U) {
             /* FetchSqu1MusicData's null bytes are audible control changes,
              * not merely an in-memory loop marker. */
             mysmb_audio_write_apu(game, 0U, 0x83U);
             mysmb_audio_write_apu(game, 1U, 0x94U);
             game->ram[MYSMB_RAM_ALT_REGISTER_CONTENT] = 0x94U;
-            data = mysmb_audio_read_cpu(game, (mysmb_u16)(music_data +
-                game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE1]));
+            offset = game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE1];
             game->ram[MYSMB_RAM_MUSIC_OFFSET_SQUARE1]++;
+            data = mysmb_audio_read_cpu(game, (mysmb_u16)(music_data + offset));
         }
         /* AlternateLengthHandler: carry starts with original bit zero, then
          * three ROLs turn bits 0/7/6 into the length-table selector. */

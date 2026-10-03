@@ -2015,3 +2015,48 @@ Owner-local ROM and reviewed ASM nonredistributable, no import/raw fixture.
 Ignored build/m2-t69-s14 only;1024 roots/batch,128MiB raw,120seconds/process,
 524288steps/root;coordinator deletes raw per batch and probe at closure.
 Any scoped diff keeps S14 active until repaired and both audits repeated.
+
+## S14 P2 closure - original square music alias operation order
+
+All3 existing labels accepted: HandleSquare2Music; HandleSquare1Music; Squ1NoteHandler.Expected/actual fresh0,
+no deferred scoped labels,no new controls/material. Current1992/1992
+scoped-exact nodes,4268/4276 feasible controls(raw4342,infeasible66),557/557
+material partial enumeration;historical1992/1992 separate. S14 debt resolved;
+T69 remains open,S15 unadmitted,8 controls/integrated proof still pending.
+
+ROM-logic: Original byte-bound F73F/F780/F7C5 LDY old offset,INC offset,indirect load;four shared fetch sites preserve old offset and write before read. Actual Square2 first/length-second and Square1 first/null-refetch alias paths observed,including FFFF+Y wrap. All3 scoped entries visited.
+Pre-fix1024 original alias roots versus current x86 yielded9213 differences,
+including false music loop/header reload. Four production sites restored
+source order in shared audio.c;no replacement music rules or platform code.
+Original first Square2 fetch512 visits,length-second256,Square1 fetch768;
+actual note handlers and null-refetch included. Original low-pointer FFFF
+addition exercises16-bit wrap before the second Square2 alias read.
+
+Operational: 59394 original roots each x86/x64 zero RAM/APU/ordered-write diff;1024 alias roots compare2042 RAM bytes excluding only actual01FA-01FF stack(minSP F9). Other retained routes use documented existing sound ABI stack exclusions;CPU return registers outside C ABI.49 headers1024 live frames each,4096 Square1/4096 Square2 length paths,2 triangle/noise aliases;10 tests each including audio,pause,focus,purity;current x86/x64 products and original OpenNT DOS16 link pass.
+No emulator in product,no original child patch/mock,no native-derived oracle.
+Controlled RAM aliases contain neutral inputs;raw removed per batch. Previous
+sound ABI exclusions retained explicitly for old routes;no all-state claim.
+Source/music reader domain unchanged: admitted direct RAM/PRG addresses and
+16-bit wrap covered;this S does not certify hardware/mirrored-memory streams.
+Original minSP F9 bound agrees with tightened alias checker exclusion.
+
+Similar-issue sweep: all7 production music fetch sites reviewed. Four square
+sites repaired;two triangle sites and one noise site already increment before
+read,retained mode35 aliases reverified. Shared pointer F5/F6 is unchanged by
+F7/F8 increment;cached pointer remains valid across these admitted fetches.
+Square1 null-byte control writes retain83/94 and AltRegContent before reread.
+Lengths,counters,envelopes,queues and actual real child order remain source
+shaped;full source/music regression shows no scoped residual difference.
+
+All3 EXEs refreshed and included under standing owner authorization:
+
+- assets/mysmb16.exe: 261431 bytes; SHA256 52c8e839dcc0346eb77a57b9b433465b9228f75b26caa454eed890bbfc5462ad.
+- assets/mysmb32.exe: 374811 bytes; SHA256 c08e8638dbcc727a6d540344e79455f08496f941b6114464a30ffa35e5d69e9b.
+- assets/mysmb64.exe: 382348 bytes; SHA256 07477e617fe3f3473e5eea0cd08eea4bc37a593dc47fb63f21c0dd967f411be5.
+
+Original OpenNT toolchain retained;inherited missing OLDNAMES.LIB warning
+remains,link exits0. No interactive DOS claim. Earlier owner-tested audio,
+title pause/focus pause commits remain intact;10 focused tests each pass.
+Bounded ignored raw/probe cleanup by coordinator;neutral summaries retained.
+Registry/ledger/progress/documentation/diff gates required before local P2
+commit,no push;unrelated presentation-planning edits preserved.

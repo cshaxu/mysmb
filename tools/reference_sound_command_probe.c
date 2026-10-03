@@ -84,6 +84,19 @@ static void fixture(core_machine *m,unsigned int n,unsigned int mode)
         m->ram[0x7beu]=(unsigned char)(mode==16u?p*17u:(mode==17u?n*17u:n));
         m->ram[0xfdu]=0u;m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;
         m->ram[0xf4u]=0u;m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
+    }else if(mode==109u){
+        unsigned int kind=p%4u;
+        m->ram[0xffu]=0u;m->ram[0xfeu]=0u;m->ram[0xfdu]=0u;
+        m->ram[0xfbu]=0u;m->ram[0xfcu]=0u;m->ram[0xf4u]=8u;
+        m->ram[0xf5u]=(unsigned char)(kind==1u?0xffu:(kind==3u?0xf6u:0xf7u));
+        m->ram[0xf6u]=(unsigned char)(kind==1u?0xffu:0u);
+        m->ram[0xf7u]=(unsigned char)(kind==1u?0xf7u:0u);
+        m->ram[0xf8u]=(unsigned char)(kind>=2u?1u:0u);
+        m->ram[0x7b4u]=(unsigned char)(kind<2u?1u:5u);
+        m->ram[0x7b3u]=(unsigned char)(n+1u);
+        m->ram[0x7b6u]=1u;m->ram[0x7b9u]=5u;m->ram[0x7bau]=5u;
+        m->ram[0x7b7u]=(unsigned char)n;m->ram[0x7b5u]=(unsigned char)n;
+        m->ram[0x7c6u]=0u;m->ram[0x7b2u]=0u;m->ram[0xfau]=0u;
     }else if(mode>=102u&&mode<=108u){
         unsigned int j,slot=p%5u,other=(slot+1u)%5u;
         m->ram[8u]=(unsigned char)slot;m->ram[9u]=(unsigned char)p;
@@ -642,7 +655,7 @@ int main(int argc,char **argv)
     unsigned char h[16]={'M','S','C','M',1u};
     if(argc!=6)return 64;
     mode=(unsigned int)strtoul(argv[3],0,0);first=(unsigned int)strtoul(argv[4],0,0);count=(unsigned int)strtoul(argv[5],0,0);
-    if(mode>108u||!count||count>1024u||first+count>65536u)return 64;
+    if(mode>109u||!count||count>1024u||first+count>65536u)return 64;
     if(mode==51u&&first+count>768u)return 64;
     if(mode==24u&&(first%256u!=0u||first+count>4096u))return 64;
     if(mode==48u&&(first%1024u!=0u||count!=1024u||first+count>50176u))return 64;

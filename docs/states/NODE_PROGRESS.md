@@ -1,5 +1,14 @@
 # M2 ROM conformance node progress
 
+## M2 T69 S14 - closed square music alias repair
+
+[All3 existing labels](../proposals/m2/t69-cross-cohort-current-proof.md)
+rechecked;4 shared fetch sites restored,zero fresh/control/material credit.
+Current1992/1992 scoped-exact nodes,4268/4276 controls(raw4342,infeasible66),
+557/557 material partial;historical1992/1992 separate.59394 original roots
+per width zero diff;10 tests each/purity/current builds/OpenNT link pass.
+3 EXEs refreshed;T69 open,S15 next unadmitted,8 controls/integration remain.
+
 ## M2 T69 S13 - closed frenzy/group/actor audit
 
 [All35 existing labels/12 controls/11 material](../proposals/m2/t69-cross-cohort-current-proof.md)

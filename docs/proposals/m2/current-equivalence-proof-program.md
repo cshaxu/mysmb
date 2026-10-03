@@ -509,3 +509,14 @@ Current1992/1992 scoped-exact nodes,4268/4276 controls(raw4342,infeasible66),
 builds/OpenNT link pass.Shared bounds/offscreen repairs,3 products refreshed.
 T69 open,S14 next unadmitted;8 controls,M alias and integrated proof remain.
 No whole-game/all-state certification from cumulative scoped results.
+
+## Current checkpoint after T69 S14
+
+[T69 S14](t69-cross-cohort-current-proof.md) closes explicit square-music
+RAM-alias debt by4 shared fetch operation-order repairs;3 existing labels,
+zero fresh/control/material credit.59394 original roots per width zero diff,
+10 tests each/purity/current builds/OpenNT link pass;3 products refreshed.
+Current1992/1992 scoped-exact nodes,4268/4276 feasible controls(raw4342,
+infeasible66),557/557 material partial;historical1992/1992 separate.
+T69 open,S15 next unadmitted;8 controls and final integration remain.
+No all-state/whole-game certification from cumulative scoped results.
