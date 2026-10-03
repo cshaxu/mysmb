@@ -3163,3 +3163,106 @@ All probes/logs remain ignored below build;unrelated owner work preserved.
 | --- | --- |
 | src/game/game.c | e3c8c4a4580969e6e2898a6d3d9b5a67efed029fc7e9884d9f38b7a0b6f208c6 |
 | test/local_title_bootstrap_smoke.c | 52135ef49180fd04db7a7a892f3fada945ecacaf4ee0a1be204cde7db70fcaae |
+
+## S17 P4 corrective scope amendment - complete column output chain
+
+Audit the continuous RenderAreaGraphics through SetVRAMCtrl chain,including
+its actual DrawMTLoop and RenderAttributeTables children. Current C omits
+source scratch writes00-07;attribute packet source writes payload before
+length whereas current C reverses those two writes. Existing T55 S1 fixtures
+compared Buffer2/attributes/address/control output and did not include these
+scratch outputs or possible overlapping buffer/attribute memory.
+Reopen the eleven contracts below under the standing same-S repair mandate.
+No new T/S or whole-project audit round;control wiring is unchanged.
+
+`RenderAreaGraphics`, `DrawMTLoop`, `RightCheck`, `LLeft`, `NextMTRow`, `SetAttrib`, `ExitDrawM`, `RenderAttributeTables`, `SetATHigh`, `AttribLoop`, `SetVRAMCtrl`.
+
+Coordinator accepts corrective custody of this entire shared area owner chain.
+Historical baseline1992,expected fresh0,max1992;overlapping audit participation
+retains earlier labels. Compare original88ae/896a entries with actual shared
+C functions over all256 metatile bytes,both half-columns,both attribute
+quadrants,name-table wrap and controlled buffer overlap inputs. Full2048 RAM,
+no zero-page exclusion;physical stack exclusions only if actual traced writes.
+Controls/rows/source-pointer/attribute writes inspected before product edits.
+Any observed diff is repaired/re-audited here;three products refreshed on code
+change with original OpenNT16 tools. Controlled overlap inputs prove routine
+semantics,not normal-gameplay reachability of every constructed buffer offset.
+
+## S17 P4 checkpoint - complete column output repair
+
+The full eleven-node column/attribute chain is repaired and re-audited within
+S17. Its old Buffer2-only receipt did not cover actual scratch00-07 outputs
+or overlapping packet/attribute writes. Two shared area functions now retain
+cursor/row/quad/pointer/tile-offset state in original order. Attribute output
+publishes intermediate01 before00 and final01;each packet reads/stores its
+payload before writing length. Other area.c functions are byte-identical to
+the pre-P4 source after CRLF normalization;platform code is unchanged.
+
+Final controlled matrix8192 graphics plus4096 attribute roots per width:
+all256 metatile bytes,independent left/right tile halves and attribute columns,
+name-table wrap,two graphics NT values,four buffer offsets including an overlap;
+attribute roots cover all256 NT low bytes,four high variants,four offsets.
+Source88ae/896a returning entries compare all2048 RAM bytes,no exclusions;
+no physical-stack write occurred. Original11 label entries all observed,and
+all7 predicates have taken/fall coverage. Original instruction/binding manifest
+checks fixture addresses(column0726,task071f,buffer0340,NT0720/0721,
+metatiles06a1,attributes03f9). Controlled overlap inputs establish routine
+semantics;they do not prove normal-gameplay reachability of every offset.
+
+Final pre-fix each width74476 byte differences:zero-page00-07 plus1020
+cases at040e caused by length-before-payload ordering. Final repaired roots
+have zero differences. Initial fixture wrote column parity into CurrentPage
+0725 instead of CurrentColumn0726,correlating column with tile seed;that
+preliminary74508 total and preliminary passing matrix are superseded.
+Corrected independent axes cover8192 unique combinations and rerun both
+baseline via exact pre-P4 Git area source and repaired native owner;no source
+rollback/product child mock. Input generation address checks prevent this
+fixture error from becoming final proof. Intermediate01 publication was
+completed after the first clean matrix;final products,checks and all12288
+root comparisons rebuilt/repeated from the actual final source.
+
+Five actual focused checks each width pass:area-output,parser-column,
+parser-boundary,title-bootstrap,purity. Existing area-output regression now
+asserts source scratch outputs and a neutral5a overlapping payload at040e.
+Six retained600-frame routes also pass;they precede only the additional
+intermediate01 store,whose unchanged end-of-routine full RAM is independently
+reproved against the original final12288-root matrix. No game callback or
+host decision occurs between these stores. Retain the documented frame ABI
+and its exclusions;no completed-pixel/full-gameplay claim.
+
+Original OpenNT16 compile/link passes from final source with retained
+conversion/optional OLDNAMES warnings;compile/link only. All three final MZ
+products copied/hash verified. Historical fresh0;local scoped1992/1992
+restored,controls4275/4275 unchanged(raw4342,infeasible67). Material650-660
+register eleven concrete cursor/quad/pointer/attribute-address source paths;
+enumerated660 remains partial,total unknown. S17/T70/M2 remain open for
+remaining material,pixels,routes,snapshot obligations. No successor/new round.
+Probes/logs/raw containment below ignored build;raw batches deleted. Unrelated
+owner work preserved,no protected source/data imported,no push.
+
+| Original PC | Visits |
+| --- | --- |
+| 88ae | 8192 |
+| 88d0 | 106496 |
+| 891a | 53248 |
+| 892a | 24576 |
+| 892e | 49152 |
+| 8930 | 106496 |
+| 8967 | 8192 |
+| 896a | 4096 |
+| 897d | 4096 |
+| 8990 | 28672 |
+| 89bd | 12288 |
+
+Taken/fall counts by source predicate: 53248/53248, 24576/28672, 24576/28672, 98304/8192, 4096/4096, 3584/512, 24576/4096.
+
+| Product | Bytes | SHA256 |
+| --- | --- | --- |
+| mysmb16.exe | 258763 | 1a8692cd6e616dffe412275e1bc1b2129000924b2c442ff34396187737cb44a8 |
+| mysmb32.exe | 373107 | 791ecee3ba937f661093aca6156b11658a5db73dfc17e6c8d99f8b0ebb12db7a |
+| mysmb64.exe | 379113 | 264b03aac4fbcd4d28e4d85cc241fa787ab10506c67fe34a6a3fa42118f3df43 |
+
+| Changed source | SHA256 |
+| --- | --- |
+| src/game/area.c | 5b011226a54e3d05651e8abdca943bd3f3cdc6b2d01150ce3c65fa461b0cc169 |
+| test/area_output_smoke.c | d4e6c86dd8ee1fa5079853e8792fc2047b056fe8b5506fa61da446c8b21b4f92 |

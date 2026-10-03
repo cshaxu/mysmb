@@ -7621,7 +7621,8 @@
           ],
           "recordKinds": [
             "material-use-completeness-and-path-reconciliation",
-            "corrective-title-pointer-output-chain"
+            "corrective-title-pointer-output-chain",
+            "corrective-column-output-chain"
           ],
           "canReceive": true,
           "admissionRole": "audit",
@@ -15685,8 +15686,8 @@
     {
       "label": "RenderAreaGraphics",
       "line": 1825,
-      "receiver": "M2 T28 S1",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P4 complete column output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -15714,8 +15715,8 @@
     {
       "label": "DrawMTLoop",
       "line": 1840,
-      "receiver": "M2 T28 S1",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P4 complete column output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -15735,8 +15736,8 @@
     {
       "label": "RightCheck",
       "line": 1878,
-      "receiver": "M2 T28 S1",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P4 complete column output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -15756,8 +15757,8 @@
     {
       "label": "LLeft",
       "line": 1886,
-      "receiver": "M2 T28 S1",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P4 complete column output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -15777,8 +15778,8 @@
     {
       "label": "NextMTRow",
       "line": 1888,
-      "receiver": "M2 T28 S1",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P4 complete column output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -15798,8 +15799,8 @@
     {
       "label": "SetAttrib",
       "line": 1889,
-      "receiver": "M2 T28 S1",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P4 complete column output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -15819,8 +15820,8 @@
     {
       "label": "ExitDrawM",
       "line": 1914,
-      "receiver": "M2 T28 S1",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P4 complete column output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -15840,8 +15841,8 @@
     {
       "label": "RenderAttributeTables",
       "line": 1920,
-      "receiver": "M2 T28 S1",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P4 complete column output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -15869,8 +15870,8 @@
     {
       "label": "SetATHigh",
       "line": 1930,
-      "receiver": "M2 T28 S1",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P4 complete column output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -15890,8 +15891,8 @@
     {
       "label": "AttribLoop",
       "line": 1940,
-      "receiver": "M2 T28 S1",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P4 complete column output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -15911,8 +15912,8 @@
     {
       "label": "SetVRAMCtrl",
       "line": 1962,
-      "receiver": "M2 T28 S1",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P4 complete column output chain correction under standing owner mandate.",
       "futurePackage": null,
       "history": [
         {
@@ -69511,6 +69512,27 @@
         "ChkHiByte"
       ],
       "acceptedBy": "Coordinator under standing owner M2 repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-column-output-1",
+      "type": "transfer",
+      "from": "M2 T28 S1",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "RenderAreaGraphics",
+        "DrawMTLoop",
+        "RightCheck",
+        "LLeft",
+        "NextMTRow",
+        "SetAttrib",
+        "ExitDrawM",
+        "RenderAttributeTables",
+        "SetATHigh",
+        "AttribLoop",
+        "SetVRAMCtrl"
+      ],
+      "acceptedBy": "Coordinator under owner same-S M2 repair mandate.",
       "evidence": "docs/proposals/m2/t70-final-current-certification.md"
     }
   ],
@@ -766150,7 +766172,18 @@
         "SwimKT",
         "DrawTitleScreen",
         "OutputTScr",
-        "ChkHiByte"
+        "ChkHiByte",
+        "RenderAreaGraphics",
+        "DrawMTLoop",
+        "RightCheck",
+        "LLeft",
+        "NextMTRow",
+        "SetAttrib",
+        "ExitDrawM",
+        "RenderAttributeTables",
+        "SetATHigh",
+        "AttribLoop",
+        "SetVRAMCtrl"
       ],
       "baseline": 1992,
       "incomingComplete": [

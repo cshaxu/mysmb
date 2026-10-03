@@ -687,26 +687,38 @@ mysmb_u8 mysmb_area_render_graphics(struct mysmb_game *game)
     buffer_offset = game->ram[MYSMB_AREA_VRAM_BUFFER2_OFFSET];
     if (buffer_offset > 0xd6U) return 0U;
     side = (game->ram[MYSMB_AREA_PARSER_TASK] & 1U) != 0U ? 0U : 2U;
-    game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset] = game->ram[MYSMB_AREA_NT_HIGH];
+    game->ram[5U] = (mysmb_u8)(game->ram[MYSMB_AREA_CURRENT_COLUMN] & 1U);
+    game->ram[0U] = buffer_offset;
     game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset + 1U] = game->ram[MYSMB_AREA_NT_LOW];
+    game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset] = game->ram[MYSMB_AREA_NT_HIGH];
     game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset + 2U] = 0x9aU;
+    game->ram[4U] = 0U;
     for (row = 0U; row < 13U; ++row) {
+        game->ram[1U] = row;
         metatile = game->ram[MYSMB_AREA_METATILE_BUFFER + row];
+        game->ram[3U] = (mysmb_u8)(metatile & 0xc0U);
         palette = (mysmb_u8)(metatile >> 6U);
-        graphics = (mysmb_u16)(game->area_prg[MYSMB_AREA_METATILE_LOW + palette] |
-            ((mysmb_u16)game->area_prg[MYSMB_AREA_METATILE_HIGH + palette] << 8U));
+        game->ram[6U] = game->area_prg[MYSMB_AREA_METATILE_LOW + palette];
+        game->ram[7U] = game->area_prg[MYSMB_AREA_METATILE_HIGH + palette];
+        graphics = (mysmb_u16)(game->ram[6U] |
+            ((mysmb_u16)game->ram[7U] << 8U));
         if (graphics < 0x8000U) return 0U;
+        game->ram[2U] = (mysmb_u8)(metatile << 2U);
         source = (mysmb_u16)(graphics - 0x8000U +
-            (mysmb_u16)(metatile & 0x3fU) * 4U + side);
+            game->ram[2U] + side);
         if ((mysmb_u16)(source + 1U) >= game->area_prg_size) return 0U;
         game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER2 + buffer_offset + 3U +
             (mysmb_u16)row * 2U)] = game->area_prg[source];
         game->ram[(mysmb_u16)(MYSMB_AREA_VRAM_BUFFER2 + buffer_offset + 4U +
             (mysmb_u16)row * 2U)] = game->area_prg[(mysmb_u16)(source + 1U)];
         attribute_shift = (mysmb_u8)(((row & 1U) << 2U) |
-            ((game->ram[MYSMB_AREA_CURRENT_COLUMN] & 1U) << 1U));
+            (game->ram[5U] << 1U));
+        game->ram[3U] = (mysmb_u8)(palette << attribute_shift);
+        if ((row & 1U) != 0U) game->ram[4U]++;
         game->ram[MYSMB_AREA_ATTRIBUTE_BUFFER + (row >> 1U)] |=
-            (mysmb_u8)(palette << attribute_shift);
+            game->ram[3U];
+        game->ram[0U]++;
+        game->ram[0U]++;
     }
     buffer_offset = (mysmb_u8)(buffer_offset + 29U);
     game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset] = 0U;
@@ -734,10 +746,14 @@ mysmb_u8 mysmb_area_render_attribute_tables(struct mysmb_game *game)
     low = (mysmb_u8)(game->ram[MYSMB_AREA_NT_LOW] & 0x1fU);
     borrow = low < 4U ? 1U : 0U;
     low = (mysmb_u8)((low - 4U) & 0x1fU);
+    game->ram[1U] = low;
     high = game->ram[MYSMB_AREA_NT_HIGH];
     if (borrow != 0U) high ^= 0x04U;
     high = (mysmb_u8)((high & 0x04U) | 0x23U);
-    low = (mysmb_u8)(0xc0U + (low >> 2U) + ((low & 0x02U) != 0U ? 1U : 0U));
+    game->ram[0U] = high;
+    low = (mysmb_u8)(0xc0U + (game->ram[1U] >> 2U) +
+        ((game->ram[1U] & 0x02U) != 0U ? 1U : 0U));
+    game->ram[1U] = low;
     for (row = 0U; row < 7U; ++row) {
         /* ROM $8985-$898c reloads the prior attribute low byte and adds
          * eight for each row.  These writes are vertically spaced in the
@@ -746,9 +762,13 @@ mysmb_u8 mysmb_area_render_attribute_tables(struct mysmb_game *game)
         low = (mysmb_u8)(low + 8U);
         game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset++] = high;
         game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset++] = low;
-        game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset++] = 1U;
-        game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset++] =
+        game->ram[1U] = low;
+        /* AttribLoop reads/stores the payload before writing its length.
+         * Keep that order when the packet aliases AttributeBuffer. */
+        game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset + 1U] =
             game->ram[MYSMB_AREA_ATTRIBUTE_BUFFER + row];
+        game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset++] = 1U;
+        buffer_offset++;
         game->ram[MYSMB_AREA_ATTRIBUTE_BUFFER + row] = 0U;
     }
     game->ram[MYSMB_AREA_VRAM_BUFFER2 + buffer_offset] = 0U;

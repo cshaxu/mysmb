@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 649,
+    "enumeratedCount": 660,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -14296,6 +14296,237 @@
       "currentSourcePaths": [
         "src/game/game.c"
       ]
+    },
+    {
+      "id": "material-00650",
+      "producer": "RenderAreaGraphics",
+      "consumer": "DrawMTLoop",
+      "storage": "initial00 buffer cursor,04 attribute row,05 column bit",
+      "feasiblePath": "Root initializes cursor from0340,row0,column0726&1 before13-row copy.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_graphics / mysmb_area_render_attribute_tables",
+      "semanticContract": "Original bounded column/attribute root value flow;declared pointer/buffer/row domains,no global arbitrary-state or gameplay-reachability extension.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00651",
+      "producer": "DrawMTLoop",
+      "consumer": "DrawMTLoop",
+      "storage": "06/07 graphics pointer and02 tile offset",
+      "feasiblePath": "Each row selects immutable original palette table pointers,then performs both indirect reads before any06/07 overwrite;packet3xx writes cannot alias zero page.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_graphics / mysmb_area_render_attribute_tables",
+      "semanticContract": "Original bounded column/attribute root value flow;declared pointer/buffer/row domains,no global arbitrary-state or gameplay-reachability extension.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00652",
+      "producer": "DrawMTLoop",
+      "consumer": "RightCheck",
+      "storage": "03 raw palette bits and01 row parity",
+      "feasiblePath": "Right-column path consumes raw palette bits and row parity,shifting03 four times for upper-right or retaining it for lower-right.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_graphics / mysmb_area_render_attribute_tables",
+      "semanticContract": "Original bounded column/attribute root value flow;declared pointer/buffer/row domains,no global arbitrary-state or gameplay-reachability extension.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00653",
+      "producer": "DrawMTLoop",
+      "consumer": "LLeft",
+      "storage": "03 raw palette bits on odd left rows",
+      "feasiblePath": "Odd-row left path shifts03 twice before attribute merge.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_graphics / mysmb_area_render_attribute_tables",
+      "semanticContract": "Original bounded column/attribute root value flow;declared pointer/buffer/row domains,no global arbitrary-state or gameplay-reachability extension.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00654",
+      "producer": "DrawMTLoop",
+      "consumer": "SetAttrib",
+      "storage": "03 upper-left contribution or lower-right passthrough",
+      "feasiblePath": "Upper-left rotates raw bits three times with cleared row-parity carry;lower-right keeps raw bits through NextMTRow;SetAttrib ORs the contribution into the saved Y row.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_graphics / mysmb_area_render_attribute_tables",
+      "semanticContract": "Original bounded column/attribute root value flow;declared pointer/buffer/row domains,no global arbitrary-state or gameplay-reachability extension.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00655",
+      "producer": "RightCheck",
+      "consumer": "SetAttrib",
+      "storage": "03 upper-right shifted contribution",
+      "feasiblePath": "Even-row right path shifts03 four times then jumps to SetAttrib without overwriting its saved attribute Y.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_graphics / mysmb_area_render_attribute_tables",
+      "semanticContract": "Original bounded column/attribute root value flow;declared pointer/buffer/row domains,no global arbitrary-state or gameplay-reachability extension.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00656",
+      "producer": "LLeft",
+      "consumer": "SetAttrib",
+      "storage": "03 lower-left shifted contribution",
+      "feasiblePath": "LLeft shifts03 twice;NextMTRow increments04 but preserves03 and the old Y consumed at SetAttrib.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_graphics / mysmb_area_render_attribute_tables",
+      "semanticContract": "Original bounded column/attribute root value flow;declared pointer/buffer/row domains,no global arbitrary-state or gameplay-reachability extension.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00657",
+      "producer": "NextMTRow",
+      "consumer": "DrawMTLoop",
+      "storage": "04 next attribute-row index",
+      "feasiblePath": "Odd rows increment04 after saving old Y;the following metatile row reloads04. Native row/2 equals this bounded0..6 recurrence.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_graphics / mysmb_area_render_attribute_tables",
+      "semanticContract": "Original bounded column/attribute root value flow;declared pointer/buffer/row domains,no global arbitrary-state or gameplay-reachability extension.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00658",
+      "producer": "SetAttrib",
+      "consumer": "DrawMTLoop",
+      "storage": "00 cursor updated twice per metatile row",
+      "feasiblePath": "After each pair and attribute merge,cursor increments twice;next row uses the updated cursor. Native base+2*row equals the stored00 recurrence without eight-bit wrap in declared bounds.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_graphics / mysmb_area_render_attribute_tables",
+      "semanticContract": "Original bounded column/attribute root value flow;declared pointer/buffer/row domains,no global arbitrary-state or gameplay-reachability extension.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00659",
+      "producer": "RenderAttributeTables",
+      "consumer": "AttribLoop",
+      "storage": "00 high and01 attribute low address",
+      "feasiblePath": "Masked name-table low subtract4/carry and high d2 select initial attribute address;all256 low bytes and four high variants checked before seven-row emission.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_graphics / mysmb_area_render_attribute_tables",
+      "semanticContract": "Original bounded column/attribute root value flow;declared pointer/buffer/row domains,no global arbitrary-state or gameplay-reachability extension.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
+    },
+    {
+      "id": "material-00660",
+      "producer": "AttribLoop",
+      "consumer": "AttribLoop",
+      "storage": "01 low-address plus8 recurrence",
+      "feasiblePath": "Each row adds8,publishes01 before payload/length writes,then loops;packet memory3xx/4xx cannot alias01. Controlled attribute/packet overlap verifies payload-before-length ordering,without claiming normal-gameplay reachability for every constructed offset.",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_graphics / mysmb_area_render_attribute_tables",
+      "semanticContract": "Original bounded column/attribute root value flow;declared pointer/buffer/row domains,no global arbitrary-state or gameplay-reachability extension.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
+      ],
+      "cohort": "C",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
+      ]
     }
   ],
   "cohorts": [
@@ -17846,12 +18077,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_graphics",
       "semanticEvidence": [
-        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
+        "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
       ],
       "operationalEvidence": [
-        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
       ],
-      "semanticContract": "ROM $88ae: stages a 13-metatile vertical Buffer2 command, accumulates attributes, advances name-table address and selects control six.",
+      "semanticContract": "ROM $88ae: stages a 13-metatile vertical Buffer2 command, accumulates attributes, advances name-table address and selects control six. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -17864,12 +18098,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_graphics row loop",
       "semanticEvidence": [
-        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
+        "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
       ],
       "operationalEvidence": [
-        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
       ],
-      "semanticContract": "ROM $88c7: selects metatile graphics half by parser-task parity and emits two vertical tile bytes for each of 13 rows.",
+      "semanticContract": "ROM $88c7: selects metatile graphics half by parser-task parity and emits two vertical tile bytes for each of 13 rows. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -17882,12 +18119,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_graphics attribute_shift calculation",
       "semanticEvidence": [
-        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
+        "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
       ],
       "operationalEvidence": [
-        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
       ],
-      "semanticContract": "ROM $8901: selects top/right attribute-bit placement.",
+      "semanticContract": "ROM $8901: selects top/right attribute-bit placement. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -17900,12 +18140,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_graphics attribute_shift calculation",
       "semanticEvidence": [
-        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
+        "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
       ],
       "operationalEvidence": [
-        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
       ],
-      "semanticContract": "ROM $8910: selects lower-left attribute-bit placement.",
+      "semanticContract": "ROM $8910: selects lower-left attribute-bit placement. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -17918,12 +18161,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_graphics row progression",
       "semanticEvidence": [
-        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
+        "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
       ],
       "operationalEvidence": [
-        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
       ],
-      "semanticContract": "ROM $8916: advances attribute row for lower quadrants.",
+      "semanticContract": "ROM $8916: advances attribute row for lower quadrants. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -17936,12 +18182,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_graphics AttributeBuffer OR update",
       "semanticEvidence": [
-        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
+        "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
       ],
       "operationalEvidence": [
-        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
       ],
-      "semanticContract": "ROM $8917: merges selected palette bits and advances two tile-byte output positions.",
+      "semanticContract": "ROM $8917: merges selected palette bits and advances two tile-byte output positions. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -17954,12 +18203,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_graphics name-table wrap handling",
       "semanticEvidence": [
-        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
+        "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
       ],
       "operationalEvidence": [
-        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
       ],
-      "semanticContract": "ROM $8933: terminates Buffer2, advances name-table low byte and toggles nametable at the status-bar boundary.",
+      "semanticContract": "ROM $8933: terminates Buffer2, advances name-table low byte and toggles nametable at the status-bar boundary. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -17972,12 +18224,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_attribute_tables",
       "semanticEvidence": [
-        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
+        "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
       ],
       "operationalEvidence": [
-        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
       ],
-      "semanticContract": "ROM $8940: appends seven one-byte attribute commands derived from the just-rendered column.",
+      "semanticContract": "ROM $8940: appends seven one-byte attribute commands derived from the just-rendered column. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -17990,12 +18245,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_attribute_tables attribute address setup",
       "semanticEvidence": [
-        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
+        "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
       ],
       "operationalEvidence": [
-        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
       ],
-      "semanticContract": "ROM $8956: builds $23c0-family attribute-table address after borrow/nametable adjustment.",
+      "semanticContract": "ROM $8956: builds $23c0-family attribute-table address after borrow/nametable adjustment. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -18008,12 +18266,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_attribute_tables seven-row loop",
       "semanticEvidence": [
-        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
+        "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
       ],
       "operationalEvidence": [
-        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
       ],
-      "semanticContract": "ROM $8962: emits one attribute byte every eight address bytes and clears its source entry.",
+      "semanticContract": "ROM $8962: emits one attribute byte every eight address bytes and clears its source entry. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -18026,12 +18287,15 @@
       "currentOwner": "src/game/area.c",
       "currentCounterpart": "mysmb_area_render_graphics and mysmb_area_render_attribute_tables selector write",
       "semanticEvidence": [
-        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c."
+        "M2 T55 S1 static audit: SMB1 lines 1825-1962 maps the 13-row renderer, all four attribute quadrants, name-table wrap, seven-row attribute output, selector-six write and parser caller/return cadence to shared src/game/area.c.",
+        "T70 S17 P4 reopened column-chain scratch/order outputs:prior Buffer2-only comparison excludes actual zero-page outputs and does not exercise overlapping attribute/packet bytes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:source88ae-89c2 scratch/pointer/quad/row/cursor and attribute header/payload/length order matches two shared C owner functions;writes outside zero page cannot alias00-07 in the admitted buffer bounds."
       ],
       "operationalEvidence": [
-        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical."
+        "M2 T55 S1 controlled owner-local ROM/x86/x64 matrix: t28-render-left/right and t28-attribute-left/right agree on every scoped Buffer2 command byte, staged attribute byte, name-table address and selector-six output; x86 and x64 are byte-identical.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair:12288 original returning roots each native width,2048 RAM bytes each,no exclusions,zero differences. All11 labels and both sides of7 original predicates observed;5 executed focused checks each pass,including neutral overlapping attribute/packet regression."
       ],
-      "semanticContract": "ROM $899f: writes VRAM_Buffer_AddrCtrl six and returns.",
+      "semanticContract": "ROM $899f: writes VRAM_Buffer_AddrCtrl six and returns. Includes actual scratch00-07 outputs and source packet write order;prior Buffer2-only fixture does not exclude these outputs in this contract.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -157729,7 +157993,18 @@
         "SwimKT",
         "DrawTitleScreen",
         "OutputTScr",
-        "ChkHiByte"
+        "ChkHiByte",
+        "RenderAreaGraphics",
+        "DrawMTLoop",
+        "RightCheck",
+        "LLeft",
+        "NextMTRow",
+        "SetAttrib",
+        "ExitDrawM",
+        "RenderAttributeTables",
+        "SetATHigh",
+        "AttribLoop",
+        "SetVRAMCtrl"
       ],
       "controlEdgeIds": [],
       "status": "in-progress-material-use-completeness",
@@ -157739,7 +158014,9 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P2 bounded scope amendment - immutable producer uses",
         "docs/proposals/m2/t70-final-current-certification.md S17 P2 checkpoint - immutable producer joins",
         "docs/proposals/m2/t70-final-current-certification.md S17 P3 corrective scope amendment - title copy pointer outputs",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P3 checkpoint - title pointer repair",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 corrective scope amendment - complete column output chain",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P4 checkpoint - complete column output repair"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",

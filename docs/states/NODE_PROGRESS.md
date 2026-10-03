@@ -8,10 +8,17 @@ for remaining work/exit conditions. Historical1992/1992 means mapping coverage.
 Prior aggregate exact counts below retain their closure-time local-contract
 meaning;they are not full current-build certification. The attempted zero-based final-review restart is superseded;reuse retained
 scoped evidence and track only named unresolved/invalidated clauses.
-Material649 is a partial enumerated set;its global denominator is unknown.
+Material660 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
+
+[P4 column output repair](../proposals/m2/t70-final-current-certification.md#s17-p4-checkpoint---complete-column-output-repair).
+Eleven-node chain re-audited after scratch/order correction;12288 final original
+roots each width,2048 RAM/no exclusions,zero differences. All11 labels and7
+predicate pairs observed.5 focused checks each pass;neutral overlap regression
+and final3 products included. Local1992/1992 restored,controls4275/4275;
+material660 partial,total unknown. Four named packages/S17 remain open.
 
 [P3 pointer repair](../proposals/m2/t70-final-current-certification.md#s17-p3-checkpoint---title-pointer-repair).
 Three title-copy contracts reopened/repaired within S17;32 full-RAM original

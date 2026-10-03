@@ -24,7 +24,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T26 S7 | 2 | `VictoryMode`, `AutoPlayer` |
 | M2 T27 S1 | 1 | `InitScreen` |
 | M2 T27 S2 | 28 | `ClearBuffersDrawIcon`, `TScrClear`, `IncSubtask`, `WriteTopScore`, `IncModeTask_B`, `GameText`, `TopStatusBarLine`, `WorldLivesDisplay`, `TwoPlayerTimeUp`, `OnePlayerTimeUp`, `TwoPlayerGameOver`, `OnePlayerGameOver`, `WarpZoneWelcome`, `LuigiName`, `WarpZoneNumbers`, `GameTextOffsets`, `WriteGameText`, `Chk2Players`, `LdGameText`, `GameTextLoop`, `EndGameText`, `PutLives`, `CheckPlayerName`, `ChkLuigi`, `NameLoop`, `ExitChkName`, `PrintWarpZoneNumbers`, `WarpNumLoop` |
-| M2 T28 S1 | 13 | `RenderAreaGraphics`, `DrawMTLoop`, `RightCheck`, `LLeft`, `NextMTRow`, `SetAttrib`, `ExitDrawM`, `RenderAttributeTables`, `SetATHigh`, `AttribLoop`, `SetVRAMCtrl`, `MetatileGraphics_Low`, `MetatileGraphics_High` |
+| M2 T28 S1 | 2 | `MetatileGraphics_Low`, `MetatileGraphics_High` |
 | M2 T28 S2 | 7 | `ColorRotatePalette`, `BlankPalette`, `Palette3Data`, `ColorRotation`, `GetBlankPal`, `GetAreaPal`, `ExitColorRot` |
 | M2 T28 S3 | 11 | `BlockGfxData`, `RemoveCoin_Axe`, `WriteBlankMT`, `ReplaceBlockMetatile`, `DestroyBlockMetatile`, `WriteBlockMetatile`, `UseBOffset`, `MoveVOffset`, `PutBlockMetatile`, `SaveHAdder`, `RemBridge` |
 | M2 T28 S4 | 19 | `Palette0_MTiles`, `Palette1_MTiles`, `Palette2_MTiles`, `Palette3_MTiles`, `WaterPaletteData`, `GroundPaletteData`, `UndergroundPaletteData`, `CastlePaletteData`, `DaySnowPaletteData`, `NightSnowPaletteData`, `MushroomPaletteData`, `BowserPaletteData`, `MarioThanksMessage`, `LuigiThanksMessage`, `MushroomRetainerSaved`, `PrincessSaved1`, `PrincessSaved2`, `WorldSelectMessage1`, `WorldSelectMessage2` |
@@ -205,7 +205,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T70 S13 | 19 | `SetupIntermediate`, `AreaPalette`, `GetAreaPalette`, `SetVRAMAddr_A`, `NextSubtask`, `BGColorCtrl_Addr`, `BackgroundColors`, `PlayerColors`, `GetBackgroundColor`, `NoBGColor`, `GetPlayerColors`, `ChkFiery`, `StartClrGet`, `ClrGetLoop`, `SetBGColor`, `SetVRAMOffset`, `GetAlternatePalette1`, `SetVRAMAddr_B`, `NoAltPal` |
 | M2 T70 S14 | 12 | `WriteTopStatusLine`, `WriteBottomStatusLine`, `DisplayTimeUp`, `NoTimeUp`, `DisplayIntermediate`, `PlayerInter`, `OutputInter`, `GameOverInter`, `NoInter`, `ResetSpritesAndScreenTimer`, `ResetScreenTimer`, `NoReset` |
 | M2 T70 S15 | 17 | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeNameTables`, `WriteNTAddr`, `InitNTLoop`, `InitATLoop`, `InitScroll`, `WritePPUReg1`, `InitializeMemory`, `InitPageLoop`, `InitByteLoop`, `InitByte`, `SkipByte` |
-| M2 T70 S17 | 3 | `DrawTitleScreen`, `OutputTScr`, `ChkHiByte` |
+| M2 T70 S17 | 14 | `DrawTitleScreen`, `OutputTScr`, `ChkHiByte`, `RenderAreaGraphics`, `DrawMTLoop`, `RightCheck`, `LLeft`, `NextMTRow`, `SetAttrib`, `ExitDrawM`, `RenderAttributeTables`, `SetATHigh`, `AttribLoop`, `SetVRAMCtrl` |
 | M2 T70 S2 | 29 | `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj` |
 | M2 T70 S4 | 6 | `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`, `NonMaskableInterrupt`, `ScreenOff`, `InitBuffer` |
 | M2 T70 S6 | 9 | `RotPRandomBit`, `Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipSprite0`, `SkipMainOper`, `MoveAllSpritesOffscreen`, `MoveSpritesOffscreen`, `SprInitLoop` |
@@ -395,17 +395,17 @@ transfer existing ownership or allocate a numeric T.
 | 1804 | `ResetSpritesAndScreenTimer` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
 | 1809 | `ResetScreenTimer` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
 | 1813 | `NoReset` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
-| 1825 | `RenderAreaGraphics` | M2 T28 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T18 S2; M2 T21 S4; M2 T24 S1 |
-| 1840 | `DrawMTLoop` | M2 T28 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 1878 | `RightCheck` | M2 T28 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 1886 | `LLeft` | M2 T28 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 1888 | `NextMTRow` | M2 T28 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 1889 | `SetAttrib` | M2 T28 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 1914 | `ExitDrawM` | M2 T28 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 1920 | `RenderAttributeTables` | M2 T28 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T18 S2; M2 T21 S4; M2 T24 S1 |
-| 1930 | `SetATHigh` | M2 T28 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 1940 | `AttribLoop` | M2 T28 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 1962 | `SetVRAMCtrl` | M2 T28 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
+| 1825 | `RenderAreaGraphics` | M2 T70 S17 | existing closure backlog; S17 P4 complete column output chain correction under standing owner mandate. | M2 T18 S2; M2 T21 S4; M2 T24 S1 |
+| 1840 | `DrawMTLoop` | M2 T70 S17 | existing closure backlog; S17 P4 complete column output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 1878 | `RightCheck` | M2 T70 S17 | existing closure backlog; S17 P4 complete column output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 1886 | `LLeft` | M2 T70 S17 | existing closure backlog; S17 P4 complete column output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 1888 | `NextMTRow` | M2 T70 S17 | existing closure backlog; S17 P4 complete column output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 1889 | `SetAttrib` | M2 T70 S17 | existing closure backlog; S17 P4 complete column output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 1914 | `ExitDrawM` | M2 T70 S17 | existing closure backlog; S17 P4 complete column output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 1920 | `RenderAttributeTables` | M2 T70 S17 | existing closure backlog; S17 P4 complete column output chain correction under standing owner mandate. | M2 T18 S2; M2 T21 S4; M2 T24 S1 |
+| 1930 | `SetATHigh` | M2 T70 S17 | existing closure backlog; S17 P4 complete column output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 1940 | `AttribLoop` | M2 T70 S17 | existing closure backlog; S17 P4 complete column output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
+| 1962 | `SetVRAMCtrl` | M2 T70 S17 | existing closure backlog; S17 P4 complete column output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
 | 1970 | `ColorRotatePalette` | M2 T28 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
 | 1973 | `BlankPalette` | M2 T28 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
 | 1977 | `Palette3Data` | M2 T28 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
@@ -2367,7 +2367,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T27 S2 | 0 | 28 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/screen-status.md) |
 | M2 T27 S3 | 0 | 0 | planned-dispatch-integration; [record](../../docs/proposals/m2/screen-status.md) |
 | M2 T28 | 0 | - | [record](../../docs/proposals/m2/t28-area-output-bootstrap.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
-| M2 T28 S1 | 0 | 13 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
+| M2 T28 S1 | 0 | 2 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
 | M2 T28 S2 | 0 | 7 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
 | M2 T28 S3 | 0 | 11 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
 | M2 T28 S4 | 0 | 19 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
@@ -2829,7 +2829,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T70 S14 | 0 | 12 | hud-intermediate-timer-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S15 | 0 | 17 | final-reset-startup-source-and-graph-review; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S16 | 0 | 0 | executable-data-binding-manifest; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S17 | 0 | 3 | material-use-completeness-and-path-reconciliation, corrective-title-pointer-output-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S17 | 0 | 14 | material-use-completeness-and-path-reconciliation, corrective-title-pointer-output-chain, corrective-column-output-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M2 T9 | 1 | - | [record](../../docs/etc/architecture/smb1-frame-output-ledger.md); [record](../../docs/history/M2-T9-frame-output-ledger-and-reference-recorder.md); S not recorded |
 | M2 Td | 0 | - | [record](../../docs/proposals/m2-rom-structural-recovery.md); [record](../../docs/states/QUEUE.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -3210,6 +3210,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-t70-s15-startup-3 | M2 T28 S6 | M2 T70 S15 | 2 | Coordinator accepts original reset/startup subtree under owner M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s15-startup-4 | M2 T29 S1 | M2 T70 S15 | 4 | Coordinator accepts original reset/startup subtree under owner M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s17-title-pointer-1 | M2 T27 S2 | M2 T70 S17 | 3 | Coordinator under standing owner M2 repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-column-output-1 | M2 T28 S1 | M2 T70 S17 | 11 | Coordinator under owner same-S M2 repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3713,4 +3714,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T70 S14 | 12 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S15 | 17 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S16 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S17 | 42 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S17 | 53 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
