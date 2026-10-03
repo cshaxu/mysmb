@@ -23193,12 +23193,14 @@
       "semanticEvidence": [
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
         "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible.",
-        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P90 checkpoint - pause gates timer and sound queue uses reconciled:6labels/31instructions/11RAM joined4boundedclauses;mode/task/timer/start/status/queue write order reviewed,mandatory81BB retainsinfeasible00062;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner.",
         "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P90 checkpoint - pause gates timer and sound queue uses reconciled:262144originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all31PC/6branchpairs plusmandatory81BB,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Permits pause only in VictoryMode or GameMode task $03; otherwise returns existing pause bit without changing timer/status.",
       "currentSourcePaths": [
@@ -23215,12 +23217,14 @@
       "semanticEvidence": [
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
         "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible.",
-        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P90 checkpoint - pause gates timer and sound queue uses reconciled:6labels/31instructions/11RAM joined4boundedclauses;mode/task/timer/start/status/queue write order reviewed,mandatory81BB retainsinfeasible00062;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner.",
         "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P90 checkpoint - pause gates timer and sound queue uses reconciled:262144originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all31PC/6branchpairs plusmandatory81BB,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "When GamePauseTimer is nonzero decrements it and returns; when zero proceeds to Start input processing.",
       "currentSourcePaths": [
@@ -23238,14 +23242,16 @@
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
         "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible.",
         "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P90 checkpoint - pause gates timer and sound queue uses reconciled:6labels/31instructions/11RAM joined4boundedclauses;mode/task/timer/start/status/queue write order reviewed,mandatory81BB retainsinfeasible00062;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner.",
         "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged.",
         "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P21 checkpoint - targeted queue producer boundaries:actual write PC observed within14336 controlled original parent-to-SoundEngine roots each width;full RAM pre/post/APU/ordered commands zero diff,physical pushes only. Declared facing1/2 and X=ObjectOffset for fireball;other callers/input domains not inferred.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P90 checkpoint - pause gates timer and sound queue uses reconciled:262144originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all31PC/6branchpairs plusmandatory81BB,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Reads controller-one Start, honors the d7 debounce flag, initializes the $2b pause timer and sound queue, then toggles pause bit and sets d7.",
       "currentSourcePaths": [
@@ -23262,12 +23268,14 @@
       "semanticEvidence": [
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
         "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible.",
-        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P90 checkpoint - pause gates timer and sound queue uses reconciled:6labels/31instructions/11RAM joined4boundedclauses;mode/task/timer/start/status/queue write order reviewed,mandatory81BB retainsinfeasible00062;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner.",
         "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P90 checkpoint - pause gates timer and sound queue uses reconciled:262144originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all31PC/6branchpairs plusmandatory81BB,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "When Start is absent at timer zero, clears d7 while preserving the pause bit before storing GamePauseStatus.",
       "currentSourcePaths": [
@@ -23284,12 +23292,14 @@
       "semanticEvidence": [
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
         "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible.",
-        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P90 checkpoint - pause gates timer and sound queue uses reconciled:6labels/31instructions/11RAM joined4boundedclauses;mode/task/timer/start/status/queue write order reviewed,mandatory81BB retainsinfeasible00062;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner.",
         "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P90 checkpoint - pause gates timer and sound queue uses reconciled:262144originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all31PC/6branchpairs plusmandatory81BB,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Stores the source-computed pause status and falls through to the common return.",
       "currentSourcePaths": [
@@ -23306,12 +23316,14 @@
       "semanticEvidence": [
         "Td S9 A3 node-semantics pass: SMB1 lines 876-953 was compared label-by-label with the named shared frame_root.c owner; controlled pause/shuffle ROM routes and independent integration-edge pass remain pending.",
         "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible.",
-        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI."
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:original8e5c-8e91 strobe/serial/carry/scratch/debounce and8182 pause consumer source audited;missing STA00 restored for standard decoded-controller ABI.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P90 checkpoint - pause gates timer and sound queue uses reconciled:6labels/31instructions/11RAM joined4boundedclauses;mode/task/timer/start/status/queue write order reviewed,mandatory81BB retainsinfeasible00062;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "Td S9 A3 seven controlled cold-boot NMI-prefix routes (victory ordinary, timer-active, Start, d7 debounce, non-pausable mode, GameMode task $03 and GameMode non-$03) match pause-owned RAM/output fields on ROM and current x86/x64. The separately confirmed $00 and pre-dispatch $2000 NMI-prefix mismatches are excluded because this proof stops before mode dispatch and does not assign them to the pause owner.",
         "docs/proposals/m2/t70-final-current-certification.md S8 P1:16384 independent controlled full RAM+gate roots and128 persistent47-call protocols(6016 calls) per width zero diff;all feasible branch outcomes actually observed,4 focused checks each pass;source and S7 products unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass."
+        "docs/proposals/m2/t70-final-current-certification.md S9 P1:65536 button/mask roots on both ports and128x49 persistent input/pause steps per width zero diff;2045 RAM bytes excluding only observed1fb-1fd CPU-stack writes;actual loop/debounce successors,5 focused checks each,6x600 frame routes,native/OpenNT builds and3 products pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P90 checkpoint - pause gates timer and sound queue uses reconciled:262144originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all31PC/6branchpairs plusmandatory81BB,4tests each;source/threeP81productsunchanged."
       ],
       "semanticContract": "Returns with GamePauseStatus and GamePauseTimer exactly as selected by the source branch.",
       "currentSourcePaths": [
@@ -66139,7 +66151,8 @@
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_pause_step has no Start-present fallthrough into the separate Start-absent clear-lock path",
       "semanticEvidence": [
         "Td S9 A3 integration static pass: original edge identity, instruction/condition and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible."
+        "docs/proposals/m2/t70-final-current-certification.md S8 P1:8182-81c5 source mode/task/timer/Start/status/queue order audited;bit7 guard constrains queue increment and OR80 makes81bb false edge impossible.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P90 checkpoint - pause gates timer and sound queue uses reconciled:6labels/31instructions/11RAM joined4boundedclauses;mode/task/timer/start/status/queue write order reviewed,mandatory81BB retainsinfeasible00062;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "Td S9 A3 controlled routes cover every PauseRoutine/ChkPauseTimer/ChkStart/ClrPauseTimer/SetPause branch and fall-through relation: victory and GameMode gate alternatives, active/zero timer, Start absent/present, d7 debounce, and common return. Pause-owned fields match ROM on both current widths.",
@@ -169844,24 +169857,25 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P86 checkpoint - sprite drawing child retained route uses reconciled:3labels/36instructions/19RAM joined3boundedclauses;actualchildflip/order/absoluteaddress/byteX-Yincrements reviewed,mandatoryF294retainsinfeasible03162;producer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled:15labels/83instructions/14RAM joined9boundedclauses;warmdigit/marker/clear/table/scroll/control order reviewed,CPUhardwarepoll/idle ABI explicit;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P88 checkpoint - title menu start icon and persistent demo uses reconciled:20labels/112instructions/46RAM joined8boundedclauses;inputpriority/continue/scoreclear/icon/table/demo lifetime reviewed,49tablebytesboundexact;82C7/wholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P90 checkpoint - pause gates timer and sound queue uses reconciled:6labels/31instructions/11RAM joined4boundedclauses;mode/task/timer/start/status/queue write order reviewed,mandatory81BB retainsinfeasible00062;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 9265,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 1426,
+        "localInstructionReceiptSites": 9296,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 1395,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 3274,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 499,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 3285,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 488,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
         "directExternalQueueWriterPaths": 48,
         "pendingDirectRamOwners": {
           "src/game/terminal_modes.c": 81,
-          "src/game/frame_root.c": 46,
           "src/game/player_control.c shared C90 player-control owner": 39,
+          "src/game/frame_root.c": 35,
           "src/game/area/block_metatile.c": 34,
           "src/game/scroll.c shared C90 scroll owner": 32,
           "src/game/enemy/hammer_bro.c": 30,

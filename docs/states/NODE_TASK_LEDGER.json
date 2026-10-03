@@ -767992,7 +767992,11 @@
         "TopScoreCheck",
         "GetScoreDiff",
         "CopyScore",
-        "NoTopSc"
+        "NoTopSc",
+        "ChkPauseTimer",
+        "ClrPauseTimer",
+        "SetPause",
+        "ExitPause"
       ],
       "baseline": 1992,
       "incomingComplete": [

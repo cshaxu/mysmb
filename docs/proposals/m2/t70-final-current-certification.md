@@ -8759,3 +8759,22 @@ Three65536originalrootfamilies total196608eachwidth. Unmodifiedactualstatus/arit
 Current src/game/status.c normalizedSHA256:afc46297e447ad911458c1e234497fff708a73a51c9f8d47e499103d956e95ef.
 
 Current src/game/frame_root.c normalizedSHA256:beed1afea957c4290247a6d3178b168337b8ac2b992274dee76535cc72611b2b.
+
+## S17 P90 admission - source pause gates timer and sound queue
+
+Existingframe-root pause gap: 31instructions/11RAM;labels PauseRoutine,ChkPauseTimer,ChkStart,ClrPauseTimer,SetPause,ExitPause. Actual8182 entry/RTS,unalteredROM,sharedframe_root.c. Four65536boundedroots cover allrawstatus/button/timerbytes,mode/task gates and start-bit/residual lock. Compareallnonphysical-stackRAM/APU/orderedwrites;sourcecaller reloadsPauseStatus afterchild,nativepausedboolean checked separately against resultingstatus bit0. Mandatory81BB OR80 retainsoriginalinfeasiblebranch. ProtectedROMreadonly;raw4096batch/128MiB/120sec cleanupbelowignoredbuild. Fresh0/max1992;source/productsP81unchangedunlessconcrete mismatchrequiresrepair. Wholeproducer/inter-frame/finalpackagespending,no newauditround.
+
+## S17 P90 checkpoint - pause gates timer and sound queue uses reconciled
+
+S17 P90:6pause labels/31instructions/11RAM joined4boundedclauses;262144actualroots eachwidth0diff/all31PC/6branchpairs plusmandatory81BB,4tests each. Scope1503/fresh0;9296/10691instruction receipts,3285/3773RAM receipts;1395instructions/488RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| P1 | PauseRoutine | Only victory mode2 or game mode1/task3 reaches timer handling;all other modes/tasks return without RAM mutation. Native return is resultingstatus bit0 rather than originalCPU A;actual NMI caller reloadsPauseStatus and LSR after UpdateTopScore,so neither originalA nor flags are consumed. |
+| P2 | ChkPauseTimer | Nonzero timer decrements exactly once and returns,including1to0 withoutcheckingStart in samecall. Zero timer alone reaches savedport1Start;raw255..1 and allstatusbytes compared. |
+| P3 | ChkStart | Start bit10 absent selectsrelease;present withstatus80 skips writes. Otherwise set timer2B thenqueue=status+1 byte,thenstatus=(oldstatus^1)|80. Previous AND80 constrainsqueue domain onsource-reachablewriter path. OR80 forces Z0 at81BB,retainsinfeasiblecontrol00062. |
+| P4 | ClrPauseTimer,SetPause,ExitPause | Release AND7F clears only bit7 and leavespausebit0/otherbits. Commonstore0776/RTS;earlyreturns preservequeue/timer/status. WholeRAM comparedexceptactualphysicalCPUstack,APU/orderedwrites alsozero;nativepausebool checked independently againstfinalbit0. |
+
+Four65536actual8182rootfamilies total262144eachwidth. All31PC/6two-sidedbranchsites plus81BB OR80 mandatorybranch;control00062 retainedinfeasible. Compareall2048RAMexceptobservedper-rootphysicalCPUstackpushrange;24APU/orderedwritesunchanged. Nativepausebool independentlymatchespoststatusbit0,CPU A/X/Y/flags excludedunexposedABI;actualNMIreloadsstatusaftertopscore. Source-staticdualverificationand4focusedtests eachwidthpass,fournegativeaccountingmutants rejected. Rawstatus/button/timerbytes covered acrossdeclaredprofiles,notexhaustivecartesianallstateproof. RetainS8persistentprotocol receipt withinitsrecordedlimits. No source/productchange;P81hashesunchanged,DOScompile/linkonly. Wholeproducer/inter-frame/material/pixels/routes/snapshotremainpending.
+
+Current src/game/frame_root.c normalizedSHA256:beed1afea957c4290247a6d3178b168337b8ac2b992274dee76535cc72611b2b.
