@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P123 buffer1 producers](../proposals/m2/t70-final-current-certification.md#s17-p123-checkpoint---buffer1-producer-operand-semantics-repaired).
+S17 P123:12 buffer1 producer labels,106 original instructions/7 branch pairs. RemBridge absolute-X graphics displacements widened outside byteX;original11-write order restored. Three65536-root families,196608 original roots eachwidth0scoped RAM/APU/order diff;all106PC/14branch sides. New boundary regression rejects predecessor exit2;7focusedtests eachwidthpass. Three EXEs refreshed via modern targets/originalOpenNT16 compile/link. Historical1992/1992,local1991/1992 nodes,4260/4261 controls(raw4342,infeasible81);material993 partial,total unknown;M2 incomplete.
+
 [P122 parser commit chain](../proposals/m2/t70-final-current-certification.md#s17-p122-checkpoint---parser-to-nmi-commit-joins-verified).
 S17 P122:16 parser/commit participants;2048 eight-turn original chains eachwidth zero scoped RAM/APU/order diff. ActualAF6F and80B6-80E4 command/header phase alternate without RAM/PPU reseeding;task7..0,buffer2<=29,selected-header clear/other-buffer preservation and0368/03EE/06CF sentinels asserted. Eight focused tests eachwidth pass; 123 source identities/P121 threeproducts unchanged. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);material993 partial,total unknown. Active-object writers and global lifetimes pending,M2 incomplete.
 

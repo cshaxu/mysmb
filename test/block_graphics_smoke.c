@@ -60,5 +60,16 @@ int main(void)
         game.ram[0x0306U] != 0x28U || game.ram[0x0307U] != 2U ||
         game.ram[0x0308U] != 0x24U || game.ram[0x0309U] != 0x24U ||
         game.ram[0x030aU] != 0U) return 1;
+    /* Absolute-X graphics operands retain +1/+2/+3 outside byte X;
+     * absolute-Y destination displacements likewise survive Y=$ff. */
+    mysmb_game_initialize(&game);
+    mysmb_game_bind_area_source(&game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
+    mysmb_area_rem_bridge(&game, 0xffU, 0xffU, 0x9fU, 0x21U);
+    if (game.ram[0x03ffU] != 0x21U || game.ram[0x0400U] != 0x9fU ||
+        game.ram[0x0405U] != 0xbfU || game.ram[0x0409U] != 0U ||
+        game.ram[0x0402U] != mysmb_local_prg[0x0b38U] ||
+        game.ram[0x0403U] != mysmb_local_prg[0x0b39U] ||
+        game.ram[0x0407U] != mysmb_local_prg[0x0b3aU] ||
+        game.ram[0x0408U] != mysmb_local_prg[0x0b3bU]) return 2;
     return 0;
 }

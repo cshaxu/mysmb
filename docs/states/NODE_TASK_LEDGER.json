@@ -16403,8 +16403,8 @@
     {
       "label": "RemBridge",
       "line": 2118,
-      "receiver": "M2 T28 S3",
-      "receivingBasis": "restored pending small-task planning after oversized T21 replan",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "S17 P123 original absolute-X operand displacement correction.",
       "futurePackage": null,
       "history": [
         {
@@ -69945,6 +69945,17 @@
         "PlatLiftDown",
         "CommonSmallLift",
         "PosPlatform"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-p123-rembridge",
+      "type": "transfer",
+      "from": "M2 T28 S3",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "RemBridge"
       ],
       "acceptedBy": "Coordinator under owner same-S repair mandate.",
       "evidence": "docs/proposals/m2/t70-final-current-certification.md"

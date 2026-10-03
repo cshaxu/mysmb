@@ -14,7 +14,7 @@ enum {
 
 /* ROM $8a39 BlockGfxData.  This remains source-owned data rather than a
  * duplicate C literal: area_prg is the admitted local copy of the PRG. */
-static mysmb_u8 mysmb_area_block_gfx(struct mysmb_game *game, mysmb_u8 index)
+static mysmb_u8 mysmb_area_block_gfx(struct mysmb_game *game, mysmb_u16 index)
 {
     if (game->area_prg == 0 || game->area_prg_size < MYSMB_BLOCK_GFX_DATA + 20U)
         return 0U;
@@ -132,20 +132,22 @@ void mysmb_area_rem_bridge(struct mysmb_game *game, mysmb_u8 graphics_offset,
 {
     if (game->area_prg == 0 || game->area_prg_size < MYSMB_BLOCK_GFX_DATA + 20U)
         return;
-    game->ram[MYSMB_VRAM_BUFFER1 + buffer_offset] = address_high;
-    game->ram[MYSMB_VRAM_BUFFER1 + buffer_offset + 1U] = address_low;
-    game->ram[MYSMB_VRAM_BUFFER1 + buffer_offset + 2U] = 2U;
+    /* RemBridge emits all four payloads before the address/length fields.
+     * BlockGfxData+delta,X keeps delta outside the original byte X. */
     game->ram[MYSMB_VRAM_BUFFER1 + buffer_offset + 3U] =
         mysmb_area_block_gfx(game, graphics_offset);
     game->ram[MYSMB_VRAM_BUFFER1 + buffer_offset + 4U] =
-        mysmb_area_block_gfx(game, (mysmb_u8)(graphics_offset + 1U));
-    game->ram[MYSMB_VRAM_BUFFER1 + buffer_offset + 5U] = address_high;
+        mysmb_area_block_gfx(game, (mysmb_u16)(graphics_offset + 1U));
+    game->ram[MYSMB_VRAM_BUFFER1 + buffer_offset + 8U] =
+        mysmb_area_block_gfx(game, (mysmb_u16)(graphics_offset + 2U));
+    game->ram[MYSMB_VRAM_BUFFER1 + buffer_offset + 9U] =
+        mysmb_area_block_gfx(game, (mysmb_u16)(graphics_offset + 3U));
+    game->ram[MYSMB_VRAM_BUFFER1 + buffer_offset + 1U] = address_low;
     game->ram[MYSMB_VRAM_BUFFER1 + buffer_offset + 6U] =
         (mysmb_u8)(address_low + 0x20U);
+    game->ram[MYSMB_VRAM_BUFFER1 + buffer_offset] = address_high;
+    game->ram[MYSMB_VRAM_BUFFER1 + buffer_offset + 5U] = address_high;
+    game->ram[MYSMB_VRAM_BUFFER1 + buffer_offset + 2U] = 2U;
     game->ram[MYSMB_VRAM_BUFFER1 + buffer_offset + 7U] = 2U;
-    game->ram[MYSMB_VRAM_BUFFER1 + buffer_offset + 8U] =
-        mysmb_area_block_gfx(game, (mysmb_u8)(graphics_offset + 2U));
-    game->ram[MYSMB_VRAM_BUFFER1 + buffer_offset + 9U] =
-        mysmb_area_block_gfx(game, (mysmb_u8)(graphics_offset + 3U));
     game->ram[MYSMB_VRAM_BUFFER1 + buffer_offset + 10U] = 0U;
 }
