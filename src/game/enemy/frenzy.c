@@ -288,8 +288,8 @@ void mysmb_enemy_put_at_right_extent(struct mysmb_game *game, mysmb_u8 slot,
     mysmb_enemy_finish_flame(game, slot);
 }
 
-/* ROM FlameTimerData / SetFlameTimer / ExFl. Original initialization and
- * this masked increment constrain the incoming timer counter to 0..7. */
+/* ROM $D1D1 FlameTimerData / SetFlameTimer / ExFl. The old raw counter
+ * selects the byte; only the stored next counter is masked to 0..7. */
 mysmb_u8 mysmb_enemy_set_flame_timer(struct mysmb_game *game)
 {
     static const mysmb_u8 timer_data[8] = {
@@ -298,7 +298,12 @@ mysmb_u8 mysmb_enemy_set_flame_timer(struct mysmb_game *game)
     mysmb_u8 index;
     index = game->ram[0x0367U];
     game->ram[0x0367U] = (mysmb_u8)((index + 1U) & 7U);
-    return timer_data[index];
+    if (index < 8U) return timer_data[index];
+    /* Preserve table-adjacent reads without indexing beyond the C array.
+     * A bound original PRG view is required for these residual indices. */
+    if (game->area_prg == 0 || game->area_prg_size <= 0x51d1U + index)
+        return 0U;
+    return game->area_prg[0x51d1U + index];
 }
 
 /* ROM FlameYPosData: one binding shared by initialization and movement. */

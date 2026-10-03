@@ -8070,3 +8070,49 @@ P68 local target artifacts (not DOS runtime certification):
 | mysmb16.exe | 259643 | f29664270e330b8bd362f6e4c2a69a3dfdb9f0e5e02faeaf121e122cc61bd2d9 |
 | mysmb32.exe | 374219 | c150cdb905a544dd1e5928ca684b970a0d12067cc0c5dee9b8e89d2705fb7c46 |
 | mysmb64.exe | 379704 | 1c99a141506e8c81a477d0339b42b453ae4f123a9459f2908cae256c647270dc |
+
+## S17 P69 admission - flying fish and Bowser bridge control graphics
+
+Existing adjacent actor/material gap;249 pending instructions in31labels: MoveFlyingCheepCheep,FlyCC,AddCCF,BPGet,BridgeCollapse,SetM2,MoveD_Bowser,RemoveBridge,NoBFall,RunBowser,KillAllEnemies,KillLoop,BowserControl,ChkMouth,FeetTmr,ResetMDr,B_FaceP,GetPRCmp,GetDToO,CompDToO,HammerChk,SetHmrTmr,SkipToFB,MakeBJump,ChkFireB,SpawnFBr,SetFBTmr,BowserGfxHandler,CopyFToR,ExBGfxH,ProcessBowserHalf. Shared enemy/flying_cheep.c,enemy/bowser.c,bridge.c,enemy/loop.c andoam/bowser_gfx.c,real gravity/distance/hammer/palette/retainer/box/collision/erase children. Four original roots CEDF/D17B/D065/CFEC;controlled X/front/rear0-5,bridge-index0-14,World0-7,player/actor byte coordinates,raw timer/state/direction/force/frame. Review original order,child/index/stack lifetimes and tableadjacent flying-fish reads before localcredit. Scope978,fresh0/max1992. Original/native fullRAM/APU/orderedwrites andfocused tests;diff staysS17,productrepair refreshes3EXEs. OwnerROM/ASM read-only nonredistributable,raw4096-record batches bounded128MiB/120seconds perprocess anddeletedbelowignoredbuild. No newauditround.
+
+P69 corrective amendment: receive FlameTimerData,SetFlameTimer,ExFl from T41 S4 before editing shared enemy/frenzy.c. Raw old counter0367 accesses original D1D1+Y before the masked new counter is used; current fixed eight-byte C array is undefined beyond7. Repair raw table-adjacent read through bounded immutable PRG view,retain exact eight legal constants and resource prerequisite. Re-run failed D065 roots,bridge route,direct D1D9 all256-index route and focused checks;refresh all3EXEs. Prior local0-7 timer proof remains scoped,not producer/alias reachability proof. No additional round or node promotion.
+
+## S17 P69 checkpoint - Bowser chain and raw flame timer repaired
+
+S17 P69:31actor/bridge/Bowser labels/249instructions/95RAM joined11clauses;rawtimer array overrun repaired in sharedfrenzy.c/3transferrednodes. 459008originalroots eachwidth0diff/all249PC/36branchpairs,10tests each. Scope979/fresh0;5404/10691instruction receipts,1934/3773RAM receipts;5287instructions/1839RAM pending. Local1991/1992nodes,4264/4265controls(raw4342/infeasible77),material993partial,totalunknown;3EXEs refreshed,producer/inter-frame/finalpackages pending,M2 incomplete.
+
+Before-case mode215/root32768 produced a breath timer mismatch from raw0367 outside0-7;C indexed beyond eight-byte array. Similar-issue sweep in this owner found one timer_data[index] read;replace residual8-255 with bound D1D1+index PRG data,retain exact legal constants and missing-resource prerequisite. Original new counter masks after retaining old index,not before lookup;no gameplay timing was invented. Producer reachability of raw indices is not claimed.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| F1 | MoveFlyingCheepCheep,FlyCC | State20 clears sprite attributes before real jumping gravity tail. Normal entry always performs actual horizontal movement then gravity amount0D/max5 before reading updated Y force; native order and scratch/page/fraction effects match the real SetXMoveAmt child. |
+| F2 | AddCCF,BPGet | Updated force high nibble selects original CED5+index0-15 including adjacent bytes. Byte Y subtraction uses sign/twos-complement; magnitude<8 adds10 to force with byte wrap and recomputes high nibble. Priority from CEDA+index0-15 stores raw attribute even if later graphics overwrites it; original adjacency preserved by bound PRG,not guessed priority values. Missing resource is a prerequisite failure,not certified input. |
+| B1 | BridgeCollapse,SetM2,MoveD_Bowser | Front slot0368 first selects ID; non-Bowser skips setting08 before silence/increment mode/real kill-all. Bowser stores08,zero state goes bridge removal; nonzero state with40 and Y<E0 takes real slow-gravity then actual graphics,otherwise silence/kill. Native unsigned thresholds and tail order match; fixtures front slot equals incoming08,other front/08 aliases are not certified here. |
+| B2 | RemoveBridge,NoBFall | DEC feet zero wrapsFF and skips; expired1 resets4,xors body bit0,sets scratch05=22 and04=collapse table index0-14. Original RemBridge getsX0C,Y=buffer offset+1; native preserves that original Y across child before MoveVOffset,then square2/noise sound and bridge offset increment. Exactly offset15 initializes vertical state,setsState40 and fall sound80. Actual graphics follows all paths. Raw cursor-byte alias writes are compared in one call; next-frame bridge-index producer/alias validity remains pending. |
+| K1 | RunBowser,KillAllEnemies,KillLoop | State20 defeated path Y<E0 uses shared bridge slow-gravity/graphics; Y>=E0 actual kill loop erases4..0 inclusive,clears frenzy and restores08. Native loop uses byte underflowFF exit,not six-slot clear. Other state bits alone enter control. All real erasure outputs compared; physical CPU registers outside API are not modeled. |
+| W1 | BowserControl,ChkMouth,FeetTmr,ResetMDr,B_FaceP | Control clears frenzy before TimerControl skip to fire; mouth sign bit selects hammer phase. DEC feet/reset20/body xor1 precedes Frame&0F direction reset. Nonzero frame timer calls original player distance; negative page difference setsdirection1,speed2,frame/fire timers20,thenX>=C8 selects hammer. Native scalar slot follows actual child08; distance scratch and carry remain real child outputs. |
+| W2 | GetPRCmp,GetDToO,CompDToO | Every fourth frame,exact X==original anchor selects masked random0-3 range table; add raw movement speed to X as byte. Direction exactly1 skips range reversal; otherwise byte X-origin sign selectsFF or1 and twos-complement distance. Distance>=MaxRange stores chosen speed; no page update exists in this original Bowser path and none is introduced. |
+| W3 | HammerChk,SetHmrTmr,SkipToFB,MakeBJump | Nonzero frame timer skips slow gravity; exactly1 decrements Y,real vertical initialization then YspeedFE. Zero timer executes real slow gravity,World>=5/Frame&3zero actual hammer spawn,thenY>=80 masked random range timer. Child reloads08 before later accesses. SkipToFB remains original tail to flame stage; no invented global tick/hammer pacing. |
+| W4 | ChkFireB,SpawnFBr,SetFBTmr | World7 spawns fire;World5/6 skip,others eligible. Nonzero breath timer skips. Expired sets20,xors mouth80; open sign loops through fire timer guard,closed calls actual SetFlameTimer. SecondaryHard nonzero subtract10 with SEC semantics then stores timer and frenzy15. Hard-mode extra256 original roots independently observe subtraction; old fixture coupled hard bit with nonzero breath timer and missed that path. |
+| G1 | BowserGfxHandler,CopyFToR,ExBGfxH | Real front ProcessHalf returns current08 slot; direction bit0 chooses rear X deltaF0/10 without page write,Y+8 wraps,state/direction copied. Save08 across setting rear slot/ID2D and real rear ProcessHalf,restore original08/X then zero graphics flag. Native local saved value mirrors original stack lifetime; rear0-5 controlled,arbitrary rear aliases are not whole-program-certified. |
+| G2 | ProcessBowserHalf | Increment graphics flag before real retainer/offscreen/relative/OAM child; reload08 then state!=0 returns. Zero state sets bound control0A,actual enemy box and actual player collision tail. Native does not skip inactive halves by flag or substitute shape collision. Shared graphics/collision child instructions retain their own pending use/lifetime owners. |
+
+Eight original manifests:CEDF,D17B retained unchanged-owner roots;postrepair D065,CFEC,normal bridge CFEC,normal Bowser D065,directD1D9 each65536;hardflameD065256.Total459008 eachwidth. Controlledfront/rear0-5,bridge0-14,World0-7,raw timer/state/coordinates/fractions;normal-state fixtures decouple bridge counter and feet timer,normal Bowser decouples origin/feet/mouth,hardfixture decouplesSecondaryHard/breath timer. All249PC/36branchpairs observed,children untouched,minimumSP0xef. 2032RAM/24APU/orderedwrites compared,only physical1F0-1FF excluded;void APIA/Y/flags excluded,directtimer A compared androotX==initial08 asserted. Four negative accounting mutants rejected. PRandomRange/BridgeCollapseData/eight legal timer bytes bind original exactly;fullPRGraw timer read follows original. Tenfocusedtests eachwidth pass;target builds and originalDOS16link pass (existingOLDNAMES warning,not DOSruntime). Every temporary trace/log remains ignored belowbuild,raw4096-record batches deleted. No whole-game or exhaustive producer/lifetime claim.
+
+Current src/game/enemy/flying_cheep.c normalizedSHA256:d8e7883d75ae3e42b4a3810450548b737a31fe0ce320fad1646433b0415e0dc2.
+
+Current src/game/enemy/bowser.c normalizedSHA256:714004ebdb4a408ae9a190182d41d855d9cb57061e81196861136a6d54fdb005.
+
+Current src/game/bridge.c normalizedSHA256:be8fa73292a152412cc60794a3d802d513876a782561ef2de437b1b679c9905f.
+
+Current src/game/enemy/loop.c normalizedSHA256:a9619ed5b897c07732fc6a6f104823fd3ba4ebc17fdad244b6a2dcd71c7caf92.
+
+Current src/game/oam/bowser_gfx.c normalizedSHA256:2dbe91f7348c1a75f19858d9d717b64c873c0b5138931df082cfdb361730f561.
+
+Current src/game/enemy/frenzy.c normalizedSHA256:a07c046b6680cf623555792f130f83a40a4a4574ee150065c2ebec465a9c1f61.
+
+| Local artifact | Bytes | SHA256 |
+| --- | --- | --- |
+| mysmb16.exe | 259739 | 7dbc17d1dc652b91d76bf08871d3dc795e777cadf1eca51157cdf789e2456421 |
+| mysmb32.exe | 374219 | efc156d446ed6ed79c682cf53beb12fcc16ef3c905710fbcf45e5de1e7dc0b7d |
+| mysmb64.exe | 380216 | 2310fdd5bede815b50c232926cb88ad82b274426010b4cd2f625940d09b45b64 |

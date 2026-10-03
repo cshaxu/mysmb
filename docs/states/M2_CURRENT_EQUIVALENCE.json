@@ -47046,11 +47046,13 @@
       "semanticEvidence": [
         "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
-        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly."
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
         "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
-        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "For defeated state clears sprite attributes then tail-jumps to jumping gravity; otherwise falls through flying movement.",
       "currentSourcePaths": [
@@ -47067,11 +47069,13 @@
       "semanticEvidence": [
         "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
-        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly."
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
         "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
-        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Moves horizontally, applies gravity amount $0d/max five, derives high-nibble random index, compares vertical position against subtraction table and optionally increases Y force.",
       "currentSourcePaths": [
@@ -47088,11 +47092,13 @@
       "semanticEvidence": [
         "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
-        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly."
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
         "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
-        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "If absolute subtraction difference is below eight, adds $10 to Y force then derives updated high-nibble priority index; otherwise leaves force unchanged.",
       "currentSourcePaths": [
@@ -47109,11 +47115,13 @@
       "semanticEvidence": [
         "Td S9 B15l Flying-Cheep node-semantics and independent integration audit: SMB1 lines 9941-9989 compared with shared enemy/flying_cheep.c under its declared immutable PRG resource prerequisite; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
-        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly."
+        "M2 T63 S11 static audit: SMB1 $CED5-$CF24 table binding, defeated tail, child ordering, high-nibble indexed reads, signed absolute difference, strict threshold, force update and priority store compared with src/game/enemy/flying_cheep.c; 21/21 ROM bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
         "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
-        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass."
+        "M2 T63 S11 route: one current-source Flying Cheep manifest runner per width compares 512 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contracts, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Loads indexed sprite priority into enemy attributes and returns.",
       "currentSourcePaths": [
@@ -47484,10 +47492,12 @@
       "currentCounterpart": "src/game/bridge.c:mysmb_objects_step_bridge_collapse entry and state gate",
       "semanticEvidence": [
         "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Reads BowserFront_Offset and Enemy_ID before writing ObjectOffset; normal state selects bridge removal, d6-set with Y<$e0 selects slow fall/draw, and every other state enters the silence/mode-advance tail.",
       "currentSourcePaths": [
@@ -47504,12 +47514,14 @@
       "semanticEvidence": [
         "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
         "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Writes Silence to EventMusicQueue, increments OperMode_Task exactly once, then clears enemy slots in descending 4..0 order and resets EnemyFrenzyBuffer.",
       "currentSourcePaths": [
@@ -47526,10 +47538,12 @@
       "currentCounterpart": "src/game/bridge.c:mysmb_enemy_move_d_bowser",
       "semanticEvidence": [
         "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Moves the current Bowser slot with slow vertical physics, reloads ObjectOffset after the child call and immediately uses the Bowser front/rear graphics tail.",
       "currentSourcePaths": [
@@ -47546,12 +47560,14 @@
       "semanticEvidence": [
         "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
         "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Decrements BowserFeetCounter; on expiry restores four, toggles body bit zero, stages $04/$05, emits the two-row blank command, advances the original VRAM offset, queues blast/shatter, advances the 15-step table and only then initializes defeated falling state.",
       "currentSourcePaths": [
@@ -47567,10 +47583,12 @@
       "currentCounterpart": "src/game/bridge.c:mysmb_objects_step_bridge_collapse draw_bowser tail",
       "semanticEvidence": [
         "Td S9 B15n Bowser bridge-collapse node-semantics and independent integration audit: SMB1 lines 10092-10152 compared with shared bridge.c, area/block_metatile.c, enemy/movement.c, enemy/loop.c and oam/bowser_gfx.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
+        "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "All non-terminal bridge paths converge on one Bowser graphics call after retaining the slot and post-collapse state.",
       "currentSourcePaths": [
@@ -47606,11 +47624,13 @@
       "semanticEvidence": [
         "Td S9 B15o Bowser dispatcher-front node-semantics and independent integration audit: SMB1 lines 10156-10166 compared with shared enemy/bowser.c, bridge.c and enemy/loop.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S14 static audit: SMB1 $D061-$D070 four-byte range table, defeated-state and height gates, normal-control branch and terminal-clear fall-through compared with src/game/enemy/bowser.c; 4/4 table bytes bind exactly.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
         "M2 T63 S14 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 dispatcher contract, platform purity and shared DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Tests d5 first; the defeated Y<$e0 path moves/draws Bowser while Y>=$e0 clears enemies, and only d5-clear enters BowserControl without an accidental bridge-collapse or normal-control path.",
       "currentSourcePaths": [
@@ -47627,11 +47647,13 @@
       "semanticEvidence": [
         "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S15 static audit: SMB1 $D071-$D07B initial slot, erase call, decrement/sign loop, frenzy clear and ObjectOffset-preserving return compared with src/game/enemy/loop.c; all 11 instruction bytes bind exactly.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
         "M2 T63 S15 route: one current-source terminal Bowser manifest runner per width compares eight original-ROM terminal snapshots with zero differences on x86 and x64; focused C90 loop contract, platform purity and shared DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Initializes slot four exactly once, enters the erase loop, clears EnemyFrenzyBuffer after the final slot, and preserves the C equivalent of the source ObjectOffset restore for each caller.",
       "currentSourcePaths": [
@@ -47647,10 +47669,12 @@
       "currentCounterpart": "src/game/enemy/loop.c:mysmb_enemy_kill_all do/while body",
       "semanticEvidence": [
         "Td S9 B15p common enemy-clear-loop node-semantics and independent integration audit: SMB1 lines 10167-10174 compared with shared enemy/loop.c and enemy/lifecycle.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S15 static audit: SMB1 $D071-$D07B initial slot, erase call, decrement/sign loop, frenzy clear and ObjectOffset-preserving return compared with src/game/enemy/loop.c; all 11 instruction bytes bind exactly."
+        "M2 T63 S15 static audit: SMB1 $D071-$D07B initial slot, erase call, decrement/sign loop, frenzy clear and ObjectOffset-preserving return compared with src/game/enemy/loop.c; all 11 instruction bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S15 route: one current-source terminal Bowser manifest runner per width compares eight original-ROM terminal snapshots with zero differences on x86 and x64; focused C90 loop contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S15 route: one current-source terminal Bowser manifest runner per width compares eight original-ROM terminal snapshots with zero differences on x86 and x64; focused C90 loop contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Calls the erase primitive once per slot in descending order 4,3,2,1,0; byte wrap after zero ends rather than restarts the loop.",
       "currentSourcePaths": [
@@ -47666,10 +47690,12 @@
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
         "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Clears EnemyFrenzyBuffer first; TimerControl bypasses control directly to fire handling, otherwise mouth state selects feet/movement work or hammer handling.",
       "currentSourcePaths": [
@@ -47685,10 +47711,12 @@
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
         "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Uses BowserBodyControls bit seven as the source mouth gate: clear enters feet timing, set skips directly to hammer handling.",
       "currentSourcePaths": [
@@ -47704,10 +47732,12 @@
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
         "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Decrements the feet timer and only at zero restores $20 and toggles body bit zero before the shared movement-direction phase.",
       "currentSourcePaths": [
@@ -47723,10 +47753,12 @@
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
         "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Resets moving direction to two only when FrameCounter low nibble is zero, then enters facing/chase logic.",
       "currentSourcePaths": [
@@ -47742,10 +47774,12 @@
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
         "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "When EnemyFrameTimer is nonzero, compares player/Bowser signed X before setting right direction, speed two and both timers; $c8 is an early hammer tail.",
       "currentSourcePaths": [
@@ -47761,10 +47795,12 @@
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
         "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Runs only on every fourth frame; origin equality selects PRandomRange using the low two random bits before horizontal position update.",
       "currentSourcePaths": [
@@ -47780,10 +47816,12 @@
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
         "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Adds current movement speed, retains source direction-one early tail, otherwise forms source absolute displacement from BowserOrigXPos.",
       "currentSourcePaths": [
@@ -47799,10 +47837,12 @@
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
         "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Changes movement speed only when absolute displacement reaches MaxRangeFromOrigin; otherwise preserves the previous speed.",
       "currentSourcePaths": [
@@ -47818,10 +47858,12 @@
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
         "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Nonzero enemy frame timer takes the jump-expiry branch; zero performs slow vertical movement, optional world-6+ every-fourth-frame hammer spawn, then applies the Y>= $80 frame timer range.",
       "currentSourcePaths": [
@@ -47837,10 +47879,12 @@
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
         "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "For Y>= $80 selects PRandomRange by low random bits into EnemyFrameTimer, then tails to fire handling.",
       "currentSourcePaths": [
@@ -47856,10 +47900,12 @@
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
         "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Represents the TimerControl and timer-reset unconditional tail to the common fire handler without duplicating any game decision.",
       "currentSourcePaths": [
@@ -47875,10 +47921,12 @@
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
         "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Only timer value one decrements Y, initializes vertical state and writes Y speed $fe before fire handling.",
       "currentSourcePaths": [
@@ -47894,10 +47942,12 @@
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
         "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "World eight always evaluates flame spawn; worlds six/seven go directly to graphics; worlds one through five evaluate flame spawn.",
       "currentSourcePaths": [
@@ -47913,10 +47963,12 @@
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
         "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "On expired breath timer writes $20, toggles mouth bit seven and loops while opening; closing selects a fresh flame interval and frenzy ID.",
       "currentSourcePaths": [
@@ -47932,10 +47984,12 @@
       "currentCounterpart": "src/game/enemy/bowser.c:mysmb_enemy_run_bowser",
       "semanticEvidence": [
         "Td S9 B15q Bowser normal-control node-semantics and independent integration audit: SMB1 lines 10176-10285 compared with shared enemy/bowser.c and named movement, hammer, initializer, flame-timer and Bowser OAM children; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly."
+        "M2 T63 S16 static audit: SMB1 $D07F-$D17A Bowser timer/mouth gates, frame gates, range selection/reversal, child order, jump, world/flame gates and hard-mode final queue compared with src/game/enemy/bowser.c; 252 ROM instruction bytes and 25 semantic tokens bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S16 route: one current-source Bowser manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 Bowser control contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Stores the selected normal or hard-mode-adjusted flame delay before writing BowserFlame into EnemyFrenzyBuffer.",
       "currentSourcePaths": [
@@ -47952,11 +48006,13 @@
       "semanticEvidence": [
         "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S17 static source-order audit: SMB1 $D17B-$D1D0 (86 instruction bytes) compared with shared src/game/oam/bowser_gfx.c; both-half order, direction wrap, rear transfer, ObjectOffset restoration, state gate, bounds and collision tail agree.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
         "M2 T63 S17 original-ROM/current operational proof: 512 Bowser graphics snapshots replayed by one x86 and one x64 manifest process with zero differences; focused C90 front/rear contract, platform purity and OpenNT DOS16 shared-source link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Processes the front half first, selects rear X delta $10 or $f0 from direction bit zero, then processes the rear and clears the front/rear graphics flag after restoring the original ObjectOffset.",
       "currentSourcePaths": [
@@ -47972,10 +48028,12 @@
       "currentCounterpart": "src/game/oam/bowser_gfx.c:mysmb_objects_draw_bowsers_slot/process_half",
       "semanticEvidence": [
         "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S17 static source-order audit: SMB1 $D17B-$D1D0 (86 instruction bytes) compared with shared src/game/oam/bowser_gfx.c; both-half order, direction wrap, rear transfer, ObjectOffset restoration, state gate, bounds and collision tail agree."
+        "M2 T63 S17 static source-order audit: SMB1 $D17B-$D1D0 (86 instruction bytes) compared with shared src/game/oam/bowser_gfx.c; both-half order, direction wrap, rear transfer, ObjectOffset restoration, state gate, bounds and collision tail agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S17 original-ROM/current operational proof: 512 Bowser graphics snapshots replayed by one x86 and one x64 manifest process with zero differences; focused C90 front/rear contract, platform purity and OpenNT DOS16 shared-source link pass."
+        "M2 T63 S17 original-ROM/current operational proof: 512 Bowser graphics snapshots replayed by one x86 and one x64 manifest process with zero differences; focused C90 front/rear contract, platform purity and OpenNT DOS16 shared-source link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Copies front X/Y/state/direction to the duplicate rear with Y+8, makes the rear current, writes Bowser ID, preserves/restores the front ObjectOffset and uses the second half processing call.",
       "currentSourcePaths": [
@@ -47991,10 +48049,12 @@
       "currentCounterpart": "src/game/oam/bowser_gfx.c:mysmb_objects_draw_bowsers_slot/process_half",
       "semanticEvidence": [
         "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S17 static source-order audit: SMB1 $D17B-$D1D0 (86 instruction bytes) compared with shared src/game/oam/bowser_gfx.c; both-half order, direction wrap, rear transfer, ObjectOffset restoration, state gate, bounds and collision tail agree."
+        "M2 T63 S17 static source-order audit: SMB1 $D17B-$D1D0 (86 instruction bytes) compared with shared src/game/oam/bowser_gfx.c; both-half order, direction wrap, rear transfer, ObjectOffset restoration, state gate, bounds and collision tail agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
-        "M2 T63 S17 original-ROM/current operational proof: 512 Bowser graphics snapshots replayed by one x86 and one x64 manifest process with zero differences; focused C90 front/rear contract, platform purity and OpenNT DOS16 shared-source link pass."
+        "M2 T63 S17 original-ROM/current operational proof: 512 Bowser graphics snapshots replayed by one x86 and one x64 manifest process with zero differences; focused C90 front/rear contract, platform purity and OpenNT DOS16 shared-source link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Is the sole return tail after rear processing or non-normal half state; it leaves ObjectOffset restored and BowserGfxFlag zero for the normal two-half route.",
       "currentSourcePaths": [
@@ -48011,11 +48071,13 @@
       "semanticEvidence": [
         "Td S9 B15r Bowser front/rear OAM and collision node-semantics and independent integration audit: SMB1 lines 10289-10331 compared with shared oam/bowser_gfx.c, OAM retainer, bounding-box and collision owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S17 static source-order audit: SMB1 $D17B-$D1D0 (86 instruction bytes) compared with shared src/game/oam/bowser_gfx.c; both-half order, direction wrap, rear transfer, ObjectOffset restoration, state gate, bounds and collision tail agree.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
         "M2 T63 S17 original-ROM/current operational proof: 512 Bowser graphics snapshots replayed by one x86 and one x64 manifest process with zero differences; focused C90 front/rear contract, platform purity and OpenNT DOS16 shared-source link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Increments BowserGfxFlag, performs the retainer relative/offscreen/draw child, and only for normal state writes bounding box control $0a before bound-box generation and player collision tail.",
       "currentSourcePaths": [
@@ -48032,11 +48094,13 @@
       "semanticEvidence": [
         "Td S9 B15s Bowser flame-timer node-semantics and independent integration audit: SMB1 lines 10337-10347 compared with shared enemy/frenzy.c and both named Bowser flame callers; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S18 static source-order audit: SMB1 $D1DD-$D1E7 (11 instruction bytes) plus both caller relations compared with shared enemy/frenzy.c, enemy/init_targets.c and enemy/bowser.c; all eight bytes, old-index read, increment/mask order, return and caller boundaries agree.",
-        "M2 T63 S18 static source-order audit: SMB1 $D1DD-$D1E7 (11 instruction bytes) plus both caller relations compared with shared enemy/frenzy.c, enemy/frenzy.c and enemy/bowser.c; all eight bytes, old-index read, increment/mask order, return and caller boundaries agree."
+        "M2 T63 S18 static source-order audit: SMB1 $D1DD-$D1E7 (11 instruction bytes) plus both caller relations compared with shared enemy/frenzy.c, enemy/frenzy.c and enemy/bowser.c; all eight bytes, old-index read, increment/mask order, return and caller boundaries agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
         "M2 T63 S18 original-ROM/current operational proof: 256 recorded original-ROM SetFlameTimer child calls replayed by one x86 and one x64 process with zero differences in return A and complete RAM; platform purity and OpenNT DOS16 shared-source link pass.",
-        "M2 T63 S18 original-ROM/current operational proof: 256 recorded original-ROM SetFlameTimer child calls replayed by one x86 and one x64 process with zero differences in return A and complete RAM; platform purity and OpenNT DOS16 shared-source link pass."
+        "M2 T63 S18 original-ROM/current operational proof: 256 recorded original-ROM SetFlameTimer child calls replayed by one x86 and one x64 process with zero differences in return A and complete RAM; platform purity and OpenNT DOS16 shared-source link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Preserves all eight ROM timing bytes in source order: $bf,$40,$bf,$bf,$bf,$40,$40,$bf.",
       "currentSourcePaths": [
@@ -48054,12 +48118,14 @@
         "Td S9 B15s Bowser flame-timer node-semantics and independent integration audit: SMB1 lines 10337-10347 compared with shared enemy/frenzy.c and both named Bowser flame callers; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S18 static source-order audit: SMB1 $D1DD-$D1E7 (11 instruction bytes) plus both caller relations compared with shared enemy/frenzy.c, enemy/init_targets.c and enemy/bowser.c; all eight bytes, old-index read, increment/mask order, return and caller boundaries agree.",
         "M2 T63 S18 static source-order audit: SMB1 $D1DD-$D1E7 (11 instruction bytes) plus both caller relations compared with shared enemy/frenzy.c, enemy/frenzy.c and enemy/bowser.c; all eight bytes, old-index read, increment/mask order, return and caller boundaries agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
         "M2 T63 S18 original-ROM/current operational proof: 256 recorded original-ROM SetFlameTimer child calls replayed by one x86 and one x64 process with zero differences in return A and complete RAM; platform purity and OpenNT DOS16 shared-source link pass.",
         "M2 T63 S18 original-ROM/current operational proof: 256 recorded original-ROM SetFlameTimer child calls replayed by one x86 and one x64 process with zero differences in return A and complete RAM; platform purity and OpenNT DOS16 shared-source link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Reads the old BowserFlameTimerCtrl as table index, increments it, masks only the stored new value to three bits, then returns the old-index table byte.",
       "currentSourcePaths": [
@@ -48077,12 +48143,14 @@
         "Td S9 B15s Bowser flame-timer node-semantics and independent integration audit: SMB1 lines 10337-10347 compared with shared enemy/frenzy.c and both named Bowser flame callers; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S18 static source-order audit: SMB1 $D1DD-$D1E7 (11 instruction bytes) plus both caller relations compared with shared enemy/frenzy.c, enemy/init_targets.c and enemy/bowser.c; all eight bytes, old-index read, increment/mask order, return and caller boundaries agree.",
         "M2 T63 S18 static source-order audit: SMB1 $D1DD-$D1E7 (11 instruction bytes) plus both caller relations compared with shared enemy/frenzy.c, enemy/frenzy.c and enemy/bowser.c; all eight bytes, old-index read, increment/mask order, return and caller boundaries agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "operationalEvidence": [
         "M2 T63 S18 original-ROM/current operational proof: 256 recorded original-ROM SetFlameTimer child calls replayed by one x86 and one x64 process with zero differences in return A and complete RAM; platform purity and OpenNT DOS16 shared-source link pass.",
         "M2 T63 S18 original-ROM/current operational proof: 256 recorded original-ROM SetFlameTimer child calls replayed by one x86 and one x64 process with zero differences in return A and complete RAM; platform purity and OpenNT DOS16 shared-source link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:459008original roots eachwidth2032RAM/24APU/orderedwrites0diff including327936postrepair routes;all249PC/36branchpairs,returnA for direct timer,finalX==08,10focusedtests each. Three targets built and EXEs refreshed,DOScompile/linkonly."
       ],
       "semanticContract": "Is the common return endpoint for timer selection and non-normal Bowser-flame state exit; it adds no state mutation.",
       "currentSourcePaths": [
@@ -168606,16 +168674,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P64 checkpoint - normal defeated and jumping enemy movement reconciled:12labels/69instructions/16RAM joined6boundedclauses;statepriority/exact5gravity/postchildstate,tempstackedspeed,revival/erasure/tailorder. Falsefallthrough01752 corrected infeasible,rawretained;caller/inter-frame lifetimespending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P65 checkpoint - paratroopa movement and shared X counters reconciled:14labels/70instructions/30RAM joined6boundedclauses;redanchor/center/forcegates,realgreenchildorder/framebits,rawmaximum/primarybits/wraps,stackcounter lifetime/returned00. Caller/producer/inter-frame lifetimespending,no newnode/controlcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P67 checkpoint - swimming state and height paths reconciled:23labels/159instructions/70RAM joined8boundedclauses;carry/stack lifetimes,gravity tails,swim phases,page borrows,independent height anchor. Falsefallthrough01795 corrected infeasible;whole-program producer/inter-frame proof remains pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P68 checkpoint - Firebar chain and raw palette indexing repaired:28labels/205instructions/79RAM joined8boundedclauses;spin/relative/residual lookup/order,mirror signs,stackOAM/counter,actual injury. Remove invented raw palette index guard in shared area.c;feasible producer/inter-frame applicability remains pending. Falsefallthrough01860 corrected infeasible.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P69 checkpoint - Bowser chain and raw flame timer repaired:31labels/249instructions/95RAM joined11clauses,3timer nodes transferred for bound raw table read. Source order,stack/child scratch/counter lifetimes,bridge/graphics phases reconciled;whole producer/inter-frame scopes pending."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 5155,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 5536,
+        "localInstructionReceiptSites": 5404,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 5287,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 1839,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 1934,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 1934,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 1839,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -168630,7 +168699,6 @@
           "src/game/objects.c": 48,
           "src/game/frame_root.c": 46,
           "src/game/title_modes.c": 46,
-          "shared game core: enemy/bowser.c": 45,
           "src/game/world/enemy_collision.c": 43,
           "src/game/oam/small_platform_gfx.c": 40,
           "src/game/player_control.c shared C90 player-control owner": 39,
@@ -168655,12 +168723,10 @@
           "src/game/player_end_level.c shared C90 end-level owner": 24,
           "src/game/oam/flagpole_gfx.c": 24,
           "shared game core: enemy/piranha.c": 23,
-          "shared game core: bridge/area/enemy/OAM": 22,
           "shared game core: oam/bowser_flame_gfx.c": 22,
           "src/game/world/geometry.c": 22,
           "src/game/entry.c shared C90 entry owner": 21,
           "src/game/world/fireball_hit.c": 21,
-          "shared game core: oam/bowser_gfx.c": 19,
           "shared game core: enemy/actor_slots.c": 19,
           "src/game/enemy/platform_collision.c": 19,
           "src/game/oam/sprite_row.c": 19,
@@ -168685,7 +168751,6 @@
           "src/game/area.c plus src/game/oam/flagpole_gfx.c": 9,
           "src/game/oam/fireball_gfx.c": 9,
           "src/game/fireball/bubble.c": 9,
-          "src/game/enemy/flying_cheep.c": 7,
           "src/game/oam/sprite_dump.c": 6,
           "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c": 5,
           "src/game/enemy/{lifecycle,podoboo}.c": 5,
@@ -168699,7 +168764,6 @@
           "src/game/oam/firebar_gfx.c": 3,
           "src/game/frame_root.c and src/game/terminal_modes.c": 2,
           "src/game/enemy/platform_callers.c": 2,
-          "shared game core: enemy/loop.c": 2,
           "src/game/world/collision.c:mysmb_world_land_enemy": 2,
           "src/game/oam/sprite_stacker.c": 2,
           "src/game/oam/sprite_dump.c and src/game/oam/block_offscreen.c": 2,

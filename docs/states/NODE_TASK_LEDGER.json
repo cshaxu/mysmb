@@ -40095,8 +40095,8 @@
     {
       "label": "FlameTimerData",
       "line": 10337,
-      "receiver": "M2 T41 S4",
-      "receivingBasis": "Accepted transfer-200: flame actor/timer chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "Accepted current Bowser child raw-index repair;previous scoped timer evidence retained.",
       "futurePackage": null,
       "history": [
         {
@@ -40116,8 +40116,8 @@
     {
       "label": "SetFlameTimer",
       "line": 10340,
-      "receiver": "M2 T41 S4",
-      "receivingBasis": "Accepted transfer-200: flame actor/timer chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "Accepted current Bowser child raw-index repair;previous scoped timer evidence retained.",
       "futurePackage": null,
       "history": [
         {
@@ -40137,8 +40137,8 @@
     {
       "label": "ExFl",
       "line": 10347,
-      "receiver": "M2 T41 S4",
-      "receivingBasis": "Accepted transfer-200: flame actor/timer chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "Accepted current Bowser child raw-index repair;previous scoped timer evidence retained.",
       "futurePackage": null,
       "history": [
         {
@@ -69839,6 +69839,19 @@
         "ClrGetLoop",
         "SetBGColor",
         "SetVRAMOffset"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-bowser-timer-1",
+      "type": "transfer",
+      "from": "M2 T41 S4",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "FlameTimerData",
+        "SetFlameTimer",
+        "ExFl"
       ],
       "acceptedBy": "Coordinator under owner same-S repair mandate.",
       "evidence": "docs/proposals/m2/t70-final-current-certification.md"
@@ -767388,7 +767401,36 @@
         "SetSDir",
         "NoColFB",
         "GetFirebarPosition",
-        "GetHAdder"
+        "GetHAdder",
+        "MoveFlyingCheepCheep",
+        "FlyCC",
+        "AddCCF",
+        "BPGet",
+        "MoveD_Bowser",
+        "NoBFall",
+        "RunBowser",
+        "KillAllEnemies",
+        "KillLoop",
+        "BowserControl",
+        "ChkMouth",
+        "FeetTmr",
+        "ResetMDr",
+        "B_FaceP",
+        "GetPRCmp",
+        "GetDToO",
+        "CompDToO",
+        "HammerChk",
+        "SetHmrTmr",
+        "SkipToFB",
+        "MakeBJump",
+        "ChkFireB",
+        "SpawnFBr",
+        "SetFBTmr",
+        "BowserGfxHandler",
+        "CopyFToR",
+        "ExBGfxH",
+        "ProcessBowserHalf",
+        "FlameTimerData"
       ],
       "baseline": 1992,
       "incomingComplete": [

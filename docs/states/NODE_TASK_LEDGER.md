@@ -120,7 +120,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T41 S13 | 5 | `OffscreenBoundsCheck`, `LimitB`, `ExtendLB`, `TooFar`, `ExScrnBd` |
 | M2 T41 S2 | 19 | `PRandomRange`, `RunBowser`, `KillAllEnemies`, `KillLoop`, `BowserControl`, `ChkMouth`, `FeetTmr`, `ResetMDr`, `B_FaceP`, `GetPRCmp`, `GetDToO`, `CompDToO`, `HammerChk`, `SetHmrTmr`, `SkipToFB`, `MakeBJump`, `ChkFireB`, `SpawnFBr`, `SetFBTmr` |
 | M2 T41 S3 | 4 | `BowserGfxHandler`, `CopyFToR`, `ExBGfxH`, `ProcessBowserHalf` |
-| M2 T41 S4 | 12 | `FlameTimerData`, `SetFlameTimer`, `ExFl`, `ProcBowserFlame`, `SFlmX`, `SetGfxF`, `FlmeAt`, `DrawFlameLoop`, `M3FOfs`, `M2FOfs`, `M1FOfs`, `ExFlmeD` |
+| M2 T41 S4 | 9 | `ProcBowserFlame`, `SFlmX`, `SetGfxF`, `FlmeAt`, `DrawFlameLoop`, `M3FOfs`, `M2FOfs`, `M1FOfs`, `ExFlmeD` |
 | M2 T41 S5 | 3 | `RunFireworks`, `SetupExpl`, `FireworksSoundScore` |
 | M2 T41 S6 | 20 | `StarFlagYPosAdder`, `StarFlagXPosAdder`, `StarFlagTileData`, `RunStarFlagObj`, `GameTimerFireworks`, `SetFWC`, `IncrementSFTask1`, `StarFlagExit`, `AwardGameTimerPoints`, `NoTTick`, `EndAreaPoints`, `ELPGive`, `RaiseFlagSetoffFWorks`, `SetoffF`, `DrawStarFlag`, `DSFLoop`, `DrawFlagSetTimer`, `IncrementSFTask2`, `DelayToAreaEnd`, `StarFlagExit2` |
 | M2 T41 S7 | 6 | `MovePiranhaPlant`, `ChkPlayerNearPipe`, `ReversePlantSpeed`, `SetupToMovePPlant`, `RiseFallPiranhaPlant`, `PutinPipe` |
@@ -201,7 +201,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T70 S13 | 13 | `SetupIntermediate`, `AreaPalette`, `GetAreaPalette`, `SetVRAMAddr_A`, `NextSubtask`, `BGColorCtrl_Addr`, `BackgroundColors`, `PlayerColors`, `GetBackgroundColor`, `NoBGColor`, `GetAlternatePalette1`, `SetVRAMAddr_B`, `NoAltPal` |
 | M2 T70 S14 | 12 | `WriteTopStatusLine`, `WriteBottomStatusLine`, `DisplayTimeUp`, `NoTimeUp`, `DisplayIntermediate`, `PlayerInter`, `OutputInter`, `GameOverInter`, `NoInter`, `ResetSpritesAndScreenTimer`, `ResetScreenTimer`, `NoReset` |
 | M2 T70 S15 | 17 | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeNameTables`, `WriteNTAddr`, `InitNTLoop`, `InitATLoop`, `InitScroll`, `WritePPUReg1`, `InitializeMemory`, `InitPageLoop`, `InitByteLoop`, `InitByte`, `SkipByte` |
-| M2 T70 S17 | 111 | `OperModeExecutionTree`, `TitleScreenMode`, `VictoryModeSubroutines`, `GetPlayerColors`, `ChkFiery`, `StartClrGet`, `ClrGetLoop`, `SetBGColor`, `SetVRAMOffset`, `DrawTitleScreen`, `OutputTScr`, `ChkHiByte`, `RenderAreaGraphics`, `DrawMTLoop`, `RightCheck`, `LLeft`, `NextMTRow`, `SetAttrib`, `ExitDrawM`, `RenderAttributeTables`, `SetATHigh`, `AttribLoop`, `SetVRAMCtrl`, `ColorRotation`, `GetBlankPal`, `GetAreaPal`, `ExitColorRot`, `AreaParserTasks`, `RenderSceneryTerrain`, `ClrMTBuf`, `ThirdP`, `RendBack`, `SceLoop1`, `RendFore`, `SceLoop2`, `NoFore`, `RendTerr`, `TerMTile`, `StoreMT`, `TerrLoop`, `NoCloud2`, `TerrBChk`, `NextTBit`, `EndUChk`, `RendBBuf`, `ChkMTLow`, `StrBlock`, `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj`, `AlterAreaAttributes`, `Alter2`, `SetFore`, `AreaStyleObject`, `CastleObject`, `CRendLoop`, `ChkCFloor`, `NotTall`, `PlayerStop`, `ExitCastle`, `WaterPipe`, `IntroPipe`, `VPipeSectLoop`, `NoBlankP`, `ExitPipe`, `RenderSidewaysPipe`, `DrawSidePart`, `VerticalPipe`, `WarpPipe`, `DrawPipe`, `GetPipeHeight`, `RenderUnderPart`, `DrawThisRow`, `WaitOneRow`, `ExitUPartR`, `GameMode`, `GameRoutines`, `PlayerHole`, `HoleBottom`, `MoveSubs`, `FireballXSpdData`, `FireballObjCore`, `WhLoop`, `WhirlpoolActivate`, `WhPull` |
+| M2 T70 S17 | 114 | `OperModeExecutionTree`, `TitleScreenMode`, `VictoryModeSubroutines`, `GetPlayerColors`, `ChkFiery`, `StartClrGet`, `ClrGetLoop`, `SetBGColor`, `SetVRAMOffset`, `DrawTitleScreen`, `OutputTScr`, `ChkHiByte`, `RenderAreaGraphics`, `DrawMTLoop`, `RightCheck`, `LLeft`, `NextMTRow`, `SetAttrib`, `ExitDrawM`, `RenderAttributeTables`, `SetATHigh`, `AttribLoop`, `SetVRAMCtrl`, `ColorRotation`, `GetBlankPal`, `GetAreaPal`, `ExitColorRot`, `AreaParserTasks`, `RenderSceneryTerrain`, `ClrMTBuf`, `ThirdP`, `RendBack`, `SceLoop1`, `RendFore`, `SceLoop2`, `NoFore`, `RendTerr`, `TerMTile`, `StoreMT`, `TerrLoop`, `NoCloud2`, `TerrBChk`, `NextTBit`, `EndUChk`, `RendBBuf`, `ChkMTLow`, `StrBlock`, `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj`, `AlterAreaAttributes`, `Alter2`, `SetFore`, `AreaStyleObject`, `CastleObject`, `CRendLoop`, `ChkCFloor`, `NotTall`, `PlayerStop`, `ExitCastle`, `WaterPipe`, `IntroPipe`, `VPipeSectLoop`, `NoBlankP`, `ExitPipe`, `RenderSidewaysPipe`, `DrawSidePart`, `VerticalPipe`, `WarpPipe`, `DrawPipe`, `GetPipeHeight`, `RenderUnderPart`, `DrawThisRow`, `WaitOneRow`, `ExitUPartR`, `GameMode`, `GameRoutines`, `PlayerHole`, `HoleBottom`, `MoveSubs`, `FireballXSpdData`, `FireballObjCore`, `WhLoop`, `WhirlpoolActivate`, `WhPull`, `FlameTimerData`, `SetFlameTimer`, `ExFl` |
 | M2 T70 S4 | 6 | `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`, `NonMaskableInterrupt`, `ScreenOff`, `InitBuffer` |
 | M2 T70 S6 | 9 | `RotPRandomBit`, `Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipSprite0`, `SkipMainOper`, `MoveAllSpritesOffscreen`, `MoveSpritesOffscreen`, `SprInitLoop` |
 | M2 T70 S7 | 6 | `SpriteShuffler`, `ShuffleLoop`, `StrSprOffset`, `NextSprOffset`, `SetAmtOffset`, `SetMiscOffset` |
@@ -1436,9 +1436,9 @@ transfer existing ownership or allocate a numeric T.
 | 10296 | `CopyFToR` | M2 T41 S3 | existing closure backlog; Accepted transfer-198: Bowser front/rear orchestration. | M2 T21 S5; M2 T24 S1 |
 | 10321 | `ExBGfxH` | M2 T41 S3 | existing closure backlog; Accepted transfer-198: Bowser front/rear orchestration. | M2 T21 S5; M2 T24 S1 |
 | 10323 | `ProcessBowserHalf` | M2 T41 S3 | existing closure backlog; Accepted transfer-198: Bowser front/rear orchestration. | M2 T21 S5; M2 T24 S1 |
-| 10337 | `FlameTimerData` | M2 T41 S4 | existing closure backlog; Accepted transfer-200: flame actor/timer chain. | M2 T21 S5; M2 T24 S1 |
-| 10340 | `SetFlameTimer` | M2 T41 S4 | existing closure backlog; Accepted transfer-200: flame actor/timer chain. | M2 T21 S5; M2 T24 S1 |
-| 10347 | `ExFl` | M2 T41 S4 | existing closure backlog; Accepted transfer-200: flame actor/timer chain. | M2 T21 S5; M2 T24 S1 |
+| 10337 | `FlameTimerData` | M2 T70 S17 | existing closure backlog; Accepted current Bowser child raw-index repair;previous scoped timer evidence retained. | M2 T21 S5; M2 T24 S1 |
+| 10340 | `SetFlameTimer` | M2 T70 S17 | existing closure backlog; Accepted current Bowser child raw-index repair;previous scoped timer evidence retained. | M2 T21 S5; M2 T24 S1 |
+| 10347 | `ExFl` | M2 T70 S17 | existing closure backlog; Accepted current Bowser child raw-index repair;previous scoped timer evidence retained. | M2 T21 S5; M2 T24 S1 |
 | 10349 | `ProcBowserFlame` | M2 T41 S4 | existing closure backlog; Accepted transfer-199: flame actor/timer chain. | M2 T19 S3; M2 T19 S4; M2 T21 S5; M2 T24 S1 |
 | 10356 | `SFlmX` | M2 T41 S4 | existing closure backlog; Accepted transfer-199: flame actor/timer chain. | M2 T21 S5; M2 T24 S1 |
 | 10374 | `SetGfxF` | M2 T41 S4 | existing closure backlog; Accepted transfer-199: flame actor/timer chain. | M2 T21 S5; M2 T24 S1 |
@@ -2477,7 +2477,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T41 S1 | 0 | 6 | owner-approved-source-order, bridge-collapse; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
 | M2 T41 S2 | 0 | 19 | owner-approved-source-order, bowser-control; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
 | M2 T41 S3 | 0 | 4 | owner-approved-source-order, bowser-graphics-chain; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
-| M2 T41 S4 | 0 | 12 | owner-approved-source-order, bowser-flame-chain; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
+| M2 T41 S4 | 0 | 9 | owner-approved-source-order, bowser-flame-chain; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
 | M2 T41 S5 | 0 | 3 | owner-approved-source-order, fireworks-lifetime; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
 | M2 T41 S6 | 0 | 20 | owner-approved-source-order, star-flag; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
 | M2 T41 S7 | 0 | 6 | owner-approved-source-order, piranha-movement; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
@@ -2824,7 +2824,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T70 S14 | 0 | 12 | hud-intermediate-timer-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S15 | 0 | 17 | final-reset-startup-source-and-graph-review; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S16 | 0 | 0 | executable-data-binding-manifest; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S17 | 0 | 111 | material-use-completeness-and-path-reconciliation, corrective-title-pointer-output-chain, corrective-column-output-chain, corrective-parser-output-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S17 | 0 | 114 | material-use-completeness-and-path-reconciliation, corrective-title-pointer-output-chain, corrective-column-output-chain, corrective-parser-output-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M2 T9 | 1 | - | [record](../../docs/etc/architecture/smb1-frame-output-ledger.md); [record](../../docs/history/M2-T9-frame-output-ledger-and-reference-recorder.md); S not recorded |
 | M2 Td | 0 | - | [record](../../docs/proposals/m2-rom-structural-recovery.md); [record](../../docs/states/QUEUE.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -3227,6 +3227,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-t70-s17-fireball-index-1 | M2 T34 S2 | M2 T70 S17 | 2 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s17-color-counter-1 | M2 T28 S2 | M2 T70 S17 | 4 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s17-injury-palette-1 | M2 T70 S13 | M2 T70 S17 | 6 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-bowser-timer-1 | M2 T41 S4 | M2 T70 S17 | 3 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3730,4 +3731,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T70 S14 | 12 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S15 | 17 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S16 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S17 | 950 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S17 | 979 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
