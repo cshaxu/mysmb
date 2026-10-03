@@ -768096,7 +768096,13 @@
         "HJump",
         "MoveHammerBroXDir",
         "Shimmy",
-        "SetShim"
+        "SetShim",
+        "ChkNumTimer",
+        "LoadNumTiles",
+        "ChkTallEnemy",
+        "GetAltOffset",
+        "FloateyPart",
+        "SetupNumSpr"
       ],
       "baseline": 1992,
       "incomingComplete": [

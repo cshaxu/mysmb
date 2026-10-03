@@ -9087,3 +9087,28 @@ Current src/game/enemy/distance.c normalizedSHA256:260ed46333bf7de18963cce9e5b30
 Current src/game/world/movement.c normalizedSHA256:618464a8d33358e1a69cd3c269e29d0db31b4c7c160ef40468ce68c3cf978b6b.
 
 Current src/game/world/gravity.c normalizedSHA256:4213b8f264e8794ba761d6f791bea7a89cd69add3605d97d43b66de48a95b0a7.
+
+## S17 P102 admission - floatey score award and sprite uses
+
+Existing84C3-8566floateychain74instructions/26RAM/8labels FloateyNumbersRoutine,ChkNumTimer,DecNumTimer,LoadNumTiles,ChkTallEnemy,GetAltOffset,FloateyPart,SetupNumSpr. Sharedobjects.c actualAddToScore/DumpTwoSpr children. Controlclamp0-0B/timerold2Baward vsnewbyteDEC/1UP/scoremodifier/callerXrestore/OAMgrouprawindex/Y-CMPcarry/absoluteOAMtiles order andstablecontrolcachedreads required. 65536actual84C3profilesrawControl/Timer/ID/State/Y/X/OAMoffset/AltCtrl/VRAMoffset/lives andlegalCurrentPlayer0-1/ObjectOffset0-5/decimaldigits;somearecoupled,notcartesianclaim. Fullnonphysical-stackRAM/APU/orderedwrites,CPUvoidunused. ROMreadonly/raw4096batch128MiB/120sec cleanupbelowbuild. Fresh0/max1992;P98productsunchangedunlessmismatch;wholeproducer/inter-frame/finalpackagespending.
+
+## S17 P102 checkpoint - floatey score award and sprite uses reconciled
+
+S17 P102:8floatey labels/74instructions/26RAM joined4boundedclauses;65536actualroots eachwidth0diff/all74PC/13branchpairs,4tests each. Scope1609/fresh0;10200/10691instruction receipts,3639/3773RAM receipts;491instructions/134RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP98unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| F1 | FloateyNumbersRoutine,ChkNumTimer | Control0earlyreturn;Control>=0Bclampsandpublishes0BbeforeTimerread. Timer0 clearsControlandreturns;nonzero originalTYAcontrolkeptinY/oldTimerinA. Clocalcontrolsamebounded1-11;nochildbeforeclamp/timerpredicate. |
+| F2 | DecNumTimer,LoadNumTiles | ByteDECTimerbeforeawardcheckbutCMPusesoldA:onlyoldTimer2Bawards. Control0B INCLivesbyteandSquare2Sound40. ScoreUpdateData[Control]highNibbleDigitModifierindex/lowNibblevalue thenactualAddToScore;sourceXreturnObjectOffset corresponds08==slot0-5. Childread/writeaudit:modifier0133-0139/score07D7+/VRAM0300-0409 cannotaliasFloateyControl0110-0115/08,soCcachedcontrol/slotstablethroughchild. ActualpostchildRAMcomparedincludingVRAMoffsetaliases;table1-11boundedbyF1. |
+| F3 | ChkTallEnemy,GetAltOffset | ReadEnemyOAM/ID/stateafteractualscorechild. ID12/0D/0A/0Bkeepsordinaryoffset;ID05orID>=09usesAlt,otherIDusesAltonlyState<02. RawSpriteOffsetCtrl indexesRAM06EC+Ctrl withabsoluteaddition,thenoriginalXreload08;CreadssamepostchildRAM. Controls0-255addresswithin06EC-07EB,includingupdatedscorealiases,notlimitedbytesttable. NochildbetweendecisionandFloateyYread. |
+| F4 | FloateyPart,SetupNumSpr | YCMP18carry:below18keepsoriginalYandSBC8withborrow=sub9;at/above18 SBC1publishesY-1withcarry1,thenSBC8=sub8. ActualDumpTwoSprwritesbothYusingabsolute0200+OAM/0204+OAM. Xleft/right(+8byte),attributes2,tilesfromliveControl*2;CcachedcontrolstablebecauseOAM0200-0306cannotalias0110-0115andscorechildpreviousproof. Preserve16bitabsoluteOAMaddresses evenhighFF offsets;sourceCPUXreload08notclaimedasnativevoidreturn. |
+
+Actual84C3root65536profiles,legalCurrentPlayer0-1/ObjectOffsetXsame0-5/decimaldigits,rawControl/Timer/Y/X/EnemyID/State/OAMoffset/AltCtrl/VRAMoffset/lives. All74PC/13branchpairs/bothwidths0diff. Profilescontrolled/coupled,notallRAMcartesianorwholeproducer/inter-frameproof. Full2048RAMexceptobservedphysicalCPUstackpushspan plus24APU/orderedwrites,CPUvoidunused. ActualAddToScore/DumpTwoSprchildren,ROMunpatched. ExplicitcachedControl/slotnoaliasproofcoverschildscore/modifier/VRAMwritesandlaterOAMabsolute0200-0306writes;AltCtrlrawRAM06EC-07EBaliasesliveupdatedscoredigitsandisreadpostchild. Sourcecarry/memoryordercheckedagainstASM,notinferredonlyfromfinalstate. Fourpartitionclauses/fournegativeaccountingmutants/fourfreshfocusedtests eachwidthpass. No source/productchange;threeP98hashesunchanged,DOScompile/linkonly. Fullmaterial/pixels/routes/snapshotremainopen.
+
+Current src/game/objects.c normalizedSHA256:7820f9d8da742bb9b1d36806dd51c858c8b43e120bd9e680b18b8a64c332fc09.
+
+Current src/game/score.c normalizedSHA256:90ad2d2c11708edcc6326fb190b253d9e32e2cc51885a531a5d1182654f3b341.
+
+Current src/game/status.c normalizedSHA256:afc46297e447ad911458c1e234497fff708a73a51c9f8d47e499103d956e95ef.
+
+Current src/game/oam/sprite_dump.c normalizedSHA256:a269d505b932e0c1f8735536be7ebfd1512e9351f1b06289eecc8b40422fe3fa.

@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P102 floatey uses](../proposals/m2/t70-final-current-certification.md#s17-p102-checkpoint---floatey-score-award-and-sprite-uses-reconciled).
+S17 P102:8floatey labels/74instructions/26RAM joined4boundedclauses;65536actualroots eachwidth0diff/all74PC/13branchpairs,4tests each. Scope1609/fresh0;10200/10691instruction receipts,3639/3773RAM receipts;491instructions/134RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP98unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
 [P101 hammer bro uses](../proposals/m2/t70-final-current-certification.md#s17-p101-checkpoint---hammer-bro-movement-and-throw-uses-reconciled).
 S17 P101:9hammer bro labels/71instructions/30RAM joined3boundedclauses;65536actualroots eachwidth0diff/all71PC/13branchpairs,4tests each. Scope1603/fresh0;10126/10691instruction receipts,3613/3773RAM receipts;565instructions/160RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP98unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 

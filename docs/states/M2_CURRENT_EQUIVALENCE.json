@@ -24740,12 +24740,14 @@
       "semanticEvidence": [
         "M2 T52 S3 ROM logic: controlled normal-NMI floatey 1-UP route covers $84c3-$84e4 and AddToScore $bc27-$bc48; source lines 1320-1337 show DEC RAM write before the $2b comparison, score-table access and JSR.",
         "M2 T53 S5 static re-audit: ROM lines 1287-1378 and the current shared objects.c owner were compared branch-by-branch after the ChkTallEnemy repair; control, RAM/table and OAM contracts match source order.",
-        "docs/proposals/m2/t70-final-current-certification.md S12 P1:actual849f-8566 table/branch/store/call audit;source IDs Spiny12,HammerBro05,TallEnemy09;preserve CMP18 carry through one-pixel decrement;canonical DumpTwoSpr call and absolute OAM stores in original order;all36 table bytes bound."
+        "docs/proposals/m2/t70-final-current-certification.md S12 P1:actual849f-8566 table/branch/store/call audit;source IDs Spiny12,HammerBro05,TallEnemy09;preserve CMP18 carry through one-pixel decrement;canonical DumpTwoSpr call and absolute OAM stores in original order;all36 table bytes bound.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P102 checkpoint - floatey score award and sprite uses reconciled:8labels/74instructions/26RAM joined4boundedclauses;oldtimer2B/controlclamp/score-child-readwrite/stablecontrol/ID-altOAM/Y-SBCcarry/absoluteOAM-order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T52 S3 operational: mysmb.floatey-oam-smoke covers initial $2b award with RAM timer $2a before score effects and initial $2a non-award with RAM timer $29; x86/x64 platform-purity and Win32 self-tests pass; OpenNT DOS16 links shared objects.c.",
         "M2 T53 S5 controlled owner-local Floatey routes: one-up, timer-zero and numeric-alt fixtures, 60-frame warmup and eight captured frames each, match original ROM on current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalars and audio; x86/x64 records are byte-identical. Focused OAM branch regression and DOS16 MZ link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S12 P1:15624 original roots plus132 persistent45-call lifecycles/5940 records both widths zero full-RAM diff;only opcode-confirmed physical pushes01f7-01fd excluded(case-specific or protocol-cumulative);13 conditional sites both outcomes,33 reachable table bytes read;1794 real score and14070 real dump calls;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
+        "docs/proposals/m2/t70-final-current-certification.md S12 P1:15624 original roots plus132 persistent45-call lifecycles/5940 records both widths zero full-RAM diff;only opcode-confirmed physical pushes01f7-01fd excluded(case-specific or protocol-cumulative);13 conditional sites both outcomes,33 reachable table bytes read;1794 real score and14070 real dump calls;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P102 checkpoint - floatey score award and sprite uses reconciled:65536original84C3roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all74PC/13branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "ROM $84c3 dispatches the current ObjectOffset floatey control through clamp, timer, score, OAM-offset selection, vertical motion and two-sprite output. The shared C entry preserves the source timer write and score-call ordering.",
       "currentSourcePaths": [
@@ -24762,11 +24764,13 @@
       "semanticEvidence": [
         "Td S9 A7 Floatey static node-semantics pass: SMB1 lines 1287-1378 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T53 S5 static re-audit: ROM lines 1287-1378 and the current shared objects.c owner were compared branch-by-branch after the ChkTallEnemy repair; control, RAM/table and OAM contracts match source order.",
-        "docs/proposals/m2/t70-final-current-certification.md S12 P1:actual849f-8566 table/branch/store/call audit;source IDs Spiny12,HammerBro05,TallEnemy09;preserve CMP18 carry through one-pixel decrement;canonical DumpTwoSpr call and absolute OAM stores in original order;all36 table bytes bound."
+        "docs/proposals/m2/t70-final-current-certification.md S12 P1:actual849f-8566 table/branch/store/call audit;source IDs Spiny12,HammerBro05,TallEnemy09;preserve CMP18 carry through one-pixel decrement;canonical DumpTwoSpr call and absolute OAM stores in original order;all36 table bytes bound.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P102 checkpoint - floatey score award and sprite uses reconciled:8labels/74instructions/26RAM joined4boundedclauses;oldtimer2B/controlclamp/score-child-readwrite/stablecontrol/ID-altOAM/Y-SBCcarry/absoluteOAM-order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T53 S5 controlled owner-local Floatey routes: one-up, timer-zero and numeric-alt fixtures, 60-frame warmup and eight captured frames each, match original ROM on current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalars and audio; x86/x64 records are byte-identical. Focused OAM branch regression and DOS16 MZ link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S12 P1:15624 original roots plus132 persistent45-call lifecycles/5940 records both widths zero full-RAM diff;only opcode-confirmed physical pushes01f7-01fd excluded(case-specific or protocol-cumulative);13 conditional sites both outcomes,33 reachable table bytes read;1794 real score and14070 real dump calls;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
+        "docs/proposals/m2/t70-final-current-certification.md S12 P1:15624 original roots plus132 persistent45-call lifecycles/5940 records both widths zero full-RAM diff;only opcode-confirmed physical pushes01f7-01fd excluded(case-specific or protocol-cumulative);13 conditional sites both outcomes,33 reachable table bytes read;1794 real score and14070 real dump calls;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P102 checkpoint - floatey score award and sprite uses reconciled:65536original84C3roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all74PC/13branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "ROM $84ce: clears FloateyNum_Control and returns when its current timer is zero; nonzero timer enters DecNumTimer with control in Y.",
       "currentSourcePaths": [
@@ -24784,14 +24788,16 @@
         "M2 T52 S3 ROM logic: controlled normal-NMI floatey 1-UP route covers $84c3-$84e4 and AddToScore $bc27-$bc48; source lines 1320-1337 show DEC RAM write before the $2b comparison, score-table access and JSR.",
         "M2 T53 S5 static re-audit: ROM lines 1287-1378 and the current shared objects.c owner were compared branch-by-branch after the ChkTallEnemy repair; control, RAM/table and OAM contracts match source order.",
         "docs/proposals/m2/t70-final-current-certification.md S12 P1:actual849f-8566 table/branch/store/call audit;source IDs Spiny12,HammerBro05,TallEnemy09;preserve CMP18 carry through one-pixel decrement;canonical DumpTwoSpr call and absolute OAM stores in original order;all36 table bytes bound.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P102 checkpoint - floatey score award and sprite uses reconciled:8labels/74instructions/26RAM joined4boundedclauses;oldtimer2B/controlclamp/score-child-readwrite/stablecontrol/ID-altOAM/Y-SBCcarry/absoluteOAM-order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T52 S3 operational: mysmb.floatey-oam-smoke covers initial $2b award with RAM timer $2a before score effects and initial $2a non-award with RAM timer $29; x86/x64 platform-purity and Win32 self-tests pass; OpenNT DOS16 links shared objects.c.",
         "M2 T53 S5 controlled owner-local Floatey routes: one-up, timer-zero and numeric-alt fixtures, 60-frame warmup and eight captured frames each, match original ROM on current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalars and audio; x86/x64 records are byte-identical. Focused OAM branch regression and DOS16 MZ link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S12 P1:15624 original roots plus132 persistent45-call lifecycles/5940 records both widths zero full-RAM diff;only opcode-confirmed physical pushes01f7-01fd excluded(case-specific or protocol-cumulative);13 conditional sites both outcomes,33 reachable table bytes read;1794 real score and14070 real dump calls;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P102 checkpoint - floatey score award and sprite uses reconciled:65536original84C3roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all74PC/13branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "ROM $84db decrements FloateyNum_Timer RAM first, then CMP compares the already loaded pre-decrement A value to $2b. The $2b path writes the decremented timer before one-up/table effects.",
       "currentSourcePaths": [
@@ -24808,12 +24814,14 @@
       "semanticEvidence": [
         "M2 T52 S3 ROM logic: controlled normal-NMI floatey 1-UP route covers $84c3-$84e4 and AddToScore $bc27-$bc48; source lines 1320-1337 show DEC RAM write before the $2b comparison, score-table access and JSR.",
         "M2 T53 S5 static re-audit: ROM lines 1287-1378 and the current shared objects.c owner were compared branch-by-branch after the ChkTallEnemy repair; control, RAM/table and OAM contracts match source order.",
-        "docs/proposals/m2/t70-final-current-certification.md S12 P1:actual849f-8566 table/branch/store/call audit;source IDs Spiny12,HammerBro05,TallEnemy09;preserve CMP18 carry through one-pixel decrement;canonical DumpTwoSpr call and absolute OAM stores in original order;all36 table bytes bound."
+        "docs/proposals/m2/t70-final-current-certification.md S12 P1:actual849f-8566 table/branch/store/call audit;source IDs Spiny12,HammerBro05,TallEnemy09;preserve CMP18 carry through one-pixel decrement;canonical DumpTwoSpr call and absolute OAM stores in original order;all36 table bytes bound.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P102 checkpoint - floatey score award and sprite uses reconciled:8labels/74instructions/26RAM joined4boundedclauses;oldtimer2B/controlclamp/score-child-readwrite/stablecontrol/ID-altOAM/Y-SBCcarry/absoluteOAM-order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T52 S3 operational: mysmb.floatey-oam-smoke covers initial $2b award with RAM timer $2a before score effects and initial $2a non-award with RAM timer $29; x86/x64 platform-purity and Win32 self-tests pass; OpenNT DOS16 links shared objects.c.",
         "M2 T53 S5 controlled owner-local Floatey routes: one-up, timer-zero and numeric-alt fixtures, 60-frame warmup and eight captured frames each, match original ROM on current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalars and audio; x86/x64 records are byte-identical. Focused OAM branch regression and DOS16 MZ link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S12 P1:15624 original roots plus132 persistent45-call lifecycles/5940 records both widths zero full-RAM diff;only opcode-confirmed physical pushes01f7-01fd excluded(case-specific or protocol-cumulative);13 conditional sites both outcomes,33 reachable table bytes read;1794 real score and14070 real dump calls;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
+        "docs/proposals/m2/t70-final-current-certification.md S12 P1:15624 original roots plus132 persistent45-call lifecycles/5940 records both widths zero full-RAM diff;only opcode-confirmed physical pushes01f7-01fd excluded(case-specific or protocol-cumulative);13 conditional sites both outcomes,33 reachable table bytes read;1794 real score and14070 real dump calls;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P102 checkpoint - floatey score award and sprite uses reconciled:65536original84C3roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all74PC/13branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "ROM $84e2 indexes ScoreUpdateData by control, writes the selected DigitModifier, invokes AddToScore, then continues to OAM selection after the timer RAM write.",
       "currentSourcePaths": [
@@ -24831,11 +24839,13 @@
         "Td S9 A7 Floatey static node-semantics pass: SMB1 lines 1287-1378 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T53 S5 static re-audit: ROM lines 1287-1378 and the current shared objects.c owner were compared branch-by-branch after the ChkTallEnemy repair; control, RAM/table and OAM contracts match source order.",
         "docs/proposals/m2/t70-final-current-certification.md S12 source audit:wrong enemy ID partition,post-decrement carry loss or missing DumpTwoSpr/absolute-indexed output contract;repair and original comparison required.",
-        "docs/proposals/m2/t70-final-current-certification.md S12 P1:actual849f-8566 table/branch/store/call audit;source IDs Spiny12,HammerBro05,TallEnemy09;preserve CMP18 carry through one-pixel decrement;canonical DumpTwoSpr call and absolute OAM stores in original order;all36 table bytes bound."
+        "docs/proposals/m2/t70-final-current-certification.md S12 P1:actual849f-8566 table/branch/store/call audit;source IDs Spiny12,HammerBro05,TallEnemy09;preserve CMP18 carry through one-pixel decrement;canonical DumpTwoSpr call and absolute OAM stores in original order;all36 table bytes bound.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P102 checkpoint - floatey score award and sprite uses reconciled:8labels/74instructions/26RAM joined4boundedclauses;oldtimer2B/controlclamp/score-child-readwrite/stablecontrol/ID-altOAM/Y-SBCcarry/absoluteOAM-order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T53 S5 controlled owner-local Floatey routes: one-up, timer-zero and numeric-alt fixtures, 60-frame warmup and eight captured frames each, match original ROM on current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalars and audio; x86/x64 records are byte-identical. Focused OAM branch regression and DOS16 MZ link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S12 P1:15624 original roots plus132 persistent45-call lifecycles/5940 records both widths zero full-RAM diff;only opcode-confirmed physical pushes01f7-01fd excluded(case-specific or protocol-cumulative);13 conditional sites both outcomes,33 reachable table bytes read;1794 real score and14070 real dump calls;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
+        "docs/proposals/m2/t70-final-current-certification.md S12 P1:15624 original roots plus132 persistent45-call lifecycles/5940 records both widths zero full-RAM diff;only opcode-confirmed physical pushes01f7-01fd excluded(case-specific or protocol-cumulative);13 conditional sites both outcomes,33 reachable table bytes read;1794 real score and14070 real dump calls;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P102 checkpoint - floatey score award and sprite uses reconciled:65536original84C3roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all74PC/13branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "ROM $84f4: selects ordinary or alternate enemy OAM offset based on ID and state, preserving ObjectOffset before FloateyPart.",
       "currentSourcePaths": [
@@ -24852,11 +24862,13 @@
       "semanticEvidence": [
         "Td S9 A7 Floatey static node-semantics pass: SMB1 lines 1287-1378 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T53 S5 static re-audit: ROM lines 1287-1378 and the current shared objects.c owner were compared branch-by-branch after the ChkTallEnemy repair; control, RAM/table and OAM contracts match source order.",
-        "docs/proposals/m2/t70-final-current-certification.md S12 P1:actual849f-8566 table/branch/store/call audit;source IDs Spiny12,HammerBro05,TallEnemy09;preserve CMP18 carry through one-pixel decrement;canonical DumpTwoSpr call and absolute OAM stores in original order;all36 table bytes bound."
+        "docs/proposals/m2/t70-final-current-certification.md S12 P1:actual849f-8566 table/branch/store/call audit;source IDs Spiny12,HammerBro05,TallEnemy09;preserve CMP18 carry through one-pixel decrement;canonical DumpTwoSpr call and absolute OAM stores in original order;all36 table bytes bound.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P102 checkpoint - floatey score award and sprite uses reconciled:8labels/74instructions/26RAM joined4boundedclauses;oldtimer2B/controlclamp/score-child-readwrite/stablecontrol/ID-altOAM/Y-SBCcarry/absoluteOAM-order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T53 S5 controlled owner-local Floatey routes: one-up, timer-zero and numeric-alt fixtures, 60-frame warmup and eight captured frames each, match original ROM on current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalars and audio; x86/x64 records are byte-identical. Focused OAM branch regression and DOS16 MZ link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S12 P1:15624 original roots plus132 persistent45-call lifecycles/5940 records both widths zero full-RAM diff;only opcode-confirmed physical pushes01f7-01fd excluded(case-specific or protocol-cumulative);13 conditional sites both outcomes,33 reachable table bytes read;1794 real score and14070 real dump calls;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
+        "docs/proposals/m2/t70-final-current-certification.md S12 P1:15624 original roots plus132 persistent45-call lifecycles/5940 records both widths zero full-RAM diff;only opcode-confirmed physical pushes01f7-01fd excluded(case-specific or protocol-cumulative);13 conditional sites both outcomes,33 reachable table bytes read;1794 real score and14070 real dump calls;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P102 checkpoint - floatey score award and sprite uses reconciled:65536original84C3roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all74PC/13branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "ROM $8513: loads alternate OAM offset through SprDataOffset_Ctrl then restores ObjectOffset before FloateyPart.",
       "currentSourcePaths": [
@@ -24874,11 +24886,13 @@
         "Td S9 A7 Floatey static node-semantics pass: SMB1 lines 1287-1378 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T53 S5 static re-audit: ROM lines 1287-1378 and the current shared objects.c owner were compared branch-by-branch after the ChkTallEnemy repair; control, RAM/table and OAM contracts match source order.",
         "docs/proposals/m2/t70-final-current-certification.md S12 source audit:wrong enemy ID partition,post-decrement carry loss or missing DumpTwoSpr/absolute-indexed output contract;repair and original comparison required.",
-        "docs/proposals/m2/t70-final-current-certification.md S12 P1:actual849f-8566 table/branch/store/call audit;source IDs Spiny12,HammerBro05,TallEnemy09;preserve CMP18 carry through one-pixel decrement;canonical DumpTwoSpr call and absolute OAM stores in original order;all36 table bytes bound."
+        "docs/proposals/m2/t70-final-current-certification.md S12 P1:actual849f-8566 table/branch/store/call audit;source IDs Spiny12,HammerBro05,TallEnemy09;preserve CMP18 carry through one-pixel decrement;canonical DumpTwoSpr call and absolute OAM stores in original order;all36 table bytes bound.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P102 checkpoint - floatey score award and sprite uses reconciled:8labels/74instructions/26RAM joined4boundedclauses;oldtimer2B/controlclamp/score-child-readwrite/stablecontrol/ID-altOAM/Y-SBCcarry/absoluteOAM-order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T53 S5 controlled owner-local Floatey routes: one-up, timer-zero and numeric-alt fixtures, 60-frame warmup and eight captured frames each, match original ROM on current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalars and audio; x86/x64 records are byte-identical. Focused OAM branch regression and DOS16 MZ link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S12 P1:15624 original roots plus132 persistent45-call lifecycles/5940 records both widths zero full-RAM diff;only opcode-confirmed physical pushes01f7-01fd excluded(case-specific or protocol-cumulative);13 conditional sites both outcomes,33 reachable table bytes read;1794 real score and14070 real dump calls;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
+        "docs/proposals/m2/t70-final-current-certification.md S12 P1:15624 original roots plus132 persistent45-call lifecycles/5940 records both widths zero full-RAM diff;only opcode-confirmed physical pushes01f7-01fd excluded(case-specific or protocol-cumulative);13 conditional sites both outcomes,33 reachable table bytes read;1794 real score and14070 real dump calls;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P102 checkpoint - floatey score award and sprite uses reconciled:65536original84C3roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all74PC/13branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "ROM $851a: decrements FloateyNum_Y_Pos only at/under the non-status region and preserves the CMP carry for SetupNumSpr subtraction.",
       "currentSourcePaths": [
@@ -24896,11 +24910,13 @@
         "Td S9 A7 Floatey static node-semantics pass: SMB1 lines 1287-1378 was compared with the named shared-C owner; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T53 S5 static re-audit: ROM lines 1287-1378 and the current shared objects.c owner were compared branch-by-branch after the ChkTallEnemy repair; control, RAM/table and OAM contracts match source order.",
         "docs/proposals/m2/t70-final-current-certification.md S12 source audit:wrong enemy ID partition,post-decrement carry loss or missing DumpTwoSpr/absolute-indexed output contract;repair and original comparison required.",
-        "docs/proposals/m2/t70-final-current-certification.md S12 P1:actual849f-8566 table/branch/store/call audit;source IDs Spiny12,HammerBro05,TallEnemy09;preserve CMP18 carry through one-pixel decrement;canonical DumpTwoSpr call and absolute OAM stores in original order;all36 table bytes bound."
+        "docs/proposals/m2/t70-final-current-certification.md S12 P1:actual849f-8566 table/branch/store/call audit;source IDs Spiny12,HammerBro05,TallEnemy09;preserve CMP18 carry through one-pixel decrement;canonical DumpTwoSpr call and absolute OAM stores in original order;all36 table bytes bound.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P102 checkpoint - floatey score award and sprite uses reconciled:8labels/74instructions/26RAM joined4boundedclauses;oldtimer2B/controlclamp/score-child-readwrite/stablecontrol/ID-altOAM/Y-SBCcarry/absoluteOAM-order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T53 S5 controlled owner-local Floatey routes: one-up, timer-zero and numeric-alt fixtures, 60-frame warmup and eight captured frames each, match original ROM on current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalars and audio; x86/x64 records are byte-identical. Focused OAM branch regression and DOS16 MZ link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S12 P1:15624 original roots plus132 persistent45-call lifecycles/5940 records both widths zero full-RAM diff;only opcode-confirmed physical pushes01f7-01fd excluded(case-specific or protocol-cumulative);13 conditional sites both outcomes,33 reachable table bytes read;1794 real score and14070 real dump calls;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
+        "docs/proposals/m2/t70-final-current-certification.md S12 P1:15624 original roots plus132 persistent45-call lifecycles/5940 records both widths zero full-RAM diff;only opcode-confirmed physical pushes01f7-01fd excluded(case-specific or protocol-cumulative);13 conditional sites both outcomes,33 reachable table bytes read;1794 real score and14070 real dump calls;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P102 checkpoint - floatey score award and sprite uses reconciled:65536original84C3roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all74PC/13branchpairs,4tests each;source/threeP98productsunchanged."
       ],
       "semanticContract": "ROM $8521: writes two OAM sprites from current floatey X/Y/control and FloateyNumTileData, with attributes $02 and X+8 right sprite.",
       "currentSourcePaths": [
@@ -170141,23 +170157,23 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P98 checkpoint - victory automatic walk uses repaired and reconciled:4labels/28instructions/11RAM joined3boundedclauses;originalAutoControlPlayer unconditionalinputstore repaired,livepostchildpage/fractioncarry/scroll-parser-order/exit reviewed;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P99 checkpoint - player dispatch and state transition uses reconciled:44labels/213instructions/80RAM joined7boundedclauses;thirteenGameSubentries/pipe-vine/size-injury-death-flower/flagpole/endlevel/NextArea order andlivepostchildren reviewed;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P100 checkpoint - scroll handler and screen clamp uses reconciled:7labels/72instructions/32RAM joined4boundedclauses;byteforce/signgates/pagecarry/rawoffscreenmask/edgeborrow/speedbuttons/order reviewed,intermediate00deadstore justified;wholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:9labels/71instructions/30RAM joined3boundedclauses;throwcarry/timerDEC/jumpmask-table/actualObjectOffsetreload/distance-direction/movementfallthrough reviewed;wholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P101 checkpoint - hammer bro movement and throw uses reconciled:9labels/71instructions/30RAM joined3boundedclauses;throwcarry/timerDEC/jumpmask-table/actualObjectOffsetreload/distance-direction/movementfallthrough reviewed;wholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P102 checkpoint - floatey score award and sprite uses reconciled:8labels/74instructions/26RAM joined4boundedclauses;oldtimer2B/controlclamp/score-child-readwrite/stablecontrol/ID-altOAM/Y-SBCcarry/absoluteOAM-order reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 10126,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 565,
+        "localInstructionReceiptSites": 10200,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 491,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 3613,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 160,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 3639,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 134,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
         "directExternalQueueWriterPaths": 48,
         "pendingDirectRamOwners": {
           "src/game/area/block_metatile.c": 34,
-          "src/game/objects.c": 26,
           "src/game/game.c": 24,
           "src/game/frame_root.c": 22,
           "src/game/area.c": 15,
