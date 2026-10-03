@@ -473,10 +473,6 @@ void mysmb_objects_step_floatey_number(struct mysmb_game *game, mysmb_u8 slot)
             (mysmb_u8)(score & 0x0fU);
         (void)mysmb_score_add(game);
     }
-    if (game->ram[MYSMB_FLOATEY_NUM_Y + slot] >= 0x18U) {
-        game->ram[MYSMB_FLOATEY_NUM_Y + slot]--;
-    }
-
     /* FloateyNumbersRoutine selects an alternate OAM group for ordinary
      * living enemies, Hammer Bros, and the larger enemy families. */
     oam_offset = game->ram[MYSMB_ENEMY_SPRITE_OFFSET + slot];
@@ -485,9 +481,10 @@ void mysmb_objects_step_floatey_number(struct mysmb_game *game, mysmb_u8 slot)
      * both Cheep IDs.  Hammer Bro and every ID at TallEnemy or above select
      * the alternate group immediately; the remaining IDs select it only
      * while their state is below two. */
-    if (enemy_id == 9U || enemy_id >= 18U ||
-        (enemy_id != 5U && enemy_id != 10U && enemy_id != 11U &&
-         enemy_id != 13U && game->ram[MYSMB_ENEMY_STATE + slot] < 2U)) {
+    if (enemy_id != 18U && enemy_id != 13U &&
+        enemy_id != 10U && enemy_id != 11U &&
+        (enemy_id == 5U || enemy_id >= 9U ||
+         game->ram[MYSMB_ENEMY_STATE + slot] < 2U)) {
         oam_offset = game->ram[MYSMB_ALT_SPRITE_OFFSET +
             game->ram[MYSMB_SPRITE_OFFSET_CONTROL]];
     }
@@ -496,20 +493,23 @@ void mysmb_objects_step_floatey_number(struct mysmb_game *game, mysmb_u8 slot)
      * in the status region subtracts nine; every other number subtracts
      * eight after its possible one-pixel rise. */
     y = game->ram[MYSMB_FLOATEY_NUM_Y + slot];
-    y = (mysmb_u8)(y - (y < 0x18U ? 9U : 8U));
-    game->ram[(mysmb_u16)(0x0200U + oam_offset)] = y;
-    game->ram[(mysmb_u16)(0x0201U + oam_offset)] =
-        tile_data[(mysmb_u8)(control << 1U)];
-    game->ram[(mysmb_u16)(0x0202U + oam_offset)] = 2U;
+    if (y >= 0x18U) {
+        y--;
+        game->ram[MYSMB_FLOATEY_NUM_Y + slot] = y;
+        y = (mysmb_u8)(y - 8U);
+    }
+    else y = (mysmb_u8)(y - 9U);
+    mysmb_oam_dump_two_sprites(game, y, oam_offset);
     game->ram[(mysmb_u16)(0x0203U + oam_offset)] =
         game->ram[MYSMB_FLOATEY_NUM_X + slot];
-    oam_offset = (mysmb_u8)(oam_offset + 4U);
-    game->ram[(mysmb_u16)(0x0200U + oam_offset)] = y;
-    game->ram[(mysmb_u16)(0x0201U + oam_offset)] =
-        tile_data[(mysmb_u8)((control << 1U) + 1U)];
-    game->ram[(mysmb_u16)(0x0202U + oam_offset)] = 2U;
-    game->ram[(mysmb_u16)(0x0203U + oam_offset)] =
+    game->ram[(mysmb_u16)(0x0207U + oam_offset)] =
         (mysmb_u8)(game->ram[MYSMB_FLOATEY_NUM_X + slot] + 8U);
+    game->ram[(mysmb_u16)(0x0202U + oam_offset)] = 2U;
+    game->ram[(mysmb_u16)(0x0206U + oam_offset)] = 2U;
+    game->ram[(mysmb_u16)(0x0201U + oam_offset)] =
+        tile_data[(mysmb_u8)(control << 1U)];
+    game->ram[(mysmb_u16)(0x0205U + oam_offset)] =
+        tile_data[(mysmb_u8)((control << 1U) + 1U)];
 }
 /* Direct owner test helper: production GameEngine uses the per-slot entry. */
 void mysmb_objects_step_floatey_numbers(struct mysmb_game *game)

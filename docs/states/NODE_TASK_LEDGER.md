@@ -21,7 +21,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T22 S28 | 1 | `OperModeExecutionTree` |
 | M2 T22 S5 | 8 | `FlagpoleObject`, `FlagpoleScoreMods`, `FlagpoleScoreDigits`, `FlagpoleRoutine`, `SkipScore`, `GiveFPScr`, `FPGfx`, `ExitFlagP` |
 | M2 T25 S7 | 1 | `TitleScreenMode` |
-| M2 T26 S5 | 13 | `VictoryModeSubroutines`, `SetupVictoryMode`, `PlayerVictoryWalk`, `PerformWalk`, `DontWalk`, `ExitVWalk`, `FloateyNumTileData`, `ScoreUpdateData`, `ChkNumTimer`, `ChkTallEnemy`, `GetAltOffset`, `FloateyPart`, `SetupNumSpr` |
+| M2 T26 S5 | 6 | `VictoryModeSubroutines`, `SetupVictoryMode`, `PlayerVictoryWalk`, `PerformWalk`, `DontWalk`, `ExitVWalk` |
 | M2 T26 S7 | 2 | `VictoryMode`, `AutoPlayer` |
 | M2 T27 S1 | 17 | `InitScreen`, `SetupIntermediate`, `AreaPalette`, `GetAreaPalette`, `SetVRAMAddr_A`, `NextSubtask`, `BGColorCtrl_Addr`, `BackgroundColors`, `PlayerColors`, `ChkFiery`, `StartClrGet`, `ClrGetLoop`, `SetBGColor`, `SetVRAMOffset`, `GetAlternatePalette1`, `SetVRAMAddr_B`, `NoAltPal` |
 | M2 T27 S2 | 40 | `WriteTopStatusLine`, `WriteBottomStatusLine`, `DisplayIntermediate`, `PlayerInter`, `GameOverInter`, `NoInter`, `DrawTitleScreen`, `OutputTScr`, `ChkHiByte`, `ClearBuffersDrawIcon`, `TScrClear`, `IncSubtask`, `WriteTopScore`, `IncModeTask_B`, `GameText`, `TopStatusBarLine`, `WorldLivesDisplay`, `TwoPlayerTimeUp`, `OnePlayerTimeUp`, `TwoPlayerGameOver`, `OnePlayerGameOver`, `WarpZoneWelcome`, `LuigiName`, `WarpZoneNumbers`, `GameTextOffsets`, `WriteGameText`, `Chk2Players`, `LdGameText`, `GameTextLoop`, `EndGameText`, `PutLives`, `CheckPlayerName`, `ChkLuigi`, `NameLoop`, `ExitChkName`, `PrintWarpZoneNumbers`, `WarpNumLoop`, `ResetSpritesAndScreenTimer`, `ResetScreenTimer`, `NoReset` |
@@ -199,12 +199,13 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T51 S2 | 4 | `ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol` |
 | M2 T51 S3 | 1 | `KillEnemies` |
 | M2 T51 S4 | 34 | `E_CastleArea1`, `E_CastleArea2`, `E_CastleArea3`, `E_CastleArea4`, `E_CastleArea5`, `E_CastleArea6`, `E_GroundArea1`, `E_GroundArea2`, `E_GroundArea3`, `E_GroundArea4`, `E_GroundArea5`, `E_GroundArea6`, `E_GroundArea7`, `E_GroundArea8`, `E_GroundArea9`, `E_GroundArea10`, `E_GroundArea11`, `E_GroundArea12`, `E_GroundArea13`, `E_GroundArea14`, `E_GroundArea15`, `E_GroundArea16`, `E_GroundArea17`, `E_GroundArea18`, `E_GroundArea19`, `E_GroundArea20`, `E_GroundArea21`, `E_GroundArea22`, `E_UndergroundArea1`, `E_UndergroundArea2`, `E_UndergroundArea3`, `E_WaterArea1`, `E_WaterArea2`, `E_WaterArea3` |
-| M2 T52 S3 | 4 | `FloateyNumbersRoutine`, `DecNumTimer`, `LoadNumTiles`, `AddToScore` |
+| M2 T52 S3 | 1 | `AddToScore` |
 | M2 T52 S4 | 3 | `GetBackgroundColor`, `NoBGColor`, `GetPlayerColors` |
 | M2 T52 S5 | 3 | `DisplayTimeUp`, `NoTimeUp`, `OutputInter` |
 | M2 T52 S6 | 1 | `DrawLargePlatform` |
 | M2 T70 S10 | 25 | `WSelectBufferTemplate`, `GameMenuRoutine`, `StartGame`, `ChkSelect`, `ChkWorldSel`, `SelectBLogic`, `IncWorldSel`, `UpdateShroom`, `NullJoypad`, `RunDemo`, `ResetTitle`, `ChkContinue`, `StartWorld1`, `InitScores`, `ExitMenu`, `GoContinue`, `MushroomIconData`, `DrawMushroomIcon`, `IconDataRead`, `ExitIcon`, `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver` |
 | M2 T70 S11 | 15 | `PrintVictoryMessages`, `MRetainerMsg`, `ThankPlayer`, `SecondPartMsg`, `EvalForMusic`, `PrintMsg`, `IncMsgCounter`, `SetEndTimer`, `IncModeTask_A`, `ExitMsgs`, `PlayerEndWorld`, `EndExitOne`, `EndChkBButton`, `EndExitTwo`, `TerminateGame` |
+| M2 T70 S12 | 10 | `FloateyNumTileData`, `ScoreUpdateData`, `FloateyNumbersRoutine`, `ChkNumTimer`, `DecNumTimer`, `LoadNumTiles`, `ChkTallEnemy`, `GetAltOffset`, `FloateyPart`, `SetupNumSpr` |
 | M2 T70 S2 | 29 | `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj` |
 | M2 T70 S4 | 6 | `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`, `NonMaskableInterrupt`, `ScreenOff`, `InitBuffer` |
 | M2 T70 S6 | 9 | `RotPRandomBit`, `Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipSprite0`, `SkipMainOper`, `MoveAllSpritesOffscreen`, `MoveSpritesOffscreen`, `SprInitLoop` |
@@ -317,16 +318,16 @@ transfer existing ownership or allocate a numeric T.
 | 1271 | `EndExitOne` | M2 T70 S11 | existing closure backlog; Accepted victory-message/final shared termination material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
 | 1272 | `EndChkBButton` | M2 T70 S11 | existing closure backlog; Accepted victory-message/final shared termination material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
 | 1281 | `EndExitTwo` | M2 T70 S11 | existing closure backlog; Accepted victory-message/final shared termination material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1287 | `FloateyNumTileData` | M2 T26 S5 | existing closure backlog; accepted S4 route-equivalence closure; S5 performs per-label completion accounting | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1303 | `ScoreUpdateData` | M2 T26 S5 | existing closure backlog; accepted S4 route-equivalence closure; S5 performs per-label completion accounting | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1308 | `FloateyNumbersRoutine` | M2 T52 S3 | existing closure backlog; T52 S3 accepted current-equivalence corrective transfer for the A7 floatey-number score chain. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S3; M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1315 | `ChkNumTimer` | M2 T26 S5 | existing closure backlog; accepted S4 route-equivalence closure; S5 performs per-label completion accounting | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1320 | `DecNumTimer` | M2 T52 S3 | existing closure backlog; T52 S3 accepted current-equivalence corrective transfer for the A7 floatey-number score chain. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1328 | `LoadNumTiles` | M2 T52 S3 | existing closure backlog; T52 S3 accepted current-equivalence corrective transfer for the A7 floatey-number score chain. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1338 | `ChkTallEnemy` | M2 T26 S5 | existing closure backlog; accepted S4 route-equivalence closure; S5 performs per-label completion accounting | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1355 | `GetAltOffset` | M2 T26 S5 | existing closure backlog; accepted S4 route-equivalence closure; S5 performs per-label completion accounting | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1358 | `FloateyPart` | M2 T26 S5 | existing closure backlog; accepted S4 route-equivalence closure; S5 performs per-label completion accounting | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1363 | `SetupNumSpr` | M2 T26 S5 | existing closure backlog; accepted S4 route-equivalence closure; S5 performs per-label completion accounting | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1287 | `FloateyNumTileData` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1303 | `ScoreUpdateData` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1308 | `FloateyNumbersRoutine` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S3; M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1315 | `ChkNumTimer` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1320 | `DecNumTimer` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1328 | `LoadNumTiles` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1338 | `ChkTallEnemy` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1355 | `GetAltOffset` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1358 | `FloateyPart` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1363 | `SetupNumSpr` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
 | 1386 | `ScreenRoutines` | M2 T51 S2 | existing closure backlog; Accepted T51 S2 source-contiguous screen/parser output transfer. | M2 T15 S2; M2 T15 S3; M2 T24 S1 |
 | 1408 | `InitScreen` | M2 T27 S1 | existing closure backlog; M2 T27 S1 contiguous screen-task root chain; accepted from T24 S2 custody. | M2 T24 S1 |
 | 1418 | `SetupIntermediate` | M2 T27 S1 | existing closure backlog; M2 T27 S1 contiguous screen-task root chain; accepted from T24 S2 custody. | M2 T24 S1 |
@@ -2358,7 +2359,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T26 S2 | 0 | 0 | planned-shared-c-migration; [record](../../docs/proposals/m2/t26-victory-terminal.md) |
 | M2 T26 S3 | 0 | 0 | planned-floatey-actor-route; [record](../../docs/proposals/m2/t26-victory-terminal.md) |
 | M2 T26 S4 | 0 | 0 | planned-rom-equivalence; [record](../../docs/proposals/m2/t26-victory-terminal.md) |
-| M2 T26 S5 | 32 | 13 | planned-closure; [record](../../docs/proposals/m2/t26-victory-terminal.md) |
+| M2 T26 S5 | 32 | 6 | planned-closure; [record](../../docs/proposals/m2/t26-victory-terminal.md) |
 | M2 T26 S6 | 2 | 0 | planned-outer-victory-call-order-repair; [record](../../docs/proposals/m2/t26-victory-terminal.md) |
 | M2 T26 S7 | 2 | 2 | planned-outer-victory-route-equivalence; [record](../../docs/proposals/m2/t26-victory-terminal.md) |
 | M2 T27 | 0 | - | [record](../../docs/proposals/m2/screen-status.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -2574,7 +2575,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T52 | 0 | - | [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S1 | 0 | 0 | owner-approved-current-equivalence-remediation, a2-nmi-prefix-state-handoff; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S2 | 0 | 0 | owner-approved-current-equivalence-remediation, a6-title-demo-world-select-order; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
-| M2 T52 S3 | 0 | 4 | owner-approved-current-equivalence-remediation, a7-floatey-score-timer-order; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
+| M2 T52 S3 | 0 | 1 | owner-approved-current-equivalence-remediation, a7-floatey-score-timer-order; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S4 | 0 | 3 | owner-approved-current-equivalence-remediation, b2-background-player-palette-fallthrough; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S5 | 0 | 3 | owner-approved-current-equivalence-remediation, b3-timeup-task-handoff; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S6 | 0 | 1 | owner-approved-current-equivalence-remediation, h9-large-platform-y-source; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
@@ -2823,6 +2824,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T70 S9 | 0 | 10 | serial-input-pause-material-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S10 | 0 | 25 | title-menu-demo-material-audit; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S11 | 0 | 15 | victory-message-termination-material-repair; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S12 | 0 | 10 | floatey-score-oam-material-repair; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M2 T9 | 1 | - | [record](../../docs/etc/architecture/smb1-frame-output-ledger.md); [record](../../docs/history/M2-T9-frame-output-ledger-and-reference-recorder.md); S not recorded |
 | M2 Td | 0 | - | [record](../../docs/proposals/m2-rom-structural-recovery.md); [record](../../docs/states/QUEUE.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -3192,6 +3194,8 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-t70-s10-title-18 | M2 T25 S25 | M2 T70 S10 | 5 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s11-victory-1 | M2 T26 S5 | M2 T70 S11 | 14 | Coordinator receives victory-message/final shared-call repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s11-victory-2 | M2 T30 S14 | M2 T70 S11 | 1 | Coordinator receives victory-message/final shared-call repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s12-floatey-1 | M2 T26 S5 | M2 T70 S12 | 7 | Coordinator receives original floating-score chain under owner ongoing M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s12-floatey-2 | M2 T52 S3 | M2 T70 S12 | 3 | Coordinator receives original floating-score chain under owner ongoing M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3690,3 +3694,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T70 S9 | 10 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S10 | 25 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S11 | 15 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S12 | 10 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |

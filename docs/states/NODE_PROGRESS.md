@@ -1,5 +1,16 @@
 # M2 ROM conformance node progress
 
+## M2 T70 S12 - closed floatey score/OAM material repair
+
+[10-node source/material proof](../proposals/m2/t70-final-current-certification.md#s12-p1-closure---source-correct-floating-score-and-shared-sprite-output).
+Restored source enemy-ID partition,Y18 carry,actual DumpTwoSpr and absolute
+right sprite addressing/order.15624 original roots+5940 persistent records
+each width zero full game-RAM diff;only opcode-confirmed stack pushes excluded.
+13 conditionals both outcomes,36 table bytes bound;9 material paths added.
+5 focused checks each,6x600-frame routes,native/OpenNT builds and3 refreshed
+EXEs pass. Historical1992/1992,current nodes1992/1992,controls4275/4275(raw4342,
+infeasible67),material604/604 partial. Fresh0,no deferred labels;T70 open.
+
 ## M2 T70 S11 - closed victory message/termination material chain
 
 [15-node source/material proof](../proposals/m2/t70-final-current-certification.md#s11-p1-closure---victory-messages-and-canonical-termination-call).

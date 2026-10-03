@@ -1633,3 +1633,153 @@ unrelated I/O/presentation/terrain edits preserved,no push.
 | mysmb16.exe | 258799 | 5899974b180e0ed99b284c1e82240c81d4ad9ed93fb47cc99092e02ef824b54d |
 | mysmb32.exe | 372392 | 7287a3a1937c2c6ab4d4bcd19ca1b0f42281464445f378769cb4e6db4ad2c889 |
 | mysmb64.exe | 379424 | 4827c814461a89698164b6ba5bf4101759bffa3d0f46b56833870d4a4aaf80c2 |
+
+## S12 P1 admission - floating score award and two-sprite output chain
+
+Scope10 in source order:FloateyNumTileData,ScoreUpdateData,FloateyNumbersRoutine,
+ChkNumTimer,DecNumTimer,LoadNumTiles,ChkTallEnemy,GetAltOffset,FloateyPart,
+SetupNumSpr. Historical/current exact incoming;expected fresh0,max1992.
+Incoming historical1992/1992,current1992/1992 nodes,4275/4275 feasible controls
+(raw4342,infeasible67),595/595 material partial. Coordinator receives10
+maintenance nodes under ongoing owner M2 mandate. Common objects.c owns
+control clamp,timer/award,enemy OAM selection and two-number output. Accepted
+AddToScore/status and DumpTwoSpr children execute actual bodies;GameEngine
+caller retains accepted slot/ObjectOffset agreement. S11 terminal chain is
+closed;this finishes the next original source-order cohort-A leaf family.
+
+Source audit exposes ChkTallEnemy wrong IDs/threshold (Spiny12,HammerBro05,
+TallEnemy09),FloateyPart carry lost when original Y18 becomes17,SetupNumSpr
+missing shared DumpTwoSpr child,and byte-wrapped right sprite offset despite
+absolute indexed stores. Reopen those three node contracts and shared dump
+call relation;repair in shared owner before successor admission. No invented
+behavior,platform game logic or third-party implementation import.
+
+Original controlled roots compare full RAM excluding only observed CPU-stack
+writes,with actual score/HUD/dump children and valid current-player0/1 and
+slot0..5/ObjectOffset agreement. Planned15624 roots:6144 control-byte/timer
+classes;6144 enemy-byte/state classes;3072 Y-byte/direct OAM-offset cases;
+264 score/1-UP award/player/life cases. All256 control and enemy/Y values,
+all six slots,both direct/alternate groups,zero/award/expiry timers covered.
+Bind source24 tile bytes and12 score bytes exactly;observe table reads and
+call boundaries. Persistent all11 control lifecycles per slot/player from
+timer2b through expiry prove one award only and retained rise. Byte-only
+adversarial OAM offsets nearfc are absolute-address semantics cases,not
+natural shuffled sprite allocation claims. Budgets:128MiB/process120seconds,
+root4096instructions,batches<=1024,ignored unique build path;delete raw RAM
+after comparison. Physical CPU registers/SP are outside portable ABI.
+
+Separate operational proof:focused floatey/core/score/purity checks and Win32
+self-tests both widths,current native/OpenNT shared-source compile/link,
+six retained600-frame routes,and3 refreshed local EXEs if source changes.
+Similar sweep:all floating-score ID gates,pre-decrement carry and absolute
+OAM stores/shared dump callers. Code/ROM branch evidence and runtime tests
+are independent. Current exact scope recovery is not fresh historical credit;
+global material enumeration/output/full-route certificate stays open.
+Owner ROM/reviewed ASM remain read-only/nonredistributable,raw material stays
+ignored. Standing owner approval covers3 local EXE commits,no push.
+
+## S12 P1 closure - source-correct floating score and shared sprite output
+
+All10 scope labels exact:FloateyNumTileData,ScoreUpdateData,
+FloateyNumbersRoutine,ChkNumTimer,DecNumTimer,LoadNumTiles,ChkTallEnemy,
+GetAltOffset,FloateyPart,SetupNumSpr. Expected/actual fresh historical0,
+no deferred labels/transfers;10 maintenance receivers remain S12.
+Historical1992/1992,current exact nodes1992/1992,feasible controls4275/4275
+(raw4342,infeasible67),604/604 enumerated material,global denominator partial.
+S12 closed;T70/M2 full material/output/numeric/full-route certificate open.
+
+Original849f-84b6 tile table24 bytes and84b7-84c2 score table12 bytes match
+current C exactly. Root84c3 clamps nonzero control>=11 before timer read.
+Zero timer clears control;nonzero decrements persisted timer but compares
+pre-DEC accumulator with2b. Only that old2b awards;control11 increments lives
+and queue40 before digit modifier/actual AddToScore. Its actual math/status/
+VRAM children run unpatched. Both valid current players,six slots and lives
+00/ff prove player digit offsets and wrap,including modifier0 for1-UP.
+
+Three node contracts contradicted current C at admission. ChkTallEnemy uses
+source Spiny12,HammerBro05,TallEnemy09;old C substituted Spiny05/Hammer09/
+threshold12. This misselected OAM for Hammer Bro,Spiny,Podoboo and several
+large actors. Correct source direct exceptions are12,0d,0a,0b;05 and remaining
+IDs>=09 alternate;other IDs alternate only when state<02. Original alternate
+loads06ec+shuffle control then reloads ObjectOffset08. Native explicit slot
+matches accepted GameEngine caller08;all six slots and shuffle controls0..2
+exercised. No illegal outside-domain shuffle lookup claimed.
+
+FloateyPart CMP18 carry must survive SBC01 rise/store and final SBC08. Original
+Y18 stores17 and displays0f;old C retested17 and displayed0e. Now select OAM
+first,then preserve pre-rise branch carry:rise/store and subtract8 for initial
+Y>=18,subtract9 otherwise. SetupNumSpr now actually calls canonical DumpTwoSpr
+and preserves source write order:child right/left Y,then left/right X,paired
+attributes,paired table tiles. Absolute right addresses0204..0207+offset
+retain carry;old byte offset+4 wrappedfc to00. Controlledfc output now enters
+0300..0303 as original,without altering0200..0203. This is an address-contract
+case,not normal shuffled OAM allocation. Control00192 shared dump call restored;
+all owned source branches refreshed,including corrected ID-predicate edges
+00181/00183/00186. No alternate platform or game-state approximation introduced.
+
+Before repair15624 roots exposed64124 OAM byte differences each width. That
+initial probe masked all written page-one addresses,so it is retained only
+as OAM discrepancy evidence,not full-RAM proof. Final probe explicitly
+classifies physical stack pushes by actual original JSR/PHA/PHP opcode plus
+observed bus write address. Thus game variables sharing page0100 (control,
+timer,digit modifiers) remain compared. Final independent mask union is only
+01f7-01fd;per-case mask contains actual physical pushes. Full2048 RAM plus
+return discriminator matches both widths after this strengthened rerun.
+Both widths byte-identical;all15624 real returns/SPff checked.13 conditional
+sites have both outcomes observed;8 executable scoped entries observed.
+33 reachable table bytes actually read;three dummy bytes are not execution
+coverage and are proven by full36-byte static binding.1794 actual score calls,
+14070 actual dump calls recorded. No ROM/instruction/child patched.
+
+Independent cases15624 comprise6144 control/timer classes,6144 enemy/state
+classes,3072 Y/absolute-offset classes and264 award/player/life classes.
+Full256 control/ID/Y bytes and six slots covered,score/table lookups remain
+clamped/source-safe.132 persistent lifecycles(control1..11,slots0..5,players
+0/1) add5940 calls:43 nonzero timer calls,one control-clear call,one inactive
+call each. Each lifecycle awards exactly once;actual score calls132,dump5676.
+Every record compares full RAM including modifiers/timer/control;physical
+stack mask is cumulative only from opcode-confirmed writes within that same
+lifecycle. Old CPU stack residues remain outside portable ABI;other page-one
+bytes remain compared. Protocols omit intervening NMI/GameEngine side effects;
+they prove producer-consumer lifecycle,not naturally completed enemy combat.
+
+Nine new material rows596-604 name actual clamp,pre-DEC award,digit modifier,
+enemy/OAM selector,slot reload,carry/Y,two-store child,persisted countdown and
+expiry-to-inactive contracts. Existing score/tile table rows4/5 refreshed.
+No writer-reader cartesian or global material completeness claim.
+
+Operational:5 current focused tests each width pass(core,floatey,NMI parent,
+platform purity,Win32 self-test). Old floatey fixture mislabeled Spiny as05
+and expected stale carry;corrected fixtures use source IDs and source SBC
+value. Added narrow Hammer05,Podoboo0c and absolutefc regressions. Tests no
+longer bless prior implementation. Native libraries/products/recorders/tests
+rebuilt from final shared C90;original OpenNT shared-source DOS16 compile/link
+exits0 with retained optional OLDNAMES.LIB warning. Three MZ products copied,
+DOS declared file length and all copied hashes verified. DOS actual graphics/
+486 performance remains later qualification. Six600-frame retained routes
+idle/start/pause/right/run-jump/select match both widths and native records
+are byte-identical. Frame ABI0200-07ff except0778/0779,all CIRAM,palette,OAM,
+audio/PPU scalars;frame ordinal/zero page/physical stack outside that ABI,
+local root proofs above include all game RAM. No complete game/pixel claim.
+
+Similar-issue sweep:one active floatey owner;GameEngine uses per-slot entry,
+bulk helper test-only. Its two tables/ID gate/rise/offset stores repaired
+together;neighbor jumping-coin two-sprite path already uses canonical dump
+and absolute0204..0207 stores. Other dump helpers have retained owners and
+no second floatey carry/ID clone found. Source edits occurred only between
+completed builds;final order adjustment was rebuilt all targets.
+
+Probe failures are excluded from evidence:local C lexical hex-plus spacing
+fixed before execution;concurrent matrix/protocol output-name collision fixed
+with separate files/logs and both runs repeated;protocol CPU-stack residues
+led to cumulative observed-push masks,then full rerun;an absent intermediate
+package script was replaced with existing reviewed package helper. All scripts,
+logs and temporary raw records remain ignored below build;raw records removed.
+No platform/ABI/runtime-emulator change. Standing owner approval covers3
+local EXE commits,no push;unrelated I/O/presentation/terrain work preserved.
+
+| Product | Bytes | SHA256 |
+| --- | --- | --- |
+| mysmb16.exe | 258719 | 36563a296d29a165e73046c0f4209168fa095c6e5a6913a73af5c36648177980 |
+| mysmb32.exe | 372392 | 27e38f51f36da61d80da1379d0f49a82e500b396048cb38dcfed6c8029fd8ca9 |
+| mysmb64.exe | 379424 | 0664ae035c92e9b18b7a9921195b401c06f7b80758fa03231431d550440f4484 |

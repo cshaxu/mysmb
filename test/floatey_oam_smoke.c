@@ -25,7 +25,7 @@ int main(void)
     game.ram[0x012cU] = 0x2bU;
     game.ram[0x011eU] = 0x40U;
     game.ram[0x0117U] = 0x80U;
-    game.ram[0x0016U] = 18U;
+    game.ram[0x0016U] = 9U;
     game.ram[0x06e5U] = 0x20U;
     game.ram[0x06ecU] = 0x40U;
     game.ram[0x075aU] = 2U;
@@ -42,7 +42,7 @@ int main(void)
     game.ram[0x012cU] = 0x2aU;
     game.ram[0x011eU] = 0x40U;
     game.ram[0x0117U] = 0x80U;
-    game.ram[0x0016U] = 18U;
+    game.ram[0x0016U] = 9U;
     game.ram[0x06e5U] = 0x20U;
     game.ram[0x06ecU] = 0x40U;
     game.ram[0x075aU] = 2U;
@@ -78,7 +78,7 @@ int main(void)
     game.ram[0x06ecU] = 0x40U;
     mysmb_objects_step_floatey_number(&game, 0U);
     if (game.ram[0x0110U] != 0x0bU || game.ram[0x012cU] != 0U ||
-        game.ram[0x011eU] != 0x17U || game.ram[0x0240U] != 0x0eU ||
+        game.ram[0x011eU] != 0x17U || game.ram[0x0240U] != 0x0fU ||
         game.ram[0x0241U] != 0xfdU || game.ram[0x0245U] != 0xfeU ||
         game.ram[0x0220U] != 0U) return 4;
 
@@ -89,10 +89,40 @@ int main(void)
     game.ram[0x012cU] = 1U;
     game.ram[0x011eU] = 0x40U;
     game.ram[0x0117U] = 0x80U;
-    game.ram[0x0016U] = 5U;
+    game.ram[0x0016U] = 18U;
     game.ram[0x06e5U] = 0x20U;
     game.ram[0x06ecU] = 0x40U;
     mysmb_objects_step_floatey_number(&game, 0U);
-    return game.ram[0x0220U] == 0x37U && game.ram[0x0221U] == 0xf7U &&
-        game.ram[0x0240U] == 0U ? 0 : 6;
+    if (game.ram[0x0220U] != 0x37U || game.ram[0x0221U] != 0xf7U ||
+        game.ram[0x0240U] != 0U) return 6;
+
+    /* ROM HammerBro=$05 uses GetAltOffset even in defeated state. */
+    game.ram[0x0016U] = 5U;
+    game.ram[0x001eU] = 2U;
+    game.ram[0x012cU] = 1U;
+    game.ram[0x011eU] = 0x40U;
+    mysmb_objects_step_floatey_number(&game, 0U);
+    if (game.ram[0x0240U] != 0x37U || game.ram[0x0241U] != 0xf7U)
+        return 7;
+
+    /* TallEnemy=$09 also sends Podoboo=$0c to the alternate group. */
+    game.ram[0x0016U] = 12U;
+    game.ram[0x012cU] = 1U;
+    game.ram[0x011eU] = 0x40U;
+    game.ram[0x0240U] = 0U;
+    mysmb_objects_step_floatey_number(&game, 0U);
+    if (game.ram[0x0240U] != 0x37U) return 8;
+
+    /* Absolute indexed stores keep the base+4 carry at OAM offset=$fc;
+     * this controlled boundary checks addressing, not normal allocation. */
+    game.ram[0x0016U] = 18U;
+    game.ram[0x012cU] = 1U;
+    game.ram[0x011eU] = 0x18U;
+    game.ram[0x06e5U] = 0xfcU;
+    game.ram[0x0200U] = 0xa5U;
+    mysmb_objects_step_floatey_number(&game, 0U);
+    if (game.ram[0x02fcU] != 0x0fU || game.ram[0x0300U] != 0x0fU ||
+        game.ram[0x0301U] != 0xfbU || game.ram[0x0200U] != 0xa5U)
+        return 9;
+    return 0;
 }
