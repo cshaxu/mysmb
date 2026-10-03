@@ -768020,7 +768020,10 @@
         "PlayerEndWorld",
         "EndExitOne",
         "EndChkBButton",
-        "EndExitTwo"
+        "EndExitTwo",
+        "NoDecTimers",
+        "PauseSkip",
+        "RotPRandomBit"
       ],
       "baseline": 1992,
       "incomingComplete": [

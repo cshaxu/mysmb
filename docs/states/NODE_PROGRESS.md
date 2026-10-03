@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P94 NMI timer uses](../proposals/m2/t70-final-current-certification.md#s17-p94-checkpoint---nmi-pause-timer-gate-and-random-shift-uses-reconciled).
+S17 P94:5NMI timer labels/20instructions/7RAM joined4boundedclauses;3840actualroots eachwidth47bytephaseABI0diff/all20PC/4branchpairs,4tests each. Scope1530/fresh0;9526/10691instruction receipts,3368/3773RAM receipts;1165instructions/405RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
 [P93 victory uses](../proposals/m2/t70-final-current-certification.md#s17-p93-checkpoint---victory-messages-counters-and-world-completion-uses-reconciled).
 S17 P93:16victory labels/84instructions/29RAM joined7boundedclauses;264192actualroots eachwidth0diff/all84PC/16branchpairs plusmandatory8421,4tests each. Scope1527/fresh0;9506/10691instruction receipts,3361/3773RAM receipts;1185instructions/412RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81);00153priorfalseexact reclassifiedinfeasible withoriginalinstructionproof. Material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 

@@ -8852,3 +8852,22 @@ Current src/game/area/area_data.c normalizedSHA256:9f4d6fbb22af69b28977276ff9994
 Current src/game/game.c normalizedSHA256:1f1663c3ab2e1351bef6a454d4860af6d0ea696543aa9cc320e29567285b87e9.
 
 Current src/game/area.c normalizedSHA256:7f9125e079ae875931894d72eafec68256280f33e559bd5257d43381c8a288cd.
+
+## S17 P94 admission - NMI pause timer gate and random shift uses
+
+ExistingNMI20instruction/7RAM uses:InitBuffer,SkipExpTimer,NoDecTimers,PauseSkip,RotPRandomBit. Original80F0 afteractualTopScore through8138cut;reusesacceptedS5phase mechanismwithcurrentC90frame_root_begin linkedandnewPCcounts. 3840roots:2048timer/pauseprofiles plus1792sevenindividualrandomregisterallbyteprofiles. Compare47bytephaseABI RAM00/09/0747/077F/0780-07A3/07A7-07AD only,nototherchildren/output/stack;nofullRAMclaim. P48timerloopreceipt/P90pausedboolean/P89topscorewritebounds joinedstatically;TopScore doesnotmodify0776,so cachednativepause bool remainsvalidfororiginalreload. Fresh0/max1992,no source/productchangeunlessscopedmismatch;localreadonlyROMprotected/rawbounded1024*47/120sec cleanupbelowbuild. Globalproducer/inter-frame/material/finalpackagespending.
+
+## S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled
+
+S17 P94:5NMI timer labels/20instructions/7RAM joined4boundedclauses;3840actualroots eachwidth47bytephaseABI0diff/all20PC/4branchpairs,4tests each. Scope1530/fresh0;9526/10691instruction receipts,3368/3773RAM receipts;1165instructions/405RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| N1 | InitBuffer | Original80F0reloadsPauseStatus/LSRbit0 afterTopScore. Nativebegin usesPauseRoutine resultingbit0beforeTopScore;P89proof TopScoreconstantdigitstores07D7-07E8 cannotalias0776,so cachedpausedbit unchanged. P90pauseincoming/gates proveactualstatus bit0. Fourhardware/rootdependenciesretainedseparately;onlythese3pausegateinstructionsclaimed. |
+| N2 | SkipExpTimer,NoDecTimers | Nativeindexloop0breakmatchesoriginalDEX/BPLsignedfromlegalX14/23. OriginalNoDecTimers INCFrameCounter executesunpausedregardlessTimerControlremainingnonzero,notpaused. Currentbegin putsINC9outside tickhelper butinsidepausedguard. P48timerloop/sourcealiasfreeaddresses0780-07A3 retained;47bytephase alltimers/0747/077F/09 directlycompared. |
+| N3 | PauseSkip | Afterbothpaused/unpausedpaths LDXX0/LDYY7,LDA7A7AND2publishesRAM00;next7A8AND2EOR00 derivescarry. CCLC/conditionalSEC equivalenttoXORnonzero boolwithoutconsumingincomingcarry. Sourceactual00publication persistsuntillaterSpriteShuffler;no Cprivate scratch substitution. |
+| N4 | RotPRandomBit | Sevenascending absolute07A7+X RORs propagateeacholdbit0 tofollowingbit7. Nativeunsignedbyte/rightshift/localcarrypreservesresult;X/Yloop control notexposednativevoid andfollowingsourceLDA0722 replacesA/flags. Receipt endsat8138beforeSprite0flag/scroll subtree,whichremainpending. Allsevenrandombytes individuallytakeall256values in1792additionalfixtures;rawsevenbytecartesiannotclaimed. |
+
+FreshcurrentS5mechanism3840original80F0-to-8138cuts/nativeactualframe_root_begin,47bytephaseABI RAM00/09/0747/077F/0780-07A3/07A7-07AD only. All20PC visited/fourbothsidedbranchpairs;otherRAM/hardware/CPUstack notcomparedbythisfixture. Timer2048profilesinclude pause/unpause/mastercontrol0/1/2/FF/intervalallbytes andfourtimerboundaryvalues;1792individualrandombyteprofiles. P89TopScorewritebounds guaranteePauseStatusnonalias,P90pauseboolandP48timerreceipt retainedinjoinedsourceclauses. ExtraPCandbranchinstrumentationrequiredonecheaprepeat;initiallogparserdidnotacceptnewbranchline,repairedparserwithunchangedfixtures/assertions beforecredit. Fourfreshfocusedtests eachwidthpass/fournegativeaccountingmutantsrejected. Source/P81productsunchanged,DOScompile/linkonly. Sprite0/scroll/modeingress andwholeproducer/inter-frame/material/pixels/routes/snapshotremainpending.
+
+Current src/game/frame_root.c normalizedSHA256:beed1afea957c4290247a6d3178b168337b8ac2b992274dee76535cc72611b2b.

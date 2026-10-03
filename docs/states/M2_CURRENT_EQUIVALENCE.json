@@ -22931,14 +22931,16 @@
         "docs/proposals/m2/t70-final-current-certification.md S4 original531 cases confirm256 pre-VRAM2001 phase differences per width;native final value matches but intermediate phase/post-consumer graph is absent.",
         "docs/proposals/m2/t70-final-current-certification.md S4 P1: original531 roots and byte-bound source audit restore pre-VRAM mirror&E7 and post-InitBuffer RAM0779 reload;four actual source calls/returns observed;38 pointer bytes,2 offsets and15 PRG bindings match. Explicit probe/ABI limits recorded.",
         "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:37instructions/11RAM joined6bounded source-use clauses;landing1/timer3,NMIfrozenholds/timerloops andgraphicsframeconsumer exact in singlefreezeepisode. Fourowners source-identical acceptedcommits;notallgameplayproducer-invariants."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:37instructions/11RAM joined6bounded source-use clauses;landing1/timer3,NMIfrozenholds/timerloops andgraphicsframeconsumer exact in singlefreezeepisode. Fourowners source-identical acceptedcommits;notallgameplayproducer-invariants.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:5labels/20instructions/7RAM joined4boundedclauses;P89TopScore nonalias/P90pausedbit/P48timers joined,INCframe gate/RAM00/XOR/ROR reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC $80d0 (InitBuffer) was reached in all 600 samples and current x86/x64 records had zero work-RAM, selected NMI-state and visible-output differences. This proves InitBuffer local semantics; it does not clear the earlier ScreenOff order mismatch.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S4 P1:512 native phase/reload cases;248 CTests each;current full x86/x64 and original OpenNT DOS16 builds;3 refreshed EXEs;6x600 original/native frame regressions,purity pass.",
         "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:20480actualroots eachwidth2032RAM/24APU/order0diff,physical1F0-1FFexcluded/minSP>=EF;64x256 continuousframes plus4096 allbyte-metatilelanding roots;all37PC/8branchpairs inclunchangedP47complementaryrendererbranch;6focusedtests each pass. Model4366states/25239transitions singleepisode;no newgraphcredit orproductchange."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:20480actualroots eachwidth2032RAM/24APU/order0diff,physical1F0-1FFexcluded/minSP>=EF;64x256 continuousframes plus4096 allbyte-metatilelanding roots;all37PC/8branchpairs inclunchangedP47complementaryrendererbranch;6focusedtests each pass. Model4366states/25239transitions singleepisode;no newgraphcredit orproductchange.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:3840originalroots eachwidth47bytephaseABI0diff/all20PC/4branchpairs,4tests each;otherRAM/hardware/stack explicitlyoutsidecapture,source/threeP81productsunchanged."
       ],
       "semanticContract": "After VRAM consumption clears the source-selected header and selector, restores the display mask, then invokes sound, input, pause and top-score work before timer handling.",
       "currentSourcePaths": [
@@ -22999,12 +23001,14 @@
       "semanticEvidence": [
         "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
         "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:37instructions/11RAM joined6bounded source-use clauses;landing1/timer3,NMIfrozenholds/timerloops andgraphicsframeconsumer exact in singlefreezeepisode. Fourowners source-identical acceptedcommits;notallgameplayproducer-invariants."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:37instructions/11RAM joined6bounded source-use clauses;landing1/timer3,NMIfrozenholds/timerloops andgraphicsframeconsumer exact in singlefreezeepisode. Fourowners source-identical acceptedcommits;notallgameplayproducer-invariants.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:5labels/20instructions/7RAM joined4boundedclauses;P89TopScore nonalias/P90pausedbit/P48timers joined,INCframe gate/RAM00/XOR/ROR reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "Td S9 A4 controlled cold-boot NMI-prefix routes cover TimerControl nonzero, TimerControl expiry, interval non-expiry and interval expiry, with both zero and nonzero timer cells. ROM and current x86/x64 match all timer-owned RAM and frame-counter results; the independent NMI $00/$2000 mismatches are excluded from this timer-owned proof.",
         "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:20480actualroots eachwidth2032RAM/24APU/order0diff,physical1F0-1FFexcluded/minSP>=EF;64x256 continuousframes plus4096 allbyte-metatilelanding roots;all37PC/8branchpairs inclunchangedP47complementaryrendererbranch;6focusedtests each pass. Model4366states/25239transitions singleepisode;no newgraphcredit orproductchange."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P48 checkpoint - original spring producer and freeze timer protocol:20480actualroots eachwidth2032RAM/24APU/order0diff,physical1F0-1FFexcluded/minSP>=EF;64x256 continuousframes plus4096 allbyte-metatilelanding roots;all37PC/8branchpairs inclunchangedP47complementaryrendererbranch;6focusedtests each pass. Model4366states/25239transitions singleepisode;no newgraphcredit orproductchange.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:3840originalroots eachwidth47bytephaseABI0diff/all20PC/4branchpairs,4tests each;otherRAM/hardware/stack explicitlyoutsidecapture,source/threeP81productsunchanged."
       ],
       "semanticContract": "Skips decrement for an expired timer, decrements the index and continues while the index remains nonnegative.",
       "currentSourcePaths": [
@@ -23020,11 +23024,13 @@
       "currentCounterpart": "mysmb_frame_root_begin",
       "semanticEvidence": [
         "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
-        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:5labels/20instructions/7RAM joined4boundedclauses;P89TopScore nonalias/P90pausedbit/P48timers joined,INCframe gate/RAM00/XOR/ROR reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "Td S9 A4 controlled cold-boot NMI-prefix routes cover TimerControl nonzero, TimerControl expiry, interval non-expiry and interval expiry, with both zero and nonzero timer cells. ROM and current x86/x64 match all timer-owned RAM and frame-counter results; the independent NMI $00/$2000 mismatches are excluded from this timer-owned proof.",
-        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:3840originalroots eachwidth47bytephaseABI0diff/all20PC/4branchpairs,4tests each;otherRAM/hardware/stack explicitlyoutsidecapture,source/threeP81productsunchanged."
       ],
       "semanticContract": "Increments FrameCounter after the applicable timer branch, including the TimerControl nonzero path once its decrement does not reach zero.",
       "currentSourcePaths": [
@@ -23041,11 +23047,13 @@
       "semanticEvidence": [
         "Td S9 A2 node-semantics pass: SMB1 lines 764-867 was compared label-by-label with the named shared frame_root.c owner; operational route and independent integration-edge pass remain pending.",
         "M2 T53 S1 source audit: after PauseRoutine, both the paused and unpaused source paths reach PauseSkip and execute the seven-byte LFSR phase; the C root has the same timer/frame-counter gate followed by unconditional pseudorandom update.",
-        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded."
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:5labels/20instructions/7RAM joined4boundedclauses;P89TopScore nonalias/P90pausedbit/P48timers joined,INCframe gate/RAM00/XOR/ROR reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T53 S1 controlled owner-ROM pause/sprite route: source PC coverage reached this label while a 600-frame start/move/pause/resume route had zero work-RAM, selected NMI-state and visible-output differences against both x86 and x64; x86 and x64 native records were byte-identical.",
-        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width."
+        "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:3840originalroots eachwidth47bytephaseABI0diff/all20PC/4branchpairs,4tests each;otherRAM/hardware/stack explicitlyoutsidecapture,source/threeP81productsunchanged."
       ],
       "semanticContract": "Begins pseudorandom rotation regardless of paused timer branch; a paused game bypasses frame-counter and timer work but not the LFSR update.",
       "currentSourcePaths": [
@@ -23063,13 +23071,15 @@
         "M2 T52 S1 source re-read: lines 826-872 store the first masked LFSR bit to $00, write the saved $2000 mirror before the OperModeExecutionTree JSR, and OR d7 only at SkipMainOper after return.",
         "docs/proposals/m2/t70-final-current-certification.md S5 P1:source80f0-8137 timer/random branch/data audit and3840 original/native roots zero phase diff;14 actual original control transitions observed;explicit ABI and index/carry paths recorded.",
         "docs/proposals/m2/t70-final-current-certification.md S6 original flag0 early-vblank scroll versus flag1 actual synchronization confirmed;32 synthetic compositor conditional-top mismatches each native width.",
-        "docs/proposals/m2/t70-final-current-certification.md S6 P1:source8138 conditional split latched at NMI and consumed by shared compositor;64 original physical-scroll/control phases and32 actual RTI returns match native,synthetic top/priority checks pass after live flag mutation;within-line pixel timing not certified."
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:source8138 conditional split latched at NMI and consumed by shared compositor;64 original physical-scroll/control phases and32 actual RTI returns match native,synthetic top/priority checks pass after live flag mutation;within-line pixel timing not certified.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:5labels/20instructions/7RAM joined4boundedclauses;P89TopScore nonalias/P90pausedbit/P48timers joined,INCframe gate/RAM00/XOR/ROR reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T52 S1 controlled owner-ROM capture at source $8175, immediately before OperModeExecutionTree, applied one NMI-entry mirror precondition ($0778=$10) and recorded $00=$02, rotated LFSR $a9/$40, and physical $2000=$10. Raw trace remains ignored below build.",
         "M2 T52 S1 ROM-configured x86/x64 builds passed mysmb.nmi-parent-integration, Win32 self-test and platform-purity. The focused regression proves the scratch write, d7-clear dispatch boundary and d7 restoration at the RTI-equivalent tail; OpenNT DOS16 links the same shared frame_root.c.",
         "docs/proposals/m2/t70-final-current-certification.md S5 P1:current x86/x64 focused NMI/timer/random/purity tests pass;game source and3 EXEs unchanged from accepted S4 full build/OpenNT/248 tests/width.",
-        "docs/proposals/m2/t70-final-current-certification.md S6 P1:full x86/x64 and248 tests/width,original OpenNT DOS16 link,3 fresh products;531 mask/3840 timer roots and6x600 frame regressions match,purity pass."
+        "docs/proposals/m2/t70-final-current-certification.md S6 P1:full x86/x64 and248 tests/width,original OpenNT DOS16 link,3 fresh products;531 mask/3840 timer roots and6x600 frame regressions match,purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:3840originalroots eachwidth47bytephaseABI0diff/all20PC/4branchpairs,4tests each;otherRAM/hardware/stack explicitlyoutsidecapture,source/threeP81productsunchanged."
       ],
       "semanticContract": "Performs the source seven-byte LFSR rotation and leaves the source scratch $00 equal to the first masked bit while passing control to sprite-zero processing.",
       "currentSourcePaths": [
@@ -169931,16 +169941,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P90 checkpoint - pause gates timer and sound queue uses reconciled:6labels/31instructions/11RAM joined4boundedclauses;mode/task/timer/start/status/queue write order reviewed,mandatory81BB retainsinfeasible00062;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P91 checkpoint - two-port serial sampling and debounce uses reconciled:4labels/30instructions/6RAM joined3boundedclauses;standardD0/D1hardwarefold/00publication/strobe/twoportdebounce reviewed;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P92 checkpoint - loss restart game over and player records uses reconciled:14labels/96instructions/41RAM joined7boundedclauses;life sign/checkpoint16bytes/descendingsevenbyteexchange/carry/LoadAreaPointerbeforeContinue resets reviewed;wholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P93 checkpoint - victory messages counters and world completion uses reconciled:16labels/84instructions/29RAM joined7boundedclauses;sourcemessageSBC/carry/queue/counter/timer/Bexit order reviewed;8421falsecontrol00153 reclassifiedinfeasible,oldscopedframeproofdidnotobserveit;wholeproducer/inter-frame pending,no newnodecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P93 checkpoint - victory messages counters and world completion uses reconciled:16labels/84instructions/29RAM joined7boundedclauses;sourcemessageSBC/carry/queue/counter/timer/Bexit order reviewed;8421falsecontrol00153 reclassifiedinfeasible,oldscopedframeproofdidnotobserveit;wholeproducer/inter-frame pending,no newnodecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P94 checkpoint - NMI pause timer gate and random shift uses reconciled:5labels/20instructions/7RAM joined4boundedclauses;P89TopScore nonalias/P90pausedbit/P48timers joined,INCframe gate/RAM00/XOR/ROR reviewed;wholeproducer/inter-frame pending,no graphcredit."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 9506,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 1185,
+        "localInstructionReceiptSites": 9526,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 1165,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 3361,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 412,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 3368,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 405,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -169950,12 +169961,12 @@
           "src/game/area/block_metatile.c": 34,
           "src/game/scroll.c shared C90 scroll owner": 32,
           "src/game/enemy/hammer_bro.c": 30,
-          "src/game/frame_root.c": 29,
           "src/game/player.c": 28,
           "src/game/objects.c": 26,
           "src/game/player_movement.c shared C90 movement owner": 26,
           "src/game/game.c": 24,
           "src/game/player_end_level.c shared C90 end-level owner": 24,
+          "src/game/frame_root.c": 22,
           "src/game/entry.c shared C90 entry owner": 21,
           "src/game/player_modes.c shared C90 player-mode owner": 18,
           "src/game/player_transition.c shared C90 transition owner": 17,
