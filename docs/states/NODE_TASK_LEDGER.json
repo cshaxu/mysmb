@@ -766705,7 +766705,13 @@
         "InitFireballExplode",
         "PauseRoutine",
         "SetupPowerUp",
-        "FireballBGCollision"
+        "FireballBGCollision",
+        "FloateyNumbersRoutine",
+        "Setup_Vine",
+        "BridgeCollapse",
+        "RunFireworks",
+        "RunStarFlagObj",
+        "HandleEnemyFBallCol"
       ],
       "baseline": 1992,
       "incomingComplete": [

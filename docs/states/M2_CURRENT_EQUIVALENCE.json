@@ -21433,7 +21433,8 @@
       ],
       "operationalEvidence": [
         "M2 T53 S4 controlled owner-local route evidence: 15 victory/end-world fixtures, 60-frame warmup and eight recorded frames each compare exact against current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalar and audio; x86 and x64 are byte-identical.",
-        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass."
+        "docs/proposals/m2/t70-final-current-certification.md S11 P1:16128 actual original roots and707 persistent message/end-wait records both widths zero full-RAM diff outside case-observed physical stack writes;15 entries observed,17 feasible conditional sites both outcomes,8421 BNE after INY0-to1 unconditional;1152 original TerminateGame calls;4 focused checks each,6x600 integration routes,native/OpenNT builds and3 EXEs pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof."
       ],
       "semanticContract": "ROM $83fd: queues VictoryMusic only for World 8 message index three, then reaches PrintMsg; other indexes print without changing EventMusicQueue.",
       "currentSourcePaths": [
@@ -21730,7 +21731,8 @@
       "operationalEvidence": [
         "M2 T52 S3 operational: mysmb.floatey-oam-smoke covers initial $2b award with RAM timer $2a before score effects and initial $2a non-award with RAM timer $29; x86/x64 platform-purity and Win32 self-tests pass; OpenNT DOS16 links shared objects.c.",
         "M2 T53 S5 controlled owner-local Floatey routes: one-up, timer-zero and numeric-alt fixtures, 60-frame warmup and eight captured frames each, match original ROM on current x86/x64 in RAM $0200-$07ff excluding $0778/$0779, CIRAM, palette, OAM, PPU scalars and audio; x86/x64 records are byte-identical. Focused OAM branch regression and DOS16 MZ link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S12 P1:15624 original roots plus132 persistent45-call lifecycles/5940 records both widths zero full-RAM diff;only opcode-confirmed physical pushes01f7-01fd excluded(case-specific or protocol-cumulative);13 conditional sites both outcomes,33 reachable table bytes read;1794 real score and14070 real dump calls;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass."
+        "docs/proposals/m2/t70-final-current-certification.md S12 P1:15624 original roots plus132 persistent45-call lifecycles/5940 records both widths zero full-RAM diff;only opcode-confirmed physical pushes01f7-01fd excluded(case-specific or protocol-cumulative);13 conditional sites both outcomes,33 reachable table bytes read;1794 real score and14070 real dump calls;5 focused checks each,6x600 routes,native/OpenNT builds and3 EXEs pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof."
       ],
       "semanticContract": "ROM $84db decrements FloateyNum_Timer RAM first, then CMP compares the already loaded pre-decrement A value to $2b. The $2b path writes the decremented timer before one-up/table effects.",
       "currentSourcePaths": [
@@ -34790,7 +34792,8 @@
         "M2 T60 S8 static SMB1 $B91E-$B94A comparison plus fresh controlled original-ROM/current x86/x64 vine-setup routes: initialization writes, offset branch, registration, sound queue, return and raw height bytes match."
       ],
       "operationalEvidence": [
-        "M2 T60 S8: 16 fresh original-ROM setup routes cover both offset-branch outcomes and registrations 0, 1, 2 and 255; 32 actual x86/x64 returns match 1,791 persistent bytes. Focused 12,288-case setup smoke, shared DOS16 link and platform-purity pass."
+        "M2 T60 S8: 16 fresh original-ROM setup routes cover both offset-branch outcomes and registrations 0, 1, 2 and 255; 32 actual x86/x64 returns match 1,791 persistent bytes. Focused 12,288-case setup smoke, shared DOS16 link and platform-purity pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof."
       ],
       "semanticContract": "Stores the selected enemy slot at VineObjOffset[VineFlagOffset], increments the offset and queues the grow-vine sound.",
       "currentSourcePaths": [
@@ -43333,7 +43336,8 @@
         "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
       "operationalEvidence": [
-        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof."
       ],
       "semanticContract": "Writes Silence to EventMusicQueue, increments OperMode_Task exactly once, then clears enemy slots in descending 4..0 order and resets EnemyFrenzyBuffer.",
       "currentSourcePaths": [
@@ -43372,7 +43376,8 @@
         "M2 T63 S13 static audit: SMB1 $CFDD-$D060 bridge-collapse table, front-slot/state gates, mode tail, timed removal, child order, sound queues and graphics tail compared with src/game/bridge.c; 15/15 table bytes bind exactly."
       ],
       "operationalEvidence": [
-        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S13 route: one current-source bridge-collapse manifest runner per width compares 180 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof."
       ],
       "semanticContract": "Decrements BowserFeetCounter; on expiry restores four, toggles body bit zero, stages $04/$05, emits the two-row blank command, advances the original VRAM offset, queues blast/shatter, advances the 15-step table and only then initializes defeated falling state.",
       "currentSourcePaths": [
@@ -44132,7 +44137,8 @@
         "M2 T63 S21 static original-ROM audit: SMB1 $D246-$D267 against shared enemy/fireworks.c confirms timer/graphics branches, relative-coordinate transfer, terminal sound/score writes and child order."
       ],
       "operationalEvidence": [
-        "M2 T63 S21 current-source x86/x64 batch route: 512 original-ROM fireworks-lifetime fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 lifetime contract, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S21 current-source x86/x64 batch route: 512 original-ROM fireworks-lifetime fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 lifetime contract, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof."
       ],
       "semanticContract": "Clears the enemy flag, queues Sfx_Blast, writes the 500-point digit modifier at +4, then tails to EndAreaPoints.",
       "currentSourcePaths": [
@@ -44303,7 +44309,8 @@
         "M2 T63 S22 static original-ROM audit: SMB1 $D2CD-$D3AE against shared enemy/star_flag.c confirms all tables, vector targets, timer-score/player paths, draw loop and interval/music exits."
       ],
       "operationalEvidence": [
-        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass."
+        "M2 T63 S22 current-source x86/x64 batch route: 1,024 original-ROM star-flag fixtures each, full compared RAM and recorded child calls, zero differences; focused C90 chain, platform purity and OpenNT DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof."
       ],
       "semanticContract": "ORs all three timer digits for zero exit; otherwise queues TimerTick only on FrameCounter bit two, subtracts one from the last digit through DigitModifier+5, then sets the same slot to five before score award.",
       "currentSourcePaths": [
@@ -45851,7 +45858,8 @@
         "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
       "operationalEvidence": [
-        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof."
       ],
       "semanticContract": "Writes $23 for worlds below three and $20 otherwise, queues BowserFall, restores current enemy offset and routes score modifier nine to the common smack-score tail.",
       "currentSourcePaths": [
@@ -45946,7 +45954,8 @@
         "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics."
       ],
       "operationalEvidence": [
-        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass."
+        "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof."
       ],
       "semanticContract": "Uses the current enemy slot and score modifier for floatey-number setup, then queues EnemySmack on Square1 before the common return.",
       "currentSourcePaths": [
@@ -46039,7 +46048,8 @@
         "Td S9 B16k power-up collection node-semantics and independent integration audit: SMB1 lines 11262-11306 compared with shared world/powerup_collision.c, erase/score/palette/routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [
-        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass."
+        "M2 T64 S5 static $D800-$D84C audit plus 128 retained controlled original-ROM power-up pickup records replayed in one x86 and one x64 native process with full compared RAM and recorded erase, score, palette and routine child calls, zero differences; focused pickup contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof."
       ],
       "semanticContract": "Erases the power-up, initializes modifier six and PowerUpGrab sound before type dispatch; types 0/1 go to status logic, type 3 overwrites the floatey modifier with eleven, and other types set star timer $23 and StarPower music.",
       "currentSourcePaths": [
@@ -46295,7 +46305,8 @@
         "Td S9 B16l player-enemy contact front node-semantics and independent integration audit: SMB1 lines 11318-11400 compared with shared world/player_enemy_collision.c plus geometry, power-up, defeat, injury and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof."
       ],
       "semanticContract": "Latches a first on-screen contact, applies source ID/area/state eligibility ordering, sends injury/stomp cases to their owners, and turns a qualifying non-Goomba defeated shell into a player-facing moving shell with source score selection.",
       "currentSourcePaths": [
@@ -46439,7 +46450,8 @@
         "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof."
       ],
       "semanticContract": "Uses PlayerStatus: small Mario takes KillPlayer; other status consumes input A as new small status, sets InjuryTimer eight, queues injury sound, updates palette and selects subroutine ten/state one.",
       "currentSourcePaths": [
@@ -46511,7 +46523,8 @@
         "Td S9 B16m player injury/death response node-semantics and independent integration audit: SMB1 lines 11401-11547 compared with shared world/player_enemy_collision.c, palette, movement and routine children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof."
       ],
       "semanticContract": "Clears player horizontal speed through X=PlayerStatus zero, queues death event music one, writes vertical speed $fc and selects subroutine eleven/state one.",
       "currentSourcePaths": [
@@ -46547,7 +46560,8 @@
         "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required."
       ],
       "operationalEvidence": [
-        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass."
+        "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof."
       ],
       "semanticContract": "Routes Spiny to guarded injury; otherwise queues EnemyStomp, selects the four-entry stomp-point class by ID and sends remaining enemies to paratroopa demotion or shell handling.",
       "currentSourcePaths": [
@@ -164167,7 +164181,13 @@
         "InitFireballExplode",
         "PauseRoutine",
         "SetupPowerUp",
-        "FireballBGCollision"
+        "FireballBGCollision",
+        "FloateyNumbersRoutine",
+        "Setup_Vine",
+        "BridgeCollapse",
+        "RunFireworks",
+        "RunStarFlagObj",
+        "HandleEnemyFBallCol"
       ],
       "controlEdgeIds": [],
       "status": "in-progress-material-use-completeness",
@@ -164210,7 +164230,9 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P20 admission - external audio queue writer and consumer boundary",
         "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs",
         "docs/proposals/m2/t70-final-current-certification.md S17 P21 admission - missing queue producer root domains",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P21 checkpoint - targeted queue producer boundaries"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P21 checkpoint - targeted queue producer boundaries",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P22 admission - actor and terminal queue roots",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries"
       ]
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",

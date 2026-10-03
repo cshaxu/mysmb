@@ -4662,3 +4662,71 @@ claims of newly run unit tests. Fourteen batches below7MiB raw/120sec per
 process,records removed. No product/source repair or three-EXE refresh.
 Local nodes1992/1992,controls4274/4274(raw4342,infeasible68),historical1992/1992;
 material879 partial,total unknown. S17 and full M2 remain open.
+
+## S17 P22 admission - actor and terminal queue roots
+
+Continue remaining P21 queue writer clauses via parent entries83a0,84c3,
+b91e,cfec,d295,d2d9,d73e,d800,d931,d969,d895;labels:`VictoryModeSubroutines`,`FloateyNumbersRoutine`,`Setup_Vine`,`BridgeCollapse`,`RunFireworks`,`RunStarFlagObj`,`HandleEnemyFBallCol`,`HandlePowerUpCollision`,`ForceInjury`,`EnemyStomped`,`HandlePECollisions`.
+These unchanged original roots and current shared C owners target victory
+messages,floating-number life award,vine creation,bridge/Bowser defeat,
+fireworks/timer score,fireball hits,power-up/contact/injury/stomp responses.
+Explicit actor-slot/ObjectOffset/relative-coordinate entry invariants are
+recorded per fixture. Full pre/post-sound RAM/APU/ordered commands and observed
+push masks use P20 protocol. Source branches and actual write PC coverage
+remain separate;unobserved writers/overwrite domains remain pending. Eight
+sampled low-byte values by256 fixture patterns,1024-root batches,128MiB cap,
+120sec/process,raw cleanup. No product repair admitted,source changes require
+affected-chain amendment and three EXEs. Fresh0,max1992;no material path credit
+without independently reconciled native producer/consumer use.
+
+## S17 P22 checkpoint - actor and terminal queue boundaries
+
+Eleven original parent roots each have2048 controlled sampled fixtures;
+22528 returning roots per x86/x64 width compare complete2048 RAM before
+SoundEngine and after it,plus24 APU bytes and ordered commands,zero diff.
+Actual producer pushes are the only pre-sound exclusions;actual sound pushes
+extend that mask only for the post-sound comparison. Every original child
+runs unchanged and current native parents call the shared game implementation.
+No returned original A is asserted against a void C API;SoundEngine overwrites
+entry registers,as separately audited in P19. Slot/ObjectOffset agree;enemy
+relative-input RAM01 agrees with the selected slot;ForceInjury consumes A0;
+floating control is6/11,vine registers0/1,bridge offset0-14 with Bowser45 or
+absent1,starflag task2 and fixture timer digits have legal domains. Contact
+Y is the source ID argument and facing is1/2. This is declared fixture-domain
+evidence,not exhaustive gameplay,all callers or corrupt-state certification.
+
+| Queue writer | PC | Queue | Actual visits | Modes |
+| --- | --- | --- | --- | --- |
+| EvalForMusic | 843a | 00fc | 127 | 128 |
+| DecNumTimer | 84eb | 00fe | 512 | 129 |
+| NextVO | b946 | 00fe | 2048 | 130 |
+| SetM2 | d007 | 00fc | 1280 | 131 |
+| RemoveBridge | d043 | 00fe | 256 | 131 |
+| RemoveBridge | d047 | 00fd | 256 | 131 |
+| RemoveBridge | d05c | 00fe | 16 | 131 |
+| FireworksSoundScore | d2c3 | 00fe | 680 | 132 |
+| AwardGameTimerPoints | d325 | 00fe | 1024 | 133 |
+| SetDBSte | d781 | 00fe | 64 | 134 |
+| EnemySmackScore | d7c1 | 00ff | 1392 | 134 |
+| HandlePowerUpCollision | d80a | 00fe | 2048 | 135 |
+| HandlePowerUpCollision | d81d | 00fb | 512 | 135 |
+| HandlePECollisions | d8d5 | 00ff | 976 | 138 |
+| ForceInjury | d93f | 00ff | 1938 | 136,137,138 |
+| KillPlayer | d95b | 00fc | 992 | 136,137,138 |
+| EnemyStomped | d971 | 00ff | 2174 | 137,138 |
+
+P20-P22 union37/48 observed direct external stores. Remaining11: HoleDie@b1a1, FlagpoleSlide@b2ad, PlayerEndLevel@b2dc, NextArea@b326, SolidOrClimb@dcf0, PipeDwnS@ddd5, FlagpoleCollision@de5b, HandlePipeEntry@df05, GetWNum@df34, CoinSd@dfad, ChkForBump_HammerBroJ@e12f.
+
+The four distinct bridge queue stores are individually observed,including
+the last-segment defeat override after fireworks/noise writes. Power-up star
+type writes AreaMusicQueue after common reward sound;its next SoundEngine
+consumption is part of the actual compared output. Source clauses retain
+their distinct predicate/value/store order;matching final queues alone is
+not an overwrite graph proof. No native read/last-write joins or all-caller
+proof are inferred here,and no new material path credit is allocated.
+Twenty-two batches below7MiB raw/120sec per process,raw deleted after both
+widths. Current C90 probe builds pass;P20 focused checks are retained against
+unchanged product owners,not re-described as new runs. No product/source
+changes or EXE refresh. Historical1992/1992,local nodes1992/1992 and controls
+4274/4274(raw4342,infeasible68),material879 partial,total unknown. S17 and
+material/pixels/routes/snapshot final packages remain open.
