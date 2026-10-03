@@ -37,10 +37,9 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T29 S5 | 13 | `AreaParserTaskHandler`, `DoAPTasks`, `SkipATRender`, `IncrementColumnPos`, `NoColWrap`, `BSceneDataOffsets`, `BackSceneryData`, `BackSceneryMetatiles`, `FSceneDataOffsets`, `ForeSceneryData`, `TerrainMetatiles`, `TerrainRenderBits`, `AreaParserCore` |
 | M2 T29 S6 | 1 | `BlockBuffLowBounds` |
 | M2 T29 S8 | 20 | `ScrollLockObject_Warp`, `WarpNum`, `ScrollLockObject`, `KillELoop`, `NoKillE`, `FrenzyIDData`, `AreaFrenzy`, `FreCompLoop`, `ExitAFrenzy`, `TreeLedge`, `MidTreeL`, `EndTreeL`, `MushroomLedge`, `EndMushL`, `AllUnder`, `NoUnder`, `PulleyRopeMetatiles`, `PulleyRopeObject`, `RenderPul`, `MushLExit` |
-| M2 T29 S9 | 9 | `CastleMetatiles`, `WaterPipe`, `SidePipeShaftData`, `SidePipeTopPart`, `SidePipeBottomPart`, `VerticalPipeData`, `VerticalPipe`, `WarpPipe`, `GetPipeHeight` |
+| M2 T29 S9 | 5 | `CastleMetatiles`, `SidePipeShaftData`, `SidePipeTopPart`, `SidePipeBottomPart`, `VerticalPipeData` |
 | M2 T30 S1 | 3 | `EndlessRope`, `BalancePlatRope`, `DrawRope` |
 | M2 T30 S10 | 6 | `ChkLrgObjLength`, `ChkLrgObjFixedLength`, `LenSet`, `GetLrgObjAttrib`, `GetAreaObjXPosition`, `GetAreaObjYPosition` |
-| M2 T30 S12 | 1 | `DrawPipe` |
 | M2 T30 S13 | 3 | `SetInitNTHigh`, `BlockBufferAddr`, `GetBlockBufferAddr` |
 | M2 T30 S14 | 22 | `LoadAreaPointer`, `GetAreaType`, `FindAreaPointer`, `GetAreaDataAddrs`, `StoreFore`, `StoreStyle`, `WorldAddrOffsets`, `AreaAddrOffsets`, `World1Areas`, `World2Areas`, `World3Areas`, `World4Areas`, `World5Areas`, `World6Areas`, `World7Areas`, `World8Areas`, `EnemyAddrHOffsets`, `EnemyDataAddrLow`, `EnemyDataAddrHigh`, `AreaDataHOffsets`, `AreaDataAddrLow`, `AreaDataAddrHigh` |
 | M2 T30 S16 | 6 | `L_CastleArea1`, `L_CastleArea2`, `L_CastleArea3`, `L_CastleArea4`, `L_CastleArea5`, `L_CastleArea6` |
@@ -54,7 +53,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T30 S6 | 4 | `StaircaseHeightData`, `StaircaseRowData`, `StaircaseObject`, `NextStair` |
 | M2 T30 S7 | 1 | `Jumpspring` |
 | M2 T30 S8 | 8 | `Hidden1UpBlock`, `QuestionBlock`, `BrickWithCoins`, `BrickWithItem`, `BWithL`, `DrawQBlk`, `GetAreaObjectID`, `ExitDecBlock` |
-| M2 T30 S9 | 8 | `HoleMetatiles`, `Hole_Empty`, `StrWOffset`, `NoWhirlP`, `RenderUnderPart`, `DrawThisRow`, `WaitOneRow`, `ExitUPartR` |
+| M2 T30 S9 | 4 | `HoleMetatiles`, `Hole_Empty`, `StrWOffset`, `NoWhirlP` |
 | M2 T31 S1 | 1 | `GameCoreRoutine` |
 | M2 T31 S2 | 39 | `GameEngine`, `ProcELoop`, `NoChgMus`, `CycleTwo`, `ClrPlrPal`, `SaveAB`, `UpdScrollVar`, `RunParser`, `ExitEng`, `WarpZoneObject`, `ProcessWhirlpools`, `WhLoop`, `NextWh`, `ExitWh`, `WhirlpoolActivate`, `LeftWh`, `SetPWh`, `WhPull`, `CannonBitmasks`, `ProcessCannons`, `ThreeSChk`, `FireCannon`, `Chk_BB`, `Next3Slt`, `ExCannon`, `BulletBillXSpdData`, `BulletBillHandler`, `SetupBB`, `ChkDSte`, `BBFly`, `RunBBSubs`, `KillBB`, `DoEnemySideCheck`, `SdeCLoop`, `NextSdeC`, `ExESdeC`, `SubtEnemyYPos`, `EnemyJump`, `DoSide` |
 | M2 T31 S3 | 10 | `ScrollHandler`, `ChkNearMid`, `ScrollScreen`, `InitScrlAmt`, `ChkPOffscr`, `KeepOnscr`, `InitPlatScrl`, `X_SubtracterData`, `OffscrJoypadBitsData`, `GetScreenPosition` |
@@ -202,7 +201,7 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T70 S13 | 19 | `SetupIntermediate`, `AreaPalette`, `GetAreaPalette`, `SetVRAMAddr_A`, `NextSubtask`, `BGColorCtrl_Addr`, `BackgroundColors`, `PlayerColors`, `GetBackgroundColor`, `NoBGColor`, `GetPlayerColors`, `ChkFiery`, `StartClrGet`, `ClrGetLoop`, `SetBGColor`, `SetVRAMOffset`, `GetAlternatePalette1`, `SetVRAMAddr_B`, `NoAltPal` |
 | M2 T70 S14 | 12 | `WriteTopStatusLine`, `WriteBottomStatusLine`, `DisplayTimeUp`, `NoTimeUp`, `DisplayIntermediate`, `PlayerInter`, `OutputInter`, `GameOverInter`, `NoInter`, `ResetSpritesAndScreenTimer`, `ResetScreenTimer`, `NoReset` |
 | M2 T70 S15 | 17 | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `InitializeNameTables`, `WriteNTAddr`, `InitNTLoop`, `InitATLoop`, `InitScroll`, `WritePPUReg1`, `InitializeMemory`, `InitPageLoop`, `InitByteLoop`, `InitByte`, `SkipByte` |
-| M2 T70 S17 | 87 | `OperModeExecutionTree`, `TitleScreenMode`, `VictoryModeSubroutines`, `DrawTitleScreen`, `OutputTScr`, `ChkHiByte`, `RenderAreaGraphics`, `DrawMTLoop`, `RightCheck`, `LLeft`, `NextMTRow`, `SetAttrib`, `ExitDrawM`, `RenderAttributeTables`, `SetATHigh`, `AttribLoop`, `SetVRAMCtrl`, `AreaParserTasks`, `RenderSceneryTerrain`, `ClrMTBuf`, `ThirdP`, `RendBack`, `SceLoop1`, `RendFore`, `SceLoop2`, `NoFore`, `RendTerr`, `TerMTile`, `StoreMT`, `TerrLoop`, `NoCloud2`, `TerrBChk`, `NextTBit`, `EndUChk`, `RendBBuf`, `ChkMTLow`, `StrBlock`, `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj`, `AlterAreaAttributes`, `Alter2`, `SetFore`, `AreaStyleObject`, `CastleObject`, `CRendLoop`, `ChkCFloor`, `NotTall`, `PlayerStop`, `ExitCastle`, `IntroPipe`, `VPipeSectLoop`, `NoBlankP`, `ExitPipe`, `RenderSidewaysPipe`, `DrawSidePart`, `GameMode`, `GameRoutines`, `PlayerHole`, `HoleBottom`, `MoveSubs` |
+| M2 T70 S17 | 96 | `OperModeExecutionTree`, `TitleScreenMode`, `VictoryModeSubroutines`, `DrawTitleScreen`, `OutputTScr`, `ChkHiByte`, `RenderAreaGraphics`, `DrawMTLoop`, `RightCheck`, `LLeft`, `NextMTRow`, `SetAttrib`, `ExitDrawM`, `RenderAttributeTables`, `SetATHigh`, `AttribLoop`, `SetVRAMCtrl`, `AreaParserTasks`, `RenderSceneryTerrain`, `ClrMTBuf`, `ThirdP`, `RendBack`, `SceLoop1`, `RendFore`, `SceLoop2`, `NoFore`, `RendTerr`, `TerMTile`, `StoreMT`, `TerrLoop`, `NoCloud2`, `TerrBChk`, `NextTBit`, `EndUChk`, `RendBBuf`, `ChkMTLow`, `StrBlock`, `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj`, `AlterAreaAttributes`, `Alter2`, `SetFore`, `AreaStyleObject`, `CastleObject`, `CRendLoop`, `ChkCFloor`, `NotTall`, `PlayerStop`, `ExitCastle`, `WaterPipe`, `IntroPipe`, `VPipeSectLoop`, `NoBlankP`, `ExitPipe`, `RenderSidewaysPipe`, `DrawSidePart`, `VerticalPipe`, `WarpPipe`, `DrawPipe`, `GetPipeHeight`, `RenderUnderPart`, `DrawThisRow`, `WaitOneRow`, `ExitUPartR`, `GameMode`, `GameRoutines`, `PlayerHole`, `HoleBottom`, `MoveSubs` |
 | M2 T70 S4 | 6 | `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`, `NonMaskableInterrupt`, `ScreenOff`, `InitBuffer` |
 | M2 T70 S6 | 9 | `RotPRandomBit`, `Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipSprite0`, `SkipMainOper`, `MoveAllSpritesOffscreen`, `MoveSpritesOffscreen`, `SprInitLoop` |
 | M2 T70 S7 | 6 | `SpriteShuffler`, `ShuffleLoop`, `StrSprOffset`, `NextSprOffset`, `SetAmtOffset`, `SetMiscOffset` |
@@ -620,27 +619,27 @@ transfer existing ownership or allocate a numeric T.
 | 3717 | `RenderPul` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
 | 3719 | `MushLExit` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
 | 3724 | `CastleMetatiles` | M2 T29 S9 | existing closure backlog; accepted transfer-090: owner-approved source-order large-object geometry chain | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3737 | `CastleObject` | M2 T70 S17 | existing closure backlog; S17 P9 actual castle06 scratch counter correction. | M2 T17 S6; M2 T18 S2; M2 T21 S4; M2 T24 / S not recorded; M2 T24 S1; M2 T29 S9 |
-| 3748 | `CRendLoop` | M2 T70 S17 | existing closure backlog; S17 P9 actual castle06 scratch counter correction. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3759 | `ChkCFloor` | M2 T70 S17 | existing closure backlog; S17 P9 actual castle06 scratch counter correction. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3772 | `NotTall` | M2 T70 S17 | existing closure backlog; S17 P9 actual castle06 scratch counter correction. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3737 | `CastleObject` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T17 S6; M2 T18 S2; M2 T21 S4; M2 T24 / S not recorded; M2 T24 S1; M2 T29 S9 |
+| 3748 | `CRendLoop` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3759 | `ChkCFloor` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3772 | `NotTall` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
 | 3789 | `PlayerStop` | M2 T70 S17 | existing closure backlog; S17 P9 actual castle06 scratch counter correction. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
 | 3791 | `ExitCastle` | M2 T70 S17 | existing closure backlog; S17 P9 actual castle06 scratch counter correction. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3795 | `WaterPipe` | M2 T29 S9 | existing closure backlog; accepted transfer-090: owner-approved source-order large-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3810 | `IntroPipe` | M2 T70 S17 | existing closure backlog; S17 P10 missing sideways pipe05/06 scratch outputs. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3817 | `VPipeSectLoop` | M2 T70 S17 | existing closure backlog; S17 P10 missing sideways pipe05/06 scratch outputs. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3823 | `NoBlankP` | M2 T70 S17 | existing closure backlog; S17 P10 missing sideways pipe05/06 scratch outputs. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3795 | `WaterPipe` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3810 | `IntroPipe` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3817 | `VPipeSectLoop` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3823 | `NoBlankP` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
 | 3825 | `SidePipeShaftData` | M2 T29 S9 | existing closure backlog; accepted transfer-090: owner-approved source-order large-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
 | 3828 | `SidePipeTopPart` | M2 T29 S9 | existing closure backlog; accepted transfer-090: owner-approved source-order large-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
 | 3831 | `SidePipeBottomPart` | M2 T29 S9 | existing closure backlog; accepted transfer-090: owner-approved source-order large-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3835 | `ExitPipe` | M2 T70 S17 | existing closure backlog; S17 P10 missing sideways pipe05/06 scratch outputs. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3840 | `RenderSidewaysPipe` | M2 T70 S17 | existing closure backlog; S17 P10 missing sideways pipe05/06 scratch outputs. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3855 | `DrawSidePart` | M2 T70 S17 | existing closure backlog; S17 P10 missing sideways pipe05/06 scratch outputs. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3835 | `ExitPipe` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3840 | `RenderSidewaysPipe` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3855 | `DrawSidePart` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
 | 3862 | `VerticalPipeData` | M2 T29 S9 | existing closure backlog; accepted transfer-090: owner-approved source-order large-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3868 | `VerticalPipe` | M2 T29 S9 | existing closure backlog; accepted transfer-090: owner-approved source-order large-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3876 | `WarpPipe` | M2 T29 S9 | existing closure backlog; accepted transfer-090: owner-approved source-order large-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3900 | `DrawPipe` | M2 T30 S12 | existing closure backlog; Accepted transfer-109: DrawPipe tail correction after revoked completion. | M2 T21 S4; M2 T24 S1; M2 T29 S9; M2 T30 S12 |
-| 3911 | `GetPipeHeight` | M2 T29 S9 | existing closure backlog; accepted transfer-090: owner-approved source-order large-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3868 | `VerticalPipe` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3876 | `WarpPipe` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3900 | `DrawPipe` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9; M2 T30 S12 |
+| 3911 | `GetPipeHeight` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
 | 3921 | `FindEmptyEnemySlot` | M2 T29 S10 | existing closure backlog; accepted transfer-091: owner-approved source-order allocation/final-object geometry chain | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T29 S10 |
 | 3923 | `EmptyChkLoop` | M2 T29 S10 | existing closure backlog; accepted transfer-091: owner-approved source-order allocation/final-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
 | 3929 | `ExitEmptyChk` | M2 T29 S10 | existing closure backlog; accepted transfer-091: owner-approved source-order allocation/final-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
@@ -694,10 +693,10 @@ transfer existing ownership or allocate a numeric T.
 | 4240 | `Hole_Empty` | M2 T30 S9 | existing closure backlog; Accepted transfer-106: source-order hole/whirlpool registration and UnderPart rendering chain. | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T30 S9 |
 | 4265 | `StrWOffset` | M2 T30 S9 | existing closure backlog; Accepted transfer-106: source-order hole/whirlpool registration and UnderPart rendering chain. | M2 T21 S4; M2 T24 S1; M2 T30 S9 |
 | 4266 | `NoWhirlP` | M2 T30 S9 | existing closure backlog; Accepted transfer-106: source-order hole/whirlpool registration and UnderPart rendering chain. | M2 T21 S4; M2 T24 S1; M2 T30 S9 |
-| 4273 | `RenderUnderPart` | M2 T30 S9 | existing closure backlog; Accepted transfer-106: source-order hole/whirlpool registration and UnderPart rendering chain. | M2 T18 S2; M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S9 |
-| 4289 | `DrawThisRow` | M2 T30 S9 | existing closure backlog; Accepted transfer-106: source-order hole/whirlpool registration and UnderPart rendering chain. | M2 T21 S4; M2 T24 S1; M2 T30 S9 |
-| 4290 | `WaitOneRow` | M2 T30 S9 | existing closure backlog; Accepted transfer-106: source-order hole/whirlpool registration and UnderPart rendering chain. | M2 T21 S4; M2 T24 S1; M2 T30 S9 |
-| 4296 | `ExitUPartR` | M2 T30 S9 | existing closure backlog; Accepted transfer-106: source-order hole/whirlpool registration and UnderPart rendering chain. | M2 T21 S4; M2 T24 S1; M2 T30 S9 |
+| 4273 | `RenderUnderPart` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T18 S2; M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S9 |
+| 4289 | `DrawThisRow` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T30 S9 |
+| 4290 | `WaitOneRow` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T30 S9 |
+| 4296 | `ExitUPartR` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T30 S9 |
 | 4300 | `ChkLrgObjLength` | M2 T30 S10 | existing closure backlog; Accepted transfer-107: common attribute/length/coordinate helper chain. | M2 T21 S4; M2 T24 S1; M2 T30 S10 |
 | 4303 | `ChkLrgObjFixedLength` | M2 T30 S10 | existing closure backlog; Accepted transfer-107: common attribute/length/coordinate helper chain. | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T30 S10 |
 | 4310 | `LenSet` | M2 T30 S10 | existing closure backlog; Accepted transfer-107: common attribute/length/coordinate helper chain. | M2 T21 S4; M2 T24 S1; M2 T30 S10 |
@@ -2380,7 +2379,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T29 S6 | 0 | 1 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S7 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S8 | 0 | 20 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
-| M2 T29 S9 | 22 | 9 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
+| M2 T29 S9 | 22 | 5 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S10 | 10 | 10 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T3 | 2 | - | [record](../../docs/history/M2-T2-title-start-checkpoint.md); [record](../../docs/history/M2-T3-area-bootstrap-and-commands.md); S not recorded |
 | M2 T30 | 144 | - | [record](../../docs/history/M2-T30-area-object-rendering.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -2392,10 +2391,10 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T30 S6 | 4 | 4 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
 | M2 T30 S7 | 1 | 1 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
 | M2 T30 S8 | 8 | 8 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
-| M2 T30 S9 | 8 | 8 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
+| M2 T30 S9 | 8 | 4 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
 | M2 T30 S10 | 6 | 6 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
 | M2 T30 S11 | 1 | 0 | owner-approved-source-order, chain-based-implementation, corrective-revalidation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
-| M2 T30 S12 | 1 | 1 | owner-approved-source-order, chain-based-implementation, corrective-revalidation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
+| M2 T30 S12 | 1 | 0 | owner-approved-source-order, chain-based-implementation, corrective-revalidation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
 | M2 T30 S13 | 3 | 3 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
 | M2 T30 S14 | 23 | 22 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
 | M2 T30 S15 | 34 | 0 | owner-approved-source-order, consumer-dependency-audit; [record](../../docs/history/M2-T30-area-object-rendering.md) |
@@ -2825,7 +2824,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T70 S14 | 0 | 12 | hud-intermediate-timer-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S15 | 0 | 17 | final-reset-startup-source-and-graph-review; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T70 S16 | 0 | 0 | executable-data-binding-manifest; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S17 | 0 | 87 | material-use-completeness-and-path-reconciliation, corrective-title-pointer-output-chain, corrective-column-output-chain, corrective-parser-output-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S17 | 0 | 96 | material-use-completeness-and-path-reconciliation, corrective-title-pointer-output-chain, corrective-column-output-chain, corrective-parser-output-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M2 T9 | 1 | - | [record](../../docs/etc/architecture/smb1-frame-output-ledger.md); [record](../../docs/history/M2-T9-frame-output-ledger-and-reference-recorder.md); S not recorded |
 | M2 Td | 0 | - | [record](../../docs/proposals/m2-rom-structural-recovery.md); [record](../../docs/states/QUEUE.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -3221,6 +3220,9 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-t70-s17-dispatch-scratch-7 | M2 T31 S4 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s17-dispatch-scratch-8 | M2 T33 S1 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 | transfer-t70-s17-hole-threshold-1 | M2 T32 S1 | M2 T70 S17 | 2 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-raw-pipe-2 | M2 T29 S9 | M2 T70 S17 | 4 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-raw-pipe-3 | M2 T30 S12 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-raw-pipe-4 | M2 T30 S9 | M2 T70 S17 | 4 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
 
 ## Recorded S estimates and actual matches
 

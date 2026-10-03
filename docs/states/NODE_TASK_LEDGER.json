@@ -20896,7 +20896,7 @@
       "label": "CastleObject",
       "line": 3737,
       "receiver": "M2 T70 S17",
-      "receivingBasis": "S17 P9 actual castle06 scratch counter correction.",
+      "receivingBasis": "P39 accepted raw pipe/castle and returned-row fidelity repair.",
       "futurePackage": null,
       "history": [
         {
@@ -20964,7 +20964,7 @@
       "label": "CRendLoop",
       "line": 3748,
       "receiver": "M2 T70 S17",
-      "receivingBasis": "S17 P9 actual castle06 scratch counter correction.",
+      "receivingBasis": "P39 accepted raw pipe/castle and returned-row fidelity repair.",
       "futurePackage": null,
       "history": [
         {
@@ -20992,7 +20992,7 @@
       "label": "ChkCFloor",
       "line": 3759,
       "receiver": "M2 T70 S17",
-      "receivingBasis": "S17 P9 actual castle06 scratch counter correction.",
+      "receivingBasis": "P39 accepted raw pipe/castle and returned-row fidelity repair.",
       "futurePackage": null,
       "history": [
         {
@@ -21020,7 +21020,7 @@
       "label": "NotTall",
       "line": 3772,
       "receiver": "M2 T70 S17",
-      "receivingBasis": "S17 P9 actual castle06 scratch counter correction.",
+      "receivingBasis": "P39 accepted raw pipe/castle and returned-row fidelity repair.",
       "futurePackage": null,
       "history": [
         {
@@ -21103,8 +21103,8 @@
     {
       "label": "WaterPipe",
       "line": 3795,
-      "receiver": "M2 T29 S9",
-      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P39 accepted raw pipe/castle and returned-row fidelity repair.",
       "futurePackage": null,
       "history": [
         {
@@ -21132,7 +21132,7 @@
       "label": "IntroPipe",
       "line": 3810,
       "receiver": "M2 T70 S17",
-      "receivingBasis": "S17 P10 missing sideways pipe05/06 scratch outputs.",
+      "receivingBasis": "P39 accepted raw pipe/castle and returned-row fidelity repair.",
       "futurePackage": null,
       "history": [
         {
@@ -21160,7 +21160,7 @@
       "label": "VPipeSectLoop",
       "line": 3817,
       "receiver": "M2 T70 S17",
-      "receivingBasis": "S17 P10 missing sideways pipe05/06 scratch outputs.",
+      "receivingBasis": "P39 accepted raw pipe/castle and returned-row fidelity repair.",
       "futurePackage": null,
       "history": [
         {
@@ -21188,7 +21188,7 @@
       "label": "NoBlankP",
       "line": 3823,
       "receiver": "M2 T70 S17",
-      "receivingBasis": "S17 P10 missing sideways pipe05/06 scratch outputs.",
+      "receivingBasis": "P39 accepted raw pipe/castle and returned-row fidelity repair.",
       "futurePackage": null,
       "history": [
         {
@@ -21300,7 +21300,7 @@
       "label": "ExitPipe",
       "line": 3835,
       "receiver": "M2 T70 S17",
-      "receivingBasis": "S17 P10 missing sideways pipe05/06 scratch outputs.",
+      "receivingBasis": "P39 accepted raw pipe/castle and returned-row fidelity repair.",
       "futurePackage": null,
       "history": [
         {
@@ -21328,7 +21328,7 @@
       "label": "RenderSidewaysPipe",
       "line": 3840,
       "receiver": "M2 T70 S17",
-      "receivingBasis": "S17 P10 missing sideways pipe05/06 scratch outputs.",
+      "receivingBasis": "P39 accepted raw pipe/castle and returned-row fidelity repair.",
       "futurePackage": null,
       "history": [
         {
@@ -21356,7 +21356,7 @@
       "label": "DrawSidePart",
       "line": 3855,
       "receiver": "M2 T70 S17",
-      "receivingBasis": "S17 P10 missing sideways pipe05/06 scratch outputs.",
+      "receivingBasis": "P39 accepted raw pipe/castle and returned-row fidelity repair.",
       "futurePackage": null,
       "history": [
         {
@@ -21411,8 +21411,8 @@
     {
       "label": "VerticalPipe",
       "line": 3868,
-      "receiver": "M2 T29 S9",
-      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P39 accepted raw pipe/castle and returned-row fidelity repair.",
       "futurePackage": null,
       "history": [
         {
@@ -21439,8 +21439,8 @@
     {
       "label": "WarpPipe",
       "line": 3876,
-      "receiver": "M2 T29 S9",
-      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P39 accepted raw pipe/castle and returned-row fidelity repair.",
       "futurePackage": null,
       "history": [
         {
@@ -21467,8 +21467,8 @@
     {
       "label": "DrawPipe",
       "line": 3900,
-      "receiver": "M2 T30 S12",
-      "receivingBasis": "Accepted transfer-109: DrawPipe tail correction after revoked completion.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P39 accepted raw pipe/castle and returned-row fidelity repair.",
       "futurePackage": null,
       "history": [
         {
@@ -21501,8 +21501,8 @@
     {
       "label": "GetPipeHeight",
       "line": 3911,
-      "receiver": "M2 T29 S9",
-      "receivingBasis": "accepted transfer-090: owner-approved source-order large-object geometry chain",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P39 accepted raw pipe/castle and returned-row fidelity repair.",
       "futurePackage": null,
       "history": [
         {
@@ -23008,8 +23008,8 @@
     {
       "label": "RenderUnderPart",
       "line": 4273,
-      "receiver": "M2 T30 S9",
-      "receivingBasis": "Accepted transfer-106: source-order hole/whirlpool registration and UnderPart rendering chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P39 accepted raw pipe/castle and returned-row fidelity repair.",
       "futurePackage": null,
       "history": [
         {
@@ -23051,8 +23051,8 @@
     {
       "label": "DrawThisRow",
       "line": 4289,
-      "receiver": "M2 T30 S9",
-      "receivingBasis": "Accepted transfer-106: source-order hole/whirlpool registration and UnderPart rendering chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P39 accepted raw pipe/castle and returned-row fidelity repair.",
       "futurePackage": null,
       "history": [
         {
@@ -23078,8 +23078,8 @@
     {
       "label": "WaitOneRow",
       "line": 4290,
-      "receiver": "M2 T30 S9",
-      "receivingBasis": "Accepted transfer-106: source-order hole/whirlpool registration and UnderPart rendering chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P39 accepted raw pipe/castle and returned-row fidelity repair.",
       "futurePackage": null,
       "history": [
         {
@@ -23105,8 +23105,8 @@
     {
       "label": "ExitUPartR",
       "line": 4296,
-      "receiver": "M2 T30 S9",
-      "receivingBasis": "Accepted transfer-106: source-order hole/whirlpool registration and UnderPart rendering chain.",
+      "receiver": "M2 T70 S17",
+      "receivingBasis": "P39 accepted raw pipe/castle and returned-row fidelity repair.",
       "futurePackage": null,
       "history": [
         {
@@ -69745,6 +69745,45 @@
       "nodes": [
         "PlayerHole",
         "HoleBottom"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-raw-pipe-2",
+      "type": "transfer",
+      "from": "M2 T29 S9",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "WaterPipe",
+        "VerticalPipe",
+        "WarpPipe",
+        "GetPipeHeight"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-raw-pipe-3",
+      "type": "transfer",
+      "from": "M2 T30 S12",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "DrawPipe"
+      ],
+      "acceptedBy": "Coordinator under owner same-S repair mandate.",
+      "evidence": "docs/proposals/m2/t70-final-current-certification.md"
+    },
+    {
+      "id": "transfer-t70-s17-raw-pipe-4",
+      "type": "transfer",
+      "from": "M2 T30 S9",
+      "to": "M2 T70 S17",
+      "nodes": [
+        "RenderUnderPart",
+        "DrawThisRow",
+        "WaitOneRow",
+        "ExitUPartR"
       ],
       "acceptedBy": "Coordinator under owner same-S repair mandate.",
       "evidence": "docs/proposals/m2/t70-final-current-certification.md"

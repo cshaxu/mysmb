@@ -6,7 +6,7 @@
   "dataEdges": {
     "status": "partially-enumerated",
     "rule": "Material RAM/table producer-consumer edges require source-path proof; writer-reader cartesian candidates are not audit edges.",
-    "enumeratedCount": 984,
+    "enumeratedCount": 985,
     "remainingDenominator": "pending feasible-path enumeration by source-order cohort",
     "allocation": "Every currently proven feasible material edge is assigned to one source-order cohort; the total remains expandable only when a later source-path audit proves a previously unrecorded feasible relation."
   },
@@ -21921,10 +21921,12 @@
       "semanticContract": "P38 admitted entrycounter/row/height domains only;raw guard equivalence and source caller invariants not certified. Source saved-value/childwrite-set joins explicit.",
       "semanticEvidence": [
         "docs/proposals/m2/t70-final-current-certification.md S17 P38 checkpoint - bounded castle and pipe child lifetimes reconciled",
-        "9bc9 TAY ->return9809 STY07. Source firstbyte row intentionallydiscarded,replacedbysecondlowF;native returnedheight storedactual07 beforefixedchild. This doesnot cacheinitialattributerowby mistake."
+        "9bc9 TAY ->return9809 STY07. Source firstbyte row intentionallydiscarded,replacedbysecondlowF;native returnedheight storedactual07 beforefixedchild. This doesnot cacheinitialattributerowby mistake.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
-        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts."
+        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
       "cohort": "D",
       "cohortBasis": "producer inventory label",
@@ -21944,10 +21946,12 @@
       "semanticContract": "P38 admitted entrycounter/row/height domains only;raw guard equivalence and source caller invariants not certified. Source saved-value/childwrite-set joins explicit.",
       "semanticEvidence": [
         "docs/proposals/m2/t70-final-current-certification.md S17 P38 checkpoint - bounded castle and pipe child lifetimes reconciled",
-        "9810 TXA/9811 PHA ->realcastleloop ->9831 PLA/9832 TAX ->9838 residentlengthread. Native slotparameter survivesloop,stagingcannotaliascallerstack/local,sourceXslot=parameter0-2. Actual sourcepushbytesexcluded,butrestoredslotconsumption proven."
+        "9810 TXA/9811 PHA ->realcastleloop ->9831 PLA/9832 TAX ->9838 residentlengthread. Native slotparameter survivesloop,stagingcannotaliascallerstack/local,sourceXslot=parameter0-2. Actual sourcepushbytesexcluded,butrestoredslotconsumption proven.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
-        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts."
+        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
@@ -21967,10 +21971,12 @@
       "semanticContract": "P38 admitted entrycounter/row/height domains only;raw guard equivalence and source caller invariants not certified. Source saved-value/childwrite-set joins explicit.",
       "semanticEvidence": [
         "docs/proposals/m2/t70-final-current-certification.md S17 P38 checkpoint - bounded castle and pipe child lifetimes reconciled",
-        "984b realGetX ->984e PHA ->984f realFindEmpty ->9852 PLA ->9853 EnemyX[newslot] store. Native computesGetXafterpool,whichreadonlyflagarraycannotchange0726column. Selectedslot0-5 fromsameprimitive,fullpoolcarryignored;actual restored coordinate matchesfullRAM."
+        "984b realGetX ->984e PHA ->984f realFindEmpty ->9852 PLA ->9853 EnemyX[newslot] store. Native computesGetXafterpool,whichreadonlyflagarraycannotchange0726column. Selectedslot0-5 fromsameprimitive,fullpoolcarryignored;actual restored coordinate matchesfullRAM.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
-        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts."
+        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
       "cohort": "D",
       "cohortBasis": "producer inventory label",
@@ -21990,10 +21996,12 @@
       "semanticContract": "P38 admitted entrycounter/row/height domains only;raw guard equivalence and source caller invariants not certified. Source saved-value/childwrite-set joins explicit.",
       "semanticEvidence": [
         "docs/proposals/m2/t70-final-current-certification.md S17 P38 checkpoint - bounded castle and pipe child lifetimes reconciled",
-        "98c2 CMP0 ->shaftzero carry1/BEQDrawSidePart orshaftdraw98cd CLCcarry0 ->98dc return988c BCS. Sidepairedloads/stores do notmodifycarry. Native same shafttable!=0 test controlsblanking,withinresident0-3,independentfixed-initcarry."
+        "98c2 CMP0 ->shaftzero carry1/BEQDrawSidePart orshaftdraw98cd CLCcarry0 ->98dc return988c BCS. Sidepairedloads/stores do notmodifycarry. Native same shafttable!=0 test controlsblanking,withinresident0-3,independentfixed-initcarry.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
-        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts."
+        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
@@ -22013,10 +22021,12 @@
       "semanticContract": "P38 admitted entrycounter/row/height domains only;raw guard equivalence and source caller invariants not certified. Source saved-value/childwrite-set joins explicit.",
       "semanticEvidence": [
         "docs/proposals/m2/t70-final-current-certification.md S17 P38 checkpoint - bounded castle and pipe child lifetimes reconciled",
-        "9946 LDY0730+slot ->9949 RTS ->98e8 LDA00/98ea BEQ ->optional fourINY. Native actualresidentcounterreload andusagebit3 selection,source00consistent0or7. Height06notusedasleft/rightselector."
+        "9946 LDY0730+slot ->9949 RTS ->98e8 LDA00/98ea BEQ ->optional fourINY. Native actualresidentcounterreload andusagebit3 selection,source00consistent0or7. Height06notusedasleft/rightselector.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
-        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts."
+        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
@@ -22036,10 +22046,12 @@
       "semanticContract": "P38 admitted entrycounter/row/height domains only;raw guard equivalence and source caller invariants not certified. Source saved-value/childwrite-set joins explicit.",
       "semanticEvidence": [
         "docs/proposals/m2/t70-final-current-certification.md S17 P38 checkpoint - bounded castle and pipe child lifetimes reconciled",
-        "98f0 TYA/98f1 PHA ->world/area/resident/pool/coordinate/realinitializer ->9925 PLA/9926 TAY ->9929 tableindex. Native selectedvalue localstable acrosschildren;no pointeraliasto it,not recomputedfrom clobberedCPUY."
+        "98f0 TYA/98f1 PHA ->world/area/resident/pool/coordinate/realinitializer ->9925 PLA/9926 TAY ->9929 tableindex. Native selectedvalue localstable acrosschildren;no pointeraliasto it,not recomputedfrom clobberedCPUY.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
-        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts."
+        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
@@ -22059,10 +22071,12 @@
       "semanticContract": "P38 admitted entrycounter/row/height domains only;raw guard equivalence and source caller invariants not certified. Source saved-value/childwrite-set joins explicit.",
       "semanticEvidence": [
         "docs/proposals/m2/t70-final-current-certification.md S17 P38 checkpoint - bounded castle and pipe child lifetimes reconciled",
-        "9944 STA06 ->sourcegates/pool/GetX/GetY/InitPiranha ->9933 LDY06/9935 DEY. Allchildwritefields enemyarrays/state/speed/box disjoint06. Native actualRAM06 reload/decrement in draw_pipe equalsoriginalbyte(h-1)&FF."
+        "9944 STA06 ->sourcegates/pool/GetX/GetY/InitPiranha ->9933 LDY06/9935 DEY. Allchildwritefields enemyarrays/state/speed/box disjoint06. Native actualRAM06 reload/decrement in draw_pipe equalsoriginalbyte(h-1)&FF.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
-        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts."
+        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
@@ -22082,10 +22096,12 @@
       "semanticContract": "P38 admitted entrycounter/row/height domains only;raw guard equivalence and source caller invariants not certified. Source saved-value/childwrite-set joins explicit.",
       "semanticEvidence": [
         "docs/proposals/m2/t70-final-current-certification.md S17 P38 checkpoint - bounded castle and pipe child lifetimes reconciled",
-        "9bc2 STA07 ->GetPipeHeight06store/residentreload ->warp/realenemychildren ->9927 LDX07. No07writer inbetween underrealinitializerwrite-set. Native draw_pipe reloadsactual07,savedselectorindependent."
+        "9bc2 STA07 ->GetPipeHeight06store/residentreload ->warp/realenemychildren ->9927 LDX07. No07writer inbetween underrealinitializerwrite-set. Native draw_pipe reloadsactual07,savedselectorindependent.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
-        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts."
+        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
       "cohort": "D",
       "cohortBasis": "producer inventory label",
@@ -22105,16 +22121,41 @@
       "semanticContract": "P38 admitted entrycounter/row/height domains only;raw guard equivalence and source caller invariants not certified. Source saved-value/childwrite-set joins explicit.",
       "semanticEvidence": [
         "docs/proposals/m2/t70-final-current-certification.md S17 P38 checkpoint - bounded castle and pipe child lifetimes reconciled",
-        "9919 GetY fromactual07 ->991c STA EnemyY+slot ->9920 IDstore ->9922 realInitPiranha. Native sameRAMYpublication thenrealinitializerreadsEnemyY tofixedlowerendpoint and subtract18 upperendpoint. Indexedarraysvalidslot0-4,scalarcoordinatecontract retained."
+        "9919 GetY fromactual07 ->991c STA EnemyY+slot ->9920 IDstore ->9922 realInitPiranha. Native sameRAMYpublication thenrealinitializerreadsEnemyY tofixedlowerendpoint and subtract18 upperendpoint. Indexedarraysvalidslot0-4,scalarcoordinatecontract retained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
-        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts."
+        "95706 actual original returning parents each current x86/x64 zero fullRAM diff;all147 scopePC observed;80626 scalar/table assertions;actual child/interval/alias proof,no invented writer-event counts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
       "cohort": "C",
       "cohortBasis": "producer inventory label",
       "currentSourcePaths": [
         "src/game/area.c",
         "src/game/enemy/init_targets.c"
+      ]
+    },
+    {
+      "id": "material-00985",
+      "producer": "RenderUnderPart",
+      "consumer": "DrawSidePart",
+      "storage": "X returned metatile row across child return",
+      "feasiblePath": "98ca real child ->98cd carryclear ->98ce selector reload ->98d3/98d9 lip stores withreturnedX",
+      "status": "exact",
+      "currentCounterpart": "src/game/area.c:mysmb_area_render_under_part returned byte consumed by mysmb_area_render_sideways_pipe",
+      "semanticContract": "Original98ca JSR RenderUnderPart ->98cd CLC ->98ce LDY06 ->98d3/98d9 indexed stores consumes final X from actual row loop. Height05=height-2 may beFE/FF;early negative exit returnsX1,or floorstop returnsX13. Shaftzero instead preserves initialX05+1,includingFF with absolute base+1+X secondstore. Native u8 UnderPart return andshared Sideways row reproduce these distinctions;selector actual06 reload remains disjoint child staging writes for admitted side root. Source carry survives immutable reads/stores.",
+      "semanticEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic.",
+        "Original98ca JSR RenderUnderPart ->98cd CLC ->98ce LDY06 ->98d3/98d9 indexed stores consumes final X from actual row loop. Height05=height-2 may beFE/FF;early negative exit returnsX1,or floorstop returnsX13. Shaftzero instead preserves initialX05+1,includingFF with absolute base+1+X secondstore. Native u8 UnderPart return andshared Sideways row reproduce these distinctions;selector actual06 reload remains disjoint child staging writes for admitted side root. Source carry survives immutable reads/stores."
+      ],
+      "operationalEvidence": [
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified.",
+        "9216 direct fullRAM/returnedX cases plus63024 parent fixtures;all256 counterbytes andrepresentative bound pointers covering16 source heights/rows; no caller reachability extrapolation."
+      ],
+      "cohort": "D",
+      "cohortBasis": "producer inventory label",
+      "currentSourcePaths": [
+        "src/game/area.c"
       ]
     }
   ],
@@ -30335,13 +30376,16 @@
         "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
         "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match.",
         "T70 S17 P9 reopened actual CastleObject06 RAM counter output;original9806/9819/982b versus private C counter.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 corrective baseline and custody:raw entry/adjacent indexed reads/returned row require correction beyond retained bounded receipts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
         "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
-      "semanticContract": "Renders castle columns and performs post-page floor/star-flag conditions.",
+      "semanticContract": "Renders castle columns and performs post-page floor/star-flag conditions. P39 supersedes raw pipe guard/row-return/table-prefix limitations with source-faithful owner PRG indexed reads and actual returned X. Direct entry fixtures prove supplied ABI domains,not all caller reachability or global lifetime.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -30357,13 +30401,16 @@
         "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
         "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match.",
         "T70 S17 P9 reopened actual CastleObject06 RAM counter output;original9806/9819/982b versus private C counter.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 corrective baseline and custody:raw entry/adjacent indexed reads/returned row require correction beyond retained bounded receipts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
         "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
-      "semanticContract": "Writes a castle column in five-byte vertical source strides through row ten.",
+      "semanticContract": "Writes a castle column in five-byte vertical source strides through row ten. P39 supersedes raw pipe guard/row-return/table-prefix limitations with source-faithful owner PRG indexed reads and actual returned X. Direct entry fixtures prove supplied ABI domains,not all caller reachability or global lifetime.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -30379,13 +30426,16 @@
         "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
         "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match.",
         "T70 S17 P9 reopened actual CastleObject06 RAM counter output;original9806/9819/982b versus private C counter.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 corrective baseline and custody:raw entry/adjacent indexed reads/returned row require correction beyond retained bounded receipts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
         "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
-      "semanticContract": "Selects exit, floor brick or flag creation after castle column rendering.",
+      "semanticContract": "Selects exit, floor brick or flag creation after castle column rendering. P39 supersedes raw pipe guard/row-return/table-prefix limitations with source-faithful owner PRG indexed reads and actual returned X. Direct entry fixtures prove supplied ABI domains,not all caller reachability or global lifetime.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -30401,13 +30451,16 @@
         "Td S9 B10h frenzy/style/castle static node-and-edge audit: SMB1 lines 3629-3780 compared with area.c and shared object helpers; controlled ROM/x86/x64 object routes remain required.",
         "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match.",
         "T70 S17 P9 reopened actual CastleObject06 RAM counter output;original9806/9819/982b versus private C counter.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:19 original indirect sites/13 consumers;header raw pointer and advanced+2 domains separated. Castle9819/982b actual06 RAM counter restored;original loop continues until row11 without private-counter early break.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 corrective baseline and custody:raw entry/adjacent indexed reads/returned row require correction beyond retained bounded receipts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
         "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P9 checkpoint - area pointer and castle counter:4288 original/native two-stage compositions each width,all19 sites observed;24 baseline06 differences repaired to zero.27139 current parser roots zero diff;11 actual focused checks each width,55 neutral castle row/column checks,six600-frame scoped routes and3 product builds pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
-      "semanticContract": "Applies tall/non-tall castle length gate before star-flag creation.",
+      "semanticContract": "Applies tall/non-tall castle length gate before star-flag creation. P39 supersedes raw pipe guard/row-return/table-prefix limitations with source-faithful owner PRG indexed reads and actual returned X. Direct entry fixtures prove supplied ABI domains,not all caller reachability or global lifetime.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -30465,12 +30518,15 @@
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
-        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 corrective baseline and custody:raw entry/adjacent indexed reads/returned row require correction beyond retained bounded receipts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
-        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
-      "semanticContract": "Writes two water-pipe metatiles at decoded row.",
+      "semanticContract": "Writes two water-pipe metatiles at decoded row. P39 supersedes raw pipe guard/row-return/table-prefix limitations with source-faithful owner PRG indexed reads and actual returned X. Direct entry fixtures prove supplied ABI domains,not all caller reachability or global lifetime.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -30486,13 +30542,16 @@
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
         "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
         "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:original98b5/98ba stores05=Y-2 and06=object length. Intro fixedY10 and exit decoded height now publish these exact RAM values before either shaft branch. Original predicates/render/clearing tails unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:original98b5/98ba stores05=Y-2 and06=object length. Intro fixedY10 and exit decoded height now publish these exact RAM values before either shaft branch. Original predicates/render/clearing tails unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 corrective baseline and custody:raw entry/adjacent indexed reads/returned row require correction beyond retained bounded receipts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
         "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:240 original9508 returning roots each width/eight original bounded stream records,all6 labels observed,480 baseline05/06 differences repaired to zero/all RAM excluding observed physical pushes.48 neutral scratch regressions,12 current checks each width,4288 current header/parser rechecks,six600-frame routes/3 builds pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:240 original9508 returning roots each width/eight original bounded stream records,all6 labels observed,480 baseline05/06 differences repaired to zero/all RAM excluding observed physical pushes.48 neutral scratch regressions,12 current checks each width,4288 current header/parser rechecks,six600-frame routes/3 builds pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
-      "semanticContract": "Builds fixed side pipe and conditionally clears upper vertical-pipe staging. Includes original05/06 scratch outputs in declared intro/exit source-record and resident/new-object domains.",
+      "semanticContract": "Builds fixed side pipe and conditionally clears upper vertical-pipe staging. Includes original05/06 scratch outputs in declared intro/exit source-record and resident/new-object domains. P39 supersedes raw pipe guard/row-return/table-prefix limitations with source-faithful owner PRG indexed reads and actual returned X. Direct entry fixtures prove supplied ABI domains,not all caller reachability or global lifetime.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -30508,13 +30567,16 @@
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
         "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
         "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:original98b5/98ba stores05=Y-2 and06=object length. Intro fixedY10 and exit decoded height now publish these exact RAM values before either shaft branch. Original predicates/render/clearing tails unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:original98b5/98ba stores05=Y-2 and06=object length. Intro fixedY10 and exit decoded height now publish these exact RAM values before either shaft branch. Original predicates/render/clearing tails unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 corrective baseline and custody:raw entry/adjacent indexed reads/returned row require correction beyond retained bounded receipts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
         "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:240 original9508 returning roots each width/eight original bounded stream records,all6 labels observed,480 baseline05/06 differences repaired to zero/all RAM excluding observed physical pushes.48 neutral scratch regressions,12 current checks each width,4288 current header/parser rechecks,six600-frame routes/3 builds pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:240 original9508 returning roots each width/eight original bounded stream records,all6 labels observed,480 baseline05/06 differences repaired to zero/all RAM excluding observed physical pushes.48 neutral scratch regressions,12 current checks each width,4288 current header/parser rechecks,six600-frame routes/3 builds pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
-      "semanticContract": "Clears staged rows six through zero before intro-pipe cap placement. Includes original05/06 scratch outputs in declared intro/exit source-record and resident/new-object domains.",
+      "semanticContract": "Clears staged rows six through zero before intro-pipe cap placement. Includes original05/06 scratch outputs in declared intro/exit source-record and resident/new-object domains. P39 supersedes raw pipe guard/row-return/table-prefix limitations with source-faithful owner PRG indexed reads and actual returned X. Direct entry fixtures prove supplied ABI domains,not all caller reachability or global lifetime.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -30530,13 +30592,16 @@
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
         "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
         "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:original98b5/98ba stores05=Y-2 and06=object length. Intro fixedY10 and exit decoded height now publish these exact RAM values before either shaft branch. Original predicates/render/clearing tails unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:original98b5/98ba stores05=Y-2 and06=object length. Intro fixedY10 and exit decoded height now publish these exact RAM values before either shaft branch. Original predicates/render/clearing tails unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 corrective baseline and custody:raw entry/adjacent indexed reads/returned row require correction beyond retained bounded receipts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
         "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:240 original9508 returning roots each width/eight original bounded stream records,all6 labels observed,480 baseline05/06 differences repaired to zero/all RAM excluding observed physical pushes.48 neutral scratch regressions,12 current checks each width,4288 current header/parser rechecks,six600-frame routes/3 builds pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:240 original9508 returning roots each width/eight original bounded stream records,all6 labels observed,480 baseline05/06 differences repaired to zero/all RAM excluding observed physical pushes.48 neutral scratch regressions,12 current checks each width,4288 current header/parser rechecks,six600-frame routes/3 builds pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
-      "semanticContract": "Intro-pipe completion return. Includes original05/06 scratch outputs in declared intro/exit source-record and resident/new-object domains.",
+      "semanticContract": "Intro-pipe completion return. Includes original05/06 scratch outputs in declared intro/exit source-record and resident/new-object domains. P39 supersedes raw pipe guard/row-return/table-prefix limitations with source-faithful owner PRG indexed reads and actual returned X. Direct entry fixtures prove supplied ABI domains,not all caller reachability or global lifetime.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -30609,13 +30674,16 @@
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
         "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
         "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:original98b5/98ba stores05=Y-2 and06=object length. Intro fixedY10 and exit decoded height now publish these exact RAM values before either shaft branch. Original predicates/render/clearing tails unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:original98b5/98ba stores05=Y-2 and06=object length. Intro fixedY10 and exit decoded height now publish these exact RAM values before either shaft branch. Original predicates/render/clearing tails unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 corrective baseline and custody:raw entry/adjacent indexed reads/returned row require correction beyond retained bounded receipts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
         "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:240 original9508 returning roots each width/eight original bounded stream records,all6 labels observed,480 baseline05/06 differences repaired to zero/all RAM excluding observed physical pushes.48 neutral scratch regressions,12 current checks each width,4288 current header/parser rechecks,six600-frame routes/3 builds pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:240 original9508 returning roots each width/eight original bounded stream records,all6 labels observed,480 baseline05/06 differences repaired to zero/all RAM excluding observed physical pushes.48 neutral scratch regressions,12 current checks each width,4288 current header/parser rechecks,six600-frame routes/3 builds pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
-      "semanticContract": "Combines fixed horizontal length, decoded height and side-pipe rendering. Includes original05/06 scratch outputs in declared intro/exit source-record and resident/new-object domains.",
+      "semanticContract": "Combines fixed horizontal length, decoded height and side-pipe rendering. Includes original05/06 scratch outputs in declared intro/exit source-record and resident/new-object domains. P39 supersedes raw pipe guard/row-return/table-prefix limitations with source-faithful owner PRG indexed reads and actual returned X. Direct entry fixtures prove supplied ABI domains,not all caller reachability or global lifetime.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -30631,13 +30699,16 @@
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
         "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
         "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:original98b5/98ba stores05=Y-2 and06=object length. Intro fixedY10 and exit decoded height now publish these exact RAM values before either shaft branch. Original predicates/render/clearing tails unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:original98b5/98ba stores05=Y-2 and06=object length. Intro fixedY10 and exit decoded height now publish these exact RAM values before either shaft branch. Original predicates/render/clearing tails unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 corrective baseline and custody:raw entry/adjacent indexed reads/returned row require correction beyond retained bounded receipts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
         "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:240 original9508 returning roots each width/eight original bounded stream records,all6 labels observed,480 baseline05/06 differences repaired to zero/all RAM excluding observed physical pushes.48 neutral scratch regressions,12 current checks each width,4288 current header/parser rechecks,six600-frame routes/3 builds pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:240 original9508 returning roots each width/eight original bounded stream records,all6 labels observed,480 baseline05/06 differences repaired to zero/all RAM excluding observed physical pushes.48 neutral scratch regressions,12 current checks each width,4288 current header/parser rechecks,six600-frame routes/3 builds pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
-      "semanticContract": "Separates vertical shaft height from horizontal phase and renders shaft before side pieces when present. Includes original05/06 scratch outputs in declared intro/exit source-record and resident/new-object domains.",
+      "semanticContract": "Separates vertical shaft height from horizontal phase and renders shaft before side pieces when present. Includes original05/06 scratch outputs in declared intro/exit source-record and resident/new-object domains. P39 supersedes raw pipe guard/row-return/table-prefix limitations with source-faithful owner PRG indexed reads and actual returned X. Direct entry fixtures prove supplied ABI domains,not all caller reachability or global lifetime.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -30653,13 +30724,16 @@
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
         "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
         "S17 P9 same-class sweep:original98b5/98ba stores05/06;current inline intro/exit clauses omit both. Admit same-S corrective chain before editing and prove returning root RAM outputs.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:original98b5/98ba stores05=Y-2 and06=object length. Intro fixedY10 and exit decoded height now publish these exact RAM values before either shaft branch. Original predicates/render/clearing tails unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:original98b5/98ba stores05=Y-2 and06=object length. Intro fixedY10 and exit decoded height now publish these exact RAM values before either shaft branch. Original predicates/render/clearing tails unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 corrective baseline and custody:raw entry/adjacent indexed reads/returned row require correction beyond retained bounded receipts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
         "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:240 original9508 returning roots each width/eight original bounded stream records,all6 labels observed,480 baseline05/06 differences repaired to zero/all RAM excluding observed physical pushes.48 neutral scratch regressions,12 current checks each width,4288 current header/parser rechecks,six600-frame routes/3 builds pass."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:240 original9508 returning roots each width/eight original bounded stream records,all6 labels observed,480 baseline05/06 differences repaired to zero/all RAM excluding observed physical pushes.48 neutral scratch regressions,12 current checks each width,4288 current header/parser rechecks,six600-frame routes/3 builds pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
-      "semanticContract": "Writes source top/bottom side-pipe pair at selected staged row. Includes original05/06 scratch outputs in declared intro/exit source-record and resident/new-object domains.",
+      "semanticContract": "Writes source top/bottom side-pipe pair at selected staged row. Includes original05/06 scratch outputs in declared intro/exit source-record and resident/new-object domains. P39 supersedes raw pipe guard/row-return/table-prefix limitations with source-faithful owner PRG indexed reads and actual returned X. Direct entry fixtures prove supplied ABI domains,not all caller reachability or global lifetime.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -30692,12 +30766,15 @@
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
-        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 corrective baseline and custody:raw entry/adjacent indexed reads/returned row require correction beyond retained bounded receipts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
-        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
-      "semanticContract": "Selects pipe data, conditionally creates one piranha, then renders top/body/under-part.",
+      "semanticContract": "Selects pipe data, conditionally creates one piranha, then renders top/body/under-part. P39 supersedes raw pipe guard/row-return/table-prefix limitations with source-faithful owner PRG indexed reads and actual returned X. Direct entry fixtures prove supplied ABI domains,not all caller reachability or global lifetime.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -30711,12 +30788,15 @@
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
-        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 corrective baseline and custody:raw entry/adjacent indexed reads/returned row require correction beyond retained bounded receipts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
-        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
-      "semanticContract": "Skips or creates piranha according to 1-1, phase and empty-slot predicates before DrawPipe.",
+      "semanticContract": "Skips or creates piranha according to 1-1, phase and empty-slot predicates before DrawPipe. P39 supersedes raw pipe guard/row-return/table-prefix limitations with source-faithful owner PRG indexed reads and actual returned X. Direct entry fixtures prove supplied ABI domains,not all caller reachability or global lifetime.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -30730,12 +30810,15 @@
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
-        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 corrective baseline and custody:raw entry/adjacent indexed reads/returned row require correction beyond retained bounded receipts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
-        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
-      "semanticContract": "Writes top/body pipe metatiles and tail-enters under-part rendering.",
+      "semanticContract": "Writes top/body pipe metatiles and tail-enters under-part rendering. P39 supersedes raw pipe guard/row-return/table-prefix limitations with source-faithful owner PRG indexed reads and actual returned X. Direct entry fixtures prove supplied ABI domains,not all caller reachability or global lifetime.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -30749,12 +30832,15 @@
       "currentCounterpart": "mysmb_area_apply_parser_object / shared area helper",
       "semanticEvidence": [
         "Td S9 B10i castle/pipe/slot static node-and-edge audit: SMB1 lines 3772-3945 compared with area.c and shared enemy helpers; controlled ROM/x86/x64 pipe and slot routes remain required.",
-        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths."
+        "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 corrective baseline and custody:raw entry/adjacent indexed reads/returned row require correction beyond retained bounded receipts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
-        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree."
+        "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
-      "semanticContract": "Decodes fixed pipe phase and three-bit vertical extent.",
+      "semanticContract": "Decodes fixed pipe phase and three-bit vertical extent. P39 supersedes raw pipe guard/row-return/table-prefix limitations with source-faithful owner PRG indexed reads and actual returned X. Direct entry fixtures prove supplied ABI domains,not all caller reachability or global lifetime.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -31792,12 +31878,15 @@
       "currentCounterpart": "shared area parser/render helper",
       "semanticEvidence": [
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T57 S3 static audit: SMB1 lines 4237-4367 compared with shared area.c/area/block_buffer.c and the shared world block-buffer caller; the hole water gate, five-slot wrap, UnderPart overlay/loop, helper call order and pointer-table selection have matching C semantics."
+        "M2 T57 S3 static audit: SMB1 lines 4237-4367 compared with shared area.c/area/block_buffer.c and the shared world block-buffer caller; the hole water gate, five-slot wrap, UnderPart overlay/loop, helper call order and pointer-table selection have matching C semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 corrective baseline and custody:raw entry/adjacent indexed reads/returned row require correction beyond retained bounded receipts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
-        "M2 T57 S3 controlled original-ROM/current x86/x64 matrix: 98 hole/UnderPart, 20 helper and 48 block-address routes have zero persistent non-ABI work-RAM differences and byte-identical native records; focused x86/x64 smokes pass."
+        "M2 T57 S3 controlled original-ROM/current x86/x64 matrix: 98 hole/UnderPart, 20 helper and 48 block-address routes have zero persistent non-ABI work-RAM differences and byte-identical native records; focused x86/x64 smokes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
-      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper.",
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper. P39 supersedes raw pipe guard/row-return/table-prefix limitations with source-faithful owner PRG indexed reads and actual returned X. Direct entry fixtures prove supplied ABI domains,not all caller reachability or global lifetime.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -31811,12 +31900,15 @@
       "currentCounterpart": "shared area parser/render helper",
       "semanticEvidence": [
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T57 S3 static audit: SMB1 lines 4237-4367 compared with shared area.c/area/block_buffer.c and the shared world block-buffer caller; the hole water gate, five-slot wrap, UnderPart overlay/loop, helper call order and pointer-table selection have matching C semantics."
+        "M2 T57 S3 static audit: SMB1 lines 4237-4367 compared with shared area.c/area/block_buffer.c and the shared world block-buffer caller; the hole water gate, five-slot wrap, UnderPart overlay/loop, helper call order and pointer-table selection have matching C semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 corrective baseline and custody:raw entry/adjacent indexed reads/returned row require correction beyond retained bounded receipts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
-        "M2 T57 S3 controlled original-ROM/current x86/x64 matrix: 98 hole/UnderPart, 20 helper and 48 block-address routes have zero persistent non-ABI work-RAM differences and byte-identical native records; focused x86/x64 smokes pass."
+        "M2 T57 S3 controlled original-ROM/current x86/x64 matrix: 98 hole/UnderPart, 20 helper and 48 block-address routes have zero persistent non-ABI work-RAM differences and byte-identical native records; focused x86/x64 smokes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
-      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper.",
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper. P39 supersedes raw pipe guard/row-return/table-prefix limitations with source-faithful owner PRG indexed reads and actual returned X. Direct entry fixtures prove supplied ABI domains,not all caller reachability or global lifetime.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -31830,12 +31922,15 @@
       "currentCounterpart": "shared area parser/render helper",
       "semanticEvidence": [
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T57 S3 static audit: SMB1 lines 4237-4367 compared with shared area.c/area/block_buffer.c and the shared world block-buffer caller; the hole water gate, five-slot wrap, UnderPart overlay/loop, helper call order and pointer-table selection have matching C semantics."
+        "M2 T57 S3 static audit: SMB1 lines 4237-4367 compared with shared area.c/area/block_buffer.c and the shared world block-buffer caller; the hole water gate, five-slot wrap, UnderPart overlay/loop, helper call order and pointer-table selection have matching C semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 corrective baseline and custody:raw entry/adjacent indexed reads/returned row require correction beyond retained bounded receipts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
-        "M2 T57 S3 controlled original-ROM/current x86/x64 matrix: 98 hole/UnderPart, 20 helper and 48 block-address routes have zero persistent non-ABI work-RAM differences and byte-identical native records; focused x86/x64 smokes pass."
+        "M2 T57 S3 controlled original-ROM/current x86/x64 matrix: 98 hole/UnderPart, 20 helper and 48 block-address routes have zero persistent non-ABI work-RAM differences and byte-identical native records; focused x86/x64 smokes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
-      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper.",
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper. P39 supersedes raw pipe guard/row-return/table-prefix limitations with source-faithful owner PRG indexed reads and actual returned X. Direct entry fixtures prove supplied ABI domains,not all caller reachability or global lifetime.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -31849,12 +31944,15 @@
       "currentCounterpart": "shared area parser/render helper",
       "semanticEvidence": [
         "Td S9 B11c hole/underpart/helper static node-and-edge audit: SMB1 lines 4237-4368 compared with src/game/area.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T57 S3 static audit: SMB1 lines 4237-4367 compared with shared area.c/area/block_buffer.c and the shared world block-buffer caller; the hole water gate, five-slot wrap, UnderPart overlay/loop, helper call order and pointer-table selection have matching C semantics."
+        "M2 T57 S3 static audit: SMB1 lines 4237-4367 compared with shared area.c/area/block_buffer.c and the shared world block-buffer caller; the hole water gate, five-slot wrap, UnderPart overlay/loop, helper call order and pointer-table selection have matching C semantics.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 corrective baseline and custody:raw entry/adjacent indexed reads/returned row require correction beyond retained bounded receipts.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic."
       ],
       "operationalEvidence": [
-        "M2 T57 S3 controlled original-ROM/current x86/x64 matrix: 98 hole/UnderPart, 20 helper and 48 block-address routes have zero persistent non-ABI work-RAM differences and byte-identical native records; focused x86/x64 smokes pass."
+        "M2 T57 S3 controlled original-ROM/current x86/x64 matrix: 98 hole/UnderPart, 20 helper and 48 block-address routes have zero persistent non-ABI work-RAM differences and byte-identical native records; focused x86/x64 smokes pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified."
       ],
-      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper.",
+      "semanticContract": "Source control, RAM/table binding and byte-width state handoff are preserved by the named shared area helper. P39 supersedes raw pipe guard/row-return/table-prefix limitations with source-faithful owner PRG indexed reads and actual returned X. Direct entry fixtures prove supplied ABI domains,not all caller reachability or global lifetime.",
       "currentSourcePaths": [
         "src/game/area.c"
       ]
@@ -166905,7 +167003,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P35 checkpoint - cannon staircase spring block and hole handoffs reconciled",
         "docs/proposals/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
         "docs/proposals/m2/t70-final-current-certification.md S17 P37 checkpoint - style ledge and rope child lifetimes reconciled",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P38 checkpoint - bounded castle and pipe child lifetimes reconciled"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P38 checkpoint - bounded castle and pipe child lifetimes reconciled",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
@@ -167050,7 +167149,7 @@
           "src/game/oam/normal_enemy_gfx.c and src/game/oam/sprite_row.c": 1,
           "src/game/oam/sprite_row.c and src/game/oam/sprite_draw.c": 1
         },
-        "materialPathsEnumerated": 984,
+        "materialPathsEnumerated": 985,
         "globalMaterialPathDenominator": "unknown",
         "nodeOrControlPromotion": 0,
         "scope": "Retained scoped receipts and named open material obligations;not new global audit,whole-program proof or new material denominator."

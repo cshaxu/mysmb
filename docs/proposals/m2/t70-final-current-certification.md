@@ -6341,3 +6341,79 @@ Current area.c normalizedSHA256:827e23180ee8d409c3fcd3f12323179e62aa3151ab516bbd
 Current block_buffer.c normalizedSHA256:8663c142ea3951ca47de2709f127c50f270d4a7d4e136a6e2f61204f1f474f8d.
 
 Current src/game/enemy/init_targets.c normalizedSHA256:8a34758094db74077901f976a10cf8adae354645938cb4f8d3e0dc6cc8d5a5ae.
+
+## S17 P39 corrective admission - raw pipe entry and returned row fidelity
+
+P38 exposed source-ABI gaps outside earlier boundedfixtures. Exactpotentialrepair participants:`CastleObject`,`CRendLoop`,`ChkCFloor`,`NotTall`,`WaterPipe`,`IntroPipe`,`VPipeSectLoop`,`NoBlankP`,`ExitPipe`,`RenderSidewaysPipe`,`DrawSidePart`,`VerticalPipe`,`WarpPipe`,`DrawPipe`,`GetPipeHeight`,`RenderUnderPart`,`DrawThisRow`,`WaitOneRow`,`ExitUPartR`. Allalreadyadmitted,S17 scope475/fresh0/max1992.
+
+Beforeproductedits,compareactualoriginal/current fullRAM onexpandedwaterrows12-15,sideexitheight0/1/13-15 andpositiveverticalcounterexamples. Do not deliberatelyexecute known host-C out-of-bounds castle/pipe staticarray reads;sourceaudit identifies theirmissingadjacent-ROM contract. ExistingP38 rows remain validonlywithin olddomains,not these newinputs. Afteractualdiff,acceptmaintenancecustody/reopenexactaffectedclauses beforecodechanges.
+
+Repair sharedarea.c only:originalunconditional water/sidepairedstores,real RenderUnderPartreturnedX asnativebyte output,one native SidewaysPipe owner preserving source05/06/X/Y/C handoffs forboth callers,originalindexed adjacent-ROM reads beyond staticprefixes. Preserveactualsourcebytewraps/stack-savedslot/selector and RAMaliaseffects;do not inventguards orclamps. Original34 immutable pointerviews/allcursors,lowFrows/heights0-15,allcounterbytes,realchildren. Expandedcastleloops musthonororiginal8-bitrowwrap andactualpostloopRAMreads. FullRAM/declaredhelperreturnABIoriginalcomparisons,scopedsource/edge re-review,similar-issue sweep,focusedchecks/six retainedintegrationroutes andall3 refreshed Win32/OpenNT16products required. Existing unaffectedfunctionbodies/dependencies retainedbyidentity;do not resetglobal evidence.
+
+Original/native probes remainbelowignoredbuild,128-case parent batches with32768instruction/root limit,2048-case UnderPart batches,128MiB/120seconds perprocess,rawcleanup aftereachbatch. No newwhole-projectround,siblingwrite,ROMimport,push orplatform logic. Ownerfinalovernightboundary remains;S17 cannotclosewhiletheseidentifiedclauses unresolved.
+
+## S17 P39 corrective baseline and custody
+
+3516 real original returning parents each width produce14727 RAM byte differences in current C. Water rows12-15,exit heights0/1/13-15,and positive vertical counters3/4/127 contradict invented C guards. Original indexed table reads beyond declared prefixes also require owner-local PRG addressing,including castle counters and wrapped rows;no host array overrun is acceptable. Accept maintenance custody and reopen these19 source-node contracts before repair. Existing bounded final-RAM receipts remain bounded;they do not prove omitted input or returned-X clauses. Similar-class sweep covers every castle/side/vertical lookup and paired store in the admitted owner,and RenderUnderPart return consumers. All3 products and focused original/current re-audit required;no platform edits.
+
+## S17 P39 checkpoint - raw pipe and castle source fidelity repaired
+
+Repair only shared area.c. Water paired stores are unconditional. Intro and
+Exit enter one original Sideways owner;05 stores byte(height-2),06 stores
+resident selector;the lip consumes actual UnderPart returned X,or source
+initial X when shaftzero. Sideways returns carry decision to Intro blanking.
+Original absolute base+1+X secondstore preserves FF addressing rather than
+wrapping X first. Vertical selector saved across real enemy initialization.
+Castle loop retains actual06,8-bit row/Y increments andafterloop actual RAM
+page/counter reads,including staged writes that alias those fields.
+Castle/side/vertical lookup reads original bound PRG when index exceeds known
+prefix;no C array overrun or invented clamps. This uses existing bound ROM
+data;no CPU interpreter or platform game logic added.
+
+3516 original/current baseline parents each width14727 RAM differences become
+zero. Expanded63024 returning parent fixtures eachwidth coverall256 resident
+counter bytes/3 slots/16 decodedheight androw representatives,castle wrap,
+side priorities0/FF,vertical bothusagevalues andall272 water pointer views.
+Original34 area pointers/eightcursor boundaries supplyrepresentative row/
+height views. These direct-entry fixtures do not prove allwhole-parser
+reachability or arbitraryexternal RAM invariants. Realchildren execute.
+9216 UnderPart cases eachwidth coverall256 rowbytes/nineextent boundaries/
+two metatiles/two priorvalues;complete RAM andsource finalX match.
+95706 previous bounded parent fixtures rerun againstcurrent repaired C,zero
+RAM differences eachwidth. No native sourcePC injection or mocked child;
+only actual originalphysicalpushbytes excluded,not whole6502 stackpage.
+Voidparent CPUregisters/flags outside API;required childX/carry represented.
+
+Similar-class sweep lists water/sidepaired stores,side returnedX andcarry,
+allcastle/side/vertical tableprefix guards/indexes,andactual scratchreloads.
+75 tableprefixbytes matchoriginal;60 otherarea functionbodies unchanged.
+UnderPart RAM body identical,only returnrow added;otherchangedexistingowners
+are DrawPipe andApplyParserObject,newowner is shared Sideways. Unrelated
+castlebridge rowguard is outside pipe defect scope andretains priorowner
+receipt;no project-wide guard-removal claim. Compiler C90 checks bothwidths.
+
+10 focused tests eachwidth pass;platformpurity pass;six600-frame original/
+current integrations match scoped RAM/CIRAM/palette/OAM/APU/PPU fields and
+native x86/x64 records byte-identical. FrameABI omitszero-page,physicalstack,
+0778/0779 andordinal;not complete pixel orarbitrarygame-route certification.
+Original OpenNT16 compile/link passes,optional OLDNAMES warning retained;
+DOS runtime unqualified. Productandrequiredtest builds pass. Earlier broad
+all-target build mettwo unrelated corrupttest objectarchives;not countedas
+successful fullsuite. Threeassets refreshed understanding ownerdirection.
+
+19 reopenedlabels restoredto scopedexact;fresh0/max1992. Material path985
+records actual UnderPart finalX ->side lip. Historical1992/1992 andlocal
+scoped1992/1992;controls4274/4274(raw4342,infeasible68). Material985 partial,
+totalunknown.1793 instruction/551 RAM boundedreceipts retained;8898 other
+instructions/3222 otherRAM entries requireappropriate retainedjoins or
+missingclauseproof,not automatically newdefects. Allwhole-program lifetime
+clauses pending. Fourfinal packages open,M2 NOT COMPLETE. No newauditround.
+
+Restored labels:CastleObject,CRendLoop,ChkCFloor,NotTall,WaterPipe,IntroPipe,VPipeSectLoop,NoBlankP,ExitPipe,RenderSidewaysPipe,DrawSidePart,VerticalPipe,WarpPipe,DrawPipe,GetPipeHeight,RenderUnderPart,DrawThisRow,WaitOneRow,ExitUPartR.
+Normalized area.c SHA256:9e482d3c43db74d1b338726e5c4e9f69721e27b931f3fd6ac6c55ea5d48c24f3.
+
+mysmb16.exe bytes259435 SHA256:d3059d8615056e0d70c8cd57026a6c891470582ad2be049a57fddb78958f30ec.
+
+mysmb32.exe bytes373707 SHA256:a050a910e6926f63f84cc3d43349baa0ff53e8036016dc6f970a9a53c06fc6d0.
+
+mysmb64.exe bytes379704 SHA256:d3a85fd30980d85069e310f0ed6f0183555556921b00e3ad50d80138bc01c2bb.

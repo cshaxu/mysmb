@@ -8,10 +8,16 @@ for remaining work/exit conditions. Historical1992/1992 means mapping coverage.
 Prior aggregate exact counts below retain their closure-time local-contract
 meaning;they are not full current-build certification. The attempted zero-based final-review restart is superseded;reuse retained
 scoped evidence and track only named unresolved/invalidated clauses.
-Material984 is a partial enumerated set;its global denominator is unknown.
+Material985 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
+
+[P39 source-faithful raw pipe andcastle repair](../proposals/m2/t70-final-current-certification.md#s17-p39-checkpoint---raw-pipe-and-castle-source-fidelity-repaired).
+19 reopened localcontracts restored;63024 expandedparents/9216 returnedX roots/
+95706 retainedparents eachwidth zero RAM/declaredABI differences. Threeproducts
+refreshed,10tests each/six600-frame integrations pass,DOS compile/linkonly.
+985 partialmaterialpaths,totalunknown;full M2 certification remainsopen.
 
 [P38 bounded castle and pipe lifetimes](../proposals/m2/t70-final-current-certification.md#s17-p38-checkpoint---bounded-castle-and-pipe-child-lifetimes-reconciled).
 147 instructions/48 RAM,95706 actualparents eachwidth zero withinadmitteddomains.

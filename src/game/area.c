@@ -169,7 +169,7 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
                                            mysmb_u8 slot,
                                            mysmb_u8 first,
                                            mysmb_u8 second);
-static void mysmb_area_render_under_part(struct mysmb_game *game,
+static mysmb_u8 mysmb_area_render_under_part(struct mysmb_game *game,
                                          mysmb_u8 row,
                                          mysmb_u8 height,
                                          mysmb_u8 metatile);
@@ -917,7 +917,7 @@ mysmb_u8 mysmb_area_object_y_position(const struct mysmb_game *game)
 /* ROM $9b7d-$9bab RenderUnderPart. A foreground object may fill downward,
  * but the source preserves ledge centers, palette-three objects, and the
  * mushroom stem/top interaction in the metatile staging column. */
-static void mysmb_area_render_under_part(struct mysmb_game *game,
+static mysmb_u8 mysmb_area_render_under_part(struct mysmb_game *game,
                                          mysmb_u8 row,
                                          mysmb_u8 height,
                                          mysmb_u8 metatile)
@@ -937,6 +937,7 @@ static void mysmb_area_render_under_part(struct mysmb_game *game,
         if (row >= 13U) break;
         height = (mysmb_u8)(game->ram[MYSMB_AREA_OBJECT_HEIGHT] - 1U);
     } while (height < 0x80U);
+    return row;
 }
 
 /* ROM $9b3d HoleMetatiles through $9b73 NoWhirlP. Cannon and whirlpool
@@ -1404,6 +1405,49 @@ static const mysmb_u8 mysmb_area_vertical_pipe_data[8] = {
     0x11U, 0x10U, 0x15U, 0x14U, 0x13U, 0x12U, 0x15U, 0x14U
 };
 
+/* Indexed reads retain the original table base even when Y selects adjacent
+ * ROM bytes. The bound owner source supplies those bytes without a host
+ * array overrun; prefix-only fixtures retain their declared table values. */
+static mysmb_u8 mysmb_area_indexed_metatile(const struct mysmb_game *game,
+    const mysmb_u8 *prefix, mysmb_u16 count, mysmb_u16 base,
+    mysmb_u16 index)
+{
+    mysmb_u16 address;
+
+    if (index < count) return prefix[index];
+    address = (mysmb_u16)(base + index);
+    if (game->area_prg == 0 || address >= game->area_prg_size) return 0U;
+    return game->area_prg[address];
+}
+
+/* ROM $98b3-$98dc RenderSidewaysPipe. Return the source carry decision;
+ * UnderPart's returned X, rather than the requested height, selects the lip. */
+static mysmb_u8 mysmb_area_render_sideways_pipe(struct mysmb_game *game,
+    mysmb_u8 slot, mysmb_u8 height)
+{
+    static const mysmb_u8 shaft[4] = {0x15U, 0x14U, 0U, 0U};
+    static const mysmb_u8 top[4] = {0x15U, 0x1eU, 0x1dU, 0x1cU};
+    static const mysmb_u8 bottom[4] = {0x15U, 0x21U, 0x20U, 0x1fU};
+    mysmb_u8 row, selector, metatile, skip_blank;
+
+    game->ram[5U] = (mysmb_u8)(height - 2U);
+    selector = game->ram[MYSMB_AREA_OBJECT_LENGTH + slot];
+    game->ram[6U] = selector;
+    row = (mysmb_u8)(game->ram[5U] + 1U);
+    metatile = mysmb_area_indexed_metatile(game, shaft, 4U, 0x189fU, selector);
+    skip_blank = 1U;
+    if (metatile != 0U) {
+        row = mysmb_area_render_under_part(game, 0U, game->ram[5U], metatile);
+        skip_blank = 0U;
+    }
+    selector = game->ram[6U];
+    game->ram[MYSMB_AREA_METATILE_BUFFER + row] =
+        mysmb_area_indexed_metatile(game, top, 4U, 0x18a3U, selector);
+    game->ram[MYSMB_AREA_METATILE_BUFFER + 1U + row] =
+        mysmb_area_indexed_metatile(game, bottom, 4U, 0x18a7U, selector);
+    return skip_blank;
+}
+
 /* ROM $9925-$9938 DrawPipe: restore the saved selector, write the top,
  * then tail-enter UnderPart with the byte-decremented vertical extent. */
 static void mysmb_area_draw_pipe(struct mysmb_game *game, mysmb_u8 selector)
@@ -1412,11 +1456,13 @@ static void mysmb_area_draw_pipe(struct mysmb_game *game, mysmb_u8 selector)
 
     row = game->ram[7U];
     game->ram[MYSMB_AREA_METATILE_BUFFER + row] =
-        mysmb_area_vertical_pipe_data[selector];
+        mysmb_area_indexed_metatile(game, mysmb_area_vertical_pipe_data,
+            8U, 0x18ddU, selector);
     row++;
     height = (mysmb_u8)(game->ram[6U] - 1U);
     mysmb_area_render_under_part(game, row, height,
-        mysmb_area_vertical_pipe_data[(mysmb_u8)(selector + 2U)]);
+        mysmb_area_indexed_metatile(game, mysmb_area_vertical_pipe_data,
+            8U, 0x18ddU, (mysmb_u16)selector + 2U));
 }
 
 static void mysmb_area_apply_parser_object(struct mysmb_game *game,
@@ -1424,9 +1470,6 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
                                            mysmb_u8 first,
                                            mysmb_u8 second)
 {
-    static const mysmb_u8 side_pipe_shaft[4] = { 0x15U, 0x14U, 0U, 0U };
-    static const mysmb_u8 side_pipe_top[4] = { 0x15U, 0x1eU, 0x1dU, 0x1cU };
-    static const mysmb_u8 side_pipe_bottom[4] = { 0x15U, 0x21U, 0x20U, 0x1fU };
     static const mysmb_u8 castle_metatiles[55] = {
         0U,0x45U,0x45U,0x45U,0U, 0U,0x48U,0x47U,0x46U,0U,
         0x45U,0x49U,0x49U,0x49U,0x45U, 0x47U,0x47U,0x4aU,0x47U,0x47U,
@@ -1449,19 +1492,14 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         value = (mysmb_u8)(second & 0x3fU);
         if (value == 0U) {
             (void)mysmb_area_check_fixed_length(game, slot, 3U);
-            value = game->ram[MYSMB_AREA_OBJECT_LENGTH + slot];
-            if (value > 3U) return;
-            game->ram[5U] = 8U;
-            game->ram[6U] = value;
-            if (side_pipe_shaft[value] != 0U) {
-                mysmb_area_render_under_part(game, 0U, 8U, side_pipe_shaft[value]);
+            if (mysmb_area_render_sideways_pipe(game, slot, 10U) == 0U) {
                 for (row = 0U; row < 7U; ++row)
                     game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0U;
                 game->ram[MYSMB_AREA_METATILE_BUFFER + 7U] =
-                    mysmb_area_vertical_pipe_data[value];
+                    mysmb_area_indexed_metatile(game,
+                        mysmb_area_vertical_pipe_data, 8U, 0x18ddU,
+                        game->ram[6U]);
             }
-            game->ram[MYSMB_AREA_METATILE_BUFFER + 9U] = side_pipe_top[value];
-            game->ram[MYSMB_AREA_METATILE_BUFFER + 10U] = side_pipe_bottom[value];
         }
         else if (value == 1U) {
             game->ram[MYSMB_AREA_METATILE_BUFFER] = 0x24U;
@@ -1557,7 +1595,8 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         game->ram[6U] = 11U;
         do {
             game->ram[MYSMB_AREA_METATILE_BUFFER + row] =
-                castle_metatiles[value];
+                mysmb_area_indexed_metatile(game, castle_metatiles,
+                    55U, 0x17cfU, value);
             row++;
             if (game->ram[6U] != 0U) {
                 value = (mysmb_u8)(value + 5U);
@@ -1596,18 +1635,7 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
     if (row == 15U && kind == 4U) {
         (void)mysmb_area_check_fixed_length(game, slot, 3U);
         height = mysmb_area_get_large_object_attributes(game, slot);
-        value = game->ram[MYSMB_AREA_OBJECT_LENGTH + slot];
-        if (value > 3U || height < 2U) return;
-        game->ram[5U] = (mysmb_u8)(height - 2U);
-        game->ram[6U] = value;
-        height = (mysmb_u8)(height - 1U);
-        if (side_pipe_shaft[value] != 0U)
-            mysmb_area_render_under_part(game, 0U, (mysmb_u8)(height - 1U),
-                                         side_pipe_shaft[value]);
-        game->ram[MYSMB_AREA_METATILE_BUFFER + height] = side_pipe_top[value];
-        if (height < 12U)
-            game->ram[MYSMB_AREA_METATILE_BUFFER + height + 1U] =
-                side_pipe_bottom[value];
+        (void)mysmb_area_render_sideways_pipe(game, slot, height);
         return;
     }
     if (row == 15U && kind == 5U) {
@@ -1646,8 +1674,7 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
             (void)mysmb_area_get_large_object_attributes(game, slot);
             row = game->ram[7U];
             game->ram[MYSMB_AREA_METATILE_BUFFER + row] = 0x6bU;
-            if (row < 12U)
-                game->ram[MYSMB_AREA_METATILE_BUFFER + row + 1U] = 0x6cU;
+            game->ram[MYSMB_AREA_METATILE_BUFFER + row + 1U] = 0x6cU;
         }
         else if (value == 10U) mysmb_area_empty_block(game);
         else if (value == 11U) mysmb_area_jumpspring(game);
@@ -1673,7 +1700,6 @@ static void mysmb_area_apply_parser_object(struct mysmb_game *game,
         value = game->ram[MYSMB_AREA_OBJECT_LENGTH + slot];
         if ((second & 0x08U) == 0U)
             value = (mysmb_u8)(value + 4U);
-        if (value > 5U) return;
         /* ROM VerticalPipe -> WarpPipe spawns once, before DrawPipe, when
          * this is not 1-1 and the fixed two-column object has a free slot. */
         if ((game->ram[MYSMB_AREA_NUMBER] | game->ram[MYSMB_WORLD_NUMBER]) != 0U &&
