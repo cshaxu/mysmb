@@ -22653,11 +22653,9 @@
     "unclassified": 0
   },
   "controlEdgeCounts": {
-    "exact": 4269,
-    "infeasible": 72,
-    "mismatch": 0,
-    "needs-evidence": 1,
-    "unclassified": 0
+    "exact": 4267,
+    "infeasible": 74,
+    "needs-evidence": 1
   },
   "controlEdgeTypeCounts": {
     "branch": 1566,
@@ -46984,10 +46982,12 @@
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
         "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,returnedA forCF6C/E143,all99PC/17branchpairs/twoproveninfeasible sides;actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Routes defeated state to downward gravity; otherwise selects nonzero-state reset/fixed-speed path or empty-state Spiny/distance path, then chooses signed movement direction and tail-jumps horizontally.",
       "currentSourcePaths": [
@@ -47003,10 +47003,12 @@
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
         "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,returnedA forCF6C/E143,all99PC/17branchpairs/twoproveninfeasible sides;actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "For zero state enters Spiny/distance setup; otherwise clears Lakitu direction/frenzy buffer and uses fixed speed $10.",
       "currentSourcePaths": [
@@ -47022,10 +47024,12 @@
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
         "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,returnedA forCF6C/E143,all99PC/17branchpairs/twoproveninfeasible sides;actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Writes Spiny to frenzy buffer, copies three Lakitu distance adjustments to scratch and enters player-distance helper.",
       "currentSourcePaths": [
@@ -47041,10 +47045,12 @@
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
         "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,returnedA forCF6C/E143,all99PC/17branchpairs/twoproveninfeasible sides;actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Copies adjustment table in descending index order, loops through all three bytes, calls PlayerLakituDiff then falls through speed setup.",
       "currentSourcePaths": [
@@ -47060,10 +47066,12 @@
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
         "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,returnedA forCF6C/E143,all99PC/17branchpairs/twoproveninfeasible sides;actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Stores returned/fixed speed, defaults direction right, negates speed and switches direction left when Lakitu direction bit zero.",
       "currentSourcePaths": [
@@ -47079,10 +47087,12 @@
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
         "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,returnedA forCF6C/E143,all99PC/17branchpairs/twoproveninfeasible sides;actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Stores direction and tail-jumps to horizontal movement.",
       "currentSourcePaths": [
@@ -47099,11 +47109,13 @@
       "semanticEvidence": [
         "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending."
       ],
       "operationalEvidence": [
         "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,returnedA forCF6C/E143,all99PC/17branchpairs/twoproveninfeasible sides;actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Derives signed player difference, saturates magnitude at $3c, applies Lakitu turn/slowdown rules, selects adjustment index from player movement/scroll/enemy state, and subtracts once per distance pixel.",
       "currentSourcePaths": [
@@ -47119,10 +47131,12 @@
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
         "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,returnedA forCF6C/E143,all99PC/17branchpairs/twoproveninfeasible sides;actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Handles saturated distance; for Lakitu moving away, decrements speed until zero then updates movement direction, otherwise continues speed selection.",
       "currentSourcePaths": [
@@ -47138,10 +47152,12 @@
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
         "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,returnedA forCF6C/E143,all99PC/17branchpairs/twoproveninfeasible sides;actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Writes Lakitu movement direction from the player-difference side then falls through speed selection.",
       "currentSourcePaths": [
@@ -47157,10 +47173,12 @@
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
         "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,returnedA forCF6C/E143,all99PC/17branchpairs/twoproveninfeasible sides;actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Compresses distance to four middle bits and selects one of three adjustment indices from player X speed and scroll amount.",
       "currentSourcePaths": [
@@ -47176,10 +47194,12 @@
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
         "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,returnedA forCF6C/E143,all99PC/17branchpairs/twoproveninfeasible sides;actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Applies Spiny-specific fallback: zero player speed preserves current selected index; otherwise reaches enemy-speed check.",
       "currentSourcePaths": [
@@ -47195,10 +47215,12 @@
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
         "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,returnedA forCF6C/E143,all99PC/17branchpairs/twoproveninfeasible sides;actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "For non-Spiny or player-moving paths uses enemy Y speed to decide whether index resets to zero.",
       "currentSourcePaths": [
@@ -47214,10 +47236,12 @@
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
         "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,returnedA forCF6C/E143,all99PC/17branchpairs/twoproveninfeasible sides;actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Loads selected scratch adjustment and passes compressed distance to pixel subtraction loop.",
       "currentSourcePaths": [
@@ -47233,10 +47257,12 @@
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
         "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,returnedA forCF6C/E143,all99PC/17branchpairs/twoproveninfeasible sides;actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Subtracts one adjustment unit per compressed distance count, then returns the resulting speed.",
       "currentSourcePaths": [
@@ -47252,10 +47278,12 @@
       "currentCounterpart": "shared Lakitu slot and player-distance paths",
       "semanticEvidence": [
         "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,returnedA forCF6C/E143,all99PC/17branchpairs/twoproveninfeasible sides;actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Returns computed speed to caller.",
       "currentSourcePaths": [
@@ -53601,11 +53629,13 @@
       "currentCounterpart": "mysmb_enemy_player_difference: low subtraction scratch and borrowed page return",
       "semanticEvidence": [
         "M2 T64 S23 static audit: SMB1 $E143-$E14A loads enemy X, subtracts player X into $00, then subtracts page bytes with the preserved low-byte borrow; shared enemy/distance.c uses the identical byte arithmetic order.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending."
       ],
       "operationalEvidence": [
         "M2 T64 S23 controlled original-ROM probe: four direct PlayerEnemyDiff entries span low-byte borrow and no-borrow, including page wrap; current x86/x64 owner checks compare A and $00 with zero differences, and focused chain/purity CTests pass.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,returnedA forCF6C/E143,all99PC/17branchpairs/twoproveninfeasible sides;actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
       "semanticContract": "Stores the low player/enemy X subtraction in $00 and returns the page subtraction with the original low-byte borrow.",
       "currentSourcePaths": [
@@ -105836,16 +105866,18 @@
       "instruction": "bne",
       "id": "control-01904",
       "cohort": "J",
-      "status": "exact",
-      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "status": "infeasible",
+      "currentCounterpart": "none: impossible original fallthrough; current shared C preserves only feasible paths",
       "semanticEvidence": [
         "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,returnedA forCF6C/E143,all99PC/17branchpairs/twoproveninfeasible sides;actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
-      "semanticContract": "Preserves original fallthrough relation ChkLS -> Fr12S with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
+      "semanticContract": "Original CF3C LDA #$10 sets Z=0; CF3E BNE SetLSpd must branch. Extracted ChkLS -> Fr12S fallthrough is infeasible for every incoming state. Prior T63 S12 broad edge acceptance did not distinguish this impossible side.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
       ]
@@ -106392,16 +106424,18 @@
       "instruction": "bne",
       "id": "control-01929",
       "cohort": "J",
-      "status": "exact",
-      "currentCounterpart": "shared Lakitu branch, table, loop, child-call, tail-jump and return counterpart",
+      "status": "infeasible",
+      "currentCounterpart": "none: impossible original fallthrough; current shared C preserves only feasible paths",
       "semanticEvidence": [
         "Td S9 B15m Lakitu node-semantics and independent integration audit: SMB1 lines 9990-10088 compared with shared enemy/lakitu.c; controlled original-ROM/x86/x64 routes remain required.",
-        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly."
+        "M2 T63 S12 static audit: SMB1 $CF25-$CF84 adjustment table, defeated/nonzero paths, child ordering, player difference, distance cap/reversal, selector and subtract loop compared with src/game/enemy/lakitu.c; 3/3 table bytes bind exactly.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending."
       ],
       "operationalEvidence": [
-        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass."
+        "M2 T63 S12 route: one current-source Lakitu manifest runner per width compares 1,024 controlled original-ROM snapshots with zero differences on x86 and x64; focused C90 contract, platform purity and shared DOS16 link pass.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,returnedA forCF6C/E143,all99PC/17branchpairs/twoproveninfeasible sides;actualX==08,5focusedtests eachpass;source/productsP57unchanged."
       ],
-      "semanticContract": "Preserves original fallthrough relation ChkSpinyO -> ChkEmySpd with Lakitu state, distance/adjustment index, speed/direction and source call/return ordering.",
+      "semanticContract": "Original CFAB BEQ SubDifAdj excludes Player_X_Speed=$00 before all three incoming paths to ChkSpinyO (CFB7/CFBE/CFC0). CFAD-CFC7 contains no RAM store or call; CFC7 reloads unchanged $57, so CFC9 BNE SubDifAdj cannot fall through to ChkEmySpd. No external original reference enters ChkSpinyO after the predicate. Prior T63 S12 aggregate edge acceptance lacked this predecessor/value-lifetime proof.",
       "currentSourcePaths": [
         "src/game/enemy/lakitu.c"
       ]
@@ -161377,10 +161411,14 @@
     "control-00372",
     "control-00457",
     "control-00561",
+    "control-01236",
     "control-01339",
+    "control-01371",
     "control-01405",
     "control-01408",
     "control-01415",
+    "control-01449",
+    "control-01497",
     "control-01502",
     "control-01515",
     "control-01537",
@@ -161388,6 +161426,8 @@
     "control-01613",
     "control-01632",
     "control-01711",
+    "control-01904",
+    "control-01929",
     "control-02036",
     "control-02708",
     "control-02757",
@@ -161438,22 +161478,18 @@
     "control-03743",
     "control-03769",
     "control-03784",
-    "control-03868",
-    "control-01236",
-    "control-01371",
-    "control-01449",
-    "control-01497"
+    "control-03868"
   ],
-  "infeasibleControlEdgeTotal": 72,
-  "feasibleControlEdgeTotal": 4270,
+  "infeasibleControlEdgeTotal": 74,
+  "feasibleControlEdgeTotal": 4268,
   "finalCertification": {
     "status": "incomplete",
     "authority": "docs/states/CURRENT.md",
     "localExactMeaning": "Accepted scoped semantic/route contracts in retained evidence;not exhaustive current-build or end-to-end certification.",
     "nodeUniverse": 1992,
-    "feasibleControlUniverse": 4270,
+    "feasibleControlUniverse": 4268,
     "rawControlUniverse": 4342,
-    "infeasibleControls": 72,
+    "infeasibleControls": 74,
     "reviewedNodeLabels": [],
     "reviewedControlEdgeIds": [],
     "reviewedMeaning": "Superseded restart accounting;not an active progress counter. Retained scoped proofs remain accepted within their stated limits.",
@@ -165557,7 +165593,6 @@
           "control-01901",
           "control-01902",
           "control-01903",
-          "control-01904",
           "control-01905",
           "control-01906",
           "control-01907",
@@ -165582,7 +165617,6 @@
           "control-01926",
           "control-01927",
           "control-01928",
-          "control-01929",
           "control-01930",
           "control-01931",
           "control-01932",
@@ -168395,16 +168429,17 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P60 checkpoint - firebar and Bowser duplicate chain reconciled:6labels/58instructions/32RAM joined5boundedclauses;byte-Yscan andorderedcopyaliases,coordinatecarry andbox-onlytail,Bowser post-child origin. Firebar ID/free-slot producerprerequisites andwhole-programlifetimes pending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending."
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 4553,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 6138,
+        "localInstructionReceiptSites": 4652,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 6039,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
-        "directRamSitesInBoundedCompleteOwnerReceipts": 1607,
-        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2166,
+        "directRamSitesInBoundedCompleteOwnerReceipts": 1644,
+        "directRamSitesWithoutCompleteOwnerLifetimeReceipt": 2129,
         "immutableRomSiteOnlyReceipts": 250,
         "indirectDomainSiteOnlyReceipts": 61,
         "hardwareCommandSiteOnlyReceipts": 87,
@@ -168431,7 +168466,6 @@
           "src/game/enemy/{bullet_bill,swimming_cheep}.c": 33,
           "src/game/world/bounding_box.c": 33,
           "src/game/scroll.c shared C90 scroll owner": 32,
-          "src/game/enemy/lakitu.c": 32,
           "shared game core: enemy/star_flag.c": 31,
           "src/game/enemy/hammer_bro.c": 30,
           "shared game core: enemy/platform.c": 30,
@@ -168486,7 +168520,6 @@
           "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c": 5,
           "src/game/enemy/{lifecycle,podoboo}.c": 5,
           "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side": 5,
-          "src/game/enemy/distance.c:mysmb_enemy_player_difference": 5,
           "src/game/objects.c:mysmb_objects_step_hammer_terrain": 5,
           "src/game/dispatcher.c": 4,
           "src/game/objects.c:mysmb_objects_bump_enemy": 4,

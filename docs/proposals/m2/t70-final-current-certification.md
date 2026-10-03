@@ -7900,3 +7900,34 @@ Current src/game/enemy/lakitu.c normalizedSHA256:63fdbda735e04db52138656f47788a1
 Current src/game/enemy/init_targets.c normalizedSHA256:8a34758094db74077901f976a10cf8adae354645938cb4f8d3e0dc6cc8d5a5ae.
 
 Current src/game/enemy/init.c normalizedSHA256:b154847ffaf647e43d39c14f5dc26818acdc6c3160f6c0a922034b2f038f63cb.
+
+## S17 P63 admission - Lakitu movement and distance caller chain
+
+ExistingP62 actualdistance-child materialgap;99pending instructions in16labels: MoveLakitu,ChkLS,Fr12S,LdLDa,SetLSpd,SetLMov,PlayerLakituDiff,ChkLakDif,SetLMovD,ChkPSpeed,ChkSpinyO,ChkEmySpd,SubDifAdj,SPixelLak,ExMoveLak,PlayerEnemyDiff. Shared enemy/lakitu.c/distance.c withoriginalhorizontal/vertical movementchildren. E143 low/pageborrow,CF6C signedhighdistance/3Cadjustment/rawdirection/delay/inclusivepixel subtraction andCF28 actualstate/frency/movement order reviewedagainstASM. ControlledcurrentX0-5,rawcoordinate/adjustmentbytes,ID17/18/other,rawmovementspeeds/directions,playerthresholdclasses andstatebranches. Bothwidth returnA comparisons forE143/CF6C,2032RAM/24APU/orderedwrites;focusedtests/platformpurity. Scope875,fresh0/max1992;finiteparentroute notchildinteriorpromotion. OwnerROM/ASMreadonly nonredistributable;raw onlyignored build128MiB/120seconds perprocess,4096recordbatchesdeleted. DiffstaysS17/productrepairrequires3EXEs,no newauditround.
+
+P63 graph amendment: retained T63 S12 broadly accepted two extracted fallthroughs without independent feasibility evidence. CF3E/control01904 follows LDA10,soZ0 forcesBNE. CFC9/control01929 follows CFAB PlayerXSpeed-nonzero predicate;onlyChkSpinyO predecessors areCFB7/CFBE/CFC0 afterthatpredicate,andno interveningRAMwrite/call changes57. Sourcefunction graph thereforecannotfallthroughthere. Originaledgeidentities remain;classifyinfeasible withseparateproof,currentraw4342/infeasible74/feasible4268,localexact4267/4268. Priorcounts remainhistorical;nogamecodefix ornewauditround.
+
+## S17 P63 checkpoint - Lakitu distance and movement reconciled
+
+ExistingS17 material/caller gap;16labels/99instructions,scope875/fresh0,productsource unchanged.
+
+| Clause | Original labels | Source/C use disposition |
+| --- | --- | --- |
+| D1 | PlayerEnemyDiff | EnemyX-PlayerX withSEC publisheslowbyteRAM00;borrowiscarriedacrossSTA00/LDAenemyPageintoSBCplayerPage. Nativecapturesunsignedborrow beforelowstore,returnsbytepage delta. X0-5 arrayscannotalias00/playerfields;direct65536casescoveralllowcoordinatepairs andcoupledpagepairs,returnedAandRAM00compared. |
+| L1 | MoveLakitu,ChkLS,Fr12S,LdLDa | Statebit20 tailcallsactualMoveD_EnemyVertically beforeanyfrenzyupdate. Else nonzerostate clearsMoveDirectionA0+X/06CB andA10/BNEalwaysSetLSpd;zero writesSpiny12 to06CB,loads3PRGadjusters descending2..0 into03/02/01 thenrealPlayerLakituDiff. ConstantsourceCF3C LDA10 preventsCF3E fallthrough(control01904),nativeelse structurealreadycorrect. |
+| L2 | SetLSpd,SetLMov | Actualdistance return or10 stored58+X. Direction46+X defaults1;A0+X&1 nonzero keepsreturnedrawspeed,elsebyte-negates58+X andsetsdir2. TailactualMoveEnemyHorizontally observesfractions/pagecarry;rawA0bit0 conditionnotcollapsedtozero/nonzero. SharedC unconditionallyinvokesmovementwheneligible,no fabricatedtimercheck. Vertical/horizontal childPCsnotcreditedhere. |
+| L3 | PlayerLakituDiff,ChkLakDif,SetLMovD | ActualPlayerEnemyDiff resultpage signbit setslocaldirection0/1;negativepage two-complementsRAM00 byte. Lowdistance>=3C clamps00first,thenonlyID11/directionmismatch entersdelay. OldA0nonzero decrements58 byteandreturnsifnewnonzero;zeroresultordirection0storesnewdirection. NativeorderretainsclampRAM00 onearlyreturn. Raw0/1/2/FF directions/allbyteXspeed verified,notassumedboolean. |
+| L4 | ChkPSpeed,ChkSpinyO,ChkEmySpd | Mask00&3C/divide4 to0-15. PlayerXspeedzero orScrollzero usesadjusterindex0;elseindex1,upgrade2 ifunsignedspeed>=19/Scroll>=2. ID12 withmovingplayer keepsindex;otherID withA0zero resets0,nonzero keeps. CFC9fallthrough impossible:CFAB excludedPlayerXspeed0,threeincomingChkSpinyO paths allafterCFAB,nointerveningwrite/call;reload57remainsnonzero(control01929). OtherChkEmySpd entryfromID!=Spiny staysfeasible andobserved. |
+| L5 | SubDifAdj,SPixelLak,ExMoveLak | LoadcalleradjustmentRAM01+index0-2;Y=RAM00masked0-15. SourceSEC/SBC1/DEY/BPL subtractsexactlydistance+1times,includingoneiterationfordistance0. Nativebytevalue/pixel do-while preservesinclusivecount andwrap,leavesRAM00atmaskedcount,returnAcomparedindirectCF6Croot. Callersretainownershipof01-03;Spiny3seedadjusters andLakitu3constants remainindependentproducers. |
+
+ThreeoriginalreturningroutesE143/CF6C/CF28,65536each,total196608eachwidth. DirectE143 all256-by-256lowcoordinatepairs/coupledpagebytes;CF6C fullRAMseed,ID11/12/00/FF/rawA0directions0/1/2/FF/allbyte58speed,player0/1/7/8/18/19/80/FF andScroll0/1/2,rawcaller01-03 values. CF28 ID11/states0/1/2/20/21,actualhorizontal/verticalchildren. Finitecontrolledfixturesnotallcartesianstates or legalgameplayproducer proof. NativeCF6C/E143returnedAcompared,separateRAM00andorderedsideeffects preserved. OriginalfinalX==initial08assertedallroots.
+
+All99instructionPCs/17conditionalbranchpairs observed;CF3E/CFC9 singlytaken dueindependentproof above. Corrected twooldexactfallthrough rows toinfeasible,retainingoldT63S12evidenceandexplainwhyitsgenericrouteclaimdidnotprovefalsebranches. Raw4342 remains;infeasible72->74,feasible4270->4268,localexact4269->4267,onepending01480 remains. Thisdenominatorcorrectionisnotnewmatchededgecredit orproductrepair. Allotheracceptedrows retainedwiththeirlimits.
+
+2032RAM/24APU/orderedhardwarewrites0diff eachwidth,minSP0xf9,onlyphysical1F0-1FFexcluded. ThreeadjusterbytescheckedagainstoriginalPRG,strictC90checkers/currentlibraries. Fivefocusedtests eachwidthpass;actualhorizontal-movement/gravitytestnamesrunseparately afterinitialunmatchedenemy-horizontalpattern. Fournegativeaccountingmutationsrejected. ThreeEXEs verifiedP57hashesunchanged,DOScompile/linkonly;raw4096recordbatchesdeletedbelowignoredbuild,neutralmetadata onlytracked.
+
+S17 P63:16Lakitu/distance labels,99instructions/37RAM joined6boundedclauses;196608actualroots eachwidth0diff/all99PC/17branchpairs,2falseexactfallthroughs correctedinfeasible,5tests each. Scope875/fresh0;4652instruction/1644RAM receipts,6039instruction/2129RAM pending. Local1991/1992nodes,4267/4268controls(raw4342/infeasible74),material993partial,totalunknown;source/productsP57unchanged,caller/inter-frame domains pending,M2 incomplete.
+
+Current src/game/enemy/lakitu.c normalizedSHA256:63fdbda735e04db52138656f47788a1dda2e1bd0f8f91eb9727c6a9757d2f5de.
+
+Current src/game/enemy/distance.c normalizedSHA256:260ed46333bf7de18963cce9e5b309f6285b320b97a85e183497a120b6a117aa.
