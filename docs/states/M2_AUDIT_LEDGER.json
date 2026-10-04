@@ -26,7 +26,7 @@
     "controlIdentitySha256": "4d6fced75017fcd0edd80f63223f45e7d14e1b4170af91f98937a0474c970669"
   },
   "sourceSnapshot": {
-    "CMakeLists.txt": "df955faef11154d1c377ee4e35fefc6e2f4f7a5ceaa5b04085905a8ff770f4d8",
+    "CMakeLists.txt": "be0505d87f7b03dcaf5ebd4bbff9729cdacce36a3b4f4bf3ca9038f0dae1fa56",
     "src/game/area.c": "c7c0d508da06e0c83ebfa4aa3757e9b170753c2eecf9cbe0e0505dcdc1c52d62",
     "src/game/area.h": "ff79683256a810f1a157bb0e75e7647ef8fdb79857ba0bfe861edb9128117008",
     "src/game/area/area_data.c": "9f4d6fbb22af69b28977276ff999484956c3db3e859ee15cc6e915356b4b6176",
@@ -198,26 +198,34 @@
     "src/game/world/player_enemy_collision.c": "0fa887230197be17c07afb3999cf0a73b4d79969118366e571d85259ed7b9297",
     "src/game/world/powerup_collision.c": "694a36854394c30738e3230affb51def51aa2b5b357e65940ffd4458fde6363e",
     "src/game/world/world.h": "0cc55d175ce013bb14e80e9015d0c31604f37ad60e1401449ec3de2a83588069",
-    "src/platform/dos16/dos16_root.c": "6d43b425a868b3a5f44bf3a0e5602d016c0d1b8e11082fa18192129580fed76b",
-    "src/platform/dos16/dos16_root.h": "d57227ef5d02d11411ec20540c91fbbc114db859c77aed254b4387fb3b386f9b",
-    "src/platform/dos16/main_dos16.c": "bfd7dade49a5f4fc167e7b7fb83fd3dac085777e48124118bfe4ee8476f3fc79",
+    "src/platform/dos16/dos16_root.c": "2bb089aa7e54cb737711baf4b1ba0dc125f575904c01f3dfb5f6dd806e4fe683",
+    "src/platform/dos16/dos16_root.h": "3cf369236682ad6492d5b07d03e5e6847ca7f4f5db95b68be908aabde8a661d8",
+    "src/platform/dos16/main_dos16.c": "0e23a4deab2f327310669c023a6ebc6d9c24fbc70e2686d956d3cfedce84aae3",
     "src/platform/text/text_frame.c": "754a934d9e6799bcb626b79ac5375f2d31e33eb533a0b85b5b7e6619f0cc89a9",
     "src/platform/text/text_frame.h": "bbaa25ad4d4c88820884af742b3cae802e00353249e082f58b21fe3ba10156db",
-    "src/platform/vga/vga_frame.c": "e192d6f54771dbd236aeec2c01f1896881d7080da9014e67f96bd3b174ce9675",
-    "src/platform/vga/vga_frame.h": "02a73a64e544d39c5849a9223083c1205b0b821cc2f65a8cab1113a5dd92e56a",
+    "src/platform/vga/vga_frame.c": "10020e7f63becb52d20202df667d94a48d062a89ead0ac72db8ee8173e01b13e",
+    "src/platform/vga/vga_frame.h": "ddc2b36d5760c37c8352b0bcc533f8b8c7a338f99528b7b6747c57a7c9a88bba",
     "src/platform/win32/audio_output.c": "ec2082e3489970b4e7ee85b11a77e83e716582b88ee49d0dcf076c8122c8c91e",
     "src/platform/win32/audio_output.h": "c25e64fb1a21ef7bbc0fc5e94d8a7328084cdc136f154f5614cbf4b0379df97f",
     "src/platform/win32/audio_renderer.c": "b74a63bb3193f35068ad415ce93fb254e6e3bb8367f237f48bd71bff80bc6898",
     "src/platform/win32/audio_renderer.h": "ce71cd54a63f2135906b884aab467a37cb2ffd3d32dbc26abc743b294c19ae09",
     "src/platform/win32/focus_pause.c": "3145d6c67c2330a2992ae22da3b85b3849a23dadd0e93a65cdc6904f73d3689d",
     "src/platform/win32/focus_pause.h": "fa455dc8569d6e0bcdae681bca83560e1b0ce8573145faa7c0df798467e8414f",
-    "src/platform/win32/main_win32.c": "08930356682dab5c46df8b1765e24196f46d6eba53e072e6d29be8fa70211977",
+    "src/platform/win32/main_win32.c": "b918730b203988f076db5fda605eb5e922f68bf8b4d47d657752db21fac6bcbc",
     "src/app/game_io.h": "a30de46b193fc46f137612945574b37acb6dca658c57d5d04098f7130f40b538",
     "src/app/game_io.c": "430560c4e159f4ed067377b95d5449493191f2d8b1a5d0e8bb34ccfc169c5a1a",
     "src/io/types.h": "55dd06e69e76e332ea63b30220b8a1faa76c7133f2b933c7b5120549acbe9aea",
     "src/io/input.h": "477a500b8fe359da5a9356ef9ae7015efa21308e57ccc8dbb784fb0779c1b183",
     "src/io/video.h": "fad6b3dc979323efcf0a7af212f25d25e35fc0fb0c635a5872839ad5f9e08df0",
-    "src/io/audio.h": "9e865a166bbaec42c79240cb5c53576738dff6586bee3dd70f19977588f90e32"
+    "src/io/audio.h": "9e865a166bbaec42c79240cb5c53576738dff6586bee3dd70f19977588f90e32",
+    "src/io/color.h": "1a228c452747dee1c8ff5232eb7da9b2ec950dd69c460fea9064e311188f33d9",
+    "src/io/color.c": "b3ee02986fca7b6267a6f2906295bfe8f64f85f6d79ad77563bc100dac1d5f7c",
+    "src/io/scale.h": "ca4efdf35b684726a4ed51ca8ba41cd28c1a875134505d71286b0c23847a06bc",
+    "src/io/scale.c": "0e73b8875ee5c745b75bc21710ba26782d47d3c73a2e9a328a6330e106ecaa77",
+    "src/platform/dos16/keyboard.h": "ce81b29c9dc556bb71cba0d362276d215a11ff763949aa836ca14730a81caa21",
+    "src/platform/dos16/keyboard.c": "6aab9bd6d3d0ab8264be14f19e33aaa22788711ca38aaa38241a1be1304c4ad1",
+    "src/platform/dos16/devices.h": "5bafb3ce1d2816a0dea3f7a08e37538095c731cb498a8c3ac8196259e1235289",
+    "src/platform/dos16/devices.c": "1b15a6850bf810d8174a3f380a74f5d37ad020a084c6a167c766d58f2fa28712"
   },
   "uses": [
     {
@@ -123959,6 +123967,61 @@
       "groupUniverseChanged": false,
       "nodeControlCredit": 0,
       "evidence": "docs/proposals/shared-io-and-presentation-switching.md S2 admission - Win32 contract consumers"
+    },
+    {
+      "id": "M3-T9-S3-dos-io-binding",
+      "cause": "DOS graphics adapter repair and pure shared palette/scaling;64 Win32 colors identical,no game owner change. Operational probe is scoped,not full ROM proof;final certification stays queued.",
+      "changedSourceIdentities": [
+        {
+          "path": "CMakeLists.txt",
+          "old": "df955faef11154d1c377ee4e35fefc6e2f4f7a5ceaa5b04085905a8ff770f4d8",
+          "new": "be0505d87f7b03dcaf5ebd4bbff9729cdacce36a3b4f4bf3ca9038f0dae1fa56"
+        },
+        {
+          "path": "src/platform/dos16/dos16_root.c",
+          "old": "6d43b425a868b3a5f44bf3a0e5602d016c0d1b8e11082fa18192129580fed76b",
+          "new": "2bb089aa7e54cb737711baf4b1ba0dc125f575904c01f3dfb5f6dd806e4fe683"
+        },
+        {
+          "path": "src/platform/dos16/dos16_root.h",
+          "old": "d57227ef5d02d11411ec20540c91fbbc114db859c77aed254b4387fb3b386f9b",
+          "new": "3cf369236682ad6492d5b07d03e5e6847ca7f4f5db95b68be908aabde8a661d8"
+        },
+        {
+          "path": "src/platform/dos16/main_dos16.c",
+          "old": "bfd7dade49a5f4fc167e7b7fb83fd3dac085777e48124118bfe4ee8476f3fc79",
+          "new": "0e23a4deab2f327310669c023a6ebc6d9c24fbc70e2686d956d3cfedce84aae3"
+        },
+        {
+          "path": "src/platform/vga/vga_frame.c",
+          "old": "e192d6f54771dbd236aeec2c01f1896881d7080da9014e67f96bd3b174ce9675",
+          "new": "10020e7f63becb52d20202df667d94a48d062a89ead0ac72db8ee8173e01b13e"
+        },
+        {
+          "path": "src/platform/vga/vga_frame.h",
+          "old": "02a73a64e544d39c5849a9223083c1205b0b821cc2f65a8cab1113a5dd92e56a",
+          "new": "ddc2b36d5760c37c8352b0bcc533f8b8c7a338f99528b7b6747c57a7c9a88bba"
+        },
+        {
+          "path": "src/platform/win32/main_win32.c",
+          "old": "08930356682dab5c46df8b1765e24196f46d6eba53e072e6d29be8fa70211977",
+          "new": "b918730b203988f076db5fda605eb5e922f68bf8b4d47d657752db21fac6bcbc"
+        }
+      ],
+      "addedDependencyPaths": [
+        "src/io/color.h",
+        "src/io/color.c",
+        "src/io/scale.h",
+        "src/io/scale.c",
+        "src/platform/dos16/keyboard.h",
+        "src/platform/dos16/keyboard.c",
+        "src/platform/dos16/devices.h",
+        "src/platform/dos16/devices.c"
+      ],
+      "sourceUniverseChanged": false,
+      "groupUniverseChanged": false,
+      "nodeControlCredit": 0,
+      "evidence": "docs/proposals/shared-io-and-presentation-switching.md S3 P1 closure - DOS graphical IO bring-up"
     }
   ],
   "closure": "All group facets, findings and coverage slots evidence-closed; six registry packages closed; no unresolved source mismatch; final source/data/build binding. No all-input theorem inferred.",

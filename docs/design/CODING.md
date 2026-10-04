@@ -24,7 +24,8 @@ Translated files use subsystem names, not arbitrary ROM addresses. Every transla
 `io/` includes only its own contract headers. It owns decoded two-port input,
 a borrowed read-only 256x240 indexed frame, an owned ordered audio snapshot,
 and reserved 80x50 text cells. It contains no game state, ROM data, host API,
-audio synthesis, or text quantizer. Its sole target-dependent representation
+audio synthesis, or text quantizer. Shared color lookup and indexed row scaling
+consume only the neutral video contract. Its sole target-dependent representation
 is the far pointer required to address pixels with the DOS16 compiler.
 Existing game and platform representations remain until their admitted
 adapter migrations; the boundary test checks their numeric compatibility.

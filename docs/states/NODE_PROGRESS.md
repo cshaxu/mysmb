@@ -11,6 +11,10 @@ scoped evidence and track only named unresolved/invalidated clauses.
 Material993 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
+## M3 T9 S3 - DOS graphical IO
+
+Original scope/expected/actual[],fresh0;historical1992/1992/local1991/1992 nodes,4260/4261 controls unchanged.18 source/test/build files,+432/-292;11tests eachwidth,realDOS16 build,scoped graphic startup and Esc restoration,3localEXEs. [S3 receipt](../proposals/shared-io-and-presentation-switching.md#s3-p1-closure---dos-graphical-io-bring-up).
+
 ## M3 T9 S2 - Win32 IO consumers
 
 Original scope/expected/actual matches[],fresh0;historical1992/1992/local1991/1992 nodes,4260/4261 feasible controls unchanged. Actual14 source/test/build files,+253/-121;9tests eachwidth and1024ticks/752640PCM samples zero adaptation diff,OpenNT16 compile/link and3localEXEs. [S2 receipt](../proposals/shared-io-and-presentation-switching.md#s2-p1-closure---win32-io-consumers).

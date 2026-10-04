@@ -4,7 +4,8 @@ param(
     [Parameter(Mandatory = $true)][string]$IncludeDirectory,
     [Parameter(Mandatory = $true)][string]$OutputDirectory,
     [Parameter(Mandatory = $true)][string]$RuntimeDirectory,
-    [Parameter(Mandatory = $true)][string]$SourceRoot
+    [Parameter(Mandatory = $true)][string]$SourceRoot,
+    [string]$RomPath = ''
 )
 
 $toolDirectory = Split-Path -Parent $Compiler
@@ -68,7 +69,8 @@ $sources = @(
     'game/oam/bloober_gfx.c', 'game/oam/podoboo_gfx.c', 'game/oam/normal_enemy_gfx.c',
     'game/oam/spiny_gfx.c', 'game/oam/hammer_bro_gfx.c', 'game/oam/bowser_gfx.c', 'game/oam/bowser_flame_gfx.c', 'game/endgame_objects.c', 'game/oam/flagpole_gfx.c',
     'game/oam/small_platform_gfx.c',
-    'game/render.c', 'game/ppu_frame.c', 'game/frame_snapshot.c', 'game/status.c', 'platform/text/text_frame.c',
+    'game/render.c', 'game/ppu_frame.c', 'game/frame_snapshot.c', 'game/status.c',
+    'app/game_io.c', 'io/color.c', 'io/scale.c', 'platform/dos16/keyboard.c', 'platform/dos16/devices.c',
     'platform/vga/vga_frame.c', 'platform/dos16/dos16_root.c',
     'platform/dos16/main_dos16.c'
 )
@@ -77,6 +79,20 @@ if (!(Test-Path -LiteralPath $runtimeLibrary) -or !(Test-Path -LiteralPath $stac
     throw 'The configured DOS runtime lacks LLIBCE.LIB, LVARSTCK.OBJ, or its INC directory.'
 }
 New-Item -ItemType Directory -Force -Path $OutputDirectory | Out-Null
+$resourceIncludes = @()
+$resourceDefines = @()
+$resourceSources = @()
+if ($RomPath -ne '') {
+    $generatorRoot = Split-Path -Parent $SourceRoot
+    $resourceDirectory = Join-Path ([IO.Path]::GetFullPath($OutputDirectory)) 'local-rom'
+    & python (Join-Path $generatorRoot 'tools/smb_rom_codegen.py') --rom $RomPath --output $resourceDirectory
+    if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+    & python (Join-Path $generatorRoot 'tools/smb_title_codegen.py') --rom $RomPath --output $resourceDirectory
+    if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+    $resourceIncludes = @('/I', $resourceDirectory)
+    $resourceDefines = @('/D', 'MYSMB_LOCAL_TITLE')
+    $resourceSources = @('smb1_local_rom.c', 'smb1_local_title.c')
+}
 Push-Location $OutputDirectory
 try {
     $env:PATH = $toolDirectory + ';' + $env:PATH
@@ -95,7 +111,13 @@ try {
         # source-relative stem so game/enemy/movement.c and
         # game/world/movement.c cannot overwrite one another.
         $object = ($relativeSource -replace '[\\/]', '_' -replace '\.c`$', '.obj')
-        & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fo$object /I $IncludeDirectory /I $runtimeIncludeDirectory $source
+        & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET @resourceDefines /c /Fo$object /I $IncludeDirectory /I $runtimeIncludeDirectory @resourceIncludes $source
+        if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+        $objects += $object
+    }
+    foreach ($resourceSource in $resourceSources) {
+        $object = [IO.Path]::ChangeExtension($resourceSource, '.obj')
+        & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fo$object /I $resourceDirectory (Join-Path $resourceDirectory $resourceSource)
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
         $objects += $object
     }

@@ -74,6 +74,8 @@ target_include_directories(mysmb_game PUBLIC src)
 # Composition glue depends only on public game output and neutral contracts.
 add_library(mysmb_game_io STATIC src/app/game_io.c)
 target_include_directories(mysmb_game_io PUBLIC src)
+add_library(mysmb_io_color STATIC src/io/color.c src/io/scale.c)
+target_include_directories(mysmb_io_color PUBLIC src)
 add_executable(mysmb_game_io_smoke test/game_io_smoke.c)
 target_link_libraries(mysmb_game_io_smoke PRIVATE mysmb_game_io)
 add_test(NAME mysmb.game-io-smoke COMMAND mysmb_game_io_smoke)
@@ -626,12 +628,12 @@ add_executable(mysmb_text_frame_smoke test/text_frame_smoke.c)
 target_link_libraries(mysmb_text_frame_smoke PRIVATE mysmb_text_frame)
 add_library(mysmb_vga_frame STATIC src/platform/vga/vga_frame.c)
 target_include_directories(mysmb_vga_frame PUBLIC src)
-target_link_libraries(mysmb_vga_frame PUBLIC mysmb_game)
+target_link_libraries(mysmb_vga_frame PUBLIC mysmb_io_color)
 add_executable(mysmb_vga_frame_smoke test/vga_frame_smoke.c)
 target_link_libraries(mysmb_vga_frame_smoke PRIVATE mysmb_vga_frame)
-add_library(mysmb_dos16_root STATIC src/platform/dos16/dos16_root.c)
+add_library(mysmb_dos16_root STATIC src/platform/dos16/dos16_root.c src/platform/dos16/keyboard.c)
 target_include_directories(mysmb_dos16_root PUBLIC src)
-target_link_libraries(mysmb_dos16_root PUBLIC mysmb_game mysmb_text_frame mysmb_vga_frame)
+target_link_libraries(mysmb_dos16_root PUBLIC mysmb_game mysmb_game_io)
 add_executable(mysmb_dos16_root_smoke test/dos16_root_smoke.c)
 target_link_libraries(mysmb_dos16_root_smoke PRIVATE mysmb_dos16_root)
 
@@ -951,6 +953,7 @@ if(MYSMB_OPENNT_CL16)
                 -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}/dos"
                 -RuntimeDirectory "${MYSMB_DOS_RUNTIME_DIR}"
                 -SourceRoot "${CMAKE_CURRENT_SOURCE_DIR}/src"
+                -RomPath "${MYSMB_ROM_PATH}"
             VERBATIM
         )
     endif()
@@ -969,7 +972,7 @@ if(WIN32)
         src/platform/win32/audio_output.c
         src/platform/win32/audio_renderer.c
         src/platform/win32/focus_pause.c)
-    target_link_libraries(mysmb_win32 PRIVATE mysmb_game mysmb_game_io user32 gdi32 winmm)
+    target_link_libraries(mysmb_win32 PRIVATE mysmb_game mysmb_game_io mysmb_io_color user32 gdi32 winmm)
     add_executable(mysmb_win32_focus_pause_smoke
         test/win32_focus_pause_smoke.c
         src/platform/win32/focus_pause.c)

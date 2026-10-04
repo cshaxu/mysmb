@@ -131,8 +131,9 @@ artifact refresh, and S order against the then-current baseline.
 
 Owner admits T9 and authorizes sequential automatic S admissions,each with
 advance component/scope/size brief and post-closure build/test/commit/push
-report. Single executor/coordinator roles;no delegated agent. S1 active;
-S2-S6 planned only. No configured remote:local commits proceed,push unavailable
+report. Single executor/coordinator roles;no delegated agent. At initial admission
+S1 was active and S2-S6 were planned;latest admission/closure sections below
+and CURRENT own the subsequent state. No configured remote:local commits proceed,push unavailable
 until a remote is supplied;never invent one.
 
 S1 introduces io-only C90 types for two controller ports,read-only256x240
@@ -231,3 +232,68 @@ sources. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls,
 expected/actual matches[],fresh0. Registry/governance gates must pass before
 commit. Push unavailable:no configured remote. Automatic S3 admission follows
 reviewed S2 commit under owner authorization.
+
+## S3 admission - DOS graphical IO bring-up
+
+Automatically admitted after S2 commit5b9a6303. Single executor/coordinator.
+Expected12-18 source/test/build files,600-900 changed lines. Components:DOS
+root/main/keyboard/timing/mode lifecycle,VGA scaling and64-color palette,
+shared color/conversion contracts,Win32 palette consumer if shared table moves,
+original OpenNT16 generation/link and focused native adapter tests.
+
+Observed concrete defects:mode13 BIOS reset every present;five-index lossy
+VGA conversion/no matching64-color DAC;column*256 overflows unsigned16 for
+large destination X;DOS root lacks immutable ROM/CHR/title bindings and
+checks neither PPU allocation failure nor clean shutdown. BIOS buffered key
+polling loses held/simultaneous actions. Address these adapter defects with
+bounded storage,system-dependent code only in DOS adapters and no game rules.
+Text contract remains inert;remove old simultaneous text production from the
+admitted graphics path. Same256x240 canonical input,all game owners unchanged.
+
+Register exact original-node scope/expectedMatches[],fresh0. Focused IO,
+VGA/root/input/mode lifecycle tests at both widths,existing Win32 frame/audio/
+focus and self-tests,original DOS16 full compile/link and three local EXEs.
+S3 begins actual graphical runtime bring-up;S4 stabilizes timing/devices and
+S5 owns sustained gameplay route proof. Do not call link-only graphics success.
+Owner-local generation stays ignored/read-only ROM source,not distributable.
+Runtime probe may link existing owner-local SoftPC library through its public
+API and derive an ignored DOS boot image from its owner-local media. These
+are local nonredistributable validation inputs,no sibling writes or product
+dependency;probe source,media and screenshots remain below ignored build.
+Record changed dependencies for queued M2 final snapshot;no match promotion.
+No remote,push unavailable;commit/report then automatic S4 admission when
+S3 scoped checks and review pass.
+
+## S3 P1 closure - DOS graphical IO bring-up
+
+DOS composition consumes decoded IO input and the canonical indexed frame;
+no simultaneous text production. Shared color lookup preserves all64 original
+Win32 presentation values byte-for-byte. Shared row scaling removes unsigned16
+column overflow and avoids per-pixel division;VGA owns only paged storage and
+devices. BIOS video mode/DAC setup occurs once,Esc restores prior mode and
+keyboard vector,and per-root far allocation checks failure and frees once.
+Physical set-1 make/break state preserves simultaneous WASD/J=B/K=A/Enter/
+either Shift. DOS resources bind through the same public APIs as Win32.
+PIT sampling preserves BIOS-owned rate/vector;S4 owns pacing stabilization.
+
+Actual18 source/test/build files,+432/-292;within12-18/600-900 estimate.
+Executor11focused tests eachwidth pass;full64000-pixel independent scaling
+comparison and fourpage guard bytes,held combinations/release/extended prefix,
+invalid hooks and idempotent shutdown covered. Real OpenNT16 large-model
+compile/link with local resources passes;known OLDNAMES warning retained.
+Read-only existing SoftPC public API/object archives and private derived boot
+media prove Mode13 startup,40 nonempty output samples,Enter injection and Esc
+restore to Mode3. This scoped bring-up is not S5 sustained gameplay or a ROM
+certificate. No desktop window/input control was used. Raw media/capture/harness
+and logs remain ignored below build;no sibling modification or product VM.
+
+Three local products:16=303357bytes,
+32=369617bytes,64=382035bytes.
+Not staged or redistributed. Coordinator review:game owners/audio synthesis
+unchanged;new adapters receive neutral contracts. Similar-defect sweep covered
+all DOS root/presenter mode resets,color truncation,index products,allocation
+and key buffering;legacy text module remains outside admitted graphical path.
+Changed dependency identities recorded for deferred M2 rebinding,not new proof.
+Historical1992/1992,local1991/1992 nodes,4260/4261 controls,42/952 facets
+unchanged;scope/expected/actual[],fresh0. Closure gates required before commit.
+No configured remote,push unavailable. Owner authorizes automatic S4 admission.
