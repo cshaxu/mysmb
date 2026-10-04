@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P127 continuous death/reentry checkpoint;S17 remains active,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P128 saved block lifetime checkpoint;S17 remains active,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
@@ -159,7 +159,6 @@
 
 
 
-S17 P120:15 buffer-phase participants; two2048-root actual original/native manifests (4096 roots each width) pass full scoped RAM/APU/write comparison. Eight-task column set ends at offset144;03EE/06CF preserved. Sequential actual9071 setup clears0340/0368/03EE and preserves06CF. Seven focused tests each width pass;123 source identities and P115 products unchanged. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls (raw4342,infeasible81);material993 partial,total unknown. M2 incomplete.
 
 S17 P121:11 graphics/attribute labels,133 original instructions and7 branch pairs; two synthetic high-offset exits removed, graphics byte cursor and attribute command-before-INY order corrected. Two65536-root families,131072 original roots each width0 scoped RAM/APU/order diff;all133PC/14branch sides. New boundary regression rejects predecessor exit2;7 focused tests each width pass. Three EXEs refreshed via modern targets/original OpenNT16 compile/link. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81); material993 partial,total unknown. M2 incomplete.
 
@@ -174,3 +173,5 @@ S17 P125:319 area/scroll/enemy labels,2001 originalPC observed. All34 tablepairs
 S17 P126:six natural600-frame coldbootstrap scripts,3600 frames eachwidth. FullRAM includingzero-page/0778/0779 agreesexceptphysical01EB-01FF;busobserver attributeshighstackwrites toJSR/PHA/PHP/interrupt,minimumSP EAorEC,noother highstackwriter. RetainedCIRAM/palette/OAM/audio/7scalars0diff,nativewidthrecordsidentical. Sixfocusedtests eachwidthpass;123 sourceidentities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261 feasiblecontrols(raw4342,infeasible81);material993partial,totalunknown,M2 incomplete.
 
 S17 P127:three continuous1800-frame cold-bootstrap routes,5400 frames eachwidth,zero nonphysicalRAM/CIRAM/palette/OAM/audio/scalar difference. Actual death/life decrement/reentry observed in allthree;run-held reaches GameOver. Sixfocusedtests eachwidthpass;123 sourceidentities/P123products unchanged. Historical1992/1992,local1991/1992nodes,4260/4261 feasiblecontrols(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
+S17 P128:131 observed block/motion/commit labels,907 originalPC;1664 serial64-turn chains,214656 scopedfullRAM checkpoints eachwidth0diff. Saved03E4-03E9 stable;actualchainedbus rejects anyoverwrite. 91 indexed/direct and9 indirect globalalias candidates explicit,notnew feasibleedges. Sevenfocusedtests eachwidthpass;123 sourceidentities/P123products unchanged. Historical1992/1992,local1991/1992nodes,4260/4261 controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.

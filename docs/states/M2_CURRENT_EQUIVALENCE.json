@@ -27015,11 +27015,13 @@
       "currentCounterpart": "mysmb_area_replace_block_metatile",
       "semanticEvidence": [
         "M2 T55 S3 static audit: SMB1 lines 2034-2139 and callers at 7251, 7434, 7529-7548 and 12159-12162 map every selector, zero-page address calculation, two-row VRAM command, residual write, vertical offset and caller/return relation to the shared game owners.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:10labels/91instructions/34RAM joined4boundedclauses;callerinputs/bytecarry/tablebounds/outputalias/postchildcounter/stableY/storecommutation reviewed;wholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:10labels/91instructions/34RAM joined4boundedclauses;callerinputs/bytecarry/tablebounds/outputalias/postchildcounter/stableY/storecommutation reviewed;wholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P128 checkpoint - saved block publication and consumption:saved03E4-03E9 carrier stable across actual parent and commit under controlled head contracts;global aliases pending."
       ],
       "operationalEvidence": [
         "M2 T55 S3 controlled original-ROM/x86/x64 matrix: remove-water, write-block, rem-bridge and destroy-block routes agree on every scoped VRAM command byte, source-visible zero-page address field and address-control result; x86/x64 snapshots are byte-identical. The high-offset wrap test proves the ROM INY $ff-to-$00 path and final $09 offset.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:262144original8A4D/8A61/8A6B/8ACDroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all91PC/7branchpairs,5tests each;provenancecomments corrected,preprocessedbehavior/threeP98productsunchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P103 checkpoint - block metatile output and bridge rows reconciled:262144original8A4D/8A61/8A6B/8ACDroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all91PC/7branchpairs,5tests each;provenancecomments corrected,preprocessedbehavior/threeP98productsunchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P128 checkpoint - saved block publication and consumption:1664serial64-turn chains/214656RAM checkpoints perwidth0diff,7focusedtests,current identities."
       ],
       "semanticContract": "ROM $8a61: writes replacement graphic then increments residual counter and decrements replace flag.",
       "currentSourcePaths": [
@@ -40792,13 +40794,15 @@
         "M2 T61 S7 static $BCEB-$BE6F audit plus fresh original-ROM/current x86/x64 routes: all owned branches, byte writes, tables, dispatch selectors and child order agree; 296 caller and 296 full-current routes pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P50 checkpoint - block head contents chunks and replacement source-use joins:240 instructions/87RAM joined16 bounded clauses;full pointer/row,ADC carry,stacked metatile/state,JumpEngine content,actual child order and0301 replacement gate audited;six owners unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P50 checkpoint - block head contents chunks and replacement source-use joins:240 instructions/87RAM joined16 bounded clauses;full pointer/row,ADC carry,stacked metatile/state,JumpEngine content,actual child order and0301 replacement gate audited;six owners unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P128 checkpoint - saved block publication and consumption:saved03E4-03E9 carrier stable across actual parent and commit under controlled head contracts;global aliases pending."
       ],
       "operationalEvidence": [
         "M2 T61 S7 focused head, bump and chunk smokes pass on x86/x64; platform purity and DOS16 link pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P50 checkpoint - block head contents chunks and replacement source-use joins:430080actual roots each width2032RAM/24APU/ordered writes0diff,only physical1F0-1FF excluded/minSP>=EF;all240PC observed,all conditional sides except provably impossibleBEB1 fallthrough;8focused tests each pass;source/products unchanged,not whole caller/alias/pixel proof."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P50 checkpoint - block head contents chunks and replacement source-use joins:430080actual roots each width2032RAM/24APU/ordered writes0diff,only physical1F0-1FF excluded/minSP>=EF;all240PC observed,all conditional sides except provably impossibleBEB1 fallthrough;8focused tests each pass;source/products unchanged,not whole caller/alias/pixel proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P128 checkpoint - saved block publication and consumption:1664serial64-turn chains/214656RAM checkpoints perwidth0diff,7focusedtests,current identities."
       ],
       "semanticContract": "Initializes the alternating block slot and breakability state, destroys the display metatile, captures block-buffer scratch, selects replacement behavior, then starts bump or shatter and toggles the slot.",
       "currentSourcePaths": [
@@ -41395,13 +41399,15 @@
         "M2 T61 S8 static $BE70-$BF01 audit: state mask/stacked state, paired-child offsets, branch carry flow, metatile-pointer write and signed two-slot loop match original assembly; 32 controlled original-ROM snapshots exercise every scoped node and feasible branch.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P50 checkpoint - block head contents chunks and replacement source-use joins:240 instructions/87RAM joined16 bounded clauses;full pointer/row,ADC carry,stacked metatile/state,JumpEngine content,actual child order and0301 replacement gate audited;six owners unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P118 checkpoint - qualified loop child returns verified:qualifiedsource X-preserve/reload/loopret join;41PC priorreceipts retained,globalinputs pending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P118 checkpoint - qualified loop child returns verified:qualifiedsource X-preserve/reload/loopret join;41PC priorreceipts retained,globalinputs pending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P128 checkpoint - saved block publication and consumption:saved03E4-03E9 carrier stable across actual parent and commit under controlled head contracts;global aliases pending."
       ],
       "operationalEvidence": [
         "M2 T61 S8 fresh x86/x64 ROM caller and complete-current routes: 64 caller comparisons and 64 complete-current checks per width pass with zero differences; focused lifetime (131,090) and replacement (131,072) C90 cases per width, platform purity and DOS16 link pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P50 checkpoint - block head contents chunks and replacement source-use joins:430080actual roots each width2032RAM/24APU/ordered writes0diff,only physical1F0-1FF excluded/minSP>=EF;all240PC observed,all conditional sides except provably impossibleBEB1 fallthrough;8focused tests each pass;source/products unchanged,not whole caller/alias/pixel proof.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P118 checkpoint - qualified loop child returns verified:9families589824originalroots eachwidth0diff,154freshscopePC and7tests eachwidth;P115products unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P118 checkpoint - qualified loop child returns verified:9families589824originalroots eachwidth0diff,154freshscopePC and7tests eachwidth;P115products unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P128 checkpoint - saved block publication and consumption:1664serial64-turn chains/214656RAM checkpoints perwidth0diff,7focusedtests,current identities."
       ],
       "semanticContract": "Reads block state, separates bouncing blocks from paired brick chunks, preserves child order and source low-nibble lifetime decisions.",
       "currentSourcePaths": [
@@ -41514,13 +41520,15 @@
         "M2 T61 S8 static $BE70-$BF01 audit: state mask/stacked state, paired-child offsets, branch carry flow, metatile-pointer write and signed two-slot loop match original assembly; 32 controlled original-ROM snapshots exercise every scoped node and feasible branch.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:all9 indirect RAM sites have actual shared-C access counterparts;producer/cached full-pointer/child overwrite order reviewed. Legal0500-069f buffer addresses do not alias scratch or saved03e4-03f1 state. Source roots preserve child order and query/output lifetimes in declared contracts.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P50 checkpoint - block head contents chunks and replacement source-use joins:240 instructions/87RAM joined16 bounded clauses;full pointer/row,ADC carry,stacked metatile/state,JumpEngine content,actual child order and0301 replacement gate audited;six owners unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P50 checkpoint - block head contents chunks and replacement source-use joins:240 instructions/87RAM joined16 bounded clauses;full pointer/row,ADC carry,stacked metatile/state,JumpEngine content,actual child order and0301 replacement gate audited;six owners unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P128 checkpoint - saved block publication and consumption:saved03E4-03E9 carrier stable across actual parent and commit under controlled head contracts;global aliases pending."
       ],
       "operationalEvidence": [
         "M2 T61 S8 fresh x86/x64 ROM caller and complete-current routes: 64 caller comparisons and 64 complete-current checks per width pass with zero differences; focused lifetime (131,090) and replacement (131,072) C90 cases per width, platform purity and DOS16 link pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P14 checkpoint - remaining mutable buffer pointers:4992 current original roots each width zero full2048-RAM differences excluding only observed physical pushes;all9 PCs actually visited,8 focused checks each width pass. Source unchanged;P13 products retained. Input-root proof does not establish every gameplay/caller domain.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P50 checkpoint - block head contents chunks and replacement source-use joins:430080actual roots each width2032RAM/24APU/ordered writes0diff,only physical1F0-1FF excluded/minSP>=EF;all240PC observed,all conditional sides except provably impossibleBEB1 fallthrough;8focused tests each pass;source/products unchanged,not whole caller/alias/pixel proof."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P50 checkpoint - block head contents chunks and replacement source-use joins:430080actual roots each width2032RAM/24APU/ordered writes0diff,only physical1F0-1FF excluded/minSP>=EF;all240PC observed,all conditional sides except provably impossibleBEB1 fallthrough;8focused tests each pass;source/products unchanged,not whole caller/alias/pixel proof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P128 checkpoint - saved block publication and consumption:1664serial64-turn chains/214656RAM checkpoints perwidth0diff,7focusedtests,current identities."
       ],
       "semanticContract": "Processes block slots one then zero; only when VRAM Buffer1 is free and replace flag is set does it restore buffer tile and submit replacement graphics.",
       "currentSourcePaths": [
@@ -171300,7 +171308,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P124 checkpoint - queued status palette and NMI handoff",
         "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime",
         "docs/proposals/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P128 checkpoint - saved block publication and consumption"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,

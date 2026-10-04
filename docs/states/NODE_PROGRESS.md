@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P128 saved block lifetime](../proposals/m2/t70-final-current-certification.md#s17-p128-checkpoint---saved-block-publication-and-consumption).
+S17 P128:131 observed block/motion/commit labels,907 originalPC;1664 serial64-turn chains,214656 scopedfullRAM checkpoints eachwidth0diff. Saved03E4-03E9 stable;actualchainedbus rejects anyoverwrite. 91 indexed/direct and9 indirect globalalias candidates explicit,notnew feasibleedges. Sevenfocusedtests eachwidthpass;123 sourceidentities/P123products unchanged. Historical1992/1992,local1991/1992nodes,4260/4261 controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
 [P127 continuous death/reentry](../proposals/m2/t70-final-current-certification.md#s17-p127-checkpoint---continuous-death-and-reentry-agreement).
 S17 P127:three continuous1800-frame cold-bootstrap routes,5400 frames eachwidth,zero nonphysicalRAM/CIRAM/palette/OAM/audio/scalar difference. Actual death/life decrement/reentry observed in allthree;run-held reaches GameOver. Sixfocusedtests eachwidthpass;123 sourceidentities/P123products unchanged. Historical1992/1992,local1991/1992nodes,4260/4261 feasiblecontrols(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
