@@ -1330,3 +1330,42 @@ after neutral summaries;three existing products retain their bytes.
 P12's historical unchanged-title/no-exit condition remains unexplained;this
 receipt resolves the current normal pause-fixture diagnosis only. S4 remains
 open until that separate condition is resolved or explicitly transferred.
+
+
+### S4 P4 closure and explicit integration transfer
+
+S4 closes its DOS device/presenter host contract using P1 mode/failure/restore
+proofs and P3 actual-product seeded normal/dynamic Tab/P/O/Escape acceptance.
+No new product code or ROM credit is claimed. Existing three products and
+focused native test receipts retain their source/dependency boundaries.
+
+Unresolved issue T11-DOS-COLD-INPUT-P12 is explicitly transferred,not resolved.
+The coordinator accepts custody in the automatically admitted S5 under the
+owner mandate for sequential continuation. S5 preserves it for execution in
+the already planned S6 integrated cold-start/runtime routes;its Windows host
+work does not certify DOS cold-start reliability. Historical failed P12 routes
+have identical captures,no DOS exit,and on-time host events;their successful
+unchanged-binary retry lacks guest-consumption evidence. P3's pause-eligibility
+finding explains a different normal failure,not those historical failures.
+Required receiver proof:bounded unseeded real-product cold-start inputs/exit,
+guest-consumption/progress evidence for any reproduced failure,and a reviewed
+root cause/repair or explicitly retained unresolved disposition at T closure.
+T11 cannot close with this gap silently omitted. No node custody changes are
+needed for this zero-ROM-scope presentation issue.
+
+Scope/expected/actual=[],new0;historical1992/1992,local1991/1992nodes,
+4260/4261feasible controls and42/952facets unchanged,M2 incomplete. Raw P3
+captures/saves/transition logs were removed after neutral receipts. No remote.
+
+## S5 admission
+
+Automatic owner-authorized next-S admission after reviewed S4 closure with the
+explicit integration transfer above. Inspect the existing early Windows
+console preview before modifying it. Entry:shared Tab request and game-owned
+80x50 cells. Exit:single game/audio instance,GUI/console round trips,held keys,
+focus/pause handling,P/O,console failure/detach/close recovery and x86/x64 host
+acceptance. Only host/test ownership may change;shared gameplay/text/snapshot
+semantics stay intact. Estimate4-8source/testfiles,80-220lines if repairs are
+needed;report actual changes and refresh all three products after product code
+changes. Empty ROM scope/zero credit. S6 retains integrated world/performance
+routes and T11-DOS-COLD-INPUT-P12;S5 holds explicit custody until its admission.

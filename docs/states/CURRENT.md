@@ -1,25 +1,25 @@
 # Project Status
 
-## M3 T11 S4 Packet
+## M3 T11 S5 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M3 T11 S4 active;P1/P2 reviewed;P3 input-consumption diagnosis and seeded acceptance reviewed;historical P3:test-only public input/pause observer proves normal fixture pressed Enter before pause eligibility;actual normal seeded Tab/P/O/Escape passes. No production changes. Historical P12 remains open. |
-| Admission And Approval | Automatic owner-authorized next-S admission after reviewed S3 P2 closure. |
-| Objective | Complete early DOS Tab presenter host acceptance,mode/input/clock lifetimes,fallback/cleanup and P12 intermittent input/progress diagnosis. |
-| Non-goals | No game/ASCII template rewrite or ROM credit;full route/speed qualification remains S6/M4. |
-| Reference Baseline | Historical1992/1992;local1991/1992nodes,4260/4261feasible controls;42/952facets,M2 incomplete. |
-| Candidate Proposal | [T11 S4](../proposals/colored-ascii-text-frame-gameplay.md#s4-admission). |
-| Files And ABI Surface | Existing DOS root/VGA/keyboard/text-mode adapters and owned probes;4-8source/test/toolfiles,150-350lines after diagnosis;preserve shared scene/snapshot ABI. |
+| Identifier Mode | Continuation:M3 T11 S5 active after S4 P4 closure with explicit integration transfer. |
+| Admission And Approval | Owner-authorized sequential next-S admission;coordinator accepts T11-DOS-COLD-INPUT-P12 custody for planned S6. |
+| Objective | Complete Windows GUI/console presenter host acceptance on x86/x64;preserve explicit DOS cold-input gap. |
+| Non-goals | No shared game/text rewrite or ROM credit;DOS cold-input diagnosis and full routes/performance remain S6. |
+| Reference Baseline | Historical1992/1992;local1991/1992nodes,4260/4261feasible controls,42/952facets;M2 incomplete. |
+| Candidate Proposal | [T11 S5](../proposals/colored-ascii-text-frame-gameplay.md#s5-admission). |
+| Files And ABI Surface | Windows console/input/focus/root and owned tests;estimate4-8files,80-220lines if needed;preserve shared ABI. |
 | Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Documentation and source policy. |
-| Verification | OriginalOpenNT16 compile/link,actual bounded DOSBox graphics/text/heldTab/input/P/O/Escape,fallback/cleanup;both-width focused tests,purity,governance and3products after code changes. |
+| Verification | Both-width host console routes,focus/input/heldTab/P/O/failure/audio continuity,focused tests,purity,governance;three products after product changes. |
 | Expected Markers | Scope[],expectedMatches[],actualMatches[],new0;all ROM counters retained. |
-| Asset Needs | Existing owner-local embedded product/resources,originalOpenNT16 and DOSBox;redistributability unestablished,no import. Purpose:actual DOS presenter/runtime acceptance;unique ignored build paths,60second/20MB raw budgets and cleanup owner S4. |
-| Reporting Requirements | P1:6source/test/toolfiles,+199/-21;13tests eachwidth,actual DOS25/43/50/font/IRQ/input probe,unsupported-video safety and dynamic Tab/P/O/Escape;products359355/435739/451400bytes. P2:two test tools add a pre-Tab stability check and neutral failure receipt;both runtime diagnostics fail equality despite text/save/exit succeeding. No product code change or refresh. Before/after scope,evidence and local commit;no remote. P3:test-only public input/pause observer proves normal fixture pressed Enter before pause eligibility;actual normal seeded Tab/P/O/Escape passes. No production changes. Historical P12 remains open. |
-| Stop Conditions | Game rules in platform,mutated original outputs,input/clock reset during switching,segment overflow or unexplained mode failure prevents closure. |
-| Exit Criteria | Host lifetime/fallback/cleanup verified;P12 condition reproducibly explained and resolved or explicitly accepted transfer;DOS graphics/text/input/snapshot/exit pass. |
-| Original Owner Request | Isolated element-based text,not sampling;early Tab switches all three products over shared gameplay. |
-| Similar-Issue Sweep | All DOS mode setup/restore/failure paths,held/short key handling,far allocations,snapshot and owned-probe key timing. |
+| Asset Needs | Existing owner-local embedded products/resources;no import or redistributability claim. Owned hidden probes only;unique ignored build paths,60second/20MB raw budget,cleanup owner S5. |
+| Reporting Requirements | Report scope/actual change size,evidence,three products after product changes and local commit;no remote. Explicit DOS gap remains unresolved. |
+| Stop Conditions | Gameplay in host,extra ticks/audio writes,unhandled console failures,or unexplained focus/input changes. |
+| Exit Criteria | Windows host contracts pass;DOS cold-input gap explicitly retained and transferred to S6 before closure. |
+| Original Owner Request | Element-authored colored text over shared gameplay;Tab switches both presenters on all targets. |
+| Similar-Issue Sweep | All console open/close/detach paths,key-source/held handling,focus guards,shortcut and audio continuity. |
 
 ## Current Technical Baseline
 
