@@ -24,6 +24,7 @@ static struct mysmb_ppu_frame pixels1,pixels2;
 static struct mysmb_io_text_frame text,loaded_text;
 static unsigned char snapshot_wire[MYSMB_SNAPSHOT_FILE_BYTES];
 static struct mysmb_text_background_workspace background;
+static struct mysmb_text_background_receipt caption_receipt;
 #define CHECK(c) do { if (!(c)) { \
     fprintf(stderr,"observation check line %d\n",__LINE__); return 1; \
 } } while (0)
@@ -39,6 +40,148 @@ static void bind(struct mysmb_game *game)
         MYSMB_LOCAL_TITLE_ICON_DATA_SIZE);
 #endif
 }
+
+#ifdef MYSMB_LOCAL_TITLE
+static void caption_setup(void)
+{
+    bind(&observed);observed.startup_phase=4U;
+    mysmb_text_observer_enable(&observed,1U);
+    memset(observed.name_table,0x24,sizeof(observed.name_table));
+    memset(observed.name_table[0]+0x3c0U,0,64U);
+    memset(observed.name_table[1]+0x3c0U,0,64U);
+    observed.visible_ppu_mask=0x1eU;observed.ram[0x0779U]=0x1eU;
+    observed.ram[0x0773U]=0U;observed.visible_sprite0_split=1U;
+}
+
+static int caption_word(unsigned short row,unsigned short col,const char *word)
+{
+    unsigned short i,x,y;
+    for(i=0U;word[i]!='\0';++i) {
+        if(word[i]==' ')continue;
+        if(row<4U && observed.visible_sprite0_split) {
+            x=(unsigned short)((col+i)*8UL*80UL/256UL);
+            y=(unsigned short)(row*8UL*50UL/240UL);
+        } else {
+            x=(unsigned short)(((col+i)*8UL*80UL-128UL+255UL)/256UL);
+            y=(unsigned short)((row*8UL*50UL-120UL+239UL)/240UL);
+        }
+        if(x>=80U || y>=50U || text.cells[y*80U+x].character!=(unsigned char)word[i])
+            return 0;
+    }
+    return 1;
+}
+
+static int caption_render_restore(void)
+{
+    unsigned char fingerprint[16];
+    before=observed;
+    CHECK(mysmb_text_background_scene_build(&observed,&background,&text,&caption_receipt));
+    CHECK(memcmp(&observed,&before,sizeof(observed))==0);
+    mysmb_game_snapshot_fingerprint(&observed,fingerprint);
+    CHECK(mysmb_game_snapshot_capture(&observed,&first,fingerprint));
+    bind(&restored);mysmb_text_observer_enable(&restored,1U);
+    CHECK(mysmb_game_snapshot_restore(&restored,&first));
+    CHECK(mysmb_text_background_scene_build(&restored,&background,&loaded_text,&caption_receipt));
+    CHECK(memcmp(&text,&loaded_text,sizeof(text))==0);
+    return 0;
+}
+
+static int caption_routes(void)
+{
+    static const unsigned short rows[7]={10U,10U,14U,13U,15U,18U,20U};
+    static const unsigned short cols[7]={8U,8U,5U,7U,3U,10U,8U};
+    static const char *words[7]={"THANK YOU MARIO!","THANK YOU LUIGI!",
+        "BUT OUR PRINCESS IS IN","YOUR QUEST IS OVER.",
+        "WE PRESENT YOU A NEW QUEST.","PUSH BUTTON B","TO SELECT A WORLD"};
+    unsigned short i;
+    struct mysmb_input input;
+    struct mysmb_frame output;
+    for(i=0U;i<7U;++i) {
+        caption_setup();observed.ram[0x0773U]=(unsigned char)(12U+i);
+        CHECK(mysmb_text_background_scene_build(&observed,&background,&text,&caption_receipt));
+        CHECK(!caption_word(rows[i],cols[i],words[i]));
+        mysmb_game_commit_vram_buffer(&observed);
+        observed.visible_ppu_name_table=1U;
+        CHECK(caption_render_restore()==0);
+        CHECK(caption_word(rows[i],cols[i],words[i]));
+        if(i==2U)CHECK(caption_word(16U,5U,"ANOTHER CASTLE!"));
+        memset(observed.name_table[1],0x24,960U);
+        CHECK(mysmb_text_background_scene_build(&observed,&background,&text,&caption_receipt));
+        CHECK(!caption_word(rows[i],cols[i],words[i]));
+    }
+    for(i=0U;i<7U;++i) {
+        caption_setup();observed.ram[0x077aU]=1U;
+        observed.ram[0x0753U]=1U;observed.ram[0x0770U]=3U;
+        observed.ram[0x075aU]=10U;observed.ram[0x075fU]=3U;
+        observed.ram[0x075cU]=1U;
+        CHECK(mysmb_area_queue_game_text(&observed,(unsigned char)i));
+        mysmb_game_commit_vram_buffer(&observed);
+        if(i>=4U)observed.visible_ppu_name_table=1U;
+        CHECK(caption_render_restore()==0);
+        if(i==0U) {
+            CHECK(caption_word(2U,3U,"LUIGI"));
+            CHECK(caption_word(3U,11U,"$x"));
+        }
+        if(i==1U) {
+            CHECK(caption_word(10U,11U,"WORLD 4-2"));
+            CHECK(caption_word(14U,17U,"^1"));
+        }
+        if(i==2U)CHECK(caption_word(16U,12U,"TIME UP"));
+        if(i==3U)CHECK(caption_word(16U,11U,"GAME OVER"));
+        if(i>=4U)CHECK(caption_word(12U,4U,"WELCOME TO WARP ZONE!"));
+    }
+    /* Original pause freezes the committed scene;no invented pause label. */
+    observed.ram[0x0770U]=1U;observed.ram[0x0772U]=3U;
+    observed.ram[0x0776U]=1U;observed.ram[0x0774U]=0U;
+    observed.ram[0x0722U]=0U;observed.ram[0x0778U]=1U;
+    observed.ppu_control_0=1U;observed.visible_sprite0_split=0U;
+    input.buttons=0U;input.buttons2=0U;
+    CHECK(mysmb_text_background_scene_build(&observed,&background,&loaded_text,&caption_receipt));
+    mysmb_game_tick(&observed,&input,&output);
+    CHECK(mysmb_text_background_scene_build(&observed,&background,&text,&caption_receipt));
+    CHECK(memcmp(&text,&loaded_text,sizeof(text))==0);
+    puts("14 original caption producer/commit/restore routes and paused scene pass");
+    return 0;
+}
+
+static int player_phase_routes(void)
+{
+    unsigned short i;
+    struct mysmb_text_actor_receipt receipt;
+    for(i=0U;i<6U;++i) {
+        caption_setup();observed.ram[0x0753U]=(unsigned char)(i%2U);
+        observed.ram[0x0754U]=(unsigned char)(i/2U==0U?0U:1U);
+        observed.ram[0x000eU]=0x0bU;observed.ram[0x06e4U]=32U;
+        observed.ram[0x03adU]=80U;observed.ram[0x03b8U]=64U;
+        observed.ram[0x0033U]=1U;plain=observed;
+        mysmb_text_observer_enable(&plain,0U);
+        if(i<4U) {
+            mysmb_oam_render_player(&observed);mysmb_oam_render_player(&plain);
+            CHECK((observed.text_observer.producer.items[0].identity&
+                MYSMB_TEXT_PLAYER_DEATH_FLAG)!=0U);
+        } else {
+            mysmb_oam_draw_intermediate_player(&observed);
+            mysmb_oam_draw_intermediate_player(&plain);
+        }
+        CHECK(memcmp(&plain,&observed,offsetof(struct mysmb_game,text_observer))==0);
+        mysmb_game_submit_oam(&observed);
+        CHECK(caption_render_restore()==0);
+        CHECK(mysmb_text_actor_scene_draw(&observed,&actor_workspace,
+            background.opaque,&text,&receipt));
+        CHECK(receipt.drawn==1U && receipt.unsupported==0U);
+        CHECK(mysmb_text_actor_scene_draw(&restored,&actor_workspace,
+            background.opaque,&loaded_text,&receipt));
+        CHECK(memcmp(&text,&loaded_text,sizeof(text))==0);
+        observed.ram[0x0753U]^=1U;observed.ram[0x000eU]=8U;
+        CHECK(mysmb_text_background_scene_build(&observed,&background,&loaded_text,&caption_receipt));
+        CHECK(mysmb_text_actor_scene_draw(&observed,&actor_workspace,
+            background.opaque,&loaded_text,&receipt));
+        CHECK(memcmp(&text,&loaded_text,sizeof(text))==0);
+    }
+    puts("six actual Mario/Luigi death/intermission owners preserve outputs and restored scene");
+    return 0;
+}
+#endif
 
 static int snapshot_case(void)
 {
@@ -347,6 +490,10 @@ int main(int argc,char **argv)
     CHECK(mixed_player_case(0U,0U,0U)==0);
     CHECK(mixed_player_case(0U,1U,0U)==0);
     CHECK(mixed_player_case(0U,1U,4U)==0);
+#ifdef MYSMB_LOCAL_TITLE
+    CHECK(caption_routes()==0);
+    CHECK(player_phase_routes()==0);
+#endif
     bind(&observed);bind(&plain);bind(&restored);
     mysmb_text_observer_enable(&observed,1U);
     mysmb_game_snapshot_fingerprint(&observed,fingerprint);

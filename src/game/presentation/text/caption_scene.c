@@ -8,9 +8,10 @@ static unsigned char character(unsigned char tile)
     if(tile==0x28U)return '-';
     if(tile==0x29U)return 'x';
     if(tile==0x2bU)return '!';
+    if(tile==0x2eU)return '$'; /* Authored status coin. */
     if(tile==0xafU)return '.';
     if(tile==0xcfU)return '@'; /* Authored ASCII copyright marker. */
-    if(tile==0x9fU)return '1'; /* Intermission's tens-of-lives token. */
+    if(tile==0x9fU)return '^'; /* Original more-than-nine-lives crown. */
     return 0U;
 }
 

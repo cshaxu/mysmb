@@ -1146,3 +1146,69 @@ intermission/death/warp/terminal/pause expectations and restore;S4-S6 host/
 integration/performance pending. Historical1992/1992,local1991/1992nodes,
 4260/4261feasible controls and42/952facets unchanged;scope/expected/actual=[],
 zeroROMcredit,no remote or protected staging.
+
+### S3 P2 source-caption route scope
+
+Exercise the existing original WriteGameText selectors0-6 and NMI message
+selectors12-18,including HUD,world/lives,time-up,game-over,three warp variants,
+both thanks messages,retainer/princess messages and world select. Check queued
+versus committed text,source geometry,erasure,immediate restore and original
+pause freeze. This controlled producer/commit route is presentation evidence,
+not proof of gameplay reaching every phase or ROM equivalence credit.
+Original source identifies the more-than-nine-lives token as a crown,not a
+tens digit;correct its authored glyph and add the status coin glyph. Estimate
+2-3source/testfiles,120-180lines;shared text only,no observer/ABI/platform change.
+Retain S2 death/player source-owner proof and P1 title/menu scroll proof.
+Run both-width focused tests/originalDOS16/three refreshed products and owned
+runtime switch probes. Existing source provenance/raw budgets apply;scope=[],
+expected=[],new0,all conformance totals unchanged.
+
+### S3 P2 review and S3 closure
+
+Two source/testfiles add149/remove1line. Original source calls the high-lives
+token a crown;its sole caption mapping now emits an authored crown instead of
+a tens digit. HUD coin now has its own glyph. The similar-issue sweep covers
+both special HUD/lives tokens and all existing font punctuation;recognized
+terrain still precedes font-like tokens. No translated logic/ABI/platform edits.
+
+Fourteen controlled original producer/NMI-commit routes check source positions,
+HUD coin/Luigi,world/lives crown,time-up,game-over,all three warp variants,
+thanks/retainer/princess/world-select messages,erasure and immediate snapshot
+restore. Six actual player draw-owner routes cover both identities and death
+sizes/intermission,original-prefix equality,restored actors and independence
+from later live identity/state changes. Original pause keeps the committed
+scene without an invented label. Its first fixture used disabled display and
+unsynchronized physical nametable/split;correct stable registers make the
+pause check pass. No production pause logic changes.
+
+Both widths pass11focused tests and the final expanded route,product self-tests
+and owned-console Tab probes. The1000-step original-output comparison and
+immediate/240future restore remain equal;75title frames/2025actor draws.
+Direct999frame/11988000byte cross-width comparison passes. StrictC90 and original
+OpenNT16 link pass;actual46secondDOSBox Tab/held/P/O/restore/Escape passes with
+4000cells/5colors/39patterns. Three local products358503/435739/451400bytes are
+refreshed. Raw frame/capture/save files are deleted;no protected staging/remote.
+
+S3 closes shared title/menu/caption and representative death/intermission/
+warp/terminal/pause assembly. Controlled producer routes prove presentation
+contracts,not gameplay reaching every terminal state or exhaustive worlds.
+S2 terrain/actor ownership,scroll/priority/disappearance proofs and P1 title/
+menu scroll proofs are retained. S4-S6 accept host fallback/input/integration,
+full playable route coverage and speed;the P12 intermittent DOS condition
+remains explicitly open in S4. Scope/expected/actual=[],zeroROMcredit.
+Historical1992/1992,local1991/1992nodes,4260/4261feasible controls and42/952facets
+remain unchanged;M2 certification is still incomplete.
+
+## S4 admission
+
+Automatic owner-authorized admission after reviewed S3 closure. DOS already
+has the early Tab preview;inspect and complete its host contract rather than
+duplicate shared text/game logic. Entry:decoded Tab request and allocated far
+scene pack. Exit:safe graphics/text roundtrip,input continuity,P/O and Escape,
+including unavailable-mode/initialization cleanup. Review keyboard/timer/BIOS
+mode lifetimes and reconcile P12 intermittent input/progress with reproducible
+evidence;successful routes alone do not resolve it. Shared scene bytes remain
+identical to Windows;no platform game rules or ROM credit. Estimate4-8source/
+test/toolfiles,150-350lines,adjust after read-only diagnosis. OriginalOpenNT16
+and bounded DOSBox actual EXE routes remain the verification platform;no
+SoftPC/run16 import. S6 retains486SX qualification/full route performance.

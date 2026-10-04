@@ -1,25 +1,25 @@
 # Project Status
 
-## M3 T11 S3 Packet
+## M3 T11 S4 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M3 T11 S3 active;P1 title/menu/font chain reviewed;remaining scene-route coverage pending. |
-| Admission And Approval | Automatic next-S admission under owner mandate after S2 reviewed P14 closure. |
-| Objective | Complete title/menu,intermission,pause/death,warp and terminal text from source-visible decisions and committed text. |
-| Non-goals | No gameplay rewrite or ROM credit;complete presenter acceptance remains S4/S5. |
+| Identifier Mode | Continuation:M3 T11 S4 active;P1 DOS presenter contract audit admitted. |
+| Admission And Approval | Automatic owner-authorized next-S admission after reviewed S3 P2 closure. |
+| Objective | Complete early DOS Tab presenter host acceptance,mode/input/clock lifetimes,fallback/cleanup and P12 intermittent input/progress diagnosis. |
+| Non-goals | No game/ASCII template rewrite or ROM credit;full route/speed qualification remains S6/M4. |
 | Reference Baseline | Historical1992/1992;local1991/1992nodes,4260/4261feasible controls;42/952facets,M2 incomplete. |
-| Candidate Proposal | [T11 S3](../proposals/colored-ascii-text-frame-gameplay.md#s3-admission). |
-| Files And ABI Surface | S3 shared text scene/background/caption assembly and source text/title producers if receipt binding is needed;6-12source/testfiles,350-650lines. Inspect source commit lifetime before any ABI change. |
+| Candidate Proposal | [T11 S4](../proposals/colored-ascii-text-frame-gameplay.md#s4-admission). |
+| Files And ABI Surface | Existing DOS root/VGA/keyboard/text-mode adapters and owned probes;4-8source/test/toolfiles,150-350lines after diagnosis;preserve shared scene/snapshot ABI. |
 | Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Documentation and source policy. |
-| Verification | Enabled/disabled observation original-state/OAM/VRAM/audio/pixel equality;visible phase,ownership/clipping,background/HUD,restore;both native widths,originalDOS16 and3products,purity/governance. |
+| Verification | OriginalOpenNT16 compile/link,actual bounded DOSBox graphics/text/heldTab/input/P/O/Escape,fallback/cleanup;both-width focused tests,purity,governance and3products after code changes. |
 | Expected Markers | Scope[],expectedMatches[],actualMatches[],new0;all ROM counters retained. |
-| Asset Needs | Existing local owner resources/reviewed local SMBDIS listing/originalOpenNT16 only;redistributability unestablished,no import. Purpose:immutable title/text output-address/font-token interpretation and neutral non-interference evidence;protected outputs below ignored build;S3 P1 binding decision owns usage limits. |
-| Reporting Requirements | P1:7source/test/buildfiles,+313/-24;11tests eachwidth,75title frames,original-output/restore/cross-width equality,DOSBox Tab/P/O/Escape;3products358487/435739/451400bytes. Before/after scope,size,evidence and local commit;no remote. |
-| Stop Conditions | Selector re-execution,original-state/output mutation,live/visible mixing,unowned restore metadata or segment overflow prevents closure. |
-| Exit Criteria | All named scene families have source-visible caption/art expectations,disappearance/scroll/restore and no-interference proof;host full acceptance remains S4-S6. |
-| Original Owner Request | Isolated element-based text,not sampling;Tab switches both presentations on all hosts. |
-| Similar-Issue Sweep | All draw families,slot overwrite/shuffling,background staging/commit,hidden blocks,HUD split,boot/pause/snapshot resets. |
+| Asset Needs | Existing owner-local embedded product/resources,originalOpenNT16 and DOSBox;redistributability unestablished,no import. Purpose:actual DOS presenter/runtime acceptance;unique ignored build paths,60second/20MB raw budgets and cleanup owner S4. |
+| Reporting Requirements | Before/after component scope,size,tests,3EXEs and local commit;no remote. Successful runtime alone does not resolve P12. |
+| Stop Conditions | Game rules in platform,mutated original outputs,input/clock reset during switching,segment overflow or unexplained mode failure prevents closure. |
+| Exit Criteria | Host lifetime/fallback/cleanup verified;P12 condition reproducibly explained and resolved or explicitly accepted transfer;DOS graphics/text/input/snapshot/exit pass. |
+| Original Owner Request | Isolated element-based text,not sampling;early Tab switches all three products over shared gameplay. |
+| Similar-Issue Sweep | All DOS mode setup/restore/failure paths,held/short key handling,far allocations,snapshot and owned-probe key timing. |
 
 ## Current Technical Baseline
 
@@ -40,7 +40,6 @@
 
 ## Compact closure status
 
-M3 T9 S6 P1:shared Escape exit/short-press lifecycle and integrated closure;16source/test/build files,+130/-26,14tests eachwidth,fresh originalDOS16 link/actualDOSBox route/3EXEs. T9closed,DOSaudio unavailable/M4speed pending,zeroROMcredit,no remote.
 
 M3 T10 S1 P1:4782byte codec,integer canonical numeric validation,last-running cache;5focused tests eachwidth,originalDOS16 link and3localEXEs. ZeroROMcredit,no remote;P/O host binding pending.
 
@@ -55,3 +54,5 @@ M3 T10 S5 P1/T closure:16tests eachwidth,240frames/176400samples uninterrupted r
 M3 T11 S1 P1:isolated authored element templates260newsource/test lines,11build lines;four focused tests eachwidth,C90 and originalOpenNT16 ABI/product builds;three localEXEs byte-identical. No runtime text/Tab yet;zeroROMcredit,no remote.
 
 M3 T11 S2 P1-P14 closed:bounded source-decision observations,committed actor/background/HUD scene,45element kinds,101metatile classes and full observation restore. P14 adds star flag/Luigi;10source/testfiles,+120/-13. Bothwidths10focused tests/product/console probes,original-state/output equality and999cross-width textframes pass;originalDOS16 link/actualDOSBox Tab/P/O/Escape pass. Products354149/431047/446166bytes,DGROUP49152bytes. S3 accepts caption/title/terminal coverage;S4 retains intermittent DOS probe gap,S4-S6 host/integration/performance remain. Scope/expected/actual=[];no ROM credit,no remote. Full receipts: [T11 proposal](../proposals/colored-ascii-text-frame-gameplay.md#s2-closure-and-coverage-boundary).
+
+M3 T11 S3 P1-P2 closed:committed title/menu/font/terminal captions,14producer/commit/restore routes,six death/intermission owners and original pause freeze;11tests eachwidth,1000-step original-output equality,999cross-width frames,originalDOS16/actualDOSBox and3products358503/435739/451400bytes. P2:2source/testfiles,+149/-1. S4 accepts DOS host/P12 gap;S5-S6 host/integration/performance pending. Empty ROM scope/zero credit,no remote;full evidence in [T11 proposal](../proposals/colored-ascii-text-frame-gameplay.md#s3-p2-review-and-s3-closure).
