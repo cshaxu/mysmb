@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P136 entrance buffer handoff](../proposals/m2/t70-final-current-certification.md#s17-p136-checkpoint---entrance-buffer-reset-and-retained-raw-alias).
+S17 P136:17408 controlled initialization/secondary-setup/NMI/entrance chains,53 observedlabels/410PC,bothwidths0scopedRAM/APU/orderdiff. Normalwater SetupBubbleX0 occurs768times;rawwater-plus-vineX5 occurs768times andsourceB724 aliasesE9. Bufferreset handoff joined;legalvine/area transition andfullframe-prefix clauses remainpending,fivebubblewriters notpromoted. Sevenfocusedtests eachwidthpass,123identities/P123productsunchanged. Streamalias374 remains59intrinsic/50parent-qualified/265pending. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
 [P135 cannon/disposition handoffs](../proposals/m2/t70-final-current-certification.md#s17-p135-checkpoint---cannon-slot-handoffs-and-explicit-disposition).
 S17 P135:10cannon-exclusive storeconditions joined;374streamalias rows explicitlypartitioned59intrinsic/50parent-qualified/265pending. Original1357instruction closure:soleB9C3publisher2..0/noindirectwriter,47potential008aliases excludeactualprimary0..2/combined1..3. Fresh65536originalparents0scopedRAM/APU/orderdiff bothwidths,bus08/stream checks/all10storePCobserved. Eightfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
