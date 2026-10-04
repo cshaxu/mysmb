@@ -68,6 +68,7 @@ list(APPEND MYSMB_GAME_SOURCES src/game/player_transition.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/player_modes.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/player_end_level.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/player_movement.c)
+list(APPEND MYSMB_GAME_SOURCES src/game/presentation/text/observation.c)
 add_library(mysmb_game STATIC ${MYSMB_GAME_SOURCES})
 target_include_directories(mysmb_game PUBLIC src)
 
@@ -99,6 +100,9 @@ target_link_libraries(mysmb_game_snapshot PUBLIC mysmb_io_snapshot mysmb_game)
 add_executable(mysmb_game_snapshot_smoke test/game_snapshot_smoke.c)
 target_link_libraries(mysmb_game_snapshot_smoke PRIVATE mysmb_game_snapshot)
 add_test(NAME mysmb.game-snapshot-smoke COMMAND mysmb_game_snapshot_smoke)
+add_executable(mysmb_text_observation_smoke test/text_observation_smoke.c)
+target_link_libraries(mysmb_text_observation_smoke PRIVATE mysmb_game_snapshot)
+add_test(NAME mysmb.text-observation-smoke COMMAND mysmb_text_observation_smoke)
 add_executable(mysmb_audio_snapshot_smoke test/audio_snapshot_smoke.c
     src/platform/win32/audio_snapshot.c src/platform/win32/audio_snapshot_real.c
     src/platform/win32/audio_renderer.c)
@@ -1367,6 +1371,11 @@ if(MYSMB_ROM_PATH)
     target_include_directories(mysmb_snapshot_continuation_smoke PRIVATE
         "${MYSMB_LOCAL_ROM_DIR}" "${MYSMB_LOCAL_TITLE_DIR}")
     target_link_libraries(mysmb_snapshot_continuation_smoke PRIVATE mysmb_game_snapshot mysmb_game_io)
+    target_sources(mysmb_text_observation_smoke PRIVATE
+        $<TARGET_OBJECTS:mysmb_local_rom_data> $<TARGET_OBJECTS:mysmb_local_title_data>)
+    target_include_directories(mysmb_text_observation_smoke PRIVATE
+        "${MYSMB_LOCAL_ROM_DIR}" "${MYSMB_LOCAL_TITLE_DIR}")
+    target_compile_definitions(mysmb_text_observation_smoke PRIVATE MYSMB_LOCAL_TITLE=1)
     file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/snapshot-continuation-test")
     add_test(NAME mysmb.snapshot-continuation-smoke COMMAND mysmb_snapshot_continuation_smoke
         capture "${CMAKE_BINARY_DIR}/snapshot-continuation-test/mysmb.sav"

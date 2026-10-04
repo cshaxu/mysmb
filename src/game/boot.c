@@ -23,6 +23,7 @@ void mysmb_game_reset(struct mysmb_game *game)
     mysmb_u8 index;
     mysmb_u8 warm_boot;
 
+    mysmb_text_observer_invalidate(game);
     warm_boot = 1U;
     /* WBootCheck starts with X=$05 and decrements through TopScoreDisplay.
      * There are no writes between digits, but retain its observable branch
@@ -169,6 +170,7 @@ void mysmb_game_move_all_sprites_offscreen(struct mysmb_game *game)
 void mysmb_game_move_sprites_offscreen(struct mysmb_game *game)
 {
     mysmb_game_sprite_init_loop(game, 4U);
+    mysmb_text_observer_clear_producer(game);
 }
 
 /* ROM NMI $4014 transfer after PPU_SPR_ADDR is reset to zero. */
@@ -178,6 +180,7 @@ void mysmb_game_submit_oam(struct mysmb_game *game)
 
     for (offset = 0U; offset < 0x0100U; ++offset)
         game->visible_oam[offset] = game->ram[(mysmb_u16)(MYSMB_BOOT_OAM + offset)];
+    mysmb_text_observer_commit(game);
 }
 
 /* ROM $8eed-$8ef3 WritePPUReg1: physical register before RAM mirror. */

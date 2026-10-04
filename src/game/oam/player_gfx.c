@@ -327,12 +327,24 @@ void mysmb_oam_render_player(struct mysmb_game *game)
         tile_index = 0U;
         if (game->ram[MYSMB_PLAYER_SIZE] != 0U) {
             if (game->ram[(mysmb_u16)(0x0219U + kick_offset)] ==
-                game->area_prg[MYSMB_SWIM_TILE_REP_OFFSET]) return;
+                game->area_prg[MYSMB_SWIM_TILE_REP_OFFSET]) {
+                mysmb_text_observer_record(game, MYSMB_TEXT_OBSERVE_PLAYER,
+                    game->ram[0x0753U], 0U, graphics_offset,
+                    game->ram[MYSMB_PLAYER_FACING],
+                    game->ram[MYSMB_PLAYER_SPRITE_OFFSET], 8U,
+                    game->ram[MYSMB_PLAYER_SIZE]);
+                return;
+            }
             tile_index = 1U;
         }
         game->ram[(mysmb_u16)(0x0219U + kick_offset)] =
             game->area_prg[MYSMB_SWIM_KICK_TILE_NUM + tile_index];
     }
+    mysmb_text_observer_record(game, MYSMB_TEXT_OBSERVE_PLAYER,
+        game->ram[0x0753U], 0U, graphics_offset,
+        game->ram[MYSMB_PLAYER_FACING],
+        game->ram[MYSMB_PLAYER_SPRITE_OFFSET], 8U,
+        game->ram[MYSMB_PLAYER_SIZE]);
 }
 
 /* GameEngine convenience only.  Its original order is

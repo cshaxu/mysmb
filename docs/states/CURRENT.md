@@ -1,8 +1,25 @@
 # Project Status
 
-**Idle.**
+## M3 T11 S2 Packet
 
-M3 T11 S1 is closed under its amended standalone-template scope. T11 remains open;S2 is next,with production observation and visibility/restore proof still pending. [S1 closure](../proposals/colored-ascii-text-frame-gameplay.md#s1-closure).
+| Field | Required record |
+| --- | --- |
+| Identifier Mode | Continuation:M3 T11 S2 active;P1 bounded observation step reviewed,remaining integration next. |
+| Admission And Approval | Automatic next-S admission under owner mandate after S1 reviewed local commit. |
+| Objective | Connect isolated text elements to existing draw decisions and committed visible scenes,with explicit lifetime/restore handling. |
+| Non-goals | No gameplay rewrite,ROM credit or platform Tab binding;those presenters remain S4/S5. |
+| Reference Baseline | Historical1992/1992;local1991/1992nodes,4260/4261feasible controls;42/952facets,M2 incomplete. |
+| Candidate Proposal | [T11 S2](../proposals/colored-ascii-text-frame-gameplay.md#s2-admission). |
+| Files And ABI Surface | game presentation and minimal observation sites,scene/restore binding,focused tests/build;estimate10-18files,600-1000lines. P1 embeds optional bounded observer buffers;unchanged snapshot restore invalidates them. Immediate loaded text/background/all-family coverage remain open within S2. |
+| Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Documentation and source policy. |
+| Verification | Enabled/disabled observation original-state/OAM/VRAM/audio/pixel equality;visible phase,ownership/clipping,background/HUD,restore;both native widths,originalDOS16 and3products,purity/governance. |
+| Expected Markers | Scope[],expectedMatches[],actualMatches[],new0;all ROM counters retained. |
+| Asset Needs | Existing local owner resources/originalOpenNT16 only;no new import,protected outputs below ignored build. |
+| Reporting Requirements | Before/after component scope,size,tests,3EXEs and local commit;no remote. |
+| Stop Conditions | Selector re-execution,original-state/output mutation,live/visible mixing,unowned restore metadata or segment overflow prevents closure. |
+| Exit Criteria | Typed observed scene uses source-selected results and committed visibility;bounded storage/restore and no-interference evidence pass. |
+| Original Owner Request | Isolated element-based text,not sampling;Tab switches both presentations on all hosts. |
+| Similar-Issue Sweep | All draw families,slot overwrite/shuffling,background staging/commit,hidden blocks,HUD split,boot/pause/snapshot resets. |
 
 ## Current Technical Baseline
 
@@ -38,3 +55,12 @@ M3 T10 S4 P1:DOS P/O/path/restore binding;10focused tests eachwidth,originalDOS1
 M3 T10 S5 P1/T closure:16tests eachwidth,240frames/176400samples uninterrupted restore,2cross-width direct16223040byte comparisons and actualDOSBox title-seed/pause/save/load/Esc. Three products retained/fresh DOS link;host floating/audio-absent/DOS rename limits explicit;zeroROMcredit/no remote.
 
 M3 T11 S1 P1:isolated authored element templates260newsource/test lines,11build lines;four focused tests eachwidth,C90 and originalOpenNT16 ABI/product builds;three localEXEs byte-identical. No runtime text/Tab yet;zeroROMcredit,no remote.
+
+## S2 progress
+
+P1:1413-byte optional observer and4draw-file hooks;1000-step twin route has
+zero original core/frame/pixel differences in both widths;8focused tests plus
+product self-test eachwidth,originalDOS16 andactualDOSBox route pass. Three
+local products refreshed:DOS326127,x86396559,x64410615bytes. S2 not closed:
+17dedicated graphics files/overwrite sites,background/HUD,live templates and
+immediate snapshot metadata restoration remain. Tab binding remains S4/S5.

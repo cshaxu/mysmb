@@ -1,6 +1,8 @@
 #ifndef MYSMB_GAME_GAME_H
 #define MYSMB_GAME_GAME_H
 
+#include "game/presentation/text/observation.h"
+
 /* This header intentionally uses only C90 language and headers. */
 typedef unsigned char mysmb_u8;
 typedef unsigned short mysmb_u16;
@@ -95,6 +97,9 @@ struct mysmb_game {
     mysmb_u16 title_icon_data_size;
     mysmb_u8 area_command_count;
     struct mysmb_area_command area_commands[16];
+    /* Optional presentation receipts; never original RAM or game decisions.
+     * The current snapshot schema excludes them and restore invalidates them. */
+    struct mysmb_text_observer text_observer;
 };
 
 struct mysmb_frame {

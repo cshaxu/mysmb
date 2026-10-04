@@ -221,3 +221,95 @@ visible latches without rerunning game selectors, handle restore lifetime and
 prove unchanged RAM/OAM/VRAM/audio under enabled/disabled observation before
 calling text frames game-synchronized. Tab switching remains S4/S5, not an
 existing feature in the three executables. No Git remote is configured.
+
+## S2 admission
+
+Automatic continuation after reviewed S1 closure, under the owner's existing
+mandate. Scope: shared game presentation observation and visible-scene assembly,
+including actor draw-decision families, final OAM visibility/ownership,
+background commit identity, HUD split/scroll and restore lifetime. Templates
+must consume already-selected source results, never repeat action selection.
+Tab presenter switching remains S4/S5. Original ROM node scope/expected/new
+matches are empty/empty/zero; prior local evidence counters remain unchanged.
+
+Before source edits, choose bounded producer/visible storage and explicit
+snapshot restore handling, enumerate every draw-owner hit and disposition,
+and identify the smallest observation sites needed. Estimated10-18source/test/
+build files,600-1000lines;amend visibly if the census changes this bound.
+Verify disabled/enabled observation produces identical original state,
+OAM/VRAM/palette/audio and pixels over the same input route;also verify visible
+latching,overwritten/clipped slots,hidden-block visibility,scroll and restore.
+Compile both native widths and the original DOS16 toolchain,refresh all three
+local products on source change and run purity/governance gates. No claim of
+live text completeness precedes this evidence. S2 remains active,not closed.
+
+### S2 P1 bounded observation step
+
+P1 establishes optional per-instance producer/visible observation buffers and
+hooks only completed player,ordinary EnemyGfxHandler/convenience Goomba and
+power-up draws. Source-selected graphics offsets and raw identities are
+recorded without translating them into a second animation state machine.
+Final OAM entry snapshots travel with each observation;visible masks reject
+changed/hidden entries. Capture resets when backing OAM is cleared and commits
+at the same DMA boundary. Embedded bounded storage avoids global bindings or
+host-pointer lifetime and will be measured with the real16-bit compiler.
+
+The original4782-byte snapshot schema is unchanged in this P. A successful
+restore explicitly invalidates observer buffers while preserving enablement;
+rejected restores do not touch them. This prevents stale descriptions but does
+not yet supply text for the immediate loaded frame. S2 remains open until
+persistent/reconstructible metadata,background/HUD and all draw-owner coverage
+are reconciled. No roots enable observation or show a text mode in this P.
+
+Remaining draw census includes fireball/explosion,firebar,hammer,block/chunks,
+vine,platform,flagpole,Bowser-specific,fireworks,bubble and retainer paths;
+background area metatiles/replacements and title/HUD writers need their own
+commit ownership. Existing ordinary EnemyGfxHandler covers multiple enemy
+families,not every dedicated convenience owner. No family is silently deemed
+covered from sharing a tile. P1 tests include source-bound twin-game output
+comparison and controlled final-entry overwrite/latch/restore cases.
+
+### S2 P1 review receipt
+
+P1 completes the bounded observer step,not S2 closure. Three new source/test
+files289lines plus40added/1removed integration/build lines establish1413-byte
+per-instance buffers. Completed decision receipts capture source identity,
+selection token,facing,size and final OAM entries. Producer/visible lifetime,
+source-entry ownership and overwritten/hidden/blank masks are exercised.
+Ordinary enemy selection captures its graphics index before the draw helpers
+advance it. Player swimming's early return also records the completed output.
+No root enables observation;default graphical products retain original output.
+
+Both widths pass eight focused tests plus the actual-product hidden-window
+self-test. The owner-resource-bound1000-step twin route records730running
+frames,801visible-player and1003visible-enemy observations with zero original
+core/frame/pixel differences. All four power-up types have controlled draw
+fixtures with identical RAM and correct visible masks. Capacity overflow,
+disabled capture,late overwrite,entry ownership,DMA phase,clearing and failed/
+successful restore dispositions pass. These are finite native non-interference
+checks,not new original-ROM equivalence proof or exhaustive path coverage.
+
+Original DOS16 compile/link passes;DGROUP through stack spans41696bytes.
+Actual hidden DOSBox56-second route passes title,Start,24seconds gameplay,
+run/jump/left/release and Escape exit. This is not486SX speed qualification.
+Refreshed local products:DOS326127,x86396559,x64410615bytes. Raw BMPs and
+continuation streams/saves are deleted after neutral receipts are retained.
+
+The graphics-file census has21files:four hooked in P1,seventeen dedicated
+owners still need disposition. This file count is not a node/pose coverage
+metric. Normal EnemyGfxHandler serves multiple families;its hook does not
+certify every alternate convenience writer. Remaining S2 work is:
+
+- Reconcile all dedicated draw owners and unobserved OAM overwrite/clear sites.
+  Mixed player throw/swim rows retain final entry bytes,but per-part template
+  interpretation is still pending;one final selection token alone is not a
+  complete mixed-pose description.
+- Assemble committed terrain/scenery,Hud split/scroll and element templates;
+  no live80x50scene is produced by P1.
+- Preserve or reconstruct producer/visible metadata on restore. P1 merely
+  invalidates it,so it cannot display immediate loaded text correctly yet.
+- Complete visible clipping/priority and the full-scope non-interference/
+  storage/route matrix before closing S2 or admitting S3.
+
+Historical mapping1992/1992,local1991/1992nodes,4260/4261feasible controls and
+42/952facets remain unchanged. S2 stays active;no labels transfer or promote.

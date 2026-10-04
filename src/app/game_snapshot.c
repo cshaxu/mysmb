@@ -80,6 +80,7 @@ int mysmb_game_snapshot_restore(struct mysmb_game *game,
         game->area_commands[i].column=*in++;game->area_commands[i].row=*in++;
         game->area_commands[i].page=*in++;game->area_commands[i].dispatch_id=*in++;
     }
+    mysmb_text_observer_invalidate(game);
 #undef BYTE
 #undef ARRAY
     return 1;

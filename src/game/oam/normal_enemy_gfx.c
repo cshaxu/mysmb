@@ -215,6 +215,7 @@ mysmb_u8 mysmb_objects_draw_normal_enemy_graphics(struct mysmb_game *game,
 {
     mysmb_u8 id, state, code, tile, oam, first, a, y, swap_row;
     mysmb_u8 left, right;
+    mysmb_u8 observed_graphics;
 
     game->ram[2U] = game->ram[MYSMB_NORMAL_Y + slot];
     game->ram[5U] = game->ram[MYSMB_NORMAL_REL_X];
@@ -348,6 +349,7 @@ defeated:
         game->ram[0x00ecU] = 0U;
     }
 draw:
+    observed_graphics = tile;
     oam = game->ram[0x00ebU];
     first = oam;
     mysmb_oam_draw_enemy_object_row(game,&oam,&tile);
@@ -430,5 +432,7 @@ spring:
 
 offscreen:
     mysmb_oam_sprite_object_offscreen_check(game, first);
+    mysmb_text_observer_record(game, MYSMB_TEXT_OBSERVE_ENEMY, id,
+        game->ram[8U], observed_graphics, game->ram[3U], first, 6U, code);
     return 1U;
 }

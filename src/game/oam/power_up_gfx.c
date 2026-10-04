@@ -76,4 +76,6 @@ void mysmb_objects_draw_power_up(struct mysmb_game *game)
     }
     /* Original PUpOfs tail enters the shared three-row/erase contract. */
     mysmb_oam_sprite_object_offscreen_check(game, offset);
+    mysmb_text_observer_record(game, MYSMB_TEXT_OBSERVE_POWERUP, type, slot,
+        (mysmb_u8)(type << 2U), 1U, offset, 4U, 0U);
 }
