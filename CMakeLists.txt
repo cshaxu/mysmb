@@ -76,7 +76,7 @@ target_include_directories(mysmb_game PUBLIC src)
 # Composition glue depends only on public game output and neutral contracts.
 add_library(mysmb_game_io STATIC src/app/game_io.c)
 target_include_directories(mysmb_game_io PUBLIC src)
-add_library(mysmb_io_color STATIC src/io/color.c src/io/scale.c src/io/pacing.c src/io/control.c)
+add_library(mysmb_io_color STATIC src/io/color.c src/io/text_glyph.c src/io/scale.c src/io/pacing.c src/io/control.c)
 target_include_directories(mysmb_io_color PUBLIC src)
 add_library(mysmb_io_snapshot STATIC src/io/snapshot.c src/io/snapshot_store.c
     src/io/snapshot_keys.c)

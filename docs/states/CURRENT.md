@@ -1,11 +1,25 @@
 # Project Status
 
-**Idle.**
+## M3 T12 S2 Packet
 
-M3 T11 corrective S7 is closed. All enumerated text interfaces now have
-final-layer font-token checks;shared black/white caption contrast is repaired.
-See [S7 review](../history/M3-T11-colored-ascii-text-frame-gameplay.md#s7-p1-all-text-interface-joins-and-contrast-repair).
-No successor admitted;the [queue](QUEUE.md) retains deferred M2 certification.
+| Field | Required record |
+| --- | --- |
+| Identifier Mode | Continuation M3 T12 S2 P1. |
+| Admission And Approval | Owner: approve and begin authored glyph refinement. |
+| Objective | Authored half-block actor/scenery contours,colors and reflections. |
+| Non-goals | No ROM logic,original pixel path,grid or caption-content changes. |
+| Reference Baseline | T11 S7 closed;historical1992/1992,local1991/1992nodes,4260/4261feasible controls. |
+| Candidate Proposal | [T12 proposal](../proposals/M3-T12-authored-text-detail.md). |
+| Files And ABI Surface | Shared authored templates/background and focused tests;three-byte cells unchanged. |
+| Applicable Rules | Execution,Architecture,Coding,Documentation and source policy from Task Reading Set. |
+| Verification | Focused text/caption/continuity tests,both widths,Unicode readback,C90,purity,original DOS build and DOSBox. |
+| Expected Markers | Empty scope/expectedMatches/actualMatches,new0;maximum1992. |
+| Asset Needs | Existing owner-local ROM only for local build/continuity;ignored bounded build outputs,no imports or tracked protected material. |
+| Reporting Requirements | Scope/estimated and actual change size,tests,three local products and unchanged node/control totals. |
+| Stop Conditions | State/pixel divergence,ABI/grid change or unsupported glyph host mapping. |
+| Exit Criteria | Selected glyphs,borders,caption preservation and host checks pass;reviewed P commit. |
+| Original Owner Request | Approve authored line/half-block refinement. |
+| Similar-Issue Sweep | Range checks,mirror rules,narrow output,caption punctuation,build lists;see proposal. |
 
 ## Current Technical Baseline
 
@@ -20,7 +34,7 @@ No successor admitted;the [queue](QUEUE.md) retains deferred M2 certification.
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products remain359627/436779/452427bytes.
+- Current local DOS16/Win32/x64 products remain360267/438184/453866bytes.
   T11 S7 refreshes all three products after shared caption contrast repair.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
@@ -48,6 +62,10 @@ M3 T11 S7 P1:409 final-composed/restored caption cases check4566glyphs;
 have contrasting text. Both widths13focused tests/owned-console/product routes,
 999cross-width frames and original-output equality pass;originalDOS16/current
 cold DOSBox Tab/P/O/Escape pass. Three source/testfiles,+136/-2lines;
-three products359627/436779/452427bytes. Empty ROM scope/new0,no remote.
+three products360267/438184/453866bytes. Empty ROM scope/new0,no remote.
 Fine-detail study recommends authored line/half-block glyphs in80x50;
 no extended repertoire or finer grid delivered by S7.
+
+M3 T12 S1 P1 closes shared glyph/border delivery;13tests per width,16glyph
+Unicode/device checks,caption/continuity/DOS routes pass. Three local products
+refreshed;ROM credit0. S2 is admitted under automatic continuation.

@@ -1,3 +1,4 @@
+#include "io/text_glyph.h"
 #include <windows.h>
 #include <string.h>
 #include <stdio.h>
@@ -127,6 +128,13 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     unsigned long rgb;
     UINT close_state;
     CHAR_INFO cells[MYSMB_IO_TEXT_CELLS];
+    static struct mysmb_io_text_frame glyph_frame;
+    static const unsigned char glyph_ids[16]={
+        0xb3U,0xc4U,0xdaU,0xbfU,0xc0U,0xd9U,0xc3U,0xb4U,
+        0xc2U,0xc1U,0xc5U,0xdbU,0xdcU,0xdfU,0xddU,0xdeU};
+    static const unsigned short glyph_unicode[16]={
+        0x2502U,0x2500U,0x250cU,0x2510U,0x2514U,0x2518U,0x251cU,0x2524U,
+        0x252cU,0x2534U,0x253cU,0x2588U,0x2584U,0x2580U,0x258cU,0x2590U};
     SMALL_RECT view;
     COORD size,origin;
     struct mysmb_input input;
@@ -174,11 +182,21 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     }
     size.X=80;size.Y=50;origin.X=origin.Y=0;
     view.Left=view.Top=0;view.Right=79;view.Bottom=49;
-    if(!ReadConsoleOutputA(g_console.output,cells,size,origin,&view))return 7;
+    if(!ReadConsoleOutputW(g_console.output,cells,size,origin,&view))return 7;
     for(i=0U;i<4000U;++i)
-        if(cells[i].Char.AsciiChar!=(CHAR)g_text_frame.cells[i].character ||
+        if(cells[i].Char.UnicodeChar!=(WCHAR)mysmb_io_text_glyph_unicode(g_text_frame.cells[i].character) ||
             cells[i].Attributes!=(WORD)(g_text_frame.cells[i].foreground|
                 (g_text_frame.cells[i].background<<4U)))return 8;
+    glyph_frame=g_text_frame;
+    for(i=0U;i<16U;++i)glyph_frame.cells[i].character=glyph_ids[i];
+    if(!mysmb_win32_text_console_present(&g_console,&glyph_frame))return 46;
+    view.Left=view.Top=0;view.Right=79;view.Bottom=49;
+    if(!ReadConsoleOutputW(g_console.output,cells,size,origin,&view))return 47;
+    for(i=0U;i<16U;++i)
+        if(cells[i].Char.UnicodeChar!=glyph_unicode[i])return 48;
+    glyph_frame.cells[0].character=0x80U;
+    if(mysmb_win32_text_console_present(&g_console,&glyph_frame))return 49;
+    if(!mysmb_win32_text_console_present(&g_console,&g_text_frame))return 50;
     /* Real owned console input,including a held repeat and physical break. */
     FlushConsoleInputBuffer(g_console.input);
     ZeroMemory(&event,sizeof(event));event.EventType=KEY_EVENT;

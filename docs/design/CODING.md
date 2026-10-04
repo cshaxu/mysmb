@@ -4,7 +4,7 @@
 
 ```text
 src/game/       portable translated logic and original RAM model
-src/io/         neutral controller/video/audio contracts; inert text placeholder
+src/io/         neutral controller/video/audio/text contracts and glyph IDs
 src/app/        public game-to-IO composition glue; no gameplay/device policy
 src/assets/     generated owner-local declarations; never tracked
 src/validate/   owner-ROM reference adapters and trace comparison
@@ -23,7 +23,8 @@ Translated files use subsystem names, not arbitrary ROM addresses. Every transla
 
 `io/` includes its own contract headers and portable C90 `string.h` memory operations. These standard operations add no game or device dependency. It owns decoded two-port input,
 a borrowed read-only 256x240 indexed frame, an owned ordered audio snapshot,
-and reserved 80x50 text cells. It contains no game state, ROM data, host API,
+and authored 80x50 text cells. Selected glyph IDs and their Unicode/reflection
+mapping live in io/text_glyph. It contains no game state, ROM data, host API,
 audio synthesis, or text quantizer. Shared color lookup and indexed row scaling
 consume only the neutral video contract. Its sole target-dependent representation
 is the far pointer required to address pixels with the DOS16 compiler.

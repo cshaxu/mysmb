@@ -40,6 +40,11 @@ and window-close requests. No exit request changes original game state.
 
 Game code may request neutral buttons, frame ticks, and command sinks. Windows and DOS adapters translate those contracts to host APIs. Text rendering consumes game object/state commands; it never infers semantics from a bitmap. The runtime contains no 6502 CPU, generic NES PPU, or generic NES APU emulator. Platform selection happens at CMake target boundaries; `game/` does not fork on platform macros.
 
+Shared IO declares selected one-cell CP437-compatible glyph IDs,with unchanged
+ASCII letters/digits and three-byte cells. Authored scene owners choose borders
+and silhouettes. Windows explicitly maps IDs to Unicode console cells;DOS
+submits the same IDs to its BIOS font slots. Neither host chooses game artwork.
+
 ## Runtime Admission Boundary
 
 ROM material enters only at an admitted local build/research boundary. The normal native product embeds only locally generated owner material and is not a tracked or distributed output.

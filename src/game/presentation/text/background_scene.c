@@ -1,3 +1,4 @@
+#include "io/text_glyph.h"
 #include "game/presentation/text/background_scene.h"
 #include "game/presentation/text/elements.h"
 #include "game/presentation/text/caption_scene.h"
@@ -122,6 +123,16 @@ static void enqueue(struct mysmb_text_background_workspace MYSMB_IO_FAR *w,
 /* Authored scalable object silhouettes, borders and interior fill. The
  * connected semantic parts select one whole-object geometry, not one glyph
  * per source tile. Repeated terrain blocks remain separate brick objects. */
+static unsigned char border(unsigned short x,unsigned short y,
+    unsigned short width,unsigned short height)
+{
+    if(x==0U)return y==0U?MYSMB_IO_GLYPH_TOP_LEFT:
+        y+1U==height?MYSMB_IO_GLYPH_BOTTOM_LEFT:MYSMB_IO_GLYPH_VERTICAL;
+    if(x+1U==width)return y==0U?MYSMB_IO_GLYPH_TOP_RIGHT:
+        y+1U==height?MYSMB_IO_GLYPH_BOTTOM_RIGHT:MYSMB_IO_GLYPH_VERTICAL;
+    return y==0U || y+1U==height?MYSMB_IO_GLYPH_HORIZONTAL:' ';
+}
+
 static unsigned char glyph(unsigned char k,unsigned short x,unsigned short y,
     unsigned short width,unsigned short height,unsigned char cap)
 {
@@ -151,19 +162,21 @@ static unsigned char glyph(unsigned char k,unsigned short x,unsigned short y,
     }
     if(k==WATER)return y==0U?'~':' ';
     if(k==PIPE) {
-        if(cap && (y==0U || (height>3U && y==2U)))return '=';
-        return x==0U || x+1U==width?'|':' ';
+        if(cap && y==0U)return border(x,0U,width,2U);
+        if(cap && height>3U && y==2U)return x==0U?MYSMB_IO_GLYPH_TEE_LEFT:
+            x+1U==width?MYSMB_IO_GLYPH_TEE_RIGHT:MYSMB_IO_GLYPH_HORIZONTAL;
+        return x==0U || x+1U==width?MYSMB_IO_GLYPH_VERTICAL:' ';
     }
     if(k==SIDE_PIPE) {
-        if(cap && x<2U)return '|';
-        if(y==0U || y+1U==height)return '=';
-        return x+1U==width?'|':' ';
+        if(cap && x<2U)return MYSMB_IO_GLYPH_VERTICAL;
+        if(y==0U || y+1U==height)return MYSMB_IO_GLYPH_HORIZONTAL;
+        return x+1U==width?MYSMB_IO_GLYPH_VERTICAL:' ';
     }
     if(k==LEDGE)return y==0U?'=':' ';
     if(k==TRUNK)return x==0U || x+1U==width?'|':':';
     if(k==CANNON)return y==0U?'=':x==0U || x+1U==width?'|':' ';
-    if(x==0U || x+1U==width)return y==0U || y+1U==height?'+':'|';
-    if(y==0U || y+1U==height)return '-';
+    if(x==0U || x+1U==width || y==0U || y+1U==height)
+        return border(x,y,width,height);
     if(k==QUESTION)return x==width/2U && y==height/2U?'?':' ';
     if(k==BRICK || k==CASTLE)return '#';
     if(k==GROUND)return ':';

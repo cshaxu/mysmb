@@ -14,7 +14,7 @@ struct mysmb_io_video_frame {
     const mysmb_io_u8 MYSMB_IO_FAR *pixels;
 };
 
-/* Reserved, inert text output. No quantizer or presenter is supplied here. */
+/* Authored text output. Character IDs follow io/text_glyph.h;no quantizer. */
 #define MYSMB_IO_TEXT_COLUMNS 80U
 #define MYSMB_IO_TEXT_ROWS 50U
 #define MYSMB_IO_TEXT_CELLS 4000U

@@ -1,4 +1,5 @@
 #include "game/presentation/text/elements.h"
+#include "io/text_glyph.h"
 
 /* Project-authored whole-element art. Spaces are transparent. No CHR bytes,
  * tile lookup, pixel sampling or animation state machine is used here. */
@@ -92,16 +93,16 @@ static const struct mysmb_text_art actors[19][2] = {
     {{" _T_ " "(o_o)" " /|\\ " " / \\ ",5U,4U},
      {" _P_ " "(o_o)" " /|\\ " " /_\\ ",5U,4U}},
     {{"[===]" " /\\  " "[===]",5U,3U},{"[===]" "[===]",5U,2U}},
-    {{"+---+" "|   |" "+---+",5U,3U},{"+---+" "|   |" "+---+",5U,3U}}
+    {{"\xda\xc4\xc4\xc4\xbf" "\xb3   \xb3" "\xc0\xc4\xc4\xc4\xd9",5U,3U},{"\xda\xc4\xc4\xc4\xbf" "\xb3   \xb3" "\xc0\xc4\xc4\xc4\xd9",5U,3U}}
 };
 static const struct mysmb_text_art goomba_second={" /^^\\" "(o_o)" " /|\\ ",5U,3U};
 static const struct mysmb_text_art scenery[15] = {
     { " /^^\\" "(o_o)" "/   \\", 5U, 3U },
     { " /^^\\" "(o_o)" "  |  ", 5U, 3U },
-    { "+---+" "|_#_|" "+---+", 5U, 3U },
+    { "\xda\xc4\xc4\xc4\xbf" "\xb3_#_\xb3" "\xc0\xc4\xc4\xc4\xd9", 5U, 3U },
     { " ($) " " ($) " "     ", 5U, 3U },
-    { "+========+" "|########|" "+-+####+-+" "  |####|  "
-      "  |####|  " "  |####|  " "  |####|  ", 10U, 7U },
+    { "\xda\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xbf" "\xb3########\xb3" "\xc0\xc4\xc2" "####" "\xc2\xc4\xd9" "  \xb3####\xb3  "
+      "  \xb3####\xb3  " "  \xb3####\xb3  " "  \xb3####\xb3  ", 10U, 7U },
     { " (o) " " \\|/ " "  |  ", 5U, 3U },
     { " /\\ " "<**>" " \\/ ", 4U, 3U },
     { "@", 1U, 1U },
@@ -145,12 +146,7 @@ static long project(short value, long scale, long extent)
 
 static mysmb_io_u8 mirror(mysmb_io_u8 c)
 {
-    switch (c) {
-    case '/': return '\\'; case '\\': return '/';
-    case '<': return '>'; case '>': return '<';
-    case '(': return ')'; case ')': return '(';
-    default: return c;
-    }
+    return mysmb_io_text_glyph_mirror(c);
 }
 
 static int valid_element(const struct mysmb_text_element MYSMB_IO_FAR *e)

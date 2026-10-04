@@ -1,6 +1,7 @@
 /* Real DOS BIOS/device test. No game or owner-ROM resources are linked. */
 #include "platform/dos16/devices.h"
 #include <dos.h>
+#include "io/text_glyph.h"
 #include <stdio.h>
 
 static int rows(void)
@@ -19,6 +20,11 @@ static int fail(int code)
 }
 int main(void)
 {
+    static struct mysmb_io_text_frame glyph_frame;
+    static const unsigned char glyph_ids[16]={
+        0xb3U,0xc4U,0xdaU,0xbfU,0xc0U,0xd9U,0xc3U,0xb4U,
+        0xc2U,0xc1U,0xc5U,0xdbU,0xdcU,0xdfU,0xddU,0xdeU};
+    volatile unsigned short far *text;
     union REGS r;
     void (interrupt far *vector)();
     unsigned short i,cursor,seen;
@@ -43,6 +49,14 @@ int main(void)
     vector=_dos_getvect(9U);
     if(!mysmb_dos16_devices_open() || mode()!=0x13)return fail(2);
     if(!mysmb_dos16_devices_mode(1U) || mode()!=3 || rows()!=49)return fail(3);
+    for(i=0U;i<MYSMB_IO_TEXT_CELLS;++i) {
+        glyph_frame.cells[i].character=' ';
+        glyph_frame.cells[i].foreground=15U;glyph_frame.cells[i].background=1U;
+    }
+    for(i=0U;i<16U;++i)glyph_frame.cells[i].character=glyph_ids[i];
+    mysmb_dos16_devices_text(&glyph_frame);
+    text=(volatile unsigned short far *)0xb8000000UL;
+    for(i=0U;i<16U;++i)if(text[i]!=(0x1f00U|glyph_ids[i]))return fail(14);
     *(volatile unsigned short far *)0xb8000000UL=0x1f58U;
     if(!mysmb_dos16_devices_mode(1U) ||
         *(volatile unsigned short far *)0xb8000000UL!=0x1f58U)return fail(4);

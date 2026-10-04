@@ -1,5 +1,6 @@
 #include "platform/win32/text_console.h"
 #include "io/color.h"
+#include "io/text_glyph.h"
 int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console)
 {
     COORD size;
@@ -67,7 +68,8 @@ int mysmb_win32_text_console_present(struct mysmb_win32_text_console *console,
     SMALL_RECT view;
     if(!console->opened || frame==0)return 0;
     for(i=0U;i<MYSMB_IO_TEXT_CELLS;++i) {
-        console->cells[i].Char.AsciiChar=(CHAR)frame->cells[i].character;
+        console->cells[i].Char.UnicodeChar=(WCHAR)mysmb_io_text_glyph_unicode(frame->cells[i].character);
+        if(console->cells[i].Char.UnicodeChar==0U)return 0;
         console->cells[i].Attributes=(WORD)((frame->cells[i].foreground&15U)|
             ((frame->cells[i].background&15U)<<4U));
     }
@@ -75,7 +77,7 @@ int mysmb_win32_text_console_present(struct mysmb_win32_text_console *console,
     view.Left=view.Top=0;view.Right=79;view.Bottom=49;
     /* Windows reports the actual rectangle;success alone permits clipping.
      * A partial frame must reach the root's graphical recovery path. */
-    return WriteConsoleOutputA(console->output,console->cells,size,origin,&view)!=0 &&
+    return WriteConsoleOutputW(console->output,console->cells,size,origin,&view)!=0 &&
         view.Left==0 && view.Top==0 && view.Right==79 && view.Bottom==49;
 }
 int mysmb_win32_text_console_key(struct mysmb_win32_text_console *console,

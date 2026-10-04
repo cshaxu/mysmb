@@ -1,3 +1,4 @@
+#include "io/text_glyph.h"
 #include "game/presentation/text/elements.h"
 #include <stdio.h>
 #include <string.h>
@@ -27,6 +28,19 @@ int main(int argc, char **argv)
     struct mysmb_text_element plain;
     FILE *preview;
 
+    /* Exhaustive byte domain and horizontal reflection contract. */
+    for(i=0U;i<256U;++i) {
+        column=mysmb_io_text_glyph_unicode((mysmb_io_u8)i);
+        if(i>=32U && i<=126U)CHECK(column==i);
+        else if(column!=0U)CHECK(column>=0x2500U && column<=0x2590U);
+        CHECK(mysmb_io_text_glyph_mirror(mysmb_io_text_glyph_mirror((mysmb_io_u8)i))==i);
+    }
+    CHECK(mysmb_io_text_glyph_unicode(0U)==0U);
+    CHECK(mysmb_io_text_glyph_unicode(0x80U)==0U);
+    CHECK(mysmb_io_text_glyph_unicode(MYSMB_IO_GLYPH_TOP_LEFT)==0x250cU);
+    CHECK(mysmb_io_text_glyph_unicode(MYSMB_IO_GLYPH_UPPER)==0x2580U);
+    CHECK(mysmb_io_text_glyph_unicode(MYSMB_IO_GLYPH_LOWER)==0x2584U);
+    CHECK(mysmb_io_text_glyph_mirror(MYSMB_IO_GLYPH_TOP_LEFT)==MYSMB_IO_GLYPH_TOP_RIGHT);
     memset(elements, 0, sizeof(elements));
     elements[0].kind = MYSMB_TEXT_PLAYER_SMALL;
     elements[0].foreground = 14U;
@@ -60,7 +74,7 @@ int main(int argc, char **argv)
     elements[1] = elements[0];
     elements[1].kind = MYSMB_TEXT_BRICK;
     CHECK(mysmb_text_elements_build(elements, 2U, 9U, &frame));
-    CHECK(frame.cells[0].character == '+');
+    CHECK(frame.cells[0].character == MYSMB_IO_GLYPH_TOP_LEFT);
     before = frame;
     elements[1].kind = MYSMB_TEXT_KIND_COUNT;
     CHECK(!mysmb_text_elements_build(elements, 2U, 9U, &frame));
@@ -100,7 +114,7 @@ int main(int argc, char **argv)
                 CHECK(mysmb_text_elements_build(&plain,1U,0U,&monochrome));
                 ink=0U;
                 for(column=0U;column<MYSMB_IO_TEXT_CELLS;++column) {
-                    CHECK(frame.cells[column].character>=32U && frame.cells[column].character<=126U);
+                    CHECK(mysmb_io_text_glyph_unicode(frame.cells[column].character)!=0U);
                     CHECK(frame.cells[column].foreground<16U && frame.cells[column].background<16U);
                     CHECK(frame.cells[column].character==monochrome.cells[column].character);
                     if(frame.cells[column].character!=' ') {
@@ -143,7 +157,7 @@ int main(int argc, char **argv)
     }
     CHECK(mysmb_text_elements_build(elements, 7U, 9U, &frame));
     for (i = 0U; i < MYSMB_IO_TEXT_CELLS; ++i) {
-        CHECK(frame.cells[i].character >= 32U && frame.cells[i].character <= 126U);
+        CHECK(mysmb_io_text_glyph_unicode(frame.cells[i].character)!=0U);
         CHECK(frame.cells[i].foreground < 16U && frame.cells[i].background < 16U);
     }
     if (argc == 2) {
