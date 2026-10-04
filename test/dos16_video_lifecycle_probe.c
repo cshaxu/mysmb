@@ -1,0 +1,66 @@
+/* Real DOS BIOS/device test. No game or owner-ROM resources are linked. */
+#include "platform/dos16/devices.h"
+#include <dos.h>
+#include <stdio.h>
+
+static int rows(void)
+{return *(volatile unsigned char far *)0x00400084UL;}
+static int mode(void)
+{
+    union REGS r;
+    r.h.ah=0x0fU;int86(0x10,&r,&r);return r.h.al;
+}
+static int fail(int code)
+{
+    FILE *file;
+    mysmb_dos16_devices_close();file=fopen("device.err","w");
+    if(file){fprintf(file,"device check %d\n",code);fclose(file);}
+    return code;
+}
+int main(void)
+{
+    union REGS r;
+    void (interrupt far *vector)();
+    unsigned short i,cursor,seen;
+    struct mysmb_io_input input;
+    FILE *receipt;
+    r.x.ax=3U;int86(0x10,&r,&r);
+    if(!mysmb_dos16_devices_open())return fail(9);
+    mysmb_dos16_devices_close();
+    if(mode()!=3 || rows()!=24)return fail(10);
+    r.x.ax=0x1201U;r.x.bx=0x30U;int86(0x10,&r,&r);
+    r.x.ax=3U;int86(0x10,&r,&r);
+    r.x.ax=0x1112U;r.x.bx=0U;int86(0x10,&r,&r);
+    if(rows()!=42 || !mysmb_dos16_devices_open())return fail(11);
+    if(!mysmb_dos16_devices_mode(1U) || rows()!=49)return fail(12);
+    mysmb_dos16_devices_close();
+    if(mode()!=3 || rows()!=42)return fail(13);
+    r.x.ax=0x1202U;r.x.bx=0x30U;int86(0x10,&r,&r);
+    r.x.ax=3U;int86(0x10,&r,&r);
+    r.x.ax=0x1112U;r.x.bx=0U;int86(0x10,&r,&r);
+    if(rows()!=49)return fail(1);
+    r.h.ah=3U;r.h.bh=0U;int86(0x10,&r,&r);cursor=r.x.cx;
+    vector=_dos_getvect(9U);
+    if(!mysmb_dos16_devices_open() || mode()!=0x13)return fail(2);
+    if(!mysmb_dos16_devices_mode(1U) || mode()!=3 || rows()!=49)return fail(3);
+    *(volatile unsigned short far *)0xb8000000UL=0x1f58U;
+    if(!mysmb_dos16_devices_mode(1U) ||
+        *(volatile unsigned short far *)0xb8000000UL!=0x1f58U)return fail(4);
+    if(!mysmb_dos16_devices_mode(0U) || mode()!=0x13)return fail(5);
+    seen=0U;
+    for(i=0U;i<600U;++i) {
+        mysmb_dos16_devices_input(&input);
+        seen|=input.buttons;
+        if(input.requests&MYSMB_IO_REQUEST_EXIT)break;
+        mysmb_dos16_devices_wait();
+    }
+    mysmb_dos16_devices_close();mysmb_dos16_devices_close();
+    if(mode()!=3 || rows()!=49 || _dos_getvect(9U)!=vector)return fail(6);
+    r.h.ah=3U;r.h.bh=0U;int86(0x10,&r,&r);
+    if(r.x.cx!=cursor || i==600U ||
+        (seen&(MYSMB_IO_BUTTON_START|MYSMB_IO_BUTTON_A|MYSMB_IO_BUTTON_B))!=
+        (MYSMB_IO_BUTTON_START|MYSMB_IO_BUTTON_A|MYSMB_IO_BUTTON_B))return fail(7);
+    receipt=fopen("device.ok","w");if(!receipt)return fail(8);
+    fprintf(receipt,"graphics/text/held-mode/font/cursor/IRQ/timer/input/exit pass\n");
+    fclose(receipt);return 0;
+}

@@ -9,6 +9,10 @@
 static struct mysmb_dos16_keyboard keyboard;
 static void (interrupt far *old_keyboard)();
 static unsigned char old_mode;
+static unsigned char old_rows;
+static unsigned char old_font;
+static unsigned short old_cursor;
+static unsigned char video_ready;
 static struct mysmb_io_pacing pacing;
 static unsigned char opened;
 static unsigned char text_mode;
@@ -48,12 +52,14 @@ static unsigned long timer_stamp(void)
     return (ticks<<16U)+phase;
 }
 
-int mysmb_dos16_devices_mode(mysmb_io_u8 text)
+static int try_mode(mysmb_io_u8 text)
 {
     union REGS registers;
     unsigned short i;
     unsigned long rgb;
     if(text) {
+        registers.x.ax=0x1202U;registers.x.bx=0x30U;
+        int86(0x10,&registers,&registers);
         registers.x.ax=3U;int86(0x10,&registers,&registers);
         registers.x.ax=0x1112U;registers.x.bx=0U;
         int86(0x10,&registers,&registers);
@@ -61,15 +67,15 @@ int mysmb_dos16_devices_mode(mysmb_io_u8 text)
         int86(0x10,&registers,&registers);
         registers.h.ah=1U;registers.h.ch=0x20U;registers.h.cl=0U;
         int86(0x10,&registers,&registers);
-        if(*(volatile unsigned char far *)0x00400084UL==49U) {
-            text_mode=1U;return 1;
-        }
-        /* Failed text setup leaves a usable graphics device. */
-        (void)mysmb_dos16_devices_mode(0U);return 0;
+        registers.h.ah=0x0fU;int86(0x10,&registers,&registers);
+        return registers.h.al==3U && registers.h.ah==80U &&
+            *(volatile unsigned char far *)0x00400084UL==49U;
     }
     registers.h.ah=0U;
     registers.h.al=0x13U;
     int86(0x10,&registers,&registers);
+    registers.h.ah=0x0fU;int86(0x10,&registers,&registers);
+    if(registers.h.al!=0x13U)return 0;
     outp(0x3c8,0U);
     for (i=0U;i<64U;++i) {
         rgb=mysmb_io_color_rgb((mysmb_io_u8)i);
@@ -77,37 +83,70 @@ int mysmb_dos16_devices_mode(mysmb_io_u8 text)
         outp(0x3c9,(unsigned char)((rgb>>10U)&0x3fU));
         outp(0x3c9,(unsigned char)((rgb>>2U)&0x3fU));
     }
-    text_mode=0U;return 1;
+    return 1;
 }
-void mysmb_dos16_devices_open(void)
+int mysmb_dos16_devices_mode(mysmb_io_u8 text)
+{
+    if(!opened || !video_ready)return 0;
+    text=(mysmb_io_u8)(text!=0U);
+    if(text==text_mode)return 1;
+    if(try_mode(text)) {text_mode=text;return 1;}
+    /* A failed BIOS setup may already have changed the physical mode. */
+    video_ready=(unsigned char)try_mode(text_mode);
+    return 0;
+}
+static void restore_video(void)
 {
     union REGS registers;
-    if(opened)return;
+    if(old_mode<=3U || old_mode==7U) {
+        /* 43 eight-pixel rows occupy344 of the350 scanlines. */
+        registers.x.ax=(unsigned short)((old_rows+1U)*old_font>350U?0x1202U:
+            (old_rows+1U)*old_font>200U?0x1201U:0x1200U);
+        registers.x.bx=0x30U;int86(0x10,&registers,&registers);
+    }
+    registers.h.ah=0U;registers.h.al=old_mode;
+    int86(0x10,&registers,&registers);
+    if(old_mode<=3U || old_mode==7U) {
+        if(old_font==8U || old_font==14U || old_font==16U) {
+            registers.x.ax=old_font==8U?0x1112U:old_font==14U?0x1111U:0x1114U;
+            registers.x.bx=0U;int86(0x10,&registers,&registers);
+        }
+        registers.h.ah=1U;registers.x.cx=old_cursor;
+        int86(0x10,&registers,&registers);
+    }
+}
+int mysmb_dos16_devices_open(void)
+{
+    union REGS registers;
+    if(opened)return video_ready;
     registers.h.ah=0x0fU;int86(0x10,&registers,&registers);
     old_mode=registers.h.al;
-    (void)mysmb_dos16_devices_mode(0U);
+    old_rows=*(volatile unsigned char far *)0x00400084UL;
+    old_font=*(volatile unsigned char far *)0x00400085UL;
+    registers.h.ah=3U;registers.h.bh=0U;
+    int86(0x10,&registers,&registers);old_cursor=registers.x.cx;
+    if(!try_mode(0U)) {restore_video();return 0;}
+    text_mode=0U;video_ready=1U;
     mysmb_dos16_keyboard_initialize(&keyboard);
     old_keyboard=_dos_getvect(9U);
     _dos_setvect(9U,keyboard_interrupt);
     mysmb_io_pacing_initialize(&pacing,timer_stamp(),19886UL);
     opened=1U;
+    return 1;
 }
 
 void mysmb_dos16_devices_close(void)
 {
-    union REGS registers;
     if (opened==0U) return;
     _dos_setvect(9U,old_keyboard);
-    registers.h.ah=0U;
-    registers.h.al=old_mode;
-    int86(0x10,&registers,&registers);
-    opened=0U;
+    restore_video();opened=video_ready=text_mode=0U;
 }
 
 void mysmb_dos16_devices_input(struct mysmb_io_input *input)
 {
     _disable();
     mysmb_dos16_keyboard_input(&keyboard,input);
+    if(!video_ready)input->requests|=MYSMB_IO_REQUEST_EXIT;
     _enable();
 }
 
@@ -115,7 +154,7 @@ void mysmb_dos16_devices_present(const struct mysmb_vga_frame *frame)
 {
     unsigned short page, offset;
     unsigned char far *video;
-    if(text_mode)return;
+    if(!video_ready || text_mode)return;
     video=(unsigned char far *)0xa0000000UL;
     for (page=0U;page<MYSMB_VGA_PAGE_COUNT;++page)
         for (offset=0U;offset<MYSMB_VGA_PAGE_SIZE;++offset)
@@ -125,7 +164,7 @@ void mysmb_dos16_devices_text(const struct mysmb_io_text_frame MYSMB_IO_FAR *fra
 {
     unsigned short i;
     volatile unsigned short far *video;
-    if(!text_mode || !frame)return;
+    if(!video_ready || !text_mode || !frame)return;
     video=(volatile unsigned short far *)0xb8000000UL;
     for(i=0U;i<MYSMB_IO_TEXT_CELLS;++i)
         video[i]=(unsigned short)(frame->cells[i].character|

@@ -74,7 +74,9 @@ int main(void)
         mysmb_dos16_root_bind_snapshot(&root,snapshot_store,reset_output,0);
     mysmb_vga_frame_initialize(&vga,pages0,pages1,pages2,pages3);
     puts("DOS audio output unavailable");
-    mysmb_dos16_devices_open();
+    if(!mysmb_dos16_devices_open()) {
+        mysmb_dos16_root_shutdown(&root);_ffree(snapshot_store);return 1;
+    }
     text_storage=(struct text_storage MYSMB_IO_FAR *)_fmalloc(sizeof(*text_storage));
     if(text_storage)mysmb_dos16_root_bind_text(&root,&text_storage->workspace,
         &text_storage->frame,set_mode,present_text);

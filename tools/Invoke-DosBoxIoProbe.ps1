@@ -4,12 +4,17 @@ param(
     [Parameter(Mandatory=$true)][string]$ProductPath,
     [Parameter(Mandatory=$true)][string]$OutputDirectory,
     [switch]$TextSwitch,
+    [switch]$DeviceLifecycle,
+    [switch]$UnavailableVideo,
     [ValidateSet('dynamic','normal')][string]$CpuCore='dynamic'
 )
 $ErrorActionPreference='Stop'
+if(($TextSwitch -and ($DeviceLifecycle -or $UnavailableVideo)) -or
+    ($DeviceLifecycle -and $UnavailableVideo)){throw 'Choose one probe route.'}
 & (Join-Path $PSScriptRoot 'Build-DosBoxIoProbe.ps1') -Compiler $Compiler -DosBoxDirectory $DosBoxDirectory -OutputDirectory $OutputDirectory
 if ($LASTEXITCODE -ne 0) {throw 'Probe build failed.'}
 $output=[IO.Path]::GetFullPath($OutputDirectory)
+$machine=if($UnavailableVideo){'cga'}else{'vgaonly'}
 Copy-Item -LiteralPath $ProductPath -Destination (Join-Path $output 'MYSMB.EXE') -Force
 @"
 [sdl]
@@ -19,7 +24,7 @@ waitonerror=false
 mapperfile=mapper.map
 usescancodes=false
 [dosbox]
-machine=vgaonly
+machine=$machine
 captures=.
 memsize=16
 [cpu]
@@ -34,6 +39,7 @@ mididevice=none
 mount c "$output"
 c:
 MYSMB.EXE
+if errorlevel 1 echo MYSMB_STARTUP_FAILED>fail.ok
 echo MYSMB_EXIT_OK>exit.ok
 "@ | Set-Content -LiteralPath (Join-Path $output 'probe.conf') -Encoding ascii
 # Keep the restored DOS screen alive despite any buffered Escape repeat.
@@ -93,8 +99,24 @@ if($TextSwitch) {
 46000 quit 0 0
 '@ | Set-Content -LiteralPath (Join-Path $output 'input.script') -Encoding ascii
 }
+if($DeviceLifecycle) {
+@'
+1500 key 13 1
+2000 key 13 0
+2500 key 106 1
+3000 key 106 0
+3500 key 107 1
+4000 key 107 0
+4500 key 27 1
+5000 key 27 0
+6000 quit 0 0
+'@ | Set-Content -LiteralPath (Join-Path $output 'input.script') -Encoding ascii
+}
+if($UnavailableVideo) {
+    '3000 quit 0 0' | Set-Content -LiteralPath (Join-Path $output 'input.script') -Encoding ascii
+}
 # Remove only this probe's declared receipts so a failed run cannot reuse them.
-foreach ($name in @('title.bmp','start.bmp','right-run.bmp','jump.bmp','before-left.bmp','release.bmp','stopped.bmp','exit.bmp','exit.ok','probe.log','graphics-before.bmp','graphics-after.bmp','text.bmp','text-held.bmp','text-again.bmp','text-loaded.bmp','graphics-loaded.bmp','mysmb.sav','receipt.json')) {
+foreach ($name in @('title.bmp','start.bmp','right-run.bmp','jump.bmp','before-left.bmp','release.bmp','stopped.bmp','exit.bmp','exit.ok','fail.ok','device.ok','device.err','probe.log','graphics-before.bmp','graphics-after.bmp','text.bmp','text-held.bmp','text-again.bmp','text-loaded.bmp','graphics-loaded.bmp','mysmb.sav','receipt.json')) {
     $path=Join-Path $output $name
     if (Test-Path -LiteralPath $path) {Remove-Item -LiteralPath $path -Force}
 }
@@ -110,6 +132,19 @@ try {
     }
     if (!(Test-Path -LiteralPath (Join-Path $output 'exit.ok'))) {throw 'Actual EXE did not return to DOS.'}
     Get-Content -LiteralPath (Join-Path $output 'probe.log')
+    # DOS redirection may create an empty file even when IF is false.
+    $failurePath=Join-Path $output 'fail.ok'
+    $startupFailed=(Test-Path -LiteralPath $failurePath) -and
+        [IO.File]::ReadAllText($failurePath).Contains('MYSMB_STARTUP_FAILED')
+    if($DeviceLifecycle) {
+        if(!(Test-Path -LiteralPath (Join-Path $output 'device.ok')) -or
+            $startupFailed){throw 'Device lifecycle route failed.'}
+        Get-Content -LiteralPath (Join-Path $output 'device.ok');return
+    }
+    if($UnavailableVideo) {
+        if(!$startupFailed){throw 'Unavailable graphics did not fail safely.'}
+        'Unavailable video returned failure to DOS safely.';return
+    }
     $env:PYTHONDONTWRITEBYTECODE='1'
     $verifier=if($TextSwitch){'VerifyDosBoxTextReceipt.py'}else{'VerifyDosBoxIoReceipt.py'}
     & python (Join-Path $PSScriptRoot $verifier) $output

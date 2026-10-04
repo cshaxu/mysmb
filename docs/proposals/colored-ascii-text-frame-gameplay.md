@@ -1212,3 +1212,46 @@ identical to Windows;no platform game rules or ROM credit. Estimate4-8source/
 test/toolfiles,150-350lines,adjust after read-only diagnosis. OriginalOpenNT16
 and bounded DOSBox actual EXE routes remain the verification platform;no
 SoftPC/run16 import. S6 retains486SX qualification/full route performance.
+
+### S4 P1 device-lifetime scope and review
+
+Six source/test/toolfiles add199/remove21lines within the150-350forecast.
+BIOS mode setup now confirms mode/columns/rows instead of assuming success;
+failed switching attempts to restore the preceding presenter. If recovery also
+fails,no framebuffer writes occur and a neutral exit request reaches shared
+IO control. Initial graphics failure restores the original mode before IRQ
+installation and the composition root frees its allocations. Mode repetition
+is inert;keyboard/clock are not reinitialized by Tab. Exit restores standard
+25/43/50-line geometry,font height and cursor shape plus the original IRQ9.
+Custom font contents,screen contents and DOS sound are not promised.
+
+Similar-issue sweep covers both BIOS mode branches,initial failure,rollback,
+duplicate open/close,all graphics/text writes,and25/43/50-row restoration.
+The43-row probe found a scanline rounding defect:43eight-pixel rows use344
+of350 scanlines;the restoration threshold now selects350. No gameplay,
+shared scene,controller meanings or snapshot ABI changes.
+
+An actual18461byte originalDOS16 device probe links only the six production
+device/IO objects;its map contains no game or owner-ROM resources. DOSBox
+normal core passes graphics/text/idempotent-mode,25/43/50-row restoration,
+cursor/IRQ recovery,PIT-paced Enter/J/K input and Escape. A separate CGA
+actual-product route confirms unsupported graphics returns failure safely.
+The harness now uses an8.3failure filename and checks marker contents,because
+DOS redirects create an empty file even when IF is false. Failed probe paths
+restore devices and retain a neutral numbered diagnostic. Initial probe build
+setup lacked the original compiler helper PATH;the tool now sets/restores
+PATH/TEMP/TMP and directly links device objects rather than whole game archives.
+
+Both native widths build and pass13focused tests. OriginalOpenNT16 product
+compile/link and actual46second dynamic-core Tab/held/graphics/P/O/load/Escape
+pass:4000cells,5colors,38patterns. Refreshed products are359355/435739/451400
+bytes in DOS/x86/x64 order;Windows bytes are unchanged. Raw BMP/save outputs
+from the S4 diagnostics are deleted after neutral receipts. No remote or
+protected staging;empty ROM scope/zero conformance credit,all totals unchanged.
+
+P12 remains open. The current normal-core product diagnostic received input,
+entered text,saved and exited,but failed paused-graphics roundtrip equality.
+Its fixture therefore differs from the historical unchanged-title/no-exit
+failure;neither the successful device probe nor dynamic route explains that
+historical failure. Next P isolates guest progress/pause and host delivery
+conditions before declaring resolution. S4 does not close on these successes.
