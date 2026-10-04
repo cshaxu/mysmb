@@ -10,3 +10,25 @@ unsigned long mysmb_io_color_rgb(mysmb_io_u8 index)
     };
     return colors[index & 0x3fU];
 }
+
+mysmb_io_u8 mysmb_io_color_text16(mysmb_io_u8 index)
+{
+    static const unsigned long palette[16] = {
+        0x000000UL,0x0000aaUL,0x00aa00UL,0x00aaaaUL,
+        0xaa0000UL,0xaa00aaUL,0xaa5500UL,0xaaaaaaUL,
+        0x555555UL,0x5555ffUL,0x55ff55UL,0x55ffffUL,
+        0xff5555UL,0xff55ffUL,0xffff55UL,0xffffffUL
+    };
+    unsigned long rgb,distance,best;
+    long r,g,b;
+    mysmb_io_u8 i,choice;
+    rgb=mysmb_io_color_rgb(index); best=0xffffffffUL; choice=0U;
+    for(i=0U;i<16U;++i) {
+        r=(long)((rgb>>16U)&255UL)-(long)((palette[i]>>16U)&255UL);
+        g=(long)((rgb>>8U)&255UL)-(long)((palette[i]>>8U)&255UL);
+        b=(long)(rgb&255UL)-(long)(palette[i]&255UL);
+        distance=(unsigned long)(r*r+g*g+b*b);
+        if(distance<best) {best=distance;choice=i;}
+    }
+    return choice;
+}

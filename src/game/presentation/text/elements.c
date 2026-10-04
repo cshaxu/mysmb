@@ -18,13 +18,23 @@ static const struct mysmb_text_art large[3] = {
     { " _M_ " " /o> " " |_| " " /|_>" " |#| " " /\\  " "/  \\_", 5U, 7U },
     { " _M_ " " /o> " "<|_|>" " |#| " " /|\\ " " / \\ " "     ", 5U, 7U }
 };
-static const struct mysmb_text_art scenery[5] = {
-    { " /^^\\ " "(o__o)" " /  \\ ", 6U, 3U },
-    { " /^^\\ " "(o__o)" "  ||  ", 6U, 3U },
+static const struct mysmb_text_art scenery[15] = {
+    { " /^^\\" "(o_o)" "/   \\", 5U, 3U },
+    { " /^^\\" "(o_o)" "  |  ", 5U, 3U },
     { "+---+" "|_#_|" "+---+", 5U, 3U },
     { " ($) " " ($) " "     ", 5U, 3U },
     { "+========+" "|########|" "+-+####+-+" "  |####|  "
-      "  |####|  " "  |####|  " "  |####|  ", 10U, 7U }
+      "  |####|  " "  |####|  " "  |####|  ", 10U, 7U },
+    { " (o) " " \\|/ " "  |  ", 5U, 3U },
+    { " /\\ " "<**>" " \\/ ", 4U, 3U },
+    { "@", 1U, 1U },
+    { "\\|/" "-*-" "/|\\", 3U, 3U },
+    { "[]" " |", 2U, 2U },
+    { "#", 1U, 1U },
+    { "|" "}" "|" "{" "|" "}", 1U, 6U },
+    { "[======]", 8U, 1U },
+    { "|>" "| ", 2U, 2U },
+    { "o", 1U, 1U }
 };
 
 static const struct mysmb_text_art *art_for(
@@ -55,12 +65,18 @@ static mysmb_io_u8 mirror(mysmb_io_u8 c)
     }
 }
 
-int mysmb_text_elements_build(
-    const struct mysmb_text_element MYSMB_IO_FAR *elements,
-    mysmb_io_u16 count, mysmb_io_u8 sky,
-    struct mysmb_io_text_frame MYSMB_IO_FAR *frame)
+static int valid_element(const struct mysmb_text_element MYSMB_IO_FAR *e)
 {
-    mysmb_io_u16 i;
+    return e != 0 && e->kind < MYSMB_TEXT_KIND_COUNT && e->pose <= 2U &&
+        e->face_left <= 1U && e->foreground <= 15U && e->background <= 15U &&
+        (e->kind < MYSMB_TEXT_GOOMBA || e->pose == 0U);
+}
+
+int mysmb_text_element_draw(
+    const struct mysmb_text_element MYSMB_IO_FAR *element,
+    struct mysmb_io_text_frame MYSMB_IO_FAR *frame,
+    mysmb_text_cell_filter filter, const void MYSMB_IO_FAR *context)
+{
     mysmb_io_u16 cell;
     mysmb_io_u16 source;
     mysmb_io_u8 row;
@@ -71,25 +87,7 @@ int mysmb_text_elements_build(
     long destination_x;
     long destination_y;
     const struct mysmb_text_art *art;
-    const struct mysmb_text_element MYSMB_IO_FAR *element;
-
-    if (frame == 0 || sky > 15U || count > MYSMB_TEXT_ELEMENT_CAPACITY ||
-        (count != 0U && elements == 0)) return 0;
-    for (i = 0U; i < count; ++i) {
-        element = &elements[i];
-        if (element->kind >= MYSMB_TEXT_KIND_COUNT || element->pose > 2U ||
-            element->face_left > 1U || element->foreground > 15U ||
-            element->background > 15U ||
-            (element->kind >= MYSMB_TEXT_GOOMBA && element->pose != 0U))
-            return 0;
-    }
-    for (cell = 0U; cell < MYSMB_IO_TEXT_CELLS; ++cell) {
-        frame->cells[cell].character = ' ';
-        frame->cells[cell].foreground = sky;
-        frame->cells[cell].background = sky;
-    }
-    for (i = 0U; i < count; ++i) {
-        element = &elements[i];
+    if (frame == 0 || !valid_element(element)) return 0;
         art = art_for(element);
         x = project(element->x, 80L, 256L);
         y = project(element->y, 50L, 240L);
@@ -103,6 +101,9 @@ int mysmb_text_elements_build(
                     (element->face_left != 0U ? art->width - 1U - column : column));
                 glyph = (mysmb_io_u8)art->cells[source];
                 if (glyph == ' ') continue;
+                if (filter != 0 && !filter(context,
+                    (mysmb_io_u16)destination_x,
+                    (mysmb_io_u16)destination_y)) continue;
                 if (element->face_left != 0U) glyph = mirror(glyph);
                 cell = (mysmb_io_u16)(destination_y * 80L + destination_x);
                 frame->cells[cell].character = glyph;
@@ -110,6 +111,24 @@ int mysmb_text_elements_build(
                 frame->cells[cell].background = element->background;
             }
         }
+    return 1;
+}
+
+int mysmb_text_elements_build(
+    const struct mysmb_text_element MYSMB_IO_FAR *elements,
+    mysmb_io_u16 count, mysmb_io_u8 sky,
+    struct mysmb_io_text_frame MYSMB_IO_FAR *frame)
+{
+    mysmb_io_u16 i;
+    if (frame == 0 || sky > 15U || count > MYSMB_TEXT_ELEMENT_CAPACITY ||
+        (count != 0U && elements == 0)) return 0;
+    for (i=0U;i<count;++i) if (!valid_element(&elements[i])) return 0;
+    for (i=0U;i<MYSMB_IO_TEXT_CELLS;++i) {
+        frame->cells[i].character=' ';
+        frame->cells[i].foreground=sky;
+        frame->cells[i].background=sky;
     }
+    for (i=0U;i<count;++i)
+        (void)mysmb_text_element_draw(&elements[i],frame,0,0);
     return 1;
 }

@@ -2,6 +2,7 @@
 #include "game/frame_root.h"
 #include "game/ppu_frame.h"
 #include "game/oam/oam.h"
+#include "game/presentation/text/actor_scene.h"
 #include "app/game_snapshot.h"
 #include <stdio.h>
 #include <string.h>
@@ -14,6 +15,7 @@
 static struct mysmb_game observed,plain,before;
 static struct mysmb_io_snapshot first,second;
 static struct mysmb_ppu_frame pixels1,pixels2;
+static struct mysmb_io_text_frame text;
 #define CHECK(c) do { if (!(c)) { \
     fprintf(stderr,"observation check line %d\n",__LINE__); return 1; \
 } } while (0)
@@ -59,8 +61,9 @@ int main(void)
 {
     struct mysmb_input input;
     struct mysmb_frame frame1,frame2;
+    struct mysmb_text_actor_receipt actor_receipt;
     unsigned char fingerprint[16];
-    unsigned int i,j,player,enemy,running;
+    unsigned int i,j,player,enemy,running,text_actors;
 
     memset(&observed,0,sizeof(observed));
     observed.ram[0x0200U]=100U; observed.ram[0x0201U]=1U;
@@ -130,7 +133,7 @@ int main(void)
     mysmb_text_observer_enable(&observed,1U);
     mysmb_game_snapshot_fingerprint(&observed,fingerprint);
     memset(&frame1,0,sizeof(frame1));memset(&frame2,0,sizeof(frame2));
-    input.buttons2=0U;player=0U;enemy=0U;running=0U;
+    input.buttons2=0U;player=0U;enemy=0U;running=0U;text_actors=0U;
     for(i=0U;i<1000U;++i) {
         CHECK(mysmb_game_startup_step(&observed,1U)==
             mysmb_game_startup_step(&plain,1U));
@@ -147,6 +150,11 @@ int main(void)
         mysmb_ppu_frame_build(&observed,&pixels1);
         mysmb_ppu_frame_build(&plain,&pixels2);
         CHECK(memcmp(pixels1.pixels,pixels2.pixels,sizeof(pixels1.pixels))==0);
+        before=observed;
+        CHECK(mysmb_text_elements_build(0,0U,9U,&text));
+        CHECK(mysmb_text_actor_scene_draw(&observed,&text,&actor_receipt));
+        CHECK(memcmp(&observed,&before,sizeof(observed))==0);
+        text_actors+=actor_receipt.drawn;
         CHECK(observed.text_observer.producer.overflow==0U);
         if(mysmb_game_snapshot_running(&observed,&frame1))running++;
         for(j=0U;j<observed.text_observer.visible.count;++j) {
@@ -157,6 +165,7 @@ int main(void)
     }
 #ifdef MYSMB_LOCAL_TITLE
     CHECK(running>100U && player>100U && enemy>0U);
+    CHECK(text_actors>100U);
 #endif
     before=observed;first.payload[4428U]=65U;
     CHECK(!mysmb_game_snapshot_restore(&observed,&first));
@@ -168,5 +177,6 @@ int main(void)
     printf("1000-step twin route: zero core/frame/pixel differences; "
         "running=%u player=%u enemy=%u observer_bytes=%u\n",
         running,player,enemy,(unsigned int)sizeof(struct mysmb_text_observer));
+    printf("authored actor layer: %u draws; game and observer unchanged\n",text_actors);
     return 0;
 }

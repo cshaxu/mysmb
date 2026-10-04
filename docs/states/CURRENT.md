@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M3 T11 S2 active;P2 extended typed observation reviewed;scene assembly next within S2. |
+| Identifier Mode | Continuation:M3 T11 S2 active;P3 read-only actor scene/template composition active within S2. |
 | Admission And Approval | Automatic next-S admission under owner mandate after S1 reviewed local commit. |
 | Objective | Connect isolated text elements to existing draw decisions and committed visible scenes,with explicit lifetime/restore handling. |
 | Non-goals | No gameplay rewrite,ROM credit or platform Tab binding;those presenters remain S4/S5. |
@@ -14,7 +14,7 @@
 | Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Documentation and source policy. |
 | Verification | Enabled/disabled observation original-state/OAM/VRAM/audio/pixel equality;visible phase,ownership/clipping,background/HUD,restore;both native widths,originalDOS16 and3products,purity/governance. |
 | Expected Markers | Scope[],expectedMatches[],actualMatches[],new0;all ROM counters retained. |
-| Asset Needs | Existing local owner resources/originalOpenNT16 only;no new import,protected outputs below ignored build. |
+| Asset Needs | Existing local owner resources/reviewed local SMBDIS listing/originalOpenNT16 only;redistributability unestablished,no import. Purpose:immutable selected-pose/metatile interpretation and neutral non-interference evidence;protected outputs below ignored build;P3 proposal owns research limits. |
 | Reporting Requirements | Before/after component scope,size,tests,3EXEs and local commit;no remote. |
 | Stop Conditions | Selector re-execution,original-state/output mutation,live/visible mixing,unowned restore metadata or segment overflow prevents closure. |
 | Exit Criteria | Typed observed scene uses source-selected results and committed visibility;bounded storage/restore and no-interference evidence pass. |
@@ -70,3 +70,12 @@ receipt reuse. Bothwidths five focused tests/twin-route,C90,originalDOS16 and
 actualDOSBox pass. Three localEXEs327503/397583/411639bytes;observer5253bytes,
 DOS DGROUP45536bytes. S2 remains open;next is actual80x50scene assembly and
 remaining source/restore coverage,not a new S or ROM credit.
+
+P3:read-only whole-actor template composition,16-color/fill and final-entry
+clipping. Bothwidths six focused tests;1000-step twin route zero original
+core/frame/pixel differences,1804template draws and no game/observer mutation.
+StrictC90,originalDOS16 ABI/link and3localproducts327999/397671/412237bytes;
+DOS DGROUP45600bytes,actualDOSBox title/Start/run/jump/left/release/Escape pass.
+S2 remains active:background/HUD,remaining poses/writers,
+segmented geometry/priority and immediate snapshot continuity still pending.
+No playable text or Tab binding yet;no ROM credit. See P3 receipt for limits.

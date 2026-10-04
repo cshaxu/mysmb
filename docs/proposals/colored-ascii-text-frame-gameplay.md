@@ -354,3 +354,58 @@ snapshot metadata continuity. Generic per-sprite glyph substitution is not an
 acceptable replacement for authored whole-element templates. Tab remains
 S4/S5. Historical1992/1992,local1991/1992nodes,4260/4261feasible controls and
 42/952facets retain their prior scoped meanings.
+
+### S2 P3 scene assembly scope
+
+Add composable whole-element drawing and a read-only observed-actor scene
+builder. Templates cover the already-observed player/Goomba/power-up/effect
+families first;unknown identities and player graphics selections are counted,
+not silently replaced with an alleged complete image. Source sprite bounds,
+final visible masks and OAM priority constrain template cells. Background/HUD
+integration follows in this same S;the actor layer API accepts an existing
+cell frame so later scene composition does not clear or duplicate layers.
+No bitmap-to-character conversion or action-selector re-execution is allowed.
+Estimate4-6source/test/build files,250-400lines for this P. Full text acceptance
+and immediate snapshot metadata continuity remain open.
+
+### S2 P3 review receipt
+
+The4-6file forecast is amended to ten source/test/build files,+329/-32lines,
+because shared color conversion,DOS ABI and the existing twin-route fixture
+also need integration. These add the read-only actor compositor,authored effect
+templates,portable16-color lookup and whole-element cell filtering. It uses
+already-selected player graphics and immutable local program table references;
+it never samples pixels or repeats game actions. Losing a source column clips
+the template without moving its anchor. Unknown identities/selections and
+defeated/inverted Goombas/empty bumping blocks remain explicitly unsupported.
+The compositor accepts an existing cell frame,ready for the background layer.
+
+Both native widths pass six focused tests,including snapshot,purity and the
+actual graphical-product self-test. The1000-step twin route has zero original
+core/frame/pixel differences and1804 actor-template draws;rendering also leaves
+the whole game and observer unchanged. These are finite native non-interference
+checks,not original-ROM proof or exhaustive animation coverage. Strict C90 and
+the originalDOS16 far-pointer compiler/product link pass. Three local products
+are refreshed:DOS327999,x86397671,x64412237bytes;DOS DGROUP45600bytes.
+Actual hiddenDOSBox title/Start/run/jump/left/release/Escape route passes,
+including24seconds gameplay. Raw captures are removed after the neutral receipt;
+this is not486SX performance qualification.
+
+Review boundary:cell clipping uses source sprite rectangles;behind-background
+priority,mixed per-entry priority,hidden/wrapped-row anchors and disconnected
+chunk/platform/vine parts need the complete semantic scene geometry. Current
+tiny effect templates are pilot art,not complete segmented-object rendering.
+No product root enables text yet. Background/HUD,remaining draw-owner/pose
+coverage and immediate restored metadata stay open inside S2;Tab remains S4/S5.
+Historical1992/1992,local1991/1992nodes,4260/4261feasible controls and42/952facets
+are unchanged;new node/edge credit is zero.
+
+Next background research remains within S2:the existing owner-local ROM and
+reviewed local SMBDIS listing identify metatile composition and committed
+nametable semantics only. Redistributability is unestablished;no source/data
+import is authorized. Local tables are read through the existing immutable
+resource binding;research and raw output remain under ignored build. Tracked
+conclusions contain only semantic classifications/addresses and project-owned
+art. Background checks must distinguish blank/hidden blocks,pipe/cloud/grass
+grouping,visible commit,scroll/HUD split and ambiguous tile aliases before any
+coverage claim. No collision-buffer substitute or bitmap quantizer is allowed.

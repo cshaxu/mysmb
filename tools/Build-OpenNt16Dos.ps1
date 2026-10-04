@@ -111,6 +111,9 @@ try {
     $textElements = Join-Path $SourceRoot 'game/presentation/text/elements.c'
     & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fotext_elements.obj /I $IncludeDirectory $textElements
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+    $textScene = Join-Path $SourceRoot 'game/presentation/text/actor_scene.c'
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fotext_actor_scene.obj /I $IncludeDirectory $textScene
+    if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     $objects = @()
     foreach ($relativeSource in $sources) {
         $source = Join-Path $SourceRoot $relativeSource
