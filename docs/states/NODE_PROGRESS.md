@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P138 normal movement handoffs](../proposals/m2/t70-final-current-certification.md#s17-p138-checkpoint---normal-enemy-movement-index-handoffs).
+S17 P138:34normal-enemy-primaryX writeconditions joined;374streamalias inventory now59intrinsic/159parent-qualified/156pending. RunNormalEnemies2279instructionclosure,no008publisher;onlyE007indirectwriter constructed>=0500. Fresh36288originalparents0scopedRAM/APU/orderdiff eachwidth,all34joinedwritePCobserved;65sharedconditions retainotherparents. Elevenfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
 [P137 initializer index handoffs](../proposals/m2/t70-final-current-certification.md#s17-p137-checkpoint---initializer-primary-index-handoffs).
 S17 P137:75initializer-primaryX writeconditions joined;374streamalias inventory now59intrinsic/125parent-qualified/190pending. 705instruction initializerclosure/93potential008aliases;Xprimary0..5 orbounded4/2 scratch/search then008restore,no008publisher/indirectwriter. Fresh5280originalparents0scopedRAM/APU/orderdiff bothwidths,all75joinedwritePCobserved. Tenother-parent sharedsites andfivealternate-callerduplicateY clauses retained. Elevenfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
