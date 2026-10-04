@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P131 allocation guards](../proposals/m2/t70-final-current-certification.md#s17-p131-checkpoint---intrinsic-allocation-exclusions).
+S17 P131:10 allocation indexed-write conditions/9 participants resolved by intrinsic random mask orcoin allocator6/7/8. Existing374streamalias inventory now38intrinsic/15parentjoins/321pending. RetainedP49/P101/P128 originalvisited writes/zero scopedRAM receipts linkedcurrent123sourceidentities;6focusedtests eachwidthpass. No freshROMrun,newnode/controlcredit,gamechangeorEXErefresh;P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
 [P130 fireball slot and bubble exception](../proposals/m2/t70-final-current-certification.md#s17-p130-checkpoint---fireball-slot-publication-and-bubble-exception).
 S17 P130:65536 actualfireball parents/95 observedlabels/679PC,all17 candidatewritePCvisited,bothwidths0scopedRAM/APU/orderdiff. Bus confirms08 writes onlyB689constant0/1,reads0/1,noE9/EA/739write in testedcontracts. Sixteen aliasconditions discharged;374inventory now28intrinsic/15parentjoins/331pending. D725 posthit/score andfivebubble entranceconditions explicit. Eightfocusedtests eachwidthpass;123sourceidentities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 

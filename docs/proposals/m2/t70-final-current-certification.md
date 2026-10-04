@@ -9811,3 +9811,32 @@ Harnesscorrections beforeacceptance:initialPythonrunner indentationerror prevent
 Bubblecaller sweep preserves fivependingwrites B717/B71D/B724/B728/B748. WaterBublLoopcounter2..0 isnotthesolecaller:originalEntrance_GameTimerSetup callsSetupBubble witholdGetPlayerColors X,or5afterthevinechild. P111 retainedrawpalette-byte routes/currentplayer.c andbubble.c preserve thatactualzero-pageindexed behavior. ForrawX5/6, E4+X reachesE9/EA;otherbubblebases have their ownrawalias indices. This is an explicit controlledaddress witness,notproofanordinarylegalwaterentrance reachesbadX. No newclamp orinventedconstructor replaces theROM behavior. Actualreachableentrance/buffer/vinephase remainsrequiredforglobalstream-preservation certification.
 
 Eightfireball/bubble/scan/hit/OAM/purity tests pass eachwidth;all123currentnormalizedsource identities andthreeP123hashesmatch. No productcodechange,EXErefreshornewDOSruntime claim. Remainingcaller/alias/lifetime,CheckForEnemyGroup/control-01480,materialdenominator,pixels,declaredroutes andsnapshot remainopen.
+
+## S17 P131 admission - intrinsic hammer and coin allocation guards
+
+Existing material streamalias gap;9 audit participants:SpawnHammerObj,SetMOfs,NoHammer,CoinBlock,SetupJumpCoin,JCoinC,FindEmptyMiscSlot,FMiscLoop,UseMiscS. Review10 original indexed writes throughfunctional hammer mask andactualcoin allocator return6/7/8. BAB0 alreadyintrinsicallyexcluded,notcreditedagain. Current sharedhammer.c/coin.c unchanged;retain originalP49/P101/P128 input/child contracts,do notrestart unrelated ROM runs. Check123 sourceidentities,originalcounter/control seeds,all effective addresses,negative rawindex witnesses and focused current x86/x64 tests. Existing1667scope,fresh0/max1992,no graphcredit;globalcaller/lifetime andmaterialdenominator stillpending. OwnerlocalROM/ASM read-only,allneutral outputsignored build,no newprotectedtrace orEXErefresh.
+
+## S17 P131 checkpoint - intrinsic allocation exclusions
+
+S17 P131:10 allocation indexed-write conditions/9 participants resolved by intrinsic random mask orcoin allocator6/7/8. Existing374streamalias inventory now38intrinsic/15parentjoins/321pending. RetainedP49/P101/P128 originalvisited writes/zero scopedRAM receipts linkedcurrent123sourceidentities;6focusedtests eachwidthpass. No freshROMrun,newnode/controlcredit,gamechangeorEXErefresh;P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
+Exactparticipants:SpawnHammerObj,SetMOfs,NoHammer,CoinBlock,SetupJumpCoin,JCoinC,FindEmptyMiscSlot,FMiscLoop,UseMiscS. BAB0 wasalreadyintrinsicallyexcluded in theexistinginventory andisnotcreditedagain. Theinitiallocal script attemptedthatduplicate;anassertion rejected itbeforeanyauthoritativechange,thenitwasremoved. Tennewconditions only.
+
+OriginalBA94 masksrandombyte7 or8 thenTAY;Ycannotexceed8 atBAB5. Flag/table/parent loads changeX orA,notY. CoinBlock/SetupJumpCoin calltheactualBB84 allocator,whichseeds8 andchecks8/7/6,stoppingwhenDEY produces5 andfallingback8. ReturnedY6/7/8 remainslive throughallninecoinallocation stores. TheonlyJCoinC jump isCoinBlockBB4E;SetupJumpCoin falls through. Scorechild occursafterthelastcandidatewrite,so itsunprovenlateraliasdomain isnotneededfortheseearlierwriteaddresses. Thisisfunction-entry source proof forarbitraryoccupancybytes,notproofarbitraryentryatinternalJCoinC oritscallerblockindex. Currentcoin.c localreturn/finishparameters andhammer.c maskedlocal reproduce thoseguards withoutchangingproductioncode.
+
+| PC | Writer | Indices | Destinations | Retained original visits | Excluded raw-index witness |
+| --- | --- | --- | --- | --- | --- |
+| BAB5 | SetMOfs | 00,01,02,03,04,05,06,07,08 | 002A,002B,002C,002D,002E,002F,0030,0031,0032 | 1872 | BF |
+| BB3D | CoinBlock | 06,07,08 | 0080,0081,0082 | 416 | 6F |
+| BB44 | CoinBlock | 06,07,08 | 0099,009A,009B | 416 | 56 |
+| BB4B | CoinBlock | 06,07,08 | 00E1,00E2,00E3 | 416 | 0E |
+| BB57 | SetupJumpCoin | 06,07,08 | 0080,0081,0082 | 65536 | 6F |
+| BB62 | SetupJumpCoin | 06,07,08 | 0099,009A,009B | 65536 | 56 |
+| BB69 | SetupJumpCoin | 06,07,08 | 00E1,00E2,00E3 | 65536 | 0E |
+| BB6E | JCoinC | 06,07,08 | 00B2,00B3,00B4 | 416 | 3D |
+| BB73 | JCoinC | 06,07,08 | 00C8,00C9,00CA | 416 | 27 |
+| BB76 | JCoinC | 06,07,08 | 0030,0031,0032 | 416 | BF |
+
+Eachcomputed address excludesE9/EA/0739. Extendingeachindex toanunqualifiedbytecanaliasoneofthosecells;theintrinsicmask/returncounter iswhyexclusionholds. Sourceidentity123/123 bindsretainedreceipts tocurrentowners:actualhammerparentP101 mode399,serialblockhead/motionP128 mode202,andjumpcoinP49 mode79. Theiroriginalvisits,zero scopedRAM differences andbothwidths arechecked;physicalstack/API exclusions andinputcontractsremainasrecorded. No newROMcapture orcoverageclaim. Sourceandoperationaltracksstayseparate.
+
+Sixactual currenttests eachwidthpass:coin-allocation,misc-lifetime,hammer-chain,hammer-bro-smoke,misc-oam-smoke,platform-purity. ThreeP123producthashesmatch. No DOSruntimeclaim. Other321callerconditions,eightdirect/nineindirect writer lifetimes,materialdenominator,CheckForEnemyGroup/control-01480,pixels/routes/finalsnapshot remainopen.

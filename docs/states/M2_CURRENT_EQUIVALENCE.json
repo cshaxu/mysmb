@@ -39917,11 +39917,13 @@
       "semanticEvidence": [
         "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P131 checkpoint - intrinsic allocation exclusions:10 functional allocation guards excludeE9/EA/739;arbitraryinternalentry andothercaller/lifetimes notproved."
       ],
       "operationalEvidence": [
         "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P131 checkpoint - intrinsic allocation exclusions:retainedoriginalvisits/zero scopedRAM receipts joinedcurrent123identities,6focusedtests perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Uses the source random selector, rejects occupied misc/parent slots, then preserves carry-result allocation semantics.",
       "currentSourcePaths": [
@@ -39939,12 +39941,14 @@
         "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P131 checkpoint - intrinsic allocation exclusions:10 functional allocation guards excludeE9/EA/739;arbitraryinternalentry andothercaller/lifetimes notproved."
       ],
       "operationalEvidence": [
         "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:4096 actual roots each width,2032RAM/24APU/ordered hardware writes0diff,minSP>=EF,all38PC/5branchpairs observed;actual81E2 X0-14 and81FC/8202/8208 X2/5/8 observed;8focused tests each pass;4 invalid-domain witnesses/accounting mutations accepted as negative checks."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:4096 actual roots each width,2032RAM/24APU/ordered hardware writes0diff,minSP>=EF,all38PC/5branchpairs observed;actual81E2 X0-14 and81FC/8202/8208 X2/5/8 observed;8focused tests each pass;4 invalid-domain witnesses/accounting mutations accepted as negative checks.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P131 checkpoint - intrinsic allocation exclusions:retainedoriginalvisits/zero scopedRAM receipts joinedcurrent123identities,6focusedtests perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Uses the selected misc slot before parent-flag eligibility.",
       "currentSourcePaths": [
@@ -39961,11 +39965,13 @@
       "semanticEvidence": [
         "Td S9 B14c hammer node-semantics and independent integration audit: SMB1 lines 6891-6983 compared with shared hammer, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S3: original $BA88-$BB09/current src/game/hammer.c static mapping preserves allocation, carry, state, motion, spawn and common-tail semantics.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P131 checkpoint - intrinsic allocation exclusions:10 functional allocation guards excludeE9/EA/739;arbitraryinternalentry andothercaller/lifetimes notproved."
       ],
       "operationalEvidence": [
         "T61 S3: 63 original hammer snapshots replayed as 126 x86/x64 caller routes with zero differences; focused smoke covers 9,984 cases per width.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P131 checkpoint - intrinsic allocation exclusions:retainedoriginalvisits/zero scopedRAM receipts joinedcurrent123identities,6focusedtests perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Restores ObjectOffset and returns the source carry-clear failure result.",
       "currentSourcePaths": [
@@ -40095,13 +40101,15 @@
         "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P131 checkpoint - intrinsic allocation exclusions:10 functional allocation guards excludeE9/EA/739;arbitraryinternalentry andothercaller/lifetimes notproved."
       ],
       "operationalEvidence": [
         "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P131 checkpoint - intrinsic allocation exclusions:retainedoriginalvisits/zero scopedRAM receipts joinedcurrent123identities,6focusedtests perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Allocates a misc slot and derives normal block coin coordinates with incoming allocation carry.",
       "currentSourcePaths": [
@@ -40120,13 +40128,15 @@
         "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P131 checkpoint - intrinsic allocation exclusions:10 functional allocation guards excludeE9/EA/739;arbitraryinternalentry andothercaller/lifetimes notproved."
       ],
       "operationalEvidence": [
         "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P131 checkpoint - intrinsic allocation exclusions:retainedoriginalvisits/zero scopedRAM receipts joinedcurrent123identities,6focusedtests perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Allocates a misc slot and derives jump-coin coordinates using four-ASL carry.",
       "currentSourcePaths": [
@@ -40146,14 +40156,16 @@
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix:currentlocalpublisher/index scope joined;explicitcaller/return/alias prerequisites remain pending,notglobalexact."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix:currentlocalpublisher/index scope joined;explicitcaller/return/alias prerequisites remain pending,notglobalexact.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P131 checkpoint - intrinsic allocation exclusions:10 functional allocation guards excludeE9/EA/739;arbitraryinternalentry andothercaller/lifetimes notproved."
       ],
       "operationalEvidence": [
         "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P20 checkpoint - sampled producer to sound handoffs:actual queue-write PC observed within30720 sampled original parent-to-SoundEngine roots each width;full RAM pre/post and APU/ordered commands zero diff,physical pushes only. Does not certify other parent branches or intervening gameplay writes.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P131 checkpoint - intrinsic allocation exclusions:retainedoriginalvisits/zero scopedRAM receipts joinedcurrent123identities,6focusedtests perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Initializes coin state/audio, preserves ObjectOffset for GiveOneCoin, then increments one-up tally.",
       "currentSourcePaths": [
@@ -40171,12 +40183,14 @@
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 original BAC3-BC48 source branch/slot/carry/borrow/scratch/table/write/call-order audit against shared hammer/coin/misc/score and actual world/OAM/status children;no product difference found in admitted contract.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P131 checkpoint - intrinsic allocation exclusions:10 functional allocation guards excludeE9/EA/739;arbitraryinternalentry andothercaller/lifetimes notproved."
       ],
       "operationalEvidence": [
         "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S9 P2 393216 original returning roots each width zero persistent RAM/APU/ordered-write diff;all36 planned call/RTS joins observed and six score-table bytes equal/read;12 tests each/current builds/OpenNT link;29 existing labels zero fresh credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P131 checkpoint - intrinsic allocation exclusions:retainedoriginalvisits/zero scopedRAM receipts joinedcurrent123identities,6focusedtests perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Starts at slot eight and searches descending through six before source fallback.",
       "currentSourcePaths": [
@@ -40193,11 +40207,13 @@
       "semanticEvidence": [
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P131 checkpoint - intrinsic allocation exclusions:10 functional allocation guards excludeE9/EA/739;arbitraryinternalentry andothercaller/lifetimes notproved."
       ],
       "operationalEvidence": [
         "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P131 checkpoint - intrinsic allocation exclusions:retainedoriginalvisits/zero scopedRAM receipts joinedcurrent123identities,6focusedtests perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Checks each misc state and preserves the CPY-after-DEY carry behavior.",
       "currentSourcePaths": [
@@ -40214,11 +40230,13 @@
       "semanticEvidence": [
         "Td S9 B14d coin and misc-object node-semantics and independent integration audit: SMB1 lines 6988-7147 compared with shared coin, misc, score, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "T61 S4: original $BB38-$BBF7/current src/game/coin.c and misc.c preserve allocation carry, setup, slot dispatch, state, gravity, scroll, retirement and shared-tail control semantics.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P131 checkpoint - intrinsic allocation exclusions:10 functional allocation guards excludeE9/EA/739;arbitraryinternalentry andothercaller/lifetimes notproved."
       ],
       "operationalEvidence": [
         "T61 S4: 90 original controlled routes replayed across current x86/x64 caller and complete builds (180 checks each); focused exhaustive coin/misc harnesses pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P131 checkpoint - intrinsic allocation exclusions:retainedoriginalvisits/zero scopedRAM receipts joinedcurrent123identities,6focusedtests perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Stores JumpCoinMiscOffset and returns selected slot.",
       "currentSourcePaths": [
@@ -171367,7 +171385,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement",
         "docs/proposals/m2/t70-final-current-certification.md S17 P128 checkpoint - saved block publication and consumption",
         "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P130 checkpoint - fireball slot publication and bubble exception"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P130 checkpoint - fireball slot publication and bubble exception",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P131 checkpoint - intrinsic allocation exclusions"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
@@ -171388,10 +171407,10 @@
         "scope": "Retained scoped receipts and named open material obligations;not new global audit,whole-program proof or new material denominator.",
         "streamPointerCursorIndexedAliasConditions": {
           "candidateSites": 374,
-          "intrinsicExclusions": 28,
+          "intrinsicExclusions": 38,
           "parentChainIndexJoins": 15,
-          "callerConditionsPending": 331,
-          "evidence": "docs/proposals/m2/t70-final-current-certification.md S17 P130 checkpoint - fireball slot publication and bubble exception",
+          "callerConditionsPending": 321,
+          "evidence": "docs/proposals/m2/t70-final-current-certification.md S17 P131 checkpoint - intrinsic allocation exclusions",
           "globalAbsenceOfAliasProven": false
         }
       },
