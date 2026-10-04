@@ -10,6 +10,17 @@ struct actor_clip {
     const unsigned char MYSMB_IO_FAR *background;
 };
 
+/* Place a tiny component on the first cell whose center lies inside its
+ * source rectangle. A floor-only anchor can hide a one-row glyph entirely. */
+static short component_anchor(unsigned short position,unsigned short scale,
+    unsigned short extent)
+{
+    unsigned long product,cell;
+    product=(unsigned long)position*scale;
+    cell=product<=extent/2U?0UL:(product-extent/2U+extent-1U)/extent;
+    return (short)((cell*extent+scale-1U)/scale);
+}
+
 static int visible_cell(const void MYSMB_IO_FAR *context,
     mysmb_io_u16 column,mysmb_io_u16 row)
 {
@@ -46,6 +57,9 @@ static int player_pose(const struct mysmb_game *game,
     if((item->identity&MYSMB_TEXT_PLAYER_DEATH_FLAG)!=0U) {
         e->kind=MYSMB_TEXT_PLAYER_SMALL;e->pose=MYSMB_TEXT_DEAD;return 1;
     }
+    if((item->identity&MYSMB_TEXT_PLAYER_THROW_FLAG)!=0U) {
+        e->pose=MYSMB_TEXT_THROW;return 1;
+    }
     if(item->graphics==game->area_prg[base+2U]) {e->pose=MYSMB_TEXT_STAND;return 1;}
     if(item->graphics==game->area_prg[base]) {e->pose=MYSMB_TEXT_JUMP;return 1;}
     for(phase=0U;phase<3U;++phase)
@@ -69,6 +83,31 @@ static int player_pose(const struct mysmb_game *game,
         e->kind=MYSMB_TEXT_PLAYER_SMALL;e->pose=MYSMB_TEXT_STAND;return 1;
     }
     return 0;
+}
+
+/* One authored platform span across the selected three/six source columns.
+ * Fill every covered text cell; repeated tile-sized borders would produce
+ * separate boxes and holes instead of a continuous moving platform. */
+static void platform_span(const struct mysmb_text_element *element,
+    const struct mysmb_text_observation *item,unsigned short entry,
+    const struct actor_clip *clip,struct mysmb_io_text_frame MYSMB_IO_FAR *frame)
+{
+    unsigned short first,last,column,row,cell,columns;
+    unsigned char c;
+    first=(unsigned short)((unsigned long)element->x*80UL/256UL);
+    last=(unsigned short)(((unsigned long)(item->entries[entry*4U+3U]+8U)*80UL-129UL)/256UL);
+    row=(unsigned short)((unsigned long)element->y*50UL/240UL);
+    columns=item->identity==0U?3U:6U;
+    if(row>=50U)return;
+    for(column=first;column<=last && column<80U;++column) {
+        if(!visible_cell(clip,column,row))continue;
+        c=column==first && entry%columns==0U?'[':
+            column==last && entry%columns==columns-1U?']':'=';
+        cell=(unsigned short)(row*80U+column);
+        frame->cells[cell].character=c;
+        frame->cells[cell].foreground=element->foreground;
+        frame->cells[cell].background=element->background;
+    }
 }
 
 static int enemy_pose(const struct mysmb_text_observation *item,
@@ -148,8 +187,9 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
 {
     const struct mysmb_text_observation *item;
     struct mysmb_text_element element;
+    struct mysmb_text_observation selected;
     struct actor_clip clip;
-    unsigned short priority,i,j,sx,sy,palette;
+    unsigned short priority,i,j,sx,sy,palette,entry,begin,end;
     unsigned char mask,seen[64];
     if(game==0 || workspace==0 || frame==0 || receipt==0 || game->text_observer.enabled!=1U ||
         game->text_observer.visible.count>MYSMB_TEXT_OBSERVATION_CAPACITY)return 0;
@@ -166,10 +206,14 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
         --i;
             item=&game->text_observer.visible.items[i];
             mask=mysmb_text_observer_visible_mask(game,(unsigned char)i);
-            j=(unsigned short)(priority-item->oam/4U);
-            if(j>=item->sprites || (mask&(1U<<j))==0U)continue;
-            mask=(unsigned char)(1U<<j);element.x=256;element.y=240;
-            for(j=0U;j<item->sprites;++j) {
+            entry=(unsigned short)(priority-item->oam/4U);
+            if(entry>=item->sprites || (mask&(1U<<entry))==0U)continue;
+            mask=(unsigned char)(1U<<entry);element.x=256;element.y=240;
+            begin=0U;end=item->sprites;
+            if(item->family==MYSMB_TEXT_OBSERVE_FLAG) {
+                begin=entry>=3U?3U:0U;end=entry>=3U?item->sprites:3U;
+            }
+            for(j=begin;j<end;++j) {
                 /* Ownership clipping must not relocate the whole template. */
                 if(item->entries[j*4U]>=239U ||
                     item->entries[j*4U+1U]==0xfcU)continue;
@@ -177,25 +221,53 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
                 if(sx<(unsigned short)element.x)element.x=(short)sx;
                 if(sy<(unsigned short)element.y)element.y=(short)sy;
             }
-            if(!choose(game,item,&element)) {
+            selected=*item;
+            if(item->family==MYSMB_TEXT_OBSERVE_PLAYER && entry>=6U &&
+                (item->identity&MYSMB_TEXT_PLAYER_MIXED_FLAG)!=0U) {
+                selected.graphics=item->slot;
+                selected.identity&=(unsigned char)~MYSMB_TEXT_PLAYER_THROW_FLAG;
+            }
+            if(!choose(game,&selected,&element)) {
                 if(seen[i]==0U)receipt->unsupported++;
                 seen[i]=1U;continue;
             }
+            if(item->family==MYSMB_TEXT_OBSERVE_PLAYER &&
+                (item->identity&MYSMB_TEXT_PLAYER_KICK_FLAG)!=0U &&
+                entry==6U+((item->facing&1U)==0U?1U:0U))
+                element.pose=element.pose==MYSMB_TEXT_SWIM_SECOND?MYSMB_TEXT_SWIM_KICK_SECOND:
+                    element.pose==MYSMB_TEXT_SWIM_THIRD?MYSMB_TEXT_SWIM_KICK_THIRD:MYSMB_TEXT_SWIM_KICK;
+            if(item->family==MYSMB_TEXT_OBSERVE_FLAG && entry>=3U) {
+                if(item->graphics>=5U) {seen[i]=1U;receipt->unsupported++;continue;}
+                element.kind=MYSMB_TEXT_FLAG_SCORE;element.pose=item->graphics;
+            }
+            if(item->family==MYSMB_TEXT_OBSERVE_VINE) {
+                element.kind=item->entries[entry*4U+1U]==0xe0U?
+                    MYSMB_TEXT_VINE_CAP:MYSMB_TEXT_VINE_LEAF;
+                element.face_left=(item->entries[entry*4U+2U]&0x40U)!=0U?1U:0U;
+            }
+            if(item->family==MYSMB_TEXT_OBSERVE_PLATFORM)
+                element.kind=MYSMB_TEXT_PLATFORM_PART;
             if(item->family==MYSMB_TEXT_OBSERVE_CHUNKS ||
                 item->family==MYSMB_TEXT_OBSERVE_FIREBAR ||
                 item->family==MYSMB_TEXT_OBSERVE_FIREBALL ||
-                item->family==MYSMB_TEXT_OBSERVE_BUBBLE) {
-                element.x=game->visible_oam[priority*4U+3U];
-                element.y=(short)(game->visible_oam[priority*4U]+1U);
+                item->family==MYSMB_TEXT_OBSERVE_BUBBLE ||
+                item->family==MYSMB_TEXT_OBSERVE_VINE ||
+                item->family==MYSMB_TEXT_OBSERVE_PLATFORM) {
+                element.x=component_anchor(game->visible_oam[priority*4U+3U],80U,256U);
+                element.y=component_anchor((unsigned short)(game->visible_oam[priority*4U]+1U),50U,240U);
             }
             palette=(unsigned short)((game->visible_oam[priority*4U+2U]&3U)*4U);
             element.background=mysmb_io_color_text16(game->palette[0x12U+palette]);
             element.foreground=15U;
-            element.face_left=(item->facing&2U)!=0U?1U:0U;
+            element.face_left=item->family==MYSMB_TEXT_OBSERVE_VINE?
+                (item->entries[entry*4U+2U]&0x40U)!=0U?1U:0U:
+                (item->facing&2U)!=0U?1U:0U;
             clip.game=game;clip.item=item;clip.mask=mask;
             clip.workspace=workspace;clip.background=background_opaque;
             clip.behind=(unsigned char)(game->visible_oam[priority*4U+2U]&0x20U);
-            if(!mysmb_text_element_draw(&element,frame,visible_cell,&clip))return 0;
+            if(item->family==MYSMB_TEXT_OBSERVE_PLATFORM)
+                platform_span(&element,item,entry,&clip,frame);
+            else if(!mysmb_text_element_draw(&element,frame,visible_cell,&clip))return 0;
             if(seen[i]==0U)receipt->drawn++;
             seen[i]=1U;
     }

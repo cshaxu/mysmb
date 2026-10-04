@@ -114,6 +114,77 @@ int main(void)
     CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,opaque,&frame,&receipt));
     CHECK(frame.cells[i].character==' ' && frame.cells[i].background==5U);
     CHECK(memcmp(&before,&game,sizeof(game))==0);
+    /* Two separated platform rows and every leaf of a vine remain visible. */
+    mysmb_text_observer_enable(&game,1U);
+    for(i=0U;i<64U;++i)game.ram[0x0200U+i*4U]=0xf8U;
+    for(i=0U;i<6U;++i)sprite((unsigned short)(8U+i),
+        (unsigned char)(80U+(i%3U)*8U),(unsigned char)(79U+(i/3U)*128U));
+    mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_PLATFORM,
+        0U,0U,0U,1U,32U,6U,0U);
+    mysmb_game_submit_oam(&game);
+    CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+    CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+    CHECK(frame.cells[17U*80U+25U].character=='[');
+    CHECK(frame.cells[43U*80U+30U].character=='=');
+    CHECK(frame.cells[43U*80U+31U].character==']');
+    for(i=26U;i<31U;++i)CHECK(frame.cells[17U*80U+i].character=='=');
+    mysmb_text_observer_enable(&game,1U);
+    for(i=0U;i<6U;++i) {
+        sprite((unsigned short)(8U+i),80U,(unsigned char)(79U+i*8U));
+        game.ram[0x0201U+(8U+i)*4U]=i==0U?0xe0U:0xe1U;
+    }
+    mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_VINE,
+        0U,0U,0U,1U,32U,6U,0U);
+    mysmb_game_submit_oam(&game);
+    CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+    CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+    CHECK(frame.cells[17U*80U+25U].character=='^');
+    CHECK(frame.cells[25U*80U+25U].character=='|');
+    /* Flag score is a separate subcomponent, not the flag's anchor. */
+    sprite(8U,80U,95U);sprite(9U,88U,95U);sprite(10U,88U,103U);
+    sprite(11U,100U,47U);sprite(12U,108U,47U);
+    mysmb_text_observer_enable(&game,1U);
+    mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_FLAG,
+        0U,0U,0U,1U,32U,5U,0U);
+    mysmb_game_submit_oam(&game);
+    CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+    CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+    CHECK(frame.cells[10U*80U+31U].character=='5');
+    CHECK(frame.cells[20U*80U+25U].character=='|');
+    /* Moving throw keeps base legs; a full throw replaces those legs. */
+    mysmb_text_observer_enable(&game,1U);
+    for(i=0U;i<8U;++i)sprite((unsigned short)(8U+i),
+        (unsigned char)(80U+(i%2U)*8U),(unsigned char)(79U+(i/2U)*8U));
+    prg[0x6e0bU]=32U;
+    mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_PLAYER,
+        MYSMB_TEXT_PLAYER_THROW_FLAG|MYSMB_TEXT_PLAYER_MIXED_FLAG,
+        48U,56U,1U,32U,8U,0U);
+    mysmb_game_submit_oam(&game);
+    CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+    CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+    CHECK(frame.cells[22U*80U+26U].character==' ');
+    mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_PLAYER,
+        MYSMB_TEXT_PLAYER_THROW_FLAG,48U,56U,1U,32U,8U,0U);
+    mysmb_game_submit_oam(&game);
+    CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+    CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+    CHECK(frame.cells[22U*80U+26U].character=='_');
+    /* Only the source-replaced swim side gets the kick silhouette. */
+    prg[0x6e08U]=8U;
+    mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_PLAYER,
+        MYSMB_TEXT_PLAYER_KICK_FLAG,8U,8U,1U,32U,8U,0U);
+    mysmb_game_submit_oam(&game);
+    CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+    CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+    CHECK(frame.cells[22U*80U+25U].character=='~');
+    CHECK(frame.cells[22U*80U+29U].character==' ');
+    mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_PLAYER,
+        MYSMB_TEXT_PLAYER_KICK_FLAG,8U,8U,2U,32U,8U,0U);
+    mysmb_game_submit_oam(&game);
+    CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+    CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+    CHECK(frame.cells[22U*80U+25U].character==' ');
+    CHECK(frame.cells[22U*80U+29U].character=='~');
     puts("observed actor scene: whole templates/fill/latch/clipping/unknown/read-only passed");
     return 0;
 }

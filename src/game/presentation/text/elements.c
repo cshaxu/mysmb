@@ -8,7 +8,7 @@ struct mysmb_text_art {
     mysmb_io_u8 height;
 };
 
-static const struct mysmb_text_art small[14] = {
+static const struct mysmb_text_art small[17] = {
     { " _M_ " " /o> " "/|_|\\", 5U, 3U },
     { " _M_ " " /o> " " /|_>", 5U, 3U },
     { " _M_ " "</o> " " /|\\ ", 5U, 3U },
@@ -22,9 +22,12 @@ static const struct mysmb_text_art small[14] = {
     { " _M_ " " /o> " " /|\\ ", 5U, 3U },
     { " _M_ " " /o>~" "~ |~ ", 5U, 3U },
     { " _M_ " "</o> " " ~|~~", 5U, 3U },
-    { " _M| " "</o| " " ||/ ", 5U, 3U }
+    { " _M| " "</o| " " ||/ ", 5U, 3U },
+    { " _M_ " "</o>~" "~ /|~", 5U, 3U },
+    { " _M_ " " /o>~" "~/ |~", 5U, 3U },
+    { " _M_ " "</o> " "~ |/~", 5U, 3U }
 };
-static const struct mysmb_text_art large[14] = {
+static const struct mysmb_text_art large[17] = {
     { " _M_ " " /o> " " |_| " " /|\\ " " |#| " " / \\ " "/_ _\\", 5U, 7U },
     { " _M_ " " /o> " " |_| " " /|_>" " |#| " " /\\  " "/  \\_", 5U, 7U },
     { " _M_ " " /o> " "<|_|>" " |#| " " /|\\ " " / \\ " "     ", 5U, 7U },
@@ -38,7 +41,18 @@ static const struct mysmb_text_art large[14] = {
     { " _M_ " " /o> " " |_| " " /|\\ " " |#| " " /|  " "/ \\_ ", 5U, 7U },
     { " _M_ " " /o> " " |_|~" " |#| " "~ |~ " " ~ ~ " "     ", 5U, 7U },
     { " _M_ " " /o> " "<|_| " " |#| " " ~|~~" "~ ~  " "     ", 5U, 7U },
-    { " _M| " " /o| " "<|_| " " ||/ " " |#| " " ||/ " " /|| ", 5U, 7U }
+    { " _M| " " /o| " "<|_| " " ||/ " " |#| " " ||/ " " /|| ", 5U, 7U },
+    { " _M_ " " /o> " "<|_|~" " |#| " " ~|~ " "~/|  " "~ / ~", 5U, 7U },
+    { " _M_ " " /o> " " |_|~" " |#| " "~ |~ " " /|~ " "~ / ~", 5U, 7U },
+    { " _M_ " " /o> " "<|_| " " |#| " " ~|~~" "~ |/~" " ~ /~", 5U, 7U }
+};
+static const struct mysmb_text_art parts[3] = {
+    { "|}" "| ", 2U, 2U }, { "^|" " |", 2U, 2U },
+    { "[=]", 3U, 1U }
+};
+static const struct mysmb_text_art flag_scores[5] = {
+    {"5000",4U,1U},{"2000",4U,1U},{"800",3U,1U},
+    {"400",3U,1U},{"100",3U,1U}
 };
 
 static const struct mysmb_text_art actors[19][2] = {
@@ -85,7 +99,7 @@ static const struct mysmb_text_art scenery[15] = {
     { "#", 1U, 1U },
     { "|" "}" "|" "{" "|" "}", 1U, 6U },
     { "[======]", 8U, 1U },
-    { "|>" "| ", 2U, 2U },
+    { "|===>" "|  / " "|_/  ", 5U, 3U },
     { "o", 1U, 1U }
 };
 
@@ -94,6 +108,9 @@ static const struct mysmb_text_art *art_for(
 {
     if (element->kind == MYSMB_TEXT_PLAYER_SMALL) return &small[element->pose];
     if (element->kind == MYSMB_TEXT_PLAYER_LARGE) return &large[element->pose];
+    if (element->kind == MYSMB_TEXT_FLAG_SCORE) return &flag_scores[element->pose];
+    if (element->kind >= MYSMB_TEXT_VINE_LEAF)
+        return &parts[element->kind-MYSMB_TEXT_VINE_LEAF];
     if (element->kind >= MYSMB_TEXT_GOOMBA_FLAT)
         return &actors[element->kind-MYSMB_TEXT_GOOMBA_FLAT][element->pose==1U?1U:0U];
     if (element->kind==MYSMB_TEXT_GOOMBA && element->pose==1U)return &goomba_second;
@@ -124,7 +141,9 @@ static int valid_element(const struct mysmb_text_element MYSMB_IO_FAR *e)
 {
     return e != 0 && e->kind < MYSMB_TEXT_KIND_COUNT &&
         e->face_left <= 1U && e->foreground <= 15U && e->background <= 15U &&
-        (e->kind < MYSMB_TEXT_GOOMBA ? e->pose<MYSMB_TEXT_PLAYER_POSES :
+        (e->kind==MYSMB_TEXT_FLAG_SCORE ? e->pose<5U:
+         e->kind>=MYSMB_TEXT_VINE_LEAF ? e->pose==0U:
+         e->kind < MYSMB_TEXT_GOOMBA ? e->pose<MYSMB_TEXT_PLAYER_POSES :
          e->kind==MYSMB_TEXT_GOOMBA || e->kind>=MYSMB_TEXT_GOOMBA_FLAT ?
             e->pose<=2U:e->pose==0U);
 }

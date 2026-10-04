@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M3 T11 S2 active;P7 priority/independent components complete;remaining scene obligations stay within S2. |
+| Identifier Mode | Continuation:M3 T11 S2 active;P8 segmented shapes/mixed player complete;remaining scene obligations stay within S2. |
 | Admission And Approval | Automatic next-S admission under owner mandate after S1 reviewed local commit. |
 | Objective | Connect isolated text elements to existing draw decisions and committed visible scenes,with explicit lifetime/restore handling. |
 | Non-goals | No gameplay rewrite,ROM credit or platform Tab binding;those presenters remain S4/S5. |
@@ -114,3 +114,12 @@ restore240future states and999textframes/11988000cross-width bytes pass.
 Three products331103/401348/415432bytes;DGROUP46528bytes,bg workspace2900bytes,
 actor claim map500bytes. S2 remains open:remaining segmented/mixed/wrapped
 geometry,residual backgrounds and title/misc owners;no host text/Tab yet.
+
+P8:vine/platform/flag-score components and mixed throw/one-sided swim poses;
+8source/test files,+234/-25. Bothwidths six tests/product self-tests,C90,
+originalDOS16 far ABI/link andactualDOSBox route pass. Four controlled player
+hooks preserve the original game prefix;999textframes/11988000bytes match
+across widths,twin1000-step graphical equality andrestore240future states pass.
+Three products331183/401348/415432bytes;observer5253,DGROUP46528bytes unchanged.
+S2 remains open:wrapped/hidden anchors,residual special backgrounds and
+title/menu/misc owners. No host text/Tab yet;no new ROM credit or remote.

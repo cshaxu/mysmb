@@ -18,11 +18,14 @@
 #define MYSMB_TEXT_OBSERVE_BUBBLE 13U
 #define MYSMB_TEXT_OBSERVE_FLAME 14U
 #define MYSMB_TEXT_PLAYER_DEATH_FLAG 0x80U
+#define MYSMB_TEXT_PLAYER_THROW_FLAG 0x40U
+#define MYSMB_TEXT_PLAYER_KICK_FLAG 0x20U
+#define MYSMB_TEXT_PLAYER_MIXED_FLAG 0x10U
 
 struct mysmb_text_observation {
     unsigned char family;
     unsigned char identity;
-    unsigned char slot;
+    unsigned char slot; /* Player receipts: source-selected pre-throw graphics. */
     unsigned char graphics;
     unsigned char facing;
     unsigned char oam;

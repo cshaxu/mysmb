@@ -75,6 +75,32 @@ static int snapshot_case(void)
     return 0;
 }
 
+static int mixed_player_case(unsigned char moving,unsigned char swimming,
+    unsigned char frame_counter)
+{
+    bind(&plain);
+    if(plain.area_prg==0)return 0;
+    plain.ram[0x000eU]=8U;plain.ram[0x06e4U]=32U;
+    plain.ram[0x03adU]=80U;plain.ram[0x03b8U]=64U;plain.ram[0x0033U]=1U;
+    plain.ram[0x0057U]=moving;plain.ram[0x000cU]=moving;
+    plain.ram[0x001dU]=swimming;plain.ram[0x0704U]=swimming;
+    plain.ram[0x0711U]=swimming==0U?10U:0U;plain.ram[0x0781U]=1U;
+    plain.ram[0x0754U]=0U;plain.ram[0x0009U]=frame_counter;
+    observed=plain;mysmb_text_observer_enable(&observed,1U);
+    mysmb_oam_render_player(&plain);mysmb_oam_render_player(&observed);
+    CHECK(memcmp(&plain,&observed,offsetof(struct mysmb_game,text_observer))==0);
+    CHECK(observed.text_observer.producer.count==1U);
+    if(swimming!=0U)CHECK(((observed.text_observer.producer.items[0].identity&
+        MYSMB_TEXT_PLAYER_KICK_FLAG)!=0U)==((frame_counter&4U)==0U));
+    else {
+        CHECK((observed.text_observer.producer.items[0].identity&
+            MYSMB_TEXT_PLAYER_THROW_FLAG)!=0U);
+        CHECK(((observed.text_observer.producer.items[0].identity&
+            MYSMB_TEXT_PLAYER_MIXED_FLAG)!=0U)==(moving!=0U));
+    }
+    return 0;
+}
+
 static int compare_draw(void (*draw)(struct mysmb_game *,mysmb_u8),
     unsigned char family)
 {
@@ -229,6 +255,10 @@ int main(int argc,char **argv)
         CHECK(enemy_case(enemy_ids[i],j==0U?0U:j==1U?4U:5U,
             (unsigned char)(j*4U))==0);
     CHECK(snapshot_case()==0);
+    CHECK(mixed_player_case(1U,0U,0U)==0);
+    CHECK(mixed_player_case(0U,0U,0U)==0);
+    CHECK(mixed_player_case(0U,1U,0U)==0);
+    CHECK(mixed_player_case(0U,1U,4U)==0);
     bind(&observed);bind(&plain);bind(&restored);
     mysmb_text_observer_enable(&observed,1U);
     mysmb_game_snapshot_fingerprint(&observed,fingerprint);

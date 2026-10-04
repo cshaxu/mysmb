@@ -49,6 +49,11 @@ consume committed entries in original priority order. Each entry keeps its
 own palette/behind-background flag;only authored opaque cells claim priority.
 Independent chunks/effects use their own positions,while whole actors retain
 source-selected template anchors. These maps contain no CHR/pixel samples.
+Player receipts also latch pre-throw graphics,executed partial/full throw
+and actual one-sided swim-kick replacement. No selector is rerun. Vine
+cap/leaves,platform spans and flag/score components use their own completed
+entry positions;small components align to a cell center within their source
+rectangle so a one-row authored glyph cannot disappear between cells.
 
 `io/control` owns application-request lifecycle independently of the game.
 The third input byte carries requests;the two controller bytes keep their

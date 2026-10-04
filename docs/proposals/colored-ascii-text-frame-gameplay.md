@@ -639,3 +639,57 @@ Similar-issue sweep covers every actor family and all source receipt upserts;
 entry priority/palette applies to all known templates. Vine/platform/flag
 segmented shapes,mixed player parts,wrapped/hidden anchors,residual metatiles
 and title/menu/misc owner coverage remain inside S2. No text host or Tab yet.
+
+### S2 P8 segmented shapes and mixed player scope
+
+Add authored vine cap/body,platform-span and flag/score subcomponents using
+their completed entries. Connect separated platform rows independently instead
+of anchoring one short template at the entire owner minimum. Capture original
+player base graphics,executed throw row count and actual swim-kick replacement
+in spare receipt fields;never rerun their selectors. Compose throw torso with
+the retained base legs and the single replaced kick side. Estimate6-9source/
+test files,180-320lines. Bothwidths check template validity,source-hook original
+state equality,segmented positions,hidden columns,mixed parts,restore/twin
+route and cross-width text;originalDOS16 and3products remain mandatory.
+
+### S2 P8 review receipt
+
+Eight source/test files change234added/25removed lines. Forty authored kinds
+and17player poses now include vine cap/leaves,platform parts,flag scores and
+three swim-kick phases. Each vine leaf and platform span uses its completed
+source entry;platform columns form one continuous bordered span without
+repeated boxes or unfilled gaps,separated rows remain separated. Flag and score
+use distinct source bounds,so floating numbers cannot move the flag anchor.
+Tiny component anchors use the first cell center inside their source rectangle;
+this fixes one-row components disappearing at fractional cell alignment.
+
+The player owner latches pre-throw graphics in its receipt slot and executed
+throw/full-versus-partial/kick flags in presentation identity bits. It observes
+the original RenderPlayerSub three/four-row branch and actual swim replacement,
+including the existing early return. No branch is replayed and no new original
+RAM write is added. Mixed text uses the retained base pose for bottom entries;
+only the originally replaced kick side receives kick artwork. Explicit throw
+receipt flags also avoid immutable-offset aliases with ordinary player actions.
+The observation and snapshot byte counts remain unchanged.
+
+Bothwidths pass six focused tests and product self-tests. Controlled source-hook
+cases compare the entire original game prefix with observation off/on for
+moving/stationary throw,kicking and non-kicking swim phases. Synthetic scene
+fixtures check both platform rows,vine cap/bottom leaves,independent flag score,
+mixed versus full throw legs and left/right one-sided kicks. All authored
+kinds/poses remain printable with valid colors. The1000-step twin route retains
+zero original core/frame/pixel differences and immediate restore/240future
+state equality. Its999textframes/11988000bytes compare across widths;it does
+not cover every new controlled branch. Neither track earns new ROM credit.
+
+StrictC90,originalOpenNT16 far ABI/full product link andactual hiddenDOSBox
+title/Start/run/jump/left/release/Escape pass,with24seconds gameplay. Three
+refreshed local products are331183/401348/415432bytes;observer5253bytes and
+DGROUP46528bytes remain unchanged. No486SX performance qualification. Raw
+streams/captures are deleted after neutral receipts;no protected data is staged.
+
+Similar-issue sweep covers all small single-entry components,all observed
+segmented owner classes and both player observer return sites. Existing
+priority,palette,clipping and snapshot contracts stay shared. Remaining inside
+S2:wrapped/hidden whole-actor anchors,residual side-pipe/ledge/rope metatiles
+and remaining title/menu/misc output owners. No product text/Tab yet;no remote.

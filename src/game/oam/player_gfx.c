@@ -267,6 +267,8 @@ void mysmb_oam_render_player(struct mysmb_game *game)
     mysmb_u8 oam_offset;
     mysmb_u8 offscreen;
     mysmb_u8 swimming_continuation;
+    mysmb_u8 base_graphics;
+    mysmb_u8 draw_flags;
 
     if (game->area_prg == 0 ||
         game->area_prg_size < MYSMB_PLAYER_GRAPHICS_TABLE_END) return;
@@ -280,6 +282,8 @@ void mysmb_oam_render_player(struct mysmb_game *game)
         game->ram[MYSMB_SWIMMING] != 0U &&
         game->ram[MYSMB_PLAYER_STATE] != 0U);
     graphics_offset = mysmb_oam_player_select_gfx(game);
+    base_graphics = graphics_offset;
+    draw_flags = 0U;
     game->ram[MYSMB_PLAYER_GFX_OFFSET] = graphics_offset;
     mysmb_oam_player_render_rows(game, graphics_offset, 4U);
     mysmb_oam_check_player_attributes(game);
@@ -296,6 +300,8 @@ void mysmb_oam_render_player(struct mysmb_game *game)
             game->ram[MYSMB_PLAYER_GFX_OFFSET] = graphics_offset;
             rows = (game->ram[MYSMB_PLAYER_X_SPEED] |
                     game->ram[MYSMB_PLAYER_LEFT_RIGHT_BUTTONS]) == 0U ? 4U : 3U;
+            draw_flags = (mysmb_u8)(MYSMB_TEXT_PLAYER_THROW_FLAG |
+                (rows == 3U ? MYSMB_TEXT_PLAYER_MIXED_FLAG : 0U));
             mysmb_oam_player_render_rows(game, graphics_offset, rows);
         }
     }
@@ -329,9 +335,9 @@ void mysmb_oam_render_player(struct mysmb_game *game)
             if (game->ram[(mysmb_u16)(0x0219U + kick_offset)] ==
                 game->area_prg[MYSMB_SWIM_TILE_REP_OFFSET]) {
                 mysmb_text_observer_record(game, MYSMB_TEXT_OBSERVE_PLAYER,
-                    (mysmb_u8)(game->ram[0x0753U] |
+                    (mysmb_u8)(game->ram[0x0753U] | draw_flags |
                         (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE]==0x0bU?
-                            MYSMB_TEXT_PLAYER_DEATH_FLAG:0U)), 0U, graphics_offset,
+                            MYSMB_TEXT_PLAYER_DEATH_FLAG:0U)), base_graphics, graphics_offset,
                     game->ram[MYSMB_PLAYER_FACING],
                     game->ram[MYSMB_PLAYER_SPRITE_OFFSET], 8U,
                     game->ram[MYSMB_PLAYER_SIZE]);
@@ -341,11 +347,12 @@ void mysmb_oam_render_player(struct mysmb_game *game)
         }
         game->ram[(mysmb_u16)(0x0219U + kick_offset)] =
             game->area_prg[MYSMB_SWIM_KICK_TILE_NUM + tile_index];
+        draw_flags |= MYSMB_TEXT_PLAYER_KICK_FLAG;
     }
     mysmb_text_observer_record(game, MYSMB_TEXT_OBSERVE_PLAYER,
-        (mysmb_u8)(game->ram[0x0753U] |
+        (mysmb_u8)(game->ram[0x0753U] | draw_flags |
             (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE]==0x0bU?
-                MYSMB_TEXT_PLAYER_DEATH_FLAG:0U)), 0U, graphics_offset,
+                MYSMB_TEXT_PLAYER_DEATH_FLAG:0U)), base_graphics, graphics_offset,
         game->ram[MYSMB_PLAYER_FACING],
         game->ram[MYSMB_PLAYER_SPRITE_OFFSET], 8U,
         game->ram[MYSMB_PLAYER_SIZE]);
