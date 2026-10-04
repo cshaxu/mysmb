@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P140 enemy runtime indices](../proposals/m2/t70-final-current-certification.md#s17-p140-checkpoint---enemy-runtime-dispatch-index-ownership).
+S17 P140:50enemy-runtime indexed-write conditions joined;374streamalias inventory now59intrinsic/225parent-qualified/90pending. C8823898instructionclosure,BC87forces5/Bowserboundedrearrestore only008publishers;CF4A intrinsic2..0,otherindexed08aliases require>21. Fresh12960qualifiedoriginalparents0scopedRAM/APU/orderdiff bothwidths:34writers fresh,16retainedsource-boundP138/P71/P72/P78receipts. Elevenfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
 [P139 Bowser slot handoffs](../proposals/m2/t70-final-current-certification.md#s17-p139-checkpoint---bowser-slot-constructor-and-runtime-handoffs).
 S17 P139:16Bowser/duplicate indexed-write conditions joined;374streamalias inventory now59intrinsic/175parent-qualified/140pending. RunBowser/BridgeCollapse closures1374/1305instructions,onlyCFF5/D1A9/D1B3publish008;indexedaliases require>21. Fresh41352originalroots0scopedRAM/APU/orderdiff eachwidth,all16joinedwriters observed. CorrectedP137falsefrenzy-reset dependency fromsourcecallers. Sevenfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
