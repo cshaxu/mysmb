@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P142 immutable area row bounds](../proposals/m2/t70-final-current-certification.md#s17-p142-checkpoint---immutable-area-row-constructor-bounds).
+S17 P142:15immutable-area row writeconditions joined;374streamalias inventory now60intrinsic/309parent-qualified/5pending(bubble). All34area streams/1611objects decoded,max160recordbytes;castlestarts0/6,exitheight7/10,stairs<=8/sourceboundedrows. Fresh68serialchains/330752RAMcheckpoints eachwidth0diff,all15writerPC observed. DrawThisRowX13sixwrites intentionallyoverlap06AE,notclamped;globalother-fieldlifetimes remainopen. Thirteenfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
 [P141 remaining slot handoffs](../proposals/m2/t70-final-current-certification.md#s17-p141-checkpoint---qualified-object-slot-index-handoffs).
 S17 P141:70remaining objectslot writeconditions joined(1intrinsic/69parent);374streamalias inventory now60intrinsic/294parent-qualified/20pending(area15/bubble5). OriginalC0474793instructionclosure keepsqualifiedprimary/boundedrear publishes;block0/1,combinedsprite0..21,hammerenemyreference0..5. Fresh2320originalroots0scopedRAM/APU/orderdiff bothwidths,10writers fresh/60retainedcurrent-boundreceipts. Sixactualtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
