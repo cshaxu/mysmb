@@ -2843,12 +2843,13 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M3 T6 | 0 | - | [record](../../docs/history/M3-T5-dos16-composition-root.md); [record](../../docs/history/M3-T6-opennt-mz-link.md); S not recorded |
 | M3 T7 | 0 | - | [record](../../docs/history/M3-T6-opennt-mz-link.md); [record](../../docs/history/M3-T7-dos-hardware-hooks.md); S not recorded |
 | M3 T8 | 0 | - | [record](../../docs/history/M3-T7-dos-hardware-hooks.md); [record](../../docs/history/M3-T8-dos-runtime-structural-evidence.md); S not recorded |
-| M3 T9 | 0 | - | [record](../../docs/proposals/shared-io-and-presentation-switching.md) |
-| M3 T9 S1 | 0 | 0 | portable-io-contracts; [record](../../docs/proposals/shared-io-and-presentation-switching.md) |
-| M3 T9 S2 | 0 | 0 | win32-io-contract-migration; [record](../../docs/proposals/shared-io-and-presentation-switching.md) |
-| M3 T9 S3 | 0 | 0 | dos-graphical-io-bringup; [record](../../docs/proposals/shared-io-and-presentation-switching.md) |
-| M3 T9 S4 | 0 | 0 | dos-device-stabilization; [record](../../docs/proposals/shared-io-and-presentation-switching.md) |
-| M3 T9 S5 | 0 | 0 | dos-sustained-graphics-route; [record](../../docs/proposals/shared-io-and-presentation-switching.md) |
+| M3 T9 | 0 | - | [record](../../docs/history/M3-T9-shared-io-and-graphical-output.md) |
+| M3 T9 S1 | 0 | 0 | portable-io-contracts; [record](../../docs/history/M3-T9-shared-io-and-graphical-output.md) |
+| M3 T9 S2 | 0 | 0 | win32-io-contract-migration; [record](../../docs/history/M3-T9-shared-io-and-graphical-output.md) |
+| M3 T9 S3 | 0 | 0 | dos-graphical-io-bringup; [record](../../docs/history/M3-T9-shared-io-and-graphical-output.md) |
+| M3 T9 S4 | 0 | 0 | dos-device-stabilization; [record](../../docs/history/M3-T9-shared-io-and-graphical-output.md) |
+| M3 T9 S5 | 0 | 0 | dos-sustained-graphics-route; [record](../../docs/history/M3-T9-shared-io-and-graphical-output.md) |
+| M3 T9 S6 | 0 | 0 | integrated-io-boundary-review; [record](../../docs/history/M3-T9-shared-io-and-graphical-output.md) |
 | M4 T1 | 0 | - | [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M4 T2 | 0 | - | [record](../../docs/history/M4-T2-S1-softpc-compatibility-probe.md) |
 | M4 T2 S1 | 0 | 0 | explicit-reference, historical-record; [record](../../docs/history/M4-T2-S1-softpc-compatibility-probe.md) |
@@ -3744,8 +3745,9 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T70 S15 | 17 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/m2/t70-final-current-certification.md) |
 | M2 T70 S16 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/m2/t70-final-current-certification.md) |
 | M2 T70 S17 | 1667 | 1992 | none / 0 | none / 0 | closed-with-owner-approved-deferred-verification; [record](../../docs/history/m2/t70-final-current-certification.md) |
-| M3 T9 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/shared-io-and-presentation-switching.md) |
-| M3 T9 S2 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/shared-io-and-presentation-switching.md) |
-| M3 T9 S3 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/shared-io-and-presentation-switching.md) |
-| M3 T9 S4 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/shared-io-and-presentation-switching.md) |
-| M3 T9 S5 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/shared-io-and-presentation-switching.md) |
+| M3 T9 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T9-shared-io-and-graphical-output.md) |
+| M3 T9 S2 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T9-shared-io-and-graphical-output.md) |
+| M3 T9 S3 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T9-shared-io-and-graphical-output.md) |
+| M3 T9 S4 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T9-shared-io-and-graphical-output.md) |
+| M3 T9 S5 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T9-shared-io-and-graphical-output.md) |
+| M3 T9 S6 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T9-shared-io-and-graphical-output.md) |

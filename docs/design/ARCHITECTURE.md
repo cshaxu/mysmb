@@ -28,6 +28,12 @@ DAC programming and video memory. DOS devices own physical held-key decoding,
 BIOS mode lifetime and PIT sampling. Only its composition root binds local
 immutable program resources and allocates the shared compositor's pixel store.
 
+Application requests are separate from both NES controller ports. Shared
+`io/control` owns the sticky exit decision for Escape on all three targets;
+adapters deliver a request and roots then close their devices. DOS buffers a
+short press until decoded input consumes it;Win32 accepts window key messages
+and window-close requests. No exit request changes original game state.
+
 Game code may request neutral buttons, frame ticks, and command sinks. Windows and DOS adapters translate those contracts to host APIs. Text rendering consumes game object/state commands; it never infers semantics from a bitmap. The runtime contains no 6502 CPU, generic NES PPU, or generic NES APU emulator. Platform selection happens at CMake target boundaries; `game/` does not fork on platform macros.
 
 ## Runtime Admission Boundary

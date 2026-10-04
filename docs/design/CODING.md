@@ -30,4 +30,9 @@ is the far pointer required to address pixels with the DOS16 compiler.
 Existing game and platform representations remain until their admitted
 adapter migrations; the boundary test checks their numeric compatibility.
 
+`io/control` owns application-request lifecycle independently of the game.
+The third input byte carries requests;the two controller bytes keep their
+original meaning. Roots consume the shared exit latch before advancing a tick;
+physical adapters may buffer events but do not decide application termination.
+
 `game/` cannot include host headers or platform macros. `platform/` cannot mutate game internals. `validate/` is optional at runtime and cannot become the gameplay path. CMake selects `mysmb-win32-x86`, `mysmb-win32-x64`, or later `mysmb-dos16`; compile definitions are permitted only beneath the platform roots. The OpenNT 16-bit C compiler verifies the same core in real-mode large-model mode; the later DOS adapter owns linking the full MZ executable. Modern 32/64-bit compilers run the Win32 product.

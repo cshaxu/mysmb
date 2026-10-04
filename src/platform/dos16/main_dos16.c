@@ -47,9 +47,9 @@ int main(void)
     mysmb_vga_frame_initialize(&vga,pages0,pages1,pages2,pages3);
     puts("DOS audio output unavailable");
     mysmb_dos16_devices_open();
-    while (!mysmb_dos16_devices_exit_requested()) {
+    while (root.control.exit_requested==0U) {
         mysmb_dos16_root_step(&root);
-        mysmb_dos16_devices_wait();
+        if (root.control.exit_requested==0U) mysmb_dos16_devices_wait();
     }
     mysmb_dos16_devices_close();
     mysmb_dos16_root_shutdown(&root);

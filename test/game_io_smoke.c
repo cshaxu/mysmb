@@ -15,6 +15,7 @@ int main(void)
 
     decoded.buttons = 0x42U;
     decoded.buttons2 = 0xa0U;
+    decoded.requests=MYSMB_IO_REQUEST_EXIT;
     mysmb_game_io_input(&decoded, &input);
     if (input.buttons != decoded.buttons || input.buttons2 != decoded.buttons2)
         return 1;

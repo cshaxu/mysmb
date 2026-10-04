@@ -11,25 +11,29 @@ scoped evidence and track only named unresolved/invalidated clauses.
 Material993 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
+## M3 T9 S6 - integrated IO closure
+
+Scope/expected/actual[],fresh0;historical1992/1992/local1991/1992 nodes,4260/4261controls unchanged.16source files,+130/-26;shared Escape,14tests eachwidth,fresh three builds/products and actual DOSBox route. [S6 receipt](../history/M3-T9-shared-io-and-graphical-output.md#s6-p1-closure---integrated-io-and-shared-exit).
+
 ## M3 T9 S5 - actual DOS gameplay
 
-Scope/expected/actual[],fresh0;historical1992/1992/local1991/1992 nodes,4260/4261 controls unchanged.4harness files,+281/-0;actual DOSBox title/Start/24seconds gameplay/controls/Esc,13focused+1friction test eachwidth,three builds retained. [S5 receipt](../proposals/shared-io-and-presentation-switching.md#s5-p1-closure---actual-dosbox-gameplay).
+Scope/expected/actual[],fresh0;historical1992/1992/local1991/1992 nodes,4260/4261 controls unchanged.4harness files,+281/-0;actual DOSBox title/Start/24seconds gameplay/controls/Esc,13focused+1friction test eachwidth,three builds retained. [S5 receipt](../history/M3-T9-shared-io-and-graphical-output.md#s5-p1-closure---actual-dosbox-gameplay).
 
 ## M3 T9 S4 - DOS devices
 
-Scope/expected/actual[],fresh0;historical1992/1992/local1991/1992 nodes,4260/4261 controls unchanged.16files,+161/-20,13tests eachwidth,real DOS16 build/scoped graphics,3EXEs. [S4 receipt](../proposals/shared-io-and-presentation-switching.md#s4-p1-closure---dos-device-stabilization).
+Scope/expected/actual[],fresh0;historical1992/1992/local1991/1992 nodes,4260/4261 controls unchanged.16files,+161/-20,13tests eachwidth,real DOS16 build/scoped graphics,3EXEs. [S4 receipt](../history/M3-T9-shared-io-and-graphical-output.md#s4-p1-closure---dos-device-stabilization).
 
 ## M3 T9 S3 - DOS graphical IO
 
-Original scope/expected/actual[],fresh0;historical1992/1992/local1991/1992 nodes,4260/4261 controls unchanged.18 source/test/build files,+432/-292;11tests eachwidth,realDOS16 build,scoped graphic startup and Esc restoration,3localEXEs. [S3 receipt](../proposals/shared-io-and-presentation-switching.md#s3-p1-closure---dos-graphical-io-bring-up).
+Original scope/expected/actual[],fresh0;historical1992/1992/local1991/1992 nodes,4260/4261 controls unchanged.18 source/test/build files,+432/-292;11tests eachwidth,realDOS16 build,scoped graphic startup and Esc restoration,3localEXEs. [S3 receipt](../history/M3-T9-shared-io-and-graphical-output.md#s3-p1-closure---dos-graphical-io-bring-up).
 
 ## M3 T9 S2 - Win32 IO consumers
 
-Original scope/expected/actual matches[],fresh0;historical1992/1992/local1991/1992 nodes,4260/4261 feasible controls unchanged. Actual14 source/test/build files,+253/-121;9tests eachwidth and1024ticks/752640PCM samples zero adaptation diff,OpenNT16 compile/link and3localEXEs. [S2 receipt](../proposals/shared-io-and-presentation-switching.md#s2-p1-closure---win32-io-consumers).
+Original scope/expected/actual matches[],fresh0;historical1992/1992/local1991/1992 nodes,4260/4261 feasible controls unchanged. Actual14 source/test/build files,+253/-121;9tests eachwidth and1024ticks/752640PCM samples zero adaptation diff,OpenNT16 compile/link and3localEXEs. [S2 receipt](../history/M3-T9-shared-io-and-graphical-output.md#s2-p1-closure---win32-io-consumers).
 
 ## M3 T9 S1 - portable IO contracts
 
-Original scope/expected/actual matches all[],fresh0;historical1992/1992 and local1991/1992 nodes,4260/4261 feasible controls unchanged. Eight source/build files,+184/-1;6tests each width pass,OpenNT16 contract compilation/full product link,three local EXEs. Pure contract migration does not complete deferred M2 certification. [S1 receipt](../proposals/shared-io-and-presentation-switching.md#s1-p1-closure---portable-contracts).
+Original scope/expected/actual matches all[],fresh0;historical1992/1992 and local1991/1992 nodes,4260/4261 feasible controls unchanged. Eight source/build files,+184/-1;6tests each width pass,OpenNT16 contract compilation/full product link,three local EXEs. Pure contract migration does not complete deferred M2 certification. [S1 receipt](../history/M3-T9-shared-io-and-graphical-output.md#s1-p1-closure---portable-contracts).
 
 ## M2 T70 S17 - closed with deferred verification
 

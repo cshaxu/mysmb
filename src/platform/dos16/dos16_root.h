@@ -1,6 +1,7 @@
 #ifndef MYSMB_PLATFORM_DOS16_ROOT_H
 #define MYSMB_PLATFORM_DOS16_ROOT_H
 #include "app/game_io.h"
+#include "io/control.h"
 /* Composition root: device consumers receive only neutral IO views. */
 struct mysmb_dos16_hooks {
     void *context;
@@ -9,6 +10,7 @@ struct mysmb_dos16_hooks {
     mysmb_io_u8 (*submit_audio)(void *context, const struct mysmb_io_audio_frame *frame);
 };
 struct mysmb_dos16_root {
+    struct mysmb_io_control control;
     struct mysmb_game game;
     struct mysmb_frame game_frame;
     struct mysmb_ppu_frame ppu_frame;

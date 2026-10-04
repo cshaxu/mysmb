@@ -19,6 +19,10 @@ enum {
 struct mysmb_io_input {
     mysmb_io_u8 buttons;
     mysmb_io_u8 buttons2;
+    /* Application requests are never passed to the NES controller image. */
+    mysmb_io_u8 requests;
 };
+
+enum { MYSMB_IO_REQUEST_EXIT = 0x01 };
 
 #endif

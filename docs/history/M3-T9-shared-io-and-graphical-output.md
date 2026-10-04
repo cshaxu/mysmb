@@ -425,3 +425,88 @@ Optimizer flags remain withdrawn;M4 owns real-machine performance qualification.
 Historical1992/1992/local1991/1992 nodes,4260/4261 controls,42/952facets unchanged;
 scope/expected/actual[],fresh0. Ledger/registry/governance gates required before
 commit. Push unavailable:no configured remote. Automatic S6 admission follows.
+
+## S6 admission - integrated boundary review
+
+Automatically admitted after S5 49f21a9e. Single executor/coordinator;
+expected5-8 governance/archive/index files,80-150 effective lines plus generated
+ledger. No product edit expected. Fresh three-target build/link,14focused tests
+per width,source purity and S5 actual DOSBox route bound to identical bytes.
+Reuse accepted audio PCM adaptation proof when its renderer/glue dependencies
+are unchanged;no redundant whole-ROM audit. Record DOS audio unavailable and
+M4 real486SX performance qualification. Empty original scope/expected/actual[],
+fresh0;retained local nodes/controls/material obligations unchanged. Archive
+the closed T and repair references,leave later candidates unnumbered/unadmitted.
+
+Owner S6 amendment:Escape must have identical exit meaning on DOS16 and both
+Windows widths. Add a neutral application-request byte separate from NES
+controller bits and one portable sticky IO control owner. Physical adapters
+decode Escape;composition roots submit the same request and perform host
+teardown after that shared decision. Window close submits the same request.
+Expected8-12source/test/build files,120-220lines plus closure records. Test
+short/held/released Escape,ordinary controller isolation,no tick after exit,
+hidden Win32 window destruction and DOSBox safe text restoration;refresh
+three local products. Original game code remains unchanged,zero ROM credit.
+
+## S6 P1 closure - integrated IO and shared exit
+
+Owner's Escape amendment delivered one portable IO control owner and one
+application-request byte separate from both controller ports. DOS and Win32
+submit the identical exit request;the shared latch decides termination before
+any following game tick. Roots only perform their respective device teardown.
+DOS queues short press events until read;Win32 accepts short key messages,
+focused held-key polling and window-close requests. Released keys cannot
+cancel an accepted exit. No original game state or controller bit is changed.
+
+Actual16source/test/build files,+130/-26,against the8-12file/120-220
+line amended estimate. Extra keyboard header/event buffering,three existing
+contract/root tests and build registration provide short-press and ABI coverage;
+all remain inside the approved IO boundary. Architecture/layout and generated
+ledger/archive are additional governance changes. No unrelated game repair.
+
+Fresh x86/x64 each14focused tests pass,including actual hidden-window Escape
+messages/destruction,focus pause,ordered audio submission,death audio,PPU,
+VGA scaling,clock and DOS input/root lifecycle. Tests prove unknown requests
+are ignored,exit survives release,controller images remain unchanged and no
+game tick/presentation/audio submission follows accepted exit. Original
+OpenNT16 flags/full resource-bound compile/link pass;known OLDNAMES warning
+retained. The refreshed actual DOS EXE repeats the56-second DOSBox route with
+title/Start/24seconds graphical gameplay,right+J,K jump,left,settled release
+and Escape returning to restored DOS text. Strict capture checks pass and
+the receipt binds the exact delivered binary. No desktop input/window used.
+
+Three local products refreshed:16=309085,32=371435,
+64=384873 bytes. Generated program data,products,runtime
+copies and protected captures stay local/unstaged. S2's1024ticks/752640PCM
+samples per width zero adaptation diff is retained:audio renderer/output and
+composition glue sources are unchanged. Focus/audio regressions are fresh.
+This is finite adaptation/operational proof,not a full ROM certificate.
+
+Coordinator review and similar-issue sweep cover both physical Escape routes,
+short/held/released input,window close,game-controller isolation,root startup
+and exit,device cleanup,all neutral IO/device imports,per-frame mode resets,
+duplicate palettes/scaling and stale product bindings. Purity passes;only
+composition roots connect game output and neutral device capabilities.
+Changed source identities/new control dependencies are explicitly registered
+for deferred M2 final rebinding,no original universe or semantic promotion.
+Historical1992/1992/local1991/1992 nodes,4260/4261controls,42/952facets remain
+unchanged;scope/expected/actual[],fresh0. Closure gates required before commit.
+No configured remote,push unavailable. T9 S1-S6 closed by this reviewed P.
+
+## T9 closure and handoff
+
+Portable input/video/audio/text-placeholder contracts and common color,
+scaling,pacing and exit owners are delivered. Both Win32 widths preserve
+graphics/audio/focus behavior;DOS16 displays actual title/gameplay,accepts
+controls and exits safely through the same control owner. All hosts consume
+the same game implementation and canonical256x240 frame. DOS audio remains
+explicitly unavailable;real25MHz486SX speed/DOS-version qualification remains
+M4 debt. No ASCII game or graphics/text switching is claimed by this T.
+
+Accepted cross-S matrix:S1 C90/16-bit contracts;S2 unchanged Win32 synthesis
+and glue;S3 full palette/scaling/resources/input/device lifetime;S4 physical
+PIT and late-frame pacing;S5 actual DOSBox graphics;S6 fresh three builds,
+shared Escape and integrated regressions. Only S6 changes are rechecked;
+retained proofs are bounded by their unchanged dependencies. Later quick
+snapshot,text presentation/switching and deferred M2 certification remain
+unnumbered pending candidates in that order. No next T silently admitted.

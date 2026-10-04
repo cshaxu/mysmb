@@ -1,4 +1,5 @@
 #include "io/input.h"
+#include "io/control.h"
 #include "io/video.h"
 #include "io/audio.h"
 #include "game/game.h"
@@ -9,6 +10,7 @@ static struct mysmb_io_text_frame text_frame;
 int main(void)
 {
     struct mysmb_io_input input;
+    struct mysmb_io_control control;
     struct mysmb_io_video_frame video;
     struct mysmb_io_audio_frame audio;
     mysmb_io_u16 offset;
@@ -30,6 +32,15 @@ int main(void)
     input.buttons = MYSMB_IO_BUTTON_LEFT | MYSMB_IO_BUTTON_B;
     input.buttons2 = MYSMB_IO_BUTTON_A | MYSMB_IO_BUTTON_SELECT;
     if (input.buttons != 0x42U || input.buttons2 != 0xa0U) return 3;
+    mysmb_io_control_initialize(&control);
+    input.requests=0x80U;
+    mysmb_io_control_input(&control,&input);
+    if (control.exit_requested!=0U) return 7;
+    input.requests=MYSMB_IO_REQUEST_EXIT;
+    mysmb_io_control_input(&control,&input);
+    input.requests=0U;
+    mysmb_io_control_input(&control,&input);
+    if (control.exit_requested==0U || input.buttons!=0x42U || input.buttons2!=0xa0U) return 8;
 
     /* Last row and byte offsets must remain representable by a 16-bit word. */
     for (offset = 0U; offset < MYSMB_IO_VIDEO_PIXELS; ++offset)
@@ -40,7 +51,7 @@ int main(void)
     text_frame.cells[3999U].character = ' ';
     text_frame.cells[3999U].foreground = 15U;
     text_frame.cells[3999U].background = 1U;
-    if (sizeof(text_frame) != 12000U || sizeof(input) != 2U) return 5;
+    if (sizeof(text_frame) != 12000U || sizeof(input) != 3U) return 5;
 
     /* Preserve repeated timer-high writes: each can retrigger a channel. */
     audio.write_count = 2U;

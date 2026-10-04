@@ -1,8 +1,8 @@
 #include "platform/dos16/dos16_root.h"
 #include "platform/dos16/keyboard.h"
-struct host { unsigned calls; unsigned audio_calls; };
+struct host { unsigned calls; unsigned audio_calls; mysmb_io_u8 requests; };
 static void read_input(void *context, struct mysmb_io_input *input)
-{ (void)context; input->buttons=0U; input->buttons2=0U; }
+{ input->buttons=0U; input->buttons2=0U; input->requests=((struct host *)context)->requests; }
 static void present(void *context, const struct mysmb_io_video_frame *frame)
 { if (frame->pixels!=0) ++((struct host *)context)->calls; }
 static mysmb_io_u8 audio(void *context, const struct mysmb_io_audio_frame *frame)
@@ -49,7 +49,19 @@ int main(void)
     mysmb_dos16_keyboard_scan(&keyboard,0xc5U);
     mysmb_dos16_keyboard_input(&keyboard,&input);
     if (input.buttons!=0U || input.buttons2!=0U) return 4;
-    host.calls=0U; host.audio_calls=0U;
+    mysmb_dos16_keyboard_scan(&keyboard,1U);
+    mysmb_dos16_keyboard_input(&keyboard,&input);
+    if (input.requests!=MYSMB_IO_REQUEST_EXIT || input.buttons!=0U) return 10;
+    mysmb_dos16_keyboard_scan(&keyboard,0x81U);
+    mysmb_dos16_keyboard_input(&keyboard,&input);
+    if (input.requests!=0U) return 11;
+    mysmb_dos16_keyboard_scan(&keyboard,1U);
+    mysmb_dos16_keyboard_scan(&keyboard,0x81U);
+    mysmb_dos16_keyboard_input(&keyboard,&input);
+    if (input.requests!=MYSMB_IO_REQUEST_EXIT) return 13;
+    mysmb_dos16_keyboard_input(&keyboard,&input);
+    if (input.requests!=0U) return 14;
+    host.calls=0U; host.audio_calls=0U;host.requests=0U;
     hooks.context=&host; hooks.read_input=read_input; hooks.present_video=present;
     hooks.submit_audio=audio;
     if (mysmb_dos16_root_initialize(&root,0)!=0) return 5;
@@ -59,6 +71,11 @@ int main(void)
     mysmb_dos16_root_step(&root);
     if (root.game.frame_number!=1UL || host.calls!=1U || host.audio_calls!=1U ||
         root.audio_available!=MYSMB_IO_AUDIO_UNAVAILABLE) return 8;
+    host.requests=MYSMB_IO_REQUEST_EXIT;
+    mysmb_dos16_root_step(&root);
+    host.requests=0U;mysmb_dos16_root_step(&root);
+    if (root.control.exit_requested==0U || root.game.frame_number!=1UL ||
+        host.calls!=1U || host.audio_calls!=1U) return 12;
     mysmb_dos16_root_shutdown(&root); mysmb_dos16_root_shutdown(&root);
     mysmb_dos16_root_step(&root);
     return host.calls==1U && host.audio_calls==1U ? 0:9;

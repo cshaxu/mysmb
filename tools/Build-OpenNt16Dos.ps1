@@ -70,7 +70,7 @@ $sources = @(
     'game/oam/spiny_gfx.c', 'game/oam/hammer_bro_gfx.c', 'game/oam/bowser_gfx.c', 'game/oam/bowser_flame_gfx.c', 'game/endgame_objects.c', 'game/oam/flagpole_gfx.c',
     'game/oam/small_platform_gfx.c',
     'game/render.c', 'game/ppu_frame.c', 'game/frame_snapshot.c', 'game/status.c',
-    'app/game_io.c', 'io/color.c', 'io/scale.c', 'io/pacing.c', 'platform/dos16/keyboard.c', 'platform/dos16/pit_clock.c', 'platform/dos16/devices.c',
+    'app/game_io.c', 'io/color.c', 'io/scale.c', 'io/pacing.c', 'io/control.c', 'platform/dos16/keyboard.c', 'platform/dos16/pit_clock.c', 'platform/dos16/devices.c',
     'platform/vga/vga_frame.c', 'platform/dos16/dos16_root.c',
     'platform/dos16/main_dos16.c'
 )

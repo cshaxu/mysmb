@@ -9,6 +9,7 @@ void mysmb_dos16_keyboard_initialize(struct mysmb_dos16_keyboard *keyboard)
     }
     keyboard->prefix = 0U;
     keyboard->pause_bytes = 0U;
+    keyboard->pending_requests=0U;
 }
 
 void mysmb_dos16_keyboard_scan(struct mysmb_dos16_keyboard *keyboard,
@@ -29,11 +30,13 @@ void mysmb_dos16_keyboard_scan(struct mysmb_dos16_keyboard *keyboard,
         return;
     }
     keys = keyboard->prefix != 0U ? keyboard->extended : keyboard->down;
+    if (keyboard->prefix==0U && scan==1U)
+        keyboard->pending_requests|=MYSMB_IO_REQUEST_EXIT;
     keys[scan & 0x7fU] = (scan & 0x80U) != 0U ? 0U : 1U;
     keyboard->prefix = 0U;
 }
 
-void mysmb_dos16_keyboard_input(const struct mysmb_dos16_keyboard *keyboard,
+void mysmb_dos16_keyboard_input(struct mysmb_dos16_keyboard *keyboard,
                                 struct mysmb_io_input *input)
 {
     mysmb_io_u8 buttons;
@@ -48,4 +51,6 @@ void mysmb_dos16_keyboard_input(const struct mysmb_dos16_keyboard *keyboard,
     if (keyboard->down[0x2a] || keyboard->down[0x36]) buttons |= MYSMB_IO_BUTTON_SELECT;
     input->buttons = buttons;
     input->buttons2 = 0U;
+    input->requests=keyboard->pending_requests;
+    keyboard->pending_requests=0U;
 }

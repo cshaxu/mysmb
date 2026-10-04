@@ -9,6 +9,7 @@ int mysmb_dos16_root_initialize(struct mysmb_dos16_root *root,
     mysmb_u8 __far *pixels;
 #endif
     root->initialized=0U;
+    mysmb_io_control_initialize(&root->control);
     root->audio_available=MYSMB_IO_AUDIO_UNAVAILABLE;
     if (hooks==0 || hooks->read_input==0 || hooks->present_video==0) return 0;
 #ifdef MYSMB_DOS16_TARGET
@@ -27,9 +28,12 @@ void mysmb_dos16_root_step(struct mysmb_dos16_root *root)
     struct mysmb_io_input decoded;
     struct mysmb_input input;
     struct mysmb_io_video_frame video;
-    if (root->initialized==0U) return;
-    if (mysmb_game_startup_step(&root->game,1U)==0U) return;
+    if (root->initialized==0U || root->control.exit_requested!=0U) return;
+    decoded.requests=0U;
     root->hooks.read_input(root->hooks.context,&decoded);
+    mysmb_io_control_input(&root->control,&decoded);
+    if (root->control.exit_requested!=0U) return;
+    if (mysmb_game_startup_step(&root->game,1U)==0U) return;
     mysmb_game_io_input(&decoded,&input);
     mysmb_game_tick(&root->game,&input,&root->game_frame);
     mysmb_ppu_frame_build(&root->game,&root->ppu_frame);

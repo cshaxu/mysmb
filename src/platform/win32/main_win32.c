@@ -2,6 +2,7 @@
 
 #include "app/game_io.h"
 #include "io/color.h"
+#include "io/control.h"
 #include "game/area.h"
 #include "game/game.h"
 #include "game/ppu_frame.h"
@@ -30,6 +31,7 @@ static struct mysmb_ppu_frame g_ppu_frame;
 static struct mysmb_io_audio_frame g_audio_frame;
 static struct mysmb_win32_audio_output g_audio_output;
 static struct mysmb_win32_focus_pause g_focus_pause;
+static struct mysmb_io_control g_control;
 static LARGE_INTEGER g_frequency;
 static LARGE_INTEGER g_last_tick;
 static mysmb_u8 g_game_started;
@@ -37,6 +39,17 @@ static mysmb_u8 g_audio_available;
 static mysmb_u8 g_title_paused;
 static BITMAPINFO g_bitmap_info;
 static DWORD g_pixels[MYSMB_SCREEN_WIDTH * MYSMB_SCREEN_HEIGHT];
+static LRESULT CALLBACK mysmb_win32_window_proc(HWND,UINT,WPARAM,LPARAM);
+
+static mysmb_io_u8 mysmb_win32_requests_from_message(UINT message,WPARAM key)
+{
+    return message==WM_CLOSE || (message==WM_KEYDOWN && key==VK_ESCAPE)?
+        MYSMB_IO_REQUEST_EXIT:0U;
+}
+static void mysmb_win32_finish_exit(HWND window)
+{
+    if (g_control.exit_requested!=0U) DestroyWindow(window);
+}
 
 static void mysmb_win32_update_title(HWND window)
 {
@@ -144,6 +157,8 @@ static int mysmb_win32_argument_is_self_test(const char *command)
  * common pixel submission path; translated game behavior is tested in game. */
 static int mysmb_win32_run_self_test(void)
 {
+    WNDCLASS window_class;
+    HWND window;
     if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_LEFT) != MYSMB_BUTTON_LEFT) return 14;
     if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_RIGHT) != MYSMB_BUTTON_RIGHT) return 15;
     if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_DOWN) != MYSMB_BUTTON_DOWN) return 16;
@@ -152,6 +167,25 @@ static int mysmb_win32_run_self_test(void)
     if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_SELECT) != MYSMB_BUTTON_SELECT) return 19;
     if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_B) != MYSMB_BUTTON_B) return 20;
     if (mysmb_win32_buttons_from_keys(MYSMB_WIN32_KEY_A) != MYSMB_BUTTON_A) return 21;
+    if (mysmb_win32_requests_from_message(WM_KEYUP,VK_ESCAPE)!=0U ||
+        mysmb_win32_requests_from_message(WM_KEYDOWN,'K')!=0U ||
+        mysmb_win32_requests_from_message(WM_CLOSE,0U)!=MYSMB_IO_REQUEST_EXIT) return 22;
+    /* Actual hidden window/message/teardown route,no desktop key injection. */
+    ZeroMemory(&window_class,sizeof(window_class));
+    window_class.lpfnWndProc=mysmb_win32_window_proc;
+    window_class.hInstance=GetModuleHandle(NULL);
+    window_class.lpszClassName="MySMBExitProbe";
+    if (!RegisterClass(&window_class)) return 23;
+    window=CreateWindow(window_class.lpszClassName,"",WS_OVERLAPPEDWINDOW,
+        0,0,32,32,NULL,NULL,window_class.hInstance,NULL);
+    if (!window) return 24;
+    mysmb_io_control_initialize(&g_control);
+    SendMessage(window,WM_KEYDOWN,VK_ESCAPE,0);
+    SendMessage(window,WM_KEYUP,VK_ESCAPE,0);
+    if (g_control.exit_requested==0U) {DestroyWindow(window);return 25;}
+    mysmb_win32_finish_exit(window);
+    if (IsWindow(window)) return 26;
+    UnregisterClass(window_class.lpszClassName,window_class.hInstance);
     return 0;
 }
 #endif
@@ -177,6 +211,11 @@ static void mysmb_win32_step(HWND window)
     mysmb_u8 physical_buttons;
     unsigned int steps;
 
+    decoded.buttons=0U;decoded.buttons2=0U;decoded.requests=0U;
+    if (GetForegroundWindow()==window && (GetAsyncKeyState(VK_ESCAPE)&0x8000)!=0)
+        decoded.requests=MYSMB_IO_REQUEST_EXIT;
+    mysmb_io_control_input(&g_control,&decoded);
+    if (g_control.exit_requested!=0U) return;
     QueryPerformanceCounter(&now);
     elapsed = now.QuadPart - g_last_tick.QuadPart;
     frame_period = g_frequency.QuadPart / 60;
@@ -218,7 +257,14 @@ static void mysmb_win32_step(HWND window)
 static LRESULT CALLBACK mysmb_win32_window_proc(HWND window, UINT message,
                                                   WPARAM w_param, LPARAM l_param)
 {
+    struct mysmb_io_input decoded;
     (void)l_param;
+    decoded.buttons=0U;decoded.buttons2=0U;
+    decoded.requests=mysmb_win32_requests_from_message(message,w_param);
+    if (decoded.requests!=0U) {
+        mysmb_io_control_input(&g_control,&decoded);
+        return 0;
+    }
     if (message == WM_KILLFOCUS ||
         (message == WM_ACTIVATEAPP && w_param == 0U)) {
         mysmb_win32_focus_pause_lost(&g_focus_pause, g_game_started, &g_game);
@@ -246,6 +292,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     MSG message;
 
     (void)previous;
+    mysmb_io_control_initialize(&g_control);
     if (mysmb_win32_argument_is_self_test(command) != 0) {
 #ifdef MYSMB_LOCAL_TITLE
         return mysmb_win32_run_self_test();
@@ -296,7 +343,8 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
             TranslateMessage(&message);
             DispatchMessage(&message);
         }
-        mysmb_win32_step(window);
+        if (g_control.exit_requested!=0U) mysmb_win32_finish_exit(window);
+        else mysmb_win32_step(window);
         Sleep(1U);
     }
 }

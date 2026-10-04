@@ -8,7 +8,7 @@
   internal buffer/out-of-memory diagnostic;flags withdrawn. Retain the working
   original toolchain. M4 measures actual486SX performance and qualifies any
   compiler configuration or presentation optimization before shipping it.
-  [Operational scope](../proposals/shared-io-and-presentation-switching.md#s5-admission---sustained-dos-graphics).
+  [Operational scope](../history/M3-T9-shared-io-and-graphical-output.md#s5-admission---sustained-dos-graphics).
 
 - [x] **Shared sprite-clear child graph:** T70 S6 P2 restores one shared
   SprInitLoop,zero/four entry selectors and the actual NMI child call/return.
