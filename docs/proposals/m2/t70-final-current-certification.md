@@ -1,6 +1,78 @@
 # M2 T70: final current-equivalence certification
 
+## S17 P149 checkpoint - startup group integration reconciled
+
+First original-order group owner-051 now contains20 labels/98 instruction
+sites/31 explicit accesses. The existing1667-label S17 admission contains
+every member;no new S,source site,control identity or graph credit.
+All seven group facets are reconciled within their named domains in the
+[audit ledger](../../states/M2_AUDIT_LEDGER.json). Consumer interiors and
+unproved route/output coverage keep their existing obligations.
+
+Exact labels:Start,VBlank1,VBlank2,WBootCheck,ColdBoot,EndlessLoop,
+MoveAllSpritesOffscreen,MoveSpritesOffscreen,SprInitLoop,InitializeNameTables,
+WriteNTAddr,InitNTLoop,InitATLoop,InitializeMemory,InitPageLoop,InitByteLoop,
+InitByte,SkipByte,InitScroll,WritePPUReg1. Sixty registered controls touch
+these labels;their statuses are retained,not newly promoted.
+
+Neutral mapping repair:InitScroll/WritePPUReg1 already named the correct
+boot.c counterpart but retained game.c owner/path metadata. Correct six
+uses,use-01187 through use-01192,from owner-080 to owner-051;group counts
+223->217 and92->98. Restore the concrete boot child path on control-00344,
+control-00353 and control-03535. Existing IDs/PCs and all fixed universe
+digests remain unchanged. Correct InitScroll's old address annotation to
+8EE6-8EEC and a copied P87 receipt description. No game behavior changed.
+
+| Facet | Reconciled condition and evidence |
+| --- | --- |
+| Producer/consumer | All actual clear callers:ColdBoot FE/D6,InitializeGame6F,InitializeArea4B. Generic P36 clear-membership proof covers any later RAM read;explicit reset assignments and NMI OAM/control consumers reviewed. |
+| Address/alias | Every initialY/page,stack exclusion and zero-page pointer selfalias;both sprite entry indices;960 tile/64 attribute writes per nametable and incoming control/scroll byte domains. P36/P87 actual original roots and invariants. |
+| Overwrite | No intervening warm-check writer;clear before reset assignments;table1 before0,buffer/scroll resets in source order;DMA before partial sprite clear;physical control before mirror and saved NMI control restore. P87/P106/P111. |
+| Cross-phase lifetime | Two startup event barriers and first NMI;warm retained score,6F/4B clear retention,area/header/entrance inputs and sound clear. P36/S15/P106 plus retained P126/P127 natural boundary observations. Transition reachability is still route coverage work. |
+| Register/flag/stack | Returned A0 is consumed by ColdBoot and sound clears;area caller reloads X/A;071Cclear0 justifies returned page parity. Helpers preserve incoming A;byte sprite index wraps. Physical CPU flags/stack/poll/idle timing stays declared hardware ABI,not a cycle or pixel claim. |
+| Caller/return | Complete original helper caller census matches current boot/game/title/area/frame roots;name-table fallthrough/tail and packet helper returns preserved. Fixture initialize remains distinct from product Start. |
+| Source binding | Current boot normalized identity matches P87;current186-dependency gate binds consumer sources. Retained P87 comparisons cover all98 PCs/3600 original roots each width with zero declared-state differences. |
+
+P87's old source comment describing768 tile writes is not the loop count:
+first iteration192,then three wrapped256 iterations,totalling960;the C
+implementation and observed original output agree. This is not a new repair.
+Physical PPU latch/fetch/sprite-zero timing remains in the three explicit
+pixel slots;the boot facet closure does not close or waive those slots.
+
+Operational track:exact8 focused checks each x86/x64 pass:cold RAM,reset,
+boot/NMI boundary,NMI parent,nametable,sprite root,area initialization and
+platform purity. Independent width builds/tests ran concurrently,jobs4;
+only7 required native test targets each. Build15.30s each,test0.95s/0.49s.
+No new ROM run was needed:retained original results and their source identity
+were checked before reuse. All temporary admission/review/logs stay ignored.
+
+Result:1/136 groups and7/952 facets closed,945 facets pending;two localized
+findings and all13 coverage slots still open. Local1991/1992 nodes,
+4260/4261 feasible controls(raw4342,infeasible81),993 partial material
+receipts unchanged. Six packages:startup/bindings closed,other four open.
+Full M2 remains incomplete. No game source or product change;retain P144
+three EXEs and original DOS16 compile/link receipt. S17 and T70 stay open;
+next source-order group is owner-077,whose exact scope must be admitted
+before reconciliation.
+
 ## Current Continuation Plan - P147
+
+P149 admission: first original-order group owner-051. Initial92 instruction
+sites plus six InitScroll/WritePPUReg1 sites currently misassigned to game.c;
+actual definitions and current linked symbols are boot.c. Correct this neutral
+mapping with an explicit change event,not a source-universe or status change.
+Twenty exact labels:Start,VBlank1,VBlank2,WBootCheck,ColdBoot,EndlessLoop,
+MoveAllSpritesOffscreen,MoveSpritesOffscreen,SprInitLoop,InitializeNameTables,
+WriteNTAddr,InitNTLoop,InitATLoop,InitializeMemory,InitPageLoop,InitByteLoop,
+InitByte,SkipByte,InitScroll,WritePPUReg1. All inside existing1667 participants;
+expected graph credit0. Reuse P36clear invariants/P87startup and helpers,
+S15startup publication/P106NMI consumer/P111saved-control/P125-P127installed
+and natural boundaries subject to exact dependency review. Static review
+includes every InitializeMemory caller and helper consumer,not only leaf RAM
+equality. Seven facet closures need named domains and source/ROM receipts;
+hardware pixel timing remains its explicit coverage slots,not silently waived.
+Run only bounded startup/clear/NMI focused checks on both current widths.
+No product edit or EXErefresh unless actual behavior mismatch is found.
 
 P148 prerequisite amendment: owner requests verification performance audit.
 Within existing S17,measure registry/ledger indexing,CTest/process costs and

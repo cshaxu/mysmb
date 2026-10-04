@@ -28146,7 +28146,7 @@
       "asmLine": 2527,
       "cohort": "C",
       "status": "exact",
-      "currentOwner": "src/game/game.c",
+      "currentOwner": "src/game/boot.c",
       "currentCounterpart": "src/game/boot.c:mysmb_game_init_scroll",
       "semanticEvidence": [
         "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order.",
@@ -28158,7 +28158,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P124 checkpoint - queued status palette and NMI handoff:bounded27/54-byte queue selected-bufferclear/sourceorder;natural frequencies/globalaliases pending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P136 checkpoint - entrance buffer reset and retained raw alias:controlled0300reset-to-entranceX0 join;rawvine/waterX5 aliasretained,legaltransition/fullframeprefix unproved,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:15qualifiedimmutablearea rowconstructors;row13adjacentfieldoverlap preserved,otherlifetimesremainseparate,no globalgraphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:15qualifiedimmutablearea rowconstructors;row13adjacentfieldoverlap preserved,otherlifetimesremainseparate,no globalgraphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled: correct concrete boot helper owner; unchanged implementation and scoped disposition."
       ],
       "operationalEvidence": [
         "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass.",
@@ -28168,11 +28169,12 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P124 checkpoint - queued status palette and NMI handoff:2048 eight-turn original/native chains eachwidth0scopedRAM/APU/orderdiff,6focusedtests,unchangedP123products.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P136 checkpoint - entrance buffer reset and retained raw alias:17408originalchains0scopedRAM/APU/orderdiff bothwidths,53observedlabels/410PC,7focusedtests;physicalABIexcluded,no pixel/globalclaim.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:68freshserialchains/330752RAMcheckpoints0diff eachwidth,all15writerPCactualindicesobserved,13tests;notfullgameplayorunobservedcoverage."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:68freshserialchains/330752RAMcheckpoints0diff eachwidth,all15writerPCactualindicesobserved,13tests;notfullgameplayorunobservedcoverage.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled: current linked boot.c symbols and eight focused tests each width; retained P87 original roots."
       ],
-      "semanticContract": "ROM $8ed6: writes zero/current accumulator to both scroll registers.",
+      "semanticContract": "ROM $8ee6-$8eec: writes incoming accumulator twice to scroll registers, then returns.",
       "currentSourcePaths": [
-        "src/game/game.c"
+        "src/game/boot.c"
       ],
       "evidence": "M2 T55 S8 static source audit and controlled original-ROM/x86/x64 VRAM packet routes"
     },
@@ -28181,7 +28183,7 @@
       "asmLine": 2533,
       "cohort": "C",
       "status": "exact",
-      "currentOwner": "src/game/game.c",
+      "currentOwner": "src/game/boot.c",
       "currentCounterpart": "src/game/boot.c:mysmb_game_write_ppu_control",
       "semanticEvidence": [
         "M2 T55 S8 source audit: SMB1 lines 2482-2536 matches game.c packet header decode, payload loops, indirect pointer progression, terminator, scroll and PPU control order.",
@@ -28192,7 +28194,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled:15labels/83instructions/14RAM joined9boundedclauses;warmdigit/marker/clear/table/scroll/control order reviewed,CPUhardwarepoll/idle ABI explicit;wholeproducer/inter-frame pending,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P124 checkpoint - queued status palette and NMI handoff:bounded27/54-byte queue selected-bufferclear/sourceorder;natural frequencies/globalaliases pending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:15qualifiedimmutablearea rowconstructors;row13adjacentfieldoverlap preserved,otherlifetimesremainseparate,no globalgraphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:15qualifiedimmutablearea rowconstructors;row13adjacentfieldoverlap preserved,otherlifetimesremainseparate,no globalgraphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled: correct concrete boot helper owner; unchanged implementation and scoped disposition."
       ],
       "operationalEvidence": [
         "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical routes, direct chained carry and NMI-parent x86/x64 tests, platform-purity audit and DOS16 build pass.",
@@ -28201,11 +28204,12 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled:3600originalroots eachwidthfullRAM/CIRAM/palette/OAM/APU/control/mask/scroll0diff,onlyobservedphysicalstackpushbytesexcluded,all83PC/9branchpairs,4tests each;source/threeP81productsunchanged.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P124 checkpoint - queued status palette and NMI handoff:2048 eight-turn original/native chains eachwidth0scopedRAM/APU/orderdiff,6focusedtests,unchangedP123products.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:68freshserialchains/330752RAMcheckpoints0diff eachwidth,all15writerPCactualindicesobserved,13tests;notfullgameplayorunobservedcoverage."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:68freshserialchains/330752RAMcheckpoints0diff eachwidth,all15writerPCactualindicesobserved,13tests;notfullgameplayorunobservedcoverage.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled: current linked boot.c symbols and eight focused tests each width; retained P87 original roots."
       ],
-      "semanticContract": "ROM $8edb: writes PPU control register and its mirror.",
+      "semanticContract": "ROM $8eed-$8ef3: writes incoming accumulator to the physical PPU control register, then its RAM mirror, then returns.",
       "currentSourcePaths": [
-        "src/game/game.c"
+        "src/game/boot.c"
       ],
       "evidence": "M2 T55 S8 static source audit and controlled original-ROM/x86/x64 VRAM packet routes"
     },
@@ -80006,13 +80010,15 @@
       "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "M2 T55 S8 source-order control audit: SMB1 lines 2482-2536 branch, loop, call and return relations match the shared packet interpreter."
+        "M2 T55 S8 source-order control audit: SMB1 lines 2482-2536 branch, loop, call and return relations match the shared packet interpreter.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled: packet owner invokes canonical boot helper; concrete child dependency restored."
       ],
       "operationalEvidence": [
         "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical packet routes and direct chained carry/NMI-parent x86/x64 tests pass."
       ],
       "semanticContract": "Original SetupWrites -> WritePPUReg1 call relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
+        "src/game/boot.c",
         "src/game/game.c"
       ],
       "evidence": "M2 T55 S8 source-order control audit and controlled original-ROM/x86/x64 VRAM packet routes"
@@ -80204,13 +80210,15 @@
       "status": "exact",
       "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
-        "M2 T55 S8 source-order control audit: SMB1 lines 2482-2536 branch, loop, call and return relations match the shared packet interpreter."
+        "M2 T55 S8 source-order control audit: SMB1 lines 2482-2536 branch, loop, call and return relations match the shared packet interpreter.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled: packet owner invokes canonical boot helper; concrete child dependency restored."
       ],
       "operationalEvidence": [
         "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical packet routes and direct chained carry/NMI-parent x86/x64 tests pass."
       ],
       "semanticContract": "Original UpdateScreen -> InitScroll fallthrough relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
+        "src/game/boot.c",
         "src/game/game.c"
       ],
       "evidence": "M2 T55 S8 source-order control audit and controlled original-ROM/x86/x64 VRAM packet routes"
@@ -151460,7 +151468,8 @@
       "currentCounterpart": "src/game/game.c:mysmb_game_apply_vram_commands",
       "semanticEvidence": [
         "M2 T55 S8 source-order control audit: SMB1 lines 2482-2536 branch, loop, call and return relations match the shared packet interpreter.",
-        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence."
+        "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps:original8000-8059/8e19-8e5b/8ee6-8ef3/90cc-90e6 source clauses,byte-domain and pointer invariants,canonical child/store order;three retained unmodified Start observations. Native hardware-event ABI is explicit,not CPU-cycle equivalence.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled: packet owner invokes canonical boot helper; concrete child dependency restored."
       ],
       "operationalEvidence": [
         "M2 T55 S8 input-identical original-ROM/x86/x64 repeat and vertical packet routes and direct chained carry/NMI-parent x86/x64 tests pass.",
@@ -151468,6 +151477,7 @@
       ],
       "semanticContract": "Original WritePPUReg1 -> SetupWrites return relation must preserve source predicate, register/RAM handoff and successor or return behavior.",
       "currentSourcePaths": [
+        "src/game/boot.c",
         "src/game/game.c"
       ],
       "evidence": "M2 T55 S8 source-order control audit and controlled original-ROM/x86/x64 VRAM packet routes"

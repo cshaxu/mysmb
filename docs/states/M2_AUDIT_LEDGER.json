@@ -4,7 +4,7 @@
   "authority": "docs/states/CURRENT.md",
   "registry": "docs/states/M2_CURRENT_EQUIVALENCE.json",
   "taskId": "M2 T70 S17",
-  "part": "P148",
+  "part": "P149",
   "deadline": null,
   "universe": {
     "version": 1,
@@ -223,7 +223,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B1"
+      "localReceipt": "S17 P87 startup original roots clause B1"
     },
     {
       "id": "use-00002",
@@ -234,7 +234,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B1"
+      "localReceipt": "S17 P87 startup original roots clause B1"
     },
     {
       "id": "use-00003",
@@ -245,7 +245,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B1"
+      "localReceipt": "S17 P87 startup original roots clause B1"
     },
     {
       "id": "use-00004",
@@ -256,7 +256,7 @@
       "memoryRegion": "hardware-base",
       "effect": "write",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B1"
+      "localReceipt": "S17 P87 startup original roots clause B1"
     },
     {
       "id": "use-00005",
@@ -267,7 +267,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B1"
+      "localReceipt": "S17 P87 startup original roots clause B1"
     },
     {
       "id": "use-00006",
@@ -278,7 +278,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B1"
+      "localReceipt": "S17 P87 startup original roots clause B1"
     },
     {
       "id": "use-00007",
@@ -289,7 +289,7 @@
       "memoryRegion": "hardware-base",
       "effect": "read",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B1"
+      "localReceipt": "S17 P87 startup original roots clause B1"
     },
     {
       "id": "use-00008",
@@ -300,7 +300,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B1"
+      "localReceipt": "S17 P87 startup original roots clause B1"
     },
     {
       "id": "use-00009",
@@ -311,7 +311,7 @@
       "memoryRegion": "hardware-base",
       "effect": "read",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B1"
+      "localReceipt": "S17 P87 startup original roots clause B1"
     },
     {
       "id": "use-00010",
@@ -322,7 +322,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B1"
+      "localReceipt": "S17 P87 startup original roots clause B1"
     },
     {
       "id": "use-00011",
@@ -333,7 +333,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B1"
+      "localReceipt": "S17 P87 startup original roots clause B1"
     },
     {
       "id": "use-00012",
@@ -344,7 +344,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B1"
+      "localReceipt": "S17 P87 startup original roots clause B1"
     },
     {
       "id": "use-00013",
@@ -355,7 +355,7 @@
       "memoryRegion": "RAM-base",
       "effect": "read",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B2"
+      "localReceipt": "S17 P87 startup original roots clause B2"
     },
     {
       "id": "use-00014",
@@ -366,7 +366,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B2"
+      "localReceipt": "S17 P87 startup original roots clause B2"
     },
     {
       "id": "use-00015",
@@ -377,7 +377,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B2"
+      "localReceipt": "S17 P87 startup original roots clause B2"
     },
     {
       "id": "use-00016",
@@ -388,7 +388,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B2"
+      "localReceipt": "S17 P87 startup original roots clause B2"
     },
     {
       "id": "use-00017",
@@ -399,7 +399,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B2"
+      "localReceipt": "S17 P87 startup original roots clause B2"
     },
     {
       "id": "use-00018",
@@ -410,7 +410,7 @@
       "memoryRegion": "RAM-base",
       "effect": "read",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B2"
+      "localReceipt": "S17 P87 startup original roots clause B2"
     },
     {
       "id": "use-00019",
@@ -421,7 +421,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B2"
+      "localReceipt": "S17 P87 startup original roots clause B2"
     },
     {
       "id": "use-00020",
@@ -432,7 +432,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B2"
+      "localReceipt": "S17 P87 startup original roots clause B2"
     },
     {
       "id": "use-00021",
@@ -443,7 +443,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B2"
+      "localReceipt": "S17 P87 startup original roots clause B2"
     },
     {
       "id": "use-00022",
@@ -454,7 +454,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B3"
+      "localReceipt": "S17 P87 startup original roots clause B3"
     },
     {
       "id": "use-00023",
@@ -465,7 +465,7 @@
       "memoryRegion": "hardware-base",
       "effect": "write",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B3"
+      "localReceipt": "S17 P87 startup original roots clause B3"
     },
     {
       "id": "use-00024",
@@ -476,7 +476,7 @@
       "memoryRegion": "RAM-base",
       "effect": "write",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B3"
+      "localReceipt": "S17 P87 startup original roots clause B3"
     },
     {
       "id": "use-00025",
@@ -487,7 +487,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B3"
+      "localReceipt": "S17 P87 startup original roots clause B3"
     },
     {
       "id": "use-00026",
@@ -498,7 +498,7 @@
       "memoryRegion": "RAM-base",
       "effect": "write",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B3"
+      "localReceipt": "S17 P87 startup original roots clause B3"
     },
     {
       "id": "use-00027",
@@ -509,7 +509,7 @@
       "memoryRegion": "RAM-base",
       "effect": "write",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B3"
+      "localReceipt": "S17 P87 startup original roots clause B3"
     },
     {
       "id": "use-00028",
@@ -520,7 +520,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B3"
+      "localReceipt": "S17 P87 startup original roots clause B3"
     },
     {
       "id": "use-00029",
@@ -531,7 +531,7 @@
       "memoryRegion": "hardware-base",
       "effect": "write",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B3"
+      "localReceipt": "S17 P87 startup original roots clause B3"
     },
     {
       "id": "use-00030",
@@ -542,7 +542,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B3"
+      "localReceipt": "S17 P87 startup original roots clause B3"
     },
     {
       "id": "use-00031",
@@ -553,7 +553,7 @@
       "memoryRegion": "hardware-base",
       "effect": "write",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B3"
+      "localReceipt": "S17 P87 startup original roots clause B3"
     },
     {
       "id": "use-00032",
@@ -564,7 +564,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B3"
+      "localReceipt": "S17 P87 startup original roots clause B3"
     },
     {
       "id": "use-00033",
@@ -575,7 +575,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B3"
+      "localReceipt": "S17 P87 startup original roots clause B3"
     },
     {
       "id": "use-00034",
@@ -586,7 +586,7 @@
       "memoryRegion": "RAM-base",
       "effect": "read-write",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B3"
+      "localReceipt": "S17 P87 startup original roots clause B3"
     },
     {
       "id": "use-00035",
@@ -597,7 +597,7 @@
       "memoryRegion": "RAM-base",
       "effect": "read",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B3"
+      "localReceipt": "S17 P87 startup original roots clause B3"
     },
     {
       "id": "use-00036",
@@ -608,7 +608,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B3"
+      "localReceipt": "S17 P87 startup original roots clause B3"
     },
     {
       "id": "use-00037",
@@ -619,7 +619,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B3"
+      "localReceipt": "S17 P87 startup original roots clause B3"
     },
     {
       "id": "use-00038",
@@ -630,7 +630,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause B4"
+      "localReceipt": "S17 P87 startup original roots clause B4"
     },
     {
       "id": "use-00039",
@@ -2610,7 +2610,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause S1"
+      "localReceipt": "S17 P87 startup original roots clause S1"
     },
     {
       "id": "use-00219",
@@ -2621,7 +2621,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause S1"
+      "localReceipt": "S17 P87 startup original roots clause S1"
     },
     {
       "id": "use-00220",
@@ -2632,7 +2632,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause S1"
+      "localReceipt": "S17 P87 startup original roots clause S1"
     },
     {
       "id": "use-00221",
@@ -2643,7 +2643,7 @@
       "memoryRegion": "RAM-base",
       "effect": "write",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause S1"
+      "localReceipt": "S17 P87 startup original roots clause S1"
     },
     {
       "id": "use-00222",
@@ -2654,7 +2654,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause S1"
+      "localReceipt": "S17 P87 startup original roots clause S1"
     },
     {
       "id": "use-00223",
@@ -2665,7 +2665,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause S1"
+      "localReceipt": "S17 P87 startup original roots clause S1"
     },
     {
       "id": "use-00224",
@@ -2676,7 +2676,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause S1"
+      "localReceipt": "S17 P87 startup original roots clause S1"
     },
     {
       "id": "use-00225",
@@ -2687,7 +2687,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause S1"
+      "localReceipt": "S17 P87 startup original roots clause S1"
     },
     {
       "id": "use-00226",
@@ -2698,7 +2698,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause S1"
+      "localReceipt": "S17 P87 startup original roots clause S1"
     },
     {
       "id": "use-00227",
@@ -2709,7 +2709,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause S1"
+      "localReceipt": "S17 P87 startup original roots clause S1"
     },
     {
       "id": "use-00228",
@@ -12136,7 +12136,7 @@
       "memoryRegion": "hardware-base",
       "effect": "read",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N1"
+      "localReceipt": "S17 P87 startup original roots clause N1"
     },
     {
       "id": "use-01085",
@@ -12147,7 +12147,7 @@
       "memoryRegion": "RAM-base",
       "effect": "read",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N1"
+      "localReceipt": "S17 P87 startup original roots clause N1"
     },
     {
       "id": "use-01086",
@@ -12158,7 +12158,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N1"
+      "localReceipt": "S17 P87 startup original roots clause N1"
     },
     {
       "id": "use-01087",
@@ -12169,7 +12169,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N1"
+      "localReceipt": "S17 P87 startup original roots clause N1"
     },
     {
       "id": "use-01088",
@@ -12180,7 +12180,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N1"
+      "localReceipt": "S17 P87 startup original roots clause N1"
     },
     {
       "id": "use-01089",
@@ -12191,7 +12191,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N1"
+      "localReceipt": "S17 P87 startup original roots clause N1"
     },
     {
       "id": "use-01090",
@@ -12202,7 +12202,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N1"
+      "localReceipt": "S17 P87 startup original roots clause N1"
     },
     {
       "id": "use-01091",
@@ -12213,7 +12213,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N1"
+      "localReceipt": "S17 P87 startup original roots clause N1"
     },
     {
       "id": "use-01092",
@@ -12224,7 +12224,7 @@
       "memoryRegion": "hardware-base",
       "effect": "write",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N2"
+      "localReceipt": "S17 P87 startup original roots clause N2"
     },
     {
       "id": "use-01093",
@@ -12235,7 +12235,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N2"
+      "localReceipt": "S17 P87 startup original roots clause N2"
     },
     {
       "id": "use-01094",
@@ -12246,7 +12246,7 @@
       "memoryRegion": "hardware-base",
       "effect": "write",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N2"
+      "localReceipt": "S17 P87 startup original roots clause N2"
     },
     {
       "id": "use-01095",
@@ -12257,7 +12257,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N2"
+      "localReceipt": "S17 P87 startup original roots clause N2"
     },
     {
       "id": "use-01096",
@@ -12268,7 +12268,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N2"
+      "localReceipt": "S17 P87 startup original roots clause N2"
     },
     {
       "id": "use-01097",
@@ -12279,7 +12279,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N2"
+      "localReceipt": "S17 P87 startup original roots clause N2"
     },
     {
       "id": "use-01098",
@@ -12290,7 +12290,7 @@
       "memoryRegion": "hardware-base",
       "effect": "write",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N2"
+      "localReceipt": "S17 P87 startup original roots clause N2"
     },
     {
       "id": "use-01099",
@@ -12301,7 +12301,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N2"
+      "localReceipt": "S17 P87 startup original roots clause N2"
     },
     {
       "id": "use-01100",
@@ -12312,7 +12312,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N2"
+      "localReceipt": "S17 P87 startup original roots clause N2"
     },
     {
       "id": "use-01101",
@@ -12323,7 +12323,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N2"
+      "localReceipt": "S17 P87 startup original roots clause N2"
     },
     {
       "id": "use-01102",
@@ -12334,7 +12334,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N2"
+      "localReceipt": "S17 P87 startup original roots clause N2"
     },
     {
       "id": "use-01103",
@@ -12345,7 +12345,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N2"
+      "localReceipt": "S17 P87 startup original roots clause N2"
     },
     {
       "id": "use-01104",
@@ -12356,7 +12356,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N2"
+      "localReceipt": "S17 P87 startup original roots clause N2"
     },
     {
       "id": "use-01105",
@@ -12367,7 +12367,7 @@
       "memoryRegion": "RAM-base",
       "effect": "write",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N2"
+      "localReceipt": "S17 P87 startup original roots clause N2"
     },
     {
       "id": "use-01106",
@@ -12378,7 +12378,7 @@
       "memoryRegion": "RAM-base",
       "effect": "write",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N2"
+      "localReceipt": "S17 P87 startup original roots clause N2"
     },
     {
       "id": "use-01107",
@@ -12389,7 +12389,7 @@
       "memoryRegion": "hardware-base",
       "effect": "write",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N3"
+      "localReceipt": "S17 P87 startup original roots clause N3"
     },
     {
       "id": "use-01108",
@@ -12400,7 +12400,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N3"
+      "localReceipt": "S17 P87 startup original roots clause N3"
     },
     {
       "id": "use-01109",
@@ -12411,7 +12411,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N3"
+      "localReceipt": "S17 P87 startup original roots clause N3"
     },
     {
       "id": "use-01110",
@@ -12422,7 +12422,7 @@
       "memoryRegion": "RAM-base",
       "effect": "write",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N3"
+      "localReceipt": "S17 P87 startup original roots clause N3"
     },
     {
       "id": "use-01111",
@@ -12433,7 +12433,7 @@
       "memoryRegion": "RAM-base",
       "effect": "write",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N3"
+      "localReceipt": "S17 P87 startup original roots clause N3"
     },
     {
       "id": "use-01112",
@@ -12444,7 +12444,7 @@
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause N3"
+      "localReceipt": "S17 P87 startup original roots clause N3"
     },
     {
       "id": "use-01113",
@@ -13264,67 +13264,67 @@
       "id": "use-01187",
       "pc": "8ee6",
       "label": "InitScroll",
-      "currentOwner": "src/game/game.c",
-      "group": "owner-080",
+      "currentOwner": "src/game/boot.c",
+      "group": "owner-051",
       "memoryRegion": "hardware-base",
       "effect": "write",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause P1"
+      "localReceipt": "S17 P87 startup original roots clause P1"
     },
     {
       "id": "use-01188",
       "pc": "8ee9",
       "label": "InitScroll",
-      "currentOwner": "src/game/game.c",
-      "group": "owner-080",
+      "currentOwner": "src/game/boot.c",
+      "group": "owner-051",
       "memoryRegion": "hardware-base",
       "effect": "write",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause P1"
+      "localReceipt": "S17 P87 startup original roots clause P1"
     },
     {
       "id": "use-01189",
       "pc": "8eec",
       "label": "InitScroll",
-      "currentOwner": "src/game/game.c",
-      "group": "owner-080",
+      "currentOwner": "src/game/boot.c",
+      "group": "owner-051",
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause P1"
+      "localReceipt": "S17 P87 startup original roots clause P1"
     },
     {
       "id": "use-01190",
       "pc": "8eed",
       "label": "WritePPUReg1",
-      "currentOwner": "src/game/game.c",
-      "group": "owner-080",
+      "currentOwner": "src/game/boot.c",
+      "group": "owner-051",
       "memoryRegion": "hardware-base",
       "effect": "write",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause P1"
+      "localReceipt": "S17 P87 startup original roots clause P1"
     },
     {
       "id": "use-01191",
       "pc": "8ef0",
       "label": "WritePPUReg1",
-      "currentOwner": "src/game/game.c",
-      "group": "owner-080",
+      "currentOwner": "src/game/boot.c",
+      "group": "owner-051",
       "memoryRegion": "RAM-base",
       "effect": "write",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause P1"
+      "localReceipt": "S17 P87 startup original roots clause P1"
     },
     {
       "id": "use-01192",
       "pc": "8ef3",
       "label": "WritePPUReg1",
-      "currentOwner": "src/game/game.c",
-      "group": "owner-080",
+      "currentOwner": "src/game/boot.c",
+      "group": "owner-051",
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
-      "localReceipt": "S17 P87 enemy graphics original roots clause P1"
+      "localReceipt": "S17 P87 startup original roots clause P1"
     },
     {
       "id": "use-01193",
@@ -119794,35 +119794,133 @@
       "id": "owner-051",
       "currentOwner": "src/game/boot.c",
       "receiver": "M2 T70 S17",
-      "useCount": 92,
+      "useCount": 98,
       "facets": {
         "producerConsumer": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "All20 boot labels/98 source sites: descending six-digit/marker warm selector; all-byte clear parameters FE/D6/6F/4B; reset outputs, OAM-Y producer, both nametables, scroll/control helpers. Source caller census includes ColdBoot, InitializeGame, InitializeArea, InitScreen, ResetSpritesAndScreenTimer, ScreenOff, UpdateScreen and SetupWrites. Generic clear membership supplies any downstream RAM reader; later consumer interiors retain their own owner obligations.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement"
+          ],
+          "operationalEvidence": "P149 eight exact focused checks each x86/x64; P144 products retained; no game source change."
         },
         "addressAlias": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Every initial Y byte and all eight RAM pages: 06=0,07=page; skip page1 offsets60..FF, retain page7 offsets above initial Y; page0 self-pointer stores remain zero and do not redirect clearing. Sprite entry0/4 wraps by4; tile writes960 and attributes64 per table, table1 before0; control/scroll helpers all256 incoming bytes. Physical PPU latch/fetch timing is held by pixel coverage, not converted into a RAM alias claim.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement"
+          ],
+          "operationalEvidence": "P149 eight exact focused checks each x86/x64; P144 products retained; no game source change."
         },
         "overwrite": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Within boot chain no intervening writer between warm-digit/marker selection and clear; source initialization clears precede explicit reset assignments. Both nametable fills reset0300/0301 and073F/0740 in source order. Control helper writes physical output before0778. NMI DMA samples prior RAM OAM before partial Y clear/shuffle; saved physical control is restored independently of mode-child mirror changes. Subsequent unrelated RAM writers remain consumer-owner obligations.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement"
+          ],
+          "operationalEvidence": "P149 eight exact focused checks each x86/x64; P144 products retained; no game source change."
         },
         "crossPhaseLifetime": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Reset-to-first-NMI uses the original two VBlank event barriers, preserves warm score/marker domain, transfers OAM first in NMI rather than constructor, and restores saved physical control at NMI return. InitializeGame(6F) sound clear and InitializeArea(4B) retention of entrance/halfway/header state follow the structural clear predicate for every starting byte. Area/entrance/death transitions use this same routine; their route reachability and rendered output are separate pending coverage slots.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement"
+          ],
+          "operationalEvidence": "P149 eight exact focused checks each x86/x64; P144 products retained; no game source change."
         },
         "registerFlagStack": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "OriginalInitializeMemory returns A0; ColdBoot4011/OperMode and InitializeGame sound clears consume0. InitializeArea reloads X/A after child; source leftX071C cleared0 justifies returned GetScreenPosition page parity. InitScroll and WritePPUReg1 preserve incoming A without child mutation; InitATLoop reaches A0/X0. Sprite loop increments byte Y by4. CPU physical stack push slots, SEI/CLD/TXS, poll/idle cycles and RTI are explicit native hardware-event ABI, not claimed CPU-cycle equivalence or a pixels waiver.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement"
+          ],
+          "operationalEvidence": "P149 eight exact focused checks each x86/x64; P144 products retained; no game source change."
         },
         "callerReturn": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "All actual source callers of the five shared boot helpers, source nametable JSR/fallthrough/tail and Start nonreturning idle reviewed against C. ColdBoot, InitScreen and ResetSpritesAndScreenTimer invoke all-sprite root; NMI invokes partial root only after DMA with split/unpaused condition. InitializeGame/Area clear inputs6F/4B and consumed A0/parity retained. UpdateScreen terminal A0 and SetupWrites control invoke the canonical helpers; native fixture initialize is not a product Start entry. Sixty touching registered controls retain statuses; no cartesian edge promotion.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement"
+          ],
+          "operationalEvidence": "P149 eight exact focused checks each x86/x64; P144 products retained; no game source change."
         },
         "sourceBinding": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Current normalized boot.c identity equals P87 owner identity; all98 PCs actually observed in its retained3600 original roots each width, zero differences for full declared RAM/CIRAM/palette/OAM/APU/control/mask/scroll comparisons. Current186-source snapshot gate binds callers/children; P36 clear invariant and P106/P111 NMI clauses reviewed at actual current call sites. Two stale helper owner rows/six uses/three control path lists corrected with explicit event. Physical CPU/PPU exclusions and unrelated pending route/output contracts remain visible.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled",
+            "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
+            "docs/proposals/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement"
+          ],
+          "operationalEvidence": "P149 eight exact focused checks each x86/x64; P144 products retained; no game source change."
         }
       },
       "currentSourcePaths": [
@@ -120954,7 +121052,7 @@
       "id": "owner-080",
       "currentOwner": "src/game/game.c",
       "receiver": "M2 T70 S17",
-      "useCount": 223,
+      "useCount": 217,
       "facets": {
         "producerConsumer": {
           "status": "pending-reconciliation",
@@ -123386,6 +123484,44 @@
       "cause": "Owner requests verification performance audit;single-pass metadata indexing and exact-scope build/run,retained acceptance unchanged.",
       "nodeControlCredit": 0,
       "scopeChanged": false
+    },
+    {
+      "id": "P149-startup-owner-reconciliation",
+      "cause": "Correct stale InitScroll/WritePPUReg1 owner mapping; reconcile first source-order startup group using unchanged bound source and retained proofs.",
+      "movedUseIds": [
+        "use-01187",
+        "use-01188",
+        "use-01189",
+        "use-01190",
+        "use-01191",
+        "use-01192"
+      ],
+      "fromGroup": "owner-080",
+      "toGroup": "owner-051",
+      "labels": [
+        "InitScroll",
+        "WritePPUReg1"
+      ],
+      "controlPathIds": [
+        "control-00344",
+        "control-00353",
+        "control-03535"
+      ],
+      "closedGroupIds": [
+        "owner-051"
+      ],
+      "closedFacets": [
+        "producerConsumer",
+        "addressAlias",
+        "overwrite",
+        "crossPhaseLifetime",
+        "registerFlagStack",
+        "callerReturn",
+        "sourceBinding"
+      ],
+      "nodeControlCredit": 0,
+      "sourceUniverseChanged": false,
+      "groupUniverseChanged": false
     }
   ],
   "closure": "All group facets, findings and coverage slots evidence-closed; six registry packages closed; no unresolved source mismatch; final source/data/build binding. No all-input theorem inferred.",

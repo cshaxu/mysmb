@@ -13,7 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
-P148 performance-only receipt:ledger indexing and exact scoped builds/tests optimized;no semantic credit or game source change. Local1991/1992 nodes,4260/4261 feasible controls(raw4342/infeasible81);all952integration facets remain pending reconciliation,13coverage slots open.
+[P149 startup reconciliation](../proposals/m2/t70-final-current-certification.md#s17-p149-checkpoint---startup-group-integration-reconciled):owner-05120labels/98sites/31accesses,seven named integration facets closed;1/136groups,7/952facets closed,945 pending. Two stale helper owner rows/six uses/three control paths corrected;no game change or graph credit. Local1991/1992 nodes,4260/4261 feasible controls(raw4342/infeasible81);two findings/all13coverage slots open,six packages2closed/4open,M2 incomplete.
+
+P148 performance-only receipt:ledger indexing and exact scoped builds/tests optimized;no semantic credit or game source change. At P148 local1991/1992 nodes,4260/4261 feasible controls(raw4342/infeasible81);all952integration facets remained pending reconciliation,13coverage slots open.
 
 [P147 continuation plan](../proposals/m2/t70-final-current-certification.md#current-continuation-plan---p147):136 ledger groups under current S17;13 named output/route slots and final snapshot are planned successors only. All1643 instruction labels fit admitted1667 participants;no new node/control credit,local1991/1992 nodes and4260/4261 feasible controls retained.
 
