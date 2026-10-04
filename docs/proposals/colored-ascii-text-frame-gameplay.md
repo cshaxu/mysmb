@@ -845,3 +845,62 @@ Similar-issue sweep covers both DOS redraw paths(normal/load),all input latch
 resets,both mode transitions and text allocation/free;platform devices consume
 neutral cells only. ROM node/control/facet counts are unchanged;no remote or
 protected material is staged.
+
+### S2 P12 special background scope
+
+Reviewed local metatile comments distinguish sideways pipe mouth/body,vertical
+shaft,horizontal rope,pulley,chain,seaplant,axe and black fill. Preserve those
+semantic classes instead of assigning one upright pipe/vertical rope shape.
+Connected authored geometry is clipped to its actual component members so
+L-shaped or hollow components cannot fill absent tiles. Keep visited/current
+component state inside existing2900byte workspace;no snapshot/observer ABI
+change. Estimate2source/testfiles,150-250lines. Use authored synthetic tuples
+to check horizontal/shaft/rope/chain/pulley/plant/axe/gaps,scroll and occupancy,
+read-only game state;both widths,strictC90,originalDOS16,three products and
+actualDOSBox text switch route. Original resource purpose/provenance and
+P11 probe/cleanup budgets apply;no CHR bytes or third-party art are imported.
+
+P12 scope amendment:include the Windows owned-console probe's asynchronous
+non-key event handling and an explicit DOSBox CPU-core diagnostic option.
+Four source/test/tool files remain within the150-250line estimate. No host
+gameplay behavior changes;failed DOS routes remain pending integration evidence.
+
+### S2 P12 review receipt
+
+Four source/test/tool files change161added/25removed lines. Shared text
+backgrounds distinguish upright shafts,sideways pipes,horizontal ropes,
+pulleys,chains,seaplants,axes and black fills. Connected silhouettes occupy
+only their actual member tiles,including L-shaped and fully enclosed holes.
+Cell-center bounds preserve outlines during fractional scroll. Existing2900
+byte workspace,5253byte observer,snapshot ABI and original gameplay/graphics
+are unchanged. Synthetic fixtures cover each new class and occupancy case.
+The sweep covers every metatile-class branch,connected enqueue/finalization,
+wrapped-Y placement and actor occlusion occupancy. Unknown raw tuples remain
+explicitly unsupported;this does not close all background/title coverage.
+
+Both native widths pass10focused tests,product self-tests,1000-step original
+state/frame/pixel non-interference and immediate/240future-step restore.
+999textframes/11988000bytes match across widths. StrictC90,originalOpenNT16
+far ABI/full product link and platform-purity checks pass. DOS DGROUP48960
+bytes/text far pack15400bytes remain bounded. Windows owned-console tests
+initially intermittently consumed asynchronous non-key focus events as keys.
+The harness now skips only non-key records,checks the expected physical key
+and fails unexpected keys;three consecutive runs per width pass. No device
+or root behavior was changed to make these tests pass.
+
+Actual DOSBox dynamic-core text/held/graphics/P/O/Escape retry passes using
+the unchanged product hash. An earlier dynamic run remained at its title and
+did not exit;the normal-core diagnostic also failed text switching/exit.
+Injected events were logged but failure cause remains unresolved. Retain
+both failed neutral receipts and the successful receipt,never infer general
+runtime reliability or486SX performance. The outstanding bounded integration
+issue remains under S4:identify the missed input/progress condition using the
+same real DOS binary and distinguish harness delivery from runtime behavior.
+All raw captures/saves from these runs were deleted after neutral summaries.
+
+Three local products refresh to352279/429434/445067bytes. Their SHA256 values
+in DOS/x86/x64 order are6AB92AB5337FCBAE3D87BE3751F20035648D761DD015DF3F173006F38ED5259B,
+CB386CDD9E82C165E5756B7C81A48464D84686F5D4DC4F5CE56B7AA23C8BE840 and
+F1050138DAF2333FD2F68B2C66104BD46863AD24F7B66FD57E84FFD1E4410FBD.
+S2/T11 remain active;misc owners,title/menu/terminal scenes and full presenter
+integration remain. No ROM credit,no remote,no protected material staged.

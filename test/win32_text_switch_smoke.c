@@ -12,6 +12,18 @@ static SHORT probe_key(int key){return key==VK_TAB?owned_tab:0;}
 static struct mysmb_game saved_game;
 static struct mysmb_win32_audio_output saved_audio;
 static DWORD saved_pixels[MYSMB_SCREEN_WIDTH*MYSMB_SCREEN_HEIGHT];
+static int injected_key(WORD expected,unsigned char down,WORD *key,
+    unsigned char *pressed)
+{
+    unsigned int remaining=64U;
+    /* AllocConsole may enqueue focus/window events after the explicit flush.
+     * Ignore only non-key records; an unexpected key must still fail. */
+    while(remaining--!=0U &&
+        mysmb_win32_text_console_key(&g_console,key,pressed)) {
+        if(*key!=0U)return *key==expected && *pressed==down;
+    }
+    return 0;
+}
 
 int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
 {
@@ -70,16 +82,16 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     event.Event.KeyEvent.wVirtualKeyCode=VK_TAB;
     event.Event.KeyEvent.bKeyDown=TRUE;
     if(!WriteConsoleInputA(g_console.input,&event,1U,&written) || written!=1U)return 9;
-    if(!mysmb_win32_text_console_key(&g_console,&key,&pressed))return 10;
+    if(!injected_key(VK_TAB,1U,&key,&pressed))return 10;
     mysmb_win32_shortcut(window,key,pressed);
     if(g_toggle_request)return 11;
     event.Event.KeyEvent.bKeyDown=FALSE;
     WriteConsoleInputA(g_console.input,&event,1U,&written);
-    if(!mysmb_win32_text_console_key(&g_console,&key,&pressed))return 12;
+    if(!injected_key(VK_TAB,0U,&key,&pressed))return 12;
     mysmb_win32_shortcut(window,key,pressed);
     event.Event.KeyEvent.bKeyDown=TRUE;
     WriteConsoleInputA(g_console.input,&event,1U,&written);
-    if(!mysmb_win32_text_console_key(&g_console,&key,&pressed))return 13;
+    if(!injected_key(VK_TAB,1U,&key,&pressed))return 13;
     mysmb_win32_shortcut(window,key,pressed);
     if(g_toggle_request!=MYSMB_IO_REQUEST_TOGGLE)return 14;
     mysmb_win32_shortcut(window,'P',1U);

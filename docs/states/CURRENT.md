@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M3 T11 S2 active;P11 early DOS Tab preview complete;remaining scene obligations stay within S2. |
+| Identifier Mode | Continuation:M3 T11 S2 active;P12 special background shapes admitted;remaining scene obligations stay within S2. |
 | Admission And Approval | Automatic next-S admission under owner mandate after S1 reviewed local commit. |
 | Objective | Connect isolated text elements to existing draw decisions and committed visible scenes,with explicit lifetime/restore handling. |
 | Non-goals | No gameplay rewrite or ROM credit;complete presenter acceptance remains S4/S5. |
 | Reference Baseline | Historical1992/1992;local1991/1992nodes,4260/4261feasible controls;42/952facets,M2 incomplete. |
 | Candidate Proposal | [T11 S2](../proposals/colored-ascii-text-frame-gameplay.md#s2-admission). |
-| Files And ABI Surface | P11 DOS keyboard/root/devices,text far heap,build and focused probes;8-12files,220-380lines. Shared scene/request and earlier restore contracts retained;remaining geometry stays open. |
+| Files And ABI Surface | P12 shared background scene,focused tests and bounded host-probe diagnostics;4source/test/toolfiles,150-250lines. Special metatile shapes/component occupancy;workspace and snapshot ABI unchanged. |
 | Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Documentation and source policy. |
 | Verification | Enabled/disabled observation original-state/OAM/VRAM/audio/pixel equality;visible phase,ownership/clipping,background/HUD,restore;both native widths,originalDOS16 and3products,purity/governance. |
 | Expected Markers | Scope[],expectedMatches[],actualMatches[],new0;all ROM counters retained. |
@@ -151,3 +151,12 @@ text and graphics remain pixel-identical across their round trips. Products
 350743/428326/443960bytes refreshed;DOS DGROUP48960bytes,text15400bytes on
 far heap. Windows probes remain green. Every target now has early Tab preview;
 scene coverage/full integration/performance pending,S2/T11 open,no ROM credit.
+
+P12:special background shapes/component-member clipping and cell-center bounds;
+4source/test/tool files,+161/-25. Bothwidths10tests,1000-step original-output
+equality,immediate/240future restore,999cross-width textframes,C90 and original
+DOS16 link pass. Windows console probe now filters asynchronous non-key records;
+3consecutive runs eachwidth pass. ActualDOSBox dynamic retry passes,but earlier
+dynamic and normal-core routes fail progression/exit with cause unresolved;
+S4 retains this integration gap. Products352279/429434/445067bytes refreshed.
+Observer/workspaces/DGROUP unchanged;S2/T11 open,no ROM credit,no remote.

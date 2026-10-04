@@ -6,23 +6,32 @@
  * Graphics are read from the existing immutable resource binding. No CHR
  * patterns, collision buffers or pixel-to-character conversion are used. */
 enum { UNKNOWN, BLANK, BRICK, GROUND, QUESTION, EMPTY, COIN, PIPE,
-    CLOUD, BUSH, HILL, WATER, LEDGE, TRUNK, CASTLE, ROPE, FLAG, CANNON };
+    CLOUD, BUSH, HILL, WATER, LEDGE, TRUNK, CASTLE, ROPE, FLAG, CANNON,
+    PIPE_SHAFT, SIDE_PIPE, SIDE_SHAFT, HORIZONTAL_ROPE, PULLEY, CHAIN,
+    PLANT, AXE, DARK };
 
 static unsigned char kind(unsigned short group,unsigned short index)
 {
     if(group==0U) {
         if(index==0U || index==35U || index==38U)return BLANK;
+        if(index==1U)return DARK;
         if(index>=2U && index<=4U)return BUSH;
         if(index>=5U && index<=10U)return HILL;
         if(index>=13U && index<=15U)return BUSH;
-        if((index>=16U && index<=21U) || (index>=28U && index<=33U))return PIPE;
+        if(index>=16U && index<=19U)return PIPE;
+        if(index==20U || index==21U)return PIPE_SHAFT;
+        if(index==28U || index==31U)return SIDE_PIPE;
+        if(index==29U || index==30U || index==32U || index==33U)return SIDE_SHAFT;
+        if(index==34U)return PLANT;
         if(index>=22U && index<=27U)return LEDGE;
         if(index==11U)return LEDGE;
-        if(index==12U)return ROPE;
+        if(index==12U)return CHAIN;
         if(index==36U || index==37U)return FLAG;
     } else if(group==1U) {
         if(index==4U || index==31U || index==32U || index==39U)return BLANK;
-        if(index<=3U)return ROPE;
+        if(index==0U)return ROPE;
+        if(index==1U)return HORIZONTAL_ROPE;
+        if(index==2U || index==3U)return PULLEY;
         /* Castle walls and ordinary bricks share a visual alias. Both use
          * the same brick presentation instead of inventing their identity. */
         if(index==7U || (index>=17U && index<=19U) ||
@@ -43,6 +52,7 @@ static unsigned char kind(unsigned short group,unsigned short index)
         if(index<=1U)return QUESTION;
         if(index==2U || index==3U)return COIN;
         if(index==4U)return EMPTY;
+        if(index==5U)return AXE;
     }
     return UNKNOWN;
 }
@@ -80,10 +90,16 @@ static unsigned char decode(const struct mysmb_game *g,unsigned short column,
     return found;
 }
 
+static unsigned char family(unsigned char k)
+{
+    return k==PIPE_SHAFT?PIPE:k==SIDE_SHAFT?SIDE_PIPE:k;
+}
 static int grouped(unsigned char k)
 {
+    k=family(k);
     return k==PIPE || k==CLOUD || k==BUSH || k==HILL || k==WATER ||
-        k==LEDGE || k==TRUNK || k==CASTLE || k==ROPE || k==FLAG || k==CANNON;
+        k==LEDGE || k==TRUNK || k==CASTLE || k==ROPE || k==FLAG || k==CANNON ||
+        k==SIDE_PIPE || k==HORIZONTAL_ROPE || k==CHAIN || k==PLANT;
 }
 
 static unsigned short inset(unsigned char k,unsigned short y,
@@ -98,19 +114,33 @@ static unsigned short inset(unsigned char k,unsigned short y,
 static void enqueue(struct mysmb_text_background_workspace MYSMB_IO_FAR *w,
     unsigned short n,unsigned char k,unsigned char p,unsigned short *tail)
 {
-    if(w->visited[n]!=0U || w->kinds[n]!=k || w->palettes[n]!=p)return;
-    w->visited[n]=1U;w->queue[(*tail)++]=n;
+    if(w->visited[n]!=0U || family(w->kinds[n])!=family(k) || w->palettes[n]!=p)return;
+    w->visited[n]=2U;w->queue[(*tail)++]=n;
 }
 
 /* Authored scalable object silhouettes, borders and interior fill. The
  * connected semantic parts select one whole-object geometry, not one glyph
  * per source tile. Repeated terrain blocks remain separate brick objects. */
 static unsigned char glyph(unsigned char k,unsigned short x,unsigned short y,
-    unsigned short width,unsigned short height)
+    unsigned short width,unsigned short height,unsigned char cap)
 {
     unsigned short margin;
     if(k==COIN)return (x==width/2U)?'$':' ';
     if(k==ROPE || k==FLAG)return x==width/2U?'|':' ';
+    if(k==HORIZONTAL_ROPE)return y==height/2U?'=':' ';
+    if(k==CHAIN)return x==width/2U?'o':' ';
+    if(k==PULLEY)return y==height/2U && x==width/2U?'O':' ';
+    if(k==PLANT) {
+        if(x==width/2U)return y==0U?'^':'|';
+        if(y>0U && x+1U==width/2U)return '/';
+        if(y>0U && x==width/2U+1U)return '\\';
+        return ' ';
+    }
+    if(k==AXE) {
+        if(x==width/2U)return '|';
+        return y==0U && x>width/2U?'#':' ';
+    }
+    if(k==DARK)return ' ';
     if(k==CLOUD || k==BUSH || k==HILL) {
         margin=inset(k,y,width,height);
         if(y==0U)return k==CLOUD?'_':'^';
@@ -120,8 +150,13 @@ static unsigned char glyph(unsigned char k,unsigned short x,unsigned short y,
     }
     if(k==WATER)return y==0U?'~':' ';
     if(k==PIPE) {
-        if(y==0U || (height>3U && y==2U))return '=';
+        if(cap && (y==0U || (height>3U && y==2U)))return '=';
         return x==0U || x+1U==width?'|':' ';
+    }
+    if(k==SIDE_PIPE) {
+        if(cap && x<2U)return '|';
+        if(y==0U || y+1U==height)return '=';
+        return x+1U==width?'|':' ';
     }
     if(k==LEDGE)return y==0U?'=':' ';
     if(k==TRUNK)return x==0U || x+1U==width?'|':':';
@@ -134,28 +169,48 @@ static unsigned char glyph(unsigned char k,unsigned short x,unsigned short y,
     return ' ';
 }
 
+/* First cell whose center is inside a pixel interval. C90's negative
+ * quotient truncation already implements ceil for a negative numerator. */
+static long first_cell(short position,long scale,long extent)
+{
+    long numerator;
+    numerator=(long)position*scale-extent/2L;
+    return numerator>0L?(numerator+extent-1L)/extent:numerator/extent;
+}
 static void object(const struct mysmb_game *g,
     struct mysmb_text_background_workspace MYSMB_IO_FAR *w,
     struct mysmb_io_text_frame MYSMB_IO_FAR *frame,unsigned char k,
-    unsigned char palette,short left,short top,short right,short bottom)
+    unsigned char palette,unsigned char cap,unsigned short minx,unsigned short miny,
+    short left,short top,short right,short bottom)
 {
     long x0,y0,x1,y1,x,y;
-    unsigned short cell,width,height;
+    unsigned short cell,width,height,source_x,source_y,n;
+    long dx,dy;
     unsigned char c,color;
-    x0=left>=0?(long)left*80L/256L:-((-(long)left*80L+255L)/256L);
-    y0=top>=0?(long)top*50L/240L:-((-(long)top*50L+239L)/240L);
-    x1=(long)right*80L/256L;y1=(long)bottom*50L/240L;
+    x0=first_cell(left,80L,256L);y0=first_cell(top,50L,240L);
+    x1=first_cell(right,80L,256L);y1=first_cell(bottom,50L,240L);
     if(g->visible_sprite0_split!=0U && top>=32 && y0<7L)y0=7L;
     if(x1<=x0 || y1<=y0)return;
     width=(unsigned short)(x1-x0);height=(unsigned short)(y1-y0);
     color=mysmb_io_color_text16(g->palette[palette*4U+
         (k==CLOUD?1U:k==COIN || k==QUESTION?3U:2U)]);
+    if(k==DARK)color=0U;
     for(y=y0;y<y1;++y)for(x=x0;x<x1;++x) {
         if(x<0L || x>=80L || y<0L || y>=50L)continue;
         if(g->visible_sprite0_split!=0U && (y*240L+120L)/50L<32L)continue;
         if((g->visible_ppu_mask&2U)==0U && (x*256L+128L)/80L<8L)continue;
-        c=glyph(k,(unsigned short)(x-x0),(unsigned short)(y-y0),width,height);
-        if((k==COIN || k==ROPE || k==FLAG) && c==' ')continue;
+        /* Only members of this connected component own cells. Bounds alone
+         * would fill L-shaped pipe gaps or a hollow tree/castle silhouette. */
+        dx=(x*256L+128L)/80L-left;dy=(y*240L+120L)/50L-top;
+        if(dx<0L || dy<0L)continue;
+        source_x=(unsigned short)(minx+dx/16L);
+        source_y=(unsigned short)(miny+dy/16L);
+        if(source_x>=32U || source_y>=15U)continue;
+        n=(unsigned short)(source_y*32U+source_x);
+        if(w->visited[n]!=2U || family(w->kinds[n])!=k || w->palettes[n]!=palette)continue;
+        c=glyph(k,(unsigned short)(x-x0),(unsigned short)(y-y0),width,height,cap);
+        if((k==COIN || k==ROPE || k==FLAG || k==HORIZONTAL_ROPE ||
+            k==CHAIN || k==PULLEY || k==PLANT || k==AXE) && c==' ')continue;
         if((unsigned short)(x-x0)<inset(k,(unsigned short)(y-y0),width,height) ||
             (unsigned short)(width-1U-(x-x0))<
                 inset(k,(unsigned short)(y-y0),width,height))continue;
@@ -182,7 +237,7 @@ int mysmb_text_background_scene_build(const struct mysmb_game *g,
     struct mysmb_text_background_receipt *receipt)
 {
     unsigned short i,row,col,head,tail,n,minx,maxx,miny,maxy,cell;
-    unsigned char p,k,ambiguous,table,c;
+    unsigned char p,k,ambiguous,table,c,cap;
     short left,top,right,bottom;
     if(g==0 || w==0 || frame==0 || receipt==0 || g->area_prg==0 ||
         g->area_prg_size<0x0b10U)return 0;
@@ -201,10 +256,12 @@ int mysmb_text_background_scene_build(const struct mysmb_game *g,
     for(i=0U;i<480U;++i) {
         k=w->kinds[i];p=w->palettes[i];
         if(w->visited[i]!=0U || k==UNKNOWN || k==BLANK)continue;
-        head=tail=0U;enqueue(w,i,k,p,&tail);
+        cap=(unsigned char)(k==PIPE || k==SIDE_PIPE);
+        k=family(k);head=tail=0U;enqueue(w,i,k,p,&tail);
         minx=maxx=i%32U;miny=maxy=i/32U;
         while(head<tail) {
             n=w->queue[head++];row=n/32U;col=n%32U;
+            if(w->kinds[n]==PIPE || w->kinds[n]==SIDE_PIPE)cap=1U;
             if(col<minx)minx=col;
             if(col>maxx)maxx=col;
             if(row<miny)miny=row;
@@ -219,8 +276,9 @@ int mysmb_text_background_scene_build(const struct mysmb_game *g,
         right=(short)((maxx+1U)*16U)-(short)g->visible_scroll_x;
         top=(short)(miny*16U)-(short)g->visible_scroll_y;
         bottom=(short)((maxy+1U)*16U)-(short)g->visible_scroll_y;
-        object(g,w,frame,k,p,left,top,right,bottom);
-        object(g,w,frame,k,p,left,(short)(top+240),right,(short)(bottom+240));
+        object(g,w,frame,k,p,cap,minx,miny,left,top,right,bottom);
+        object(g,w,frame,k,p,cap,minx,miny,left,(short)(top+240),right,(short)(bottom+240));
+        for(head=0U;head<tail;++head)w->visited[w->queue[head]]=1U;
         receipt->objects++;
     }
     /* Fixed HUD letters use the committed table-zero region, never RAM digits.

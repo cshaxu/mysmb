@@ -81,6 +81,71 @@ int main(void)
     CHECK(frame.cells[3U*80U+10U].character=='A');
     CHECK(frame.cells[34U*80U+12U].character==':');
     CHECK(r.letters==2U);
+    /* Distinct semantic writers,using authored tuples rather than CHR art. */
+    memset(game.name_table,0x24,sizeof(game.name_table));
+    memset(game.name_table[0]+0x3c0U,0,64U);
+    memset(game.name_table[1]+0x3c0U,0,64U);
+    game.visible_ppu_name_table=0U;game.visible_scroll_x=0U;
+    for(i=0U;i<3U;++i) {
+        put(0U,(unsigned short)(4U+i),8U,0U,(unsigned short)(28U+i));
+        put(0U,(unsigned short)(4U+i),9U,0U,(unsigned short)(31U+i));
+    }
+    before=game;
+    CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
+    CHECK(memcmp(&game,&before,sizeof(game))==0);
+    CHECK(frame.cells[28U*80U+20U].character=='|');
+    CHECK(frame.cells[27U*80U+25U].character=='=');
+    CHECK(frame.cells[30U*80U+25U].character==' ');
+    CHECK(frame.cells[30U*80U+25U].background!=frame.cells[0U].background);
+    /* A shaft alone has no invented mouth. Connected geometry never fills
+     * the missing top-right member of an L-shaped pipe. */
+    memset(game.name_table,0x24,sizeof(game.name_table));
+    memset(game.name_table[0]+0x3c0U,0,64U);
+    memset(game.name_table[1]+0x3c0U,0,64U);
+    put(0U,4U,8U,0U,20U);put(0U,4U,9U,0U,20U);
+    put(0U,5U,9U,0U,21U);
+    CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
+    CHECK(r.objects==1U);
+    CHECK(frame.cells[27U*80U+24U].character==' ');
+    CHECK(frame.cells[27U*80U+27U].background==frame.cells[0U].background);
+    i=27U*80U+27U;
+    CHECK((workspace.opaque[i/8U]&(1U<<(i%8U)))==0U);
+    /* A completely enclosed hole is absent too,not merely an edge gap. */
+    for(row=8U;row<11U;++row)for(i=4U;i<7U;++i)
+        if(row!=9U || i!=5U)put(0U,i,row,0U,20U);
+    /* The earlier L fixture populated this cell;clear its four source tiles. */
+    game.name_table[0U][9U*64U+10U]=0x24U;
+    game.name_table[0U][9U*64U+42U]=0x24U;
+    game.name_table[0U][9U*64U+11U]=0x24U;
+    game.name_table[0U][9U*64U+43U]=0x24U;
+    CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
+    CHECK(r.objects==1U);
+    CHECK(frame.cells[32U*80U+27U].background==frame.cells[0U].background);
+    i=32U*80U+27U;
+    CHECK((workspace.opaque[i/8U]&(1U<<(i%8U)))==0U);
+    /* Horizontal rope and pulley stay horizontal/separate;chain and plant
+     * are narrow authored silhouettes rather than filled rectangles. */
+    memset(game.name_table,0x24,sizeof(game.name_table));
+    memset(game.name_table[0]+0x3c0U,0,64U);
+    memset(game.name_table[1]+0x3c0U,0,64U);
+    put(0U,4U,8U,1U,1U);put(0U,5U,8U,1U,1U);
+    put(0U,6U,8U,1U,2U);put(0U,8U,8U,0U,12U);
+    put(0U,10U,8U,0U,34U);put(0U,12U,8U,3U,5U);
+    put(0U,14U,8U,0U,1U);
+    CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
+    CHECK(r.unsupported==0U);
+    CHECK(frame.cells[28U*80U+20U].character=='=');
+    CHECK(frame.cells[28U*80U+27U].character=='=');
+    CHECK(frame.cells[27U*80U+24U].character==' ');
+    CHECK(frame.cells[28U*80U+32U].character=='O');
+    CHECK(frame.cells[28U*80U+42U].character=='o');
+    CHECK(frame.cells[27U*80U+52U].character=='^');
+    CHECK(frame.cells[28U*80U+62U].character=='|');
+    CHECK(frame.cells[28U*80U+72U].background==0U);
+    /* Fractional scroll keeps the first covered row's outline. */
+    game.visible_scroll_x=7U;game.visible_scroll_y=1U;
+    CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
+    CHECK(frame.cells[26U*80U+50U].character=='^');
     /* Disabled background produces only the universal color. */
     game.visible_ppu_mask=0U;
     CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));

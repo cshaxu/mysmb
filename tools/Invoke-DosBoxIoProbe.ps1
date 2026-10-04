@@ -3,7 +3,8 @@ param(
     [Parameter(Mandatory=$true)][string]$DosBoxDirectory,
     [Parameter(Mandatory=$true)][string]$ProductPath,
     [Parameter(Mandatory=$true)][string]$OutputDirectory,
-    [switch]$TextSwitch
+    [switch]$TextSwitch,
+    [ValidateSet('dynamic','normal')][string]$CpuCore='dynamic'
 )
 $ErrorActionPreference='Stop'
 & (Join-Path $PSScriptRoot 'Build-DosBoxIoProbe.ps1') -Compiler $Compiler -DosBoxDirectory $DosBoxDirectory -OutputDirectory $OutputDirectory
@@ -22,7 +23,7 @@ machine=vgaonly
 captures=.
 memsize=16
 [cpu]
-core=dynamic
+core=$CpuCore
 cycles=max
 [mixer]
 nosound=true
