@@ -54,6 +54,8 @@ void mysmb_objects_draw_small_platform(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[0x0208U + oam] = 0xf8U;
         game->ram[0x0214U + oam] = 0xf8U;
     }
+    mysmb_text_observer_record(game, MYSMB_TEXT_OBSERVE_PLATFORM,
+        0U, slot, 0U, 1U, oam, 6U, 0U);
 }
 void mysmb_objects_draw_large_platform(struct mysmb_game *game, mysmb_u8 slot)
 {
@@ -105,4 +107,6 @@ void mysmb_objects_draw_large_platform(struct mysmb_game *game, mysmb_u8 slot)
     }
     if ((game->ram[MYSMB_SMALL_PLATFORM_OFFSCREEN] & 0x80U) != 0U)
         mysmb_oam_move_six_sprites_offscreen(game, oam);
+    mysmb_text_observer_record(game, MYSMB_TEXT_OBSERVE_PLATFORM,
+        1U, slot, tile, 1U, oam, 6U, 0U);
 }

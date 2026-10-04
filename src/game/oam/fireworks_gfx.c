@@ -25,4 +25,6 @@ void mysmb_oam_draw_fireworks_explosion(struct mysmb_game *game,
     game->ram[0x0206U + oam] = 0x82U;
     game->ram[0x020aU + oam] = 0x42U;
     game->ram[0x020eU + oam] = 0xc2U;
+    mysmb_text_observer_record(game, MYSMB_TEXT_OBSERVE_EXPLOSION,
+        0U, oam, frame, 1U, oam, 4U, 0U);
 }

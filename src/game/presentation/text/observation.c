@@ -39,6 +39,8 @@ void mysmb_text_observer_record(struct mysmb_game *game,
     unsigned short i;
     unsigned short bytes;
     unsigned short record_index;
+    unsigned short candidate;
+    unsigned short owner;
 
     if (game->text_observer.enabled != 1U) return;
     buffer = &game->text_observer.producer;
@@ -49,9 +51,21 @@ void mysmb_text_observer_record(struct mysmb_game *game,
         buffer->overflow = 1U;
         return;
     }
+    /* These source entries have already been written by the caller. Release
+     * their old receipts before searching for a reusable metadata slot. */
+    for (i = 0U; i < sprites; ++i) buffer->owners[oam / 4U + i] = 0U;
     for (i = 0U; i < buffer->count; ++i)
         if (buffer->items[i].family == family &&
             buffer->items[i].slot == slot && buffer->items[i].oam == oam) break;
+    if (i == buffer->count) {
+        /* Reuse receipts whose entries were wholly superseded by a later
+         * typed draw. At most 64 receipts can still own a sprite entry. */
+        for (candidate = 0U; candidate < buffer->count; ++candidate) {
+            for (owner = 0U; owner < 64U; ++owner)
+                if (buffer->owners[owner] == candidate + 1U) break;
+            if (owner == 64U) { i = candidate; break; }
+        }
+    }
     if (i == buffer->count) {
         if (i == MYSMB_TEXT_OBSERVATION_CAPACITY) {
             buffer->overflow = 1U;

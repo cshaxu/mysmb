@@ -139,4 +139,6 @@ void mysmb_objects_draw_hammer(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[MYSMB_HAMMER_MISC_STATE + slot] = 0U;
         mysmb_oam_dump_two_sprites(game, 0xf8U, oam);
     }
+    mysmb_text_observer_record(game, MYSMB_TEXT_OBSERVE_HAMMER,
+        0U, slot, pose, 1U, oam, 2U, 0U);
 }

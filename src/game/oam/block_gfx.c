@@ -71,6 +71,8 @@ void mysmb_objects_draw_bouncing_block(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[0x020cU + oam] = 0xf8U;
     }
     mysmb_oam_check_block_left_column(game, bits, oam);
+    mysmb_text_observer_record(game, MYSMB_TEXT_OBSERVE_BLOCK,
+        game->ram[MYSMB_BLOCK_METATILE + slot], slot, 0U, 1U, oam, 4U, 0U);
 }
 
 /* ROM DrawBrickChunks -> DChunks/ChkLeftCo/ChnkOfs/ExBCDr. */
@@ -119,4 +121,6 @@ void mysmb_objects_draw_brick_chunks(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[0x0204U + oam] = 0xf8U;
         game->ram[0x020cU + oam] = 0xf8U;
     }
+    mysmb_text_observer_record(game, MYSMB_TEXT_OBSERVE_CHUNKS,
+        0U, slot, tile, 1U, oam, 4U, 0U);
 }

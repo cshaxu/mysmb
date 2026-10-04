@@ -30,6 +30,31 @@ static void bind(struct mysmb_game *game)
 #endif
 }
 
+static int compare_draw(void (*draw)(struct mysmb_game *,mysmb_u8),
+    unsigned char family)
+{
+    unsigned int i;
+    mysmb_game_initialize(&observed);
+    observed.ram[8U]=0U; observed.ram[0x06f1U]=64U;
+    observed.ram[0x06f3U]=64U; observed.ram[0x06ecU]=64U;
+    observed.ram[0x03baU]=80U; observed.ram[0x03afU]=80U;
+    observed.ram[0x03bcU]=80U; observed.ram[0x03b1U]=80U;
+    observed.ram[0x03beU]=80U; observed.ram[0x03b3U]=80U;
+    observed.ram[0x03f1U]=80U; observed.ram[0x002aU]=1U;
+    observed.ram[0x074eU]=1U;
+    plain=observed;
+    mysmb_text_observer_enable(&observed,1U);
+    draw(&observed,0U);draw(&plain,0U);
+    CHECK(memcmp(observed.ram,plain.ram,sizeof(plain.ram))==0);
+    CHECK(observed.text_observer.producer.overflow==0U);
+    mysmb_game_submit_oam(&observed);
+    for(i=0U;i<observed.text_observer.visible.count;++i)
+        if(observed.text_observer.visible.items[i].family==family &&
+            mysmb_text_observer_visible_mask(&observed,(unsigned char)i)!=0U)
+            return 0;
+    return 1;
+}
+
 int main(void)
 {
     struct mysmb_input input;
@@ -55,24 +80,27 @@ int main(void)
     CHECK(mysmb_text_observer_visible_mask(&observed,0U)==0U);
     mysmb_text_observer_record(&observed,2U,6U,0U,8U,1U,0U,1U,0U);
     mysmb_game_submit_oam(&observed);
-    CHECK(mysmb_text_observer_visible_mask(&observed,0U)==0U);
-    CHECK(mysmb_text_observer_visible_mask(&observed,1U)==1U);
+    CHECK(observed.text_observer.visible.count==1U);
+    CHECK(observed.text_observer.visible.items[0].family==2U);
+    CHECK(mysmb_text_observer_visible_mask(&observed,0U)==1U);
     observed.ram[0x0200U]=0xf8U;
     mysmb_text_observer_record(&observed,2U,6U,0U,8U,1U,0U,1U,0U);
     mysmb_game_submit_oam(&observed);
-    CHECK(mysmb_text_observer_visible_mask(&observed,1U)==0U);
+    CHECK(mysmb_text_observer_visible_mask(&observed,0U)==0U);
     mysmb_text_observer_record(&observed,1U,0U,0U,0U,1U,252U,8U,0U);
     CHECK(observed.text_observer.producer.overflow==1U);
     mysmb_game_move_sprites_offscreen(&observed);
     CHECK(observed.text_observer.producer.count==0U);
-    CHECK(observed.text_observer.visible.count==2U);
+    CHECK(observed.text_observer.visible.count==1U);
     mysmb_game_submit_oam(&observed);
     CHECK(observed.text_observer.visible.count==0U);
 
-    for(i=0U;i<17U;++i)
+    for(i=0U;i<MYSMB_TEXT_OBSERVATION_CAPACITY+1U;++i)
         mysmb_text_observer_record(&observed,1U,0U,(unsigned char)i,
-            0U,1U,0U,1U,0U);
-    CHECK(observed.text_observer.producer.count==16U);
+            0U,1U,(unsigned char)(i*4U),1U,0U);
+    CHECK(observed.text_observer.producer.count==MYSMB_TEXT_OBSERVATION_CAPACITY);
+    CHECK(observed.text_observer.producer.overflow==0U);
+    mysmb_text_observer_record(&observed,1U,0U,0U,0U,1U,0U,9U,0U);
     CHECK(observed.text_observer.producer.overflow==1U);
     mysmb_text_observer_enable(&observed,0U);
     CHECK(observed.text_observer.producer.count==0U);
@@ -93,6 +121,11 @@ int main(void)
         CHECK(mysmb_text_observer_visible_mask(&observed,0U)==15U);
     }
 
+    CHECK(compare_draw(mysmb_oam_draw_fireball,MYSMB_TEXT_OBSERVE_FIREBALL)==0);
+    CHECK(compare_draw(mysmb_oam_draw_fireball_explosion,MYSMB_TEXT_OBSERVE_EXPLOSION)==0);
+    CHECK(compare_draw(mysmb_objects_draw_hammer,MYSMB_TEXT_OBSERVE_HAMMER)==0);
+    CHECK(compare_draw(mysmb_objects_draw_bouncing_block,MYSMB_TEXT_OBSERVE_BLOCK)==0);
+    CHECK(compare_draw(mysmb_objects_draw_brick_chunks,MYSMB_TEXT_OBSERVE_CHUNKS)==0);
     bind(&observed);bind(&plain);
     mysmb_text_observer_enable(&observed,1U);
     mysmb_game_snapshot_fingerprint(&observed,fingerprint);

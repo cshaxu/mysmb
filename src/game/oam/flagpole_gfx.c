@@ -86,6 +86,9 @@ void mysmb_objects_draw_flagpole_graphics(struct mysmb_game *game)
     oam = game->ram[MYSMB_FLAG_ENEMY_SPRITE_OFFSET + slot];
     if ((game->ram[MYSMB_FLAG_ENEMY_OFFSCREEN] & 0x0eU) != 0U)
         mysmb_oam_move_six_sprites_offscreen(game, oam);
+    mysmb_text_observer_record(game, MYSMB_TEXT_OBSERVE_FLAG,
+        0U, slot, game->ram[MYSMB_FLAG_SCORE], 1U, oam,
+        game->ram[MYSMB_FLAG_COLLISION_Y] != 0U ? 5U : 3U, 0U);
 }
 
 void mysmb_objects_step_flagpole(struct mysmb_game *game)

@@ -313,3 +313,44 @@ certify every alternate convenience writer. Remaining S2 work is:
 
 Historical mapping1992/1992,local1991/1992nodes,4260/4261feasible controls and
 42/952facets remain unchanged. S2 stays active;no labels transfer or promote.
+
+### S2 P2 scope amendment
+
+Continue the same S with typed projectile/firebar/explosion,hammer,block/chunk,
+vine,platform,flag and bubble receipts. Capacity becomes64,with reuse of fully
+superseded receipts:at most64records can retain OAM entry ownership. This
+expands per-game observer storage to5253bytes;real DOS DGROUP must be checked
+before acceptance. Existing16record assumption was insufficient for multiple
+segmented firebars plus actors/effects. Family-specific selection tokens are
+recorded at already-selected draw results;no additional game decisions occur.
+P2 refreshes three products and repeats non-interference/restore tests. Scene
+assembly,background/HUD,remaining dedicated enemies and restore persistence
+remain inside S2. The earlier10-18file forecast is amended to25-35files for
+whole S2 because dedicated draw ownership cannot be inferred from ordinary
+EnemyGfxHandler;estimated600-1000lines remains provisional.
+
+### S2 P2 review receipt
+
+Twelve source/test files change88added/8removed lines. Typed observations now
+include projectile/firebar/explosion,hammer,block/chunks,vine,small/large
+platform,flag and bubble owners. The gfx-file census now has hooks in12/21files;
+this is integration-site accounting,not whole-family animation proof. Dedicated
+alternate enemies and intermediate player output remain to be reconciled.
+The64-record producer reuses wholly superseded entries before capacity checks;
+a controlled64-entry saturation/replacement fixture passes. Per-instance
+observer storage is5253bytes;DOS DGROUP through stack is45536bytes.
+
+Both widths pass five focused tests including product self-test,C90 strict
+compilation,and1000-step twin output comparison:zero original core/frame/pixel
+differences. New controlled fireball/explosion/hammer/block/chunk fixtures
+compare RAM and require typed visible receipts. OriginalDOS16 compile/link
+and the actual hiddenDOSBox title/Start/run/jump/left/release/Escape route pass.
+Three local products refreshed:DOS327503,x86397583,x64411639bytes. No ROM credit.
+Raw captures stay local and are removed after the neutral receipt is retained.
+
+P2 is complete;S2 remains open. Next work must produce a committed-background/
+HUD and observed-actor80x50scene,resolve remaining dedicated writers and
+snapshot metadata continuity. Generic per-sprite glyph substitution is not an
+acceptable replacement for authored whole-element templates. Tab remains
+S4/S5. Historical1992/1992,local1991/1992nodes,4260/4261feasible controls and
+42/952facets retain their prior scoped meanings.

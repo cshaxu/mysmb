@@ -62,5 +62,7 @@ void mysmb_objects_draw_vine(struct mysmb_game *game, mysmb_u8 vine_index)
             game->ram[(mysmb_u16)(0x0200U + row_oam)] = 0xf8U;
         }
     }
+    mysmb_text_observer_record(game, MYSMB_TEXT_OBSERVE_VINE,
+        vine_index, sprite_slot, 0U, 1U, oam, 6U, 0U);
 }
 

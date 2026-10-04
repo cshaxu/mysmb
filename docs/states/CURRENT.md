@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M3 T11 S2 active;P1 bounded observation step reviewed,remaining integration next. |
+| Identifier Mode | Continuation:M3 T11 S2 active;P2 extended typed observation reviewed;scene assembly next within S2. |
 | Admission And Approval | Automatic next-S admission under owner mandate after S1 reviewed local commit. |
 | Objective | Connect isolated text elements to existing draw decisions and committed visible scenes,with explicit lifetime/restore handling. |
 | Non-goals | No gameplay rewrite,ROM credit or platform Tab binding;those presenters remain S4/S5. |
 | Reference Baseline | Historical1992/1992;local1991/1992nodes,4260/4261feasible controls;42/952facets,M2 incomplete. |
 | Candidate Proposal | [T11 S2](../proposals/colored-ascii-text-frame-gameplay.md#s2-admission). |
-| Files And ABI Surface | game presentation and minimal observation sites,scene/restore binding,focused tests/build;estimate10-18files,600-1000lines. P1 embeds optional bounded observer buffers;unchanged snapshot restore invalidates them. Immediate loaded text/background/all-family coverage remain open within S2. |
+| Files And ABI Surface | game presentation and minimal observation sites,scene/restore binding,focused tests/build;amended estimate25-35files,600-1000lines. P1 embeds optional bounded observer buffers;unchanged snapshot restore invalidates them. Immediate loaded text/background/all-family coverage remain open within S2. |
 | Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Documentation and source policy. |
 | Verification | Enabled/disabled observation original-state/OAM/VRAM/audio/pixel equality;visible phase,ownership/clipping,background/HUD,restore;both native widths,originalDOS16 and3products,purity/governance. |
 | Expected Markers | Scope[],expectedMatches[],actualMatches[],new0;all ROM counters retained. |
@@ -64,3 +64,9 @@ product self-test eachwidth,originalDOS16 andactualDOSBox route pass. Three
 local products refreshed:DOS326127,x86396559,x64410615bytes. S2 not closed:
 17dedicated graphics files/overwrite sites,background/HUD,live templates and
 immediate snapshot metadata restoration remain. Tab binding remains S4/S5.
+
+P2:12source/test files,+88/-8;additional effect/terrain-sprite owners and64-slot
+receipt reuse. Bothwidths five focused tests/twin-route,C90,originalDOS16 and
+actualDOSBox pass. Three localEXEs327503/397583/411639bytes;observer5253bytes,
+DOS DGROUP45536bytes. S2 remains open;next is actual80x50scene assembly and
+remaining source/restore coverage,not a new S or ROM credit.

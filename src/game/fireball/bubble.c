@@ -121,5 +121,7 @@ void mysmb_fireball_draw_bubble(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[0x0200U + oam] = game->ram[MYSMB_BUBBLE_REL_Y];
         game->ram[0x0201U + oam] = 0x74U;
         game->ram[0x0202U + oam] = 2U;
+        mysmb_text_observer_record(game, MYSMB_TEXT_OBSERVE_BUBBLE,
+            0U, slot, 0U, 1U, oam, 1U, 0U);
     }
 }
