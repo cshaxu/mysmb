@@ -39526,7 +39526,8 @@
         "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P130 checkpoint - fireball slot publication and bubble exception:16 qualified pre-hit/immediatefireball index guards;D725postscore/bubbleentrance pending,no allphaseclaim.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P136 checkpoint - entrance buffer reset and retained raw alias:controlled0300reset-to-entranceX0 join;rawvine/waterX5 aliasretained,legaltransition/fullframeprefix unproved,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P136 checkpoint - entrance buffer reset and retained raw alias:controlled0300reset-to-entranceX0 join;rawvine/waterX5 aliasretained,legaltransition/fullframeprefix unproved,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P145 checkpoint - bubble indexed alias writes preserved:allbytecallerX/RAM07zero-pagealiasmutationspreserved;legalentrance/subsequentstreamdomain remainsseparate,no promotion."
       ],
       "operationalEvidence": [
         "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed.",
@@ -39534,7 +39535,8 @@
         "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P130 checkpoint - fireball slot publication and bubble exception:65536actualparents0RAM/APU/orderdiff perwidth,all17writePC visited,bus08/pointer checks,8focusedtests.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P136 checkpoint - entrance buffer reset and retained raw alias:17408originalchains0scopedRAM/APU/orderdiff bothwidths,53observedlabels/410PC,7focusedtests;physicalABIexcluded,no pixel/globalclaim."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P136 checkpoint - entrance buffer reset and retained raw alias:17408originalchains0scopedRAM/APU/orderdiff bothwidths,53observedlabels/410PC,7focusedtests;physicalABIexcluded,no pixel/globalclaim.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P145 checkpoint - bubble indexed alias writes preserved:65536freshroots eachwidth0diff,all5PC/256X observed,5focusedtests."
       ],
       "semanticContract": "Preserves facing LSR carry into X placement, page carry, Y+8, timer selection and fallthrough movement.",
       "currentSourcePaths": [
@@ -39554,14 +39556,16 @@
         "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P130 checkpoint - fireball slot publication and bubble exception:16 qualified pre-hit/immediatefireball index guards;D725postscore/bubbleentrance pending,no allphaseclaim.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P136 checkpoint - entrance buffer reset and retained raw alias:controlled0300reset-to-entranceX0 join;rawvine/waterX5 aliasretained,legaltransition/fullframeprefix unproved,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P136 checkpoint - entrance buffer reset and retained raw alias:controlled0300reset-to-entranceX0 join;rawvine/waterX5 aliasretained,legaltransition/fullframeprefix unproved,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P145 checkpoint - bubble indexed alias writes preserved:allbytecallerX/RAM07zero-pagealiasmutationspreserved;legalentrance/subsequentstreamdomain remainsseparate,no promotion."
       ],
       "operationalEvidence": [
         "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P130 checkpoint - fireball slot publication and bubble exception:65536actualparents0RAM/APU/orderdiff perwidth,all17writePC visited,bus08/pointer checks,8focusedtests.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P136 checkpoint - entrance buffer reset and retained raw alias:17408originalchains0scopedRAM/APU/orderdiff bothwidths,53observedlabels/410PC,7focusedtests;physicalABIexcluded,no pixel/globalclaim."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P136 checkpoint - entrance buffer reset and retained raw alias:17408originalchains0scopedRAM/APU/orderdiff bothwidths,53observedlabels/410PC,7focusedtests;physicalABIexcluded,no pixel/globalclaim.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P145 checkpoint - bubble indexed alias writes preserved:65536freshroots eachwidth0diff,all5PC/256X observed,5focusedtests."
       ],
       "semanticContract": "Uses zero or eight plus retained facing carry before player X/page placement.",
       "currentSourcePaths": [
@@ -39581,14 +39585,16 @@
         "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P136 checkpoint - entrance buffer reset and retained raw alias:controlled0300reset-to-entranceX0 join;rawvine/waterX5 aliasretained,legaltransition/fullframeprefix unproved,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P136 checkpoint - entrance buffer reset and retained raw alias:controlled0300reset-to-entranceX0 join;rawvine/waterX5 aliasretained,legaltransition/fullframeprefix unproved,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P145 checkpoint - bubble indexed alias writes preserved:allbytecallerX/RAM07zero-pagealiasmutationspreserved;legalentrance/subsequentstreamdomain remainsseparate,no promotion."
       ],
       "operationalEvidence": [
         "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P136 checkpoint - entrance buffer reset and retained raw alias:17408originalchains0scopedRAM/APU/orderdiff bothwidths,53observedlabels/410PC,7focusedtests;physicalABIexcluded,no pixel/globalclaim."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P136 checkpoint - entrance buffer reset and retained raw alias:17408originalchains0scopedRAM/APU/orderdiff bothwidths,53observedlabels/410PC,7focusedtests;physicalABIexcluded,no pixel/globalclaim.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P145 checkpoint - bubble indexed alias writes preserved:65536freshroots eachwidth0diff,all5PC/256X observed,5focusedtests."
       ],
       "semanticContract": "Subtracts the selected fractional force and propagates its borrow to bubble Y.",
       "currentSourcePaths": [
@@ -39608,14 +39614,16 @@
         "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 zero-credit dependency sweep:original palette write/cursor order and source zero-page bubble operands/absolute-Y PRG binding restored;normal BubbleCheck slots0-2 unchanged.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P130 checkpoint - fireball slot publication and bubble exception:16 qualified pre-hit/immediatefireball index guards;D725postscore/bubbleentrance pending,no allphaseclaim.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P136 checkpoint - entrance buffer reset and retained raw alias:controlled0300reset-to-entranceX0 join;rawvine/waterX5 aliasretained,legaltransition/fullframeprefix unproved,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P136 checkpoint - entrance buffer reset and retained raw alias:controlled0300reset-to-entranceX0 join;rawvine/waterX5 aliasretained,legaltransition/fullframeprefix unproved,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P145 checkpoint - bubble indexed alias writes preserved:allbytecallerX/RAM07zero-pagealiasmutationspreserved;legalentrance/subsequentstreamdomain remainsseparate,no promotion."
       ],
       "operationalEvidence": [
         "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S4 P2 actual entry palette/bubble children in65536 original roots both widths zero diff;focused bubble/native palette entry tests pass;no fresh node credit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P130 checkpoint - fireball slot publication and bubble exception:65536actualparents0RAM/APU/orderdiff perwidth,all17writePC visited,bus08/pointer checks,8focusedtests.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P136 checkpoint - entrance buffer reset and retained raw alias:17408originalchains0scopedRAM/APU/orderdiff bothwidths,53observedlabels/410PC,7focusedtests;physicalABIexcluded,no pixel/globalclaim."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P136 checkpoint - entrance buffer reset and retained raw alias:17408originalchains0scopedRAM/APU/orderdiff bothwidths,53observedlabels/410PC,7focusedtests;physicalABIexcluded,no pixel/globalclaim.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P145 checkpoint - bubble indexed alias writes preserved:65536freshroots eachwidth0diff,all5PC/256X observed,5focusedtests."
       ],
       "semanticContract": "Stores moved Y or the offscreen $f8 sentinel.",
       "currentSourcePaths": [
@@ -39633,12 +39641,14 @@
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P136 checkpoint - entrance buffer reset and retained raw alias:controlled0300reset-to-entranceX0 join;rawvine/waterX5 aliasretained,legaltransition/fullframeprefix unproved,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P136 checkpoint - entrance buffer reset and retained raw alias:controlled0300reset-to-entranceX0 join;rawvine/waterX5 aliasretained,legaltransition/fullframeprefix unproved,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P145 checkpoint - bubble indexed alias writes preserved:allbytecallerX/RAM07zero-pagealiasmutationspreserved;legalentrance/subsequentstreamdomain remainsseparate,no promotion."
       ],
       "operationalEvidence": [
         "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P136 checkpoint - entrance buffer reset and retained raw alias:17408originalchains0scopedRAM/APU/orderdiff bothwidths,53observedlabels/410PC,7focusedtests;physicalABIexcluded,no pixel/globalclaim."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P136 checkpoint - entrance buffer reset and retained raw alias:17408originalchains0scopedRAM/APU/orderdiff bothwidths,53observedlabels/410PC,7focusedtests;physicalABIexcluded,no pixel/globalclaim.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P145 checkpoint - bubble indexed alias writes preserved:65536freshroots eachwidth0diff,all5PC/256X observed,5focusedtests."
       ],
       "semanticContract": "Returns after bubble update.",
       "currentSourcePaths": [
@@ -39655,11 +39665,13 @@
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P145 checkpoint - bubble indexed alias writes preserved:allbytecallerX/RAM07zero-pagealiasmutationspreserved;legalentrance/subsequentstreamdomain remainsseparate,no promotion."
       ],
       "operationalEvidence": [
         "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P145 checkpoint - bubble indexed alias writes preserved:65536freshroots eachwidth0diff,all5PC/256X observed,5focusedtests."
       ],
       "semanticContract": "Binds pseudo-random bit to movement-force bytes $ff/$50.",
       "currentSourcePaths": [
@@ -39676,11 +39688,13 @@
       "semanticEvidence": [
         "Td S9 B13a fireball/bubble node-semantics and independent integration audit: SMB1 lines 6298-6457 compared with shared fireball, world and OAM owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T60 S3 bubble current-equivalence: static SMB1 $B6F9-$B74E comparison and 30 controlled ordinary-NMI water-area routes; 60 x86/x64 actual shared-C RAM matches, both outcomes of all four branches, no child substitution.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 original B689-B74E and E29C/E2DE source branch/read/write/call-order audit;canonical BoundingBoxCore restores00/02/01 and clip restores02/01;original paired fireball/bubble table bytes independently equal.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P145 checkpoint - bubble indexed alias writes preserved:allbytecallerX/RAM07zero-pagealiasmutationspreserved;legalentrance/subsequentstreamdomain remainsseparate,no promotion."
       ],
       "operationalEvidence": [
         "M2 T60 S3: strict C90 bubble smoke passed 18,432 cases per width; ROM/native snapshot verifier passed 60 checks; OpenNT DOS16 shared link and platform-purity passed.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit."
+        "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P145 checkpoint - bubble indexed alias writes preserved:65536freshroots eachwidth0diff,all5PC/256X observed,5focusedtests."
       ],
       "semanticContract": "Binds pseudo-random bit to timer bytes $40/$20.",
       "currentSourcePaths": [
@@ -177283,12 +177297,13 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P141 checkpoint - qualified object slot index handoffs",
         "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds",
         "docs/proposals/m2/t70-final-current-certification.md S17 P143 checkpoint - complete group decision prefix",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P144 checkpoint - original display mask output repaired"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P144 checkpoint - original display mask output repaired",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P145 checkpoint - bubble indexed alias writes preserved"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
-        "localInstructionReceiptSites": 10690,
-        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 1,
+        "localInstructionReceiptSites": 10691,
+        "otherInstructionSitesWithoutCompleteLocalLifetimeReceipt": 0,
         "explicitMemorySites": 4171,
         "directRamSites": 3773,
         "directRamSitesInBoundedCompleteOwnerReceipts": 3773,
@@ -177306,14 +177321,16 @@
           "candidateSites": 374,
           "intrinsicExclusions": 60,
           "parentChainIndexJoins": 309,
-          "callerConditionsPending": 5,
-          "evidence": "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds",
+          "aliasSemanticsPreserved": 5,
+          "callerConditionsPending": 0,
+          "globalLegalStreamDomainPending": true,
+          "globalAbsenceOfAliasProven": false,
           "explicitDispositions": {
             "intrinsic": 60,
             "parent-qualified": 309,
-            "caller-pending": 5
+            "alias-preserved": 5
           },
-          "globalAbsenceOfAliasProven": false
+          "evidence": "docs/proposals/m2/t70-final-current-certification.md S17 P145 checkpoint - bubble indexed alias writes preserved"
         },
         "entranceBubbleBufferHandoff": {
           "evidence": "docs/proposals/m2/t70-final-current-certification.md S17 P136 checkpoint - entrance buffer reset and retained raw alias",
@@ -177330,7 +177347,8 @@
             "b748"
           ],
           "aliasCredit": 0
-        }
+        },
+        "localReceiptQualification": "Allinstructionreceipts scoped;wholeProgramLifetime/globallegalstream closure remainspending. Local coverage isnotfinalcertification."
       },
       "streamWriterReceiptReconciliation": {
         "indexedWriterReceiptsJoined": 374,
@@ -177346,14 +177364,16 @@
           "candidateSites": 374,
           "intrinsicExclusions": 60,
           "parentChainIndexJoins": 309,
-          "callerConditionsPending": 5,
-          "evidence": "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds",
+          "aliasSemanticsPreserved": 5,
+          "callerConditionsPending": 0,
+          "globalLegalStreamDomainPending": true,
+          "globalAbsenceOfAliasProven": false,
           "explicitDispositions": {
             "intrinsic": 60,
             "parent-qualified": 309,
-            "caller-pending": 5
+            "alias-preserved": 5
           },
-          "globalAbsenceOfAliasProven": false
+          "evidence": "docs/proposals/m2/t70-final-current-certification.md S17 P145 checkpoint - bubble indexed alias writes preserved"
         }
       },
       "groupDecisionPrefix": {
