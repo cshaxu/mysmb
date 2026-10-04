@@ -38611,14 +38611,16 @@
         "M2 T60 S1 static audit: original SMB1 lines 6298-6348 compared against shared src/game/fireball/fireball_spawn.c; PlayerStatus and new-B gates, write order, two-slot calls, AreaType gate, descending bubble loop and return preserve the source contract.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:138instructions/55RAM joined8manualspawn/carry/scratch/callorder/CC-mask/alias/borrow clauses;3fireballfilesandcanonicalbboxunchangedaccepted45b802b4;196864scalarchecks.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P130 checkpoint - fireball slot publication and bubble exception:16 qualified pre-hit/immediatefireball index guards;D725postscore/bubbleentrance pending,no allphaseclaim."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P130 checkpoint - fireball slot publication and bubble exception:16 qualified pre-hit/immediatefireball index guards;D725postscore/bubbleentrance pending,no allphaseclaim.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T60 S1 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameMode -> GameCoreRoutine -> GameEngine scenarios cover both outcomes of all nine dispatch branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P21 checkpoint - targeted queue producer boundaries:actual write PC observed within14336 controlled original parent-to-SoundEngine roots each width;full RAM pre/post/APU/ordered commands zero diff,physical pushes only. Declared facing1/2 and X=ObjectOffset for fireball;other callers/input domains not inferred.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P130 checkpoint - fireball slot publication and bubble exception:65536actualparents0RAM/APU/orderdiff perwidth,all17writePC visited,bus08/pointer checks,8focusedtests."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P130 checkpoint - fireball slot publication and bubble exception:65536actualparents0RAM/APU/orderdiff perwidth,all17writePC visited,bus08/pointer checks,8focusedtests.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Partitions PlayerStatus before one-shot B eligibility, alternating-slot selection, Y-high/crouch/climb gates and creation writes.",
       "currentSourcePaths": [
@@ -38757,14 +38759,16 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P46 admission - actualgroundcanpublishFacing3;B6AE originalbyte-indexedadjacentPRGreadnotpreservedbytwo-element C array.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P46 checkpoint - original byte indexed fireball speed repaired:actual ground publishes rawLR toFacing33;B6AB LDY/DEY byte index selects B687+index,including adjacentPRG;two-element hostarray overflow removed without input filtering.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix:currentlocalpublisher/index scope joined;explicitcaller/return/alias prerequisites remain pending,notglobalexact.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P130 checkpoint - fireball slot publication and bubble exception:16 qualified pre-hit/immediatefireball index guards;D725postscore/bubbleentrance pending,no allphaseclaim."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P130 checkpoint - fireball slot publication and bubble exception:16 qualified pre-hit/immediatefireball index guards;D725postscore/bubbleentrance pending,no allphaseclaim.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T60 S2 current original-ROM/current x86/x64 route: 32 ordinary-NMI GameEngine fireball-core scenarios cover both outcomes of all four branches; 64 observed child-boundary checks and 64 actual shared-C executions match persistent game RAM, with identical x86/x64 results.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S7 P4 196608 original returning roots each width zero full persistent RAM/APU/ordered-write differences;normal paired indices observed,SetupBubble direct X/07 alias matrix;12 tests each,current products/OpenNT link;zero fresh credit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P44 checkpoint - fireball and bubble consumed-use joins:262144currentactualoriginalroots eachwidth zero2032RAM/APU/order,01F0-01FF excluded/minSP>=EF;138PC/17branchpairs/siximmutabletablebytesobserved. RealB624parentandB689/B6F9/B70Bchildren,emptyblock/noenemy domains,not allhitbranches. C90bothwidths/11focusedtests each;productsP39unchanged.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P46 checkpoint - original byte indexed fireball speed repaired:2048 paired baseline roots eachwidth3962RAMdiff ->0;12288 repaired roots eachwidth2032RAM/24APU/order0diff,1F0-1FF physicalstack excluded/minSP>=EF;8groundPC/bothbranchoutcomes/all256speedaddresses observed;9tests each/seven600frames0scopeddiff,3products refreshed,DOSlinkonly.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P130 checkpoint - fireball slot publication and bubble exception:65536actualparents0RAM/APU/orderdiff perwidth,all17writePC visited,bus08/pointer checks,8focusedtests."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P130 checkpoint - fireball slot publication and bubble exception:65536actualparents0RAM/APU/orderdiff perwidth,all17writePC visited,bus08/pointer checks,8focusedtests.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Preserves explosion/inactive/new/active state partition and ObjectOffset handoff. P46 indexed speed is original byte DEY domain and bound adjacent PRG,not two-element host array;rawFacing3 produced by real ground movement is retained.",
       "currentSourcePaths": [
@@ -41000,12 +41004,14 @@
         "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix:currentlocalpublisher/index scope joined;explicitcaller/return/alias prerequisites remain pending,notglobalexact."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P117 checkpoint - ObjectOffset producer dependency matrix:currentlocalpublisher/index scope joined;explicitcaller/return/alias prerequisites remain pending,notglobalexact.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Selects fixed slot five; gates inactive, emerging and active state; dispatches mushroom, star and flower behavior using the original state-bit and TimerControl predicates.",
       "currentSourcePaths": [
@@ -41045,11 +41051,13 @@
       "semanticEvidence": [
         "Td S9 B14e PowerUp node-semantics and independent integration audit: SMB1 lines 7150-7232 compared with shared power-up, enemy movement, terrain, OAM and collision owners; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T61 S6 static $BC49-$BCEA audit plus fresh original-ROM/current x86/x64 routes: fixed slot, byte state/type branches, writes, and owned call order agree; 72 init snapshots, 100 actor caller routes and 100 full-current routes pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:273instructions/110RAM joined21bounded clauses;allocation/ASLcarry,gravityscratch and08restore,scoreHUDcursor,emergence>=6 pickup/oldstate11 activation/sixchildren audited;6owners identicalretainedcommits.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T61 S6 focused current C smokes: initialization 71,680 and actor 10,240 cases per x86/x64, zero failures; platform purity and DOS16 shared-core link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P49 checkpoint - hammer misc coin score and powerup source-use joins:471040actualroots eachwidth2032RAM/24APU/order0diff,onlyphysical1F0-1FFexcluded/minSP>=EF;all273PC/27conditionalpairs andBB26mandatorytaken observed;realSpawnHammerObjcarry/SetupPowerUp/PwrUpJmp roots,10focusedtests eachpass;source/products unchanged,notwholecaller/aliasproof.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "On every fourth frame raises the item, increments emergence state, and at the original threshold installs active speed/state, foreground priority and rightward direction.",
       "currentSourcePaths": [
@@ -44011,13 +44019,15 @@
         "M2 T62 S3 static $C180-$C22C audit: exact ID threshold/carry behavior, 55-entry initializer vector and return scratch, no-init aliases, ordinary target writes, both hard-mode tables, signed red-paratroopa center, and common box/vertical-state tail order match the source instruction sequence.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:47labels/186instructions/75RAM joined12boundedsourceclauses;realcheckpointcarry andslotjoin,source-specificbox/defaultpreservation,platformbytecarry,actualLakitu erasure. Unselected14vector childfamilies andothercaller lifetimespending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P115 checkpoint - platform initializer byte addresses repaired:source addressing/order review,byteX expanded,absolute destinations retained;global reachabilitypending.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T62 S3 x86/x64 current initializer caller checks match 110 controlled original-ROM snapshots per width (220 comparisons); exhaustive vector handoff passes 84,480 cases per width and common initializer footprints pass 23,046 cases per width; platform purity and DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P59 checkpoint - initializer dispatch and shared tails reconciled:65536actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all186PC/9branchpairs/onealreadyinfeasible side;actualCPU X==input08everyroot. Sevenfocusedtests eachpass,source/productsP57unchanged.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P115 checkpoint - platform initializer byte addresses repaired:eightfamilies524288roots eachwidth,all75PC/5branchpairs0diff;oldtestred,newgreen,5tests eachwidth,3products.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Clears only vertical speed and vertical movement force, then returns.",
       "currentSourcePaths": [
@@ -51992,11 +52002,13 @@
       "semanticEvidence": [
         "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Returns for zero/d7 fireball state or odd frame; otherwise computes fireball box slot*4+$1c and scans enemy slots four down to zero.",
       "currentSourcePaths": [
@@ -52013,11 +52025,13 @@
       "semanticEvidence": [
         "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Saves enemy and fireball box identity each iteration, excludes defeated/inactive/ID-range/ineligible-Goomba/offscreen enemies, tests boxes and marks fireball d7 on hit without ending scan.",
       "currentSourcePaths": [
@@ -52034,11 +52048,13 @@
       "semanticEvidence": [
         "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "For Goomba only rejects state >=2 before common masked-offscreen and box path.",
       "currentSourcePaths": [
@@ -52056,12 +52072,14 @@
         "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P130 checkpoint - fireball slot publication and bubble exception:16 qualified pre-hit/immediatefireball index guards;D725postscore/bubbleentrance pending,no allphaseclaim."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P130 checkpoint - fireball slot publication and bubble exception:16 qualified pre-hit/immediatefireball index guards;D725postscore/bubbleentrance pending,no allphaseclaim.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P130 checkpoint - fireball slot publication and bubble exception:65536actualparents0RAM/APU/orderdiff perwidth,all17writePC visited,bus08/pointer checks,8focusedtests."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P130 checkpoint - fireball slot publication and bubble exception:65536actualparents0RAM/APU/orderdiff perwidth,all17writePC visited,bus08/pointer checks,8focusedtests.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Rejects nonzero masked offscreen bits then computes enemy box slot*4+4 for collision child.",
       "currentSourcePaths": [
@@ -52078,11 +52096,13 @@
       "semanticEvidence": [
         "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Restores fireball box and decrements enemy slot; high-bit termination follows slot zero.",
       "currentSourcePaths": [
@@ -52099,11 +52119,13 @@
       "semanticEvidence": [
         "Td S9 B16h fireball-enemy collision-core node-semantics and independent integration audit: SMB1 lines 11085-11143 compared with shared world/fireball_enemy.c and named collision/hit children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S2 static source audit: SMB1 $D6D9-$D735 and src/game/world/fireball_enemy.c preserve every state/frame gate, descending slot loop, ID/state/offscreen predicate, byte box offset, child order, live $01/ObjectOffset reload and return footprint.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S2 controlled original-ROM caller route: 1,024 bounded FireballEnemyCollision records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused scan/collision/audio-pause tests, platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Restores source ObjectOffset-equivalent fireball slot and returns.",
       "currentSourcePaths": [
@@ -52139,11 +52161,13 @@
       "semanticEvidence": [
         "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Computes the relative enemy sprite position, starts from live $01, and only substitutes the low-nibble paired slot when its ID is Bowser before the immunity and defeat dispatch.",
       "currentSourcePaths": [
@@ -52160,11 +52184,13 @@
       "semanticEvidence": [
         "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Rejects Buzzy Beetle immediately, sends Bowser to the hit-point chain, and forwards every other selected ID to the fireball eligibility filters.",
       "currentSourcePaths": [
@@ -52181,11 +52207,13 @@
       "semanticEvidence": [
         "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Decrements BowserHitPoints; only the zero transition initializes vertical state, clears horizontal/frenzy state, assigns vertical speed, selects the world replacement ID and starts the Bowser-fall score tail.",
       "currentSourcePaths": [
@@ -52203,13 +52231,15 @@
         "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Writes $23 for worlds below three and $20 otherwise, queues BowserFall, restores current enemy offset and routes score modifier nine to the common smack-score tail.",
       "currentSourcePaths": [
@@ -52226,11 +52256,13 @@
       "semanticEvidence": [
         "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Rejects BulletBill frenzy ID, Podoboo and IDs at or above $15 before shell/block defeat handling.",
       "currentSourcePaths": [
@@ -52247,11 +52279,13 @@
       "semanticEvidence": [
         "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "For Piranha, preserves CMP carry into ADC #$18, producing Y+$19 before stun; all eligible enemies are stunned, given defeat-state d5 and routed to source score selection.",
       "currentSourcePaths": [
@@ -52268,11 +52302,13 @@
       "semanticEvidence": [
         "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Calls the common stun routine, masks state with $1f, sets d5, assigns default score two and uses Hammer Bro score six before the Goomba discriminator.",
       "currentSourcePaths": [
@@ -52289,11 +52325,13 @@
       "semanticEvidence": [
         "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Replaces the default score with one only for Goomba, otherwise preserving the score selected by the preceding branch.",
       "currentSourcePaths": [
@@ -52311,13 +52349,15 @@
         "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:original fixed queue store/read PCs matched to actual independently instrumented native statement/function/address events;retained source value/guard and audio priority/cache contracts. MusicHandler maps its actual current select_music helper,not a fabricated read in step_music. No intervening game-RAM patch between parent and consumer.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P22 checkpoint - actor and terminal queue boundaries:actual write PC observed in22528 original controlled actor/terminal parent-to-SoundEngine roots each width,full pre/post RAM/APU/ordered-command zero diff,physical pushes only;declared actor/slot/input partitions,not unobserved caller or lifetime proof.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P24 checkpoint - actual external queue consumption:90112 original roots each width,88 batches;zero full2048 RAM pre/post SoundEngine,24 APU shadow and ordered-command differences. All76 observed source writer/read pairs have native counterpart in the same batch on both widths. Only actual physical pushes excluded;counts may differ for repeated/pure eager reads,not one-to-one instruction equivalence. Strict C90 probes execute current instrumented owners and real children;products unchanged from P23.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Uses the current enemy slot and score modifier for floatey-number setup, then queues EnemySmack on Square1 before the common return.",
       "currentSourcePaths": [
@@ -52334,11 +52374,13 @@
       "semanticEvidence": [
         "Td S9 B16i fireball-hit response node-semantics and independent integration audit: SMB1 lines 11145-11224 compared with shared world/fireball_hit.c, world/enemy init and named score/OAM children; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T64 S3 static source audit: SMB1 $D736-$D7C3 and src/game/world/fireball_hit.c preserve identity-table selection, live-slot reload, duplicate target, immunity, hit-point, carry-derived Piranha, stun, state and score/return semantics.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:16labels/118instructions/34RAM joined9boundedclauses;stackbox/live01/08,multiplehit,duplicateBowser/immunity/health/table/score,stunA/carry. Falsefallthrough02222 corrected infeasible;producer/inter-frame pending,no newnodecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S3 controlled original-ROM caller route: 512 bounded Fireball-hit records replayed in one x86 and one x64 native process with full compared RAM and recorded child calls, zero differences; focused hit/scan contracts, platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P73 checkpoint - fireball scan and hit uses reconciled:199680actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all118PC/24branchpairs/one mandatorybranch,4focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Returns to each caller without altering the selected enemy slot or the completed fireball-hit result.",
       "currentSourcePaths": [
@@ -53205,11 +53247,13 @@
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_enemy_stomped / mysmb_objects_enemy_face_player / mysmb_objects_setup_floatey_from_relative",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Writes score control, timer $30, enemy Y and relative X to the current enemy floatey-number slot.",
       "currentSourcePaths": [
@@ -53225,11 +53269,13 @@
       "currentCounterpart": "src/game/world/player_enemy_collision.c:mysmb_objects_enemy_stomped / mysmb_objects_enemy_face_player / mysmb_objects_setup_floatey_from_relative",
       "semanticEvidence": [
         "Td S9 B16n enemy stomp/demotion/score node-semantics and independent integration audit: SMB1 lines 11464-11566 compared with shared world/player_enemy_collision.c, enemy init/stun/distance and score children; controlled original-ROM/x86/x64 routes remain required.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:37labels/275instructions/92RAM joined13boundedclauses;hammercontact,pickup,preparedboxes/YID,response/injury/kill/stomp/demotion/score/facingY. Falsefallthrough02304 corrected infeasible,producer/inter-frame pending,no newnodecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S6 static $D84D-$DA24 audit plus 1,024 retained controlled original-ROM player-enemy contact records replayed in one x86 and one x64 native process with full compared RAM and recorded collision, injury, score and routine child calls, zero differences; focused contact contract, platform purity and DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P74 checkpoint - player contact injury stomp uses reconciled:532480actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all275PC/49branchpairs/one mandatorybranch/actualX==08/faceY,5focusedtests eachpass,strictC90checkers;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Returns after the complete four-field floatey-number write.",
       "currentSourcePaths": [
@@ -55726,11 +55772,13 @@
       "semanticEvidence": [
         "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
         "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Demotes eligible enemy IDs before stun.",
       "currentSourcePaths": [
@@ -55747,11 +55795,13 @@
       "semanticEvidence": [
         "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
         "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Reduces eligible ID to base enemy form.",
       "currentSourcePaths": [
@@ -55768,11 +55818,13 @@
       "semanticEvidence": [
         "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
         "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Sets stunned state/Y behavior, faces player except bullet variants and selects facing speed.",
       "currentSourcePaths": [
@@ -55789,11 +55841,13 @@
       "semanticEvidence": [
         "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
         "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Uses water/spiny condition for stunned Y speed.",
       "currentSourcePaths": [
@@ -55810,11 +55864,13 @@
       "semanticEvidence": [
         "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
         "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Uses normal stunned Y speed.",
       "currentSourcePaths": [
@@ -55831,11 +55887,13 @@
       "semanticEvidence": [
         "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
         "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Preserves cannon/frenzy bullet direction exceptions.",
       "currentSourcePaths": [
@@ -55852,11 +55910,13 @@
       "semanticEvidence": [
         "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
         "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Stores facing direction for non-bullet actor.",
       "currentSourcePaths": [
@@ -55873,11 +55933,13 @@
       "semanticEvidence": [
         "Td S9 K56 enemy background landing/stun node and edge audit: SMB1 lines 12461-12537 compared with src/game/enemy/background.c; controlled original-ROM/x86/x64 terrain/landing routes remain required.",
         "M2 T64 S19 static audit: SMB1 $DFC0-$E07A control, RAM/table and child-call order match the shared src/game/enemy/background.c chain.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:51labels/274instructions/68RAM joined14boundedclauses;dispatch/stunA,rawstate/landing/direction/side/bump/jump/hammer,queryA/non-solidZ/fireballbounce. Producer/inter-frame pending,no newnode/control credit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S19 controlled original-ROM enemy-background manifest: 1,643 root and 549 natural landing records replayed through freshly compiled current x86/x64 checkers, 2,192 runs per width with zero full-RAM or child-sequence differences.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P78 checkpoint - enemy ground side and fireball background uses reconciled:798976actualoriginal roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all274PC/64branchpairs,queryA/predicateZ compared,8focusedtests eachpass;source/threeproductsP69unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Returns from stun/background check.",
       "currentSourcePaths": [
@@ -56342,12 +56404,14 @@
       "semanticEvidence": [
         "M2 T64 S23 static audit: SMB1 $E143-$E14A loads enemy X, subtracts player X into $00, then subtracts page bytes with the preserved low-byte borrow; shared enemy/distance.c uses the identical byte arithmetic order.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:16labels/99instructions/37RAM joined6boundedclauses;low/pageborrow,rawdirection/delay,index/callerscratch,inclusiveloop andactualmovement tails. Twofalsefallthrough dispositions correctedinfeasible01904/01929,rawedgesretained;wholeproducerlifetimespending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S23 controlled original-ROM probe: four direct PlayerEnemyDiff entries span low-byte borrow and no-borrow, including page wrap; current x86/x64 owner checks compare A and $00 with zero differences, and focused chain/purity CTests pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,returnedA forCF6C/E143,all99PC/17branchpairs/twoproveninfeasible sides;actualX==08,5focusedtests eachpass;source/productsP57unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P63 checkpoint - Lakitu distance and movement reconciled:196608actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,returnedA forCF6C/E143,all99PC/17branchpairs/twoproveninfeasible sides;actualX==08,5focusedtests eachpass;source/productsP57unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Stores the low player/enemy X subtraction in $00 and returns the page subtraction with the original low-byte borrow.",
       "currentSourcePaths": [
@@ -57104,12 +57168,14 @@
       "semanticEvidence": [
         "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P76 checkpoint - platform positioning and geometry uses reconciled:14labels/86instructions/35RAM joined7boundedclauses;rawcounter/BIT overlap,highY borrow,verticalcarry/boxY-mask capability seams,geometry scratch/unsignedwrap. Producer/inter-frame pending,no newnode/control credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:transitive008write footprint/slot constructors join19 parent indexconditions;othervalue/phaseproducer proof remainsopen,no globalnode/edgecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:transitive008write footprint/slot constructors join19 parent indexconditions;othervalue/phaseproducer proof remainsopen,no globalnode/edgecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P76 checkpoint - platform positioning and geometry uses reconciled:466944actualoriginal roots eachwidth2032RAM/24APU/orderedwrites0diff,all86PC/18branchpairs,originalcarry/Y results compared,4focusedtests eachpass;source/threeproductsP69unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:131072freshwatched parents0scopedRAM/APU/orderdiff eachwidth,16storePCfresh/3retainedcontact,7focusedtests;unexecutedclosurePC notcoveredbyinference."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:131072freshwatched parents0scopedRAM/APU/orderdiff eachwidth,16storePCfresh/3retainedcontact,7focusedtests;unexecutedclosurePC notcoveredbyinference.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Saves second box offset in $06, initializes $07 to one and begins horizontal then vertical comparisons.",
       "currentSourcePaths": [
@@ -57126,12 +57192,14 @@
       "semanticEvidence": [
         "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P76 checkpoint - platform positioning and geometry uses reconciled:14labels/86instructions/35RAM joined7boundedclauses;rawcounter/BIT overlap,highY borrow,verticalcarry/boxY-mask capability seams,geometry scratch/unsignedwrap. Producer/inter-frame pending,no newnode/control credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:transitive008write footprint/slot constructors join19 parent indexconditions;othervalue/phaseproducer proof remainsopen,no globalnode/edgecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:transitive008write footprint/slot constructors join19 parent indexconditions;othervalue/phaseproducer proof remainsopen,no globalnode/edgecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P76 checkpoint - platform positioning and geometry uses reconciled:466944actualoriginal roots eachwidth2032RAM/24APU/orderedwrites0diff,all86PC/18branchpairs,originalcarry/Y results compared,4focusedtests eachpass;source/threeproductsP69unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:131072freshwatched parents0scopedRAM/APU/orderdiff eachwidth,16storePCfresh/3retainedcontact,7focusedtests;unexecutedclosurePC notcoveredbyinference."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:131072freshwatched parents0scopedRAM/APU/orderdiff eachwidth,16storePCfresh/3retainedcontact,7focusedtests;unexecutedclosurePC notcoveredbyinference.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Compares current X then Y coordinate pairs, short-circuiting horizontal non-overlap and handling unsigned/wrapped vertical intervals.",
       "currentSourcePaths": [
@@ -57148,12 +57216,14 @@
       "semanticEvidence": [
         "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P76 checkpoint - platform positioning and geometry uses reconciled:14labels/86instructions/35RAM joined7boundedclauses;rawcounter/BIT overlap,highY borrow,verticalcarry/boxY-mask capability seams,geometry scratch/unsignedwrap. Producer/inter-frame pending,no newnode/control credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:transitive008write footprint/slot constructors join19 parent indexconditions;othervalue/phaseproducer proof remainsopen,no globalnode/edgecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:transitive008write footprint/slot constructors join19 parent indexconditions;othervalue/phaseproducer proof remainsopen,no globalnode/edgecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P76 checkpoint - platform positioning and geometry uses reconciled:466944actualoriginal roots eachwidth2032RAM/24APU/orderedwrites0diff,all86PC/18branchpairs,originalcarry/Y results compared,4focusedtests eachpass;source/threeproductsP69unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:131072freshwatched parents0scopedRAM/APU/orderdiff eachwidth,16storePCfresh/3retainedcontact,7focusedtests;unexecutedclosurePC notcoveredbyinference."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:131072freshwatched parents0scopedRAM/APU/orderdiff eachwidth,16storePCfresh/3retainedcontact,7focusedtests;unexecutedclosurePC notcoveredbyinference.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Handles first-upper-before-second-lower case, treating wrapped vertical intervals as collision and otherwise testing lower edge.",
       "currentSourcePaths": [
@@ -57170,12 +57240,14 @@
       "semanticEvidence": [
         "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P76 checkpoint - platform positioning and geometry uses reconciled:14labels/86instructions/35RAM joined7boundedclauses;rawcounter/BIT overlap,highY borrow,verticalcarry/boxY-mask capability seams,geometry scratch/unsignedwrap. Producer/inter-frame pending,no newnode/control credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:transitive008write footprint/slot constructors join19 parent indexconditions;othervalue/phaseproducer proof remainsopen,no globalnode/edgecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:transitive008write footprint/slot constructors join19 parent indexconditions;othervalue/phaseproducer proof remainsopen,no globalnode/edgecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P76 checkpoint - platform positioning and geometry uses reconciled:466944actualoriginal roots eachwidth2032RAM/24APU/orderedwrites0diff,all86PC/18branchpairs,originalcarry/Y results compared,4focusedtests eachpass;source/threeproductsP69unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:131072freshwatched parents0scopedRAM/APU/orderdiff eachwidth,16storePCfresh/3retainedcontact,7focusedtests;unexecutedclosurePC notcoveredbyinference."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:131072freshwatched parents0scopedRAM/APU/orderdiff eachwidth,16storePCfresh/3retainedcontact,7focusedtests;unexecutedclosurePC notcoveredbyinference.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Handles second-upper-at/after-first-upper case, including equality and wrapped lower-edge collision rules.",
       "currentSourcePaths": [
@@ -57192,12 +57264,14 @@
       "semanticEvidence": [
         "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P76 checkpoint - platform positioning and geometry uses reconciled:14labels/86instructions/35RAM joined7boundedclauses;rawcounter/BIT overlap,highY borrow,verticalcarry/boxY-mask capability seams,geometry scratch/unsignedwrap. Producer/inter-frame pending,no newnode/control credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:transitive008write footprint/slot constructors join19 parent indexconditions;othervalue/phaseproducer proof remainsopen,no globalnode/edgecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:transitive008write footprint/slot constructors join19 parent indexconditions;othervalue/phaseproducer proof remainsopen,no globalnode/edgecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P76 checkpoint - platform positioning and geometry uses reconciled:466944actualoriginal roots eachwidth2032RAM/24APU/orderedwrites0diff,all86PC/18branchpairs,originalcarry/Y results compared,4focusedtests eachpass;source/threeproductsP69unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:131072freshwatched parents0scopedRAM/APU/orderdiff eachwidth,16storePCfresh/3retainedcontact,7focusedtests;unexecutedclosurePC notcoveredbyinference."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:131072freshwatched parents0scopedRAM/APU/orderdiff eachwidth,16storePCfresh/3retainedcontact,7focusedtests;unexecutedclosurePC notcoveredbyinference.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Clears carry, restores Y from $06 and returns without second-axis continuation.",
       "currentSourcePaths": [
@@ -57214,12 +57288,14 @@
       "semanticEvidence": [
         "M2 T64 S36 static $E325-$E387 audit: player entry fixes X=0; object entry saves second offset $06 and initializes $07=1. Every unsigned comparison retains source polarity, equality and interval-wrap route; horizontal failure terminates before vertical comparison. Overlap increments both offsets and decrements $07, repeating only once; source-live $06/$07 and carry-equivalent 0/1 result agree. Original CPU X advancement/Y restoration are checked against explicit C address/return seams; CPU stack/non-carry flags excluded. Six actual production caller sites consume the same API; no host geometry implementation exists.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P76 checkpoint - platform positioning and geometry uses reconciled:14labels/86instructions/35RAM joined7boundedclauses;rawcounter/BIT overlap,highY borrow,verticalcarry/boxY-mask capability seams,geometry scratch/unsignedwrap. Producer/inter-frame pending,no newnode/control credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:transitive008write footprint/slot constructors join19 parent indexconditions;othervalue/phaseproducer proof remainsopen,no globalnode/edgecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:transitive008write footprint/slot constructors join19 parent indexconditions;othervalue/phaseproducer proof remainsopen,no globalnode/edgecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T64 S36 tools/reference_geometry_core_probe.c executes 10512 unmodified-ROM routes from isolated boot state: 5184 direct player/object entries (all 1296 six-value endpoint rank quadruples per entry/axis), 2592 real PlayerHammerCollision roots, 2592 real FireballEnemyCollision roots with one Buzzy immune enemy and 144 BoundingBoxCore-to-player-geometry producer chains. All 46 core instructions and both sides of 14 branches are observed; 2592 actual original return continuations each to hammer/fireball callers are recorded. Fresh test/geometry_core_route_check.c x86/x64 each execute real shared owners without child-result substitution and match all RAM except CPU stack (1792 bytes including $06/$07); producer-only $00-$02 is an explicitly checked argument seam (1789 compared bytes). Both widths 10512/10512 zero differences, direct carry and X/Y agree. Every family has horizontal-miss $07=1, vertical-miss $07=0 and hit $07=$ff. Core smoke/platform purity and original OpenNT DOS16 build/link pass; existing OLDNAMES.LIB warning remains.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P76 checkpoint - platform positioning and geometry uses reconciled:466944actualoriginal roots eachwidth2032RAM/24APU/orderedwrites0diff,all86PC/18branchpairs,originalcarry/Y results compared,4focusedtests eachpass;source/threeproductsP69unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:131072freshwatched parents0scopedRAM/APU/orderdiff eachwidth,16storePCfresh/3retainedcontact,7focusedtests;unexecutedclosurePC notcoveredbyinference."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:131072freshwatched parents0scopedRAM/APU/orderdiff eachwidth,16storePCfresh/3retainedcontact,7focusedtests;unexecutedclosurePC notcoveredbyinference.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Advances both box offsets to vertical axis, decrements $07, loops once, then sets carry and restores Y from $06.",
       "currentSourcePaths": [
@@ -61674,13 +61750,15 @@
         "M2 T66 S2 P2 original F12A-F182 source/RAM/index/return audit: six wrappers retain source displacements, fixed destinations and Y-before-X stores; X subtraction is byte width and ignores pages. Paired block first return reloads ObjectOffset before INX/INX and second shared call. docs/history/M2-T66-player-relative-offscreen-current-proof.md Adds the enemy-array displacement and writes selected object coordinates into enemy relative-result cells.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 source-first vine/cannon callers and shared child handoff audit;real GetEnemyOffscreenBits/EnemyGfxHandler replace value-only/specialized shortcuts;PlayerEnemyDiff00 store restored;existing height/speed bytes independently equal.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 original power-up/head/block/movement source predicates,slot/carry,ordered child and scratch contracts rechecked;RunPUSubs reconnects canonical offscreen writes,BlockCode reconnects original JumpEngine state;existing child semantics retained.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P85 checkpoint - relative position and offscreen producer uses reconciled:30labels/155instructions/35RAM joined10boundedclauses;offset/borrow/sign/divide/scratch/childorder reviewed,36tablebytesboundexact;producer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P85 checkpoint - relative position and offscreen producer uses reconciled:30labels/155instructions/35RAM joined10boundedclauses;offset/borrow/sign/divide/scratch/childorder reviewed,36tablebytesboundexact;producer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T66 S2 P2 current x86/x64 each match393216 original roots across1841 RAM bytes including scratch/OAM/aliases0109-0139, zero differences; all9 labels/18 controls observed by actual PC transitions/RTS. Full256 world-X x256 screen-left-X per family, every valid selected slot/Y byte and independent valid block ObjectOffset. Native12/12 focused tests per width, purity and original DOS16 link pass;3 products refreshed. docs/history/M2-T66-player-relative-offscreen-current-proof.md Original entryf152 observed65536 times.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S8 P2 196608 unchanged original returning roots each width zero persistent RAM/APU/ordered-write diff;all29 planned original call/jump/RTS joins observed;12 tests each/current3 products/OpenNT link;26 existing labels zero fresh credit.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S10 P2 532480 original roots each width zero persistent RAM/APU/ordered-write diff,all49 controls including each coin vector observed and3 actual producer-consumer chains;9 focused tests each/purity/current three builds/products;36 existing labels zero fresh credit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P85 checkpoint - relative position and offscreen producer uses reconciled:548864originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all155PC/10branchpairs;originalwrapper/sourceXrestoreasserted,XbitsAcompared,6tests each;source/threeP81productsunchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P85 checkpoint - relative position and offscreen producer uses reconciled:548864originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all155PC/10branchpairs;originalwrapper/sourceXrestoreasserted,XbitsAcompared,6tests each;source/threeP81productsunchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Adds the enemy-array displacement and writes selected object coordinates into enemy relative-result cells.",
       "currentSourcePaths": [
@@ -61723,12 +61801,14 @@
         "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
         "M2 T66 S2 P2 original F12A-F182 source/RAM/index/return audit: six wrappers retain source displacements, fixed destinations and Y-before-X stores; X subtraction is byte width and ignores pages. Paired block first return reloads ObjectOffset before INX/INX and second shared call. docs/history/M2-T66-player-relative-offscreen-current-proof.md Preserves ObjectOffset in scratch, adds the supplied array displacement, calls the common coordinate routine and restores ObjectOffset.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P85 checkpoint - relative position and offscreen producer uses reconciled:30labels/155instructions/35RAM joined10boundedclauses;offset/borrow/sign/divide/scratch/childorder reviewed,36tablebytesboundexact;producer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:transitive008write footprint/slot constructors join19 parent indexconditions;othervalue/phaseproducer proof remainsopen,no globalnode/edgecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:transitive008write footprint/slot constructors join19 parent indexconditions;othervalue/phaseproducer proof remainsopen,no globalnode/edgecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T66 S2 P2 current x86/x64 each match393216 original roots across1841 RAM bytes including scratch/OAM/aliases0109-0139, zero differences; all9 labels/18 controls observed by actual PC transitions/RTS. Full256 world-X x256 screen-left-X per family, every valid selected slot/Y byte and independent valid block ObjectOffset. Native12/12 focused tests per width, purity and original DOS16 link pass;3 products refreshed. docs/history/M2-T66-player-relative-offscreen-current-proof.md Original entryf165 observed196608 times.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P85 checkpoint - relative position and offscreen producer uses reconciled:548864originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all155PC/10branchpairs;originalwrapper/sourceXrestoreasserted,XbitsAcompared,6tests each;source/threeP81productsunchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:131072freshwatched parents0scopedRAM/APU/orderdiff eachwidth,16storePCfresh/3retainedcontact,7focusedtests;unexecutedclosurePC notcoveredbyinference."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:131072freshwatched parents0scopedRAM/APU/orderdiff eachwidth,16storePCfresh/3retainedcontact,7focusedtests;unexecutedclosurePC notcoveredbyinference.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Preserves ObjectOffset in scratch, adds the supplied array displacement, calls the common coordinate routine and restores ObjectOffset.",
       "currentSourcePaths": [
@@ -61746,12 +61826,14 @@
         "Td S9 K20 relative-object-position node-semantics and independent control/material-edge audit: SMB1 lines 14786-14841 compared with shared src/game/oam/object_position.c; controlled original-ROM/x86/x64 player, bubble, fireball, misc, enemy and paired-block relative-coordinate routes remain required.",
         "M2 T66 S2 P2 original F12A-F182 source/RAM/index/return audit: six wrappers retain source displacements, fixed destinations and Y-before-X stores; X subtraction is byte width and ignores pages. Paired block first return reloads ObjectOffset before INX/INX and second shared call. docs/history/M2-T66-player-relative-offscreen-current-proof.md Copies source Y to destination relative Y and stores source X minus ScreenLeft_X_Pos as destination relative X.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P85 checkpoint - relative position and offscreen producer uses reconciled:30labels/155instructions/35RAM joined10boundedclauses;offset/borrow/sign/divide/scratch/childorder reviewed,36tablebytesboundexact;producer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:transitive008write footprint/slot constructors join19 parent indexconditions;othervalue/phaseproducer proof remainsopen,no globalnode/edgecredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:transitive008write footprint/slot constructors join19 parent indexconditions;othervalue/phaseproducer proof remainsopen,no globalnode/edgecredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:D725008lifetime joined,SetupFloateyNumber defersdigitmath;P130CurrentPlayer prerequisitereason superseded;twoGrowstores intrinsic5,no graphcredit."
       ],
       "operationalEvidence": [
         "M2 T66 S2 P2 current x86/x64 each match393216 original roots across1841 RAM bytes including scratch/OAM/aliases0109-0139, zero differences; all9 labels/18 controls observed by actual PC transitions/RTS. Full256 world-X x256 screen-left-X per family, every valid selected slot/Y byte and independent valid block ObjectOffset. Native12/12 focused tests per width, purity and original DOS16 link pass;3 products refreshed. docs/history/M2-T66-player-relative-offscreen-current-proof.md Original entryf171 observed458752 times.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P85 checkpoint - relative position and offscreen producer uses reconciled:548864originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all155PC/10branchpairs;originalwrapper/sourceXrestoreasserted,XbitsAcompared,6tests each;source/threeP81productsunchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:131072freshwatched parents0scopedRAM/APU/orderdiff eachwidth,16storePCfresh/3retainedcontact,7focusedtests;unexecutedclosurePC notcoveredbyinference."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation:131072freshwatched parents0scopedRAM/APU/orderdiff eachwidth,16storePCfresh/3retainedcontact,7focusedtests;unexecutedclosurePC notcoveredbyinference.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot:retainedP13065536actualparents/D7253517writes andP49Growreceipts,11focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Copies source Y to destination relative Y and stores source X minus ScreenLeft_X_Pos as destination relative X.",
       "currentSourcePaths": [
@@ -171884,7 +171966,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P130 checkpoint - fireball slot publication and bubble exception",
         "docs/proposals/m2/t70-final-current-certification.md S17 P131 checkpoint - intrinsic allocation exclusions",
         "docs/proposals/m2/t70-final-current-certification.md S17 P132 checkpoint - misc and block slot preservation",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P133 checkpoint - parser and area allocation index bounds"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P133 checkpoint - parser and area allocation index bounds",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
@@ -171905,10 +171988,10 @@
         "scope": "Retained scoped receipts and named open material obligations;not new global audit,whole-program proof or new material denominator.",
         "streamPointerCursorIndexedAliasConditions": {
           "candidateSites": 374,
-          "intrinsicExclusions": 57,
-          "parentChainIndexJoins": 39,
-          "callerConditionsPending": 278,
-          "evidence": "docs/proposals/m2/t70-final-current-certification.md S17 P133 checkpoint - parser and area allocation index bounds",
+          "intrinsicExclusions": 59,
+          "parentChainIndexJoins": 40,
+          "callerConditionsPending": 275,
+          "evidence": "docs/proposals/m2/t70-final-current-certification.md S17 P134 checkpoint - deferred score and fireball hit slot",
           "globalAbsenceOfAliasProven": false
         }
       },
