@@ -77,8 +77,8 @@ void mysmb_dos16_root_step(struct mysmb_dos16_root *root)
     mysmb_game_io_audio(&root->game,&root->audio_frame);
     if (root->hooks.submit_audio!=0)
         root->audio_available=root->hooks.submit_audio(root->hooks.context,&root->audio_frame);
-    if(root->snapshot_store && mysmb_game_snapshot_running(&root->game,&root->game_frame)){
-        mysmb_game_snapshot_capture(&root->game,&root->snapshot,root->snapshot_fingerprint);
+    if(root->snapshot_store && mysmb_game_snapshot_running(&root->game,&root->game_frame) &&
+        mysmb_game_snapshot_capture(&root->game,&root->snapshot,root->snapshot_fingerprint)){
         /* There is no DOS audio renderer. Never claim preserved PCM history. */
         memset(root->snapshot.payload+MYSMB_SNAPSHOT_CORE_BYTES,0,MYSMB_SNAPSHOT_AUDIO_BYTES);
         mysmb_snapshot_cache_update(&root->snapshot_cache,&root->snapshot,1U);

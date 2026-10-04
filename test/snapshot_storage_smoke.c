@@ -5,7 +5,7 @@
 
 static struct mysmb_snapshot_store store;
 static struct mysmb_io_snapshot state,live;
-static mysmb_io_u8 pending[4783],final_file[4783],prior[4783];
+static mysmb_io_u8 pending[MYSMB_SNAPSHOT_FILE_BYTES+1U],final_file[MYSMB_SNAPSHOT_FILE_BYTES+1U],prior[MYSMB_SNAPSHOT_FILE_BYTES+1U];
 static unsigned int pending_size,final_size,offset,write_calls,logs,removed;
 static int fault;
 static int fake_open(void *ctx,const char *name,int write,void **handle)
@@ -29,7 +29,8 @@ static int fake_write(void *handle,const mysmb_io_u8 *data,mysmb_io_u16 count,
 static int fake_read(void *handle,mysmb_io_u8 *data,mysmb_io_u16 count,
     mysmb_io_u16 *actual)
 {
-    if (handle!=final_file || fault==6) return 0;
+    if (handle!=final_file || fault==6 ||
+        (fault==8 && offset>=MYSMB_SNAPSHOT_LEGACY_FILE_BYTES)) return 0;
     if (count>23U) count=23U;
     if (count>final_size-offset) count=(mysmb_io_u16)(final_size-offset);
     memcpy(data,final_file+offset,count);offset+=count;*actual=count;
@@ -71,14 +72,14 @@ int main(int argc,char **argv)
     files.close=fake_close;files.replace=fake_replace;files.remove=fake_remove;
     files.log=fake_log;
     if (!mysmb_snapshot_store_initialize(&store,&files)) return 2;
-    if (!mysmb_snapshot_save(&store,&state) || final_size!=4782U) return 3;
+    if (!mysmb_snapshot_save(&store,&state) || final_size!=MYSMB_SNAPSHOT_FILE_BYTES) return 3;
     loaded=mysmb_snapshot_load(&store,state.fingerprint);
     if (!loaded || memcmp(loaded,&state,sizeof(state))) return 4;
-    memcpy(prior,final_file,4782U);live=state;state.payload[0]=29U;
+    memcpy(prior,final_file,MYSMB_SNAPSHOT_FILE_BYTES);live=state;state.payload[0]=29U;
     for (fault=1;fault<=4;++fault) {
         logs=0U;removed=0U;
         if (mysmb_snapshot_save(&store,&state) || logs!=1U || removed!=1U ||
-            memcmp(prior,final_file,4782U) || memcmp(&live,&store.staging,sizeof(live)))
+            memcmp(prior,final_file,MYSMB_SNAPSHOT_FILE_BYTES) || memcmp(&live,&store.staging,sizeof(live)))
             return 5;
     }
     for (fault=5;fault<=7;++fault) {
@@ -88,11 +89,25 @@ int main(int argc,char **argv)
     }
     fault=0;final_size=17U;logs=0U;
     if (mysmb_snapshot_load(&store,state.fingerprint) || logs!=1U) return 7;
-    final_size=4783U;logs=0U;
+    final_size=MYSMB_SNAPSHOT_FILE_BYTES+1U;logs=0U;
     if (mysmb_snapshot_load(&store,state.fingerprint) || logs!=1U) return 8;
-    final_size=4782U;final_file[100]^=1U;
+    final_size=MYSMB_SNAPSHOT_FILE_BYTES;final_file[100]^=1U;
     if (mysmb_snapshot_load(&store,state.fingerprint) ||
         memcmp(&live,&store.staging,sizeof(live))) return 9;
+    /* Legacy short EOF is valid, a read error at that boundary is not. */
+    memcpy(final_file,prior,MYSMB_SNAPSHOT_LEGACY_FILE_BYTES);
+    final_size=MYSMB_SNAPSHOT_LEGACY_FILE_BYTES;
+    mysmb_snapshot_put16(final_file+8,1U);mysmb_snapshot_put16(final_file+10,1U);
+    mysmb_snapshot_put32(final_file+12,MYSMB_SNAPSHOT_PRESENTATION_OFFSET);
+    memcpy(pending,final_file,32U);
+    memcpy(pending+32,final_file+36,MYSMB_SNAPSHOT_PRESENTATION_OFFSET);
+    mysmb_snapshot_put32(final_file+32,mysmb_snapshot_crc(pending,
+        MYSMB_SNAPSHOT_LEGACY_FILE_BYTES-4U));
+    fault=8;
+    if(mysmb_snapshot_load(&store,state.fingerprint) ||
+        memcmp(&live,&store.staging,sizeof(live)))return 20;
+    fault=0;loaded=mysmb_snapshot_load(&store,state.fingerprint);
+    if(!loaded || memcmp(&live,loaded,sizeof(live)))return 21;
     /* Actual file services: same directory despite arbitrary working dir. */
     if (!mysmb_file_storage_initialize(&disk,argv[1],mysmb_win32_snapshot_replace,
         &files) || !mysmb_snapshot_store_initialize(&store,&files)) return 10;

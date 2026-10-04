@@ -68,7 +68,8 @@ list(APPEND MYSMB_GAME_SOURCES src/game/player_transition.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/player_modes.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/player_end_level.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/player_movement.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/presentation/text/observation.c)
+list(APPEND MYSMB_GAME_SOURCES src/game/presentation/text/observation.c
+    src/game/presentation/text/observer_snapshot.c)
 add_library(mysmb_game STATIC ${MYSMB_GAME_SOURCES})
 target_include_directories(mysmb_game PUBLIC src)
 

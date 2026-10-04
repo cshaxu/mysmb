@@ -14,10 +14,11 @@
 #include "smb1_local_title.h"
 #endif
 
-static struct mysmb_game observed,plain,before;
+static struct mysmb_game observed,plain,before,restored;
 static struct mysmb_io_snapshot first,second;
 static struct mysmb_ppu_frame pixels1,pixels2;
-static struct mysmb_io_text_frame text;
+static struct mysmb_io_text_frame text,loaded_text;
+static unsigned char snapshot_wire[MYSMB_SNAPSHOT_FILE_BYTES];
 static struct mysmb_text_background_workspace background;
 #define CHECK(c) do { if (!(c)) { \
     fprintf(stderr,"observation check line %d\n",__LINE__); return 1; \
@@ -33,6 +34,44 @@ static void bind(struct mysmb_game *game)
         MYSMB_LOCAL_TITLE_DATA_SIZE,mysmb_local_title_icon_data,
         MYSMB_LOCAL_TITLE_ICON_DATA_SIZE);
 #endif
+}
+
+static int snapshot_case(void)
+{
+    unsigned char fingerprint[16],saved;
+    unsigned short i;
+    static const unsigned short bad_offsets[]={0U,1U,2U,3U,67U,72U,73U};
+    mysmb_game_initialize(&observed);observed.startup_phase=4U;
+    mysmb_text_observer_enable(&observed,1U);
+    observed.ram[0x0200U]=80U;observed.ram[0x0201U]=1U;
+    observed.ram[0x0203U]=40U;observed.ram[0x0204U]=80U;
+    observed.ram[0x0205U]=1U;observed.ram[0x0207U]=48U;
+    mysmb_text_observer_record(&observed,3U,0U,0U,0U,1U,0U,2U,0U);
+    /* An unobserved later write must stay unowned after loading. Its old
+     * entry still anchors the original whole-object template. */
+    observed.ram[0x0203U]=100U;
+    mysmb_game_submit_oam(&observed);
+    CHECK(mysmb_text_observer_visible_mask(&observed,0U)==2U);
+    mysmb_text_observer_clear_producer(&observed);
+    mysmb_text_observer_record(&observed,4U,0U,0U,0U,1U,4U,1U,0U);
+    mysmb_game_snapshot_fingerprint(&observed,fingerprint);
+    CHECK(mysmb_game_snapshot_capture(&observed,&first,fingerprint));
+    CHECK(mysmb_snapshot_encode(&first,snapshot_wire,sizeof(snapshot_wire))==0);
+    CHECK(mysmb_snapshot_decode(snapshot_wire,sizeof(snapshot_wire),fingerprint,&second)==0);
+    mysmb_game_initialize(&restored);
+    CHECK(mysmb_game_snapshot_restore(&restored,&second));
+    CHECK(memcmp(&observed.text_observer,&restored.text_observer,
+        sizeof(observed.text_observer))==0);
+    CHECK(mysmb_text_observer_visible_mask(&restored,0U)==2U);
+    before=restored;
+    for(i=0U;i<sizeof(bad_offsets)/sizeof(bad_offsets[0]);++i) {
+        saved=second.payload[MYSMB_SNAPSHOT_PRESENTATION_OFFSET+bad_offsets[i]];
+        second.payload[MYSMB_SNAPSHOT_PRESENTATION_OFFSET+bad_offsets[i]]=255U;
+        CHECK(!mysmb_game_snapshot_restore(&restored,&second));
+        CHECK(memcmp(&before,&restored,sizeof(restored))==0);
+        second.payload[MYSMB_SNAPSHOT_PRESENTATION_OFFSET+bad_offsets[i]]=saved;
+    }
+    return 0;
 }
 
 static int compare_draw(void (*draw)(struct mysmb_game *,mysmb_u8),
@@ -117,7 +156,7 @@ int main(int argc,char **argv)
     unsigned char fingerprint[16];
     unsigned int i,j,player,enemy,running,text_actors;
     unsigned long background_objects,background_unknown;
-    FILE *preview;
+    FILE *preview,*save_file;
     static const unsigned char enemy_ids[17]={0U,2U,3U,5U,6U,7U,8U,10U,11U,
         12U,13U,18U,17U,45U,50U,51U,53U};
 
@@ -188,14 +227,15 @@ int main(int argc,char **argv)
     for(i=0U;i<17U;++i)for(j=0U;j<3U;++j)
         CHECK(enemy_case(enemy_ids[i],j==0U?0U:j==1U?4U:5U,
             (unsigned char)(j*4U))==0);
-    bind(&observed);bind(&plain);
+    CHECK(snapshot_case()==0);
+    bind(&observed);bind(&plain);bind(&restored);
     mysmb_text_observer_enable(&observed,1U);
     mysmb_game_snapshot_fingerprint(&observed,fingerprint);
     memset(&frame1,0,sizeof(frame1));memset(&frame2,0,sizeof(frame2));
     input.buttons2=0U;player=0U;enemy=0U;running=0U;text_actors=0U;
     background_objects=background_unknown=0UL;
-    preview=argc==2?fopen(argv[1],"wb"):0;
-    CHECK(argc!=2 || preview!=0);
+    preview=argc>=2?fopen(argv[1],"wb"):0;
+    CHECK(argc<2 || preview!=0);
     for(i=0U;i<1000U;++i) {
         CHECK(mysmb_game_startup_step(&observed,1U)==
             mysmb_game_startup_step(&plain,1U));
@@ -226,6 +266,27 @@ int main(int argc,char **argv)
             CHECK(fwrite(&text,1U,sizeof(text),preview)==sizeof(text));
         }
         CHECK(memcmp(&observed,&before,sizeof(observed))==0);
+        if(i==300U) {
+            CHECK(mysmb_snapshot_encode(&first,snapshot_wire,sizeof(snapshot_wire))==0);
+            if(argc==3) {
+                save_file=fopen(argv[2],"wb");CHECK(save_file!=0);
+                CHECK(fwrite(snapshot_wire,1U,sizeof(snapshot_wire),save_file)==sizeof(snapshot_wire));
+                CHECK(fclose(save_file)==0);
+            }
+            CHECK(mysmb_snapshot_decode(snapshot_wire,sizeof(snapshot_wire),fingerprint,&second)==0);
+            CHECK(mysmb_game_snapshot_restore(&restored,&second));
+        } else if(i>300U && i<=540U) {
+            mysmb_game_tick(&restored,&input,&frame2);
+            CHECK(memcmp(&observed,&restored,sizeof(observed))==0);
+        }
+        if(i>=300U && i<=540U) {
+            CHECK(mysmb_text_elements_build(0,0U,9U,&loaded_text));
+#ifdef MYSMB_LOCAL_TITLE
+            CHECK(mysmb_text_background_scene_build(&restored,&background,&loaded_text,&background_receipt));
+#endif
+            CHECK(mysmb_text_actor_scene_draw(&restored,&loaded_text,&actor_receipt));
+            CHECK(memcmp(&text,&loaded_text,sizeof(text))==0);
+        }
         text_actors+=actor_receipt.drawn;
         CHECK(observed.text_observer.producer.overflow==0U);
         if(mysmb_game_snapshot_running(&observed,&frame1))running++;
@@ -251,6 +312,7 @@ int main(int argc,char **argv)
         "running=%u player=%u enemy=%u observer_bytes=%u\n",
         running,player,enemy,(unsigned int)sizeof(struct mysmb_text_observer));
     printf("authored actor layer: %u draws; game and observer unchanged\n",text_actors);
+    printf("snapshot: immediate authored frame and 240 future ticks identical; malformed receipts rejected atomically\n");
     printf("semantic background: %lu objects, %lu unknown metatiles; no game mutation\n",
         background_objects,background_unknown);
     return 0;

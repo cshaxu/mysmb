@@ -2,6 +2,7 @@
 #include "platform/dos16/devices.h"
 #include "game/area.h"
 #include <stdio.h>
+#include <malloc.h>
 #include "platform/file/snapshot_files.h"
 #include "platform/file/executable_path.h"
 #ifdef MYSMB_LOCAL_TITLE
@@ -11,7 +12,7 @@
 
 static struct mysmb_dos16_root root;
 static struct mysmb_vga_frame vga;
-static struct mysmb_snapshot_store snapshot_store;
+static struct mysmb_snapshot_store *snapshot_store;
 static struct mysmb_file_storage snapshot_storage;
 static mysmb_io_u8 MYSMB_IO_FAR pages0[MYSMB_VGA_PAGE_SIZE];
 static mysmb_io_u8 MYSMB_IO_FAR pages1[MYSMB_VGA_PAGE_SIZE];
@@ -48,6 +49,8 @@ int main(void)
     hooks.present_video=present_video;
     hooks.submit_audio=submit_audio;
     if (!mysmb_dos16_root_initialize(&root,&hooks)) return 1;
+    snapshot_store=(struct mysmb_snapshot_store *)_fmalloc(sizeof(*snapshot_store));
+    if(snapshot_store==0) {mysmb_dos16_root_shutdown(&root);return 1;}
 #ifdef MYSMB_LOCAL_TITLE
     mysmb_game_bind_area_source(&root.game,mysmb_local_prg,MYSMB_LOCAL_PRG_SIZE);
     mysmb_game_bind_chr_source(&root.game,mysmb_local_chr,MYSMB_LOCAL_CHR_SIZE);
@@ -58,8 +61,8 @@ int main(void)
         mysmb_file_executable_directory(path,directory,sizeof(directory)) &&
         mysmb_file_storage_initialize(&snapshot_storage,directory,
             mysmb_dos16_snapshot_replace,&files) &&
-        mysmb_snapshot_store_initialize(&snapshot_store,&files))
-        mysmb_dos16_root_bind_snapshot(&root,&snapshot_store,reset_output,0);
+        mysmb_snapshot_store_initialize(snapshot_store,&files))
+        mysmb_dos16_root_bind_snapshot(&root,snapshot_store,reset_output,0);
     mysmb_vga_frame_initialize(&vga,pages0,pages1,pages2,pages3);
     puts("DOS audio output unavailable");
     mysmb_dos16_devices_open();
@@ -69,5 +72,6 @@ int main(void)
     }
     mysmb_dos16_devices_close();
     mysmb_dos16_root_shutdown(&root);
+    _ffree(snapshot_store);
     return 0;
 }

@@ -1,4 +1,5 @@
 #include "app/game_snapshot.h"
+#include "game/presentation/text/observer_snapshot.h"
 #include <string.h>
 
 void mysmb_game_snapshot_fingerprint(const struct mysmb_game *game,
@@ -37,7 +38,10 @@ int mysmb_game_snapshot_capture(const struct mysmb_game *game,
 #undef ARRAY
     /* Roots compute immutable identity once,not once per rendered frame. */
     memcpy(snapshot->fingerprint,fingerprint,16U);
-    return out==snapshot->payload+MYSMB_SNAPSHOT_CORE_BYTES;
+    return out==snapshot->payload+MYSMB_SNAPSHOT_CORE_BYTES &&
+        MYSMB_SNAPSHOT_PRESENTATION_BYTES==MYSMB_TEXT_OBSERVER_SNAPSHOT_BYTES &&
+        mysmb_text_observer_snapshot_capture(game,
+            snapshot->payload+MYSMB_SNAPSHOT_PRESENTATION_OFFSET);
 }
 int mysmb_game_snapshot_valid(const struct mysmb_game *game,
     const struct mysmb_io_snapshot *snapshot)
@@ -52,7 +56,8 @@ int mysmb_game_snapshot_valid(const struct mysmb_game *game,
         in[4557]>16U) return 0;
     for (i=0U;i<in[4428];++i)
         if (in[4429U+i*2U]>=24U) return 0;
-    return 1;
+    return mysmb_text_observer_snapshot_valid(
+        in+MYSMB_SNAPSHOT_PRESENTATION_OFFSET);
 }
 int mysmb_game_snapshot_restore(struct mysmb_game *game,
     const struct mysmb_io_snapshot *snapshot)
@@ -80,7 +85,8 @@ int mysmb_game_snapshot_restore(struct mysmb_game *game,
         game->area_commands[i].column=*in++;game->area_commands[i].row=*in++;
         game->area_commands[i].page=*in++;game->area_commands[i].dispatch_id=*in++;
     }
-    mysmb_text_observer_invalidate(game);
+    mysmb_text_observer_snapshot_restore(game,
+        snapshot->payload+MYSMB_SNAPSHOT_PRESENTATION_OFFSET);
 #undef BYTE
 #undef ARRAY
     return 1;

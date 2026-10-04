@@ -52,17 +52,18 @@ const struct mysmb_io_snapshot *mysmb_snapshot_load(
     void *handle;
     mysmb_io_u16 offset,actual;
     int ok;
-    files=&store->files;handle=0;offset=0U;
+    files=&store->files;handle=0;offset=0U;ok=0;
     if (!files->open(files->context,final_name,MYSMB_SNAPSHOT_READ,&handle))
         goto failed;
     while (offset<MYSMB_SNAPSHOT_FILE_BYTES) {
         actual=0U;
         if (!files->read(handle,store->wire+offset,
             (mysmb_io_u16)(MYSMB_SNAPSHOT_FILE_BYTES-offset),&actual) ||
-            actual==0U || actual>MYSMB_SNAPSHOT_FILE_BYTES-offset) break;
+            actual>MYSMB_SNAPSHOT_FILE_BYTES-offset) break;
+        if(actual==0U) {ok=offset==MYSMB_SNAPSHOT_LEGACY_FILE_BYTES;break;}
         offset=(mysmb_io_u16)(offset+actual);
     }
-    actual=0U;ok=0;
+    actual=0U;
     if (offset==MYSMB_SNAPSHOT_FILE_BYTES)
         ok=files->read(handle,store->wire+offset,1U,&actual) && actual==0U;
     if (!files->close(handle,MYSMB_SNAPSHOT_READ)) ok=0;

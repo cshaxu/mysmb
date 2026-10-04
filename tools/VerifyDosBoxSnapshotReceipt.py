@@ -14,10 +14,11 @@ def verify(folder):
     assert folder.resolve().is_relative_to(build.resolve())
     save = folder / 'GAME' / 'mysmb.sav'
     data = save.read_bytes()
-    assert len(data) == 4782 and data[:8] == b'MYSMBSAV'
-    assert struct.unpack_from('<HHI', data, 8) == (1, 1, 4746)
+    assert len(data) == 10035 and data[:8] == b'MYSMBSAV'
+    assert struct.unpack_from('<HHI', data, 8) == (2, 2, 9999)
     assert zlib.crc32(data[:32] + data[36:]) == struct.unpack_from('<I', data, 32)[0]
-    assert not any(data[36 + 4622:]), 'DOS snapshot must declare absent renderer'
+    assert not any(data[36 + 4622:36 + 4746]), 'DOS snapshot must declare absent audio renderer'
+    assert not any(data[36 + 4746:]), 'text observation is not enabled by the current product root'
     assert not data[36 + 5 + 0x776] & 1, 'paused save must retain a running boundary'
     assert not (folder / 'mysmb.sav').exists(), 'save incorrectly follows CWD'
     assert not (folder / 'GAME' / 'mysmb.tmp').exists()

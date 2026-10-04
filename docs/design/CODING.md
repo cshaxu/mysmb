@@ -33,13 +33,14 @@ adapter migrations; the boundary test checks their numeric compatibility.
 `game/presentation/text/elements` is an isolated, optional element-template
 compositor. It consumes explicit immutable presentation descriptors and emits
 the neutral IO text frame; it has no RAM/OAM/resource or host dependency.
-S1 supplies authored pilot artwork and focused fixtures only. The graphical
-products do not link it yet. S2 adds optional per-instance source-decision observations and DMA latching
-under game/presentation/text/observation. Only completed player,ordinary enemy,
-convenience Goomba and power-up draws are currently observed. No product root
-enables them; no live text path is assembled yet. Observations are outside
-original state and the current snapshot schema;successful restore invalidates
-them,so immediate loaded text remains an open S2 obligation. The dormant
+S2 adds optional per-instance source-decision observations and DMA latching
+under game/presentation/text/observation,plus read-only actor/background/HUD
+assembly. No product root enables text yet. Observations are outside original
+game state;observer_snapshot explicitly serializes both phases into schema2's
+opaque presentation extension. Full source entries retain stable anchors even
+after partial overwrite. Legacy schema1 lacks those receipts and invalidates
+them on restore while retaining the destination's observation preference.
+The DOS transaction workspace uses a bounded far-heap allocation. The dormant
 `platform/text` pixel sampler is not used by this module.
 
 `io/control` owns application-request lifecycle independently of the game.

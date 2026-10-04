@@ -525,3 +525,66 @@ wrapped/hidden anchors and background/sprite priority;title/menu/misc OAM/text
 owners and residual background cases;immediate snapshot observer continuity.
 The51cases do not cover every input/path or prove original-ROM equivalence.
 No product root enables text or Tab yet;those bindings remain S4/S5.
+
+### S2 P6 snapshot continuity scope
+
+Preserve both producer and visible source-decision receipts through explicit
+byte serialization,including superseded sprite entries needed for stable
+template anchors. Shared game presentation owns receipt validation/binding;
+IO owns an opaque extension and versioned integrity checks. New schema2 adds
+5253bytes to the original4746-byte payload without moving core/audio fields.
+Read schema1 for compatibility with an absent observer extension;legacy saves
+cannot promise immediate text because they contain no source-decision receipts.
+Move the DOS file transaction workspace to a bounded far-heap allocation so
+the four expanded snapshot copies cannot overflow DGROUP. Estimate12-16files,
+350-550lines. No gameplay selector,ROM data or host rendering is added.
+Verify immediate restored text plus future ticks,partial ownership and stale
+entries,atomic malformed-state rejection,legacy decode/EOF,fault transactions,
+audio/core continuity,both widths,originalDOS16 and actualDOSBox P/O/Escape.
+Existing research containment applies;raw snapshots/captures stay local and
+are removed after neutral summaries. This is P6 within the still-open S2.
+
+### S2 P6 review receipt
+
+Fourteen source/test/build files change273added/44removed lines. Explicit
+5253-byte receipt serialization preserves both phases,partial ownership and
+the superseded entries that anchor whole-object art. Validation precedes all
+restore writes;invalid metadata cannot overwrite game state or the retained
+running cache. IO treats the extension as opaque. Schema2 files are10035bytes;
+original4622-byte core and124-byte audio offsets stay unchanged. Schema1 decode
+requires its original length/version/integrity,zeroes absent receipts and
+retains observation enablement. New saves require the new executable reader.
+
+Both widths pass12focused tests,including codec corruption/truncation,legacy
+EOF versus read-error rejection,storage failure transactions,game/audio
+restore,both host bindings,scene rendering and platform purity. A partial-
+overwrite fixture preserves the unmatched entry's anchor and visible mask;
+seven malformed receipt fields reject atomically. The real-resource twin route
+has zero original core/frame/pixel differences over1000steps. A schema2 wire
+round trip produces identical immediate text and240future complete game/text
+states. The999rendered text frames/11988000bytes and10035-byte observed save
+compare byte-for-byte across widths. Separate240-frame continuation compares
+16223040game/pixel/integer-audio/PCM bytes exactly;host numeric rounding stays
+within the existing finite-route receipt,not all-input synthesis equivalence.
+
+OriginalOpenNT16 compiles/links the same serializer. DOS transaction storage
+moves to a bounded far-heap allocation with paired free and allocation-failure
+cleanup;DGROUP46528bytes remains below64KB. Actual hiddenDOSBox41second route
+starts the new EXE,saves,moves,loads the original player position and exits;
+its schema2 save validates and absent DOS audio remains explicit. Windows
+product self-tests pass. Three refreshed local products are331023/401348/415432
+bytes;no486SX performance qualification. Raw snapshots/captures/streams are
+deleted after neutral summaries;no protected material enters the commit.
+
+Similar-issue sweep covers all production capture/restore call sites,codec
+length consumers,transaction EOF/close paths and DOS snapshot allocations.
+Windows already checks capture success;DOS now does too. Old test/probe fixed
+sizes use the new contract;historical schema1 receipts remain historical.
+Only the composition root allocates memory;receipt semantics remain shared game
+presentation. No gameplay selector or graphical compositor is changed.
+
+S2 remains open:full mixed player parts,segmented effects,wrapped/hidden anchors,
+background/sprite priority,title/menu/misc owners and residual metatile cases.
+Immediate schema2 restore continuity is now complete within the tested scope;
+legacy files lack receipt provenance. No product enables text/Tab yet. All ROM
+node/edge/facet accounting and deferred M2 certification are unchanged.

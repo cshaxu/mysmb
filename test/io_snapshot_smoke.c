@@ -7,6 +7,7 @@
 static struct mysmb_io_snapshot source,decoded,unchanged;
 static struct mysmb_io_snapshot_cache cache;
 static mysmb_io_u8 file[MYSMB_SNAPSHOT_FILE_BYTES+1U];
+static mysmb_io_u8 legacy_crc[MYSMB_SNAPSHOT_LEGACY_FILE_BYTES-4U];
 
 int main(void)
 {
@@ -17,8 +18,9 @@ int main(void)
     double result;
     unsigned int i,bit;
     mysmb_io_u16 pos;
-    if (MYSMB_SNAPSHOT_FILE_BYTES!=4782U ||
-        MYSMB_SNAPSHOT_CORE_BYTES+MYSMB_SNAPSHOT_AUDIO_BYTES!=MYSMB_SNAPSHOT_PAYLOAD_BYTES)
+    if (MYSMB_SNAPSHOT_FILE_BYTES!=10035U ||
+        MYSMB_SNAPSHOT_CORE_BYTES+MYSMB_SNAPSHOT_AUDIO_BYTES+
+        MYSMB_SNAPSHOT_PRESENTATION_BYTES!=MYSMB_SNAPSHOT_PAYLOAD_BYTES)
         return 1;
     if (mysmb_snapshot_crc(crc_fixture,9U)!=0xcbf43926UL) return 2;
     mysmb_snapshot_put32(real,0x89abcdefUL);
@@ -44,8 +46,8 @@ int main(void)
         if (!mysmb_snapshot_put_real(source.payload+MYSMB_SNAPSHOT_CORE_BYTES+
             MYSMB_SNAPSHOT_AUDIO_REAL_OFFSET+i*10U,values[i])) return 8;
     if (mysmb_snapshot_encode(&source,file,MYSMB_SNAPSHOT_FILE_BYTES)!=0 ||
-        memcmp(file,"MYSMBSAV",8U)!=0 || file[8]!=1U || file[9]!=0U ||
-        mysmb_snapshot_get32(file+12)!=4746UL) return 9;
+        memcmp(file,"MYSMBSAV",8U)!=0 || file[8]!=2U || file[9]!=0U ||
+        mysmb_snapshot_get32(file+12)!=MYSMB_SNAPSHOT_PAYLOAD_BYTES) return 9;
     if (mysmb_snapshot_decode(file,MYSMB_SNAPSHOT_FILE_BYTES,source.fingerprint,
         &decoded)!=0 || memcmp(&source,&decoded,sizeof(source))!=0) return 10;
     memset(&unchanged,0xa6,sizeof(unchanged));decoded=unchanged;
@@ -67,6 +69,20 @@ int main(void)
     memset(other_fingerprint,0,sizeof(other_fingerprint));
     if (mysmb_snapshot_decode(file,MYSMB_SNAPSHOT_FILE_BYTES,other_fingerprint,
         &decoded)!=MYSMB_SNAPSHOT_RESOURCE) return 14;
+    /* Independently construct schema1: unchanged core/audio and no receipts. */
+    mysmb_snapshot_put16(file+8,1U);mysmb_snapshot_put16(file+10,1U);
+    mysmb_snapshot_put32(file+12,MYSMB_SNAPSHOT_PRESENTATION_OFFSET);
+    memcpy(legacy_crc,file,32U);
+    memcpy(legacy_crc+32,file+36,MYSMB_SNAPSHOT_PRESENTATION_OFFSET);
+    mysmb_snapshot_put32(file+32,mysmb_snapshot_crc(legacy_crc,sizeof(legacy_crc)));
+    memset(&decoded,0xa6,sizeof(decoded));
+    if(mysmb_snapshot_decode(file,MYSMB_SNAPSHOT_LEGACY_FILE_BYTES,
+        source.fingerprint,&decoded)!=0 || memcmp(decoded.payload,source.payload,
+        MYSMB_SNAPSHOT_PRESENTATION_OFFSET))return 19;
+    for(pos=MYSMB_SNAPSHOT_PRESENTATION_OFFSET;pos<MYSMB_SNAPSHOT_PAYLOAD_BYTES;++pos)
+        if(decoded.payload[pos]!=0U)return 20;
+    if(mysmb_snapshot_decode(file,MYSMB_SNAPSHOT_FILE_BYTES,
+        source.fingerprint,&decoded)==0)return 21;
     mysmb_snapshot_cache_initialize(&cache);
     mysmb_snapshot_cache_update(&cache,&source,0U);
     if (mysmb_snapshot_cache_current(&cache)!=0) return 15;

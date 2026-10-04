@@ -54,3 +54,11 @@ redraw and reset clock/input/device queues. No translated routine changes.
 DOS marks audio-renderer state absent because it has no synthesis/device owner.
 The same format is read by all targets;DOS cannot promise atomic replacement
 or PCM continuation through intervening DOS gameplay.
+
+Snapshot schema2 preserves the original core/audio offsets and appends an
+opaque presentation extension. Shared game text presentation owns its
+source-decision receipt encoding and validation;IO only checks the version,
+length and integrity. New saves preserve producer/visible phases without
+re-executing a selector. Schema1 remains readable with absent receipts and
+therefore cannot promise immediate restored text. DOS allocates its transaction
+workspace on the far heap;platform code owns memory lifetime,not receipt logic.
