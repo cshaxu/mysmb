@@ -71,6 +71,13 @@ list(APPEND MYSMB_GAME_SOURCES src/game/player_movement.c)
 add_library(mysmb_game STATIC ${MYSMB_GAME_SOURCES})
 target_include_directories(mysmb_game PUBLIC src)
 
+# Composition glue depends only on public game output and neutral contracts.
+add_library(mysmb_game_io STATIC src/app/game_io.c)
+target_include_directories(mysmb_game_io PUBLIC src)
+add_executable(mysmb_game_io_smoke test/game_io_smoke.c)
+target_link_libraries(mysmb_game_io_smoke PRIVATE mysmb_game_io)
+add_test(NAME mysmb.game-io-smoke COMMAND mysmb_game_io_smoke)
+
 # IO contracts have no device or translated-game implementation dependency.
 add_executable(mysmb_io_contract_smoke test/io_contract_smoke.c)
 target_include_directories(mysmb_io_contract_smoke PRIVATE src)
@@ -962,7 +969,7 @@ if(WIN32)
         src/platform/win32/audio_output.c
         src/platform/win32/audio_renderer.c
         src/platform/win32/focus_pause.c)
-    target_link_libraries(mysmb_win32 PRIVATE mysmb_game user32 gdi32 winmm)
+    target_link_libraries(mysmb_win32 PRIVATE mysmb_game mysmb_game_io user32 gdi32 winmm)
     add_executable(mysmb_win32_focus_pause_smoke
         test/win32_focus_pause_smoke.c
         src/platform/win32/focus_pause.c)
@@ -1624,7 +1631,7 @@ if(MYSMB_ROM_PATH)
             $<TARGET_OBJECTS:mysmb_local_rom_data>)
         target_include_directories(mysmb_win32_death_audio_smoke PRIVATE src
             "${MYSMB_LOCAL_ROM_DIR}")
-        target_link_libraries(mysmb_win32_death_audio_smoke PRIVATE mysmb_game)
+        target_link_libraries(mysmb_win32_death_audio_smoke PRIVATE mysmb_game mysmb_game_io)
         add_test(NAME mysmb.win32-death-audio-smoke
             COMMAND mysmb_win32_death_audio_smoke)
     endif()

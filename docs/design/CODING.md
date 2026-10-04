@@ -5,6 +5,7 @@
 ```text
 src/game/       portable translated logic and original RAM model
 src/io/         neutral controller/video/audio contracts; inert text placeholder
+src/app/        public game-to-IO composition glue; no gameplay/device policy
 src/assets/     generated owner-local declarations; never tracked
 src/validate/   owner-ROM reference adapters and trace comparison
 src/platform/   win32 and dos16 host adapters

@@ -95,18 +95,18 @@ static void mysmb_win32_audio_clock_quarter(
 
 static void mysmb_win32_audio_apply_writes(
     struct mysmb_win32_audio_renderer *renderer,
-    const struct mysmb_game *game)
+    const struct mysmb_io_audio_frame *frame)
 {
     unsigned int event;
     unsigned int channel;
     unsigned int index;
-    mysmb_u8 value;
+    mysmb_io_u8 value;
 
-    for (event = 0U; event < game->apu_write_count &&
-         event < MYSMB_APU_WRITE_CAPACITY;
+    for (event = 0U; event < frame->write_count &&
+         event < MYSMB_IO_AUDIO_WRITE_CAPACITY;
          ++event) {
-        index = game->apu_writes[event].index;
-        value = game->apu_writes[event].value;
+        index = frame->writes[event].index;
+        value = frame->writes[event].value;
         if (index >= 24U) continue;
         renderer->registers[index] = value;
         if (index < 8U) {
@@ -220,7 +220,7 @@ static double mysmb_win32_noise_sample(
 }
 
 void mysmb_win32_audio_render(struct mysmb_win32_audio_renderer *renderer,
-    const struct mysmb_game *game, short *samples, unsigned int count,
+    const struct mysmb_io_audio_frame *frame, short *samples, unsigned int count,
     unsigned int sample_rate)
 {
     unsigned int index;
@@ -228,7 +228,7 @@ void mysmb_win32_audio_render(struct mysmb_win32_audio_renderer *renderer,
     double output;
 
     if (sample_rate == 0U) return;
-    mysmb_win32_audio_apply_writes(renderer, game);
+    mysmb_win32_audio_apply_writes(renderer, frame);
     for (index = 0U; index < count; ++index) {
         if (index == count / 4U || index == count / 2U ||
             index == (count * 3U) / 4U) {

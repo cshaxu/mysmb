@@ -32,7 +32,7 @@ int mysmb_win32_audio_open(struct mysmb_win32_audio_output *output)
 }
 
 void mysmb_win32_audio_submit(struct mysmb_win32_audio_output *output,
-    const struct mysmb_game *game)
+    const struct mysmb_io_audio_frame *frame)
 {
     unsigned int offset;
     unsigned int index;
@@ -43,7 +43,7 @@ void mysmb_win32_audio_submit(struct mysmb_win32_audio_output *output,
         index = (output->next + offset) % MYSMB_WIN32_AUDIO_BUFFERS;
         if (output->queued[index] == 0U ||
             (output->headers[index].dwFlags & WHDR_DONE) != 0U) {
-            mysmb_win32_audio_render(&output->renderer, game,
+            mysmb_win32_audio_render(&output->renderer, frame,
                 output->samples[index], MYSMB_WIN32_AUDIO_FRAME_SAMPLES,
                 MYSMB_WIN32_AUDIO_RATE);
             if (waveOutWrite(output->device, &output->headers[index],
@@ -55,7 +55,7 @@ void mysmb_win32_audio_submit(struct mysmb_win32_audio_output *output,
         }
     }
     /* Preserve oscillator time when the audio device falls behind a tick. */
-    mysmb_win32_audio_render(&output->renderer, game, discarded,
+    mysmb_win32_audio_render(&output->renderer, frame, discarded,
         MYSMB_WIN32_AUDIO_FRAME_SAMPLES, MYSMB_WIN32_AUDIO_RATE);
 }
 

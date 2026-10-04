@@ -175,3 +175,59 @@ S1 original scope/expected/actual matches all[];0 new nodes/controls.
 Registry/ledger and documentation gates required for closure. No configured
 remote:local commit deliverable,unavailable push reported without inventing URL.
 Owner authorizes automatic S2 admission following this reviewed S1 commit.
+
+## S2 admission - Win32 contract consumers
+
+Automatically admitted after S1 commit ada029c3 under owner authorization.
+Single executor/coordinator roles. Expected8-12 source/test files,250-400
+changed lines. Scope:Win32 composition root controller/video/audio export,
+audio_output and audio_renderer contract signatures,focused audio regressions
+and any required root-boundary test/build registration. No game semantic or
+DOS device edit. Keep waveOut synthesis/sample count,same-value retriggers,
+DIB colors,frame pacing,input J=B/K=A and focus/title-pause behavior identical.
+Input contracts decoded at root;read-only full frame submitted to GUI;audio
+adapter receives only IO snapshot,never full game. Existing renderer behavior
+is compared with old renderer under deterministic neutral write sequences.
+Original node scope/expectedMatches[],fresh0. Operational checks include
+contract/PPU/audio-output/audio-renderer/death-audio/focus/product self-tests,
+both widths,original DOS16 compilation/link and three local EXEs. Update
+changed source dependencies as explicit pending rebinding for queued M2
+verification;do not convert platform migration into game-node credit.
+
+## S2 P1 closure - Win32 IO consumers
+
+Win32 root now passes decoded IO input through app/game_io,submits a borrowed
+read-only full compositor view,and exports an owned ordered audio tick.
+Audio device/renderer interfaces consume only mysmb_io_audio_frame;no full
+game pointer or game-header dependency. Shared composition glue copies public
+output only,no original RAM or device APIs. Existing focus/title pause and
+keyboard mappings unchanged. Frame dimensions,color table and synthesis
+arithmetic unchanged;whole renderer inverse transformation equals S1 source.
+
+Actual14 source/test/build files,+253/-121;estimate8-12/250-400 changed
+lines grew by the reusable composition header/source,marshalling regression
+and real16-bit bridge probe needed for the later DOS consumer. These belong
+to admitted optional root-boundary scope,not game migration. Governance/source
+layout records and dependency bindings are additional reviewed metadata.
+
+Old/current native comparison1024ticks/752640PCM samples per width:zero sample
+and renderer-state differences. Fixed writes cover0..64 events,invalid ignored
+register indices and same-value duplicates;finite adaptation equivalence,
+not a new ROM/all-input certificate. New marshalling test covers both input
+ports,full-frame borrowed last byte,source immutability,owned audio lifetime,
+64th ordered write and empty-tick clearing. x86/x64 each9 focused tests pass,
+including actual waveOut submission,death sound,focus/pause and product self-test.
+Real OpenNT16 bridge/contract compilation and full product link pass;retained
+OLDNAMES linker warning,actual DOS graphics remains S3-S5. Three local products:
+16=260011bytes,32=369309bytes,
+64=381692bytes. Protected binaries not staged.
+
+Coordinator review:only presentation interfaces/fixtures/glue changed;game
+owners and synthesis arithmetic intact. Six changed build/Win32 dependency
+identities and six new IO/glue paths recorded explicitly;no source-site universe
+or match-status changes. Deferred final snapshot must still bind then-current
+sources. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls,
+42/952 facets and all deferred findings/coverage unchanged. Original scope,
+expected/actual matches[],fresh0. Registry/governance gates must pass before
+commit. Push unavailable:no configured remote. Automatic S3 admission follows
+reviewed S2 commit under owner authorization.

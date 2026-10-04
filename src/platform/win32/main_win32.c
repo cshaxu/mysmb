@@ -1,5 +1,6 @@
 #include <windows.h>
 
+#include "app/game_io.h"
 #include "game/area.h"
 #include "game/game.h"
 #include "game/ppu_frame.h"
@@ -25,6 +26,7 @@
 static struct mysmb_game g_game;
 static struct mysmb_frame g_frame;
 static struct mysmb_ppu_frame g_ppu_frame;
+static struct mysmb_io_audio_frame g_audio_frame;
 static struct mysmb_win32_audio_output g_audio_output;
 static struct mysmb_win32_focus_pause g_focus_pause;
 static LARGE_INTEGER g_frequency;
@@ -103,15 +105,18 @@ static DWORD mysmb_win32_dib_color(mysmb_u8 color)
     /* Table values are already top-down 32-bit DIB BGR words. */
     return colors[color & 0x3fU];
 }
-static void mysmb_win32_draw_gameplay(void)
+static void mysmb_win32_draw_gameplay(const struct mysmb_io_video_frame *frame)
 {
     unsigned int index;
-    for(index=0U;index<MYSMB_SCREEN_WIDTH*MYSMB_SCREEN_HEIGHT;++index) g_pixels[index]=mysmb_win32_dib_color(g_ppu_frame.pixels[index]);
+    for(index=0U;index<MYSMB_SCREEN_WIDTH*MYSMB_SCREEN_HEIGHT;++index) g_pixels[index]=mysmb_win32_dib_color(frame->pixels[index]);
 }
 static void mysmb_win32_build_frame(void)
 {
+    struct mysmb_io_video_frame video;
+
     mysmb_ppu_frame_build(&g_game, &g_ppu_frame);
-    mysmb_win32_draw_gameplay();
+    mysmb_game_io_video(&g_ppu_frame, &video);
+    mysmb_win32_draw_gameplay(&video);
 }
 
 static void mysmb_win32_power_on(void)
@@ -174,6 +179,7 @@ static void mysmb_win32_step(HWND window)
     LONGLONG elapsed;
     LONGLONG frame_period;
     struct mysmb_input input;
+    struct mysmb_io_input decoded;
     mysmb_u8 physical_buttons;
     unsigned int steps;
 
@@ -193,15 +199,17 @@ static void mysmb_win32_step(HWND window)
     physical_buttons = 0U;
     if (g_focus_pause.focused != 0U)
         physical_buttons = mysmb_win32_buttons_from_keys(mysmb_win32_poll_keys());
-    input.buttons2 = 0U;
+    decoded.buttons2 = 0U;
     steps = 0U;
     do {
-        input.buttons = mysmb_win32_focus_pause_buttons(&g_focus_pause,
+        decoded.buttons = mysmb_win32_focus_pause_buttons(&g_focus_pause,
                                                         &g_game, physical_buttons);
+        mysmb_game_io_input(&decoded, &input);
         g_last_tick.QuadPart += frame_period;
         mysmb_game_tick(&g_game, &input, &g_frame);
         mysmb_win32_focus_pause_after_tick(&g_focus_pause, &g_game);
-        mysmb_win32_audio_submit(&g_audio_output, &g_game);
+        mysmb_game_io_audio(&g_game, &g_audio_frame);
+        mysmb_win32_audio_submit(&g_audio_output, &g_audio_frame);
         ++steps;
         elapsed = now.QuadPart - g_last_tick.QuadPart;
     } while (elapsed >= frame_period && steps < 4U);

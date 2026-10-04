@@ -1,3 +1,4 @@
+#include "app/game_io.h"
 #include "game/area.h"
 #include "game/audio.h"
 #include "game/game.h"
@@ -21,6 +22,7 @@ static unsigned int average_level(const short *samples)
 int main(void)
 {
     struct mysmb_game game;
+    struct mysmb_io_audio_frame audio;
     struct mysmb_win32_audio_renderer renderer;
     short samples[735];
     unsigned int frame;
@@ -35,7 +37,8 @@ int main(void)
     for (frame = 0U; frame < 180U; ++frame) {
         mysmb_audio_step(&game);
         if (game.apu_write_count >= MYSMB_APU_WRITE_CAPACITY) return 1;
-        mysmb_win32_audio_render(&renderer, &game, samples, 735U, 44100U);
+        mysmb_game_io_audio(&game, &audio);
+        mysmb_win32_audio_render(&renderer, &audio, samples, 735U, 44100U);
         level = average_level(samples);
         if (frame == 0U && level < 500U) return 2;
         if (frame == 25U && level > 10U) return 3;

@@ -5,13 +5,13 @@
 #define SAMPLE_RATE 44100U
 #define FRAME_SAMPLES 735U
 
-static void apu_write(struct mysmb_game *game, unsigned int index,
-                      mysmb_u8 value)
+static void apu_write(struct mysmb_io_audio_frame *audio, unsigned int index,
+                      mysmb_io_u8 value)
 {
-    game->apu_registers[index] = value;
-    game->apu_writes[game->apu_write_count].index = (mysmb_u8)index;
-    game->apu_writes[game->apu_write_count].value = value;
-    game->apu_write_count++;
+    audio->registers[index] = value;
+    audio->writes[audio->write_count].index = (mysmb_io_u8)index;
+    audio->writes[audio->write_count].value = value;
+    audio->write_count++;
 }
 
 static unsigned int nonzero_samples(const short *samples)
@@ -45,127 +45,127 @@ static unsigned int sign_changes(const short *samples)
 }
 
 static void render_frame(struct mysmb_win32_audio_renderer *renderer,
-    struct mysmb_game *game, short *samples)
+    struct mysmb_io_audio_frame *audio, short *samples)
 {
-    mysmb_win32_audio_render(renderer, game, samples, FRAME_SAMPLES,
+    mysmb_win32_audio_render(renderer, audio, samples, FRAME_SAMPLES,
                             SAMPLE_RATE);
-    game->apu_write_count = 0U;
+    audio->write_count = 0U;
 }
 
 int main(void)
 {
-    struct mysmb_game game;
+    struct mysmb_io_audio_frame audio;
     struct mysmb_win32_audio_renderer renderer;
     short samples[FRAME_SAMPLES];
     unsigned int high_pitch_changes;
     unsigned int frame;
 
-    memset(&game, 0, sizeof(game));
+    memset(&audio, 0, sizeof(audio));
     mysmb_win32_audio_renderer_initialize(&renderer);
-    render_frame(&renderer, &game, samples);
+    render_frame(&renderer, &audio, samples);
     if (nonzero_samples(samples) != 0U) return 1;
 
-    apu_write(&game, 21U, 1U);
-    apu_write(&game, 0U, 0x9fU);
-    apu_write(&game, 2U, 253U);
-    apu_write(&game, 3U, 0U);
-    render_frame(&renderer, &game, samples);
+    apu_write(&audio, 21U, 1U);
+    apu_write(&audio, 0U, 0x9fU);
+    apu_write(&audio, 2U, 253U);
+    apu_write(&audio, 3U, 0U);
+    render_frame(&renderer, &audio, samples);
     if (nonzero_samples(samples) < FRAME_SAMPLES / 2U) return 2;
     high_pitch_changes = sign_changes(samples);
     if (high_pitch_changes < 10U) return 3;
 
     mysmb_win32_audio_renderer_initialize(&renderer);
-    game.apu_write_count = 0U;
-    apu_write(&game, 21U, 1U);
-    apu_write(&game, 0U, 0x9fU);
-    apu_write(&game, 2U, 251U);
-    apu_write(&game, 3U, 1U);
-    render_frame(&renderer, &game, samples);
+    audio.write_count = 0U;
+    apu_write(&audio, 21U, 1U);
+    apu_write(&audio, 0U, 0x9fU);
+    apu_write(&audio, 2U, 251U);
+    apu_write(&audio, 3U, 1U);
+    render_frame(&renderer, &audio, samples);
     if (sign_changes(samples) >= high_pitch_changes) return 4;
 
-    memset(&game, 0, sizeof(game));
+    memset(&audio, 0, sizeof(audio));
     mysmb_win32_audio_renderer_initialize(&renderer);
-    apu_write(&game, 21U, 4U);
-    apu_write(&game, 8U, 0x1fU);
-    apu_write(&game, 10U, 126U);
-    apu_write(&game, 11U, 0U);
-    render_frame(&renderer, &game, samples);
+    apu_write(&audio, 21U, 4U);
+    apu_write(&audio, 8U, 0x1fU);
+    apu_write(&audio, 10U, 126U);
+    apu_write(&audio, 11U, 0U);
+    render_frame(&renderer, &audio, samples);
     if (nonzero_samples(samples) < FRAME_SAMPLES / 2U) return 5;
     if (renderer.triangle_linear >= 31U) return 6;
 
-    memset(&game, 0, sizeof(game));
+    memset(&audio, 0, sizeof(audio));
     mysmb_win32_audio_renderer_initialize(&renderer);
-    apu_write(&game, 21U, 8U);
-    apu_write(&game, 12U, 0x1fU);
-    apu_write(&game, 14U, 8U);
-    apu_write(&game, 15U, 0x18U);
-    render_frame(&renderer, &game, samples);
+    apu_write(&audio, 21U, 8U);
+    apu_write(&audio, 12U, 0x1fU);
+    apu_write(&audio, 14U, 8U);
+    apu_write(&audio, 15U, 0x18U);
+    render_frame(&renderer, &audio, samples);
     if (nonzero_samples(samples) < FRAME_SAMPLES / 2U) return 7;
     if (renderer.length[3U] != 0U) return 8;
-    render_frame(&renderer, &game, samples);
+    render_frame(&renderer, &audio, samples);
     if (renderer.length[3U] != 0U) return 9;
     /* The next note may write the same $400F value again. */
-    apu_write(&game, 15U, 0x18U);
-    render_frame(&renderer, &game, samples);
+    apu_write(&audio, 15U, 0x18U);
+    render_frame(&renderer, &audio, samples);
     if (nonzero_samples(samples) < FRAME_SAMPLES / 2U) return 10;
 
     mysmb_win32_audio_renderer_initialize(&renderer);
-    game.apu_write_count = 0U;
-    apu_write(&game, 21U, 8U);
-    apu_write(&game, 12U, 0x0cU);
-    apu_write(&game, 15U, 0x58U);
+    audio.write_count = 0U;
+    apu_write(&audio, 21U, 8U);
+    apu_write(&audio, 12U, 0x0cU);
+    apu_write(&audio, 15U, 0x58U);
     for (frame = 0U; frame < 4U; ++frame)
-        render_frame(&renderer, &game, samples);
+        render_frame(&renderer, &audio, samples);
     if (renderer.envelope_level[2U] >= 15U ||
         renderer.envelope_level[2U] == 0U) return 11;
 
-    memset(&game, 0, sizeof(game));
+    memset(&audio, 0, sizeof(audio));
     mysmb_win32_audio_renderer_initialize(&renderer);
-    apu_write(&game, 21U, 1U);
-    apu_write(&game, 0U, 0x82U);
-    apu_write(&game, 2U, 253U);
-    apu_write(&game, 3U, 0x08U);
-    render_frame(&renderer, &game, samples);
+    apu_write(&audio, 21U, 1U);
+    apu_write(&audio, 0U, 0x82U);
+    apu_write(&audio, 2U, 253U);
+    apu_write(&audio, 3U, 0x08U);
+    render_frame(&renderer, &audio, samples);
     if (renderer.envelope_level[0U] <= 2U) return 12;
 
     /* A jump uses $4001 sweep writes: pulse one must change pitch without
      * another $4002/$4003 write. Pulse two has a different negate bias. */
-    memset(&game, 0, sizeof(game));
+    memset(&audio, 0, sizeof(audio));
     mysmb_win32_audio_renderer_initialize(&renderer);
-    apu_write(&game, 21U, 3U);
-    apu_write(&game, 0U, 0x9fU);
-    apu_write(&game, 4U, 0x9fU);
-    apu_write(&game, 1U, 0x89U);
-    apu_write(&game, 5U, 0x89U);
-    apu_write(&game, 2U, 0xe8U);
-    apu_write(&game, 6U, 0xe8U);
-    apu_write(&game, 3U, 0x03U);
-    apu_write(&game, 7U, 0x03U);
-    render_frame(&renderer, &game, samples);
+    apu_write(&audio, 21U, 3U);
+    apu_write(&audio, 0U, 0x9fU);
+    apu_write(&audio, 4U, 0x9fU);
+    apu_write(&audio, 1U, 0x89U);
+    apu_write(&audio, 5U, 0x89U);
+    apu_write(&audio, 2U, 0xe8U);
+    apu_write(&audio, 6U, 0xe8U);
+    apu_write(&audio, 3U, 0x03U);
+    apu_write(&audio, 7U, 0x03U);
+    render_frame(&renderer, &audio, samples);
     if (renderer.pulse_timer[0U] != 249U ||
         renderer.pulse_timer[1U] != 250U) return 13;
-    apu_write(&game, 1U, 0xf6U);
-    render_frame(&renderer, &game, samples);
+    apu_write(&audio, 1U, 0xf6U);
+    render_frame(&renderer, &audio, samples);
     if (renderer.pulse_timer[0U] != 252U) return 14;
-    if (game.apu_registers[2U] != 0xe8U ||
-        game.apu_registers[3U] != 0x03U) return 15;
+    if (audio.registers[2U] != 0xe8U ||
+        audio.registers[3U] != 0x03U) return 15;
 
     mysmb_win32_audio_renderer_initialize(&renderer);
-    game.apu_write_count = 0U;
-    apu_write(&game, 21U, 1U);
-    apu_write(&game, 1U, 0xa7U);
-    apu_write(&game, 2U, 0xe8U);
-    apu_write(&game, 3U, 0x03U);
-    render_frame(&renderer, &game, samples);
+    audio.write_count = 0U;
+    apu_write(&audio, 21U, 1U);
+    apu_write(&audio, 1U, 0xa7U);
+    apu_write(&audio, 2U, 0xe8U);
+    apu_write(&audio, 3U, 0x03U);
+    render_frame(&renderer, &audio, samples);
     if (renderer.pulse_timer[0U] != 1007U) return 16;
 
     mysmb_win32_audio_renderer_initialize(&renderer);
-    game.apu_write_count = 0U;
-    apu_write(&game, 21U, 1U);
-    apu_write(&game, 1U, 0xbcU);
-    apu_write(&game, 2U, 0xe8U);
-    apu_write(&game, 3U, 0x03U);
-    render_frame(&renderer, &game, samples);
+    audio.write_count = 0U;
+    apu_write(&audio, 21U, 1U);
+    apu_write(&audio, 1U, 0xbcU);
+    apu_write(&audio, 2U, 0xe8U);
+    apu_write(&audio, 3U, 0x03U);
+    render_frame(&renderer, &audio, samples);
     if (renderer.pulse_timer[0U] != 937U) return 17;
     return 0;
 }

@@ -17,6 +17,11 @@ preserve every ordered write, including same-value retriggers. Game state
 and output producers remain in `game/`; synthesis and device state remain
 in adapters. Text cells are an inert contract until the later text task.
 
+`app/game_io` marshals the public game output at the composition boundary.
+It copies decoded input and ordered audio,borrows compositor pixels,and never
+reads original RAM,changes game state,or calls a device. Win32's audio adapter
+accepts only the neutral audio frame;its synthesis state remains host-owned.
+
 Game code may request neutral buttons, frame ticks, and command sinks. Windows and DOS adapters translate those contracts to host APIs. Text rendering consumes game object/state commands; it never infers semantics from a bitmap. The runtime contains no 6502 CPU, generic NES PPU, or generic NES APU emulator. Platform selection happens at CMake target boundaries; `game/` does not fork on platform macros.
 
 ## Runtime Admission Boundary

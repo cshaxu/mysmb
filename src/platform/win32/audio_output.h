@@ -22,7 +22,7 @@ struct mysmb_win32_audio_output {
 
 int mysmb_win32_audio_open(struct mysmb_win32_audio_output *output);
 void mysmb_win32_audio_submit(struct mysmb_win32_audio_output *output,
-    const struct mysmb_game *game);
+    const struct mysmb_io_audio_frame *frame);
 void mysmb_win32_audio_close(struct mysmb_win32_audio_output *output);
 
 #endif

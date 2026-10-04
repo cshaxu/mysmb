@@ -85,6 +85,9 @@ try {
     $ioContractProbe = Join-Path (Split-Path -Parent $SourceRoot) 'test/io_contract_smoke.c'
     & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Foio_contract_smoke.obj /I $IncludeDirectory /I $runtimeIncludeDirectory $ioContractProbe
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+    $ioBridge = Join-Path $SourceRoot 'app/game_io.c'
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Foapp_game_io.obj /I $IncludeDirectory /I $runtimeIncludeDirectory $ioBridge
+    if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     $objects = @()
     foreach ($relativeSource in $sources) {
         $source = Join-Path $SourceRoot $relativeSource

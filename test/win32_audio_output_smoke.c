@@ -4,7 +4,7 @@
 
 int main(void)
 {
-    struct mysmb_game game;
+    struct mysmb_io_audio_frame audio;
     struct mysmb_win32_audio_output output;
     unsigned int frame;
     unsigned int index;
@@ -12,24 +12,24 @@ int main(void)
     unsigned int wait;
 
     if (waveOutGetNumDevs() == 0U) return 77;
-    memset(&game, 0, sizeof(game));
-    game.apu_channel_enable = 1U;
-    game.apu_registers[0U] = 0x9fU;
-    game.apu_registers[2U] = 253U;
-    game.apu_writes[0U].index = 21U;
-    game.apu_writes[0U].value = 1U;
-    game.apu_writes[1U].index = 0U;
-    game.apu_writes[1U].value = 0x9fU;
-    game.apu_writes[2U].index = 2U;
-    game.apu_writes[2U].value = 253U;
-    game.apu_writes[3U].index = 3U;
-    game.apu_writes[3U].value = 0U;
-    game.apu_write_count = 4U;
+    memset(&audio, 0, sizeof(audio));
+    audio.channel_enable = 1U;
+    audio.registers[0U] = 0x9fU;
+    audio.registers[2U] = 253U;
+    audio.writes[0U].index = 21U;
+    audio.writes[0U].value = 1U;
+    audio.writes[1U].index = 0U;
+    audio.writes[1U].value = 0x9fU;
+    audio.writes[2U].index = 2U;
+    audio.writes[2U].value = 253U;
+    audio.writes[3U].index = 3U;
+    audio.writes[3U].value = 0U;
+    audio.write_count = 4U;
     if (mysmb_win32_audio_open(&output) == 0) return 1;
 
     for (frame = 0U; frame < MYSMB_WIN32_AUDIO_BUFFERS; ++frame)
-        mysmb_win32_audio_submit(&output, &game);
-    game.apu_write_count = 0U;
+        mysmb_win32_audio_submit(&output, &audio);
+    audio.write_count = 0U;
     if (output.queued[0] == 0U || output.samples[0][50U] == 0) {
         mysmb_win32_audio_close(&output);
         return 2;
@@ -37,7 +37,7 @@ int main(void)
     /* Reuse completed headers while the normal 60 Hz producer continues. */
     for (frame = 0U; frame < 24U; ++frame) {
         Sleep(17U);
-        mysmb_win32_audio_submit(&output, &game);
+        mysmb_win32_audio_submit(&output, &audio);
     }
     done = 0U;
     for (wait = 0U; wait < 200U && done == 0U; ++wait) {

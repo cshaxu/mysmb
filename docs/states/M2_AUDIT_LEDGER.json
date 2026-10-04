@@ -26,7 +26,7 @@
     "controlIdentitySha256": "4d6fced75017fcd0edd80f63223f45e7d14e1b4170af91f98937a0474c970669"
   },
   "sourceSnapshot": {
-    "CMakeLists.txt": "961ba8ac3264fbb613fe85e2e207240fe859bca3bee27f972d9a95d06d4b48cd",
+    "CMakeLists.txt": "df955faef11154d1c377ee4e35fefc6e2f4f7a5ceaa5b04085905a8ff770f4d8",
     "src/game/area.c": "c7c0d508da06e0c83ebfa4aa3757e9b170753c2eecf9cbe0e0505dcdc1c52d62",
     "src/game/area.h": "ff79683256a810f1a157bb0e75e7647ef8fdb79857ba0bfe861edb9128117008",
     "src/game/area/area_data.c": "9f4d6fbb22af69b28977276ff999484956c3db3e859ee15cc6e915356b4b6176",
@@ -205,13 +205,19 @@
     "src/platform/text/text_frame.h": "bbaa25ad4d4c88820884af742b3cae802e00353249e082f58b21fe3ba10156db",
     "src/platform/vga/vga_frame.c": "e192d6f54771dbd236aeec2c01f1896881d7080da9014e67f96bd3b174ce9675",
     "src/platform/vga/vga_frame.h": "02a73a64e544d39c5849a9223083c1205b0b821cc2f65a8cab1113a5dd92e56a",
-    "src/platform/win32/audio_output.c": "ac6d5c8d85a62d0089bc905d06f9a1dbb4197ee040e0cbbc5488b0209e4ea0f9",
-    "src/platform/win32/audio_output.h": "be6d4d3a70209542e3a5e1fb524d5b6e70cfa25ad214e7df451be85d9a71fc54",
-    "src/platform/win32/audio_renderer.c": "fdf43bee21588aa6247282c034d29451526dd888d2bad7caba155aeb7fa18128",
-    "src/platform/win32/audio_renderer.h": "047abfc5e3d09d4b7466801b4dd5dfeb782ba12f89d046b7a2f7ec28c41f8d8a",
+    "src/platform/win32/audio_output.c": "ec2082e3489970b4e7ee85b11a77e83e716582b88ee49d0dcf076c8122c8c91e",
+    "src/platform/win32/audio_output.h": "c25e64fb1a21ef7bbc0fc5e94d8a7328084cdc136f154f5614cbf4b0379df97f",
+    "src/platform/win32/audio_renderer.c": "b74a63bb3193f35068ad415ce93fb254e6e3bb8367f237f48bd71bff80bc6898",
+    "src/platform/win32/audio_renderer.h": "ce71cd54a63f2135906b884aab467a37cb2ffd3d32dbc26abc743b294c19ae09",
     "src/platform/win32/focus_pause.c": "3145d6c67c2330a2992ae22da3b85b3849a23dadd0e93a65cdc6904f73d3689d",
     "src/platform/win32/focus_pause.h": "fa455dc8569d6e0bcdae681bca83560e1b0ce8573145faa7c0df798467e8414f",
-    "src/platform/win32/main_win32.c": "886d3a7f1af7129168035382152f4794a094733a163ebe600d7457ef8ed61d80"
+    "src/platform/win32/main_win32.c": "08930356682dab5c46df8b1765e24196f46d6eba53e072e6d29be8fa70211977",
+    "src/app/game_io.h": "a30de46b193fc46f137612945574b37acb6dca658c57d5d04098f7130f40b538",
+    "src/app/game_io.c": "430560c4e159f4ed067377b95d5449493191f2d8b1a5d0e8bb34ccfc169c5a1a",
+    "src/io/types.h": "55dd06e69e76e332ea63b30220b8a1faa76c7133f2b933c7b5120549acbe9aea",
+    "src/io/input.h": "477a500b8fe359da5a9356ef9ae7015efa21308e57ccc8dbb784fb0779c1b183",
+    "src/io/video.h": "fad6b3dc979323efcf0a7af212f25d25e35fc0fb0c635a5872839ad5f9e08df0",
+    "src/io/audio.h": "9e865a166bbaec42c79240cb5c53576738dff6586bee3dd70f19977588f90e32"
   },
   "uses": [
     {
@@ -123905,6 +123911,54 @@
       "groupUniverseChanged": false,
       "nodeControlCredit": 0,
       "evidence": "docs/proposals/shared-io-and-presentation-switching.md T9 admission and S1 plan"
+    },
+    {
+      "id": "M3-T9-S2-win32-io-binding",
+      "cause": "Pure Win32 IO contract migration;source renderer arithmetic inverse-equal and1024ticks/752640PCM samples each width byte-identical. Original game owners/site dispositions unchanged;final whole-game certificate remains queued.",
+      "changedSourceIdentities": [
+        {
+          "path": "CMakeLists.txt",
+          "old": "961ba8ac3264fbb613fe85e2e207240fe859bca3bee27f972d9a95d06d4b48cd",
+          "new": "df955faef11154d1c377ee4e35fefc6e2f4f7a5ceaa5b04085905a8ff770f4d8"
+        },
+        {
+          "path": "src/platform/win32/audio_output.c",
+          "old": "ac6d5c8d85a62d0089bc905d06f9a1dbb4197ee040e0cbbc5488b0209e4ea0f9",
+          "new": "ec2082e3489970b4e7ee85b11a77e83e716582b88ee49d0dcf076c8122c8c91e"
+        },
+        {
+          "path": "src/platform/win32/audio_output.h",
+          "old": "be6d4d3a70209542e3a5e1fb524d5b6e70cfa25ad214e7df451be85d9a71fc54",
+          "new": "c25e64fb1a21ef7bbc0fc5e94d8a7328084cdc136f154f5614cbf4b0379df97f"
+        },
+        {
+          "path": "src/platform/win32/audio_renderer.c",
+          "old": "fdf43bee21588aa6247282c034d29451526dd888d2bad7caba155aeb7fa18128",
+          "new": "b74a63bb3193f35068ad415ce93fb254e6e3bb8367f237f48bd71bff80bc6898"
+        },
+        {
+          "path": "src/platform/win32/audio_renderer.h",
+          "old": "047abfc5e3d09d4b7466801b4dd5dfeb782ba12f89d046b7a2f7ec28c41f8d8a",
+          "new": "ce71cd54a63f2135906b884aab467a37cb2ffd3d32dbc26abc743b294c19ae09"
+        },
+        {
+          "path": "src/platform/win32/main_win32.c",
+          "old": "886d3a7f1af7129168035382152f4794a094733a163ebe600d7457ef8ed61d80",
+          "new": "08930356682dab5c46df8b1765e24196f46d6eba53e072e6d29be8fa70211977"
+        }
+      ],
+      "addedDependencyPaths": [
+        "src/app/game_io.h",
+        "src/app/game_io.c",
+        "src/io/types.h",
+        "src/io/input.h",
+        "src/io/video.h",
+        "src/io/audio.h"
+      ],
+      "sourceUniverseChanged": false,
+      "groupUniverseChanged": false,
+      "nodeControlCredit": 0,
+      "evidence": "docs/proposals/shared-io-and-presentation-switching.md S2 admission - Win32 contract consumers"
     }
   ],
   "closure": "All group facets, findings and coverage slots evidence-closed; six registry packages closed; no unresolved source mismatch; final source/data/build binding. No all-input theorem inferred.",
