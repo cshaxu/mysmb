@@ -15,7 +15,8 @@ Composition roots connect decoded controller input and compositor output to
 adapters. Video borrows the entire original indexed frame; audio snapshots
 preserve every ordered write, including same-value retriggers. Game state
 and output producers remain in `game/`; synthesis and device state remain
-in adapters. Text cells are an inert contract until the later text task.
+in adapters. Shared game text presentation assembles authored cells;the early
+Win32 console preview consumes them through the same neutral IO boundary.
 
 `app/game_io` marshals the public game output at the composition boundary.
 It copies decoded input and ordered audio,borrows compositor pixels,and never

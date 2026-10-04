@@ -119,6 +119,9 @@ try {
     & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fotext_background_scene.obj /I $IncludeDirectory $textBackground
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     $objects = @()
+    $textAssembly = Join-Path $SourceRoot 'game/presentation/text/scene.c'
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fotext_scene.obj /I $IncludeDirectory $textAssembly
+    if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     foreach ($relativeSource in $sources) {
         $source = Join-Path $SourceRoot $relativeSource
         # OpenNT writes /c output into the current directory.  Preserve the

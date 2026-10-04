@@ -663,7 +663,8 @@ add_executable(mysmb_podoboo_oam_smoke test/podoboo_oam_smoke.c)
 target_link_libraries(mysmb_podoboo_oam_smoke PRIVATE mysmb_game)
 add_library(mysmb_text_elements STATIC src/game/presentation/text/elements.c
     src/game/presentation/text/actor_scene.c
-    src/game/presentation/text/background_scene.c)
+    src/game/presentation/text/background_scene.c
+    src/game/presentation/text/scene.c)
 target_include_directories(mysmb_text_elements PUBLIC src)
 target_link_libraries(mysmb_text_elements PUBLIC mysmb_game mysmb_io_color)
 target_link_libraries(mysmb_text_observation_smoke PRIVATE mysmb_text_elements)
@@ -1037,19 +1038,29 @@ if(WIN32)
     add_executable(mysmb_win32 WIN32 src/platform/win32/main_win32.c
         src/platform/win32/audio_output.c
         src/platform/win32/audio_renderer.c
-        src/platform/win32/focus_pause.c)
+        src/platform/win32/focus_pause.c
+        src/platform/win32/text_console.c)
     target_link_libraries(mysmb_win32 PRIVATE mysmb_game mysmb_game_io mysmb_io_color user32 gdi32 winmm)
     target_sources(mysmb_win32 PRIVATE src/platform/file/snapshot_files.c
         src/platform/win32/snapshot_replace.c src/platform/win32/audio_snapshot.c
         src/platform/win32/audio_snapshot_real.c)
-    target_link_libraries(mysmb_win32 PRIVATE mysmb_game_snapshot mysmb_io_snapshot)
+    target_link_libraries(mysmb_win32 PRIVATE mysmb_game_snapshot mysmb_io_snapshot mysmb_text_elements)
     add_executable(mysmb_win32_snapshot_binding_smoke
         test/win32_snapshot_binding_smoke.c src/platform/win32/audio_output.c
         src/platform/win32/audio_renderer.c src/platform/win32/focus_pause.c
         src/platform/file/snapshot_files.c src/platform/win32/snapshot_replace.c
-        src/platform/win32/audio_snapshot.c src/platform/win32/audio_snapshot_real.c)
+        src/platform/win32/audio_snapshot.c src/platform/win32/audio_snapshot_real.c
+        src/platform/win32/text_console.c)
+    add_executable(mysmb_win32_text_switch_smoke WIN32
+        test/win32_text_switch_smoke.c src/platform/win32/audio_output.c
+        src/platform/win32/audio_renderer.c src/platform/win32/focus_pause.c
+        src/platform/win32/text_console.c src/platform/file/snapshot_files.c
+        src/platform/win32/snapshot_replace.c src/platform/win32/audio_snapshot.c
+        src/platform/win32/audio_snapshot_real.c)
+    target_link_libraries(mysmb_win32_text_switch_smoke PRIVATE
+        mysmb_game_snapshot mysmb_game_io mysmb_text_elements mysmb_io_snapshot user32 gdi32 winmm)
     target_link_libraries(mysmb_win32_snapshot_binding_smoke PRIVATE
-        mysmb_game_snapshot mysmb_game_io mysmb_io_color user32 gdi32 winmm)
+        mysmb_game_snapshot mysmb_game_io mysmb_io_color mysmb_text_elements user32 gdi32 winmm)
     file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/snapshot-binding-test")
     add_test(NAME mysmb.win32-snapshot-binding-smoke COMMAND mysmb_win32_snapshot_binding_smoke
         "${CMAKE_BINARY_DIR}/snapshot-binding-test")
@@ -1410,6 +1421,11 @@ if(MYSMB_ROM_PATH)
         target_include_directories(mysmb_win32_snapshot_binding_smoke PRIVATE
             "${MYSMB_LOCAL_ROM_DIR}" "${MYSMB_LOCAL_TITLE_DIR}")
         target_compile_definitions(mysmb_win32_snapshot_binding_smoke PRIVATE MYSMB_LOCAL_TITLE=1)
+        target_sources(mysmb_win32_text_switch_smoke PRIVATE
+            $<TARGET_OBJECTS:mysmb_local_rom_data> $<TARGET_OBJECTS:mysmb_local_title_data>)
+        target_include_directories(mysmb_win32_text_switch_smoke PRIVATE
+            "${MYSMB_LOCAL_ROM_DIR}" "${MYSMB_LOCAL_TITLE_DIR}")
+        target_compile_definitions(mysmb_win32_text_switch_smoke PRIVATE MYSMB_LOCAL_TITLE=1)
         add_test(NAME mysmb.win32-${MYSMB_WIN32_ARCH}-self-test
                  COMMAND $<TARGET_FILE:mysmb_win32> --self-test)
     endif()

@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M3 T11 S2 active;P9 wrapped/hidden actor anchors complete;remaining scene obligations stay within S2. |
+| Identifier Mode | Continuation:M3 T11 S2 active;P10 early Win32 Tab preview complete;remaining scene obligations stay within S2. |
 | Admission And Approval | Automatic next-S admission under owner mandate after S1 reviewed local commit. |
 | Objective | Connect isolated text elements to existing draw decisions and committed visible scenes,with explicit lifetime/restore handling. |
-| Non-goals | No gameplay rewrite,ROM credit or platform Tab binding;those presenters remain S4/S5. |
+| Non-goals | No gameplay rewrite or ROM credit;DOS Tab and final presenter acceptance remain S4/S5. |
 | Reference Baseline | Historical1992/1992;local1991/1992nodes,4260/4261feasible controls;42/952facets,M2 incomplete. |
 | Candidate Proposal | [T11 S2](../proposals/colored-ascii-text-frame-gameplay.md#s2-admission). |
-| Files And ABI Surface | game presentation and minimal observation sites,scene/restore binding,focused tests/build;amended estimate40-55files,1600-2500lines. P6 versioned opaque snapshot extension preserves receipts;DOS transaction workspace moves to far heap. Remaining all-family/geometry coverage stays open within S2. |
+| Files And ABI Surface | P10 shared text scene/request,Win32 console and root,focused tests/build;7-10files,300-500lines. Earlier S2 source/restore contracts retained;remaining all-family geometry stays open. |
 | Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Documentation and source policy. |
 | Verification | Enabled/disabled observation original-state/OAM/VRAM/audio/pixel equality;visible phase,ownership/clipping,background/HUD,restore;both native widths,originalDOS16 and3products,purity/governance. |
 | Expected Markers | Scope[],expectedMatches[],actualMatches[],new0;all ROM counters retained. |
@@ -132,3 +132,13 @@ products are byte-identical to P8,so its actualDOSBox receipt is retained.
 Observer5253/DGROUP46528bytes unchanged. S2 stays open:residual special
 backgrounds/misc writers;S3 scene completion still planned,no host text/Tab.
 No new ROM credit,no remote;historical/local/facet totals remain as above.
+
+P10:early Windows Tab graphics/real80x50console preview;12source/test/build
+files,+342/-19. Bothwidths nine tests/product self-tests and actual hidden
+console4000cell/color/repeat/release/round-trip probe pass;one game/audio
+instance and graphics survive without synthetic pause. SharedC90,original
+DOS16 far ABI/link andactualDOSBox24second gameplay route pass. Products
+331279/428326/443960bytes refreshed. DOS Tab remains S4;remaining scene art,
+full S5 focus/snapshot/audio/failure routes and performance stay pending.
+Preview console close button is disabled;Tab returns,Escape exits. S2/T11
+remain open;ROM counters unchanged,no remote,no protected material staged.

@@ -35,7 +35,8 @@ compositor. It consumes explicit immutable presentation descriptors and emits
 the neutral IO text frame; it has no RAM/OAM/resource or host dependency.
 S2 adds optional per-instance source-decision observations and DMA latching
 under game/presentation/text/observation,plus read-only actor/background/HUD
-assembly. No product root enables text yet. Observations are outside original
+assembly. The Windows root now enables observations and binds an early Tab
+console preview;DOS switching remains planned. Observations are outside original
 game state;observer_snapshot explicitly serializes both phases into schema2's
 opaque presentation extension. Full source entries retain stable anchors even
 after partial overwrite. Legacy schema1 lacks those receipts and invalidates
@@ -54,6 +55,12 @@ and actual one-sided swim-kick replacement. No selector is rerun. Vine
 cap/leaves,platform spans and flag/score components use their own completed
 entry positions;small components align to a cell center within their source
 rectangle so a one-row authored glyph cannot disappear between cells.
+
+`game/presentation/text/scene` composes background and actor cells with the
+same far workspace on every target. The Win32 console device consumes only
+the neutral text frame and physical events;the root retains one game/audio
+instance while switching presenters. Shared IO accepts one Tab press until
+release. The early preview does not certify unfinished title/misc artwork.
 
 `io/control` owns application-request lifecycle independently of the game.
 The third input byte carries requests;the two controller bytes keep their

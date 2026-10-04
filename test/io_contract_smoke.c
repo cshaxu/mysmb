@@ -33,6 +33,11 @@ int main(void)
     input.buttons2 = MYSMB_IO_BUTTON_A | MYSMB_IO_BUTTON_SELECT;
     if (input.buttons != 0x42U || input.buttons2 != 0xa0U) return 3;
     mysmb_io_control_initialize(&control);
+    if(mysmb_io_control_toggle(&control,1U,0U)!=0U ||
+        mysmb_io_control_toggle(&control,1U,1U)!=MYSMB_IO_REQUEST_TOGGLE ||
+        mysmb_io_control_toggle(&control,1U,1U)!=0U ||
+        mysmb_io_control_toggle(&control,0U,0U)!=0U ||
+        mysmb_io_control_toggle(&control,1U,1U)!=MYSMB_IO_REQUEST_TOGGLE)return 9;
     input.requests=0x80U;
     mysmb_io_control_input(&control,&input);
     if (control.exit_requested!=0U) return 7;

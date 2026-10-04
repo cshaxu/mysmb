@@ -735,3 +735,58 @@ flame and explosion preserve their distinct geometry;independent components
 retain their entry anchors. Remaining special backgrounds/misc output and
 S3 title/menu/terminal ownership stay pending. ROM counters and source-policy
 boundaries are unchanged;no remote or protected artifact enters this commit.
+
+### S2 P10 early Windows Tab preview
+
+Owner requests Tab early for hands-on testing. Amend the S2 non-goal to admit
+the first Windows presenter now,without declaring S2 or planned S5 complete.
+Shared IO owns the neutral one-shot toggle request;shared game presentation
+owns full cell assembly. A neutral Windows console adapter writes80x50 cells
+and physical key requests;the root binds one game/audio instance to either
+presenter and handles internal focus transfer without synthetic START.
+Enable observations at power-on,keep P/O/Escape usable in both views,and
+rebuild current graphics on return. Estimate7-10files,300-500lines. Verify
+owned hidden-console device output,held/released Tab,root round trips without
+game/audio mutation,focused scene/restore/focus/purity tests,three builds.
+No global key injection or desktop focus manipulation during probes. DOS
+switching remains S4;incomplete title/background/misc art remains explicit.
+Original source policy and bounded local resource evidence still apply.
+
+### S2 P10 review receipt
+
+Twelve source/test/build files change342added/19removed lines. The count exceeds
+the7-10file forecast because the common scene entry and real owned-window
+probe have separate ownership from the console device. Shared IO latches a
+single Tab until release;the common scene owner composes authored background
+and actor cells. Windows enables observations from power-on and switches one
+game/audio instance between graphics and a real80x50colored console. Returning
+rebuilds current graphics. P/O/Escape use the active owned presenter;internal
+focus transfer is excluded from auto-pause. Device setup failure retains
+graphics,and failed writes trigger a return. Source-layout/architecture text
+is updated to describe this preview instead of the previous dormant path.
+
+Both widths pass nine focused tests plus actual product self-tests. A hidden
+GUI probe runs500game steps,opens a real owned console,reads back all4000cells
+and attributes,and injects console-buffer Tab repeat/release/new-press events.
+Whole game state/audio instance/graphical pixels are unchanged after the round
+trip,and no synthetic pause is pending. Both views accept P/O request edges;
+the existing snapshot binding/storage tests retain their save/load proof.
+The observation test retains1000-step zero original core/frame/pixel differences
+and immediate restore/240future-state equality. StrictC90 shared modules,
+originalOpenNT16 far scene ABI/full product link,purity and governance pass.
+
+All three refreshed local products are331279/428326/443960bytes. Actual hidden
+DOSBox title/Start/24seconds run,jump,left,release/Escape passes for this exact
+DOS binary;raw captures are deleted. DOS remains graphical and its Tab device
+binding is still S4. The Windows preview is owner-testable now,but S2/S5/T11
+are not closed:remaining art,complete switch/snapshot/audio/failure/focus
+routes and performance qualification still need their planned acceptance.
+The console host close button is disabled in the preview because its default
+close can terminate the entire GUI process;Tab returns,Escape exits. Conhost
+cell/device proof does not qualify Windows Terminal/RDP or every desktop.
+
+Similar-issue sweep covers all Windows presenter-focus checks,key request
+paths,restore redraw and window destruction;the console adapter has no game
+state/resource dependency. DOS takes the same new shared request ABI but has
+no premature toggle behavior. Zero ROM node/edge/facet credit;all historical
+and scoped totals remain unchanged,no remote or protected material is staged.

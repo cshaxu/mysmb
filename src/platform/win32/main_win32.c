@@ -14,6 +14,8 @@
 #include "game/ppu_frame.h"
 #include "platform/win32/audio_output.h"
 #include "platform/win32/focus_pause.h"
+#include "platform/win32/text_console.h"
+#include "game/presentation/text/scene.h"
 
 #ifdef MYSMB_LOCAL_TITLE
 #include "smb1_local_rom.h"
@@ -46,6 +48,10 @@ static struct mysmb_snapshot_keys g_snapshot_keys;
 static mysmb_io_u8 g_snapshot_fingerprint[16];
 static mysmb_io_u8 g_snapshot_ready;
 static mysmb_io_u8 g_snapshot_requests;
+static struct mysmb_win32_text_console g_console;
+static struct mysmb_text_scene_workspace g_text_workspace;
+static struct mysmb_io_text_frame g_text_frame;
+static mysmb_io_u8 g_text_mode,g_switching,g_toggle_request,g_text_failed;
 static LARGE_INTEGER g_frequency;
 static LARGE_INTEGER g_last_tick;
 static mysmb_u8 g_game_started;
@@ -54,6 +60,29 @@ static mysmb_u8 g_title_paused;
 static BITMAPINFO g_bitmap_info;
 static DWORD g_pixels[MYSMB_SCREEN_WIDTH * MYSMB_SCREEN_HEIGHT];
 static LRESULT CALLBACK mysmb_win32_window_proc(HWND,UINT,WPARAM,LPARAM);
+
+static int mysmb_win32_presenter_focused(HWND window)
+{
+    return GetForegroundWindow()==(g_text_mode?g_console.window:window);
+}
+static void mysmb_win32_shortcut(HWND window,WORD key,mysmb_io_u8 pressed)
+{
+    mysmb_io_u8 focused,request;
+    focused=(mysmb_io_u8)mysmb_win32_presenter_focused(window);
+    if(key==VK_TAB) {
+        g_toggle_request|=mysmb_io_control_toggle(&g_control,pressed,focused);
+        return;
+    }
+    if(key==VK_ESCAPE && pressed && focused) {
+        struct mysmb_io_input input;
+        input.buttons=input.buttons2=0U;input.requests=MYSMB_IO_REQUEST_EXIT;
+        mysmb_io_control_input(&g_control,&input);return;
+    }
+    if(key!='P' && key!='O')return;
+    request=key=='P'?MYSMB_IO_REQUEST_SAVE:MYSMB_IO_REQUEST_LOAD;
+    g_snapshot_requests|=mysmb_snapshot_keys_transition(&g_snapshot_keys,
+        request,pressed,focused);
+}
 
 static mysmb_io_u8 mysmb_win32_requests_from_message(UINT message,WPARAM key)
 {
@@ -135,9 +164,39 @@ static void mysmb_win32_build_frame(void)
 {
     struct mysmb_io_video_frame video;
 
+    if(g_text_mode) {
+        g_text_failed=(mysmb_io_u8)(!mysmb_text_scene_build(&g_game,&g_text_workspace,&g_text_frame) ||
+            !mysmb_win32_text_console_present(&g_console,&g_text_frame));
+        return;
+    }
     mysmb_ppu_frame_build(&g_game, &g_ppu_frame);
     mysmb_game_io_video(&g_ppu_frame, &video);
     mysmb_win32_draw_gameplay(&video);
+}
+
+/* Only the root chooses a presenter; device code receives neutral cells.
+ * Internal focus transfer never enters the game's auto-pause input path. */
+static void mysmb_win32_switch_presenter(HWND window,int activate)
+{
+    g_switching=1U;
+    if(!g_text_mode) {
+        if(mysmb_win32_text_console_open(&g_console)) {
+            g_text_mode=1U;
+            if(activate) {
+                ShowWindow(window,SW_HIDE);
+                ShowWindow(g_console.window,SW_SHOW);
+                SetForegroundWindow(g_console.window);
+            }
+        }
+    } else {
+        g_text_mode=0U;
+        mysmb_win32_text_console_close(&g_console);
+        if(activate) {ShowWindow(window,SW_SHOW);SetForegroundWindow(window);}
+    }
+    g_switching=0U;
+    g_text_failed=0U;
+    mysmb_win32_build_frame();
+    if(!g_text_mode)InvalidateRect(window,NULL,FALSE);
 }
 
 static void mysmb_win32_snapshot_initialize(void)
@@ -173,7 +232,7 @@ static int mysmb_win32_snapshot_request(HWND window)
     struct mysmb_win32_audio_renderer audio;
     mysmb_io_u8 requests;
     requests=g_snapshot_requests;g_snapshot_requests=0U;
-    if (!g_snapshot_ready || requests==0U || GetForegroundWindow()!=window)
+    if (!g_snapshot_ready || requests==0U || !mysmb_win32_presenter_focused(window))
         return 0;
     if ((requests&MYSMB_IO_REQUEST_LOAD)!=0U) {
         candidate=mysmb_snapshot_load(&g_snapshot_store,g_snapshot_fingerprint);
@@ -208,6 +267,7 @@ static int mysmb_win32_snapshot_request(HWND window)
 static void mysmb_win32_power_on(void)
 {
     mysmb_game_power_on(&g_game);
+    mysmb_text_observer_enable(&g_game,1U);
     mysmb_game_frame_initialize(&g_frame);
 #ifdef MYSMB_LOCAL_TITLE
     mysmb_game_bind_area_source(&g_game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
@@ -289,9 +349,24 @@ static void mysmb_win32_step(HWND window)
     struct mysmb_io_input decoded;
     mysmb_u8 physical_buttons;
     unsigned int steps;
+    unsigned int events;
+    WORD key;
+    unsigned char pressed;
 
+    if(g_text_mode && (g_text_failed || !IsWindow(g_console.window)))
+        mysmb_win32_switch_presenter(window,1);
+    for(events=0U;events<64U && g_text_mode &&
+        mysmb_win32_text_console_key(&g_console,&key,&pressed);++events)
+        mysmb_win32_shortcut(window,key,pressed);
+    /* Reconcile releases outside either owned window without reading other
+     * applications' gameplay keys. The event path retains short Tab presses. */
+    if((GetAsyncKeyState(VK_TAB)&0x8000)==0)
+        (void)mysmb_io_control_toggle(&g_control,0U,0U);
+    if(g_toggle_request) {
+        g_toggle_request=0U;mysmb_win32_switch_presenter(window,1);
+    }
     decoded.buttons=0U;decoded.buttons2=0U;decoded.requests=0U;
-    if (GetForegroundWindow()==window && (GetAsyncKeyState(VK_ESCAPE)&0x8000)!=0)
+    if (mysmb_win32_presenter_focused(window) && (GetAsyncKeyState(VK_ESCAPE)&0x8000)!=0)
         decoded.requests=MYSMB_IO_REQUEST_EXIT;
     mysmb_io_control_input(&g_control,&decoded);
     if (g_control.exit_requested!=0U) return;
@@ -307,8 +382,10 @@ static void mysmb_win32_step(HWND window)
     }
     g_game_started = 1U;
 
-    if (g_focus_pause.focused != 0U && GetForegroundWindow() != window)
+    if (g_focus_pause.focused != 0U && !mysmb_win32_presenter_focused(window))
         mysmb_win32_focus_pause_lost(&g_focus_pause, g_game_started, &g_game);
+    if(mysmb_win32_presenter_focused(window))
+        mysmb_win32_focus_pause_gained(&g_focus_pause);
     physical_buttons = 0U;
     if (g_focus_pause.focused != 0U)
         physical_buttons = mysmb_win32_buttons_from_keys(mysmb_win32_poll_keys());
@@ -332,7 +409,7 @@ static void mysmb_win32_step(HWND window)
      * the message pump responsive instead of attempting an unbounded catch-up. */
     if (elapsed >= frame_period) g_last_tick = now;
     mysmb_win32_build_frame();
-    InvalidateRect(window, NULL, FALSE);
+    if(!g_text_mode)InvalidateRect(window, NULL, FALSE);
 }
 
 static LRESULT CALLBACK mysmb_win32_window_proc(HWND window, UINT message,
@@ -346,28 +423,28 @@ static LRESULT CALLBACK mysmb_win32_window_proc(HWND window, UINT message,
         return 0;
     }
     if ((message==WM_KEYDOWN || message==WM_KEYUP) &&
-        (w_param=='P' || w_param=='O')) {
+        (w_param=='P' || w_param=='O' || w_param==VK_TAB)) {
         if (message==WM_KEYDOWN && (l_param&0x40000000L)!=0) return 0;
-        decoded.requests=w_param=='P' ? MYSMB_IO_REQUEST_SAVE:MYSMB_IO_REQUEST_LOAD;
-        g_snapshot_requests|=mysmb_snapshot_keys_transition(&g_snapshot_keys,
-            decoded.requests,(mysmb_io_u8)(message==WM_KEYDOWN),
-            (mysmb_io_u8)(GetForegroundWindow()==window && g_focus_pause.focused));
+        mysmb_win32_shortcut(window,(WORD)w_param,(mysmb_io_u8)(message==WM_KEYDOWN));
         return 0;
     }
     if (message == WM_KILLFOCUS ||
         (message == WM_ACTIVATEAPP && w_param == 0U)) {
-        mysmb_win32_focus_pause_lost(&g_focus_pause, g_game_started, &g_game);
-        mysmb_snapshot_keys_reset(&g_snapshot_keys);g_snapshot_requests=0U;
+        if(!g_switching && !g_text_mode && !mysmb_win32_presenter_focused(window)) {
+            mysmb_win32_focus_pause_lost(&g_focus_pause, g_game_started, &g_game);
+            mysmb_snapshot_keys_reset(&g_snapshot_keys);g_snapshot_requests=0U;
+        }
     }
     if (message == WM_SETFOCUS ||
         (message == WM_ACTIVATEAPP && w_param != 0U && GetFocus() == window)) {
-        mysmb_win32_focus_pause_gained(&g_focus_pause);
+        if(!g_switching && !g_text_mode)mysmb_win32_focus_pause_gained(&g_focus_pause);
     }
     if (message == WM_PAINT) {
         mysmb_win32_paint(window);
         return 0;
     }
     if (message == WM_DESTROY) {
+        mysmb_win32_text_console_close(&g_console);
         mysmb_win32_audio_close(&g_audio_output);
         PostQuitMessage(0);
         return 0;
