@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P126 natural frame RAM](../proposals/m2/t70-final-current-certification.md#s17-p126-checkpoint---natural-frame-ram-contract).
+S17 P126:six natural600-frame coldbootstrap scripts,3600 frames eachwidth. FullRAM includingzero-page/0778/0779 agreesexceptphysical01EB-01FF;busobserver attributeshighstackwrites toJSR/PHA/PHP/interrupt,minimumSP EAorEC,noother highstackwriter. RetainedCIRAM/palette/OAM/audio/7scalars0diff,nativewidthrecordsidentical. Sixfocusedtests eachwidthpass;123 sourceidentities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261 feasiblecontrols(raw4342,infeasible81);material993partial,totalunknown,M2 incomplete.
+
 [P125 installed stream lifetime](../proposals/m2/t70-final-current-certification.md#s17-p125-checkpoint---area-traversal-and-enemy-cursor-lifetime).
 S17 P125:319 area/scroll/enemy labels,2001 originalPC observed. All34 tablepairs/two profiles,68 serial32-page chains eachwidth;330752 fullscopedRAM checkpoints eachwidth0diff. E9/EA stable,739 aligned andFFterminal;9focusedtests eachwidthpass. 123 sourceidentities/P123 products unchanged. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 

@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P125 area stream lifetime checkpoint;S17 remains active,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P126 natural frame RAM checkpoint;S17 remains active,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
@@ -157,7 +157,6 @@
 
 
 
-S17 P118:19loop/childlabels,195PC scope;154freshPCobserved/41retainedlocal receipts with123sourceidentities match. Nineoriginalfamilies589824roots eachwidth0scopedRAM/APU/orderedwrite diff;newCPU Xreturnassertions andrealenemy-pluslive-score parentX6 pass. Sevenfocusedtests eachwidthpass,no code/productchange,P115EXEs retained. Historical1992/1992,local1991/1992nodes/4260/4261controls(raw4342/infeasible81),material993partial/totalunknown;globalcaller/alias lifetimes stillpending,M2 incomplete.
 
 S17 P119:19 storage/probe labels;3 direct publishers and189 indexed alias candidates (0368:69,03EE:96,06CF:24) enumerated. Original head/feet/side and vine guard bounds exclude06CF within their pointer/selector contracts;9 indirect writers have explicit dispositions. Title overlaps0368/03EE, replacement saved-field lifetimes and terrain decoder domains remain pending. Seven focused tests each width pass;123 source identities and P115 products unchanged. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);material993 partial,total unknown. M2 incomplete.
 
@@ -172,3 +171,5 @@ S17 P123:12 buffer1 producer labels,106 original instructions/7 branch pairs. Re
 S17 P124:22 status/palette/commit labels,163 original PC observed;2048 eight-turn chains eachwidth zero scoped RAM/APU/order difference. First selector6 retains27-byte queue,next selector0 commits54 bytes;ordinary queue27 bytes. Slot0368/03EE/06CF preserved. Six focused tests eachwidth pass;123 source identities and P123 three EXEs unchanged. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);material993 partial,total unknown,M2 incomplete.
 
 S17 P125:319 area/scroll/enemy labels,2001 originalPC observed. All34 tablepairs/two profiles,68 serial32-page chains eachwidth;330752 fullscopedRAM checkpoints eachwidth0diff. E9/EA stable,739 aligned andFFterminal;9focusedtests eachwidthpass. 123 sourceidentities/P123 products unchanged. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
+S17 P126:six natural600-frame coldbootstrap scripts,3600 frames eachwidth. FullRAM includingzero-page/0778/0779 agreesexceptphysical01EB-01FF;busobserver attributeshighstackwrites toJSR/PHA/PHP/interrupt,minimumSP EAorEC,noother highstackwriter. RetainedCIRAM/palette/OAM/audio/7scalars0diff,nativewidthrecordsidentical. Sixfocusedtests eachwidthpass;123 sourceidentities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261 feasiblecontrols(raw4342,infeasible81);material993partial,totalunknown,M2 incomplete.
