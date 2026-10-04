@@ -1483,3 +1483,36 @@ successes. Estimate4-8test/toolfiles,200-400lines plus focused repairs if a
 concrete gap appears. No gameplay fork or bitmap sampling;empty ROM scope.
 Unique ignored build outputs,60second runtime/no-progress and20MB raw budgets
 per route;cleanup owner S6. Report exact pending clauses and product bindings.
+
+
+### S6 P1 integrated baseline and independent cold-input contract
+
+The current x86/x64 observation route retains the accepted1000-step twin
+comparison with zero core/frame/pixel changes,immediate/240tick restoration,
+14caption producer/commit cases and45element-kind/101metatile presentation proofs.
+Both widths now produce identical999frames/11988000bytes under the current
+source build. The executed finite running-area route has zero unsupported
+visible metatiles,unsupported actors and unowned non-sprite0 entries. Its
+20579raw unknown metatile observations include title/HUD/offscreen tuples;
+that count is not a world census or a claim that all visible world routes pass.
+
+Two actual current DOS product unseeded cold-start routes(normal/dynamic)
+consume Tab,progress beyond their initial picture,create a valid schema2
+running-cache save and return to DOS on Escape. Their paused-frame verifier
+fails graphics/held-text equality;retain that failure separately rather than
+reject or approve unrelated input obligations from it. A38line independent
+neutral verifier explicitly checks the unseeded Start script,picture progress,
+text geometry,snapshot integrity and DOS exit. It never credits load equality,
+pause acceptance,performance or the historical failure's cause. Both cold-input
+checks pass on the same current product hash. Historical P12 has not been
+reproduced or explained and remains open inside S6.
+
+The similar-issue sweep covers seeded/unseeded fixture identity,separation of
+input/progress from pause/load equality,all first/last control events,current
+product identity and raw-byte budgets. Native route outputs stay below20MB
+per width/runtime and raw frames,captures/saves are deleted after receipts.
+No product source change or artifact refresh;three existing products retained.
+Empty ROM scope/new0;historical1992/1992,local1991/1992nodes,
+4260/4261feasible controls and42/952facets unchanged. S6/T11 remain open for
+additional integrated route coverage,memory/runtime evidence and the named
+cold-input reconciliation. No remote.

@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M3 T11 S6 active after reviewed S5 P2 closure. |
+| Identifier Mode | Continuation:M3 T11 S6 active;P1 cross-width scene baseline and independent cold-input receipts reviewed. |
 | Admission And Approval | Owner-authorized next-S admission;coordinator accepts unresolved T11-DOS-COLD-INPUT-P12. |
 | Objective | Integrated colored-text route acceptance,cross-host continuity and explicit DOS cold-input reconciliation. |
 | Non-goals | No new whole-ROM audit,gameplay fork or bitmap sampling;486SX hardware qualification remains M4. |
@@ -15,7 +15,7 @@
 | Verification | Integrated route matrix,cross-width cells/original-output continuity,graphics/text/P/O,DOS16 memory/runtime/cold input,three-product regression,purity and governance. |
 | Expected Markers | Scope[],expectedMatches[],actualMatches[],new0;all ROM counters retained. |
 | Asset Needs | Existing owner-local products/resources and original compiler/DOSBox;no import. Unique ignored build paths,60second runtime/no-progress and20MB raw budget per route;cleanup owner S6. |
-| Reporting Requirements | Before/after clause status,actual scope/size,products after code changes and local commit;no remote. Never infer ROM certification from text tests. |
+| Reporting Requirements | P1:38line neutral cold-input verifier;999frames/11988000bytes equal across widths,zero visible unsupported entries in finite route;current DOS normal/dynamic unseeded input/save/exit pass,paused-frame equality fails separately. Products retained;historical P12 remains open. No remote or ROM certification credit. |
 | Stop Conditions | Gameplay in host,mutated original outputs,extra ticks/audio writes,hidden unresolved clauses or segment-unsafe storage. |
 | Exit Criteria | Scoped integrated contracts pass;DOS cold-input gap explicitly reconciled;memory/runtime limits and deferred M4 qualification reported. |
 | Original Owner Request | Element-authored colored ASCII over the same game;Tab changes only presentation. |
