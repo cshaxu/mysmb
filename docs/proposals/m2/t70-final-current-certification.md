@@ -1,5 +1,64 @@
 # M2 T70: final current-equivalence certification
 
+## S17 P150 checkpoint - NMI group integration reconciled
+
+Second original-order group owner-077:admitted33 labels/211 sites/83 explicit
+accesses/97 touching controls. Current frame-root owner has32 labels/208 sites;
+UpdateTopScore's three instructions belong to the actual status child and
+are reassigned to owner-121,91->94 sites. Exact moved identities:use-01267,use-01268,use-01269. The change event contains the authoritative IDs;all
+source-site/node/control/group universe identities remain unchanged.
+Seven frame-root facets close within the ledger's declared neutral-state
+domains. No node/control promotion,game source repair or successor admission.
+
+Exact admitted labels:NonMaskableInterrupt,ScreenOff,InitBuffer,DecTimers,
+DecTimersLoop,SkipExpTimer,NoDecTimers,PauseSkip,RotPRandomBit,Sprite0Clr,
+Sprite0Hit,HBlankDelay,SkipSprite0,PauseRoutine,ChkPauseTimer,ChkStart,
+ClrPauseTimer,SetPause,ExitPause,SpriteShuffler,ShuffleLoop,StrSprOffset,
+NextSprOffset,SetAmtOffset,SetMiscOffset,OperModeExecutionTree,TitleScreenMode,
+AutoPlayer,ReadJoypads,ReadPortBits,PortLoop,Save8Bits,UpdateTopScore.
+UpdateTopScore retains its frame wrapper as a caller;control-00025 and
+control-03492 now name both frame_root.c and status.c concrete dependencies.
+Its later status-group facet reconciliation is still pending.
+
+| Facet | Applicable proof and condition |
+| --- | --- |
+| Producer/consumer | Prior-frame OAM/packets/control/scroll,neutral input and source mode/task feed the ordered root. Joypads produce saved images/masks,pause produces next-frame sound and status,timers/random/shuffle produce bounded state. Legal selector0..18/inline task domains retain source-owner contracts;upstream stream reachability is not inferred. |
+| Address/alias | Two-port06FC/06FD,074A/074B;timer780-7A3;random7A7-7AD;shuffle6E4-6FB with raw byte amount index;selector6 versus7 header clearing. P53/P91/P94 and P106 table/child bindings retain actual byte arithmetic and masks. |
+| Overwrite | Pointer00,serial00,random00,shuffle00 then dispatcher scratch are consumed in source phases. Prefix children cannot write cached770/772;score/random/shuffle cannot alter cached pause bit776 in the declared domains. DMA samples OAM before partial clear. |
+| Cross-phase lifetime | Input masks and pause cooldown persist;FA is consumed by next Sound call. Paused frames keep audio/input/VRAM/score/random/scroll while skipping timers/frame9/shuffle/mode. Prior outputs are consumed before next mode production;captured split and saved control survive mode changes. P122/P124 and retained persistent/natural frame protocols supplement source write sets. |
+| Register/flag/stack | Controller stack/ROL under standard NES D1zero capability,byte pause/timer predicates,seven ROR carries,shuffle ADC carry and second28 addition preserved. Saved PHA control restored instead of changed mirror;typed child results preserve source return contracts. Physical CPU stack/poll/RTI effects remain declared hardware ABI. |
+| Caller/return | Sound->Joy->Pause->TopScore then timer/random/sprite/scroll/mode;post-child reloads/caches justified by write sets. P111 actual title/victory parents retain live returned task and original AutoPlayer tail. Every97 touching control identity remains registered;no inferred unobserved-edge promotion. |
+| Source binding | Current frame/status/boot/game/audio and P111 mode/dispatcher/engine/player identities match retained proofs. P106 area.c whole-file drift checked against its Git revision:called palette/special/message functions and constant/include prefix identical;changed graphics producers retain P121-P124 repairs. |
+
+Retained original/native evidence checked,not rerun unnecessarily:
+P53 shuffle4096,P89 status196608,P90 pause262144,P91 joypads262144,
+P94 timer/random3840,P106 full declared-state NMI parents8192 plus531 prefix
+and64 phase cases,P111 mode joins83712 per width. All retained differences0.
+P94 compares47 phase bytes;P106 prefix/phase use their narrower field sets.
+P53 uses its recorded2032-byte stack exclusion. These fields/exclusions are
+not expanded by their reuse. Combined original visit records observe all211
+admitted PCs,including fourteen sprite-clear/hit/delay positions absent from
+the ordinary NMI parent fixture. No case-count sum is a proof of whole-game
+coverage;P111 also exercises other owners outside this group.
+
+Sprite-zero phase comparison used real source wait/scroll events plus native
+synthetic compositor markers;it is not an original final-pixel comparison.
+Physical PPU latch/fetch/fine-X/split/dot alternatives remain the three
+explicit pixel slots. Group closure does not close those slots or the ten
+complete-route manifests. CPU-cycle equivalence is not the native ABI.
+
+Current operational track:10 exact tests each width pass,covering boot/NMI,
+NMI parent,VRAM table,joypad/VRAM,pseudorandom,timer,pause,shuffle,top score
+and platform purity. Widths execute concurrently,jobs4;only9 required native
+test targets each. Build28.59s/27.87s,test1.09s/1.37s. No product source
+change;retain P144 three EXEs and original DOS16 compile/link evidence.
+
+Result:2/136 groups,14/952 facets closed,938 pending. Local1991/1992 nodes,
+4260/4261 feasible controls(raw4342,infeasible81),993 partial material
+receipts unchanged;two localized findings/all13 coverage slots open.
+Six final packages:2closed/4pending. M2/T70/S17 remain incomplete/open.
+Next source-order group owner-079 requires exact-scope admission.
+
 ## S17 P149 checkpoint - startup group integration reconciled
 
 First original-order group owner-051 now contains20 labels/98 instruction
@@ -54,6 +113,23 @@ Full M2 remains incomplete. No game source or product change;retain P144
 three EXEs and original DOS16 compile/link receipt. S17 and T70 stay open;
 next source-order group is owner-077,whose exact scope must be admitted
 before reconciliation.
+
+P150 admission: next original-order owner-077 frame-root group,33 labels,
+211 sites/83 explicit accesses/97 touching controls. Exact labels:
+NonMaskableInterrupt,ScreenOff,InitBuffer,DecTimers,DecTimersLoop,SkipExpTimer,NoDecTimers,PauseSkip,RotPRandomBit,Sprite0Clr,Sprite0Hit,HBlankDelay,SkipSprite0,PauseRoutine,ChkPauseTimer,ChkStart,ClrPauseTimer,SetPause,ExitPause,SpriteShuffler,ShuffleLoop,StrSprOffset,NextSprOffset,SetAmtOffset,SetMiscOffset,OperModeExecutionTree,TitleScreenMode,AutoPlayer,ReadJoypads,ReadPortBits,PortLoop,Save8Bits,UpdateTopScore.
+Existing1667-participant S17 scope contains all;fresh graph credit0.
+Scope current neutral frame-root integration only;reuse P48/P53/P89-P91/
+P94/P106/P111/P122/P124/P126-P127 where current functions/dependencies match.
+Verify changed area.c callee bodies against the retained P106 revision before
+reuse. Restore status.c as concrete UpdateTopScore child dependency.
+Review mode/task,selector,paused cache stability,zero-page scratch overwrites,
+DMA-to-sprite and saved-control joins. Original ROM/ASM remains local readonly;
+all probes/metadata/logs below ignored build,128MiB/120s process budget.
+Run exact focused NMI/input/pause/timer/random/shuffle/score checks both widths.
+Any game mismatch requires same-S repair/re-audit/three product builds.
+Physical latch/fetch/split/dot timing stays pending pixel slots;no final M2
+or all-input claim from scoped matches. Source-binding checks are not semantic
+proof. Reconcile seven facets only where named conditions are covered.
 
 ## Current Continuation Plan - P147
 

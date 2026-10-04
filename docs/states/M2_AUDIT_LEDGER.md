@@ -19,7 +19,7 @@ integration accounting, not another whole-project audit round.
 | Controls | 4342 raw; 81 source-infeasible; 4260 of 4261 feasible locally accepted | control-01480 remains evidence-limited; raw identities are retained if feasibility changes. |
 | Instruction uses | 10691 unique IDs and PCs; all have retained local receipts | Applicability and integration conditions must be reconciled by group; no local receipt is reset to zero. |
 | Explicit memory sites | 4171: RAM3773, ROM250, indirect61, hardware87 | Domains, actual aliases, producers/consumers and phase handoffs must be accounted for. |
-| Integration accounting | 136 retained owner groups, seven facets each: 952 fixed cells;P149 closes owner-051's seven,945 pending | Reconcile named domains against retained receipts. These are not 952 defects or 952 new tests. |
+| Integration accounting | 136 retained owner groups, seven facets each: 952 fixed cells;P150 total14closed in owner-051/owner-077,938 pending | Reconcile named domains against retained receipts. These are not 952 defects or 952 new tests. |
 | Material receipts | 993 individually registered relationships | Evidence detail, not the audit denominator or an exhaustive data-flow graph. |
 | Route/output coverage | 13 named coverage slots | Concrete manifests/checkpoints still need completion; slots are not counts of executable test cases. |
 | Final packages | Six existing packages; startup/bindings closed | material/pixels/routes/snapshot remain open. |

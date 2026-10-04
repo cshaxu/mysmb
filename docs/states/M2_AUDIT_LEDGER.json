@@ -4,7 +4,7 @@
   "authority": "docs/states/CURRENT.md",
   "registry": "docs/states/M2_CURRENT_EQUIVALENCE.json",
   "taskId": "M2 T70 S17",
-  "part": "P149",
+  "part": "P150",
   "deadline": null,
   "universe": {
     "version": 1,
@@ -14144,8 +14144,8 @@
       "id": "use-01267",
       "pc": "8f97",
       "label": "UpdateTopScore",
-      "currentOwner": "src/game/frame_root.c",
-      "group": "owner-077",
+      "currentOwner": "src/game/status.c",
+      "group": "owner-121",
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
@@ -14155,8 +14155,8 @@
       "id": "use-01268",
       "pc": "8f99",
       "label": "UpdateTopScore",
-      "currentOwner": "src/game/frame_root.c",
-      "group": "owner-077",
+      "currentOwner": "src/game/status.c",
+      "group": "owner-121",
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
@@ -14166,8 +14166,8 @@
       "id": "use-01269",
       "pc": "8f9c",
       "label": "UpdateTopScore",
-      "currentOwner": "src/game/frame_root.c",
-      "group": "owner-077",
+      "currentOwner": "src/game/status.c",
+      "group": "owner-121",
       "memoryRegion": "none",
       "effect": "none",
       "localDisposition": "accepted-scoped",
@@ -120933,35 +120933,91 @@
       "id": "owner-077",
       "currentOwner": "src/game/frame_root.c",
       "receiver": "M2 T70 S17",
-      "useCount": 211,
+      "useCount": 208,
       "facets": {
         "producerConsumer": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Current frame-root32 labels/208 sites consume prior-frame OAM,VRAM selector/packets,control/mask/scroll mirrors,mode/task and current neutral two-port input. Declared source modes0..3,legal inline tasks and selector0..18 retain child source-domain contracts. ReadJoypads publishes both saved images/masks;PauseRoutine publishes status/timer/next-frame FA queue;TopScore child writes only score bytes;timer/random/shuffle writes bounded arrays. P122/P124 queue-to-NMI joins and P19/P24 audio queue handoff retained; source owner group obligations remain for upstream stream reachability.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: retained P53/P89/P90/P91/P94/P106/P111 original/native comparisons and observed sites within each declared field/domain; persistent boundary receipts explicitly scoped."
+          ],
+          "operationalEvidence": "P150 exact10 focused checks each x86/x64 pass;P144 product identities retained;no game change."
         },
         "addressAlias": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "All-byte controller/mask/status/timer/random arithmetic;two ports write06FC/06FD and074A/074B and last serial sample00. Timer bounds780..7A3;random7A7..7AD;shuffle6E4..6F2 and6F3..6FB with raw byte6E0 amount index into6E1+index,carry preserved. VRAM selector0..18 actual table/packet bindings;clear340/341 onlyselector6,selector7 clears300/301. Sound/status/command child write sets disjoint770/772 and776 under recorded input domains. Physical PPU timing remains explicit output coverage.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: retained P53/P89/P90/P91/P94/P106/P111 original/native comparisons and observed sites within each declared field/domain; persistent boundary receipts explicitly scoped."
+          ],
+          "operationalEvidence": "P150 exact10 focused checks each x86/x64 pass;P144 product identities retained;no game change."
         },
         "overwrite": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "NMI sequence DMA snapshot,display/VRAM transfer and header reset,Sound,Joypads,Pause,TopScore,timer/frame counter,random,optional partial sprite clear/shuffle,scene scroll,saved control,mode child,physical restore. DMA reorder with display stores commutes for declared neutral state only. RAM00 successively pointer,serial sample,random preset,shuffle preset then dispatcher scratch;no value erroneously held across its next producer. Pause cache remains bit0 because later writes are disjoint776;mode/task cache stable through prefix under child domains.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: retained P53/P89/P90/P91/P94/P106/P111 original/native comparisons and observed sites within each declared field/domain; persistent boundary receipts explicitly scoped."
+          ],
+          "operationalEvidence": "P150 exact10 focused checks each x86/x64 pass;P144 product identities retained;no game change."
         },
         "crossPhaseLifetime": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Prior frame packets/OAM/scroll are consumed before current mode produces next frame state. Current two-port input filters Start/Select against retained masks;Pause leaves FA for next Sound invocation and cooldown decays only in accepted mode gates. Paused frames still consume input/audio/VRAM/update score/random/scroll but skip timers,frame9,shuffle and mode dispatch. Captured sprite-zero phase and saved physical control survive mode mutations for current output;RAM mirror changes belong following frame. Retained S8/S9 persistent protocols,P122/P124 and P126/P127 natural frame boundaries supplement P90/P91/P94/P106/P111 source write-set proof;remaining complete route/pixels slots stay open.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: retained P53/P89/P90/P91/P94/P106/P111 original/native comparisons and observed sites within each declared field/domain; persistent boundary receipts explicitly scoped."
+          ],
+          "operationalEvidence": "P150 exact10 focused checks each x86/x64 pass;P144 product identities retained;no game change."
         },
         "registerFlagStack": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "ReadPortBits stack accumulator/LSR/ROL compressed exactly under standard NES D1zero capability;last raw serial sample00 preserved. Pause raw byte+1/XOR1/OR80 and timer DEC predicates unchanged. Timer negative DEC uses byte sign;INC9 outside frozen helper but inside unpaused gate. Random carries propagate all7 RORs;shuffle ADC overflow adds28 and wraps. JumpEngine publishes original scratch via shared dispatcher,source X5/X11 top-score child uses SEC borrow;saved PHA value restored after mode rather than live mirror. CPU unexposed registers/physical push bytes/poll/RTI timing are declared hardware ABI and cannot close pixels.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: retained P53/P89/P90/P91/P94/P106/P111 original/native comparisons and observed sites within each declared field/domain; persistent boundary receipts explicitly scoped."
+          ],
+          "operationalEvidence": "P150 exact10 focused checks each x86/x64 pass;P144 product identities retained;no game change."
         },
         "callerReturn": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "All source NMI calls/tails and interleaved effects match shared C composition;Sound before Joy before Pause before TopScore,then timers/random/sprite/scroll/mode. Source reload pause and mode/task caches justified by disjoint intervening writes,not assumed. Title JumpEngine/task and victory live post-child task joins retain P111 actual parents;original AutoPlayer tail invokes relative/player graphics only. Stable selector reloaded after UpdateScreen verified legal packet child has no0773 write. Every one of97 touching control IDs remains registered with original disposition;physical wait edges retain their output timing obligation.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: retained P53/P89/P90/P91/P94/P106/P111 original/native comparisons and observed sites within each declared field/domain; persistent boundary receipts explicitly scoped."
+          ],
+          "operationalEvidence": "P150 exact10 focused checks each x86/x64 pass;P144 product identities retained;no game change."
         },
         "sourceBinding": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Unchanged current frame_root,status,boot,game,audio and P111 mode/dispatcher/engine/player identities bind retained original/native receipts. P106 area.c whole-file drift was checked against revisiona9a92901:three called palette/message functions and referenced constant/include prefix identical;only graphics packet producers differ and have P121-P124 corrected joins. All211 admitted PCs observed across retained receipts;UpdateTopScore3 sites reassigned to actualstatus owner,leaving208 currentframe sites. Current186 source/header/build identities gated;explicit receipt fields/fixtures/exclusions preserved,not broadened to all-input or completed pixels.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: retained P53/P89/P90/P91/P94/P106/P111 original/native comparisons and observed sites within each declared field/domain; persistent boundary receipts explicitly scoped."
+          ],
+          "operationalEvidence": "P150 exact10 focused checks each x86/x64 pass;P144 product identities retained;no game change."
         }
       },
       "currentSourcePaths": [
@@ -122672,7 +122728,7 @@
       "id": "owner-121",
       "currentOwner": "src/game/status.c",
       "receiver": "M2 T70 S17",
-      "useCount": 91,
+      "useCount": 94,
       "facets": {
         "producerConsumer": {
           "status": "pending-reconciliation",
@@ -123509,6 +123565,39 @@
       ],
       "closedGroupIds": [
         "owner-051"
+      ],
+      "closedFacets": [
+        "producerConsumer",
+        "addressAlias",
+        "overwrite",
+        "crossPhaseLifetime",
+        "registerFlagStack",
+        "callerReturn",
+        "sourceBinding"
+      ],
+      "nodeControlCredit": 0,
+      "sourceUniverseChanged": false,
+      "groupUniverseChanged": false
+    },
+    {
+      "id": "P150-nmi-owner-reconciliation",
+      "cause": "Correct actual UpdateTopScore child ownership and reconcile original-order neutral NMI handoffs using unchanged applicable owners and function-level area dependency binding.",
+      "movedUseIds": [
+        "use-01267",
+        "use-01268",
+        "use-01269"
+      ],
+      "labels": [
+        "UpdateTopScore"
+      ],
+      "fromGroup": "owner-077",
+      "toGroup": "owner-121",
+      "controlPathIds": [
+        "control-00025",
+        "control-03492"
+      ],
+      "closedGroupIds": [
+        "owner-077"
       ],
       "closedFacets": [
         "producerConsumer",

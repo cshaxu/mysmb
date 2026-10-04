@@ -28580,22 +28580,24 @@
       "asmLine": 2639,
       "cohort": "C",
       "status": "exact",
-      "currentOwner": "src/game/frame_root.c",
-      "currentCounterpart": "src/game/status.c status output/arithmetic/shared top-score child;frame_root entry",
+      "currentOwner": "src/game/status.c",
+      "currentCounterpart": "src/game/status.c:mysmb_status_update_top_score; src/game/frame_root.c entry calls this shared child",
       "semanticEvidence": [
         "Td S9 B9a status-number static node/edge pass: SMB1 lines 2544-2662 was compared with src/game/status.c, score.c and frame_root.c; controlled original-ROM/x86/x64 score/timer routes remain required.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 original source/control/read/write/index/manual audit: Frame root forwards shared status owner;actual C TopScoreCheck child checks Mario first then Luigi with offsets0/6 as original X5/11.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:17labels/94instructions/25RAM joined7boundedclauses;bufferabsolute/byteindices/modifier0133/carry/topscorechild order reviewed,18tablebytesboundexact,mandatory8F8Cretainsinfeasible00372;wholeproducer/inter-frame pending,no graphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: original X5/JSR/LDX11 sequence lives in shared status owner; correct neutral source mapping."
       ],
       "operationalEvidence": [
         "docs/history/M2-T69-cross-cohort-current-proof.md S1 P2 final196608 original/current roots both widths persistent RAM/APU/order equal;19 observed nodes/18 declared table bytes;4 focused tests each/purity/current builds/OpenNT link.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all94PC/11branchpairs plusmandatory8F8C,4tests each;source/threeP81productsunchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P89 checkpoint - status digits arithmetic and top score uses reconciled:196608originalroots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all94PC/11branchpairs plusmandatory8F8C,4tests each;source/threeP81productsunchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: unchanged bound P89 status and current top-score/NMI checks each width."
       ],
       "semanticContract": "Frame root forwards shared status owner;actual C TopScoreCheck child checks Mario first then Luigi with offsets0/6 as original X5/11.",
       "currentSourcePaths": [
-        "src/game/frame_root.c"
+        "src/game/status.c"
       ]
     },
     {
@@ -72686,14 +72688,16 @@
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin ordered shared calls",
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-00025\", \"kind\": \"call\", \"observed\": {\"80ed-8f97\": 256}, \"site\": \"80ed\", \"source\": \"InitBuffer\", \"target\": \"UpdateTopScore\"}"
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-00025\", \"kind\": \"call\", \"observed\": {\"80ed-8f97\": 256}, \"site\": \"80ed\", \"source\": \"InitBuffer\", \"target\": \"UpdateTopScore\"}",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: restore actual status child dependency at NMI call/return."
       ],
       "operationalEvidence": [
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Original call relation InitBuffer -> UpdateTopScore at source line 806 (jsr) must preserve the call/return sequence from completed buffer setup through sound, joypad, pause and top-score work.",
       "currentSourcePaths": [
-        "src/game/frame_root.c"
+        "src/game/frame_root.c",
+        "src/game/status.c"
       ]
     },
     {
@@ -150483,14 +150487,16 @@
       "currentCounterpart": "src/game/frame_root.c:mysmb_frame_root_begin ordered shared calls",
       "semanticEvidence": [
         "Td S9 A2 integration static pass: original edge identity, condition/instruction and named shared frame_root.c relation were reviewed; controlled ROM branch/return route remains pending.",
-        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-03492\", \"kind\": \"return\", \"observedActualRTS\": {\"8fbb-80f0\": 256}, \"site\": \"80ed\", \"source\": \"UpdateTopScore\", \"target\": \"InitBuffer\"}"
+        "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 Byte-bound source sites and all24 actual original call/RTS/vector/selector transitions observed. Eight real offscreen callers invoke canonical shared child in original order; actual input/return RAM includes scratch00/04/06/07 and slot handoff. NMI InitBuffer audio/top-score returns, screen child returns, physical FFFA/FFFB entry and selector3 GameOver dispatch are independently observed. {\"id\": \"control-03492\", \"kind\": \"return\", \"observedActualRTS\": {\"8fbb-80f0\": 256}, \"site\": \"80ed\", \"source\": \"UpdateTopScore\", \"target\": \"InitBuffer\"}",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: restore actual status child dependency at NMI call/return."
       ],
       "operationalEvidence": [
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass."
       ],
       "semanticContract": "Original return relation UpdateTopScore -> InitBuffer at source line 806 (rts/rti) must preserve the call/return sequence from completed buffer setup through sound, joypad, pause and top-score work.",
       "currentSourcePaths": [
-        "src/game/frame_root.c"
+        "src/game/frame_root.c",
+        "src/game/status.c"
       ]
     },
     {
