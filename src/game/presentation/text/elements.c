@@ -1,5 +1,6 @@
 #include "game/presentation/text/elements.h"
 #include "io/text_glyph.h"
+#include "io/color.h"
 
 /* Project-authored whole-element art. Spaces are transparent. No CHR bytes,
  * tile lookup, pixel sampling or animation state machine is used here. */
@@ -10,42 +11,42 @@ struct mysmb_text_art {
 };
 
 static const struct mysmb_text_art small[17] = {
-    { " _M_ " " /o> " "/|_|\\", 5U, 3U },
-    { " _M_ " " /o> " " /|_>", 5U, 3U },
-    { " _M_ " "</o> " " /|\\ ", 5U, 3U },
-    { " _M_ " " /o> " "<_|/ ", 5U, 3U },
-    { " _M_ " "</o>~" " ~|~ ", 5U, 3U },
-    { " _M| " " /o| " " /|| ", 5U, 3U },
-    { " _M_ " "(/o>)" " /_\\ ", 5U, 3U },
-    { " _M_ " " /o>>" " /|\\ ", 5U, 3U },
-    { " _M_ " "<x_x>" " /\\  ", 5U, 3U },
-    { " _M_ " " /o> " "<_|/ ", 5U, 3U },
-    { " _M_ " " /o> " " /|\\ ", 5U, 3U },
-    { " _M_ " " /o>~" "~ |~ ", 5U, 3U },
-    { " _M_ " "</o> " " ~|~~", 5U, 3U },
-    { " _M| " "</o| " " ||/ ", 5U, 3U },
-    { " _M_ " "</o>~" "~ /|~", 5U, 3U },
-    { " _M_ " " /o>~" "~/ |~", 5U, 3U },
-    { " _M_ " "</o> " "~ |/~", 5U, 3U }
+    { " \xdc" "M" "\xdc " " /o> " "/|_|\\", 5U, 3U },
+    { " \xdc" "M" "\xdc " " /o> " " /|_>", 5U, 3U },
+    { " \xdc" "M" "\xdc " "</o> " " /|\\ ", 5U, 3U },
+    { " \xdc" "M" "\xdc " " /o> " "<_|/ ", 5U, 3U },
+    { " \xdc" "M" "\xdc " "</o>~" " ~|~ ", 5U, 3U },
+    { " \xdc" "M\xb3 " " /o| " " /|| ", 5U, 3U },
+    { " \xdc" "M" "\xdc " "(/o>)" " /_\\ ", 5U, 3U },
+    { " \xdc" "M" "\xdc " " /o>>" " /|\\ ", 5U, 3U },
+    { " \xdc" "M" "\xdc " "<x_x>" " /\\  ", 5U, 3U },
+    { " \xdc" "M" "\xdc " " /o> " "<_|/ ", 5U, 3U },
+    { " \xdc" "M" "\xdc " " /o> " " /|\\ ", 5U, 3U },
+    { " \xdc" "M" "\xdc " " /o>~" "~ |~ ", 5U, 3U },
+    { " \xdc" "M" "\xdc " "</o> " " ~|~~", 5U, 3U },
+    { " \xdc" "M\xb3 " "</o| " " ||/ ", 5U, 3U },
+    { " \xdc" "M" "\xdc " "</o>~" "~ /|~", 5U, 3U },
+    { " \xdc" "M" "\xdc " " /o>~" "~/ |~", 5U, 3U },
+    { " \xdc" "M" "\xdc " "</o> " "~ |/~", 5U, 3U }
 };
 static const struct mysmb_text_art large[17] = {
-    { " _M_ " " /o> " " |_| " " /|\\ " " |#| " " / \\ " "/_ _\\", 5U, 7U },
-    { " _M_ " " /o> " " |_| " " /|_>" " |#| " " /\\  " "/  \\_", 5U, 7U },
-    { " _M_ " " /o> " "<|_|>" " |#| " " /|\\ " " / \\ " "     ", 5U, 7U },
-    { " _M_ " " /o> " " |_| " "<_|\\ " " |#| " "  /| " "<_ / ", 5U, 7U },
-    { " _M_ " " /o> " "<|_|~" " |#| " " ~|~ " " ~ ~ " "     ", 5U, 7U },
-    { " _M| " " /o| " " |_| " " /|| " " |#| " " /|| " " ||/ ", 5U, 7U },
-    { " _M_ " " /o> " "(_#_)" " /_\\ ", 5U, 4U },
-    { " _M_ " " /o>>" " |_| " " |#| " " /|\\ " " / \\ " "/_ _\\", 5U, 7U },
-    { " _M_ " " x_x " "<|_|>" " |#| " " /|\\ " " /\\  " "     ", 5U, 7U },
-    { " _M_ " " /o> " " |_| " "<_|\\ " " |#| " "  /| " "<_ / ", 5U, 7U },
-    { " _M_ " " /o> " " |_| " " /|\\ " " |#| " " /|  " "/ \\_ ", 5U, 7U },
-    { " _M_ " " /o> " " |_|~" " |#| " "~ |~ " " ~ ~ " "     ", 5U, 7U },
-    { " _M_ " " /o> " "<|_| " " |#| " " ~|~~" "~ ~  " "     ", 5U, 7U },
-    { " _M| " " /o| " "<|_| " " ||/ " " |#| " " ||/ " " /|| ", 5U, 7U },
-    { " _M_ " " /o> " "<|_|~" " |#| " " ~|~ " "~/|  " "~ / ~", 5U, 7U },
-    { " _M_ " " /o> " " |_|~" " |#| " "~ |~ " " /|~ " "~ / ~", 5U, 7U },
-    { " _M_ " " /o> " "<|_| " " |#| " " ~|~~" "~ |/~" " ~ /~", 5U, 7U }
+    { " \xdc" "M" "\xdc " " /o> " " |_| " " /|\\ " " |#| " " / \\ " "/_ _\\", 5U, 7U },
+    { " \xdc" "M" "\xdc " " /o> " " |_| " " /|_>" " |#| " " /\\  " "/  \\_", 5U, 7U },
+    { " \xdc" "M" "\xdc " " /o> " "<|_|>" " |#| " " /|\\ " " / \\ " "     ", 5U, 7U },
+    { " \xdc" "M" "\xdc " " /o> " " |_| " "<_|\\ " " |#| " "  /| " "<_ / ", 5U, 7U },
+    { " \xdc" "M" "\xdc " " /o> " "<|_|~" " |#| " " ~|~ " " ~ ~ " "     ", 5U, 7U },
+    { " \xdc" "M\xb3 " " /o| " " |_| " " /|| " " |#| " " /|| " " ||/ ", 5U, 7U },
+    { " \xdc" "M" "\xdc " " /o> " "(_#_)" " /_\\ ", 5U, 4U },
+    { " \xdc" "M" "\xdc " " /o>>" " |_| " " |#| " " /|\\ " " / \\ " "/_ _\\", 5U, 7U },
+    { " \xdc" "M" "\xdc " " x_x " "<|_|>" " |#| " " /|\\ " " /\\  " "     ", 5U, 7U },
+    { " \xdc" "M" "\xdc " " /o> " " |_| " "<_|\\ " " |#| " "  /| " "<_ / ", 5U, 7U },
+    { " \xdc" "M" "\xdc " " /o> " " |_| " " /|\\ " " |#| " " /|  " "/ \\_ ", 5U, 7U },
+    { " \xdc" "M" "\xdc " " /o> " " |_|~" " |#| " "~ |~ " " ~ ~ " "     ", 5U, 7U },
+    { " \xdc" "M" "\xdc " " /o> " "<|_| " " |#| " " ~|~~" "~ ~  " "     ", 5U, 7U },
+    { " \xdc" "M\xb3 " " /o| " "<|_| " " ||/ " " |#| " " ||/ " " /|| ", 5U, 7U },
+    { " \xdc" "M" "\xdc " " /o> " "<|_|~" " |#| " " ~|~ " "~/|  " "~ / ~", 5U, 7U },
+    { " \xdc" "M" "\xdc " " /o> " " |_|~" " |#| " "~ |~ " " /|~ " "~ / ~", 5U, 7U },
+    { " \xdc" "M" "\xdc " " /o> " "<|_| " " |#| " " ~|~~" "~ |/~" " ~ /~", 5U, 7U }
 };
 static const struct mysmb_text_art parts[3] = {
     { "|}" "| ", 2U, 2U }, { "^|" " |", 2U, 2U },
@@ -72,8 +73,8 @@ static const struct mysmb_text_art actors[19][2] = {
     {{" /--\\" "(___)" " /  \\" ,5U,3U},{" /--\\" "(___)" "  /\\ ",5U,3U}},
     {{"  __ " " /o> " "(###)" " / \\ " "/_ _\\",5U,5U},
      {"  __ " " /o> " "(###)" " /|  " "/ \\_ ",5U,5U}},
-    {{" /--\\" "(oo_)" " /  \\" ,5U,3U},{" /--\\" "(oo_)" "  /\\ ",5U,3U}},
-    {{" /^^\\" "(o_o)" " ||| " " /|\\ ",5U,4U},{" /^^\\" "(o_o)" " /|\\ " " ||| ",5U,4U}},
+    {{" \xdc\xdb\xdb\xdc" "(oo_)" " /  \\" ,5U,3U},{" \xdc\xdb\xdb\xdc" "(oo_)" "  /\\ ",5U,3U}},
+    {{" \xdc\xdb\xdb\xdc" "(o_o)" " ||| " " /|\\ ",5U,4U},{" \xdc\xdb\xdb\xdc" "(o_o)" " /|\\ " " ||| ",5U,4U}},
     {{" ___ " "<o==]" " --- ",5U,3U},{" ___ " "<o==]" " --- ",5U,3U}},
     {{" /\\  " "<o )>" " \\/  ",5U,3U},{" /\\  " "<o)> " " \\/  ",5U,3U}},
     {{" /\\ " "(oo)" " \\/ ",4U,3U},{" /\\ " "(oo)" " \\/ ",4U,3U}},
@@ -95,10 +96,10 @@ static const struct mysmb_text_art actors[19][2] = {
     {{"[===]" " /\\  " "[===]",5U,3U},{"[===]" "[===]",5U,2U}},
     {{"\xda\xc4\xc4\xc4\xbf" "\xb3   \xb3" "\xc0\xc4\xc4\xc4\xd9",5U,3U},{"\xda\xc4\xc4\xc4\xbf" "\xb3   \xb3" "\xc0\xc4\xc4\xc4\xd9",5U,3U}}
 };
-static const struct mysmb_text_art goomba_second={" /^^\\" "(o_o)" " /|\\ ",5U,3U};
+static const struct mysmb_text_art goomba_second={" \xdc\xdb\xdb\xdc" "(o_o)" " /|\\ ",5U,3U};
 static const struct mysmb_text_art scenery[15] = {
-    { " /^^\\" "(o_o)" "/   \\", 5U, 3U },
-    { " /^^\\" "(o_o)" "  |  ", 5U, 3U },
+    { " \xdc\xdb\xdb\xdc" "(o_o)" "/   \\", 5U, 3U },
+    { " \xdc\xdb\xdb\xdc" "(o_o)" "  |  ", 5U, 3U },
     { "\xda\xc4\xc4\xc4\xbf" "\xb3_#_\xb3" "\xc0\xc4\xc4\xc4\xd9", 5U, 3U },
     { " ($) " " ($) " "     ", 5U, 3U },
     { "\xda\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xc4\xbf" "\xb3########\xb3" "\xc0\xc4\xc2" "####" "\xc2\xc4\xd9" "  \xb3####\xb3  "
@@ -175,6 +176,7 @@ int mysmb_text_element_draw(
     mysmb_io_u8 row;
     mysmb_io_u8 column;
     mysmb_io_u8 glyph;
+    mysmb_io_u8 face_left;
     mysmb_io_u8 row_left,row_right;
     mysmb_io_u16 source_row;
     long x;
@@ -183,6 +185,9 @@ int mysmb_text_element_draw(
     long destination_y;
     const struct mysmb_text_art *art;
     if (frame == 0 || !valid_element(element)) return 0;
+        /* A facing descriptor never reverses information-bearing words. */
+        face_left=element->kind==MYSMB_TEXT_SCORE || element->kind==MYSMB_TEXT_FLAG_SCORE?
+            0U:element->face_left;
         art = art_for(element);
         x = project(element->x, 80L, 256L);
         y = project(element->y, 50L, 240L);
@@ -199,7 +204,7 @@ int mysmb_text_element_draw(
                 destination_x = x + column;
                 if (destination_x < 0L || destination_x >= 80L) continue;
                 source = (mysmb_io_u16)(source_row +
-                    (element->face_left != 0U ? art->width - 1U - column : column));
+                    (face_left != 0U ? art->width - 1U - column : column));
                 glyph = (mysmb_io_u8)art->cells[source];
                 if(glyph=='M' && (element->kind==MYSMB_TEXT_LUIGI_SMALL ||
                     element->kind==MYSMB_TEXT_LUIGI_LARGE))glyph='L';
@@ -207,14 +212,28 @@ int mysmb_text_element_draw(
                 if (filter != 0 && !filter(context,
                     (mysmb_io_u16)destination_x,
                     (mysmb_io_u16)destination_y)) continue;
-                if (element->face_left != 0U) glyph = mirror(glyph);
+                if (face_left != 0U) glyph = mirror(glyph);
                 if(element->kind>=MYSMB_TEXT_GOOMBA &&
                     element->kind<MYSMB_TEXT_JUMP_COIN && element->pose==MYSMB_TEXT_INVERTED) {
-                    if(glyph=='^')glyph='v';
-                    else if(glyph=='/')glyph='\\';
-                    else if(glyph=='\\')glyph='/';
+                    glyph=mysmb_io_text_glyph_flip(glyph);
                 }
                 cell = (mysmb_io_u16)(destination_y * 80L + destination_x);
+                /* Half/full blocks carry authored silhouette color over the
+                 * existing scene. Information overlays keep that background. */
+                if(element->kind==MYSMB_TEXT_SCORE || element->kind==MYSMB_TEXT_FLAG_SCORE) {
+                    frame->cells[cell].character=glyph;
+                    frame->cells[cell].foreground=element->background!=frame->cells[cell].background?
+                        element->background:mysmb_io_color_text_contrast(frame->cells[cell].background);
+                    continue;
+                }
+                if(glyph==MYSMB_IO_GLYPH_LOWER || glyph==MYSMB_IO_GLYPH_UPPER ||
+                    glyph==MYSMB_IO_GLYPH_LEFT || glyph==MYSMB_IO_GLYPH_RIGHT ||
+                    glyph==MYSMB_IO_GLYPH_FULL) {
+                    frame->cells[cell].character=glyph;
+                    frame->cells[cell].foreground=element->background!=frame->cells[cell].background?
+                        element->background:element->foreground;
+                    continue;
+                }
                 frame->cells[cell].character = glyph;
                 frame->cells[cell].foreground = element->foreground;
                 frame->cells[cell].background = element->background;

@@ -39,3 +39,12 @@ mysmb_io_u8 mysmb_io_color_text16(mysmb_io_u8 index)
     }
     return choice;
 }
+
+mysmb_io_u8 mysmb_io_color_text_contrast(mysmb_io_u8 background)
+{
+    unsigned long rgb,brightness;
+    rgb=mysmb_io_color_text_rgb(background);
+    brightness=((rgb>>16U)&255UL)*299UL+((rgb>>8U)&255UL)*587UL+
+        (rgb&255UL)*114UL;
+    return brightness>=128000UL?0U:15U;
+}

@@ -155,10 +155,11 @@ static unsigned char glyph(unsigned char k,unsigned short x,unsigned short y,
     if(k==DARK)return ' ';
     if(k==CLOUD || k==BUSH || k==HILL) {
         margin=inset(k,y,width,height);
-        if(y==0U)return k==CLOUD?'_':'^';
-        if(x==margin)return k==HILL?'/':'(';
-        if(x+margin+1U==width)return k==HILL?'\\':')';
-        return y+1U==height?'_':' ';
+        if(y==0U)return MYSMB_IO_GLYPH_LOWER;
+        if(y+1U==height)return MYSMB_IO_GLYPH_UPPER;
+        if(x==margin)return MYSMB_IO_GLYPH_RIGHT;
+        if(x+margin+1U==width)return MYSMB_IO_GLYPH_LEFT;
+        return ' ';
     }
     if(k==WATER)return y==0U?'~':' ';
     if(k==PIPE) {
@@ -200,15 +201,16 @@ static void object(const struct mysmb_game *g,
     long x0,y0,x1,y1,x,y;
     unsigned short cell,width,height,source_x,source_y,n;
     long dx,dy;
-    unsigned char c,color;
+    unsigned char c,color,ink;
     x0=first_cell(left,80L,256L);y0=first_cell(top,50L,240L);
     x1=first_cell(right,80L,256L);y1=first_cell(bottom,50L,240L);
     if(g->visible_sprite0_split!=0U && top>=32 && y0<7L)y0=7L;
     if(x1<=x0 || y1<=y0)return;
     width=(unsigned short)(x1-x0);height=(unsigned short)(y1-y0);
     color=mysmb_io_color_text16(g->palette[palette*4U+
-        (k==CLOUD?1U:k==COIN || k==QUESTION?3U:2U)]);
+        (k==CLOUD || k==COIN || k==QUESTION?1U:2U)]);
     if(k==DARK)color=0U;
+    ink=mysmb_io_color_text_contrast(color);
     for(y=y0;y<y1;++y)for(x=x0;x<x1;++x) {
         if(x<0L || x>=80L || y<0L || y>=50L)continue;
         if(g->visible_sprite0_split!=0U && (y*240L+120L)/50L<32L)continue;
@@ -231,8 +233,14 @@ static void object(const struct mysmb_game *g,
         cell=(unsigned short)(y*80L+x);
         w->opaque[cell/8U]|=(unsigned char)(1U<<(cell%8U));
         frame->cells[cell].character=c;
-        frame->cells[cell].foreground=k==CLOUD?8U:15U;
-        frame->cells[cell].background=color;
+        if(c==MYSMB_IO_GLYPH_LOWER || c==MYSMB_IO_GLYPH_UPPER ||
+            c==MYSMB_IO_GLYPH_LEFT || c==MYSMB_IO_GLYPH_RIGHT) {
+            frame->cells[cell].foreground=color!=frame->cells[cell].background?
+                color:ink;
+        } else {
+            frame->cells[cell].foreground=ink;
+            frame->cells[cell].background=color;
+        }
     }
 }
 

@@ -10,4 +10,7 @@ unsigned long mysmb_io_color_text_rgb(mysmb_io_u8 index);
 /* Color reduction only; never character selection or pixel sampling. */
 mysmb_io_u8 mysmb_io_color_text16(mysmb_io_u8 index);
 
+/* Black/white ink chosen for a canonical text background. */
+mysmb_io_u8 mysmb_io_color_text_contrast(mysmb_io_u8 background);
+
 #endif

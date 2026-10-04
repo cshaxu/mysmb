@@ -61,7 +61,7 @@ hardware-speed qualification is claimed. Local16/32/64products are
 neutral receipts below build/m3-t12-s1. Route budget60seconds/20MB;cleanup
 coordinator. No protected inputs/products staged.
 
-Actual code/build/test changes:12files,+166/-31lines including two new glyph
+Actual code/build/test changes:12files,+158/-31lines including two new glyph
 files;architecture/source-layout updates are separate. Similar-issue sweep
 finds two old ASCII-only checks and Windows narrow output/readback,all migrated;
 caption punctuation stays untouched. Exact border expectations replace old
@@ -69,3 +69,88 @@ ASCII expectations;no assertion removed. Ledger prefix semantic comparison
 preserves all prior custody/events/runs. Scope/expected/actual are empty,new0;
 historical1992/1992,local1991/1992nodes,4260/4261feasible controls unchanged.
 S1 closes;owner-authorized S2 follows after this reviewed P.
+
+## S2 admission and owner scope amendment
+
+Owner adds every information-bearing sprite text,including coin/enemy/flag
+scores and1UP,and original palette animation for question blocks/coins.
+S2 keeps empty ROM scope,new0. Estimate now8code/testfiles,200-300lines:
+shared glyph reflection/color utilities,authored elements/background/caption
+and actor/producer tests. Hosts remain consumers only. Current score templates
+already spell11floatey and5flag values,but white foreground with white object
+fill can hide glyphs. Background coin/question fill wrongly selects slot3;
+original ColorRotation queues slot1 of background palette3. Scope fixes these
+presentation clauses and preserves original queue/commit timing,not a second
+animation clock. Original routines/disassembly remain owner-local reference
+inputs solely to identify their output contracts;no source/table/CHR imports.
+
+The same sweep includes HUD,title/intermission/game-over/time-up/warp/victory,
+score and1UP templates,flag score subcomponents,original producer receipts,
+priority/clipping and restore. Tests must check every emitted word's glyphs
+and contrasting colors,not merely the presence of a score observation.
+Half blocks use authored shape colors over the preexisting scene background;
+ordinary interior spaces retain object fill. Reflection includes vertical
+half-block/corner orientation. ASCII information remains ASCII.
+
+## S2 P1 review and closure
+
+Owner steering identified information sprites and palette animation as
+required clauses. Source sweep covers both SCORE producers in objects.c
+(jump-coin200/floatey numbers),FLAG producer/subcomponent in flagpole_gfx.c,
+all11floatey/1UP and5flag authored labels,and all static font interfaces in
+caption_scene. Static words already have final-composed checks;no missing
+static token or additional sprite-text producer is found in this bounded
+source-owner sweep. This is not whole-ROM or all-input certification.
+
+Three concrete presentation findings are closed:fixed-white score ink with
+white fill;flag-score fractional anchors not aligned to visible cell centers;
+coin/question fill selecting slot3 instead of the original rotating slot1.
+Information overlays now preserve the existing scene background and use
+source ink with contrast fallback. Their words never reverse with facing.
+Question/coin colors read the committed original palette;no new clock or
+palette mutation exists. Ordinary actor/terrain strokes also contrast their
+fill,using the same neutral helper as captions. Terrain computes ink once
+per object,not per cell. Original logic and graphics are unchanged.
+
+Authored Mario/Luigi hat caps,selected enemy/mushroom caps and cloud/bush/hill
+edges use half/full blocks with explicit silhouette ink over existing scene
+colors. Horizontal/vertical reflections retain orientation and filled
+interiors. Grid,three-byte ABI,source priorities/bounds and text tokens remain.
+
+332pose/orientation checks pass;16384synthetic word/background/position cases
+check every letter. 5120actual flag-writer cases prove all5words,position/color
+and restored full frames. Actual floatey and jump-coin200 producers check all
+11labels and white-ink/16background cases plus immediate restored output.
+The old S1 element renderer fails the new readable-word regression. Twelve
+original ColorRotation queue/commit phases prove colors change only on commit
+and that question/coin fill reads the changing slot;ROM tables stay local.
+Existing409caption cases/4566glyphs and147natural lives frames pass. Both
+widths13focused tests,owned Unicode/snapshot/focus/audio routes,self-tests,
+strict shared C90 and purity pass. 999frames/11988000bytes agree across widths;
+original core/frame/pixels and240future restore ticks remain equal.
+
+Original DOS16 builds/links with known legacy warnings. Actual unseeded
+DOSBox dynamic Tab/P/O/Escape route passes. MZ/DGROUP checks pass;no hardware
+or live heap/stack peak qualification. Refreshed local16/32/64products are
+360987/439336/454504bytes. Per-route budget60seconds/20MB below build/m3-t12-s2;
+raw frame/capture/save files and the old-path temporary program are deleted
+after neutral receipts. No protected resource/product staged.
+
+Actual code/test changes12files,+316/-66lines;scope increased from the initial
+contour estimate for the owner's text/animation amendment. Node scope,
+expected/actual labels are empty,new0. Historical1992/1992,local1991/1992nodes,
+4260/4261feasible controls unchanged. Review accepts S2;S3 follows for the
+actual DOS compiled-template/device join and integrated closure.
+
+## S3 admission
+
+Owner-authorized automatic continuation after S2. Empty ROM scope/new0 and
+unchanged1992historical denominator. Estimated2test-tool files/~40lines.
+Link the already compiled shared authored templates into the neutral DOS
+BIOS/device probe,check16score/flag labels with both facing descriptors on
+blue/white backgrounds,and read back their actual VGA words. No owner ROM is
+linked into this probe. Reuse S2's unchanged product-source bindings and
+accepted caption/continuity/host routes;do not manufacture another ROM audit.
+Final closure requires the device test,the current three products and no open
+T12 presentation finding. Desktop/RDP font shape and real486speed remain
+physical qualification limits,not inferred from buffer readback.

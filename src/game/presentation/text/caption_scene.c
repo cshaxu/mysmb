@@ -28,14 +28,11 @@ static int cell(const struct mysmb_game *g,
     unsigned char c,unsigned char bg)
 {
     unsigned short i;
-    unsigned long rgb,brightness;
     if(x<0L || x>=80L || y<0L || y>=50L)return 0;
     if((g->visible_ppu_mask&2U)==0U && (x*256L+128L)/80L<8L)return 0;
     i=(unsigned short)(y*80L+x);
-    rgb=mysmb_io_color_text_rgb(bg);
-    brightness=((rgb>>16U)&255UL)*299UL+((rgb>>8U)&255UL)*587UL+(rgb&255UL)*114UL;
     frame->cells[i].character=c;
-    frame->cells[i].foreground=brightness>=128000UL?0U:15U;
+    frame->cells[i].foreground=mysmb_io_color_text_contrast(bg);
     frame->cells[i].background=bg;
     w->opaque[i/8U]|=(unsigned char)(1U<<(i%8U));return 1;
 }

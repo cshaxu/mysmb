@@ -1,3 +1,4 @@
+#include "io/text_glyph.h"
 #include "game/presentation/text/actor_scene.h"
 #include "game/frame_root.h"
 #include "io/color.h"
@@ -19,10 +20,57 @@ static void sprite(unsigned short index,unsigned char x,unsigned char y)
     game.ram[0x0203U+index*4U]=x;
 }
 
+/* Information sprites must remain readable whole words,including fractional
+ * anchors and white source ink. Covers11float values plus5flag values. */
+static int dynamic_words(void)
+{
+    static const char *labels[16]={"100","200","400","500","800","1000",
+        "2000","4000","5000","8000","1UP","5000","2000","800","400","100"};
+    struct mysmb_text_actor_receipt receipt;
+    unsigned short value,bg,dx,dy,i,first,row,index,cases;
+    cases=0U;
+    for(value=0U;value<16U;++value)for(bg=0U;bg<16U;++bg)
+        for(dx=0U;dx<8U;++dx)for(dy=0U;dy<8U;++dy) {
+            memset(&game,0,sizeof(game));game.visible_ppu_mask=0x1eU;
+            game.palette[0x12U]=0x30U;
+            for(i=0U;i<64U;++i)game.ram[0x0200U+i*4U]=0xf8U;
+            mysmb_text_observer_enable(&game,1U);
+            if(value<11U) {
+                sprite(8U,(unsigned char)(80U+dx),(unsigned char)(95U+dy));
+                sprite(9U,(unsigned char)(88U+dx),(unsigned char)(95U+dy));
+                mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_SCORE,
+                    0U,0U,(unsigned char)(value+1U),1U,32U,2U,0U);
+            } else {
+                sprite(8U,32U,159U);sprite(9U,40U,159U);sprite(10U,40U,167U);
+                sprite(11U,(unsigned char)(80U+dx),(unsigned char)(95U+dy));
+                sprite(12U,(unsigned char)(88U+dx),(unsigned char)(95U+dy));
+                mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_FLAG,
+                    0U,0U,(unsigned char)(value-11U),1U,32U,5U,0U);
+            }
+            mysmb_game_submit_oam(&game);before=game;
+            CHECK(mysmb_text_elements_build(0,0U,(mysmb_io_u8)bg,&frame));
+            CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+            CHECK(receipt.drawn==1U && receipt.unsupported==0U);
+            CHECK(memcmp(&game,&before,sizeof(game))==0);
+            first=(unsigned short)(((80UL+dx)*80UL+127UL)/256UL);
+            row=(unsigned short)(((96UL+dy)*50UL+119UL)/240UL);
+            for(i=0U;labels[value][i]!='\0';++i) {
+                index=(unsigned short)(row*80U+first+i);
+                CHECK(frame.cells[index].character==(unsigned char)labels[value][i]);
+                CHECK(frame.cells[index].background==bg);
+                CHECK(frame.cells[index].foreground!=bg);
+            }
+            ++cases;
+        }
+    printf("dynamic score words: %u value/background/fractional-position cases passed\n",cases);
+    return 0;
+}
+
 int main(void)
 {
     struct mysmb_text_actor_receipt receipt;
     unsigned short i;
+    CHECK(dynamic_words()==0);
     memset(&game,0,sizeof(game));
     for(i=0U;i<64U;++i)game.ram[0x0200U+i*4U]=0xf8U;
     game.visible_ppu_mask=0x1eU;game.palette[0x12U]=0x16U;
@@ -38,8 +86,9 @@ int main(void)
     CHECK(receipt.drawn==1U && receipt.unsupported==0U);
     CHECK(receipt.unowned_sprites==0U);
     CHECK(memcmp(&game,&before,sizeof(game))==0);
-    CHECK(frame.cells[20U*80U+26U].character=='/');
-    CHECK(frame.cells[20U*80U+26U].background==mysmb_io_color_text16(0x16U));
+    CHECK(frame.cells[20U*80U+26U].character==MYSMB_IO_GLYPH_LOWER);
+    CHECK(frame.cells[20U*80U+26U].foreground==mysmb_io_color_text16(0x16U) &&
+        frame.cells[20U*80U+26U].background==9U);
     CHECK(frame.cells[0U].background==9U);
     original=frame;
     game.ram[0x0201U+32U]=2U;
@@ -53,7 +102,7 @@ int main(void)
     game.visible_oam[32U+9U]=2U;
     CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
     CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
-    CHECK(frame.cells[20U*80U+29U].character=='\\');
+    CHECK(frame.cells[20U*80U+29U].character==MYSMB_IO_GLYPH_LOWER);
     CHECK(frame.cells[20U*80U+31U].character==' ');
 
     /* Unknown types remain explicit and do not paint a fabricated object. */

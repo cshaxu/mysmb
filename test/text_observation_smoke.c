@@ -8,6 +8,7 @@
 #include "game/presentation/text/background_scene.h"
 #include "game/presentation/text/observer_snapshot.h"
 #include "app/game_snapshot.h"
+#include "io/color.h"
 #include <stdio.h>
 #include <string.h>
 #include <stddef.h>
@@ -351,6 +352,107 @@ static int star_flag_case(void)
     return 0;
 }
 
+#ifdef MYSMB_LOCAL_TITLE
+/* Read the admitted local original resource declarations;do not reproduce
+ * palette tables or synthesize a second animation clock in presentation. */
+static int palette_animation_case(void)
+{
+    unsigned short i,j,col,row,base,a,found_question,found_coin,colors;
+    unsigned char previous,expected;
+    bind(&observed);observed.visible_ppu_mask=0x1eU;
+    observed.ram[0x0779U]=0x1eU;observed.ram[0x0773U]=0U;
+    observed.palette[0U]=0x22U;observed.palette[13U]=0x0fU;
+    memset(observed.name_table,0x24,sizeof(observed.name_table));
+    memset(observed.name_table[0]+0x3c0U,0,64U);
+    memset(observed.name_table[1]+0x3c0U,0,64U);
+    base=(unsigned short)((observed.area_prg[0x0b0bU]|
+        ((unsigned short)observed.area_prg[0x0b0fU]<<8U))-0x8000U);
+    for(j=0U;j<2U;++j) {
+        col=(unsigned short)(j==0U?10U:16U);row=12U;a=(unsigned short)(row*32U+col);
+        observed.name_table[0][a]=observed.area_prg[base+j*8U];
+        observed.name_table[0][a+32U]=observed.area_prg[base+j*8U+1U];
+        observed.name_table[0][a+1U]=observed.area_prg[base+j*8U+2U];
+        observed.name_table[0][a+33U]=observed.area_prg[base+j*8U+3U];
+        observed.name_table[0][0x3c0U+(row/4U)*8U+col/4U]|=
+            (unsigned char)(3U<<(((row&2U)<<1U)+(col&2U)));
+    }
+    observed.ram[0x074eU]=1U;plain=observed;colors=0U;
+    mysmb_text_observer_enable(&observed,1U);
+    for(i=0U;i<12U;++i) {
+        observed.ram[0x0009U]=plain.ram[0x0009U]=(unsigned char)(i*8U);
+        previous=observed.palette[13U];
+        mysmb_area_step_palette_rotation(&observed);
+        mysmb_area_step_palette_rotation(&plain);
+        CHECK(observed.palette[13U]==previous);
+        mysmb_game_commit_vram_buffer(&observed);mysmb_game_commit_vram_buffer(&plain);
+        CHECK(memcmp(&observed,&plain,offsetof(struct mysmb_game,text_observer))==0);
+        CHECK(observed.palette[13U]==observed.area_prg[0x09c3U+i%6U]);
+        before=observed;
+        CHECK(mysmb_text_background_scene_build(&observed,&background,&text,&caption_receipt));
+        expected=mysmb_io_color_text16(observed.palette[13U]);
+        colors|=(unsigned short)(1U<<expected);found_question=found_coin=0U;
+        for(j=0U;j<4000U;++j)if(text.cells[j].character=='?' || text.cells[j].character=='$') {
+            CHECK(text.cells[j].background==expected);
+            CHECK(text.cells[j].foreground!=expected);
+            if(text.cells[j].character=='?')++found_question;else ++found_coin;
+        }
+        if(found_question==0U || found_coin==0U)
+            fprintf(stderr,"palette fixture phase=%u question=%u coin=%u unsupported=%u ambiguous=%u objects=%u\n",
+                i,found_question,found_coin,caption_receipt.unsupported,
+                caption_receipt.ambiguous,caption_receipt.objects);
+        CHECK(found_question!=0U && found_coin!=0U);
+        CHECK(memcmp(&before,&observed,sizeof(observed))==0);
+    }
+    CHECK((colors&(colors-1U))!=0U);
+    printf("question/coin palette:12original queue/commit phases,shared animated colors passed\n");
+    return 0;
+}
+#endif
+
+/* Complete actual flag writer,not just a fabricated score observation. */
+static int flag_words_case(void)
+{
+    static const char *labels[5]={"5000","2000","800","400","100"};
+    struct mysmb_text_actor_receipt receipt;
+    unsigned short score,dx,dy,bg,j,x,y,first,row,index,cases;
+    cases=0U;
+    for(score=0U;score<5U;++score)for(dx=0U;dx<8U;++dx)
+        for(dy=0U;dy<8U;++dy)for(bg=0U;bg<16U;++bg) {
+            mysmb_game_initialize(&observed);observed.visible_ppu_mask=0x1eU;
+            for(j=0U;j<64U;++j)observed.ram[0x0200U+j*4U]=0xf8U;
+            observed.palette[0x16U]=0x30U;
+            observed.ram[0x06e5U]=32U;observed.ram[0x00cfU]=159U;
+            observed.ram[0x03aeU]=(unsigned char)(80U+dx);
+            observed.ram[0x010dU]=(unsigned char)(95U+dy);
+            observed.ram[0x010fU]=(unsigned char)score;observed.ram[0x070fU]=1U;
+            plain=observed;mysmb_text_observer_enable(&observed,1U);
+            mysmb_objects_draw_flagpole_graphics(&observed);
+            mysmb_objects_draw_flagpole_graphics(&plain);
+            CHECK(memcmp(&observed,&plain,offsetof(struct mysmb_game,text_observer))==0);
+            mysmb_game_submit_oam(&observed);before=observed;
+            x=observed.visible_oam[47U];y=(unsigned short)(observed.visible_oam[44U]+1U);
+            first=(unsigned short)(((unsigned long)x*80UL+127UL)/256UL);
+            row=(unsigned short)(((unsigned long)y*50UL+119UL)/240UL);
+            CHECK(mysmb_text_elements_build(0,0U,(mysmb_io_u8)bg,&text));
+            CHECK(mysmb_text_actor_scene_draw(&observed,&actor_workspace,0,&text,&receipt));
+            CHECK(receipt.drawn==1U && receipt.unsupported==0U);
+            for(j=0U;labels[score][j]!='\0';++j) {
+                index=(unsigned short)(row*80U+first+j);
+                CHECK(text.cells[index].character==(unsigned char)labels[score][j]);
+                CHECK(text.cells[index].background==bg && text.cells[index].foreground!=bg);
+            }
+            CHECK(memcmp(&before,&observed,sizeof(observed))==0);
+            CHECK(mysmb_text_observer_snapshot_capture(&observed,snapshot_wire));
+            restored=observed;mysmb_text_observer_invalidate(&restored);
+            mysmb_text_observer_snapshot_restore(&restored,snapshot_wire);
+            CHECK(mysmb_text_elements_build(0,0U,(mysmb_io_u8)bg,&loaded_text));
+            CHECK(mysmb_text_actor_scene_draw(&restored,&actor_workspace,0,&loaded_text,&receipt));
+            CHECK(memcmp(&text,&loaded_text,sizeof(text))==0);++cases;
+        }
+    printf("original flag score writer: %u whole-word/color/position/restored cases passed\n",cases);
+    return 0;
+}
+
 static int misc_case(unsigned char score,unsigned char phase)
 {
     static const char *labels[11]={"100","200","400","500","800",
@@ -393,12 +495,30 @@ static int misc_case(unsigned char score,unsigned char phase)
             CHECK(text.cells[20U*80U+25U+i].character==labels[control-1U][i]);
     else CHECK(text.cells[21U*80U+25U+(phase==1U?1U:0U)].character==
         (phase==0U?'$':'|'));
+    if(family==MYSMB_TEXT_OBSERVE_SCORE) {
+        observed.palette[0x1aU]=0x30U;before=observed;
+        for(phase=0U;phase<16U;++phase) {
+            CHECK(mysmb_text_elements_build(0,0U,phase,&text));
+            CHECK(mysmb_text_actor_scene_draw(&observed,&actor_workspace,0,&text,&receipt));
+            for(i=0U;labels[control-1U][i]!='\0';++i) {
+                CHECK(text.cells[20U*80U+25U+i].character==labels[control-1U][i]);
+                CHECK(text.cells[20U*80U+25U+i].foreground!=phase);
+                CHECK(text.cells[20U*80U+25U+i].background==phase);
+            }
+            CHECK(memcmp(&before,&observed,sizeof(observed))==0);
+        }
+    }
     CHECK(mysmb_text_observer_snapshot_capture(&observed,snapshot_wire));
     CHECK(mysmb_text_observer_snapshot_valid(snapshot_wire));
     restored=observed;mysmb_text_observer_invalidate(&restored);
     mysmb_text_observer_snapshot_restore(&restored,snapshot_wire);
     CHECK(memcmp(&restored.text_observer,&observed.text_observer,
         sizeof(observed.text_observer))==0);
+    if(family==MYSMB_TEXT_OBSERVE_SCORE) {
+        CHECK(mysmb_text_elements_build(0,0U,15U,&loaded_text));
+        CHECK(mysmb_text_actor_scene_draw(&restored,&actor_workspace,0,&loaded_text,&receipt));
+        CHECK(memcmp(&text,&loaded_text,sizeof(text))==0);
+    }
     return 0;
 }
 
@@ -586,6 +706,7 @@ int main(int argc,char **argv)
             (unsigned char)(j*4U))==0);
     CHECK(snapshot_case()==0);
     CHECK(star_flag_case()==0);
+    CHECK(flag_words_case()==0);
     for(i=0U;i<5U;++i)CHECK(misc_case(0U,(unsigned char)i)==0);
     for(i=1U;i<=11U;++i)CHECK(misc_case((unsigned char)i,0U)==0);
     CHECK(mixed_player_case(1U,0U,0U)==0);
@@ -593,6 +714,7 @@ int main(int argc,char **argv)
     CHECK(mixed_player_case(0U,1U,0U)==0);
     CHECK(mixed_player_case(0U,1U,4U)==0);
 #ifdef MYSMB_LOCAL_TITLE
+    CHECK(palette_animation_case()==0);
     CHECK(caption_routes()==0);
     CHECK(player_phase_routes()==0);
 #endif

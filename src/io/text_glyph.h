@@ -23,4 +23,5 @@
 
 unsigned short mysmb_io_text_glyph_unicode(mysmb_io_u8 glyph);
 mysmb_io_u8 mysmb_io_text_glyph_mirror(mysmb_io_u8 glyph);
+mysmb_io_u8 mysmb_io_text_glyph_flip(mysmb_io_u8 glyph);
 #endif

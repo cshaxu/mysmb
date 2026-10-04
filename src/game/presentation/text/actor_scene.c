@@ -288,6 +288,10 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
             if(item->family==MYSMB_TEXT_OBSERVE_FLAG && entry>=3U) {
                 if(item->graphics>=5U) {seen[i]=1U;receipt->unsupported++;continue;}
                 element.kind=MYSMB_TEXT_FLAG_SCORE;element.pose=item->graphics;
+                if(element.x>=0 && element.x<256)
+                    element.x=component_anchor((unsigned short)element.x,80U,256U);
+                if(element.y>=0 && element.y<240)
+                    element.y=component_anchor((unsigned short)element.y,50U,240U);
             }
             if(item->family==MYSMB_TEXT_OBSERVE_VINE) {
                 element.kind=item->entries[entry*4U+1U]==0xe0U?
@@ -307,7 +311,7 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
             }
             palette=(unsigned short)((game->visible_oam[priority*4U+2U]&3U)*4U);
             element.background=mysmb_io_color_text16(game->palette[0x12U+palette]);
-            element.foreground=15U;
+            element.foreground=mysmb_io_color_text_contrast(element.background);
             element.face_left=item->family==MYSMB_TEXT_OBSERVE_VINE?
                 (item->entries[entry*4U+2U]&0x40U)!=0U?1U:0U:
                 (item->facing&2U)!=0U?1U:0U;

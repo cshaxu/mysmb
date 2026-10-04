@@ -41,3 +41,20 @@ mysmb_io_u8 mysmb_io_text_glyph_mirror(mysmb_io_u8 glyph)
     default:return glyph;
     }
 }
+
+mysmb_io_u8 mysmb_io_text_glyph_flip(mysmb_io_u8 glyph)
+{
+    switch(glyph) {
+    case MYSMB_IO_GLYPH_TOP_LEFT:return MYSMB_IO_GLYPH_BOTTOM_LEFT;
+    case MYSMB_IO_GLYPH_TOP_RIGHT:return MYSMB_IO_GLYPH_BOTTOM_RIGHT;
+    case MYSMB_IO_GLYPH_BOTTOM_LEFT:return MYSMB_IO_GLYPH_TOP_LEFT;
+    case MYSMB_IO_GLYPH_BOTTOM_RIGHT:return MYSMB_IO_GLYPH_TOP_RIGHT;
+    case MYSMB_IO_GLYPH_TEE_TOP:return MYSMB_IO_GLYPH_TEE_BOTTOM;
+    case MYSMB_IO_GLYPH_TEE_BOTTOM:return MYSMB_IO_GLYPH_TEE_TOP;
+    case MYSMB_IO_GLYPH_UPPER:return MYSMB_IO_GLYPH_LOWER;
+    case MYSMB_IO_GLYPH_LOWER:return MYSMB_IO_GLYPH_UPPER;
+    case '/':return '\\';case '\\':return '/';
+    case '^':return 'v';case 'v':return '^';
+    default:return glyph;
+    }
+}

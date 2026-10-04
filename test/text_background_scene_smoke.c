@@ -65,7 +65,7 @@ int main(void)
     }
     CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
     CHECK(frame.cells[19U*80U+55U].background==15U);
-    CHECK(frame.cells[19U*80U+55U].foreground==8U);
+    CHECK(frame.cells[19U*80U+55U].foreground==0U);
     i=19U*80U+55U;
     CHECK((workspace.opaque[i/8U]&(1U<<(i%8U)))!=0U);
     /* A visual alias with conflicting meanings is explicit,never guessed. */

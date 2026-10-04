@@ -15,6 +15,10 @@ static struct mysmb_text_element elements[8];
 
 int main(int argc, char **argv)
 {
+    static const char *score_labels[11]={"100","200","400","500","800",
+        "1000","2000","4000","5000","8000","1UP"};
+    static const char *flag_labels[5]={"5000","2000","800","400","100"};
+    const char *label;
     struct mysmb_text_element original;
     unsigned int i;
     unsigned int row;
@@ -34,6 +38,7 @@ int main(int argc, char **argv)
         if(i>=32U && i<=126U)CHECK(column==i);
         else if(column!=0U)CHECK(column>=0x2500U && column<=0x2590U);
         CHECK(mysmb_io_text_glyph_mirror(mysmb_io_text_glyph_mirror((mysmb_io_u8)i))==i);
+        CHECK(mysmb_io_text_glyph_flip(mysmb_io_text_glyph_flip((mysmb_io_u8)i))==i);
     }
     CHECK(mysmb_io_text_glyph_unicode(0U)==0U);
     CHECK(mysmb_io_text_glyph_unicode(0x80U)==0U);
@@ -48,8 +53,8 @@ int main(int argc, char **argv)
     original = elements[0];
     CHECK(mysmb_text_elements_build(elements, 1U, 9U, &frame));
     CHECK(memcmp(&original, elements, sizeof(original)) == 0);
-    CHECK(frame.cells[1].character == '_');
-    CHECK(frame.cells[1].background == 4U);
+    CHECK(frame.cells[1].character == MYSMB_IO_GLYPH_LOWER);
+    CHECK(frame.cells[1].background == 9U && frame.cells[1].foreground==4U);
     CHECK(frame.cells[0].background == 9U);
     CHECK(frame.cells[83].character == '>');
     elements[0].face_left = 1U;
@@ -112,6 +117,11 @@ int main(int argc, char **argv)
                 CHECK(mysmb_text_elements_build(elements,1U,9U,&frame));
                 plain=elements[0];plain.foreground=15U;plain.background=0U;
                 CHECK(mysmb_text_elements_build(&plain,1U,0U,&monochrome));
+                if(i==MYSMB_TEXT_SCORE || i==MYSMB_TEXT_FLAG_SCORE) {
+                    label=i==MYSMB_TEXT_SCORE?score_labels[row]:flag_labels[row];
+                    for(column=0U;label[column]!='\0';++column)
+                        CHECK(frame.cells[13U*80U+20U+column].character==(unsigned char)label[column]);
+                }
                 ink=0U;
                 for(column=0U;column<MYSMB_IO_TEXT_CELLS;++column) {
                     CHECK(mysmb_io_text_glyph_unicode(frame.cells[column].character)!=0U);
@@ -119,8 +129,16 @@ int main(int argc, char **argv)
                     CHECK(frame.cells[column].character==monochrome.cells[column].character);
                     if(frame.cells[column].character!=' ') {
                         ++ink;
-                        CHECK(frame.cells[column].foreground==elements[0].foreground);
-                        CHECK(frame.cells[column].background==elements[0].background);
+                        if(elements[0].kind==MYSMB_TEXT_SCORE || elements[0].kind==MYSMB_TEXT_FLAG_SCORE) {
+                            CHECK(frame.cells[column].foreground==elements[0].background);
+                            CHECK(frame.cells[column].background==9U);
+                        } else if(frame.cells[column].character>=0xdbU && frame.cells[column].character<=0xdfU) {
+                            CHECK(frame.cells[column].foreground==elements[0].background);
+                            CHECK(frame.cells[column].background==9U);
+                        } else {
+                            CHECK(frame.cells[column].foreground==elements[0].foreground);
+                            CHECK(frame.cells[column].background==elements[0].background);
+                        }
                         CHECK(monochrome.cells[column].foreground==15U);
                         CHECK(monochrome.cells[column].background==0U);
                     }
@@ -138,7 +156,10 @@ int main(int argc, char **argv)
                     }
                     if(first==80U)continue;
                     for(column=first;column<=last;++column) {
-                        CHECK(frame.cells[line*80U+column].background==elements[0].background);
+                        if(elements[0].kind==MYSMB_TEXT_SCORE || elements[0].kind==MYSMB_TEXT_FLAG_SCORE ||
+                            (frame.cells[line*80U+column].character>=0xdbU && frame.cells[line*80U+column].character<=0xdfU))
+                            CHECK(frame.cells[line*80U+column].background==9U);
+                        else CHECK(frame.cells[line*80U+column].background==elements[0].background);
                         CHECK(monochrome.cells[line*80U+column].background==0U);
                     }
                 }
