@@ -13,6 +13,8 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P147 continuation plan](../proposals/m2/t70-final-current-certification.md#current-continuation-plan---p147):136 ledger groups under current S17;13 named output/route slots and final snapshot are planned successors only. All1643 instruction labels fit admitted1667 participants;no new node/control credit,local1991/1992 nodes and4260/4261 feasible controls retained.
+
 [P146 fixed-universe audit ledger](M2_AUDIT_LEDGER.md):10691 retained local site receipts;136 owner groups/952 integration facets pending reconciliation;two localized gaps/13 coverage slots open. No new node/control credit. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);993 partial material receipts are not a denominator. Deadline cancelled,M2 incomplete.
 
 [P145 bubble alias semantics](../proposals/m2/t70-final-current-certification.md#s17-p145-checkpoint---bubble-indexed-alias-writes-preserved).

@@ -82,6 +82,13 @@ are recorded, not silently upgraded to full-route coverage.
 
 ## Change And Exit Rules
 
+The proposal's [current continuation plan](../proposals/m2/t70-final-current-certification.md#current-continuation-plan---p147)
+maps all136 groups to current S17,orders reconciliation by first original PC,
+and maps all13 coverage slots to unadmitted output/route successors,followed
+by final snapshot closure. The JSON executionPlan preserves exact group and
+coverage identities;the validator rejects omitted or duplicated assignments.
+All1643 instruction labels are within the existing1667 S17 participants.
+
 New evidence and findings attach to existing use/group/coverage IDs. A
 finding records the earlier receipt, missing condition, exact affected
 identities, gameplay impact, receiving S and repair/re-audit evidence.

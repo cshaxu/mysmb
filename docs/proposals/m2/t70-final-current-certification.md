@@ -1,5 +1,49 @@
 # M2 T70: final current-equivalence certification
 
+## Current Continuation Plan - P147
+
+This section governs remaining execution under the owner's fixed-ledger
+request. Initial admission/cohort plans below are retained history, not the
+next To-Do order. No successor T or S is admitted by this planning amendment.
+The [audit ledger](../../states/M2_AUDIT_LEDGER.md) and its JSON executionPlan
+give exact use/group/coverage IDs. CURRENT remains M2 T70 S17.
+
+| Order | Receiving scope | Execution | Exit |
+| --- | --- | --- | --- |
+| Current S17: material integration | All136 named ledger groups/seven facets;10691 uses/4171 explicit accesses;1643 instruction labels are a subset of the admitted1667 participants. Two localized findings include CheckForEnemyGroup/control-01480. | Reconcile retained evidence in original-PC order;publish group/use IDs and missing conditions before each P. Reuse applicable proofs. For missing conditions,identify affected producers/consumers,repair any diff and compare that chain. Do not repeat every owner from scratch. | All952 cells have applicable evidence;localized findings closed;source-site inventory complete and source-binding valid;material relation completeness justified by the use dispositions. Review the one pending node/control only when its downstream domain is proved. |
+| Subsequent output S slot | pixel-render-mask,pixel-scroll-split,pixel-sprite-output | Reuse P144512-frame completed-pixel evidence where applicable. Before admission list exact producer/consumer labels and original split/priority alternatives;complete a finite manifest and compare final pixels on both widths. | All three pixel slots evidence-closed;no unexplained pixel diff. No HUD redraw or platform game rule substitutes. |
+| Subsequent route S slot(s) | route-title-input,route-gameplay,route-death-restart,route-pipe,route-vine,route-warp,route-end-world,route-final-completion,route-two-player,route-audio | Reuse P126/P127 and applicable local route proofs. Group related coverage slots by continuous source route and owner. Freeze case IDs,initial state,input sequence,terminal checkpoints,source branches and exclusions before execution. | All ten route slots closed with original/native state and ordered-output comparison plus native operational evidence;zero unresolved diff. |
+| Final snapshot S slot | All six final packages,retained node/control/material dispositions and final dependencies/products | Reconcile source/data/child identities;rerun only invalidated proofs and one final integrated operational regression,platform-purity check and original DOS16 compile/link. | All ledger cells/findings/coverage closed;all six packages closed;no pending node/control/material contract;final three-product identities recorded. |
+
+These are planned slots inside the active T,not preallocated S identifiers.
+Only admit the next S after its predecessor closes and its exact labels,
+relations,entry/exit,fixtures and node/task responsibility pass admission.
+Do not transfer unresolved S17 conditions silently to output/route work.
+Route manifests may be prepared now as dependencies, but preparing them does
+not count as route closure or successor admission.
+
+### P-Level Reconciliation And Reporting
+
+Each S17 P selects explicit ledger groups or a connected subset of use IDs,
+records the applicable prior receipts and their missing conditions,then
+discharges multiple facets with the same chain evidence where justified.
+Original-PC order is the default; a dependency-first exception must name the
+pending producer and affected group. These work slices are not new S IDs.
+Do not create a commit per site or per facet. Bulk evidence reconciliation
+does not bypass a bounded repair amendment or the two verification tracks.
+
+Every P reports local nodes/1992,feasible controls/current feasible total,
+closed/pending facets/952,open findings and their status changes,coverage/13,
+and package closure/6. A newly discovered condition attaches to an existing
+cell and records impact;it does not reset unrelated accepted evidence.
+Code repair rebuilds all three EXEs;pure planning/audit retains P144 products.
+Final status remains incomplete until the explicit exits above are proved.
+
+P147 planning review confirms all1643 instruction labels are already in the
+1667-label S17 admission. Group order and facet responsibilities are indexed
+in executionPlan;no node custody transfer or match credit. Existing metadata,
+node-admission and governance gates apply;their success is not semantic proof.
+
 Owner ongoing M2 mandate admits the next original-plan task after closed T69.
 Incoming historical1992/1992;current registry exact1992/1992 nodes and4276/4276
 feasible controls(raw4342,infeasible66);557/557 material partially enumerated.

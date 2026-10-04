@@ -95,6 +95,25 @@ def validate(ledger, registry, root):
             universe['controlIdentitySha256'], 'control identity universe changed')
     routes = ledger['coverageSlots']
     require(len({r['id'] for r in routes}) == len(routes), 'duplicate coverage slot')
+    plan = ledger['executionPlan']
+    require(plan['activeReceiver'] == ledger['taskId'] == 'M2 T70 S17',
+            'wrong current plan receiver')
+    order = plan['groupOrder']
+    require(len(order) == len(groups) and set(order) == set(group_map),
+            'plan misses or duplicates owner obligations')
+    phases = {p['key']: p for p in plan['phases']}
+    require(set(phases) == {'material', 'pixels', 'routes', 'snapshot'},
+            'missing continuation phase')
+    require(phases['material']['groupIds'] == order and
+            set(phases['material']['findingIds']) == {f['id'] for f in findings},
+            'current material plan misses existing obligations')
+    assigned_coverage = phases['pixels']['coverageIds'] + phases['routes']['coverageIds']
+    require(len(assigned_coverage) == len(routes) and
+            set(assigned_coverage) == {r['id'] for r in routes},
+            'coverage slot omitted or duplicated in successor plan')
+    require(set(phases['snapshot']['packageKeys']) ==
+            {g['key'] for g in registry['finalCertification']['gapClosure']},
+            'final plan misses a certification package')
     for route in routes:
         require(route['status'] in ('pending', 'closed'), 'unknown coverage status')
         if route['status'] == 'closed':
