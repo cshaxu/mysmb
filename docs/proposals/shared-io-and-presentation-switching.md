@@ -297,3 +297,54 @@ Changed dependency identities recorded for deferred M2 rebinding,not new proof.
 Historical1992/1992,local1991/1992 nodes,4260/4261 controls,42/952 facets
 unchanged;scope/expected/actual[],fresh0. Closure gates required before commit.
 No configured remote,push unavailable. Owner authorizes automatic S4 admission.
+
+## S4 admission - DOS device stabilization
+
+Automatically admitted after S3 f02c90f8 under owner approval. Expected8-12
+source/test/build files,300-500 changed lines. Shared pacing uses bounded
+clock deltas;DOS samples BIOS-owned PIT without changing IRQ0/rate. Late frames
+must not incur an additional full wait or unbounded catch-up. Device setup and
+teardown remain idempotent. DOS root exports ordered audio through the neutral
+contract;the host explicitly reports absent audio hardware,never invented
+sound. Focused clock rollover/late-frame/audio lifetime checks and scoped real
+DOS startup/Esc restore precede closure;S5 retains sustained gameplay proof.
+Owner-local inputs/provenance follow S3,all outputs ignored. Empty ROM scope,
+expected/actual[] and zero new node/control credit;no game owner edits.
+
+PIT review uses the public [Intel8254 datasheet](https://www.cs.umb.edu/cs341/Intel8254/I8254PIT.pdf)
+as a hardware-interface reference only,no code or protected program data
+copied. Mode3 decrements by two and reloads each half cycle;read-back OUT and
+count must be combined. A focused physical decoder and exhaustive cycle test
+are included in S4 rather than accepting a double-rate timing interpretation.
+
+## S4 P1 closure - DOS device stabilization
+
+Shared pacing waits only the remainder of a frame,preserves fractional
+lateness,and discards missed-frame backlog. DOS reads BIOS ticks and latched
+8254 status/count without altering PIT frequency/vector;mode3 half-cycle
+decoding and pending IRQ0 correction prevent double-rate interpretation.
+Midnight/clock discontinuity is bounded. Ordered game audio is exported once
+per tick through IO;DOS explicitly returns audio-unavailable and announces
+that before graphical setup. No sound hardware or game semantics invented.
+Mode and keyboard lifetime retain idempotent device open/close and root free.
+
+Actual16 source/test/build files,+161/-20,versus8-12/300-500 estimate.
+The separate physical PIT decoder,exhaustive cycle test and strengthened
+device purity gate explain the extra files;these are admitted timing/sweep
+scope.13focused tests per width pass,including all65536 mode3 positions,
+mode2 and alias modes,clock32 rollover/discontinuity/late frames,ordered audio
+callback and existing Win32 frame/audio/focus checks. Original OpenNT16 full
+resource-bound build/link passes. S3 read-only SoftPC probe rerun on the S4
+binary observes40 nonempty graph samples,Enter injection and Esc restore3.
+This remains scoped bring-up,S5 sustained route proof is pending.
+
+Three local products:16=308893bytes,
+32=369617bytes,64=382035bytes.
+Protected products/media remain local/unstaged. Coordinator review:only IO and
+DOS infrastructure changed,existing Win32 synthesis/game owners unchanged.
+Similar-issue sweep covers all device code imports,BIOS timer mode3/rollover,
+frame backlog and silent audio capability;legacy text path stays inert.
+Changed dependencies recorded without semantic promotion. Historical1992/1992,
+local1991/1992 nodes,4260/4261 controls and42/952 facets unchanged;scope/expected/
+actual[],fresh0. Governance/registry/node gates required before commit.
+No remote,push unavailable;automatic S5 admission follows reviewed commit.

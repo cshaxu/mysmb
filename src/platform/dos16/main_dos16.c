@@ -1,6 +1,7 @@
 #include "platform/dos16/dos16_root.h"
 #include "platform/dos16/devices.h"
 #include "game/area.h"
+#include <stdio.h>
 #ifdef MYSMB_LOCAL_TITLE
 #include "smb1_local_rom.h"
 #include "smb1_local_title.h"
@@ -24,12 +25,18 @@ static void present_video(void *context, const struct mysmb_io_video_frame *fram
     mysmb_vga_frame_build(frame,&vga);
     mysmb_dos16_devices_present(&vga);
 }
+static mysmb_io_u8 submit_audio(void *context, const struct mysmb_io_audio_frame *frame)
+{
+    (void)context;
+    return mysmb_dos16_devices_audio(frame);
+}
 int main(void)
 {
     struct mysmb_dos16_hooks hooks;
     hooks.context=0;
     hooks.read_input=read_input;
     hooks.present_video=present_video;
+    hooks.submit_audio=submit_audio;
     if (!mysmb_dos16_root_initialize(&root,&hooks)) return 1;
 #ifdef MYSMB_LOCAL_TITLE
     mysmb_game_bind_area_source(&root.game,mysmb_local_prg,MYSMB_LOCAL_PRG_SIZE);
@@ -38,6 +45,7 @@ int main(void)
         MYSMB_LOCAL_TITLE_DATA_SIZE,mysmb_local_title_icon_data,MYSMB_LOCAL_TITLE_ICON_DATA_SIZE);
 #endif
     mysmb_vga_frame_initialize(&vga,pages0,pages1,pages2,pages3);
+    puts("DOS audio output unavailable");
     mysmb_dos16_devices_open();
     while (!mysmb_dos16_devices_exit_requested()) {
         mysmb_dos16_root_step(&root);

@@ -1,10 +1,16 @@
 #include "platform/dos16/dos16_root.h"
 #include "platform/dos16/keyboard.h"
-struct host { unsigned calls; };
+struct host { unsigned calls; unsigned audio_calls; };
 static void read_input(void *context, struct mysmb_io_input *input)
 { (void)context; input->buttons=0U; input->buttons2=0U; }
 static void present(void *context, const struct mysmb_io_video_frame *frame)
 { if (frame->pixels!=0) ++((struct host *)context)->calls; }
+static mysmb_io_u8 audio(void *context, const struct mysmb_io_audio_frame *frame)
+{
+    if (frame->write_count<=MYSMB_IO_AUDIO_WRITE_CAPACITY)
+        ++((struct host *)context)->audio_calls;
+    return MYSMB_IO_AUDIO_UNAVAILABLE;
+}
 int main(void)
 {
     static struct mysmb_dos16_root root;
@@ -43,14 +49,17 @@ int main(void)
     mysmb_dos16_keyboard_scan(&keyboard,0xc5U);
     mysmb_dos16_keyboard_input(&keyboard,&input);
     if (input.buttons!=0U || input.buttons2!=0U) return 4;
-    host.calls=0U; hooks.context=&host; hooks.read_input=read_input; hooks.present_video=present;
+    host.calls=0U; host.audio_calls=0U;
+    hooks.context=&host; hooks.read_input=read_input; hooks.present_video=present;
+    hooks.submit_audio=audio;
     if (mysmb_dos16_root_initialize(&root,0)!=0) return 5;
     if (!mysmb_dos16_root_initialize(&root,&hooks)) return 6;
     mysmb_dos16_root_step(&root); mysmb_dos16_root_step(&root);
     if (root.game.frame_number!=0UL || host.calls!=0U) return 7;
     mysmb_dos16_root_step(&root);
-    if (root.game.frame_number!=1UL || host.calls!=1U) return 8;
+    if (root.game.frame_number!=1UL || host.calls!=1U || host.audio_calls!=1U ||
+        root.audio_available!=MYSMB_IO_AUDIO_UNAVAILABLE) return 8;
     mysmb_dos16_root_shutdown(&root); mysmb_dos16_root_shutdown(&root);
     mysmb_dos16_root_step(&root);
-    return host.calls==1U ? 0:9;
+    return host.calls==1U && host.audio_calls==1U ? 0:9;
 }

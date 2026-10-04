@@ -9,6 +9,7 @@ int mysmb_dos16_root_initialize(struct mysmb_dos16_root *root,
     mysmb_u8 __far *pixels;
 #endif
     root->initialized=0U;
+    root->audio_available=MYSMB_IO_AUDIO_UNAVAILABLE;
     if (hooks==0 || hooks->read_input==0 || hooks->present_video==0) return 0;
 #ifdef MYSMB_DOS16_TARGET
     pixels=(mysmb_u8 __far *)_fmalloc(MYSMB_IO_VIDEO_PIXELS);
@@ -34,6 +35,9 @@ void mysmb_dos16_root_step(struct mysmb_dos16_root *root)
     mysmb_ppu_frame_build(&root->game,&root->ppu_frame);
     mysmb_game_io_video(&root->ppu_frame,&video);
     root->hooks.present_video(root->hooks.context,&video);
+    mysmb_game_io_audio(&root->game,&root->audio_frame);
+    if (root->hooks.submit_audio!=0)
+        root->audio_available=root->hooks.submit_audio(root->hooks.context,&root->audio_frame);
 }
 void mysmb_dos16_root_shutdown(struct mysmb_dos16_root *root)
 {

@@ -1,13 +1,15 @@
 #include "platform/dos16/devices.h"
 #include "platform/dos16/keyboard.h"
+#include "platform/dos16/pit_clock.h"
 #include "io/color.h"
+#include "io/pacing.h"
 #include <dos.h>
 #include <conio.h>
 
 static struct mysmb_dos16_keyboard keyboard;
 static void (interrupt far *old_keyboard)();
 static unsigned char old_mode;
-static unsigned short last_counter;
+static struct mysmb_io_pacing pacing;
 static unsigned char opened;
 
 static void interrupt far keyboard_interrupt(void)
@@ -22,15 +24,27 @@ static void interrupt far keyboard_interrupt(void)
 }
 
 /* Latch BIOS-owned PIT channel zero; never change its rate or IRQ vector. */
-static unsigned short timer_counter(void)
+static unsigned long timer_stamp(void)
 {
-    unsigned short low, high;
+    unsigned short low, high, phase;
+    unsigned char status;
+    unsigned long ticks;
+    volatile unsigned long far *bios_ticks;
+    bios_ticks=(volatile unsigned long far *)0x0040006cUL;
     _disable();
-    outp(0x43,0U);
+    ticks=*bios_ticks;
+    /* 8254 read-back latches both status and count for channel zero. */
+    outp(0x43,0xc2U);
+    status=(unsigned char)inp(0x40);
     low=(unsigned short)inp(0x40);
     high=(unsigned short)inp(0x40);
+    phase=mysmb_dos16_pit_phase(status,(unsigned short)(low|(high<<8U)));
+    /* A latched high count plus pending IRQ0 means a wrap not yet reflected
+     * in the BIOS count. Leave the timer vector/rate and clock untouched. */
+    outp(0x20,0x0aU);
+    if ((inp(0x20)&1U)!=0U && phase<32768U) ++ticks;
     _enable();
-    return (unsigned short)(low|(high<<8U));
+    return (ticks<<16U)+phase;
 }
 
 void mysmb_dos16_devices_open(void)
@@ -55,7 +69,7 @@ void mysmb_dos16_devices_open(void)
     mysmb_dos16_keyboard_initialize(&keyboard);
     old_keyboard=_dos_getvect(9U);
     _dos_setvect(9U,keyboard_interrupt);
-    last_counter=timer_counter();
+    mysmb_io_pacing_initialize(&pacing,timer_stamp(),19886UL);
     opened=1U;
 }
 
@@ -98,11 +112,13 @@ void mysmb_dos16_devices_present(const struct mysmb_vga_frame *frame)
 
 void mysmb_dos16_devices_wait(void)
 {
-    unsigned short current, elapsed;
-    elapsed=0U;
-    do {
-        current=timer_counter();
-        elapsed=(unsigned short)(elapsed+(unsigned short)(last_counter-current));
-        last_counter=current;
-    } while (elapsed<19886U && !mysmb_dos16_devices_exit_requested());
+    while (mysmb_io_pacing_remaining(&pacing,timer_stamp())!=0UL &&
+           !mysmb_dos16_devices_exit_requested()) { }
+}
+
+mysmb_io_u8 mysmb_dos16_devices_audio(const struct mysmb_io_audio_frame *frame)
+{
+    /* No DOS sound hardware adapter is installed;never claim audible output. */
+    (void)frame;
+    return MYSMB_IO_AUDIO_UNAVAILABLE;
 }

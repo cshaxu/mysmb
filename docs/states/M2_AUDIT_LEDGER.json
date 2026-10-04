@@ -26,7 +26,7 @@
     "controlIdentitySha256": "4d6fced75017fcd0edd80f63223f45e7d14e1b4170af91f98937a0474c970669"
   },
   "sourceSnapshot": {
-    "CMakeLists.txt": "be0505d87f7b03dcaf5ebd4bbff9729cdacce36a3b4f4bf3ca9038f0dae1fa56",
+    "CMakeLists.txt": "5d686cfa484fbae4756086ae831d03a7e8e60b063983a67bc068e689b6f6588e",
     "src/game/area.c": "c7c0d508da06e0c83ebfa4aa3757e9b170753c2eecf9cbe0e0505dcdc1c52d62",
     "src/game/area.h": "ff79683256a810f1a157bb0e75e7647ef8fdb79857ba0bfe861edb9128117008",
     "src/game/area/area_data.c": "9f4d6fbb22af69b28977276ff999484956c3db3e859ee15cc6e915356b4b6176",
@@ -198,9 +198,9 @@
     "src/game/world/player_enemy_collision.c": "0fa887230197be17c07afb3999cf0a73b4d79969118366e571d85259ed7b9297",
     "src/game/world/powerup_collision.c": "694a36854394c30738e3230affb51def51aa2b5b357e65940ffd4458fde6363e",
     "src/game/world/world.h": "0cc55d175ce013bb14e80e9015d0c31604f37ad60e1401449ec3de2a83588069",
-    "src/platform/dos16/dos16_root.c": "2bb089aa7e54cb737711baf4b1ba0dc125f575904c01f3dfb5f6dd806e4fe683",
-    "src/platform/dos16/dos16_root.h": "3cf369236682ad6492d5b07d03e5e6847ca7f4f5db95b68be908aabde8a661d8",
-    "src/platform/dos16/main_dos16.c": "0e23a4deab2f327310669c023a6ebc6d9c24fbc70e2686d956d3cfedce84aae3",
+    "src/platform/dos16/dos16_root.c": "3d23cd0da721ad214d04f9bf85fcc0b55aa111c826ad5424b2c10de1314263b6",
+    "src/platform/dos16/dos16_root.h": "c0d4e86219219d8479c45babc8a82d9810430569321dc023ed55bd8ad636d202",
+    "src/platform/dos16/main_dos16.c": "08e7bf3c2cc01987fa2d41524a6d70e40bc1e3154b907ce9e572a273df9768a3",
     "src/platform/text/text_frame.c": "754a934d9e6799bcb626b79ac5375f2d31e33eb533a0b85b5b7e6619f0cc89a9",
     "src/platform/text/text_frame.h": "bbaa25ad4d4c88820884af742b3cae802e00353249e082f58b21fe3ba10156db",
     "src/platform/vga/vga_frame.c": "10020e7f63becb52d20202df667d94a48d062a89ead0ac72db8ee8173e01b13e",
@@ -217,15 +217,19 @@
     "src/io/types.h": "55dd06e69e76e332ea63b30220b8a1faa76c7133f2b933c7b5120549acbe9aea",
     "src/io/input.h": "477a500b8fe359da5a9356ef9ae7015efa21308e57ccc8dbb784fb0779c1b183",
     "src/io/video.h": "fad6b3dc979323efcf0a7af212f25d25e35fc0fb0c635a5872839ad5f9e08df0",
-    "src/io/audio.h": "9e865a166bbaec42c79240cb5c53576738dff6586bee3dd70f19977588f90e32",
+    "src/io/audio.h": "bec1f38fbef20d5a35810e542a21ed66b2c22dacfcffc5309e850d38a8259601",
     "src/io/color.h": "1a228c452747dee1c8ff5232eb7da9b2ec950dd69c460fea9064e311188f33d9",
     "src/io/color.c": "b3ee02986fca7b6267a6f2906295bfe8f64f85f6d79ad77563bc100dac1d5f7c",
     "src/io/scale.h": "ca4efdf35b684726a4ed51ca8ba41cd28c1a875134505d71286b0c23847a06bc",
     "src/io/scale.c": "0e73b8875ee5c745b75bc21710ba26782d47d3c73a2e9a328a6330e106ecaa77",
     "src/platform/dos16/keyboard.h": "ce81b29c9dc556bb71cba0d362276d215a11ff763949aa836ca14730a81caa21",
     "src/platform/dos16/keyboard.c": "6aab9bd6d3d0ab8264be14f19e33aaa22788711ca38aaa38241a1be1304c4ad1",
-    "src/platform/dos16/devices.h": "5bafb3ce1d2816a0dea3f7a08e37538095c731cb498a8c3ac8196259e1235289",
-    "src/platform/dos16/devices.c": "1b15a6850bf810d8174a3f380a74f5d37ad020a084c6a167c766d58f2fa28712"
+    "src/platform/dos16/devices.h": "95a98d0ede1bbb98c4d33e36c9c45bf4ba6da93a74953745c185c41ca23d156f",
+    "src/platform/dos16/devices.c": "70c8cecc6eb7d5263da07bd223f520e236cf83f38d9e2d6b8de3430461cd4703",
+    "src/io/pacing.h": "512758617748b6911d002875366d46a7a07d92331a3f45b656af5df8ec54645a",
+    "src/io/pacing.c": "da8886648b6dbce7c2779f5f19d135f6e1da24f1ead793ce2ecb2ae386ba2684",
+    "src/platform/dos16/pit_clock.h": "60af45b8aec24c8e1745df1119ed9b6ef561f4bdc4e0d625d2dc0a0b6654779d",
+    "src/platform/dos16/pit_clock.c": "cded3c4d3f4e92bc710f3a3a9897b6887c47611eda5b31f94e3df73138bf7885"
   },
   "uses": [
     {
@@ -124022,6 +124026,57 @@
       "groupUniverseChanged": false,
       "nodeControlCredit": 0,
       "evidence": "docs/proposals/shared-io-and-presentation-switching.md S3 P1 closure - DOS graphical IO bring-up"
+    },
+    {
+      "id": "M3-T9-S4-device-binding",
+      "cause": "Pure DOS device/clock and explicit neutral audio capability change;game owners/Win32 synthesis intact. Scoped operational proof,no new ROM certification.",
+      "changedSourceIdentities": [
+        {
+          "path": "CMakeLists.txt",
+          "old": "be0505d87f7b03dcaf5ebd4bbff9729cdacce36a3b4f4bf3ca9038f0dae1fa56",
+          "new": "5d686cfa484fbae4756086ae831d03a7e8e60b063983a67bc068e689b6f6588e"
+        },
+        {
+          "path": "src/platform/dos16/dos16_root.c",
+          "old": "2bb089aa7e54cb737711baf4b1ba0dc125f575904c01f3dfb5f6dd806e4fe683",
+          "new": "3d23cd0da721ad214d04f9bf85fcc0b55aa111c826ad5424b2c10de1314263b6"
+        },
+        {
+          "path": "src/platform/dos16/dos16_root.h",
+          "old": "3cf369236682ad6492d5b07d03e5e6847ca7f4f5db95b68be908aabde8a661d8",
+          "new": "c0d4e86219219d8479c45babc8a82d9810430569321dc023ed55bd8ad636d202"
+        },
+        {
+          "path": "src/platform/dos16/main_dos16.c",
+          "old": "0e23a4deab2f327310669c023a6ebc6d9c24fbc70e2686d956d3cfedce84aae3",
+          "new": "08e7bf3c2cc01987fa2d41524a6d70e40bc1e3154b907ce9e572a273df9768a3"
+        },
+        {
+          "path": "src/io/audio.h",
+          "old": "9e865a166bbaec42c79240cb5c53576738dff6586bee3dd70f19977588f90e32",
+          "new": "bec1f38fbef20d5a35810e542a21ed66b2c22dacfcffc5309e850d38a8259601"
+        },
+        {
+          "path": "src/platform/dos16/devices.h",
+          "old": "5bafb3ce1d2816a0dea3f7a08e37538095c731cb498a8c3ac8196259e1235289",
+          "new": "95a98d0ede1bbb98c4d33e36c9c45bf4ba6da93a74953745c185c41ca23d156f"
+        },
+        {
+          "path": "src/platform/dos16/devices.c",
+          "old": "1b15a6850bf810d8174a3f380a74f5d37ad020a084c6a167c766d58f2fa28712",
+          "new": "70c8cecc6eb7d5263da07bd223f520e236cf83f38d9e2d6b8de3430461cd4703"
+        }
+      ],
+      "addedDependencyPaths": [
+        "src/io/pacing.h",
+        "src/io/pacing.c",
+        "src/platform/dos16/pit_clock.h",
+        "src/platform/dos16/pit_clock.c"
+      ],
+      "sourceUniverseChanged": false,
+      "groupUniverseChanged": false,
+      "nodeControlCredit": 0,
+      "evidence": "docs/proposals/shared-io-and-presentation-switching.md S4 P1 closure - DOS device stabilization"
     }
   ],
   "closure": "All group facets, findings and coverage slots evidence-closed; six registry packages closed; no unresolved source mismatch; final source/data/build binding. No all-input theorem inferred.",
