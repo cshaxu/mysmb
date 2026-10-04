@@ -1,4 +1,5 @@
 #include "platform/win32/text_console.h"
+#include "io/color.h"
 int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console)
 {
     COORD size;
@@ -6,6 +7,9 @@ int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console)
     CONSOLE_CURSOR_INFO cursor;
     CONSOLE_FONT_INFOEX font;
     DWORD mode;
+    CONSOLE_SCREEN_BUFFER_INFOEX info;
+    unsigned int i;
+    unsigned long rgb;
     if(console->opened)return 1;
     if(!AllocConsole())return 0;
     console->opened=1U;
@@ -19,6 +23,17 @@ int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console)
     tiny.Left=tiny.Top=tiny.Right=tiny.Bottom=0;
     size.X=80;size.Y=50;
     view.Left=view.Top=0;view.Right=79;view.Bottom=49;
+    ZeroMemory(&info,sizeof(info));info.cbSize=sizeof(info);
+    if(!GetConsoleScreenBufferInfoEx(console->output,&info)) {
+        mysmb_win32_text_console_close(console);return 0;
+    }
+    for(i=0U;i<16U;++i) {
+        rgb=mysmb_io_color_text_rgb((mysmb_io_u8)i);
+        info.ColorTable[i]=RGB((rgb>>16U)&255UL,(rgb>>8U)&255UL,rgb&255UL);
+    }
+    if(!SetConsoleScreenBufferInfoEx(console->output,&info)) {
+        mysmb_win32_text_console_close(console);return 0;
+    }
     if(console->window==NULL || !GetConsoleMode(console->input,&mode) ||
         !SetConsoleMode(console->input,(mode|ENABLE_EXTENDED_FLAGS)&
             ~(ENABLE_QUICK_EDIT_MODE|ENABLE_LINE_INPUT|ENABLE_ECHO_INPUT|ENABLE_PROCESSED_INPUT)) ||
@@ -32,8 +47,10 @@ int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console)
     (void)SetConsoleTitleA("MySMB text preview - Tab: graphics");
     /* The console host's close button can terminate a GUI process before its
      * message loop gets a recovery event. Use Tab to return,Escape to exit. */
-    (void)EnableMenuItem(GetSystemMenu(console->window,FALSE),SC_CLOSE,
-        MF_BYCOMMAND|MF_GRAYED);
+    if(EnableMenuItem(GetSystemMenu(console->window,FALSE),SC_CLOSE,
+        MF_BYCOMMAND|MF_GRAYED)==(UINT)-1) {
+        mysmb_win32_text_console_close(console);return 0;
+    }
     return 1;
 }
 void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console)

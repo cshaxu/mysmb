@@ -1407,3 +1407,79 @@ active for text-mode snapshot transaction/focus/audio host integration;
 T11-DOS-COLD-INPUT-P12 remains explicitly held for S6. Empty ROM scope/new0,
 historical1992/1992,local1991/1992nodes,4260/4261feasible controls and42/952facets
 unchanged;M2 remains incomplete. No remote.
+
+
+### S5 P2 text snapshot,focus,audio and canonical color acceptance
+
+The owned GUI-subsystem probe now optionally takes a dedicated ignored-build
+snapshot directory. It reaches a real running boundary,uses controlled focus
+services to exercise the production root's text-mode focus-loss pause,and
+injects P/O through the actual owned console input queue. Save/load use the
+production file transaction. Restored core/audio snapshot bytes and all4000
+text cells equal the pre-pause running boundary;load retains text mode and
+restores running rather than paused state. A further44100PCM samples compare
+against the pre-pause renderer with an identical empty-write continuation;
+this proves retained synthesis history,not arbitrary future gameplay audio.
+Switching back preserves the game/audio instance. Temporary slots are removed
+by the test. No desktop input or foreground activation is used.
+
+Windows previously inherited the user's console color table,despite the
+shared reducer targeting canonical text colors. Shared IO now exposes its
+existing sixteen-color RGB table through an additive query;reduction uses the
+same values and direct table access,without an added per-candidate function
+call. Windows installs that table and fails safely if reading/setting it fails.
+The real console probe checks all16color slots and the80x50cell attributes.
+The original close-menu suppression policy is retained and checked;failure
+to disable close now rejects console setup safely rather than ignoring it.
+The UI retains the working presenter;external detach still reaches fallback.
+This does not promise recovery from forcibly terminating the console process
+or the Windows session. No game,ASCII-template or snapshot format changes.
+
+Both widths rebuild all13focused targets and pass their regressions plus the
+real owned-console palette/snapshot/focus/PCM route. The final close guard is
+checked by a fresh host route and affected snapshot/purity tests per width.
+Shared color code passes strictC90. OriginalOpenNT16 compiles/links the shared
+change;known OLDNAMES.LIB warning remains. Three products are refreshed after
+review. Scope/expected/actual=[],zeroROMcredit;historical1992/1992,
+local1991/1992nodes,4260/4261feasible controls,42/952facets unchanged.
+Similar-issue sweep covers both presenter shortcut routes,focus pause/save
+eligibility,load presenter retention,renderer restoration and queue clearing,
+all palette/close-setup failure paths and the same shared reduction table.
+T11-DOS-COLD-INPUT-P12 remains unresolved and must transfer to S6 at S5 closure.
+Full world/integrated cross-host routes and486SX qualification are not proved
+by these host tests. No protected output is staged,no remote.
+
+
+### S5 P2 review,closure and S6 transfer
+
+Final size:four source/testfiles add143/remove10lines within the amended
+chain scope. Three products359435/436779/451915bytes pass the build/self-test
+checks described above;DOS build is recompiled after the final shared-table
+change. No gameplay or character-selection change. S5 closes its controlled
+Windows host contract:4000cells/attributes,canonical16color table,heldTab,
+normal/failure/detach round trips,focus-loss translated pause,actual console
+P/O transactions,exact restored text/core/audio bytes and44100sample history
+continuation. Actual desktop/RDP interaction is not simulated by the controlled
+foreground service;no claim of hardware486SX or exhaustive worlds is made.
+
+The coordinator accepts T11-DOS-COLD-INPUT-P12 in S6 under the owner's
+sequential-continuation mandate. This is a custody transfer,not a resolution.
+S6 owns bounded cold-start guest-input/progress reproduction and disposition,
+plus integrated text routes. Its completion must visibly reconcile that gap.
+Scope/expected/actual=[];historical/local counters unchanged,no ROM credit.
+
+## S6 admission
+
+Automatic next-S admission after reviewed S5 closure. Entry:the shared
+semantic scene and accepted DOS/Windows presenter hosts. Exit:bounded integrated
+route matrix across representative title/gameplay/objects/pause/death/terminal
+scenes,graphics/text/snapshot continuity,cross-width shared-cell equality,
+DOS16 memory/runtime evidence and three-product regression. Retain accepted
+S2/S3 source-decision/ownership proofs instead of inventing another ROM audit.
+Performance evidence describes measured runtime only;25MHz486SX/MS-DOS hardware
+qualification remains M4. Resolve or explicitly reconcile T11-DOS-COLD-INPUT-P12
+with its historical failed/successful receipts;do not erase it with seeded
+successes. Estimate4-8test/toolfiles,200-400lines plus focused repairs if a
+concrete gap appears. No gameplay fork or bitmap sampling;empty ROM scope.
+Unique ignored build outputs,60second runtime/no-progress and20MB raw budgets
+per route;cleanup owner S6. Report exact pending clauses and product bindings.
