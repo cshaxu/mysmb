@@ -7900,13 +7900,13 @@
     {
       "id": "M3 T12",
       "evidence": [
-        "docs/proposals/M3-T12-authored-text-detail.md"
+        "docs/history/M3-T12-authored-text-detail.md"
       ],
       "subtasks": [
         {
           "id": "M3 T12 S1",
           "evidence": [
-            "docs/proposals/M3-T12-authored-text-detail.md"
+            "docs/history/M3-T12-authored-text-detail.md"
           ],
           "recordKinds": [
             "authored-glyph-contract"
@@ -7919,7 +7919,7 @@
         {
           "id": "M3 T12 S2",
           "evidence": [
-            "docs/proposals/M3-T12-authored-text-detail.md"
+            "docs/history/M3-T12-authored-text-detail.md"
           ],
           "recordKinds": [
             "authored-half-block-contours"
@@ -7932,7 +7932,7 @@
         {
           "id": "M3 T12 S3",
           "evidence": [
-            "docs/proposals/M3-T12-authored-text-detail.md"
+            "docs/history/M3-T12-authored-text-detail.md"
           ],
           "recordKinds": [
             "integrated-glyph-word-host-acceptance"
@@ -7940,10 +7940,10 @@
           "canReceive": false,
           "admissionRole": "implementation",
           "receipt": "Owner-authorized automatic continuation after reviewed S2;empty ROM scope.",
-          "state": "active"
+          "state": "closed"
         }
       ],
-      "state": "active"
+      "state": "closed"
     }
   ],
   "futurePackages": [
@@ -808790,7 +808790,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/M3-T12-authored-text-detail.md",
+      "evidence": "docs/history/M3-T12-authored-text-detail.md",
       "state": "closed"
     },
     {
@@ -810795,7 +810795,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/M3-T12-authored-text-detail.md",
+      "evidence": "docs/history/M3-T12-authored-text-detail.md",
       "state": "closed"
     },
     {
@@ -812800,8 +812800,8 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/M3-T12-authored-text-detail.md",
-      "state": "active"
+      "evidence": "docs/history/M3-T12-authored-text-detail.md",
+      "state": "closed"
     }
   ]
 }

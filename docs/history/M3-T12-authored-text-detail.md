@@ -154,3 +154,41 @@ accepted caption/continuity/host routes;do not manufacture another ROM audit.
 Final closure requires the device test,the current three products and no open
 T12 presentation finding. Desktop/RDP font shape and real486speed remain
 physical qualification limits,not inferred from buffer readback.
+
+## S3 P1 and T12 integrated closure
+
+The neutral DOS probe now links the same compiled authored-template and glyph
+objects as the actual product,without gameplay core or owner ROM. Actual VGA
+readback verifies all16score/flag word forms with both facing descriptors and
+blue/white backgrounds:64cases including contrast fallback. It also verifies
+16extended slots/attributes and existing font/mode/cursor/IRQ/timer/input/exit
+lifetime. Original compiler/linker and six-second owned DOSBox device route
+pass. Test-tool changes2files,+21/-4lines. Product sources are unchanged from
+S2;all three local artifact sizes/hashes match the accepted S2 bindings. No
+extra product rebuild is necessary for this test-only P.
+
+| Acceptance clause | Retained and final evidence |
+| --- | --- |
+| Authored borders/glyphs | S1 selected16ID mapping,byte-domain/reflection and Windows Unicode readback;DOS16slot check. |
+| Finer silhouettes | S2 332pose/orientation,half-block color/background and source clipping/priority checks. |
+| Information overlays | S2 16384word cases,5120actual flag writer/restores,all floatey and jump-coin200 producers;S3 actual DOS64word joins. |
+| Static interfaces | S2 retains409composed/restored cases/4566font tokens and147natural lives frames;unknown tokens fail. |
+| Original palette animation | S2 12original queue/commit phases,no presenter clock or palette mutation. |
+| State/graphics/snapshot continuity | S2 1000steps with original core/frame/pixels equal;999cross-width text frames and240future restore ticks equal. |
+| Hosts and products | S2 both13test suites,owned Unicode/snapshot/focus/audio and actual product self-tests;unseeded DOS dynamic Tab/P/O/Escape. S3 VGA word/device join and unchanged product binding. |
+
+Source-owner sweep leaves no open T12 finding. The original indexed compositor,
+game state/control,ROM tables and platform game-logic boundaries are unchanged.
+All authored shapes remain isolated in shared presentation;platforms only
+submit glyph/color cells. Source policy,ledger and documentation gates pass.
+No ROM,protected trace/image/generated data or executable is staged. T12 and
+S3 close;move this retained proposal to history and leave only deferred M2
+certification in the To-Do queue. No successor is automatically admitted from
+that deferred queue because this owner-approved presentation sequence is done.
+
+This acceptance is bounded by the named word/interface producers,fixtures and
+host routes. It does not claim every possible game input,physical desktop/RDP
+font appearance,live memory peak or real486SX performance. M2 certification
+and M4 qualification remain their separate queued/roadmap obligations. Node
+scope/expected/actual remain empty,new0;historical1992/1992,local1991/1992nodes,
+4260/4261feasible controls(raw4342,infeasible81) unchanged.

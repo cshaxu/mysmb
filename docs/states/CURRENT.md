@@ -1,25 +1,11 @@
 # Project Status
 
-## M3 T12 S3 Packet
+**Idle.**
 
-| Field | Required record |
-| --- | --- |
-| Identifier Mode | Continuation M3 T12 S3 P1. |
-| Admission And Approval | Owner: approve and begin authored glyph refinement. |
-| Objective | DOS compiled authored-word/device join and integrated T12 acceptance. |
-| Non-goals | No ROM logic,original pixel path,grid or caption-content changes. |
-| Reference Baseline | T11 S7 closed;historical1992/1992,local1991/1992nodes,4260/4261feasible controls. |
-| Candidate Proposal | [T12 proposal](../proposals/M3-T12-authored-text-detail.md). |
-| Files And ABI Surface | DOS neutral device test and its build helper;product ABI/source unchanged. |
-| Applicable Rules | Execution,Architecture,Coding,Documentation and source policy from Task Reading Set. |
-| Verification | Focused text/caption/continuity tests,both widths,Unicode readback,C90,purity,original DOS build and DOSBox. |
-| Expected Markers | Empty scope/expectedMatches/actualMatches,new0;maximum1992. |
-| Asset Needs | Existing owner-local ROM only for local build/continuity;ignored bounded build outputs,no imports or tracked protected material. |
-| Reporting Requirements | Scope/estimated and actual change size,tests,three local products and unchanged node/control totals. |
-| Stop Conditions | State/pixel divergence,ABI/grid change or unsupported glyph host mapping. |
-| Exit Criteria | Selected glyphs,borders,caption preservation and host checks pass;reviewed P commit. |
-| Original Owner Request | Approve authored refinement;all information sprites remain text and original palette colors animate. |
-| Similar-Issue Sweep | Range checks,mirror rules,narrow output,caption punctuation,build lists;see proposal. |
+M3 T12 is closed:authored borders/half-block contours,dynamic readable scores
+and original committed-color animation. All enumerated static text checks
+remain. See [T12 history](../history/M3-T12-authored-text-detail.md).
+The [queue](QUEUE.md) retains deferred M2 certification;no successor admitted.
 
 ## Current Technical Baseline
 
@@ -32,10 +18,10 @@
   6/136 groups and42/952 facets closed,130 groups/910 facets pending.
   Material993 partial,not a denominator;two findings/all13 coverage slots open.
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
-- M3 T9/T10/T11 are closed. Remaining M2 verification stays at the
+- M3 T9/T10/T11/T12 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
 - Current local DOS16/Win32/x64 products remain360987/439336/454504bytes.
-  T11 S7 refreshes all three products after shared caption contrast repair.
+  T12 S2 refreshes all three products after authored text/detail repairs.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
   pass;seeded presenter equality is explicitly separate. Real486SX speed,
@@ -68,8 +54,15 @@ no extended repertoire or finer grid delivered by S7.
 
 M3 T12 S1 P1 closes shared glyph/border delivery;13tests per width,16glyph
 Unicode/device checks,caption/continuity/DOS routes pass. Three local products
-refreshed;ROM credit0. S2 is admitted under automatic continuation.
+refreshed;ROM credit0. S2 subsequently closed.
 
 M3 T12 S2 P1 closes contours,score contrast/anchor and committed-color repairs.
 16384word cases,5120actual flag cases,12palette phases and both13test suites
-pass;three products refreshed. Empty ROM scope,new0. S3 is admitted.
+pass;three products refreshed. Empty ROM scope,new0. S3 subsequently closed.
+
+M3 T12 S3 P1/T closure:actual DOS authored-template/VGA join verifies64word
+cases and16extended slots;test tools2files,+21/-4lines. T12 closes its glyph,
+contour,dynamic information and palette-animation clauses using retained S1/S2
+receipts and current three product bindings. No unresolved T12 finding,new0;
+M2 certification/physical host appearance/486qualification are not inferred.
+See [T12 history](../history/M3-T12-authored-text-detail.md).
