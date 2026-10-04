@@ -2,7 +2,7 @@
 
 **Idle.**
 
-M3 T10 quick snapshot is closed;no next T admitted. [Acceptance matrix](../history/M3-T10-shared-io-quick-snapshot.md#t10-acceptance-matrix).
+M3 T11 S1 is closed under its amended standalone-template scope. T11 remains open;S2 is next,with production observation and visibility/restore proof still pending. [S1 closure](../proposals/colored-ascii-text-frame-gameplay.md#s1-closure).
 
 ## Current Technical Baseline
 
@@ -17,13 +17,11 @@ M3 T10 quick snapshot is closed;no next T admitted. [Acceptance matrix](../histo
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - Remaining verification is the last [queue](QUEUE.md) candidate:
   [remaining certification](../proposals/m2/remaining-current-certification.md).
-  M3 T9/T10 closed;text-frame/switching is queue head before queued verification.
+  M3 T9/T10 closed;M3 T11 text-frame/switching is active before queued verification.
 - Existing P144 three products/original DOS16 compile-link receipts retained;
   P153 makes no game-code change and does not refresh products.
 
 ## Compact closure status
-
-M3 T9 S4 P1:DOS PIT/clock pacing and explicit audio capability;16 source/test/build files,+161/-20,13tests eachwidth,65536 cycle positions,OpenNT16 build/scoped graphic probe,3localEXEs,no node credit/no remote.
 
 M3 T9 S5 P1:actual headless DOSBox title/Start/24seconds gameplay/run/jump/left/release/Esc passed;4test/tool files,+281/-0,no product source edit;13focused+1friction test eachwidth,three builds/products retained,no ROM credit/no remote.
 
@@ -38,3 +36,5 @@ M3 T10 S3 P1:Win32 P/O and game/audio state binding;7focused tests eachwidth,con
 M3 T10 S4 P1:DOS P/O/path/restore binding;10focused tests eachwidth,originalDOS16 link/actual41secondDOSBox save-move-load/Esc route,3products. Audio renderer unavailable;zeroROMcredit/no remote.
 
 M3 T10 S5 P1/T closure:16tests eachwidth,240frames/176400samples uninterrupted restore,2cross-width direct16223040byte comparisons and actualDOSBox title-seed/pause/save/load/Esc. Three products retained/fresh DOS link;host floating/audio-absent/DOS rename limits explicit;zeroROMcredit/no remote.
+
+M3 T11 S1 P1:isolated authored element templates260newsource/test lines,11build lines;four focused tests eachwidth,C90 and originalOpenNT16 ABI/product builds;three localEXEs byte-identical. No runtime text/Tab yet;zeroROMcredit,no remote.

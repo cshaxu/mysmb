@@ -105,6 +105,11 @@ try {
     $ioBridge = Join-Path $SourceRoot 'app/game_io.c'
     & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Foapp_game_io.obj /I $IncludeDirectory /I $runtimeIncludeDirectory $ioBridge
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+    # Isolated text foundation: check the real far-pointer ABI without linking
+    # a dormant presentation path into the current graphical product.
+    $textElements = Join-Path $SourceRoot 'game/presentation/text/elements.c'
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fotext_elements.obj /I $IncludeDirectory $textElements
+    if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     $objects = @()
     foreach ($relativeSource in $sources) {
         $source = Join-Path $SourceRoot $relativeSource

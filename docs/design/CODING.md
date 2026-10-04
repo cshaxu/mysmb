@@ -30,6 +30,14 @@ is the far pointer required to address pixels with the DOS16 compiler.
 Existing game and platform representations remain until their admitted
 adapter migrations; the boundary test checks their numeric compatibility.
 
+`game/presentation/text/elements` is an isolated, optional element-template
+compositor. It consumes explicit immutable presentation descriptors and emits
+the neutral IO text frame; it has no RAM/OAM/resource or host dependency.
+S1 supplies authored pilot artwork and focused fixtures only. The graphical
+products do not link it yet. Later source observers and visible-frame latching
+must be admitted separately before this is a gameplay text path. The dormant
+`platform/text` pixel sampler is not used by this module.
+
 `io/control` owns application-request lifecycle independently of the game.
 The third input byte carries requests;the two controller bytes keep their
 original meaning. Roots consume the shared exit latch before advancing a tick;
