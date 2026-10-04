@@ -1516,3 +1516,42 @@ Empty ROM scope/new0;historical1992/1992,local1991/1992nodes,
 4260/4261feasible controls and42/952facets unchanged. S6/T11 remain open for
 additional integrated route coverage,memory/runtime evidence and the named
 cold-input reconciliation. No remote.
+
+
+### S6 P2 historical identity and DOS memory boundaries
+
+The exact historical P12 DOS binary hash6AB92AB5337FCBAE3D87BE3751F20035648D761DD015DF3F173006F38ED5259B
+is rerun from cold start in both normal/dynamic cores. Both independent input
+contracts pass:picture progresses,Tab enters text,a valid running-cache save
+is created and Escape returns to DOS. Paused-frame equality still fails and
+is retained separately. This reproduces neither the historical unchanged-title
+failure nor its cause. No claimed repair,scope reset or source promotion follows
+from these successful retries;T11-DOS-COLD-INPUT-P12 remains a named historical
+uncertainty pending explicit final disposition.
+
+A neutral MZ/link-map verifier checks declared file/header bounds,every segment
+length and physical extent,DGROUP/stack bounds,and reports product identity.
+The current product has192segments,max64000bytes,DGROUP49184bytes including
+2048byte stack,16352byte group headroom,and383952minimum loaded bytes before
+dynamic heap. The earlier S4 product independently passes the same map contract.
+This does not measure live heap demand,stack high-water or486SX performance.
+The15400byte far text pack remains outside DGROUP under the existing DOS root
+allocation. Memory conclusions retain these limits rather than calling a
+successful link a hardware qualification.
+
+Seven neutral synthetic cases test valid384byte DGROUP/128byte stack and reject
+bad MZ length,oversized header,segment overflow,DGROUP overflow,missing group
+and inconsistent bounds. Python TemporaryDirectory's restrictive Windows ACL
+blocked the first synthetic fixture before execution. The test now creates a
+unique inherited-permission directory below build and checks its resolved
+containment before cleanup;all seven cases pass. Only the failed empty owned
+fixture's ACL was reset for deletion. No product/runtime logic changes.
+
+Similar-issue sweep covers MZ last-page arithmetic,header sizing,all192segment
+extents,group/stack accounting,synthetic rejection paths,temp permissions and
+historical/current product binding. Raw historical screenshots/saves are
+removed after neutral receipts. Existing products retained,no refresh required.
+Empty ROM scope/new0;historical1992/1992,local1991/1992nodes,
+4260/4261feasible controls and42/952facets unchanged. S6 remains active for
+representative route coverage/runtime limits and explicit final gap disposition.
+No remote or protected staging.
