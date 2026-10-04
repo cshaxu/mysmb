@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P136 entrance bubble boundary checkpoint;S17 remains active,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P137 initializer handoffs checkpoint;S17 remains active,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
@@ -168,7 +168,6 @@
 
 
 
-S17 P129:12 indexed writers/12 participants reclassified by original intrinsic counter/row guards. Streamalias inventory374:27 intrinsic exclusions,347 caller-domain conditions remain (previous15/359). Current-source andretained originalroute joins,12 negative rawindex witnesses,7focusedtests eachwidthpass. No freshROM replay ornode/control credit;123sourceidentities/P123products unchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
 S17 P130:65536 actualfireball parents/95 observedlabels/679PC,all17 candidatewritePCvisited,bothwidths0scopedRAM/APU/orderdiff. Bus confirms08 writes onlyB689constant0/1,reads0/1,noE9/EA/739write in testedcontracts. Sixteen aliasconditions discharged;374inventory now28intrinsic/15parentjoins/331pending. D725 posthit/score andfivebubble entranceconditions explicit. Eightfocusedtests eachwidthpass;123sourceidentities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
@@ -183,3 +182,5 @@ S17 P134:correctedP130nonexistentimmediate-score dependency. Full237instruction 
 S17 P135:10cannon-exclusive storeconditions joined;374streamalias rows explicitlypartitioned59intrinsic/50parent-qualified/265pending. Original1357instruction closure:soleB9C3publisher2..0/noindirectwriter,47potential008aliases excludeactualprimary0..2/combined1..3. Fresh65536originalparents0scopedRAM/APU/orderdiff bothwidths,bus08/stream checks/all10storePCobserved. Eightfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
 S17 P136:17408 controlled initialization/secondary-setup/NMI/entrance chains,53 observedlabels/410PC,bothwidths0scopedRAM/APU/orderdiff. Normalwater SetupBubbleX0 occurs768times;rawwater-plus-vineX5 occurs768times andsourceB724 aliasesE9. Bufferreset handoff joined;legalvine/area transition andfullframe-prefix clauses remainpending,fivebubblewriters notpromoted. Sevenfocusedtests eachwidthpass,123identities/P123productsunchanged. Streamalias374 remains59intrinsic/50parent-qualified/265pending. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
+S17 P137:75initializer-primaryX writeconditions joined;374streamalias inventory now59intrinsic/125parent-qualified/190pending. 705instruction initializerclosure/93potential008aliases;Xprimary0..5 orbounded4/2 scratch/search then008restore,no008publisher/indirectwriter. Fresh5280originalparents0scopedRAM/APU/orderdiff bothwidths,all75joinedwritePCobserved. Tenother-parent sharedsites andfivealternate-callerduplicateY clauses retained. Elevenfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.

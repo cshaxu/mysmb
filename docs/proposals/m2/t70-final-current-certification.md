@@ -10006,3 +10006,103 @@ Mode204 usesall34 immutablearea-table pairs,all256 prior0300byte values,override
 ActualSetupBubble entriesareX0(768normalwater calls)andX5(768rawwater-plus-vine calls),eachofB717/B71D/B724/B728/B748 executes1536times. Setup_Vine returns5 andSetupBubble doesnotchangeX. B724Bubble_Y_Positionbase00E4plus5 is00E9:theoriginalROM itselfcanoverwriteitsenemy-streampointerunderthisrawcombination,andcurrentCmatchesit. No legal-gamebug or correctiveclampisjustifiedfromthisnegativeinput. Nonwaterbranches skipSetupBubble. Sourcewater-loopX2..0 is aseparatecallercontract. Fivebubblewriteconditions staycaller-pending untillegalJoypadOverride/AreaType transitions andthefullinterveningframeprefix arejoined;theknownclearconstructorremovesanunboundedstale-bufferassumptiononlyinthisexplicitcontrolledchain.
 
 FullnonphysicalRAM/APU/orderedwritecomparison0diff eachwidth;existingdeclaredphysicalABIexclusion01F0-01FF retained,observedminimumSPF9. Thisdoesnotcertifytheexcludedbytes orPPUpixels. Original17408roots arefinitefixturecoverage,410PC/53labels actuallyobserved;unobservedsourcebranchcoverage isnotinferred. Rawbatches4096<18MiB deleted;120seconds perprocess. Sevenactualtests eachwidth:game-entry-dispatch,area-initialize-smoke,player-modes-chain,bubble-core-chain,bubble-oam-smoke,oper-mode-dispatch-smoke,platform-purity. 123currentnormalizedsourceidentities andthreeP123producthashesunchanged,no gamecodeedit,EXErefreshorDOSruntimeclaim. Streamaliascounts remain374=59intrinsic+50parent-qualified+265pending;thiscounterdoesnotenumerateallremainingmaterialwork.
+
+## S17 P137 admission - complete initializer slot handoff chain
+
+ExistingS17 initializer-index gap;116 participants:AddFBit,AlignP,BB_SLoop,BulletBillCheepCheep,CasPBB,CheckpointEnemyID,ChkEmySpd,ChkLak,ChkLakDif,ChkNoEn,ChkPSpeed,ChkRBit,ChkSpinyO,ChkW2,ChpChpEx,CommonPlatCode,CommonSmallLift,CreateL,CreateSpiny,D2XPos1,D2XPos2,DifLoop,DoBulletBills,DuplicateEnemyObj,EndFrenzy,EndOfEnemyInitCode,EraseEnemyObject,ExEPar,ExF17,ExFl,ExLSHand,ExMoveLak,ExitFWk,FSLoop,FinCCSt,FinishFlame,FireBulletBill,FlmEx,GSeed,Get17ID,GetCent,GetESpd,GetRBit,InitBalPlatform,InitBloober,InitBowser,InitBowserFlame,InitBulletBill,InitCheepCheep,InitDropPlatform,InitEnemyFrenzy,InitEnemyObject,InitEnemyRoutines,InitFireworks,InitFlyingCheepCheep,InitGoomba,InitHammerBro,InitHoriPlatform,InitHorizFlySwimEnemy,InitJumpGPTroopa,InitLakitu,InitLongFirebar,InitNormalEnemy,InitPiranhaPlant,InitPodoboo,InitRedKoopa,InitRedPTroopa,InitRetainerObj,InitShortFirebar,InitVStf,InitVertPlatform,KillLakitu,LakituAndSpinyHandler,LakituChk,LargeLiftBBox,LargeLiftDown,LargeLiftUp,MaxCC,NextFSlot,NextVO,NoFrenzyCode,NoInitCode,PlatLiftDown,PlatLiftUp,PlayerEnemyDiff,PlayerLakituDiff,PosPlatform,PutAtRightExtent,PutBehind,PwrUpJmp,RSeed,RetEOfs,SPBBox,SPixelLak,Set17ID,SetBBox,SetBBox2,SetBPA,SetESpd,SetFlameTimer,SetFrT,SetLMovD,SetMF,SetSpSpd,SetYO,SetupLakitu,Setup_Vine,SmallBBox,SpawnFromMouth,SpinyRte,StarFChk,StrType,SubDifAdj,TallBBox,TallBBox2,UsePosv. ActualInitEnemyObjectC226 through55declaredinitializervectors and6frenzyvectors;705instructions,93potential008aliases,nootherdirect/indirect008writer. Join90pendingstreamaliaswriteconditions bysourceXprimary0..5,searchX4..0,restoredObjectOffset andduplicateY<=15+primary<=20;intrinsicDifLoopC412X2..0 cannotalias008at7. Original2640roots,all55IDs/all6primaryslots/eightpayload profiles,actualbus008/E9/EA/739 guard;retainedP116sentinel andcurrentlocalconsumerreceipts. Existingvalue/table/phase/complete-gamecontracts remainseparate;no fullenemy-loop/globalproof. FullnonphysicalRAM/APU/order bothwidths,focusedtests/gates,123sourceidentities/P123productsunchanged. Fresh0/max1992. ROM/ASMreadonly,ignoredraw<18MiB/128MiB/120s perprocess,cleanupcoordinator.
+
+P137 fixture amendment beforeclosure:initial2640roots0diff butonly73/90candidatewritePC observed. Add8payloadprofiles withactualLakitu/spinyconstructor,InitLakitu erase trigger,andBowser-mouthflame producer;5280roots total. Missing17PC are not credited fromtheinitialfinitepass.
+
+## S17 P137 checkpoint - initializer primary index handoffs
+
+S17 P137:75initializer-primaryX writeconditions joined;374streamalias inventory now59intrinsic/125parent-qualified/190pending. 705instruction initializerclosure/93potential008aliases;Xprimary0..5 orbounded4/2 scratch/search then008restore,no008publisher/indirectwriter. Fresh5280originalparents0scopedRAM/APU/orderdiff bothwidths,all75joinedwritePCobserved. Tenother-parent sharedsites andfivealternate-callerduplicateY clauses retained. Elevenfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
+Exact audit participants:AddFBit,AlignP,BB_SLoop,BulletBillCheepCheep,CasPBB,CheckpointEnemyID,ChkEmySpd,ChkLak,ChkLakDif,ChkNoEn,ChkPSpeed,ChkRBit,ChkSpinyO,ChkW2,ChpChpEx,CommonPlatCode,CommonSmallLift,CreateL,CreateSpiny,D2XPos1,D2XPos2,DifLoop,DoBulletBills,DuplicateEnemyObj,EndFrenzy,EndOfEnemyInitCode,EraseEnemyObject,ExEPar,ExF17,ExFl,ExLSHand,ExMoveLak,ExitFWk,FSLoop,FinCCSt,FinishFlame,FireBulletBill,FlmEx,GSeed,Get17ID,GetCent,GetESpd,GetRBit,InitBalPlatform,InitBloober,InitBowser,InitBowserFlame,InitBulletBill,InitCheepCheep,InitDropPlatform,InitEnemyFrenzy,InitEnemyObject,InitEnemyRoutines,InitFireworks,InitFlyingCheepCheep,InitGoomba,InitHammerBro,InitHoriPlatform,InitHorizFlySwimEnemy,InitJumpGPTroopa,InitLakitu,InitLongFirebar,InitNormalEnemy,InitPiranhaPlant,InitPodoboo,InitRedKoopa,InitRedPTroopa,InitRetainerObj,InitShortFirebar,InitVStf,InitVertPlatform,KillLakitu,LakituAndSpinyHandler,LakituChk,LargeLiftBBox,LargeLiftDown,LargeLiftUp,MaxCC,NextFSlot,NextVO,NoFrenzyCode,NoInitCode,PlatLiftDown,PlatLiftUp,PlayerEnemyDiff,PlayerLakituDiff,PosPlatform,PutAtRightExtent,PutBehind,PwrUpJmp,RSeed,RetEOfs,SPBBox,SPixelLak,Set17ID,SetBBox,SetBBox2,SetBPA,SetESpd,SetFlameTimer,SetFrT,SetLMovD,SetMF,SetSpSpd,SetYO,SetupLakitu,Setup_Vine,SmallBBox,SpawnFromMouth,SpinyRte,StarFChk,StrType,SubDifAdj,TallBBox,TallBBox2,UsePosv. All116 remainexistingS17participants,no graphcredit.
+
+ActualInitEnemyObjectC226 clearsEnemy_State+primary,thenCheckpointEnemyID/55declaredvectors/6frenzyvectors. Static705instruction closure hasnootherdirect008publisher,noindirectwriter orunknowncontrol. JumpEngine usesdeclaredimmutablevectors andfixedscratch04-07,preservesX. AllX changesinsideinitializerclosure areLDX4/searchDEX,LDX2/DifLoopDEX,andLDXObjectOffset atRetEOfs/DifLoop;otherpaths preserveprimaryX. Searches eitherrestore008 orbounded0..4 writes;DifLoop writesfixed01+X2..0,neverits008aliasat7. Of93potential008indexedwriters,other92needindices>20;actualXwriterdomains here<=5. Y table/pose/random/statevalues canberawandlarger,buttheseappearonlyinreads orwriteswhoseabsoluteaddresses cannotalias008. DuplicateY storesareseparatebelow. All75acceptedstream-pointer/cursor writes areX-indexed andtheirprimary0..5addresses excludeE9/EA/0739. No globalactor-counter orfullenemy-loop theorem isclaimed.
+
+Caller boundaries areexplicit:InitEnemyObject,CheckFrenzyBuffer andgroup/frenzyCheckpointEnemyID mayshareinitializerleaves. Thischeckpoint joinsprimaryXpreservation conditionalonmatchedsourceentryX/ObjectOffset0..5;allrawselector/producer/table/value/phase consistency remainsoutside thisindexreceipt. Setup_Vine alsohasblock/entrance callers,eachloadsX5;retainedP136 actualentranceVinepathandP128blockchain matchthatconstant. A sourceclosureofEnemiesAndLoopsCore withInitEnemyObject/CheckpointEnemyID cutpoints still reaches10sharedsites: c2f9,c2fb,c302,c361,c365,c99a,c99c,c99e,cf96,cf9d. They staypendinghere,includingPodoboo,SetBBox,InitVStf,EraseEnemyObject andLakitu movement.
+
+FiveY-indexedduplicate stores c583,c588,c58d,c594,c599 also staypending. RetainedP116 provesY<=15+primary<=20 underactualC226state-zero constructorindependentofothervalues,buttheCheckpointEnemyID entrycanalsocomefromfrenzy/group withoutthatreset;actualselectorproducers mustexcludeBowser/long-firebar onthatalternateentrybeforeallcallerproof. Thisseparateboundary preventsusingtheC226theoremforarbitraryCheckpointEnemyID roots. InitBowserC561 andDuplicateC592 X stores areprimary-indexedandareincludedinthe75join.
+
+Initial2640roots0diff observed73/90candidatewritePC;beforeclosure fixtureextendedto5280(all55IDs,all6primaryslots,16profiles)withpositiveLakitu/spiny,InitLakitu erase,andBowser-mouthflame paths. Now88/90writePC observed,all75acceptedwritesfresh. CF96/CF9D remainunobserved:PlayerLakituDiff iscalledbyCreateSpiny inthisinitializerchainwithID12,soitsLakituID11-onlymovementbranchbelongs toanotherparent. NeitherPC/itscontrols getcoveragebyinference. Original643/705closurePC and656totalPCactuallyobserved. Everybus008writeisrejected;008reads mustequalinputprimary,allE9/EA/0739writes rejected. FullnonphysicalRAM/APU/order0diff eachwidth;physical01F0-01FFABIexcluded,observedminimumSPF7. No per-pixel/globalproof. Raw4096batches<18MiB deleted,120s/process.
+
+Elevenactualtests eachwidth:enemy-init-vector,enemy-common-init,lakitu-spiny-chain,firebar-initialization-chain,flying-fish-initialization-chain,bowser-flame-initialization-chain,fireworks-initialization-chain,small-initializers-frenzy-chain,platform-initialization-chain,power-up-init-dispatch,platform-purity. Current123normalizedsourceidentities/P123threeproducthashesmatch;no productioncodechange orEXErefresh,noDOSruntimeclaim.
+
+| PC | Writer | Primary indices | Fresh writes |
+| --- | --- | --- | --- |
+| B920 | Setup_Vine | 0-5 | 96 |
+| B924 | Setup_Vine | 0-5 | 96 |
+| B929 | Setup_Vine | 0-5 | 96 |
+| B92E | Setup_Vine | 0-5 | 96 |
+| B933 | Setup_Vine | 0-5 | 96 |
+| C228 | InitEnemyObject | 0-5 | 5280 |
+| C277 | CheckpointEnemyID | 0-5 | 2100 |
+| C309 | InitRetainerObj | 0-5 | 96 |
+| C319 | SetESpd | 0-5 | 624 |
+| C323 | InitRedKoopa | 0-5 | 96 |
+| C32D | InitHammerBro | 0-5 | 96 |
+| C344 | InitBloober | 0-5 | 96 |
+| C358 | GetCent | 0-5 | 96 |
+| C36D | InitBulletBill | 0-5 | 168 |
+| C37D | InitCheepCheep | 0-5 | 204 |
+| C3F4 | CreateSpiny | 0-5 | 40 |
+| C3F9 | CreateSpiny | 0-5 | 40 |
+| C3FD | CreateSpiny | 0-5 | 40 |
+| C405 | CreateSpiny | 0-5 | 40 |
+| C439 | SetSpSpd | 0-5 | 40 |
+| C440 | SpinyRte | 0-5 | 40 |
+| C444 | SpinyRte | 0-5 | 40 |
+| C448 | SpinyRte | 0-5 | 40 |
+| C44C | SpinyRte | 0-5 | 40 |
+| C45E | InitShortFirebar | 0-5 | 480 |
+| C46F | InitShortFirebar | 0-5 | 480 |
+| C476 | InitShortFirebar | 0-5 | 480 |
+| C47D | InitShortFirebar | 0-5 | 480 |
+| C483 | InitShortFirebar | 0-5 | 480 |
+| C4D5 | MaxCC | 0-5 | 56 |
+| C500 | RSeed | 0-5 | 56 |
+| C504 | RSeed | 0-5 | 56 |
+| C518 | RSeed | 0-5 | 42 |
+| C51A | RSeed | 0-5 | 42 |
+| C527 | D2XPos1 | 0-5 | 42 |
+| C536 | D2XPos2 | 0-5 | 14 |
+| C53C | FinCCSt | 0-5 | 56 |
+| C540 | FinCCSt | 0-5 | 56 |
+| C542 | FinCCSt | 0-5 | 56 |
+| C546 | FinCCSt | 0-5 | 56 |
+| C561 | InitBowser | 0-5 | 96 |
+| C592 | FSLoop | 0-5 | 192 |
+| C5D8 | PutAtRightExtent | 0-5 | 132 |
+| C5E0 | PutAtRightExtent | 0-5 | 132 |
+| C5E7 | PutAtRightExtent | 0-5 | 132 |
+| C5F2 | SpawnFromMouth | 0-5 | 48 |
+| C5F7 | SpawnFromMouth | 0-5 | 48 |
+| C5FF | SpawnFromMouth | 0-5 | 48 |
+| C626 | FinishFlame | 0-5 | 180 |
+| C628 | FinishFlame | 0-5 | 180 |
+| C62E | FinishFlame | 0-5 | 180 |
+| C66F | StarFChk | 0-5 | 96 |
+| C675 | StarFChk | 0-5 | 96 |
+| C67A | StarFChk | 0-5 | 96 |
+| C67E | StarFChk | 0-5 | 96 |
+| C680 | StarFChk | 0-5 | 96 |
+| C683 | StarFChk | 0-5 | 96 |
+| C687 | StarFChk | 0-5 | 96 |
+| C6C3 | Set17ID | 0-5 | 84 |
+| C789 | InitPiranhaPlant | 0-5 | 96 |
+| C78C | InitPiranhaPlant | 0-5 | 96 |
+| C78E | InitPiranhaPlant | 0-5 | 96 |
+| C7CE | NextFSlot | 0-5 | 96 |
+| C7D3 | InitJumpGPTroopa | 0-5 | 96 |
+| C7D7 | InitJumpGPTroopa | 0-5 | 96 |
+| C7DF | InitBalPlatform | 0-5 | 96 |
+| C7E1 | InitBalPlatform | 0-5 | 96 |
+| C7F2 | AlignP | 0-5 | 96 |
+| C7FD | SetBPA | 0-5 | 96 |
+| C80D | InitHoriPlatform | 0-5 | 192 |
+| C826 | SetYO | 0-5 | 96 |
+| C852 | PlatLiftUp | 0-5 | 192 |
+| C85E | PlatLiftDown | 0-5 | 192 |
+| C877 | PosPlatform | 0-5 | 528 |
+| C87E | PosPlatform | 0-5 | 528 |
