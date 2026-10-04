@@ -76,7 +76,8 @@ add_library(mysmb_game_io STATIC src/app/game_io.c)
 target_include_directories(mysmb_game_io PUBLIC src)
 add_library(mysmb_io_color STATIC src/io/color.c src/io/scale.c src/io/pacing.c src/io/control.c)
 target_include_directories(mysmb_io_color PUBLIC src)
-add_library(mysmb_io_snapshot STATIC src/io/snapshot.c src/io/snapshot_store.c)
+add_library(mysmb_io_snapshot STATIC src/io/snapshot.c src/io/snapshot_store.c
+    src/io/snapshot_keys.c)
 target_include_directories(mysmb_io_snapshot PUBLIC src)
 if(NOT MSVC)
     target_link_libraries(mysmb_io_snapshot PUBLIC m)
@@ -92,6 +93,20 @@ target_link_libraries(mysmb_snapshot_storage_smoke PRIVATE mysmb_io_snapshot)
 file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/snapshot-storage-test")
 add_test(NAME mysmb.snapshot-storage-smoke COMMAND mysmb_snapshot_storage_smoke
     "${CMAKE_BINARY_DIR}/snapshot-storage-test")
+add_library(mysmb_game_snapshot STATIC src/app/game_snapshot.c)
+target_include_directories(mysmb_game_snapshot PUBLIC src)
+target_link_libraries(mysmb_game_snapshot PUBLIC mysmb_io_snapshot mysmb_game)
+add_executable(mysmb_game_snapshot_smoke test/game_snapshot_smoke.c)
+target_link_libraries(mysmb_game_snapshot_smoke PRIVATE mysmb_game_snapshot)
+add_test(NAME mysmb.game-snapshot-smoke COMMAND mysmb_game_snapshot_smoke)
+add_executable(mysmb_audio_snapshot_smoke test/audio_snapshot_smoke.c
+    src/platform/win32/audio_snapshot.c src/platform/win32/audio_snapshot_real.c
+    src/platform/win32/audio_renderer.c)
+target_link_libraries(mysmb_audio_snapshot_smoke PRIVATE mysmb_io_snapshot)
+add_test(NAME mysmb.audio-snapshot-smoke COMMAND mysmb_audio_snapshot_smoke)
+if(NOT MSVC)
+    target_compile_options(mysmb_game_snapshot PRIVATE -Wall -Wextra -Werror -pedantic)
+endif()
 add_executable(mysmb_io_pacing_smoke test/io_pacing_smoke.c)
 target_link_libraries(mysmb_io_pacing_smoke PRIVATE mysmb_io_color)
 add_test(NAME mysmb.io-pacing-smoke COMMAND mysmb_io_pacing_smoke)
@@ -996,6 +1011,20 @@ if(WIN32)
         src/platform/win32/audio_renderer.c
         src/platform/win32/focus_pause.c)
     target_link_libraries(mysmb_win32 PRIVATE mysmb_game mysmb_game_io mysmb_io_color user32 gdi32 winmm)
+    target_sources(mysmb_win32 PRIVATE src/platform/file/snapshot_files.c
+        src/platform/win32/snapshot_replace.c src/platform/win32/audio_snapshot.c
+        src/platform/win32/audio_snapshot_real.c)
+    target_link_libraries(mysmb_win32 PRIVATE mysmb_game_snapshot mysmb_io_snapshot)
+    add_executable(mysmb_win32_snapshot_binding_smoke
+        test/win32_snapshot_binding_smoke.c src/platform/win32/audio_output.c
+        src/platform/win32/audio_renderer.c src/platform/win32/focus_pause.c
+        src/platform/file/snapshot_files.c src/platform/win32/snapshot_replace.c
+        src/platform/win32/audio_snapshot.c src/platform/win32/audio_snapshot_real.c)
+    target_link_libraries(mysmb_win32_snapshot_binding_smoke PRIVATE
+        mysmb_game_snapshot mysmb_game_io mysmb_io_color user32 gdi32 winmm)
+    file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/snapshot-binding-test")
+    add_test(NAME mysmb.win32-snapshot-binding-smoke COMMAND mysmb_win32_snapshot_binding_smoke
+        "${CMAKE_BINARY_DIR}/snapshot-binding-test")
     add_executable(mysmb_win32_focus_pause_smoke
         test/win32_focus_pause_smoke.c
         src/platform/win32/focus_pause.c)
@@ -1327,6 +1356,11 @@ if(MYSMB_ROM_PATH)
             "${MYSMB_LOCAL_ROM_DIR}" "${MYSMB_LOCAL_TITLE_DIR}"
         )
         target_compile_definitions(mysmb_win32 PRIVATE MYSMB_LOCAL_TITLE=1)
+        target_sources(mysmb_win32_snapshot_binding_smoke PRIVATE
+            $<TARGET_OBJECTS:mysmb_local_rom_data> $<TARGET_OBJECTS:mysmb_local_title_data>)
+        target_include_directories(mysmb_win32_snapshot_binding_smoke PRIVATE
+            "${MYSMB_LOCAL_ROM_DIR}" "${MYSMB_LOCAL_TITLE_DIR}")
+        target_compile_definitions(mysmb_win32_snapshot_binding_smoke PRIVATE MYSMB_LOCAL_TITLE=1)
         add_test(NAME mysmb.win32-${MYSMB_WIN32_ARCH}-self-test
                  COMMAND $<TARGET_FILE:mysmb_win32> --self-test)
     endif()

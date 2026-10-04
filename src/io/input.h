@@ -23,6 +23,10 @@ struct mysmb_io_input {
     mysmb_io_u8 requests;
 };
 
-enum { MYSMB_IO_REQUEST_EXIT = 0x01 };
+enum {
+    MYSMB_IO_REQUEST_EXIT=0x01,
+    MYSMB_IO_REQUEST_SAVE=0x02,
+    MYSMB_IO_REQUEST_LOAD=0x04
+};
 
 #endif

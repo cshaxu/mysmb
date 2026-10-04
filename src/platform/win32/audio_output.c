@@ -72,3 +72,13 @@ void mysmb_win32_audio_close(struct mysmb_win32_audio_output *output)
     output->device = 0;
     output->prepared = 0U;
 }
+
+int mysmb_win32_audio_reset_queue(struct mysmb_win32_audio_output *output)
+{
+    unsigned int i;
+    if (output->device!=0 && waveOutReset(output->device)!=MMSYSERR_NOERROR)
+        return 0;
+    for (i=0U;i<MYSMB_WIN32_AUDIO_BUFFERS;++i) output->queued[i]=0U;
+    output->next=0U;
+    return 1;
+}

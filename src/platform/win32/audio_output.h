@@ -24,5 +24,7 @@ int mysmb_win32_audio_open(struct mysmb_win32_audio_output *output);
 void mysmb_win32_audio_submit(struct mysmb_win32_audio_output *output,
     const struct mysmb_io_audio_frame *frame);
 void mysmb_win32_audio_close(struct mysmb_win32_audio_output *output);
+/* Discard device buffers only;keep renderer state under its own owner. */
+int mysmb_win32_audio_reset_queue(struct mysmb_win32_audio_output *output);
 
 #endif

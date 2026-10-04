@@ -1,6 +1,12 @@
 #include <windows.h>
+#include <string.h>
 
 #include "app/game_io.h"
+#include "app/game_snapshot.h"
+#include "io/snapshot_store.h"
+#include "io/snapshot_keys.h"
+#include "platform/file/snapshot_files.h"
+#include "platform/win32/audio_snapshot.h"
 #include "io/color.h"
 #include "io/control.h"
 #include "game/area.h"
@@ -32,6 +38,14 @@ static struct mysmb_io_audio_frame g_audio_frame;
 static struct mysmb_win32_audio_output g_audio_output;
 static struct mysmb_win32_focus_pause g_focus_pause;
 static struct mysmb_io_control g_control;
+static struct mysmb_io_snapshot g_snapshot;
+static struct mysmb_io_snapshot_cache g_snapshot_cache;
+static struct mysmb_snapshot_store g_snapshot_store;
+static struct mysmb_file_storage g_snapshot_files;
+static struct mysmb_snapshot_keys g_snapshot_keys;
+static mysmb_io_u8 g_snapshot_fingerprint[16];
+static mysmb_io_u8 g_snapshot_ready;
+static mysmb_io_u8 g_snapshot_requests;
 static LARGE_INTEGER g_frequency;
 static LARGE_INTEGER g_last_tick;
 static mysmb_u8 g_game_started;
@@ -126,6 +140,71 @@ static void mysmb_win32_build_frame(void)
     mysmb_win32_draw_gameplay(&video);
 }
 
+static void mysmb_win32_snapshot_initialize(void)
+{
+    char directory[260];
+    char *separator;
+    DWORD count;
+    struct mysmb_snapshot_files files;
+    g_snapshot_ready=0U;g_snapshot_requests=0U;
+    mysmb_snapshot_keys_reset(&g_snapshot_keys);
+    mysmb_snapshot_cache_initialize(&g_snapshot_cache);
+    mysmb_game_snapshot_fingerprint(&g_game,g_snapshot_fingerprint);
+    count=GetModuleFileNameA(NULL,directory,sizeof(directory));
+    if (count==0U || count>=sizeof(directory)) return;
+    separator=strrchr(directory,'\\');
+    if (!separator) return;
+    separator[1]='\0';
+    if (mysmb_file_storage_initialize(&g_snapshot_files,directory,
+        mysmb_win32_snapshot_replace,&files) &&
+        mysmb_snapshot_store_initialize(&g_snapshot_store,&files)) g_snapshot_ready=1U;
+}
+static void mysmb_win32_snapshot_capture(void)
+{
+    if (!mysmb_game_snapshot_running(&g_game,&g_frame)) return;
+    if (mysmb_game_snapshot_capture(&g_game,&g_snapshot,g_snapshot_fingerprint) &&
+        mysmb_win32_audio_capture(&g_audio_output.renderer,
+            g_snapshot.payload+MYSMB_SNAPSHOT_CORE_BYTES))
+        mysmb_snapshot_cache_update(&g_snapshot_cache,&g_snapshot,1U);
+}
+static int mysmb_win32_snapshot_request(HWND window)
+{
+    const struct mysmb_io_snapshot *candidate;
+    struct mysmb_win32_audio_renderer audio;
+    mysmb_io_u8 requests;
+    requests=g_snapshot_requests;g_snapshot_requests=0U;
+    if (!g_snapshot_ready || requests==0U || GetForegroundWindow()!=window)
+        return 0;
+    if ((requests&MYSMB_IO_REQUEST_LOAD)!=0U) {
+        candidate=mysmb_snapshot_load(&g_snapshot_store,g_snapshot_fingerprint);
+        if (!candidate) return 0;
+        if (!mysmb_game_snapshot_valid(&g_game,candidate) ||
+            !mysmb_win32_audio_restore(&audio,
+                candidate->payload+MYSMB_SNAPSHOT_CORE_BYTES) ||
+            !mysmb_win32_audio_reset_queue(&g_audio_output)) {
+            g_snapshot_store.files.log(g_snapshot_store.files.context,
+                "mysmb.log",MYSMB_SNAPSHOT_LOAD_ERROR);
+            return 0;
+        }
+        (void)mysmb_game_snapshot_restore(&g_game,candidate);
+        g_audio_output.renderer=audio;
+        mysmb_snapshot_cache_update(&g_snapshot_cache,candidate,1U);
+        mysmb_snapshot_keys_reset(&g_snapshot_keys);
+        mysmb_win32_focus_pause_initialize(&g_focus_pause);
+        mysmb_win32_focus_pause_gained(&g_focus_pause);
+        mysmb_game_frame_initialize(&g_frame);
+        g_game_started=1U;
+        QueryPerformanceCounter(&g_last_tick);
+        mysmb_win32_build_frame();mysmb_win32_update_title(window);
+        InvalidateRect(window,NULL,FALSE);
+        return 1;
+    }
+    if ((requests&MYSMB_IO_REQUEST_SAVE)!=0U)
+        (void)mysmb_snapshot_save(&g_snapshot_store,
+            mysmb_snapshot_cache_current(&g_snapshot_cache));
+    return 0;
+}
+
 static void mysmb_win32_power_on(void)
 {
     mysmb_game_power_on(&g_game);
@@ -216,6 +295,7 @@ static void mysmb_win32_step(HWND window)
         decoded.requests=MYSMB_IO_REQUEST_EXIT;
     mysmb_io_control_input(&g_control,&decoded);
     if (g_control.exit_requested!=0U) return;
+    if (mysmb_win32_snapshot_request(window)) return;
     QueryPerformanceCounter(&now);
     elapsed = now.QuadPart - g_last_tick.QuadPart;
     frame_period = g_frequency.QuadPart / 60;
@@ -243,6 +323,7 @@ static void mysmb_win32_step(HWND window)
         mysmb_win32_focus_pause_after_tick(&g_focus_pause, &g_game);
         mysmb_game_io_audio(&g_game, &g_audio_frame);
         mysmb_win32_audio_submit(&g_audio_output, &g_audio_frame);
+        mysmb_win32_snapshot_capture();
         ++steps;
         elapsed = now.QuadPart - g_last_tick.QuadPart;
     } while (elapsed >= frame_period && steps < 4U);
@@ -258,16 +339,25 @@ static LRESULT CALLBACK mysmb_win32_window_proc(HWND window, UINT message,
                                                   WPARAM w_param, LPARAM l_param)
 {
     struct mysmb_io_input decoded;
-    (void)l_param;
     decoded.buttons=0U;decoded.buttons2=0U;
     decoded.requests=mysmb_win32_requests_from_message(message,w_param);
     if (decoded.requests!=0U) {
         mysmb_io_control_input(&g_control,&decoded);
         return 0;
     }
+    if ((message==WM_KEYDOWN || message==WM_KEYUP) &&
+        (w_param=='P' || w_param=='O')) {
+        if (message==WM_KEYDOWN && (l_param&0x40000000L)!=0) return 0;
+        decoded.requests=w_param=='P' ? MYSMB_IO_REQUEST_SAVE:MYSMB_IO_REQUEST_LOAD;
+        g_snapshot_requests|=mysmb_snapshot_keys_transition(&g_snapshot_keys,
+            decoded.requests,(mysmb_io_u8)(message==WM_KEYDOWN),
+            (mysmb_io_u8)(GetForegroundWindow()==window && g_focus_pause.focused));
+        return 0;
+    }
     if (message == WM_KILLFOCUS ||
         (message == WM_ACTIVATEAPP && w_param == 0U)) {
         mysmb_win32_focus_pause_lost(&g_focus_pause, g_game_started, &g_game);
+        mysmb_snapshot_keys_reset(&g_snapshot_keys);g_snapshot_requests=0U;
     }
     if (message == WM_SETFOCUS ||
         (message == WM_ACTIVATEAPP && w_param != 0U && GetFocus() == window)) {
@@ -321,6 +411,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     g_game_started = 0U;
     mysmb_win32_focus_pause_initialize(&g_focus_pause);
     mysmb_win32_power_on();
+    mysmb_win32_snapshot_initialize();
     window = CreateWindow(MYSMB_CLASS_NAME, "MySMB", WS_OVERLAPPEDWINDOW,
                           CW_USEDEFAULT, CW_USEDEFAULT,
                           MYSMB_SCREEN_WIDTH * MYSMB_SCALE + 16,

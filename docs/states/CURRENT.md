@@ -1,23 +1,23 @@
 # Project Status
 
-## M3 T10 S2 Packet
+## M3 T10 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M3 T10 S2 P1 complete;S3 next,T10 open. |
+| Identifier Mode | Continuation:M3 T10 S3 P1 complete;S4 next,T10 open. |
 | Admission And Approval | Owner approves queue-head task admission and execution;automatic subsequent S after reviewed closure. |
-| Objective | Shared save/load transaction,portable file services and silent best-effort error logging. |
-| Non-goals | No physical P/O binding,game semantic repair,ROM credit or emulator investigation. |
+| Objective | Win32 x86/x64 P/O binding,complete game/audio capture and restore at running-frame boundaries. |
+| Non-goals | No DOS physical binding,game semantic repair,ROM credit or emulator investigation. |
 | Reference Baseline | Historical1992/1992;local1991/1992 nodes,4260/4261 feasible controls;42/952facets,M2 incomplete. |
-| Candidate Proposal | [T10 quick snapshot](../proposals/shared-io-quick-snapshot.md#s2-admission). |
-| Files And ABI Surface | IO transaction and generic file adapter;Win32/DOS replacement services,tests/build registration. Estimate8-10files,350-550source/test lines. |
+| Candidate Proposal | [T10 quick snapshot](../proposals/shared-io-quick-snapshot.md#s3-admission). |
+| Files And ABI Surface | App state binding,Win32 audio export/import and queue reset,key edges/root/path integration,focused tests/build. Estimate10-14files,500-800lines. |
 | Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Documentation,source policy and admitted proposal. |
-| Verification | Fault-injected partial IO/flush/close/replace/log tests and actual temporary files,x86/x64 tests,originalDOS16 link,purity/governance and3products. |
+| Verification | Full mutable-state round trips,subsequent game frames and PCM equivalence,paused-cache/title-load/key-edge/focus checks,x86/x64 tests,originalDOS16 link,purity/governance and3products. |
 | Expected Markers | Exact scope[],expectedMatches[],new0;all retained ROM counts unchanged. |
 | Asset Needs | Existing owner-local ROM and OpenNT16 tools only for local product refresh;provenance retained from T9,distribution unreviewed/forbidden,outputs confined to ignored build/assets;neutral codec tests need no ROM. |
-| Reporting Requirements | Before/after scope,size,tests,three products and local commit;no push without remote;auto-admit S3 after S2 closure. |
-| Stop Conditions | Any width/schema/state omission or dependency violation blocks S1 closure until repaired. |
-| Exit Criteria | Shared staging never partially commits;all storage failures leave live state intact;best-effort log cannot recurse;Win32 old slot preserved on failed replace,DOS window explicit. |
+| Reporting Requirements | Before/after scope,size,tests,three products and local commit;no push without remote;auto-admit S4 after S3 closure. |
+| Stop Conditions | Any width/schema/state omission or dependency violation blocks current S closure until repaired. |
+| Exit Criteria | Win32 P/O restores saved game/audio state without Enter,repeat or controller injection;failures silent;pending output/input/timing reset and subsequent execution agrees. |
 | Original Owner Request | Admit new queue-head task and start;retain per-S briefs and build/test/commit reports. |
 | Similar-Issue Sweep | All mutable game/audio fields,state pointers,padding,paused-frame selection and failure-before-commit paths. |
 
@@ -40,12 +40,6 @@
 
 ## Compact closure status
 
-M2 T70 S17 P153:owner-directed administrative S/T closure;all unfinished
-verification transferred to an unnumbered candidate,not marked passed.
-P152 victory/terminal35labels/214sites/95controls and seven operational tests
-per width remain scoped receipts. [Archived T70](../history/m2/t70-final-current-certification.md)
-preserves all earlier P evidence and limitations. Full M2 remains incomplete.
-
 M3 T9 S1 P1:four neutral contracts and dependency/ABI test delivered;8 source/build files,+184/-1;6tests eachwidth,OpenNT16 compile/link and3localEXEs. No game logic/node credit;push unavailable,no remote.
 
 M3 T9 S2 P1:Win32 IO consumers and shared composition glue;14 source/test/build files,+253/-121,9tests eachwidth,1024ticks/752640PCM samples eachwidth zero old/current diff,OpenNT16 compile/link and3localEXEs. No game logic/node credit,push unavailable without remote.
@@ -61,3 +55,5 @@ M3 T9 S6 P1:shared Escape exit/short-press lifecycle and integrated closure;16so
 M3 T10 S1 P1:4782byte codec,integer canonical numeric validation,last-running cache;5focused tests eachwidth,originalDOS16 link and3localEXEs. ZeroROMcredit,no remote;P/O host binding pending.
 
 M3 T10 S2 P1:shared file transaction,stdio adapter andWin32/DOS replacement;4focused tests eachwidth,originalDOS16 link,3localproducts. P/O integration pending;zeroROMcredit,no remote.
+
+M3 T10 S3 P1:Win32 P/O and game/audio state binding;7focused tests eachwidth,controlled hidden-root pause/title-load and PCM continuation,originalDOS16 link/3products. ZeroROMcredit,no remote.

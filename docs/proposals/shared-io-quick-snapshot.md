@@ -255,3 +255,41 @@ close-before-replace,EOF/read errors and nonrecursive logging. Physical P/O,
 executable-directory discovery and gameplay integration remain S3/S4.
 No ROM credit;all prior node/control/facet counts retained. Local commit only,
 no remote. Owner authorization automatically admits S3 after this closure.
+
+## S3 admission
+
+S2 is closed. S3 binds every mutable game field through app composition while
+preserving resource pointers/lengths. Public completed-frame mode and shared
+pause status determine running-cache eligibility;no platform RAM inspection.
+Win32 audio adapter owns numerical export/import and validates a complete
+candidate before restoring its renderer. The root resets queued device audio,
+wall-clock debt,physical request edges and focus pause bookkeeping on success.
+P/O requests are once per key transition,focused only,independent of controller
+bits. Files live beside the EXE,not the working directory. Neutral state/PCM
+continuation tests plus current local title/game tests exercise the bound path.
+Scope/expected original labels remain empty;all retained counts unchanged.
+
+## S3 closure
+
+App composition explicitly marshals all mutable program fields;immutable
+resource addresses and lengths remain bound to the current executable.
+Win32 P/O is focused,edge-triggered and excluded from controller bits.
+Paused P uses the last running cache;title O restores immediately at a frame
+boundary,validating both owners before mutation. Device queue,clock debt and
+focus/request bookkeeping reset;consumed APU writes are not submitted again.
+
+Both widths pass7focused tests. Mutable-field census/re-encoding,different
+resource addresses,invalid candidate atomicity,240subsequent ROM-free state
+and pixel comparisons and64active audio continuation checkpoints with
+735samples each pass. The Win32 production-root harness uses controlled
+focus/key services and a private hidden window;it proves paused-file/title
+load/cache/typematic/queue-reset paths without claiming physical desktop
+input acceptance. Actual product hidden-window self-test also passes.
+Original DOS16 compiles/links and three local products are refreshed.
+
+Similar-issue sweep covers every game/audio field,pointer/padding exclusion,
+completed audio boundary,key repeat after restore,focus-loss pending requests
+and all validation-before-commit paths. DOS physical integration remains S4;
+integrated cross-host and additional failure routes remain S5. No game logic
+or original labels change. Historical1992/1992,local1991/1992 nodes and
+4260/4261feasible controls,42/952facets remain unchanged. No remote.
