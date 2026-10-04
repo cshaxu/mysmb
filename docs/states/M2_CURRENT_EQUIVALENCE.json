@@ -22883,7 +22883,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S4 original531 cases confirm256 pre-VRAM2001 phase differences per width;native final value matches but intermediate phase/post-consumer graph is absent.",
         "docs/proposals/m2/t70-final-current-certification.md S4 P1: original531 roots and byte-bound source audit restore pre-VRAM mirror&E7 and post-InitBuffer RAM0779 reload;four actual source calls/returns observed;38 pointer bytes,2 offsets and15 PRG bindings match. Explicit probe/ABI limits recorded.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:8labels/69instructions/20RAM joined5boundedclauses;mask/pointer/header/childorder/cachedmode-pause/flag-phase/savedcontrol lifetimes reviewed;perdot andwholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract:sixboundednaturalroutes fullnonphysicalRAM;physicalstackbusprovenance qualified,noallbranchclaim."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract:sixboundednaturalroutes fullnonphysicalRAM;physicalstackbusprovenance qualified,noallbranchclaim.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement:continuous observed death/reload frame handoffs,qualified physical stack;no unobserved path promotion."
       ],
       "operationalEvidence": [
         "M2 T52 S1 controlled owner-ROM capture at source $8175, immediately before OperModeExecutionTree, applied one NMI-entry mirror precondition ($0778=$10) and recorded $00=$02, rotated LFSR $a9/$40, and physical $2000=$10. Raw trace remains ignored below build.",
@@ -22891,7 +22892,8 @@
         "docs/history/M2-T69-cross-cohort-current-proof.md S15 P3 14592 original controlled roots per width zero RAM/APU/ordered-write differences,including12288 actual offscreen parent/child cases. Only original physical stack01F3-01FF excluded(minSP F2),CPU registers outside C ABI. Six600-frame source-reachable bootstrap/input routes zero scoped RAM/CIRAM/palette/OAM/audio/PPU differences and byte-identical x86/x64. Frame ABI compares0200-07FF except0778/0779,all output;zero-page/stack covered separately by controlled roots. Both full builds and248 CTests per width,purity,product self-tests and original OpenNT DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S4 P1:512 native phase/reload cases;248 CTests each;current full x86/x64 and original OpenNT DOS16 builds;3 refreshed EXEs;6x600 original/native frame regressions,purity pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled:531actualprefix+64naturalspritephase+8192actualNMIparents eachwidth0diff,all69PC/8branchpairs,5tests each;source/threeP104productsunchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract:3600frames eachwidth0nonphysicalRAM/outputABI diff,6focusedtests,currentsource/P123productidentities."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract:3600frames eachwidth0nonphysicalRAM/outputABI diff,6focusedtests,currentsource/P123productidentities.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement:5400frames eachwidth0state/outputABI difference,6focusedtests,current identities."
       ],
       "semanticContract": "Preserves the source NMI phase boundary: d7-clear control during pre-dispatch work and main-mode execution, then d7 re-enable only at the RTI tail.",
       "currentSourcePaths": [
@@ -171297,7 +171299,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P123 checkpoint - buffer1 producer operand semantics repaired",
         "docs/proposals/m2/t70-final-current-certification.md S17 P124 checkpoint - queued status palette and NMI handoff",
         "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
