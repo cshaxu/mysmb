@@ -9756,3 +9756,36 @@ Every root checks full RAM after head, after each updater/motion parent and afte
 Saved-field source sweep enumerates91 unique absolute/zero-page direct/indexed writer instructions whose raw byte-index domains may hit at least one of the six cells; nine indirect writers need pointer clauses. These are candidate instructions, not91 feasible producer-consumer edges. Head publications are intentional; title/reset/VRAM and other indexed caller phases outside the isolated chain keep explicit pending domain/lifetime requirements. This receipt closes the saved-field carrier clause within the declared head-to-replacement chain, not the global all-writer non-alias obligation or material denominator. The original updater reads row/low/metatile before emitting VRAM replacement; its own legal slot0/1 stores do not overlap saved fields.
 
 Seven block/head/motion/replacement/graphics/purity tests pass eachwidth; source identity and threeP123product hashes match. No game code edit, product rebuild or newDOSruntime claim. Raw command/state batches remain below128MiB and are deleted aftercomparison. CheckForEnemyGroup/control-01480,remaining global index/alias lifetimes,final pixels,other declared game routes andsnapshot remain pending.
+
+## S17 P129 admission - intrinsic stream-alias writer guards
+
+Existing stream pointer/cursor alias gap;12 audit participants:CreateL,EndFrenzy,GSltLp,HandleGroupEnemies,IntroPipe,KillELoop,KillEnemies,LakituAndSpinyHandler,LakituChk,QuestionBlockRow_High,QuestionBlockRow_Low,VPipeSectLoop. Review12 indexed writer sites whose actualfunctional entries seed fixed loops or preserve literal row03/07. Reuse retained current-source original routes P55/P61/P62/P104/P125 within their contracts;no fresh ROM run or inferred unexecuted edge coverage. Validate all123 sourceidentities,source control immediates,and byte-address exclusions for E9/EA/739. Existing1667 scope,fresh0/max1992. Product sources/P123products unchanged;focused x86/x64 operational checks. Owner localROM/ASM read-only,neutral manifests belowignored build;no newprotected captures. Other caller/pointer/lifetime obligations remainpending,not a globalcertificate.
+
+## S17 P129 checkpoint - intrinsic stream-alias exclusions
+
+S17 P129:12 indexed writers/12 participants reclassified by original intrinsic counter/row guards. Streamalias inventory374:27 intrinsic exclusions,347 caller-domain conditions remain (previous15/359). Current-source andretained originalroute joins,12 negative rawindex witnesses,7focusedtests eachwidthpass. No freshROM replay ornode/control credit;123sourceidentities/P123products unchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
+Source proof corrects an accounting overcondition,not a game behavior mismatch. P113 grouped these12 sites with caller-index obligations despite their accepted local source clauses already proving functional-entry counters. KillEnemies seeds4 anddecrements through0;IntroPipe seeds6 afterthepipechild returns;question rows preserve literal3/7 ontheoriginalstack;Lakitu recreation writesonlyafterdescending4..0 emptysearch,negativeXFF skipswrites;EndFrenzy independently scansY5..0. Group allocation resetsXFF on every member,INX/CPX5/BCS excludes5 beforeall sixallocationstores,andthereisno child betweencheckandstores. The followinginitializer cannot change thealreadyused storeindex;next member reseedsXFF. Current C usescorrespondinglocalboundedcounters andfixedrowexpressions. These bounds do notrequire incomingObjectOffset0..5 or a globalRAM08 lifetime assumption.
+
+Exact participants: CreateL,EndFrenzy,GSltLp,HandleGroupEnemies,IntroPipe,KillELoop,KillEnemies,LakituAndSpinyHandler,LakituChk,QuestionBlockRow_High,QuestionBlockRow_Low,VPipeSectLoop. No new per-node orcontrol-edgeclassification;these are12 instruction-site exclusions fromtheexisting374-site alias candidate inventory. They apply totheactualfunctional entry,not arbitrary jumping intoaninternal writePC.
+
+| PC | Writer | Intrinsic index set | Effective addresses | Raw excluded-index witness |
+| --- | --- | --- | --- | --- |
+| 9722 | KillELoop | 00,01,02,03,04 | 000F,0010,0011,0012,0013 | DA |
+| 9892 | VPipeSectLoop | 00,01,02,03,04,05,06 | 06A1,06A2,06A3,06A4,06A5,06A6,06A7 | 98 |
+| 9975 | QuestionBlockRow_Low | 03,07 | 06A4,06A8 | 98 |
+| C3D5 | CreateL | 00,01,02,03,04 | 001E,001F,0020,0021,0022 | CB |
+| C3D9 | CreateL | 00,01,02,03,04 | 0016,0017,0018,0019,001A | D3 |
+| C75D | GSltLp | 00,01,02,03,04 | 0016,0017,0018,0019,001A | D3 |
+| C761 | GSltLp | 00,01,02,03,04 | 006E,006F,0070,0071,0072 | 7B |
+| C765 | GSltLp | 00,01,02,03,04 | 0087,0088,0089,008A,008B | 62 |
+| C774 | GSltLp | 00,01,02,03,04 | 00CF,00D0,00D1,00D2,00D3 | 1A |
+| C778 | GSltLp | 00,01,02,03,04 | 00B6,00B7,00B8,00B9,00BA | 33 |
+| C77A | GSltLp | 00,01,02,03,04 | 000F,0010,0011,0012,0013 | DA |
+| C7C3 | LakituChk | 00,01,02,03,04,05 | 001E,001F,0020,0021,0022,0023 | CB |
+
+Each bound is checked against the source seed,loop exit andno-interposed-child/constant-stack contract;byte zero-page or16-bit absolute addressing with2KiB mirror is explicit. All computed destinations excludeE9,EA and0739. Widening eachdomain toall256bytes yieldsatleastone targetalias,so the source guard is essential. No inferred global<=24 theorem is used;other347conditions remain namedin thelocal writer join manifest. Eight direct writers,nineindirectwriters andphase/overwrite joins remainseparate obligations.
+
+Retained original execution evidence is P104 mode405 forKillEnemies/question rows,P125 mode201 forIntroPipe,P62 mode186 forLakiturecreation,P55 mode167 foractual groupinitializer andP61 mode183 forEndFrenzy. Each receipt recordszero differences onbothwidths andactualvisits toits namedwrites. No freshoriginalrun isclaimed bythischeckpoint. Current scopedC bodies were reread againsttheoriginal controls;all123 currentnormalizedsource identities matchtheaccepted use index. P121/P123 edits liein graphics/attribute/bufferoperands,notthesefixedcounterbodies;parent/resource/callercontractlimits are retained. This reuses accepted evidence ratherthan restarting unrelated audits.
+
+Sevenactual pipe/row/group/Lakitu/frenzy/purity tests pass eachwidth. Product sourcesunchanged,threeP123hashesmatch,noEXErefresh ornewDOSruntimeclaim. Materialdenominator remainsunknown;CheckForEnemyGroup/control-01480 andthe remainingcaller/index/alias,lifetime,pixels,routeandsnapshot exits stayopen.

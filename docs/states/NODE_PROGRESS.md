@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P129 intrinsic alias guards](../proposals/m2/t70-final-current-certification.md#s17-p129-checkpoint---intrinsic-stream-alias-exclusions).
+S17 P129:12 indexed writers/12 participants reclassified by original intrinsic counter/row guards. Streamalias inventory374:27 intrinsic exclusions,347 caller-domain conditions remain (previous15/359). Current-source andretained originalroute joins,12 negative rawindex witnesses,7focusedtests eachwidthpass. No freshROM replay ornode/control credit;123sourceidentities/P123products unchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
 [P128 saved block lifetime](../proposals/m2/t70-final-current-certification.md#s17-p128-checkpoint---saved-block-publication-and-consumption).
 S17 P128:131 observed block/motion/commit labels,907 originalPC;1664 serial64-turn chains,214656 scopedfullRAM checkpoints eachwidth0diff. Saved03E4-03E9 stable;actualchainedbus rejects anyoverwrite. 91 indexed/direct and9 indirect globalalias candidates explicit,notnew feasibleedges. Sevenfocusedtests eachwidthpass;123 sourceidentities/P123products unchanged. Historical1992/1992,local1991/1992nodes,4260/4261 controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 

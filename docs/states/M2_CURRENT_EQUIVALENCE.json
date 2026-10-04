@@ -31280,12 +31280,14 @@
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
         "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:12 original intrinsic indexed-store guards excludeE9/EA/739;qualified functional-entry bounds,otheraliasconditionspending."
       ],
       "operationalEvidence": [
         "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:65536actual9508roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all70PC/6branchpairs,7tests each;24caseoldcode-red regression;originalDOS16link/Win32builds/threeproducts refreshed.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:retainedoriginalvisits/zeroRAMreceipts joinedcurrent source,7focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Scans regular enemy slots four down through zero and clears flags matching selected ID.",
       "currentSourcePaths": [
@@ -31303,12 +31305,14 @@
         "Td S9 B10g parser-dispatch static node-and-edge audit: SMB1 lines 3472-3627 and RunAObj selector table compared with area.c; controlled ROM/x86/x64 object-family routes remain required.",
         "M2 T56 S4 static audit: SMB1 lines 3591-3777 and shared src/game/area.c were compared in source order. Warp selector/scroll order, enemy scan, frenzy queue, style dispatch, ledge/pulley tables, castle column loop and star-flag gate match.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:12 original intrinsic indexed-store guards excludeE9/EA/739;qualified functional-entry bounds,otheraliasconditionspending."
       ],
       "operationalEvidence": [
         "M2 T56 S4 controlled owner-local original-ROM/current x86/x64 routes: 16 warmed special-object fixtures plus the castle-geometry route are byte-identical in scoped parser, staging, enemy and attribute state; x86 and x64 agree.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:65536actual9508roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all70PC/6branchpairs,7tests each;24caseoldcode-red regression;originalDOS16link/Win32builds/threeproducts refreshed.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:retainedoriginalvisits/zeroRAMreceipts joinedcurrent source,7focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Compares one enemy ID and delegates match/nonmatch to common descending tail.",
       "currentSourcePaths": [
@@ -31904,13 +31908,15 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:original98b5/98ba stores05=Y-2 and06=object length. Intro fixedY10 and exit decoded height now publish these exact RAM values before either shaft branch. Original predicates/render/clearing tails unchanged.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P39 corrective baseline and custody:raw entry/adjacent indexed reads/returned row require correction beyond retained bounded receipts.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:12 original intrinsic indexed-store guards excludeE9/EA/739;qualified functional-entry bounds,otheraliasconditionspending."
       ],
       "operationalEvidence": [
         "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:240 original9508 returning roots each width/eight original bounded stream records,all6 labels observed,480 baseline05/06 differences repaired to zero/all RAM excluding observed physical pushes.48 neutral scratch regressions,12 current checks each width,4288 current header/parser rechecks,six600-frame routes/3 builds pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:retainedoriginalvisits/zeroRAMreceipts joinedcurrent source,7focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Builds fixed side pipe and conditionally clears upper vertical-pipe staging. Includes original05/06 scratch outputs in declared intro/exit source-record and resident/new-object domains. P39 supersedes raw pipe guard/row-return/table-prefix limitations with source-faithful owner PRG indexed reads and actual returned X. Direct entry fixtures prove supplied ABI domains,not all caller reachability or global lifetime.",
       "currentSourcePaths": [
@@ -31932,14 +31938,16 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P39 corrective baseline and custody:raw entry/adjacent indexed reads/returned row require correction beyond retained bounded receipts.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:shared area.c unconditional paired water/side stores;shared Sideways owner returns original carry decision and consumes actual UnderPart returned row;castle/vertical/side adjacent indexed reads retain original owner PRG base. Full byte counters and wrapped staging alias writes preserve actual subsequent RAM reads. No invented row/height/counter clamp;no platform game logic.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:12 original intrinsic indexed-store guards excludeE9/EA/739;qualified functional-entry bounds,otheraliasconditionspending."
       ],
       "operationalEvidence": [
         "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P10 checkpoint - sideways pipe scratch repair:240 original9508 returning roots each width/eight original bounded stream records,all6 labels observed,480 baseline05/06 differences repaired to zero/all RAM excluding observed physical pushes.48 neutral scratch regressions,12 current checks each width,4288 current header/parser rechecks,six600-frame routes/3 builds pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P39 checkpoint - raw pipe and castle source fidelity repaired:3516 baseline parents eachwidth14727 RAM byte differences become0;63024 expanded actual original parents and9216 UnderPart return roots and95706 retained-domain current parents eachwidth0 RAM/declared ABI differences.10 focused checks each,six600-frame integrations zero scoped diff,all3 products refreshed. DOS original OpenNT compile/link only,runtime unqualified.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:4096 actual roots each width,2032RAM/24APU/ordered hardware writes0diff,minSP>=EF,all38PC/5branchpairs observed;actual81E2 X0-14 and81FC/8202/8208 X2/5/8 observed;8focused tests each pass;4 invalid-domain witnesses/accounting mutations accepted as negative checks.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:retainedoriginalvisits/zeroRAMreceipts joinedcurrent source,7focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Clears staged rows six through zero before intro-pipe cap placement. Includes original05/06 scratch outputs in declared intro/exit source-record and resident/new-object domains. P39 supersedes raw pipe guard/row-return/table-prefix limitations with source-faithful owner PRG indexed reads and actual returned X. Direct entry fixtures prove supplied ABI domains,not all caller reachability or global lifetime.",
       "currentSourcePaths": [
@@ -32329,12 +32337,14 @@
         "Td S9 B10j water/question/bridge static node-and-edge audit: SMB1 lines 3933-3989 compared with src/game/area.c; controlled original-ROM/x86/x64 object-parser routes remain required.",
         "M2 T56 S5 static audit: SMB1 lines 3789-3947 and shared src/game/area.c were compared in source order. Castle stop, pipe and slot-control branches, table binding, state writes and high question-row dispatch match on all source-reachable paths.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:12 original intrinsic indexed-store guards excludeE9/EA/739;qualified functional-entry bounds,otheraliasconditionspending."
       ],
       "operationalEvidence": [
         "M2 T56 S5 controlled owner-local original-ROM/current x86/x64 matrix: warmed vertical-pipe, high question-row and special-object routes are byte-identical in scoped parser, staging and enemy state; x86 and x64 agree.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:65536actual9508roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all70PC/6branchpairs,7tests each;24caseoldcode-red regression;originalDOS16link/Win32builds/threeproducts refreshed.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:retainedoriginalvisits/zeroRAMreceipts joinedcurrent source,7focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Uses the source BIT-opcode fall-through to select row 3, then shares low-row length decode and coin-question write.",
       "currentSourcePaths": [
@@ -32353,13 +32363,15 @@
         "M2 T56 S6 static audit: SMB1 lines 3944-3982 and shared src/game/area.c were compared in source order. Low question-row, bridge selector fall-throughs, length-helper returns and residual flag-ball extent match.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:16labels/70instructions/15RAM joined7boundedclauses;warptextcall/IDloops/stablecachedinputs/rowstack/overlay/height/postchildlength reviewed;bridge/water sharedhelper repair;wholeproducer/inter-frame pending,no graphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:12 original intrinsic indexed-store guards excludeE9/EA/739;qualified functional-entry bounds,otheraliasconditionspending."
       ],
       "operationalEvidence": [
         "M2 T56 S6 operational: current x86/x64 special-row regression covers low question row, all bridge selectors and residual flag balls; T56 cross-chain owner-local ROM/native matrix confirms adjacent parser paths and x86/x64 agreement.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:4096 actual roots each width,2032RAM/24APU/ordered hardware writes0diff,minSP>=EF,all38PC/5branchpairs observed;actual81E2 X0-14 and81FC/8202/8208 X2/5/8 observed;8focused tests each pass;4 invalid-domain witnesses/accounting mutations accepted as negative checks.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P104 checkpoint - area callback uses reconciled and UnderPart tails repaired:65536actual9508roots eachwidthallnonstackRAM/24APU/orderedwrites0diff,all70PC/6branchpairs,7tests each;24caseoldcode-red regression;originalDOS16link/Win32builds/threeproducts refreshed.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:retainedoriginalvisits/zeroRAMreceipts joinedcurrent source,7focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Selects row 7, preserves it across large-length decode, and writes metatile $c0 at the selected buffer row.",
       "currentSourcePaths": [
@@ -43805,13 +43817,15 @@
         "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:12 original intrinsic indexed-store guards excludeE9/EA/739;qualified functional-entry bounds,otheraliasconditionspending."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:retainedoriginalvisits/zeroRAMreceipts joinedcurrent source,7focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Gates on frenzy timer and controller slot, arms timer $80, then reverse-searches Lakitu or begins reappearance handling.",
       "currentSourcePaths": [
@@ -43877,12 +43891,14 @@
         "Td S9 B14l Lakitu/Spiny initializer and frenzy node-semantics and independent integration audit: SMB1 lines 8279-8390 compared with shared enemy/init_targets.c, enemy/frenzy.c and Lakitu helper; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S4 static $C233-$C2D3 audit: source predicates, RAM reads/writes, table bytes, call/tail/return order and page carry match the shared C90 game owners.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 Original initializer/real child and consumer source audited:SmallBBox returns A0,live slot reload,LFSR fetch after child,byte carries,duplicate allocation,height/flag aliases and six table bindings match shared owners.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:26labels/182instructions/62RAM joined9boundedclauses;actualcreation/box/distance/checkpointchildren,PRscratch/stack/carry,indexdomain andfilter/slotloops. Extendedstar/out-of-tableproducer/inter-frame dependenciespending.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:12 original intrinsic indexed-store guards excludeE9/EA/739;qualified functional-entry bounds,otheraliasconditionspending."
       ],
       "operationalEvidence": [
         "M2 T62 S4 current x86/x64 owner-ROM routes: 160 Lakitu/Spiny caller-boundary snapshot matches and 20 Firebar actual snapshot matches; 71,163 Lakitu/Spiny, 9,216 Firebar/duplicate and 23,046 common-initializer footprints pass per width.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S12 P3 131072 controlled original roots each x86/x64 zero diff in2032 persistent RAM/24 APU/ordered writes;all17 controls observed,three actual material handoffs observed;8 focused tests each,purity,current builds/OpenNT link pass.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P62 checkpoint - Lakitu Spiny fireworks and frenzy bill reconciled:393216actualreturning roots eachwidth2032RAM/24APU/orderedwrites0diff,all182PC/24branchpairs/threealreadyinfeasible sides;actualCPU X==input08,5focusedtests eachpass;source/productsP57unchanged.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:retainedoriginalvisits/zeroRAMreceipts joinedcurrent source,7focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Initializes the selected Lakitu slot, calls setup and right-extent positioning, then restores the caller object offset.",
       "currentSourcePaths": [
@@ -45141,14 +45157,16 @@
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:55 instructions/23RAM bounded group source clause;allocationX0-4 withreal initializerIDs0/2/6,08 preserved,Inc2B reload proves group return compatible withroot enemyX0-5/localCslot. Other ObjectOffset writers remain independent prerequisites.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:12 original intrinsic indexed-store guards excludeE9/EA/739;qualified functional-entry bounds,otheraliasconditionspending."
       ],
       "operationalEvidence": [
         "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:69632 actual roots eachwidth2032RAM/24APU/ordered hardware0diff,all55PC/7branchpairs;originalX==RAM08==input08 asserted at every return. Physical1F0-1FF excluded/minSP>=EF,CPUregisters otherwise outsidevoidAPI. Sixfocusedtests eachpass,source/products unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:retainedoriginalvisits/zeroRAMreceipts joinedcurrent source,7focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Derives group code, classifies enemy ID with hard-mode Goomba/Buzzy substitution and preserves source stack-selected group bits.",
       "currentSourcePaths": [
@@ -45282,13 +45300,15 @@
         "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:55 instructions/23RAM bounded group source clause;allocationX0-4 withreal initializerIDs0/2/6,08 preserved,Inc2B reload proves group return compatible withroot enemyX0-5/localCslot. Other ObjectOffset writers remain independent prerequisites.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:12 original intrinsic indexed-store guards excludeE9/EA/739;qualified functional-entry bounds,otheraliasconditionspending."
       ],
       "operationalEvidence": [
         "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P55 checkpoint - group slot allocation and caller return:69632 actual roots eachwidth2032RAM/24APU/ordered hardware0diff,all55PC/7branchpairs;originalX==RAM08==input08 asserted at every return. Physical1F0-1FF excluded/minSP>=EF,CPUregisters otherwise outsidevoidAPI. Sixfocusedtests eachpass,source/products unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:retainedoriginalvisits/zeroRAMreceipts joinedcurrent source,7focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Scans slots 0..4, fills one inactive slot with current page/X/Y, advances X by $18 with page carry, initializes it and decrements remaining count.",
       "currentSourcePaths": [
@@ -45409,14 +45429,16 @@
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 original C047/C0CC/C144/C26C source predicates,record reads/page reentry,slot reload,flag/order/CMP/ASL carry,55 initializer vectors and actual child/return contracts compared with shared enemy owners;no product difference found.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 Original frenzy/group/actor source and actual shared children compared:vector scratch,slot reload,timer gates,mask/filter/table selection,byte carries,group checkpoint order,Bowser body/graphics and duplicate/OAM consumption;shared bounds/offscreen scratch repaired by original writes.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:12 original intrinsic indexed-store guards excludeE9/EA/739;qualified functional-entry bounds,otheraliasconditionspending."
       ],
       "operationalEvidence": [
         "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S11 P2 65536 original roots each width zero persistent RAM/APU/ordered-write diff;all38 controls and all55 original vector pairs observed/equal;13 tests each/purity/current builds/OpenNT link;34 existing labels zero fresh credit.",
         "docs/history/M2-T69-cross-cohort-current-proof.md S13 P3 114688 original roots each width zero diff in2032 RAM/24 APU/ordered writes;all12 feasible controls observed,one LDA08/BNE fallthrough impossible by opcode/flags,all6 vector pairs read/equal;15 tests each/purity/current builds/OpenNT link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:retainedoriginalvisits/zeroRAMreceipts joinedcurrent source,7focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Scans all six slots, sets every Lakitu state to one, clears frenzy buffer and only controller flag.",
       "currentSourcePaths": [
@@ -45435,12 +45457,14 @@
         "Td S9 B14s Piranha/frenzy-dispatch node-semantics and independent integration audit: SMB1 lines 8839-8889 compared with shared enemy/init_targets.c and enemy/frenzy.c; controlled original-ROM/x86/x64 routes remain required.",
         "M2 T62 S7 static original-ROM audit: SMB1 $C44C-$C4AD against shared enemy/group.c and enemy/frenzy.c preserves group type/hard-mode/Y/count selection, slot scan/carry/checkpoint handoff, frenzy vector/return, and Lakitu-only termination scan.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:21labels/171instructions/75RAM joined11boundedclauses;biasstack/scratch/index lifetimes,coordinatecarry/borrow,mouth orderedalias reads,real3-selector frenzy and6-slot endscan. Otherfrenzy children/timercounterproducer/wholelifetimespending.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:12 original intrinsic indexed-store guards excludeE9/EA/739;qualified functional-entry bounds,otheraliasconditionspending."
       ],
       "operationalEvidence": [
         "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P61 checkpoint - flying Cheep and Bowser flame frenzy reconciled:200960original returns eachwidth2032RAM/24APU/orderedwrites0diff,170PC/15branchpairs plusretained131072C485visits;actualX==input08;5focusedtests eachpass,source/productsP57unchanged.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:retainedoriginalvisits/zeroRAMreceipts joinedcurrent source,7focusedchecks perwidth;no freshROMrunclaim."
       ],
       "semanticContract": "Tests current slot ID and conditionally writes state one.",
       "currentSourcePaths": [
@@ -171309,7 +171333,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime",
         "docs/proposals/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
         "docs/proposals/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P128 checkpoint - saved block publication and consumption"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P128 checkpoint - saved block publication and consumption",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
@@ -171327,7 +171352,14 @@
         "materialPathsEnumerated": 993,
         "globalMaterialPathDenominator": "unknown",
         "nodeOrControlPromotion": 0,
-        "scope": "Retained scoped receipts and named open material obligations;not new global audit,whole-program proof or new material denominator."
+        "scope": "Retained scoped receipts and named open material obligations;not new global audit,whole-program proof or new material denominator.",
+        "streamPointerCursorIndexedAliasConditions": {
+          "candidateSites": 374,
+          "intrinsicExclusions": 27,
+          "callerConditionsPending": 347,
+          "evidence": "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions",
+          "globalAbsenceOfAliasProven": false
+        }
       },
       "streamWriterReceiptReconciliation": {
         "indexedWriterReceiptsJoined": 374,

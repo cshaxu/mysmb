@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P128 saved block lifetime checkpoint;S17 remains active,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P129 intrinsic alias guards checkpoint;S17 remains active,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
@@ -160,7 +160,6 @@
 
 
 
-S17 P121:11 graphics/attribute labels,133 original instructions and7 branch pairs; two synthetic high-offset exits removed, graphics byte cursor and attribute command-before-INY order corrected. Two65536-root families,131072 original roots each width0 scoped RAM/APU/order diff;all133PC/14branch sides. New boundary regression rejects predecessor exit2;7 focused tests each width pass. Three EXEs refreshed via modern targets/original OpenNT16 compile/link. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81); material993 partial,total unknown. M2 incomplete.
 
 S17 P122:16 parser/commit participants;2048 eight-turn original chains eachwidth zero scoped RAM/APU/order diff. ActualAF6F and80B6-80E4 command/header phase alternate without RAM/PPU reseeding;task7..0,buffer2<=29,selected-header clear/other-buffer preservation and0368/03EE/06CF sentinels asserted. Eight focused tests eachwidth pass; 123 source identities/P121 threeproducts unchanged. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);material993 partial,total unknown. Active-object writers and global lifetimes pending,M2 incomplete.
 
@@ -175,3 +174,5 @@ S17 P126:six natural600-frame coldbootstrap scripts,3600 frames eachwidth. FullR
 S17 P127:three continuous1800-frame cold-bootstrap routes,5400 frames eachwidth,zero nonphysicalRAM/CIRAM/palette/OAM/audio/scalar difference. Actual death/life decrement/reentry observed in allthree;run-held reaches GameOver. Sixfocusedtests eachwidthpass;123 sourceidentities/P123products unchanged. Historical1992/1992,local1991/1992nodes,4260/4261 feasiblecontrols(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
 S17 P128:131 observed block/motion/commit labels,907 originalPC;1664 serial64-turn chains,214656 scopedfullRAM checkpoints eachwidth0diff. Saved03E4-03E9 stable;actualchainedbus rejects anyoverwrite. 91 indexed/direct and9 indirect globalalias candidates explicit,notnew feasibleedges. Sevenfocusedtests eachwidthpass;123 sourceidentities/P123products unchanged. Historical1992/1992,local1991/1992nodes,4260/4261 controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
+S17 P129:12 indexed writers/12 participants reclassified by original intrinsic counter/row guards. Streamalias inventory374:27 intrinsic exclusions,347 caller-domain conditions remain (previous15/359). Current-source andretained originalroute joins,12 negative rawindex witnesses,7focusedtests eachwidthpass. No freshROM replay ornode/control credit;123sourceidentities/P123products unchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
