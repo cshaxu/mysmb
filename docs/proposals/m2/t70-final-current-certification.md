@@ -1,5 +1,50 @@
 # M2 T70: final current-equivalence certification
 
+## S17 P151 checkpoint - title return and menu integration reconciled
+
+Consecutive owner-079/owner-123 groups:23 labels/124 instruction sites,
+56 touching registered controls. The P151 admission below names every label;
+all remain inside existing1667 S17 participants. Both groups' seven facets
+close individually in the [audit ledger](../../states/M2_AUDIT_LEDGER.json).
+One common chain review and operational pass;no new S,graph credit or source
+mapping change. Next original-order groups are owner-078/owner-122 victory
+caller and terminal modes;they are not yet admitted.
+
+| Join | Source-reviewed condition |
+| --- | --- |
+| NMI return | Saved control sampled before mode children is restored with80;mutated RAM mirror belongs next frame. Physical stack/status/RTI timing remains hardware ABI and pixel coverage work. |
+| Menu to Core | ExactStart/A+Start/select/B priority,DemoTimer before world selection,SelectTimer hold gate,NullJoypad clears port1 only. P88 actual core-ingress boolean joins P111 real same-frame GameCore call;returned live0E,not cached input,decides reset when6. |
+| Demo lifetime | Original0717/0718 direct writer census:DemoEngine plus memory clears. InitializeGame6F/InitializeArea4B produce0/0. Action increment only on expiry;timing22 zero returns before action fetch. P88 persistent1120 calls observes21 action/22 timing locations;invalid guards remain outside this source-reachable proof,other owners retain alias contracts. |
+| Continue/start | GoContinue sets both worlds/clears areas and returns templateX0;LoadAreaPointer precedes StartWorld1 flags/mode/score writes. Scores07DD+17..0 preserve high score;icon7..0 copies bound8bytes before player-count replacements. |
+| Startup to menu | InitializeMemory6F returnedA0 feeds32 sound clears,then DemoTimer18 and actualpointer/area fallthrough. Current mode snapshot prevents new same-frame dispatch after Start/reset changes mode;following NMI consumes next state/queued icon. |
+
+Retained proofs checked against current dependencies:P88 title_modes and
+area_data identities match;P111 frame/title/terminal/dispatcher/engine/player/
+game identities match. P41 begin_title_bootstrap,initialize_memory and
+area_initialize bodies equal their accepted revision,despite later unrelated
+area graphics changes. P149/P150 clear/NMI consumer joins remain applicable.
+These identity checks bind proofs;they do not replace their source semantics.
+
+Original/native evidence:P88 menu8704 cases and1120 persistent demo calls
+per width,all declared nonphysical-stack RAM/core-ingress differences0;
+P41 setup5888 and P111 mode83712 actual parents per width,differences0 within
+their recorded domains/fields. These parent manifests also cover other
+owners;their totals are not new graph or whole-game coverage. Combined
+original visit records cover all124 admitted PCs. P88 ingress alone does
+not prove child return:P111 actual parent records provide that join.
+
+Current focused operational checks:8 each width pass for modes,dispatch,
+title demo,title output/bootstrap,area init,NMI parent and purity. Parallel
+widths/jobs4,7 native targets each;build20.61s/20.32s,test0.50s/0.69s.
+No game code changed;no new original run needed after proof applicability
+review. Retain three P144 EXEs and original DOS16 compile/link receipt.
+
+Result:4/136 groups and28/952 facets closed,924 pending. Local1991/1992
+nodes,4260/4261 controls(raw4342,infeasible81),993 partial material receipts
+unchanged. Two localized findings/all13 coverage slots open;packages2/6
+closed. Complete title route,physical pixel alternatives and final snapshot
+remain pending. M2/T70/S17 remain incomplete/open.
+
 ## S17 P150 checkpoint - NMI group integration reconciled
 
 Second original-order group owner-077:admitted33 labels/211 sites/83 explicit
@@ -130,6 +175,20 @@ Any game mismatch requires same-S repair/re-audit/three product builds.
 Physical latch/fetch/split/dot timing stays pending pixel slots;no final M2
 or all-input claim from scoped matches. Source-binding checks are not semantic
 proof. Reconcile seven facets only where named conditions are covered.
+
+P151 admission: consecutive owner-079/owner-123 title return/menu groups,23
+labels/124 sites. Exact labels:SkipMainOper,GameMenuRoutine,StartGame,ChkSelect,ChkWorldSel,SelectBLogic,IncWorldSel,UpdateShroom,NullJoypad,RunDemo,ResetTitle,ChkContinue,StartWorld1,InitScores,ExitMenu,GoContinue,DrawMushroomIcon,IconDataRead,ExitIcon,DemoEngine,DoAction,DemoOver,InitializeGame.
+Common chain:NMI saved-control tail and title GameMenu/DemoEngine->RunDemo
+->GameCore->live subroutine6 decision->ResetTitle/return. Keep both owner
+groups individually accountable;one combined evidence/operational pass.
+Reuse bound P88 menu/core-ingress/persistent-demo,P111 actual parent returns,
+P41 initialize-game and P149/P150 clear/NMI consumer clauses. Audit action
+index producer/terminal before table read,timer/input/continue priority,
+score clear/icon/queue-to-NMI joins and source child dependencies. Fresh
+graph credit0;all temporary metadata/logs local ignored build;existing ROM/ASM
+readonly nonredistributable;128MiB/120s process budgets. Pure audit unless
+qualified mismatch requires repair/re-audit/three EXEs. Pixel/complete-route
+slots remain pending;no raw invalid-state guard promoted as ROM-equivalent.
 
 ## Current Continuation Plan - P147
 

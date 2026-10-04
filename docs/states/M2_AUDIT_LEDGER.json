@@ -4,7 +4,7 @@
   "authority": "docs/states/CURRENT.md",
   "registry": "docs/states/M2_CURRENT_EQUIVALENCE.json",
   "taskId": "M2 T70 S17",
-  "part": "P150",
+  "part": "P151",
   "deadline": null,
   "universe": {
     "version": 1,
@@ -121071,32 +121071,88 @@
       "useCount": 9,
       "facets": {
         "producerConsumer": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "SkipMainOper consumes the P150 NMI saved-control capture after mode children,not a reread of mutable0778. RunDemo consumes the P88 menu/demo continuation boolean at the original82C0 ingress,executes actualGameCore in the same frame,then reads its returned live0E;only6 resets title. P111 actualNMI/title/core parents connect the formerly separate ingress and return proofs.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+          ],
+          "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
         "addressAlias": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Five NMI-tail and four demo-return instructions have no indexed gameRAM writer. Physical status-read/stack/control addresses are explicit native hardware ABI;live0E read after child and reset writes770/772/722,INC774 use actual shared state. Saved control is separate from possibly changed mirror;no output slot silently closed.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+          ],
+          "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
         "overwrite": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "PHA-equivalent saved_control sampled after VRAM/scene-scroll before mode calls and restored with80 after mode or paused return. RunDemo reloads0E only after realGameCore,allowing child transitions;core continuation is not inferred from old input0E. ResetTitle follows only source equality6 or menu/demo terminal paths.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+          ],
+          "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
         "crossPhaseLifetime": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Current physical control remains pre-child saved value while mutable mirror survives for next NMI. P150 prefix shows no cache-destabilizing writer;P111 tests real title child return and both sub6/non6 outcomes. Reset770/772/722 and byteINC774 prepare following title startup,not an extra same-frame constructor. P126/P127 natural frame boundary receipts retained within their routes.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+          ],
+          "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
         "registerFlagStack": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "PLA consumes saved pre-child A,ORA80 before physical2000/RTI;native local preserves value while physical stack storage/CPU cycles excluded under hardware ABI. RunDemo CMP6 equality determines reset,not carry or cached flag;GameCore return A/flags unexposed and replaced by live0E load/CMP. ResetTitle sourceA0 represented explicit stores.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+          ],
+          "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
         "callerReturn": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Actual title GameMenu sends both cleared-input and DemoEngine paths to sameRunDemo;native boolean causes actualcore call before sub6 reload/reset. Early menu Start/Reset returns bypassCore;paused NMI bypasses mode but still restores saved control. P88 actual ingress and P111 actualparent roots cover their distinct boundaries without fabricated call substitution.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+          ],
+          "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
         "sourceBinding": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Current frame_root/title_modes/dispatcher/game/engine/player identities equal P111;P88 title/area-data identities equal current. All9 group PCs observed in retained actualparent visits. P149/P150 predecessor joins remain bound;CPU physical timing/final pixels and complete route manifests are separate pending slots.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+          ],
+          "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         }
       },
       "currentSourcePaths": [
@@ -122809,32 +122865,88 @@
       "useCount": 115,
       "facets": {
         "producerConsumer": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Twenty menu/demo/icon labels plus InitializeGame consume live saved-port images,DemoTimer/SelectTimer,world-select/continue state and immutable admitted resources. Only exactStart10/A+Start90/select20/B40 take their source paths. InitializeGame6Fclear and actualInitializeArea4Bclear produce demo action/timer0;DemoEngine increments action on expiry,terminal timing22 returns beforeaction fetch. Source direct0717/718 writer census has only DemoEngine plus initializer clears;other owners retain alias domain obligations.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+          ],
+          "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
         "addressAlias": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Icon bound8 bytes copied7..0 to0300..0307 then nonzero player count changes0304/0306. Six world-template bytes copiedascending from returnedGoContinueX0;world selectorbyte+1AND7. Scores07DD+17..0 clear24bytes and preserve top score. Source-reachable demo actions1..21 use21 action/22 timing bytes;terminal22 haszero timer and noaction read. P88 persistent sequence traverses all43 tablelocations;invalid0/>22 guards are not promoted to all-input equivalence.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+          ],
+          "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
         "overwrite": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "OR savedports sampled before decision;DemoTimer checked before world-select B branch. Select/B reloadtimer18 then SelectTimer10 before count/icon/world writes. NullJoypad clearsport1 only;DemoEngine-generated port1 is retained toCore. GoContinue setsbothworlds/areas before LoadAreaPointer;source pointer load precedes mode/flags/score clear. Icon copied before replacement. InitializeMemory6F precedes sound clear and18DemoTimer,thenpointer/area child.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+          ],
+          "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
         "crossPhaseLifetime": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "NMI P150 reads/debounces physical input before title menu;timer decrement is prior phase. Hold gate keeps selection state until timer reaches0. Initialization produces0/0 demo state;1120 persistent original calls progress to terminal22/reset and actualP111Core parents cover livepost-child0E6 transition. Current mode snapshot prevents re-dispatch after menu changes mode. Title reset prepares nextNMI task0;Start transfers world/state to following game mode. Full route coverage remains separate.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+          ],
+          "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
         "registerFlagStack": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Exact90 caller ASL carry maps A-bit continue only;GoContinue originalX0 represented returned0 template cursor. DemoEngine carry1 terminal maps nativeboolean reset,carry0 maps sameframeCore. World byteINC/AND7,score descendingX17,icon descendingY7 and template X0..5 preserve source wraps/order. InitializeMemory returnedA0 feeds sound clear;area caller reloads registers. Physical stack bytes/unexposedCPUflags excluded only as recorded;no missing consumer hidden byvoid return.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+          ],
+          "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
         "callerReturn": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "P88 menu actual82C0 ingress orRTS paths joined to P111RunDemo/core return;P41 realInitializeGame->InitializeMemory->LoadAreaPointer->InitializeArea fallthrough retained. StartWorld1 realpointer before subsequentstores,DrawMushroomIcon real bound child and commonNullJoypad preserved. Compatibility title-loading helpers are not productNMI entry;Win32/DOS usepower_on then sharedframe root. Child internals retain own scope.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+          ],
+          "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
         "sourceBinding": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Current complete title_modes.c and area_data.c match P88;P111 caller/mode dependencies match. P41InitializeGame,boot initialize_memory and area initialize bodies are unchanged versus its acceptedrevision despite later unrelated area graphics edits. S16 immutable49 menu bytes/icon8 and P149 clear/P150 NMI scopes reused,not broadened. All115 groupPCs observed across checked originals;finite routes/pixels/current final snapshot still open.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+          ],
+          "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         }
       },
       "currentSourcePaths": [
@@ -123598,6 +123710,30 @@
       ],
       "closedGroupIds": [
         "owner-077"
+      ],
+      "closedFacets": [
+        "producerConsumer",
+        "addressAlias",
+        "overwrite",
+        "crossPhaseLifetime",
+        "registerFlagStack",
+        "callerReturn",
+        "sourceBinding"
+      ],
+      "nodeControlCredit": 0,
+      "sourceUniverseChanged": false,
+      "groupUniverseChanged": false
+    },
+    {
+      "id": "P151-title-return-menu-reconciliation",
+      "cause": "Consecutive title menu/core return groups share one bounded chain proof and operational pass;actualsaved-control/livechild/demo terminal joins reviewed.",
+      "groupIds": [
+        "owner-079",
+        "owner-123"
+      ],
+      "closedGroupIds": [
+        "owner-079",
+        "owner-123"
       ],
       "closedFacets": [
         "producerConsumer",
