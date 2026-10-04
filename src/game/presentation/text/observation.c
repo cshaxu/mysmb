@@ -75,6 +75,10 @@ void mysmb_text_observer_record(struct mysmb_game *game,
     }
     item = &buffer->items[i];
     record_index = i;
+    /* A repeated owner may shrink its span. Old entries outside the new
+     * draw must not keep pointing at the replacement receipt. */
+    for(owner=0U;owner<64U;++owner)
+        if(buffer->owners[owner]==record_index+1U)buffer->owners[owner]=0U;
     memset(item, 0, sizeof(*item));
     item->family = family; item->identity = identity; item->slot = slot;
     item->graphics = graphics; item->facing = facing; item->oam = oam;

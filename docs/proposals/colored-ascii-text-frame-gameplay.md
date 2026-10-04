@@ -588,3 +588,54 @@ background/sprite priority,title/menu/misc owners and residual metatile cases.
 Immediate schema2 restore continuity is now complete within the tested scope;
 legacy files lack receipt provenance. No product enables text/Tab yet. All ROM
 node/edge/facet accounting and deferred M2 certification are unchanged.
+
+### S2 P7 priority and independent components scope
+
+Compose completed sprite entries in ascending original OAM priority,claiming
+only authored opaque cells. Claims precede behind-background suppression so
+a hidden foreground-priority sprite does not expose a lower-priority sprite.
+Background assembly exports a500-byte authored occupancy mask,including body
+spaces and HUD glyphs;actor assembly uses caller-owned500-byte claim storage.
+Use each entry's committed attributes/palette. Brick chunks and single-sprite
+effects anchor independently;whole actors retain stable source-entry anchors.
+Estimate6-8source/test files,150-250lines. No CHR sampling or gameplay change.
+Check interleaved group priority,transparent outlines,behind-background
+occlusion,palette changes,independent fragment positions and read-only state;
+retain twin-route/cross-width/DOS ABI checks and refresh all3products.
+
+### S2 P7 review receipt
+
+Eight source/test files change106added/30removed lines. Entries now compose in
+ascending committed OAM priority,with a caller-owned500-byte claim map. A
+winning authored cell claims before its behind-background check,preventing a
+lower-priority sprite from showing through a hidden winner. Background/HUD
+assembly marks its authored opaque cells,including filled body spaces,in a
+500-byte map;its far workspace is now2900bytes. Every entry uses its own
+committed palette/priority flag. Independent brick fragments and single-sprite
+effects anchor at their individual positions instead of the group's minimum.
+Repeated owner spans release all old claims before replacement,including
+entries outside a shrinking span;stale source ownership cannot survive shrink.
+
+Both widths pass six focused tests and actual product self-tests. Fixtures
+cover independent fragment positions,interleaved grouped-entry priority,
+entry palette changes,opaque body spaces behind the background,hidden-winner
+suppression,shrinking ownership,background mask reset and read-only game state.
+The1000-step twin route still has zero original core/frame/pixel differences;
+immediate loaded text/240future states remain identical. All999textframes and
+11988000bytes compare across widths. This route does not exercise every new
+overlap case;controlled fixtures supply that evidence. Unrecognized background
+semantics remain unclaimed/countable,not proof of complete occlusion coverage.
+
+StrictC90 and originalOpenNT16 far-pointer compile/full product link pass.
+Bounded byte loops initialize presentation maps without requiring the isolated
+ABI compiler to find a runtime string header. Three local products refresh to
+331103/401348/415432bytes;observer5253bytes andDGROUP46528bytes remain unchanged.
+Actual hiddenDOSBox title/Start/run/jump/left/release/Escape route passes with
+24seconds gameplay. This is not486SX performance qualification. Raw text
+streams/captures are removed after neutral receipts. No protected data is
+staged;there is no remote and no ROM node/control/facet credit.
+
+Similar-issue sweep covers every actor family and all source receipt upserts;
+entry priority/palette applies to all known templates. Vine/platform/flag
+segmented shapes,mixed player parts,wrapped/hidden anchors,residual metatiles
+and title/menu/misc owner coverage remain inside S2. No text host or Tab yet.

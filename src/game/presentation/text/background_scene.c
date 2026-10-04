@@ -135,6 +135,7 @@ static unsigned char glyph(unsigned char k,unsigned short x,unsigned short y,
 }
 
 static void object(const struct mysmb_game *g,
+    struct mysmb_text_background_workspace MYSMB_IO_FAR *w,
     struct mysmb_io_text_frame MYSMB_IO_FAR *frame,unsigned char k,
     unsigned char palette,short left,short top,short right,short bottom)
 {
@@ -159,6 +160,7 @@ static void object(const struct mysmb_game *g,
             (unsigned short)(width-1U-(x-x0))<
                 inset(k,(unsigned short)(y-y0),width,height))continue;
         cell=(unsigned short)(y*80L+x);
+        w->opaque[cell/8U]|=(unsigned char)(1U<<(cell%8U));
         frame->cells[cell].character=c;
         frame->cells[cell].foreground=k==CLOUD?8U:15U;
         frame->cells[cell].background=color;
@@ -186,6 +188,7 @@ int mysmb_text_background_scene_build(const struct mysmb_game *g,
         g->area_prg_size<0x0b10U)return 0;
     receipt->recognized=receipt->unsupported=receipt->ambiguous=0U;
     receipt->objects=receipt->letters=0U;
+    for(i=0U;i<500U;++i)w->opaque[i]=0U;
     (void)mysmb_text_elements_build(0,0U,mysmb_io_color_text16(g->palette[0]),frame);
     if((g->visible_ppu_mask&8U)==0U)return 1;
     for(i=0U;i<480U;++i) {
@@ -216,8 +219,8 @@ int mysmb_text_background_scene_build(const struct mysmb_game *g,
         right=(short)((maxx+1U)*16U)-(short)g->visible_scroll_x;
         top=(short)(miny*16U)-(short)g->visible_scroll_y;
         bottom=(short)((maxy+1U)*16U)-(short)g->visible_scroll_y;
-        object(g,frame,k,p,left,top,right,bottom);
-        object(g,frame,k,p,left,(short)(top+240),right,(short)(bottom+240));
+        object(g,w,frame,k,p,left,top,right,bottom);
+        object(g,w,frame,k,p,left,(short)(top+240),right,(short)(bottom+240));
         receipt->objects++;
     }
     /* Fixed HUD letters use the committed table-zero region, never RAM digits.
@@ -227,6 +230,7 @@ int mysmb_text_background_scene_build(const struct mysmb_game *g,
         c=letter(g->name_table[0U][row*32U+col]);if(c==0U)continue;
         cell=(unsigned short)((row*8UL*50UL/240UL)*80UL+col*8UL*80UL/256UL);
         frame->cells[cell].character=c;frame->cells[cell].foreground=15U;
+        w->opaque[cell/8U]|=(unsigned char)(1U<<(cell%8U));
         receipt->letters++;
     }
     return 1;

@@ -43,6 +43,13 @@ them on restore while retaining the destination's observation preference.
 The DOS transaction workspace uses a bounded far-heap allocation. The dormant
 `platform/text` pixel sampler is not used by this module.
 
+Background text assembly exports authored-cell occupancy in its2900-byte
+caller-owned far workspace. Actors use a separate500-byte far claim map and
+consume committed entries in original priority order. Each entry keeps its
+own palette/behind-background flag;only authored opaque cells claim priority.
+Independent chunks/effects use their own positions,while whole actors retain
+source-selected template anchors. These maps contain no CHR/pixel samples.
+
 `io/control` owns application-request lifecycle independently of the game.
 The third input byte carries requests;the two controller bytes keep their
 original meaning. Roots consume the shared exit latch before advancing a tick;

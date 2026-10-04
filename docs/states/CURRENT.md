@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M3 T11 S2 active;P6 snapshot continuity complete;remaining scene obligations stay within S2. |
+| Identifier Mode | Continuation:M3 T11 S2 active;P7 priority/independent components complete;remaining scene obligations stay within S2. |
 | Admission And Approval | Automatic next-S admission under owner mandate after S1 reviewed local commit. |
 | Objective | Connect isolated text elements to existing draw decisions and committed visible scenes,with explicit lifetime/restore handling. |
 | Non-goals | No gameplay rewrite,ROM credit or platform Tab binding;those presenters remain S4/S5. |
@@ -105,3 +105,12 @@ DOSBox save/move/load/Escape pass. Three products331023/401348/415432bytes;
 DGROUP46528bytes,transaction workspace on far heap. Legacy files load with absent
 receipts;no immediate-text promise for them. Raw outputs cleaned;zeroROMcredit.
 S2 stays open:remaining scene/pose/priority obligations,no host text/Tab yet.
+
+P7:per-entry OAM priority/palette,authored background occlusion and independently
+positioned chunks/effects;shrinking receipts release stale owners. Eight source/
+test files,+106/-30. Bothwidths six tests/product self-tests,C90,originalDOS16
+far ABI/link andactualDOSBox route pass. Twin1000-step original-output equality,
+restore240future states and999textframes/11988000cross-width bytes pass.
+Three products331103/401348/415432bytes;DGROUP46528bytes,bg workspace2900bytes,
+actor claim map500bytes. S2 remains open:remaining segmented/mixed/wrapped
+geometry,residual backgrounds and title/misc owners;no host text/Tab yet.

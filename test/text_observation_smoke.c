@@ -14,6 +14,7 @@
 #include "smb1_local_title.h"
 #endif
 
+static struct mysmb_text_actor_workspace actor_workspace;
 static struct mysmb_game observed,plain,before,restored;
 static struct mysmb_io_snapshot first,second;
 static struct mysmb_ppu_frame pixels1,pixels2;
@@ -138,7 +139,7 @@ static int enemy_case(unsigned char id,unsigned char state,unsigned char phase)
     CHECK(observed.text_observer.producer.count==1U);
     mysmb_game_submit_oam(&observed);before=observed;
     CHECK(mysmb_text_elements_build(0,0U,9U,&text));
-    CHECK(mysmb_text_actor_scene_draw(&observed,&text,&receipt));
+    CHECK(mysmb_text_actor_scene_draw(&observed,&actor_workspace,0,&text,&receipt));
     if(receipt.drawn!=1U || receipt.unsupported!=0U)
         fprintf(stderr,"enemy fixture id=%u state=%u phase=%u drawn=%u unsupported=%u\n",
             id,state,phase,receipt.drawn,receipt.unsupported);
@@ -261,7 +262,7 @@ int main(int argc,char **argv)
 #else
         (void)background_receipt;(void)background;
 #endif
-        CHECK(mysmb_text_actor_scene_draw(&observed,&text,&actor_receipt));
+        CHECK(mysmb_text_actor_scene_draw(&observed,&actor_workspace,background.opaque,&text,&actor_receipt));
         if(preview!=0) {
             CHECK(fwrite(&text,1U,sizeof(text),preview)==sizeof(text));
         }
@@ -284,7 +285,7 @@ int main(int argc,char **argv)
 #ifdef MYSMB_LOCAL_TITLE
             CHECK(mysmb_text_background_scene_build(&restored,&background,&loaded_text,&background_receipt));
 #endif
-            CHECK(mysmb_text_actor_scene_draw(&restored,&loaded_text,&actor_receipt));
+            CHECK(mysmb_text_actor_scene_draw(&restored,&actor_workspace,background.opaque,&loaded_text,&actor_receipt));
             CHECK(memcmp(&text,&loaded_text,sizeof(text))==0);
         }
         text_actors+=actor_receipt.drawn;

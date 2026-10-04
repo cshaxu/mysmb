@@ -5,13 +5,17 @@ struct actor_clip {
     const struct mysmb_game *game;
     const struct mysmb_text_observation *item;
     unsigned char mask;
+    unsigned char behind;
+    struct mysmb_text_actor_workspace MYSMB_IO_FAR *workspace;
+    const unsigned char MYSMB_IO_FAR *background;
 };
 
 static int visible_cell(const void MYSMB_IO_FAR *context,
     mysmb_io_u16 column,mysmb_io_u16 row)
 {
     const struct actor_clip *clip;
-    unsigned short x,y,sx,sy,i;
+    unsigned short x,y,sx,sy,i,cell;
+    unsigned char bit;
     clip=(const struct actor_clip *)context;
     x=(unsigned short)(((unsigned long)column*256UL+128UL)/80UL);
     y=(unsigned short)(((unsigned long)row*240UL+120UL)/50UL);
@@ -20,7 +24,13 @@ static int visible_cell(const void MYSMB_IO_FAR *context,
         if((clip->mask&(1U<<i))==0U)continue;
         sx=clip->item->entries[i*4U+3U];
         sy=(unsigned short)(clip->item->entries[i*4U]+1U);
-        if(x>=sx && x<sx+8U && y>=sy && y<sy+8U)return 1;
+        if(x>=sx && x<sx+8U && y>=sy && y<sy+8U) {
+            cell=(unsigned short)(row*80U+column);bit=(unsigned char)(1U<<(cell%8U));
+            if((clip->workspace->claimed[cell/8U]&bit)!=0U)return 0;
+            clip->workspace->claimed[cell/8U]|=bit;
+            return clip->behind==0U || clip->background==0 ||
+                (clip->background[cell/8U]&bit)==0U;
+        }
     }
     return 0;
 }
@@ -131,31 +141,35 @@ static int choose(const struct mysmb_game *game,
 }
 
 int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
+    struct mysmb_text_actor_workspace MYSMB_IO_FAR *workspace,
+    const unsigned char MYSMB_IO_FAR *background_opaque,
     struct mysmb_io_text_frame MYSMB_IO_FAR *frame,
     struct mysmb_text_actor_receipt *receipt)
 {
     const struct mysmb_text_observation *item;
     struct mysmb_text_element element;
     struct actor_clip clip;
-    unsigned short priority,i,j,first,sx,sy,palette;
-    unsigned char mask;
-    if(game==0 || frame==0 || receipt==0 || game->text_observer.enabled!=1U ||
+    unsigned short priority,i,j,sx,sy,palette;
+    unsigned char mask,seen[64];
+    if(game==0 || workspace==0 || frame==0 || receipt==0 || game->text_observer.enabled!=1U ||
         game->text_observer.visible.count>MYSMB_TEXT_OBSERVATION_CAPACITY)return 0;
     receipt->drawn=receipt->unsupported=receipt->unowned_sprites=0U;
+    for(i=0U;i<500U;++i)workspace->claimed[i]=0U;
+    for(i=0U;i<64U;++i)seen[i]=0U;
     if((game->visible_ppu_mask&0x10U)==0U)return 1;
     for(i=0U;i<64U;++i)
         if(game->visible_oam[i*4U]<239U && game->visible_oam[i*4U+1U]!=0xfcU &&
             game->text_observer.visible.owners[i]==0U)receipt->unowned_sprites++;
-    for(priority=64U;priority!=0U;) {
-        --priority;
-        for(i=0U;i<game->text_observer.visible.count;++i) {
+    for(priority=0U;priority<64U;++priority) {
+        i=game->text_observer.visible.owners[priority];
+        if(i==0U || i>game->text_observer.visible.count)continue;
+        --i;
             item=&game->text_observer.visible.items[i];
             mask=mysmb_text_observer_visible_mask(game,(unsigned char)i);
-            if(mask==0U)continue;
-            first=64U;element.x=256;element.y=240;
+            j=(unsigned short)(priority-item->oam/4U);
+            if(j>=item->sprites || (mask&(1U<<j))==0U)continue;
+            mask=(unsigned char)(1U<<j);element.x=256;element.y=240;
             for(j=0U;j<item->sprites;++j) {
-                if((mask&(1U<<j))!=0U && item->oam/4U+j<first)
-                    first=(unsigned short)(item->oam/4U+j);
                 /* Ownership clipping must not relocate the whole template. */
                 if(item->entries[j*4U]>=239U ||
                     item->entries[j*4U+1U]==0xfcU)continue;
@@ -163,16 +177,27 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
                 if(sx<(unsigned short)element.x)element.x=(short)sx;
                 if(sy<(unsigned short)element.y)element.y=(short)sy;
             }
-            if(first!=priority)continue;
-            if(!choose(game,item,&element)) {receipt->unsupported++;continue;}
-            palette=(unsigned short)((game->visible_oam[first*4U+2U]&3U)*4U);
+            if(!choose(game,item,&element)) {
+                if(seen[i]==0U)receipt->unsupported++;
+                seen[i]=1U;continue;
+            }
+            if(item->family==MYSMB_TEXT_OBSERVE_CHUNKS ||
+                item->family==MYSMB_TEXT_OBSERVE_FIREBAR ||
+                item->family==MYSMB_TEXT_OBSERVE_FIREBALL ||
+                item->family==MYSMB_TEXT_OBSERVE_BUBBLE) {
+                element.x=game->visible_oam[priority*4U+3U];
+                element.y=(short)(game->visible_oam[priority*4U]+1U);
+            }
+            palette=(unsigned short)((game->visible_oam[priority*4U+2U]&3U)*4U);
             element.background=mysmb_io_color_text16(game->palette[0x12U+palette]);
             element.foreground=15U;
             element.face_left=(item->facing&2U)!=0U?1U:0U;
             clip.game=game;clip.item=item;clip.mask=mask;
+            clip.workspace=workspace;clip.background=background_opaque;
+            clip.behind=(unsigned char)(game->visible_oam[priority*4U+2U]&0x20U);
             if(!mysmb_text_element_draw(&element,frame,visible_cell,&clip))return 0;
-            receipt->drawn++;
-        }
+            if(seen[i]==0U)receipt->drawn++;
+            seen[i]=1U;
     }
     return 1;
 }

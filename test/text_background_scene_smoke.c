@@ -64,6 +64,8 @@ int main(void)
     CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
     CHECK(frame.cells[19U*80U+55U].background==15U);
     CHECK(frame.cells[19U*80U+55U].foreground==8U);
+    i=19U*80U+55U;
+    CHECK((workspace.opaque[i/8U]&(1U<<(i%8U)))!=0U);
     /* A visual alias with conflicting meanings is explicit,never guessed. */
     memcpy(prg+0x1040U,prg+0x1008U,4U);
     put(0U,1U,5U,0U,2U);
@@ -83,6 +85,7 @@ int main(void)
     game.visible_ppu_mask=0U;
     CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
     CHECK(r.objects==0U && frame.cells[3U*80U+7U].character==' ');
+    for(i=0U;i<500U;++i)CHECK(workspace.opaque[i]==0U);
     before=game;original=frame;game.area_prg_size=0U;
     CHECK(!mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
     CHECK(memcmp(&frame,&original,sizeof(frame))==0);

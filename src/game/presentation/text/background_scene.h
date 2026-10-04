@@ -10,6 +10,7 @@ struct mysmb_text_background_workspace {
     unsigned char palettes[480];
     unsigned char visited[480];
     unsigned short queue[480];
+    unsigned char opaque[500];
 };
 struct mysmb_text_background_receipt {
     unsigned short recognized;
