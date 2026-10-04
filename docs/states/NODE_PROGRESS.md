@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P133 parser/allocation handoffs](../proposals/m2/t70-final-current-certification.md#s17-p133-checkpoint---parser-and-area-allocation-index-bounds).
+S17 P133:24 parser/area allocation conditions joined(19intrinsic/5parent);374streamalias inventory now57intrinsic/39parentjoins/278pending. Declared815instruction parserclosure:950A2..0/9643zero only08publishers,noindirectwriter;28indexed08aliases require>24,actualapplicableindices<=5. Fresh65536original roots0scopedRAM/APU/orderdiff eachwidth,retained34areaP125all24writes observed. Ninefocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
 [P132 misc/block handoffs](../proposals/m2/t70-final-current-certification.md#s17-p132-checkpoint---misc-and-block-slot-preservation).
 S17 P132:19 misc/block indexed-write parent conditions joined;374inventory now38intrinsic/34parentjoins/302pending. Static610/427instruction closures:onlyBB98direct08publisher,noindirectwriter;23/10indexed08aliases excluded byactualslot/sprite constructors. 131072freshoriginal roots eachwidth0scopedRAM/APU/orderdiff,16writePCfresh/3contactstores retainedP74. Sevenfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
