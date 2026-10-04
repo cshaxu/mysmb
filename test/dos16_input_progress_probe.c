@@ -14,6 +14,8 @@ static void observed_input(struct mysmb_io_input *input)
     unsigned char current[5];
     unsigned i;
     int changed;
+    int heap_status;
+    unsigned pixels_bytes,store_bytes,text_bytes,stack_free;
     FILE *log;
     mysmb_dos16_devices_input(input);
     current[0]=input->buttons;
@@ -28,10 +30,19 @@ static void observed_input(struct mysmb_io_input *input)
     }
     if(!changed || count>=128U)return;
     ++count;
+    /* Sample before stdio allocates its own buffer. These are the three
+     * explicit product allocations,not an exhaustive CRT heap census.
+     * stackavail is a boundary sample,not recursive stack high-water. */
+    heap_status=_fheapchk();
+    pixels_bytes=root.ppu_frame.pixels?_fmsize(root.ppu_frame.pixels):0U;
+    store_bytes=snapshot_store?_fmsize(snapshot_store):0U;
+    text_bytes=text_storage?_fmsize(text_storage):0U;
+    stack_free=stackavail();
     log=fopen("input.log","a");
     if(!log)return;
-    fprintf(log,"frame=%lu buttons=%u requests=%u paused=%u permission=%u text=%u\n",
+    fprintf(log,"frame=%lu buttons=%u requests=%u paused=%u permission=%u text=%u heap=%d pixels=%u store=%u textbytes=%u stackfree=%u\n",
         root.game.frame_number,(unsigned)current[0],(unsigned)current[1],
-        (unsigned)current[2],(unsigned)current[3],(unsigned)current[4]);
+        (unsigned)current[2],(unsigned)current[3],(unsigned)current[4],
+        heap_status,pixels_bytes,store_bytes,text_bytes,stack_free);
     fclose(log);
 }

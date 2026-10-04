@@ -1594,3 +1594,69 @@ The integrated evidence boundaries remain explicit:
 
 S6 remains active. These contracts add no whole-ROM certification credit and
 do not close the remaining runtime/disposition clauses.
+
+### S6 P4 runtime memory and final disposition
+
+The existing diagnostic input entry now samples the historical CRT's heap
+integrity,the three explicit product far allocations,and available stack
+before opening its transition log. It is compiled with the original16-bit
+toolchain against the current product libraries;it is never linked into the
+product. Twenty actual DOSBox input-boundary samples report an intact heap,
+61440byte pixels,20084byte snapshot store and15400byte text storage:96924bytes
+of explicit payload. All sampled stack headroom is1090bytes. This is neither
+an exhaustive CRT heap census nor recursive stack high-water. Logging changes
+timing;the diagnostic cannot stand in for the uninstrumented product.
+
+The diagnostic cold-start route passes paused graphics/text round trips,
+heldTab,P/O and Escape. Its running-cache save is then used solely as the
+declared seed for two uninstrumented current-product normal/dynamic routes.
+Both pass4000-cell text presentation,5colors/40cell patterns,paused graphics
+round trips,heldTab,second text entry,schema2 P/O retention and DOS exit.
+Both receipts bind the unchanged DOS product hash;neither seeded route is
+credited as a cold-start proof. Each run stays within46seconds/20MB raw budget.
+Windows32/64 actual product self-tests pass;the preceding P3 real owned-console
+routes and13focused tests per width remain applicable without a source change.
+Only the diagnostic test changes,+13/-2lines;products are retained.
+
+The runtime limits are now reconciled:static segment/DGROUP limits and actual
+explicit allocations are checked;full heap/stack peak,real25MHz486SX speed,
+and MS-DOS hardware/version qualification remain M4 requirements already
+specified in the roadmap. DOSBox wall-clock behavior is not that hardware
+qualification. Rendering and gameplay share one instance;the diagnostic reads
+only root-owned allocation/input/public pause contracts and changes no RAM.
+
+T11-DOS-COLD-INPUT-P12 disposition is **historical incident not reproduced;
+cause unknown;no claimed code repair**. Retain its initial unchanged-title
+failure and same-binary successful retry. S6 independently reran that exact
+historical binary under both cores and checked unseeded input/progress/save/exit;
+both passed. Current unseeded routes pass those same contracts. The fixed-time
+unseeded pause fixture did not establish pause acceptance,so its equality
+failure is not discarded or used as an input-failure verdict. Pause/switch/load
+acceptance instead has the separately declared seeded actual-product proofs
+and this instrumented unseeded receipt. No additional timing workaround or
+gameplay change is justified by these observations. This explicit evidence
+disposition closes the S6 reconciliation clause;it does not explain the old
+incident or guarantee that it can never recur. M4 retains hardware qualification.
+
+### S6 and T11 acceptance review
+
+| Requirement | Accepted evidence and precise boundary |
+| --- | --- |
+| Authored semantic scenes | S2/S3 controlled original-owner producer/commit/restore routes cover terrain,players,enemies,powerups,effects,title/menu,HUD,death,warp and terminal captions;P3 covers all45 templates/332 pose-orientation combinations. No bitmap quantizer or second game model. |
+| Continuous playable rendering | Current1000-step game/input twin route preserves original state,pixels and command outputs;999 shared text frames match across widths. This finite route supplements controlled object/end-state contracts,not an all-world playthrough. |
+| Tab and snapshots | S4/S5 host contracts plus P4 actual DOS product normal/dynamic routes preserve graphics/text/P/O/held-key semantics. Win32 uses one owned GUI/console instance with verified4000-cell readback,palette and restored audio history. |
+| Safe presenter lifecycle | DOS device lifecycle/font/cursor/IRQ restore and setup-failure routes;Win32 allocation/clipping/detach recovery and disabled owned-close menu policy. Forced process/session termination is not graceful recovery. |
+| Three-target operation | Original DOS compile/link and current actual DOS product runtime;Windows32/64 product self-tests and owned-host integration routes. No product changes since S5P2;all three artifact identities retained. |
+| Memory and timing | Segment/DGROUP plus measured explicit far allocations and input-boundary stack samples;no segment-unsafe text array or large automatic frame. Real486SX performance/full stack peak is M4,not inferred from DOSBox. |
+| Historical incident | Named failure,successful retries,fixture boundary and unknown cause explicitly retained above;no false repair or cold-start credit from seeded routes. |
+
+S6 closes its admitted bounded presentation acceptance after node-ledger and
+documentation gates. T11 closes S1-S6;there is no further text placeholder or
+unimplemented presenter in this task. This accepts the text implementation,
+not M2 whole-ROM certification,exhaustive world reachability,physical desktop/RDP
+testing or M4 hardware qualification. Similar-issue sweep covers all three
+far allocations,CRT/logging measurement boundaries,seed/cold identity and
+pause preconditions,host switching and snapshot/audio continuity. Raw captures,
+saves and disposable diagnostic products are removed after neutral receipts.
+Scope/expected/actual=[];new0;historical1992/1992,local1991/1992nodes,
+4260/4261feasible controls,42/952facets unchanged. No remote or protected staging.

@@ -7800,13 +7800,13 @@
     {
       "id": "M3 T11",
       "evidence": [
-        "docs/proposals/colored-ascii-text-frame-gameplay.md"
+        "docs/history/M3-T11-colored-ascii-text-frame-gameplay.md"
       ],
       "subtasks": [
         {
           "id": "M3 T11 S1",
           "evidence": [
-            "docs/proposals/colored-ascii-text-frame-gameplay.md"
+            "docs/history/M3-T11-colored-ascii-text-frame-gameplay.md"
           ],
           "recordKinds": [
             "semantic-text-contract"
@@ -7819,7 +7819,7 @@
         {
           "id": "M3 T11 S2",
           "evidence": [
-            "docs/proposals/colored-ascii-text-frame-gameplay.md"
+            "docs/history/M3-T11-colored-ascii-text-frame-gameplay.md"
           ],
           "recordKinds": [
             "semantic-visible-observation"
@@ -7832,7 +7832,7 @@
         {
           "id": "M3 T11 S3",
           "evidence": [
-            "docs/proposals/colored-ascii-text-frame-gameplay.md"
+            "docs/history/M3-T11-colored-ascii-text-frame-gameplay.md"
           ],
           "recordKinds": [
             "semantic-full-scene-presentation"
@@ -7845,7 +7845,7 @@
         {
           "id": "M3 T11 S4",
           "evidence": [
-            "docs/proposals/colored-ascii-text-frame-gameplay.md"
+            "docs/history/M3-T11-colored-ascii-text-frame-gameplay.md"
           ],
           "recordKinds": [
             "dos-text-presenter-acceptance"
@@ -7858,7 +7858,7 @@
         {
           "id": "M3 T11 S5",
           "evidence": [
-            "docs/proposals/colored-ascii-text-frame-gameplay.md"
+            "docs/history/M3-T11-colored-ascii-text-frame-gameplay.md"
           ],
           "recordKinds": [
             "win32-text-presenter-acceptance"
@@ -7871,7 +7871,7 @@
         {
           "id": "M3 T11 S6",
           "evidence": [
-            "docs/proposals/colored-ascii-text-frame-gameplay.md"
+            "docs/history/M3-T11-colored-ascii-text-frame-gameplay.md"
           ],
           "recordKinds": [
             "integrated-text-presentation-acceptance"
@@ -7879,10 +7879,10 @@
           "canReceive": false,
           "admissionRole": "implementation",
           "receipt": "Owner-authorized sequential continuation after S5;integrated text routes and explicit T11-DOS-COLD-INPUT-P12 custody accepted;empty ROM scope.",
-          "state": "active"
+          "state": "closed"
         }
       ],
-      "state": "active"
+      "state": "closed"
     }
   ],
   "futurePackages": [
@@ -794694,7 +794694,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/colored-ascii-text-frame-gameplay.md",
+      "evidence": "docs/history/M3-T11-colored-ascii-text-frame-gameplay.md",
       "state": "closed"
     },
     {
@@ -796699,7 +796699,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/colored-ascii-text-frame-gameplay.md",
+      "evidence": "docs/history/M3-T11-colored-ascii-text-frame-gameplay.md",
       "state": "closed"
     },
     {
@@ -798704,7 +798704,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/colored-ascii-text-frame-gameplay.md",
+      "evidence": "docs/history/M3-T11-colored-ascii-text-frame-gameplay.md",
       "state": "closed"
     },
     {
@@ -800709,7 +800709,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/colored-ascii-text-frame-gameplay.md",
+      "evidence": "docs/history/M3-T11-colored-ascii-text-frame-gameplay.md",
       "state": "closed"
     },
     {
@@ -802714,7 +802714,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/colored-ascii-text-frame-gameplay.md",
+      "evidence": "docs/history/M3-T11-colored-ascii-text-frame-gameplay.md",
       "state": "closed"
     },
     {
@@ -804719,8 +804719,8 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/colored-ascii-text-frame-gameplay.md",
-      "state": "active"
+      "evidence": "docs/history/M3-T11-colored-ascii-text-frame-gameplay.md",
+      "state": "closed"
     }
   ]
 }
