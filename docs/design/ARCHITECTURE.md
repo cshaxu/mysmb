@@ -40,6 +40,14 @@ and window-close requests. No exit request changes original game state.
 
 Game code may request neutral buttons, frame ticks, and command sinks. Windows and DOS adapters translate those contracts to host APIs. Text rendering consumes game object/state commands; it never infers semantics from a bitmap. The runtime contains no 6502 CPU, generic NES PPU, or generic NES APU emulator. Platform selection happens at CMake target boundaries; `game/` does not fork on platform macros.
 
+Windows launch policy selects text for a direct CMD/PowerShell parent with an
+attachable console;other or unknown parents select graphics. Its temporary
+attachment only checks availability;the game allocates its own console and
+never reconfigures the shell. Console close posts the same root application
+exit as GUI close/Escape. Its bounded control thread waits for normal process
+exit;ordinary Tab detaches immediately,while host-close attachment teardown
+is left to process exit after root audio cleanup. DOS starts graphically.
+
 Shared IO declares selected one-cell CP437-compatible glyph IDs,with unchanged
 ASCII letters/digits and three-byte cells. Authored scene owners choose borders
 and silhouettes. Windows explicitly maps IDs to Unicode console cells;DOS

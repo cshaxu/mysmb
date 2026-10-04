@@ -173,7 +173,7 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     if(!GetConsoleScreenBufferInfo(g_console.output,&info) ||
         info.dwSize.X!=80 || info.dwSize.Y!=50)return 6;
     close_state=GetMenuState(GetSystemMenu(g_console.window,FALSE),SC_CLOSE,MF_BYCOMMAND);
-    if(close_state==(UINT)-1 || !(close_state&(MF_DISABLED|MF_GRAYED)))return 45;
+    if(close_state==(UINT)-1 || (close_state&(MF_DISABLED|MF_GRAYED)))return 45;
     ZeroMemory(&color_info,sizeof(color_info));color_info.cbSize=sizeof(color_info);
     if(!GetConsoleScreenBufferInfoEx(g_console.output,&color_info))return 43;
     for(i=0U;i<16U;++i) {

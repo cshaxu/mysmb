@@ -15,6 +15,7 @@
 #include "platform/win32/audio_output.h"
 #include "platform/win32/focus_pause.h"
 #include "platform/win32/text_console.h"
+#include "platform/win32/launch.h"
 #include "game/presentation/text/scene.h"
 
 #ifdef MYSMB_LOCAL_TITLE
@@ -180,7 +181,7 @@ static void mysmb_win32_switch_presenter(HWND window,int activate)
 {
     g_switching=1U;
     if(!g_text_mode) {
-        if(mysmb_win32_text_console_open(&g_console)) {
+        if(mysmb_win32_text_console_open(&g_console,window)) {
             g_text_mode=1U;
             if(activate) {
                 ShowWindow(window,SW_HIDE);
@@ -444,8 +445,8 @@ static LRESULT CALLBACK mysmb_win32_window_proc(HWND window, UINT message,
         return 0;
     }
     if (message == WM_DESTROY) {
-        mysmb_win32_text_console_close(&g_console);
         mysmb_win32_audio_close(&g_audio_output);
+        mysmb_win32_text_console_close(&g_console);
         PostQuitMessage(0);
         return 0;
     }
@@ -457,6 +458,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     WNDCLASS window_class;
     HWND window;
     MSG message;
+    int start_text;
 
     (void)previous;
     mysmb_io_control_initialize(&g_control);
@@ -467,6 +469,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
         return 2;
 #endif
     }
+    start_text=mysmb_win32_start_in_text();
     ZeroMemory(&window_class, sizeof(window_class));
     window_class.lpfnWndProc = mysmb_win32_window_proc;
     window_class.hInstance = instance;
@@ -497,8 +500,14 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     if (window == NULL) {
         return 1;
     }
-    ShowWindow(window, show);
-    UpdateWindow(window);
+    if(start_text)mysmb_win32_switch_presenter(window,0);
+    if(g_text_mode) {
+        ShowWindow(g_console.window,show);
+        SetForegroundWindow(g_console.window);
+    } else {
+        ShowWindow(window, show);
+        UpdateWindow(window);
+    }
     g_audio_available = mysmb_win32_audio_open(&g_audio_output) != 0 ? 1U : 0U;
     g_title_paused = 2U;
     mysmb_win32_update_title(window);

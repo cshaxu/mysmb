@@ -8,7 +8,8 @@ struct mysmb_win32_text_console {
     unsigned char opened;
     CHAR_INFO cells[MYSMB_IO_TEXT_CELLS];
 };
-int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console);
+int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console,
+    HWND owner);
 void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console);
 int mysmb_win32_text_console_present(struct mysmb_win32_text_console *console,
     const struct mysmb_io_text_frame *frame);

@@ -2,10 +2,8 @@
 
 **Idle.**
 
-M3 T12 and corrective evidence reconciliation are closed. Authored detail,
-static/dynamic information and original committed-color animation have the
-reviewed evidence in [T12 history](../history/M3-T12-authored-text-detail.md).
-The [queue](QUEUE.md) retains deferred M2 certification;no successor admitted.
+M3 T13 is closed. [Queue](QUEUE.md) retains deferred M2 certification;
+no successor admitted.
 
 ## Current Technical Baseline
 
@@ -18,10 +16,10 @@ The [queue](QUEUE.md) retains deferred M2 certification;no successor admitted.
   6/136 groups and42/952 facets closed,130 groups/910 facets pending.
   Material993 partial,not a denominator;two findings/all13 coverage slots open.
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
-- M3 T9/T10/T11/T12 are closed. Remaining M2 verification stays at the
+- M3 T9/T10/T11/T12/T13 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products remain360987/439336/454504bytes.
-  T12 S2 refreshes all three products after authored text/detail repairs.
+- Current local DOS16/Win32/x64 products are360987/442635/458788bytes.
+  T13 S1 rebuilds all three;DOS remains byte-identical to T12.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
   pass;seeded presenter equality is explicitly separate. Real486SX speed,
@@ -29,48 +27,18 @@ The [queue](QUEUE.md) retains deferred M2 certification;no successor admitted.
 
 ## Compact closure status
 
-M3 T10:shared snapshot codec/store and P/O bindings closed;uninterrupted restore,
-PCM history and DOS/Windows runtime contracts retained in
+M3 T13 S1 P1 closes startup presenter selection and enabled console close.
+Both widths7focused tests and six real launch/close routes pass;owned Tab,
+Unicode,snapshot,focus,audio and recovery regressions pass. Original DOS16
+build/default-graphics check passes. Code/build/tests10files,+306/-14lines;
+local products refreshed. Empty ROM scope/new0,no remote. Details and limits:
+[T13 history](../history/M3-T13-win32-startup-console-lifecycle.md).
+
+M3 T12 authored glyphs,contours,static/dynamic text and committed-color animation
+remain closed;[T12 history](../history/M3-T12-authored-text-detail.md).
+
+M3 T11 semantic text,caption/snapshot/focus/host routes remain closed;
+[T11 history](../history/M3-T11-colored-ascii-text-frame-gameplay.md).
+
+M3 T10 shared snapshot/file/P-O contracts remain closed;
 [T10 history](../history/M3-T10-shared-io-quick-snapshot.md).
-
-M3 T11 S6 P4/T closure:45kinds/332 pose-orientation checks,1000-step original-output
-continuity/999cross-width frames,13focused tests per width,owned Windows console
-snapshot/focus/audio routes and both product self-tests pass. Actual DOS normal/
-dynamic seeded Tab/P/O/Escape routes pass;20diagnostic memory samples show intact
-heap,96924explicit payload bytes and1090sampled stack headroom. These are bounded
-presentation proofs,not full-world or hardware qualification. Diagnostic test
-+13/-2lines;products retained,empty ROM scope/new0,no remote. Historical incident
-and all evidence limits remain explicit in the T11 history review.
-
-
-M3 T11 S7 P1:409 final-composed/restored caption cases check4566glyphs;
-147natural startup lives frames pass. Unknown tokens fail,64background colors
-have contrasting text. Both widths13focused tests/owned-console/product routes,
-999cross-width frames and original-output equality pass;originalDOS16/current
-cold DOSBox Tab/P/O/Escape pass. Three source/testfiles,+136/-2lines;
-three products359627/436779/452427bytes. Empty ROM scope/new0,no remote.
-Fine-detail study recommends authored line/half-block glyphs in80x50;
-no extended repertoire or finer grid delivered by S7.
-
-M3 T12 S1 P1 closes shared glyph/border delivery;13tests per width,16glyph
-Unicode/device checks,caption/continuity/DOS routes pass. Three local products
-refreshed;ROM credit0. S2 subsequently closed.
-
-M3 T12 S2 P1 closes contours,score contrast/anchor and committed-color repairs.
-16384word cases,5120actual flag cases,12palette phases and both13test suites
-pass;three products refreshed. Empty ROM scope,new0. S3 subsequently closed.
-
-M3 T12 S3 P1/T closure:actual DOS authored-template/VGA join verifies64word
-cases and16extended slots;test tools2files,+21/-4lines. T12 closes its glyph,
-contour,dynamic information and palette-animation clauses using retained S1/S2
-receipts and current three product bindings. No unresolved T12 finding,new0;
-M2 certification/physical host appearance/486qualification are not inferred.
-See [T12 history](../history/M3-T12-authored-text-detail.md).
-
-M3 T12 corrective S4 P1 reconciles the persistent text-optimization goal with
-current source/test coverage,retained runtime receipts and all3actual product
-hashes. It corrects only T11 S7's historical size summary to its closure-time
-359627/436779/452427bytes;current T12 products remain360987/439336/454504bytes.
-No source changes,artifact refresh or new audit credit. All named T12 clauses
-have retained proof;physical font appearance/486performance and M2 certificate
-remain separate. T12 remains closed.

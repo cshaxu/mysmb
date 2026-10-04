@@ -1,7 +1,21 @@
 #include "platform/win32/text_console.h"
 #include "io/color.h"
 #include "io/text_glyph.h"
-int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console)
+static HWND exit_owner;
+static volatile LONG close_pending;
+static BOOL WINAPI mysmb_win32_console_control(DWORD event)
+{
+    if(event!=CTRL_CLOSE_EVENT)return FALSE;
+    InterlockedExchange(&close_pending,1L);
+    if(PostMessage(exit_owner,WM_CLOSE,0U,0L))
+        /* Returning before the root exits causes STATUS_CONTROL_C_EXIT.
+         * Normal CRT process exit stops this thread after device cleanup.
+         * The bounded wait lets Windows terminate a genuinely hung root. */
+        (void)WaitForSingleObject(GetCurrentProcess(),4000U);
+    return TRUE;
+}
+int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console,
+    HWND owner)
 {
     COORD size;
     SMALL_RECT tiny,view;
@@ -12,8 +26,14 @@ int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console)
     unsigned int i;
     unsigned long rgb;
     if(console->opened)return 1;
+    if(!owner)return 0;
     if(!AllocConsole())return 0;
     console->opened=1U;
+    exit_owner=owner;
+    InterlockedExchange(&close_pending,0L);
+    if(!SetConsoleCtrlHandler(mysmb_win32_console_control,TRUE)) {
+        mysmb_win32_text_console_close(console);return 0;
+    }
     console->input=GetStdHandle(STD_INPUT_HANDLE);
     console->output=GetStdHandle(STD_OUTPUT_HANDLE);
     console->window=GetConsoleWindow();
@@ -46,10 +66,9 @@ int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console)
     cursor.dwSize=1;cursor.bVisible=FALSE;
     (void)SetConsoleCursorInfo(console->output,&cursor);
     (void)SetConsoleTitleA("MySMB text preview - Tab: graphics");
-    /* The console host's close button can terminate a GUI process before its
-     * message loop gets a recovery event. Use Tab to return,Escape to exit. */
+    /* Close requests the same root-owned exit as Escape and the GUI button. */
     if(EnableMenuItem(GetSystemMenu(console->window,FALSE),SC_CLOSE,
-        MF_BYCOMMAND|MF_GRAYED)==(UINT)-1) {
+        MF_BYCOMMAND|MF_ENABLED)==(UINT)-1) {
         mysmb_win32_text_console_close(console);return 0;
     }
     return 1;
@@ -57,7 +76,14 @@ int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console)
 void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console)
 {
     if(!console->opened)return;
-    FreeConsole();console->opened=0U;console->window=NULL;
+    /* During host close,detaching/unregistering can hand termination back to
+     * the default handler before the CRT exit. Leave attachment teardown to
+     * process exit;ordinary Tab/recovery detaches immediately. */
+    if(!InterlockedCompareExchange(&close_pending,0L,0L)) {
+        (void)SetConsoleCtrlHandler(mysmb_win32_console_control,FALSE);
+        FreeConsole();
+    }
+    console->opened=0U;console->window=NULL;
     console->input=console->output=NULL;
 }
 int mysmb_win32_text_console_present(struct mysmb_win32_text_console *console,
