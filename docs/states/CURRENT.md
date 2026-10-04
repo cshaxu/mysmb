@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M3 T11 S2 active;P3 read-only actor scene/template composition active within S2. |
+| Identifier Mode | Continuation:M3 T11 S2 active;P3 committed;P4 semantic background/HUD assembly active within S2. |
 | Admission And Approval | Automatic next-S admission under owner mandate after S1 reviewed local commit. |
 | Objective | Connect isolated text elements to existing draw decisions and committed visible scenes,with explicit lifetime/restore handling. |
 | Non-goals | No gameplay rewrite,ROM credit or platform Tab binding;those presenters remain S4/S5. |
 | Reference Baseline | Historical1992/1992;local1991/1992nodes,4260/4261feasible controls;42/952facets,M2 incomplete. |
 | Candidate Proposal | [T11 S2](../proposals/colored-ascii-text-frame-gameplay.md#s2-admission). |
-| Files And ABI Surface | game presentation and minimal observation sites,scene/restore binding,focused tests/build;amended estimate25-35files,600-1000lines. P1 embeds optional bounded observer buffers;unchanged snapshot restore invalidates them. Immediate loaded text/background/all-family coverage remain open within S2. |
+| Files And ABI Surface | game presentation and minimal observation sites,scene/restore binding,focused tests/build;amended estimate25-35files,1200-2000lines after scene assembly. P1 embeds optional bounded observer buffers;unchanged snapshot restore invalidates them. Remaining loaded-text/all-family/geometry coverage stays open within S2. |
 | Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Documentation and source policy. |
 | Verification | Enabled/disabled observation original-state/OAM/VRAM/audio/pixel equality;visible phase,ownership/clipping,background/HUD,restore;both native widths,originalDOS16 and3products,purity/governance. |
 | Expected Markers | Scope[],expectedMatches[],actualMatches[],new0;all ROM counters retained. |
@@ -73,9 +73,17 @@ remaining source/restore coverage,not a new S or ROM credit.
 
 P3:read-only whole-actor template composition,16-color/fill and final-entry
 clipping. Bothwidths six focused tests;1000-step twin route zero original
-core/frame/pixel differences,1804template draws and no game/observer mutation.
+core/frame/pixel differences,1729template draws and no game/observer mutation.
 StrictC90,originalDOS16 ABI/link and3localproducts327999/397671/412237bytes;
 DOS DGROUP45600bytes,actualDOSBox title/Start/run/jump/left/release/Escape pass.
 S2 remains active:background/HUD,remaining poses/writers,
 segmented geometry/priority and immediate snapshot continuity still pending.
 No playable text or Tab binding yet;no ROM credit. See P3 receipt for limits.
+
+P4:semantic background grouping/fills and fixed HUD compose with actor templates.
+Bothwidths seven focused tests,C90 and originalDOS16 far ABI/product link pass.
+Three products refreshed,byte-identical to P3;its actualDOSBox receipt retained.
+999textframes/11988000bytes match across widths;1000-step twin game retains zero
+original core/frame/pixel differences and no presentation-induced mutation.
+Workspace2400bytes caller-owned/far. Residual title/metatile/actor/priority/restore
+obligations are named in P4 receipt;S2 remains active,no host text/Tab yet.

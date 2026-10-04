@@ -382,7 +382,7 @@ The compositor accepts an existing cell frame,ready for the background layer.
 
 Both native widths pass six focused tests,including snapshot,purity and the
 actual graphical-product self-test. The1000-step twin route has zero original
-core/frame/pixel differences and1804 actor-template draws;rendering also leaves
+core/frame/pixel differences and1729 actor-template draws;rendering also leaves
 the whole game and observer unchanged. These are finite native non-interference
 checks,not original-ROM proof or exhaustive animation coverage. Strict C90 and
 the originalDOS16 far-pointer compiler/product link pass. Three local products
@@ -409,3 +409,59 @@ conclusions contain only semantic classifications/addresses and project-owned
 art. Background checks must distinguish blank/hidden blocks,pipe/cloud/grass
 grouping,visible commit,scroll/HUD split and ambiguous tile aliases before any
 coverage claim. No collision-buffer substitute or bitmap quantizer is allowed.
+
+### S2 P4 background assembly scope
+
+Reconstruct committed16x16 metatile identities through the immutable local
+graphics-pointer tables,including attribute palettes and ambiguous visual
+aliases. Group connected pipe/cloud/bush/hill parts before drawing authored
+geometry;individual bricks/questions/coins remain individual elements. Read
+the committed split/scroll state for HUD versus scene. Use caller-owned far
+workspace,not a large16-bit stack/global cache. Estimate5-8files,400-650lines.
+Fixtures are project-authored synthetic tables;the owner-resource twin route
+checks non-interference and actual reconstruction coverage. Unsupported or
+ambiguous visual classes remain counted;no coverage inferred from collisions.
+Provenance/purpose/containment are the P3 research boundary above. Actor
+priority,remaining templates and restored observer continuity remain S2 work.
+The optional native text-stream comparison is bounded to1000frames,widths2,
+12000000bytes each and60seconds per route,below the ignored S2 build subtree.
+The coordinator deletes streams after byte comparison and neutral summary;
+one authored-character preview may be retained locally. No ROM/CHR pixels
+or raw program-state fixture is exported.
+
+### S2 P4 review receipt
+
+Six source/test/build files change380added/2removed lines and add semantic metatile reconstruction,a caller-owned
+2400-byte far workspace and grouped authored pipe/cloud/bush/hill geometry.
+The whole-S2 line forecast becomes1200-2000 instead of600-1000 because scene
+assembly needs its own bounded geometry and validation fixtures.
+Foreground/background fills use the committed palette;clouds use the light
+body color with dark outlines,not the sky shade. Individual terrain/block/coin
+elements retain independent borders. Blank/hidden metatiles stay blank and
+conflicting aliases are counted rather than assigned an invented identity.
+HUD letters/numbers come from committed table zero under the original split;
+scene scroll/table selection uses the same committed fields as graphical output.
+
+Both widths pass seven focused tests;the synthetic fixture checks pipe grouping,
+opaque body fill,white cloud color,hidden/live-state independence,ambiguous
+aliases,table-one scrolling,fixed HUD and failed/disabled inputs. Strict C90 and
+the original16-bit far-pointer compile pass;originalDOS16 product link and
+both graphical products build. Three refreshed products are byte-identical
+to P3,so its actualDOSBox receipt remains applicable:327999/397671/412237bytes.
+
+The1000-step native twin route still has zero original core/frame/pixel
+differences and no game/observer mutation. It produces999 complete text frames
+(one startup step has no rendered frame);all11988000bytes compare equal across
+x86/x64. It records1729 actor draws,56681 background component draws and20579
+unrecognized metatile occurrences across both backing tables and all phases.
+These counters are route diagnostics,not unique-object coverage or a proof
+of full background acceptance. Streams were deleted after comparison;an authored
+character/color preview remains local. The previous1804actor count was an
+intermediate unrestricted-template run;P3/P4 accepted restrictions yield1729.
+
+S2 remains open. Pending:unsupported title/menu/text/icon owners and residual
+metatile cases;special side-pipe/ledge/rope geometry;remaining actor poses and
+writers;segmented parts,background/sprite priority and immediate snapshot
+observer continuity. The current image is a development composition preview,
+not a playable host text mode. No roots enable it yet;Tab remains S4/S5.
+ROM node/edge/facet counters and remaining M2 certification scope are unchanged.

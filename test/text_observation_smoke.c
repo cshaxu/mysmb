@@ -3,6 +3,7 @@
 #include "game/ppu_frame.h"
 #include "game/oam/oam.h"
 #include "game/presentation/text/actor_scene.h"
+#include "game/presentation/text/background_scene.h"
 #include "app/game_snapshot.h"
 #include <stdio.h>
 #include <string.h>
@@ -16,6 +17,7 @@ static struct mysmb_game observed,plain,before;
 static struct mysmb_io_snapshot first,second;
 static struct mysmb_ppu_frame pixels1,pixels2;
 static struct mysmb_io_text_frame text;
+static struct mysmb_text_background_workspace background;
 #define CHECK(c) do { if (!(c)) { \
     fprintf(stderr,"observation check line %d\n",__LINE__); return 1; \
 } } while (0)
@@ -57,13 +59,16 @@ static int compare_draw(void (*draw)(struct mysmb_game *,mysmb_u8),
     return 1;
 }
 
-int main(void)
+int main(int argc,char **argv)
 {
     struct mysmb_input input;
     struct mysmb_frame frame1,frame2;
     struct mysmb_text_actor_receipt actor_receipt;
+    struct mysmb_text_background_receipt background_receipt;
     unsigned char fingerprint[16];
     unsigned int i,j,player,enemy,running,text_actors;
+    unsigned long background_objects,background_unknown;
+    FILE *preview;
 
     memset(&observed,0,sizeof(observed));
     observed.ram[0x0200U]=100U; observed.ram[0x0201U]=1U;
@@ -134,6 +139,9 @@ int main(void)
     mysmb_game_snapshot_fingerprint(&observed,fingerprint);
     memset(&frame1,0,sizeof(frame1));memset(&frame2,0,sizeof(frame2));
     input.buttons2=0U;player=0U;enemy=0U;running=0U;text_actors=0U;
+    background_objects=background_unknown=0UL;
+    preview=argc==2?fopen(argv[1],"wb"):0;
+    CHECK(argc!=2 || preview!=0);
     for(i=0U;i<1000U;++i) {
         CHECK(mysmb_game_startup_step(&observed,1U)==
             mysmb_game_startup_step(&plain,1U));
@@ -152,7 +160,17 @@ int main(void)
         CHECK(memcmp(pixels1.pixels,pixels2.pixels,sizeof(pixels1.pixels))==0);
         before=observed;
         CHECK(mysmb_text_elements_build(0,0U,9U,&text));
+#ifdef MYSMB_LOCAL_TITLE
+        CHECK(mysmb_text_background_scene_build(&observed,&background,&text,&background_receipt));
+        background_objects+=background_receipt.objects;
+        background_unknown+=background_receipt.unsupported;
+#else
+        (void)background_receipt;(void)background;
+#endif
         CHECK(mysmb_text_actor_scene_draw(&observed,&text,&actor_receipt));
+        if(preview!=0) {
+            CHECK(fwrite(&text,1U,sizeof(text),preview)==sizeof(text));
+        }
         CHECK(memcmp(&observed,&before,sizeof(observed))==0);
         text_actors+=actor_receipt.drawn;
         CHECK(observed.text_observer.producer.overflow==0U);
@@ -163,6 +181,7 @@ int main(void)
             if(observed.text_observer.visible.items[j].family==2U)enemy++;
         }
     }
+    if(preview!=0)CHECK(fclose(preview)==0);
 #ifdef MYSMB_LOCAL_TITLE
     CHECK(running>100U && player>100U && enemy>0U);
     CHECK(text_actors>100U);
@@ -178,5 +197,7 @@ int main(void)
         "running=%u player=%u enemy=%u observer_bytes=%u\n",
         running,player,enemy,(unsigned int)sizeof(struct mysmb_text_observer));
     printf("authored actor layer: %u draws; game and observer unchanged\n",text_actors);
+    printf("semantic background: %lu objects, %lu unknown metatiles; no game mutation\n",
+        background_objects,background_unknown);
     return 0;
 }

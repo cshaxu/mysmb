@@ -114,6 +114,9 @@ try {
     $textScene = Join-Path $SourceRoot 'game/presentation/text/actor_scene.c'
     & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fotext_actor_scene.obj /I $IncludeDirectory $textScene
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+    $textBackground = Join-Path $SourceRoot 'game/presentation/text/background_scene.c'
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fotext_background_scene.obj /I $IncludeDirectory $textBackground
+    if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     $objects = @()
     foreach ($relativeSource in $sources) {
         $source = Join-Path $SourceRoot $relativeSource
