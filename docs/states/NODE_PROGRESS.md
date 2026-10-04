@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P144 completed pixel mask repair](../proposals/m2/t70-final-current-certification.md#s17-p144-checkpoint---original-display-mask-output-repaired).
+S17 P144:sharedpixel consumer nowobeys original visiblePPUmask background/sprite enable andleft8clip. Fixed512framecoldStart/right-held route bothwidths fullnonphysicalstate/finalpixels0diff;179activeframes/all8fineX values. Predecessor360380pixeldiffs in42disabledpreparationframes;newmaskregressionoldexit5/current0. Sixfocusedtests/fullmodernbuilds/self-tests/originalOpenNT16linkpass;threeEXEs refreshed. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
 [P143 group decision prefix](../proposals/m2/t70-final-current-certification.md#s17-p143-checkpoint---complete-group-decision-prefix).
 S17 P143:5120actualoriginal C144->C26C decision-prefix routes eachwidth0RAM/APU/orderdiff,64maskedIDs*5slots*2hard*8stateprofiles. Original C1FBfallthrough toC1FD observed80times(raw3F),groupbranch640times;Cclassificationand firstinitializer handoff matcheven raw3F. Downstream original3F invalidtarget and globallegalstream proof remainopen;no node/control promotion. Fivefocusedtests eachwidthpass,123source/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 

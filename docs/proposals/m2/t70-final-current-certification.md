@@ -10414,3 +10414,49 @@ Existing CheckForEnemyGroup/control-01480 evidence gap. Compare unchanged produc
 S17 P143:5120actualoriginal C144->C26C decision-prefix routes eachwidth0RAM/APU/orderdiff,64maskedIDs*5slots*2hard*8stateprofiles. Original C1FBfallthrough toC1FD observed80times(raw3F),groupbranch640times;Cclassificationand firstinitializer handoff matcheven raw3F. Downstream original3F invalidtarget and globallegalstream proof remainopen;no node/control promotion. Fivefocusedtests eachwidthpass,123source/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
 Exactparticipants:CheckForEnemyGroup,BuzzyBeetleMutate,StrID,InitEnemyObject,DoGroup,HandleGroupEnemies. No code change;node/controlcredit0. OriginalCheckpointEnemyID C26C is the declared child boundary. For eachmasked ID,readonlyPRG has an existing bytepair with ordinary row00-0B. Fixtures install itsactual address E9/EA,cursor0,page1,pageSelect1,ScreenRightX equalfirstbyte highnibble,SecondaryHardMode1;no ROM bytes rewritten. Five regularslots,twoPrimaryHard values,eight state/slotavailability profiles. This tests arbitrary installed ordinary bytepairs,notonlycanonicalstreamgrammar. Reference actually executes unchanged ROM C144 until firstC26C. Native executes unchanged production stream.c/group.c with linker wrapper capturing firstmysmb_enemy_checkpoint_loaded inputRAM,without childexecution. Subsequent stubbedchildren/returnresults are discarded;the compared valueis firsthandoffonly. Thus raw3F isproven toreceive ID3F/flag1/state0 inboth,notassumedunreachable;childinvalidtarget4A07 isoutside thisprefixandremainsexplicit. Registers/flags belongreferencecontroltracking,the Creturnvalue andphysicalstackABI arenotcompared. MinimumSPFB;only01F0-01FFdeclaredphysicalABIexcluded,2032otherRAMplus24APUandorderedwritesincluded. Full64IDbranchpartition(source<37,37..3E,3F)andhardGoombamutation observed. FreshC1FBtaken640/fallthrough80;all sixnodeinstructions C1F1/F3/F5/F7/F9/FB observed. Fiveactualfocusedtests eachwidth:enemy-stream-smoke,group-enemy-chain,enemy-stream,enemy-stream-local-consumer,platform-purity. Batches<=4096records<18MiB/120s/rawdeleted. 123normalizedidentities/P123productsremainunchanged. Scoped classificationgapresolved;existing node/edge conservative needs-evidence remainsuntildownstream/pointerdomainclause isclosed,so noaggregateexactpromotion.
+
+## S17 P144 admission - completed pixel output dependency preflight
+
+Bounded read-only producer/output dependency diagnostic for existing pixels gap,not admission/closure of successor S18. NMI visible scroll/control/OAM phase owners already S17 participants:NonMaskableInterrupt,Sprite0Clr,Sprite0Hit,HBlankDelay,SkipSprite0. Unchanged production shared ppu_frame consumer compared to real reference PPU completed palette samples on one fixed512frame coldStart/right-held route. At eachoriginal NMI RTI cloneonlyPPU state andtickremainingvisibleframe toVBlank;sourceCPU mainline mustbecheckedforabsenceof interveningPPUwrites. Retain mode/task/scroll/mask phase and actualpixel coordinates,differences notsilentlymasked. Pixeldecoder/reference hardware andtiming assumptionsexplicit,no globalpixelcredit or futurepackageclosure. Eachrawreference/native pair<=128MiB,120s/process/rawcleanup,ROMreadonly. Code mismatchrequires explicitcorrectiveamendment before productedit. No productchange/no EXErefresh,graphcredit0.
+
+### P144 corrective scope amendment - shared display mask consumer
+
+Original completed-pixel preflight after correct CHR binding has zero state
+differences and zero pixels differences in 179 active gameplay frames,
+including all eight fine-X values, but 360380 pixel differences in 42
+display-disabled preparation frames. Original ScreenOff/InitBuffer publish
+physical masks 0/6/30; shared ppu_frame.c ignores visible_ppu_mask and draws
+tile/sprite content even when source rendering is disabled. Coordinator
+admits this exact output-consumer repair under the existing owner mandate:
+preserve the source mask background/sprite enable and left-eight-pixel
+selection in the shared renderer; no platform edit or game-rule substitution.
+Affected source owners: NonMaskableInterrupt,ScreenOff,InitBuffer,
+Sprite0Clr,Sprite0Hit,HBlankDelay,SkipSprite0; original visible-phase fields
+are already captured by frame_root and remain unchanged. Add a focused
+mask output regression, repeat the same fixed512-frame original/native
+manifest and operational checks, build/package all three products with
+the original DOS16 toolchain. Only ppu_frame.c and its existing unit test
+may change. First probe lacked CHR and used an insufficient stack exclusion;
+neither its apparent pixel nor state differences are product evidence.
+Corrected probe binds CHR, observes minimum SP EC and excludes only actual
+physical01ED-01FF pushes; all other RAM/PPU metadata compare unchanged.
+No new node/control/material denominator credit or final M2 closure follows
+from this finite output repair.
+
+## S17 P144 checkpoint - original display mask output repaired
+
+S17 P144:sharedpixel consumer nowobeys original visiblePPUmask background/sprite enable andleft8clip. Fixed512framecoldStart/right-held route bothwidths fullnonphysicalstate/finalpixels0diff;179activeframes/all8fineX values. Predecessor360380pixeldiffs in42disabledpreparationframes;newmaskregressionoldexit5/current0. Sixfocusedtests/fullmodernbuilds/self-tests/originalOpenNT16linkpass;threeEXEs refreshed. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
+Exactparticipants:NonMaskableInterrupt,ScreenOff,InitBuffer,Sprite0Clr,Sprite0Hit,HBlankDelay,SkipSprite0. Freshnode/controlcredit0.
+
+The final output comparison uses real original PPU completed palette samples,not screenshots,nametable equality or a reconstructed original tile map. At eachoriginal8181NMIreturn,copy the actualPPUstate andtick to241/1 VBlank. Original mainline737EndlessLoop onlyJMPs untilnextNMI andIRQremainmasked,so thereare no interveningCPU PPUpalette/scroll/OAMwrites inthisspan. NROM cartridge/media isreadonly;PPU clone preservesactualtop rows andfetch/digital-outputpipeline. Native runs actualunchangedframe_root/gameentry plus the repairedsharedrenderer. Bothx86/x64 compare512full256x240frames includingtitle,disabledconstruction,gameentry and179gameplayframes;all8actualfine-Xvalues observed. State comparison separatelyincludesRAM/CIRAM/palette/OAM/audio/physicaldisplayscalars. ActualminimumSPEc,physical01ED-01FF excludedonlyafter originalstackbus audit findsno ordinarygamewrite inthatinterval. Allotherstate bytescompare0. Rawreference/native pair<=128MiB,120s/process,deletedaftereachwidth. Thisisonefixed512frame route,notwholegame,allPPUrawstates orfinal-completion coverage.
+
+Firstdiagnostic omittedCHR binding in the state-only recorder andusedtoo-narrow01F0stackexclusion;thatresult isdiscarded. Correctedprobe bindsmysmb_local_chr andusesactualphysicalpush range. Predecessor thenhaszeroRAM/outputmetadata differences andzeroactive-gameplay pixels,with360380realpixeldifferences across42mask0/6disabledpreparationframes. Production ignoredvisible_ppu_mask despiteoriginalScreenOff/InitBuffer phasepublication. Repair enablesbackground onlybit3,sprites onlybit4;low8columnselection obeysbits1/2 andbehind-background tests respectwhetherbackgroundisactuallyenabled. No renderer/platformgamebranch or sourceROMlogic substitution. Similar-issue sweep findsone shared pixel builder consumedunchangedbybothWin32/DOSroots;frame_root alreadycapturescorrectvisiblemask andsnapshot carriesit. Other123translatedsourceidentities unchanged. Onlysharedppu_frame.c andexistingunit testmodified. Newtests checkuniformdisabledoutput,independentbackground/spriteenable andleft8clip;bothwidths predecessor exit5,current0. Corrected512framereplay afterrepairhaszerostate andzeroallpixel differences inbothwidths. Thiscovers thenamedsplit/fineXalternativesobservedonthefixedroute;S18/finalpixelpackage isnotquietlyclosedoradmitted.
+
+SixfocusedCTestseachwidth:ppu-frame-smoke,frame-snapshot-smoke,text-frame-smoke,vga-frame-smoke,dos16-root-smoke,platform-purity. Fullmodernx86/x64buildsexit0;bothproducts --self-testexit0. OriginalOpenNTcl16/link16compile/linkexit0,knownOLDNAMESlibrarywarning retained. DOS is compile/link evidenceonly;itscurrentcomposition/graphical qualification staysinexplicitlaterwork. ProductheadersvalidatedMZ/PE32/PE32+andthreeassets refreshedlocally;noROM-derivedbinary staged. Existingunrelatedworkspaceedits preserved.
+
+| Target | Bytes | SHA256 |
+| --- | --- | --- |
+| mysmb16.exe | 260011 | 55428ccaa0ee8df39141846b33bcdab3df5dd47fb092636caf0f4ecb9d532d75 |
+| mysmb32.exe | 374219 | 7e7b613aaa4908b99dc213867b7acd3b49588d24e812fcaffa310d341bc76ca5 |
+| mysmb64.exe | 380216 | a38c2704cfb56d0a01299b0e863d8d525a49823fe7a76573658b473de99f2073 |

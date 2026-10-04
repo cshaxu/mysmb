@@ -96,12 +96,17 @@ void mysmb_ppu_frame_build(const struct mysmb_game *game,
         scroll_x = y < fixed_top_height ? 0U : game->visible_scroll_x;
         scroll_y = y < fixed_top_height ? 0U : game->visible_scroll_y;
         for (x = 0U; x < MYSMB_SCREEN_WIDTH; ++x) {
-            frame->pixels[y * MYSMB_SCREEN_WIDTH + x] = mysmb_ppu_background_pixel(
-                game, x, y, scroll_x, scroll_y,
-                y < fixed_top_height ? 0U : game->visible_ppu_name_table,
-                &opaque);
+            if ((game->visible_ppu_mask & 0x08U) != 0U &&
+                (x >= 8U || (game->visible_ppu_mask & 0x02U) != 0U)) {
+                frame->pixels[y * MYSMB_SCREEN_WIDTH + x] =
+                    mysmb_ppu_background_pixel(game, x, y, scroll_x, scroll_y,
+                        y < fixed_top_height ? 0U : game->visible_ppu_name_table,
+                        &opaque);
+            }
+            else frame->pixels[y * MYSMB_SCREEN_WIDTH + x] = game->palette[0U];
         }
     }
+    if ((game->visible_ppu_mask & 0x10U) == 0U) return;
     for (sprite = 64U; sprite != 0U;) {
         --sprite;
         sprite_y = (mysmb_u16)game->visible_oam[sprite * 4U] + 1U;
@@ -123,7 +128,10 @@ void mysmb_ppu_frame_build(const struct mysmb_game *game,
                 if (color == 0U) continue;
                 y = (mysmb_u16)(sprite_y + pixel_y);
                 x = (mysmb_u16)(sprite_x + pixel_x);
-                if ((attributes & 0x20U) != 0U) {
+                if (x < 8U && (game->visible_ppu_mask & 0x04U) == 0U) continue;
+                if ((attributes & 0x20U) != 0U &&
+                    (game->visible_ppu_mask & 0x08U) != 0U &&
+                    (x >= 8U || (game->visible_ppu_mask & 0x02U) != 0U)) {
                     scroll_x = y < fixed_top_height ? 0U : game->visible_scroll_x;
                     scroll_y = y < fixed_top_height ? 0U : game->visible_scroll_y;
                     (void)mysmb_ppu_background_pixel(game, x, y, scroll_x, scroll_y,
