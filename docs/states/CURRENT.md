@@ -2,9 +2,9 @@
 
 **Idle.**
 
-M3 T12 is closed:authored borders/half-block contours,dynamic readable scores
-and original committed-color animation. All enumerated static text checks
-remain. See [T12 history](../history/M3-T12-authored-text-detail.md).
+M3 T12 and corrective evidence reconciliation are closed. Authored detail,
+static/dynamic information and original committed-color animation have the
+reviewed evidence in [T12 history](../history/M3-T12-authored-text-detail.md).
 The [queue](QUEUE.md) retains deferred M2 certification;no successor admitted.
 
 ## Current Technical Baseline
@@ -48,7 +48,7 @@ M3 T11 S7 P1:409 final-composed/restored caption cases check4566glyphs;
 have contrasting text. Both widths13focused tests/owned-console/product routes,
 999cross-width frames and original-output equality pass;originalDOS16/current
 cold DOSBox Tab/P/O/Escape pass. Three source/testfiles,+136/-2lines;
-three products360987/439336/454504bytes. Empty ROM scope/new0,no remote.
+three products359627/436779/452427bytes. Empty ROM scope/new0,no remote.
 Fine-detail study recommends authored line/half-block glyphs in80x50;
 no extended repertoire or finer grid delivered by S7.
 
@@ -66,3 +66,11 @@ contour,dynamic information and palette-animation clauses using retained S1/S2
 receipts and current three product bindings. No unresolved T12 finding,new0;
 M2 certification/physical host appearance/486qualification are not inferred.
 See [T12 history](../history/M3-T12-authored-text-detail.md).
+
+M3 T12 corrective S4 P1 reconciles the persistent text-optimization goal with
+current source/test coverage,retained runtime receipts and all3actual product
+hashes. It corrects only T11 S7's historical size summary to its closure-time
+359627/436779/452427bytes;current T12 products remain360987/439336/454504bytes.
+No source changes,artifact refresh or new audit credit. All named T12 clauses
+have retained proof;physical font appearance/486performance and M2 certificate
+remain separate. T12 remains closed.

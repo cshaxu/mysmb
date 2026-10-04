@@ -2854,6 +2854,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M3 T12 S1 | 0 | 0 | authored-glyph-contract; [record](../../docs/history/M3-T12-authored-text-detail.md) |
 | M3 T12 S2 | 0 | 0 | authored-half-block-contours; [record](../../docs/history/M3-T12-authored-text-detail.md) |
 | M3 T12 S3 | 0 | 0 | integrated-glyph-word-host-acceptance; [record](../../docs/history/M3-T12-authored-text-detail.md) |
+| M3 T12 S4 | 0 | 0 | completion-evidence-reconciliation; [record](../../docs/history/M3-T12-authored-text-detail.md) |
 | M3 T2 | 0 | - | [record](../../docs/history/M3-T1-neutral-render-command-seam.md); [record](../../docs/history/M3-T2-win32-command-consumer.md); S not recorded |
 | M3 T3 | 0 | - | [record](../../docs/history/M3-T2-win32-command-consumer.md); [record](../../docs/history/M3-T3-colored-text-frame.md); S not recorded |
 | M3 T4 | 0 | - | [record](../../docs/history/M3-T3-colored-text-frame.md); [record](../../docs/history/M3-T4-vga-indexed-frame.md); S not recorded |
@@ -3784,3 +3785,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T12 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T12-authored-text-detail.md) |
 | M3 T12 S2 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T12-authored-text-detail.md) |
 | M3 T12 S3 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T12-authored-text-detail.md) |
+| M3 T12 S4 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T12-authored-text-detail.md) |

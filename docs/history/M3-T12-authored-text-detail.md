@@ -192,3 +192,50 @@ font appearance,live memory peak or real486SX performance. M2 certification
 and M4 qualification remain their separate queued/roadmap obligations. Node
 scope/expected/actual remain empty,new0;historical1992/1992,local1991/1992nodes,
 4260/4261feasible controls(raw4342,infeasible81) unchanged.
+
+## Corrective S4 admission
+
+Owner's persistent text-optimization goal authorizes final requirement/evidence
+reconciliation. This documentation-only scope corrects CURRENT's historical
+T11 S7 product-size copy after a broad baseline replacement;T11 history still
+retains the correct359627/436779/452427bytes. Current T12 sizes are unchanged.
+Estimated3tracked governance records plus generated view;no product changes,
+no new ROM audit or evidence promotion. Empty scope/expectedMatches,new0,
+baseline1992/1992;local1991/1992nodes and4260/4261feasible controls unchanged.
+Read current source contracts,test case coverage,retained final receipts and
+actual product hashes;repair the historical summary,validate ledger/doc gates.
+Stop if product dependencies differ or a required T12 clause lacks evidence.
+
+### S4 P1 review and closure
+
+Current source and test-coverage inspection reconciles the original text
+optimization requirements against S1-S3 proof,not only their closure claims.
+The409case static interface manifest checks4566actual glyphs in composed and
+restored frames;16enumerated sprite information forms have whole-word/color/
+anchor checks,including actual flag and floatey/coin200 producers. Source
+selection reads committed palette state;12original queue/commit phases prove
+question/coin colors without a new animation clock. Authored glyph/shape/color
+rules,unchanged80x50/three-byte cells,Windows Unicode mapping and DOS slot/word
+readback cover the neutral boundary. No bitmap-to-character sampler is used.
+
+Both retained13test suites and full continuity logs match their declared
+clauses:999cross-width frames,original core/frame/pixel equality and240future
+restore ticks. Actual DOS product receipt proves Tab/P/O/Escape and paused
+roundtrip equality. Current product sources have no change since S2;the owner
+terrain file differs only in line endings. All3actual asset hashes and sizes
+match the tested product manifest. The actual DOS compiled-template/device
+receipt retains64score-word and16extended-slot checks. Original game logic
+and the graphical renderer remain outside the text change.
+
+The sole reconciliation finding was CURRENT's historical T11 S7 size summary,
+accidentally changed by a broad current-baseline replacement. Restore it to
+359627/436779/452427bytes from T11 history;retain360987/439336/454504bytes as
+current T12 products. Sweep all CURRENT size statements against their named
+closure histories/current manifest. No product repair,rebuild or new ROM
+validation is required. Deferred physical font/hardware and M2 proof limits
+remain explicit;this is not a new whole-project audit round.
+
+Empty scope/expected/actual,new0;historical1992/1992,local1991/1992nodes and
+4260/4261feasible controls unchanged. S4/T12 close after ledger/doc gates and
+local reviewed P. Text optimization's named requirements are complete within
+the accepted interface/template/runtime contracts;no T12 work remains open.
