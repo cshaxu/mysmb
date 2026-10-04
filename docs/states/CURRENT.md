@@ -2,10 +2,10 @@
 
 **Idle.**
 
-M3 T11 S1-S6 are closed. The colored80x50 element-authored text implementation
-and bidirectional Tab presenters have bounded acceptance;the complete review
-is in [T11 history](../history/M3-T11-colored-ascii-text-frame-gameplay.md#s6-and-t11-acceptance-review).
-No successor T is admitted. The [queue](QUEUE.md) retains deferred M2 certification.
+M3 T11 corrective S7 is closed. All enumerated text interfaces now have
+final-layer font-token checks;shared black/white caption contrast is repaired.
+See [S7 review](../history/M3-T11-colored-ascii-text-frame-gameplay.md#s7-p1-all-text-interface-joins-and-contrast-repair).
+No successor admitted;the [queue](QUEUE.md) retains deferred M2 certification.
 
 ## Current Technical Baseline
 
@@ -20,8 +20,8 @@ No successor T is admitted. The [queue](QUEUE.md) retains deferred M2 certificat
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products remain359435/436779/451915bytes.
-  T11 S6 changes tests/evidence only;the S5P2 product identities are retained.
+- Current local DOS16/Win32/x64 products remain359627/436779/452427bytes.
+  T11 S7 refreshes all three products after shared caption contrast repair.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
   pass;seeded presenter equality is explicitly separate. Real486SX speed,
@@ -41,3 +41,13 @@ heap,96924explicit payload bytes and1090sampled stack headroom. These are bounde
 presentation proofs,not full-world or hardware qualification. Diagnostic test
 +13/-2lines;products retained,empty ROM scope/new0,no remote. Historical incident
 and all evidence limits remain explicit in the T11 history review.
+
+
+M3 T11 S7 P1:409 final-composed/restored caption cases check4566glyphs;
+147natural startup lives frames pass. Unknown tokens fail,64background colors
+have contrasting text. Both widths13focused tests/owned-console/product routes,
+999cross-width frames and original-output equality pass;originalDOS16/current
+cold DOSBox Tab/P/O/Escape pass. Three source/testfiles,+136/-2lines;
+three products359627/436779/452427bytes. Empty ROM scope/new0,no remote.
+Fine-detail study recommends authored line/half-block glyphs in80x50;
+no extended repertoire or finer grid delivered by S7.

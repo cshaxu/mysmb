@@ -1660,3 +1660,85 @@ pause preconditions,host switching and snapshot/audio continuity. Raw captures,
 saves and disposable diagnostic products are removed after neutral receipts.
 Scope/expected/actual=[];new0;historical1992/1992,local1991/1992nodes,
 4260/4261feasible controls,42/952facets unchanged. No remote or protected staging.
+
+## Corrective S7 admission
+
+Owner reports missing inter-level lives captions and requests finer text detail.
+Reopen only the latest closed T11 as a corrective S7,not another ROM audit.
+Prior S3/S6 caption proof checks background words under controlled producers;
+it does not check normal life counts through the final actor/background join.
+S7 owns diagnosis and repair of that precise missing presentation clause,
+including natural startup/intermission and combined-layer captions. Inspect
+font tokens,metatile precedence,scroll/split coordinates,actor coverage and
+palette contrast;do not alter original game state or pixel rendering.
+Estimate4-6files/100-200source-test lines. Scope/expected/actual=[],new0.
+Retain historical1992/1992,local1991/1992nodes,4260/4261feasible controls.
+Use existing owner-local resources/disassembly under the existing local-only
+binding;no new import or third-party implementation. Raw output is limited to
+20MB per route under a unique ignored build tree,60seconds/no-progress budget,
+cleanup owner S7. Focused tests,both widths,original DOS16 build/three local
+products,purity and documentation gates are required for a product repair.
+Fine-detail review stays at80x50 with authored elements;any larger grid or
+font/device ABI change needs its own subsequent bounded proposal.
+
+### S7 P1 all text-interface joins and contrast repair
+
+Owner steering expands the missing clause to every text-bearing interface.
+The original text producer cases now check every nonblank committed font token
+in the final background/actor composition,not selected keywords. Unknown tokens
+fail explicitly;only the declared title-art rectangle is exempt from font
+decoding,with its separate authored-sign proof retained. Restore compares the
+complete composed frame. The409case matrix consists of:
+
+| Interface | Original-owner cases |
+| --- | --- |
+| Title/menu/copyright/TOP labels | One complete original title declaration,both player-menu lines and every committed font token outside the sign. |
+| HUD and high score | Ten digit-bank cases through top/bottom status and title-score producers;both player names. |
+| Player/name/mode variants |32 combinations of four text selectors,current player,one/two-player flag and operating mode. |
+| Time-up/game-over/warp/end captions |14 retained producer/commit routes,now with every token and the final actor join checked. |
+| World and lives |32 world/level values times11 ordinary/crown life counts:352 full composed/restored cases. |
+
+Both widths check4566committed font glyphs in these cases. The actual1000-step
+startup route independently checks147final-composed world/lives frames;it
+already displays the expected ordinary life count. This does not establish
+the exact older product/environment behind the owner's report or claim a
+complete world playthrough. The previous background-only evidence was too
+weak to establish the combined-layer/no-missing-token clause;it is retained
+with this precise extension instead of promoting another global audit.
+
+A separate64background-color test fails on the old implementation:font cells
+always use white,including a white reduced background. The shared caption cell
+writer now chooses black or white using integer luminance of the canonical
+background color. This fixes invisible/poor-contrast letters without changing
+glyph identity,positions,original palette/state,pixel compositor or game logic.
+It proves a concrete failure class,not that this was the sole cause of the
+owner's earlier observed screens. All64color cases pass after the repair.
+
+Both widths pass13focused regressions,real owned-console cell/snapshot/focus/
+audio routes and actual product self-tests. The1000-step twin route retains
+zero original core/frame/pixel differences,and999frames/11988000shared-text
+bytes match across widths. StrictC90 passes. The original DOS16 toolchain
+compiles/links all current sources;known legacy compiler/linker warnings
+remain. The actual new DOS product cold-start dynamic route passes text mode,
+paused graphics round trips,heldTab,P/O and Escape. No instrumentation/seed is
+used in that runtime receipt. Three products are refreshed locally:
+359627/436779/452427bytes for16/32/64 respectively.
+
+Similar-issue sweep covers all text producers and their palette/actor joins,
+ordinary/crown counts,unknown token handling,full-frame restore,source scroll/
+split contracts and both physical presenters. Raw frame/capture/save outputs
+remain below the declared per-route budgets and are removed after neutral
+receipts. No owner resource or executable is staged. Empty ROM scope/new0;
+historical1992/1992,local1991/1992nodes,4260/4261feasible controls unchanged.
+
+Fine-detail recommendation retains the common80x50grid:authored CP437 line/
+half-block glyphs can provide smoother borders and two vertical silhouette
+subcells per cell. DOS can use its font slots while Windows explicitly maps
+the same neutral glyph IDs to Unicode;no bitmap quantizer is involved.
+This needs a reviewed glyph-contract/template/host mapping change and cannot
+be obtained just by enlarging the window. A larger Windows font can improve
+readability but adds no game-detail cells. These are studied next-step options,
+not changes delivered by S7 or a claim that80x50has become160x100.
+
+S7 closes the corrective text-interface clause after the ledger/documentation
+gates. T11 again has no active S;deferred M2 and M4 obligations remain separate.

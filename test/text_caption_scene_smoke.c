@@ -83,6 +83,12 @@ int main(void)
     draw();CHECK(frame.cells[3U*80U+7U].character=='M');
     game.visible_scroll_x=96U;draw();
     CHECK(frame.cells[3U*80U+7U].character=='M');
+    /* A source-backed caption must stay readable on every presentation
+     * background,including a white intermediate-screen palette. */
+    for(col=0U;col<64U;++col) {
+        game.palette[0U]=(unsigned char)col;draw();
+        CHECK(frame.cells[3U*80U+7U].foreground!=frame.cells[3U*80U+7U].background);
+    }
     game.visible_ppu_mask=8U;game.visible_scroll_x=64U;draw();
     CHECK(frame.cells[17U*80U].character==0U); /* Left-edge mask. */
 

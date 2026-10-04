@@ -25,6 +25,8 @@ static struct mysmb_io_text_frame text,loaded_text;
 static unsigned char snapshot_wire[MYSMB_SNAPSHOT_FILE_BYTES];
 static struct mysmb_text_background_workspace background;
 static struct mysmb_text_background_receipt caption_receipt;
+static unsigned long checked_caption_glyphs;
+static unsigned char checking_title;
 #define CHECK(c) do { if (!(c)) { \
     fprintf(stderr,"observation check line %d\n",__LINE__); return 1; \
 } } while (0)
@@ -74,14 +76,57 @@ static int caption_word(unsigned short row,unsigned short col,const char *word)
 static int caption_render_restore(void)
 {
     unsigned char fingerprint[16];
+    unsigned short row,col,table,tile,x,y;
+    unsigned char expected;
     before=observed;
     CHECK(mysmb_text_background_scene_build(&observed,&background,&text,&caption_receipt));
+    {
+        struct mysmb_text_actor_receipt actors;
+        CHECK(mysmb_text_actor_scene_draw(&observed,&actor_workspace,background.opaque,&text,&actors));
+    }
+    /* These fixtures start with cleared tables and invoke original text
+     * producers. Check every committed font token,not selected words. */
+    for(row=0U;row<30U;++row)for(col=0U;col<32U;++col) {
+        table=row<4U && observed.visible_sprite0_split?0U:observed.visible_ppu_name_table&1U;
+        tile=observed.name_table[table][row*32U+col];expected=0U;
+        if(tile<36U)expected=(unsigned char)"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"[tile];
+        else if(tile==0x28U)expected='-';
+        else if(tile==0x29U)expected='x';
+        else if(tile==0x2bU)expected='!';
+        else if(tile==0x2eU)expected='$';
+        else if(tile==0xafU)expected='.';
+        else if(tile==0xcfU)expected='@';
+        else if(tile==0x9fU)expected='^';
+        if(tile==0x24U)continue;
+        /* The title sign is authored artwork,not a stream of font tokens.
+         * Outside that declared rectangle,no unrecognized token is ignored. */
+        if(checking_title && row>=4U && row<=14U && col>=5U && col<=26U)continue;
+        if(expected==0U)fprintf(stderr,"unclassified text token row=%u col=%u tile=%u\n",row,col,tile);
+        CHECK(expected!=0U);
+        if(row<4U && observed.visible_sprite0_split) {
+            x=(unsigned short)(col*8UL*80UL/256UL);
+            y=(unsigned short)(row*8UL*50UL/240UL);
+        } else {
+            x=(unsigned short)((col*8UL*80UL+127UL)/256UL);
+            y=(unsigned short)((row*8UL*50UL+119UL)/240UL);
+        }
+        if(text.cells[y*80U+x].character!=expected)
+            fprintf(stderr,"missing caption row=%u col=%u expected=%c actual=%c\n",
+                row,col,expected,text.cells[y*80U+x].character);
+        CHECK(text.cells[y*80U+x].character==expected);
+        CHECK(text.cells[y*80U+x].foreground!=text.cells[y*80U+x].background);
+        ++checked_caption_glyphs;
+    }
     CHECK(memcmp(&observed,&before,sizeof(observed))==0);
     mysmb_game_snapshot_fingerprint(&observed,fingerprint);
     CHECK(mysmb_game_snapshot_capture(&observed,&first,fingerprint));
     bind(&restored);mysmb_text_observer_enable(&restored,1U);
     CHECK(mysmb_game_snapshot_restore(&restored,&first));
     CHECK(mysmb_text_background_scene_build(&restored,&background,&loaded_text,&caption_receipt));
+    {
+        struct mysmb_text_actor_receipt actors;
+        CHECK(mysmb_text_actor_scene_draw(&restored,&actor_workspace,background.opaque,&loaded_text,&actors));
+    }
     CHECK(memcmp(&text,&loaded_text,sizeof(text))==0);
     return 0;
 }
@@ -96,6 +141,37 @@ static int caption_routes(void)
     unsigned short i;
     struct mysmb_input input;
     struct mysmb_frame output;
+    /* Original title declaration includes both menu lines,copyright and TOP;
+     * combine it with status producers before checking every font token. */
+    caption_setup();observed.visible_sprite0_split=0U;
+    observed.ram[0x0770U]=0U;observed.ram[0x073cU]=12U;
+    mysmb_game_step_screen_routine(&observed);
+    mysmb_game_commit_vram_buffer(&observed);
+    checking_title=1U;CHECK(caption_render_restore()==0);checking_title=0U;
+    CHECK(caption_word(18U,11U,"1 PLAYER GAME"));
+    CHECK(caption_word(20U,11U,"2 PLAYER GAME"));
+    for(i=0U;i<10U;++i) {
+        unsigned short digit;
+        caption_setup();observed.ram[0x0753U]=(unsigned char)(i&1U);
+        observed.ram[0x077aU]=1U;
+        for(digit=0U;digit<36U;++digit)observed.ram[0x07d7U+digit]=(unsigned char)i;
+        CHECK(mysmb_area_queue_top_status_line(&observed));
+        mysmb_game_commit_vram_buffer(&observed);
+        CHECK(mysmb_area_queue_bottom_status_line(&observed));
+        mysmb_game_commit_vram_buffer(&observed);
+        CHECK(mysmb_area_queue_title_score(&observed));
+        mysmb_game_commit_vram_buffer(&observed);
+        CHECK(caption_render_restore()==0);
+    }
+    for(i=0U;i<32U;++i) {
+        caption_setup();
+        observed.ram[0x0753U]=(unsigned char)(i&1U);
+        observed.ram[0x077aU]=(unsigned char)((i>>1U)&1U);
+        observed.ram[0x0770U]=(unsigned char)((i&4U)!=0U?3U:1U);
+        CHECK(mysmb_area_queue_game_text(&observed,(unsigned char)(i/8U)));
+        mysmb_game_commit_vram_buffer(&observed);
+        CHECK(caption_render_restore()==0);
+    }
     for(i=0U;i<7U;++i) {
         caption_setup();observed.ram[0x0773U]=(unsigned char)(12U+i);
         CHECK(mysmb_text_background_scene_build(&observed,&background,&text,&caption_receipt));
@@ -140,7 +216,32 @@ static int caption_routes(void)
     mysmb_game_tick(&observed,&input,&output);
     CHECK(mysmb_text_background_scene_build(&observed,&background,&text,&caption_receipt));
     CHECK(memcmp(&text,&loaded_text,sizeof(text))==0);
-    puts("14 original caption producer/commit/restore routes and paused scene pass");
+    /* Exercise the final background/actor join at every world/level and
+     * ordinary life digit,not just an isolated crown fixture. */
+    for(i=0U;i<32U;++i) {
+        unsigned short lives;
+        char world[10],count[5];
+        for(lives=1U;lives<=11U;++lives) {
+            caption_setup();observed.visible_sprite0_split=0U;
+            observed.ram[0x075aU]=(unsigned char)(lives-1U);
+            observed.ram[0x075fU]=(unsigned char)(i/4U);
+            observed.ram[0x075cU]=(unsigned char)(i%4U);
+            mysmb_oam_draw_intermediate_player(&observed);
+            CHECK(mysmb_area_queue_game_text(&observed,1U));
+            mysmb_game_commit_vram_buffer(&observed);
+            mysmb_game_submit_oam(&observed);
+            CHECK(caption_render_restore()==0);
+            sprintf(world,"WORLD %u-%u",i/4U+1U,i%4U+1U);
+            CHECK(caption_word(10U,11U,world));
+            CHECK(caption_word(14U,15U,"x"));
+            if(lives<10U) {
+                sprintf(count,"%u",lives);CHECK(caption_word(14U,18U,count));
+            } else {
+                sprintf(count,"^%u",lives-10U);CHECK(caption_word(14U,17U,count));
+            }
+        }
+    }
+    printf("409 title/HUD/name/terminal/world-lives final-composed restores; %lu committed glyphs checked; pause passed\n",checked_caption_glyphs);
     return 0;
 }
 
@@ -408,6 +509,7 @@ int main(int argc,char **argv)
     struct mysmb_text_background_receipt background_receipt;
     unsigned char fingerprint[16];
     unsigned int i,j,player,enemy,running,text_actors,title_frames;
+    unsigned int natural_lives_frames=0U;
     unsigned long background_objects,background_unknown,visible_unknown_running;
     unsigned long unsupported_actors,unowned_running_sprites;
     short scene_x,scene_y;
@@ -546,6 +648,22 @@ int main(int argc,char **argv)
         (void)background_receipt;(void)background;(void)scene_x;(void)scene_y;
 #endif
         CHECK(mysmb_text_actor_scene_draw(&observed,&actor_workspace,background.opaque,&text,&actor_receipt));
+#ifdef MYSMB_LOCAL_TITLE
+        if(observed.ram[0x0770U]==1U && !observed.visible_sprite0_split &&
+            observed.visible_scroll_x==0U && observed.visible_scroll_y==0U &&
+            (observed.visible_ppu_mask&8U)!=0U &&
+            observed.name_table[0U][10U*32U+11U]==32U &&
+            observed.name_table[0U][14U*32U+15U]==0x29U) {
+            char world[10]="WORLD 0-0",life[2];
+            world[6]=(char)('0'+observed.name_table[0U][10U*32U+17U]);
+            world[8]=(char)('0'+observed.name_table[0U][10U*32U+19U]);
+            life[0]=(char)('0'+observed.name_table[0U][14U*32U+18U]);life[1]='\0';
+            CHECK(caption_word(10U,11U,world));
+            CHECK(caption_word(14U,15U,"x"));
+            CHECK(caption_word(14U,18U,life));
+            ++natural_lives_frames;
+        }
+#endif
         unsupported_actors+=actor_receipt.unsupported;
         if((observed.visible_ppu_mask&0x10U)!=0U &&
             mysmb_game_snapshot_running(&observed,&frame1))
@@ -606,6 +724,12 @@ int main(int argc,char **argv)
         running,player,enemy,(unsigned int)sizeof(struct mysmb_text_observer));
     printf("authored actor layer: %u draws; game and observer unchanged\n",text_actors);
     printf("committed authored title sign: %u frames\n",title_frames);
+#ifdef MYSMB_LOCAL_TITLE
+    CHECK(natural_lives_frames!=0U);
+    printf("natural startup final-composed world/lives captions: %u frames\n",natural_lives_frames);
+#else
+    (void)natural_lives_frames;
+#endif
     printf("snapshot: immediate authored frame and 240 future ticks identical; malformed receipts rejected atomically\n");
     printf("semantic background: %lu objects, %lu unknown metatiles; no game mutation\n",
         background_objects,background_unknown);
