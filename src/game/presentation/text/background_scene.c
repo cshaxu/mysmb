@@ -1,5 +1,6 @@
 #include "game/presentation/text/background_scene.h"
 #include "game/presentation/text/elements.h"
+#include "game/presentation/text/caption_scene.h"
 #include "io/color.h"
 
 /* Visual classifications of reviewed metatile positions, not gameplay IDs.
@@ -222,22 +223,13 @@ static void object(const struct mysmb_game *g,
     }
 }
 
-static unsigned char letter(unsigned char tile)
-{
-    if(tile<10U)return (unsigned char)('0'+tile);
-    if(tile<36U)return (unsigned char)('A'+tile-10U);
-    if(tile==0x28U)return '-';
-    if(tile==0x29U)return 'x';
-    return 0U;
-}
-
 int mysmb_text_background_scene_build(const struct mysmb_game *g,
     struct mysmb_text_background_workspace MYSMB_IO_FAR *w,
     struct mysmb_io_text_frame MYSMB_IO_FAR *frame,
     struct mysmb_text_background_receipt *receipt)
 {
-    unsigned short i,row,col,head,tail,n,minx,maxx,miny,maxy,cell;
-    unsigned char p,k,ambiguous,table,c,cap;
+    unsigned short i,row,col,head,tail,n,minx,maxx,miny,maxy;
+    unsigned char p,k,ambiguous,table,cap;
     short left,top,right,bottom;
     if(g==0 || w==0 || frame==0 || receipt==0 || g->area_prg==0 ||
         g->area_prg_size<0x0b10U)return 0;
@@ -281,15 +273,6 @@ int mysmb_text_background_scene_build(const struct mysmb_game *g,
         for(head=0U;head<tail;++head)w->visited[w->queue[head]]=1U;
         receipt->objects++;
     }
-    /* Fixed HUD letters use the committed table-zero region, never RAM digits.
-     * Other strings/title logo await an explicit semantic text-owner mapping. */
-    if(g->visible_sprite0_split!=0U)for(row=0U;row<4U;++row)for(col=0U;col<32U;++col) {
-        if(col==0U && (g->visible_ppu_mask&2U)==0U)continue;
-        c=letter(g->name_table[0U][row*32U+col]);if(c==0U)continue;
-        cell=(unsigned short)((row*8UL*50UL/240UL)*80UL+col*8UL*80UL/256UL);
-        frame->cells[cell].character=c;frame->cells[cell].foreground=15U;
-        w->opaque[cell/8U]|=(unsigned char)(1U<<(cell%8U));
-        receipt->letters++;
-    }
+    receipt->letters=mysmb_text_caption_scene_draw(g,w,frame);
     return 1;
 }

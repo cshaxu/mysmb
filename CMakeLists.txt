@@ -664,6 +664,7 @@ target_link_libraries(mysmb_podoboo_oam_smoke PRIVATE mysmb_game)
 add_library(mysmb_text_elements STATIC src/game/presentation/text/elements.c
     src/game/presentation/text/actor_scene.c
     src/game/presentation/text/background_scene.c
+    src/game/presentation/text/caption_scene.c
     src/game/presentation/text/scene.c)
 target_include_directories(mysmb_text_elements PUBLIC src)
 target_link_libraries(mysmb_text_elements PUBLIC mysmb_game mysmb_io_color)
@@ -677,6 +678,9 @@ add_test(NAME mysmb.text-actor-scene-smoke COMMAND mysmb_text_actor_scene_smoke)
 add_executable(mysmb_text_background_scene_smoke test/text_background_scene_smoke.c)
 target_link_libraries(mysmb_text_background_scene_smoke PRIVATE mysmb_text_elements)
 add_test(NAME mysmb.text-background-scene-smoke COMMAND mysmb_text_background_scene_smoke)
+add_executable(mysmb_text_caption_scene_smoke test/text_caption_scene_smoke.c)
+target_link_libraries(mysmb_text_caption_scene_smoke PRIVATE mysmb_text_elements)
+add_test(NAME mysmb.text-caption-scene-smoke COMMAND mysmb_text_caption_scene_smoke)
 
 add_library(mysmb_text_frame STATIC src/platform/text/text_frame.c)
 target_include_directories(mysmb_text_frame PUBLIC src)

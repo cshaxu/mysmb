@@ -264,7 +264,7 @@ int main(int argc,char **argv)
     struct mysmb_text_actor_receipt actor_receipt;
     struct mysmb_text_background_receipt background_receipt;
     unsigned char fingerprint[16];
-    unsigned int i,j,player,enemy,running,text_actors;
+    unsigned int i,j,player,enemy,running,text_actors,title_frames;
     unsigned long background_objects,background_unknown,visible_unknown_running;
     unsigned long unsupported_actors,unowned_running_sprites;
     short scene_x,scene_y;
@@ -351,7 +351,7 @@ int main(int argc,char **argv)
     mysmb_text_observer_enable(&observed,1U);
     mysmb_game_snapshot_fingerprint(&observed,fingerprint);
     memset(&frame1,0,sizeof(frame1));memset(&frame2,0,sizeof(frame2));
-    input.buttons2=0U;player=0U;enemy=0U;running=0U;text_actors=0U;
+    input.buttons2=0U;player=0U;enemy=0U;running=0U;text_actors=0U;title_frames=0U;
     background_objects=background_unknown=visible_unknown_running=0UL;
     unsupported_actors=unowned_running_sprites=0UL;
     preview=argc>=2?fopen(argv[1],"wb"):0;
@@ -376,6 +376,11 @@ int main(int argc,char **argv)
         CHECK(mysmb_text_elements_build(0,0U,9U,&text));
 #ifdef MYSMB_LOCAL_TITLE
         CHECK(mysmb_text_background_scene_build(&observed,&background,&text,&background_receipt));
+        for(j=0U;j<3995U;++j)if(text.cells[j].character=='S' &&
+            text.cells[j+1U].character=='U' && text.cells[j+2U].character=='P' &&
+            text.cells[j+3U].character=='E' && text.cells[j+4U].character=='R') {
+            ++title_frames;break;
+        }
         background_objects+=background_receipt.objects;
         background_unknown+=background_receipt.unsupported;
         /* Separate unsupported HUD/title/offscreen tuples from visible
@@ -440,6 +445,7 @@ int main(int argc,char **argv)
 #ifdef MYSMB_LOCAL_TITLE
     CHECK(running>100U && player>100U && enemy>0U);
     CHECK(text_actors>100U);
+    CHECK(title_frames>0U);
 #endif
     before=observed;first.payload[4428U]=65U;
     CHECK(!mysmb_game_snapshot_restore(&observed,&first));
@@ -452,6 +458,7 @@ int main(int argc,char **argv)
         "running=%u player=%u enemy=%u observer_bytes=%u\n",
         running,player,enemy,(unsigned int)sizeof(struct mysmb_text_observer));
     printf("authored actor layer: %u draws; game and observer unchanged\n",text_actors);
+    printf("committed authored title sign: %u frames\n",title_frames);
     printf("snapshot: immediate authored frame and 240 future ticks identical; malformed receipts rejected atomically\n");
     printf("semantic background: %lu objects, %lu unknown metatiles; no game mutation\n",
         background_objects,background_unknown);

@@ -1088,3 +1088,61 @@ originalDOS16/three products and bounded actual runtime route. S4-S6 host/
 performance clauses remain separate. Existing local resource provenance and
 ignored-build60second/raw20MB per runtime/cross-width12MB limits apply. No
 ROM/CHR/third-party artwork import and no ROM conformance promotion.
+
+### S3 P1 title/menu/caption binding decision
+
+Use committed nametable character tokens for letters/digits/punctuation,
+restricted to fixed HUD or otherwise unclassified metatile regions. Read the
+existing immutable title command binding as declarative output geometry:
+match its final logo-region tokens against the committed table before drawing
+an authored title sign. Read the existing icon command's location/marker to
+render its selected committed menu position. No CHR pattern/pixel reads,
+selector reruns,game-state writes or new presentation/snapshot fields.
+Reuse background queue/visited scratch after component assembly;opaque/kind
+maps remain owned by the existing shared scene. Isolate caption rendering in
+its own shared module,called by background assembly before actor priority.
+Estimate7-10source/test/buildfiles,350-650lines. Add synthetic command/lifetime/
+scroll/overlap/disabled/malformed cases and actual title/menu/intermission
+source routes;retain original-output equality and snapshot/cross-width proof.
+Existing owner-local title/text resource provenance applies specifically to
+immutable output-address/font-token semantics,no graphics-byte import. Raw
+frames/captures below ignored S3 build with existing budgets and cleanup.
+
+### S3 P1 review receipt
+
+Seven source/test/build files add313/remove24lines,below the350-650forecast
+because committed nametables already own caption lifetime. The caption module
+replaces the sole HUD-only font decoder;no translated producer,platform,
+observer or snapshot layout changes. All242 final declared logo writes must
+match committed table zero,including overlaps,before the authored sign appears.
+Scene text follows table/scroll/vertical wrap;HUD retains its fixed split.
+Recognized terrain and the title rectangle precede font-like tokens. Menu
+artwork uses committed token/location and clips to its source rectangle.
+Source-listed terminal exclamation/period tokens retain their meanings.
+
+Synthetic checks cover uncommitted/partial/final/erased title,malformed binding,
+overlapping writes,no CHR binding,scroll/wrap,disabled background,left clipping,
+terrain priority,fixed HUD,caption disappearance,opaque ownership and queued
+versus visible menu selection. Similar-issue sweep:the sole former HUD decoder
+is removed;the caption owner reads committed outputs/immutable declarations,
+never live selectors. No game or platform owner needs a repair.
+
+Both widths pass11focused tests,hidden product self-tests and owned-console
+Tab probes. The1000-step twin route preserves core/frame/pixels,observes75
+authored title frames and2025 actor draws,and retains immediate/240future
+snapshot equality. Direct comparison of999 textframes/11988000bytes is equal
+across widths. Finite first-level visible running-area unsupported metatiles,
+actors and unowned noncontrol sprites are zero;other routes remain unproven.
+
+StrictC90 and originalOpenNT16 far ABI/product link pass. Actual46second
+DOSBox text/heldTab/graphics/P/O/text-preserving load/Escape passes:4000cells,
+5colors,38patterns. DGROUP49168bytes stays below64KB;observer5253/far pack15400
+unchanged. Raw frames/captures/save are deleted after neutral receipts. Products
+refresh to358487/435739/451400bytes in DOS/x86/x64 order. P12 intermittent DOS
+input/progress remains S4;this successful route is not resolution/speed proof.
+
+P1 closes this bounded title/menu/font chain. S3 remains open for source-route
+intermission/death/warp/terminal/pause expectations and restore;S4-S6 host/
+integration/performance pending. Historical1992/1992,local1991/1992nodes,
+4260/4261feasible controls and42/952facets unchanged;scope/expected/actual=[],
+zeroROMcredit,no remote or protected staging.

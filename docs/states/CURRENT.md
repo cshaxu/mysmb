@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M3 T11 S3 active;P1 title/menu/caption chain admitted after reviewed S2 closure. |
+| Identifier Mode | Continuation:M3 T11 S3 active;P1 title/menu/font chain reviewed;remaining scene-route coverage pending. |
 | Admission And Approval | Automatic next-S admission under owner mandate after S2 reviewed P14 closure. |
 | Objective | Complete title/menu,intermission,pause/death,warp and terminal text from source-visible decisions and committed text. |
 | Non-goals | No gameplay rewrite or ROM credit;complete presenter acceptance remains S4/S5. |
@@ -14,8 +14,8 @@
 | Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Documentation and source policy. |
 | Verification | Enabled/disabled observation original-state/OAM/VRAM/audio/pixel equality;visible phase,ownership/clipping,background/HUD,restore;both native widths,originalDOS16 and3products,purity/governance. |
 | Expected Markers | Scope[],expectedMatches[],actualMatches[],new0;all ROM counters retained. |
-| Asset Needs | Existing local owner resources/reviewed local SMBDIS listing/originalOpenNT16 only;redistributability unestablished,no import. Purpose:immutable selected-pose/metatile interpretation and neutral non-interference evidence;protected outputs below ignored build;P3 proposal owns research limits. |
-| Reporting Requirements | Before/after component scope,size,tests,3EXEs and local commit;no remote. |
+| Asset Needs | Existing local owner resources/reviewed local SMBDIS listing/originalOpenNT16 only;redistributability unestablished,no import. Purpose:immutable title/text output-address/font-token interpretation and neutral non-interference evidence;protected outputs below ignored build;S3 P1 binding decision owns usage limits. |
+| Reporting Requirements | P1:7source/test/buildfiles,+313/-24;11tests eachwidth,75title frames,original-output/restore/cross-width equality,DOSBox Tab/P/O/Escape;3products358487/435739/451400bytes. Before/after scope,size,evidence and local commit;no remote. |
 | Stop Conditions | Selector re-execution,original-state/output mutation,live/visible mixing,unowned restore metadata or segment overflow prevents closure. |
 | Exit Criteria | All named scene families have source-visible caption/art expectations,disappearance/scroll/restore and no-interference proof;host full acceptance remains S4-S6. |
 | Original Owner Request | Isolated element-based text,not sampling;Tab switches both presentations on all hosts. |
