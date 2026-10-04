@@ -1369,3 +1369,41 @@ semantics stay intact. Estimate4-8source/testfiles,80-220lines if repairs are
 needed;report actual changes and refresh all three products after product code
 changes. Empty ROM scope/zero credit. S6 retains integrated world/performance
 routes and T11-DOS-COLD-INPUT-P12;S5 holds explicit custody until its admission.
+
+
+### S5 P1 partial-output and console-failure recovery
+
+Two source/testfiles add36/remove1lines,below the80-220line repair estimate.
+The console adapter verifies the actual returned80x50 write rectangle instead
+of treating an API success with clipped output as a complete frame. A partial
+write reaches the existing root fallback on its next service pass. Close also
+clears input/output handles so detached handles are not reported as live.
+No game,text-template,IO ABI,snapshot or audio synthesis changes.
+
+The owned hidden-console test exercises initial allocation failure with an
+existing attachment,79x49buffer clipping,and external FreeConsole detach.
+It checks failure latching and returns through the production switch with
+activation disabled;game/audio state and graphical pixels remain identical.
+It also retains full4000cell/attribute reads,heldTab/break,P/O shortcut requests
+and normal round-trip assertions. This does not simulate the close button or
+claim that manual activation-disabled fallback proves an asynchronous focus
+sequence. The original close-menu suppression remains an explicit reviewed
+host policy pending the remaining S5 close/focus acceptance.
+
+Both native widths build and pass the console test,product self-test and
+13focused regressions. OriginalOpenNT16 compiles/links the current DOS product
+with only the known OLDNAMES.LIB warning. Three local products are refreshed
+at359355/435739/451400bytes;DOS retains SHA256
+D680D4D26CC9A24E14C6CD646F39B175218BE1B9C28D5C3453179B03C0D96D8E.
+Windows x86/x64 hashes are9A74424675B68F766278743231F558A313954F933024864C94693BA92CE3A4E1
+and9D23AFA6C025B45198F483FC34B7C6342E07DCC2F5FCDB66AA1739A4C32EEF68.
+No protected capture or fixture is retained;products remain local/untracked.
+
+Similar-issue sweep covers console allocation,all partial configuration
+failures,frame writes,close/detach and invalid input/output handles. Only the
+frame-write success path lacked full-rectangle confirmation;other failed
+configuration and presentation calls already reach root recovery. S5 remains
+active for text-mode snapshot transaction/focus/audio host integration;
+T11-DOS-COLD-INPUT-P12 remains explicitly held for S6. Empty ROM scope/new0,
+historical1992/1992,local1991/1992nodes,4260/4261feasible controls and42/952facets
+unchanged;M2 remains incomplete. No remote.

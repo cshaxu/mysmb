@@ -104,5 +104,36 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
         memcmp(&saved_game,&g_game,sizeof(g_game)) ||
         memcmp(&saved_audio,&g_audio_output,sizeof(g_audio_output)) ||
         memcmp(saved_pixels,g_pixels,sizeof(g_pixels)))return 17;
+    /* An existing attachment makes AllocConsole fail without changing state. */
+    if(!AllocConsole())return 18;
+    ShowWindow(GetConsoleWindow(),SW_HIDE);
+    mysmb_win32_switch_presenter(window,0);
+    if(g_text_mode || g_console.opened ||
+        memcmp(&saved_game,&g_game,sizeof(g_game)) ||
+        memcmp(&saved_audio,&g_audio_output,sizeof(g_audio_output)))return 19;
+    FreeConsole();
+    mysmb_win32_switch_presenter(window,0);
+    if(!g_text_mode)return 20;
+    ShowWindow(g_console.window,SW_HIDE);
+    view.Left=view.Top=view.Right=view.Bottom=0;
+    size.X=79;size.Y=49;
+    if(!SetConsoleWindowInfo(g_console.output,TRUE,&view) ||
+        !SetConsoleScreenBufferSize(g_console.output,size))return 21;
+    mysmb_win32_build_frame();
+    if(!g_text_failed)return 22;
+    mysmb_win32_switch_presenter(window,0);
+    if(g_text_mode || g_console.opened || g_console.input || g_console.output ||
+        memcmp(saved_pixels,g_pixels,sizeof(g_pixels)))return 23;
+    mysmb_win32_switch_presenter(window,0);
+    if(!g_text_mode)return 24;
+    ShowWindow(g_console.window,SW_HIDE);
+    if(!FreeConsole())return 25;
+    mysmb_win32_build_frame();
+    if(!g_text_failed)return 26;
+    mysmb_win32_switch_presenter(window,0);
+    if(g_text_mode || g_console.opened ||
+        memcmp(&saved_game,&g_game,sizeof(g_game)) ||
+        memcmp(&saved_audio,&g_audio_output,sizeof(g_audio_output)) ||
+        memcmp(saved_pixels,g_pixels,sizeof(g_pixels)))return 27;
     DestroyWindow(window);return 0;
 }

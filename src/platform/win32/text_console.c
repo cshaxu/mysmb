@@ -40,6 +40,7 @@ void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console)
 {
     if(!console->opened)return;
     FreeConsole();console->opened=0U;console->window=NULL;
+    console->input=console->output=NULL;
 }
 int mysmb_win32_text_console_present(struct mysmb_win32_text_console *console,
     const struct mysmb_io_text_frame *frame)
@@ -55,7 +56,10 @@ int mysmb_win32_text_console_present(struct mysmb_win32_text_console *console,
     }
     size.X=80;size.Y=50;origin.X=origin.Y=0;
     view.Left=view.Top=0;view.Right=79;view.Bottom=49;
-    return WriteConsoleOutputA(console->output,console->cells,size,origin,&view)!=0;
+    /* Windows reports the actual rectangle;success alone permits clipping.
+     * A partial frame must reach the root's graphical recovery path. */
+    return WriteConsoleOutputA(console->output,console->cells,size,origin,&view)!=0 &&
+        view.Left==0 && view.Top==0 && view.Right==79 && view.Bottom==49;
 }
 int mysmb_win32_text_console_key(struct mysmb_win32_text_console *console,
     WORD *key,unsigned char *pressed)

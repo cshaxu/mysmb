@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M3 T11 S5 active after S4 P4 closure with explicit integration transfer. |
+| Identifier Mode | Continuation:M3 T11 S5 active;P1 partial-output/console-failure recovery reviewed. |
 | Admission And Approval | Owner-authorized sequential next-S admission;coordinator accepts T11-DOS-COLD-INPUT-P12 custody for planned S6. |
 | Objective | Complete Windows GUI/console presenter host acceptance on x86/x64;preserve explicit DOS cold-input gap. |
 | Non-goals | No shared game/text rewrite or ROM credit;DOS cold-input diagnosis and full routes/performance remain S6. |
@@ -15,7 +15,7 @@
 | Verification | Both-width host console routes,focus/input/heldTab/P/O/failure/audio continuity,focused tests,purity,governance;three products after product changes. |
 | Expected Markers | Scope[],expectedMatches[],actualMatches[],new0;all ROM counters retained. |
 | Asset Needs | Existing owner-local embedded products/resources;no import or redistributability claim. Owned hidden probes only;unique ignored build paths,60second/20MB raw budget,cleanup owner S5. |
-| Reporting Requirements | Report scope/actual change size,evidence,three products after product changes and local commit;no remote. Explicit DOS gap remains unresolved. |
+| Reporting Requirements | P1:two source/testfiles,+36/-1;13tests per width,owned hidden-console failure cases and product self-tests;original DOS16 build and three local products359355/435739/451400bytes. No remote;DOS cold-input gap remains unresolved. |
 | Stop Conditions | Gameplay in host,extra ticks/audio writes,unhandled console failures,or unexplained focus/input changes. |
 | Exit Criteria | Windows host contracts pass;DOS cold-input gap explicitly retained and transferred to S6 before closure. |
 | Original Owner Request | Element-authored colored text over shared gameplay;Tab switches both presenters on all targets. |
