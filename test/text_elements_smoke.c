@@ -5,6 +5,7 @@
 
 static struct mysmb_io_text_frame frame;
 static struct mysmb_io_text_frame before;
+static struct mysmb_io_text_frame monochrome;
 static struct mysmb_text_element elements[8];
 
 #define CHECK(condition) do { if (!(condition)) { \
@@ -17,6 +18,13 @@ int main(int argc, char **argv)
     unsigned int i;
     unsigned int row;
     unsigned int column;
+    unsigned int facing;
+    unsigned int ink;
+    unsigned int cases = 0U;
+    unsigned int line;
+    unsigned int first;
+    unsigned int last;
+    struct mysmb_text_element plain;
     FILE *preview;
 
     memset(elements, 0, sizeof(elements));
@@ -77,7 +85,7 @@ int main(int argc, char **argv)
     CHECK(mysmb_text_elements_build(elements, 1U, 9U, &frame));
     CHECK(frame.cells[3999].character == ' ');
     CHECK(mysmb_text_elements_build(0, 0U, 9U, &frame));
-    /* Every authored pose must produce only printable cells and valid fill. */
+    /* Every authored pose/orientation is visible and color-independent. */
     for(i=0U;i<MYSMB_TEXT_KIND_COUNT;++i) {
         elements[0].kind=(mysmb_io_u8)i;elements[0].x=64;elements[0].y=64;
         for(row=0U;row<(i==MYSMB_TEXT_LUIGI_SMALL || i==MYSMB_TEXT_LUIGI_LARGE?
@@ -85,11 +93,42 @@ int main(int argc, char **argv)
             i==MYSMB_TEXT_FLAG_SCORE?5U:i>=MYSMB_TEXT_VINE_LEAF?1U:i<2U?MYSMB_TEXT_PLAYER_POSES:
             i==MYSMB_TEXT_GOOMBA || i>=MYSMB_TEXT_GOOMBA_FLAT?3U:1U);++row) {
             elements[0].pose=(mysmb_io_u8)row;
-            CHECK(mysmb_text_elements_build(elements,1U,9U,&frame));
-            for(column=0U;column<MYSMB_IO_TEXT_CELLS;++column) {
-                if(frame.cells[column].character<32U || frame.cells[column].character>126U)
-                    fprintf(stderr,"kind=%u pose=%u cell=%u code=%u\n",i,row,column,frame.cells[column].character);
-                CHECK(frame.cells[column].character>=32U && frame.cells[column].character<=126U);
+            for(facing=0U;facing<2U;++facing) {
+                elements[0].face_left=(mysmb_io_u8)facing;
+                CHECK(mysmb_text_elements_build(elements,1U,9U,&frame));
+                plain=elements[0];plain.foreground=15U;plain.background=0U;
+                CHECK(mysmb_text_elements_build(&plain,1U,0U,&monochrome));
+                ink=0U;
+                for(column=0U;column<MYSMB_IO_TEXT_CELLS;++column) {
+                    CHECK(frame.cells[column].character>=32U && frame.cells[column].character<=126U);
+                    CHECK(frame.cells[column].foreground<16U && frame.cells[column].background<16U);
+                    CHECK(frame.cells[column].character==monochrome.cells[column].character);
+                    if(frame.cells[column].character!=' ') {
+                        ++ink;
+                        CHECK(frame.cells[column].foreground==elements[0].foreground);
+                        CHECK(frame.cells[column].background==elements[0].background);
+                        CHECK(monochrome.cells[column].foreground==15U);
+                        CHECK(monochrome.cells[column].background==0U);
+                    }
+                }
+                if(ink==0U)fprintf(stderr,"invisible kind=%u pose=%u facing=%u\n",i,row,facing);
+                CHECK(ink!=0U);
+                /* Interior spaces must carry the object's fill, not sky. */
+                for(line=0U;line<50U;++line) {
+                    first=80U;last=0U;
+                    for(column=0U;column<80U;++column) {
+                        if(frame.cells[line*80U+column].character!=' ') {
+                            if(first==80U)first=column;
+                            last=column;
+                        }
+                    }
+                    if(first==80U)continue;
+                    for(column=first;column<=last;++column) {
+                        CHECK(frame.cells[line*80U+column].background==elements[0].background);
+                        CHECK(monochrome.cells[line*80U+column].background==0U);
+                    }
+                }
+                ++cases;
             }
         }
     }
@@ -117,6 +156,6 @@ int main(int argc, char **argv)
         }
         CHECK(fclose(preview) == 0);
     }
-    puts("element templates: pose/mirror/fill/clipping/layers/atomicity passed");
+    printf("element templates: %u kind/pose/orientation cases; colored/monochrome geometry, visibility, interior fill, clipping/layers/atomicity passed\n",cases);
     return 0;
 }

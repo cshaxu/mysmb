@@ -1555,3 +1555,42 @@ Empty ROM scope/new0;historical1992/1992,local1991/1992nodes,
 4260/4261feasible controls and42/952facets unchanged. S6 remains active for
 representative route coverage/runtime limits and explicit final gap disposition.
 No remote or protected staging.
+
+### S6 P3 complete template visibility and fill contract
+
+The element test now checks332 valid kind/pose/orientation combinations across
+all45 authored kinds. Every fully visible combination contains ink,uses valid
+ASCII/colors and preserves the descriptor's foreground/background on ink.
+Every interior cell between the first and last ink of a row carries the object
+fill,including spaces. A separately rendered white-on-black frame must have
+identical character geometry. Both orientations are checked for each pose.
+This closes the earlier printable-only test weakness:an empty template could
+previously pass. It does not assert that gameplay reaches every template.
+
+Both widths pass all13 focused tests and the real owned-console route with
+4000-cell readback,Tab switching,focus pause,P/O restoration and audio history
+continuation. The tests use hidden owned hosts and controlled physical-input
+services;they do not seize the user's desktop or claim desktop/RDP coverage.
+Only the existing element test changes,+46/-7lines;no implementation defect
+was found,no product source changes and no three-product refresh is required.
+
+The similar-issue sweep covers every accepted template pose/both orientations,
+blank-output false positives,invalid colors,interior sky leaks and geometry
+dependence on palette. Existing clipping,layering and invalid-input atomicity
+checks remain. Empty ROM scope/new0;historical1992/1992,local1991/1992nodes,
+4260/4261feasible controls and42/952facets unchanged. No remote.
+
+The integrated evidence boundaries remain explicit:
+
+| Clause | Evidence and remaining boundary |
+| --- | --- |
+| Element shapes and filled silhouettes | All45 kinds/332 pose-orientation combinations;template contract,not natural-gameplay reachability. |
+| Object producer/commit integration | S2/S3 original-owner controlled routes for powerups,effects,enemies,misc objects,death/intermission and captions;not an all-world playthrough. |
+| Continuous game/text output | Current1000-step twin route and999 cross-width frames;finite route has zero visible unsupported running entries. |
+| Windows presenter/snapshot continuity | Real owned-console readback and controlled focus/key services pass on both widths;physical desktop/RDP interaction remains outside the probe. |
+| DOS presenter/snapshot continuity | S4 seeded actual-product normal/dynamic routes pass;S6 unseeded input/progress/save/exit passes,paused equality is separately unmet by that fixture. |
+| DOS memory/runtime | MZ/segment/DGROUP bounds accepted;live heap/stack and runtime-limit reporting still need reconciliation before S6 closure. |
+| Historical cold input | Exact old binary retries do not reproduce the failure;cause unknown,explicit final disposition still required. |
+
+S6 remains active. These contracts add no whole-ROM certification credit and
+do not close the remaining runtime/disposition clauses.
