@@ -1,5 +1,50 @@
 # M2 T70: final current-equivalence certification
 
+## S17 P152 checkpoint - victory and terminal integration reconciled
+
+Consecutive owner-078/owner-122 groups:35 labels/214 instruction sites,
+84 explicit accesses and95 touching registered controls. The P152 admission
+below names every label. Both groups close their seven integration facets
+in the audit ledger;no game change,source remapping or graph credit.
+Next source-order owner-103 score/misc-object group is not yet admitted.
+
+| Join | Source-reviewed condition |
+| --- | --- |
+| Victory caller | Real child runs before live task reload. Returned task0 skips enemy turn;otherwise publish slot0 and run one enemy turn. Relative/player graphics tail always runs;mode changes select the next invocation. |
+| Walk | Canonical AutoControl child always runs,including idle/no-walk cases;then consume live ScreenLeft,fraction carry,ScrollScreen and UpdScrollVar in original order. Accepted P98 repair replaces the old bypass. |
+| Life/checkpoint | DEC life uses byte sign,including80->7F. Halfway table/nibble/cap precede transpose;Continue pointer load consumes swapped world/area before resetting mode/task. |
+| Transpose | Single-player or negative other-player lives returns source carry set/native false. Otherwise swap seven record bytes descending6..0,flip player and return carry clear/native true. |
+| Message lifetime | InitializeArea4B clear produces counters0/0;secondary+4 carries every64 calls. Worlds1..7 primary>=4 exits;world8 primary7 exits. Legal world/player branches emit selectors12..18. Other owners retain their upstream alias contracts. |
+| End-world | NMI owns countdown. Reset area/level/task before increment world and loading its pointer. Final-world B reads both ports,then termination may resume the other player. Music/message publication is consumed in the following frame. |
+
+Retained proof applicability checked against current dependencies:P92/P93
+terminal_modes differs only by the accepted P98 one-line AutoControl repair.
+Exact substitution reproduces the current whole file;non-walk branches are
+unchanged. Their old area.c pre-graphics constants/initializer/packet prefix
+is identical;later graphics producers are outside these exercised paths.
+P98 current terminal/player/entry/scroll/engine/test and P111 actual mode-parent
+dependencies match. This is dependency qualification,not identity-only proof.
+
+Original/native receipts:P92 terminal196608,P93 victory264192,P98 corrected
+walk8192 and P111 mode-parent83712 roots per width,zero differences within
+retained field/domain/exclusion contracts. Combined actual visit records
+cover214/214 admitted PCs. Parent totals also contain other owners;neither
+case counts nor observed PCs prove all-input or whole-route equivalence.
+P92 screen child task13 and P98 idle parser limits remain explicit.
+P127 three1800-frame natural routes retain death/restart/gameover evidence;
+physical CPU stack exclusions and complete two-player/endgame routes remain.
+
+Operational track:7 exact focused tests each width pass:mode,mode dispatch,
+victory messages,game entry,NMI parent,area initialize and platform purity.
+Parallel widths/jobs4,6 native targets each;build15.73s/15.69s and
+test0.39s/0.34s. No fresh original run was needed for unchanged applicable
+receipts. No game source change;retain P144 products and DOS16 link receipt.
+
+Result:6/136 groups,42/952 facets closed,910 pending. Local1991/1992 nodes
+and4260/4261 feasible controls(raw4342,infeasible81) unchanged;993 material
+receipts remain partial. Two localized findings/all13 coverage slots open,
+packages2/6 closed. M2/T70/S17 remain incomplete/open.
+
 ## S17 P151 checkpoint - title return and menu integration reconciled
 
 Consecutive owner-079/owner-123 groups:23 labels/124 instruction sites,
@@ -189,6 +234,20 @@ graph credit0;all temporary metadata/logs local ignored build;existing ROM/ASM
 readonly nonredistributable;128MiB/120s process budgets. Pure audit unless
 qualified mismatch requires repair/re-audit/three EXEs. Pixel/complete-route
 slots remain pending;no raw invalid-state guard promoted as ROM-equivalent.
+
+P152 admission:consecutive owner-078/owner-122 victory and terminal groups,
+35 labels/214 sites/95 touching controls. Exact labels:VictoryMode,VictoryModeSubroutines,SetupVictoryMode,PlayerVictoryWalk,PerformWalk,DontWalk,ExitVWalk,PrintVictoryMessages,MRetainerMsg,ThankPlayer,SecondPartMsg,EvalForMusic,PrintMsg,IncMsgCounter,SetEndTimer,IncModeTask_A,ExitMsgs,PlayerEndWorld,EndExitOne,EndChkBButton,EndExitTwo,PlayerLoseLife,StillInGame,GetHalfway,MaskHPNyb,SetHalfway,GameOverMode,SetupGameOver,RunGameOver,TerminateGame,ContinueGame,GameIsOn,TransposePlayers,TransLoop,ExTrans.
+Reuse current-bound P92/P93/P98/P111 original parents and P127 natural
+death/restart boundaries;check P98 one-line walk correction affects no
+retained non-walk branch,changed area functions do not invalidate child
+bindings. Review live task after victory child,one enemy slot thenplayer
+graphics,transpose carry/seven records,checkpoint/continue/new-world pointer
+load order,and message counter/selector producer domain. Current S17 retains
+custody,graph credit0;no successor admitted. Original ROM/ASM readonly local
+nonredistributable;probes/metadata/logs below ignored build,128MiB/120s
+process budget. Any concrete mismatch requires same-chain repair/re-audit
+and three products;pure audit retains P144 products. Whole endgame/two-player
+route/pixel coverage slots remain pending,not promoted by local parents.
 
 ## Current Continuation Plan - P147
 

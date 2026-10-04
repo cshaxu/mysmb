@@ -4,7 +4,7 @@
   "authority": "docs/states/CURRENT.md",
   "registry": "docs/states/M2_CURRENT_EQUIVALENCE.json",
   "taskId": "M2 T70 S17",
-  "part": "P151",
+  "part": "P152",
   "deadline": null,
   "universe": {
     "version": 1,
@@ -121031,32 +121031,88 @@
       "useCount": 6,
       "facets": {
         "producerConsumer": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "VictoryMode consumes liveTask after realVictoryModeSubroutines child. Returned0 skips enemy core,any other legal returnedtask publishesObjectOffset0 and runs one enemy turn. Current source bound resources are required;graphics relative/player tail always runs. Bridge/walk/message/end-world child interiors keep their owner contracts.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+          ],
+          "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
         "addressAlias": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Six caller instructions use fixed0772/0008,not an indexed alias. Source enemy argumentX0/slot0 and player graphics inputs retain current child domains. Returnedtask must not be replaced by pre-child selector;NMI output capture remains separate from current-mode mutations.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+          ],
+          "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
         "overwrite": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Read0772 occurs after child,then store08=0 before enemy turn;actual enemy changes remain visible to relative/player graphics. No GameEngine/fireball/six-slot schedule or GetPlayerOffscreenBits predecessor added. Cachedmode2 only selects current invocation,not nextframe.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+          ],
+          "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
         "crossPhaseLifetime": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Task0bridge collapse may advance task;walk/messages/end-world may change task or mode. Sameframe caller still follows liveTask predicate then graphics;nextNMI observes mutated mode/task. P111 actual task0/3 parents cover both caller alternatives andP98 realwalk parent binds movement;complete endgame route slot remains open.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+          ],
+          "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
         "registerFlagStack": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "SourceLDA/BEQ liveTask followedX0/STX08 preserved by typedzero;child returnA/flags overwritten by LDA and not silently consumed. Player graphics tail shares original RAM outputs;physicalCPU return stack/RTI timing outside nativeABI stays explicit output obligation.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+          ],
+          "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
         "callerReturn": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Source VictoryModeSubroutines->liveTask->optional one EnemiesAndLoopsCore->RelativePlayerPosition->PlayerGfxHandler tail matches current frame_root. P111 parent records plus static uniform post-child sequence preserve connections for all legal tasks;no edge promoted from unobserved graph path.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+          ],
+          "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
         "sourceBinding": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Currentframe_root/terminal/dispatcher/player/game/engine identities equalP111,correctedterminal/helper/scroll identities equalP98. All6 original caller PCs observed. P150 saved NMI control andP151 title-to-mode joins retained;graphics pixels/final route coverage not inferred.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+          ],
+          "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         }
       },
       "currentSourcePaths": [
@@ -122826,32 +122882,88 @@
       "useCount": 208,
       "facets": {
         "producerConsumer": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Source mode tasks0..4 victory and0..2 gameover consume currentplayer0..1/world0..7/level0..3 and boundPRG. Area4Bclear producesPrimary719/Secondary749 zero;message+4 carry increments primary until exit task,so reachable emitted selectors12..18. Checkpoint writes before player transpose,then Continue uses swappedWorld/Area;TimerNMI owns world-end countdown;EventFC queue consumed nextSound. Upstream warp/alias owner contracts remain separate.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+          ],
+          "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
         "addressAlias": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Sixteen halfway bytes indexedworld*2 pluslevelbit1;high/low nibble andscreenleft cap. Seven descending075A..0760/0761..0767 records disjoint;source stack preserves each byte. Message byte counters usecarry,not hostint;walkfraction byte+80 yieldsscroll1/2. Rawlives/button/timer/counter/fraction profiles retainP92/P93/P98 exact domains;invalidworld/task pointers not newly claimed.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+          ],
+          "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
         "overwrite": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "LoseLife queuesSilence thenDEClives/sign,checkpoint beforetranspose beforepointerload. Continue loads current swappedWorld/Area before resets. SetupGameOver clearsScreenTask/Sprite0 thenqueuesmusic andincrementsTask. Terminate queuesSilence beforetranspose,storesContinueWorld onlyifnoresume. Messages publishmusic beforeselector,counter/branchtimer order preserved;walkalwaysAutoControl before liveScreenLeft/fraction/parser.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+          ],
+          "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
         "crossPhaseLifetime": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Player records survive area clear;transpose swaps all7 fields before nextpointer selection. Continue resetscore/task/mode andTimerControl,following setup clears onlysource ranges. P127 naturaldeath/restart/gameover checkpoints retained. Message counters start0,secondary multiples4 carryevery64;world1..7 primary>=4 directexit orworld8 primary7 exit prevents laterinvalidselector onuninterrupted branch. WorldEndTimer decremented byNMI beforeleaf;nextframe consumesmessage/music andmode transitions. Fulltwo-player/endgame manifests remainpending.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+          ],
+          "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
         "registerFlagStack": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "DEClives/BPL usesresultsign including80->7F;Transpose SEC earlyexit/CLC success mapsnativeboolean,not ignoredcarry. EachPHA/PLA seven-byte swap preservesold value. Checkpoint LSR carry selectsnibble;messageWorld8 CMP/SBC carry,secondary+4/primary+carry andSetEndTimer bypass predicates preserved. Walk AutoControl storesSaved1 evenGameSub11;fractioncarry1/2 andreturnedScreenLeft live. VoidunusedCPUreturns/actualphysicalpushbytes stayrecorded exclusions.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+          ],
+          "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
         "callerReturn": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "Actual JumpEngine task scratch precedes leaf. Continue pointer child sees posttranspose state;EndWorld resetsArea/Level/Task thenincrementsWorld andloadsnewpointer beforeMode1. FinalworldB ORbothcontrollers->WorldSelect1/LivesFF->Terminate mayresumeotherplayer. P98 realAutoControl/Scroll/UpdScroll children replace old wrong bypass. P92 screenTask13 andP98 idleparser fixture limits retain other child contracts insteadof claiming every path.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+          ],
+          "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
         "sourceBinding": {
-          "status": "pending-reconciliation",
-          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected."
+          "status": "closed",
+          "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
+          "domain": "P92/P93 currentterminal differs only acceptedP98 one-line auto-control repair in excludedwalkbranch;byte-exact substitution check provesremainingcode unchanged. P98 terminal/entry/player/scroll/engine/test andP111 currentdependencies match. Oldarea.c drift confinedto graphics producers outsideP92/P93 exercisedpaths;pre-graphics child prefix matches,area_data/game identities unchanged. All208 group PCs observed;P93 infeasiblecontrol00153 remainsraw/infeasible,no count reset.",
+          "staticEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+          ],
+          "romEvidence": [
+            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+          ],
+          "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         }
       },
       "currentSourcePaths": [
@@ -123734,6 +123846,30 @@
       "closedGroupIds": [
         "owner-079",
         "owner-123"
+      ],
+      "closedFacets": [
+        "producerConsumer",
+        "addressAlias",
+        "overwrite",
+        "crossPhaseLifetime",
+        "registerFlagStack",
+        "callerReturn",
+        "sourceBinding"
+      ],
+      "nodeControlCredit": 0,
+      "sourceUniverseChanged": false,
+      "groupUniverseChanged": false
+    },
+    {
+      "id": "P152-victory-terminal-reconciliation",
+      "cause": "Reconcile consecutive victory caller and terminal-state groups;retain corrected walk proof and unchanged non-walk evidence,prove source message/transpose/live-return joins.",
+      "groupIds": [
+        "owner-078",
+        "owner-122"
+      ],
+      "closedGroupIds": [
+        "owner-078",
+        "owner-122"
       ],
       "closedFacets": [
         "producerConsumer",
