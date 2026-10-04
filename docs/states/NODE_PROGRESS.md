@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P135 cannon/disposition handoffs](../proposals/m2/t70-final-current-certification.md#s17-p135-checkpoint---cannon-slot-handoffs-and-explicit-disposition).
+S17 P135:10cannon-exclusive storeconditions joined;374streamalias rows explicitlypartitioned59intrinsic/50parent-qualified/265pending. Original1357instruction closure:soleB9C3publisher2..0/noindirectwriter,47potential008aliases excludeactualprimary0..2/combined1..3. Fresh65536originalparents0scopedRAM/APU/orderdiff bothwidths,bus08/stream checks/all10storePCobserved. Eightfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
 [P134 deferred score/slot correction](../proposals/m2/t70-final-current-certification.md#s17-p134-checkpoint---deferred-score-and-fireball-hit-slot).
 S17 P134:correctedP130nonexistentimmediate-score dependency. Full237instruction fireballhitclosure:no008publisher/indirectwriter/CurrentPlayer orscoremath call;15aliaswriters actualfireball0/1,enemy0..4/remap0..15. D725posthit indexjoinedwithretainedP1303517writes/65536actualparents;twoGrowstores intrinsic5. 374inventory now59intrinsic/40parentjoins/275pending. Elevenfocusedtests eachwidthpass,123identities/P123productsunchanged;no freshROMrun/gamechange/EXErefresh. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
