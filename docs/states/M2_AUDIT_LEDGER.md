@@ -82,8 +82,8 @@ are recorded, not silently upgraded to full-route coverage.
 
 ## Change And Exit Rules
 
-The proposal's [current continuation plan](../proposals/m2/t70-final-current-certification.md#current-continuation-plan---p147)
-maps all136 groups to current S17,orders reconciliation by first original PC,
+The proposal's [current continuation plan](../history/m2/t70-final-current-certification.md#current-continuation-plan---p147)
+historically mapped all136 groups to S17,ordered reconciliation by first original PC,
 and maps all13 coverage slots to unadmitted output/route successors,followed
 by final snapshot closure. The JSON executionPlan preserves exact group and
 coverage identities;the validator rejects omitted or duplicated assignments.
@@ -112,3 +112,13 @@ bindings and unsupported closure. Passing these checks proves accounting
 consistency only, not semantic equivalence. Reports state local node/control
 counts, reconciled group facets, open findings, coverage slots and final
 package status separately. Full M2 certification remains incomplete.
+
+## P153 queued continuation
+
+Owner closes T70/S17 by deferred-work transfer,not certification. CURRENT is
+idle. The [queue-tail candidate](../proposals/m2/remaining-current-certification.md)
+now owns pending verification planning:130 groups/910 facets,two findings,
+13 coverage slots and four final packages. JSON executionPlan retains original
+order/IDs and records null activeReceiver plus an accepted handoff. Historical
+closed facets and source-site receipts are unchanged;new admission must rebind
+source changes from preceding I/O work.

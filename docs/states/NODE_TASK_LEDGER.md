@@ -219,6 +219,7 @@ transfer existing ownership or allocate a numeric T.
 | audio-engine-deferred | 0 | not decomposed here | [record](../../docs/proposals/m2/audio-engine.md); Prematurely numbered audio candidate held until later admission. |
 | fireball-bubble-timer-warp-deferred | 0 | not decomposed here | [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md); T20 unfinished nodes await their source-order T32/T33 successors, not T21. |
 | t22-nmi-ppu-deferred | 0 | not decomposed here | [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md); T21 closure found that the boot root and queued NMI/PPU nodes share the first-NMI ownership boundary; pending source-order T22 admission. |
+| remaining-current-certification | 0 | not decomposed here | [record](../../docs/proposals/m2/remaining-current-certification.md); Owner-approved transfer of unfinished T70/S17 verification to queue tail;maintenance node receivers unchanged. |
 
 ## Every node
 
@@ -2805,24 +2806,24 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T69 S15 | 0 | 0 | owner-approved-source-order, current-equivalence-cross-cohort; [record](../../docs/history/M2-T69-cross-cohort-current-proof.md) |
 | M2 T69 S16 | 0 | 0 | owner-approved-source-order, current-equivalence-cross-cohort; [record](../../docs/history/M2-T69-cross-cohort-current-proof.md) |
 | M2 T7 | 1 | - | [record](../../docs/history/M2-T7-audio-command-routes.md); S not recorded |
-| M2 T70 | 0 | - | [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S1 | 0 | 0 | owner-approved-source-order, final-current-certification; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S2 | 0 | 0 | owner-approved-source-order, final-current-certification; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S3 | 0 | 0 | source-provenance-reconciliation; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S4 | 0 | 6 | nmi-prefix-material-phase-proof; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S5 | 0 | 0 | timer-random-material-audit; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S6 | 0 | 9 | sprite-zero-scroll-phase-audit; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S7 | 0 | 6 | sprite-shuffle-material-audit; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S8 | 0 | 0 | pause-state-material-audit; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S9 | 0 | 10 | serial-input-pause-material-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S10 | 0 | 25 | title-menu-demo-material-audit; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S11 | 0 | 15 | victory-message-termination-material-repair; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S12 | 0 | 10 | floatey-score-oam-material-repair; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S13 | 0 | 13 | screen-palette-material-order-repair; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S14 | 0 | 12 | hud-intermediate-timer-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S15 | 0 | 17 | final-reset-startup-source-and-graph-review; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S16 | 0 | 0 | executable-data-binding-manifest; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S17 | 0 | 148 | material-use-completeness-and-path-reconciliation, corrective-title-pointer-output-chain, corrective-column-output-chain, corrective-parser-output-chain; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 | 0 | - | [record](../../docs/history/m2/t70-final-current-certification.md); [record](../../docs/history/M2-T70-deferred-verification-closure.md) |
+| M2 T70 S1 | 0 | 0 | owner-approved-source-order, final-current-certification; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S2 | 0 | 0 | owner-approved-source-order, final-current-certification; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S3 | 0 | 0 | source-provenance-reconciliation; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S4 | 0 | 6 | nmi-prefix-material-phase-proof; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S5 | 0 | 0 | timer-random-material-audit; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S6 | 0 | 9 | sprite-zero-scroll-phase-audit; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S7 | 0 | 6 | sprite-shuffle-material-audit; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S8 | 0 | 0 | pause-state-material-audit; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S9 | 0 | 10 | serial-input-pause-material-chain; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S10 | 0 | 25 | title-menu-demo-material-audit; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S11 | 0 | 15 | victory-message-termination-material-repair; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S12 | 0 | 10 | floatey-score-oam-material-repair; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S13 | 0 | 13 | screen-palette-material-order-repair; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S14 | 0 | 12 | hud-intermediate-timer-chain; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S15 | 0 | 17 | final-reset-startup-source-and-graph-review; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S16 | 0 | 0 | executable-data-binding-manifest; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S17 | 0 | 148 | material-use-completeness-and-path-reconciliation, corrective-title-pointer-output-chain, corrective-column-output-chain, corrective-parser-output-chain; [record](../../docs/history/m2/t70-final-current-certification.md); [record](../../docs/history/M2-T70-deferred-verification-closure.md) |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M2 T9 | 1 | - | [record](../../docs/etc/architecture/smb1-frame-output-ledger.md); [record](../../docs/history/M2-T9-frame-output-ledger-and-reference-recorder.md); S not recorded |
 | M2 Td | 0 | - | [record](../../docs/proposals/m2-rom-structural-recovery.md); [record](../../docs/states/QUEUE.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -3159,80 +3160,80 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | transfer-m2-t27-s2-to-t52-s5-b3-timeup | M2 T27 S2 | M2 T52 S5 | 3 | Owner-approved T52 corrective continuation under the continuing M2 ROM-equivalence mandate.; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | transfer-m2-t44-s5-to-t52-s6-h9-platform-y | M2 T44 S5 | M2 T52 S6 | 1 | Owner-approved T52 corrective continuation under the continuing M2 ROM-equivalence mandate.; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | transfer-283-t22-s9-to-t53-s3 | M2 T22 S9 | M2 T53 S3 | 1 | Owner directed that every current-audit mismatch is repaired and re-audited to zero before any successor S admission.; [record](../../docs/proposals/m2/t53-cohort-a-current-proof.md) |
-| transfer-t70-s2-parser-1 | M2 T29 S7 | M2 T70 S2 | 27 | Coordinator under owner ongoing original-source M2 mandate accepts bounded29-node parser maintenance receipt before implementation.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s2-parser-2 | M2 T30 S11 | M2 T70 S2 | 1 | Coordinator under owner ongoing original-source M2 mandate accepts bounded29-node parser maintenance receipt before implementation.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s2-parser-3 | M2 T30 S16 | M2 T70 S2 | 1 | Coordinator under owner ongoing original-source M2 mandate accepts bounded29-node parser maintenance receipt before implementation.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s4-nmi-1 | M2 T22 S15 | M2 T70 S4 | 3 | Coordinator under owner ongoing M2 mandate accepts6-node NMI prefix maintenance before shared repair.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s4-nmi-2 | M2 T52 S1 | M2 T70 S4 | 1 | Coordinator under owner ongoing M2 mandate accepts6-node NMI prefix maintenance before shared repair.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s4-nmi-3 | M2 T53 S3 | M2 T70 S4 | 1 | Coordinator under owner ongoing M2 mandate accepts6-node NMI prefix maintenance before shared repair.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s4-nmi-4 | M2 T22 S23 | M2 T70 S4 | 1 | Coordinator under owner ongoing M2 mandate accepts6-node NMI prefix maintenance before shared repair.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s6-phase-1 | M2 T52 S1 | M2 T70 S6 | 2 | Coordinator accepts bounded sprite-zero visible-phase maintenance repair under owner ongoing M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s6-phase-2 | M2 T22 S26 | M2 T70 S6 | 4 | Coordinator accepts bounded sprite-zero visible-phase maintenance repair under owner ongoing M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s6-child-1 | M2 T22 S26 | M2 T70 S6 | 3 | Coordinator accepts shared sprite-clear entry dependencies under owner ongoing M2 corrective mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s7-shuffle-1 | M2 T22 S27 | M2 T70 S7 | 6 | Coordinator accepts bounded shared shuffle/preset repair under owner ongoing M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s9-input-1 | M2 T22 S24 | M2 T70 S9 | 6 | Coordinator accepts shared input/pause repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s9-input-2 | M2 T28 S6 | M2 T70 S9 | 4 | Coordinator accepts shared input/pause repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s10-title-1 | M2 T25 S20 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s10-title-2 | M2 T25 S7 | M2 T70 S10 | 3 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s10-title-3 | M2 T25 S9 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s10-title-4 | M2 T52 S2 | M2 T70 S10 | 2 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s10-title-5 | M2 T25 S12 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s10-title-6 | M2 T25 S13 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s10-title-7 | M2 T25 S14 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s10-title-8 | M2 T25 S8 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s10-title-9 | M2 T25 S15 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s10-title-10 | M2 T25 S16 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s10-title-11 | M2 T25 S17 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s10-title-12 | M2 T25 S18 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s10-title-13 | M2 T25 S19 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s10-title-14 | M2 T25 S21 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s10-title-15 | M2 T25 S22 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s10-title-16 | M2 T25 S23 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s10-title-17 | M2 T25 S24 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s10-title-18 | M2 T25 S25 | M2 T70 S10 | 5 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s11-victory-1 | M2 T26 S5 | M2 T70 S11 | 14 | Coordinator receives victory-message/final shared-call repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s11-victory-2 | M2 T30 S14 | M2 T70 S11 | 1 | Coordinator receives victory-message/final shared-call repair under owner ongoing mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s12-floatey-1 | M2 T26 S5 | M2 T70 S12 | 7 | Coordinator receives original floating-score chain under owner ongoing M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s12-floatey-2 | M2 T52 S3 | M2 T70 S12 | 3 | Coordinator receives original floating-score chain under owner ongoing M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s13-palette-1 | M2 T27 S1 | M2 T70 S13 | 16 | Coordinator accepts screen palette source-order maintenance under owner M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s13-palette-2 | M2 T52 S4 | M2 T70 S13 | 3 | Coordinator accepts screen palette source-order maintenance under owner M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s14-hud-1 | M2 T27 S2 | M2 T70 S14 | 9 | Coordinator accepts under owner ongoing M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s14-hud-2 | M2 T52 S5 | M2 T70 S14 | 3 | Coordinator accepts under owner ongoing M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s15-startup-1 | M2 T22 S14 | M2 T70 S15 | 7 | Coordinator accepts original reset/startup subtree under owner M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s15-startup-2 | M2 T28 S5 | M2 T70 S15 | 4 | Coordinator accepts original reset/startup subtree under owner M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s15-startup-3 | M2 T28 S6 | M2 T70 S15 | 2 | Coordinator accepts original reset/startup subtree under owner M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s15-startup-4 | M2 T29 S1 | M2 T70 S15 | 4 | Coordinator accepts original reset/startup subtree under owner M2 mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-title-pointer-1 | M2 T27 S2 | M2 T70 S17 | 3 | Coordinator under standing owner M2 repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-column-output-1 | M2 T28 S1 | M2 T70 S17 | 11 | Coordinator under owner same-S M2 repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-parser-output-1 | M2 T70 S2 | M2 T70 S17 | 29 | Coordinator under owner same-S M2 repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-parser-output-2 | M2 T29 S7 | M2 T70 S17 | 3 | Coordinator under owner same-S M2 repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-castle-counter-1 | M2 T29 S9 | M2 T70 S17 | 6 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-pipe-scratch-1 | M2 T29 S9 | M2 T70 S17 | 6 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-scenery-output-1 | M2 T29 S6 | M2 T70 S17 | 19 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-dispatch-scratch-1 | M2 T22 S28 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-dispatch-scratch-2 | M2 T25 S7 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-dispatch-scratch-3 | M2 T26 S5 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-dispatch-scratch-4 | M2 T29 S5 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-dispatch-scratch-5 | M2 T29 S8 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-dispatch-scratch-6 | M2 T31 S1 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-dispatch-scratch-7 | M2 T31 S4 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-dispatch-scratch-8 | M2 T33 S1 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-hole-threshold-1 | M2 T32 S1 | M2 T70 S17 | 2 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-raw-pipe-2 | M2 T29 S9 | M2 T70 S17 | 4 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-raw-pipe-3 | M2 T30 S12 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-raw-pipe-4 | M2 T30 S9 | M2 T70 S17 | 4 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-whirlpool-1 | M2 T31 S2 | M2 T70 S17 | 3 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-fireball-index-1 | M2 T34 S2 | M2 T70 S17 | 2 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-color-counter-1 | M2 T28 S2 | M2 T70 S17 | 4 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-injury-palette-1 | M2 T70 S13 | M2 T70 S17 | 6 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-bowser-timer-1 | M2 T41 S4 | M2 T70 S17 | 3 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-bbox-scratch-1 | M2 T43 S13 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-platform-oam-index-1 | M2 T52 S6 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-platform-oam-index-2 | M2 T44 S5 | M2 T70 S17 | 10 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-p114-duplicate | M2 T39 S1 | M2 T70 S17 | 3 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-p115-platform-0 | M2 T38 S4 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-p115-platform-1 | M2 T39 S6 | M2 T70 S17 | 17 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| transfer-t70-s17-p123-rembridge | M2 T28 S3 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| transfer-t70-s2-parser-1 | M2 T29 S7 | M2 T70 S2 | 27 | Coordinator under owner ongoing original-source M2 mandate accepts bounded29-node parser maintenance receipt before implementation.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s2-parser-2 | M2 T30 S11 | M2 T70 S2 | 1 | Coordinator under owner ongoing original-source M2 mandate accepts bounded29-node parser maintenance receipt before implementation.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s2-parser-3 | M2 T30 S16 | M2 T70 S2 | 1 | Coordinator under owner ongoing original-source M2 mandate accepts bounded29-node parser maintenance receipt before implementation.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s4-nmi-1 | M2 T22 S15 | M2 T70 S4 | 3 | Coordinator under owner ongoing M2 mandate accepts6-node NMI prefix maintenance before shared repair.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s4-nmi-2 | M2 T52 S1 | M2 T70 S4 | 1 | Coordinator under owner ongoing M2 mandate accepts6-node NMI prefix maintenance before shared repair.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s4-nmi-3 | M2 T53 S3 | M2 T70 S4 | 1 | Coordinator under owner ongoing M2 mandate accepts6-node NMI prefix maintenance before shared repair.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s4-nmi-4 | M2 T22 S23 | M2 T70 S4 | 1 | Coordinator under owner ongoing M2 mandate accepts6-node NMI prefix maintenance before shared repair.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s6-phase-1 | M2 T52 S1 | M2 T70 S6 | 2 | Coordinator accepts bounded sprite-zero visible-phase maintenance repair under owner ongoing M2 mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s6-phase-2 | M2 T22 S26 | M2 T70 S6 | 4 | Coordinator accepts bounded sprite-zero visible-phase maintenance repair under owner ongoing M2 mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s6-child-1 | M2 T22 S26 | M2 T70 S6 | 3 | Coordinator accepts shared sprite-clear entry dependencies under owner ongoing M2 corrective mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s7-shuffle-1 | M2 T22 S27 | M2 T70 S7 | 6 | Coordinator accepts bounded shared shuffle/preset repair under owner ongoing M2 mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s9-input-1 | M2 T22 S24 | M2 T70 S9 | 6 | Coordinator accepts shared input/pause repair under owner ongoing mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s9-input-2 | M2 T28 S6 | M2 T70 S9 | 4 | Coordinator accepts shared input/pause repair under owner ongoing mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-1 | M2 T25 S20 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-2 | M2 T25 S7 | M2 T70 S10 | 3 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-3 | M2 T25 S9 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-4 | M2 T52 S2 | M2 T70 S10 | 2 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-5 | M2 T25 S12 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-6 | M2 T25 S13 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-7 | M2 T25 S14 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-8 | M2 T25 S8 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-9 | M2 T25 S15 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-10 | M2 T25 S16 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-11 | M2 T25 S17 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-12 | M2 T25 S18 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-13 | M2 T25 S19 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-14 | M2 T25 S21 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-15 | M2 T25 S22 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-16 | M2 T25 S23 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-17 | M2 T25 S24 | M2 T70 S10 | 1 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s10-title-18 | M2 T25 S25 | M2 T70 S10 | 5 | Coordinator receives source-confirmed title score-clear repair under owner ongoing mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s11-victory-1 | M2 T26 S5 | M2 T70 S11 | 14 | Coordinator receives victory-message/final shared-call repair under owner ongoing mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s11-victory-2 | M2 T30 S14 | M2 T70 S11 | 1 | Coordinator receives victory-message/final shared-call repair under owner ongoing mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s12-floatey-1 | M2 T26 S5 | M2 T70 S12 | 7 | Coordinator receives original floating-score chain under owner ongoing M2 mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s12-floatey-2 | M2 T52 S3 | M2 T70 S12 | 3 | Coordinator receives original floating-score chain under owner ongoing M2 mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s13-palette-1 | M2 T27 S1 | M2 T70 S13 | 16 | Coordinator accepts screen palette source-order maintenance under owner M2 mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s13-palette-2 | M2 T52 S4 | M2 T70 S13 | 3 | Coordinator accepts screen palette source-order maintenance under owner M2 mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s14-hud-1 | M2 T27 S2 | M2 T70 S14 | 9 | Coordinator accepts under owner ongoing M2 mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s14-hud-2 | M2 T52 S5 | M2 T70 S14 | 3 | Coordinator accepts under owner ongoing M2 mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s15-startup-1 | M2 T22 S14 | M2 T70 S15 | 7 | Coordinator accepts original reset/startup subtree under owner M2 mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s15-startup-2 | M2 T28 S5 | M2 T70 S15 | 4 | Coordinator accepts original reset/startup subtree under owner M2 mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s15-startup-3 | M2 T28 S6 | M2 T70 S15 | 2 | Coordinator accepts original reset/startup subtree under owner M2 mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s15-startup-4 | M2 T29 S1 | M2 T70 S15 | 4 | Coordinator accepts original reset/startup subtree under owner M2 mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-title-pointer-1 | M2 T27 S2 | M2 T70 S17 | 3 | Coordinator under standing owner M2 repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-column-output-1 | M2 T28 S1 | M2 T70 S17 | 11 | Coordinator under owner same-S M2 repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-parser-output-1 | M2 T70 S2 | M2 T70 S17 | 29 | Coordinator under owner same-S M2 repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-parser-output-2 | M2 T29 S7 | M2 T70 S17 | 3 | Coordinator under owner same-S M2 repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-castle-counter-1 | M2 T29 S9 | M2 T70 S17 | 6 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-pipe-scratch-1 | M2 T29 S9 | M2 T70 S17 | 6 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-scenery-output-1 | M2 T29 S6 | M2 T70 S17 | 19 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-dispatch-scratch-1 | M2 T22 S28 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-dispatch-scratch-2 | M2 T25 S7 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-dispatch-scratch-3 | M2 T26 S5 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-dispatch-scratch-4 | M2 T29 S5 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-dispatch-scratch-5 | M2 T29 S8 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-dispatch-scratch-6 | M2 T31 S1 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-dispatch-scratch-7 | M2 T31 S4 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-dispatch-scratch-8 | M2 T33 S1 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-hole-threshold-1 | M2 T32 S1 | M2 T70 S17 | 2 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-raw-pipe-2 | M2 T29 S9 | M2 T70 S17 | 4 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-raw-pipe-3 | M2 T30 S12 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-raw-pipe-4 | M2 T30 S9 | M2 T70 S17 | 4 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-whirlpool-1 | M2 T31 S2 | M2 T70 S17 | 3 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-fireball-index-1 | M2 T34 S2 | M2 T70 S17 | 2 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-color-counter-1 | M2 T28 S2 | M2 T70 S17 | 4 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-injury-palette-1 | M2 T70 S13 | M2 T70 S17 | 6 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-bowser-timer-1 | M2 T41 S4 | M2 T70 S17 | 3 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-bbox-scratch-1 | M2 T43 S13 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-platform-oam-index-1 | M2 T52 S6 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-platform-oam-index-2 | M2 T44 S5 | M2 T70 S17 | 10 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-p114-duplicate | M2 T39 S1 | M2 T70 S17 | 3 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-p115-platform-0 | M2 T38 S4 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-p115-platform-1 | M2 T39 S6 | M2 T70 S17 | 17 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| transfer-t70-s17-p123-rembridge | M2 T28 S3 | M2 T70 S17 | 1 | Coordinator under owner same-S repair mandate.; [record](../../docs/history/m2/t70-final-current-certification.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3720,20 +3721,20 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M2 T69 S14 | 3 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M2-T69-cross-cohort-current-proof.md) |
 | M2 T69 S15 | 22 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M2-T69-cross-cohort-current-proof.md) |
 | M2 T69 S16 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M2-T69-cross-cohort-current-proof.md) |
-| M2 T70 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S2 | 29 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S3 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S4 | 6 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S5 | 7 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S6 | 9 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S7 | 6 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S8 | 6 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S9 | 10 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S10 | 25 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S11 | 15 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S12 | 10 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S13 | 19 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S14 | 12 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S15 | 17 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S16 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
-| M2 T70 S17 | 1667 | 1992 | none / 0 | none / 0 | admitted; [record](../../docs/proposals/m2/t70-final-current-certification.md) |
+| M2 T70 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S2 | 29 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S3 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S4 | 6 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S5 | 7 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S6 | 9 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S7 | 6 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S8 | 6 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S9 | 10 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S10 | 25 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S11 | 15 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S12 | 10 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S13 | 19 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S14 | 12 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S15 | 17 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S16 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S17 | 1667 | 1992 | none / 0 | none / 0 | closed-with-owner-approved-deferred-verification; [record](../../docs/history/m2/t70-final-current-certification.md) |

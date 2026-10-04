@@ -4,7 +4,7 @@
   "authority": "docs/states/CURRENT.md",
   "registry": "docs/states/M2_CURRENT_EQUIVALENCE.json",
   "taskId": "M2 T70 S17",
-  "part": "P152",
+  "part": "P153",
   "deadline": null,
   "universe": {
     "version": 1,
@@ -117820,7 +117820,7 @@
     {
       "id": "owner-001",
       "currentOwner": "shared Bowser flame frenzy core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 64,
       "facets": {
         "producerConsumer": {
@@ -117859,7 +117859,7 @@
     {
       "id": "owner-002",
       "currentOwner": "shared Bowser initializer and duplicate-object core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 36,
       "facets": {
         "producerConsumer": {
@@ -117898,7 +117898,7 @@
     {
       "id": "owner-003",
       "currentOwner": "shared Bullet Bill/Cheep frenzy core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 53,
       "facets": {
         "producerConsumer": {
@@ -117937,7 +117937,7 @@
     {
       "id": "owner-004",
       "currentOwner": "shared Lakitu/Spiny initializer and frenzy core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 93,
       "facets": {
         "producerConsumer": {
@@ -117978,7 +117978,7 @@
     {
       "id": "owner-005",
       "currentOwner": "shared Piranha and frenzy-dispatch core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 30,
       "facets": {
         "producerConsumer": {
@@ -118018,7 +118018,7 @@
     {
       "id": "owner-006",
       "currentOwner": "shared blocks, area, world and OAM core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 124,
       "facets": {
         "producerConsumer": {
@@ -118059,7 +118059,7 @@
     {
       "id": "owner-007",
       "currentOwner": "shared box-only initializer tail",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 7,
       "facets": {
         "producerConsumer": {
@@ -118098,7 +118098,7 @@
     {
       "id": "owner-008",
       "currentOwner": "shared cannon, world, enemy and OAM core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 90,
       "facets": {
         "producerConsumer": {
@@ -118137,7 +118137,7 @@
     {
       "id": "owner-009",
       "currentOwner": "shared coin, misc, score, world and OAM core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 120,
       "facets": {
         "producerConsumer": {
@@ -118178,7 +118178,7 @@
     {
       "id": "owner-010",
       "currentOwner": "shared enemy core and loop-command core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 97,
       "facets": {
         "producerConsumer": {
@@ -118218,7 +118218,7 @@
     {
       "id": "owner-011",
       "currentOwner": "shared enemy initializer target core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 67,
       "facets": {
         "producerConsumer": {
@@ -118258,7 +118258,7 @@
     {
       "id": "owner-012",
       "currentOwner": "shared enemy stream and initializer core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 154,
       "facets": {
         "producerConsumer": {
@@ -118298,7 +118298,7 @@
     {
       "id": "owner-013",
       "currentOwner": "shared fireball core owner",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 53,
       "facets": {
         "producerConsumer": {
@@ -118337,7 +118337,7 @@
     {
       "id": "owner-014",
       "currentOwner": "shared fireball dispatch owner",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 45,
       "facets": {
         "producerConsumer": {
@@ -118376,7 +118376,7 @@
     {
       "id": "owner-015",
       "currentOwner": "shared firebar and flying-Cheep initializer core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 104,
       "facets": {
         "producerConsumer": {
@@ -118416,7 +118416,7 @@
     {
       "id": "owner-016",
       "currentOwner": "shared fireworks frenzy core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 38,
       "facets": {
         "producerConsumer": {
@@ -118455,7 +118455,7 @@
     {
       "id": "owner-017",
       "currentOwner": "shared flagpole/OAM core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 42,
       "facets": {
         "producerConsumer": {
@@ -118494,7 +118494,7 @@
     {
       "id": "owner-018",
       "currentOwner": "shared game core: bridge/area/enemy/OAM",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 50,
       "facets": {
         "producerConsumer": {
@@ -118534,7 +118534,7 @@
     {
       "id": "owner-019",
       "currentOwner": "shared game core: enemy/actor_slots.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 44,
       "facets": {
         "producerConsumer": {
@@ -118573,7 +118573,7 @@
     {
       "id": "owner-020",
       "currentOwner": "shared game core: enemy/balance_platform.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 201,
       "facets": {
         "producerConsumer": {
@@ -118612,7 +118612,7 @@
     {
       "id": "owner-021",
       "currentOwner": "shared game core: enemy/bowser.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 115,
       "facets": {
         "producerConsumer": {
@@ -118651,7 +118651,7 @@
     {
       "id": "owner-022",
       "currentOwner": "shared game core: enemy/bowser_flame.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 24,
       "facets": {
         "producerConsumer": {
@@ -118690,7 +118690,7 @@
     {
       "id": "owner-023",
       "currentOwner": "shared game core: enemy/firebar_children.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 19,
       "facets": {
         "producerConsumer": {
@@ -118729,7 +118729,7 @@
     {
       "id": "owner-024",
       "currentOwner": "shared game core: enemy/fireworks.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 24,
       "facets": {
         "producerConsumer": {
@@ -118768,7 +118768,7 @@
     {
       "id": "owner-025",
       "currentOwner": "shared game core: enemy/frenzy.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 7,
       "facets": {
         "producerConsumer": {
@@ -118807,7 +118807,7 @@
     {
       "id": "owner-026",
       "currentOwner": "shared game core: enemy/loop.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 7,
       "facets": {
         "producerConsumer": {
@@ -118846,7 +118846,7 @@
     {
       "id": "owner-027",
       "currentOwner": "shared game core: enemy/piranha.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 47,
       "facets": {
         "producerConsumer": {
@@ -118885,7 +118885,7 @@
     {
       "id": "owner-028",
       "currentOwner": "shared game core: enemy/platform.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 72,
       "facets": {
         "producerConsumer": {
@@ -118924,7 +118924,7 @@
     {
       "id": "owner-029",
       "currentOwner": "shared game core: enemy/star_flag.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 91,
       "facets": {
         "producerConsumer": {
@@ -118963,7 +118963,7 @@
     {
       "id": "owner-030",
       "currentOwner": "shared game core: oam/bowser_flame_gfx.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 59,
       "facets": {
         "producerConsumer": {
@@ -119002,7 +119002,7 @@
     {
       "id": "owner-031",
       "currentOwner": "shared game core: oam/bowser_gfx.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 40,
       "facets": {
         "producerConsumer": {
@@ -119041,7 +119041,7 @@
     {
       "id": "owner-032",
       "currentOwner": "shared game core: world/fireball_enemy.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 54,
       "facets": {
         "producerConsumer": {
@@ -119080,7 +119080,7 @@
     {
       "id": "owner-033",
       "currentOwner": "shared game fireball/bubble core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 40,
       "facets": {
         "producerConsumer": {
@@ -119119,7 +119119,7 @@
     {
       "id": "owner-034",
       "currentOwner": "shared game timer/enemy core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 44,
       "facets": {
         "producerConsumer": {
@@ -119159,7 +119159,7 @@
     {
       "id": "owner-035",
       "currentOwner": "shared game whirlpool/world gravity",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 73,
       "facets": {
         "producerConsumer": {
@@ -119198,7 +119198,7 @@
     {
       "id": "owner-036",
       "currentOwner": "shared group-enemy stream core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 55,
       "facets": {
         "producerConsumer": {
@@ -119237,7 +119237,7 @@
     {
       "id": "owner-037",
       "currentOwner": "shared hammer, world and OAM core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 77,
       "facets": {
         "producerConsumer": {
@@ -119276,7 +119276,7 @@
     {
       "id": "owner-038",
       "currentOwner": "shared platform initializer core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 41,
       "facets": {
         "producerConsumer": {
@@ -119315,7 +119315,7 @@
     {
       "id": "owner-039",
       "currentOwner": "shared player-terrain, block and area core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 113,
       "facets": {
         "producerConsumer": {
@@ -119355,7 +119355,7 @@
     {
       "id": "owner-040",
       "currentOwner": "shared power-up and game-object core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 76,
       "facets": {
         "producerConsumer": {
@@ -119395,7 +119395,7 @@
     {
       "id": "owner-041",
       "currentOwner": "shared timer, enemy, world, flagpole and jumpspring core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 25,
       "facets": {
         "producerConsumer": {
@@ -119434,7 +119434,7 @@
     {
       "id": "owner-042",
       "currentOwner": "shared vine core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 19,
       "facets": {
         "producerConsumer": {
@@ -119473,7 +119473,7 @@
     {
       "id": "owner-043",
       "currentOwner": "shared vine, world and OAM core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 51,
       "facets": {
         "producerConsumer": {
@@ -119512,7 +119512,7 @@
     {
       "id": "owner-044",
       "currentOwner": "shared world movement/gravity and actor core",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 166,
       "facets": {
         "producerConsumer": {
@@ -119554,7 +119554,7 @@
     {
       "id": "owner-045",
       "currentOwner": "src/game shared dispatcher/engine/scroll owners",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 73,
       "facets": {
         "producerConsumer": {
@@ -119596,7 +119596,7 @@
     {
       "id": "owner-046",
       "currentOwner": "src/game/area.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 1261,
       "facets": {
         "producerConsumer": {
@@ -119636,7 +119636,7 @@
     {
       "id": "owner-047",
       "currentOwner": "src/game/area.c plus src/game/oam/flagpole_gfx.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 23,
       "facets": {
         "producerConsumer": {
@@ -119676,7 +119676,7 @@
     {
       "id": "owner-048",
       "currentOwner": "src/game/area/area_data.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 94,
       "facets": {
         "producerConsumer": {
@@ -119715,7 +119715,7 @@
     {
       "id": "owner-049",
       "currentOwner": "src/game/area/block_metatile.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 91,
       "facets": {
         "producerConsumer": {
@@ -119754,7 +119754,7 @@
     {
       "id": "owner-050",
       "currentOwner": "src/game/audio.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 681,
       "facets": {
         "producerConsumer": {
@@ -119801,16 +119801,16 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "All20 boot labels/98 source sites: descending six-digit/marker warm selector; all-byte clear parameters FE/D6/6F/4B; reset outputs, OAM-Y producer, both nametables, scroll/control helpers. Source caller census includes ColdBoot, InitializeGame, InitializeArea, InitScreen, ResetSpritesAndScreenTimer, ScreenOff, UpdateScreen and SetupWrites. Generic clear membership supplies any downstream RAM reader; later consumer interiors retain their own owner obligations.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled",
+            "docs/history/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
+            "docs/history/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled",
+            "docs/history/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement"
+            "docs/history/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled",
+            "docs/history/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps",
+            "docs/history/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
+            "docs/history/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement"
           ],
           "operationalEvidence": "P149 eight exact focused checks each x86/x64; P144 products retained; no game source change."
         },
@@ -119819,16 +119819,16 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Every initial Y byte and all eight RAM pages: 06=0,07=page; skip page1 offsets60..FF, retain page7 offsets above initial Y; page0 self-pointer stores remain zero and do not redirect clearing. Sprite entry0/4 wraps by4; tile writes960 and attributes64 per table, table1 before0; control/scroll helpers all256 incoming bytes. Physical PPU latch/fetch timing is held by pixel coverage, not converted into a RAM alias claim.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled",
+            "docs/history/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
+            "docs/history/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled",
+            "docs/history/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement"
+            "docs/history/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled",
+            "docs/history/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps",
+            "docs/history/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
+            "docs/history/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement"
           ],
           "operationalEvidence": "P149 eight exact focused checks each x86/x64; P144 products retained; no game source change."
         },
@@ -119837,16 +119837,16 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Within boot chain no intervening writer between warm-digit/marker selection and clear; source initialization clears precede explicit reset assignments. Both nametable fills reset0300/0301 and073F/0740 in source order. Control helper writes physical output before0778. NMI DMA samples prior RAM OAM before partial Y clear/shuffle; saved physical control is restored independently of mode-child mirror changes. Subsequent unrelated RAM writers remain consumer-owner obligations.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled",
+            "docs/history/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
+            "docs/history/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled",
+            "docs/history/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement"
+            "docs/history/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled",
+            "docs/history/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps",
+            "docs/history/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
+            "docs/history/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement"
           ],
           "operationalEvidence": "P149 eight exact focused checks each x86/x64; P144 products retained; no game source change."
         },
@@ -119855,16 +119855,16 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Reset-to-first-NMI uses the original two VBlank event barriers, preserves warm score/marker domain, transfers OAM first in NMI rather than constructor, and restores saved physical control at NMI return. InitializeGame(6F) sound clear and InitializeArea(4B) retention of entrance/halfway/header state follow the structural clear predicate for every starting byte. Area/entrance/death transitions use this same routine; their route reachability and rendered output are separate pending coverage slots.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled",
+            "docs/history/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
+            "docs/history/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled",
+            "docs/history/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement"
+            "docs/history/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled",
+            "docs/history/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps",
+            "docs/history/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
+            "docs/history/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement"
           ],
           "operationalEvidence": "P149 eight exact focused checks each x86/x64; P144 products retained; no game source change."
         },
@@ -119873,16 +119873,16 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "OriginalInitializeMemory returns A0; ColdBoot4011/OperMode and InitializeGame sound clears consume0. InitializeArea reloads X/A after child; source leftX071C cleared0 justifies returned GetScreenPosition page parity. InitScroll and WritePPUReg1 preserve incoming A without child mutation; InitATLoop reaches A0/X0. Sprite loop increments byte Y by4. CPU physical stack push slots, SEI/CLD/TXS, poll/idle cycles and RTI are explicit native hardware-event ABI, not claimed CPU-cycle equivalence or a pixels waiver.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled",
+            "docs/history/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
+            "docs/history/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled",
+            "docs/history/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement"
+            "docs/history/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled",
+            "docs/history/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps",
+            "docs/history/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
+            "docs/history/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement"
           ],
           "operationalEvidence": "P149 eight exact focused checks each x86/x64; P144 products retained; no game source change."
         },
@@ -119891,16 +119891,16 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "All actual source callers of the five shared boot helpers, source nametable JSR/fallthrough/tail and Start nonreturning idle reviewed against C. ColdBoot, InitScreen and ResetSpritesAndScreenTimer invoke all-sprite root; NMI invokes partial root only after DMA with split/unpaused condition. InitializeGame/Area clear inputs6F/4B and consumed A0/parity retained. UpdateScreen terminal A0 and SetupWrites control invoke the canonical helpers; native fixture initialize is not a product Start entry. Sixty touching registered controls retain statuses; no cartesian edge promotion.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled",
+            "docs/history/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
+            "docs/history/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled",
+            "docs/history/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement"
+            "docs/history/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled",
+            "docs/history/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps",
+            "docs/history/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
+            "docs/history/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement"
           ],
           "operationalEvidence": "P149 eight exact focused checks each x86/x64; P144 products retained; no game source change."
         },
@@ -119909,16 +119909,16 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Current normalized boot.c identity equals P87 owner identity; all98 PCs actually observed in its retained3600 original roots each width, zero differences for full declared RAM/CIRAM/palette/OAM/APU/control/mask/scroll comparisons. Current186-source snapshot gate binds callers/children; P36 clear invariant and P106/P111 NMI clauses reviewed at actual current call sites. Two stale helper owner rows/six uses/three control path lists corrected with explicit event. Physical CPU/PPU exclusions and unrelated pending route/output contracts remain visible.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P149 checkpoint - startup group integration reconciled",
+            "docs/history/m2/t70-final-current-certification.md S17 P36 checkpoint - initialization clear and screen-position lifetimes reconciled",
+            "docs/history/m2/t70-final-current-certification.md S17 P106 checkpoint - NMI output and scroll uses reconciled",
+            "docs/history/m2/t70-final-current-certification.md S17 P111 checkpoint - mode and parser caller uses reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled",
-            "docs/proposals/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
-            "docs/proposals/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement"
+            "docs/history/m2/t70-final-current-certification.md S17 P87 checkpoint - reset sprite nametable PPU control uses reconciled",
+            "docs/history/m2/t70-final-current-certification.md S15 P2 closure - identified startup gaps",
+            "docs/history/m2/t70-final-current-certification.md S17 P126 checkpoint - natural frame RAM contract",
+            "docs/history/m2/t70-final-current-certification.md S17 P127 checkpoint - continuous death and reentry agreement"
           ],
           "operationalEvidence": "P149 eight exact focused checks each x86/x64; P144 products retained; no game source change."
         }
@@ -119930,7 +119930,7 @@
     {
       "id": "owner-052",
       "currentOwner": "src/game/dispatcher.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 13,
       "facets": {
         "producerConsumer": {
@@ -119969,7 +119969,7 @@
     {
       "id": "owner-053",
       "currentOwner": "src/game/enemy/background.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 155,
       "facets": {
         "producerConsumer": {
@@ -120010,7 +120010,7 @@
     {
       "id": "owner-054",
       "currentOwner": "src/game/enemy/bloober.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 90,
       "facets": {
         "producerConsumer": {
@@ -120049,7 +120049,7 @@
     {
       "id": "owner-055",
       "currentOwner": "src/game/enemy/distance.c:mysmb_enemy_player_difference",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 7,
       "facets": {
         "producerConsumer": {
@@ -120092,7 +120092,7 @@
     {
       "id": "owner-056",
       "currentOwner": "src/game/enemy/firebar.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 205,
       "facets": {
         "producerConsumer": {
@@ -120132,7 +120132,7 @@
     {
       "id": "owner-057",
       "currentOwner": "src/game/enemy/flying_cheep.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 37,
       "facets": {
         "producerConsumer": {
@@ -120171,7 +120171,7 @@
     {
       "id": "owner-058",
       "currentOwner": "src/game/enemy/frenzy.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 5,
       "facets": {
         "producerConsumer": {
@@ -120210,7 +120210,7 @@
     {
       "id": "owner-059",
       "currentOwner": "src/game/enemy/hammer_bro.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 71,
       "facets": {
         "producerConsumer": {
@@ -120249,7 +120249,7 @@
     {
       "id": "owner-060",
       "currentOwner": "src/game/enemy/init_targets.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 30,
       "facets": {
         "producerConsumer": {
@@ -120288,7 +120288,7 @@
     {
       "id": "owner-061",
       "currentOwner": "src/game/enemy/jump_terrain.c:mysmb_objects_step_enemy_jump_terrain",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 20,
       "facets": {
         "producerConsumer": {
@@ -120327,7 +120327,7 @@
     {
       "id": "owner-062",
       "currentOwner": "src/game/enemy/lakitu.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 92,
       "facets": {
         "producerConsumer": {
@@ -120366,7 +120366,7 @@
     {
       "id": "owner-063",
       "currentOwner": "src/game/enemy/movement.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 67,
       "facets": {
         "producerConsumer": {
@@ -120405,7 +120405,7 @@
     {
       "id": "owner-064",
       "currentOwner": "src/game/enemy/platform_callers.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 22,
       "facets": {
         "producerConsumer": {
@@ -120444,7 +120444,7 @@
     {
       "id": "owner-065",
       "currentOwner": "src/game/enemy/platform_collision.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 55,
       "facets": {
         "producerConsumer": {
@@ -120483,7 +120483,7 @@
     {
       "id": "owner-066",
       "currentOwner": "src/game/enemy/platform_collision.c and src/game/enemy/platform_position.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 66,
       "facets": {
         "producerConsumer": {
@@ -120523,7 +120523,7 @@
     {
       "id": "owner-067",
       "currentOwner": "src/game/enemy/side_collision.c:mysmb_objects_check_enemy_side",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 19,
       "facets": {
         "producerConsumer": {
@@ -120562,7 +120562,7 @@
     {
       "id": "owner-068",
       "currentOwner": "src/game/enemy/star_flag.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 1,
       "facets": {
         "producerConsumer": {
@@ -120601,7 +120601,7 @@
     {
       "id": "owner-069",
       "currentOwner": "src/game/enemy/{bullet_bill,swimming_cheep}.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 69,
       "facets": {
         "producerConsumer": {
@@ -120641,7 +120641,7 @@
     {
       "id": "owner-070",
       "currentOwner": "src/game/enemy/{core,normal,dispatch_targets,special_callers}.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 37,
       "facets": {
         "producerConsumer": {
@@ -120690,7 +120690,7 @@
     {
       "id": "owner-071",
       "currentOwner": "src/game/enemy/{green_paratroopa,x_counter}.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 53,
       "facets": {
         "producerConsumer": {
@@ -120730,7 +120730,7 @@
     {
       "id": "owner-072",
       "currentOwner": "src/game/enemy/{lifecycle,podoboo}.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 22,
       "facets": {
         "producerConsumer": {
@@ -120774,7 +120774,7 @@
     {
       "id": "owner-073",
       "currentOwner": "src/game/enemy/{movement,paratroopa}.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 19,
       "facets": {
         "producerConsumer": {
@@ -120814,7 +120814,7 @@
     {
       "id": "owner-074",
       "currentOwner": "src/game/enemy_bounds.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 44,
       "facets": {
         "producerConsumer": {
@@ -120854,7 +120854,7 @@
     {
       "id": "owner-075",
       "currentOwner": "src/game/entry.c shared C90 entry owner",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 59,
       "facets": {
         "producerConsumer": {
@@ -120893,7 +120893,7 @@
     {
       "id": "owner-076",
       "currentOwner": "src/game/fireball/bubble.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 16,
       "facets": {
         "producerConsumer": {
@@ -120940,10 +120940,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Current frame-root32 labels/208 sites consume prior-frame OAM,VRAM selector/packets,control/mask/scroll mirrors,mode/task and current neutral two-port input. Declared source modes0..3,legal inline tasks and selector0..18 retain child source-domain contracts. ReadJoypads publishes both saved images/masks;PauseRoutine publishes status/timer/next-frame FA queue;TopScore child writes only score bytes;timer/random/shuffle writes bounded arrays. P122/P124 queue-to-NMI joins and P19/P24 audio queue handoff retained; source owner group obligations remain for upstream stream reachability.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: retained P53/P89/P90/P91/P94/P106/P111 original/native comparisons and observed sites within each declared field/domain; persistent boundary receipts explicitly scoped."
+            "docs/history/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: retained P53/P89/P90/P91/P94/P106/P111 original/native comparisons and observed sites within each declared field/domain; persistent boundary receipts explicitly scoped."
           ],
           "operationalEvidence": "P150 exact10 focused checks each x86/x64 pass;P144 product identities retained;no game change."
         },
@@ -120952,10 +120952,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "All-byte controller/mask/status/timer/random arithmetic;two ports write06FC/06FD and074A/074B and last serial sample00. Timer bounds780..7A3;random7A7..7AD;shuffle6E4..6F2 and6F3..6FB with raw byte6E0 amount index into6E1+index,carry preserved. VRAM selector0..18 actual table/packet bindings;clear340/341 onlyselector6,selector7 clears300/301. Sound/status/command child write sets disjoint770/772 and776 under recorded input domains. Physical PPU timing remains explicit output coverage.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: retained P53/P89/P90/P91/P94/P106/P111 original/native comparisons and observed sites within each declared field/domain; persistent boundary receipts explicitly scoped."
+            "docs/history/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: retained P53/P89/P90/P91/P94/P106/P111 original/native comparisons and observed sites within each declared field/domain; persistent boundary receipts explicitly scoped."
           ],
           "operationalEvidence": "P150 exact10 focused checks each x86/x64 pass;P144 product identities retained;no game change."
         },
@@ -120964,10 +120964,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "NMI sequence DMA snapshot,display/VRAM transfer and header reset,Sound,Joypads,Pause,TopScore,timer/frame counter,random,optional partial sprite clear/shuffle,scene scroll,saved control,mode child,physical restore. DMA reorder with display stores commutes for declared neutral state only. RAM00 successively pointer,serial sample,random preset,shuffle preset then dispatcher scratch;no value erroneously held across its next producer. Pause cache remains bit0 because later writes are disjoint776;mode/task cache stable through prefix under child domains.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: retained P53/P89/P90/P91/P94/P106/P111 original/native comparisons and observed sites within each declared field/domain; persistent boundary receipts explicitly scoped."
+            "docs/history/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: retained P53/P89/P90/P91/P94/P106/P111 original/native comparisons and observed sites within each declared field/domain; persistent boundary receipts explicitly scoped."
           ],
           "operationalEvidence": "P150 exact10 focused checks each x86/x64 pass;P144 product identities retained;no game change."
         },
@@ -120976,10 +120976,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Prior frame packets/OAM/scroll are consumed before current mode produces next frame state. Current two-port input filters Start/Select against retained masks;Pause leaves FA for next Sound invocation and cooldown decays only in accepted mode gates. Paused frames still consume input/audio/VRAM/update score/random/scroll but skip timers,frame9,shuffle and mode dispatch. Captured sprite-zero phase and saved physical control survive mode mutations for current output;RAM mirror changes belong following frame. Retained S8/S9 persistent protocols,P122/P124 and P126/P127 natural frame boundaries supplement P90/P91/P94/P106/P111 source write-set proof;remaining complete route/pixels slots stay open.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: retained P53/P89/P90/P91/P94/P106/P111 original/native comparisons and observed sites within each declared field/domain; persistent boundary receipts explicitly scoped."
+            "docs/history/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: retained P53/P89/P90/P91/P94/P106/P111 original/native comparisons and observed sites within each declared field/domain; persistent boundary receipts explicitly scoped."
           ],
           "operationalEvidence": "P150 exact10 focused checks each x86/x64 pass;P144 product identities retained;no game change."
         },
@@ -120988,10 +120988,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "ReadPortBits stack accumulator/LSR/ROL compressed exactly under standard NES D1zero capability;last raw serial sample00 preserved. Pause raw byte+1/XOR1/OR80 and timer DEC predicates unchanged. Timer negative DEC uses byte sign;INC9 outside frozen helper but inside unpaused gate. Random carries propagate all7 RORs;shuffle ADC overflow adds28 and wraps. JumpEngine publishes original scratch via shared dispatcher,source X5/X11 top-score child uses SEC borrow;saved PHA value restored after mode rather than live mirror. CPU unexposed registers/physical push bytes/poll/RTI timing are declared hardware ABI and cannot close pixels.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: retained P53/P89/P90/P91/P94/P106/P111 original/native comparisons and observed sites within each declared field/domain; persistent boundary receipts explicitly scoped."
+            "docs/history/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: retained P53/P89/P90/P91/P94/P106/P111 original/native comparisons and observed sites within each declared field/domain; persistent boundary receipts explicitly scoped."
           ],
           "operationalEvidence": "P150 exact10 focused checks each x86/x64 pass;P144 product identities retained;no game change."
         },
@@ -121000,10 +121000,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "All source NMI calls/tails and interleaved effects match shared C composition;Sound before Joy before Pause before TopScore,then timers/random/sprite/scroll/mode. Source reload pause and mode/task caches justified by disjoint intervening writes,not assumed. Title JumpEngine/task and victory live post-child task joins retain P111 actual parents;original AutoPlayer tail invokes relative/player graphics only. Stable selector reloaded after UpdateScreen verified legal packet child has no0773 write. Every one of97 touching control IDs remains registered with original disposition;physical wait edges retain their output timing obligation.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: retained P53/P89/P90/P91/P94/P106/P111 original/native comparisons and observed sites within each declared field/domain; persistent boundary receipts explicitly scoped."
+            "docs/history/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: retained P53/P89/P90/P91/P94/P106/P111 original/native comparisons and observed sites within each declared field/domain; persistent boundary receipts explicitly scoped."
           ],
           "operationalEvidence": "P150 exact10 focused checks each x86/x64 pass;P144 product identities retained;no game change."
         },
@@ -121012,10 +121012,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Unchanged current frame_root,status,boot,game,audio and P111 mode/dispatcher/engine/player identities bind retained original/native receipts. P106 area.c whole-file drift was checked against revisiona9a92901:three called palette/message functions and referenced constant/include prefix identical;only graphics packet producers differ and have P121-P124 corrected joins. All211 admitted PCs observed across retained receipts;UpdateTopScore3 sites reassigned to actualstatus owner,leaving208 currentframe sites. Current186 source/header/build identities gated;explicit receipt fields/fixtures/exclusions preserved,not broadened to all-input or completed pixels.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: retained P53/P89/P90/P91/P94/P106/P111 original/native comparisons and observed sites within each declared field/domain; persistent boundary receipts explicitly scoped."
+            "docs/history/m2/t70-final-current-certification.md S17 P150 checkpoint - NMI group integration reconciled: retained P53/P89/P90/P91/P94/P106/P111 original/native comparisons and observed sites within each declared field/domain; persistent boundary receipts explicitly scoped."
           ],
           "operationalEvidence": "P150 exact10 focused checks each x86/x64 pass;P144 product identities retained;no game change."
         }
@@ -121035,10 +121035,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "VictoryMode consumes liveTask after realVictoryModeSubroutines child. Returned0 skips enemy core,any other legal returnedtask publishesObjectOffset0 and runs one enemy turn. Current source bound resources are required;graphics relative/player tail always runs. Bridge/walk/message/end-world child interiors keep their owner contracts.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
           ],
           "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
@@ -121047,10 +121047,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Six caller instructions use fixed0772/0008,not an indexed alias. Source enemy argumentX0/slot0 and player graphics inputs retain current child domains. Returnedtask must not be replaced by pre-child selector;NMI output capture remains separate from current-mode mutations.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
           ],
           "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
@@ -121059,10 +121059,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Read0772 occurs after child,then store08=0 before enemy turn;actual enemy changes remain visible to relative/player graphics. No GameEngine/fireball/six-slot schedule or GetPlayerOffscreenBits predecessor added. Cachedmode2 only selects current invocation,not nextframe.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
           ],
           "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
@@ -121071,10 +121071,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Task0bridge collapse may advance task;walk/messages/end-world may change task or mode. Sameframe caller still follows liveTask predicate then graphics;nextNMI observes mutated mode/task. P111 actual task0/3 parents cover both caller alternatives andP98 realwalk parent binds movement;complete endgame route slot remains open.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
           ],
           "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
@@ -121083,10 +121083,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "SourceLDA/BEQ liveTask followedX0/STX08 preserved by typedzero;child returnA/flags overwritten by LDA and not silently consumed. Player graphics tail shares original RAM outputs;physicalCPU return stack/RTI timing outside nativeABI stays explicit output obligation.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
           ],
           "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
@@ -121095,10 +121095,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Source VictoryModeSubroutines->liveTask->optional one EnemiesAndLoopsCore->RelativePlayerPosition->PlayerGfxHandler tail matches current frame_root. P111 parent records plus static uniform post-child sequence preserve connections for all legal tasks;no edge promoted from unobserved graph path.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
           ],
           "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
@@ -121107,10 +121107,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Currentframe_root/terminal/dispatcher/player/game/engine identities equalP111,correctedterminal/helper/scroll identities equalP98. All6 original caller PCs observed. P150 saved NMI control andP151 title-to-mode joins retained;graphics pixels/final route coverage not inferred.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
           ],
           "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         }
@@ -121131,10 +121131,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "SkipMainOper consumes the P150 NMI saved-control capture after mode children,not a reread of mutable0778. RunDemo consumes the P88 menu/demo continuation boolean at the original82C0 ingress,executes actualGameCore in the same frame,then reads its returned live0E;only6 resets title. P111 actualNMI/title/core parents connect the formerly separate ingress and return proofs.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
           ],
           "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
@@ -121143,10 +121143,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Five NMI-tail and four demo-return instructions have no indexed gameRAM writer. Physical status-read/stack/control addresses are explicit native hardware ABI;live0E read after child and reset writes770/772/722,INC774 use actual shared state. Saved control is separate from possibly changed mirror;no output slot silently closed.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
           ],
           "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
@@ -121155,10 +121155,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "PHA-equivalent saved_control sampled after VRAM/scene-scroll before mode calls and restored with80 after mode or paused return. RunDemo reloads0E only after realGameCore,allowing child transitions;core continuation is not inferred from old input0E. ResetTitle follows only source equality6 or menu/demo terminal paths.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
           ],
           "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
@@ -121167,10 +121167,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Current physical control remains pre-child saved value while mutable mirror survives for next NMI. P150 prefix shows no cache-destabilizing writer;P111 tests real title child return and both sub6/non6 outcomes. Reset770/772/722 and byteINC774 prepare following title startup,not an extra same-frame constructor. P126/P127 natural frame boundary receipts retained within their routes.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
           ],
           "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
@@ -121179,10 +121179,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "PLA consumes saved pre-child A,ORA80 before physical2000/RTI;native local preserves value while physical stack storage/CPU cycles excluded under hardware ABI. RunDemo CMP6 equality determines reset,not carry or cached flag;GameCore return A/flags unexposed and replaced by live0E load/CMP. ResetTitle sourceA0 represented explicit stores.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
           ],
           "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
@@ -121191,10 +121191,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Actual title GameMenu sends both cleared-input and DemoEngine paths to sameRunDemo;native boolean causes actualcore call before sub6 reload/reset. Early menu Start/Reset returns bypassCore;paused NMI bypasses mode but still restores saved control. P88 actual ingress and P111 actualparent roots cover their distinct boundaries without fabricated call substitution.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
           ],
           "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
@@ -121203,10 +121203,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Current frame_root/title_modes/dispatcher/game/engine/player identities equal P111;P88 title/area-data identities equal current. All9 group PCs observed in retained actualparent visits. P149/P150 predecessor joins remain bound;CPU physical timing/final pixels and complete route manifests are separate pending slots.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
           ],
           "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         }
@@ -121219,7 +121219,7 @@
     {
       "id": "owner-080",
       "currentOwner": "src/game/game.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 217,
       "facets": {
         "producerConsumer": {
@@ -121258,7 +121258,7 @@
     {
       "id": "owner-081",
       "currentOwner": "src/game/jumpspring.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 20,
       "facets": {
         "producerConsumer": {
@@ -121297,7 +121297,7 @@
     {
       "id": "owner-082",
       "currentOwner": "src/game/oam/block_gfx.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 115,
       "facets": {
         "producerConsumer": {
@@ -121336,7 +121336,7 @@
     {
       "id": "owner-083",
       "currentOwner": "src/game/oam/block_offscreen.c and src/game/oam/sprite_dump.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 2,
       "facets": {
         "producerConsumer": {
@@ -121376,7 +121376,7 @@
     {
       "id": "owner-084",
       "currentOwner": "src/game/oam/enemy_offscreen.c and src/game/oam/sprite_dump.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 11,
       "facets": {
         "producerConsumer": {
@@ -121416,7 +121416,7 @@
     {
       "id": "owner-085",
       "currentOwner": "src/game/oam/fireball_gfx.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 15,
       "facets": {
         "producerConsumer": {
@@ -121455,7 +121455,7 @@
     {
       "id": "owner-086",
       "currentOwner": "src/game/oam/firebar_gfx.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 15,
       "facets": {
         "producerConsumer": {
@@ -121494,7 +121494,7 @@
     {
       "id": "owner-087",
       "currentOwner": "src/game/oam/fireworks_gfx.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 33,
       "facets": {
         "producerConsumer": {
@@ -121533,7 +121533,7 @@
     {
       "id": "owner-088",
       "currentOwner": "src/game/oam/flagpole_gfx.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 45,
       "facets": {
         "producerConsumer": {
@@ -121574,7 +121574,7 @@
     {
       "id": "owner-089",
       "currentOwner": "src/game/oam/hammer_gfx.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 44,
       "facets": {
         "producerConsumer": {
@@ -121614,7 +121614,7 @@
     {
       "id": "owner-090",
       "currentOwner": "src/game/oam/normal_enemy_gfx.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 345,
       "facets": {
         "producerConsumer": {
@@ -121654,7 +121654,7 @@
     {
       "id": "owner-091",
       "currentOwner": "src/game/oam/normal_enemy_gfx.c and src/game/oam/sprite_row.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 3,
       "facets": {
         "producerConsumer": {
@@ -121694,7 +121694,7 @@
     {
       "id": "owner-092",
       "currentOwner": "src/game/oam/object_position.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 155,
       "facets": {
         "producerConsumer": {
@@ -121734,7 +121734,7 @@
     {
       "id": "owner-093",
       "currentOwner": "src/game/oam/player_gfx.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 255,
       "facets": {
         "producerConsumer": {
@@ -121773,7 +121773,7 @@
     {
       "id": "owner-094",
       "currentOwner": "src/game/oam/power_up_gfx.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 49,
       "facets": {
         "producerConsumer": {
@@ -121813,7 +121813,7 @@
     {
       "id": "owner-095",
       "currentOwner": "src/game/oam/small_platform_gfx.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 131,
       "facets": {
         "producerConsumer": {
@@ -121852,7 +121852,7 @@
     {
       "id": "owner-096",
       "currentOwner": "src/game/oam/sprite_dump.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 8,
       "facets": {
         "producerConsumer": {
@@ -121891,7 +121891,7 @@
     {
       "id": "owner-097",
       "currentOwner": "src/game/oam/sprite_dump.c and src/game/oam/block_offscreen.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 4,
       "facets": {
         "producerConsumer": {
@@ -121931,7 +121931,7 @@
     {
       "id": "owner-098",
       "currentOwner": "src/game/oam/sprite_row.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 36,
       "facets": {
         "producerConsumer": {
@@ -121970,7 +121970,7 @@
     {
       "id": "owner-099",
       "currentOwner": "src/game/oam/sprite_row.c and src/game/oam/enemy_offscreen.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 40,
       "facets": {
         "producerConsumer": {
@@ -122010,7 +122010,7 @@
     {
       "id": "owner-100",
       "currentOwner": "src/game/oam/sprite_row.c and src/game/oam/sprite_draw.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 2,
       "facets": {
         "producerConsumer": {
@@ -122050,7 +122050,7 @@
     {
       "id": "owner-101",
       "currentOwner": "src/game/oam/sprite_stacker.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 12,
       "facets": {
         "producerConsumer": {
@@ -122089,7 +122089,7 @@
     {
       "id": "owner-102",
       "currentOwner": "src/game/oam/vine_gfx.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 56,
       "facets": {
         "producerConsumer": {
@@ -122128,7 +122128,7 @@
     {
       "id": "owner-103",
       "currentOwner": "src/game/objects.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 126,
       "facets": {
         "producerConsumer": {
@@ -122170,7 +122170,7 @@
     {
       "id": "owner-104",
       "currentOwner": "src/game/objects.c:mysmb_objects_bump_enemy",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 14,
       "facets": {
         "producerConsumer": {
@@ -122209,7 +122209,7 @@
     {
       "id": "owner-105",
       "currentOwner": "src/game/objects.c:mysmb_objects_bump_enemy/RXSpd owner",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 1,
       "facets": {
         "producerConsumer": {
@@ -122248,7 +122248,7 @@
     {
       "id": "owner-106",
       "currentOwner": "src/game/objects.c:mysmb_objects_kill_enemy_above_block",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 4,
       "facets": {
         "producerConsumer": {
@@ -122287,7 +122287,7 @@
     {
       "id": "owner-107",
       "currentOwner": "src/game/objects.c:mysmb_objects_step_hammer_terrain",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 15,
       "facets": {
         "producerConsumer": {
@@ -122326,7 +122326,7 @@
     {
       "id": "owner-108",
       "currentOwner": "src/game/player.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 310,
       "facets": {
         "producerConsumer": {
@@ -122365,7 +122365,7 @@
     {
       "id": "owner-109",
       "currentOwner": "src/game/player/climbing.c and terrain_metatiles.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 58,
       "facets": {
         "producerConsumer": {
@@ -122406,7 +122406,7 @@
     {
       "id": "owner-110",
       "currentOwner": "src/game/player/pipe_entry.c and terrain children",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 79,
       "facets": {
         "producerConsumer": {
@@ -122446,7 +122446,7 @@
     {
       "id": "owner-111",
       "currentOwner": "src/game/player/terrain.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 83,
       "facets": {
         "producerConsumer": {
@@ -122486,7 +122486,7 @@
     {
       "id": "owner-112",
       "currentOwner": "src/game/player/terrain.c and terrain children",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 109,
       "facets": {
         "producerConsumer": {
@@ -122526,7 +122526,7 @@
     {
       "id": "owner-113",
       "currentOwner": "src/game/player/terrain_metatiles.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 2,
       "facets": {
         "producerConsumer": {
@@ -122565,7 +122565,7 @@
     {
       "id": "owner-114",
       "currentOwner": "src/game/player/terrain_metatiles.c and climbing.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 46,
       "facets": {
         "producerConsumer": {
@@ -122605,7 +122605,7 @@
     {
       "id": "owner-115",
       "currentOwner": "src/game/player_control.c shared C90 player-control owner",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 102,
       "facets": {
         "producerConsumer": {
@@ -122644,7 +122644,7 @@
     {
       "id": "owner-116",
       "currentOwner": "src/game/player_end_level.c shared C90 end-level owner",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 53,
       "facets": {
         "producerConsumer": {
@@ -122683,7 +122683,7 @@
     {
       "id": "owner-117",
       "currentOwner": "src/game/player_modes.c shared C90 player-mode owner",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 51,
       "facets": {
         "producerConsumer": {
@@ -122722,7 +122722,7 @@
     {
       "id": "owner-118",
       "currentOwner": "src/game/player_movement.c shared C90 movement owner",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 64,
       "facets": {
         "producerConsumer": {
@@ -122761,7 +122761,7 @@
     {
       "id": "owner-119",
       "currentOwner": "src/game/player_transition.c shared C90 transition owner",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 50,
       "facets": {
         "producerConsumer": {
@@ -122800,7 +122800,7 @@
     {
       "id": "owner-120",
       "currentOwner": "src/game/scroll.c shared C90 scroll owner",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 80,
       "facets": {
         "producerConsumer": {
@@ -122839,7 +122839,7 @@
     {
       "id": "owner-121",
       "currentOwner": "src/game/status.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 94,
       "facets": {
         "producerConsumer": {
@@ -122886,10 +122886,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Source mode tasks0..4 victory and0..2 gameover consume currentplayer0..1/world0..7/level0..3 and boundPRG. Area4Bclear producesPrimary719/Secondary749 zero;message+4 carry increments primary until exit task,so reachable emitted selectors12..18. Checkpoint writes before player transpose,then Continue uses swappedWorld/Area;TimerNMI owns world-end countdown;EventFC queue consumed nextSound. Upstream warp/alias owner contracts remain separate.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
           ],
           "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
@@ -122898,10 +122898,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Sixteen halfway bytes indexedworld*2 pluslevelbit1;high/low nibble andscreenleft cap. Seven descending075A..0760/0761..0767 records disjoint;source stack preserves each byte. Message byte counters usecarry,not hostint;walkfraction byte+80 yieldsscroll1/2. Rawlives/button/timer/counter/fraction profiles retainP92/P93/P98 exact domains;invalidworld/task pointers not newly claimed.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
           ],
           "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
@@ -122910,10 +122910,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "LoseLife queuesSilence thenDEClives/sign,checkpoint beforetranspose beforepointerload. Continue loads current swappedWorld/Area before resets. SetupGameOver clearsScreenTask/Sprite0 thenqueuesmusic andincrementsTask. Terminate queuesSilence beforetranspose,storesContinueWorld onlyifnoresume. Messages publishmusic beforeselector,counter/branchtimer order preserved;walkalwaysAutoControl before liveScreenLeft/fraction/parser.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
           ],
           "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
@@ -122922,10 +122922,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Player records survive area clear;transpose swaps all7 fields before nextpointer selection. Continue resetscore/task/mode andTimerControl,following setup clears onlysource ranges. P127 naturaldeath/restart/gameover checkpoints retained. Message counters start0,secondary multiples4 carryevery64;world1..7 primary>=4 directexit orworld8 primary7 exit prevents laterinvalidselector onuninterrupted branch. WorldEndTimer decremented byNMI beforeleaf;nextframe consumesmessage/music andmode transitions. Fulltwo-player/endgame manifests remainpending.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
           ],
           "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
@@ -122934,10 +122934,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "DEClives/BPL usesresultsign including80->7F;Transpose SEC earlyexit/CLC success mapsnativeboolean,not ignoredcarry. EachPHA/PLA seven-byte swap preservesold value. Checkpoint LSR carry selectsnibble;messageWorld8 CMP/SBC carry,secondary+4/primary+carry andSetEndTimer bypass predicates preserved. Walk AutoControl storesSaved1 evenGameSub11;fractioncarry1/2 andreturnedScreenLeft live. VoidunusedCPUreturns/actualphysicalpushbytes stayrecorded exclusions.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
           ],
           "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
@@ -122946,10 +122946,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Actual JumpEngine task scratch precedes leaf. Continue pointer child sees posttranspose state;EndWorld resetsArea/Level/Task thenincrementsWorld andloadsnewpointer beforeMode1. FinalworldB ORbothcontrollers->WorldSelect1/LivesFF->Terminate mayresumeotherplayer. P98 realAutoControl/Scroll/UpdScroll children replace old wrong bypass. P92 screenTask13 andP98 idleparser fixture limits retain other child contracts insteadof claiming every path.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
           ],
           "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         },
@@ -122958,10 +122958,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "P92/P93 currentterminal differs only acceptedP98 one-line auto-control repair in excludedwalkbranch;byte-exact substitution check provesremainingcode unchanged. P98 terminal/entry/player/scroll/engine/test andP111 currentdependencies match. Oldarea.c drift confinedto graphics producers outsideP92/P93 exercisedpaths;pre-graphics child prefix matches,area_data/game identities unchanged. All208 group PCs observed;P93 infeasiblecontrol00153 remainsraw/infeasible,no count reset.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
+            "docs/history/m2/t70-final-current-certification.md S17 P152 checkpoint - victory and terminal integration reconciled: checked P92/P93/P98/P111 original parents,source drift applicability and scoped P127 natural boundaries."
           ],
           "operationalEvidence": "P152 seven exact tests each width pass;no game source change,P144products retained."
         }
@@ -122981,10 +122981,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Twenty menu/demo/icon labels plus InitializeGame consume live saved-port images,DemoTimer/SelectTimer,world-select/continue state and immutable admitted resources. Only exactStart10/A+Start90/select20/B40 take their source paths. InitializeGame6Fclear and actualInitializeArea4Bclear produce demo action/timer0;DemoEngine increments action on expiry,terminal timing22 returns beforeaction fetch. Source direct0717/718 writer census has only DemoEngine plus initializer clears;other owners retain alias domain obligations.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
           ],
           "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
@@ -122993,10 +122993,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Icon bound8 bytes copied7..0 to0300..0307 then nonzero player count changes0304/0306. Six world-template bytes copiedascending from returnedGoContinueX0;world selectorbyte+1AND7. Scores07DD+17..0 clear24bytes and preserve top score. Source-reachable demo actions1..21 use21 action/22 timing bytes;terminal22 haszero timer and noaction read. P88 persistent sequence traverses all43 tablelocations;invalid0/>22 guards are not promoted to all-input equivalence.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
           ],
           "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
@@ -123005,10 +123005,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "OR savedports sampled before decision;DemoTimer checked before world-select B branch. Select/B reloadtimer18 then SelectTimer10 before count/icon/world writes. NullJoypad clearsport1 only;DemoEngine-generated port1 is retained toCore. GoContinue setsbothworlds/areas before LoadAreaPointer;source pointer load precedes mode/flags/score clear. Icon copied before replacement. InitializeMemory6F precedes sound clear and18DemoTimer,thenpointer/area child.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
           ],
           "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
@@ -123017,10 +123017,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "NMI P150 reads/debounces physical input before title menu;timer decrement is prior phase. Hold gate keeps selection state until timer reaches0. Initialization produces0/0 demo state;1120 persistent original calls progress to terminal22/reset and actualP111Core parents cover livepost-child0E6 transition. Current mode snapshot prevents re-dispatch after menu changes mode. Title reset prepares nextNMI task0;Start transfers world/state to following game mode. Full route coverage remains separate.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
           ],
           "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
@@ -123029,10 +123029,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Exact90 caller ASL carry maps A-bit continue only;GoContinue originalX0 represented returned0 template cursor. DemoEngine carry1 terminal maps nativeboolean reset,carry0 maps sameframeCore. World byteINC/AND7,score descendingX17,icon descendingY7 and template X0..5 preserve source wraps/order. InitializeMemory returnedA0 feeds sound clear;area caller reloads registers. Physical stack bytes/unexposedCPUflags excluded only as recorded;no missing consumer hidden byvoid return.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
           ],
           "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
@@ -123041,10 +123041,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "P88 menu actual82C0 ingress orRTS paths joined to P111RunDemo/core return;P41 realInitializeGame->InitializeMemory->LoadAreaPointer->InitializeArea fallthrough retained. StartWorld1 realpointer before subsequentstores,DrawMushroomIcon real bound child and commonNullJoypad preserved. Compatibility title-loading helpers are not productNMI entry;Win32/DOS usepower_on then sharedframe root. Child internals retain own scope.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
           ],
           "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         },
@@ -123053,10 +123053,10 @@
           "retainedEvidence": "Per-site localReceipt and current-equivalence registry; reusable within documented domains, not reset or rejected.",
           "domain": "Current complete title_modes.c and area_data.c match P88;P111 caller/mode dependencies match. P41InitializeGame,boot initialize_memory and area initialize bodies are unchanged versus its acceptedrevision despite later unrelated area graphics edits. S16 immutable49 menu bytes/icon8 and P149 clear/P150 NMI scopes reused,not broadened. All115 groupPCs observed across checked originals;finite routes/pixels/current final snapshot still open.",
           "staticEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled"
           ],
           "romEvidence": [
-            "docs/proposals/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
+            "docs/history/m2/t70-final-current-certification.md S17 P151 checkpoint - title return and menu integration reconciled: current-bound P41/P88/P111 original/native roots and persistent menu sequence;P149/P150 predecessor joins."
           ],
           "operationalEvidence": "P151 eight exact focused checks each width;no game source change,P144 products retained."
         }
@@ -123068,7 +123068,7 @@
     {
       "id": "owner-124",
       "currentOwner": "src/game/world/block_buffer.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 64,
       "facets": {
         "producerConsumer": {
@@ -123108,7 +123108,7 @@
     {
       "id": "owner-125",
       "currentOwner": "src/game/world/block_buffer.c:mysmb_world_query_enemy_under",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 3,
       "facets": {
         "producerConsumer": {
@@ -123147,7 +123147,7 @@
     {
       "id": "owner-126",
       "currentOwner": "src/game/world/bounding_box.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 68,
       "facets": {
         "producerConsumer": {
@@ -123186,7 +123186,7 @@
     {
       "id": "owner-127",
       "currentOwner": "src/game/world/collision.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 52,
       "facets": {
         "producerConsumer": {
@@ -123226,7 +123226,7 @@
     {
       "id": "owner-128",
       "currentOwner": "src/game/world/collision.c:mysmb_world_land_enemy",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 6,
       "facets": {
         "producerConsumer": {
@@ -123265,7 +123265,7 @@
     {
       "id": "owner-129",
       "currentOwner": "src/game/world/enemy_collision.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 134,
       "facets": {
         "producerConsumer": {
@@ -123304,7 +123304,7 @@
     {
       "id": "owner-130",
       "currentOwner": "src/game/world/fireball_hit.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 64,
       "facets": {
         "producerConsumer": {
@@ -123343,7 +123343,7 @@
     {
       "id": "owner-131",
       "currentOwner": "src/game/world/geometry.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 46,
       "facets": {
         "producerConsumer": {
@@ -123382,7 +123382,7 @@
     {
       "id": "owner-132",
       "currentOwner": "src/game/world/hammer_collision.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 30,
       "facets": {
         "producerConsumer": {
@@ -123421,7 +123421,7 @@
     {
       "id": "owner-133",
       "currentOwner": "src/game/world/metatiles.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 23,
       "facets": {
         "producerConsumer": {
@@ -123462,7 +123462,7 @@
     {
       "id": "owner-134",
       "currentOwner": "src/game/world/metatiles.c:mysmb_world_enemy_metatile_is_non_solid",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 10,
       "facets": {
         "producerConsumer": {
@@ -123501,7 +123501,7 @@
     {
       "id": "owner-135",
       "currentOwner": "src/game/world/player_enemy_collision.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 210,
       "facets": {
         "producerConsumer": {
@@ -123540,7 +123540,7 @@
     {
       "id": "owner-136",
       "currentOwner": "src/game/world/powerup_collision.c",
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "useCount": 35,
       "facets": {
         "producerConsumer": {
@@ -123590,7 +123590,7 @@
         "use-03490",
         "use-04717"
       ],
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "oldEvidence": "P1435120decision prefixes;P14565536bubble roots;P136qualified/raw entrance distinction",
       "missingCondition": "Reconcile legal water/vine entrance, indexed bubble alias mutation and downstream stream ID3F initializer applicability. Prefix equality does not certify invalid child dispatch.",
       "gameplayImpact": "If a legal transition corrupts pointer/cursor, subsequent enemy decode or initializer can differ; occurrence in legal play is not yet proved.",
@@ -123605,7 +123605,7 @@
       "useIds": [
         "use-02423"
       ],
-      "receiver": "M2 T70 S17",
+      "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
       "oldEvidence": "P142actual row13 writes retained;P141qualified hammer reference domains",
       "missingCondition": "Area row13 stores overlap HammerEnemyOffset at06AE; qualified spawn index bounds are not an all-frame invariant. Reconcile availability/overwrite-before-consume across phases.",
       "gameplayImpact": "An unaccounted handoff could select the wrong enemy for a hammer; local source-preserving stores alone do not prove the downstream handoff.",
@@ -123883,12 +123883,21 @@
       "nodeControlCredit": 0,
       "sourceUniverseChanged": false,
       "groupUniverseChanged": false
+    },
+    {
+      "id": "P153-owner-approved-deferred-verification",
+      "cause": "Owner directs closing current acceptance S/T and placing all remaining verification at queue tail;not certificate closure.",
+      "sourceUniverseChanged": false,
+      "groupUniverseChanged": false,
+      "nodeControlCredit": 0,
+      "evidence": "docs/history/M2-T70-deferred-verification-closure.md",
+      "queuedProposal": "docs/proposals/m2/remaining-current-certification.md"
     }
   ],
   "closure": "All group facets, findings and coverage slots evidence-closed; six registry packages closed; no unresolved source mismatch; final source/data/build binding. No all-input theorem inferred.",
   "executionPlan": {
-    "authority": "docs/proposals/m2/t70-final-current-certification.md Current Continuation Plan - P147",
-    "activeReceiver": "M2 T70 S17",
+    "authority": "docs/proposals/m2/remaining-current-certification.md",
+    "activeReceiver": null,
     "groupOrder": [
       "owner-051",
       "owner-077",
@@ -124033,7 +124042,7 @@
     "phases": [
       {
         "key": "material",
-        "receiver": "M2 T70 S17",
+        "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
         "groupIds": [
           "owner-051",
           "owner-077",
@@ -124176,23 +124185,23 @@
           "gap-stream-domain",
           "gap-overlap-lifetime"
         ],
-        "status": "active",
+        "status": "queued-not-admitted",
         "exit": "All seven group facets and localized findings evidence-closed;use census justifies complete material dispositions."
       },
       {
         "key": "pixels",
-        "receiver": "unadmitted successor slot",
+        "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
         "coverageIds": [
           "pixel-render-mask",
           "pixel-scroll-split",
           "pixel-sprite-output"
         ],
-        "status": "planned",
+        "status": "queued-not-admitted",
         "exit": "Finite admitted completed-pixel manifest and all three named pixel slots closed."
       },
       {
         "key": "routes",
-        "receiver": "unadmitted successor slots",
+        "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
         "coverageIds": [
           "route-title-input",
           "route-gameplay",
@@ -124205,12 +124214,12 @@
           "route-two-player",
           "route-audio"
         ],
-        "status": "planned",
+        "status": "queued-not-admitted",
         "exit": "All ten named route slots closed,with finite source-branch manifests,terminal checkpoints and dual evidence."
       },
       {
         "key": "snapshot",
-        "receiver": "unadmitted final slot",
+        "receiver": "queued:docs/proposals/m2/remaining-current-certification.md",
         "packageKeys": [
           "startup",
           "bindings",
@@ -124219,7 +124228,7 @@
           "routes",
           "snapshot"
         ],
-        "status": "planned",
+        "status": "queued-not-admitted",
         "exit": "All retained receipts current;all final packages and ledger clauses closed,integrated regression/purity/DOS16 link and three identities accepted."
       }
     ],
@@ -124230,6 +124239,388 @@
       "fullRegression": "Once at T closure or for concrete invalidated dependencies;three products for game repairs",
       "duplicateGates": "Registry includes audit-ledger;documentation includes node progress/ledger;keep changed admission/closure checks",
       "removedTests": 0
+    },
+    "state": "queued-owner-approved-deferral",
+    "historicalReceiver": "M2 T70 S17",
+    "queuedProposal": "docs/proposals/m2/remaining-current-certification.md",
+    "queuedSlots": [
+      {
+        "id": "S1",
+        "groupIds": [
+          "owner-103",
+          "owner-080",
+          "owner-046",
+          "owner-049",
+          "owner-052",
+          "owner-121",
+          "owner-108",
+          "owner-047",
+          "owner-048",
+          "owner-045",
+          "owner-120",
+          "owner-075",
+          "owner-115"
+        ]
+      },
+      {
+        "id": "S2",
+        "groupIds": [
+          "owner-119",
+          "owner-117",
+          "owner-116",
+          "owner-118",
+          "owner-014",
+          "owner-013",
+          "owner-033",
+          "owner-034",
+          "owner-035",
+          "owner-017",
+          "owner-041",
+          "owner-081",
+          "owner-042"
+        ]
+      },
+      {
+        "id": "S3",
+        "groupIds": [
+          "owner-043",
+          "owner-008",
+          "owner-037",
+          "owner-009",
+          "owner-040",
+          "owner-039",
+          "owner-006",
+          "owner-044",
+          "owner-010",
+          "owner-012",
+          "owner-011",
+          "owner-004",
+          "owner-015"
+        ]
+      },
+      {
+        "id": "S4",
+        "groupIds": [
+          "owner-002",
+          "owner-001",
+          "owner-016",
+          "owner-003",
+          "owner-058",
+          "owner-036",
+          "owner-005",
+          "owner-007",
+          "owner-038",
+          "owner-060",
+          "owner-070",
+          "owner-064",
+          "owner-072"
+        ]
+      },
+      {
+        "id": "S5",
+        "groupIds": [
+          "owner-059",
+          "owner-063",
+          "owner-073",
+          "owner-071",
+          "owner-054",
+          "owner-069",
+          "owner-056",
+          "owner-057",
+          "owner-062",
+          "owner-018",
+          "owner-021",
+          "owner-026",
+          "owner-031"
+        ]
+      },
+      {
+        "id": "S6",
+        "groupIds": [
+          "owner-025",
+          "owner-022",
+          "owner-030",
+          "owner-024",
+          "owner-029",
+          "owner-068",
+          "owner-027",
+          "owner-023",
+          "owner-020",
+          "owner-028",
+          "owner-019",
+          "owner-032",
+          "owner-130"
+        ]
+      },
+      {
+        "id": "S7",
+        "groupIds": [
+          "owner-132",
+          "owner-136",
+          "owner-135",
+          "owner-129",
+          "owner-065",
+          "owner-066",
+          "owner-127",
+          "owner-111",
+          "owner-112",
+          "owner-114",
+          "owner-109",
+          "owner-113",
+          "owner-110"
+        ]
+      },
+      {
+        "id": "S8",
+        "groupIds": [
+          "owner-133",
+          "owner-053",
+          "owner-067",
+          "owner-104",
+          "owner-105",
+          "owner-055",
+          "owner-128",
+          "owner-061",
+          "owner-107",
+          "owner-106",
+          "owner-125",
+          "owner-134",
+          "owner-074"
+        ]
+      },
+      {
+        "id": "S9",
+        "groupIds": [
+          "owner-126",
+          "owner-131",
+          "owner-124",
+          "owner-102",
+          "owner-101",
+          "owner-089",
+          "owner-088",
+          "owner-096",
+          "owner-095",
+          "owner-094",
+          "owner-090",
+          "owner-099",
+          "owner-091"
+        ]
+      },
+      {
+        "id": "S10",
+        "groupIds": [
+          "owner-100",
+          "owner-084",
+          "owner-082",
+          "owner-083",
+          "owner-097",
+          "owner-085",
+          "owner-086",
+          "owner-087",
+          "owner-076",
+          "owner-093",
+          "owner-092",
+          "owner-098",
+          "owner-050"
+        ]
+      },
+      {
+        "id": "S11",
+        "coverageIds": [
+          "pixel-render-mask",
+          "pixel-scroll-split",
+          "pixel-sprite-output"
+        ]
+      },
+      {
+        "id": "S12",
+        "coverageIds": [
+          "route-title-input",
+          "route-gameplay",
+          "route-death-restart",
+          "route-pipe",
+          "route-vine",
+          "route-warp",
+          "route-end-world",
+          "route-final-completion",
+          "route-two-player",
+          "route-audio"
+        ]
+      },
+      {
+        "id": "S13",
+        "packageKeys": [
+          "startup",
+          "bindings",
+          "material",
+          "pixels",
+          "routes",
+          "snapshot"
+        ]
+      }
+    ],
+    "handoff": {
+      "evidence": "docs/history/M2-T70-deferred-verification-closure.md",
+      "pendingGroupIds": [
+        "owner-103",
+        "owner-080",
+        "owner-046",
+        "owner-049",
+        "owner-052",
+        "owner-121",
+        "owner-108",
+        "owner-047",
+        "owner-048",
+        "owner-045",
+        "owner-120",
+        "owner-075",
+        "owner-115",
+        "owner-119",
+        "owner-117",
+        "owner-116",
+        "owner-118",
+        "owner-014",
+        "owner-013",
+        "owner-033",
+        "owner-034",
+        "owner-035",
+        "owner-017",
+        "owner-041",
+        "owner-081",
+        "owner-042",
+        "owner-043",
+        "owner-008",
+        "owner-037",
+        "owner-009",
+        "owner-040",
+        "owner-039",
+        "owner-006",
+        "owner-044",
+        "owner-010",
+        "owner-012",
+        "owner-011",
+        "owner-004",
+        "owner-015",
+        "owner-002",
+        "owner-001",
+        "owner-016",
+        "owner-003",
+        "owner-058",
+        "owner-036",
+        "owner-005",
+        "owner-007",
+        "owner-038",
+        "owner-060",
+        "owner-070",
+        "owner-064",
+        "owner-072",
+        "owner-059",
+        "owner-063",
+        "owner-073",
+        "owner-071",
+        "owner-054",
+        "owner-069",
+        "owner-056",
+        "owner-057",
+        "owner-062",
+        "owner-018",
+        "owner-021",
+        "owner-026",
+        "owner-031",
+        "owner-025",
+        "owner-022",
+        "owner-030",
+        "owner-024",
+        "owner-029",
+        "owner-068",
+        "owner-027",
+        "owner-023",
+        "owner-020",
+        "owner-028",
+        "owner-019",
+        "owner-032",
+        "owner-130",
+        "owner-132",
+        "owner-136",
+        "owner-135",
+        "owner-129",
+        "owner-065",
+        "owner-066",
+        "owner-127",
+        "owner-111",
+        "owner-112",
+        "owner-114",
+        "owner-109",
+        "owner-113",
+        "owner-110",
+        "owner-133",
+        "owner-053",
+        "owner-067",
+        "owner-104",
+        "owner-105",
+        "owner-055",
+        "owner-128",
+        "owner-061",
+        "owner-107",
+        "owner-106",
+        "owner-125",
+        "owner-134",
+        "owner-074",
+        "owner-126",
+        "owner-131",
+        "owner-124",
+        "owner-102",
+        "owner-101",
+        "owner-089",
+        "owner-088",
+        "owner-096",
+        "owner-095",
+        "owner-094",
+        "owner-090",
+        "owner-099",
+        "owner-091",
+        "owner-100",
+        "owner-084",
+        "owner-082",
+        "owner-083",
+        "owner-097",
+        "owner-085",
+        "owner-086",
+        "owner-087",
+        "owner-076",
+        "owner-093",
+        "owner-092",
+        "owner-098",
+        "owner-050"
+      ],
+      "retainedClosedGroupIds": [
+        "owner-051",
+        "owner-077",
+        "owner-079",
+        "owner-123",
+        "owner-078",
+        "owner-122"
+      ],
+      "pendingFacets": 910,
+      "coverageIds": [
+        "route-title-input",
+        "route-gameplay",
+        "route-death-restart",
+        "route-pipe",
+        "route-vine",
+        "route-warp",
+        "route-end-world",
+        "route-final-completion",
+        "route-two-player",
+        "route-audio",
+        "pixel-render-mask",
+        "pixel-scroll-split",
+        "pixel-sprite-output"
+      ],
+      "findingIds": [
+        "gap-stream-domain",
+        "gap-overlap-lifetime"
+      ]
     }
   }
 }

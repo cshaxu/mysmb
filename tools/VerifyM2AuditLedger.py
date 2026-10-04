@@ -101,8 +101,42 @@ def validate(ledger, registry, root):
     routes = ledger['coverageSlots']
     require(len({r['id'] for r in routes}) == len(routes), 'duplicate coverage slot')
     plan = ledger['executionPlan']
-    require(plan['activeReceiver'] == ledger['taskId'] == 'M2 T70 S17',
-            'wrong current plan receiver')
+    queued = plan.get('state') == 'queued-owner-approved-deferral'
+    if queued:
+        require(plan['activeReceiver'] is None and
+                plan.get('historicalReceiver') == ledger['taskId'],
+                'queued plan must not retain an active receiver')
+        proposal = plan.get('queuedProposal', '')
+        require(proposal and (root / proposal).is_file(),
+                'queued plan needs an existing proposal')
+        handoff = plan.get('handoff', {})
+        require(handoff.get('evidence') and
+                (root / handoff['evidence']).is_file(),
+                'queued plan needs accepted closure evidence')
+        pending = {g['id'] for g in groups
+                   if any(f['status'] != 'closed' for f in g['facets'].values())}
+        require(len(handoff.get('pendingGroupIds', [])) == len(pending) and
+                set(handoff['pendingGroupIds']) == pending,
+                'handoff omits or duplicates pending groups')
+        require(handoff.get('pendingFacets') == sum(
+            f['status'] != 'closed' for g in groups for f in g['facets'].values()),
+            'handoff pending facet count changed')
+        slots = plan.get('queuedSlots', [])
+        require(slots and len({s['id'] for s in slots}) == len(slots),
+                'queued slots missing or duplicated')
+        assigned = [gid for s in slots for gid in s.get('groupIds', [])]
+        require(len(assigned) == len(pending) and set(assigned) == pending,
+                'queued slots omit or duplicate pending groups')
+        assigned = [cid for s in slots for cid in s.get('coverageIds', [])]
+        require(len(assigned) == len(routes) and
+                set(assigned) == {c['id'] for c in routes},
+                'queued slots omit or duplicate coverage')
+        require(set(handoff.get('findingIds', [])) == {f['id'] for f in findings}
+                and set(handoff.get('coverageIds', [])) == {c['id'] for c in routes},
+                'handoff loses finding or coverage identities')
+    else:
+        require(plan['activeReceiver'] == ledger['taskId'] == 'M2 T70 S17',
+                'wrong current plan receiver')
     order = plan['groupOrder']
     require(len(order) == len(groups) and set(order) == set(group_map),
             'plan misses or duplicates owner obligations')

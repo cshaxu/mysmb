@@ -1,5 +1,18 @@
 # M2 T70: final current-equivalence certification
 
+## S17 P153 owner-directed deferred-verification closure
+
+T70 and S17 are closed with owner-approved deferred verification. This is
+administrative delivery/transfer closure,not satisfaction of the original
+full-certification exit criteria. M2 remains incomplete. P1-P152 scoped
+receipts/repairs are retained;no fresh graph or facet credit in P153.
+Remaining130 groups/910 facets,two findings,13 coverage slots and four final
+packages transfer to the [unnumbered queue-tail candidate](../../proposals/m2/remaining-current-certification.md).
+The following continuation/admission sections are historical and no longer
+admit active work. [Closure record](../M2-T70-deferred-verification-closure.md)
+records authority,exact transfer and unchanged proof boundary.
+
+
 ## S17 P152 checkpoint - victory and terminal integration reconciled
 
 Consecutive owner-078/owner-122 groups:35 labels/214 instruction sites,

@@ -1,205 +1,28 @@
 # Project Status
 
-## M2 T70 S17 Packet
-
-| Field | Required record |
-| --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P152 victory/terminal checkpoint complete;S17 remains active,S16 closed,T70 open. |
-| Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
-| Objective | P152 reconciled owner-078/owner-122:35 labels/214 sites/95 controls,14 facets closed. Next source-order owner-103 requires bounded admission. No successor S/T admitted. |
-| Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
-| Reference Baseline | Historical1992/1992;local scoped1991/1992 nodes,4260/4261 controls(raw4342,infeasible81);material993 partial,total unknown. |
-| Candidate Proposal | [Current continuation plan](../proposals/m2/t70-final-current-certification.md#current-continuation-plan---p147);retained [S17 admission](../proposals/m2/t70-final-current-certification.md#s17-p1-admission---complete-material-use-census-and-path-reconciliation). |
-| Files And ABI Surface | P152 victory/terminal facet evidence only;no source mapping/game change. P151 title chain facet evidence only;no source mapping/game change. P150 neutral status-child mapping/NMI facet evidence;no game change. P149 neutral registry/ledger owner mapping and startup facet evidence;no game change. P148 verification-only tools/VerifyM2AuditLedger.py single-pass indexing and tools/run_scoped_tests.py exact target/test execution;no game change. P144 shared ppu_frame.c mask consumer/existing regression/three products; P123 area/block_metatile.c absolute-X graphics operands/source order and three products; P121 area.c original byte VRAM buffer offsets and three products; P115 init_targets.c platform zero-page-X chain and three products; P114 enemy/init_targets.c duplicate leaf zero-page-X correction and three products; P104 area.c bridge/water originalUnderPart-tail repair andfocusedtest/threeEXEs; P98 boundedterminal_modes.c AutoControlPlayer caller/test/threeEXE repair ifconfirmed; P46 sharedfireball/fireball_core.c originalbyte-indexed boundPRG speed lookup;P45 sharedwhirlpool.c RAM00/01/02 publication andtest/engine_environment_smoke.c originalgravityentry observer;S17 P39 area.c raw pipe/castle/UnderPart-return repair;P28 parser00/07 phases retained;bounded corrective game.c/area.c/player_control.c,title-bootstrap/area-output/player-control-chain tests and three assets EXEs;neutral use/path index and governance,evidence below ignored build. |
-| Applicable Rules | README Task Reading Set,[Execution](../rules/EXECUTION.md),[Architecture](../rules/ARCHITECTURE.md),[Coding](../rules/CODING.md),[Documentation](../rules/DOCUMENT.md),[Source policy](../etc/operations/policy/source-policy.md),current-equivalence proof program. |
-| Verification | P2:250 direct ROM-read sites reconciled in retained domains,22 new paths;12 actual checks each width pass,zero-test attempt rejected;no product/source change. P1 inventoried10691 instructions/4171 memory sites. P19 reconciles681 sound sites/174 direct RAM sites in scoped domains,153 new paths;remaining mutable/register/flag/stack/inter-frame uses still require joins. Byte-bound access inventory and feasible path/alias/lifetime proof;retained scoped receipts,focused original/native routes for uncovered clauses;accounting gates. |
-| Expected Markers | 1667 labels:retained enemy/music/immutable audit participation plus title/column/parser corrective chains and9 parser-schedule/9 shared area leaf/14 row-column/17 object-render/pool/7 initialization/12 style-ledge-rope/5 castle-pipe audit participants;expected fresh0,max1992;no material denominator until complete feasible-use disposition. |
-| Asset Needs | Existing ROM/ASM owner-local read-only nonredistributable;ignored build128MiB/120seconds per process;raw cleanup by coordinator. |
-| Reporting Requirements | Exact groups/use IDs and resolved/pending conditions;local nodes/1992,feasible controls/current total,facets/952,coverage/13,packages/6 and finding changes;993 material receipts are not the audit denominator. |
-| Stop Conditions | Source mismatch stays S17;admit exact affected chain before product edit,repair/re-audit before successor. |
-| Exit Criteria | All136 groups/seven facets reconciled,zero unresolved applicable producer/lifetime/overwrite/alias or localized finding conditions;use dispositions justify material completeness;source binding and dual tracks pass before successor admission. |
-| Original Owner Request | Owner cancels the deadline and requires a finite, traceable audit ledger covering nodes, controls and data without repeated whole-project rounds or false closure. |
-| Similar-Issue Sweep | Explicit RAM/ROM/hardware accesses,indirect pointer/index aliases,register/flag/stack lifetimes and cross-frame handoffs. |
+**Idle.**
 
 ## Current Technical Baseline
 
-- P146 ledger amendment: deadline cancelled. [Audit ledger](M2_AUDIT_LEDGER.md)
-  indexes fixed source sites and explicit integration obligations;P152 total42/952 facets closed in6/136groups,910 pending;existing
-  scoped node/control evidence is retained. No new S or graph credit.
-
-- Full M2 certification: **NOT COMPLETE**;prior exact rows are local contracts.
-- Historical mapping1992/1992;no new global audit round or zero-based progress denominator.
-- S15 closed its17-node/42-control startup scope;identified8 mismatches and1 input-contract gap resolved.
-- Local ledger1991/1992 accepted scoped nodes and4260/4261 feasible controls
-  (raw4342,infeasible81);CheckForEnemyGroup/control-01480 needs evidence;these are scoped dispositions,not whole-game certification.
-- Material993 partial;global denominator unknown. Startup package closed;
-  material/pixels/routes/snapshot packages remain;bindings closes in S16. A-N restart is superseded.
-- S16 P1 removed an uncalled synthetic terrain helper with one mismatching table byte;active original owners unchanged.
-- S16 P2 reconciles177 table locations/266 candidate categories and17 low bases;93 direct reads/134 calls are an explicit pending-domain inventory,not new node/edge credit.
-- S16 closes93 indexed/134 caller address clauses and70 other resource references;no new graph credit. Products remain P1;DOS is compile/link evidence only.
-- T70 S16 closed;S17 admitted for existing material completeness gap. [Full remaining/exit contract](../proposals/m2/t70-final-current-certification.md#owner-directed-bounded-final-audit-contract).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-S17 P145:fivebubble writer aliassemantics joined by65536actualoriginal SetupBubble roots eachwidth0scopedRAM/APU/orderdiff,all256rawX/all256incoming07 andfivewriterPC observed.374indexclauses now60intrinsic/309parent-qualified/5alias-preserved/0undisposed;thisdoesnotprove globalabsenceofalias orlegalstream reachability. P143classification instructionlocalreceipt recorded,10691scopedinstructionreceipts;global lifetimeclosurestillpending. Fivefocusedtests eachwidthpass,123source/P144productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
-
-S17 P146:fixed ledger10691sites/4171accesses/136owner groups/952integration cells;all local receipts retained,facets pending reconciliation. Two localized evidence gaps/13coverage slots open;186source bindings,six negative accounting checks reject. Deadline cancelled,no new round/node credit. Historical1992/1992;local1991/1992nodes,4260/4261controls(raw4342,infeasible81);993material receipts not denominator;M2 incomplete,P144products unchanged.
-
-S17 P147:current proposal/exit/reporting now follow fixed ledger;136groups ordered byoriginalPC,952facets underexistingS17;all1643instructionlabels inside1667admittedparticipants. Successor output3slots/routes10slots/final snapshot planned butnotadmitted;no newT/S/node credit. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);952cells pending reconciliation,13coverage slots open,M2 incomplete,P144products retained.
-
-S17 P148:verification cost audit;ledgermedian0.5515->0.0550s,same checks/output;4096P145roots native readers0.2120->0.1117s bothwidth0diff(original0.9172s unchanged). Exacttarget runner builds4targets/runs5tests eachwidth,passes;8bad accounting/3bad selections rejected. No tests deleted/game changes/node credit;historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);952facets/13coverage slots remainopen,M2 incomplete,P144products retained.
-
-S17 P149:startup owner-05120labels/98sites/31accesses reconciled;7/952facets closed,945pending,1/136groups. Six stale helper use owners/two node mappings/three control paths corrected,IDs/source universe unchanged. Retained3600P87roots eachwidth coverall98PC/0declared-state diff;8focusedtests eachwidth pass. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81);two findings/13coverage slots open,packages2/6closed,M2 incomplete. No game change/EXErefresh,P144products retained. Next source-order owner-077 notyetadmitted.
-
-S17 P150:NMI admitted33labels/211sites/97controls;actualstatus child3sites remapped,frame32labels/208sites. Seven named frame facets closed,total14/952closed/938pending,2/136groups. Current retained owner identities/unchangedarea callees bound;all211PC observed,10focusedtests eachwidth pass. No game change/graph credit;local1991/1992nodes,4260/4261controls(raw4342/infeasible81),two findings/13coverage slots open,packages2/6closed,M2 incomplete,P144products retained. Next owner-079 notyetadmitted.
-
-S17 P151:title return/menu owner-079/owner-12323labels/124sites/56controls reconciled;two groups/fourteen facets closed,total28/952closed/924pending,4/136groups. Current-boundP41/P88/P111 clear/menu/actual-return/persistent-demo proofs,all124PC observed,8focusedtests eachwidth pass. No game change/graph credit;local1991/1992nodes,4260/4261controls(raw4342/infeasible81),two findings/13coverage slots open,packages2/6closed,M2 incomplete,P144products retained. Next owner-078/owner-122 notyetadmitted.
-
-S17 P152:victory/terminal owner-078/owner-12235labels/214sites/95controls reconciled;two groups/fourteen facets closed,total42/952closed/910pending,6/136groups. P92/P93 non-walk source drift qualified,P98 repaired AutoControl/P111 actual parents current-bound,all214PC observed;7focusedtests eachwidth pass. No game change/graph credit;local1991/1992nodes,4260/4261controls(raw4342/infeasible81),two findings/13coverage slots open,packages2/6closed,M2 incomplete,P144products retained. Next owner-103 notyetadmitted.
+- M2 T70/S17 closed by owner-approved deferred-verification transfer (P153);
+  [closure record](../history/M2-T70-deferred-verification-closure.md).
+  This is not successful full-game acceptance;M2 certificate remains incomplete.
+- Historical mapping1992/1992;local scoped nodes1991/1992,feasible controls
+  4260/4261(raw4342,infeasible81). CheckForEnemyGroup/control-01480 needs evidence.
+- [Audit ledger](M2_AUDIT_LEDGER.md):10691 retained sites/4171 accesses,
+  6/136 groups and42/952 facets closed,130 groups/910 facets pending.
+  Material993 partial,not a denominator;two findings/all13 coverage slots open.
+  Final packages2/6 closed,material/pixels/routes/snapshot pending.
+- Remaining verification is the last [queue](QUEUE.md) candidate:
+  [remaining certification](../proposals/m2/remaining-current-certification.md).
+  No active T/S or admitted successor. Earlier three I/O/presentation plans stay first.
+- Existing P144 three products/original DOS16 compile-link receipts retained;
+  P153 makes no game-code change and does not refresh products.
+
+## Compact closure status
+
+M2 T70 S17 P153:owner-directed administrative S/T closure;all unfinished
+verification transferred to an unnumbered candidate,not marked passed.
+P152 victory/terminal35labels/214sites/95controls and seven operational tests
+per width remain scoped receipts. [Archived T70](../history/m2/t70-final-current-certification.md)
+preserves all earlier P evidence and limitations. Full M2 remains incomplete.

@@ -5,7 +5,7 @@
 - [x] **Shared sprite-clear child graph:** T70 S6 P2 restores one shared
   SprInitLoop,zero/four entry selectors and the actual NMI child call/return.
   512 full RAM roots and64 complete OAM NMI cases match both widths.
-  [Closure proof](../proposals/m2/t70-final-current-certification.md#s6-p2-closure---shared-sprite-clear-child-graph).
+  [Closure proof](../history/m2/t70-final-current-certification.md#s6-p2-closure---shared-sprite-clear-child-graph).
 
 - [ ] **Within-scanline split output proof (High):** T70 S6 observes original
   physical scroll writes inside scanline31 after sprite-zero hit/delay;the
@@ -13,7 +13,7 @@
   This does not certify per-dot fine-X/background-fetch pixel equality.
   Capture original completed pixels and current shared output under actual
   scroll routes,then resolve source-proven differences before final T70/M2
-  certification. [Scoped phase proof and limits](../proposals/m2/t70-final-current-certification.md#s6-p1-verified-part---conditional-visible-scroll-and-saved-control-handoff).
+  certification. [Scoped phase proof and limits](../history/m2/t70-final-current-certification.md#s6-p1-verified-part---conditional-visible-scroll-and-saved-control-handoff).
 
 
 - [x] **Music fetch order beyond immutable PRG inputs:** T69 S14 restores all
@@ -45,10 +45,10 @@
 - [x] **Cold-screen snapshot control bit:** T51 S5 P23 restores the original NMI `PHA` / `PLA` physical `$2000` return behavior. The game tree may change the RAM mirror for the following NMI, but the current frame restores its saved control byte with d7 set at RTI. Fresh owner-local original replay matches `$90` at Start samples 1/202 and idle sample 1 on x86/x64. [T51 S5 P23](../proposals/m2/t51-residual-equivalence-and-certification.md#s5-p23-restore-nmi-rti-ppu-control).
 
 - [x] **NextArea Silence selector:** T32 S4 restores original $80 in the shared end-level owner and verifies its write after pointer/mode/halfway updates. The direct original NextArea boundary matches native execution on both widths; player-control descendants remain separately incomplete. [Evidence](../history/M2-T32-player-control-modes.md#s4-p1-original-end-level-proof).
-- [ ] **Historic inline-data address annotations (`TODO(High)`):** the source indexer omitted inline labeled data before T30 S14. Scoped pointer/header addresses now have byte-checked corrected bindings. Recheck later table annotations against the corrected listing at each source-order admission; the [full census](../etc/architecture/m2-t24-s1-full-node-census.md) does not certify unreviewed addresses. T70 S3 reconciles25 flagged numeric range comments and fixes16 annotations;unflagged comments and executable numeric data bindings still require source-bound reconciliation. [S3 closure](../proposals/m2/t70-final-current-certification.md#s3-p1-closure---corrected-current-provenance-without-semantic-changes).
+- [ ] **Historic inline-data address annotations (`TODO(High)`):** the source indexer omitted inline labeled data before T30 S14. Scoped pointer/header addresses now have byte-checked corrected bindings. Recheck later table annotations against the corrected listing at each source-order admission; the [full census](../etc/architecture/m2-t24-s1-full-node-census.md) does not certify unreviewed addresses. T70 S3 reconciles25 flagged numeric range comments and fixes16 annotations;unflagged comments and executable numeric data bindings still require source-bound reconciliation. [S3 closure](../history/m2/t70-final-current-certification.md#s3-p1-closure---corrected-current-provenance-without-semantic-changes).
 
 
-- [x] **Inactive legacy area readers:** T70 S2 removes the seven unused next/decode/emitter/lookahead/preparation functions and obsolete API. Both legacy tests now use the real persistent parser;original boundary NMI replay matches both widths. Active owner bodies are unchanged and all29 admitted original mappings retained. [S2 closure](../proposals/m2/t70-final-current-certification.md#s2-p1-closure---one-active-parser-and-retained-original-semantics).
+- [x] **Inactive legacy area readers:** T70 S2 removes the seven unused next/decode/emitter/lookahead/preparation functions and obsolete API. Both legacy tests now use the real persistent parser;original boundary NMI replay matches both widths. Active owner bodies are unchanged and all29 admitted original mappings retained. [S2 closure](../history/m2/t70-final-current-certification.md#s2-p1-closure---one-active-parser-and-retained-original-semantics).
 
 - [x] **Jumpspring pre-parser offscreen mismatch:** Superseded by the source-shaped T41 S13 `OffscreenBoundsCheck` carry chain and revalidated through `JumpspringHandler`. At screen origin the ROM's `SBC #$48` wraps the left edge to `$ff:$b8`; a page-zero object `$32` is retained. The current x86/x64 integrated handler check verifies that boundary, the `$00-$03` scratch result, and absence of erasure. [T51 S5 P18](../proposals/m2/t51-residual-equivalence-and-certification.md#s5-p18-jumpspring-screen-origin-offscreen-revalidation).
 
@@ -74,7 +74,7 @@
 - [x] **T24 audit D9 (`TODO(High)`): relative-position scroll write ownership.** T70 S1 source check finds the 0755 write only in RenderPlayerSub's shared row publisher; RelativePlayerPosition retains relative-coordinate/scratch ownership. T66 S1/S2 source and original/native routes supersede the historic seeded-write finding. [Current relative/render proof](../history/M2-T66-player-relative-offscreen-current-proof.md).
 
 
-- [x] **T24 coverage debt (`TODO(High)`): missing individual proof and incomplete historic scope.** The old missing-label/ownership backlog is superseded by the registered 1992 individual current node rows with source/RAM/table contracts and original/native evidence, plus the closed T53-T69 source-order program. T70 S1 checks original label bindings and evidence availability without treating those checks as semantic proof. Global material enumeration, evidence freshness and complete end-to-end certification remain explicitly open in [T70](../proposals/m2/t70-final-current-certification.md); this closes only the historic unallocated/missing-label backlog.
+- [x] **T24 coverage debt (`TODO(High)`): missing individual proof and incomplete historic scope.** The old missing-label/ownership backlog is superseded by the registered 1992 individual current node rows with source/RAM/table contracts and original/native evidence, plus the closed T53-T69 source-order program. T70 S1 checks original label bindings and evidence availability without treating those checks as semantic proof. Global material enumeration, evidence freshness and complete end-to-end certification remain explicitly open in [T70](../history/m2/t70-final-current-certification.md); this closes only the historic unallocated/missing-label backlog.
 
 
 - [x] **Jumpspring graphics child:** T44 S8 removed the unsupported slot-five guard and restored the source frame, flip, work-byte and OAM path. All 32 current original graphics-child records match non-stack RAM/OAM on both widths; the earlier T35 differences remain historical evidence. [Closure](../history/M2-T44-block-buffer-and-object-graphics.md#s8-closure-enemy-graphics-and-animation). The separate pre-parser screen-origin route still needs integrated revalidation.

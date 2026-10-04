@@ -3,7 +3,7 @@
 ## Current reporting boundary
 
 See [CURRENT](CURRENT.md) for current counts and the
-[bounded final-audit contract](../proposals/m2/t70-final-current-certification.md#owner-directed-bounded-final-audit-contract)
+[bounded final-audit contract](../history/m2/t70-final-current-certification.md#owner-directed-bounded-final-audit-contract)
 for remaining work/exit conditions. Historical1992/1992 means mapping coverage.
 Prior aggregate exact counts below retain their closure-time local-contract
 meaning;they are not full current-build certification. The attempted zero-based final-review restart is superseded;reuse retained
@@ -11,308 +11,310 @@ scoped evidence and track only named unresolved/invalidated clauses.
 Material993 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
-## M2 T70 S17 - active material-use completeness
+## M2 T70 S17 - closed with deferred verification
 
-[P152 victory/terminal reconciliation](../proposals/m2/t70-final-current-certification.md#s17-p152-checkpoint---victory-and-terminal-integration-reconciled):owner-078/owner-12235labels/214sites/95controls,two groups/fourteen facets closed;total6/136groups,42/952facets closed,910 pending. Qualified P92/P93 unchanged non-walk branches and P98 repaired walk/P111 actual parents bind current code;all214PC observed. Seven focused tests eachwidth pass,no game change/graph credit. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81);two findings/all13coverage slots open,packages2/6closed,M2 incomplete.
+P153 owner-directed S/T scope-transfer closure,not M2 acceptance. Remaining130 groups/910 facets,two findings,13 coverage slots and four final packages are [queued last](../proposals/m2/remaining-current-certification.md). Local node/control statuses unchanged;earlier P entries below are historical checkpoints.
 
-[P151 title reconciliation](../proposals/m2/t70-final-current-certification.md#s17-p151-checkpoint---title-return-and-menu-integration-reconciled):owner-079/owner-12323labels/124sites/56controls,two groups/fourteen facets closed;at P1514/136groups,28/952facets closed,924 pending. Retained ingress/persistent-demo/actual-return/clear proofs current-bound,all124PC observed;8focusedtests eachwidth pass,no game change/graph credit. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81);two findings/13coverage slots open,packages2/6closed,M2 incomplete.
+[P152 victory/terminal reconciliation](../history/m2/t70-final-current-certification.md#s17-p152-checkpoint---victory-and-terminal-integration-reconciled):owner-078/owner-12235labels/214sites/95controls,two groups/fourteen facets closed;total6/136groups,42/952facets closed,910 pending. Qualified P92/P93 unchanged non-walk branches and P98 repaired walk/P111 actual parents bind current code;all214PC observed. Seven focused tests eachwidth pass,no game change/graph credit. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81);two findings/all13coverage slots open,packages2/6closed,M2 incomplete.
 
-[P150 NMI reconciliation](../proposals/m2/t70-final-current-certification.md#s17-p150-checkpoint---nmi-group-integration-reconciled):admitted33labels/211sites/97controls,frame owner32labels/208sites after actualstatus-child mapping. Seven frame facets closed,at P1502/136groups,14/952facets closed,938 pending. All211PC observed in checked retained receipts;10focusedtests each width pass. No game change or graph credit;local1991/1992nodes,4260/4261controls(raw4342/infeasible81),two findings/all13coverage slots open,packages2/6closed,M2 incomplete.
+[P151 title reconciliation](../history/m2/t70-final-current-certification.md#s17-p151-checkpoint---title-return-and-menu-integration-reconciled):owner-079/owner-12323labels/124sites/56controls,two groups/fourteen facets closed;at P1514/136groups,28/952facets closed,924 pending. Retained ingress/persistent-demo/actual-return/clear proofs current-bound,all124PC observed;8focusedtests eachwidth pass,no game change/graph credit. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81);two findings/13coverage slots open,packages2/6closed,M2 incomplete.
 
-[P149 startup reconciliation](../proposals/m2/t70-final-current-certification.md#s17-p149-checkpoint---startup-group-integration-reconciled):owner-05120labels/98sites/31accesses,seven named integration facets closed;at P1491/136groups,7/952facets closed,945 pending. Two stale helper owner rows/six uses/three control paths corrected;no game change or graph credit. Local1991/1992 nodes,4260/4261 feasible controls(raw4342/infeasible81);two findings/all13coverage slots open,six packages2closed/4open,M2 incomplete.
+[P150 NMI reconciliation](../history/m2/t70-final-current-certification.md#s17-p150-checkpoint---nmi-group-integration-reconciled):admitted33labels/211sites/97controls,frame owner32labels/208sites after actualstatus-child mapping. Seven frame facets closed,at P1502/136groups,14/952facets closed,938 pending. All211PC observed in checked retained receipts;10focusedtests each width pass. No game change or graph credit;local1991/1992nodes,4260/4261controls(raw4342/infeasible81),two findings/all13coverage slots open,packages2/6closed,M2 incomplete.
+
+[P149 startup reconciliation](../history/m2/t70-final-current-certification.md#s17-p149-checkpoint---startup-group-integration-reconciled):owner-05120labels/98sites/31accesses,seven named integration facets closed;at P1491/136groups,7/952facets closed,945 pending. Two stale helper owner rows/six uses/three control paths corrected;no game change or graph credit. Local1991/1992 nodes,4260/4261 feasible controls(raw4342/infeasible81);two findings/all13coverage slots open,six packages2closed/4open,M2 incomplete.
 
 P148 performance-only receipt:ledger indexing and exact scoped builds/tests optimized;no semantic credit or game source change. At P148 local1991/1992 nodes,4260/4261 feasible controls(raw4342/infeasible81);all952integration facets remained pending reconciliation,13coverage slots open.
 
-[P147 continuation plan](../proposals/m2/t70-final-current-certification.md#current-continuation-plan---p147):136 ledger groups under current S17;13 named output/route slots and final snapshot are planned successors only. All1643 instruction labels fit admitted1667 participants;no new node/control credit,local1991/1992 nodes and4260/4261 feasible controls retained.
+[P147 continuation plan](../history/m2/t70-final-current-certification.md#current-continuation-plan---p147):136 ledger groups under current S17;13 named output/route slots and final snapshot are planned successors only. All1643 instruction labels fit admitted1667 participants;no new node/control credit,local1991/1992 nodes and4260/4261 feasible controls retained.
 
 [P146 fixed-universe audit ledger](M2_AUDIT_LEDGER.md):10691 retained local site receipts;136 owner groups/952 integration facets pending reconciliation;two localized gaps/13 coverage slots open. No new node/control credit. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);993 partial material receipts are not a denominator. Deadline cancelled,M2 incomplete.
 
-[P145 bubble alias semantics](../proposals/m2/t70-final-current-certification.md#s17-p145-checkpoint---bubble-indexed-alias-writes-preserved).
+[P145 bubble alias semantics](../history/m2/t70-final-current-certification.md#s17-p145-checkpoint---bubble-indexed-alias-writes-preserved).
 S17 P145:fivebubble writer aliassemantics joined by65536actualoriginal SetupBubble roots eachwidth0scopedRAM/APU/orderdiff,all256rawX/all256incoming07 andfivewriterPC observed.374indexclauses now60intrinsic/309parent-qualified/5alias-preserved/0undisposed;thisdoesnotprove globalabsenceofalias orlegalstream reachability. P143classification instructionlocalreceipt recorded,10691scopedinstructionreceipts;global lifetimeclosurestillpending. Fivefocusedtests eachwidthpass,123source/P144productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
-[P144 completed pixel mask repair](../proposals/m2/t70-final-current-certification.md#s17-p144-checkpoint---original-display-mask-output-repaired).
+[P144 completed pixel mask repair](../history/m2/t70-final-current-certification.md#s17-p144-checkpoint---original-display-mask-output-repaired).
 S17 P144:sharedpixel consumer nowobeys original visiblePPUmask background/sprite enable andleft8clip. Fixed512framecoldStart/right-held route bothwidths fullnonphysicalstate/finalpixels0diff;179activeframes/all8fineX values. Predecessor360380pixeldiffs in42disabledpreparationframes;newmaskregressionoldexit5/current0. Sixfocusedtests/fullmodernbuilds/self-tests/originalOpenNT16linkpass;threeEXEs refreshed. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
-[P143 group decision prefix](../proposals/m2/t70-final-current-certification.md#s17-p143-checkpoint---complete-group-decision-prefix).
+[P143 group decision prefix](../history/m2/t70-final-current-certification.md#s17-p143-checkpoint---complete-group-decision-prefix).
 S17 P143:5120actualoriginal C144->C26C decision-prefix routes eachwidth0RAM/APU/orderdiff,64maskedIDs*5slots*2hard*8stateprofiles. Original C1FBfallthrough toC1FD observed80times(raw3F),groupbranch640times;Cclassificationand firstinitializer handoff matcheven raw3F. Downstream original3F invalidtarget and globallegalstream proof remainopen;no node/control promotion. Fivefocusedtests eachwidthpass,123source/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
-[P142 immutable area row bounds](../proposals/m2/t70-final-current-certification.md#s17-p142-checkpoint---immutable-area-row-constructor-bounds).
+[P142 immutable area row bounds](../history/m2/t70-final-current-certification.md#s17-p142-checkpoint---immutable-area-row-constructor-bounds).
 S17 P142:15immutable-area row writeconditions joined;374streamalias inventory now60intrinsic/309parent-qualified/5pending(bubble). All34area streams/1611objects decoded,max160recordbytes;castlestarts0/6,exitheight7/10,stairs<=8/sourceboundedrows. Fresh68serialchains/330752RAMcheckpoints eachwidth0diff,all15writerPC observed. DrawThisRowX13sixwrites intentionallyoverlap06AE,notclamped;globalother-fieldlifetimes remainopen. Thirteenfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
-[P141 remaining slot handoffs](../proposals/m2/t70-final-current-certification.md#s17-p141-checkpoint---qualified-object-slot-index-handoffs).
+[P141 remaining slot handoffs](../history/m2/t70-final-current-certification.md#s17-p141-checkpoint---qualified-object-slot-index-handoffs).
 S17 P141:70remaining objectslot writeconditions joined(1intrinsic/69parent);374streamalias inventory now60intrinsic/294parent-qualified/20pending(area15/bubble5). OriginalC0474793instructionclosure keepsqualifiedprimary/boundedrear publishes;block0/1,combinedsprite0..21,hammerenemyreference0..5. Fresh2320originalroots0scopedRAM/APU/orderdiff bothwidths,10writers fresh/60retainedcurrent-boundreceipts. Sixactualtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
-[P140 enemy runtime indices](../proposals/m2/t70-final-current-certification.md#s17-p140-checkpoint---enemy-runtime-dispatch-index-ownership).
+[P140 enemy runtime indices](../history/m2/t70-final-current-certification.md#s17-p140-checkpoint---enemy-runtime-dispatch-index-ownership).
 S17 P140:50enemy-runtime indexed-write conditions joined;374streamalias inventory now59intrinsic/225parent-qualified/90pending. C8823898instructionclosure,BC87forces5/Bowserboundedrearrestore only008publishers;CF4A intrinsic2..0,otherindexed08aliases require>21. Fresh12960qualifiedoriginalparents0scopedRAM/APU/orderdiff bothwidths:34writers fresh,16retainedsource-boundP138/P71/P72/P78receipts. Elevenfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
-[P139 Bowser slot handoffs](../proposals/m2/t70-final-current-certification.md#s17-p139-checkpoint---bowser-slot-constructor-and-runtime-handoffs).
+[P139 Bowser slot handoffs](../history/m2/t70-final-current-certification.md#s17-p139-checkpoint---bowser-slot-constructor-and-runtime-handoffs).
 S17 P139:16Bowser/duplicate indexed-write conditions joined;374streamalias inventory now59intrinsic/175parent-qualified/140pending. RunBowser/BridgeCollapse closures1374/1305instructions,onlyCFF5/D1A9/D1B3publish008;indexedaliases require>21. Fresh41352originalroots0scopedRAM/APU/orderdiff eachwidth,all16joinedwriters observed. CorrectedP137falsefrenzy-reset dependency fromsourcecallers. Sevenfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
-[P138 normal movement handoffs](../proposals/m2/t70-final-current-certification.md#s17-p138-checkpoint---normal-enemy-movement-index-handoffs).
+[P138 normal movement handoffs](../history/m2/t70-final-current-certification.md#s17-p138-checkpoint---normal-enemy-movement-index-handoffs).
 S17 P138:34normal-enemy-primaryX writeconditions joined;374streamalias inventory now59intrinsic/159parent-qualified/156pending. RunNormalEnemies2279instructionclosure,no008publisher;onlyE007indirectwriter constructed>=0500. Fresh36288originalparents0scopedRAM/APU/orderdiff eachwidth,all34joinedwritePCobserved;65sharedconditions retainotherparents. Elevenfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
-[P137 initializer index handoffs](../proposals/m2/t70-final-current-certification.md#s17-p137-checkpoint---initializer-primary-index-handoffs).
+[P137 initializer index handoffs](../history/m2/t70-final-current-certification.md#s17-p137-checkpoint---initializer-primary-index-handoffs).
 S17 P137:75initializer-primaryX writeconditions joined;374streamalias inventory now59intrinsic/125parent-qualified/190pending. 705instruction initializerclosure/93potential008aliases;Xprimary0..5 orbounded4/2 scratch/search then008restore,no008publisher/indirectwriter. Fresh5280originalparents0scopedRAM/APU/orderdiff bothwidths,all75joinedwritePCobserved. Tenother-parent sharedsites andfivealternate-callerduplicateY clauses retained. Elevenfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
-[P136 entrance buffer handoff](../proposals/m2/t70-final-current-certification.md#s17-p136-checkpoint---entrance-buffer-reset-and-retained-raw-alias).
+[P136 entrance buffer handoff](../history/m2/t70-final-current-certification.md#s17-p136-checkpoint---entrance-buffer-reset-and-retained-raw-alias).
 S17 P136:17408 controlled initialization/secondary-setup/NMI/entrance chains,53 observedlabels/410PC,bothwidths0scopedRAM/APU/orderdiff. Normalwater SetupBubbleX0 occurs768times;rawwater-plus-vineX5 occurs768times andsourceB724 aliasesE9. Bufferreset handoff joined;legalvine/area transition andfullframe-prefix clauses remainpending,fivebubblewriters notpromoted. Sevenfocusedtests eachwidthpass,123identities/P123productsunchanged. Streamalias374 remains59intrinsic/50parent-qualified/265pending. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
-[P135 cannon/disposition handoffs](../proposals/m2/t70-final-current-certification.md#s17-p135-checkpoint---cannon-slot-handoffs-and-explicit-disposition).
+[P135 cannon/disposition handoffs](../history/m2/t70-final-current-certification.md#s17-p135-checkpoint---cannon-slot-handoffs-and-explicit-disposition).
 S17 P135:10cannon-exclusive storeconditions joined;374streamalias rows explicitlypartitioned59intrinsic/50parent-qualified/265pending. Original1357instruction closure:soleB9C3publisher2..0/noindirectwriter,47potential008aliases excludeactualprimary0..2/combined1..3. Fresh65536originalparents0scopedRAM/APU/orderdiff bothwidths,bus08/stream checks/all10storePCobserved. Eightfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
-[P134 deferred score/slot correction](../proposals/m2/t70-final-current-certification.md#s17-p134-checkpoint---deferred-score-and-fireball-hit-slot).
+[P134 deferred score/slot correction](../history/m2/t70-final-current-certification.md#s17-p134-checkpoint---deferred-score-and-fireball-hit-slot).
 S17 P134:correctedP130nonexistentimmediate-score dependency. Full237instruction fireballhitclosure:no008publisher/indirectwriter/CurrentPlayer orscoremath call;15aliaswriters actualfireball0/1,enemy0..4/remap0..15. D725posthit indexjoinedwithretainedP1303517writes/65536actualparents;twoGrowstores intrinsic5. 374inventory now59intrinsic/40parentjoins/275pending. Elevenfocusedtests eachwidthpass,123identities/P123productsunchanged;no freshROMrun/gamechange/EXErefresh. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
-[P133 parser/allocation handoffs](../proposals/m2/t70-final-current-certification.md#s17-p133-checkpoint---parser-and-area-allocation-index-bounds).
+[P133 parser/allocation handoffs](../history/m2/t70-final-current-certification.md#s17-p133-checkpoint---parser-and-area-allocation-index-bounds).
 S17 P133:24 parser/area allocation conditions joined(19intrinsic/5parent);374streamalias inventory now57intrinsic/39parentjoins/278pending. Declared815instruction parserclosure:950A2..0/9643zero only08publishers,noindirectwriter;28indexed08aliases require>24,actualapplicableindices<=5. Fresh65536original roots0scopedRAM/APU/orderdiff eachwidth,retained34areaP125all24writes observed. Ninefocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
-[P132 misc/block handoffs](../proposals/m2/t70-final-current-certification.md#s17-p132-checkpoint---misc-and-block-slot-preservation).
+[P132 misc/block handoffs](../history/m2/t70-final-current-certification.md#s17-p132-checkpoint---misc-and-block-slot-preservation).
 S17 P132:19 misc/block indexed-write parent conditions joined;374inventory now38intrinsic/34parentjoins/302pending. Static610/427instruction closures:onlyBB98direct08publisher,noindirectwriter;23/10indexed08aliases excluded byactualslot/sprite constructors. 131072freshoriginal roots eachwidth0scopedRAM/APU/orderdiff,16writePCfresh/3contactstores retainedP74. Sevenfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
-[P131 allocation guards](../proposals/m2/t70-final-current-certification.md#s17-p131-checkpoint---intrinsic-allocation-exclusions).
+[P131 allocation guards](../history/m2/t70-final-current-certification.md#s17-p131-checkpoint---intrinsic-allocation-exclusions).
 S17 P131:10 allocation indexed-write conditions/9 participants resolved by intrinsic random mask orcoin allocator6/7/8. Existing374streamalias inventory now38intrinsic/15parentjoins/321pending. RetainedP49/P101/P128 originalvisited writes/zero scopedRAM receipts linkedcurrent123sourceidentities;6focusedtests eachwidthpass. No freshROMrun,newnode/controlcredit,gamechangeorEXErefresh;P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
-[P130 fireball slot and bubble exception](../proposals/m2/t70-final-current-certification.md#s17-p130-checkpoint---fireball-slot-publication-and-bubble-exception).
+[P130 fireball slot and bubble exception](../history/m2/t70-final-current-certification.md#s17-p130-checkpoint---fireball-slot-publication-and-bubble-exception).
 S17 P130:65536 actualfireball parents/95 observedlabels/679PC,all17 candidatewritePCvisited,bothwidths0scopedRAM/APU/orderdiff. Bus confirms08 writes onlyB689constant0/1,reads0/1,noE9/EA/739write in testedcontracts. Sixteen aliasconditions discharged;374inventory now28intrinsic/15parentjoins/331pending. D725 posthit/score andfivebubble entranceconditions explicit. Eightfocusedtests eachwidthpass;123sourceidentities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
-[P129 intrinsic alias guards](../proposals/m2/t70-final-current-certification.md#s17-p129-checkpoint---intrinsic-stream-alias-exclusions).
+[P129 intrinsic alias guards](../history/m2/t70-final-current-certification.md#s17-p129-checkpoint---intrinsic-stream-alias-exclusions).
 S17 P129:12 indexed writers/12 participants reclassified by original intrinsic counter/row guards. Streamalias inventory374:27 intrinsic exclusions,347 caller-domain conditions remain (previous15/359). Current-source andretained originalroute joins,12 negative rawindex witnesses,7focusedtests eachwidthpass. No freshROM replay ornode/control credit;123sourceidentities/P123products unchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
-[P128 saved block lifetime](../proposals/m2/t70-final-current-certification.md#s17-p128-checkpoint---saved-block-publication-and-consumption).
+[P128 saved block lifetime](../history/m2/t70-final-current-certification.md#s17-p128-checkpoint---saved-block-publication-and-consumption).
 S17 P128:131 observed block/motion/commit labels,907 originalPC;1664 serial64-turn chains,214656 scopedfullRAM checkpoints eachwidth0diff. Saved03E4-03E9 stable;actualchainedbus rejects anyoverwrite. 91 indexed/direct and9 indirect globalalias candidates explicit,notnew feasibleedges. Sevenfocusedtests eachwidthpass;123 sourceidentities/P123products unchanged. Historical1992/1992,local1991/1992nodes,4260/4261 controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
-[P127 continuous death/reentry](../proposals/m2/t70-final-current-certification.md#s17-p127-checkpoint---continuous-death-and-reentry-agreement).
+[P127 continuous death/reentry](../history/m2/t70-final-current-certification.md#s17-p127-checkpoint---continuous-death-and-reentry-agreement).
 S17 P127:three continuous1800-frame cold-bootstrap routes,5400 frames eachwidth,zero nonphysicalRAM/CIRAM/palette/OAM/audio/scalar difference. Actual death/life decrement/reentry observed in allthree;run-held reaches GameOver. Sixfocusedtests eachwidthpass;123 sourceidentities/P123products unchanged. Historical1992/1992,local1991/1992nodes,4260/4261 feasiblecontrols(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
-[P126 natural frame RAM](../proposals/m2/t70-final-current-certification.md#s17-p126-checkpoint---natural-frame-ram-contract).
+[P126 natural frame RAM](../history/m2/t70-final-current-certification.md#s17-p126-checkpoint---natural-frame-ram-contract).
 S17 P126:six natural600-frame coldbootstrap scripts,3600 frames eachwidth. FullRAM includingzero-page/0778/0779 agreesexceptphysical01EB-01FF;busobserver attributeshighstackwrites toJSR/PHA/PHP/interrupt,minimumSP EAorEC,noother highstackwriter. RetainedCIRAM/palette/OAM/audio/7scalars0diff,nativewidthrecordsidentical. Sixfocusedtests eachwidthpass;123 sourceidentities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261 feasiblecontrols(raw4342,infeasible81);material993partial,totalunknown,M2 incomplete.
 
-[P125 installed stream lifetime](../proposals/m2/t70-final-current-certification.md#s17-p125-checkpoint---area-traversal-and-enemy-cursor-lifetime).
+[P125 installed stream lifetime](../history/m2/t70-final-current-certification.md#s17-p125-checkpoint---area-traversal-and-enemy-cursor-lifetime).
 S17 P125:319 area/scroll/enemy labels,2001 originalPC observed. All34 tablepairs/two profiles,68 serial32-page chains eachwidth;330752 fullscopedRAM checkpoints eachwidth0diff. E9/EA stable,739 aligned andFFterminal;9focusedtests eachwidthpass. 123 sourceidentities/P123 products unchanged. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
-[P124 queued handoff](../proposals/m2/t70-final-current-certification.md#s17-p124-checkpoint---queued-status-palette-and-nmi-handoff).
+[P124 queued handoff](../history/m2/t70-final-current-certification.md#s17-p124-checkpoint---queued-status-palette-and-nmi-handoff).
 S17 P124:22 status/palette/commit labels,163 original PC observed;2048 eight-turn chains eachwidth zero scoped RAM/APU/order difference. First selector6 retains27-byte queue,next selector0 commits54 bytes;ordinary queue27 bytes. Slot0368/03EE/06CF preserved. Six focused tests eachwidth pass;123 source identities and P123 three EXEs unchanged. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);material993 partial,total unknown,M2 incomplete.
 
-[P123 buffer1 producers](../proposals/m2/t70-final-current-certification.md#s17-p123-checkpoint---buffer1-producer-operand-semantics-repaired).
+[P123 buffer1 producers](../history/m2/t70-final-current-certification.md#s17-p123-checkpoint---buffer1-producer-operand-semantics-repaired).
 S17 P123:12 buffer1 producer labels,106 original instructions/7 branch pairs. RemBridge absolute-X graphics displacements widened outside byteX;original11-write order restored. Three65536-root families,196608 original roots eachwidth0scoped RAM/APU/order diff;all106PC/14branch sides. New boundary regression rejects predecessor exit2;7focusedtests eachwidthpass. Three EXEs refreshed via modern targets/originalOpenNT16 compile/link. Historical1992/1992,local1991/1992 nodes,4260/4261 controls(raw4342,infeasible81);material993 partial,total unknown;M2 incomplete.
 
-[P122 parser commit chain](../proposals/m2/t70-final-current-certification.md#s17-p122-checkpoint---parser-to-nmi-commit-joins-verified).
+[P122 parser commit chain](../history/m2/t70-final-current-certification.md#s17-p122-checkpoint---parser-to-nmi-commit-joins-verified).
 S17 P122:16 parser/commit participants;2048 eight-turn original chains eachwidth zero scoped RAM/APU/order diff. ActualAF6F and80B6-80E4 command/header phase alternate without RAM/PPU reseeding;task7..0,buffer2<=29,selected-header clear/other-buffer preservation and0368/03EE/06CF sentinels asserted. Eight focused tests eachwidth pass; 123 source identities/P121 threeproducts unchanged. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);material993 partial,total unknown. Active-object writers and global lifetimes pending,M2 incomplete.
 
-[P121 byte buffer offsets](../proposals/m2/t70-final-current-certification.md#s17-p121-checkpoint---original-buffer-byte-offsets-repaired).
+[P121 byte buffer offsets](../history/m2/t70-final-current-certification.md#s17-p121-checkpoint---original-buffer-byte-offsets-repaired).
 S17 P121:11 graphics/attribute labels,133 original instructions and7 branch pairs; two synthetic high-offset exits removed, graphics byte cursor and attribute command-before-INY order corrected. Two65536-root families,131072 original roots each width0 scoped RAM/APU/order diff;all133PC/14branch sides. New boundary regression rejects predecessor exit2;7 focused tests each width pass. Three EXEs refreshed via modern targets/original OpenNT16 compile/link. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81); material993 partial,total unknown. M2 incomplete.
 
-[P120 buffer phases](../proposals/m2/t70-final-current-certification.md#s17-p120-checkpoint---column-buffers-and-setup-clearing-verified).
+[P120 buffer phases](../history/m2/t70-final-current-certification.md#s17-p120-checkpoint---column-buffers-and-setup-clearing-verified).
 S17 P120:15 buffer-phase participants; two2048-root actual original/native manifests (4096 roots each width) pass full scoped RAM/APU/write comparison. Eight-task column set ends at offset144;03EE/06CF preserved. Sequential actual9071 setup clears0340/0368/03EE and preserves06CF. Seven focused tests each width pass;123 source identities and P115 products unchanged. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls (raw4342,infeasible81);material993 partial,total unknown. M2 incomplete.
 
-[P119 storage domains](../proposals/m2/t70-final-current-certification.md#s17-p119-checkpoint---slot-storage-bounds-and-remaining-lifetimes).
+[P119 storage domains](../history/m2/t70-final-current-certification.md#s17-p119-checkpoint---slot-storage-bounds-and-remaining-lifetimes).
 S17 P119:19 storage/probe labels;3 direct publishers and189 indexed alias candidates (0368:69,03EE:96,06CF:24) enumerated. Original head/feet/side and vine guard bounds exclude06CF within their pointer/selector contracts;9 indirect writers have explicit dispositions. Title overlaps0368/03EE, replacement saved-field lifetimes and terrain decoder domains remain pending. Seven focused tests each width pass;123 source identities and P115 products unchanged. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);material993 partial,total unknown. M2 incomplete.
 
-[P118 loop child returns](../proposals/m2/t70-final-current-certification.md#s17-p118-checkpoint---qualified-loop-child-returns-verified).
+[P118 loop child returns](../history/m2/t70-final-current-certification.md#s17-p118-checkpoint---qualified-loop-child-returns-verified).
 S17 P118:19loop/childlabels,195PC scope;154freshPCobserved/41retainedlocal receipts with123sourceidentities match. Nineoriginalfamilies589824roots eachwidth0scopedRAM/APU/orderedwrite diff;newCPU Xreturnassertions andrealenemy-pluslive-score parentX6 pass. Sevenfocusedtests eachwidthpass,no code/productchange,P115EXEs retained. Historical1992/1992,local1991/1992nodes/4260/4261controls(raw4342/infeasible81),material993partial/totalunknown;globalcaller/alias lifetimes stillpending,M2 incomplete.
 
-[P117 ObjectOffset dependencies](../proposals/m2/t70-final-current-certification.md#s17-p117-checkpoint---objectoffset-producer-dependency-matrix).
+[P117 ObjectOffset dependencies](../history/m2/t70-final-current-certification.md#s17-p117-checkpoint---objectoffset-producer-dependency-matrix).
 S17 P117:17ObjectOffset publishers/17labels source/retainedreceipt joins complete,123currentowner identities match. Extracted344indexed008aliascandidates includingzero-pagewrap/RAMmirror;3intrinsicloops excluded,341callerconditions and9indirectlifetimes pending. Loopchildreturn and3dynamicstorage prerequisitesexplicit;no globalpromotion. Fivefocusedtests eachwidthpass,no code/productchange,P115threeproducts retained. Historical1992/1992,local1991/1992nodes/4260/4261controls(raw4342/infeasible81),material993partial/totalunknown,M2 incomplete.
 
-[P116 allocation sentinel](../proposals/m2/t70-final-current-certification.md#s17-p116-checkpoint---duplicate-allocation-parent-bound-proved).
+[P116 allocation sentinel](../history/m2/t70-final-current-certification.md#s17-p116-checkpoint---duplicate-allocation-parent-bound-proved).
 S17 P116:9parent/dispatch/duplicate labels,40originalPC reviewed;source state-zero sentinel boundsrear<=15+front<=20 forfront0-5. Five absolute-Y writer bounds corrected fromconditional5 to20;359globalcaller-domain flows stillpending. 65536actualC226parents eachwidth0scopedRAM/APU/orderedwrite diff,all40PC/maximum20witness;5tests eachwidthpass,no source/productchange,P115threeproducts retained. Historical1992/1992,local1991/1992nodes and4260/4261controls(raw4342,infeasible81);material993partial/totalunknown,M2 incomplete.
 
-[P115 platform byte addresses](../proposals/m2/t70-final-current-certification.md#s17-p115-checkpoint---platform-initializer-byte-addresses-repaired).
+[P115 platform byte addresses](../history/m2/t70-final-current-certification.md#s17-p115-checkpoint---platform-initializer-byte-addresses-repaired).
 S17 P115:18 initializer/platform labels,75 original instructions and5 conditionalbranch pairs reviewed;14 zero-page-X C expressions corrected across7bodies. EightactualreturningROM families,524288roots eachwidth0scopedRAM/APU/orderedwrite diff/all75PC/10branchsides;5focusedtests eachwidthpass. ThreeEXEs refreshed(originalOpenNT16 compile/linkonly). Historical1992/1992,local1991/1992nodes and4260/4261controls(raw4342,infeasible81),material993partial/totalunknown;M2 incomplete.
 
-[P114 duplicate byte addresses](../proposals/m2/t70-final-current-certification.md#s17-p114-checkpoint---duplicate-object-byte-addresses-repaired).
+[P114 duplicate byte addresses](../history/m2/t70-final-current-certification.md#s17-p114-checkpoint---duplicate-object-byte-addresses-repaired).
 S17 P114:DuplicateEnemyObj/FSLoop/FlmEx18 instructions reviewed;four zero-page-X address expressions repaired. 65536 actual original roots eachwidth0diff/all18PC/bothC57Bbranches;5 focused tests eachwidthpass,new boundary regression failsoldsource. Three localEXEs rebuilt/refreshed;originalOpenNT16 compile/link only. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),instruction10690/10691,RAM3773/3773 scoped receipts;indexed caller conditions359,material993partial,totalunknown;M2 incomplete.
 
-[P113 index and area domains](../proposals/m2/t70-final-current-certification.md#s17-p113-checkpoint---intrinsic-loop-bounds-and-area-record-domains).
+[P113 index and area domains](../history/m2/t70-final-current-certification.md#s17-p113-checkpoint---intrinsic-loop-bounds-and-area-record-domains).
 S17 P113:three intrinsic loops discharge caller-domain conditions atC412/CF4A/EFA9;15 entry-local exclusions/359 indexed caller-domain conditions remain. All34 immutable area streams/1669 aligned record states inspected;36 castle heights0/6,7 exit-pipe heights7/10. Four negative checks and7 focused regressions each width pass. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),instruction10690/10691,RAM3773/3773 scoped receipts;material993 partial,totalunknown;M2 incomplete.
 
-[P112 stream writer limits](../proposals/m2/t70-final-current-certification.md#s17-p112-checkpoint---stream-writer-receipts-joined-with-explicit-limits).
+[P112 stream writer limits](../history/m2/t70-final-current-certification.md#s17-p112-checkpoint---stream-writer-receipts-joined-with-explicit-limits).
 S17 P112:374 indexed alias sites and8 direct/9 indirect writers linked to current scoped receipts;12 entry-local exclusions,362 caller-domain qualifications remain. Source identities unchanged;four negative accounting checks pass. No node/control credit;local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);instruction10690/10691,RAM3773/3773 receipts. Material993 partial,totalunknown;M2 incomplete.
 
-[P111 mode joins](../proposals/m2/t70-final-current-certification.md#s17-p111-checkpoint---mode-and-parser-caller-uses-reconciled).
+[P111 mode joins](../history/m2/t70-final-current-certification.md#s17-p111-checkpoint---mode-and-parser-caller-uses-reconciled).
 S17 P111:11mode/parser labels/44instructions/16RAM joined7boundedclauses;83712actualroots eachwidth0diff/all44PC/5branchpairs,14tests each. Scope1667/fresh0;10690/10691instruction receipts,3773/3773RAM receipts;1instruction/0RAM pending(CheckForEnemyGroupC1FB). Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,wholeproducer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
 
-[P110 flagpole uses](../proposals/m2/t70-final-current-certification.md#s17-p110-checkpoint---flagpole-parser-and-slot-uses-reconciled).
+[P110 flagpole uses](../history/m2/t70-final-current-certification.md#s17-p110-checkpoint---flagpole-parser-and-slot-uses-reconciled).
 S17 P110:FlagpoleObject23instructions/9RAM joined1boundedclause;65536actual9508parserparents eachwidth0diff/all23PC,5tests each. Scope1663/fresh0;10646/10691instruction receipts,3757/3773RAM receipts;45instructions/16RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,wholeproducer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
 
-[P109 enemy caller uses](../proposals/m2/t70-final-current-certification.md#s17-p109-checkpoint---enemy-dispatch-and-caller-uses-reconciled).
+[P109 enemy caller uses](../history/m2/t70-final-current-certification.md#s17-p109-checkpoint---enemy-dispatch-and-caller-uses-reconciled).
 S17 P109:10enemy-caller labels/36instructions/5RAM joined4boundedclauses;65536actualC882parents+3072actualC905roots eachwidth0diff/all36PC/2branchpairs,5tests each. Scope1662/fresh0;10623/10691instruction receipts,3748/3773RAM receipts;68instructions/25RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,wholeproducer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
 
-[P108 platform/Podoboo uses](../proposals/m2/t70-final-current-certification.md#s17-p108-checkpoint---platform-and-podoboo-caller-uses-reconciled).
+[P108 platform/Podoboo uses](../history/m2/t70-final-current-certification.md#s17-p108-checkpoint---platform-and-podoboo-caller-uses-reconciled).
 S17 P108:6platform/Podoboo labels/34instructions/7RAM joined3boundedclauses;102400actualcallerroots eachwidth0diff/all34PC/2branchpairs,5tests each. Scope1652/fresh0;10587/10691instruction receipts,3743/3773RAM receipts;104instructions/30RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,wholeproducer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
 
-[P107 inline dispatch uses](../proposals/m2/t70-final-current-certification.md#s17-p107-checkpoint---inline-dispatch-kernel-uses-reconciled).
+[P107 inline dispatch uses](../history/m2/t70-final-current-certification.md#s17-p107-checkpoint---inline-dispatch-kernel-uses-reconciled).
 S17 P107:JumpEngine13instructions/4RAM joined1bounded scratchABI clause;9216actualkernelroots eachwidth0diff/all13PC,14tests each. Scope1646/fresh0;10553/10691instruction receipts,3736/3773RAM receipts;138instructions/37RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,wholeproducer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
 
-[P106 NMI output uses](../proposals/m2/t70-final-current-certification.md#s17-p106-checkpoint---nmi-output-and-scroll-uses-reconciled).
+[P106 NMI output uses](../history/m2/t70-final-current-certification.md#s17-p106-checkpoint---nmi-output-and-scroll-uses-reconciled).
 S17 P106:8NMI-output labels/69instructions/20RAM joined5boundedclauses;8787actualroots eachwidth0diff/all69PC/8branchpairs,5tests each. Scope1646/fresh0;10540/10691instruction receipts,3732/3773RAM receipts;151instructions/41RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,producer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
 
-[P105 screen output uses](../proposals/m2/t70-final-current-certification.md#s17-p105-checkpoint---screen-output-and-music-uses-reconciled).
+[P105 screen output uses](../history/m2/t70-final-current-certification.md#s17-p105-checkpoint---screen-output-and-music-uses-reconciled).
 S17 P105:22screen/music labels/110instructions/24RAM joined7boundedclauses;69520actualroots eachwidth0diff/all110PC/17branchpairs,7tests each. Scope1645/fresh0;10471/10691instruction receipts,3712/3773RAM receipts;220instructions/61RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP104unchanged,producer/inter-frame/hardwarepixel/finalpackages pending,M2 incomplete.
 
-[P104 area callback uses](../proposals/m2/t70-final-current-certification.md#s17-p104-checkpoint---area-callback-uses-reconciled-and-underpart-tails-repaired).
+[P104 area callback uses](../history/m2/t70-final-current-certification.md#s17-p104-checkpoint---area-callback-uses-reconciled-and-underpart-tails-repaired).
 S17 P104:16area-callback labels/70instructions/15RAM joined7boundedclauses;bridge/water originalUnderPart tails repaired. 65536actualroots eachwidth0diff/all70PC/6branchpairs,7tests each;threeEXEsP104refreshed. Scope1633/fresh0;10361/10691instruction receipts,3688/3773RAM receipts;330instructions/85RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P103 block output uses](../proposals/m2/t70-final-current-certification.md#s17-p103-checkpoint---block-metatile-output-and-bridge-rows-reconciled).
+[P103 block output uses](../history/m2/t70-final-current-certification.md#s17-p103-checkpoint---block-metatile-output-and-bridge-rows-reconciled).
 S17 P103:10block-output labels/91instructions/34RAM joined4boundedclauses;262144actualroots eachwidth0diff/all91PC/7branchpairs,5tests each. Scope1619/fresh0;10291/10691instruction receipts,3673/3773RAM receipts;400instructions/100RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;provenance corrected,preprocessed behavior/productsP98unchanged;producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P102 floatey uses](../proposals/m2/t70-final-current-certification.md#s17-p102-checkpoint---floatey-score-award-and-sprite-uses-reconciled).
+[P102 floatey uses](../history/m2/t70-final-current-certification.md#s17-p102-checkpoint---floatey-score-award-and-sprite-uses-reconciled).
 S17 P102:8floatey labels/74instructions/26RAM joined4boundedclauses;65536actualroots eachwidth0diff/all74PC/13branchpairs,4tests each. Scope1609/fresh0;10200/10691instruction receipts,3639/3773RAM receipts;491instructions/134RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP98unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P101 hammer bro uses](../proposals/m2/t70-final-current-certification.md#s17-p101-checkpoint---hammer-bro-movement-and-throw-uses-reconciled).
+[P101 hammer bro uses](../history/m2/t70-final-current-certification.md#s17-p101-checkpoint---hammer-bro-movement-and-throw-uses-reconciled).
 S17 P101:9hammer bro labels/71instructions/30RAM joined3boundedclauses;65536actualroots eachwidth0diff/all71PC/13branchpairs,4tests each. Scope1603/fresh0;10126/10691instruction receipts,3613/3773RAM receipts;565instructions/160RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP98unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P100 scroll uses](../proposals/m2/t70-final-current-certification.md#s17-p100-checkpoint---scroll-handler-and-screen-clamp-uses-reconciled).
+[P100 scroll uses](../history/m2/t70-final-current-certification.md#s17-p100-checkpoint---scroll-handler-and-screen-clamp-uses-reconciled).
 S17 P100:7scroll labels/72instructions/32RAM joined4boundedclauses;131072actualroots eachwidth0diff/all72PC/9branchpairs,4tests each. Scope1594/fresh0;10055/10691instruction receipts,3583/3773RAM receipts;636instructions/190RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP98unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P99 player dispatch uses](../proposals/m2/t70-final-current-certification.md#s17-p99-checkpoint---player-dispatch-and-state-transition-uses-reconciled).
+[P99 player dispatch uses](../history/m2/t70-final-current-certification.md#s17-p99-checkpoint---player-dispatch-and-state-transition-uses-reconciled).
 S17 P99:44player dispatch labels/213instructions/80RAM joined7boundedclauses;9984actualroots eachwidth0diff/all213PC/34branchpairs,6tests each. Scope1588/fresh0;9983/10691instruction receipts,3551/3773RAM receipts;708instructions/222RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP98unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P98 victory walk uses](../proposals/m2/t70-final-current-certification.md#s17-p98-checkpoint---victory-automatic-walk-uses-repaired-and-reconciled).
+[P98 victory walk uses](../history/m2/t70-final-current-certification.md#s17-p98-checkpoint---victory-automatic-walk-uses-repaired-and-reconciled).
 S17 P98:4victory walk labels/28instructions/11RAM joined3boundedclauses;AutoControlPlayer caller repaired,8192actualroots eachwidth0diff/all28PC/4branchpairs,4tests each andthreeproducts rebuilt. Scope1549/fresh0;9770/10691instruction receipts,3471/3773RAM receipts;921instructions/302RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P97 player entrance uses](../proposals/m2/t70-final-current-certification.md#s17-p97-checkpoint---player-entrance-initialization-uses-reconciled).
+[P97 player entrance uses](../history/m2/t70-final-current-certification.md#s17-p97-checkpoint---player-entrance-initialization-uses-reconciled).
 S17 P97:6player entrance labels/58instructions/27RAM joined4boundedclauses;65536actualroots eachwidth0diff/all58PC/7branchpairs,4tests each. Scope1545/fresh0;9742/10691instruction receipts,3460/3773RAM receipts;949instructions/313RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P96 player movement uses](../proposals/m2/t70-final-current-certification.md#s17-p96-checkpoint---player-movement-dispatch-jump-and-swim-uses-reconciled).
+[P96 player movement uses](../history/m2/t70-final-current-certification.md#s17-p96-checkpoint---player-movement-dispatch-jump-and-swim-uses-reconciled).
 S17 P96:13player movement labels/56instructions/26RAM joined5boundedclauses;reuse143872parent plus65536actualleafroots eachwidth0diff/all56PC/12branchpairs,4tests each. Scope1539/fresh0;9684/10691instruction receipts,3433/3773RAM receipts;1007instructions/340RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P95 player control uses](../proposals/m2/t70-final-current-certification.md#s17-p95-checkpoint---player-control-parent-and-real-child-uses-reconciled).
+[P95 player control uses](../history/m2/t70-final-current-certification.md#s17-p95-checkpoint---player-control-parent-and-real-child-uses-reconciled).
 S17 P95:13player control labels/102instructions/39RAM joined7boundedclauses;143872actualroots eachwidth0diff/all102PC/23branchpairs,4tests each. Scope1530/fresh0;9628/10691instruction receipts,3407/3773RAM receipts;1063instructions/366RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P94 NMI timer uses](../proposals/m2/t70-final-current-certification.md#s17-p94-checkpoint---nmi-pause-timer-gate-and-random-shift-uses-reconciled).
+[P94 NMI timer uses](../history/m2/t70-final-current-certification.md#s17-p94-checkpoint---nmi-pause-timer-gate-and-random-shift-uses-reconciled).
 S17 P94:5NMI timer labels/20instructions/7RAM joined4boundedclauses;3840actualroots eachwidth47bytephaseABI0diff/all20PC/4branchpairs,4tests each. Scope1530/fresh0;9526/10691instruction receipts,3368/3773RAM receipts;1165instructions/405RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P93 victory uses](../proposals/m2/t70-final-current-certification.md#s17-p93-checkpoint---victory-messages-counters-and-world-completion-uses-reconciled).
+[P93 victory uses](../history/m2/t70-final-current-certification.md#s17-p93-checkpoint---victory-messages-counters-and-world-completion-uses-reconciled).
 S17 P93:16victory labels/84instructions/29RAM joined7boundedclauses;264192actualroots eachwidth0diff/all84PC/16branchpairs plusmandatory8421,4tests each. Scope1527/fresh0;9506/10691instruction receipts,3361/3773RAM receipts;1185instructions/412RAM pending. Local1991/1992nodes,4260/4261controls(raw4342/infeasible81);00153priorfalseexact reclassifiedinfeasible withoriginalinstructionproof. Material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P92 terminal uses](../proposals/m2/t70-final-current-certification.md#s17-p92-checkpoint---loss-restart-game-over-and-player-records-uses-reconciled).
+[P92 terminal uses](../history/m2/t70-final-current-certification.md#s17-p92-checkpoint---loss-restart-game-over-and-player-records-uses-reconciled).
 S17 P92:14terminal labels/96instructions/41RAM joined7boundedclauses;196608actualroots eachwidth0diff/all96PC/11branchpairs,4tests each. Scope1514/fresh0;9422/10691instruction receipts,3332/3773RAM receipts;1269instructions/441RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P91 joypad uses](../proposals/m2/t70-final-current-certification.md#s17-p91-checkpoint---two-port-serial-sampling-and-debounce-uses-reconciled).
+[P91 joypad uses](../history/m2/t70-final-current-certification.md#s17-p91-checkpoint---two-port-serial-sampling-and-debounce-uses-reconciled).
 S17 P91:4joypad labels/30instructions/6RAM joined3boundedclauses;262144actualroots eachwidth0diff/all30PC/2branchpairs,4tests each. Scope1503/fresh0;9326/10691instruction receipts,3291/3773RAM receipts;1365instructions/482RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P90 pause uses](../proposals/m2/t70-final-current-certification.md#s17-p90-checkpoint---pause-gates-timer-and-sound-queue-uses-reconciled).
+[P90 pause uses](../history/m2/t70-final-current-certification.md#s17-p90-checkpoint---pause-gates-timer-and-sound-queue-uses-reconciled).
 S17 P90:6pause labels/31instructions/11RAM joined4boundedclauses;262144actualroots eachwidth0diff/all31PC/6branchpairs plusmandatory81BB,4tests each. Scope1503/fresh0;9296/10691instruction receipts,3285/3773RAM receipts;1395instructions/488RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P89 status uses](../proposals/m2/t70-final-current-certification.md#s17-p89-checkpoint---status-digits-arithmetic-and-top-score-uses-reconciled).
+[P89 status uses](../history/m2/t70-final-current-certification.md#s17-p89-checkpoint---status-digits-arithmetic-and-top-score-uses-reconciled).
 S17 P89:17status labels/94instructions/25RAM joined7boundedclauses;196608actualroots eachwidth0diff/all94PC/11branchpairs plusmandatory8F8C,4tests each. Scope1499/fresh0;9265/10691instruction receipts,3274/3773RAM receipts;1426instructions/499RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P88 title menu uses](../proposals/m2/t70-final-current-certification.md#s17-p88-checkpoint---title-menu-start-icon-and-persistent-demo-uses-reconciled).
+[P88 title menu uses](../history/m2/t70-final-current-certification.md#s17-p88-checkpoint---title-menu-start-icon-and-persistent-demo-uses-reconciled).
 S17 P88:20title menu labels/112instructions/46RAM joined8boundedclauses;9824actualroots eachwidth0diff/all112PC/18branchpairs,1120persistentdemo calls/all43bytesread,4tests each. Scope1482/fresh0;9171/10691instruction receipts,3249/3773RAM receipts;1520instructions/524RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P87 bootstrap uses](../proposals/m2/t70-final-current-certification.md#s17-p87-checkpoint---reset-sprite-nametable-ppu-control-uses-reconciled).
+[P87 bootstrap uses](../history/m2/t70-final-current-certification.md#s17-p87-checkpoint---reset-sprite-nametable-ppu-control-uses-reconciled).
 S17 P87:15bootstrap labels/83instructions/14RAM joined9boundedclauses;3600actualroots eachwidth0diff/all83PC/9branchpairs,4tests each. Scope1462/fresh0;9059/10691instruction receipts,3203/3773RAM receipts;1632instructions/570RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P86 sprite child uses](../proposals/m2/t70-final-current-certification.md#s17-p86-checkpoint---sprite-drawing-child-retained-route-uses-reconciled).
+[P86 sprite child uses](../history/m2/t70-final-current-certification.md#s17-p86-checkpoint---sprite-drawing-child-retained-route-uses-reconciled).
 S17 P86:3sprite child labels/36instructions/19RAM joined3boundedclauses;reuse823296parentroots eachwidth0diff/all36PC/onebranchpair plusmandatoryF294,5tests each. Scope1457/fresh0;8976/10691instruction receipts,3189/3773RAM receipts;1715instructions/584RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P85 relative offscreen uses](../proposals/m2/t70-final-current-certification.md#s17-p85-checkpoint---relative-position-and-offscreen-producer-uses-reconciled).
+[P85 relative offscreen uses](../history/m2/t70-final-current-certification.md#s17-p85-checkpoint---relative-position-and-offscreen-producer-uses-reconciled).
 S17 P85:30relative/offscreen labels/155instructions/35RAM joined10boundedclauses;548864actualroots eachwidth0diff/all155PC/10branchpairs,6tests each. Scope1454/fresh0;8940/10691instruction receipts,3170/3773RAM receipts;1751instructions/603RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P84 player graphics uses](../proposals/m2/t70-final-current-certification.md#s17-p84-checkpoint---player-graphics-action-size-animation-uses-reconciled).
+[P84 player graphics uses](../history/m2/t70-final-current-certification.md#s17-p84-checkpoint---player-graphics-action-size-animation-uses-reconciled).
 S17 P84:42player graphics labels/255instructions/81RAM joined14boundedclauses;286720actualroots eachwidth0diff/all255PC/41branchpairs,4tests each. Scope1424/fresh0;8785/10691instruction receipts,3135/3773RAM receipts;1906instructions/638RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P83 misc graphics uses](../proposals/m2/t70-final-current-certification.md#s17-p83-checkpoint---block-fireball-platform-bubble-drawing-uses-reconciled).
+[P83 misc graphics uses](../history/m2/t70-final-current-certification.md#s17-p83-checkpoint---block-fireball-platform-bubble-drawing-uses-reconciled).
 S17 P83:27misc graphics labels/259instructions/112RAM joined10boundedclauses;249856actualroots eachwidth0diff/all259PC/19branchpairs,6tests each. Scope1383/fresh0;8530/10691instruction receipts,3054/3773RAM receipts;2161instructions/719RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P82 enemy graphics uses](../proposals/m2/t70-final-current-certification.md#s17-p82-checkpoint---enemy-selection-drawing-and-offscreen-uses-reconciled).
+[P82 enemy graphics uses](../history/m2/t70-final-current-certification.md#s17-p82-checkpoint---enemy-selection-drawing-and-offscreen-uses-reconciled).
 S17 P82:55enemy graphics labels/445instructions/161RAM joined16boundedclauses;286720actualroots eachwidth0diff/all445PC/80branchpairs plus4retainedsingle-sidedproofs,8tests each. Scope1356/fresh0;8271/10691instruction receipts,2942/3773RAM receipts;2420instructions/831RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP81unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P81 OAM stack uses](../proposals/m2/t70-final-current-certification.md#s17-p81-checkpoint---oam-stack-and-indexed-clipping-uses-reconciled).
+[P81 OAM stack uses](../history/m2/t70-final-current-certification.md#s17-p81-checkpoint---oam-stack-and-indexed-clipping-uses-reconciled).
 S17 P81:35OAM stack/clip labels/282instructions/117RAM joined12boundedclauses;356352actualroots eachwidth0diff/all282PC/22branchpairs plusmandatoryE4EE,8tests each. Scope1301/fresh0;7826/10691instruction receipts,2781/3773RAM receipts;2865instructions/992RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;largeplatformabsoluteindexedclip repaired,threeEXEsrefreshed,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P80 block query uses](../proposals/m2/t70-final-current-certification.md#s17-p80-checkpoint---block-query-entry-and-scratch-uses-reconciled).
+[P80 block query uses](../history/m2/t70-final-current-certification.md#s17-p80-checkpoint---block-query-entry-and-scratch-uses-reconciled).
 S17 P80:11block query labels/64instructions/15RAM joined5boundedclauses;57344actualroots eachwidth0diff/all64PC/onebranchpair,6tests each. Scope1266/fresh0;7544/10691instruction receipts,2664/3773RAM receipts;3147instructions/1109RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP79unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P79 bounding box original outputs](../proposals/m2/t70-final-current-certification.md#s17-p79-checkpoint---bounding-box-original-child-outputs-restored).
+[P79 bounding box original outputs](../history/m2/t70-final-current-certification.md#s17-p79-checkpoint---bounding-box-original-child-outputs-restored).
 S17 P79:17bounding box labels/125instructions/48RAM joined7boundedclauses;90112actualroots eachwidth0diff/all125PC/10branchpairs plusmandatoryE234,5tests each. Scope1258/fresh0;7480/10691instruction receipts,2649/3773RAM receipts;3211instructions/1124RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;LargePlatformBoundBox childscratch repaired,threeEXEs refreshed,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P78 enemy ground uses](../proposals/m2/t70-final-current-certification.md#s17-p78-checkpoint---enemy-ground-side-and-fireball-background-uses-reconciled).
+[P78 enemy ground uses](../history/m2/t70-final-current-certification.md#s17-p78-checkpoint---enemy-ground-side-and-fireball-background-uses-reconciled).
 S17 P78:51enemy ground/side/fireball labels/274instructions/68RAM joined14boundedclauses;798976actualroots eachwidth0diff/all274PC/64branchpairs,8tests each. Scope1241/fresh0;7355/10691instruction receipts,2601/3773RAM receipts;3336instructions/1172RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP69unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P77 player terrain uses](../proposals/m2/t70-final-current-certification.md#s17-p77-checkpoint---player-terrain-and-contact-uses-reconciled).
+[P77 player terrain uses](../history/m2/t70-final-current-certification.md#s17-p77-checkpoint---player-terrain-and-contact-uses-reconciled).
 S17 P77:59player terrain/contact labels/382instructions/116RAM joined17boundedclauses;745472actualroots eachwidth0diff/all382PC/81branchpairs,8tests each. Scope1195/fresh0;7081/10691instruction receipts,2533/3773RAM receipts;3610instructions/1240RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP69unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P76 positioning/geometry uses](../proposals/m2/t70-final-current-certification.md#s17-p76-checkpoint---platform-positioning-and-geometry-uses-reconciled).
+[P76 positioning/geometry uses](../history/m2/t70-final-current-certification.md#s17-p76-checkpoint---platform-positioning-and-geometry-uses-reconciled).
 S17 P76:14platform positioning/geometry labels/86instructions/35RAM joined7boundedclauses;466944actualroots eachwidth0diff/all86PC/18branchpairs,4tests each. Scope1148/fresh0;6699/10691instruction receipts,2417/3773RAM receipts;3992instructions/1356RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP69unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P75 pair/platform contact uses](../proposals/m2/t70-final-current-certification.md#s17-p75-checkpoint---enemy-pair-and-platform-contact-uses-reconciled).
+[P75 pair/platform contact uses](../history/m2/t70-final-current-certification.md#s17-p75-checkpoint---enemy-pair-and-platform-contact-uses-reconciled).
 S17 P75:28enemy pair/platform contact labels/234instructions/82RAM joined11boundedclauses;295424actualroots eachwidth0diff/all234PC/47branchpairs,4tests each. Scope1134/fresh0;6613/10691instruction receipts,2382/3773RAM receipts;4078instructions/1391RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP69unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P74 player contact uses](../proposals/m2/t70-final-current-certification.md#s17-p74-checkpoint---player-contact-injury-stomp-uses-reconciled).
+[P74 player contact uses](../history/m2/t70-final-current-certification.md#s17-p74-checkpoint---player-contact-injury-stomp-uses-reconciled).
 S17 P74:37player contact/injury/stomp labels/275instructions/92RAM joined13boundedclauses;532480actualroots eachwidth0diff/all275PC/49branchpairs/one mandatorybranch,5tests each. Scope1106/fresh0;6379/10691instruction receipts,2300/3773RAM receipts;4312instructions/1473RAM pending. Local1991/1992nodes,4261/4262controls(raw4342/infeasible80),material993partial,totalunknown;source/productsP69unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P73 fireball scan/hit uses](../proposals/m2/t70-final-current-certification.md#s17-p73-checkpoint---fireball-scan-and-hit-uses-reconciled).
+[P73 fireball scan/hit uses](../history/m2/t70-final-current-certification.md#s17-p73-checkpoint---fireball-scan-and-hit-uses-reconciled).
 S17 P73:16fireball scan/hit labels/118instructions/34RAM joined9boundedclauses;199680actualroots eachwidth0diff/all118PC/24branchpairs/one mandatorybranch,4tests each. Scope1076/fresh0;6104/10691instruction receipts,2208/3773RAM receipts;4587instructions/1565RAM pending. Local1991/1992nodes,4262/4263controls(raw4342/infeasible79),material993partial,totalunknown;source/productsP69unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P72 lift/bounds uses](../proposals/m2/t70-final-current-certification.md#s17-p72-checkpoint---horizontal-lift-and-bounds-uses-reconciled).
+[P72 lift/bounds uses](../history/m2/t70-final-current-certification.md#s17-p72-checkpoint---horizontal-lift-and-bounds-uses-reconciled).
 S17 P72:19horizontal/lift/bounds labels/94instructions/39RAM joined9boundedclauses;394752actualroots eachwidth0diff/all94PC/16branchpairs,5tests each. Scope1063/fresh0;5986/10691instruction receipts,2174/3773RAM receipts;4705instructions/1599RAM pending. Local1991/1992nodes,4263/4264controls(raw4342/infeasible78),material993partial,totalunknown;source/productsP69unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P71 platform uses](../proposals/m2/t70-final-current-certification.md#s17-p71-checkpoint---piranha-spin-and-platform-uses-reconciled).
+[P71 platform uses](../history/m2/t70-final-current-certification.md#s17-p71-checkpoint---piranha-spin-and-platform-uses-reconciled).
 S17 P71:40piranha/spin/platform labels/289instructions/121RAM joined12boundedclauses;335360actualroots eachwidth0diff/all289PC/37branchpairs/one mandatorybranch,6tests each. Scope1044/fresh0;5892/10691instruction receipts,2135/3773RAM receipts;4799instructions/1638RAM pending. Local1991/1992nodes,4263/4264controls(raw4342/infeasible78),material993partial,totalunknown;source/productsP69unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P70 flame/star uses](../proposals/m2/t70-final-current-certification.md#s17-p70-checkpoint---flame-fireworks-and-star-flag-uses-reconciled).
+[P70 flame/star uses](../history/m2/t70-final-current-certification.md#s17-p70-checkpoint---flame-fireworks-and-star-flag-uses-reconciled).
 S17 P70:29flame/fireworks/star labels/199instructions/80RAM joined11boundedclauses;266752actualroots eachwidth0diff/all199PC/25branchpairs,5tests each. Scope1004/fresh0;5603/10691instruction receipts,2014/3773RAM receipts;5088instructions/1759RAM pending. Local1991/1992nodes,4264/4265controls(raw4342/infeasible77),material993partial,totalunknown;source/productsP69unchanged,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P69 Bowser/timer repair](../proposals/m2/t70-final-current-certification.md#s17-p69-checkpoint---bowser-chain-and-raw-flame-timer-repaired).
+[P69 Bowser/timer repair](../history/m2/t70-final-current-certification.md#s17-p69-checkpoint---bowser-chain-and-raw-flame-timer-repaired).
 S17 P69:31actor/bridge/Bowser labels/249instructions/95RAM joined11clauses;rawtimer array overrun repaired in sharedfrenzy.c/3transferrednodes. 459008originalroots eachwidth0diff/all249PC/36branchpairs,10tests each. Scope979/fresh0;5404/10691instruction receipts,1934/3773RAM receipts;5287instructions/1839RAM pending. Local1991/1992nodes,4264/4265controls(raw4342/infeasible77),material993partial,totalunknown;3EXEs refreshed,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P68 Firebar/palette repair](../proposals/m2/t70-final-current-certification.md#s17-p68-checkpoint---firebar-chain-and-raw-palette-indexing-repaired).
+[P68 Firebar/palette repair](../history/m2/t70-final-current-certification.md#s17-p68-checkpoint---firebar-chain-and-raw-palette-indexing-repaired).
 S17 P68:28Firebar labels/205instructions/79RAM joined8boundedclauses;raw palette indexing repaired in sharedarea.c/sixtransferrednodes. 327680originalroots eachwidth0diff/all205PC/26branchpairs,1falseexactfallthrough corrected infeasible,8tests each. Scope950/fresh0;5155/10691 instruction receipts,1839/3773 RAM receipts;5536instructions/1934RAM pending. Local1991/1992nodes,4264/4265controls(raw4342/infeasible77),material993partial,totalunknown;threeproducts refreshed,producer/inter-frame/finalpackages pending,M2 incomplete.
 
-[P67 swimming paths](../proposals/m2/t70-final-current-certification.md#s17-p67-checkpoint---swimming-state-and-height-paths-reconciled).
+[P67 swimming paths](../history/m2/t70-final-current-certification.md#s17-p67-checkpoint---swimming-state-and-height-paths-reconciled).
 S17 P67:23swimming labels/159instructions/70RAM joined8boundedclauses;262144actualroots eachwidth0diff/all159PC/21branchpairs,onefalseexactfallthrough corrected infeasible,6tests each. Scope924/fresh0;4950/10691 instruction receipts,1760/3773 RAM receipts;5741instructions/2013RAM pending. Local1991/1992nodes,4265/4266controls(raw4342/infeasible76),material993partial,totalunknown;source/productsP57unchanged,caller/inter-frame and finalpackages pending,M2 incomplete.
 
-[P66 partial coverage](../proposals/m2/t70-final-current-certification.md#s17-p66-partial-checkpoint---swimming-coverage-gaps-retained).
+[P66 partial coverage](../history/m2/t70-final-current-certification.md#s17-p66-partial-checkpoint---swimming-coverage-gaps-retained).
 S17 P66 partial checkpoint:23 swimming-actor labels/159 instructions admitted,scope924/fresh0. Three controlled original roots,total196608 eachwidth,2032RAM/24APU/orderedwrites0diff;6 focused tests eachwidth pass. Only153/159 scope PCs observed;CCB8/CCBA/CCBC/CCBD/CCC3/CCC4 remain uncovered,swimming-height fixture couples current/anchor Y. CBA0 fallthrough control-01795 also requires independent feasibility disposition. No new node/control/use credit;local1991/1992nodes,4266/4267controls(raw4342/infeasible75),4791/10691 instruction receipts,1690/3773 directRAM receipts. Caller/producer/inter-frame lifetimes and material/pixels/routes/snapshot packages remain open;material total unknown,M2 incomplete. Product source/threeEXEs unchanged.
 
-[P65 paratroopa/counter chains](../proposals/m2/t70-final-current-certification.md#s17-p65-checkpoint---paratroopa-movement-and-shared-x-counters-reconciled).
+[P65 paratroopa/counter chains](../history/m2/t70-final-current-certification.md#s17-p65-checkpoint---paratroopa-movement-and-shared-x-counters-reconciled).
 S17 P65:14paratroopa/counter labels,70instructions/30RAM joined6boundedclauses;393216actualroots eachwidth0diff/all70PC/11branchpairs,5tests each. Scope901/fresh0;4791instruction/1690RAM receipts,5900instruction/2083RAM pending. Local1991/1992nodes,4266/4267controls(raw4342/infeasible75),material993partial,totalunknown;source/productsP57unchanged,caller/inter-frame domains pending,M2 incomplete.
 
-[P64 normal enemy movement](../proposals/m2/t70-final-current-certification.md#s17-p64-checkpoint---normal-defeated-and-jumping-enemy-movement-reconciled).
+[P64 normal enemy movement](../history/m2/t70-final-current-certification.md#s17-p64-checkpoint---normal-defeated-and-jumping-enemy-movement-reconciled).
 S17 P64:12movementlabels,69instructions/16RAM joined6boundedclauses;196608actualroots eachwidth0diff/all69PC/14branchpairs,384erasecalls,1falseexactfallthrough correctedinfeasible,5tests each. Scope887/fresh0;4721instruction/1660RAM receipts,5970instruction/2113RAM pending. Local1991/1992nodes,4266/4267controls(raw4342/infeasible75),material993partial,totalunknown;source/productsP57unchanged,caller/inter-frame domains pending,M2 incomplete.
 
-[P63 Lakitu distance/movement](../proposals/m2/t70-final-current-certification.md#s17-p63-checkpoint---lakitu-distance-and-movement-reconciled).
+[P63 Lakitu distance/movement](../history/m2/t70-final-current-certification.md#s17-p63-checkpoint---lakitu-distance-and-movement-reconciled).
 S17 P63:16Lakitu/distance labels,99instructions/37RAM joined6boundedclauses;196608actualroots eachwidth0diff/all99PC/17branchpairs,2falseexactfallthroughs correctedinfeasible,5tests each. Scope875/fresh0;4652instruction/1644RAM receipts,6039instruction/2129RAM pending. Local1991/1992nodes,4267/4268controls(raw4342/infeasible74),material993partial,totalunknown;source/productsP57unchanged,caller/inter-frame domains pending,M2 incomplete.
 
-[P62 remaining frenzy initializer chains](../proposals/m2/t70-final-current-certification.md#s17-p62-checkpoint---lakitu-spiny-fireworks-and-frenzy-bill-reconciled).
+[P62 remaining frenzy initializer chains](../history/m2/t70-final-current-certification.md#s17-p62-checkpoint---lakitu-spiny-fireworks-and-frenzy-bill-reconciled).
 S17 P62:26initializerlabels,182instructions/62RAM joined9boundedclauses;393216actualroots eachwidth0diff/all182PC/24branchpairs,3alreadyinfeasible sides,5tests each. Scope859/fresh0;4553instruction/1607RAM receipts,6138instruction/2166RAM pending. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72),material993partial,totalunknown;source/productsP57unchanged,caller/inter-frame domains pending,M2 incomplete.
 
-[P61 frenzy initializer chains](../proposals/m2/t70-final-current-certification.md#s17-p61-checkpoint---flying-cheep-and-bowser-flame-frenzy-reconciled).
+[P61 frenzy initializer chains](../history/m2/t70-final-current-certification.md#s17-p61-checkpoint---flying-cheep-and-bowser-flame-frenzy-reconciled).
 S17 P61:21initializerlabels,171instructions/75RAM joined11boundedclauses;200960freshroots eachwidth0diff/170PC/15branchpairs,retained131072C485tailvisits,5tests each. Scope834/fresh0;4371instruction/1545RAM receipts,6320instruction/2228RAM pending. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72),material993partial,totalunknown;source/productsP57unchanged,caller/inter-frame domains pending,M2 incomplete.
 
-[P60 firebar and Bowser duplicate chain](../proposals/m2/t70-final-current-certification.md#s17-p60-checkpoint---firebar-and-bowser-duplicate-chain-reconciled).
+[P60 firebar and Bowser duplicate chain](../history/m2/t70-final-current-certification.md#s17-p60-checkpoint---firebar-and-bowser-duplicate-chain-reconciled).
 S17 P60:6initializerlabels,58instructions/32RAM joined5boundedclauses;262144actualroots eachwidth0diff/all58PC/bothscanbranches,actualX==input08,6tests each. Scope815/fresh0;4200instruction/1470RAM receipts,6491instruction/2303RAM pending. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72),material993partial,totalunknown;source/productsP57unchanged,caller/inter-frame domains pending,M2 incomplete.
 
-[P59 initializer dispatch and shared tails](../proposals/m2/t70-final-current-certification.md#s17-p59-checkpoint---initializer-dispatch-and-shared-tails-reconciled).
+[P59 initializer dispatch and shared tails](../history/m2/t70-final-current-certification.md#s17-p59-checkpoint---initializer-dispatch-and-shared-tails-reconciled).
 S17 P59:47initializer/erasurelabels,186instructions/75RAM joined12boundedclauses;65536actualroots eachwidth0diff/all186PC/ninebranchpairs,actualX==input08,799erasurecalls,7tests each. Scope809/fresh0;4142instruction/1438RAM receipts,6549instruction/2335RAM pending. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72),material993partial,totalunknown;source/productsP57unchanged,otherchild/caller/inter-frame domains pending,M2 incomplete.
 
-[P58 movement caller diagnostic binding](../proposals/m2/t70-final-current-certification.md#s17-p58-checkpoint---movement-caller-dispatch-diagnostic-restored).
+[P58 movement caller diagnostic binding](../history/m2/t70-final-current-certification.md#s17-p58-checkpoint---movement-caller-dispatch-diagnostic-restored).
 S17 P58:testmovementcaller link/dispatchbinding fixed;04-07 comparison added,37freshROM fixtures yield74caller+74production checks0diff,bothwidths;fournegativevariants rejected. Bothall-targetbuilds/twofocusedtests eachpass,productsP57unchanged. Scope762/fresh0;local1991/1992nodes,4269/4270controls(raw4342/infeasible72),3956instruction/1363RAM boundedreceipts,6735instruction/2410RAM pending;material993partial,totalunknown,M2 incomplete.
 
-[P57 shared color counter and continuous engine](../proposals/m2/t70-final-current-certification.md#s17-p57-checkpoint---shared-color-counter-repaired-and-continuous-engine-qualified).
+[P57 shared color counter and continuous engine](../history/m2/t70-final-current-certification.md#s17-p57-checkpoint---shared-color-counter-repaired-and-continuous-engine-qualified).
 S17 P57:ColorRotation RAM00 counter repaired(originalSTA3/DECtoFF),regressionfailsbefore/passafter.65536color+8192fullengine roots eachwidth0diff,11tests each;41color/44observedparent joins. Scope759/fresh0;3956instruction/1363RAM receipts,6735instruction/2410RAM pending. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72),material993partial,totalunknown;3EXEs refreshed/DOScompile-linkonly. Parser/caller/inter-frameandindependentmovementcaller testlinkpending,M2 incomplete.
 
-[P56 continuous actor parent](../proposals/m2/t70-final-current-certification.md#s17-p56-checkpoint---continuous-actor-parent-and-group-integration).
+[P56 continuous actor parent](../history/m2/t70-final-current-certification.md#s17-p56-checkpoint---continuous-actor-parent-and-group-integration).
 S17 P56:8actor-parent instructions/1RAM bounded joins;1024 uninterrupted frozen roots eachwidth0diff,6144 real enemy/floatey pairs,all8PC/both loopbranches,6tests each. Scope748/fresh0;3871instruction/1336RAM receipts,6820instruction/2437RAM pending. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72),material993partial,totalunknown;other child/caller/inter-frame domains pending,source/productsP46unchanged,M2 incomplete.
 
-[P55 group caller return](../proposals/m2/t70-final-current-certification.md#s17-p55-checkpoint---group-slot-allocation-and-caller-return).
+[P55 group caller return](../history/m2/t70-final-current-certification.md#s17-p55-checkpoint---group-slot-allocation-and-caller-return).
 S17 P55:55groupinstructions/23RAM bounded joins,69632actualroots eachwidth0diff/all55PC/7branchpairs,6tests each. Allocation0-4/realinit0,2,6 preserves08;originalreturnX==input08 inallroots,group caller joinqualified;17direct08writers enumerated,otherspending. Scope746/fresh0;3863instruction/1335RAM receipts,6828instruction/2438RAM pending. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72),material993partial,totalunknown;source/productsP46unchanged,M2 incomplete.
 
-[P54 pointer target closure](../proposals/m2/t70-final-current-certification.md#s17-p54-checkpoint---area-pointer-producers-and-stream-target-closure).
+[P54 pointer target closure](../history/m2/t70-final-current-certification.md#s17-p54-checkpoint---area-pointer-producers-and-stream-target-closure).
 S17 P54:94area-pointer instructions/26RAM joined7clauses,139264actualroots eachwidth0diff/all94PC/two branchpairs,3tests each.36world records/50row0E destinations close28initial streams to34 over41model links,no graph credit. Scope738/fresh0;3808instruction/1312RAM receipts,6883instruction/2461RAM pending. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72),material993partial,totalunknown;caller/alias prerequisites pending,source/productsP46unchanged,M2 incomplete.
 
-[P53 alias exclusions](../proposals/m2/t70-final-current-certification.md#s17-p53-checkpoint---stream-alias-index-and-indirect-address-exclusions).
+[P53 alias exclusions](../history/m2/t70-final-current-certification.md#s17-p53-checkpoint---stream-alias-index-and-indirect-address-exclusions).
 S17 P53:38shuffleinstructions/14RAM bounded joins;4096actualroots eachwidth0diff/all38PC/5branchpairs,8tests each.12entry-local alias exclusions/24additional caller-conditional;338prior conditional retained;65536high05 pairs safe envelope. Scope734/fresh0;3714instruction/1286RAM receipts,6977instruction/2487RAM pending. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72),material993partial,totalunknown;ID3F caller/pointer prerequisite pending,source/productsP46unchanged,M2 incomplete.
 
-[P52 cursor invariant](../proposals/m2/t70-final-current-certification.md#s17-p52-checkpoint---enemy-stream-cursor-boundary-invariant).
+[P52 cursor invariant](../history/m2/t70-final-current-certification.md#s17-p52-checkpoint---enemy-stream-cursor-boundary-invariant).
 S17 P52:CheckForEnemyGroup/control-01480 cursor lemma;34streams/536boundary states/1540transitions preserve alignment,max57/no ordinaryID3F. Four negative models rejected;28 misalignedID3F witnesses. Writer census8direct/374indexed/9indirect;caller/alias applicability pending,no credit. Local1991/1992nodes,4269/4270controls(raw4342/infeasible72);3676instruction/1272RAM receipts,material993partial,totalunknown;productsP46unchanged,M2 incomplete.
 
-[P51 checkpoint](../proposals/m2/t70-final-current-certification.md#s17-p51-checkpoint---motion-loop-and-enemy-stream-source-use-joins).
+[P51 checkpoint](../history/m2/t70-final-current-certification.md#s17-p51-checkpoint---motion-loop-and-enemy-stream-source-use-joins).
 S17 P51:55 motion/loop/stream labels,310PC inspected/observed;309 instruction/101RAM bounded joins,408380 roots each width0diff,7tests each. Scope724/fresh0;3676instruction/1272RAM receipts,7015instruction/2501RAM remaining. Two controls exact->infeasible;CheckForEnemyGroup/control-01480 exact->needs-evidence for residualID3F producer constraint. Currentlocal1991/1992nodes,4269/4270controls(raw4342,infeasible72);material993partial,totalunknown;source/productsP46unchanged,M2 incomplete.
 
-[P50 block source-use joins](../proposals/m2/t70-final-current-certification.md#s17-p50-checkpoint---block-head-contents-chunks-and-replacement-source-use-joins).
+[P50 block source-use joins](../history/m2/t70-final-current-certification.md#s17-p50-checkpoint---block-head-contents-chunks-and-replacement-source-use-joins).
 240instructions/87RAM joined16bounded clauses,430080actualroots each width
 zero scoped differences;allPC/conditional sides except proved impossible
 BEB1fallthrough.3367instruction/1171RAM receipts,2602otherRAMjoins remain.
@@ -320,7 +322,7 @@ Control-01371 old exact receipt invalidated;currentlocalcontrols4272/4272,
 raw4342/infeasible70. Localnodes1992/1992,material993partial,totalunknown;
 source/products unchanged,whole M2 incomplete.
 
-[P49 hammer/misc/coin/powerup joins](../proposals/m2/t70-final-current-certification.md#s17-p49-checkpoint---hammer-misc-coin-score-and-powerup-source-use-joins).
+[P49 hammer/misc/coin/powerup joins](../history/m2/t70-final-current-certification.md#s17-p49-checkpoint---hammer-misc-coin-score-and-powerup-source-use-joins).
 273instructions/110RAM joined21boundedclauses,471040currentroots eachwidth
 zero scoped differences,allPC/27branchpairs/oneconstantbranch.3127instruction/
 1084RAM receipts,2689otherRAMjoins remain. Control-01236 isprovedinfeasible;
@@ -328,226 +330,226 @@ currentlocalcontrols4273/4273,raw4342/infeasible69;prior4274/68 rows retain
 historicalcounts. Material993partial,totalunknown;source/productsunchanged,
 whole M2 incomplete.
 
-[P48 bounded spring producer](../proposals/m2/t70-final-current-certification.md#s17-p48-checkpoint---original-spring-producer-and-freeze-timer-protocol).
+[P48 bounded spring producer](../history/m2/t70-final-current-certification.md#s17-p48-checkpoint---original-spring-producer-and-freeze-timer-protocol).
 37instructions/11RAM joined6boundedclauses;20480currentroots eachwidth
 zero scoped differences,continuoussinglefreeze indices0-4;2854instruction/
 974RAM receipts,2799otherRAMjoins remain. Broadercaller lifetimepending,
 material993partial,totalunknown;source/productsunchanged,M2incomplete.
 
-[P47 retained object-use joins](../proposals/m2/t70-final-current-certification.md#s17-p47-checkpoint---retained-flag-spring-vine-and-cannon-source-use-joins).
+[P47 retained object-use joins](../history/m2/t70-final-current-certification.md#s17-p47-checkpoint---retained-flag-spring-vine-and-cannon-source-use-joins).
 247instructions/96RAM joined boundedclauses,241664currentroots eachwidth
 zero scoped differences,allPC/branchsides;2817instruction/963RAM receipts,
 2810otherRAMjoins remain. Springfreeze/index lifetime pending,material993
 partial,totalunknown;source/productsunchanged,whole M2 incomplete.
 
-[P46 original indexed-speed repair](../proposals/m2/t70-final-current-certification.md#s17-p46-checkpoint---original-byte-indexed-fireball-speed-repaired).
+[P46 original indexed-speed repair](../history/m2/t70-final-current-certification.md#s17-p46-checkpoint---original-byte-indexed-fireball-speed-repaired).
 Two contracts restored;2048baselineeachwidth3962RAMdiff->0,12288currentroots
 zero scoped differences,all256 speed addresses observed.2570instruction/867RAM
 bounded receipts,2906otherRAMjoins remain;material993partial,totalunknown;
 three products refreshed,whole M2 incomplete.
 
-[P45 timer/warp/whirlpool repair](../proposals/m2/t70-final-current-certification.md#s17-p45-checkpoint---timer-warp-and-whirlpool-fidelity-repaired).
+[P45 timer/warp/whirlpool repair](../history/m2/t70-final-current-certification.md#s17-p45-checkpoint---timer-warp-and-whirlpool-fidelity-repaired).
 117instructions/59RAM,threecontracts reopenedthenrestored;2048baselineeach
 width3373RAMdiff->0.212992currentroots0scopeddiff,117PC/19branchpairs;
 2562instruction/864RAM receipts,2909otherRAMjoins remain;material993partial,
 totalunknown;threeproductsrefreshed,wholeM2 stillincomplete.
 
-[P44 fireball/bubble consumed-use joins](../proposals/m2/t70-final-current-certification.md#s17-p44-checkpoint---fireball-and-bubble-consumed-use-joins).
+[P44 fireball/bubble consumed-use joins](../history/m2/t70-final-current-certification.md#s17-p44-checkpoint---fireball-and-bubble-consumed-use-joins).
 138instructions/55RAM,262144currentoriginalroots eachwidth2032RAM/APU/order
 0diff,138PC/17branchpairs/sixbytes observed;threeowners/box unchanged.
 2445instruction/805RAM boundedreceipts,2968otherRAMjoins remain;material986
 partial,totalunknown;P39products unchanged,wholeM2 stillincomplete.
 
-[P43 player physics/climb/animation/friction joins](../proposals/m2/t70-final-current-certification.md#s17-p43-checkpoint---retained-player-physics-climb-animation-and-friction-joins).
+[P43 player physics/climb/animation/friction joins](../history/m2/t70-final-current-certification.md#s17-p43-checkpoint---retained-player-physics-climb-animation-and-friction-joins).
 250instructions/110RAM;262144currentroots2032RAM/APU/order0diff plus65536
 frictionroots all2048RAM/noexclusion0diff eachwidth;fullplayer.c unchanged.
 2307instruction/750RAM boundedreceipts,3023otherRAMjoins remain;material986
 partial,totalunknown;P39products unchanged,wholeM2 stillincomplete.
 
-[P42 retainedHUD/text/timer source-use joins](../proposals/m2/t70-final-current-certification.md#s17-p42-checkpoint---retained-hud-timer-and-text-source-use-joins).
+[P42 retainedHUD/text/timer source-use joins](../history/m2/t70-final-current-certification.md#s17-p42-checkpoint---retained-hud-timer-and-text-source-use-joins).
 146instructions/39RAM,current8192roots+64protocols/448records allRAM/ABI0diff;
 65536textroots2032RAM/APU/order0diff eachwidth,sixsource segmentsunchanged.
 2057instruction/640RAM boundedreceipts,3133otherRAM joins pending;material986
 partial,totalunknown;all3 P39products unchanged.
 
-[P41 retainedinitialization/setup source-use joins](../proposals/m2/t70-final-current-certification.md#s17-p41-checkpoint---retained-initialization-and-setup-source-use-joins).
+[P41 retainedinitialization/setup source-use joins](../history/m2/t70-final-current-certification.md#s17-p41-checkpoint---retained-initialization-and-setup-source-use-joins).
 53instructions/22RAM,5888realroots eachwidthzero2032RAM/APU/orderdiff;five
 bodies unchanged,21entries/42controls/19tablebytes observed.Path986 A0return
 added;1911instruction/601RAM boundedreceipts,3172otherRAM joins pending.
 Material986 partial,totalunknown;all3 P39products unchanged.
 
-[P40 retainedpalette source-use joins](../proposals/m2/t70-final-current-certification.md#s17-p40-checkpoint---retained-palette-contracts-joined-to-source-uses).
+[P40 retainedpalette source-use joins](../history/m2/t70-final-current-certification.md#s17-p40-checkpoint---retained-palette-contracts-joined-to-source-uses).
 65instructions/28RAM,36864 currentparents+480persistentprotocols eachwidth
 zeroRAM/declaredABI diff;five source segmentsunchanged,existingpaths605-613
 retained.1858instruction/579RAM boundedreceipts,3194otherRAM joins pending;
 material985 partial,totalunknown;all3 P39products unchanged.
 
-[P39 source-faithful raw pipe andcastle repair](../proposals/m2/t70-final-current-certification.md#s17-p39-checkpoint---raw-pipe-and-castle-source-fidelity-repaired).
+[P39 source-faithful raw pipe andcastle repair](../history/m2/t70-final-current-certification.md#s17-p39-checkpoint---raw-pipe-and-castle-source-fidelity-repaired).
 19 reopened localcontracts restored;63024 expandedparents/9216 returnedX roots/
 95706 retainedparents eachwidth zero RAM/declaredABI differences. Threeproducts
 refreshed,10tests each/six600-frame integrations pass,DOS compile/linkonly.
 985 partialmaterialpaths,totalunknown;full M2 certification remainsopen.
 
-[P38 bounded castle and pipe lifetimes](../proposals/m2/t70-final-current-certification.md#s17-p38-checkpoint---bounded-castle-and-pipe-child-lifetimes-reconciled).
+[P38 bounded castle and pipe lifetimes](../history/m2/t70-final-current-certification.md#s17-p38-checkpoint---bounded-castle-and-pipe-child-lifetimes-reconciled).
 147 instructions/48 RAM,95706 actualparents eachwidth zero withinadmitteddomains.
 Rawguard/returnedX/adjacent-ROM inputclauses open;1793 instruction/551 RAM
 boundedreceipts,3222 otherRAM clauses pending,984 partialpaths,totalunknown.
 
-[P37 ledge and rope lifetimes](../proposals/m2/t70-final-current-certification.md#s17-p37-checkpoint---style-ledge-and-rope-child-lifetimes-reconciled).
+[P37 ledge and rope lifetimes](../history/m2/t70-final-current-certification.md#s17-p37-checkpoint---style-ledge-and-rope-child-lifetimes-reconciled).
 73 instructions/20 RAM sites,49840 actualroots eachwidth zero fullRAM diff;
 1646 instruction/503 RAM localreceipts,3270 otherRAM clauses pending. Paths
 970-975 added,975 partial,totalunknown;no globalnode/controlcredit.
 
-[P36 initialization lifetimes](../proposals/m2/t70-final-current-certification.md#s17-p36-checkpoint---initialization-clear-and-screen-position-lifetimes-reconciled).
+[P36 initialization lifetimes](../history/m2/t70-final-current-certification.md#s17-p36-checkpoint---initialization-clear-and-screen-position-lifetimes-reconciled).
 76 instructions/29 RAM sites,2216 actualroots eachwidth zero fullRAM diff;
 1573 instruction/483 RAM localreceipts,3290 otherRAM clauses pending. Paths
 966-969 added,969 partial,totalunknown;no globalnode/controlcredit.
 
-[P35 object and pool handoffs](../proposals/m2/t70-final-current-certification.md#s17-p35-checkpoint---cannon-staircase-spring-block-and-hole-handoffs-reconciled).
+[P35 object and pool handoffs](../history/m2/t70-final-current-certification.md#s17-p35-checkpoint---cannon-staircase-spring-block-and-hole-handoffs-reconciled).
 123 instructions/39 RAM sites,113988 actualroots eachwidth zero fullRAM diff;
 1497 instruction/454 RAM localreceipts,3319 otherRAM clauses pending. Paths
 959-965 added,965 partial,totalunknown;no globalnode/controlcredit.
 
-[P34 row/column parent handoffs](../proposals/m2/t70-final-current-certification.md#s17-p34-checkpoint---row-column-and-castle-object-parent-handoffs-reconciled).
+[P34 row/column parent handoffs](../history/m2/t70-final-current-certification.md#s17-p34-checkpoint---row-column-and-castle-object-parent-handoffs-reconciled).
 41 instructions/11 RAM sites,44412 actualroots eachwidth zero fullRAM diff;
 1374 instruction/415 RAM localreceipts,3358 otherRAM clauses pending. Paths
 954-958 added,958 partial,totalunknown;no globalnode/controlcredit.
 
-[P33 shared area leaf lifetimes](../proposals/m2/t70-final-current-certification.md#s17-p33-checkpoint---shared-area-leaf-lifetimes-and-return-abi-reconciled).
+[P33 shared area leaf lifetimes](../history/m2/t70-final-current-certification.md#s17-p33-checkpoint---shared-area-leaf-lifetimes-and-return-abi-reconciled).
 68 instructions/12 RAM sites,68896 actualroots eachwidth zero RAM/returndiff;
 1333 instruction/404 RAM localreceipts,3369 otherRAM clauses pending. Paths
 952-953 added,953 partial,totalunknown;no globalnode/controlcredit.
 
-[P32 scheduler handoffs](../proposals/m2/t70-final-current-certification.md#s17-p32-checkpoint---parser-schedule-and-counter-handoffs-reconciled).
+[P32 scheduler handoffs](../history/m2/t70-final-current-certification.md#s17-p32-checkpoint---parser-schedule-and-counter-handoffs-reconciled).
 36 instructions/16 RAM sites,3424 actual parents each width zero fullRAMdiff;
 1265 instruction/392 RAM receipts,3381 other RAM clauses pending. Four
 materialpaths948-951 added,951 partial,total unknown;no node/controlcredit.
 
-[P31 scenery and buffer handoffs](../proposals/m2/t70-final-current-certification.md#s17-p31-checkpoint---scenery-terrain-and-block-buffer-handoffs-reconciled).
+[P31 scenery and buffer handoffs](../history/m2/t70-final-current-certification.md#s17-p31-checkpoint---scenery-terrain-and-block-buffer-handoffs-reconciled).
 131 instructions/32 RAM sites reconciled,current8192 original roots each
 width zero full RAM diff;1229 instruction/376 RAM local receipts,3397
 other direct RAM clauses pending. No new graph credit/global certification.
 
-[P30 retained column lifetimes](../proposals/m2/t70-final-current-certification.md#s17-p30-checkpoint---retained-column-and-attribute-lifetimes-reconciled).
+[P30 retained column lifetimes](../history/m2/t70-final-current-certification.md#s17-p30-checkpoint---retained-column-and-attribute-lifetimes-reconciled).
 133 instructions/69 RAM sites joined to exact unchanged owner evidence;
 1098 instruction/344 RAM local receipts,3429 other RAM clauses pending.
 No source/new path/global certification.
 
-[P29 parser lifetime receipts](../proposals/m2/t70-final-current-certification.md#s17-p29-checkpoint---parser-consumed-value-clauses-reconciled).
+[P29 parser lifetime receipts](../history/m2/t70-final-current-certification.md#s17-p29-checkpoint---parser-consumed-value-clauses-reconciled).
 Existing191 instructions/54 direct RAM sites now have local clauses;
 965 instruction/275 RAM receipts,3498 direct RAM index clauses pending.
 No node/edge credit or whole-game certification.
 
-[P28 parser phase repair](../proposals/m2/t70-final-current-certification.md#s17-p28-checkpoint---parser-original-phase-publications-restored).
+[P28 parser phase repair](../history/m2/t70-final-current-certification.md#s17-p28-checkpoint---parser-original-phase-publications-restored).
 Four reopened local nodes repaired;27139 roots each width zero RAM/write
 sequence diff,10 checks each/six scoped routes/three products pass.
 Material947 partial,total unknown;other parser/use/final package clauses open.
 
-[P27 consumed-use index](../proposals/m2/t70-final-current-certification.md#s17-p27-checkpoint---current-consumed-use-obligation-index).
+[P27 consumed-use index](../history/m2/t70-final-current-certification.md#s17-p27-checkpoint---current-consumed-use-obligation-index).
 774 instruction/221 direct RAM sites have complete local-owner/core receipts;
 3552 other direct RAM sites need exact retained receipt joins or missing proof.
 This does not invalidate retained node evidence or define a new exact fraction.
 Material946 partial,total unknown;four final packages remain open.
 
-[P26 shared motion](../proposals/m2/t70-final-current-certification.md#s17-p26-checkpoint---shared-motion-value-lifetimes).
+[P26 shared motion](../history/m2/t70-final-current-certification.md#s17-p26-checkpoint---shared-motion-value-lifetimes).
 93 core instruction clauses/47 RAM sites,4096 original roots each width zero
 differences,all8 branch pairs/5 tests each pass.11 paths936-946;material946
 partial,total unknown. Caller/inter-frame/other owners and final packages remain.
 
-[P25 indexed clear](../proposals/m2/t70-final-current-certification.md#s17-p25-checkpoint---indexed-clear-queue-consumers).
+[P25 indexed clear](../history/m2/t70-final-current-certification.md#s17-p25-checkpoint---indexed-clear-queue-consumers).
 Six named90dc-to-sound aliases resolved by actual independent native events;
 2048 roots each width zero differences. Material935 partial,total unknown;
 other owner lifetimes and four final packages remain open.
 
-[P24 queue consumption](../proposals/m2/t70-final-current-certification.md#s17-p24-checkpoint---actual-external-queue-consumption).
+[P24 queue consumption](../history/m2/t70-final-current-certification.md#s17-p24-checkpoint---actual-external-queue-consumption).
 90112 roots each width,76 source/native sampled joins and48 new paths;
 material929 partial,total unknown. Bulk90dc/cross-frame/game overwrites and
 other owner lifetimes remain;no global certification or fresh node credit.
 
-[P23 PlayerHole correction](../proposals/m2/t70-final-current-certification.md#s17-p23-checkpoint---playerhole-original-scratch-repair).
+[P23 PlayerHole correction](../history/m2/t70-final-current-certification.md#s17-p23-checkpoint---playerhole-original-scratch-repair).
 Original07=4/6 publications restored;two reopened local nodes repaired.
 18432 roots each width zero differences,12 checks each/six600-frame routes/
 three products pass.48 direct queue PCs observed in declared domains;
 material881 partial,total unknown and four final packages remain open.
 
-[P19 sound lifetimes](../proposals/m2/t70-final-current-certification.md#s17-p19-checkpoint---sound-chain-mutable-and-cross-frame-lifetimes).
+[P19 sound lifetimes](../history/m2/t70-final-current-certification.md#s17-p19-checkpoint---sound-chain-mutable-and-cross-frame-lifetimes).
 681 sound instruction sites/174 direct RAM sites,24064 original returning
 roots each width zero diff;independent persistent C and259 actual RAM/local
 counterparts plus1 pure-fold proof.153 paths727-879 accepted in declared
 domain;material879 partial,total unknown.8 checks each pass,no products
 change. External queue producers/other owners/four packages remain pending.
 
-[P18 retained hardware contracts](../proposals/m2/t70-final-current-certification.md#s17-p18-admission-and-checkpoint---retained-hardware-command-contracts).
+[P18 retained hardware contracts](../history/m2/t70-final-current-certification.md#s17-p18-admission-and-checkpoint---retained-hardware-command-contracts).
 39 hardware sites mapped to retained scoped receipts/current source identities;
 all87 hardware sites have bounded dispositions,pixel timing remains pending.
 No new execution/source/products/graph credit;material726 partial,total unknown.
 
-[P17 controller hardware](../proposals/m2/t70-final-current-certification.md#s17-p17-checkpoint---controller-hardware-boundary).
+[P17 controller hardware](../history/m2/t70-final-current-certification.md#s17-p17-checkpoint---controller-hardware-boundary).
 4096 original roots each width zero full-RAM diff in single-controller domain;
 3 hardware sites dispositioned,39 hardware sites/other material clauses remain.
 No source/products/graph credit;material726 partial,total unknown.
 
-[P16 sound hardware](../proposals/m2/t70-final-current-certification.md#s17-p16-checkpoint---direct-sound-hardware-commands).
+[P16 sound hardware](../history/m2/t70-final-current-certification.md#s17-p16-checkpoint---direct-sound-hardware-commands).
 23040 original live roots each width zero full-RAM/APU-shadow/ordered-write
 differences;all45 PCs observed,8 current checks each pass. No source/products/
 graph credit.42 hardware sites/other material uses/four packages remain open.
 
-[P15 dispatch repair](../proposals/m2/t70-final-current-certification.md#s17-p15-checkpoint---dispatch-caller-scratch-repair).
+[P15 dispatch repair](../history/m2/t70-final-current-certification.md#s17-p15-checkpoint---dispatch-caller-scratch-repair).
 Eight omitted04-07 caller publications restored.9216 kernel/512 real caller
 roots per width zero diff;27139 parser rechecks/14 checks each/six600-frame
 routes/3 products pass. Material726 partial,total unknown;other material uses
 and four existing packages pending. Local1992/1992 is not certification.
 
-[P14 RAM writers](../proposals/m2/t70-final-current-certification.md#s17-p14-checkpoint---remaining-mutable-buffer-pointers).
+[P14 RAM writers](../history/m2/t70-final-current-certification.md#s17-p14-checkpoint---remaining-mutable-buffer-pointers).
 4992 original roots each width zero full-RAM differences;all9 sites observed,
 8 current checks each pass. Material718 partial,total unknown;three dispatch
 sites/other lifetime clauses/four packages pending. No source/products change.
 
-[P13 scenery repair](../proposals/m2/t70-final-current-certification.md#s17-p13-checkpoint---scenery-staging-and-scratch-repair).
+[P13 scenery repair](../history/m2/t70-final-current-certification.md#s17-p13-checkpoint---scenery-staging-and-scratch-repair).
 19 scoped labels restored;8192 original roots each width zero full-RAM
 differences after20802 baseline differences.9 checks each/six600-frame
 routes/3 products pass. Material710 partial,total unknown;9 RAM/3 dispatch
 sites and four existing packages pending. Local contracts are not certification.
 
-[P12 RAM pointers](../proposals/m2/t70-final-current-certification.md#s17-p12-checkpoint---resetcollision-pointer-lifetimes).
+[P12 RAM pointers](../history/m2/t70-final-current-certification.md#s17-p12-checkpoint---resetcollision-pointer-lifetimes).
 9728 original roots each width zero RAM/metatile diff;reset self-alias and
 collision row/page/coordinate lifetime clauses reconciled. Six current
 checks each pass;619 strengthened,three paths added,material705 partial,
 total unknown. No source/products/graph credit;10 RAM/3 dispatch sites pending.
 
-[P11 VRAM pointers](../proposals/m2/t70-final-current-certification.md#s17-p11-checkpoint---vram-packet-pointer-paths).
+[P11 VRAM pointers](../history/m2/t70-final-current-certification.md#s17-p11-checkpoint---vram-packet-pointer-paths).
 3600 actual original roots each width zero RAM/CIRAM/palette/control/visible
 scroll diff;four sites observed/four paths added. Four current checks each
 pass;no source/products/graph credit. Material702 partial,total unknown;
 12 RAM/3 dispatch indirect sites and other material clauses remain in S17.
 
-[P10 pipe scratch](../proposals/m2/t70-final-current-certification.md#s17-p10-checkpoint---sideways-pipe-scratch-repair).
+[P10 pipe scratch](../history/m2/t70-final-current-certification.md#s17-p10-checkpoint---sideways-pipe-scratch-repair).
 Six pipe labels restored;240 original roots each width zero full-RAM diff
 after480 baseline scratch differences.12 current checks each/4288 handoff
 rechecks/six600-frame routes and3 products pass. Local1992/1992,controls4274/4274;
 material698 partial,total unknown. S17/four existing packages remain open.
 
-[P9 area/castle](../proposals/m2/t70-final-current-certification.md#s17-p9-checkpoint---area-pointer-and-castle-counter).
+[P9 area/castle](../history/m2/t70-final-current-certification.md#s17-p9-checkpoint---area-pointer-and-castle-counter).
 Castle06 RAM counter repaired;4288 composed roots and27139 parser roots
 each width zero diff.19 pointer sites observed/14 new material paths.
 11 current checks each/six600-frame routes and3 products pass. Sweep finds
 pipe05/06 stores still absent:6 labels reopened,local1986/1992,controls4274/4274;
 material696 partial,total unknown. S17 remains open for corrective pipe work.
 
-[P8 enemy pointers](../proposals/m2/t70-final-current-certification.md#s17-p8-checkpoint---enemy-pointer-handoff).
+[P8 enemy pointers](../history/m2/t70-final-current-certification.md#s17-p8-checkpoint---enemy-pointer-handoff).
 14 indirect reads/nine header-to-consumer paths reconciled.1632 fresh
 compositions each width zero RAM diff,retained65536 roots observe all sites.
 4 current checks each width and3 negatives pass;products remain P6.
 No fresh node/control credit;material682 partial,total unknown,S17 open.
 
-[P7 music pointers](../proposals/m2/t70-final-current-certification.md#s17-p7-checkpoint---retained-music-pointer-paths).
+[P7 music pointers](../history/m2/t70-final-current-certification.md#s17-p7-checkpoint---retained-music-pointer-paths).
 Six original indirect sites/seven native fetches,five header-to-channel paths
 reconciled in declared domains. Whole audio owner/callee writes stable versus
 accepted snapshot;50176 actual original live calls retained,4 current checks
 each width and5 negative probes pass. No new node/control credit or products;
 material673 partial,total unknown. S17 and four named packages remain open.
 
-[P6 parser repair](../proposals/m2/t70-final-current-certification.md#s17-p6-checkpoint---parser-decoder-and-return-order-repair).
+[P6 parser repair](../history/m2/t70-final-current-certification.md#s17-p6-checkpoint---parser-decoder-and-return-order-repair).
 32 parser nodes repaired/re-audited;27139 original roots each width zero RAM
 differences including zero-page,observed physical pushes excluded.32 labels,
 34 feasible predicate pairs observed;constant-BNE control-00561 reclassified
@@ -555,21 +557,21 @@ infeasible. Local nodes1992/1992,controls4274/4274(raw4342,infeasible68).
 10 checks each,six600-frame routes,3 refreshed products;material668 partial,
 total unknown. S17 remains open;no full equivalence certificate.
 
-[P5 indirect inventory](../proposals/m2/t70-final-current-certification.md#s17-p5-checkpoint---indirect-use-and-pointer-alias-inventory).
+[P5 indirect inventory](../history/m2/t70-final-current-certification.md#s17-p5-checkpoint---indirect-use-and-pointer-alias-inventory).
 61 indirect sites grouped;5 current shared source identities bound to accepted
 snapshots.338 possible indexed pointer aliases excluded only under declared
 slot bounds;caller applicability remains pending. Eight focused native checks
 each width and inventory negative checks pass;no new original trace or graph
 credit. Products unchanged;material660 partial,total unknown;S17 remains open.
 
-[P4 column output repair](../proposals/m2/t70-final-current-certification.md#s17-p4-checkpoint---complete-column-output-repair).
+[P4 column output repair](../history/m2/t70-final-current-certification.md#s17-p4-checkpoint---complete-column-output-repair).
 Eleven-node chain re-audited after scratch/order correction;12288 final original
 roots each width,2048 RAM/no exclusions,zero differences. All11 labels and7
 predicate pairs observed.5 focused checks each pass;neutral overlap regression
 and final3 products included. Local1992/1992 restored,controls4275/4275;
 material660 partial,total unknown. Four named packages/S17 remain open.
 
-[P3 pointer repair](../proposals/m2/t70-final-current-certification.md#s17-p3-checkpoint---title-pointer-repair).
+[P3 pointer repair](../history/m2/t70-final-current-certification.md#s17-p3-checkpoint---title-pointer-repair).
 Three title-copy contracts reopened/repaired within S17;32 full-RAM original
 roots each width zero diff,only observed physical return-stack exclusions.
 Original page-wrap/termination branches covered both ways;5 tests each,
@@ -577,7 +579,7 @@ Original page-wrap/termination branches covered both ways;5 tests each,
 tools. Local scoped1992/1992 restored,4275/4275 feasible controls unchanged;
 material649 partial,total unknown. Four named packages remain;S17 open.
 
-[P2 immutable joins](../proposals/m2/t70-final-current-certification.md#s17-p2-checkpoint---immutable-producer-joins).
+[P2 immutable joins](../history/m2/t70-final-current-certification.md#s17-p2-checkpoint---immutable-producer-joins).
 250 direct ROM-read sites reconciled within retained input/index domains;
 227 join194 retained paths,and23 form22 new source-backed pairs626-647.
 19 helper bodies/four isolated pipe branches plus their local constants are
@@ -586,7 +588,7 @@ unchanged from accepted proof snapshots;all171 S16 source identities remain.
 rejected. Material647 partial,total unknown;node/control fresh0,no products
 changed. Mutable/indirect/hardware/register/flag/stack/inter-frame uses remain.
 
-[P1 inventory](../proposals/m2/t70-final-current-certification.md#s17-p1-checkpoint---byte-bound-material-use-inventory).
+[P1 inventory](../history/m2/t70-final-current-certification.md#s17-p1-checkpoint---byte-bound-material-use-inventory).
 10691 byte-bound textual instructions,4171 explicit memory sites and9003
 consuming sites inventoried;counts overlap and are not edges. Ten encoded BIT
 overlap reads discharge as nonmaterial after source flag-lifetime proof and
@@ -596,35 +598,35 @@ no product edit or refresh. S17 remains open;four named packages remain.
 
 ## M2 T70 S16 - closed executable data-binding package
 
-[P5 scoped closure](../proposals/m2/t70-final-current-certification.md#s16-p5-closure---executable-binding-package).
+[P5 scoped closure](../history/m2/t70-final-current-certification.md#s16-p5-closure---executable-binding-package).
 93 indexed read/view and134 caller address clauses reconciled in declared
 original source domains;70 other references classified across171 C/header
 sources.3 focused tests each pass. Expected/actual fresh0/0,empty original
 scope/no transfers;prior owner/index/ABI proof limits retained. Bindings gap
 closed;material/pixels/routes/snapshot remain. Products unchanged since P1.
 
-[P4 grouped resource checkpoint](../proposals/m2/t70-final-current-certification.md#s16-p4-checkpoint---grouped-helper-and-output-resource-bindings).
+[P4 grouped resource checkpoint](../history/m2/t70-final-current-certification.md#s16-p4-checkpoint---grouped-helper-and-output-resource-bindings).
 53/93 direct and88/134 caller address clauses reconciled;remaining40/46
 uses overlap.37 helper caller contracts,player graphics/vector target reads
 and native generated PRG/CHR/title/icon origin checks complete in declared
 domains.6 focused native tests each width pass;no new original runtime route,
 node/control/material credit or product source change. S16 remains open.
 
-[P3 dynamic-domain checkpoint](../proposals/m2/t70-final-current-certification.md#s16-p3-checkpoint---dynamic-header-and-stream-address-domains).
+[P3 dynamic-domain checkpoint](../history/m2/t70-final-current-certification.md#s16-p3-checkpoint---dynamic-header-and-stream-address-domains).
 256 original LoadHeader cases each width match all RAM/APU fields and writes;
 34 area/enemy pointer domains and21 audio read-call address contracts checked.
 19/93 direct and21/134 caller address clauses dispositioned within declared
 source domains;remaining74/113 uses overlap and are not edge denominators.
 No new node/control/material credit or product edit;S16 remains open.
 
-[P2 binding/read-use checkpoint](../proposals/m2/t70-final-current-certification.md#s16-p2-checkpoint---original-binding-locations-and-extended-read-uses).
+[P2 binding/read-use checkpoint](../history/m2/t70-final-current-certification.md#s16-p2-checkpoint---original-binding-locations-and-extended-read-uses).
 177 intended table-location dispositions,266 candidate-use categories and17
 additional low original bases reconciled.93 direct reads and134 caller uses
 listed;overlap and unresolved dynamic/index domains explicit. No product
 code diff or artifact refresh. Fresh nodes/controls/material0;S16 remains
 open for consumer/pointer contracts,no successor or global restart.
 
-[P1 census/cleanup checkpoint](../proposals/m2/t70-final-current-certification.md#s16-p1-checkpoint---table-census-and-inactive-helper-removal).
+[P1 census/cleanup checkpoint](../history/m2/t70-final-current-certification.md#s16-p1-checkpoint---table-census-and-inactive-helper-removal).
 Removed an uncalled synthetic terrain helper with one incorrect copied byte;
 active original owners unchanged.177 table declarations,266 numeric
 candidates and79 direct PRG sites enumerated as partial binding evidence;
@@ -637,7 +639,7 @@ remaining numeric/symbolic/dynamic and intended-table bindings not certified.
 
 ## M2 T70 S15 - closed identified startup gaps
 
-[Scoped closure and evidence limits](../proposals/m2/t70-final-current-certification.md#s15-p2-closure---identified-startup-gaps).
+[Scoped closure and evidence limits](../history/m2/t70-final-current-certification.md#s15-p2-closure---identified-startup-gaps).
 17 named contracts/42 listed controls dispositioned;8 mismatches and1 entry
 contract repaired,6 reopened controls accepted. Source predicates/pointer
 invariants and16 original/native roots agree both widths;9 tests each,six
@@ -650,7 +652,7 @@ whole-game certificate incomplete,no successor admitted or global restart.
 
 ## M2 T70 S14 - locally closed;global final certificate incomplete
 
-[Scoped repair and reporting correction](../proposals/m2/t70-final-current-certification.md#s14-p1-closure---scoped-hudintermediate-repair-and-honest-certificate-boundary).
+[Scoped repair and reporting correction](../history/m2/t70-final-current-certification.md#s14-p1-closure---scoped-hudintermediate-repair-and-honest-certificate-boundary).
 12 HUD/intermediate nodes and24 listed feasible relations re-audited;fixed
 bottom writer cursor/guard and canonical shared output/timer order.8192
 original roots+448 persistent records match both widths;seven source branch
@@ -664,7 +666,7 @@ are in CURRENT and the bounded final-audit contract.
 
 ## M2 T70 S13 - closed screen palette material/order proof
 
-[19-node palette proof](../proposals/m2/t70-final-current-certification.md#s13-p1-closure---source-ordered-screen-palette-material-chain).
+[19-node palette proof](../history/m2/t70-final-current-certification.md#s13-p1-closure---source-ordered-screen-palette-material-chain).
 Original temporary status/background and selector/task store order restored.
 36864 original roots+1440 persistent records each width zero full scoped RAM
 diff;28 table bytes read/bound,6 conditionals both outcomes,29184 source-order
@@ -674,7 +676,7 @@ material613/613 partial. Nine paths added,fresh0,no deferred labels;T70 open.
 
 ## M2 T70 S12 - closed floatey score/OAM material repair
 
-[10-node source/material proof](../proposals/m2/t70-final-current-certification.md#s12-p1-closure---source-correct-floating-score-and-shared-sprite-output).
+[10-node source/material proof](../history/m2/t70-final-current-certification.md#s12-p1-closure---source-correct-floating-score-and-shared-sprite-output).
 Restored source enemy-ID partition,Y18 carry,actual DumpTwoSpr and absolute
 right sprite addressing/order.15624 original roots+5940 persistent records
 each width zero full game-RAM diff;only opcode-confirmed stack pushes excluded.
@@ -685,7 +687,7 @@ infeasible67),material604/604 partial. Fresh0,no deferred labels;T70 open.
 
 ## M2 T70 S11 - closed victory message/termination material chain
 
-[15-node source/material proof](../proposals/m2/t70-final-current-certification.md#s11-p1-closure---victory-messages-and-canonical-termination-call).
+[15-node source/material proof](../history/m2/t70-final-current-certification.md#s11-p1-closure---victory-messages-and-canonical-termination-call).
 Restored final B actual shared TerminateGame call,corrected source range.
 16128 original roots+707 persistent records each width zero scoped RAM diff;
 all15 entries observed,1152 original terminal calls;9 material rows added.
@@ -696,7 +698,7 @@ no deferred labels;T70/M2 global material/output/end-to-end duties remain.
 
 ## M2 T70 S10 - closed title/menu/demo material repair
 
-[25-node source/material proof](../proposals/m2/t70-final-current-certification.md#s10-p1-closure---title-score-clear-repair-and-menudemo-material-paths).
+[25-node source/material proof](../history/m2/t70-final-current-certification.md#s10-p1-closure---title-score-clear-repair-and-menudemo-material-paths).
 InitScores restored source07dd+X (X17..0);preserves audio pause/top score.
 8704 menu roots and1120 complete controlled demo calls each width zero diff,
 only case-observed source stack writes excluded;14 material rows added.
@@ -707,7 +709,7 @@ nodes;T70/M2 global certification remains open.
 
 ## M2 T70 S9 - closed input-to-pause material repair
 
-[Ten-node source/input proof](../proposals/m2/t70-final-current-certification.md#s9-p1-closure---original-port-scratch-and-input-to-pause-connections).
+[Ten-node source/input proof](../history/m2/t70-final-current-certification.md#s9-p1-closure---original-port-scratch-and-input-to-pause-connections).
 Missing PortLoop raw00 store repaired;65536 button/mask roots on both ports
 and128x49 persistent steps each width zero diff;2045 RAM bytes compared,
 only observed physical stack1fb-1fd excluded.5 focused checks each,six600-
@@ -718,7 +720,7 @@ current1992/1992 exact nodes,4275/4275 feasible controls(raw4342,infeasible67),
 
 ## M2 T70 S8 - closed pause state/material and feasibility audit
 
-[Six-node source/state proof](../proposals/m2/t70-final-current-certification.md#s8-p1-closure---pause-state-history-and-feasible-edge-correction).
+[Six-node source/state proof](../history/m2/t70-final-current-certification.md#s8-p1-closure---pause-state-history-and-feasible-edge-correction).
 16384 independent full RAM/gate roots and128 persistent47-call protocols
 (6016 calls) per width zero diff;all feasible local branch outcomes observed.
 Rawcontrol00062 OR80/BNE false edge proven infeasible;no C changes required.
@@ -729,7 +731,7 @@ No scoped deferral or custody transfers;T70/M2 global certification open.
 
 ## M2 T70 S7 - closed original shuffle preset/material chain
 
-[Six-node closure and dual proof](../proposals/m2/t70-final-current-certification.md#s7-p1-closure---original-shuffle-preset-and-material-paths).
+[Six-node closure and dual proof](../history/m2/t70-final-current-certification.md#s7-p1-closure---original-shuffle-preset-and-material-paths).
 Missing RAM00 preset28 restored;full byte-bound81c6-8211 range corrected;
 unpaused NMI test expects the later shuffle scratch,paused expectation retained.
 1024 original/full RAM roots each width zero diff;10 actual internal controls,
@@ -741,8 +743,8 @@ No scoped deferrals;S7 maintenance custody6. T70/M2 global certification open.
 
 ## M2 T70 S6 - closed conditional phase and shared sprite-clear graph
 
-[Phase repair](../proposals/m2/t70-final-current-certification.md#s6-p1-verified-part---conditional-visible-scroll-and-saved-control-handoff),
-[shared child graph repair and closure](../proposals/m2/t70-final-current-certification.md#s6-p2-closure---shared-sprite-clear-child-graph).
+[Phase repair](../history/m2/t70-final-current-certification.md#s6-p1-verified-part---conditional-visible-scroll-and-saved-control-handoff),
+[shared child graph repair and closure](../history/m2/t70-final-current-certification.md#s6-p2-closure---shared-sprite-clear-child-graph).
 All9 named scope labels exact;MoveSpritesOffscreen/SprInitLoop and controls
 00044/03493 repaired/re-audited,one shared loop and real NMI child call.
 512 full RAM roots and64 complete OAM NMI cases per width zero diff;actual
@@ -756,7 +758,7 @@ material/numeric binding,within-line pixels and full end-to-end proof.
 
 ## M2 T70 S5 - closed timer/random material audit
 
-[Seven exact nodes and three material paths](../proposals/m2/t70-final-current-certification.md#s5-p1-closure---timer-and-random-indexcarry-paths-match).
+[Seven exact nodes and three material paths](../history/m2/t70-final-current-certification.md#s5-p1-closure---timer-and-random-indexcarry-paths-match).
 3840 original/native phase roots both widths zero diff,14 scoped original
 transitions observed;timer index,initial feedback and inter-byte carry paths
 registered. Historical1992/1992,current1992/1992 nodes,4276/4276 feasible
@@ -766,7 +768,7 @@ S4 builds/3 products unchanged and retained. T70/M2 global certification open.
 
 ## M2 T70 S4 - closed NMI display transaction repair
 
-[Exact6 labels and dual proof](../proposals/m2/t70-final-current-certification.md#s4-p1-closure---original-two-phase-display-transaction-restored).
+[Exact6 labels and dual proof](../history/m2/t70-final-current-certification.md#s4-p1-closure---original-two-phase-display-transaction-restored).
 Temporary pre-VRAM mask and actual post-header RAM0779 reload restored in
 shared C;531 original/native roots both widths zero scoped diff,38 pointer
 bytes/2 offsets/15 PRG bindings match.3 reopened nodes/4 controls restored;
@@ -778,7 +780,7 @@ remaining data enumeration/numeric bindings/full end-to-end certification.
 
 ## M2 T70 S3 - closed source provenance reconciliation
 
-[Infrastructure scope and25 dispositions](../proposals/m2/t70-final-current-certification.md#s3-p1-closure---corrected-current-provenance-without-semantic-changes).
+[Infrastructure scope and25 dispositions](../history/m2/t70-final-current-certification.md#s3-p1-closure---corrected-current-provenance-without-semantic-changes).
 16 provenance comments corrected/clarified in8 sources;executable C tokens
 unchanged,current Windows runtime section hashes and full DOS16 EXE match S2.
 Current product builds/OpenNT link and248 CTests each/purity pass;3 EXEs
@@ -789,7 +791,7 @@ numeric data binding,material completeness and full end-to-end proof remain.
 
 ## M2 T70 S2 - closed authoritative parser cleanup
 
-[Exact29 retained labels and dual proof](../proposals/m2/t70-final-current-certification.md#s2-p1-closure---one-active-parser-and-retained-original-semantics).
+[Exact29 retained labels and dual proof](../history/m2/t70-final-current-certification.md#s2-p1-closure---one-active-parser-and-retained-original-semantics).
 Seven inactive alternative functions removed;real shared parser unchanged.
 24 original NMI scenarios x2 frames match x86/x64;248 CTests each,purity,
 full native builds and original OpenNT DOS16 link pass;3 EXEs refreshed.
@@ -799,7 +801,7 @@ feasible controls(raw4342,infeasible66),557/557 material partial;historical
 
 ## M2 T70 S1 - closed final-certificate baseline
 
-[Exact task backlog and empty-node infrastructure scope](../proposals/m2/t70-final-current-certification.md).
+[Exact task backlog and empty-node infrastructure scope](../history/m2/t70-final-current-certification.md).
 Incoming/current exact1992/1992 nodes,4276/4276 feasible controls(raw4342,
 infeasible66),557/557 material partial;historical1992/1992 separate,no new
 credit.1992 original source bindings,9604 source and4506 explicit evidence
