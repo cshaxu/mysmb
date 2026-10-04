@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M3 T11 S2 active;P8 segmented shapes/mixed player complete;remaining scene obligations stay within S2. |
+| Identifier Mode | Continuation:M3 T11 S2 active;P9 wrapped/hidden actor anchors complete;remaining scene obligations stay within S2. |
 | Admission And Approval | Automatic next-S admission under owner mandate after S1 reviewed local commit. |
 | Objective | Connect isolated text elements to existing draw decisions and committed visible scenes,with explicit lifetime/restore handling. |
 | Non-goals | No gameplay rewrite,ROM credit or platform Tab binding;those presenters remain S4/S5. |
@@ -123,3 +123,12 @@ across widths,twin1000-step graphical equality andrestore240future states pass.
 Three products331183/401348/415432bytes;observer5253,DGROUP46528bytes unchanged.
 S2 remains open:wrapped/hidden anchors,residual special backgrounds and
 title/menu/misc owners. No host text/Tab yet;no new ROM credit or remote.
+
+P9:wrapped-X/hidden-row whole-actor anchors;2source/test files,+112/-11.
+Bothwidths six tests/product self-tests,C90,originalDOS16 far ABI/link and
+governance pass. Twin1000-step original-output equality,immediate restore/
+240future ticks and999textframes/11988000cross-width bytes pass. All3new
+products are byte-identical to P8,so its actualDOSBox receipt is retained.
+Observer5253/DGROUP46528bytes unchanged. S2 stays open:residual special
+backgrounds/misc writers;S3 scene completion still planned,no host text/Tab.
+No new ROM credit,no remote;historical/local/facet totals remain as above.

@@ -179,6 +179,39 @@ static int choose(const struct mysmb_game *game,
     }
 }
 
+/* Completed entries retain X even when a row/column's Y is hidden. Unwrap
+ * their narrow object around the first nonblank entry, not numeric minimum
+ * X (which relocates a 250,2 pair to 2). Regular two-column writers retain
+ * source row indices; blank rows are not part of the authored silhouette. */
+static void whole_anchor(const struct mysmb_text_observation *item,
+    unsigned short begin,unsigned short end,struct mysmb_text_element *element)
+{
+    unsigned short j,first;
+    short reference,x,y,delta;
+    int regular;
+    first=end;element->x=256;element->y=240;
+    for(j=begin;j<end;++j)
+        if(item->entries[j*4U+1U]!=0xfcU) {first=j;break;}
+    if(first==end)return;
+    reference=item->entries[first*4U+3U];
+    regular=item->family==MYSMB_TEXT_OBSERVE_PLAYER ||
+        item->family==MYSMB_TEXT_OBSERVE_ENEMY ||
+        item->family==MYSMB_TEXT_OBSERVE_POWERUP ||
+        item->family==MYSMB_TEXT_OBSERVE_BLOCK;
+    for(j=begin;j<end;++j) {
+        if(item->entries[j*4U+1U]==0xfcU)continue;
+        delta=(short)((short)item->entries[j*4U+3U]-reference);
+        if(delta>127)delta-=256;
+        if(delta< -128)delta+=256;
+        x=(short)(reference+delta);
+        if(x<element->x)element->x=x;
+        if(item->entries[j*4U]>=239U)continue;
+        y=(short)(item->entries[j*4U]+1U);
+        if(regular)y=(short)(y-(short)((j/2U-first/2U)*8U));
+        if(y<element->y)element->y=y;
+    }
+}
+
 int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
     struct mysmb_text_actor_workspace MYSMB_IO_FAR *workspace,
     const unsigned char MYSMB_IO_FAR *background_opaque,
@@ -189,7 +222,8 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
     struct mysmb_text_element element;
     struct mysmb_text_observation selected;
     struct actor_clip clip;
-    unsigned short priority,i,j,sx,sy,palette,entry,begin,end;
+    unsigned short priority,i,palette,entry,begin,end;
+    short anchor_x;
     unsigned char mask,seen[64];
     if(game==0 || workspace==0 || frame==0 || receipt==0 || game->text_observer.enabled!=1U ||
         game->text_observer.visible.count>MYSMB_TEXT_OBSERVATION_CAPACITY)return 0;
@@ -213,14 +247,7 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
             if(item->family==MYSMB_TEXT_OBSERVE_FLAG) {
                 begin=entry>=3U?3U:0U;end=entry>=3U?item->sprites:3U;
             }
-            for(j=begin;j<end;++j) {
-                /* Ownership clipping must not relocate the whole template. */
-                if(item->entries[j*4U]>=239U ||
-                    item->entries[j*4U+1U]==0xfcU)continue;
-                sx=item->entries[j*4U+3U];sy=(unsigned short)(item->entries[j*4U]+1U);
-                if(sx<(unsigned short)element.x)element.x=(short)sx;
-                if(sy<(unsigned short)element.y)element.y=(short)sy;
-            }
+            whole_anchor(item,begin,end,&element);
             selected=*item;
             if(item->family==MYSMB_TEXT_OBSERVE_PLAYER && entry>=6U &&
                 (item->identity&MYSMB_TEXT_PLAYER_MIXED_FLAG)!=0U) {
@@ -267,7 +294,16 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
             clip.behind=(unsigned char)(game->visible_oam[priority*4U+2U]&0x20U);
             if(item->family==MYSMB_TEXT_OBSERVE_PLATFORM)
                 platform_span(&element,item,entry,&clip,frame);
-            else if(!mysmb_text_element_draw(&element,frame,visible_cell,&clip))return 0;
+            else {
+                if(!mysmb_text_element_draw(&element,frame,visible_cell,&clip))return 0;
+                /* OAM X is byte-wrapped; its completed entries can occupy both
+                 * screen edges. Clipping still uses each original entry. */
+                anchor_x=element.x;
+                if(anchor_x<0 || anchor_x>232) {
+                    element.x=(short)(anchor_x+(anchor_x<0?256:-256));
+                    if(!mysmb_text_element_draw(&element,frame,visible_cell,&clip))return 0;
+                }
+            }
             if(seen[i]==0U)receipt->drawn++;
             seen[i]=1U;
     }

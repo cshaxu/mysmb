@@ -185,6 +185,71 @@ int main(void)
     CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
     CHECK(frame.cells[22U*80U+25U].character==' ');
     CHECK(frame.cells[22U*80U+29U].character=='~');
-    puts("observed actor scene: whole templates/fill/latch/clipping/unknown/read-only passed");
+    /* Source byte X wraps across the screen seam without moving the whole
+     * mushroom to the smaller numeric column. Both fragments use one art. */
+    mysmb_text_observer_enable(&game,1U);
+    for(i=0U;i<64U;++i)game.ram[0x0200U+i*4U]=0xf8U;
+    sprite(8U,250U,95U);sprite(9U,2U,95U);
+    sprite(10U,250U,103U);sprite(11U,2U,103U);
+    mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_POWERUP,
+        0U,5U,0U,1U,32U,4U,0U);
+    mysmb_game_submit_oam(&game);
+    CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+    before=game;
+    CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+    CHECK(memcmp(&before,&game,sizeof(game))==0);
+    CHECK(frame.cells[21U*80U+1U].background!=9U);
+    CHECK(frame.cells[21U*80U+79U].background!=9U);
+    CHECK(frame.cells[21U*80U+4U].character==' ');
+    original=frame;
+    /* The first source entry can be the other column (horizontal ordering
+     * is not part of the anchor contract). */
+    sprite(8U,2U,95U);sprite(9U,250U,95U);
+    sprite(10U,2U,103U);sprite(11U,250U,103U);
+    mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_POWERUP,
+        0U,5U,0U,1U,32U,4U,0U);
+    mysmb_game_submit_oam(&game);
+    CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+    CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+    CHECK(memcmp(&frame,&original,sizeof(frame))==0);
+    /* Hidden rows retain the original lower silhouette, not a relocated cap. */
+    sprite(8U,80U,95U);sprite(9U,88U,95U);
+    sprite(10U,80U,103U);sprite(11U,88U,103U);
+    mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_POWERUP,
+        0U,5U,0U,1U,32U,4U,0U);
+    mysmb_game_submit_oam(&game);
+    CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+    CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+    original=frame;
+    game.ram[0x0200U+32U]=0xf8U;game.ram[0x0204U+32U]=0xf8U;
+    mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_POWERUP,
+        0U,5U,0U,1U,32U,4U,0U);
+    mysmb_game_submit_oam(&game);
+    CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+    CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+    CHECK(memcmp(&frame.cells[22U*80U+25U],
+        &original.cells[22U*80U+25U],5U*sizeof(frame.cells[0]))==0);
+    CHECK(frame.cells[20U*80U+26U].character==' ');
+    /* An object above the screen has negative authored Y, with only its
+     * surviving lower source row at Y=1. No cap is invented at the top. */
+    game.ram[0x0208U+32U]=0U;game.ram[0x020cU+32U]=0U;
+    mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_POWERUP,
+        0U,5U,0U,1U,32U,4U,0U);
+    mysmb_game_submit_oam(&game);
+    CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+    CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+    CHECK(frame.cells[25U].character==' ');
+    CHECK(frame.cells[27U].character=='|' && frame.cells[27U].background!=9U);
+    /* Blank top rows are deliberately absent in small-player source layouts;
+     * they must not add sixteen pixels above the authored small silhouette. */
+    game.ram[0x0201U+32U]=0xfcU;game.ram[0x0205U+32U]=0xfcU;
+    game.ram[0x0208U+32U]=101U;game.ram[0x020cU+32U]=101U;
+    mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_PLAYER,
+        0U,24U,24U,1U,32U,4U,1U);
+    mysmb_game_submit_oam(&game);
+    CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+    CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+    CHECK(frame.cells[21U*80U+27U].character=='M');
+    puts("observed actor scene: whole templates/fill/latch/clipping/seam/hidden/read-only passed");
     return 0;
 }

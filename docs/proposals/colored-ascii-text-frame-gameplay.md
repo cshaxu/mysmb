@@ -693,3 +693,45 @@ segmented owner classes and both player observer return sites. Existing
 priority,palette,clipping and snapshot contracts stay shared. Remaining inside
 S2:wrapped/hidden whole-actor anchors,residual side-pipe/ledge/rope metatiles
 and remaining title/menu/misc output owners. No product text/Tab yet;no remote.
+
+### S2 P9 wrapped and hidden actor scope
+
+Recover whole-actor anchors from completed receipt geometry across the byte
+X seam;draw the same authored shape at both clipped seam positions. For the
+reviewed two-column player/enemy/powerup/block writers,preserve nonblank source
+row offsets when earlier rows have been hidden. Never read live coordinates,
+rerun a selector or modify original OAM. Other segmented writers keep their
+existing component contracts. Estimate3-5files,80-150lines;focused seam/hidden/
+blank-row/overwrite fixtures,both-width scene and non-interference routes,
+strictC90,originalDOS16 and three product builds. Existing P3 resource purpose,
+budgets and containment apply. Residual background/misc and S3 scene owners
+remain explicitly pending;this P does not close S2 or enable host text.
+
+### S2 P9 review receipt
+
+Two source/test files change112added/11removed lines. Whole actors use narrow
+byte-seam geometry instead of numeric minimum X;the same authored shape is
+clipped at both screen edges. Reviewed regular two-column owners retain row
+offsets across hidden rows,while deliberately blank source rows do not extend
+the small player's silhouette. Completed receipt coordinates remain the sole
+input;no original state,OAM,selector or graphical compositor changes.
+
+Both widths pass six focused tests and actual product self-tests. Fixtures
+cover a250/2 seam,opposite source column order,hidden leading rows,negative
+Y from a surviving lower row and deliberately blank leading player rows.
+Existing overwrite,entry priority,segmented shapes and mixed poses stay green.
+The1000-step twin route retains zero original core/frame/pixel differences,
+immediate restored text and240future ticks match,and all999textframes/
+11988000bytes compare across widths. Raw streams are deleted after the neutral
+summary. This is scoped presentation evidence,not full ROM equivalence.
+
+StrictC90,originalOpenNT16 far ABI/full product link and documentation governance
+pass. All three newly built products are byte-identical to P8:331183/401348/
+415432bytes;its actualDOSBox receipt therefore remains applicable without
+another identical executable run. No host enables text/Tab yet;S2 stays open.
+Similar-issue sweep covers all whole-owner anchor consumers:player,enemy,
+powerup and bouncing block have reviewed two-column rows;flag/score,hammer,
+flame and explosion preserve their distinct geometry;independent components
+retain their entry anchors. Remaining special backgrounds/misc output and
+S3 title/menu/terminal ownership stay pending. ROM counters and source-policy
+boundaries are unchanged;no remote or protected artifact enters this commit.
