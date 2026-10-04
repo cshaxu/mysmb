@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P142 area row handoffs checkpoint;S17 remains active,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P143 group decision prefix checkpoint;S17 remains active,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
@@ -174,7 +174,6 @@
 
 
 
-S17 P135:10cannon-exclusive storeconditions joined;374streamalias rows explicitlypartitioned59intrinsic/50parent-qualified/265pending. Original1357instruction closure:soleB9C3publisher2..0/noindirectwriter,47potential008aliases excludeactualprimary0..2/combined1..3. Fresh65536originalparents0scopedRAM/APU/orderdiff bothwidths,bus08/stream checks/all10storePCobserved. Eightfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
 S17 P136:17408 controlled initialization/secondary-setup/NMI/entrance chains,53 observedlabels/410PC,bothwidths0scopedRAM/APU/orderdiff. Normalwater SetupBubbleX0 occurs768times;rawwater-plus-vineX5 occurs768times andsourceB724 aliasesE9. Bufferreset handoff joined;legalvine/area transition andfullframe-prefix clauses remainpending,fivebubblewriters notpromoted. Sevenfocusedtests eachwidthpass,123identities/P123productsunchanged. Streamalias374 remains59intrinsic/50parent-qualified/265pending. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
@@ -189,3 +188,5 @@ S17 P140:50enemy-runtime indexed-write conditions joined;374streamalias inventor
 S17 P141:70remaining objectslot writeconditions joined(1intrinsic/69parent);374streamalias inventory now60intrinsic/294parent-qualified/20pending(area15/bubble5). OriginalC0474793instructionclosure keepsqualifiedprimary/boundedrear publishes;block0/1,combinedsprite0..21,hammerenemyreference0..5. Fresh2320originalroots0scopedRAM/APU/orderdiff bothwidths,10writers fresh/60retainedcurrent-boundreceipts. Sixactualtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
 S17 P142:15immutable-area row writeconditions joined;374streamalias inventory now60intrinsic/309parent-qualified/5pending(bubble). All34area streams/1611objects decoded,max160recordbytes;castlestarts0/6,exitheight7/10,stairs<=8/sourceboundedrows. Fresh68serialchains/330752RAMcheckpoints eachwidth0diff,all15writerPC observed. DrawThisRowX13sixwrites intentionallyoverlap06AE,notclamped;globalother-fieldlifetimes remainopen. Thirteenfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
+S17 P143:5120actualoriginal C144->C26C decision-prefix routes eachwidth0RAM/APU/orderdiff,64maskedIDs*5slots*2hard*8stateprofiles. Original C1FBfallthrough toC1FD observed80times(raw3F),groupbranch640times;Cclassificationand firstinitializer handoff matcheven raw3F. Downstream original3F invalidtarget and globallegalstream proof remainopen;no node/control promotion. Fivefocusedtests eachwidthpass,123source/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.

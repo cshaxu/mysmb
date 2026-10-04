@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P143 group decision prefix](../proposals/m2/t70-final-current-certification.md#s17-p143-checkpoint---complete-group-decision-prefix).
+S17 P143:5120actualoriginal C144->C26C decision-prefix routes eachwidth0RAM/APU/orderdiff,64maskedIDs*5slots*2hard*8stateprofiles. Original C1FBfallthrough toC1FD observed80times(raw3F),groupbranch640times;Cclassificationand firstinitializer handoff matcheven raw3F. Downstream original3F invalidtarget and globallegalstream proof remainopen;no node/control promotion. Fivefocusedtests eachwidthpass,123source/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
 [P142 immutable area row bounds](../proposals/m2/t70-final-current-certification.md#s17-p142-checkpoint---immutable-area-row-constructor-bounds).
 S17 P142:15immutable-area row writeconditions joined;374streamalias inventory now60intrinsic/309parent-qualified/5pending(bubble). All34area streams/1611objects decoded,max160recordbytes;castlestarts0/6,exitheight7/10,stairs<=8/sourceboundedrows. Fresh68serialchains/330752RAMcheckpoints eachwidth0diff,all15writerPC observed. DrawThisRowX13sixwrites intentionallyoverlap06AE,notclamped;globalother-fieldlifetimes remainopen. Thirteenfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 

@@ -44265,7 +44265,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P141 checkpoint - qualified object slot index handoffs:70qualifiedobjectslotconditions;explicitprimary/block/combined/hammer/flagpoleindexdomains,no globalgraphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:15qualifiedimmutablearea rowconstructors;row13adjacentfieldoverlap preserved,otherlifetimesremainseparate,no globalgraphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:15qualifiedimmutablearea rowconstructors;row13adjacentfieldoverlap preserved,otherlifetimesremainseparate,no globalgraphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P143 checkpoint - complete group decision prefix:all64maskedID decision/firstchildRAM handoffmatchesincludingraw3F;downstreaminvaliddispatch/globaldomainseparate,no promotion."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
@@ -44275,7 +44276,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P141 checkpoint - qualified object slot index handoffs:2320freshoriginalroots0scopedRAM/APU/orderdiff bothwidths,10freshwriters/60retainedreceipts,6actualtests;unobservedPCnotinferredcovered.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:68freshserialchains/330752RAMcheckpoints0diff eachwidth,all15writerPCactualindicesobserved,13tests;notfullgameplayorunobservedcoverage."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:68freshserialchains/330752RAMcheckpoints0diff eachwidth,all15writerPCactualindicesobserved,13tests;notfullgameplayorunobservedcoverage.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P143 checkpoint - complete group decision prefix:5120freshprefixroots eachwidth0diff,actualfallthrough80/group640,minSPFB,5focusedtests."
       ],
       "semanticContract": "Classifies IDs below $37, group range $37-$3e and residual IDs at/above $3f.",
       "currentSourcePaths": [
@@ -44296,14 +44298,16 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P141 checkpoint - qualified object slot index handoffs:70qualifiedobjectslotconditions;explicitprimary/block/combined/hammer/flagpoleindexdomains,no globalgraphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:15qualifiedimmutablearea rowconstructors;row13adjacentfieldoverlap preserved,otherlifetimesremainseparate,no globalgraphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:15qualifiedimmutablearea rowconstructors;row13adjacentfieldoverlap preserved,otherlifetimesremainseparate,no globalgraphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P143 checkpoint - complete group decision prefix:all64maskedID decision/firstchildRAM handoffmatchesincludingraw3F;downstreaminvaliddispatch/globaldomainseparate,no promotion."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P141 checkpoint - qualified object slot index handoffs:2320freshoriginalroots0scopedRAM/APU/orderdiff bothwidths,10freshwriters/60retainedreceipts,6actualtests;unobservedPCnotinferredcovered.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:68freshserialchains/330752RAMcheckpoints0diff eachwidth,all15writerPCactualindicesobserved,13tests;notfullgameplayorunobservedcoverage."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:68freshserialchains/330752RAMcheckpoints0diff eachwidth,all15writerPCactualindicesobserved,13tests;notfullgameplayorunobservedcoverage.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P143 checkpoint - complete group decision prefix:5120freshprefixroots eachwidth0diff,actualfallthrough80/group640,minSPFB,5focusedtests."
       ],
       "semanticContract": "Mutates Goomba to Buzzy Beetle only when PrimaryHardMode is set, retaining all other IDs.",
       "currentSourcePaths": [
@@ -44324,14 +44328,16 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P141 checkpoint - qualified object slot index handoffs:70qualifiedobjectslotconditions;explicitprimary/block/combined/hammer/flagpoleindexdomains,no globalgraphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:15qualifiedimmutablearea rowconstructors;row13adjacentfieldoverlap preserved,otherlifetimesremainseparate,no globalgraphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:15qualifiedimmutablearea rowconstructors;row13adjacentfieldoverlap preserved,otherlifetimesremainseparate,no globalgraphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P143 checkpoint - complete group decision prefix:all64maskedID decision/firstchildRAM handoffmatchesincludingraw3F;downstreaminvaliddispatch/globaldomainseparate,no promotion."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P141 checkpoint - qualified object slot index handoffs:2320freshoriginalroots0scopedRAM/APU/orderdiff bothwidths,10freshwriters/60retainedreceipts,6actualtests;unobservedPCnotinferredcovered.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:68freshserialchains/330752RAMcheckpoints0diff eachwidth,all15writerPCactualindicesobserved,13tests;notfullgameplayorunobservedcoverage."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:68freshserialchains/330752RAMcheckpoints0diff eachwidth,all15writerPCactualindicesobserved,13tests;notfullgameplayorunobservedcoverage.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P143 checkpoint - complete group decision prefix:5120freshprefixroots eachwidth0diff,actualfallthrough80/group640,minSPFB,5focusedtests."
       ],
       "semanticContract": "Stores individual ID/flag, initializes it, then advances the source record only if initialization leaves its flag active.",
       "currentSourcePaths": [
@@ -44408,7 +44414,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P137 checkpoint - initializer primary index handoffs:705instruction initializerprimaryX preservation joins75writeconditions;10shared/5duplicatealternate-caller clauses remain,no graphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P139 checkpoint - Bowser slot constructor and runtime handoffs:16qualifiedindexedwriteconditions;sourceconstructorcaller correction and008runtimeboundedhandoffs,no globalgraphcredit.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P141 checkpoint - qualified object slot index handoffs:70qualifiedobjectslotconditions;explicitprimary/block/combined/hammer/flagpoleindexdomains,no globalgraphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:15qualifiedimmutablearea rowconstructors;row13adjacentfieldoverlap preserved,otherlifetimesremainseparate,no globalgraphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:15qualifiedimmutablearea rowconstructors;row13adjacentfieldoverlap preserved,otherlifetimesremainseparate,no globalgraphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P143 checkpoint - complete group decision prefix:all64maskedID decision/firstchildRAM handoffmatchesincludingraw3F;downstreaminvaliddispatch/globaldomainseparate,no promotion."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
@@ -44419,7 +44426,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P137 checkpoint - initializer primary index handoffs:5280freshwatchedoriginalparents0scopedRAM/APU/orderdiff bothwidths,all75joinedwritePCobserved,11focusedtests;unobservedPCnotinferredcovered.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P139 checkpoint - Bowser slot constructor and runtime handoffs:41352freshwatchedoriginalroots0scopedRAM/APU/orderdiff bothwidths,all16writers observed,7focusedtests;unobservedPCnotinferredcovered.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P141 checkpoint - qualified object slot index handoffs:2320freshoriginalroots0scopedRAM/APU/orderdiff bothwidths,10freshwriters/60retainedreceipts,6actualtests;unobservedPCnotinferredcovered.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:68freshserialchains/330752RAMcheckpoints0diff eachwidth,all15writerPCactualindicesobserved,13tests;notfullgameplayorunobservedcoverage."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:68freshserialchains/330752RAMcheckpoints0diff eachwidth,all15writerPCactualindicesobserved,13tests;notfullgameplayorunobservedcoverage.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P143 checkpoint - complete group decision prefix:5120freshprefixroots eachwidth0diff,actualfallthrough80/group640,minSPFB,5focusedtests."
       ],
       "semanticContract": "Clears current enemy state, calls CheckpointEnemyID and falls into return exit.",
       "currentSourcePaths": [
@@ -44473,7 +44481,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P141 checkpoint - qualified object slot index handoffs:70qualifiedobjectslotconditions;explicitprimary/block/combined/hammer/flagpoleindexdomains,no globalgraphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:15qualifiedimmutablearea rowconstructors;row13adjacentfieldoverlap preserved,otherlifetimesremainseparate,no globalgraphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:15qualifiedimmutablearea rowconstructors;row13adjacentfieldoverlap preserved,otherlifetimesremainseparate,no globalgraphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P143 checkpoint - complete group decision prefix:all64maskedID decision/firstchildRAM handoffmatchesincludingraw3F;downstreaminvaliddispatch/globaldomainseparate,no promotion."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
@@ -44481,7 +44490,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:408380 actual roots each width,zero differences across2032RAM/24APU/ordered writes;physical1F0-1FF excluded,minSP>=EF;310PC observed;7 focused tests each pass;not whole-game or arbitrary-pointer proof.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P141 checkpoint - qualified object slot index handoffs:2320freshoriginalroots0scopedRAM/APU/orderdiff bothwidths,10freshwriters/60retainedreceipts,6actualtests;unobservedPCnotinferredcovered.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:68freshserialchains/330752RAMcheckpoints0diff eachwidth,all15writerPCactualindicesobserved,13tests;notfullgameplayorunobservedcoverage."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:68freshserialchains/330752RAMcheckpoints0diff eachwidth,all15writerPCactualindicesobserved,13tests;notfullgameplayorunobservedcoverage.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P143 checkpoint - complete group decision prefix:5120freshprefixroots eachwidth0diff,actualfallthrough80/group640,minSPFB,5focusedtests."
       ],
       "semanticContract": "Tail-jumps group identifiers into HandleGroupEnemies.",
       "currentSourcePaths": [
@@ -47198,7 +47208,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:installed tablepair/cursorgrammar preservedin32-page controlledwritechains;othercaller/aliaslifetimes separate.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:12 original intrinsic indexed-store guards excludeE9/EA/739;qualified functional-entry bounds,otheraliasconditionspending.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P141 checkpoint - qualified object slot index handoffs:70qualifiedobjectslotconditions;explicitprimary/block/combined/hammer/flagpoleindexdomains,no globalgraphcredit.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:15qualifiedimmutablearea rowconstructors;row13adjacentfieldoverlap preserved,otherlifetimesremainseparate,no globalgraphcredit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:15qualifiedimmutablearea rowconstructors;row13adjacentfieldoverlap preserved,otherlifetimesremainseparate,no globalgraphcredit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P143 checkpoint - complete group decision prefix:all64maskedID decision/firstchildRAM handoffmatchesincludingraw3F;downstreaminvaliddispatch/globaldomainseparate,no promotion."
       ],
       "operationalEvidence": [
         "M2 T62 S7 all-current-source original-ROM/current x86/x64 route replay matches 115 group fixtures plus 64 EndFrenzy and 36 InitEnemyFrenzy selector fixtures per width; independent C90 full-RAM group and frenzy contracts pass per width.",
@@ -47208,7 +47219,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P125 checkpoint - area traversal and enemy cursor lifetime:68original/native chains/330752fullRAMcheckpoints eachwidth0diff,9focusedtests,currentP123productsretained.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P129 checkpoint - intrinsic stream-alias exclusions:retainedoriginalvisits/zeroRAMreceipts joinedcurrent source,7focusedchecks perwidth;no freshROMrunclaim.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P141 checkpoint - qualified object slot index handoffs:2320freshoriginalroots0scopedRAM/APU/orderdiff bothwidths,10freshwriters/60retainedreceipts,6actualtests;unobservedPCnotinferredcovered.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:68freshserialchains/330752RAMcheckpoints0diff eachwidth,all15writerPCactualindicesobserved,13tests;notfullgameplayorunobservedcoverage."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds:68freshserialchains/330752RAMcheckpoints0diff eachwidth,all15writerPCactualindicesobserved,13tests;notfullgameplayorunobservedcoverage.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P143 checkpoint - complete group decision prefix:5120freshprefixroots eachwidth0diff,actualfallthrough80/group640,minSPFB,5focusedtests."
       ],
       "semanticContract": "Derives group code, classifies enemy ID with hard-mode Goomba/Buzzy substitution and preserves source stack-selected group bits.",
       "currentSourcePaths": [
@@ -104956,13 +104968,15 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P51 checkpoint - motion loop and enemy stream source-use joins:310 source instructions inspected;309 complete bounded receipts/101 RAM sites;C1FB residual ID3F producer and alias constraint pending. Previous exact evidence does not cover declared residual ID3F. Original vector target4A07 is outside PRG;native fallback differs. Legal cursor/pointer/alias reachability must be proved or a reachable counterexample repaired before exact reinstatement. No gameplay failure established by this evidence gap.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P52 checkpoint - enemy stream cursor boundary invariant:34 streams/536 boundary states/1540 overapproximated cursor transitions preserve record alignment;no ID3F at ordinary record boundaries. Pointer table and caller/alias applicability remain explicit prerequisites;no exact promotion.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:38 shuffle instructions/14RAM joined unchanged frame_root source contract;12 entry-local alias exclusions,24 additional caller-conditional exclusions;338 prior conditional exclusions retained. High05 envelope65536 byte pairs excludes E9/EA/739;pointer lifetime prerequisites remain.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:94 instructions/26RAM joined7 bounded clauses in unchanged area_data.c;36 normal world records/50 row0E destinations stay within34 stream table;28 initial stream indices close to34 over41 target links. Legal caller and alias prerequisites remain explicit.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P143 checkpoint - complete group decision prefix:actual3Ffallthroughpredicateand firstC26C handoffmatches;downstreamchild/globaldomain pending,nopromotion."
       ],
       "operationalEvidence": [
         "M2 T62 S2 x86/x64 current stream caller checks match 80 controlled original-ROM snapshots per width (160 comparisons); focused boundary model passes 66,562 cases per width and complete stream smoke passes per width; platform purity and DOS16 link pass.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P52 checkpoint - enemy stream cursor boundary invariant:four wrong grammar/start/terminator mutations rejected;28 deliberately misaligned ID3F witnesses show domain necessity. Validation-only metadata/current five owner identities checked;source/products unchanged.",
         "docs/proposals/m2/t70-final-current-certification.md S17 P53 checkpoint - stream alias index and indirect address exclusions:4096 actual roots each width,2032RAM/24APU/ordered hardware writes0diff,minSP>=EF,all38PC/5branchpairs observed;actual81E2 X0-14 and81FC/8202/8208 X2/5/8 observed;8focused tests each pass;4 invalid-domain witnesses/accounting mutations accepted as negative checks.",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim."
+        "docs/proposals/m2/t70-final-current-certification.md S17 P54 checkpoint - area pointer producers and stream target closure:139264 actual roots each width2032RAM/24APU/ordered hardware writes0diff,all94PC/two branch pairs;physical1F0-1FF excluded/minSP>=EF;FindAreaPointer/GetAreaType A explicitly checked;Load/GetData return status ABI excluded;3focused tests each pass;no whole-game reachability claim.",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P143 checkpoint - complete group decision prefix:raw3Ffallthrough80actualoriginalroutes,5120total0diff eachwidth."
       ],
       "semanticContract": "Preserves original fallthrough relation CheckForEnemyGroup -> BuzzyBeetleMutate with source predicate, record/slot state handoff and return/dispatch semantics.",
       "currentSourcePaths": [
@@ -177253,7 +177267,8 @@
         "docs/proposals/m2/t70-final-current-certification.md S17 P139 checkpoint - Bowser slot constructor and runtime handoffs",
         "docs/proposals/m2/t70-final-current-certification.md S17 P140 checkpoint - enemy runtime dispatch index ownership",
         "docs/proposals/m2/t70-final-current-certification.md S17 P141 checkpoint - qualified object slot index handoffs",
-        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds"
+        "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds",
+        "docs/proposals/m2/t70-final-current-certification.md S17 P143 checkpoint - complete group decision prefix"
       ],
       "consumedUseAccounting": {
         "originalInstructionSites": 10691,
@@ -177310,7 +177325,32 @@
         "indirectWriterReceiptsJoined": 9,
         "nodeCredit": 0,
         "controlCredit": 0,
-        "wholeProgramAbsenceOfAliasProved": false
+        "wholeProgramAbsenceOfAliasProved": false,
+        "recordKind": "historical P52 receipt reconciliation;superseded alias-index counts below",
+        "currentIndexedAliasConditions": {
+          "candidateSites": 374,
+          "intrinsicExclusions": 60,
+          "parentChainIndexJoins": 309,
+          "callerConditionsPending": 5,
+          "evidence": "docs/proposals/m2/t70-final-current-certification.md S17 P142 checkpoint - immutable area row constructor bounds",
+          "explicitDispositions": {
+            "intrinsic": 60,
+            "parent-qualified": 309,
+            "caller-pending": 5
+          },
+          "globalAbsenceOfAliasProven": false
+        }
+      },
+      "groupDecisionPrefix": {
+        "maskedIds": 64,
+        "rootsEachWidth": 5120,
+        "firstChildBoundary": "C26C",
+        "raw3FFallthroughs": 80,
+        "groupBranches": 640,
+        "differences": 0,
+        "downstreamInvalidDispatchProven": false,
+        "globalLegalStreamProven": false,
+        "evidence": "docs/proposals/m2/t70-final-current-certification.md S17 P143 checkpoint - complete group decision prefix"
       }
     },
     "executionMode": "bounded-gap-closure-no-new-audit-round",
