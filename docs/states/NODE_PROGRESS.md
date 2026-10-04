@@ -11,6 +11,10 @@ scoped evidence and track only named unresolved/invalidated clauses.
 Material993 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
+## M3 T9 S5 - actual DOS gameplay
+
+Scope/expected/actual[],fresh0;historical1992/1992/local1991/1992 nodes,4260/4261 controls unchanged.4harness files,+281/-0;actual DOSBox title/Start/24seconds gameplay/controls/Esc,13focused+1friction test eachwidth,three builds retained. [S5 receipt](../proposals/shared-io-and-presentation-switching.md#s5-p1-closure---actual-dosbox-gameplay).
+
 ## M3 T9 S4 - DOS devices
 
 Scope/expected/actual[],fresh0;historical1992/1992/local1991/1992 nodes,4260/4261 controls unchanged.16files,+161/-20,13tests eachwidth,real DOS16 build/scoped graphics,3EXEs. [S4 receipt](../proposals/shared-io-and-presentation-switching.md#s4-p1-closure---dos-device-stabilization).

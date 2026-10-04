@@ -348,3 +348,80 @@ Changed dependencies recorded without semantic promotion. Historical1992/1992,
 local1991/1992 nodes,4260/4261 controls and42/952 facets unchanged;scope/expected/
 actual[],fresh0. Governance/registry/node gates required before commit.
 No remote,push unavailable;automatic S5 admission follows reviewed commit.
+
+## S5 admission - sustained DOS graphics
+
+Automatically admitted after S4 39cdf306. Expected3-6 test/tool/build files,
+250-400 changed lines. Project-owned probe links read-only existing SoftPC
+public API/compiled archives,boots private derived owner-local DOS media and
+drives only guest keyboard without a desktop window. Record actual graphical
+title/Start/held movement/run/jump/release and restored text mode. Capture
+pixels remains ignored local evidence;process exit/nonzero pixels alone are
+not sustained gameplay proof. Resource-bound DOS16 and two Win32 builds plus
+focused regressions remain required. Original node scope/expected/actual[],
+fresh0;no game rule changes or new ROM equivalence credit. Provenance/local
+containment follows S3/S4. Repairs stay inside observed platform failures.
+
+Observed unoptimized 8086-target rendering makes title/input tests take tens
+of seconds in the DOS VM and lets short test key holds miss frame sampling.
+S5 attempted original compiler /Ox /G3 target flags for the declared486SX
+integer-only product and bounded scene-state probe waits. No translated C
+owner or game rule is changed;optimized DOS behavior needs actual route proof.
+
+The existing compiler optimizer rejected even the tiny color unit with its
+internal buffer/out-of-memory diagnostic,including confined-temp and ordinary
+permission checks. /Ox and /G3 were withdrawn;the accepted original flags are
+retained. Performance qualification/optimizer investigation remains M4 work.
+S5 probes now wait for distinct complete title/game scenes,not a fixed early
+timeout or an all-zero VGA initialization buffer. Continuous Common execution
+and its synchronized frame/input queues replace the insufficient finite-slice
+capture;no desktop frontend is opened.
+
+Owner subsequently authorizes DOSBox testing and directs SoftPC to stop.
+Use installed DOSBox0.74-3 with SDL dummy video/audio in a private ignored
+build directory;original DOS16 compiler/linker/flags remain unchanged. A
+project-owned SDL public-ABI probe supplies balanced input events and saves
+the emulator surface without desktop input or guest-RAM mutation. Public
+[SDL1.2 event declarations](https://github.com/libsdl-org/SDL-1.2/blob/main/include/SDL_events.h)
+and [DOSBox manual](https://www.dosbox.com/DOSBoxManual.html) are interface
+references only. DOSBox GPL/SDL LGPL runtime copies stay local,not committed;
+no imported implementation or product dependency. Retired SoftPC experiments
+remain below ignored build and do not count as the DOSBox acceptance route.
+
+## S5 P1 closure - actual DOSBox gameplay
+
+Delivered4 project-owned test/tool files,+281/-0 lines,within the3-6
+file estimate and near the250-400 line estimate. No product/game source edit.
+Original OpenNT16 accepted flags/link and x86/x64 products pass;13focused
+tests per width plus the existing player-friction test per width pass.
+Three local products remain16=308893,32=369617,
+64=382035 bytes,identical to S4 products.
+
+Owner-directed DOSBox0.74-3/SDL1.2 dummy-video/audio route uses the actual
+resource-bound EXE. Installed runtime copies and all captured protected pixels
+remain local under ignored build. The public event ABI proxy injects balanced
+Enter,D+J,K,A and Escape events;every other SDL export forwards to the original
+runtime. No desktop window/input,guest RAM patch or product emulator dependency.
+Reproduce with Build/Invoke-DosBoxIoProbe and VerifyDosBoxIoReceipt using the
+local compiler/runtime/product/output arguments. Neutral receipt binds the EXE
+hash;stale declared captures are removed before each run.
+
+Finite56-second route observes title,Start and24seconds of gameplay:
+player red bounds advance right,rise with K,return left,and stay identical
+in two captures three seconds apart after deceleration. Escape restores DOS
+text output and execution returns to the caller's completion marker. This
+is an operational route,not ROM equivalence or486SX performance qualification.
+Early scripts hit the startup transition or captured before deceleration
+finished;these were rejected,not counted. Keep the strict positional check
+and wait for settled motion. Buffered Escape could prematurely satisfy a DOS
+shell pause;bounded repeated pauses retain the restored text screen for capture.
+
+Coordinator review:only project harness/build plumbing and governance changed;
+no ROM implementation,compiler flag,game state or platform synthesis changed.
+Similar-issue sweep covers partial/blank frames,missing resources,unbalanced
+events,missed short holds,stale captures,early shell termination and link-only
+acceptance. SoftPC attempts are retired local experiments,not DOSBox receipts.
+Optimizer flags remain withdrawn;M4 owns real-machine performance qualification.
+Historical1992/1992/local1991/1992 nodes,4260/4261 controls,42/952facets unchanged;
+scope/expected/actual[],fresh0. Ledger/registry/governance gates required before
+commit. Push unavailable:no configured remote. Automatic S6 admission follows.

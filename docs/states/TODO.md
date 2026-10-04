@@ -2,6 +2,14 @@
 
 ## Translation Debt
 
+- [ ] **DOS16 optimizer/performance qualification (M4):** T9 S5 observes slow
+  graphical frames in SoftPC with accepted original compiler flags. The same
+  compiler rejects /Ox or /G3 even for a small neutral color unit with an
+  internal buffer/out-of-memory diagnostic;flags withdrawn. Retain the working
+  original toolchain. M4 measures actual486SX performance and qualifies any
+  compiler configuration or presentation optimization before shipping it.
+  [Operational scope](../proposals/shared-io-and-presentation-switching.md#s5-admission---sustained-dos-graphics).
+
 - [x] **Shared sprite-clear child graph:** T70 S6 P2 restores one shared
   SprInitLoop,zero/four entry selectors and the actual NMI child call/return.
   512 full RAM roots and64 complete OAM NMI cases match both widths.
