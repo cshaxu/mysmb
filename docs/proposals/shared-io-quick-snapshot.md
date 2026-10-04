@@ -220,3 +220,38 @@ running eligibility,capture/restore and resource rebinding in S3/S4;S1 does not
 claim gameplay save/load already works. No ROM labels or edges are promoted:
 historical1992/1992;local1991/1992 nodes,4260/4261 feasible controls unchanged.
 No remote exists;closure is a local P commit followed by automatic S2 admission.
+
+## S2 admission
+
+S1 local commit retained;S2 now owns common transaction orchestration and
+host-neutral file-service hooks. Filesystem adapters expose open/read/write/
+flush-close/replace/remove/append only. Shared IO owns fixed filenames,error
+codes,write completion,close-before-replace and separate load staging.
+A failed log attempt is ignored,not logged again. Tests inject short reads/
+writes,truncation,oversize,read/write/close/replace/log failures and compare
+prior save/live bytes. Win32 atomic replace and the documented DOS delete/
+rename window are separate thin services;directory discovery remains S3/S4.
+Scope and expected ROM matches are both empty;all existing counts unchanged.
+
+## S2 closure
+
+Shared transaction and portable file services are complete. Actual Win32
+replacement uses MoveFileEx replacement/write-through;DOS removes the old
+file only after the new candidate has been fully flushed/closed and then
+renames,retaining its explicitly non-atomic interruption window. Shared load
+uses separate fixed-size staging and verifies EOF,close,format,integrity and
+resource binding before returning a candidate. Each failure attempts one
+short log record;logging failure is ignored. Live game state is never touched.
+
+Both widths pass4focused tests;storage retest after the legacy FILE cast
+repair passes on both. Partial17-byte writes/23-byte reads,open/write/close/
+replace/read failures,truncation,extra bytes,corruption and unchanged prior
+save/staging are checked. Real files verify save replacement,load,missing and
+oversized file diagnostics,cleanup and simultaneous save/log failure through
+a missing directory. The original DOS16 toolchain compiles/links its same
+codec/transaction/stdio service and DOS replacement path. Three products
+refreshed locally. Similar-issue sweep covers stdio macros/opaque handles,
+close-before-replace,EOF/read errors and nonrecursive logging. Physical P/O,
+executable-directory discovery and gameplay integration remain S3/S4.
+No ROM credit;all prior node/control/facet counts retained. Local commit only,
+no remote. Owner authorization automatically admits S3 after this closure.

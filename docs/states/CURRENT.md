@@ -1,23 +1,23 @@
 # Project Status
 
-## M3 T10 S1 Packet
+## M3 T10 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | New:M3 T10 S1 P1 complete;T10 remains open,S2 next. |
+| Identifier Mode | Continuation:M3 T10 S2 P1 complete;S3 next,T10 open. |
 | Admission And Approval | Owner approves queue-head task admission and execution;automatic subsequent S after reviewed closure. |
-| Objective | Shared quick-snapshot schema,portable codec,resource/integrity validation and last-running-frame cache. |
-| Non-goals | No P/O host binding,file transaction,game semantic repair,ROM credit or emulator compatibility investigation. |
+| Objective | Shared save/load transaction,portable file services and silent best-effort error logging. |
+| Non-goals | No physical P/O binding,game semantic repair,ROM credit or emulator investigation. |
 | Reference Baseline | Historical1992/1992;local1991/1992 nodes,4260/4261 feasible controls;42/952facets,M2 incomplete. |
-| Candidate Proposal | [T10 quick snapshot](../proposals/shared-io-quick-snapshot.md#s1-admission). |
-| Files And ABI Surface | New src/io snapshot codec and test;CMake/original DOS build registration;design and governance. Estimate8-12files,400-650source/test lines. |
+| Candidate Proposal | [T10 quick snapshot](../proposals/shared-io-quick-snapshot.md#s2-admission). |
+| Files And ABI Surface | IO transaction and generic file adapter;Win32/DOS replacement services,tests/build registration. Estimate8-10files,350-550source/test lines. |
 | Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Documentation,source policy and admitted proposal. |
-| Verification | Neutral fixed-format fixtures,corruption/atomic-decode/cache/numeric round trips,x86/x64 tests,original DOS16 compile/link,purity and governance gates;three local products refreshed. |
+| Verification | Fault-injected partial IO/flush/close/replace/log tests and actual temporary files,x86/x64 tests,originalDOS16 link,purity/governance and3products. |
 | Expected Markers | Exact scope[],expectedMatches[],new0;all retained ROM counts unchanged. |
 | Asset Needs | Existing owner-local ROM and OpenNT16 tools only for local product refresh;provenance retained from T9,distribution unreviewed/forbidden,outputs confined to ignored build/assets;neutral codec tests need no ROM. |
-| Reporting Requirements | Before/after scope,size,tests,three products and local commit;no push without remote;auto-admit S2 after S1 closure. |
+| Reporting Requirements | Before/after scope,size,tests,three products and local commit;no push without remote;auto-admit S3 after S2 closure. |
 | Stop Conditions | Any width/schema/state omission or dependency violation blocks S1 closure until repaired. |
-| Exit Criteria | Byte-defined bounded snapshot,no raw structs/pointers/floating layout,complete mutable-state map and passing validation/cache tests on both widths and DOS compile/link. |
+| Exit Criteria | Shared staging never partially commits;all storage failures leave live state intact;best-effort log cannot recurse;Win32 old slot preserved on failed replace,DOS window explicit. |
 | Original Owner Request | Admit new queue-head task and start;retain per-S briefs and build/test/commit reports. |
 | Similar-Issue Sweep | All mutable game/audio fields,state pointers,padding,paused-frame selection and failure-before-commit paths. |
 
@@ -59,3 +59,5 @@ M3 T9 S5 P1:actual headless DOSBox title/Start/24seconds gameplay/run/jump/left/
 M3 T9 S6 P1:shared Escape exit/short-press lifecycle and integrated closure;16source/test/build files,+130/-26,14tests eachwidth,fresh originalDOS16 link/actualDOSBox route/3EXEs. T9closed,DOSaudio unavailable/M4speed pending,zeroROMcredit,no remote.
 
 M3 T10 S1 P1:4782byte codec,integer canonical numeric validation,last-running cache;5focused tests eachwidth,originalDOS16 link and3localEXEs. ZeroROMcredit,no remote;P/O host binding pending.
+
+M3 T10 S2 P1:shared file transaction,stdio adapter andWin32/DOS replacement;4focused tests eachwidth,originalDOS16 link,3localproducts. P/O integration pending;zeroROMcredit,no remote.

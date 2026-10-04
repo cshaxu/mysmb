@@ -2838,6 +2838,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M3 T1 | 0 | - | [record](../../docs/history/M3-T1-neutral-render-command-seam.md); S not recorded |
 | M3 T10 | 0 | - | [record](../../docs/proposals/shared-io-quick-snapshot.md) |
 | M3 T10 S1 | 0 | 0 | snapshot-codec; [record](../../docs/proposals/shared-io-quick-snapshot.md) |
+| M3 T10 S2 | 0 | 0 | snapshot-storage-transaction; [record](../../docs/proposals/shared-io-quick-snapshot.md) |
 | M3 T2 | 0 | - | [record](../../docs/history/M3-T1-neutral-render-command-seam.md); [record](../../docs/history/M3-T2-win32-command-consumer.md); S not recorded |
 | M3 T3 | 0 | - | [record](../../docs/history/M3-T2-win32-command-consumer.md); [record](../../docs/history/M3-T3-colored-text-frame.md); S not recorded |
 | M3 T4 | 0 | - | [record](../../docs/history/M3-T3-colored-text-frame.md); [record](../../docs/history/M3-T4-vga-indexed-frame.md); S not recorded |
@@ -3754,3 +3755,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T9 S5 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T9-shared-io-and-graphical-output.md) |
 | M3 T9 S6 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T9-shared-io-and-graphical-output.md) |
 | M3 T10 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/shared-io-quick-snapshot.md) |
+| M3 T10 S2 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/shared-io-quick-snapshot.md) |
