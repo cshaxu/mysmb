@@ -75,6 +75,7 @@ if($TextSwitch) {
 26000 key 13 1
 26500 key 13 0
 28000 capture graphics-before.bmp 0
+28500 capture graphics-stable.bmp 0
 29000 key 9 1
 30000 capture text.bmp 0
 32000 capture text-held.bmp 0
@@ -116,7 +117,7 @@ if($UnavailableVideo) {
     '3000 quit 0 0' | Set-Content -LiteralPath (Join-Path $output 'input.script') -Encoding ascii
 }
 # Remove only this probe's declared receipts so a failed run cannot reuse them.
-foreach ($name in @('title.bmp','start.bmp','right-run.bmp','jump.bmp','before-left.bmp','release.bmp','stopped.bmp','exit.bmp','exit.ok','fail.ok','device.ok','device.err','probe.log','graphics-before.bmp','graphics-after.bmp','text.bmp','text-held.bmp','text-again.bmp','text-loaded.bmp','graphics-loaded.bmp','mysmb.sav','receipt.json')) {
+foreach ($name in @('title.bmp','start.bmp','right-run.bmp','jump.bmp','before-left.bmp','release.bmp','stopped.bmp','exit.bmp','exit.ok','fail.ok','device.ok','device.err','probe.log','graphics-before.bmp','graphics-stable.bmp','graphics-after.bmp','text.bmp','text-held.bmp','text-again.bmp','text-loaded.bmp','graphics-loaded.bmp','mysmb.sav','receipt.json','preconditions.json')) {
     $path=Join-Path $output $name
     if (Test-Path -LiteralPath $path) {Remove-Item -LiteralPath $path -Force}
 }

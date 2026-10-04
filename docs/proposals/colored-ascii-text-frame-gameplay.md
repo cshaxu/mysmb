@@ -1255,3 +1255,34 @@ Its fixture therefore differs from the historical unchanged-title/no-exit
 failure;neither the successful device probe nor dynamic route explains that
 historical failure. Next P isolates guest progress/pause and host delivery
 conditions before declaring resolution. S4 does not close on these successes.
+
+
+### S4 P2 pause-fixture diagnostic receipt
+
+Two test tools add15/remove1lines,a pre-Tab graphics sample and retain neutral precondition
+results before assertions. The verifier rejects an already-changing fixture
+before attributing its later differences to a presenter round trip. A stable
+half-second sample is a necessary check,not proof that translated pause is
+active. No game,host device,controller or snapshot implementation changes;
+three existing products retain their current bytes.
+
+Actual normal and dynamic DOSBox routes both enter text,create snapshots and
+return to DOS,but fail round-trip and held-text equality. Both pre-Tab sample
+pairs happen to match. Dynamic graphics differences are164pixels confined to
+the timer rectangle;its text difference is5pixels in the corresponding HUD
+area. Normal graphics differences cover245500pixels across the full screen.
+These are active-state differences,not evidence of incorrect cell copying.
+A separate longer-Enter experiment also fails the pre-Tab stability check;
+keep the original key schedule rather than promote an unproven workaround.
+
+The similar-issue sweep covers graphics/text/held/second-entry/load assertions,
+stale receipt cleanup and the distinction between event injection,visible
+stability and actual pause. Existing root/device tests remain applicable;the
+failure receipts are explicit diagnostic outcomes,not accepted host routes.
+Both native widths pass13focused tests;documentation governance and diff
+checks pass. Raw captures and saves are removed after neutral summaries. Empty ROM scope,
+zero conformance credit,all historical/local node/control/facet totals retained.
+P12 remains open:the historical unchanged-title/no-exit failure is still not
+explained. Next P must establish guest input consumption and actual pause
+eligibility before deciding whether the fixture or runtime needs correction.
+S4 remains active;S5/S6 have not been admitted.

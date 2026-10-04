@@ -19,12 +19,24 @@ def size(image):
     return [len(image[0]), len(image)]
 
 before = picture("graphics-before.bmp")
+stable = picture("graphics-stable.bmp")
 after = picture("graphics-after.bmp")
 text = picture("text.bmp")
 held = picture("text-held.bmp")
 again = picture("text-again.bmp")
 loaded = picture("text-loaded.bmp")
 graphics_loaded = picture("graphics-loaded.bmp")
+preconditions = {
+    "graphicsStableBeforeTab": before == stable,
+    "graphicsRoundTripEqual": before == after,
+    "textModeEntered": size(text) != size(before),
+    "heldTabTextEqual": text == held,
+    "exitToDos": (root / "exit.ok").exists(),
+    "snapshotCreated": (root / "mysmb.sav").exists(),
+    "productSha256": hashlib.sha256((root / "MYSMB.EXE").read_bytes()).hexdigest(),
+}
+(root / "preconditions.json").write_text(json.dumps(preconditions, indent=2)+"\n")
+assert before == stable, "pause precondition failed before Tab; round-trip verdict unavailable"
 assert size(before) == size(after) == size(graphics_loaded)
 assert before == after, "paused graphics changed across Tab"
 assert size(text) == size(held) == size(again) == size(loaded)
@@ -48,6 +60,7 @@ receipt = {
     "textDimensions": size(text), "graphicsDimensions": size(before),
     "textColors": colors, "cellPatterns": len(patterns),
     "pausedGraphicsRoundTripEqual": True, "heldTabTextEqual": True,
+    "graphicsStableBeforeTab": True,
     "secondTextEntryEqual": True, "observedSnapshotBytes": len(save),
     "loadRetainsTextMode": True, "exitToDos": True,
     "productSha256": hashlib.sha256((root / "MYSMB.EXE").read_bytes()).hexdigest(),
