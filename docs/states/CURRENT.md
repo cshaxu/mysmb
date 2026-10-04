@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P131 allocation guards checkpoint;S17 remains active,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P132 misc/block handoffs checkpoint;S17 remains active,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
@@ -163,7 +163,6 @@
 
 
 
-S17 P124:22 status/palette/commit labels,163 original PC observed;2048 eight-turn chains eachwidth zero scoped RAM/APU/order difference. First selector6 retains27-byte queue,next selector0 commits54 bytes;ordinary queue27 bytes. Slot0368/03EE/06CF preserved. Six focused tests eachwidth pass;123 source identities and P123 three EXEs unchanged. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);material993 partial,total unknown,M2 incomplete.
 
 S17 P125:319 area/scroll/enemy labels,2001 originalPC observed. All34 tablepairs/two profiles,68 serial32-page chains eachwidth;330752 fullscopedRAM checkpoints eachwidth0diff. E9/EA stable,739 aligned andFFterminal;9focusedtests eachwidthpass. 123 sourceidentities/P123 products unchanged. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
@@ -178,3 +177,5 @@ S17 P129:12 indexed writers/12 participants reclassified by original intrinsic c
 S17 P130:65536 actualfireball parents/95 observedlabels/679PC,all17 candidatewritePCvisited,bothwidths0scopedRAM/APU/orderdiff. Bus confirms08 writes onlyB689constant0/1,reads0/1,noE9/EA/739write in testedcontracts. Sixteen aliasconditions discharged;374inventory now28intrinsic/15parentjoins/331pending. D725 posthit/score andfivebubble entranceconditions explicit. Eightfocusedtests eachwidthpass;123sourceidentities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
 S17 P131:10 allocation indexed-write conditions/9 participants resolved by intrinsic random mask orcoin allocator6/7/8. Existing374streamalias inventory now38intrinsic/15parentjoins/321pending. RetainedP49/P101/P128 originalvisited writes/zero scopedRAM receipts linkedcurrent123sourceidentities;6focusedtests eachwidthpass. No freshROMrun,newnode/controlcredit,gamechangeorEXErefresh;P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
+S17 P132:19 misc/block indexed-write parent conditions joined;374inventory now38intrinsic/34parentjoins/302pending. Static610/427instruction closures:onlyBB98direct08publisher,noindirectwriter;23/10indexed08aliases excluded byactualslot/sprite constructors. 131072freshoriginal roots eachwidth0scopedRAM/APU/orderdiff,16writePCfresh/3contactstores retainedP74. Sevenfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.

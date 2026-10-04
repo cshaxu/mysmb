@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P132 misc/block handoffs](../proposals/m2/t70-final-current-certification.md#s17-p132-checkpoint---misc-and-block-slot-preservation).
+S17 P132:19 misc/block indexed-write parent conditions joined;374inventory now38intrinsic/34parentjoins/302pending. Static610/427instruction closures:onlyBB98direct08publisher,noindirectwriter;23/10indexed08aliases excluded byactualslot/sprite constructors. 131072freshoriginal roots eachwidth0scopedRAM/APU/orderdiff,16writePCfresh/3contactstores retainedP74. Sevenfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
 [P131 allocation guards](../proposals/m2/t70-final-current-certification.md#s17-p131-checkpoint---intrinsic-allocation-exclusions).
 S17 P131:10 allocation indexed-write conditions/9 participants resolved by intrinsic random mask orcoin allocator6/7/8. Existing374streamalias inventory now38intrinsic/15parentjoins/321pending. RetainedP49/P101/P128 originalvisited writes/zero scopedRAM receipts linkedcurrent123sourceidentities;6focusedtests eachwidthpass. No freshROMrun,newnode/controlcredit,gamechangeorEXErefresh;P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
