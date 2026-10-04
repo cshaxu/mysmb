@@ -11,6 +11,10 @@ scoped evidence and track only named unresolved/invalidated clauses.
 Material993 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
+## M3 T9 S1 - portable IO contracts
+
+Original scope/expected/actual matches all[],fresh0;historical1992/1992 and local1991/1992 nodes,4260/4261 feasible controls unchanged. Eight source/build files,+184/-1;6tests each width pass,OpenNT16 contract compilation/full product link,three local EXEs. Pure contract migration does not complete deferred M2 certification. [S1 receipt](../proposals/shared-io-and-presentation-switching.md#s1-p1-closure---portable-contracts).
+
 ## M2 T70 S17 - closed with deferred verification
 
 P153 owner-directed S/T scope-transfer closure,not M2 acceptance. Remaining130 groups/910 facets,two findings,13 coverage slots and four final packages are [queued last](../proposals/m2/remaining-current-certification.md). Local node/control statuses unchanged;earlier P entries below are historical checkpoints.

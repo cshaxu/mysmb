@@ -1,0 +1,32 @@
+#ifndef MYSMB_IO_VIDEO_H
+#define MYSMB_IO_VIDEO_H
+
+#include "io/types.h"
+
+#define MYSMB_IO_VIDEO_WIDTH 256U
+#define MYSMB_IO_VIDEO_HEIGHT 240U
+#define MYSMB_IO_VIDEO_PIXELS 61440U
+
+/* Borrowed row-major source color indices. The compositor owns pixels;
+ * a presenter must consume the view before its next rebuild and cannot write
+ * through it. No scale, palette reduction, HUD or object logic belongs here. */
+struct mysmb_io_video_frame {
+    const mysmb_io_u8 MYSMB_IO_FAR *pixels;
+};
+
+/* Reserved, inert text output. No quantizer or presenter is supplied here. */
+#define MYSMB_IO_TEXT_COLUMNS 80U
+#define MYSMB_IO_TEXT_ROWS 50U
+#define MYSMB_IO_TEXT_CELLS 4000U
+
+struct mysmb_io_text_cell {
+    mysmb_io_u8 character;
+    mysmb_io_u8 foreground;
+    mysmb_io_u8 background;
+};
+
+struct mysmb_io_text_frame {
+    struct mysmb_io_text_cell cells[MYSMB_IO_TEXT_CELLS];
+};
+
+#endif

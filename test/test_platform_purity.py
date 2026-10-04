@@ -1,5 +1,6 @@
 """Architecture gate: platform code may adapt host I/O only, never inspect game state."""
 from pathlib import Path
+import re
 import sys
 
 root = Path(__file__).resolve().parents[1]
@@ -15,4 +16,14 @@ for path in platform.rglob("*.[ch]"):
         if token in text:
             print(f"{path.relative_to(root)}: forbidden game-state access {token}")
             sys.exit(1)
-print("platform purity: passed")
+for path in (root / "src" / "io").rglob("*.[ch]"):
+    text = path.read_text(encoding="utf-8")
+    for include in re.findall(r'^\s*#\s*include\s*[<"]([^>"]+)', text, re.M):
+        if not include.startswith("io/"):
+            print(f"{path.relative_to(root)}: IO contract imports {include}")
+            sys.exit(1)
+    for token in ("struct mysmb_game", "HWND", "int86(", "waveOut", "->ram["):
+        if token in text:
+            print(f"{path.relative_to(root)}: IO contract leaks {token}")
+            sys.exit(1)
+print("platform and IO purity: passed")

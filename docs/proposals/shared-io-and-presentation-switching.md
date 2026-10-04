@@ -1,4 +1,4 @@
-# Candidate: shared I/O contracts and operational graphic frames
+# M3 T9: shared I/O contracts and operational graphic frames
 
 Owner scheduling amendment (P153):remaining M2 acceptance verification is
 queued after the three I/O/presentation candidates. Earlier proof completion
@@ -126,3 +126,52 @@ already accepted focus/pause owner. Keep owner-local ROM material, generated
 program data, binaries, traces, and temporary build products out of tracked
 sources. The admission packet will define the exact source files, evidence,
 artifact refresh, and S order against the then-current baseline.
+
+## T9 admission and S1 plan
+
+Owner admits T9 and authorizes sequential automatic S admissions,each with
+advance component/scope/size brief and post-closure build/test/commit/push
+report. Single executor/coordinator roles;no delegated agent. S1 active;
+S2-S6 planned only. No configured remote:local commits proceed,push unavailable
+until a remote is supplied;never invent one.
+
+S1 introduces io-only C90 types for two controller ports,read-only256x240
+indexed video,ordered per-tick APU writes/snapshot,and inert80x50 text cells.
+Do not move original RAM/compositor/audio logic or introduce host headers.
+Expected8-12 source/build files,250-450 lines plus governance records.
+Focused contract checks/C90 compile at x86/x64 and actual OpenNT16 compile;
+three current products compile/link and focused existing frame/audio/pause
+regressions. Exact ROM-node scope[],expectedMatches[],credit0;historical
+baseline1992/1992 unchanged,local1991/1992 nodes/4260/4261 feasible controls.
+Any changed dependency identity is recorded for deferred M2 rebinding,not
+silently blessed as an unchanged full certificate.
+
+## S1 P1 closure - portable contracts
+
+Delivered4 IO headers,one cross-boundary ABI probe,CMake test registration,
+real OpenNT16 probe compile hook and IO dependency purity checks.
+Actual8 source/build files,+184/-1 lines;estimate8-12 files/250-450
+lines was conservative. Architecture/source layout records updated separately.
+Executor verified C90 byte/word widths,61440-byte far view,4000 text cells,
+two controller ports and ordered repeated audio writes. Coordinator review
+confirms IO imports only IO headers and no translated RAM or host APIs.
+Current compositor/game logic and Win32/DOS device paths are unchanged.
+
+x86/x64 each6 exact tests passed:contract,PPU frame,focus pause,audio renderer,
+purity and native product self-test. Real OpenNT16 /AL contract probe compile
+and full product link pass. Existing linker OLDNAMES library warning remains;
+link completes and this receipt does not certify runtime graphics or audio.
+S3-S5 must deliver actual DOS graphical play. Initial scoped-runner selection
+rejected unbuilt test commands;built exact targets then accepted only complete
+six-test reports. Enum compatibility comparisons use explicit byte values.
+
+Three products published locally:16=260011bytes,
+32=368377bytes,64=380216bytes.
+Neutral identities retained below ignored build. No protected outputs staged.
+Build-only CMake identity update records additive test registration;production
+source/flags unchanged and retained semantic dispositions not promoted.
+Historical1992/1992/local1991/1992 nodes,4260/4261 feasible controls unchanged.
+S1 original scope/expected/actual matches all[];0 new nodes/controls.
+Registry/ledger and documentation gates required for closure. No configured
+remote:local commit deliverable,unavailable push reported without inventing URL.
+Owner authorizes automatic S2 admission following this reviewed S1 commit.

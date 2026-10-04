@@ -26,7 +26,7 @@
     "controlIdentitySha256": "4d6fced75017fcd0edd80f63223f45e7d14e1b4170af91f98937a0474c970669"
   },
   "sourceSnapshot": {
-    "CMakeLists.txt": "950c897e68392b1fae8b9aff6fdac46a435e388de3519aef076b7f0af5469b9a",
+    "CMakeLists.txt": "961ba8ac3264fbb613fe85e2e207240fe859bca3bee27f972d9a95d06d4b48cd",
     "src/game/area.c": "c7c0d508da06e0c83ebfa4aa3757e9b170753c2eecf9cbe0e0505dcdc1c52d62",
     "src/game/area.h": "ff79683256a810f1a157bb0e75e7647ef8fdb79857ba0bfe861edb9128117008",
     "src/game/area/area_data.c": "9f4d6fbb22af69b28977276ff999484956c3db3e859ee15cc6e915356b4b6176",
@@ -123892,6 +123892,19 @@
       "nodeControlCredit": 0,
       "evidence": "docs/history/M2-T70-deferred-verification-closure.md",
       "queuedProposal": "docs/proposals/m2/remaining-current-certification.md"
+    },
+    {
+      "id": "M3-T9-S1-io-contract-build-binding",
+      "cause": "Add isolated C90 IO contract target/test;existing production source list,flags and target ownership unchanged. Retain game receipts;record new build identity for queued final snapshot.",
+      "oldIdentity": "950c897e68392b1fae8b9aff6fdac46a435e388de3519aef076b7f0af5469b9a",
+      "newIdentity": "961ba8ac3264fbb613fe85e2e207240fe859bca3bee27f972d9a95d06d4b48cd",
+      "sourcePaths": [
+        "CMakeLists.txt"
+      ],
+      "sourceUniverseChanged": false,
+      "groupUniverseChanged": false,
+      "nodeControlCredit": 0,
+      "evidence": "docs/proposals/shared-io-and-presentation-switching.md T9 admission and S1 plan"
     }
   ],
   "closure": "All group facets, findings and coverage slots evidence-closed; six registry packages closed; no unresolved source mismatch; final source/data/build binding. No all-input theorem inferred.",

@@ -71,6 +71,16 @@ list(APPEND MYSMB_GAME_SOURCES src/game/player_movement.c)
 add_library(mysmb_game STATIC ${MYSMB_GAME_SOURCES})
 target_include_directories(mysmb_game PUBLIC src)
 
+# IO contracts have no device or translated-game implementation dependency.
+add_executable(mysmb_io_contract_smoke test/io_contract_smoke.c)
+target_include_directories(mysmb_io_contract_smoke PRIVATE src)
+if(MSVC)
+    target_compile_options(mysmb_io_contract_smoke PRIVATE /W4 /WX)
+else()
+    target_compile_options(mysmb_io_contract_smoke PRIVATE -Wall -Wextra -Werror -pedantic)
+endif()
+add_test(NAME mysmb.io-contract-smoke COMMAND mysmb_io_contract_smoke)
+
 if(MSVC)
     target_compile_options(mysmb_game PRIVATE /W4 /WX)
 else()

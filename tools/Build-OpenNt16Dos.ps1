@@ -80,6 +80,11 @@ New-Item -ItemType Directory -Force -Path $OutputDirectory | Out-Null
 Push-Location $OutputDirectory
 try {
     $env:PATH = $toolDirectory + ';' + $env:PATH
+    # Compile the neutral contract probe with the real far-pointer ABI too.
+    # It is not linked into the product and supplies no ROM or device data.
+    $ioContractProbe = Join-Path (Split-Path -Parent $SourceRoot) 'test/io_contract_smoke.c'
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Foio_contract_smoke.obj /I $IncludeDirectory /I $runtimeIncludeDirectory $ioContractProbe
+    if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     $objects = @()
     foreach ($relativeSource in $sources) {
         $source = Join-Path $SourceRoot $relativeSource
