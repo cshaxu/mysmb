@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P140 enemy runtime handoffs checkpoint;S17 remains active,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P141 remaining slot handoffs checkpoint;S17 remains active,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
 | Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
@@ -172,7 +172,6 @@
 
 
 
-S17 P133:24 parser/area allocation conditions joined(19intrinsic/5parent);374streamalias inventory now57intrinsic/39parentjoins/278pending. Declared815instruction parserclosure:950A2..0/9643zero only08publishers,noindirectwriter;28indexed08aliases require>24,actualapplicableindices<=5. Fresh65536original roots0scopedRAM/APU/orderdiff eachwidth,retained34areaP125all24writes observed. Ninefocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
 S17 P134:correctedP130nonexistentimmediate-score dependency. Full237instruction fireballhitclosure:no008publisher/indirectwriter/CurrentPlayer orscoremath call;15aliaswriters actualfireball0/1,enemy0..4/remap0..15. D725posthit indexjoinedwithretainedP1303517writes/65536actualparents;twoGrowstores intrinsic5. 374inventory now59intrinsic/40parentjoins/275pending. Elevenfocusedtests eachwidthpass,123identities/P123productsunchanged;no freshROMrun/gamechange/EXErefresh. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
@@ -187,3 +186,5 @@ S17 P138:34normal-enemy-primaryX writeconditions joined;374streamalias inventory
 S17 P139:16Bowser/duplicate indexed-write conditions joined;374streamalias inventory now59intrinsic/175parent-qualified/140pending. RunBowser/BridgeCollapse closures1374/1305instructions,onlyCFF5/D1A9/D1B3publish008;indexedaliases require>21. Fresh41352originalroots0scopedRAM/APU/orderdiff eachwidth,all16joinedwriters observed. CorrectedP137falsefrenzy-reset dependency fromsourcecallers. Sevenfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
 S17 P140:50enemy-runtime indexed-write conditions joined;374streamalias inventory now59intrinsic/225parent-qualified/90pending. C8823898instructionclosure,BC87forces5/Bowserboundedrearrestore only008publishers;CF4A intrinsic2..0,otherindexed08aliases require>21. Fresh12960qualifiedoriginalparents0scopedRAM/APU/orderdiff bothwidths:34writers fresh,16retainedsource-boundP138/P71/P72/P78receipts. Elevenfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
+S17 P141:70remaining objectslot writeconditions joined(1intrinsic/69parent);374streamalias inventory now60intrinsic/294parent-qualified/20pending(area15/bubble5). OriginalC0474793instructionclosure keepsqualifiedprimary/boundedrear publishes;block0/1,combinedsprite0..21,hammerenemyreference0..5. Fresh2320originalroots0scopedRAM/APU/orderdiff bothwidths,10writers fresh/60retainedcurrent-boundreceipts. Sixactualtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
