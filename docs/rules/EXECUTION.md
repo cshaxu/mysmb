@@ -211,3 +211,32 @@ reset counter or aggregate exact count presented as whole-game correctness.
 Scope and operational proof remain separate;code repair requires the three
 product artifacts. No guarantee of bug absence or all-input equivalence is
 inferred from a finite test manifest.
+
+## Fixed-universe M2 audit ledger
+
+The current registry links a neutral audit ledger with stable instruction-use
+IDs and source-owner obligation groups. It supplements, rather than replaces,
+node/control dispositions, the node/task ledger and the six final packages.
+Instruction-site coverage, accepted local semantics, reconciled integration
+conditions and operational coverage are separate counters. Never infer one
+from another or present a growing number of material receipts as a denominator.
+
+Every source instruction is assigned once to a group. Every group reconciles
+producer/consumer coverage, address/alias domains, overwrites, cross-phase
+lifetimes, register/flag/stack semantics, caller/return joins and source binding.
+Existing evidence may discharge these obligations without rerunning it when
+its conditions and dependencies apply. A missing global approval does not
+invalidate its accepted local proof or authorize a fresh whole-project round.
+
+New findings attach to existing site/group/package IDs. Record the old proof,
+its missing condition, affected dependencies, gameplay impact, receiving S,
+repair and re-audit result. Expanding an evidence route does not expand the
+source universe. A universe change requires a versioned amendment with cause,
+added/removed identities and impact; never silently change the denominator.
+Do not exclude an original behavior just because it is difficult to prove.
+
+Owner direction cancels the overnight deadline. Completion requires no open
+findings or unreconciled obligations, all six final packages closed, and final
+source/build bindings. A ledger validator checks accounting and evidence
+structure only; it does not prove semantic correctness. An incomplete census
+or missing route manifest remains explicit work, not a closure exception.

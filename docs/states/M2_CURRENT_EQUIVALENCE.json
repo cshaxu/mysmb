@@ -177465,6 +177465,8 @@
         "status": "pending",
         "evidence": []
       }
-    ]
+    ],
+    "auditLedger": "docs/states/M2_AUDIT_LEDGER.json",
+    "auditLedgerBoundary": "Fixed instruction-use universe plus finite owner facets;material rows are evidence receipts,not the progress denominator. Existing scoped dispositions retained."
   }
 }

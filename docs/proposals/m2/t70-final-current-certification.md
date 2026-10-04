@@ -1984,6 +1984,12 @@ but OutputInter source order/shared call still requires its admitted repair.
 
 ## Owner-directed bounded final-audit contract
 
+Current amendment: the owner cancels the overnight deadline. The
+[fixed-universe audit ledger](../../states/M2_AUDIT_LEDGER.md) now records
+the source-site denominator, retained local receipts, integration obligations,
+findings and finite output/route coverage slots. This amendment does not
+close S17, reset prior proofs, admit a new audit round or waive any M2 exit.
+
 The owner rejects a third or subsequent whole-project audit round. This
 contract supersedes the restart plan retained below. Do not restart A-N,
 reset accepted scoped evidence to zero, or admit successor chains merely to
@@ -10474,3 +10480,35 @@ Exactparticipants:SetupBubble,PosBubl,MoveBubl,Y_Bubl,ExitBubl,Bubble_MForceData
 The five stores cannot be excluded for arbitraryentryX. They are verifiedas actualRAM aliases,notassigneda fabricated legal0..2 range. OriginalB70BSetupBubble throughreturningY_Bubl useszero-pageindexedposition/page/high/Y stores andabsolute042C+Xfractionaldummy. Nativekeepsbothaddressforms,sourceLSRcarry/ADCpagecarry,orderedlivePlayerpositionreads andpoststoreRAM07tablelookup. All256rawX *all256incoming07 values areexecuted;playerFacing1/2 anddeterministicpage/X/Y/dummyprofilesvarywithinthismatrix,notallCartesianRAMstates. SourceactualB717/B71D/B724/B728/B748 eachobservedatall256X. In particular E4+5=E9 pointerlowwrite ispreserved,andwrappedYHighX60writes07=1 beforetimer/forcetableconsumers inbothowners. FullPRGbacking suppliesactualabsolute-Y reads beyond two normalelements. No artificialindexclamporunsupportedarrayfallback isintroduced. Fresh65536fullscopedRAM/APU/order comparisons eachwidth0diff;SPminimumFD,physical01F0-01FFexcluded asdeclaredtestcallABI. Reference/directnativevoidregisterABI isnotcompared. Raw batches4096<18MiB/120s,deletedafterbothcheckers. Fiveactualtests eachwidth:bubble-core-chain,bubble-oam-smoke,player-entry-chain,game-entry-dispatch,platform-purity. All123translatedsourceidentitiesandthreeP144producthashesunchanged,noEXErefresh.
 
 This disposes the five indexed-site mutation-semantic questions anddoesnotprovewhole-program absenceofpointer/cursoroverwrites. P136 normalwaterentryX0 andraw-water/vineX5 remain distinct facts. Legalwater/vine transition,other-fieldoverwrite lifetimes anddownstreaminvalid3Fdispatch applicabilityremainoneexistingglobaldomain clause. No newauditround,implicitunreachabledeclaration ormaterialdenominatorfreeze. SeparatelyrecordP143 freshC1F1/F3/F5/F7/F9/FBdecisionprefix receiptforuse-04717 atC1FB:AND3F/CMP3F directlypublishescarry,nointerveningcall;sourceBCC/nativeid<3Fmatches all64maskedIDs includingactual3Ffallthrough. The localinstruction receiptcount becomes10691/10691,whilewhole-program lifetimeofthatuse remainspending andthe node/control conservative needs-evidence statusesremainunchanged. Thisislocalinstructionevidence,not1992-nodefinalcertification.
+
+## S17 P146 admission and checkpoint - fixed-universe audit ledger
+
+Owner cancels deadline and requires a finite audit ledger. Existing S17
+material scope receives this prerequisite; no successor S admitted and no
+node/control credit. Neutral use IDs/PCs from the retained local census are
+indexed once:10691 instructions,4171 explicit accesses,136 existing owner
+groups/seven integration facets each. All10691 local receipts are retained;
+952 new accounting cells initially require evidence reconciliation,not new
+source migration,952 bugs or952 independent test runs. Material993 remains
+partial receipt detail and no longer serves as the progress denominator.
+The ledger does not claim its initial facet inventory proves completeness.
+
+Two localized existing applicability gaps have exact use IDs,old receipts,
+missing conditions,conditional gameplay impact,receiver and exit contracts.
+Thirteen route/pixel coverage slots bound manifest planning;case counts and
+branch contracts are still pending. Source identities bind186 source/header/
+build dependencies. Descriptive multi-file owners are retained; concrete
+source mappings remain the registry currentSourcePaths,not guessed filenames.
+The first preparation rejected descriptive owners as paths before producing
+any ledger;corrected binding uses actual registry source paths. No raw ROM,
+opcodes,protected derived data or traces are in the neutral tracked ledger.
+
+Accounting validator passes and rejects six deliberate corruptions:missing
+use,duplicate use,missing facet,closure without dual evidence/domain,source
+drift and false final certificate. Registry verification invokes the ledger
+validator,so existing final-certificate checks cannot bypass it. This is
+metadata integrity evidence only;no new semantic,route or global credit.
+Historical1992/1992;local1991/1992 nodes,4260/4261 feasible controls
+(raw4342,infeasible81);all six packages retain their existing status.
+All952 facet cells need reconciliation;two localized gaps and13 coverage
+slots open. M2 incomplete;three P144 products unchanged,no audit-only rebuild.

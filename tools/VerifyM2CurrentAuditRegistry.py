@@ -92,6 +92,12 @@ def main():
                    for status in sorted(STATUSES)}
     final = registry.get("finalCertification")
     require(final is not None, "final-certificate boundary must be explicit")
+    if final.get("auditLedger"):
+        from VerifyM2AuditLedger import validate
+        ledger_path = repository_root / final["auditLedger"]
+        require(ledger_path.is_file(), "fixed-universe audit ledger is missing")
+        validate(json.loads(ledger_path.read_text(encoding="utf-8")),
+                 registry, repository_root)
     reviewed_nodes = final["reviewedNodeLabels"]
     reviewed_edges = final["reviewedControlEdgeIds"]
     node_labels = {node["label"] for node in nodes}

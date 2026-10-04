@@ -4,9 +4,9 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M2 T70 S17 P145 bubble alias semantics checkpoint;S17 remains active,S16 closed,T70 open. |
+| Identifier Mode | Continuation:M2 T70 S17 P146 fixed-universe audit ledger checkpoint;S17 remains active,S16 closed,T70 open. |
 | Admission And Approval | Coordinator admits existing material gap under owner ongoing M2 mandate,no new audit round. |
-| Objective | Complete consumed-value use census and producer/lifetime/overwrite/alias dispositions,justify material denominator. |
+| Objective | Establish the fixed-universe audit ledger, retain scoped proofs and reconcile consumed-value producer/lifetime/overwrite/alias obligations. |
 | Non-goals | No global node re-audit,cartesian edge promotion,unrelated I/O edits or product repair without bounded chain amendment. |
 | Reference Baseline | Historical1992/1992;local scoped1991/1992 nodes,4260/4261 controls(raw4342,infeasible81);material993 partial,total unknown. |
 | Candidate Proposal | [S17 material completeness](../proposals/m2/t70-final-current-certification.md#s17-p1-admission---complete-material-use-census-and-path-reconciliation). |
@@ -18,10 +18,14 @@
 | Reporting Requirements | Exact resolved/pending uses and path IDs;retain total/local node/control counts and unknown material total. |
 | Stop Conditions | Source mismatch stays S17;admit exact affected chain before product edit,repair/re-audit before successor. |
 | Exit Criteria | Complete use inventory,zero unresolved producer/lifetime/overwrite/alias clauses,frozen justified denominator,dual tracks pass. |
-| Original Owner Request | Full node/edge alignment,last overnight closing window before owner morning return;no further whole-project rounds or false closure. |
+| Original Owner Request | Owner cancels the deadline and requires a finite, traceable audit ledger covering nodes, controls and data without repeated whole-project rounds or false closure. |
 | Similar-Issue Sweep | Explicit RAM/ROM/hardware accesses,indirect pointer/index aliases,register/flag/stack lifetimes and cross-frame handoffs. |
 
 ## Current Technical Baseline
+
+- P146 ledger amendment: deadline cancelled. [Audit ledger](M2_AUDIT_LEDGER.md)
+  indexes fixed source sites and explicit integration obligations;existing
+  scoped node/control evidence is retained. No new S or graph credit.
 
 - Full M2 certification: **NOT COMPLETE**;prior exact rows are local contracts.
 - Historical mapping1992/1992;no new global audit round or zero-based progress denominator.
@@ -177,7 +181,6 @@
 
 
 
-S17 P138:34normal-enemy-primaryX writeconditions joined;374streamalias inventory now59intrinsic/159parent-qualified/156pending. RunNormalEnemies2279instructionclosure,no008publisher;onlyE007indirectwriter constructed>=0500. Fresh36288originalparents0scopedRAM/APU/orderdiff eachwidth,all34joinedwritePCobserved;65sharedconditions retainotherparents. Elevenfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
 S17 P139:16Bowser/duplicate indexed-write conditions joined;374streamalias inventory now59intrinsic/175parent-qualified/140pending. RunBowser/BridgeCollapse closures1374/1305instructions,onlyCFF5/D1A9/D1B3publish008;indexedaliases require>21. Fresh41352originalroots0scopedRAM/APU/orderdiff eachwidth,all16joinedwriters observed. CorrectedP137falsefrenzy-reset dependency fromsourcecallers. Sevenfocusedtests eachwidthpass,123identities/P123productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
@@ -192,3 +195,5 @@ S17 P143:5120actualoriginal C144->C26C decision-prefix routes eachwidth0RAM/APU/
 S17 P144:sharedpixel consumer nowobeys original visiblePPUmask background/sprite enable andleft8clip. Fixed512framecoldStart/right-held route bothwidths fullnonphysicalstate/finalpixels0diff;179activeframes/all8fineX values. Predecessor360380pixeldiffs in42disabledpreparationframes;newmaskregressionoldexit5/current0. Sixfocusedtests/fullmodernbuilds/self-tests/originalOpenNT16linkpass;threeEXEs refreshed. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
 
 S17 P145:fivebubble writer aliassemantics joined by65536actualoriginal SetupBubble roots eachwidth0scopedRAM/APU/orderdiff,all256rawX/all256incoming07 andfivewriterPC observed.374indexclauses now60intrinsic/309parent-qualified/5alias-preserved/0undisposed;thisdoesnotprove globalabsenceofalias orlegalstream reachability. P143classification instructionlocalreceipt recorded,10691scopedinstructionreceipts;global lifetimeclosurestillpending. Fivefocusedtests eachwidthpass,123source/P144productsunchanged. Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
+S17 P146:fixed ledger10691sites/4171accesses/136owner groups/952integration cells;all local receipts retained,facets pending reconciliation. Two localized evidence gaps/13coverage slots open;186source bindings,six negative accounting checks reject. Deadline cancelled,no new round/node credit. Historical1992/1992;local1991/1992nodes,4260/4261controls(raw4342,infeasible81);993material receipts not denominator;M2 incomplete,P144products unchanged.

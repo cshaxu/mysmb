@@ -1,0 +1,139 @@
+"""Validate fixed audit accounting; never infer semantic equivalence."""
+import argparse
+import collections
+import hashlib
+import json
+from pathlib import Path
+
+
+FACETS = {
+    'producerConsumer', 'addressAlias', 'overwrite', 'crossPhaseLifetime',
+    'registerFlagStack', 'callerReturn', 'sourceBinding',
+}
+
+
+def require(condition, message):
+    if not condition:
+        raise ValueError(message)
+
+
+def identity_digest(items):
+    payload = '\n'.join(sorted(items)).encode('utf-8')
+    return hashlib.sha256(payload).hexdigest()
+
+
+def validate(ledger, registry, root):
+    require(ledger['schemaVersion'] == 1, 'unknown ledger schema')
+    universe = ledger['universe']
+    uses = ledger['uses']
+    require(len(uses) == universe['instructionSites'] == 10691,
+            'missing instruction site')
+    require(len({u['id'] for u in uses}) == len(uses), 'duplicate use ID')
+    require(len({u['pc'] for u in uses}) == len(uses), 'duplicate source PC')
+    require(identity_digest(u['id'] + ':' + u['pc'] for u in uses) ==
+            universe['instructionIdentitySha256'], 'source universe changed')
+    require({u['label'] for u in uses} <=
+            {n['label'] for n in registry['nodes']}, 'unknown inventory label')
+    regions = dict(collections.Counter(u['memoryRegion'] for u in uses
+                                      if u['memoryRegion'] != 'none'))
+    require(regions == universe['memoryRegions'], 'memory universe changed')
+    require(sum(regions.values()) == universe['explicitMemorySites'] == 4171,
+            'memory site count changed')
+    groups = ledger['groups']
+    require(len({g['id'] for g in groups}) == len(groups), 'duplicate group')
+    group_map = {g['id']: g for g in groups}
+    node_paths = {n['label']: n['currentSourcePaths'] for n in registry['nodes']}
+    require(identity_digest(group_map) == universe['groupIdentitySha256'],
+            'obligation group universe changed')
+    require(all(u['group'] in group_map for u in uses), 'unassigned use')
+    for use in uses:
+        require(use['currentOwner'] == group_map[use['group']]['currentOwner'],
+                'wrong group owner: ' + use['id'])
+        require(use['localDisposition'] in ('accepted-scoped', 'needs-evidence'),
+                'unknown local disposition')
+        require(use['localDisposition'] != 'accepted-scoped' or
+                use['localReceipt'], 'accepted site without receipt')
+    for group in groups:
+        require(set(group['facets']) == FACETS, 'missing integration facet')
+        paths = {p for u in uses if u['group'] == group['id']
+                 for p in node_paths[u['label']]}
+        require(set(group['currentSourcePaths']) == paths and
+                paths <= set(ledger['sourceSnapshot']),
+                'missing concrete source dependency for group')
+        require(group['useCount'] == sum(u['group'] == group['id'] for u in uses),
+                'group membership count changed')
+        for facet in group['facets'].values():
+            require(facet['status'] in ('pending-reconciliation', 'closed'),
+                    'unknown facet status')
+            if facet['status'] == 'closed':
+                require(all(facet.get(k) for k in
+                            ('domain', 'staticEvidence', 'romEvidence')),
+                        'closed facet without domain and dual evidence')
+    for path, digest in ledger['sourceSnapshot'].items():
+        source = root / path
+        require(source.is_file(), 'missing source dependency: ' + path)
+        normalized = source.read_text(encoding='utf-8').encode('utf-8')
+        require(hashlib.sha256(normalized).hexdigest() == digest,
+                'source dependency changed; reconcile affected proofs: ' + path)
+    findings = ledger['findings']
+    require(len({f['id'] for f in findings}) == len(findings), 'duplicate finding')
+    for finding in findings:
+        require(finding['status'] in ('open', 'closed'), 'unknown finding status')
+        require(set(finding['useIds']) <= {u['id'] for u in uses},
+                'finding outside fixed universe')
+        require(all(finding.get(k) for k in ('oldEvidence', 'missingCondition',
+                    'gameplayImpact', 'receiver', 'exit')), 'incomplete finding')
+        if finding['status'] == 'closed':
+            require(finding.get('repairOrExclusionEvidence') and
+                    finding.get('reAuditEvidence'), 'unsupported finding closure')
+    for key, total in [('nodeTotal', 1992), ('rawControlEdgeTotal', 4342)]:
+        require(registry[key] == total, 'node/control universe changed')
+    require(identity_digest(n['label'] for n in registry['nodes']) ==
+            universe['nodeIdentitySha256'], 'node identity universe changed')
+    require(identity_digest(e['id'] + ':' + e['from'] + ':' + e['to'] + ':' +
+                            e['type'] for e in registry['controlEdges']) ==
+            universe['controlIdentitySha256'], 'control identity universe changed')
+    routes = ledger['coverageSlots']
+    require(len({r['id'] for r in routes}) == len(routes), 'duplicate coverage slot')
+    for route in routes:
+        require(route['status'] in ('pending', 'closed'), 'unknown coverage status')
+        if route['status'] == 'closed':
+            require(all(route.get(k) for k in ('manifest', 'terminalCheckpoint',
+                        'branchContract', 'evidence')), 'unsupported route closure')
+    facets = [v for g in groups for v in g['facets'].values()]
+    if registry['finalCertification']['status'] == 'complete':
+        require(all(u['localDisposition'] == 'accepted-scoped' for u in uses) and
+                all(f['status'] == 'closed' for f in facets) and
+                all(f['status'] == 'closed' for f in findings) and
+                all(r['status'] == 'closed' for r in routes),
+                'final certificate leaves ledger obligations open')
+    return dict(metadataValidationOnly=True, instructionSites=len(uses),
+                acceptedScopedSites=sum(u['localDisposition'] == 'accepted-scoped'
+                                        for u in uses),
+                explicitMemorySites=sum(regions.values()), groups=len(groups),
+                integrationFacets=len(facets),
+                closedIntegrationFacets=sum(f['status'] == 'closed' for f in facets),
+                openFindings=sum(f['status'] == 'open' for f in findings),
+                coverageSlots=len(routes),
+                closedCoverageSlots=sum(r['status'] == 'closed' for r in routes),
+                localExactNodes=registry['nodeCounts']['exact'],
+                feasibleControlTotal=registry['feasibleControlEdgeTotal'],
+                materialReceipts=len(registry['materialEdges']),
+                materialReceiptTotalIsNotAnAuditDenominator=True)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--ledger', type=Path,
+                        default=Path('docs/states/M2_AUDIT_LEDGER.json'))
+    parser.add_argument('--registry', type=Path,
+                        default=Path('docs/states/M2_CURRENT_EQUIVALENCE.json'))
+    args = parser.parse_args()
+    ledger = json.loads(args.ledger.read_text(encoding='utf-8'))
+    registry = json.loads(args.registry.read_text(encoding='utf-8'))
+    print(json.dumps(validate(ledger, registry, args.ledger.resolve().parents[2]),
+                     indent=2))
+
+
+if __name__ == '__main__':
+    main()

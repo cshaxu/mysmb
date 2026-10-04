@@ -22,4 +22,9 @@ For M2, every task publishes its exact node target at admission and reports comp
 
 ## Supporting Detail
 
+For the active M2 final-certification work, the
+[fixed-universe audit ledger](states/M2_AUDIT_LEDGER.md) indexes retained
+source-site receipts and pending integration conditions. It supplements the
+current-equivalence registry without redefining local matches as final proof.
+
 [etc/README.md](etc/README.md) indexes supporting contracts, provenance, evidence, templates, and research. It cannot define a competing current design, rule, queue, or active state.
