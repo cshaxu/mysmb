@@ -336,3 +336,74 @@ or renderer and cannot preserve PCM across intervening DOS gameplay;the
 shared game state/APU commands remain intact. Three local EXEs refreshed.
 S5 owns cross-width/cross-host continuation and integrated failure routes.
 No original nodes/edges/facets changed;all retained counters remain. No remote.
+
+## S5 admission
+
+S4 closed;S5 completes the integrated acceptance matrix. A local resource-bound
+native harness captures a running game/audio boundary and compares continued
+state,pixels,ordered APU writes and PCM after restore. Portable export/import
+is tested across x86/x64 and actual DOSBox files,including Win32 seed at DOS
+title without Enter. Root failure checks compare all state before/after
+corruption,missing/read-only saves and focus/typematic paths. DOS absent audio
+and its non-atomic replacement window retain explicit capability limits.
+Fault-injected S2 transaction receipts are retained rather than repeated per
+node. Original three-target builds,purity and governance complete T closure.
+No ROM node/edge credit or new M2 audit round. Temporary snapshots/captures
+remain protected local outputs under ignored build and never enter Git.
+
+## S5 closure
+
+No product-code repair was needed. Both widths pass16integrated focused tests,
+including the final continuation writer,fault paths,purity and actual-product
+hidden-window self-test. The native resource-bound route compares240frames
+and176400PCM samples against an independently restored instance with zero
+state/pixel/PCM difference in each width. Cross-width Win32-origin and actual
+DOS-origin routes directly compare16223040bytes each:every program field,
+pixel,integer synthesis field and PCM sample agree. X86-to-x64 and reverse
+file import pass. Actual DOSBox accepts the Windows file at title without
+Enter,pauses,saves the running cache,loads/resumes,moves,loads again and exits.
+Two paused captures300ms apart agree;the saved RAM pause bit is clear.
+
+Six host floating synthesis values retain normal x87/SSE rounding differences
+when execution continues across widths:maximum phase difference below
+7.3e-13,and maximum filter/input difference below8.6e-10on these routes.
+Those numerical values round-trip exactly at load and continue bit-exactly
+within one width. Cross-width actual PCM is byte-identical. This explicit host
+numerical limit does not excuse any game-state difference or claim exhaustive
+all-input synthesis equality. Bounded streams/captures stay local and are
+removed after neutral acceptance receipts are retained.
+
+Real Win32 read-only replacement preserves the old slot. Corrupt/missing
+loads preserve game/audio/title/clock;exactly one diagnostic per failed
+operation is observed. S2 short-IO/close/replace/truncation/extra-byte and
+simultaneous save/log failure receipts are retained. The portable DOS adapter
+is also exercised at its delete-before-rename failure boundary:old slot loss
+is confirmed and explicitly accepted as the documented non-atomic limit;
+no actual power-loss resilience or atomic DOS replacement is claimed.
+
+Original DOS16 fresh compile/link passes and is byte-identical to S4 product;
+Win32 products/builds pass and remain unchanged. Final local products are
+DOS324239,x86394405,x64408431bytes. S5 changes tests/tools/governance only,
+so no product refresh is required. Similar-issue sweep reconciles all mutable
+owners,live/cache/staging separation,focus/repeat/controller separation,
+clock/device reset,silent validation failures,host numeric fields,static DOS
+memory and local-file containment. No original game routine changes,ROM
+labels/controls promoted or new audit universe. Corrected S3 source/test/build
+size is15files,+653/-4;S4 is15files,+359/-5.
+
+## T10 acceptance matrix
+
+| Clause | Accepted bounded evidence | Limit |
+| --- | --- | --- |
+| Fixed shared file,all mutable fields and resource binding | S1 codec corruption/truncation/canonical records;S3 census/pointer/atomic rejection;S5 cross-width and DOS imports | Local saves contain protected working state;never distributed. |
+| P/O,paused cache,title resume and controller separation | S3 production-root controlled focus/key harness;S4 actual DOS route;S5 actual DOS Windows seed/title/pause/restore and native key/focus regressions | No desktop/RDP input injection or full hardware qualification claimed. |
+| Silent failures and complete-write replacement | S2 injected short IO/flush/close/replace/read/log failures;S5 real read-only/corrupt/missing root checks | Win32 atomic replacement;DOS delete/rename window can lose prior slot. |
+| Continued game,pixels,APU and audio | S5 uninterrupted/restored240frame routes and two direct16223040byte cross-width comparisons | Host numerical rounding explicitly bounded;DOS has no renderer and cannot retain PCM through DOS gameplay. |
+| Portable owners,original compiler and three products | S1-S4 original DOS16 links;S5 fresh identical DOS build/Win32 builds,16tests eachwidth,purity/governance | Real486SX speed and DOS version/device qualification remain M4. |
+
+M3 T10 S1-S5 are closed under this evidence. T10 completes quick snapshot,
+not M3 text switching or full M2 certification. Historical mapping1992/1992,
+local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81),42/952
+facets retain prior scope and remain unchanged. Queue head is colored ASCII
+and presentation switching;deferred M2 certification remains at the tail.
+No next T is automatically admitted. Local P commit only;no remote exists.

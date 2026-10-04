@@ -20,6 +20,8 @@ int main(int argc,char **argv)
     FILE *file;
     char path[300];
     unsigned int i;
+    LARGE_INTEGER clock_before;
+    char title_before[80],title_after[80];
     if(argc!=2)return 1;
     memset(&wc,0,sizeof(wc));wc.lpfnWndProc=mysmb_win32_window_proc;
     wc.hInstance=GetModuleHandle(NULL);wc.lpszClassName="SnapshotBindingTest";
@@ -80,9 +82,38 @@ int main(int argc,char **argv)
     if(memcmp(&expected,&actual,sizeof(actual)))return 12;
     mysmb_win32_window_proc(owned_window,WM_KEYDOWN,'O',0x40000000L);
     if(g_snapshot_requests)return 13;
+    /* A real read-only destination rejects replacement. The prior valid
+     * slot,live state,window title and clock remain unchanged. */
+    if(!SetFileAttributesA(path,FILE_ATTRIBUTE_READONLY))return 15;
+    g_snapshot_cache.last_running.payload[0]^=1U;
+    clock_before=g_last_tick;GetWindowTextA(owned_window,title_before,sizeof(title_before));
+    mysmb_win32_window_proc(owned_window,WM_KEYDOWN,'P',0);
+    if(mysmb_win32_snapshot_request(owned_window))return 16;
+    file=fopen(path,"rb");if(!file)return 17;
+    i=(unsigned int)fread(wire,1,sizeof(wire),file);fclose(file);
+    if(i!=sizeof(wire) || mysmb_snapshot_decode(wire,sizeof(wire),g_snapshot_fingerprint,&actual) ||
+        memcmp(&expected,&actual,sizeof(actual)))return 18;
+    if(!SetFileAttributesA(path,FILE_ATTRIBUTE_NORMAL))return 19;
+    file=fopen(path,"r+b");if(!file)return 20;
+    if(fseek(file,100L,SEEK_SET) || fputc(wire[100]^1U,file)==EOF || fclose(file))return 21;
+    mysmb_win32_window_proc(owned_window,WM_KEYUP,'O',0);
+    mysmb_win32_window_proc(owned_window,WM_KEYDOWN,'O',0);
+    if(mysmb_win32_snapshot_request(owned_window))return 22;
+    mysmb_game_snapshot_capture(&g_game,&actual,g_snapshot_fingerprint);
+    mysmb_win32_audio_capture(&g_audio_output.renderer,actual.payload+MYSMB_SNAPSHOT_CORE_BYTES);
+    GetWindowTextA(owned_window,title_after,sizeof(title_after));
+    if(memcmp(&expected,&actual,sizeof(actual)) || strcmp(title_before,title_after) ||
+        g_last_tick.QuadPart!=clock_before.QuadPart)return 23;
+    remove(path);
+    mysmb_win32_window_proc(owned_window,WM_KEYUP,'O',0);
+    mysmb_win32_window_proc(owned_window,WM_KEYDOWN,'O',0);
+    if(mysmb_win32_snapshot_request(owned_window))return 24;
     owned_window=NULL;g_focus_pause.focused=0U;
     mysmb_win32_window_proc(NULL,WM_KEYDOWN,'P',0);
     if(g_snapshot_requests)return 14;
-    remove(path);sprintf(path,"%s/mysmb.log",argv[1]);remove(path);
+    sprintf(path,"%s/mysmb.log",argv[1]);file=fopen(path,"r");if(!file)return 25;
+    i=0U;while(fgets(title_after,sizeof(title_after),file))++i;fclose(file);
+    if(i!=3U)return 26;
+    remove(path);
     return 0;
 }

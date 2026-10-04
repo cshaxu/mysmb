@@ -45,19 +45,29 @@ C:\GAME\MYSMB.EXE
 echo MYSMB_EXIT_OK>exit.ok
 "@ | Set-Content (Join-Path $output 'probe.conf') -Encoding ascii
 (@('pause')*32)+@('exit') | Add-Content (Join-Path $output 'probe.conf') -Encoding ascii
-if($SeedPath){$start=@('6000 key 111 1','6300 key 111 0')}
-else{$start=@('7000 key 13 1','7500 key 13 0')}
-$start+@(
-    '26000 capture saved.bmp 0',
+if($SeedPath){
+    $start=@('6000 key 111 1','6300 key 111 0')
+    $middle=@('26000 capture saved.bmp 0',
+        '26100 key 13 1','26500 key 13 0',
+        '27000 key 112 1','27400 key 112 0',
+        '27600 key 100 1','28400 key 100 0',
+        '28500 capture paused.bmp 0','28800 capture paused-again.bmp 0',
+        '29000 key 111 1','29400 key 111 0',
+        '30000 key 100 1','32500 key 100 0')
+}else{
+    $start=@('7000 key 13 1','7500 key 13 0')
+    $middle=@('26000 capture saved.bmp 0',
     '27000 key 112 1','27400 key 112 0',
-    '28500 key 100 1','31500 key 100 0',
+    '28500 key 100 1','31500 key 100 0')
+}
+$start+$middle+@(
     '33000 capture moved.bmp 0',
     '34000 key 111 1','34500 key 111 0',
     '35000 capture loaded.bmp 0',
     '37000 key 27 1','37500 key 27 0',
     '39000 capture exit.bmp 0','41000 quit 0 0'
 ) | Set-Content (Join-Path $output 'input.script') -Encoding ascii
-foreach($name in @('saved.bmp','moved.bmp','loaded.bmp','exit.bmp','exit.ok','probe.log')){
+foreach($name in @('saved.bmp','moved.bmp','loaded.bmp','paused.bmp','paused-again.bmp','exit.bmp','exit.ok','probe.log')){
     $path=Join-Path $output $name
     if(Test-Path -LiteralPath $path){Remove-Item -LiteralPath $path -Force}
 }

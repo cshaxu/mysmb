@@ -13,6 +13,11 @@ out/
 __pycache__/
 *.pyc
 
+# Local quick-snapshot working state and diagnostics, never release fixtures.
+mysmb.sav
+mysmb.tmp
+mysmb.log
+
 # Local tools and IDE state.
 .vs/
 .idea/

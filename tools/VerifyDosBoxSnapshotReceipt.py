@@ -18,6 +18,7 @@ def verify(folder):
     assert struct.unpack_from('<HHI', data, 8) == (1, 1, 4746)
     assert zlib.crc32(data[:32] + data[36:]) == struct.unpack_from('<I', data, 32)[0]
     assert not any(data[36 + 4622:]), 'DOS snapshot must declare absent renderer'
+    assert not data[36 + 5 + 0x776] & 1, 'paused save must retain a running boundary'
     assert not (folder / 'mysmb.sav').exists(), 'save incorrectly follows CWD'
     assert not (folder / 'GAME' / 'mysmb.tmp').exists()
     assert not (folder / 'GAME' / 'mysmb.log').exists(), 'operation failed silently'
@@ -32,6 +33,9 @@ def verify(folder):
     center = lambda name: (positions[name][0] + positions[name][2]) / 2
     assert center('moved') > center('saved') + 10, 'right did not move player'
     assert abs(center('loaded') - center('saved')) <= 4, 'O did not restore position'
+    paused = (folder / 'paused.bmp').exists()
+    if paused:
+        assert pixels(folder / 'paused.bmp') == pixels(folder / 'paused-again.bmp'), 'Enter did not pause'
     assert (folder / 'exit.ok').read_text().strip() == 'MYSMB_EXIT_OK'
     assert len({c for row in pixels(folder / 'exit.bmp') for c in row}) <= 4
     log = (folder / 'probe.log').read_text()
@@ -41,6 +45,7 @@ def verify(folder):
                'exeDirectoryIndependentOfCwd': True, 'playerBounds': positions,
                'saveFrame': struct.unpack_from('<I', data, 36)[0],
                'audioRenderer': 'unavailable', 'exitText': True,
+               'pausedCacheAndTitleSeed': paused,
                'productSha256': hashlib.sha256((folder / 'GAME' / 'MYSMB.EXE').read_bytes()).hexdigest(),
                'romCredit': 0, 'performanceQualification': False}
     (folder / 'receipt.json').write_text(json.dumps(receipt, indent=2) + '\n')

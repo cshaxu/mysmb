@@ -35,4 +35,11 @@ The third input byte carries requests;the two controller bytes keep their
 original meaning. Roots consume the shared exit latch before advancing a tick;
 physical adapters may buffer events but do not decide application termination.
 
+`io/snapshot`, `snapshot_store` and `snapshot_keys` own portable file bytes,
+staged transactions,last-running cache and shortcut edges. Fixed-width program
+bytes remain opaque to IO. `app/game_snapshot` marshals public game fields;
+Win32 audio snapshot modules marshal host synthesis state arithmetically.
+`platform/file` provides stdio services;each host supplies executable-path,
+replacement and device-reset services. Only roots connect these owners.
+
 `game/` cannot include host headers or platform macros. `platform/` cannot mutate game internals. `validate/` is optional at runtime and cannot become the gameplay path. CMake selects `mysmb-win32-x86`, `mysmb-win32-x64`, or later `mysmb-dos16`; compile definitions are permitted only beneath the platform roots. The OpenNT 16-bit C compiler verifies the same core in real-mode large-model mode; the later DOS adapter owns linking the full MZ executable. Modern 32/64-bit compilers run the Win32 product.

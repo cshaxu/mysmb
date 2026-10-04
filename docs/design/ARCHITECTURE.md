@@ -45,4 +45,12 @@ last-running-boundary cache. Program-state bytes are opaque;composition owns
 field binding and running eligibility. The codec validates canonical numeric
 records with integers only. Win32 audio adapters convert host double values
 arithmetically;DOS need not link floating-point code to read the same format.
-Storage and host P/O bindings remain T10 S2-S4 work.
+`io/snapshot_store` owns staging,complete-write/close-before-replace and silent
+error logging through file-service hooks. `app/game_snapshot` explicitly binds
+all mutable game fields,preserves immutable resource pointers and decides
+completed-running eligibility. Physical P/O edges and executable-directory
+discovery belong to host adapters;roots commit validated game/audio candidates,
+redraw and reset clock/input/device queues. No translated routine changes.
+DOS marks audio-renderer state absent because it has no synthesis/device owner.
+The same format is read by all targets;DOS cannot promise atomic replacement
+or PCM continuation through intervening DOS gameplay.

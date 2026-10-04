@@ -676,7 +676,7 @@ add_executable(mysmb_dos16_root_smoke test/dos16_root_smoke.c)
 target_link_libraries(mysmb_dos16_root_smoke PRIVATE mysmb_dos16_root)
 add_executable(mysmb_dos_snapshot_smoke test/dos_snapshot_smoke.c
     src/platform/file/snapshot_files.c src/platform/file/executable_path.c
-    src/platform/win32/snapshot_replace.c)
+    src/platform/win32/snapshot_replace.c src/platform/dos16/snapshot_replace.c)
 target_link_libraries(mysmb_dos_snapshot_smoke PRIVATE mysmb_dos16_root)
 file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/dos-snapshot-test")
 add_test(NAME mysmb.dos-snapshot-smoke COMMAND mysmb_dos_snapshot_smoke
@@ -1354,6 +1354,17 @@ if(MYSMB_ROM_PATH)
     )
     add_dependencies(mysmb_local_title_data mysmb_local_title)
     target_include_directories(mysmb_local_title_data PRIVATE "${MYSMB_LOCAL_TITLE_DIR}")
+    add_executable(mysmb_snapshot_continuation_smoke test/snapshot_continuation_smoke.c
+        src/platform/win32/audio_renderer.c src/platform/win32/audio_snapshot.c
+        src/platform/win32/audio_snapshot_real.c $<TARGET_OBJECTS:mysmb_local_rom_data>
+        $<TARGET_OBJECTS:mysmb_local_title_data>)
+    target_include_directories(mysmb_snapshot_continuation_smoke PRIVATE
+        "${MYSMB_LOCAL_ROM_DIR}" "${MYSMB_LOCAL_TITLE_DIR}")
+    target_link_libraries(mysmb_snapshot_continuation_smoke PRIVATE mysmb_game_snapshot mysmb_game_io)
+    file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/snapshot-continuation-test")
+    add_test(NAME mysmb.snapshot-continuation-smoke COMMAND mysmb_snapshot_continuation_smoke
+        capture "${CMAKE_BINARY_DIR}/snapshot-continuation-test/mysmb.sav"
+        "${CMAKE_BINARY_DIR}/snapshot-continuation-test/receipt.txt")
     if(TARGET mysmb_win32)
         target_sources(mysmb_dos_snapshot_smoke PRIVATE
             $<TARGET_OBJECTS:mysmb_local_rom_data> $<TARGET_OBJECTS:mysmb_local_title_data>)

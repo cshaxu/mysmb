@@ -15,3 +15,16 @@ The text product uses an 80×25 colored character scene. It draws known game obj
 ## Host Resources
 
 The Win32 adapter supplies the development window and normal graphical/full-screen presentation. The DOS adapter later uses VGA Mode X 320×240, BIOS keyboard input, PIT-based 60 Hz timing, and a lightweight PC Speaker sound path. NTVDM64 may run non-graphical DOS checks but is not a DOS graphics validation platform; the 486SX remains the DOS graphics and performance authority.
+
+## Quick Snapshot
+
+P saves one running frame to `mysmb.sav` beside the executable;O loads and
+resumes immediately,including from the title screen. While paused,P saves
+the last completed running frame. Each press is handled once and never enters
+the controller stream. Failures are silent and append best-effort diagnostics
+to `mysmb.log`;`mysmb.tmp` is the pending slot. Files remain local user data.
+All three targets share the format. DOS currently has no audio renderer/output;
+Windows restores active synthesis state for Windows-originated saves. DOS
+replacement has a documented delete/rename interruption window. The
+[T10 acceptance record](../history/M3-T10-shared-io-quick-snapshot.md#t10-acceptance-matrix)
+records scoped evidence and limitations.

@@ -80,3 +80,10 @@ Evidence: [archived T70 proposal](../../history/m2/t70-final-current-certificati
 [handoff closure](../../history/M2-T70-deferred-verification-closure.md),
 [audit ledger](../../states/M2_AUDIT_LEDGER.md),
 [current registry](../../states/M2_CURRENT_EQUIVALENCE.json).
+
+
+Dependency handoff: [T10 snapshot acceptance](../../history/M3-T10-shared-io-quick-snapshot.md#t10-acceptance-matrix)
+adds app state serialization and optional root restore paths without changing
+translated routines. Rebind those composition dependencies when this queued
+certification is admitted. T10 operational continuation proofs do not discharge
+original-ROM node/control/material/final-package obligations.

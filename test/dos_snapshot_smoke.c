@@ -84,6 +84,18 @@ int main(int argc,char **argv)
     mysmb_dos16_root_step(&root);
     if(root.game.frame_number!=i+1U || host.resets!=1U)return 12;
     sprintf(path,"%s/mysmb.log",argv[1]);remove(path);
+    /* Exercise the documented delete/rename interruption boundary: after
+     * deletion,a missing candidate cannot be renamed and the old slot is gone.
+     * This is a limitation receipt,not a claim of DOS atomic replacement. */
+    sprintf(path,"%s/mysmb.sav",argv[1]);
+    {
+        FILE *file;
+        char pending[300];
+        file=fopen(path,"wb");if(!file)return 13;
+        fputc(1,file);fclose(file);sprintf(pending,"%s/missing.tmp",argv[1]);
+        if(mysmb_dos16_snapshot_replace(pending,path))return 14;
+        file=fopen(path,"rb");if(file){fclose(file);return 15;}
+    }
     mysmb_dos16_root_shutdown(&root);
     return 0;
 }

@@ -1,25 +1,8 @@
 # Project Status
 
-## M3 T10 S4 Packet
+**Idle.**
 
-| Field | Required record |
-| --- | --- |
-| Identifier Mode | Continuation:M3 T10 S4 P1 complete;S5 next,T10 open. |
-| Admission And Approval | Owner automatic subsequent S execution after S3 reviewed closure. |
-| Objective | DOS P/O binding,EXE-directory storage,bounded restore and redraw,input/clock reset. |
-| Non-goals | No game semantic repair,ROM credit,DOS sound hardware or emulator investigation. |
-| Reference Baseline | Historical1992/1992;local1991/1992 nodes,4260/4261 feasible controls;42/952facets,M2 incomplete. |
-| Candidate Proposal | [T10 quick snapshot](../proposals/shared-io-quick-snapshot.md#s4-admission). |
-| Files And ABI Surface | DOS root,physical keyboard/device/path adapters,focused tests/build. Estimate10-13files,350-550lines. |
-| Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Documentation,source policy and admitted proposal. |
-| Verification | Key edges,root full-state restore/cache/failure,actual DOSBox P/O and EXE-directory route,originalDOS16 build,x86/x64 focused tests,purity/governance,3products. |
-| Expected Markers | Scope[],expectedMatches[],new0;all retained ROM counts unchanged. |
-| Asset Needs | Existing owner-local ROM/OpenNT16 tools and authorized DOSBox runtime;local unreviewed outputs confined to ignored build/assets,never committed. |
-| Reporting Requirements | Before/after size,tests,3EXEs/local commit,no remote;automatic S5 admission. |
-| Stop Conditions | Unsafe DOS stack/segment use,partial restore or wrong directory prevents closure. |
-| Exit Criteria | Actual DOS P/O resumes without Enter;paused cache and all failure paths preserve running state;audio-unavailable capability remains explicit. |
-| Original Owner Request | Save/load feature,automatic S continuation to verified T closure. |
-| Similar-Issue Sweep | All make/break/typematic keys,environment path bounds,staging memory,input/clock reset and audio-absent cross-host disposition. |
+M3 T10 quick snapshot is closed;no next T admitted. [Acceptance matrix](../history/M3-T10-shared-io-quick-snapshot.md#t10-acceptance-matrix).
 
 ## Current Technical Baseline
 
@@ -34,15 +17,11 @@
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - Remaining verification is the last [queue](QUEUE.md) candidate:
   [remaining certification](../proposals/m2/remaining-current-certification.md).
-  M3 T9 closed;quick snapshot and text-frame candidates precede queued verification.
+  M3 T9/T10 closed;text-frame/switching is queue head before queued verification.
 - Existing P144 three products/original DOS16 compile-link receipts retained;
   P153 makes no game-code change and does not refresh products.
 
 ## Compact closure status
-
-M3 T9 S2 P1:Win32 IO consumers and shared composition glue;14 source/test/build files,+253/-121,9tests eachwidth,1024ticks/752640PCM samples eachwidth zero old/current diff,OpenNT16 compile/link and3localEXEs. No game logic/node credit,push unavailable without remote.
-
-M3 T9 S3 P1:DOS neutral IO/64-color palette/scaling/resource and lifecycle repair;18 source/test/build files,+432/-292,11tests eachwidth,OpenNT16 link and scoped SoftPC graphic startup/Esc restore,3localEXEs. No game-node credit,no remote.
 
 M3 T9 S4 P1:DOS PIT/clock pacing and explicit audio capability;16 source/test/build files,+161/-20,13tests eachwidth,65536 cycle positions,OpenNT16 build/scoped graphic probe,3localEXEs,no node credit/no remote.
 
@@ -57,3 +36,5 @@ M3 T10 S2 P1:shared file transaction,stdio adapter andWin32/DOS replacement;4foc
 M3 T10 S3 P1:Win32 P/O and game/audio state binding;7focused tests eachwidth,controlled hidden-root pause/title-load and PCM continuation,originalDOS16 link/3products. ZeroROMcredit,no remote.
 
 M3 T10 S4 P1:DOS P/O/path/restore binding;10focused tests eachwidth,originalDOS16 link/actual41secondDOSBox save-move-load/Esc route,3products. Audio renderer unavailable;zeroROMcredit/no remote.
+
+M3 T10 S5 P1/T closure:16tests eachwidth,240frames/176400samples uninterrupted restore,2cross-width direct16223040byte comparisons and actualDOSBox title-seed/pause/save/load/Esc. Three products retained/fresh DOS link;host floating/audio-absent/DOS rename limits explicit;zeroROMcredit/no remote.
