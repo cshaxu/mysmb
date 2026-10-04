@@ -48,7 +48,10 @@ mysmb_u8 mysmb_objects_draw_spiny(struct mysmb_game *g, mysmb_u8 n)
         q=(mysmb_u8)(o+r*8U); l=(mysmb_u8)(g->ram[0x0202U+q]&0xa3U);
         g->ram[0x0202U+q]=l; g->ram[0x0206U+q]=(mysmb_u8)(l|0xc0U);
     }
-    hide(g,o,bits); return egg!=0U?2U:1U;
+    hide(g,o,bits);
+    mysmb_text_observer_record(g,MYSMB_TEXT_OBSERVE_ENEMY,18U,n,
+        (mysmb_u8)((egg!=0U?0x30U:0x24U)+ani*6U),dir,o,6U,255U);
+    return egg!=0U?2U:1U;
 }
 
 

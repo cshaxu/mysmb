@@ -7,6 +7,7 @@
 #include "app/game_snapshot.h"
 #include <stdio.h>
 #include <string.h>
+#include <stddef.h>
 #ifdef MYSMB_LOCAL_TITLE
 #include "game/area.h"
 #include "smb1_local_rom.h"
@@ -59,6 +60,54 @@ static int compare_draw(void (*draw)(struct mysmb_game *,mysmb_u8),
     return 1;
 }
 
+static void enemy_draw(struct mysmb_game *g,unsigned char id)
+{
+    switch(id) {
+    case 0U:case 2U:case 3U:(void)mysmb_objects_draw_koopa_buzzy(g,0U);break;
+    case 5U:(void)mysmb_objects_draw_hammer_bro(g,0U);break;
+    case 6U:mysmb_objects_draw_goomba(g,0U);break;
+    case 7U:(void)mysmb_objects_draw_bloober(g,0U);break;
+    case 8U:mysmb_objects_draw_bullet_bill(g,0U);break;
+    case 10U:case 11U:(void)mysmb_objects_draw_cheep_cheep(g,0U);break;
+    case 12U:(void)mysmb_objects_draw_podoboo(g,0U);break;
+    case 13U:mysmb_objects_draw_piranha(g,0U);break;
+    case 18U:(void)mysmb_objects_draw_spiny(g,0U);break;
+    default:(void)mysmb_objects_draw_normal_enemy_graphics(g,0U);break;
+    }
+}
+
+static int enemy_case(unsigned char id,unsigned char state,unsigned char phase)
+{
+    struct mysmb_text_actor_receipt receipt;
+    unsigned short i;
+    mysmb_game_initialize(&plain);
+    for(i=0U;i<64U;++i)plain.ram[0x0200U+i*4U]=0xf8U;
+    plain.ram[8U]=0U;plain.ram[0x000fU]=1U;plain.ram[0x0016U]=id;
+    plain.ram[0x001eU]=state;plain.ram[9U]=phase;
+    plain.ram[0x0046U]=1U;plain.ram[0x0087U]=80U;
+    plain.ram[0x00cfU]=96U;plain.ram[0x00b6U]=1U;
+    plain.ram[0x00a0U]=0x80U;plain.ram[0x06e5U]=64U;
+    plain.ram[0x071aU]=0U;plain.ram[0x071bU]=0U;
+    plain.ram[0x071cU]=0U;plain.ram[0x071dU]=255U;
+    plain.ram[0x03aeU]=80U;plain.ram[0x03b9U]=96U;
+    plain.ram[0x036aU]=id==45U?(phase==0U?1U:2U):0U;
+    plain.ram[0x070eU]=id==50U?(unsigned char)(phase/4U):0U;
+    plain.visible_ppu_mask=0x1eU;
+    observed=plain;mysmb_text_observer_enable(&observed,1U);
+    enemy_draw(&observed,id);enemy_draw(&plain,id);
+    CHECK(memcmp(&observed,&plain,offsetof(struct mysmb_game,text_observer))==0);
+    CHECK(observed.text_observer.producer.count==1U);
+    mysmb_game_submit_oam(&observed);before=observed;
+    CHECK(mysmb_text_elements_build(0,0U,9U,&text));
+    CHECK(mysmb_text_actor_scene_draw(&observed,&text,&receipt));
+    if(receipt.drawn!=1U || receipt.unsupported!=0U)
+        fprintf(stderr,"enemy fixture id=%u state=%u phase=%u drawn=%u unsupported=%u\n",
+            id,state,phase,receipt.drawn,receipt.unsupported);
+    CHECK(receipt.drawn==1U && receipt.unsupported==0U);
+    CHECK(memcmp(&observed,&before,sizeof(observed))==0);
+    return 0;
+}
+
 int main(int argc,char **argv)
 {
     struct mysmb_input input;
@@ -69,6 +118,8 @@ int main(int argc,char **argv)
     unsigned int i,j,player,enemy,running,text_actors;
     unsigned long background_objects,background_unknown;
     FILE *preview;
+    static const unsigned char enemy_ids[17]={0U,2U,3U,5U,6U,7U,8U,10U,11U,
+        12U,13U,18U,17U,45U,50U,51U,53U};
 
     memset(&observed,0,sizeof(observed));
     observed.ram[0x0200U]=100U; observed.ram[0x0201U]=1U;
@@ -134,6 +185,9 @@ int main(int argc,char **argv)
     CHECK(compare_draw(mysmb_objects_draw_hammer,MYSMB_TEXT_OBSERVE_HAMMER)==0);
     CHECK(compare_draw(mysmb_objects_draw_bouncing_block,MYSMB_TEXT_OBSERVE_BLOCK)==0);
     CHECK(compare_draw(mysmb_objects_draw_brick_chunks,MYSMB_TEXT_OBSERVE_CHUNKS)==0);
+    for(i=0U;i<17U;++i)for(j=0U;j<3U;++j)
+        CHECK(enemy_case(enemy_ids[i],j==0U?0U:j==1U?4U:5U,
+            (unsigned char)(j*4U))==0);
     bind(&observed);bind(&plain);
     mysmb_text_observer_enable(&observed,1U);
     mysmb_game_snapshot_fingerprint(&observed,fingerprint);

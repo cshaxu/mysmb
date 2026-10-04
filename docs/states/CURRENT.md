@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M3 T11 S2 active;P3 committed;P4 semantic background/HUD assembly active within S2. |
+| Identifier Mode | Continuation:M3 T11 S2 active;P5 actor-family/pose part complete;remaining scene/restore obligations stay within S2. |
 | Admission And Approval | Automatic next-S admission under owner mandate after S1 reviewed local commit. |
 | Objective | Connect isolated text elements to existing draw decisions and committed visible scenes,with explicit lifetime/restore handling. |
 | Non-goals | No gameplay rewrite,ROM credit or platform Tab binding;those presenters remain S4/S5. |
 | Reference Baseline | Historical1992/1992;local1991/1992nodes,4260/4261feasible controls;42/952facets,M2 incomplete. |
 | Candidate Proposal | [T11 S2](../proposals/colored-ascii-text-frame-gameplay.md#s2-admission). |
-| Files And ABI Surface | game presentation and minimal observation sites,scene/restore binding,focused tests/build;amended estimate25-35files,1200-2000lines after scene assembly. P1 embeds optional bounded observer buffers;unchanged snapshot restore invalidates them. Remaining loaded-text/all-family/geometry coverage stays open within S2. |
+| Files And ABI Surface | game presentation and minimal observation sites,scene/restore binding,focused tests/build;amended estimate40-50files,1200-2000lines after dedicated-owner census. P1 embeds optional bounded observer buffers;unchanged snapshot restore invalidates them. Remaining loaded-text/all-family/geometry coverage stays open within S2. |
 | Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Documentation and source policy. |
 | Verification | Enabled/disabled observation original-state/OAM/VRAM/audio/pixel equality;visible phase,ownership/clipping,background/HUD,restore;both native widths,originalDOS16 and3products,purity/governance. |
 | Expected Markers | Scope[],expectedMatches[],actualMatches[],new0;all ROM counters retained. |
@@ -87,3 +87,12 @@ Three products refreshed,byte-identical to P3;its actualDOSBox receipt retained.
 original core/frame/pixel differences and no presentation-induced mutation.
 Workspace2400bytes caller-owned/far. Residual title/metatile/actor/priority/restore
 obligations are named in P4 receipt;S2 remains active,no host text/Tab yet.
+
+P5:36authored element kinds,14player poses and selected enemy variants;
+20/21gfx files directly observed,Bowser delegates to the normal-owner observer.
+51controlled enemy draw cases retain original state/OAM;bothwidths seven tests,
+1000-step twin output equality and999text-frame cross-width comparison pass.
+StrictC90,originalDOS16 far ABI/link andactualDOSBox route pass;three refreshed
+products329103/398183/412749bytes. Observer5253bytes,DGROUP45600bytes unchanged.
+S2 stays open:mixed player parts,segmented geometry/priority,title/misc owners,
+residual metatiles and immediate snapshot continuity;no host text/Tab yet.

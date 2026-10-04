@@ -115,6 +115,8 @@ mysmb_u8 mysmb_objects_draw_bloober(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[MYSMB_BLOOBER_Y_HIGH + slot] == 2U) {
         game->ram[MYSMB_BLOOBER_FLAG + slot] = 0U;
     }
+    mysmb_text_observer_record(game,MYSMB_TEXT_OBSERVE_ENEMY,7U,slot,
+        tiles==second_frame?0x42U:0x3cU,direction,oam,6U,255U);
     return 1U;
 }
 

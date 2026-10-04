@@ -122,7 +122,7 @@ static void mysmb_draw_goombas_mask_impl(struct mysmb_game *game,
             game->ram[0x0207U + row_offset] = (mysmb_u8)(x + 8U);
         }
         mysmb_text_observer_record(game, MYSMB_TEXT_OBSERVE_ENEMY, 6U, slot,
-            defeated, direction, offset, 6U, 6U);
+            defeated!=0U?0x8aU:0x54U, direction, offset, 6U,255U);
     }
 }
 

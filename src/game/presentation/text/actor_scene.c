@@ -33,13 +33,72 @@ static int player_pose(const struct mysmb_game *game,
     base=(unsigned short)(0x6e07U+(item->source_size!=0U?8U:0U));
     if(game->area_prg==0 || game->area_prg_size<base+8U)return 0;
     e->kind=item->source_size!=0U?MYSMB_TEXT_PLAYER_SMALL:MYSMB_TEXT_PLAYER_LARGE;
+    if((item->identity&MYSMB_TEXT_PLAYER_DEATH_FLAG)!=0U) {
+        e->kind=MYSMB_TEXT_PLAYER_SMALL;e->pose=MYSMB_TEXT_DEAD;return 1;
+    }
     if(item->graphics==game->area_prg[base+2U]) {e->pose=MYSMB_TEXT_STAND;return 1;}
     if(item->graphics==game->area_prg[base]) {e->pose=MYSMB_TEXT_JUMP;return 1;}
     for(phase=0U;phase<3U;++phase)
         if(item->graphics==(unsigned char)(game->area_prg[base+4U]+phase*8U)) {
-            e->pose=MYSMB_TEXT_RUN;return 1;
+            e->pose=phase==0U?MYSMB_TEXT_RUN:phase==1U?
+                MYSMB_TEXT_RUN_SECOND:MYSMB_TEXT_RUN_THIRD;return 1;
         }
+    if(item->graphics==game->area_prg[base+3U]) {e->pose=MYSMB_TEXT_SKID;return 1;}
+    if(item->graphics==game->area_prg[base+6U]) {e->pose=MYSMB_TEXT_CROUCH;return 1;}
+    if(item->graphics==game->area_prg[0x6e0eU]) {e->pose=MYSMB_TEXT_THROW;return 1;}
+    for(phase=0U;phase<3U;++phase)
+        if(item->graphics==(unsigned char)(game->area_prg[base+1U]+phase*8U)) {
+            e->pose=phase==0U?MYSMB_TEXT_SWIM:phase==1U?
+                MYSMB_TEXT_SWIM_SECOND:MYSMB_TEXT_SWIM_THIRD;return 1;
+        }
+    for(phase=0U;phase<2U;++phase)
+        if(item->graphics==(unsigned char)(game->area_prg[base+5U]+phase*8U)) {
+            e->pose=phase==0U?MYSMB_TEXT_CLIMB:MYSMB_TEXT_CLIMB_SECOND;return 1;
+        }
+    if(item->graphics==0xb8U || item->graphics==0xc0U) {
+        e->kind=MYSMB_TEXT_PLAYER_SMALL;e->pose=MYSMB_TEXT_STAND;return 1;
+    }
     return 0;
+}
+
+static int enemy_pose(const struct mysmb_text_observation *item,
+    struct mysmb_text_element *e)
+{
+    unsigned char g;
+    g=item->graphics;
+    /* Selected normal-owner graphics code also distinguishes Bowser halves
+     * and jumpsprings from their raw object IDs. Dedicated receipts use255. */
+    if(item->source_size==22U)e->kind=MYSMB_TEXT_BOWSER_FRONT;
+    else if(item->source_size==23U)e->kind=MYSMB_TEXT_BOWSER_REAR;
+    else if(item->source_size>=24U && item->source_size<=26U)e->kind=MYSMB_TEXT_SPRING;
+    else switch(item->identity) {
+    case 0U:case 1U:case 3U:case 4U:case 9U:case 14U:case 15U:case 16U:
+        e->kind=(g>=0x5aU && g<=0x78U)?MYSMB_TEXT_SHELL:MYSMB_TEXT_KOOPA;break;
+    case 2U:e->kind=(g>=0x5aU && g<=0x84U)?MYSMB_TEXT_SHELL:MYSMB_TEXT_BEETLE;break;
+    case 5U:e->kind=MYSMB_TEXT_HAMMER_BRO;break;
+    case 6U:e->kind=g==0x8aU?MYSMB_TEXT_GOOMBA_FLAT:MYSMB_TEXT_GOOMBA;break;
+    case 7U:e->kind=MYSMB_TEXT_BLOOBER;break;
+    case 8U:case 51U:e->kind=MYSMB_TEXT_BULLET;break;
+    case 10U:case 11U:case 20U:e->kind=MYSMB_TEXT_FISH;break;
+    case 12U:e->kind=MYSMB_TEXT_PODOBOO;break;
+    case 13U:e->kind=MYSMB_TEXT_PIRANHA;break;
+    case 17U:e->kind=MYSMB_TEXT_LAKITU;break;
+    case 18U:e->kind=g==0x30U || g==0x36U?MYSMB_TEXT_EGG:MYSMB_TEXT_SPINY;break;
+    case 53U:e->kind=MYSMB_TEXT_RETAINER;break;
+    default:return 0;
+    }
+    e->pose=(item->entries[2U]&0x80U)!=0U?MYSMB_TEXT_INVERTED:
+        (g==0x06U || g==0x12U || g==0x1eU || g==0x2aU || g==0x36U ||
+         g==0x42U || g==0x4eU || g==0xaeU || g==0xbaU || g==0xc6U ||
+         g==0xdeU || g==0xe4U)?MYSMB_TEXT_SECOND:0U;
+    if(e->kind==MYSMB_TEXT_SHELL && (g==0x5aU || g==0x60U || g==0x84U))
+        e->pose=MYSMB_TEXT_INVERTED;
+    if(e->kind==MYSMB_TEXT_RETAINER && g==0xa2U)e->pose=MYSMB_TEXT_SECOND;
+    if(e->kind==MYSMB_TEXT_SPRING && item->source_size!=24U)e->pose=MYSMB_TEXT_SECOND;
+    /* Right-column vertical flip is the egg's authored symmetry,not a
+     * vertically inverted whole egg. A flat Goomba stays flat. */
+    if(e->kind==MYSMB_TEXT_EGG || e->kind==MYSMB_TEXT_GOOMBA_FLAT)e->pose=0U;
+    return 1;
 }
 
 static int choose(const struct mysmb_game *game,
@@ -49,11 +108,7 @@ static int choose(const struct mysmb_game *game,
     switch(item->family) {
     case MYSMB_TEXT_OBSERVE_PLAYER: return player_pose(game,item,e);
     case MYSMB_TEXT_OBSERVE_ENEMY:
-        if(item->identity!=6U ||
-            (item->graphics!=0U && item->graphics!=0x54U))return 0;
-        /* Defeated/inverted variants need their own authored templates. */
-        if((item->entries[2U]&0x80U)!=0U)return 0;
-        e->kind=MYSMB_TEXT_GOOMBA;return 1;
+        return enemy_pose(item,e);
     case MYSMB_TEXT_OBSERVE_POWERUP:
         if(item->identity>3U)return 0;
         e->kind=item->identity==1U?MYSMB_TEXT_FLOWER:
@@ -63,8 +118,9 @@ static int choose(const struct mysmb_game *game,
     case MYSMB_TEXT_OBSERVE_EXPLOSION: e->kind=MYSMB_TEXT_EXPLOSION;return 1;
     case MYSMB_TEXT_OBSERVE_HAMMER: e->kind=MYSMB_TEXT_HAMMER;return 1;
     case MYSMB_TEXT_OBSERVE_BLOCK:
-        if(item->identity==0xc4U)return 0;
-        e->kind=MYSMB_TEXT_BRICK;return 1;
+        e->kind=item->identity==0xc4U?MYSMB_TEXT_EMPTY_BLOCK:MYSMB_TEXT_BRICK;return 1;
+    case MYSMB_TEXT_OBSERVE_FLAME:
+        e->kind=MYSMB_TEXT_FLAME;e->pose=(item->graphics&0x80U)!=0U?1U:0U;return 1;
     case MYSMB_TEXT_OBSERVE_CHUNKS: e->kind=MYSMB_TEXT_CHUNK;return 1;
     case MYSMB_TEXT_OBSERVE_VINE: e->kind=MYSMB_TEXT_VINE;return 1;
     case MYSMB_TEXT_OBSERVE_PLATFORM: e->kind=MYSMB_TEXT_PLATFORM;return 1;

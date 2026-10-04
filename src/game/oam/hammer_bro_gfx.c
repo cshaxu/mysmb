@@ -33,6 +33,9 @@ mysmb_u8 mysmb_objects_draw_hammer_bro(struct mysmb_game *g,mysmb_u8 n)
         g->ram[0x0204U+q]=g->ram[0x0200U+q];g->ram[0x0203U+q]=g->ram[RX+n];g->ram[0x0207U+q]=(mysmb_u8)(g->ram[RX+n]+8U);}
     if((st&0x20U)!=0U){for(r=0U;r<3U;++r){q=(mysmb_u8)(o+r*8U);g->ram[0x0202U+q]|=0x80U;g->ram[0x0206U+q]|=0x80U;}
         sl=g->ram[0x0201U+o];sr=g->ram[0x0205U+o];g->ram[0x0201U+o]=g->ram[0x0211U+o];g->ram[0x0205U+o]=g->ram[0x0215U+o];g->ram[0x0211U+o]=sl;g->ram[0x0215U+o]=sr;}
-    hide(g,o,b);return 1U;
+    hide(g,o,b);
+    mysmb_text_observer_record(g,MYSMB_TEXT_OBSERVE_ENEMY,5U,n,
+        (mysmb_u8)(0xa8U+frame*6U),g->ram[D+n],o,6U,255U);
+    return 1U;
 }
 

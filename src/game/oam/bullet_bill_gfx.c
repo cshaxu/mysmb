@@ -77,6 +77,8 @@ void mysmb_objects_draw_bullet_bill(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[0x0203U + row_offset] = x;
         game->ram[0x0207U + row_offset] = (mysmb_u8)(x + 8U);
     }
+    mysmb_text_observer_record(game,MYSMB_TEXT_OBSERVE_ENEMY,
+        game->ram[0x0016U+slot],slot,0xeaU,direction,offset,6U,255U);
 }
 
 

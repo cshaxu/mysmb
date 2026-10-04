@@ -148,6 +148,15 @@ mysmb_u8 mysmb_objects_draw_koopa_buzzy(struct mysmb_game *game, mysmb_u8 slot)
             (mysmb_u8)(game->ram[MYSMB_NORMAL_REL_X] + 8U);
     }
     mysmb_normal_apply_offscreen(game, oam, offscreen);
+    /* Capture the selected convenience table's reviewed graphics offset. */
+    mysmb_text_observer_record(game,MYSMB_TEXT_OBSERVE_ENEMY,id,slot,
+        (mysmb_u8)(id==2U?
+            (tiles==buzzy_frame1?0U:tiles==buzzy_frame2?6U:
+             tiles==buzzy_upright?0x7eU:0x84U):
+            (tiles==koopa_frame1?0x0cU:tiles==koopa_frame2?0x12U:
+             tiles==koopa_upside1?0x5aU:tiles==koopa_upside2?0x60U:
+             tiles==koopa_upright1?0x66U:0x6cU)),
+        direction,oam,6U,255U);
     return 1U;
 }
 /* ROM $e73e EnemyGraphicsTable: 258 bytes. DrawEnemyObjRow's right load

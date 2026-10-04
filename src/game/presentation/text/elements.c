@@ -8,16 +8,68 @@ struct mysmb_text_art {
     mysmb_io_u8 height;
 };
 
-static const struct mysmb_text_art small[3] = {
+static const struct mysmb_text_art small[14] = {
     { " _M_ " " /o> " "/|_|\\", 5U, 3U },
     { " _M_ " " /o> " " /|_>", 5U, 3U },
-    { " _M_ " "</o> " " /|\\ ", 5U, 3U }
+    { " _M_ " "</o> " " /|\\ ", 5U, 3U },
+    { " _M_ " " /o> " "<_|/ ", 5U, 3U },
+    { " _M_ " "</o>~" " ~|~ ", 5U, 3U },
+    { " _M| " " /o| " " /|| ", 5U, 3U },
+    { " _M_ " "(/o>)" " /_\\ ", 5U, 3U },
+    { " _M_ " " /o>>" " /|\\ ", 5U, 3U },
+    { " _M_ " "<x_x>" " /\\  ", 5U, 3U },
+    { " _M_ " " /o> " "<_|/ ", 5U, 3U },
+    { " _M_ " " /o> " " /|\\ ", 5U, 3U },
+    { " _M_ " " /o>~" "~ |~ ", 5U, 3U },
+    { " _M_ " "</o> " " ~|~~", 5U, 3U },
+    { " _M| " "</o| " " ||/ ", 5U, 3U }
 };
-static const struct mysmb_text_art large[3] = {
+static const struct mysmb_text_art large[14] = {
     { " _M_ " " /o> " " |_| " " /|\\ " " |#| " " / \\ " "/_ _\\", 5U, 7U },
     { " _M_ " " /o> " " |_| " " /|_>" " |#| " " /\\  " "/  \\_", 5U, 7U },
-    { " _M_ " " /o> " "<|_|>" " |#| " " /|\\ " " / \\ " "     ", 5U, 7U }
+    { " _M_ " " /o> " "<|_|>" " |#| " " /|\\ " " / \\ " "     ", 5U, 7U },
+    { " _M_ " " /o> " " |_| " "<_|\\ " " |#| " "  /| " "<_ / ", 5U, 7U },
+    { " _M_ " " /o> " "<|_|~" " |#| " " ~|~ " " ~ ~ " "     ", 5U, 7U },
+    { " _M| " " /o| " " |_| " " /|| " " |#| " " /|| " " ||/ ", 5U, 7U },
+    { " _M_ " " /o> " "(_#_)" " /_\\ ", 5U, 4U },
+    { " _M_ " " /o>>" " |_| " " |#| " " /|\\ " " / \\ " "/_ _\\", 5U, 7U },
+    { " _M_ " " x_x " "<|_|>" " |#| " " /|\\ " " /\\  " "     ", 5U, 7U },
+    { " _M_ " " /o> " " |_| " "<_|\\ " " |#| " "  /| " "<_ / ", 5U, 7U },
+    { " _M_ " " /o> " " |_| " " /|\\ " " |#| " " /|  " "/ \\_ ", 5U, 7U },
+    { " _M_ " " /o> " " |_|~" " |#| " "~ |~ " " ~ ~ " "     ", 5U, 7U },
+    { " _M_ " " /o> " "<|_| " " |#| " " ~|~~" "~ ~  " "     ", 5U, 7U },
+    { " _M| " " /o| " "<|_| " " ||/ " " |#| " " ||/ " " /|| ", 5U, 7U }
 };
+
+static const struct mysmb_text_art actors[19][2] = {
+    {{"/___\\",5U,1U},{"/___\\",5U,1U}},
+    {{" /--\\" "(___)" " /  \\" ,5U,3U},{" /--\\" "(___)" "  /\\ ",5U,3U}},
+    {{"  __ " " /o> " "(###)" " / \\ " "/_ _\\",5U,5U},
+     {"  __ " " /o> " "(###)" " /|  " "/ \\_ ",5U,5U}},
+    {{" /--\\" "(oo_)" " /  \\" ,5U,3U},{" /--\\" "(oo_)" "  /\\ ",5U,3U}},
+    {{" /^^\\" "(o_o)" " ||| " " /|\\ ",5U,4U},{" /^^\\" "(o_o)" " /|\\ " " ||| ",5U,4U}},
+    {{" ___ " "<o==]" " --- ",5U,3U},{" ___ " "<o==]" " --- ",5U,3U}},
+    {{" /\\  " "<o )>" " \\/  ",5U,3U},{" /\\  " "<o)> " " \\/  ",5U,3U}},
+    {{" /\\ " "(oo)" " \\/ ",4U,3U},{" /\\ " "(oo)" " \\/ ",4U,3U}},
+    {{"\\/\\/ " "(o_o)" " \\|/ " "  |  " "  |  ",5U,5U},
+     {" /^^\\" "<o_o>" " \\|/ " "  |  " "  |  ",5U,5U}},
+    {{" _H_ " " /o> " "[##] " " /|\\ " " / \\ ",5U,5U},
+     {" _H_ " " /o>>" "[##] " " /|  " "/_ \\ ",5U,5U}},
+    {{"/^^^^" "(o##)" " /  \\" ,5U,3U},{"/^^^^" "(o##)" "  /\\ ",5U,3U}},
+    {{"/^^\\" "(oo)" "\\__/",4U,3U},{"/^^\\" "(oo)" "\\__/",4U,3U}},
+    {{" _L_ " "(o_o)" "(~~~)" " \\_/ ",5U,4U},
+     {" _L_ " "(o_o)" "(~~~)" " /_/ ",5U,4U}},
+    {{" /^^\\" "<o_/>" " |##|" " /|| " " / \\ ",5U,5U},
+     {" /^^\\" "<o__>" " |##|" " /|| " " / \\ ",5U,5U}},
+    {{"/^^^^" "|###>" "|### " " ||\\ " " / \\ ",5U,5U},
+     {"/^^^^" "|###>" "|### " " /|| " " / \\ ",5U,5U}},
+    {{"<<~~~*>",7U,1U},{"<*~~~>>",7U,1U}},
+    {{" _T_ " "(o_o)" " /|\\ " " / \\ ",5U,4U},
+     {" _P_ " "(o_o)" " /|\\ " " /_\\ ",5U,4U}},
+    {{"[===]" " /\\  " "[===]",5U,3U},{"[===]" "[===]",5U,2U}},
+    {{"+---+" "|   |" "+---+",5U,3U},{"+---+" "|   |" "+---+",5U,3U}}
+};
+static const struct mysmb_text_art goomba_second={" /^^\\" "(o_o)" " /|\\ ",5U,3U};
 static const struct mysmb_text_art scenery[15] = {
     { " /^^\\" "(o_o)" "/   \\", 5U, 3U },
     { " /^^\\" "(o_o)" "  |  ", 5U, 3U },
@@ -42,6 +94,9 @@ static const struct mysmb_text_art *art_for(
 {
     if (element->kind == MYSMB_TEXT_PLAYER_SMALL) return &small[element->pose];
     if (element->kind == MYSMB_TEXT_PLAYER_LARGE) return &large[element->pose];
+    if (element->kind >= MYSMB_TEXT_GOOMBA_FLAT)
+        return &actors[element->kind-MYSMB_TEXT_GOOMBA_FLAT][element->pose==1U?1U:0U];
+    if (element->kind==MYSMB_TEXT_GOOMBA && element->pose==1U)return &goomba_second;
     return &scenery[element->kind - MYSMB_TEXT_GOOMBA];
 }
 
@@ -67,9 +122,11 @@ static mysmb_io_u8 mirror(mysmb_io_u8 c)
 
 static int valid_element(const struct mysmb_text_element MYSMB_IO_FAR *e)
 {
-    return e != 0 && e->kind < MYSMB_TEXT_KIND_COUNT && e->pose <= 2U &&
+    return e != 0 && e->kind < MYSMB_TEXT_KIND_COUNT &&
         e->face_left <= 1U && e->foreground <= 15U && e->background <= 15U &&
-        (e->kind < MYSMB_TEXT_GOOMBA || e->pose == 0U);
+        (e->kind < MYSMB_TEXT_GOOMBA ? e->pose<MYSMB_TEXT_PLAYER_POSES :
+         e->kind==MYSMB_TEXT_GOOMBA || e->kind>=MYSMB_TEXT_GOOMBA_FLAT ?
+            e->pose<=2U:e->pose==0U);
 }
 
 int mysmb_text_element_draw(
@@ -82,6 +139,8 @@ int mysmb_text_element_draw(
     mysmb_io_u8 row;
     mysmb_io_u8 column;
     mysmb_io_u8 glyph;
+    mysmb_io_u8 row_left,row_right;
+    mysmb_io_u16 source_row;
     long x;
     long y;
     long destination_x;
@@ -92,19 +151,29 @@ int mysmb_text_element_draw(
         x = project(element->x, 80L, 256L);
         y = project(element->y, 50L, 240L);
         for (row = 0U; row < art->height; ++row) {
+            source_row=(mysmb_io_u16)((element->kind>=MYSMB_TEXT_GOOMBA &&
+                element->pose==MYSMB_TEXT_INVERTED?art->height-1U-row:row)*art->width);
+            row_left=0U;row_right=art->width;
+            while(row_left<art->width && art->cells[source_row+row_left]==' ')row_left++;
+            while(row_right>row_left && art->cells[source_row+row_right-1U]==' ')row_right--;
             destination_y = y + row;
             if (destination_y < 0L || destination_y >= 50L) continue;
             for (column = 0U; column < art->width; ++column) {
                 destination_x = x + column;
                 if (destination_x < 0L || destination_x >= 80L) continue;
-                source = (mysmb_io_u16)(row * art->width +
+                source = (mysmb_io_u16)(source_row +
                     (element->face_left != 0U ? art->width - 1U - column : column));
                 glyph = (mysmb_io_u8)art->cells[source];
-                if (glyph == ' ') continue;
+                if (source-source_row<row_left || source-source_row>=row_right)continue;
                 if (filter != 0 && !filter(context,
                     (mysmb_io_u16)destination_x,
                     (mysmb_io_u16)destination_y)) continue;
                 if (element->face_left != 0U) glyph = mirror(glyph);
+                if(element->kind>=MYSMB_TEXT_GOOMBA && element->pose==MYSMB_TEXT_INVERTED) {
+                    if(glyph=='^')glyph='v';
+                    else if(glyph=='/')glyph='\\';
+                    else if(glyph=='\\')glyph='/';
+                }
                 cell = (mysmb_io_u16)(destination_y * 80L + destination_x);
                 frame->cells[cell].character = glyph;
                 frame->cells[cell].foreground = element->foreground;

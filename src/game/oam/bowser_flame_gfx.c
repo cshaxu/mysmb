@@ -49,4 +49,6 @@ void mysmb_objects_draw_bowser_flame(struct mysmb_game *game, mysmb_u8 slot)
     if ((bits & 2U) != 0U) game->ram[0x0200U + offset + 8U] = 0xf8U;
     if ((bits & 4U) != 0U) game->ram[0x0200U + offset + 4U] = 0xf8U;
     if ((bits & 8U) != 0U) game->ram[0x0200U + offset] = 0xf8U;
+    mysmb_text_observer_record(game,MYSMB_TEXT_OBSERVE_FLAME,
+        game->ram[0x0016U+slot],slot,game->ram[1U],1U,offset,3U,0U);
 }

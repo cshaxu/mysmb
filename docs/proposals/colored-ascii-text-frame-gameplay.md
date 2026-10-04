@@ -465,3 +465,63 @@ writers;segmented parts,background/sprite priority and immediate snapshot
 observer continuity. The current image is a development composition preview,
 not a playable host text mode. No roots enable it yet;Tab remains S4/S5.
 ROM node/edge/facet counters and remaining M2 certification scope are unchanged.
+
+### S2 P5 selected actor-family scope
+
+Extend authored player action/phase templates and enemy/shell/defeated variants;
+observe the remaining dedicated selected graphics paths without rerunning their
+selectors. Bowser delegates to the existing normal-owner observer;capture its
+selected front/rear code there. Include the intermediate-player draw. Estimate
+14-18source/test files,400-750lines. Tests compare disabled/enabled original
+draw results across families/phases and compose the selected receipts read-only.
+The existing reviewed source/immutable local resource provenance and containment
+apply;no table/CHR bytes are imported. Dormant template support is not a claim
+of runtime host text mode. Title/geometry/priority/restore stay inside S2.
+
+### S2 P5 review receipt
+
+Eighteen source/test files change294added/24removed lines. Selected actor
+coverage expands to36authored element kinds and14player pose
+entries,including separate running/swimming/climbing phases,skid,crouch,throw
+and death. New enemy artwork distinguishes walking turtles,shells,beetles,
+flat/inverted Goombas,aquatic enemies,Podoboo,Piranha,Hammer Bro,Spiny/egg,
+Lakitu,Bowser front/rear/flame,retainer and jumpspring/empty-block variants.
+Interior spaces between an authored row's outlines receive the body fill;
+external whitespace stays transparent. Vertical inversion uses authored
+character geometry,not bitmap conversion.
+
+The original player draw's death branch has an explicit latched flag,because
+graphics offsets alone alias other actions. Convenience enemy observers
+record their already-selected table reference as a reviewed graphics offset;
+they do not read a second animation clock or repeat the selector. Intermediate
+player output is now observed. The gfx-file census is20/21direct observation
+sites;BowserGfxHandler delegates to EnemyGfxHandler,whose selected front/rear
+code is already recorded. This is a site census,not whole-game animation proof.
+Across S2,40source/test/build files are now involved;the previous25-35forecast
+becomes40-50 because dedicated owners and isolated scene tests cannot be
+silently counted as one generic enemy integration.
+
+Both widths pass seven focused tests. Fifty-one controlled cases cover17enemy
+identities/dispatch families and three state/frame inputs each,comparing the
+entire original prefix of game state and OAM with observation disabled/enabled.
+Each visible receipt then renders without changing the game or observer.
+All admitted authored pose entries produce printable,valid cells;the player
+offset/death-flag alias fixture,mirroring,inversion,fill and clipping pass.
+The1000-step twin route retains zero original core/frame/pixel differences;
+947player/1003enemy observations produce1950actor draws. All999rendered text
+frames/11988000bytes compare equal across x86/x64;streams are removed after
+neutral summaries. Background diagnostics remain56681components/20579unknown
+occurrences across tables/phases,without an expanded coverage claim.
+
+StrictC90 and originalDOS16 far-pointer compilation/link pass. Refreshed local
+products are329103/398183/412749bytes. Observer size remains5253bytes and DOS
+DGROUP45600bytes. The actual hiddenDOSBox title/Start/run/jump/left/release/Escape
+route passes,with24seconds gameplay;no486SX speed qualification. Raw captures
+are removed after the neutral receipt. Source provenance/import restrictions
+and all ROM accounting are unchanged.
+
+S2 remains open:full mixed throw/swim body-part selection,segmented effects,
+wrapped/hidden anchors and background/sprite priority;title/menu/misc OAM/text
+owners and residual background cases;immediate snapshot observer continuity.
+The51cases do not cover every input/path or prove original-ROM equivalence.
+No product root enables text or Tab yet;those bindings remain S4/S5.

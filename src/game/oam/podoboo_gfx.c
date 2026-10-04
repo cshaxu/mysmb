@@ -90,6 +90,8 @@ mysmb_u8 mysmb_objects_draw_podoboo(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[0x0206U + offset] = (mysmb_u8)(attributes | 0x40U);
     }
     mysmb_podoboo_apply_offscreen(game, oam, offscreen);
+    mysmb_text_observer_record(game,MYSMB_TEXT_OBSERVE_ENEMY,12U,slot,
+        0xccU,direction,oam,6U,255U);
     return 1U;
 }
 

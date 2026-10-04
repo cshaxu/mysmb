@@ -57,4 +57,6 @@ void mysmb_objects_draw_piranha(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[0x0207U + offset] =
             (mysmb_u8)(game->ram[MYSMB_PIRANHA_REL_X] + 8U);
     }
+    mysmb_text_observer_record(game,MYSMB_TEXT_OBSERVE_ENEMY,13U,slot,
+        tiles==second_frame?0xc6U:0xc0U,1U,oam,6U,255U);
 }

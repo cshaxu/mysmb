@@ -67,16 +67,30 @@ int main(int argc, char **argv)
     CHECK(!mysmb_text_elements_build(elements, 2U, 9U, &frame));
     elements[1] = elements[0]; elements[1].face_left = 2U;
     CHECK(!mysmb_text_elements_build(elements, 2U, 9U, &frame));
-    elements[1] = elements[0]; elements[1].pose = 3U;
+    elements[1] = elements[0]; elements[1].pose = MYSMB_TEXT_PLAYER_POSES;
     CHECK(!mysmb_text_elements_build(elements, 2U, 9U, &frame));
     elements[1] = elements[0]; elements[1].kind = MYSMB_TEXT_GOOMBA;
-    elements[1].pose = MYSMB_TEXT_RUN;
+    elements[1].kind = MYSMB_TEXT_BRICK;elements[1].pose = MYSMB_TEXT_RUN;
     CHECK(!mysmb_text_elements_build(elements, 2U, 9U, &frame));
     CHECK(memcmp(&frame, &before, sizeof(frame)) == 0);
     elements[0].x = 255; elements[0].y = 239;
     CHECK(mysmb_text_elements_build(elements, 1U, 9U, &frame));
     CHECK(frame.cells[3999].character == ' ');
     CHECK(mysmb_text_elements_build(0, 0U, 9U, &frame));
+    /* Every authored pose must produce only printable cells and valid fill. */
+    for(i=0U;i<MYSMB_TEXT_KIND_COUNT;++i) {
+        elements[0].kind=(mysmb_io_u8)i;elements[0].x=64;elements[0].y=64;
+        for(row=0U;row<(i<2U?MYSMB_TEXT_PLAYER_POSES:
+            i==MYSMB_TEXT_GOOMBA || i>=MYSMB_TEXT_GOOMBA_FLAT?3U:1U);++row) {
+            elements[0].pose=(mysmb_io_u8)row;
+            CHECK(mysmb_text_elements_build(elements,1U,9U,&frame));
+            for(column=0U;column<MYSMB_IO_TEXT_CELLS;++column) {
+                if(frame.cells[column].character<32U || frame.cells[column].character>126U)
+                    fprintf(stderr,"kind=%u pose=%u cell=%u code=%u\n",i,row,column,frame.cells[column].character);
+                CHECK(frame.cells[column].character>=32U && frame.cells[column].character<=126U);
+            }
+        }
+    }
     for (i = 0U; i < 7U; ++i) {
         elements[i].kind = (mysmb_io_u8)i;
         elements[i].pose = 0U;

@@ -84,5 +84,7 @@ mysmb_u8 mysmb_objects_draw_cheep_cheep(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[0x0207U + row_offset] =
             (mysmb_u8)(game->ram[MYSMB_CHEEP_REL_X] + 8U);
     }
+    mysmb_text_observer_record(game,MYSMB_TEXT_OBSERVE_ENEMY,id,slot,
+        tiles==second_frame?0x4eU:0x48U,direction,oam,6U,255U);
     return 1U;
 }

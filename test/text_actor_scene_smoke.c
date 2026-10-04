@@ -71,6 +71,14 @@ int main(void)
     game.visible_ppu_mask=0U;original=frame;
     CHECK(mysmb_text_actor_scene_draw(&game,&frame,&receipt));
     CHECK(receipt.drawn==0U && memcmp(&frame,&original,sizeof(frame))==0);
+    /* A shared selected offset cannot classify the original death branch. */
+    game.visible_ppu_mask=0x1eU;
+    mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_PLAYER,
+        MYSMB_TEXT_PLAYER_DEATH_FLAG,0U,24U,1U,32U,4U,1U);
+    mysmb_game_submit_oam(&game);
+    CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+    CHECK(mysmb_text_actor_scene_draw(&game,&frame,&receipt));
+    CHECK(frame.cells[21U*80U+27U].character=='_');
     puts("observed actor scene: whole templates/fill/latch/clipping/unknown/read-only passed");
     return 0;
 }

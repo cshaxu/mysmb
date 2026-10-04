@@ -329,7 +329,9 @@ void mysmb_oam_render_player(struct mysmb_game *game)
             if (game->ram[(mysmb_u16)(0x0219U + kick_offset)] ==
                 game->area_prg[MYSMB_SWIM_TILE_REP_OFFSET]) {
                 mysmb_text_observer_record(game, MYSMB_TEXT_OBSERVE_PLAYER,
-                    game->ram[0x0753U], 0U, graphics_offset,
+                    (mysmb_u8)(game->ram[0x0753U] |
+                        (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE]==0x0bU?
+                            MYSMB_TEXT_PLAYER_DEATH_FLAG:0U)), 0U, graphics_offset,
                     game->ram[MYSMB_PLAYER_FACING],
                     game->ram[MYSMB_PLAYER_SPRITE_OFFSET], 8U,
                     game->ram[MYSMB_PLAYER_SIZE]);
@@ -341,7 +343,9 @@ void mysmb_oam_render_player(struct mysmb_game *game)
             game->area_prg[MYSMB_SWIM_KICK_TILE_NUM + tile_index];
     }
     mysmb_text_observer_record(game, MYSMB_TEXT_OBSERVE_PLAYER,
-        game->ram[0x0753U], 0U, graphics_offset,
+        (mysmb_u8)(game->ram[0x0753U] |
+            (game->ram[MYSMB_GAME_ENGINE_SUBROUTINE]==0x0bU?
+                MYSMB_TEXT_PLAYER_DEATH_FLAG:0U)), 0U, graphics_offset,
         game->ram[MYSMB_PLAYER_FACING],
         game->ram[MYSMB_PLAYER_SPRITE_OFFSET], 8U,
         game->ram[MYSMB_PLAYER_SIZE]);
@@ -374,5 +378,7 @@ void mysmb_oam_draw_intermediate_player(struct mysmb_game *game)
     /* The source reads the next sprite's attribute at +36 and stores its
      * horizontal-flip result in the preceding sprite at +32. */
     game->ram[0x0222U] = (mysmb_u8)(game->ram[0x0226U] | 0x40U);
+    mysmb_text_observer_record(game,MYSMB_TEXT_OBSERVE_PLAYER,
+        game->ram[0x0753U],0U,0xb8U,game->ram[3U],4U,8U,1U);
 }
 

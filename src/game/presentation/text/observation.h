@@ -16,6 +16,8 @@
 #define MYSMB_TEXT_OBSERVE_PLATFORM 11U
 #define MYSMB_TEXT_OBSERVE_FLAG 12U
 #define MYSMB_TEXT_OBSERVE_BUBBLE 13U
+#define MYSMB_TEXT_OBSERVE_FLAME 14U
+#define MYSMB_TEXT_PLAYER_DEATH_FLAG 0x80U
 
 struct mysmb_text_observation {
     unsigned char family;
