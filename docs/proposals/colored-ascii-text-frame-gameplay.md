@@ -1286,3 +1286,47 @@ P12 remains open:the historical unchanged-title/no-exit failure is still not
 explained. Next P must establish guest input consumption and actual pause
 eligibility before deciding whether the fixture or runtime needs correction.
 S4 remains active;S5/S6 have not been admitted.
+
+
+### S4 P3 input-consumption and pause-eligibility diagnosis
+
+A test-only composition entry includes the existing DOS product entry and
+links its existing originalDOS16 OMF libraries. It observes public decoded
+input,frame number,pause permission,paused state and presenter choice only;
+never reads original RAM or writes game state. Transition logging is bounded
+to128records and is not compiled into any delivered product. A dedicated
+builder contains all products/intermediates below ignored build and restores
+PATH/TEMP/TMP. The observed executable has a distinct identity;its passing
+route cannot certify the uninstrumented product or historical P12 binary.
+
+In the instrumented normal route,the scheduled pause Enter is consumed at
+frame74 while public pause permission is unavailable. Permission becomes
+ready at frame186,after text entry. Thus this specific failed round-trip
+fixture was running,not paused. The dynamic diagnostic consumes Enter with
+ready permission,enters pause and retains it through all pre-load presenter
+switches;its route passes. Load restores the cached running boundary as
+specified,so no claim of retaining pause after O is made.
+
+The actual uninstrumented product is then tested from that same captured
+running boundary,using O instead of title Start. The optional seed remains
+local below build and cannot alias the runtime destination removed by cleanup.
+Normal-core actual-product acceptance passes with4000cells,5colors,40patterns,
+pre-Tab stability,graphics round-trip equality,held/second text-entry equality,
+10035byte schema2 save,text-preserving load and Escape return to DOS.
+This establishes a reproducible presenter fixture without extending key holds
+or changing translated pause rules. The additional dynamic seeded actual-product route also passes,with39cell
+patterns and the same remaining acceptance results. Both routes bind the
+unchanged delivered DOS product hash. The dedicated builder reproduces the
+manual diagnostic binary byte-for-byte. Documentation governance passes;
+existing P2 thirteen-test receipts per width remain applicable because no
+production source/dependency changed.
+
+Similar-issue sweep covers every input/pause/text transition,all three request
+classes Tab/P/O,Escape,transition-log bounds,stale log cleanup,seed containment
+and environment restoration. Original compiler/linker build the probe;the
+known OLDNAMES.LIB warning remains. No production code changes,product refresh
+or ROM conformance credit. Raw screenshots/saves/transition logs are removed
+after neutral summaries;three existing products retain their bytes.
+P12's historical unchanged-title/no-exit condition remains unexplained;this
+receipt resolves the current normal pause-fixture diagnosis only. S4 remains
+open until that separate condition is resolved or explicitly transferred.

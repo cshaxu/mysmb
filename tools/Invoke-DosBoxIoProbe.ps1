@@ -6,14 +6,24 @@ param(
     [switch]$TextSwitch,
     [switch]$DeviceLifecycle,
     [switch]$UnavailableVideo,
+    [string]$SeedPath='',
     [ValidateSet('dynamic','normal')][string]$CpuCore='dynamic'
 )
 $ErrorActionPreference='Stop'
+if($SeedPath -and !$TextSwitch){throw 'A running seed requires the text route.'}
 if(($TextSwitch -and ($DeviceLifecycle -or $UnavailableVideo)) -or
     ($DeviceLifecycle -and $UnavailableVideo)){throw 'Choose one probe route.'}
 & (Join-Path $PSScriptRoot 'Build-DosBoxIoProbe.ps1') -Compiler $Compiler -DosBoxDirectory $DosBoxDirectory -OutputDirectory $OutputDirectory
 if ($LASTEXITCODE -ne 0) {throw 'Probe build failed.'}
 $output=[IO.Path]::GetFullPath($OutputDirectory)
+if($SeedPath) {
+    $build=[IO.Path]::GetFullPath((Join-Path (Split-Path $PSScriptRoot) 'build'))+[IO.Path]::DirectorySeparatorChar
+    $seed=[IO.Path]::GetFullPath($SeedPath)
+    if(!$seed.StartsWith($build,[StringComparison]::OrdinalIgnoreCase) -or
+        $seed.Equals((Join-Path $output 'mysmb.sav'),[StringComparison]::OrdinalIgnoreCase)) {
+        throw 'Seed must remain below build and outside the runtime destination.'
+    }
+}
 $machine=if($UnavailableVideo){'cga'}else{'vgaonly'}
 Copy-Item -LiteralPath $ProductPath -Destination (Join-Path $output 'MYSMB.EXE') -Force
 @"
@@ -117,9 +127,14 @@ if($UnavailableVideo) {
     '3000 quit 0 0' | Set-Content -LiteralPath (Join-Path $output 'input.script') -Encoding ascii
 }
 # Remove only this probe's declared receipts so a failed run cannot reuse them.
-foreach ($name in @('title.bmp','start.bmp','right-run.bmp','jump.bmp','before-left.bmp','release.bmp','stopped.bmp','exit.bmp','exit.ok','fail.ok','device.ok','device.err','probe.log','graphics-before.bmp','graphics-stable.bmp','graphics-after.bmp','text.bmp','text-held.bmp','text-again.bmp','text-loaded.bmp','graphics-loaded.bmp','mysmb.sav','receipt.json','preconditions.json')) {
+foreach ($name in @('title.bmp','start.bmp','right-run.bmp','jump.bmp','before-left.bmp','release.bmp','stopped.bmp','exit.bmp','exit.ok','fail.ok','device.ok','device.err','probe.log','input.log','graphics-before.bmp','graphics-stable.bmp','graphics-after.bmp','text.bmp','text-held.bmp','text-again.bmp','text-loaded.bmp','graphics-loaded.bmp','mysmb.sav','receipt.json','preconditions.json')) {
     $path=Join-Path $output $name
     if (Test-Path -LiteralPath $path) {Remove-Item -LiteralPath $path -Force}
+}
+if($SeedPath) {
+    Copy-Item -LiteralPath $SeedPath -Destination (Join-Path $output 'mysmb.sav') -Force
+    $scriptPath=Join-Path $output 'input.script'
+    (Get-Content -LiteralPath $scriptPath) -replace '^7000 key 13 1$','7000 key 111 1' -replace '^7500 key 13 0$','7500 key 111 0' | Set-Content -LiteralPath $scriptPath -Encoding ascii
 }
 $oldVideo=$env:SDL_VIDEODRIVER
 $oldAudio=$env:SDL_AUDIODRIVER

@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M3 T11 S4 active;P1 device lifecycle and P2 pause-fixture diagnostic reviewed;P12 remains open. |
+| Identifier Mode | Continuation:M3 T11 S4 active;P1/P2 reviewed;P3 input-consumption diagnosis and seeded acceptance reviewed;historical P3:test-only public input/pause observer proves normal fixture pressed Enter before pause eligibility;actual normal seeded Tab/P/O/Escape passes. No production changes. Historical P12 remains open. |
 | Admission And Approval | Automatic owner-authorized next-S admission after reviewed S3 P2 closure. |
 | Objective | Complete early DOS Tab presenter host acceptance,mode/input/clock lifetimes,fallback/cleanup and P12 intermittent input/progress diagnosis. |
 | Non-goals | No game/ASCII template rewrite or ROM credit;full route/speed qualification remains S6/M4. |
@@ -15,7 +15,7 @@
 | Verification | OriginalOpenNT16 compile/link,actual bounded DOSBox graphics/text/heldTab/input/P/O/Escape,fallback/cleanup;both-width focused tests,purity,governance and3products after code changes. |
 | Expected Markers | Scope[],expectedMatches[],actualMatches[],new0;all ROM counters retained. |
 | Asset Needs | Existing owner-local embedded product/resources,originalOpenNT16 and DOSBox;redistributability unestablished,no import. Purpose:actual DOS presenter/runtime acceptance;unique ignored build paths,60second/20MB raw budgets and cleanup owner S4. |
-| Reporting Requirements | P1:6source/test/toolfiles,+199/-21;13tests eachwidth,actual DOS25/43/50/font/IRQ/input probe,unsupported-video safety and dynamic Tab/P/O/Escape;products359355/435739/451400bytes. P2:two test tools add a pre-Tab stability check and neutral failure receipt;both runtime diagnostics fail equality despite text/save/exit succeeding. No product code change or refresh. Before/after scope,evidence and local commit;no remote. P12 remains open. |
+| Reporting Requirements | P1:6source/test/toolfiles,+199/-21;13tests eachwidth,actual DOS25/43/50/font/IRQ/input probe,unsupported-video safety and dynamic Tab/P/O/Escape;products359355/435739/451400bytes. P2:two test tools add a pre-Tab stability check and neutral failure receipt;both runtime diagnostics fail equality despite text/save/exit succeeding. No product code change or refresh. Before/after scope,evidence and local commit;no remote. P3:test-only public input/pause observer proves normal fixture pressed Enter before pause eligibility;actual normal seeded Tab/P/O/Escape passes. No production changes. Historical P12 remains open. |
 | Stop Conditions | Game rules in platform,mutated original outputs,input/clock reset during switching,segment overflow or unexplained mode failure prevents closure. |
 | Exit Criteria | Host lifetime/fallback/cleanup verified;P12 condition reproducibly explained and resolved or explicitly accepted transfer;DOS graphics/text/input/snapshot/exit pass. |
 | Original Owner Request | Isolated element-based text,not sampling;early Tab switches all three products over shared gameplay. |
