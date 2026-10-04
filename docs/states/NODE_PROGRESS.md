@@ -13,6 +13,9 @@ The full current-build node/edge/output/gameplay certificate is **not issued**.
 
 ## M2 T70 S17 - active material-use completeness
 
+[P125 installed stream lifetime](../proposals/m2/t70-final-current-certification.md#s17-p125-checkpoint---area-traversal-and-enemy-cursor-lifetime).
+S17 P125:319 area/scroll/enemy labels,2001 originalPC observed. All34 tablepairs/two profiles,68 serial32-page chains eachwidth;330752 fullscopedRAM checkpoints eachwidth0diff. E9/EA stable,739 aligned andFFterminal;9focusedtests eachwidthpass. 123 sourceidentities/P123 products unchanged. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);material993partial,totalunknown;M2 incomplete.
+
 [P124 queued handoff](../proposals/m2/t70-final-current-certification.md#s17-p124-checkpoint---queued-status-palette-and-nmi-handoff).
 S17 P124:22 status/palette/commit labels,163 original PC observed;2048 eight-turn chains eachwidth zero scoped RAM/APU/order difference. First selector6 retains27-byte queue,next selector0 commits54 bytes;ordinary queue27 bytes. Slot0368/03EE/06CF preserved. Six focused tests eachwidth pass;123 source identities and P123 three EXEs unchanged. Historical1992/1992,local1991/1992 nodes,4260/4261 feasible controls(raw4342,infeasible81);material993 partial,total unknown,M2 incomplete.
 
