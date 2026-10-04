@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M3 T11 S2 active;P12 special background shapes admitted;remaining scene obligations stay within S2. |
+| Identifier Mode | Continuation:M3 T11 S2 active;P13 jumping coins/floating scores admitted;remaining scene obligations stay within S2. |
 | Admission And Approval | Automatic next-S admission under owner mandate after S1 reviewed local commit. |
 | Objective | Connect isolated text elements to existing draw decisions and committed visible scenes,with explicit lifetime/restore handling. |
 | Non-goals | No gameplay rewrite or ROM credit;complete presenter acceptance remains S4/S5. |
 | Reference Baseline | Historical1992/1992;local1991/1992nodes,4260/4261feasible controls;42/952facets,M2 incomplete. |
 | Candidate Proposal | [T11 S2](../proposals/colored-ascii-text-frame-gameplay.md#s2-admission). |
-| Files And ABI Surface | P12 shared background scene,focused tests and bounded host-probe diagnostics;4source/test/toolfiles,150-250lines. Special metatile shapes/component occupancy;workspace and snapshot ABI unchanged. |
+| Files And ABI Surface | P13 two draw-owner hooks,observation families,authored coin/score templates,scene assembly and focused tests;8-10source/testfiles,180-300lines. Record storage/snapshot length/workspaces unchanged;accepted family range extends. |
 | Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Documentation and source policy. |
 | Verification | Enabled/disabled observation original-state/OAM/VRAM/audio/pixel equality;visible phase,ownership/clipping,background/HUD,restore;both native widths,originalDOS16 and3products,purity/governance. |
 | Expected Markers | Scope[],expectedMatches[],actualMatches[],new0;all ROM counters retained. |
@@ -160,3 +160,13 @@ DOS16 link pass. Windows console probe now filters asynchronous non-key records;
 dynamic and normal-core routes fail progression/exit with cause unresolved;
 S4 retains this integration gap. Products352279/429434/445067bytes refreshed.
 Observer/workspaces/DGROUP unchanged;S2/T11 open,no ROM credit,no remote.
+
+P13:jumping-coin/floating-score draw receipts and4/11authored variants;
+9source/testfiles,+137/-5. Sixteen controlled owners retain original game
+prefixes;partial/wrapped/hidden score and snapshot cases pass. Bothwidths
+10focused tests/product/console probes,1000-step original-output equality,
+immediate/240future restore and999cross-width textframes pass. OriginalDOS16
+far ABI/link andactual46secondDOSBox Tab/P/O/Escape pass;P12 intermittent
+probe gap remains S4. Products353695/430506/446138bytes,DGROUP49136bytes;
+observer/workspaces unchanged. S2 open;next remaining-scene reconciliation,
+then S3 scene completion. ROM totals unchanged,no protected staging/no remote.

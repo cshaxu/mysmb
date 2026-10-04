@@ -54,6 +54,16 @@ static const struct mysmb_text_art flag_scores[5] = {
     {"5000",4U,1U},{"2000",4U,1U},{"800",3U,1U},
     {"400",3U,1U},{"100",3U,1U}
 };
+static const struct mysmb_text_art jump_coins[4] = {
+    {"()" "$$" "()",2U,3U},{" |" " |" " |",2U,3U},
+    {"()" "||" "()",2U,3U},{"| " "| " "| ",2U,3U}
+};
+static const struct mysmb_text_art scores[11] = {
+    {"100",3U,1U},{"200",3U,1U},{"400",3U,1U},
+    {"500",3U,1U},{"800",3U,1U},{"1000",4U,1U},
+    {"2000",4U,1U},{"4000",4U,1U},{"5000",4U,1U},
+    {"8000",4U,1U},{"1UP",3U,1U}
+};
 
 static const struct mysmb_text_art actors[19][2] = {
     {{"/___\\",5U,1U},{"/___\\",5U,1U}},
@@ -109,6 +119,8 @@ static const struct mysmb_text_art *art_for(
     if (element->kind == MYSMB_TEXT_PLAYER_SMALL) return &small[element->pose];
     if (element->kind == MYSMB_TEXT_PLAYER_LARGE) return &large[element->pose];
     if (element->kind == MYSMB_TEXT_FLAG_SCORE) return &flag_scores[element->pose];
+    if (element->kind == MYSMB_TEXT_JUMP_COIN) return &jump_coins[element->pose];
+    if (element->kind == MYSMB_TEXT_SCORE) return &scores[element->pose];
     if (element->kind >= MYSMB_TEXT_VINE_LEAF)
         return &parts[element->kind-MYSMB_TEXT_VINE_LEAF];
     if (element->kind >= MYSMB_TEXT_GOOMBA_FLAT)
@@ -141,7 +153,9 @@ static int valid_element(const struct mysmb_text_element MYSMB_IO_FAR *e)
 {
     return e != 0 && e->kind < MYSMB_TEXT_KIND_COUNT &&
         e->face_left <= 1U && e->foreground <= 15U && e->background <= 15U &&
-        (e->kind==MYSMB_TEXT_FLAG_SCORE ? e->pose<5U:
+        (e->kind==MYSMB_TEXT_SCORE ? e->pose<11U:
+         e->kind==MYSMB_TEXT_JUMP_COIN ? e->pose<4U:
+         e->kind==MYSMB_TEXT_FLAG_SCORE ? e->pose<5U:
          e->kind>=MYSMB_TEXT_VINE_LEAF ? e->pose==0U:
          e->kind < MYSMB_TEXT_GOOMBA ? e->pose<MYSMB_TEXT_PLAYER_POSES :
          e->kind==MYSMB_TEXT_GOOMBA || e->kind>=MYSMB_TEXT_GOOMBA_FLAT ?
@@ -171,6 +185,7 @@ int mysmb_text_element_draw(
         y = project(element->y, 50L, 240L);
         for (row = 0U; row < art->height; ++row) {
             source_row=(mysmb_io_u16)((element->kind>=MYSMB_TEXT_GOOMBA &&
+                element->kind<MYSMB_TEXT_JUMP_COIN &&
                 element->pose==MYSMB_TEXT_INVERTED?art->height-1U-row:row)*art->width);
             row_left=0U;row_right=art->width;
             while(row_left<art->width && art->cells[source_row+row_left]==' ')row_left++;
@@ -188,7 +203,8 @@ int mysmb_text_element_draw(
                     (mysmb_io_u16)destination_x,
                     (mysmb_io_u16)destination_y)) continue;
                 if (element->face_left != 0U) glyph = mirror(glyph);
-                if(element->kind>=MYSMB_TEXT_GOOMBA && element->pose==MYSMB_TEXT_INVERTED) {
+                if(element->kind>=MYSMB_TEXT_GOOMBA &&
+                    element->kind<MYSMB_TEXT_JUMP_COIN && element->pose==MYSMB_TEXT_INVERTED) {
                     if(glyph=='^')glyph='v';
                     else if(glyph=='/')glyph='\\';
                     else if(glyph=='\\')glyph='/';

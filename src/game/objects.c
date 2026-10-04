@@ -11,6 +11,7 @@
 #include "game/oam/oam.h"
 #include "game/world/world.h"
 #include "game/area.h"
+#include "game/presentation/text/observation.h"
 
 enum {
     MYSMB_VRAM_BUFFER1 = 0x0300U,
@@ -260,6 +261,8 @@ void mysmb_objects_draw_jump_coin(struct mysmb_game *game, mysmb_u8 slot)
         game->ram[(mysmb_u16)(0x0206U + oam_offset)] = 2U;
         game->ram[(mysmb_u16)(0x0201U + oam_offset)] = 0xf7U;
         game->ram[(mysmb_u16)(0x0205U + oam_offset)] = 0xfbU;
+        mysmb_text_observer_record(game,MYSMB_TEXT_OBSERVE_SCORE,
+            2U,slot,2U,0U,oam_offset,2U,0U);
         return;
     }
     game->ram[(mysmb_u16)(0x0200U + oam_offset)] = game->ram[MYSMB_MISC_Y + slot];
@@ -272,6 +275,8 @@ void mysmb_objects_draw_jump_coin(struct mysmb_game *game, mysmb_u8 slot)
         (mysmb_u8)(oam_offset + 1U));
     game->ram[(mysmb_u16)(0x0202U + oam_offset)] = 2U;
     game->ram[(mysmb_u16)(0x0206U + oam_offset)] = 0x82U;
+    mysmb_text_observer_record(game,MYSMB_TEXT_OBSERVE_COIN,
+        0U,slot,game->ram[(mysmb_u16)(0x0201U+oam_offset)],0U,oam_offset,2U,0U);
 }
 /* Existing clipped GetMiscBoundBox path used by jumping coins.
  * Exposing this boundary does not certify or alter its child algorithms. */
@@ -510,6 +515,8 @@ void mysmb_objects_step_floatey_number(struct mysmb_game *game, mysmb_u8 slot)
         tile_data[(mysmb_u8)(control << 1U)];
     game->ram[(mysmb_u16)(0x0205U + oam_offset)] =
         tile_data[(mysmb_u8)((control << 1U) + 1U)];
+    mysmb_text_observer_record(game,MYSMB_TEXT_OBSERVE_SCORE,
+        control,slot,control,0U,oam_offset,2U,0U);
 }
 /* Direct owner test helper: production GameEngine uses the per-slot entry. */
 void mysmb_objects_step_floatey_numbers(struct mysmb_game *game)

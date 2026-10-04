@@ -904,3 +904,69 @@ CB386CDD9E82C165E5756B7C81A48464D84686F5D4DC4F5CE56B7AA23C8BE840 and
 F1050138DAF2333FD2F68B2C66104BD46863AD24F7B66FD57E84FFD1E4410FBD.
 S2/T11 remain active;misc owners,title/menu/terminal scenes and full presenter
 integration remain. No ROM credit,no remote,no protected material staged.
+
+### S2 P13 miscellaneous draw-owner scope
+
+Record completed JumpingCoin/FloateyNumber outputs at the existing shared
+owners,including the coin-to200 stage and eleven enemy-score/1UP selections.
+Use immutable source-comment semantics,not CHR art or live-state selectors.
+Add authored spinning-coin and score templates;preserve original OAM order,
+entry clipping,palette,wrapping and overwritten ownership. Extend only the
+accepted observation family range;record/snapshot lengths remain unchanged.
+Estimate8-10source/testfiles,180-300lines. Compare enabled/disabled owners'
+original RAM/output for all stages and score controls;check actual hook-to-
+scene,partial overwrite,hidden/wrapped entries and snapshot persistence.
+Both native widths,C90,originalDOS16,three products,purity/governance apply.
+Existing local source provenance and bounded ignored-build containment apply.
+No ROM conformance credit;DOS input/progression diagnostic remains under S4.
+
+### S2 P13 review receipt
+
+Nine source/test files change137added/5removed lines,below the180-300forecast
+because existing clipping/priority/snapshot storage is reused. Two shared draw
+owners now record their completed OAM entries:jumping-coin selection or its
+200 stage,and floating enemy-score/1UP selection. No original branch,state,
+score update or OAM write changes. Four authored coin phases and eleven score
+labels consume these records. Whole anchors retain source entry clipping and
+wrap;cell-center alignment prevents short labels vanishing between rows.
+The accepted snapshot family range extends to16 without changing its length
+or offsets. Previous saves remain valid;older products reject new-family
+records instead of silently misinterpreting them.
+
+Sixteen controlled owner cases cover all four coin phases,the200 transition
+and eleven score selections. Enabled/disabled original game prefixes match;
+actual hook-to-scene labels and immediate observer snapshot restoration pass.
+Separate tests retain selected score after live control changes,clip a later
+partial overwrite,keep byte-wrapped final digits and omit hidden entries.
+All42element kinds and their accepted pose sets emit printable colored cells.
+The similar-issue sweep covers both original miscellaneous OAM owner entries,
+both coin branches,all score controls,the family-range validator,whole-anchor
+handling and template dispatch/pose validation. Title/menu/icon ownership is
+still S3 work;these hooks do not infer semantics for remaining unowned sprites.
+
+Both native widths pass10focused tests,product self-tests and real owned-
+console Tab/input/round-trip probes. The first broad test-name filter also
+selected an unbuilt dormant pixel-sampler test;it was not run,not a product
+failure. The final explicit ten-test set covers the changed shared scene,
+observation,snapshot,neutral IO,host bindings and purity;the unused sampler
+is outside this product path. A1000-step twin route retains zero original
+core/frame/pixel differences;authored actor draws rise from1950to2025.
+Immediate restored text and240future ticks agree;999textframes/11988000bytes
+match across widths. StrictC90 and originalOpenNT16 far ABI/full link pass.
+
+The actual new DOS executable passes the46second dynamic-core DOSBox
+text/heldTab/graphics roundtrip/P/O/text-preserving load/Escape route. Raw
+captures/saves are deleted after the neutral receipt. P12's intermittent
+failed dynamic/normal-core routes remain an unresolved S4 integration clause;
+this single successful P13 route does not discharge them or prove486SX speed.
+DGROUP49136bytes remains below64KB;observer5253bytes,scene workspace3400bytes
+and far pack15400bytes are unchanged.
+
+Three local products refresh to353695/430506/446138bytes. SHA256 in DOS/x86/x64
+order:22D2F63BA943EB4C3E111AA5E3469F9AC6317B362F649D26B4C3768DCF0B514F,
+B52F8DEBA8F0FE09AC540ED878234BB16D3503A9143C8221928606BF251D706D,
+97C26108308D3C99CCB89481CCC9E5D26FACE094667238A11FF748A15AD4716A.
+S2 remains active for a bounded remaining-scene coverage reconciliation before
+S3;full presenter/performance acceptance stays S4-S6. Historical1992/1992,
+local1991/1992nodes,4260/4261feasible controls(raw4342/infeasible81),42/952facets
+and6/136groups are unchanged. No ROM credit,no remote or protected staging.

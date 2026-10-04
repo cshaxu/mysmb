@@ -250,6 +250,39 @@ int main(void)
     CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
     CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
     CHECK(frame.cells[21U*80U+27U].character=='M');
+    /* Scores keep their selected value after live control changes. A later
+     * partial writer removes only its entry,not the whole number or anchor. */
+    mysmb_text_observer_invalidate(&game);
+    for(i=0U;i<64U;++i)game.ram[0x0200U+i*4U]=0xf8U;
+    sprite(8U,80U,95U);sprite(9U,88U,95U);
+    mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_SCORE,
+        6U,0U,6U,0U,32U,2U,0U);
+    mysmb_game_submit_oam(&game);game.ram[0x0110U]=11U;
+    CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+    CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+    CHECK(frame.cells[20U*80U+25U].character=='1');
+    CHECK(frame.cells[20U*80U+28U].character=='0');
+    game.ram[0x0205U+32U]=2U;mysmb_game_submit_oam(&game);
+    CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+    CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+    CHECK(frame.cells[20U*80U+25U].character=='1');
+    CHECK(frame.cells[20U*80U+27U].character==' ');
+    /* Byte-wrapped second halves retain the original number's right digit. */
+    sprite(8U,250U,95U);sprite(9U,2U,95U);
+    mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_SCORE,
+        6U,0U,6U,0U,32U,2U,0U);
+    mysmb_game_submit_oam(&game);
+    CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+    CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+    CHECK(frame.cells[20U*80U+78U].character=='1');
+    CHECK(frame.cells[20U*80U+1U].character=='0');
+    game.ram[0x0200U+32U]=game.ram[0x0204U+32U]=0xf8U;
+    mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_SCORE,
+        6U,0U,6U,0U,32U,2U,0U);
+    mysmb_game_submit_oam(&game);
+    CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+    CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+    CHECK(receipt.drawn==0U);
     puts("observed actor scene: whole templates/fill/latch/clipping/seam/hidden/read-only passed");
     return 0;
 }

@@ -175,6 +175,12 @@ static int choose(const struct mysmb_game *game,
     case MYSMB_TEXT_OBSERVE_PLATFORM: e->kind=MYSMB_TEXT_PLATFORM;return 1;
     case MYSMB_TEXT_OBSERVE_FLAG: e->kind=MYSMB_TEXT_FLAG;return 1;
     case MYSMB_TEXT_OBSERVE_BUBBLE: e->kind=MYSMB_TEXT_BUBBLE;return 1;
+    case MYSMB_TEXT_OBSERVE_COIN:
+        if(item->graphics<0x60U || item->graphics>0x63U)return 0;
+        e->kind=MYSMB_TEXT_JUMP_COIN;e->pose=(unsigned char)(item->graphics-0x60U);return 1;
+    case MYSMB_TEXT_OBSERVE_SCORE:
+        if(item->graphics==0U || item->graphics>11U)return 0;
+        e->kind=MYSMB_TEXT_SCORE;e->pose=(unsigned char)(item->graphics-1U);return 1;
     default: return 0;
     }
 }
@@ -248,6 +254,16 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
                 begin=entry>=3U?3U:0U;end=entry>=3U?item->sprites:3U;
             }
             whole_anchor(item,begin,end,&element);
+            /* Two horizontal score entries and vertical coin entries share
+             * one whole template. Align its top row to a source cell center,
+             * retaining the whole anchor after a partial overwrite. */
+            if(item->family==MYSMB_TEXT_OBSERVE_COIN ||
+                item->family==MYSMB_TEXT_OBSERVE_SCORE) {
+                if(element.x>=0 && element.x<256)
+                    element.x=component_anchor((unsigned short)element.x,80U,256U);
+                if(element.y>=0 && element.y<240)
+                    element.y=component_anchor((unsigned short)element.y,50U,240U);
+            }
             selected=*item;
             if(item->family==MYSMB_TEXT_OBSERVE_PLAYER && entry>=6U &&
                 (item->identity&MYSMB_TEXT_PLAYER_MIXED_FLAG)!=0U) {

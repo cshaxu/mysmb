@@ -2,8 +2,10 @@
 #include "game/frame_root.h"
 #include "game/ppu_frame.h"
 #include "game/oam/oam.h"
+#include "game/objects.h"
 #include "game/presentation/text/actor_scene.h"
 #include "game/presentation/text/background_scene.h"
+#include "game/presentation/text/observer_snapshot.h"
 #include "app/game_snapshot.h"
 #include <stdio.h>
 #include <string.h>
@@ -72,6 +74,57 @@ static int snapshot_case(void)
         CHECK(memcmp(&before,&restored,sizeof(restored))==0);
         second.payload[MYSMB_SNAPSHOT_PRESENTATION_OFFSET+bad_offsets[i]]=saved;
     }
+    return 0;
+}
+
+static int misc_case(unsigned char score,unsigned char phase)
+{
+    static const char *labels[11]={"100","200","400","500","800",
+        "1000","2000","4000","5000","8000","1UP"};
+    struct mysmb_text_actor_receipt receipt;
+    unsigned short i;
+    unsigned char family,control;
+    mysmb_game_initialize(&observed);
+    observed.visible_ppu_mask=0x1eU;observed.palette[0x1aU]=0x27U;
+    observed.ram[0x06f3U]=32U;observed.ram[0x06e5U]=32U;
+    observed.ram[0x002aU]=phase;observed.ram[0x0009U]=(unsigned char)(phase*2U);
+    observed.ram[0x03b3U]=80U;observed.ram[0x00dbU]=95U;
+    observed.ram[0x0110U]=score;observed.ram[0x012cU]=0x20U;
+    observed.ram[0x0117U]=80U;observed.ram[0x011eU]=104U;
+    observed.ram[0x0016U]=18U;
+    plain=observed;mysmb_text_observer_enable(&observed,1U);
+    if(score!=0U) {
+        mysmb_objects_step_floatey_number(&observed,0U);
+        mysmb_objects_step_floatey_number(&plain,0U);
+    } else {
+        /* Keep all four coin phases in state one;state>=2 owns the200 stage. */
+        if(phase<4U)observed.ram[0x002aU]=plain.ram[0x002aU]=1U;
+        mysmb_objects_draw_jump_coin(&observed,0U);
+        mysmb_objects_draw_jump_coin(&plain,0U);
+    }
+    CHECK(memcmp(&observed,&plain,offsetof(struct mysmb_game,text_observer))==0);
+    CHECK(observed.text_observer.producer.count==1U);
+    family=score!=0U || phase>=4U?MYSMB_TEXT_OBSERVE_SCORE:MYSMB_TEXT_OBSERVE_COIN;
+    control=score!=0U?score:2U;
+    CHECK(observed.text_observer.producer.items[0].family==family);
+    CHECK(observed.text_observer.producer.items[0].graphics==
+        (family==MYSMB_TEXT_OBSERVE_SCORE?control:0x60U+phase));
+    mysmb_game_submit_oam(&observed);
+    CHECK(mysmb_text_elements_build(0,0U,9U,&text));before=observed;
+    CHECK(mysmb_text_actor_scene_draw(&observed,&actor_workspace,0,&text,&receipt));
+    CHECK(receipt.drawn==1U && receipt.unsupported==0U);
+    CHECK(memcmp(&before,&observed,sizeof(observed))==0);
+    if(family==MYSMB_TEXT_OBSERVE_SCORE)
+        for(i=0U;labels[control-1U][i]!='\0';++i)
+            CHECK(text.cells[20U*80U+25U+i].character==labels[control-1U][i]);
+    else CHECK(text.cells[21U*80U+25U+(phase==1U?1U:0U)].character==
+        (phase==0U?'$':'|'));
+    CHECK(mysmb_text_observer_snapshot_capture(&observed,snapshot_wire));
+    CHECK(mysmb_text_observer_snapshot_valid(snapshot_wire));
+    restored=observed;mysmb_text_observer_invalidate(&restored);
+    mysmb_text_observer_snapshot_restore(&restored,snapshot_wire);
+    CHECK(memcmp(&restored.text_observer,&observed.text_observer,
+        sizeof(observed.text_observer))==0);
     return 0;
 }
 
@@ -255,6 +308,8 @@ int main(int argc,char **argv)
         CHECK(enemy_case(enemy_ids[i],j==0U?0U:j==1U?4U:5U,
             (unsigned char)(j*4U))==0);
     CHECK(snapshot_case()==0);
+    for(i=0U;i<5U;++i)CHECK(misc_case(0U,(unsigned char)i)==0);
+    for(i=1U;i<=11U;++i)CHECK(misc_case((unsigned char)i,0U)==0);
     CHECK(mixed_player_case(1U,0U,0U)==0);
     CHECK(mixed_player_case(0U,0U,0U)==0);
     CHECK(mixed_player_case(0U,1U,0U)==0);

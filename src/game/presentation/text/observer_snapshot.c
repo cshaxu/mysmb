@@ -32,7 +32,7 @@ static int buffer_valid(const unsigned char *in)
             for(owner=0U;owner<RECORD_BYTES;++owner)
                 if(item[owner]!=0U)return 0;
         } else if(item[0]<MYSMB_TEXT_OBSERVE_PLAYER ||
-            item[0]>MYSMB_TEXT_OBSERVE_FLAME || (item[5]&3U)!=0U ||
+            item[0]>MYSMB_TEXT_OBSERVE_SCORE || (item[5]&3U)!=0U ||
             item[6]==0U || item[6]>8U || item[5]+item[6]*4U>256U)return 0;
     }
     for(i=0U;i<64U;++i) {
