@@ -668,12 +668,19 @@ add_executable(mysmb_vga_frame_smoke test/vga_frame_smoke.c)
 target_link_libraries(mysmb_vga_frame_smoke PRIVATE mysmb_vga_frame)
 add_library(mysmb_dos16_root STATIC src/platform/dos16/dos16_root.c src/platform/dos16/keyboard.c src/platform/dos16/pit_clock.c)
 target_include_directories(mysmb_dos16_root PUBLIC src)
-target_link_libraries(mysmb_dos16_root PUBLIC mysmb_game mysmb_game_io mysmb_io_color)
+target_link_libraries(mysmb_dos16_root PUBLIC mysmb_game mysmb_game_io mysmb_io_color mysmb_game_snapshot)
 add_executable(mysmb_dos16_clock_smoke test/dos16_clock_smoke.c)
 target_link_libraries(mysmb_dos16_clock_smoke PRIVATE mysmb_dos16_root)
 add_test(NAME mysmb.dos16-clock-smoke COMMAND mysmb_dos16_clock_smoke)
 add_executable(mysmb_dos16_root_smoke test/dos16_root_smoke.c)
 target_link_libraries(mysmb_dos16_root_smoke PRIVATE mysmb_dos16_root)
+add_executable(mysmb_dos_snapshot_smoke test/dos_snapshot_smoke.c
+    src/platform/file/snapshot_files.c src/platform/file/executable_path.c
+    src/platform/win32/snapshot_replace.c)
+target_link_libraries(mysmb_dos_snapshot_smoke PRIVATE mysmb_dos16_root)
+file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/dos-snapshot-test")
+add_test(NAME mysmb.dos-snapshot-smoke COMMAND mysmb_dos_snapshot_smoke
+    "${CMAKE_BINARY_DIR}/dos-snapshot-test")
 
 # A separately named input for the later OpenNT large-model DOS build.  It has
 # no DOS platform code and must stay free of host headers.
@@ -1348,6 +1355,11 @@ if(MYSMB_ROM_PATH)
     add_dependencies(mysmb_local_title_data mysmb_local_title)
     target_include_directories(mysmb_local_title_data PRIVATE "${MYSMB_LOCAL_TITLE_DIR}")
     if(TARGET mysmb_win32)
+        target_sources(mysmb_dos_snapshot_smoke PRIVATE
+            $<TARGET_OBJECTS:mysmb_local_rom_data> $<TARGET_OBJECTS:mysmb_local_title_data>)
+        target_include_directories(mysmb_dos_snapshot_smoke PRIVATE
+            "${MYSMB_LOCAL_ROM_DIR}" "${MYSMB_LOCAL_TITLE_DIR}")
+        target_compile_definitions(mysmb_dos_snapshot_smoke PRIVATE MYSMB_LOCAL_TITLE=1)
         target_sources(mysmb_win32 PRIVATE
             $<TARGET_OBJECTS:mysmb_local_rom_data>
             $<TARGET_OBJECTS:mysmb_local_title_data>

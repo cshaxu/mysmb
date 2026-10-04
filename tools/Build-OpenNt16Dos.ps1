@@ -71,6 +71,7 @@ $sources = @(
     'game/oam/small_platform_gfx.c',
     'game/render.c', 'game/ppu_frame.c', 'game/frame_snapshot.c', 'game/status.c',
     'app/game_io.c', 'app/game_snapshot.c', 'io/color.c', 'io/scale.c', 'io/pacing.c', 'io/control.c', 'io/snapshot.c', 'io/snapshot_store.c', 'io/snapshot_keys.c', 'platform/file/snapshot_files.c', 'platform/dos16/snapshot_replace.c', 'platform/dos16/keyboard.c', 'platform/dos16/pit_clock.c', 'platform/dos16/devices.c',
+    'platform/file/executable_path.c', 'platform/dos16/executable_path.c',
     'platform/vga/vga_frame.c', 'platform/dos16/dos16_root.c',
     'platform/dos16/main_dos16.c'
 )

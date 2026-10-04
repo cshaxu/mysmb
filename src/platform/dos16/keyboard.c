@@ -32,8 +32,20 @@ void mysmb_dos16_keyboard_scan(struct mysmb_dos16_keyboard *keyboard,
     keys = keyboard->prefix != 0U ? keyboard->extended : keyboard->down;
     if (keyboard->prefix==0U && scan==1U)
         keyboard->pending_requests|=MYSMB_IO_REQUEST_EXIT;
+    if(keyboard->prefix==0U && keys[scan&0x7fU]==0U){
+        if(scan==0x19U)keyboard->pending_requests|=MYSMB_IO_REQUEST_SAVE;
+        if(scan==0x18U)keyboard->pending_requests|=MYSMB_IO_REQUEST_LOAD;
+    }
     keys[scan & 0x7fU] = (scan & 0x80U) != 0U ? 0U : 1U;
     keyboard->prefix = 0U;
+}
+void mysmb_dos16_keyboard_after_load(struct mysmb_dos16_keyboard *keyboard)
+{
+    mysmb_io_u8 save,load;
+    save=keyboard->down[0x19U];load=keyboard->down[0x18U];
+    mysmb_dos16_keyboard_initialize(keyboard);
+    /* Held shortcut make repeats stay blocked until the physical break. */
+    keyboard->down[0x19U]=save;keyboard->down[0x18U]=load;
 }
 
 void mysmb_dos16_keyboard_input(struct mysmb_dos16_keyboard *keyboard,

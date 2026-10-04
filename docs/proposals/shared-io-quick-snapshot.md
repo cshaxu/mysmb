@@ -293,3 +293,46 @@ and all validation-before-commit paths. DOS physical integration remains S4;
 integrated cross-host and additional failure routes remain S5. No game logic
 or original labels change. Historical1992/1992,local1991/1992 nodes and
 4260/4261feasible controls,42/952facets remain unchanged. No remote.
+
+## S4 admission
+
+S3 closed;DOS root now receives the same store/codec and app state binding.
+Physical adapter emits P/O make edges once;load resets clock debt and stale
+controller/request bookkeeping while keeping held P/O blocked until break.
+DOS executable directory is read from its DOS3+ PSP environment image path,
+with bounded parsing and no dependency on current directory. Storage/staging
+and cached snapshots are static root-owned objects,not large stack locals.
+
+DOS has no audio renderer/device. It accepts Win32 game state but does not
+advance imported oscillator/envelope/filter state. A newly captured DOS
+snapshot declares absent audio;Win32 importing it initializes its audio
+renderer and continues subsequent game-produced APU writes. Cross-host game
+state/commands are comparable;PCM continuity across intervening DOS gameplay
+is explicitly unsupported by the existing unavailable audio capability.
+S5 will verify and report that distinction. No game translation changes or
+ROM credit. Original DOS16 compiler/runtime remain unchanged.
+
+## S4 closure
+
+DOS root binds the shared store and app state codec. P/O uses make edges,
+never controller bits;successful restore rebuilds the common PPU output and
+resets physical bookkeeping/clock debt while held shortcuts remain blocked.
+PSP environment parsing locates the full executable path independently of CWD.
+Snapshot/cache/store staging are static;the original large-model link retains
+about40KB DGROUP including its2KB stack,well below a64KB segment.
+
+Both widths pass10focused tests. The real original-toolchain DOS executable
+runs a41-second headless DOSBox route:Start,P save,move right,O restore,
+Esc/text return. Save is4782bytes with correct CRC/schema and absent audio;
+EXE runs from a GAME subdirectory while CWD remains the drive root,and the
+slot appears only beside EXE. Player X bounds return exactly to the recorded
+starting bounds after O. No device/global desktop input is injected. This is
+operational storage/graphics/input evidence,not ROM or486speed qualification.
+
+Similar-issue sweep covers ordinary/extended/typematic shortcut inputs,
+held O through reset,absolute/root/relative/truncated paths,bounded PSP scan,
+all staging objects and load failure before commit. DOS has no sound hardware
+or renderer and cannot preserve PCM across intervening DOS gameplay;the
+shared game state/APU commands remain intact. Three local EXEs refreshed.
+S5 owns cross-width/cross-host continuation and integrated failure routes.
+No original nodes/edges/facets changed;all retained counters remain. No remote.
