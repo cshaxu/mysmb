@@ -80,7 +80,8 @@ int main(int argc, char **argv)
     /* Every authored pose must produce only printable cells and valid fill. */
     for(i=0U;i<MYSMB_TEXT_KIND_COUNT;++i) {
         elements[0].kind=(mysmb_io_u8)i;elements[0].x=64;elements[0].y=64;
-        for(row=0U;row<(i==MYSMB_TEXT_SCORE?11U:i==MYSMB_TEXT_JUMP_COIN?4U:
+        for(row=0U;row<(i==MYSMB_TEXT_LUIGI_SMALL || i==MYSMB_TEXT_LUIGI_LARGE?
+            MYSMB_TEXT_PLAYER_POSES:i==MYSMB_TEXT_SCORE?11U:i==MYSMB_TEXT_JUMP_COIN?4U:
             i==MYSMB_TEXT_FLAG_SCORE?5U:i>=MYSMB_TEXT_VINE_LEAF?1U:i<2U?MYSMB_TEXT_PLAYER_POSES:
             i==MYSMB_TEXT_GOOMBA || i>=MYSMB_TEXT_GOOMBA_FLAT?3U:1U);++row) {
             elements[0].pose=(mysmb_io_u8)row;

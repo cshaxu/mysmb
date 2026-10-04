@@ -3,6 +3,7 @@
 #include "game/ppu_frame.h"
 #include "game/oam/oam.h"
 #include "game/objects.h"
+#include "game/enemy/actor_slots.h"
 #include "game/presentation/text/actor_scene.h"
 #include "game/presentation/text/background_scene.h"
 #include "game/presentation/text/observer_snapshot.h"
@@ -74,6 +75,35 @@ static int snapshot_case(void)
         CHECK(memcmp(&before,&restored,sizeof(restored))==0);
         second.payload[MYSMB_SNAPSHOT_PRESENTATION_OFFSET+bad_offsets[i]]=saved;
     }
+    return 0;
+}
+
+static int star_flag_case(void)
+{
+    struct mysmb_text_actor_receipt receipt;
+    mysmb_game_initialize(&observed);
+    observed.visible_ppu_mask=0x1eU;observed.palette[0x1aU]=0x27U;
+    observed.ram[0x0746U]=3U;observed.ram[0x00cfU]=0x72U;
+    observed.ram[0x0087U]=80U;observed.ram[0x06e5U]=32U;
+    plain=observed;mysmb_text_observer_enable(&observed,1U);
+    mysmb_objects_step_star_flags_slot(&observed,0U);
+    mysmb_objects_step_star_flags_slot(&plain,0U);
+    CHECK(memcmp(&observed,&plain,offsetof(struct mysmb_game,text_observer))==0);
+    CHECK(observed.text_observer.producer.count==1U);
+    CHECK(observed.text_observer.producer.items[0].family==MYSMB_TEXT_OBSERVE_STAR_FLAG);
+    CHECK(observed.text_observer.producer.items[0].oam==32U);
+    mysmb_game_submit_oam(&observed);
+    CHECK(mysmb_text_observer_visible_mask(&observed,0U)==15U);
+    CHECK(mysmb_text_elements_build(0,0U,9U,&text));before=observed;
+    CHECK(mysmb_text_actor_scene_draw(&observed,&actor_workspace,0,&text,&receipt));
+    CHECK(receipt.drawn==1U && receipt.unsupported==0U);
+    CHECK(text.cells[24U*80U+27U].character=='*');
+    CHECK(memcmp(&before,&observed,sizeof(observed))==0);
+    CHECK(mysmb_text_observer_snapshot_capture(&observed,snapshot_wire));
+    restored=observed;mysmb_text_observer_invalidate(&restored);
+    mysmb_text_observer_snapshot_restore(&restored,snapshot_wire);
+    CHECK(memcmp(&observed.text_observer,&restored.text_observer,
+        sizeof(observed.text_observer))==0);
     return 0;
 }
 
@@ -235,7 +265,9 @@ int main(int argc,char **argv)
     struct mysmb_text_background_receipt background_receipt;
     unsigned char fingerprint[16];
     unsigned int i,j,player,enemy,running,text_actors;
-    unsigned long background_objects,background_unknown;
+    unsigned long background_objects,background_unknown,visible_unknown_running;
+    unsigned long unsupported_actors,unowned_running_sprites;
+    short scene_x,scene_y;
     FILE *preview,*save_file;
     static const unsigned char enemy_ids[17]={0U,2U,3U,5U,6U,7U,8U,10U,11U,
         12U,13U,18U,17U,45U,50U,51U,53U};
@@ -308,6 +340,7 @@ int main(int argc,char **argv)
         CHECK(enemy_case(enemy_ids[i],j==0U?0U:j==1U?4U:5U,
             (unsigned char)(j*4U))==0);
     CHECK(snapshot_case()==0);
+    CHECK(star_flag_case()==0);
     for(i=0U;i<5U;++i)CHECK(misc_case(0U,(unsigned char)i)==0);
     for(i=1U;i<=11U;++i)CHECK(misc_case((unsigned char)i,0U)==0);
     CHECK(mixed_player_case(1U,0U,0U)==0);
@@ -319,7 +352,8 @@ int main(int argc,char **argv)
     mysmb_game_snapshot_fingerprint(&observed,fingerprint);
     memset(&frame1,0,sizeof(frame1));memset(&frame2,0,sizeof(frame2));
     input.buttons2=0U;player=0U;enemy=0U;running=0U;text_actors=0U;
-    background_objects=background_unknown=0UL;
+    background_objects=background_unknown=visible_unknown_running=0UL;
+    unsupported_actors=unowned_running_sprites=0UL;
     preview=argc>=2?fopen(argv[1],"wb"):0;
     CHECK(argc<2 || preview!=0);
     for(i=0U;i<1000U;++i) {
@@ -344,10 +378,30 @@ int main(int argc,char **argv)
         CHECK(mysmb_text_background_scene_build(&observed,&background,&text,&background_receipt));
         background_objects+=background_receipt.objects;
         background_unknown+=background_receipt.unsupported;
+        /* Separate unsupported HUD/title/offscreen tuples from visible
+         * running-area gaps. This finite route is not a world census. */
+        if((observed.visible_ppu_mask&8U)!=0U &&
+            mysmb_game_snapshot_running(&observed,&frame1))
+            for(j=0U;j<480U;++j) {
+                scene_x=(short)((j%32U)*16U)-(short)observed.visible_scroll_x;
+                scene_y=(short)((j/32U)*16U)-(short)observed.visible_scroll_y;
+                if(scene_x<256 && scene_x+16>0 && scene_y<240 && scene_y+16>32 &&
+                    background.kinds[j]==0U) {
+                    visible_unknown_running++;
+                }
+            }
 #else
-        (void)background_receipt;(void)background;
+        (void)background_receipt;(void)background;(void)scene_x;(void)scene_y;
 #endif
         CHECK(mysmb_text_actor_scene_draw(&observed,&actor_workspace,background.opaque,&text,&actor_receipt));
+        unsupported_actors+=actor_receipt.unsupported;
+        if((observed.visible_ppu_mask&0x10U)!=0U &&
+            mysmb_game_snapshot_running(&observed,&frame1))
+            for(j=1U;j<64U;++j)
+                if(observed.visible_oam[j*4U]<239U &&
+                    observed.visible_oam[j*4U+1U]!=0xfcU &&
+                    observed.text_observer.visible.owners[j]==0U)
+                    unowned_running_sprites++;
         if(preview!=0) {
             CHECK(fwrite(&text,1U,sizeof(text),preview)==sizeof(text));
         }
@@ -401,5 +455,9 @@ int main(int argc,char **argv)
     printf("snapshot: immediate authored frame and 240 future ticks identical; malformed receipts rejected atomically\n");
     printf("semantic background: %lu objects, %lu unknown metatiles; no game mutation\n",
         background_objects,background_unknown);
+    printf("finite route visible running-area unsupported metatiles: %lu\n",
+        visible_unknown_running);
+    printf("finite route unsupported actors=%lu unowned running sprites excluding sprite0=%lu\n",
+        unsupported_actors,unowned_running_sprites);
     return 0;
 }

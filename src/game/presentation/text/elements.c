@@ -64,6 +64,7 @@ static const struct mysmb_text_art scores[11] = {
     {"2000",4U,1U},{"4000",4U,1U},{"5000",4U,1U},
     {"8000",4U,1U},{"1UP",3U,1U}
 };
+static const struct mysmb_text_art star_flag={"|***>" "| **>" "|___>",5U,3U};
 
 static const struct mysmb_text_art actors[19][2] = {
     {{"/___\\",5U,1U},{"/___\\",5U,1U}},
@@ -116,8 +117,11 @@ static const struct mysmb_text_art scenery[15] = {
 static const struct mysmb_text_art *art_for(
     const struct mysmb_text_element MYSMB_IO_FAR *element)
 {
-    if (element->kind == MYSMB_TEXT_PLAYER_SMALL) return &small[element->pose];
-    if (element->kind == MYSMB_TEXT_PLAYER_LARGE) return &large[element->pose];
+    if (element->kind == MYSMB_TEXT_PLAYER_SMALL ||
+        element->kind == MYSMB_TEXT_LUIGI_SMALL) return &small[element->pose];
+    if (element->kind == MYSMB_TEXT_PLAYER_LARGE ||
+        element->kind == MYSMB_TEXT_LUIGI_LARGE) return &large[element->pose];
+    if (element->kind == MYSMB_TEXT_STAR_FLAG)return &star_flag;
     if (element->kind == MYSMB_TEXT_FLAG_SCORE) return &flag_scores[element->pose];
     if (element->kind == MYSMB_TEXT_JUMP_COIN) return &jump_coins[element->pose];
     if (element->kind == MYSMB_TEXT_SCORE) return &scores[element->pose];
@@ -153,7 +157,10 @@ static int valid_element(const struct mysmb_text_element MYSMB_IO_FAR *e)
 {
     return e != 0 && e->kind < MYSMB_TEXT_KIND_COUNT &&
         e->face_left <= 1U && e->foreground <= 15U && e->background <= 15U &&
-        (e->kind==MYSMB_TEXT_SCORE ? e->pose<11U:
+        (e->kind==MYSMB_TEXT_LUIGI_SMALL || e->kind==MYSMB_TEXT_LUIGI_LARGE ?
+            e->pose<MYSMB_TEXT_PLAYER_POSES:
+         e->kind==MYSMB_TEXT_STAR_FLAG ? e->pose==0U:
+         e->kind==MYSMB_TEXT_SCORE ? e->pose<11U:
          e->kind==MYSMB_TEXT_JUMP_COIN ? e->pose<4U:
          e->kind==MYSMB_TEXT_FLAG_SCORE ? e->pose<5U:
          e->kind>=MYSMB_TEXT_VINE_LEAF ? e->pose==0U:
@@ -198,6 +205,8 @@ int mysmb_text_element_draw(
                 source = (mysmb_io_u16)(source_row +
                     (element->face_left != 0U ? art->width - 1U - column : column));
                 glyph = (mysmb_io_u8)art->cells[source];
+                if(glyph=='M' && (element->kind==MYSMB_TEXT_LUIGI_SMALL ||
+                    element->kind==MYSMB_TEXT_LUIGI_LARGE))glyph='L';
                 if (source-source_row<row_left || source-source_row>=row_right)continue;
                 if (filter != 0 && !filter(context,
                     (mysmb_io_u16)destination_x,

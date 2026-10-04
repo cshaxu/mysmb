@@ -1,23 +1,23 @@
 # Project Status
 
-## M3 T11 S2 Packet
+## M3 T11 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M3 T11 S2 active;P13 jumping coins/floating scores admitted;remaining scene obligations stay within S2. |
-| Admission And Approval | Automatic next-S admission under owner mandate after S1 reviewed local commit. |
-| Objective | Connect isolated text elements to existing draw decisions and committed visible scenes,with explicit lifetime/restore handling. |
+| Identifier Mode | Continuation:M3 T11 S3 active;P1 title/menu/caption chain admitted after reviewed S2 closure. |
+| Admission And Approval | Automatic next-S admission under owner mandate after S2 reviewed P14 closure. |
+| Objective | Complete title/menu,intermission,pause/death,warp and terminal text from source-visible decisions and committed text. |
 | Non-goals | No gameplay rewrite or ROM credit;complete presenter acceptance remains S4/S5. |
 | Reference Baseline | Historical1992/1992;local1991/1992nodes,4260/4261feasible controls;42/952facets,M2 incomplete. |
-| Candidate Proposal | [T11 S2](../proposals/colored-ascii-text-frame-gameplay.md#s2-admission). |
-| Files And ABI Surface | P13 two draw-owner hooks,observation families,authored coin/score templates,scene assembly and focused tests;8-10source/testfiles,180-300lines. Record storage/snapshot length/workspaces unchanged;accepted family range extends. |
+| Candidate Proposal | [T11 S3](../proposals/colored-ascii-text-frame-gameplay.md#s3-admission). |
+| Files And ABI Surface | S3 shared text scene/background/caption assembly and source text/title producers if receipt binding is needed;6-12source/testfiles,350-650lines. Inspect source commit lifetime before any ABI change. |
 | Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Documentation and source policy. |
 | Verification | Enabled/disabled observation original-state/OAM/VRAM/audio/pixel equality;visible phase,ownership/clipping,background/HUD,restore;both native widths,originalDOS16 and3products,purity/governance. |
 | Expected Markers | Scope[],expectedMatches[],actualMatches[],new0;all ROM counters retained. |
 | Asset Needs | Existing local owner resources/reviewed local SMBDIS listing/originalOpenNT16 only;redistributability unestablished,no import. Purpose:immutable selected-pose/metatile interpretation and neutral non-interference evidence;protected outputs below ignored build;P3 proposal owns research limits. |
 | Reporting Requirements | Before/after component scope,size,tests,3EXEs and local commit;no remote. |
 | Stop Conditions | Selector re-execution,original-state/output mutation,live/visible mixing,unowned restore metadata or segment overflow prevents closure. |
-| Exit Criteria | Typed observed scene uses source-selected results and committed visibility;bounded storage/restore and no-interference evidence pass. |
+| Exit Criteria | All named scene families have source-visible caption/art expectations,disappearance/scroll/restore and no-interference proof;host full acceptance remains S4-S6. |
 | Original Owner Request | Isolated element-based text,not sampling;Tab switches both presentations on all hosts. |
 | Similar-Issue Sweep | All draw families,slot overwrite/shuffling,background staging/commit,hidden blocks,HUD split,boot/pause/snapshot resets. |
 
@@ -40,8 +40,6 @@
 
 ## Compact closure status
 
-M3 T9 S5 P1:actual headless DOSBox title/Start/24seconds gameplay/run/jump/left/release/Esc passed;4test/tool files,+281/-0,no product source edit;13focused+1friction test eachwidth,three builds/products retained,no ROM credit/no remote.
-
 M3 T9 S6 P1:shared Escape exit/short-press lifecycle and integrated closure;16source/test/build files,+130/-26,14tests eachwidth,fresh originalDOS16 link/actualDOSBox route/3EXEs. T9closed,DOSaudio unavailable/M4speed pending,zeroROMcredit,no remote.
 
 M3 T10 S1 P1:4782byte codec,integer canonical numeric validation,last-running cache;5focused tests eachwidth,originalDOS16 link and3localEXEs. ZeroROMcredit,no remote;P/O host binding pending.
@@ -56,117 +54,4 @@ M3 T10 S5 P1/T closure:16tests eachwidth,240frames/176400samples uninterrupted r
 
 M3 T11 S1 P1:isolated authored element templates260newsource/test lines,11build lines;four focused tests eachwidth,C90 and originalOpenNT16 ABI/product builds;three localEXEs byte-identical. No runtime text/Tab yet;zeroROMcredit,no remote.
 
-## S2 progress
-
-P1:1413-byte optional observer and4draw-file hooks;1000-step twin route has
-zero original core/frame/pixel differences in both widths;8focused tests plus
-product self-test eachwidth,originalDOS16 andactualDOSBox route pass. Three
-local products refreshed:DOS326127,x86396559,x64410615bytes. S2 not closed:
-17dedicated graphics files/overwrite sites,background/HUD,live templates and
-immediate snapshot metadata restoration remain. Tab binding remains S4/S5.
-
-P2:12source/test files,+88/-8;additional effect/terrain-sprite owners and64-slot
-receipt reuse. Bothwidths five focused tests/twin-route,C90,originalDOS16 and
-actualDOSBox pass. Three localEXEs327503/397583/411639bytes;observer5253bytes,
-DOS DGROUP45536bytes. S2 remains open;next is actual80x50scene assembly and
-remaining source/restore coverage,not a new S or ROM credit.
-
-P3:read-only whole-actor template composition,16-color/fill and final-entry
-clipping. Bothwidths six focused tests;1000-step twin route zero original
-core/frame/pixel differences,1729template draws and no game/observer mutation.
-StrictC90,originalDOS16 ABI/link and3localproducts327999/397671/412237bytes;
-DOS DGROUP45600bytes,actualDOSBox title/Start/run/jump/left/release/Escape pass.
-S2 remains active:background/HUD,remaining poses/writers,
-segmented geometry/priority and immediate snapshot continuity still pending.
-No playable text or Tab binding yet;no ROM credit. See P3 receipt for limits.
-
-P4:semantic background grouping/fills and fixed HUD compose with actor templates.
-Bothwidths seven focused tests,C90 and originalDOS16 far ABI/product link pass.
-Three products refreshed,byte-identical to P3;its actualDOSBox receipt retained.
-999textframes/11988000bytes match across widths;1000-step twin game retains zero
-original core/frame/pixel differences and no presentation-induced mutation.
-Workspace2400bytes caller-owned/far. Residual title/metatile/actor/priority/restore
-obligations are named in P4 receipt;S2 remains active,no host text/Tab yet.
-
-P5:36authored element kinds,14player poses and selected enemy variants;
-20/21gfx files directly observed,Bowser delegates to the normal-owner observer.
-51controlled enemy draw cases retain original state/OAM;bothwidths seven tests,
-1000-step twin output equality and999text-frame cross-width comparison pass.
-StrictC90,originalDOS16 far ABI/link andactualDOSBox route pass;three refreshed
-products329103/398183/412749bytes. Observer5253bytes,DGROUP45600bytes unchanged.
-S2 stays open:mixed player parts,segmented geometry/priority,title/misc owners,
-residual metatiles and immediate snapshot continuity;no host text/Tab yet.
-
-P6:explicit two-phase observation snapshot binding and compatible schema2 IO;
-14source/test/build files,+273/-44. Bothwidths12focused tests/product self-tests
-pass;immediate restored text and240future states match,999textframes and10035-byte
-save compare byte-for-byte across widths. OriginalDOS16 link andactual41second
-DOSBox save/move/load/Escape pass. Three products331023/401348/415432bytes;
-DGROUP46528bytes,transaction workspace on far heap. Legacy files load with absent
-receipts;no immediate-text promise for them. Raw outputs cleaned;zeroROMcredit.
-S2 stays open:remaining scene/pose/priority obligations,no host text/Tab yet.
-
-P7:per-entry OAM priority/palette,authored background occlusion and independently
-positioned chunks/effects;shrinking receipts release stale owners. Eight source/
-test files,+106/-30. Bothwidths six tests/product self-tests,C90,originalDOS16
-far ABI/link andactualDOSBox route pass. Twin1000-step original-output equality,
-restore240future states and999textframes/11988000cross-width bytes pass.
-Three products331103/401348/415432bytes;DGROUP46528bytes,bg workspace2900bytes,
-actor claim map500bytes. S2 remains open:remaining segmented/mixed/wrapped
-geometry,residual backgrounds and title/misc owners;no host text/Tab yet.
-
-P8:vine/platform/flag-score components and mixed throw/one-sided swim poses;
-8source/test files,+234/-25. Bothwidths six tests/product self-tests,C90,
-originalDOS16 far ABI/link andactualDOSBox route pass. Four controlled player
-hooks preserve the original game prefix;999textframes/11988000bytes match
-across widths,twin1000-step graphical equality andrestore240future states pass.
-Three products331183/401348/415432bytes;observer5253,DGROUP46528bytes unchanged.
-S2 remains open:wrapped/hidden anchors,residual special backgrounds and
-title/menu/misc owners. No host text/Tab yet;no new ROM credit or remote.
-
-P9:wrapped-X/hidden-row whole-actor anchors;2source/test files,+112/-11.
-Bothwidths six tests/product self-tests,C90,originalDOS16 far ABI/link and
-governance pass. Twin1000-step original-output equality,immediate restore/
-240future ticks and999textframes/11988000cross-width bytes pass. All3new
-products are byte-identical to P8,so its actualDOSBox receipt is retained.
-Observer5253/DGROUP46528bytes unchanged. S2 stays open:residual special
-backgrounds/misc writers;S3 scene completion still planned,no host text/Tab.
-No new ROM credit,no remote;historical/local/facet totals remain as above.
-
-P10:early Windows Tab graphics/real80x50console preview;12source/test/build
-files,+342/-19. Bothwidths nine tests/product self-tests and actual hidden
-console4000cell/color/repeat/release/round-trip probe pass;one game/audio
-instance and graphics survive without synthetic pause. SharedC90,original
-DOS16 far ABI/link andactualDOSBox24second gameplay route pass. Products
-331279/428326/443960bytes refreshed. DOS Tab remains S4;remaining scene art,
-full S5 focus/snapshot/audio/failure routes and performance stay pending.
-Preview console close button is disabled;Tab returns,Escape exits. S2/T11
-remain open;ROM counters unchanged,no remote,no protected material staged.
-
-P11:DOS Tab80x50/graphics preview over the shared scene;14source/test/build/
-probe files,+232/-13. Bothwidths nine tests,100-step switched/unswitched whole
-game/audio equality,text save/load and heldTab cases pass. OriginalDOS16 far
-ABI/link andactual46secondDOSBox text/held/roundtrip/P/O/Escape pass;paused
-text and graphics remain pixel-identical across their round trips. Products
-350743/428326/443960bytes refreshed;DOS DGROUP48960bytes,text15400bytes on
-far heap. Windows probes remain green. Every target now has early Tab preview;
-scene coverage/full integration/performance pending,S2/T11 open,no ROM credit.
-
-P12:special background shapes/component-member clipping and cell-center bounds;
-4source/test/tool files,+161/-25. Bothwidths10tests,1000-step original-output
-equality,immediate/240future restore,999cross-width textframes,C90 and original
-DOS16 link pass. Windows console probe now filters asynchronous non-key records;
-3consecutive runs eachwidth pass. ActualDOSBox dynamic retry passes,but earlier
-dynamic and normal-core routes fail progression/exit with cause unresolved;
-S4 retains this integration gap. Products352279/429434/445067bytes refreshed.
-Observer/workspaces/DGROUP unchanged;S2/T11 open,no ROM credit,no remote.
-
-P13:jumping-coin/floating-score draw receipts and4/11authored variants;
-9source/testfiles,+137/-5. Sixteen controlled owners retain original game
-prefixes;partial/wrapped/hidden score and snapshot cases pass. Bothwidths
-10focused tests/product/console probes,1000-step original-output equality,
-immediate/240future restore and999cross-width textframes pass. OriginalDOS16
-far ABI/link andactual46secondDOSBox Tab/P/O/Escape pass;P12 intermittent
-probe gap remains S4. Products353695/430506/446138bytes,DGROUP49136bytes;
-observer/workspaces unchanged. S2 open;next remaining-scene reconciliation,
-then S3 scene completion. ROM totals unchanged,no protected staging/no remote.
+M3 T11 S2 P1-P14 closed:bounded source-decision observations,committed actor/background/HUD scene,45element kinds,101metatile classes and full observation restore. P14 adds star flag/Luigi;10source/testfiles,+120/-13. Bothwidths10focused tests/product/console probes,original-state/output equality and999cross-width textframes pass;originalDOS16 link/actualDOSBox Tab/P/O/Escape pass. Products354149/431047/446166bytes,DGROUP49152bytes. S3 accepts caption/title/terminal coverage;S4 retains intermittent DOS probe gap,S4-S6 host/integration/performance remain. Scope/expected/actual=[];no ROM credit,no remote. Full receipts: [T11 proposal](../proposals/colored-ascii-text-frame-gameplay.md#s2-closure-and-coverage-boundary).

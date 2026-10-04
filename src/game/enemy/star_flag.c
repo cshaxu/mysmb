@@ -2,6 +2,7 @@
 #include "game/oam/oam.h"
 #include "game/score.h"
 #include "game/status.h"
+#include "game/presentation/text/observation.h"
 
 /* ROM $D2CD-$D2D8: StarFlagYPosAdder, StarFlagXPosAdder, StarFlagTileData. */
 static const mysmb_u8 y_adder[4] = {0U,0U,8U,8U};
@@ -36,6 +37,10 @@ static void draw_star_flag(struct mysmb_game *game, mysmb_u8 slot)
             (mysmb_u8)(game->ram[0x03aeU] + x_adder[index]);
         oam = (mysmb_u8)(oam + 4U);
     } while (index != 0U);
+    /* The four entries were emitted in reverse tile order. Record the
+     * completed span at its original offset,not the advanced loop cursor. */
+    mysmb_text_observer_record(game,MYSMB_TEXT_OBSERVE_STAR_FLAG,
+        0U,slot,0U,0U,game->ram[0x06e5U+slot],4U,0U);
 }
 
 /* ROM $D2D9-$D3AF RunStarFlagObj and its five native task paths.

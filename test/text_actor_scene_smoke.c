@@ -250,6 +250,13 @@ int main(void)
     CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
     CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
     CHECK(frame.cells[21U*80U+27U].character=='M');
+    /* Luigi comes from the source-selected identity,not live player RAM. */
+    mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_PLAYER,
+        1U,24U,24U,1U,32U,4U,1U);
+    mysmb_game_submit_oam(&game);game.ram[0x0753U]=0U;
+    CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+    CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+    CHECK(frame.cells[21U*80U+27U].character=='L');
     /* Scores keep their selected value after live control changes. A later
      * partial writer removes only its entry,not the whole number or anchor. */
     mysmb_text_observer_invalidate(&game);

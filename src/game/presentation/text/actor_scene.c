@@ -53,9 +53,12 @@ static int player_pose(const struct mysmb_game *game,
     unsigned char phase;
     base=(unsigned short)(0x6e07U+(item->source_size!=0U?8U:0U));
     if(game->area_prg==0 || game->area_prg_size<base+8U)return 0;
-    e->kind=item->source_size!=0U?MYSMB_TEXT_PLAYER_SMALL:MYSMB_TEXT_PLAYER_LARGE;
+    e->kind=item->source_size!=0U?
+        ((item->identity&1U)!=0U?MYSMB_TEXT_LUIGI_SMALL:MYSMB_TEXT_PLAYER_SMALL):
+        ((item->identity&1U)!=0U?MYSMB_TEXT_LUIGI_LARGE:MYSMB_TEXT_PLAYER_LARGE);
     if((item->identity&MYSMB_TEXT_PLAYER_DEATH_FLAG)!=0U) {
-        e->kind=MYSMB_TEXT_PLAYER_SMALL;e->pose=MYSMB_TEXT_DEAD;return 1;
+        e->kind=(item->identity&1U)!=0U?MYSMB_TEXT_LUIGI_SMALL:MYSMB_TEXT_PLAYER_SMALL;
+        e->pose=MYSMB_TEXT_DEAD;return 1;
     }
     if((item->identity&MYSMB_TEXT_PLAYER_THROW_FLAG)!=0U) {
         e->pose=MYSMB_TEXT_THROW;return 1;
@@ -80,7 +83,8 @@ static int player_pose(const struct mysmb_game *game,
             e->pose=phase==0U?MYSMB_TEXT_CLIMB:MYSMB_TEXT_CLIMB_SECOND;return 1;
         }
     if(item->graphics==0xb8U || item->graphics==0xc0U) {
-        e->kind=MYSMB_TEXT_PLAYER_SMALL;e->pose=MYSMB_TEXT_STAND;return 1;
+        e->kind=(item->identity&1U)!=0U?MYSMB_TEXT_LUIGI_SMALL:MYSMB_TEXT_PLAYER_SMALL;
+        e->pose=MYSMB_TEXT_STAND;return 1;
     }
     return 0;
 }
@@ -181,6 +185,7 @@ static int choose(const struct mysmb_game *game,
     case MYSMB_TEXT_OBSERVE_SCORE:
         if(item->graphics==0U || item->graphics>11U)return 0;
         e->kind=MYSMB_TEXT_SCORE;e->pose=(unsigned char)(item->graphics-1U);return 1;
+    case MYSMB_TEXT_OBSERVE_STAR_FLAG:e->kind=MYSMB_TEXT_STAR_FLAG;return 1;
     default: return 0;
     }
 }
@@ -258,7 +263,8 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
              * one whole template. Align its top row to a source cell center,
              * retaining the whole anchor after a partial overwrite. */
             if(item->family==MYSMB_TEXT_OBSERVE_COIN ||
-                item->family==MYSMB_TEXT_OBSERVE_SCORE) {
+                item->family==MYSMB_TEXT_OBSERVE_SCORE ||
+                item->family==MYSMB_TEXT_OBSERVE_STAR_FLAG) {
                 if(element.x>=0 && element.x<256)
                     element.x=component_anchor((unsigned short)element.x,80U,256U);
                 if(element.y>=0 && element.y<240)

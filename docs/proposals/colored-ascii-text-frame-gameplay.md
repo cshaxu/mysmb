@@ -970,3 +970,121 @@ S2 remains active for a bounded remaining-scene coverage reconciliation before
 S3;full presenter/performance acceptance stays S4-S6. Historical1992/1992,
 local1991/1992nodes,4260/4261feasible controls(raw4342/infeasible81),42/952facets
 and6/136groups are unchanged. No ROM credit,no remote or protected staging.
+
+### S2 P14 remaining gameplay coverage scope
+
+The draw-owner reconciliation finds one unobserved production family:
+DrawStarFlag at the castle. ProcFirebar delegates to the already-observed
+DrawFirebar child;do not add another competing receipt. Existing player
+receipts contain the selected player bit,but templates still showM for
+Luigi. Add a castle-star-flag family and authored flag;give both Luigi sizes
+the same selected poses with anL cap. Check all101named metatile positions
+using project-authored synthetic tuples. The classification census is not
+proof of every original tuple/alias/scene. Estimate8-10source/testfiles,
+160-260lines. Verify actual star-flag owner enabled/disabled state equality,
+its source-reversed entry order,visibility,priority and snapshot record;
+all player pose sets and Luigi identity latching;all background classes.
+Retain S2's previous no-interference/restore proof and run both widths,
+originalDOS16/three products,actual boundedDOSBox and governance/purity.
+Source provenance/containment budgets remain unchanged,no ROM credit.
+S3 owns title/menu/intermission/terminal text and any scene-specific tuple
+reconciliation,with explicit handoff before S2 closure.
+
+### S2 P14 review receipt
+
+Ten source/test files change120added/13removed lines,below the160-260forecast
+through reuse of existing templates and source-entry clipping. DrawStarFlag
+records its completed reverse-order span without changing original state or
+OAM output. Luigi's already-selected player identity now selects anL cap for
+both sizes and all17poses,including death/intermission. The observation family
+range extends to17;all record/snapshot lengths remain unchanged.
+
+An actual controlled castle-flag owner case preserves the original game
+prefix,checks all four visible entries,authored star glyphs and immediate
+snapshot restoration. Luigi remainsL after live player RAM changes. All45
+kinds/accepted poses and all101named metatile positions pass focused checks.
+The census initially failed because a previous intentional conflicting-alias
+fixture was not restored;its unique tuples are now restored before the census.
+A bounded original-table census finds101positions/55same-group alias pairs
+and zero conflicting semantic classes. It compares only admitted table tuples
+through the current classifier;no CHR art is read or copied. The local census
+source/binary stays below ignored build;only neutral counts are retained here.
+
+Both widths pass10focused tests,product self-tests and real owned-console
+Tab probes. Original1000-step core/frame/pixel equality,immediate/240future
+restore and999textframes/11988000cross-width equality remain green. Running
+visible-area unsupported metatiles,unsupported actors and unowned running
+sprites(excluding control sprite0) are each zero in this finite first-level
+route. An initial seven-count arose during disabled-background transition:
+the diagnostic inspected previous workspace classes;it now requires actual
+background enable. Overall20579unknown matrix occurrences include title/HUD/
+offscreen data;they are not a count of visible gameplay holes or complete
+scene coverage. Other worlds and caption families remain S3/S6 obligations.
+
+StrictC90,originalOpenNT16 far ABI/link and actual46second DOSBox text/held/
+graphics/P/O/text-preserving restore/Escape pass. DGROUP49152bytes remains
+below64KB,observer5253bytes/far pack15400bytes unchanged. Raw captures/save and
+cross-width frames are deleted after neutral receipts. P12's unexplained
+intermittent DOS input/progress condition remains S4;this successful route
+does not prove its resolution or486SX performance.
+
+Products refresh to354149/431047/446166bytes. SHA256 in DOS/x86/x64 order:
+1C4599014538AB8676BD4A64CA1535AB79B5732BBDC919AFC9059E88115AC2EB,
+80F563B0DFF657798DAA2C1CF3EAAA8E9440B830750302FA3D4AE65BE433DC56,
+8B4B1E4C3F2F6686B903EF38C9E5E0CF0A1ACACF328ACF4373E750EB67DF3E8A.
+No ROM credit,no remote,no protected material staged.
+
+## S2 closure and coverage boundary
+
+S2 closes the optional bounded source-observation/committed-scene assembly,
+not complete playable text acceptance. P1-P14 receipts retain their fixture
+limits;the following owner census is reconciled:
+
+| Shared source family | Presentation disposition / retained proof |
+| --- | --- |
+| Player,including intermediate player | Completed selected identity,size,graphics and partial throw/kick;P1/P5/P8/P9/P14. |
+|21dedicated graphics files |20have direct completed-owner receipts;Bowser delegates its halves to the normal owner. Normal/dedicated variants P2/P5;post-write hiding excludes changed entries instead of replaying selectors. |
+| Firebar production route | ProcFirebar/FirebarCollision delegates to observed DrawFirebar;no competing parent receipt. |
+| Misc jumping coin and floating scores | Both coin branches and all11score selections recorded;P13 controlled actual owners and snapshot. |
+| Castle star flag | Completed reverse-order four-entry owner;P14 controlled actual owner/visibility/snapshot. |
+| Bubble,vine,platform,flag,fireball,flame,hammer,block/chunks,fireworks | Explicit source receipts and selected/segmented geometry;P2/P5/P7/P8/P9. |
+| Clears,shuffle,overwrites and DMA | Boot invalidates,producer clear after source offscreen loop,DMA latches;full-entry validation excludes later unobserved changes. Slot reuse/partial ownership/priority P1/P2/P7/P9/P13. |
+| Terrain/scenery and HUD | Read-only committed nametables,palette and split/scroll;all101classes and original alias census P4/P12/P14. |
+| Save/load | Both producer/visible phases retained in5253byte extension;legacy absent receipts explicit;immediate frame/240future steps P6/P13/P14. |
+
+Sprite0 is source timing/control data,not an authored gameplay object. Pending
+source-visible captions,title logo/menu icon/intermission/warp/death/terminal
+strings are accepted by S3 under its planned scene responsibility. Unknown
+raw tuple combinations are never guessed;S3 reconciles caption tuples and S6
+checks representative gameplay world routes. S4/S5 accept the early host
+switching previews and their remaining failure/focus/input/audio clauses;S4
+also accepts the P12 intermittent DOS probe clause. S6 owns integrated playable
+routes and performance evidence. These are planned receiver acceptances under
+the owner's automatic-continuation mandate,not claims that those S have run.
+No ROM labels are retained or transferred by S2;scope/expected/actual=[]/[]/[].
+Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
+infeasible81),42/952facets and6/136groups remain unchanged;M2 uncertified.
+
+## S3 admission
+
+Automatic continuation after reviewed S2 closure under the owner's mandate.
+Complete source-visible title/menu,intermission,pause/death,warp and terminal
+text scenes in the existing shared presentation owner. Consume completed
+source decisions/committed nametable text;no host-side gameplay or duplicate
+mode state machine. Reconcile title/menu/icon and caption tuple obligations
+accepted from S2;retain all accepted object assembly and snapshot behavior.
+Estimate6-12source/testfiles,350-650lines. Read original text/title producers
+and commit lifetime before choosing additional metadata;amend any ABI/storage
+change visibly. First P addresses title/menu/caption visibility as one chain;
+remaining terminal/death/warp/pause cases stay within this S.
+
+Incoming historical1992/1992,local1991/1992nodes,4260/4261feasible controls and
+42/952facets;scope=[],expected=[],maximum historical1992/1992,new0. Shared
+owners:game/presentation/text,existing title/text producers only if read-only
+receipt binding is required. No platform behavior change. Validate authored
+scene expectations/source-visible phase,read-only state/OAM/VRAM/audio/pixels,
+restore,palette/scroll/priority and source change/disappearance;both widths,
+originalDOS16/three products and bounded actual runtime route. S4-S6 host/
+performance clauses remain separate. Existing local resource provenance and
+ignored-build60second/raw20MB per runtime/cross-width12MB limits apply. No
+ROM/CHR/third-party artwork import and no ROM conformance promotion.

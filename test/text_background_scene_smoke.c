@@ -28,6 +28,7 @@ int main(void)
 {
     struct mysmb_text_background_receipt r;
     unsigned short g,i,j,row;
+    static const unsigned short counts[4]={39U,46U,10U,6U};
     memset(&game,0,sizeof(game));memset(prg,0,sizeof(prg));
     memset(game.name_table,0x24,sizeof(game.name_table));
     memset(game.name_table[0]+0x3c0U,0,64U);
@@ -146,6 +147,22 @@ int main(void)
     game.visible_scroll_x=7U;game.visible_scroll_y=1U;
     CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
     CHECK(frame.cells[26U*80U+50U].character=='^');
+    /* Every reviewed metatile position has a semantic class. Author-owned
+     * unique tuples test the classifier without importing original art. */
+    game.visible_scroll_x=game.visible_scroll_y=0U;
+    /* Restore the intentional alias fixture before the unique-tuple census. */
+    for(j=0U;j<4U;++j)prg[0x1040U+j]=(unsigned char)(0x80U+j);
+    for(g=0U;g<4U;++g)for(i=0U;i<counts[g];++i) {
+        memset(game.name_table,0x24,sizeof(game.name_table));
+        memset(game.name_table[0]+0x3c0U,0,64U);
+        memset(game.name_table[1]+0x3c0U,0,64U);
+        put(0U,4U,8U,g,i);
+        CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
+        if(r.unsupported!=0U || r.ambiguous!=0U)
+            fprintf(stderr,"class group=%u index=%u unsupported=%u ambiguous=%u\n",
+                g,i,r.unsupported,r.ambiguous);
+        CHECK(r.recognized==480U && r.unsupported==0U && r.ambiguous==0U);
+    }
     /* Disabled background produces only the universal color. */
     game.visible_ppu_mask=0U;
     CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
