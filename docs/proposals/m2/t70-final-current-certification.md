@@ -2,6 +2,17 @@
 
 ## Current Continuation Plan - P147
 
+P148 prerequisite amendment: owner requests verification performance audit.
+Within existing S17,measure registry/ledger indexing,CTest/process costs and
+retained batch runner scheduling. Scope tools and neutral execution guidance;
+no product behavior,graph promotion,test deletion without coverage evidence
+or successor admission. Original probe/checkers use retained P145 protocol
+and fixed byte-domain cases solely to measure orchestration;all raw output
+stays below ignored build,128MiB/120seconds per process and deleted after
+both widths finish. Sequential and parallel results must agree. Bounded
+independent processes may run in parallel;dependency mutations and closure
+remain sequential. Do not change shared filenames or inter-frame ordering.
+
 This section governs remaining execution under the owner's fixed-ledger
 request. Initial admission/cohort plans below are retained history, not the
 next To-Do order. No successor T or S is admitted by this planning amendment.
@@ -10556,3 +10567,79 @@ Historical1992/1992;local1991/1992 nodes,4260/4261 feasible controls
 (raw4342,infeasible81);all six packages retain their existing status.
 All952 facet cells need reconciliation;two localized gaps and13 coverage
 slots open. M2 incomplete;three P144 products unchanged,no audit-only rebuild.
+
+## S17 P148 checkpoint - verification cost audit and scoped execution
+
+The owner's performance request is a verification prerequisite inside current
+S17,not a new audit round. No game source,ROM contract,node/control status,
+material receipt or product changed. Timings below are measured bounded
+examples,not whole-project speedup promises. All logs/raw probes stay ignored;
+raw reference data deleted after both native readers joined.
+
+| Measured operation | Before / sequential | After / parallel | Scope and limit |
+| --- | --- | --- | --- |
+| Loaded audit-ledger validation | median0.5515seconds | median0.0550seconds | Five repeats,current10691uses;same summary and eight rejected invalid variants. Replaced per-group full scans with single-pass membership/path indexes;all checks/hashes retained. |
+| Native x86+x64 comparison | 0.2120seconds | 0.1117seconds | Same4096P145bubble roots/same original file,both widths0diff and identical reports. Two separate processes;reference creation0.9172seconds unchanged,so total batch benefit is much smaller than checker-only1.9x. |
+| Five x86 CTests | 0.5681seconds withj1 | 0.5308seconds withj4 | Samefive named tests;small startup-dominated suite. |
+| Five x64 CTests | 0.8095seconds withj1 | 0.6354seconds withj4 | Samefive named tests;not extrapolated to full suites. |
+| Scoped build and run | No comparable full-build benchmark | x86build12.77/test0.40seconds;x64build12.75/test0.40seconds | Trees built concurrently,eachfour real test targets/five tests. Incremental run,not a clean-build comparison. |
+
+CMake contains384 executable and248 test declarations,including conditional
+ones. Tests are not gated by BUILD_TESTING;default all-target builds therefore
+include broad validation support. This count is declarations,not the configured
+number of targets/tests on each architecture. Many route checkers already
+consume thousands of records per process. RecentP145runs4096roots per batch,
+not one launch per root;65536roots means16reference plus32native launches.
+A new generic batch framework is not needed to obtain that existing benefit.
+
+### Execution Changes Effective Now
+
+- Use tools/run_scoped_tests.py with exact repeated --test names,prepared
+  --build-tree and ignored --output. It lists and verifies exact scope first,
+  derives only required native targets,builds those targets and runs that
+  exact CTest set. Missing/duplicate tests,zero/incomplete execution and invalid
+  budgets fail;three deliberate bad selections rejected before build/run.
+- Default jobs1;the five audited bubble/entry/purity tests support jobs4.
+  Enable other parallel cohorts only after shared-file/state review. Separate
+  x86/x64 build/output trees may run concurrently with bounded worker counts.
+  Never run two CTests writing the same fixtures or results concurrently.
+- Original reference generation stays once per fixed batch. Independent
+  x86/x64 readers may run together against that immutable file;delete it only
+  after both finish. Future batches require unique output paths and proven
+  independent roots. Never split a continuous frame/child chain for parallelism.
+- Build library plus selected checker/tests and requested products,not all
+ 384 targets for each P. Preserve one final full integrated check at T closure.
+  Product repairs still refresh all three EXEs. Keep original DOS16 toolchain
+  and its isolated output;package assets only after builds complete.
+- Reuse current source/fixture/output-bound receipts for unchanged conditions.
+  Bulk reconciliation may close several facets from one valid chain receipt;
+  no independent test or commit per instruction/facet. Compile reusable
+  probes only when their source/flags/library dependencies change. Cache keys
+  must include ROM/input/fixture/ABI-exclusion and source identities;no elapsed
+  time or file-presence-only acceptance. No persistent proof cache added here.
+- Avoid duplicate gates within one unchanged transaction: registry verification
+  already calls the fixed-ledger validator;documentation gate already checks
+  node progress and responsibility. Retain explicit admission/closure checks
+  when the corresponding contract changes;generate node/task views only when
+  their source ledger changes. Do not remove semantic/source review.
+
+### Tests And Architecture Disposition
+
+No test was proven useless and none is removed. Mocked caller/child tests
+check argument/order seams;unit tests exercise negative cases;original batch
+checkers compare source semantics/full scoped state. They are distinct from
+completed-pixel and end-to-end routes. Merge execution/compilation where
+contracts and fixtures agree,not assertions across different proof domains.
+Further object-library factoring or excluding optional checker targets from
+the default build would change CMake/source bindings and needs an explicit
+bounded amendment;targeted builds deliver benefit now without such churn.
+The main remaining throughput issue is repeated tiny P work,evidence/tool
+preparation and broad builds,not the subsecond ordinary unit-test run.
+
+Both widths pass allfive targeted tests,all4096original/native cases0diff;
+ledger output identical after optimization;all eight accounting negative
+checks andthree bad test selections rejected. These are performance and
+verification-infrastructure receipts,not new gameplay certification. Historical
+1992/1992;local1991/1992 nodes,4260/4261feasible controls(raw4342,infeasible81);
+952facets pending,13coverage slots open,two localized findings,six packages
+with two closed. M2 incomplete. Allthree localP144 product identities retained.

@@ -43,10 +43,16 @@ def validate(ledger, registry, root):
     require(len({g['id'] for g in groups}) == len(groups), 'duplicate group')
     group_map = {g['id']: g for g in groups}
     node_paths = {n['label']: n['currentSourcePaths'] for n in registry['nodes']}
+    source_paths = set(ledger['sourceSnapshot'])
+    use_ids = {u['id'] for u in uses}
+    group_counts = collections.Counter()
+    group_paths = collections.defaultdict(set)
     require(identity_digest(group_map) == universe['groupIdentitySha256'],
             'obligation group universe changed')
     require(all(u['group'] in group_map for u in uses), 'unassigned use')
     for use in uses:
+        group_counts[use['group']] += 1
+        group_paths[use['group']].update(node_paths[use['label']])
         require(use['currentOwner'] == group_map[use['group']]['currentOwner'],
                 'wrong group owner: ' + use['id'])
         require(use['localDisposition'] in ('accepted-scoped', 'needs-evidence'),
@@ -55,12 +61,11 @@ def validate(ledger, registry, root):
                 use['localReceipt'], 'accepted site without receipt')
     for group in groups:
         require(set(group['facets']) == FACETS, 'missing integration facet')
-        paths = {p for u in uses if u['group'] == group['id']
-                 for p in node_paths[u['label']]}
+        paths = group_paths[group['id']]
         require(set(group['currentSourcePaths']) == paths and
-                paths <= set(ledger['sourceSnapshot']),
+                paths <= source_paths,
                 'missing concrete source dependency for group')
-        require(group['useCount'] == sum(u['group'] == group['id'] for u in uses),
+        require(group['useCount'] == group_counts[group['id']],
                 'group membership count changed')
         for facet in group['facets'].values():
             require(facet['status'] in ('pending-reconciliation', 'closed'),
@@ -79,7 +84,7 @@ def validate(ledger, registry, root):
     require(len({f['id'] for f in findings}) == len(findings), 'duplicate finding')
     for finding in findings:
         require(finding['status'] in ('open', 'closed'), 'unknown finding status')
-        require(set(finding['useIds']) <= {u['id'] for u in uses},
+        require(set(finding['useIds']) <= use_ids,
                 'finding outside fixed universe')
         require(all(finding.get(k) for k in ('oldEvidence', 'missingCondition',
                     'gameplayImpact', 'receiver', 'exit')), 'incomplete finding')

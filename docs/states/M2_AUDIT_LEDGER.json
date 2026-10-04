@@ -4,7 +4,7 @@
   "authority": "docs/states/CURRENT.md",
   "registry": "docs/states/M2_CURRENT_EQUIVALENCE.json",
   "taskId": "M2 T70 S17",
-  "part": "P147",
+  "part": "P148",
   "deadline": null,
   "universe": {
     "version": 1,
@@ -123380,6 +123380,12 @@
       "cause": "Align current and successor work planning to fixed audit obligations;old opening proposal is historical.",
       "nodeControlCredit": 0,
       "scopeChanged": false
+    },
+    {
+      "id": "P148-performance",
+      "cause": "Owner requests verification performance audit;single-pass metadata indexing and exact-scope build/run,retained acceptance unchanged.",
+      "nodeControlCredit": 0,
+      "scopeChanged": false
     }
   ],
   "closure": "All group facets, findings and coverage slots evidence-closed; six registry packages closed; no unresolved source mismatch; final source/data/build binding. No all-input theorem inferred.",
@@ -123719,6 +123725,14 @@
         "status": "planned",
         "exit": "All retained receipts current;all final packages and ledger clauses closed,integrated regression/purity/DOS16 link and three identities accepted."
       }
-    ]
+    ],
+    "performancePolicy": {
+      "scopedTests": "tools/run_scoped_tests.py exact names/targets;defaultjobs1,audited independent cohortjobs4",
+      "referenceBatch": "4096retained independent P145roots,one immutable reference file read by bothwidths;wait for both before cleanup",
+      "reuse": "Unchangedsource/fixture/ABI/output-dependent receipts reused;no per-facet test or commit",
+      "fullRegression": "Once at T closure or for concrete invalidated dependencies;three products for game repairs",
+      "duplicateGates": "Registry includes audit-ledger;documentation includes node progress/ledger;keep changed admission/closure checks",
+      "removedTests": 0
+    }
   }
 }
