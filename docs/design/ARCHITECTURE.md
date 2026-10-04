@@ -39,3 +39,10 @@ Game code may request neutral buttons, frame ticks, and command sinks. Windows a
 ## Runtime Admission Boundary
 
 ROM material enters only at an admitted local build/research boundary. The normal native product embeds only locally generated owner material and is not a tracked or distributed output.
+
+Shared `io/snapshot` owns fixed bytes,integrity/resource checks and a
+last-running-boundary cache. Program-state bytes are opaque;composition owns
+field binding and running eligibility. The codec validates canonical numeric
+records with integers only. Win32 audio adapters convert host double values
+arithmetically;DOS need not link floating-point code to read the same format.
+Storage and host P/O bindings remain T10 S2-S4 work.

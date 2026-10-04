@@ -1,25 +1,25 @@
 # Project Status
 
-## M3 T9 S6 Packet
+## M3 T10 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation:M3 T9 S6 P1 complete;T9 S1-S6 closed,awaiting next T admission. |
-| Admission And Approval | Owner automatic sequential S admission with advance brief and reviewed closure. |
-| Objective | Integrated three-host graphical IO/audio/focus/purity/product binding check and T9 closure. |
-| Non-goals | No game semantic promotion,ASCII presentation,new DOS audio hardware or486SX performance claim. |
-| Reference Baseline | Historical1992/1992;local1991/1992 nodes,4260/4261 controls;42/952facets,M2 incomplete and queued. |
-| Candidate Proposal | [T9 plan](../history/M3-T9-shared-io-and-graphical-output.md#s6-admission---integrated-boundary-review). |
-| Files And ABI Surface | Owner amendment:shared IO exit request/latch,Win32/DOS key adapters and composition roots,focused tests/build registration;8-12files,120-220lines estimated plus governance/archive. Refresh three EXEs. |
+| Identifier Mode | New:M3 T10 S1 P1 complete;T10 remains open,S2 next. |
+| Admission And Approval | Owner approves queue-head task admission and execution;automatic subsequent S after reviewed closure. |
+| Objective | Shared quick-snapshot schema,portable codec,resource/integrity validation and last-running-frame cache. |
+| Non-goals | No P/O host binding,file transaction,game semantic repair,ROM credit or emulator compatibility investigation. |
+| Reference Baseline | Historical1992/1992;local1991/1992 nodes,4260/4261 feasible controls;42/952facets,M2 incomplete. |
+| Candidate Proposal | [T10 quick snapshot](../proposals/shared-io-quick-snapshot.md#s1-admission). |
+| Files And ABI Surface | New src/io snapshot codec and test;CMake/original DOS build registration;design and governance. Estimate8-12files,400-650source/test lines. |
 | Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Documentation,source policy and admitted proposal. |
-| Verification | Fresh three-target build/link,14focused tests eachwidth,purity/source review,and retained S5 DOSBox route bound to identical DOS EXE. |
-| Expected Markers | Scope/expectedMatches[],fresh0;retained node/control/material counts unchanged. |
-| Asset Needs | Existing local ROM-bound products/original OpenNT16 toolchain,DOSBox/SDL local runtime and S5 ignored captures/receipt;no import or redistribution. |
-| Reporting Requirements | Before/after scope/size,tests/products/commit,push unavailable without remote;archive closed T,leave unnumbered queue pending. |
-| Stop Conditions | Failed current IO integration or altered dependency requires repair/recheck within admitted ownership before closure. |
-| Exit Criteria | Shared contracts/ownership,preserved Win32 audio/focus,actual DOS graphics route and fresh builds/gates agree;explicit DOS audio/performance limits;S6/T9 commit. |
-| Original Owner Request | Unify non-game/non-system-dependent IO,advance brief and automatically execute each remaining S. |
-| Similar-Issue Sweep | Direct game-internal reads in devices,duplicate frame/color logic,per-frame device reset,late-frame backlog,missing audio capability,stale product evidence. |
+| Verification | Neutral fixed-format fixtures,corruption/atomic-decode/cache/numeric round trips,x86/x64 tests,original DOS16 compile/link,purity and governance gates;three local products refreshed. |
+| Expected Markers | Exact scope[],expectedMatches[],new0;all retained ROM counts unchanged. |
+| Asset Needs | Existing owner-local ROM and OpenNT16 tools only for local product refresh;provenance retained from T9,distribution unreviewed/forbidden,outputs confined to ignored build/assets;neutral codec tests need no ROM. |
+| Reporting Requirements | Before/after scope,size,tests,three products and local commit;no push without remote;auto-admit S2 after S1 closure. |
+| Stop Conditions | Any width/schema/state omission or dependency violation blocks S1 closure until repaired. |
+| Exit Criteria | Byte-defined bounded snapshot,no raw structs/pointers/floating layout,complete mutable-state map and passing validation/cache tests on both widths and DOS compile/link. |
+| Original Owner Request | Admit new queue-head task and start;retain per-S briefs and build/test/commit reports. |
+| Similar-Issue Sweep | All mutable game/audio fields,state pointers,padding,paused-frame selection and failure-before-commit paths. |
 
 ## Current Technical Baseline
 
@@ -57,3 +57,5 @@ M3 T9 S4 P1:DOS PIT/clock pacing and explicit audio capability;16 source/test/bu
 M3 T9 S5 P1:actual headless DOSBox title/Start/24seconds gameplay/run/jump/left/release/Esc passed;4test/tool files,+281/-0,no product source edit;13focused+1friction test eachwidth,three builds/products retained,no ROM credit/no remote.
 
 M3 T9 S6 P1:shared Escape exit/short-press lifecycle and integrated closure;16source/test/build files,+130/-26,14tests eachwidth,fresh originalDOS16 link/actualDOSBox route/3EXEs. T9closed,DOSaudio unavailable/M4speed pending,zeroROMcredit,no remote.
+
+M3 T10 S1 P1:4782byte codec,integer canonical numeric validation,last-running cache;5focused tests eachwidth,originalDOS16 link and3localEXEs. ZeroROMcredit,no remote;P/O host binding pending.

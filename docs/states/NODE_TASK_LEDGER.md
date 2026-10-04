@@ -2836,6 +2836,8 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 Td S8 | 0 | 0 | owner-approved-governance-reconciliation; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 Td S9 | 0 | 0 | owner-directed-current-equivalence-governance; [record](../../docs/proposals/m2/current-equivalence-reaudit.md); [record](../../docs/states/M2_CURRENT_EQUIVALENCE.md) |
 | M3 T1 | 0 | - | [record](../../docs/history/M3-T1-neutral-render-command-seam.md); S not recorded |
+| M3 T10 | 0 | - | [record](../../docs/proposals/shared-io-quick-snapshot.md) |
+| M3 T10 S1 | 0 | 0 | snapshot-codec; [record](../../docs/proposals/shared-io-quick-snapshot.md) |
 | M3 T2 | 0 | - | [record](../../docs/history/M3-T1-neutral-render-command-seam.md); [record](../../docs/history/M3-T2-win32-command-consumer.md); S not recorded |
 | M3 T3 | 0 | - | [record](../../docs/history/M3-T2-win32-command-consumer.md); [record](../../docs/history/M3-T3-colored-text-frame.md); S not recorded |
 | M3 T4 | 0 | - | [record](../../docs/history/M3-T3-colored-text-frame.md); [record](../../docs/history/M3-T4-vga-indexed-frame.md); S not recorded |
@@ -3751,3 +3753,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T9 S4 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T9-shared-io-and-graphical-output.md) |
 | M3 T9 S5 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T9-shared-io-and-graphical-output.md) |
 | M3 T9 S6 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T9-shared-io-and-graphical-output.md) |
+| M3 T10 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/shared-io-quick-snapshot.md) |

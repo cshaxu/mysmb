@@ -21,7 +21,7 @@ Translated files use subsystem names, not arbitrary ROM addresses. Every transla
 
 ## Source Organization
 
-`io/` includes only its own contract headers. It owns decoded two-port input,
+`io/` includes its own contract headers and portable C90 `string.h` memory operations. These standard operations add no game or device dependency. It owns decoded two-port input,
 a borrowed read-only 256x240 indexed frame, an owned ordered audio snapshot,
 and reserved 80x50 text cells. It contains no game state, ROM data, host API,
 audio synthesis, or text quantizer. Shared color lookup and indexed row scaling

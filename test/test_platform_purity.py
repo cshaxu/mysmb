@@ -27,7 +27,7 @@ for path in platform.rglob("*.[ch]"):
 for path in (root / "src" / "io").rglob("*.[ch]"):
     text = path.read_text(encoding="utf-8")
     for include in re.findall(r'^\s*#\s*include\s*[<"]([^>"]+)', text, re.M):
-        if not include.startswith("io/"):
+        if not include.startswith("io/") and include != "string.h":
             print(f"{path.relative_to(root)}: IO contract imports {include}")
             sys.exit(1)
     for token in ("struct mysmb_game", "HWND", "int86(", "waveOut", "->ram["):

@@ -1,4 +1,4 @@
-# Candidate: shared I/O quick snapshot
+# M3 T10: shared I/O quick snapshot
 
 Owner scheduling amendment (P153):remaining M2 acceptance verification is
 queued after the three I/O/presentation candidates. Earlier proof completion
@@ -9,9 +9,8 @@ rebind affected dependencies at admission. This does not certify M2.
 
 Add one quick-save slot shared by DOS16 and Win32. P saves to `mysmb.sav`
 beside the running executable; O loads that file and immediately continues
-gameplay. This is an unnumbered T candidate at the end of the queue. Admit it
-only after the preceding shared I/O graphic-frame candidate has completed its
-`src/io` component split. Its planned S slots are
+gameplay. Owner admitted M3 T10 after T9 completed its shared I/O
+component split. Its planned S slots are
 a forecast, not admitted work or ROM-node completion credit.
 
 The feature belongs to `src/io`: it owns the snapshot schema, validation,
@@ -117,3 +116,107 @@ to make storage tests pass.
 5. The codec stays C90-compatible and fixed-width; the Win32 and DOS16
    adapters own OS calls only. Cross-width builds, DOS16 link, focused codec
    tests, and operational host checks pass.
+
+## S1 admission
+
+Owner admits the former queue head as M3 T10;S1 is active and S2-S5 remain
+planned. Scope and expected new original nodes are both empty. Historical
+mapping1992/1992,local1991/1992 nodes and4260/4261 feasible controls retain
+existing scoped evidence;this feature earns no ROM conformance credit.
+
+S1 owns the byte schema,codec,numeric transport and last-running-frame cache,
+with a complete mutable-field census. Roots will marshal authoritative state;
+IO treats the program-state block as opaque bytes and knows no original RAM
+addresses. Numeric audio values use arithmetic sign/exponent/mantissa encoding,
+not a host double memory dump. Decoding validates the whole file before any
+caller output changes. S2 owns storage;S3/S4 own host and state binding.
+
+Verification uses neutral deterministic bytes,exact wire-size/byte-order
+assertions,wrong versions/resources,bit corruption,truncation,trailing bytes,
+numeric round trips and paused-cache/no-cache cases. DOS staging remains below
+one segment with no large automatic objects. Refresh the three local EXEs after
+source changes using the existing builds and original OpenNT16 compiler.
+
+## S1 schema contract
+
+The v1 file is4782bytes:36header +4622program +124audio. All integers are
+little-endian with specified widths. Header:magic `MYSMBSAV` bytes0-7,
+format1 at8-9,state-schema1 at10-11,payload4746 at12-15,resource fingerprint
+at16-31,and CRC32/ISO-HDLC at32-35. CRC covers bytes0-31 and36-4781.
+The fingerprint is four CRC32 values over the currently bound immutable
+PRG,CHR,title and title-icon byte arrays in that order. This is accidental
+incompatibility detection,not an authentication or security boundary.
+
+The composition schema consumes every mutable `mysmb_game` field once:
+
+| Program offset | Byte count | Field order |
+| ---: | ---: | --- |
+| 0 | 4 | frame_number |
+| 4 | 1 | startup_phase |
+| 5 | 2048 | ram |
+| 2053 | 2048 | name_table0 then1 |
+| 4101 | 256 | visible_oam |
+| 4357 | 1 | oam_dma_primed |
+| 4358 | 32 | palette |
+| 4390 | 5 | ppu_control_0,ppu_mask,ppu_name_table,scroll_x,scroll_y |
+| 4395 | 6 | visible_ppu_control_0,visible_ppu_mask,visible_ppu_name_table,visible_scroll_x,visible_scroll_y,visible_sprite0_split |
+| 4401 | 3 | apu_delta_counter_load,apu_channel_enable,apu_frame_counter |
+| 4404 | 24 | apu_registers |
+| 4428 | 1 | apu_write_count |
+| 4429 | 128 | 64 ordered index/value write pairs |
+| 4557 | 1 | area_command_count |
+| 4558 | 64 | 16 ordered column/row/page/dispatch_id command records |
+
+All four resource pointers and their lengths are immutable bindings and remain
+current after restore. Derived frame/bitmap storage is rebuilt. The saved
+ordered APU writes are state history,not pending playback;load must not submit
+them again. Device handles,pending samples,input-edge and wall-clock debt are
+excluded and reset by the applicable host binding.
+
+Audio block:presence byte0;registers1-24;enabled25;15u16 counters26-55;
+six flags56-61;noise_shift u16 at62-63;six numerical values64-123. Counter
+order:length4,envelope_level3,envelope_divider3,pulse_timer2,sweep_divider2,
+triangle_linear1. Flag order:envelope_start3,sweep_reload2,triangle_reload1.
+Numerical order:pulse_phase2,triangle_phase,noise_phase,highpass_input,
+highpass_output. Each numerical value is sign u8,biased exponent u16 and
+53-bit integer mantissa u56 (ten bytes),computed arithmetically. Zero is ten
+zero bytes;other finite values use `frexp(value)*2^53` and exponent+1074.
+Decoder rejects noncanonical/unrepresentable encodings without touching output.
+An absent audio state has a fully zero audio block;host bindings must explicitly
+qualify restoration and preservation of active audio across unsupported devices.
+
+Cache starts invalid and accepts only composition-declared completed running
+boundaries. Pause/title observations cannot overwrite it. S3/S4 determine that
+boundary using authoritative game status and commit it after audio consumption;
+IO contains no RAM addresses or mode decisions. S1 does not claim those host
+integrations are implemented.
+
+S1 implementation amendment:the original DOS16 runtime lacks the compiler's
+floating comparison/conversion helper symbols. Keep host-double numerical
+conversion under Win32 audio adaptation;the shared codec uses integer-only
+canonical-record validation,including subnormal precision checks. This keeps
+the same bytes and original DOS compiler/runtime without introducing an FPU
+requirement. Portable `string.h` memory operations are allowed by the purity
+gate;game and device includes remain forbidden.
+
+## S1 closure
+
+The shared v1 codec and cache are implemented. The integer-only codec and
+host-double adapter are separate owners. Neutral tests cover all4782truncated
+lengths,each byte corrupted (all eight bits for header bytes),wrong resources,
+trailing data,unaltered rejected output,canonical zero/subnormal/extreme
+numerical round trips,and invalid/nonrunning/paused/running cache selection.
+Both x86 and x64 pass5focused tests,including boundary,purity and hidden-window
+self-test. The focused suite takes about2seconds per width. The original
+OpenNT16 compiler/runtime compiles and links the same shared byte codec.
+Three local EXEs are refreshed;Windows bytes remain identical because P/O
+is not bound yet. DOS link includes the new shared module. No resource bytes
+or products are committed;all receipts remain under ignored build.
+
+Similar-issue sweep covers every mutable game field and every existing audio
+renderer field in the schema census. No native struct,pointer,padding,device
+queue or floating memory layout is serialized. Roots still need to provide
+running eligibility,capture/restore and resource rebinding in S3/S4;S1 does not
+claim gameplay save/load already works. No ROM labels or edges are promoted:
+historical1992/1992;local1991/1992 nodes,4260/4261 feasible controls unchanged.
+No remote exists;closure is a local P commit followed by automatic S2 admission.
