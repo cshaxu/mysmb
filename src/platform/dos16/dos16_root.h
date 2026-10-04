@@ -4,6 +4,7 @@
 #include "io/control.h"
 #include "app/game_snapshot.h"
 #include "io/snapshot_store.h"
+#include "game/presentation/text/scene.h"
 /* Composition root: device consumers receive only neutral IO views. */
 struct mysmb_dos16_hooks {
     void *context;
@@ -26,6 +27,11 @@ struct mysmb_dos16_root {
     mysmb_io_u8 snapshot_fingerprint[16];
     void (*reset_output)(void *context);
     void *reset_context;
+    struct mysmb_text_scene_workspace MYSMB_IO_FAR *text_workspace;
+    struct mysmb_io_text_frame MYSMB_IO_FAR *text_frame;
+    int (*set_mode)(void *,mysmb_io_u8);
+    void (*present_text)(void *,const struct mysmb_io_text_frame MYSMB_IO_FAR *);
+    mysmb_io_u8 text_mode;
 };
 int mysmb_dos16_root_initialize(struct mysmb_dos16_root *root,
                                 const struct mysmb_dos16_hooks *hooks);
@@ -33,4 +39,9 @@ void mysmb_dos16_root_step(struct mysmb_dos16_root *root);
 void mysmb_dos16_root_shutdown(struct mysmb_dos16_root *root);
 void mysmb_dos16_root_bind_snapshot(struct mysmb_dos16_root *root,
     struct mysmb_snapshot_store *store,void (*reset_output)(void *),void *context);
+void mysmb_dos16_root_bind_text(struct mysmb_dos16_root *root,
+    struct mysmb_text_scene_workspace MYSMB_IO_FAR *workspace,
+    struct mysmb_io_text_frame MYSMB_IO_FAR *frame,
+    int (*set_mode)(void *,mysmb_io_u8),
+    void (*present_text)(void *,const struct mysmb_io_text_frame MYSMB_IO_FAR *));
 #endif

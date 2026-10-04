@@ -2,7 +2,8 @@ param(
     [Parameter(Mandatory=$true)][string]$Compiler,
     [Parameter(Mandatory=$true)][string]$DosBoxDirectory,
     [Parameter(Mandatory=$true)][string]$ProductPath,
-    [Parameter(Mandatory=$true)][string]$OutputDirectory
+    [Parameter(Mandatory=$true)][string]$OutputDirectory,
+    [switch]$TextSwitch
 )
 $ErrorActionPreference='Stop'
 & (Join-Path $PSScriptRoot 'Build-DosBoxIoProbe.ps1') -Compiler $Compiler -DosBoxDirectory $DosBoxDirectory -OutputDirectory $OutputDirectory
@@ -59,8 +60,40 @@ echo MYSMB_EXIT_OK>exit.ok
 54000 capture exit.bmp 0
 56000 quit 0 0
 '@ | Set-Content -LiteralPath (Join-Path $output 'input.script') -Encoding ascii
+if($TextSwitch) {
+@'
+6000 capture title.bmp 0
+7000 key 13 1
+7500 key 13 0
+26000 key 13 1
+26500 key 13 0
+28000 capture graphics-before.bmp 0
+29000 key 9 1
+30000 capture text.bmp 0
+32000 capture text-held.bmp 0
+32500 key 9 0
+33000 key 9 1
+33500 key 9 0
+34500 capture graphics-after.bmp 0
+35000 key 9 1
+35500 key 9 0
+36500 capture text-again.bmp 0
+37000 key 112 1
+37500 key 112 0
+38500 key 111 1
+39000 key 111 0
+39500 capture text-loaded.bmp 0
+40000 key 9 1
+40500 key 9 0
+41000 capture graphics-loaded.bmp 0
+42000 key 27 1
+42500 key 27 0
+44000 capture exit.bmp 0
+46000 quit 0 0
+'@ | Set-Content -LiteralPath (Join-Path $output 'input.script') -Encoding ascii
+}
 # Remove only this probe's declared receipts so a failed run cannot reuse them.
-foreach ($name in @('title.bmp','start.bmp','right-run.bmp','jump.bmp','before-left.bmp','release.bmp','stopped.bmp','exit.bmp','exit.ok','probe.log')) {
+foreach ($name in @('title.bmp','start.bmp','right-run.bmp','jump.bmp','before-left.bmp','release.bmp','stopped.bmp','exit.bmp','exit.ok','probe.log','graphics-before.bmp','graphics-after.bmp','text.bmp','text-held.bmp','text-again.bmp','text-loaded.bmp','graphics-loaded.bmp','mysmb.sav','receipt.json')) {
     $path=Join-Path $output $name
     if (Test-Path -LiteralPath $path) {Remove-Item -LiteralPath $path -Force}
 }
@@ -77,7 +110,8 @@ try {
     if (!(Test-Path -LiteralPath (Join-Path $output 'exit.ok'))) {throw 'Actual EXE did not return to DOS.'}
     Get-Content -LiteralPath (Join-Path $output 'probe.log')
     $env:PYTHONDONTWRITEBYTECODE='1'
-    & python (Join-Path $PSScriptRoot 'VerifyDosBoxIoReceipt.py') $output
+    $verifier=if($TextSwitch){'VerifyDosBoxTextReceipt.py'}else{'VerifyDosBoxIoReceipt.py'}
+    & python (Join-Path $PSScriptRoot $verifier) $output
     if ($LASTEXITCODE -ne 0) {throw 'Captured route failed its I/O receipt checks.'}
 } finally {
     $env:SDL_VIDEODRIVER=$oldVideo

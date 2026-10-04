@@ -61,6 +61,18 @@ int main(void)
     if (input.requests!=MYSMB_IO_REQUEST_EXIT) return 13;
     mysmb_dos16_keyboard_input(&keyboard,&input);
     if (input.requests!=0U) return 14;
+    mysmb_dos16_keyboard_scan(&keyboard,0x0fU);
+    mysmb_dos16_keyboard_scan(&keyboard,0x0fU);
+    mysmb_dos16_keyboard_input(&keyboard,&input);
+    if(input.requests!=MYSMB_IO_REQUEST_TOGGLE || input.buttons)return 15;
+    mysmb_dos16_keyboard_after_load(&keyboard);
+    mysmb_dos16_keyboard_scan(&keyboard,0x0fU);
+    mysmb_dos16_keyboard_input(&keyboard,&input);
+    if(input.requests)return 16;
+    mysmb_dos16_keyboard_scan(&keyboard,0x8fU);
+    mysmb_dos16_keyboard_scan(&keyboard,0x0fU);
+    mysmb_dos16_keyboard_input(&keyboard,&input);
+    if(input.requests!=MYSMB_IO_REQUEST_TOGGLE)return 17;
     host.calls=0U; host.audio_calls=0U;host.requests=0U;
     hooks.context=&host; hooks.read_input=read_input; hooks.present_video=present;
     hooks.submit_audio=audio;

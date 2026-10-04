@@ -72,6 +72,8 @@ $sources = @(
     'game/render.c', 'game/ppu_frame.c', 'game/frame_snapshot.c', 'game/status.c',
     'game/presentation/text/observation.c',
     'game/presentation/text/observer_snapshot.c',
+    'game/presentation/text/elements.c', 'game/presentation/text/actor_scene.c',
+    'game/presentation/text/background_scene.c', 'game/presentation/text/scene.c',
     'app/game_io.c', 'app/game_snapshot.c', 'io/color.c', 'io/scale.c', 'io/pacing.c', 'io/control.c', 'io/snapshot.c', 'io/snapshot_store.c', 'io/snapshot_keys.c', 'platform/file/snapshot_files.c', 'platform/dos16/snapshot_replace.c', 'platform/dos16/keyboard.c', 'platform/dos16/pit_clock.c', 'platform/dos16/devices.c',
     'platform/file/executable_path.c', 'platform/dos16/executable_path.c',
     'platform/vga/vga_frame.c', 'platform/dos16/dos16_root.c',

@@ -790,3 +790,58 @@ paths,restore redraw and window destruction;the console adapter has no game
 state/resource dependency. DOS takes the same new shared request ABI but has
 no premature toggle behavior. Zero ROM node/edge/facet credit;all historical
 and scoped totals remain unchanged,no remote or protected material is staged.
+
+### S2 P11 early DOS Tab preview
+
+Extend the owner's early Tab direction to the DOS product within current S2,
+without advancing or closing S4/S5. The keyboard uses the same shared one-shot
+Tab transition as Windows. The composition root binds the same authored scene
+to a far-heap15400-byte workspace/frame pack;VGA devices set80x50 mode,disable
+blink for16background colors and write neutral cells to text memory. Return
+restores graphics mode/DAC without resetting the game,keyboard or clock.
+Estimate8-12source/test/build files,220-380lines. Check held Tab across load,
+text/graphics/snapshot root continuity on both widths,originalOpenNT16 link,
+actual hiddenDOSBox text/held-key/graphics round trips and Escape. Existing
+local resource policy applies;probe maximum60seconds/raw20MB under ignored
+S2 build,delete captures after neutral summaries. No desktop input/focus use.
+
+### S2 P11 review receipt
+
+Fourteen source/test/build/probe files change232added/13removed lines. Two
+additional probe files beyond the8-12forecast cover actual text mode and the
+existing snapshot verifier's newly enabled observations. DOS keyboard uses
+the shared Tab edge latch and preserves a held Tab across load. The root
+allocates15400bytes on the far heap for the same shared scene/cell contract.
+VGA devices set80x50,disable blinking for16background colors and write4000
+character/attribute pairs. Graphics return reinitializes its palette without
+resetting controller state,PIT pacing or the game. Failed text setup retains
+graphics;failed scene generation returns to graphics. No game logic changes.
+
+Both widths pass nine focused tests. One100-step root comparison supplies the
+same buttons to switched and unswitched roots;entire game state and ordered
+audio frames match. Controlled cases cover failed mode change,three switches,
+text-mode save/load and held Tab repeated before/after a load. Existing
+1000-step observation non-interference and immediate/240future restore proof
+remain green. StrictC90,originalOpenNT16 far ABI/full link,platform purity and
+both Windows product self-tests/real hidden-console switch probes pass.
+
+The actual DOS binary completes a46second hiddenDOSBox route:graphic title/
+Start,pause,text,heldTab,graphics,text again,P/O,text-preserving load,graphics
+return andEscape back toDOS. Text is80x50(720x400device pixels),with5colors and
+38glyph/color cell patterns in this scene. Held and second-entry paused text
+images are identical;paused graphics before/after the round trip are pixel
+identical. Its10035-byte save has valid integrity and enabled observations.
+The initial verifier failed only for an unavailable Pillow dependency;reuse
+of the existing standard-library BMP reader verifies the retained completed
+route without another run. Raw images/save are deleted after the neutral
+receipt;the probe does not claim all scene families or486SX speed.
+
+Three local products refresh to350743/428326/443960bytes;Windows hashes remain
+P10's. DOS DGROUP48960bytes stays below64KB;the15400byte text pack is outside
+it. This is an early preview on every target,not S2/S4/S5/T11 acceptance.
+Remaining authored special backgrounds,misc/title/menu/terminal scenes,
+complete mode/focus/audio/failure integration and performance remain pending.
+Similar-issue sweep covers both DOS redraw paths(normal/load),all input latch
+resets,both mode transitions and text allocation/free;platform devices consume
+neutral cells only. ROM node/control/facet counts are unchanged;no remote or
+protected material is staged.

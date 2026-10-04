@@ -11,6 +11,8 @@ int mysmb_dos16_root_initialize(struct mysmb_dos16_root *root,
 #endif
     root->initialized=0U;
     root->snapshot_store=0;root->reset_output=0;root->reset_context=0;
+    root->text_workspace=0;root->text_frame=0;root->set_mode=0;
+    root->present_text=0;root->text_mode=0U;
     mysmb_snapshot_cache_initialize(&root->snapshot_cache);
     mysmb_io_control_initialize(&root->control);
     root->audio_available=MYSMB_IO_AUDIO_UNAVAILABLE;
@@ -26,6 +28,17 @@ int mysmb_dos16_root_initialize(struct mysmb_dos16_root *root,
     root->initialized=1U;
     return 1;
 }
+void mysmb_dos16_root_bind_text(struct mysmb_dos16_root *root,
+    struct mysmb_text_scene_workspace MYSMB_IO_FAR *workspace,
+    struct mysmb_io_text_frame MYSMB_IO_FAR *frame,
+    int (*set_mode)(void *,mysmb_io_u8),
+    void (*present_text)(void *,const struct mysmb_io_text_frame MYSMB_IO_FAR *))
+{
+    if(!workspace || !frame || !set_mode || !present_text)return;
+    root->text_workspace=workspace;root->text_frame=frame;
+    root->set_mode=set_mode;root->present_text=present_text;
+    mysmb_text_observer_enable(&root->game,1U);
+}
 void mysmb_dos16_root_bind_snapshot(struct mysmb_dos16_root *root,
     struct mysmb_snapshot_store *store,void (*reset_output)(void *),void *context)
 {
@@ -35,6 +48,13 @@ void mysmb_dos16_root_bind_snapshot(struct mysmb_dos16_root *root,
 static void present_current(struct mysmb_dos16_root *root)
 {
     struct mysmb_io_video_frame video;
+    if(root->text_mode) {
+        if(mysmb_text_scene_build(&root->game,root->text_workspace,root->text_frame)) {
+            root->present_text(root->hooks.context,root->text_frame);return;
+        }
+        if(!root->set_mode(root->hooks.context,0U))return;
+        root->text_mode=0U;
+    }
     mysmb_ppu_frame_build(&root->game,&root->ppu_frame);
     mysmb_game_io_video(&root->ppu_frame,&video);
     root->hooks.present_video(root->hooks.context,&video);
@@ -69,6 +89,9 @@ void mysmb_dos16_root_step(struct mysmb_dos16_root *root)
     root->hooks.read_input(root->hooks.context,&decoded);
     mysmb_io_control_input(&root->control,&decoded);
     if (root->control.exit_requested!=0U) return;
+    if((decoded.requests&MYSMB_IO_REQUEST_TOGGLE)!=0U && root->set_mode &&
+        root->set_mode(root->hooks.context,(mysmb_io_u8)!root->text_mode))
+        root->text_mode=(mysmb_io_u8)!root->text_mode;
     if(snapshot_request(root,decoded.requests))return;
     if (mysmb_game_startup_step(&root->game,1U)==0U) return;
     mysmb_game_io_input(&decoded,&input);

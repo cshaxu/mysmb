@@ -10,6 +10,7 @@ void mysmb_dos16_keyboard_initialize(struct mysmb_dos16_keyboard *keyboard)
     keyboard->prefix = 0U;
     keyboard->pause_bytes = 0U;
     keyboard->pending_requests=0U;
+    mysmb_io_control_initialize(&keyboard->shortcuts);
 }
 
 void mysmb_dos16_keyboard_scan(struct mysmb_dos16_keyboard *keyboard,
@@ -30,6 +31,9 @@ void mysmb_dos16_keyboard_scan(struct mysmb_dos16_keyboard *keyboard,
         return;
     }
     keys = keyboard->prefix != 0U ? keyboard->extended : keyboard->down;
+    if(keyboard->prefix==0U && (scan&0x7fU)==0x0fU)
+        keyboard->pending_requests|=mysmb_io_control_toggle(&keyboard->shortcuts,
+            (mysmb_io_u8)((scan&0x80U)==0U),1U);
     if (keyboard->prefix==0U && scan==1U)
         keyboard->pending_requests|=MYSMB_IO_REQUEST_EXIT;
     if(keyboard->prefix==0U && keys[scan&0x7fU]==0U){
@@ -41,11 +45,13 @@ void mysmb_dos16_keyboard_scan(struct mysmb_dos16_keyboard *keyboard,
 }
 void mysmb_dos16_keyboard_after_load(struct mysmb_dos16_keyboard *keyboard)
 {
-    mysmb_io_u8 save,load;
+    mysmb_io_u8 save,load,tab;
     save=keyboard->down[0x19U];load=keyboard->down[0x18U];
+    tab=keyboard->down[0x0fU];
     mysmb_dos16_keyboard_initialize(keyboard);
     /* Held shortcut make repeats stay blocked until the physical break. */
     keyboard->down[0x19U]=save;keyboard->down[0x18U]=load;
+    keyboard->down[0x0fU]=tab;keyboard->shortcuts.toggle_held=tab;
 }
 
 void mysmb_dos16_keyboard_input(struct mysmb_dos16_keyboard *keyboard,

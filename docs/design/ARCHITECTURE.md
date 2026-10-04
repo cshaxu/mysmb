@@ -28,6 +28,9 @@ DOS16 uses the same glue and full indexed frame. Shared IO owns the stable
 DAC programming and video memory. DOS devices own physical held-key decoding,
 BIOS mode lifetime and PIT sampling. Only its composition root binds local
 immutable program resources and allocates the shared compositor's pixel store.
+The DOS root also owns far-heap text storage and the presenter choice;VGA
+devices accept neutral cells in80x50 mode. Mode changes retain keyboard/clock
+state,and the same shared game scene is used by the Windows console preview.
 
 Application requests are separate from both NES controller ports. Shared
 `io/control` owns the sticky exit decision for Escape on all three targets;

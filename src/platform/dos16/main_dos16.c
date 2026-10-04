@@ -14,6 +14,11 @@ static struct mysmb_dos16_root root;
 static struct mysmb_vga_frame vga;
 static struct mysmb_snapshot_store *snapshot_store;
 static struct mysmb_file_storage snapshot_storage;
+struct text_storage {
+    struct mysmb_text_scene_workspace workspace;
+    struct mysmb_io_text_frame frame;
+};
+static struct text_storage MYSMB_IO_FAR *text_storage;
 static mysmb_io_u8 MYSMB_IO_FAR pages0[MYSMB_VGA_PAGE_SIZE];
 static mysmb_io_u8 MYSMB_IO_FAR pages1[MYSMB_VGA_PAGE_SIZE];
 static mysmb_io_u8 MYSMB_IO_FAR pages2[MYSMB_VGA_PAGE_SIZE];
@@ -39,6 +44,10 @@ static void reset_output(void *context)
 {
     (void)context;mysmb_dos16_devices_after_load();
 }
+static int set_mode(void *context,mysmb_io_u8 text)
+{(void)context;return mysmb_dos16_devices_mode(text);}
+static void present_text(void *context,const struct mysmb_io_text_frame MYSMB_IO_FAR *frame)
+{(void)context;mysmb_dos16_devices_text(frame);}
 int main(void)
 {
     struct mysmb_dos16_hooks hooks;
@@ -66,6 +75,9 @@ int main(void)
     mysmb_vga_frame_initialize(&vga,pages0,pages1,pages2,pages3);
     puts("DOS audio output unavailable");
     mysmb_dos16_devices_open();
+    text_storage=(struct text_storage MYSMB_IO_FAR *)_fmalloc(sizeof(*text_storage));
+    if(text_storage)mysmb_dos16_root_bind_text(&root,&text_storage->workspace,
+        &text_storage->frame,set_mode,present_text);
     while (root.control.exit_requested==0U) {
         mysmb_dos16_root_step(&root);
         if (root.control.exit_requested==0U) mysmb_dos16_devices_wait();
@@ -73,5 +85,6 @@ int main(void)
     mysmb_dos16_devices_close();
     mysmb_dos16_root_shutdown(&root);
     _ffree(snapshot_store);
+    if(text_storage)_ffree(text_storage);
     return 0;
 }
