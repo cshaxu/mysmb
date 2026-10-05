@@ -9,7 +9,7 @@ and in the generated [node/task ledger](NODE_TASK_LEDGER.md).
 
 ## DOS rendering optimization
 
-1. [DOS rendering optimization without ROM logic changes](../proposals/m3/dos-rendering-optimization.md) - next candidate after active T27,which owns the core/PPU split;before the text visual audit. Six composable opportunities:CHR cache,background calculation reuse,sprite occlusion reuse,stretch-row reuse,VGA transfer and measured unchanged-region reuse. Reconcile T26 results before admission;no DOSBox setting changes or gameplay divergence.
+1. [DOS rendering optimization without ROM logic changes](../proposals/m3/dos-rendering-optimization.md) - next candidate;consumes the separated core/PPU owners before the text visual audit. Six composable opportunities:CHR cache,background calculation reuse,sprite occlusion reuse,stretch-row reuse,VGA transfer and measured unchanged-region reuse. Reconcile T26 results before admission;no DOSBox setting changes or gameplay divergence.
 
 ## Text object and state visual audit
 

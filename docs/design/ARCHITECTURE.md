@@ -13,11 +13,11 @@ CHR binding embedded in the game container. Core retains all original NMI
 control/write decisions and its startup guard. The DMA primitive borrows CPU
 RAM OAM and commits visible bytes at the existing call point;observation commit
 follows as before. The independent ppu/frame compositor now borrows const PPU state and has no
-game-container dependency. Its retained proposal owns remaining migrations.
+game-container dependency. The read-only compositor is separate from CPU decisions and host devices.
 
 ## Product And Host Boundary
 
-The shared `io/` contract layer has no dependency on `game/` or `platform/`.
+The shared `io/` contract layer has no dependency on `core/`, `ppu/`, `text/`, `validate/` or `platform/`.
 Composition roots connect decoded controller input and compositor output to
 adapters. Video borrows the entire original indexed frame; audio snapshots
 preserve every ordered write, including same-value retriggers. Game state
@@ -47,7 +47,7 @@ adapters deliver a request and roots then close their devices. DOS buffers a
 short press until decoded input consumes it;Win32 accepts window key messages
 and window-close requests. No exit request changes original game state.
 
-Game code may request neutral buttons, frame ticks, and command sinks. Windows and DOS adapters translate those contracts to host APIs. Text rendering consumes game object/state commands; it never infers semantics from a bitmap. The runtime contains no 6502 CPU, generic NES PPU, or generic NES APU emulator. Platform selection happens at CMake target boundaries; `game/` does not fork on platform macros.
+Game code may request neutral buttons, frame ticks, and command sinks. Windows and DOS adapters translate those contracts to host APIs. Text rendering consumes game object/state commands; it never infers semantics from a bitmap. The runtime contains no 6502 CPU, generic NES PPU, or generic NES APU emulator. Platform selection happens at CMake target boundaries; `core/` does not fork on platform macros.
 
 Windows launch policy selects text for a direct CMD/PowerShell parent with an
 attachable console;other or unknown parents select graphics. The console

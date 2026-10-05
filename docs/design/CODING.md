@@ -78,9 +78,9 @@ Win32 audio snapshot modules marshal host synthesis state arithmetically.
 `platform/file` provides stdio services;each host supplies executable-path,
 replacement and device-reset services. Only roots connect these owners.
 
-`game/` cannot include host headers or platform macros. `platform/` cannot mutate game internals. `validate/` is optional at runtime and cannot become the gameplay path. CMake selects `mysmb-win32-x86`, `mysmb-win32-x64`, or later `mysmb-dos16`; compile definitions are permitted only beneath the platform roots. The OpenNT 16-bit C compiler verifies the same core in real-mode large-model mode; the later DOS adapter owns linking the full MZ executable. Modern 32/64-bit compilers run the Win32 product.
+`core/` cannot include host headers or platform macros. `platform/` cannot mutate game internals. `validate/` is linked only by tests and recorders;it is absent from products. CMake selects `mysmb-win32-x86`, `mysmb-win32-x64`, or `mysmb-dos16`; compile definitions are permitted only beneath the platform roots. The OpenNT 16-bit C compiler verifies the same core in real-mode large-model mode; the later DOS adapter owns linking the full MZ executable. Modern 32/64-bit compilers run the Win32 product.
 
-## T27 migration checkpoint
+## Component boundaries
 
 PPU storage is one embedded ppu/state object;CPU RAM,source decisions and NMI
 startup guard now live in core;all translated routines and observation receipts are now core. The DMA primitive
@@ -88,7 +88,8 @@ borrows the original CPU OAM span;its caller keeps commit timing and receipt
 order. app snapshot binds the same numeric fields in the same byte order.
 The independent ppu/frame target consumes only const PPU state and neutral IO
 types;composition owns its selection. Core has no compositor dependency.
-Remaining core/text/validation moves are in the active T27 proposal.
+All translated OAM/APU writers remain in core. Authored text and snapshot
+receipt encoding belong to text;render/frame/page projections belong to validate.
 
 S6 separates core observation receipts from text scene/snapshot consumers.
 Core links only PPU storage;app snapshot links the independent text codec.

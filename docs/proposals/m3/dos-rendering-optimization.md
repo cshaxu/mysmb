@@ -18,7 +18,7 @@ writes and tick/input ordering. Retain the full256x240 indexed source and
 borderless640x400 DOS stretch,no dropped frames/ticks or reduced detail.
 
 CHR/background/sprite optimizations belong to the shared PPU compositor,
-currently game/ppu_frame and planned src/ppu after the preceding migration.
+now src/ppu/frame after the completed component migration.
 They must use the same semantics on DOS16,Win32 and x64. Platform VGA work
 consumes only the neutral indexed frame;it cannot read Mario,enemy,level or
 other gameplay state. Neutral IO and snapshot contracts remain unchanged.

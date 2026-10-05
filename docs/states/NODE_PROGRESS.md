@@ -11,6 +11,10 @@ scoped evidence and track only named unresolved/invalidated clauses.
 Material993 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
+## M3 T27 - component separation closure
+
+Scope/expected/actual[],new0;historical1992/1992/local1991/1992nodes and4260/4261feasible controls unchanged.185file/751function/143macro/1996consumer dispositions,173C-source preservation,50tests and13host groups eachwidth,original DOS16 and paired full-snapshot equality establish bounded migration preservation,not a new ROM certificate. [T27 contract closure](../history/M3-T27-core-ppu-module-boundaries.md#s8-p1-closure---integrated-completion-audit).
+
 ## M3 T9 S6 - integrated IO closure
 
 Scope/expected/actual[],fresh0;historical1992/1992/local1991/1992 nodes,4260/4261controls unchanged.16source files,+130/-26;shared Escape,14tests eachwidth,fresh three builds/products and actual DOSBox route. [S6 receipt](../history/M3-T9-shared-io-and-graphical-output.md#s6-p1-closure---integrated-io-and-shared-exit).

@@ -3878,4 +3878,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T27 S5 | 1449 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
 | M3 T27 S6 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
 | M3 T27 S7 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
-| M3 T27 S8 | 0 | 1992 | none / 0 | none / 0 | active; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| M3 T27 S8 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |

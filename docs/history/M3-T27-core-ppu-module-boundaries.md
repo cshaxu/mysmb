@@ -687,3 +687,55 @@ component/link/state/pixel/audio/snapshot/native/DOS checks passing,no unexplain
 scoped semantic/output difference,no reverse dependency or runtime validation
 link,and explicit remaining M2/M4/performance limits. Run all governance gates,
 commit reviewed changes and close T27 only after this completion audit passes.
+
+## S8 P1 closure - integrated completion audit
+
+T27 closes the approved component separation. The review below reconciles each
+contract with current source/build/runtime;it does not issue an M2 certificate.
+
+| Contract | Current-state evidence and disposition |
+| --- | --- |
+| All original file/symbol/macro owners |185original files have one existing destination;751functions remain at mapped owners,except the declared test-only helper owner;143macro entries retain expansion or the declared equivalent DOS/native far alias.252current source/header identities are recorded locally. No game source files remain. |
+| Complete consumers and dependencies |1996include/build census items have dispositions;the compositor's game include is deliberately replaced by const PPU state and DOS validation entries deliberately removed. All current includes resolve,including the retained relative player include. Runtime component graph has no cycle or forbidden reverse edge. |
+| Original CPU logic and data |All173original C files compare token-identically to S1 after exact paths,PPU member qualification,neutral compositor aliases and helper reinsertion. Only the declared DMA ownership move is substituted for comparison;its256-byte extent/span and call-before-observer ordering are checked separately. All original branches,tables,reads,writes and named calls are retained. |
+| PPU state and immutable view |One embedded PPU owner,no duplicate RAM/visible state;core owns NMI/register/scroll/split decisions,ppu owns storage/visible DMA primitive and const-state pixels. Original NMI phases and mask/clipping/palette/priority behavior retain S2/S3 proof and current state/pixel tests. |
+| Observation and authored text |Core owns enabled/producer/visible/overflow receipts and source-selected writer calls;12authored scene/codec files are text consumers.64-entry capacity,commit order,immutable scene reads and palette/form/caption outputs unchanged. No core-to-text/library callback edge;the one authored cell filter remains text-only. |
+| Four non-arrow seams |Explicit app wire macros keep original byte order;reset preserves resource identity and one storage owner;both declaration and invocation of the authored cell filter remain isolated in text.173C-body comparison and snapshot/text tests reconcile these seams. |
+| Validation isolation |Three projection units are owned only by validation;all six test/recorder consumers link it explicitly. Every product input archive and DOS source list exclude validation entries. Original RenderAreaGraphics remains core. The stripped PE is not used as symbol-absence evidence. |
+| DOS16/far/resource/ABI |Original OpenNT large-model build retained. S2's128DMA fixtures and S3's4complete61440pixel far frames remain source-applicable;current full DOS product compiles/links and runs. Same local immutable resources/fingerprints and fixed wire offsets are retained. Real hardware heap/stack peak remains M4. |
+| State/output/audio/snapshot |Both widths50focused integrated tests pass,including root/NMI,area/player/enemy/OAM/source audio,PPU/text/IO/receipt and complete-state/snapshot continuation.2048boundary/1198native pixel cases pass. Actual before/after DOS products generate identical10035-byte schema2 snapshots under the same saved route. Legacy schema1 behavior remains covered by retained snapshot tests. |
+| Windows/device integration |Both widths13private-desktop groups pass:borrowed/owned console,settings restoration,Unicode/event input,focus/snapshot,recovery,launch selection,graphics/text switching,root close and interactive CMD wait/prompt. No user desktop activation. Current products match the compiled native products. |
+| Actual DOS integration |S7 original-toolchain product's restore/full640x400/paused graph-text-graph/Escape receipt remains current. S8 actual old/new product runs also restore/save/exit under the same installed configuration;no settings/cycle/frameskip changes. |
+| Performance comparison |A coarse fixed-config paired save sample advances5frames for both pre-split and current DOS products,observed save29.326/29.176seconds;entire resulting snapshot equal. This detects no coarse regression. Old T26 stage-profile cases use different layouts/configurations and are not directly comparable;none are reused as current pass evidence. Nominal cadence/486SX speed stays queued/M4. |
+| Current authorities and provenance |Current architecture/layout and queued renderer owner references match source. Historical receipts keep original paths. Only neutral summaries are tracked;all manifests,raw outputs,saves/captures and probes stay ignored below build. No ROM/generated program data/new capture/publication. |
+
+The first whole-source normalization failed only because its local multiline
+DMA substitution omitted the regex flag;diagnosis identifies precisely the
+already-approved loop-to-primitive change. Corrected normalization passes173
+files with no product changes. The initial x64 private-host attempt returned
+settings-restoration code10 while its fixture build was still running. It is
+not accepted evidence and does not establish a product root cause. After
+successful build completion,the fresh x64 run passes all13groups;no host repair
+is claimed. S8 has no product-code changes;three S7 artifacts remain source-
+bound. This audit reuses bounded S2/S3 ABI proofs rather than repeating failed
+128-frame DOS trials or claiming untested real hardware qualification.
+
+Products remain427455/318603/327275bytes with retained S7 SHA256 identities;
+DOS a79354f270dafcf5cd6d1e2f31a22a3a7f08cf3d47bca83c33b6b64f9dd160fc,
+x86 9312ead396bdaec553dd1f2b2e0ef92231d7b6181e5f7989224cc23ec592e46c,
+x64 360abd60b03c62894b4ba9fc137f85428e369dcc9d3a3302cd3c8462ad0e520d.
+S8 is audit/current-documentation-only;no unnecessary product refresh. The final S7 EOF cleanup removes one blank line from the local pre-commit scale:2new validation files contain68lines,and aggregate code/test/build edits are+91/-77;the preceding S7 pre-cleanup figure69/+92 is corrected here. Owner
+requires all pending reviewed work committed locally;there is no remote.
+
+Scope/expected/actual original labels[],new0;existing maintenance custody
+remains registered. Historical1992/1992,local1991/1992nodes,4260/4261feasible
+controls(raw4342,infeasible81) unchanged. CheckForEnemyGroup/control-01480,
+130M2groups/910facets,twofindings/13coverage slots and four final packages remain
+in their existing queued authority. No third/fresh whole-game audit round or
+claim of bug absence/all-input equivalence. Component-contract completion is
+separate from deferred original-ROM certification and hardware qualification.
+
+T27 S1-S8 are closed only after ledger/node/metadata/documentation gates pass;
+all approved separation work is dispositioned with no remaining split task.
+The queue retains DOS rendering optimization first,then visual audit,suspended
+T19audio and remaining M2 verification. No next T is allocated by this closure.
