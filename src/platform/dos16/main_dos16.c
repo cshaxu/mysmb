@@ -17,7 +17,8 @@ struct text_storage {
     struct mysmb_text_scene_workspace workspace;
     struct mysmb_io_text_frame frame;
 };
-typedef char text_storage_fits_video[sizeof(struct text_storage)<=MYSMB_IO_VIDEO_PIXELS?1:-1];
+typedef char text_storage_fits_band[sizeof(struct text_storage)>=2560U &&
+    sizeof(struct text_storage)<=MYSMB_IO_VIDEO_PIXELS?1:-1];
 static struct text_storage MYSMB_IO_FAR *text_storage;
 static mysmb_io_u8 MYSMB_IO_FAR plane_pixels[MYSMB_VGA_BATCH_SIZE];
 
@@ -26,16 +27,22 @@ static void read_input(void *context, struct mysmb_io_input *input)
     (void)context;
     mysmb_dos16_devices_input(input);
 }
-static void present_video(void *context, const struct mysmb_io_video_frame *frame)
+static int present_rows(void *context,const struct mysmb_io_video_source *source)
 {
-    mysmb_io_u16 plane,first;
+    mysmb_io_u16 plane,first,source_first,source_rows;
+    struct mysmb_io_video_band band;
     (void)context;
-    for(plane=0U;plane<MYSMB_VGA_PAGE_COUNT;++plane) {
-        for(first=0U;first<MYSMB_VGA_HEIGHT;first+=MYSMB_VGA_BATCH_ROWS) {
-            mysmb_vga_frame_build_rows(frame,plane,first,MYSMB_VGA_BATCH_ROWS,plane_pixels);
+    for(first=0U;first<MYSMB_VGA_HEIGHT;first+=MYSMB_VGA_BATCH_ROWS) {
+        source_first=(mysmb_io_u16)(first*3U/5U);
+        source_rows=(mysmb_io_u16)((first+MYSMB_VGA_BATCH_ROWS-1U)*3U/5U-source_first+1U);
+        if(!source->read_rows(source->context,source_first,source_rows,&band))return 0;
+        for(plane=0U;plane<MYSMB_VGA_PAGE_COUNT;++plane) {
+            if(!mysmb_vga_frame_build_band(&band,plane,first,
+                MYSMB_VGA_BATCH_ROWS,plane_pixels))return 0;
             mysmb_dos16_devices_present_rows(plane,first,MYSMB_VGA_BATCH_ROWS,plane_pixels);
         }
     }
+    return 1;
 }
 static mysmb_io_u8 submit_audio(void *context, const struct mysmb_io_audio_frame *frame)
 {
@@ -57,9 +64,10 @@ int main(void)
     char path[260],directory[260];
     hooks.context=0;
     hooks.read_input=read_input;
-    hooks.present_video=present_video;
+    hooks.present_video=0;
     hooks.submit_audio=submit_audio;
-    if (!mysmb_dos16_root_initialize(&root,&hooks)) return 1;
+    if (!mysmb_dos16_root_initialize_rows(&root,&hooks,
+        (mysmb_io_u16)sizeof(struct text_storage),present_rows)) return 1;
     snapshot_store=(struct mysmb_snapshot_store *)_fmalloc(sizeof(*snapshot_store));
     if(snapshot_store==0) {mysmb_dos16_root_shutdown(&root);return 1;}
 #ifdef MYSMB_LOCAL_TITLE
@@ -77,7 +85,7 @@ int main(void)
     if(!mysmb_dos16_devices_open()) {
         mysmb_dos16_root_shutdown(&root);_ffree(snapshot_store);return 1;
     }
-    /* Synchronous presenters are exclusive. Graphics rebuilds all pixels on
+    /* Synchronous presenters are exclusive. Graphics rebuilds every band on
      * return from text;only the root owns and frees this shared allocation. */
     text_storage=(struct text_storage MYSMB_IO_FAR *)root.ppu_frame.pixels;
     mysmb_dos16_root_bind_text(&root,&text_storage->workspace,

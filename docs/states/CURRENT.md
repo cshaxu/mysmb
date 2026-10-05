@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T28 S6 P7; owner-admitted rowwise memory implementation; cumulative fit and output validation open. |
+| Identifier Mode | Continuation: M3 T28 S6 P8; cumulative fit/playability and opportunity dispositions after adopted rowwise memory integration. |
 | Admission And Approval | Owner authorizes execution and the joint conventional-memory/playability contract. Owner accepts the rowwise memory/performance tradeoff and admits implementation;repeat-row/OAM tuning is deferred to TODO. S5 closed;S6 remains active. |
 | Objective | Reconcile S1-S5 memory census;verify actual minimum-free launch/runtime fit,stack/lifetimes,normal cadence/input budgets and clock sampling;dispose all six opportunities with fit/playability separate hard gates. |
 | Non-goals | No core ROM routine/state/timing changes,no emulator settings,no text artwork or VGA coordinate/mode changes,no emulator-based physical486SX/DOS-version or M2 certification. |
@@ -23,6 +23,14 @@
 
 ## Current Technical Baseline
 
+- S6 P7 adopts shared bounded rows and15400-byte DOS text/pixel store. Formal
+  product448/384/376KiBcaller-free routes pass;sampled386512/386512/382416bytes,
+  roomy43712bytes below P5. Three device/fallback/pressure routes match five
+  frames,640000VGA bytes,text and10035snapshot bytes;heap frees/mode restores.
+  Both widths11tests/13host groups pass,three EXEs refreshed. Extra speed work
+  stays in TODO;continuous/full-route peak,stack and cadence/input remain open.
+  [Adoption and exact limits](../history/M3-T28-dos-rendering-optimization.md#s6-p7-checkpoint-adopted-bounded-row-producer-and-smaller-dos-store).
+
 - S6 P6 contained rowwise prototype passes512synthetic cases per width,
   188743680strip bytes and65536000VGA-plane bytes with guards/state unchanged.
   Maximum2560-byte band fits15400-byte exclusive text store;potential46040-byte
@@ -39,7 +47,7 @@
   actual448/416KiBgame/Tab/save/Esc pass. Roomy sampled430224bytes(+64),constrained
   425984;no continuous-peak claim. Three products refreshed. Cached sprite raw
   reads remain a named P6opportunity;default-all harness debt stays in TODO.
-  S6/T28 still need cadence/input/full-route peak/stack;P6prototype active.
+  Historical P5receipt retained;rowwise adoption is the P7baseline above.
   [Checkpoint and limits](../history/M3-T28-dos-rendering-optimization.md#s6-p5-checkpoint-exact-full-zero-pattern-tile-row-fill).
 - M2 T70/S17 closed by owner-approved deferred-verification transfer (P153);
   [closure record](../history/M2-T70-deferred-verification-closure.md).
@@ -52,7 +60,7 @@
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11/T12/T13/T14/T15/T16/T17/T18 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are303171/319627/328811bytes.
+- Current local DOS16/Win32/x64 products are304547/320139/328811bytes.
   T22 refreshes all three with RAM-authoritative NMI page handoff;T21 coral,T20 titles/tree/fence and T18 timing retained.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks

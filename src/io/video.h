@@ -14,6 +14,19 @@ struct mysmb_io_video_frame {
     const mysmb_io_u8 MYSMB_IO_FAR *pixels;
 };
 
+/* Synchronous read-only row producer. A returned view is valid only until the
+ * next read_rows call or return from the present operation. No tick may advance
+ * while the consumer borrows it. first/rows name logical256x240coordinates. */
+struct mysmb_io_video_band {
+    const mysmb_io_u8 MYSMB_IO_FAR *pixels;
+    mysmb_io_u16 first,rows;
+};
+struct mysmb_io_video_source {
+    void *context;
+    int (*read_rows)(void *context,mysmb_io_u16 first,mysmb_io_u16 rows,
+        struct mysmb_io_video_band *band);
+};
+
 /* Authored text output. Character IDs follow io/text_glyph.h;no quantizer. */
 #define MYSMB_IO_TEXT_COLUMNS 80U
 #define MYSMB_IO_TEXT_ROWS 50U

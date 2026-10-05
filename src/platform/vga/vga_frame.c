@@ -7,7 +7,8 @@ void mysmb_vga_frame_initialize(struct mysmb_vga_frame *frame,
     frame->pages[0]=p0; frame->pages[1]=p1;
     frame->pages[2]=p2; frame->pages[3]=p3;
 }
-void mysmb_vga_frame_build_rows(const struct mysmb_io_video_frame *source,
+static void build_rows(const mysmb_io_u8 MYSMB_IO_FAR *source,
+    mysmb_io_u16 source_first,
     mysmb_io_u16 plane,mysmb_io_u16 first,mysmb_io_u16 rows,
     mysmb_io_u8 MYSMB_VGA_FAR *pixels)
 {
@@ -17,7 +18,7 @@ void mysmb_vga_frame_build_rows(const struct mysmb_io_video_frame *source,
     mysmb_io_u8 index0,index1,index2,index3,index4;
     const mysmb_io_u8 MYSMB_IO_FAR *in;
     mysmb_io_u8 MYSMB_VGA_FAR *out;
-    if(source==0 || source->pixels==0 || pixels==0 || plane>=4U || first>=400U || rows>400U-first)return;
+    if(source==0 || pixels==0 || plane>=4U || first>=400U || rows>400U-first)return;
     /* floor((4*column+plane)*4/5) repeats every five outputs/16 inputs. */
     index0=offsets[plane][0];index1=offsets[plane][1];index2=offsets[plane][2];
     index3=offsets[plane][3];index4=offsets[plane][4];
@@ -28,7 +29,7 @@ void mysmb_vga_frame_build_rows(const struct mysmb_io_video_frame *source,
         out=pixels+row*80U;
         if(source_y==previous_y)memcpy(out,out-80U,80U);
         else {
-            in=source->pixels+source_y*256U;
+            in=source+(source_y-source_first)*256U;
             for(column=0U;column<16U;++column) {
                 out[0]=(mysmb_io_u8)(in[index0]&63U);
                 out[1]=(mysmb_io_u8)(in[index1]&63U);
@@ -43,6 +44,27 @@ void mysmb_vga_frame_build_rows(const struct mysmb_io_video_frame *source,
         if(vertical_phase>=5U){vertical_phase-=5U;++source_y;}
     }
 }
+void mysmb_vga_frame_build_rows(const struct mysmb_io_video_frame *source,
+    mysmb_io_u16 plane,mysmb_io_u16 first,mysmb_io_u16 rows,
+    mysmb_io_u8 MYSMB_VGA_FAR *pixels)
+{
+    if(source)build_rows(source->pixels,0U,plane,first,rows,pixels);
+}
+int mysmb_vga_frame_build_band(const struct mysmb_io_video_band *source,
+    mysmb_io_u16 plane,mysmb_io_u16 first,mysmb_io_u16 rows,
+    mysmb_io_u8 MYSMB_VGA_FAR *pixels)
+{
+    mysmb_io_u16 low,high;
+    if(source==0 || source->pixels==0 || pixels==0 || plane>=4U || first>=400U ||
+        rows>400U-first || source->first>=240U || source->rows>240U-source->first)return 0;
+    if(rows==0U)return 1;
+    low=(mysmb_io_u16)(first*3U/5U);
+    high=(mysmb_io_u16)((first+rows-1U)*3U/5U);
+    if(low<source->first || high>=source->first+source->rows)return 0;
+    build_rows(source->pixels,source->first,plane,first,rows,pixels);
+    return 1;
+}
+
 void mysmb_vga_frame_build(const struct mysmb_io_video_frame *source,
     struct mysmb_vga_frame *frame)
 {

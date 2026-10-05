@@ -3,8 +3,9 @@
 #ifdef MYSMB_DOS16_TARGET
 #include <malloc.h>
 #endif
-int mysmb_dos16_root_initialize(struct mysmb_dos16_root *root,
-                                const struct mysmb_dos16_hooks *hooks)
+static int initialize(struct mysmb_dos16_root *root,
+    const struct mysmb_dos16_hooks *hooks,mysmb_io_u16 storage_bytes,
+    int (*present_rows)(void *,const struct mysmb_io_video_source *))
 {
 #ifdef MYSMB_DOS16_TARGET
     mysmb_u8 __far *pixels;
@@ -12,25 +13,50 @@ int mysmb_dos16_root_initialize(struct mysmb_dos16_root *root,
     mysmb_ppu_frame_workspace_bind(&root->ppu_workspace,0);
     root->ppu_cache_attempted=0U;root->ppu_cache_near=0U;
     root->initialized=0U;
+    root->present_rows=0;root->video_storage_bytes=storage_bytes;
     root->snapshot_store=0;root->reset_output=0;root->reset_context=0;
     root->text_workspace=0;root->text_frame=0;root->set_mode=0;
     root->present_text=0;root->text_mode=0U;
     mysmb_snapshot_cache_initialize(&root->snapshot_cache);
     mysmb_io_control_initialize(&root->control);
     root->audio_available=MYSMB_IO_AUDIO_UNAVAILABLE;
-    if (hooks==0 || hooks->read_input==0 || hooks->present_video==0) return 0;
+    if (hooks==0 || hooks->read_input==0 ||
+        (present_rows==0 && hooks->present_video==0) || storage_bytes<256U)return 0;
 #ifdef MYSMB_DOS16_TARGET
-    pixels=(mysmb_u8 __far *)_fmalloc(MYSMB_IO_VIDEO_PIXELS);
+    pixels=(mysmb_u8 __far *)_fmalloc(storage_bytes);
     if (pixels==0) return 0;
     mysmb_ppu_frame_bind_pixels(&root->ppu_frame,pixels);
 
 #endif
-    root->hooks=*hooks;
+    root->hooks=*hooks;root->present_rows=present_rows;
     mysmb_game_power_on(&root->game);
     mysmb_game_frame_initialize(&root->game_frame);
     root->initialized=1U;
     return 1;
 }
+int mysmb_dos16_root_initialize(struct mysmb_dos16_root *root,
+    const struct mysmb_dos16_hooks *hooks)
+{
+    return initialize(root,hooks,MYSMB_IO_VIDEO_PIXELS,0);
+}
+int mysmb_dos16_root_initialize_rows(struct mysmb_dos16_root *root,
+    const struct mysmb_dos16_hooks *hooks,mysmb_io_u16 storage_bytes,
+    int (*present_rows)(void *,const struct mysmb_io_video_source *))
+{
+    if(present_rows==0)storage_bytes=0U;
+    return initialize(root,hooks,storage_bytes,present_rows);
+}
+static int read_rows(void *context,mysmb_io_u16 first,mysmb_io_u16 rows,
+    struct mysmb_io_video_band *band)
+{
+    struct mysmb_dos16_root *root=(struct mysmb_dos16_root *)context;
+    if(band==0 || !mysmb_ppu_frame_build_rows_cached(&root->game.ppu,
+        root->ppu_frame.pixels,root->video_storage_bytes,first,rows,
+        &root->ppu_workspace))return 0;
+    band->pixels=root->ppu_frame.pixels;band->first=first;band->rows=rows;
+    return 1;
+}
+
 void mysmb_dos16_root_bind_text(struct mysmb_dos16_root *root,
     struct mysmb_text_scene_workspace MYSMB_IO_FAR *workspace,
     struct mysmb_io_text_frame MYSMB_IO_FAR *frame,
@@ -51,6 +77,8 @@ void mysmb_dos16_root_bind_snapshot(struct mysmb_dos16_root *root,
 static void present_current(struct mysmb_dos16_root *root)
 {
     struct mysmb_io_video_frame video;
+    struct mysmb_io_video_source source;
+    struct mysmb_io_input failure;
 #ifdef MYSMB_DOS16_TARGET
     mysmb_u8 __near *near_cache;
     mysmb_u8 __far *decoded;
@@ -76,6 +104,14 @@ static void present_current(struct mysmb_dos16_root *root)
         mysmb_ppu_frame_workspace_bind(&root->ppu_workspace,decoded);
     }
 #endif
+    if(root->present_rows) {
+        source.context=root;source.read_rows=read_rows;
+        if(!root->present_rows(root->hooks.context,&source)) {
+            failure.buttons=0U;failure.buttons2=0U;failure.requests=MYSMB_IO_REQUEST_EXIT;
+            mysmb_io_control_input(&root->control,&failure);
+        }
+        return;
+    }
     mysmb_ppu_frame_build_cached(&root->game.ppu,&root->ppu_frame,&root->ppu_workspace);
     mysmb_game_io_video(&root->ppu_frame,&video);
     root->hooks.present_video(root->hooks.context,&video);

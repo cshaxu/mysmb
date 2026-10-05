@@ -30,17 +30,21 @@ It copies decoded input and ordered audio,borrows compositor pixels,and never
 reads original RAM,changes game state,or calls a device. Win32's audio adapter
 accepts only the neutral audio frame;its synthesis state remains host-owned.
 
-DOS16 uses the same glue and full indexed frame. Shared IO owns the stable
+DOS16 uses the same logical indexed pixels through a synchronous neutral row
+producer;Windows retains the full-frame interface. Shared IO owns the stable
 64-color presentation palette and generic bounded row scaling;VGA owns fixed
 direct256x240-to320x400 enlargement without borders or source-row loss,
 four32000-byte Mode X video planes,submitted from1280-byte16row scratch,
 640x400 scanout,
 DAC programming and video memory. DOS devices own physical held-key decoding,
 BIOS mode lifetime and PIT sampling. Only its composition root binds local
-immutable program resources and allocates the shared compositor's pixel store.
-The DOS root owns the pixel allocation and presenter choice;text borrows its
-first15400bytes while active,with synchronous consumption and complete graphics
-reconstruction on return. Snapshot transaction/recovery storage stays separate;VGA
+immutable program resources and allocates the shared compositor's exclusive row/text store.
+The DOS root owns a15400-byte exclusive row/text allocation and presenter choice.
+Each16destination-row band requests at most10logical source rows/2560bytes
+from the same const PPU compositor;all four VGA planes consume it before reuse.
+Text uses the same store while active;every graphical band rebuilds on return.
+The legacy full-frame initialization/hook layout remains supported. Neutral IO
+declares the synchronous producer lifetime;devices never see PPU/game state. Snapshot transaction/recovery storage stays separate;VGA
 devices accept neutral cells in80x50 mode. Mode changes retain keyboard/clock
 state,and the same shared game scene is used by the Windows console preview.
 

@@ -45,4 +45,10 @@ void mysmb_ppu_frame_build(const struct mysmb_ppu_state *state,
 void mysmb_ppu_frame_build_cached(const struct mysmb_ppu_state *state,
     struct mysmb_ppu_frame *frame,struct mysmb_ppu_frame_workspace *workspace);
 
+/* Absolute logical rows,packed from output offset zero. Invalid requests leave
+ * output/cache untouched;capacity is bytes within one caller-owned segment. */
+int mysmb_ppu_frame_build_rows_cached(const struct mysmb_ppu_state *state,
+    mysmb_io_u8 MYSMB_PPU_FRAME_FAR *pixels,mysmb_io_u16 capacity,
+    mysmb_io_u16 first,mysmb_io_u16 rows,struct mysmb_ppu_frame_workspace *workspace);
+
 #endif

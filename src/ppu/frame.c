@@ -171,7 +171,8 @@ static void mysmb_ppu_background_row(const struct mysmb_ppu_state *state,
 }
 
 static void mysmb_ppu_frame_build_internal(const struct mysmb_ppu_state *state,
-    struct mysmb_ppu_frame *frame,const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded_chr)
+    mysmb_io_u8 MYSMB_PPU_FRAME_FAR *pixels,mysmb_io_u16 first,mysmb_io_u16 rows,
+    const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded_chr)
 {
     mysmb_io_u16 x;
     mysmb_io_u16 y;
@@ -195,15 +196,15 @@ static void mysmb_ppu_frame_build_internal(const struct mysmb_ppu_state *state,
      * fixed top region; never reread the following frame's RAM flag here. */
     fixed_top_height = state->visible_sprite0_split != 0U ?
         MYSMB_PPU_STATUS_BAR_HEIGHT : 0U;
-    for (y = 0U; y < MYSMB_PPU_FRAME_HEIGHT; ++y) {
+    for (y = first; y < first+rows; ++y) {
         scroll_x = y < fixed_top_height ? 0U : state->visible_scroll_x;
         scroll_y = y < fixed_top_height ? 0U : state->visible_scroll_y;
         if((state->visible_ppu_mask&8U)!=0U)
             mysmb_ppu_background_row(state,y,scroll_x,scroll_y,
                 y<fixed_top_height?0U:state->visible_ppu_name_table,
-                frame->pixels+y*MYSMB_PPU_FRAME_WIDTH,decoded_chr);
+                pixels+(y-first)*MYSMB_PPU_FRAME_WIDTH,decoded_chr);
         else for(x=0U;x<MYSMB_PPU_FRAME_WIDTH;++x)
-            frame->pixels[y*MYSMB_PPU_FRAME_WIDTH+x]=state->palette[0U];
+            pixels[(y-first)*MYSMB_PPU_FRAME_WIDTH+x]=state->palette[0U];
     }
     if ((state->visible_ppu_mask & 0x10U) == 0U) return;
     for (sprite = 64U; sprite != 0U;) {
@@ -211,9 +212,10 @@ static void mysmb_ppu_frame_build_internal(const struct mysmb_ppu_state *state,
         sprite_y = (mysmb_io_u16)state->visible_oam[sprite * 4U] + 1U;
         sprite_x = state->visible_oam[sprite * 4U + 3U];
         attributes = state->visible_oam[sprite * 4U + 2U];
-        if (sprite_y >= MYSMB_PPU_FRAME_HEIGHT) continue;
+        if (sprite_y >= first+rows || sprite_y+8U <= first) continue;
         for (pixel_y = 0U; pixel_y < 8U && sprite_y + pixel_y < MYSMB_PPU_FRAME_HEIGHT;
              ++pixel_y) {
+            if(sprite_y+pixel_y<first || sprite_y+pixel_y>=first+rows)continue;
             pattern = (mysmb_io_u16)(((state->visible_ppu_control_0 & 0x08U) != 0U ?
                 0x1000U : 0U) + state->visible_oam[sprite * 4U + 1U] * 16U +
                 ((attributes & 0x80U) != 0U ? 7U - pixel_y : pixel_y));
@@ -243,7 +245,7 @@ static void mysmb_ppu_frame_build_internal(const struct mysmb_ppu_state *state,
                         &opaque,decoded_chr);
                     if (opaque != 0U) continue;
                 }
-                frame->pixels[y * MYSMB_PPU_FRAME_WIDTH + x] = state->palette[
+                pixels[(y-first) * MYSMB_PPU_FRAME_WIDTH + x] = state->palette[
                     0x10U + (mysmb_io_u16)((attributes & 3U) * 4U + color)];
             }
         }
@@ -254,11 +256,24 @@ static void mysmb_ppu_frame_build_internal(const struct mysmb_ppu_state *state,
 void mysmb_ppu_frame_build(const struct mysmb_ppu_state *state,
     struct mysmb_ppu_frame *frame)
 {
-    mysmb_ppu_frame_build_internal(state,frame,0);
+    mysmb_ppu_frame_build_internal(state,frame->pixels,0U,240U,0);
 }
 void mysmb_ppu_frame_build_cached(const struct mysmb_ppu_state *state,
     struct mysmb_ppu_frame *frame,struct mysmb_ppu_frame_workspace *workspace)
 {
     mysmb_ppu_prepare_chr(state,workspace);
-    mysmb_ppu_frame_build_internal(state,frame,workspace?workspace->decoded:0);
+    mysmb_ppu_frame_build_internal(state,frame->pixels,0U,240U,workspace?workspace->decoded:0);
+}
+
+int mysmb_ppu_frame_build_rows_cached(const struct mysmb_ppu_state *state,
+    mysmb_io_u8 MYSMB_PPU_FRAME_FAR *pixels,mysmb_io_u16 capacity,
+    mysmb_io_u16 first,mysmb_io_u16 rows,struct mysmb_ppu_frame_workspace *workspace)
+{
+    if(state==0 || pixels==0 || first>=240U || rows>240U-first ||
+        rows>capacity/MYSMB_PPU_FRAME_WIDTH)return 0;
+    if(rows==0U)return 1;
+    mysmb_ppu_prepare_chr(state,workspace);
+    mysmb_ppu_frame_build_internal(state,pixels,first,rows,
+        workspace?workspace->decoded:0);
+    return 1;
 }

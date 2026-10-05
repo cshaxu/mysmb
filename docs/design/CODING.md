@@ -24,7 +24,8 @@ Translated files use subsystem names, not arbitrary ROM addresses. Every transla
 ## Source Organization
 
 `io/` includes its own contract headers and portable C90 `string.h` memory operations. These standard operations add no game or device dependency. It owns decoded two-port input,
-a borrowed read-only 256x240 indexed frame, an owned ordered audio snapshot,
+a borrowed read-only256x240indexed frame or synchronous bounded row producer,
+an owned ordered audio snapshot,
 and authored 80x50 text cells. Selected glyph IDs and their Unicode/reflection
 mapping live in io/text_glyph. It contains no game state, ROM data, host API,
 audio synthesis, or text quantizer. Shared color lookup and indexed row scaling
@@ -39,9 +40,10 @@ the neutral IO text frame; it has no RAM/OAM/resource or host dependency.
 S2 adds optional per-instance source-decision observations and DMA latching
 under core/observation,plus read-only actor/background/HUD
 assembly. Both roots enable observations and bind an early Tab text preview.
-DOS borrows a15400-byte scene/frame view from the mandatory pixel store;
-only the active synchronous presenter view is valid,and graphics fully rebuilds
-after text. Windows uses a real console.
+DOS allocates15400bytes for exclusive authored text or bounded pixel rows;
+only the active synchronous presenter view is valid,and every graphical band
+rebuilds after text. Neutral row views retain absolute logical coordinates and
+expire before the next producer call;the legacy full-frame path stays supported. Windows uses a real console.
 Observations are outside original
 game state;observer_snapshot explicitly serializes both phases into schema2's
 opaque presentation extension. Full source entries retain stable anchors even

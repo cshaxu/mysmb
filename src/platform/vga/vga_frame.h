@@ -13,4 +13,8 @@ void mysmb_vga_frame_build(const struct mysmb_io_video_frame *source,
 void mysmb_vga_frame_build_rows(const struct mysmb_io_video_frame *source,
     mysmb_io_u16 plane,mysmb_io_u16 first,mysmb_io_u16 rows,
     mysmb_io_u8 MYSMB_VGA_FAR *pixels);
+/* Reject a band that does not cover every required logical source row. */
+int mysmb_vga_frame_build_band(const struct mysmb_io_video_band *source,
+    mysmb_io_u16 plane,mysmb_io_u16 first,mysmb_io_u16 rows,
+    mysmb_io_u8 MYSMB_VGA_FAR *pixels);
 #endif

@@ -35,9 +35,16 @@ struct mysmb_dos16_root {
     int (*set_mode)(void *,mysmb_io_u8);
     void (*present_text)(void *,const struct mysmb_io_text_frame MYSMB_IO_FAR *);
     mysmb_io_u8 text_mode;
+    mysmb_io_u16 video_storage_bytes;
+    int (*present_rows)(void *,const struct mysmb_io_video_source *);
 };
 int mysmb_dos16_root_initialize(struct mysmb_dos16_root *root,
                                 const struct mysmb_dos16_hooks *hooks);
+/* Explicit opt-in;legacy hook layout/full-frame initialization stay valid.
+ * storage_bytes must also fit any text view bound by the composition owner. */
+int mysmb_dos16_root_initialize_rows(struct mysmb_dos16_root *root,
+    const struct mysmb_dos16_hooks *hooks,mysmb_io_u16 storage_bytes,
+    int (*present_rows)(void *,const struct mysmb_io_video_source *));
 void mysmb_dos16_root_step(struct mysmb_dos16_root *root);
 void mysmb_dos16_root_shutdown(struct mysmb_dos16_root *root);
 void mysmb_dos16_root_bind_snapshot(struct mysmb_dos16_root *root,

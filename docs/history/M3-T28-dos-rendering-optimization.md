@@ -1465,3 +1465,101 @@ follows from that deferral. S6/T28 remain open.
 Historical1992/1992,local1991/1992nodes and4260/4261feasible controls(raw4342,
 infeasible81);scope/expected/actual[],new0,no custody transfer. Products retain
 the P5 hashes and are not refreshed for this prototype/design-only part.
+
+
+## S6 P7 checkpoint: adopted bounded row producer and smaller DOS store
+
+Owner admits the rowwise memory implementation and defers additional speed
+recovery to TODO. Shared PPU frame composition has one algorithm for full-frame
+and bounded rows:logical coordinates,source scroll/split,opacity,reverse OAM
+priority and CHR/cache bounds are unchanged;only output offsets and sprite-row
+clipping narrow to the requested span. Explicit capacity validation rejects
+invalid requests before output/cache changes. Every original logical pixel still
+reaches the same full640x400VGA mapping. Core,PPU-state,snapshot encoding,source
+sound and tick/input decisions have no changes.
+
+Neutral IO declares a synchronous source and returned const row view. DOS
+composition binds it to const PPU state/cache;VGA consumes only pixels and absolute
+row ranges. Four planes consume each band before reuse. No device gains a game,
+OAM,nametable or CHR dependency. Existing full-frame entry points and legacy hook
+layout remain supported;an explicit opt-in initializer allocates the requested
+store directly. The actual product requests sizeof its15400-byte text pack,
+which also holds each at-most2560-byte graphics band. Text/graphics remain
+exclusive;mode return and load rebuild all selected output. Source callback or
+mapping failure feeds the shared exit latch;optional near/far cache fallback
+and matching free provenance remain unchanged.
+
+The similar-issue sweep covers all DOS pixel/text consumers,root initialization,
+full-frame fallback,mode failure,snapshot redraw,cache/resource/reset,shutdown,
+VGA coordinate bounds and mutable ownership. The full-frame consumer executes
+only for legacy full-frame roots;the row root never submits its short storage as
+a complete frame. Main borrows that storage only for the declared text pack.
+Devices submit neutral planes/cells only. No unrelated raw/cache/tick repair is
+included;repeated rows/OAM scans and redundant cached sprite reads stay in TODO.
+
+Both widths pass11focused tests. The new512-case test uses the retained independent
+per-pixel reference,compares188743680cached/uncached strip bytes and65536000plane
+bytes per width,and verifies guards,state immutability,invalid ranges/capacity
+and cache rebinds. Root tests also exercise opt-in initialization,oversized reads,
+sink-failure exit and idempotent shutdown. Existing2048boundary/1198native scene
+checks,snapshot continuation,clock/pacing and platform-purity tests pass. Each
+changed Windows product passes13private-desktop host routes. Original OpenNT16
+large-model compiler/historical runtime builds the DOS product;existing conversion
+and optional OLDNAMES lookup warnings remain. Focused receipts do not resolve the
+unrelated default-all Cannon Children harness debt.
+
+Three actual DOS device/lifetime routes(normal,optional cache failure,near/far
+pressure) each match five61440-byte active logical frames,640000hardware VGA
+plane bytes,8000hardware text bytes,12000neutral text-cell bytes and10035snapshot
+bytes against the retained S5 route. The inactive text-overwritten graphics view
+is excluded explicitly. Frame files are reconstructed in bounded rows outside
+timed regions;no full-frame scratch allocation is hidden in the row probe.
+Mode3restores and observed live far/near payloads return to zero. Instrumented
+normal/failure peaks392880/392384bytes,far payload35996;pressure648064includes
+ballast. Minimum largest free256192/256688/1008bytes. Untouched stack72/94/70bytes
+preserves only the retained bounded pattern test,not all-route stack headroom.
+
+The formal uninstrumented product completes448/384KiBcaller-free game/load,
+Tab/text/graphics,save and Escape routes. External BIOS observer sees1866/1863
+samples,one change record each,zero bad chains/drops. Both sampled maxima are
+386512=345376primary+160environment+40976auxiliary bytes,including MCB/PSP and
+excluding observer/parent/ballast. Against P5roomy430224,this is43712bytes less
+(about42.69KiB);the61440to15400payload reduction remains46040bytes. CRT blocks,
+new code and allocation rounding explain why the net observed result differs.
+This is sampled occupancy,not proven continuous peak or a whole-game minimum.
+CRC/resource-valid10035-byte saves advance seed frame7465to7519and startup4;
+wall-script frame counts are not deterministic ROM-equivalence/input-latency
+proof. Captures show actual gameplay,text and reconstructed graphics.
+
+Retained same-state instrumented phase totals change+4.958percent(title),
++0.911(load),-0.105(text),+5.620(return graphics),+2.647(save),+0.927(reload).
+These include census/instrumentation and full route work;they are not isolated
+render-stage or playable FPS claims. P6paired synthetic compute overhead remains
+separate evidence. Extra row/OAM speed recovery is owner-deferred;no pixels,
+ticks or output size are dropped and no DOSBox configuration is modified.
+
+An additional376KiBcaller-free formal-product route also completes:1867observer
+samples,one record,zero bad chains/drops,sampled382416=345376+160+36880bytes.
+The CRT uses a smaller auxiliary reservation under this budget. Its10035-byte
+CRC/resource-bound save advances frame7465to7518;reviewed game/text/graphics
+captures and Escape result0pass. This lowers the tested successful budget to
+376KiBbut does not prove an absolute or all-route minimum. No configuration
+changes or physical hardware/DOS-version qualification are claimed.
+
+Actual source/test/build diff is11files,+265/-26:8product source/header files,
+2focused tests and one CMake binding. No core/PPU-state/schema edit.
+All three owner-authorized existing products refreshed:
+
+- mysmb16.exe:304547bytes,SHA256 ffe82b1d6976e82dcd73e9630e7e0a793275d2af51ac0d1afe98965e79e261f3.
+- mysmb32.exe:320139bytes,SHA256 a1be524024fd48de068ad4b20bf175e22698a7cd993ea587bd5c442de671c835.
+- mysmb64.exe:328811bytes,SHA256 66ab9c17df3b0afb3c644ff0b6e73ad91353095fc723bbf77103211bbfe333cc.
+
+DOS minimum MZ329072bytes,DGROUP49488/headroom16048,stack2048,max segment32768.
+MZ increases1392bytes versus P5and omits dynamic heap/PSP/environment. Primary
+actual block increases1376bytes;the reduction comes from smaller far storage,
+not a misleading EXE-size decrease or blind CRT-block shrink. Raw logs/probes,
+readbacks/captures/resources remain ignored below build/m3-t28-s6.
+Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
+infeasible81),scope/expected/actual[],new0,custody unchanged. S6/T28 remain open for cumulative cadence/input,full-route
+continuous peak/stack and opportunity dispositions. No M2/M4 certificate or
+exhaustive behavior claim is inferred from this bounded adoption.

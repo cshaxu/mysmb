@@ -53,6 +53,48 @@ static int failed_text_recovery(void)
     mysmb_dos16_root_shutdown(&borrowed);mysmb_dos16_root_shutdown(&baseline);
     return 0;
 }
+
+static struct mysmb_dos16_root row_root;
+static struct mysmb_ppu_frame row_reference;
+static unsigned row_calls,row_failure;
+static int rows_present(void *context,const struct mysmb_io_video_source *source)
+{
+    struct mysmb_io_video_band band;
+    unsigned short first,rows;
+    unsigned char *pixels=row_root.ppu_frame.pixels;
+    (void)context;
+    mysmb_ppu_frame_build(&row_root.game.ppu,&row_reference);
+    pixels[2560]=0xa5U;
+    for(first=0U;first<240U;first=(unsigned short)(first+rows)) {
+        rows=(unsigned short)(240U-first);if(rows>10U)rows=10U;
+        if(!source->read_rows(source->context,first,rows,&band) || band.first!=first ||
+            band.rows!=rows || memcmp(band.pixels,row_reference.pixels+first*256U,
+                rows*256U) || pixels[2560]!=0xa5U)return 0;
+    }
+    /* The callback must reject oversized requests before changing its view. */
+    if(source->read_rows(source->context,0U,11U,&band) ||
+        source->read_rows(source->context,239U,2U,&band))return 0;
+    ++row_calls;return !row_failure;
+}
+static int row_lifetime(void)
+{
+    struct mysmb_dos16_hooks hooks;
+    struct host host;
+    memset(&host,0,sizeof(host));row_calls=0U;row_failure=0U;
+    hooks.context=&host;hooks.read_input=read_input;
+    hooks.present_video=0;hooks.submit_audio=audio;
+    if(mysmb_dos16_root_initialize_rows(&row_root,&hooks,255U,rows_present) ||
+        mysmb_dos16_root_initialize_rows(&row_root,&hooks,2560U,0))return 30;
+    if(!mysmb_dos16_root_initialize_rows(&row_root,&hooks,2560U,rows_present))return 31;
+    mysmb_dos16_root_step(&row_root);mysmb_dos16_root_step(&row_root);
+    mysmb_dos16_root_step(&row_root);
+    if(row_calls!=1U || row_root.control.exit_requested || host.audio_calls!=1U)return 32;
+    row_failure=1U;mysmb_dos16_root_step(&row_root);
+    if(row_calls!=2U || !row_root.control.exit_requested)return 33;
+    mysmb_dos16_root_step(&row_root);if(row_calls!=2U)return 34;
+    mysmb_dos16_root_shutdown(&row_root);mysmb_dos16_root_shutdown(&row_root);
+    return 0;
+}
 int main(void)
 {
     static struct mysmb_dos16_root root;
@@ -133,5 +175,7 @@ int main(void)
         host.calls!=1U || host.audio_calls!=1U) return 12;
     mysmb_dos16_root_shutdown(&root); mysmb_dos16_root_shutdown(&root);
     mysmb_dos16_root_step(&root);
-    return host.calls==1U && host.audio_calls==1U ? failed_text_recovery():9;
+    if(host.calls!=1U || host.audio_calls!=1U)return 9;
+    if(failed_text_recovery())return 25;
+    return row_lifetime();
 }
