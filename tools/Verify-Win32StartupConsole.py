@@ -115,9 +115,12 @@ def main():
     try:
         policy, product = args.policy.resolve(), args.product.resolve()
         if args.parent:
-            handle=start('cmd.exe /d /c ""%s""' % args.parent.resolve(),name,output)
+            handle=start('cmd.exe /d /c ""%s" "%s""' % (args.parent.resolve(),output / 'parent-diagnostic.txt'),name,output)
             handles.append(handle);completed(handle)
             rows.append(dict(route="borrowed-buffer/settings/Tab/error-restore",exitCode=0))
+            handle=start('cmd.exe /d /c ""%s" "%s" maximized"' % (args.parent.resolve(),output / 'parent-max-diagnostic.txt'),name,output)
+            handles.append(handle);completed(handle)
+            rows.append(dict(route="maximized-parent/settings/error-restore",exitCode=0))
             handle=start('cmd.exe /d /c start "" /wait /b "%s" borrowed' % args.switch.resolve(),name,output)
             handles.append(handle);completed(handle)
             rows.append(dict(route="borrowed-product-root/Tab/one-game-instance",focus="explicit-owned-fixture",exitCode=0))

@@ -101,3 +101,9 @@ Windows graphical geometry scales the unchanged indexed frame to the full
 client area. Native sizing constrains16:15client units,with non-client and
 DPI margins;minimum,maximized,restored and programmatic sizes share that
 device owner. Zero-sized clients skip drawing;no crop or letterbox owner.
+
+Console geometry belongs to the Windows device. A restored host repairs the
+80x50buffer/view before presenting;maximized font remains unchanged. A bounded
+in-flight clipped write defers a frame,while genuine handle loss keeps recovery.
+Borrowed shutdown restores the original shell cell view after pixel placement,
+so host rounding cannot silently remove a row. No geometry changes game state.

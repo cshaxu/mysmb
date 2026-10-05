@@ -1,5 +1,6 @@
 #include <windows.h>
 #include <string.h>
+#include <stdio.h>
 #include "platform/win32/text_console.h"
 static int fail_view;
 static BOOL probe_view(HANDLE output,BOOL absolute,const SMALL_RECT *view)
@@ -12,7 +13,7 @@ static BOOL probe_view(HANDLE output,BOOL absolute,const SMALL_RECT *view)
 #undef SetConsoleWindowInfo
 static struct mysmb_win32_text_console device;
 static struct mysmb_io_text_frame frame;
-int main(void)
+int main(int argc,char **argv)
 {
     HANDLE input,output;
     CONSOLE_SCREEN_BUFFER_INFO original,current;
@@ -25,6 +26,13 @@ int main(void)
     SMALL_RECT view={0,0,3,0};
     HWND owner;
     unsigned int cycle,i,attempt;
+    if(argc<2)return 14;
+    if(argc==3) {
+        unsigned int wait;
+        if(!PostMessage(GetConsoleWindow(),WM_SYSCOMMAND,SC_MAXIMIZE,0))return 15;
+        for(wait=0;wait<80 && !IsZoomed(GetConsoleWindow());++wait)Sleep(25U);
+        if(wait==80)return 16;
+    }
     input=CreateFileA("CONIN$",GENERIC_READ|GENERIC_WRITE,
         FILE_SHARE_READ|FILE_SHARE_WRITE,NULL,OPEN_EXISTING,0,NULL);
     output=CreateFileA("CONOUT$",GENERIC_READ|GENERIC_WRITE,
@@ -73,7 +81,18 @@ int main(void)
         if(memcmp(&original.dwSize,&current.dwSize,sizeof(COORD)) ||
             memcmp(&original.dwCursorPosition,&current.dwCursorPosition,sizeof(COORD)) ||
             original.wAttributes!=current.wAttributes ||
-            memcmp(&original.srWindow,&current.srWindow,sizeof(SMALL_RECT)))return 10;
+            memcmp(&original.srWindow,&current.srWindow,sizeof(SMALL_RECT))) {
+            FILE *log=fopen(argv[1],"w");
+            if(log) {
+                fprintf(log,"cycle%u size%d,%d->%d,%d cursor%d,%d->%d,%d attr%u->%u view%d,%d,%d,%d->%d,%d,%d,%d\n",
+                    cycle,original.dwSize.X,original.dwSize.Y,current.dwSize.X,current.dwSize.Y,
+                    original.dwCursorPosition.X,original.dwCursorPosition.Y,current.dwCursorPosition.X,current.dwCursorPosition.Y,
+                    original.wAttributes,current.wAttributes,original.srWindow.Left,original.srWindow.Top,
+                    original.srWindow.Right,original.srWindow.Bottom,current.srWindow.Left,current.srWindow.Top,
+                    current.srWindow.Right,current.srWindow.Bottom);fclose(log);
+            }
+            return 10;
+        }
         GetConsoleTitleW(after_title,256);
         if(wcscmp(title,after_title))return 11;
         if(!GetCurrentConsoleFontEx(output,FALSE,&after_font) ||

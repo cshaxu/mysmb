@@ -8,8 +8,10 @@ struct mysmb_win32_text_console {
     DWORD shell_input_mode;
     WCHAR *shell_title;
     WINDOWPLACEMENT shell_placement;
+    CONSOLE_SCREEN_BUFFER_INFO shell_info;
     HWND window;
     unsigned char opened,borrowed,mode_saved;
+    unsigned short geometry_pending;
     CHAR_INFO cells[MYSMB_IO_TEXT_CELLS];
 };
 int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console,

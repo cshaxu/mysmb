@@ -63,7 +63,8 @@ int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console,
         console->shell_placement.length=sizeof(console->shell_placement);
         if(console->shell_output==INVALID_HANDLE_VALUE || !console->shell_title ||
             !GetConsoleMode(console->input,&console->shell_input_mode) ||
-            !GetWindowPlacement(console->window,&console->shell_placement)) {
+            !GetWindowPlacement(console->window,&console->shell_placement) ||
+            !GetConsoleScreenBufferInfo(console->shell_output,&console->shell_info)) {
             mysmb_win32_text_console_close(console);return 0;
         }
         console->mode_saved=1U;
@@ -132,6 +133,9 @@ void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console)
             (void)SetConsoleMode(console->input,console->shell_input_mode);
             (void)SetConsoleTitleW(console->shell_title);
             (void)SetWindowPlacement(console->window,&console->shell_placement);
+            /* Host pixel placement can round a restored cell view down a row.
+             * Restore its original cell rectangle explicitly after placement. */
+            (void)SetConsoleWindowInfo(console->shell_output,TRUE,&console->shell_info.srWindow);
         }
         /* Discard game key breaks/shortcuts before returning input to shell. */
         if(console->input && console->input!=INVALID_HANDLE_VALUE)
@@ -152,12 +156,44 @@ void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console)
     console->opened=0U;console->window=NULL;
     console->input=console->output=NULL;
     console->shell_output=NULL;console->shell_title=NULL;
-    console->borrowed=console->mode_saved=0U;
+    console->borrowed=console->mode_saved=0U;console->geometry_pending=0U;
+}
+/* A host resize changes the device buffer/view independently of the frame.
+ * Repair geometry before drawing;only actual device loss requests fallback.
+ * Return2 for a bounded in-flight resize,1 when ready,0 for device failure. */
+static int mysmb_win32_console_geometry(struct mysmb_win32_text_console *console)
+{
+    CONSOLE_SCREEN_BUFFER_INFO info;
+    COORD size;
+    SMALL_RECT tiny={0,0,0,0},view={0,0,79,49};
+    int maximized;
+    DWORD error;
+    if(!GetConsoleScreenBufferInfo(console->output,&info))return 0;
+    if(IsIconic(console->window))return 2;
+    maximized=IsZoomed(console->window)!=0;
+    if(maximized) {
+        /* Preserve the working maximized host and its character metrics. */
+        if(info.dwSize.X>=80 && info.dwSize.Y>=50)return 1;
+        size=info.dwSize;if(size.X<80)size.X=80;if(size.Y<50)size.Y=50;
+        if(SetConsoleScreenBufferSize(console->output,size))return 1;
+    } else {
+        if(info.dwSize.X==80 && info.dwSize.Y==50 && info.srWindow.Left==0 &&
+            info.srWindow.Top==0 && info.srWindow.Right==79 && info.srWindow.Bottom==49)return 1;
+        size.X=80;size.Y=50;
+        /* Shrink view before buffer,then expand view after buffer. */
+        if(SetConsoleWindowInfo(console->output,TRUE,&tiny) &&
+            SetConsoleScreenBufferSize(console->output,size) &&
+            SetConsoleWindowInfo(console->output,TRUE,&view))return 1;
+    }
+    error=GetLastError();
+    if(error!=ERROR_INVALID_PARAMETER || ++console->geometry_pending>120U)return 0;
+    return 2;
 }
 int mysmb_win32_text_console_present(struct mysmb_win32_text_console *console,
     const struct mysmb_io_text_frame *frame)
 {
     unsigned short i;
+    int geometry;
     COORD size,origin;
     SMALL_RECT view;
     if(!console->opened || frame==0)return 0;
@@ -167,12 +203,23 @@ int mysmb_win32_text_console_present(struct mysmb_win32_text_console *console,
         console->cells[i].Attributes=(WORD)((frame->cells[i].foreground&15U)|
             ((frame->cells[i].background&15U)<<4U));
     }
+    geometry=mysmb_win32_console_geometry(console);
+    if(geometry!=1)return geometry==2;
     size.X=80;size.Y=50;origin.X=origin.Y=0;
     view.Left=view.Top=0;view.Right=79;view.Bottom=49;
-    /* Windows reports the actual rectangle;success alone permits clipping.
-     * A partial frame must reach the root's graphical recovery path. */
-    return WriteConsoleOutputW(console->output,console->cells,size,origin,&view)!=0 &&
-        view.Left==0 && view.Top==0 && view.Right==79 && view.Bottom==49;
+    /* A partial write can race a host resize after the geometry query.
+     * Defer the next frame while the valid device converges;never infer exit. */
+    if(WriteConsoleOutputW(console->output,console->cells,size,origin,&view) &&
+        view.Left==0 && view.Top==0 && view.Right==79 && view.Bottom==49) {
+        console->geometry_pending=0U;return 1;
+    }
+    geometry=mysmb_win32_console_geometry(console);
+    if(!geometry || ++console->geometry_pending>120U)return 0;
+    view.Left=view.Top=0;view.Right=79;view.Bottom=49;
+    if(geometry==1 && WriteConsoleOutputW(console->output,console->cells,size,origin,&view) &&
+        view.Left==0 && view.Top==0 && view.Right==79 && view.Bottom==49)
+        console->geometry_pending=0U;
+    return 1;
 }
 int mysmb_win32_text_console_key(struct mysmb_win32_text_console *console,
     WORD *key,WORD *scan,unsigned char *pressed)

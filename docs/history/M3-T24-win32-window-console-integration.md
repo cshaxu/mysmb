@@ -1,6 +1,6 @@
 # Windows Window And Console Integration
 
-Owner admits M3 T24;S1 starts now after closed T23. CURRENT is authoritative.
+M3 T24 S1-S3 closed after T23. CURRENT is authoritative.
 
 Owner expands this same candidate to cover graphical window scaling/aspect
 and console maximize/restore. Keep these issues in one integration proposal.
@@ -194,3 +194,55 @@ Original DOS16 builds;DOS unchanged,retained byte-identical DOSBox receipt.
 Window unit calculations cover96/144/192DPI parameters;actual private-host
 monitor tests do not claim a physical multi-monitor DPI drag or live RDP trial.
 Historical/local counters unchanged,new0. S3 Restore is next,T24 still open.
+
+### S3 closure and final review
+
+Old-device embedded-root probe fails113 on actual console maximize/Restore;
+fixed x86/x64 pass. Both widths pass eight focused tests and eleven host groups.
+Each width executes three borrowed opens with three maximize/Restore cycles
+per open,plus three owned cycles:12pairs with unchanged font and full4000cell
+readback at each phase. Borrowed Tab->graphical resize->Tab preserves original
+RAM/game,audio and native pixel storage. Snapshot/P/O and physical-event input
+remain covered by the same root fixture;interactive CMD verifies waiting,
+Escape and a following prompt command. No user's foreground or global input.
+
+The defect class is host geometry changing the buffer/view outside presentation.
+The device repairs nonmaximized80x50view in shrink-view->size-buffer->expand-view
+order;maximized host/font remains unchanged and buffer is at least80x50.
+A valid in-flight clipped write is retried/deferred with a120attempt ceiling;
+invalid handles or persistent failure retain existing recovery. Minimized hosts
+skip device drawing. Geometry never requests exit or mutates shared game state.
+
+A second bounded finding was shell restore rounding original view120x30 to
+120x29 while buffer120x9001,cursor,attributes and contents stayed unchanged.
+The device now captures and explicitly restores original shell cell view after
+pixel placement. Thirty repeated lifecycle fixtures pass;both normal and
+originally maximized parent probes verify settings/cells/error restoration.
+The diagnostic fixture writes neutral dimension failures only below its explicit
+ignored output path. All production hits are launch,open/close/present owners;
+no shared game/text/DOS artwork,logic,or IO contract changed.
+
+Original DOS16 compiler/link passes. Final DOSBox actual product regression
+passes graphics/text roundtrip,held Tab,second text entry,P/O snapshot retained
+text mode and Escape to DOS. This is operational proof,not486SX qualification.
+Local products364939/318091/325739bytes;package SHA256 equals each build source.
+S3 product/test/tool5files,+135/-16,no shared ABI or new ROM credit.
+
+| Final bounded obligation | Disposition |
+| --- | --- |
+| Direct CMD/same console/automatic wait/prompt restore | Passed actual private interactive CMD |
+| PowerShell/pwsh,detached/other launch policy | Passed both-width sibling fixtures |
+| Borrowed buffer/font/palette/cursor/title/input/view/error lifetime | Passed normal/maximized parent and30repeat probes |
+| Tab/input/snapshot/one game instance | Passed embedded root and actual device fixtures |
+| Graphics client paint,8edges,minimum,maximize/restore | Passed root geometry and native host |
+| DPI margins/message | Passed96/144/192parameter calculations and native message;physical monitor drag unobserved |
+| Actual console SC_MAXIMIZE/SC_RESTORE,owned/borrowed | Passed12pairs per width,all4000cells/font/instance retained |
+| Original DOS16 build and DOSBox product | Passed,default graphics retained |
+| Live RDP foreground/physical multi-monitor DPI/486SX speed | Not claimed;existing event fixtures/parameter proofs only |
+
+T24 closes its three bounded implementation chains. No pending T24 repair or
+new helper process. Owner accepts console-subsystem Explorer flash tradeoff.
+Shared borrowed-host Close remains Windows' shared shell-close semantics;
+Escape/root exit restores shell without explicitly closing or killing it.
+Historical1992/1992;retained local1991/1992nodes,4260/4261feasible controls
+(raw4342/infeasible81);M2 final certification remains incomplete. New0.

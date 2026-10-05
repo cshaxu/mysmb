@@ -27,6 +27,47 @@ static DWORD saved_pixels[MYSMB_SCREEN_WIDTH*MYSMB_SCREEN_HEIGHT];
 static struct mysmb_io_snapshot expected_snapshot,restored_snapshot;
 static struct mysmb_io_text_frame expected_text;
 static int console_shortcut(HWND window,WORD key,unsigned char down);
+static int console_restore_route(void)
+{
+    CONSOLE_FONT_INFOEX font,after;
+    CONSOLE_SCREEN_BUFFER_INFO info;
+    CHAR_INFO readback[4000];
+    COORD size={80,50},origin={0,0};
+    SMALL_RECT view;
+    unsigned int cycle,phase,i,attempt;
+    HWND host=g_console.window;
+    ZeroMemory(&font,sizeof(font));font.cbSize=sizeof(font);
+    if(!GetCurrentConsoleFontEx(g_console.output,FALSE,&font))return 110;
+    for(cycle=0;cycle<3;++cycle) {
+        for(phase=0;phase<2;++phase) {
+            /* Same WM_SYSCOMMAND as title-bar maximize/Restore buttons. */
+            if(!PostMessage(host,WM_SYSCOMMAND,phase?SC_RESTORE:SC_MAXIMIZE,0))return 111;
+            for(attempt=0;attempt<80;++attempt) {
+                if((IsZoomed(host)!=0)==(phase==0))break;
+                Sleep(25U);
+            }
+            if(attempt==80)return 112;
+            Sleep(50U);mysmb_win32_build_frame();
+            if(!g_text_mode || g_text_failed || host!=g_console.window)return 113;
+            if(!GetConsoleScreenBufferInfo(g_console.output,&info))return 114;
+            if(phase && (info.dwSize.X!=80 || info.dwSize.Y!=50 ||
+                info.srWindow.Left!=0 || info.srWindow.Top!=0 ||
+                info.srWindow.Right!=79 || info.srWindow.Bottom!=49))return 115;
+            ZeroMemory(&after,sizeof(after));after.cbSize=sizeof(after);
+            if(!GetCurrentConsoleFontEx(g_console.output,FALSE,&after) ||
+                font.dwFontSize.X!=after.dwFontSize.X ||
+                font.dwFontSize.Y!=after.dwFontSize.Y)return 116;
+            view.Left=view.Top=0;view.Right=79;view.Bottom=49;
+            if(!ReadConsoleOutputW(g_console.output,readback,size,origin,&view) ||
+                view.Right!=79 || view.Bottom!=49)return 117;
+            for(i=0;i<4000;++i)
+                if(readback[i].Char.UnicodeChar!=mysmb_io_text_glyph_unicode(g_text_frame.cells[i].character) ||
+                    readback[i].Attributes!=(WORD)(g_text_frame.cells[i].foreground|
+                        (g_text_frame.cells[i].background<<4)))return 118;
+        }
+    }
+    return 0;
+}
 static int geometry_route(HINSTANCE instance)
 {
     HWND window;
@@ -358,6 +399,7 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
             if(!g_text_mode || !g_console.borrowed)return 80;
             if(parent && parent!=g_console.window)return 81;
             parent=g_console.window;owned_focus=parent;
+            result=console_restore_route();if(result)return result;
             if(memcmp(&saved_game,&g_game,sizeof(g_game)) ||
                 memcmp(&saved_audio,&g_audio_output,sizeof(saved_audio)) ||
                 memcmp(saved_pixels,g_pixels,sizeof(saved_pixels)))return 82;
@@ -365,6 +407,14 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
             mysmb_win32_shortcut(window,VK_TAB,1U);
             input_only_step(window);owned_focus=window;
             if(g_text_mode || g_console.opened || g_console.borrowed)return 83;
+            {
+                RECT resized;
+                SetWindowPos(window,NULL,0,0,672,633,SWP_NOMOVE|SWP_NOZORDER|SWP_NOACTIVATE);
+                GetClientRect(window,&resized);
+                if(resized.right*15!=resized.bottom*16 ||
+                    memcmp(&saved_game,&g_game,sizeof(g_game)) ||
+                    memcmp(&saved_audio,&g_audio_output,sizeof(saved_audio)))return 84;
+            }
             mysmb_win32_shortcut(window,VK_TAB,0U);
         }
         DestroyWindow(window);return 0;
@@ -414,6 +464,7 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     glyph_frame.cells[0].character=0x80U;
     if(mysmb_win32_text_console_present(&g_console,&glyph_frame))return 49;
     if(!mysmb_win32_text_console_present(&g_console,&g_text_frame))return 50;
+    result=console_restore_route();if(result)return result;
     /* Real owned console input,including a held repeat and physical break. */
     FlushConsoleInputBuffer(g_console.input);
     ZeroMemory(&event,sizeof(event));event.EventType=KEY_EVENT;
@@ -462,13 +513,10 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     if(!SetConsoleWindowInfo(g_console.output,TRUE,&view) ||
         !SetConsoleScreenBufferSize(g_console.output,size))return 21;
     mysmb_win32_build_frame();
-    if(!g_text_failed)return 22;
-    mysmb_win32_switch_presenter(window,0);
-    if(g_text_mode || g_console.opened || g_console.input || g_console.output ||
-        memcmp(saved_pixels,g_pixels,sizeof(g_pixels)))return 23;
-    mysmb_win32_switch_presenter(window,0);
-    if(!g_text_mode)return 24;
-    ShowWindow(g_console.window,SW_HIDE);
+    if(g_text_failed || !g_text_mode)return 22;
+    if(!GetConsoleScreenBufferInfo(g_console.output,&info) || info.dwSize.X!=80 ||
+        info.dwSize.Y!=50 || info.srWindow.Right!=79 || info.srWindow.Bottom!=49)return 23;
+    input_only_step(window);if(!g_text_mode || g_text_failed)return 24;
     if(!FreeConsole())return 25;
     mysmb_win32_build_frame();
     if(!g_text_failed)return 26;

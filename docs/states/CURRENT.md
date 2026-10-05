@@ -2,7 +2,7 @@
 
 **Idle.**
 
-T24 S2 closed,next S3 authorized;T24 remains open.
+M3 T24 closed. Queue head remains unnumbered;T19 owner-suspended.
 
 ## Current Technical Baseline
 
@@ -17,7 +17,7 @@ T24 S2 closed,next S3 authorized;T24 remains open.
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11/T12/T13/T14/T15/T16/T17/T18 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are364939/317579/325227bytes.
+- Current local DOS16/Win32/x64 products are364939/318091/325739bytes.
   T22 refreshes all three with RAM-authoritative NMI page handoff;T21 coral,T20 titles/tree/fence and T18 timing retained.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
@@ -26,13 +26,11 @@ T24 S2 closed,next S3 authorized;T24 remains open.
 
 ## Compact closure status
 
-M3 T24 S2 closes client scaling/aspect,min/max/DPI/window restore. Both widths
-8tests/10host groups pass;products364939/317579/325227bytes,+193/-5,new0.
-[Evidence/limits](../history/M3-T24-win32-window-console-integration.md#s2-closure). S3 pending.
-
-M3 T24 S1 closes parent-console lifecycle and direct CMD waiting;both widths
-8tests/10host groups pass. DOS16 unchanged,three products364939/313995/322155bytes.
-New0;S2/S3 remain pending. [Evidence/limits](../history/M3-T24-win32-window-console-integration.md#s1-closure).
+M3 T24 S1-S3 close parent-console wait/lifetime,client-aspect scaling and
+console maximize/Restore. Final both widths8tests/11host groups,30shell-repeat
+checks and original DOS16/DOSBox pass. Local products364939/318091/325739bytes.
+Final S3 product/test/tool5files,+135/-16,new0. Explorer flash accepted;
+physical RDP/monitor drag not claimed. [Full review/limits](../history/M3-T24-win32-window-console-integration.md#s3-closure-and-final-review).
 
 M3 T23 S1 closes princess/Toad authored details and retainer-only crown
 cell-center anchoring.64palette/form/offset/latch cases,existing864enemy and
