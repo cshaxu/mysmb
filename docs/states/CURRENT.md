@@ -1,27 +1,27 @@
 # Project Status
 
-**Active: M3 T27 S3 P1.**
+**Active: M3 T27 S4 P1.**
 
-## M3 T27 S3 Packet
+## M3 T27 S4 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T27 S3 P1,continuation:read-only PPU compositor extraction. |
-| Admission And Approval | Owner approves component split and all pending-file review/submission;S2 preservation checks pass. |
-| Objective | Move compositor to ppu/frame;borrow const PPU state,remove game dependency,retain every pixel/state contract. |
-| Non-goals | ROM/game/PPU semantic changes,performance optimization,core/text migration before its S,new emulator,M2 certification. |
-| Reference Baseline | S2 source normalized173C files;79affected targets and15tests per width;DOS16/actual DOSBox pass;historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81). |
-| Candidate Proposal | [T27 plan and S3 admission](../history/M3-T27-core-ppu-module-boundaries.md#s2-p2-closure-and-s3-p1-admission). |
-| Files And ABI Surface | Two compositor files,20-35consumer/build files;100-250edits plus preserved moves;const PPU pointer API,serialized bytes unchanged. |
+| Identifier Mode | M3 T27 S4 P1,continuation:core root/frame/mode/area relocation. |
+| Admission And Approval | Owner-approved split and all pending-file submission;S3 source/pixel/native/DOS checks pass. |
+| Objective | Move24root/frame/mode/area/scroll/status source/header files to core;retain bodies and update every path/current-owner binding. |
+| Non-goals | Gameplay/PPU changes,remaining enemy/player/text relocation before its S,performance optimization,new emulator,M2 certification. |
+| Reference Baseline | S3 normalized174C bodies;independent PPU frame;17tests per width,DOS16/4complete far frames and actual DOSBox pass;historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81). |
+| Candidate Proposal | [T27 plan and S4 admission](../history/M3-T27-core-ppu-module-boundaries.md#s3-p2-closure-and-s4-p1-admission). |
+| Files And ABI Surface | Exact24files in proposal;up to200include/build/map consumers,250-600path edits plus unchanged moves;no serialized ABI or state change. |
 | Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Document and source policy. |
-| Verification | Normalize pre/post compositor,independent PPU target,full pixel/state/snapshot/text and original DOS16 far-memory tests,3products and gates. |
-| Expected Markers | Implementation scope/expected[],new0,max1992/1992;pixel projection earns no ROM CPU node credit;existing custody retained. |
-| Asset Needs | Existing local inputs only,no new import;ignored build/m3-t27-s3 holds local evidence. Owner directs local commit of3already-tracked EXEs;no new ROM/generated source/captures/publication. |
-| Reporting Requirements | Entry components/size;closure actual scope/state/pixel proof,node/edge totals;three EXEs for product-code P. |
-| Stop Conditions | No core/text/host import in PPU,no state copy or unresolved scoped source/state/pixel/snapshot diff. |
-| Exit Criteria | Read-only independent compositor,all old consumers updated,zero scoped diff,3builds/products and focused tests/gates pass. |
-| Original Owner Request | Close current T and separate core/PPU/components while preserving original ROM and PPU semantics. |
-| Similar-Issue Sweep | Game-sized typedefs/transitive includes,all compositor call sites/build lists,DOS far pixels,snapshot and text scene dependencies. |
+| Verification | Normalize every moved/consumer body,preserve ROM provenance/control/write order,focused frame/NMI/area/mode/scroll/PPU/snapshot/text tests,DOS16/run,3products and gates. |
+| Expected Markers | Implementation scope475existing labels in proposal,all incoming locally exact,expected new[],max1992/1992;accepted sender-specific maintenance transfers. |
+| Asset Needs | Existing local inputs only;ignored build/m3-t27-s4 holds evidence. Owner directs local commit of3already-tracked EXEs;no ROM/generated source/captures/publication. |
+| Reporting Requirements | Entry files/labels/size;closure exact completed/deferred labels and totals,source-preservation vs operational evidence,three EXEs and actual scale. |
+| Stop Conditions | No original body/order change,obsolete live includes/build entries,unresolved scoped state/pixel/snapshot diff or unnamed owner. |
+| Exit Criteria |24moves/all callers mapped,normalized bodies equal,current-owner paths and provenance preserved,focused tests/3builds/products and gates pass. |
+| Original Owner Request | Separate core/PPU/components while preserving original ROM and PPU semantics;review/submit all pending files. |
+| Similar-Issue Sweep | Public game header consumers,partial test builds,ROM owner/path metadata,tools source lists,receipt/snapshot and both root dependencies. |
 
 ## Current Technical Baseline
 
@@ -36,7 +36,7 @@
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11/T12/T13/T14/T15/T16/T17/T18 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are430027/319115/327787bytes.
+- Current local DOS16/Win32/x64 products are429963/319115/327787bytes.
   T22 refreshes all three with RAM-authoritative NMI page handoff;T21 coral,T20 titles/tree/fence and T18 timing retained.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
@@ -45,11 +45,12 @@
 
 ## Compact closure status
 
-T27 S2 closes single embedded PPU storage and original DMA primitive.173C
-source bodies normalize equal;79targets/15focusedtests per width,128far-ABI
-fixtures and actual DOSBox graphics/Tab/exit pass.77code/test/build files,
-+700/-647;three refreshed products430027/319115/327787bytes,new0. S3 admits
-const-state compositor separation. [S2 preservation and S3 scope](../history/M3-T27-core-ppu-module-boundaries.md#s2-p2-closure-and-s3-p1-admission).
+T27 S2/S3 close one embedded PPU state/original DMA and independent const-state
+pixel compositor.174retained C bodies normalize equal;S3 both widths17tests,
+DOS16/4complete far frames and DOSBox graph/Tab/exit pass. Two frame moves plus
+15consumer files,raw+277/-271includes233moved lines. Three products429963/
+319115/327787bytes,new0. S4 admits24core-root/mode/area moves and475maintenance
+labels. [Preservation and limits](../history/M3-T27-core-ppu-module-boundaries.md#s3-p2-closure-and-s4-p1-admission).
 
 T26 S2/T26 close by owner-directed remaining-work transfer:scoped compositor
 improvement and full640x400 DOS output retained;fixed-config nominal cadence

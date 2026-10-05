@@ -1,7 +1,8 @@
 #ifndef MYSMB_APP_GAME_IO_H
 #define MYSMB_APP_GAME_IO_H
 
-#include "game/ppu_frame.h"
+#include "game/game.h"
+#include "ppu/frame.h"
 #include "io/input.h"
 #include "io/video.h"
 #include "io/audio.h"

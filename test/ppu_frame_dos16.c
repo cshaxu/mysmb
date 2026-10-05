@@ -3,7 +3,8 @@
 #include <stdlib.h>
 #include <malloc.h>
 #include <string.h>
-#include "game/ppu_frame.h"
+#include "game/game.h"
+#include "ppu/frame.h"
 void mysmb_ppu_frame_reference(const struct mysmb_game *,struct mysmb_ppu_frame *);
 static struct mysmb_game game,before;
 static struct mysmb_ppu_frame actual,reference;
@@ -32,7 +33,7 @@ int main(void)
         game.ppu.visible_scroll_x=random_byte();game.ppu.visible_scroll_y=random_byte();
         game.ppu.visible_ppu_name_table=random_byte();game.ppu.visible_sprite0_split=random_byte()&1U;
         before=game;
-        mysmb_ppu_frame_build(&game,&actual);
+        mysmb_ppu_frame_build(&game.ppu,&actual);
         mysmb_ppu_frame_reference(&game,&reference);
         if(memcmp(&game,&before,sizeof(game)) || memcmp(actual.pixels,reference.pixels,61440U)) {
             printf("FAIL case %u\n",n);return 2;

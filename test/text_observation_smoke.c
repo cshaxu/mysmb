@@ -1,6 +1,6 @@
 #include "game/game.h"
 #include "game/frame_root.h"
-#include "game/ppu_frame.h"
+#include "ppu/frame.h"
 #include "game/oam/oam.h"
 #include "game/objects.h"
 #include "game/enemy/actor_slots.h"
@@ -740,8 +740,8 @@ int main(int argc,char **argv)
         CHECK(mysmb_game_snapshot_capture(&plain,&second,fingerprint));
         CHECK(memcmp(first.payload,second.payload,MYSMB_SNAPSHOT_CORE_BYTES)==0);
         CHECK(memcmp(&frame1,&frame2,sizeof(frame1))==0);
-        mysmb_ppu_frame_build(&observed,&pixels1);
-        mysmb_ppu_frame_build(&plain,&pixels2);
+        mysmb_ppu_frame_build(&observed.ppu,&pixels1);
+        mysmb_ppu_frame_build(&plain.ppu,&pixels2);
         CHECK(memcmp(pixels1.pixels,pixels2.pixels,sizeof(pixels1.pixels))==0);
         before=observed;
         CHECK(mysmb_text_elements_build(0,0U,9U,&text));

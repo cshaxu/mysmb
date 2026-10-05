@@ -1,3 +1,3 @@
-#include "game/ppu_frame.h"
+#include "ppu/frame.h"
 #include "platform/text/text_frame.h"
-int main(void) { struct mysmb_ppu_frame ppu; struct mysmb_text_frame text; mysmb_u16 i; for(i=0U;i<MYSMB_SCREEN_WIDTH*MYSMB_SCREEN_HEIGHT;++i) ppu.pixels[i]=0x21U; ppu.pixels[0U]=0x16U; ppu.pixels[3U]=0x29U; mysmb_text_frame_build(&ppu,&text); if(text.cells[0].character==' ' || text.cells[0].color!=0x4fU) return 1; if(text.cells[1].color!=0x2eU) return 2; return 0; }
+int main(void) { struct mysmb_ppu_frame ppu; struct mysmb_text_frame text; mysmb_io_u16 i; for(i=0U;i<MYSMB_PPU_FRAME_WIDTH*MYSMB_PPU_FRAME_HEIGHT;++i) ppu.pixels[i]=0x21U; ppu.pixels[0U]=0x16U; ppu.pixels[3U]=0x29U; mysmb_text_frame_build(&ppu,&text); if(text.cells[0].character==' ' || text.cells[0].color!=0x4fU) return 1; if(text.cells[1].color!=0x2eU) return 2; return 0; }

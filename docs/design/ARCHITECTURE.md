@@ -12,8 +12,8 @@ MySMB is one native product with a portable translated program and separate host
 CHR binding embedded in the game container. Core retains all original NMI
 control/write decisions and its startup guard. The DMA primitive borrows CPU
 RAM OAM and commits visible bytes at the existing call point;observation commit
-follows as before. T27 S3 removes the transitional game-container dependency
-of the pixel compositor. Its retained proposal owns the remaining migration.
+follows as before. The independent ppu/frame compositor now borrows const PPU state and has no
+game-container dependency. Its retained proposal owns remaining migrations.
 
 ## Product And Host Boundary
 

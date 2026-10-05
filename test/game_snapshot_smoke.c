@@ -1,7 +1,8 @@
 #include <string.h>
 #include "app/game_snapshot.h"
 #include "io/snapshot_keys.h"
-#include "game/ppu_frame.h"
+#include "game/game.h"
+#include "ppu/frame.h"
 
 static struct mysmb_game first,second,before;
 static struct mysmb_io_snapshot saved,again;
@@ -52,7 +53,7 @@ int main(void)
         mysmb_game_snapshot_capture(&first,&saved,fingerprint);
         mysmb_game_snapshot_capture(&second,&again,fingerprint);
         if(memcmp(saved.payload,again.payload,MYSMB_SNAPSHOT_CORE_BYTES))return 7;
-        mysmb_ppu_frame_build(&first,&pixels1);mysmb_ppu_frame_build(&second,&pixels2);
+        mysmb_ppu_frame_build(&first.ppu,&pixels1);mysmb_ppu_frame_build(&second.ppu,&pixels2);
         if(memcmp(pixels1.pixels,pixels2.pixels,sizeof(pixels1.pixels)))return 8;
     }
     mysmb_snapshot_keys_reset(&keys);

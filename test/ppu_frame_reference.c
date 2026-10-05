@@ -1,5 +1,6 @@
 /* Project-owned T14 compositor retained solely as a regression reference. */
-#include "game/ppu_frame.h"
+#include "game/game.h"
+#include "ppu/frame.h"
 
 #ifdef MYSMB_DOS16_TARGET
 void mysmb_ppu_frame_bind_pixels(struct mysmb_ppu_frame *frame,

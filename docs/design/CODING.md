@@ -4,7 +4,7 @@
 
 ```text
 src/game/       portable translated logic and original RAM model (T27 migration)
-src/ppu/        neutral addressed/visible state;compositor migration in active T27
+src/ppu/        neutral addressed/visible state and read-only shared pixel compositor
 src/io/         neutral controller/video/audio/text contracts and glyph IDs
 src/app/        public game-to-IO composition glue; no gameplay/device policy
 src/assets/     generated owner-local declarations; never tracked
@@ -85,5 +85,6 @@ PPU storage is one embedded ppu/state object;CPU RAM,source decisions and NMI
 startup guard remain in game until their admitted core move. The DMA primitive
 borrows the original CPU OAM span;its caller keeps commit timing and receipt
 order. app snapshot binds the same numeric fields in the same byte order.
-The game/ppu_frame compositor dependency is temporary until T27 S3;final
-component ownership and remaining moves are in the active T27 proposal.
+The independent ppu/frame target consumes only const PPU state and neutral IO
+types;composition owns its selection. Core has no compositor dependency.
+Remaining core/text/validation moves are in the active T27 proposal.

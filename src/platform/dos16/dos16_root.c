@@ -55,7 +55,7 @@ static void present_current(struct mysmb_dos16_root *root)
         if(!root->set_mode(root->hooks.context,0U))return;
         root->text_mode=0U;
     }
-    mysmb_ppu_frame_build(&root->game,&root->ppu_frame);
+    mysmb_ppu_frame_build(&root->game.ppu,&root->ppu_frame);
     mysmb_game_io_video(&root->ppu_frame,&video);
     root->hooks.present_video(root->hooks.context,&video);
 }

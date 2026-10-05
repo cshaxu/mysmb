@@ -16,42 +16,12 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 
 | Receiving S | Exact node count | Exact node set |
 | --- | ---: | --- |
-| M2 T22 S25 | 3 | `DecTimers`, `DecTimersLoop`, `SkipExpTimer` |
 | M2 T22 S5 | 8 | `FlagpoleObject`, `FlagpoleScoreMods`, `FlagpoleScoreDigits`, `FlagpoleRoutine`, `SkipScore`, `GiveFPScr`, `FPGfx`, `ExitFlagP` |
-| M2 T26 S5 | 5 | `SetupVictoryMode`, `PlayerVictoryWalk`, `PerformWalk`, `DontWalk`, `ExitVWalk` |
-| M2 T27 S1 | 1 | `InitScreen` |
-| M2 T27 S2 | 28 | `ClearBuffersDrawIcon`, `TScrClear`, `IncSubtask`, `WriteTopScore`, `IncModeTask_B`, `GameText`, `TopStatusBarLine`, `WorldLivesDisplay`, `TwoPlayerTimeUp`, `OnePlayerTimeUp`, `TwoPlayerGameOver`, `OnePlayerGameOver`, `WarpZoneWelcome`, `LuigiName`, `WarpZoneNumbers`, `GameTextOffsets`, `WriteGameText`, `Chk2Players`, `LdGameText`, `GameTextLoop`, `EndGameText`, `PutLives`, `CheckPlayerName`, `ChkLuigi`, `NameLoop`, `ExitChkName`, `PrintWarpZoneNumbers`, `WarpNumLoop` |
-| M2 T28 S1 | 2 | `MetatileGraphics_Low`, `MetatileGraphics_High` |
-| M2 T28 S2 | 3 | `ColorRotatePalette`, `BlankPalette`, `Palette3Data` |
-| M2 T28 S3 | 10 | `BlockGfxData`, `RemoveCoin_Axe`, `WriteBlankMT`, `ReplaceBlockMetatile`, `DestroyBlockMetatile`, `WriteBlockMetatile`, `UseBOffset`, `MoveVOffset`, `PutBlockMetatile`, `SaveHAdder` |
-| M2 T28 S4 | 19 | `Palette0_MTiles`, `Palette1_MTiles`, `Palette2_MTiles`, `Palette3_MTiles`, `WaterPaletteData`, `GroundPaletteData`, `UndergroundPaletteData`, `CastlePaletteData`, `DaySnowPaletteData`, `NightSnowPaletteData`, `MushroomPaletteData`, `BowserPaletteData`, `MarioThanksMessage`, `LuigiThanksMessage`, `MushroomRetainerSaved`, `PrincessSaved1`, `PrincessSaved2`, `WorldSelectMessage1`, `WorldSelectMessage2` |
-| M2 T28 S5 | 1 | `JumpEngine` |
-| M2 T28 S7 | 19 | `StatusBarData`, `StatusBarOffset`, `PrintStatusBarNumbers`, `OutputNumbers`, `SetupNums`, `DigitPLoop`, `ExitOutputN`, `DigitsMathRoutine`, `AddModLoop`, `StoreNewD`, `EraseDMods`, `EraseMLoop`, `BorrowOne`, `CarryOne`, `UpdateTopScore`, `TopScoreCheck`, `GetScoreDiff`, `CopyScore`, `NoTopSc` |
-| M2 T28 S8 | 15 | `DefaultSprOffsets`, `Sprite0Data`, `InitializeGame`, `ClrSndLoop`, `InitializeArea`, `ClrTimersLoop`, `StartPage`, `SetSecHard`, `CheckHalfway`, `DoneInitArea`, `PrimaryGameSetup`, `SecondaryGameSetup`, `ClearVRLoop`, `ShufAmtLoop`, `ISpr0Loop` |
-| M2 T29 S10 | 10 | `FindEmptyEnemySlot`, `EmptyChkLoop`, `ExitEmptyChk`, `Hole_Water`, `QuestionBlockRow_High`, `QuestionBlockRow_Low`, `Bridge_High`, `Bridge_Middle`, `Bridge_Low`, `FlagBalls_Residual` |
-| M2 T29 S2 | 5 | `MusicSelectData`, `GetAreaMusic`, `ChkAreaType`, `StoreMusic`, `ExitGetM` |
 | M2 T29 S3 | 11 | `PlayerStarting_X_Pos`, `AltYPosOffset`, `PlayerStarting_Y_Pos`, `PlayerBGPriorityData`, `GameTimerData`, `Entrance_GameTimerSetup`, `ChkStPos`, `SetStPos`, `ChkOverR`, `ChkSwimE`, `SetPESub` |
-| M2 T29 S4 | 16 | `HalfwayPageNybbles`, `PlayerLoseLife`, `StillInGame`, `GetHalfway`, `MaskHPNyb`, `SetHalfway`, `GameOverMode`, `SetupGameOver`, `RunGameOver`, `ContinueGame`, `GameIsOn`, `TransposePlayers`, `TransLoop`, `ExTrans`, `DoNothing1`, `DoNothing2` |
-| M2 T29 S5 | 13 | `AreaParserTaskHandler`, `DoAPTasks`, `SkipATRender`, `IncrementColumnPos`, `NoColWrap`, `BSceneDataOffsets`, `BackSceneryData`, `BackSceneryMetatiles`, `FSceneDataOffsets`, `ForeSceneryData`, `TerrainMetatiles`, `TerrainRenderBits`, `AreaParserCore` |
-| M2 T29 S6 | 1 | `BlockBuffLowBounds` |
-| M2 T29 S8 | 20 | `ScrollLockObject_Warp`, `WarpNum`, `ScrollLockObject`, `KillELoop`, `NoKillE`, `FrenzyIDData`, `AreaFrenzy`, `FreCompLoop`, `ExitAFrenzy`, `TreeLedge`, `MidTreeL`, `EndTreeL`, `MushroomLedge`, `EndMushL`, `AllUnder`, `NoUnder`, `PulleyRopeMetatiles`, `PulleyRopeObject`, `RenderPul`, `MushLExit` |
-| M2 T29 S9 | 5 | `CastleMetatiles`, `SidePipeShaftData`, `SidePipeTopPart`, `SidePipeBottomPart`, `VerticalPipeData` |
-| M2 T30 S1 | 3 | `EndlessRope`, `BalancePlatRope`, `DrawRope` |
-| M2 T30 S10 | 6 | `ChkLrgObjLength`, `ChkLrgObjFixedLength`, `LenSet`, `GetLrgObjAttrib`, `GetAreaObjXPosition`, `GetAreaObjYPosition` |
-| M2 T30 S13 | 3 | `SetInitNTHigh`, `BlockBufferAddr`, `GetBlockBufferAddr` |
-| M2 T30 S14 | 22 | `LoadAreaPointer`, `GetAreaType`, `FindAreaPointer`, `GetAreaDataAddrs`, `StoreFore`, `StoreStyle`, `WorldAddrOffsets`, `AreaAddrOffsets`, `World1Areas`, `World2Areas`, `World3Areas`, `World4Areas`, `World5Areas`, `World6Areas`, `World7Areas`, `World8Areas`, `EnemyAddrHOffsets`, `EnemyDataAddrLow`, `EnemyDataAddrHigh`, `AreaDataHOffsets`, `AreaDataAddrLow`, `AreaDataAddrHigh` |
 | M2 T30 S16 | 6 | `L_CastleArea1`, `L_CastleArea2`, `L_CastleArea3`, `L_CastleArea4`, `L_CastleArea5`, `L_CastleArea6` |
 | M2 T30 S17 | 22 | `L_GroundArea1`, `L_GroundArea2`, `L_GroundArea3`, `L_GroundArea4`, `L_GroundArea5`, `L_GroundArea6`, `L_GroundArea7`, `L_GroundArea8`, `L_GroundArea9`, `L_GroundArea10`, `L_GroundArea11`, `L_GroundArea12`, `L_GroundArea13`, `L_GroundArea14`, `L_GroundArea15`, `L_GroundArea16`, `L_GroundArea17`, `L_GroundArea18`, `L_GroundArea19`, `L_GroundArea20`, `L_GroundArea21`, `L_GroundArea22` |
 | M2 T30 S18 | 3 | `L_UndergroundArea1`, `L_UndergroundArea2`, `L_UndergroundArea3` |
 | M2 T30 S19 | 3 | `L_WaterArea1`, `L_WaterArea2`, `L_WaterArea3` |
-| M2 T30 S2 | 2 | `CoinMetatileData`, `RowOfCoins` |
-| M2 T30 S3 | 7 | `C_ObjectRow`, `C_ObjectMetatile`, `CastleBridgeObj`, `AxeObj`, `ChainObj`, `EmptyBlock`, `ColObj` |
-| M2 T30 S4 | 10 | `SolidBlockMetatiles`, `BrickMetatiles`, `RowOfBricks`, `DrawBricks`, `RowOfSolidBlocks`, `GetRow`, `DrawRow`, `ColumnOfBricks`, `ColumnOfSolidBlocks`, `GetRow2` |
-| M2 T30 S5 | 3 | `BulletBillCannon`, `SetupCannon`, `StrCOffset` |
-| M2 T30 S6 | 4 | `StaircaseHeightData`, `StaircaseRowData`, `StaircaseObject`, `NextStair` |
-| M2 T30 S7 | 1 | `Jumpspring` |
-| M2 T30 S8 | 8 | `Hidden1UpBlock`, `QuestionBlock`, `BrickWithCoins`, `BrickWithItem`, `BWithL`, `DrawQBlk`, `GetAreaObjectID`, `ExitDecBlock` |
-| M2 T30 S9 | 4 | `HoleMetatiles`, `Hole_Empty`, `StrWOffset`, `NoWhirlP` |
 | M2 T31 S1 | 1 | `GameCoreRoutine` |
 | M2 T31 S2 | 36 | `GameEngine`, `ProcELoop`, `NoChgMus`, `CycleTwo`, `ClrPlrPal`, `SaveAB`, `UpdScrollVar`, `RunParser`, `ExitEng`, `WarpZoneObject`, `ProcessWhirlpools`, `NextWh`, `ExitWh`, `LeftWh`, `SetPWh`, `CannonBitmasks`, `ProcessCannons`, `ThreeSChk`, `FireCannon`, `Chk_BB`, `Next3Slt`, `ExCannon`, `BulletBillXSpdData`, `BulletBillHandler`, `SetupBB`, `ChkDSte`, `BBFly`, `RunBBSubs`, `KillBB`, `DoEnemySideCheck`, `SdeCLoop`, `NextSdeC`, `ExESdeC`, `SubtEnemyYPos`, `EnemyJump`, `DoSide` |
 | M2 T31 S4 | 9 | `PlayerEntrance`, `ChkBehPipe`, `IntroEntr`, `EntrMode2`, `VineEntr`, `OffVine`, `PlayerRdy`, `ExitEntr`, `AutoControlPlayer` |
@@ -186,22 +156,12 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 | M2 T50 S1 | 21 | `Star_CloudMData`, `GroundM_P1Data`, `SilenceData`, `GroundM_P2AData`, `GroundM_P2BData`, `GroundM_P2CData`, `GroundM_P3AData`, `GroundM_P3BData`, `GroundMLdInData`, `GroundM_P4AData`, `GroundM_P4BData`, `DeathMusData`, `GroundM_P4CData`, `CastleMusData`, `GameOverMusData`, `TimeRunOutMusData`, `WinLevelMusData`, `UndergroundMusData`, `WaterMusData`, `EndOfCastleMusData`, `VictoryMusData` |
 | M2 T50 S2 | 5 | `FreqRegLookupTbl`, `MusicLengthLookupTbl`, `EndOfCastleMusicEnvData`, `AreaMusicEnvData`, `WaterEventMusEnvData` |
 | M2 T50 S3 | 2 | `BowserFlameEnvData`, `BrickShatterEnvData` |
-| M2 T51 S2 | 4 | `ScreenRoutines`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol` |
-| M2 T51 S3 | 1 | `KillEnemies` |
 | M2 T51 S4 | 34 | `E_CastleArea1`, `E_CastleArea2`, `E_CastleArea3`, `E_CastleArea4`, `E_CastleArea5`, `E_CastleArea6`, `E_GroundArea1`, `E_GroundArea2`, `E_GroundArea3`, `E_GroundArea4`, `E_GroundArea5`, `E_GroundArea6`, `E_GroundArea7`, `E_GroundArea8`, `E_GroundArea9`, `E_GroundArea10`, `E_GroundArea11`, `E_GroundArea12`, `E_GroundArea13`, `E_GroundArea14`, `E_GroundArea15`, `E_GroundArea16`, `E_GroundArea17`, `E_GroundArea18`, `E_GroundArea19`, `E_GroundArea20`, `E_GroundArea21`, `E_GroundArea22`, `E_UndergroundArea1`, `E_UndergroundArea2`, `E_UndergroundArea3`, `E_WaterArea1`, `E_WaterArea2`, `E_WaterArea3` |
 | M2 T52 S3 | 1 | `AddToScore` |
-| M2 T70 S10 | 23 | `GameMenuRoutine`, `StartGame`, `ChkSelect`, `ChkWorldSel`, `SelectBLogic`, `IncWorldSel`, `UpdateShroom`, `NullJoypad`, `ResetTitle`, `ChkContinue`, `StartWorld1`, `InitScores`, `ExitMenu`, `GoContinue`, `MushroomIconData`, `DrawMushroomIcon`, `IconDataRead`, `ExitIcon`, `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver` |
-| M2 T70 S11 | 15 | `PrintVictoryMessages`, `MRetainerMsg`, `ThankPlayer`, `SecondPartMsg`, `EvalForMusic`, `PrintMsg`, `IncMsgCounter`, `SetEndTimer`, `IncModeTask_A`, `ExitMsgs`, `PlayerEndWorld`, `EndExitOne`, `EndChkBButton`, `EndExitTwo`, `TerminateGame` |
 | M2 T70 S12 | 10 | `FloateyNumTileData`, `ScoreUpdateData`, `FloateyNumbersRoutine`, `ChkNumTimer`, `DecNumTimer`, `LoadNumTiles`, `ChkTallEnemy`, `GetAltOffset`, `FloateyPart`, `SetupNumSpr` |
-| M2 T70 S13 | 13 | `SetupIntermediate`, `AreaPalette`, `GetAreaPalette`, `SetVRAMAddr_A`, `NextSubtask`, `BGColorCtrl_Addr`, `BackgroundColors`, `PlayerColors`, `GetBackgroundColor`, `NoBGColor`, `GetAlternatePalette1`, `SetVRAMAddr_B`, `NoAltPal` |
-| M2 T70 S14 | 12 | `WriteTopStatusLine`, `WriteBottomStatusLine`, `DisplayTimeUp`, `NoTimeUp`, `DisplayIntermediate`, `PlayerInter`, `OutputInter`, `GameOverInter`, `NoInter`, `ResetSpritesAndScreenTimer`, `ResetScreenTimer`, `NoReset` |
-| M2 T70 S15 | 8 | `VBlank1`, `VBlank2`, `EndlessLoop`, `InitializeMemory`, `InitPageLoop`, `InitByteLoop`, `InitByte`, `SkipByte` |
-| M2 T70 S17 | 146 | `VictoryModeSubroutines`, `GetPlayerColors`, `ChkFiery`, `StartClrGet`, `ClrGetLoop`, `SetBGColor`, `SetVRAMOffset`, `DrawTitleScreen`, `OutputTScr`, `ChkHiByte`, `RenderAreaGraphics`, `DrawMTLoop`, `RightCheck`, `LLeft`, `NextMTRow`, `SetAttrib`, `ExitDrawM`, `RenderAttributeTables`, `SetATHigh`, `AttribLoop`, `SetVRAMCtrl`, `ColorRotation`, `GetBlankPal`, `GetAreaPal`, `ExitColorRot`, `RemBridge`, `AreaParserTasks`, `RenderSceneryTerrain`, `ClrMTBuf`, `ThirdP`, `RendBack`, `SceLoop1`, `RendFore`, `SceLoop2`, `NoFore`, `RendTerr`, `TerMTile`, `StoreMT`, `TerrLoop`, `NoCloud2`, `TerrBChk`, `NextTBit`, `EndUChk`, `RendBBuf`, `ChkMTLow`, `StrBlock`, `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj`, `AlterAreaAttributes`, `Alter2`, `SetFore`, `AreaStyleObject`, `CastleObject`, `CRendLoop`, `ChkCFloor`, `NotTall`, `PlayerStop`, `ExitCastle`, `WaterPipe`, `IntroPipe`, `VPipeSectLoop`, `NoBlankP`, `ExitPipe`, `RenderSidewaysPipe`, `DrawSidePart`, `VerticalPipe`, `WarpPipe`, `DrawPipe`, `GetPipeHeight`, `RenderUnderPart`, `DrawThisRow`, `WaitOneRow`, `ExitUPartR`, `GameMode`, `GameRoutines`, `PlayerHole`, `HoleBottom`, `MoveSubs`, `FireballXSpdData`, `FireballObjCore`, `WhLoop`, `WhirlpoolActivate`, `WhPull`, `InitVStf`, `DuplicateEnemyObj`, `FSLoop`, `FlmEx`, `InitBalPlatform`, `AlignP`, `SetBPA`, `InitDropPlatform`, `InitHoriPlatform`, `InitVertPlatform`, `SetYO`, `CommonPlatCode`, `SPBBox`, `CasPBB`, `LargeLiftUp`, `LargeLiftDown`, `LargeLiftBBox`, `PlatLiftUp`, `PlatLiftDown`, `CommonSmallLift`, `PosPlatform`, `FlameTimerData`, `SetFlameTimer`, `ExFl`, `LargePlatformBoundBox`, `DrawLargePlatform`, `ShrinkPlatform`, `SetLast2Platform`, `SetPlatformTilenum`, `SChk2`, `SChk3`, `SChk4`, `SChk5`, `SChk6`, `SLChk`, `ExDLPl` |
-| M2 T70 S4 | 2 | `VRAM_AddrTable_Low`, `VRAM_AddrTable_High` |
-| M2 T70 S6 | 4 | `RotPRandomBit`, `MoveAllSpritesOffscreen`, `MoveSpritesOffscreen`, `SprInitLoop` |
-| M2 T70 S7 | 6 | `SpriteShuffler`, `ShuffleLoop`, `StrSprOffset`, `NextSprOffset`, `SetAmtOffset`, `SetMiscOffset` |
-| M2 T70 S9 | 10 | `PauseRoutine`, `ChkPauseTimer`, `ChkStart`, `ClrPauseTimer`, `SetPause`, `ExitPause`, `ReadJoypads`, `ReadPortBits`, `PortLoop`, `Save8Bits` |
-| M3 T27 S2 | 42 | `Start`, `WBootCheck`, `ColdBoot`, `VRAM_Buffer_Offset`, `NonMaskableInterrupt`, `ScreenOff`, `InitBuffer`, `NoDecTimers`, `PauseSkip`, `Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipSprite0`, `SkipMainOper`, `OperModeExecutionTree`, `TitleScreenMode`, `WSelectBufferTemplate`, `RunDemo`, `VictoryMode`, `AutoPlayer`, `InitializeNameTables`, `WriteNTAddr`, `InitNTLoop`, `InitATLoop`, `WriteBufferToScreen`, `SetupWrites`, `GetLength`, `OutputToVRAM`, `RepeatByte`, `UpdateScreen`, `InitScroll`, `WritePPUReg1`, `ScrollHandler`, `ChkNearMid`, `ScrollScreen`, `InitScrlAmt`, `ChkPOffscr`, `KeepOnscr`, `InitPlatScrl`, `X_SubtracterData`, `OffscrJoypadBitsData`, `GetScreenPosition` |
+| M2 T70 S17 | 46 | `GameMode`, `GameRoutines`, `PlayerHole`, `HoleBottom`, `MoveSubs`, `FireballXSpdData`, `FireballObjCore`, `WhLoop`, `WhirlpoolActivate`, `WhPull`, `InitVStf`, `DuplicateEnemyObj`, `FSLoop`, `FlmEx`, `InitBalPlatform`, `AlignP`, `SetBPA`, `InitDropPlatform`, `InitHoriPlatform`, `InitVertPlatform`, `SetYO`, `CommonPlatCode`, `SPBBox`, `CasPBB`, `LargeLiftUp`, `LargeLiftDown`, `LargeLiftBBox`, `PlatLiftUp`, `PlatLiftDown`, `CommonSmallLift`, `PosPlatform`, `FlameTimerData`, `SetFlameTimer`, `ExFl`, `LargePlatformBoundBox`, `DrawLargePlatform`, `ShrinkPlatform`, `SetLast2Platform`, `SetPlatformTilenum`, `SChk2`, `SChk3`, `SChk4`, `SChk5`, `SChk6`, `SLChk`, `ExDLPl` |
+| M3 T27 S2 | 14 | `SkipMainOper`, `WSelectBufferTemplate`, `RunDemo`, `VictoryMode`, `ScrollHandler`, `ChkNearMid`, `ScrollScreen`, `InitScrlAmt`, `ChkPOffscr`, `KeepOnscr`, `InitPlatScrl`, `X_SubtracterData`, `OffscrJoypadBitsData`, `GetScreenPosition` |
+| M3 T27 S4 | 475 | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`, `NonMaskableInterrupt`, `ScreenOff`, `InitBuffer`, `DecTimers`, `DecTimersLoop`, `SkipExpTimer`, `NoDecTimers`, `PauseSkip`, `RotPRandomBit`, `Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipSprite0`, `PauseRoutine`, `ChkPauseTimer`, `ChkStart`, `ClrPauseTimer`, `SetPause`, `ExitPause`, `SpriteShuffler`, `ShuffleLoop`, `StrSprOffset`, `NextSprOffset`, `SetAmtOffset`, `SetMiscOffset`, `OperModeExecutionTree`, `MoveAllSpritesOffscreen`, `MoveSpritesOffscreen`, `SprInitLoop`, `TitleScreenMode`, `GameMenuRoutine`, `StartGame`, `ChkSelect`, `ChkWorldSel`, `SelectBLogic`, `IncWorldSel`, `UpdateShroom`, `NullJoypad`, `ResetTitle`, `ChkContinue`, `StartWorld1`, `InitScores`, `ExitMenu`, `GoContinue`, `MushroomIconData`, `DrawMushroomIcon`, `IconDataRead`, `ExitIcon`, `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver`, `AutoPlayer`, `VictoryModeSubroutines`, `SetupVictoryMode`, `PlayerVictoryWalk`, `PerformWalk`, `DontWalk`, `ExitVWalk`, `PrintVictoryMessages`, `MRetainerMsg`, `ThankPlayer`, `SecondPartMsg`, `EvalForMusic`, `PrintMsg`, `IncMsgCounter`, `SetEndTimer`, `IncModeTask_A`, `ExitMsgs`, `PlayerEndWorld`, `EndExitOne`, `EndChkBButton`, `EndExitTwo`, `ScreenRoutines`, `InitScreen`, `SetupIntermediate`, `AreaPalette`, `GetAreaPalette`, `SetVRAMAddr_A`, `NextSubtask`, `BGColorCtrl_Addr`, `BackgroundColors`, `PlayerColors`, `GetBackgroundColor`, `NoBGColor`, `GetPlayerColors`, `ChkFiery`, `StartClrGet`, `ClrGetLoop`, `SetBGColor`, `SetVRAMOffset`, `GetAlternatePalette1`, `SetVRAMAddr_B`, `NoAltPal`, `WriteTopStatusLine`, `WriteBottomStatusLine`, `DisplayTimeUp`, `NoTimeUp`, `DisplayIntermediate`, `PlayerInter`, `OutputInter`, `GameOverInter`, `NoInter`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol`, `DrawTitleScreen`, `OutputTScr`, `ChkHiByte`, `ClearBuffersDrawIcon`, `TScrClear`, `IncSubtask`, `WriteTopScore`, `IncModeTask_B`, `GameText`, `TopStatusBarLine`, `WorldLivesDisplay`, `TwoPlayerTimeUp`, `OnePlayerTimeUp`, `TwoPlayerGameOver`, `OnePlayerGameOver`, `WarpZoneWelcome`, `LuigiName`, `WarpZoneNumbers`, `GameTextOffsets`, `WriteGameText`, `Chk2Players`, `LdGameText`, `GameTextLoop`, `EndGameText`, `PutLives`, `CheckPlayerName`, `ChkLuigi`, `NameLoop`, `ExitChkName`, `PrintWarpZoneNumbers`, `WarpNumLoop`, `ResetSpritesAndScreenTimer`, `ResetScreenTimer`, `NoReset`, `RenderAreaGraphics`, `DrawMTLoop`, `RightCheck`, `LLeft`, `NextMTRow`, `SetAttrib`, `ExitDrawM`, `RenderAttributeTables`, `SetATHigh`, `AttribLoop`, `SetVRAMCtrl`, `ColorRotatePalette`, `BlankPalette`, `Palette3Data`, `ColorRotation`, `GetBlankPal`, `GetAreaPal`, `ExitColorRot`, `BlockGfxData`, `RemoveCoin_Axe`, `WriteBlankMT`, `ReplaceBlockMetatile`, `DestroyBlockMetatile`, `WriteBlockMetatile`, `UseBOffset`, `MoveVOffset`, `PutBlockMetatile`, `SaveHAdder`, `RemBridge`, `MetatileGraphics_Low`, `MetatileGraphics_High`, `Palette0_MTiles`, `Palette1_MTiles`, `Palette2_MTiles`, `Palette3_MTiles`, `WaterPaletteData`, `GroundPaletteData`, `UndergroundPaletteData`, `CastlePaletteData`, `DaySnowPaletteData`, `NightSnowPaletteData`, `MushroomPaletteData`, `BowserPaletteData`, `MarioThanksMessage`, `LuigiThanksMessage`, `MushroomRetainerSaved`, `PrincessSaved1`, `PrincessSaved2`, `WorldSelectMessage1`, `WorldSelectMessage2`, `JumpEngine`, `InitializeNameTables`, `WriteNTAddr`, `InitNTLoop`, `InitATLoop`, `ReadJoypads`, `ReadPortBits`, `PortLoop`, `Save8Bits`, `WriteBufferToScreen`, `SetupWrites`, `GetLength`, `OutputToVRAM`, `RepeatByte`, `UpdateScreen`, `InitScroll`, `WritePPUReg1`, `StatusBarData`, `StatusBarOffset`, `PrintStatusBarNumbers`, `OutputNumbers`, `SetupNums`, `DigitPLoop`, `ExitOutputN`, `DigitsMathRoutine`, `AddModLoop`, `StoreNewD`, `EraseDMods`, `EraseMLoop`, `BorrowOne`, `CarryOne`, `UpdateTopScore`, `TopScoreCheck`, `GetScoreDiff`, `CopyScore`, `NoTopSc`, `DefaultSprOffsets`, `Sprite0Data`, `InitializeGame`, `ClrSndLoop`, `InitializeArea`, `ClrTimersLoop`, `StartPage`, `SetInitNTHigh`, `SetSecHard`, `CheckHalfway`, `DoneInitArea`, `PrimaryGameSetup`, `SecondaryGameSetup`, `ClearVRLoop`, `ShufAmtLoop`, `ISpr0Loop`, `InitializeMemory`, `InitPageLoop`, `InitByteLoop`, `InitByte`, `SkipByte`, `MusicSelectData`, `GetAreaMusic`, `ChkAreaType`, `StoreMusic`, `ExitGetM`, `HalfwayPageNybbles`, `PlayerLoseLife`, `StillInGame`, `GetHalfway`, `MaskHPNyb`, `SetHalfway`, `GameOverMode`, `SetupGameOver`, `RunGameOver`, `TerminateGame`, `ContinueGame`, `GameIsOn`, `TransposePlayers`, `TransLoop`, `ExTrans`, `DoNothing1`, `DoNothing2`, `AreaParserTaskHandler`, `DoAPTasks`, `SkipATRender`, `AreaParserTasks`, `IncrementColumnPos`, `NoColWrap`, `BSceneDataOffsets`, `BackSceneryData`, `BackSceneryMetatiles`, `FSceneDataOffsets`, `ForeSceneryData`, `TerrainMetatiles`, `TerrainRenderBits`, `AreaParserCore`, `RenderSceneryTerrain`, `ClrMTBuf`, `ThirdP`, `RendBack`, `SceLoop1`, `RendFore`, `SceLoop2`, `NoFore`, `RendTerr`, `TerMTile`, `StoreMT`, `TerrLoop`, `NoCloud2`, `TerrBChk`, `NextTBit`, `EndUChk`, `RendBBuf`, `ChkMTLow`, `StrBlock`, `BlockBuffLowBounds`, `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj`, `AlterAreaAttributes`, `Alter2`, `SetFore`, `ScrollLockObject_Warp`, `WarpNum`, `ScrollLockObject`, `KillEnemies`, `KillELoop`, `NoKillE`, `FrenzyIDData`, `AreaFrenzy`, `FreCompLoop`, `ExitAFrenzy`, `AreaStyleObject`, `TreeLedge`, `MidTreeL`, `EndTreeL`, `MushroomLedge`, `EndMushL`, `AllUnder`, `NoUnder`, `PulleyRopeMetatiles`, `PulleyRopeObject`, `RenderPul`, `MushLExit`, `CastleMetatiles`, `CastleObject`, `CRendLoop`, `ChkCFloor`, `NotTall`, `PlayerStop`, `ExitCastle`, `WaterPipe`, `IntroPipe`, `VPipeSectLoop`, `NoBlankP`, `SidePipeShaftData`, `SidePipeTopPart`, `SidePipeBottomPart`, `ExitPipe`, `RenderSidewaysPipe`, `DrawSidePart`, `VerticalPipeData`, `VerticalPipe`, `WarpPipe`, `DrawPipe`, `GetPipeHeight`, `FindEmptyEnemySlot`, `EmptyChkLoop`, `ExitEmptyChk`, `Hole_Water`, `QuestionBlockRow_High`, `QuestionBlockRow_Low`, `Bridge_High`, `Bridge_Middle`, `Bridge_Low`, `FlagBalls_Residual`, `EndlessRope`, `BalancePlatRope`, `DrawRope`, `CoinMetatileData`, `RowOfCoins`, `C_ObjectRow`, `C_ObjectMetatile`, `CastleBridgeObj`, `AxeObj`, `ChainObj`, `EmptyBlock`, `ColObj`, `SolidBlockMetatiles`, `BrickMetatiles`, `RowOfBricks`, `DrawBricks`, `RowOfSolidBlocks`, `GetRow`, `DrawRow`, `ColumnOfBricks`, `ColumnOfSolidBlocks`, `GetRow2`, `BulletBillCannon`, `SetupCannon`, `StrCOffset`, `StaircaseHeightData`, `StaircaseRowData`, `StaircaseObject`, `NextStair`, `Jumpspring`, `Hidden1UpBlock`, `QuestionBlock`, `BrickWithCoins`, `BrickWithItem`, `BWithL`, `DrawQBlk`, `GetAreaObjectID`, `ExitDecBlock`, `HoleMetatiles`, `Hole_Empty`, `StrWOffset`, `NoWhirlP`, `RenderUnderPart`, `DrawThisRow`, `WaitOneRow`, `ExitUPartR`, `ChkLrgObjLength`, `ChkLrgObjFixedLength`, `LenSet`, `GetLrgObjAttrib`, `GetAreaObjXPosition`, `GetAreaObjYPosition`, `BlockBufferAddr`, `GetBlockBufferAddr`, `LoadAreaPointer`, `GetAreaType`, `FindAreaPointer`, `GetAreaDataAddrs`, `StoreFore`, `StoreStyle`, `WorldAddrOffsets`, `AreaAddrOffsets`, `World1Areas`, `World2Areas`, `World3Areas`, `World4Areas`, `World5Areas`, `World6Areas`, `World7Areas`, `World8Areas`, `EnemyAddrHOffsets`, `EnemyDataAddrLow`, `EnemyDataAddrHigh`, `AreaDataHOffsets`, `AreaDataAddrLow`, `AreaDataAddrHigh` |
 
 ## Future admission packages and queued plans
 
@@ -223,93 +183,93 @@ transfer existing ownership or allocate a numeric T.
 
 | ROM line | Node | Current receiving S | Future package / basis | Historical T/S records |
 | ---: | --- | --- | --- | --- |
-| 699 | `Start` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T11 / S not recorded; M2 T14 / S not recorded; M2 T15 / S not recorded; M2 T15 S4; M2 T17 S6; M2 T19 S5; M2 T2 / S not recorded; M2 T21 S1; M2 T21 S2; M2 T24 S1; M2 T3 / S not recorded; M2 T8 / S not recorded |
-| 706 | `VBlank1` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
-| 708 | `VBlank2` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
-| 712 | `WBootCheck` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
-| 721 | `ColdBoot` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
-| 737 | `EndlessLoop` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
-| 743 | `VRAM_AddrTable_Low` | M2 T70 S4 | existing closure backlog; Accepted bounded NMI pointer/display transaction maintenance;prior proof retained. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S15; M2 T24 S1 |
-| 752 | `VRAM_AddrTable_High` | M2 T70 S4 | existing closure backlog; Accepted bounded NMI pointer/display transaction maintenance;prior proof retained. | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S15; M2 T24 S1 |
-| 761 | `VRAM_Buffer_Offset` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S15; M2 T24 S1 |
-| 764 | `NonMaskableInterrupt` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S22; M2 T24 S1 |
-| 776 | `ScreenOff` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
-| 796 | `InitBuffer` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T14 / S not recorded; M2 T22 S16; M2 T22 S23; M2 T24 S1 |
-| 814 | `DecTimers` | M2 T22 S25 | existing closure backlog; T22/S18 completed the timer/LFSR source contract and source-order repair; T22/S25 independently reviews ROM equivalence. | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
-| 820 | `DecTimersLoop` | M2 T22 S25 | existing closure backlog; T22/S18 completed the timer/LFSR source contract and source-order repair; T22/S25 independently reviews ROM equivalence. | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
-| 823 | `SkipExpTimer` | M2 T22 S25 | existing closure backlog; T22/S18 completed the timer/LFSR source contract and source-order repair; T22/S25 independently reviews ROM equivalence. | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
-| 825 | `NoDecTimers` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
-| 826 | `PauseSkip` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
-| 837 | `RotPRandomBit` | M2 T70 S6 | existing closure backlog; Accepted sprite-zero conditional visible-phase maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
-| 843 | `Sprite0Clr` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
-| 851 | `Sprite0Hit` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
-| 855 | `HBlankDelay` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
-| 857 | `SkipSprite0` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
+| 699 | `Start` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T11 / S not recorded; M2 T14 / S not recorded; M2 T15 / S not recorded; M2 T15 S4; M2 T17 S6; M2 T19 S5; M2 T2 / S not recorded; M2 T21 S1; M2 T21 S2; M2 T24 S1; M2 T3 / S not recorded; M2 T8 / S not recorded |
+| 706 | `VBlank1` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
+| 708 | `VBlank2` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
+| 712 | `WBootCheck` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
+| 721 | `ColdBoot` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
+| 737 | `EndlessLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
+| 743 | `VRAM_AddrTable_Low` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S15; M2 T24 S1 |
+| 752 | `VRAM_AddrTable_High` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S15; M2 T24 S1 |
+| 761 | `VRAM_Buffer_Offset` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S15; M2 T24 S1 |
+| 764 | `NonMaskableInterrupt` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T21 S1; M2 T22 S22; M2 T24 S1 |
+| 776 | `ScreenOff` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T21 S1; M2 T24 S1 |
+| 796 | `InitBuffer` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S16; M2 T22 S23; M2 T24 S1 |
+| 814 | `DecTimers` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
+| 820 | `DecTimersLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
+| 823 | `SkipExpTimer` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
+| 825 | `NoDecTimers` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
+| 826 | `PauseSkip` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
+| 837 | `RotPRandomBit` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S18; M2 T22 S25; M2 T24 S1 |
+| 843 | `Sprite0Clr` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
+| 851 | `Sprite0Hit` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
+| 855 | `HBlankDelay` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
+| 857 | `SkipSprite0` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
 | 868 | `SkipMainOper` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
-| 876 | `PauseRoutine` | M2 T70 S9 | existing closure backlog; Accepted input-to-pause material maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S17; M2 T22 S24; M2 T24 S1 |
-| 885 | `ChkPauseTimer` | M2 T70 S9 | existing closure backlog; Accepted input-to-pause material maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S17; M2 T22 S24; M2 T24 S1 |
-| 889 | `ChkStart` | M2 T70 S9 | existing closure backlog; Accepted input-to-pause material maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S17; M2 T22 S24; M2 T24 S1 |
-| 904 | `ClrPauseTimer` | M2 T70 S9 | existing closure backlog; Accepted input-to-pause material maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S17; M2 T22 S24; M2 T24 S1 |
-| 906 | `SetPause` | M2 T70 S9 | existing closure backlog; Accepted input-to-pause material maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S17; M2 T22 S24; M2 T24 S1 |
-| 907 | `ExitPause` | M2 T70 S9 | existing closure backlog; Accepted input-to-pause material maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S17; M2 T22 S24; M2 T24 S1 |
-| 912 | `SpriteShuffler` | M2 T70 S7 | existing closure backlog; Accepted shared sprite-shuffle preset/index/material maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1; M2 T9 / S not recorded |
-| 917 | `ShuffleLoop` | M2 T70 S7 | existing closure backlog; Accepted shared sprite-shuffle preset/index/material maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1 |
-| 926 | `StrSprOffset` | M2 T70 S7 | existing closure backlog; Accepted shared sprite-shuffle preset/index/material maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1 |
-| 927 | `NextSprOffset` | M2 T70 S7 | existing closure backlog; Accepted shared sprite-shuffle preset/index/material maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1 |
-| 934 | `SetAmtOffset` | M2 T70 S7 | existing closure backlog; Accepted shared sprite-shuffle preset/index/material maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1 |
-| 937 | `SetMiscOffset` | M2 T70 S7 | existing closure backlog; Accepted shared sprite-shuffle preset/index/material maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1 |
-| 954 | `OperModeExecutionTree` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T14 / S not recorded; M2 T22 S21; M2 T22 S28; M2 T24 S1 |
-| 965 | `MoveAllSpritesOffscreen` | M2 T70 S6 | existing closure backlog; Accepted common sprite-clear entry/loop maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
-| 969 | `MoveSpritesOffscreen` | M2 T70 S6 | existing closure backlog; Accepted common sprite-clear entry/loop maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
-| 972 | `SprInitLoop` | M2 T70 S6 | existing closure backlog; Accepted common sprite-clear entry/loop maintenance;prior evidence retained. | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
-| 982 | `TitleScreenMode` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 876 | `PauseRoutine` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S17; M2 T22 S24; M2 T24 S1 |
+| 885 | `ChkPauseTimer` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S17; M2 T22 S24; M2 T24 S1 |
+| 889 | `ChkStart` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S17; M2 T22 S24; M2 T24 S1 |
+| 904 | `ClrPauseTimer` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S17; M2 T22 S24; M2 T24 S1 |
+| 906 | `SetPause` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S17; M2 T22 S24; M2 T24 S1 |
+| 907 | `ExitPause` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S17; M2 T22 S24; M2 T24 S1 |
+| 912 | `SpriteShuffler` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1; M2 T9 / S not recorded |
+| 917 | `ShuffleLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1 |
+| 926 | `StrSprOffset` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1 |
+| 927 | `NextSprOffset` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1 |
+| 934 | `SetAmtOffset` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1 |
+| 937 | `SetMiscOffset` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S20; M2 T22 S27; M2 T24 S1 |
+| 954 | `OperModeExecutionTree` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S21; M2 T22 S28; M2 T24 S1 |
+| 965 | `MoveAllSpritesOffscreen` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
+| 969 | `MoveSpritesOffscreen` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
+| 972 | `SprInitLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T22 S19; M2 T22 S26; M2 T24 S1 |
+| 982 | `TitleScreenMode` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
 | 993 | `WSelectBufferTemplate` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 996 | `GameMenuRoutine` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1004 | `StartGame` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4; M2 T25 S9 |
-| 1005 | `ChkSelect` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S10; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1013 | `ChkWorldSel` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1018 | `SelectBLogic` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1033 | `IncWorldSel` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1039 | `UpdateShroom` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1047 | `NullJoypad` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 996 | `GameMenuRoutine` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1004 | `StartGame` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4; M2 T25 S9 |
+| 1005 | `ChkSelect` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S10; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1013 | `ChkWorldSel` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1018 | `SelectBLogic` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1033 | `IncWorldSel` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1039 | `UpdateShroom` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1047 | `NullJoypad` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
 | 1049 | `RunDemo` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1053 | `ResetTitle` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1059 | `ChkContinue` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1065 | `StartWorld1` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1077 | `InitScores` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1080 | `ExitMenu` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1081 | `GoContinue` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T2 / S not recorded; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1090 | `MushroomIconData` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1093 | `DrawMushroomIcon` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1095 | `IconDataRead` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1105 | `ExitIcon` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1109 | `DemoActionData` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1114 | `DemoTimingData` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1119 | `DemoEngine` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T15 S4; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1129 | `DoAction` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
-| 1133 | `DemoOver` | M2 T70 S10 | existing closure backlog; Accepted source-confirmed InitScores and complete title/menu material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1053 | `ResetTitle` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1059 | `ChkContinue` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 / S not recorded; M2 T15 S1; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1065 | `StartWorld1` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 / S not recorded; M2 T15 S1; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1077 | `InitScores` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1080 | `ExitMenu` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1081 | `GoContinue` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 / S not recorded; M2 T15 S1; M2 T2 / S not recorded; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1090 | `MushroomIconData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1093 | `DrawMushroomIcon` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 S2; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1095 | `IconDataRead` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1105 | `ExitIcon` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1109 | `DemoActionData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1114 | `DemoTimingData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1119 | `DemoEngine` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S2; M2 T15 S4; M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1129 | `DoAction` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
+| 1133 | `DemoOver` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T25 S1; M2 T25 S2; M2 T25 S3; M2 T25 S4 |
 | 1137 | `VictoryMode` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S3; M2 T21 S1; M2 T24 S1; M2 T26 S5; M2 T26 S6; M2 T26 S7; M2 T6 / S not recorded |
-| 1144 | `AutoPlayer` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T26 S5; M2 T26 S6; M2 T26 S7 |
-| 1147 | `VictoryModeSubroutines` | M2 T70 S17 | existing closure backlog; P15 same-class omitted JumpEngine scratch call correction. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S3; M2 T21 S1; M2 T24 S1; M2 T26 S5; M2 T6 / S not recorded |
-| 1159 | `SetupVictoryMode` | M2 T26 S5 | existing closure backlog; accepted S4 route-equivalence closure; S5 performs per-label completion accounting | M2 T15 / S not recorded; M2 T15 S1; M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1169 | `PlayerVictoryWalk` | M2 T26 S5 | existing closure backlog; accepted S4 route-equivalence closure; S5 performs per-label completion accounting | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S3; M2 T15 S4; M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1178 | `PerformWalk` | M2 T26 S5 | existing closure backlog; accepted S4 route-equivalence closure; S5 performs per-label completion accounting | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1180 | `DontWalk` | M2 T26 S5 | existing closure backlog; accepted S4 route-equivalence closure; S5 performs per-label completion accounting | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1195 | `ExitVWalk` | M2 T26 S5 | existing closure backlog; accepted S4 route-equivalence closure; S5 performs per-label completion accounting | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1201 | `PrintVictoryMessages` | M2 T70 S11 | existing closure backlog; Accepted victory-message/final shared termination material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S3; M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1215 | `MRetainerMsg` | M2 T70 S11 | existing closure backlog; Accepted victory-message/final shared termination material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1217 | `ThankPlayer` | M2 T70 S11 | existing closure backlog; Accepted victory-message/final shared termination material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1223 | `SecondPartMsg` | M2 T70 S11 | existing closure backlog; Accepted victory-message/final shared termination material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1232 | `EvalForMusic` | M2 T70 S11 | existing closure backlog; Accepted victory-message/final shared termination material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1236 | `PrintMsg` | M2 T70 S11 | existing closure backlog; Accepted victory-message/final shared termination material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1240 | `IncMsgCounter` | M2 T70 S11 | existing closure backlog; Accepted victory-message/final shared termination material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1248 | `SetEndTimer` | M2 T70 S11 | existing closure backlog; Accepted victory-message/final shared termination material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1251 | `IncModeTask_A` | M2 T70 S11 | existing closure backlog; Accepted victory-message/final shared termination material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1252 | `ExitMsgs` | M2 T70 S11 | existing closure backlog; Accepted victory-message/final shared termination material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1256 | `PlayerEndWorld` | M2 T70 S11 | existing closure backlog; Accepted victory-message/final shared termination material maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S3; M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1271 | `EndExitOne` | M2 T70 S11 | existing closure backlog; Accepted victory-message/final shared termination material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1272 | `EndChkBButton` | M2 T70 S11 | existing closure backlog; Accepted victory-message/final shared termination material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1281 | `EndExitTwo` | M2 T70 S11 | existing closure backlog; Accepted victory-message/final shared termination material maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1144 | `AutoPlayer` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T26 S5; M2 T26 S6; M2 T26 S7 |
+| 1147 | `VictoryModeSubroutines` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S3; M2 T21 S1; M2 T24 S1; M2 T26 S5; M2 T6 / S not recorded |
+| 1159 | `SetupVictoryMode` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 / S not recorded; M2 T15 S1; M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1169 | `PlayerVictoryWalk` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S3; M2 T15 S4; M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1178 | `PerformWalk` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1180 | `DontWalk` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1195 | `ExitVWalk` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1201 | `PrintVictoryMessages` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S3; M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1215 | `MRetainerMsg` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1217 | `ThankPlayer` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1223 | `SecondPartMsg` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1232 | `EvalForMusic` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1236 | `PrintMsg` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1240 | `IncMsgCounter` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1248 | `SetEndTimer` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1251 | `IncModeTask_A` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1252 | `ExitMsgs` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1256 | `PlayerEndWorld` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S3; M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1271 | `EndExitOne` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1272 | `EndChkBButton` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1281 | `EndExitTwo` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
 | 1287 | `FloateyNumTileData` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
 | 1303 | `ScoreUpdateData` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
 | 1308 | `FloateyNumbersRoutine` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S3; M2 T21 S1; M2 T24 S1; M2 T26 S5 |
@@ -320,185 +280,185 @@ transfer existing ownership or allocate a numeric T.
 | 1355 | `GetAltOffset` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
 | 1358 | `FloateyPart` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
 | 1363 | `SetupNumSpr` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1386 | `ScreenRoutines` | M2 T51 S2 | existing closure backlog; Accepted T51 S2 source-contiguous screen/parser output transfer. | M2 T15 S2; M2 T15 S3; M2 T24 S1 |
-| 1408 | `InitScreen` | M2 T27 S1 | existing closure backlog; M2 T27 S1 contiguous screen-task root chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1418 | `SetupIntermediate` | M2 T70 S13 | existing closure backlog; Accepted source-order screen palette maintenance;prior evidence retained. | M2 T24 S1 |
-| 1436 | `AreaPalette` | M2 T70 S13 | existing closure backlog; Accepted source-order screen palette maintenance;prior evidence retained. | M2 T24 S1 |
-| 1439 | `GetAreaPalette` | M2 T70 S13 | existing closure backlog; Accepted source-order screen palette maintenance;prior evidence retained. | M2 T24 S1 |
-| 1442 | `SetVRAMAddr_A` | M2 T70 S13 | existing closure backlog; Accepted source-order screen palette maintenance;prior evidence retained. | M2 T24 S1 |
-| 1443 | `NextSubtask` | M2 T70 S13 | existing closure backlog; Accepted source-order screen palette maintenance;prior evidence retained. | M2 T24 S1 |
-| 1448 | `BGColorCtrl_Addr` | M2 T70 S13 | existing closure backlog; Accepted source-order screen palette maintenance;prior evidence retained. | M2 T24 S1 |
-| 1451 | `BackgroundColors` | M2 T70 S13 | existing closure backlog; Accepted source-order screen palette maintenance;prior evidence retained. | M2 T24 S1 |
-| 1455 | `PlayerColors` | M2 T70 S13 | existing closure backlog; Accepted source-order screen palette maintenance;prior evidence retained. | M2 T24 S1 |
-| 1460 | `GetBackgroundColor` | M2 T70 S13 | existing closure backlog; Accepted source-order screen palette maintenance;prior evidence retained. | M2 T24 S1 |
-| 1465 | `NoBGColor` | M2 T70 S13 | existing closure backlog; Accepted source-order screen palette maintenance;prior evidence retained. | M2 T24 S1 |
-| 1467 | `GetPlayerColors` | M2 T70 S17 | existing closure backlog; Accepted existing Firebar injury palette raw-index corrective chain;prior S13 evidence retained. | M2 T18 S3; M2 T24 S1 |
-| 1473 | `ChkFiery` | M2 T70 S17 | existing closure backlog; Accepted existing Firebar injury palette raw-index corrective chain;prior S13 evidence retained. | M2 T24 S1 |
-| 1477 | `StartClrGet` | M2 T70 S17 | existing closure backlog; Accepted existing Firebar injury palette raw-index corrective chain;prior S13 evidence retained. | M2 T24 S1 |
-| 1479 | `ClrGetLoop` | M2 T70 S17 | existing closure backlog; Accepted existing Firebar injury palette raw-index corrective chain;prior S13 evidence retained. | M2 T24 S1 |
-| 1489 | `SetBGColor` | M2 T70 S17 | existing closure backlog; Accepted existing Firebar injury palette raw-index corrective chain;prior S13 evidence retained. | M2 T24 S1 |
-| 1502 | `SetVRAMOffset` | M2 T70 S17 | existing closure backlog; Accepted existing Firebar injury palette raw-index corrective chain;prior S13 evidence retained. | M2 T24 S1 |
-| 1507 | `GetAlternatePalette1` | M2 T70 S13 | existing closure backlog; Accepted source-order screen palette maintenance;prior evidence retained. | M2 T24 S1 |
-| 1512 | `SetVRAMAddr_B` | M2 T70 S13 | existing closure backlog; Accepted source-order screen palette maintenance;prior evidence retained. | M2 T24 S1 |
-| 1513 | `NoAltPal` | M2 T70 S13 | existing closure backlog; Accepted source-order screen palette maintenance;prior evidence retained. | M2 T24 S1 |
-| 1517 | `WriteTopStatusLine` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
-| 1524 | `WriteBottomStatusLine` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T19 S5; M2 T24 S1 |
-| 1553 | `DisplayTimeUp` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
-| 1560 | `NoTimeUp` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
-| 1565 | `DisplayIntermediate` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T15 S3; M2 T24 S1 |
-| 1577 | `PlayerInter` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
-| 1579 | `OutputInter` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
-| 1584 | `GameOverInter` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
-| 1589 | `NoInter` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
-| 1595 | `AreaParserTaskControl` | M2 T51 S2 | existing closure backlog; Accepted T51 S2 source-contiguous screen/parser output transfer. | M2 T24 S1 |
-| 1597 | `TaskLoop` | M2 T51 S2 | existing closure backlog; Accepted T51 S2 source-contiguous screen/parser output transfer. | M2 T24 S1 |
-| 1603 | `OutputCol` | M2 T51 S2 | existing closure backlog; Accepted T51 S2 source-contiguous screen/parser output transfer. | M2 T24 S1 |
-| 1612 | `DrawTitleScreen` | M2 T70 S17 | existing closure backlog; S17 P3 bounded title pointer-output correction, accepted same-S custody. | M2 T24 S1 |
-| 1624 | `OutputTScr` | M2 T70 S17 | existing closure backlog; S17 P3 bounded title pointer-output correction, accepted same-S custody. | M2 T24 S1 |
-| 1629 | `ChkHiByte` | M2 T70 S17 | existing closure backlog; S17 P3 bounded title pointer-output correction, accepted same-S custody. | M2 T24 S1 |
-| 1639 | `ClearBuffersDrawIcon` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1643 | `TScrClear` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1648 | `IncSubtask` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1653 | `WriteTopScore` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1656 | `IncModeTask_B` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1661 | `GameText` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1662 | `TopStatusBarLine` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1671 | `WorldLivesDisplay` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1680 | `TwoPlayerTimeUp` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1682 | `OnePlayerTimeUp` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1686 | `TwoPlayerGameOver` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1688 | `OnePlayerGameOver` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1693 | `WarpZoneWelcome` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1704 | `LuigiName` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1707 | `WarpZoneNumbers` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1712 | `GameTextOffsets` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1719 | `WriteGameText` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T15 S3; M2 T24 S1 |
-| 1728 | `Chk2Players` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1731 | `LdGameText` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1733 | `GameTextLoop` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1740 | `EndGameText` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1756 | `PutLives` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1765 | `CheckPlayerName` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1775 | `ChkLuigi` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1778 | `NameLoop` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1782 | `ExitChkName` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1784 | `PrintWarpZoneNumbers` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1790 | `WarpNumLoop` | M2 T27 S2 | existing closure backlog; M2 T27 S2 contiguous remaining screen/status/text chain; accepted from T24 S2 custody. | M2 T24 S1 |
-| 1804 | `ResetSpritesAndScreenTimer` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
-| 1809 | `ResetScreenTimer` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
-| 1813 | `NoReset` | M2 T70 S14 | existing closure backlog; Accepted HUD/intermediate timer maintenance;prior evidence retained. | M2 T24 S1 |
-| 1825 | `RenderAreaGraphics` | M2 T70 S17 | existing closure backlog; S17 P121 original byte VRAM offset addressing correction. | M2 T18 S2; M2 T21 S4; M2 T24 S1 |
-| 1840 | `DrawMTLoop` | M2 T70 S17 | existing closure backlog; S17 P121 original byte VRAM offset addressing correction. | M2 T21 S4; M2 T24 S1 |
-| 1878 | `RightCheck` | M2 T70 S17 | existing closure backlog; S17 P121 original byte VRAM offset addressing correction. | M2 T21 S4; M2 T24 S1 |
-| 1886 | `LLeft` | M2 T70 S17 | existing closure backlog; S17 P121 original byte VRAM offset addressing correction. | M2 T21 S4; M2 T24 S1 |
-| 1888 | `NextMTRow` | M2 T70 S17 | existing closure backlog; S17 P121 original byte VRAM offset addressing correction. | M2 T21 S4; M2 T24 S1 |
-| 1889 | `SetAttrib` | M2 T70 S17 | existing closure backlog; S17 P121 original byte VRAM offset addressing correction. | M2 T21 S4; M2 T24 S1 |
-| 1914 | `ExitDrawM` | M2 T70 S17 | existing closure backlog; S17 P121 original byte VRAM offset addressing correction. | M2 T21 S4; M2 T24 S1 |
-| 1920 | `RenderAttributeTables` | M2 T70 S17 | existing closure backlog; S17 P121 original byte VRAM offset addressing correction. | M2 T18 S2; M2 T21 S4; M2 T24 S1 |
-| 1930 | `SetATHigh` | M2 T70 S17 | existing closure backlog; S17 P121 original byte VRAM offset addressing correction. | M2 T21 S4; M2 T24 S1 |
-| 1940 | `AttribLoop` | M2 T70 S17 | existing closure backlog; S17 P121 original byte VRAM offset addressing correction. | M2 T21 S4; M2 T24 S1 |
-| 1962 | `SetVRAMCtrl` | M2 T70 S17 | existing closure backlog; S17 P4 complete column output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 1970 | `ColorRotatePalette` | M2 T28 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 1973 | `BlankPalette` | M2 T28 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 1977 | `Palette3Data` | M2 T28 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 1983 | `ColorRotation` | M2 T70 S17 | existing closure backlog; P57 accepted continuous GameEngine scratch counter repair. | M2 T21 S4; M2 T24 S1 |
-| 1991 | `GetBlankPal` | M2 T70 S17 | existing closure backlog; P57 accepted continuous GameEngine scratch counter repair. | M2 T21 S4; M2 T24 S1 |
-| 2004 | `GetAreaPal` | M2 T70 S17 | existing closure backlog; P57 accepted continuous GameEngine scratch counter repair. | M2 T21 S4; M2 T24 S1 |
-| 2024 | `ExitColorRot` | M2 T70 S17 | existing closure backlog; P57 accepted continuous GameEngine scratch counter repair. | M2 T21 S4; M2 T24 S1 |
-| 2034 | `BlockGfxData` | M2 T28 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2041 | `RemoveCoin_Axe` | M2 T28 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T17 S4; M2 T21 S4; M2 T22 S1; M2 T24 S1 |
-| 2047 | `WriteBlankMT` | M2 T28 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2052 | `ReplaceBlockMetatile` | M2 T28 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T18 / S not recorded; M2 T18 S1; M2 T21 S4; M2 T24 S1 |
-| 2058 | `DestroyBlockMetatile` | M2 T28 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T18 / S not recorded; M2 T21 S4; M2 T22 S1; M2 T24 S1 |
-| 2061 | `WriteBlockMetatile` | M2 T28 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T17 S4; M2 T18 / S not recorded; M2 T21 S4; M2 T24 S1 |
-| 2076 | `UseBOffset` | M2 T28 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2080 | `MoveVOffset` | M2 T28 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2086 | `PutBlockMetatile` | M2 T28 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T17 S4; M2 T18 / S not recorded; M2 T21 S4; M2 T24 S1 |
-| 2097 | `SaveHAdder` | M2 T28 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2118 | `RemBridge` | M2 T70 S17 | existing closure backlog; S17 P123 original absolute-X operand displacement correction. | M2 T21 S4; M2 T24 S1 |
-| 2145 | `MetatileGraphics_Low` | M2 T28 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2148 | `MetatileGraphics_High` | M2 T28 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2151 | `Palette0_MTiles` | M2 T28 S4 | existing closure backlog; owner-approved T28 S4 source-order data-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2192 | `Palette1_MTiles` | M2 T28 S4 | existing closure backlog; owner-approved T28 S4 source-order data-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2240 | `Palette2_MTiles` | M2 T28 S4 | existing closure backlog; owner-approved T28 S4 source-order data-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2252 | `Palette3_MTiles` | M2 T28 S4 | existing closure backlog; owner-approved T28 S4 source-order data-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2263 | `WaterPaletteData` | M2 T28 S4 | existing closure backlog; owner-approved T28 S4 source-order data-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2275 | `GroundPaletteData` | M2 T28 S4 | existing closure backlog; owner-approved T28 S4 source-order data-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2287 | `UndergroundPaletteData` | M2 T28 S4 | existing closure backlog; owner-approved T28 S4 source-order data-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2299 | `CastlePaletteData` | M2 T28 S4 | existing closure backlog; owner-approved T28 S4 source-order data-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2311 | `DaySnowPaletteData` | M2 T28 S4 | existing closure backlog; owner-approved T28 S4 source-order data-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2316 | `NightSnowPaletteData` | M2 T28 S4 | existing closure backlog; owner-approved T28 S4 source-order data-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2321 | `MushroomPaletteData` | M2 T28 S4 | existing closure backlog; owner-approved T28 S4 source-order data-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2326 | `BowserPaletteData` | M2 T28 S4 | existing closure backlog; owner-approved T28 S4 source-order data-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2331 | `MarioThanksMessage` | M2 T28 S4 | existing closure backlog; owner-approved T28 S4 source-order data-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2339 | `LuigiThanksMessage` | M2 T28 S4 | existing closure backlog; owner-approved T28 S4 source-order data-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2347 | `MushroomRetainerSaved` | M2 T28 S4 | existing closure backlog; owner-approved T28 S4 source-order data-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2358 | `PrincessSaved1` | M2 T28 S4 | existing closure backlog; owner-approved T28 S4 source-order data-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2366 | `PrincessSaved2` | M2 T28 S4 | existing closure backlog; owner-approved T28 S4 source-order data-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2375 | `WorldSelectMessage1` | M2 T28 S4 | existing closure backlog; owner-approved T28 S4 source-order data-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2382 | `WorldSelectMessage2` | M2 T28 S4 | existing closure backlog; owner-approved T28 S4 source-order data-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2395 | `JumpEngine` | M2 T28 S5 | existing closure backlog; owner-approved T28 S5 source-order receipt | M2 T21 S4; M2 T24 S1 |
-| 2412 | `InitializeNameTables` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T21 S4; M2 T24 S1 |
-| 2421 | `WriteNTAddr` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T21 S4; M2 T24 S1 |
-| 2427 | `InitNTLoop` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T21 S4; M2 T24 S1 |
-| 2436 | `InitATLoop` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T21 S4; M2 T24 S1 |
-| 2446 | `ReadJoypads` | M2 T70 S9 | existing closure backlog; Accepted input-to-pause material maintenance;prior evidence retained. | M2 T21 S4; M2 T24 S1 |
-| 2454 | `ReadPortBits` | M2 T70 S9 | existing closure backlog; Accepted input-to-pause material maintenance;prior evidence retained. | M2 T21 S4; M2 T24 S1 |
-| 2455 | `PortLoop` | M2 T70 S9 | existing closure backlog; Accepted input-to-pause material maintenance;prior evidence retained. | M2 T21 S4; M2 T24 S1 |
-| 2474 | `Save8Bits` | M2 T70 S9 | existing closure backlog; Accepted input-to-pause material maintenance;prior evidence retained. | M2 T21 S4; M2 T24 S1 |
-| 2482 | `WriteBufferToScreen` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T21 S4; M2 T24 S1 |
-| 2495 | `SetupWrites` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T21 S4; M2 T24 S1 |
-| 2501 | `GetLength` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T21 S4; M2 T24 S1 |
-| 2504 | `OutputToVRAM` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T21 S4; M2 T24 S1 |
-| 2506 | `RepeatByte` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T21 S4; M2 T24 S1 |
-| 2523 | `UpdateScreen` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T14 / S not recorded; M2 T15 S2; M2 T21 S4; M2 T24 S1 |
-| 2527 | `InitScroll` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T21 S4; M2 T24 S1 |
-| 2533 | `WritePPUReg1` | M3 T27 S2 | existing closure backlog; Owner-approved T27 PPU-state maintenance migration;no new conformance credit | M2 T21 S4; M2 T24 S1 |
-| 2544 | `StatusBarData` | M2 T28 S7 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2552 | `StatusBarOffset` | M2 T28 S7 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2555 | `PrintStatusBarNumbers` | M2 T28 S7 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T19 S5; M2 T21 S4; M2 T24 S1 |
-| 2564 | `OutputNumbers` | M2 T28 S7 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2578 | `SetupNums` | M2 T28 S7 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2592 | `DigitPLoop` | M2 T28 S7 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2604 | `ExitOutputN` | M2 T28 S7 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2608 | `DigitsMathRoutine` | M2 T28 S7 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2613 | `AddModLoop` | M2 T28 S7 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2619 | `StoreNewD` | M2 T28 S7 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2623 | `EraseDMods` | M2 T28 S7 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2625 | `EraseMLoop` | M2 T28 S7 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2629 | `BorrowOne` | M2 T28 S7 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2632 | `CarryOne` | M2 T28 S7 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2639 | `UpdateTopScore` | M2 T28 S7 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T14 / S not recorded; M2 T21 S4; M2 T24 S1 |
-| 2644 | `TopScoreCheck` | M2 T28 S7 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2647 | `GetScoreDiff` | M2 T28 S7 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2655 | `CopyScore` | M2 T28 S7 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2661 | `NoTopSc` | M2 T28 S7 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S4; M2 T24 S1 |
-| 2665 | `DefaultSprOffsets` | M2 T28 S8 | existing closure backlog; owner-approved source-order T28 S8 initialization/bootstrap receipt | M2 T21 S4; M2 T24 S1 |
-| 2669 | `Sprite0Data` | M2 T28 S8 | existing closure backlog; owner-approved source-order T28 S8 initialization/bootstrap receipt | M2 T21 S4; M2 T24 S1 |
-| 2674 | `InitializeGame` | M2 T28 S8 | existing closure backlog; owner-approved source-order T28 S8 initialization/bootstrap receipt | M2 T15 / S not recorded; M2 T15 S1; M2 T21 S4; M2 T24 S1 |
-| 2678 | `ClrSndLoop` | M2 T28 S8 | existing closure backlog; owner-approved source-order T28 S8 initialization/bootstrap receipt | M2 T21 S4; M2 T24 S1 |
-| 2685 | `InitializeArea` | M2 T28 S8 | existing closure backlog; owner-approved source-order T28 S8 initialization/bootstrap receipt | M2 T2 / S not recorded; M2 T21 S4; M2 T24 S1 |
-| 2690 | `ClrTimersLoop` | M2 T28 S8 | existing closure backlog; owner-approved source-order T28 S8 initialization/bootstrap receipt | M2 T21 S4; M2 T24 S1 |
-| 2697 | `StartPage` | M2 T28 S8 | existing closure backlog; owner-approved source-order T28 S8 initialization/bootstrap receipt | M2 T21 S4; M2 T24 S1 |
-| 2705 | `SetInitNTHigh` | M2 T30 S13 | existing closure backlog; Accepted transfer-111: initial block-column parity correction. | M2 T21 S4; M2 T24 S1; M2 T30 S13 |
-| 2728 | `SetSecHard` | M2 T28 S8 | existing closure backlog; owner-approved source-order T28 S8 initialization/bootstrap receipt | M2 T21 S4; M2 T24 S1 |
-| 2729 | `CheckHalfway` | M2 T28 S8 | existing closure backlog; owner-approved source-order T28 S8 initialization/bootstrap receipt | M2 T21 S4; M2 T24 S1 |
-| 2733 | `DoneInitArea` | M2 T28 S8 | existing closure backlog; owner-approved source-order T28 S8 initialization/bootstrap receipt | M2 T21 S4; M2 T24 S1 |
-| 2742 | `PrimaryGameSetup` | M2 T28 S8 | existing closure backlog; owner-approved source-order T28 S8 initialization/bootstrap receipt | M2 T21 S4; M2 T24 S1 |
-| 2750 | `SecondaryGameSetup` | M2 T28 S8 | existing closure backlog; owner-approved source-order T28 S8 initialization/bootstrap receipt | M2 T21 S4; M2 T24 S1 |
-| 2754 | `ClearVRLoop` | M2 T28 S8 | existing closure backlog; owner-approved source-order T28 S8 initialization/bootstrap receipt | M2 T21 S4; M2 T24 S1 |
-| 2775 | `ShufAmtLoop` | M2 T28 S8 | existing closure backlog; owner-approved source-order T28 S8 initialization/bootstrap receipt | M2 T21 S4; M2 T24 S1 |
-| 2780 | `ISpr0Loop` | M2 T28 S8 | existing closure backlog; owner-approved source-order T28 S8 initialization/bootstrap receipt | M2 T21 S4; M2 T24 S1 |
-| 2795 | `InitializeMemory` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T14 / S not recorded; M2 T15 S3; M2 T18 / S not recorded; M2 T21 S1; M2 T24 S1 |
-| 2799 | `InitPageLoop` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T21 S4; M2 T24 S1 |
-| 2800 | `InitByteLoop` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T21 S4; M2 T24 S1 |
-| 2804 | `InitByte` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T21 S4; M2 T24 S1 |
-| 2805 | `SkipByte` | M2 T70 S15 | existing closure backlog; Accepted final reset/startup source and graph review;old evidence retained. | M2 T21 S4; M2 T24 S1 |
-| 2814 | `MusicSelectData` | M2 T29 S2 | existing closure backlog; owner-approved source-order T29 S2 area-music chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2818 | `GetAreaMusic` | M2 T29 S2 | existing closure backlog; owner-approved source-order T29 S2 area-music chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2830 | `ChkAreaType` | M2 T29 S2 | existing closure backlog; owner-approved source-order T29 S2 area-music chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2834 | `StoreMusic` | M2 T29 S2 | existing closure backlog; owner-approved source-order T29 S2 area-music chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2836 | `ExitGetM` | M2 T29 S2 | existing closure backlog; owner-approved source-order T29 S2 area-music chain receipt | M2 T21 S4; M2 T24 S1 |
+| 1386 | `ScreenRoutines` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 S2; M2 T15 S3; M2 T24 S1 |
+| 1408 | `InitScreen` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1418 | `SetupIntermediate` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1436 | `AreaPalette` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1439 | `GetAreaPalette` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1442 | `SetVRAMAddr_A` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1443 | `NextSubtask` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1448 | `BGColorCtrl_Addr` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1451 | `BackgroundColors` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1455 | `PlayerColors` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1460 | `GetBackgroundColor` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1465 | `NoBGColor` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1467 | `GetPlayerColors` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T18 S3; M2 T24 S1 |
+| 1473 | `ChkFiery` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1477 | `StartClrGet` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1479 | `ClrGetLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1489 | `SetBGColor` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1502 | `SetVRAMOffset` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1507 | `GetAlternatePalette1` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1512 | `SetVRAMAddr_B` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1513 | `NoAltPal` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1517 | `WriteTopStatusLine` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1524 | `WriteBottomStatusLine` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T19 S5; M2 T24 S1 |
+| 1553 | `DisplayTimeUp` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1560 | `NoTimeUp` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1565 | `DisplayIntermediate` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 S3; M2 T24 S1 |
+| 1577 | `PlayerInter` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1579 | `OutputInter` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1584 | `GameOverInter` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1589 | `NoInter` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1595 | `AreaParserTaskControl` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1597 | `TaskLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1603 | `OutputCol` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1612 | `DrawTitleScreen` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1624 | `OutputTScr` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1629 | `ChkHiByte` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1639 | `ClearBuffersDrawIcon` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1643 | `TScrClear` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1648 | `IncSubtask` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1653 | `WriteTopScore` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1656 | `IncModeTask_B` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1661 | `GameText` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1662 | `TopStatusBarLine` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1671 | `WorldLivesDisplay` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1680 | `TwoPlayerTimeUp` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1682 | `OnePlayerTimeUp` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1686 | `TwoPlayerGameOver` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1688 | `OnePlayerGameOver` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1693 | `WarpZoneWelcome` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1704 | `LuigiName` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1707 | `WarpZoneNumbers` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1712 | `GameTextOffsets` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1719 | `WriteGameText` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 S3; M2 T24 S1 |
+| 1728 | `Chk2Players` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1731 | `LdGameText` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1733 | `GameTextLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1740 | `EndGameText` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1756 | `PutLives` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1765 | `CheckPlayerName` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1775 | `ChkLuigi` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1778 | `NameLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1782 | `ExitChkName` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1784 | `PrintWarpZoneNumbers` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1790 | `WarpNumLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1804 | `ResetSpritesAndScreenTimer` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1809 | `ResetScreenTimer` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1813 | `NoReset` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
+| 1825 | `RenderAreaGraphics` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T18 S2; M2 T21 S4; M2 T24 S1 |
+| 1840 | `DrawMTLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 1878 | `RightCheck` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 1886 | `LLeft` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 1888 | `NextMTRow` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 1889 | `SetAttrib` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 1914 | `ExitDrawM` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 1920 | `RenderAttributeTables` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T18 S2; M2 T21 S4; M2 T24 S1 |
+| 1930 | `SetATHigh` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 1940 | `AttribLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 1962 | `SetVRAMCtrl` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 1970 | `ColorRotatePalette` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 1973 | `BlankPalette` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 1977 | `Palette3Data` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 1983 | `ColorRotation` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 1991 | `GetBlankPal` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2004 | `GetAreaPal` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2024 | `ExitColorRot` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2034 | `BlockGfxData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2041 | `RemoveCoin_Axe` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T17 S4; M2 T21 S4; M2 T22 S1; M2 T24 S1 |
+| 2047 | `WriteBlankMT` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2052 | `ReplaceBlockMetatile` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T18 / S not recorded; M2 T18 S1; M2 T21 S4; M2 T24 S1 |
+| 2058 | `DestroyBlockMetatile` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T18 / S not recorded; M2 T21 S4; M2 T22 S1; M2 T24 S1 |
+| 2061 | `WriteBlockMetatile` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T17 S4; M2 T18 / S not recorded; M2 T21 S4; M2 T24 S1 |
+| 2076 | `UseBOffset` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2080 | `MoveVOffset` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2086 | `PutBlockMetatile` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T17 S4; M2 T18 / S not recorded; M2 T21 S4; M2 T24 S1 |
+| 2097 | `SaveHAdder` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2118 | `RemBridge` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2145 | `MetatileGraphics_Low` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2148 | `MetatileGraphics_High` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2151 | `Palette0_MTiles` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2192 | `Palette1_MTiles` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2240 | `Palette2_MTiles` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2252 | `Palette3_MTiles` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2263 | `WaterPaletteData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2275 | `GroundPaletteData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2287 | `UndergroundPaletteData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2299 | `CastlePaletteData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2311 | `DaySnowPaletteData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2316 | `NightSnowPaletteData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2321 | `MushroomPaletteData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2326 | `BowserPaletteData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2331 | `MarioThanksMessage` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2339 | `LuigiThanksMessage` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2347 | `MushroomRetainerSaved` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2358 | `PrincessSaved1` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2366 | `PrincessSaved2` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2375 | `WorldSelectMessage1` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2382 | `WorldSelectMessage2` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2395 | `JumpEngine` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2412 | `InitializeNameTables` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2421 | `WriteNTAddr` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2427 | `InitNTLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2436 | `InitATLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2446 | `ReadJoypads` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2454 | `ReadPortBits` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2455 | `PortLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2474 | `Save8Bits` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2482 | `WriteBufferToScreen` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2495 | `SetupWrites` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2501 | `GetLength` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2504 | `OutputToVRAM` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2506 | `RepeatByte` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2523 | `UpdateScreen` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T15 S2; M2 T21 S4; M2 T24 S1 |
+| 2527 | `InitScroll` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2533 | `WritePPUReg1` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2544 | `StatusBarData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2552 | `StatusBarOffset` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2555 | `PrintStatusBarNumbers` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T19 S5; M2 T21 S4; M2 T24 S1 |
+| 2564 | `OutputNumbers` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2578 | `SetupNums` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2592 | `DigitPLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2604 | `ExitOutputN` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2608 | `DigitsMathRoutine` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2613 | `AddModLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2619 | `StoreNewD` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2623 | `EraseDMods` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2625 | `EraseMLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2629 | `BorrowOne` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2632 | `CarryOne` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2639 | `UpdateTopScore` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T21 S4; M2 T24 S1 |
+| 2644 | `TopScoreCheck` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2647 | `GetScoreDiff` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2655 | `CopyScore` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2661 | `NoTopSc` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2665 | `DefaultSprOffsets` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2669 | `Sprite0Data` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2674 | `InitializeGame` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 / S not recorded; M2 T15 S1; M2 T21 S4; M2 T24 S1 |
+| 2678 | `ClrSndLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2685 | `InitializeArea` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T2 / S not recorded; M2 T21 S4; M2 T24 S1 |
+| 2690 | `ClrTimersLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2697 | `StartPage` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2705 | `SetInitNTHigh` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S13 |
+| 2728 | `SetSecHard` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2729 | `CheckHalfway` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2733 | `DoneInitArea` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2742 | `PrimaryGameSetup` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2750 | `SecondaryGameSetup` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2754 | `ClearVRLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2775 | `ShufAmtLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2780 | `ISpr0Loop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2795 | `InitializeMemory` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T14 / S not recorded; M2 T15 S3; M2 T18 / S not recorded; M2 T21 S1; M2 T24 S1 |
+| 2799 | `InitPageLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2800 | `InitByteLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2804 | `InitByte` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2805 | `SkipByte` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2814 | `MusicSelectData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2818 | `GetAreaMusic` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2830 | `ChkAreaType` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2834 | `StoreMusic` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2836 | `ExitGetM` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
 | 2840 | `PlayerStarting_X_Pos` | M2 T29 S3 | existing closure backlog; owner-approved source-order T29 S3 area-entry chain receipt | M2 T21 S4; M2 T24 S1 |
 | 2844 | `AltYPosOffset` | M2 T29 S3 | existing closure backlog; owner-approved source-order T29 S3 area-entry chain receipt | M2 T21 S4; M2 T24 S1 |
 | 2847 | `PlayerStarting_Y_Pos` | M2 T29 S3 | existing closure backlog; owner-approved source-order T29 S3 area-entry chain receipt | M2 T21 S4; M2 T24 S1 |
@@ -510,221 +470,221 @@ transfer existing ownership or allocate a numeric T.
 | 2900 | `ChkOverR` | M2 T29 S3 | existing closure backlog; owner-approved source-order T29 S3 area-entry chain receipt | M2 T21 S4; M2 T24 S1 |
 | 2911 | `ChkSwimE` | M2 T29 S3 | existing closure backlog; owner-approved source-order T29 S3 area-entry chain receipt | M2 T21 S4; M2 T24 S1 |
 | 2914 | `SetPESub` | M2 T29 S3 | existing closure backlog; owner-approved source-order T29 S3 area-entry chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2921 | `HalfwayPageNybbles` | M2 T29 S4 | existing closure backlog; owner-approved source-order T29 S4 life/mode state-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2931 | `PlayerLoseLife` | M2 T29 S4 | existing closure backlog; owner-approved source-order T29 S4 life/mode state-chain receipt | M2 T15 S3; M2 T21 S4; M2 T24 S1; M2 T6 / S not recorded |
-| 2944 | `StillInGame` | M2 T29 S4 | existing closure backlog; owner-approved source-order T29 S4 life/mode state-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2951 | `GetHalfway` | M2 T29 S4 | existing closure backlog; owner-approved source-order T29 S4 life/mode state-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2960 | `MaskHPNyb` | M2 T29 S4 | existing closure backlog; owner-approved source-order T29 S4 life/mode state-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2965 | `SetHalfway` | M2 T29 S4 | existing closure backlog; owner-approved source-order T29 S4 life/mode state-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2971 | `GameOverMode` | M2 T29 S4 | existing closure backlog; owner-approved source-order T29 S4 life/mode state-chain receipt | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S3; M2 T21 S4; M2 T24 S1; M2 T6 / S not recorded |
-| 2981 | `SetupGameOver` | M2 T29 S4 | existing closure backlog; owner-approved source-order T29 S4 life/mode state-chain receipt | M2 T15 S3; M2 T21 S4; M2 T24 S1 |
-| 2993 | `RunGameOver` | M2 T29 S4 | existing closure backlog; owner-approved source-order T29 S4 life/mode state-chain receipt | M2 T15 S3; M2 T21 S4; M2 T24 S1 |
-| 3001 | `TerminateGame` | M2 T70 S11 | existing closure backlog; Accepted victory-message/final shared termination material maintenance;prior evidence retained. | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 3015 | `ContinueGame` | M2 T29 S4 | existing closure backlog; owner-approved source-order T29 S4 life/mode state-chain receipt | M2 T15 S3; M2 T21 S4; M2 T24 S1; M2 T6 / S not recorded |
-| 3027 | `GameIsOn` | M2 T29 S4 | existing closure backlog; owner-approved source-order T29 S4 life/mode state-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 3029 | `TransposePlayers` | M2 T29 S4 | existing closure backlog; owner-approved source-order T29 S4 life/mode state-chain receipt | M2 T15 S3; M2 T21 S4; M2 T24 S1; M2 T6 / S not recorded |
-| 3039 | `TransLoop` | M2 T29 S4 | existing closure backlog; owner-approved source-order T29 S4 life/mode state-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 3048 | `ExTrans` | M2 T29 S4 | existing closure backlog; owner-approved source-order T29 S4 life/mode state-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 3052 | `DoNothing1` | M2 T29 S4 | existing closure backlog; owner-approved source-order T29 S4 life/mode state-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 3055 | `DoNothing2` | M2 T29 S4 | existing closure backlog; owner-approved source-order T29 S4 life/mode state-chain receipt | M2 T21 S4; M2 T24 S1 |
-| 3060 | `AreaParserTaskHandler` | M2 T29 S5 | existing closure backlog; owner-approved source-order T29 S5 area-parser dispatch receipt | M2 T21 S4; M2 T24 S1 |
-| 3065 | `DoAPTasks` | M2 T29 S5 | existing closure backlog; owner-approved source-order T29 S5 area-parser dispatch receipt | M2 T21 S4; M2 T24 S1 |
-| 3071 | `SkipATRender` | M2 T29 S5 | existing closure backlog; owner-approved source-order T29 S5 area-parser dispatch receipt | M2 T21 S4; M2 T24 S1 |
-| 3073 | `AreaParserTasks` | M2 T70 S17 | existing closure backlog; P15 same-class omitted JumpEngine scratch call correction. | M2 T21 S4; M2 T24 S1 |
-| 3087 | `IncrementColumnPos` | M2 T29 S5 | existing closure backlog; owner-approved source-order T29 S5 area-parser dispatch receipt | M2 T21 S4; M2 T24 S1 |
-| 3094 | `NoColWrap` | M2 T29 S5 | existing closure backlog; owner-approved source-order T29 S5 area-parser dispatch receipt | M2 T21 S4; M2 T24 S1 |
-| 3106 | `BSceneDataOffsets` | M2 T29 S5 | existing closure backlog; owner-approved source-order T29 S5 area-parser dispatch receipt | M2 T21 S4; M2 T24 S1 |
-| 3109 | `BackSceneryData` | M2 T29 S5 | existing closure backlog; owner-approved source-order T29 S5 area-parser dispatch receipt | M2 T21 S4; M2 T24 S1 |
-| 3131 | `BackSceneryMetatiles` | M2 T29 S5 | existing closure backlog; owner-approved source-order T29 S5 area-parser dispatch receipt | M2 T21 S4; M2 T24 S1 |
-| 3145 | `FSceneDataOffsets` | M2 T29 S5 | existing closure backlog; owner-approved source-order T29 S5 area-parser dispatch receipt | M2 T21 S4; M2 T24 S1 |
-| 3148 | `ForeSceneryData` | M2 T29 S5 | existing closure backlog; owner-approved source-order T29 S5 area-parser dispatch receipt | M2 T21 S4; M2 T24 S1 |
-| 3158 | `TerrainMetatiles` | M2 T29 S5 | existing closure backlog; owner-approved source-order T29 S5 area-parser dispatch receipt | M2 T21 S4; M2 T24 S1 |
-| 3161 | `TerrainRenderBits` | M2 T29 S5 | existing closure backlog; owner-approved source-order T29 S5 area-parser dispatch receipt | M2 T21 S4; M2 T24 S1 |
-| 3179 | `AreaParserCore` | M2 T29 S5 | existing closure backlog; owner-approved source-order T29 S5 area-parser dispatch receipt | M2 T21 S4; M2 T24 S1 |
-| 3184 | `RenderSceneryTerrain` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
-| 3187 | `ClrMTBuf` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
-| 3193 | `ThirdP` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
-| 3198 | `RendBack` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
-| 3223 | `SceLoop1` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
-| 3231 | `RendFore` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
-| 3235 | `SceLoop2` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
-| 3238 | `NoFore` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
-| 3242 | `RendTerr` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
-| 3249 | `TerMTile` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
-| 3253 | `StoreMT` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
-| 3258 | `TerrLoop` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
-| 3269 | `NoCloud2` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
-| 3270 | `TerrBChk` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
-| 3275 | `NextTBit` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
-| 3285 | `EndUChk` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
-| 3290 | `RendBBuf` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
-| 3295 | `ChkMTLow` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
-| 3306 | `StrBlock` | M2 T70 S17 | existing closure backlog; S17 P13 scenery scratch/output priority correction. | M2 T21 S4; M2 T24 S1 |
-| 3319 | `BlockBuffLowBounds` | M2 T29 S6 | existing closure backlog; Owner-approved source-order continuation for the RenderSceneryTerrain through BlockBuffLowBounds scenery-column chain. | M2 T21 S4; M2 T24 S1 |
-| 3326 | `ProcessAreaData` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T18 S2; M2 T21 S4; M2 T24 S1 |
-| 3328 | `ProcADLoop` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3345 | `Chk1Row13` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3363 | `Chk1Row14` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3367 | `CheckRear` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3370 | `RdyDecode` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3372 | `SetBehind` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3373 | `NextAObj` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3374 | `ChkLength` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3378 | `ProcLoopb` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3384 | `EndAParse` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3386 | `IncAreaObjOffset` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3393 | `DecodeAreaData` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1; M2 T3 / S not recorded; M2 T30 S11 |
-| 3397 | `Chk1stB` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3408 | `ChkRow14` | M2 T70 S17 | existing closure backlog; P28 accepted original parser00/07 phase-publication correction. | M2 T21 S4; M2 T24 S1 |
-| 3416 | `ChkRow13` | M2 T70 S17 | existing closure backlog; P28 accepted original parser00/07 phase-publication correction. | M2 T21 S4; M2 T24 S1; M2 T30 S16 |
-| 3429 | `Mask2MSB` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3431 | `ChkSRows` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3442 | `LrgObj` | M2 T70 S17 | existing closure backlog; P28 accepted original parser00/07 phase-publication correction. | M2 T21 S4; M2 T24 S1 |
-| 3450 | `NotWPipe` | M2 T70 S17 | existing closure backlog; P28 accepted original parser00/07 phase-publication correction. | M2 T21 S4; M2 T24 S1 |
-| 3452 | `SpecObj` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3455 | `MoveAOId` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3459 | `NormObj` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3472 | `LeavePar` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3473 | `InitRear` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3479 | `LoopCmdE` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3480 | `BackColC` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3489 | `StrAObj` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3492 | `RunAObj` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3561 | `AlterAreaAttributes` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3580 | `Alter2` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3586 | `SetFore` | M2 T70 S17 | existing closure backlog; S17 P6 complete parser output chain correction under standing owner mandate. | M2 T21 S4; M2 T24 S1 |
-| 3591 | `ScrollLockObject_Warp` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
-| 3600 | `WarpNum` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
-| 3606 | `ScrollLockObject` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
-| 3615 | `KillEnemies` | M2 T51 S3 | existing closure backlog; Accepted transfer-281: source-exact residual KillEnemies primitive and its shared warp/flagpole callers. | M2 T21 S4; M2 T24 S1 |
-| 3619 | `KillELoop` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
-| 3623 | `NoKillE` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
-| 3629 | `FrenzyIDData` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
-| 3632 | `AreaFrenzy` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T19 S5; M2 T21 S4; M2 T24 S1 |
-| 3635 | `FreCompLoop` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
-| 3640 | `ExitAFrenzy` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
-| 3646 | `AreaStyleObject` | M2 T70 S17 | existing closure backlog; P15 same-class omitted JumpEngine scratch call correction. | M2 T21 S4; M2 T24 S1 |
-| 3653 | `TreeLedge` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
-| 3665 | `MidTreeL` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
-| 3670 | `EndTreeL` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
-| 3673 | `MushroomLedge` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
-| 3682 | `EndMushL` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
-| 3696 | `AllUnder` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
-| 3699 | `NoUnder` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
-| 3706 | `PulleyRopeMetatiles` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
-| 3709 | `PulleyRopeObject` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
-| 3717 | `RenderPul` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
-| 3719 | `MushLExit` | M2 T29 S8 | existing closure backlog; Owner-approved source-order continuation for the ScrollLockObject_Warp through MushLExit special-object chain. | M2 T21 S4; M2 T24 S1 |
-| 3724 | `CastleMetatiles` | M2 T29 S9 | existing closure backlog; accepted transfer-090: owner-approved source-order large-object geometry chain | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3737 | `CastleObject` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T17 S6; M2 T18 S2; M2 T21 S4; M2 T24 / S not recorded; M2 T24 S1; M2 T29 S9 |
-| 3748 | `CRendLoop` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3759 | `ChkCFloor` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3772 | `NotTall` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3789 | `PlayerStop` | M2 T70 S17 | existing closure backlog; S17 P9 actual castle06 scratch counter correction. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3791 | `ExitCastle` | M2 T70 S17 | existing closure backlog; S17 P9 actual castle06 scratch counter correction. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3795 | `WaterPipe` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3810 | `IntroPipe` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3817 | `VPipeSectLoop` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3823 | `NoBlankP` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3825 | `SidePipeShaftData` | M2 T29 S9 | existing closure backlog; accepted transfer-090: owner-approved source-order large-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3828 | `SidePipeTopPart` | M2 T29 S9 | existing closure backlog; accepted transfer-090: owner-approved source-order large-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3831 | `SidePipeBottomPart` | M2 T29 S9 | existing closure backlog; accepted transfer-090: owner-approved source-order large-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3835 | `ExitPipe` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3840 | `RenderSidewaysPipe` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3855 | `DrawSidePart` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3862 | `VerticalPipeData` | M2 T29 S9 | existing closure backlog; accepted transfer-090: owner-approved source-order large-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3868 | `VerticalPipe` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3876 | `WarpPipe` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3900 | `DrawPipe` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9; M2 T30 S12 |
-| 3911 | `GetPipeHeight` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
-| 3921 | `FindEmptyEnemySlot` | M2 T29 S10 | existing closure backlog; accepted transfer-091: owner-approved source-order allocation/final-object geometry chain | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T29 S10 |
-| 3923 | `EmptyChkLoop` | M2 T29 S10 | existing closure backlog; accepted transfer-091: owner-approved source-order allocation/final-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
-| 3929 | `ExitEmptyChk` | M2 T29 S10 | existing closure backlog; accepted transfer-091: owner-approved source-order allocation/final-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
-| 3933 | `Hole_Water` | M2 T29 S10 | existing closure backlog; accepted transfer-091: owner-approved source-order allocation/final-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
-| 3944 | `QuestionBlockRow_High` | M2 T29 S10 | existing closure backlog; accepted transfer-091: owner-approved source-order allocation/final-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
-| 3948 | `QuestionBlockRow_Low` | M2 T29 S10 | existing closure backlog; accepted transfer-091: owner-approved source-order allocation/final-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
-| 3960 | `Bridge_High` | M2 T29 S10 | existing closure backlog; accepted transfer-091: owner-approved source-order allocation/final-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
-| 3964 | `Bridge_Middle` | M2 T29 S10 | existing closure backlog; accepted transfer-091: owner-approved source-order allocation/final-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
-| 3968 | `Bridge_Low` | M2 T29 S10 | existing closure backlog; accepted transfer-091: owner-approved source-order allocation/final-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
-| 3983 | `FlagBalls_Residual` | M2 T29 S10 | existing closure backlog; accepted transfer-091: owner-approved source-order allocation/final-object geometry chain | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
+| 2921 | `HalfwayPageNybbles` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2931 | `PlayerLoseLife` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 S3; M2 T21 S4; M2 T24 S1; M2 T6 / S not recorded |
+| 2944 | `StillInGame` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2951 | `GetHalfway` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2960 | `MaskHPNyb` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2965 | `SetHalfway` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 2971 | `GameOverMode` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S3; M2 T21 S4; M2 T24 S1; M2 T6 / S not recorded |
+| 2981 | `SetupGameOver` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 S3; M2 T21 S4; M2 T24 S1 |
+| 2993 | `RunGameOver` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 S3; M2 T21 S4; M2 T24 S1 |
+| 3001 | `TerminateGame` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
+| 3015 | `ContinueGame` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 S3; M2 T21 S4; M2 T24 S1; M2 T6 / S not recorded |
+| 3027 | `GameIsOn` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3029 | `TransposePlayers` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 S3; M2 T21 S4; M2 T24 S1; M2 T6 / S not recorded |
+| 3039 | `TransLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3048 | `ExTrans` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3052 | `DoNothing1` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3055 | `DoNothing2` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3060 | `AreaParserTaskHandler` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3065 | `DoAPTasks` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3071 | `SkipATRender` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3073 | `AreaParserTasks` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3087 | `IncrementColumnPos` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3094 | `NoColWrap` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3106 | `BSceneDataOffsets` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3109 | `BackSceneryData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3131 | `BackSceneryMetatiles` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3145 | `FSceneDataOffsets` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3148 | `ForeSceneryData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3158 | `TerrainMetatiles` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3161 | `TerrainRenderBits` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3179 | `AreaParserCore` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3184 | `RenderSceneryTerrain` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3187 | `ClrMTBuf` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3193 | `ThirdP` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3198 | `RendBack` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3223 | `SceLoop1` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3231 | `RendFore` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3235 | `SceLoop2` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3238 | `NoFore` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3242 | `RendTerr` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3249 | `TerMTile` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3253 | `StoreMT` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3258 | `TerrLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3269 | `NoCloud2` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3270 | `TerrBChk` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3275 | `NextTBit` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3285 | `EndUChk` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3290 | `RendBBuf` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3295 | `ChkMTLow` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3306 | `StrBlock` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3319 | `BlockBuffLowBounds` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3326 | `ProcessAreaData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T18 S2; M2 T21 S4; M2 T24 S1 |
+| 3328 | `ProcADLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3345 | `Chk1Row13` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3363 | `Chk1Row14` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3367 | `CheckRear` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3370 | `RdyDecode` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3372 | `SetBehind` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3373 | `NextAObj` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3374 | `ChkLength` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3378 | `ProcLoopb` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3384 | `EndAParse` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3386 | `IncAreaObjOffset` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3393 | `DecodeAreaData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T3 / S not recorded; M2 T30 S11 |
+| 3397 | `Chk1stB` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3408 | `ChkRow14` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3416 | `ChkRow13` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S16 |
+| 3429 | `Mask2MSB` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3431 | `ChkSRows` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3442 | `LrgObj` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3450 | `NotWPipe` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3452 | `SpecObj` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3455 | `MoveAOId` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3459 | `NormObj` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3472 | `LeavePar` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3473 | `InitRear` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3479 | `LoopCmdE` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3480 | `BackColC` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3489 | `StrAObj` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3492 | `RunAObj` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3561 | `AlterAreaAttributes` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3580 | `Alter2` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3586 | `SetFore` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3591 | `ScrollLockObject_Warp` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3600 | `WarpNum` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3606 | `ScrollLockObject` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3615 | `KillEnemies` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3619 | `KillELoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3623 | `NoKillE` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3629 | `FrenzyIDData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3632 | `AreaFrenzy` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T19 S5; M2 T21 S4; M2 T24 S1 |
+| 3635 | `FreCompLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3640 | `ExitAFrenzy` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3646 | `AreaStyleObject` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3653 | `TreeLedge` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3665 | `MidTreeL` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3670 | `EndTreeL` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3673 | `MushroomLedge` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3682 | `EndMushL` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3696 | `AllUnder` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3699 | `NoUnder` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3706 | `PulleyRopeMetatiles` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3709 | `PulleyRopeObject` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3717 | `RenderPul` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3719 | `MushLExit` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 3724 | `CastleMetatiles` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3737 | `CastleObject` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T17 S6; M2 T18 S2; M2 T21 S4; M2 T24 / S not recorded; M2 T24 S1; M2 T29 S9 |
+| 3748 | `CRendLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3759 | `ChkCFloor` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3772 | `NotTall` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3789 | `PlayerStop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3791 | `ExitCastle` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3795 | `WaterPipe` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3810 | `IntroPipe` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3817 | `VPipeSectLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3823 | `NoBlankP` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3825 | `SidePipeShaftData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3828 | `SidePipeTopPart` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3831 | `SidePipeBottomPart` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3835 | `ExitPipe` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3840 | `RenderSidewaysPipe` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3855 | `DrawSidePart` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3862 | `VerticalPipeData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3868 | `VerticalPipe` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3876 | `WarpPipe` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3900 | `DrawPipe` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S9; M2 T30 S12 |
+| 3911 | `GetPipeHeight` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S9 |
+| 3921 | `FindEmptyEnemySlot` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T29 S10 |
+| 3923 | `EmptyChkLoop` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
+| 3929 | `ExitEmptyChk` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
+| 3933 | `Hole_Water` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
+| 3944 | `QuestionBlockRow_High` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
+| 3948 | `QuestionBlockRow_Low` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
+| 3960 | `Bridge_High` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
+| 3964 | `Bridge_Middle` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
+| 3968 | `Bridge_Low` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
+| 3983 | `FlagBalls_Residual` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
 | 3991 | `FlagpoleObject` | M2 T22 S5 | existing closure backlog; T22 S1/P2 label-owner map or confirmed missing scheduler obligation | M2 T22 S1; M2 T24 S1 |
-| 4018 | `EndlessRope` | M2 T30 S1 | existing closure backlog; Owner-approved M2 T30/S1 source-order receipt for the EndlessRope through DrawRope area-object rendering chain. | M2 T21 S4; M2 T24 S1 |
-| 4023 | `BalancePlatRope` | M2 T30 S1 | existing closure backlog; Owner-approved M2 T30/S1 source-order receipt for the EndlessRope through DrawRope area-object rendering chain. | M2 T21 S4; M2 T24 S1 |
-| 4034 | `DrawRope` | M2 T30 S1 | existing closure backlog; Owner-approved M2 T30/S1 source-order receipt for the EndlessRope through DrawRope area-object rendering chain. | M2 T21 S4; M2 T24 S1 |
-| 4039 | `CoinMetatileData` | M2 T30 S2 | existing closure backlog; Owner-approved M2 T30/S2 source-order receipt for the CoinMetatileData through RowOfCoins selector chain. | M2 T21 S4; M2 T24 S1 |
-| 4042 | `RowOfCoins` | M2 T30 S2 | existing closure backlog; Owner-approved M2 T30/S2 source-order receipt for the CoinMetatileData through RowOfCoins selector chain. | M2 T18 S2; M2 T21 S4; M2 T24 S1 |
-| 4049 | `C_ObjectRow` | M2 T30 S3 | existing closure backlog; Owner-approved M2 T30/S3 source-order receipt for the C_ObjectRow through ColObj castle-column chain. | M2 T21 S4; M2 T24 S1; M2 T30 S3 |
-| 4052 | `C_ObjectMetatile` | M2 T30 S3 | existing closure backlog; Owner-approved M2 T30/S3 source-order receipt for the C_ObjectRow through ColObj castle-column chain. | M2 T21 S4; M2 T24 S1; M2 T30 S3 |
-| 4055 | `CastleBridgeObj` | M2 T30 S3 | existing closure backlog; Owner-approved M2 T30/S3 source-order receipt for the C_ObjectRow through ColObj castle-column chain. | M2 T21 S4; M2 T24 S1; M2 T30 S3 |
-| 4060 | `AxeObj` | M2 T30 S3 | existing closure backlog; Owner-approved M2 T30/S3 source-order receipt for the C_ObjectRow through ColObj castle-column chain. | M2 T21 S4; M2 T24 S1; M2 T30 S3 |
-| 4064 | `ChainObj` | M2 T30 S3 | existing closure backlog; Owner-approved M2 T30/S3 source-order receipt for the C_ObjectRow through ColObj castle-column chain. | M2 T21 S4; M2 T24 S1; M2 T30 S3 |
-| 4070 | `EmptyBlock` | M2 T30 S3 | existing closure backlog; Owner-approved M2 T30/S3 source-order receipt for the C_ObjectRow through ColObj castle-column chain. | M2 T21 S4; M2 T24 S1; M2 T30 S3 |
-| 4074 | `ColObj` | M2 T30 S3 | existing closure backlog; Owner-approved M2 T30/S3 source-order receipt for the C_ObjectRow through ColObj castle-column chain. | M2 T21 S4; M2 T24 S1; M2 T30 S3 |
-| 4079 | `SolidBlockMetatiles` | M2 T30 S4 | existing closure backlog; Accepted transfer-101: source-order row/column block chain. | M2 T21 S4; M2 T24 S1; M2 T30 S4 |
-| 4082 | `BrickMetatiles` | M2 T30 S4 | existing closure backlog; Accepted transfer-101: source-order row/column block chain. | M2 T21 S4; M2 T24 S1; M2 T30 S4 |
-| 4086 | `RowOfBricks` | M2 T30 S4 | existing closure backlog; Accepted transfer-101: source-order row/column block chain. | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T30 S4 |
-| 4091 | `DrawBricks` | M2 T30 S4 | existing closure backlog; Accepted transfer-101: source-order row/column block chain. | M2 T21 S4; M2 T24 S1; M2 T30 S4 |
-| 4094 | `RowOfSolidBlocks` | M2 T30 S4 | existing closure backlog; Accepted transfer-101: source-order row/column block chain. | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T30 S4 |
-| 4097 | `GetRow` | M2 T30 S4 | existing closure backlog; Accepted transfer-101: source-order row/column block chain. | M2 T21 S4; M2 T24 S1; M2 T30 S4 |
-| 4099 | `DrawRow` | M2 T30 S4 | existing closure backlog; Accepted transfer-101: source-order row/column block chain. | M2 T21 S4; M2 T24 S1; M2 T30 S4 |
-| 4104 | `ColumnOfBricks` | M2 T30 S4 | existing closure backlog; Accepted transfer-101: source-order row/column block chain. | M2 T21 S4; M2 T24 S1; M2 T30 S4 |
-| 4109 | `ColumnOfSolidBlocks` | M2 T30 S4 | existing closure backlog; Accepted transfer-101: source-order row/column block chain. | M2 T21 S4; M2 T24 S1; M2 T30 S4 |
-| 4112 | `GetRow2` | M2 T30 S4 | existing closure backlog; Accepted transfer-101: source-order row/column block chain. | M2 T21 S4; M2 T24 S1; M2 T30 S4 |
-| 4120 | `BulletBillCannon` | M2 T30 S5 | existing closure backlog; Accepted transfer-102: source-order cannon geometry and coordinate registration chain. | M2 T21 S4; M2 T24 S1; M2 T30 S5 |
-| 4135 | `SetupCannon` | M2 T30 S5 | existing closure backlog; Accepted transfer-102: source-order cannon geometry and coordinate registration chain. | M2 T21 S4; M2 T24 S1; M2 T30 S5 |
-| 4146 | `StrCOffset` | M2 T30 S5 | existing closure backlog; Accepted transfer-102: source-order cannon geometry and coordinate registration chain. | M2 T21 S4; M2 T24 S1; M2 T30 S5 |
-| 4151 | `StaircaseHeightData` | M2 T30 S6 | existing closure backlog; Accepted transfer-103: source-order staircase rendering chain. | M2 T21 S4; M2 T24 S1; M2 T30 S6 |
-| 4154 | `StaircaseRowData` | M2 T30 S6 | existing closure backlog; Accepted transfer-103: source-order staircase rendering chain. | M2 T21 S4; M2 T24 S1; M2 T30 S6 |
-| 4157 | `StaircaseObject` | M2 T30 S6 | existing closure backlog; Accepted transfer-103: source-order staircase rendering chain. | M2 T21 S4; M2 T24 S1; M2 T30 S6 |
-| 4162 | `NextStair` | M2 T30 S6 | existing closure backlog; Accepted transfer-103: source-order staircase rendering chain. | M2 T21 S4; M2 T24 S1; M2 T30 S6 |
-| 4172 | `Jumpspring` | M2 T30 S7 | existing closure backlog; Accepted transfer-104: source-order jumpspring creation chain. | M2 T11 / S not recorded; M2 T21 S4; M2 T24 S1; M2 T30 S7 |
-| 4197 | `Hidden1UpBlock` | M2 T30 S8 | existing closure backlog; Accepted transfer-105: source-order item-block selection/rendering chain. | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T30 S8 |
-| 4204 | `QuestionBlock` | M2 T30 S8 | existing closure backlog; Accepted transfer-105: source-order item-block selection/rendering chain. | M2 T21 S4; M2 T24 S1; M2 T30 S8 |
-| 4208 | `BrickWithCoins` | M2 T30 S8 | existing closure backlog; Accepted transfer-105: source-order item-block selection/rendering chain. | M2 T21 S4; M2 T24 S1; M2 T30 S8 |
-| 4212 | `BrickWithItem` | M2 T30 S8 | existing closure backlog; Accepted transfer-105: source-order item-block selection/rendering chain. | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T30 S8 |
-| 4220 | `BWithL` | M2 T30 S8 | existing closure backlog; Accepted transfer-105: source-order item-block selection/rendering chain. | M2 T21 S4; M2 T24 S1; M2 T30 S8 |
-| 4223 | `DrawQBlk` | M2 T30 S8 | existing closure backlog; Accepted transfer-105: source-order item-block selection/rendering chain. | M2 T21 S4; M2 T24 S1; M2 T30 S8 |
-| 4228 | `GetAreaObjectID` | M2 T30 S8 | existing closure backlog; Accepted transfer-105: source-order item-block selection/rendering chain. | M2 T21 S4; M2 T24 S1; M2 T30 S8 |
-| 4233 | `ExitDecBlock` | M2 T30 S8 | existing closure backlog; Accepted transfer-105: source-order item-block selection/rendering chain. | M2 T21 S4; M2 T24 S1; M2 T30 S8 |
-| 4237 | `HoleMetatiles` | M2 T30 S9 | existing closure backlog; Accepted transfer-106: source-order hole/whirlpool registration and UnderPart rendering chain. | M2 T21 S4; M2 T24 S1; M2 T30 S9 |
-| 4240 | `Hole_Empty` | M2 T30 S9 | existing closure backlog; Accepted transfer-106: source-order hole/whirlpool registration and UnderPart rendering chain. | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T30 S9 |
-| 4265 | `StrWOffset` | M2 T30 S9 | existing closure backlog; Accepted transfer-106: source-order hole/whirlpool registration and UnderPart rendering chain. | M2 T21 S4; M2 T24 S1; M2 T30 S9 |
-| 4266 | `NoWhirlP` | M2 T30 S9 | existing closure backlog; Accepted transfer-106: source-order hole/whirlpool registration and UnderPart rendering chain. | M2 T21 S4; M2 T24 S1; M2 T30 S9 |
-| 4273 | `RenderUnderPart` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T18 S2; M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S9 |
-| 4289 | `DrawThisRow` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T30 S9 |
-| 4290 | `WaitOneRow` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T30 S9 |
-| 4296 | `ExitUPartR` | M2 T70 S17 | existing closure backlog; P39 accepted raw pipe/castle and returned-row fidelity repair. | M2 T21 S4; M2 T24 S1; M2 T30 S9 |
-| 4300 | `ChkLrgObjLength` | M2 T30 S10 | existing closure backlog; Accepted transfer-107: common attribute/length/coordinate helper chain. | M2 T21 S4; M2 T24 S1; M2 T30 S10 |
-| 4303 | `ChkLrgObjFixedLength` | M2 T30 S10 | existing closure backlog; Accepted transfer-107: common attribute/length/coordinate helper chain. | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T30 S10 |
-| 4310 | `LenSet` | M2 T30 S10 | existing closure backlog; Accepted transfer-107: common attribute/length/coordinate helper chain. | M2 T21 S4; M2 T24 S1; M2 T30 S10 |
-| 4313 | `GetLrgObjAttrib` | M2 T30 S10 | existing closure backlog; Accepted transfer-107: common attribute/length/coordinate helper chain. | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T30 S10 |
-| 4326 | `GetAreaObjXPosition` | M2 T30 S10 | existing closure backlog; Accepted transfer-107: common attribute/length/coordinate helper chain. | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T30 S10 |
-| 4336 | `GetAreaObjYPosition` | M2 T30 S10 | existing closure backlog; Accepted transfer-107: common attribute/length/coordinate helper chain. | M2 T21 S4; M2 T24 S1; M2 T30 S10 |
-| 4349 | `BlockBufferAddr` | M2 T30 S13 | existing closure backlog; Accepted transfer-110: shared block-buffer address chain. | M2 T21 S4; M2 T24 S1; M2 T30 S13 |
-| 4353 | `GetBlockBufferAddr` | M2 T30 S13 | existing closure backlog; Accepted transfer-110: shared block-buffer address chain. | M2 T17 S4; M2 T21 S4; M2 T24 S1; M2 T30 S13 |
+| 4018 | `EndlessRope` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 4023 | `BalancePlatRope` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 4034 | `DrawRope` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 4039 | `CoinMetatileData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
+| 4042 | `RowOfCoins` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T18 S2; M2 T21 S4; M2 T24 S1 |
+| 4049 | `C_ObjectRow` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S3 |
+| 4052 | `C_ObjectMetatile` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S3 |
+| 4055 | `CastleBridgeObj` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S3 |
+| 4060 | `AxeObj` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S3 |
+| 4064 | `ChainObj` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S3 |
+| 4070 | `EmptyBlock` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S3 |
+| 4074 | `ColObj` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S3 |
+| 4079 | `SolidBlockMetatiles` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S4 |
+| 4082 | `BrickMetatiles` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S4 |
+| 4086 | `RowOfBricks` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T30 S4 |
+| 4091 | `DrawBricks` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S4 |
+| 4094 | `RowOfSolidBlocks` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T30 S4 |
+| 4097 | `GetRow` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S4 |
+| 4099 | `DrawRow` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S4 |
+| 4104 | `ColumnOfBricks` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S4 |
+| 4109 | `ColumnOfSolidBlocks` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S4 |
+| 4112 | `GetRow2` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S4 |
+| 4120 | `BulletBillCannon` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S5 |
+| 4135 | `SetupCannon` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S5 |
+| 4146 | `StrCOffset` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S5 |
+| 4151 | `StaircaseHeightData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S6 |
+| 4154 | `StaircaseRowData` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S6 |
+| 4157 | `StaircaseObject` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S6 |
+| 4162 | `NextStair` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S6 |
+| 4172 | `Jumpspring` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T11 / S not recorded; M2 T21 S4; M2 T24 S1; M2 T30 S7 |
+| 4197 | `Hidden1UpBlock` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T30 S8 |
+| 4204 | `QuestionBlock` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S8 |
+| 4208 | `BrickWithCoins` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S8 |
+| 4212 | `BrickWithItem` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T30 S8 |
+| 4220 | `BWithL` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S8 |
+| 4223 | `DrawQBlk` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S8 |
+| 4228 | `GetAreaObjectID` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S8 |
+| 4233 | `ExitDecBlock` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S8 |
+| 4237 | `HoleMetatiles` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S9 |
+| 4240 | `Hole_Empty` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T30 S9 |
+| 4265 | `StrWOffset` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S9 |
+| 4266 | `NoWhirlP` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S9 |
+| 4273 | `RenderUnderPart` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T18 S2; M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S9 |
+| 4289 | `DrawThisRow` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S9 |
+| 4290 | `WaitOneRow` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S9 |
+| 4296 | `ExitUPartR` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S9 |
+| 4300 | `ChkLrgObjLength` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S10 |
+| 4303 | `ChkLrgObjFixedLength` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T30 S10 |
+| 4310 | `LenSet` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S10 |
+| 4313 | `GetLrgObjAttrib` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T30 S10 |
+| 4326 | `GetAreaObjXPosition` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T18 S2; M2 T21 S4; M2 T24 S1; M2 T30 S10 |
+| 4336 | `GetAreaObjYPosition` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S10 |
+| 4349 | `BlockBufferAddr` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S13 |
+| 4353 | `GetBlockBufferAddr` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T17 S4; M2 T21 S4; M2 T24 S1; M2 T30 S13 |
 | 4376 | `AreaDataOfsLoopback` | M2 T38 S1 | existing closure backlog; Accepted transfer-165: complete enemy flag/loop/frenzy chain and exact dependencies. | M2 T19 S5; M2 T21 S4; M2 T24 S1 |
-| 4381 | `LoadAreaPointer` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T15 S3; M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 4384 | `GetAreaType` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 4392 | `FindAreaPointer` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 4402 | `GetAreaDataAddrs` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 4434 | `StoreFore` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 4472 | `StoreStyle` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 4485 | `WorldAddrOffsets` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 4491 | `AreaAddrOffsets` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 4492 | `World1Areas` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 4493 | `World2Areas` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 4494 | `World3Areas` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 4495 | `World4Areas` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 4496 | `World5Areas` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 4497 | `World6Areas` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 4498 | `World7Areas` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 4499 | `World8Areas` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 4509 | `EnemyAddrHOffsets` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 4512 | `EnemyDataAddrLow` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 4520 | `EnemyDataAddrHigh` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 4528 | `AreaDataHOffsets` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 4531 | `AreaDataAddrLow` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 4539 | `AreaDataAddrHigh` | M2 T30 S14 | existing closure backlog; Accepted transfer-112: area-pointer-header | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
+| 4381 | `LoadAreaPointer` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 S3; M2 T21 S4; M2 T24 S1; M2 T30 S14 |
+| 4384 | `GetAreaType` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
+| 4392 | `FindAreaPointer` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
+| 4402 | `GetAreaDataAddrs` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
+| 4434 | `StoreFore` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
+| 4472 | `StoreStyle` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
+| 4485 | `WorldAddrOffsets` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
+| 4491 | `AreaAddrOffsets` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
+| 4492 | `World1Areas` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
+| 4493 | `World2Areas` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
+| 4494 | `World3Areas` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
+| 4495 | `World4Areas` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
+| 4496 | `World5Areas` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
+| 4497 | `World6Areas` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
+| 4498 | `World7Areas` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
+| 4499 | `World8Areas` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
+| 4509 | `EnemyAddrHOffsets` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
+| 4512 | `EnemyDataAddrLow` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
+| 4520 | `EnemyDataAddrHigh` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
+| 4528 | `AreaDataHOffsets` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
+| 4531 | `AreaDataAddrLow` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
+| 4539 | `AreaDataAddrHigh` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
 | 4550 | `E_CastleArea1` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
 | 4558 | `E_CastleArea2` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
 | 4565 | `E_CastleArea3` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
@@ -2307,7 +2267,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T22 S22 | 1 | 0 | nmi-parent-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S23 | 1 | 0 | initbuffer-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S24 | 6 | 0 | pause-route-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
-| M2 T22 S25 | 6 | 3 | timer-lfsr-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
+| M2 T22 S25 | 6 | 0 | timer-lfsr-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S26 | 8 | 0 | sprite-oam-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S27 | 6 | 0 | sprite-shuffle-equivalence-review; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S28 | 1 | 0 | owner-approved-independent-proof; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -2351,49 +2311,49 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T26 S2 | 0 | 0 | planned-shared-c-migration; [record](../../docs/proposals/m2/t26-victory-terminal.md) |
 | M2 T26 S3 | 0 | 0 | planned-floatey-actor-route; [record](../../docs/proposals/m2/t26-victory-terminal.md) |
 | M2 T26 S4 | 0 | 0 | planned-rom-equivalence; [record](../../docs/proposals/m2/t26-victory-terminal.md) |
-| M2 T26 S5 | 32 | 5 | planned-closure; [record](../../docs/proposals/m2/t26-victory-terminal.md) |
+| M2 T26 S5 | 32 | 0 | planned-closure; [record](../../docs/proposals/m2/t26-victory-terminal.md) |
 | M2 T26 S6 | 2 | 0 | planned-outer-victory-call-order-repair; [record](../../docs/proposals/m2/t26-victory-terminal.md) |
 | M2 T26 S7 | 2 | 0 | planned-outer-victory-route-equivalence; [record](../../docs/proposals/m2/t26-victory-terminal.md) |
 | M2 T27 | 0 | - | [record](../../docs/proposals/m2/screen-status.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
-| M2 T27 S1 | 0 | 1 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/screen-status.md) |
-| M2 T27 S2 | 0 | 28 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/screen-status.md) |
+| M2 T27 S1 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/screen-status.md) |
+| M2 T27 S2 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/screen-status.md) |
 | M2 T27 S3 | 0 | 0 | planned-dispatch-integration; [record](../../docs/proposals/m2/screen-status.md) |
 | M2 T28 | 0 | - | [record](../../docs/proposals/m2/t28-area-output-bootstrap.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
-| M2 T28 S1 | 0 | 2 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
-| M2 T28 S2 | 0 | 3 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
-| M2 T28 S3 | 0 | 10 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
-| M2 T28 S4 | 0 | 19 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
-| M2 T28 S5 | 0 | 1 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
+| M2 T28 S1 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
+| M2 T28 S2 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
+| M2 T28 S3 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
+| M2 T28 S4 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
+| M2 T28 S5 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
 | M2 T28 S6 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
-| M2 T28 S7 | 0 | 19 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
-| M2 T28 S8 | 0 | 15 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
+| M2 T28 S7 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
+| M2 T28 S8 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t28-area-output-bootstrap.md) |
 | M2 T29 | 32 | - | [record](../../docs/proposals/m2/t29-area-parser-geometry.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T29 S1 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
-| M2 T29 S2 | 0 | 5 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
+| M2 T29 S2 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S3 | 0 | 11 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
-| M2 T29 S4 | 0 | 16 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
-| M2 T29 S5 | 0 | 13 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
-| M2 T29 S6 | 0 | 1 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
+| M2 T29 S4 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
+| M2 T29 S5 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
+| M2 T29 S6 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S7 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
-| M2 T29 S8 | 0 | 20 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
-| M2 T29 S9 | 22 | 5 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
-| M2 T29 S10 | 10 | 10 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
+| M2 T29 S8 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
+| M2 T29 S9 | 22 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
+| M2 T29 S10 | 10 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T3 | 2 | - | [record](../../docs/history/M2-T2-title-start-checkpoint.md); [record](../../docs/history/M2-T3-area-bootstrap-and-commands.md); S not recorded |
 | M2 T30 | 144 | - | [record](../../docs/history/M2-T30-area-object-rendering.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
-| M2 T30 S1 | 0 | 3 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
-| M2 T30 S2 | 0 | 2 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
-| M2 T30 S3 | 7 | 7 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
-| M2 T30 S4 | 10 | 10 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
-| M2 T30 S5 | 3 | 3 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
-| M2 T30 S6 | 4 | 4 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
-| M2 T30 S7 | 1 | 1 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
-| M2 T30 S8 | 8 | 8 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
-| M2 T30 S9 | 8 | 4 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
-| M2 T30 S10 | 6 | 6 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
+| M2 T30 S1 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
+| M2 T30 S2 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
+| M2 T30 S3 | 7 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
+| M2 T30 S4 | 10 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
+| M2 T30 S5 | 3 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
+| M2 T30 S6 | 4 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
+| M2 T30 S7 | 1 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
+| M2 T30 S8 | 8 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
+| M2 T30 S9 | 8 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
+| M2 T30 S10 | 6 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
 | M2 T30 S11 | 1 | 0 | owner-approved-source-order, chain-based-implementation, corrective-revalidation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
 | M2 T30 S12 | 1 | 0 | owner-approved-source-order, chain-based-implementation, corrective-revalidation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
-| M2 T30 S13 | 3 | 3 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
-| M2 T30 S14 | 23 | 22 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
+| M2 T30 S13 | 3 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
+| M2 T30 S14 | 23 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
 | M2 T30 S15 | 34 | 0 | owner-approved-source-order, consumer-dependency-audit; [record](../../docs/history/M2-T30-area-object-rendering.md) |
 | M2 T30 S16 | 7 | 6 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
 | M2 T30 S17 | 22 | 22 | owner-approved-source-order, chain-based-implementation; [record](../../docs/history/M2-T30-area-object-rendering.md) |
@@ -2560,8 +2520,8 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T50 S3 | 0 | 2 | declared-plan, noise-envelope-data; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
 | M2 T51 | 0 | - | [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md); [record](../../docs/states/QUEUE.md) |
 | M2 T51 S1 | 0 | 0 | owner-approved-completion, nmi-parent-integration; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
-| M2 T51 S2 | 0 | 4 | owner-approved-completion, screen-parser-output-chain; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
-| M2 T51 S3 | 0 | 1 | owner-approved-completion, kill-enemies-shared-primitive; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
+| M2 T51 S2 | 0 | 0 | owner-approved-completion, screen-parser-output-chain; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
+| M2 T51 S3 | 0 | 0 | owner-approved-completion, kill-enemies-shared-primitive; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T51 S4 | 0 | 34 | owner-approved-completion, enemy-stream-data-chain-and-consumer; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T51 S5 | 0 | 0 | cross-route-integration-certification; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T52 | 0 | - | [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
@@ -2808,20 +2768,20 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T70 S1 | 0 | 0 | owner-approved-source-order, final-current-certification; [record](../../docs/history/m2/t70-final-current-certification.md) |
 | M2 T70 S2 | 0 | 0 | owner-approved-source-order, final-current-certification; [record](../../docs/history/m2/t70-final-current-certification.md) |
 | M2 T70 S3 | 0 | 0 | source-provenance-reconciliation; [record](../../docs/history/m2/t70-final-current-certification.md) |
-| M2 T70 S4 | 0 | 2 | nmi-prefix-material-phase-proof; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S4 | 0 | 0 | nmi-prefix-material-phase-proof; [record](../../docs/history/m2/t70-final-current-certification.md) |
 | M2 T70 S5 | 0 | 0 | timer-random-material-audit; [record](../../docs/history/m2/t70-final-current-certification.md) |
-| M2 T70 S6 | 0 | 4 | sprite-zero-scroll-phase-audit; [record](../../docs/history/m2/t70-final-current-certification.md) |
-| M2 T70 S7 | 0 | 6 | sprite-shuffle-material-audit; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S6 | 0 | 0 | sprite-zero-scroll-phase-audit; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S7 | 0 | 0 | sprite-shuffle-material-audit; [record](../../docs/history/m2/t70-final-current-certification.md) |
 | M2 T70 S8 | 0 | 0 | pause-state-material-audit; [record](../../docs/history/m2/t70-final-current-certification.md) |
-| M2 T70 S9 | 0 | 10 | serial-input-pause-material-chain; [record](../../docs/history/m2/t70-final-current-certification.md) |
-| M2 T70 S10 | 0 | 23 | title-menu-demo-material-audit; [record](../../docs/history/m2/t70-final-current-certification.md) |
-| M2 T70 S11 | 0 | 15 | victory-message-termination-material-repair; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S9 | 0 | 0 | serial-input-pause-material-chain; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S10 | 0 | 0 | title-menu-demo-material-audit; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S11 | 0 | 0 | victory-message-termination-material-repair; [record](../../docs/history/m2/t70-final-current-certification.md) |
 | M2 T70 S12 | 0 | 10 | floatey-score-oam-material-repair; [record](../../docs/history/m2/t70-final-current-certification.md) |
-| M2 T70 S13 | 0 | 13 | screen-palette-material-order-repair; [record](../../docs/history/m2/t70-final-current-certification.md) |
-| M2 T70 S14 | 0 | 12 | hud-intermediate-timer-chain; [record](../../docs/history/m2/t70-final-current-certification.md) |
-| M2 T70 S15 | 0 | 8 | final-reset-startup-source-and-graph-review; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S13 | 0 | 0 | screen-palette-material-order-repair; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S14 | 0 | 0 | hud-intermediate-timer-chain; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S15 | 0 | 0 | final-reset-startup-source-and-graph-review; [record](../../docs/history/m2/t70-final-current-certification.md) |
 | M2 T70 S16 | 0 | 0 | executable-data-binding-manifest; [record](../../docs/history/m2/t70-final-current-certification.md) |
-| M2 T70 S17 | 0 | 146 | material-use-completeness-and-path-reconciliation, corrective-title-pointer-output-chain, corrective-column-output-chain, corrective-parser-output-chain; [record](../../docs/history/m2/t70-final-current-certification.md); [record](../../docs/history/M2-T70-deferred-verification-closure.md) |
+| M2 T70 S17 | 0 | 46 | material-use-completeness-and-path-reconciliation, corrective-title-pointer-output-chain, corrective-column-output-chain, corrective-parser-output-chain; [record](../../docs/history/m2/t70-final-current-certification.md); [record](../../docs/history/M2-T70-deferred-verification-closure.md) |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M2 T9 | 1 | - | [record](../../docs/etc/architecture/smb1-frame-output-ledger.md); [record](../../docs/history/M2-T9-frame-output-ledger-and-reference-recorder.md); S not recorded |
 | M2 Td | 0 | - | [record](../../docs/proposals/m2-rom-structural-recovery.md); [record](../../docs/states/QUEUE.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -2894,8 +2854,9 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M3 T26 S2 | 0 | 0 | fixed-environment-performance-correction; [record](../../docs/history/M3-T26-dos16-playable-performance.md) |
 | M3 T27 | 0 | - | [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
 | M3 T27 S1 | 0 | 0 | core-ppu-text-validation-boundary-census; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
-| M3 T27 S2 | 0 | 42 | ppu-state-storage-extraction; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| M3 T27 S2 | 0 | 14 | ppu-state-storage-extraction; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
 | M3 T27 S3 | 0 | 0 | ppu-read-only-compositor-extraction; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| M3 T27 S4 | 0 | 475 | core-root-mode-area-mechanical-move; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
 | M3 T3 | 0 | - | [record](../../docs/history/M3-T2-win32-command-consumer.md); [record](../../docs/history/M3-T3-colored-text-frame.md); S not recorded |
 | M3 T4 | 0 | - | [record](../../docs/history/M3-T3-colored-text-frame.md); [record](../../docs/history/M3-T4-vga-indexed-frame.md); S not recorded |
 | M3 T5 | 0 | - | [record](../../docs/history/M3-T4-vga-indexed-frame.md); [record](../../docs/history/M3-T5-dos16-composition-root.md); S not recorded |
@@ -3309,6 +3270,49 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | m3-t27-s2-ppu-state-7 | M2 T26 S7 | M3 T27 S2 | 2 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
 | m3-t27-s2-ppu-state-8 | M2 T28 S6 | M3 T27 S2 | 6 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
 | m3-t27-s2-ppu-state-9 | M2 T31 S3 | M3 T27 S2 | 10 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-1 | M3 T27 S2 | M3 T27 S4 | 28 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-2 | M2 T70 S15 | M3 T27 S4 | 8 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-3 | M2 T70 S4 | M3 T27 S4 | 2 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-4 | M2 T22 S25 | M3 T27 S4 | 3 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-5 | M2 T70 S6 | M3 T27 S4 | 4 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-6 | M2 T70 S9 | M3 T27 S4 | 10 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-7 | M2 T70 S7 | M3 T27 S4 | 6 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-8 | M2 T70 S10 | M3 T27 S4 | 23 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-9 | M2 T70 S17 | M3 T27 S4 | 100 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-10 | M2 T26 S5 | M3 T27 S4 | 5 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-11 | M2 T70 S11 | M3 T27 S4 | 15 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-12 | M2 T51 S2 | M3 T27 S4 | 4 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-13 | M2 T27 S1 | M3 T27 S4 | 1 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-14 | M2 T70 S13 | M3 T27 S4 | 13 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-15 | M2 T70 S14 | M3 T27 S4 | 12 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-16 | M2 T27 S2 | M3 T27 S4 | 28 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-17 | M2 T28 S2 | M3 T27 S4 | 3 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-18 | M2 T28 S3 | M3 T27 S4 | 10 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-19 | M2 T28 S1 | M3 T27 S4 | 2 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-20 | M2 T28 S4 | M3 T27 S4 | 19 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-21 | M2 T28 S5 | M3 T27 S4 | 1 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-22 | M2 T28 S7 | M3 T27 S4 | 19 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-23 | M2 T28 S8 | M3 T27 S4 | 15 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-24 | M2 T30 S13 | M3 T27 S4 | 3 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-25 | M2 T29 S2 | M3 T27 S4 | 5 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-26 | M2 T29 S4 | M3 T27 S4 | 16 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-27 | M2 T29 S5 | M3 T27 S4 | 13 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-28 | M2 T29 S6 | M3 T27 S4 | 1 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-29 | M2 T29 S8 | M3 T27 S4 | 20 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-30 | M2 T51 S3 | M3 T27 S4 | 1 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-31 | M2 T29 S9 | M3 T27 S4 | 5 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-32 | M2 T29 S10 | M3 T27 S4 | 10 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-33 | M2 T30 S1 | M3 T27 S4 | 3 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-34 | M2 T30 S2 | M3 T27 S4 | 2 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-35 | M2 T30 S3 | M3 T27 S4 | 7 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-36 | M2 T30 S4 | M3 T27 S4 | 10 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-37 | M2 T30 S5 | M3 T27 S4 | 3 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-38 | M2 T30 S6 | M3 T27 S4 | 4 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-39 | M2 T30 S7 | M3 T27 S4 | 1 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-40 | M2 T30 S8 | M3 T27 S4 | 8 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-41 | M2 T30 S9 | M3 T27 S4 | 4 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-42 | M2 T30 S10 | M3 T27 S4 | 6 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s4-core-roots-43 | M2 T30 S14 | M3 T27 S4 | 22 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3861,4 +3865,5 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T26 S2 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T26-dos16-playable-performance.md) |
 | M3 T27 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
 | M3 T27 S2 | 42 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
-| M3 T27 S3 | 0 | 1992 | none / 0 | none / 0 | active; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| M3 T27 S3 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| M3 T27 S4 | 475 | 1992 | none / 0 | none / 0 | active; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |

@@ -11,7 +11,7 @@
 #include "io/control.h"
 #include "game/area.h"
 #include "game/game.h"
-#include "game/ppu_frame.h"
+#include "ppu/frame.h"
 #include "platform/win32/audio_output.h"
 #include "platform/win32/focus_pause.h"
 #include "platform/win32/text_console.h"
@@ -166,7 +166,7 @@ static void mysmb_win32_build_frame(void)
             !mysmb_win32_text_console_present(&g_console,&g_text_frame));
         return;
     }
-    mysmb_ppu_frame_build(&g_game, &g_ppu_frame);
+    mysmb_ppu_frame_build(&g_game.ppu, &g_ppu_frame);
     mysmb_game_io_video(&g_ppu_frame, &video);
     mysmb_win32_draw_gameplay(&video);
 }

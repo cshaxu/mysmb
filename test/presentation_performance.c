@@ -53,7 +53,7 @@ static int compare_frames(unsigned int cases)
         game.ppu.visible_sprite0_split=(unsigned char)((n/32U)%2U);
         before=game;
         mysmb_ppu_frame_reference(&game,&reference);
-        mysmb_ppu_frame_build(&game,&actual);
+        mysmb_ppu_frame_build(&game.ppu,&actual);
         if(memcmp(&game,&before,sizeof(game)))return 1;
         if(memcmp(actual.pixels,reference.pixels,sizeof(actual.pixels))) {
             for(i=0U;i<sizeof(actual.pixels);++i)
@@ -99,7 +99,7 @@ int main(void)
     n=512U;start=stamp();
     for(i=0U;i<n;++i)mysmb_ppu_frame_reference(&game,&reference);
     old_time=stamp()-start;start=stamp();
-    for(i=0U;i<n;++i)mysmb_ppu_frame_build(&game,&actual);
+    for(i=0U;i<n;++i)mysmb_ppu_frame_build(&game.ppu,&actual);
     new_time=stamp()-start;
     report("dense_reference_graphics",old_time,n);
     report("dense_current_graphics",new_time,n);
@@ -130,7 +130,7 @@ int main(void)
                 (i%50U<10U?MYSMB_BUTTON_A:0U)):0U;input.buttons2=0U;
         start=stamp();mysmb_game_tick(&game,&input,&frame);tick_time+=stamp()-start;
         before=game;
-        start=stamp();mysmb_ppu_frame_build(&game,&actual);graphics_time+=stamp()-start;
+        start=stamp();mysmb_ppu_frame_build(&game.ppu,&actual);graphics_time+=stamp()-start;
         mysmb_ppu_frame_reference(&game,&reference);
         if(memcmp(actual.pixels,reference.pixels,sizeof(actual.pixels)))return 3;
         start=stamp();

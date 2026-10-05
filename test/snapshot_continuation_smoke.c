@@ -92,7 +92,7 @@ int main(int argc,char **argv)
         mysmb_win32_audio_capture(&sound2,other.payload+MYSMB_SNAPSHOT_CORE_BYTES);
         if(memcmp(current.payload,other.payload,sizeof(current.payload)) ||
             memcmp(pcm1,pcm2,sizeof(pcm1)))return 11;
-        mysmb_ppu_frame_build(&live,&pixels1);mysmb_ppu_frame_build(&restored,&pixels2);
+        mysmb_ppu_frame_build(&live.ppu,&pixels1);mysmb_ppu_frame_build(&restored.ppu,&pixels2);
         if(memcmp(pixels1.pixels,pixels2.pixels,sizeof(pixels1.pixels)))return 12;
         hash=digest(hash,current.payload,sizeof(current.payload));
         hash=digest(hash,pixels1.pixels,sizeof(pixels1.pixels));
