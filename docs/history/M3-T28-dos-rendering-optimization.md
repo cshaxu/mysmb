@@ -430,3 +430,103 @@ Compare incremental and cumulative fixed-config costs against frozen S1 and
 accepted S2;reject a bitmap if construction/allocation outweighs savings. Product
 changes require all three builds/EXEs and focused native/host checks. Scope[],
 expectedMatches[],baseline/maximum1992/1992,new0,no node custody transfer.
+
+## S3 P2 admission: S1/S2 memory lifecycle baseline first
+
+Owner approves a bounded memory baseline inside active S3 before selecting its
+optimization. Compare retained S1 no-cache and S2 current-cache builds,plus an
+explicit optional-cache allocation-failure probe. Read-only DOS MCB/allocator
+observations cover initialization,required pixels/snapshot packs,text pack,
+graphics/text round trips,save/load transaction callbacks and shutdown. Report
+process-owned conventional blocks separately from minimum image bytes and
+requested dynamic storage;keep environment/PSP/probe/runtime overhead visible.
+Use unmodified installed DOSBox configuration and the original compiler/runtime.
+Local probe-only injection must not alter core/game semantics;compare complete
+indexed output and snapshots across cache/no-cache/fallback routes. Estimated
+2-4test/governance files,no product change or EXE refresh in this audit P.
+Historical1992/1992,local1991/1992nodes,4260/4261feasible controls unchanged;
+scope/expected/actual[],new0. S3 remains open after the baseline;its occupancy/
+compact-cache decision and all-route/hardware limits are separate obligations.
+
+## S3 P2 audit result: bounded conventional-memory lifecycle baseline
+
+The S1/S2 prerequisite audit is complete for the six declared lifecycle phases;
+S3 itself remains open for occupancy/compact-cache decisions. Original large-model
+compiler/runtime builds four contained probes:S1 retained no-cache root/header/
+libraries,S2 current cache,injected optional-cache failure,and real allocation
+pressure with the unmodified S2 allocator call. Read-only DOS MCB walking queries
+the process PSP and environment;far-heap walking reports allocated/free entries.
+File callbacks sample before/after open/read/write/close;unbuffered report output
+reduces observer allocation. All probes/resources/frames remain ignored below
+build/m3-t28-s3. Temporary compiler path-length failures were resolved using
+shorter ignored build temp paths,not a different compiler or product workaround.
+
+| Final bounded probe | Owned conventional peak,including observer/MCB/environment | Minimum external contiguous free block | Peak far-heap live payload |
+| --- | --- | --- | --- |
+| S1 no cache | 575632bytes(562.141KiB) | 73440bytes | 97436bytes |
+| S2 full cache | 610160bytes(595.859KiB) | 38912bytes | 130204bytes |
+| S2 injected cache failure | 577408bytes(563.875KiB) | 71664bytes | 97436bytes |
+
+These are measured instrumented-process reservations,not exact pristine-product
+minimum requirements. Final probe minimum MZ image sizes are457696/459472/459520;
+pristine S1/S2 minima are451968/453568. The MZ image figures exclude PSP and are
+not total runtime footprints. Initial S1/S2 primary MCBs are473024/474752bytes,
+with160-byte owned environment blocks;primary reservations contain image plus
+PSP/runtime reserve/observer,not just touched data. Do not subtract image deltas
+to invent a proven product minimum. No fragmented/loaded-only arithmetic can
+certify DOS5 or physical486SX fit;those runtime/host bounds remain explicit.
+Earlier roughly570KiB loaded-plus-requested estimate omitted reservation and
+allocation overhead and is not the actual conventional-memory acceptance value.
+
+Measured initialization sequence:S1/S2 requested pixel61440bytes consumes a
+61472-byte auxiliary DOS block;adding snapshot20084consumes20128more. Text15400
+adds20848reserved bytes,including allocator slack. After mandatory and text
+packs,auxiliary owned storage is102448bytes for both versions. The optional
+32768-byte cache adds32800reserved bytes,bringing S2 auxiliary storage to135248.
+Primary-image difference1728bytes explains the rest of the34528-byte measured
+peak difference. All four explicit production allocations were inventoried:
+pixels and snapshot mandatory;text optional;cache optional and attempted after
+normal pack initialization. Source file adapters additionally request standard
+stdio storage:observed save/load adds512live heap bytes within existing reserves,
+without an additional owned DOS block in this corpus.
+
+Declared phases are warmed title,restored populated ground,text switch,return
+to graphics,explicit save,and explicit load. S1/S2/failure sample counts41/42/42
+include initialization,file transactions and shutdown. Graphical pixel storage,
+text storage,snapshot packs and S2 cache coexist through text mode;Tab releases
+none. After root shutdown,pixels/cache are free;after main cleanup far-heap live
+payload is zero. The runtime retains DOS heap blocks until process exit,so heap
+free space and DOS free blocks are distinct. This is allocator behavior,not a
+claimed leak. Only actual process termination returns its blocks to DOS.
+
+A fourth unchanged-allocator probe reserves55136DOS bytes after normal packs,
+leaving a16KiB target external block. It observes16368bytes largest contiguous
+free,cache allocation/validity zero,and completes all six phases,file callbacks
+and shutdown. Its raw process-owned peak includes deliberate ballast and is
+excluded from the product-peak table. Both pressure and injected failure remain
+uncached;normal S2 cache allocates and stays valid across switching/save/load.
+All four runs exit0;24 complete61440-byte indexed outputs and four10035-byte
+final snapshots match across modes. Installed DOSBox configuration identity is
+unchanged,no speed/memory/machine overrides;owned private desktops avoid global
+input or foreground disruption. Concurrent runs are memory/correctness probes,
+not accepted timing measurements.
+
+Stack marking starts before initialization and retains100patterned bytes in
+S1/S2/injected observer paths(with two96-byte marking margins);pressure retains94patterned bytes in its
+reported bounded watermark. The observer adds nested stack work,so this is
+not a replacement for pristine all-route stack qualification. No stack reduction
+is authorized by these results. Snapshots/files were sampled at declared
+boundaries;arbitrary gameplay/all runtime internals remain unobserved. A complete
+controlled free-memory threshold sweep for pristine products and real DOS/486SX
+qualification is not done and must not be inferred from successful launches.
+
+Decision:S2 caching earns no unconditional memory-fit acceptance. Its32KiB cost
+and bounded fallback are now quantified;S3 compares compact/no-cache alternatives.
+S4 receives the measured125KiB static VGA-plane opportunity;S5 receives graphical/
+text coexistence and allocator lifetime findings. S6 must integrate these results
+with complete-frame/input budgets before selecting a default. S1/S2 performance
+proofs remain scoped and valid;normal playability is a separate unsatisfied gate.
+No gameplay/PPU semantics or three product EXEs changed;two governance files
+carry this audit. Historical1992/1992,local1991/1992nodes and4260/4261feasible
+controls(raw4342,infeasible81),scope/expected/actual[],new0,unchanged. Original
+custody and active S3 remain in place;no successor S is admitted by this audit.

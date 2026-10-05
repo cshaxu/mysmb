@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T28 S3 P1; owner-approved memory/performance evaluation amendment. |
+| Identifier Mode | Continuation: M3 T28 S3 P3; occupancy/compact-cache comparison after bounded memory audit. |
 | Admission And Approval | Owner authorizes execution and the joint conventional-memory/playability contract. S2 closed;S3 remains active. |
-| Objective | Compare occupancy and compact/bounded CHR candidates against S1/S2;minimize peak DOS conventional memory while preserving playability,allowing small measured time cost for material memory savings only within the playable budget;memory-fit/startup and performance/playability are independent mandatory gates. |
+| Objective | S1/S2 bounded memory audit completed;compare occupancy and compact/bounded CHR candidates against S1/S2;minimize peak DOS conventional memory while preserving playability,allowing small measured time cost for material memory savings only within the playable budget;memory-fit/startup and performance/playability are independent mandatory gates. |
 | Non-goals | No core ROM routine/state/timing changes,no emulator settings,no text/VGA redesign,no nominal-cadence or M2/M4 acceptance. |
 | Reference Baseline | Post-T27 source and retained three products;historical1992/1992,local1991/1992 nodes and4260/4261 feasible controls,raw4342/infeasible81. |
 | Candidate Proposal | [T28 retained proposal and audit](../history/M3-T28-dos-rendering-optimization.md). Removed from pending QUEUE on admission. |
-| Files And ABI Surface | Shared ppu/frame cache/workspace,composition-root lifetime binding and focused tests/build membership;initial occupancy estimate80-200lines,2-4files;compact-cache option150-350lines,4-7files with pre-change report. No core/state/snapshot ABI changes. |
+| Files And ABI Surface | Shared ppu/frame cache/workspace,composition-root lifetime binding and focused tests/build membership;P2 audit changed2governance files,no product/EXE change. Next occupancy estimate80-200lines,2-4files;compact-cache option150-350lines,4-7files with pre-change report. No core/state/snapshot ABI changes. |
 | Applicable Rules | README Task Reading Set,EXECUTION,DOCUMENT,ARCHITECTURE,CODING,CONTRIBUTING and source policy. |
 | Verification | Independent complete indexed/reference equality,resource/reset/fallback/two-instance/cache tests,native x86/x64 and DOS16 far-memory builds;S1 fixed-config complete-frame/input timing,simultaneous peak allocations/contiguous free blocks/stack/fallback checks under the proposal memory contract,platform purity and three EXEs for every product-code P. |
 | Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0,maximum1992/1992;no custody transfer. S3 owns infrastructure-only implementation;original node custodians unchanged. |
@@ -42,6 +42,14 @@
   full heap/stack peak and hardware/version qualification remain M4.
 
 ## Compact closure status
+
+T28 S3 P2 memory prerequisite audit:instrumented S1/S2 owned conventional peaks
+575632/610160bytes;largest remaining external blocks73440/38912. Four lifecycle
+routes,including real allocation pressure,24complete outputs and final snapshots
+agree;cache fallback works. Graphical/text packs coexist and CRT retains freed
+heap blocks. Exact pristine minimum/full stack/hardware fit and playability are
+not certified. Products unchanged,new0;S3 occupancy/cache decision remains active.
+[Bounded audit and limitations](../history/M3-T28-dos-rendering-optimization.md#s3-p2-audit-result-bounded-conventional-memory-lifecycle-baseline).
 
 T28 S2 closes optional per-instance decoded CHR cache;rejected slower palette
 staging/naive cache. Fixed-config warm PPU stage12.682-15.579percent shorter,
