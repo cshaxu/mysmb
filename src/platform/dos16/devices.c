@@ -5,6 +5,7 @@
 #include "io/pacing.h"
 #include <dos.h>
 #include <conio.h>
+#include <string.h>
 
 static struct mysmb_dos16_keyboard keyboard;
 static void (interrupt far *old_keyboard)();
@@ -152,13 +153,15 @@ void mysmb_dos16_devices_input(struct mysmb_io_input *input)
 
 void mysmb_dos16_devices_present(const struct mysmb_vga_frame *frame)
 {
-    unsigned short page, offset;
+    unsigned short page;
     unsigned char far *video;
     if(!video_ready || text_mode)return;
     video=(unsigned char far *)0xa0000000UL;
+    /* Large-model memcpy accepts far pointers in the original runtime.
+     * Each16KB transfer remains within its source and destination segments.
+     * Four pages cover exactly64000bytes,without crossing the VGA segment. */
     for (page=0U;page<MYSMB_VGA_PAGE_COUNT;++page)
-        for (offset=0U;offset<MYSMB_VGA_PAGE_SIZE;++offset)
-            video[page*MYSMB_VGA_PAGE_SIZE+offset]=frame->pages[page][offset];
+        memcpy(video+page*MYSMB_VGA_PAGE_SIZE,frame->pages[page],MYSMB_VGA_PAGE_SIZE);
 }
 void mysmb_dos16_devices_text(const struct mysmb_io_text_frame MYSMB_IO_FAR *frame)
 {

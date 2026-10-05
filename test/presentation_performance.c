@@ -7,6 +7,7 @@
 #include "app/game_snapshot.h"
 #include "game/presentation/text/scene.h"
 #include "platform/vga/vga_frame.h"
+#include "io/scale.h"
 #ifdef MYSMB_LOCAL_TITLE
 #include "smb1_local_rom.h"
 #include "smb1_local_title.h"
@@ -62,6 +63,22 @@ static int compare_frames(unsigned int cases)
     }
     printf("pixel_equal_cases=%u state_unchanged=1\n",cases);return 0;
 }
+static void scale_reference(const struct mysmb_io_video_frame *video)
+{
+    unsigned int row;
+    for(row=0U;row<200U;++row)
+        mysmb_io_scale_row(video,320U,200U,(mysmb_io_u16)row,
+            vga.pages[row/50U]+(row%50U)*320U);
+}
+static unsigned char scaled_reference[4][16000];
+static int compare_scaling(const struct mysmb_io_video_frame *video)
+{
+    unsigned int page;
+    scale_reference(video);
+    for(page=0U;page<4U;++page)memcpy(scaled_reference[page],pages[page],16000U);
+    mysmb_vga_frame_build(video,&vga);
+    return memcmp(scaled_reference,pages,sizeof(pages))==0;
+}
 static void report(const char *name,double seconds,unsigned int count)
 {
     printf("%s_us_per_frame=%.3f\n",name,seconds*1000000.0/count);
@@ -86,6 +103,13 @@ int main(void)
     report("dense_reference_graphics",old_time,n);
     report("dense_current_graphics",new_time,n);
     printf("dense_graphics_speedup=%.3f\n",old_time/new_time);
+    mysmb_vga_frame_initialize(&vga,pages[0],pages[1],pages[2],pages[3]);
+    mysmb_game_io_video(&actual,&video);
+    if(!compare_scaling(&video))return 7;
+    start=stamp();for(i=0U;i<n;++i)scale_reference(&video);old_time=stamp()-start;
+    start=stamp();for(i=0U;i<n;++i)mysmb_vga_frame_build(&video,&vga);new_time=stamp()-start;
+    report("reference_vga_scale",old_time,n);report("current_vga_scale",new_time,n);
+    printf("vga_scale_speedup=%.3f\n",old_time/new_time);
 #ifdef MYSMB_LOCAL_TITLE
     mysmb_game_power_on(&game);
     mysmb_game_bind_area_source(&game,mysmb_local_prg,MYSMB_LOCAL_PRG_SIZE);
@@ -113,6 +137,7 @@ int main(void)
         text_time+=stamp()-start;
         mysmb_game_io_video(&actual,&video);
         start=stamp();mysmb_vga_frame_build(&video,&vga);scale_time+=stamp()-start;
+        if(!compare_scaling(&video))return 8;
         start=stamp();
         if(!mysmb_game_snapshot_capture(&game,&snapshot,fingerprint))return 5;
         mysmb_snapshot_cache_update(&cache,&snapshot,1U);save_time+=stamp()-start;

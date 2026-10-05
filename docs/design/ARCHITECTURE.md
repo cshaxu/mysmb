@@ -24,7 +24,8 @@ reads original RAM,changes game state,or calls a device. Win32's audio adapter
 accepts only the neutral audio frame;its synthesis state remains host-owned.
 
 DOS16 uses the same glue and full indexed frame. Shared IO owns the stable
-64-color presentation palette and bounded row scaling;VGA owns paged storage,
+64-color presentation palette and generic bounded row scaling;VGA owns fixed
+320x200 ratio expansion,paged storage,
 DAC programming and video memory. DOS devices own physical held-key decoding,
 BIOS mode lifetime and PIT sampling. Only its composition root binds local
 immutable program resources and allocates the shared compositor's pixel store.

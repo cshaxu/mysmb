@@ -39,6 +39,9 @@ u.GetSystemMenu.argtypes = [w.HWND, w.BOOL]
 u.GetSystemMenu.restype = w.HANDLE
 u.GetMenuState.argtypes = [w.HANDLE, w.UINT, w.UINT]
 u.PostMessageW.argtypes = [w.HWND, w.UINT, w.WPARAM, w.LPARAM]
+u.SendMessageTimeoutW.argtypes = [w.HWND,w.UINT,w.WPARAM,w.LPARAM,
+                                w.UINT,w.UINT,c.POINTER(c.c_size_t)]
+u.SendMessageTimeoutW.restype = c.c_size_t
 u.CloseDesktop.argtypes = [w.HANDLE]
 k.CreateProcessW.argtypes = [w.LPCWSTR, w.LPWSTR, c.c_void_p, c.c_void_p,
                             w.BOOL, w.DWORD, c.c_void_p, w.LPCWSTR,
@@ -120,6 +123,7 @@ def main():
         if shutil.which("pwsh.exe"):
             sources.append("pwsh")
         for source in sources:
+            print("Checking launch/close route: " + source, flush=True)
             text = source in ("cmd", "powershell", "pwsh")
             flags = 8 if source == "cmd-detached" else 0 if source == "other" else 0x10
 
@@ -152,6 +156,14 @@ def main():
                 time.sleep(0.02)
             require(root, "Product root missing for " + source)
             require(bool(console) == text, "Wrong presenter for " + source)
+            # Window creation precedes device startup. Wait for its message
+            # owner rather than treating HWND visibility as application ready.
+            deadline, result = time.monotonic() + 8, c.c_size_t()
+            while time.monotonic() < deadline:
+                if u.SendMessageTimeoutW(root[0],0,0,0,3,250,c.byref(result)):
+                    break
+            else:
+                raise RuntimeError("Root message owner unresponsive: " + source)
             child = k.OpenProcess(0x101001, False, root[1])
             require(child, "Open exact product child")
             handles.append(child)
@@ -168,6 +180,9 @@ def main():
         (output / "startup-close.json").write_text(json.dumps(rows, indent=2) + "\n")
         print(json.dumps(rows))
     finally:
+        # Preserve completed routes on failure;never infer the missing ones.
+        (output / "startup-close-progress.json").write_text(
+            json.dumps(dict(completedRoutes=rows), indent=2) + "\n")
         for window in windows(desktop):
             if window[2] == "MySMBWindow":
                 handle = k.OpenProcess(0x101001, False, window[1])
