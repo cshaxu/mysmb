@@ -1,8 +1,27 @@
 # Project Status
 
-**Idle.**
+**Active: M3 T25 S1 P1.**
 
-M3 T24 S4 corrective closed;queue head unnumbered,T19 suspended.
+## M3 T25 S1 Packet
+
+| Field | Required record |
+| --- | --- |
+| Identifier Mode | New M3 T25 S1 P1,diagnosis only. |
+| Admission And Approval | Owner directs T24 closure and next queue admission;T24 S4 closed. |
+| Objective | Validate DOS16 frame/stage measurements and identify dominant performance owner. |
+| Non-goals | Product optimization,game semantics,EXE refresh,physical486SX qualification,M2 certification. |
+| Reference Baseline | Historical1992/1992;local1991/1992nodes,4260/4261feasible controls,raw4342,infeasible81. |
+| Candidate Proposal | [T25 S1](../history/M3-T25-dos16-performance-diagnosis.md#s1-admission). |
+| Files And ABI Surface | Governance and ignored diagnostic mirrors/receipts only;zero product lines,60-120governance lines estimate,no ABI. |
+| Applicable Rules | Task Reading Set,Execution,Document,Architecture,Coding and source policy. |
+| Verification | Review same-binary/workload DOSBox auto/auto versus dynamic/max,stage PIT attribution,counter-only and timestamp controls;admission/closure gates. |
+| Expected Markers | Scope [],expected [],new0,maximum historical1992/1992. |
+| Asset Needs | Existing owner-local ROM-derived EXE/snapshot,nonredistributable diagnostic inputs only;ignored build/m3-t25-s1,neutral tracked totals,no imports. |
+| Reporting Requirements | Frame/stage costs,measurement overhead,dominant owner,actual diff,unchanged node/edge totals and emulator limits. |
+| Stop Conditions | Amend scope before product changes or unsupported measurement/certification claims. |
+| Exit Criteria | Receipt identities and instrumentation checked,dominant-path conclusion supported,bounded repair handed off,ledger/gates/commit complete. |
+| Original Owner Request | Close current T and admit next T;DOS16 performance diagnosis precedes repair. |
+| Similar-Issue Sweep | Compare game/PPU background/sprites/scale/VGA/snapshot/wait stages and CPU settings;retain physical qualification as separate work. |
 
 ## Current Technical Baseline
 

@@ -2889,6 +2889,8 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M3 T24 S2 | 0 | 0 | window-client-geometry; [record](../../docs/history/M3-T24-win32-window-console-integration.md) |
 | M3 T24 S3 | 0 | 0 | console-restore-geometry; [record](../../docs/history/M3-T24-win32-window-console-integration.md) |
 | M3 T24 S4 | 0 | 0 | rdp-input-focus-correction; [record](../../docs/history/M3-T24-win32-window-console-integration.md) |
+| M3 T25 | 0 | - | [record](../../docs/history/M3-T25-dos16-performance-diagnosis.md) |
+| M3 T25 S1 | 0 | 0 | dos16-performance-diagnosis; [record](../../docs/history/M3-T25-dos16-performance-diagnosis.md) |
 | M3 T3 | 0 | - | [record](../../docs/history/M3-T2-win32-command-consumer.md); [record](../../docs/history/M3-T3-colored-text-frame.md); S not recorded |
 | M3 T4 | 0 | - | [record](../../docs/history/M3-T3-colored-text-frame.md); [record](../../docs/history/M3-T4-vga-indexed-frame.md); S not recorded |
 | M3 T5 | 0 | - | [record](../../docs/history/M3-T4-vga-indexed-frame.md); [record](../../docs/history/M3-T5-dos16-composition-root.md); S not recorded |
@@ -3840,3 +3842,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T24 S2 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T24-win32-window-console-integration.md) |
 | M3 T24 S3 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T24-win32-window-console-integration.md) |
 | M3 T24 S4 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T24-win32-window-console-integration.md) |
+| M3 T25 S1 | 0 | 1992 | none / 0 | none / 0 | active; [record](../../docs/history/M3-T25-dos16-performance-diagnosis.md) |

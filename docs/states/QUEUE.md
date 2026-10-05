@@ -7,6 +7,10 @@ a task ledger, or a record of completed work. Active work is recorded only in
 [CURRENT.md](CURRENT.md); closed tasks remain in their proposal/history record
 and in the generated [node/task ledger](NODE_TASK_LEDGER.md).
 
+## DOS16 playability repair
+
+1. [DOS16 playability repair](../proposals/m3/dos16-performance-repair.md) - follow-up implementation and regression candidate after admitted T25 diagnosis review;unnumbered.
+
 ## Suspended Windows audio work
 
 1. [Bounded Windows audio startup](../proposals/m3/bounded-windows-audio-startup.md) - retained M3 T19 S1,unfinished and suspended by owner;single-process lifetime prototypes,implementation and verification remain. Resume existing identifiers after the active character task;no repair acceptance.
