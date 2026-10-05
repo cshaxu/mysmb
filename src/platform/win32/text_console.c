@@ -121,6 +121,7 @@ int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console,
         MF_BYCOMMAND|MF_ENABLED)==(UINT)-1) {
         mysmb_win32_text_console_close(console);return 0;
     }
+    console->focused=1U;
     return 1;
 }
 void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console)
@@ -135,7 +136,13 @@ void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console)
             (void)SetWindowPlacement(console->window,&console->shell_placement);
             /* Host pixel placement can round a restored cell view down a row.
              * Restore its original cell rectangle explicitly after placement. */
-            (void)SetConsoleWindowInfo(console->shell_output,TRUE,&console->shell_info.srWindow);
+            {
+                SMALL_RECT tiny={0,0,0,0};
+                /* Host pixel rounding may also grow a narrow shell buffer. */
+                (void)SetConsoleWindowInfo(console->shell_output,TRUE,&tiny);
+                (void)SetConsoleScreenBufferSize(console->shell_output,console->shell_info.dwSize);
+                (void)SetConsoleWindowInfo(console->shell_output,TRUE,&console->shell_info.srWindow);
+            }
         }
         /* Discard game key breaks/shortcuts before returning input to shell. */
         if(console->input && console->input!=INVALID_HANDLE_VALUE)
@@ -156,7 +163,7 @@ void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console)
     console->opened=0U;console->window=NULL;
     console->input=console->output=NULL;
     console->shell_output=NULL;console->shell_title=NULL;
-    console->borrowed=console->mode_saved=0U;console->geometry_pending=0U;
+    console->borrowed=console->mode_saved=console->focused=0U;console->geometry_pending=0U;
 }
 /* A host resize changes the device buffer/view independently of the frame.
  * Repair geometry before drawing;only actual device loss requests fallback.
@@ -227,15 +234,27 @@ int mysmb_win32_text_console_key(struct mysmb_win32_text_console *console,
     DWORD count,read;
     INPUT_RECORD event;
     if(!console->opened || !GetNumberOfConsoleInputEvents(console->input,&count) ||
-        count==0U || !ReadConsoleInputA(console->input,&event,1U,&read) || read!=1U)return 0;
+        count==0U || !ReadConsoleInputW(console->input,&event,1U,&read) || read!=1U)return 0;
     *key=*scan=0U;*pressed=0U;
     if(event.EventType==FOCUS_EVENT) {
-        *pressed=event.Event.FocusEvent.bSetFocus?1U:0U;return 2;
+        /* Internal focus records are optional release/pause hints only.
+         * A host need not send them before delivering a valid key down. */
+        *pressed=event.Event.FocusEvent.bSetFocus?1U:0U;
+        console->focused=*pressed;return 2;
     }
     if(event.EventType==KEY_EVENT) {
         *key=event.Event.KeyEvent.wVirtualKeyCode;
         *scan=event.Event.KeyEvent.wVirtualScanCode;
         *pressed=event.Event.KeyEvent.bKeyDown?1U:0U;
+        if(!*key) {
+            WORD character=(WORD)event.Event.KeyEvent.uChar.UnicodeChar;
+            if(character>='a' && character<='z')character=(WORD)(character-'a'+'A');
+            if((character>='A' && character<='Z') || character==VK_TAB ||
+                character==VK_RETURN || character==VK_ESCAPE)*key=character;
+        }
+        /* Delivered key downs establish device input without foreground or
+         * a mandatory gain record. Key ups never undo a prior loss hint. */
+        if(*pressed && *key)console->focused=1U;
     }
     return 1;
 }

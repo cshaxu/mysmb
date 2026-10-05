@@ -30,6 +30,7 @@ int main(int argc,char **argv)
     owned_window=CreateWindow(wc.lpszClassName,"test",0,0,0,256,240,
         NULL,NULL,wc.hInstance,NULL);
     if(!owned_window)return 3;
+    SendMessage(owned_window,WM_SETFOCUS,0,0);
     mysmb_io_control_initialize(&g_control);mysmb_win32_power_on();
     mysmb_win32_snapshot_initialize();
     /* Production directory discovery must locate this executable,even though

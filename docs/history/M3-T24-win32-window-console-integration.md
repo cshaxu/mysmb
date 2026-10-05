@@ -246,3 +246,90 @@ Shared borrowed-host Close remains Windows' shared shell-close semantics;
 Escape/root exit restores shell without explicitly closing or killing it.
 Historical1992/1992;retained local1991/1992nodes,4260/4261feasible controls
 (raw4342/infeasible81);M2 final certification remains incomplete. New0.
+
+## S4 corrective admission: RDP window and borrowed-console input
+
+Owner reopens T24:CMD correctly reuses console under RDP but all keys fail;
+owner expands correction to graphical and text input together. Earlier S1-S3
+explicitly did not observe live RDP,and their embedded focus fixture matched
+foreground HWND by construction. Actual interactive CMD checked root-posted
+Escape,not console KEY_EVENT->Tab. That missed the foreground-equality clause.
+
+Scope is window focus-message ownership and console key delivery into the same
+keyboard/shortcut owner,including held/repeat/release,WASD/JK,Enter/Shifts,
+Tab/P/O/Escape,loss/reacquisition and auto-pause. Estimate100-250lines across
+Windows root,console/header,embedded root tests and isolated host tool.
+No game,neutral IO,DOS mappings,artwork or worker process. Preserve S1-S3
+geometry/lifetime evidence;reopen only input applicability and its successors.
+
+A delivered console KEY_EVENT must not require GetConsoleWindow to equal the
+foreground HWND. Window focus/activation messages must own graphical focus,
+not a global query that can disagree with delivered local input under RDP.
+Console focus records may clear stale input as best-effort hints,but cannot be
+required to admit subsequent delivered key downs. No global keyboard polling.
+Both widths must pass mismatched/null foreground fixtures,actual targeted
+private CMD CONIN Tab->graphics window messages->console Escape and the prior
+host suite. These controlled host conditions are not a live RDP-client trial.
+Original DOS16 builds and three local products refresh;new ROM credit0.
+
+Primary [GetConsoleWindow contract](https://learn.microsoft.com/en-us/windows/console/getconsolewindow)
+explains pseudoconsole message-only handles,and
+[focus record contract](https://learn.microsoft.com/en-us/windows/console/focus-event-record-str)
+marks focus records internal. References only;no third-party source imported.
+Existing owner-local ROM remains ignored build input,not research or tracked data.
+
+### S4 corrective closure
+
+The owner-reported RDP all-key failure reopens input applicability,not original
+ROM logic. Against retained S3 root0e59d210,targeted isolated probes reject
+window WM_KEYDOWN with exit121 and actual CONIN KEY_EVENT with exit122 when
+foreground is null. Current root passes both0. The old global HWND equality
+was a required gate for keyboard,Tab,P/O and focus/pause polling;it was not
+removed by the earlier async-keyboard repair. S1-S3 fake foreground fixture
+masked this clause and interactive CMD used root-posted Escape instead of CONIN.
+
+Window focus now belongs to WM_SETFOCUS/KILLFOCUS and activation messages.
+Console device input belongs to delivered key records;internal focus records
+are optional release/pause hints,not required gain permission. A subsequent
+valid down reacquires device input;an up alone never reverses a loss hint.
+Unicode console reads decode ASCII control/game keys when VK is absent.
+All channels feed the same held/press/repeat/shortcut owner;J=B,K=A retained.
+No production GetForegroundWindow/GetAsyncKeyState/GetKeyState input calls
+remain. The thread-local GetFocus on activation complements explicit focus
+messages;no new game,IO,DOS logic,process or shared ABI.
+
+Both widths pass nine focused tests and thirteen isolated-host groups. Four
+owned/borrowed x null/foreign-foreground root variants check13window and13CONIN
+mappings,repeat/releases,chords,either Shift,Tab/P/O,loss clearing/reacquisition,
+character-only lower-case input,auto-pause/snapshot/recovery and preserved state.
+The actual interactive product now receives CONIN Tab,window activation/focus
+and Tab,then CONIN Escape,while CMD waits and the following prompt command works.
+No user's foreground is activated and no global keyboard injection occurs.
+This proves the delivered-event/null-or-mismatched-HWND contract;it is not a
+live RDP-client observation or proof of remote focus hints on every terminal.
+
+The strengthened host gate records the GUI child's explicit result,not just
+START's shell return. This exposed two fixture assumptions:it omitted product
+DPI initialization,and a one-second future tick expired during slow host calls.
+The fixture now uses the production DPI setup and freezes logical updates for
+device-only assertions;the separate real-clock debt and pause routes remain.
+Maximized visible client bounds are checked within work area,excluding Windows'
+invisible outer frame. Console caption restore can precede final buffer writes;
+full4000cell convergence is required within40render attempts/one second,not
+assumed after50ms. Persistent mismatch/failed presenter still fails the test.
+
+Retained shell restoration exposed a narrow-view buffer53x9001 growing to
+54x9001 after pixel rounding,with unchanged53-column viewport. The same device
+now restores original buffer dimensions using shrink-view->buffer->original-view,
+plus title/mode/placement. Normal/maximized shell preservation passes. This
+bounded sibling lifetime correction changes no graphical geometry or gameplay.
+
+Original DOS16 compiles/links;its364939-byte SHA256 is identical to the accepted
+S3 DOSBox product,so that operational receipt remains applicable. New local
+Win32/x64 products318603/326251bytes;all three package hashes equal their builds.
+Actual product/test/tool6files,+187/-41;documentation/ledger separate. Scoped
+node/edge counters unchanged,new0:historical1992/1992,local1991/1992nodes,
+4260/4261feasible controls(raw4342,infeasible81). M2 certification still pending.
+S4 closes the bounded correction and T24 closes again;live owner RDP retest is
+still distinguished from these controlled regressions. Other queue/game work
+is preserved;no ROM,generated data or local product is staged.

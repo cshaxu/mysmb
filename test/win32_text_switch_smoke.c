@@ -4,7 +4,11 @@
 #include <stdio.h>
 static HWND owned_focus;
 static unsigned int async_calls;
-static HWND probe_foreground(void){return owned_focus;}
+static HWND mismatched_foreground;
+static unsigned int foreground_calls;
+static RECT diagnostic_client,diagnostic_work,diagnostic_outer;
+static int diagnostic_game_changed,diagnostic_audio_changed;
+static HWND probe_foreground(void){++foreground_calls;return mismatched_foreground;}
 static SHORT probe_key(int key){(void)key;++async_calls;return 0;}
 #define GetForegroundWindow probe_foreground
 #define GetAsyncKeyState probe_key
@@ -47,9 +51,23 @@ static int console_restore_route(void)
                 Sleep(25U);
             }
             if(attempt==80)return 112;
-            Sleep(50U);mysmb_win32_build_frame();
-            if(!g_text_mode || g_text_failed || host!=g_console.window)return 113;
-            if(!GetConsoleScreenBufferInfo(g_console.output,&info))return 114;
+            /* Caption state precedes final buffer resize. Model continuous
+             * rendering until every cell converges,with a one-second bound. */
+            for(attempt=0;attempt<40;++attempt) {
+                mysmb_win32_build_frame();
+                if(!g_text_mode || g_text_failed || host!=g_console.window)return 113;
+                if(!GetConsoleScreenBufferInfo(g_console.output,&info))return 114;
+                view.Left=view.Top=0;view.Right=79;view.Bottom=49;
+                if(!ReadConsoleOutputW(g_console.output,readback,size,origin,&view))return 117;
+                i=0;
+                if(view.Right==79 && view.Bottom==49)for(;i<4000;++i)
+                    if(readback[i].Char.UnicodeChar!=mysmb_io_text_glyph_unicode(g_text_frame.cells[i].character) ||
+                        readback[i].Attributes!=(WORD)(g_text_frame.cells[i].foreground|
+                            (g_text_frame.cells[i].background<<4)))break;
+                if(i==4000)break;
+                Sleep(25U);
+            }
+            if(attempt==40)return 118;
             if(phase && (info.dwSize.X!=80 || info.dwSize.Y!=50 ||
                 info.srWindow.Left!=0 || info.srWindow.Top!=0 ||
                 info.srWindow.Right!=79 || info.srWindow.Bottom!=49))return 115;
@@ -57,13 +75,6 @@ static int console_restore_route(void)
             if(!GetCurrentConsoleFontEx(g_console.output,FALSE,&after) ||
                 font.dwFontSize.X!=after.dwFontSize.X ||
                 font.dwFontSize.Y!=after.dwFontSize.Y)return 116;
-            view.Left=view.Top=0;view.Right=79;view.Bottom=49;
-            if(!ReadConsoleOutputW(g_console.output,readback,size,origin,&view) ||
-                view.Right!=79 || view.Bottom!=49)return 117;
-            for(i=0;i<4000;++i)
-                if(readback[i].Char.UnicodeChar!=mysmb_io_text_glyph_unicode(g_text_frame.cells[i].character) ||
-                    readback[i].Attributes!=(WORD)(g_text_frame.cells[i].foreground|
-                        (g_text_frame.cells[i].background<<4)))return 118;
         }
     }
     return 0;
@@ -120,8 +131,15 @@ static int geometry_route(HINSTANCE instance)
     }
     ShowWindow(window,SW_MAXIMIZE);GetClientRect(window,&client);GetWindowRect(window,&outer);
     if(!IsZoomed(window) || client.right*15!=client.bottom*16)return 97;
-    if(outer.right-outer.left>monitor.rcWork.right-monitor.rcWork.left ||
-        outer.bottom-outer.top>monitor.rcWork.bottom-monitor.rcWork.top)return 98;
+    {
+        POINT corner={0,0};
+        ClientToScreen(window,&corner);
+        SetRect(&diagnostic_client,corner.x,corner.y,corner.x+client.right,corner.y+client.bottom);
+        diagnostic_work=monitor.rcWork;diagnostic_outer=outer;
+        if(corner.x<monitor.rcWork.left || corner.y<monitor.rcWork.top ||
+            corner.x+client.right>monitor.rcWork.right ||
+            corner.y+client.bottom>monitor.rcWork.bottom)return 98;
+    }
     ShowWindow(window,SW_RESTORE);GetClientRect(window,&client);
     if(client.right*15!=client.bottom*16)return 99;
     SetRect(&rect,35,35,743,722);SendMessage(window,0x02e0U,MAKELONG(144,144),(LPARAM)&rect);
@@ -155,7 +173,9 @@ static int presentation_clock_route(HWND window)
 static void input_only_step(HWND window)
 {
     QueryPerformanceCounter(&g_last_tick);
-    g_last_tick.QuadPart+=g_frequency.QuadPart;
+    /* Freeze logical updates for device-only assertions. RDP host calls can
+     * consume more than one second;real debt is tested separately above. */
+    g_last_tick.QuadPart+=g_frequency.QuadPart*60;
     mysmb_win32_step(window);
 }
 static int input_record(WORD key,WORD scan,int down)
@@ -182,7 +202,7 @@ static int event_input_route(HWND window)
     unsigned int i;
     INPUT_RECORD focus;
     DWORD written;
-    owned_focus=window;mysmb_win32_release_keys();
+    owned_focus=window;SendMessage(window,WM_SETFOCUS,0,0);mysmb_win32_release_keys();
     /* Asynchronous state is deliberately zero even during delivered presses. */
     if(probe_key('W')!=0)return 51;
     async_calls=0U;
@@ -201,6 +221,10 @@ static int event_input_route(HWND window)
         (MYSMB_BUTTON_B|MYSMB_BUTTON_A|MYSMB_BUTTON_RIGHT))return 55;
     owned_focus=NULL;SendMessage(window,WM_KILLFOCUS,0U,0L);
     if(mysmb_win32_poll_keys())return 56;
+    SendMessage(window,WM_ACTIVATEAPP,FALSE,0);
+    SendMessage(window,WM_KEYDOWN,'W',0);
+    if(mysmb_win32_poll_keys())return 86;
+    SendMessage(window,WM_KEYUP,'W',0);
     owned_focus=window;SendMessage(window,WM_SETFOCUS,0U,0L);
     SendMessage(window,WM_KEYDOWN,VK_TAB,0);
     input_only_step(window);
@@ -235,7 +259,20 @@ static int event_input_route(HWND window)
     focus.Event.FocusEvent.bSetFocus=FALSE;
     if(!WriteConsoleInputA(g_console.input,&focus,1U,&written) || written!=1U)return 69;
     input_only_step(window);
-    if(mysmb_win32_poll_keys())return 70;
+    if(mysmb_win32_poll_keys() || g_console.focused)return 70;
+    /* A character-only remote record needs neither a VK nor a focus gain. */
+    {
+        INPUT_RECORD character;
+        ZeroMemory(&character,sizeof(character));character.EventType=KEY_EVENT;
+        character.Event.KeyEvent.bKeyDown=TRUE;
+        character.Event.KeyEvent.uChar.UnicodeChar=L'w';
+        if(!WriteConsoleInputW(g_console.input,&character,1U,&written) || written!=1U)return 87;
+        input_only_step(window);
+        if(!g_console.focused || mysmb_win32_buttons_from_keys(mysmb_win32_poll_keys())!=MYSMB_BUTTON_UP)return 88;
+        character.Event.KeyEvent.bKeyDown=FALSE;
+        if(!WriteConsoleInputW(g_console.input,&character,1U,&written) || written!=1U)return 89;
+        input_only_step(window);if(mysmb_win32_poll_keys())return 90;
+    }
     if(!input_record(VK_TAB,0U,0) || !input_record(VK_TAB,0U,1))return 71;
     input_only_step(window);owned_focus=window;
     if(g_text_mode || async_calls)return 72;
@@ -308,8 +345,17 @@ static int text_snapshot_route(HWND window,const char *directory)
     if(!g_text_mode)return 32;
     ShowWindow(g_console.window,SW_HIDE);owned_focus=g_console.window;
     expected_text=g_text_frame;
-    /* Public focus loss reaches translated pause through the real root tick. */
+    /* An optional console loss hint clears held state and reaches auto-pause.
+     * Valid subsequent key records must work even without a gain hint. */
     owned_focus=NULL;
+    {
+        INPUT_RECORD loss;
+        DWORD written;
+        ZeroMemory(&loss,sizeof(loss));loss.EventType=FOCUS_EVENT;
+        loss.Event.FocusEvent.bSetFocus=FALSE;
+        FlushConsoleInputBuffer(g_console.input);
+        if(!WriteConsoleInputA(g_console.input,&loss,1U,&written) || written!=1U)return 85;
+    }
     QueryPerformanceCounter(&now);
     g_last_tick.QuadPart=now.QuadPart-g_frequency.QuadPart/60;
     mysmb_win32_step(window);
@@ -345,7 +391,7 @@ static int text_snapshot_route(HWND window,const char *directory)
     return 0;
 }
 
-int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
+static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
 {
     WNDCLASS wc;
     HWND window;
@@ -371,13 +417,17 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     unsigned char pressed;
     int result;
     (void)previous;(void)command;(void)show;
+    mysmb_win32_enable_dpi();
     ZeroMemory(&wc,sizeof(wc));wc.lpfnWndProc=mysmb_win32_window_proc;
     wc.hInstance=instance;wc.lpszClassName="MySMBTextSwitchProbe";
     if(!RegisterClass(&wc))return 1;
     result=geometry_route(instance);if(result)return result;
     window=CreateWindow(wc.lpszClassName,"",0,0,0,256,240,NULL,NULL,instance,NULL);
     if(!window)return 2;
-    owned_focus=window;
+    owned_focus=window;SendMessage(window,WM_SETFOCUS,0,0);
+    mismatched_foreground=strstr(command,"foreign")?
+        CreateWindowA("STATIC","unrelated foreground fixture",0,0,0,0,0,NULL,NULL,instance,NULL):NULL;
+    foreground_calls=0U;
     mysmb_io_control_initialize(&g_control);mysmb_win32_power_on();
     mysmb_win32_focus_pause_initialize(&g_focus_pause);
     mysmb_win32_focus_pause_gained(&g_focus_pause);
@@ -394,6 +444,7 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     memcpy(saved_pixels,g_pixels,sizeof(saved_pixels));
     if(!strncmp(command,"borrowed",8U)) {
         HWND parent=NULL;
+        result=event_input_route(window);if(result)return result;
         for(i=0U;i<3U;++i) {
             mysmb_win32_switch_presenter(window,0);
             if(!g_text_mode || !g_console.borrowed)return 80;
@@ -411,6 +462,9 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
                 RECT resized;
                 SetWindowPos(window,NULL,0,0,672,633,SWP_NOMOVE|SWP_NOZORDER|SWP_NOACTIVATE);
                 GetClientRect(window,&resized);
+                diagnostic_client=resized;
+                diagnostic_game_changed=memcmp(&saved_game,&g_game,sizeof(g_game))!=0;
+                diagnostic_audio_changed=memcmp(&saved_audio,&g_audio_output,sizeof(saved_audio))!=0;
                 if(resized.right*15!=resized.bottom*16 ||
                     memcmp(&saved_game,&g_game,sizeof(g_game)) ||
                     memcmp(&saved_audio,&g_audio_output,sizeof(saved_audio)))return 84;
@@ -531,5 +585,49 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     }
     result=event_input_route(window);
     if(result)return result;
+    if(foreground_calls)return 120;
     DestroyWindow(window);return 0;
+}
+
+/* A shell's START status is not the GUI child's test result. Emit an explicit
+ * neutral result under the supplied ignored output directory for host probes. */
+int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
+{
+    int result;
+    char normalized[520];
+    const char *directory=command;
+    char path[600];
+    unsigned int length;
+    FILE *file;
+    if(command[0]=='"' && strlen(command)<sizeof(normalized)) {
+        length=(unsigned int)strlen(command+1);
+        if(length && command[length]=='"')--length;
+        memcpy(normalized,command+1,length);normalized[length]=0;
+        command=normalized;directory=command;
+    }
+    result=mysmb_fixture_run(instance,previous,command,show);
+    if(!strncmp(directory,"borrowed",8U)) {
+        while(*directory && *directory!=' ')++directory;
+        while(*directory==' ')++directory;
+    }
+    if(*directory=='"')++directory;
+    length=(unsigned int)strlen(directory);
+    if(length && directory[length-1]=='"')--length;
+    if(length && length<500U) {
+        memcpy(path,directory,length);path[length]=0;
+        strcat(path,"/root-result.txt");
+        file=fopen(path,"w");if(file){fprintf(file,"%d\n",result);fclose(file);}
+        if(result==98 || result==84) {
+            path[length]=0;strcat(path,"/geometry-diagnostic.txt");file=fopen(path,"w");
+            if(file) {
+                fprintf(file,"client%d,%d,%d,%d work%d,%d,%d,%d outer%d,%d,%d,%d\n",
+                    diagnostic_client.left,diagnostic_client.top,diagnostic_client.right,diagnostic_client.bottom,
+                    diagnostic_work.left,diagnostic_work.top,diagnostic_work.right,diagnostic_work.bottom,
+                    diagnostic_outer.left,diagnostic_outer.top,diagnostic_outer.right,diagnostic_outer.bottom);
+                fprintf(file,"game_changed%d audio_changed%d\n",diagnostic_game_changed,diagnostic_audio_changed);
+                fclose(file);
+            }
+        }
+    }
+    return result;
 }

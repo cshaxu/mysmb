@@ -48,6 +48,7 @@ static struct mysmb_win32_keyboard g_keyboard;
 static struct mysmb_text_scene_workspace g_text_workspace;
 static struct mysmb_io_text_frame g_text_frame;
 static mysmb_io_u8 g_text_mode,g_switching,g_toggle_request,g_text_failed;
+static mysmb_io_u8 g_window_focused;
 static LARGE_INTEGER g_frequency;
 static LARGE_INTEGER g_last_tick;
 static struct mysmb_win32_frame_wait g_frame_wait;
@@ -60,9 +61,10 @@ static LRESULT CALLBACK mysmb_win32_window_proc(HWND,UINT,WPARAM,LPARAM);
 
 static int mysmb_win32_presenter_focused(HWND window)
 {
-    HWND presenter;
-    presenter=g_text_mode?g_console.window:window;
-    return presenter!=NULL && GetForegroundWindow()==presenter;
+    (void)window;
+    /* Input delivery belongs to each device,not a global foreground HWND.
+     * RDP/terminal hosts can expose a different or unavailable HWND. */
+    return g_text_mode?g_console.opened && g_console.focused:g_window_focused;
 }
 static void mysmb_win32_shortcut(HWND window,WORD key,mysmb_io_u8 pressed)
 {
@@ -514,13 +516,15 @@ static LRESULT CALLBACK mysmb_win32_window_proc(HWND window, UINT message,
     }
     if (message == WM_KILLFOCUS ||
         (message == WM_ACTIVATEAPP && w_param == 0U)) {
-        if(!g_switching && !g_text_mode && !mysmb_win32_presenter_focused(window)) {
+        g_window_focused=0U;
+        if(!g_switching && !g_text_mode) {
             mysmb_win32_focus_pause_lost(&g_focus_pause, g_game_started, &g_game);
             mysmb_win32_release_keys();
         }
     }
     if (message == WM_SETFOCUS ||
         (message == WM_ACTIVATEAPP && w_param != 0U && GetFocus() == window)) {
+        g_window_focused=1U;
         if(!g_switching && !g_text_mode)mysmb_win32_focus_pause_gained(&g_focus_pause);
     }
     if(message==WM_SIZING) {

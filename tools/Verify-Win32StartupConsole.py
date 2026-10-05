@@ -121,15 +121,23 @@ def main():
             handle=start('cmd.exe /d /c ""%s" "%s" maximized"' % (args.parent.resolve(),output / 'parent-max-diagnostic.txt'),name,output)
             handles.append(handle);completed(handle)
             rows.append(dict(route="maximized-parent/settings/error-restore",exitCode=0))
-            handle=start('cmd.exe /d /c start "" /wait /b "%s" borrowed' % args.switch.resolve(),name,output)
-            handles.append(handle);completed(handle)
-            rows.append(dict(route="borrowed-product-root/Tab/one-game-instance",focus="explicit-owned-fixture",exitCode=0))
+            for variant in ("borrowed-null","borrowed-foreign"):
+                fixture_output=output/variant;fixture_output.mkdir(exist_ok=True)
+                marker=fixture_output/"root-result.txt";marker.unlink(missing_ok=True)
+                handle=start('cmd.exe /d /c start "" /wait /b "%s" borrowed "%s"' %
+                             (args.switch.resolve(),fixture_output),name,fixture_output)
+                handles.append(handle);completed(handle)
+                require(marker.exists() and marker.read_text().strip()=="0",
+                        "Actual borrowed fixture result: "+(marker.read_text().strip() if marker.exists() else "missing"))
+                rows.append(dict(route=variant+"/event-input/Tab/one-instance",exitCode=0))
         if args.switch:
-            handle = start('"%s" %s' % (args.switch.resolve(), output.as_posix()),
-                           name, output)
-            handles.append(handle)
-            completed(handle)
-            rows.append(dict(route="Tab/snapshot/focus/audio/Unicode/recovery", exitCode=0))
+            for variant in ("owned-null","owned-foreign"):
+                fixture_output=output/variant;fixture_output.mkdir(exist_ok=True)
+                marker=fixture_output/"root-result.txt";marker.unlink(missing_ok=True)
+                handle=start('"%s" "%s"' % (args.switch.resolve(),fixture_output),name,fixture_output)
+                handles.append(handle);completed(handle)
+                require(marker.exists() and marker.read_text().strip()=="0","Owned root fixture result missing")
+                rows.append(dict(route=variant+"/input/snapshot/focus/Unicode/recovery",exitCode=0))
         sources = ["other", "other-console", "cmd-detached", "cmd", "powershell"]
         if shutil.which("pwsh.exe"):
             sources.append("pwsh")
@@ -202,6 +210,8 @@ def main():
         class Record(c.Structure):
             _fields_=[("kind",w.WORD),("key",Key)]
         k.WriteConsoleInputW.argtypes=[w.HANDLE,c.POINTER(Record),w.DWORD,c.POINTER(w.DWORD)]
+        u.IsWindowVisible.argtypes=[w.HWND]
+        u.IsWindowVisible.restype=w.BOOL
         # Detach this probe's inherited console only;its stdout remains a pipe.
         k.FreeConsole()
         deadline=time.monotonic()+4
@@ -224,6 +234,10 @@ def main():
                         event=Record();event.kind=1;event.key=Key(down,1,13 if char=="\r" else 0,0,char,0)
                         written=w.DWORD()
                         require(k.WriteConsoleInputW(console_input,c.byref(event),1,c.byref(written)) and written.value==1,"Owned CMD input")
+            def send_key(vk,down,scan=0):
+                event=Record();event.kind=1;event.key=Key(down,1,vk,scan,"\0",0)
+                written=w.DWORD()
+                require(k.WriteConsoleInputW(console_input,c.byref(event),1,c.byref(written)) and written.value==1,"Owned console key record")
             returned=output/"cmd-returned.txt";usable=output/"cmd-usable.txt"
             returned.unlink(missing_ok=True);usable.unlink(missing_ok=True)
             send_line('"%s" & echo RETURNED>"%s"' % (product,returned))
@@ -237,12 +251,22 @@ def main():
             require(not returned.exists(),"Interactive CMD returned while game owns input")
             require(sum(x[2]=="ConsoleWindowClass" for x in windows(desktop))==1,"Extra console created")
             child=k.OpenProcess(0x101001,False,root[1]);require(child,"Open interactive game");handles.append(child)
-            # A hidden desktop cannot claim live foreground-key delivery.
-            # The embedded root fixture above supplies explicit owned focus
-            # while exercising the real borrowed device/Tab/state owner.
+            # Target only this private console input and this game's window.
+            # Foreground belongs to the user's desktop;it cannot be a gate here.
+            send_key(9,True,15)
+            deadline=time.monotonic()+4
+            while not u.IsWindowVisible(root[0]) and time.monotonic()<deadline:time.sleep(.02)
+            require(u.IsWindowVisible(root[0]),"Delivered CONIN Tab must enter graphics")
+            require(u.PostMessageW(root[0],0x1c,1,0),"Owned window activation")
+            require(u.PostMessageW(root[0],0x7,0,0),"Owned window focus")
+            require(u.PostMessageW(root[0],0x101,9,0),"Owned Tab release")
+            require(u.PostMessageW(root[0],0x100,9,0),"Owned window Tab")
+            deadline=time.monotonic()+4
+            while u.IsWindowVisible(root[0]) and time.monotonic()<deadline:time.sleep(.02)
+            require(not u.IsWindowVisible(root[0]),"Delivered window Tab must reenter text")
             time.sleep(.1)
             require(not returned.exists(),"Interactive CMD must keep waiting")
-            require(u.PostMessageW(root[0],0x100,27,0),"Owned Escape")
+            send_key(9,False,15);send_key(27,True,1)
             completed(child)
             deadline=time.monotonic()+4
             while not returned.exists() and time.monotonic()<deadline:time.sleep(.02)
@@ -252,7 +276,7 @@ def main():
             while not usable.exists() and time.monotonic()<deadline:time.sleep(.02)
             require(usable.exists(),"Restored CMD must accept input")
             send_line('exit');completed(handle)
-            rows.append(dict(route="interactive-CMD/same-console/wait/Escape/usable-prompt",exitCode=0))
+            rows.append(dict(route="interactive-CMD/CONIN-Tab/window-Tab/CONIN-Escape/wait/prompt",exitCode=0))
         finally:
             k.CloseHandle(console_input);k.FreeConsole()
         (output / "startup-close.json").write_text(json.dumps(rows, indent=2) + "\n")

@@ -58,8 +58,11 @@ Windows keyboard state is owned by the event adapter:window key/system-key
 messages and console key records feed one held-key/short-press state. The root
 samples it at a logical tick;no global asynchronous keyboard query is needed.
 Either Shift and simultaneous aliases keep independent physical states.
-Focus loss,presenter changes and snapshot restore clear stale game keys.
-Console focus-loss records also clear input;Tab/P/O/Escape retain their shared
+Window focus belongs to local focus/activation messages,not global foreground
+HWND equality. Console key records establish device input,including Unicode
+character-only records;internal focus records are optional loss/gain hints.
+Loss,presenter changes and snapshot restore clear stale game keys. A valid
+subsequent console down needs no gain record. Tab/P/O/Escape retain their shared
 application-request owners. No original game routine handles host input.
 The console owns explicit input/output device handles and requests key records,
 not terminal escape-sequence input. Device font size may shrink to fit its

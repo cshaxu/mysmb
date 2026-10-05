@@ -2,7 +2,7 @@
 
 **Idle.**
 
-M3 T24 closed. Queue head remains unnumbered;T19 owner-suspended.
+M3 T24 S4 corrective closed;queue head unnumbered,T19 suspended.
 
 ## Current Technical Baseline
 
@@ -17,7 +17,7 @@ M3 T24 closed. Queue head remains unnumbered;T19 owner-suspended.
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11/T12/T13/T14/T15/T16/T17/T18 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are364939/318091/325739bytes.
+- Current local DOS16/Win32/x64 products are364939/318603/326251bytes.
   T22 refreshes all three with RAM-authoritative NMI page handoff;T21 coral,T20 titles/tree/fence and T18 timing retained.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
@@ -26,11 +26,12 @@ M3 T24 closed. Queue head remains unnumbered;T19 owner-suspended.
 
 ## Compact closure status
 
-M3 T24 S1-S3 close parent-console wait/lifetime,client-aspect scaling and
-console maximize/Restore. Final both widths8tests/11host groups,30shell-repeat
-checks and original DOS16/DOSBox pass. Local products364939/318091/325739bytes.
-Final S3 product/test/tool5files,+135/-16,new0. Explorer flash accepted;
-physical RDP/monitor drag not claimed. [Full review/limits](../history/M3-T24-win32-window-console-integration.md#s3-closure-and-final-review).
+M3 T24 S4 corrects window/console input gating under unavailable/different
+foreground HWND. Old root rejects both targeted event paths,current accepts.
+Both widths9tests/13host groups pass,including actual product CONIN Tab->window
+Tab->CONIN Escape and waiting CMD prompt. Products364939/318603/326251bytes;
+6product/test/toolfiles,+187/-41,new0. Shared game/DOS unchanged;live owner RDP
+trial remains separate. [Correction and proof limits](../history/M3-T24-win32-window-console-integration.md#s4-corrective-closure).
 
 M3 T23 S1 closes princess/Toad authored details and retainer-only crown
 cell-center anchoring.64palette/form/offset/latch cases,existing864enemy and
@@ -91,20 +92,3 @@ M3 T17 S1 P1 closes the all-object/form text design census:17observer families,
 link and DOSBox text round-trip pass. Products refreshed;code/tests7files,
 +275/-31lines,new0. No original game/ABI/platform change,no all-game proof.
 [T17 design matrix and closure](../history/M3-T17-text-object-role-audit.md).
-
-M3 T16 S1 P1 closes authored mushroom palette roles:cap ink3,marks ink1,
-stem ink2. All4power-up identities/4palette slots,committed OAM/dynamic palette,
-both-width9tests,2048boundary/1198native unchanged indexed frames,owned host
-routes,DOS16 link and DOSBox text round-trip pass. Products refreshed;code/tests
-2files,+71/-2lines,new0. No game/ABI/host-artwork change,no full-ROM claim.
-[T16 history](../history/M3-T16-mushroom-text-colors.md).
-
-M3 T15 S1/S2 close equivalent shared graphics/fixed VGA optimizations.
-Both widths2048boundary/1198native frames match prior pixels and state;scale
-output matches all64000bytes per case. Host graphics3.3-3.7x and scaling4.2-4.4x
-faster,not486qualification. Final8tests/width,owned host routes,DOS16 link and
-DOSBox graphics/text/Tab/snapshot/return pass. Three local products refreshed;
-S1 code/tests4files,+330/-10lines;S2 code/tests/tool4files,+66/-8lines,new0.
-Earlier audio acquisition stalled on old/new baselines;final host routes pass
-unchanged,cause unknown,no claimed audio repair. Named follow-up stays queued.
-[T15 history](../history/M3-T15-presentation-performance.md).
