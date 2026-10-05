@@ -1,7 +1,7 @@
 #include <string.h>
 
-#include "game/area.h"
-#include "game/game.h"
+#include "core/area.h"
+#include "core/game.h"
 
 static void mysmb_set_coin_row(struct mysmb_game *game, mysmb_u8 prg[0x100U],
                                mysmb_u8 area_type)

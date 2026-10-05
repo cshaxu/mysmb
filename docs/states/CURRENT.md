@@ -1,27 +1,27 @@
 # Project Status
 
-**Active: M3 T27 S4 P1.**
+**Active: M3 T27 S5 P1.**
 
-## M3 T27 S4 Packet
+## M3 T27 S5 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T27 S4 P1,continuation:core root/frame/mode/area relocation. |
-| Admission And Approval | Owner-approved split and all pending-file submission;S3 source/pixel/native/DOS checks pass. |
-| Objective | Move24root/frame/mode/area/scroll/status source/header files to core;retain bodies and update every path/current-owner binding. |
-| Non-goals | Gameplay/PPU changes,remaining enemy/player/text relocation before its S,performance optimization,new emulator,M2 certification. |
-| Reference Baseline | S3 normalized174C bodies;independent PPU frame;17tests per width,DOS16/4complete far frames and actual DOSBox pass;historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81). |
-| Candidate Proposal | [T27 plan and S4 admission](../history/M3-T27-core-ppu-module-boundaries.md#s3-p2-closure-and-s4-p1-admission). |
-| Files And ABI Surface | Exact24files in proposal;up to200include/build/map consumers,250-600path edits plus unchanged moves;no serialized ABI or state change. |
+| Identifier Mode | M3 T27 S5 P1,continuation:remaining translated core cohorts. |
+| Admission And Approval | Owner-approved split/all pending-file submission;S4 source/binary/native/DOS preservation checks pass. |
+| Objective | Move141remaining translated files in3cohorts to core;rename runtime CMake target/list;retain all source bodies/state/dispatch and original semantics. |
+| Non-goals | Logic/table/PPU changes,authored text/receipt or validation moves before their S,performance work,new emulator,M2 certification. |
+| Reference Baseline | S4 path-normalized250source/header texts equal;26tests per width,DOS identical/every Windows section equal,actual DOSBox pass;historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81). |
+| Candidate Proposal | [T27 plan and S5 admission](../history/M3-T27-core-ppu-module-boundaries.md#s5-p1-admission---remaining-translated-core). |
+| Files And ABI Surface | Exact141files/3cohorts in proposal;200-300include/build/map consumers,400-1000path/target edits plus retained moves;no serialized ABI/state change. |
 | Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Document and source policy. |
-| Verification | Normalize every moved/consumer body,preserve ROM provenance/control/write order,focused frame/NMI/area/mode/scroll/PPU/snapshot/text tests,DOS16/run,3products and gates. |
-| Expected Markers | Implementation scope475existing labels in proposal,all incoming locally exact,expected new[],max1992/1992;accepted sender-specific maintenance transfers. |
-| Asset Needs | Existing local inputs only;ignored build/m3-t27-s4 holds evidence. Owner directs local commit of3already-tracked EXEs;no ROM/generated source/captures/publication. |
-| Reporting Requirements | Entry files/labels/size;closure exact completed/deferred labels and totals,source-preservation vs operational evidence,three EXEs and actual scale. |
-| Stop Conditions | No original body/order change,obsolete live includes/build entries,unresolved scoped state/pixel/snapshot diff or unnamed owner. |
-| Exit Criteria |24moves/all callers mapped,normalized bodies equal,current-owner paths and provenance preserved,focused tests/3builds/products and gates pass. |
-| Original Owner Request | Separate core/PPU/components while preserving original ROM and PPU semantics;review/submit all pending files. |
-| Similar-Issue Sweep | Public game header consumers,partial test builds,ROM owner/path metadata,tools source lists,receipt/snapshot and both root dependencies. |
+| Verification | Per-cohort exact source/body and portable compilation,source/registry rebinding,focused player/world/object/enemy/OAM/audio plus state/PPU/text/snapshot checks,DOS16/run,3products and gates. |
+| Expected Markers |1449maintenance labels in canonical ledger S5 scope;1448locally exact,CheckForEnemyGroup needs-evidence retained;new[],max1992/1992;accepted append-only transfers. |
+| Asset Needs | Existing local inputs only;ignored build/m3-t27-s5 evidence. Owner directs local commit of3already-tracked EXEs;no ROM/generated source/captures/publication. |
+| Reporting Requirements | Cohort components/size;closure exact disposition sets and totals,preservation vs operational proof,three EXEs/actual scale. |
+| Stop Conditions | No source body/order/table change,missing dependency or duplicate owner,no unresolved scoped state/pixel/snapshot diff. |
+| Exit Criteria |141moves/all callers and target bound,per-cohort proofs/final matrix pass,no new local conformance claim,3products and gates pass. |
+| Original Owner Request | Separate core/PPU/components while preserving original ROM/PPU semantics;review and submit all pending files. |
+| Similar-Issue Sweep | Generic shared owners,multi-file route paths,partial builds,CMake target/list identifiers,source hashes,receipt/snapshot and root consumers. |
 
 ## Current Technical Baseline
 
@@ -45,12 +45,12 @@
 
 ## Compact closure status
 
-T27 S2/S3 close one embedded PPU state/original DMA and independent const-state
-pixel compositor.174retained C bodies normalize equal;S3 both widths17tests,
-DOS16/4complete far frames and DOSBox graph/Tab/exit pass. Two frame moves plus
-15consumer files,raw+277/-271includes233moved lines. Three products429963/
-319115/327787bytes,new0. S4 admits24core-root/mode/area moves and475maintenance
-labels. [Preservation and limits](../history/M3-T27-core-ppu-module-boundaries.md#s3-p2-closure-and-s4-p1-admission).
+T27 S2/S3/S4 preserve single PPU state,const-state pixels and24core-root/mode/
+area moves. S4 all250source/header texts path-equal,DOS binary identical,
+every Windows PE section equal;26tests per width and DOSBox restore/Tab/exit
+pass.246code/test/build edits,+366/-366;three products429963/319115/327787bytes.
+S5 admits141remaining core files in3cohorts,1449maintenance labels,new0;
+existing CheckForEnemyGroup evidence gap retained. [S4 scope and proof limits](../history/M3-T27-core-ppu-module-boundaries.md#s4-p2-closure---rootframemodearea-migration).
 
 T26 S2/T26 close by owner-directed remaining-work transfer:scoped compositor
 improvement and full640x400 DOS output retained;fixed-config nominal cadence

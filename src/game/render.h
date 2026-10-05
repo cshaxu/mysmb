@@ -1,7 +1,7 @@
 #ifndef MYSMB_GAME_RENDER_H
 #define MYSMB_GAME_RENDER_H
 
-#include "game/game.h"
+#include "core/game.h"
 
 enum {
     MYSMB_RENDER_TILE_ROWS = 30,

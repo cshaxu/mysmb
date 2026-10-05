@@ -1,9 +1,9 @@
 #include "terrain_entry.h"
-#include "game/dispatcher.h"
+#include "core/dispatcher.h"
 #include <stdio.h>
 #include "game/objects.h"
 #include "game/world/world.h"
-#include "game/area.h"
+#include "core/area.h"
 #include "game/player.h"
 #include "game/oam/oam.h"
 #include "smb1_local_rom.h"

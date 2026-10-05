@@ -1,5 +1,5 @@
 #include "game/blocks/chunks.h"
-#include "game/area.h"
+#include "core/area.h"
 #include "game/objects.h"
 #include "game/score.h"
 

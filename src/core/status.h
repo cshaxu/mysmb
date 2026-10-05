@@ -1,7 +1,7 @@
 #ifndef MYSMB_GAME_STATUS_H
 #define MYSMB_GAME_STATUS_H
 
-#include "game/game.h"
+#include "core/game.h"
 
 /* ROM $8ebe-$8fbf: shared status output, digit arithmetic and top score. */
 mysmb_u8 mysmb_status_print_numbers(struct mysmb_game *game, mysmb_u8 nybbles);

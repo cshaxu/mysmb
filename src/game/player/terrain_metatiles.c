@@ -1,6 +1,6 @@
 #include "game/player/terrain_children.h"
 #include "game/objects.h"
-#include "game/area.h"
+#include "core/area.h"
 
 /* ROM $DE1C-$DE24 ErACM. Low/row carry the validated query outputs;
  * the original pointer high byte remains RAM $07. Callers supply an

@@ -1,7 +1,7 @@
 #ifndef MYSMB_GAME_ENEMY_CORE_H
 #define MYSMB_GAME_ENEMY_CORE_H
 
-#include "game/area.h"
+#include "core/area.h"
 
 /* ROM RunEnemyObjectsCore reloads the current slot from ObjectOffset. */
 void mysmb_enemy_run_objects(struct mysmb_game *game);

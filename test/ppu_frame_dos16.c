@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <malloc.h>
 #include <string.h>
-#include "game/game.h"
+#include "core/game.h"
 #include "ppu/frame.h"
 void mysmb_ppu_frame_reference(const struct mysmb_game *,struct mysmb_ppu_frame *);
 static struct mysmb_game game,before;

@@ -1,4 +1,4 @@
-#include "game/game.h"
+#include "core/game.h"
 #include "game/player.h"
 
 static int expect_friction(struct mysmb_game *game, mysmb_u8 buttons,

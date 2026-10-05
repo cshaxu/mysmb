@@ -1,9 +1,9 @@
 #include "game/score.h"
-#include "game/status.h"
+#include "core/status.h"
 #include "game/oam/oam.h"
 #include "game/objects.h"
 #include "game/world/world.h"
-#include "game/area.h"
+#include "core/area.h"
 #include "smb1_local_rom.h"
 #include <stdio.h>
 #include <string.h>

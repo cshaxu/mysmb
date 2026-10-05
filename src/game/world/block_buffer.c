@@ -1,5 +1,5 @@
 #include "game/world/world.h"
-#include "game/area/block_buffer.h"
+#include "core/area/block_buffer.h"
 
 /* ROM $e3ad-$e3c7: BlockBufferAdderData and its two adjacent adder tables. */
 static const mysmb_u8 mysmb_block_x_adder[28] = {

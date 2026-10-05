@@ -1,4 +1,4 @@
-#include "game/game.h"
+#include "core/game.h"
 #include "game/objects.h"
 #include "game/enemy/frenzy.h"
 /* PlayerCtrlRoutine has already run before source object collisions.  These

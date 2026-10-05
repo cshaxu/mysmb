@@ -1,4 +1,4 @@
-#include "game/area.h"
+#include "core/area.h"
 #include <stdio.h>
 #include <string.h>
 static unsigned int failures,calls,close_gate;

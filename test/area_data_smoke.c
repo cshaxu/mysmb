@@ -1,7 +1,7 @@
 #include <string.h>
 
-#include "game/area.h"
-#include "game/game.h"
+#include "core/area.h"
+#include "core/game.h"
 #include "smb1_local_rom.h"
 
 enum {

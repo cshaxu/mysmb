@@ -1,5 +1,5 @@
 #include "game/oam/oam.h"
-#include "game/game.h"
+#include "core/game.h"
 
 /* ROM helper inputs are prepared by GetMiscOffscreenBits and
  * RelativeMiscPosition; DrawHammer itself is $e4dc-$e540. */

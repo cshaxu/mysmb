@@ -3,7 +3,7 @@
 #include "app/game_snapshot.h"
 #include "app/game_io.h"
 #include "platform/win32/audio_snapshot.h"
-#include "game/area.h"
+#include "core/area.h"
 #include "smb1_local_rom.h"
 #include "smb1_local_title.h"
 static struct mysmb_game live,restored;

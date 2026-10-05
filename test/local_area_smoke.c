@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "game/area.h"
+#include "core/area.h"
 #include "parser_boundary_fixture.h"
-#include "game/game.h"
-#include "game/frame_root.h"
+#include "core/game.h"
+#include "core/frame_root.h"
 #include "game/objects.h"
 #include "smb1_local_rom.h"
 

@@ -8,11 +8,11 @@ platform = root / "src" / "platform"
 for path in platform.rglob("*.[ch]"):
     text = path.read_text(encoding="utf-8")
     if path.parent.name == "vga" or path.name in ("keyboard.c", "keyboard.h", "devices.c", "devices.h"):
-        if "struct mysmb_game" in text or '"game/' in text:
+        if "struct mysmb_game" in text or '"game/' in text or '"core/' in text:
             print(f"{path.relative_to(root)}: device adapter imports whole game")
             sys.exit(1)
     if path.name in ("audio_renderer.c", "audio_renderer.h", "audio_output.c", "audio_output.h"):
-        if "struct mysmb_game" in text or '"game/' in text:
+        if "struct mysmb_game" in text or '"game/' in text or '"core/' in text:
             print(f"{path.relative_to(root)}: audio adapter imports whole game")
             sys.exit(1)
     forbidden = (

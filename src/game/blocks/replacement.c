@@ -1,4 +1,4 @@
-#include "game/area.h"
+#include "core/area.h"
 
 /* ROM $BED4-$BF01 BlockObjMT_Updater, UpdateLoop and NextBUpd.
  * $0301 is the first VRAM command byte; $0300 is its separate offset. */

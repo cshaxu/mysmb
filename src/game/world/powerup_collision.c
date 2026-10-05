@@ -1,5 +1,5 @@
 #include "game/objects.h"
-#include "game/area.h"
+#include "core/area.h"
 
 /* ROM $D800-$D84C HandlePowerUpCollision through NoPUp. Children preserve
  * their own ownership. Erasure and the default score precede type/status

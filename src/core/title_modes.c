@@ -1,7 +1,7 @@
-#include "game/game.h"
-#include "game/frame_root.h"
-#include "game/area.h"
-#include "game/title_modes.h"
+#include "core/game.h"
+#include "core/frame_root.h"
+#include "core/area.h"
+#include "core/title_modes.h"
 
 /* TitleScreenMode and GameMenuRoutine own this complete subtree.  These are
  * CPU-RAM addresses from the source labels, kept local until the remaining

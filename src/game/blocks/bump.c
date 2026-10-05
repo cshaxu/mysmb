@@ -1,7 +1,7 @@
 #include "game/blocks/bump.h"
-#include "game/area.h"
+#include "core/area.h"
 #include "game/objects.h"
-#include "game/frame_root.h"
+#include "core/frame_root.h"
 
 /* ROM BrickQBlockMetatiles: question/hidden entries, ground bricks, then
  * alternate-area bricks. Selection and collision consume one data owner. */

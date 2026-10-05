@@ -1,4 +1,4 @@
-#include "game/game.h"
+#include "core/game.h"
 #include "game/presentation/text/observer_snapshot.h"
 #include <string.h>
 

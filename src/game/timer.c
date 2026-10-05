@@ -1,6 +1,6 @@
-#include "game/frame_root.h"
+#include "core/frame_root.h"
 #include "game/objects.h"
-#include "game/status.h"
+#include "core/status.h"
 
 /* ROM $B74F-$B7A3 RunGameTimer/ResGTCtrl/TimeUpOn/ExGTimer.  The audio subsystem consumes its queue on a following
  * frame; ForceInjury retains collision's single death-state owner. */

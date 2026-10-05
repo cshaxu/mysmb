@@ -4,7 +4,7 @@
 #include "game/oam/oam.h"
 #include "game/objects.h"
 #include "game/fireball/fireball.h"
-#include "game/area.h"
+#include "core/area.h"
 static struct mysmb_game game;
 static unsigned char record[28736],local_prg[32768];
 static unsigned int current,mode,calls,failures;

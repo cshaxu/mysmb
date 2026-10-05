@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-#include "game/game.h"
-#include "game/area.h"
+#include "core/game.h"
+#include "core/area.h"
 #include "smb1_local_rom.h"
 #include "smb1_local_title.h"
 

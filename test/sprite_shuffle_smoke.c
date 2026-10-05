@@ -1,5 +1,5 @@
-#include "game/game.h"
-#include "game/frame_root.h"
+#include "core/game.h"
+#include "core/frame_root.h"
 
 static int verify_case(mysmb_u8 control, const mysmb_u8 *expected_offsets,
     const mysmb_u8 *expected_misc)

@@ -1,5 +1,5 @@
 #include "game/player/terrain_children.h"
-#include "game/area.h"
+#include "core/area.h"
 
 /* ROM $DE25-$DE2D: ClimbXPosAdder, ClimbPLocAdder, FlagpoleYPosData.
  * Bound PRG preserves the original absolute-indexed reads. The local

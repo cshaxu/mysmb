@@ -1,5 +1,5 @@
 #include "game/score.h"
-#include "game/status.h"
+#include "core/status.h"
 #include "game/objects.h"
 
 /* ROM $BBF8-$BBFD: CoinTallyOffsets, ScoreOffsets, StatusBarNybbles. */

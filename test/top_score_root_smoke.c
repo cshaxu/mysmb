@@ -1,4 +1,4 @@
-#include "game/frame_root.h"
+#include "core/frame_root.h"
 
 int main(void)
 {

@@ -1,7 +1,7 @@
 #ifndef MYSMB_GAME_TEXT_ACTOR_SCENE_H
 #define MYSMB_GAME_TEXT_ACTOR_SCENE_H
 
-#include "game/game.h"
+#include "core/game.h"
 #include "game/presentation/text/elements.h"
 
 struct mysmb_text_actor_receipt {

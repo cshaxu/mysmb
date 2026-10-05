@@ -1,5 +1,5 @@
 #include <string.h>
-#include "game/dispatcher.h"
+#include "core/dispatcher.h"
 
 static unsigned int calls;
 static unsigned int sequence;

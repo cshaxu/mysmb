@@ -1,5 +1,5 @@
-#include "game/dispatcher.h"
-#include "game/area.h"
+#include "core/dispatcher.h"
+#include "core/area.h"
 
 static unsigned int sequence[15];
 static unsigned int count;

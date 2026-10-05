@@ -1,5 +1,5 @@
-#include "game/area.h"
-#include "game/frame_root.h"
+#include "core/area.h"
+#include "core/frame_root.h"
 
 static void setup_parser(struct mysmb_game *game, mysmb_u8 column_sets)
 {

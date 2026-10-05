@@ -1,5 +1,5 @@
 #include "game/oam/oam.h"
-#include "game/game.h"
+#include "core/game.h"
 
 enum {
     MYSMB_POWER_UP_TYPE = 0x0039U,

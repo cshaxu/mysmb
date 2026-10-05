@@ -1,4 +1,4 @@
-#include "game/game.h"
+#include "core/game.h"
 #include "game/objects.h"
 
 static int bad(const struct mysmb_game *g, mysmb_u16 a, mysmb_u8 v)

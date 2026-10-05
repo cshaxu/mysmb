@@ -1,4 +1,4 @@
-#include "game/area.h"
+#include "core/area.h"
 
 enum {
     MYSMB_VRAM_BUFFER1 = 0x0300U,

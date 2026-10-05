@@ -1,6 +1,6 @@
-#include "game/area.h"
+#include "core/area.h"
 #include "game/audio.h"
-#include "game/game.h"
+#include "core/game.h"
 #include "smb1_local_rom.h"
 
 int main(void)

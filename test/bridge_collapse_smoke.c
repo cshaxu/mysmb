@@ -1,5 +1,5 @@
 #include "game/objects.h"
-#include "game/area.h"
+#include "core/area.h"
 #include "game/enemy/movement.h"
 #include "game/enemy/loop.h"
 #include "game/enemy/init_targets.h"

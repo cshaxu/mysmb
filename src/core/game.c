@@ -1,13 +1,13 @@
-#include "game/game.h"
-#include "game/frame_root.h"
-#include "game/area.h"
+#include "core/game.h"
+#include "core/frame_root.h"
+#include "core/area.h"
 #include "game/audio.h"
 #include "game/player.h"
 #include "game/oam/oam.h"
 #include "game/objects.h"
-#include "game/title_modes.h"
-#include "game/terminal_modes.h"
-#include "game/status.h"
+#include "core/title_modes.h"
+#include "core/terminal_modes.h"
+#include "core/status.h"
 
 enum {
     MYSMB_RAM_GAME_ENGINE_SUBROUTINE = 0x000eU,

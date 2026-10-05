@@ -1,7 +1,7 @@
 #ifndef MYSMB_GAME_FIREBALL_FIREBALL_H
 #define MYSMB_GAME_FIREBALL_FIREBALL_H
 
-#include "game/game.h"
+#include "core/game.h"
 
 /* ROM ProcFireball_Bubble and FireballObjCore. */
 void mysmb_fireball_try_spawn(struct mysmb_game *game);

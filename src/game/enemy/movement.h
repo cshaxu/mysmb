@@ -1,7 +1,7 @@
 #ifndef MYSMB_GAME_ENEMY_MOVEMENT_H
 #define MYSMB_GAME_ENEMY_MOVEMENT_H
 
-#include "game/game.h"
+#include "core/game.h"
 
 /* ROM MoveNormalEnemy and its state/temporary-speed/revival branches. */
 /* ROM $CAF9 MoveJumpingEnemy: shared star/paratroopa child. */

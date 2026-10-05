@@ -1,4 +1,4 @@
-#include "game/frame_root.h"
+#include "core/frame_root.h"
 
 static int mysmb_sprite_root_case(mysmb_u8 flag, mysmb_u8 pause,
                                   mysmb_u8 expected_first,

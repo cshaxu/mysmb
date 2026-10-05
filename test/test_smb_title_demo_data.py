@@ -24,7 +24,7 @@ def c_bytes(source, name):
 
 def main():
     asm = Path("build/reference-source/SMBDIS.ASM").read_text(encoding="utf-8")
-    native = Path("src/game/title_modes.c").read_text(encoding="utf-8")
+    native = Path("src/core/title_modes.c").read_text(encoding="utf-8")
     assert asm_bytes(asm, "DemoActionData") == c_bytes(native, "action_data")
     assert asm_bytes(asm, "DemoTimingData") == c_bytes(native, "timing_data")
     assert "if (game->ram[MYSMB_RAM_DEMO_ACTION_TIMER] == 0U)" in native

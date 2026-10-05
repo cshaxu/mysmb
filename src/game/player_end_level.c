@@ -1,6 +1,6 @@
 #include "game/player.h"
-#include "game/frame_root.h"
-#include "game/area.h"
+#include "core/frame_root.h"
+#include "core/area.h"
 
 /* ROM $b315-$b328 NextArea/ExitNA. Children read the updated area byte. */
 void mysmb_game_next_area(struct mysmb_game *game)

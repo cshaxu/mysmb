@@ -1,5 +1,5 @@
 #include "game/player.h"
-#include "game/frame_root.h"
+#include "core/frame_root.h"
 
 /* ROM OnGroundStateSub/GndMove: children may change controller state. */
 static void mysmb_player_ground_state(struct mysmb_game *game)

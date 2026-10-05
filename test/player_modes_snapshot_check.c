@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #ifndef MYSMB_CALLER_CHECK
-#include "game/area.h"
+#include "core/area.h"
 #include "smb1_local_rom.h"
 #endif
 

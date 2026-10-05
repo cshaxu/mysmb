@@ -1,4 +1,4 @@
-#include "game/dispatcher.h"
+#include "core/dispatcher.h"
 #include "game/world/world.h"
 
 /* ROM $b7b8 ProcessWhirlpools -> WhPull. The SBC page result is tested

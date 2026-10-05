@@ -1,6 +1,6 @@
-#include "game/dispatcher.h"
-#include "game/area.h"
-#include "game/frame_root.h"
+#include "core/dispatcher.h"
+#include "core/area.h"
+#include "core/frame_root.h"
 
 /* ROM $aedc-$aee9: GameMode's four-entry JumpEngine table.
  * OperMode_Task is a source-owned selector in the range 0..3. */

@@ -1,6 +1,6 @@
-#include "game/game.h"
-#include "game/area.h"
-#include "game/terminal_modes.h"
+#include "core/game.h"
+#include "core/area.h"
+#include "core/terminal_modes.h"
 #include "smb1_local_rom.h"
 #include "player_control_fixture.h"
 

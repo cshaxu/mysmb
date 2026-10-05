@@ -4,7 +4,7 @@
 #include "platform/dos16/keyboard.h"
 #include "platform/file/snapshot_files.h"
 #include "platform/file/executable_path.h"
-#include "game/area.h"
+#include "core/area.h"
 #ifdef MYSMB_LOCAL_TITLE
 #include "smb1_local_rom.h"
 #include "smb1_local_title.h"

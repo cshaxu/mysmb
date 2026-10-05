@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "game/area.h"
-#include "game/frame_root.h"
+#include "core/area.h"
+#include "core/frame_root.h"
 #include "game/frame_snapshot.h"
 #include "castle_column_fixture.h"
 #include "block_row_column_fixture.h"

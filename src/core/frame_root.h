@@ -1,7 +1,7 @@
 #ifndef MYSMB_GAME_FRAME_ROOT_H
 #define MYSMB_GAME_FRAME_ROOT_H
 
-#include "game/game.h"
+#include "core/game.h"
 
 void mysmb_frame_root_step(struct mysmb_game *game,
                            const struct mysmb_input *input,

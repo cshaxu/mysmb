@@ -1,4 +1,4 @@
-#include "game/game.h"
+#include "core/game.h"
 #include "game/objects.h"
 /* PlayerCtrlRoutine has already run before source object collisions.  These
  * direct object tests therefore provide the control-0 primary box that the

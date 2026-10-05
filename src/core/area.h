@@ -1,8 +1,8 @@
 #ifndef MYSMB_GAME_AREA_H
 #define MYSMB_GAME_AREA_H
 
-#include "game/game.h"
-#include "game/area/block_buffer.h"
+#include "core/game.h"
+#include "core/area/block_buffer.h"
 
 /* Shared BrickQBlockMetatiles binding, owned by area/block_metatile.c. */
 extern const mysmb_u8 mysmb_brick_question_metatiles[14];

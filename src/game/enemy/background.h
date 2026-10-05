@@ -1,6 +1,6 @@
 #ifndef MYSMB_ENEMY_BACKGROUND_H
 #define MYSMB_ENEMY_BACKGROUND_H
-#include "game/game.h"
+#include "core/game.h"
 struct mysmb_enemy_terrain;
 
 /* Original EnemyBGCStateData; caller owns its state-transition decision. */

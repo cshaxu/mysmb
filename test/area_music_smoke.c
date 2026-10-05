@@ -1,5 +1,5 @@
-#include "game/game.h"
-#include "game/area.h"
+#include "core/game.h"
+#include "core/area.h"
 
 static int check_music(mysmb_u8 mode, mysmb_u8 area_type,
                        mysmb_u8 entrance, mysmb_u8 alternate,

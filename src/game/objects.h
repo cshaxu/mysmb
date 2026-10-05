@@ -1,7 +1,7 @@
 #ifndef MYSMB_GAME_OBJECTS_H
 #define MYSMB_GAME_OBJECTS_H
 
-#include "game/game.h"
+#include "core/game.h"
 
 /* ROM $BA89-$BB37: hammer allocation and actor caller chain. */
 extern const mysmb_u8 mysmb_hammer_enemy_offsets[9];

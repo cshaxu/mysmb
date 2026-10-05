@@ -1,5 +1,5 @@
 #include "game/player.h"
-#include "game/area.h"
+#include "core/area.h"
 #include "smb1_local_rom.h"
 #include <stdio.h>
 #include <string.h>

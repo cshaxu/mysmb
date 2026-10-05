@@ -3,7 +3,7 @@
 #include "game/enemy/loop.h"
 #include "game/enemy/init_targets.h"
 #include "game/enemy/actor_slots.h"
-#include "game/area.h"
+#include "core/area.h"
 
 enum {
     MYSMB_VRAM_BUFFER1 = 0x0300U,

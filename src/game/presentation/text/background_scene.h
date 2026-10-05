@@ -1,7 +1,7 @@
 #ifndef MYSMB_GAME_TEXT_BACKGROUND_SCENE_H
 #define MYSMB_GAME_TEXT_BACKGROUND_SCENE_H
 
-#include "game/game.h"
+#include "core/game.h"
 #include "io/video.h"
 
 /* Caller-owned far storage. No ROM bytes or bitmap samples are cached. */

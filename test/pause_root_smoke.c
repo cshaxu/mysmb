@@ -1,4 +1,4 @@
-#include "game/game.h"
+#include "core/game.h"
 
 static int mysmb_pause_case(mysmb_u8 mode, mysmb_u8 task, mysmb_u8 status,
                             mysmb_u8 timer, mysmb_u8 audio, mysmb_u8 buttons,

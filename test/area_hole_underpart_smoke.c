@@ -1,5 +1,5 @@
 #include <string.h>
-#include "game/area.h"
+#include "core/area.h"
 
 static void setup(struct mysmb_game *game, mysmb_u8 *prg)
 {

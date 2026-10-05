@@ -16,152 +16,17 @@ an admitted successor accepts them; it cannot close with unfinished custody.
 
 | Receiving S | Exact node count | Exact node set |
 | --- | ---: | --- |
-| M2 T22 S5 | 8 | `FlagpoleObject`, `FlagpoleScoreMods`, `FlagpoleScoreDigits`, `FlagpoleRoutine`, `SkipScore`, `GiveFPScr`, `FPGfx`, `ExitFlagP` |
-| M2 T29 S3 | 11 | `PlayerStarting_X_Pos`, `AltYPosOffset`, `PlayerStarting_Y_Pos`, `PlayerBGPriorityData`, `GameTimerData`, `Entrance_GameTimerSetup`, `ChkStPos`, `SetStPos`, `ChkOverR`, `ChkSwimE`, `SetPESub` |
 | M2 T30 S16 | 6 | `L_CastleArea1`, `L_CastleArea2`, `L_CastleArea3`, `L_CastleArea4`, `L_CastleArea5`, `L_CastleArea6` |
 | M2 T30 S17 | 22 | `L_GroundArea1`, `L_GroundArea2`, `L_GroundArea3`, `L_GroundArea4`, `L_GroundArea5`, `L_GroundArea6`, `L_GroundArea7`, `L_GroundArea8`, `L_GroundArea9`, `L_GroundArea10`, `L_GroundArea11`, `L_GroundArea12`, `L_GroundArea13`, `L_GroundArea14`, `L_GroundArea15`, `L_GroundArea16`, `L_GroundArea17`, `L_GroundArea18`, `L_GroundArea19`, `L_GroundArea20`, `L_GroundArea21`, `L_GroundArea22` |
 | M2 T30 S18 | 3 | `L_UndergroundArea1`, `L_UndergroundArea2`, `L_UndergroundArea3` |
 | M2 T30 S19 | 3 | `L_WaterArea1`, `L_WaterArea2`, `L_WaterArea3` |
 | M2 T31 S1 | 1 | `GameCoreRoutine` |
-| M2 T31 S2 | 36 | `GameEngine`, `ProcELoop`, `NoChgMus`, `CycleTwo`, `ClrPlrPal`, `SaveAB`, `UpdScrollVar`, `RunParser`, `ExitEng`, `WarpZoneObject`, `ProcessWhirlpools`, `NextWh`, `ExitWh`, `LeftWh`, `SetPWh`, `CannonBitmasks`, `ProcessCannons`, `ThreeSChk`, `FireCannon`, `Chk_BB`, `Next3Slt`, `ExCannon`, `BulletBillXSpdData`, `BulletBillHandler`, `SetupBB`, `ChkDSte`, `BBFly`, `RunBBSubs`, `KillBB`, `DoEnemySideCheck`, `SdeCLoop`, `NextSdeC`, `ExESdeC`, `SubtEnemyYPos`, `EnemyJump`, `DoSide` |
+| M2 T31 S2 | 9 | `GameEngine`, `ProcELoop`, `NoChgMus`, `CycleTwo`, `ClrPlrPal`, `SaveAB`, `UpdScrollVar`, `RunParser`, `ExitEng` |
 | M2 T31 S4 | 9 | `PlayerEntrance`, `ChkBehPipe`, `IntroEntr`, `EntrMode2`, `VineEntr`, `OffVine`, `PlayerRdy`, `ExitEntr`, `AutoControlPlayer` |
-| M2 T32 S1 | 11 | `PlayerCtrlRoutine`, `DisJoyp`, `SaveJoyp`, `SizeChk`, `ChkMoveDir`, `SetMoveDir`, `PlayerSubs`, `HoleDie`, `ChkHoleX`, `ExitCtrl`, `CloudExit` |
-| M2 T32 S2 | 11 | `Vine_AutoClimb`, `AutoClimb`, `SetEntr`, `VerticalPipeEntry`, `MovePlayerYAxis`, `SideExitPipeEntry`, `ChgAreaPipe`, `ChgAreaMode`, `ExitCAPipe`, `EnterSidePipe`, `RightPipe` |
-| M2 T32 S3 | 14 | `PlayerChangeSize`, `EndChgSize`, `ExitChgSize`, `PlayerInjuryBlink`, `ExitBlink`, `InitChangeSize`, `ExitBoth`, `PlayerDeath`, `DonePlayerTask`, `PlayerFireFlower`, `CyclePlayerPalette`, `ResetPalFireFlower`, `ResetPalStar`, `ExitDeath` |
-| M2 T32 S4 | 10 | `FlagpoleSlide`, `SlidePlayer`, `NoFPObj`, `Hidden1UpCoinAmts`, `PlayerEndLevel`, `ChkStop`, `InCastle`, `RdyNextA`, `NextArea`, `ExitNA` |
-| M2 T33 S1 | 14 | `PlayerMovementSubs`, `SetCrouch`, `ProcMove`, `NoMoveSub`, `OnGroundStateSub`, `GndMove`, `FallingSub`, `JumpSwimSub`, `DumpFall`, `ProcSwim`, `LRWater`, `LRAir`, `JSMove`, `ExitMov1` |
-| M2 T33 S2 | 8 | `ClimbAdderLow`, `ClimbAdderHigh`, `ClimbingSub`, `MoveOnVine`, `ClimbFD`, `CSetFDir`, `ExitCSub`, `InitCSTimer` |
-| M2 T33 S3 | 28 | `JumpMForceData`, `FallMForceData`, `PlayerYSpdData`, `InitMForceData`, `MaxLeftXSpdData`, `MaxRightXSpdData`, `FrictionData`, `Climb_Y_SpeedData`, `Climb_Y_MForceData`, `PlayerPhysicsSub`, `ProcClimb`, `SetCAnim`, `CheckForJumping`, `NoJump`, `ProcJumping`, `InitJS`, `ChkWtr`, `GetYPhy`, `PJumpSnd`, `SJumpSnd`, `X_Physics`, `ProcPRun`, `ChkRFast`, `FastXSp`, `SetRTmr`, `GetXPhy`, `GetXPhy2`, `ExitPhy` |
-| M2 T33 S4 | 12 | `PlayerAnimTmrData`, `GetPlayerAnimSpeed`, `ChkSkid`, `SetRunSpd`, `ProcSkid`, `SetAnimSpd`, `ImposeFriction`, `JoypFrict`, `LeftFrict`, `RghtFrict`, `XSpdSign`, `SetAbsSpd` |
-| M2 T34 S1 | 5 | `ProcFireball_Bubble`, `ProcFireballs`, `ProcAirBubbles`, `BublLoop`, `BublExit` |
-| M2 T34 S2 | 4 | `RunFB`, `EraseFB`, `NoFBall`, `FireballExplosion` |
-| M2 T35 S1 | 8 | `BubbleCheck`, `SetupBubble`, `PosBubl`, `MoveBubl`, `Y_Bubl`, `ExitBubl`, `Bubble_MForceData`, `BubbleTimerData` |
-| M2 T35 S2 | 4 | `RunGameTimer`, `ResGTCtrl`, `TimeUpOn`, `ExGTimer` |
-| M2 T35 S3 | 7 | `Jumpspring_Y_PosData`, `JumpspringHandler`, `DownJSpr`, `PosJSpr`, `BounceJS`, `DrawJSpr`, `ExJSpring` |
-| M2 T35 S4 | 3 | `Setup_Vine`, `NextVO`, `VineHeightData` |
-| M2 T36 S1 | 6 | `VineObjectHandler`, `RunVSubs`, `VDrawLoop`, `KillVine`, `WrCMTile`, `ExitVH` |
-| M2 T36 S2 | 10 | `HammerEnemyOfsData`, `HammerXSpdData`, `SpawnHammerObj`, `SetMOfs`, `NoHammer`, `ProcHammerObj`, `SetHSpd`, `SetHPos`, `RunAllH`, `RunHSubs` |
-| M2 T36 S3 | 6 | `CoinBlock`, `SetupJumpCoin`, `JCoinC`, `FindEmptyMiscSlot`, `FMiscLoop`, `UseMiscS` |
-| M2 T36 S4 | 6 | `MiscObjectsCore`, `MiscLoop`, `ProcJumpCoin`, `JCoinRun`, `RunJCSubs`, `MiscLoopBack` |
-| M2 T36 S5 | 8 | `CoinTallyOffsets`, `ScoreOffsets`, `StatusBarNybbles`, `GiveOneCoin`, `CoinPoints`, `GetSBNybbles`, `UpdateNumber`, `NoZSup` |
-| M2 T36 S6 | 4 | `SetupPowerUp`, `PwrUpJmp`, `StrType`, `PutBehind` |
-| M2 T37 S1 | 6 | `PowerUpObjHandler`, `ShroomM`, `GrowThePowerUp`, `ChkPUSte`, `RunPUSubs`, `ExitPUp` |
-| M2 T37 S2 | 13 | `BlockYPosAdderData`, `PlayerHeadCollision`, `DBlockSte`, `ChkBrick`, `StartBTmr`, `ContBTmr`, `PutOldMT`, `PutMTileB`, `SmallBP`, `BigBP`, `Unbreak`, `InvOBit`, `InitBlock_XY_Pos` |
-| M2 T37 S3 | 11 | `BumpBlock`, `BlockCode`, `MushFlowerBlock`, `StarBlock`, `ExtraLifeMushBlock`, `VineBlock`, `ExitBlockChk`, `BrickQBlockMetatiles`, `BlockBumpedChk`, `BumpChkLoop`, `MatchBump` |
-| M2 T37 S4 | 4 | `BrickShatter`, `CheckTopOfBlock`, `TopEx`, `SpawnBrickChunks` |
-| M2 T37 S5 | 5 | `BlockObjectsCore`, `ChkTop`, `BouncingBlockHandler`, `KillBlock`, `UpdSte` |
-| M2 T37 S6 | 3 | `BlockObjMT_Updater`, `UpdateLoop`, `NextBUpd` |
-| M2 T37 S7 | 6 | `MoveEnemyHorizontally`, `MovePlayerHorizontally`, `MoveObjectHorizontally`, `SaveXSpd`, `UseAdder`, `ExXMove` |
-| M2 T37 S8 | 14 | `MovePlayerVertically`, `NoJSChk`, `MoveD_EnemyVertically`, `MoveFallingPlatform`, `ContVMove`, `MoveRedPTroopaDown`, `MoveRedPTroopaUp`, `MoveRedPTroopa`, `MoveDropPlatform`, `MoveEnemySlowVert`, `SetMdMax`, `MoveJ_EnemyVertically`, `SetHiMax`, `SetXMoveAmt` |
-| M2 T37 S9 | 12 | `MaxSpdBlockData`, `ResidualGravityCode`, `ImposeGravityBlock`, `ImposeGravitySprObj`, `MovePlatformDown`, `MovePlatformUp`, `SetDplSpd`, `RedPTroopaGrav`, `ImposeGravity`, `AlterYP`, `ChkUpM`, `ExVMove` |
-| M2 T38 S1 | 17 | `AreaDataOfsLoopback`, `EnemiesAndLoopsCore`, `ChkAreaTsk`, `ChkBowserF`, `ExitELCore`, `LoopCmdWorldNumber`, `LoopCmdPageNumber`, `LoopCmdYPosition`, `ExecGameLoopback`, `ProcLoopCommand`, `FindLoop`, `IncMLoop`, `WrongChk`, `DoLpBack`, `InitMLp`, `InitLCmd`, `ChkEnemyFrenzy` |
-| M2 T38 S2 | 19 | `ProcessEnemyData`, `CheckEndofBuffer`, `CheckRightBounds`, `CheckPageCtrlRow`, `PositionEnemyObj`, `CheckRightExtBounds`, `CheckForEnemyGroup`, `BuzzyBeetleMutate`, `StrID`, `CheckFrenzyBuffer`, `StrFre`, `InitEnemyObject`, `ExEPar`, `DoGroup`, `ParseRow0e`, `NotUse`, `CheckThreeBytes`, `Inc3B`, `Inc2B` |
-| M2 T38 S3 | 3 | `CheckpointEnemyID`, `InitEnemyRoutines`, `NoInitCode` |
-| M2 T38 S4 | 22 | `InitGoomba`, `InitPodoboo`, `InitRetainerObj`, `NormalXSpdData`, `InitNormalEnemy`, `GetESpd`, `SetESpd`, `InitRedKoopa`, `HBroWalkingTimerData`, `InitHammerBro`, `InitHorizFlySwimEnemy`, `InitBloober`, `SmallBBox`, `InitRedPTroopa`, `GetCent`, `TallBBox`, `SetBBox`, `InitBulletBill`, `InitCheepCheep`, `InitLakitu`, `SetupLakitu`, `KillLakitu` |
-| M2 T38 S5 | 13 | `PRDiffAdjustData`, `LakituAndSpinyHandler`, `ChkLak`, `ChkNoEn`, `CreateL`, `RetEOfs`, `ExLSHand`, `CreateSpiny`, `DifLoop`, `UsePosv`, `SetSpSpd`, `SpinyRte`, `ChpChpEx` |
-| M2 T38 S6 | 4 | `FirebarSpinSpdData`, `FirebarSpinDirData`, `InitLongFirebar`, `InitShortFirebar` |
-| M2 T38 S7 | 10 | `FlyCCXPositionData`, `FlyCCXSpeedData`, `FlyCCTimerData`, `InitFlyingCheepCheep`, `MaxCC`, `GSeed`, `RSeed`, `D2XPos1`, `D2XPos2`, `FinCCSt` |
-| M2 T39 S1 | 9 | `InitBowser`, `FlameYPosData`, `FlameYMFAdderData`, `InitBowserFlame`, `SetFrT`, `PutAtRightExtent`, `SpawnFromMouth`, `SetMF`, `FinishFlame` |
-| M2 T39 S2 | 5 | `FireworksXPosData`, `FireworksYPosData`, `InitFireworks`, `StarFChk`, `ExitFWk` |
-| M2 T39 S3 | 14 | `Bitmasks`, `Enemy17YPosData`, `SwimCC_IDData`, `BulletBillCheepCheep`, `ChkW2`, `Get17ID`, `Set17ID`, `GetRBit`, `ChkRBit`, `AddFBit`, `DoBulletBills`, `BB_SLoop`, `ExF17`, `FireBulletBill` |
-| M2 T39 S4 | 8 | `HandleGroupEnemies`, `PullID`, `SnglID`, `SetYGp`, `CntGrp`, `GrLoop`, `GSltLp`, `NextED` |
-| M2 T39 S5 | 9 | `InitPiranhaPlant`, `InitEnemyFrenzy`, `NoFrenzyCode`, `EndFrenzy`, `LakituChk`, `NextFSlot`, `InitJumpGPTroopa`, `TallBBox2`, `SetBBox2` |
-| M2 T39 S6 | 3 | `PlatPosDataLow`, `PlatPosDataHigh`, `EndOfEnemyInitCode` |
-| M2 T39 S7 | 4 | `RunEnemyObjectsCore`, `JmpEO`, `NoRunCode`, `RunRetainerObj` |
-| M2 T39 S8 | 4 | `RunNormalEnemies`, `SkipMove`, `EnemyMovementSubs`, `NoMoveCode` |
-| M2 T39 S9 | 7 | `RunBowserFlame`, `RunFirebarObj`, `RunSmallPlatform`, `RunLargePlatform`, `SkipPT`, `LargePlatformSubroutines`, `EraseEnemyObject` |
-| M2 T40 S1 | 2 | `MovePodoboo`, `PdbM` |
-| M2 T40 S10 | 16 | `LakituDiffAdj`, `MoveLakitu`, `ChkLS`, `Fr12S`, `LdLDa`, `SetLSpd`, `SetLMov`, `PlayerLakituDiff`, `ChkLakDif`, `SetLMovD`, `ChkPSpeed`, `ChkSpinyO`, `ChkEmySpd`, `SubDifAdj`, `SPixelLak`, `ExMoveLak` |
-| M2 T40 S2 | 24 | `HammerThrowTmrData`, `XSpeedAdderData`, `RevivedXSpeed`, `ProcHammerBro`, `ChkJH`, `DecHT`, `HammerBroJumpLData`, `HammerBroJumpCode`, `SetHJ`, `HJump`, `MoveHammerBroXDir`, `Shimmy`, `SetShim`, `MoveNormalEnemy`, `FallE`, `MEHor`, `SlowM`, `SteadM`, `AddHS`, `ReviveStunned`, `SetRSpd`, `MoveDefeatedEnemy`, `ChkKillGoomba`, `NKGmba` |
-| M2 T40 S3 | 5 | `MoveJumpingEnemy`, `ProcMoveRedPTroopa`, `NoIncPT`, `MoveRedPTUpOrDown`, `MovPTDwn` |
-| M2 T40 S4 | 10 | `MoveFlyGreenPTroopa`, `YSway`, `NoMGPT`, `XMoveCntr_GreenPTroopa`, `XMoveCntr_Platform`, `NoIncXM`, `IncPXM`, `DecSeXM`, `MoveWithXMCntrs`, `XMRight` |
-| M2 T40 S5 | 16 | `BlooberBitmasks`, `MoveBloober`, `FBLeft`, `SBMDir`, `BlooberSwim`, `SwimX`, `LeftSwim`, `MoveDefeatedBloober`, `ProcSwimmingB`, `BSwimE`, `SlowSwim`, `NoSSw`, `ChkForFloatdown`, `Floatdown`, `NoFD`, `ChkNearPlayer` |
-| M2 T40 S6 | 2 | `MoveBulletBill`, `NotDefB` |
-| M2 T40 S7 | 7 | `SwimCCXMoveData`, `MoveSwimmingCheepCheep`, `CCSwim`, `CCSwimUpwards`, `ChkSwimYPos`, `YPDiff`, `ExSwCC` |
-| M2 T40 S8 | 32 | `FirebarPosLookupTbl`, `FirebarMirrorData`, `FirebarTblOffsets`, `FirebarYPos`, `ProcFirebar`, `SusFbar`, `SkpFSte`, `SetupGFB`, `SetMFbar`, `DrawFbar`, `NextFbar`, `SkipFBar`, `DrawFirebar_Collision`, `AddHA`, `SubtR1`, `ChkFOfs`, `VAHandl`, `AddVA`, `SetVFbr`, `FirebarCollision`, `AdjSm`, `BigJp`, `FBCLoop`, `ChkVFBD`, `ChkFBCl`, `Chk2Ofs`, `ChgSDir`, `SetSDir`, `NoColFB`, `GetFirebarPosition`, `GetHAdder`, `GetVAdder` |
-| M2 T40 S9 | 6 | `PRandomSubtracter`, `FlyCCBPriority`, `MoveFlyingCheepCheep`, `FlyCC`, `AddCCF`, `BPGet` |
-| M2 T41 S1 | 6 | `BridgeCollapseData`, `BridgeCollapse`, `SetM2`, `MoveD_Bowser`, `RemoveBridge`, `NoBFall` |
-| M2 T41 S10 | 6 | `YMovingPlatform`, `SkipIY`, `ChkYCenterPos`, `YMDown`, `ChkYPCollision`, `ExYPl` |
-| M2 T41 S11 | 9 | `XMovingPlatform`, `PositionPlayerOnHPlat`, `PPHSubt`, `SetPVar`, `ExXMP`, `DropPlatform`, `ExDPl`, `RightPlatform`, `ExRPl` |
-| M2 T41 S12 | 5 | `MoveLargeLiftPlat`, `MoveSmallPlatform`, `MoveLiftPlatforms`, `ChkSmallPlatCollision`, `ExLiftP` |
-| M2 T41 S13 | 5 | `OffscreenBoundsCheck`, `LimitB`, `ExtendLB`, `TooFar`, `ExScrnBd` |
-| M2 T41 S2 | 19 | `PRandomRange`, `RunBowser`, `KillAllEnemies`, `KillLoop`, `BowserControl`, `ChkMouth`, `FeetTmr`, `ResetMDr`, `B_FaceP`, `GetPRCmp`, `GetDToO`, `CompDToO`, `HammerChk`, `SetHmrTmr`, `SkipToFB`, `MakeBJump`, `ChkFireB`, `SpawnFBr`, `SetFBTmr` |
-| M2 T41 S3 | 4 | `BowserGfxHandler`, `CopyFToR`, `ExBGfxH`, `ProcessBowserHalf` |
-| M2 T41 S4 | 9 | `ProcBowserFlame`, `SFlmX`, `SetGfxF`, `FlmeAt`, `DrawFlameLoop`, `M3FOfs`, `M2FOfs`, `M1FOfs`, `ExFlmeD` |
-| M2 T41 S5 | 3 | `RunFireworks`, `SetupExpl`, `FireworksSoundScore` |
-| M2 T41 S6 | 20 | `StarFlagYPosAdder`, `StarFlagXPosAdder`, `StarFlagTileData`, `RunStarFlagObj`, `GameTimerFireworks`, `SetFWC`, `IncrementSFTask1`, `StarFlagExit`, `AwardGameTimerPoints`, `NoTTick`, `EndAreaPoints`, `ELPGive`, `RaiseFlagSetoffFWorks`, `SetoffF`, `DrawStarFlag`, `DSFLoop`, `DrawFlagSetTimer`, `IncrementSFTask2`, `DelayToAreaEnd`, `StarFlagExit2` |
-| M2 T41 S7 | 6 | `MovePiranhaPlant`, `ChkPlayerNearPipe`, `ReversePlantSpeed`, `SetupToMovePPlant`, `RiseFallPiranhaPlant`, `PutinPipe` |
-| M2 T41 S8 | 2 | `FirebarSpin`, `SpinCounterClockwise` |
-| M2 T41 S9 | 26 | `BalancePlatform`, `DoBPl`, `CheckBalPlatform`, `ChkForFall`, `MakePlatformFall`, `ChkOtherForFall`, `ChkToMoveBalPlat`, `ColFlg`, `PlatUp`, `PlatSt`, `PlatDn`, `DoOtherPlatform`, `DrawEraseRope`, `EraseR1`, `OtherRope`, `EraseR2`, `EndRp`, `ExitRp`, `SetupPlatformRope`, `GetLRp`, `GetHRp`, `ExPRp`, `InitPlatformFall`, `StopPlatforms`, `PlatformFall`, `ExPF` |
-| M2 T42 S1 | 6 | `FireballEnemyCollision`, `FireballEnemyCDLoop`, `GoombaDie`, `NotGoomba`, `NoFToECol`, `ExitFBallEnemy` |
-| M2 T42 S2 | 11 | `BowserIdentities`, `HandleEnemyFBallCol`, `ChkBuzzyBeetle`, `HurtBowser`, `SetDBSte`, `ChkOtherEnemies`, `ShellOrBlockDefeat`, `StnE`, `GoombaPoints`, `EnemySmackScore`, `ExHCF` |
-| M2 T42 S3 | 3 | `PlayerHammerCollision`, `ClHCol`, `ExPHC` |
-| M2 T42 S4 | 6 | `HandlePowerUpCollision`, `Shroom_Flower_PUp`, `SetFor1Up`, `UpToSuper`, `UpToFiery`, `NoPUp` |
-| M2 T42 S5 | 34 | `ResidualXSpdData`, `KickedShellXSpdData`, `DemotedKoopaXSpdData`, `PlayerEnemyCollision`, `NoPECol`, `CheckForPUpCollision`, `EColl`, `KickedShellPtsData`, `HandlePECollisions`, `KSPts`, `ExPEC`, `ChkForPlayerInjury`, `ChkInj`, `ChkETmrs`, `TInjE`, `InjurePlayer`, `ForceInjury`, `SetKRout`, `SetPRout`, `ExInjColRoutines`, `KillPlayer`, `StompedEnemyPtsData`, `EnemyStomped`, `EnemyStompedPts`, `ChkForDemoteKoopa`, `RevivalRateData`, `HandleStompedShellE`, `SBnce`, `ChkEnemyFaceRight`, `LInj`, `EnemyFacePlayer`, `SFcRt`, `SetupFloateyNumber`, `ExSFN` |
-| M2 T42 S6 | 16 | `SetBitsMask`, `ClearBitsMask`, `EnemiesCollision`, `ECLoop`, `YesEC`, `NoEnemyCollision`, `ReadyNextEnemy`, `ExitECRoutine`, `ProcEnemyCollisions`, `ShellCollisions`, `ExitProcessEColl`, `ProcSecondEnemyColl`, `MoveEOfs`, `EnemyTurnAround`, `RXSpd`, `ExTA` |
-| M2 T42 S7 | 14 | `LargePlatformCollision`, `ChkForPlayerC_LargeP`, `ExLPC`, `SmallPlatformCollision`, `ChkSmallPlatLoop`, `MoveBoundBox`, `ExSPC`, `ProcSPlatCollisions`, `ProcLPlatCollisions`, `ChkForTopCollision`, `SetCollisionFlag`, `PlatformSideCollisions`, `SideC`, `NoSideC` |
-| M2 T42 S8 | 4 | `PlayerPosSPlatData`, `PositionPlayerOnS_Plat`, `PositionPlayerOnVPlat`, `ExPlPos` |
-| M2 T42 S9 | 4 | `CheckPlayerVertical`, `ExCPV`, `GetEnemyBoundBoxOfs`, `GetEnemyBoundBoxOfsArg` |
-| M2 T43 S1 | 31 | `PlayerBGUpperExtent`, `PlayerBGCollision`, `SetFallS`, `SetPSte`, `ChkOnScr`, `ExPBGCol`, `ChkCollSize`, `GBBAdr`, `HeadChk`, `SolidOrClimb`, `NYSpd`, `DoFootCheck`, `AwardTouchedCoin`, `ChkFootMTile`, `ContChk`, `LandPlyr`, `InitSteP`, `DoPlayerSideCheck`, `SideCheckLoop`, `BHalf`, `ExSCH`, `CheckSideMTiles`, `ContSChk`, `ChkPBtm`, `PipeDwnS`, `PlyrPipe`, `SetCATmr`, `ChkGERtn`, `StopPlayerMove`, `ExCSM`, `AreaChangeTimerData` |
-| M2 T43 S10 | 9 | `ChkForBump_HammerBroJ`, `NoBump`, `InvEnemyDir`, `PlayerEnemyDiff`, `EnemyLanding`, `HammerBroBGColl`, `KillEnemyAboveBlock`, `UnderHammerBro`, `NoUnderHammerBro` |
-| M2 T43 S11 | 3 | `ChkUnderEnemy`, `ChkForNonSolids`, `NSFnd` |
-| M2 T43 S12 | 3 | `FireballBGCollision`, `ClearBounceFlag`, `InitFireballExplode` |
-| M2 T43 S13 | 10 | `BoundBoxCtrlData`, `GetFireballBoundBox`, `GetMiscBoundBox`, `FBallB`, `GetEnemyBoundBox`, `SmallPlatformBoundBox`, `GetMaskedOffScrBits`, `CMBits`, `SetupEOffsetFBBox`, `MoveBoundBoxOffscreen` |
-| M2 T43 S14 | 7 | `BoundingBoxCore`, `CheckRightScreenBBox`, `SORte`, `NoOfs`, `CheckLeftScreenBBox`, `SOLft`, `NoOfs2` |
-| M2 T43 S15 | 7 | `PlayerCollisionCore`, `SprObjectCollisionCore`, `CollisionCoreLoop`, `SecondBoxVerticalChk`, `FirstBoxGreater`, `NoCollisionFound`, `CollisionFound` |
-| M2 T43 S2 | 3 | `HandleCoinMetatile`, `HandleAxeMetatile`, `ErACM` |
-| M2 T43 S3 | 14 | `ClimbXPosAdder`, `ClimbPLocAdder`, `FlagpoleYPosData`, `HandleClimbing`, `ExHC`, `ChkForFlagpole`, `FlagpoleCollision`, `ChkFlagpoleYPosLoop`, `MtchF`, `RunFR`, `VineCollision`, `PutPlayerOnVine`, `SetVXPl`, `ExPVne` |
-| M2 T43 S4 | 7 | `ChkInvisibleMTiles`, `ExCInvT`, `ChkForLandJumpSpring`, `ExCJSp`, `ChkJumpspringMetatiles`, `JSFnd`, `NoJSFnd` |
-| M2 T43 S5 | 3 | `HandlePipeEntry`, `GetWNum`, `ExPipeE` |
-| M2 T43 S6 | 5 | `ImpedePlayerMove`, `RImpd`, `NXSpd`, `PlatF`, `ExIPM` |
-| M2 T43 S7 | 8 | `SolidMTileUpperExt`, `CheckForSolidMTiles`, `ClimbMTileUpperExt`, `CheckForClimbMTiles`, `CheckForCoinMTiles`, `CoinSd`, `GetMTileAttrib`, `ExEBG` |
-| M2 T43 S8 | 18 | `EnemyBGCStateData`, `EnemyBGCXSpdData`, `EnemyToBGCollisionDet`, `DoIDCheckBGColl`, `HBChk`, `CInvu`, `YesIn`, `NoEToBGCollision`, `HandleEToBGCollision`, `GiveOEPoints`, `ChkToStunEnemies`, `Demote`, `SetStun`, `SetWYSpd`, `SetNotW`, `ChkBBill`, `NoCDirF`, `ExEBGChk` |
-| M2 T43 S9 | 14 | `LandEnemyProperly`, `SChkA`, `ChkLandedEnemyState`, `SetForStn`, `ExSteChk`, `ProcEnemyDirection`, `InvtD`, `CNwCDir`, `LandEnemyInitState`, `NMovShellFallBit`, `ChkForRedKoopa`, `Chk2MSBSt`, `GetSteFromD`, `SetD6Ste` |
-| M2 T44 S1 | 14 | `BlockBufferChk_Enemy`, `ResidualMiscObjectCode`, `BlockBufferChk_FBall`, `ResJmpM`, `BBChk_E`, `BlockBufferAdderData`, `BlockBuffer_X_Adder`, `BlockBuffer_Y_Adder`, `BlockBufferColli_Feet`, `BlockBufferColli_Head`, `BlockBufferColli_Side`, `BlockBufferCollision`, `RetXC`, `RetYC` |
-| M2 T44 S2 | 6 | `VineYPosAdder`, `DrawVine`, `VineTL`, `SkpVTop`, `ChkFTop`, `NextVSp` |
-| M2 T44 S3 | 14 | `SixSpriteStacker`, `StkLp`, `FirstSprXPos`, `FirstSprYPos`, `SecondSprXPos`, `SecondSprYPos`, `FirstSprTilenum`, `SecondSprTilenum`, `HammerSprAttrib`, `DrawHammer`, `ForceHPose`, `GetHPose`, `RenderH`, `NoHOffscr` |
-| M2 T44 S4 | 9 | `FlagpoleScoreNumTiles`, `FlagpoleGfxHandler`, `ChkFlagOffscreen`, `MoveSixSpritesOffscreen`, `DumpSixSpr`, `DumpFourSpr`, `DumpThreeSpr`, `DumpTwoSpr`, `ExitDumpSpr` |
-| M2 T44 S6 | 5 | `DrawFloateyNumber_Coin`, `NotRsNum`, `JumpingCoinTiles`, `JCoinGfxHandler`, `ExJCGfx` |
-| M2 T44 S7 | 6 | `PowerUpGfxTable`, `PowerUpAttributes`, `DrawPowerUp`, `PUpDrawLoop`, `FlipPUpRightSide`, `PUpOfs` |
-| M2 T44 S8 | 44 | `EnemyGraphicsTable`, `EnemyGfxTableOffsets`, `EnemyAttributeData`, `EnemyAnimTimingBMask`, `JumpspringFrameOffsets`, `EnemyGfxHandler`, `CheckForRetainerObj`, `CheckForBulletBillCV`, `SBBAt`, `CheckForJumpspring`, `CheckForPodoboo`, `CheckBowserGfxFlag`, `SBwsrGfxOfs`, `CheckForGoomba`, `GmbaAnim`, `CheckBowserFront`, `ChkFrontSte`, `FlipBowserOver`, `DrawBowser`, `CheckBowserRear`, `ChkRearSte`, `CheckForSpiny`, `NotEgg`, `CheckForLakitu`, `NoLAFr`, `CheckUpsideDownShell`, `CheckRightSideUpShell`, `CheckForDefdGoomba`, `CheckForHammerBro`, `CheckForBloober`, `CheckToAnimateEnemy`, `CheckForSecondFrame`, `CheckAnimationStop`, `CheckDefeatedState`, `DrawEnemyObject`, `SkipToOffScrChk`, `CheckForVerticalFlip`, `FlipEnemyVertically`, `CheckForESymmetry`, `ContES`, `ESRtnr`, `SpnySC`, `MirrorEnemyGfx`, `EggExc` |
-| M2 T45 S1 | 13 | `CheckToMirrorLakitu`, `NVFLak`, `CheckToMirrorJSpring`, `SprObjectOffscrChk`, `LcChk`, `Row3C`, `Row23C`, `AllRowC`, `ExEGHandler`, `DrawEnemyObjRow`, `DrawOneSpriteRow`, `MoveESprRowOffscreen`, `MoveESprColOffscreen` |
-| M2 T45 S2 | 14 | `DefaultBlockObjTiles`, `DrawBlock`, `DBlkLoop`, `ChkRep`, `SetBFlip`, `BlkOffscr`, `PullOfsB`, `ChkLeftCo`, `MoveColOffscreen`, `ExDBlk`, `DrawBrickChunks`, `DChunks`, `ChnkOfs`, `ExBCDr` |
-| M2 T45 S3 | 7 | `DrawFireball`, `DrawFirebar`, `FireA`, `ExplosionTiles`, `DrawExplosion_Fireball`, `DrawExplosion_Fireworks`, `KillFireBall` |
-| M2 T45 S4 | 6 | `DrawSmallPlatform`, `TopSP`, `BotSP`, `SOfs`, `SOfs2`, `ExSPl` |
-| M2 T45 S5 | 5 | `DrawBubble`, `ExDBub`, `PlayerGfxTblOffsets`, `PlayerGraphicsTable`, `SwimKickTileNum` |
-| M2 T46 S1 | 13 | `PlayerGfxHandler`, `CntPl`, `SwimKT`, `BigKTS`, `ExPGH`, `FindPlayerAction`, `DoChangeSize`, `PlayerKilled`, `PlayerGfxProcessing`, `SUpdR`, `PlayerOffscreenChk`, `PROfsLoop`, `NPROffscr` |
-| M2 T46 S2 | 5 | `IntermediatePlayerData`, `DrawPlayer_Intermediate`, `PIntLoop`, `RenderPlayerSub`, `DrawPlayerLoop` |
-| M2 T46 S3 | 13 | `ProcessPlayerAction`, `ProcOnGroundActs`, `NonAnimatedActs`, `ActionFalling`, `ActionWalkRun`, `ActionClimbing`, `ActionSwimming`, `GetCurrentAnimOffset`, `FourFrameExtent`, `ThreeFrameExtent`, `AnimationControl`, `SetAnimC`, `ExAnimC` |
-| M2 T46 S4 | 12 | `GetGfxOffsetAdder`, `SzOfs`, `ChangeSizeOffsetAdder`, `HandleChangeSize`, `CSzNext`, `GorSLog`, `GetOffsetFromAnimCtrl`, `ShrinkPlayer`, `ShrPlF`, `ChkForPlayerAttrib`, `KilledAtt`, `C_S_IGAtt` |
-| M2 T47 S1 | 1 | `ExPlyrAt` |
-| M2 T47 S2 | 9 | `RelativePlayerPosition`, `RelativeBubblePosition`, `RelativeFireballPosition`, `RelWOfs`, `RelativeMiscPosition`, `RelativeEnemyPosition`, `RelativeBlockPosition`, `VariableObjOfsRelPos`, `GetObjRelativePosition` |
-| M2 T47 S3 | 1 | `GetPlayerOffscreenBits` |
-| M2 T47 S4 | 26 | `GetFireballOffscreenBits`, `GetBubbleOffscreenBits`, `GetMiscOffscreenBits`, `ObjOffsetData`, `GetProperObjOffset`, `GetEnemyOffscreenBits`, `GetBlockOffscreenBits`, `SetOffscrBitsOffset`, `GetOffScreenBitsSet`, `RunOffscrBitsSubs`, `XOffscreenBitsData`, `DefaultXOnscreenOfs`, `GetXOffscreenBits`, `XOfsLoop`, `XLdBData`, `ExXOfsBS`, `YOffscreenBitsData`, `DefaultYOnscreenOfs`, `HighPosUnitData`, `GetYOffscreenBits`, `YOfsLoop`, `YLdBData`, `ExYOfsBS`, `DividePDiff`, `SetOscrO`, `ExDivPD` |
-| M2 T47 S5 | 3 | `DrawSpriteObject`, `NoHFlip`, `SetHFAt` |
-| M2 T48 S1 | 13 | `SoundEngine`, `SndOn`, `InPause`, `PTone1F`, `ContPau`, `PTone2F`, `PTRegC`, `DecPauC`, `SkipPIn`, `RunSoundSubroutines`, `SkipSoundSubroutines`, `NoIncDAC`, `StrWave` |
-| M2 T48 S2 | 9 | `Dump_Squ1_Regs`, `PlaySqu1Sfx`, `SetFreq_Squ1`, `Dump_Freq_Regs`, `NoTone`, `Dump_Sq2_Regs`, `PlaySqu2Sfx`, `SetFreq_Squ2`, `SetFreq_Tri` |
-| M2 T48 S3 | 14 | `SwimStompEnvelopeData`, `PlayFlagpoleSlide`, `PlaySmallJump`, `PlayBigJump`, `JumpRegContents`, `ContinueSndJump`, `N2Prt`, `FPS2nd`, `DmpJpFPS`, `PlayFireballThrow`, `PlayBump`, `Fthrow`, `ContinueBumpThrow`, `DecJpFPS` |
-| M2 T48 S4 | 16 | `Square1SfxHandler`, `CheckSfx1Buffer`, `ExS1H`, `PlaySwimStomp`, `ContinueSwimStomp`, `BranchToDecLength1`, `PlaySmackEnemy`, `ContinueSmackEnemy`, `SmSpc`, `SmTick`, `DecrementSfx1Length`, `StopSquare1Sfx`, `ExSfx1`, `PlayPipeDownInj`, `ContinuePipeDownInj`, `NoPDwnL` |
-| M2 T48 S5 | 18 | `ExtraLifeFreqData`, `PowerUpGrabFreqData`, `PUp_VGrow_FreqData`, `PlayCoinGrab`, `PlayTimerTick`, `CGrab_TTickRegL`, `ContinueCGrabTTick`, `N2Tone`, `PlayBlast`, `ContinueBlast`, `SBlasJ`, `PlayPowerUpGrab`, `ContinuePowerUpGrab`, `LoadSqu2Regs`, `DecrementSfx2Length`, `EmptySfx2Buffer`, `StopSquare2Sfx`, `ExSfx2` |
-| M2 T48 S6 | 4 | `Square2SfxHandler`, `CheckSfx2Buffer`, `ExS2H`, `Cont_CGrab_TTick` |
-| M2 T49 S1 | 14 | `JumpToDecLength2`, `PlayBowserFall`, `BlstSJp`, `ContinueBowserFall`, `PBFRegs`, `EL_LRegs`, `PlayExtraLife`, `ContinueExtraLife`, `DivLLoop`, `PlayGrowPowerUp`, `PlayGrowVine`, `GrowItemRegs`, `ContinueGrowItems`, `StopGrowItems` |
-| M2 T49 S2 | 12 | `BrickShatterFreqData`, `PlayBrickShatter`, `ContinueBrickShatter`, `PlayNoiseSfx`, `DecrementSfx3Length`, `ExSfx3`, `NoiseSfxHandler`, `CheckNoiseBuffer`, `ExNH`, `PlayBowserFlame`, `ContinueBowserFlame`, `ContinueMusic` |
-| M2 T49 S3 | 10 | `MusicHandler`, `LoadEventMusic`, `NoStopSfx`, `LoadAreaMusic`, `NoStop1`, `GMLoopB`, `HandleAreaMusicLoopB`, `FindAreaMusicHeader`, `FindEventMusicHeader`, `LoadHeader` |
-| M2 T49 S4 | 11 | `HandleSquare2Music`, `EndOfMusicData`, `NotTRO`, `MusicLoopBack`, `VictoryMLoopBack`, `Squ2LengthHandler`, `Squ2NoteHandler`, `Rest`, `SkipFqL1`, `MiscSqu2MusicTasks`, `NoDecEnv1` |
-| M2 T49 S5 | 8 | `HandleSquare1Music`, `FetchSqu1MusicData`, `Squ1NoteHandler`, `SkipCtrlL`, `MiscSqu1MusicTasks`, `NoDecEnv2`, `DeathMAltReg`, `DoAltLoad` |
-| M2 T49 S6 | 6 | `HandleTriangleMusic`, `TriNoteHandler`, `NotDOrD4`, `MediN`, `LongN`, `LoadTriCtrlReg` |
-| M2 T49 S7 | 8 | `HandleNoiseMusic`, `FetchNoiseBeatData`, `NoiseBeatHandler`, `StrongBeat`, `LongBeat`, `SilentBeat`, `PlayBeat`, `ExitMusicHandler` |
-| M2 T49 S8 | 9 | `AlternateLengthHandler`, `ProcessLengthData`, `LoadControlRegs`, `NotECstlM`, `WaterMus`, `AllMus`, `LoadEnvelopeData`, `LoadUsualEnvData`, `LoadWaterEventMusEnvData` |
-| M2 T49 S9 | 23 | `MusicHeaderData`, `TimeRunningOutHdr`, `Star_CloudHdr`, `EndOfLevelMusHdr`, `ResidualHeaderData`, `UndergroundMusHdr`, `SilenceHdr`, `CastleMusHdr`, `VictoryMusHdr`, `GameOverMusHdr`, `WaterMusHdr`, `WinCastleMusHdr`, `GroundLevelPart1Hdr`, `GroundLevelPart2AHdr`, `GroundLevelPart2BHdr`, `GroundLevelPart2CHdr`, `GroundLevelPart3AHdr`, `GroundLevelPart3BHdr`, `GroundLevelLeadInHdr`, `GroundLevelPart4AHdr`, `GroundLevelPart4BHdr`, `GroundLevelPart4CHdr`, `DeathMusHdr` |
-| M2 T50 S1 | 21 | `Star_CloudMData`, `GroundM_P1Data`, `SilenceData`, `GroundM_P2AData`, `GroundM_P2BData`, `GroundM_P2CData`, `GroundM_P3AData`, `GroundM_P3BData`, `GroundMLdInData`, `GroundM_P4AData`, `GroundM_P4BData`, `DeathMusData`, `GroundM_P4CData`, `CastleMusData`, `GameOverMusData`, `TimeRunOutMusData`, `WinLevelMusData`, `UndergroundMusData`, `WaterMusData`, `EndOfCastleMusData`, `VictoryMusData` |
-| M2 T50 S2 | 5 | `FreqRegLookupTbl`, `MusicLengthLookupTbl`, `EndOfCastleMusicEnvData`, `AreaMusicEnvData`, `WaterEventMusEnvData` |
-| M2 T50 S3 | 2 | `BowserFlameEnvData`, `BrickShatterEnvData` |
-| M2 T51 S4 | 34 | `E_CastleArea1`, `E_CastleArea2`, `E_CastleArea3`, `E_CastleArea4`, `E_CastleArea5`, `E_CastleArea6`, `E_GroundArea1`, `E_GroundArea2`, `E_GroundArea3`, `E_GroundArea4`, `E_GroundArea5`, `E_GroundArea6`, `E_GroundArea7`, `E_GroundArea8`, `E_GroundArea9`, `E_GroundArea10`, `E_GroundArea11`, `E_GroundArea12`, `E_GroundArea13`, `E_GroundArea14`, `E_GroundArea15`, `E_GroundArea16`, `E_GroundArea17`, `E_GroundArea18`, `E_GroundArea19`, `E_GroundArea20`, `E_GroundArea21`, `E_GroundArea22`, `E_UndergroundArea1`, `E_UndergroundArea2`, `E_UndergroundArea3`, `E_WaterArea1`, `E_WaterArea2`, `E_WaterArea3` |
-| M2 T52 S3 | 1 | `AddToScore` |
-| M2 T70 S12 | 10 | `FloateyNumTileData`, `ScoreUpdateData`, `FloateyNumbersRoutine`, `ChkNumTimer`, `DecNumTimer`, `LoadNumTiles`, `ChkTallEnemy`, `GetAltOffset`, `FloateyPart`, `SetupNumSpr` |
-| M2 T70 S17 | 46 | `GameMode`, `GameRoutines`, `PlayerHole`, `HoleBottom`, `MoveSubs`, `FireballXSpdData`, `FireballObjCore`, `WhLoop`, `WhirlpoolActivate`, `WhPull`, `InitVStf`, `DuplicateEnemyObj`, `FSLoop`, `FlmEx`, `InitBalPlatform`, `AlignP`, `SetBPA`, `InitDropPlatform`, `InitHoriPlatform`, `InitVertPlatform`, `SetYO`, `CommonPlatCode`, `SPBBox`, `CasPBB`, `LargeLiftUp`, `LargeLiftDown`, `LargeLiftBBox`, `PlatLiftUp`, `PlatLiftDown`, `CommonSmallLift`, `PosPlatform`, `FlameTimerData`, `SetFlameTimer`, `ExFl`, `LargePlatformBoundBox`, `DrawLargePlatform`, `ShrinkPlatform`, `SetLast2Platform`, `SetPlatformTilenum`, `SChk2`, `SChk3`, `SChk4`, `SChk5`, `SChk6`, `SLChk`, `ExDLPl` |
+| M2 T70 S17 | 2 | `GameMode`, `GameRoutines` |
 | M3 T27 S2 | 14 | `SkipMainOper`, `WSelectBufferTemplate`, `RunDemo`, `VictoryMode`, `ScrollHandler`, `ChkNearMid`, `ScrollScreen`, `InitScrlAmt`, `ChkPOffscr`, `KeepOnscr`, `InitPlatScrl`, `X_SubtracterData`, `OffscrJoypadBitsData`, `GetScreenPosition` |
-| M3 T27 S4 | 475 | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`, `NonMaskableInterrupt`, `ScreenOff`, `InitBuffer`, `DecTimers`, `DecTimersLoop`, `SkipExpTimer`, `NoDecTimers`, `PauseSkip`, `RotPRandomBit`, `Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipSprite0`, `PauseRoutine`, `ChkPauseTimer`, `ChkStart`, `ClrPauseTimer`, `SetPause`, `ExitPause`, `SpriteShuffler`, `ShuffleLoop`, `StrSprOffset`, `NextSprOffset`, `SetAmtOffset`, `SetMiscOffset`, `OperModeExecutionTree`, `MoveAllSpritesOffscreen`, `MoveSpritesOffscreen`, `SprInitLoop`, `TitleScreenMode`, `GameMenuRoutine`, `StartGame`, `ChkSelect`, `ChkWorldSel`, `SelectBLogic`, `IncWorldSel`, `UpdateShroom`, `NullJoypad`, `ResetTitle`, `ChkContinue`, `StartWorld1`, `InitScores`, `ExitMenu`, `GoContinue`, `MushroomIconData`, `DrawMushroomIcon`, `IconDataRead`, `ExitIcon`, `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver`, `AutoPlayer`, `VictoryModeSubroutines`, `SetupVictoryMode`, `PlayerVictoryWalk`, `PerformWalk`, `DontWalk`, `ExitVWalk`, `PrintVictoryMessages`, `MRetainerMsg`, `ThankPlayer`, `SecondPartMsg`, `EvalForMusic`, `PrintMsg`, `IncMsgCounter`, `SetEndTimer`, `IncModeTask_A`, `ExitMsgs`, `PlayerEndWorld`, `EndExitOne`, `EndChkBButton`, `EndExitTwo`, `ScreenRoutines`, `InitScreen`, `SetupIntermediate`, `AreaPalette`, `GetAreaPalette`, `SetVRAMAddr_A`, `NextSubtask`, `BGColorCtrl_Addr`, `BackgroundColors`, `PlayerColors`, `GetBackgroundColor`, `NoBGColor`, `GetPlayerColors`, `ChkFiery`, `StartClrGet`, `ClrGetLoop`, `SetBGColor`, `SetVRAMOffset`, `GetAlternatePalette1`, `SetVRAMAddr_B`, `NoAltPal`, `WriteTopStatusLine`, `WriteBottomStatusLine`, `DisplayTimeUp`, `NoTimeUp`, `DisplayIntermediate`, `PlayerInter`, `OutputInter`, `GameOverInter`, `NoInter`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol`, `DrawTitleScreen`, `OutputTScr`, `ChkHiByte`, `ClearBuffersDrawIcon`, `TScrClear`, `IncSubtask`, `WriteTopScore`, `IncModeTask_B`, `GameText`, `TopStatusBarLine`, `WorldLivesDisplay`, `TwoPlayerTimeUp`, `OnePlayerTimeUp`, `TwoPlayerGameOver`, `OnePlayerGameOver`, `WarpZoneWelcome`, `LuigiName`, `WarpZoneNumbers`, `GameTextOffsets`, `WriteGameText`, `Chk2Players`, `LdGameText`, `GameTextLoop`, `EndGameText`, `PutLives`, `CheckPlayerName`, `ChkLuigi`, `NameLoop`, `ExitChkName`, `PrintWarpZoneNumbers`, `WarpNumLoop`, `ResetSpritesAndScreenTimer`, `ResetScreenTimer`, `NoReset`, `RenderAreaGraphics`, `DrawMTLoop`, `RightCheck`, `LLeft`, `NextMTRow`, `SetAttrib`, `ExitDrawM`, `RenderAttributeTables`, `SetATHigh`, `AttribLoop`, `SetVRAMCtrl`, `ColorRotatePalette`, `BlankPalette`, `Palette3Data`, `ColorRotation`, `GetBlankPal`, `GetAreaPal`, `ExitColorRot`, `BlockGfxData`, `RemoveCoin_Axe`, `WriteBlankMT`, `ReplaceBlockMetatile`, `DestroyBlockMetatile`, `WriteBlockMetatile`, `UseBOffset`, `MoveVOffset`, `PutBlockMetatile`, `SaveHAdder`, `RemBridge`, `MetatileGraphics_Low`, `MetatileGraphics_High`, `Palette0_MTiles`, `Palette1_MTiles`, `Palette2_MTiles`, `Palette3_MTiles`, `WaterPaletteData`, `GroundPaletteData`, `UndergroundPaletteData`, `CastlePaletteData`, `DaySnowPaletteData`, `NightSnowPaletteData`, `MushroomPaletteData`, `BowserPaletteData`, `MarioThanksMessage`, `LuigiThanksMessage`, `MushroomRetainerSaved`, `PrincessSaved1`, `PrincessSaved2`, `WorldSelectMessage1`, `WorldSelectMessage2`, `JumpEngine`, `InitializeNameTables`, `WriteNTAddr`, `InitNTLoop`, `InitATLoop`, `ReadJoypads`, `ReadPortBits`, `PortLoop`, `Save8Bits`, `WriteBufferToScreen`, `SetupWrites`, `GetLength`, `OutputToVRAM`, `RepeatByte`, `UpdateScreen`, `InitScroll`, `WritePPUReg1`, `StatusBarData`, `StatusBarOffset`, `PrintStatusBarNumbers`, `OutputNumbers`, `SetupNums`, `DigitPLoop`, `ExitOutputN`, `DigitsMathRoutine`, `AddModLoop`, `StoreNewD`, `EraseDMods`, `EraseMLoop`, `BorrowOne`, `CarryOne`, `UpdateTopScore`, `TopScoreCheck`, `GetScoreDiff`, `CopyScore`, `NoTopSc`, `DefaultSprOffsets`, `Sprite0Data`, `InitializeGame`, `ClrSndLoop`, `InitializeArea`, `ClrTimersLoop`, `StartPage`, `SetInitNTHigh`, `SetSecHard`, `CheckHalfway`, `DoneInitArea`, `PrimaryGameSetup`, `SecondaryGameSetup`, `ClearVRLoop`, `ShufAmtLoop`, `ISpr0Loop`, `InitializeMemory`, `InitPageLoop`, `InitByteLoop`, `InitByte`, `SkipByte`, `MusicSelectData`, `GetAreaMusic`, `ChkAreaType`, `StoreMusic`, `ExitGetM`, `HalfwayPageNybbles`, `PlayerLoseLife`, `StillInGame`, `GetHalfway`, `MaskHPNyb`, `SetHalfway`, `GameOverMode`, `SetupGameOver`, `RunGameOver`, `TerminateGame`, `ContinueGame`, `GameIsOn`, `TransposePlayers`, `TransLoop`, `ExTrans`, `DoNothing1`, `DoNothing2`, `AreaParserTaskHandler`, `DoAPTasks`, `SkipATRender`, `AreaParserTasks`, `IncrementColumnPos`, `NoColWrap`, `BSceneDataOffsets`, `BackSceneryData`, `BackSceneryMetatiles`, `FSceneDataOffsets`, `ForeSceneryData`, `TerrainMetatiles`, `TerrainRenderBits`, `AreaParserCore`, `RenderSceneryTerrain`, `ClrMTBuf`, `ThirdP`, `RendBack`, `SceLoop1`, `RendFore`, `SceLoop2`, `NoFore`, `RendTerr`, `TerMTile`, `StoreMT`, `TerrLoop`, `NoCloud2`, `TerrBChk`, `NextTBit`, `EndUChk`, `RendBBuf`, `ChkMTLow`, `StrBlock`, `BlockBuffLowBounds`, `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj`, `AlterAreaAttributes`, `Alter2`, `SetFore`, `ScrollLockObject_Warp`, `WarpNum`, `ScrollLockObject`, `KillEnemies`, `KillELoop`, `NoKillE`, `FrenzyIDData`, `AreaFrenzy`, `FreCompLoop`, `ExitAFrenzy`, `AreaStyleObject`, `TreeLedge`, `MidTreeL`, `EndTreeL`, `MushroomLedge`, `EndMushL`, `AllUnder`, `NoUnder`, `PulleyRopeMetatiles`, `PulleyRopeObject`, `RenderPul`, `MushLExit`, `CastleMetatiles`, `CastleObject`, `CRendLoop`, `ChkCFloor`, `NotTall`, `PlayerStop`, `ExitCastle`, `WaterPipe`, `IntroPipe`, `VPipeSectLoop`, `NoBlankP`, `SidePipeShaftData`, `SidePipeTopPart`, `SidePipeBottomPart`, `ExitPipe`, `RenderSidewaysPipe`, `DrawSidePart`, `VerticalPipeData`, `VerticalPipe`, `WarpPipe`, `DrawPipe`, `GetPipeHeight`, `FindEmptyEnemySlot`, `EmptyChkLoop`, `ExitEmptyChk`, `Hole_Water`, `QuestionBlockRow_High`, `QuestionBlockRow_Low`, `Bridge_High`, `Bridge_Middle`, `Bridge_Low`, `FlagBalls_Residual`, `EndlessRope`, `BalancePlatRope`, `DrawRope`, `CoinMetatileData`, `RowOfCoins`, `C_ObjectRow`, `C_ObjectMetatile`, `CastleBridgeObj`, `AxeObj`, `ChainObj`, `EmptyBlock`, `ColObj`, `SolidBlockMetatiles`, `BrickMetatiles`, `RowOfBricks`, `DrawBricks`, `RowOfSolidBlocks`, `GetRow`, `DrawRow`, `ColumnOfBricks`, `ColumnOfSolidBlocks`, `GetRow2`, `BulletBillCannon`, `SetupCannon`, `StrCOffset`, `StaircaseHeightData`, `StaircaseRowData`, `StaircaseObject`, `NextStair`, `Jumpspring`, `Hidden1UpBlock`, `QuestionBlock`, `BrickWithCoins`, `BrickWithItem`, `BWithL`, `DrawQBlk`, `GetAreaObjectID`, `ExitDecBlock`, `HoleMetatiles`, `Hole_Empty`, `StrWOffset`, `NoWhirlP`, `RenderUnderPart`, `DrawThisRow`, `WaitOneRow`, `ExitUPartR`, `ChkLrgObjLength`, `ChkLrgObjFixedLength`, `LenSet`, `GetLrgObjAttrib`, `GetAreaObjXPosition`, `GetAreaObjYPosition`, `BlockBufferAddr`, `GetBlockBufferAddr`, `LoadAreaPointer`, `GetAreaType`, `FindAreaPointer`, `GetAreaDataAddrs`, `StoreFore`, `StoreStyle`, `WorldAddrOffsets`, `AreaAddrOffsets`, `World1Areas`, `World2Areas`, `World3Areas`, `World4Areas`, `World5Areas`, `World6Areas`, `World7Areas`, `World8Areas`, `EnemyAddrHOffsets`, `EnemyDataAddrLow`, `EnemyDataAddrHigh`, `AreaDataHOffsets`, `AreaDataAddrLow`, `AreaDataAddrHigh` |
+| M3 T27 S4 | 474 | `Start`, `VBlank1`, `VBlank2`, `WBootCheck`, `ColdBoot`, `EndlessLoop`, `VRAM_AddrTable_Low`, `VRAM_AddrTable_High`, `VRAM_Buffer_Offset`, `NonMaskableInterrupt`, `ScreenOff`, `InitBuffer`, `DecTimers`, `DecTimersLoop`, `SkipExpTimer`, `NoDecTimers`, `PauseSkip`, `RotPRandomBit`, `Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipSprite0`, `PauseRoutine`, `ChkPauseTimer`, `ChkStart`, `ClrPauseTimer`, `SetPause`, `ExitPause`, `SpriteShuffler`, `ShuffleLoop`, `StrSprOffset`, `NextSprOffset`, `SetAmtOffset`, `SetMiscOffset`, `OperModeExecutionTree`, `MoveAllSpritesOffscreen`, `MoveSpritesOffscreen`, `SprInitLoop`, `TitleScreenMode`, `GameMenuRoutine`, `StartGame`, `ChkSelect`, `ChkWorldSel`, `SelectBLogic`, `IncWorldSel`, `UpdateShroom`, `NullJoypad`, `ResetTitle`, `ChkContinue`, `StartWorld1`, `InitScores`, `ExitMenu`, `GoContinue`, `MushroomIconData`, `DrawMushroomIcon`, `IconDataRead`, `ExitIcon`, `DemoActionData`, `DemoTimingData`, `DemoEngine`, `DoAction`, `DemoOver`, `AutoPlayer`, `VictoryModeSubroutines`, `SetupVictoryMode`, `PlayerVictoryWalk`, `PerformWalk`, `DontWalk`, `ExitVWalk`, `PrintVictoryMessages`, `MRetainerMsg`, `ThankPlayer`, `SecondPartMsg`, `EvalForMusic`, `PrintMsg`, `IncMsgCounter`, `SetEndTimer`, `IncModeTask_A`, `ExitMsgs`, `PlayerEndWorld`, `EndExitOne`, `EndChkBButton`, `EndExitTwo`, `ScreenRoutines`, `InitScreen`, `SetupIntermediate`, `AreaPalette`, `GetAreaPalette`, `SetVRAMAddr_A`, `NextSubtask`, `BGColorCtrl_Addr`, `BackgroundColors`, `PlayerColors`, `GetBackgroundColor`, `NoBGColor`, `GetPlayerColors`, `ChkFiery`, `StartClrGet`, `ClrGetLoop`, `SetBGColor`, `SetVRAMOffset`, `GetAlternatePalette1`, `SetVRAMAddr_B`, `NoAltPal`, `WriteTopStatusLine`, `DisplayTimeUp`, `NoTimeUp`, `DisplayIntermediate`, `PlayerInter`, `OutputInter`, `GameOverInter`, `NoInter`, `AreaParserTaskControl`, `TaskLoop`, `OutputCol`, `DrawTitleScreen`, `OutputTScr`, `ChkHiByte`, `ClearBuffersDrawIcon`, `TScrClear`, `IncSubtask`, `WriteTopScore`, `IncModeTask_B`, `GameText`, `TopStatusBarLine`, `WorldLivesDisplay`, `TwoPlayerTimeUp`, `OnePlayerTimeUp`, `TwoPlayerGameOver`, `OnePlayerGameOver`, `WarpZoneWelcome`, `LuigiName`, `WarpZoneNumbers`, `GameTextOffsets`, `WriteGameText`, `Chk2Players`, `LdGameText`, `GameTextLoop`, `EndGameText`, `PutLives`, `CheckPlayerName`, `ChkLuigi`, `NameLoop`, `ExitChkName`, `PrintWarpZoneNumbers`, `WarpNumLoop`, `ResetSpritesAndScreenTimer`, `ResetScreenTimer`, `NoReset`, `RenderAreaGraphics`, `DrawMTLoop`, `RightCheck`, `LLeft`, `NextMTRow`, `SetAttrib`, `ExitDrawM`, `RenderAttributeTables`, `SetATHigh`, `AttribLoop`, `SetVRAMCtrl`, `ColorRotatePalette`, `BlankPalette`, `Palette3Data`, `ColorRotation`, `GetBlankPal`, `GetAreaPal`, `ExitColorRot`, `BlockGfxData`, `RemoveCoin_Axe`, `WriteBlankMT`, `ReplaceBlockMetatile`, `DestroyBlockMetatile`, `WriteBlockMetatile`, `UseBOffset`, `MoveVOffset`, `PutBlockMetatile`, `SaveHAdder`, `RemBridge`, `MetatileGraphics_Low`, `MetatileGraphics_High`, `Palette0_MTiles`, `Palette1_MTiles`, `Palette2_MTiles`, `Palette3_MTiles`, `WaterPaletteData`, `GroundPaletteData`, `UndergroundPaletteData`, `CastlePaletteData`, `DaySnowPaletteData`, `NightSnowPaletteData`, `MushroomPaletteData`, `BowserPaletteData`, `MarioThanksMessage`, `LuigiThanksMessage`, `MushroomRetainerSaved`, `PrincessSaved1`, `PrincessSaved2`, `WorldSelectMessage1`, `WorldSelectMessage2`, `JumpEngine`, `InitializeNameTables`, `WriteNTAddr`, `InitNTLoop`, `InitATLoop`, `ReadJoypads`, `ReadPortBits`, `PortLoop`, `Save8Bits`, `WriteBufferToScreen`, `SetupWrites`, `GetLength`, `OutputToVRAM`, `RepeatByte`, `UpdateScreen`, `InitScroll`, `WritePPUReg1`, `StatusBarData`, `StatusBarOffset`, `PrintStatusBarNumbers`, `OutputNumbers`, `SetupNums`, `DigitPLoop`, `ExitOutputN`, `DigitsMathRoutine`, `AddModLoop`, `StoreNewD`, `EraseDMods`, `EraseMLoop`, `BorrowOne`, `CarryOne`, `UpdateTopScore`, `TopScoreCheck`, `GetScoreDiff`, `CopyScore`, `NoTopSc`, `DefaultSprOffsets`, `Sprite0Data`, `InitializeGame`, `ClrSndLoop`, `InitializeArea`, `ClrTimersLoop`, `StartPage`, `SetInitNTHigh`, `SetSecHard`, `CheckHalfway`, `DoneInitArea`, `PrimaryGameSetup`, `SecondaryGameSetup`, `ClearVRLoop`, `ShufAmtLoop`, `ISpr0Loop`, `InitializeMemory`, `InitPageLoop`, `InitByteLoop`, `InitByte`, `SkipByte`, `MusicSelectData`, `GetAreaMusic`, `ChkAreaType`, `StoreMusic`, `ExitGetM`, `HalfwayPageNybbles`, `PlayerLoseLife`, `StillInGame`, `GetHalfway`, `MaskHPNyb`, `SetHalfway`, `GameOverMode`, `SetupGameOver`, `RunGameOver`, `TerminateGame`, `ContinueGame`, `GameIsOn`, `TransposePlayers`, `TransLoop`, `ExTrans`, `DoNothing1`, `DoNothing2`, `AreaParserTaskHandler`, `DoAPTasks`, `SkipATRender`, `AreaParserTasks`, `IncrementColumnPos`, `NoColWrap`, `BSceneDataOffsets`, `BackSceneryData`, `BackSceneryMetatiles`, `FSceneDataOffsets`, `ForeSceneryData`, `TerrainMetatiles`, `TerrainRenderBits`, `AreaParserCore`, `RenderSceneryTerrain`, `ClrMTBuf`, `ThirdP`, `RendBack`, `SceLoop1`, `RendFore`, `SceLoop2`, `NoFore`, `RendTerr`, `TerMTile`, `StoreMT`, `TerrLoop`, `NoCloud2`, `TerrBChk`, `NextTBit`, `EndUChk`, `RendBBuf`, `ChkMTLow`, `StrBlock`, `BlockBuffLowBounds`, `ProcessAreaData`, `ProcADLoop`, `Chk1Row13`, `Chk1Row14`, `CheckRear`, `RdyDecode`, `SetBehind`, `NextAObj`, `ChkLength`, `ProcLoopb`, `EndAParse`, `IncAreaObjOffset`, `DecodeAreaData`, `Chk1stB`, `ChkRow14`, `ChkRow13`, `Mask2MSB`, `ChkSRows`, `LrgObj`, `NotWPipe`, `SpecObj`, `MoveAOId`, `NormObj`, `LeavePar`, `InitRear`, `LoopCmdE`, `BackColC`, `StrAObj`, `RunAObj`, `AlterAreaAttributes`, `Alter2`, `SetFore`, `ScrollLockObject_Warp`, `WarpNum`, `ScrollLockObject`, `KillEnemies`, `KillELoop`, `NoKillE`, `FrenzyIDData`, `AreaFrenzy`, `FreCompLoop`, `ExitAFrenzy`, `AreaStyleObject`, `TreeLedge`, `MidTreeL`, `EndTreeL`, `MushroomLedge`, `EndMushL`, `AllUnder`, `NoUnder`, `PulleyRopeMetatiles`, `PulleyRopeObject`, `RenderPul`, `MushLExit`, `CastleMetatiles`, `CastleObject`, `CRendLoop`, `ChkCFloor`, `NotTall`, `PlayerStop`, `ExitCastle`, `WaterPipe`, `IntroPipe`, `VPipeSectLoop`, `NoBlankP`, `SidePipeShaftData`, `SidePipeTopPart`, `SidePipeBottomPart`, `ExitPipe`, `RenderSidewaysPipe`, `DrawSidePart`, `VerticalPipeData`, `VerticalPipe`, `WarpPipe`, `DrawPipe`, `GetPipeHeight`, `FindEmptyEnemySlot`, `EmptyChkLoop`, `ExitEmptyChk`, `Hole_Water`, `QuestionBlockRow_High`, `QuestionBlockRow_Low`, `Bridge_High`, `Bridge_Middle`, `Bridge_Low`, `FlagBalls_Residual`, `EndlessRope`, `BalancePlatRope`, `DrawRope`, `CoinMetatileData`, `RowOfCoins`, `C_ObjectRow`, `C_ObjectMetatile`, `CastleBridgeObj`, `AxeObj`, `ChainObj`, `EmptyBlock`, `ColObj`, `SolidBlockMetatiles`, `BrickMetatiles`, `RowOfBricks`, `DrawBricks`, `RowOfSolidBlocks`, `GetRow`, `DrawRow`, `ColumnOfBricks`, `ColumnOfSolidBlocks`, `GetRow2`, `BulletBillCannon`, `SetupCannon`, `StrCOffset`, `StaircaseHeightData`, `StaircaseRowData`, `StaircaseObject`, `NextStair`, `Jumpspring`, `Hidden1UpBlock`, `QuestionBlock`, `BrickWithCoins`, `BrickWithItem`, `BWithL`, `DrawQBlk`, `GetAreaObjectID`, `ExitDecBlock`, `HoleMetatiles`, `Hole_Empty`, `StrWOffset`, `NoWhirlP`, `RenderUnderPart`, `DrawThisRow`, `WaitOneRow`, `ExitUPartR`, `ChkLrgObjLength`, `ChkLrgObjFixedLength`, `LenSet`, `GetLrgObjAttrib`, `GetAreaObjXPosition`, `GetAreaObjYPosition`, `BlockBufferAddr`, `GetBlockBufferAddr`, `LoadAreaPointer`, `GetAreaType`, `FindAreaPointer`, `GetAreaDataAddrs`, `StoreFore`, `StoreStyle`, `WorldAddrOffsets`, `AreaAddrOffsets`, `World1Areas`, `World2Areas`, `World3Areas`, `World4Areas`, `World5Areas`, `World6Areas`, `World7Areas`, `World8Areas`, `EnemyAddrHOffsets`, `EnemyDataAddrLow`, `EnemyDataAddrHigh`, `AreaDataHOffsets`, `AreaDataAddrLow`, `AreaDataAddrHigh` |
+| M3 T27 S5 | 1449 | `FloateyNumTileData`, `ScoreUpdateData`, `FloateyNumbersRoutine`, `ChkNumTimer`, `DecNumTimer`, `LoadNumTiles`, `ChkTallEnemy`, `GetAltOffset`, `FloateyPart`, `SetupNumSpr`, `WriteBottomStatusLine`, `PlayerStarting_X_Pos`, `AltYPosOffset`, `PlayerStarting_Y_Pos`, `PlayerBGPriorityData`, `GameTimerData`, `Entrance_GameTimerSetup`, `ChkStPos`, `SetStPos`, `ChkOverR`, `ChkSwimE`, `SetPESub`, `FlagpoleObject`, `AreaDataOfsLoopback`, `E_CastleArea1`, `E_CastleArea2`, `E_CastleArea3`, `E_CastleArea4`, `E_CastleArea5`, `E_CastleArea6`, `E_GroundArea1`, `E_GroundArea2`, `E_GroundArea3`, `E_GroundArea4`, `E_GroundArea5`, `E_GroundArea6`, `E_GroundArea7`, `E_GroundArea8`, `E_GroundArea9`, `E_GroundArea10`, `E_GroundArea11`, `E_GroundArea12`, `E_GroundArea13`, `E_GroundArea14`, `E_GroundArea15`, `E_GroundArea16`, `E_GroundArea17`, `E_GroundArea18`, `E_GroundArea19`, `E_GroundArea20`, `E_GroundArea21`, `E_GroundArea22`, `E_UndergroundArea1`, `E_UndergroundArea2`, `E_UndergroundArea3`, `E_WaterArea1`, `E_WaterArea2`, `E_WaterArea3`, `PlayerCtrlRoutine`, `DisJoyp`, `SaveJoyp`, `SizeChk`, `ChkMoveDir`, `SetMoveDir`, `PlayerSubs`, `PlayerHole`, `HoleDie`, `HoleBottom`, `ChkHoleX`, `ExitCtrl`, `CloudExit`, `Vine_AutoClimb`, `AutoClimb`, `SetEntr`, `VerticalPipeEntry`, `MovePlayerYAxis`, `SideExitPipeEntry`, `ChgAreaPipe`, `ChgAreaMode`, `ExitCAPipe`, `EnterSidePipe`, `RightPipe`, `PlayerChangeSize`, `EndChgSize`, `ExitChgSize`, `PlayerInjuryBlink`, `ExitBlink`, `InitChangeSize`, `ExitBoth`, `PlayerDeath`, `DonePlayerTask`, `PlayerFireFlower`, `CyclePlayerPalette`, `ResetPalFireFlower`, `ResetPalStar`, `ExitDeath`, `FlagpoleSlide`, `SlidePlayer`, `NoFPObj`, `Hidden1UpCoinAmts`, `PlayerEndLevel`, `ChkStop`, `InCastle`, `RdyNextA`, `NextArea`, `ExitNA`, `PlayerMovementSubs`, `SetCrouch`, `ProcMove`, `MoveSubs`, `NoMoveSub`, `OnGroundStateSub`, `GndMove`, `FallingSub`, `JumpSwimSub`, `DumpFall`, `ProcSwim`, `LRWater`, `LRAir`, `JSMove`, `ExitMov1`, `ClimbAdderLow`, `ClimbAdderHigh`, `ClimbingSub`, `MoveOnVine`, `ClimbFD`, `CSetFDir`, `ExitCSub`, `InitCSTimer`, `JumpMForceData`, `FallMForceData`, `PlayerYSpdData`, `InitMForceData`, `MaxLeftXSpdData`, `MaxRightXSpdData`, `FrictionData`, `Climb_Y_SpeedData`, `Climb_Y_MForceData`, `PlayerPhysicsSub`, `ProcClimb`, `SetCAnim`, `CheckForJumping`, `NoJump`, `ProcJumping`, `InitJS`, `ChkWtr`, `GetYPhy`, `PJumpSnd`, `SJumpSnd`, `X_Physics`, `ProcPRun`, `ChkRFast`, `FastXSp`, `SetRTmr`, `GetXPhy`, `GetXPhy2`, `ExitPhy`, `PlayerAnimTmrData`, `GetPlayerAnimSpeed`, `ChkSkid`, `SetRunSpd`, `ProcSkid`, `SetAnimSpd`, `ImposeFriction`, `JoypFrict`, `LeftFrict`, `RghtFrict`, `XSpdSign`, `SetAbsSpd`, `ProcFireball_Bubble`, `ProcFireballs`, `ProcAirBubbles`, `BublLoop`, `BublExit`, `FireballXSpdData`, `FireballObjCore`, `RunFB`, `EraseFB`, `NoFBall`, `FireballExplosion`, `BubbleCheck`, `SetupBubble`, `PosBubl`, `MoveBubl`, `Y_Bubl`, `ExitBubl`, `Bubble_MForceData`, `BubbleTimerData`, `RunGameTimer`, `ResGTCtrl`, `TimeUpOn`, `ExGTimer`, `WarpZoneObject`, `ProcessWhirlpools`, `WhLoop`, `NextWh`, `ExitWh`, `WhirlpoolActivate`, `LeftWh`, `SetPWh`, `WhPull`, `FlagpoleScoreMods`, `FlagpoleScoreDigits`, `FlagpoleRoutine`, `SkipScore`, `GiveFPScr`, `FPGfx`, `ExitFlagP`, `Jumpspring_Y_PosData`, `JumpspringHandler`, `DownJSpr`, `PosJSpr`, `BounceJS`, `DrawJSpr`, `ExJSpring`, `Setup_Vine`, `NextVO`, `VineHeightData`, `VineObjectHandler`, `RunVSubs`, `VDrawLoop`, `KillVine`, `WrCMTile`, `ExitVH`, `CannonBitmasks`, `ProcessCannons`, `ThreeSChk`, `FireCannon`, `Chk_BB`, `Next3Slt`, `ExCannon`, `BulletBillXSpdData`, `BulletBillHandler`, `SetupBB`, `ChkDSte`, `BBFly`, `RunBBSubs`, `KillBB`, `HammerEnemyOfsData`, `HammerXSpdData`, `SpawnHammerObj`, `SetMOfs`, `NoHammer`, `ProcHammerObj`, `SetHSpd`, `SetHPos`, `RunAllH`, `RunHSubs`, `CoinBlock`, `SetupJumpCoin`, `JCoinC`, `FindEmptyMiscSlot`, `FMiscLoop`, `UseMiscS`, `MiscObjectsCore`, `MiscLoop`, `ProcJumpCoin`, `JCoinRun`, `RunJCSubs`, `MiscLoopBack`, `CoinTallyOffsets`, `ScoreOffsets`, `StatusBarNybbles`, `GiveOneCoin`, `CoinPoints`, `AddToScore`, `GetSBNybbles`, `UpdateNumber`, `NoZSup`, `SetupPowerUp`, `PwrUpJmp`, `StrType`, `PutBehind`, `PowerUpObjHandler`, `ShroomM`, `GrowThePowerUp`, `ChkPUSte`, `RunPUSubs`, `ExitPUp`, `BlockYPosAdderData`, `PlayerHeadCollision`, `DBlockSte`, `ChkBrick`, `StartBTmr`, `ContBTmr`, `PutOldMT`, `PutMTileB`, `SmallBP`, `BigBP`, `Unbreak`, `InvOBit`, `InitBlock_XY_Pos`, `BumpBlock`, `BlockCode`, `MushFlowerBlock`, `StarBlock`, `ExtraLifeMushBlock`, `VineBlock`, `ExitBlockChk`, `BrickQBlockMetatiles`, `BlockBumpedChk`, `BumpChkLoop`, `MatchBump`, `BrickShatter`, `CheckTopOfBlock`, `TopEx`, `SpawnBrickChunks`, `BlockObjectsCore`, `ChkTop`, `BouncingBlockHandler`, `KillBlock`, `UpdSte`, `BlockObjMT_Updater`, `UpdateLoop`, `NextBUpd`, `MoveEnemyHorizontally`, `MovePlayerHorizontally`, `MoveObjectHorizontally`, `SaveXSpd`, `UseAdder`, `ExXMove`, `MovePlayerVertically`, `NoJSChk`, `MoveD_EnemyVertically`, `MoveFallingPlatform`, `ContVMove`, `MoveRedPTroopaDown`, `MoveRedPTroopaUp`, `MoveRedPTroopa`, `MoveDropPlatform`, `MoveEnemySlowVert`, `SetMdMax`, `MoveJ_EnemyVertically`, `SetHiMax`, `SetXMoveAmt`, `MaxSpdBlockData`, `ResidualGravityCode`, `ImposeGravityBlock`, `ImposeGravitySprObj`, `MovePlatformDown`, `MovePlatformUp`, `SetDplSpd`, `RedPTroopaGrav`, `ImposeGravity`, `AlterYP`, `ChkUpM`, `ExVMove`, `EnemiesAndLoopsCore`, `ChkAreaTsk`, `ChkBowserF`, `ExitELCore`, `LoopCmdWorldNumber`, `LoopCmdPageNumber`, `LoopCmdYPosition`, `ExecGameLoopback`, `ProcLoopCommand`, `FindLoop`, `IncMLoop`, `WrongChk`, `DoLpBack`, `InitMLp`, `InitLCmd`, `ChkEnemyFrenzy`, `ProcessEnemyData`, `CheckEndofBuffer`, `CheckRightBounds`, `CheckPageCtrlRow`, `PositionEnemyObj`, `CheckRightExtBounds`, `CheckForEnemyGroup`, `BuzzyBeetleMutate`, `StrID`, `CheckFrenzyBuffer`, `StrFre`, `InitEnemyObject`, `ExEPar`, `DoGroup`, `ParseRow0e`, `NotUse`, `CheckThreeBytes`, `Inc3B`, `Inc2B`, `CheckpointEnemyID`, `InitEnemyRoutines`, `NoInitCode`, `InitGoomba`, `InitPodoboo`, `InitRetainerObj`, `NormalXSpdData`, `InitNormalEnemy`, `GetESpd`, `SetESpd`, `InitRedKoopa`, `HBroWalkingTimerData`, `InitHammerBro`, `InitHorizFlySwimEnemy`, `InitBloober`, `SmallBBox`, `InitRedPTroopa`, `GetCent`, `TallBBox`, `SetBBox`, `InitVStf`, `InitBulletBill`, `InitCheepCheep`, `InitLakitu`, `SetupLakitu`, `KillLakitu`, `PRDiffAdjustData`, `LakituAndSpinyHandler`, `ChkLak`, `ChkNoEn`, `CreateL`, `RetEOfs`, `ExLSHand`, `CreateSpiny`, `DifLoop`, `UsePosv`, `SetSpSpd`, `SpinyRte`, `ChpChpEx`, `FirebarSpinSpdData`, `FirebarSpinDirData`, `InitLongFirebar`, `InitShortFirebar`, `FlyCCXPositionData`, `FlyCCXSpeedData`, `FlyCCTimerData`, `InitFlyingCheepCheep`, `MaxCC`, `GSeed`, `RSeed`, `D2XPos1`, `D2XPos2`, `FinCCSt`, `InitBowser`, `DuplicateEnemyObj`, `FSLoop`, `FlmEx`, `FlameYPosData`, `FlameYMFAdderData`, `InitBowserFlame`, `SetFrT`, `PutAtRightExtent`, `SpawnFromMouth`, `SetMF`, `FinishFlame`, `FireworksXPosData`, `FireworksYPosData`, `InitFireworks`, `StarFChk`, `ExitFWk`, `Bitmasks`, `Enemy17YPosData`, `SwimCC_IDData`, `BulletBillCheepCheep`, `ChkW2`, `Get17ID`, `Set17ID`, `GetRBit`, `ChkRBit`, `AddFBit`, `DoBulletBills`, `BB_SLoop`, `ExF17`, `FireBulletBill`, `HandleGroupEnemies`, `PullID`, `SnglID`, `SetYGp`, `CntGrp`, `GrLoop`, `GSltLp`, `NextED`, `InitPiranhaPlant`, `InitEnemyFrenzy`, `NoFrenzyCode`, `EndFrenzy`, `LakituChk`, `NextFSlot`, `InitJumpGPTroopa`, `TallBBox2`, `SetBBox2`, `InitBalPlatform`, `AlignP`, `SetBPA`, `InitDropPlatform`, `InitHoriPlatform`, `InitVertPlatform`, `SetYO`, `CommonPlatCode`, `SPBBox`, `CasPBB`, `LargeLiftUp`, `LargeLiftDown`, `LargeLiftBBox`, `PlatLiftUp`, `PlatLiftDown`, `CommonSmallLift`, `PlatPosDataLow`, `PlatPosDataHigh`, `PosPlatform`, `EndOfEnemyInitCode`, `RunEnemyObjectsCore`, `JmpEO`, `NoRunCode`, `RunRetainerObj`, `RunNormalEnemies`, `SkipMove`, `EnemyMovementSubs`, `NoMoveCode`, `RunBowserFlame`, `RunFirebarObj`, `RunSmallPlatform`, `RunLargePlatform`, `SkipPT`, `LargePlatformSubroutines`, `EraseEnemyObject`, `MovePodoboo`, `PdbM`, `HammerThrowTmrData`, `XSpeedAdderData`, `RevivedXSpeed`, `ProcHammerBro`, `ChkJH`, `DecHT`, `HammerBroJumpLData`, `HammerBroJumpCode`, `SetHJ`, `HJump`, `MoveHammerBroXDir`, `Shimmy`, `SetShim`, `MoveNormalEnemy`, `FallE`, `MEHor`, `SlowM`, `SteadM`, `AddHS`, `ReviveStunned`, `SetRSpd`, `MoveDefeatedEnemy`, `ChkKillGoomba`, `NKGmba`, `MoveJumpingEnemy`, `ProcMoveRedPTroopa`, `NoIncPT`, `MoveRedPTUpOrDown`, `MovPTDwn`, `MoveFlyGreenPTroopa`, `YSway`, `NoMGPT`, `XMoveCntr_GreenPTroopa`, `XMoveCntr_Platform`, `NoIncXM`, `IncPXM`, `DecSeXM`, `MoveWithXMCntrs`, `XMRight`, `BlooberBitmasks`, `MoveBloober`, `FBLeft`, `SBMDir`, `BlooberSwim`, `SwimX`, `LeftSwim`, `MoveDefeatedBloober`, `ProcSwimmingB`, `BSwimE`, `SlowSwim`, `NoSSw`, `ChkForFloatdown`, `Floatdown`, `NoFD`, `ChkNearPlayer`, `MoveBulletBill`, `NotDefB`, `SwimCCXMoveData`, `MoveSwimmingCheepCheep`, `CCSwim`, `CCSwimUpwards`, `ChkSwimYPos`, `YPDiff`, `ExSwCC`, `FirebarPosLookupTbl`, `FirebarMirrorData`, `FirebarTblOffsets`, `FirebarYPos`, `ProcFirebar`, `SusFbar`, `SkpFSte`, `SetupGFB`, `SetMFbar`, `DrawFbar`, `NextFbar`, `SkipFBar`, `DrawFirebar_Collision`, `AddHA`, `SubtR1`, `ChkFOfs`, `VAHandl`, `AddVA`, `SetVFbr`, `FirebarCollision`, `AdjSm`, `BigJp`, `FBCLoop`, `ChkVFBD`, `ChkFBCl`, `Chk2Ofs`, `ChgSDir`, `SetSDir`, `NoColFB`, `GetFirebarPosition`, `GetHAdder`, `GetVAdder`, `PRandomSubtracter`, `FlyCCBPriority`, `MoveFlyingCheepCheep`, `FlyCC`, `AddCCF`, `BPGet`, `LakituDiffAdj`, `MoveLakitu`, `ChkLS`, `Fr12S`, `LdLDa`, `SetLSpd`, `SetLMov`, `PlayerLakituDiff`, `ChkLakDif`, `SetLMovD`, `ChkPSpeed`, `ChkSpinyO`, `ChkEmySpd`, `SubDifAdj`, `SPixelLak`, `ExMoveLak`, `BridgeCollapseData`, `BridgeCollapse`, `SetM2`, `MoveD_Bowser`, `RemoveBridge`, `NoBFall`, `PRandomRange`, `RunBowser`, `KillAllEnemies`, `KillLoop`, `BowserControl`, `ChkMouth`, `FeetTmr`, `ResetMDr`, `B_FaceP`, `GetPRCmp`, `GetDToO`, `CompDToO`, `HammerChk`, `SetHmrTmr`, `SkipToFB`, `MakeBJump`, `ChkFireB`, `SpawnFBr`, `SetFBTmr`, `BowserGfxHandler`, `CopyFToR`, `ExBGfxH`, `ProcessBowserHalf`, `FlameTimerData`, `SetFlameTimer`, `ExFl`, `ProcBowserFlame`, `SFlmX`, `SetGfxF`, `FlmeAt`, `DrawFlameLoop`, `M3FOfs`, `M2FOfs`, `M1FOfs`, `ExFlmeD`, `RunFireworks`, `SetupExpl`, `FireworksSoundScore`, `StarFlagYPosAdder`, `StarFlagXPosAdder`, `StarFlagTileData`, `RunStarFlagObj`, `GameTimerFireworks`, `SetFWC`, `IncrementSFTask1`, `StarFlagExit`, `AwardGameTimerPoints`, `NoTTick`, `EndAreaPoints`, `ELPGive`, `RaiseFlagSetoffFWorks`, `SetoffF`, `DrawStarFlag`, `DSFLoop`, `DrawFlagSetTimer`, `IncrementSFTask2`, `DelayToAreaEnd`, `StarFlagExit2`, `MovePiranhaPlant`, `ChkPlayerNearPipe`, `ReversePlantSpeed`, `SetupToMovePPlant`, `RiseFallPiranhaPlant`, `PutinPipe`, `FirebarSpin`, `SpinCounterClockwise`, `BalancePlatform`, `DoBPl`, `CheckBalPlatform`, `ChkForFall`, `MakePlatformFall`, `ChkOtherForFall`, `ChkToMoveBalPlat`, `ColFlg`, `PlatUp`, `PlatSt`, `PlatDn`, `DoOtherPlatform`, `DrawEraseRope`, `EraseR1`, `OtherRope`, `EraseR2`, `EndRp`, `ExitRp`, `SetupPlatformRope`, `GetLRp`, `GetHRp`, `ExPRp`, `InitPlatformFall`, `StopPlatforms`, `PlatformFall`, `ExPF`, `YMovingPlatform`, `SkipIY`, `ChkYCenterPos`, `YMDown`, `ChkYPCollision`, `ExYPl`, `XMovingPlatform`, `PositionPlayerOnHPlat`, `PPHSubt`, `SetPVar`, `ExXMP`, `DropPlatform`, `ExDPl`, `RightPlatform`, `ExRPl`, `MoveLargeLiftPlat`, `MoveSmallPlatform`, `MoveLiftPlatforms`, `ChkSmallPlatCollision`, `ExLiftP`, `OffscreenBoundsCheck`, `LimitB`, `ExtendLB`, `TooFar`, `ExScrnBd`, `FireballEnemyCollision`, `FireballEnemyCDLoop`, `GoombaDie`, `NotGoomba`, `NoFToECol`, `ExitFBallEnemy`, `BowserIdentities`, `HandleEnemyFBallCol`, `ChkBuzzyBeetle`, `HurtBowser`, `SetDBSte`, `ChkOtherEnemies`, `ShellOrBlockDefeat`, `StnE`, `GoombaPoints`, `EnemySmackScore`, `ExHCF`, `PlayerHammerCollision`, `ClHCol`, `ExPHC`, `HandlePowerUpCollision`, `Shroom_Flower_PUp`, `SetFor1Up`, `UpToSuper`, `UpToFiery`, `NoPUp`, `ResidualXSpdData`, `KickedShellXSpdData`, `DemotedKoopaXSpdData`, `PlayerEnemyCollision`, `NoPECol`, `CheckForPUpCollision`, `EColl`, `KickedShellPtsData`, `HandlePECollisions`, `KSPts`, `ExPEC`, `ChkForPlayerInjury`, `ChkInj`, `ChkETmrs`, `TInjE`, `InjurePlayer`, `ForceInjury`, `SetKRout`, `SetPRout`, `ExInjColRoutines`, `KillPlayer`, `StompedEnemyPtsData`, `EnemyStomped`, `EnemyStompedPts`, `ChkForDemoteKoopa`, `RevivalRateData`, `HandleStompedShellE`, `SBnce`, `ChkEnemyFaceRight`, `LInj`, `EnemyFacePlayer`, `SFcRt`, `SetupFloateyNumber`, `ExSFN`, `SetBitsMask`, `ClearBitsMask`, `EnemiesCollision`, `ECLoop`, `YesEC`, `NoEnemyCollision`, `ReadyNextEnemy`, `ExitECRoutine`, `ProcEnemyCollisions`, `ShellCollisions`, `ExitProcessEColl`, `ProcSecondEnemyColl`, `MoveEOfs`, `EnemyTurnAround`, `RXSpd`, `ExTA`, `LargePlatformCollision`, `ChkForPlayerC_LargeP`, `ExLPC`, `SmallPlatformCollision`, `ChkSmallPlatLoop`, `MoveBoundBox`, `ExSPC`, `ProcSPlatCollisions`, `ProcLPlatCollisions`, `ChkForTopCollision`, `SetCollisionFlag`, `PlatformSideCollisions`, `SideC`, `NoSideC`, `PlayerPosSPlatData`, `PositionPlayerOnS_Plat`, `PositionPlayerOnVPlat`, `ExPlPos`, `CheckPlayerVertical`, `ExCPV`, `GetEnemyBoundBoxOfs`, `GetEnemyBoundBoxOfsArg`, `PlayerBGUpperExtent`, `PlayerBGCollision`, `SetFallS`, `SetPSte`, `ChkOnScr`, `ExPBGCol`, `ChkCollSize`, `GBBAdr`, `HeadChk`, `SolidOrClimb`, `NYSpd`, `DoFootCheck`, `AwardTouchedCoin`, `ChkFootMTile`, `ContChk`, `LandPlyr`, `InitSteP`, `DoPlayerSideCheck`, `SideCheckLoop`, `BHalf`, `ExSCH`, `CheckSideMTiles`, `ContSChk`, `ChkPBtm`, `PipeDwnS`, `PlyrPipe`, `SetCATmr`, `ChkGERtn`, `StopPlayerMove`, `ExCSM`, `AreaChangeTimerData`, `HandleCoinMetatile`, `HandleAxeMetatile`, `ErACM`, `ClimbXPosAdder`, `ClimbPLocAdder`, `FlagpoleYPosData`, `HandleClimbing`, `ExHC`, `ChkForFlagpole`, `FlagpoleCollision`, `ChkFlagpoleYPosLoop`, `MtchF`, `RunFR`, `VineCollision`, `PutPlayerOnVine`, `SetVXPl`, `ExPVne`, `ChkInvisibleMTiles`, `ExCInvT`, `ChkForLandJumpSpring`, `ExCJSp`, `ChkJumpspringMetatiles`, `JSFnd`, `NoJSFnd`, `HandlePipeEntry`, `GetWNum`, `ExPipeE`, `ImpedePlayerMove`, `RImpd`, `NXSpd`, `PlatF`, `ExIPM`, `SolidMTileUpperExt`, `CheckForSolidMTiles`, `ClimbMTileUpperExt`, `CheckForClimbMTiles`, `CheckForCoinMTiles`, `CoinSd`, `GetMTileAttrib`, `ExEBG`, `EnemyBGCStateData`, `EnemyBGCXSpdData`, `EnemyToBGCollisionDet`, `DoIDCheckBGColl`, `HBChk`, `CInvu`, `YesIn`, `NoEToBGCollision`, `HandleEToBGCollision`, `GiveOEPoints`, `ChkToStunEnemies`, `Demote`, `SetStun`, `SetWYSpd`, `SetNotW`, `ChkBBill`, `NoCDirF`, `ExEBGChk`, `LandEnemyProperly`, `SChkA`, `ChkLandedEnemyState`, `SetForStn`, `ExSteChk`, `ProcEnemyDirection`, `InvtD`, `CNwCDir`, `LandEnemyInitState`, `NMovShellFallBit`, `ChkForRedKoopa`, `Chk2MSBSt`, `GetSteFromD`, `SetD6Ste`, `DoEnemySideCheck`, `SdeCLoop`, `NextSdeC`, `ExESdeC`, `ChkForBump_HammerBroJ`, `NoBump`, `InvEnemyDir`, `PlayerEnemyDiff`, `EnemyLanding`, `SubtEnemyYPos`, `EnemyJump`, `DoSide`, `HammerBroBGColl`, `KillEnemyAboveBlock`, `UnderHammerBro`, `NoUnderHammerBro`, `ChkUnderEnemy`, `ChkForNonSolids`, `NSFnd`, `FireballBGCollision`, `ClearBounceFlag`, `InitFireballExplode`, `BoundBoxCtrlData`, `GetFireballBoundBox`, `GetMiscBoundBox`, `FBallB`, `GetEnemyBoundBox`, `SmallPlatformBoundBox`, `GetMaskedOffScrBits`, `CMBits`, `LargePlatformBoundBox`, `SetupEOffsetFBBox`, `MoveBoundBoxOffscreen`, `BoundingBoxCore`, `CheckRightScreenBBox`, `SORte`, `NoOfs`, `CheckLeftScreenBBox`, `SOLft`, `NoOfs2`, `PlayerCollisionCore`, `SprObjectCollisionCore`, `CollisionCoreLoop`, `SecondBoxVerticalChk`, `FirstBoxGreater`, `NoCollisionFound`, `CollisionFound`, `BlockBufferChk_Enemy`, `ResidualMiscObjectCode`, `BlockBufferChk_FBall`, `ResJmpM`, `BBChk_E`, `BlockBufferAdderData`, `BlockBuffer_X_Adder`, `BlockBuffer_Y_Adder`, `BlockBufferColli_Feet`, `BlockBufferColli_Head`, `BlockBufferColli_Side`, `BlockBufferCollision`, `RetXC`, `RetYC`, `VineYPosAdder`, `DrawVine`, `VineTL`, `SkpVTop`, `ChkFTop`, `NextVSp`, `SixSpriteStacker`, `StkLp`, `FirstSprXPos`, `FirstSprYPos`, `SecondSprXPos`, `SecondSprYPos`, `FirstSprTilenum`, `SecondSprTilenum`, `HammerSprAttrib`, `DrawHammer`, `ForceHPose`, `GetHPose`, `RenderH`, `NoHOffscr`, `FlagpoleScoreNumTiles`, `FlagpoleGfxHandler`, `ChkFlagOffscreen`, `MoveSixSpritesOffscreen`, `DumpSixSpr`, `DumpFourSpr`, `DumpThreeSpr`, `DumpTwoSpr`, `ExitDumpSpr`, `DrawLargePlatform`, `ShrinkPlatform`, `SetLast2Platform`, `SetPlatformTilenum`, `SChk2`, `SChk3`, `SChk4`, `SChk5`, `SChk6`, `SLChk`, `ExDLPl`, `DrawFloateyNumber_Coin`, `NotRsNum`, `JumpingCoinTiles`, `JCoinGfxHandler`, `ExJCGfx`, `PowerUpGfxTable`, `PowerUpAttributes`, `DrawPowerUp`, `PUpDrawLoop`, `FlipPUpRightSide`, `PUpOfs`, `EnemyGraphicsTable`, `EnemyGfxTableOffsets`, `EnemyAttributeData`, `EnemyAnimTimingBMask`, `JumpspringFrameOffsets`, `EnemyGfxHandler`, `CheckForRetainerObj`, `CheckForBulletBillCV`, `SBBAt`, `CheckForJumpspring`, `CheckForPodoboo`, `CheckBowserGfxFlag`, `SBwsrGfxOfs`, `CheckForGoomba`, `GmbaAnim`, `CheckBowserFront`, `ChkFrontSte`, `FlipBowserOver`, `DrawBowser`, `CheckBowserRear`, `ChkRearSte`, `CheckForSpiny`, `NotEgg`, `CheckForLakitu`, `NoLAFr`, `CheckUpsideDownShell`, `CheckRightSideUpShell`, `CheckForDefdGoomba`, `CheckForHammerBro`, `CheckForBloober`, `CheckToAnimateEnemy`, `CheckForSecondFrame`, `CheckAnimationStop`, `CheckDefeatedState`, `DrawEnemyObject`, `SkipToOffScrChk`, `CheckForVerticalFlip`, `FlipEnemyVertically`, `CheckForESymmetry`, `ContES`, `ESRtnr`, `SpnySC`, `MirrorEnemyGfx`, `EggExc`, `CheckToMirrorLakitu`, `NVFLak`, `CheckToMirrorJSpring`, `SprObjectOffscrChk`, `LcChk`, `Row3C`, `Row23C`, `AllRowC`, `ExEGHandler`, `DrawEnemyObjRow`, `DrawOneSpriteRow`, `MoveESprRowOffscreen`, `MoveESprColOffscreen`, `DefaultBlockObjTiles`, `DrawBlock`, `DBlkLoop`, `ChkRep`, `SetBFlip`, `BlkOffscr`, `PullOfsB`, `ChkLeftCo`, `MoveColOffscreen`, `ExDBlk`, `DrawBrickChunks`, `DChunks`, `ChnkOfs`, `ExBCDr`, `DrawFireball`, `DrawFirebar`, `FireA`, `ExplosionTiles`, `DrawExplosion_Fireball`, `DrawExplosion_Fireworks`, `KillFireBall`, `DrawSmallPlatform`, `TopSP`, `BotSP`, `SOfs`, `SOfs2`, `ExSPl`, `DrawBubble`, `ExDBub`, `PlayerGfxTblOffsets`, `PlayerGraphicsTable`, `SwimKickTileNum`, `PlayerGfxHandler`, `CntPl`, `SwimKT`, `BigKTS`, `ExPGH`, `FindPlayerAction`, `DoChangeSize`, `PlayerKilled`, `PlayerGfxProcessing`, `SUpdR`, `PlayerOffscreenChk`, `PROfsLoop`, `NPROffscr`, `IntermediatePlayerData`, `DrawPlayer_Intermediate`, `PIntLoop`, `RenderPlayerSub`, `DrawPlayerLoop`, `ProcessPlayerAction`, `ProcOnGroundActs`, `NonAnimatedActs`, `ActionFalling`, `ActionWalkRun`, `ActionClimbing`, `ActionSwimming`, `GetCurrentAnimOffset`, `FourFrameExtent`, `ThreeFrameExtent`, `AnimationControl`, `SetAnimC`, `ExAnimC`, `GetGfxOffsetAdder`, `SzOfs`, `ChangeSizeOffsetAdder`, `HandleChangeSize`, `CSzNext`, `GorSLog`, `GetOffsetFromAnimCtrl`, `ShrinkPlayer`, `ShrPlF`, `ChkForPlayerAttrib`, `KilledAtt`, `C_S_IGAtt`, `ExPlyrAt`, `RelativePlayerPosition`, `RelativeBubblePosition`, `RelativeFireballPosition`, `RelWOfs`, `RelativeMiscPosition`, `RelativeEnemyPosition`, `RelativeBlockPosition`, `VariableObjOfsRelPos`, `GetObjRelativePosition`, `GetPlayerOffscreenBits`, `GetFireballOffscreenBits`, `GetBubbleOffscreenBits`, `GetMiscOffscreenBits`, `ObjOffsetData`, `GetProperObjOffset`, `GetEnemyOffscreenBits`, `GetBlockOffscreenBits`, `SetOffscrBitsOffset`, `GetOffScreenBitsSet`, `RunOffscrBitsSubs`, `XOffscreenBitsData`, `DefaultXOnscreenOfs`, `GetXOffscreenBits`, `XOfsLoop`, `XLdBData`, `ExXOfsBS`, `YOffscreenBitsData`, `DefaultYOnscreenOfs`, `HighPosUnitData`, `GetYOffscreenBits`, `YOfsLoop`, `YLdBData`, `ExYOfsBS`, `DividePDiff`, `SetOscrO`, `ExDivPD`, `DrawSpriteObject`, `NoHFlip`, `SetHFAt`, `SoundEngine`, `SndOn`, `InPause`, `PTone1F`, `ContPau`, `PTone2F`, `PTRegC`, `DecPauC`, `SkipPIn`, `RunSoundSubroutines`, `SkipSoundSubroutines`, `NoIncDAC`, `StrWave`, `Dump_Squ1_Regs`, `PlaySqu1Sfx`, `SetFreq_Squ1`, `Dump_Freq_Regs`, `NoTone`, `Dump_Sq2_Regs`, `PlaySqu2Sfx`, `SetFreq_Squ2`, `SetFreq_Tri`, `SwimStompEnvelopeData`, `PlayFlagpoleSlide`, `PlaySmallJump`, `PlayBigJump`, `JumpRegContents`, `ContinueSndJump`, `N2Prt`, `FPS2nd`, `DmpJpFPS`, `PlayFireballThrow`, `PlayBump`, `Fthrow`, `ContinueBumpThrow`, `DecJpFPS`, `Square1SfxHandler`, `CheckSfx1Buffer`, `ExS1H`, `PlaySwimStomp`, `ContinueSwimStomp`, `BranchToDecLength1`, `PlaySmackEnemy`, `ContinueSmackEnemy`, `SmSpc`, `SmTick`, `DecrementSfx1Length`, `StopSquare1Sfx`, `ExSfx1`, `PlayPipeDownInj`, `ContinuePipeDownInj`, `NoPDwnL`, `ExtraLifeFreqData`, `PowerUpGrabFreqData`, `PUp_VGrow_FreqData`, `PlayCoinGrab`, `PlayTimerTick`, `CGrab_TTickRegL`, `ContinueCGrabTTick`, `N2Tone`, `PlayBlast`, `ContinueBlast`, `SBlasJ`, `PlayPowerUpGrab`, `ContinuePowerUpGrab`, `LoadSqu2Regs`, `DecrementSfx2Length`, `EmptySfx2Buffer`, `StopSquare2Sfx`, `ExSfx2`, `Square2SfxHandler`, `CheckSfx2Buffer`, `ExS2H`, `Cont_CGrab_TTick`, `JumpToDecLength2`, `PlayBowserFall`, `BlstSJp`, `ContinueBowserFall`, `PBFRegs`, `EL_LRegs`, `PlayExtraLife`, `ContinueExtraLife`, `DivLLoop`, `PlayGrowPowerUp`, `PlayGrowVine`, `GrowItemRegs`, `ContinueGrowItems`, `StopGrowItems`, `BrickShatterFreqData`, `PlayBrickShatter`, `ContinueBrickShatter`, `PlayNoiseSfx`, `DecrementSfx3Length`, `ExSfx3`, `NoiseSfxHandler`, `CheckNoiseBuffer`, `ExNH`, `PlayBowserFlame`, `ContinueBowserFlame`, `ContinueMusic`, `MusicHandler`, `LoadEventMusic`, `NoStopSfx`, `LoadAreaMusic`, `NoStop1`, `GMLoopB`, `HandleAreaMusicLoopB`, `FindAreaMusicHeader`, `FindEventMusicHeader`, `LoadHeader`, `HandleSquare2Music`, `EndOfMusicData`, `NotTRO`, `MusicLoopBack`, `VictoryMLoopBack`, `Squ2LengthHandler`, `Squ2NoteHandler`, `Rest`, `SkipFqL1`, `MiscSqu2MusicTasks`, `NoDecEnv1`, `HandleSquare1Music`, `FetchSqu1MusicData`, `Squ1NoteHandler`, `SkipCtrlL`, `MiscSqu1MusicTasks`, `NoDecEnv2`, `DeathMAltReg`, `DoAltLoad`, `HandleTriangleMusic`, `TriNoteHandler`, `NotDOrD4`, `MediN`, `LongN`, `LoadTriCtrlReg`, `HandleNoiseMusic`, `FetchNoiseBeatData`, `NoiseBeatHandler`, `StrongBeat`, `LongBeat`, `SilentBeat`, `PlayBeat`, `ExitMusicHandler`, `AlternateLengthHandler`, `ProcessLengthData`, `LoadControlRegs`, `NotECstlM`, `WaterMus`, `AllMus`, `LoadEnvelopeData`, `LoadUsualEnvData`, `LoadWaterEventMusEnvData`, `MusicHeaderData`, `TimeRunningOutHdr`, `Star_CloudHdr`, `EndOfLevelMusHdr`, `ResidualHeaderData`, `UndergroundMusHdr`, `SilenceHdr`, `CastleMusHdr`, `VictoryMusHdr`, `GameOverMusHdr`, `WaterMusHdr`, `WinCastleMusHdr`, `GroundLevelPart1Hdr`, `GroundLevelPart2AHdr`, `GroundLevelPart2BHdr`, `GroundLevelPart2CHdr`, `GroundLevelPart3AHdr`, `GroundLevelPart3BHdr`, `GroundLevelLeadInHdr`, `GroundLevelPart4AHdr`, `GroundLevelPart4BHdr`, `GroundLevelPart4CHdr`, `DeathMusHdr`, `Star_CloudMData`, `GroundM_P1Data`, `SilenceData`, `GroundM_P2AData`, `GroundM_P2BData`, `GroundM_P2CData`, `GroundM_P3AData`, `GroundM_P3BData`, `GroundMLdInData`, `GroundM_P4AData`, `GroundM_P4BData`, `DeathMusData`, `GroundM_P4CData`, `CastleMusData`, `GameOverMusData`, `TimeRunOutMusData`, `WinLevelMusData`, `UndergroundMusData`, `WaterMusData`, `EndOfCastleMusData`, `VictoryMusData`, `FreqRegLookupTbl`, `MusicLengthLookupTbl`, `EndOfCastleMusicEnvData`, `AreaMusicEnvData`, `WaterEventMusEnvData`, `BowserFlameEnvData`, `BrickShatterEnvData` |
 
 ## Future admission packages and queued plans
 
@@ -270,16 +135,16 @@ transfer existing ownership or allocate a numeric T.
 | 1271 | `EndExitOne` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
 | 1272 | `EndChkBButton` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
 | 1281 | `EndExitTwo` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1287 | `FloateyNumTileData` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1303 | `ScoreUpdateData` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1308 | `FloateyNumbersRoutine` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S3; M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1315 | `ChkNumTimer` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1320 | `DecNumTimer` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1328 | `LoadNumTiles` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1338 | `ChkTallEnemy` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1355 | `GetAltOffset` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1358 | `FloateyPart` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
-| 1363 | `SetupNumSpr` | M2 T70 S12 | existing closure backlog; Accepted source-order floatey score/OAM maintenance;prior evidence retained. | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1287 | `FloateyNumTileData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1303 | `ScoreUpdateData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1308 | `FloateyNumbersRoutine` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T15 / S not recorded; M2 T15 S1; M2 T15 S3; M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1315 | `ChkNumTimer` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1320 | `DecNumTimer` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1328 | `LoadNumTiles` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1338 | `ChkTallEnemy` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1355 | `GetAltOffset` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1358 | `FloateyPart` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
+| 1363 | `SetupNumSpr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S1; M2 T24 S1; M2 T26 S5 |
 | 1386 | `ScreenRoutines` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 S2; M2 T15 S3; M2 T24 S1 |
 | 1408 | `InitScreen` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
 | 1418 | `SetupIntermediate` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
@@ -302,7 +167,7 @@ transfer existing ownership or allocate a numeric T.
 | 1512 | `SetVRAMAddr_B` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
 | 1513 | `NoAltPal` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
 | 1517 | `WriteTopStatusLine` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
-| 1524 | `WriteBottomStatusLine` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T19 S5; M2 T24 S1 |
+| 1524 | `WriteBottomStatusLine` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T24 S1 |
 | 1553 | `DisplayTimeUp` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
 | 1560 | `NoTimeUp` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T24 S1 |
 | 1565 | `DisplayIntermediate` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 S3; M2 T24 S1 |
@@ -459,17 +324,17 @@ transfer existing ownership or allocate a numeric T.
 | 2830 | `ChkAreaType` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
 | 2834 | `StoreMusic` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
 | 2836 | `ExitGetM` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
-| 2840 | `PlayerStarting_X_Pos` | M2 T29 S3 | existing closure backlog; owner-approved source-order T29 S3 area-entry chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2844 | `AltYPosOffset` | M2 T29 S3 | existing closure backlog; owner-approved source-order T29 S3 area-entry chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2847 | `PlayerStarting_Y_Pos` | M2 T29 S3 | existing closure backlog; owner-approved source-order T29 S3 area-entry chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2851 | `PlayerBGPriorityData` | M2 T29 S3 | existing closure backlog; owner-approved source-order T29 S3 area-entry chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2854 | `GameTimerData` | M2 T29 S3 | existing closure backlog; owner-approved source-order T29 S3 area-entry chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2858 | `Entrance_GameTimerSetup` | M2 T29 S3 | existing closure backlog; owner-approved source-order T29 S3 area-entry chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2874 | `ChkStPos` | M2 T29 S3 | existing closure backlog; owner-approved source-order T29 S3 area-entry chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2881 | `SetStPos` | M2 T29 S3 | existing closure backlog; owner-approved source-order T29 S3 area-entry chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2900 | `ChkOverR` | M2 T29 S3 | existing closure backlog; owner-approved source-order T29 S3 area-entry chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2911 | `ChkSwimE` | M2 T29 S3 | existing closure backlog; owner-approved source-order T29 S3 area-entry chain receipt | M2 T21 S4; M2 T24 S1 |
-| 2914 | `SetPESub` | M2 T29 S3 | existing closure backlog; owner-approved source-order T29 S3 area-entry chain receipt | M2 T21 S4; M2 T24 S1 |
+| 2840 | `PlayerStarting_X_Pos` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S4; M2 T24 S1 |
+| 2844 | `AltYPosOffset` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S4; M2 T24 S1 |
+| 2847 | `PlayerStarting_Y_Pos` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S4; M2 T24 S1 |
+| 2851 | `PlayerBGPriorityData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S4; M2 T24 S1 |
+| 2854 | `GameTimerData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S4; M2 T24 S1 |
+| 2858 | `Entrance_GameTimerSetup` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S4; M2 T24 S1 |
+| 2874 | `ChkStPos` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S4; M2 T24 S1 |
+| 2881 | `SetStPos` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S4; M2 T24 S1 |
+| 2900 | `ChkOverR` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S4; M2 T24 S1 |
+| 2911 | `ChkSwimE` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S4; M2 T24 S1 |
+| 2914 | `SetPESub` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S4; M2 T24 S1 |
 | 2921 | `HalfwayPageNybbles` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
 | 2931 | `PlayerLoseLife` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 S3; M2 T21 S4; M2 T24 S1; M2 T6 / S not recorded |
 | 2944 | `StillInGame` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
@@ -607,7 +472,7 @@ transfer existing ownership or allocate a numeric T.
 | 3964 | `Bridge_Middle` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
 | 3968 | `Bridge_Low` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
 | 3983 | `FlagBalls_Residual` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T29 S10 |
-| 3991 | `FlagpoleObject` | M2 T22 S5 | existing closure backlog; T22 S1/P2 label-owner map or confirmed missing scheduler obligation | M2 T22 S1; M2 T24 S1 |
+| 3991 | `FlagpoleObject` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T22 S1; M2 T24 S1 |
 | 4018 | `EndlessRope` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
 | 4023 | `BalancePlatRope` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
 | 4034 | `DrawRope` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1 |
@@ -662,7 +527,7 @@ transfer existing ownership or allocate a numeric T.
 | 4336 | `GetAreaObjYPosition` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S10 |
 | 4349 | `BlockBufferAddr` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S13 |
 | 4353 | `GetBlockBufferAddr` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T17 S4; M2 T21 S4; M2 T24 S1; M2 T30 S13 |
-| 4376 | `AreaDataOfsLoopback` | M2 T38 S1 | existing closure backlog; Accepted transfer-165: complete enemy flag/loop/frenzy chain and exact dependencies. | M2 T19 S5; M2 T21 S4; M2 T24 S1 |
+| 4376 | `AreaDataOfsLoopback` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1 |
 | 4381 | `LoadAreaPointer` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T15 S3; M2 T21 S4; M2 T24 S1; M2 T30 S14 |
 | 4384 | `GetAreaType` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
 | 4392 | `FindAreaPointer` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
@@ -685,40 +550,40 @@ transfer existing ownership or allocate a numeric T.
 | 4528 | `AreaDataHOffsets` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
 | 4531 | `AreaDataAddrLow` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
 | 4539 | `AreaDataAddrHigh` | M3 T27 S4 | existing closure backlog; Owner-approved root/frame/mode/area component move;maintenance only,no new conformance credit | M2 T21 S4; M2 T24 S1; M2 T30 S14 |
-| 4550 | `E_CastleArea1` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4558 | `E_CastleArea2` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4565 | `E_CastleArea3` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4574 | `E_CastleArea4` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4583 | `E_CastleArea5` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4589 | `E_CastleArea6` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4598 | `E_GroundArea1` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4606 | `E_GroundArea2` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4613 | `E_GroundArea3` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4619 | `E_GroundArea4` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4627 | `E_GroundArea5` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4636 | `E_GroundArea6` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4643 | `E_GroundArea7` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4650 | `E_GroundArea8` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4656 | `E_GroundArea9` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4662 | `E_GroundArea10` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4666 | `E_GroundArea11` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4674 | `E_GroundArea12` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4679 | `E_GroundArea13` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4687 | `E_GroundArea14` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4695 | `E_GroundArea15` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4700 | `E_GroundArea16` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4704 | `E_GroundArea17` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4714 | `E_GroundArea18` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4722 | `E_GroundArea19` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4731 | `E_GroundArea20` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4738 | `E_GroundArea21` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4743 | `E_GroundArea22` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4751 | `E_UndergroundArea1` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4760 | `E_UndergroundArea2` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4769 | `E_UndergroundArea3` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4777 | `E_WaterArea1` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4783 | `E_WaterArea2` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
-| 4791 | `E_WaterArea3` | M2 T51 S4 | existing closure backlog; M2 T51 S4 accepted original enemy-stream data-chain completion, transfer-282 | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4550 | `E_CastleArea1` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4558 | `E_CastleArea2` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4565 | `E_CastleArea3` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4574 | `E_CastleArea4` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4583 | `E_CastleArea5` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4589 | `E_CastleArea6` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4598 | `E_GroundArea1` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4606 | `E_GroundArea2` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4613 | `E_GroundArea3` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4619 | `E_GroundArea4` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4627 | `E_GroundArea5` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4636 | `E_GroundArea6` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4643 | `E_GroundArea7` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4650 | `E_GroundArea8` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4656 | `E_GroundArea9` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4662 | `E_GroundArea10` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4666 | `E_GroundArea11` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4674 | `E_GroundArea12` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4679 | `E_GroundArea13` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4687 | `E_GroundArea14` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4695 | `E_GroundArea15` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4700 | `E_GroundArea16` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4704 | `E_GroundArea17` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4714 | `E_GroundArea18` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4722 | `E_GroundArea19` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4731 | `E_GroundArea20` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4738 | `E_GroundArea21` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4743 | `E_GroundArea22` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4751 | `E_UndergroundArea1` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4760 | `E_UndergroundArea2` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4769 | `E_UndergroundArea3` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4777 | `E_WaterArea1` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4783 | `E_WaterArea2` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
+| 4791 | `E_WaterArea3` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S4; M2 T24 S1; M2 T30 S15 |
 | 4799 | `L_CastleArea1` | M2 T30 S16 | existing closure backlog; Accepted transfer-116: castle scene data and full parser consumption. | M2 T21 S4; M2 T24 S1; M2 T30 S16 |
 | 4814 | `L_CastleArea2` | M2 T30 S16 | existing closure backlog; Accepted transfer-116: castle scene data and full parser consumption. | M2 T21 S4; M2 T24 S1; M2 T30 S16 |
 | 4832 | `L_CastleArea3` | M2 T30 S16 | existing closure backlog; Accepted transfer-116: castle scene data and full parser consumption. | M2 T21 S4; M2 T24 S1; M2 T30 S16 |
@@ -784,1397 +649,1397 @@ transfer existing ownership or allocate a numeric T.
 | 5567 | `PlayerRdy` | M2 T31 S4 | existing closure backlog; Accepted planned entry-mode chain, transfer-133 | M2 T24 S1 |
 | 5575 | `ExitEntr` | M2 T31 S4 | existing closure backlog; Accepted planned entry-mode chain, transfer-133 | M2 T24 S1 |
 | 5580 | `AutoControlPlayer` | M2 T31 S4 | existing closure backlog; Accepted planned entry-mode chain, transfer-133 | M2 T15 S3; M2 T24 S1 |
-| 5583 | `PlayerCtrlRoutine` | M2 T32 S1 | existing closure backlog; Accepted transfer-134, source-order player control chain. | M2 T17 S4; M2 T23 / S not recorded; M2 T23 S2; M2 T24 S1 |
-| 5595 | `DisJoyp` | M2 T32 S1 | existing closure backlog; Accepted transfer-134, source-order player control chain. | M2 T24 S1 |
-| 5597 | `SaveJoyp` | M2 T32 S1 | existing closure backlog; Accepted transfer-134, source-order player control chain. | M2 T24 S1 |
-| 5615 | `SizeChk` | M2 T32 S1 | existing closure backlog; Accepted transfer-134, source-order player control chain. | M2 T24 S1 |
-| 5623 | `ChkMoveDir` | M2 T32 S1 | existing closure backlog; Accepted transfer-134, source-order player control chain. | M2 T24 S1 |
-| 5629 | `SetMoveDir` | M2 T32 S1 | existing closure backlog; Accepted transfer-134, source-order player control chain. | M2 T24 S1 |
-| 5630 | `PlayerSubs` | M2 T32 S1 | existing closure backlog; Accepted transfer-134, source-order player control chain. | M2 T24 S1 |
-| 5649 | `PlayerHole` | M2 T70 S17 | existing closure backlog; P23 accepted bounded original RAM07 threshold correction. | M2 T24 S1 |
-| 5661 | `HoleDie` | M2 T32 S1 | existing closure backlog; Accepted transfer-134, source-order player control chain. | M2 T24 S1 |
-| 5670 | `HoleBottom` | M2 T70 S17 | existing closure backlog; P23 accepted bounded original RAM07 threshold correction. | M2 T24 S1 |
-| 5672 | `ChkHoleX` | M2 T32 S1 | existing closure backlog; Accepted transfer-134, source-order player control chain. | M2 T24 S1 |
-| 5680 | `ExitCtrl` | M2 T32 S1 | existing closure backlog; Accepted transfer-134, source-order player control chain. | M2 T24 S1 |
-| 5682 | `CloudExit` | M2 T32 S1 | existing closure backlog; Accepted transfer-134, source-order player control chain. | M2 T24 S1 |
-| 5691 | `Vine_AutoClimb` | M2 T32 S2 | existing closure backlog; Accepted transfer-135: bounded vine/pipe transition chain. | M2 T24 S1 |
-| 5697 | `AutoClimb` | M2 T32 S2 | existing closure backlog; Accepted transfer-135: bounded vine/pipe transition chain. | M2 T24 S1 |
-| 5702 | `SetEntr` | M2 T32 S2 | existing closure backlog; Accepted transfer-135: bounded vine/pipe transition chain. | M2 T24 S1 |
-| 5708 | `VerticalPipeEntry` | M2 T32 S2 | existing closure backlog; Accepted transfer-135: bounded vine/pipe transition chain. | M2 T24 S1 |
-| 5722 | `MovePlayerYAxis` | M2 T32 S2 | existing closure backlog; Accepted transfer-135: bounded vine/pipe transition chain. | M2 T24 S1 |
-| 5730 | `SideExitPipeEntry` | M2 T32 S2 | existing closure backlog; Accepted transfer-135: bounded vine/pipe transition chain. | M2 T24 S1 |
-| 5733 | `ChgAreaPipe` | M2 T32 S2 | existing closure backlog; Accepted transfer-135: bounded vine/pipe transition chain. | M2 T24 S1 |
-| 5736 | `ChgAreaMode` | M2 T32 S2 | existing closure backlog; Accepted transfer-135: bounded vine/pipe transition chain. | M2 T24 S1 |
-| 5740 | `ExitCAPipe` | M2 T32 S2 | existing closure backlog; Accepted transfer-135: bounded vine/pipe transition chain. | M2 T24 S1 |
-| 5742 | `EnterSidePipe` | M2 T32 S2 | existing closure backlog; Accepted transfer-135: bounded vine/pipe transition chain. | M2 T24 S1 |
-| 5751 | `RightPipe` | M2 T32 S2 | existing closure backlog; Accepted transfer-135: bounded vine/pipe transition chain. | M2 T24 S1 |
-| 5757 | `PlayerChangeSize` | M2 T32 S3 | existing closure backlog; Accepted transfer-136: bounded size/injury/death/palette timer-state chain. | M2 T24 S1 |
-| 5762 | `EndChgSize` | M2 T32 S3 | existing closure backlog; Accepted transfer-136: bounded size/injury/death/palette timer-state chain. | M2 T24 S1 |
-| 5765 | `ExitChgSize` | M2 T32 S3 | existing closure backlog; Accepted transfer-136: bounded size/injury/death/palette timer-state chain. | M2 T24 S1 |
-| 5769 | `PlayerInjuryBlink` | M2 T32 S3 | existing closure backlog; Accepted transfer-136: bounded size/injury/death/palette timer-state chain. | M2 T24 S1 |
-| 5776 | `ExitBlink` | M2 T32 S3 | existing closure backlog; Accepted transfer-136: bounded size/injury/death/palette timer-state chain. | M2 T24 S1 |
-| 5778 | `InitChangeSize` | M2 T32 S3 | existing closure backlog; Accepted transfer-136: bounded size/injury/death/palette timer-state chain. | M2 T24 S1 |
-| 5786 | `ExitBoth` | M2 T32 S3 | existing closure backlog; Accepted transfer-136: bounded size/injury/death/palette timer-state chain. | M2 T24 S1 |
-| 5791 | `PlayerDeath` | M2 T32 S3 | existing closure backlog; Accepted transfer-136: bounded size/injury/death/palette timer-state chain. | M2 T24 S1 |
-| 5797 | `DonePlayerTask` | M2 T32 S3 | existing closure backlog; Accepted transfer-136: bounded size/injury/death/palette timer-state chain. | M2 T24 S1 |
-| 5804 | `PlayerFireFlower` | M2 T32 S3 | existing closure backlog; Accepted transfer-136: bounded size/injury/death/palette timer-state chain. | M2 T24 S1 |
-| 5812 | `CyclePlayerPalette` | M2 T32 S3 | existing closure backlog; Accepted transfer-136: bounded size/injury/death/palette timer-state chain. | M2 T24 S1 |
-| 5821 | `ResetPalFireFlower` | M2 T32 S3 | existing closure backlog; Accepted transfer-136: bounded size/injury/death/palette timer-state chain. | M2 T24 S1 |
-| 5824 | `ResetPalStar` | M2 T32 S3 | existing closure backlog; Accepted transfer-136: bounded size/injury/death/palette timer-state chain. | M2 T24 S1 |
-| 5830 | `ExitDeath` | M2 T32 S3 | existing closure backlog; Accepted transfer-136: bounded size/injury/death/palette timer-state chain. | M2 T24 S1 |
-| 5835 | `FlagpoleSlide` | M2 T32 S4 | existing closure backlog; Accepted transfer-137: bounded flagpole/end-level chain. | M2 T24 S1; M2 T6 / S not recorded |
-| 5847 | `SlidePlayer` | M2 T32 S4 | existing closure backlog; Accepted transfer-137: bounded flagpole/end-level chain. | M2 T24 S1 |
-| 5848 | `NoFPObj` | M2 T32 S4 | existing closure backlog; Accepted transfer-137: bounded flagpole/end-level chain. | M2 T24 S1 |
-| 5853 | `Hidden1UpCoinAmts` | M2 T32 S4 | existing closure backlog; Accepted transfer-137: bounded flagpole/end-level chain. | M2 T24 S1 |
-| 5856 | `PlayerEndLevel` | M2 T32 S4 | existing closure backlog; Accepted transfer-137: bounded flagpole/end-level chain. | M2 T24 S1; M2 T6 / S not recorded |
-| 5868 | `ChkStop` | M2 T32 S4 | existing closure backlog; Accepted transfer-137: bounded flagpole/end-level chain. | M2 T24 S1 |
-| 5874 | `InCastle` | M2 T32 S4 | existing closure backlog; Accepted transfer-137: bounded flagpole/end-level chain. | M2 T24 S1 |
-| 5876 | `RdyNextA` | M2 T32 S4 | existing closure backlog; Accepted transfer-137: bounded flagpole/end-level chain. | M2 T24 S1 |
-| 5888 | `NextArea` | M2 T32 S4 | existing closure backlog; Accepted transfer-137: bounded flagpole/end-level chain. | M2 T15 S3; M2 T24 S1 |
-| 5895 | `ExitNA` | M2 T32 S4 | existing closure backlog; Accepted transfer-137: bounded flagpole/end-level chain. | M2 T24 S1 |
-| 5899 | `PlayerMovementSubs` | M2 T33 S1 | existing closure backlog; Accepted transfer-138: movement dispatch and ground/air chain. | M2 T23 S1; M2 T24 S1 |
-| 5907 | `SetCrouch` | M2 T33 S1 | existing closure backlog; Accepted transfer-138: movement dispatch and ground/air chain. | M2 T24 S1 |
-| 5908 | `ProcMove` | M2 T33 S1 | existing closure backlog; Accepted transfer-138: movement dispatch and ground/air chain. | M2 T24 S1 |
-| 5916 | `MoveSubs` | M2 T70 S17 | existing closure backlog; P15 same-class omitted JumpEngine scratch call correction. | M2 T24 S1 |
-| 5923 | `NoMoveSub` | M2 T33 S1 | existing closure backlog; Accepted transfer-138: movement dispatch and ground/air chain. | M2 T24 S1 |
-| 5928 | `OnGroundStateSub` | M2 T33 S1 | existing closure backlog; Accepted transfer-138: movement dispatch and ground/air chain. | M2 T24 S1 |
-| 5933 | `GndMove` | M2 T33 S1 | existing closure backlog; Accepted transfer-138: movement dispatch and ground/air chain. | M2 T24 S1 |
-| 5940 | `FallingSub` | M2 T33 S1 | existing closure backlog; Accepted transfer-138: movement dispatch and ground/air chain. | M2 T15 S4; M2 T24 S1 |
-| 5947 | `JumpSwimSub` | M2 T33 S1 | existing closure backlog; Accepted transfer-138: movement dispatch and ground/air chain. | M2 T15 S4; M2 T24 S1 |
-| 5959 | `DumpFall` | M2 T33 S1 | existing closure backlog; Accepted transfer-138: movement dispatch and ground/air chain. | M2 T24 S1 |
-| 5961 | `ProcSwim` | M2 T33 S1 | existing closure backlog; Accepted transfer-138: movement dispatch and ground/air chain. | M2 T24 S1 |
-| 5969 | `LRWater` | M2 T33 S1 | existing closure backlog; Accepted transfer-138: movement dispatch and ground/air chain. | M2 T24 S1 |
-| 5972 | `LRAir` | M2 T33 S1 | existing closure backlog; Accepted transfer-138: movement dispatch and ground/air chain. | M2 T15 S4; M2 T24 S1 |
-| 5975 | `JSMove` | M2 T33 S1 | existing closure backlog; Accepted transfer-138: movement dispatch and ground/air chain. | M2 T24 S1 |
-| 5982 | `ExitMov1` | M2 T33 S1 | existing closure backlog; Accepted transfer-138: movement dispatch and ground/air chain. | M2 T24 S1 |
-| 5986 | `ClimbAdderLow` | M2 T33 S2 | existing closure backlog; Accepted transfer-139: climbing movement and side-switch chain. | M2 T24 S1 |
-| 5988 | `ClimbAdderHigh` | M2 T33 S2 | existing closure backlog; Accepted transfer-139: climbing movement and side-switch chain. | M2 T24 S1 |
-| 5991 | `ClimbingSub` | M2 T33 S2 | existing closure backlog; Accepted transfer-139: climbing movement and side-switch chain. | M2 T24 S1 |
-| 6000 | `MoveOnVine` | M2 T33 S2 | existing closure backlog; Accepted transfer-139: climbing movement and side-switch chain. | M2 T24 S1 |
-| 6019 | `ClimbFD` | M2 T33 S2 | existing closure backlog; Accepted transfer-139: climbing movement and side-switch chain. | M2 T24 S1 |
-| 6022 | `CSetFDir` | M2 T33 S2 | existing closure backlog; Accepted transfer-139: climbing movement and side-switch chain. | M2 T24 S1 |
-| 6032 | `ExitCSub` | M2 T33 S2 | existing closure backlog; Accepted transfer-139: climbing movement and side-switch chain. | M2 T24 S1 |
-| 6033 | `InitCSTimer` | M2 T33 S2 | existing closure backlog; Accepted transfer-139: climbing movement and side-switch chain. | M2 T24 S1 |
-| 6039 | `JumpMForceData` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6042 | `FallMForceData` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6045 | `PlayerYSpdData` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6048 | `InitMForceData` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6051 | `MaxLeftXSpdData` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6054 | `MaxRightXSpdData` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6058 | `FrictionData` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6061 | `Climb_Y_SpeedData` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6064 | `Climb_Y_MForceData` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6067 | `PlayerPhysicsSub` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6079 | `ProcClimb` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6086 | `SetCAnim` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6089 | `CheckForJumping` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6097 | `NoJump` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6099 | `ProcJumping` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6109 | `InitJS` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6133 | `ChkWtr` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6141 | `GetYPhy` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6159 | `PJumpSnd` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6163 | `SJumpSnd` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6164 | `X_Physics` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6172 | `ProcPRun` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6184 | `ChkRFast` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6191 | `FastXSp` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6193 | `SetRTmr` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6195 | `GetXPhy` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6201 | `GetXPhy2` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6213 | `ExitPhy` | M2 T33 S3 | existing closure backlog; Accepted transfer-140: physics tables and initialization chain. | M2 T24 S1 |
-| 6217 | `PlayerAnimTmrData` | M2 T33 S4 | existing closure backlog; Accepted transfer-141: animation timing and friction chain. | M2 T24 S1 |
-| 6220 | `GetPlayerAnimSpeed` | M2 T33 S4 | existing closure backlog; Accepted transfer-141: animation timing and friction chain. | M2 T24 S1 |
-| 6229 | `ChkSkid` | M2 T33 S4 | existing closure backlog; Accepted transfer-141: animation timing and friction chain. | M2 T24 S1 |
-| 6236 | `SetRunSpd` | M2 T33 S4 | existing closure backlog; Accepted transfer-141: animation timing and friction chain. | M2 T24 S1 |
-| 6238 | `ProcSkid` | M2 T33 S4 | existing closure backlog; Accepted transfer-141: animation timing and friction chain. | M2 T24 S1 |
-| 6246 | `SetAnimSpd` | M2 T33 S4 | existing closure backlog; Accepted transfer-141: animation timing and friction chain. | M2 T24 S1 |
-| 6252 | `ImposeFriction` | M2 T33 S4 | existing closure backlog; Accepted transfer-141: animation timing and friction chain. | M2 T15 S4; M2 T23 S1; M2 T23 S2; M2 T24 S1 |
-| 6260 | `JoypFrict` | M2 T33 S4 | existing closure backlog; Accepted transfer-141: animation timing and friction chain. | M2 T24 S1 |
-| 6262 | `LeftFrict` | M2 T33 S4 | existing closure backlog; Accepted transfer-141: animation timing and friction chain. | M2 T23 S1; M2 T23 S2; M2 T24 S1 |
-| 6274 | `RghtFrict` | M2 T33 S4 | existing closure backlog; Accepted transfer-141: animation timing and friction chain. | M2 T23 S1; M2 T23 S2; M2 T24 S1 |
-| 6285 | `XSpdSign` | M2 T33 S4 | existing closure backlog; Accepted transfer-141: animation timing and friction chain. | M2 T24 S1 |
-| 6290 | `SetAbsSpd` | M2 T33 S4 | existing closure backlog; Accepted transfer-141: animation timing and friction chain. | M2 T24 S1 |
-| 6298 | `ProcFireball_Bubble` | M2 T34 S1 | existing closure backlog; Accepted transfer-142: fireball and bubble dispatch chain. | M2 T19 / S not recorded; M2 T20 S1; M2 T20 S2; M2 T20 S3; M2 T21 S6; M2 T24 / S not recorded; M2 T24 S1 |
-| 6330 | `ProcFireballs` | M2 T34 S1 | existing closure backlog; Accepted transfer-142: fireball and bubble dispatch chain. | M2 T21 S6; M2 T24 S1 |
-| 6336 | `ProcAirBubbles` | M2 T34 S1 | existing closure backlog; Accepted transfer-142: fireball and bubble dispatch chain. | M2 T19 S4; M2 T21 S6; M2 T24 S1 |
-| 6340 | `BublLoop` | M2 T34 S1 | existing closure backlog; Accepted transfer-142: fireball and bubble dispatch chain. | M2 T21 S6; M2 T24 S1 |
-| 6347 | `BublExit` | M2 T34 S1 | existing closure backlog; Accepted transfer-142: fireball and bubble dispatch chain. | M2 T21 S6; M2 T24 S1 |
-| 6349 | `FireballXSpdData` | M2 T70 S17 | existing closure backlog; P46 accepted actualsimultaneousdirection producer andadjacentPRG speed-read repair. | M2 T21 S6; M2 T24 S1 |
-| 6352 | `FireballObjCore` | M2 T70 S17 | existing closure backlog; P46 accepted actualsimultaneousdirection producer andadjacentPRG speed-read repair. | M2 T16 S3; M2 T17 S2; M2 T17 S5; M2 T20 / S not recorded; M2 T20 S1; M2 T20 S2; M2 T21 S6; M2 T24 / S not recorded; M2 T24 S1 |
-| 6380 | `RunFB` | M2 T34 S2 | existing closure backlog; Accepted transfer-143: fireball core state and explosion dispatch. | M2 T21 S6; M2 T24 S1 |
-| 6401 | `EraseFB` | M2 T34 S2 | existing closure backlog; Accepted transfer-143: fireball core state and explosion dispatch. | M2 T21 S6; M2 T24 S1 |
-| 6403 | `NoFBall` | M2 T34 S2 | existing closure backlog; Accepted transfer-143: fireball core state and explosion dispatch. | M2 T21 S6; M2 T24 S1 |
-| 6405 | `FireballExplosion` | M2 T34 S2 | existing closure backlog; Accepted transfer-143: fireball core state and explosion dispatch. | M2 T16 S3; M2 T21 S6; M2 T24 S1 |
-| 6409 | `BubbleCheck` | M2 T35 S1 | existing closure backlog; Accepted transfer-144: bubble setup and movement chain. | M2 T20 S1; M2 T21 S6; M2 T24 S1 |
-| 6419 | `SetupBubble` | M2 T35 S1 | existing closure backlog; Accepted transfer-144: bubble setup and movement chain. | M2 T21 S6; M2 T24 S1 |
-| 6425 | `PosBubl` | M2 T35 S1 | existing closure backlog; Accepted transfer-144: bubble setup and movement chain. | M2 T21 S6; M2 T24 S1 |
-| 6440 | `MoveBubl` | M2 T35 S1 | existing closure backlog; Accepted transfer-144: bubble setup and movement chain. | M2 T21 S6; M2 T24 S1 |
-| 6450 | `Y_Bubl` | M2 T35 S1 | existing closure backlog; Accepted transfer-144: bubble setup and movement chain. | M2 T21 S6; M2 T24 S1 |
-| 6451 | `ExitBubl` | M2 T35 S1 | existing closure backlog; Accepted transfer-144: bubble setup and movement chain. | M2 T21 S6; M2 T24 S1 |
-| 6453 | `Bubble_MForceData` | M2 T35 S1 | existing closure backlog; Accepted transfer-144: bubble setup and movement chain. | M2 T21 S6; M2 T24 S1 |
-| 6456 | `BubbleTimerData` | M2 T35 S1 | existing closure backlog; Accepted transfer-144: bubble setup and movement chain. | M2 T21 S6; M2 T24 S1 |
-| 6461 | `RunGameTimer` | M2 T35 S2 | existing closure backlog; Accepted transfer-145: timer gate, countdown and expiry chain. | M2 T15 S3; M2 T19 S5; M2 T21 S6; M2 T24 S1 |
-| 6486 | `ResGTCtrl` | M2 T35 S2 | existing closure backlog; Accepted transfer-145: timer gate, countdown and expiry chain. | M2 T21 S6; M2 T24 S1 |
-| 6494 | `TimeUpOn` | M2 T35 S2 | existing closure backlog; Accepted transfer-145: timer gate, countdown and expiry chain. | M2 T21 S6; M2 T24 S1 |
-| 6497 | `ExGTimer` | M2 T35 S2 | existing closure backlog; Accepted transfer-145: timer gate, countdown and expiry chain. | M2 T21 S6; M2 T24 S1 |
-| 6501 | `WarpZoneObject` | M2 T31 S2 | existing closure backlog; Accepted original enemy-vector missing-target dependency, transfer-126 | M2 T21 S6; M2 T24 S1 |
-| 6519 | `ProcessWhirlpools` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T22 S1; M2 T24 S1 |
-| 6526 | `WhLoop` | M2 T70 S17 | existing closure backlog; P45 accepted actual whirlpool scratch publication/order fidelity repair. | M2 T24 S1 |
-| 6546 | `NextWh` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T24 S1 |
-| 6548 | `ExitWh` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T24 S1 |
-| 6550 | `WhirlpoolActivate` | M2 T70 S17 | existing closure backlog; P45 accepted actual whirlpool scratch publication/order fidelity repair. | M2 T22 S1; M2 T24 S1 |
-| 6577 | `LeftWh` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T24 S1 |
-| 6586 | `SetPWh` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T24 S1 |
-| 6587 | `WhPull` | M2 T70 S17 | existing closure backlog; P45 accepted actual whirlpool scratch publication/order fidelity repair. | M2 T24 S1 |
-| 6598 | `FlagpoleScoreMods` | M2 T22 S5 | existing closure backlog; T22 cannon/whirlpool/flagpole/vine responsibility includes continuations outside its physical slice | M2 T24 S1 |
-| 6601 | `FlagpoleScoreDigits` | M2 T22 S5 | existing closure backlog; T22 cannon/whirlpool/flagpole/vine responsibility includes continuations outside its physical slice | M2 T24 S1 |
-| 6604 | `FlagpoleRoutine` | M2 T22 S5 | existing closure backlog; T22 S1/P2 label-owner map or confirmed missing scheduler obligation | M2 T17 S6; M2 T22 S1; M2 T22 S4; M2 T24 S1 |
-| 6635 | `SkipScore` | M2 T22 S5 | existing closure backlog; T22 cannon/whirlpool/flagpole/vine responsibility includes continuations outside its physical slice | M2 T24 S1 |
-| 6636 | `GiveFPScr` | M2 T22 S5 | existing closure backlog; T22 cannon/whirlpool/flagpole/vine responsibility includes continuations outside its physical slice | M2 T24 S1 |
-| 6643 | `FPGfx` | M2 T22 S5 | existing closure backlog; T22 cannon/whirlpool/flagpole/vine responsibility includes continuations outside its physical slice | M2 T17 S6; M2 T22 S4; M2 T24 S1 |
-| 6646 | `ExitFlagP` | M2 T22 S5 | existing closure backlog; T22 cannon/whirlpool/flagpole/vine responsibility includes continuations outside its physical slice | M2 T24 S1 |
-| 6650 | `Jumpspring_Y_PosData` | M2 T35 S3 | existing closure backlog; Accepted transfer-146: jumpspring state and caller chain. | M2 T24 S1 |
-| 6653 | `JumpspringHandler` | M2 T35 S3 | existing closure backlog; Accepted transfer-146: jumpspring state and caller chain. | M2 T17 S4; M2 T24 S1 |
-| 6667 | `DownJSpr` | M2 T35 S3 | existing closure backlog; Accepted transfer-146: jumpspring state and caller chain. | M2 T24 S1 |
-| 6669 | `PosJSpr` | M2 T35 S3 | existing closure backlog; Accepted transfer-146: jumpspring state and caller chain. | M2 T24 S1 |
-| 6682 | `BounceJS` | M2 T35 S3 | existing closure backlog; Accepted transfer-146: jumpspring state and caller chain. | M2 T24 S1 |
-| 6688 | `DrawJSpr` | M2 T35 S3 | existing closure backlog; Accepted transfer-146: jumpspring state and caller chain. | M2 T24 S1 |
-| 6698 | `ExJSpring` | M2 T35 S3 | existing closure backlog; Accepted transfer-146: jumpspring state and caller chain. | M2 T24 S1 |
-| 6702 | `Setup_Vine` | M2 T35 S4 | existing closure backlog; Accepted transfer-147: vine initialization and height data. | M2 T22 S1; M2 T24 S1 |
-| 6716 | `NextVO` | M2 T35 S4 | existing closure backlog; Accepted transfer-147: vine initialization and height data. | M2 T24 S1 |
-| 6727 | `VineHeightData` | M2 T35 S4 | existing closure backlog; Accepted transfer-147: vine initialization and height data. | M2 T24 S1 |
-| 6730 | `VineObjectHandler` | M2 T36 S1 | existing closure backlog; Accepted transfer-148: complete vine actor caller chain. | M2 T17 S5; M2 T22 S1; M2 T24 S1 |
-| 6746 | `RunVSubs` | M2 T36 S1 | existing closure backlog; Accepted transfer-148: complete vine actor caller chain. | M2 T24 S1 |
-| 6752 | `VDrawLoop` | M2 T36 S1 | existing closure backlog; Accepted transfer-148: complete vine actor caller chain. | M2 T24 S1 |
-| 6760 | `KillVine` | M2 T36 S1 | existing closure backlog; Accepted transfer-148: complete vine actor caller chain. | M2 T24 S1 |
-| 6766 | `WrCMTile` | M2 T36 S1 | existing closure backlog; Accepted transfer-148: complete vine actor caller chain. | M2 T24 S1 |
-| 6780 | `ExitVH` | M2 T36 S1 | existing closure backlog; Accepted transfer-148: complete vine actor caller chain. | M2 T24 S1 |
-| 6785 | `CannonBitmasks` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T24 S1 |
-| 6788 | `ProcessCannons` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T22 S1; M2 T24 S1 |
-| 6792 | `ThreeSChk` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T24 S1 |
-| 6809 | `FireCannon` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T24 S1 |
-| 6832 | `Chk_BB` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T24 S1 |
-| 6840 | `Next3Slt` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T24 S1 |
-| 6842 | `ExCannon` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T24 S1 |
-| 6846 | `BulletBillXSpdData` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T24 S1 |
-| 6849 | `BulletBillHandler` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T17 S5; M2 T22 S1; M2 T24 S1 |
-| 6862 | `SetupBB` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T24 S1 |
-| 6876 | `ChkDSte` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T24 S1 |
-| 6880 | `BBFly` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T24 S1 |
-| 6881 | `RunBBSubs` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T24 S1 |
-| 6886 | `KillBB` | M2 T31 S2 | existing closure backlog; Accepted necessary cannon/whirlpool dependency correction within active GameEngine S2. | M2 T24 S1 |
-| 6891 | `HammerEnemyOfsData` | M2 T36 S2 | existing closure backlog; Accepted transfer-149: complete hammer allocation and actor caller chain. | M2 T24 S1 |
-| 6895 | `HammerXSpdData` | M2 T36 S2 | existing closure backlog; Accepted transfer-149: complete hammer allocation and actor caller chain. | M2 T24 S1 |
-| 6898 | `SpawnHammerObj` | M2 T36 S2 | existing closure backlog; Accepted transfer-149: complete hammer allocation and actor caller chain. | M2 T24 S1 |
-| 6904 | `SetMOfs` | M2 T36 S2 | existing closure backlog; Accepted transfer-149: complete hammer allocation and actor caller chain. | M2 T24 S1 |
-| 6919 | `NoHammer` | M2 T36 S2 | existing closure backlog; Accepted transfer-149: complete hammer allocation and actor caller chain. | M2 T24 S1 |
-| 6928 | `ProcHammerObj` | M2 T36 S2 | existing closure backlog; Accepted transfer-149: complete hammer allocation and actor caller chain. | M2 T22 S1; M2 T24 S1 |
-| 6952 | `SetHSpd` | M2 T36 S2 | existing closure backlog; Accepted transfer-149: complete hammer allocation and actor caller chain. | M2 T24 S1 |
-| 6962 | `SetHPos` | M2 T36 S2 | existing closure backlog; Accepted transfer-149: complete hammer allocation and actor caller chain. | M2 T24 S1 |
-| 6977 | `RunAllH` | M2 T36 S2 | existing closure backlog; Accepted transfer-149: complete hammer allocation and actor caller chain. | M2 T24 S1 |
-| 6978 | `RunHSubs` | M2 T36 S2 | existing closure backlog; Accepted transfer-149: complete hammer allocation and actor caller chain. | M2 T24 S1 |
-| 6988 | `CoinBlock` | M2 T36 S3 | existing closure backlog; Accepted transfer-150: coin creation and misc allocation chain. | M2 T22 S1; M2 T24 S1 |
-| 7000 | `SetupJumpCoin` | M2 T36 S3 | existing closure backlog; Accepted transfer-150: coin creation and misc allocation chain. | M2 T21 S2; M2 T21 S5; M2 T22 S1; M2 T24 S1 |
-| 7014 | `JCoinC` | M2 T36 S3 | existing closure backlog; Accepted transfer-150: coin creation and misc allocation chain. | M2 T21 S2; M2 T21 S5; M2 T22 S1; M2 T24 S1 |
-| 7025 | `FindEmptyMiscSlot` | M2 T36 S3 | existing closure backlog; Accepted transfer-150: coin creation and misc allocation chain. | M2 T16 S2; M2 T22 S1; M2 T24 S1 |
-| 7027 | `FMiscLoop` | M2 T36 S3 | existing closure backlog; Accepted transfer-150: coin creation and misc allocation chain. | M2 T24 S1 |
-| 7033 | `UseMiscS` | M2 T36 S3 | existing closure backlog; Accepted transfer-150: coin creation and misc allocation chain. | M2 T24 S1 |
-| 7038 | `MiscObjectsCore` | M2 T36 S4 | existing closure backlog; Accepted transfer-151: misc dispatch and jumping coin lifetime. | M2 T16 S2; M2 T16 S3; M2 T22 S1; M2 T22 S4; M2 T24 S1 |
-| 7040 | `MiscLoop` | M2 T36 S4 | existing closure backlog; Accepted transfer-151: misc dispatch and jumping coin lifetime. | M2 T24 S1 |
-| 7053 | `ProcJumpCoin` | M2 T36 S4 | existing closure backlog; Accepted transfer-151: misc dispatch and jumping coin lifetime. | M2 T16 S3; M2 T22 S1; M2 T24 S1 |
-| 7071 | `JCoinRun` | M2 T36 S4 | existing closure backlog; Accepted transfer-151: misc dispatch and jumping coin lifetime. | M2 T24 S1 |
-| 7088 | `RunJCSubs` | M2 T36 S4 | existing closure backlog; Accepted transfer-151: misc dispatch and jumping coin lifetime. | M2 T24 S1 |
-| 7093 | `MiscLoopBack` | M2 T36 S4 | existing closure backlog; Accepted transfer-151: misc dispatch and jumping coin lifetime. | M2 T24 S1 |
-| 7100 | `CoinTallyOffsets` | M2 T36 S5 | existing closure backlog; Accepted transfer-152: coin tally, score and HUD handoff. | M2 T24 S1 |
-| 7103 | `ScoreOffsets` | M2 T36 S5 | existing closure backlog; Accepted transfer-152: coin tally, score and HUD handoff. | M2 T24 S1 |
-| 7106 | `StatusBarNybbles` | M2 T36 S5 | existing closure backlog; Accepted transfer-152: coin tally, score and HUD handoff. | M2 T24 S1 |
-| 7109 | `GiveOneCoin` | M2 T36 S5 | existing closure backlog; Accepted transfer-152: coin tally, score and HUD handoff. | M2 T24 S1 |
-| 7125 | `CoinPoints` | M2 T36 S5 | existing closure backlog; Accepted transfer-152: coin tally, score and HUD handoff. | M2 T24 S1 |
-| 7129 | `AddToScore` | M2 T52 S3 | existing closure backlog; T52 S3 accepted current-equivalence corrective transfer for the A7 floatey-number score chain. | M2 T24 S1 |
-| 7134 | `GetSBNybbles` | M2 T36 S5 | existing closure backlog; Accepted transfer-152: coin tally, score and HUD handoff. | M2 T24 S1 |
-| 7138 | `UpdateNumber` | M2 T36 S5 | existing closure backlog; Accepted transfer-152: coin tally, score and HUD handoff. | M2 T24 S1 |
-| 7145 | `NoZSup` | M2 T36 S5 | existing closure backlog; Accepted transfer-152: coin tally, score and HUD handoff. | M2 T24 S1 |
-| 7150 | `SetupPowerUp` | M2 T36 S6 | existing closure backlog; Accepted transfer-153: power-up initialization. | M2 T22 S1; M2 T24 S1 |
-| 7163 | `PwrUpJmp` | M2 T36 S6 | existing closure backlog; Accepted transfer-153: power-up initialization. | M2 T24 S1 |
-| 7175 | `StrType` | M2 T36 S6 | existing closure backlog; Accepted transfer-153: power-up initialization. | M2 T24 S1 |
-| 7176 | `PutBehind` | M2 T36 S6 | existing closure backlog; Accepted transfer-153: power-up initialization. | M2 T24 S1 |
-| 7184 | `PowerUpObjHandler` | M2 T37 S1 | existing closure backlog; Accepted transfer-154: complete power-up actor state and child handoff chain. | M2 T17 S5; M2 T22 S1; M2 T24 S1 |
-| 7202 | `ShroomM` | M2 T37 S1 | existing closure backlog; Accepted transfer-154: complete power-up actor state and child handoff chain. | M2 T24 S1 |
-| 7206 | `GrowThePowerUp` | M2 T37 S1 | existing closure backlog; Accepted transfer-154: complete power-up actor state and child handoff chain. | M2 T22 S1; M2 T24 S1 |
-| 7223 | `ChkPUSte` | M2 T37 S1 | existing closure backlog; Accepted transfer-154: complete power-up actor state and child handoff chain. | M2 T24 S1 |
-| 7226 | `RunPUSubs` | M2 T37 S1 | existing closure backlog; Accepted transfer-154: complete power-up actor state and child handoff chain. | M2 T16 S3; M2 T22 S1; M2 T24 S1 |
-| 7232 | `ExitPUp` | M2 T37 S1 | existing closure backlog; Accepted transfer-154: complete power-up actor state and child handoff chain. | M2 T24 S1 |
-| 7241 | `BlockYPosAdderData` | M2 T37 S2 | existing closure backlog; Accepted transfer-155: complete head-hit and block-position caller chain. | M2 T24 S1 |
-| 7244 | `PlayerHeadCollision` | M2 T37 S2 | existing closure backlog; Accepted transfer-155: complete head-hit and block-position caller chain. | M2 T17 S4; M2 T22 S1; M2 T24 S1 |
-| 7251 | `DBlockSte` | M2 T37 S2 | existing closure backlog; Accepted transfer-155: complete head-hit and block-position caller chain. | M2 T24 S1 |
-| 7265 | `ChkBrick` | M2 T37 S2 | existing closure backlog; Accepted transfer-155: complete head-hit and block-position caller chain. | M2 T24 S1 |
-| 7274 | `StartBTmr` | M2 T37 S2 | existing closure backlog; Accepted transfer-155: complete head-hit and block-position caller chain. | M2 T24 S1 |
-| 7279 | `ContBTmr` | M2 T37 S2 | existing closure backlog; Accepted transfer-155: complete head-hit and block-position caller chain. | M2 T24 S1 |
-| 7282 | `PutOldMT` | M2 T37 S2 | existing closure backlog; Accepted transfer-155: complete head-hit and block-position caller chain. | M2 T24 S1 |
-| 7283 | `PutMTileB` | M2 T37 S2 | existing closure backlog; Accepted transfer-155: complete head-hit and block-position caller chain. | M2 T24 S1 |
-| 7297 | `SmallBP` | M2 T37 S2 | existing closure backlog; Accepted transfer-155: complete head-hit and block-position caller chain. | M2 T24 S1 |
-| 7298 | `BigBP` | M2 T37 S2 | existing closure backlog; Accepted transfer-155: complete head-hit and block-position caller chain. | M2 T24 S1 |
-| 7308 | `Unbreak` | M2 T37 S2 | existing closure backlog; Accepted transfer-155: complete head-hit and block-position caller chain. | M2 T24 S1 |
-| 7309 | `InvOBit` | M2 T37 S2 | existing closure backlog; Accepted transfer-155: complete head-hit and block-position caller chain. | M2 T24 S1 |
-| 7316 | `InitBlock_XY_Pos` | M2 T37 S2 | existing closure backlog; Accepted transfer-155: complete head-hit and block-position caller chain. | M2 T15 S4; M2 T22 S1; M2 T24 S1 |
-| 7332 | `BumpBlock` | M2 T37 S3 | existing closure backlog; Accepted transfer-156: original bump/content/lookup chain. | M2 T22 S1; M2 T24 S1 |
-| 7349 | `BlockCode` | M2 T37 S3 | existing closure backlog; Accepted transfer-156: original bump/content/lookup chain. | M2 T17 S6; M2 T22 S1; M2 T24 S1 |
-| 7363 | `MushFlowerBlock` | M2 T37 S3 | existing closure backlog; Accepted transfer-156: original bump/content/lookup chain. | M2 T24 S1 |
-| 7367 | `StarBlock` | M2 T37 S3 | existing closure backlog; Accepted transfer-156: original bump/content/lookup chain. | M2 T24 S1 |
-| 7371 | `ExtraLifeMushBlock` | M2 T37 S3 | existing closure backlog; Accepted transfer-156: original bump/content/lookup chain. | M2 T24 S1 |
-| 7376 | `VineBlock` | M2 T37 S3 | existing closure backlog; Accepted transfer-156: original bump/content/lookup chain. | M2 T24 S1 |
-| 7381 | `ExitBlockChk` | M2 T37 S3 | existing closure backlog; Accepted transfer-156: original bump/content/lookup chain. | M2 T24 S1 |
-| 7386 | `BrickQBlockMetatiles` | M2 T37 S3 | existing closure backlog; Accepted transfer-156: original bump/content/lookup chain. | M2 T17 S6; M2 T18 S2; M2 T22 S1; M2 T24 S1 |
-| 7393 | `BlockBumpedChk` | M2 T37 S3 | existing closure backlog; Accepted transfer-156: original bump/content/lookup chain. | M2 T17 S6; M2 T22 S1; M2 T22 S2; M2 T24 S1 |
-| 7395 | `BumpChkLoop` | M2 T37 S3 | existing closure backlog; Accepted transfer-156: original bump/content/lookup chain. | M2 T24 S1 |
-| 7400 | `MatchBump` | M2 T37 S3 | existing closure backlog; Accepted transfer-156: original bump/content/lookup chain. | M2 T24 S1 |
-| 7404 | `BrickShatter` | M2 T37 S4 | existing closure backlog; Accepted transfer-157: shatter, top coin and chunk creation chain. | M2 T22 S1; M2 T24 S1 |
-| 7420 | `CheckTopOfBlock` | M2 T37 S4 | existing closure backlog; Accepted transfer-157: shatter, top coin and chunk creation chain. | M2 T22 S1; M2 T24 S1 |
-| 7437 | `TopEx` | M2 T37 S4 | existing closure backlog; Accepted transfer-157: shatter, top coin and chunk creation chain. | M2 T24 S1 |
-| 7441 | `SpawnBrickChunks` | M2 T37 S4 | existing closure backlog; Accepted transfer-157: shatter, top coin and chunk creation chain. | M2 T22 S1; M2 T24 S1 |
-| 7468 | `BlockObjectsCore` | M2 T37 S5 | existing closure backlog; Accepted transfer-158: block and brick-chunk lifetime chain. | M2 T15 S4; M2 T16 S1; M2 T16 S2; M2 T17 S1; M2 T17 S6; M2 T22 S1; M2 T24 S1 |
-| 7500 | `ChkTop` | M2 T37 S5 | existing closure backlog; Accepted transfer-158: block and brick-chunk lifetime chain. | M2 T24 S1 |
-| 7506 | `BouncingBlockHandler` | M2 T37 S5 | existing closure backlog; Accepted transfer-158: block and brick-chunk lifetime chain. | M2 T22 S1; M2 T24 S1 |
-| 7519 | `KillBlock` | M2 T37 S5 | existing closure backlog; Accepted transfer-158: block and brick-chunk lifetime chain. | M2 T24 S1 |
-| 7520 | `UpdSte` | M2 T37 S5 | existing closure backlog; Accepted transfer-158: block and brick-chunk lifetime chain. | M2 T24 S1 |
-| 7527 | `BlockObjMT_Updater` | M2 T37 S6 | existing closure backlog; Accepted transfer-159: two-slot block metatile replacement chain. | M2 T18 / S not recorded; M2 T18 S1; M2 T22 S1; M2 T24 S1 |
-| 7529 | `UpdateLoop` | M2 T37 S6 | existing closure backlog; Accepted transfer-160: two-slot block metatile replacement chain. | M2 T21 S4; M2 T24 S1 |
-| 7546 | `NextBUpd` | M2 T37 S6 | existing closure backlog; Accepted transfer-160: two-slot block metatile replacement chain. | M2 T21 S4; M2 T24 S1 |
-| 7555 | `MoveEnemyHorizontally` | M2 T37 S7 | existing closure backlog; Accepted transfer-161: horizontal movement primitive and entries. | M2 T17 / S not recorded; M2 T17 S2; M2 T21 S3; M2 T24 S1 |
-| 7561 | `MovePlayerHorizontally` | M2 T37 S7 | existing closure backlog; Accepted transfer-161: horizontal movement primitive and entries. | M2 T15 S4; M2 T17 / S not recorded; M2 T21 S3; M2 T24 S1 |
-| 7566 | `MoveObjectHorizontally` | M2 T37 S7 | existing closure backlog; Accepted transfer-161: horizontal movement primitive and entries. | M2 T17 / S not recorded; M2 T17 S2; M2 T20 S2; M2 T21 S3; M2 T24 S1 |
-| 7581 | `SaveXSpd` | M2 T37 S7 | existing closure backlog; Accepted transfer-161: horizontal movement primitive and entries. | M2 T21 S3; M2 T24 S1 |
-| 7586 | `UseAdder` | M2 T37 S7 | existing closure backlog; Accepted transfer-161: horizontal movement primitive and entries. | M2 T21 S3; M2 T24 S1 |
-| 7604 | `ExXMove` | M2 T37 S7 | existing closure backlog; Accepted transfer-161: horizontal movement primitive and entries. | M2 T21 S3; M2 T24 S1 |
-| 7611 | `MovePlayerVertically` | M2 T37 S8 | existing closure backlog; Accepted transfer-162: vertical adapter implementation and retained-match maintenance. | M2 T21 S3; M2 T24 S1 |
-| 7617 | `NoJSChk` | M2 T37 S8 | existing closure backlog; Accepted transfer-162: vertical adapter implementation and retained-match maintenance. | M2 T21 S3; M2 T24 S1 |
-| 7624 | `MoveD_EnemyVertically` | M2 T37 S8 | existing closure backlog; Accepted transfer-163: vertical adapter implementation and retained-match maintenance. | M2 T17 S5; M2 T19 S2; M2 T19 S5; M2 T21 S3; M2 T24 S1 |
-| 7630 | `MoveFallingPlatform` | M2 T37 S8 | existing closure backlog; Accepted transfer-163: vertical adapter implementation and retained-match maintenance. | M2 T21 S3; M2 T24 S1 |
-| 7632 | `ContVMove` | M2 T37 S8 | existing closure backlog; Accepted transfer-163: vertical adapter implementation and retained-match maintenance. | M2 T21 S3; M2 T24 S1 |
-| 7636 | `MoveRedPTroopaDown` | M2 T37 S8 | existing closure backlog; Accepted transfer-162: vertical adapter implementation and retained-match maintenance. | M2 T21 S3; M2 T24 S1 |
-| 7640 | `MoveRedPTroopaUp` | M2 T37 S8 | existing closure backlog; Accepted transfer-162: vertical adapter implementation and retained-match maintenance. | M2 T21 S3; M2 T24 S1 |
-| 7643 | `MoveRedPTroopa` | M2 T37 S8 | existing closure backlog; Accepted transfer-162: vertical adapter implementation and retained-match maintenance. | M2 T21 S3; M2 T24 S1 |
-| 7656 | `MoveDropPlatform` | M2 T37 S8 | existing closure backlog; Accepted transfer-162: vertical adapter implementation and retained-match maintenance. | M2 T21 S3; M2 T24 S1 |
-| 7660 | `MoveEnemySlowVert` | M2 T37 S8 | existing closure backlog; Accepted transfer-162: vertical adapter implementation and retained-match maintenance. | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 7662 | `SetMdMax` | M2 T37 S8 | existing closure backlog; Accepted transfer-162: vertical adapter implementation and retained-match maintenance. | M2 T21 S3; M2 T24 S1 |
-| 7667 | `MoveJ_EnemyVertically` | M2 T37 S8 | existing closure backlog; Accepted transfer-162: vertical adapter implementation and retained-match maintenance. | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 7669 | `SetHiMax` | M2 T37 S8 | existing closure backlog; Accepted transfer-162: vertical adapter implementation and retained-match maintenance. | M2 T19 S2; M2 T21 S3; M2 T24 S1 |
-| 7670 | `SetXMoveAmt` | M2 T37 S8 | existing closure backlog; Accepted transfer-162: vertical adapter implementation and retained-match maintenance. | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 7678 | `MaxSpdBlockData` | M2 T37 S9 | existing closure backlog; Accepted transfer-164: common gravity chain. | M2 T21 S3; M2 T24 S1 |
-| 7681 | `ResidualGravityCode` | M2 T37 S9 | existing closure backlog; Accepted transfer-164: common gravity chain. | M2 T21 S3; M2 T24 S1 |
-| 7685 | `ImposeGravityBlock` | M2 T37 S9 | existing closure backlog; Accepted transfer-164: common gravity chain. | M2 T17 / S not recorded; M2 T17 S1; M2 T21 S3; M2 T24 S1 |
-| 7691 | `ImposeGravitySprObj` | M2 T37 S9 | existing closure backlog; Accepted transfer-164: common gravity chain. | M2 T17 / S not recorded; M2 T17 S5; M2 T19 S2; M2 T21 S3; M2 T24 S1 |
-| 7698 | `MovePlatformDown` | M2 T37 S9 | existing closure backlog; Accepted transfer-164: common gravity chain. | M2 T21 S3; M2 T24 S1 |
-| 7702 | `MovePlatformUp` | M2 T37 S9 | existing closure backlog; Accepted transfer-164: common gravity chain. | M2 T21 S3; M2 T24 S1 |
-| 7711 | `SetDplSpd` | M2 T37 S9 | existing closure backlog; Accepted transfer-164: common gravity chain. | M2 T21 S3; M2 T24 S1 |
-| 7719 | `RedPTroopaGrav` | M2 T37 S9 | existing closure backlog; Accepted transfer-164: common gravity chain. | M2 T21 S3; M2 T24 S1 |
-| 7729 | `ImposeGravity` | M2 T37 S9 | existing closure backlog; Accepted transfer-164: common gravity chain. | M2 T16 S2; M2 T17 / S not recorded; M2 T17 S1; M2 T17 S2; M2 T20 S2; M2 T21 S3; M2 T24 S1 |
-| 7739 | `AlterYP` | M2 T37 S9 | existing closure backlog; Accepted transfer-164: common gravity chain. | M2 T17 / S not recorded; M2 T21 S3; M2 T24 S1 |
-| 7761 | `ChkUpM` | M2 T37 S9 | existing closure backlog; Accepted transfer-164: common gravity chain. | M2 T21 S3; M2 T24 S1 |
-| 7784 | `ExVMove` | M2 T37 S9 | existing closure backlog; Accepted transfer-164: common gravity chain. | M2 T17 / S not recorded; M2 T21 S3; M2 T24 S1 |
-| 7788 | `EnemiesAndLoopsCore` | M2 T38 S1 | existing closure backlog; Accepted transfer-165: complete enemy flag/loop/frenzy chain and exact dependencies. | M2 T19 / S not recorded; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
-| 7796 | `ChkAreaTsk` | M2 T38 S1 | existing closure backlog; Accepted transfer-165: complete enemy flag/loop/frenzy chain and exact dependencies. | M2 T21 S5; M2 T24 S1 |
-| 7801 | `ChkBowserF` | M2 T38 S1 | existing closure backlog; Accepted transfer-165: complete enemy flag/loop/frenzy chain and exact dependencies. | M2 T21 S5; M2 T24 S1 |
-| 7807 | `ExitELCore` | M2 T38 S1 | existing closure backlog; Accepted transfer-165: complete enemy flag/loop/frenzy chain and exact dependencies. | M2 T21 S5; M2 T24 S1 |
-| 7812 | `LoopCmdWorldNumber` | M2 T38 S1 | existing closure backlog; Accepted transfer-165: complete enemy flag/loop/frenzy chain and exact dependencies. | M2 T21 S5; M2 T24 S1 |
-| 7815 | `LoopCmdPageNumber` | M2 T38 S1 | existing closure backlog; Accepted transfer-165: complete enemy flag/loop/frenzy chain and exact dependencies. | M2 T21 S5; M2 T24 S1 |
-| 7818 | `LoopCmdYPosition` | M2 T38 S1 | existing closure backlog; Accepted transfer-165: complete enemy flag/loop/frenzy chain and exact dependencies. | M2 T21 S5; M2 T24 S1 |
-| 7821 | `ExecGameLoopback` | M2 T38 S1 | existing closure backlog; Accepted transfer-165: complete enemy flag/loop/frenzy chain and exact dependencies. | M2 T21 S5; M2 T24 S1 |
-| 7851 | `ProcLoopCommand` | M2 T38 S1 | existing closure backlog; Accepted transfer-165: complete enemy flag/loop/frenzy chain and exact dependencies. | M2 T21 S5; M2 T24 S1 |
-| 7857 | `FindLoop` | M2 T38 S1 | existing closure backlog; Accepted transfer-165: complete enemy flag/loop/frenzy chain and exact dependencies. | M2 T21 S5; M2 T24 S1 |
-| 7875 | `IncMLoop` | M2 T38 S1 | existing closure backlog; Accepted transfer-165: complete enemy flag/loop/frenzy chain and exact dependencies. | M2 T21 S5; M2 T24 S1 |
-| 7883 | `WrongChk` | M2 T38 S1 | existing closure backlog; Accepted transfer-165: complete enemy flag/loop/frenzy chain and exact dependencies. | M2 T21 S5; M2 T24 S1 |
-| 7886 | `DoLpBack` | M2 T38 S1 | existing closure backlog; Accepted transfer-165: complete enemy flag/loop/frenzy chain and exact dependencies. | M2 T21 S5; M2 T24 S1 |
-| 7888 | `InitMLp` | M2 T38 S1 | existing closure backlog; Accepted transfer-165: complete enemy flag/loop/frenzy chain and exact dependencies. | M2 T21 S5; M2 T24 S1 |
-| 7891 | `InitLCmd` | M2 T38 S1 | existing closure backlog; Accepted transfer-165: complete enemy flag/loop/frenzy chain and exact dependencies. | M2 T21 S5; M2 T24 S1 |
-| 7896 | `ChkEnemyFrenzy` | M2 T38 S1 | existing closure backlog; Accepted transfer-165: complete enemy flag/loop/frenzy chain and exact dependencies. | M2 T19 S5; M2 T21 S5; M2 T24 S1 |
-| 7911 | `ProcessEnemyData` | M2 T38 S2 | existing closure backlog; Accepted transfer-166: complete enemy stream parsing chain, original continuation and initializer handoff. | M2 T17 S6; M2 T19 / S not recorded; M2 T19 S1; M2 T19 S2; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
-| 7918 | `CheckEndofBuffer` | M2 T38 S2 | existing closure backlog; Accepted transfer-166: complete enemy stream parsing chain, original continuation and initializer handoff. | M2 T19 S2; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
-| 7931 | `CheckRightBounds` | M2 T38 S2 | existing closure backlog; Accepted transfer-166: complete enemy stream parsing chain, original continuation and initializer handoff. | M2 T21 S5; M2 T24 S1 |
-| 7950 | `CheckPageCtrlRow` | M2 T38 S2 | existing closure backlog; Accepted transfer-166: complete enemy stream parsing chain, original continuation and initializer handoff. | M2 T21 S5; M2 T24 S1 |
-| 7967 | `PositionEnemyObj` | M2 T38 S2 | existing closure backlog; Accepted transfer-166: complete enemy stream parsing chain, original continuation and initializer handoff. | M2 T19 S5; M2 T21 S5; M2 T24 S1 |
-| 7983 | `CheckRightExtBounds` | M2 T38 S2 | existing closure backlog; Accepted transfer-166: complete enemy stream parsing chain, original continuation and initializer handoff. | M2 T21 S5; M2 T24 S1 |
-| 8006 | `CheckForEnemyGroup` | M2 T38 S2 | existing closure backlog; Accepted transfer-166: complete enemy stream parsing chain, original continuation and initializer handoff. | M2 T21 S5; M2 T24 S1 |
-| 8014 | `BuzzyBeetleMutate` | M2 T38 S2 | existing closure backlog; Accepted transfer-166: complete enemy stream parsing chain, original continuation and initializer handoff. | M2 T19 S5; M2 T21 S5; M2 T24 S1 |
-| 8020 | `StrID` | M2 T38 S2 | existing closure backlog; Accepted transfer-166: complete enemy stream parsing chain, original continuation and initializer handoff. | M2 T21 S5; M2 T24 S1 |
-| 8028 | `CheckFrenzyBuffer` | M2 T38 S2 | existing closure backlog; Accepted transfer-166: complete enemy stream parsing chain, original continuation and initializer handoff. | M2 T19 S5; M2 T21 S5; M2 T24 S1 |
-| 8035 | `StrFre` | M2 T38 S2 | existing closure backlog; Accepted transfer-166: complete enemy stream parsing chain, original continuation and initializer handoff. | M2 T21 S5; M2 T24 S1 |
-| 8037 | `InitEnemyObject` | M2 T38 S2 | existing closure backlog; Accepted transfer-166: complete enemy stream parsing chain, original continuation and initializer handoff. | M2 T19 S3; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
-| 8041 | `ExEPar` | M2 T38 S2 | existing closure backlog; Accepted transfer-166: complete enemy stream parsing chain, original continuation and initializer handoff. | M2 T21 S5; M2 T24 S1 |
-| 8043 | `DoGroup` | M2 T38 S2 | existing closure backlog; Accepted transfer-166: complete enemy stream parsing chain, original continuation and initializer handoff. | M2 T21 S5; M2 T24 S1 |
-| 8046 | `ParseRow0e` | M2 T38 S2 | existing closure backlog; Accepted transfer-166: complete enemy stream parsing chain, original continuation and initializer handoff. | M2 T19 S5; M2 T21 S5; M2 T24 S1 |
-| 8064 | `NotUse` | M2 T38 S2 | existing closure backlog; Accepted transfer-166: complete enemy stream parsing chain, original continuation and initializer handoff. | M2 T21 S5; M2 T24 S1 |
-| 8066 | `CheckThreeBytes` | M2 T38 S2 | existing closure backlog; Accepted transfer-166: complete enemy stream parsing chain, original continuation and initializer handoff. | M2 T21 S5; M2 T24 S1 |
-| 8072 | `Inc3B` | M2 T38 S2 | existing closure backlog; Accepted transfer-166: complete enemy stream parsing chain, original continuation and initializer handoff. | M2 T21 S5; M2 T24 S1 |
-| 8073 | `Inc2B` | M2 T38 S2 | existing closure backlog; Accepted transfer-166: complete enemy stream parsing chain, original continuation and initializer handoff. | M2 T21 S5; M2 T24 S1 |
-| 8080 | `CheckpointEnemyID` | M2 T38 S3 | existing closure backlog; Accepted transfer-167: checkpoint, initializer vector and no-init return. | M2 T19 S3; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
-| 8092 | `InitEnemyRoutines` | M2 T38 S3 | existing closure backlog; Accepted transfer-167: checkpoint, initializer vector and no-init return. | M2 T19 S3; M2 T21 S5; M2 T24 S1 |
-| 8158 | `NoInitCode` | M2 T38 S3 | existing closure backlog; Accepted transfer-167: checkpoint, initializer vector and no-init return. | M2 T21 S5; M2 T24 S1 |
-| 8163 | `InitGoomba` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
-| 8169 | `InitPodoboo` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
-| 8181 | `InitRetainerObj` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
-| 8188 | `NormalXSpdData` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
-| 8191 | `InitNormalEnemy` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
-| 8196 | `GetESpd` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
-| 8197 | `SetESpd` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
-| 8202 | `InitRedKoopa` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
-| 8210 | `HBroWalkingTimerData` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
-| 8213 | `InitHammerBro` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
-| 8225 | `InitHorizFlySwimEnemy` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
-| 8231 | `InitBloober` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
-| 8234 | `SmallBBox` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
-| 8239 | `InitRedPTroopa` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
-| 8245 | `GetCent` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
-| 8248 | `TallBBox` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
-| 8249 | `SetBBox` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
-| 8252 | `InitVStf` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T17 S5; M2 T21 S5; M2 T24 S1 |
-| 8259 | `InitBulletBill` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
-| 8268 | `InitCheepCheep` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
-| 8279 | `InitLakitu` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
-| 8283 | `SetupLakitu` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
-| 8289 | `KillLakitu` | M2 T38 S4 | existing closure backlog; Accepted transfer-168: common initializers and shared reset tails. | M2 T21 S5; M2 T24 S1 |
-| 8295 | `PRDiffAdjustData` | M2 T38 S5 | existing closure backlog; Accepted transfer-169: Lakitu/Spiny allocation chain. | M2 T21 S5; M2 T24 S1 |
-| 8300 | `LakituAndSpinyHandler` | M2 T38 S5 | existing closure backlog; Accepted transfer-169: Lakitu/Spiny allocation chain. | M2 T19 S3; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
-| 8308 | `ChkLak` | M2 T38 S5 | existing closure backlog; Accepted transfer-169: Lakitu/Spiny allocation chain. | M2 T21 S5; M2 T24 S1 |
-| 8318 | `ChkNoEn` | M2 T38 S5 | existing closure backlog; Accepted transfer-169: Lakitu/Spiny allocation chain. | M2 T21 S5; M2 T24 S1 |
-| 8323 | `CreateL` | M2 T38 S5 | existing closure backlog; Accepted transfer-169: Lakitu/Spiny allocation chain. | M2 T19 S5; M2 T21 S5; M2 T24 S1 |
-| 8330 | `RetEOfs` | M2 T38 S5 | existing closure backlog; Accepted transfer-169: Lakitu/Spiny allocation chain. | M2 T21 S5; M2 T24 S1 |
-| 8331 | `ExLSHand` | M2 T38 S5 | existing closure backlog; Accepted transfer-169: Lakitu/Spiny allocation chain. | M2 T21 S5; M2 T24 S1 |
-| 8335 | `CreateSpiny` | M2 T38 S5 | existing closure backlog; Accepted transfer-169: Lakitu/Spiny allocation chain. | M2 T19 S5; M2 T21 S5; M2 T24 S1 |
-| 8355 | `DifLoop` | M2 T38 S5 | existing closure backlog; Accepted transfer-169: Lakitu/Spiny allocation chain. | M2 T21 S5; M2 T24 S1 |
-| 8376 | `UsePosv` | M2 T38 S5 | existing closure backlog; Accepted transfer-169: Lakitu/Spiny allocation chain. | M2 T21 S5; M2 T24 S1 |
-| 8377 | `SetSpSpd` | M2 T38 S5 | existing closure backlog; Accepted transfer-169: Lakitu/Spiny allocation chain. | M2 T21 S5; M2 T24 S1 |
-| 8383 | `SpinyRte` | M2 T38 S5 | existing closure backlog; Accepted transfer-169: Lakitu/Spiny allocation chain. | M2 T21 S5; M2 T24 S1 |
-| 8390 | `ChpChpEx` | M2 T38 S5 | existing closure backlog; Accepted transfer-169: Lakitu/Spiny allocation chain. | M2 T21 S5; M2 T24 S1 |
-| 8394 | `FirebarSpinSpdData` | M2 T38 S6 | existing closure backlog; Accepted transfer-170: firebar initializer and mandatory duplicate child. | M2 T21 S5; M2 T24 S1 |
-| 8397 | `FirebarSpinDirData` | M2 T38 S6 | existing closure backlog; Accepted transfer-170: firebar initializer and mandatory duplicate child. | M2 T21 S5; M2 T24 S1 |
-| 8400 | `InitLongFirebar` | M2 T38 S6 | existing closure backlog; Accepted transfer-170: firebar initializer and mandatory duplicate child. | M2 T21 S5; M2 T24 S1 |
-| 8403 | `InitShortFirebar` | M2 T38 S6 | existing closure backlog; Accepted transfer-170: firebar initializer and mandatory duplicate child. | M2 T21 S5; M2 T24 S1 |
-| 8430 | `FlyCCXPositionData` | M2 T38 S7 | existing closure backlog; Accepted transfer-171: complete flying-fish initializer. | M2 T21 S5; M2 T24 S1 |
-| 8436 | `FlyCCXSpeedData` | M2 T38 S7 | existing closure backlog; Accepted transfer-171: complete flying-fish initializer. | M2 T21 S5; M2 T24 S1 |
-| 8441 | `FlyCCTimerData` | M2 T38 S7 | existing closure backlog; Accepted transfer-171: complete flying-fish initializer. | M2 T21 S5; M2 T24 S1 |
-| 8444 | `InitFlyingCheepCheep` | M2 T38 S7 | existing closure backlog; Accepted transfer-171: complete flying-fish initializer. | M2 T19 S3; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
-| 8457 | `MaxCC` | M2 T38 S7 | existing closure backlog; Accepted transfer-171: complete flying-fish initializer. | M2 T21 S5; M2 T24 S1 |
-| 8473 | `GSeed` | M2 T38 S7 | existing closure backlog; Accepted transfer-171: complete flying-fish initializer. | M2 T21 S5; M2 T24 S1 |
-| 8483 | `RSeed` | M2 T38 S7 | existing closure backlog; Accepted transfer-171: complete flying-fish initializer. | M2 T21 S5; M2 T24 S1 |
-| 8503 | `D2XPos1` | M2 T38 S7 | existing closure backlog; Accepted transfer-171: complete flying-fish initializer. | M2 T21 S5; M2 T24 S1 |
-| 8513 | `D2XPos2` | M2 T38 S7 | existing closure backlog; Accepted transfer-171: complete flying-fish initializer. | M2 T21 S5; M2 T24 S1 |
-| 8519 | `FinCCSt` | M2 T38 S7 | existing closure backlog; Accepted transfer-171: complete flying-fish initializer. | M2 T21 S5; M2 T24 S1 |
-| 8529 | `InitBowser` | M2 T39 S1 | existing closure backlog; Accepted transfer-172: Bowser/flame initializer chain and dependency. | M2 T21 S5; M2 T24 S1 |
-| 8551 | `DuplicateEnemyObj` | M2 T70 S17 | existing closure backlog; S17 P114 duplicate-object original zero-page X address correction. | M2 T21 S5; M2 T24 S1 |
-| 8553 | `FSLoop` | M2 T70 S17 | existing closure backlog; S17 P114 duplicate-object original zero-page X address correction. | M2 T21 S5; M2 T24 S1 |
-| 8569 | `FlmEx` | M2 T70 S17 | existing closure backlog; S17 P114 duplicate-object original zero-page X address correction. | M2 T21 S5; M2 T24 S1 |
-| 8573 | `FlameYPosData` | M2 T39 S1 | existing closure backlog; Accepted transfer-172: Bowser/flame initializer chain and dependency. | M2 T21 S5; M2 T24 S1 |
-| 8576 | `FlameYMFAdderData` | M2 T39 S1 | existing closure backlog; Accepted transfer-172: Bowser/flame initializer chain and dependency. | M2 T21 S5; M2 T24 S1 |
-| 8579 | `InitBowserFlame` | M2 T39 S1 | existing closure backlog; Accepted transfer-172: Bowser/flame initializer chain and dependency. | M2 T19 S3; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
-| 8597 | `SetFrT` | M2 T39 S1 | existing closure backlog; Accepted transfer-172: Bowser/flame initializer chain and dependency. | M2 T21 S5; M2 T24 S1 |
-| 8604 | `PutAtRightExtent` | M2 T39 S1 | existing closure backlog; Accepted transfer-172: Bowser/flame initializer chain and dependency. | M2 T19 S3; M2 T21 S5; M2 T24 S1 |
-| 8615 | `SpawnFromMouth` | M2 T39 S1 | existing closure backlog; Accepted transfer-172: Bowser/flame initializer chain and dependency. | M2 T21 S5; M2 T24 S1 |
-| 8635 | `SetMF` | M2 T39 S1 | existing closure backlog; Accepted transfer-172: Bowser/flame initializer chain and dependency. | M2 T21 S5; M2 T24 S1 |
-| 8640 | `FinishFlame` | M2 T39 S1 | existing closure backlog; Accepted transfer-172: Bowser/flame initializer chain and dependency. | M2 T19 S3; M2 T21 S5; M2 T24 S1 |
-| 8653 | `FireworksXPosData` | M2 T39 S2 | existing closure backlog; Accepted transfer-174: complete fireworks initializer chain. | M2 T21 S5; M2 T24 S1 |
-| 8656 | `FireworksYPosData` | M2 T39 S2 | existing closure backlog; Accepted transfer-174: complete fireworks initializer chain. | M2 T21 S5; M2 T24 S1 |
-| 8659 | `InitFireworks` | M2 T39 S2 | existing closure backlog; Accepted transfer-174: complete fireworks initializer chain. | M2 T19 S3; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
-| 8666 | `StarFChk` | M2 T39 S2 | existing closure backlog; Accepted transfer-174: complete fireworks initializer chain. | M2 T21 S5; M2 T24 S1 |
-| 8697 | `ExitFWk` | M2 T39 S2 | existing closure backlog; Accepted transfer-174: complete fireworks initializer chain. | M2 T21 S5; M2 T24 S1 |
-| 8701 | `Bitmasks` | M2 T39 S3 | existing closure backlog; Accepted transfer-175: complete Bullet Bill / swimming-fish allocation chain. | M2 T21 S5; M2 T24 S1 |
-| 8704 | `Enemy17YPosData` | M2 T39 S3 | existing closure backlog; Accepted transfer-175: complete Bullet Bill / swimming-fish allocation chain. | M2 T21 S5; M2 T24 S1 |
-| 8707 | `SwimCC_IDData` | M2 T39 S3 | existing closure backlog; Accepted transfer-175: complete Bullet Bill / swimming-fish allocation chain. | M2 T21 S5; M2 T24 S1 |
-| 8710 | `BulletBillCheepCheep` | M2 T39 S3 | existing closure backlog; Accepted transfer-175: complete Bullet Bill / swimming-fish allocation chain. | M2 T19 S3; M2 T21 S5; M2 T24 S1 |
-| 8722 | `ChkW2` | M2 T39 S3 | existing closure backlog; Accepted transfer-175: complete Bullet Bill / swimming-fish allocation chain. | M2 T21 S5; M2 T24 S1 |
-| 8726 | `Get17ID` | M2 T39 S3 | existing closure backlog; Accepted transfer-175: complete Bullet Bill / swimming-fish allocation chain. | M2 T21 S5; M2 T24 S1 |
-| 8730 | `Set17ID` | M2 T39 S3 | existing closure backlog; Accepted transfer-175: complete Bullet Bill / swimming-fish allocation chain. | M2 T19 S3; M2 T21 S5; M2 T24 S1 |
-| 8736 | `GetRBit` | M2 T39 S3 | existing closure backlog; Accepted transfer-175: complete Bullet Bill / swimming-fish allocation chain. | M2 T19 S3; M2 T21 S5; M2 T24 S1 |
-| 8738 | `ChkRBit` | M2 T39 S3 | existing closure backlog; Accepted transfer-175: complete Bullet Bill / swimming-fish allocation chain. | M2 T21 S5; M2 T24 S1 |
-| 8746 | `AddFBit` | M2 T39 S3 | existing closure backlog; Accepted transfer-175: complete Bullet Bill / swimming-fish allocation chain. | M2 T21 S5; M2 T24 S1 |
-| 8755 | `DoBulletBills` | M2 T39 S3 | existing closure backlog; Accepted transfer-175: complete Bullet Bill / swimming-fish allocation chain. | M2 T21 S5; M2 T24 S1 |
-| 8757 | `BB_SLoop` | M2 T39 S3 | existing closure backlog; Accepted transfer-175: complete Bullet Bill / swimming-fish allocation chain. | M2 T21 S5; M2 T24 S1 |
-| 8765 | `ExF17` | M2 T39 S3 | existing closure backlog; Accepted transfer-175: complete Bullet Bill / swimming-fish allocation chain. | M2 T21 S5; M2 T24 S1 |
-| 8767 | `FireBulletBill` | M2 T39 S3 | existing closure backlog; Accepted transfer-175: complete Bullet Bill / swimming-fish allocation chain. | M2 T21 S5; M2 T24 S1 |
-| 8780 | `HandleGroupEnemies` | M2 T39 S4 | existing closure backlog; Accepted transfer-176: complete grouped enemy record chain. | M2 T19 S5; M2 T21 S5; M2 T24 S1 |
-| 8792 | `PullID` | M2 T39 S4 | existing closure backlog; Accepted transfer-176: complete grouped enemy record chain. | M2 T21 S5; M2 T24 S1 |
-| 8793 | `SnglID` | M2 T39 S4 | existing closure backlog; Accepted transfer-176: complete grouped enemy record chain. | M2 T21 S5; M2 T24 S1 |
-| 8798 | `SetYGp` | M2 T39 S4 | existing closure backlog; Accepted transfer-176: complete grouped enemy record chain. | M2 T21 S5; M2 T24 S1 |
-| 8808 | `CntGrp` | M2 T39 S4 | existing closure backlog; Accepted transfer-176: complete grouped enemy record chain. | M2 T21 S5; M2 T24 S1 |
-| 8809 | `GrLoop` | M2 T39 S4 | existing closure backlog; Accepted transfer-176: complete grouped enemy record chain. | M2 T21 S5; M2 T24 S1 |
-| 8810 | `GSltLp` | M2 T39 S4 | existing closure backlog; Accepted transfer-176: complete grouped enemy record chain. | M2 T21 S5; M2 T24 S1 |
-| 8835 | `NextED` | M2 T39 S4 | existing closure backlog; Accepted transfer-176: complete grouped enemy record chain. | M2 T21 S5; M2 T24 S1 |
-| 8839 | `InitPiranhaPlant` | M2 T39 S5 | existing closure backlog; Accepted transfer-177: small initializers and frenzy dispatch/stop chain. | M2 T21 S5; M2 T24 S1 |
-| 8855 | `InitEnemyFrenzy` | M2 T39 S5 | existing closure backlog; Accepted transfer-177: small initializers and frenzy dispatch/stop chain. | M2 T19 S3; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
-| 8872 | `NoFrenzyCode` | M2 T39 S5 | existing closure backlog; Accepted transfer-177: small initializers and frenzy dispatch/stop chain. | M2 T21 S5; M2 T24 S1 |
-| 8877 | `EndFrenzy` | M2 T39 S5 | existing closure backlog; Accepted transfer-177: small initializers and frenzy dispatch/stop chain. | M2 T19 S3; M2 T21 S5; M2 T24 S1 |
-| 8879 | `LakituChk` | M2 T39 S5 | existing closure backlog; Accepted transfer-177: small initializers and frenzy dispatch/stop chain. | M2 T21 S5; M2 T24 S1 |
-| 8884 | `NextFSlot` | M2 T39 S5 | existing closure backlog; Accepted transfer-177: small initializers and frenzy dispatch/stop chain. | M2 T21 S5; M2 T24 S1 |
-| 8893 | `InitJumpGPTroopa` | M2 T39 S5 | existing closure backlog; Accepted transfer-177: small initializers and frenzy dispatch/stop chain. | M2 T21 S5; M2 T24 S1 |
-| 8898 | `TallBBox2` | M2 T39 S5 | existing closure backlog; Accepted transfer-177: small initializers and frenzy dispatch/stop chain. | M2 T21 S5; M2 T24 S1 |
-| 8899 | `SetBBox2` | M2 T39 S5 | existing closure backlog; Accepted transfer-177: small initializers and frenzy dispatch/stop chain. | M2 T21 S5; M2 T24 S1 |
-| 8904 | `InitBalPlatform` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
-| 8911 | `AlignP` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
-| 8917 | `SetBPA` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
-| 8925 | `InitDropPlatform` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
-| 8932 | `InitHoriPlatform` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
-| 8939 | `InitVertPlatform` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
-| 8947 | `SetYO` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
-| 8955 | `CommonPlatCode` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
-| 8957 | `SPBBox` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
-| 8964 | `CasPBB` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
-| 8969 | `LargeLiftUp` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
-| 8973 | `LargeLiftDown` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
-| 8976 | `LargeLiftBBox` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
-| 8981 | `PlatLiftUp` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
-| 8990 | `PlatLiftDown` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
-| 8998 | `CommonSmallLift` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
-| 9007 | `PlatPosDataLow` | M2 T39 S6 | existing closure backlog; Accepted transfer-178: original platform initialization and positioning chain. | M2 T21 S5; M2 T24 S1 |
-| 9010 | `PlatPosDataHigh` | M2 T39 S6 | existing closure backlog; Accepted transfer-178: original platform initialization and positioning chain. | M2 T21 S5; M2 T24 S1 |
-| 9013 | `PosPlatform` | M2 T70 S17 | existing closure backlog; S17 P115 platform initializer zero-page address correction. | M2 T21 S5; M2 T24 S1 |
-| 9025 | `EndOfEnemyInitCode` | M2 T39 S6 | existing closure backlog; Accepted transfer-178: original platform initialization and positioning chain. | M2 T21 S5; M2 T24 S1 |
-| 9030 | `RunEnemyObjectsCore` | M2 T39 S7 | existing closure backlog; Accepted transfer-179: actor vector and retainer call boundaries. | M2 T21 S5; M2 T24 S1 |
-| 9038 | `JmpEO` | M2 T39 S7 | existing closure backlog; Accepted transfer-179: actor vector and retainer call boundaries. | M2 T21 S5; M2 T24 S1 |
-| 9080 | `NoRunCode` | M2 T39 S7 | existing closure backlog; Accepted transfer-180: actor vector and retainer call boundaries. | M2 T21 S5; M2 T24 S1 |
-| 9085 | `RunRetainerObj` | M2 T39 S7 | existing closure backlog; Accepted transfer-179: actor vector and retainer call boundaries. | M2 T21 S5; M2 T24 S1 |
-| 9092 | `RunNormalEnemies` | M2 T39 S8 | existing closure backlog; Accepted transfer-181: normal actor caller and movement vector. | M2 T17 S5; M2 T19 S4; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
-| 9105 | `SkipMove` | M2 T39 S8 | existing closure backlog; Accepted transfer-181: normal actor caller and movement vector. | M2 T21 S5; M2 T24 S1 |
-| 9107 | `EnemyMovementSubs` | M2 T39 S8 | existing closure backlog; Accepted transfer-181: normal actor caller and movement vector. | M2 T21 S5; M2 T24 S1 |
-| 9135 | `NoMoveCode` | M2 T39 S8 | existing closure backlog; Accepted transfer-181: normal actor caller and movement vector. | M2 T21 S5; M2 T24 S1 |
-| 9140 | `RunBowserFlame` | M2 T39 S9 | existing closure backlog; Accepted transfer-182: special actor/platform callers and shared erasure. | M2 T21 S5; M2 T24 S1 |
-| 9150 | `RunFirebarObj` | M2 T39 S9 | existing closure backlog; Accepted transfer-182: special actor/platform callers and shared erasure. | M2 T21 S5; M2 T24 S1 |
-| 9156 | `RunSmallPlatform` | M2 T39 S9 | existing closure backlog; Accepted transfer-182: special actor/platform callers and shared erasure. | M2 T19 S4; M2 T21 S5; M2 T24 S1; M2 T5 / S not recorded |
-| 9168 | `RunLargePlatform` | M2 T39 S9 | existing closure backlog; Accepted transfer-182: special actor/platform callers and shared erasure. | M2 T19 S4; M2 T21 S5; M2 T24 S1; M2 T5 / S not recorded |
-| 9176 | `SkipPT` | M2 T39 S9 | existing closure backlog; Accepted transfer-182: special actor/platform callers and shared erasure. | M2 T21 S5; M2 T24 S1 |
-| 9182 | `LargePlatformSubroutines` | M2 T39 S9 | existing closure backlog; Accepted transfer-182: special actor/platform callers and shared erasure. | M2 T21 S5; M2 T24 S1 |
-| 9198 | `EraseEnemyObject` | M2 T39 S9 | existing closure backlog; Accepted transfer-183: special actor/platform callers and shared erasure. | M2 T21 S5; M2 T24 S1 |
-| 9212 | `MovePodoboo` | M2 T40 S1 | existing closure backlog; Accepted transfer-184: complete Podoboo movement caller. | M2 T21 S5; M2 T24 S1 |
-| 9224 | `PdbM` | M2 T40 S1 | existing closure backlog; Accepted transfer-184: complete Podoboo movement caller. | M2 T21 S5; M2 T24 S1 |
-| 9229 | `HammerThrowTmrData` | M2 T40 S2 | existing closure backlog; Accepted transfer-185: Hammer Bro and normal movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9232 | `XSpeedAdderData` | M2 T40 S2 | existing closure backlog; Accepted transfer-186: Hammer Bro and normal movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9235 | `RevivedXSpeed` | M2 T40 S2 | existing closure backlog; Accepted transfer-186: Hammer Bro and normal movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9238 | `ProcHammerBro` | M2 T40 S2 | existing closure backlog; Accepted transfer-185: Hammer Bro and normal movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9243 | `ChkJH` | M2 T40 S2 | existing closure backlog; Accepted transfer-185: Hammer Bro and normal movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9260 | `DecHT` | M2 T40 S2 | existing closure backlog; Accepted transfer-185: Hammer Bro and normal movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9263 | `HammerBroJumpLData` | M2 T40 S2 | existing closure backlog; Accepted transfer-185: Hammer Bro and normal movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9266 | `HammerBroJumpCode` | M2 T40 S2 | existing closure backlog; Accepted transfer-185: Hammer Bro and normal movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9285 | `SetHJ` | M2 T40 S2 | existing closure backlog; Accepted transfer-185: Hammer Bro and normal movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9295 | `HJump` | M2 T40 S2 | existing closure backlog; Accepted transfer-185: Hammer Bro and normal movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9301 | `MoveHammerBroXDir` | M2 T40 S2 | existing closure backlog; Accepted transfer-185: Hammer Bro and normal movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9307 | `Shimmy` | M2 T40 S2 | existing closure backlog; Accepted transfer-185: Hammer Bro and normal movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9316 | `SetShim` | M2 T40 S2 | existing closure backlog; Accepted transfer-185: Hammer Bro and normal movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9318 | `MoveNormalEnemy` | M2 T40 S2 | existing closure backlog; Accepted transfer-186: Hammer Bro and normal movement chain. | M2 T17 S5; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
-| 9336 | `FallE` | M2 T40 S2 | existing closure backlog; Accepted transfer-186: Hammer Bro and normal movement chain. | M2 T19 S5; M2 T21 S5; M2 T24 S1 |
-| 9347 | `MEHor` | M2 T40 S2 | existing closure backlog; Accepted transfer-186: Hammer Bro and normal movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9349 | `SlowM` | M2 T40 S2 | existing closure backlog; Accepted transfer-186: Hammer Bro and normal movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9350 | `SteadM` | M2 T40 S2 | existing closure backlog; Accepted transfer-186: Hammer Bro and normal movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9355 | `AddHS` | M2 T40 S2 | existing closure backlog; Accepted transfer-186: Hammer Bro and normal movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9363 | `ReviveStunned` | M2 T40 S2 | existing closure backlog; Accepted transfer-186: Hammer Bro and normal movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9377 | `SetRSpd` | M2 T40 S2 | existing closure backlog; Accepted transfer-186: Hammer Bro and normal movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9381 | `MoveDefeatedEnemy` | M2 T40 S2 | existing closure backlog; Accepted transfer-186: Hammer Bro and normal movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9385 | `ChkKillGoomba` | M2 T40 S2 | existing closure backlog; Accepted transfer-186: Hammer Bro and normal movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9392 | `NKGmba` | M2 T40 S2 | existing closure backlog; Accepted transfer-186: Hammer Bro and normal movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9396 | `MoveJumpingEnemy` | M2 T40 S3 | existing closure backlog; Accepted transfer-187: jumping/red Paratroopa movement chain. | M2 T17 S5; M2 T21 S5; M2 T24 S1 |
-| 9402 | `ProcMoveRedPTroopa` | M2 T40 S3 | existing closure backlog; Accepted transfer-187: jumping/red Paratroopa movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9414 | `NoIncPT` | M2 T40 S3 | existing closure backlog; Accepted transfer-187: jumping/red Paratroopa movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9416 | `MoveRedPTUpOrDown` | M2 T40 S3 | existing closure backlog; Accepted transfer-187: jumping/red Paratroopa movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9421 | `MovPTDwn` | M2 T40 S3 | existing closure backlog; Accepted transfer-187: jumping/red Paratroopa movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9427 | `MoveFlyGreenPTroopa` | M2 T40 S4 | existing closure backlog; Accepted transfer-188: green Paratroopa/shared X-counter chain. | M2 T21 S5; M2 T24 S1 |
-| 9438 | `YSway` | M2 T40 S4 | existing closure backlog; Accepted transfer-188: green Paratroopa/shared X-counter chain. | M2 T21 S5; M2 T24 S1 |
-| 9443 | `NoMGPT` | M2 T40 S4 | existing closure backlog; Accepted transfer-188: green Paratroopa/shared X-counter chain. | M2 T21 S5; M2 T24 S1 |
-| 9445 | `XMoveCntr_GreenPTroopa` | M2 T40 S4 | existing closure backlog; Accepted transfer-188: green Paratroopa/shared X-counter chain. | M2 T21 S5; M2 T24 S1 |
-| 9448 | `XMoveCntr_Platform` | M2 T40 S4 | existing closure backlog; Accepted transfer-188: green Paratroopa/shared X-counter chain. | M2 T21 S5; M2 T24 S1 |
-| 9460 | `NoIncXM` | M2 T40 S4 | existing closure backlog; Accepted transfer-188: green Paratroopa/shared X-counter chain. | M2 T21 S5; M2 T24 S1 |
-| 9461 | `IncPXM` | M2 T40 S4 | existing closure backlog; Accepted transfer-188: green Paratroopa/shared X-counter chain. | M2 T21 S5; M2 T24 S1 |
-| 9463 | `DecSeXM` | M2 T40 S4 | existing closure backlog; Accepted transfer-188: green Paratroopa/shared X-counter chain. | M2 T21 S5; M2 T24 S1 |
-| 9468 | `MoveWithXMCntrs` | M2 T40 S4 | existing closure backlog; Accepted transfer-188: green Paratroopa/shared X-counter chain. | M2 T21 S5; M2 T24 S1 |
-| 9481 | `XMRight` | M2 T40 S4 | existing closure backlog; Accepted transfer-188: green Paratroopa/shared X-counter chain. | M2 T21 S5; M2 T24 S1 |
-| 9490 | `BlooberBitmasks` | M2 T40 S5 | existing closure backlog; Accepted transfer-189: Bloober movement/swimming chain. | M2 T21 S5; M2 T24 S1 |
-| 9493 | `MoveBloober` | M2 T40 S5 | existing closure backlog; Accepted transfer-189: Bloober movement/swimming chain. | M2 T21 S5; M2 T24 S1 |
-| 9506 | `FBLeft` | M2 T40 S5 | existing closure backlog; Accepted transfer-189: Bloober movement/swimming chain. | M2 T21 S5; M2 T24 S1 |
-| 9510 | `SBMDir` | M2 T40 S5 | existing closure backlog; Accepted transfer-189: Bloober movement/swimming chain. | M2 T21 S5; M2 T24 S1 |
-| 9512 | `BlooberSwim` | M2 T40 S5 | existing closure backlog; Accepted transfer-189: Bloober movement/swimming chain. | M2 T21 S5; M2 T24 S1 |
-| 9520 | `SwimX` | M2 T40 S5 | existing closure backlog; Accepted transfer-189: Bloober movement/swimming chain. | M2 T21 S5; M2 T24 S1 |
-| 9532 | `LeftSwim` | M2 T40 S5 | existing closure backlog; Accepted transfer-189: Bloober movement/swimming chain. | M2 T21 S5; M2 T24 S1 |
-| 9542 | `MoveDefeatedBloober` | M2 T40 S5 | existing closure backlog; Accepted transfer-189: Bloober movement/swimming chain. | M2 T17 S5; M2 T21 S5; M2 T24 S1 |
-| 9545 | `ProcSwimmingB` | M2 T40 S5 | existing closure backlog; Accepted transfer-189: Bloober movement/swimming chain. | M2 T21 S5; M2 T24 S1 |
-| 9565 | `BSwimE` | M2 T40 S5 | existing closure backlog; Accepted transfer-189: Bloober movement/swimming chain. | M2 T21 S5; M2 T24 S1 |
-| 9567 | `SlowSwim` | M2 T40 S5 | existing closure backlog; Accepted transfer-189: Bloober movement/swimming chain. | M2 T21 S5; M2 T24 S1 |
-| 9579 | `NoSSw` | M2 T40 S5 | existing closure backlog; Accepted transfer-189: Bloober movement/swimming chain. | M2 T21 S5; M2 T24 S1 |
-| 9581 | `ChkForFloatdown` | M2 T40 S5 | existing closure backlog; Accepted transfer-189: Bloober movement/swimming chain. | M2 T21 S5; M2 T24 S1 |
-| 9585 | `Floatdown` | M2 T40 S5 | existing closure backlog; Accepted transfer-189: Bloober movement/swimming chain. | M2 T21 S5; M2 T24 S1 |
-| 9590 | `NoFD` | M2 T40 S5 | existing closure backlog; Accepted transfer-189: Bloober movement/swimming chain. | M2 T21 S5; M2 T24 S1 |
-| 9592 | `ChkNearPlayer` | M2 T40 S5 | existing closure backlog; Accepted transfer-189: Bloober movement/swimming chain. | M2 T21 S5; M2 T24 S1 |
-| 9603 | `MoveBulletBill` | M2 T40 S6 | existing closure backlog; Accepted transfer-190: Bullet Bill movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9608 | `NotDefB` | M2 T40 S6 | existing closure backlog; Accepted transfer-190: Bullet Bill movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9616 | `SwimCCXMoveData` | M2 T40 S7 | existing closure backlog; Accepted transfer-191: swimming Cheep-Cheep movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9620 | `MoveSwimmingCheepCheep` | M2 T40 S7 | existing closure backlog; Accepted transfer-191: swimming Cheep-Cheep movement chain. | M2 T17 S5; M2 T21 S5; M2 T24 S1 |
-| 9625 | `CCSwim` | M2 T40 S7 | existing closure backlog; Accepted transfer-191: swimming Cheep-Cheep movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9660 | `CCSwimUpwards` | M2 T40 S7 | existing closure backlog; Accepted transfer-191: swimming Cheep-Cheep movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9671 | `ChkSwimYPos` | M2 T40 S7 | existing closure backlog; Accepted transfer-191: swimming Cheep-Cheep movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9682 | `YPDiff` | M2 T40 S7 | existing closure backlog; Accepted transfer-191: swimming Cheep-Cheep movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9686 | `ExSwCC` | M2 T40 S7 | existing closure backlog; Accepted transfer-191: swimming Cheep-Cheep movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9703 | `FirebarPosLookupTbl` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9716 | `FirebarMirrorData` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9719 | `FirebarTblOffsets` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9723 | `FirebarYPos` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9726 | `ProcFirebar` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9737 | `SusFbar` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9745 | `SkpFSte` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9748 | `SetupGFB` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9766 | `SetMFbar` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9769 | `DrawFbar` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9778 | `NextFbar` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9782 | `SkipFBar` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9784 | `DrawFirebar_Collision` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9793 | `AddHA` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9803 | `SubtR1` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9805 | `ChkFOfs` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9809 | `VAHandl` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9817 | `AddVA` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9819 | `SetVFbr` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9822 | `FirebarCollision` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9838 | `AdjSm` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9844 | `BigJp` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9845 | `FBCLoop` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9851 | `ChkVFBD` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9866 | `ChkFBCl` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9868 | `Chk2Ofs` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9877 | `ChgSDir` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9882 | `SetSDir` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9889 | `NoColFB` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9896 | `GetFirebarPosition` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9904 | `GetHAdder` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9922 | `GetVAdder` | M2 T40 S8 | existing closure backlog; Accepted transfer-192: firebar position/drawing/collision chain. | M2 T21 S5; M2 T24 S1 |
-| 9941 | `PRandomSubtracter` | M2 T40 S9 | existing closure backlog; Accepted transfer-193: flying Cheep-Cheep movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9944 | `FlyCCBPriority` | M2 T40 S9 | existing closure backlog; Accepted transfer-193: flying Cheep-Cheep movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9947 | `MoveFlyingCheepCheep` | M2 T40 S9 | existing closure backlog; Accepted transfer-193: flying Cheep-Cheep movement chain. | M2 T19 S3; M2 T21 S5; M2 T24 S1 |
-| 9954 | `FlyCC` | M2 T40 S9 | existing closure backlog; Accepted transfer-193: flying Cheep-Cheep movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9971 | `AddCCF` | M2 T40 S9 | existing closure backlog; Accepted transfer-193: flying Cheep-Cheep movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9982 | `BPGet` | M2 T40 S9 | existing closure backlog; Accepted transfer-193: flying Cheep-Cheep movement chain. | M2 T21 S5; M2 T24 S1 |
-| 9990 | `LakituDiffAdj` | M2 T40 S10 | existing closure backlog; Accepted transfer-194: Lakitu movement/distance chain. | M2 T21 S5; M2 T24 S1 |
-| 9993 | `MoveLakitu` | M2 T40 S10 | existing closure backlog; Accepted transfer-194: Lakitu movement/distance chain. | M2 T19 S3; M2 T21 S5; M2 T24 S1 |
-| 9998 | `ChkLS` | M2 T40 S10 | existing closure backlog; Accepted transfer-194: Lakitu movement/distance chain. | M2 T21 S5; M2 T24 S1 |
-| 10005 | `Fr12S` | M2 T40 S10 | existing closure backlog; Accepted transfer-194: Lakitu movement/distance chain. | M2 T21 S5; M2 T24 S1 |
-| 10008 | `LdLDa` | M2 T40 S10 | existing closure backlog; Accepted transfer-194: Lakitu movement/distance chain. | M2 T21 S5; M2 T24 S1 |
-| 10013 | `SetLSpd` | M2 T40 S10 | existing closure backlog; Accepted transfer-194: Lakitu movement/distance chain. | M2 T21 S5; M2 T24 S1 |
-| 10024 | `SetLMov` | M2 T40 S10 | existing closure backlog; Accepted transfer-194: Lakitu movement/distance chain. | M2 T21 S5; M2 T24 S1 |
-| 10027 | `PlayerLakituDiff` | M2 T40 S10 | existing closure backlog; Accepted transfer-194: Lakitu movement/distance chain. | M2 T19 S3; M2 T21 S5; M2 T24 S1 |
-| 10037 | `ChkLakDif` | M2 T40 S10 | existing closure backlog; Accepted transfer-194: Lakitu movement/distance chain. | M2 T21 S5; M2 T24 S1 |
-| 10053 | `SetLMovD` | M2 T40 S10 | existing closure backlog; Accepted transfer-194: Lakitu movement/distance chain. | M2 T21 S5; M2 T24 S1 |
-| 10055 | `ChkPSpeed` | M2 T40 S10 | existing closure backlog; Accepted transfer-194: Lakitu movement/distance chain. | M2 T21 S5; M2 T24 S1 |
-| 10073 | `ChkSpinyO` | M2 T40 S10 | existing closure backlog; Accepted transfer-194: Lakitu movement/distance chain. | M2 T21 S5; M2 T24 S1 |
-| 10078 | `ChkEmySpd` | M2 T40 S10 | existing closure backlog; Accepted transfer-194: Lakitu movement/distance chain. | M2 T21 S5; M2 T24 S1 |
-| 10081 | `SubDifAdj` | M2 T40 S10 | existing closure backlog; Accepted transfer-194: Lakitu movement/distance chain. | M2 T21 S5; M2 T24 S1 |
-| 10083 | `SPixelLak` | M2 T40 S10 | existing closure backlog; Accepted transfer-194: Lakitu movement/distance chain. | M2 T21 S5; M2 T24 S1 |
-| 10087 | `ExMoveLak` | M2 T40 S10 | existing closure backlog; Accepted transfer-194: Lakitu movement/distance chain. | M2 T21 S5; M2 T24 S1 |
-| 10092 | `BridgeCollapseData` | M2 T41 S1 | existing closure backlog; Accepted transfer-195: bridge collapse chain. | M2 T21 S5; M2 T24 S1 |
-| 10098 | `BridgeCollapse` | M2 T41 S1 | existing closure backlog; Accepted transfer-195: bridge collapse chain. | M2 T21 S5; M2 T24 S1 |
-| 10111 | `SetM2` | M2 T41 S1 | existing closure backlog; Accepted transfer-195: bridge collapse chain. | M2 T21 S5; M2 T24 S1 |
-| 10116 | `MoveD_Bowser` | M2 T41 S1 | existing closure backlog; Accepted transfer-195: bridge collapse chain. | M2 T21 S5; M2 T24 S1 |
-| 10120 | `RemoveBridge` | M2 T41 S1 | existing closure backlog; Accepted transfer-195: bridge collapse chain. | M2 T21 S5; M2 T24 S1 |
-| 10152 | `NoBFall` | M2 T41 S1 | existing closure backlog; Accepted transfer-195: bridge collapse chain. | M2 T21 S5; M2 T24 S1 |
-| 10156 | `PRandomRange` | M2 T41 S2 | existing closure backlog; Accepted transfer-196: Bowser control/erasure chain. | M2 T21 S5; M2 T24 S1 |
-| 10159 | `RunBowser` | M2 T41 S2 | existing closure backlog; Accepted transfer-196: Bowser control/erasure chain. | M2 T21 S5; M2 T24 S1 |
-| 10167 | `KillAllEnemies` | M2 T41 S2 | existing closure backlog; Accepted transfer-197: Bowser control/erasure chain. | M2 T21 S5; M2 T24 S1 |
-| 10169 | `KillLoop` | M2 T41 S2 | existing closure backlog; Accepted transfer-197: Bowser control/erasure chain. | M2 T21 S5; M2 T24 S1 |
-| 10176 | `BowserControl` | M2 T41 S2 | existing closure backlog; Accepted transfer-196: Bowser control/erasure chain. | M2 T21 S5; M2 T24 S1 |
-| 10182 | `ChkMouth` | M2 T41 S2 | existing closure backlog; Accepted transfer-196: Bowser control/erasure chain. | M2 T21 S5; M2 T24 S1 |
-| 10185 | `FeetTmr` | M2 T41 S2 | existing closure backlog; Accepted transfer-196: Bowser control/erasure chain. | M2 T21 S5; M2 T24 S1 |
-| 10192 | `ResetMDr` | M2 T41 S2 | existing closure backlog; Accepted transfer-196: Bowser control/erasure chain. | M2 T21 S5; M2 T24 S1 |
-| 10197 | `B_FaceP` | M2 T41 S2 | existing closure backlog; Accepted transfer-196: Bowser control/erasure chain. | M2 T21 S5; M2 T24 S1 |
-| 10211 | `GetPRCmp` | M2 T41 S2 | existing closure backlog; Accepted transfer-196: Bowser control/erasure chain. | M2 T21 S5; M2 T24 S1 |
-| 10222 | `GetDToO` | M2 T41 S2 | existing closure backlog; Accepted transfer-196: Bowser control/erasure chain. | M2 T21 S5; M2 T24 S1 |
-| 10237 | `CompDToO` | M2 T41 S2 | existing closure backlog; Accepted transfer-196: Bowser control/erasure chain. | M2 T21 S5; M2 T24 S1 |
-| 10240 | `HammerChk` | M2 T41 S2 | existing closure backlog; Accepted transfer-196: Bowser control/erasure chain. | M2 T21 S5; M2 T24 S1 |
-| 10250 | `SetHmrTmr` | M2 T41 S2 | existing closure backlog; Accepted transfer-196: Bowser control/erasure chain. | M2 T21 S5; M2 T24 S1 |
-| 10258 | `SkipToFB` | M2 T41 S2 | existing closure backlog; Accepted transfer-196: Bowser control/erasure chain. | M2 T21 S5; M2 T24 S1 |
-| 10259 | `MakeBJump` | M2 T41 S2 | existing closure backlog; Accepted transfer-196: Bowser control/erasure chain. | M2 T21 S5; M2 T24 S1 |
-| 10265 | `ChkFireB` | M2 T41 S2 | existing closure backlog; Accepted transfer-196: Bowser control/erasure chain. | M2 T21 S5; M2 T24 S1 |
-| 10270 | `SpawnFBr` | M2 T41 S2 | existing closure backlog; Accepted transfer-196: Bowser control/erasure chain. | M2 T21 S5; M2 T24 S1 |
-| 10283 | `SetFBTmr` | M2 T41 S2 | existing closure backlog; Accepted transfer-196: Bowser control/erasure chain. | M2 T21 S5; M2 T24 S1 |
-| 10289 | `BowserGfxHandler` | M2 T41 S3 | existing closure backlog; Accepted transfer-198: Bowser front/rear orchestration. | M2 T21 S5; M2 T24 S1 |
-| 10296 | `CopyFToR` | M2 T41 S3 | existing closure backlog; Accepted transfer-198: Bowser front/rear orchestration. | M2 T21 S5; M2 T24 S1 |
-| 10321 | `ExBGfxH` | M2 T41 S3 | existing closure backlog; Accepted transfer-198: Bowser front/rear orchestration. | M2 T21 S5; M2 T24 S1 |
-| 10323 | `ProcessBowserHalf` | M2 T41 S3 | existing closure backlog; Accepted transfer-198: Bowser front/rear orchestration. | M2 T21 S5; M2 T24 S1 |
-| 10337 | `FlameTimerData` | M2 T70 S17 | existing closure backlog; Accepted current Bowser child raw-index repair;previous scoped timer evidence retained. | M2 T21 S5; M2 T24 S1 |
-| 10340 | `SetFlameTimer` | M2 T70 S17 | existing closure backlog; Accepted current Bowser child raw-index repair;previous scoped timer evidence retained. | M2 T21 S5; M2 T24 S1 |
-| 10347 | `ExFl` | M2 T70 S17 | existing closure backlog; Accepted current Bowser child raw-index repair;previous scoped timer evidence retained. | M2 T21 S5; M2 T24 S1 |
-| 10349 | `ProcBowserFlame` | M2 T41 S4 | existing closure backlog; Accepted transfer-199: flame actor/timer chain. | M2 T19 S3; M2 T19 S4; M2 T21 S5; M2 T24 S1 |
-| 10356 | `SFlmX` | M2 T41 S4 | existing closure backlog; Accepted transfer-199: flame actor/timer chain. | M2 T21 S5; M2 T24 S1 |
-| 10374 | `SetGfxF` | M2 T41 S4 | existing closure backlog; Accepted transfer-199: flame actor/timer chain. | M2 T21 S5; M2 T24 S1 |
-| 10384 | `FlmeAt` | M2 T41 S4 | existing closure backlog; Accepted transfer-199: flame actor/timer chain. | M2 T21 S5; M2 T24 S1 |
-| 10388 | `DrawFlameLoop` | M2 T41 S4 | existing closure backlog; Accepted transfer-199: flame actor/timer chain. | M2 T19 S4; M2 T21 S5; M2 T24 S1 |
-| 10417 | `M3FOfs` | M2 T41 S4 | existing closure backlog; Accepted transfer-199: flame actor/timer chain. | M2 T21 S5; M2 T24 S1 |
-| 10423 | `M2FOfs` | M2 T41 S4 | existing closure backlog; Accepted transfer-199: flame actor/timer chain. | M2 T21 S5; M2 T24 S1 |
-| 10429 | `M1FOfs` | M2 T41 S4 | existing closure backlog; Accepted transfer-199: flame actor/timer chain. | M2 T21 S5; M2 T24 S1 |
-| 10434 | `ExFlmeD` | M2 T41 S4 | existing closure backlog; Accepted transfer-199: flame actor/timer chain. | M2 T21 S5; M2 T24 S1 |
-| 10438 | `RunFireworks` | M2 T41 S5 | existing closure backlog; Accepted transfer-201: fireworks lifetime/score tail. | M2 T19 S3; M2 T19 S4; M2 T21 S5; M2 T24 S1 |
-| 10447 | `SetupExpl` | M2 T41 S5 | existing closure backlog; Accepted transfer-201: fireworks lifetime/score tail. | M2 T21 S5; M2 T24 S1 |
-| 10457 | `FireworksSoundScore` | M2 T41 S5 | existing closure backlog; Accepted transfer-201: fireworks lifetime/score tail. | M2 T19 S4; M2 T21 S5; M2 T24 S1 |
-| 10468 | `StarFlagYPosAdder` | M2 T41 S6 | existing closure backlog; Accepted transfer-202: star-flag and end-area score chain. | M2 T21 S5; M2 T24 S1 |
-| 10471 | `StarFlagXPosAdder` | M2 T41 S6 | existing closure backlog; Accepted transfer-202: star-flag and end-area score chain. | M2 T21 S5; M2 T24 S1 |
-| 10474 | `StarFlagTileData` | M2 T41 S6 | existing closure backlog; Accepted transfer-202: star-flag and end-area score chain. | M2 T21 S5; M2 T24 S1 |
-| 10477 | `RunStarFlagObj` | M2 T41 S6 | existing closure backlog; Accepted transfer-202: star-flag and end-area score chain. | M2 T18 S2; M2 T19 S3; M2 T19 S4; M2 T21 S5; M2 T24 S1 |
-| 10491 | `GameTimerFireworks` | M2 T41 S6 | existing closure backlog; Accepted transfer-202: star-flag and end-area score chain. | M2 T21 S5; M2 T24 S1 |
-| 10503 | `SetFWC` | M2 T41 S6 | existing closure backlog; Accepted transfer-202: star-flag and end-area score chain. | M2 T21 S5; M2 T24 S1 |
-| 10506 | `IncrementSFTask1` | M2 T41 S6 | existing closure backlog; Accepted transfer-202: star-flag and end-area score chain. | M2 T21 S5; M2 T24 S1 |
-| 10509 | `StarFlagExit` | M2 T41 S6 | existing closure backlog; Accepted transfer-202: star-flag and end-area score chain. | M2 T18 S2; M2 T21 S5; M2 T24 / S not recorded; M2 T24 S1 |
-| 10512 | `AwardGameTimerPoints` | M2 T41 S6 | existing closure backlog; Accepted transfer-202: star-flag and end-area score chain. | M2 T19 S4; M2 T21 S5; M2 T24 S1 |
-| 10522 | `NoTTick` | M2 T41 S6 | existing closure backlog; Accepted transfer-202: star-flag and end-area score chain. | M2 T21 S5; M2 T24 S1 |
-| 10529 | `EndAreaPoints` | M2 T41 S6 | existing closure backlog; Accepted transfer-202: star-flag and end-area score chain. | M2 T21 S5; M2 T24 S1 |
-| 10534 | `ELPGive` | M2 T41 S6 | existing closure backlog; Accepted transfer-202: star-flag and end-area score chain. | M2 T21 S5; M2 T24 S1 |
-| 10543 | `RaiseFlagSetoffFWorks` | M2 T41 S6 | existing closure backlog; Accepted transfer-202: star-flag and end-area score chain. | M2 T21 S5; M2 T24 S1 |
-| 10549 | `SetoffF` | M2 T41 S6 | existing closure backlog; Accepted transfer-202: star-flag and end-area score chain. | M2 T21 S5; M2 T24 S1 |
-| 10555 | `DrawStarFlag` | M2 T41 S6 | existing closure backlog; Accepted transfer-202: star-flag and end-area score chain. | M2 T18 S2; M2 T21 S5; M2 T24 S1 |
-| 10559 | `DSFLoop` | M2 T41 S6 | existing closure backlog; Accepted transfer-202: star-flag and end-area score chain. | M2 T21 S5; M2 T24 S1 |
-| 10580 | `DrawFlagSetTimer` | M2 T41 S6 | existing closure backlog; Accepted transfer-202: star-flag and end-area score chain. | M2 T21 S5; M2 T24 S1 |
-| 10585 | `IncrementSFTask2` | M2 T41 S6 | existing closure backlog; Accepted transfer-202: star-flag and end-area score chain. | M2 T21 S5; M2 T24 S1 |
-| 10589 | `DelayToAreaEnd` | M2 T41 S6 | existing closure backlog; Accepted transfer-202: star-flag and end-area score chain. | M2 T21 S5; M2 T24 S1 |
-| 10596 | `StarFlagExit2` | M2 T41 S6 | existing closure backlog; Accepted transfer-202: star-flag and end-area score chain. | M2 T21 S5; M2 T24 S1 |
-| 10602 | `MovePiranhaPlant` | M2 T41 S7 | existing closure backlog; Accepted transfer-203: Piranha movement and pipe priority. | M2 T21 S5; M2 T24 S1 |
-| 10619 | `ChkPlayerNearPipe` | M2 T41 S7 | existing closure backlog; Accepted transfer-203: Piranha movement and pipe priority. | M2 T21 S5; M2 T24 S1 |
-| 10624 | `ReversePlantSpeed` | M2 T41 S7 | existing closure backlog; Accepted transfer-203: Piranha movement and pipe priority. | M2 T21 S5; M2 T24 S1 |
-| 10632 | `SetupToMovePPlant` | M2 T41 S7 | existing closure backlog; Accepted transfer-203: Piranha movement and pipe priority. | M2 T21 S5; M2 T24 S1 |
-| 10638 | `RiseFallPiranhaPlant` | M2 T41 S7 | existing closure backlog; Accepted transfer-203: Piranha movement and pipe priority. | M2 T21 S5; M2 T24 S1 |
-| 10656 | `PutinPipe` | M2 T41 S7 | existing closure backlog; Accepted transfer-203: Piranha movement and pipe priority. | M2 T21 S5; M2 T24 S1 |
-| 10664 | `FirebarSpin` | M2 T41 S8 | existing closure backlog; Accepted transfer-204: Firebar angular primitive. | M2 T21 S5; M2 T24 S1 |
-| 10677 | `SpinCounterClockwise` | M2 T41 S8 | existing closure backlog; Accepted transfer-204: Firebar angular primitive. | M2 T21 S5; M2 T24 S1 |
-| 10692 | `BalancePlatform` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10697 | `DoBPl` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10701 | `CheckBalPlatform` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10709 | `ChkForFall` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10720 | `MakePlatformFall` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10723 | `ChkOtherForFall` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10733 | `ChkToMoveBalPlat` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10750 | `ColFlg` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10752 | `PlatUp` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10754 | `PlatSt` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10756 | `PlatDn` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10758 | `DoOtherPlatform` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10771 | `DrawEraseRope` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10796 | `EraseR1` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10800 | `OtherRope` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10819 | `EraseR2` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10822 | `EndRp` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10828 | `ExitRp` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10831 | `SetupPlatformRope` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10840 | `GetLRp` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10857 | `GetHRp` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10883 | `ExPRp` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10885 | `InitPlatformFall` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10898 | `StopPlatforms` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10904 | `PlatformFall` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10916 | `ExPF` | M2 T41 S9 | existing closure backlog; Accepted transfer-205: complete balance/rope/fall chain. | M2 T21 S5; M2 T24 S1 |
-| 10921 | `YMovingPlatform` | M2 T41 S10 | existing closure backlog; Accepted transfer-206: complete vertical-platform chain. | M2 T21 S5; M2 T24 S1 |
-| 10933 | `SkipIY` | M2 T41 S10 | existing closure backlog; Accepted transfer-206: complete vertical-platform chain. | M2 T21 S5; M2 T24 S1 |
-| 10935 | `ChkYCenterPos` | M2 T41 S10 | existing closure backlog; Accepted transfer-206: complete vertical-platform chain. | M2 T21 S5; M2 T24 S1 |
-| 10941 | `YMDown` | M2 T41 S10 | existing closure backlog; Accepted transfer-206: complete vertical-platform chain. | M2 T21 S5; M2 T24 S1 |
-| 10943 | `ChkYPCollision` | M2 T41 S10 | existing closure backlog; Accepted transfer-206: complete vertical-platform chain. | M2 T21 S5; M2 T24 S1 |
-| 10947 | `ExYPl` | M2 T41 S10 | existing closure backlog; Accepted transfer-206: complete vertical-platform chain. | M2 T21 S5; M2 T24 S1 |
-| 10952 | `XMovingPlatform` | M2 T41 S11 | existing closure backlog; Accepted transfer-207: complete horizontal/drop/right-platform chain. | M2 T21 S5; M2 T24 S1 |
-| 10959 | `PositionPlayerOnHPlat` | M2 T41 S11 | existing closure backlog; Accepted transfer-207: complete horizontal/drop/right-platform chain. | M2 T21 S5; M2 T24 S1 |
-| 10969 | `PPHSubt` | M2 T41 S11 | existing closure backlog; Accepted transfer-207: complete horizontal/drop/right-platform chain. | M2 T21 S5; M2 T24 S1 |
-| 10970 | `SetPVar` | M2 T41 S11 | existing closure backlog; Accepted transfer-207: complete horizontal/drop/right-platform chain. | M2 T21 S5; M2 T24 S1 |
-| 10973 | `ExXMP` | M2 T41 S11 | existing closure backlog; Accepted transfer-207: complete horizontal/drop/right-platform chain. | M2 T21 S5; M2 T24 S1 |
-| 10977 | `DropPlatform` | M2 T41 S11 | existing closure backlog; Accepted transfer-207: complete horizontal/drop/right-platform chain. | M2 T21 S5; M2 T24 S1 |
-| 10982 | `ExDPl` | M2 T41 S11 | existing closure backlog; Accepted transfer-207: complete horizontal/drop/right-platform chain. | M2 T21 S5; M2 T24 S1 |
-| 10987 | `RightPlatform` | M2 T41 S11 | existing closure backlog; Accepted transfer-207: complete horizontal/drop/right-platform chain. | M2 T21 S5; M2 T24 S1 |
-| 10995 | `ExRPl` | M2 T41 S11 | existing closure backlog; Accepted transfer-207: complete horizontal/drop/right-platform chain. | M2 T21 S5; M2 T24 S1 |
-| 10999 | `MoveLargeLiftPlat` | M2 T41 S12 | existing closure backlog; Accepted transfer-208: large/small lift chain. | M2 T21 S5; M2 T24 S1 |
-| 11003 | `MoveSmallPlatform` | M2 T41 S12 | existing closure backlog; Accepted transfer-208: large/small lift chain. | M2 T21 S5; M2 T24 S1 |
-| 11007 | `MoveLiftPlatforms` | M2 T41 S12 | existing closure backlog; Accepted transfer-208: large/small lift chain. | M2 T21 S5; M2 T24 S1 |
-| 11019 | `ChkSmallPlatCollision` | M2 T41 S12 | existing closure backlog; Accepted transfer-208: large/small lift chain. | M2 T21 S5; M2 T24 S1 |
-| 11023 | `ExLiftP` | M2 T41 S12 | existing closure backlog; Accepted transfer-208: large/small lift chain. | M2 T21 S5; M2 T24 S1 |
-| 11031 | `OffscreenBoundsCheck` | M2 T41 S13 | existing closure backlog; Accepted transfer-209: complete offscreen bounds chain. | M2 T21 S5; M2 T24 S1 |
-| 11041 | `LimitB` | M2 T41 S13 | existing closure backlog; Accepted transfer-209: complete offscreen bounds chain. | M2 T21 S5; M2 T24 S1 |
-| 11042 | `ExtendLB` | M2 T41 S13 | existing closure backlog; Accepted transfer-209: complete offscreen bounds chain. | M2 T21 S5; M2 T24 S1 |
-| 11074 | `TooFar` | M2 T41 S13 | existing closure backlog; Accepted transfer-209: complete offscreen bounds chain. | M2 T21 S5; M2 T24 S1 |
-| 11075 | `ExScrnBd` | M2 T41 S13 | existing closure backlog; Accepted transfer-209: complete offscreen bounds chain. | M2 T21 S5; M2 T24 S1 |
-| 11085 | `FireballEnemyCollision` | M2 T42 S1 | existing closure backlog; Accepted transfer-210: complete fireball-enemy scan caller. | M2 T17 S5; M2 T20 S3; M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
-| 11101 | `FireballEnemyCDLoop` | M2 T42 S1 | existing closure backlog; Accepted transfer-210: complete fireball-enemy scan caller. | M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
-| 11115 | `GoombaDie` | M2 T42 S1 | existing closure backlog; Accepted transfer-210: complete fireball-enemy scan caller. | M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
-| 11120 | `NotGoomba` | M2 T42 S1 | existing closure backlog; Accepted transfer-210: complete fireball-enemy scan caller. | M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
-| 11135 | `NoFToECol` | M2 T42 S1 | existing closure backlog; Accepted transfer-210: complete fireball-enemy scan caller. | M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
-| 11141 | `ExitFBallEnemy` | M2 T42 S1 | existing closure backlog; Accepted transfer-210: complete fireball-enemy scan caller. | M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
-| 11145 | `BowserIdentities` | M2 T42 S2 | existing closure backlog; Accepted transfer-211: complete fireball-hit response. | M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
-| 11148 | `HandleEnemyFBallCol` | M2 T42 S2 | existing closure backlog; Accepted transfer-211: complete fireball-hit response. | M2 T16 S3; M2 T17 S5; M2 T20 S3; M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
-| 11160 | `ChkBuzzyBeetle` | M2 T42 S2 | existing closure backlog; Accepted transfer-211: complete fireball-hit response. | M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
-| 11167 | `HurtBowser` | M2 T42 S2 | existing closure backlog; Accepted transfer-211: complete fireball-hit response. | M2 T17 S5; M2 T20 S3; M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
-| 11182 | `SetDBSte` | M2 T42 S2 | existing closure backlog; Accepted transfer-211: complete fireball-hit response. | M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
-| 11189 | `ChkOtherEnemies` | M2 T42 S2 | existing closure backlog; Accepted transfer-211: complete fireball-hit response. | M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
-| 11197 | `ShellOrBlockDefeat` | M2 T42 S2 | existing closure backlog; Accepted transfer-211: complete fireball-hit response. | M2 T17 S5; M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
-| 11204 | `StnE` | M2 T42 S2 | existing closure backlog; Accepted transfer-211: complete fireball-hit response. | M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
-| 11215 | `GoombaPoints` | M2 T42 S2 | existing closure backlog; Accepted transfer-211: complete fireball-hit response. | M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
-| 11220 | `EnemySmackScore` | M2 T42 S2 | existing closure backlog; Accepted transfer-211: complete fireball-hit response. | M2 T17 S5; M2 T20 S3; M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
-| 11224 | `ExHCF` | M2 T42 S2 | existing closure backlog; Accepted transfer-211: complete fireball-hit response. | M2 T17 S5; M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
-| 11228 | `PlayerHammerCollision` | M2 T42 S3 | existing closure backlog; Accepted transfer-212: complete hammer contact chain. | M2 T17 S5; M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
-| 11256 | `ClHCol` | M2 T42 S3 | existing closure backlog; Accepted transfer-212: complete hammer contact chain. | M2 T17 S5; M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
-| 11258 | `ExPHC` | M2 T42 S3 | existing closure backlog; Accepted transfer-212: complete hammer contact chain. | M2 T17 S5; M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
-| 11262 | `HandlePowerUpCollision` | M2 T42 S4 | existing closure backlog; Accepted transfer-213: complete power-up pickup chain. | M2 T18 S3; M2 T21 S3; M2 T24 S1 |
-| 11279 | `Shroom_Flower_PUp` | M2 T42 S4 | existing closure backlog; Accepted transfer-213: complete power-up pickup chain. | M2 T21 S3; M2 T24 S1 |
-| 11292 | `SetFor1Up` | M2 T42 S4 | existing closure backlog; Accepted transfer-213: complete power-up pickup chain. | M2 T21 S3; M2 T24 S1 |
-| 11297 | `UpToSuper` | M2 T42 S4 | existing closure backlog; Accepted transfer-213: complete power-up pickup chain. | M2 T21 S3; M2 T24 S1 |
-| 11302 | `UpToFiery` | M2 T42 S4 | existing closure backlog; Accepted transfer-213: complete power-up pickup chain. | M2 T18 S3; M2 T21 S3; M2 T24 S1 |
-| 11305 | `NoPUp` | M2 T42 S4 | existing closure backlog; Accepted transfer-213: complete power-up pickup chain. | M2 T21 S3; M2 T24 S1 |
-| 11309 | `ResidualXSpdData` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11312 | `KickedShellXSpdData` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11315 | `DemotedKoopaXSpdData` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11318 | `PlayerEnemyCollision` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T17 S5; M2 T19 S5; M2 T21 S3; M2 T24 S1 |
-| 11339 | `NoPECol` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11341 | `CheckForPUpCollision` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11346 | `EColl` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11350 | `KickedShellPtsData` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11353 | `HandlePECollisions` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11398 | `KSPts` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11399 | `ExPEC` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11401 | `ChkForPlayerInjury` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11405 | `ChkInj` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11413 | `ChkETmrs` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11421 | `TInjE` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11426 | `InjurePlayer` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1; M2 T6 / S not recorded |
-| 11430 | `ForceInjury` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11440 | `SetKRout` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11441 | `SetPRout` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11448 | `ExInjColRoutines` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11452 | `KillPlayer` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1; M2 T6 / S not recorded |
-| 11461 | `StompedEnemyPtsData` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11464 | `EnemyStomped` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11490 | `EnemyStompedPts` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11506 | `ChkForDemoteKoopa` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11521 | `RevivalRateData` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11524 | `HandleStompedShellE` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11536 | `SBnce` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11540 | `ChkEnemyFaceRight` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11545 | `LInj` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11549 | `EnemyFacePlayer` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11554 | `SFcRt` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11558 | `SetupFloateyNumber` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 11566 | `ExSFN` | M2 T42 S5 | existing closure backlog; Accepted transfer-214: complete player contact/response chain. | M2 T21 S3; M2 T24 S1 |
-| 11571 | `SetBitsMask` | M2 T42 S6 | existing closure backlog; Accepted transfer-215: complete enemy-pair collision chain. | M2 T19 S5; M2 T21 S3; M2 T24 S1 |
-| 11574 | `ClearBitsMask` | M2 T42 S6 | existing closure backlog; Accepted transfer-215: complete enemy-pair collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11577 | `EnemiesCollision` | M2 T42 S6 | existing closure backlog; Accepted transfer-215: complete enemy-pair collision chain. | M2 T19 S5; M2 T21 S3; M2 T24 S1 |
-| 11595 | `ECLoop` | M2 T42 S6 | existing closure backlog; Accepted transfer-215: complete enemy-pair collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11629 | `YesEC` | M2 T42 S6 | existing closure backlog; Accepted transfer-215: complete enemy-pair collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11632 | `NoEnemyCollision` | M2 T42 S6 | existing closure backlog; Accepted transfer-215: complete enemy-pair collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11637 | `ReadyNextEnemy` | M2 T42 S6 | existing closure backlog; Accepted transfer-215: complete enemy-pair collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11644 | `ExitECRoutine` | M2 T42 S6 | existing closure backlog; Accepted transfer-215: complete enemy-pair collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11648 | `ProcEnemyCollisions` | M2 T42 S6 | existing closure backlog; Accepted transfer-215: complete enemy-pair collision chain. | M2 T19 S5; M2 T21 S3; M2 T24 S1 |
-| 11667 | `ShellCollisions` | M2 T42 S6 | existing closure backlog; Accepted transfer-215: complete enemy-pair collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11680 | `ExitProcessEColl` | M2 T42 S6 | existing closure backlog; Accepted transfer-215: complete enemy-pair collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11683 | `ProcSecondEnemyColl` | M2 T42 S6 | existing closure backlog; Accepted transfer-215: complete enemy-pair collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11701 | `MoveEOfs` | M2 T42 S6 | existing closure backlog; Accepted transfer-215: complete enemy-pair collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11707 | `EnemyTurnAround` | M2 T42 S6 | existing closure backlog; Accepted transfer-215: complete enemy-pair collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11721 | `RXSpd` | M2 T42 S6 | existing closure backlog; Accepted transfer-215: complete enemy-pair collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11729 | `ExTA` | M2 T42 S6 | existing closure backlog; Accepted transfer-215: complete enemy-pair collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11734 | `LargePlatformCollision` | M2 T42 S7 | existing closure backlog; Accepted transfer-216: complete platform collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11748 | `ChkForPlayerC_LargeP` | M2 T42 S7 | existing closure backlog; Accepted transfer-216: complete platform collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11762 | `ExLPC` | M2 T42 S7 | existing closure backlog; Accepted transfer-216: complete platform collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11768 | `SmallPlatformCollision` | M2 T42 S7 | existing closure backlog; Accepted transfer-216: complete platform collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11777 | `ChkSmallPlatLoop` | M2 T42 S7 | existing closure backlog; Accepted transfer-216: complete platform collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11788 | `MoveBoundBox` | M2 T42 S7 | existing closure backlog; Accepted transfer-216: complete platform collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11799 | `ExSPC` | M2 T42 S7 | existing closure backlog; Accepted transfer-216: complete platform collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11804 | `ProcSPlatCollisions` | M2 T42 S7 | existing closure backlog; Accepted transfer-216: complete platform collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11807 | `ProcLPlatCollisions` | M2 T42 S7 | existing closure backlog; Accepted transfer-216: complete platform collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11818 | `ChkForTopCollision` | M2 T42 S7 | existing closure backlog; Accepted transfer-216: complete platform collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11834 | `SetCollisionFlag` | M2 T42 S7 | existing closure backlog; Accepted transfer-216: complete platform collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11841 | `PlatformSideCollisions` | M2 T42 S7 | existing closure backlog; Accepted transfer-216: complete platform collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11855 | `SideC` | M2 T42 S7 | existing closure backlog; Accepted transfer-216: complete platform collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11856 | `NoSideC` | M2 T42 S7 | existing closure backlog; Accepted transfer-216: complete platform collision chain. | M2 T21 S3; M2 T24 S1 |
-| 11861 | `PlayerPosSPlatData` | M2 T42 S8 | existing closure backlog; Accepted transfer-217: complete platform positioning chain. | M2 T21 S3; M2 T24 S1 |
-| 11864 | `PositionPlayerOnS_Plat` | M2 T42 S8 | existing closure backlog; Accepted transfer-217: complete platform positioning chain. | M2 T21 S3; M2 T24 S1 |
-| 11871 | `PositionPlayerOnVPlat` | M2 T42 S8 | existing closure backlog; Accepted transfer-217: complete platform positioning chain. | M2 T21 S3; M2 T24 S1 |
-| 11888 | `ExPlPos` | M2 T42 S8 | existing closure backlog; Accepted transfer-217: complete platform positioning chain. | M2 T21 S3; M2 T24 S1 |
-| 11892 | `CheckPlayerVertical` | M2 T42 S9 | existing closure backlog; Accepted transfer-218: complete collision preflight chain. | M2 T21 S3; M2 T24 S1 |
-| 11901 | `ExCPV` | M2 T42 S9 | existing closure backlog; Accepted transfer-218: complete collision preflight chain. | M2 T21 S3; M2 T24 S1 |
-| 11905 | `GetEnemyBoundBoxOfs` | M2 T42 S9 | existing closure backlog; Accepted transfer-218: complete collision preflight chain. | M2 T21 S3; M2 T24 S1 |
-| 11908 | `GetEnemyBoundBoxOfsArg` | M2 T42 S9 | existing closure backlog; Accepted transfer-218: complete collision preflight chain. | M2 T21 S3; M2 T24 S1 |
-| 11924 | `PlayerBGUpperExtent` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T21 S3; M2 T24 S1 |
-| 11927 | `PlayerBGCollision` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T17 S4; M2 T17 S6; M2 T21 S3; M2 T24 S1 |
-| 11942 | `SetFallS` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T21 S3; M2 T24 S1 |
-| 11943 | `SetPSte` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T21 S3; M2 T24 S1 |
-| 11944 | `ChkOnScr` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T21 S3; M2 T24 S1 |
-| 11952 | `ExPBGCol` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T21 S3; M2 T24 S1 |
-| 11954 | `ChkCollSize` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T21 S3; M2 T24 S1 |
-| 11964 | `GBBAdr` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T21 S3; M2 T24 S1 |
-| 11971 | `HeadChk` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
-| 11992 | `SolidOrClimb` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
-| 11997 | `NYSpd` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
-| 12000 | `DoFootCheck` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T21 S3; M2 T24 S1 |
-| 12019 | `AwardTouchedCoin` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
-| 12022 | `ChkFootMTile` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T17 S4; M2 T17 S6; M2 T21 S3; M2 T24 S1 |
-| 12030 | `ContChk` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T21 S3; M2 T24 S1 |
-| 12040 | `LandPlyr` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
-| 12049 | `InitSteP` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
-| 12052 | `DoPlayerSideCheck` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T17 S4; M2 T17 S6; M2 T21 S3; M2 T24 S1 |
-| 12059 | `SideCheckLoop` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T21 S3; M2 T24 S1 |
-| 12075 | `BHalf` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T21 S3; M2 T24 S1 |
-| 12086 | `ExSCH` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T21 S3; M2 T24 S1 |
-| 12088 | `CheckSideMTiles` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
-| 12094 | `ContSChk` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T21 S3; M2 T24 S1 |
-| 12101 | `ChkPBtm` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
-| 12111 | `PipeDwnS` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
-| 12115 | `PlyrPipe` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
-| 12124 | `SetCATmr` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T21 S3; M2 T24 S1 |
-| 12126 | `ChkGERtn` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T21 S3; M2 T24 S1 |
-| 12140 | `StopPlayerMove` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
-| 12142 | `ExCSM` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T21 S3; M2 T24 S1 |
-| 12144 | `AreaChangeTimerData` | M2 T43 S1 | existing closure backlog; Accepted transfer-219: complete player terrain root chain. | M2 T21 S3; M2 T24 S1 |
-| 12147 | `HandleCoinMetatile` | M2 T43 S2 | existing closure backlog; Accepted transfer-220: coin and axe effects chain. | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
-| 12152 | `HandleAxeMetatile` | M2 T43 S2 | existing closure backlog; Accepted transfer-220: coin and axe effects chain. | M2 T17 S4; M2 T21 S3; M2 T24 S1; M2 T6 / S not recorded |
-| 12159 | `ErACM` | M2 T43 S2 | existing closure backlog; Accepted transfer-220: coin and axe effects chain. | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
-| 12169 | `ClimbXPosAdder` | M2 T43 S3 | existing closure backlog; Accepted transfer-221: flagpole and vine climbing chain. | M2 T21 S3; M2 T24 S1 |
-| 12172 | `ClimbPLocAdder` | M2 T43 S3 | existing closure backlog; Accepted transfer-221: flagpole and vine climbing chain. | M2 T21 S3; M2 T24 S1 |
-| 12175 | `FlagpoleYPosData` | M2 T43 S3 | existing closure backlog; Accepted transfer-221: flagpole and vine climbing chain. | M2 T21 S3; M2 T24 S1 |
-| 12178 | `HandleClimbing` | M2 T43 S3 | existing closure backlog; Accepted transfer-221: flagpole and vine climbing chain. | M2 T21 S3; M2 T24 S1 |
-| 12184 | `ExHC` | M2 T43 S3 | existing closure backlog; Accepted transfer-221: flagpole and vine climbing chain. | M2 T21 S3; M2 T24 S1 |
-| 12186 | `ChkForFlagpole` | M2 T43 S3 | existing closure backlog; Accepted transfer-221: flagpole and vine climbing chain. | M2 T21 S3; M2 T24 S1 |
-| 12192 | `FlagpoleCollision` | M2 T43 S3 | existing closure backlog; Accepted transfer-221: flagpole and vine climbing chain. | M2 T21 S3; M2 T24 S1 |
-| 12212 | `ChkFlagpoleYPosLoop` | M2 T43 S3 | existing closure backlog; Accepted transfer-221: flagpole and vine climbing chain. | M2 T21 S3; M2 T24 S1 |
-| 12217 | `MtchF` | M2 T43 S3 | existing closure backlog; Accepted transfer-221: flagpole and vine climbing chain. | M2 T21 S3; M2 T24 S1 |
-| 12218 | `RunFR` | M2 T43 S3 | existing closure backlog; Accepted transfer-221: flagpole and vine climbing chain. | M2 T21 S3; M2 T24 S1 |
-| 12222 | `VineCollision` | M2 T43 S3 | existing closure backlog; Accepted transfer-221: flagpole and vine climbing chain. | M2 T21 S3; M2 T24 S1 |
-| 12231 | `PutPlayerOnVine` | M2 T43 S3 | existing closure backlog; Accepted transfer-221: flagpole and vine climbing chain. | M2 T21 S3; M2 T24 S1 |
-| 12244 | `SetVXPl` | M2 T43 S3 | existing closure backlog; Accepted transfer-221: flagpole and vine climbing chain. | M2 T21 S3; M2 T24 S1 |
-| 12259 | `ExPVne` | M2 T43 S3 | existing closure backlog; Accepted transfer-221: flagpole and vine climbing chain. | M2 T21 S3; M2 T24 S1 |
-| 12263 | `ChkInvisibleMTiles` | M2 T43 S4 | existing closure backlog; Accepted transfer-222: invisible and jumpspring metatile chain. | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
-| 12267 | `ExCInvT` | M2 T43 S4 | existing closure backlog; Accepted transfer-222: invisible and jumpspring metatile chain. | M2 T21 S3; M2 T24 S1 |
-| 12273 | `ChkForLandJumpSpring` | M2 T43 S4 | existing closure backlog; Accepted transfer-222: invisible and jumpspring metatile chain. | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
-| 12284 | `ExCJSp` | M2 T43 S4 | existing closure backlog; Accepted transfer-222: invisible and jumpspring metatile chain. | M2 T21 S3; M2 T24 S1 |
-| 12286 | `ChkJumpspringMetatiles` | M2 T43 S4 | existing closure backlog; Accepted transfer-222: invisible and jumpspring metatile chain. | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
-| 12292 | `JSFnd` | M2 T43 S4 | existing closure backlog; Accepted transfer-222: invisible and jumpspring metatile chain. | M2 T21 S3; M2 T24 S1 |
-| 12293 | `NoJSFnd` | M2 T43 S4 | existing closure backlog; Accepted transfer-222: invisible and jumpspring metatile chain. | M2 T21 S3; M2 T24 S1 |
-| 12295 | `HandlePipeEntry` | M2 T43 S5 | existing closure backlog; Accepted transfer-223: pipe-entry and warp destination chain. | M2 T17 S4; M2 T21 S3; M2 T24 S1; M2 T6 / S not recorded |
-| 12326 | `GetWNum` | M2 T43 S5 | existing closure backlog; Accepted transfer-223: pipe-entry and warp destination chain. | M2 T21 S3; M2 T24 S1 |
-| 12341 | `ExPipeE` | M2 T43 S5 | existing closure backlog; Accepted transfer-223: pipe-entry and warp destination chain. | M2 T21 S3; M2 T24 S1 |
-| 12343 | `ImpedePlayerMove` | M2 T43 S6 | existing closure backlog; Accepted transfer-224: side impediment chain. | M2 T17 S4; M2 T17 S6; M2 T21 S3; M2 T24 S1 |
-| 12354 | `RImpd` | M2 T43 S6 | existing closure backlog; Accepted transfer-224: side impediment chain. | M2 T21 S3; M2 T24 S1 |
-| 12358 | `NXSpd` | M2 T43 S6 | existing closure backlog; Accepted transfer-224: side impediment chain. | M2 T21 S3; M2 T24 S1 |
-| 12365 | `PlatF` | M2 T43 S6 | existing closure backlog; Accepted transfer-224: side impediment chain. | M2 T21 S3; M2 T24 S1 |
-| 12372 | `ExIPM` | M2 T43 S6 | existing closure backlog; Accepted transfer-224: side impediment chain. | M2 T21 S3; M2 T24 S1 |
-| 12380 | `SolidMTileUpperExt` | M2 T43 S7 | existing closure backlog; Accepted transfer-225: shared metatile classifiers. | M2 T21 S3; M2 T24 S1 |
-| 12383 | `CheckForSolidMTiles` | M2 T43 S7 | existing closure backlog; Accepted transfer-225: shared metatile classifiers. | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
-| 12388 | `ClimbMTileUpperExt` | M2 T43 S7 | existing closure backlog; Accepted transfer-225: shared metatile classifiers. | M2 T21 S3; M2 T24 S1 |
-| 12391 | `CheckForClimbMTiles` | M2 T43 S7 | existing closure backlog; Accepted transfer-225: shared metatile classifiers. | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
-| 12396 | `CheckForCoinMTiles` | M2 T43 S7 | existing closure backlog; Accepted transfer-225: shared metatile classifiers. | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
-| 12403 | `CoinSd` | M2 T43 S7 | existing closure backlog; Accepted transfer-225: shared metatile classifiers. | M2 T21 S3; M2 T24 S1 |
-| 12407 | `GetMTileAttrib` | M2 T43 S7 | existing closure backlog; Accepted transfer-225: shared metatile classifiers. | M2 T21 S3; M2 T24 S1 |
-| 12415 | `ExEBG` | M2 T43 S7 | existing closure backlog; Accepted transfer-226: shared metatile classifiers. | M2 T21 S3; M2 T24 S1 |
-| 12420 | `EnemyBGCStateData` | M2 T43 S8 | existing closure backlog; Accepted transfer-227: enemy terrain dispatch and stun chain. | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 12423 | `EnemyBGCXSpdData` | M2 T43 S8 | existing closure backlog; Accepted transfer-227: enemy terrain dispatch and stun chain. | M2 T21 S3; M2 T24 S1 |
-| 12426 | `EnemyToBGCollisionDet` | M2 T43 S8 | existing closure backlog; Accepted transfer-228: enemy terrain dispatch and stun chain. | M2 T17 S5; M2 T19 S3; M2 T19 S5; M2 T21 S3; M2 T24 S1 |
-| 12439 | `DoIDCheckBGColl` | M2 T43 S8 | existing closure backlog; Accepted transfer-228: enemy terrain dispatch and stun chain. | M2 T21 S3; M2 T24 S1 |
-| 12443 | `HBChk` | M2 T43 S8 | existing closure backlog; Accepted transfer-228: enemy terrain dispatch and stun chain. | M2 T21 S3; M2 T24 S1 |
-| 12446 | `CInvu` | M2 T43 S8 | existing closure backlog; Accepted transfer-228: enemy terrain dispatch and stun chain. | M2 T21 S3; M2 T24 S1 |
-| 12452 | `YesIn` | M2 T43 S8 | existing closure backlog; Accepted transfer-228: enemy terrain dispatch and stun chain. | M2 T21 S3; M2 T24 S1 |
-| 12455 | `NoEToBGCollision` | M2 T43 S8 | existing closure backlog; Accepted transfer-227: enemy terrain dispatch and stun chain. | M2 T21 S3; M2 T24 S1 |
-| 12461 | `HandleEToBGCollision` | M2 T43 S8 | existing closure backlog; Accepted transfer-227: enemy terrain dispatch and stun chain. | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 12476 | `GiveOEPoints` | M2 T43 S8 | existing closure backlog; Accepted transfer-227: enemy terrain dispatch and stun chain. | M2 T21 S3; M2 T24 S1 |
-| 12480 | `ChkToStunEnemies` | M2 T43 S8 | existing closure backlog; Accepted transfer-227: enemy terrain dispatch and stun chain. | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 12489 | `Demote` | M2 T43 S8 | existing closure backlog; Accepted transfer-227: enemy terrain dispatch and stun chain. | M2 T21 S3; M2 T24 S1 |
-| 12491 | `SetStun` | M2 T43 S8 | existing closure backlog; Accepted transfer-227: enemy terrain dispatch and stun chain. | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 12503 | `SetWYSpd` | M2 T43 S8 | existing closure backlog; Accepted transfer-227: enemy terrain dispatch and stun chain. | M2 T21 S3; M2 T24 S1 |
-| 12504 | `SetNotW` | M2 T43 S8 | existing closure backlog; Accepted transfer-227: enemy terrain dispatch and stun chain. | M2 T21 S3; M2 T24 S1 |
-| 12509 | `ChkBBill` | M2 T43 S8 | existing closure backlog; Accepted transfer-227: enemy terrain dispatch and stun chain. | M2 T21 S3; M2 T24 S1 |
-| 12515 | `NoCDirF` | M2 T43 S8 | existing closure backlog; Accepted transfer-227: enemy terrain dispatch and stun chain. | M2 T21 S3; M2 T24 S1 |
-| 12518 | `ExEBGChk` | M2 T43 S8 | existing closure backlog; Accepted transfer-228: enemy terrain dispatch and stun chain. | M2 T21 S3; M2 T24 S1 |
-| 12523 | `LandEnemyProperly` | M2 T43 S9 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 12535 | `SChkA` | M2 T43 S9 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 12537 | `ChkLandedEnemyState` | M2 T43 S9 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 12552 | `SetForStn` | M2 T43 S9 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 12556 | `ExSteChk` | M2 T43 S9 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 12558 | `ProcEnemyDirection` | M2 T43 S9 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 12571 | `InvtD` | M2 T43 S9 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 12575 | `CNwCDir` | M2 T43 S9 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 12580 | `LandEnemyInitState` | M2 T43 S9 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 12589 | `NMovShellFallBit` | M2 T43 S9 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 12597 | `ChkForRedKoopa` | M2 T43 S9 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 12603 | `Chk2MSBSt` | M2 T43 S9 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 12610 | `GetSteFromD` | M2 T43 S9 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 12611 | `SetD6Ste` | M2 T43 S9 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 12617 | `DoEnemySideCheck` | M2 T31 S2 | existing closure backlog; Accepted side-check loop dependency, transfer-130 | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 12624 | `SdeCLoop` | M2 T31 S2 | existing closure backlog; Accepted side-check loop dependency, transfer-130 | M2 T21 S3; M2 T24 S1 |
-| 12632 | `NextSdeC` | M2 T31 S2 | existing closure backlog; Accepted side-check loop dependency, transfer-130 | M2 T21 S3; M2 T24 S1 |
-| 12636 | `ExESdeC` | M2 T31 S2 | existing closure backlog; Accepted side-check loop dependency, transfer-130 | M2 T21 S3; M2 T24 S1 |
-| 12638 | `ChkForBump_HammerBroJ` | M2 T43 S10 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 12646 | `NoBump` | M2 T43 S10 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 12654 | `InvEnemyDir` | M2 T43 S10 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 12660 | `PlayerEnemyDiff` | M2 T43 S10 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 12671 | `EnemyLanding` | M2 T43 S10 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 12679 | `SubtEnemyYPos` | M2 T31 S2 | existing closure backlog; Accepted original normal-enemy caller/movement dependency, transfer-129 | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 12686 | `EnemyJump` | M2 T31 S2 | existing closure backlog; Accepted original normal-enemy caller/movement dependency, transfer-129 | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 12701 | `DoSide` | M2 T31 S2 | existing closure backlog; Accepted original normal-enemy caller/movement dependency, transfer-129 | M2 T21 S3; M2 T24 S1 |
-| 12705 | `HammerBroBGColl` | M2 T43 S10 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 12711 | `KillEnemyAboveBlock` | M2 T43 S10 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 12717 | `UnderHammerBro` | M2 T43 S10 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 12726 | `NoUnderHammerBro` | M2 T43 S10 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 12732 | `ChkUnderEnemy` | M2 T43 S11 | existing closure backlog; M2 T43 S11 admitted source-order ground-query continuation. | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 12737 | `ChkForNonSolids` | M2 T43 S11 | existing closure backlog; M2 T43 S11 admitted source-order ground-query continuation. | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 12747 | `NSFnd` | M2 T43 S11 | existing closure backlog; M2 T43 S11 admitted source-order ground-query continuation. | M2 T21 S3; M2 T24 S1 |
-| 12751 | `FireballBGCollision` | M2 T43 S12 | existing closure backlog; M2 T43 S12 admitted source-order fireball-background continuation. | M2 T17 S5; M2 T20 S3; M2 T21 S3; M2 T24 S1 |
-| 12772 | `ClearBounceFlag` | M2 T43 S12 | existing closure backlog; M2 T43 S12 admitted source-order fireball-background continuation. | M2 T21 S3; M2 T24 S1 |
-| 12777 | `InitFireballExplode` | M2 T43 S12 | existing closure backlog; M2 T43 S12 admitted source-order fireball-background continuation. | M2 T21 S3; M2 T24 S1 |
-| 12791 | `BoundBoxCtrlData` | M2 T43 S13 | existing closure backlog; M2 T43 S13 accepted source-order object bounding-box entry chain. | M2 T21 S3; M2 T24 S1 |
-| 12805 | `GetFireballBoundBox` | M2 T43 S13 | existing closure backlog; M2 T43 S13 accepted source-order object bounding-box entry chain. | M2 T16 S3; M2 T17 S3; M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
-| 12813 | `GetMiscBoundBox` | M2 T43 S13 | existing closure backlog; M2 T43 S13 accepted source-order object bounding-box entry chain. | M2 T16 S2; M2 T17 S3; M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 12819 | `FBallB` | M2 T43 S13 | existing closure backlog; M2 T43 S13 accepted source-order object bounding-box entry chain. | M2 T21 S3; M2 T24 S1 |
-| 12822 | `GetEnemyBoundBox` | M2 T43 S13 | existing closure backlog; M2 T43 S13 accepted source-order object bounding-box entry chain. | M2 T16 S3; M2 T17 S3; M2 T19 S5; M2 T21 S3; M2 T24 S1 |
-| 12828 | `SmallPlatformBoundBox` | M2 T43 S13 | existing closure backlog; M2 T43 S13 accepted source-order object bounding-box entry chain. | M2 T21 S3; M2 T24 S1 |
-| 12833 | `GetMaskedOffScrBits` | M2 T43 S13 | existing closure backlog; M2 T43 S13 accepted source-order object bounding-box entry chain. | M2 T21 S3; M2 T24 S1 |
-| 12844 | `CMBits` | M2 T43 S13 | existing closure backlog; M2 T43 S13 accepted source-order object bounding-box entry chain. | M2 T21 S3; M2 T24 S1 |
-| 12850 | `LargePlatformBoundBox` | M2 T70 S17 | existing closure backlog; P79 accepted original GetXOffscreenBits scratch publication repair. | M2 T21 S3; M2 T24 S1 |
-| 12857 | `SetupEOffsetFBBox` | M2 T43 S13 | existing closure backlog; M2 T43 S13 accepted source-order object bounding-box entry chain. | M2 T21 S3; M2 T24 S1 |
-| 12866 | `MoveBoundBoxOffscreen` | M2 T43 S13 | existing closure backlog; M2 T43 S13 accepted source-order object bounding-box entry chain. | M2 T21 S3; M2 T24 S1 |
-| 12878 | `BoundingBoxCore` | M2 T43 S14 | existing closure backlog; M2 T43 S14 accepted transfer 234 for the contiguous BoundingBoxCore clipping chain. | M2 T16 S3; M2 T17 / S not recorded; M2 T17 S3; M2 T17 S4; M2 T21 S3; M2 T24 S1 |
-| 12916 | `CheckRightScreenBBox` | M2 T43 S14 | existing closure backlog; M2 T43 S14 accepted transfer 234 for the contiguous BoundingBoxCore clipping chain. | M2 T17 S3; M2 T21 S3; M2 T24 S1 |
-| 12935 | `SORte` | M2 T43 S14 | existing closure backlog; M2 T43 S14 accepted transfer 234 for the contiguous BoundingBoxCore clipping chain. | M2 T21 S3; M2 T24 S1 |
-| 12936 | `NoOfs` | M2 T43 S14 | existing closure backlog; M2 T43 S14 accepted transfer 234 for the contiguous BoundingBoxCore clipping chain. | M2 T21 S3; M2 T24 S1 |
-| 12939 | `CheckLeftScreenBBox` | M2 T43 S14 | existing closure backlog; M2 T43 S14 accepted transfer 234 for the contiguous BoundingBoxCore clipping chain. | M2 T17 S3; M2 T21 S3; M2 T24 S1 |
-| 12948 | `SOLft` | M2 T43 S14 | existing closure backlog; M2 T43 S14 accepted transfer 234 for the contiguous BoundingBoxCore clipping chain. | M2 T21 S3; M2 T24 S1 |
-| 12949 | `NoOfs2` | M2 T43 S14 | existing closure backlog; M2 T43 S14 accepted transfer 234 for the contiguous BoundingBoxCore clipping chain. | M2 T21 S3; M2 T24 S1 |
-| 12956 | `PlayerCollisionCore` | M2 T43 S15 | existing closure backlog; M2 T43 S15 accepted transfer 235 for the contiguous box-collision geometry chain. | M2 T17 S3; M2 T21 S3; M2 T24 S1 |
-| 12959 | `SprObjectCollisionCore` | M2 T43 S15 | existing closure backlog; M2 T43 S15 accepted transfer 235 for the contiguous box-collision geometry chain. | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 12964 | `CollisionCoreLoop` | M2 T43 S15 | existing closure backlog; M2 T43 S15 accepted transfer 235 for the contiguous box-collision geometry chain. | M2 T21 S3; M2 T24 S1 |
-| 12979 | `SecondBoxVerticalChk` | M2 T43 S15 | existing closure backlog; M2 T43 S15 accepted transfer 235 for the contiguous box-collision geometry chain. | M2 T21 S3; M2 T24 S1 |
-| 12989 | `FirstBoxGreater` | M2 T43 S15 | existing closure backlog; M2 T43 S15 accepted transfer 235 for the contiguous box-collision geometry chain. | M2 T21 S3; M2 T24 S1 |
-| 13002 | `NoCollisionFound` | M2 T43 S15 | existing closure backlog; M2 T43 S15 accepted transfer 235 for the contiguous box-collision geometry chain. | M2 T21 S3; M2 T24 S1 |
-| 13007 | `CollisionFound` | M2 T43 S15 | existing closure backlog; M2 T43 S15 accepted transfer 235 for the contiguous box-collision geometry chain. | M2 T21 S3; M2 T24 S1 |
-| 13023 | `BlockBufferChk_Enemy` | M2 T44 S1 | existing closure backlog; M2 T44 S1 accepted transfer 236 for the contiguous block-buffer core chain. | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 13032 | `ResidualMiscObjectCode` | M2 T44 S1 | existing closure backlog; M2 T44 S1 accepted transfer 236 for the contiguous block-buffer core chain. | M2 T21 S3; M2 T24 S1 |
-| 13040 | `BlockBufferChk_FBall` | M2 T44 S1 | existing closure backlog; M2 T44 S1 accepted transfer 236 for the contiguous block-buffer core chain. | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 13046 | `ResJmpM` | M2 T44 S1 | existing closure backlog; M2 T44 S1 accepted transfer 236 for the contiguous block-buffer core chain. | M2 T21 S3; M2 T24 S1 |
-| 13047 | `BBChk_E` | M2 T44 S1 | existing closure backlog; M2 T44 S1 accepted transfer 236 for the contiguous block-buffer core chain. | M2 T21 S3; M2 T24 S1 |
-| 13052 | `BlockBufferAdderData` | M2 T44 S1 | existing closure backlog; M2 T44 S1 accepted transfer 236 for the contiguous block-buffer core chain. | M2 T21 S3; M2 T24 S1 |
-| 13055 | `BlockBuffer_X_Adder` | M2 T44 S1 | existing closure backlog; M2 T44 S1 accepted transfer 236 for the contiguous block-buffer core chain. | M2 T21 S3; M2 T24 S1 |
-| 13061 | `BlockBuffer_Y_Adder` | M2 T44 S1 | existing closure backlog; M2 T44 S1 accepted transfer 236 for the contiguous block-buffer core chain. | M2 T21 S3; M2 T24 S1 |
-| 13067 | `BlockBufferColli_Feet` | M2 T44 S1 | existing closure backlog; M2 T44 S1 accepted transfer 236 for the contiguous block-buffer core chain. | M2 T21 S3; M2 T24 S1 |
-| 13070 | `BlockBufferColli_Head` | M2 T44 S1 | existing closure backlog; M2 T44 S1 accepted transfer 236 for the contiguous block-buffer core chain. | M2 T21 S3; M2 T24 S1 |
-| 13074 | `BlockBufferColli_Side` | M2 T44 S1 | existing closure backlog; M2 T44 S1 accepted transfer 236 for the contiguous block-buffer core chain. | M2 T21 S3; M2 T24 S1 |
-| 13078 | `BlockBufferCollision` | M2 T44 S1 | existing closure backlog; M2 T44 S1 accepted transfer 236 for the contiguous block-buffer core chain. | M2 T17 S3; M2 T17 S4; M2 T17 S5; M2 T21 S3; M2 T24 S1 |
-| 13111 | `RetXC` | M2 T44 S1 | existing closure backlog; M2 T44 S1 accepted transfer 236 for the contiguous block-buffer core chain. | M2 T21 S3; M2 T24 S1 |
-| 13112 | `RetYC` | M2 T44 S1 | existing closure backlog; M2 T44 S1 accepted transfer 236 for the contiguous block-buffer core chain. | M2 T21 S3; M2 T24 S1 |
-| 13126 | `VineYPosAdder` | M2 T44 S2 | existing closure backlog; M2 T44 S2 accepted transfer 237 for the contiguous vine object graphics chain. | M2 T21 S3; M2 T24 S1 |
-| 13129 | `DrawVine` | M2 T44 S2 | existing closure backlog; M2 T44 S2 accepted transfer 237 for the contiguous vine object graphics chain. | M2 T21 S3; M2 T22 S1; M2 T24 S1 |
-| 13156 | `VineTL` | M2 T44 S2 | existing closure backlog; M2 T44 S2 accepted transfer 237 for the contiguous vine object graphics chain. | M2 T21 S3; M2 T24 S1 |
-| 13169 | `SkpVTop` | M2 T44 S2 | existing closure backlog; M2 T44 S2 accepted transfer 237 for the contiguous vine object graphics chain. | M2 T21 S3; M2 T24 S1 |
-| 13170 | `ChkFTop` | M2 T44 S2 | existing closure backlog; M2 T44 S2 accepted transfer 237 for the contiguous vine object graphics chain. | M2 T21 S3; M2 T24 S1 |
-| 13177 | `NextVSp` | M2 T44 S2 | existing closure backlog; M2 T44 S2 accepted transfer 237 for the contiguous vine object graphics chain. | M2 T21 S3; M2 T24 S1 |
-| 13187 | `SixSpriteStacker` | M2 T44 S3 | existing closure backlog; M2 T44 S3 admitted contiguous source-order shared OAM and hammer graphics chain | M2 T21 S3; M2 T24 S1 |
-| 13189 | `StkLp` | M2 T44 S3 | existing closure backlog; M2 T44 S3 admitted contiguous source-order shared OAM and hammer graphics chain | M2 T21 S3; M2 T24 S1 |
-| 13203 | `FirstSprXPos` | M2 T44 S3 | existing closure backlog; M2 T44 S3 admitted contiguous source-order shared OAM and hammer graphics chain | M2 T21 S3; M2 T24 S1 |
-| 13206 | `FirstSprYPos` | M2 T44 S3 | existing closure backlog; M2 T44 S3 admitted contiguous source-order shared OAM and hammer graphics chain | M2 T21 S3; M2 T24 S1 |
-| 13209 | `SecondSprXPos` | M2 T44 S3 | existing closure backlog; M2 T44 S3 admitted contiguous source-order shared OAM and hammer graphics chain | M2 T21 S3; M2 T24 S1 |
-| 13212 | `SecondSprYPos` | M2 T44 S3 | existing closure backlog; M2 T44 S3 admitted contiguous source-order shared OAM and hammer graphics chain | M2 T21 S3; M2 T24 S1 |
-| 13215 | `FirstSprTilenum` | M2 T44 S3 | existing closure backlog; M2 T44 S3 admitted contiguous source-order shared OAM and hammer graphics chain | M2 T21 S3; M2 T24 S1 |
-| 13218 | `SecondSprTilenum` | M2 T44 S3 | existing closure backlog; M2 T44 S3 admitted contiguous source-order shared OAM and hammer graphics chain | M2 T21 S3; M2 T24 S1 |
-| 13221 | `HammerSprAttrib` | M2 T44 S3 | existing closure backlog; M2 T44 S3 admitted contiguous source-order shared OAM and hammer graphics chain | M2 T21 S3; M2 T24 S1 |
-| 13224 | `DrawHammer` | M2 T44 S3 | existing closure backlog; M2 T44 S3 admitted contiguous source-order shared OAM and hammer graphics chain | M2 T19 S4; M2 T21 S3; M2 T24 S1 |
-| 13232 | `ForceHPose` | M2 T44 S3 | existing closure backlog; M2 T44 S3 admitted contiguous source-order shared OAM and hammer graphics chain | M2 T21 S3; M2 T24 S1 |
-| 13234 | `GetHPose` | M2 T44 S3 | existing closure backlog; M2 T44 S3 admitted contiguous source-order shared OAM and hammer graphics chain | M2 T21 S3; M2 T24 S1 |
-| 13239 | `RenderH` | M2 T44 S3 | existing closure backlog; M2 T44 S3 admitted contiguous source-order shared OAM and hammer graphics chain | M2 T21 S3; M2 T24 S1 |
-| 13268 | `NoHOffscr` | M2 T44 S3 | existing closure backlog; M2 T44 S3 admitted contiguous source-order shared OAM and hammer graphics chain | M2 T21 S3; M2 T24 S1 |
-| 13277 | `FlagpoleScoreNumTiles` | M2 T44 S4 | existing closure backlog; M2 T44 S4 admitted contiguous source-order flagpole graphics and OAM dump-helper chain | M2 T21 S3; M2 T24 S1 |
-| 13284 | `FlagpoleGfxHandler` | M2 T44 S4 | existing closure backlog; M2 T44 S4 admitted contiguous source-order flagpole graphics and OAM dump-helper chain | M2 T17 S6; M2 T21 S3; M2 T22 S4; M2 T24 S1 |
-| 13326 | `ChkFlagOffscreen` | M2 T44 S4 | existing closure backlog; M2 T44 S4 admitted contiguous source-order flagpole graphics and OAM dump-helper chain | M2 T21 S3; M2 T24 S1 |
-| 13335 | `MoveSixSpritesOffscreen` | M2 T44 S4 | existing closure backlog; M2 T44 S4 admitted contiguous source-order flagpole graphics and OAM dump-helper chain | M2 T21 S3; M2 T24 S1 |
-| 13338 | `DumpSixSpr` | M2 T44 S4 | existing closure backlog; M2 T44 S4 admitted contiguous source-order flagpole graphics and OAM dump-helper chain | M2 T21 S3; M2 T24 S1 |
-| 13342 | `DumpFourSpr` | M2 T44 S4 | existing closure backlog; M2 T44 S4 admitted contiguous source-order flagpole graphics and OAM dump-helper chain | M2 T21 S3; M2 T24 S1 |
-| 13345 | `DumpThreeSpr` | M2 T44 S4 | existing closure backlog; M2 T44 S4 admitted contiguous source-order flagpole graphics and OAM dump-helper chain | M2 T21 S3; M2 T24 S1 |
-| 13348 | `DumpTwoSpr` | M2 T44 S4 | existing closure backlog; M2 T44 S4 admitted contiguous source-order flagpole graphics and OAM dump-helper chain | M2 T17 S6; M2 T21 S3; M2 T24 S1 |
-| 13352 | `ExitDumpSpr` | M2 T44 S4 | existing closure backlog; M2 T44 S4 admitted contiguous source-order flagpole graphics and OAM dump-helper chain | M2 T21 S3; M2 T24 S1 |
-| 13357 | `DrawLargePlatform` | M2 T70 S17 | existing closure backlog; P81 accepted large platform absolute indexed clipping repair. | M2 T21 S3; M2 T24 S1 |
-| 13374 | `ShrinkPlatform` | M2 T70 S17 | existing closure backlog; P81 accepted large platform absolute indexed clipping repair. | M2 T21 S3; M2 T24 S1 |
-| 13377 | `SetLast2Platform` | M2 T70 S17 | existing closure backlog; P81 accepted large platform absolute indexed clipping repair. | M2 T21 S3; M2 T24 S1 |
-| 13386 | `SetPlatformTilenum` | M2 T70 S17 | existing closure backlog; P81 accepted large platform absolute indexed clipping repair. | M2 T21 S3; M2 T24 S1 |
-| 13402 | `SChk2` | M2 T70 S17 | existing closure backlog; P81 accepted large platform absolute indexed clipping repair. | M2 T21 S3; M2 T24 S1 |
-| 13408 | `SChk3` | M2 T70 S17 | existing closure backlog; P81 accepted large platform absolute indexed clipping repair. | M2 T21 S3; M2 T24 S1 |
-| 13414 | `SChk4` | M2 T70 S17 | existing closure backlog; P81 accepted large platform absolute indexed clipping repair. | M2 T21 S3; M2 T24 S1 |
-| 13420 | `SChk5` | M2 T70 S17 | existing closure backlog; P81 accepted large platform absolute indexed clipping repair. | M2 T21 S3; M2 T24 S1 |
-| 13426 | `SChk6` | M2 T70 S17 | existing closure backlog; P81 accepted large platform absolute indexed clipping repair. | M2 T21 S3; M2 T24 S1 |
-| 13431 | `SLChk` | M2 T70 S17 | existing closure backlog; P81 accepted large platform absolute indexed clipping repair. | M2 T21 S3; M2 T24 S1 |
-| 13435 | `ExDLPl` | M2 T70 S17 | existing closure backlog; P81 accepted large platform absolute indexed clipping repair. | M2 T21 S3; M2 T24 S1 |
-| 13439 | `DrawFloateyNumber_Coin` | M2 T44 S6 | existing closure backlog; M2 T44 S6 admitted contiguous source-order floatey-number and jumping-coin graphics chain | M2 T21 S3; M2 T24 S1 |
-| 13444 | `NotRsNum` | M2 T44 S6 | existing closure backlog; M2 T44 S6 admitted contiguous source-order floatey-number and jumping-coin graphics chain | M2 T21 S3; M2 T24 S1 |
-| 13460 | `JumpingCoinTiles` | M2 T44 S6 | existing closure backlog; M2 T44 S6 admitted contiguous source-order floatey-number and jumping-coin graphics chain | M2 T21 S3; M2 T24 S1 |
-| 13463 | `JCoinGfxHandler` | M2 T44 S6 | existing closure backlog; M2 T44 S6 admitted contiguous source-order floatey-number and jumping-coin graphics chain | M2 T21 S3; M2 T24 S1 |
-| 13489 | `ExJCGfx` | M2 T44 S6 | existing closure backlog; M2 T44 S6 admitted contiguous source-order floatey-number and jumping-coin graphics chain | M2 T21 S3; M2 T24 S1 |
-| 13500 | `PowerUpGfxTable` | M2 T44 S7 | existing closure backlog; M2 T44 S7 admitted contiguous source-order power-up graphics chain | M2 T21 S3; M2 T24 S1 |
-| 13506 | `PowerUpAttributes` | M2 T44 S7 | existing closure backlog; M2 T44 S7 admitted contiguous source-order power-up graphics chain | M2 T21 S3; M2 T24 S1 |
-| 13509 | `DrawPowerUp` | M2 T44 S7 | existing closure backlog; M2 T44 S7 admitted contiguous source-order power-up graphics chain | M2 T16 S3; M2 T21 S3; M2 T24 S1 |
-| 13530 | `PUpDrawLoop` | M2 T44 S7 | existing closure backlog; M2 T44 S7 admitted contiguous source-order power-up graphics chain | M2 T21 S3; M2 T24 S1 |
-| 13555 | `FlipPUpRightSide` | M2 T44 S7 | existing closure backlog; M2 T44 S7 admitted contiguous source-order power-up graphics chain | M2 T21 S3; M2 T24 S1 |
-| 13562 | `PUpOfs` | M2 T44 S7 | existing closure backlog; M2 T44 S7 admitted contiguous source-order power-up graphics chain | M2 T21 S3; M2 T24 S1 |
-| 13576 | `EnemyGraphicsTable` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13621 | `EnemyGfxTableOffsets` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13627 | `EnemyAttributeData` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13633 | `EnemyAnimTimingBMask` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13636 | `JumpspringFrameOffsets` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13639 | `EnemyGfxHandler` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T16 S3; M2 T19 S4; M2 T21 S3; M2 T24 S1 |
-| 13661 | `CheckForRetainerObj` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13674 | `CheckForBulletBillCV` | M2 T44 S8 | existing closure backlog; Accepted exact cannon counterexample and required source-dispatch dependency in active S2. | M2 T21 S3; M2 T24 S1 |
-| 13682 | `SBBAt` | M2 T44 S8 | existing closure backlog; Accepted exact cannon counterexample and required source-dispatch dependency in active S2. | M2 T21 S3; M2 T24 S1 |
-| 13687 | `CheckForJumpspring` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13694 | `CheckForPodoboo` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13704 | `CheckBowserGfxFlag` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13711 | `SBwsrGfxOfs` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13713 | `CheckForGoomba` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13722 | `GmbaAnim` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13732 | `CheckBowserFront` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13746 | `ChkFrontSte` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13750 | `FlipBowserOver` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13753 | `DrawBowser` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13756 | `CheckBowserRear` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13761 | `ChkRearSte` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13770 | `CheckForSpiny` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13780 | `NotEgg` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13782 | `CheckForLakitu` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13792 | `NoLAFr` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13794 | `CheckUpsideDownShell` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13807 | `CheckRightSideUpShell` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T16 S3; M2 T21 S3; M2 T24 S1 |
-| 13819 | `CheckForDefdGoomba` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T16 S3; M2 T21 S3; M2 T24 S1 |
-| 13829 | `CheckForHammerBro` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13841 | `CheckForBloober` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13856 | `CheckToAnimateEnemy` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13878 | `CheckForSecondFrame` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13883 | `CheckAnimationStop` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13893 | `CheckDefeatedState` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13905 | `DrawEnemyObject` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13916 | `SkipToOffScrChk` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13919 | `CheckForVerticalFlip` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13943 | `FlipEnemyVertically` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13957 | `CheckForESymmetry` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13965 | `ContES` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13975 | `ESRtnr` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13979 | `SpnySC` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 13982 | `MirrorEnemyGfx` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T16 S3; M2 T21 S3; M2 T24 S1 |
-| 13994 | `EggExc` | M2 T44 S8 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14007 | `CheckToMirrorLakitu` | M2 T45 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14026 | `NVFLak` | M2 T45 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14033 | `CheckToMirrorJSpring` | M2 T45 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14044 | `SprObjectOffscrChk` | M2 T45 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14054 | `LcChk` | M2 T45 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14060 | `Row3C` | M2 T45 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14067 | `Row23C` | M2 T45 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14073 | `AllRowC` | M2 T45 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14085 | `ExEGHandler` | M2 T45 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14088 | `DrawEnemyObjRow` | M2 T45 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14093 | `DrawOneSpriteRow` | M2 T45 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14097 | `MoveESprRowOffscreen` | M2 T45 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14104 | `MoveESprColOffscreen` | M2 T45 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14119 | `DefaultBlockObjTiles` | M2 T45 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14122 | `DrawBlock` | M2 T45 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T16 S1; M2 T16 S2; M2 T16 S3; M2 T21 S3; M2 T24 S1 |
-| 14133 | `DBlkLoop` | M2 T45 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14147 | `ChkRep` | M2 T45 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14159 | `SetBFlip` | M2 T45 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14167 | `BlkOffscr` | M2 T45 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14174 | `PullOfsB` | M2 T45 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14175 | `ChkLeftCo` | M2 T45 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14178 | `MoveColOffscreen` | M2 T45 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14182 | `ExDBlk` | M2 T45 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14187 | `DrawBrickChunks` | M2 T45 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T16 S2; M2 T21 S3; M2 T24 S1 |
-| 14197 | `DChunks` | M2 T45 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14242 | `ChnkOfs` | M2 T45 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14250 | `ExBCDr` | M2 T45 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14254 | `DrawFireball` | M2 T45 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T16 S3; M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14261 | `DrawFirebar` | M2 T45 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14275 | `FireA` | M2 T45 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14280 | `ExplosionTiles` | M2 T45 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14283 | `DrawExplosion_Fireball` | M2 T45 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T16 S3; M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14292 | `DrawExplosion_Fireworks` | M2 T45 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14327 | `KillFireBall` | M2 T45 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14334 | `DrawSmallPlatform` | M2 T45 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14361 | `TopSP` | M2 T45 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14369 | `BotSP` | M2 T45 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14379 | `SOfs` | M2 T45 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14386 | `SOfs2` | M2 T45 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14392 | `ExSPl` | M2 T45 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14397 | `DrawBubble` | M2 T45 S5 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T19 S4; M2 T21 S3; M2 T24 S1 |
-| 14413 | `ExDBub` | M2 T45 S5 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14418 | `PlayerGfxTblOffsets` | M2 T45 S5 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S3; M2 T24 S1 |
-| 14424 | `PlayerGraphicsTable` | M2 T45 S5 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T16 S3; M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14457 | `SwimKickTileNum` | M2 T45 S5 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14460 | `PlayerGfxHandler` | M2 T46 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T15 S3; M2 T16 S3; M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14466 | `CntPl` | M2 T46 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14489 | `SwimKT` | M2 T46 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14495 | `BigKTS` | M2 T46 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14497 | `ExPGH` | M2 T46 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14499 | `FindPlayerAction` | M2 T46 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14503 | `DoChangeSize` | M2 T46 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14507 | `PlayerKilled` | M2 T46 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14511 | `PlayerGfxProcessing` | M2 T46 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14532 | `SUpdR` | M2 T46 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14535 | `PlayerOffscreenChk` | M2 T46 S1 | existing closure backlog; canonical audited OAM owner overrides physical source slice | M2 T16 S3; M2 T24 / S not recorded; M2 T24 S1 |
-| 14547 | `PROfsLoop` | M2 T46 S1 | existing closure backlog; canonical audited OAM owner overrides physical source slice | M2 T24 / S not recorded; M2 T24 S1 |
-| 14551 | `NPROffscr` | M2 T46 S1 | existing closure backlog; canonical audited OAM owner overrides physical source slice | M2 T24 / S not recorded; M2 T24 S1 |
-| 14561 | `IntermediatePlayerData` | M2 T46 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14564 | `DrawPlayer_Intermediate` | M2 T46 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14566 | `PIntLoop` | M2 T46 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14587 | `RenderPlayerSub` | M2 T46 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T15 / S not recorded; M2 T15 S3; M2 T16 S3; M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14601 | `DrawPlayerLoop` | M2 T46 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14610 | `ProcessPlayerAction` | M2 T46 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14626 | `ProcOnGroundActs` | M2 T46 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14642 | `NonAnimatedActs` | M2 T46 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14649 | `ActionFalling` | M2 T46 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14654 | `ActionWalkRun` | M2 T46 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14659 | `ActionClimbing` | M2 T46 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14666 | `ActionSwimming` | M2 T46 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14676 | `GetCurrentAnimOffset` | M2 T46 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14680 | `FourFrameExtent` | M2 T46 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14684 | `ThreeFrameExtent` | M2 T46 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14687 | `AnimationControl` | M2 T46 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14701 | `SetAnimC` | M2 T46 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14702 | `ExAnimC` | M2 T46 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14705 | `GetGfxOffsetAdder` | M2 T46 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14712 | `SzOfs` | M2 T46 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14714 | `ChangeSizeOffsetAdder` | M2 T46 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14718 | `HandleChangeSize` | M2 T46 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14728 | `CSzNext` | M2 T46 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14729 | `GorSLog` | M2 T46 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14734 | `GetOffsetFromAnimCtrl` | M2 T46 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14741 | `ShrinkPlayer` | M2 T46 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14750 | `ShrPlF` | M2 T46 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14753 | `ChkForPlayerAttrib` | M2 T46 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14767 | `KilledAtt` | M2 T46 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14774 | `C_S_IGAtt` | M2 T46 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14781 | `ExPlyrAt` | M2 T47 S1 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T16 S3; M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14786 | `RelativePlayerPosition` | M2 T47 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T15 S3; M2 T16 S3; M2 T17 S4; M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14791 | `RelativeBubblePosition` | M2 T47 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T19 S4; M2 T21 S2; M2 T24 S1 |
-| 14797 | `RelativeFireballPosition` | M2 T47 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T16 S3; M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14801 | `RelWOfs` | M2 T47 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 S1 |
-| 14805 | `RelativeMiscPosition` | M2 T47 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T16 S2; M2 T17 S5; M2 T19 S4; M2 T21 S2; M2 T24 S1 |
-| 14811 | `RelativeEnemyPosition` | M2 T47 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T16 S3; M2 T17 S5; M2 T19 / S not recorded; M2 T19 S4; M2 T21 S2; M2 T22 S4; M2 T24 S1 |
-| 14816 | `RelativeBlockPosition` | M2 T47 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T15 S4; M2 T16 S1; M2 T16 S2; M2 T21 S2; M2 T24 S1 |
-| 14825 | `VariableObjOfsRelPos` | M2 T47 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T16 S3; M2 T21 S2; M2 T24 S1 |
-| 14834 | `GetObjRelativePosition` | M2 T47 S2 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T16 S2; M2 T16 S3; M2 T21 S2; M2 T24 S1 |
-| 14846 | `GetPlayerOffscreenBits` | M2 T47 S3 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T16 S3; M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14851 | `GetFireballOffscreenBits` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T16 S3; M2 T20 S2; M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
-| 14857 | `GetBubbleOffscreenBits` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T19 S4; M2 T21 S2; M2 T24 S1 |
-| 14863 | `GetMiscOffscreenBits` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T16 S2; M2 T17 S5; M2 T19 S4; M2 T21 S2; M2 T24 S1 |
-| 14869 | `ObjOffsetData` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 S1 |
-| 14872 | `GetProperObjOffset` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T16 S3; M2 T21 S2; M2 T24 S1 |
-| 14879 | `GetEnemyOffscreenBits` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T19 S4; M2 T21 S2; M2 T22 S4; M2 T24 S1 |
-| 14884 | `GetBlockOffscreenBits` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T15 S4; M2 T16 S1; M2 T16 S2; M2 T21 S2; M2 T24 S1 |
-| 14888 | `SetOffscrBitsOffset` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 S1 |
-| 14894 | `GetOffScreenBitsSet` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T16 S2; M2 T16 S3; M2 T21 S2; M2 T24 S1 |
-| 14911 | `RunOffscrBitsSubs` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 S1 |
-| 14927 | `XOffscreenBitsData` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 S1 |
-| 14931 | `DefaultXOnscreenOfs` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 S1 |
-| 14934 | `GetXOffscreenBits` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T16 S2; M2 T16 S3; M2 T21 S2; M2 T24 S1 |
-| 14937 | `XOfsLoop` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 S1 |
-| 14953 | `XLdBData` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 S1 |
-| 14959 | `ExXOfsBS` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 S1 |
-| 14963 | `YOffscreenBitsData` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 S1 |
-| 14968 | `DefaultYOnscreenOfs` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 S1 |
-| 14971 | `HighPosUnitData` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 S1 |
-| 14974 | `GetYOffscreenBits` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T16 S2; M2 T16 S3; M2 T21 S2; M2 T24 S1 |
-| 14977 | `YOfsLoop` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 S1 |
-| 14993 | `YLdBData` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 S1 |
-| 14999 | `ExYOfsBS` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 S1 |
-| 15003 | `DividePDiff` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 S1 |
-| 15015 | `SetOscrO` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 S1 |
-| 15016 | `ExDivPD` | M2 T47 S4 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 S1 |
-| 15025 | `DrawSpriteObject` | M2 T47 S5 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T16 S3; M2 T21 S2; M2 T24 S1 |
-| 15036 | `NoHFlip` | M2 T47 S5 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 S1 |
-| 15040 | `SetHFAt` | M2 T47 S5 | existing closure backlog; restored pending small-task planning after oversized T21 replan | M2 T21 S2; M2 T24 S1 |
-| 15070 | `SoundEngine` | M2 T48 S1 | existing closure backlog; admitted T48 S1 source-order implementation | M2 T21 / S not recorded; M2 T24 S1; M2 T7 / S not recorded |
-| 15075 | `SndOn` | M2 T48 S1 | existing closure backlog; admitted T48 S1 source-order implementation | M2 T24 S1 |
-| 15084 | `InPause` | M2 T48 S1 | existing closure backlog; admitted T48 S1 source-order implementation | M2 T24 S1 |
-| 15099 | `PTone1F` | M2 T48 S1 | existing closure backlog; admitted T48 S1 source-order implementation | M2 T24 S1 |
-| 15101 | `ContPau` | M2 T48 S1 | existing closure backlog; admitted T48 S1 source-order implementation | M2 T24 S1 |
-| 15108 | `PTone2F` | M2 T48 S1 | existing closure backlog; admitted T48 S1 source-order implementation | M2 T24 S1 |
-| 15109 | `PTRegC` | M2 T48 S1 | existing closure backlog; admitted T48 S1 source-order implementation | M2 T24 S1 |
-| 15112 | `DecPauC` | M2 T48 S1 | existing closure backlog; admitted T48 S1 source-order implementation | M2 T24 S1 |
-| 15121 | `SkipPIn` | M2 T48 S1 | existing closure backlog; admitted T48 S1 source-order implementation | M2 T24 S1 |
-| 15125 | `RunSoundSubroutines` | M2 T48 S1 | existing closure backlog; admitted T48 S1 source-order implementation | M2 T24 S1 |
-| 15134 | `SkipSoundSubroutines` | M2 T48 S1 | existing closure backlog; admitted T48 S1 source-order implementation | M2 T24 S1 |
-| 15147 | `NoIncDAC` | M2 T48 S1 | existing closure backlog; admitted T48 S1 source-order implementation | M2 T24 S1 |
-| 15150 | `StrWave` | M2 T48 S1 | existing closure backlog; admitted T48 S1 source-order implementation | M2 T24 S1 |
-| 15155 | `Dump_Squ1_Regs` | M2 T48 S2 | existing closure backlog; admitted T48 S2 source-order implementation | M2 T24 S1 |
-| 15160 | `PlaySqu1Sfx` | M2 T48 S2 | existing closure backlog; admitted T48 S2 source-order implementation | M2 T24 S1 |
-| 15163 | `SetFreq_Squ1` | M2 T48 S2 | existing closure backlog; admitted T48 S2 source-order implementation | M2 T24 S1 |
-| 15166 | `Dump_Freq_Regs` | M2 T48 S2 | existing closure backlog; admitted T48 S2 source-order implementation | M2 T24 S1 |
-| 15174 | `NoTone` | M2 T48 S2 | existing closure backlog; admitted T48 S2 source-order implementation | M2 T24 S1 |
-| 15176 | `Dump_Sq2_Regs` | M2 T48 S2 | existing closure backlog; admitted T48 S2 source-order implementation | M2 T24 S1 |
-| 15181 | `PlaySqu2Sfx` | M2 T48 S2 | existing closure backlog; admitted T48 S2 source-order implementation | M2 T24 S1 |
-| 15184 | `SetFreq_Squ2` | M2 T48 S2 | existing closure backlog; admitted T48 S2 source-order implementation | M2 T24 S1 |
-| 15188 | `SetFreq_Tri` | M2 T48 S2 | existing closure backlog; admitted T48 S2 source-order implementation | M2 T24 S1 |
-| 15194 | `SwimStompEnvelopeData` | M2 T48 S3 | existing closure backlog; admitted T48 S3 source-order implementation | M2 T24 S1 |
-| 15198 | `PlayFlagpoleSlide` | M2 T48 S3 | existing closure backlog; admitted T48 S3 source-order implementation | M2 T24 S1 |
-| 15206 | `PlaySmallJump` | M2 T48 S3 | existing closure backlog; admitted T48 S3 source-order implementation | M2 T24 S1 |
-| 15210 | `PlayBigJump` | M2 T48 S3 | existing closure backlog; admitted T48 S3 source-order implementation | M2 T24 S1 |
-| 15213 | `JumpRegContents` | M2 T48 S3 | existing closure backlog; admitted T48 S3 source-order implementation | M2 T24 S1 |
-| 15220 | `ContinueSndJump` | M2 T48 S3 | existing closure backlog; admitted T48 S3 source-order implementation | M2 T24 S1 |
-| 15227 | `N2Prt` | M2 T48 S3 | existing closure backlog; admitted T48 S3 source-order implementation | M2 T24 S1 |
-| 15230 | `FPS2nd` | M2 T48 S3 | existing closure backlog; admitted T48 S3 source-order implementation | M2 T24 S1 |
-| 15231 | `DmpJpFPS` | M2 T48 S3 | existing closure backlog; admitted T48 S3 source-order implementation | M2 T24 S1 |
-| 15234 | `PlayFireballThrow` | M2 T48 S3 | existing closure backlog; admitted T48 S3 source-order implementation | M2 T24 S1 |
-| 15239 | `PlayBump` | M2 T48 S3 | existing closure backlog; admitted T48 S3 source-order implementation | M2 T24 S1 |
-| 15242 | `Fthrow` | M2 T48 S3 | existing closure backlog; admitted T48 S3 source-order implementation | M2 T24 S1 |
-| 15247 | `ContinueBumpThrow` | M2 T48 S3 | existing closure backlog; admitted T48 S3 source-order implementation | M2 T24 S1 |
-| 15253 | `DecJpFPS` | M2 T48 S3 | existing closure backlog; admitted T48 S3 source-order implementation | M2 T24 S1 |
-| 15256 | `Square1SfxHandler` | M2 T48 S4 | existing closure backlog; admitted T48 S4 source-order implementation | M2 T24 S1 |
-| 15276 | `CheckSfx1Buffer` | M2 T48 S4 | existing closure backlog; admitted T48 S4 source-order implementation | M2 T24 S1 |
-| 15294 | `ExS1H` | M2 T48 S4 | existing closure backlog; admitted T48 S4 source-order implementation | M2 T24 S1 |
-| 15296 | `PlaySwimStomp` | M2 T48 S4 | existing closure backlog; admitted T48 S4 source-order implementation | M2 T24 S1 |
-| 15304 | `ContinueSwimStomp` | M2 T48 S4 | existing closure backlog; admitted T48 S4 source-order implementation | M2 T24 S1 |
-| 15313 | `BranchToDecLength1` | M2 T48 S4 | existing closure backlog; admitted T48 S4 source-order implementation | M2 T24 S1 |
-| 15316 | `PlaySmackEnemy` | M2 T48 S4 | existing closure backlog; admitted T48 S4 source-order implementation | M2 T24 S1 |
-| 15325 | `ContinueSmackEnemy` | M2 T48 S4 | existing closure backlog; admitted T48 S4 source-order implementation | M2 T24 S1 |
-| 15333 | `SmSpc` | M2 T48 S4 | existing closure backlog; admitted T48 S4 source-order implementation | M2 T24 S1 |
-| 15334 | `SmTick` | M2 T48 S4 | existing closure backlog; admitted T48 S4 source-order implementation | M2 T24 S1 |
-| 15336 | `DecrementSfx1Length` | M2 T48 S4 | existing closure backlog; admitted T48 S4 source-order implementation | M2 T24 S1 |
-| 15340 | `StopSquare1Sfx` | M2 T48 S4 | existing closure backlog; admitted T48 S4 source-order implementation | M2 T21 S2; M2 T21 S5; M2 T24 S1 |
-| 15347 | `ExSfx1` | M2 T48 S4 | existing closure backlog; admitted T48 S4 source-order implementation | M2 T24 S1 |
-| 15349 | `PlayPipeDownInj` | M2 T48 S4 | existing closure backlog; admitted T48 S4 source-order implementation | M2 T24 S1 |
-| 15353 | `ContinuePipeDownInj` | M2 T48 S4 | existing closure backlog; admitted T48 S4 source-order implementation | M2 T24 S1 |
-| 15365 | `NoPDwnL` | M2 T48 S4 | existing closure backlog; admitted T48 S4 source-order implementation | M2 T24 S1 |
-| 15369 | `ExtraLifeFreqData` | M2 T48 S5 | existing closure backlog; admitted T48 S5 source-order implementation | M2 T24 S1 |
-| 15372 | `PowerUpGrabFreqData` | M2 T48 S5 | existing closure backlog; admitted T48 S5 source-order implementation | M2 T24 S1 |
-| 15380 | `PUp_VGrow_FreqData` | M2 T48 S5 | existing closure backlog; admitted T48 S5 source-order implementation | M2 T24 S1 |
-| 15386 | `PlayCoinGrab` | M2 T48 S5 | existing closure backlog; admitted T48 S5 source-order implementation | M2 T24 S1 |
-| 15391 | `PlayTimerTick` | M2 T48 S5 | existing closure backlog; admitted T48 S5 source-order implementation | M2 T24 S1 |
-| 15395 | `CGrab_TTickRegL` | M2 T48 S5 | existing closure backlog; admitted T48 S5 source-order implementation | M2 T24 S1 |
-| 15401 | `ContinueCGrabTTick` | M2 T48 S5 | existing closure backlog; admitted T48 S5 source-order implementation | M2 T24 S1 |
-| 15407 | `N2Tone` | M2 T48 S5 | existing closure backlog; admitted T48 S5 source-order implementation | M2 T24 S1 |
-| 15409 | `PlayBlast` | M2 T48 S5 | existing closure backlog; admitted T48 S5 source-order implementation | M2 T24 S1 |
-| 15416 | `ContinueBlast` | M2 T48 S5 | existing closure backlog; admitted T48 S5 source-order implementation | M2 T24 S1 |
-| 15422 | `SBlasJ` | M2 T48 S5 | existing closure backlog; admitted T48 S5 source-order implementation | M2 T24 S1 |
-| 15424 | `PlayPowerUpGrab` | M2 T48 S5 | existing closure backlog; admitted T48 S5 source-order implementation | M2 T21 S2; M2 T24 S1 |
-| 15428 | `ContinuePowerUpGrab` | M2 T48 S5 | existing closure backlog; admitted T48 S5 source-order implementation | M2 T24 S1 |
-| 15437 | `LoadSqu2Regs` | M2 T48 S5 | existing closure backlog; admitted T48 S5 source-order implementation | M2 T24 S1 |
-| 15440 | `DecrementSfx2Length` | M2 T48 S5 | existing closure backlog; admitted T48 S5 source-order implementation | M2 T24 S1 |
-| 15444 | `EmptySfx2Buffer` | M2 T48 S5 | existing closure backlog; admitted T48 S5 source-order implementation | M2 T24 S1 |
-| 15448 | `StopSquare2Sfx` | M2 T48 S5 | existing closure backlog; admitted T48 S5 source-order implementation | M2 T21 S2; M2 T21 S5; M2 T24 S1 |
-| 15453 | `ExSfx2` | M2 T48 S5 | existing closure backlog; admitted T48 S5 source-order implementation | M2 T24 S1 |
-| 15455 | `Square2SfxHandler` | M2 T48 S6 | existing closure backlog; admitted T48 S6 source-order implementation | M2 T21 S2; M2 T24 S1 |
-| 15478 | `CheckSfx2Buffer` | M2 T48 S6 | existing closure backlog; admitted T48 S6 source-order implementation | M2 T24 S1 |
-| 15496 | `ExS2H` | M2 T48 S6 | existing closure backlog; admitted T48 S6 source-order implementation | M2 T24 S1 |
-| 15498 | `Cont_CGrab_TTick` | M2 T48 S6 | existing closure backlog; admitted T48 S6 source-order implementation | M2 T24 S1 |
-| 15501 | `JumpToDecLength2` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T24 S1 |
-| 15504 | `PlayBowserFall` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T24 S1 |
-| 15509 | `BlstSJp` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T24 S1 |
-| 15511 | `ContinueBowserFall` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T24 S1 |
-| 15517 | `PBFRegs` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T24 S1 |
-| 15518 | `EL_LRegs` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T24 S1 |
-| 15520 | `PlayExtraLife` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T24 S1 |
-| 15524 | `ContinueExtraLife` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T24 S1 |
-| 15527 | `DivLLoop` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T24 S1 |
-| 15537 | `PlayGrowPowerUp` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T21 S2; M2 T24 S1 |
-| 15541 | `PlayGrowVine` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T24 S1 |
-| 15544 | `GrowItemRegs` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T21 S2; M2 T24 S1 |
-| 15551 | `ContinueGrowItems` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T21 S2; M2 T24 S1 |
-| 15564 | `StopGrowItems` | M2 T49 S1 | existing closure backlog; admitted T49 S1 source-order implementation | M2 T24 S1 |
-| 15569 | `BrickShatterFreqData` | M2 T49 S2 | existing closure backlog; admitted T49 S2 source-order implementation | M2 T24 S1 |
-| 15573 | `PlayBrickShatter` | M2 T49 S2 | existing closure backlog; admitted T49 S2 source-order implementation | M2 T24 S1 |
-| 15577 | `ContinueBrickShatter` | M2 T49 S2 | existing closure backlog; admitted T49 S2 source-order implementation | M2 T24 S1 |
-| 15585 | `PlayNoiseSfx` | M2 T49 S2 | existing closure backlog; admitted T49 S2 source-order implementation | M2 T24 S1 |
-| 15591 | `DecrementSfx3Length` | M2 T49 S2 | existing closure backlog; admitted T49 S2 source-order implementation | M2 T24 S1 |
-| 15598 | `ExSfx3` | M2 T49 S2 | existing closure backlog; admitted T49 S2 source-order implementation | M2 T24 S1 |
-| 15600 | `NoiseSfxHandler` | M2 T49 S2 | existing closure backlog; admitted T49 S2 source-order implementation | M2 T24 S1 |
-| 15609 | `CheckNoiseBuffer` | M2 T49 S2 | existing closure backlog; admitted T49 S2 source-order implementation | M2 T24 S1 |
-| 15616 | `ExNH` | M2 T49 S2 | existing closure backlog; admitted T49 S2 source-order implementation | M2 T24 S1 |
-| 15618 | `PlayBowserFlame` | M2 T49 S2 | existing closure backlog; admitted T49 S2 source-order implementation | M2 T24 S1 |
-| 15622 | `ContinueBowserFlame` | M2 T49 S2 | existing closure backlog; admitted T49 S2 source-order implementation | M2 T24 S1 |
-| 15632 | `ContinueMusic` | M2 T49 S2 | existing closure backlog; admitted T49 S2 source-order implementation | M2 T24 S1 |
-| 15635 | `MusicHandler` | M2 T49 S3 | existing closure backlog; accepted source-order music selection/header-load chain | M2 T24 S1 |
-| 15645 | `LoadEventMusic` | M2 T49 S3 | existing closure backlog; accepted source-order music selection/header-load chain | M2 T21 S2; M2 T21 S5; M2 T24 S1 |
-| 15651 | `NoStopSfx` | M2 T49 S3 | existing closure backlog; accepted source-order music selection/header-load chain | M2 T24 S1 |
-| 15662 | `LoadAreaMusic` | M2 T49 S3 | existing closure backlog; accepted source-order music selection/header-load chain | M2 T24 S1 |
-| 15666 | `NoStop1` | M2 T49 S3 | existing closure backlog; accepted source-order music selection/header-load chain | M2 T24 S1 |
-| 15667 | `GMLoopB` | M2 T49 S3 | existing closure backlog; accepted source-order music selection/header-load chain | M2 T24 S1 |
-| 15669 | `HandleAreaMusicLoopB` | M2 T49 S3 | existing closure backlog; accepted source-order music selection/header-load chain | M2 T24 S1 |
-| 15682 | `FindAreaMusicHeader` | M2 T49 S3 | existing closure backlog; accepted source-order music selection/header-load chain | M2 T24 S1 |
-| 15686 | `FindEventMusicHeader` | M2 T49 S3 | existing closure backlog; accepted source-order music selection/header-load chain | M2 T24 S1 |
-| 15691 | `LoadHeader` | M2 T49 S3 | existing closure backlog; accepted source-order music selection/header-load chain | M2 T24 S1 |
-| 15720 | `HandleSquare2Music` | M2 T49 S4 | existing closure backlog; M2 T49 S4 accepted source-order square-two music-stream custody | M2 T24 S1 |
-| 15730 | `EndOfMusicData` | M2 T49 S4 | existing closure backlog; M2 T49 S4 accepted source-order square-two music-stream custody | M2 T24 S1 |
-| 15736 | `NotTRO` | M2 T49 S4 | existing closure backlog; M2 T49 S4 accepted source-order square-two music-stream custody | M2 T24 S1 |
-| 15750 | `MusicLoopBack` | M2 T49 S4 | existing closure backlog; M2 T49 S4 accepted source-order square-two music-stream custody | M2 T24 S1 |
-| 15753 | `VictoryMLoopBack` | M2 T49 S4 | existing closure backlog; M2 T49 S4 accepted source-order square-two music-stream custody | M2 T24 S1 |
-| 15756 | `Squ2LengthHandler` | M2 T49 S4 | existing closure backlog; M2 T49 S4 accepted source-order square-two music-stream custody | M2 T24 S1 |
-| 15763 | `Squ2NoteHandler` | M2 T49 S4 | existing closure backlog; M2 T49 S4 accepted source-order square-two music-stream custody | M2 T24 S1 |
-| 15769 | `Rest` | M2 T49 S4 | existing closure backlog; M2 T49 S4 accepted source-order square-two music-stream custody | M2 T24 S1 |
-| 15771 | `SkipFqL1` | M2 T49 S4 | existing closure backlog; M2 T49 S4 accepted source-order square-two music-stream custody | M2 T24 S1 |
-| 15774 | `MiscSqu2MusicTasks` | M2 T49 S4 | existing closure backlog; M2 T49 S4 accepted source-order square-two music-stream custody | M2 T24 S1 |
-| 15783 | `NoDecEnv1` | M2 T49 S4 | existing closure backlog; M2 T49 S4 accepted source-order square-two music-stream custody | M2 T24 S1 |
-| 15788 | `HandleSquare1Music` | M2 T49 S5 | existing closure backlog; M2 T49 S5 accepted source-order square-one music-stream custody | M2 T24 S1 |
-| 15794 | `FetchSqu1MusicData` | M2 T49 S5 | existing closure backlog; M2 T49 S5 accepted source-order square-one music-stream custody | M2 T24 S1 |
-| 15806 | `Squ1NoteHandler` | M2 T49 S5 | existing closure backlog; M2 T49 S5 accepted source-order square-one music-stream custody | M2 T24 S1 |
-| 15816 | `SkipCtrlL` | M2 T49 S5 | existing closure backlog; M2 T49 S5 accepted source-order square-one music-stream custody | M2 T24 S1 |
-| 15819 | `MiscSqu1MusicTasks` | M2 T49 S5 | existing closure backlog; M2 T49 S5 accepted source-order square-one music-stream custody | M2 T24 S1 |
-| 15828 | `NoDecEnv2` | M2 T49 S5 | existing closure backlog; M2 T49 S5 accepted source-order square-one music-stream custody | M2 T24 S1 |
-| 15830 | `DeathMAltReg` | M2 T49 S5 | existing closure backlog; M2 T49 S5 accepted source-order square-one music-stream custody | M2 T24 S1 |
-| 15833 | `DoAltLoad` | M2 T49 S5 | existing closure backlog; M2 T49 S5 accepted source-order square-one music-stream custody | M2 T24 S1 |
-| 15835 | `HandleTriangleMusic` | M2 T49 S6 | existing closure backlog; M2 T49 S6 accepted source-order triangle music-stream custody | M2 T24 S1 |
-| 15853 | `TriNoteHandler` | M2 T49 S6 | existing closure backlog; M2 T49 S6 accepted source-order triangle music-stream custody | M2 T24 S1 |
-| 15863 | `NotDOrD4` | M2 T49 S6 | existing closure backlog; M2 T49 S6 accepted source-order triangle music-stream custody | M2 T24 S1 |
-| 15871 | `MediN` | M2 T49 S6 | existing closure backlog; M2 T49 S6 accepted source-order triangle music-stream custody | M2 T24 S1 |
-| 15873 | `LongN` | M2 T49 S6 | existing closure backlog; M2 T49 S6 accepted source-order triangle music-stream custody | M2 T24 S1 |
-| 15875 | `LoadTriCtrlReg` | M2 T49 S6 | existing closure backlog; M2 T49 S6 accepted source-order triangle music-stream custody | M2 T24 S1 |
-| 15878 | `HandleNoiseMusic` | M2 T49 S7 | existing closure backlog; Accepted source-order T49 S7 noise music beat chain transfer. | M2 T24 S1 |
-| 15885 | `FetchNoiseBeatData` | M2 T49 S7 | existing closure backlog; Accepted source-order T49 S7 noise music beat chain transfer. | M2 T24 S1 |
-| 15894 | `NoiseBeatHandler` | M2 T49 S7 | existing closure backlog; Accepted source-order T49 S7 noise music beat chain transfer. | M2 T24 S1 |
-| 15911 | `StrongBeat` | M2 T49 S7 | existing closure backlog; Accepted source-order T49 S7 noise music beat chain transfer. | M2 T24 S1 |
-| 15917 | `LongBeat` | M2 T49 S7 | existing closure backlog; Accepted source-order T49 S7 noise music beat chain transfer. | M2 T24 S1 |
-| 15923 | `SilentBeat` | M2 T49 S7 | existing closure backlog; Accepted source-order T49 S7 noise music beat chain transfer. | M2 T24 S1 |
-| 15926 | `PlayBeat` | M2 T49 S7 | existing closure backlog; Accepted source-order T49 S7 noise music beat chain transfer. | M2 T24 S1 |
-| 15931 | `ExitMusicHandler` | M2 T49 S7 | existing closure backlog; Accepted source-order T49 S7 noise music beat chain transfer. | M2 T24 S1 |
-| 15934 | `AlternateLengthHandler` | M2 T49 S8 | existing closure backlog; Accepted source-order T49 S8 shared music helper chain transfer. | M2 T24 S1 |
-| 15942 | `ProcessLengthData` | M2 T49 S8 | existing closure backlog; Accepted source-order T49 S8 shared music helper chain transfer. | M2 T24 S1 |
-| 15951 | `LoadControlRegs` | M2 T49 S8 | existing closure backlog; Accepted source-order T49 S8 shared music helper chain transfer. | M2 T24 S1 |
-| 15957 | `NotECstlM` | M2 T49 S8 | existing closure backlog; Accepted source-order T49 S8 shared music helper chain transfer. | M2 T24 S1 |
-| 15962 | `WaterMus` | M2 T49 S8 | existing closure backlog; Accepted source-order T49 S8 shared music helper chain transfer. | M2 T24 S1 |
-| 15963 | `AllMus` | M2 T49 S8 | existing closure backlog; Accepted source-order T49 S8 shared music helper chain transfer. | M2 T24 S1 |
-| 15967 | `LoadEnvelopeData` | M2 T49 S8 | existing closure backlog; Accepted source-order T49 S8 shared music helper chain transfer. | M2 T24 S1 |
-| 15974 | `LoadUsualEnvData` | M2 T49 S8 | existing closure backlog; Accepted source-order T49 S8 shared music helper chain transfer. | M2 T24 S1 |
-| 15981 | `LoadWaterEventMusEnvData` | M2 T49 S8 | existing closure backlog; Accepted source-order T49 S8 shared music helper chain transfer. | M2 T24 S1 |
-| 15989 | `MusicHeaderData` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16027 | `TimeRunningOutHdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16028 | `Star_CloudHdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16029 | `EndOfLevelMusHdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16030 | `ResidualHeaderData` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16031 | `UndergroundMusHdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16032 | `SilenceHdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16033 | `CastleMusHdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16034 | `VictoryMusHdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16035 | `GameOverMusHdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16036 | `WaterMusHdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16037 | `WinCastleMusHdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16038 | `GroundLevelPart1Hdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16039 | `GroundLevelPart2AHdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16040 | `GroundLevelPart2BHdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16041 | `GroundLevelPart2CHdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16042 | `GroundLevelPart3AHdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16043 | `GroundLevelPart3BHdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16044 | `GroundLevelLeadInHdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16045 | `GroundLevelPart4AHdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16046 | `GroundLevelPart4BHdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16047 | `GroundLevelPart4CHdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16048 | `DeathMusHdr` | M2 T49 S9 | existing closure backlog; Accepted T49 S9 source-order music-header transfer. | M2 T24 S1 |
-| 16077 | `Star_CloudMData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
-| 16089 | `GroundM_P1Data` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
-| 16094 | `SilenceData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
-| 16104 | `GroundM_P2AData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
-| 16114 | `GroundM_P2BData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
-| 16124 | `GroundM_P2CData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
-| 16134 | `GroundM_P3AData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
-| 16140 | `GroundM_P3BData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
-| 16148 | `GroundMLdInData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
-| 16158 | `GroundM_P4AData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
-| 16167 | `GroundM_P4BData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
-| 16176 | `DeathMusData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
-| 16179 | `GroundM_P4CData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
-| 16193 | `CastleMusData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
-| 16217 | `GameOverMusData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
-| 16226 | `TimeRunOutMusData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
-| 16236 | `WinLevelMusData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
-| 16253 | `UndergroundMusData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
-| 16264 | `WaterMusData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
-| 16295 | `EndOfCastleMusData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
-| 16313 | `VictoryMusData` | M2 T50 S1 | existing closure backlog; Accepted T50 S1 source-order music-stream payload transfer. | M2 T24 S1 |
-| 16326 | `FreqRegLookupTbl` | M2 T50 S2 | existing closure backlog; Accepted T50 S2 source-order music lookup/envelope transfer. | M2 T24 S1 |
-| 16341 | `MusicLengthLookupTbl` | M2 T50 S2 | existing closure backlog; Accepted T50 S2 source-order music lookup/envelope transfer. | M2 T24 S1 |
-| 16349 | `EndOfCastleMusicEnvData` | M2 T50 S2 | existing closure backlog; Accepted T50 S2 source-order music lookup/envelope transfer. | M2 T24 S1 |
-| 16352 | `AreaMusicEnvData` | M2 T50 S2 | existing closure backlog; Accepted T50 S2 source-order music lookup/envelope transfer. | M2 T24 S1 |
-| 16355 | `WaterEventMusEnvData` | M2 T50 S2 | existing closure backlog; Accepted T50 S2 source-order music lookup/envelope transfer. | M2 T24 S1 |
-| 16362 | `BowserFlameEnvData` | M2 T50 S3 | existing closure backlog; Accepted T50 S3 source-order noise-envelope transfer. | M2 T24 S1 |
-| 16368 | `BrickShatterEnvData` | M2 T50 S3 | existing closure backlog; Accepted T50 S3 source-order noise-envelope transfer. | M2 T24 S1 |
+| 5583 | `PlayerCtrlRoutine` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T23 / S not recorded; M2 T23 S2; M2 T24 S1 |
+| 5595 | `DisJoyp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5597 | `SaveJoyp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5615 | `SizeChk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5623 | `ChkMoveDir` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5629 | `SetMoveDir` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5630 | `PlayerSubs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5649 | `PlayerHole` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5661 | `HoleDie` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5670 | `HoleBottom` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5672 | `ChkHoleX` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5680 | `ExitCtrl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5682 | `CloudExit` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5691 | `Vine_AutoClimb` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5697 | `AutoClimb` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5702 | `SetEntr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5708 | `VerticalPipeEntry` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5722 | `MovePlayerYAxis` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5730 | `SideExitPipeEntry` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5733 | `ChgAreaPipe` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5736 | `ChgAreaMode` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5740 | `ExitCAPipe` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5742 | `EnterSidePipe` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5751 | `RightPipe` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5757 | `PlayerChangeSize` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5762 | `EndChgSize` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5765 | `ExitChgSize` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5769 | `PlayerInjuryBlink` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5776 | `ExitBlink` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5778 | `InitChangeSize` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5786 | `ExitBoth` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5791 | `PlayerDeath` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5797 | `DonePlayerTask` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5804 | `PlayerFireFlower` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5812 | `CyclePlayerPalette` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5821 | `ResetPalFireFlower` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5824 | `ResetPalStar` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5830 | `ExitDeath` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5835 | `FlagpoleSlide` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1; M2 T6 / S not recorded |
+| 5847 | `SlidePlayer` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5848 | `NoFPObj` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5853 | `Hidden1UpCoinAmts` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5856 | `PlayerEndLevel` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1; M2 T6 / S not recorded |
+| 5868 | `ChkStop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5874 | `InCastle` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5876 | `RdyNextA` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5888 | `NextArea` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T15 S3; M2 T24 S1 |
+| 5895 | `ExitNA` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5899 | `PlayerMovementSubs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T23 S1; M2 T24 S1 |
+| 5907 | `SetCrouch` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5908 | `ProcMove` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5916 | `MoveSubs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5923 | `NoMoveSub` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5928 | `OnGroundStateSub` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5933 | `GndMove` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5940 | `FallingSub` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T15 S4; M2 T24 S1 |
+| 5947 | `JumpSwimSub` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T15 S4; M2 T24 S1 |
+| 5959 | `DumpFall` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5961 | `ProcSwim` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5969 | `LRWater` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5972 | `LRAir` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T15 S4; M2 T24 S1 |
+| 5975 | `JSMove` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5982 | `ExitMov1` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5986 | `ClimbAdderLow` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5988 | `ClimbAdderHigh` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 5991 | `ClimbingSub` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6000 | `MoveOnVine` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6019 | `ClimbFD` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6022 | `CSetFDir` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6032 | `ExitCSub` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6033 | `InitCSTimer` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6039 | `JumpMForceData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6042 | `FallMForceData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6045 | `PlayerYSpdData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6048 | `InitMForceData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6051 | `MaxLeftXSpdData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6054 | `MaxRightXSpdData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6058 | `FrictionData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6061 | `Climb_Y_SpeedData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6064 | `Climb_Y_MForceData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6067 | `PlayerPhysicsSub` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6079 | `ProcClimb` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6086 | `SetCAnim` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6089 | `CheckForJumping` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6097 | `NoJump` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6099 | `ProcJumping` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6109 | `InitJS` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6133 | `ChkWtr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6141 | `GetYPhy` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6159 | `PJumpSnd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6163 | `SJumpSnd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6164 | `X_Physics` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6172 | `ProcPRun` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6184 | `ChkRFast` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6191 | `FastXSp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6193 | `SetRTmr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6195 | `GetXPhy` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6201 | `GetXPhy2` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6213 | `ExitPhy` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6217 | `PlayerAnimTmrData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6220 | `GetPlayerAnimSpeed` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6229 | `ChkSkid` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6236 | `SetRunSpd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6238 | `ProcSkid` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6246 | `SetAnimSpd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6252 | `ImposeFriction` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T15 S4; M2 T23 S1; M2 T23 S2; M2 T24 S1 |
+| 6260 | `JoypFrict` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6262 | `LeftFrict` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T23 S1; M2 T23 S2; M2 T24 S1 |
+| 6274 | `RghtFrict` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T23 S1; M2 T23 S2; M2 T24 S1 |
+| 6285 | `XSpdSign` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6290 | `SetAbsSpd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6298 | `ProcFireball_Bubble` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 / S not recorded; M2 T20 S1; M2 T20 S2; M2 T20 S3; M2 T21 S6; M2 T24 / S not recorded; M2 T24 S1 |
+| 6330 | `ProcFireballs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S6; M2 T24 S1 |
+| 6336 | `ProcAirBubbles` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S4; M2 T21 S6; M2 T24 S1 |
+| 6340 | `BublLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S6; M2 T24 S1 |
+| 6347 | `BublExit` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S6; M2 T24 S1 |
+| 6349 | `FireballXSpdData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S6; M2 T24 S1 |
+| 6352 | `FireballObjCore` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T17 S2; M2 T17 S5; M2 T20 / S not recorded; M2 T20 S1; M2 T20 S2; M2 T21 S6; M2 T24 / S not recorded; M2 T24 S1 |
+| 6380 | `RunFB` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S6; M2 T24 S1 |
+| 6401 | `EraseFB` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S6; M2 T24 S1 |
+| 6403 | `NoFBall` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S6; M2 T24 S1 |
+| 6405 | `FireballExplosion` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T21 S6; M2 T24 S1 |
+| 6409 | `BubbleCheck` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T20 S1; M2 T21 S6; M2 T24 S1 |
+| 6419 | `SetupBubble` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S6; M2 T24 S1 |
+| 6425 | `PosBubl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S6; M2 T24 S1 |
+| 6440 | `MoveBubl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S6; M2 T24 S1 |
+| 6450 | `Y_Bubl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S6; M2 T24 S1 |
+| 6451 | `ExitBubl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S6; M2 T24 S1 |
+| 6453 | `Bubble_MForceData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S6; M2 T24 S1 |
+| 6456 | `BubbleTimerData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S6; M2 T24 S1 |
+| 6461 | `RunGameTimer` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T15 S3; M2 T19 S5; M2 T21 S6; M2 T24 S1 |
+| 6486 | `ResGTCtrl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S6; M2 T24 S1 |
+| 6494 | `TimeUpOn` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S6; M2 T24 S1 |
+| 6497 | `ExGTimer` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S6; M2 T24 S1 |
+| 6501 | `WarpZoneObject` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S6; M2 T24 S1 |
+| 6519 | `ProcessWhirlpools` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T22 S1; M2 T24 S1 |
+| 6526 | `WhLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6546 | `NextWh` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6548 | `ExitWh` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6550 | `WhirlpoolActivate` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T22 S1; M2 T24 S1 |
+| 6577 | `LeftWh` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6586 | `SetPWh` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6587 | `WhPull` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6598 | `FlagpoleScoreMods` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6601 | `FlagpoleScoreDigits` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6604 | `FlagpoleRoutine` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S6; M2 T22 S1; M2 T22 S4; M2 T24 S1 |
+| 6635 | `SkipScore` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6636 | `GiveFPScr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6643 | `FPGfx` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S6; M2 T22 S4; M2 T24 S1 |
+| 6646 | `ExitFlagP` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6650 | `Jumpspring_Y_PosData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6653 | `JumpspringHandler` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T24 S1 |
+| 6667 | `DownJSpr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6669 | `PosJSpr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6682 | `BounceJS` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6688 | `DrawJSpr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6698 | `ExJSpring` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6702 | `Setup_Vine` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T22 S1; M2 T24 S1 |
+| 6716 | `NextVO` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6727 | `VineHeightData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6730 | `VineObjectHandler` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T22 S1; M2 T24 S1 |
+| 6746 | `RunVSubs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6752 | `VDrawLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6760 | `KillVine` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6766 | `WrCMTile` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6780 | `ExitVH` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6785 | `CannonBitmasks` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6788 | `ProcessCannons` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T22 S1; M2 T24 S1 |
+| 6792 | `ThreeSChk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6809 | `FireCannon` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6832 | `Chk_BB` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6840 | `Next3Slt` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6842 | `ExCannon` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6846 | `BulletBillXSpdData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6849 | `BulletBillHandler` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T22 S1; M2 T24 S1 |
+| 6862 | `SetupBB` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6876 | `ChkDSte` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6880 | `BBFly` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6881 | `RunBBSubs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6886 | `KillBB` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6891 | `HammerEnemyOfsData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6895 | `HammerXSpdData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6898 | `SpawnHammerObj` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6904 | `SetMOfs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6919 | `NoHammer` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6928 | `ProcHammerObj` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T22 S1; M2 T24 S1 |
+| 6952 | `SetHSpd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6962 | `SetHPos` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6977 | `RunAllH` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6978 | `RunHSubs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 6988 | `CoinBlock` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T22 S1; M2 T24 S1 |
+| 7000 | `SetupJumpCoin` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T21 S5; M2 T22 S1; M2 T24 S1 |
+| 7014 | `JCoinC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T21 S5; M2 T22 S1; M2 T24 S1 |
+| 7025 | `FindEmptyMiscSlot` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S2; M2 T22 S1; M2 T24 S1 |
+| 7027 | `FMiscLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7033 | `UseMiscS` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7038 | `MiscObjectsCore` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S2; M2 T16 S3; M2 T22 S1; M2 T22 S4; M2 T24 S1 |
+| 7040 | `MiscLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7053 | `ProcJumpCoin` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T22 S1; M2 T24 S1 |
+| 7071 | `JCoinRun` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7088 | `RunJCSubs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7093 | `MiscLoopBack` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7100 | `CoinTallyOffsets` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7103 | `ScoreOffsets` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7106 | `StatusBarNybbles` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7109 | `GiveOneCoin` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7125 | `CoinPoints` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7129 | `AddToScore` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7134 | `GetSBNybbles` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7138 | `UpdateNumber` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7145 | `NoZSup` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7150 | `SetupPowerUp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T22 S1; M2 T24 S1 |
+| 7163 | `PwrUpJmp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7175 | `StrType` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7176 | `PutBehind` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7184 | `PowerUpObjHandler` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T22 S1; M2 T24 S1 |
+| 7202 | `ShroomM` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7206 | `GrowThePowerUp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T22 S1; M2 T24 S1 |
+| 7223 | `ChkPUSte` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7226 | `RunPUSubs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T22 S1; M2 T24 S1 |
+| 7232 | `ExitPUp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7241 | `BlockYPosAdderData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7244 | `PlayerHeadCollision` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T22 S1; M2 T24 S1 |
+| 7251 | `DBlockSte` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7265 | `ChkBrick` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7274 | `StartBTmr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7279 | `ContBTmr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7282 | `PutOldMT` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7283 | `PutMTileB` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7297 | `SmallBP` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7298 | `BigBP` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7308 | `Unbreak` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7309 | `InvOBit` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7316 | `InitBlock_XY_Pos` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T15 S4; M2 T22 S1; M2 T24 S1 |
+| 7332 | `BumpBlock` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T22 S1; M2 T24 S1 |
+| 7349 | `BlockCode` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S6; M2 T22 S1; M2 T24 S1 |
+| 7363 | `MushFlowerBlock` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7367 | `StarBlock` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7371 | `ExtraLifeMushBlock` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7376 | `VineBlock` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7381 | `ExitBlockChk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7386 | `BrickQBlockMetatiles` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S6; M2 T18 S2; M2 T22 S1; M2 T24 S1 |
+| 7393 | `BlockBumpedChk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S6; M2 T22 S1; M2 T22 S2; M2 T24 S1 |
+| 7395 | `BumpChkLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7400 | `MatchBump` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7404 | `BrickShatter` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T22 S1; M2 T24 S1 |
+| 7420 | `CheckTopOfBlock` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T22 S1; M2 T24 S1 |
+| 7437 | `TopEx` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7441 | `SpawnBrickChunks` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T22 S1; M2 T24 S1 |
+| 7468 | `BlockObjectsCore` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T15 S4; M2 T16 S1; M2 T16 S2; M2 T17 S1; M2 T17 S6; M2 T22 S1; M2 T24 S1 |
+| 7500 | `ChkTop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7506 | `BouncingBlockHandler` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T22 S1; M2 T24 S1 |
+| 7519 | `KillBlock` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7520 | `UpdSte` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 7527 | `BlockObjMT_Updater` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T18 / S not recorded; M2 T18 S1; M2 T22 S1; M2 T24 S1 |
+| 7529 | `UpdateLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S4; M2 T24 S1 |
+| 7546 | `NextBUpd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S4; M2 T24 S1 |
+| 7555 | `MoveEnemyHorizontally` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 / S not recorded; M2 T17 S2; M2 T21 S3; M2 T24 S1 |
+| 7561 | `MovePlayerHorizontally` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T15 S4; M2 T17 / S not recorded; M2 T21 S3; M2 T24 S1 |
+| 7566 | `MoveObjectHorizontally` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 / S not recorded; M2 T17 S2; M2 T20 S2; M2 T21 S3; M2 T24 S1 |
+| 7581 | `SaveXSpd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 7586 | `UseAdder` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 7604 | `ExXMove` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 7611 | `MovePlayerVertically` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 7617 | `NoJSChk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 7624 | `MoveD_EnemyVertically` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T19 S2; M2 T19 S5; M2 T21 S3; M2 T24 S1 |
+| 7630 | `MoveFallingPlatform` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 7632 | `ContVMove` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 7636 | `MoveRedPTroopaDown` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 7640 | `MoveRedPTroopaUp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 7643 | `MoveRedPTroopa` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 7656 | `MoveDropPlatform` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 7660 | `MoveEnemySlowVert` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 7662 | `SetMdMax` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 7667 | `MoveJ_EnemyVertically` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 7669 | `SetHiMax` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S2; M2 T21 S3; M2 T24 S1 |
+| 7670 | `SetXMoveAmt` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 7678 | `MaxSpdBlockData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 7681 | `ResidualGravityCode` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 7685 | `ImposeGravityBlock` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 / S not recorded; M2 T17 S1; M2 T21 S3; M2 T24 S1 |
+| 7691 | `ImposeGravitySprObj` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 / S not recorded; M2 T17 S5; M2 T19 S2; M2 T21 S3; M2 T24 S1 |
+| 7698 | `MovePlatformDown` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 7702 | `MovePlatformUp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 7711 | `SetDplSpd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 7719 | `RedPTroopaGrav` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 7729 | `ImposeGravity` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S2; M2 T17 / S not recorded; M2 T17 S1; M2 T17 S2; M2 T20 S2; M2 T21 S3; M2 T24 S1 |
+| 7739 | `AlterYP` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 / S not recorded; M2 T21 S3; M2 T24 S1 |
+| 7761 | `ChkUpM` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 7784 | `ExVMove` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 / S not recorded; M2 T21 S3; M2 T24 S1 |
+| 7788 | `EnemiesAndLoopsCore` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 / S not recorded; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
+| 7796 | `ChkAreaTsk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 7801 | `ChkBowserF` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 7807 | `ExitELCore` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 7812 | `LoopCmdWorldNumber` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 7815 | `LoopCmdPageNumber` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 7818 | `LoopCmdYPosition` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 7821 | `ExecGameLoopback` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 7851 | `ProcLoopCommand` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 7857 | `FindLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 7875 | `IncMLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 7883 | `WrongChk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 7886 | `DoLpBack` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 7888 | `InitMLp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 7891 | `InitLCmd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 7896 | `ChkEnemyFrenzy` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S5; M2 T24 S1 |
+| 7911 | `ProcessEnemyData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S6; M2 T19 / S not recorded; M2 T19 S1; M2 T19 S2; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
+| 7918 | `CheckEndofBuffer` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S2; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
+| 7931 | `CheckRightBounds` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 7950 | `CheckPageCtrlRow` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 7967 | `PositionEnemyObj` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S5; M2 T24 S1 |
+| 7983 | `CheckRightExtBounds` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8006 | `CheckForEnemyGroup` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8014 | `BuzzyBeetleMutate` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S5; M2 T24 S1 |
+| 8020 | `StrID` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8028 | `CheckFrenzyBuffer` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S5; M2 T24 S1 |
+| 8035 | `StrFre` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8037 | `InitEnemyObject` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S3; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
+| 8041 | `ExEPar` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8043 | `DoGroup` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8046 | `ParseRow0e` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S5; M2 T24 S1 |
+| 8064 | `NotUse` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8066 | `CheckThreeBytes` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8072 | `Inc3B` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8073 | `Inc2B` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8080 | `CheckpointEnemyID` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S3; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
+| 8092 | `InitEnemyRoutines` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S3; M2 T21 S5; M2 T24 S1 |
+| 8158 | `NoInitCode` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8163 | `InitGoomba` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8169 | `InitPodoboo` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8181 | `InitRetainerObj` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8188 | `NormalXSpdData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8191 | `InitNormalEnemy` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8196 | `GetESpd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8197 | `SetESpd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8202 | `InitRedKoopa` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8210 | `HBroWalkingTimerData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8213 | `InitHammerBro` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8225 | `InitHorizFlySwimEnemy` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8231 | `InitBloober` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8234 | `SmallBBox` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8239 | `InitRedPTroopa` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8245 | `GetCent` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8248 | `TallBBox` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8249 | `SetBBox` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8252 | `InitVStf` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S5; M2 T24 S1 |
+| 8259 | `InitBulletBill` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8268 | `InitCheepCheep` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8279 | `InitLakitu` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8283 | `SetupLakitu` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8289 | `KillLakitu` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8295 | `PRDiffAdjustData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8300 | `LakituAndSpinyHandler` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S3; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
+| 8308 | `ChkLak` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8318 | `ChkNoEn` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8323 | `CreateL` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S5; M2 T24 S1 |
+| 8330 | `RetEOfs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8331 | `ExLSHand` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8335 | `CreateSpiny` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S5; M2 T24 S1 |
+| 8355 | `DifLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8376 | `UsePosv` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8377 | `SetSpSpd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8383 | `SpinyRte` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8390 | `ChpChpEx` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8394 | `FirebarSpinSpdData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8397 | `FirebarSpinDirData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8400 | `InitLongFirebar` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8403 | `InitShortFirebar` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8430 | `FlyCCXPositionData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8436 | `FlyCCXSpeedData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8441 | `FlyCCTimerData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8444 | `InitFlyingCheepCheep` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S3; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
+| 8457 | `MaxCC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8473 | `GSeed` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8483 | `RSeed` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8503 | `D2XPos1` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8513 | `D2XPos2` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8519 | `FinCCSt` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8529 | `InitBowser` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8551 | `DuplicateEnemyObj` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8553 | `FSLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8569 | `FlmEx` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8573 | `FlameYPosData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8576 | `FlameYMFAdderData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8579 | `InitBowserFlame` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S3; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
+| 8597 | `SetFrT` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8604 | `PutAtRightExtent` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S3; M2 T21 S5; M2 T24 S1 |
+| 8615 | `SpawnFromMouth` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8635 | `SetMF` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8640 | `FinishFlame` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S3; M2 T21 S5; M2 T24 S1 |
+| 8653 | `FireworksXPosData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8656 | `FireworksYPosData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8659 | `InitFireworks` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S3; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
+| 8666 | `StarFChk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8697 | `ExitFWk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8701 | `Bitmasks` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8704 | `Enemy17YPosData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8707 | `SwimCC_IDData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8710 | `BulletBillCheepCheep` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S3; M2 T21 S5; M2 T24 S1 |
+| 8722 | `ChkW2` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8726 | `Get17ID` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8730 | `Set17ID` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S3; M2 T21 S5; M2 T24 S1 |
+| 8736 | `GetRBit` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S3; M2 T21 S5; M2 T24 S1 |
+| 8738 | `ChkRBit` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8746 | `AddFBit` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8755 | `DoBulletBills` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8757 | `BB_SLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8765 | `ExF17` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8767 | `FireBulletBill` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8780 | `HandleGroupEnemies` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S5; M2 T24 S1 |
+| 8792 | `PullID` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8793 | `SnglID` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8798 | `SetYGp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8808 | `CntGrp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8809 | `GrLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8810 | `GSltLp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8835 | `NextED` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8839 | `InitPiranhaPlant` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8855 | `InitEnemyFrenzy` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S3; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
+| 8872 | `NoFrenzyCode` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8877 | `EndFrenzy` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S3; M2 T21 S5; M2 T24 S1 |
+| 8879 | `LakituChk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8884 | `NextFSlot` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8893 | `InitJumpGPTroopa` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8898 | `TallBBox2` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8899 | `SetBBox2` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8904 | `InitBalPlatform` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8911 | `AlignP` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8917 | `SetBPA` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8925 | `InitDropPlatform` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8932 | `InitHoriPlatform` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8939 | `InitVertPlatform` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8947 | `SetYO` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8955 | `CommonPlatCode` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8957 | `SPBBox` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8964 | `CasPBB` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8969 | `LargeLiftUp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8973 | `LargeLiftDown` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8976 | `LargeLiftBBox` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8981 | `PlatLiftUp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8990 | `PlatLiftDown` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 8998 | `CommonSmallLift` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9007 | `PlatPosDataLow` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9010 | `PlatPosDataHigh` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9013 | `PosPlatform` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9025 | `EndOfEnemyInitCode` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9030 | `RunEnemyObjectsCore` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9038 | `JmpEO` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9080 | `NoRunCode` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9085 | `RunRetainerObj` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9092 | `RunNormalEnemies` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T19 S4; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
+| 9105 | `SkipMove` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9107 | `EnemyMovementSubs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9135 | `NoMoveCode` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9140 | `RunBowserFlame` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9150 | `RunFirebarObj` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9156 | `RunSmallPlatform` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S4; M2 T21 S5; M2 T24 S1; M2 T5 / S not recorded |
+| 9168 | `RunLargePlatform` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S4; M2 T21 S5; M2 T24 S1; M2 T5 / S not recorded |
+| 9176 | `SkipPT` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9182 | `LargePlatformSubroutines` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9198 | `EraseEnemyObject` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9212 | `MovePodoboo` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9224 | `PdbM` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9229 | `HammerThrowTmrData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9232 | `XSpeedAdderData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9235 | `RevivedXSpeed` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9238 | `ProcHammerBro` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9243 | `ChkJH` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9260 | `DecHT` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9263 | `HammerBroJumpLData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9266 | `HammerBroJumpCode` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9285 | `SetHJ` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9295 | `HJump` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9301 | `MoveHammerBroXDir` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9307 | `Shimmy` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9316 | `SetShim` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9318 | `MoveNormalEnemy` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T19 S5; M2 T21 S5; M2 T24 S1 |
+| 9336 | `FallE` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S5; M2 T24 S1 |
+| 9347 | `MEHor` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9349 | `SlowM` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9350 | `SteadM` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9355 | `AddHS` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9363 | `ReviveStunned` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9377 | `SetRSpd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9381 | `MoveDefeatedEnemy` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9385 | `ChkKillGoomba` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9392 | `NKGmba` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9396 | `MoveJumpingEnemy` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S5; M2 T24 S1 |
+| 9402 | `ProcMoveRedPTroopa` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9414 | `NoIncPT` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9416 | `MoveRedPTUpOrDown` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9421 | `MovPTDwn` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9427 | `MoveFlyGreenPTroopa` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9438 | `YSway` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9443 | `NoMGPT` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9445 | `XMoveCntr_GreenPTroopa` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9448 | `XMoveCntr_Platform` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9460 | `NoIncXM` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9461 | `IncPXM` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9463 | `DecSeXM` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9468 | `MoveWithXMCntrs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9481 | `XMRight` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9490 | `BlooberBitmasks` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9493 | `MoveBloober` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9506 | `FBLeft` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9510 | `SBMDir` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9512 | `BlooberSwim` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9520 | `SwimX` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9532 | `LeftSwim` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9542 | `MoveDefeatedBloober` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S5; M2 T24 S1 |
+| 9545 | `ProcSwimmingB` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9565 | `BSwimE` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9567 | `SlowSwim` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9579 | `NoSSw` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9581 | `ChkForFloatdown` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9585 | `Floatdown` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9590 | `NoFD` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9592 | `ChkNearPlayer` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9603 | `MoveBulletBill` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9608 | `NotDefB` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9616 | `SwimCCXMoveData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9620 | `MoveSwimmingCheepCheep` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S5; M2 T24 S1 |
+| 9625 | `CCSwim` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9660 | `CCSwimUpwards` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9671 | `ChkSwimYPos` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9682 | `YPDiff` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9686 | `ExSwCC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9703 | `FirebarPosLookupTbl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9716 | `FirebarMirrorData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9719 | `FirebarTblOffsets` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9723 | `FirebarYPos` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9726 | `ProcFirebar` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9737 | `SusFbar` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9745 | `SkpFSte` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9748 | `SetupGFB` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9766 | `SetMFbar` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9769 | `DrawFbar` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9778 | `NextFbar` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9782 | `SkipFBar` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9784 | `DrawFirebar_Collision` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9793 | `AddHA` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9803 | `SubtR1` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9805 | `ChkFOfs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9809 | `VAHandl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9817 | `AddVA` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9819 | `SetVFbr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9822 | `FirebarCollision` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9838 | `AdjSm` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9844 | `BigJp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9845 | `FBCLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9851 | `ChkVFBD` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9866 | `ChkFBCl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9868 | `Chk2Ofs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9877 | `ChgSDir` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9882 | `SetSDir` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9889 | `NoColFB` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9896 | `GetFirebarPosition` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9904 | `GetHAdder` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9922 | `GetVAdder` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9941 | `PRandomSubtracter` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9944 | `FlyCCBPriority` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9947 | `MoveFlyingCheepCheep` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S3; M2 T21 S5; M2 T24 S1 |
+| 9954 | `FlyCC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9971 | `AddCCF` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9982 | `BPGet` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9990 | `LakituDiffAdj` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 9993 | `MoveLakitu` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S3; M2 T21 S5; M2 T24 S1 |
+| 9998 | `ChkLS` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10005 | `Fr12S` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10008 | `LdLDa` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10013 | `SetLSpd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10024 | `SetLMov` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10027 | `PlayerLakituDiff` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S3; M2 T21 S5; M2 T24 S1 |
+| 10037 | `ChkLakDif` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10053 | `SetLMovD` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10055 | `ChkPSpeed` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10073 | `ChkSpinyO` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10078 | `ChkEmySpd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10081 | `SubDifAdj` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10083 | `SPixelLak` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10087 | `ExMoveLak` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10092 | `BridgeCollapseData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10098 | `BridgeCollapse` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10111 | `SetM2` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10116 | `MoveD_Bowser` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10120 | `RemoveBridge` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10152 | `NoBFall` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10156 | `PRandomRange` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10159 | `RunBowser` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10167 | `KillAllEnemies` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10169 | `KillLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10176 | `BowserControl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10182 | `ChkMouth` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10185 | `FeetTmr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10192 | `ResetMDr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10197 | `B_FaceP` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10211 | `GetPRCmp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10222 | `GetDToO` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10237 | `CompDToO` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10240 | `HammerChk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10250 | `SetHmrTmr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10258 | `SkipToFB` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10259 | `MakeBJump` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10265 | `ChkFireB` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10270 | `SpawnFBr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10283 | `SetFBTmr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10289 | `BowserGfxHandler` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10296 | `CopyFToR` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10321 | `ExBGfxH` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10323 | `ProcessBowserHalf` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10337 | `FlameTimerData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10340 | `SetFlameTimer` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10347 | `ExFl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10349 | `ProcBowserFlame` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S3; M2 T19 S4; M2 T21 S5; M2 T24 S1 |
+| 10356 | `SFlmX` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10374 | `SetGfxF` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10384 | `FlmeAt` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10388 | `DrawFlameLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S4; M2 T21 S5; M2 T24 S1 |
+| 10417 | `M3FOfs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10423 | `M2FOfs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10429 | `M1FOfs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10434 | `ExFlmeD` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10438 | `RunFireworks` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S3; M2 T19 S4; M2 T21 S5; M2 T24 S1 |
+| 10447 | `SetupExpl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10457 | `FireworksSoundScore` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S4; M2 T21 S5; M2 T24 S1 |
+| 10468 | `StarFlagYPosAdder` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10471 | `StarFlagXPosAdder` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10474 | `StarFlagTileData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10477 | `RunStarFlagObj` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T18 S2; M2 T19 S3; M2 T19 S4; M2 T21 S5; M2 T24 S1 |
+| 10491 | `GameTimerFireworks` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10503 | `SetFWC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10506 | `IncrementSFTask1` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10509 | `StarFlagExit` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T18 S2; M2 T21 S5; M2 T24 / S not recorded; M2 T24 S1 |
+| 10512 | `AwardGameTimerPoints` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S4; M2 T21 S5; M2 T24 S1 |
+| 10522 | `NoTTick` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10529 | `EndAreaPoints` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10534 | `ELPGive` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10543 | `RaiseFlagSetoffFWorks` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10549 | `SetoffF` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10555 | `DrawStarFlag` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T18 S2; M2 T21 S5; M2 T24 S1 |
+| 10559 | `DSFLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10580 | `DrawFlagSetTimer` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10585 | `IncrementSFTask2` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10589 | `DelayToAreaEnd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10596 | `StarFlagExit2` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10602 | `MovePiranhaPlant` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10619 | `ChkPlayerNearPipe` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10624 | `ReversePlantSpeed` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10632 | `SetupToMovePPlant` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10638 | `RiseFallPiranhaPlant` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10656 | `PutinPipe` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10664 | `FirebarSpin` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10677 | `SpinCounterClockwise` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10692 | `BalancePlatform` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10697 | `DoBPl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10701 | `CheckBalPlatform` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10709 | `ChkForFall` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10720 | `MakePlatformFall` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10723 | `ChkOtherForFall` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10733 | `ChkToMoveBalPlat` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10750 | `ColFlg` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10752 | `PlatUp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10754 | `PlatSt` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10756 | `PlatDn` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10758 | `DoOtherPlatform` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10771 | `DrawEraseRope` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10796 | `EraseR1` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10800 | `OtherRope` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10819 | `EraseR2` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10822 | `EndRp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10828 | `ExitRp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10831 | `SetupPlatformRope` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10840 | `GetLRp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10857 | `GetHRp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10883 | `ExPRp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10885 | `InitPlatformFall` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10898 | `StopPlatforms` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10904 | `PlatformFall` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10916 | `ExPF` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10921 | `YMovingPlatform` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10933 | `SkipIY` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10935 | `ChkYCenterPos` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10941 | `YMDown` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10943 | `ChkYPCollision` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10947 | `ExYPl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10952 | `XMovingPlatform` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10959 | `PositionPlayerOnHPlat` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10969 | `PPHSubt` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10970 | `SetPVar` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10973 | `ExXMP` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10977 | `DropPlatform` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10982 | `ExDPl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10987 | `RightPlatform` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10995 | `ExRPl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 10999 | `MoveLargeLiftPlat` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 11003 | `MoveSmallPlatform` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 11007 | `MoveLiftPlatforms` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 11019 | `ChkSmallPlatCollision` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 11023 | `ExLiftP` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 11031 | `OffscreenBoundsCheck` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 11041 | `LimitB` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 11042 | `ExtendLB` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 11074 | `TooFar` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 11075 | `ExScrnBd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S5; M2 T24 S1 |
+| 11085 | `FireballEnemyCollision` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T20 S3; M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
+| 11101 | `FireballEnemyCDLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
+| 11115 | `GoombaDie` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
+| 11120 | `NotGoomba` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
+| 11135 | `NoFToECol` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
+| 11141 | `ExitFBallEnemy` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
+| 11145 | `BowserIdentities` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
+| 11148 | `HandleEnemyFBallCol` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T17 S5; M2 T20 S3; M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
+| 11160 | `ChkBuzzyBeetle` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
+| 11167 | `HurtBowser` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T20 S3; M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
+| 11182 | `SetDBSte` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
+| 11189 | `ChkOtherEnemies` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
+| 11197 | `ShellOrBlockDefeat` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
+| 11204 | `StnE` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
+| 11215 | `GoombaPoints` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
+| 11220 | `EnemySmackScore` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T20 S3; M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
+| 11224 | `ExHCF` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
+| 11228 | `PlayerHammerCollision` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
+| 11256 | `ClHCol` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
+| 11258 | `ExPHC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
+| 11262 | `HandlePowerUpCollision` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T18 S3; M2 T21 S3; M2 T24 S1 |
+| 11279 | `Shroom_Flower_PUp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11292 | `SetFor1Up` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11297 | `UpToSuper` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11302 | `UpToFiery` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T18 S3; M2 T21 S3; M2 T24 S1 |
+| 11305 | `NoPUp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11309 | `ResidualXSpdData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11312 | `KickedShellXSpdData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11315 | `DemotedKoopaXSpdData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11318 | `PlayerEnemyCollision` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T19 S5; M2 T21 S3; M2 T24 S1 |
+| 11339 | `NoPECol` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11341 | `CheckForPUpCollision` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11346 | `EColl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11350 | `KickedShellPtsData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11353 | `HandlePECollisions` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11398 | `KSPts` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11399 | `ExPEC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11401 | `ChkForPlayerInjury` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11405 | `ChkInj` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11413 | `ChkETmrs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11421 | `TInjE` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11426 | `InjurePlayer` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1; M2 T6 / S not recorded |
+| 11430 | `ForceInjury` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11440 | `SetKRout` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11441 | `SetPRout` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11448 | `ExInjColRoutines` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11452 | `KillPlayer` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1; M2 T6 / S not recorded |
+| 11461 | `StompedEnemyPtsData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11464 | `EnemyStomped` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11490 | `EnemyStompedPts` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11506 | `ChkForDemoteKoopa` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11521 | `RevivalRateData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11524 | `HandleStompedShellE` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11536 | `SBnce` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11540 | `ChkEnemyFaceRight` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11545 | `LInj` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11549 | `EnemyFacePlayer` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11554 | `SFcRt` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11558 | `SetupFloateyNumber` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 11566 | `ExSFN` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11571 | `SetBitsMask` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S3; M2 T24 S1 |
+| 11574 | `ClearBitsMask` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11577 | `EnemiesCollision` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S3; M2 T24 S1 |
+| 11595 | `ECLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11629 | `YesEC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11632 | `NoEnemyCollision` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11637 | `ReadyNextEnemy` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11644 | `ExitECRoutine` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11648 | `ProcEnemyCollisions` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S5; M2 T21 S3; M2 T24 S1 |
+| 11667 | `ShellCollisions` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11680 | `ExitProcessEColl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11683 | `ProcSecondEnemyColl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11701 | `MoveEOfs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11707 | `EnemyTurnAround` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11721 | `RXSpd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11729 | `ExTA` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11734 | `LargePlatformCollision` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11748 | `ChkForPlayerC_LargeP` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11762 | `ExLPC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11768 | `SmallPlatformCollision` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11777 | `ChkSmallPlatLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11788 | `MoveBoundBox` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11799 | `ExSPC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11804 | `ProcSPlatCollisions` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11807 | `ProcLPlatCollisions` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11818 | `ChkForTopCollision` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11834 | `SetCollisionFlag` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11841 | `PlatformSideCollisions` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11855 | `SideC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11856 | `NoSideC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11861 | `PlayerPosSPlatData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11864 | `PositionPlayerOnS_Plat` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11871 | `PositionPlayerOnVPlat` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11888 | `ExPlPos` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11892 | `CheckPlayerVertical` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11901 | `ExCPV` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11905 | `GetEnemyBoundBoxOfs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11908 | `GetEnemyBoundBoxOfsArg` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11924 | `PlayerBGUpperExtent` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11927 | `PlayerBGCollision` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T17 S6; M2 T21 S3; M2 T24 S1 |
+| 11942 | `SetFallS` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11943 | `SetPSte` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11944 | `ChkOnScr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11952 | `ExPBGCol` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11954 | `ChkCollSize` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11964 | `GBBAdr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 11971 | `HeadChk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
+| 11992 | `SolidOrClimb` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
+| 11997 | `NYSpd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
+| 12000 | `DoFootCheck` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12019 | `AwardTouchedCoin` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
+| 12022 | `ChkFootMTile` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T17 S6; M2 T21 S3; M2 T24 S1 |
+| 12030 | `ContChk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12040 | `LandPlyr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
+| 12049 | `InitSteP` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
+| 12052 | `DoPlayerSideCheck` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T17 S6; M2 T21 S3; M2 T24 S1 |
+| 12059 | `SideCheckLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12075 | `BHalf` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12086 | `ExSCH` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12088 | `CheckSideMTiles` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
+| 12094 | `ContSChk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12101 | `ChkPBtm` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
+| 12111 | `PipeDwnS` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
+| 12115 | `PlyrPipe` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
+| 12124 | `SetCATmr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12126 | `ChkGERtn` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12140 | `StopPlayerMove` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
+| 12142 | `ExCSM` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12144 | `AreaChangeTimerData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12147 | `HandleCoinMetatile` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
+| 12152 | `HandleAxeMetatile` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T21 S3; M2 T24 S1; M2 T6 / S not recorded |
+| 12159 | `ErACM` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
+| 12169 | `ClimbXPosAdder` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12172 | `ClimbPLocAdder` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12175 | `FlagpoleYPosData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12178 | `HandleClimbing` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12184 | `ExHC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12186 | `ChkForFlagpole` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12192 | `FlagpoleCollision` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12212 | `ChkFlagpoleYPosLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12217 | `MtchF` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12218 | `RunFR` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12222 | `VineCollision` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12231 | `PutPlayerOnVine` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12244 | `SetVXPl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12259 | `ExPVne` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12263 | `ChkInvisibleMTiles` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
+| 12267 | `ExCInvT` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12273 | `ChkForLandJumpSpring` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
+| 12284 | `ExCJSp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12286 | `ChkJumpspringMetatiles` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
+| 12292 | `JSFnd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12293 | `NoJSFnd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12295 | `HandlePipeEntry` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T21 S3; M2 T24 S1; M2 T6 / S not recorded |
+| 12326 | `GetWNum` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12341 | `ExPipeE` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12343 | `ImpedePlayerMove` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T17 S6; M2 T21 S3; M2 T24 S1 |
+| 12354 | `RImpd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12358 | `NXSpd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12365 | `PlatF` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12372 | `ExIPM` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12380 | `SolidMTileUpperExt` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12383 | `CheckForSolidMTiles` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
+| 12388 | `ClimbMTileUpperExt` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12391 | `CheckForClimbMTiles` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
+| 12396 | `CheckForCoinMTiles` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S4; M2 T21 S3; M2 T24 S1 |
+| 12403 | `CoinSd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12407 | `GetMTileAttrib` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12415 | `ExEBG` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12420 | `EnemyBGCStateData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 12423 | `EnemyBGCXSpdData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12426 | `EnemyToBGCollisionDet` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T19 S3; M2 T19 S5; M2 T21 S3; M2 T24 S1 |
+| 12439 | `DoIDCheckBGColl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12443 | `HBChk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12446 | `CInvu` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12452 | `YesIn` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12455 | `NoEToBGCollision` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12461 | `HandleEToBGCollision` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 12476 | `GiveOEPoints` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12480 | `ChkToStunEnemies` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 12489 | `Demote` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12491 | `SetStun` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 12503 | `SetWYSpd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12504 | `SetNotW` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12509 | `ChkBBill` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12515 | `NoCDirF` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12518 | `ExEBGChk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12523 | `LandEnemyProperly` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 12535 | `SChkA` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12537 | `ChkLandedEnemyState` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12552 | `SetForStn` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12556 | `ExSteChk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12558 | `ProcEnemyDirection` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12571 | `InvtD` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12575 | `CNwCDir` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12580 | `LandEnemyInitState` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12589 | `NMovShellFallBit` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12597 | `ChkForRedKoopa` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 12603 | `Chk2MSBSt` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12610 | `GetSteFromD` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12611 | `SetD6Ste` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12617 | `DoEnemySideCheck` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 12624 | `SdeCLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12632 | `NextSdeC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12636 | `ExESdeC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12638 | `ChkForBump_HammerBroJ` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12646 | `NoBump` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12654 | `InvEnemyDir` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12660 | `PlayerEnemyDiff` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 12671 | `EnemyLanding` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 12679 | `SubtEnemyYPos` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 12686 | `EnemyJump` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 12701 | `DoSide` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12705 | `HammerBroBGColl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 12711 | `KillEnemyAboveBlock` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 12717 | `UnderHammerBro` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12726 | `NoUnderHammerBro` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12732 | `ChkUnderEnemy` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 12737 | `ChkForNonSolids` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 12747 | `NSFnd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12751 | `FireballBGCollision` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T20 S3; M2 T21 S3; M2 T24 S1 |
+| 12772 | `ClearBounceFlag` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12777 | `InitFireballExplode` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12791 | `BoundBoxCtrlData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12805 | `GetFireballBoundBox` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T17 S3; M2 T21 S3; M2 T24 / S not recorded; M2 T24 S1 |
+| 12813 | `GetMiscBoundBox` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S2; M2 T17 S3; M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 12819 | `FBallB` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12822 | `GetEnemyBoundBox` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T17 S3; M2 T19 S5; M2 T21 S3; M2 T24 S1 |
+| 12828 | `SmallPlatformBoundBox` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12833 | `GetMaskedOffScrBits` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12844 | `CMBits` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12850 | `LargePlatformBoundBox` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12857 | `SetupEOffsetFBBox` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12866 | `MoveBoundBoxOffscreen` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12878 | `BoundingBoxCore` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T17 / S not recorded; M2 T17 S3; M2 T17 S4; M2 T21 S3; M2 T24 S1 |
+| 12916 | `CheckRightScreenBBox` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S3; M2 T21 S3; M2 T24 S1 |
+| 12935 | `SORte` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12936 | `NoOfs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12939 | `CheckLeftScreenBBox` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S3; M2 T21 S3; M2 T24 S1 |
+| 12948 | `SOLft` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12949 | `NoOfs2` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12956 | `PlayerCollisionCore` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S3; M2 T21 S3; M2 T24 S1 |
+| 12959 | `SprObjectCollisionCore` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 12964 | `CollisionCoreLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12979 | `SecondBoxVerticalChk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 12989 | `FirstBoxGreater` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13002 | `NoCollisionFound` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13007 | `CollisionFound` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13023 | `BlockBufferChk_Enemy` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 13032 | `ResidualMiscObjectCode` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13040 | `BlockBufferChk_FBall` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 13046 | `ResJmpM` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13047 | `BBChk_E` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13052 | `BlockBufferAdderData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13055 | `BlockBuffer_X_Adder` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13061 | `BlockBuffer_Y_Adder` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13067 | `BlockBufferColli_Feet` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13070 | `BlockBufferColli_Head` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13074 | `BlockBufferColli_Side` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13078 | `BlockBufferCollision` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S3; M2 T17 S4; M2 T17 S5; M2 T21 S3; M2 T24 S1 |
+| 13111 | `RetXC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13112 | `RetYC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13126 | `VineYPosAdder` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13129 | `DrawVine` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T22 S1; M2 T24 S1 |
+| 13156 | `VineTL` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13169 | `SkpVTop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13170 | `ChkFTop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13177 | `NextVSp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13187 | `SixSpriteStacker` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13189 | `StkLp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13203 | `FirstSprXPos` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13206 | `FirstSprYPos` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13209 | `SecondSprXPos` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13212 | `SecondSprYPos` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13215 | `FirstSprTilenum` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13218 | `SecondSprTilenum` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13221 | `HammerSprAttrib` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13224 | `DrawHammer` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S4; M2 T21 S3; M2 T24 S1 |
+| 13232 | `ForceHPose` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13234 | `GetHPose` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13239 | `RenderH` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13268 | `NoHOffscr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13277 | `FlagpoleScoreNumTiles` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13284 | `FlagpoleGfxHandler` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S6; M2 T21 S3; M2 T22 S4; M2 T24 S1 |
+| 13326 | `ChkFlagOffscreen` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13335 | `MoveSixSpritesOffscreen` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13338 | `DumpSixSpr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13342 | `DumpFourSpr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13345 | `DumpThreeSpr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13348 | `DumpTwoSpr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T17 S6; M2 T21 S3; M2 T24 S1 |
+| 13352 | `ExitDumpSpr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13357 | `DrawLargePlatform` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13374 | `ShrinkPlatform` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13377 | `SetLast2Platform` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13386 | `SetPlatformTilenum` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13402 | `SChk2` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13408 | `SChk3` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13414 | `SChk4` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13420 | `SChk5` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13426 | `SChk6` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13431 | `SLChk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13435 | `ExDLPl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13439 | `DrawFloateyNumber_Coin` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13444 | `NotRsNum` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13460 | `JumpingCoinTiles` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13463 | `JCoinGfxHandler` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13489 | `ExJCGfx` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13500 | `PowerUpGfxTable` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13506 | `PowerUpAttributes` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13509 | `DrawPowerUp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T21 S3; M2 T24 S1 |
+| 13530 | `PUpDrawLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13555 | `FlipPUpRightSide` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13562 | `PUpOfs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13576 | `EnemyGraphicsTable` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13621 | `EnemyGfxTableOffsets` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13627 | `EnemyAttributeData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13633 | `EnemyAnimTimingBMask` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13636 | `JumpspringFrameOffsets` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13639 | `EnemyGfxHandler` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T19 S4; M2 T21 S3; M2 T24 S1 |
+| 13661 | `CheckForRetainerObj` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13674 | `CheckForBulletBillCV` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13682 | `SBBAt` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13687 | `CheckForJumpspring` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13694 | `CheckForPodoboo` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13704 | `CheckBowserGfxFlag` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13711 | `SBwsrGfxOfs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13713 | `CheckForGoomba` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13722 | `GmbaAnim` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13732 | `CheckBowserFront` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13746 | `ChkFrontSte` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13750 | `FlipBowserOver` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13753 | `DrawBowser` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13756 | `CheckBowserRear` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13761 | `ChkRearSte` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13770 | `CheckForSpiny` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13780 | `NotEgg` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13782 | `CheckForLakitu` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13792 | `NoLAFr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13794 | `CheckUpsideDownShell` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13807 | `CheckRightSideUpShell` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T21 S3; M2 T24 S1 |
+| 13819 | `CheckForDefdGoomba` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T21 S3; M2 T24 S1 |
+| 13829 | `CheckForHammerBro` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13841 | `CheckForBloober` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13856 | `CheckToAnimateEnemy` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13878 | `CheckForSecondFrame` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13883 | `CheckAnimationStop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13893 | `CheckDefeatedState` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13905 | `DrawEnemyObject` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13916 | `SkipToOffScrChk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13919 | `CheckForVerticalFlip` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13943 | `FlipEnemyVertically` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13957 | `CheckForESymmetry` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13965 | `ContES` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13975 | `ESRtnr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13979 | `SpnySC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 13982 | `MirrorEnemyGfx` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T21 S3; M2 T24 S1 |
+| 13994 | `EggExc` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14007 | `CheckToMirrorLakitu` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14026 | `NVFLak` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14033 | `CheckToMirrorJSpring` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14044 | `SprObjectOffscrChk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14054 | `LcChk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14060 | `Row3C` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14067 | `Row23C` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14073 | `AllRowC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14085 | `ExEGHandler` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14088 | `DrawEnemyObjRow` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14093 | `DrawOneSpriteRow` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14097 | `MoveESprRowOffscreen` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14104 | `MoveESprColOffscreen` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14119 | `DefaultBlockObjTiles` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14122 | `DrawBlock` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S1; M2 T16 S2; M2 T16 S3; M2 T21 S3; M2 T24 S1 |
+| 14133 | `DBlkLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14147 | `ChkRep` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14159 | `SetBFlip` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14167 | `BlkOffscr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14174 | `PullOfsB` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14175 | `ChkLeftCo` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14178 | `MoveColOffscreen` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14182 | `ExDBlk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14187 | `DrawBrickChunks` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S2; M2 T21 S3; M2 T24 S1 |
+| 14197 | `DChunks` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14242 | `ChnkOfs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14250 | `ExBCDr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14254 | `DrawFireball` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14261 | `DrawFirebar` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14275 | `FireA` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14280 | `ExplosionTiles` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14283 | `DrawExplosion_Fireball` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14292 | `DrawExplosion_Fireworks` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14327 | `KillFireBall` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14334 | `DrawSmallPlatform` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14361 | `TopSP` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14369 | `BotSP` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14379 | `SOfs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14386 | `SOfs2` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14392 | `ExSPl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14397 | `DrawBubble` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S4; M2 T21 S3; M2 T24 S1 |
+| 14413 | `ExDBub` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14418 | `PlayerGfxTblOffsets` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S3; M2 T24 S1 |
+| 14424 | `PlayerGraphicsTable` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14457 | `SwimKickTileNum` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14460 | `PlayerGfxHandler` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T15 S3; M2 T16 S3; M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14466 | `CntPl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14489 | `SwimKT` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14495 | `BigKTS` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14497 | `ExPGH` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14499 | `FindPlayerAction` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14503 | `DoChangeSize` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14507 | `PlayerKilled` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14511 | `PlayerGfxProcessing` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14532 | `SUpdR` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14535 | `PlayerOffscreenChk` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T24 / S not recorded; M2 T24 S1 |
+| 14547 | `PROfsLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 / S not recorded; M2 T24 S1 |
+| 14551 | `NPROffscr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 / S not recorded; M2 T24 S1 |
+| 14561 | `IntermediatePlayerData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14564 | `DrawPlayer_Intermediate` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14566 | `PIntLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14587 | `RenderPlayerSub` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T15 / S not recorded; M2 T15 S3; M2 T16 S3; M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14601 | `DrawPlayerLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14610 | `ProcessPlayerAction` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14626 | `ProcOnGroundActs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14642 | `NonAnimatedActs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14649 | `ActionFalling` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14654 | `ActionWalkRun` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14659 | `ActionClimbing` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14666 | `ActionSwimming` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14676 | `GetCurrentAnimOffset` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14680 | `FourFrameExtent` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14684 | `ThreeFrameExtent` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14687 | `AnimationControl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14701 | `SetAnimC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14702 | `ExAnimC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14705 | `GetGfxOffsetAdder` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14712 | `SzOfs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14714 | `ChangeSizeOffsetAdder` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14718 | `HandleChangeSize` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14728 | `CSzNext` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14729 | `GorSLog` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14734 | `GetOffsetFromAnimCtrl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14741 | `ShrinkPlayer` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14750 | `ShrPlF` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14753 | `ChkForPlayerAttrib` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14767 | `KilledAtt` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14774 | `C_S_IGAtt` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14781 | `ExPlyrAt` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14786 | `RelativePlayerPosition` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T15 S3; M2 T16 S3; M2 T17 S4; M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14791 | `RelativeBubblePosition` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S4; M2 T21 S2; M2 T24 S1 |
+| 14797 | `RelativeFireballPosition` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14801 | `RelWOfs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 14805 | `RelativeMiscPosition` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S2; M2 T17 S5; M2 T19 S4; M2 T21 S2; M2 T24 S1 |
+| 14811 | `RelativeEnemyPosition` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T17 S5; M2 T19 / S not recorded; M2 T19 S4; M2 T21 S2; M2 T22 S4; M2 T24 S1 |
+| 14816 | `RelativeBlockPosition` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T15 S4; M2 T16 S1; M2 T16 S2; M2 T21 S2; M2 T24 S1 |
+| 14825 | `VariableObjOfsRelPos` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T21 S2; M2 T24 S1 |
+| 14834 | `GetObjRelativePosition` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S2; M2 T16 S3; M2 T21 S2; M2 T24 S1 |
+| 14846 | `GetPlayerOffscreenBits` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14851 | `GetFireballOffscreenBits` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T20 S2; M2 T21 S2; M2 T24 / S not recorded; M2 T24 S1 |
+| 14857 | `GetBubbleOffscreenBits` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S4; M2 T21 S2; M2 T24 S1 |
+| 14863 | `GetMiscOffscreenBits` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S2; M2 T17 S5; M2 T19 S4; M2 T21 S2; M2 T24 S1 |
+| 14869 | `ObjOffsetData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 14872 | `GetProperObjOffset` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T21 S2; M2 T24 S1 |
+| 14879 | `GetEnemyOffscreenBits` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T19 S4; M2 T21 S2; M2 T22 S4; M2 T24 S1 |
+| 14884 | `GetBlockOffscreenBits` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T15 S4; M2 T16 S1; M2 T16 S2; M2 T21 S2; M2 T24 S1 |
+| 14888 | `SetOffscrBitsOffset` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 14894 | `GetOffScreenBitsSet` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S2; M2 T16 S3; M2 T21 S2; M2 T24 S1 |
+| 14911 | `RunOffscrBitsSubs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 14927 | `XOffscreenBitsData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 14931 | `DefaultXOnscreenOfs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 14934 | `GetXOffscreenBits` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S2; M2 T16 S3; M2 T21 S2; M2 T24 S1 |
+| 14937 | `XOfsLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 14953 | `XLdBData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 14959 | `ExXOfsBS` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 14963 | `YOffscreenBitsData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 14968 | `DefaultYOnscreenOfs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 14971 | `HighPosUnitData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 14974 | `GetYOffscreenBits` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S2; M2 T16 S3; M2 T21 S2; M2 T24 S1 |
+| 14977 | `YOfsLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 14993 | `YLdBData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 14999 | `ExYOfsBS` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 15003 | `DividePDiff` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 15015 | `SetOscrO` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 15016 | `ExDivPD` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 15025 | `DrawSpriteObject` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T16 S3; M2 T21 S2; M2 T24 S1 |
+| 15036 | `NoHFlip` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 15040 | `SetHFAt` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 15070 | `SoundEngine` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 / S not recorded; M2 T24 S1; M2 T7 / S not recorded |
+| 15075 | `SndOn` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15084 | `InPause` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15099 | `PTone1F` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15101 | `ContPau` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15108 | `PTone2F` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15109 | `PTRegC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15112 | `DecPauC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15121 | `SkipPIn` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15125 | `RunSoundSubroutines` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15134 | `SkipSoundSubroutines` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15147 | `NoIncDAC` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15150 | `StrWave` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15155 | `Dump_Squ1_Regs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15160 | `PlaySqu1Sfx` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15163 | `SetFreq_Squ1` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15166 | `Dump_Freq_Regs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15174 | `NoTone` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15176 | `Dump_Sq2_Regs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15181 | `PlaySqu2Sfx` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15184 | `SetFreq_Squ2` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15188 | `SetFreq_Tri` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15194 | `SwimStompEnvelopeData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15198 | `PlayFlagpoleSlide` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15206 | `PlaySmallJump` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15210 | `PlayBigJump` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15213 | `JumpRegContents` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15220 | `ContinueSndJump` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15227 | `N2Prt` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15230 | `FPS2nd` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15231 | `DmpJpFPS` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15234 | `PlayFireballThrow` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15239 | `PlayBump` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15242 | `Fthrow` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15247 | `ContinueBumpThrow` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15253 | `DecJpFPS` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15256 | `Square1SfxHandler` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15276 | `CheckSfx1Buffer` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15294 | `ExS1H` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15296 | `PlaySwimStomp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15304 | `ContinueSwimStomp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15313 | `BranchToDecLength1` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15316 | `PlaySmackEnemy` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15325 | `ContinueSmackEnemy` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15333 | `SmSpc` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15334 | `SmTick` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15336 | `DecrementSfx1Length` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15340 | `StopSquare1Sfx` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T21 S5; M2 T24 S1 |
+| 15347 | `ExSfx1` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15349 | `PlayPipeDownInj` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15353 | `ContinuePipeDownInj` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15365 | `NoPDwnL` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15369 | `ExtraLifeFreqData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15372 | `PowerUpGrabFreqData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15380 | `PUp_VGrow_FreqData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15386 | `PlayCoinGrab` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15391 | `PlayTimerTick` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15395 | `CGrab_TTickRegL` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15401 | `ContinueCGrabTTick` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15407 | `N2Tone` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15409 | `PlayBlast` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15416 | `ContinueBlast` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15422 | `SBlasJ` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15424 | `PlayPowerUpGrab` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 15428 | `ContinuePowerUpGrab` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15437 | `LoadSqu2Regs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15440 | `DecrementSfx2Length` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15444 | `EmptySfx2Buffer` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15448 | `StopSquare2Sfx` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T21 S5; M2 T24 S1 |
+| 15453 | `ExSfx2` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15455 | `Square2SfxHandler` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 15478 | `CheckSfx2Buffer` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15496 | `ExS2H` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15498 | `Cont_CGrab_TTick` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15501 | `JumpToDecLength2` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15504 | `PlayBowserFall` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15509 | `BlstSJp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15511 | `ContinueBowserFall` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15517 | `PBFRegs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15518 | `EL_LRegs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15520 | `PlayExtraLife` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15524 | `ContinueExtraLife` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15527 | `DivLLoop` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15537 | `PlayGrowPowerUp` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 15541 | `PlayGrowVine` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15544 | `GrowItemRegs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 15551 | `ContinueGrowItems` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T24 S1 |
+| 15564 | `StopGrowItems` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15569 | `BrickShatterFreqData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15573 | `PlayBrickShatter` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15577 | `ContinueBrickShatter` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15585 | `PlayNoiseSfx` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15591 | `DecrementSfx3Length` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15598 | `ExSfx3` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15600 | `NoiseSfxHandler` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15609 | `CheckNoiseBuffer` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15616 | `ExNH` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15618 | `PlayBowserFlame` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15622 | `ContinueBowserFlame` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15632 | `ContinueMusic` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15635 | `MusicHandler` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15645 | `LoadEventMusic` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T21 S2; M2 T21 S5; M2 T24 S1 |
+| 15651 | `NoStopSfx` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15662 | `LoadAreaMusic` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15666 | `NoStop1` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15667 | `GMLoopB` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15669 | `HandleAreaMusicLoopB` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15682 | `FindAreaMusicHeader` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15686 | `FindEventMusicHeader` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15691 | `LoadHeader` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15720 | `HandleSquare2Music` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15730 | `EndOfMusicData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15736 | `NotTRO` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15750 | `MusicLoopBack` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15753 | `VictoryMLoopBack` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15756 | `Squ2LengthHandler` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15763 | `Squ2NoteHandler` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15769 | `Rest` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15771 | `SkipFqL1` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15774 | `MiscSqu2MusicTasks` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15783 | `NoDecEnv1` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15788 | `HandleSquare1Music` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15794 | `FetchSqu1MusicData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15806 | `Squ1NoteHandler` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15816 | `SkipCtrlL` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15819 | `MiscSqu1MusicTasks` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15828 | `NoDecEnv2` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15830 | `DeathMAltReg` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15833 | `DoAltLoad` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15835 | `HandleTriangleMusic` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15853 | `TriNoteHandler` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15863 | `NotDOrD4` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15871 | `MediN` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15873 | `LongN` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15875 | `LoadTriCtrlReg` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15878 | `HandleNoiseMusic` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15885 | `FetchNoiseBeatData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15894 | `NoiseBeatHandler` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15911 | `StrongBeat` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15917 | `LongBeat` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15923 | `SilentBeat` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15926 | `PlayBeat` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15931 | `ExitMusicHandler` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15934 | `AlternateLengthHandler` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15942 | `ProcessLengthData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15951 | `LoadControlRegs` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15957 | `NotECstlM` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15962 | `WaterMus` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15963 | `AllMus` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15967 | `LoadEnvelopeData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15974 | `LoadUsualEnvData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15981 | `LoadWaterEventMusEnvData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 15989 | `MusicHeaderData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16027 | `TimeRunningOutHdr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16028 | `Star_CloudHdr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16029 | `EndOfLevelMusHdr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16030 | `ResidualHeaderData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16031 | `UndergroundMusHdr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16032 | `SilenceHdr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16033 | `CastleMusHdr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16034 | `VictoryMusHdr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16035 | `GameOverMusHdr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16036 | `WaterMusHdr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16037 | `WinCastleMusHdr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16038 | `GroundLevelPart1Hdr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16039 | `GroundLevelPart2AHdr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16040 | `GroundLevelPart2BHdr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16041 | `GroundLevelPart2CHdr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16042 | `GroundLevelPart3AHdr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16043 | `GroundLevelPart3BHdr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16044 | `GroundLevelLeadInHdr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16045 | `GroundLevelPart4AHdr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16046 | `GroundLevelPart4BHdr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16047 | `GroundLevelPart4CHdr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16048 | `DeathMusHdr` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16077 | `Star_CloudMData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16089 | `GroundM_P1Data` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16094 | `SilenceData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16104 | `GroundM_P2AData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16114 | `GroundM_P2BData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16124 | `GroundM_P2CData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16134 | `GroundM_P3AData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16140 | `GroundM_P3BData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16148 | `GroundMLdInData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16158 | `GroundM_P4AData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16167 | `GroundM_P4BData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16176 | `DeathMusData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16179 | `GroundM_P4CData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16193 | `CastleMusData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16217 | `GameOverMusData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16226 | `TimeRunOutMusData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16236 | `WinLevelMusData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16253 | `UndergroundMusData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16264 | `WaterMusData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16295 | `EndOfCastleMusData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16313 | `VictoryMusData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16326 | `FreqRegLookupTbl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16341 | `MusicLengthLookupTbl` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16349 | `EndOfCastleMusicEnvData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16352 | `AreaMusicEnvData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16355 | `WaterEventMusEnvData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16362 | `BowserFlameEnvData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
+| 16368 | `BrickShatterEnvData` | M3 T27 S5 | existing closure backlog; Owner-approved remaining-core physical relocation;existing conformance dispositions and gaps retained | M2 T24 S1 |
 
 ## All known historical and planned T/S
 
@@ -2247,7 +2112,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T22 S2 | 1 | 0 | declared-plan, recorded-section; [record](../../docs/proposals/m2/blocks-items-misc.md) |
 | M2 T22 S3 | 0 | 0 | declared-plan; [record](../../docs/proposals/m2/blocks-items-misc.md) |
 | M2 T22 S4 | 7 | 0 | declared-plan, recorded-section; [record](../../docs/proposals/m2/blocks-items-misc.md) |
-| M2 T22 S5 | 0 | 8 | declared-plan, declared-closure-plan; [record](../../docs/proposals/m2/blocks-items-misc.md) |
+| M2 T22 S5 | 0 | 0 | declared-plan, declared-closure-plan; [record](../../docs/proposals/m2/blocks-items-misc.md) |
 | M2 T22 S6 | 0 | 0 | source-order-intake; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S7 | 0 | 0 | source-order-migration; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T22 S8 | 0 | 0 | source-order-branch-audit; [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -2330,7 +2195,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T29 | 32 | - | [record](../../docs/proposals/m2/t29-area-parser-geometry.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
 | M2 T29 S1 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S2 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
-| M2 T29 S3 | 0 | 11 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
+| M2 T29 S3 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S4 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S5 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
 | M2 T29 S6 | 0 | 0 | owner-approved-source-order, chain-based-implementation; [record](../../docs/proposals/m2/t29-area-parser-geometry.md) |
@@ -2362,172 +2227,172 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T30 S20 | 0 | 0 | owner-approved-source-order, cross-chain-closure-audit; [record](../../docs/history/M2-T30-area-object-rendering.md) |
 | M2 T31 | 11 | - | [record](../../docs/history/M2-T31-game-dispatcher.md) |
 | M2 T31 S1 | 2 | 1 | owner-approved-source-order, entry-chain-implementation; [record](../../docs/history/M2-T31-game-dispatcher.md) |
-| M2 T31 S2 | 9 | 36 | owner-approved-source-order, engine-chain-implementation; [record](../../docs/history/M2-T31-game-dispatcher.md) |
+| M2 T31 S2 | 9 | 9 | owner-approved-source-order, engine-chain-implementation; [record](../../docs/history/M2-T31-game-dispatcher.md) |
 | M2 T31 S3 | 0 | 0 | owner-approved-source-order, scroll-chain-implementation; [record](../../docs/history/M2-T31-game-dispatcher.md) |
 | M2 T31 S4 | 0 | 9 | owner-approved-source-order, entry-mode-chain-implementation; [record](../../docs/history/M2-T31-game-dispatcher.md) |
 | M2 T32 | 0 | - | [record](../../docs/history/M2-T32-player-control-modes.md) |
-| M2 T32 S1 | 0 | 11 | owner-approved-source-order, player-control-chain; [record](../../docs/history/M2-T32-player-control-modes.md) |
-| M2 T32 S2 | 0 | 11 | owner-approved-source-order, vine-pipe-chain; [record](../../docs/history/M2-T32-player-control-modes.md) |
-| M2 T32 S3 | 0 | 14 | owner-approved-source-order, size-injury-death-palette-chain; [record](../../docs/history/M2-T32-player-control-modes.md) |
-| M2 T32 S4 | 0 | 10 | owner-approved-source-order, flagpole-end-level-chain; [record](../../docs/history/M2-T32-player-control-modes.md) |
+| M2 T32 S1 | 0 | 0 | owner-approved-source-order, player-control-chain; [record](../../docs/history/M2-T32-player-control-modes.md) |
+| M2 T32 S2 | 0 | 0 | owner-approved-source-order, vine-pipe-chain; [record](../../docs/history/M2-T32-player-control-modes.md) |
+| M2 T32 S3 | 0 | 0 | owner-approved-source-order, size-injury-death-palette-chain; [record](../../docs/history/M2-T32-player-control-modes.md) |
+| M2 T32 S4 | 0 | 0 | owner-approved-source-order, flagpole-end-level-chain; [record](../../docs/history/M2-T32-player-control-modes.md) |
 | M2 T33 | 0 | - | [record](../../docs/history/M2-T33-player-movement-state.md) |
-| M2 T33 S1 | 0 | 14 | owner-approved-source-order, movement-state-chain; [record](../../docs/history/M2-T33-player-movement-state.md) |
-| M2 T33 S2 | 0 | 8 | owner-approved-source-order, climbing-chain; [record](../../docs/history/M2-T33-player-movement-state.md) |
-| M2 T33 S3 | 0 | 28 | owner-approved-source-order, physics-chain; [record](../../docs/history/M2-T33-player-movement-state.md) |
-| M2 T33 S4 | 0 | 12 | owner-approved-source-order, animation-friction-chain; [record](../../docs/history/M2-T33-player-movement-state.md) |
+| M2 T33 S1 | 0 | 0 | owner-approved-source-order, movement-state-chain; [record](../../docs/history/M2-T33-player-movement-state.md) |
+| M2 T33 S2 | 0 | 0 | owner-approved-source-order, climbing-chain; [record](../../docs/history/M2-T33-player-movement-state.md) |
+| M2 T33 S3 | 0 | 0 | owner-approved-source-order, physics-chain; [record](../../docs/history/M2-T33-player-movement-state.md) |
+| M2 T33 S4 | 0 | 0 | owner-approved-source-order, animation-friction-chain; [record](../../docs/history/M2-T33-player-movement-state.md) |
 | M2 T34 | 0 | - | [record](../../docs/history/M2-T34-fireball-dispatch-core.md) |
-| M2 T34 S1 | 0 | 5 | owner-approved-source-order, fireball-dispatch-chain; [record](../../docs/history/M2-T34-fireball-dispatch-core.md) |
-| M2 T34 S2 | 0 | 4 | owner-approved-source-order, fireball-core-chain; [record](../../docs/history/M2-T34-fireball-dispatch-core.md) |
+| M2 T34 S1 | 0 | 0 | owner-approved-source-order, fireball-dispatch-chain; [record](../../docs/history/M2-T34-fireball-dispatch-core.md) |
+| M2 T34 S2 | 0 | 0 | owner-approved-source-order, fireball-core-chain; [record](../../docs/history/M2-T34-fireball-dispatch-core.md) |
 | M2 T35 | 0 | - | [record](../../docs/history/M2-T35-bubbles-timer-warp.md) |
-| M2 T35 S1 | 0 | 8 | owner-approved-source-order, bubble-setup-movement-chain; [record](../../docs/history/M2-T35-bubbles-timer-warp.md) |
-| M2 T35 S2 | 0 | 4 | owner-approved-source-order, timer-chain; [record](../../docs/history/M2-T35-bubbles-timer-warp.md) |
-| M2 T35 S3 | 0 | 7 | owner-approved-source-order, jumpspring-chain; [record](../../docs/history/M2-T35-bubbles-timer-warp.md) |
-| M2 T35 S4 | 0 | 3 | owner-approved-source-order, vine-setup-chain; [record](../../docs/history/M2-T35-bubbles-timer-warp.md) |
+| M2 T35 S1 | 0 | 0 | owner-approved-source-order, bubble-setup-movement-chain; [record](../../docs/history/M2-T35-bubbles-timer-warp.md) |
+| M2 T35 S2 | 0 | 0 | owner-approved-source-order, timer-chain; [record](../../docs/history/M2-T35-bubbles-timer-warp.md) |
+| M2 T35 S3 | 0 | 0 | owner-approved-source-order, jumpspring-chain; [record](../../docs/history/M2-T35-bubbles-timer-warp.md) |
+| M2 T35 S4 | 0 | 0 | owner-approved-source-order, vine-setup-chain; [record](../../docs/history/M2-T35-bubbles-timer-warp.md) |
 | M2 T36 | 0 | - | [record](../../docs/history/M2-T36-misc-object-chains.md) |
-| M2 T36 S1 | 0 | 6 | owner-approved-source-order, vine-actor-chain; [record](../../docs/history/M2-T36-misc-object-chains.md) |
-| M2 T36 S2 | 0 | 10 | owner-approved-source-order, hammer-lifecycle-chain; [record](../../docs/history/M2-T36-misc-object-chains.md) |
-| M2 T36 S3 | 0 | 6 | owner-approved-source-order, coin-allocation-chain; [record](../../docs/history/M2-T36-misc-object-chains.md) |
-| M2 T36 S4 | 0 | 6 | owner-approved-source-order, misc-lifetime-chain; [record](../../docs/history/M2-T36-misc-object-chains.md) |
-| M2 T36 S5 | 0 | 8 | owner-approved-source-order, score-hud-chain; [record](../../docs/history/M2-T36-misc-object-chains.md) |
-| M2 T36 S6 | 0 | 4 | owner-approved-source-order, power-up-initialization; [record](../../docs/history/M2-T36-misc-object-chains.md) |
+| M2 T36 S1 | 0 | 0 | owner-approved-source-order, vine-actor-chain; [record](../../docs/history/M2-T36-misc-object-chains.md) |
+| M2 T36 S2 | 0 | 0 | owner-approved-source-order, hammer-lifecycle-chain; [record](../../docs/history/M2-T36-misc-object-chains.md) |
+| M2 T36 S3 | 0 | 0 | owner-approved-source-order, coin-allocation-chain; [record](../../docs/history/M2-T36-misc-object-chains.md) |
+| M2 T36 S4 | 0 | 0 | owner-approved-source-order, misc-lifetime-chain; [record](../../docs/history/M2-T36-misc-object-chains.md) |
+| M2 T36 S5 | 0 | 0 | owner-approved-source-order, score-hud-chain; [record](../../docs/history/M2-T36-misc-object-chains.md) |
+| M2 T36 S6 | 0 | 0 | owner-approved-source-order, power-up-initialization; [record](../../docs/history/M2-T36-misc-object-chains.md) |
 | M2 T37 | 0 | - | [record](../../docs/history/M2-T37-power-up-block-movement.md) |
-| M2 T37 S1 | 0 | 6 | owner-approved-source-order, power-up-actor-chain; [record](../../docs/history/M2-T37-power-up-block-movement.md) |
-| M2 T37 S2 | 0 | 13 | owner-approved-source-order, head-hit-position-chain; [record](../../docs/history/M2-T37-power-up-block-movement.md) |
-| M2 T37 S3 | 0 | 11 | owner-approved-source-order, block-content-chain; [record](../../docs/history/M2-T37-power-up-block-movement.md) |
-| M2 T37 S4 | 0 | 4 | owner-approved-source-order, shatter-top-coin-chunks-chain; [record](../../docs/history/M2-T37-power-up-block-movement.md) |
-| M2 T37 S5 | 0 | 5 | owner-approved-source-order, block-lifetime-chain; [record](../../docs/history/M2-T37-power-up-block-movement.md) |
-| M2 T37 S6 | 0 | 3 | owner-approved-source-order, block-replacement-chain; [record](../../docs/history/M2-T37-power-up-block-movement.md) |
-| M2 T37 S7 | 0 | 6 | owner-approved-source-order, horizontal-movement-chain; [record](../../docs/history/M2-T37-power-up-block-movement.md) |
-| M2 T37 S8 | 0 | 14 | owner-approved-source-order, vertical-adapter-chain; [record](../../docs/history/M2-T37-power-up-block-movement.md) |
-| M2 T37 S9 | 0 | 12 | owner-approved-source-order, common-gravity-chain; [record](../../docs/history/M2-T37-power-up-block-movement.md) |
+| M2 T37 S1 | 0 | 0 | owner-approved-source-order, power-up-actor-chain; [record](../../docs/history/M2-T37-power-up-block-movement.md) |
+| M2 T37 S2 | 0 | 0 | owner-approved-source-order, head-hit-position-chain; [record](../../docs/history/M2-T37-power-up-block-movement.md) |
+| M2 T37 S3 | 0 | 0 | owner-approved-source-order, block-content-chain; [record](../../docs/history/M2-T37-power-up-block-movement.md) |
+| M2 T37 S4 | 0 | 0 | owner-approved-source-order, shatter-top-coin-chunks-chain; [record](../../docs/history/M2-T37-power-up-block-movement.md) |
+| M2 T37 S5 | 0 | 0 | owner-approved-source-order, block-lifetime-chain; [record](../../docs/history/M2-T37-power-up-block-movement.md) |
+| M2 T37 S6 | 0 | 0 | owner-approved-source-order, block-replacement-chain; [record](../../docs/history/M2-T37-power-up-block-movement.md) |
+| M2 T37 S7 | 0 | 0 | owner-approved-source-order, horizontal-movement-chain; [record](../../docs/history/M2-T37-power-up-block-movement.md) |
+| M2 T37 S8 | 0 | 0 | owner-approved-source-order, vertical-adapter-chain; [record](../../docs/history/M2-T37-power-up-block-movement.md) |
+| M2 T37 S9 | 0 | 0 | owner-approved-source-order, common-gravity-chain; [record](../../docs/history/M2-T37-power-up-block-movement.md) |
 | M2 T38 | 0 | - | [record](../../docs/history/M2-T38-enemy-stream-initialization.md) |
-| M2 T38 S1 | 0 | 17 | owner-approved-source-order, enemy-loop-dispatch-chain; [record](../../docs/history/M2-T38-enemy-stream-initialization.md) |
-| M2 T38 S2 | 0 | 19 | owner-approved-source-order, enemy-record-parser-chain; [record](../../docs/history/M2-T38-enemy-stream-initialization.md) |
-| M2 T38 S3 | 0 | 3 | owner-approved-source-order, initializer-vector-chain; [record](../../docs/history/M2-T38-enemy-stream-initialization.md) |
-| M2 T38 S4 | 0 | 22 | owner-approved-source-order, common-initializer-chain; [record](../../docs/history/M2-T38-enemy-stream-initialization.md) |
-| M2 T38 S5 | 0 | 13 | owner-approved-source-order, lakitu-spiny-allocation-chain; [record](../../docs/history/M2-T38-enemy-stream-initialization.md) |
-| M2 T38 S6 | 0 | 4 | owner-approved-source-order, firebar-initialization-and-duplicate-dependency; [record](../../docs/history/M2-T38-enemy-stream-initialization.md) |
-| M2 T38 S7 | 0 | 10 | owner-approved-source-order, complete-flying-fish-initializer; [record](../../docs/history/M2-T38-enemy-stream-initialization.md) |
+| M2 T38 S1 | 0 | 0 | owner-approved-source-order, enemy-loop-dispatch-chain; [record](../../docs/history/M2-T38-enemy-stream-initialization.md) |
+| M2 T38 S2 | 0 | 0 | owner-approved-source-order, enemy-record-parser-chain; [record](../../docs/history/M2-T38-enemy-stream-initialization.md) |
+| M2 T38 S3 | 0 | 0 | owner-approved-source-order, initializer-vector-chain; [record](../../docs/history/M2-T38-enemy-stream-initialization.md) |
+| M2 T38 S4 | 0 | 0 | owner-approved-source-order, common-initializer-chain; [record](../../docs/history/M2-T38-enemy-stream-initialization.md) |
+| M2 T38 S5 | 0 | 0 | owner-approved-source-order, lakitu-spiny-allocation-chain; [record](../../docs/history/M2-T38-enemy-stream-initialization.md) |
+| M2 T38 S6 | 0 | 0 | owner-approved-source-order, firebar-initialization-and-duplicate-dependency; [record](../../docs/history/M2-T38-enemy-stream-initialization.md) |
+| M2 T38 S7 | 0 | 0 | owner-approved-source-order, complete-flying-fish-initializer; [record](../../docs/history/M2-T38-enemy-stream-initialization.md) |
 | M2 T39 | 0 | - | [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
-| M2 T39 S1 | 0 | 9 | owner-approved-source-order, bowser-and-flame-initializer; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
-| M2 T39 S2 | 0 | 5 | owner-approved-source-order, fireworks-initializer; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
-| M2 T39 S3 | 0 | 14 | owner-approved-source-order, bullet-swimming-fish-allocation; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
-| M2 T39 S4 | 0 | 8 | owner-approved-source-order, group-enemy-allocation; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
-| M2 T39 S5 | 0 | 9 | owner-approved-source-order, small-initializers-frenzy-dispatch; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
-| M2 T39 S6 | 0 | 3 | owner-approved-source-order, platform-initialization-chain; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
-| M2 T39 S7 | 0 | 4 | owner-approved-source-order, actor-vector-retainer-chain; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
-| M2 T39 S8 | 0 | 4 | owner-approved-source-order, normal-actor-movement-vector; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
-| M2 T39 S9 | 0 | 7 | owner-approved-source-order, special-actor-platform-callers; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
+| M2 T39 S1 | 0 | 0 | owner-approved-source-order, bowser-and-flame-initializer; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
+| M2 T39 S2 | 0 | 0 | owner-approved-source-order, fireworks-initializer; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
+| M2 T39 S3 | 0 | 0 | owner-approved-source-order, bullet-swimming-fish-allocation; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
+| M2 T39 S4 | 0 | 0 | owner-approved-source-order, group-enemy-allocation; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
+| M2 T39 S5 | 0 | 0 | owner-approved-source-order, small-initializers-frenzy-dispatch; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
+| M2 T39 S6 | 0 | 0 | owner-approved-source-order, platform-initialization-chain; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
+| M2 T39 S7 | 0 | 0 | owner-approved-source-order, actor-vector-retainer-chain; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
+| M2 T39 S8 | 0 | 0 | owner-approved-source-order, normal-actor-movement-vector; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
+| M2 T39 S9 | 0 | 0 | owner-approved-source-order, special-actor-platform-callers; [record](../../docs/history/M2-T39-special-initialization-and-dispatch.md) |
 | M2 T4 | 0 | - | [record](../../docs/history/M2-T4-player-route-and-collision.md); S not recorded |
 | M2 T40 | 0 | - | [record](../../docs/history/M2-T40-enemy-movement-and-firebar.md) |
-| M2 T40 S1 | 0 | 2 | owner-approved-source-order, podoboo-movement; [record](../../docs/history/M2-T40-enemy-movement-and-firebar.md) |
-| M2 T40 S2 | 0 | 24 | owner-approved-source-order, hammer-bro-normal-movement; [record](../../docs/history/M2-T40-enemy-movement-and-firebar.md) |
-| M2 T40 S3 | 0 | 5 | owner-approved-source-order, jumping-red-paratroopa; [record](../../docs/history/M2-T40-enemy-movement-and-firebar.md) |
-| M2 T40 S4 | 0 | 10 | owner-approved-source-order, green-paratroopa-x-counters; [record](../../docs/history/M2-T40-enemy-movement-and-firebar.md) |
-| M2 T40 S5 | 0 | 16 | owner-approved-source-order, bloober-swimming; [record](../../docs/history/M2-T40-enemy-movement-and-firebar.md) |
-| M2 T40 S6 | 0 | 2 | owner-approved-source-order, bullet-bill-movement; [record](../../docs/history/M2-T40-enemy-movement-and-firebar.md) |
-| M2 T40 S7 | 0 | 7 | owner-approved-source-order, swimming-cheep-movement; [record](../../docs/history/M2-T40-enemy-movement-and-firebar.md) |
-| M2 T40 S8 | 0 | 32 | owner-approved-source-order, firebar-position-collision; [record](../../docs/history/M2-T40-enemy-movement-and-firebar.md) |
-| M2 T40 S9 | 0 | 6 | owner-approved-source-order, flying-cheep-movement; [record](../../docs/history/M2-T40-enemy-movement-and-firebar.md) |
-| M2 T40 S10 | 0 | 16 | owner-approved-source-order, lakitu-movement-distance; [record](../../docs/history/M2-T40-enemy-movement-and-firebar.md) |
+| M2 T40 S1 | 0 | 0 | owner-approved-source-order, podoboo-movement; [record](../../docs/history/M2-T40-enemy-movement-and-firebar.md) |
+| M2 T40 S2 | 0 | 0 | owner-approved-source-order, hammer-bro-normal-movement; [record](../../docs/history/M2-T40-enemy-movement-and-firebar.md) |
+| M2 T40 S3 | 0 | 0 | owner-approved-source-order, jumping-red-paratroopa; [record](../../docs/history/M2-T40-enemy-movement-and-firebar.md) |
+| M2 T40 S4 | 0 | 0 | owner-approved-source-order, green-paratroopa-x-counters; [record](../../docs/history/M2-T40-enemy-movement-and-firebar.md) |
+| M2 T40 S5 | 0 | 0 | owner-approved-source-order, bloober-swimming; [record](../../docs/history/M2-T40-enemy-movement-and-firebar.md) |
+| M2 T40 S6 | 0 | 0 | owner-approved-source-order, bullet-bill-movement; [record](../../docs/history/M2-T40-enemy-movement-and-firebar.md) |
+| M2 T40 S7 | 0 | 0 | owner-approved-source-order, swimming-cheep-movement; [record](../../docs/history/M2-T40-enemy-movement-and-firebar.md) |
+| M2 T40 S8 | 0 | 0 | owner-approved-source-order, firebar-position-collision; [record](../../docs/history/M2-T40-enemy-movement-and-firebar.md) |
+| M2 T40 S9 | 0 | 0 | owner-approved-source-order, flying-cheep-movement; [record](../../docs/history/M2-T40-enemy-movement-and-firebar.md) |
+| M2 T40 S10 | 0 | 0 | owner-approved-source-order, lakitu-movement-distance; [record](../../docs/history/M2-T40-enemy-movement-and-firebar.md) |
 | M2 T41 | 0 | - | [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
-| M2 T41 S1 | 0 | 6 | owner-approved-source-order, bridge-collapse; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
-| M2 T41 S2 | 0 | 19 | owner-approved-source-order, bowser-control; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
-| M2 T41 S3 | 0 | 4 | owner-approved-source-order, bowser-graphics-chain; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
-| M2 T41 S4 | 0 | 9 | owner-approved-source-order, bowser-flame-chain; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
-| M2 T41 S5 | 0 | 3 | owner-approved-source-order, fireworks-lifetime; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
-| M2 T41 S6 | 0 | 20 | owner-approved-source-order, star-flag; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
-| M2 T41 S7 | 0 | 6 | owner-approved-source-order, piranha-movement; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
-| M2 T41 S8 | 0 | 2 | owner-approved-source-order, firebar-spin; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
-| M2 T41 S9 | 0 | 26 | owner-approved-source-order, balanced-platforms; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
-| M2 T41 S10 | 0 | 6 | owner-approved-source-order, vertical-platforms; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
-| M2 T41 S11 | 0 | 9 | owner-approved-source-order, horizontal-platforms; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
-| M2 T41 S12 | 0 | 5 | owner-approved-source-order, lift-platforms; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
-| M2 T41 S13 | 0 | 5 | owner-approved-source-order, offscreen-bounds; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
+| M2 T41 S1 | 0 | 0 | owner-approved-source-order, bridge-collapse; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
+| M2 T41 S2 | 0 | 0 | owner-approved-source-order, bowser-control; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
+| M2 T41 S3 | 0 | 0 | owner-approved-source-order, bowser-graphics-chain; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
+| M2 T41 S4 | 0 | 0 | owner-approved-source-order, bowser-flame-chain; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
+| M2 T41 S5 | 0 | 0 | owner-approved-source-order, fireworks-lifetime; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
+| M2 T41 S6 | 0 | 0 | owner-approved-source-order, star-flag; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
+| M2 T41 S7 | 0 | 0 | owner-approved-source-order, piranha-movement; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
+| M2 T41 S8 | 0 | 0 | owner-approved-source-order, firebar-spin; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
+| M2 T41 S9 | 0 | 0 | owner-approved-source-order, balanced-platforms; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
+| M2 T41 S10 | 0 | 0 | owner-approved-source-order, vertical-platforms; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
+| M2 T41 S11 | 0 | 0 | owner-approved-source-order, horizontal-platforms; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
+| M2 T41 S12 | 0 | 0 | owner-approved-source-order, lift-platforms; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
+| M2 T41 S13 | 0 | 0 | owner-approved-source-order, offscreen-bounds; [record](../../docs/history/M2-T41-bridge-bowser-and-platforms.md) |
 | M2 T42 | 0 | - | [record](../../docs/history/M2-T42-shared-collision-and-platforms.md) |
-| M2 T42 S1 | 0 | 6 | owner-approved-source-order, fireball-enemy-scan; [record](../../docs/history/M2-T42-shared-collision-and-platforms.md) |
-| M2 T42 S2 | 0 | 11 | owner-approved-source-order, fireball-hit; [record](../../docs/history/M2-T42-shared-collision-and-platforms.md) |
-| M2 T42 S3 | 0 | 3 | owner-approved-source-order, hammer-contact; [record](../../docs/history/M2-T42-shared-collision-and-platforms.md) |
-| M2 T42 S4 | 0 | 6 | owner-approved-source-order, powerup-pickup; [record](../../docs/history/M2-T42-shared-collision-and-platforms.md) |
-| M2 T42 S5 | 0 | 34 | owner-approved-source-order, player-enemy-contact; [record](../../docs/history/M2-T42-shared-collision-and-platforms.md) |
-| M2 T42 S6 | 0 | 16 | owner-approved-source-order, enemy-pair-collision; [record](../../docs/history/M2-T42-shared-collision-and-platforms.md) |
-| M2 T42 S7 | 0 | 14 | owner-approved-source-order, platform-collision; [record](../../docs/history/M2-T42-shared-collision-and-platforms.md) |
-| M2 T42 S8 | 0 | 4 | owner-approved-source-order, platform-positioning; [record](../../docs/history/M2-T42-shared-collision-and-platforms.md) |
-| M2 T42 S9 | 0 | 4 | owner-approved-source-order, collision-preflight; [record](../../docs/history/M2-T42-shared-collision-and-platforms.md) |
+| M2 T42 S1 | 0 | 0 | owner-approved-source-order, fireball-enemy-scan; [record](../../docs/history/M2-T42-shared-collision-and-platforms.md) |
+| M2 T42 S2 | 0 | 0 | owner-approved-source-order, fireball-hit; [record](../../docs/history/M2-T42-shared-collision-and-platforms.md) |
+| M2 T42 S3 | 0 | 0 | owner-approved-source-order, hammer-contact; [record](../../docs/history/M2-T42-shared-collision-and-platforms.md) |
+| M2 T42 S4 | 0 | 0 | owner-approved-source-order, powerup-pickup; [record](../../docs/history/M2-T42-shared-collision-and-platforms.md) |
+| M2 T42 S5 | 0 | 0 | owner-approved-source-order, player-enemy-contact; [record](../../docs/history/M2-T42-shared-collision-and-platforms.md) |
+| M2 T42 S6 | 0 | 0 | owner-approved-source-order, enemy-pair-collision; [record](../../docs/history/M2-T42-shared-collision-and-platforms.md) |
+| M2 T42 S7 | 0 | 0 | owner-approved-source-order, platform-collision; [record](../../docs/history/M2-T42-shared-collision-and-platforms.md) |
+| M2 T42 S8 | 0 | 0 | owner-approved-source-order, platform-positioning; [record](../../docs/history/M2-T42-shared-collision-and-platforms.md) |
+| M2 T42 S9 | 0 | 0 | owner-approved-source-order, collision-preflight; [record](../../docs/history/M2-T42-shared-collision-and-platforms.md) |
 | M2 T43 | 0 | - | [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
-| M2 T43 S1 | 0 | 31 | owner-approved-source-order, player-terrain; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
-| M2 T43 S2 | 0 | 3 | owner-approved-source-order, coin-axe-effects; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
-| M2 T43 S3 | 0 | 14 | owner-approved-source-order, flagpole-vine-climbing; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
-| M2 T43 S4 | 0 | 7 | owner-approved-source-order, hidden-spring-metatiles; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
-| M2 T43 S5 | 0 | 3 | owner-approved-source-order, pipe-entry-warp; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
-| M2 T43 S6 | 0 | 5 | owner-approved-source-order, side-impediment; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
-| M2 T43 S7 | 0 | 8 | owner-approved-source-order, metatile-classification; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
-| M2 T43 S8 | 0 | 18 | owner-approved-source-order, enemy-background-stun; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
-| M2 T43 S9 | 0 | 14 | owner-approved-source-order, enemy-landing-grounded; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
-| M2 T43 S10 | 0 | 9 | owner-approved-source-order, enemy-side-jump-hammer; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
-| M2 T43 S11 | 0 | 3 | owner-approved-source-order, enemy-ground-query-nonsolids; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
-| M2 T43 S12 | 0 | 3 | owner-approved-source-order, fireball-background-collision; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
-| M2 T43 S13 | 0 | 10 | owner-approved-source-order, object-bounding-box-entry; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
-| M2 T43 S14 | 0 | 7 | owner-approved-source-order, bounding-box-core-clipping; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
-| M2 T43 S15 | 0 | 7 | owner-approved-source-order, shared-box-collision-geometry; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
+| M2 T43 S1 | 0 | 0 | owner-approved-source-order, player-terrain; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
+| M2 T43 S2 | 0 | 0 | owner-approved-source-order, coin-axe-effects; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
+| M2 T43 S3 | 0 | 0 | owner-approved-source-order, flagpole-vine-climbing; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
+| M2 T43 S4 | 0 | 0 | owner-approved-source-order, hidden-spring-metatiles; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
+| M2 T43 S5 | 0 | 0 | owner-approved-source-order, pipe-entry-warp; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
+| M2 T43 S6 | 0 | 0 | owner-approved-source-order, side-impediment; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
+| M2 T43 S7 | 0 | 0 | owner-approved-source-order, metatile-classification; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
+| M2 T43 S8 | 0 | 0 | owner-approved-source-order, enemy-background-stun; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
+| M2 T43 S9 | 0 | 0 | owner-approved-source-order, enemy-landing-grounded; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
+| M2 T43 S10 | 0 | 0 | owner-approved-source-order, enemy-side-jump-hammer; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
+| M2 T43 S11 | 0 | 0 | owner-approved-source-order, enemy-ground-query-nonsolids; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
+| M2 T43 S12 | 0 | 0 | owner-approved-source-order, fireball-background-collision; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
+| M2 T43 S13 | 0 | 0 | owner-approved-source-order, object-bounding-box-entry; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
+| M2 T43 S14 | 0 | 0 | owner-approved-source-order, bounding-box-core-clipping; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
+| M2 T43 S15 | 0 | 0 | owner-approved-source-order, shared-box-collision-geometry; [record](../../docs/history/M2-T43-terrain-and-bounding-boxes.md) |
 | M2 T44 | 0 | - | [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
-| M2 T44 S1 | 0 | 14 | owner-approved-source-order, block-buffer-core; [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
-| M2 T44 S2 | 0 | 6 | owner-approved-source-order, vine-object-graphics; [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
-| M2 T44 S3 | 0 | 14 | owner-approved-source-order, six-sprite-hammer-graphics; [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
-| M2 T44 S4 | 0 | 9 | owner-approved-source-order, flagpole-oam-dump-helpers; [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
+| M2 T44 S1 | 0 | 0 | owner-approved-source-order, block-buffer-core; [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
+| M2 T44 S2 | 0 | 0 | owner-approved-source-order, vine-object-graphics; [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
+| M2 T44 S3 | 0 | 0 | owner-approved-source-order, six-sprite-hammer-graphics; [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
+| M2 T44 S4 | 0 | 0 | owner-approved-source-order, flagpole-oam-dump-helpers; [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
 | M2 T44 S5 | 0 | 0 | owner-approved-source-order, large-platform-graphics; [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
-| M2 T44 S6 | 0 | 5 | owner-approved-source-order, floatey-jumping-coin-graphics; [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
-| M2 T44 S7 | 0 | 6 | owner-approved-source-order, power-up-graphics; [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
-| M2 T44 S8 | 0 | 44 | owner-approved-source-order, enemy-graphics-animation; [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
+| M2 T44 S6 | 0 | 0 | owner-approved-source-order, floatey-jumping-coin-graphics; [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
+| M2 T44 S7 | 0 | 0 | owner-approved-source-order, power-up-graphics; [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
+| M2 T44 S8 | 0 | 0 | owner-approved-source-order, enemy-graphics-animation; [record](../../docs/history/M2-T44-block-buffer-and-object-graphics.md) |
 | M2 T45 | 0 | - | [record](../../docs/proposals/m2/t45-object-oam-tail-and-graphics.md) |
-| M2 T45 S1 | 0 | 13 | owner-approved-source-order, enemy-graphics-oam-tail; [record](../../docs/proposals/m2/t45-object-oam-tail-and-graphics.md) |
-| M2 T45 S2 | 0 | 14 | owner-approved-source-order, block-chunk-oam; [record](../../docs/proposals/m2/t45-object-oam-tail-and-graphics.md) |
-| M2 T45 S3 | 0 | 7 | owner-approved-source-order, fireball-firebar-explosion-oam; [record](../../docs/proposals/m2/t45-object-oam-tail-and-graphics.md) |
-| M2 T45 S4 | 0 | 6 | owner-approved-source-order, small-platform-oam; [record](../../docs/proposals/m2/t45-object-oam-tail-and-graphics.md) |
-| M2 T45 S5 | 0 | 5 | owner-approved-source-order, bubble-player-graphics-data; [record](../../docs/proposals/m2/t45-object-oam-tail-and-graphics.md) |
+| M2 T45 S1 | 0 | 0 | owner-approved-source-order, enemy-graphics-oam-tail; [record](../../docs/proposals/m2/t45-object-oam-tail-and-graphics.md) |
+| M2 T45 S2 | 0 | 0 | owner-approved-source-order, block-chunk-oam; [record](../../docs/proposals/m2/t45-object-oam-tail-and-graphics.md) |
+| M2 T45 S3 | 0 | 0 | owner-approved-source-order, fireball-firebar-explosion-oam; [record](../../docs/proposals/m2/t45-object-oam-tail-and-graphics.md) |
+| M2 T45 S4 | 0 | 0 | owner-approved-source-order, small-platform-oam; [record](../../docs/proposals/m2/t45-object-oam-tail-and-graphics.md) |
+| M2 T45 S5 | 0 | 0 | owner-approved-source-order, bubble-player-graphics-data; [record](../../docs/proposals/m2/t45-object-oam-tail-and-graphics.md) |
 | M2 T46 | 0 | - | [record](../../docs/proposals/m2/t46-player-graphics-control.md) |
-| M2 T46 S1 | 0 | 13 | owner-approved-source-order, player-graphics-dispatch-offscreen; [record](../../docs/proposals/m2/t46-player-graphics-control.md) |
-| M2 T46 S2 | 0 | 5 | owner-approved-source-order, intermediate-player-row-render; [record](../../docs/proposals/m2/t46-player-graphics-control.md) |
-| M2 T46 S3 | 0 | 13 | owner-approved-source-order, player-action-animation-control; [record](../../docs/proposals/m2/t46-player-graphics-control.md) |
-| M2 T46 S4 | 0 | 12 | owner-approved-source-order, player-size-attribute-control; [record](../../docs/proposals/m2/t46-player-graphics-control.md) |
+| M2 T46 S1 | 0 | 0 | owner-approved-source-order, player-graphics-dispatch-offscreen; [record](../../docs/proposals/m2/t46-player-graphics-control.md) |
+| M2 T46 S2 | 0 | 0 | owner-approved-source-order, intermediate-player-row-render; [record](../../docs/proposals/m2/t46-player-graphics-control.md) |
+| M2 T46 S3 | 0 | 0 | owner-approved-source-order, player-action-animation-control; [record](../../docs/proposals/m2/t46-player-graphics-control.md) |
+| M2 T46 S4 | 0 | 0 | owner-approved-source-order, player-size-attribute-control; [record](../../docs/proposals/m2/t46-player-graphics-control.md) |
 | M2 T47 | 0 | - | [record](../../docs/proposals/m2/t47-object-position-and-sprite-output.md) |
-| M2 T47 S1 | 0 | 1 | owner-approved-source-order, player-attribute-exit; [record](../../docs/proposals/m2/t47-object-position-and-sprite-output.md) |
-| M2 T47 S2 | 0 | 9 | owner-approved-source-order, relative-object-position; [record](../../docs/proposals/m2/t47-object-position-and-sprite-output.md) |
-| M2 T47 S3 | 0 | 1 | owner-approved-source-order, player-offscreen-entry; [record](../../docs/proposals/m2/t47-object-position-and-sprite-output.md) |
-| M2 T47 S4 | 0 | 26 | owner-approved-source-order, shared-offscreen-chain; [record](../../docs/proposals/m2/t47-object-position-and-sprite-output.md) |
-| M2 T47 S5 | 0 | 3 | owner-approved-source-order, sprite-row-writer; [record](../../docs/proposals/m2/t47-object-position-and-sprite-output.md) |
+| M2 T47 S1 | 0 | 0 | owner-approved-source-order, player-attribute-exit; [record](../../docs/proposals/m2/t47-object-position-and-sprite-output.md) |
+| M2 T47 S2 | 0 | 0 | owner-approved-source-order, relative-object-position; [record](../../docs/proposals/m2/t47-object-position-and-sprite-output.md) |
+| M2 T47 S3 | 0 | 0 | owner-approved-source-order, player-offscreen-entry; [record](../../docs/proposals/m2/t47-object-position-and-sprite-output.md) |
+| M2 T47 S4 | 0 | 0 | owner-approved-source-order, shared-offscreen-chain; [record](../../docs/proposals/m2/t47-object-position-and-sprite-output.md) |
+| M2 T47 S5 | 0 | 0 | owner-approved-source-order, sprite-row-writer; [record](../../docs/proposals/m2/t47-object-position-and-sprite-output.md) |
 | M2 T48 | 0 | - | [record](../../docs/proposals/m2/t48-sound-effects-and-channel-handlers.md) |
-| M2 T48 S1 | 0 | 13 | owner-approved-source-order, soundengine-entry; [record](../../docs/proposals/m2/t48-sound-effects-and-channel-handlers.md) |
-| M2 T48 S2 | 0 | 9 | owner-approved-source-order, apu-register-helpers; [record](../../docs/proposals/m2/t48-sound-effects-and-channel-handlers.md) |
-| M2 T48 S3 | 0 | 14 | owner-approved-source-order, square-one-effect-phases; [record](../../docs/proposals/m2/t48-sound-effects-and-channel-handlers.md) |
-| M2 T48 S4 | 0 | 16 | owner-approved-source-order, square-one-dispatch-lifetime; [record](../../docs/proposals/m2/t48-sound-effects-and-channel-handlers.md) |
-| M2 T48 S5 | 0 | 18 | owner-approved-source-order, square-two-effect-phases; [record](../../docs/proposals/m2/t48-sound-effects-and-channel-handlers.md) |
-| M2 T48 S6 | 0 | 4 | owner-approved-source-order, square-two-dispatch; [record](../../docs/proposals/m2/t48-sound-effects-and-channel-handlers.md) |
+| M2 T48 S1 | 0 | 0 | owner-approved-source-order, soundengine-entry; [record](../../docs/proposals/m2/t48-sound-effects-and-channel-handlers.md) |
+| M2 T48 S2 | 0 | 0 | owner-approved-source-order, apu-register-helpers; [record](../../docs/proposals/m2/t48-sound-effects-and-channel-handlers.md) |
+| M2 T48 S3 | 0 | 0 | owner-approved-source-order, square-one-effect-phases; [record](../../docs/proposals/m2/t48-sound-effects-and-channel-handlers.md) |
+| M2 T48 S4 | 0 | 0 | owner-approved-source-order, square-one-dispatch-lifetime; [record](../../docs/proposals/m2/t48-sound-effects-and-channel-handlers.md) |
+| M2 T48 S5 | 0 | 0 | owner-approved-source-order, square-two-effect-phases; [record](../../docs/proposals/m2/t48-sound-effects-and-channel-handlers.md) |
+| M2 T48 S6 | 0 | 0 | owner-approved-source-order, square-two-dispatch; [record](../../docs/proposals/m2/t48-sound-effects-and-channel-handlers.md) |
 | M2 T49 | 0 | - | [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
-| M2 T49 S1 | 0 | 14 | owner-approved-source-order, square-two-remaining-effects; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
-| M2 T49 S2 | 0 | 12 | owner-approved-source-order, noise-effects-music-handoff; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
-| M2 T49 S3 | 0 | 10 | owner-approved-source-order, music-selection-header-load; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
-| M2 T49 S4 | 0 | 11 | owner-approved-source-order, square-two-music-stream; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
-| M2 T49 S5 | 0 | 8 | owner-approved-source-order, square-one-music-stream; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
-| M2 T49 S6 | 0 | 6 | owner-approved-source-order, triangle-music-stream; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
-| M2 T49 S7 | 0 | 8 | owner-approved-source-order, noise-music-beat-stream; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
-| M2 T49 S8 | 0 | 9 | owner-approved-source-order, shared-music-helpers; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
-| M2 T49 S9 | 0 | 23 | owner-approved-source-order, music-header-data; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
+| M2 T49 S1 | 0 | 0 | owner-approved-source-order, square-two-remaining-effects; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
+| M2 T49 S2 | 0 | 0 | owner-approved-source-order, noise-effects-music-handoff; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
+| M2 T49 S3 | 0 | 0 | owner-approved-source-order, music-selection-header-load; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
+| M2 T49 S4 | 0 | 0 | owner-approved-source-order, square-two-music-stream; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
+| M2 T49 S5 | 0 | 0 | owner-approved-source-order, square-one-music-stream; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
+| M2 T49 S6 | 0 | 0 | owner-approved-source-order, triangle-music-stream; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
+| M2 T49 S7 | 0 | 0 | owner-approved-source-order, noise-music-beat-stream; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
+| M2 T49 S8 | 0 | 0 | owner-approved-source-order, shared-music-helpers; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
+| M2 T49 S9 | 0 | 0 | owner-approved-source-order, music-header-data; [record](../../docs/proposals/m2/t49-music-engine-and-channel-handlers.md) |
 | M2 T5 | 2 | - | [record](../../docs/history/M2-T5-object-routes.md); S not recorded |
 | M2 T50 | 0 | - | [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md); [record](../../docs/states/QUEUE.md) |
-| M2 T50 S1 | 0 | 21 | owner-approved-source-order, music-stream-data; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
-| M2 T50 S2 | 0 | 5 | declared-plan, music-lookup-data; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
-| M2 T50 S3 | 0 | 2 | declared-plan, noise-envelope-data; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
+| M2 T50 S1 | 0 | 0 | owner-approved-source-order, music-stream-data; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
+| M2 T50 S2 | 0 | 0 | declared-plan, music-lookup-data; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
+| M2 T50 S3 | 0 | 0 | declared-plan, noise-envelope-data; [record](../../docs/proposals/m2/t50-music-data-and-audio-consumers.md) |
 | M2 T51 | 0 | - | [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md); [record](../../docs/states/QUEUE.md) |
 | M2 T51 S1 | 0 | 0 | owner-approved-completion, nmi-parent-integration; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T51 S2 | 0 | 0 | owner-approved-completion, screen-parser-output-chain; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T51 S3 | 0 | 0 | owner-approved-completion, kill-enemies-shared-primitive; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
-| M2 T51 S4 | 0 | 34 | owner-approved-completion, enemy-stream-data-chain-and-consumer; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
+| M2 T51 S4 | 0 | 0 | owner-approved-completion, enemy-stream-data-chain-and-consumer; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T51 S5 | 0 | 0 | cross-route-integration-certification; [record](../../docs/proposals/m2/t51-residual-equivalence-and-certification.md) |
 | M2 T52 | 0 | - | [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S1 | 0 | 0 | owner-approved-current-equivalence-remediation, a2-nmi-prefix-state-handoff; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S2 | 0 | 0 | owner-approved-current-equivalence-remediation, a6-title-demo-world-select-order; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
-| M2 T52 S3 | 0 | 1 | owner-approved-current-equivalence-remediation, a7-floatey-score-timer-order; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
+| M2 T52 S3 | 0 | 0 | owner-approved-current-equivalence-remediation, a7-floatey-score-timer-order; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S4 | 0 | 0 | owner-approved-current-equivalence-remediation, b2-background-player-palette-fallthrough; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S5 | 0 | 0 | owner-approved-current-equivalence-remediation, b3-timeup-task-handoff; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
 | M2 T52 S6 | 0 | 0 | owner-approved-current-equivalence-remediation, h9-large-platform-y-source; [record](../../docs/proposals/m2/t52-current-audit-mismatch-remediation.md) |
@@ -2776,12 +2641,12 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M2 T70 S9 | 0 | 0 | serial-input-pause-material-chain; [record](../../docs/history/m2/t70-final-current-certification.md) |
 | M2 T70 S10 | 0 | 0 | title-menu-demo-material-audit; [record](../../docs/history/m2/t70-final-current-certification.md) |
 | M2 T70 S11 | 0 | 0 | victory-message-termination-material-repair; [record](../../docs/history/m2/t70-final-current-certification.md) |
-| M2 T70 S12 | 0 | 10 | floatey-score-oam-material-repair; [record](../../docs/history/m2/t70-final-current-certification.md) |
+| M2 T70 S12 | 0 | 0 | floatey-score-oam-material-repair; [record](../../docs/history/m2/t70-final-current-certification.md) |
 | M2 T70 S13 | 0 | 0 | screen-palette-material-order-repair; [record](../../docs/history/m2/t70-final-current-certification.md) |
 | M2 T70 S14 | 0 | 0 | hud-intermediate-timer-chain; [record](../../docs/history/m2/t70-final-current-certification.md) |
 | M2 T70 S15 | 0 | 0 | final-reset-startup-source-and-graph-review; [record](../../docs/history/m2/t70-final-current-certification.md) |
 | M2 T70 S16 | 0 | 0 | executable-data-binding-manifest; [record](../../docs/history/m2/t70-final-current-certification.md) |
-| M2 T70 S17 | 0 | 46 | material-use-completeness-and-path-reconciliation, corrective-title-pointer-output-chain, corrective-column-output-chain, corrective-parser-output-chain; [record](../../docs/history/m2/t70-final-current-certification.md); [record](../../docs/history/M2-T70-deferred-verification-closure.md) |
+| M2 T70 S17 | 0 | 2 | material-use-completeness-and-path-reconciliation, corrective-title-pointer-output-chain, corrective-column-output-chain, corrective-parser-output-chain; [record](../../docs/history/m2/t70-final-current-certification.md); [record](../../docs/history/M2-T70-deferred-verification-closure.md) |
 | M2 T8 | 3 | - | [record](../../docs/history/M2-T8-end-to-end-oracle-and-win32-route.md); [record](../../docs/history/M4-T1-486sx-qualification-protocol.md); S not recorded |
 | M2 T9 | 1 | - | [record](../../docs/etc/architecture/smb1-frame-output-ledger.md); [record](../../docs/history/M2-T9-frame-output-ledger-and-reference-recorder.md); S not recorded |
 | M2 Td | 0 | - | [record](../../docs/proposals/m2-rom-structural-recovery.md); [record](../../docs/states/QUEUE.md); [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md) |
@@ -2856,7 +2721,8 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M3 T27 S1 | 0 | 0 | core-ppu-text-validation-boundary-census; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
 | M3 T27 S2 | 0 | 14 | ppu-state-storage-extraction; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
 | M3 T27 S3 | 0 | 0 | ppu-read-only-compositor-extraction; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
-| M3 T27 S4 | 0 | 475 | core-root-mode-area-mechanical-move; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| M3 T27 S4 | 0 | 474 | core-root-mode-area-mechanical-move; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| M3 T27 S5 | 0 | 1449 | remaining-core-path-cohorts; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
 | M3 T3 | 0 | - | [record](../../docs/history/M3-T2-win32-command-consumer.md); [record](../../docs/history/M3-T3-colored-text-frame.md); S not recorded |
 | M3 T4 | 0 | - | [record](../../docs/history/M3-T3-colored-text-frame.md); [record](../../docs/history/M3-T4-vga-indexed-frame.md); S not recorded |
 | M3 T5 | 0 | - | [record](../../docs/history/M3-T4-vga-indexed-frame.md); [record](../../docs/history/M3-T5-dos16-composition-root.md); S not recorded |
@@ -3313,6 +3179,145 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | m3-t27-s4-core-roots-41 | M2 T30 S9 | M3 T27 S4 | 4 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
 | m3-t27-s4-core-roots-42 | M2 T30 S10 | M3 T27 S4 | 6 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
 | m3-t27-s4-core-roots-43 | M2 T30 S14 | M3 T27 S4 | 22 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-1 | M2 T70 S12 | M3 T27 S5 | 10 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-2 | M3 T27 S4 | M3 T27 S5 | 1 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-3 | M2 T29 S3 | M3 T27 S5 | 11 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-4 | M2 T22 S5 | M3 T27 S5 | 8 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-5 | M2 T38 S1 | M3 T27 S5 | 17 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-6 | M2 T51 S4 | M3 T27 S5 | 34 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-7 | M2 T32 S1 | M3 T27 S5 | 11 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-8 | M2 T70 S17 | M3 T27 S5 | 44 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-9 | M2 T32 S2 | M3 T27 S5 | 11 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-10 | M2 T32 S3 | M3 T27 S5 | 14 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-11 | M2 T32 S4 | M3 T27 S5 | 10 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-12 | M2 T33 S1 | M3 T27 S5 | 14 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-13 | M2 T33 S2 | M3 T27 S5 | 8 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-14 | M2 T33 S3 | M3 T27 S5 | 28 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-15 | M2 T33 S4 | M3 T27 S5 | 12 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-16 | M2 T34 S1 | M3 T27 S5 | 5 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-17 | M2 T34 S2 | M3 T27 S5 | 4 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-18 | M2 T35 S1 | M3 T27 S5 | 8 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-19 | M2 T35 S2 | M3 T27 S5 | 4 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-20 | M2 T31 S2 | M3 T27 S5 | 27 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-21 | M2 T35 S3 | M3 T27 S5 | 7 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-22 | M2 T35 S4 | M3 T27 S5 | 3 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-23 | M2 T36 S1 | M3 T27 S5 | 6 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-24 | M2 T36 S2 | M3 T27 S5 | 10 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-25 | M2 T36 S3 | M3 T27 S5 | 6 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-26 | M2 T36 S4 | M3 T27 S5 | 6 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-27 | M2 T36 S5 | M3 T27 S5 | 8 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-28 | M2 T52 S3 | M3 T27 S5 | 1 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-29 | M2 T36 S6 | M3 T27 S5 | 4 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-30 | M2 T37 S1 | M3 T27 S5 | 6 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-31 | M2 T37 S2 | M3 T27 S5 | 13 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-32 | M2 T37 S3 | M3 T27 S5 | 11 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-33 | M2 T37 S4 | M3 T27 S5 | 4 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-34 | M2 T37 S5 | M3 T27 S5 | 5 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-35 | M2 T37 S6 | M3 T27 S5 | 3 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-36 | M2 T37 S7 | M3 T27 S5 | 6 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-37 | M2 T37 S8 | M3 T27 S5 | 14 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-38 | M2 T37 S9 | M3 T27 S5 | 12 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-39 | M2 T38 S2 | M3 T27 S5 | 19 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-40 | M2 T38 S3 | M3 T27 S5 | 3 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-41 | M2 T38 S4 | M3 T27 S5 | 22 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-42 | M2 T38 S5 | M3 T27 S5 | 13 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-43 | M2 T38 S6 | M3 T27 S5 | 4 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-44 | M2 T38 S7 | M3 T27 S5 | 10 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-45 | M2 T39 S1 | M3 T27 S5 | 9 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-46 | M2 T39 S2 | M3 T27 S5 | 5 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-47 | M2 T39 S3 | M3 T27 S5 | 14 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-48 | M2 T39 S4 | M3 T27 S5 | 8 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-49 | M2 T39 S5 | M3 T27 S5 | 9 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-50 | M2 T39 S6 | M3 T27 S5 | 3 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-51 | M2 T39 S7 | M3 T27 S5 | 4 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-52 | M2 T39 S8 | M3 T27 S5 | 4 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-53 | M2 T39 S9 | M3 T27 S5 | 7 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-54 | M2 T40 S1 | M3 T27 S5 | 2 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-55 | M2 T40 S2 | M3 T27 S5 | 24 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-56 | M2 T40 S3 | M3 T27 S5 | 5 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-57 | M2 T40 S4 | M3 T27 S5 | 10 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-58 | M2 T40 S5 | M3 T27 S5 | 16 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-59 | M2 T40 S6 | M3 T27 S5 | 2 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-60 | M2 T40 S7 | M3 T27 S5 | 7 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-61 | M2 T40 S8 | M3 T27 S5 | 32 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-62 | M2 T40 S9 | M3 T27 S5 | 6 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-63 | M2 T40 S10 | M3 T27 S5 | 16 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-64 | M2 T41 S1 | M3 T27 S5 | 6 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-65 | M2 T41 S2 | M3 T27 S5 | 19 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-66 | M2 T41 S3 | M3 T27 S5 | 4 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-67 | M2 T41 S4 | M3 T27 S5 | 9 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-68 | M2 T41 S5 | M3 T27 S5 | 3 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-69 | M2 T41 S6 | M3 T27 S5 | 20 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-70 | M2 T41 S7 | M3 T27 S5 | 6 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-71 | M2 T41 S8 | M3 T27 S5 | 2 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-72 | M2 T41 S9 | M3 T27 S5 | 26 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-73 | M2 T41 S10 | M3 T27 S5 | 6 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-74 | M2 T41 S11 | M3 T27 S5 | 9 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-75 | M2 T41 S12 | M3 T27 S5 | 5 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-76 | M2 T41 S13 | M3 T27 S5 | 5 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-77 | M2 T42 S1 | M3 T27 S5 | 6 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-78 | M2 T42 S2 | M3 T27 S5 | 11 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-79 | M2 T42 S3 | M3 T27 S5 | 3 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-80 | M2 T42 S4 | M3 T27 S5 | 6 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-81 | M2 T42 S5 | M3 T27 S5 | 34 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-82 | M2 T42 S6 | M3 T27 S5 | 16 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-83 | M2 T42 S7 | M3 T27 S5 | 14 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-84 | M2 T42 S8 | M3 T27 S5 | 4 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-85 | M2 T42 S9 | M3 T27 S5 | 4 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-86 | M2 T43 S1 | M3 T27 S5 | 31 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-87 | M2 T43 S2 | M3 T27 S5 | 3 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-88 | M2 T43 S3 | M3 T27 S5 | 14 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-89 | M2 T43 S4 | M3 T27 S5 | 7 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-90 | M2 T43 S5 | M3 T27 S5 | 3 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-91 | M2 T43 S6 | M3 T27 S5 | 5 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-92 | M2 T43 S7 | M3 T27 S5 | 8 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-93 | M2 T43 S8 | M3 T27 S5 | 18 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-94 | M2 T43 S9 | M3 T27 S5 | 14 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-95 | M2 T43 S10 | M3 T27 S5 | 9 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-96 | M2 T43 S11 | M3 T27 S5 | 3 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-97 | M2 T43 S12 | M3 T27 S5 | 3 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-98 | M2 T43 S13 | M3 T27 S5 | 10 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-99 | M2 T43 S14 | M3 T27 S5 | 7 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-100 | M2 T43 S15 | M3 T27 S5 | 7 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-101 | M2 T44 S1 | M3 T27 S5 | 14 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-102 | M2 T44 S2 | M3 T27 S5 | 6 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-103 | M2 T44 S3 | M3 T27 S5 | 14 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-104 | M2 T44 S4 | M3 T27 S5 | 9 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-105 | M2 T44 S6 | M3 T27 S5 | 5 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-106 | M2 T44 S7 | M3 T27 S5 | 6 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-107 | M2 T44 S8 | M3 T27 S5 | 44 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-108 | M2 T45 S1 | M3 T27 S5 | 13 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-109 | M2 T45 S2 | M3 T27 S5 | 14 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-110 | M2 T45 S3 | M3 T27 S5 | 7 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-111 | M2 T45 S4 | M3 T27 S5 | 6 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-112 | M2 T45 S5 | M3 T27 S5 | 5 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-113 | M2 T46 S1 | M3 T27 S5 | 13 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-114 | M2 T46 S2 | M3 T27 S5 | 5 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-115 | M2 T46 S3 | M3 T27 S5 | 13 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-116 | M2 T46 S4 | M3 T27 S5 | 12 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-117 | M2 T47 S1 | M3 T27 S5 | 1 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-118 | M2 T47 S2 | M3 T27 S5 | 9 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-119 | M2 T47 S3 | M3 T27 S5 | 1 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-120 | M2 T47 S4 | M3 T27 S5 | 26 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-121 | M2 T47 S5 | M3 T27 S5 | 3 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-122 | M2 T48 S1 | M3 T27 S5 | 13 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-123 | M2 T48 S2 | M3 T27 S5 | 9 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-124 | M2 T48 S3 | M3 T27 S5 | 14 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-125 | M2 T48 S4 | M3 T27 S5 | 16 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-126 | M2 T48 S5 | M3 T27 S5 | 18 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-127 | M2 T48 S6 | M3 T27 S5 | 4 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-128 | M2 T49 S1 | M3 T27 S5 | 14 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-129 | M2 T49 S2 | M3 T27 S5 | 12 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-130 | M2 T49 S3 | M3 T27 S5 | 10 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-131 | M2 T49 S4 | M3 T27 S5 | 11 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-132 | M2 T49 S5 | M3 T27 S5 | 8 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-133 | M2 T49 S6 | M3 T27 S5 | 6 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-134 | M2 T49 S7 | M3 T27 S5 | 8 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-135 | M2 T49 S8 | M3 T27 S5 | 9 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-136 | M2 T49 S9 | M3 T27 S5 | 23 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-137 | M2 T50 S1 | M3 T27 S5 | 21 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-138 | M2 T50 S2 | M3 T27 S5 | 5 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| m3-t27-s5-core-cohorts-139 | M2 T50 S3 | M3 T27 S5 | 2 | coordinator under owner-approved component split; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
 
 ## Recorded S estimates and actual matches
 
@@ -3866,4 +3871,5 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T27 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
 | M3 T27 S2 | 42 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
 | M3 T27 S3 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
-| M3 T27 S4 | 475 | 1992 | none / 0 | none / 0 | active; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| M3 T27 S4 | 475 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| M3 T27 S5 | 1449 | 1992 | none / 0 | none / 0 | active; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |

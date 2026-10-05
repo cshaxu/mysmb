@@ -1,4 +1,4 @@
-#include "game/game.h"
+#include "core/game.h"
 #include "platform/win32/focus_pause.h"
 
 static struct mysmb_game game;

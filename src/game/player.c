@@ -1,9 +1,9 @@
 #include "game/player.h"
 #include "game/player/terrain_children.h"
-#include "game/frame_root.h"
+#include "core/frame_root.h"
 #include "game/objects.h"
 #include "game/fireball/fireball.h"
-#include "game/area.h"
+#include "core/area.h"
 #include "game/world/world.h"
 #include "game/oam/oam.h"
 

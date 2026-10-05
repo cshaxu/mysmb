@@ -1,7 +1,7 @@
 #ifndef MYSMB_GAME_WORLD_WORLD_H
 #define MYSMB_GAME_WORLD_WORLD_H
 
-#include "game/game.h"
+#include "core/game.h"
 
 /* ROM $BFD7 common gravity consumes scratch $00/$01/$02. */
 void mysmb_world_impose_gravity(struct mysmb_game *game, mysmb_u8 offset,

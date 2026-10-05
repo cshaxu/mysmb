@@ -1,7 +1,7 @@
 #ifndef MYSMB_GAME_PLAYER_H
 #define MYSMB_GAME_PLAYER_H
 
-#include "game/game.h"
+#include "core/game.h"
 
 /* ROM $e? MovePlayerHorizontally through MoveObjectHorizontally. */
 mysmb_u8 mysmb_player_move_horizontally(struct mysmb_game *game);

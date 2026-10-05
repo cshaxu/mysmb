@@ -1,7 +1,7 @@
 #ifndef MYSMB_GAME_ENEMY_FRENZY_H
 #define MYSMB_GAME_ENEMY_FRENZY_H
 
-#include "game/game.h"
+#include "core/game.h"
 
 /* ROM $C7A0: shared initializer-vector target. */
 void mysmb_enemy_init_frenzy(struct mysmb_game *game, mysmb_u8 slot);

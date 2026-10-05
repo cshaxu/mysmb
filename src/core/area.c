@@ -1,9 +1,9 @@
-#include "game/area.h"
+#include "core/area.h"
 #include "game/player.h"
 #include "game/enemy/init.h"
 #include "game/objects.h"
-#include "game/status.h"
-#include "game/frame_root.h"
+#include "core/status.h"
+#include "core/frame_root.h"
 
 enum {
     MYSMB_AREA_CANNON_OFFSET = 0x046aU,

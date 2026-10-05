@@ -1,11 +1,11 @@
-#include "game/frame_root.h"
-#include "game/dispatcher.h"
-#include "game/status.h"
+#include "core/frame_root.h"
+#include "core/dispatcher.h"
+#include "core/status.h"
 #include "game/audio.h"
-#include "game/area.h"
+#include "core/area.h"
 #include "game/enemy/core.h"
 #include "game/oam/oam.h"
-#include "game/title_modes.h"
+#include "core/title_modes.h"
 
 enum {
     MYSMB_ROOT_FRAME_COUNTER = 0x0009U,

@@ -1,5 +1,5 @@
 #include "game/objects.h"
-#include "game/area.h"
+#include "core/area.h"
 #include <stdio.h>
 #include <string.h>
 static struct mysmb_game game;

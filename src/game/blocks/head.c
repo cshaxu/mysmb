@@ -1,6 +1,6 @@
 #include "game/blocks/head.h"
 #include "game/objects.h"
-#include "game/area.h"
+#include "core/area.h"
 
 /* ROM $BCEB: BlockYPosAdderData, consumed at $BD62. */
 static const mysmb_u8 block_y_adder[2] = { 0x04U, 0x12U };

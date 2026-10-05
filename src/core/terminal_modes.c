@@ -1,9 +1,9 @@
-#include "game/game.h"
-#include "game/frame_root.h"
-#include "game/area.h"
+#include "core/game.h"
+#include "core/frame_root.h"
+#include "core/area.h"
 #include "game/player.h"
 #include "game/objects.h"
-#include "game/terminal_modes.h"
+#include "core/terminal_modes.h"
 
 /* CPU-RAM addresses owned by the ROM terminal-mode labels. */
 enum {

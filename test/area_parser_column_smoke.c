@@ -1,7 +1,7 @@
 #include <string.h>
 
-#include "game/game.h"
-#include "game/area.h"
+#include "core/game.h"
+#include "core/area.h"
 
 int main(void)
 {

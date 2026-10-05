@@ -1,5 +1,5 @@
-#include "game/frame_root.h"
-#include "game/area.h"
+#include "core/frame_root.h"
+#include "core/area.h"
 #include "game/player.h"
 
 /* Palette callers must never enter player control. */

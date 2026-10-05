@@ -1,10 +1,10 @@
-#include "game/area.h"
+#include "core/area.h"
 #include "game/enemy/stream.h"
-#include "game/game.h"
+#include "core/game.h"
 #include "game/objects.h"
 #include "game/enemy/frenzy.h"
 #include "game/fireball/fireball.h"
-#include "game/frame_root.h"
+#include "core/frame_root.h"
 
 int main(void)
 {

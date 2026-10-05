@@ -1,7 +1,7 @@
 #ifndef MYSMB_PLATFORM_WIN32_FOCUS_PAUSE_H
 #define MYSMB_PLATFORM_WIN32_FOCUS_PAUSE_H
 
-#include "game/game.h"
+#include "core/game.h"
 
 struct mysmb_win32_focus_pause {
     mysmb_u8 focused;

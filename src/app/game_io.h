@@ -1,7 +1,7 @@
 #ifndef MYSMB_APP_GAME_IO_H
 #define MYSMB_APP_GAME_IO_H
 
-#include "game/game.h"
+#include "core/game.h"
 #include "ppu/frame.h"
 #include "io/input.h"
 #include "io/video.h"

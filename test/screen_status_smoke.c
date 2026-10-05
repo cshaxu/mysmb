@@ -1,7 +1,7 @@
-#include "game/area.h"
-#include "game/frame_root.h"
-#include "game/game.h"
-#include "game/title_modes.h"
+#include "core/area.h"
+#include "core/frame_root.h"
+#include "core/game.h"
+#include "core/title_modes.h"
 
 int main(void)
 {

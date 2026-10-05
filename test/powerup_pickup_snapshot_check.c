@@ -1,5 +1,5 @@
 #include "game/world/world.h"
-#include "game/area.h"
+#include "core/area.h"
 #include "game/objects.h"
 #include "game/enemy/init_targets.h"
 #include "smb1_local_rom.h"

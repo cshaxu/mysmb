@@ -1,5 +1,5 @@
-#include "game/game.h"
-#include "game/area.h"
+#include "core/game.h"
+#include "core/area.h"
 #include "game/player.h"
 
 int main(void)

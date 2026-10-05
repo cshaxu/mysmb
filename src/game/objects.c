@@ -5,12 +5,12 @@
 #include "game/blocks/head.h"
 #include "game/enemy/actor_slots.h"
 #include "game/objects.h"
-#include "game/status.h"
+#include "core/status.h"
 #include "game/enemy/movement.h"
 #include "game/enemy/frenzy.h"
 #include "game/oam/oam.h"
 #include "game/world/world.h"
-#include "game/area.h"
+#include "core/area.h"
 #include "game/presentation/text/observation.h"
 
 enum {

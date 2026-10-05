@@ -13,11 +13,11 @@ set(MYSMB_ASM_PATH "" CACHE FILEPATH "Owner-local reviewed SMBDIS listing")
 set(MYSMB_OPENNT_CL16 "" CACHE FILEPATH "Owner-local OpenNT 16-bit cl16.exe")
 set(MYSMB_DOS_RUNTIME_DIR "" CACHE PATH "Owner-local reviewed 16-bit large-model runtime directory")
 
-set(MYSMB_GAME_SOURCES src/game/boot.c src/game/dispatcher.c src/game/engine.c src/game/engine_slots.c src/game/engine_tail.c src/game/frame_root.c src/game/title_modes.c src/game/terminal_modes.c src/game/game.c src/game/audio.c src/game/area.c src/game/status.c src/game/area/block_metatile.c src/game/enemy/stream.c src/game/enemy/group.c src/game/enemy/init.c src/game/enemy/init_targets.c src/game/enemy/loop.c src/game/enemy/core.c src/game/enemy/dispatch_targets.c src/game/enemy/movement.c src/game/enemy/frenzy.c src/game/player.c src/game/objects.c src/game/fireball/fireball_spawn.c src/game/fireball/fireball_core.c src/game/world/movement.c src/game/world/gravity.c src/game/world/collision.c src/game/world/block_buffer.c src/game/world/bounding_box.c src/game/world/geometry.c src/game/bridge.c src/game/oam/bullet_bill_gfx.c src/game/oam/hammer_gfx.c src/game/oam/firebar_gfx.c src/game/oam/vine_gfx.c src/game/oam/sprite_stacker.c src/game/oam/sprite_dump.c src/game/enemy_bounds.c src/game/oam/power_up_gfx.c src/game/oam/object_position.c src/game/oam/sprite_row.c src/game/oam/player_gfx.c src/game/oam/fireball_gfx.c src/game/oam/block_gfx.c src/game/oam/goomba_gfx.c src/game/fireball/bubble.c src/game/oam/piranha_gfx.c src/game/oam/cheep_gfx.c src/game/oam/bloober_gfx.c src/game/oam/podoboo_gfx.c src/game/oam/normal_enemy_gfx.c src/game/oam/spiny_gfx.c src/game/oam/hammer_bro_gfx.c src/game/oam/bowser_gfx.c src/game/oam/bowser_flame_gfx.c src/game/endgame_objects.c src/game/oam/flagpole_gfx.c src/game/oam/small_platform_gfx.c src/game/render.c src/game/frame_snapshot.c)
+set(MYSMB_GAME_SOURCES src/core/boot.c src/core/dispatcher.c src/core/engine.c src/core/engine_slots.c src/core/engine_tail.c src/core/frame_root.c src/core/title_modes.c src/core/terminal_modes.c src/core/game.c src/game/audio.c src/core/area.c src/core/status.c src/core/area/block_metatile.c src/game/enemy/stream.c src/game/enemy/group.c src/game/enemy/init.c src/game/enemy/init_targets.c src/game/enemy/loop.c src/game/enemy/core.c src/game/enemy/dispatch_targets.c src/game/enemy/movement.c src/game/enemy/frenzy.c src/game/player.c src/game/objects.c src/game/fireball/fireball_spawn.c src/game/fireball/fireball_core.c src/game/world/movement.c src/game/world/gravity.c src/game/world/collision.c src/game/world/block_buffer.c src/game/world/bounding_box.c src/game/world/geometry.c src/game/bridge.c src/game/oam/bullet_bill_gfx.c src/game/oam/hammer_gfx.c src/game/oam/firebar_gfx.c src/game/oam/vine_gfx.c src/game/oam/sprite_stacker.c src/game/oam/sprite_dump.c src/game/enemy_bounds.c src/game/oam/power_up_gfx.c src/game/oam/object_position.c src/game/oam/sprite_row.c src/game/oam/player_gfx.c src/game/oam/fireball_gfx.c src/game/oam/block_gfx.c src/game/oam/goomba_gfx.c src/game/fireball/bubble.c src/game/oam/piranha_gfx.c src/game/oam/cheep_gfx.c src/game/oam/bloober_gfx.c src/game/oam/podoboo_gfx.c src/game/oam/normal_enemy_gfx.c src/game/oam/spiny_gfx.c src/game/oam/hammer_bro_gfx.c src/game/oam/bowser_gfx.c src/game/oam/bowser_flame_gfx.c src/game/endgame_objects.c src/game/oam/flagpole_gfx.c src/game/oam/small_platform_gfx.c src/game/render.c src/game/frame_snapshot.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/oam/enemy_offscreen.c src/game/oam/sprite_draw.c src/game/oam/block_offscreen.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/player/terrain.c src/game/player/terrain_metatiles.c src/game/player/climbing.c src/game/player/pipe_entry.c src/game/player/impede.c src/game/world/metatiles.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/area/block_buffer.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/area/area_data.c)
+list(APPEND MYSMB_GAME_SOURCES src/core/area/block_buffer.c)
+list(APPEND MYSMB_GAME_SOURCES src/core/area/area_data.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/whirlpool.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/cannon.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/timer.c)
@@ -61,8 +61,8 @@ list(APPEND MYSMB_GAME_SOURCES src/game/enemy/firebar_children.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/enemy/distance.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/enemy/background.c src/game/enemy/jump_terrain.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/enemy/side_collision.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/scroll.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/entry.c)
+list(APPEND MYSMB_GAME_SOURCES src/core/scroll.c)
+list(APPEND MYSMB_GAME_SOURCES src/core/entry.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/player_control.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/player_transition.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/player_modes.c)
@@ -213,13 +213,13 @@ add_executable(mysmb_area_parser_boundary_smoke test/area_parser_boundary_smoke.
 target_link_libraries(mysmb_area_parser_boundary_smoke PRIVATE mysmb_game)
 add_executable(mysmb_area_loop_command_smoke test/area_loop_command_smoke.c)
 target_link_libraries(mysmb_area_loop_command_smoke PRIVATE mysmb_game)
-add_executable(mysmb_game_entry_dispatch_smoke test/game_entry_dispatch_smoke.c src/game/dispatcher.c)
+add_executable(mysmb_game_entry_dispatch_smoke test/game_entry_dispatch_smoke.c src/core/dispatcher.c)
 target_include_directories(mysmb_game_entry_dispatch_smoke PRIVATE src)
-add_executable(mysmb_engine_caller_smoke test/engine_caller_smoke.c src/game/engine.c)
+add_executable(mysmb_engine_caller_smoke test/engine_caller_smoke.c src/core/engine.c)
 target_include_directories(mysmb_engine_caller_smoke PRIVATE src)
-add_executable(mysmb_engine_tail_smoke test/engine_tail_smoke.c src/game/engine_tail.c src/game/player_modes.c)
+add_executable(mysmb_engine_tail_smoke test/engine_tail_smoke.c src/core/engine_tail.c src/game/player_modes.c)
 target_include_directories(mysmb_engine_tail_smoke PRIVATE src)
-add_executable(mysmb_engine_slots_smoke test/engine_slots_smoke.c src/game/engine_slots.c)
+add_executable(mysmb_engine_slots_smoke test/engine_slots_smoke.c src/core/engine_slots.c)
 target_include_directories(mysmb_engine_slots_smoke PRIVATE src)
 add_executable(mysmb_engine_environment_smoke test/engine_environment_smoke.c src/game/whirlpool.c)
 target_include_directories(mysmb_engine_environment_smoke PRIVATE src)
@@ -342,8 +342,8 @@ add_executable(mysmb_kill_enemies_shared_primitive_check
     test/kill_enemies_shared_primitive_check.c)
 target_link_libraries(mysmb_kill_enemies_shared_primitive_check PRIVATE mysmb_game)
 add_executable(mysmb_player_route_smoke test/player_route_smoke.c)
-add_executable(mysmb_player_scroll_chain_smoke test/player_scroll_chain_smoke.c src/game/scroll.c)
-add_executable(mysmb_player_entry_chain_smoke test/player_entry_chain_smoke.c src/game/entry.c)
+add_executable(mysmb_player_scroll_chain_smoke test/player_scroll_chain_smoke.c src/core/scroll.c)
+add_executable(mysmb_player_entry_chain_smoke test/player_entry_chain_smoke.c src/core/entry.c)
 add_executable(mysmb_player_control_chain_smoke test/player_control_chain_smoke.c src/game/player_control.c)
 target_include_directories(mysmb_player_control_chain_smoke PRIVATE src)
 add_executable(mysmb_player_transition_chain_smoke test/player_transition_chain_smoke.c src/game/player_transition.c)
@@ -445,10 +445,10 @@ target_include_directories(mysmb_player_transition_caller_check PRIVATE src)
 add_executable(mysmb_player_control_caller_check test/player_control_caller_check.c src/game/player_control.c)
 target_include_directories(mysmb_player_control_caller_check PRIVATE src)
 target_include_directories(mysmb_player_entry_chain_smoke PRIVATE src)
-add_executable(mysmb_entrance_caller_snapshot_check test/entrance_caller_snapshot_check.c src/game/entry.c)
+add_executable(mysmb_entrance_caller_snapshot_check test/entrance_caller_snapshot_check.c src/core/entry.c)
 target_include_directories(mysmb_entrance_caller_snapshot_check PRIVATE src)
 target_include_directories(mysmb_player_scroll_chain_smoke PRIVATE src)
-add_executable(mysmb_scroll_snapshot_check test/scroll_snapshot_check.c src/game/scroll.c src/game/oam/object_position.c)
+add_executable(mysmb_scroll_snapshot_check test/scroll_snapshot_check.c src/core/scroll.c src/game/oam/object_position.c)
 target_include_directories(mysmb_scroll_snapshot_check PRIVATE src)
 target_link_libraries(mysmb_player_route_smoke PRIVATE mysmb_game)
 add_executable(mysmb_player_friction_smoke test/player_friction_smoke.c)
@@ -729,31 +729,31 @@ if(MYSMB_OPENNT_CL16)
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/boot.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/boot.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/frame_root.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/frame_root.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/title_modes.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/title_modes.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/terminal_modes.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/terminal_modes.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/game.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/game.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
@@ -765,7 +765,7 @@ if(MYSMB_OPENNT_CL16)
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/area.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/area.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
@@ -825,13 +825,13 @@ if(MYSMB_OPENNT_CL16)
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/scroll.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/scroll.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/entry.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/entry.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"

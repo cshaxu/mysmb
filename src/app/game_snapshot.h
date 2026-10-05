@@ -1,6 +1,6 @@
 #ifndef MYSMB_APP_GAME_SNAPSHOT_H
 #define MYSMB_APP_GAME_SNAPSHOT_H
-#include "game/game.h"
+#include "core/game.h"
 #include "io/snapshot.h"
 void mysmb_game_snapshot_fingerprint(const struct mysmb_game *game,
     mysmb_io_u8 *fingerprint);

@@ -1,5 +1,5 @@
 /* Project-owned T14 compositor retained solely as a regression reference. */
-#include "game/game.h"
+#include "core/game.h"
 #include "ppu/frame.h"
 
 #ifdef MYSMB_DOS16_TARGET

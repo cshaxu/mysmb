@@ -1,4 +1,4 @@
-#include "game/status.h"
+#include "core/status.h"
 
 enum {
     MYSMB_STATUS_MODE = 0x0770U,

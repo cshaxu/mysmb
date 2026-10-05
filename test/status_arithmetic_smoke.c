@@ -1,5 +1,5 @@
-#include "game/status.h"
-#include "game/frame_root.h"
+#include "core/status.h"
+#include "core/frame_root.h"
 
 #include <string.h>
 

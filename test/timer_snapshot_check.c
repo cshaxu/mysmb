@@ -1,7 +1,7 @@
-#include "game/status.h"
+#include "core/status.h"
 #include "game/objects.h"
-#include "game/frame_root.h"
-#include "game/area.h"
+#include "core/frame_root.h"
+#include "core/area.h"
 #include "smb1_local_rom.h"
 #include <stdio.h>
 #include <string.h>

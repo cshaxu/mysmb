@@ -1,5 +1,5 @@
-#include "game/game.h"
-#include "game/frame_root.h"
+#include "core/game.h"
+#include "core/frame_root.h"
 #include "ppu/frame.h"
 #include "game/oam/oam.h"
 #include "game/objects.h"
@@ -13,7 +13,7 @@
 #include <string.h>
 #include <stddef.h>
 #ifdef MYSMB_LOCAL_TITLE
-#include "game/area.h"
+#include "core/area.h"
 #include "smb1_local_rom.h"
 #include "smb1_local_title.h"
 #endif

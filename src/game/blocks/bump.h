@@ -1,6 +1,6 @@
 #ifndef MYSMB_GAME_BLOCKS_BUMP_H
 #define MYSMB_GAME_BLOCKS_BUMP_H
-#include "game/game.h"
+#include "core/game.h"
 #include "game/blocks/chunks.h"
 /* Original Y result: 0..13 means carry set; $ff means carry clear. */
 mysmb_u8 mysmb_blocks_bumped_index(mysmb_u8 metatile);

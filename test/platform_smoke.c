@@ -1,6 +1,6 @@
-#include "game/area.h"
+#include "core/area.h"
 #include "game/enemy/stream.h"
-#include "game/game.h"
+#include "core/game.h"
 #include "game/objects.h"
 #include "game/world/world.h"
 #include <string.h>

@@ -1,5 +1,5 @@
 #include <string.h>
-#include "game/area.h"
+#include "core/area.h"
 #include "game/world/world.h"
 
 int main(void)

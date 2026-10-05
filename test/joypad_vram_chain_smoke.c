@@ -1,5 +1,5 @@
-#include "game/game.h"
-#include "game/frame_root.h"
+#include "core/game.h"
+#include "core/frame_root.h"
 
 static mysmb_u8 mysmb_expected_joypad_saved(mysmb_u8 previous,
                                              mysmb_u8 current)

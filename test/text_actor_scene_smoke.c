@@ -1,6 +1,6 @@
 #include "io/text_glyph.h"
 #include "game/presentation/text/actor_scene.h"
-#include "game/frame_root.h"
+#include "core/frame_root.h"
 #include "io/color.h"
 #include <stdio.h>
 #include <string.h>

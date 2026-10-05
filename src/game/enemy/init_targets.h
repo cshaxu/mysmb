@@ -1,7 +1,7 @@
 #ifndef MYSMB_GAME_ENEMY_INIT_TARGETS_H
 #define MYSMB_GAME_ENEMY_INIT_TARGETS_H
 
-#include "game/game.h"
+#include "core/game.h"
 
 /* Explicit initializer entry boundaries; child conformance is tracked separately. */
 void mysmb_enemy_init_piranha_plant(struct mysmb_game *game, mysmb_u8 slot);

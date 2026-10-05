@@ -1,6 +1,6 @@
 #include "platform/dos16/dos16_root.h"
 #include "platform/dos16/devices.h"
-#include "game/area.h"
+#include "core/area.h"
 #include <stdio.h>
 #include <malloc.h>
 #include "platform/file/snapshot_files.h"

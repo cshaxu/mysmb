@@ -1,7 +1,7 @@
 #include "game/enemy/actor_slots.h"
 #include "game/oam/oam.h"
 #include "game/score.h"
-#include "game/status.h"
+#include "core/status.h"
 #include "game/presentation/text/observation.h"
 
 /* ROM $D2CD-$D2D8: StarFlagYPosAdder, StarFlagXPosAdder, StarFlagTileData. */

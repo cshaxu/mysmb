@@ -1,4 +1,4 @@
-#include "game/area.h"
+#include "core/area.h"
 
 static int check_id(mysmb_u8 id, int base)
 {

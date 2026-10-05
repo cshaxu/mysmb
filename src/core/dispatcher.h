@@ -1,7 +1,7 @@
 #ifndef MYSMB_GAME_DISPATCHER_H
 #define MYSMB_GAME_DISPATCHER_H
 
-#include "game/game.h"
+#include "core/game.h"
 
 void mysmb_game_mode(struct mysmb_game *game);
 void mysmb_game_core_routine(struct mysmb_game *game);

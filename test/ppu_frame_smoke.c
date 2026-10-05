@@ -1,4 +1,4 @@
-#include "game/game.h"
+#include "core/game.h"
 #include "ppu/frame.h"
 
 static mysmb_u8 chr[8192U];

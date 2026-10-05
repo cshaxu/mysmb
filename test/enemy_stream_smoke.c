@@ -1,5 +1,5 @@
-#include "game/dispatcher.h"
-#include "game/area.h"
+#include "core/dispatcher.h"
+#include "core/area.h"
 #include "game/enemy/stream.h"
 #include "game/enemy/core.h"
 #include "game/enemy/loop.h"

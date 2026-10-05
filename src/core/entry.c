@@ -1,5 +1,5 @@
-#include "game/dispatcher.h"
-#include "game/frame_root.h"
+#include "core/dispatcher.h"
+#include "core/frame_root.h"
 #include "game/player.h"
 
 /* ROM $b04a GameRoutines. Child bodies keep their separate proof status. */

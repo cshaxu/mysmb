@@ -1,6 +1,6 @@
 #ifndef MYSMB_GAME_ENEMY_PLATFORM_H
 #define MYSMB_GAME_ENEMY_PLATFORM_H
-#include "game/game.h"
+#include "core/game.h"
 
 /* Original child boundaries; bodies retain their individual proof status. */
 void mysmb_platform_collision_large(struct mysmb_game *game, mysmb_u8 slot);

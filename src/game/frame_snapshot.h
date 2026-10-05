@@ -1,7 +1,7 @@
 #ifndef MYSMB_GAME_FRAME_SNAPSHOT_H
 #define MYSMB_GAME_FRAME_SNAPSHOT_H
 
-#include "game/game.h"
+#include "core/game.h"
 
 /*
  * M2 T9 canonical output record.  This is deliberately a record of the

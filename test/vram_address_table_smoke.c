@@ -1,5 +1,5 @@
-#include "game/game.h"
-#include "game/frame_root.h"
+#include "core/game.h"
+#include "core/frame_root.h"
 
 static const mysmb_u8 table_low[19] = {
     0x01U, 0xa4U, 0xc8U, 0xecU, 0x10U, 0x00U, 0x41U, 0x41U, 0x4cU,

@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "app/game_io.h"
-#include "game/area.h"
+#include "core/area.h"
 #include "app/game_snapshot.h"
 #include "game/presentation/text/scene.h"
 #include "platform/vga/vga_frame.h"

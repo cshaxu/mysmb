@@ -1,7 +1,7 @@
 #include <string.h>
 
-#include "game/area.h"
-#include "game/game.h"
+#include "core/area.h"
+#include "core/game.h"
 #include "smb1_local_rom.h"
 
 static int verify_block(mysmb_u8 metatile, mysmb_u8 block_low)

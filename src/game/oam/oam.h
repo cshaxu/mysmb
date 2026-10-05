@@ -1,7 +1,7 @@
 #ifndef MYSMB_GAME_OAM_OAM_H
 #define MYSMB_GAME_OAM_OAM_H
 
-#include "game/game.h"
+#include "core/game.h"
 
 /* ROM-owned OAM writers.  These consume completed game state and write only
  * the canonical $0200 OAM backing store plus ROM-defined relative/offscreen

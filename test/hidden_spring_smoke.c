@@ -1,5 +1,5 @@
 #include "game/player/terrain_children.h"
-#include "game/area.h"
+#include "core/area.h"
 #include "game/objects.h"
 #include <stdio.h>
 #include <string.h>

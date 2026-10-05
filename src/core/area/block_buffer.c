@@ -1,4 +1,4 @@
-#include "game/area/block_buffer.h"
+#include "core/area/block_buffer.h"
 
 /* ROM $9bdd BlockBufferAddr; $9be1-$9bf5 GetBlockBufferAddr.
  * RendBBuf maintains a 0..31 column; BlockBufferCollision constructs it

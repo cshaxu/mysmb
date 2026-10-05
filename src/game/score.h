@@ -1,7 +1,7 @@
 #ifndef MYSMB_GAME_SCORE_H
 #define MYSMB_GAME_SCORE_H
 
-#include "game/game.h"
+#include "core/game.h"
 
 /* ROM $BBF8-$BC48. Return values expose the final source X reload. */
 extern const mysmb_u8 mysmb_score_coin_offsets[2];

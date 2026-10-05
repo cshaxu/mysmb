@@ -1,4 +1,4 @@
-#include "game/game.h"
+#include "core/game.h"
 #include "smb1_local_title.h"
 
 int main(void)

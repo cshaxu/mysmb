@@ -1,4 +1,4 @@
-#include "game/area.h"
+#include "core/area.h"
 #include "game/oam/oam.h"
 #include <stdio.h>
 #include <string.h>

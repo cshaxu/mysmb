@@ -1,7 +1,7 @@
 #ifndef MYSMB_GAME_ENEMY_ACTOR_SLOTS_H
 #define MYSMB_GAME_ENEMY_ACTOR_SLOTS_H
 
-#include "game/game.h"
+#include "core/game.h"
 
 /* Current-slot entries extracted from existing actor bodies. Child semantic
  * proof remains with each original owner; these declarations grant no credit. */

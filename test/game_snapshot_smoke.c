@@ -1,7 +1,7 @@
 #include <string.h>
 #include "app/game_snapshot.h"
 #include "io/snapshot_keys.h"
-#include "game/game.h"
+#include "core/game.h"
 #include "ppu/frame.h"
 
 static struct mysmb_game first,second,before;

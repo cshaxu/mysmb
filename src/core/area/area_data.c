@@ -1,4 +1,4 @@
-#include "game/area.h"
+#include "core/area.h"
 
 enum {
     WORLD_OFFSETS = 0x1cb4U, AREA_OFFSETS = 0x1cbcU,

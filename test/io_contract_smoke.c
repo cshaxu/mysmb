@@ -2,7 +2,7 @@
 #include "io/control.h"
 #include "io/video.h"
 #include "io/audio.h"
-#include "game/game.h"
+#include "core/game.h"
 
 static mysmb_io_u8 MYSMB_IO_FAR pixels[MYSMB_IO_VIDEO_PIXELS];
 static struct mysmb_io_text_frame text_frame;

@@ -1,6 +1,6 @@
-#include "game/area.h"
+#include "core/area.h"
 #include "game/enemy/stream.h"
-#include "game/game.h"
+#include "core/game.h"
 #include "game/objects.h"
 
 /* Synthetic lookup data tests binding and integration, not ROM equality. */

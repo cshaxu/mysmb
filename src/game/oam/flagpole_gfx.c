@@ -1,8 +1,8 @@
 #include "game/score.h"
 #include "game/oam/oam.h"
 #include "game/objects.h"
-#include "game/area.h"
-#include "game/status.h"
+#include "core/area.h"
+#include "core/status.h"
 
 enum {
     MYSMB_FLAG_ENEMY_FLAG = 0x000fU, MYSMB_FLAG_ENEMY_ID = 0x0016U,

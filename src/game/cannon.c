@@ -1,4 +1,4 @@
-#include "game/dispatcher.h"
+#include "core/dispatcher.h"
 #include "game/objects.h"
 #include "game/oam/oam.h"
 #include "game/enemy/movement.h"

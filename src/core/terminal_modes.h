@@ -1,7 +1,7 @@
 #ifndef MYSMB_GAME_TERMINAL_MODES_H
 #define MYSMB_GAME_TERMINAL_MODES_H
 
-#include "game/game.h"
+#include "core/game.h"
 
 /* ROM terminal-mode subtree: ContinueGame, PlayerLoseLife, GameOver,
  * NextArea and VictoryModeSubroutines. */

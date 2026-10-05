@@ -1,4 +1,4 @@
-#include "game/frame_root.h"
+#include "core/frame_root.h"
 
 static mysmb_u8 rotate_first_byte(mysmb_u8 first, mysmb_u8 second)
 {
