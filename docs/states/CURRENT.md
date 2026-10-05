@@ -1,25 +1,25 @@
 # Project Status
 
-## M3 T28 S1 Packet
+## M3 T28 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | New: M3 T28 S1 P1; audit and planning only. |
-| Admission And Approval | Owner directs closure of T27 and admission of the next queue task,first audit and plan. T27 already closed at bb5a0f35. |
-| Objective | Reconcile accepted T26/T27 work,audit remaining rendering costs,and freeze the workload,memory budget and bounded S plan before optimization. |
-| Non-goals | No product-code changes in this P,no ROM control/timing changes,no emulator configuration changes,no whole-project audit restart or performance acceptance from planning. |
+| Identifier Mode | Continuation: M3 T28 S2 P1; shared PPU background/CHR-cache implementation. |
+| Admission And Approval | Owner authorizes execution. S1 baseline/audit closed;automatically admit the planned S2 under the same mandate. |
+| Objective | Compare shared frame-local background reuse and caller-owned CHR caching against frozen S1 outputs/costs;retain measured improvements only. |
+| Non-goals | No core ROM routine/state/timing changes,no emulator settings,no text/VGA redesign,no nominal-cadence or M2/M4 acceptance. |
 | Reference Baseline | Post-T27 source and retained three products;historical1992/1992,local1991/1992 nodes and4260/4261 feasible controls,raw4342/infeasible81. |
 | Candidate Proposal | [T28 retained proposal and audit](../history/M3-T28-dos-rendering-optimization.md). Removed from pending QUEUE on admission. |
-| Files And ABI Surface | Proposal,CURRENT,QUEUE,node/task ledger and historical transfer link;read-only ppu/frame,VGA,DOS root,tests and retained receipts. No ABI change. |
+| Files And ABI Surface | Shared ppu/frame cache/workspace,composition-root lifetime binding and focused tests/build membership;estimated150-350lines,4-7files. No core/state/snapshot ABI changes. |
 | Applicable Rules | README Task Reading Set,EXECUTION,DOCUMENT,ARCHITECTURE,CODING,CONTRIBUTING and source policy. |
-| Verification | Node admission and documentation gates;source-owner audit. S1 remaining work measures stage/end-frame costs and heap/stack with unchanged installed DOSBox configuration before S2. |
-| Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0,maximum1992/1992;no custody transfer. S1 remains active until its baseline and memory contract are complete. |
-| Asset Needs | Existing owner-local resources/derived products only,local ignored build containment;no new import or redistribution. Prior owner exception for existing tracked EXEs retained;this doc-only P does not refresh them. |
+| Verification | Independent complete indexed/reference equality,resource/reset/fallback/two-instance/cache tests,native x86/x64 and DOS16 far-memory builds;S1 fixed-config workload timing,platform purity and three EXEs for every product-code P. |
+| Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0,maximum1992/1992;no custody transfer. S2 owns infrastructure-only implementation;original node custodians unchanged. |
+| Asset Needs | Existing owner-local resources/derived products only,local ignored build containment;no new import or redistribution. Prior owner exception for existing tracked EXEs retained;every product-code P refreshes all three,with local probes/resources contained below ignored build. |
 | Reporting Requirements | Before each S owners,scope and estimated size;after each P actual diff,tests/products and total/local counters. Separate static opportunity evidence from measured gains. |
 | Stop Conditions | Pixel/state/snapshot/audio divergence,unbounded memory or cache lifetime,missing fixed-config timing,or proposed core/PPU semantic change prevents advancing the affected optimization. |
-| Exit Criteria | S1 freezes representative fixtures,stage/end-frame baseline,measurement overhead and DOS memory/cache contract;T disposes all six opportunities with cumulative equality/performance evidence and named pending limits. |
-| Original Owner Request | Close T,admit next task,first audit and provide a plan;preserve original ROM and PPU semantics. |
-| Similar-Issue Sweep | Inspect accepted T26 tile-row optimization,current palette duplication,behind-background redecoding,repeated stretch rows,existing bulk transfers and root non-render costs;record all dispositions in T28. |
+| Exit Criteria | S2 resolves scoped equality/lifetime/memory cases,records measured candidate acceptance/rejection and cumulative cost,refreshes three products for changed code;T exit remains all six dispositions plus integrated proof. |
+| Original Owner Request | Owner authorizes execution after reviewed T28 plan;preserve original ROM and PPU semantics. |
+| Similar-Issue Sweep | Sweep all CHR bindings/frame consumers for immutable lifetime,stale palette/bank/bounds,instance sharing and allocation failure;record every hit and disposition. |
 
 ## Current Technical Baseline
 

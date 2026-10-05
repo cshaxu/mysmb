@@ -11,6 +11,13 @@ scoped evidence and track only named unresolved/invalidated clauses.
 Material993 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
+## M3 T28 S1 - rendering baseline audit
+
+Scope/expected/actual labels[],new0;historical1992/1992,local1991/1992 and
+4260/4261feasible controls(raw4342,infeasible81) unchanged. Normal-SDL fixed-config
+DOS stage/memory and paired frame/snapshot baseline closed;no product-code change,
+no ROM credit or nominal-cadence qualification. [Evidence and limits](../history/M3-T28-dos-rendering-optimization.md#s1-p2-closure-fixed-config-stage-and-memory-baseline).
+
 ## M3 T27 - component separation closure
 
 Scope/expected/actual[],new0;historical1992/1992/local1991/1992nodes and4260/4261feasible controls unchanged.185file/751function/143macro/1996consumer dispositions,173C-source preservation,50tests and13host groups eachwidth,original DOS16 and paired full-snapshot equality establish bounded migration preservation,not a new ROM certificate. [T27 contract closure](../history/M3-T27-core-ppu-module-boundaries.md#s8-p1-closure---integrated-completion-audit).

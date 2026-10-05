@@ -184,3 +184,101 @@ maximum1992;ledger has1992receivers and0orphans. Documentation governance and
 Git whitespace checks pass. Product code and three EXEs unchanged;no build is
 required for this planning P. Remaining S1 measurements are explicit above.
 
+
+## S1 P2 closure: fixed-config stage and memory baseline
+
+S1 closes with a bounded instrumented DOS baseline,not a product optimization.
+Contained source copies reuse the current original-toolchain product libraries;
+only probe root/device timing wrappers and deterministic fixture input differ.
+Normal SDL video/audio run on an owned private desktop,with no foreground
+activation,global input injection or installed configuration change. All local
+probe sources,executables,frames and logs stay below build/m3-t28-s1.
+Build/link use the retained OpenNT large-model flags/runtime;no optimizer or
+emulator-speed override is introduced. Existing three product hashes stay equal.
+
+| Scope | Measured result in this DOSBox environment |
+| --- | --- |
+| Ordinary warmed title | PPU1002.30ms,stretch974.04ms,VGA21.59ms,game8.86ms;complete step2008.78ms mean over12steps. |
+| Restored ground with decoded right/run input | PPU1002.28ms,stretch974.04ms,VGA21.59ms,game9.39ms,snapshot30.45ms. Complete-step mean2470.23ms includes the first load/redraw;exclude that separately for steady gameplay,never call it cadence. |
+| Text route | Complete step925.20ms;graphics compositor/scale/VGA stages absent. Text optimization is outside T28;retained cost is an explicit S6 integration limit. |
+| Timing-enabled versus disabled | Same102-second workload,101.972513/101.957322seconds,wall difference0.01490percent. Six complete61440-byte indexed buffers and10035-byte final snapshot equal. This controls clock collection cost,not all probe-versus-pristine overhead. |
+| Clock calibration | 100paired collections22668PIT ticks,about0.190ms per pair. Unmodified BIOS PIT rate;wait measured separately. |
+
+Only title/ground/text are complete root routes in the longer sample.
+Initial parser-only water/castle fixtures had blank palettes;they are not
+accepted colored-scene evidence. The final shorter paired corpus explicitly
+applies the original area palette stream and establishes neutral pattern-bank/
+mask inputs after original parser staging. Water/castle/dense variants are
+controlled compositor workloads,not actual gameplay or new ROM equivalence.
+Final six corpus buffers have10/12/12/7/7/10colors respectively;all six indexed
+frames and the10035-byte final snapshot match with clock collection disabled.
+Dense workload adds64controlled OAM entries with varied attributes. S2 retains
+these exact fixture identities and the longer title/ground operational baseline.
+Actual transition/split/palette/mask/bounds coverage comes from the independent
+existing reference matrix;S6 still owns expanded actual route integration.
+
+Memory evidence:current product427455bytes,minimum loaded451968bytes,193
+segments(max64000),DGROUP49440bytes including2048-byte stack. Runtime packs
+are61440-byte pixels,20084-byte snapshot store and15400-byte text storage;
+128000static VGA bytes are already included in the loaded image,not added twice.
+Probe heap has5458free bytes plus a largest DOS block of4640paragraphs
+(74240bytes);32768-byte CHR and7680-byte opacity allocations succeed together.
+The instrumented product is slightly larger than pristine;this is a conservative
+allocation trial in this DOSBox memory layout,not a guarantee on other DOS hosts.
+Stack marking begins before initialization in the final bounded memory probe;
+458patterned bytes remain after initialization,mode/load and controlled workloads.
+Marking margins are96bytes and the result covers only those finite paths.
+Full-route stack peak,physical486SX and DOS-version qualification remain M4.
+
+### Frozen decisions for implementation
+
+- S2 tries caller-owned palette-independent full CHR cache against bounded-row
+  alternatives;32KiB is feasible here but speed decides retention. Keep per-frame
+  palette staging small;no large automatic buffers or near-heap cache arrays.
+  Allocation failure uses the existing uncached path and leaves controls unchanged.
+- Resource pointer/size and an explicit immutable binding lifetime define decoded
+  cache validity. In-place mutated fixtures explicitly reset the workspace;
+  simultaneous instances cannot share hidden globals. Palette/bank/scroll/mask/
+  split/OAM remain current-frame inputs;no final-color CHR cache.
+- S3 may spend7680far bytes for opacity only if measured benefit outweighs its
+  construction/access cost;key occupancy before palette conversion,not color equality.
+- S4 reuses duplicate row conversion first. Already-bulk VGA writes are a small
+  measured cost;specialization is optional,not a prerequisite or assumed win.
+- S5 remains conditional on cumulative measurements. No game tick,input,audio
+  or snapshot work may be suppressed to improve the benchmark.
+
+Native baseline:both widths pass3focused tests,presentation-performance,
+VGA-frame-smoke and platform-purity. Retained matrix independently compares
+2048boundary and1198native frames,game-state preservation and packed VGA mapping.
+Neutral summary,source/product fingerprints,fixture hashes and paired reports
+are retained under build/m3-t28-s1. Early compile/launch and blank-fixture attempts
+are excluded;only final-profile and memory-lifetime paired receipts are accepted.
+All normal device runs exit0 and installed configuration hash remains unchanged.
+
+Product code0files/0lines changed;local probes are not production and are not
+committed. Three EXEs unchanged,no refresh required. Historical1992/1992,
+local1991/1992nodes,4260/4261feasible controls(raw4342,infeasible81) unchanged.
+Scope/expected/actual[],new0;no custody transfer. No M2/M4 completion or nominal
+DOS cadence claim. S1's evidence/workload/storage decision contract is closed;
+T28 remains active and S2 receives the bounded implementation below.
+
+## S2 admission: shared background and CHR-cache comparison
+
+Owner execution authorization continues;S2 is the only active S after S1.
+Scope:ppu/frame implementation/header,shared cache workspace and its lifecycle
+binding at Windows/DOS composition roots,focused compositor/cache tests and
+build membership only if a real workspace owner requires it. Core ROM routines,
+PPU state/latch semantics,snapshot bytes,text artwork and VGA mapping stay fixed.
+Expected size150-350non-generated product/test lines,4-7files;amend visibly if
+benchmark evidence requires a materially different interface or footprint.
+
+Keep the reference path available for comparison. Test full indexed output,
+source state preservation,absent/truncated CHR,palette changes,pattern banks,
+scroll/split/masks,flips/priority/clipping,resource replacement,explicit reset,
+allocation fallback and two independent instances. Compare on both widths and
+original DOS far-memory ABI;measure each candidate alone and with frame-local
+background reuse under S1's unchanged configuration/workloads. Keep only an
+observed improvement and publish the independent plus cumulative result.
+Product-code P builds/tests and refreshes all three EXEs once;scope equality
+failure prevents closure or next-S admission until repaired and rechecked.
+S2 scope[],expectedMatches[],baseline/maximum1992/1992,new0,no ROM promotion.
