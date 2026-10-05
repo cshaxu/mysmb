@@ -91,3 +91,23 @@ nodes1991/1992,feasible controls4260/4261(raw4342,infeasible81) remain unchanged
 Exit requires reproducible same-binary/workload comparisons,instrumentation
 overhead controls,stage attribution and explicit emulator/hardware limits.
 No optimization,product refresh or physical486SX acceptance in this T.
+
+## S1 closure
+
+Receipt review confirms the input product hash above,counter totals11/1145,
+profile totals12/1303 and all stage tick/call means using1193182Hz PIT.
+Timing taps bracket background/sprites,root game tick/snapshot,scale/device
+submission and pacing;no product patch was applied. Seeded routes hold load
+through2500-8000ms,movement10000-17000ms,and exit26000ms;CPU settings are
+the declared difference. Diagnostic EXEs are instrumented copies,not the
+unchanged product;same-binary comparisons apply between CPU configurations
+within each measurement variant. Counter-only controls separate tap overhead.
+
+Conclusion:background composition is the dominant bounded implementation
+owner;unoptimized16-bit code generation and repeated far-data pixel access
+are repair hypotheses to test,not yet individually proven causes. DOSBox
+configuration strongly changes throughput;auto/auto is not a25MHz486 model.
+Repair retains all logical ticks,pixels and neutral IO contracts and must
+repeat the same controls. Neutral review is local build/m3-t25-s1/review.json.
+Scope/actual new labels0;totals unchanged. T25 S1 and T25 close by reviewed
+diagnosis,not repaired speed or physical-machine acceptance.

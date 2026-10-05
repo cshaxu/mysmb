@@ -3842,4 +3842,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T24 S2 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T24-win32-window-console-integration.md) |
 | M3 T24 S3 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T24-win32-window-console-integration.md) |
 | M3 T24 S4 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T24-win32-window-console-integration.md) |
-| M3 T25 S1 | 0 | 1992 | none / 0 | none / 0 | active; [record](../../docs/history/M3-T25-dos16-performance-diagnosis.md) |
+| M3 T25 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T25-dos16-performance-diagnosis.md) |
