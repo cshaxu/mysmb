@@ -17,6 +17,7 @@ struct text_storage {
     struct mysmb_text_scene_workspace workspace;
     struct mysmb_io_text_frame frame;
 };
+typedef char text_storage_fits_video[sizeof(struct text_storage)<=MYSMB_IO_VIDEO_PIXELS?1:-1];
 static struct text_storage MYSMB_IO_FAR *text_storage;
 static mysmb_io_u8 MYSMB_IO_FAR plane_pixels[MYSMB_VGA_BATCH_SIZE];
 
@@ -76,8 +77,10 @@ int main(void)
     if(!mysmb_dos16_devices_open()) {
         mysmb_dos16_root_shutdown(&root);_ffree(snapshot_store);return 1;
     }
-    text_storage=(struct text_storage MYSMB_IO_FAR *)_fmalloc(sizeof(*text_storage));
-    if(text_storage)mysmb_dos16_root_bind_text(&root,&text_storage->workspace,
+    /* Synchronous presenters are exclusive. Graphics rebuilds all pixels on
+     * return from text;only the root owns and frees this shared allocation. */
+    text_storage=(struct text_storage MYSMB_IO_FAR *)root.ppu_frame.pixels;
+    mysmb_dos16_root_bind_text(&root,&text_storage->workspace,
         &text_storage->frame,set_mode,present_text);
     while (root.control.exit_requested==0U) {
         mysmb_dos16_root_step(&root);
@@ -86,6 +89,6 @@ int main(void)
     mysmb_dos16_devices_close();
     mysmb_dos16_root_shutdown(&root);
     _ffree(snapshot_store);
-    if(text_storage)_ffree(text_storage);
+    text_storage=0;
     return 0;
 }

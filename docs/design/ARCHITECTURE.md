@@ -38,7 +38,9 @@ four32000-byte Mode X video planes,submitted from1280-byte16row scratch,
 DAC programming and video memory. DOS devices own physical held-key decoding,
 BIOS mode lifetime and PIT sampling. Only its composition root binds local
 immutable program resources and allocates the shared compositor's pixel store.
-The DOS root also owns far-heap text storage and the presenter choice;VGA
+The DOS root owns the pixel allocation and presenter choice;text borrows its
+first15400bytes while active,with synchronous consumption and complete graphics
+reconstruction on return. Snapshot transaction/recovery storage stays separate;VGA
 devices accept neutral cells in80x50 mode. Mode changes retain keyboard/clock
 state,and the same shared game scene is used by the Windows console preview.
 

@@ -20,6 +20,14 @@ static unsigned char cache_store[MYSMB_PPU_CHR_DECODED_BYTES+2U];
 static unsigned char other_store[MYSMB_PPU_CHR_DECODED_BYTES+2U],other_chr[8192];
 static struct mysmb_text_scene_workspace workspace;
 static struct mysmb_io_text_frame text;
+static union borrowed_surface {
+    struct mysmb_ppu_frame graphics;
+    struct {
+        struct mysmb_text_scene_workspace workspace;
+        struct mysmb_io_text_frame frame;
+    } text;
+} borrowed;
+typedef char borrowed_text_fits[sizeof(borrowed.text)<=MYSMB_IO_VIDEO_PIXELS?1:-1];
 static struct mysmb_io_snapshot snapshot;
 static struct mysmb_io_snapshot_cache cache;
 static struct mysmb_vga_frame vga;
@@ -208,6 +216,14 @@ int main(void)
         start=stamp();
         if(!mysmb_text_scene_build(&game,&workspace,&text))return 4;
         text_time+=stamp()-start;
+        /* Previous pixel bytes must not become text workspace state. */
+        memcpy(borrowed.graphics.pixels,reference.pixels,sizeof(reference.pixels));
+        borrowed.graphics.pixels[sizeof(borrowed.text)]=0xa5U;
+        if(!mysmb_text_scene_build(&game,&borrowed.text.workspace,&borrowed.text.frame))return 18;
+        if(memcmp(&text,&borrowed.text.frame,sizeof(text)) ||
+            borrowed.graphics.pixels[sizeof(borrowed.text)]!=0xa5U)return 19;
+        mysmb_ppu_frame_build_cached(&game.ppu,&borrowed.graphics,&cache_workspace);
+        if(memcmp(borrowed.graphics.pixels,reference.pixels,sizeof(reference.pixels)))return 20;
         mysmb_game_io_video(&actual,&video);
         start=stamp();mysmb_vga_frame_build(&video,&vga);scale_time+=stamp()-start;
         if(!compare_scaling(&video))return 8;
@@ -218,6 +234,7 @@ int main(void)
         ++n;
     }
     printf("native_route_frames=%u\n",n);
+    printf("borrowed_presenter_frames=%u text/graphics/extent/state pass\n",n);
     report("native_tick",tick_time,n);report("native_graphics",graphics_time,n);
     report("native_text",text_time,n);report("native_vga_scale",scale_time,n);
     report("native_snapshot",save_time,n);

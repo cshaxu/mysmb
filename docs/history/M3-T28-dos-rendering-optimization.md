@@ -836,3 +836,93 @@ output/state/snapshot and lifecycle equality,paired peak-memory/time costs and
 failure recovery. Any product-code P builds/tests/refreshed three EXEs;pure audit
 does not repackage. Neither candidate savings nor fast isolated stages establish
 whole-product fit/playability. T28 still needs S5/S6 and all named dispositions.
+
+
+## S5 P1 closure: exclusive presenter storage and measured reuse decisions
+
+S5 accepts DOS text workspace/frame reuse of the first15400bytes of the mandatory
+61440-byte pixel allocation. Compile-time extent checking and synchronous
+presenters establish one active view;only the root frees this allocation.
+Graphics fully rebuilds on return from text. Source sweep covers DOS main/root,
+text maps/visited/queues/claims,compositor/device callbacks and all snapshot
+consumers. No persistent text state depends on previous pixel bytes.
+
+Snapshot staging/result and last-running recovery have overlapping lifetimes
+and atomic failure obligations;keep the20084-byte transaction store and embedded
+capture/recovery buffers independent. No core,PPU state,compositor algorithm,
+snapshot bytes,text artwork,input,tick or audio changes. Source/test3files,+66/-4.
+VGA1280-byte scratch and optional8KiB raw CHR cache retain existing ownership.
+
+Reject unchanged-region/frame caching for this delivery:an exact key needs2048
+nametable,32palette,256visible OAM,six visible control/scroll/split bytes and
+resource identity/size,about2.4KiB plus tracking. Hash-only equality is insufficient.
+Resource rebinding/content/lifetime,all visible key fields,mode,restore and text
+alias writes require invalidation. A full output mirror adds61440/128000bytes.
+A scoped1198-frame native route has225equal-key frames,including138of1080game
+frames;this is eligibility,not general hit rate or speed proof. Most game frames
+still redraw,and hits still need VGA submission. Static pause eligibility does
+not justify additional persistent storage without measured whole-output gain.
+Retain full redraw under the owner's memory priority;no hidden deferred cache.
+
+| Paired actual DOS route | Conventional owned peak | Minimum external contiguous block | Live far peak | Untouched stack pattern |
+| --- | ---: | ---: | ---: | ---: |
+| Separate-storage baseline | 452656bytes | 196416bytes | 97436bytes | 76bytes |
+| Reused storage,normal cache | 436240bytes | 212832bytes | 82036bytes | 76bytes |
+| Reused storage,injected cache failure | 435760bytes | 213312bytes | 82036bytes | 98bytes |
+| Reused storage,real pressure | 648608bytes,includes ballast | 464bytes | 82036bytes | 74bytes |
+
+Normal reservation falls16416bytes,live payload15400bytes. Baseline/candidate
+carry identical text-readback instrumentation. Retained S1/S2 peaks575632/610160
+are139392/173920bytes higher,with source/instrumentation limits;not pristine
+minimum launch requirements. Pressure includes ballast and a later stdio block.
+All routes free live far payload,near where walking is present,and restore BIOS
+mode3. CRT free reservations persist until process exit;stack is not reduced.
+
+Every route matches five active indexed graphics frames,640000bytes of actual
+VGA-plane readback,8000bytes of B800text,12000bytes of authored cells and10035
+snapshot bytes against the separate-storage baseline. Inactive FRAME2pixel bytes
+are intentionally overwritten by text and are not a valid graphical output.
+Both native widths compare1198borrowed text/rebuilt pixel frames,extent guards
+and unchanged game state. Missing-resource text failure plus rejected mode reset
+submits nothing;subsequent successful reset reconstructs all pixels,matching
+baseline RAM,frame number,frame output and audio submissions.
+
+Two paired unchanged-config,normal-SDL private-desktop runs produce identical
+complete water/castle/dense output costs2017248/2017242/2097339PIT ticks;restored
+root/load8072470and text1105453also equal. Title differs by one tick only.
+These long diagnostic costs are not playable cadence;clock sampling,input tail,
+minimum-free thresholds and target486SX qualification remain explicit S6/M4 work.
+No DOSBox CPU/memory/machine/render settings changed. Both widths pass8focused
+tests;retained13actual Windows host groups remain applicable to identical rebuilt
+binary hashes. Original DOS product302879bytes,minimum MZ327392,DGROUP49456,
+stack2048,max segment32768;MZ excludes heaps,PSP and environment.
+
+All three owner-authorized assets refreshed:
+
+- mysmb16.exe:302879bytes,SHA256 3d49eea9198359d4a16d2651b260ec42762acd5b48d5ca17c17bf035d729a905.
+- mysmb32.exe:319627bytes,SHA256 4629d477cb4ac7df71ea4a28858d9540f1c0599c8abadfd00167262b32d11a01.
+- mysmb64.exe:328299bytes,SHA256 c9a9fa965bb23f16fda27be1b42147b36bddb12d09a47a02cfc6708690fc7d3d.
+
+Local receipts stay under ignored build/m3-t28-s5 until S6. No scoped output or
+lifetime difference remains. Scope/expected/actual[],new0,historical1992/1992,
+local1991/1992nodes,4260/4261feasible controls(raw4342,infeasible81),custodians
+unchanged. S5 closes incremental reuse,not joint T28 fit/playability or M2/M4.
+
+## S6 admission: cumulative memory fit and complete-route performance
+
+M3 T28 S6 P1 automatically admits under ongoing execution approval. Reconcile
+S1/S2 baseline allocations and S3-S5 choices in one cumulative census,without
+redoing accepted unrelated audits. Verify actual product minimum-free launch/
+runtime fit,required61440/20084packs,optional8192cache,borrowed15400text view,
+1280scratch,MCB/near/far/stack ownership,and startup,gameplay,transition,pause,
+Tab,snapshot and exit lifetimes. Separate image,heaps,allocator,PSP/environment
+and pressure ballast. Audit original PIT phase/underflow before timing claims;
+declare normal cadence/input budgets and assess complete cost/tails.
+
+Initial audit0product lines;possible platform timing/probe/test corrections
+3-6files,80-250lines,reported before code. No original ROM tick/core/PPU/snapshot
+semantic or emulator setting changes. Cumulative exact output/state/snapshot,
+failure checks,both widths and original DOS16 remain mandatory;product changes
+refresh three EXEs. Scope/expected/actual[],new0,maximum1992/1992,custody retained.
+S6/T28 exit requires all six dispositions,measured fit and playable-budget proof;
+a failed required clause keeps them open. Physical486SX/DOS versions remain M4.

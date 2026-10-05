@@ -39,7 +39,9 @@ the neutral IO text frame; it has no RAM/OAM/resource or host dependency.
 S2 adds optional per-instance source-decision observations and DMA latching
 under core/observation,plus read-only actor/background/HUD
 assembly. Both roots enable observations and bind an early Tab text preview.
-DOS uses a15400-byte far-heap scene/frame pack;Windows uses a real console.
+DOS borrows a15400-byte scene/frame view from the mandatory pixel store;
+only the active synchronous presenter view is valid,and graphics fully rebuilds
+after text. Windows uses a real console.
 Observations are outside original
 game state;observer_snapshot explicitly serializes both phases into schema2's
 opaque presentation extension. Full source entries retain stable anchors even
