@@ -312,6 +312,18 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
             palette=(unsigned short)((game->visible_oam[priority*4U+2U]&3U)*4U);
             element.background=mysmb_io_color_text16(game->palette[0x12U+palette]);
             element.foreground=mysmb_io_color_text_contrast(element.background);
+            if(item->family==MYSMB_TEXT_OBSERVE_POWERUP &&
+                element.kind==MYSMB_TEXT_MUSHROOM) {
+                /* Authored cap/marks/stem roles,not a sampled tile color.
+                 * The committed upper pair carries ink3 cap and ink1 marks;
+                 * the lower pair supplies ink2 stem. Both mushroom identities
+                 * retain their own committed palette and clipping. */
+                element.background=mysmb_io_color_text16(
+                    game->palette[(entry<2U?0x13U:0x12U)+palette]);
+                element.foreground=mysmb_io_color_text16(game->palette[0x11U+palette]);
+                if(element.foreground==element.background)
+                    element.foreground=mysmb_io_color_text_contrast(element.background);
+            }
             element.face_left=item->family==MYSMB_TEXT_OBSERVE_VINE?
                 (item->entries[entry*4U+2U]&0x40U)!=0U?1U:0U:
                 (item->facing&2U)!=0U?1U:0U;

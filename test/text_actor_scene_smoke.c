@@ -66,14 +66,71 @@ static int dynamic_words(void)
     return 0;
 }
 
+static int mushroom_colors(void)
+{
+    struct mysmb_text_actor_receipt receipt;
+    unsigned short palette,identity,i;
+    unsigned char cap,mark,stem;
+    for(identity=0U;identity<=3U;++identity)for(palette=0U;palette<4U;++palette) {
+        memset(&game,0,sizeof(game));
+        for(i=0U;i<64U;++i)game.ram[0x0200U+i*4U]=0xf8U;
+        game.visible_ppu_mask=0x1eU;
+        game.palette[0x11U+palette*4U]=identity==0U?0x16U:0x1aU;
+        game.palette[0x12U+palette*4U]=0x30U;
+        game.palette[0x13U+palette*4U]=0x27U;
+        mysmb_text_observer_enable(&game,1U);
+        sprite(8U,80U,95U);sprite(9U,88U,95U);
+        sprite(10U,80U,103U);sprite(11U,88U,103U);
+        for(i=8U;i<12U;++i)game.ram[0x0202U+i*4U]=(unsigned char)palette;
+        mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_POWERUP,
+            (unsigned char)identity,5U,0U,1U,32U,4U,0U);
+        mysmb_game_submit_oam(&game);
+        /* Live producer changes cannot recolor the committed actor. */
+        for(i=8U;i<12U;++i)game.ram[0x0202U+i*4U]=(unsigned char)((palette+1U)&3U);
+        before=game;
+        CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+        CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+        cap=mysmb_io_color_text16(0x27U);
+        mark=mysmb_io_color_text16(identity==0U?0x16U:0x1aU);
+        stem=mysmb_io_color_text16(0x30U);
+        CHECK(memcmp(&before,&game,sizeof(game))==0);
+        if(identity==1U || identity==2U) {
+            CHECK(frame.cells[20U*80U+27U].background==stem);
+            CHECK(frame.cells[20U*80U+27U].foreground==mysmb_io_color_text_contrast(stem));
+            continue;
+        }
+        CHECK(cap!=stem && mark!=cap);
+        CHECK(frame.cells[20U*80U+27U].foreground==cap);
+        CHECK(frame.cells[21U*80U+27U].background==cap);
+        CHECK(frame.cells[21U*80U+27U].foreground==mark);
+        CHECK(frame.cells[22U*80U+27U].background==stem);
+        CHECK(memcmp(&before,&game,sizeof(game))==0);
+        /* Palette changes recolor the same committed template without a
+         * selector rerun or another DMA. */
+        game.palette[0x13U+palette*4U]=0x12U;
+        CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+        CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+        /* A cap quantized to the sky uses the existing visible-ink fallback. */
+        CHECK(mysmb_io_color_text16(0x12U)==9U);
+        CHECK(frame.cells[20U*80U+27U].foreground==mark);
+        game.palette[0x13U+palette*4U]=0x1aU;
+        CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+        CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+        CHECK(frame.cells[20U*80U+27U].foreground==mysmb_io_color_text16(0x1aU));
+    }
+    return 0;
+}
+
 int main(void)
 {
     struct mysmb_text_actor_receipt receipt;
     unsigned short i;
     CHECK(dynamic_words()==0);
+    CHECK(mushroom_colors()==0);
     memset(&game,0,sizeof(game));
     for(i=0U;i<64U;++i)game.ram[0x0200U+i*4U]=0xf8U;
-    game.visible_ppu_mask=0x1eU;game.palette[0x12U]=0x16U;
+    game.visible_ppu_mask=0x1eU;
+    game.palette[0x11U]=0x16U;game.palette[0x12U]=0x30U;game.palette[0x13U]=0x27U;
     mysmb_text_observer_enable(&game,1U);
     CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
     sprite(8U,80U,95U);sprite(9U,88U,95U);
@@ -87,7 +144,7 @@ int main(void)
     CHECK(receipt.unowned_sprites==0U);
     CHECK(memcmp(&game,&before,sizeof(game))==0);
     CHECK(frame.cells[20U*80U+26U].character==MYSMB_IO_GLYPH_LOWER);
-    CHECK(frame.cells[20U*80U+26U].foreground==mysmb_io_color_text16(0x16U) &&
+    CHECK(frame.cells[20U*80U+26U].foreground==mysmb_io_color_text16(0x27U) &&
         frame.cells[20U*80U+26U].background==9U);
     CHECK(frame.cells[0U].background==9U);
     original=frame;

@@ -2,9 +2,6 @@
 
 **Idle.**
 
-M3 T15 is closed. [Queue](QUEUE.md) retains the transient Windows audio
-startup follow-up and deferred M2 certification;no successor admitted.
-
 ## Current Technical Baseline
 
 - M2 T70/S17 closed by owner-approved deferred-verification transfer (P153);
@@ -16,16 +13,23 @@ startup follow-up and deferred M2 certification;no successor admitted.
   6/136 groups and42/952 facets closed,130 groups/910 facets pending.
   Material993 partial,not a denominator;two findings/all13 coverage slots open.
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
-- M3 T9/T10/T11/T12/T13/T14/T15 are closed. Remaining M2 verification stays at the
+- M3 T9/T10/T11/T12/T13/T14/T15/T16 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are361803/445454/462144bytes.
-  T15 S2 refreshes all three;Windows products remain identical to S1.
+- Current local DOS16/Win32/x64 products are361995/445966/462144bytes.
+  T16 S1 refreshes all three with shared mushroom text colors.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
   pass;seeded presenter equality is explicitly separate. Real486SX speed,
   full heap/stack peak and hardware/version qualification remain M4.
 
 ## Compact closure status
+
+M3 T16 S1 P1 closes authored mushroom palette roles:cap ink3,marks ink1,
+stem ink2. All4power-up identities/4palette slots,committed OAM/dynamic palette,
+both-width9tests,2048boundary/1198native unchanged indexed frames,owned host
+routes,DOS16 link and DOSBox text round-trip pass. Products refreshed;code/tests
+2files,+71/-2lines,new0. No game/ABI/host-artwork change,no full-ROM claim.
+[T16 history](../history/M3-T16-mushroom-text-colors.md).
 
 M3 T15 S1/S2 close equivalent shared graphics/fixed VGA optimizations.
 Both widths2048boundary/1198native frames match prior pixels and state;scale
