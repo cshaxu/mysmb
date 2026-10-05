@@ -9,6 +9,7 @@ static SHORT probe_key(int key){(void)key;++async_calls;return 0;}
 #define GetForegroundWindow probe_foreground
 #define GetAsyncKeyState probe_key
 #define WinMain mysmb_unused_product_entry
+#define MYSMB_WIN32_EMBEDDED_TEST 1
 #include "../src/platform/win32/main_win32.c"
 #undef WinMain
 static struct mysmb_game saved_game;
@@ -276,6 +277,24 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     mysmb_win32_build_frame();
     saved_game=g_game;saved_audio=g_audio_output;
     memcpy(saved_pixels,g_pixels,sizeof(saved_pixels));
+    if(!strncmp(command,"borrowed",8U)) {
+        HWND parent=NULL;
+        for(i=0U;i<3U;++i) {
+            mysmb_win32_switch_presenter(window,0);
+            if(!g_text_mode || !g_console.borrowed)return 80;
+            if(parent && parent!=g_console.window)return 81;
+            parent=g_console.window;owned_focus=parent;
+            if(memcmp(&saved_game,&g_game,sizeof(g_game)) ||
+                memcmp(&saved_audio,&g_audio_output,sizeof(saved_audio)) ||
+                memcmp(saved_pixels,g_pixels,sizeof(saved_pixels)))return 82;
+            mysmb_win32_shortcut(window,VK_TAB,0U);
+            mysmb_win32_shortcut(window,VK_TAB,1U);
+            input_only_step(window);owned_focus=window;
+            if(g_text_mode || g_console.opened || g_console.borrowed)return 83;
+            mysmb_win32_shortcut(window,VK_TAB,0U);
+        }
+        DestroyWindow(window);return 0;
+    }
     mysmb_win32_shortcut(window,VK_TAB,1U);
     if(g_toggle_request!=MYSMB_IO_REQUEST_TOGGLE)return 3;
     g_toggle_request=0U;mysmb_win32_switch_presenter(window,0);

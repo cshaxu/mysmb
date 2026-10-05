@@ -4,8 +4,8 @@
 int main(int count,char **arguments)
 {
     if(count==2) {
-        /* This harness has the console subsystem;model the GUI product's
-         * unattached initial state without changing its parent's console. */
+        /* Also exercise shell availability after explicit detachment,as on
+         * a graphical launch or a subsequent Tab attachment. */
         FreeConsole();
         if(!strcmp(arguments[1],"text"))return mysmb_win32_start_in_text()?0:1;
         if(!strcmp(arguments[1],"graphics"))return mysmb_win32_start_in_text()?2:0;

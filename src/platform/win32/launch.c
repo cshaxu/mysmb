@@ -13,6 +13,7 @@ int mysmb_win32_start_in_text(void)
     HANDLE snapshot;
     PROCESSENTRY32 entry;
     DWORD parent,current;
+    DWORD ids[64],count,i;
     int shell;
     current=GetCurrentProcessId();parent=0U;shell=0;
     snapshot=CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS,0U);
@@ -30,8 +31,15 @@ int mysmb_win32_start_in_text(void)
     } while(Process32Next(snapshot,&entry));
     CloseHandle(snapshot);
     if(!shell)return 0;
-    /* Probe attachment only. Never render into or reconfigure the shell's
-     * console: a GUI launch leaves that shell free to continue accepting input. */
+    if(GetConsoleWindow()!=NULL) {
+        count=GetConsoleProcessList(ids,64U);
+        for(i=0U;i<count && i<64U;++i)if(ids[i]==parent)return 1;
+        /* START may allocate an unrelated initial console. Prefer the shell's
+         * console;detached shells still correctly select graphical startup. */
+        FreeConsole();
+    }
+    /* Detached launch probes availability;the text device acquires it later.
+     * Console-subsystem direct launches already inherit their shell console. */
     if(!AttachConsole(parent))return 0;
     FreeConsole();return 1;
 }

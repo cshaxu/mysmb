@@ -1044,6 +1044,9 @@ if(WIN32)
         test/win32_launch_policy_smoke.c src/platform/win32/launch.c)
     target_include_directories(mysmb_win32_launch_policy_smoke PRIVATE src)
     add_test(NAME mysmb.win32-launch-policy-smoke COMMAND mysmb_win32_launch_policy_smoke)
+    add_executable(mysmb_win32_parent_console_smoke test/win32_parent_console_smoke.c
+        src/platform/win32/launch.c)
+    target_link_libraries(mysmb_win32_parent_console_smoke PRIVATE mysmb_io_color user32)
     if(MYSMB_WIN32_ARCH STREQUAL "host")
         if(CMAKE_SIZEOF_VOID_P EQUAL 8)
             set(MYSMB_WIN32_ARCH "x64")
@@ -1052,7 +1055,9 @@ if(WIN32)
         endif()
     endif()
 
-    add_executable(mysmb_win32 WIN32 src/platform/win32/main_win32.c
+    # Console subsystem makes interactive CMD wait for the same process.
+    # The root detaches the initial console for non-shell graphical launches.
+    add_executable(mysmb_win32 src/platform/win32/main_win32.c
         src/platform/win32/audio_output.c
         src/platform/win32/audio_renderer.c
         src/platform/win32/focus_pause.c

@@ -468,6 +468,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
 #endif
     }
     start_text=mysmb_win32_start_in_text();
+    if(!start_text)(void)FreeConsole();
     ZeroMemory(&window_class, sizeof(window_class));
     window_class.lpfnWndProc = mysmb_win32_window_proc;
     window_class.hInstance = instance;
@@ -529,3 +530,22 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
             g_frequency.QuadPart);
     }
 }
+
+#ifndef MYSMB_WIN32_EMBEDDED_TEST
+/* Console-subsystem CRT entry preserves interactive shell wait semantics.
+ * Presenter policy still belongs to the Windows root,not the CRT subsystem. */
+int main(void)
+{
+    STARTUPINFOA startup;
+    char *command=GetCommandLineA();
+    if(*command=='"') {
+        ++command;while(*command && *command!='"')++command;
+        if(*command)++command;
+    } else while(*command && *command!=' ' && *command!='\t')++command;
+    while(*command==' ' || *command=='\t')++command;
+    ZeroMemory(&startup,sizeof(startup));startup.cb=sizeof(startup);
+    GetStartupInfoA(&startup);
+    return WinMain(GetModuleHandle(NULL),NULL,command,
+        (startup.dwFlags&STARTF_USESHOWWINDOW)!=0U?startup.wShowWindow:SW_SHOWDEFAULT);
+}
+#endif

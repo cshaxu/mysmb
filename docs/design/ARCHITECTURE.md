@@ -42,12 +42,17 @@ and window-close requests. No exit request changes original game state.
 Game code may request neutral buttons, frame ticks, and command sinks. Windows and DOS adapters translate those contracts to host APIs. Text rendering consumes game object/state commands; it never infers semantics from a bitmap. The runtime contains no 6502 CPU, generic NES PPU, or generic NES APU emulator. Platform selection happens at CMake target boundaries; `game/` does not fork on platform macros.
 
 Windows launch policy selects text for a direct CMD/PowerShell parent with an
-attachable console;other or unknown parents select graphics. Its temporary
-attachment only checks availability;the game allocates its own console and
-never reconfigures the shell. Console close posts the same root application
-exit as GUI close/Escape. Its bounded control thread waits for normal process
-exit;ordinary Tab detaches immediately,while host-close attachment teardown
-is left to process exit after root audio cleanup. DOS starts graphically.
+attachable console;other or unknown parents select graphics. The console
+subsystem makes interactive CMD wait for the same game process;non-shell
+entry detaches its startup console before showing graphics. Shell text uses
+a separate game screen buffer in the borrowed console. Tab/error/exit restore
+the shell buffer,title,input mode and window placement before detaching;
+the shell buffer retains its own font,palette,cursor and contents. Tab back
+reattaches to the same parent,with one game instance and no helper process.
+Escape/root close exits only the game. Closing a borrowed host window itself
+is Windows' shared-console close,which can terminate its attached shell too;
+the game never explicitly closes or terminates that shell. An owned console
+close posts root exit and waits for cleanup. DOS starts graphically.
 
 Windows keyboard state is owned by the event adapter:window key/system-key
 messages and console key records feed one held-key/short-press state. The root

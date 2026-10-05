@@ -103,6 +103,7 @@ def main():
     parser.add_argument("--policy", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--switch", type=Path)
+    parser.add_argument("--parent", type=Path)
     args = parser.parse_args()
     output = args.output.resolve()
     require("build" in output.parts, "Evidence must remain below build")
@@ -113,6 +114,13 @@ def main():
     handles, rows = [], []
     try:
         policy, product = args.policy.resolve(), args.product.resolve()
+        if args.parent:
+            handle=start('cmd.exe /d /c ""%s""' % args.parent.resolve(),name,output)
+            handles.append(handle);completed(handle)
+            rows.append(dict(route="borrowed-buffer/settings/Tab/error-restore",exitCode=0))
+            handle=start('cmd.exe /d /c start "" /wait /b "%s" borrowed' % args.switch.resolve(),name,output)
+            handles.append(handle);completed(handle)
+            rows.append(dict(route="borrowed-product-root/Tab/one-game-instance",focus="explicit-owned-fixture",exitCode=0))
         if args.switch:
             handle = start('"%s" %s' % (args.switch.resolve(), output.as_posix()),
                            name, output)
@@ -156,7 +164,7 @@ def main():
                     break
                 time.sleep(0.02)
             require(root, "Product root missing for " + source)
-            require(bool(console) == text, "Wrong presenter for " + source)
+            require(bool(console) == text, "Wrong presenter for " + source+": "+repr(windows(desktop)))
             # Window creation precedes device startup. Wait for its message
             # owner rather than treating HWND visibility as application ready.
             deadline, result = time.monotonic() + 8, c.c_size_t()
@@ -168,7 +176,7 @@ def main():
             child = k.OpenProcess(0x101001, False, root[1])
             require(child, "Open exact product child")
             handles.append(child)
-            if console:
+            if console and not args.parent:
                 state = u.GetMenuState(u.GetSystemMenu(console[0], False), 0xf060, 0)
                 require(state != 0xffffffff and not state & 3, "Console close disabled")
                 require(u.PostMessageW(console[0], 0x112, 0xf060, 0), "Close owned console")
@@ -177,7 +185,73 @@ def main():
             completed(child)
             completed(handle)
             rows.append(dict(source=source, presenter="text" if console else "graphics",
-                             close="console" if console else "GUI", exitCode=0))
+                             close="console" if console and not args.parent else "root", exitCode=0))
+        # Actual interactive CMD has different GUI wait semantics than /c.
+        # Deliver records only into this isolated console,never global input.
+        handle=start('cmd.exe /d /q /k',name,output);handles.append(handle)
+        k.GetProcessId.argtypes=[w.HANDLE];k.GetProcessId.restype=w.DWORD
+        k.AttachConsole.argtypes=[w.DWORD]
+        k.CreateFileW.argtypes=[w.LPCWSTR,w.DWORD,w.DWORD,c.c_void_p,w.DWORD,w.DWORD,w.HANDLE]
+        k.CreateFileW.restype=w.HANDLE
+        class Key(c.Structure):
+            _fields_=[("down",w.BOOL),("repeat",w.WORD),("vk",w.WORD),
+                      ("scan",w.WORD),("char",w.WCHAR),("state",w.DWORD)]
+        class Record(c.Structure):
+            _fields_=[("kind",w.WORD),("key",Key)]
+        k.WriteConsoleInputW.argtypes=[w.HANDLE,c.POINTER(Record),w.DWORD,c.POINTER(w.DWORD)]
+        # Detach this probe's inherited console only;its stdout remains a pipe.
+        k.FreeConsole()
+        deadline=time.monotonic()+4
+        while not k.AttachConsole(k.GetProcessId(handle)):
+            require(time.monotonic()<deadline,"Attach isolated interactive CMD")
+            time.sleep(.02)
+        console_input=k.CreateFileW("CONIN$",0xc0000000,3,None,3,0,None)
+        try:
+            deadline=time.monotonic()+5
+            console=None
+            while time.monotonic()<deadline:
+                console=next((x for x in windows(desktop) if x[2]=="ConsoleWindowClass"),None)
+                if console:break
+                time.sleep(.02)
+            require(console,"Interactive console missing")
+            console_hwnd=console[0]
+            def send_line(line):
+                for char in line+"\r":
+                    for down in (True,False):
+                        event=Record();event.kind=1;event.key=Key(down,1,13 if char=="\r" else 0,0,char,0)
+                        written=w.DWORD()
+                        require(k.WriteConsoleInputW(console_input,c.byref(event),1,c.byref(written)) and written.value==1,"Owned CMD input")
+            returned=output/"cmd-returned.txt";usable=output/"cmd-usable.txt"
+            returned.unlink(missing_ok=True);usable.unlink(missing_ok=True)
+            send_line('"%s" & echo RETURNED>"%s"' % (product,returned))
+            deadline=time.monotonic()+8;root=None
+            while time.monotonic()<deadline:
+                root=next((x for x in windows(desktop) if x[2]=="MySMBWindow"),None)
+                active=next((x for x in windows(desktop) if x[0]==console_hwnd and x[3]=="MySMB"),None)
+                if root and active:break
+                time.sleep(.02)
+            require(root and active,"Direct CMD must reuse its existing console")
+            require(not returned.exists(),"Interactive CMD returned while game owns input")
+            require(sum(x[2]=="ConsoleWindowClass" for x in windows(desktop))==1,"Extra console created")
+            child=k.OpenProcess(0x101001,False,root[1]);require(child,"Open interactive game");handles.append(child)
+            # A hidden desktop cannot claim live foreground-key delivery.
+            # The embedded root fixture above supplies explicit owned focus
+            # while exercising the real borrowed device/Tab/state owner.
+            time.sleep(.1)
+            require(not returned.exists(),"Interactive CMD must keep waiting")
+            require(u.PostMessageW(root[0],0x100,27,0),"Owned Escape")
+            completed(child)
+            deadline=time.monotonic()+4
+            while not returned.exists() and time.monotonic()<deadline:time.sleep(.02)
+            require(returned.exists(),"Interactive shell must resume after game")
+            send_line('echo USABLE>"%s"' % usable)
+            deadline=time.monotonic()+4
+            while not usable.exists() and time.monotonic()<deadline:time.sleep(.02)
+            require(usable.exists(),"Restored CMD must accept input")
+            send_line('exit');completed(handle)
+            rows.append(dict(route="interactive-CMD/same-console/wait/Escape/usable-prompt",exitCode=0))
+        finally:
+            k.CloseHandle(console_input);k.FreeConsole()
         (output / "startup-close.json").write_text(json.dumps(rows, indent=2) + "\n")
         print(json.dumps(rows))
     finally:
