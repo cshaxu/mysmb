@@ -85,7 +85,7 @@ int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console,
     }
     cursor.dwSize=1;cursor.bVisible=FALSE;
     (void)SetConsoleCursorInfo(console->output,&cursor);
-    (void)SetConsoleTitleA("MySMB text preview - Tab: graphics");
+    (void)SetConsoleTitleA("MySMB");
     /* Close requests the same root-owned exit as Escape and the GUI button. */
     if(EnableMenuItem(GetSystemMenu(console->window,FALSE),SC_CLOSE,
         MF_BYCOMMAND|MF_ENABLED)==(UINT)-1) {

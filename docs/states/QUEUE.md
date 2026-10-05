@@ -2,14 +2,14 @@
 
 ## To-Do
 
-This file lists work that has not started. It is not a source-order archive,
+This file lists pending work,including explicitly owner-suspended work. It is not a source-order archive,
 a task ledger, or a record of completed work. Active work is recorded only in
 [CURRENT.md](CURRENT.md); closed tasks remain in their proposal/history record
 and in the generated [node/task ledger](NODE_TASK_LEDGER.md).
 
-## Windows host follow-up
+## Suspended Windows audio work
 
-1. [Bounded audio device startup](../proposals/m3/bounded-windows-audio-startup.md) — transient audio-open stall affected old/new baselines;final host routes passed unchanged. Cause unknown;investigate bounded acquisition without claiming a repair.
+1. [Bounded Windows audio startup](../proposals/m3/bounded-windows-audio-startup.md) - retained M3 T19 S1,unfinished and suspended by owner;single-process lifetime prototypes,implementation and verification remain. Resume existing identifiers after the active character task;no repair acceptance.
 
 ## Deferred M2 verification
 

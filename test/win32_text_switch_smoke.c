@@ -280,6 +280,10 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     if(g_toggle_request!=MYSMB_IO_REQUEST_TOGGLE)return 3;
     g_toggle_request=0U;mysmb_win32_switch_presenter(window,0);
     if(!g_text_mode || !g_console.opened)return 4000+(int)GetLastError();
+    {
+        char title[80];
+        if(GetConsoleTitleA(title,sizeof(title))!=5U || strcmp(title,"MySMB"))return 51;
+    }
     ShowWindow(g_console.window,SW_HIDE);
     owned_focus=g_console.window;
     if(memcmp(&saved_game,&g_game,sizeof(g_game)) ||
@@ -355,6 +359,10 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     FreeConsole();
     mysmb_win32_switch_presenter(window,0);
     if(!g_text_mode)return 20;
+    {
+        char title[80];
+        if(GetConsoleTitleA(title,sizeof(title))!=5U || strcmp(title,"MySMB"))return 52;
+    }
     ShowWindow(g_console.window,SW_HIDE);
     view.Left=view.Top=view.Right=view.Bottom=0;
     size.X=79;size.Y=49;

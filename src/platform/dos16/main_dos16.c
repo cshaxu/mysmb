@@ -73,7 +73,6 @@ int main(void)
         mysmb_snapshot_store_initialize(snapshot_store,&files))
         mysmb_dos16_root_bind_snapshot(&root,snapshot_store,reset_output,0);
     mysmb_vga_frame_initialize(&vga,pages0,pages1,pages2,pages3);
-    puts("DOS audio output unavailable");
     if(!mysmb_dos16_devices_open()) {
         mysmb_dos16_root_shutdown(&root);_ffree(snapshot_store);return 1;
     }

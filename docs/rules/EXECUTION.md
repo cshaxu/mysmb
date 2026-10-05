@@ -22,6 +22,12 @@ Use `M<milestone> T<task> S<subtask> P<part>` for implementation and its design 
 
 Queue candidates remain unnumbered. On approval, allocate the next ascending T and create one active packet. `New` starts `S1`; `Continuation` uses the latest open T and next S; `Corrective` is limited to the latest closed T; `Governance` allocates the next milestone-local Td S. Completed numeric tasks receive a record under `history/` and their proposal is retained there.
 
+An explicit owner instruction may suspend an unfinished T/S and return its
+remaining work to the queue. Preserve its allocated identifiers,proposal,
+evidence and ledger state as suspended;do not mark it closed or recycle its
+number. A queue link may identify this retained task for resumption without
+allocating a new number. CURRENT contains only the replacement active packet.
+
 ## Documentation Governance Gate
 
 Every closure runs `powershell -NoProfile -ExecutionPolicy Bypass -File tools/Verify-DocumentationGovernance.ps1 -RepositoryRoot .`. The gate checks topology, required authorities, links, active-packet fields, and absence of local paths in tracked Markdown. Passing it does not replace a semantic review.

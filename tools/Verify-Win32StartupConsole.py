@@ -150,7 +150,8 @@ def main():
             while time.monotonic() < deadline:
                 visible = windows(desktop)
                 root = next((x for x in visible if x[2] == "MySMBWindow"), None)
-                console = next((x for x in visible if x[3].startswith("MySMB text preview")), None)
+                console = next((x for x in visible if x[2] == "ConsoleWindowClass"
+                                and x[3] == "MySMB"), None)
                 if root and (not text or console):
                     break
                 time.sleep(0.02)
