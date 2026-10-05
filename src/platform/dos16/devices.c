@@ -166,18 +166,22 @@ void mysmb_dos16_devices_input(struct mysmb_io_input *input)
     _enable();
 }
 
+void mysmb_dos16_devices_present_rows(mysmb_io_u16 plane,
+    mysmb_io_u16 first,mysmb_io_u16 rows,
+    const mysmb_io_u8 MYSMB_VGA_FAR *pixels)
+{
+    unsigned char far *video;
+    if(!video_ready || text_mode || plane>=MYSMB_VGA_PAGE_COUNT || pixels==0 || first>=400U || rows>400U-first)return;
+    video=(unsigned char far *)0xa0000000UL;
+    /* Select the independent plane at A000;copy remains within both segments. */
+    vga_register(0x3c4,2,(unsigned char)(1U<<plane));
+    memcpy(video+first*80U,pixels,rows*80U);
+}
 void mysmb_dos16_devices_present(const struct mysmb_vga_frame *frame)
 {
-    unsigned short page;
-    unsigned char far *video;
-    if(!video_ready || text_mode)return;
-    video=(unsigned char far *)0xa0000000UL;
-    /* The sequencer chooses each independent plane at the same A000 offset.
-     * Each32000-byte copy stays within both far segments. */
-    for(page=0U;page<MYSMB_VGA_PAGE_COUNT;++page) {
-        vga_register(0x3c4,2,(unsigned char)(1U<<page));
-        memcpy(video,frame->pages[page],MYSMB_VGA_PAGE_SIZE);
-    }
+    mysmb_io_u16 page;
+    for(page=0U;page<MYSMB_VGA_PAGE_COUNT;++page)
+        mysmb_dos16_devices_present_rows(page,0U,400U,frame->pages[page]);
 }
 void mysmb_dos16_devices_text(const struct mysmb_io_text_frame MYSMB_IO_FAR *frame)
 {

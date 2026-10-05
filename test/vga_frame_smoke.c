@@ -1,11 +1,12 @@
 #include "platform/vga/vga_frame.h"
 static mysmb_io_u8 pixels[MYSMB_IO_VIDEO_PIXELS];
 static mysmb_io_u8 pages[4][MYSMB_VGA_PAGE_SIZE+2];
+static mysmb_io_u8 scratch[MYSMB_VGA_PAGE_SIZE+2];
 int main(void)
 {
     struct mysmb_io_video_frame source;
     struct mysmb_vga_frame frame;
-    unsigned long i, offset, x, y, sx, sy;
+    unsigned long i, offset, x, y, sx, sy,first,rows,batch;
     for (i=0UL;i<MYSMB_IO_VIDEO_PIXELS;++i) pixels[i]=(mysmb_io_u8)((i*7UL+i/256UL)&255UL);
     for (i=0UL;i<4UL;++i) { pages[i][0]=0xa5U; pages[i][MYSMB_VGA_PAGE_SIZE+1]=0x5aU; }
     source.pixels=pixels;
@@ -18,5 +19,20 @@ int main(void)
     }
     for (i=0UL;i<4UL;++i)
         if (pages[i][0]!=0xa5U || pages[i][MYSMB_VGA_PAGE_SIZE+1]!=0x5aU) return 2;
+    /* Arbitrary batch boundaries and partial final batches match the oracle. */
+    for(batch=1UL;batch<=400UL;batch=batch==1UL?7UL:batch==7UL?16UL:batch==16UL?63UL:batch==63UL?400UL:400UL+1UL) {
+        for(i=0UL;i<4UL;++i)for(first=0UL;first<400UL;first+=batch) {
+            rows=400UL-first;if(rows>batch)rows=batch;
+            scratch[0]=0xa5U;scratch[rows*80UL+1UL]=0x5aU;
+            mysmb_vga_frame_build_rows(&source,(mysmb_io_u16)i,(mysmb_io_u16)first,(mysmb_io_u16)rows,scratch+1);
+            for(offset=0UL;offset<rows*80UL;++offset)
+                if(scratch[offset+1]!=pages[i][first*80UL+offset+1])return 3;
+            if(scratch[0]!=0xa5U || scratch[rows*80UL+1]!=0x5aU)return 4;
+        }
+    }
+    scratch[1]=0xa5U;
+    mysmb_vga_frame_build_rows(&source,4U,0U,1U,scratch+1);
+    mysmb_vga_frame_build_rows(&source,0U,399U,2U,scratch+1);
+    if(scratch[1]!=0xa5U)return 5;
     return 0;
 }

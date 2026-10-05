@@ -11,7 +11,6 @@
 #endif
 
 static struct mysmb_dos16_root root;
-static struct mysmb_vga_frame vga;
 static struct mysmb_snapshot_store *snapshot_store;
 static struct mysmb_file_storage snapshot_storage;
 struct text_storage {
@@ -19,10 +18,7 @@ struct text_storage {
     struct mysmb_io_text_frame frame;
 };
 static struct text_storage MYSMB_IO_FAR *text_storage;
-static mysmb_io_u8 MYSMB_IO_FAR pages0[MYSMB_VGA_PAGE_SIZE];
-static mysmb_io_u8 MYSMB_IO_FAR pages1[MYSMB_VGA_PAGE_SIZE];
-static mysmb_io_u8 MYSMB_IO_FAR pages2[MYSMB_VGA_PAGE_SIZE];
-static mysmb_io_u8 MYSMB_IO_FAR pages3[MYSMB_VGA_PAGE_SIZE];
+static mysmb_io_u8 MYSMB_IO_FAR plane_pixels[MYSMB_VGA_BATCH_SIZE];
 
 static void read_input(void *context, struct mysmb_io_input *input)
 {
@@ -31,9 +27,14 @@ static void read_input(void *context, struct mysmb_io_input *input)
 }
 static void present_video(void *context, const struct mysmb_io_video_frame *frame)
 {
+    mysmb_io_u16 plane,first;
     (void)context;
-    mysmb_vga_frame_build(frame,&vga);
-    mysmb_dos16_devices_present(&vga);
+    for(plane=0U;plane<MYSMB_VGA_PAGE_COUNT;++plane) {
+        for(first=0U;first<MYSMB_VGA_HEIGHT;first+=MYSMB_VGA_BATCH_ROWS) {
+            mysmb_vga_frame_build_rows(frame,plane,first,MYSMB_VGA_BATCH_ROWS,plane_pixels);
+            mysmb_dos16_devices_present_rows(plane,first,MYSMB_VGA_BATCH_ROWS,plane_pixels);
+        }
+    }
 }
 static mysmb_io_u8 submit_audio(void *context, const struct mysmb_io_audio_frame *frame)
 {
@@ -72,7 +73,6 @@ int main(void)
             mysmb_dos16_snapshot_replace,&files) &&
         mysmb_snapshot_store_initialize(snapshot_store,&files))
         mysmb_dos16_root_bind_snapshot(&root,snapshot_store,reset_output,0);
-    mysmb_vga_frame_initialize(&vga,pages0,pages1,pages2,pages3);
     if(!mysmb_dos16_devices_open()) {
         mysmb_dos16_root_shutdown(&root);_ffree(snapshot_store);return 1;
     }

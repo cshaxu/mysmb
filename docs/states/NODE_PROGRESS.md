@@ -11,6 +11,14 @@ scoped evidence and track only named unresolved/invalidated clauses.
 Material993 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
+## M3 T28 S4 - bounded VGA batch storage and row reuse
+
+Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and
+4260/4261feasible controls(raw4342,infeasible81) unchanged. Neutral output mapping,
+actual VGA readback/lifecycle and scoped native/host checks pass;no ROM/final
+certificate credit. S5 infrastructure admitted with empty scope,custody retained.
+[Results and limits](../history/M3-T28-dos-rendering-optimization.md#s4-p2-closure-bounded-batch-storage-and-exact-repeated-rows).
+
 ## M3 T28 S3 - compact compositor cache and bounded memory comparison
 
 Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and

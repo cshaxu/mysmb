@@ -1,25 +1,25 @@
 # Project Status
 
-## M3 T28 S4 Packet
+## M3 T28 S5 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T28 S4 P2; formal integration after bounded single-plane/row-reuse prototype. |
-| Admission And Approval | Owner authorizes execution and the joint conventional-memory/playability contract. S3 closed;S4 is active;P1 prototype evidence retained,formal integration pending. |
-| Objective | Compare four-plane storage with single-plane/row/batch scratch and duplicate-row reuse;preserve every indexed/packed output and full borderless640x400 scanout;measure peak conventional storage and complete output cost;fit and playability remain independent hard gates. |
+| Identifier Mode | Continuation: M3 T28 S5 P1; workspace lifetime and unchanged-region cost decision. |
+| Admission And Approval | Owner authorizes execution and the joint conventional-memory/playability contract. S4 closed;S5 is active,with cumulative fit/playability still open. |
+| Objective | Inventory pixel/text/snapshot/cache lifetimes and assess safe workspace reuse;decide unchanged-region reuse from all invalidation inputs and memory/time cost;preserve full redraw as fallback and both fit/playability hard gates. |
 | Non-goals | No core ROM routine/state/timing changes,no emulator settings,no text artwork or VGA coordinate/mode changes,no nominal-cadence or M2/M4 acceptance. |
 | Reference Baseline | Post-T27 source and retained three products;historical1992/1992,local1991/1992 nodes and4260/4261 feasible controls,raw4342/infeasible81. |
 | Candidate Proposal | [T28 retained proposal and audit](../history/M3-T28-dos-rendering-optimization.md). Removed from pending QUEUE on admission. |
-| Files And ABI Surface | platform/vga frame conversion,DOS device/main composition and focused tests/build membership;estimate4-7files,150-350 changed lines. No core/PPU-state/snapshot ABI changes. |
+| Files And ABI Surface | DOS composition/workspace lifetime and compositor reuse assessment;initial audit0product lines,possible3-5files/80-200changed lines after pre-code report. No core/PPU-state/snapshot schema changes. |
 | Applicable Rules | README Task Reading Set,EXECUTION,DOCUMENT,ARCHITECTURE,CODING,CONTRIBUTING and source policy. |
 | Verification | Independent128000-byte mapping and actual VGA-plane readback,far guards,mode/restore lifetime,native x86/x64 and original DOS16;fixed-config complete-output/input cost,MCB/near/far peak and contiguous/stack/fallback under the memory contract,platform purity and three EXEs for each product-code P. |
-| Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0,maximum1992/1992;no custody transfer. S4 owns infrastructure-only implementation;original node custodians unchanged. |
+| Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0,maximum1992/1992;no custody transfer. S5 owns infrastructure-only implementation;original node custodians unchanged. |
 | Asset Needs | Existing owner-local resources/derived products only,local ignored build containment;no new import or redistribution. Prior owner exception for existing tracked EXEs retained;every product-code P refreshes all three,with local probes/resources contained below ignored build. |
 | Reporting Requirements | Before each S owners,scope and estimated size;after each P actual diff,tests/products and total/local counters. Report absolute peak bytes,contiguous requirements and whole-frame/input costs,accepted tradeoffs and unproved limits;separate opportunity from measured gain. |
 | Stop Conditions | Pixel/state/snapshot/audio divergence,unbounded memory or cache lifetime,unproved required-storage fit,unacceptable playability regression,missing fixed-config timing,or proposed core/PPU semantic change prevents advancing the affected optimization. |
-| Exit Criteria | S4 resolves exact128000-byte mapping/plane readback/mode lifetime,far guards and measured row/storage candidate dispositions;three products for code changes. T exit remains all six dispositions and integrated joint fit/playability proof. |
+| Exit Criteria | S5 records measured accepted/rejected reuse and lifetime choices with complete output/snapshot/failure equality;three products for changed code. T exit remains six dispositions and integrated joint fit/playability proof. |
 | Original Owner Request | Owner authorizes execution after reviewed T28 plan;preserve original ROM and PPU semantics. |
-| Similar-Issue Sweep | Sweep scaled coordinate/duplicate-row consumers,plane/address submissions and storage/mode/restore lifetimes;record every hit and disposition. |
+| Similar-Issue Sweep | Sweep all pixel/text/snapshot/cache consumers and simultaneous lifetimes,resource/mode/restore invalidations and allocation-failure cleanup;record every hit and disposition. |
 
 ## Current Technical Baseline
 
@@ -34,7 +34,7 @@
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11/T12/T13/T14/T15/T16/T17/T18 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are429295/319627/328299bytes.
+- Current local DOS16/Win32/x64 products are302927/319627/328299bytes.
   T22 refreshes all three with RAM-authoritative NMI page handoff;T21 coral,T20 titles/tree/fence and T18 timing retained.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
@@ -42,6 +42,15 @@
   full heap/stack peak and hardware/version qualification remain M4.
 
 ## Compact closure status
+
+T28 S4 closes16row batch VGA scratch1280bytes,down from128000;full640x400
+mapping and every output retained. Bounded normal peak452432bytes versus S3
+578176;complete output16.056-16.588percent shorter in fixed probe. Three DOS
+lifetime routes each640000readback bytes,six frames and snapshot equal;mode
+restores. Both widths8tests/13host groups pass. Products302927/319627/328299;
+6files,+71/-34,new0. Nominal cadence/minimum-free/clock sampling clause remains
+S6/M4;T28 incomplete,S5 reuse/lifetime decision active.
+[Evidence and limits](../history/M3-T28-dos-rendering-optimization.md#s4-p2-closure-bounded-batch-storage-and-exact-repeated-rows).
 
 T28 S3 closes compact8KiB raw-index cache/direct opacity and matched near/far
 allocation ownership. Bounded normal peak578176bytes versus S2 610160;external
@@ -96,11 +105,3 @@ snapshot/receipt boundaries reviewed;11tests and7host groups per width pass.
 Controlled7-2 retains first-frame page/pipe,2048boundary/1198native comparisons
 pass;DOS16/DOSBox pass. Products364817/312971/320107bytes;product/test2files,
 +96/-0,no ABI/new node or full-game credit. [Ten dispositions and limits](../history/M3-T22-pipe-exit-display-recovery.md#s2-closure-ten-bounded-contract-dispositions).
-
-M3 T22 S1 fixes RAM$0778-to-next-NMI page handoff,not cached overwrite.
-Old setup regression fails52,old-root controlled7-2 first frame fails14;
-fixed source passes16page/128control cases and selects table1 on first restored
-frame145,scroll0,with pipe/stairs/full terrain. Both widths8tests/7host groups,
-2048boundary/1198native comparisons,DOS16/DOSBox pass. Products364801/312971/
-320107bytes;two product/testfiles,+44/-1,no ABI/new node or M2 certification.
-[T22 original source,missing integration clause and route limits](../history/M3-T22-pipe-exit-display-recovery.md).

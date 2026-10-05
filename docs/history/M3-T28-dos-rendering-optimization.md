@@ -713,3 +713,126 @@ no general dirty-frame policy is introduced by this bounded row reuse.
 Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
 infeasible81) unchanged;scope/expected/actual[],new0. Ledger S4 remains active.
 P1 retains a measured candidate and defined remaining obligations,not S/T closure.
+
+
+## S4 P2 closure: bounded batch storage and exact repeated rows
+
+S4 closes its incremental neutral video conversion/submission scope. Production
+DOS now uses1280bytes for16rows,not four128000-byte planes. All100batches are
+converted and submitted for each complete frame;four physical VGA planes and
+full borderless640x400scanout remain. Adjacent repeated source rows reuse the
+previous80bytes within a batch;the first row reconstructs from immutable pixels.
+No previous-batch contents or cross-frame cache is needed. Generic row-range
+conversion and submission reject out-of-range planes/rows before writing.
+Existing complete-frame APIs remain supported through the same coordinate owner.
+
+Six product/test files,+71/-34. Only neutral VGA conversion,DOS main/device
+submission and mapping tests change. Core,PPU state/compositor,snapshot bytes,
+input,ticks,audio,text artwork and mode selection are unchanged. Maximum source
+address remains61439;A000ranges end at32000per plane. All fixed16row chunks divide
+400exactly. Independent tests also exercise1/7/16/63/400row groups,partial final
+batches,all128000packed coordinates,guard bytes and invalid plane/range rejection.
+
+| Storage alternative | Scratch | Decision |
+| --- | ---: | --- |
+| Four complete planes | 128000bytes | Replaced;unnecessary simultaneous conventional storage. |
+| One complete plane | 32000bytes | Valid faster alternative;not selected because bounded batch saves30720more bytes for under1.74percent measured complete-output cost. |
+| One row | 80bytes | Rejected for current default:aggregate output about9.96-10.37percent slower than single-plane;extra per-row calls/selection/division outweigh its modest additional saving. |
+| Sixteen rows | 1280bytes | Selected incremental default;126720static bytes saved versus S3,no extra heap allocation. Final playability selection still requires S6/M4. |
+
+Prototype per-row internal timing was discarded:1600stamp pairs add material
+observer work and expose isolated unsigned-clock underflow samples. The comparison
+uses aggregate-only row timing and paired complete-output costs. This finding is
+received by S6's clock/input/cadence qualification;it is not a silent repair of
+production pacing. No emulator setting or original game logic changed.
+
+| Fixed-config scene | S3 complete-output ticks | Final16row output ticks | Difference |
+| --- | ---: | ---: | ---: |
+| Water | 2418417 | 2017248 | -16.588percent |
+| Castle | 2418417 | 2017242 | -16.588percent |
+| Dense sprites | 2498507 | 2097339 | -16.056percent |
+
+Two sequential final runs have identical aggregate costs. Water/castle/dense
+output costs about1.691/1.691/1.758seconds in the unchanged fixed probe runtime;
+these are not nominal cadence or486SX playability acceptance. Relative to the
+single-plane candidate,final output is1.737/1.737/1.670percent longer. First-title
+total is16.352percent shorter than S3;restored-ground root total4.740percent
+shorter,including snapshot/root bookkeeping. Stage3 now aggregates conversion
+and device submission;do not compare it directly with S3's conversion-only stage.
+
+Final timing probe initially closed its report before writing the restore footer;
+this harness-only lifetime fault was corrected and both final runs repeated.
+No product has that report operation. Current final receipts contain before3/
+after3mode restoration,complete source/plane outputs and matching snapshots.
+Installed configuration SHA256 is unchanged from S3,normal SDL on private desktops,
+without foreground input or CPU/machine/memory/render overrides.
+
+| Final DOS lifecycle route | Owned conventional peak | Minimum external contiguous block | Live payload peak |
+| --- | ---: | ---: | --- |
+| Normal near-cache path | 452432bytes | 196640bytes | far97436,near8192bytes |
+| Injected optional-cache failure | 451952bytes | 197120bytes | far97436,no cache |
+| Real external/near pressure | 648064bytes,includes ballast | 1008bytes | far97436,near8192test ballast observed |
+
+Normal primary349824,environment160,auxiliary102448bytes include probe overhead.
+Compared with S3 normal578176,the instrumented peak is125744bytes lower;compared
+with S1/S2 peaks575632/610160,it is123200/157728lower. These are bounded probe
+reservations,not a claimed pristine minimum requirement. No-cache fallback and
+real pressure both complete the declared phases. Every route covers title,
+restored ground,text,graphics,save/load and shutdown;each reads five complete
+four-plane VGA outputs(640000bytes),compares six source frames and10035-byte
+snapshot. Graphics/text BIOS modes are19/3,then initial mode3is restored at exit.
+Final live far payload is zero in all routes;near zero where walking is present.
+Injected-failure probe has no near allocation/walker,not an independently
+observed near-heap census. Stack observer marks76/98/74bytes untouched,with
+existing margins;no stack reduction or all-route qualification follows.
+
+Current original DOS16 product is302927bytes,minimum MZ loaded image327440,
+DGROUP49456,stack2048,max segment32768. Compared with S3 image453824,this saves
+126384loaded bytes;MZ image excludes dynamic heap,PSP and environment. The actual
+minimum free-memory threshold,full-route stacks and DOS-version/physical486SX
+fit remain S6/M4 obligations. Windows targets each pass eight focused tests,
+including2048boundary/1198native comparisons and the new batch mapper. Thirteen
+actual private-host launch/input/Tab/snapshot/focus/close groups pass per width;
+final Windows binaries equal the tested hashes because VGA device work is DOS-only.
+
+Three product build targets are current;all three owner-authorized asset paths
+are refreshed. DOS changes,Windows binary identities remain unchanged:
+
+- mysmb16.exe: 302927bytes,SHA256 3b0d82ad40e3ba3621f35f9e9cf42a3359367b64e3284d94761536c92408b67e.
+- mysmb32.exe: 319627bytes,SHA256 4629d477cb4ac7df71ea4a28858d9540f1c0599c8abadfd00167262b32d11a01.
+- mysmb64.exe: 328299bytes,SHA256 c9a9fa965bb23f16fda27be1b42147b36bddb12d09a47a02cfc6708690fc7d3d.
+
+Source sweep covers every production frame/page builder,plane submitter and
+static page allocation;DOS main receives bounded batches,legacy complete-frame
+consumers/tests retain the shared row-range owner. No named scoped output or
+lifetime difference remains. Local raw outputs/probes/resources remain ignored
+under build/m3-t28-s4 until S6 consumes them. Historical1992/1992,local1991/1992
+nodes,4260/4261feasible controls(raw4342,infeasible81),scope/expected/actual[],new0.
+No node custody transfer,new ROM claim or M2/M4 certificate. S4 is closed;T28
+remains open and S5 is admitted below. The observed clock clause is assigned S6.
+
+## S5 admission: unchanged-region cost and workspace lifetime decision
+
+M3 T28 S5 P1 is automatically admitted under ongoing owner execution approval.
+First inventory current pixel,text,snapshot,cache and VGA lifetimes after S4;
+assess whether presentation workspaces can safely share storage without changing
+mode-switch/restore/failure behavior. Assess dirty-region/frame reuse only with
+all PPU/resource/mode/restore invalidation inputs and its own memory/time cost.
+No optimization is required merely because it was listed;retain complete redraw
+if cache costs outweigh benefits. Snapshot integrity,transaction staging and
+last-running recovery guarantees cannot be weakened to reclaim space.
+
+Owners are DOS composition/workspace lifetimes and read-only compositor cache
+contracts;IO/snapshot owners participate only if their exact neutral contracts
+require an admitted change. Initial audit0product lines;possible implementation
+estimate3-5files,80-200changed lines,reported before code. No core/PPU-state,
+snapshot schema,original input/tick/audio or DOSBox setting changes. Scope and
+expected/actual ROM labels[],new0,maximum1992/1992;original receiving custodians
+remain. S4 output/storage is the predecessor;S6 receives cumulative choice,
+minimum-fit/stack/cadence/input and the observed clock sampling clause.
+
+S5 exit requires an explicit accepted/rejected/deferred reuse choice,complete
+output/state/snapshot and lifecycle equality,paired peak-memory/time costs and
+failure recovery. Any product-code P builds/tests/refreshed three EXEs;pure audit
+does not repackage. Neither candidate savings nor fast isolated stages establish
+whole-product fit/playability. T28 still needs S5/S6 and all named dispositions.
