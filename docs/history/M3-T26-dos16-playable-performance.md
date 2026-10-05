@@ -242,7 +242,7 @@ Owner directs closure of the current T and admission of component separation.
 S2 and T26 close under this explicit amended exit contract:retain S1's scoped
 compositor improvement and S2's verified full640x400 display delivery;transfer
 unchanged-config nominal-cadence measurement and unresolved optimization to
-[the queued DOS rendering proposal](../proposals/m3/dos-rendering-optimization.md).
+[the queued DOS rendering proposal](M3-T28-dos-rendering-optimization.md).
 Coordinator accepts that candidate as the receiving work record under the
 owner instruction. No nominal-cadence or physical486SX success is claimed.
 Its S1 must remeasure the actual post-migration product and memory budget;

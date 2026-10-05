@@ -1,10 +1,10 @@
-# Candidate: DOS rendering optimization without ROM logic changes
+# M3 T28: DOS rendering optimization without ROM logic changes
 
 ## Owner request and queue position
 
 Place the six discussed optimization opportunities second in the queue,after
 the core/PPU module split and before the text object/state visual audit.
-This candidate is unnumbered and not admitted. M3 T27 is active after the owner-directed T26 closure;the unresolved
+Owner admits M3 T28 after completed T27;S1 is the sole active audit. The unresolved
 T26 performance obligation is explicitly received below.
 At admission,reconcile the completed T26 work and module migration so this
 candidate implements only remaining opportunities,without repeating accepted
@@ -43,7 +43,8 @@ rejected with a recorded disposition,not silently counted as implemented.
 
 ## Planned S breakdown
 
-These are proposal-local S slots,not allocated active identifiers.
+These are T28 planned S slots;only S1 is admitted. Estimated sizes below are
+changed non-generated source/test lines,not node counts or commitments.
 
 | Slot | Scope and exit |
 | --- | --- |
@@ -92,15 +93,94 @@ historical/local node and control counts separately from performance results.
 
 All generated probes,profiles,traces,captures and build intermediates remain
 under ignored build. This candidate imports no third-party implementation.
-Owner-local resources and derived executables remain uncommitted under the
-source policy;only neutral evidence summaries enter the proposal/history.
+No new owner-local resources or derived source enter Git. The prior owner
+exception for existing tracked product EXEs is retained;product-code P work
+refreshes those three files. Only neutral research summaries enter this record.
 
 ## Accepted T26 remaining-work transfer
 
 Owner closes T26 and admits component separation as T27. This candidate
 receives the unproven fixed-config nominal gameplay cadence and remaining
-performance optimization obligation. It stays unnumbered after active T27;
+performance optimization obligation. It is now admitted as T28 after completed T27;
 reconcile completed T26 work and measure the actual post-split source before
 implementation. Neither the transfer nor T26 closure proves playability or
 25MHz486SX qualification. No ROM-node responsibility transfers with this
 presentation-only obligation.
+
+## S1 P1 admission audit and revised implementation plan
+
+T27 closed at bb5a0f35;this P admits T28 and records a read-only source audit.
+No implementation or measured performance improvement is claimed. S1 remains
+active:the stage baseline and actual DOS heap/stack budget are not yet measured.
+
+| Current owner | Audit conclusion and disposition |
+| --- | --- |
+| ppu/frame background_row | T26 already decodes once per tile row,stages a256-byte row,unrolls complete8-pixel tiles and preserves partial edges. Retain,do not implement or count again. It copies16palette entries per scanline;frame-local preparation remains a candidate. |
+| ppu/frame pattern and sprite path | CHR bitplanes still decode on each composition. A full8KiB source expanded to one-byte indices needs32768bytes;bounded row cache is an alternative,not a predetermined win. Apply current palettes,bank,bounds and flips at use. Cache owner must be caller-owned compositor workspace,never core state or an implicit process-global cache. |
+| ppu/frame behind-background test | Calls background_pixel again for opaque behind-background sprite dots. A full256x240opacity bitmap needs7680bytes;row/tile alternatives must measure access cost and preserve current ordering/masks/split. |
+| platform/vga/vga_frame | Already direct full-source320x400 mapping with doubled640x400 scanout. Four400-row conversions repeat240source rows:160duplicate rows per plane. Reuse may avoid40percent of row conversions,not40percent of frame cost or required writes. |
+| platform/dos16 devices_present | Already four contiguous32000-byte memcpy calls plus plane selection,not per-dot Win32 calls. Inspect actual OpenNT generated copy before specializing;no assumed transfer gain. |
+| platform/dos16 root_step | Input,original tick,presentation,audio extraction/submission and snapshot capture/cache remain serial. Stage profiling must include all these and wait separately before attributing end-frame cost. DOS audio device reports unavailable;do not claim audible DOS sound. |
+| Unchanged-region reuse | No reliable evidence yet that invalidation/checking beats redraw. Decision deferred until S2-S4;must include every PPU/resource/lifetime input and never suppress tick/input/audio. |
+
+Memory audit distinguishes loaded/static storage from runtime free heap:
+four static VGA pages consume128000bytes;indexed pixels allocate61440far bytes;
+text and snapshot transaction packs also allocate far memory. A linker DGROUP
+headroom check is not free conventional-memory or stack high-water evidence.
+S1 must measure successful allocation sizes,remaining heap,largest block and
+stack peak with all normal features enabled,including simultaneous cache candidates.
+32768+7680extra bytes cannot be approved from EXE size alone. Bounded cache
+segments,allocation failure fallback and DOS16 pointer limits are explicit.
+
+### Revised bounded S ownership and estimates
+
+| S | Components and scope | Estimated change | Exit |
+| --- | --- | --- | --- |
+| S1 active audit | Retained T26/T27 receipts,current ppu/VGA/root,local fixed-config timing and memory probes. Freeze baseline/reference/workload. | Product0;project-owned profiling/test support0-200lines only if needed,local probes below build. | Representative stage and complete-frame measurements,overhead/control samples,heap/stack budget and cache keys frozen. |
+| S2 | Shared ppu/frame palette/background reuse plus measured CHR cache decision;roots only bind workspace lifetime if required. Same algorithm all widths. | 150-350product/test lines,about4-7files. | Full indexed equality,bounds/rebind/lifetime/fallback cases and independent/cumulative timings. Reject cache if not beneficial. |
+| S3 | Shared background-opacity/sprite occlusion chain with S2 workspace. | 80-200lines,about2-4files. | Priority/masks/flips/clipping/split equality,far memory guards and incremental benefit;reject unhelpful representations. |
+| S4 | VGA repeated-row conversion and measured contiguous transfer specialization. Generic IO scaler unchanged unless genuinely shared. | 80-220lines,about2-5files. | All128000packed bytes,coordinate coverage,plane readback,mode transitions and fixed-config incremental/cumulative costs. |
+| S5 | Decide bounded unchanged-output reuse using retained S1-S4 costs. | Reject:product0;implement:100-250lines,about3-5files after explicit invalidation amendment. | Every relevant state/resource/lifetime input accounted for,hit/miss output equality and checking cost lower than savings;otherwise reject with evidence. |
+| S6 | Cumulative integrated actual products,startup/gameplay/transitions/Tab/snapshot/input/exit and source boundary review. | Product0expected;test/report50-150lines;scoped repair only if identified. | Six dispositions,combined result and deficits,memory/input latency,three current builds/products for changed code;M4 hardware obligation separate. |
+
+Do not add a separate lifecycle for each cache/table/helper. S2-S4 group their
+continuous production path and its tests;each modified-product P builds/packages
+three EXEs once. Equality failures are repaired in their scoped S before advancing.
+Size estimates exclude local generated artifacts and mandatory governance rows.
+No translated core routine is planned to change;workspace lifetime plumbing
+belongs to composition and neutral pixel/VGA owners,not gameplay code.
+
+### Fixed baseline and evidence limits
+
+Retain the independent reference compositor and direct-coordinate VGA oracle.
+Freeze fixture hashes and source identities under build/m3-t28-s1 before changes;
+use title,scrolling ground,underground/water,dense sprites,split/mask/bounds,
+palette animation,transitions and restored/Tab cases. Synthetic coverage alone
+is not the representative DOS performance workload. Resource binding is immutable
+per lifetime;pointer/length keys alone do not license stale results when test
+fixtures mutate CHR in place. Tests must explicitly establish/invalidate that
+lifetime and cover two simultaneous compositor instances.
+
+T27's paired dummy-host cadence sample advances5frames in each run with equal
+10035-byte snapshots. It shows a coarse unchanged paired result,not stage timing,
+nominal cadence or hardware qualification. Native Windows QPC test timings
+are useful compositor evidence but not a DOS speed estimate. Earlier accelerated
+T26 configuration runs are excluded. Installed configuration identity must remain
+0494236f2308e2e615f428d04e6470db4b0d162c95b51f4e276f1b7e73241917;
+no overrides or alternate CPU/cycles/frameskip/sound settings. Dummy SDL tests
+may prove correctness only. Qualified timing needs the normal host/device path,
+with bounded nonintrusive execution and no foreground/input takeover. If that
+cannot be measured without interference,record the limitation;do not substitute
+dummy timing or declare S1 performance baseline complete.
+
+S1 admission scope[],expectedMatches[],actualMatches[],incoming historical
+1992/1992,maximum1992/1992,new0. Local nodes1991/1992 and feasible controls
+4260/4261(raw4342,infeasible81) unchanged;CheckForEnemyGroup/control-01480
+remains needs-evidence. No final M2 certificate or new node/edge credit.
+Admission JSON and gate receipts remain under build/m3-t28-s1.
+
+S1 P1 review:node admission validates1992inventory nodes,scope0,expected delta0,
+maximum1992;ledger has1992receivers and0orphans. Documentation governance and
+Git whitespace checks pass. Product code and three EXEs unchanged;no build is
+required for this planning P. Remaining S1 measurements are explicit above.
+
