@@ -240,7 +240,7 @@ static void object(const struct mysmb_game *g,
     if(x1<=x0 || y1<=y0)return;
     width=(unsigned short)(x1-x0);height=(unsigned short)(y1-y0);
     color=mysmb_io_color_text16(g->palette[palette*4U+
-        (k==CLOUD || k==COIN || k==QUESTION ||
+        (k==PLANT?3U:k==CLOUD || k==COIN || k==QUESTION ||
             k==TREE_CROWN || k==TREE_TRUNK?1U:2U)]);
     if(k==DARK)color=0U;
     ink=mysmb_io_color_text_contrast(color);
@@ -271,6 +271,13 @@ static void object(const struct mysmb_game *g,
         cell=(unsigned short)(y*80L+x);
         w->opaque[cell/8U]|=(unsigned char)(1U<<(cell%8U));
         frame->cells[cell].character=c;
+        if(k==PLANT) {
+            /* Coral uses source ink3,not the water-colored ink2. The narrow
+             * branches carry that color;contrast belongs behind the glyph. */
+            frame->cells[cell].foreground=color;
+            frame->cells[cell].background=ink;
+            continue;
+        }
         if(k==FENCE) {
             /* Authored light wood separates decoration from brown terrain;
              * only rails/posts own cells,so gaps retain the sky. */

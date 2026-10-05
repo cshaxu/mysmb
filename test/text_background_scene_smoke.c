@@ -164,6 +164,24 @@ int main(void)
     CHECK(frame.cells[28U*80U+32U].character=='O');
     CHECK(frame.cells[28U*80U+42U].character=='o');
     CHECK(frame.cells[27U*80U+52U].character=='^');
+    /* Source coral ink3 is pink;ink2 is water blue. Glyphs must carry the
+     * coral role,while gaps retain water and later palette changes survive. */
+    game.palette[2U]=0x12U;game.palette[3U]=0x25U;
+    before=game;
+    CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
+    CHECK(frame.cells[27U*80U+52U].foreground==13U);
+    CHECK(frame.cells[27U*80U+52U].background==0U);
+    CHECK(frame.cells[27U*80U+50U].background==frame.cells[0U].background);
+    CHECK(frame.cells[28U*80U+51U].foreground==13U);
+    CHECK(memcmp(&before,&game,sizeof(game))==0);
+    game.palette[3U]=0x30U;
+    CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
+    CHECK(frame.cells[27U*80U+52U].foreground==15U);
+    CHECK(frame.cells[27U*80U+52U].background==0U);
+    game.palette[3U]=0x0fU;
+    CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
+    CHECK(frame.cells[27U*80U+52U].foreground==0U);
+    CHECK(frame.cells[27U*80U+52U].background==15U);
     CHECK(frame.cells[28U*80U+62U].character=='|');
     CHECK(frame.cells[28U*80U+72U].background==0U);
     /* Fractional scroll keeps the first covered row's outline. */

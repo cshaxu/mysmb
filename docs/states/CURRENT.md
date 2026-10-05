@@ -2,7 +2,7 @@
 
 **Idle.**
 
-T19 remains owner-suspended in the [queue](QUEUE.md). T20 S1/S2/S3 are closed.
+T19 remains owner-suspended in the [queue](QUEUE.md). T21 S1 is closed.
 
 ## Current Technical Baseline
 
@@ -17,14 +17,23 @@ T19 remains owner-suspended in the [queue](QUEUE.md). T20 S1/S2/S3 are closed.
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11/T12/T13/T14/T15/T16/T17/T18 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are364737/312971/320107bytes.
-  T20 S1/S2/S3 refresh all three with clean titles and light shared tree/fence text;T18 deadline/symbol-tail changes retained.
+- Current local DOS16/Win32/x64 products are364817/312971/320619bytes.
+  T21 refreshes all three with source-colored coral glyphs;T20 titles/tree/fence and T18 deadline/symbol-tail changes retained.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
   pass;seeded presenter equality is explicitly separate. Real486SX speed,
   full heap/stack peak and hardware/version qualification remain M4.
 
 ## Compact closure status
+
+M3 T21 S1 closes coral source ink3 as foreground,contrast fill and transparent
+branch gaps. Water2-2/night6-1/snow6-3 controlled native fixtures match both
+widths;each2048boundary/1198native graphics/state checks pass. All4000cells per
+scene read back from actual console;previews redraw buffers,not window captures.
+Both widths8focusedtests/7host groups,original DOS16 and DOSBox pass. Products
+364817/312971/320619bytes;code/test2files,+26/-1,new0,no ROM credit.
+[T21 scene evidence and limits](../history/M3-T21-water-snow-text-colors.md).
+
 
 M3 T20 S1/S2/S3 close console title MySMB,DOS diagnostic-banner removal and
 shared tree crown/trunk/fence classification,shape and palette-role repairs.
@@ -84,6 +93,3 @@ Unicode,snapshot,focus,audio and recovery regressions pass. Original DOS16
 build/default-graphics check passes. Code/build/tests10files,+306/-14lines;
 local products refreshed. Empty ROM scope/new0,no remote. Details and limits:
 [T13 history](../history/M3-T13-win32-startup-console-lifecycle.md).
-
-M3 T12 authored glyphs,contours,static/dynamic text and committed-color animation
-remain closed;[T12 history](../history/M3-T12-authored-text-detail.md).
