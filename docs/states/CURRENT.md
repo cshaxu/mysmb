@@ -4,24 +4,34 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T28 S6 P6; contained rowwise-composition memory prototype and cumulative budgets. |
-| Admission And Approval | Owner authorizes execution and the joint conventional-memory/playability contract. S5 closed;S6 is active,with cumulative fit/playability still open. |
+| Identifier Mode | Continuation: M3 T28 S6 P7; owner-admitted rowwise memory implementation; cumulative fit and output validation open. |
+| Admission And Approval | Owner authorizes execution and the joint conventional-memory/playability contract. Owner accepts the rowwise memory/performance tradeoff and admits implementation;repeat-row/OAM tuning is deferred to TODO. S5 closed;S6 remains active. |
 | Objective | Reconcile S1-S5 memory census;verify actual minimum-free launch/runtime fit,stack/lifetimes,normal cadence/input budgets and clock sampling;dispose all six opportunities with fit/playability separate hard gates. |
 | Non-goals | No core ROM routine/state/timing changes,no emulator settings,no text artwork or VGA coordinate/mode changes,no emulator-based physical486SX/DOS-version or M2 certification. |
 | Reference Baseline | Post-T27 source and retained three products;historical1992/1992,local1991/1992 nodes and4260/4261 feasible controls,raw4342/infeasible81. |
 | Candidate Proposal | [T28 retained proposal and audit](../history/M3-T28-dos-rendering-optimization.md). Removed from pending QUEUE on admission. |
-| Files And ABI Surface | Integrated DOS root/device timing and memory/performance probes;initial audit0product lines,possible3-6files/80-250changed lines after pre-code report. No core/PPU-state/snapshot schema changes. |
+| Files And ABI Surface | Integrated DOS root/device timing and memory/performance probes;initial audit0product lines,prospective rowwise integration8-10files/350-550changed lines after prototype/contract review and pre-code report. No core/PPU-state/snapshot schema changes. |
 | Applicable Rules | README Task Reading Set,EXECUTION,DOCUMENT,ARCHITECTURE,CODING,CONTRIBUTING and source policy. |
 | Verification | Independent128000-byte mapping and actual VGA-plane readback,far guards,mode/restore lifetime,native x86/x64 and original DOS16;fixed-config complete-output/input cost,MCB/near/far peak and contiguous/stack/fallback under the memory contract,platform purity and three EXEs for each product-code P. |
 | Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0,maximum1992/1992;no custody transfer. S6 owns infrastructure-only implementation;original node custodians unchanged. |
 | Asset Needs | Existing owner-local resources/derived products only,local ignored build containment;no new import or redistribution. Prior owner exception for existing tracked EXEs retained;every product-code P refreshes all three,with local probes/resources contained below ignored build. |
 | Reporting Requirements | Before each S owners,scope and estimated size;after each P actual diff,tests/products and total/local counters. Report absolute peak bytes,contiguous requirements and whole-frame/input costs,accepted tradeoffs and unproved limits;separate opportunity from measured gain. |
 | Stop Conditions | Pixel/state/snapshot/audio divergence,unbounded memory or cache lifetime,unproved required-storage fit,unacceptable playability regression,missing fixed-config timing,or proposed core/PPU semantic change prevents advancing the affected optimization. |
-| Exit Criteria | S6/T28 require cumulative complete-route equality,measured minimum-free fit and playable cadence/input budgets,all six dispositions and no unresolved required clause;three products for changed code. |
+| Exit Criteria | S6/T28 require cumulative complete-route equality,measured minimum-free fit and playable cadence/input budgets,all six dispositions and no unresolved required clause;owner defers extra rowwise micro-optimization to TODO without claiming cadence acceptance;three products for changed code. |
 | Original Owner Request | Owner authorizes execution after reviewed T28 plan;preserve original ROM and PPU semantics. |
 | Similar-Issue Sweep | Sweep all pixel/text/snapshot/cache consumers and simultaneous lifetimes,resource/mode/restore invalidations and allocation-failure cleanup;record every hit and disposition. |
 
 ## Current Technical Baseline
+
+- S6 P6 contained rowwise prototype passes512synthetic cases per width,
+  188743680strip bytes and65536000VGA-plane bytes with guards/state unchanged.
+  Maximum2560-byte band fits15400-byte exclusive text store;potential46040-byte
+  payload saving is not measured DOS occupancy. Ten repeated source rows and
+  repeated OAM scans incur a measured cost. Original DOS16 eight-case far/plane
+  probe passes;paired synthetic compute cost rises4.778/5.467percent. Actual
+  resident savings remain unproved. No product code/EXE change;owner admits
+  P7memory implementation,with extra speed recovery in TODO. S6/T28remain open.
+  [Feasibility and boundaries](../history/M3-T28-dos-rendering-optimization.md#s6-p6-checkpoint-contained-rowwise-feasibility-and-integration-boundary).
 
 - S6 P5 full zero-pattern row fill:+3/-0,one PPU source file,no heap. Paired
   output-only water/castle/dense costs0.649/14.116/13.430percent shorter. Both

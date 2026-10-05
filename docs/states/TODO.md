@@ -2,6 +2,18 @@
 
 ## Translation Debt
 
+- [ ] **Optional rowwise renderer speed recovery:** Owner accepts the bounded
+  rowwise graphics/text-store tradeoff in T28 S6:potential46040-byte pixel
+  allocation reduction. Repeated boundary rows and OAM scans add measured
+  synthetic composition/mapping cost. Revisit only when further DOS speed is
+  needed after memory integration:reuse ten boundary source rows per frame,
+  bound sprite selection work,and omit unused raw reads on the cached sprite
+  path. Measure complete output and actual DOS memory together;no core logic,
+  resolution,pixel/tick dropping or emulator-settings changes. This optional
+  tuning does not block the admitted memory implementation and is not a waiver
+  of required pixel/lifetime or playability qualification.
+  [Evidence and admission](../history/M3-T28-dos-rendering-optimization.md#s6-p6-checkpoint-contained-rowwise-feasibility-and-integration-boundary).
+
 - [ ] **Default-all legacy Cannon Children harness link:** T28 S6 P4's
   default-all build attempt fails in x86/x64 because its direct OAM sources
   reference observation record without linking that owner. Product/focused

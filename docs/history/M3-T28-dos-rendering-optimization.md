@@ -1382,3 +1382,86 @@ Cached sprite-read omission may be evaluated in the same bounded renderer cohort
 with independent dispositions. Report affected components/estimated size before
 any production edit;three EXEs remain required for product-code P work. Pixel
 bit-packing/PRG compaction remain unadopted alternatives with P3identity/cost gates.
+
+
+## S6 P6 checkpoint: contained rowwise feasibility and integration boundary
+
+No product source or executable changes. A contained C90 prototype narrows the
+same read-only compositor to a requested source-row span. Background source
+coordinates remain absolute;only the output address is rebased. Sprite rows are
+clipped against that span while reverse OAM priority,flips,opacity queries,left
+masks and the visible status split retain the full-frame algorithm. Cached
+sprite raw reads remain unchanged to isolate this experiment.
+
+Native x86 and x64 each pass512synthetic cases. Raw and cached full-frame output
+agree;cached and uncached strips of1/11/16source rows compare188743680bytes per
+width against the retained raw full-frame path. Twenty-five destination bands
+compare65536000VGA-plane bytes per width against the production full-frame VGA
+path and an independent coordinate formula. Tests include varying scroll,
+control/mask combinations,split phases,zero/random patterns,null/short CHR,
+workspace resource rebinds and overlapping/flipped/behind-background sprites.
+Source-state immutability,output guards and invalid-span rejection pass. These
+are renderer fixtures,not original-ROM routes,actual device readback,complete
+branch enumeration or DOS performance/peak acceptance.
+
+The fixed16destination-row bands need at most10source rows/2560bytes. Across a
+complete frame they compose250source rows,ten repeated boundary rows rather
+than240. Each band may scan64OAM entries again;the paired synthetic costs below
+include these overheads,with actual integrated product timing still required. The existing15400-byte text store can contain the
+pixel band exclusively. Replacing61440bytes with15400has a potential46040-byte
+payload saving;actual DOS block/CRT/MCB savings and launch threshold remain
+unmeasured. VGA1280-byte scratch,CHR cache,snapshot staging and last-running
+cache remain separate. No fidelity-reducing color packing is adopted.
+
+Production integration must preserve current full-frame APIs and the Windows
+path. Add an explicit band initialization/binding entry rather than appending
+uninitialized callback members to legacy hooks. Composition alone binds const
+PPU state and workspace to a synchronous neutral IO producer;VGA consumes only
+bounded neutral rows and never receives game/PPU pointers. The band lifetime
+ends before the next request,mode change or game tick. Root initialization must
+allocate the smaller store directly,not allocate61440then shrink,so launch fit
+can improve. Text and band views are exclusive;restores rebuild the selected
+presenter without changing snapshot bytes or translated decisions.
+
+Contained implementation,tests and receipts remain under ignored build/m3-t28-s6.
+The original OpenNT large-model compiler and historical runtime now compile and
+link the contained far-pointer probe. Two existing integral-conversion warnings
+also occur in the production full-frame source;link retains the existing optional
+OLDNAMES lookup warning. The successful invocation uses the prior short temporary
+directory and absolute source path. Earlier invocations produced no object and
+were terminated with their logs retained;do not count them as passing builds.
+
+Normal SDL on a private desktop and the unchanged DOSBox configuration completes
+the eight-case DOS probe in105.51seconds. It compares2949120strip bytes and
+1024000VGA-plane bytes,with source-state immutability,guards and invalid-span
+rejection. This proves scoped large-model execution and neutral plane mapping,
+not hardware VGA readback,integrated Tab/load/exit,new product resident memory,
+continuous peak,full-route stack or playable cadence.
+
+Two additional runs of the same large-model probe also verify the optimized
+band-relative VGA mapping against the retained complete raw pixels. Each run
+retains all eight far/guard/state cases. Summed cached PPU composition plus
+complete plane mapping costs8790to9210and8780to9260clock units,approximately
+4.778and5.467percent longer. CLK_TCK is1000with coarse legacy-clock resolution;
+these sums are synthetic fixture costs,not game FPS. Both runs use identical
+probe bytes,the unchanged configuration and private normal-SDL desktops;
+wall execution147.22seconds each includes correctness comparisons. Timed
+regions exclude physical VGA writes,presenter changes,game ticks and input.
+This supports a named CPU/memory tradeoff,not a claim of integrated playable
+cadence. Actual resident-memory savings still require the product integration.
+
+Prospective production
+scope is approximately8-10files/350-550changed lines across PPU frame,neutral IO,
+composition root,VGA mapping and focused tests,with no core or PPU-state/schema
+change. This expands the original estimate explicitly. The owner subsequently
+accepts the approximately45KiB allocation-saving tradeoff and admits P7 memory
+implementation. Required equality,mode/load/exit,allocation-failure,actual DOS
+resident savings and product gates stay in scope. Extra speed recovery from
+repeated rows/OAM scans and cached sprite raw reads is recorded in TODO and
+revisited only if further speed is needed;it does not block memory adoption.
+No claim of accepted normal cadence,input latency or physical486qualification
+follows from that deferral. S6/T28 remain open.
+
+Historical1992/1992,local1991/1992nodes and4260/4261feasible controls(raw4342,
+infeasible81);scope/expected/actual[],new0,no custody transfer. Products retain
+the P5 hashes and are not refreshed for this prototype/design-only part.
