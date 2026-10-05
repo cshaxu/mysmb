@@ -1020,3 +1020,83 @@ experiments,not a new dependency or adopted build. No optimized product or gain
 is claimed. Investigate the generated bulk-transfer path and bounded read-only
 renderer costs before selecting a verified size/speed candidate. Report scope/
 size before any next production edit;retain current products as tested baseline.
+
+## S6 P2 checkpoint: exact grouped VGA coordinates and evidence correction
+
+S6/T28 stay open. One product source file,platform VGA row conversion,changes
++14/-6. The exact horizontal expression floor((4*column+plane)*4/5) has a
+five-output/sixteen-source period. Four five-byte constant offset rows replace
+80per-dot recurrence operations with16groups. The20-byte constant and bounded
+local indices add no heap or full-frame storage. Vertical mapping,partial batch
+bounds,source-index masking,plane order,640x400 scanout and the1280-byte scratch
+stay unchanged. Similar-issue review covers all four plane offsets,first/last
+source pixels,arbitrary row batches and repeated-row reuse;no other converter
+or device/core/PPU-state/snapshot change is required.
+
+Independent native mapping sweeps all128000coordinates and guarded batches
+1/7/16/63/400,invalid bounds and high source bits. Both x86/x64 pass10focused
+tests. Existing2048boundary/1198native presentation checks and platform purity
+pass. Original OpenNT16/historical DOS runtime builds the full actual product;
+no /O1compiler experiment is adopted. Windows product bytes/hashes are unchanged,
+so the accepted13private-host groups per width retain their dependency binding.
+
+Three fixed-config DOS normal/cache-failure/pressure routes each match five
+active61440-byte indexed frames,640000hardware VGA-plane bytes,8000hardware text
+bytes,12000neutral text-cell bytes and10035snapshot bytes. Initial mode3returns,
+all live payload allocations are released. Inactive text-overwritten bitmap
+storage is not falsely compared as an active graphics frame. Normal owned probe
+peak436448(+160versus P1),minimum external contiguous212624,far payload82036.
+Cache-failure435952/213120/82036;pressure648608includes ballast and leaves464bytes.
+Stack untouched76/98/74retains the same narrow observation,not all-route safety.
+These are instrumented reservations,not the actual product's measured peak.
+
+Separate diagnostic per-batch stamps show conversion about42.11percent shorter,
+device transfer unchanged;observer overhead prevents treating this split as the
+acceptance timing. Two paired aggregate fixed-config runs have identical scoped
+outputs/snapshots. Title complete step15.724percent shorter,load step3.997percent
+shorter;water/castle/dense output-only steps15.996/15.996/15.386percent shorter.
+Text differs by two PIT ticks. These are output-only fixture costs,not measured
+normal gameplay FPS or input latency. Nominal output time remains about1.42-1.49
+seconds in those configured probes;playable cadence is still unmet. Configuration,
+normal SDL and private-desktop isolation remain unchanged.
+
+The actual newly built product exits0at416/417KiBcaller-free budgets:observed
+largest blocks425968/426992bytes,loader DOS EXEC/result0. Directly inspected
+captures prove title text/graphics switching and exit,but the early capture is
+blank and later captures remain title screens. This corrects the prior P1 claim
+of a completed load/movement/save route:injected key/capture events and a save
+hash are insufficient proof of those game actions. The416save is unchanged from
+the seed;417differs,but that alone does not prove a successful intended route.
+P1 startup-failure results remain receipts;no new all-route fit or exact actual
+resident-memory claim follows. P3 must observe the formal product's owned memory
+blocks and a completed game route,with finite bounds and unchanged settings.
+
+All three owner-authorized existing products refreshed and manifest checked:
+
+- mysmb16.exe:303091bytes,SHA256 0074d4cdec81e34933c000d53465ca9e711ad6ce23a051b241a3fcf035d6f11f.
+- mysmb32.exe:319627bytes,SHA256 4629d477cb4ac7df71ea4a28858d9540f1c0599c8abadfd00167262b32d11a01.
+- mysmb64.exe:328299bytes,SHA256 c9a9fa965bb23f16fda27be1b42147b36bddb12d09a47a02cfc6708690fc7d3d.
+
+Minimum MZ load327600(+176),DGROUP49472,headroom16064,stack2048,max segment32768.
+No dynamic heap/environment/PSP is included in this MZ figure. All local routes,
+raw images and traces remain ignored under build/m3-t28-s6. Scope/expected/actual[],
+new0,historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
+infeasible81),custody unchanged. No M2 or hardware/DOS-version qualification.
+
+## S6 P3 continuation: actual resident occupancy and redundant cache reads
+
+The owner clarifies actual runtime DOS memory is required,not EXE file size or
+caller-free startup threshold. Measure the actual product's primary/environment/
+auxiliary blocks separately from instrumentation and VGA hardware;report sampled
+occupancy versus proven peak honestly. Reconcile primary image code/static data/
+resources with the link map before selecting any further storage tradeoff.
+
+A contained original-compiler candidate suppresses two raw CHR reads only when
+the already-valid decoded cache supplies all pixels. One fixed-config trial
+matches all five active frames,twenty hardware planes and the final snapshot;
+PPU cost9.562-11.692percent shorter,output-only complete steps7.059-7.393percent
+shorter versus P2. This is a candidate,not a production change or accepted gain.
+Before adoption,report scope/size,review cached/uncached partial tiles,bounds and
+resource invalidation,repeat paired timing and refresh all three products after
+focused tests. No core ROM routine/state/PPU semantic change or new cache storage.
+Actual-product occupancy/game route and cadence/input clauses remain mandatory.
