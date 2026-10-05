@@ -1100,3 +1100,102 @@ Before adoption,report scope/size,review cached/uncached partial tiles,bounds an
 resource invalidation,repeat paired timing and refresh all three products after
 focused tests. No core ROM routine/state/PPU semantic change or new cache storage.
 Actual-product occupancy/game route and cadence/input clauses remain mandatory.
+
+## S6 P3 audit: formal-product resident blocks and loaded-image decomposition
+
+The owner asks for occupied DOS conventional RAM,not disk file size or caller-free
+launch budget. A separately compiled original-toolchain loader observes the
+unchanged actual product through a bounded BIOS timer callback. It follows the
+MCB chain,identifies the child primary owner/name,reads its environment binding,
+and sums only blocks owned by that PSP. Each block includes its16-byte MCB;the
+primary includes PSP. Parent/ballast/observer blocks and VGA hardware are excluded.
+The observer performs no DOS,file,heap or console call inside the callback;it
+chains the prior callback and restores its vector after EXEC returns. It has128
+bounded change records,512-block traversal bounds,and reports invalid chains or
+dropped records. This is sampled occupancy,not an allocation-event-exhaustive
+proof of continuous peak;observer interrupt cost is not performance acceptance.
+
+The product SHA256 remains the P2published identity. Unchanged installed DOSBox
+configuration,normal SDL and private desktop are verified. The448KiBbudget title/
+Tab/exit route has997timer samples,one changed occupancy record,no bad chains or
+drops. Actual owned425680bytes comprises343920primary,160environment,81600auxiliary
+in four blocks. A separately scripted post-startup load/game/Tab/save/exit route
+has2043samples,two records,no bad chains/drops. Maximum observed430144bytes is
+343920primary+160environment+86064auxiliary:an extra4464auxiliary bytes appears.
+This is about420.1KiB,versus415.7KiBtitle occupancy,and excludes the observer.
+CRT owned reservation is not synonymous with live useful payload;free heap space
+retained inside those blocks still occupies DOS memory.
+
+Reviewed game graphics/text/graphics captures show the loaded1-1scene rather
+than title. The saved10035-byte file changes from the seed,frame7465to7512,with
+startup phase4preserved. This proves scoped load/advance/presentation/save/exit
+operation,not ROM equivalence,input-tail/playable cadence or all-game peak. Do
+not extrapolate observed420.1KiBto every DOS environment/route or label the earlier
+416KiBcaller-free startup threshold as a runtime-occupation measurement.
+
+The actual linked minimum image is327600bytes,distinct from resident primary
+343920bytes. Segment-class sum327492plus108bytes alignment/MZ paragraph reserve
+reconciles it exactly:
+
+| Linked category | Bytes | Accounting |
+| --- | ---: | --- |
+| Machine code | 243977 | All linked CODE segments |
+| Owner-local PRG data | 32768 | Embedded raw data source,not a6502 runtime |
+| VGA row scratch | 1280 | Count once in FAR_DATA |
+| Initialized data/constants/runtime messages | 16275 | DATA/CONST/BEGDATA/MSG |
+| Uninitialized static state | 31144 | BSS,includes DOS root |
+| Stack | 2048 | Retained,not reduced |
+| Alignment/minimum-load reserve | 108 | Difference to actual MZ minimum |
+
+Local object metadata reconciles machine-code owners:core182217,text27110,
+platform10200,io5516,ppu4952,app2929bytes;11050bytes in the combined legacy_TEXT
+segment remain attributed only as library/startup,with three inter-object padding
+bytes in combined segments. Do not mislabel all243977bytes as translated gameplay.
+Initialized data includes8192CHR and322title bytes;unattributed remaining bytes
+must not be called dispensable. BSS includes the30182-byte DOS root;its two
+snapshot objects are real storage alongside live game/observer/output state.
+The normal primary343920equals linked DGROUP origin278112+65536+256PSP+16MCB.
+Thus this route reserves the full64KiBnear segment even though the linked DGROUP
+uses49472. Removing BSS alone can reduce minimum MZ load without reducing this
+observed primary reservation. A scratch reuse candidate must measure actual
+reservation,not claim its sizeof as runtime savings;safe CRT heap bounds cannot
+be bypassed by blindly shrinking the primary DOS block. The16320bytes above MZ
+minimum include PSP/MCB/runtime reserve,not another whole framebuffer. No file-size compression gain is claimed.
+
+Evaluate reduced working storage before pixel bit-packing. Current general
+64-index frame61440bytes could be packed into46080at6bits,only15360saved with
+additional read/write extraction;4bits cannot directly represent all64indices.
+Any palette indirection requires explicit binding/priority/output proof. Rowwise
+composition could avoid a complete pixel frame but must independently provide
+15400text workspace and preserve every indexed pixel,scroll split,priority and
+resource invalidation;net savings cannot simply be called61440. The current
+full-frame IO contract stays unchanged;these are candidates,not adopted code.
+PRG compaction needs every source read/address and canonical snapshot identity
+reconciled;discarding original instruction-looking bytes without that proof is
+not permitted. No compressed resources or overlays are introduced.
+
+A narrower follow-up investigates the DOS root's separate10016-byte capture
+scratch versus synchronous transaction staging. The last-running recovery cache
+must remain independent. The S5statement retaining all embedded capture/recovery
+buffers is not reversed by this audit:prove that staging borrow is consumed before
+the next capture,and that failed capture/load/save preserves recovery,then pair
+output/snapshot/failure routes and actual memory. Only that evidence may select
+reuse. Report components/estimated delta before any product edit;refresh three
+EXEs if selected. Redundant cached CHR-read candidate remains unadopted.
+
+This P is evidence/documentation only,zero product-code changes. P2three products
+and binary-bound native/host/DOS equality remain. Historical1992/1992,local1991/1992
+nodes,4260/4261feasible controls(raw4342,infeasible81),scope/expected/actual[],new0.
+S6/T28 remain open for joint fit/cadence/input/stack/full-route obligations;no M2
+or physical486SX/DOS-version certification. Raw maps/MCB logs/images/probes remain
+under ignored build/m3-t28-s6;tracked evidence contains neutral conclusions only.
+
+The tighter416KiBcaller-free post-startup route also exits0with game/text/graphics
+captures and a changed same-resource10035-byte save,frame7465to7511,startup4.
+Both game saves pass independent file-CRC/length/resource-identity checks. Its2041
+samples,two records,zero bad chains/drops observe maximum425984bytes:primary343920,
+environment160,auxiliary81904. This includes MCB overhead;the caller-largest425968
+excludes the original free block's16-byte header. Extra auxiliary reservation is
+304rather than the roomy route's4464;this does not establish identical CRT buffer
+policy or equal IO performance. This demonstrates scoped constrained operation,
+not a universal416KiBrequirement or the420.1KiBroomy reservation being mandatory.

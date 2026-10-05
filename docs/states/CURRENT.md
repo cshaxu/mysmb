@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T28 S6 P3; actual-product memory/route and read-only compositor cost. |
+| Identifier Mode | Continuation: M3 T28 S6 P4; measured-reservation candidates and read-only compositor cost. |
 | Admission And Approval | Owner authorizes execution and the joint conventional-memory/playability contract. S5 closed;S6 is active,with cumulative fit/playability still open. |
 | Objective | Reconcile S1-S5 memory census;verify actual minimum-free launch/runtime fit,stack/lifetimes,normal cadence/input budgets and clock sampling;dispose all six opportunities with fit/playability separate hard gates. |
 | Non-goals | No core ROM routine/state/timing changes,no emulator settings,no text artwork or VGA coordinate/mode changes,no emulator-based physical486SX/DOS-version or M2 certification. |
@@ -23,14 +23,14 @@
 
 ## Current Technical Baseline
 
-- S6 P2 exact five-output VGA grouping:+14/-6,one source file,20constant
-  bytes,no new heap. Two paired output-only runs15.386-15.996percent shorter;
-  normal instrumented peak436448,not formal-product peak. Both widths10tests,
-  three DOS lifecycle equality routes and actual416/417KiB launch/Tab/exit pass.
-  Reviewed actual captures remain title screens;no gameplay-load/movement/save
-  proof follows from injected events. S6/T28 remain open for actual-product
-  occupancy/game route,cadence/input/stack;P3 continuation active.
-  [Checkpoint and limits](../history/M3-T28-dos-rendering-optimization.md#s6-p2-checkpoint-exact-grouped-vga-coordinates-and-evidence-correction).
+- S6 P3 external observation of unchanged formal DOS product:roomy game route
+  maximum sampled430144bytes,constrained416KiBroute425984;no continuous-peak claim.
+  Reviewed game/text/graphics captures,CRC/resource-bound saves and Esc pass.
+  Linked image327600:code243977,PRG32768,other data/static/stack/align50855.
+  Full64KiBnear reservation means BSS shrink alone is not runtime savings.
+  P2 exact VGA gain/output proof retained. P3 product-code0;three products retain
+  P2hashes. S6/T28 remain open for cadence/input/stack/full-route proof,P4active.
+  [Occupancy and limits](../history/M3-T28-dos-rendering-optimization.md#s6-p3-audit-formal-product-resident-blocks-and-loaded-image-decomposition).
 - M2 T70/S17 closed by owner-approved deferred-verification transfer (P153);
   [closure record](../history/M2-T70-deferred-verification-closure.md).
   This is not successful full-game acceptance;M2 certificate remains incomplete.
