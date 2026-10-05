@@ -2,6 +2,13 @@
 
 ## Translation Debt
 
+- [ ] **Default-all legacy Cannon Children harness link:** T28 S6 P4's
+  default-all build attempt fails in x86/x64 because its direct OAM sources
+  reference observation record without linking that owner. Product/focused
+  targets pass. Admit a test-binding repair before claiming default-all success;
+  no translated logic change is implied.
+  [Failure and scoped receipts](../history/M3-T28-dos-rendering-optimization.md#s6-p4-checkpoint-omit-overwritten-raw-reads-in-the-valid-chr-cache-path).
+
 - [ ] **DOS16 optimizer/performance qualification (M4):** T9 S5 observes slow
   graphical frames in SoftPC with accepted original compiler flags. The same
   compiler rejects /Ox or /G3 even for a small neutral color unit with an

@@ -1199,3 +1199,95 @@ excludes the original free block's16-byte header. Extra auxiliary reservation is
 304rather than the roomy route's4464;this does not establish identical CRT buffer
 policy or equal IO performance. This demonstrates scoped constrained operation,
 not a universal416KiBrequirement or the420.1KiBroomy reservation being mandatory.
+
+## S6 P4 checkpoint: omit overwritten raw reads in the valid CHR-cache path
+
+One shared read-only PPU source file changes,+4/-2. Raw CHR low/high reads now
+execute only when no valid decoded cache is supplied. A full cached tile instead
+loads its two decoded bytes before use;partial cached tiles read decoded indices
+without consuming raw low/high. Uncached full/partial tiles retain both original
+bounded reads and shifts. No core ROM path/state,PPU state,priority/palette/scroll,
+snapshot schema,IO ABI,new allocation or emulator setting changes. Similar-issue
+sweep covers background full/partial tile reads,sprite and background-opacity
+readers,cache preparation,binding/invalidation and null/short resources;those
+other owners already select raw/decoded paths and need no edit. Low/high are
+initialized on every consuming branch. This is a scoped optimization acceptance,
+not acceptance of the still-unplayable integrated DOS runtime.
+
+Both native widths build the product and needed targets,then pass10focused
+checks,including2048boundary and1198native state/output presentation cases,
+independent raw renderer comparison,cached/uncached/null/short resources,two cache
+instances/reset/resource replacement,raw-opacity priority aliases,clock/pacing,
+VGA mapping,snapshot continuation and platform purity. Each width also passes
+13private-desktop host groups against the newly built Windows binary:borrowed/
+owned console,input/focus/Unicode,recovery,Tab,shell wait/return and close routes.
+Native logs are UTF16;the local summary reader was corrected to decode their
+actual encoding rather than treating NUL-delimited bytes as missing assertions.
+
+An unintended default-all target build fails in both widths on the unrelated
+legacy Cannon Children harness:bullet_bill_gfx references observation record but
+that harness lacks its linked owner. Needed product/test targets build and pass.
+This is registered in TODO with this checkpoint;no claim that the default-all
+build passed,no out-of-scope harness/core repair or retest of unrelated chains.
+The first subsequent target invocation also used the wrong output-file name as
+a CMake target;the corrected mysmb_win32 target build is the accepted receipt.
+
+Original OpenNT16/historical runtime builds the formal product. Three DOS normal,
+cache-failure and constrained lifecycle runs match all five active61440-byte
+frames,640000VGA readback bytes,8000hardware text bytes,12000neutral cells and
+10035snapshot bytes each. Modes and all live near/far frees remain unchanged.
+Normal instrumented owned peak436464(+16),minimum contiguous212608,far payload
+82036. Failure435984/213088/82036;pressure648608includes ballast,largest464.
+Observed untouched stack76/98/74is unchanged narrow coverage,not universal safety.
+
+Two fixed-config paired aggregate profiles match all active frames,twenty VGA
+planes and final snapshots. PPU costs9.562-11.692percent shorter,ordinary output
+water/castle10.185percent shorter. Complete output-only water/castle/dense costs
+7.393/7.393/7.059percent shorter;title7.243,load1.616,text about10PIT ticks shorter.
+Both repetitions retain the same values. Output-only absolute cost remains about
+1.315-1.382seconds at nominal PIT conversion,not normal gameplay FPS/input-tail
+proof. The separate actual wall-key route is not a fixed-tick equivalence test.
+Configuration,normal SDL and private desktop remain verified unchanged.
+
+The external MCB observer runs the actual candidate,not an instrumented child.
+Roomy448KiBbudget route exits0with2055samples/two records,no bad chains/drops:
+maximum430160=343936primary+160environment+86064auxiliary,+16versus P3. Constrained
+416KiBbudget route exits0with2058samples/two records,no bad chains/drops:
+maximum425984=343936+160+81888,the same bounded occupied total as P3. Parent/ballast/
+observer are excluded;MCBs/PSP are included. This is sampled occupancy,not complete
+transient peak or identical CRT buffering policy. Reviewed game/text/graphics
+captures and CRC/resource-bound10035-byte saves pass;seed frame7465advances to7515
+(roomy) or7514(constrained),startup4preserved. Esc restores and returns0. No all-
+route416KiBrequirement,physical486SX speed or DOS-version claim.
+
+Three owner-authorized tracked products refreshed and manifest/asset identities
+checked:
+
+- mysmb16.exe:303107bytes,SHA256 0290ce11018cdd10c49c0403b6b339cf029a813faebd4d733e9f7b537c7c143b.
+- mysmb32.exe:319627bytes,SHA256 fec0079a8f9216b46fb26d283691e94f914eb773fd65f6e4c31ba431c925e89d.
+- mysmb64.exe:328299bytes,SHA256 f5cbee86f719e122600a40a7c5eb9148abb594b3b413b2fc440306a50a696772.
+
+DOS minimum MZ327616(+16),DGROUP49472,headroom16064,stack2048,max segment32768.
+No new heap/cache/frame storage. P4 changes one product file,with the independent
+instrumentation/logs/resources contained below ignored build/m3-t28-s6. Historical
+1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,infeasible81),scope/
+expected/actual[],new0,custody unchanged. S6/T28 stay open for joint fit/playability,
+continuous/full-route stack/peak,input-tail and remaining candidate dispositions.
+No M2/M4 certificate is inferred from these receipts.
+
+## S6 P5 continuation: measured zero-pattern tile fill and memory alternatives
+
+A contained candidate fills a full cached eight-pixel zero-pattern row with the
+universal background color instead of eight repeated index/lookup stores. All
+four background palette-zero entries already alias that color. Partial tiles,
+raw renderer,priority queries,left mask,split and source semantics must remain.
+No extra tile/frame cache or dirty-state approximation is permitted. Evaluate
+exact full buffers/planes/snapshots and complete timing before adoption;then
+report source scope/size and repeat required product/memory/failure checks.
+
+Pixel packing,rowwise API changes and PRG compaction remain unadopted alternatives,
+with P3storage/identity/latency obligations. Capturing into transaction staging
+alone has no measured runtime gain while CRT retains the complete near segment;
+minimum MZ reduction is insufficient. Do not shrink stack/CRT blocks blindly or
+change emulator settings. Keep progress tied to measured complete output and
+actual DOS reservations;cadence/input gates remain unfulfilled.

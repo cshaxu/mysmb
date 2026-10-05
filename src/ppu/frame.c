@@ -125,8 +125,10 @@ static void mysmb_ppu_background_row(const struct mysmb_ppu_state *state,
         pattern=(mysmb_io_u16)(pattern_base+
             state->name_table[table][row*32U+column]*16U+(source_y&7U));
         phase=(mysmb_io_u8)(source_x&7U);
-        low=(mysmb_io_u8)((chr!=0 && pattern<chr_size?chr[pattern]:0U)<<phase);
-        high=(mysmb_io_u8)((chr!=0 && pattern+8U<chr_size?chr[pattern+8U]:0U)<<phase);
+        if(decoded_chr==0) {
+            low=(mysmb_io_u8)((chr!=0 && pattern<chr_size?chr[pattern]:0U)<<phase);
+            high=(mysmb_io_u8)((chr!=0 && pattern+8U<chr_size?chr[pattern+8U]:0U)<<phase);
+        }
         palette=(mysmb_io_u8)(palette*4U);
         count=(mysmb_io_u16)(8U-phase);
         if(count>MYSMB_PPU_FRAME_WIDTH-x)count=(mysmb_io_u16)(MYSMB_PPU_FRAME_WIDTH-x);
