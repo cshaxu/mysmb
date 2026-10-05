@@ -10,11 +10,11 @@ The later DOS graphical product targets a 25 MHz 486SX. MS-DOS 5.0 is the requir
 
 ## Text Presentation
 
-The text product uses an 80×25 colored character scene. It draws known game objects and their states using filled cells, outlines, and glyph detail; it is not a luminance-to-ASCII filter.
+The text product uses an 80×50 colored character scene. It draws known game objects and their states using cells, outlines, and glyph detail; it is not a luminance-to-ASCII filter. Tab switches between graphics and text over the same running game state on DOS16 and Windows. Shared glyph IDs include ASCII text and selected CP437-compatible details.
 
 ## Host Resources
 
-The Win32 adapter supplies the development window and normal graphical/full-screen presentation. The DOS adapter later uses VGA Mode X 320×240, BIOS keyboard input, PIT-based 60 Hz timing, and a lightweight PC Speaker sound path. NTVDM64 may run non-graphical DOS checks but is not a DOS graphics validation platform; the 486SX remains the DOS graphics and performance authority.
+The Win32 adapter supplies the development window and normal graphical/full-screen presentation. The DOS adapter uses VGA Mode X 320×400 with horizontal double-dot scanout: the full 256×240 source is stretched to fill 640×400 without added borders or source-row loss. DOS owns physical keyboard input and PIT pacing; nominal gameplay cadence remains unqualified and there is currently no DOS audio renderer. NTVDM64 is not the accepted DOS graphics validation platform; the 486SX remains the physical graphics and performance qualification target.
 
 ## Quick Snapshot
 

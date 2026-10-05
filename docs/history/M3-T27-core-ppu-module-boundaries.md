@@ -170,3 +170,71 @@ the runtime library despite no identified platform/app caller. Direct PPU
 state fields in game.h also require a single owner and stable snapshot binding.
 S1 remains active until its full symbol/state/interface and baseline obligations
 are complete. This checkpoint changes no product source and earns zero nodes.
+
+## S1 state and interface decisions
+
+| State or operation | Single owner and migration contract |
+| --- | --- |
+| CPU RAM,frame/startup/mode state and ordered APU writes | Core retains original routines and source order. CPU RAM OAM at0200 remains the producer backing;do not merge it with visible OAM. |
+| Nametables,palette,CHR and physical/visible PPU fields | One embedded PPU state object,never a duplicate shadow. PPU state headers have no core/text/host dependency;core retains decisions about when/what to write. Preserve existing register and scroll producer/visible phases and array byte values. |
+| NMI and OAM DMA | Core retains the NMI sequence and oam_dma_primed startup guard. PPU transfer takes a borrowed256-byte source span;no core pointer enters the PPU module. Commit visible OAM at the existing call site only. |
+| Read-only compositor | Consume a borrowed const PPU state/view and immutable CHR binding. No CPU RAM,gameplay selector,text template or platform access. Retain current nametable/palette phase semantics;do not add another visible copy or rerun ROM writes. |
+| Source-decision observations | Move observation.h/.c to core-owned receipt support,not the text renderer. Existing enable/clear/record/commit/invalidate and visible-entry comparison keep their order,capacity and byte semantics. This changes the file-level forecast to167core,12text,2PPU,4validation. Core includes no text implementation. |
+| Authored text | Templates and scene composers move to src/text. Read immutable core receipts/state and PPU output;never choose ROM graphics again or mutate source decisions. Existing observation snapshot codec remains a downstream receipt codec with explicit composition binding. |
+| Snapshot binding | app owns numeric marshaling across core/PPU/receipt fields. Preserve serialized offsets,resource fingerprints,validation-before-write,schema1 handling and both receipt phases;struct padding is not serialized. |
+| DOS storage and devices | Retain16-bit far buffers and original toolchain. The borrowed PPU state/view lives in the root-owned game container through frame production;device adapters receive neutral pixels/cells only. No per-frame game-state clone or heap transaction is introduced. |
+| Validation projections | render/frame_snapshot move to validate only after their full symbol caller/link reachability check. Public compatibility remains test/recorder-only;production build lists exclude their implementations. |
+
+Implement storage extraction before compositor separation. A temporary
+compositor-to-core include during S2 is explicitly transitional and must be
+removed in S3;it cannot survive T closure. New PPU types are independent C90
+byte/word types,not imported from core;retain original numeric widths and
+neutral IO compatibility. Register-address/mirroring/palette and DMA helpers
+belong to PPU storage;ROM control flow and RAM mirrors remain core-owned.
+Keep physical-register write before RAM mirror where the original does so.
+Do not replace source semantics with a general hardware emulation engine.
+
+The initial source scan enumerates248C/header files,862named function
+definitions,1615direct named call sites and206PPU/observation member-access
+sites across14source owners. These are lexical inventories,not ROM control
+edge counts;macros,aliases and indirect calls require contextual disposition.
+Hash-bound source copies and detailed local manifests are retained below
+build/m3-t27-s1 for pre/post comparison. Existing14text-file placement was
+provisional;the receipt owner decision above deliberately corrects it.
+
+Baseline checks were rebuilt from the current working-source manifest for
+both Windows widths and the original DOS16 toolchain. Both widths pass14
+focused tests covering PPU composition,NMI/bootstrap/VRAM,state and observation
+snapshots,text scenes,IO and platform purity,including the separately selected
+NMI-parent integration test. DOS compilation/link succeeds.
+All three rebuilt product hashes equal the currently packaged P2 binaries;
+terrain.c's reported dirty state has no normalized content diff. The earlier
+dirty-source concern is resolved by actual rebuilding and hash comparison,
+not an assumption based on file timestamps.
+
+S1 remains open until
+the symbol/build mapping,contextual access classification and source-bound
+verification baseline are ready;these decisions alone do not close S1.
+
+## S1 P2 owner-directed working-tree review and submission
+
+Owner explicitly assigns review and submission of all pending files to this
+agent. Review accepts the roadmap80x50/shared-presenter update and queued M2
+handoff checks;correct stale UI placeholder,320x240 and unimplemented speaker
+claims,and update T22's handoff paragraph to its actual closed scoped status.
+terrain.c has no normalized source change;stage it to reconcile line endings
+without claiming a gameplay repair. Product source changes0.
+
+Under the owner's explicit all-pending-files submission instruction,this P
+also includes the three already-tracked local EXEs as a narrow exception to
+the repository's default no-derived-binary submission guidance. Their bytes
+match fresh original-DOS16/x86/x64 builds and the earlier scoped P2 device
+receipt:429963/319115/327275bytes. This is a local Git submission only,no remote
+or publication is requested. No ROM,generated source,trace or new capture is
+added. The source policy otherwise remains in force;no broader redistribution
+permission or new ROM-equivalence conclusion is inferred.
+
+S1 source/graph census and interface review continue. Historical1992/1992,
+local nodes1991/1992 and feasible controls4260/4261(raw4342,infeasible81) are
+unchanged;new0. The current receipts establish a source-bound migration
+baseline within the tested contracts,not complete original-game certification.

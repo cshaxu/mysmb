@@ -14,7 +14,7 @@ Complete the static C translation and its local oracle: deterministic inputs, st
 
 ## M3: DOS VGA And Text Presentations
 
-Refactor generated C only where trace coverage remains intact. Add the DOS VGA Mode X adapter and 80×25 colored-object presentation over the same game state; neither becomes a logic path.
+Refactor generated C only where trace coverage remains intact. First make the DOS graphical executable operational through the common I/O boundary while text remains a placeholder; then add the 80×50 colored ASCII presentation and DOS16/Win32 bidirectional graphics/console switching over the same game state. Neither presentation becomes a logic path.
 
 ## M4: 486SX Qualification And Closure
 

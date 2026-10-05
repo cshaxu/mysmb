@@ -53,6 +53,55 @@ cross-chain routes,platform purity,original DOS16 compile/link and x86/x64
 operational checks. DOS hardware/486 qualification remains later milestone
 work,not a substitute for the declared M2 checks.
 
+## Owner-directed state-handoff checks
+
+Owner assigns the analogous RAM-mirror/cache and producer/visible-phase audit
+to this existing queued candidate. This is a planning amendment only:do not
+allocate a new T,admit an S,change CURRENT,reset accepted facets or interrupt
+active M3 work. T22 S1/S2 repairs and bounded handoff review are now closed;
+consume their final source-bound receipts within their stated fixture limits.
+They do not constitute this queued candidate's final route certificate.
+
+The concrete missing condition is unequal source RAM and cached control state
+between SecondaryGameSetup and the following NMI. Tests that first synchronize
+both values do not discharge that condition. Identify the original authoritative
+value,all native replicas,the producer,intervening writers,consumer and exact
+effective frame before testing. Derived native fields need no invented ROM
+node;attach their contract to existing source-use/group and coverage IDs.
+
+| Receiving planned slot | Bounded responsibility | Required receipt |
+| --- | --- | --- |
+| S1 | owner-080 setup,owner-046 area initialization and owner-120 scroll producers;join to the existing owner-077 NMI consumer | RAM/control cache disagreement in both directions,odd/even destination pages,preserved unrelated control bits,and current-versus-next-frame ordering. Reuse T22 evidence only within its actual fixture and source dependencies. |
+| S2 | owner-119 pipe/vine transition producer;join its phase/lifetime clauses to S1's area/display consumer | Entry/exit handoff,screen disable/enable and destination initialization read the original sources without an unrecorded cache synchronization. |
+| S11 | pixel-render-mask,pixel-scroll-split,pixel-sprite-output | First restored display frame has the correct nametable/scroll/palette/OAM contract. Retain background-disabled phases and original sprite-zero/NMI latch timing;compare original/native final pixels. |
+| S12 | route-pipe,route-vine,route-warp,route-death-restart,route-end-world,route-title-input and route-two-player | Named finite transition fixtures include the switch frame,next frame,first enabled frame and stationary post-transition checkpoint. No movement is allowed to conceal a stale page before that checkpoint;normal movement follows as a separate regression. |
+| S13 | snapshot package and final source/dependency binding | Restore source RAM and output/presentation state according to the declared snapshot contract;bind all reused handoff receipts to the final implementation. |
+
+At S1 admission register the specific applicability recheck of owner-077's
+producerConsumer,overwrite,crossPhaseLifetime and sourceBinding facets against
+the old receipt and T22 source diff. Its previously closed local proofs remain
+retained;their aggregate closed count must not be presented as discharge of
+the newly identified unequal-cache condition. Inspect dependent owner-078/079
+receipts and owner-051 initialization only where their actual dependency or
+fixture requires this condition. Record the resulting disposition explicitly;
+do not silently reopen unrelated facets or treat the current totals as revised.
+
+The finite census covers existing RAM/native replicas of PPU control/mask,
+nametable selection and scroll,and staged versus visible palette/OAM. For each
+item record existing use IDs,authority,legal disagreement,commit point and
+either applicable proof or a named gap. Pending owners remain in their original
+source-order slots;S1 owns the cross-slot checklist and S13 reconciles it.
+Any additional replica discovered in those fixed owners attaches to their
+existing facets rather than spawning a new audit universe or unnamed task.
+
+Each scoped conclusion records source semantic comparison separately from
+native execution. Deliberately unequal producer/cache fixtures must follow
+legal ROM phase preconditions;synthetic seam tests alone are insufficient for
+original-route acceptance. Repair confirmed differences in their admitted
+owner chain and re-audit until no scoped diff remains. Close this requirement
+only when every census item has a disposition,the named transition manifests
+meet their stationary checkpoints,and no handoff finding remains unresolved.
+
 ## Restart and acceptance
 
 At admission bind the then-current source/dependencies. Earlier I/O work may

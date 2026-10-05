@@ -1,22 +1,22 @@
 # Project Status
 
-**Active: M3 T27 S1 P1.**
+**Active: M3 T27 S1 P2.**
 
 ## M3 T27 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | New M3 T27 S1 P1,component separation. |
+| Identifier Mode | New M3 T27 S1 P2,component separation and owner-directed pending-file review. |
 | Admission And Approval | Owner closes T26 and admits split;original ROM and PPU semantics must not change. |
 | Objective | Census files/symbols/state/call-data/build ownership;fix core/PPU/text/validation boundaries and source-bound preservation baseline before migration. |
 | Non-goals | S1 source moves,gameplay/PPU rewrites,performance work,new emulator,M2 certification. |
-| Reference Baseline | Post-T26 source plus declared pre-existing dirty changes;historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);P2 binaries not a dirty-source baseline. |
+| Reference Baseline | Current source rebuilt on3targets;terrain.c has no normalized diff;three hashes equal P2 packages;historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81). |
 | Candidate Proposal | [T27 plan and S1 admission](../history/M3-T27-core-ppu-module-boundaries.md#t27-s1-p1-admission). |
 | Files And ABI Surface | S1 documentation/neutral census under build;0product lines,estimated120-250planning lines;future core/PPU/text/validation boundaries reviewed first. |
 | Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Document and source policy. |
 | Verification | File/symbol/include/build census;state/edge/view/lifetime and DOS far-memory contract;source-bound ROM/write-order and pixel/state/audio/snapshot baseline plans;gates. |
 | Expected Markers | Audit scope/expected [],new0,maximum historical1992/1992;existing node custody unchanged. |
-| Asset Needs | Existing owner-local bindings only,not redistributed;no new ROM/third-party import;generated manifests/evidence stay under ignored build/m3-t27-s1. |
+| Asset Needs | Existing owner-local bindings only;no new ROM/third-party import;manifests/evidence under ignored build/m3-t27-s1. Owner directs commit of all pending files including3already-tracked EXEs for this P;no publication. |
 | Reporting Requirements | S entry scope/components/size;S exit actual scale,node/edge totals and equality evidence;3products for each later product-code P. |
 | Stop Conditions | No migration before reviewed census/interface and source binding;no unresolved ROM/PPU/state/output difference,no platform gameplay or duplicate state owner. |
 | Exit Criteria | All actual files/symbols/build consumers disposed;state/edge map and narrow interfaces reviewed;source-bound preservation plan ready for S2,governance/node gates pass. |
