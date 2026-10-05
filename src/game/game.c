@@ -483,6 +483,8 @@ mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
         /* WriteBufferToScreen ($2457-$2478) selects the PPU address
          * increment before each command: d7 means 32, otherwise one.  The
          * portable field records the same $2000 d2 state for the snapshot. */
+        /* The source reloads Mirror_PPU_CTRL_REG1 before each header. */
+        game->ppu_control_0 = game->ram[MYSMB_RAM_PPU_CONTROL_MIRROR];
         if ((control & 0x80U) != 0U)
             game->ppu_control_0 |= 0x04U;
         else

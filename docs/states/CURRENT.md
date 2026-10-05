@@ -2,7 +2,7 @@
 
 **Idle.**
 
-T19 remains owner-suspended in the [queue](QUEUE.md). T22 S1 is closed.
+M3 T22 S2 P1 closed;T19 remains owner-suspended in the [queue](QUEUE.md).
 
 ## Current Technical Baseline
 
@@ -17,7 +17,7 @@ T19 remains owner-suspended in the [queue](QUEUE.md). T22 S1 is closed.
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11/T12/T13/T14/T15/T16/T17/T18 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are364801/312971/320107bytes.
+- Current local DOS16/Win32/x64 products are364817/312971/320107bytes.
   T22 refreshes all three with RAM-authoritative NMI page handoff;T21 coral,T20 titles/tree/fence and T18 timing retained.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
@@ -25,6 +25,14 @@ T19 remains owner-suspended in the [queue](QUEUE.md). T22 S1 is closed.
   full heap/stack peak and hardware/version qualification remain M4.
 
 ## Compact closure status
+
+M3 T22 S2 closes bounded H01-H10 handoff review:one packet-header RAM/cache
+source mismatch repaired in game.c;512divergent control cases fail62 before
+repair and pass after. Scroll/split/OAM phases,selectors6/7,palette alias and
+snapshot/receipt boundaries reviewed;11tests and7host groups per width pass.
+Controlled7-2 retains first-frame page/pipe,2048boundary/1198native comparisons
+pass;DOS16/DOSBox pass. Products364817/312971/320107bytes;product/test2files,
++96/-0,no ABI/new node or full-game credit. [Ten dispositions and limits](../history/M3-T22-pipe-exit-display-recovery.md#s2-closure-ten-bounded-contract-dispositions).
 
 M3 T22 S1 fixes RAM$0778-to-next-NMI page handoff,not cached overwrite.
 Old setup regression fails52,old-root controlled7-2 first frame fails14;
@@ -87,10 +95,3 @@ S1 code/tests4files,+330/-10lines;S2 code/tests/tool4files,+66/-8lines,new0.
 Earlier audio acquisition stalled on old/new baselines;final host routes pass
 unchanged,cause unknown,no claimed audio repair. Named follow-up stays queued.
 [T15 history](../history/M3-T15-presentation-performance.md).
-
-M3 T14 S1 P1 closes event-driven Windows keyboard input. Both widths7focused
-tests and isolated zero-async GUI/console/Tab/focus/restore/close routes pass.
-Actual live RDP client delivery remains unobserved. Original DOS16 link passes;
-three local products refreshed,DOS byte-identical. Code/build/tests9files,
-+302/-63lines;empty scope/new0,node/edge totals unchanged. Local commit,no remote.
-[T14 history](../history/M3-T14-win32-remote-keyboard.md).

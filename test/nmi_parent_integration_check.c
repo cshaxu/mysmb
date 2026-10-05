@@ -197,10 +197,104 @@ static int check_setup_page_handoff(void)
     return 0;
 }
 
+static int check_packet_control_handoff(void)
+{
+    struct mysmb_game game;
+    mysmb_u8 commands[5];
+    mysmb_u16 mirror;
+    mysmb_u8 vertical,expected;
+
+    commands[0]=0x20U;commands[1]=0x00U;
+    commands[3]=0x27U;commands[4]=0U;
+    for(vertical=0U;vertical<2U;++vertical) {
+        commands[2]=(mysmb_u8)(1U|(vertical!=0U?0x80U:0U));
+        for(mirror=0U;mirror<256U;++mirror) {
+            mysmb_game_initialize(&game);
+            game.ram[0x0778U]=(mysmb_u8)mirror;
+            game.ppu_control_0=(mysmb_u8)(mirror^0xffU);
+            expected=(mysmb_u8)((mirror&0xfbU)|(vertical!=0U?4U:0U));
+            if(mysmb_game_apply_vram_commands(&game,commands,5U)==0U)
+                return 1;
+            if(game.ram[0x0778U]!=expected ||
+               game.ppu_control_0!=expected ||
+               game.visible_ppu_control_0!=expected ||
+               game.name_table[0][0]!=0x27U)return 2;
+        }
+    }
+    return 0;
+}
+
+static int check_visible_phase_handoff(void)
+{
+    struct mysmb_game game;
+    struct mysmb_input input;
+    mysmb_u8 mode,task,phase;
+    mysmb_u16 index;
+
+    mysmb_game_initialize(&game);
+    input.buttons=input.buttons2=0U;
+    for(phase=0U;phase<2U;++phase) {
+        game.oam_dma_primed=1U;
+        game.ram[0x073fU]=(mysmb_u8)(17U+phase);
+        game.ram[0x0740U]=(mysmb_u8)(23U+phase);
+        game.scroll_x=99U;game.scroll_y=101U;
+        game.ram[0x0722U]=phase;
+        for(index=0U;index<256U;++index)
+            game.ram[0x0200U+index]=(mysmb_u8)(index+phase);
+        (void)mysmb_frame_root_begin(&game,&input,&mode,&task);
+        if(game.visible_scroll_x!=17U+phase ||
+           game.visible_scroll_y!=23U+phase ||
+           game.visible_sprite0_split!=phase)return 1;
+        for(index=0U;index<256U;++index)
+            if(game.visible_oam[index]!=(mysmb_u8)(index+phase))return 2;
+        game.ram[0x073fU]=88U;game.ram[0x0740U]=89U;
+        game.ram[0x0722U]=(mysmb_u8)(phase^1U);
+        game.ram[0x0200U]=77U;
+        if(game.visible_scroll_x!=17U+phase ||
+           game.visible_scroll_y!=23U+phase ||
+           game.visible_sprite0_split!=phase ||
+           game.visible_oam[0]!=phase)return 3;
+    }
+    return 0;
+}
+
+static int check_buffer_palette_handoff(void)
+{
+    struct mysmb_game game;
+    mysmb_u8 selector;
+    for(selector=6U;selector<8U;++selector) {
+        mysmb_game_initialize(&game);
+        game.ram[0x0773U]=selector;
+        game.ram[0x0300U]=9U;game.ram[0x0301U]=0x55U;
+        game.ram[0x0340U]=12U;
+        game.ram[0x0341U]=0x3fU;game.ram[0x0342U]=0U;
+        game.ram[0x0343U]=1U;game.ram[0x0344U]=0x21U;
+        game.ram[0x0345U]=0x3fU;game.ram[0x0346U]=0x10U;
+        game.ram[0x0347U]=1U;game.ram[0x0348U]=0x16U;
+        game.ram[0x0349U]=0U;
+        mysmb_game_commit_vram_buffer(&game);
+        if(game.palette[0]!=0x16U || game.ram[0x0773U]!=0U)return 1;
+        if(selector==6U) {
+            if(game.ram[0x0340U]!=0U || game.ram[0x0341U]!=0U ||
+               game.ram[0x0300U]!=9U || game.ram[0x0301U]!=0x55U)return 2;
+        } else {
+            if(game.ram[0x0300U]!=0U || game.ram[0x0301U]!=0U ||
+               game.ram[0x0340U]!=12U || game.ram[0x0341U]!=0x3fU)return 3;
+        }
+    }
+    return 0;
+}
+
 int main(void)
 {
     int result;
 
+    result = check_buffer_palette_handoff();
+    if (result != 0) return 80 + result;
+    result = check_packet_control_handoff();
+    if (result != 0) return 60 + result;
+    result = check_visible_phase_handoff();
+    if (result != 0) return 70 + result;
     result = check_setup_page_handoff();
     if (result != 0) return 50 + result;
     result = check_display_mask_phases();
