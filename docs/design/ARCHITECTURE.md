@@ -48,6 +48,17 @@ exit as GUI close/Escape. Its bounded control thread waits for normal process
 exit;ordinary Tab detaches immediately,while host-close attachment teardown
 is left to process exit after root audio cleanup. DOS starts graphically.
 
+Windows keyboard state is owned by the event adapter:window key/system-key
+messages and console key records feed one held-key/short-press state. The root
+samples it at a logical tick;no global asynchronous keyboard query is needed.
+Either Shift and simultaneous aliases keep independent physical states.
+Focus loss,presenter changes and snapshot restore clear stale game keys.
+Console focus-loss records also clear input;Tab/P/O/Escape retain their shared
+application-request owners. No original game routine handles host input.
+The console owns explicit input/output device handles and requests key records,
+not terminal escape-sequence input. Device font size may shrink to fit its
+unchanged80x50 shared frame on a small desktop;no artwork or game state changes.
+
 Shared IO declares selected one-cell CP437-compatible glyph IDs,with unchanged
 ASCII letters/digits and three-byte cells. Authored scene owners choose borders
 and silhouettes. Windows explicitly maps IDs to Unicode console cells;DOS

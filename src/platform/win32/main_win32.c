@@ -16,6 +16,7 @@
 #include "platform/win32/focus_pause.h"
 #include "platform/win32/text_console.h"
 #include "platform/win32/launch.h"
+#include "platform/win32/keyboard.h"
 #include "game/presentation/text/scene.h"
 
 #ifdef MYSMB_LOCAL_TITLE
@@ -25,14 +26,6 @@
 
 #define MYSMB_CLASS_NAME "MySMBWindow"
 #define MYSMB_SCALE 2
-#define MYSMB_WIN32_KEY_LEFT   0x0001U
-#define MYSMB_WIN32_KEY_RIGHT  0x0002U
-#define MYSMB_WIN32_KEY_DOWN   0x0004U
-#define MYSMB_WIN32_KEY_UP     0x0008U
-#define MYSMB_WIN32_KEY_START  0x0010U
-#define MYSMB_WIN32_KEY_SELECT 0x0020U
-#define MYSMB_WIN32_KEY_B      0x0040U
-#define MYSMB_WIN32_KEY_A      0x0080U
 
 static struct mysmb_game g_game;
 static struct mysmb_frame g_frame;
@@ -50,6 +43,7 @@ static mysmb_io_u8 g_snapshot_fingerprint[16];
 static mysmb_io_u8 g_snapshot_ready;
 static mysmb_io_u8 g_snapshot_requests;
 static struct mysmb_win32_text_console g_console;
+static struct mysmb_win32_keyboard g_keyboard;
 static struct mysmb_text_scene_workspace g_text_workspace;
 static struct mysmb_io_text_frame g_text_frame;
 static mysmb_io_u8 g_text_mode,g_switching,g_toggle_request,g_text_failed;
@@ -64,7 +58,9 @@ static LRESULT CALLBACK mysmb_win32_window_proc(HWND,UINT,WPARAM,LPARAM);
 
 static int mysmb_win32_presenter_focused(HWND window)
 {
-    return GetForegroundWindow()==(g_text_mode?g_console.window:window);
+    HWND presenter;
+    presenter=g_text_mode?g_console.window:window;
+    return presenter!=NULL && GetForegroundWindow()==presenter;
 }
 static void mysmb_win32_shortcut(HWND window,WORD key,mysmb_io_u8 pressed)
 {
@@ -89,6 +85,22 @@ static mysmb_io_u8 mysmb_win32_requests_from_message(UINT message,WPARAM key)
 {
     return message==WM_CLOSE || (message==WM_KEYDOWN && key==VK_ESCAPE)?
         MYSMB_IO_REQUEST_EXIT:0U;
+}
+static void mysmb_win32_release_keys(void)
+{
+    mysmb_win32_keyboard_reset(&g_keyboard);
+    mysmb_snapshot_keys_reset(&g_snapshot_keys);g_snapshot_requests=0U;
+    (void)mysmb_io_control_toggle(&g_control,0U,0U);
+}
+static int mysmb_win32_key_event(HWND window,WORD key,WORD scan,
+    unsigned char pressed)
+{
+    int kind;
+    if(!mysmb_win32_presenter_focused(window))return 0;
+    kind=mysmb_win32_keyboard_event(&g_keyboard,key,scan,pressed);
+    if(!kind)return 0;
+    if(kind==1)mysmb_win32_shortcut(window,key,pressed);
+    return 1;
 }
 static void mysmb_win32_finish_exit(HWND window)
 {
@@ -129,27 +141,7 @@ static mysmb_u8 mysmb_win32_buttons_from_keys(unsigned int keys)
 
 static unsigned int mysmb_win32_poll_keys(void)
 {
-    unsigned int keys;
-
-    keys = 0U;
-    /* Virtual-key polling is layout-independent and is delivered by both a
-     * console session and RDP.  Keep the cursor/Z/X bindings as secondary
-     * compatibility keys; the documented controls are WASD, J/K, Enter and
-     * either Shift key. */
-    if ((GetAsyncKeyState('A') & 0x8000) != 0 ||
-        (GetAsyncKeyState(VK_LEFT) & 0x8000) != 0) keys |= MYSMB_WIN32_KEY_LEFT;
-    if ((GetAsyncKeyState('D') & 0x8000) != 0 ||
-        (GetAsyncKeyState(VK_RIGHT) & 0x8000) != 0) keys |= MYSMB_WIN32_KEY_RIGHT;
-    if ((GetAsyncKeyState('S') & 0x8000) != 0 ||
-        (GetAsyncKeyState(VK_DOWN) & 0x8000) != 0) keys |= MYSMB_WIN32_KEY_DOWN;
-    if ((GetAsyncKeyState('W') & 0x8000) != 0 ||
-        (GetAsyncKeyState(VK_UP) & 0x8000) != 0) keys |= MYSMB_WIN32_KEY_UP;
-    if ((GetAsyncKeyState(VK_RETURN) & 0x8000) != 0) keys |= MYSMB_WIN32_KEY_START;
-    if ((GetAsyncKeyState(VK_LSHIFT) & 0x8000) != 0 ||
-        (GetAsyncKeyState(VK_RSHIFT) & 0x8000) != 0) keys |= MYSMB_WIN32_KEY_SELECT;
-    if ((GetAsyncKeyState('J') & 0x8000) != 0) keys |= MYSMB_WIN32_KEY_B;
-    if ((GetAsyncKeyState('K') & 0x8000) != 0) keys |= MYSMB_WIN32_KEY_A;
-    return keys;
+    return mysmb_win32_keyboard_sample(&g_keyboard);
 }
 
 static DWORD mysmb_win32_dib_color(mysmb_u8 color)
@@ -180,6 +172,7 @@ static void mysmb_win32_build_frame(void)
 static void mysmb_win32_switch_presenter(HWND window,int activate)
 {
     g_switching=1U;
+    mysmb_win32_keyboard_clear_game(&g_keyboard);
     if(!g_text_mode) {
         if(mysmb_win32_text_console_open(&g_console,window)) {
             g_text_mode=1U;
@@ -250,6 +243,7 @@ static int mysmb_win32_snapshot_request(HWND window)
         g_audio_output.renderer=audio;
         mysmb_snapshot_cache_update(&g_snapshot_cache,candidate,1U);
         mysmb_snapshot_keys_reset(&g_snapshot_keys);
+        mysmb_win32_keyboard_clear_game(&g_keyboard);
         mysmb_win32_focus_pause_initialize(&g_focus_pause);
         mysmb_win32_focus_pause_gained(&g_focus_pause);
         mysmb_game_frame_initialize(&g_frame);
@@ -351,24 +345,21 @@ static void mysmb_win32_step(HWND window)
     mysmb_u8 physical_buttons;
     unsigned int steps;
     unsigned int events;
-    WORD key;
+    WORD key,scan;
+    int event_kind;
     unsigned char pressed;
 
     if(g_text_mode && (g_text_failed || !IsWindow(g_console.window)))
         mysmb_win32_switch_presenter(window,1);
     for(events=0U;events<64U && g_text_mode &&
-        mysmb_win32_text_console_key(&g_console,&key,&pressed);++events)
-        mysmb_win32_shortcut(window,key,pressed);
-    /* Reconcile releases outside either owned window without reading other
-     * applications' gameplay keys. The event path retains short Tab presses. */
-    if((GetAsyncKeyState(VK_TAB)&0x8000)==0)
-        (void)mysmb_io_control_toggle(&g_control,0U,0U);
+        (event_kind=mysmb_win32_text_console_key(&g_console,&key,&scan,&pressed));++events) {
+        if(event_kind==2 && !pressed)mysmb_win32_release_keys();
+        else if(event_kind==1)mysmb_win32_key_event(window,key,scan,pressed);
+    }
     if(g_toggle_request) {
         g_toggle_request=0U;mysmb_win32_switch_presenter(window,1);
     }
     decoded.buttons=0U;decoded.buttons2=0U;decoded.requests=0U;
-    if (mysmb_win32_presenter_focused(window) && (GetAsyncKeyState(VK_ESCAPE)&0x8000)!=0)
-        decoded.requests=MYSMB_IO_REQUEST_EXIT;
     mysmb_io_control_input(&g_control,&decoded);
     if (g_control.exit_requested!=0U) return;
     if (mysmb_win32_snapshot_request(window)) return;
@@ -383,8 +374,10 @@ static void mysmb_win32_step(HWND window)
     }
     g_game_started = 1U;
 
-    if (g_focus_pause.focused != 0U && !mysmb_win32_presenter_focused(window))
+    if (g_focus_pause.focused != 0U && !mysmb_win32_presenter_focused(window)) {
+        mysmb_win32_release_keys();
         mysmb_win32_focus_pause_lost(&g_focus_pause, g_game_started, &g_game);
+    }
     if(mysmb_win32_presenter_focused(window))
         mysmb_win32_focus_pause_gained(&g_focus_pause);
     physical_buttons = 0U;
@@ -423,17 +416,20 @@ static LRESULT CALLBACK mysmb_win32_window_proc(HWND window, UINT message,
         mysmb_io_control_input(&g_control,&decoded);
         return 0;
     }
-    if ((message==WM_KEYDOWN || message==WM_KEYUP) &&
-        (w_param=='P' || w_param=='O' || w_param==VK_TAB)) {
-        if (message==WM_KEYDOWN && (l_param&0x40000000L)!=0) return 0;
-        mysmb_win32_shortcut(window,(WORD)w_param,(mysmb_io_u8)(message==WM_KEYDOWN));
-        return 0;
+    if (message==WM_KEYDOWN || message==WM_KEYUP ||
+        message==WM_SYSKEYDOWN || message==WM_SYSKEYUP) {
+        if((message==WM_KEYDOWN || message==WM_SYSKEYDOWN) &&
+            (l_param&0x40000000L)!=0 &&
+            (w_param==VK_TAB || w_param=='P' || w_param=='O'))return 0;
+        if(mysmb_win32_key_event(window,(WORD)w_param,
+            (WORD)((l_param>>16)&255L),
+            (unsigned char)(message==WM_KEYDOWN || message==WM_SYSKEYDOWN)))return 0;
     }
     if (message == WM_KILLFOCUS ||
         (message == WM_ACTIVATEAPP && w_param == 0U)) {
         if(!g_switching && !g_text_mode && !mysmb_win32_presenter_focused(window)) {
             mysmb_win32_focus_pause_lost(&g_focus_pause, g_game_started, &g_game);
-            mysmb_snapshot_keys_reset(&g_snapshot_keys);g_snapshot_requests=0U;
+            mysmb_win32_release_keys();
         }
     }
     if (message == WM_SETFOCUS ||

@@ -73,6 +73,7 @@ int main(int argc,char **argv)
         g_snapshot_fingerprint,&actual)!=MYSMB_SNAPSHOT_OK ||
         memcmp(&expected,&actual,sizeof(expected)))return 10;
     /* Load at title without Enter;pending audio flags and clock debt reset. */
+    mysmb_win32_window_proc(owned_window,WM_KEYUP,'P',0);
     mysmb_win32_power_on();g_audio_output.next=7U;g_audio_output.queued[0]=1U;
     mysmb_win32_window_proc(owned_window,WM_KEYDOWN,'O',0);
     if(!mysmb_win32_snapshot_request(owned_window) || mysmb_game_is_paused(&g_game) ||

@@ -1,6 +1,9 @@
 #include "platform/win32/text_console.h"
 #include "io/color.h"
 #include "io/text_glyph.h"
+#ifndef ENABLE_VIRTUAL_TERMINAL_INPUT
+#define ENABLE_VIRTUAL_TERMINAL_INPUT 0x0200U
+#endif
 static HWND exit_owner;
 static volatile LONG close_pending;
 static BOOL WINAPI mysmb_win32_console_control(DWORD event)
@@ -34,13 +37,29 @@ int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console,
     if(!SetConsoleCtrlHandler(mysmb_win32_console_control,TRUE)) {
         mysmb_win32_text_console_close(console);return 0;
     }
-    console->input=GetStdHandle(STD_INPUT_HANDLE);
-    console->output=GetStdHandle(STD_OUTPUT_HANDLE);
+    /* Standard handles may be redirected or absent for a GUI/RDP launcher.
+     * Own explicit console devices rather than borrowing process stdio. */
+    console->input=CreateFileA("CONIN$",GENERIC_READ|GENERIC_WRITE,
+        FILE_SHARE_READ|FILE_SHARE_WRITE,NULL,OPEN_EXISTING,0U,NULL);
+    console->output=CreateFileA("CONOUT$",GENERIC_READ|GENERIC_WRITE,
+        FILE_SHARE_READ|FILE_SHARE_WRITE,NULL,OPEN_EXISTING,0U,NULL);
+    if(console->input==INVALID_HANDLE_VALUE || console->output==INVALID_HANDLE_VALUE) {
+        mysmb_win32_text_console_close(console);return 0;
+    }
     console->window=GetConsoleWindow();
     ZeroMemory(&font,sizeof(font));font.cbSize=sizeof(font);
     font.dwFontSize.X=8;font.dwFontSize.Y=8;font.FontWeight=FW_NORMAL;
     lstrcpyW(font.FaceName,L"Consolas");
     (void)SetCurrentConsoleFontEx(console->output,FALSE,&font);
+    /* A small remote/headless desktop may not fit fifty rows at eight pixels.
+     * Adapt only the device font;the shared frame and buffer stay80x50. */
+    for(i=7U;i>=4U;--i) {
+        COORD maximum;
+        maximum=GetLargestConsoleWindowSize(console->output);
+        if(maximum.X>=80 && maximum.Y>=50)break;
+        font.dwFontSize.X=0;font.dwFontSize.Y=(SHORT)i;
+        (void)SetCurrentConsoleFontEx(console->output,FALSE,&font);
+    }
     tiny.Left=tiny.Top=tiny.Right=tiny.Bottom=0;
     size.X=80;size.Y=50;
     view.Left=view.Top=0;view.Right=79;view.Bottom=49;
@@ -56,8 +75,9 @@ int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console,
         mysmb_win32_text_console_close(console);return 0;
     }
     if(console->window==NULL || !GetConsoleMode(console->input,&mode) ||
-        !SetConsoleMode(console->input,(mode|ENABLE_EXTENDED_FLAGS)&
-            ~(ENABLE_QUICK_EDIT_MODE|ENABLE_LINE_INPUT|ENABLE_ECHO_INPUT|ENABLE_PROCESSED_INPUT)) ||
+        !SetConsoleMode(console->input,(mode|ENABLE_EXTENDED_FLAGS|ENABLE_WINDOW_INPUT)&
+            ~(ENABLE_QUICK_EDIT_MODE|ENABLE_LINE_INPUT|ENABLE_ECHO_INPUT|
+                ENABLE_PROCESSED_INPUT|ENABLE_VIRTUAL_TERMINAL_INPUT)) ||
         !SetConsoleWindowInfo(console->output,TRUE,&tiny) ||
         !SetConsoleScreenBufferSize(console->output,size) ||
         !SetConsoleWindowInfo(console->output,TRUE,&view)) {
@@ -76,6 +96,8 @@ int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console,
 void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console)
 {
     if(!console->opened)return;
+    if(console->input && console->input!=INVALID_HANDLE_VALUE)CloseHandle(console->input);
+    if(console->output && console->output!=INVALID_HANDLE_VALUE)CloseHandle(console->output);
     /* During host close,detaching/unregistering can hand termination back to
      * the default handler before the CRT exit. Leave attachment teardown to
      * process exit;ordinary Tab/recovery detaches immediately. */
@@ -107,15 +129,19 @@ int mysmb_win32_text_console_present(struct mysmb_win32_text_console *console,
         view.Left==0 && view.Top==0 && view.Right==79 && view.Bottom==49;
 }
 int mysmb_win32_text_console_key(struct mysmb_win32_text_console *console,
-    WORD *key,unsigned char *pressed)
+    WORD *key,WORD *scan,unsigned char *pressed)
 {
     DWORD count,read;
     INPUT_RECORD event;
     if(!console->opened || !GetNumberOfConsoleInputEvents(console->input,&count) ||
         count==0U || !ReadConsoleInputA(console->input,&event,1U,&read) || read!=1U)return 0;
-    *key=0U;*pressed=0U;
+    *key=*scan=0U;*pressed=0U;
+    if(event.EventType==FOCUS_EVENT) {
+        *pressed=event.Event.FocusEvent.bSetFocus?1U:0U;return 2;
+    }
     if(event.EventType==KEY_EVENT) {
         *key=event.Event.KeyEvent.wVirtualKeyCode;
+        *scan=event.Event.KeyEvent.wVirtualScanCode;
         *pressed=event.Event.KeyEvent.bKeyDown?1U:0U;
     }
     return 1;

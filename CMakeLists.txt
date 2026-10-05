@@ -1031,6 +1031,10 @@ if(MYSMB_OPENNT_CL16)
 endif()
 
 if(WIN32)
+    add_executable(mysmb_win32_keyboard_smoke
+        test/win32_keyboard_smoke.c src/platform/win32/keyboard.c)
+    target_include_directories(mysmb_win32_keyboard_smoke PRIVATE src)
+    add_test(NAME mysmb.win32-keyboard-smoke COMMAND mysmb_win32_keyboard_smoke)
     add_executable(mysmb_win32_launch_policy_smoke
         test/win32_launch_policy_smoke.c src/platform/win32/launch.c)
     target_include_directories(mysmb_win32_launch_policy_smoke PRIVATE src)
@@ -1047,7 +1051,8 @@ if(WIN32)
         src/platform/win32/audio_output.c
         src/platform/win32/audio_renderer.c
         src/platform/win32/focus_pause.c
-        src/platform/win32/text_console.c src/platform/win32/launch.c)
+        src/platform/win32/text_console.c src/platform/win32/launch.c
+        src/platform/win32/keyboard.c)
     target_link_libraries(mysmb_win32 PRIVATE mysmb_game mysmb_game_io mysmb_io_color user32 gdi32 winmm)
     target_sources(mysmb_win32 PRIVATE src/platform/file/snapshot_files.c
         src/platform/win32/snapshot_replace.c src/platform/win32/audio_snapshot.c
@@ -1058,11 +1063,13 @@ if(WIN32)
         src/platform/win32/audio_renderer.c src/platform/win32/focus_pause.c
         src/platform/file/snapshot_files.c src/platform/win32/snapshot_replace.c
         src/platform/win32/audio_snapshot.c src/platform/win32/audio_snapshot_real.c
-        src/platform/win32/text_console.c src/platform/win32/launch.c)
+        src/platform/win32/text_console.c src/platform/win32/launch.c
+        src/platform/win32/keyboard.c)
     add_executable(mysmb_win32_text_switch_smoke WIN32
         test/win32_text_switch_smoke.c src/platform/win32/audio_output.c
         src/platform/win32/audio_renderer.c src/platform/win32/focus_pause.c
-        src/platform/win32/text_console.c src/platform/win32/launch.c src/platform/file/snapshot_files.c
+        src/platform/win32/text_console.c src/platform/win32/launch.c
+        src/platform/win32/keyboard.c src/platform/file/snapshot_files.c
         src/platform/win32/snapshot_replace.c src/platform/win32/audio_snapshot.c
         src/platform/win32/audio_snapshot_real.c)
     target_link_libraries(mysmb_win32_text_switch_smoke PRIVATE

@@ -3,9 +3,9 @@
 #include <string.h>
 #include <stdio.h>
 static HWND owned_focus;
-static SHORT owned_tab;
+static unsigned int async_calls;
 static HWND probe_foreground(void){return owned_focus;}
-static SHORT probe_key(int key){return key==VK_TAB?owned_tab:0;}
+static SHORT probe_key(int key){(void)key;++async_calls;return 0;}
 #define GetForegroundWindow probe_foreground
 #define GetAsyncKeyState probe_key
 #define WinMain mysmb_unused_product_entry
@@ -16,14 +16,107 @@ static struct mysmb_win32_audio_output saved_audio;
 static DWORD saved_pixels[MYSMB_SCREEN_WIDTH*MYSMB_SCREEN_HEIGHT];
 static struct mysmb_io_snapshot expected_snapshot,restored_snapshot;
 static struct mysmb_io_text_frame expected_text;
+static int console_shortcut(HWND window,WORD key,unsigned char down);
+static void input_only_step(HWND window)
+{
+    QueryPerformanceCounter(&g_last_tick);
+    g_last_tick.QuadPart+=g_frequency.QuadPart;
+    mysmb_win32_step(window);
+}
+static int input_record(WORD key,WORD scan,int down)
+{
+    INPUT_RECORD event;
+    DWORD written;
+    ZeroMemory(&event,sizeof(event));event.EventType=KEY_EVENT;
+    event.Event.KeyEvent.wVirtualKeyCode=key;
+    event.Event.KeyEvent.wVirtualScanCode=scan;
+    event.Event.KeyEvent.bKeyDown=down?TRUE:FALSE;
+    event.Event.KeyEvent.wRepeatCount=1U;
+    return WriteConsoleInputA(g_console.input,&event,1U,&written) && written==1U;
+}
+static int event_input_route(HWND window)
+{
+    static const WORD keys[]={
+        'W','S','A','D','J','K',VK_RETURN,VK_LSHIFT,VK_RSHIFT,
+        VK_UP,VK_DOWN,VK_LEFT,VK_RIGHT};
+    static const unsigned char buttons[]={
+        MYSMB_BUTTON_UP,MYSMB_BUTTON_DOWN,MYSMB_BUTTON_LEFT,MYSMB_BUTTON_RIGHT,
+        MYSMB_BUTTON_B,MYSMB_BUTTON_A,MYSMB_BUTTON_START,
+        MYSMB_BUTTON_SELECT,MYSMB_BUTTON_SELECT,MYSMB_BUTTON_UP,
+        MYSMB_BUTTON_DOWN,MYSMB_BUTTON_LEFT,MYSMB_BUTTON_RIGHT};
+    unsigned int i;
+    INPUT_RECORD focus;
+    DWORD written;
+    owned_focus=window;mysmb_win32_release_keys();
+    /* Asynchronous state is deliberately zero even during delivered presses. */
+    if(probe_key('W')!=0)return 51;
+    async_calls=0U;
+    for(i=0U;i<sizeof(keys)/sizeof(keys[0]);++i) {
+        SendMessage(window,WM_KEYDOWN,keys[i],0);
+        if(mysmb_win32_buttons_from_keys(mysmb_win32_poll_keys())!=buttons[i])return 52;
+        SendMessage(window,WM_KEYDOWN,keys[i],0x40000000L);
+        if(mysmb_win32_buttons_from_keys(mysmb_win32_poll_keys())!=buttons[i])return 53;
+        SendMessage(window,WM_KEYUP,keys[i],0);
+        if(mysmb_win32_poll_keys())return 54;
+    }
+    SendMessage(window,WM_SYSKEYDOWN,'J',0);
+    SendMessage(window,WM_KEYDOWN,'D',0);
+    SendMessage(window,WM_KEYDOWN,'K',0);
+    if(mysmb_win32_buttons_from_keys(mysmb_win32_poll_keys())!=
+        (MYSMB_BUTTON_B|MYSMB_BUTTON_A|MYSMB_BUTTON_RIGHT))return 55;
+    owned_focus=NULL;SendMessage(window,WM_KILLFOCUS,0U,0L);
+    if(mysmb_win32_poll_keys())return 56;
+    owned_focus=window;SendMessage(window,WM_SETFOCUS,0U,0L);
+    SendMessage(window,WM_KEYDOWN,VK_TAB,0);
+    input_only_step(window);
+    if(!g_text_mode)return 57;
+    ShowWindow(g_console.window,SW_HIDE);owned_focus=g_console.window;
+    FlushConsoleInputBuffer(g_console.input);
+    if(!input_record(VK_TAB,0U,1))return 58;
+    input_only_step(window);
+    if(!g_text_mode || g_toggle_request)return 59;
+    for(i=0U;i<sizeof(keys)/sizeof(keys[0]);++i) {
+        if(!input_record(keys[i],0U,1))return 60;
+        input_only_step(window);
+        if(mysmb_win32_buttons_from_keys(mysmb_win32_poll_keys())!=buttons[i])return 61;
+        if(!input_record(keys[i],0U,0))return 62;
+        input_only_step(window);
+        if(mysmb_win32_poll_keys())return 63;
+    }
+    if(!input_record('P',0U,1) || !input_record('P',0U,0) ||
+        !input_record('O',0U,1) || !input_record('O',0U,0))return 64;
+    g_snapshot_ready=0U;input_only_step(window);
+    if(g_snapshot_requests)return 65;
+    /* Test shortcut requests before their root consumer clears the queue. */
+    if(!console_shortcut(window,'P',1U) ||
+        g_snapshot_requests!=MYSMB_IO_REQUEST_SAVE)return 66;
+    console_shortcut(window,'P',0U);g_snapshot_requests=0U;
+    if(!console_shortcut(window,'O',1U) ||
+        g_snapshot_requests!=MYSMB_IO_REQUEST_LOAD)return 67;
+    console_shortcut(window,'O',0U);g_snapshot_requests=0U;
+    if(!input_record('A',0U,1))return 68;
+    input_only_step(window);(void)mysmb_win32_poll_keys();
+    ZeroMemory(&focus,sizeof(focus));focus.EventType=FOCUS_EVENT;
+    focus.Event.FocusEvent.bSetFocus=FALSE;
+    if(!WriteConsoleInputA(g_console.input,&focus,1U,&written) || written!=1U)return 69;
+    input_only_step(window);
+    if(mysmb_win32_poll_keys())return 70;
+    if(!input_record(VK_TAB,0U,0) || !input_record(VK_TAB,0U,1))return 71;
+    input_only_step(window);owned_focus=window;
+    if(g_text_mode || async_calls)return 72;
+    SendMessage(window,WM_KEYUP,VK_TAB,0L);
+    mysmb_win32_release_keys();
+    return 0;
+}
 static int injected_key(WORD expected,unsigned char down,WORD *key,
     unsigned char *pressed)
 {
     unsigned int remaining=64U;
+    WORD scan;
     /* AllocConsole may enqueue focus/window events after the explicit flush.
      * Ignore only non-key records; an unexpected key must still fail. */
     while(remaining--!=0U &&
-        mysmb_win32_text_console_key(&g_console,key,pressed)) {
+        mysmb_win32_text_console_key(&g_console,key,&scan,pressed)) {
         if(*key!=0U)return *key==expected && *pressed==down;
     }
     return 0;
@@ -40,7 +133,7 @@ static int console_shortcut(HWND window,WORD key,unsigned char down)
     event.Event.KeyEvent.bKeyDown=down?TRUE:FALSE;
     if(!WriteConsoleInputA(g_console.input,&event,1U,&written) || written!=1U ||
         !injected_key(key,down,&received,&pressed))return 0;
-    mysmb_win32_shortcut(window,received,pressed);return 1;
+    return mysmb_win32_key_event(window,received,0U,pressed);
 }
 
 static int text_snapshot_route(HWND window,const char *directory)
@@ -122,7 +215,7 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     WNDCLASS wc;
     HWND window;
     INPUT_RECORD event;
-    DWORD written;
+    DWORD written,mode;
     CONSOLE_SCREEN_BUFFER_INFO info;
     CONSOLE_SCREEN_BUFFER_INFOEX color_info;
     unsigned long rgb;
@@ -164,14 +257,19 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     mysmb_win32_shortcut(window,VK_TAB,1U);
     if(g_toggle_request!=MYSMB_IO_REQUEST_TOGGLE)return 3;
     g_toggle_request=0U;mysmb_win32_switch_presenter(window,0);
-    if(!g_text_mode || !g_console.opened)return 4;
+    if(!g_text_mode || !g_console.opened)return 4000+(int)GetLastError();
     ShowWindow(g_console.window,SW_HIDE);
     owned_focus=g_console.window;
     if(memcmp(&saved_game,&g_game,sizeof(g_game)) ||
         memcmp(&saved_audio,&g_audio_output,sizeof(g_audio_output)) ||
         g_focus_pause.pending!=0U)return 5;
     if(!GetConsoleScreenBufferInfo(g_console.output,&info) ||
-        info.dwSize.X!=80 || info.dwSize.Y!=50)return 6;
+        info.dwSize.X!=80 || info.dwSize.Y!=50 ||
+        info.srWindow.Right-info.srWindow.Left+1!=80 ||
+        info.srWindow.Bottom-info.srWindow.Top+1!=50)return 6;
+    if(!GetConsoleMode(g_console.input,&mode) ||
+        (mode&(ENABLE_VIRTUAL_TERMINAL_INPUT|ENABLE_LINE_INPUT|
+            ENABLE_ECHO_INPUT|ENABLE_PROCESSED_INPUT|ENABLE_QUICK_EDIT_MODE)))return 46;
     close_state=GetMenuState(GetSystemMenu(g_console.window,FALSE),SC_CLOSE,MF_BYCOMMAND);
     if(close_state==(UINT)-1 || (close_state&(MF_DISABLED|MF_GRAYED)))return 45;
     ZeroMemory(&color_info,sizeof(color_info));color_info.cbSize=sizeof(color_info);
@@ -260,5 +358,7 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
         result=text_snapshot_route(window,command);
         if(result)return result;
     }
+    result=event_input_route(window);
+    if(result)return result;
     DestroyWindow(window);return 0;
 }

@@ -14,5 +14,6 @@ void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console);
 int mysmb_win32_text_console_present(struct mysmb_win32_text_console *console,
     const struct mysmb_io_text_frame *frame);
 int mysmb_win32_text_console_key(struct mysmb_win32_text_console *console,
-    WORD *key,unsigned char *pressed);
+    WORD *key,WORD *scan,unsigned char *pressed);
+/* Returns0 without input,1 for a record,2 for a focus record (pressed=focus). */
 #endif
