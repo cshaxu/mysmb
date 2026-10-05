@@ -4,15 +4,15 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T28 S4 P1; exact stretch-row reuse and bounded VGA storage. |
-| Admission And Approval | Owner authorizes execution and the joint conventional-memory/playability contract. S3 closed;S4 is active. |
+| Identifier Mode | Continuation: M3 T28 S4 P2; formal integration after bounded single-plane/row-reuse prototype. |
+| Admission And Approval | Owner authorizes execution and the joint conventional-memory/playability contract. S3 closed;S4 is active;P1 prototype evidence retained,formal integration pending. |
 | Objective | Compare four-plane storage with single-plane/row/batch scratch and duplicate-row reuse;preserve every indexed/packed output and full borderless640x400 scanout;measure peak conventional storage and complete output cost;fit and playability remain independent hard gates. |
 | Non-goals | No core ROM routine/state/timing changes,no emulator settings,no text artwork or VGA coordinate/mode changes,no nominal-cadence or M2/M4 acceptance. |
 | Reference Baseline | Post-T27 source and retained three products;historical1992/1992,local1991/1992 nodes and4260/4261 feasible controls,raw4342/infeasible81. |
 | Candidate Proposal | [T28 retained proposal and audit](../history/M3-T28-dos-rendering-optimization.md). Removed from pending QUEUE on admission. |
 | Files And ABI Surface | platform/vga frame conversion,DOS device/main composition and focused tests/build membership;estimate4-7files,150-350 changed lines. No core/PPU-state/snapshot ABI changes. |
 | Applicable Rules | README Task Reading Set,EXECUTION,DOCUMENT,ARCHITECTURE,CODING,CONTRIBUTING and source policy. |
-| Verification | Independent complete indexed/reference equality,resource/reset/fallback/two-instance/cache tests,native x86/x64 and DOS16 far-memory builds;S1 fixed-config complete-frame/input timing,simultaneous peak allocations/contiguous free blocks/stack/fallback checks under the proposal memory contract,platform purity and three EXEs for every product-code P. |
+| Verification | Independent128000-byte mapping and actual VGA-plane readback,far guards,mode/restore lifetime,native x86/x64 and original DOS16;fixed-config complete-output/input cost,MCB/near/far peak and contiguous/stack/fallback under the memory contract,platform purity and three EXEs for each product-code P. |
 | Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0,maximum1992/1992;no custody transfer. S4 owns infrastructure-only implementation;original node custodians unchanged. |
 | Asset Needs | Existing owner-local resources/derived products only,local ignored build containment;no new import or redistribution. Prior owner exception for existing tracked EXEs retained;every product-code P refreshes all three,with local probes/resources contained below ignored build. |
 | Reporting Requirements | Before each S owners,scope and estimated size;after each P actual diff,tests/products and total/local counters. Report absolute peak bytes,contiguous requirements and whole-frame/input costs,accepted tradeoffs and unproved limits;separate opportunity from measured gain. |

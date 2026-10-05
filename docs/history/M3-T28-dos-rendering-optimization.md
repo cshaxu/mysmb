@@ -667,3 +667,49 @@ packed mapping equality,native/far boundaries,actual plane readback/mode restore
 focused tests/platform purity and three products for each product-code P.
 Exit requires a documented accepted/rejected bounded-storage and row-reuse
 choice with exact output,state and measured memory/time evidence. T28 remains open.
+
+
+## S4 P1 checkpoint: single-plane and duplicate-row prototype
+
+Contained original-compiler prototype compares one32000-byte plane with the
+four128000-byte production planes. Prototype guard bytes make scratch32002bytes;
+static-storage difference is95998bytes. Convert a plane,submit it to its selected
+A000 plane,then reuse the scratch. Repeated source rows copy the previous80-byte
+output row;every source-coordinate formula and palette-index mask is retained.
+No product source or executable changes in P1;S3 products remain the published
+baseline. S4 stays open for formal integration,lifetime and peak proof.
+
+Independent native comparison checks all128000packed bytes against explicit
+x*4/5,y*3/5mapping and both guards. Actual DOS prototype checks far guards during
+every submission and reads back all four A000planes after the dense fixture;
+128000hardware bytes equal the independently calculated expected frame. Six
+complete61440-byte source buffers and10035-byte final snapshot match S3/S1.
+Text/graphics fixture phases use existing devices and input/ticks;no gameplay
+shortcut is promoted. Probe/link outputs remain ignored under build/m3-t28-s4.
+
+| Fixed-config probe | S3 stretch ticks | Single-plane/repeated-row stretch ticks | S3 complete output ticks | Prototype complete output ticks |
+| --- | ---: | ---: | ---: | ---: |
+| Water | 1162215 | 725490 | 2418417 | 1982772 |
+| Castle | 1162206 | 725483 | 2418417 | 1982775 |
+| Dense sprites | 1162213 | 725497 | 2498507 | 2062862 |
+
+Conversion is about37.58percent shorter;complete output about18.01/18.01/
+17.44percent shorter. Four plane selections/bulk submissions remain. PIT values
+include instrumentation;roughly1.662/1.662/1.729seconds output costs still fail
+nominal playability,so this is an opportunity result,not final performance
+acceptance. First title total17.76percent shorter;restored-ground root total
+5.15percent shorter,including snapshot/root work. Configuration hash matches S3;
+normal SDL/private desktop uses no CPU/memory/render override or foreground input.
+
+Paired probe minimum MZ loaded images458939/363627bytes exclude PSP,dynamic
+allocations and environment. Difference95312bytes includes prototype code/header
+layout;it is not a measured pristine peak saving. The formal P must repeat MCB/
+near/far/stack lifecycle sampling,contiguous fit and fallback under current
+product composition,then refresh all three EXEs. Device mode restoration and
+all-path source/mode lifetime need explicit integration tests before closure.
+Row/batch alternatives must be compared or rejected with a cost justification;
+no general dirty-frame policy is introduced by this bounded row reuse.
+
+Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
+infeasible81) unchanged;scope/expected/actual[],new0. Ledger S4 remains active.
+P1 retains a measured candidate and defined remaining obligations,not S/T closure.
