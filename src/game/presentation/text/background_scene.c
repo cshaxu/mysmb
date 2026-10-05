@@ -272,12 +272,10 @@ static void object(const struct mysmb_game *g,
         w->opaque[cell/8U]|=(unsigned char)(1U<<(cell%8U));
         frame->cells[cell].character=c;
         if(k==FENCE) {
-            /* Rails/posts own only their authored cells;sky stays visible
-             * between them. Palette roles follow wood and post highlights. */
-            frame->cells[cell].background=color;
-            frame->cells[cell].foreground=c=='|'?
-                mysmb_io_color_text16(g->palette[palette*4U+1U]):ink;
-            if(frame->cells[cell].foreground==color)frame->cells[cell].foreground=ink;
+            /* Authored light wood separates decoration from brown terrain;
+             * only rails/posts own cells,so gaps retain the sky. */
+            frame->cells[cell].background=14U;
+            frame->cells[cell].foreground=6U;
             continue;
         }
         if(c==MYSMB_IO_GLYPH_LOWER || c==MYSMB_IO_GLYPH_UPPER ||

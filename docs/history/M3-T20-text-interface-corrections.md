@@ -134,3 +134,61 @@ Empty ROM scope/expected/actual,new0;historical1992/1992,retained local1991/1992
 nodes and4260/4261feasible controls(raw4342,infeasible81) unchanged. M2 remains
 incomplete. T19 is suspended with its research and outstanding work in queue;
 it is not automatically resumed by closing this independent character task.
+
+## Owner-Requested Light Fence Follow-Up
+
+# Fence Text Color Correction
+
+Owner requests a lighter fence because its brown fill still matches and joins
+the ground visually after T20's shape correction. Admit latest closed T20 as
+Corrective S3 P1;retain S1/S2 evidence and do not reopen ROM accounting.
+
+S3 fixes TEXT-03 in shared background_scene character styling:light yellow
+wood fill with dark brown glyphs in the existing shared16color palette. Apply
+to posts and rails;retain sky in gaps,source geometry and solid ground colors.
+This is an intentional authored-text color override approved by the owner,
+not an original graphical palette change. DOS/x86/x64 use identical cells;
+platforms receive no game artwork policy.
+
+Expected scope2product/test files,under30changed lines. Test fence versus
+adjacent ground,post/rail/gap colors,related tree forms and scroll;verify
+indexed pixels/state unchanged,focused text/purity tests,both-width host
+routes,and original DOS16 build plus three refreshed local EXEs. Reuse the
+existing DOSBox text/snapshot/exit route and native world5-1 resource-bound
+probe. Existing owner-local resources remain local-only inputs,no new imports;
+all temporary outputs under ignored build/m3-t20-s3.
+
+Empty ROM scope/expected/actual,new0;historical1992/1992,local1991/1992nodes,
+4260/4261feasible controls remain unchanged. Exit:light fence distinct from
+ground on both widths/shared DOS cells,unaffected original graphics/logic,
+required builds/products/receipts and ledger/documentation gates. T19 stays
+owner-suspended in queue. S3 and T20 are closed after the results below.
+
+## Corrective S3 Closure
+
+TEXT-03 closes with the owner's intentional character-only light-wood override:
+fence post/rail fill14(light yellow),glyph6(dark brown),sky gaps unchanged.
+Ground retains its original text palette and the indexed graphic palette is
+unchanged. This corrects the visual color join that source-role fidelity in S2
+did not resolve;the S2 geometry/classification receipts remain valid.
+
+Product/test2files,+8/-6lines. Both widths pass eight focused tests and seven
+owned private-host route groups. The resource-bound native probe follows the
+existing continue-game path into world5-1;both widths1198frames and2048boundary
+pixel/state checks pass,their authored cells match,with30visible rail cells in
+the inspected scene. The local character render confirms the light fence/
+brown-ground distinction. Shared synthetic post/rail/gap/adjacent-ground,
+tree and scroll cases pass. No platform artwork or game/graphics logic changes.
+
+Original DOS16 build passes with its existing historical OLDNAMES warning.
+Actual final DOS EXE passes seeded DOSBox text/Tab/held-Tab/snapshot/return/
+Escape and paused graphics equality. This is not a physical486qualification
+or a DOS world5-1 encounter;shared cell fixtures and native resource scene
+separately prove the new color. Three local outputs364737/312971/320107bytes,
+hashes match builds. Private probe binaries/cell dumps are removed after use;
+neutral summaries and authored preview remain below ignored build/m3-t20-s3.
+No new import,protected material commit or executable distribution.
+
+Scope/expected/actual empty,new0;historical1992/1992,local1991/1992nodes and
+4260/4261feasible controls(raw4342,infeasible81) unchanged. Ledger/docs gates
+pass,S3/T20 close;T19 remains owner-suspended in queue. No remote/push.

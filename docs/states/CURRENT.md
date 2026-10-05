@@ -2,8 +2,7 @@
 
 **Idle.**
 
-T19 S1 remains owner-suspended,not closed;research and remaining work are in
-the [queue](QUEUE.md). T20 character corrections are closed.
+T19 remains owner-suspended in the [queue](QUEUE.md). T20 S1/S2/S3 are closed.
 
 ## Current Technical Baseline
 
@@ -18,8 +17,8 @@ the [queue](QUEUE.md). T20 character corrections are closed.
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11/T12/T13/T14/T15/T16/T17/T18 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are364881/312971/320619bytes.
-  T20 S1/S2 refresh all three with clean titles and shared tree/fence text;T18 deadline/symbol-tail changes retained.
+- Current local DOS16/Win32/x64 products are364737/312971/320107bytes.
+  T20 S1/S2/S3 refresh all three with clean titles and light shared tree/fence text;T18 deadline/symbol-tail changes retained.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
   pass;seeded presenter equality is explicitly separate. Real486SX speed,
@@ -27,12 +26,13 @@ the [queue](QUEUE.md). T20 character corrections are closed.
 
 ## Compact closure status
 
-M3 T20 S1/S2 close console title MySMB,DOS diagnostic-banner removal and
+M3 T20 S1/S2/S3 close console title MySMB,DOS diagnostic-banner removal and
 shared tree crown/trunk/fence classification,shape and palette-role repairs.
 S1 both widths5tests,S2 both widths8tests;seven private-host groups each,
 2048boundary/1198native graphics-state equality and actual DOSBox regression
-pass. Final products364881/312971/320619bytes. S1 code/test/tool4files,+11/-3;
-S2 product/test2files,+76/-6,new0. T19 remains suspended,not repaired.
+pass. S3 light fence/brown ground passes resource-bound world5-1 and DOSBox checks.
+Final products364737/312971/320107bytes. S1 code/test/tool4files,+11/-3;
+S2 product/test2files,+76/-6;S3 product/test2files,+8/-6,new0. T19 remains suspended,not repaired.
 [T20 scope,evidence and limits](../history/M3-T20-text-interface-corrections.md).
 
 

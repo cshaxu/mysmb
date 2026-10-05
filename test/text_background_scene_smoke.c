@@ -210,6 +210,10 @@ int main(void)
     CHECK(frame.cells[30U*80U+41U].character=='/');
     CHECK(frame.cells[33U*80U+50U].character=='|');
     CHECK(frame.cells[34U*80U+51U].character=='=');
+    CHECK(frame.cells[33U*80U+50U].background==14U);
+    CHECK(frame.cells[34U*80U+51U].background==14U);
+    CHECK(frame.cells[34U*80U+51U].foreground==6U);
+    CHECK(frame.cells[34U*80U+51U].background!=frame.cells[34U*80U+62U].background);
     CHECK(frame.cells[33U*80U+51U].background==frame.cells[0U].background);
     CHECK(frame.cells[34U*80U+62U].character==':');
     /* Dynamic palette changes update the canopy role without copying colors
