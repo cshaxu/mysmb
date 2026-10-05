@@ -178,3 +178,19 @@ Owner explicitly accepts console-subsystem launch tradeoff after discussing
 possible Explorer console flash;retain console subsystem,no helper process.
 Live RDP foreground interaction remains outside private-desktop observation.
 S2 geometry and S3 console Restore are still pending and T24 stays open.
+
+### S2 closure
+
+Window root now scales the unchanged full bitmap to the positive client area.
+Sizing constrains client16:15 integer units;all eight edges/corners and three
+DPI parameters pass. Minimum256x240,max work-area fit,real maximize/restore,
+programmatic sizes,DPI message and minimized painting pass the embedded root.
+Both widths eight focused tests and ten private-host groups pass. Host geometry
+restoration is asynchronous;the buffer-preservation probe now waits at most
+one second for the original view instead of treating in-flight size as loss.
+The other embedded root suppresses the new product CRT entry explicitly.
+Product/test4files,+193/-5,no ABI/game change;products364939/317579/325227bytes.
+Original DOS16 builds;DOS unchanged,retained byte-identical DOSBox receipt.
+Window unit calculations cover96/144/192DPI parameters;actual private-host
+monitor tests do not claim a physical multi-monitor DPI drag or live RDP trial.
+Historical/local counters unchanged,new0. S3 Restore is next,T24 still open.

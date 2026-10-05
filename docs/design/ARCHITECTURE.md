@@ -96,3 +96,8 @@ length and integrity. New saves preserve producer/visible phases without
 re-executing a selector. Schema1 remains readable with absent receipts and
 therefore cannot promise immediate restored text. DOS allocates its transaction
 workspace on the far heap;platform code owns memory lifetime,not receipt logic.
+
+Windows graphical geometry scales the unchanged indexed frame to the full
+client area. Native sizing constrains16:15client units,with non-client and
+DPI margins;minimum,maximized,restored and programmatic sizes share that
+device owner. Zero-sized clients skip drawing;no crop or letterbox owner.

@@ -8,6 +8,15 @@ static HWND probe_foreground(void){return owned_focus;}
 static SHORT probe_key(int key){(void)key;++async_calls;return 0;}
 #define GetForegroundWindow probe_foreground
 #define GetAsyncKeyState probe_key
+static int painted_width,painted_height,paint_source_ok;
+static int probe_stretch(HDC dc,int x,int y,int w,int h,int sx,int sy,int sw,int sh,
+    const void *bits,const BITMAPINFO *info,UINT usage,DWORD rop)
+{
+    painted_width=w;painted_height=h;
+    paint_source_ok=x==0 && y==0 && sx==0 && sy==0 && sw==256 && sh==240;
+    return StretchDIBits(dc,x,y,w,h,sx,sy,sw,sh,bits,info,usage,rop);
+}
+#define StretchDIBits probe_stretch
 #define WinMain mysmb_unused_product_entry
 #define MYSMB_WIN32_EMBEDDED_TEST 1
 #include "../src/platform/win32/main_win32.c"
@@ -18,6 +27,70 @@ static DWORD saved_pixels[MYSMB_SCREEN_WIDTH*MYSMB_SCREEN_HEIGHT];
 static struct mysmb_io_snapshot expected_snapshot,restored_snapshot;
 static struct mysmb_io_text_frame expected_text;
 static int console_shortcut(HWND window,WORD key,unsigned char down);
+static int geometry_route(HINSTANCE instance)
+{
+    HWND window;
+    RECT initial,rect,margins,client,outer;
+    MINMAXINFO limits;
+    MONITORINFO monitor;
+    UINT edge,dpi;
+    int w,h;
+    SetRect(&initial,0,0,512,480);
+    AdjustWindowRectEx(&initial,WS_OVERLAPPEDWINDOW,FALSE,0U);
+    window=CreateWindow("MySMBTextSwitchProbe","geometry",WS_OVERLAPPEDWINDOW,
+        30,30,initial.right-initial.left,initial.bottom-initial.top,NULL,NULL,instance,NULL);
+    if(!window)return 90;
+    for(dpi=96U;dpi<=192U;dpi+=48U) {
+        mysmb_win32_window_margins(window,dpi,&margins);
+        for(edge=WMSZ_LEFT;edge<=WMSZ_BOTTOMRIGHT;++edge) {
+            SetRect(&rect,40,40,813,709);
+            mysmb_win32_size_rectangle(window,&rect,edge,dpi);
+            w=rect.right-rect.left-(margins.right-margins.left);
+            h=rect.bottom-rect.top-(margins.bottom-margins.top);
+            if(w<256 || h<240 || w*15!=h*16)return 91;
+        }
+    }
+    mysmb_win32_window_margins(window,mysmb_win32_window_dpi(window),&margins);
+    for(edge=WMSZ_LEFT;edge<=WMSZ_BOTTOMRIGHT;++edge) {
+        SetRect(&rect,40,40,43,43);
+        SendMessage(window,WM_SIZING,edge,(LPARAM)&rect);
+        if(rect.right-rect.left-(margins.right-margins.left)!=256 ||
+            rect.bottom-rect.top-(margins.bottom-margins.top)!=240)return 92;
+    }
+    ZeroMemory(&limits,sizeof(limits));SendMessage(window,WM_GETMINMAXINFO,0,(LPARAM)&limits);
+    monitor.cbSize=sizeof(monitor);
+    if(!GetMonitorInfo(MonitorFromWindow(window,MONITOR_DEFAULTTONEAREST),&monitor))return 93;
+    w=limits.ptMaxSize.x-(margins.right-margins.left);
+    h=limits.ptMaxSize.y-(margins.bottom-margins.top);
+    if(w*15!=h*16 || limits.ptMaxSize.x>monitor.rcWork.right-monitor.rcWork.left ||
+        limits.ptMaxSize.y>monitor.rcWork.bottom-monitor.rcWork.top)return 94;
+    /* Real sizing messages and paint destination,including programmatic changes. */
+    ZeroMemory(&g_bitmap_info,sizeof(g_bitmap_info));
+    g_bitmap_info.bmiHeader.biSize=sizeof(g_bitmap_info.bmiHeader);
+    g_bitmap_info.bmiHeader.biWidth=256;g_bitmap_info.bmiHeader.biHeight=-240;
+    g_bitmap_info.bmiHeader.biPlanes=1;g_bitmap_info.bmiHeader.biBitCount=32;
+    for(edge=0;edge<3;++edge) {
+        SetWindowPos(window,NULL,0,0,501+(int)edge*73,503+(int)edge*41,
+            SWP_NOMOVE|SWP_NOZORDER|SWP_NOACTIVATE);
+        GetClientRect(window,&client);
+        if(client.right*15!=client.bottom*16)return 95;
+        InvalidateRect(window,NULL,FALSE);SendMessage(window,WM_PAINT,0,0);
+        if(painted_width!=client.right || painted_height!=client.bottom || !paint_source_ok)return 96;
+    }
+    ShowWindow(window,SW_MAXIMIZE);GetClientRect(window,&client);GetWindowRect(window,&outer);
+    if(!IsZoomed(window) || client.right*15!=client.bottom*16)return 97;
+    if(outer.right-outer.left>monitor.rcWork.right-monitor.rcWork.left ||
+        outer.bottom-outer.top>monitor.rcWork.bottom-monitor.rcWork.top)return 98;
+    ShowWindow(window,SW_RESTORE);GetClientRect(window,&client);
+    if(client.right*15!=client.bottom*16)return 99;
+    SetRect(&rect,35,35,743,722);SendMessage(window,0x02e0U,MAKELONG(144,144),(LPARAM)&rect);
+    GetClientRect(window,&client);if(client.right*15!=client.bottom*16)return 100;
+    ShowWindow(window,SW_MINIMIZE);SendMessage(window,WM_PAINT,0,0);
+    ShowWindow(window,SW_RESTORE);
+    /* DestroyWindow invokes root cleanup;no game has been initialized here. */
+    DestroyWindow(window);return 0;
+}
+
 static int presentation_clock_route(HWND window)
 {
     struct mysmb_io_video_frame video;
@@ -260,6 +333,7 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
     ZeroMemory(&wc,sizeof(wc));wc.lpfnWndProc=mysmb_win32_window_proc;
     wc.hInstance=instance;wc.lpszClassName="MySMBTextSwitchProbe";
     if(!RegisterClass(&wc))return 1;
+    result=geometry_route(instance);if(result)return result;
     window=CreateWindow(wc.lpszClassName,"",0,0,0,256,240,NULL,NULL,instance,NULL);
     if(!window)return 2;
     owned_focus=window;

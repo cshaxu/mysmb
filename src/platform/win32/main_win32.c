@@ -325,14 +325,100 @@ static int mysmb_win32_run_self_test(void)
     return 0;
 }
 #endif
+/* The device owns window geometry;the frame remains an unchanged256x240.
+ * Quantize client sizes to16:15 integer units,not outer title/border sizes. */
+static int g_geometry_adjusting;
+static UINT mysmb_win32_window_dpi(HWND window)
+{
+    typedef UINT (WINAPI *dpi_fn)(HWND);
+    dpi_fn fn=(dpi_fn)GetProcAddress(GetModuleHandleA("user32.dll"),"GetDpiForWindow");
+    return fn?fn(window):96U;
+}
+static void mysmb_win32_window_margins(HWND window,UINT dpi,RECT *margins)
+{
+    typedef BOOL (WINAPI *adjust_fn)(LPRECT,DWORD,BOOL,DWORD,UINT);
+    adjust_fn fn=(adjust_fn)GetProcAddress(GetModuleHandleA("user32.dll"),
+        "AdjustWindowRectExForDpi");
+    DWORD style=(DWORD)GetWindowLongPtr(window,GWL_STYLE);
+    DWORD ex=(DWORD)GetWindowLongPtr(window,GWL_EXSTYLE);
+    SetRect(margins,0,0,0,0);
+    if(fn)fn(margins,style,FALSE,ex,dpi);
+    else AdjustWindowRectEx(margins,style,FALSE,ex);
+}
+static int mysmb_win32_geometry_units(int width,int height,int by_height)
+{
+    int units=by_height?height/15:width/16;
+    return units<16?16:units;
+}
+static void mysmb_win32_size_rectangle(HWND window,RECT *rect,UINT edge,UINT dpi)
+{
+    RECT margins;
+    int width,height,units,dx,dy;
+    mysmb_win32_window_margins(window,dpi,&margins);
+    width=rect->right-rect->left-(margins.right-margins.left);
+    height=rect->bottom-rect->top-(margins.bottom-margins.top);
+    units=mysmb_win32_geometry_units(width,height,edge==WMSZ_TOP || edge==WMSZ_BOTTOM);
+    dx=units*16+(margins.right-margins.left)-(rect->right-rect->left);
+    dy=units*15+(margins.bottom-margins.top)-(rect->bottom-rect->top);
+    if(edge==WMSZ_LEFT || edge==WMSZ_TOPLEFT || edge==WMSZ_BOTTOMLEFT)rect->left-=dx;
+    else if(edge==WMSZ_TOP || edge==WMSZ_BOTTOM){rect->left-=dx/2;rect->right+=dx-dx/2;}
+    else rect->right+=dx;
+    if(edge==WMSZ_TOP || edge==WMSZ_TOPLEFT || edge==WMSZ_TOPRIGHT)rect->top-=dy;
+    else if(edge==WMSZ_LEFT || edge==WMSZ_RIGHT){rect->top-=dy/2;rect->bottom+=dy-dy/2;}
+    else rect->bottom+=dy;
+}
+static void mysmb_win32_size_limits(HWND window,MINMAXINFO *limits)
+{
+    MONITORINFO monitor;
+    RECT margins;
+    int units,w,h,bw,bh;
+    monitor.cbSize=sizeof(monitor);
+    if(!GetMonitorInfo(MonitorFromWindow(window,MONITOR_DEFAULTTONEAREST),&monitor))return;
+    mysmb_win32_window_margins(window,mysmb_win32_window_dpi(window),&margins);
+    bw=margins.right-margins.left;bh=margins.bottom-margins.top;
+    w=monitor.rcWork.right-monitor.rcWork.left;
+    h=monitor.rcWork.bottom-monitor.rcWork.top;
+    units=(w-bw)/16;if((h-bh)/15<units)units=(h-bh)/15;
+    if(units<1)units=1;
+    limits->ptMaxSize.x=units*16+bw;limits->ptMaxSize.y=units*15+bh;
+    limits->ptMaxPosition.x=monitor.rcWork.left-monitor.rcMonitor.left+
+        (w-limits->ptMaxSize.x)/2;
+    limits->ptMaxPosition.y=monitor.rcWork.top-monitor.rcMonitor.top+
+        (h-limits->ptMaxSize.y)/2;
+    limits->ptMinTrackSize.x=256+bw;limits->ptMinTrackSize.y=240+bh;
+    limits->ptMaxTrackSize=limits->ptMaxSize;
+}
+static void mysmb_win32_normalize_client(HWND window)
+{
+    RECT client,outer;
+    int units,w,h;
+    if(g_geometry_adjusting || !GetClientRect(window,&client))return;
+    w=client.right;h=client.bottom;
+    if(w<=0 || h<=0 || (w%16==0 && h%15==0 && w/16==h/15))return;
+    units=w/16;if(h/15<units)units=h/15;if(units<1)units=1;
+    if(!GetWindowRect(window,&outer))return;
+    g_geometry_adjusting=1;
+    SetWindowPos(window,NULL,0,0,outer.right-outer.left-w+units*16,
+        outer.bottom-outer.top-h+units*15,SWP_NOMOVE|SWP_NOZORDER|SWP_NOACTIVATE);
+    g_geometry_adjusting=0;
+}
+static void mysmb_win32_enable_dpi(void)
+{
+    typedef BOOL (WINAPI *aware_fn)(HANDLE);
+    aware_fn fn=(aware_fn)GetProcAddress(GetModuleHandleA("user32.dll"),
+        "SetProcessDpiAwarenessContext");
+    if(!fn || !fn((HANDLE)(LONG_PTR)-4))SetProcessDPIAware();
+}
 static void mysmb_win32_paint(HWND window)
 {
     PAINTSTRUCT paint;
     HDC dc;
+    RECT client;
 
     dc = BeginPaint(window, &paint);
-    StretchDIBits(dc, 0, 0, MYSMB_SCREEN_WIDTH * MYSMB_SCALE,
-                  MYSMB_SCREEN_HEIGHT * MYSMB_SCALE, 0, 0,
+    GetClientRect(window,&client);
+    if(client.right>0 && client.bottom>0)
+    StretchDIBits(dc, 0, 0, client.right, client.bottom, 0, 0,
                   MYSMB_SCREEN_WIDTH, MYSMB_SCREEN_HEIGHT, g_pixels,
                   &g_bitmap_info, DIB_RGB_COLORS, SRCCOPY);
     EndPaint(window, &paint);
@@ -437,6 +523,23 @@ static LRESULT CALLBACK mysmb_win32_window_proc(HWND window, UINT message,
         (message == WM_ACTIVATEAPP && w_param != 0U && GetFocus() == window)) {
         if(!g_switching && !g_text_mode)mysmb_win32_focus_pause_gained(&g_focus_pause);
     }
+    if(message==WM_SIZING) {
+        mysmb_win32_size_rectangle(window,(RECT *)l_param,(UINT)w_param,
+            mysmb_win32_window_dpi(window));return TRUE;
+    }
+    if(message==WM_GETMINMAXINFO) {
+        mysmb_win32_size_limits(window,(MINMAXINFO *)l_param);return 0;
+    }
+    if(message==0x02e0U) { /* WM_DPICHANGED,also builds with old headers. */
+        RECT rect=*(RECT *)l_param;
+        mysmb_win32_size_rectangle(window,&rect,WMSZ_BOTTOMRIGHT,LOWORD(w_param));
+        SetWindowPos(window,NULL,rect.left,rect.top,rect.right-rect.left,
+            rect.bottom-rect.top,SWP_NOZORDER|SWP_NOACTIVATE);return 0;
+    }
+    if(message==WM_SIZE) {
+        if(w_param!=SIZE_MINIMIZED)mysmb_win32_normalize_client(window);
+        InvalidateRect(window,NULL,FALSE);return 0;
+    }
     if (message == WM_PAINT) {
         mysmb_win32_paint(window);
         return 0;
@@ -457,6 +560,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     MSG message;
     int start_text;
     unsigned int messages;
+    RECT initial;
 
     (void)previous;
     mysmb_io_control_initialize(&g_control);
@@ -467,6 +571,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
         return 2;
 #endif
     }
+    mysmb_win32_enable_dpi();
     start_text=mysmb_win32_start_in_text();
     if(!start_text)(void)FreeConsole();
     ZeroMemory(&window_class, sizeof(window_class));
@@ -491,10 +596,11 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     mysmb_win32_focus_pause_initialize(&g_focus_pause);
     mysmb_win32_power_on();
     mysmb_win32_snapshot_initialize();
+    SetRect(&initial,0,0,MYSMB_SCREEN_WIDTH*MYSMB_SCALE,MYSMB_SCREEN_HEIGHT*MYSMB_SCALE);
+    AdjustWindowRectEx(&initial,WS_OVERLAPPEDWINDOW,FALSE,0U);
     window = CreateWindow(MYSMB_CLASS_NAME, "MySMB", WS_OVERLAPPEDWINDOW,
                           CW_USEDEFAULT, CW_USEDEFAULT,
-                          MYSMB_SCREEN_WIDTH * MYSMB_SCALE + 16,
-                          MYSMB_SCREEN_HEIGHT * MYSMB_SCALE + 39,
+                          initial.right-initial.left,initial.bottom-initial.top,
                           NULL, NULL, instance, NULL);
     if (window == NULL) {
         return 1;

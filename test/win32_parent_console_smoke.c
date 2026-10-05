@@ -24,7 +24,7 @@ int main(void)
     COORD origin={0,0},size={4,1};
     SMALL_RECT view={0,0,3,0};
     HWND owner;
-    unsigned int cycle,i;
+    unsigned int cycle,i,attempt;
     input=CreateFileA("CONIN$",GENERIC_READ|GENERIC_WRITE,
         FILE_SHARE_READ|FILE_SHARE_WRITE,NULL,OPEN_EXISTING,0,NULL);
     output=CreateFileA("CONOUT$",GENERIC_READ|GENERIC_WRITE,
@@ -32,6 +32,8 @@ int main(void)
     if(input==INVALID_HANDLE_VALUE || output==INVALID_HANDLE_VALUE)return 1;
     SetConsoleTitleW(L"MySMB shell preservation sentinel");
     for(i=0;i<4;i++) {sentinel[i].Char.UnicodeChar=(WCHAR)(L'A'+i);sentinel[i].Attributes=0x4eU;}
+    /* A freshly allocated host asynchronously applies its initial geometry. */
+    Sleep(150U);
     if(!WriteConsoleOutputW(output,sentinel,size,origin,&view) ||
         !GetConsoleScreenBufferInfo(output,&original) || !GetConsoleMode(input,&mode))return 2;
     ZeroMemory(&font,sizeof(font));ZeroMemory(&after_font,sizeof(after_font));
@@ -63,6 +65,11 @@ int main(void)
             memcmp(sentinel,after,sizeof(after)))return 8;
         if(!GetConsoleMode(input,&after_mode) || mode!=after_mode ||
             !GetConsoleScreenBufferInfo(output,&current))return 9;
+        /* SetWindowPlacement delivers host geometry asynchronously. */
+        for(attempt=0;attempt<40;++attempt) {
+            if(!memcmp(&original.srWindow,&current.srWindow,sizeof(SMALL_RECT)))break;
+            Sleep(25U);if(!GetConsoleScreenBufferInfo(output,&current))return 9;
+        }
         if(memcmp(&original.dwSize,&current.dwSize,sizeof(COORD)) ||
             memcmp(&original.dwCursorPosition,&current.dwCursorPosition,sizeof(COORD)) ||
             original.wAttributes!=current.wAttributes ||

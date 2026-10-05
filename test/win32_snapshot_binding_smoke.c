@@ -7,6 +7,7 @@ static SHORT test_key(int key){(void)key;return 0;}
  * activation, global input or access to the user's desktop. */
 #define GetForegroundWindow test_foreground
 #define GetAsyncKeyState test_key
+#define MYSMB_WIN32_EMBEDDED_TEST 1
 #define WinMain mysmb_unused_product_entry
 #include "../src/platform/win32/main_win32.c"
 #undef WinMain
