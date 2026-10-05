@@ -457,7 +457,11 @@ void mysmb_game_commit_display_state(struct mysmb_game *game)
     /* NMI saves the pre-command $2000 mirror without d7.  A VRAM command
      * may have selected d2 in that mirror, whereas the physical register at
      * RTI is restored from the pre-command value with NMI enabled. */
-    game->ppu_control_0 &= 0x7fU;
+    /* The source loads $0778,including RAM-only page writes made by
+     * SecondaryGameSetup. A cached physical control is from the prior NMI
+     * and must never overwrite that next-frame producer. */
+    game->ppu_control_0 = (mysmb_u8)(
+        game->ram[MYSMB_ROOT_PPU_CONTROL_MIRROR] & 0x7fU);
     game->ram[MYSMB_ROOT_PPU_CONTROL_MIRROR] = game->ppu_control_0;
     /* ScreenOff reads the $2001 mirror, never the ColdBoot's earlier direct
      * physical $2001 write.  The first NMI therefore turns physical $06 into

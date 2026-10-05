@@ -2,7 +2,7 @@
 
 **Idle.**
 
-T19 remains owner-suspended in the [queue](QUEUE.md). T21 S1/S2 are closed.
+T19 remains owner-suspended in the [queue](QUEUE.md). T22 S1 is closed.
 
 ## Current Technical Baseline
 
@@ -17,14 +17,23 @@ T19 remains owner-suspended in the [queue](QUEUE.md). T21 S1/S2 are closed.
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11/T12/T13/T14/T15/T16/T17/T18 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are364785/312971/320107bytes.
-  T21 refreshes all three with source-colored coral glyphs;T20 titles/tree/fence and T18 deadline/symbol-tail changes retained.
+- Current local DOS16/Win32/x64 products are364801/312971/320107bytes.
+  T22 refreshes all three with RAM-authoritative NMI page handoff;T21 coral,T20 titles/tree/fence and T18 timing retained.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
   pass;seeded presenter equality is explicitly separate. Real486SX speed,
   full heap/stack peak and hardware/version qualification remain M4.
 
 ## Compact closure status
+
+M3 T22 S1 fixes RAM$0778-to-next-NMI page handoff,not cached overwrite.
+Old setup regression fails52,old-root controlled7-2 first frame fails14;
+fixed source passes16page/128control cases and selects table1 on first restored
+frame145,scroll0,with pipe/stairs/full terrain. Both widths8tests/7host groups,
+2048boundary/1198native comparisons,DOS16/DOSBox pass. Products364801/312971/
+320107bytes;two product/testfiles,+44/-1,no ABI/new node or M2 certification.
+[T22 original source,missing integration clause and route limits](../history/M3-T22-pipe-exit-display-recovery.md).
+
 
 M3 T21 S1/S2 close source ink3 pink coral glyphs on retained water-blue scene
 background. S2 supersedes S1 contrast fill;two files,+6/-6,new0. Both widths
@@ -85,11 +94,3 @@ Actual live RDP client delivery remains unobserved. Original DOS16 link passes;
 three local products refreshed,DOS byte-identical. Code/build/tests9files,
 +302/-63lines;empty scope/new0,node/edge totals unchanged. Local commit,no remote.
 [T14 history](../history/M3-T14-win32-remote-keyboard.md).
-
-
-M3 T13 S1 P1 closes startup presenter selection and enabled console close.
-Both widths7focused tests and six real launch/close routes pass;owned Tab,
-Unicode,snapshot,focus,audio and recovery regressions pass. Original DOS16
-build/default-graphics check passes. Code/build/tests10files,+306/-14lines;
-local products refreshed. Empty ROM scope/new0,no remote. Details and limits:
-[T13 history](../history/M3-T13-win32-startup-console-lifecycle.md).

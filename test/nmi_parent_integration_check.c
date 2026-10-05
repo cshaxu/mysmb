@@ -160,10 +160,49 @@ static int check_display_mask_phases(void)
     return 0;
 }
 
+static int check_setup_page_handoff(void)
+{
+    struct mysmb_game game;
+    struct mysmb_input input;
+    struct mysmb_frame frame;
+    mysmb_u8 mode,task,page,control,old_control;
+
+    input.buttons=input.buttons2=0U;
+    /* Setup writes the page into RAM during dispatch. The current NMI keeps
+     * its saved physical control;the following NMI must consume new RAM. */
+    for(page=0U;page<16U;++page) {
+        mysmb_game_initialize(&game);
+        old_control=(mysmb_u8)(0x10U|((page&1U)^1U));
+        game.ppu_control_0=old_control;
+        game.ram[0x0778U]=old_control;
+        game.ram[0x0770U]=1U;game.ram[0x0772U]=2U;
+        game.ram[0x071aU]=page;
+        mysmb_game_tick(&game,&input,&frame);
+        control=(mysmb_u8)(0x10U|(page&1U));
+        if(game.ram[0x0778U]!=control ||
+           game.visible_ppu_control_0!=(mysmb_u8)(old_control|0x80U))return 1;
+        (void)mysmb_frame_root_begin(&game,&input,&mode,&task);
+        if(game.ram[0x0778U]!=control || game.ppu_control_0!=control ||
+           game.visible_ppu_name_table!=(page&1U))return 2;
+    }
+    /* A RAM-only source write must preserve every control bit except NMI
+     * enable,even when the cached register has the opposite value. */
+    for(page=0U;page<128U;++page) {
+        game.ppu_control_0=(mysmb_u8)(page^0x7fU);
+        game.ram[0x0778U]=(mysmb_u8)(page|0x80U);
+        mysmb_game_commit_display_state(&game);
+        if(game.ram[0x0778U]!=page || game.ppu_control_0!=page ||
+           game.visible_ppu_name_table!=(page&3U))return 3;
+    }
+    return 0;
+}
+
 int main(void)
 {
     int result;
 
+    result = check_setup_page_handoff();
+    if (result != 0) return 50 + result;
     result = check_display_mask_phases();
     if (result != 0) return 40 + result;
     result = check_unpaused_nmi_order();
