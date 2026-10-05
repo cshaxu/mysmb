@@ -1,6 +1,6 @@
 #include "core/frame_root.h"
 #include "core/status.h"
-#include "game/objects.h"
+#include "core/objects.h"
 #include <stdio.h>
 #include <string.h>
 static unsigned int calls,errors,mutate;

@@ -1,6 +1,6 @@
-#include "game/objects.h"
-#include "game/oam/oam.h"
-#include "game/world/world.h"
+#include "core/objects.h"
+#include "core/oam/oam.h"
+#include "core/world/world.h"
 #include <stdio.h>
 #include <string.h>
 static unsigned int calls,errors,draws,erases,queries,mutation;

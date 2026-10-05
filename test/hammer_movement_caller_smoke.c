@@ -1,7 +1,7 @@
-#include "game/enemy/actor_slots.h"
-#include "game/enemy/distance.h"
-#include "game/enemy/movement.h"
-#include "game/objects.h"
+#include "core/enemy/actor_slots.h"
+#include "core/enemy/distance.h"
+#include "core/enemy/movement.h"
+#include "core/objects.h"
 #include <string.h>
 
 static unsigned int spawn_calls,diff_calls,normal_calls,defeated_calls,bad;

@@ -1,5 +1,5 @@
-#include "game/player.h"
-#include "game/oam/oam.h"
+#include "core/player.h"
+#include "core/oam/oam.h"
 
 int main(void)
 {

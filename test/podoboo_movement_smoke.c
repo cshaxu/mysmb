@@ -1,6 +1,6 @@
-#include "game/enemy/actor_slots.h"
-#include "game/enemy/init_targets.h"
-#include "game/enemy/movement.h"
+#include "core/enemy/actor_slots.h"
+#include "core/enemy/init_targets.h"
+#include "core/enemy/movement.h"
 #include <string.h>
 
 static unsigned char expected[2048];

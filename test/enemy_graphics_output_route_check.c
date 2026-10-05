@@ -1,7 +1,7 @@
 /* Whole EnemyGfxHandler result, including real game-owned stack aliases. */
 #include <stdio.h>
 #include <string.h>
-#include "game/oam/oam.h"
+#include "core/oam/oam.h"
 static struct mysmb_game game;
 static unsigned char record[16424];
 static unsigned int current, calls, failures;

@@ -1,6 +1,6 @@
 #include <string.h>
 #include "core/area.h"
-#include "game/world/world.h"
+#include "core/world/world.h"
 
 int main(void)
 {

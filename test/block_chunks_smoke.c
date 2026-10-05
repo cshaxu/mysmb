@@ -1,5 +1,5 @@
-#include "game/blocks/chunks.h"
-#include "game/score.h"
+#include "core/blocks/chunks.h"
+#include "core/score.h"
 #include <stdio.h>
 #include <string.h>
 static unsigned int failures,calls;

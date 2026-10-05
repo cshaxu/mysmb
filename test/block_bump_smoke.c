@@ -1,5 +1,5 @@
-#include "game/blocks/bump.h"
-#include "game/objects.h"
+#include "core/blocks/bump.h"
+#include "core/objects.h"
 #include <stdio.h>
 #include <string.h>
 static unsigned int failures,calls,route;

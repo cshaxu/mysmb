@@ -1,6 +1,6 @@
-#include "game/enemy/movement.h"
-#include "game/objects.h"
-#include "game/world/world.h"
+#include "core/enemy/movement.h"
+#include "core/objects.h"
+#include "core/world/world.h"
 #include <string.h>
 
 static unsigned int horizontal_calls,erase_calls,observed_speed,observed_y;

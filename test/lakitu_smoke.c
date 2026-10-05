@@ -1,7 +1,7 @@
 #include "core/game.h"
-#include "game/objects.h"
-#include "game/enemy/frenzy.h"
-#include "game/enemy/stream.h"
+#include "core/objects.h"
+#include "core/enemy/frenzy.h"
+#include "core/enemy/stream.h"
 
 int main(void)
 {

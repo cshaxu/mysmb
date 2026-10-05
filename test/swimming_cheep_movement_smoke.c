@@ -1,5 +1,5 @@
-#include "game/enemy/actor_slots.h"
-#include "game/enemy/movement.h"
+#include "core/enemy/actor_slots.h"
+#include "core/enemy/movement.h"
 #include <string.h>
 static unsigned int gravity_calls;
 void mysmb_enemy_move_slow_vertically(struct mysmb_game *g,mysmb_u8 slot)

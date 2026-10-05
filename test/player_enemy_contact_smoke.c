@@ -1,8 +1,8 @@
-#include "game/objects.h"
+#include "core/objects.h"
 #include "core/area.h"
-#include "game/world/world.h"
-#include "game/enemy/distance.h"
-#include "game/enemy/init_targets.h"
+#include "core/world/world.h"
+#include "core/enemy/distance.h"
+#include "core/enemy/init_targets.h"
 #include <stdio.h>
 #include <string.h>
 

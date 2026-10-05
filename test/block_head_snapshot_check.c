@@ -1,4 +1,4 @@
-#include "game/blocks/head.h"
+#include "core/blocks/head.h"
 #include "core/area.h"
 #include "smb1_local_rom.h"
 #include <stdio.h>

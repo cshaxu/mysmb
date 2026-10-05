@@ -1,5 +1,5 @@
-#include "game/enemy/frenzy.h"
-#include "game/enemy/init_targets.h"
+#include "core/enemy/frenzy.h"
+#include "core/enemy/init_targets.h"
 #include <stdio.h>
 #include <string.h>
 

@@ -1,27 +1,27 @@
 # Project Status
 
-**Active: M3 T27 S5 P1.**
+**Active: M3 T27 S6 P1.**
 
-## M3 T27 S5 Packet
+## M3 T27 S6 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T27 S5 P1,continuation:remaining translated core cohorts. |
-| Admission And Approval | Owner-approved split/all pending-file submission;S4 source/binary/native/DOS preservation checks pass. |
-| Objective | Move141remaining translated files in3cohorts to core;rename runtime CMake target/list;retain all source bodies/state/dispatch and original semantics. |
-| Non-goals | Logic/table/PPU changes,authored text/receipt or validation moves before their S,performance work,new emulator,M2 certification. |
-| Reference Baseline | S4 path-normalized250source/header texts equal;26tests per width,DOS identical/every Windows section equal,actual DOSBox pass;historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81). |
-| Candidate Proposal | [T27 plan and S5 admission](../history/M3-T27-core-ppu-module-boundaries.md#s5-p1-admission---remaining-translated-core). |
-| Files And ABI Surface | Exact141files/3cohorts in proposal;200-300include/build/map consumers,400-1000path/target edits plus retained moves;no serialized ABI/state change. |
+| Identifier Mode | M3 T27 S6 P1,continuation:text/observation boundaries. |
+| Admission And Approval | Owner-approved split and automatic next-S execution;S5 preservation and operational checks pass. |
+| Objective | Move2core observation files and12authored text files;separate consumer/snapshot linkage with original decisions and output unchanged. |
+| Non-goals | Game/PPU logic,artwork,color,snapshot schema,devices,performance,M2 certification and S7 validation moves. |
+| Reference Baseline | S5 all250source/header texts path-equal,CMake membership equal;47tests per width,original DOS16/actual DOSBox pass. Historical1992/1992,local1991/1992nodes,4260/4261controls. |
+| Candidate Proposal | [T27 S6 admission](../history/M3-T27-core-ppu-module-boundaries.md#s6-p1-admission---authored-text-and-observation-boundary). |
+| Files And ABI Surface |14moves,40-100consumer files,100-250path/link/gate lines;capacity64,producer/visible phases,far layouts,5253wire bytes and schema1 unchanged. |
 | Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Document and source policy. |
-| Verification | Per-cohort exact source/body and portable compilation,source/registry rebinding,focused player/world/object/enemy/OAM/audio plus state/PPU/text/snapshot checks,DOS16/run,3products and gates. |
-| Expected Markers |1449maintenance labels in canonical ledger S5 scope;1448locally exact,CheckForEnemyGroup needs-evidence retained;new[],max1992/1992;accepted append-only transfers. |
-| Asset Needs | Existing local inputs only;ignored build/m3-t27-s5 evidence. Owner directs local commit of3already-tracked EXEs;no ROM/generated source/captures/publication. |
-| Reporting Requirements | Cohort components/size;closure exact disposition sets and totals,preservation vs operational proof,three EXEs/actual scale. |
-| Stop Conditions | No source body/order/table change,missing dependency or duplicate owner,no unresolved scoped state/pixel/snapshot diff. |
-| Exit Criteria |141moves/all callers and target bound,per-cohort proofs/final matrix pass,no new local conformance claim,3products and gates pass. |
-| Original Owner Request | Separate core/PPU/components while preserving original ROM/PPU semantics;review and submit all pending files. |
-| Similar-Issue Sweep | Generic shared owners,multi-file route paths,partial builds,CMake target/list identifiers,source hashes,receipt/snapshot and root consumers. |
+| Verification | Consumer/link inventory,normalized source/dependency proof,text/observation/state/pixel/snapshot checks,both widths,DOS16/actual Tab/restore/exit,3products and gates. |
+| Expected Markers | Scope/expected[],new0,max1992/1992;original writer custody stays S5;existing CheckForEnemyGroup gap remains. |
+| Asset Needs | Existing local inputs;ignored S6 build evidence. Owner authorizes local commit of3already-tracked EXEs;no ROM/generated source/captures/publication. |
+| Reporting Requirements | Begin components/size,end actual scale/3EXEs,zero-credit dispositions and overall node/control limits. |
+| Stop Conditions | No source content/state/wire diff,reverse core-to-text dependency or missing producer/consumer. |
+| Exit Criteria | Single core receipt owner,independent text consumer/codec,no authored text in core library,unchanged outputs/ABI and operational/gov gates pass. |
+| Original Owner Request | Component separation preserving original ROM/PPU semantics;review and submit all pending files. |
+| Similar-Issue Sweep | Observation calls/commit,enabled restoration,far scene/workspace,all codec callers and product/test/link consumers. |
 
 ## Current Technical Baseline
 
@@ -45,12 +45,12 @@
 
 ## Compact closure status
 
-T27 S2/S3/S4 preserve single PPU state,const-state pixels and24core-root/mode/
-area moves. S4 all250source/header texts path-equal,DOS binary identical,
-every Windows PE section equal;26tests per width and DOSBox restore/Tab/exit
-pass.246code/test/build edits,+366/-366;three products429963/319115/327787bytes.
-S5 admits141remaining core files in3cohorts,1449maintenance labels,new0;
-existing CheckForEnemyGroup evidence gap retained. [S4 scope and proof limits](../history/M3-T27-core-ppu-module-boundaries.md#s4-p2-closure---rootframemodearea-migration).
+T27 S2-S5 preserve single PPU state,const pixels and all165translated core
+file moves. S5 all250source/header texts and CMake membership path-equal;
+47tests per width,DOS16/actual DOSBox restore/Tab/exit pass.
+141moves,471code/test/build edits,+1680/-1680;new0,CheckForEnemyGroup gap retained.
+S6 admits core observation and authored text separation;T27 remains open.
+[S5 proof and S6 scope](../history/M3-T27-core-ppu-module-boundaries.md#s5-p2-closure---remaining-translated-core).
 
 T26 S2/T26 close by owner-directed remaining-work transfer:scoped compositor
 improvement and full640x400 DOS output retained;fixed-config nominal cadence

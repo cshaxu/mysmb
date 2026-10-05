@@ -1,5 +1,5 @@
-#include "game/oam/oam.h"
-#include "game/objects.h"
+#include "core/oam/oam.h"
+#include "core/objects.h"
 #include "core/frame_root.h"
 #include "core/area.h"
 #include "smb1_local_rom.h"

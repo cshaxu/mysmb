@@ -1,4 +1,4 @@
-#include "game/objects.h"
+#include "core/objects.h"
 #include <stdio.h>
 #include <string.h>
 static unsigned char expected[2048];

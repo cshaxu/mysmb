@@ -1,6 +1,6 @@
 #include "core/frame_root.h"
 #include "core/area.h"
-#include "game/player.h"
+#include "core/player.h"
 
 /* Palette callers must never enter player control. */
 void mysmb_player_step(struct mysmb_game *game, mysmb_u8 buttons)

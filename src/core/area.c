@@ -1,7 +1,7 @@
 #include "core/area.h"
-#include "game/player.h"
-#include "game/enemy/init.h"
-#include "game/objects.h"
+#include "core/player.h"
+#include "core/enemy/init.h"
+#include "core/objects.h"
 #include "core/status.h"
 #include "core/frame_root.h"
 

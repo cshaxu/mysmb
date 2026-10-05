@@ -1,5 +1,5 @@
 #include "core/game.h"
-#include "game/objects.h"
+#include "core/objects.h"
 #include <string.h>
 
 static const mysmb_u8 score_tiles[10] = {

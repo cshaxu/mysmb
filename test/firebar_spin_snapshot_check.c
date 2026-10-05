@@ -1,6 +1,6 @@
-#include "game/enemy/firebar.h"
-#include "game/objects.h"
-#include "game/oam/oam.h"
+#include "core/enemy/firebar.h"
+#include "core/objects.h"
+#include "core/oam/oam.h"
 #include <stdio.h>
 #include <string.h>
 mysmb_u8 mysmb_objects_get_enemy_offscreen_bits(const struct mysmb_game *g,mysmb_u8 s)

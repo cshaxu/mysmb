@@ -1,6 +1,6 @@
 #ifndef MYSMB_TEST_TERRAIN_ENTRY_H
 #define MYSMB_TEST_TERRAIN_ENTRY_H
-#include "game/player.h"
+#include "core/player.h"
 
 /* Direct HeadChk/DoFootCheck/DoPlayerSideCheck tests supply GBBAdr's
  * cursor and ChkOnScr's collision mask. Production initializes them once

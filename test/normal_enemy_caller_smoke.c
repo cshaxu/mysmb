@@ -1,8 +1,8 @@
-#include "game/enemy/core.h"
-#include "game/enemy/actor_slots.h"
-#include "game/enemy/movement.h"
-#include "game/objects.h"
-#include "game/oam/oam.h"
+#include "core/enemy/core.h"
+#include "core/enemy/actor_slots.h"
+#include "core/enemy/movement.h"
+#include "core/objects.h"
+#include "core/oam/oam.h"
 #include <string.h>
 
 static unsigned int events[12],count,bad,mutation;

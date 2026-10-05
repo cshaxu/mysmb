@@ -1,4 +1,4 @@
-#include "game/objects.h"
+#include "core/objects.h"
 #include <string.h>
 
 static void mysmb_test_prepare_enemy(struct mysmb_game *game, mysmb_u8 id,

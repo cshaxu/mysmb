@@ -1,7 +1,7 @@
-#include "game/world/world.h"
+#include "core/world/world.h"
 #include "core/area.h"
-#include "game/objects.h"
-#include "game/enemy/init_targets.h"
+#include "core/objects.h"
+#include "core/enemy/init_targets.h"
 #include "smb1_local_rom.h"
 #include <stdio.h>
 #include <string.h>

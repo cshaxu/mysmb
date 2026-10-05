@@ -1,5 +1,5 @@
 #include "core/game.h"
-#include "game/oam/oam.h"
+#include "core/oam/oam.h"
 #include <string.h>
 
 static int expect_rows(const struct mysmb_game *game, mysmb_u8 oam,

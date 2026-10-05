@@ -1,7 +1,7 @@
-#include "game/enemy/platform.h"
-#include "game/enemy/core.h"
-#include "game/objects.h"
-#include "game/oam/oam.h"
+#include "core/enemy/platform.h"
+#include "core/enemy/core.h"
+#include "core/objects.h"
+#include "core/oam/oam.h"
 #include <string.h>
 static unsigned int events[10],count,bad,mutation;
 static mysmb_u8 current_slot;

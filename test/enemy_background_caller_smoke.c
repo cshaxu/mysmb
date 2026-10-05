@@ -1,6 +1,6 @@
-#include "game/objects.h"
-#include "game/world/world.h"
-#include "game/enemy/background.h"
+#include "core/objects.h"
+#include "core/world/world.h"
+#include "core/enemy/background.h"
 #include <string.h>
 
 static unsigned int events[5],count,bad,query_result,tile_value,side_y,jump_phase;

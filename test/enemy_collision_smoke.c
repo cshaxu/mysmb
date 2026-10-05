@@ -1,6 +1,6 @@
 #include "core/game.h"
-#include "game/objects.h"
-#include "game/world/world.h"
+#include "core/objects.h"
+#include "core/world/world.h"
 #include <string.h>
 
 int main(void)

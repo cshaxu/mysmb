@@ -1,6 +1,6 @@
-#include "game/enemy/firebar.h"
-#include "game/enemy/actor_slots.h"
-#include "game/objects.h"
+#include "core/enemy/firebar.h"
+#include "core/enemy/actor_slots.h"
+#include "core/objects.h"
 #include <string.h>
 
 static unsigned char data[0x5000];

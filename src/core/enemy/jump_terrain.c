@@ -1,0 +1,24 @@
+#include "core/objects.h"
+#include "core/world/world.h"
+
+/* ROM $e163-$e182 EnemyJump/DoSide. Both normal-enemy and star callers
+ * reach this body. Existing terrain children retain separate proof status. */
+void mysmb_objects_step_enemy_jump_terrain(struct mysmb_game *game,
+                                           mysmb_u8 slot)
+{
+    struct mysmb_enemy_terrain terrain;
+    mysmb_u8 tile;
+
+    /* SubtEnemyYPos compares the wrapped ADC byte, not a host-width sum. */
+    if ((mysmb_u8)(game->ram[0x00cfU + slot] + 0x3eU) >= 0x44U &&
+        (mysmb_u8)(game->ram[0x00a0U + slot] + 2U) >= 3U) {
+        tile = mysmb_world_query_enemy_under(game, slot, &terrain) != 0U ?
+            terrain.metatile : 0U;
+        if (tile != 0U && mysmb_objects_is_solid_terrain(tile) != 0U) {
+            mysmb_world_land_enemy(game, slot);
+            game->ram[0x00a0U + slot] = 0xfdU;
+        }
+    }
+    mysmb_objects_check_enemy_side(game, slot);
+}
+

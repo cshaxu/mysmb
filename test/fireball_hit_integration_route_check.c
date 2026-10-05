@@ -1,6 +1,6 @@
-#include "game/world/world.h"
-#include "game/enemy/actor_slots.h"
-#include "game/oam/oam.h"
+#include "core/world/world.h"
+#include "core/enemy/actor_slots.h"
+#include "core/oam/oam.h"
 #include <stdio.h>
 #include <string.h>
 int main(int argc,char **argv)

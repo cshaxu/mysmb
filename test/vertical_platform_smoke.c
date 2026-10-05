@@ -1,5 +1,5 @@
-#include "game/enemy/platform.h"
-#include "game/world/world.h"
+#include "core/enemy/platform.h"
+#include "core/world/world.h"
 #include <stdio.h>
 #include <string.h>
 static unsigned int moves,placements,failures,cases;

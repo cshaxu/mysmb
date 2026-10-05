@@ -1,5 +1,5 @@
 #include "core/dispatcher.h"
-#include "game/world/world.h"
+#include "core/world/world.h"
 #include <string.h>
 
 static unsigned int gravity_calls;

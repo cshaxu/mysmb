@@ -1,4 +1,4 @@
-#include "game/player.h"
+#include "core/player.h"
 #include <stdio.h>
 #include <string.h>
 static unsigned int failures, auto_calls, scroll_calls, mutate, expected_y;

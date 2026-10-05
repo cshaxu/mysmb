@@ -1,6 +1,6 @@
-#include "game/enemy/actor_slots.h"
-#include "game/enemy/movement.h"
-#include "game/world/world.h"
+#include "core/enemy/actor_slots.h"
+#include "core/enemy/movement.h"
+#include "core/world/world.h"
 #include "smb1_local_rom.h"
 #include <stdio.h>
 #include <string.h>

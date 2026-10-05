@@ -1,7 +1,7 @@
 #include "core/dispatcher.h"
-#include "game/enemy/core.h"
-#include "game/fireball/fireball.h"
-#include "game/objects.h"
+#include "core/enemy/core.h"
+#include "core/fireball/fireball.h"
+#include "core/objects.h"
 
 /* ROM $aefe-$af0f: ProcFireball_Bubble followed by ProcELoop. The caller
  * owns X=0..5 and the ObjectOffset store before each enemy/floatey pair. */

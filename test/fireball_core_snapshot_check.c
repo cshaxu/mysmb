@@ -1,7 +1,7 @@
-#include "game/fireball/fireball.h"
+#include "core/fireball/fireball.h"
 #include "core/frame_root.h"
-#include "game/world/world.h"
-#include "game/oam/oam.h"
+#include "core/world/world.h"
+#include "core/oam/oam.h"
 #include "core/area.h"
 #include "smb1_local_rom.h"
 #include <stdio.h>

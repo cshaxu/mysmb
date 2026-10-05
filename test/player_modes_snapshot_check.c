@@ -1,4 +1,4 @@
-#include "game/player.h"
+#include "core/player.h"
 #include <stdio.h>
 #include <string.h>
 #ifndef MYSMB_CALLER_CHECK

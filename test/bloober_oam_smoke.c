@@ -1,4 +1,4 @@
-#include "game/objects.h"
+#include "core/objects.h"
 
 static int test_bytes(const struct mysmb_game *game, const mysmb_u8 *expected)
 {

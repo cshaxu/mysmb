@@ -1,4 +1,4 @@
-#include "game/world/world.h"
+#include "core/world/world.h"
 
 static int check_box(const struct mysmb_game *game, mysmb_u16 address,
                      mysmb_u8 left, mysmb_u8 top,

@@ -1,4 +1,4 @@
-#include "game/oam/oam.h"
+#include "core/oam/oam.h"
 #include <stdio.h>
 #include <string.h>
 static struct mysmb_game game;

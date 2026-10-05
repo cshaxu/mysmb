@@ -1,4 +1,4 @@
-#include "game/objects.h"
+#include "core/objects.h"
 #include "core/area.h"
 #include <stdio.h>
 #include <string.h>

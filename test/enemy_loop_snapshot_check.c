@@ -1,9 +1,9 @@
-#include "game/enemy/loop.h"
-#include "game/enemy/core.h"
-#include "game/enemy/actor_slots.h"
-#include "game/objects.h"
-#include "game/enemy/stream.h"
-#include "game/enemy/init.h"
+#include "core/enemy/loop.h"
+#include "core/enemy/core.h"
+#include "core/enemy/actor_slots.h"
+#include "core/objects.h"
+#include "core/enemy/stream.h"
+#include "core/enemy/init.h"
 #include <stdio.h>
 #include <string.h>
 

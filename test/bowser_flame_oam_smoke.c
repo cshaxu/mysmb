@@ -1,6 +1,6 @@
 #include "core/game.h"
-#include "game/objects.h"
-#include "game/oam/oam.h"
+#include "core/objects.h"
+#include "core/oam/oam.h"
 
 int main(void)
 {

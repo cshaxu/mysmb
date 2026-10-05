@@ -1,5 +1,5 @@
-#include "game/enemy/x_counter.h"
-#include "game/enemy/actor_slots.h"
+#include "core/enemy/x_counter.h"
+#include "core/enemy/actor_slots.h"
 #include <stdio.h>
 #include <string.h>
 int main(int argc,char **argv)

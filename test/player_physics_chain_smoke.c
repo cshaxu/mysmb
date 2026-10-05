@@ -1,4 +1,4 @@
-#include "game/player.h"
+#include "core/player.h"
 #include <string.h>
 
 int main(void)

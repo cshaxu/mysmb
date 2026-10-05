@@ -3,8 +3,8 @@
 ## Current And Target Trees
 
 ```text
-src/core/       original RAM container,root/NMI/frame/mode/area/status logic
-src/game/       remaining translated routines/text/test projections in active T27
+src/core/       all translated ROM logic,RAM,OAM/APU writers;observation moves in S6
+src/game/       text/observation/test projections pending S6/S7
 src/ppu/        neutral addressed/visible state and read-only shared pixel compositor
 src/io/         neutral controller/video/audio/text contracts and glyph IDs
 src/app/        public game-to-IO composition glue; no gameplay/device policy
@@ -83,7 +83,7 @@ replacement and device-reset services. Only roots connect these owners.
 ## T27 migration checkpoint
 
 PPU storage is one embedded ppu/state object;CPU RAM,source decisions and NMI
-startup guard now live in core;remaining routines follow their admitted move. The DMA primitive
+startup guard now live in core;all translated routines are now core;observation follows S6. The DMA primitive
 borrows the original CPU OAM span;its caller keeps commit timing and receipt
 order. app snapshot binds the same numeric fields in the same byte order.
 The independent ppu/frame target consumes only const PPU state and neutral IO

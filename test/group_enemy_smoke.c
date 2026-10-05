@@ -1,4 +1,4 @@
-#include "game/enemy/group.h"
+#include "core/enemy/group.h"
 #include <stdio.h>
 #include <string.h>
 

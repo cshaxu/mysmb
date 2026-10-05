@@ -1,5 +1,5 @@
-#include "game/world/world.h"
-#include "game/enemy/movement.h"
+#include "core/world/world.h"
+#include "core/enemy/movement.h"
 
 int main(void)
 {

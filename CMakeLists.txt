@@ -13,73 +13,73 @@ set(MYSMB_ASM_PATH "" CACHE FILEPATH "Owner-local reviewed SMBDIS listing")
 set(MYSMB_OPENNT_CL16 "" CACHE FILEPATH "Owner-local OpenNT 16-bit cl16.exe")
 set(MYSMB_DOS_RUNTIME_DIR "" CACHE PATH "Owner-local reviewed 16-bit large-model runtime directory")
 
-set(MYSMB_GAME_SOURCES src/core/boot.c src/core/dispatcher.c src/core/engine.c src/core/engine_slots.c src/core/engine_tail.c src/core/frame_root.c src/core/title_modes.c src/core/terminal_modes.c src/core/game.c src/game/audio.c src/core/area.c src/core/status.c src/core/area/block_metatile.c src/game/enemy/stream.c src/game/enemy/group.c src/game/enemy/init.c src/game/enemy/init_targets.c src/game/enemy/loop.c src/game/enemy/core.c src/game/enemy/dispatch_targets.c src/game/enemy/movement.c src/game/enemy/frenzy.c src/game/player.c src/game/objects.c src/game/fireball/fireball_spawn.c src/game/fireball/fireball_core.c src/game/world/movement.c src/game/world/gravity.c src/game/world/collision.c src/game/world/block_buffer.c src/game/world/bounding_box.c src/game/world/geometry.c src/game/bridge.c src/game/oam/bullet_bill_gfx.c src/game/oam/hammer_gfx.c src/game/oam/firebar_gfx.c src/game/oam/vine_gfx.c src/game/oam/sprite_stacker.c src/game/oam/sprite_dump.c src/game/enemy_bounds.c src/game/oam/power_up_gfx.c src/game/oam/object_position.c src/game/oam/sprite_row.c src/game/oam/player_gfx.c src/game/oam/fireball_gfx.c src/game/oam/block_gfx.c src/game/oam/goomba_gfx.c src/game/fireball/bubble.c src/game/oam/piranha_gfx.c src/game/oam/cheep_gfx.c src/game/oam/bloober_gfx.c src/game/oam/podoboo_gfx.c src/game/oam/normal_enemy_gfx.c src/game/oam/spiny_gfx.c src/game/oam/hammer_bro_gfx.c src/game/oam/bowser_gfx.c src/game/oam/bowser_flame_gfx.c src/game/endgame_objects.c src/game/oam/flagpole_gfx.c src/game/oam/small_platform_gfx.c src/game/render.c src/game/frame_snapshot.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/oam/enemy_offscreen.c src/game/oam/sprite_draw.c src/game/oam/block_offscreen.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/player/terrain.c src/game/player/terrain_metatiles.c src/game/player/climbing.c src/game/player/pipe_entry.c src/game/player/impede.c src/game/world/metatiles.c)
-list(APPEND MYSMB_GAME_SOURCES src/core/area/block_buffer.c)
-list(APPEND MYSMB_GAME_SOURCES src/core/area/area_data.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/whirlpool.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/cannon.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/timer.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/jumpspring.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/vine.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/hammer.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/coin.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/misc.c src/game/score.c src/game/power_up_init.c src/game/power_up.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/blocks/head.c src/game/blocks/bump.c src/game/blocks/chunks.c src/game/blocks/lifetime.c src/game/blocks/replacement.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/lifecycle.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/normal.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/special_callers.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/platform_callers.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/podoboo.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/hammer_bro.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/paratroopa.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/x_counter.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/green_paratroopa.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/bloober.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/bullet_bill.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/swimming_cheep.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/firebar.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/flying_cheep.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/lakitu.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/bowser.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/bowser_flame.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/fireworks.c src/game/oam/fireworks_gfx.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/star_flag.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/piranha.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/balance_platform.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/platform.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/actor_slots.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/world/fireball_enemy.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/world/fireball_hit.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/world/hammer_collision.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/world/powerup_collision.c src/game/world/player_enemy_collision.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/world/enemy_collision.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/platform_collision.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/platform_position.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/firebar_children.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/distance.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/background.c src/game/enemy/jump_terrain.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/enemy/side_collision.c)
-list(APPEND MYSMB_GAME_SOURCES src/core/scroll.c)
-list(APPEND MYSMB_GAME_SOURCES src/core/entry.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/player_control.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/player_transition.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/player_modes.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/player_end_level.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/player_movement.c)
-list(APPEND MYSMB_GAME_SOURCES src/game/presentation/text/observation.c
+set(MYSMB_CORE_SOURCES src/core/boot.c src/core/dispatcher.c src/core/engine.c src/core/engine_slots.c src/core/engine_tail.c src/core/frame_root.c src/core/title_modes.c src/core/terminal_modes.c src/core/game.c src/core/audio.c src/core/area.c src/core/status.c src/core/area/block_metatile.c src/core/enemy/stream.c src/core/enemy/group.c src/core/enemy/init.c src/core/enemy/init_targets.c src/core/enemy/loop.c src/core/enemy/core.c src/core/enemy/dispatch_targets.c src/core/enemy/movement.c src/core/enemy/frenzy.c src/core/player.c src/core/objects.c src/core/fireball/fireball_spawn.c src/core/fireball/fireball_core.c src/core/world/movement.c src/core/world/gravity.c src/core/world/collision.c src/core/world/block_buffer.c src/core/world/bounding_box.c src/core/world/geometry.c src/core/bridge.c src/core/oam/bullet_bill_gfx.c src/core/oam/hammer_gfx.c src/core/oam/firebar_gfx.c src/core/oam/vine_gfx.c src/core/oam/sprite_stacker.c src/core/oam/sprite_dump.c src/core/enemy_bounds.c src/core/oam/power_up_gfx.c src/core/oam/object_position.c src/core/oam/sprite_row.c src/core/oam/player_gfx.c src/core/oam/fireball_gfx.c src/core/oam/block_gfx.c src/core/oam/goomba_gfx.c src/core/fireball/bubble.c src/core/oam/piranha_gfx.c src/core/oam/cheep_gfx.c src/core/oam/bloober_gfx.c src/core/oam/podoboo_gfx.c src/core/oam/normal_enemy_gfx.c src/core/oam/spiny_gfx.c src/core/oam/hammer_bro_gfx.c src/core/oam/bowser_gfx.c src/core/oam/bowser_flame_gfx.c src/core/endgame_objects.c src/core/oam/flagpole_gfx.c src/core/oam/small_platform_gfx.c src/game/render.c src/game/frame_snapshot.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/oam/enemy_offscreen.c src/core/oam/sprite_draw.c src/core/oam/block_offscreen.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/player/terrain.c src/core/player/terrain_metatiles.c src/core/player/climbing.c src/core/player/pipe_entry.c src/core/player/impede.c src/core/world/metatiles.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/area/block_buffer.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/area/area_data.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/whirlpool.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/cannon.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/timer.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/jumpspring.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/vine.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/hammer.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/coin.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/misc.c src/core/score.c src/core/power_up_init.c src/core/power_up.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/blocks/head.c src/core/blocks/bump.c src/core/blocks/chunks.c src/core/blocks/lifetime.c src/core/blocks/replacement.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/lifecycle.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/normal.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/special_callers.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/platform_callers.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/podoboo.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/hammer_bro.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/paratroopa.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/x_counter.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/green_paratroopa.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/bloober.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/bullet_bill.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/swimming_cheep.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/firebar.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/flying_cheep.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/lakitu.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/bowser.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/bowser_flame.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/fireworks.c src/core/oam/fireworks_gfx.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/star_flag.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/piranha.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/balance_platform.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/platform.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/actor_slots.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/world/fireball_enemy.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/world/fireball_hit.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/world/hammer_collision.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/world/powerup_collision.c src/core/world/player_enemy_collision.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/world/enemy_collision.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/platform_collision.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/platform_position.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/firebar_children.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/distance.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/background.c src/core/enemy/jump_terrain.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/enemy/side_collision.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/scroll.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/entry.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/player_control.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/player_transition.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/player_modes.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/player_end_level.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/player_movement.c)
+list(APPEND MYSMB_CORE_SOURCES src/game/presentation/text/observation.c
     src/game/presentation/text/observer_snapshot.c)
 add_library(mysmb_ppu_frame STATIC src/ppu/frame.c)
 target_include_directories(mysmb_ppu_frame PUBLIC src)
 add_library(mysmb_ppu_state STATIC src/ppu/state.c)
 target_include_directories(mysmb_ppu_state PUBLIC src)
-add_library(mysmb_game STATIC ${MYSMB_GAME_SOURCES})
-target_link_libraries(mysmb_game PUBLIC mysmb_ppu_state)
+add_library(mysmb_core STATIC ${MYSMB_CORE_SOURCES})
+target_link_libraries(mysmb_core PUBLIC mysmb_ppu_state)
 add_executable(mysmb_ppu_state_smoke test/ppu_state_smoke.c)
 target_link_libraries(mysmb_ppu_state_smoke PRIVATE mysmb_ppu_state)
 add_test(NAME mysmb.ppu-state-smoke COMMAND mysmb_ppu_state_smoke)
-target_include_directories(mysmb_game PUBLIC src)
+target_include_directories(mysmb_core PUBLIC src)
 
 # Composition glue depends only on public game output and neutral contracts.
 add_library(mysmb_game_io STATIC src/app/game_io.c)
@@ -106,7 +106,7 @@ add_test(NAME mysmb.snapshot-storage-smoke COMMAND mysmb_snapshot_storage_smoke
     "${CMAKE_BINARY_DIR}/snapshot-storage-test")
 add_library(mysmb_game_snapshot STATIC src/app/game_snapshot.c)
 target_include_directories(mysmb_game_snapshot PUBLIC src)
-target_link_libraries(mysmb_game_snapshot PUBLIC mysmb_io_snapshot mysmb_game)
+target_link_libraries(mysmb_game_snapshot PUBLIC mysmb_io_snapshot mysmb_core)
 add_executable(mysmb_game_snapshot_smoke test/game_snapshot_smoke.c)
 target_link_libraries(mysmb_game_snapshot_smoke PRIVATE mysmb_game_snapshot mysmb_ppu_frame)
 add_test(NAME mysmb.game-snapshot-smoke COMMAND mysmb_game_snapshot_smoke)
@@ -140,181 +140,181 @@ endif()
 add_test(NAME mysmb.io-contract-smoke COMMAND mysmb_io_contract_smoke)
 
 if(MSVC)
-    target_compile_options(mysmb_game PRIVATE /W4 /WX)
+    target_compile_options(mysmb_core PRIVATE /W4 /WX)
 else()
-    target_compile_options(mysmb_game PRIVATE -Wall -Wextra -Werror -pedantic)
+    target_compile_options(mysmb_core PRIVATE -Wall -Wextra -Werror -pedantic)
 endif()
 
 add_executable(mysmb_core_smoke test/core_smoke.c)
-target_link_libraries(mysmb_core_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_core_smoke PRIVATE mysmb_core)
 add_executable(mysmb_ram_cold_start_smoke test/ram_cold_start_smoke.c)
-target_link_libraries(mysmb_ram_cold_start_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_ram_cold_start_smoke PRIVATE mysmb_core)
 add_executable(mysmb_reset_root_smoke test/reset_root_smoke.c)
-target_link_libraries(mysmb_reset_root_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_reset_root_smoke PRIVATE mysmb_core)
 add_executable(mysmb_boot_nmi_boundary_smoke test/boot_nmi_boundary_smoke.c)
-target_link_libraries(mysmb_boot_nmi_boundary_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_boot_nmi_boundary_smoke PRIVATE mysmb_core)
 add_executable(mysmb_nmi_parent_integration_check
     test/nmi_parent_integration_check.c)
-target_link_libraries(mysmb_nmi_parent_integration_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_nmi_parent_integration_check PRIVATE mysmb_core)
 add_executable(mysmb_name_table_init_smoke test/name_table_init_smoke.c)
-target_link_libraries(mysmb_name_table_init_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_name_table_init_smoke PRIVATE mysmb_core)
 add_executable(mysmb_vram_address_table_smoke test/vram_address_table_smoke.c)
-target_link_libraries(mysmb_vram_address_table_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_vram_address_table_smoke PRIVATE mysmb_core)
 add_executable(mysmb_joypad_vram_chain_smoke test/joypad_vram_chain_smoke.c)
-target_link_libraries(mysmb_joypad_vram_chain_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_joypad_vram_chain_smoke PRIVATE mysmb_core)
 add_executable(mysmb_pseudorandom_smoke test/pseudorandom_smoke.c)
-target_link_libraries(mysmb_pseudorandom_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_pseudorandom_smoke PRIVATE mysmb_core)
 add_executable(mysmb_timer_root_smoke test/timer_root_smoke.c)
-target_link_libraries(mysmb_timer_root_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_timer_root_smoke PRIVATE mysmb_core)
 add_executable(mysmb_pause_root_smoke test/pause_root_smoke.c)
-target_link_libraries(mysmb_pause_root_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_pause_root_smoke PRIVATE mysmb_core)
 add_executable(mysmb_sprite_root_smoke test/sprite_root_smoke.c)
-target_link_libraries(mysmb_sprite_root_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_sprite_root_smoke PRIVATE mysmb_core)
 add_executable(mysmb_top_score_root_smoke test/top_score_root_smoke.c)
-target_link_libraries(mysmb_top_score_root_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_top_score_root_smoke PRIVATE mysmb_core)
 add_executable(mysmb_status_arithmetic_smoke test/status_arithmetic_smoke.c)
-target_link_libraries(mysmb_status_arithmetic_smoke PRIVATE mysmb_game)
-target_link_libraries(mysmb_pseudorandom_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_status_arithmetic_smoke PRIVATE mysmb_core)
+target_link_libraries(mysmb_pseudorandom_smoke PRIVATE mysmb_core)
 add_executable(mysmb_area_music_smoke test/area_music_smoke.c)
-target_link_libraries(mysmb_area_music_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_area_music_smoke PRIVATE mysmb_core)
 add_executable(mysmb_area_entry_smoke test/area_entry_smoke.c)
-target_link_libraries(mysmb_area_entry_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_area_entry_smoke PRIVATE mysmb_core)
 add_executable(mysmb_music_header_smoke test/music_header_smoke.c)
-target_link_libraries(mysmb_music_header_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_music_header_smoke PRIVATE mysmb_core)
 add_executable(mysmb_area_parser_column_smoke test/area_parser_column_smoke.c)
-target_link_libraries(mysmb_area_parser_column_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_area_parser_column_smoke PRIVATE mysmb_core)
 add_executable(mysmb_area_parser_terminal_slot_smoke test/area_parser_terminal_slot_smoke.c)
-target_link_libraries(mysmb_area_parser_terminal_slot_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_area_parser_terminal_slot_smoke PRIVATE mysmb_core)
 add_executable(mysmb_area_special_object_smoke test/area_special_object_smoke.c)
-target_link_libraries(mysmb_area_special_object_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_area_special_object_smoke PRIVATE mysmb_core)
 add_executable(mysmb_area_rope_object_smoke test/area_rope_object_smoke.c)
-target_link_libraries(mysmb_area_rope_object_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_area_rope_object_smoke PRIVATE mysmb_core)
 add_executable(mysmb_area_coin_row_smoke test/area_coin_row_smoke.c)
-target_link_libraries(mysmb_area_coin_row_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_area_coin_row_smoke PRIVATE mysmb_core)
 add_executable(mysmb_area_castle_column_smoke test/area_castle_column_smoke.c)
-target_link_libraries(mysmb_area_castle_column_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_area_castle_column_smoke PRIVATE mysmb_core)
 add_executable(mysmb_area_block_row_column_smoke test/area_block_row_column_smoke.c)
-target_link_libraries(mysmb_area_block_row_column_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_area_block_row_column_smoke PRIVATE mysmb_core)
 add_executable(mysmb_area_cannon_smoke test/area_cannon_smoke.c)
-target_link_libraries(mysmb_area_cannon_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_area_cannon_smoke PRIVATE mysmb_core)
 add_executable(mysmb_area_staircase_smoke test/area_staircase_smoke.c)
-target_link_libraries(mysmb_area_staircase_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_area_staircase_smoke PRIVATE mysmb_core)
 add_executable(mysmb_area_jumpspring_smoke test/area_jumpspring_smoke.c)
-target_link_libraries(mysmb_area_jumpspring_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_area_jumpspring_smoke PRIVATE mysmb_core)
 add_executable(mysmb_area_item_block_smoke test/area_item_block_smoke.c)
-target_link_libraries(mysmb_area_item_block_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_area_item_block_smoke PRIVATE mysmb_core)
 add_executable(mysmb_area_pipe_tail_smoke test/area_pipe_tail_smoke.c)
-target_link_libraries(mysmb_area_pipe_tail_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_area_pipe_tail_smoke PRIVATE mysmb_core)
 add_executable(mysmb_area_block_address_smoke test/area_block_address_smoke.c)
-target_link_libraries(mysmb_area_block_address_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_area_block_address_smoke PRIVATE mysmb_core)
 add_executable(mysmb_block_buffer_core_smoke test/block_buffer_core_smoke.c)
-target_link_libraries(mysmb_block_buffer_core_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_block_buffer_core_smoke PRIVATE mysmb_core)
 add_executable(mysmb_area_parser_boundary_smoke test/area_parser_boundary_smoke.c)
-target_link_libraries(mysmb_area_parser_boundary_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_area_parser_boundary_smoke PRIVATE mysmb_core)
 add_executable(mysmb_area_loop_command_smoke test/area_loop_command_smoke.c)
-target_link_libraries(mysmb_area_loop_command_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_area_loop_command_smoke PRIVATE mysmb_core)
 add_executable(mysmb_game_entry_dispatch_smoke test/game_entry_dispatch_smoke.c src/core/dispatcher.c)
 target_include_directories(mysmb_game_entry_dispatch_smoke PRIVATE src)
 add_executable(mysmb_engine_caller_smoke test/engine_caller_smoke.c src/core/engine.c)
 target_include_directories(mysmb_engine_caller_smoke PRIVATE src)
-add_executable(mysmb_engine_tail_smoke test/engine_tail_smoke.c src/core/engine_tail.c src/game/player_modes.c)
+add_executable(mysmb_engine_tail_smoke test/engine_tail_smoke.c src/core/engine_tail.c src/core/player_modes.c)
 target_include_directories(mysmb_engine_tail_smoke PRIVATE src)
 add_executable(mysmb_engine_slots_smoke test/engine_slots_smoke.c src/core/engine_slots.c)
 target_include_directories(mysmb_engine_slots_smoke PRIVATE src)
-add_executable(mysmb_engine_environment_smoke test/engine_environment_smoke.c src/game/whirlpool.c)
+add_executable(mysmb_engine_environment_smoke test/engine_environment_smoke.c src/core/whirlpool.c)
 target_include_directories(mysmb_engine_environment_smoke PRIVATE src)
-add_executable(mysmb_cannon_smoke test/cannon_smoke.c src/game/cannon.c)
+add_executable(mysmb_cannon_smoke test/cannon_smoke.c src/core/cannon.c)
 target_include_directories(mysmb_cannon_smoke PRIVATE src)
-add_executable(mysmb_cannon_children_smoke test/cannon_children_smoke.c src/game/enemy/core.c src/game/enemy/lifecycle.c src/game/oam/bullet_bill_gfx.c)
+add_executable(mysmb_cannon_children_smoke test/cannon_children_smoke.c src/core/enemy/core.c src/core/enemy/lifecycle.c src/core/oam/bullet_bill_gfx.c)
 target_include_directories(mysmb_cannon_children_smoke PRIVATE src)
-add_executable(mysmb_enemy_dispatch_smoke test/enemy_dispatch_smoke.c src/game/enemy/core.c src/game/enemy/lifecycle.c)
+add_executable(mysmb_enemy_dispatch_smoke test/enemy_dispatch_smoke.c src/core/enemy/core.c src/core/enemy/lifecycle.c)
 target_include_directories(mysmb_enemy_dispatch_smoke PRIVATE src)
-add_executable(mysmb_enemy_loop_smoke test/enemy_loop_smoke.c src/game/enemy/loop.c)
+add_executable(mysmb_enemy_loop_smoke test/enemy_loop_smoke.c src/core/enemy/loop.c)
 target_include_directories(mysmb_enemy_loop_smoke PRIVATE src)
-add_executable(mysmb_normal_enemy_movement_smoke test/normal_enemy_movement_smoke.c src/game/enemy/movement.c src/game/world/gravity.c)
+add_executable(mysmb_normal_enemy_movement_smoke test/normal_enemy_movement_smoke.c src/core/enemy/movement.c src/core/world/gravity.c)
 target_include_directories(mysmb_normal_enemy_movement_smoke PRIVATE src)
-add_executable(mysmb_normal_enemy_caller_smoke test/normal_enemy_caller_smoke.c src/game/enemy/normal.c)
+add_executable(mysmb_normal_enemy_caller_smoke test/normal_enemy_caller_smoke.c src/core/enemy/normal.c)
 target_include_directories(mysmb_normal_enemy_caller_smoke PRIVATE src)
-add_executable(mysmb_enemy_background_caller_smoke test/enemy_background_caller_smoke.c src/game/enemy/background.c src/game/enemy/jump_terrain.c src/game/enemy/distance.c)
+add_executable(mysmb_enemy_background_caller_smoke test/enemy_background_caller_smoke.c src/core/enemy/background.c src/core/enemy/jump_terrain.c src/core/enemy/distance.c)
 target_include_directories(mysmb_enemy_background_caller_smoke PRIVATE src)
-add_executable(mysmb_enemy_side_caller_smoke test/enemy_side_caller_smoke.c src/game/enemy/side_collision.c)
+add_executable(mysmb_enemy_side_caller_smoke test/enemy_side_caller_smoke.c src/core/enemy/side_collision.c)
 target_include_directories(mysmb_enemy_side_caller_smoke PRIVATE src)
 add_executable(mysmb_area_helper_smoke test/area_helper_smoke.c)
-target_link_libraries(mysmb_area_helper_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_area_helper_smoke PRIVATE mysmb_core)
 add_executable(mysmb_area_hole_underpart_smoke test/area_hole_underpart_smoke.c)
-target_link_libraries(mysmb_area_hole_underpart_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_area_hole_underpart_smoke PRIVATE mysmb_core)
 add_executable(mysmb_area_initialize_smoke test/area_initialize_smoke.c)
-target_link_libraries(mysmb_area_initialize_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_area_initialize_smoke PRIVATE mysmb_core)
 add_executable(mysmb_enemy_stream_smoke test/enemy_stream_smoke.c)
-target_link_libraries(mysmb_enemy_stream_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_enemy_stream_smoke PRIVATE mysmb_core)
 add_executable(mysmb_enemy_no_init_smoke test/enemy_no_init_smoke.c)
-target_link_libraries(mysmb_enemy_no_init_smoke PRIVATE mysmb_game)
-add_executable(mysmb_enemy_init_handoff_smoke test/enemy_init_handoff_smoke.c src/game/enemy/init.c)
+target_link_libraries(mysmb_enemy_no_init_smoke PRIVATE mysmb_core)
+add_executable(mysmb_enemy_init_handoff_smoke test/enemy_init_handoff_smoke.c src/core/enemy/init.c)
 target_include_directories(mysmb_enemy_init_handoff_smoke PRIVATE src)
-add_executable(mysmb_enemy_init_snapshot_check test/enemy_init_snapshot_check.c src/game/enemy/init.c)
+add_executable(mysmb_enemy_init_snapshot_check test/enemy_init_snapshot_check.c src/core/enemy/init.c)
 target_include_directories(mysmb_enemy_init_snapshot_check PRIVATE src)
-add_executable(mysmb_enemy_common_init_smoke test/enemy_common_init_smoke.c src/game/enemy/init_targets.c src/game/enemy/lifecycle.c)
+add_executable(mysmb_enemy_common_init_smoke test/enemy_common_init_smoke.c src/core/enemy/init_targets.c src/core/enemy/lifecycle.c)
 target_include_directories(mysmb_enemy_common_init_smoke PRIVATE src)
 add_executable(mysmb_lakitu_spiny_chain_smoke test/lakitu_spiny_chain_smoke.c)
-target_link_libraries(mysmb_lakitu_spiny_chain_smoke PRIVATE mysmb_game)
-add_executable(mysmb_firebar_initialization_smoke test/firebar_initialization_smoke.c src/game/enemy/init_targets.c src/game/enemy/lifecycle.c)
+target_link_libraries(mysmb_lakitu_spiny_chain_smoke PRIVATE mysmb_core)
+add_executable(mysmb_firebar_initialization_smoke test/firebar_initialization_smoke.c src/core/enemy/init_targets.c src/core/enemy/lifecycle.c)
 target_include_directories(mysmb_firebar_initialization_smoke PRIVATE src)
 add_executable(mysmb_flying_fish_initialization_smoke test/flying_fish_initialization_smoke.c)
-target_link_libraries(mysmb_flying_fish_initialization_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_flying_fish_initialization_smoke PRIVATE mysmb_core)
 add_executable(mysmb_bowser_flame_initialization_smoke test/bowser_flame_initialization_smoke.c)
-target_link_libraries(mysmb_bowser_flame_initialization_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_bowser_flame_initialization_smoke PRIVATE mysmb_core)
 add_executable(mysmb_fireworks_initialization_smoke test/fireworks_initialization_smoke.c)
-target_link_libraries(mysmb_fireworks_initialization_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_fireworks_initialization_smoke PRIVATE mysmb_core)
 add_executable(mysmb_bullet_swimming_fish_smoke test/bullet_swimming_fish_smoke.c)
-target_link_libraries(mysmb_bullet_swimming_fish_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_bullet_swimming_fish_smoke PRIVATE mysmb_core)
 add_executable(mysmb_group_enemy_smoke test/group_enemy_smoke.c)
-target_link_libraries(mysmb_group_enemy_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_group_enemy_smoke PRIVATE mysmb_core)
 add_executable(mysmb_small_initializers_smoke test/small_initializers_smoke.c)
-target_link_libraries(mysmb_small_initializers_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_small_initializers_smoke PRIVATE mysmb_core)
 add_executable(mysmb_platform_initialization_smoke test/platform_initialization_smoke.c)
-target_link_libraries(mysmb_platform_initialization_smoke PRIVATE mysmb_game)
-add_executable(mysmb_retainer_call_chain_smoke test/retainer_call_chain_smoke.c src/game/enemy/dispatch_targets.c)
-add_executable(mysmb_podoboo_movement_smoke test/podoboo_movement_smoke.c src/game/enemy/podoboo.c)
-add_executable(mysmb_hammer_movement_caller_smoke test/hammer_movement_caller_smoke.c src/game/enemy/hammer_bro.c)
-add_executable(mysmb_paratroopa_movement_smoke test/paratroopa_movement_smoke.c src/game/enemy/paratroopa.c)
-add_executable(mysmb_green_counter_smoke test/green_counter_smoke.c src/game/enemy/green_paratroopa.c src/game/enemy/x_counter.c)
-add_executable(mysmb_bloober_movement_smoke test/bloober_movement_smoke.c src/game/enemy/bloober.c src/game/enemy/distance.c)
-add_executable(mysmb_bullet_movement_smoke test/bullet_movement_smoke.c src/game/enemy/bullet_bill.c)
-add_executable(mysmb_swimming_cheep_movement_smoke test/swimming_cheep_movement_smoke.c src/game/enemy/swimming_cheep.c)
-add_executable(mysmb_firebar_chain_smoke test/firebar_chain_smoke.c src/game/enemy/firebar.c)
-add_executable(mysmb_lakitu_movement_smoke test/lakitu_movement_smoke.c src/game/enemy/lakitu.c)
-add_executable(mysmb_bridge_collapse_smoke test/bridge_collapse_smoke.c src/game/bridge.c)
-add_executable(mysmb_bowser_control_smoke test/bowser_control_smoke.c src/game/enemy/bowser.c)
-add_executable(mysmb_bowser_graphics_smoke test/bowser_graphics_smoke.c src/game/oam/bowser_gfx.c)
+target_link_libraries(mysmb_platform_initialization_smoke PRIVATE mysmb_core)
+add_executable(mysmb_retainer_call_chain_smoke test/retainer_call_chain_smoke.c src/core/enemy/dispatch_targets.c)
+add_executable(mysmb_podoboo_movement_smoke test/podoboo_movement_smoke.c src/core/enemy/podoboo.c)
+add_executable(mysmb_hammer_movement_caller_smoke test/hammer_movement_caller_smoke.c src/core/enemy/hammer_bro.c)
+add_executable(mysmb_paratroopa_movement_smoke test/paratroopa_movement_smoke.c src/core/enemy/paratroopa.c)
+add_executable(mysmb_green_counter_smoke test/green_counter_smoke.c src/core/enemy/green_paratroopa.c src/core/enemy/x_counter.c)
+add_executable(mysmb_bloober_movement_smoke test/bloober_movement_smoke.c src/core/enemy/bloober.c src/core/enemy/distance.c)
+add_executable(mysmb_bullet_movement_smoke test/bullet_movement_smoke.c src/core/enemy/bullet_bill.c)
+add_executable(mysmb_swimming_cheep_movement_smoke test/swimming_cheep_movement_smoke.c src/core/enemy/swimming_cheep.c)
+add_executable(mysmb_firebar_chain_smoke test/firebar_chain_smoke.c src/core/enemy/firebar.c)
+add_executable(mysmb_lakitu_movement_smoke test/lakitu_movement_smoke.c src/core/enemy/lakitu.c)
+add_executable(mysmb_bridge_collapse_smoke test/bridge_collapse_smoke.c src/core/bridge.c)
+add_executable(mysmb_bowser_control_smoke test/bowser_control_smoke.c src/core/enemy/bowser.c)
+add_executable(mysmb_bowser_graphics_smoke test/bowser_graphics_smoke.c src/core/oam/bowser_gfx.c)
 target_include_directories(mysmb_bowser_graphics_smoke PRIVATE src)
-add_executable(mysmb_bowser_flame_chain_smoke test/bowser_flame_chain_smoke.c src/game/enemy/bowser_flame.c src/game/oam/bowser_flame_gfx.c)
+add_executable(mysmb_bowser_flame_chain_smoke test/bowser_flame_chain_smoke.c src/core/enemy/bowser_flame.c src/core/oam/bowser_flame_gfx.c)
 target_include_directories(mysmb_bowser_flame_chain_smoke PRIVATE src)
-add_executable(mysmb_fireworks_lifetime_smoke test/fireworks_lifetime_smoke.c src/game/enemy/fireworks.c)
-add_executable(mysmb_star_flag_smoke test/star_flag_smoke.c src/game/enemy/star_flag.c)
+add_executable(mysmb_fireworks_lifetime_smoke test/fireworks_lifetime_smoke.c src/core/enemy/fireworks.c)
+add_executable(mysmb_star_flag_smoke test/star_flag_smoke.c src/core/enemy/star_flag.c)
 target_include_directories(mysmb_star_flag_smoke PRIVATE src)
 add_executable(mysmb_star_flag_snapshot_check test/star_flag_snapshot_check.c)
-target_link_libraries(mysmb_star_flag_snapshot_check PRIVATE mysmb_game)
-add_executable(mysmb_piranha_movement_smoke test/piranha_movement_smoke.c src/game/enemy/piranha.c)
+target_link_libraries(mysmb_star_flag_snapshot_check PRIVATE mysmb_core)
+add_executable(mysmb_piranha_movement_smoke test/piranha_movement_smoke.c src/core/enemy/piranha.c)
 target_include_directories(mysmb_piranha_movement_smoke PRIVATE src)
-add_executable(mysmb_firebar_spin_smoke test/firebar_spin_smoke.c src/game/enemy/firebar_children.c)
+add_executable(mysmb_firebar_spin_smoke test/firebar_spin_smoke.c src/core/enemy/firebar_children.c)
 target_include_directories(mysmb_firebar_spin_smoke PRIVATE src)
-add_executable(mysmb_balance_platform_smoke test/balance_platform_smoke.c src/game/enemy/balance_platform.c)
+add_executable(mysmb_balance_platform_smoke test/balance_platform_smoke.c src/core/enemy/balance_platform.c)
 target_include_directories(mysmb_balance_platform_smoke PRIVATE src)
-add_executable(mysmb_vertical_platform_smoke test/vertical_platform_smoke.c src/game/enemy/platform.c)
+add_executable(mysmb_vertical_platform_smoke test/vertical_platform_smoke.c src/core/enemy/platform.c)
 target_include_directories(mysmb_vertical_platform_smoke PRIVATE src)
-add_executable(mysmb_horizontal_platform_smoke test/horizontal_platform_smoke.c src/game/enemy/platform.c)
+add_executable(mysmb_horizontal_platform_smoke test/horizontal_platform_smoke.c src/core/enemy/platform.c)
 target_include_directories(mysmb_horizontal_platform_smoke PRIVATE src)
-add_executable(mysmb_lift_platform_smoke test/lift_platform_smoke.c src/game/enemy/platform.c)
+add_executable(mysmb_lift_platform_smoke test/lift_platform_smoke.c src/core/enemy/platform.c)
 target_include_directories(mysmb_lift_platform_smoke PRIVATE src)
-add_executable(mysmb_offscreen_bounds_smoke test/offscreen_bounds_smoke.c src/game/enemy/actor_slots.c)
+add_executable(mysmb_offscreen_bounds_smoke test/offscreen_bounds_smoke.c src/core/enemy/actor_slots.c)
 target_include_directories(mysmb_offscreen_bounds_smoke PRIVATE src)
-add_executable(mysmb_jumpspring_origin_offscreen_smoke test/jumpspring_origin_offscreen_smoke.c src/game/jumpspring.c src/game/enemy/actor_slots.c)
+add_executable(mysmb_jumpspring_origin_offscreen_smoke test/jumpspring_origin_offscreen_smoke.c src/core/jumpspring.c src/core/enemy/actor_slots.c)
 target_include_directories(mysmb_jumpspring_origin_offscreen_smoke PRIVATE src)
 target_include_directories(mysmb_fireworks_lifetime_smoke PRIVATE src)
 target_include_directories(mysmb_bowser_control_smoke PRIVATE src)
 target_include_directories(mysmb_bridge_collapse_smoke PRIVATE src)
 target_include_directories(mysmb_lakitu_movement_smoke PRIVATE src)
-add_executable(mysmb_flying_cheep_movement_smoke test/flying_cheep_movement_smoke.c src/game/enemy/flying_cheep.c)
+add_executable(mysmb_flying_cheep_movement_smoke test/flying_cheep_movement_smoke.c src/core/enemy/flying_cheep.c)
 target_include_directories(mysmb_flying_cheep_movement_smoke PRIVATE src)
 target_include_directories(mysmb_firebar_chain_smoke PRIVATE src)
 target_include_directories(mysmb_swimming_cheep_movement_smoke PRIVATE src)
@@ -324,208 +324,208 @@ target_include_directories(mysmb_green_counter_smoke PRIVATE src)
 target_include_directories(mysmb_paratroopa_movement_smoke PRIVATE src)
 target_include_directories(mysmb_hammer_movement_caller_smoke PRIVATE src)
 target_include_directories(mysmb_podoboo_movement_smoke PRIVATE src)
-add_executable(mysmb_special_actor_caller_smoke test/special_actor_caller_smoke.c src/game/enemy/special_callers.c)
+add_executable(mysmb_special_actor_caller_smoke test/special_actor_caller_smoke.c src/core/enemy/special_callers.c)
 target_include_directories(mysmb_special_actor_caller_smoke PRIVATE src)
-add_executable(mysmb_platform_caller_smoke test/platform_caller_smoke.c src/game/enemy/platform_callers.c src/game/enemy/lifecycle.c)
+add_executable(mysmb_platform_caller_smoke test/platform_caller_smoke.c src/core/enemy/platform_callers.c src/core/enemy/lifecycle.c)
 target_include_directories(mysmb_platform_caller_smoke PRIVATE src)
 target_include_directories(mysmb_retainer_call_chain_smoke PRIVATE src)
-add_executable(mysmb_enemy_stream_boundary_smoke test/enemy_stream_boundary_smoke.c src/game/enemy/stream.c)
+add_executable(mysmb_enemy_stream_boundary_smoke test/enemy_stream_boundary_smoke.c src/core/enemy/stream.c)
 target_include_directories(mysmb_enemy_stream_boundary_smoke PRIVATE src)
 add_executable(mysmb_parser_schedule_smoke test/parser_schedule_smoke.c)
-target_link_libraries(mysmb_parser_schedule_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_parser_schedule_smoke PRIVATE mysmb_core)
 add_executable(mysmb_parser_buffer_commit_smoke test/parser_buffer_commit_smoke.c)
-target_link_libraries(mysmb_parser_buffer_commit_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_parser_buffer_commit_smoke PRIVATE mysmb_core)
 add_executable(mysmb_screen_parser_output_chain_check
     test/screen_parser_output_chain_check.c)
-target_link_libraries(mysmb_screen_parser_output_chain_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_screen_parser_output_chain_check PRIVATE mysmb_core)
 add_executable(mysmb_kill_enemies_shared_primitive_check
     test/kill_enemies_shared_primitive_check.c)
-target_link_libraries(mysmb_kill_enemies_shared_primitive_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_kill_enemies_shared_primitive_check PRIVATE mysmb_core)
 add_executable(mysmb_player_route_smoke test/player_route_smoke.c)
 add_executable(mysmb_player_scroll_chain_smoke test/player_scroll_chain_smoke.c src/core/scroll.c)
 add_executable(mysmb_player_entry_chain_smoke test/player_entry_chain_smoke.c src/core/entry.c)
-add_executable(mysmb_player_control_chain_smoke test/player_control_chain_smoke.c src/game/player_control.c)
+add_executable(mysmb_player_control_chain_smoke test/player_control_chain_smoke.c src/core/player_control.c)
 target_include_directories(mysmb_player_control_chain_smoke PRIVATE src)
-add_executable(mysmb_player_transition_chain_smoke test/player_transition_chain_smoke.c src/game/player_transition.c)
-add_executable(mysmb_player_modes_chain_smoke test/player_modes_chain_smoke.c src/game/player_modes.c)
+add_executable(mysmb_player_transition_chain_smoke test/player_transition_chain_smoke.c src/core/player_transition.c)
+add_executable(mysmb_player_modes_chain_smoke test/player_modes_chain_smoke.c src/core/player_modes.c)
 target_include_directories(mysmb_player_modes_chain_smoke PRIVATE src)
-add_executable(mysmb_player_end_level_chain_smoke test/player_end_level_chain_smoke.c src/game/player_end_level.c)
+add_executable(mysmb_player_end_level_chain_smoke test/player_end_level_chain_smoke.c src/core/player_end_level.c)
 target_include_directories(mysmb_player_end_level_chain_smoke PRIVATE src)
-add_executable(mysmb_player_movement_chain_smoke test/player_movement_chain_smoke.c src/game/player_movement.c)
+add_executable(mysmb_player_movement_chain_smoke test/player_movement_chain_smoke.c src/core/player_movement.c)
 target_include_directories(mysmb_player_movement_chain_smoke PRIVATE src)
 add_executable(mysmb_player_climbing_chain_smoke test/player_climbing_chain_smoke.c)
 target_include_directories(mysmb_player_climbing_chain_smoke PRIVATE src)
-target_link_libraries(mysmb_player_climbing_chain_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_player_climbing_chain_smoke PRIVATE mysmb_core)
 add_executable(mysmb_player_physics_chain_smoke test/player_physics_chain_smoke.c)
 target_include_directories(mysmb_player_physics_chain_smoke PRIVATE src)
-target_link_libraries(mysmb_player_physics_chain_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_player_physics_chain_smoke PRIVATE mysmb_core)
 add_executable(mysmb_player_animation_friction_chain_smoke test/player_animation_friction_chain_smoke.c)
-add_executable(mysmb_fireball_dispatch_chain_smoke test/fireball_dispatch_chain_smoke.c src/game/fireball/fireball_spawn.c)
+add_executable(mysmb_fireball_dispatch_chain_smoke test/fireball_dispatch_chain_smoke.c src/core/fireball/fireball_spawn.c)
 target_include_directories(mysmb_fireball_dispatch_chain_smoke PRIVATE src)
-add_executable(mysmb_fireball_core_chain_smoke test/fireball_core_chain_smoke.c src/game/fireball/fireball_core.c)
+add_executable(mysmb_fireball_core_chain_smoke test/fireball_core_chain_smoke.c src/core/fireball/fireball_core.c)
 target_include_directories(mysmb_fireball_core_chain_smoke PRIVATE src)
-add_executable(mysmb_bubble_core_chain_smoke test/bubble_core_chain_smoke.c src/game/fireball/bubble.c src/game/oam/object_position.c)
+add_executable(mysmb_bubble_core_chain_smoke test/bubble_core_chain_smoke.c src/core/fireball/bubble.c src/core/oam/object_position.c)
 target_include_directories(mysmb_bubble_core_chain_smoke PRIVATE src)
-add_executable(mysmb_bubble_core_snapshot_check test/bubble_core_snapshot_check.c src/game/fireball/bubble.c src/game/oam/object_position.c)
+add_executable(mysmb_bubble_core_snapshot_check test/bubble_core_snapshot_check.c src/core/fireball/bubble.c src/core/oam/object_position.c)
 target_include_directories(mysmb_bubble_core_snapshot_check PRIVATE src)
 add_executable(mysmb_object_relative_snapshot_check test/object_relative_snapshot_check.c)
-target_link_libraries(mysmb_object_relative_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_object_relative_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_player_offscreen_entry_snapshot_check test/player_offscreen_entry_snapshot_check.c)
-target_link_libraries(mysmb_player_offscreen_entry_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_player_offscreen_entry_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_offscreen_chain_snapshot_check test/offscreen_chain_snapshot_check.c)
-target_link_libraries(mysmb_offscreen_chain_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_offscreen_chain_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_sprite_row_snapshot_check test/sprite_row_snapshot_check.c)
-target_link_libraries(mysmb_sprite_row_snapshot_check PRIVATE mysmb_game)
-add_executable(mysmb_timer_chain_smoke test/timer_chain_smoke.c src/game/timer.c)
-add_executable(mysmb_jumpspring_chain_smoke test/jumpspring_chain_smoke.c src/game/jumpspring.c)
+target_link_libraries(mysmb_sprite_row_snapshot_check PRIVATE mysmb_core)
+add_executable(mysmb_timer_chain_smoke test/timer_chain_smoke.c src/core/timer.c)
+add_executable(mysmb_jumpspring_chain_smoke test/jumpspring_chain_smoke.c src/core/jumpspring.c)
 add_executable(mysmb_vine_setup_smoke test/vine_setup_smoke.c)
-add_executable(mysmb_vine_actor_smoke test/vine_actor_smoke.c src/game/vine.c)
-add_executable(mysmb_hammer_chain_smoke test/hammer_chain_smoke.c src/game/hammer.c)
+add_executable(mysmb_vine_actor_smoke test/vine_actor_smoke.c src/core/vine.c)
+add_executable(mysmb_hammer_chain_smoke test/hammer_chain_smoke.c src/core/hammer.c)
 target_include_directories(mysmb_hammer_chain_smoke PRIVATE src)
-add_executable(mysmb_coin_allocation_smoke test/coin_allocation_smoke.c src/game/coin.c)
+add_executable(mysmb_coin_allocation_smoke test/coin_allocation_smoke.c src/core/coin.c)
 target_include_directories(mysmb_coin_allocation_smoke PRIVATE src)
-add_executable(mysmb_misc_lifetime_smoke test/misc_lifetime_smoke.c src/game/misc.c)
+add_executable(mysmb_misc_lifetime_smoke test/misc_lifetime_smoke.c src/core/misc.c)
 target_include_directories(mysmb_misc_lifetime_smoke PRIVATE src)
-add_executable(mysmb_score_hud_smoke test/score_hud_smoke.c src/game/score.c)
+add_executable(mysmb_score_hud_smoke test/score_hud_smoke.c src/core/score.c)
 target_include_directories(mysmb_score_hud_smoke PRIVATE src)
-add_executable(mysmb_power_up_init_smoke test/power_up_init_smoke.c src/game/power_up_init.c)
+add_executable(mysmb_power_up_init_smoke test/power_up_init_smoke.c src/core/power_up_init.c)
 target_include_directories(mysmb_power_up_init_smoke PRIVATE src)
-add_executable(mysmb_power_up_actor_smoke test/power_up_actor_smoke.c src/game/power_up.c)
+add_executable(mysmb_power_up_actor_smoke test/power_up_actor_smoke.c src/core/power_up.c)
 target_include_directories(mysmb_power_up_actor_smoke PRIVATE src)
-add_executable(mysmb_block_head_smoke test/block_head_smoke.c src/game/blocks/head.c)
+add_executable(mysmb_block_head_smoke test/block_head_smoke.c src/core/blocks/head.c)
 target_include_directories(mysmb_block_head_smoke PRIVATE src)
-add_executable(mysmb_block_bump_smoke test/block_bump_smoke.c src/game/blocks/bump.c)
+add_executable(mysmb_block_bump_smoke test/block_bump_smoke.c src/core/blocks/bump.c)
 target_include_directories(mysmb_block_bump_smoke PRIVATE src)
-add_executable(mysmb_block_chunks_smoke test/block_chunks_smoke.c src/game/blocks/chunks.c)
+add_executable(mysmb_block_chunks_smoke test/block_chunks_smoke.c src/core/blocks/chunks.c)
 target_include_directories(mysmb_block_chunks_smoke PRIVATE src)
-add_executable(mysmb_block_lifetime_smoke test/block_lifetime_smoke.c src/game/blocks/lifetime.c)
+add_executable(mysmb_block_lifetime_smoke test/block_lifetime_smoke.c src/core/blocks/lifetime.c)
 target_include_directories(mysmb_block_lifetime_smoke PRIVATE src)
-add_executable(mysmb_block_replacement_smoke test/block_replacement_smoke.c src/game/blocks/replacement.c)
+add_executable(mysmb_block_replacement_smoke test/block_replacement_smoke.c src/core/blocks/replacement.c)
 target_include_directories(mysmb_block_replacement_smoke PRIVATE src)
 add_executable(mysmb_horizontal_movement_smoke test/horizontal_movement_smoke.c)
-target_link_libraries(mysmb_horizontal_movement_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_horizontal_movement_smoke PRIVATE mysmb_core)
 add_executable(mysmb_horizontal_snapshot_check test/horizontal_snapshot_check.c)
-target_link_libraries(mysmb_horizontal_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_horizontal_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_vertical_adapters_smoke test/vertical_adapters_smoke.c)
-target_link_libraries(mysmb_vertical_adapters_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_vertical_adapters_smoke PRIVATE mysmb_core)
 add_executable(mysmb_gravity_smoke test/gravity_smoke.c)
-target_link_libraries(mysmb_gravity_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_gravity_smoke PRIVATE mysmb_core)
 add_executable(mysmb_gravity_snapshot_check test/gravity_snapshot_check.c)
-target_link_libraries(mysmb_gravity_snapshot_check PRIVATE mysmb_game)
-add_executable(mysmb_power_up_init_snapshot_check test/power_up_init_snapshot_check.c src/game/power_up_init.c)
+target_link_libraries(mysmb_gravity_snapshot_check PRIVATE mysmb_core)
+add_executable(mysmb_power_up_init_snapshot_check test/power_up_init_snapshot_check.c src/core/power_up_init.c)
 target_include_directories(mysmb_power_up_init_snapshot_check PRIVATE src)
 add_executable(mysmb_power_up_init_dispatch_smoke test/power_up_init_dispatch_smoke.c)
-target_link_libraries(mysmb_power_up_init_dispatch_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_power_up_init_dispatch_smoke PRIVATE mysmb_core)
 
 target_include_directories(mysmb_vine_actor_smoke PRIVATE src)
-target_link_libraries(mysmb_vine_setup_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_vine_setup_smoke PRIVATE mysmb_core)
 target_include_directories(mysmb_vine_setup_smoke PRIVATE src)
 add_executable(mysmb_vine_setup_snapshot_check test/vine_setup_snapshot_check.c)
-target_link_libraries(mysmb_vine_setup_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_vine_setup_snapshot_check PRIVATE mysmb_core)
 target_include_directories(mysmb_vine_setup_snapshot_check PRIVATE src)
 target_include_directories(mysmb_jumpspring_chain_smoke PRIVATE src)
 target_include_directories(mysmb_timer_chain_smoke PRIVATE src)
 target_include_directories(mysmb_player_animation_friction_chain_smoke PRIVATE src)
-target_link_libraries(mysmb_player_animation_friction_chain_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_player_animation_friction_chain_smoke PRIVATE mysmb_core)
 add_executable(mysmb_player_animation_friction_snapshot_check test/player_animation_friction_snapshot_check.c)
 target_include_directories(mysmb_player_animation_friction_snapshot_check PRIVATE src)
-target_link_libraries(mysmb_player_animation_friction_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_player_animation_friction_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_player_physics_snapshot_check test/player_physics_snapshot_check.c)
 target_include_directories(mysmb_player_physics_snapshot_check PRIVATE src)
-target_link_libraries(mysmb_player_physics_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_player_physics_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_player_climbing_snapshot_check test/player_climbing_snapshot_check.c)
 target_include_directories(mysmb_player_climbing_snapshot_check PRIVATE src)
-target_link_libraries(mysmb_player_climbing_snapshot_check PRIVATE mysmb_game)
-add_executable(mysmb_player_modes_caller_check test/player_modes_snapshot_check.c src/game/player_modes.c)
+target_link_libraries(mysmb_player_climbing_snapshot_check PRIVATE mysmb_core)
+add_executable(mysmb_player_modes_caller_check test/player_modes_snapshot_check.c src/core/player_modes.c)
 target_compile_definitions(mysmb_player_modes_caller_check PRIVATE MYSMB_CALLER_CHECK=1)
 target_include_directories(mysmb_player_modes_caller_check PRIVATE src)
 target_include_directories(mysmb_player_transition_chain_smoke PRIVATE src)
-add_executable(mysmb_player_transition_caller_check test/player_transition_caller_check.c src/game/player_transition.c)
+add_executable(mysmb_player_transition_caller_check test/player_transition_caller_check.c src/core/player_transition.c)
 target_include_directories(mysmb_player_transition_caller_check PRIVATE src)
-add_executable(mysmb_player_control_caller_check test/player_control_caller_check.c src/game/player_control.c)
+add_executable(mysmb_player_control_caller_check test/player_control_caller_check.c src/core/player_control.c)
 target_include_directories(mysmb_player_control_caller_check PRIVATE src)
 target_include_directories(mysmb_player_entry_chain_smoke PRIVATE src)
 add_executable(mysmb_entrance_caller_snapshot_check test/entrance_caller_snapshot_check.c src/core/entry.c)
 target_include_directories(mysmb_entrance_caller_snapshot_check PRIVATE src)
 target_include_directories(mysmb_player_scroll_chain_smoke PRIVATE src)
-add_executable(mysmb_scroll_snapshot_check test/scroll_snapshot_check.c src/core/scroll.c src/game/oam/object_position.c)
+add_executable(mysmb_scroll_snapshot_check test/scroll_snapshot_check.c src/core/scroll.c src/core/oam/object_position.c)
 target_include_directories(mysmb_scroll_snapshot_check PRIVATE src)
-target_link_libraries(mysmb_player_route_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_player_route_smoke PRIVATE mysmb_core)
 add_executable(mysmb_player_friction_smoke test/player_friction_smoke.c)
-target_link_libraries(mysmb_player_friction_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_player_friction_smoke PRIVATE mysmb_core)
 add_executable(mysmb_player_horizontal_carry_smoke test/player_horizontal_carry_smoke.c)
-target_link_libraries(mysmb_player_horizontal_carry_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_player_horizontal_carry_smoke PRIVATE mysmb_core)
 add_executable(mysmb_player_bounding_box_smoke test/player_bounding_box_smoke.c)
-target_link_libraries(mysmb_player_bounding_box_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_player_bounding_box_smoke PRIVATE mysmb_core)
 add_executable(mysmb_bounding_box_clip_smoke test/bounding_box_clip_smoke.c)
-target_link_libraries(mysmb_bounding_box_clip_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_bounding_box_clip_smoke PRIVATE mysmb_core)
 add_executable(mysmb_bounding_box_core_smoke test/bounding_box_core_smoke.c)
-target_link_libraries(mysmb_bounding_box_core_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_bounding_box_core_smoke PRIVATE mysmb_core)
 add_executable(mysmb_geometry_core_smoke test/geometry_core_smoke.c)
-target_link_libraries(mysmb_geometry_core_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_geometry_core_smoke PRIVATE mysmb_core)
 add_executable(mysmb_geometry_actual_check test/geometry_actual_check.c)
-target_link_libraries(mysmb_geometry_actual_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_geometry_actual_check PRIVATE mysmb_core)
 add_executable(mysmb_enemy_block_query_smoke test/enemy_block_query_smoke.c)
-target_link_libraries(mysmb_enemy_block_query_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_enemy_block_query_smoke PRIVATE mysmb_core)
 add_executable(mysmb_enemy_terrain_state_smoke test/enemy_terrain_state_smoke.c)
-target_link_libraries(mysmb_enemy_terrain_state_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_enemy_terrain_state_smoke PRIVATE mysmb_core)
 add_executable(mysmb_world_movement_smoke test/world_movement_smoke.c)
-target_link_libraries(mysmb_world_movement_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_world_movement_smoke PRIVATE mysmb_core)
 add_executable(mysmb_hazard_collision_smoke test/hazard_collision_smoke.c)
-target_link_libraries(mysmb_hazard_collision_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_hazard_collision_smoke PRIVATE mysmb_core)
 add_executable(mysmb_bullet_bill_smoke test/bullet_bill_smoke.c)
-target_link_libraries(mysmb_bullet_bill_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_bullet_bill_smoke PRIVATE mysmb_core)
 add_executable(mysmb_paratroopa_smoke test/paratroopa_smoke.c)
-target_link_libraries(mysmb_paratroopa_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_paratroopa_smoke PRIVATE mysmb_core)
 add_executable(mysmb_lakitu_smoke test/lakitu_smoke.c)
-target_link_libraries(mysmb_lakitu_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_lakitu_smoke PRIVATE mysmb_core)
 add_executable(mysmb_hammer_bro_smoke test/hammer_bro_smoke.c)
-target_link_libraries(mysmb_hammer_bro_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_hammer_bro_smoke PRIVATE mysmb_core)
 add_executable(mysmb_hammer_bro_oam_smoke test/hammer_bro_oam_smoke.c)
-target_link_libraries(mysmb_hammer_bro_oam_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_hammer_bro_oam_smoke PRIVATE mysmb_core)
 add_executable(mysmb_enemy_collision_smoke test/enemy_collision_smoke.c)
-target_link_libraries(mysmb_enemy_collision_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_enemy_collision_smoke PRIVATE mysmb_core)
 add_executable(mysmb_flying_cheep_smoke test/flying_cheep_smoke.c)
-target_link_libraries(mysmb_flying_cheep_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_flying_cheep_smoke PRIVATE mysmb_core)
 add_executable(mysmb_firebar_smoke test/firebar_smoke.c)
-target_link_libraries(mysmb_firebar_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_firebar_smoke PRIVATE mysmb_core)
 add_executable(mysmb_bowser_smoke test/bowser_smoke.c)
-target_link_libraries(mysmb_bowser_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_bowser_smoke PRIVATE mysmb_core)
 add_executable(mysmb_vine_oam_smoke test/vine_oam_smoke.c)
-target_link_libraries(mysmb_vine_oam_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_vine_oam_smoke PRIVATE mysmb_core)
 add_executable(mysmb_six_sprite_stacker_smoke test/six_sprite_stacker_smoke.c)
-target_link_libraries(mysmb_six_sprite_stacker_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_six_sprite_stacker_smoke PRIVATE mysmb_core)
 add_executable(mysmb_sprite_dump_smoke test/sprite_dump_smoke.c)
-target_link_libraries(mysmb_sprite_dump_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_sprite_dump_smoke PRIVATE mysmb_core)
 add_executable(mysmb_flagpole_gfx_smoke test/flagpole_gfx_smoke.c)
-target_link_libraries(mysmb_flagpole_gfx_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_flagpole_gfx_smoke PRIVATE mysmb_core)
 add_executable(mysmb_bowser_oam_smoke test/bowser_oam_smoke.c)
-target_link_libraries(mysmb_bowser_oam_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_bowser_oam_smoke PRIVATE mysmb_core)
 add_executable(mysmb_bowser_flame_oam_smoke test/bowser_flame_oam_smoke.c)
-target_link_libraries(mysmb_bowser_flame_oam_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_bowser_flame_oam_smoke PRIVATE mysmb_core)
 add_executable(mysmb_endgame_objects_smoke test/endgame_objects_smoke.c)
-target_link_libraries(mysmb_endgame_objects_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_endgame_objects_smoke PRIVATE mysmb_core)
 add_executable(mysmb_flagpole_oam_smoke test/flagpole_oam_smoke.c)
-target_link_libraries(mysmb_flagpole_oam_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_flagpole_oam_smoke PRIVATE mysmb_core)
 add_executable(mysmb_retainer_oam_smoke test/retainer_oam_smoke.c)
-target_link_libraries(mysmb_retainer_oam_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_retainer_oam_smoke PRIVATE mysmb_core)
 add_executable(mysmb_jumpspring_oam_smoke test/jumpspring_oam_smoke.c)
-target_link_libraries(mysmb_jumpspring_oam_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_jumpspring_oam_smoke PRIVATE mysmb_core)
 add_executable(mysmb_jumpspring_graphics_snapshot_check
     test/jumpspring_graphics_snapshot_check.c)
-target_link_libraries(mysmb_jumpspring_graphics_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_jumpspring_graphics_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_bowser_half_graphics_snapshot_check
     test/bowser_half_graphics_snapshot_check.c)
-target_link_libraries(mysmb_bowser_half_graphics_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_bowser_half_graphics_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_normal_enemy_graphics_snapshot_check
     test/normal_enemy_graphics_snapshot_check.c)
-target_link_libraries(mysmb_normal_enemy_graphics_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_normal_enemy_graphics_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_oam_helper_route_check test/oam_helper_route_check.c)
-target_link_libraries(mysmb_oam_helper_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_oam_helper_route_check PRIVATE mysmb_core)
 if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
     add_executable(mysmb_oam_helper_caller_check test/oam_helper_route_check.c)
     target_compile_definitions(mysmb_oam_helper_caller_check PRIVATE MYSMB_OAM_HELPER_CHILD_CHECK=1)
-    target_link_libraries(mysmb_oam_helper_caller_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_oam_helper_caller_check PRIVATE mysmb_core)
     target_link_options(mysmb_oam_helper_caller_check PRIVATE
         "-Wl,--wrap=mysmb_oam_move_enemy_column_offscreen"
         "-Wl,--wrap=mysmb_oam_move_enemy_row_offscreen"
@@ -544,37 +544,37 @@ endif()
 
 add_executable(mysmb_enemy_graphics_output_route_check
     test/enemy_graphics_output_route_check.c)
-target_link_libraries(mysmb_enemy_graphics_output_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_enemy_graphics_output_route_check PRIVATE mysmb_core)
 if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
     add_executable(mysmb_enemy_graphics_output_caller_check
         test/enemy_graphics_output_route_check.c)
     target_compile_definitions(mysmb_enemy_graphics_output_caller_check PRIVATE
         MYSMB_ENEMY_GFX_CHILD_CHECK=1)
-    target_link_libraries(mysmb_enemy_graphics_output_caller_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_enemy_graphics_output_caller_check PRIVATE mysmb_core)
     target_link_options(mysmb_enemy_graphics_output_caller_check PRIVATE
         "-Wl,--wrap=mysmb_oam_draw_one_sprite_row")
 endif()
 add_executable(mysmb_retainer_graphics_snapshot_check
     test/retainer_graphics_snapshot_check.c)
-target_link_libraries(mysmb_retainer_graphics_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_retainer_graphics_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_platform_smoke test/platform_smoke.c)
-target_link_libraries(mysmb_platform_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_platform_smoke PRIVATE mysmb_core)
 add_executable(mysmb_mode_smoke test/mode_smoke.c)
-target_link_libraries(mysmb_mode_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_mode_smoke PRIVATE mysmb_core)
 add_executable(mysmb_oper_mode_dispatch_smoke test/oper_mode_dispatch_smoke.c)
-target_link_libraries(mysmb_oper_mode_dispatch_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_oper_mode_dispatch_smoke PRIVATE mysmb_core)
 add_executable(mysmb_title_demo_smoke test/title_demo_smoke.c)
-target_link_libraries(mysmb_title_demo_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_title_demo_smoke PRIVATE mysmb_core)
 add_executable(mysmb_screen_status_smoke test/screen_status_smoke.c)
-target_link_libraries(mysmb_screen_status_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_screen_status_smoke PRIVATE mysmb_core)
 add_executable(mysmb_audio_smoke test/audio_smoke.c)
-target_link_libraries(mysmb_audio_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_audio_smoke PRIVATE mysmb_core)
 add_executable(mysmb_sound_entry_snapshot_check test/sound_entry_snapshot_check.c)
-target_link_libraries(mysmb_sound_entry_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_sound_entry_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_sound_helper_snapshot_check test/sound_helper_snapshot_check.c)
-target_link_libraries(mysmb_sound_helper_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_sound_helper_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_sound_command_route_check test/sound_command_route_check.c)
-target_link_libraries(mysmb_sound_command_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_sound_command_route_check PRIVATE mysmb_core)
 if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
     target_sources(mysmb_sound_command_route_check PRIVATE
         test/offscreen_child_observer.c)
@@ -584,99 +584,99 @@ if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
         "-Wl,--wrap=mysmb_oam_get_enemy_offscreen_bits")
 endif()
 add_executable(mysmb_sound_square1_snapshot_check test/sound_square1_snapshot_check.c)
-target_link_libraries(mysmb_sound_square1_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_sound_square1_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_sound_square1_music_snapshot_check
                test/sound_square1_music_snapshot_check.c)
-target_link_libraries(mysmb_sound_square1_music_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_sound_square1_music_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_sound_triangle_music_snapshot_check test/sound_triangle_music_snapshot_check.c)
-target_link_libraries(mysmb_sound_triangle_music_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_sound_triangle_music_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_sound_noise_music_snapshot_check test/sound_noise_music_snapshot_check.c)
-target_link_libraries(mysmb_sound_noise_music_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_sound_noise_music_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_sound_square2_snapshot_check test/sound_square2_snapshot_check.c)
-target_link_libraries(mysmb_sound_square2_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_sound_square2_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_sound_square2_dispatch_smoke test/sound_square2_dispatch_smoke.c)
-target_link_libraries(mysmb_sound_square2_dispatch_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_sound_square2_dispatch_smoke PRIVATE mysmb_core)
 add_executable(mysmb_sound_noise_dispatch_smoke test/sound_noise_dispatch_smoke.c)
-target_link_libraries(mysmb_sound_noise_dispatch_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_sound_noise_dispatch_smoke PRIVATE mysmb_core)
 add_executable(mysmb_sound_noise_snapshot_check test/sound_noise_snapshot_check.c)
-target_link_libraries(mysmb_sound_noise_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_sound_noise_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_sound_noise_envelope_table_check test/sound_noise_envelope_table_check.c)
-target_link_libraries(mysmb_sound_noise_envelope_table_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_sound_noise_envelope_table_check PRIVATE mysmb_core)
 add_executable(mysmb_sound_music_handoff_snapshot_check
                test/sound_music_handoff_snapshot_check.c)
-target_link_libraries(mysmb_sound_music_handoff_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_sound_music_handoff_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_sound_music_selection_snapshot_check
                test/sound_music_selection_snapshot_check.c)
-target_link_libraries(mysmb_sound_music_selection_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_sound_music_selection_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_sound_music_header_table_check
                test/sound_music_header_table_check.c)
-target_link_libraries(mysmb_sound_music_header_table_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_sound_music_header_table_check PRIVATE mysmb_core)
 add_executable(mysmb_sound_music_stream_record_check
                test/sound_music_stream_record_check.c)
-target_link_libraries(mysmb_sound_music_stream_record_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_sound_music_stream_record_check PRIVATE mysmb_core)
 add_executable(mysmb_sound_music_lookup_table_check
                test/sound_music_lookup_table_check.c)
-target_link_libraries(mysmb_sound_music_lookup_table_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_sound_music_lookup_table_check PRIVATE mysmb_core)
 add_executable(mysmb_sound_square2_music_snapshot_check
                test/sound_square2_music_snapshot_check.c)
-target_link_libraries(mysmb_sound_square2_music_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_sound_square2_music_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_end_to_end_smoke test/end_to_end_smoke.c)
-target_link_libraries(mysmb_end_to_end_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_end_to_end_smoke PRIVATE mysmb_core)
 add_executable(mysmb_ppu_frame_smoke test/ppu_frame_smoke.c)
-target_link_libraries(mysmb_ppu_frame_smoke PRIVATE mysmb_game mysmb_ppu_frame)
+target_link_libraries(mysmb_ppu_frame_smoke PRIVATE mysmb_core mysmb_ppu_frame)
 add_executable(mysmb_render_smoke test/render_smoke.c)
-target_link_libraries(mysmb_render_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_render_smoke PRIVATE mysmb_core)
 add_executable(mysmb_frame_snapshot_smoke test/frame_snapshot_smoke.c)
-target_link_libraries(mysmb_frame_snapshot_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_frame_snapshot_smoke PRIVATE mysmb_core)
 add_executable(mysmb_sprite_oam_smoke test/sprite_oam_smoke.c)
-target_link_libraries(mysmb_sprite_oam_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_sprite_oam_smoke PRIVATE mysmb_core)
 add_executable(mysmb_player_oam_smoke test/player_oam_smoke.c)
-target_link_libraries(mysmb_player_oam_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_player_oam_smoke PRIVATE mysmb_core)
 add_executable(mysmb_floatey_oam_smoke test/floatey_oam_smoke.c)
-target_link_libraries(mysmb_floatey_oam_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_floatey_oam_smoke PRIVATE mysmb_core)
 add_executable(mysmb_misc_oam_smoke test/misc_oam_smoke.c)
-target_link_libraries(mysmb_misc_oam_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_misc_oam_smoke PRIVATE mysmb_core)
 add_executable(mysmb_jumping_coin_snapshot_check test/jumping_coin_snapshot_check.c)
-target_link_libraries(mysmb_jumping_coin_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_jumping_coin_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_rom_object_array_layout_smoke test/rom_object_array_layout_smoke.c)
-target_link_libraries(mysmb_rom_object_array_layout_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_rom_object_array_layout_smoke PRIVATE mysmb_core)
 add_executable(mysmb_fireball_oam_smoke test/fireball_oam_smoke.c)
-target_link_libraries(mysmb_fireball_oam_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_fireball_oam_smoke PRIVATE mysmb_core)
 add_executable(mysmb_power_up_oam_smoke test/power_up_oam_smoke.c)
-target_link_libraries(mysmb_power_up_oam_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_power_up_oam_smoke PRIVATE mysmb_core)
 add_executable(mysmb_block_oam_smoke test/block_oam_smoke.c)
-target_link_libraries(mysmb_block_oam_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_block_oam_smoke PRIVATE mysmb_core)
 add_executable(mysmb_block_graphics_snapshot_check
     test/block_graphics_snapshot_check.c)
-target_link_libraries(mysmb_block_graphics_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_block_graphics_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_goomba_oam_smoke test/goomba_oam_smoke.c)
-target_link_libraries(mysmb_goomba_oam_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_goomba_oam_smoke PRIVATE mysmb_core)
 add_executable(mysmb_normal_enemy_oam_smoke test/normal_enemy_oam_smoke.c)
-target_link_libraries(mysmb_normal_enemy_oam_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_normal_enemy_oam_smoke PRIVATE mysmb_core)
 add_executable(mysmb_bubble_oam_smoke test/bubble_oam_smoke.c)
-target_link_libraries(mysmb_bubble_oam_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_bubble_oam_smoke PRIVATE mysmb_core)
 add_executable(mysmb_small_platform_oam_smoke test/small_platform_oam_smoke.c)
-target_link_libraries(mysmb_small_platform_oam_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_small_platform_oam_smoke PRIVATE mysmb_core)
 add_executable(mysmb_large_platform_graphics_smoke test/large_platform_graphics_smoke.c)
-target_link_libraries(mysmb_large_platform_graphics_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_large_platform_graphics_smoke PRIVATE mysmb_core)
 add_executable(mysmb_large_platform_snapshot_check
     test/large_platform_snapshot_check.c)
-target_link_libraries(mysmb_large_platform_snapshot_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_large_platform_snapshot_check PRIVATE mysmb_core)
 add_executable(mysmb_piranha_oam_smoke test/piranha_oam_smoke.c)
-target_link_libraries(mysmb_piranha_oam_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_piranha_oam_smoke PRIVATE mysmb_core)
 add_executable(mysmb_cheep_oam_smoke test/cheep_oam_smoke.c)
-target_link_libraries(mysmb_cheep_oam_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_cheep_oam_smoke PRIVATE mysmb_core)
 add_executable(mysmb_bloober_oam_smoke test/bloober_oam_smoke.c)
-target_link_libraries(mysmb_bloober_oam_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_bloober_oam_smoke PRIVATE mysmb_core)
 add_executable(mysmb_podoboo_oam_smoke test/podoboo_oam_smoke.c)
-target_link_libraries(mysmb_podoboo_oam_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_podoboo_oam_smoke PRIVATE mysmb_core)
 add_library(mysmb_text_elements STATIC src/game/presentation/text/elements.c
     src/game/presentation/text/actor_scene.c
     src/game/presentation/text/background_scene.c
     src/game/presentation/text/caption_scene.c
     src/game/presentation/text/scene.c)
 target_include_directories(mysmb_text_elements PUBLIC src)
-target_link_libraries(mysmb_text_elements PUBLIC mysmb_game mysmb_io_color)
+target_link_libraries(mysmb_text_elements PUBLIC mysmb_core mysmb_io_color)
 target_link_libraries(mysmb_text_observation_smoke PRIVATE mysmb_text_elements)
 add_executable(mysmb_text_elements_smoke test/text_elements_smoke.c)
 target_link_libraries(mysmb_text_elements_smoke PRIVATE mysmb_text_elements)
@@ -703,7 +703,7 @@ add_executable(mysmb_vga_frame_smoke test/vga_frame_smoke.c)
 target_link_libraries(mysmb_vga_frame_smoke PRIVATE mysmb_vga_frame)
 add_library(mysmb_dos16_root STATIC src/platform/dos16/dos16_root.c src/platform/dos16/keyboard.c src/platform/dos16/pit_clock.c)
 target_include_directories(mysmb_dos16_root PUBLIC src)
-target_link_libraries(mysmb_dos16_root PUBLIC mysmb_game mysmb_game_io mysmb_io_color mysmb_game_snapshot mysmb_text_elements)
+target_link_libraries(mysmb_dos16_root PUBLIC mysmb_core mysmb_game_io mysmb_io_color mysmb_game_snapshot mysmb_text_elements)
 add_executable(mysmb_dos16_clock_smoke test/dos16_clock_smoke.c)
 target_link_libraries(mysmb_dos16_clock_smoke PRIVATE mysmb_dos16_root)
 add_test(NAME mysmb.dos16-clock-smoke COMMAND mysmb_dos16_clock_smoke)
@@ -719,7 +719,7 @@ add_test(NAME mysmb.dos-snapshot-smoke COMMAND mysmb_dos_snapshot_smoke
 
 # A separately named input for the later OpenNT large-model DOS build.  It has
 # no DOS platform code and must stay free of host headers.
-add_library(mysmb_dos16_core OBJECT ${MYSMB_GAME_SOURCES})
+add_library(mysmb_dos16_core OBJECT ${MYSMB_CORE_SOURCES})
 target_include_directories(mysmb_dos16_core PRIVATE src)
 
 if(MYSMB_OPENNT_CL16)
@@ -759,7 +759,7 @@ if(MYSMB_OPENNT_CL16)
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/audio.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/audio.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
@@ -771,55 +771,55 @@ if(MYSMB_OPENNT_CL16)
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/enemy/stream.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/enemy/stream.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/enemy/init.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/enemy/init.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-                        -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/enemy/core.c"
+                        -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/enemy/core.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/enemy/movement.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/enemy/movement.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/enemy/normal.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/enemy/normal.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/enemy/background.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/enemy/background.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/enemy/side_collision.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/enemy/side_collision.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/enemy/frenzy.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/enemy/frenzy.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/player.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/player.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
@@ -837,157 +837,157 @@ if(MYSMB_OPENNT_CL16)
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/player_control.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/player_control.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/player_transition.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/player_transition.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/player_modes.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/player_modes.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/player_end_level.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/player_end_level.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/player_movement.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/player_movement.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/objects.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/objects.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/bridge.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/bridge.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/oam/bullet_bill_gfx.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/oam/bullet_bill_gfx.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/oam/hammer_gfx.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/oam/hammer_gfx.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/oam/firebar_gfx.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/oam/firebar_gfx.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/oam/vine_gfx.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/oam/vine_gfx.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/enemy_bounds.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/enemy_bounds.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/oam/power_up_gfx.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/oam/power_up_gfx.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/oam/object_position.c src/game/oam/block_gfx.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/oam/object_position.c src/core/oam/block_gfx.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/oam/goomba_gfx.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/oam/goomba_gfx.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/fireball/bubble.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/fireball/bubble.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/oam/piranha_gfx.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/oam/piranha_gfx.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/oam/cheep_gfx.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/oam/cheep_gfx.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/oam/bloober_gfx.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/oam/bloober_gfx.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/oam/podoboo_gfx.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/oam/podoboo_gfx.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
             COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
                 "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
                 -Compiler "${MYSMB_OPENNT_CL16}"
                 -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-                -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/oam/normal_enemy_gfx.c"
+                -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/oam/normal_enemy_gfx.c"
                 -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/oam/spiny_gfx.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/oam/spiny_gfx.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/oam/hammer_bro_gfx.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/oam/hammer_bro_gfx.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/oam/bowser_gfx.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/oam/bowser_gfx.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/endgame_objects.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/endgame_objects.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/oam/small_platform_gfx.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/oam/small_platform_gfx.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
@@ -1072,7 +1072,7 @@ if(WIN32)
         src/platform/win32/focus_pause.c
         src/platform/win32/text_console.c src/platform/win32/launch.c
         src/platform/win32/keyboard.c)
-    target_link_libraries(mysmb_win32 PRIVATE mysmb_game mysmb_game_io mysmb_io_color user32 gdi32 winmm)
+    target_link_libraries(mysmb_win32 PRIVATE mysmb_core mysmb_game_io mysmb_io_color user32 gdi32 winmm)
     target_sources(mysmb_win32 PRIVATE src/platform/file/snapshot_files.c
         src/platform/win32/snapshot_replace.c src/platform/win32/audio_snapshot.c
         src/platform/win32/audio_snapshot_real.c)
@@ -1110,7 +1110,7 @@ if(WIN32)
         test/win32_focus_pause_smoke.c
         src/platform/win32/focus_pause.c)
     target_include_directories(mysmb_win32_focus_pause_smoke PRIVATE src)
-    target_link_libraries(mysmb_win32_focus_pause_smoke PRIVATE mysmb_game)
+    target_link_libraries(mysmb_win32_focus_pause_smoke PRIVATE mysmb_core)
     add_test(NAME mysmb.win32-focus-pause-smoke
         COMMAND mysmb_win32_focus_pause_smoke)
     add_executable(mysmb_win32_audio_renderer_smoke
@@ -1155,7 +1155,7 @@ add_test(NAME mysmb.timer-root-smoke COMMAND mysmb_timer_root_smoke)
 add_test(NAME mysmb.pause-root-smoke COMMAND mysmb_pause_root_smoke)
 add_test(NAME mysmb.sprite-root-smoke COMMAND mysmb_sprite_root_smoke)
 add_executable(mysmb_sprite_shuffle_smoke test/sprite_shuffle_smoke.c)
-target_link_libraries(mysmb_sprite_shuffle_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_sprite_shuffle_smoke PRIVATE mysmb_core)
 add_test(NAME mysmb.sprite-shuffle-smoke COMMAND mysmb_sprite_shuffle_smoke)
 
 add_test(NAME mysmb.top-score-root-smoke COMMAND mysmb_top_score_root_smoke)
@@ -1486,321 +1486,321 @@ if(MYSMB_ROM_PATH)
     add_executable(mysmb_local_title_smoke test/local_title_smoke.c
         $<TARGET_OBJECTS:mysmb_local_title_data>)
     target_include_directories(mysmb_local_title_smoke PRIVATE src "${MYSMB_LOCAL_TITLE_DIR}")
-    target_link_libraries(mysmb_local_title_smoke PRIVATE mysmb_game)
+    target_link_libraries(mysmb_local_title_smoke PRIVATE mysmb_core)
     add_test(NAME mysmb.local-title-smoke COMMAND mysmb_local_title_smoke)
     add_executable(mysmb_local_title_oracle test/local_title_oracle.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>
         $<TARGET_OBJECTS:mysmb_local_title_data>)
     target_include_directories(mysmb_local_title_oracle PRIVATE src
         "${MYSMB_LOCAL_ROM_DIR}" "${MYSMB_LOCAL_TITLE_DIR}")
-    target_link_libraries(mysmb_local_title_oracle PRIVATE mysmb_game)
+    target_link_libraries(mysmb_local_title_oracle PRIVATE mysmb_core)
     add_test(NAME mysmb.local-title-oracle COMMAND mysmb_local_title_oracle)
     add_executable(mysmb_local_title_bootstrap_smoke test/local_title_bootstrap_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>
         $<TARGET_OBJECTS:mysmb_local_title_data>)
     target_include_directories(mysmb_local_title_bootstrap_smoke PRIVATE src
         "${MYSMB_LOCAL_ROM_DIR}" "${MYSMB_LOCAL_TITLE_DIR}")
-    target_link_libraries(mysmb_local_title_bootstrap_smoke PRIVATE mysmb_game)
+    target_link_libraries(mysmb_local_title_bootstrap_smoke PRIVATE mysmb_core)
     add_test(NAME mysmb.local-title-bootstrap-smoke
              COMMAND mysmb_local_title_bootstrap_smoke)
     add_executable(mysmb_local_area_smoke test/local_area_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_local_area_smoke PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_local_area_smoke PRIVATE mysmb_game)
+    target_link_libraries(mysmb_local_area_smoke PRIVATE mysmb_core)
     add_test(NAME mysmb.local-area-smoke COMMAND mysmb_local_area_smoke)
     add_executable(mysmb_enemy_stream_local_consumer_check
         test/enemy_stream_local_consumer_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_enemy_stream_local_consumer_check PRIVATE src
         "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_enemy_stream_local_consumer_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_enemy_stream_local_consumer_check PRIVATE mysmb_core)
     add_test(NAME mysmb.enemy-stream-local-consumer
         COMMAND mysmb_enemy_stream_local_consumer_check)
     add_executable(mysmb_area_output_smoke test/area_output_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_area_output_smoke PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_area_output_smoke PRIVATE mysmb_game)
+    target_link_libraries(mysmb_area_output_smoke PRIVATE mysmb_core)
     add_test(NAME mysmb.area-output-smoke COMMAND mysmb_area_output_smoke)
     add_executable(mysmb_area_data_smoke test/area_data_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_area_data_smoke PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_area_data_smoke PRIVATE mysmb_game)
+    target_link_libraries(mysmb_area_data_smoke PRIVATE mysmb_core)
     add_test(NAME mysmb.area-data-smoke COMMAND mysmb_area_data_smoke)
     add_executable(mysmb_area_parser_data_smoke test/area_parser_data_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_area_parser_data_smoke PRIVATE src
         "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_area_parser_data_smoke PRIVATE mysmb_game)
+    target_link_libraries(mysmb_area_parser_data_smoke PRIVATE mysmb_core)
     add_test(NAME mysmb.area-parser-data-smoke COMMAND mysmb_area_parser_data_smoke)
     add_executable(mysmb_area_pointer_header_smoke test/area_pointer_header_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_area_pointer_header_smoke PRIVATE src
         "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_area_pointer_header_smoke PRIVATE mysmb_game)
+    target_link_libraries(mysmb_area_pointer_header_smoke PRIVATE mysmb_core)
     add_test(NAME mysmb.area-pointer-header-smoke COMMAND mysmb_area_pointer_header_smoke)
     add_executable(mysmb_castle_scene_stream_smoke test/castle_scene_stream_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_castle_scene_stream_smoke PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_castle_scene_stream_smoke PRIVATE mysmb_game)
+    target_link_libraries(mysmb_castle_scene_stream_smoke PRIVATE mysmb_core)
     add_test(NAME mysmb.castle-scene-streams COMMAND mysmb_castle_scene_stream_smoke)
     add_executable(mysmb_ground_scene_stream_smoke test/ground_scene_stream_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_ground_scene_stream_smoke PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_ground_scene_stream_smoke PRIVATE mysmb_game)
+    target_link_libraries(mysmb_ground_scene_stream_smoke PRIVATE mysmb_core)
     add_test(NAME mysmb.ground-scene-streams COMMAND mysmb_ground_scene_stream_smoke)
     add_executable(mysmb_underground_scene_stream_smoke test/underground_scene_stream_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_underground_scene_stream_smoke PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_underground_scene_stream_smoke PRIVATE mysmb_game)
+    target_link_libraries(mysmb_underground_scene_stream_smoke PRIVATE mysmb_core)
     add_test(NAME mysmb.underground-scene-streams COMMAND mysmb_underground_scene_stream_smoke)
     add_executable(mysmb_water_scene_stream_smoke test/water_scene_stream_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_water_scene_stream_smoke PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_water_scene_stream_smoke PRIVATE mysmb_game)
+    target_link_libraries(mysmb_water_scene_stream_smoke PRIVATE mysmb_core)
     add_test(NAME mysmb.water-scene-streams COMMAND mysmb_water_scene_stream_smoke)
     add_executable(mysmb_block_graphics_smoke test/block_graphics_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_block_graphics_smoke PRIVATE src
         "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_block_graphics_smoke PRIVATE mysmb_game)
+    target_link_libraries(mysmb_block_graphics_smoke PRIVATE mysmb_core)
     add_test(NAME mysmb.block-graphics-smoke COMMAND mysmb_block_graphics_smoke)
     add_executable(mysmb_collision_regression_smoke test/collision_regression_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_collision_regression_smoke PRIVATE src
         "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_collision_regression_smoke PRIVATE mysmb_game)
+    target_link_libraries(mysmb_collision_regression_smoke PRIVATE mysmb_core)
     add_test(NAME mysmb.collision-regression-smoke
              COMMAND mysmb_collision_regression_smoke)
     add_executable(mysmb_enemy_background_entry_smoke test/enemy_background_entry_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_enemy_background_entry_smoke PRIVATE src
         "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_enemy_background_entry_smoke PRIVATE mysmb_game)
+    target_link_libraries(mysmb_enemy_background_entry_smoke PRIVATE mysmb_core)
     add_test(NAME mysmb.enemy-background-entry COMMAND mysmb_enemy_background_entry_smoke)
     add_executable(mysmb_normal_movement_snapshot_check test/normal_movement_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_normal_movement_snapshot_check PRIVATE src)
-    target_link_libraries(mysmb_normal_movement_snapshot_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_normal_movement_snapshot_check PRIVATE mysmb_core)
     add_executable(mysmb_entrance_snapshot_check test/entrance_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_entrance_snapshot_check PRIVATE src
         "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_entrance_snapshot_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_entrance_snapshot_check PRIVATE mysmb_core)
     add_executable(mysmb_player_control_snapshot_check test/player_control_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_player_control_snapshot_check PRIVATE src
         "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_player_control_snapshot_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_player_control_snapshot_check PRIVATE mysmb_core)
     add_executable(mysmb_player_transition_snapshot_check test/player_transition_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_player_transition_snapshot_check PRIVATE src
         "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_player_transition_snapshot_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_player_transition_snapshot_check PRIVATE mysmb_core)
     add_executable(mysmb_player_modes_snapshot_check test/player_modes_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_player_modes_snapshot_check PRIVATE src
         "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_player_modes_snapshot_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_player_modes_snapshot_check PRIVATE mysmb_core)
     add_executable(mysmb_player_end_level_snapshot_check test/player_end_level_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_player_end_level_snapshot_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_player_end_level_snapshot_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_player_end_level_snapshot_check PRIVATE mysmb_core)
     add_executable(mysmb_player_end_level_caller_check test/player_end_level_snapshot_check.c
-        src/game/player_end_level.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
+        src/core/player_end_level.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_player_end_level_caller_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_player_end_level_caller_check PRIVATE MYSMB_CALLER_CHECK=1)
     add_executable(mysmb_fireball_dispatch_snapshot_check test/fireball_dispatch_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_fireball_dispatch_snapshot_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_fireball_dispatch_snapshot_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_fireball_dispatch_snapshot_check PRIVATE mysmb_core)
     add_executable(mysmb_fireball_dispatch_caller_check test/fireball_dispatch_snapshot_check.c
-        src/game/fireball/fireball_spawn.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
+        src/core/fireball/fireball_spawn.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_fireball_dispatch_caller_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_fireball_dispatch_caller_check PRIVATE MYSMB_CALLER_CHECK=1)
     add_executable(mysmb_fireball_core_snapshot_check test/fireball_core_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_fireball_core_snapshot_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_fireball_core_snapshot_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_fireball_core_snapshot_check PRIVATE mysmb_core)
     add_executable(mysmb_fireball_core_caller_check test/fireball_core_snapshot_check.c
-        src/game/fireball/fireball_core.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
+        src/core/fireball/fireball_core.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_fireball_core_caller_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_fireball_core_caller_check PRIVATE MYSMB_CALLER_CHECK=1)
     add_executable(mysmb_block_buffer_player_actual_check
         test/block_buffer_player_actual_check.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_block_buffer_player_actual_check PRIVATE src
         "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_block_buffer_player_actual_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_block_buffer_player_actual_check PRIVATE mysmb_core)
     add_executable(mysmb_timer_snapshot_check test/timer_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_timer_snapshot_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_timer_snapshot_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_timer_snapshot_check PRIVATE mysmb_core)
     add_executable(mysmb_timer_caller_check test/timer_snapshot_check.c
-        src/game/timer.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
+        src/core/timer.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_timer_caller_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_timer_caller_check PRIVATE MYSMB_CALLER_CHECK=1)
     add_executable(mysmb_jumpspring_snapshot_check test/jumpspring_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_jumpspring_snapshot_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_jumpspring_snapshot_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_jumpspring_snapshot_check PRIVATE mysmb_core)
     add_executable(mysmb_jumpspring_caller_check test/jumpspring_snapshot_check.c
-        src/game/jumpspring.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
+        src/core/jumpspring.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_jumpspring_caller_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_jumpspring_caller_check PRIVATE MYSMB_CALLER_CHECK=1)
     add_executable(mysmb_vine_actor_snapshot_check test/vine_actor_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_vine_actor_snapshot_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_vine_actor_snapshot_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_vine_actor_snapshot_check PRIVATE mysmb_core)
     add_executable(mysmb_vine_actor_caller_check test/vine_actor_snapshot_check.c
-        src/game/vine.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
+        src/core/vine.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_vine_actor_caller_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_vine_actor_caller_check PRIVATE MYSMB_CALLER_CHECK=1)
     add_executable(mysmb_hammer_chain_snapshot_check test/hammer_chain_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_hammer_chain_snapshot_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_hammer_chain_snapshot_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_hammer_chain_snapshot_check PRIVATE mysmb_core)
     add_executable(mysmb_hammer_graphics_snapshot_check test/hammer_graphics_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_hammer_graphics_snapshot_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_hammer_graphics_snapshot_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_hammer_graphics_snapshot_check PRIVATE mysmb_core)
     add_executable(mysmb_hammer_chain_caller_check test/hammer_chain_snapshot_check.c
-        src/game/hammer.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
+        src/core/hammer.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_hammer_chain_caller_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_hammer_chain_caller_check PRIVATE MYSMB_CALLER_CHECK=1)
     add_executable(mysmb_coin_allocation_snapshot_check test/coin_allocation_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_coin_allocation_snapshot_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_coin_allocation_snapshot_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_coin_allocation_snapshot_check PRIVATE mysmb_core)
     add_executable(mysmb_coin_allocation_caller_check test/coin_allocation_snapshot_check.c
-        src/game/coin.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
+        src/core/coin.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_coin_allocation_caller_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_coin_allocation_caller_check PRIVATE MYSMB_CALLER_CHECK=1)
     add_executable(mysmb_misc_lifetime_snapshot_check test/misc_lifetime_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_misc_lifetime_snapshot_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_misc_lifetime_snapshot_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_misc_lifetime_snapshot_check PRIVATE mysmb_core)
     add_executable(mysmb_misc_lifetime_caller_check test/misc_lifetime_snapshot_check.c
-        src/game/misc.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
+        src/core/misc.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_misc_lifetime_caller_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_misc_lifetime_caller_check PRIVATE MYSMB_CALLER_CHECK=1)
     add_executable(mysmb_score_hud_snapshot_check test/score_hud_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_score_hud_snapshot_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_score_hud_snapshot_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_score_hud_snapshot_check PRIVATE mysmb_core)
     add_executable(mysmb_score_hud_caller_check test/score_hud_snapshot_check.c
-        src/game/score.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
+        src/core/score.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_score_hud_caller_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_score_hud_caller_check PRIVATE MYSMB_CALLER_CHECK=1)
     add_executable(mysmb_power_up_actor_snapshot_check test/power_up_actor_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_power_up_actor_snapshot_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_power_up_actor_snapshot_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_power_up_actor_snapshot_check PRIVATE mysmb_core)
     add_executable(mysmb_power_up_actor_caller_check test/power_up_actor_snapshot_check.c
-        src/game/power_up.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
+        src/core/power_up.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_power_up_actor_caller_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_power_up_actor_caller_check PRIVATE MYSMB_CALLER_CHECK=1)
     add_executable(mysmb_power_up_actor_child_check test/power_up_actor_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_power_up_actor_child_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_power_up_actor_child_check PRIVATE MYSMB_CHILD_DIAGNOSTIC=1)
-    target_link_libraries(mysmb_power_up_actor_child_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_power_up_actor_child_check PRIVATE mysmb_core)
     add_executable(mysmb_block_head_snapshot_check test/block_head_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_block_head_snapshot_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_block_head_snapshot_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_block_head_snapshot_check PRIVATE mysmb_core)
     add_executable(mysmb_block_head_caller_check test/block_head_snapshot_check.c
-        src/game/blocks/head.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
+        src/core/blocks/head.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_block_head_caller_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_block_head_caller_check PRIVATE MYSMB_CALLER_CHECK=1)
     add_executable(mysmb_block_head_child_check test/block_head_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_block_head_child_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_block_head_child_check PRIVATE MYSMB_CHILD_DIAGNOSTIC=1)
-    target_link_libraries(mysmb_block_head_child_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_block_head_child_check PRIVATE mysmb_core)
     add_executable(mysmb_block_bump_snapshot_check test/block_bump_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_block_bump_snapshot_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_block_bump_snapshot_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_block_bump_snapshot_check PRIVATE mysmb_core)
     add_executable(mysmb_block_bump_caller_check test/block_bump_snapshot_check.c
-        src/game/blocks/bump.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
+        src/core/blocks/bump.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_block_bump_caller_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_block_bump_caller_check PRIVATE MYSMB_CALLER_CHECK=1)
     add_executable(mysmb_block_bump_child_check test/block_bump_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_block_bump_child_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_block_bump_child_check PRIVATE MYSMB_CHILD_DIAGNOSTIC=1)
-    target_link_libraries(mysmb_block_bump_child_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_block_bump_child_check PRIVATE mysmb_core)
     add_executable(mysmb_block_chunks_snapshot_check test/block_chunks_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_block_chunks_snapshot_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_block_chunks_snapshot_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_block_chunks_snapshot_check PRIVATE mysmb_core)
     add_executable(mysmb_block_chunks_caller_check test/block_chunks_snapshot_check.c
-        src/game/blocks/chunks.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
+        src/core/blocks/chunks.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_block_chunks_caller_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_block_chunks_caller_check PRIVATE MYSMB_CALLER_CHECK=1)
     add_executable(mysmb_block_chunks_child_check test/block_chunks_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_block_chunks_child_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_block_chunks_child_check PRIVATE MYSMB_CHILD_DIAGNOSTIC=1)
-    target_link_libraries(mysmb_block_chunks_child_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_block_chunks_child_check PRIVATE mysmb_core)
     add_executable(mysmb_block_lifetime_snapshot_check test/block_lifetime_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_block_lifetime_snapshot_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_block_lifetime_snapshot_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_block_lifetime_snapshot_check PRIVATE mysmb_core)
     add_executable(mysmb_block_lifetime_caller_check test/block_lifetime_snapshot_check.c
-        src/game/blocks/lifetime.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
+        src/core/blocks/lifetime.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_block_lifetime_caller_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_block_lifetime_caller_check PRIVATE MYSMB_CALLER_CHECK=1)
     add_executable(mysmb_block_lifetime_child_check test/block_lifetime_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_block_lifetime_child_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_block_lifetime_child_check PRIVATE MYSMB_CHILD_DIAGNOSTIC=1)
-    target_link_libraries(mysmb_block_lifetime_child_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_block_lifetime_child_check PRIVATE mysmb_core)
     add_executable(mysmb_block_replacement_snapshot_check test/block_replacement_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_block_replacement_snapshot_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_block_replacement_snapshot_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_block_replacement_snapshot_check PRIVATE mysmb_core)
     add_executable(mysmb_block_replacement_caller_check test/block_replacement_snapshot_check.c
-        src/game/blocks/replacement.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
+        src/core/blocks/replacement.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_block_replacement_caller_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_block_replacement_caller_check PRIVATE MYSMB_CALLER_CHECK=1)
     add_executable(mysmb_block_replacement_child_check test/block_replacement_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_block_replacement_child_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_block_replacement_child_check PRIVATE MYSMB_CHILD_DIAGNOSTIC=1)
-    target_link_libraries(mysmb_block_replacement_child_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_block_replacement_child_check PRIVATE mysmb_core)
     add_executable(mysmb_player_movement_snapshot_check test/player_movement_snapshot_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_player_movement_snapshot_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_player_movement_snapshot_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_player_movement_snapshot_check PRIVATE mysmb_core)
     add_executable(mysmb_player_movement_caller_check test/player_movement_snapshot_check.c
-        src/game/player_movement.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
+        src/core/player_movement.c $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_player_movement_caller_check PRIVATE src "${MYSMB_LOCAL_ROM_DIR}")
     target_compile_definitions(mysmb_player_movement_caller_check PRIVATE MYSMB_CALLER_CHECK=1)
     add_executable(mysmb_palette_rotation_smoke test/palette_rotation_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_palette_rotation_smoke PRIVATE src
         "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_palette_rotation_smoke PRIVATE mysmb_game)
+    target_link_libraries(mysmb_palette_rotation_smoke PRIVATE mysmb_core)
     add_test(NAME mysmb.palette-rotation-smoke COMMAND mysmb_palette_rotation_smoke)
     add_executable(mysmb_local_palette_timing_smoke test/local_palette_timing_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_local_palette_timing_smoke PRIVATE src
         "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_local_palette_timing_smoke PRIVATE mysmb_game)
+    target_link_libraries(mysmb_local_palette_timing_smoke PRIVATE mysmb_core)
     add_test(NAME mysmb.local-palette-timing-smoke
              COMMAND mysmb_local_palette_timing_smoke)
     add_executable(mysmb_local_victory_message_smoke test/local_victory_message_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_local_victory_message_smoke PRIVATE src
         "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_local_victory_message_smoke PRIVATE mysmb_game)
+    target_link_libraries(mysmb_local_victory_message_smoke PRIVATE mysmb_core)
     add_test(NAME mysmb.local-victory-message-smoke
              COMMAND mysmb_local_victory_message_smoke)
     add_executable(mysmb_local_death_music_smoke test/local_death_music_smoke.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_local_death_music_smoke PRIVATE src
         "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_local_death_music_smoke PRIVATE mysmb_game)
+    target_link_libraries(mysmb_local_death_music_smoke PRIVATE mysmb_core)
     add_test(NAME mysmb.local-death-music-smoke
              COMMAND mysmb_local_death_music_smoke)
     if(TARGET mysmb_win32)
@@ -1810,7 +1810,7 @@ if(MYSMB_ROM_PATH)
             $<TARGET_OBJECTS:mysmb_local_rom_data>)
         target_include_directories(mysmb_win32_death_audio_smoke PRIVATE src
             "${MYSMB_LOCAL_ROM_DIR}")
-        target_link_libraries(mysmb_win32_death_audio_smoke PRIVATE mysmb_game mysmb_game_io)
+        target_link_libraries(mysmb_win32_death_audio_smoke PRIVATE mysmb_core mysmb_game_io)
         add_test(NAME mysmb.win32-death-audio-smoke
             COMMAND mysmb_win32_death_audio_smoke)
     endif()
@@ -1819,13 +1819,13 @@ if(MYSMB_ROM_PATH)
         $<TARGET_OBJECTS:mysmb_local_title_data>)
     target_include_directories(mysmb_local_frame_summary PRIVATE src
         "${MYSMB_LOCAL_ROM_DIR}" "${MYSMB_LOCAL_TITLE_DIR}")
-    target_link_libraries(mysmb_local_frame_summary PRIVATE mysmb_game)
+    target_link_libraries(mysmb_local_frame_summary PRIVATE mysmb_core)
     add_executable(mysmb_local_frame_recorder test/local_frame_recorder.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>
         $<TARGET_OBJECTS:mysmb_local_title_data>)
     target_include_directories(mysmb_local_frame_recorder PRIVATE src
         "${MYSMB_LOCAL_ROM_DIR}" "${MYSMB_LOCAL_TITLE_DIR}")
-    target_link_libraries(mysmb_local_frame_recorder PRIVATE mysmb_game)
+    target_link_libraries(mysmb_local_frame_recorder PRIVATE mysmb_core)
 
     if(MYSMB_ASM_PATH)
         add_custom_command(
@@ -1846,101 +1846,101 @@ if(MYSMB_ROM_PATH)
     endif()
 endif()
 
-add_executable(mysmb_fireball_enemy_scan_smoke test/fireball_enemy_scan_smoke.c src/game/world/fireball_enemy.c)
+add_executable(mysmb_fireball_enemy_scan_smoke test/fireball_enemy_scan_smoke.c src/core/world/fireball_enemy.c)
 target_include_directories(mysmb_fireball_enemy_scan_smoke PRIVATE src)
 add_test(NAME mysmb.fireball-enemy-scan COMMAND mysmb_fireball_enemy_scan_smoke)
 
-add_executable(mysmb_fireball_hit_smoke test/fireball_hit_smoke.c src/game/world/fireball_hit.c)
+add_executable(mysmb_fireball_hit_smoke test/fireball_hit_smoke.c src/core/world/fireball_hit.c)
 target_include_directories(mysmb_fireball_hit_smoke PRIVATE src)
 add_test(NAME mysmb.fireball-hit-chain COMMAND mysmb_fireball_hit_smoke)
 
-add_executable(mysmb_hammer_contact_smoke test/hammer_contact_smoke.c src/game/world/hammer_collision.c)
+add_executable(mysmb_hammer_contact_smoke test/hammer_contact_smoke.c src/core/world/hammer_collision.c)
 target_include_directories(mysmb_hammer_contact_smoke PRIVATE src)
 add_test(NAME mysmb.hammer-contact-chain COMMAND mysmb_hammer_contact_smoke)
 
-add_executable(mysmb_powerup_pickup_smoke test/powerup_pickup_smoke.c src/game/world/powerup_collision.c)
+add_executable(mysmb_powerup_pickup_smoke test/powerup_pickup_smoke.c src/core/world/powerup_collision.c)
 target_include_directories(mysmb_powerup_pickup_smoke PRIVATE src)
 add_test(NAME mysmb.powerup-pickup-chain COMMAND mysmb_powerup_pickup_smoke)
-add_executable(mysmb_player_enemy_contact_smoke test/player_enemy_contact_smoke.c src/game/world/player_enemy_collision.c)
+add_executable(mysmb_player_enemy_contact_smoke test/player_enemy_contact_smoke.c src/core/world/player_enemy_collision.c)
 target_include_directories(mysmb_player_enemy_contact_smoke PRIVATE src)
 add_test(NAME mysmb.player-enemy-contact-chain COMMAND mysmb_player_enemy_contact_smoke)
-add_executable(mysmb_enemy_pair_smoke test/enemy_pair_smoke.c src/game/world/enemy_collision.c)
+add_executable(mysmb_enemy_pair_smoke test/enemy_pair_smoke.c src/core/world/enemy_collision.c)
 target_include_directories(mysmb_enemy_pair_smoke PRIVATE src)
 add_test(NAME mysmb.enemy-pair-chain COMMAND mysmb_enemy_pair_smoke)
-add_executable(mysmb_platform_collision_smoke test/platform_collision_smoke.c src/game/enemy/platform_collision.c)
+add_executable(mysmb_platform_collision_smoke test/platform_collision_smoke.c src/core/enemy/platform_collision.c)
 target_include_directories(mysmb_platform_collision_smoke PRIVATE src)
 add_test(NAME mysmb.platform-collision-chain COMMAND mysmb_platform_collision_smoke)
-add_executable(mysmb_platform_position_smoke test/platform_position_smoke.c src/game/enemy/platform_position.c)
+add_executable(mysmb_platform_position_smoke test/platform_position_smoke.c src/core/enemy/platform_position.c)
 target_include_directories(mysmb_platform_position_smoke PRIVATE src)
 add_test(NAME mysmb.platform-positioning-chain COMMAND mysmb_platform_position_smoke)
 add_executable(mysmb_collision_preflight_smoke test/collision_preflight_smoke.c)
-target_link_libraries(mysmb_collision_preflight_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_collision_preflight_smoke PRIVATE mysmb_core)
 add_test(NAME mysmb.collision-preflight-chain COMMAND mysmb_collision_preflight_smoke)
-add_executable(mysmb_player_terrain_smoke test/player_terrain_smoke.c src/game/player/terrain.c)
+add_executable(mysmb_player_terrain_smoke test/player_terrain_smoke.c src/core/player/terrain.c)
 target_include_directories(mysmb_player_terrain_smoke PRIVATE src)
 add_test(NAME mysmb.player-terrain-chain COMMAND mysmb_player_terrain_smoke)
 
-add_executable(mysmb_terrain_metatile_smoke test/terrain_metatile_smoke.c src/game/player/terrain_metatiles.c)
+add_executable(mysmb_terrain_metatile_smoke test/terrain_metatile_smoke.c src/core/player/terrain_metatiles.c)
 target_include_directories(mysmb_terrain_metatile_smoke PRIVATE src)
 add_test(NAME mysmb.terrain-metatile-chain COMMAND mysmb_terrain_metatile_smoke)
 
-add_executable(mysmb_climbing_smoke test/climbing_smoke.c src/game/player/climbing.c)
+add_executable(mysmb_climbing_smoke test/climbing_smoke.c src/core/player/climbing.c)
 target_include_directories(mysmb_climbing_smoke PRIVATE src)
 add_test(NAME mysmb.climbing-chain COMMAND mysmb_climbing_smoke)
 
-add_executable(mysmb_hidden_spring_smoke test/hidden_spring_smoke.c src/game/player/terrain_metatiles.c)
+add_executable(mysmb_hidden_spring_smoke test/hidden_spring_smoke.c src/core/player/terrain_metatiles.c)
 target_include_directories(mysmb_hidden_spring_smoke PRIVATE src)
 add_test(NAME mysmb.hidden-spring-chain COMMAND mysmb_hidden_spring_smoke)
 
-add_executable(mysmb_pipe_entry_smoke test/pipe_entry_smoke.c src/game/player/pipe_entry.c)
+add_executable(mysmb_pipe_entry_smoke test/pipe_entry_smoke.c src/core/player/pipe_entry.c)
 target_include_directories(mysmb_pipe_entry_smoke PRIVATE src)
 add_test(NAME mysmb.pipe-entry-chain COMMAND mysmb_pipe_entry_smoke)
 
-add_executable(mysmb_impede_smoke test/impede_smoke.c src/game/player/impede.c)
+add_executable(mysmb_impede_smoke test/impede_smoke.c src/core/player/impede.c)
 target_include_directories(mysmb_impede_smoke PRIVATE src)
 add_test(NAME mysmb.impede-chain COMMAND mysmb_impede_smoke)
 
-add_executable(mysmb_metatile_classification_smoke test/metatile_classification_smoke.c src/game/world/metatiles.c)
+add_executable(mysmb_metatile_classification_smoke test/metatile_classification_smoke.c src/core/world/metatiles.c)
 target_include_directories(mysmb_metatile_classification_smoke PRIVATE src)
 add_test(NAME mysmb.metatile-classification-chain COMMAND mysmb_metatile_classification_smoke)
 
 add_executable(mysmb_enemy_stun_smoke test/enemy_stun_smoke.c)
 target_include_directories(mysmb_enemy_stun_smoke PRIVATE src)
-target_link_libraries(mysmb_enemy_stun_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_enemy_stun_smoke PRIVATE mysmb_core)
 add_test(NAME mysmb.enemy-background-stun-chain COMMAND mysmb_enemy_stun_smoke)
 
 add_executable(mysmb_enemy_landing_smoke test/enemy_landing_smoke.c
-    src/game/enemy/background.c)
+    src/core/enemy/background.c)
 target_include_directories(mysmb_enemy_landing_smoke PRIVATE src)
 add_test(NAME mysmb.enemy-landing-grounded-chain COMMAND mysmb_enemy_landing_smoke)
 add_executable(mysmb_enemy_side_jump_hammer_smoke test/enemy_side_jump_hammer_smoke.c)
-target_link_libraries(mysmb_enemy_side_jump_hammer_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_enemy_side_jump_hammer_smoke PRIVATE mysmb_core)
 add_test(NAME mysmb.enemy-side-jump-hammer-chain COMMAND mysmb_enemy_side_jump_hammer_smoke)
 add_executable(mysmb_enemy_side_jump_hammer_actual_check
     test/enemy_side_jump_hammer_actual_check.c)
-target_link_libraries(mysmb_enemy_side_jump_hammer_actual_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_enemy_side_jump_hammer_actual_check PRIVATE mysmb_core)
 add_executable(mysmb_enemy_bump_entry_actual_check
     test/enemy_bump_entry_actual_check.c)
-target_link_libraries(mysmb_enemy_bump_entry_actual_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_enemy_bump_entry_actual_check PRIVATE mysmb_core)
 add_executable(mysmb_enemy_player_difference_actual_check
     test/enemy_player_difference_actual_check.c)
-target_link_libraries(mysmb_enemy_player_difference_actual_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_enemy_player_difference_actual_check PRIVATE mysmb_core)
 add_executable(mysmb_enemy_landing_actual_check test/enemy_landing_actual_check.c)
-target_link_libraries(mysmb_enemy_landing_actual_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_enemy_landing_actual_check PRIVATE mysmb_core)
 add_executable(mysmb_enemy_ground_query_nonsolids_smoke
     test/enemy_ground_query_nonsolids_smoke.c)
-target_link_libraries(mysmb_enemy_ground_query_nonsolids_smoke PRIVATE mysmb_game)
+target_link_libraries(mysmb_enemy_ground_query_nonsolids_smoke PRIVATE mysmb_core)
 add_test(NAME mysmb.enemy-ground-query-nonsolids-chain
     COMMAND mysmb_enemy_ground_query_nonsolids_smoke)
 add_executable(mysmb_enemy_ground_query_actual_check
     test/enemy_ground_query_actual_check.c)
-target_link_libraries(mysmb_enemy_ground_query_actual_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_enemy_ground_query_actual_check PRIVATE mysmb_core)
 add_executable(mysmb_non_solids_actual_check test/non_solids_actual_check.c)
-target_link_libraries(mysmb_non_solids_actual_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_non_solids_actual_check PRIVATE mysmb_core)
 if(TARGET mysmb_local_rom_data)
     add_executable(mysmb_chk_under_enemy_actual_check
         test/chk_under_enemy_actual_check.c)
-    target_link_libraries(mysmb_chk_under_enemy_actual_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_chk_under_enemy_actual_check PRIVATE mysmb_core)
     add_dependencies(mysmb_chk_under_enemy_actual_check mysmb_local_rom)
     target_include_directories(mysmb_chk_under_enemy_actual_check PRIVATE
         "${MYSMB_LOCAL_ROM_DIR}")
@@ -1949,153 +1949,153 @@ if(TARGET mysmb_local_rom_data)
 endif()
 add_executable(mysmb_fireball_background_actual_check
     test/fireball_background_actual_check.c)
-target_link_libraries(mysmb_fireball_background_actual_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_fireball_background_actual_check PRIVATE mysmb_core)
 add_executable(mysmb_bounding_box_data_check
     test/bounding_box_data_check.c)
-target_link_libraries(mysmb_bounding_box_data_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_bounding_box_data_check PRIVATE mysmb_core)
 add_executable(mysmb_object_box_actual_check test/object_box_actual_check.c)
-target_link_libraries(mysmb_object_box_actual_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_object_box_actual_check PRIVATE mysmb_core)
 add_executable(mysmb_bounding_box_entry_actual_check
     test/bounding_box_entry_actual_check.c)
-target_link_libraries(mysmb_bounding_box_entry_actual_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_bounding_box_entry_actual_check PRIVATE mysmb_core)
 add_executable(mysmb_enemy_bounding_box_entry_actual_check
     test/enemy_bounding_box_entry_actual_check.c)
-target_link_libraries(mysmb_enemy_bounding_box_entry_actual_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_enemy_bounding_box_entry_actual_check PRIVATE mysmb_core)
 add_executable(mysmb_platform_bounding_box_entry_actual_check
     test/platform_bounding_box_entry_actual_check.c)
-target_link_libraries(mysmb_platform_bounding_box_entry_actual_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_platform_bounding_box_entry_actual_check PRIVATE mysmb_core)
 add_executable(mysmb_misc_bounding_box_entry_actual_check
     test/misc_bounding_box_entry_actual_check.c)
-target_link_libraries(mysmb_misc_bounding_box_entry_actual_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_misc_bounding_box_entry_actual_check PRIVATE mysmb_core)
 if(MYSMB_ROM_PATH)
     add_executable(mysmb_enemy_jump_actual_check test/enemy_jump_actual_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_enemy_jump_actual_check PRIVATE "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_enemy_jump_actual_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_enemy_jump_actual_check PRIVATE mysmb_core)
     add_executable(mysmb_hammer_bg_actual_check test/hammer_bg_actual_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_hammer_bg_actual_check PRIVATE "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_hammer_bg_actual_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_hammer_bg_actual_check PRIVATE mysmb_core)
     add_executable(mysmb_kill_enemy_above_block_actual_check
         test/kill_enemy_above_block_actual_check.c
         $<TARGET_OBJECTS:mysmb_local_rom_data>)
     target_include_directories(mysmb_kill_enemy_above_block_actual_check PRIVATE "${MYSMB_LOCAL_ROM_DIR}")
-    target_link_libraries(mysmb_kill_enemy_above_block_actual_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_kill_enemy_above_block_actual_check PRIVATE mysmb_core)
 endif()
 
 add_executable(mysmb_bounding_box_core_actual_check test/bounding_box_core_actual_check.c)
-target_link_libraries(mysmb_bounding_box_core_actual_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_bounding_box_core_actual_check PRIVATE mysmb_core)
 
 add_executable(mysmb_bounding_box_clip_actual_check test/bounding_box_clip_actual_check.c)
-target_link_libraries(mysmb_bounding_box_clip_actual_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_bounding_box_clip_actual_check PRIVATE mysmb_core)
 
 add_executable(mysmb_geometry_core_route_check test/geometry_core_route_check.c)
-target_link_libraries(mysmb_geometry_core_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_geometry_core_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_terrain_connection_route_check test/terrain_connection_route_check.c)
-target_link_libraries(mysmb_terrain_connection_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_terrain_connection_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_platform_integration_route_check test/platform_integration_route_check.c)
-target_link_libraries(mysmb_platform_integration_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_platform_integration_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_podoboo_integration_route_check test/podoboo_integration_route_check.c)
-target_link_libraries(mysmb_podoboo_integration_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_podoboo_integration_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_hammer_bro_integration_route_check test/hammer_bro_integration_route_check.c)
-target_link_libraries(mysmb_hammer_bro_integration_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_hammer_bro_integration_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_enemy_movement_integration_route_check test/enemy_movement_integration_route_check.c)
-target_link_libraries(mysmb_enemy_movement_integration_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_enemy_movement_integration_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_x_counter_integration_route_check test/x_counter_integration_route_check.c)
-target_link_libraries(mysmb_x_counter_integration_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_x_counter_integration_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_bloober_integration_route_check test/bloober_integration_route_check.c)
-target_link_libraries(mysmb_bloober_integration_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_bloober_integration_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_firebar_integration_route_check test/firebar_integration_route_check.c)
-target_link_libraries(mysmb_firebar_integration_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_firebar_integration_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_flying_cheep_integration_route_check test/flying_cheep_integration_route_check.c)
-target_link_libraries(mysmb_flying_cheep_integration_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_flying_cheep_integration_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_lakitu_integration_route_check test/lakitu_integration_route_check.c)
-target_link_libraries(mysmb_lakitu_integration_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_lakitu_integration_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_bridge_integration_route_check test/bridge_integration_route_check.c)
-target_link_libraries(mysmb_bridge_integration_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_bridge_integration_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_bowser_integration_route_check test/bowser_integration_route_check.c)
-target_link_libraries(mysmb_bowser_integration_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_bowser_integration_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_bowser_half_integration_route_check test/bowser_half_integration_route_check.c)
-target_link_libraries(mysmb_bowser_half_integration_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_bowser_half_integration_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_flame_integration_route_check test/flame_integration_route_check.c)
-target_link_libraries(mysmb_flame_integration_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_flame_integration_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_fireworks_integration_route_check test/fireworks_integration_route_check.c)
-target_link_libraries(mysmb_fireworks_integration_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_fireworks_integration_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_end_level_integration_route_check test/end_level_integration_route_check.c)
-target_link_libraries(mysmb_end_level_integration_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_end_level_integration_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_piranha_integration_route_check test/piranha_integration_route_check.c)
-target_link_libraries(mysmb_piranha_integration_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_piranha_integration_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_platform_movement_integration_route_check test/platform_movement_integration_route_check.c)
-target_link_libraries(mysmb_platform_movement_integration_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_platform_movement_integration_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_fireball_hit_integration_route_check test/fireball_hit_integration_route_check.c)
-target_link_libraries(mysmb_fireball_hit_integration_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_fireball_hit_integration_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_powerup_integration_route_check test/powerup_integration_route_check.c)
-target_link_libraries(mysmb_powerup_integration_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_powerup_integration_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_enemy_terrain_integration_route_check test/enemy_terrain_integration_route_check.c)
-target_link_libraries(mysmb_enemy_terrain_integration_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_enemy_terrain_integration_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_jump_hammer_integration_route_check test/jump_hammer_integration_route_check.c)
-target_link_libraries(mysmb_jump_hammer_integration_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_jump_hammer_integration_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_block_query_integration_route_check test/block_query_integration_route_check.c)
-target_link_libraries(mysmb_block_query_integration_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_block_query_integration_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_vine_output_route_check test/vine_output_route_check.c)
-target_link_libraries(mysmb_vine_output_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_vine_output_route_check PRIVATE mysmb_core)
 
 add_executable(mysmb_hammer_output_route_check test/hammer_output_route_check.c)
-target_link_libraries(mysmb_hammer_output_route_check PRIVATE mysmb_game)
-add_executable(mysmb_hammer_output_caller_check test/hammer_output_route_check.c src/game/oam/hammer_gfx.c)
+target_link_libraries(mysmb_hammer_output_route_check PRIVATE mysmb_core)
+add_executable(mysmb_hammer_output_caller_check test/hammer_output_route_check.c src/core/oam/hammer_gfx.c)
 target_include_directories(mysmb_hammer_output_caller_check PRIVATE src)
 target_compile_definitions(mysmb_hammer_output_caller_check PRIVATE MYSMB_HAMMER_CHILD_CHECK=1)
 
 add_executable(mysmb_flagpole_output_route_check test/flagpole_output_route_check.c)
-target_link_libraries(mysmb_flagpole_output_route_check PRIVATE mysmb_game)
-add_executable(mysmb_flagpole_output_caller_check test/flagpole_output_route_check.c src/game/oam/flagpole_gfx.c)
+target_link_libraries(mysmb_flagpole_output_route_check PRIVATE mysmb_core)
+add_executable(mysmb_flagpole_output_caller_check test/flagpole_output_route_check.c src/core/oam/flagpole_gfx.c)
 target_include_directories(mysmb_flagpole_output_caller_check PRIVATE src)
 target_compile_definitions(mysmb_flagpole_output_caller_check PRIVATE MYSMB_FLAGPOLE_CHILD_CHECK=1)
 
 add_executable(mysmb_large_platform_output_route_check test/large_platform_output_route_check.c)
-target_link_libraries(mysmb_large_platform_output_route_check PRIVATE mysmb_game)
-add_executable(mysmb_large_platform_output_caller_check test/large_platform_output_route_check.c src/game/oam/small_platform_gfx.c)
+target_link_libraries(mysmb_large_platform_output_route_check PRIVATE mysmb_core)
+add_executable(mysmb_large_platform_output_caller_check test/large_platform_output_route_check.c src/core/oam/small_platform_gfx.c)
 target_include_directories(mysmb_large_platform_output_caller_check PRIVATE src)
 target_compile_definitions(mysmb_large_platform_output_caller_check PRIVATE MYSMB_LARGE_PLATFORM_CHILD_CHECK=1)
 
 add_executable(mysmb_coin_output_route_check test/coin_output_route_check.c)
-target_link_libraries(mysmb_coin_output_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_coin_output_route_check PRIVATE mysmb_core)
 if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
     add_executable(mysmb_coin_output_caller_check test/coin_output_route_check.c)
-    target_link_libraries(mysmb_coin_output_caller_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_coin_output_caller_check PRIVATE mysmb_core)
     target_compile_definitions(mysmb_coin_output_caller_check PRIVATE MYSMB_COIN_CHILD_CHECK=1)
     target_link_options(mysmb_coin_output_caller_check PRIVATE "-Wl,--wrap=mysmb_oam_dump_two_sprites")
 endif()
 
 add_executable(mysmb_power_up_output_route_check test/power_up_output_route_check.c)
-target_link_libraries(mysmb_power_up_output_route_check PRIVATE mysmb_game)
+target_link_libraries(mysmb_power_up_output_route_check PRIVATE mysmb_core)
 if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
     add_executable(mysmb_power_up_output_caller_check test/power_up_output_route_check.c)
-    target_link_libraries(mysmb_power_up_output_caller_check PRIVATE mysmb_game)
+    target_link_libraries(mysmb_power_up_output_caller_check PRIVATE mysmb_core)
     target_compile_definitions(mysmb_power_up_output_caller_check PRIVATE MYSMB_POWER_UP_CHILD_CHECK=1)
     target_link_options(mysmb_power_up_output_caller_check PRIVATE "-Wl,--wrap=mysmb_oam_draw_one_sprite_row" "-Wl,--wrap=mysmb_oam_sprite_object_offscreen_check")
 endif()

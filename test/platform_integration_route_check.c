@@ -1,5 +1,5 @@
-#include "game/enemy/core.h"
-#include "game/enemy/platform.h"
+#include "core/enemy/core.h"
+#include "core/enemy/platform.h"
 #include <stdio.h>
 #include <string.h>
 int main(int argc,char **argv)

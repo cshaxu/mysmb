@@ -1,4 +1,4 @@
-#include "game/world/world.h"
+#include "core/world/world.h"
 #include <string.h>
 int main(void) {
  struct mysmb_game game; struct mysmb_enemy_terrain terrain;

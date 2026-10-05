@@ -1,4 +1,4 @@
-#include "game/enemy/init.h"
+#include "core/enemy/init.h"
 #include <string.h>
 
 int main(void)

@@ -1,5 +1,5 @@
-#include "game/objects.h"
-#include "game/world/world.h"
+#include "core/objects.h"
+#include "core/world/world.h"
 #include <string.h>
 
 static unsigned int queries,solids,bumps,bad,tile_value,query_result;

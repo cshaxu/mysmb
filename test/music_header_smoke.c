@@ -1,5 +1,5 @@
 #include "core/game.h"
-#include "game/audio.h"
+#include "core/audio.h"
 
 int main(void)
 {

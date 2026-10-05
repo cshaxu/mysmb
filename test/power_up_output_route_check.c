@@ -1,5 +1,5 @@
 #include "core/game.h"
-#include "game/oam/oam.h"
+#include "core/oam/oam.h"
 #include <stdio.h>
 #include <string.h>
 static unsigned char rec[14368];static unsigned int failures,calls,current,tail;

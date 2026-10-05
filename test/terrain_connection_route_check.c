@@ -1,6 +1,6 @@
-#include "game/player.h"
-#include "game/player/terrain_children.h"
-#include "game/world/world.h"
+#include "core/player.h"
+#include "core/player/terrain_children.h"
+#include "core/world/world.h"
 #include <stdio.h>
 #include <string.h>
 int main(int argc,char **argv)

@@ -1,5 +1,5 @@
-#include "game/enemy/distance.h"
-#include "game/objects.h"
+#include "core/enemy/distance.h"
+#include "core/objects.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

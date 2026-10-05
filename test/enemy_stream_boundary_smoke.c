@@ -1,7 +1,7 @@
-#include "game/enemy/stream.h"
-#include "game/enemy/init.h"
-#include "game/enemy/loop.h"
-#include "game/enemy/group.h"
+#include "core/enemy/stream.h"
+#include "core/enemy/init.h"
+#include "core/enemy/loop.h"
+#include "core/enemy/group.h"
 #include <string.h>
 
 static unsigned int initialized, continued, reject;

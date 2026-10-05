@@ -1,6 +1,6 @@
 #include "core/game.h"
-#include "game/objects.h"
-#include "game/enemy/frenzy.h"
+#include "core/objects.h"
+#include "core/enemy/frenzy.h"
 /* PlayerCtrlRoutine has already run before source object collisions.  These
  * direct object tests therefore provide the control-0 primary box that the
  * ROM left in $04ac-$04af (relative X + 2/+14, Y + 8/+32). */

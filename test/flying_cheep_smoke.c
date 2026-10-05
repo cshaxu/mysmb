@@ -1,11 +1,11 @@
 #include "core/game.h"
 #include "core/area.h"
-#include "game/enemy/stream.h"
-#include "game/objects.h"
+#include "core/enemy/stream.h"
+#include "core/objects.h"
 
 static unsigned char movement_data[0x5000];
-#include "game/enemy/frenzy.h"
-#include "game/enemy/loop.h"
+#include "core/enemy/frenzy.h"
+#include "core/enemy/loop.h"
 
 int main(void)
 {

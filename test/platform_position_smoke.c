@@ -1,4 +1,4 @@
-#include "game/enemy/platform.h"
+#include "core/enemy/platform.h"
 #include <stdio.h>
 #include <string.h>
 static struct mysmb_game g;

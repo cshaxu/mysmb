@@ -1,7 +1,7 @@
-#include "game/enemy/init.h"
-#include "game/enemy/init_targets.h"
-#include "game/enemy/frenzy.h"
-#include "game/objects.h"
+#include "core/enemy/init.h"
+#include "core/enemy/init_targets.h"
+#include "core/enemy/frenzy.h"
+#include "core/objects.h"
 #include <string.h>
 
 /* Original $C26C checkpoint and $C282 vector boundary, not child proof. */

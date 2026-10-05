@@ -1,11 +1,11 @@
-#include "game/enemy/core.h"
-#include "game/enemy/actor_slots.h"
-#include "game/enemy/movement.h"
-#include "game/enemy/x_counter.h"
-#include "game/enemy/distance.h"
-#include "game/world/world.h"
-#include "game/objects.h"
-#include "game/oam/oam.h"
+#include "core/enemy/core.h"
+#include "core/enemy/actor_slots.h"
+#include "core/enemy/movement.h"
+#include "core/enemy/x_counter.h"
+#include "core/enemy/distance.h"
+#include "core/world/world.h"
+#include "core/objects.h"
+#include "core/oam/oam.h"
 #include <stdio.h>
 #include <string.h>
 

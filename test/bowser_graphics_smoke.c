@@ -1,6 +1,6 @@
-#include "game/oam/oam.h"
-#include "game/enemy/actor_slots.h"
-#include "game/objects.h"
+#include "core/oam/oam.h"
+#include "core/enemy/actor_slots.h"
+#include "core/objects.h"
 #include <string.h>
 
 static unsigned int calls, bad, mode;

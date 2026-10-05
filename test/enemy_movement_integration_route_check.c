@@ -1,4 +1,4 @@
-#include "game/enemy/movement.h"
+#include "core/enemy/movement.h"
 #include <stdio.h>
 #include <string.h>
 

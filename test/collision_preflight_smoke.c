@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "game/world/world.h"
+#include "core/world/world.h"
 
 /* Exhaustive byte inputs; ROM execution is a separate verification track. */
 static struct mysmb_game game;

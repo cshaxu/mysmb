@@ -1,9 +1,9 @@
-#include "game/enemy/frenzy.h"
-#include "game/enemy/actor_slots.h"
-#include "game/enemy/init_targets.h"
-#include "game/enemy/movement.h"
-#include "game/enemy/init.h"
-#include "game/world/world.h"
+#include "core/enemy/frenzy.h"
+#include "core/enemy/actor_slots.h"
+#include "core/enemy/init_targets.h"
+#include "core/enemy/movement.h"
+#include "core/enemy/init.h"
+#include "core/world/world.h"
 #include <stdio.h>
 #include <string.h>
 

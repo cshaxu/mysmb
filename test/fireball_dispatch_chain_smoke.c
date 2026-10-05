@@ -1,4 +1,4 @@
-#include "game/fireball/fireball.h"
+#include "core/fireball/fireball.h"
 #include <string.h>
 
 static unsigned int calls,failures,mutation;

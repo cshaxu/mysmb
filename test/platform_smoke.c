@@ -1,8 +1,8 @@
 #include "core/area.h"
-#include "game/enemy/stream.h"
+#include "core/enemy/stream.h"
 #include "core/game.h"
-#include "game/objects.h"
-#include "game/world/world.h"
+#include "core/objects.h"
+#include "core/world/world.h"
 #include <string.h>
 
 /* Engine dispatch receives player bounds, screen edges and object controls.

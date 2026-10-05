@@ -1,6 +1,6 @@
 #include "core/dispatcher.h"
 #include "core/frame_root.h"
-#include "game/player.h"
+#include "core/player.h"
 
 /* ROM $b04a GameRoutines. Child bodies keep their separate proof status. */
 void mysmb_game_routines(struct mysmb_game *game)

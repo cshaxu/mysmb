@@ -1,6 +1,6 @@
-#include "game/objects.h"
-#include "game/enemy/actor_slots.h"
-#include "game/oam/oam.h"
+#include "core/objects.h"
+#include "core/enemy/actor_slots.h"
+#include "core/oam/oam.h"
 #include <stdio.h>
 #include <string.h>
 int main(int argc,char **argv)

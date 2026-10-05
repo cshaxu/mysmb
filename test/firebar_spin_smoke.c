@@ -1,6 +1,6 @@
-#include "game/enemy/firebar.h"
-#include "game/objects.h"
-#include "game/oam/oam.h"
+#include "core/enemy/firebar.h"
+#include "core/objects.h"
+#include "core/oam/oam.h"
 #include <stdio.h>
 #include <string.h>
 

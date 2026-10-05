@@ -1,11 +1,11 @@
 #include "terrain_entry.h"
 #include "core/dispatcher.h"
 #include <stdio.h>
-#include "game/objects.h"
-#include "game/world/world.h"
+#include "core/objects.h"
+#include "core/world/world.h"
 #include "core/area.h"
-#include "game/player.h"
-#include "game/oam/oam.h"
+#include "core/player.h"
+#include "core/oam/oam.h"
 #include "smb1_local_rom.h"
 
 static void mysmb_collision_initialize_memory(struct mysmb_game *game,

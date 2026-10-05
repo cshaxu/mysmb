@@ -1,9 +1,9 @@
-#include "game/objects.h"
+#include "core/objects.h"
 #include "core/area.h"
-#include "game/enemy/loop.h"
-#include "game/enemy/movement.h"
-#include "game/enemy/init_targets.h"
-#include "game/enemy/actor_slots.h"
+#include "core/enemy/loop.h"
+#include "core/enemy/movement.h"
+#include "core/enemy/init_targets.h"
+#include "core/enemy/actor_slots.h"
 #include <stdio.h>
 #include <string.h>
 static unsigned char records[8][4098];

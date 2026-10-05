@@ -1,8 +1,8 @@
-#include "game/enemy/core.h"
-#include "game/enemy/actor_slots.h"
-#include "game/enemy/platform.h"
-#include "game/objects.h"
-#include "game/oam/oam.h"
+#include "core/enemy/core.h"
+#include "core/enemy/actor_slots.h"
+#include "core/enemy/platform.h"
+#include "core/objects.h"
+#include "core/oam/oam.h"
 #include <stdio.h>
 #include <string.h>
 

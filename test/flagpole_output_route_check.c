@@ -1,7 +1,7 @@
 #include "core/game.h"
-#include "game/oam/oam.h"
-#include "game/objects.h"
-#include "game/score.h"
+#include "core/oam/oam.h"
+#include "core/objects.h"
+#include "core/score.h"
 #include <stdio.h>
 #include <string.h>
 static unsigned char record[12312];

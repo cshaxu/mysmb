@@ -1,6 +1,6 @@
-#include "game/player/terrain_children.h"
+#include "core/player/terrain_children.h"
 #include "core/area.h"
-#include "game/objects.h"
+#include "core/objects.h"
 #include <stdio.h>
 #include <string.h>
 

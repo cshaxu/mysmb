@@ -1,5 +1,5 @@
-#include "game/enemy/init.h"
-#include "game/enemy/init_targets.h"
+#include "core/enemy/init.h"
+#include "core/enemy/init_targets.h"
 #include <stdio.h>
 #include <string.h>
 

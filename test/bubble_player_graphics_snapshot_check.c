@@ -1,6 +1,6 @@
 #include "core/area.h"
-#include "game/fireball/fireball.h"
-#include "game/oam/oam.h"
+#include "core/fireball/fireball.h"
+#include "core/oam/oam.h"
 #include <stdio.h>
 #include <string.h>
 

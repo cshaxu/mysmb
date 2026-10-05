@@ -1,6 +1,6 @@
 #include "core/frame_root.h"
 #include "core/area.h"
-#include "game/player.h"
+#include "core/player.h"
 
 /* ROM $af3b-$af66: GameEngine music/palette branch, NoChgMus, CycleTwo,
  * ClrPlrPal. Preserve the CMP/BPL sign result, not an unsigned Y range. */

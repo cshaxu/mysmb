@@ -1,5 +1,5 @@
 #include "core/area.h"
-#include "game/audio.h"
+#include "core/audio.h"
 #include "core/game.h"
 #include "smb1_local_rom.h"
 

@@ -1,7 +1,7 @@
-#include "game/enemy/loop.h"
-#include "game/enemy/stream.h"
-#include "game/enemy/init.h"
-#include "game/objects.h"
+#include "core/enemy/loop.h"
+#include "core/enemy/stream.h"
+#include "core/enemy/init.h"
+#include "core/objects.h"
 #include <string.h>
 
 /* Native caller contract only. Child bodies receive no equivalence credit. */

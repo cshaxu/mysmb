@@ -1,5 +1,5 @@
-#include "game/enemy/actor_slots.h"
-#include "game/oam/oam.h"
+#include "core/enemy/actor_slots.h"
+#include "core/oam/oam.h"
 #include <string.h>
 static unsigned int calls,bad;
 static mysmb_u8 root_slot;

@@ -5,7 +5,7 @@
 #include "parser_boundary_fixture.h"
 #include "core/game.h"
 #include "core/frame_root.h"
-#include "game/objects.h"
+#include "core/objects.h"
 #include "smb1_local_rom.h"
 
 /* Exercise the complete WriteGameText selector and tail family against the

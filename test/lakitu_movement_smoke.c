@@ -1,8 +1,8 @@
-#include "game/enemy/frenzy.h"
-#include "game/enemy/actor_slots.h"
-#include "game/enemy/distance.h"
-#include "game/enemy/movement.h"
-#include "game/world/world.h"
+#include "core/enemy/frenzy.h"
+#include "core/enemy/actor_slots.h"
+#include "core/enemy/distance.h"
+#include "core/enemy/movement.h"
+#include "core/world/world.h"
 #include <string.h>
 
 static mysmb_u8 low_byte, page_byte;

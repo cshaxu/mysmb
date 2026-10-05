@@ -1,5 +1,5 @@
-#include "game/oam/oam.h"
-#include "game/enemy/firebar.h"
+#include "core/oam/oam.h"
+#include "core/enemy/firebar.h"
 #include <stdio.h>
 #include <string.h>
 

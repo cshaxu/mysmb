@@ -1,6 +1,6 @@
-#include "game/enemy/actor_slots.h"
-#include "game/enemy/x_counter.h"
-#include "game/world/world.h"
+#include "core/enemy/actor_slots.h"
+#include "core/enemy/x_counter.h"
+#include "core/world/world.h"
 #include <string.h>
 
 static unsigned char expected[2048];

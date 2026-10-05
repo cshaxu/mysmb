@@ -1,6 +1,6 @@
-#include "game/world/world.h"
-#include "game/oam/oam.h"
-#include "game/objects.h"
+#include "core/world/world.h"
+#include "core/oam/oam.h"
+#include "core/objects.h"
 #include "smb1_local_rom.h"
 #include <stdio.h>
 #include <string.h>

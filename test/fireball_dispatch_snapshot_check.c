@@ -1,4 +1,4 @@
-#include "game/fireball/fireball.h"
+#include "core/fireball/fireball.h"
 #include "core/frame_root.h"
 #include "core/area.h"
 #include "smb1_local_rom.h"

@@ -1,7 +1,7 @@
 #include "core/area.h"
-#include "game/enemy/stream.h"
+#include "core/enemy/stream.h"
 #include "core/game.h"
-#include "game/objects.h"
+#include "core/objects.h"
 
 /* Synthetic lookup data tests binding and integration, not ROM equality. */
 static unsigned char firebar_data[0x5000];

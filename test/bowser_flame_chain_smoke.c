@@ -1,7 +1,7 @@
-#include "game/enemy/actor_slots.h"
-#include "game/enemy/frenzy.h"
-#include "game/oam/oam.h"
-#include "game/objects.h"
+#include "core/enemy/actor_slots.h"
+#include "core/enemy/frenzy.h"
+#include "core/oam/oam.h"
+#include "core/objects.h"
 #include <string.h>
 const mysmb_u8 mysmb_enemy_flame_y_positions[4]={0x90U,0x80U,0x70U,0x90U};
 static mysmb_u8 mask, expected_force;

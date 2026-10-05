@@ -1,6 +1,6 @@
-#include "game/fireball/fireball.h"
-#include "game/oam/oam.h"
-#include "game/world/world.h"
+#include "core/fireball/fireball.h"
+#include "core/oam/oam.h"
+#include "core/world/world.h"
 
 int main(void)
 {

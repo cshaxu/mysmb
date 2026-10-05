@@ -1,4 +1,4 @@
-#include "game/audio.h"
+#include "core/audio.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

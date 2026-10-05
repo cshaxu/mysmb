@@ -1,6 +1,6 @@
 #include <string.h>
 #include "core/area.h"
-#include "game/enemy/stream.h"
+#include "core/enemy/stream.h"
 #include "smb1_local_rom.h"
 
 enum {

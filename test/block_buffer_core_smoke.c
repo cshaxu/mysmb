@@ -1,5 +1,5 @@
 #include <string.h>
-#include "game/world/world.h"
+#include "core/world/world.h"
 int main(void)
 {
     struct mysmb_game game;

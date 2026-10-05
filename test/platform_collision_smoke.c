@@ -1,6 +1,6 @@
-#include "game/enemy/platform.h"
-#include "game/world/world.h"
-#include "game/player.h"
+#include "core/enemy/platform.h"
+#include "core/world/world.h"
+#include "core/player.h"
 #include <stdio.h>
 #include <string.h>
 static struct mysmb_game g;

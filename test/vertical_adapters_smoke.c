@@ -1,6 +1,6 @@
-#include "game/player.h"
-#include "game/enemy/movement.h"
-#include "game/world/world.h"
+#include "core/player.h"
+#include "core/enemy/movement.h"
+#include "core/world/world.h"
 #include <stdio.h>
 #include <string.h>
 static unsigned int calls,failures,expect_offset,expect_force,expect_max,expect_direction;

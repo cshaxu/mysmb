@@ -1,5 +1,5 @@
-#include "game/enemy/actor_slots.h"
-#include "game/objects.h"
+#include "core/enemy/actor_slots.h"
+#include "core/objects.h"
 #include <stdio.h>
 #include <string.h>
 

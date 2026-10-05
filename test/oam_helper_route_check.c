@@ -1,9 +1,9 @@
 /* Full helper output and independently intercepted child contracts. */
 #include <stdio.h>
 #include <string.h>
-#include "game/oam/oam.h"
-#include "game/objects.h"
-#include "game/fireball/fireball.h"
+#include "core/oam/oam.h"
+#include "core/objects.h"
+#include "core/fireball/fireball.h"
 #include "core/area.h"
 static struct mysmb_game game;
 static unsigned char record[28736],local_prg[32768];

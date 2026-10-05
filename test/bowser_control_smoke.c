@@ -1,11 +1,11 @@
-#include "game/enemy/core.h"
-#include "game/enemy/actor_slots.h"
-#include "game/enemy/distance.h"
-#include "game/enemy/frenzy.h"
-#include "game/enemy/init_targets.h"
-#include "game/enemy/loop.h"
-#include "game/enemy/movement.h"
-#include "game/objects.h"
+#include "core/enemy/core.h"
+#include "core/enemy/actor_slots.h"
+#include "core/enemy/distance.h"
+#include "core/enemy/frenzy.h"
+#include "core/enemy/init_targets.h"
+#include "core/enemy/loop.h"
+#include "core/enemy/movement.h"
+#include "core/objects.h"
 #include <string.h>
 static mysmb_u8 page, trace[8];
 static unsigned int calls, bad;

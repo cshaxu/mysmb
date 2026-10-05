@@ -1,4 +1,4 @@
-#include "game/player.h"
+#include "core/player.h"
 #include "core/area.h"
 #include "smb1_local_rom.h"
 #include <stdio.h>

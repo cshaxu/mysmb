@@ -1,5 +1,5 @@
-#include "game/blocks/head.h"
-#include "game/objects.h"
+#include "core/blocks/head.h"
+#include "core/objects.h"
 #include <stdio.h>
 #include <string.h>
 

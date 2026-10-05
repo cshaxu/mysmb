@@ -1,5 +1,5 @@
-#include "game/objects.h"
-#include "game/oam/oam.h"
+#include "core/objects.h"
+#include "core/oam/oam.h"
 
 static void mysmb_large_platform_fixture(struct mysmb_game *game)
 {

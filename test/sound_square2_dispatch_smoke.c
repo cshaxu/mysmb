@@ -1,4 +1,4 @@
-#include "game/audio.h"
+#include "core/audio.h"
 #include <string.h>
 
 static void reset_game(struct mysmb_game *game)

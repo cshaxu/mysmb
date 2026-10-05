@@ -1,4 +1,4 @@
-#include "game/objects.h"
+#include "core/objects.h"
 #include <string.h>
 
 static mysmb_u8 mysmb_test_oam(const struct mysmb_game *game,

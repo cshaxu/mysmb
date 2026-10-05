@@ -1,6 +1,6 @@
 #include "core/dispatcher.h"
 #include "core/frame_root.h"
-#include "game/player.h"
+#include "core/player.h"
 #include <string.h>
 
 static unsigned int events[4],count,bad,mutate;

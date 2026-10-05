@@ -1,8 +1,8 @@
-#include "game/enemy/platform.h"
-#include "game/enemy/movement.h"
-#include "game/enemy/init_targets.h"
-#include "game/objects.h"
-#include "game/world/world.h"
+#include "core/enemy/platform.h"
+#include "core/enemy/movement.h"
+#include "core/enemy/init_targets.h"
+#include "core/objects.h"
+#include "core/world/world.h"
 #include <stdio.h>
 #include <string.h>
 

@@ -1,6 +1,6 @@
-#include "game/player.h"
-#include "game/player/terrain_children.h"
-#include "game/objects.h"
+#include "core/player.h"
+#include "core/player/terrain_children.h"
+#include "core/objects.h"
 #include "smb1_local_rom.h"
 #include <stdio.h>
 #include <string.h>

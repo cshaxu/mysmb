@@ -1,4 +1,4 @@
-#include "game/fireball/fireball.h"
+#include "core/fireball/fireball.h"
 
 int main(void)
 {

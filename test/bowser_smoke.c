@@ -1,9 +1,9 @@
 #include "core/area.h"
-#include "game/enemy/stream.h"
+#include "core/enemy/stream.h"
 #include "core/game.h"
-#include "game/objects.h"
-#include "game/enemy/frenzy.h"
-#include "game/fireball/fireball.h"
+#include "core/objects.h"
+#include "core/enemy/frenzy.h"
+#include "core/fireball/fireball.h"
 #include "core/frame_root.h"
 
 int main(void)

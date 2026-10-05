@@ -1,6 +1,6 @@
-#include "game/enemy/actor_slots.h"
-#include "game/enemy/movement.h"
-#include "game/world/world.h"
+#include "core/enemy/actor_slots.h"
+#include "core/enemy/movement.h"
+#include "core/world/world.h"
 #include <string.h>
 
 static unsigned char data[0x5000];

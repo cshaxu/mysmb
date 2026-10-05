@@ -489,3 +489,62 @@ No logic/table/PPU/host behavior change,no unresolved scoped preservation diff.
 Exact S5 files: `src/game/audio.c`, `src/game/audio.h`, `src/game/blocks/bump.c`, `src/game/blocks/bump.h`, `src/game/blocks/chunks.c`, `src/game/blocks/chunks.h`, `src/game/blocks/head.c`, `src/game/blocks/head.h`, `src/game/blocks/lifetime.c`, `src/game/blocks/replacement.c`, `src/game/bridge.c`, `src/game/cannon.c`, `src/game/coin.c`, `src/game/endgame_objects.c`, `src/game/enemy/actor_slots.c`, `src/game/enemy/actor_slots.h`, `src/game/enemy/background.c`, `src/game/enemy/background.h`, `src/game/enemy/balance_platform.c`, `src/game/enemy/bloober.c`, `src/game/enemy/bowser.c`, `src/game/enemy/bowser_flame.c`, `src/game/enemy/bullet_bill.c`, `src/game/enemy/core.c`, `src/game/enemy/core.h`, `src/game/enemy/dispatch_targets.c`, `src/game/enemy/distance.c`, `src/game/enemy/distance.h`, `src/game/enemy/firebar.c`, `src/game/enemy/firebar.h`, `src/game/enemy/firebar_children.c`, `src/game/enemy/fireworks.c`, `src/game/enemy/flying_cheep.c`, `src/game/enemy/frenzy.c`, `src/game/enemy/frenzy.h`, `src/game/enemy/green_paratroopa.c`, `src/game/enemy/group.c`, `src/game/enemy/group.h`, `src/game/enemy/hammer_bro.c`, `src/game/enemy/init.c`, `src/game/enemy/init.h`, `src/game/enemy/init_targets.c`, `src/game/enemy/init_targets.h`, `src/game/enemy/jump_terrain.c`, `src/game/enemy/lakitu.c`, `src/game/enemy/lifecycle.c`, `src/game/enemy/loop.c`, `src/game/enemy/loop.h`, `src/game/enemy/movement.c`, `src/game/enemy/movement.h`, `src/game/enemy/normal.c`, `src/game/enemy/paratroopa.c`, `src/game/enemy/piranha.c`, `src/game/enemy/platform.c`, `src/game/enemy/platform.h`, `src/game/enemy/platform_callers.c`, `src/game/enemy/platform_collision.c`, `src/game/enemy/platform_position.c`, `src/game/enemy/podoboo.c`, `src/game/enemy/side_collision.c`, `src/game/enemy/special_callers.c`, `src/game/enemy/star_flag.c`, `src/game/enemy/stream.c`, `src/game/enemy/stream.h`, `src/game/enemy/swimming_cheep.c`, `src/game/enemy/x_counter.c`, `src/game/enemy/x_counter.h`, `src/game/enemy_bounds.c`, `src/game/fireball/bubble.c`, `src/game/fireball/fireball.h`, `src/game/fireball/fireball_core.c`, `src/game/fireball/fireball_spawn.c`, `src/game/hammer.c`, `src/game/jumpspring.c`, `src/game/misc.c`, `src/game/oam/block_gfx.c`, `src/game/oam/block_offscreen.c`, `src/game/oam/bloober_gfx.c`, `src/game/oam/bowser_flame_gfx.c`, `src/game/oam/bowser_gfx.c`, `src/game/oam/bullet_bill_gfx.c`, `src/game/oam/cheep_gfx.c`, `src/game/oam/enemy_offscreen.c`, `src/game/oam/enemy_offscreen_tail.h`, `src/game/oam/fireball_gfx.c`, `src/game/oam/firebar_gfx.c`, `src/game/oam/fireworks_gfx.c`, `src/game/oam/flagpole_gfx.c`, `src/game/oam/goomba_gfx.c`, `src/game/oam/hammer_bro_gfx.c`, `src/game/oam/hammer_gfx.c`, `src/game/oam/normal_enemy_gfx.c`, `src/game/oam/oam.h`, `src/game/oam/object_position.c`, `src/game/oam/piranha_gfx.c`, `src/game/oam/player_gfx.c`, `src/game/oam/podoboo_gfx.c`, `src/game/oam/power_up_gfx.c`, `src/game/oam/small_platform_gfx.c`, `src/game/oam/spiny_gfx.c`, `src/game/oam/sprite_draw.c`, `src/game/oam/sprite_dump.c`, `src/game/oam/sprite_row.c`, `src/game/oam/sprite_stacker.c`, `src/game/oam/vine_gfx.c`, `src/game/objects.c`, `src/game/objects.h`, `src/game/player/climbing.c`, `src/game/player/impede.c`, `src/game/player/pipe_entry.c`, `src/game/player/terrain.c`, `src/game/player/terrain_children.h`, `src/game/player/terrain_metatiles.c`, `src/game/player.c`, `src/game/player.h`, `src/game/player_control.c`, `src/game/player_end_level.c`, `src/game/player_modes.c`, `src/game/player_movement.c`, `src/game/player_transition.c`, `src/game/power_up.c`, `src/game/power_up_init.c`, `src/game/score.c`, `src/game/score.h`, `src/game/timer.c`, `src/game/vine.c`, `src/game/whirlpool.c`, `src/game/world/block_buffer.c`, `src/game/world/bounding_box.c`, `src/game/world/collision.c`, `src/game/world/enemy_collision.c`, `src/game/world/fireball_enemy.c`, `src/game/world/fireball_hit.c`, `src/game/world/geometry.c`, `src/game/world/gravity.c`, `src/game/world/hammer_collision.c`, `src/game/world/metatiles.c`, `src/game/world/movement.c`, `src/game/world/player_enemy_collision.c`, `src/game/world/powerup_collision.c`, `src/game/world/world.h`.
 
 Cohort file counts: player-world-block-fireball:47, enemy-oam-object-support:92, source-audio:2.
+
+## S5 P2 closure - remaining translated core
+
+141source/header files move in three sequential cohorts:47player/world/block/
+fireball/object,92enemy/OAM/support and2source audio. Every cohort passes both
+widths' C90 pedantic syntax checks before the next. All250source/header texts,
+and all saved code/test/tool consumers,are exactly equal after reversing path
+substitutions. CMake is exactly equal after reversing paths and the two whole
+source-list/library identifiers;static-link membership/order is preserved.
+No original symbol,state,table,branch,write or audio command changes.
+
+47focused tests per Windows width pass,including player motion/friction,
+world/enemy collision,power-up dispatch,OAM,source sound,root/NMI/area,modes,
+PPU/text/IO,purity and complete-state/snapshot continuation. Retained compositor
+matrix covers2048boundary and1198native pixel cases. The original DOS16 toolchain
+build/link passes. Actual DOSBox product restore,full640x400 graphics,paused
+Tab graphics/text/graphics equality and Escape return pass. Installed DOSBox
+configuration unchanged;SDL dummy isolates device correctness,not speed.
+
+Actual code/test/build scale:471edited files,+1680/-1680,plus141moves. Current registry/audit path bindings rebind10701/5276fields;151source identities update by declared event.
+Metadata validators retain original node/control/material/group identities,
+statuses and historical evidence;they prove metadata consistency only. No
+source/group universe or finalCertification promotion. Existing missing clauses
+remain. Original-body preservation is not a fresh exhaustive ROM audit.
+
+`assets/mysmb16.exe`:429963bytes,SHA256`26a41628d3cf42027341b3ffafcef1790773b17b7d8361e0f0cdb7420b57c531`;byte-identical=true.
+`assets/mysmb32.exe`:319115bytes,SHA256`3e6027c0e02609810d624775e369b727f2e782e97f948034043216fcf13c49d4`;byte-identical=false,all PE sections equal=true.
+`assets/mysmb64.exe`:327787bytes,SHA256`c534dcdbfeae184dbf14e5e8a75048c71362f03b37bc49da6f447a45d25a85c8`;byte-identical=false,all PE sections equal=true.
+
+Owner directs local submission of all pending files including these three
+already-tracked products. No ROM/generated source/trace/capture/publication.
+All1449maintenance labels retain incoming local dispositions:1448locally exact,
+CheckForEnemyGroup needs-evidence,expected/actual new[]. Exact scope remains
+in canonical S5 run/receiving ledger;no promotion or unfinished new-node transfer.
+Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
+infeasible81) unchanged. Documentation/node/ledger gates pass before submission.
+T27 remains open for S6/S7/S8;no M2 or486SX qualification certificate.
+
+## S6 P1 admission - authored text and observation boundary
+
+Move core-owned source-decision observation.c/.h into core/observation.c/.h;
+move remaining12authored scene/element/caption/snapshot files to text/. Extract
+the authored projection and receipt snapshot codec from the core CMake library;
+composition/tests link their declared text owner. Core includes no authored
+text consumer. Original OAM producers call the same core observation API at
+the same points;capacity64,producer/visible ownership,entries/order,overflow,
+DMA commit and far representation remain unchanged. Snapshot schema2 wire
+5253bytes and schema1 absent-receipt behavior stay identical. No template,
+color,game,PPU,device,input or save-format changes. Validation helpers wait S7.
+
+Scope/expected original-ROM labels[],new0,baseline/max1992/1992. Existing writer
+maintenance custody stays at S5;moving the authored consumer earns no credit.
+Estimate14moves,40-100include/build/map consumers,100-250path/link/gate lines;
+source bodies unchanged. Before changes inventory every consumer and exact
+link membership. Verify normalized sources,dependency direction,all immutable
+text receipts/state/pixels/snapshot bytes,both widths' focused tests,retained
+DOS16 toolchain and actual Tab/restore/exit route. Refresh three EXEs,review all
+pending changes,run governance gates and commit. Stop on any scoped content,
+state,ABI or wire diff,missing producer/consumer or reverse core-to-text edge.

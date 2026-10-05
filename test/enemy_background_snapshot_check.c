@@ -1,7 +1,7 @@
-#include "game/enemy/background.h"
-#include "game/enemy/distance.h"
-#include "game/objects.h"
-#include "game/world/world.h"
+#include "core/enemy/background.h"
+#include "core/enemy/distance.h"
+#include "core/objects.h"
+#include "core/world/world.h"
 #include "smb1_local_rom.h"
 #include <stdio.h>
 #include <stdlib.h>

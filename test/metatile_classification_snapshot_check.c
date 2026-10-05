@@ -1,5 +1,5 @@
-#include "game/world/world.h"
-#include "game/player/terrain_children.h"
+#include "core/world/world.h"
+#include "core/player/terrain_children.h"
 #include "smb1_local_rom.h"
 #include <stdio.h>
 #include <string.h>

@@ -1,10 +1,10 @@
 #include "core/frame_root.h"
 #include "core/dispatcher.h"
 #include "core/status.h"
-#include "game/audio.h"
+#include "core/audio.h"
 #include "core/area.h"
-#include "game/enemy/core.h"
-#include "game/oam/oam.h"
+#include "core/enemy/core.h"
+#include "core/oam/oam.h"
 #include "core/title_modes.h"
 
 enum {

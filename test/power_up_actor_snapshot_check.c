@@ -1,7 +1,7 @@
-#include "game/enemy/movement.h"
-#include "game/oam/oam.h"
-#include "game/objects.h"
-#include "game/world/world.h"
+#include "core/enemy/movement.h"
+#include "core/oam/oam.h"
+#include "core/objects.h"
+#include "core/world/world.h"
 #include "core/area.h"
 #include "smb1_local_rom.h"
 #include <stdio.h>

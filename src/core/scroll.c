@@ -1,5 +1,5 @@
-#include "game/player.h"
-#include "game/oam/oam.h"
+#include "core/player.h"
+#include "core/oam/oam.h"
 
 /* ROM $b038 GetScreenPosition. Shared by InitializeArea and ScrollScreen. */
 void mysmb_player_get_screen_position(struct mysmb_game *game)

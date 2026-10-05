@@ -1,4 +1,4 @@
-#include "game/enemy/distance.h"
+#include "core/enemy/distance.h"
 #include <stdio.h>
 #include <string.h>
 

@@ -1,6 +1,6 @@
-#include "game/score.h"
+#include "core/score.h"
 #include "core/status.h"
-#include "game/objects.h"
+#include "core/objects.h"
 #include <string.h>
 #include <stdio.h>
 

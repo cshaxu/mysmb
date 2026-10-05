@@ -1,9 +1,9 @@
 #include "core/dispatcher.h"
 #include "core/frame_root.h"
 #include "core/area.h"
-#include "game/player.h"
-#include "game/objects.h"
-#include "game/oam/oam.h"
+#include "core/player.h"
+#include "core/objects.h"
+#include "core/oam/oam.h"
 
 enum {
     MYSMB_FRAME_GAME_ENGINE_SUBROUTINE = 0x000eU,

@@ -1,5 +1,5 @@
-#include "game/world/world.h"
-#include "game/player.h"
+#include "core/world/world.h"
+#include "core/player.h"
 #include <stdio.h>
 #include <string.h>
 int main(int argc,char **argv)

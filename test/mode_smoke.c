@@ -1,6 +1,6 @@
 #include "core/game.h"
 #include "core/area.h"
-#include "game/player.h"
+#include "core/player.h"
 
 int main(void)
 {

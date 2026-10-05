@@ -1,6 +1,6 @@
 #include "core/game.h"
-#include "game/objects.h"
-#include "game/oam/oam.h"
+#include "core/objects.h"
+#include "core/oam/oam.h"
 
 static int same(const struct mysmb_game *g,const mysmb_u8 *v)
 {

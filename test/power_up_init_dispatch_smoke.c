@@ -1,5 +1,5 @@
-#include "game/enemy/init.h"
-#include "game/objects.h"
+#include "core/enemy/init.h"
+#include "core/objects.h"
 #include <string.h>
 #include <stdio.h>
 int main(void)

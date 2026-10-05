@@ -33,7 +33,7 @@ def main():
     args = parser.parse_args()
 
     root = Path(__file__).resolve().parents[1]
-    source = (root / "src/game/oam/normal_enemy_gfx.c").read_text()
+    source = (root / "src/core/oam/normal_enemy_gfx.c").read_text()
     listing = args.listing.read_text()
     rom = args.rom.read_bytes()
     if len(rom) < 16 + 32768 or rom[:4] != b"NES\x1a":

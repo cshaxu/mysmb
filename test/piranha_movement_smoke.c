@@ -1,6 +1,6 @@
-#include "game/objects.h"
-#include "game/enemy/actor_slots.h"
-#include "game/enemy/distance.h"
+#include "core/objects.h"
+#include "core/enemy/actor_slots.h"
+#include "core/enemy/distance.h"
 #include <stdio.h>
 #include <string.h>
 

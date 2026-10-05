@@ -1,4 +1,4 @@
-#include "game/objects.h"
+#include "core/objects.h"
 int main(void)
 {
  struct mysmb_game g;

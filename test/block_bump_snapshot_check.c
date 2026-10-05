@@ -1,5 +1,5 @@
-#include "game/blocks/bump.h"
-#include "game/objects.h"
+#include "core/blocks/bump.h"
+#include "core/objects.h"
 #include "core/frame_root.h"
 #include "smb1_local_rom.h"
 #include <stdio.h>

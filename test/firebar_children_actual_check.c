@@ -1,5 +1,5 @@
-#include "game/enemy/firebar.h"
-#include "game/objects.h"
+#include "core/enemy/firebar.h"
+#include "core/objects.h"
 #include "smb1_local_rom.h"
 #include <stdio.h>
 #include <string.h>

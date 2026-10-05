@@ -1,6 +1,6 @@
-#include "game/objects.h"
-#include "game/enemy/movement.h"
-#include "game/oam/oam.h"
+#include "core/objects.h"
+#include "core/enemy/movement.h"
+#include "core/oam/oam.h"
 #include <stdio.h>
 #include <string.h>
 static unsigned int failures,calls,ids[10];
