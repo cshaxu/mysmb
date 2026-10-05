@@ -9,24 +9,26 @@ void mysmb_vga_frame_initialize(struct mysmb_vga_frame *frame,
 void mysmb_vga_frame_build(const struct mysmb_io_video_frame *source,
                            struct mysmb_vga_frame *frame)
 {
-    mysmb_io_u16 page,row,group,source_y,phase;
+    mysmb_io_u16 plane,row,column,source_y,vertical_phase,source_x,phase;
     const mysmb_io_u8 MYSMB_IO_FAR *in;
     mysmb_io_u8 MYSMB_VGA_FAR *out;
-    /* Fixed nearest-neighbor ratio:four source columns become five output
-     * columns;five output rows consume six source rows. No division or32-bit
-     * accumulator in the pixel loop. Generic IO scaling remains independent. */
-    source_y=phase=0U;
-    for(page=0U;page<4U;++page)for(row=0U;row<50U;++row) {
-        in=source->pixels+source_y*256U;
-        out=frame->pages[page]+row*320U;
-        for(group=0U;group<64U;++group) {
-            out[0]=out[1]=(mysmb_io_u8)(in[0]&63U);
-            out[2]=(mysmb_io_u8)(in[1]&63U);
-            out[3]=(mysmb_io_u8)(in[2]&63U);
-            out[4]=(mysmb_io_u8)(in[3]&63U);
-            in+=4;out+=5;
+    /* Stretch the complete256x240 source to320x400 without downsampling.
+     * VGA scanout doubles horizontal dots to640x400;there are no margins.
+     * Each far page holds one plane,80bytes per row,below64KB. */
+    for(plane=0U;plane<4U;++plane) {
+        source_y=0U;vertical_phase=0U;
+        for(row=0U;row<400U;++row) {
+            in=source->pixels+source_y*256U;
+            out=frame->pages[plane]+row*80U;
+            source_x=(mysmb_io_u16)(plane*4U/5U);
+            phase=(mysmb_io_u16)(plane*4U%5U);
+            for(column=0U;column<80U;++column) {
+                *out++=(mysmb_io_u8)(in[source_x]&63U);
+                source_x+=3U;
+                if(++phase==5U) { phase=0U;++source_x; }
+            }
+            vertical_phase+=3U;
+            if(vertical_phase>=5U) { vertical_phase-=5U;++source_y; }
         }
-        ++source_y;
-        if(++phase==5U){++source_y;phase=0U;}
     }
 }

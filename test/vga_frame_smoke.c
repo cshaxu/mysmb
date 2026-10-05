@@ -11,11 +11,12 @@ int main(void)
     source.pixels=pixels;
     mysmb_vga_frame_initialize(&frame,pages[0]+1,pages[1]+1,pages[2]+1,pages[3]+1);
     mysmb_vga_frame_build(&source,&frame);
-    for (y=0UL;y<200UL;++y) for (x=0UL;x<320UL;++x) {
-        sx=x*256UL/320UL; sy=y*240UL/200UL; offset=y*320UL+x;
-        if (frame.pages[offset/16000UL][offset%16000UL]!=(pixels[sy*256UL+sx]&63U)) return 1;
+    for(y=0UL;y<400UL;++y)for(x=0UL;x<320UL;++x) {
+        offset=y*80UL+x/4UL;
+        sx=x*4UL/5UL;sy=y*3UL/5UL;
+        if(frame.pages[x%4UL][offset]!=(pixels[sy*256UL+sx]&63U))return 1;
     }
     for (i=0UL;i<4UL;++i)
-        if (pages[i][0]!=0xa5U || pages[i][16001]!=0x5aU) return 2;
+        if (pages[i][0]!=0xa5U || pages[i][MYSMB_VGA_PAGE_SIZE+1]!=0x5aU) return 2;
     return 0;
 }

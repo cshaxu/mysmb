@@ -20,7 +20,7 @@ static struct mysmb_io_text_frame text;
 static struct mysmb_io_snapshot snapshot;
 static struct mysmb_io_snapshot_cache cache;
 static struct mysmb_vga_frame vga;
-static unsigned char pages[4][16000],chr[8192],fingerprint[16];
+static unsigned char pages[4][MYSMB_VGA_PAGE_SIZE],chr[8192],fingerprint[16];
 static LARGE_INTEGER frequency;
 static double stamp(void)
 {
@@ -65,17 +65,18 @@ static int compare_frames(unsigned int cases)
 }
 static void scale_reference(const struct mysmb_io_video_frame *video)
 {
-    unsigned int row;
-    for(row=0U;row<200U;++row)
-        mysmb_io_scale_row(video,320U,200U,(mysmb_io_u16)row,
-            vga.pages[row/50U]+(row%50U)*320U);
+    unsigned int x,y;
+    /* Independent direct-enlargement oracle,including every source row. */
+    for(y=0U;y<MYSMB_VGA_HEIGHT;++y)for(x=0U;x<MYSMB_VGA_WIDTH;++x)
+        vga.pages[x%4U][y*80U+x/4U]=
+            (unsigned char)(video->pixels[(y*3U/5U)*256U+x*4U/5U]&63U);
 }
-static unsigned char scaled_reference[4][16000];
+static unsigned char scaled_reference[4][MYSMB_VGA_PAGE_SIZE];
 static int compare_scaling(const struct mysmb_io_video_frame *video)
 {
     unsigned int page;
     scale_reference(video);
-    for(page=0U;page<4U;++page)memcpy(scaled_reference[page],pages[page],16000U);
+    for(page=0U;page<4U;++page)memcpy(scaled_reference[page],pages[page],MYSMB_VGA_PAGE_SIZE);
     mysmb_vga_frame_build(video,&vga);
     return memcmp(scaled_reference,pages,sizeof(pages))==0;
 }

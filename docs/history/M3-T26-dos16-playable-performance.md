@@ -147,3 +147,91 @@ Scope/expected new ROM labels[],new0,historical1992/1992,local1991/1992nodes,
 4260/4261feasible controls(raw4342,infeasible81),unchanged. This admission P
 changes governance only,no product change or EXE refresh. Physical486SX
 qualification remains separately pending,not proof supplied by DOSBox.
+
+## S2 owner amendment: preserve all240 source rows
+
+Owner explicitly requires repair of DOS picture degradation. Existing VGA
+mode13h is320x200;the adapter expands256columns to320 and drops40of240rows.
+A640x400host capture doubles that already lossy output;it does not restore
+NES detail. The existing VGA-scaled equality check proves the old mapping,
+not preservation of every source row. It is insufficient for this requirement.
+
+Extend S2 to VGA mode setup,frame layout,device submission and DOS root buffer
+binding,plus associated pixel/readback/lifetime tests. Estimate200-400source
+and test lines,subject to measured mode design. Owner requires full640x400 stretch,not original-size centering. Use320x400
+Mode X with direct nearest-neighbor enlargement and horizontal double-dot
+scanout. Retain all256x240source pixels without downsampling;verify full
+source-to-device coordinate coverage,all palette indices and aspect/placement.
+NoVESA/higher-resolution dependency is assumed. Keep DOSBox's full installed
+configuration unchanged,including CPU and sound. VGA registers programmed by
+the application are its device adaptation,not emulator-setting changes.
+
+Preserve graphics/text switching,snapshot redraw,original video-mode restoration,
+input and exit. New storage must remain16-bit addressable with bounded far
+segments. Standard/native-mode options require documented register/stride
+and palette semantics and a neutral synthetic device probe before product
+changes. Read-only hardware research references are permitted for these
+semantics only;no third-party source import or ROM material redistribution.
+The shared ROM game routines remain unchanged;PPU-compatible composition
+and device scanout are separate output owners. Any new mode must pass an
+updated lossless mapping oracle,not the obsolete320x200reference scaler.
+Three product builds/packages are required for each product-code P.
+
+## S2 P2 display delivery: full640x400 stretch
+
+Owner rejected original-size centering with black margins. That local320x240
+experiment is not delivered. The device now uses320x400 unchained VGA memory
+with BIOS mode13h timing and horizontal double-dot scanout to640x400.
+Direct enlargement maps logical x to floor(x*4/5),y to floor(y*3/5).
+Every256x240source coordinate is retained;there are no added borders and no
+320x200 intermediate. Noninteger enlargement necessarily repeats source dots
+unevenly;this is the requested full-screen stretch,not an aspect-fit layout.
+Four far buffers each hold32000bytes below the64KB segment boundary;the VGA
+sequencer selects each plane at the same A000 offset. DOS binary/storage grows
+by64240bytes versus S1;this picture repair is not a claimed performance gain.
+
+Bounded similar-issue sweep:VGA sizing/mapping,all four root far allocations,
+plane submission,stride/mode registers,palette,graphics/text transitions and
+exit restoration. Root allocations already follow the shared page-size constant.
+Only platform adapters changed;shared game/IO contracts,PPU composition and
+ROM routines remain unchanged. The independent VGA oracle replaces the old
+lossy200-row reference;buffer guards remain checked. Product/test5files,+53/-33.
+
+Operational evidence below ignored build/m3-t26-s2:mode400-run neutral probe
+reads all four32000-byte VGA planes and verifies all256000 captured640x400
+pixels against a synthetic palette grid. Product-stretch-run launches the
+actual new DOS EXE using the unchanged installed configuration and a retained
+local snapshot;the populated640x400 picture remains byte-identical while
+paused and through graphics->80x50text->graphics. Escape returns to DOS and
+the captured original text mode is restored. SDL dummy isolates host display
+and audio for device correctness only;it earns no performance acceptance.
+Config hash remains the admitted0494236f...41917 value before/after.
+The capture scripts' early exit-window issue was corrected by leaving the DOS
+prompt open until its bounded capture;it was not a product defect.
+
+Original OpenNT16 compiler/link succeeds;both Windows widths each pass five
+focused tests:VGA frame,presentation performance,DOS root,DOS snapshot and
+platform purity. Retained compositor oracle runs2048boundary and1198native
+cases per width;new full-frame plane mapping compares the actual packed output.
+No new ROM certification claim follows from these presentation checks.
+
+All three local products refreshed:429963/319115/327275bytes. DOS SHA256
+`a7567e3b8d2a08a712c541436382fd57b10fbf0d469d4d9cce4435fc6e5419e9`;
+x86 `fd4bacdc12cb8d6f1278254262df2a8e342a80a7d4795bb8f18fd7875de1677b`;
+x64 `e4287bf0389721c0403982e47ee330132ca3fa2d1d69fc0dba8dff86c0f5cb87`.
+Each local package matches its build;protected EXEs/ROM/captures remain ignored.
+
+Hardware research uses published VGA register semantics from
+[Abrash's Mode X discussion](https://www.phatcode.net/res/224/files/html/ch47/47-02.html),
+as a read-only technical reference;no book code is imported or redistributed.
+The original NES similarly fetches/decodes CHR and composites sprites,using its
+hardware PPU rather than game-CPU pixel loops;see
+[PPU rendering](https://www.nesdev.org/wiki/PPU_rendering).
+VGA has no NES tile/sprite unit,so this port's shared compositor produces the
+indexed source before the platform adapts it. This is not a CPU emulator.
+
+Scope/expected/actual labels remain[],new0. Historical1992/1992,local scoped
+nodes1991/1992 and feasible controls4260/4261(raw4342,infeasible81),unchanged.
+P2 delivers the requested display correction. S2/T26 remain active:original
+nominal cadence under the unchanged installed configuration is still unproven.
+Physical486SX,heap/stack peak and broader M2 certification remain open.

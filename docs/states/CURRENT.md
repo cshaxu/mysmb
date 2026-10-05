@@ -1,26 +1,26 @@
 # Project Status
 
-**Active: M3 T26 S2 P1.**
+**Active: M3 T26 S2 P2.**
 
 ## M3 T26 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Corrective M3 T26 S2 P1,latest closed T reopened. |
+| Identifier Mode | Corrective M3 T26 S2 P2,latest closed T reopened. |
 | Admission And Approval | Owner forbids DOSBox setting changes and rejects accelerated acceptance. |
-| Objective | Achieve program performance under unchanged installed DOSBox settings. |
+| Objective | Achieve program performance under unchanged DOSBox settings and stretch all256x240source pixels to full640x400 without borders. |
 | Non-goals | Emulator setting changes,frame/tick/content reduction,platform gameplay,M2 certification. |
 | Reference Baseline | S1 retained equality only;historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81). |
 | Candidate Proposal | [S2 correction](../history/M3-T26-dos16-playable-performance.md#s2-corrective-admission-fixed-dosbox-settings). |
-| Files And ABI Surface | Initial governance;later compositor/VGA/build/focused tests,50-200source/test lines estimate,no gameplay/ABI fork. |
+| Files And ABI Surface | Compositor,VGA frame/mode/devices,DOS root buffer binding,build/tests;amended200-400source/test lines estimate,no gameplay/public game ABI fork. |
 | Applicable Rules | Task Reading Set,Execution,Document;Architecture/Coding/source policy before code or research. |
-| Verification | Hash-bound installed config without overrides,actual DOS EXE workload,nominal frame cadence/latency,equality,pause/snapshot/input,3builds after code change. |
+| Verification | Hash-bound installed config,no overrides;neutral mode probe,lossless256x240mapping/device readback,palette/mode lifetime;actual gameplay cadence,shared state equality,pause/snapshot/input,3builds after code change. |
 | Expected Markers | Scope/expected [],new0,maximum historical1992/1992. |
 | Asset Needs | Existing owner-local EXE/ROM inputs only,nonredistributable,ignored build/m3-t26-s2;config read-only,no import/commit. |
 | Reporting Requirements | Fixed environment identity,actual baseline/after cadence and costs,remaining deficit,3products if code changes,unchanged node/edge totals. |
 | Stop Conditions | No settings changes or acceptance substitution;amend before ownership expansion. |
-| Exit Criteria | Declared gameplay sustains original nominal frame cadence in same installed config,no scoped semantic difference,gates/products/commit;otherwise remain open. |
-| Original Owner Request | Do not change DOSBox settings;that is cheating. |
+| Exit Criteria | Complete256x240pixel preservation and nominal gameplay cadence in unchanged installed config,no scoped state difference,gates/products/commit;otherwise remain open. |
+| Original Owner Request | No DOSBox setting changes;direct256x240-to640x400 full-screen stretch,never centered or downsampled and explain hardware PPU versus software drawing. |
 | Similar-Issue Sweep | All launcher/config/runtime speed and sound/render overrides;accelerated historical claims excluded from performance acceptance. |
 
 ## Current Technical Baseline
@@ -36,7 +36,7 @@
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11/T12/T13/T14/T15/T16/T17/T18 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are365723/319115/327275bytes.
+- Current local DOS16/Win32/x64 products are429963/319115/327275bytes.
   T22 refreshes all three with RAM-authoritative NMI page handoff;T21 coral,T20 titles/tree/fence and T18 timing retained.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
@@ -47,7 +47,10 @@
 
 T26 performance closure withdrawn by owner:S1 pixel/state proofs and measured
 code improvement retained;accelerated DOSBox operation excluded from requested
-acceptance. Fixed installed-config playability remains unproven,S2 active.
+acceptance. P2 delivers full640x400 DOS stretch with all240source rows,no borders;
+neutral plane/capture and actual paused graphics/text/exit checks pass.
+Both widths5tests pass,original DOS toolchain and3packages refreshed.
+Fixed installed-config playability remains unproven,S2 active.
 [Correction](../history/M3-T26-dos16-playable-performance.md#s2-corrective-admission-fixed-dosbox-settings).
 
 M3 T24 S4 corrects window/console input gating under unavailable/different

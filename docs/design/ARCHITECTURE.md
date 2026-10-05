@@ -25,7 +25,8 @@ accepts only the neutral audio frame;its synthesis state remains host-owned.
 
 DOS16 uses the same glue and full indexed frame. Shared IO owns the stable
 64-color presentation palette and generic bounded row scaling;VGA owns fixed
-320x200 ratio expansion,paged storage,
+direct256x240-to320x400 enlargement without borders or source-row loss,
+four32000-byte Mode X planes,640x400 scanout,
 DAC programming and video memory. DOS devices own physical held-key decoding,
 BIOS mode lifetime and PIT sampling. Only its composition root binds local
 immutable program resources and allocates the shared compositor's pixel store.

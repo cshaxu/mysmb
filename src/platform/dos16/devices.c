@@ -53,6 +53,20 @@ static unsigned long timer_stamp(void)
     return (ticks<<16U)+phase;
 }
 
+/* Keep BIOS mode13h timing;unchain memory and expose all400 scanlines.
+ * One plane row is80bytes;byte addressing avoids DWORD scanout strides. */
+static void vga_register(unsigned short port,unsigned char index,unsigned char value)
+{ outp(port,index);outp((unsigned short)(port+1U),value); }
+static void vga_400_rows(void)
+{
+    unsigned char scan;
+    vga_register(0x3c4,4,6);
+    outp(0x3d4,9);scan=(unsigned char)inp(0x3d5);
+    vga_register(0x3d4,9,(unsigned char)(scan&0xe0U));
+    vga_register(0x3d4,20,0);
+    vga_register(0x3d4,23,0xe3);
+    vga_register(0x3c4,2,15);
+}
 static int try_mode(mysmb_io_u8 text)
 {
     union REGS registers;
@@ -77,6 +91,7 @@ static int try_mode(mysmb_io_u8 text)
     int86(0x10,&registers,&registers);
     registers.h.ah=0x0fU;int86(0x10,&registers,&registers);
     if(registers.h.al!=0x13U)return 0;
+    vga_400_rows();
     outp(0x3c8,0U);
     for (i=0U;i<64U;++i) {
         rgb=mysmb_io_color_rgb((mysmb_io_u8)i);
@@ -157,11 +172,12 @@ void mysmb_dos16_devices_present(const struct mysmb_vga_frame *frame)
     unsigned char far *video;
     if(!video_ready || text_mode)return;
     video=(unsigned char far *)0xa0000000UL;
-    /* Large-model memcpy accepts far pointers in the original runtime.
-     * Each16KB transfer remains within its source and destination segments.
-     * Four pages cover exactly64000bytes,without crossing the VGA segment. */
-    for (page=0U;page<MYSMB_VGA_PAGE_COUNT;++page)
-        memcpy(video+page*MYSMB_VGA_PAGE_SIZE,frame->pages[page],MYSMB_VGA_PAGE_SIZE);
+    /* The sequencer chooses each independent plane at the same A000 offset.
+     * Each32000-byte copy stays within both far segments. */
+    for(page=0U;page<MYSMB_VGA_PAGE_COUNT;++page) {
+        vga_register(0x3c4,2,(unsigned char)(1U<<page));
+        memcpy(video,frame->pages[page],MYSMB_VGA_PAGE_SIZE);
+    }
 }
 void mysmb_dos16_devices_text(const struct mysmb_io_text_frame MYSMB_IO_FAR *frame)
 {
