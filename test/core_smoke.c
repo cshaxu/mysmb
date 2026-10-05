@@ -9,7 +9,7 @@
 #include "core/fireball/fireball.h"
 #include "core/status.h"
 #include "core/world/world.h"
-#include "game/render.h"
+#include "validate/render.h"
 
 int main(void)
 {

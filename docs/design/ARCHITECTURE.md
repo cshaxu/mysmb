@@ -6,7 +6,7 @@ MySMB is one native product with a portable translated program and separate host
 
 ## Modules, Ownership, And Assembly
 
-`core/` owns the original RAM container and all translated CPU/OAM/source-sound routines. `core/observation` owns source-decision receipts;`text/` owns authored scenes and receipt encoding. `game/` temporarily retains validation projections until S7. `assets/` owns generated, owner-local ROM derivatives. `validate/` owns reference-execution comparison through local tools such as `nnes`. `platform/win32` owns the development window, input, audio, and timing; `platform/dos16` later owns BIOS keyboard, PIT, VGA, and sound access. Each target has its own small composition root.
+`core/` owns the original RAM container and all translated CPU/OAM/source-sound routines. `core/observation` owns source-decision receipts;`text/` owns authored scenes and receipt encoding. `validate/` owns render/frame/page projections used only by tests and recorders. `assets/` owns generated, owner-local ROM derivatives. `validate/` owns reference-execution comparison through local tools such as `nnes`. `platform/win32` owns the development window, input, audio, and timing; `platform/dos16` later owns BIOS keyboard, PIT, VGA, and sound access. Each target has its own small composition root.
 
 `ppu/state` now owns the single addressed/visible PPU storage and immutable
 CHR binding embedded in the game container. Core retains all original NMI

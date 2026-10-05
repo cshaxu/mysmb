@@ -26,11 +26,11 @@
     "controlIdentitySha256": "4d6fced75017fcd0edd80f63223f45e7d14e1b4170af91f98937a0474c970669"
   },
   "sourceSnapshot": {
-    "CMakeLists.txt": "32f372b9fada4ea0c300abd4110c3ce516df0a7ce40f47d932a4d77d6593fe37",
+    "CMakeLists.txt": "91b2af5b91c4ff429cac33a2cc26c40dd4bb2aafac8fa8b130484c706920b829",
     "src/app/game_io.c": "430560c4e159f4ed067377b95d5449493191f2d8b1a5d0e8bb34ccfc169c5a1a",
     "src/app/game_io.h": "57bbbd0586bc55a5485952a422b22030c1e02501831687f411383849fc9acc3f",
-    "src/core/area.c": "eb611cc83e8ff3b2c5b2ca4c1f7659b80de618c631265796a689b75ac323a32c",
-    "src/core/area.h": "4e8b51bdbc610f7ba6650046b0c564a6fb1b428cd067e9c5d21981b238ec634f",
+    "src/core/area.c": "7553e1175c8871237f9fc9c4ec6d13134a6008d35bd89a7182400f9e62520341",
+    "src/core/area.h": "ae0e86079819b2e1bf3174c93d761eb68fa7e3374ff7cc560b15b6cf2db9062a",
     "src/core/area/area_data.c": "19a05068087f1fc8594089a8616ae9adf00497811ad62ad93bfffe2783f0dd18",
     "src/core/area/block_buffer.c": "496d53b2d83bd89256e9b2c3c1741716f3e8675c0b3e44073b489503d6a28a3a",
     "src/core/area/block_buffer.h": "2cccec7f50fe87d3a757e36cd6b33fb4d7db4354ba8e8dac84e5757a9d70195c",
@@ -194,10 +194,6 @@
     "src/core/world/player_enemy_collision.c": "401dc837e37b5a805a4707a9bbbea05fee2dc6216511ba25c160d2de8bebacd5",
     "src/core/world/powerup_collision.c": "6743aa7dda3fce06a4fea65b8b3d17946352203215f22b21e4cb558426796b5b",
     "src/core/world/world.h": "90a2df7045c716c8f47bb94d130860b7102a68c895f83095f7a30a9a7c992ea1",
-    "src/game/frame_snapshot.c": "3e94f53130fd8b596014041e434e623e0a7eba0ea2a2902ad59fa12d015b5b4c",
-    "src/game/frame_snapshot.h": "c8250a5405adc439b0942589e68b800f506b763d662c14e645a30af4a12d9fe4",
-    "src/game/render.c": "6951a42d54eef79810816bf4554d17c2424940d21774b287ba5452da9be4dda4",
-    "src/game/render.h": "72138f7333dc2bef221b5bbfe539a3f98b65498c131c6f1c558f9008ef51c940",
     "src/io/audio.h": "bec1f38fbef20d5a35810e542a21ed66b2c22dacfcffc5309e850d38a8259601",
     "src/io/color.c": "59ae4afe005ea7c8529f4877c5db59f310051c2f218a18f6172445ad36adf38a",
     "src/io/color.h": "0e8fc0b79bbe10558e38daa41bda4e986384eed3bfc2704d4b52f046a78c594f",
@@ -233,7 +229,11 @@
     "src/ppu/frame.c": "2b081da892e4081ef53162b0bbecc97e4268f4104e03b0efa32601435fbb84d1",
     "src/ppu/frame.h": "928aed897e5d6f67f298e56db13eef3b15dce53a998b6b360268b6ac0403b79d",
     "src/ppu/state.c": "f6642fc037c1c9676901081e30f0f9baa0fff5f80a01f62ae959886878410edf",
-    "src/ppu/state.h": "2dee732c55a0278b3001946f74b7bddec673ce4ad50db217975074c40de0d79c"
+    "src/ppu/state.h": "2dee732c55a0278b3001946f74b7bddec673ce4ad50db217975074c40de0d79c",
+    "src/validate/frame_snapshot.c": "a8ae0b5ac2fa2cf9c17f3c1583ec26f2313d4e62cef0eb515d7bdacb4e26f014",
+    "src/validate/frame_snapshot.h": "c8250a5405adc439b0942589e68b800f506b763d662c14e645a30af4a12d9fe4",
+    "src/validate/render.c": "ee804479bf11009b3d979c2cf8a3e7db15c6aefa2fd839b84a06f4976034f496",
+    "src/validate/render.h": "72138f7333dc2bef221b5bbfe539a3f98b65498c131c6f1c558f9008ef51c940"
   },
   "uses": [
     {
@@ -125825,6 +125825,60 @@
       "nodeControlCredit": 0,
       "evidence": "docs/history/M3-T27-core-ppu-module-boundaries.md S6 P2 closure",
       "acceptanceBoundary": "All250source/header texts equal after reversing exact paths. Source identity rebinding retains scoped receipts and all pending M2 final obligations;it is not semantic certification."
+    },
+    {
+      "id": "M3-T27-S7-mechanical-component-binding",
+      "cause": "Owner-approved validation-only projections relocation and runtime membership removal only. No ROM logic or evidence promotion.",
+      "changedSourceIdentities": [
+        {
+          "previousPath": "CMakeLists.txt",
+          "path": "CMakeLists.txt",
+          "old": "32f372b9fada4ea0c300abd4110c3ce516df0a7ce40f47d932a4d77d6593fe37",
+          "new": "91b2af5b91c4ff429cac33a2cc26c40dd4bb2aafac8fa8b130484c706920b829"
+        },
+        {
+          "previousPath": "src/core/area.c",
+          "path": "src/core/area.c",
+          "old": "eb611cc83e8ff3b2c5b2ca4c1f7659b80de618c631265796a689b75ac323a32c",
+          "new": "7553e1175c8871237f9fc9c4ec6d13134a6008d35bd89a7182400f9e62520341"
+        },
+        {
+          "previousPath": "src/core/area.h",
+          "path": "src/core/area.h",
+          "old": "4e8b51bdbc610f7ba6650046b0c564a6fb1b428cd067e9c5d21981b238ec634f",
+          "new": "ae0e86079819b2e1bf3174c93d761eb68fa7e3374ff7cc560b15b6cf2db9062a"
+        },
+        {
+          "previousPath": "src/game/frame_snapshot.c",
+          "path": "src/validate/frame_snapshot.c",
+          "old": "3e94f53130fd8b596014041e434e623e0a7eba0ea2a2902ad59fa12d015b5b4c",
+          "new": "a8ae0b5ac2fa2cf9c17f3c1583ec26f2313d4e62cef0eb515d7bdacb4e26f014"
+        },
+        {
+          "previousPath": "src/game/frame_snapshot.h",
+          "path": "src/validate/frame_snapshot.h",
+          "old": "c8250a5405adc439b0942589e68b800f506b763d662c14e645a30af4a12d9fe4",
+          "new": "c8250a5405adc439b0942589e68b800f506b763d662c14e645a30af4a12d9fe4"
+        },
+        {
+          "previousPath": "src/game/render.c",
+          "path": "src/validate/render.c",
+          "old": "6951a42d54eef79810816bf4554d17c2424940d21774b287ba5452da9be4dda4",
+          "new": "ee804479bf11009b3d979c2cf8a3e7db15c6aefa2fd839b84a06f4976034f496"
+        },
+        {
+          "previousPath": "src/game/render.h",
+          "path": "src/validate/render.h",
+          "old": "72138f7333dc2bef221b5bbfe539a3f98b65498c131c6f1c558f9008ef51c940",
+          "new": "72138f7333dc2bef221b5bbfe539a3f98b65498c131c6f1c558f9008ef51c940"
+        }
+      ],
+      "addedDependencyPaths": [],
+      "sourceUniverseChanged": false,
+      "groupUniverseChanged": false,
+      "nodeControlCredit": 0,
+      "evidence": "docs/history/M3-T27-core-ppu-module-boundaries.md S7 P2 closure",
+      "acceptanceBoundary": "All250pre-existing source/header texts equal after reversing paths and reinserting the exactly retained validation helper body/declaration. Source/consumer ownership moves only;all original translated bodies remain. Runtime validation membership removal changes binaries,verified through scoped state/pixel/snapshot/native/DOS checks. No new ROM certification."
     }
   ],
   "closure": "All group facets, findings and coverage slots evidence-closed; six registry packages closed; no unresolved source mismatch; final source/data/build binding. No all-input theorem inferred.",

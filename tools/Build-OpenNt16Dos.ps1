@@ -69,7 +69,7 @@ $sources = @(
     'core/oam/bloober_gfx.c', 'core/oam/podoboo_gfx.c', 'core/oam/normal_enemy_gfx.c',
     'core/oam/spiny_gfx.c', 'core/oam/hammer_bro_gfx.c', 'core/oam/bowser_gfx.c', 'core/oam/bowser_flame_gfx.c', 'core/endgame_objects.c', 'core/oam/flagpole_gfx.c',
     'core/oam/small_platform_gfx.c',
-    'game/render.c', 'ppu/frame.c', 'game/frame_snapshot.c', 'core/status.c',
+    'ppu/frame.c', 'core/status.c',
     'core/observation.c',
     'text/observer_snapshot.c',
     'text/elements.c', 'text/actor_scene.c',

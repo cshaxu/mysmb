@@ -1,5 +1,5 @@
 #include "core/game.h"
-#include "game/render.h"
+#include "validate/render.h"
 
 int main(void)
 {

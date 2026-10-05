@@ -1,4 +1,4 @@
-#include "game/frame_snapshot.h"
+#include "validate/frame_snapshot.h"
 
 int main(void)
 {

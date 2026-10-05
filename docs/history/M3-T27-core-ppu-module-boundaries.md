@@ -611,3 +611,79 @@ focused projection/area/root/state/PPU/text/snapshot tests at both widths,origin
 DOS16 build and actual restore/Tab/exit. Refresh3EXEs and run all governance gates.
 Stop on any original-body/output/ABI diff or missing consumer. S8 then conducts
 the complete component/source/link/integration completion review;T27 stays open.
+
+## S7 P2 closure - validation projections outside runtime
+
+Move4render/frame-snapshot files to validate and extract the unchanged direct
+page projection into2validation files. Search of all src/test/tools/build
+consumers finds six test/recorder targets and no product caller. Only
+area_data_smoke calls the direct page helper. The helper is not translated
+RenderAreaGraphics:the original packet writer and attribute/palette paths stay
+in core. All250source/header texts match after path reversal and reinsertion
+of the exactly preserved helper body/declaration. C90 pedantic syntax passes.
+The first move found no validate directory;resume created it while preserving
+the saved baseline. No repeated baseline overwrite or source loss occurred.
+
+CMake validation_projections owns three projection units and links core;the
+six consumers explicitly link validation. Core/product members and the DOS
+source list remove validation projections. OpenNT's core-only syntax target
+also removes the two validation commands. Both width archives prove all three
+entry definitions owned only by validation;every archive in the product link
+response excludes them. Product binaries are stripped,so an empty executable
+symbol scan is not evidence;archive/input-link closure is the accepted proof.
+The source/include dependency gate passes with no reverse core/validation edge.
+
+Both widths50focused tests pass,including both projections,area helper,root/
+NMI,player/world/enemy/OAM/source sound,text/receipt/state/snapshot and PPU.
+Both recorder/summary targets compile and link at each width. Pixel matrix
+2048boundary/1198native cases remains passing. Original DOS16 build/link and
+actual DOSBox restore/full640x400/paused Tab round-trip/Escape pass with unchanged
+configuration. Correctness device isolation earns no cadence/hardware credit.
+
+Actual4moves,12existing code/test/build files,+23/-77 plus2new validation files
+69lines,aggregate+92/-77. Seven source identities rebind by declared event;
+no node/control/material/group or historical evidence promotion. Binary sizes
+shrink because unused validation implementations leave the products;PE section
+and DOS whole-file equality are not claimed for this S. Function/state/output
+preservation rests on exact body extraction and the scoped operational checks.
+
+`assets/mysmb16.exe`:427455bytes,SHA256`a79354f270dafcf5cd6d1e2f31a22a3a7f08cf3d47bca83c33b6b64f9dd160fc`.
+`assets/mysmb32.exe`:318603bytes,SHA256`9312ead396bdaec553dd1f2b2e0ef92231d7b6181e5f7989224cc23ec592e46c`.
+`assets/mysmb64.exe`:327275bytes,SHA256`360abd60b03c62894b4ba9fc137f85428e369dcc9d3a3302cd3c8462ad0e520d`.
+
+Owner-authorized local submission includes these3tracked EXEs and all reviewed
+pending changes;no ROM/generated source/trace/capture/publication. Scope/
+expected/actual labels[],new0,existing maintenance custody unchanged.
+Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
+infeasible81) unchanged. CheckForEnemyGroup/control-01480 and all M2/M4 pending
+obligations remain. Node/ledger/documentation/metadata gates pass before commit.
+
+## S8 P1 admission - integrated component completion review
+
+Review the entire approved T27 contract against current source/build/runtime:
+all185original file destinations,751function/143macro and1996consumer-site
+census dispositions,one RAM/PPU/observation owner,const PPU view,all206original
+PPU/receipt access sites and four non-arrow seams,dependency direction/no cycles,
+original control/write order,resource binding,far/stack representation and
+snapshot wire compatibility. Reconcile the accepted S1-S7 source/binary/state/
+pixel/audio/receipt proofs by exact dependency scope,not a new ROM audit round.
+Verify every original runtime writer remains and each validation-only unit is
+absent from product linkage. Reconcile current code/source manifests and all
+current design references;historical receipts retain their original paths.
+
+Scope/expected ROM labels[],new0,max1992/1992,audit registration,maintenance
+custody unchanged. Estimate0gameplay lines;20-120architecture/gate/manifest lines
+if current references need corrections. If a concrete implementation defect is
+found,amend the active scope and correct it before closure;changed product code
+requires three fresh EXEs. Final checks include both widths' integrated source/
+state/PPU/text/audio/snapshot/platform suites,original DOS16 link,actual graphical/
+text/input/restore/exit routes and fixed-configuration performance comparison
+against retained T26 where reproducible. No speed gain or final ROM certificate
+is required/inferred;unqualified486SX cadence remains queued/M4. Any inability
+to compare is recorded with cause and reviewed before claiming T27 complete.
+
+Exit requires every T27 requirement and census item dispositioned,all applicable
+component/link/state/pixel/audio/snapshot/native/DOS checks passing,no unexplained
+scoped semantic/output difference,no reverse dependency or runtime validation
+link,and explicit remaining M2/M4/performance limits. Run all governance gates,
+commit reviewed changes and close T27 only after this completion audit passes.

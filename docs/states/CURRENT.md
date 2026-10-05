@@ -1,27 +1,27 @@
 # Project Status
 
-**Active: M3 T27 S7 P1.**
+**Active: M3 T27 S8 P1.**
 
-## M3 T27 S7 Packet
+## M3 T27 S8 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T27 S7 P1,continuation:validation-only projections. |
-| Admission And Approval | Owner-approved component split/automatic next-S;S6 preservation,dependency and operational checks pass. |
-| Objective | Move render/frame_snapshot and extract test-only background page projection to validate;remove product linkage. |
-| Non-goals | Original ROM/PPU logic,artwork,devices,save ABI,performance,M2 certification or whole-project fresh audit. |
-| Reference Baseline | S6 all250source/header texts path-equal;48tests eachwidth,DOS identical/Windows PE sections identical;original DOS16/actual DOSBox pass. Historical1992/1992,local1991/1992nodes,4260/4261controls. |
-| Candidate Proposal | [S7 admission](../history/M3-T27-core-ppu-module-boundaries.md#s7-p1-admission---validation-only-projections). |
-| Files And ABI Surface |4moves,2new validation files,40-120consumer files,100-300path/link/declaration edits plus unchanged helper body;no state/wire ABI change. |
+| Identifier Mode | M3 T27 S8 P1,audit continuation:component completion review. |
+| Admission And Approval | Owner-approved T27 and automatic next-S;S7 source,link and operational checks pass. |
+| Objective | Verify every approved T27 census/boundary/source/ABI/build/runtime requirement and close only with concrete evidence. |
+| Non-goals | Gameplay/PPU redesign,performance optimization,new original-ROM audit round,M2/M4 final qualification. |
+| Reference Baseline | S1-S7 scoped preservation receipts;S7 all250source texts plus unchanged helper,50tests per width,original DOS16/actual DOSBox pass. Historical1992/1992,local1991/1992nodes,4260/4261controls. |
+| Candidate Proposal | [S8 completion contract](../history/M3-T27-core-ppu-module-boundaries.md#s8-p1-admission---integrated-component-completion-review). |
+| Files And ABI Surface | Audit current core/ppu/text/validate/io/app/platform and build consumers;estimate0gameplay,20-120architecture/gate lines;no intended ABI change. |
 | Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Document and source policy. |
-| Verification | Caller/link inventory,exact source/body preservation,no product validation members/symbols,projection/area/root/state/pixel/text/snapshot tests,both widths,DOS16/device,3products/gates. |
-| Expected Markers | Scope/expected[],new0,max1992/1992;original-node custody unchanged,CheckForEnemyGroup gap retained. |
-| Asset Needs | Existing local input only,ignored S7 evidence;owner authorizes local commit of3tracked EXEs,no ROM/generated source/captures/publication. |
-| Reporting Requirements | Start components/estimate,end actual scale/3EXEs,node/control totals and proof limits;S8 integration follows. |
-| Stop Conditions | No changed original body/table/state/output,missing consumer or core/runtime reverse validation dependency. |
-| Exit Criteria | Single validation owner,all test/recorder consumers bound,no product validation linkage,unchanged runtime/snapshot outputs,tests and gates pass. |
-| Original Owner Request | Split core/PPU/non-ROM components preserving original semantics;all pending files reviewed and submitted. |
-| Similar-Issue Sweep | Projected render/frame/page helper callers,partial source builds,recorder targets,OpenNT/CMake membership and symbols. |
+| Verification | Complete census/owner/graph/link proof,source-state-pixel-audio-snapshot preservation,integrated tests both widths,DOS16/device routes,fixed-config performance comparison and gates. |
+| Expected Markers | Scope/expected[],new0,max1992/1992;existing maintenance custody and all M2 gaps remain unchanged. |
+| Asset Needs | Existing inputs only,ignored S8 evidence;3tracked EXEs remain S7 unless product code changes;no ROM/generated source/captures/publication. |
+| Reporting Requirements | Requirement-by-requirement result,actual scale/source/builds,overall nodes/edges,explicit remaining limits,T27 closure only if all contract items pass. |
+| Stop Conditions | Missing or contradictory contract evidence,unexplained state/pixel/ABI difference,reverse dependency or product validation link. |
+| Exit Criteria | Every T27 requirement/census disposition proved,all scoped checks and gates pass,no required split work remains;review remaining unrelated limits explicitly. |
+| Original Owner Request | Reasonable core/PPU/non-ROM separation with original semantics;review and commit all pending files. |
+| Similar-Issue Sweep | Complete source/include/library/link manifest,ownership and reverse-edge checks,current docs,resources,receipt/state/far/snapshot and host integration. |
 
 ## Current Technical Baseline
 
@@ -36,7 +36,7 @@
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11/T12/T13/T14/T15/T16/T17/T18 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are429963/319115/327787bytes.
+- Current local DOS16/Win32/x64 products are427455/318603/327275bytes.
   T22 refreshes all three with RAM-authoritative NMI page handoff;T21 coral,T20 titles/tree/fence and T18 timing retained.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
@@ -45,12 +45,12 @@
 
 ## Compact closure status
 
-T27 S2-S6 preserve original CPU/PPU semantics;all167core files now include
-observation ownership,and12text consumer/codec files are independent.
-S6 all250source/header texts path-equal,48tests per width,DOS binary and Windows
-PE sections identical,actual DOSBox restore/Tab/exit pass.14moves,26code/test/
-build files,+56/-47,new0. S7 admits validation-only separation;S8 review follows.
-[S6 proof/S7 scope](../history/M3-T27-core-ppu-module-boundaries.md#s6-p2-closure---authored-text-and-observation-separation).
+T27 S2-S7 separates original core,PPU storage/compositor,text consumers and
+validation-only projections. S7 preserves all250source texts plus extracted
+helper;both widths50tests and recorders compile,original DOS16/actual DOSBox
+restore/Tab/exit pass.4moves,2new validation files,aggregate+92/-77;products
+427455/318603/327275bytes,new0. S8 reviews full contract before T27 closure.
+[S7 proof/S8 contract](../history/M3-T27-core-ppu-module-boundaries.md#s7-p2-closure---validation-projections-outside-runtime).
 
 T26 S2/T26 close by owner-directed remaining-work transfer:scoped compositor
 improvement and full640x400 DOS output retained;fixed-config nominal cadence

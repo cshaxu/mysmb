@@ -4,13 +4,12 @@
 
 ```text
 src/core/       all translated ROM logic,RAM,OAM/APU writers and observation receipts
-src/game/       test-only projections pending S7
 src/text/       authored immutable scene/element consumers and receipt snapshot codec
 src/ppu/        neutral addressed/visible state and read-only shared pixel compositor
 src/io/         neutral controller/video/audio/text contracts and glyph IDs
 src/app/        public game-to-IO composition glue; no gameplay/device policy
 src/assets/     generated owner-local declarations; never tracked
-src/validate/   owner-ROM reference adapters and trace comparison
+src/validate/   test-only projections,owner-ROM reference and trace comparison
 src/platform/   win32 and dos16 host adapters
 src/main-*.c    one small composition root per host target
 test/           project-owned unit and integration harnesses
@@ -93,4 +92,4 @@ Remaining core/text/validation moves are in the active T27 proposal.
 
 S6 separates core observation receipts from text scene/snapshot consumers.
 Core links only PPU storage;app snapshot links the independent text codec.
-Existing test projections remain temporarily linked until admitted S7.
+Validation projections link only test/recorder targets;no product linkage.

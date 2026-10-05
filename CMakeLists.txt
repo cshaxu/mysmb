@@ -13,7 +13,7 @@ set(MYSMB_ASM_PATH "" CACHE FILEPATH "Owner-local reviewed SMBDIS listing")
 set(MYSMB_OPENNT_CL16 "" CACHE FILEPATH "Owner-local OpenNT 16-bit cl16.exe")
 set(MYSMB_DOS_RUNTIME_DIR "" CACHE PATH "Owner-local reviewed 16-bit large-model runtime directory")
 
-set(MYSMB_CORE_SOURCES src/core/boot.c src/core/dispatcher.c src/core/engine.c src/core/engine_slots.c src/core/engine_tail.c src/core/frame_root.c src/core/title_modes.c src/core/terminal_modes.c src/core/game.c src/core/audio.c src/core/area.c src/core/status.c src/core/area/block_metatile.c src/core/enemy/stream.c src/core/enemy/group.c src/core/enemy/init.c src/core/enemy/init_targets.c src/core/enemy/loop.c src/core/enemy/core.c src/core/enemy/dispatch_targets.c src/core/enemy/movement.c src/core/enemy/frenzy.c src/core/player.c src/core/objects.c src/core/fireball/fireball_spawn.c src/core/fireball/fireball_core.c src/core/world/movement.c src/core/world/gravity.c src/core/world/collision.c src/core/world/block_buffer.c src/core/world/bounding_box.c src/core/world/geometry.c src/core/bridge.c src/core/oam/bullet_bill_gfx.c src/core/oam/hammer_gfx.c src/core/oam/firebar_gfx.c src/core/oam/vine_gfx.c src/core/oam/sprite_stacker.c src/core/oam/sprite_dump.c src/core/enemy_bounds.c src/core/oam/power_up_gfx.c src/core/oam/object_position.c src/core/oam/sprite_row.c src/core/oam/player_gfx.c src/core/oam/fireball_gfx.c src/core/oam/block_gfx.c src/core/oam/goomba_gfx.c src/core/fireball/bubble.c src/core/oam/piranha_gfx.c src/core/oam/cheep_gfx.c src/core/oam/bloober_gfx.c src/core/oam/podoboo_gfx.c src/core/oam/normal_enemy_gfx.c src/core/oam/spiny_gfx.c src/core/oam/hammer_bro_gfx.c src/core/oam/bowser_gfx.c src/core/oam/bowser_flame_gfx.c src/core/endgame_objects.c src/core/oam/flagpole_gfx.c src/core/oam/small_platform_gfx.c src/game/render.c src/game/frame_snapshot.c)
+set(MYSMB_CORE_SOURCES src/core/boot.c src/core/dispatcher.c src/core/engine.c src/core/engine_slots.c src/core/engine_tail.c src/core/frame_root.c src/core/title_modes.c src/core/terminal_modes.c src/core/game.c src/core/audio.c src/core/area.c src/core/status.c src/core/area/block_metatile.c src/core/enemy/stream.c src/core/enemy/group.c src/core/enemy/init.c src/core/enemy/init_targets.c src/core/enemy/loop.c src/core/enemy/core.c src/core/enemy/dispatch_targets.c src/core/enemy/movement.c src/core/enemy/frenzy.c src/core/player.c src/core/objects.c src/core/fireball/fireball_spawn.c src/core/fireball/fireball_core.c src/core/world/movement.c src/core/world/gravity.c src/core/world/collision.c src/core/world/block_buffer.c src/core/world/bounding_box.c src/core/world/geometry.c src/core/bridge.c src/core/oam/bullet_bill_gfx.c src/core/oam/hammer_gfx.c src/core/oam/firebar_gfx.c src/core/oam/vine_gfx.c src/core/oam/sprite_stacker.c src/core/oam/sprite_dump.c src/core/enemy_bounds.c src/core/oam/power_up_gfx.c src/core/oam/object_position.c src/core/oam/sprite_row.c src/core/oam/player_gfx.c src/core/oam/fireball_gfx.c src/core/oam/block_gfx.c src/core/oam/goomba_gfx.c src/core/fireball/bubble.c src/core/oam/piranha_gfx.c src/core/oam/cheep_gfx.c src/core/oam/bloober_gfx.c src/core/oam/podoboo_gfx.c src/core/oam/normal_enemy_gfx.c src/core/oam/spiny_gfx.c src/core/oam/hammer_bro_gfx.c src/core/oam/bowser_gfx.c src/core/oam/bowser_flame_gfx.c src/core/endgame_objects.c src/core/oam/flagpole_gfx.c src/core/oam/small_platform_gfx.c )
 list(APPEND MYSMB_CORE_SOURCES src/core/oam/enemy_offscreen.c src/core/oam/sprite_draw.c src/core/oam/block_offscreen.c)
 list(APPEND MYSMB_CORE_SOURCES src/core/player/terrain.c src/core/player/terrain_metatiles.c src/core/player/climbing.c src/core/player/pipe_entry.c src/core/player/impede.c src/core/world/metatiles.c)
 list(APPEND MYSMB_CORE_SOURCES src/core/area/block_buffer.c)
@@ -990,18 +990,6 @@ if(MYSMB_OPENNT_CL16)
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
             -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/core/oam/small_platform_gfx.c"
-            -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
-        COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
-            "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
-            -Compiler "${MYSMB_OPENNT_CL16}"
-            -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/render.c"
-            -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
-        COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
-            "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
-            -Compiler "${MYSMB_OPENNT_CL16}"
-            -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/game/frame_snapshot.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
@@ -2101,3 +2089,16 @@ if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
     target_compile_definitions(mysmb_power_up_output_caller_check PRIVATE MYSMB_POWER_UP_CHILD_CHECK=1)
     target_link_options(mysmb_power_up_output_caller_check PRIVATE "-Wl,--wrap=mysmb_oam_draw_one_sprite_row" "-Wl,--wrap=mysmb_oam_sprite_object_offscreen_check")
 endif()
+
+# Validation projections are absent from every product target.
+add_library(mysmb_validation_projections STATIC src/validate/render.c
+    src/validate/frame_snapshot.c src/validate/area_projection.c)
+target_include_directories(mysmb_validation_projections PUBLIC src)
+target_link_libraries(mysmb_validation_projections PUBLIC mysmb_core)
+foreach(MYSMB_VALIDATION_CONSUMER mysmb_core_smoke mysmb_render_smoke
+        mysmb_frame_snapshot_smoke mysmb_area_data_smoke
+        mysmb_local_frame_recorder mysmb_local_frame_summary)
+    if(TARGET ${MYSMB_VALIDATION_CONSUMER})
+        target_link_libraries(${MYSMB_VALIDATION_CONSUMER} PRIVATE mysmb_validation_projections)
+    endif()
+endforeach()

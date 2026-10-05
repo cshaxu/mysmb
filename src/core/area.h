@@ -58,8 +58,6 @@ mysmb_u8 mysmb_area_parser_task_control(struct mysmb_game *game);
 /* ROM $9508-$958f ProcessAreaData selection/state pass.  This owns the three
  * persistent object slots; family-specific metatile handlers remain separate. */
 mysmb_u8 mysmb_area_process_object_state(struct mysmb_game *game);
-/* ROM $88ae-$8990: expand one physical metatile page into PPU-visible state. */
-void mysmb_area_refresh_background_page(struct mysmb_game *game, mysmb_u8 page);
 /* ROM $89c3-$8a15: queue the every-eighth-frame palette-3 update. */
 void mysmb_area_step_palette_rotation(struct mysmb_game *game);
 /* ROM $8752-$883e: queue the fixed portion of the gameplay top status bar. */

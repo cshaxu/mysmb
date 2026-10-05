@@ -1,3 +1,4 @@
+#include "validate/area_projection.h"
 #include <string.h>
 
 #include "core/area.h"

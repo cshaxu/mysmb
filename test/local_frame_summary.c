@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "game/frame_snapshot.h"
+#include "validate/frame_snapshot.h"
 #include "smb1_local_rom.h"
 #include "smb1_local_title.h"
 
