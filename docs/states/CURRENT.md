@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T28 S6 P8; cumulative fit/playability and opportunity dispositions after adopted rowwise memory integration. |
+| Identifier Mode | Continuation: M3 T28 S6 P9; cumulative stage attribution and remaining CRT/stack/cadence gaps; row recovery stays TODO. |
 | Admission And Approval | Owner authorizes execution and the joint conventional-memory/playability contract. Owner accepts the rowwise memory/performance tradeoff and admits implementation;repeat-row/OAM tuning is deferred to TODO. S5 closed;S6 remains active. |
 | Objective | Reconcile S1-S5 memory census;verify actual minimum-free launch/runtime fit,stack/lifetimes,normal cadence/input budgets and clock sampling;dispose all six opportunities with fit/playability separate hard gates. |
 | Non-goals | No core ROM routine/state/timing changes,no emulator settings,no text artwork or VGA coordinate/mode changes,no emulator-based physical486SX/DOS-version or M2 certification. |
@@ -22,6 +22,14 @@
 | Similar-Issue Sweep | Sweep all pixel/text/snapshot/cache consumers and simultaneous lifetimes,resource/mode/restore invalidations and allocation-failure cleanup;record every hit and disposition. |
 
 ## Current Technical Baseline
+
+- S6 P8formal product372KiBbudget exits1,374KiBgame/Tab/save/Esc passes with
+  sampled382416bytes;diagnostic localizes failure to20084-byte transaction store.
+  Actual-loop78graphics/12text ticks cost about1103/925msmedian;scoped IRQ/input
+  lag also exceeds nominal budget. Cadence/input gate fails in unchanged DOSBox.
+  Four source allocation sites are bounded,but CRT/continuous peak/all-path
+  stack remain unproved. No product edits/EXE refresh;S6/T28remain open.
+  [Boundary,deficits and fixed remaining clauses](../history/M3-T28-dos-rendering-optimization.md#s6-p8-checkpoint-lower-launch-boundary-and-actual-loop-deficit).
 
 - S6 P7 adopts shared bounded rows and15400-byte DOS text/pixel store. Formal
   product448/384/376KiBcaller-free routes pass;sampled386512/386512/382416bytes,

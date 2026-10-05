@@ -1563,3 +1563,89 @@ Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
 infeasible81),scope/expected/actual[],new0,custody unchanged. S6/T28 remain open for cumulative cadence/input,full-route
 continuous peak/stack and opportunity dispositions. No M2/M4 certificate or
 exhaustive behavior claim is inferred from this bounded adoption.
+
+
+## S6 P8 checkpoint: lower launch boundary and actual-loop deficit
+
+Read-only product audit;formal P7code/products unchanged. The owner-deferred
+row/OAM speed recovery remains TODO. This part strengthens memory failure and
+cadence/input evidence rather than accepting an unplayable small-memory build.
+All diagnostic sources,libraries,logs and captures are contained under ignored
+build/m3-t28-s6;no source or asset import into the tracked product.
+
+The formal product under372KiBcaller-free budget(before-EXEC largest380912bytes)
+loads successfully but exits1before sustained execution;the seed save is intact.
+Under374KiB(before-EXEC largest382960) it completes the same game,Tab/save/Escape
+route as376. External observer records1867samples,one event,zero bad chains/drops,
+owned382416=345376primary+160environment+36880auxiliary. CRC/resource-valid
+10035-byte save advances7465to7518. This is a tested successful budget and a
+failed lower budget,not a proof that373works or an all-route/absolute minimum.
+
+A contained diagnostic initializer distinguishes root allocation exit11,
+snapshot-store allocation exit12 and device-open exit13. The372KiBroute exits12:
+the required20084-byte transaction allocation cannot be provided after row-store
+initialization. The diagnostic has the same304547file bytes,329072minimum MZ,
+49488DGROUP,2048stack and existing product libraries. It is independently linked,
+not binary-identical apart from status constants;its result is source-level
+failure localization that supplements the unmodified product failure. No allocator
+or cleanup change is made merely to suppress this valid capacity failure.
+
+The source allocation census finds four explicit sites,all in DOS composition:
+required15400-byte row/text store,required20084-byte transaction store,optional
+8192-byte near cache and its optional far fallback. No explicit malloc/calloc/
+realloc/DOS-block allocation call exists in core,text,PPU,IO or app source.
+File adapter has two fopen sites;store control flow closes the data handle before
+replacement or error logging,so at most one of these product file handles is
+live. This census does not bound opaque CRT buffers/fragmentation,prove every
+stack path or upgrade18HzMCB samples to a continuous peak.
+
+Actual-loop timing probe uses the P7product libraries and the same DOS main/device
+flow,adding bounded in-memory frame/IRQ telemetry and one report only after
+shutdown. PIT rate,IRQ0,source ticks,input decoding and all output work are
+unchanged. IRQ telemetry reads BIOS time only;sampling the PIT inside IRQ1 would
+incorrectly re-enable interrupts and is deliberately avoided. Last run captures
+its published event limit inside the existing input critical section. Physical
+transition coalescing affects telemetry only;production keyboard decoding still
+receives every scan,including typematic repeats. No virtual input or clock shim.
+
+First run has97frame records without overflow,but raw typematic telemetry drops
+559key records;its input latency is excluded. Second run has97frames/13physical
+transitions and no drops;its post-read event-drain boundary remains diagnostic.
+Third run fixes the input/event sampling boundary and retains97frames/13events,
+zero drops. The two complete frame-cost runs agree:78ordinary graphical ticks
+have885467minimum,1315640.5median and1367909maximum PIT units;12ordinary text ticks
+have1102719minimum,1103785median and1105392maximum. Median costs are approximately
+1102.63and925.08milliseconds. Every selected frame exceeds the existing19886PIT
+period(about16.67ms). Start/load/save/mode-control frames are excluded from those
+steady-state summaries,not omitted from the raw trace or general lifetime work.
+
+Third-run D/Jdown and release records feed buttons65and0to their actual original
+next ticks. Coarse BIOS/IRQ bounds allow two65536-count cycles of uncertainty,
+including a pending timer update. Even conservative sample-lag lower bounds are
+about807msfor the down pair and409msfor releases,far beyond a two-period33.33ms
+comparison limit. First completed submission is approximately1.91-2.02seconds
+from down and1.51-1.62seconds from release within that coarse interval model.
+These are scoped diagnostic timings,not formal-product FPS,all-key latency,
+wall-clock precision,physical486SXor audible DOS sound qualification. DOS audio
+adapter remains unavailable,as already recorded by S1;no sound-load claim.
+
+Installed configuration identity remains unchanged;normal SDL/private desktops,
+core/cputype/cycles auto,frameskip0and existing video/memory settings are retained.
+No cycles,machine,scaler or other override is introduced. Thus the fixed-runtime
+cadence/input gate fails even though memory fit improves. The owner-approved
+small-memory tradeoff does not convert this failure into performance acceptance.
+M4physical target qualification remains separate,not inferred from this emulator.
+
+| Remaining cumulative clause | Current evidence and disposition |
+| --- | --- |
+| Required store/startup boundary | Four source sites and372fail/374pass are established;373and full-route minimum remain unproved. Preserve orderly failure. |
+| Continuous peak/CRT | Existing sampled product and three lifecycle censuses retained;opaque runtime reservation/error-path coverage remains pending. No whole-game peak claim. |
+| Stack | P7bounded72/94/70untouched-byte patterns retained;no shrink or all-path bound. Pending. |
+| Nominal cadence/input | Actual-loop configured-runtime test explicitly fails. Identify cumulative stage costs before choosing further work;do not silently enable deferred micro-optimization or claim60Hz. |
+| Six opportunity dispositions | Retain S2/S3compact CHR/direct opacity,S4bounded rows/bulk memcpy,S5rejected unchanged-region cache and P7memory adoption;no new speculative cache or transfer specialization. Extra recovery remains TODO. |
+| Final integration/hardware | P7pixel/state/snapshot/native/device receipts retained within their fixtures. M2certification,DOS sound/version and real486performance remain independent obligations. |
+
+Historical1992/1992,local1991/1992nodes and4260/4261feasible controls(raw4342,
+infeasible81),scope/expected/actual[],new0,custody unchanged. Three products retain
+P7hashes;no rebuild for this product-code-free diagnostic part. S6/T28 stay open;
+P9receives cumulative stage attribution and the named runtime/stack gaps.
