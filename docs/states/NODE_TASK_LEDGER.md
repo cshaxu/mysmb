@@ -2894,6 +2894,8 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M3 T26 | 0 | - | [record](../../docs/history/M3-T26-dos16-playable-performance.md) |
 | M3 T26 S1 | 0 | 0 | dos16-indexed-render-performance; [record](../../docs/history/M3-T26-dos16-playable-performance.md) |
 | M3 T26 S2 | 0 | 0 | fixed-environment-performance-correction; [record](../../docs/history/M3-T26-dos16-playable-performance.md) |
+| M3 T27 | 0 | - | [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
+| M3 T27 S1 | 0 | 0 | core-ppu-text-validation-boundary-census; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |
 | M3 T3 | 0 | - | [record](../../docs/history/M3-T2-win32-command-consumer.md); [record](../../docs/history/M3-T3-colored-text-frame.md); S not recorded |
 | M3 T4 | 0 | - | [record](../../docs/history/M3-T3-colored-text-frame.md); [record](../../docs/history/M3-T4-vga-indexed-frame.md); S not recorded |
 | M3 T5 | 0 | - | [record](../../docs/history/M3-T4-vga-indexed-frame.md); [record](../../docs/history/M3-T5-dos16-composition-root.md); S not recorded |
@@ -3847,4 +3849,5 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T24 S4 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T24-win32-window-console-integration.md) |
 | M3 T25 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T25-dos16-performance-diagnosis.md) |
 | M3 T26 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T26-dos16-playable-performance.md) |
-| M3 T26 S2 | 0 | 1992 | none / 0 | none / 0 | active; [record](../../docs/history/M3-T26-dos16-playable-performance.md) |
+| M3 T26 S2 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T26-dos16-playable-performance.md) |
+| M3 T27 S1 | 0 | 1992 | none / 0 | none / 0 | active; [record](../../docs/history/M3-T27-core-ppu-module-boundaries.md) |

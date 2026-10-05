@@ -235,3 +235,22 @@ nodes1991/1992 and feasible controls4260/4261(raw4342,infeasible81),unchanged.
 P2 delivers the requested display correction. S2/T26 remain active:original
 nominal cadence under the unchanged installed configuration is still unproven.
 Physical486SX,heap/stack peak and broader M2 certification remain open.
+
+## S2 P3 owner-directed closure and remaining-work transfer
+
+Owner directs closure of the current T and admission of component separation.
+S2 and T26 close under this explicit amended exit contract:retain S1's scoped
+compositor improvement and S2's verified full640x400 display delivery;transfer
+unchanged-config nominal-cadence measurement and unresolved optimization to
+[the queued DOS rendering proposal](../proposals/m3/dos-rendering-optimization.md).
+Coordinator accepts that candidate as the receiving work record under the
+owner instruction. No nominal-cadence or physical486SX success is claimed.
+Its S1 must remeasure the actual post-migration product and memory budget;
+prior accelerated runs remain excluded from acceptance. Queue admission will
+allocate its identifiers later;no invented receiving T/S is created now.
+
+Scope/expected/actual ROM nodes[];zero unfinished ROM nodes held by this S.
+Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
+infeasible81) remain unchanged. This governance closure changes no code,
+does not refresh the three verified P2 EXEs and does not close M2/M4.
+Closure/admission gates bind empty actual matches and the1992-node ledger.

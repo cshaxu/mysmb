@@ -1,27 +1,27 @@
 # Project Status
 
-**Active: M3 T26 S2 P2.**
+**Active: M3 T27 S1 P1.**
 
-## M3 T26 S2 Packet
+## M3 T27 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Corrective M3 T26 S2 P2,latest closed T reopened. |
-| Admission And Approval | Owner forbids DOSBox setting changes and rejects accelerated acceptance. |
-| Objective | Achieve program performance under unchanged DOSBox settings and stretch all256x240source pixels to full640x400 without borders. |
-| Non-goals | Emulator setting changes,frame/tick/content reduction,platform gameplay,M2 certification. |
-| Reference Baseline | S1 retained equality only;historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81). |
-| Candidate Proposal | [S2 correction](../history/M3-T26-dos16-playable-performance.md#s2-corrective-admission-fixed-dosbox-settings). |
-| Files And ABI Surface | Compositor,VGA frame/mode/devices,DOS root buffer binding,build/tests;amended200-400source/test lines estimate,no gameplay/public game ABI fork. |
-| Applicable Rules | Task Reading Set,Execution,Document;Architecture/Coding/source policy before code or research. |
-| Verification | Hash-bound installed config,no overrides;neutral mode probe,lossless256x240mapping/device readback,palette/mode lifetime;actual gameplay cadence,shared state equality,pause/snapshot/input,3builds after code change. |
-| Expected Markers | Scope/expected [],new0,maximum historical1992/1992. |
-| Asset Needs | Existing owner-local EXE/ROM inputs only,nonredistributable,ignored build/m3-t26-s2;config read-only,no import/commit. |
-| Reporting Requirements | Fixed environment identity,actual baseline/after cadence and costs,remaining deficit,3products if code changes,unchanged node/edge totals. |
-| Stop Conditions | No settings changes or acceptance substitution;amend before ownership expansion. |
-| Exit Criteria | Complete256x240pixel preservation and nominal gameplay cadence in unchanged installed config,no scoped state difference,gates/products/commit;otherwise remain open. |
-| Original Owner Request | No DOSBox setting changes;direct256x240-to640x400 full-screen stretch,never centered or downsampled and explain hardware PPU versus software drawing. |
-| Similar-Issue Sweep | All launcher/config/runtime speed and sound/render overrides;accelerated historical claims excluded from performance acceptance. |
+| Identifier Mode | New M3 T27 S1 P1,component separation. |
+| Admission And Approval | Owner closes T26 and admits split;original ROM and PPU semantics must not change. |
+| Objective | Census files/symbols/state/call-data/build ownership;fix core/PPU/text/validation boundaries and source-bound preservation baseline before migration. |
+| Non-goals | S1 source moves,gameplay/PPU rewrites,performance work,new emulator,M2 certification. |
+| Reference Baseline | Post-T26 source plus declared pre-existing dirty changes;historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81);P2 binaries not a dirty-source baseline. |
+| Candidate Proposal | [T27 plan and S1 admission](../history/M3-T27-core-ppu-module-boundaries.md#t27-s1-p1-admission). |
+| Files And ABI Surface | S1 documentation/neutral census under build;0product lines,estimated120-250planning lines;future core/PPU/text/validation boundaries reviewed first. |
+| Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Document and source policy. |
+| Verification | File/symbol/include/build census;state/edge/view/lifetime and DOS far-memory contract;source-bound ROM/write-order and pixel/state/audio/snapshot baseline plans;gates. |
+| Expected Markers | Audit scope/expected [],new0,maximum historical1992/1992;existing node custody unchanged. |
+| Asset Needs | Existing owner-local bindings only,not redistributed;no new ROM/third-party import;generated manifests/evidence stay under ignored build/m3-t27-s1. |
+| Reporting Requirements | S entry scope/components/size;S exit actual scale,node/edge totals and equality evidence;3products for each later product-code P. |
+| Stop Conditions | No migration before reviewed census/interface and source binding;no unresolved ROM/PPU/state/output difference,no platform gameplay or duplicate state owner. |
+| Exit Criteria | All actual files/symbols/build consumers disposed;state/edge map and narrow interfaces reviewed;source-bound preservation plan ready for S2,governance/node gates pass. |
+| Original Owner Request | Close current T;admit component split while preserving original-ROM and PPU semantics. |
+| Similar-Issue Sweep | Mixed PPU/core/text/validation ownership,observer reverse calls,test-only runtime linkage,NMI/DMA/snapshot phase aliases and stale source/binary bindings. |
 
 ## Current Technical Baseline
 
@@ -45,13 +45,11 @@
 
 ## Compact closure status
 
-T26 performance closure withdrawn by owner:S1 pixel/state proofs and measured
-code improvement retained;accelerated DOSBox operation excluded from requested
-acceptance. P2 delivers full640x400 DOS stretch with all240source rows,no borders;
-neutral plane/capture and actual paused graphics/text/exit checks pass.
-Both widths5tests pass,original DOS toolchain and3packages refreshed.
-Fixed installed-config playability remains unproven,S2 active.
-[Correction](../history/M3-T26-dos16-playable-performance.md#s2-corrective-admission-fixed-dosbox-settings).
+T26 S2/T26 close by owner-directed remaining-work transfer:scoped compositor
+improvement and full640x400 DOS output retained;fixed-config nominal cadence
+remains unproven and belongs to the queued DOS rendering optimization candidate.
+No M2/M4 acceptance. Three P2 products unchanged by governance-only closure.
+[Closure and transfer](../history/M3-T26-dos16-playable-performance.md#s2-p3-owner-directed-closure-and-remaining-work-transfer).
 
 M3 T24 S4 corrects window/console input gating under unavailable/different
 foreground HWND. Old root rejects both targeted event paths,current accepts.
