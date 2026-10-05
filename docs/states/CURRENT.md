@@ -1,8 +1,27 @@
 # Project Status
 
-**Idle.**
+**Active: M3 T26 S2 P1.**
 
-M3 T26 S1 performance repair closed;T19 remains suspended,next visual audit queued.
+## M3 T26 S2 Packet
+
+| Field | Required record |
+| --- | --- |
+| Identifier Mode | Corrective M3 T26 S2 P1,latest closed T reopened. |
+| Admission And Approval | Owner forbids DOSBox setting changes and rejects accelerated acceptance. |
+| Objective | Achieve program performance under unchanged installed DOSBox settings. |
+| Non-goals | Emulator setting changes,frame/tick/content reduction,platform gameplay,M2 certification. |
+| Reference Baseline | S1 retained equality only;historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81). |
+| Candidate Proposal | [S2 correction](../history/M3-T26-dos16-playable-performance.md#s2-corrective-admission-fixed-dosbox-settings). |
+| Files And ABI Surface | Initial governance;later compositor/VGA/build/focused tests,50-200source/test lines estimate,no gameplay/ABI fork. |
+| Applicable Rules | Task Reading Set,Execution,Document;Architecture/Coding/source policy before code or research. |
+| Verification | Hash-bound installed config without overrides,actual DOS EXE workload,nominal frame cadence/latency,equality,pause/snapshot/input,3builds after code change. |
+| Expected Markers | Scope/expected [],new0,maximum historical1992/1992. |
+| Asset Needs | Existing owner-local EXE/ROM inputs only,nonredistributable,ignored build/m3-t26-s2;config read-only,no import/commit. |
+| Reporting Requirements | Fixed environment identity,actual baseline/after cadence and costs,remaining deficit,3products if code changes,unchanged node/edge totals. |
+| Stop Conditions | No settings changes or acceptance substitution;amend before ownership expansion. |
+| Exit Criteria | Declared gameplay sustains original nominal frame cadence in same installed config,no scoped semantic difference,gates/products/commit;otherwise remain open. |
+| Original Owner Request | Do not change DOSBox settings;that is cheating. |
+| Similar-Issue Sweep | All launcher/config/runtime speed and sound/render overrides;accelerated historical claims excluded from performance acceptance. |
 
 ## Current Technical Baseline
 
@@ -26,13 +45,10 @@ M3 T26 S1 performance repair closed;T19 remains suspended,next visual audit queu
 
 ## Compact closure status
 
-M3 T26 S1 closes bounded DOS background row staging:guest PIT background
-1599.1->1007.3ms default,16.117->10.417ms accelerated;counter-only11->16 and
-1145->1745steps under the same scripts. Both widths14tests,2048boundary and
-1198native comparisons,real DOS128far-frame equality,input/text/snapshot/exit
-pass. Products365723/319115/327275bytes;source/test2files,+70/-6,new0.
-Default DOSBox remains CPU-limited;dynamic/max operation is not physical486
-qualification. [Scope,receipts and limits](../history/M3-T26-dos16-playable-performance.md#s1-closure-and-t26-review).
+T26 performance closure withdrawn by owner:S1 pixel/state proofs and measured
+code improvement retained;accelerated DOSBox operation excluded from requested
+acceptance. Fixed installed-config playability remains unproven,S2 active.
+[Correction](../history/M3-T26-dos16-playable-performance.md#s2-corrective-admission-fixed-dosbox-settings).
 
 M3 T24 S4 corrects window/console input gating under unavailable/different
 foreground HWND. Old root rejects both targeted event paths,current accepts.

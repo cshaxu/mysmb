@@ -112,3 +112,38 @@ reads,VGA writes and disabled-background fill. Only the dominant background
 path changed;the other owners remain measured/validated and no new mismatch
 was found in this bounded contract. T26 S1 and T26 close after gates and P
 commit;physical486 and unreviewed M2 obligations are not closed by this result.
+
+## S2 corrective admission: fixed DOSBox settings
+
+Owner rejects changing DOSBox settings as cheating. This correction supersedes
+S1's T-level performance acceptance:the measured program improvement and
+pixel/state equality remain scoped evidence,but accelerated-configuration
+operation does not establish the requested playability. T26 is reopened.
+S1 implementation remains historical;S2 owns the unresolved performance claim.
+
+Use the installed DOSBox configuration read-only,without an alternate config,
+CPU/renderer/sound/machine/frameskip overrides or runtime speed shortcuts.
+Only mounting and launching the local program may be scripted. Baseline config
+SHA-256 is `0494236f2308e2e615f428d04e6470db4b0d162c95b51f4e276f1b7e73241917`;core=auto,cycles=auto,frameskip=0,
+machine=svga_s3,nosound=false. Before/after runs must verify this same complete
+configuration identity. Even earlier auto/auto profiles disabled sound and
+therefore are stage-diagnosis evidence,not fixed-environment acceptance.
+No new accelerated-setting trials are authorized. Prior accelerated receipts
+remain historical measurements only,excluded from performance completion.
+
+S2 first captures an actual-product baseline in this fixed environment,then
+optimizes the measured program chain,retaining all ticks,pixels,input/audio,
+pause and snapshots. Scope:shared indexed compositor/generic VGA scale and
+original DOS compiler path;no gameplay in platform. Initial estimate50-200
+source/test lines,amend before ownership expansion. Code changes refresh all
+three local EXEs and repeat scoped equality plus DOS operation. A percentage
+speedup alone does not close S2:the unchanged environment must sustain the
+original nominal game-frame cadence through the declared gameplay workload,
+with stage/root timing,input latency and output/state equality reported.
+If that cannot be demonstrated,the task remains incomplete;do not substitute
+an emulator-speed increase or another platform for acceptance.
+
+Scope/expected new ROM labels[],new0,historical1992/1992,local1991/1992nodes,
+4260/4261feasible controls(raw4342,infeasible81),unchanged. This admission P
+changes governance only,no product change or EXE refresh. Physical486SX
+qualification remains separately pending,not proof supplied by DOSBox.
