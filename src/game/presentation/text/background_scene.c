@@ -272,10 +272,9 @@ static void object(const struct mysmb_game *g,
         w->opaque[cell/8U]|=(unsigned char)(1U<<(cell%8U));
         frame->cells[cell].character=c;
         if(k==PLANT) {
-            /* Coral uses source ink3,not the water-colored ink2. The narrow
-             * branches carry that color;contrast belongs behind the glyph. */
+            /* Coral uses source ink3,not the water-colored ink2. Its narrow
+             * branches retain the surrounding water background. */
             frame->cells[cell].foreground=color;
-            frame->cells[cell].background=ink;
             continue;
         }
         if(k==FENCE) {

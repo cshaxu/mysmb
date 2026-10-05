@@ -2,7 +2,7 @@
 
 **Idle.**
 
-T19 remains owner-suspended in the [queue](QUEUE.md). T21 S1 is closed.
+T19 remains owner-suspended in the [queue](QUEUE.md). T21 S1/S2 are closed.
 
 ## Current Technical Baseline
 
@@ -17,7 +17,7 @@ T19 remains owner-suspended in the [queue](QUEUE.md). T21 S1 is closed.
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11/T12/T13/T14/T15/T16/T17/T18 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are364817/312971/320619bytes.
+- Current local DOS16/Win32/x64 products are364785/312971/320107bytes.
   T21 refreshes all three with source-colored coral glyphs;T20 titles/tree/fence and T18 deadline/symbol-tail changes retained.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
@@ -26,12 +26,12 @@ T19 remains owner-suspended in the [queue](QUEUE.md). T21 S1 is closed.
 
 ## Compact closure status
 
-M3 T21 S1 closes coral source ink3 as foreground,contrast fill and transparent
-branch gaps. Water2-2/night6-1/snow6-3 controlled native fixtures match both
-widths;each2048boundary/1198native graphics/state checks pass. All4000cells per
-scene read back from actual console;previews redraw buffers,not window captures.
-Both widths8focusedtests/7host groups,original DOS16 and DOSBox pass. Products
-364817/312971/320619bytes;code/test2files,+26/-1,new0,no ROM credit.
+M3 T21 S1/S2 close source ink3 pink coral glyphs on retained water-blue scene
+background. S2 supersedes S1 contrast fill;two files,+6/-6,new0. Both widths
+8focusedtests and controlled water2-2 each2048boundary/1198native comparisons
+pass. Console4000cell readback matches;65pink branches retain blue background9.
+Original DOS16/DOSBox pass;products364785/312971/320107bytes match builds.
+Prior night/snow receipts retained;no game/graphics change or ROM credit.
 [T21 scene evidence and limits](../history/M3-T21-water-snow-text-colors.md).
 
 

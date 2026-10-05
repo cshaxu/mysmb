@@ -71,3 +71,46 @@ No derived product is staged. Ledger/admission/docs gates pass. Empty node
 scope/expected/actual,new0;historical1992/1992,local1991/1992nodes and4260/4261
 feasible controls(raw4342,infeasible81) unchanged. T19 remains suspended and
 M2 certification remains incomplete. Local commit only;no remote.
+
+## Corrective S2 admission
+
+Owner requires pink coral glyphs on unchanged water-blue scene background.
+S1's contrast fill is rejected for coral;its ink3 role,shape and other scene
+receipts remain valid. Admit M3 T21 S2 P1,latest closed T corrective. Expected
+product/test two files,under30 changed lines,no gameplay/graphics/ABI changes.
+Preserve each plant cell's existing scene background rather than imposing a
+black/white fill. Test pink,white/black role changes and neighboring gaps;
+refresh both widths/original DOS16 and all three local products. Reuse bounded
+water/snow native cell fixtures and DOSBox route. Existing local resources only,
+no imports;all temporary material under ignored build/m3-t21-s2. Sweep the one
+plant background assignment;other authored object fills remain outside this
+explicit owner correction. Empty ROM scope/expected/new0;all M2 counts retained.
+
+## Corrective S2 closure
+
+S2 supersedes S1's black/white coral background. The narrow branch foreground
+still follows source ink3,but no background assignment is performed. Occupied
+branches and negative-space gaps retain the scene's water blue. This is an
+owner-requested character styling correction,not a ROM/game-logic repair.
+Similar-issue sweep finds one plant background assignment;it is removed.
+Other authored object fills and source-role assignments remain unchanged.
+
+Product/test two files,+6/-6lines. Both widths eight focused tests pass.
+Controlled water2-2 native fixtures each pass2048boundary pixel comparisons
+and1198native frame/state comparisons;authored cells agree across widths.
+Production console readback matches all4000cells;all65pink branch glyphs
+retain background9(water blue). The retained buffer preview is redrawn from
+actual Unicode console cells,not a window screenshot. Prior non-plant snow
+receipts remain valid because only the PLANT branch changed.
+
+Original DOS16 build passes with the retained OLDNAMES warning;actual final
+DOSBox product passes text/Tab/held-Tab/snapshot/return/Escape and paused
+indexed-frame equality. Three local products364785/312971/320107bytes match
+build hashes. No ROM-derived executable is staged. Temporary probe binaries
+and cell dumps are removed after use;neutral logs and authored preview stay
+under ignored build/m3-t21-s2. Ledger/admission/documentation gates pass.
+
+Scope/expected/actual empty,new0. Historical mapping1992/1992;retained local
+nodes1991/1992,feasible controls4260/4261(raw4342,infeasible81),unchanged.
+Zero certification credit;M2 remains incomplete. S2/T21 close,T19 remains
+owner-suspended. Existing unrelated workspace changes are preserved.
