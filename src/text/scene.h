@@ -1,7 +1,7 @@
 #ifndef MYSMB_GAME_TEXT_SCENE_H
 #define MYSMB_GAME_TEXT_SCENE_H
-#include "game/presentation/text/background_scene.h"
-#include "game/presentation/text/actor_scene.h"
+#include "text/background_scene.h"
+#include "text/actor_scene.h"
 struct mysmb_text_scene_workspace {
     struct mysmb_text_background_workspace background;
     struct mysmb_text_actor_workspace actors;

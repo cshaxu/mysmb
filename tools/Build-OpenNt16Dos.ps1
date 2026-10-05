@@ -70,11 +70,11 @@ $sources = @(
     'core/oam/spiny_gfx.c', 'core/oam/hammer_bro_gfx.c', 'core/oam/bowser_gfx.c', 'core/oam/bowser_flame_gfx.c', 'core/endgame_objects.c', 'core/oam/flagpole_gfx.c',
     'core/oam/small_platform_gfx.c',
     'game/render.c', 'ppu/frame.c', 'game/frame_snapshot.c', 'core/status.c',
-    'game/presentation/text/observation.c',
-    'game/presentation/text/observer_snapshot.c',
-    'game/presentation/text/elements.c', 'game/presentation/text/actor_scene.c',
-    'game/presentation/text/background_scene.c', 'game/presentation/text/caption_scene.c',
-    'game/presentation/text/scene.c',
+    'core/observation.c',
+    'text/observer_snapshot.c',
+    'text/elements.c', 'text/actor_scene.c',
+    'text/background_scene.c', 'text/caption_scene.c',
+    'text/scene.c',
     'app/game_io.c', 'app/game_snapshot.c', 'io/color.c', 'io/text_glyph.c', 'io/scale.c', 'io/pacing.c', 'io/control.c', 'io/snapshot.c', 'io/snapshot_store.c', 'io/snapshot_keys.c', 'platform/file/snapshot_files.c', 'platform/dos16/snapshot_replace.c', 'platform/dos16/keyboard.c', 'platform/dos16/pit_clock.c', 'platform/dos16/devices.c',
     'platform/file/executable_path.c', 'platform/dos16/executable_path.c',
     'platform/vga/vga_frame.c', 'platform/dos16/dos16_root.c',
@@ -112,20 +112,20 @@ try {
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     # Isolated text foundation: check the real far-pointer ABI without linking
     # a dormant presentation path into the current graphical product.
-    $textElements = Join-Path $SourceRoot 'game/presentation/text/elements.c'
+    $textElements = Join-Path $SourceRoot 'text/elements.c'
     & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fotext_elements.obj /I $IncludeDirectory $textElements
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-    $textScene = Join-Path $SourceRoot 'game/presentation/text/actor_scene.c'
+    $textScene = Join-Path $SourceRoot 'text/actor_scene.c'
     & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fotext_actor_scene.obj /I $IncludeDirectory $textScene
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-    $textBackground = Join-Path $SourceRoot 'game/presentation/text/background_scene.c'
+    $textBackground = Join-Path $SourceRoot 'text/background_scene.c'
     & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fotext_background_scene.obj /I $IncludeDirectory $textBackground
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     $objects = @()
-    $textCaption = Join-Path $SourceRoot 'game/presentation/text/caption_scene.c'
+    $textCaption = Join-Path $SourceRoot 'text/caption_scene.c'
     & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fotext_caption_scene.obj /I $IncludeDirectory $textCaption
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-    $textAssembly = Join-Path $SourceRoot 'game/presentation/text/scene.c'
+    $textAssembly = Join-Path $SourceRoot 'text/scene.c'
     & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fotext_scene.obj /I $IncludeDirectory $textAssembly
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     foreach ($relativeSource in $sources) {

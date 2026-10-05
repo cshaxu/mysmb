@@ -3,7 +3,7 @@
 #include "platform/dos16/devices.h"
 #include <dos.h>
 #include "io/text_glyph.h"
-#include "game/presentation/text/elements.h"
+#include "text/elements.h"
 #include <stdio.h>
 
 static int rows(void)

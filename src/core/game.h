@@ -1,7 +1,7 @@
 #ifndef MYSMB_GAME_GAME_H
 #define MYSMB_GAME_GAME_H
 
-#include "game/presentation/text/observation.h"
+#include "core/observation.h"
 #include "ppu/state.h"
 
 /* This header intentionally uses only C90 language and headers. */

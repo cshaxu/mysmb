@@ -18,7 +18,7 @@
 #include "platform/win32/launch.h"
 #include "platform/win32/keyboard.h"
 #include "platform/win32/frame_wait.h"
-#include "game/presentation/text/scene.h"
+#include "text/scene.h"
 
 #ifdef MYSMB_LOCAL_TITLE
 #include "smb1_local_rom.h"

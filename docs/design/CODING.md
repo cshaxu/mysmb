@@ -3,8 +3,9 @@
 ## Current And Target Trees
 
 ```text
-src/core/       all translated ROM logic,RAM,OAM/APU writers;observation moves in S6
-src/game/       text/observation/test projections pending S6/S7
+src/core/       all translated ROM logic,RAM,OAM/APU writers and observation receipts
+src/game/       test-only projections pending S7
+src/text/       authored immutable scene/element consumers and receipt snapshot codec
 src/ppu/        neutral addressed/visible state and read-only shared pixel compositor
 src/io/         neutral controller/video/audio/text contracts and glyph IDs
 src/app/        public game-to-IO composition glue; no gameplay/device policy
@@ -33,11 +34,11 @@ is the far pointer required to address pixels with the DOS16 compiler.
 Existing game and platform representations remain until their admitted
 adapter migrations; the boundary test checks their numeric compatibility.
 
-`game/presentation/text/elements` is an isolated, optional element-template
+`text/elements` is an isolated, optional element-template
 compositor. It consumes explicit immutable presentation descriptors and emits
 the neutral IO text frame; it has no RAM/OAM/resource or host dependency.
 S2 adds optional per-instance source-decision observations and DMA latching
-under game/presentation/text/observation,plus read-only actor/background/HUD
+under core/observation,plus read-only actor/background/HUD
 assembly. Both roots enable observations and bind an early Tab text preview.
 DOS uses a15400-byte far-heap scene/frame pack;Windows uses a real console.
 Observations are outside original
@@ -60,7 +61,7 @@ cap/leaves,platform spans and flag/score components use their own completed
 entry positions;small components align to a cell center within their source
 rectangle so a one-row authored glyph cannot disappear between cells.
 
-`game/presentation/text/scene` composes background and actor cells with the
+`text/scene` composes background and actor cells with the
 same far workspace on every target. The Win32 console device consumes only
 the neutral text frame and physical events;the root retains one game/audio
 instance while switching presenters. Shared IO accepts one Tab press until
@@ -83,9 +84,13 @@ replacement and device-reset services. Only roots connect these owners.
 ## T27 migration checkpoint
 
 PPU storage is one embedded ppu/state object;CPU RAM,source decisions and NMI
-startup guard now live in core;all translated routines are now core;observation follows S6. The DMA primitive
+startup guard now live in core;all translated routines and observation receipts are now core. The DMA primitive
 borrows the original CPU OAM span;its caller keeps commit timing and receipt
 order. app snapshot binds the same numeric fields in the same byte order.
 The independent ppu/frame target consumes only const PPU state and neutral IO
 types;composition owns its selection. Core has no compositor dependency.
 Remaining core/text/validation moves are in the active T27 proposal.
+
+S6 separates core observation receipts from text scene/snapshot consumers.
+Core links only PPU storage;app snapshot links the independent text codec.
+Existing test projections remain temporarily linked until admitted S7.

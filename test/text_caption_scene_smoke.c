@@ -1,4 +1,4 @@
-#include "game/presentation/text/caption_scene.h"
+#include "text/caption_scene.h"
 #include <stdio.h>
 #include <string.h>
 

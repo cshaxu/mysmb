@@ -1,5 +1,5 @@
 #include "io/text_glyph.h"
-#include "game/presentation/text/elements.h"
+#include "text/elements.h"
 #include <stdio.h>
 #include <string.h>
 #include <limits.h>

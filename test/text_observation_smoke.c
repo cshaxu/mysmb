@@ -4,9 +4,9 @@
 #include "core/oam/oam.h"
 #include "core/objects.h"
 #include "core/enemy/actor_slots.h"
-#include "game/presentation/text/actor_scene.h"
-#include "game/presentation/text/background_scene.h"
-#include "game/presentation/text/observer_snapshot.h"
+#include "text/actor_scene.h"
+#include "text/background_scene.h"
+#include "text/observer_snapshot.h"
 #include "app/game_snapshot.h"
 #include "io/color.h"
 #include <stdio.h>

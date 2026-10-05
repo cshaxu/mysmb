@@ -548,3 +548,66 @@ text receipts/state/pixels/snapshot bytes,both widths' focused tests,retained
 DOS16 toolchain and actual Tab/restore/exit route. Refresh three EXEs,review all
 pending changes,run governance gates and commit. Stop on any scoped content,
 state,ABI or wire diff,missing producer/consumer or reverse core-to-text edge.
+
+## S6 P2 closure - authored text and observation separation
+
+14files move:2core observation owners and12authored text/codec files. All250
+source/header texts match after reversing exact paths. The projection library
+consumes immutable core views;the new independent text snapshot library owns
+receipt encoding and links core. App snapshot declares the codec dependency;
+core no longer contains either authored scenes or their receipt codec.
+Original observer entry points,capacity64,producer/visible phases,enabled/
+overflow handling,DMA commit order and5253wire bytes remain unchanged.
+
+The similar-issue sweep reviews all observer imports/producers,commit and codec
+consumers plus every build source and link owner. The core archive contains no
+text-scene/template or observer-snapshot definitions;its observation API remains.
+Existing validation frame-snapshot symbol remains explicitly for S7. Core/PPU/
+IO/platform dependency gate passes;five negative downstream include classes
+are rejected. No wrapper,additional mutable owner or renderer callback added.
+
+Both widths48focused tests pass,including source-writer nonmutation,receipt
+capture/restore,text caption/actor/background/elements,complete game/snapshot
+continuation,PPU and2048boundary/1198native pixel checks. Retained DOS16 compiler
+and link pass. Actual DOSBox full640x400 restore,paused graph/text/graph equality
+and Escape return pass;installed configuration is unchanged. No speed credit.
+All saved consumer code matches after path reversal except the reviewed CMake
+owner-link changes and purity gate. The first CMake normalization check applied
+an overlapping reverse substitution twice;single-pass normalization corrects
+the local review harness and proves only those declared CMake changes. No
+product source adjustment follows that harness failure.
+
+Actual14moves,26code/test/build files,+56/-47. Six current source identities rebind by explicit audit-ledger event;no ROM node/control/material/group status or historical receipt changes. Validators check metadata only.
+
+`assets/mysmb16.exe`:429963bytes,SHA256`26a41628d3cf42027341b3ffafcef1790773b17b7d8361e0f0cdb7420b57c531`;DOS binary identical.
+`assets/mysmb32.exe`:319115bytes,SHA256`ef5535eca12442917669ebfad82c41b35cde595d620b9048656ab10611bb77ca`;all PE section bytes/virtual sizes/addresses identical.
+`assets/mysmb64.exe`:327787bytes,SHA256`140da57e28a802157592742b60c7b5e15670abc944ca73d1da6918e17496b4f4`;all PE section bytes/virtual sizes/addresses identical.
+
+Owner authorizes local commit of these already-tracked EXEs and all pending
+reviewed files. No ROM/generated source/trace/capture/publication committed.
+Scope/expected/actual node sets[],new0,maintenance writers stay S5.
+Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
+infeasible81) unchanged;CheckForEnemyGroup/control-01480 remains needs-evidence.
+No final M2/M4 acceptance. Governance/node/ledger checks pass before commit.
+
+## S7 P1 admission - validation-only projections
+
+Move game/render.c/.h and game/frame_snapshot.c/.h to validate/. Extract the
+validation-only mysmb_area_refresh_background_page body/declaration from
+core/area.c/.h to a dedicated validation page-projection unit/header. Its lone
+caller is area_data_smoke;confirm this again before changes. Preserve its body
+and original RenderAreaGraphics translation separately:the helper is not the
+runtime packet writer. Validation owns all three projections and their test/
+recorder links;no product CMake library or DOS source list links validation.
+Audit symbol/link reachability before removing runtime members. Existing test
+and recorder outputs/API symbols remain compatible without core reverse edges.
+
+Scope/expected[],new0,baseline/max1992/1992;no original CPU-ROM translation move
+or evidence promotion. Estimate4moves,2new validation files,40-120consumer files,
+100-300path/link/declaration edits plus the unchanged extracted helper body.
+Retain all function bodies/table/state layouts and every historical receipt.
+Prove exact source/body preservation,no product validation symbol/source member,
+focused projection/area/root/state/PPU/text/snapshot tests at both widths,original
+DOS16 build and actual restore/Tab/exit. Refresh3EXEs and run all governance gates.
+Stop on any original-body/output/ABI diff or missing consumer. S8 then conducts
+the complete component/source/link/integration completion review;T27 stays open.

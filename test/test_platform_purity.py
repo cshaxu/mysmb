@@ -50,4 +50,11 @@ for path in (root / "src" / "ppu").rglob("*.[ch]"):
         if token in text:
             print(f"{path.relative_to(root)}: PPU leaks {token}")
             sys.exit(1)
-print("platform, IO and PPU purity: passed")
+for path in (root / "src" / "core").rglob("*.[ch]"):
+    text=path.read_text(encoding="utf-8")
+    for include in re.findall(r'^\s*#\s*include\s*[<"]([^>"]+)',text,re.M):
+        if include.startswith(("text/", "game/presentation/", "platform/",
+                "app/", "validate/")) or include == "ppu/frame.h":
+            print(f"{path.relative_to(root)}: core imports downstream {include}")
+            sys.exit(1)
+print("platform, IO, PPU and core dependency purity: passed")

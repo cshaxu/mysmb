@@ -1,4 +1,4 @@
-#include "game/presentation/text/elements.h"
+#include "text/elements.h"
 #include "io/text_glyph.h"
 #include "io/color.h"
 

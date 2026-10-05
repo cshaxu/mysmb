@@ -6,7 +6,7 @@ MySMB is one native product with a portable translated program and separate host
 
 ## Modules, Ownership, And Assembly
 
-`core/` owns the original RAM container and all translated CPU/OAM/source-sound routines. `game/` temporarily retains observation,text/validation projections until S6/S7. `assets/` owns generated, owner-local ROM derivatives. `validate/` owns reference-execution comparison through local tools such as `nnes`. `platform/win32` owns the development window, input, audio, and timing; `platform/dos16` later owns BIOS keyboard, PIT, VGA, and sound access. Each target has its own small composition root.
+`core/` owns the original RAM container and all translated CPU/OAM/source-sound routines. `core/observation` owns source-decision receipts;`text/` owns authored scenes and receipt encoding. `game/` temporarily retains validation projections until S7. `assets/` owns generated, owner-local ROM derivatives. `validate/` owns reference-execution comparison through local tools such as `nnes`. `platform/win32` owns the development window, input, audio, and timing; `platform/dos16` later owns BIOS keyboard, PIT, VGA, and sound access. Each target has its own small composition root.
 
 `ppu/state` now owns the single addressed/visible PPU storage and immutable
 CHR binding embedded in the game container. Core retains all original NMI
@@ -21,8 +21,8 @@ The shared `io/` contract layer has no dependency on `game/` or `platform/`.
 Composition roots connect decoded controller input and compositor output to
 adapters. Video borrows the entire original indexed frame; audio snapshots
 preserve every ordered write, including same-value retriggers. Game state
-and output producers remain in `game/`; synthesis and device state remain
-in adapters. Shared game text presentation assembles authored cells;the early
+and output producers remain in `core/`; synthesis and device state remain
+in adapters. Shared text presentation assembles authored cells;the early
 Win32 console preview consumes them through the same neutral IO boundary.
 
 `app/game_io` marshals the public game output at the composition boundary.
@@ -101,7 +101,7 @@ The same format is read by all targets;DOS cannot promise atomic replacement
 or PCM continuation through intervening DOS gameplay.
 
 Snapshot schema2 preserves the original core/audio offsets and appends an
-opaque presentation extension. Shared game text presentation owns its
+opaque presentation extension. Shared text presentation owns its
 source-decision receipt encoding and validation;IO only checks the version,
 length and integrity. New saves preserve producer/visible phases without
 re-executing a selector. Schema1 remains readable with absent receipts and
@@ -118,3 +118,7 @@ Console geometry belongs to the Windows device. A restored host repairs the
 in-flight clipped write defers a frame,while genuine handle loss keeps recovery.
 Borrowed shutdown restores the original shell cell view after pixel placement,
 so host rounding cannot silently remove a row. No geometry changes game state.
+
+Text has an immutable core-state consumer dependency;core calls only its own
+observation producer/commit API. App snapshot explicitly links text snapshot
+encoding. Neither text scenes nor their codec are members of the core library.

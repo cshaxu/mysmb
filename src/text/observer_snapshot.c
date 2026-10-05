@@ -1,5 +1,5 @@
 #include "core/game.h"
-#include "game/presentation/text/observer_snapshot.h"
+#include "text/observer_snapshot.h"
 #include <string.h>
 
 #define BUFFER_BYTES 2626U

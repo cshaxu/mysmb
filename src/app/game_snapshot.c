@@ -1,5 +1,5 @@
 #include "app/game_snapshot.h"
-#include "game/presentation/text/observer_snapshot.h"
+#include "text/observer_snapshot.h"
 #include <string.h>
 
 void mysmb_game_snapshot_fingerprint(const struct mysmb_game *game,

@@ -1,27 +1,27 @@
 # Project Status
 
-**Active: M3 T27 S6 P1.**
+**Active: M3 T27 S7 P1.**
 
-## M3 T27 S6 Packet
+## M3 T27 S7 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | M3 T27 S6 P1,continuation:text/observation boundaries. |
-| Admission And Approval | Owner-approved split and automatic next-S execution;S5 preservation and operational checks pass. |
-| Objective | Move2core observation files and12authored text files;separate consumer/snapshot linkage with original decisions and output unchanged. |
-| Non-goals | Game/PPU logic,artwork,color,snapshot schema,devices,performance,M2 certification and S7 validation moves. |
-| Reference Baseline | S5 all250source/header texts path-equal,CMake membership equal;47tests per width,original DOS16/actual DOSBox pass. Historical1992/1992,local1991/1992nodes,4260/4261controls. |
-| Candidate Proposal | [T27 S6 admission](../history/M3-T27-core-ppu-module-boundaries.md#s6-p1-admission---authored-text-and-observation-boundary). |
-| Files And ABI Surface |14moves,40-100consumer files,100-250path/link/gate lines;capacity64,producer/visible phases,far layouts,5253wire bytes and schema1 unchanged. |
+| Identifier Mode | M3 T27 S7 P1,continuation:validation-only projections. |
+| Admission And Approval | Owner-approved component split/automatic next-S;S6 preservation,dependency and operational checks pass. |
+| Objective | Move render/frame_snapshot and extract test-only background page projection to validate;remove product linkage. |
+| Non-goals | Original ROM/PPU logic,artwork,devices,save ABI,performance,M2 certification or whole-project fresh audit. |
+| Reference Baseline | S6 all250source/header texts path-equal;48tests eachwidth,DOS identical/Windows PE sections identical;original DOS16/actual DOSBox pass. Historical1992/1992,local1991/1992nodes,4260/4261controls. |
+| Candidate Proposal | [S7 admission](../history/M3-T27-core-ppu-module-boundaries.md#s7-p1-admission---validation-only-projections). |
+| Files And ABI Surface |4moves,2new validation files,40-120consumer files,100-300path/link/declaration edits plus unchanged helper body;no state/wire ABI change. |
 | Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Document and source policy. |
-| Verification | Consumer/link inventory,normalized source/dependency proof,text/observation/state/pixel/snapshot checks,both widths,DOS16/actual Tab/restore/exit,3products and gates. |
-| Expected Markers | Scope/expected[],new0,max1992/1992;original writer custody stays S5;existing CheckForEnemyGroup gap remains. |
-| Asset Needs | Existing local inputs;ignored S6 build evidence. Owner authorizes local commit of3already-tracked EXEs;no ROM/generated source/captures/publication. |
-| Reporting Requirements | Begin components/size,end actual scale/3EXEs,zero-credit dispositions and overall node/control limits. |
-| Stop Conditions | No source content/state/wire diff,reverse core-to-text dependency or missing producer/consumer. |
-| Exit Criteria | Single core receipt owner,independent text consumer/codec,no authored text in core library,unchanged outputs/ABI and operational/gov gates pass. |
-| Original Owner Request | Component separation preserving original ROM/PPU semantics;review and submit all pending files. |
-| Similar-Issue Sweep | Observation calls/commit,enabled restoration,far scene/workspace,all codec callers and product/test/link consumers. |
+| Verification | Caller/link inventory,exact source/body preservation,no product validation members/symbols,projection/area/root/state/pixel/text/snapshot tests,both widths,DOS16/device,3products/gates. |
+| Expected Markers | Scope/expected[],new0,max1992/1992;original-node custody unchanged,CheckForEnemyGroup gap retained. |
+| Asset Needs | Existing local input only,ignored S7 evidence;owner authorizes local commit of3tracked EXEs,no ROM/generated source/captures/publication. |
+| Reporting Requirements | Start components/estimate,end actual scale/3EXEs,node/control totals and proof limits;S8 integration follows. |
+| Stop Conditions | No changed original body/table/state/output,missing consumer or core/runtime reverse validation dependency. |
+| Exit Criteria | Single validation owner,all test/recorder consumers bound,no product validation linkage,unchanged runtime/snapshot outputs,tests and gates pass. |
+| Original Owner Request | Split core/PPU/non-ROM components preserving original semantics;all pending files reviewed and submitted. |
+| Similar-Issue Sweep | Projected render/frame/page helper callers,partial source builds,recorder targets,OpenNT/CMake membership and symbols. |
 
 ## Current Technical Baseline
 
@@ -45,12 +45,12 @@
 
 ## Compact closure status
 
-T27 S2-S5 preserve single PPU state,const pixels and all165translated core
-file moves. S5 all250source/header texts and CMake membership path-equal;
-47tests per width,DOS16/actual DOSBox restore/Tab/exit pass.
-141moves,471code/test/build edits,+1680/-1680;new0,CheckForEnemyGroup gap retained.
-S6 admits core observation and authored text separation;T27 remains open.
-[S5 proof and S6 scope](../history/M3-T27-core-ppu-module-boundaries.md#s5-p2-closure---remaining-translated-core).
+T27 S2-S6 preserve original CPU/PPU semantics;all167core files now include
+observation ownership,and12text consumer/codec files are independent.
+S6 all250source/header texts path-equal,48tests per width,DOS binary and Windows
+PE sections identical,actual DOSBox restore/Tab/exit pass.14moves,26code/test/
+build files,+56/-47,new0. S7 admits validation-only separation;S8 review follows.
+[S6 proof/S7 scope](../history/M3-T27-core-ppu-module-boundaries.md#s6-p2-closure---authored-text-and-observation-separation).
 
 T26 S2/T26 close by owner-directed remaining-work transfer:scoped compositor
 improvement and full640x400 DOS output retained;fixed-config nominal cadence

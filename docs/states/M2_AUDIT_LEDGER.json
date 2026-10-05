@@ -26,7 +26,7 @@
     "controlIdentitySha256": "4d6fced75017fcd0edd80f63223f45e7d14e1b4170af91f98937a0474c970669"
   },
   "sourceSnapshot": {
-    "CMakeLists.txt": "068d3b66f7cebd1edaf3a1fe0d9f2a04c4bd4063d8bdb617d244a59d8593dc0b",
+    "CMakeLists.txt": "32f372b9fada4ea0c300abd4110c3ce516df0a7ce40f47d932a4d77d6593fe37",
     "src/app/game_io.c": "430560c4e159f4ed067377b95d5449493191f2d8b1a5d0e8bb34ccfc169c5a1a",
     "src/app/game_io.h": "57bbbd0586bc55a5485952a422b22030c1e02501831687f411383849fc9acc3f",
     "src/core/area.c": "eb611cc83e8ff3b2c5b2ca4c1f7659b80de618c631265796a689b75ac323a32c",
@@ -99,7 +99,7 @@
     "src/core/enemy/podoboo.c": "9842079ae5877b55f3afe05ecf08eb272c6e55d2fbf94adcd3af1421d3af49a2",
     "src/core/enemy/side_collision.c": "48d8f93944dec08450adaab7ea882d12fc5f0bdd49c2aaf9b193dc0db1b63e8c",
     "src/core/enemy/special_callers.c": "cc61eb34fc6e7b32627a31afa453b3a092964ffd724a3f90ca24421a2e51f7fd",
-    "src/core/enemy/star_flag.c": "ba7426baad8f5c6c947cc7268b16db38cdd0a67d96b7e254778abfd7002e4bce",
+    "src/core/enemy/star_flag.c": "9729a7280092c1fdc335bb441fab40e08c84fc8439e2958d03b7f244d69f7965",
     "src/core/enemy/stream.c": "681ad309bd0202e23483807d9e8d483f3eecf2d8d4b8a85b21f0c449f2907124",
     "src/core/enemy/stream.h": "27e45b204635a48122b45439bbb8c7e6849fde3dcea9624b1dbf933c91053758",
     "src/core/enemy/swimming_cheep.c": "d47ab7a34cdb34d8c45482aaba1da96538ea8cf690876caea099d1c9756f8a72",
@@ -117,7 +117,7 @@
     "src/core/frame_root.c": "19b44c2d1e8d34ec0af2361b3ee485fc6ec16589ab1df02497d49ba4620a6503",
     "src/core/frame_root.h": "5fb1cad576ee419c2b65b7988d9523bedc839290b3146ef5e069544f7c395cd6",
     "src/core/game.c": "d8e1293c8579fea9a1d276940520c6aed37807c1a7e6ff1507db603d5b788fb3",
-    "src/core/game.h": "bc4bb650f3b763763385c8a16c2b4332f2add367140c809827ebf9864dda9835",
+    "src/core/game.h": "9ec48409de22e7d50363ffeb8d373bfbb6faf2438ad875b869d496d838b1ac3f",
     "src/core/hammer.c": "bd6e53b3d344fdd7678dedff181b8906bbdcd29e097e649d76c7e6542c169b75",
     "src/core/jumpspring.c": "493a4eefdbae7a5491fe1121b35f4b85b9ed48332bd66be42edb77419fad6de8",
     "src/core/misc.c": "b9eda422b39df21469375bdd2291668580d0cbf1e13085a30f15c791b1f3a6cd",
@@ -151,7 +151,7 @@
     "src/core/oam/sprite_row.c": "26457e400e3aa0fc71dbcea59ab41c016046121293d42fe8232c2ba5a4795f0d",
     "src/core/oam/sprite_stacker.c": "52f8cbdf399491eb32cccbcd802c2c007cbbfb89a9334409c2c5d4d14d82a9cb",
     "src/core/oam/vine_gfx.c": "781b5d415fd32956cd8a03948b02a06053d27f3b598041a97a684cc11737a95a",
-    "src/core/objects.c": "c5cc85701b27f21cdf6c778d9f21e903440a1c418a531f0e0c4af75bb1a9b6a8",
+    "src/core/objects.c": "53b7b2a3128ab958c2f7656acd15d46f9db1a58a4d6fce7b05ef5384a8f658bc",
     "src/core/objects.h": "daa0ae9813432f2acb59d886dde5bccd6895805ebd3c97e5795fd342e6b667b2",
     "src/core/player.c": "079d7b8d890d6be8ffe320e1504b6abd5eea88835e53ba3fb918f19c555c824d",
     "src/core/player.h": "01ec6e69c51dba74f2ad91bd759f476bca69a54a34897504bda4fa16366ecfa3",
@@ -213,7 +213,7 @@
     "src/platform/dos16/devices.c": "78900690b69aca3d43b088177d76bb72af23663c2042dc3deb86b8bd068e6ec0",
     "src/platform/dos16/devices.h": "c95277c2af3be636b8577994cae7f93a497f88fac51bc066602bb399d69c9923",
     "src/platform/dos16/dos16_root.c": "0b736af15842cfe5045be16e28dd5880e6fedcfe65686e44ba356b6bc484f4bf",
-    "src/platform/dos16/dos16_root.h": "5d5803ee930e244e1f5bef88a820de1c616d6d11e78aa03891b921cf07e3365e",
+    "src/platform/dos16/dos16_root.h": "4b8a6487f2317a6d02a901d74268b752453f927d2acf4e0902faee32f94b1bcc",
     "src/platform/dos16/keyboard.c": "88d610392a7c92690222caf058e909b68702c5ec2b8d6949024c1f7a67016c0a",
     "src/platform/dos16/keyboard.h": "9ba7072d96c214892b415d03fb8494af8030f7b48af22f06ee0125791330cb70",
     "src/platform/dos16/main_dos16.c": "8c48a21a5389b5176fe1c411f36b4dc4b0deec1d838c615ff16bbf06521f6ea1",
@@ -229,7 +229,7 @@
     "src/platform/win32/audio_renderer.h": "ce71cd54a63f2135906b884aab467a37cb2ffd3d32dbc26abc743b294c19ae09",
     "src/platform/win32/focus_pause.c": "3145d6c67c2330a2992ae22da3b85b3849a23dadd0e93a65cdc6904f73d3689d",
     "src/platform/win32/focus_pause.h": "b9b565122cb56069057547c6f7c0f4755d9527f12dd76447275c3a372fde1fe5",
-    "src/platform/win32/main_win32.c": "6a76d3e7966ae261bba5265648a7c62f9f20b2c388dcbfa2e0706c7b5dfd2496",
+    "src/platform/win32/main_win32.c": "43082f651abf5702d20d8086bb7d70052cecada360e9c18ae07ef5631fb70108",
     "src/ppu/frame.c": "2b081da892e4081ef53162b0bbecc97e4268f4104e03b0efa32601435fbb84d1",
     "src/ppu/frame.h": "928aed897e5d6f67f298e56db13eef3b15dce53a998b6b360268b6ac0403b79d",
     "src/ppu/state.c": "f6642fc037c1c9676901081e30f0f9baa0fff5f80a01f62ae959886878410edf",
@@ -125776,6 +125776,54 @@
       "groupUniverseChanged": false,
       "nodeControlCredit": 0,
       "evidence": "docs/history/M3-T27-core-ppu-module-boundaries.md S5 P2 closure",
+      "acceptanceBoundary": "All250source/header texts equal after reversing exact paths. Source identity rebinding retains scoped receipts and all pending M2 final obligations;it is not semantic certification."
+    },
+    {
+      "id": "M3-T27-S6-mechanical-component-binding",
+      "cause": "Owner-approved remaining core source relocation and CMake owner-target rename only. No ROM logic or evidence promotion.",
+      "changedSourceIdentities": [
+        {
+          "previousPath": "CMakeLists.txt",
+          "path": "CMakeLists.txt",
+          "old": "068d3b66f7cebd1edaf3a1fe0d9f2a04c4bd4063d8bdb617d244a59d8593dc0b",
+          "new": "32f372b9fada4ea0c300abd4110c3ce516df0a7ce40f47d932a4d77d6593fe37"
+        },
+        {
+          "previousPath": "src/core/enemy/star_flag.c",
+          "path": "src/core/enemy/star_flag.c",
+          "old": "ba7426baad8f5c6c947cc7268b16db38cdd0a67d96b7e254778abfd7002e4bce",
+          "new": "9729a7280092c1fdc335bb441fab40e08c84fc8439e2958d03b7f244d69f7965"
+        },
+        {
+          "previousPath": "src/core/game.h",
+          "path": "src/core/game.h",
+          "old": "bc4bb650f3b763763385c8a16c2b4332f2add367140c809827ebf9864dda9835",
+          "new": "9ec48409de22e7d50363ffeb8d373bfbb6faf2438ad875b869d496d838b1ac3f"
+        },
+        {
+          "previousPath": "src/core/objects.c",
+          "path": "src/core/objects.c",
+          "old": "c5cc85701b27f21cdf6c778d9f21e903440a1c418a531f0e0c4af75bb1a9b6a8",
+          "new": "53b7b2a3128ab958c2f7656acd15d46f9db1a58a4d6fce7b05ef5384a8f658bc"
+        },
+        {
+          "previousPath": "src/platform/dos16/dos16_root.h",
+          "path": "src/platform/dos16/dos16_root.h",
+          "old": "5d5803ee930e244e1f5bef88a820de1c616d6d11e78aa03891b921cf07e3365e",
+          "new": "4b8a6487f2317a6d02a901d74268b752453f927d2acf4e0902faee32f94b1bcc"
+        },
+        {
+          "previousPath": "src/platform/win32/main_win32.c",
+          "path": "src/platform/win32/main_win32.c",
+          "old": "6a76d3e7966ae261bba5265648a7c62f9f20b2c388dcbfa2e0706c7b5dfd2496",
+          "new": "43082f651abf5702d20d8086bb7d70052cecada360e9c18ae07ef5631fb70108"
+        }
+      ],
+      "addedDependencyPaths": [],
+      "sourceUniverseChanged": false,
+      "groupUniverseChanged": false,
+      "nodeControlCredit": 0,
+      "evidence": "docs/history/M3-T27-core-ppu-module-boundaries.md S6 P2 closure",
       "acceptanceBoundary": "All250source/header texts equal after reversing exact paths. Source identity rebinding retains scoped receipts and all pending M2 final obligations;it is not semantic certification."
     }
   ],

@@ -1,4 +1,4 @@
-#include "game/presentation/text/caption_scene.h"
+#include "text/caption_scene.h"
 #include "io/color.h"
 
 static unsigned char character(unsigned char tile)

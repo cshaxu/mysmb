@@ -68,8 +68,10 @@ list(APPEND MYSMB_CORE_SOURCES src/core/player_transition.c)
 list(APPEND MYSMB_CORE_SOURCES src/core/player_modes.c)
 list(APPEND MYSMB_CORE_SOURCES src/core/player_end_level.c)
 list(APPEND MYSMB_CORE_SOURCES src/core/player_movement.c)
-list(APPEND MYSMB_CORE_SOURCES src/game/presentation/text/observation.c
-    src/game/presentation/text/observer_snapshot.c)
+list(APPEND MYSMB_CORE_SOURCES src/core/observation.c)
+add_library(mysmb_text_snapshot STATIC src/text/observer_snapshot.c)
+target_include_directories(mysmb_text_snapshot PUBLIC src)
+target_link_libraries(mysmb_text_snapshot PUBLIC mysmb_core)
 add_library(mysmb_ppu_frame STATIC src/ppu/frame.c)
 target_include_directories(mysmb_ppu_frame PUBLIC src)
 add_library(mysmb_ppu_state STATIC src/ppu/state.c)
@@ -106,7 +108,7 @@ add_test(NAME mysmb.snapshot-storage-smoke COMMAND mysmb_snapshot_storage_smoke
     "${CMAKE_BINARY_DIR}/snapshot-storage-test")
 add_library(mysmb_game_snapshot STATIC src/app/game_snapshot.c)
 target_include_directories(mysmb_game_snapshot PUBLIC src)
-target_link_libraries(mysmb_game_snapshot PUBLIC mysmb_io_snapshot mysmb_core)
+target_link_libraries(mysmb_game_snapshot PUBLIC mysmb_io_snapshot mysmb_core mysmb_text_snapshot)
 add_executable(mysmb_game_snapshot_smoke test/game_snapshot_smoke.c)
 target_link_libraries(mysmb_game_snapshot_smoke PRIVATE mysmb_game_snapshot mysmb_ppu_frame)
 add_test(NAME mysmb.game-snapshot-smoke COMMAND mysmb_game_snapshot_smoke)
@@ -670,11 +672,11 @@ add_executable(mysmb_bloober_oam_smoke test/bloober_oam_smoke.c)
 target_link_libraries(mysmb_bloober_oam_smoke PRIVATE mysmb_core)
 add_executable(mysmb_podoboo_oam_smoke test/podoboo_oam_smoke.c)
 target_link_libraries(mysmb_podoboo_oam_smoke PRIVATE mysmb_core)
-add_library(mysmb_text_elements STATIC src/game/presentation/text/elements.c
-    src/game/presentation/text/actor_scene.c
-    src/game/presentation/text/background_scene.c
-    src/game/presentation/text/caption_scene.c
-    src/game/presentation/text/scene.c)
+add_library(mysmb_text_elements STATIC src/text/elements.c
+    src/text/actor_scene.c
+    src/text/background_scene.c
+    src/text/caption_scene.c
+    src/text/scene.c)
 target_include_directories(mysmb_text_elements PUBLIC src)
 target_link_libraries(mysmb_text_elements PUBLIC mysmb_core mysmb_io_color)
 target_link_libraries(mysmb_text_observation_smoke PRIVATE mysmb_text_elements)

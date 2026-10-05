@@ -2,7 +2,7 @@
 #include "core/oam/oam.h"
 #include "core/score.h"
 #include "core/status.h"
-#include "game/presentation/text/observation.h"
+#include "core/observation.h"
 
 /* ROM $D2CD-$D2D8: StarFlagYPosAdder, StarFlagXPosAdder, StarFlagTileData. */
 static const mysmb_u8 y_adder[4] = {0U,0U,8U,8U};

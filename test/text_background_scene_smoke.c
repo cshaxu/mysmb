@@ -1,4 +1,4 @@
-#include "game/presentation/text/background_scene.h"
+#include "text/background_scene.h"
 #include "io/text_glyph.h"
 #include <stdio.h>
 #include <string.h>

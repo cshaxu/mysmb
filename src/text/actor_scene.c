@@ -1,4 +1,4 @@
-#include "game/presentation/text/actor_scene.h"
+#include "text/actor_scene.h"
 #include "io/color.h"
 
 struct actor_clip {

@@ -2,7 +2,7 @@
 #define MYSMB_GAME_TEXT_ACTOR_SCENE_H
 
 #include "core/game.h"
-#include "game/presentation/text/elements.h"
+#include "text/elements.h"
 
 struct mysmb_text_actor_receipt {
     mysmb_io_u16 drawn;

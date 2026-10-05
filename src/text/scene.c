@@ -1,4 +1,4 @@
-#include "game/presentation/text/scene.h"
+#include "text/scene.h"
 int mysmb_text_scene_build(const struct mysmb_game *game,
     struct mysmb_text_scene_workspace MYSMB_IO_FAR *workspace,
     struct mysmb_io_text_frame MYSMB_IO_FAR *frame)

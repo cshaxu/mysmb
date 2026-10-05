@@ -4,7 +4,7 @@
 #include "io/control.h"
 #include "app/game_snapshot.h"
 #include "io/snapshot_store.h"
-#include "game/presentation/text/scene.h"
+#include "text/scene.h"
 /* Composition root: device consumers receive only neutral IO views. */
 struct mysmb_dos16_hooks {
     void *context;

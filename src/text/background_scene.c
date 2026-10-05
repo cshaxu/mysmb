@@ -1,7 +1,7 @@
 #include "io/text_glyph.h"
-#include "game/presentation/text/background_scene.h"
-#include "game/presentation/text/elements.h"
-#include "game/presentation/text/caption_scene.h"
+#include "text/background_scene.h"
+#include "text/elements.h"
+#include "text/caption_scene.h"
 #include "io/color.h"
 
 /* Visual classifications of reviewed metatile positions, not gameplay IDs.

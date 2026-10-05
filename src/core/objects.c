@@ -11,7 +11,7 @@
 #include "core/oam/oam.h"
 #include "core/world/world.h"
 #include "core/area.h"
-#include "game/presentation/text/observation.h"
+#include "core/observation.h"
 
 enum {
     MYSMB_VRAM_BUFFER1 = 0x0300U,

@@ -1,5 +1,5 @@
 #include "core/game.h"
-#include "game/presentation/text/observation.h"
+#include "core/observation.h"
 #include <string.h>
 
 void mysmb_text_observer_enable(struct mysmb_game *game, unsigned char enabled)
