@@ -1,3 +1,4 @@
+/* Project-owned T14 compositor retained solely as a regression reference. */
 #include "game/ppu_frame.h"
 
 #ifdef MYSMB_DOS16_TARGET
@@ -67,41 +68,7 @@ static mysmb_u8 mysmb_ppu_background_pixel(const struct mysmb_game *game,
     return game->palette[color == 0U ? 0U : (mysmb_u16)(palette * 4U + color)];
 }
 
-/* Decode once per visible tile row,not once per pixel. The partial first and
- * last tiles retain exact scroll,mirroring,CHR bounds and left-edge semantics. */
-static void mysmb_ppu_background_row(const struct mysmb_game *game,
-    mysmb_u16 y,mysmb_u8 scroll_x,mysmb_u8 scroll_y,mysmb_u8 name_table,
-    mysmb_u8 MYSMB_PPU_FRAME_FAR *out)
-{
-    mysmb_u16 source_y,row,source_x,x,column,table,pattern,count,i;
-    mysmb_u8 attribute,palette,low,high,color,phase;
-    source_y=(mysmb_u16)((y+scroll_y)%480U);
-    row=(mysmb_u16)((source_y%240U)/8U);
-    source_x=scroll_x;x=0U;
-    while(x<MYSMB_SCREEN_WIDTH) {
-        table=(mysmb_u16)((name_table^((source_x>>8U)&1U))&1U);
-        column=(mysmb_u16)((source_x&255U)>>3U);
-        attribute=game->name_table[table][0x3c0U+(row>>2U)*8U+(column>>2U)];
-        palette=(mysmb_u8)((attribute>>(((row&2U)<<1U)+(column&2U)))&3U);
-        pattern=(mysmb_u16)(((game->visible_ppu_control_0&0x10U)?0x1000U:0U)+
-            game->name_table[table][row*32U+column]*16U+(source_y&7U));
-        phase=(mysmb_u8)(source_x&7U);
-        low=(mysmb_u8)(mysmb_ppu_pattern(game,pattern)<<phase);
-        high=(mysmb_u8)(mysmb_ppu_pattern(game,(mysmb_u16)(pattern+8U))<<phase);
-        count=(mysmb_u16)(8U-phase);
-        if(count>MYSMB_SCREEN_WIDTH-x)count=(mysmb_u16)(MYSMB_SCREEN_WIDTH-x);
-        for(i=0U;i<count;++i) {
-            color=(mysmb_u8)((low>>7U)|((high>>6U)&2U));
-            out[x+i]=game->palette[color?(mysmb_u16)(palette*4U+color):0U];
-            low=(mysmb_u8)(low<<1U);high=(mysmb_u8)(high<<1U);
-        }
-        x=(mysmb_u16)(x+count);source_x=(mysmb_u16)((source_x+count)&511U);
-    }
-    if((game->visible_ppu_mask&2U)==0U)
-        for(x=0U;x<8U;++x)out[x]=game->palette[0U];
-}
-
-void mysmb_ppu_frame_build(const struct mysmb_game *game,
+void mysmb_ppu_frame_reference(const struct mysmb_game *game,
                            struct mysmb_ppu_frame *frame)
 {
     mysmb_u16 x;
@@ -129,12 +96,16 @@ void mysmb_ppu_frame_build(const struct mysmb_game *game,
     for (y = 0U; y < MYSMB_SCREEN_HEIGHT; ++y) {
         scroll_x = y < fixed_top_height ? 0U : game->visible_scroll_x;
         scroll_y = y < fixed_top_height ? 0U : game->visible_scroll_y;
-        if((game->visible_ppu_mask&8U)!=0U)
-            mysmb_ppu_background_row(game,y,scroll_x,scroll_y,
-                y<fixed_top_height?0U:game->visible_ppu_name_table,
-                frame->pixels+y*MYSMB_SCREEN_WIDTH);
-        else for(x=0U;x<MYSMB_SCREEN_WIDTH;++x)
-            frame->pixels[y*MYSMB_SCREEN_WIDTH+x]=game->palette[0U];
+        for (x = 0U; x < MYSMB_SCREEN_WIDTH; ++x) {
+            if ((game->visible_ppu_mask & 0x08U) != 0U &&
+                (x >= 8U || (game->visible_ppu_mask & 0x02U) != 0U)) {
+                frame->pixels[y * MYSMB_SCREEN_WIDTH + x] =
+                    mysmb_ppu_background_pixel(game, x, y, scroll_x, scroll_y,
+                        y < fixed_top_height ? 0U : game->visible_ppu_name_table,
+                        &opaque);
+            }
+            else frame->pixels[y * MYSMB_SCREEN_WIDTH + x] = game->palette[0U];
+        }
     }
     if ((game->visible_ppu_mask & 0x10U) == 0U) return;
     for (sprite = 64U; sprite != 0U;) {

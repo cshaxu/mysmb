@@ -1031,6 +1031,11 @@ if(MYSMB_OPENNT_CL16)
 endif()
 
 if(WIN32)
+    add_executable(mysmb_presentation_performance
+        test/presentation_performance.c test/ppu_frame_reference.c)
+    target_link_libraries(mysmb_presentation_performance PRIVATE
+        mysmb_game_snapshot mysmb_game_io mysmb_text_elements mysmb_vga_frame)
+    add_test(NAME mysmb.presentation-performance COMMAND mysmb_presentation_performance)
     add_executable(mysmb_win32_keyboard_smoke
         test/win32_keyboard_smoke.c src/platform/win32/keyboard.c)
     target_include_directories(mysmb_win32_keyboard_smoke PRIVATE src)
@@ -1443,6 +1448,11 @@ if(MYSMB_ROM_PATH)
         target_compile_definitions(mysmb_win32_text_switch_smoke PRIVATE MYSMB_LOCAL_TITLE=1)
         add_test(NAME mysmb.win32-${MYSMB_WIN32_ARCH}-self-test
                  COMMAND $<TARGET_FILE:mysmb_win32> --self-test)
+        target_sources(mysmb_presentation_performance PRIVATE
+            $<TARGET_OBJECTS:mysmb_local_rom_data> $<TARGET_OBJECTS:mysmb_local_title_data>)
+        target_include_directories(mysmb_presentation_performance PRIVATE
+            "${MYSMB_LOCAL_ROM_DIR}" "${MYSMB_LOCAL_TITLE_DIR}")
+        target_compile_definitions(mysmb_presentation_performance PRIVATE MYSMB_LOCAL_TITLE=1)
     endif()
     add_executable(mysmb_local_title_smoke test/local_title_smoke.c
         $<TARGET_OBJECTS:mysmb_local_title_data>)

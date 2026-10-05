@@ -2,8 +2,7 @@
 
 **Idle.**
 
-M3 T14 is closed. [Queue](QUEUE.md) retains deferred M2 certification;
-no successor admitted.
+M3 T15 S1 closed;S2 is the approved next continuation,not yet admitted.
 
 ## Current Technical Baseline
 
@@ -18,14 +17,22 @@ no successor admitted.
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11/T12/T13/T14 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are360987/444880/461571bytes.
-  T14 S1 rebuilds all three;DOS remains byte-identical to T13.
+- Current local DOS16/Win32/x64 products are361675/445454/462144bytes.
+  T15 S1 refreshes all three after equivalent shared graphics optimization.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
   pass;seeded presenter equality is explicitly separate. Real486SX speed,
   full heap/stack peak and hardware/version qualification remain M4.
 
 ## Compact closure status
+
+M3 T15 S1 P1 closes shared tile-row composition optimization:both widths2048
+boundary and1198native frames pixel-identical to T14,no source-state mutation.
+Dense host composition3.49x/3.47x faster;not486speed evidence. Five focused
+tests per width,DOS16 link and actual DOSBox graphics route pass. Three local
+products refreshed;code/build/tests4files,+330/-10lines,new0.
+[S1 receipt](../proposals/m3/presentation-performance.md#s1-p1-closure).
+
 
 M3 T14 S1 P1 closes event-driven Windows keyboard input. Both widths7focused
 tests and isolated zero-async GUI/console/Tab/focus/restore/close routes pass.
