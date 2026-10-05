@@ -53,8 +53,8 @@ void mysmb_game_reset(struct mysmb_game *game)
     game->apu_channel_enable = 0x0fU;
     game->apu_registers[21U] = 0x0fU;
     /* ColdBoot writes $06 directly to $2001; it is not the later NMI mirror. */
-    game->ppu_mask = 0x06U;
-    game->visible_ppu_mask = 0x06U;
+    game->ppu.ppu_mask = 0x06U;
+    game->ppu.visible_ppu_mask = 0x06U;
     mysmb_game_move_all_sprites_offscreen(game);
     mysmb_game_initialize_name_tables(game);
     game->ram[0x0774U]++;
@@ -78,9 +78,9 @@ void mysmb_game_power_on(struct mysmb_game *game)
  * are hardware ABI; each supplied event represents an observed VBlank. */
 void mysmb_game_begin_startup(struct mysmb_game *game)
 {
-    game->ppu_control_0 = 0x10U;
-    game->visible_ppu_control_0 = 0x10U;
-    game->visible_ppu_name_table = 0U;
+    game->ppu.ppu_control_0 = 0x10U;
+    game->ppu.visible_ppu_control_0 = 0x10U;
+    game->ppu.visible_ppu_name_table = 0U;
     game->startup_phase = 1U;
 }
 
@@ -176,27 +176,24 @@ void mysmb_game_move_sprites_offscreen(struct mysmb_game *game)
 /* ROM NMI $4014 transfer after PPU_SPR_ADDR is reset to zero. */
 void mysmb_game_submit_oam(struct mysmb_game *game)
 {
-    mysmb_u16 offset;
-
-    for (offset = 0U; offset < 0x0100U; ++offset)
-        game->visible_oam[offset] = game->ram[(mysmb_u16)(MYSMB_BOOT_OAM + offset)];
+    mysmb_ppu_state_submit_oam(&game->ppu,game->ram+MYSMB_BOOT_OAM);
     mysmb_text_observer_commit(game);
 }
 
 /* ROM $8eed-$8ef3 WritePPUReg1: physical register before RAM mirror. */
 void mysmb_game_write_ppu_control(struct mysmb_game *game, mysmb_u8 value)
 {
-    game->ppu_control_0 = value;
-    game->visible_ppu_control_0 = value;
-    game->visible_ppu_name_table = (mysmb_u8)(value & 3U);
+    game->ppu.ppu_control_0 = value;
+    game->ppu.visible_ppu_control_0 = value;
+    game->ppu.visible_ppu_name_table = (mysmb_u8)(value & 3U);
     game->ram[MYSMB_BOOT_PPU_CONTROL_MIRROR] = value;
 }
 
 /* ROM $8ee6-$8eec InitScroll: incoming A is written twice, then returns. */
 void mysmb_game_init_scroll(struct mysmb_game *game, mysmb_u8 value)
 {
-    game->visible_scroll_x = value;
-    game->visible_scroll_y = value;
+    game->ppu.visible_scroll_x = value;
+    game->ppu.visible_scroll_y = value;
 }
 
 /* ROM $8e2d-$8e5a WriteNTAddr through the shared InitScroll tail. */
@@ -206,15 +203,15 @@ static void mysmb_game_write_name_table(struct mysmb_game *game,
     mysmb_u16 offset;
 
     for (offset = 0U; offset < 0x03c0U; ++offset)
-        game->name_table[table][offset] = 0x24U;
+        game->ppu.name_table[table][offset] = 0x24U;
     game->ram[0x0300U] = 0U;
     game->ram[0x0301U] = 0U;
     for (offset = 0x03c0U; offset < 0x0400U; ++offset)
-        game->name_table[table][offset] = 0U;
+        game->ppu.name_table[table][offset] = 0U;
     game->ram[0x073fU] = 0U;
     game->ram[0x0740U] = 0U;
-    game->scroll_x = 0U;
-    game->scroll_y = 0U;
+    game->ppu.scroll_x = 0U;
+    game->ppu.scroll_y = 0U;
     mysmb_game_init_scroll(game, 0U);
 }
 
@@ -224,7 +221,7 @@ void mysmb_game_initialize_name_tables(struct mysmb_game *game)
 {
     mysmb_game_write_ppu_control(game,
         (mysmb_u8)((game->ram[MYSMB_BOOT_PPU_CONTROL_MIRROR] | 0x10U) & 0xf0U));
-    game->ppu_name_table = 0U;
+    game->ppu.ppu_name_table = 0U;
     mysmb_game_write_name_table(game, 1U);
     mysmb_game_write_name_table(game, 0U);
 }

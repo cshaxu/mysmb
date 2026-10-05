@@ -111,7 +111,7 @@ unsigned char mysmb_text_observer_visible_mask(const struct mysmb_game *game,
         if (item->entries[offset] >= 239U ||
             item->entries[offset + 1U] == 0xfcU) continue;
         if (memcmp(item->entries + offset,
-            game->visible_oam + item->oam + offset, 4U) == 0)
+            game->ppu.visible_oam + item->oam + offset, 4U) == 0)
             mask |= (unsigned char)(1U << i);
     }
     return mask;

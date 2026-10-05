@@ -1,27 +1,27 @@
 # Project Status
 
-**Active: M3 T27 S2 P1.**
+**Active: M3 T27 S3 P1.**
 
-## M3 T27 S2 Packet
+## M3 T27 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | New M3 T27 S2 P1,continuation:PPU-state extraction. |
-| Admission And Approval | Owner closes T26 and admits split;original ROM and PPU semantics must not change. |
-| Objective | Extract single embedded PPU state and borrowed const view;qualify accesses and snapshot fields;preserve source branches/write order/DMA/visible phases. |
-| Non-goals | Game logic/PPU semantics changes,compositor migration before S3,performance work,new emulator,M2 certification. |
-| Reference Baseline | Current source rebuilt on3targets;terrain.c has no normalized diff;three hashes equal P2 packages;historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81). |
-| Candidate Proposal | [T27 plan and S1 admission](../history/M3-T27-core-ppu-module-boundaries.md#s1-p3-closure-and-s2-p1-admission). |
-| Files And ABI Surface | PPU state,game container,read/write consumers,app snapshot binding,tests/build tools;estimated300-700changed lines;serialized ABI unchanged. |
+| Identifier Mode | M3 T27 S3 P1,continuation:read-only PPU compositor extraction. |
+| Admission And Approval | Owner approves component split and all pending-file review/submission;S2 preservation checks pass. |
+| Objective | Move compositor to ppu/frame;borrow const PPU state,remove game dependency,retain every pixel/state contract. |
+| Non-goals | ROM/game/PPU semantic changes,performance optimization,core/text migration before its S,new emulator,M2 certification. |
+| Reference Baseline | S2 source normalized173C files;79affected targets and15tests per width;DOS16/actual DOSBox pass;historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81). |
+| Candidate Proposal | [T27 plan and S3 admission](../history/M3-T27-core-ppu-module-boundaries.md#s2-p2-closure-and-s3-p1-admission). |
+| Files And ABI Surface | Two compositor files,20-35consumer/build files;100-250edits plus preserved moves;const PPU pointer API,serialized bytes unchanged. |
 | Applicable Rules | Task Reading Set,Execution,Architecture,Coding,Document and source policy. |
-| Verification | Preserve42mapped labels' branches/write order;source-normalized qualification diff,complete state/pixel/snapshot comparisons,NMI/VRAM/text tests,original DOS16 build/far ABI,3products and gates. |
-| Expected Markers | Implementation scope42labels listed in proposal/admission,expected[],new0,max1992/1992;accepted sender-specific maintenance transfers. |
-| Asset Needs | Existing owner-local bindings only;no new ROM/third-party import;manifests/evidence under ignored build/m3-t27-s2. Owner directs commit of all pending files including3already-tracked EXEs for this P;no publication. |
-| Reporting Requirements | S entry scope/components/size;S exit actual scale,node/edge totals and equality evidence;3products for each later product-code P. |
-| Stop Conditions | No migration before reviewed census/interface and source binding;no unresolved ROM/PPU/state/output difference,no platform gameplay or duplicate state owner. |
-| Exit Criteria | One PPU owner,no core dependence in state module;no scoped source/state/pixel/snapshot diff;3builds/products and focused tests/gates pass. |
-| Original Owner Request | Close current T;admit component split while preserving original-ROM and PPU semantics. |
-| Similar-Issue Sweep | Mixed PPU/core/text/validation ownership,observer reverse calls,test-only runtime linkage,NMI/DMA/snapshot phase aliases and stale source/binary bindings. |
+| Verification | Normalize pre/post compositor,independent PPU target,full pixel/state/snapshot/text and original DOS16 far-memory tests,3products and gates. |
+| Expected Markers | Implementation scope/expected[],new0,max1992/1992;pixel projection earns no ROM CPU node credit;existing custody retained. |
+| Asset Needs | Existing local inputs only,no new import;ignored build/m3-t27-s3 holds local evidence. Owner directs local commit of3already-tracked EXEs;no new ROM/generated source/captures/publication. |
+| Reporting Requirements | Entry components/size;closure actual scope/state/pixel proof,node/edge totals;three EXEs for product-code P. |
+| Stop Conditions | No core/text/host import in PPU,no state copy or unresolved scoped source/state/pixel/snapshot diff. |
+| Exit Criteria | Read-only independent compositor,all old consumers updated,zero scoped diff,3builds/products and focused tests/gates pass. |
+| Original Owner Request | Close current T and separate core/PPU/components while preserving original ROM and PPU semantics. |
+| Similar-Issue Sweep | Game-sized typedefs/transitive includes,all compositor call sites/build lists,DOS far pixels,snapshot and text scene dependencies. |
 
 ## Current Technical Baseline
 
@@ -36,7 +36,7 @@
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11/T12/T13/T14/T15/T16/T17/T18 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are429963/319115/327275bytes.
+- Current local DOS16/Win32/x64 products are430027/319115/327787bytes.
   T22 refreshes all three with RAM-authoritative NMI page handoff;T21 coral,T20 titles/tree/fence and T18 timing retained.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
@@ -44,6 +44,12 @@
   full heap/stack peak and hardware/version qualification remain M4.
 
 ## Compact closure status
+
+T27 S2 closes single embedded PPU storage and original DMA primitive.173C
+source bodies normalize equal;79targets/15focusedtests per width,128far-ABI
+fixtures and actual DOSBox graphics/Tab/exit pass.77code/test/build files,
++700/-647;three refreshed products430027/319115/327787bytes,new0. S3 admits
+const-state compositor separation. [S2 preservation and S3 scope](../history/M3-T27-core-ppu-module-boundaries.md#s2-p2-closure-and-s3-p1-admission).
 
 T26 S2/T26 close by owner-directed remaining-work transfer:scoped compositor
 improvement and full640x400 DOS output retained;fixed-config nominal cadence
@@ -99,13 +105,3 @@ pass. S3 light fence/brown ground passes resource-bound world5-1 and DOSBox chec
 Final products364737/312971/320107bytes. S1 code/test/tool4files,+11/-3;
 S2 product/test2files,+76/-6;S3 product/test2files,+8/-6,new0. T19 remains suspended,not repaired.
 [T20 scope,evidence and limits](../history/M3-T20-text-interface-corrections.md).
-
-
-M3 T18 S1/S2 close measured deadline-wait/RGB and disk-footprint repairs.
-Audio-on graphics p99 drops32ms to17.8/18.6ms,long frames22/24to0/1;
-system/audio/console outliers remain explicit. Both widths10tests/host routes,
-2048boundary/1198native equality,DOS16 and byte-bound DOSBox receipts pass.
-Windows files shrink30.9/31.7percent;every mapped section/load field is equal.
-DOS file/minimum-loader footprint retained;physical/RDP/486limits remain.
-S1 code/test/tool7files,+350/-10;S2 build/tool2files,+91/-0,new0.
-[T18 closure and limits](../history/M3-T18-window-performance-executable-footprint.md).

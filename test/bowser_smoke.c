@@ -161,8 +161,8 @@ int main(void)
      * the isolated commit preserves that route without entering unrelated
      * GameEngine work that requires a fully bound area image. */
     mysmb_game_commit_vram_buffer(&game);
-    if (game.name_table[0U][0x021aU] != 0x24U ||
-        game.name_table[0U][0x023aU] != 0x24U) return 6;
+    if (game.ppu.name_table[0U][0x021aU] != 0x24U ||
+        game.ppu.name_table[0U][0x023aU] != 0x24U) return 6;
 
     mysmb_game_initialize_memory(&game, 0xfeU);
     game.ram[0x0368U] = 0U;

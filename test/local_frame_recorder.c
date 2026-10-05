@@ -1651,7 +1651,7 @@ int main(int argument_count, char **arguments)
             }
             else if (t26_fixture >= 905U && t26_fixture <= 1150U) {
                 mysmb_player_movement_fixture(game.ram,(mysmb_u8)(t26_fixture-905U));
-                game.ppu_control_0 = game.ram[0x0778U];
+                game.ppu.ppu_control_0 = game.ram[0x0778U];
             }
             else if (t26_fixture >= 776U && t26_fixture <= 904U) {
                 if (t26_fixture <= 825U)
@@ -1661,17 +1661,17 @@ int main(int argument_count, char **arguments)
                 else if (t26_fixture <= 875U)
                     mysmb_player_modes_fixture(game.ram,(mysmb_u8)(t26_fixture-854U));
                 else mysmb_player_end_level_fixture(game.ram,(mysmb_u8)(t26_fixture-876U),mysmb_local_prg);
-                game.ppu_control_0 = game.ram[0x0778U];
+                game.ppu.ppu_control_0 = game.ram[0x0778U];
             }
             else if (t26_fixture >= 741U && t26_fixture <= 775U) {
                 mysmb_entrance_fixture(game.ram, (mysmb_u8)(t26_fixture - 741U));
                 /* These source-RAM fixtures replace the NMI input mirror.
                  * Keep its native cached representation at the same input. */
-                game.ppu_control_0 = game.ram[0x0778U];
+                game.ppu.ppu_control_0 = game.ram[0x0778U];
             }
             else if (t26_fixture >= 717U && t26_fixture <= 740U) {
                 mysmb_scroll_fixture(game.ram, (mysmb_u8)(t26_fixture - 717U));
-                game.ppu_control_0 = game.ram[0x0778U];
+                game.ppu.ppu_control_0 = game.ram[0x0778U];
             }
             else if (t26_fixture >= 652U && t26_fixture <= 716U)
                 mysmb_engine_normal_fixture(game.ram, (mysmb_u8)(t26_fixture - 652U));

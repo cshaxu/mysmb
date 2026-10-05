@@ -20,7 +20,7 @@ int main(int argc,char **argv)
         fclose(input);return 66;
     }
     fclose(input);
-    game.ppu_control_0=game.ram[0x778U];
+    game.ppu.ppu_control_0=game.ram[0x778U];
     mysmb_player_update_scroll(&game);
     failures=0U;
     for(i=0U;i<2048U;++i) {

@@ -25,7 +25,7 @@ int main(int argc, char **argv)
     for (n = 0U; n < header[5]; ++n) {
         if (fread(record, 1, 4098, file) != 4098) return 66;
         memcpy(game.ram, record + 2U, 2048U);
-        game.ppu_control_0 = game.ram[0x778U];
+        game.ppu.ppu_control_0 = game.ram[0x778U];
         id = record[0] & 0x7fU; abi = 0U;
         if (id <= 3U) {
             index = record[1];

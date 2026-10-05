@@ -20,6 +20,12 @@ for path in platform.rglob("*.[ch]"):
         "->visible_scroll", "->visible_ppu_", "->ppu_control_", "->scroll_",
         "mysmb_game_begin_title_bootstrap",
     )
+    ppu_fields=("name_table", "palette", "visible_oam", "visible_scroll_x",
+        "visible_scroll_y", "visible_ppu_control_0", "visible_ppu_mask",
+        "visible_ppu_name_table", "visible_sprite0_split", "ppu_control_0",
+        "ppu_mask", "ppu_name_table", "scroll_x", "scroll_y")
+    forbidden += tuple(prefix+field for prefix in ("->ppu.", ".ppu.")
+        for field in ppu_fields)
     for token in forbidden:
         if token in text:
             print(f"{path.relative_to(root)}: forbidden game-state access {token}")
@@ -34,4 +40,14 @@ for path in (root / "src" / "io").rglob("*.[ch]"):
         if token in text:
             print(f"{path.relative_to(root)}: IO contract leaks {token}")
             sys.exit(1)
-print("platform and IO purity: passed")
+for path in (root / "src" / "ppu").rglob("*.[ch]"):
+    text=path.read_text(encoding="utf-8")
+    for include in re.findall(r'^\s*#\s*include\s*[<"]([^>"]+)',text,re.M):
+        if not include.startswith(("ppu/", "io/")) and include != "string.h":
+            print(f"{path.relative_to(root)}: PPU imports {include}")
+            sys.exit(1)
+    for token in ("struct mysmb_game", "->ram[", "HWND", "int86(", "waveOut"):
+        if token in text:
+            print(f"{path.relative_to(root)}: PPU leaks {token}")
+            sys.exit(1)
+print("platform, IO and PPU purity: passed")

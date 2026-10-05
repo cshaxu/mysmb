@@ -30,7 +30,7 @@ static int visible_cell(const void MYSMB_IO_FAR *context,
     clip=(const struct actor_clip *)context;
     x=(unsigned short)(((unsigned long)column*256UL+128UL)/80UL);
     y=(unsigned short)(((unsigned long)row*240UL+120UL)/50UL);
-    if(x<8U && (clip->game->visible_ppu_mask&4U)==0U)return 0;
+    if(x<8U && (clip->game->ppu.visible_ppu_mask&4U)==0U)return 0;
     for(i=0U;i<clip->item->sprites;++i) {
         if((clip->mask&(1U<<i))==0U)continue;
         sx=clip->item->entries[i*4U+3U];
@@ -247,9 +247,9 @@ static void actor_colors(const struct mysmb_game *game,unsigned short entry,
     case MYSMB_TEXT_FLAG:case MYSMB_TEXT_STAR_FLAG:body=2U;detail=1U;break;
     default:break;
     }
-    e->background=mysmb_io_color_text16(game->palette[0x10U+palette+body]);
+    e->background=mysmb_io_color_text16(game->ppu.palette[0x10U+palette+body]);
     e->foreground=detail!=0U?
-        mysmb_io_color_text16(game->palette[0x10U+palette+detail]):
+        mysmb_io_color_text16(game->ppu.palette[0x10U+palette+detail]):
         mysmb_io_color_text_contrast(e->background);
     if(e->foreground==e->background)e->foreground=mysmb_io_color_text_contrast(e->background);
 }
@@ -305,9 +305,9 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
     receipt->drawn=receipt->unsupported=receipt->unowned_sprites=0U;
     for(i=0U;i<500U;++i)workspace->claimed[i]=0U;
     for(i=0U;i<64U;++i)seen[i]=0U;
-    if((game->visible_ppu_mask&0x10U)==0U)return 1;
+    if((game->ppu.visible_ppu_mask&0x10U)==0U)return 1;
     for(i=0U;i<64U;++i)
-        if(game->visible_oam[i*4U]<239U && game->visible_oam[i*4U+1U]!=0xfcU &&
+        if(game->ppu.visible_oam[i*4U]<239U && game->ppu.visible_oam[i*4U+1U]!=0xfcU &&
             game->text_observer.visible.owners[i]==0U)receipt->unowned_sprites++;
     for(priority=0U;priority<64U;++priority) {
         i=game->text_observer.visible.owners[priority];
@@ -374,17 +374,17 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
                 item->family==MYSMB_TEXT_OBSERVE_BUBBLE ||
                 item->family==MYSMB_TEXT_OBSERVE_VINE ||
                 item->family==MYSMB_TEXT_OBSERVE_PLATFORM) {
-                element.x=component_anchor(game->visible_oam[priority*4U+3U],80U,256U);
-                element.y=component_anchor((unsigned short)(game->visible_oam[priority*4U]+1U),50U,240U);
+                element.x=component_anchor(game->ppu.visible_oam[priority*4U+3U],80U,256U);
+                element.y=component_anchor((unsigned short)(game->ppu.visible_oam[priority*4U]+1U),50U,240U);
             }
-            palette=(unsigned short)((game->visible_oam[priority*4U+2U]&3U)*4U);
+            palette=(unsigned short)((game->ppu.visible_oam[priority*4U+2U]&3U)*4U);
             actor_colors(game,entry,palette,&element);
             element.face_left=item->family==MYSMB_TEXT_OBSERVE_VINE?
                 (item->entries[entry*4U+2U]&0x40U)!=0U?1U:0U:
                 (item->facing&2U)!=0U?1U:0U;
             clip.game=game;clip.item=item;clip.mask=mask;
             clip.workspace=workspace;clip.background=background_opaque;
-            clip.behind=(unsigned char)(game->visible_oam[priority*4U+2U]&0x20U);
+            clip.behind=(unsigned char)(game->ppu.visible_oam[priority*4U+2U]&0x20U);
             if(item->family==MYSMB_TEXT_OBSERVE_PLATFORM)
                 platform_span(&element,item,entry,&clip,frame);
             else {

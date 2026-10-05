@@ -484,24 +484,24 @@ mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
          * increment before each command: d7 means 32, otherwise one.  The
          * portable field records the same $2000 d2 state for the snapshot. */
         /* The source reloads Mirror_PPU_CTRL_REG1 before each header. */
-        game->ppu_control_0 = game->ram[MYSMB_RAM_PPU_CONTROL_MIRROR];
+        game->ppu.ppu_control_0 = game->ram[MYSMB_RAM_PPU_CONTROL_MIRROR];
         if ((control & 0x80U) != 0U)
-            game->ppu_control_0 |= 0x04U;
+            game->ppu.ppu_control_0 |= 0x04U;
         else
-            game->ppu_control_0 &= (mysmb_u8)~0x04U;
+            game->ppu.ppu_control_0 &= (mysmb_u8)~0x04U;
         /* WritePPUReg1 writes both physical $2000 and $0778 before every
          * packet.  Publish that physical state at this header; the NMI tail
          * later restores its saved d7-enabled control value. */
-        mysmb_game_write_ppu_control(game, game->ppu_control_0);
+        mysmb_game_write_ppu_control(game, game->ppu.ppu_control_0);
         for (index = 0U; index < count; ++index) {
             if (address >= 0x3f00U) {
                 offset = (mysmb_u16)(address & 0x001fU);
-                game->palette[mysmb_game_palette_offset(offset)] = value;
+                game->ppu.palette[mysmb_game_palette_offset(offset)] = value;
             }
             else {
                 table = (mysmb_u8)((address & 0x0400U) != 0U ? 1U : 0U);
                 offset = (mysmb_u16)(address & 0x03ffU);
-                game->name_table[table][offset] = value;
+                game->ppu.name_table[table][offset] = value;
             }
             address = (mysmb_u16)((address +
                 ((control & 0x80U) != 0U ? 32U : 1U)) & 0x3fffU);
@@ -525,8 +525,8 @@ mysmb_u8 mysmb_game_apply_vram_commands(struct mysmb_game *game,
 void mysmb_game_bind_chr_source(struct mysmb_game *game,
                                  const mysmb_u8 *chr_data, mysmb_u16 chr_data_size)
 {
-    game->chr_data = chr_data;
-    game->chr_data_size = chr_data_size;
+    game->ppu.chr_data = chr_data;
+    game->ppu.chr_data_size = chr_data_size;
 }
 void mysmb_game_frame_initialize(struct mysmb_frame *frame)
 {

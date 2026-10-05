@@ -70,9 +70,9 @@ static unsigned char decode(const struct mysmb_game *g,unsigned short column,
     unsigned char tiles[4],found,candidate,attribute;
     tile_row=(unsigned short)(row*2U);tile_col=(unsigned short)(column*2U);
     a=(unsigned short)(tile_row*32U+tile_col);
-    tiles[0]=g->name_table[table][a];tiles[1]=g->name_table[table][a+32U];
-    tiles[2]=g->name_table[table][a+1U];tiles[3]=g->name_table[table][a+33U];
-    attribute=g->name_table[table][0x3c0U+(tile_row/4U)*8U+tile_col/4U];
+    tiles[0]=g->ppu.name_table[table][a];tiles[1]=g->ppu.name_table[table][a+32U];
+    tiles[2]=g->ppu.name_table[table][a+1U];tiles[3]=g->ppu.name_table[table][a+33U];
+    attribute=g->ppu.name_table[table][0x3c0U+(tile_row/4U)*8U+tile_col/4U];
     *palette=(unsigned char)((attribute>>(((tile_row&2U)<<1U)+(tile_col&2U)))&3U);
     *ambiguous=0U;
     if(tiles[0]==0x24U && tiles[1]==0x24U &&
@@ -236,22 +236,22 @@ static void object(const struct mysmb_game *g,
     unsigned char c,color,ink;
     x0=first_cell(left,80L,256L);y0=first_cell(top,50L,240L);
     x1=first_cell(right,80L,256L);y1=first_cell(bottom,50L,240L);
-    if(g->visible_sprite0_split!=0U && top>=32 && y0<7L)y0=7L;
+    if(g->ppu.visible_sprite0_split!=0U && top>=32 && y0<7L)y0=7L;
     if(x1<=x0 || y1<=y0)return;
     width=(unsigned short)(x1-x0);height=(unsigned short)(y1-y0);
-    color=mysmb_io_color_text16(g->palette[palette*4U+
+    color=mysmb_io_color_text16(g->ppu.palette[palette*4U+
         (k==PLANT?3U:k==CLOUD || k==COIN || k==QUESTION ||
             k==TREE_CROWN || k==TREE_TRUNK?1U:2U)]);
     if(k==DARK)color=0U;
     ink=mysmb_io_color_text_contrast(color);
     if(k==TREE_CROWN || k==TREE_TRUNK) {
-        c=mysmb_io_color_text16(g->palette[palette*4U+3U]);
+        c=mysmb_io_color_text16(g->ppu.palette[palette*4U+3U]);
         if(c!=color)ink=c;
     }
     for(y=y0;y<y1;++y)for(x=x0;x<x1;++x) {
         if(x<0L || x>=80L || y<0L || y>=50L)continue;
-        if(g->visible_sprite0_split!=0U && (y*240L+120L)/50L<32L)continue;
-        if((g->visible_ppu_mask&2U)==0U && (x*256L+128L)/80L<8L)continue;
+        if(g->ppu.visible_sprite0_split!=0U && (y*240L+120L)/50L<32L)continue;
+        if((g->ppu.visible_ppu_mask&2U)==0U && (x*256L+128L)/80L<8L)continue;
         /* Only members of this connected component own cells. Bounds alone
          * would fill L-shaped pipe gaps or a hollow tree/castle silhouette. */
         dx=(x*256L+128L)/80L-left;dy=(y*240L+120L)/50L-top;
@@ -308,10 +308,10 @@ int mysmb_text_background_scene_build(const struct mysmb_game *g,
     receipt->recognized=receipt->unsupported=receipt->ambiguous=0U;
     receipt->objects=receipt->letters=0U;
     for(i=0U;i<500U;++i)w->opaque[i]=0U;
-    (void)mysmb_text_elements_build(0,0U,mysmb_io_color_text16(g->palette[0]),frame);
-    if((g->visible_ppu_mask&8U)==0U)return 1;
+    (void)mysmb_text_elements_build(0,0U,mysmb_io_color_text16(g->ppu.palette[0]),frame);
+    if((g->ppu.visible_ppu_mask&8U)==0U)return 1;
     for(i=0U;i<480U;++i) {
-        row=i/32U;col=i%32U;table=(unsigned char)((col/16U)^(g->visible_ppu_name_table&1U));
+        row=i/32U;col=i%32U;table=(unsigned char)((col/16U)^(g->ppu.visible_ppu_name_table&1U));
         k=decode(g,col%16U,row,table,&p,&ambiguous);
         w->kinds[i]=k;w->palettes[i]=p;w->visited[i]=0U;
         if(ambiguous!=0U)receipt->ambiguous++;
@@ -336,10 +336,10 @@ int mysmb_text_background_scene_build(const struct mysmb_game *g,
             if(row!=0U)enqueue(w,(unsigned short)(n-32U),k,p,&tail);
             if(row!=14U)enqueue(w,(unsigned short)(n+32U),k,p,&tail);
         }
-        left=(short)(minx*16U)-(short)g->visible_scroll_x;
-        right=(short)((maxx+1U)*16U)-(short)g->visible_scroll_x;
-        top=(short)(miny*16U)-(short)g->visible_scroll_y;
-        bottom=(short)((maxy+1U)*16U)-(short)g->visible_scroll_y;
+        left=(short)(minx*16U)-(short)g->ppu.visible_scroll_x;
+        right=(short)((maxx+1U)*16U)-(short)g->ppu.visible_scroll_x;
+        top=(short)(miny*16U)-(short)g->ppu.visible_scroll_y;
+        bottom=(short)((maxy+1U)*16U)-(short)g->ppu.visible_scroll_y;
         object(g,w,frame,k,p,cap,minx,miny,left,top,right,bottom);
         object(g,w,frame,k,p,cap,minx,miny,left,(short)(top+240),right,(short)(bottom+240));
         for(head=0U;head<tail;++head)w->visited[w->queue[head]]=1U;

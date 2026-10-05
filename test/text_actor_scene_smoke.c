@@ -31,8 +31,8 @@ static int dynamic_words(void)
     cases=0U;
     for(value=0U;value<16U;++value)for(bg=0U;bg<16U;++bg)
         for(dx=0U;dx<8U;++dx)for(dy=0U;dy<8U;++dy) {
-            memset(&game,0,sizeof(game));game.visible_ppu_mask=0x1eU;
-            game.palette[0x12U]=0x30U;
+            memset(&game,0,sizeof(game));game.ppu.visible_ppu_mask=0x1eU;
+            game.ppu.palette[0x12U]=0x30U;
             for(i=0U;i<64U;++i)game.ram[0x0200U+i*4U]=0xf8U;
             mysmb_text_observer_enable(&game,1U);
             if(value<11U) {
@@ -74,10 +74,10 @@ static int mushroom_colors(void)
     for(identity=0U;identity<=3U;++identity)for(palette=0U;palette<4U;++palette) {
         memset(&game,0,sizeof(game));
         for(i=0U;i<64U;++i)game.ram[0x0200U+i*4U]=0xf8U;
-        game.visible_ppu_mask=0x1eU;
-        game.palette[0x11U+palette*4U]=identity==0U?0x16U:0x1aU;
-        game.palette[0x12U+palette*4U]=0x30U;
-        game.palette[0x13U+palette*4U]=0x27U;
+        game.ppu.visible_ppu_mask=0x1eU;
+        game.ppu.palette[0x11U+palette*4U]=identity==0U?0x16U:0x1aU;
+        game.ppu.palette[0x12U+palette*4U]=0x30U;
+        game.ppu.palette[0x13U+palette*4U]=0x27U;
         mysmb_text_observer_enable(&game,1U);
         sprite(8U,80U,95U);sprite(9U,88U,95U);
         sprite(10U,80U,103U);sprite(11U,88U,103U);
@@ -98,7 +98,7 @@ static int mushroom_colors(void)
             CHECK(frame.cells[20U*80U+27U].background==stem);
             CHECK(frame.cells[20U*80U+27U].foreground==cap);
             CHECK(frame.cells[22U*80U+27U].background==mark);
-            game.palette[0x13U+palette*4U]=0x1aU;
+            game.ppu.palette[0x13U+palette*4U]=0x1aU;
             CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
             CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
             CHECK(frame.cells[20U*80U+27U].foreground==mark);
@@ -107,7 +107,7 @@ static int mushroom_colors(void)
         if(identity==2U) {
             CHECK(frame.cells[21U*80U+27U].background==cap);
             CHECK(frame.cells[21U*80U+27U].foreground==mark);
-            game.palette[0x13U+palette*4U]=0x16U;
+            game.ppu.palette[0x13U+palette*4U]=0x16U;
             CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
             CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
             CHECK(frame.cells[21U*80U+27U].background==mysmb_io_color_text16(0x16U));
@@ -121,13 +121,13 @@ static int mushroom_colors(void)
         CHECK(memcmp(&before,&game,sizeof(game))==0);
         /* Palette changes recolor the same committed template without a
          * selector rerun or another DMA. */
-        game.palette[0x13U+palette*4U]=0x12U;
+        game.ppu.palette[0x13U+palette*4U]=0x12U;
         CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
         CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
         /* A cap quantized to the sky uses the existing visible-ink fallback. */
         CHECK(mysmb_io_color_text16(0x12U)==9U);
         CHECK(frame.cells[20U*80U+27U].foreground==mark);
-        game.palette[0x13U+palette*4U]=0x1aU;
+        game.ppu.palette[0x13U+palette*4U]=0x1aU;
         CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
         CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
         CHECK(frame.cells[20U*80U+27U].foreground==mysmb_io_color_text16(0x1aU));
@@ -141,11 +141,11 @@ static int retainer_details(void)
     unsigned short form,p,i,c,colors,dy,row;
     unsigned char red,white,skin;
     for(form=0U;form<2U;++form)for(p=0U;p<4U;++p)for(dy=0U;dy<8U;++dy) {
-        memset(&game,0,sizeof(game));game.visible_ppu_mask=0x1eU;
+        memset(&game,0,sizeof(game));game.ppu.visible_ppu_mask=0x1eU;
         for(i=0U;i<64U;++i)game.ram[0x0200U+i*4U]=0xf8U;
-        game.palette[0x11U+p*4U]=0x16U;
-        game.palette[0x12U+p*4U]=0x30U;
-        game.palette[0x13U+p*4U]=0x27U;
+        game.ppu.palette[0x11U+p*4U]=0x16U;
+        game.ppu.palette[0x12U+p*4U]=0x30U;
+        game.ppu.palette[0x13U+p*4U]=0x27U;
         red=mysmb_io_color_text16(0x16U);
         white=mysmb_io_color_text16(0x30U);
         skin=mysmb_io_color_text16(0x27U);
@@ -211,10 +211,10 @@ static int object_forms(void)
     for(p=0U;p<4U;++p)for(flip=0U;flip<2U;++flip)for(facing=1U;facing<3U;++facing) {
         memset(&game,0,sizeof(game));
         for(i=0U;i<64U;++i)game.ram[0x0200U+i*4U]=0xf8U;
-        game.visible_ppu_mask=0x1eU;
-        game.palette[0x11U+p*4U]=0x16U;
-        game.palette[0x12U+p*4U]=0x30U;
-        game.palette[0x13U+p*4U]=0x27U;
+        game.ppu.visible_ppu_mask=0x1eU;
+        game.ppu.palette[0x11U+p*4U]=0x16U;
+        game.ppu.palette[0x12U+p*4U]=0x30U;
+        game.ppu.palette[0x13U+p*4U]=0x27U;
         mysmb_text_observer_enable(&game,1U);
         for(i=0U;i<6U;++i) {
             sprite((unsigned short)(8U+i),(unsigned char)(80U+(i%2U)*8U),
@@ -273,8 +273,8 @@ int main(void)
     CHECK(object_forms()==0);
     memset(&game,0,sizeof(game));
     for(i=0U;i<64U;++i)game.ram[0x0200U+i*4U]=0xf8U;
-    game.visible_ppu_mask=0x1eU;
-    game.palette[0x11U]=0x16U;game.palette[0x12U]=0x30U;game.palette[0x13U]=0x27U;
+    game.ppu.visible_ppu_mask=0x1eU;
+    game.ppu.palette[0x11U]=0x16U;game.ppu.palette[0x12U]=0x30U;game.ppu.palette[0x13U]=0x27U;
     mysmb_text_observer_enable(&game,1U);
     CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
     sprite(8U,80U,95U);sprite(9U,88U,95U);
@@ -300,7 +300,7 @@ int main(void)
     CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
     CHECK(frame.cells[20U*80U+26U].character==' ');
     /* Losing a source column clips it rather than shifting the object. */
-    game.visible_oam[32U+9U]=2U;
+    game.ppu.visible_oam[32U+9U]=2U;
     CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
     CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
     CHECK(frame.cells[20U*80U+29U].character==MYSMB_IO_GLYPH_LOWER);
@@ -320,11 +320,11 @@ int main(void)
     mysmb_game_submit_oam(&game);
     CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
     CHECK(receipt.drawn==1U && receipt.unsupported==0U);
-    game.visible_ppu_mask=0U;original=frame;
+    game.ppu.visible_ppu_mask=0U;original=frame;
     CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
     CHECK(receipt.drawn==0U && memcmp(&frame,&original,sizeof(frame))==0);
     /* A shared selected offset cannot classify the original death branch. */
-    game.visible_ppu_mask=0x1eU;
+    game.ppu.visible_ppu_mask=0x1eU;
     mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_PLAYER,
         MYSMB_TEXT_PLAYER_DEATH_FLAG,0U,24U,1U,32U,4U,1U);
     mysmb_game_submit_oam(&game);
@@ -334,7 +334,7 @@ int main(void)
     /* Independent chunks and interleaved original entry priority. */
     mysmb_text_observer_enable(&game,1U);
     for(i=0U;i<64U;++i)game.ram[0x0200U+i*4U]=0xf8U;
-    game.palette[0x17U]=0x1aU;
+    game.ppu.palette[0x17U]=0x1aU;
     sprite(8U,80U,95U);sprite(9U,120U,95U);sprite(10U,120U,95U);
     mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_CHUNKS,
         0U,0U,0U,1U,32U,3U,0U);

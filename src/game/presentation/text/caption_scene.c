@@ -29,7 +29,7 @@ static int cell(const struct mysmb_game *g,
 {
     unsigned short i;
     if(x<0L || x>=80L || y<0L || y>=50L)return 0;
-    if((g->visible_ppu_mask&2U)==0U && (x*256L+128L)/80L<8L)return 0;
+    if((g->ppu.visible_ppu_mask&2U)==0U && (x*256L+128L)/80L<8L)return 0;
     i=(unsigned short)(y*80L+x);
     frame->cells[i].character=c;
     frame->cells[i].foreground=mysmb_io_color_text_contrast(bg);
@@ -71,7 +71,7 @@ static int title_matches(const struct mysmb_game *g,
     }
     if(cursor==g->title_data_size)return 0;
     for(i=128U;i<480U;++i)if((w->visited[i/8U]&(1U<<(i%8U)))!=0U) {
-        if(g->name_table[0U][i]!=expected[i])return 0;
+        if(g->ppu.name_table[0U][i]!=expected[i])return 0;
         ++matched;
     }
     return matched==242U;
@@ -83,7 +83,7 @@ static void sign_line(const struct mysmb_game *g,
     const char *text,unsigned char bg)
 {
     unsigned short length,i;
-    if(g->visible_sprite0_split && (y*240L+120L)/50L<32L)return;
+    if(g->ppu.visible_sprite0_split && (y*240L+120L)/50L<32L)return;
     for(length=0U;text[length]!='\0';++length){}
     left+=(right-left-length)/2L;
     for(i=0U;i<length;++i)(void)cell(g,w,frame,left+i,y,(unsigned char)text[i],bg);
@@ -98,16 +98,16 @@ static int title_sign(const struct mysmb_game *g,
     unsigned char bg,attribute,palette,c;
     if(!title_matches(g,w))return 0;
     /* Table zero's sign participates in the same scene scroll as its source. */
-    left=first((short)(40-(short)g->visible_scroll_x),80L,256L);
-    right=first((short)(216-(short)g->visible_scroll_x),80L,256L);
-    if((g->visible_ppu_name_table&1U)!=0U){left+=80L;right+=80L;}
-    attribute=g->name_table[0U][0x3c9U];palette=(unsigned char)(attribute&3U);
-    bg=mysmb_io_color_text16(g->palette[palette*4U+2U]);
+    left=first((short)(40-(short)g->ppu.visible_scroll_x),80L,256L);
+    right=first((short)(216-(short)g->ppu.visible_scroll_x),80L,256L);
+    if((g->ppu.visible_ppu_name_table&1U)!=0U){left+=80L;right+=80L;}
+    attribute=g->ppu.name_table[0U][0x3c9U];palette=(unsigned char)(attribute&3U);
+    bg=mysmb_io_color_text16(g->ppu.palette[palette*4U+2U]);
     for(part=0U;part<2U;++part) {
-    top=first((short)(32-(short)g->visible_scroll_y+part*240U),50L,240L);
-    bottom=first((short)(120-(short)g->visible_scroll_y+part*240U),50L,240L);
+    top=first((short)(32-(short)g->ppu.visible_scroll_y+part*240U),50L,240L);
+    bottom=first((short)(120-(short)g->ppu.visible_scroll_y+part*240U),50L,240L);
     for(y=top;y<bottom;++y)for(x=left;x<right;++x) {
-        if(g->visible_sprite0_split && (y*240L+120L)/50L<32L)continue;
+        if(g->ppu.visible_sprite0_split && (y*240L+120L)/50L<32L)continue;
         c=y==top || y+1L==bottom?'-':x==left || x+1L==right?'|':' ';
         if((y==top || y+1L==bottom) && (x==left || x+1L==right))c='+';
         (void)cell(g,w,frame,x,y,c,bg);
@@ -141,22 +141,22 @@ unsigned short mysmb_text_caption_scene_draw(const struct mysmb_game *g,
     int sign;
     short px,py;
     long x,y;
-    if((g->visible_ppu_mask&8U)==0U)return 0U;
-    drawn=0U;sign=title_sign(g,w,frame);bg=mysmb_io_color_text16(g->palette[0U]);
+    if((g->ppu.visible_ppu_mask&8U)==0U)return 0U;
+    drawn=0U;sign=title_sign(g,w,frame);bg=mysmb_io_color_text16(g->ppu.palette[0U]);
     for(row=0U;row<30U;++row)for(col=0U;col<64U;++col) {
-        table=(unsigned short)((col/32U)^(g->visible_ppu_name_table&1U));
+        table=(unsigned short)((col/32U)^(g->ppu.visible_ppu_name_table&1U));
         offset=(unsigned short)(row*32U+col%32U);
-        tile=g->name_table[table][offset];n=(unsigned short)((row/2U)*32U+col/2U);
+        tile=g->ppu.name_table[table][offset];n=(unsigned short)((row/2U)*32U+col/2U);
         if(sign && table==0U && row>=4U && row<=14U &&
             col%32U>=5U && col%32U<=26U)continue;
-        if(g->visible_sprite0_split && row<4U)continue;
+        if(g->ppu.visible_sprite0_split && row<4U)continue;
         /* A recognized terrain object takes precedence over font-like IDs. */
         if(w->kinds[n]!=0U)continue;
-        px=(short)(col*8U)-(short)g->visible_scroll_x;
-        py=(short)(row*8U)-(short)g->visible_scroll_y;
+        px=(short)(col*8U)-(short)g->ppu.visible_scroll_x;
+        py=(short)(row*8U)-(short)g->ppu.visible_scroll_y;
         for(part=0U;part<2U;++part) {
             x=first(px,80L,256L);y=first((short)(py+part*240U),50L,240L);
-            if(g->visible_sprite0_split && (y*240L+120L)/50L<32L)continue;
+            if(g->ppu.visible_sprite0_split && (y*240L+120L)/50L<32L)continue;
             if(menu_token(g,table,offset,tile)) {
                 drawn+=(unsigned short)cell(g,w,frame,x,y,'(',bg);
                 if(((x+1L)*256L+128L)/80L<(long)px+8L)
@@ -172,8 +172,8 @@ unsigned short mysmb_text_caption_scene_draw(const struct mysmb_game *g,
             }
         }
     }
-    if(g->visible_sprite0_split)for(row=0U;row<4U;++row)for(col=0U;col<32U;++col) {
-        c=character(g->name_table[0U][row*32U+col]);if(c==0U)continue;
+    if(g->ppu.visible_sprite0_split)for(row=0U;row<4U;++row)for(col=0U;col<32U;++col) {
+        c=character(g->ppu.name_table[0U][row*32U+col]);if(c==0U)continue;
         x=col*8UL*80UL/256UL;y=row*8UL*50UL/240UL;
         drawn+=(unsigned short)cell(g,w,frame,x,y,c,bg);
     }

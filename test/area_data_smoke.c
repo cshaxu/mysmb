@@ -75,12 +75,12 @@ static int verify_metatile_table(mysmb_u8 palette, mysmb_u16 start,
             source = (mysmb_u16)(start + (mysmb_u16)metatile * 4U);
             tile_offset = (mysmb_u16)(128U + (mysmb_u16)row * 64U +
                 (mysmb_u16)column * 2U);
-            if (game.name_table[0U][tile_offset] != mysmb_local_prg[source] ||
-                game.name_table[0U][(mysmb_u16)(tile_offset + 1U)] !=
+            if (game.ppu.name_table[0U][tile_offset] != mysmb_local_prg[source] ||
+                game.ppu.name_table[0U][(mysmb_u16)(tile_offset + 1U)] !=
                     mysmb_local_prg[(mysmb_u16)(source + 2U)] ||
-                game.name_table[0U][(mysmb_u16)(tile_offset + 32U)] !=
+                game.ppu.name_table[0U][(mysmb_u16)(tile_offset + 32U)] !=
                     mysmb_local_prg[(mysmb_u16)(source + 1U)] ||
-                game.name_table[0U][(mysmb_u16)(tile_offset + 33U)] !=
+                game.ppu.name_table[0U][(mysmb_u16)(tile_offset + 33U)] !=
                     mysmb_local_prg[(mysmb_u16)(source + 3U)]) return 1;
         }
     }
@@ -99,7 +99,7 @@ static int verify_palette_stream(mysmb_u16 offset, mysmb_u8 control)
         mysmb_local_prg[(mysmb_u16)(offset + 3U + count)] != 0U) return 1;
     mysmb_game_initialize(&game);
     mysmb_game_bind_area_source(&game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
-    memcpy(expected, game.palette, sizeof(expected));
+    memcpy(expected, game.ppu.palette, sizeof(expected));
     for (index = 0U; index < count; ++index) {
         expected[palette_index((mysmb_u8)(mysmb_local_prg[(mysmb_u16)(offset + 1U)] +
             index))] = mysmb_local_prg[(mysmb_u16)(offset + 3U + index)];
@@ -110,7 +110,7 @@ static int verify_palette_stream(mysmb_u16 offset, mysmb_u8 control)
     else if (mysmb_area_apply_special_palette(&game, control) == 0U) {
         return 1;
     }
-    return memcmp(expected, game.palette, sizeof(expected)) == 0 ? 0 : 1;
+    return memcmp(expected, game.ppu.palette, sizeof(expected)) == 0 ? 0 : 1;
 }
 
 static int expected_message_output(const mysmb_u8 *stream, mysmb_u16 size,
@@ -155,10 +155,10 @@ static int verify_message_stream(mysmb_u16 offset, mysmb_u16 size,
 
     mysmb_game_initialize(&game);
     mysmb_game_bind_area_source(&game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
-    memcpy(expected, game.name_table, sizeof(expected));
+    memcpy(expected, game.ppu.name_table, sizeof(expected));
     if (expected_message_output(&mysmb_local_prg[offset], size, expected) != 0 ||
         mysmb_area_apply_message(&game, address_control) == 0U) return 1;
-    return memcmp(expected, game.name_table, sizeof(expected)) == 0 ? 0 : 1;
+    return memcmp(expected, game.ppu.name_table, sizeof(expected)) == 0 ? 0 : 1;
 }
 
 int main(void)

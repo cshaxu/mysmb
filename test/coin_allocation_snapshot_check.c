@@ -65,7 +65,7 @@ int main(int argc,char **argv)
     if(fgetc(input)!=EOF) {fclose(input);return 66;}fclose(input);
 #endif
     game.area_prg=mysmb_local_prg;game.area_prg_size=MYSMB_LOCAL_PRG_SIZE;
-    game.ppu_control_0=game.ram[0x778U];
+    game.ppu.ppu_control_0=game.ram[0x778U];
     if(entry==1U) mysmb_objects_coin_block(&game,slot,carry);
     else mysmb_objects_setup_jump_coin(&game,slot);
 #ifdef MYSMB_CALLER_CHECK

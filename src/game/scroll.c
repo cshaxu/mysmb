@@ -53,10 +53,10 @@ void mysmb_player_scroll_screen(struct mysmb_game *game, mysmb_u8 amount)
     clamp_screen_edge(game);
     /* Synchronize the game's existing mirror cache; physical visible PPU
      * state is still committed by the following NMI, never by this caller. */
-    game->scroll_x = game->ram[0x073fU];
-    game->scroll_y = game->ram[0x0740U];
-    game->ppu_control_0 = game->ram[0x0778U];
-    game->ppu_name_table = (mysmb_u8)(game->ram[0x0778U] & 3U);
+    game->ppu.scroll_x = game->ram[0x073fU];
+    game->ppu.scroll_y = game->ram[0x0740U];
+    game->ppu.ppu_control_0 = game->ram[0x0778U];
+    game->ppu.ppu_name_table = (mysmb_u8)(game->ram[0x0778U] & 3U);
 }
 
 /* ROM $af93-$afc3 ScrollHandler/ChkNearMid and $affb InitScrlAmt. */

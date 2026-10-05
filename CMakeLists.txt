@@ -70,7 +70,13 @@ list(APPEND MYSMB_GAME_SOURCES src/game/player_end_level.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/player_movement.c)
 list(APPEND MYSMB_GAME_SOURCES src/game/presentation/text/observation.c
     src/game/presentation/text/observer_snapshot.c)
+add_library(mysmb_ppu_state STATIC src/ppu/state.c)
+target_include_directories(mysmb_ppu_state PUBLIC src)
 add_library(mysmb_game STATIC ${MYSMB_GAME_SOURCES})
+target_link_libraries(mysmb_game PUBLIC mysmb_ppu_state)
+add_executable(mysmb_ppu_state_smoke test/ppu_state_smoke.c)
+target_link_libraries(mysmb_ppu_state_smoke PRIVATE mysmb_ppu_state)
+add_test(NAME mysmb.ppu-state-smoke COMMAND mysmb_ppu_state_smoke)
 target_include_directories(mysmb_game PUBLIC src)
 
 # Composition glue depends only on public game output and neutral contracts.

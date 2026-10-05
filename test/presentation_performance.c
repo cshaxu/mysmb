@@ -39,18 +39,18 @@ static int compare_frames(unsigned int cases)
     for(i=0U;i<8192U;++i)chr[i]=random_byte();
     mysmb_game_initialize(&game);
     for(n=0U;n<cases;++n) {
-        game.chr_data=n%17U==0U?0:chr;
-        game.chr_data_size=n%19U==0U?(mysmb_u16)(n*31U%8192U):8192U;
+        game.ppu.chr_data=n%17U==0U?0:chr;
+        game.ppu.chr_data_size=n%19U==0U?(mysmb_u16)(n*31U%8192U):8192U;
         for(table=0U;table<2U;++table)
-            for(i=0U;i<1024U;++i)game.name_table[table][i]=random_byte();
-        for(i=0U;i<32U;++i)game.palette[i]=random_byte();
-        for(i=0U;i<256U;++i)game.visible_oam[i]=random_byte();
-        game.visible_scroll_x=(unsigned char)n;
-        game.visible_scroll_y=(unsigned char)(n*37U);
-        game.visible_ppu_name_table=(unsigned char)(n%4U);
-        game.visible_ppu_control_0=(unsigned char)((n/4U)%4U*8U);
-        game.visible_ppu_mask=(unsigned char)(n%32U);
-        game.visible_sprite0_split=(unsigned char)((n/32U)%2U);
+            for(i=0U;i<1024U;++i)game.ppu.name_table[table][i]=random_byte();
+        for(i=0U;i<32U;++i)game.ppu.palette[i]=random_byte();
+        for(i=0U;i<256U;++i)game.ppu.visible_oam[i]=random_byte();
+        game.ppu.visible_scroll_x=(unsigned char)n;
+        game.ppu.visible_scroll_y=(unsigned char)(n*37U);
+        game.ppu.visible_ppu_name_table=(unsigned char)(n%4U);
+        game.ppu.visible_ppu_control_0=(unsigned char)((n/4U)%4U*8U);
+        game.ppu.visible_ppu_mask=(unsigned char)(n%32U);
+        game.ppu.visible_sprite0_split=(unsigned char)((n/32U)%2U);
         before=game;
         mysmb_ppu_frame_reference(&game,&reference);
         mysmb_ppu_frame_build(&game,&actual);
@@ -95,7 +95,7 @@ int main(void)
     QueryPerformanceFrequency(&frequency);
     result=compare_frames(2048U);if(result)return result;
     /* Identical densely populated fixture;timing never changes pass/fail. */
-    game.chr_data=chr;game.chr_data_size=8192U;game.visible_ppu_mask=0x1eU;
+    game.ppu.chr_data=chr;game.ppu.chr_data_size=8192U;game.ppu.visible_ppu_mask=0x1eU;
     n=512U;start=stamp();
     for(i=0U;i<n;++i)mysmb_ppu_frame_reference(&game,&reference);
     old_time=stamp()-start;start=stamp();

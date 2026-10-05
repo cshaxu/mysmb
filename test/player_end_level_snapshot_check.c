@@ -67,7 +67,7 @@ int main(int argc,char **argv)
     if(fgetc(input)!=EOF) {fclose(input);return 66;}fclose(input);
 #endif
     game.area_prg=mysmb_local_prg;game.area_prg_size=MYSMB_LOCAL_PRG_SIZE;
-    game.ppu_control_0=game.ram[0x778U];
+    game.ppu.ppu_control_0=game.ram[0x778U];
     switch(kind) {
     case 1U: mysmb_player_step_flagpole_slide(&game);break;
     case 2U: mysmb_player_step_end_level(&game);break;

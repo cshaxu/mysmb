@@ -16,10 +16,10 @@ int main(void)
                                        (mysmb_u16)(MYSMB_LOCAL_TITLE_ICON_DATA_SIZE - 1U)) == 0U) {
         return 1;
     }
-    if (game.ppu_mask != 0x1eU) return 1;
+    if (game.ppu.ppu_mask != 0x1eU) return 1;
     changed = 0U;
     for (index = 0U; index < 0x0300U; ++index) {
-        if (game.name_table[0][index] != 0x24U) {
+        if (game.ppu.name_table[0][index] != 0x24U) {
             changed++;
         }
     }

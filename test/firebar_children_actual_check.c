@@ -26,7 +26,7 @@ int main(int argc, char **argv)
         memcpy(game.ram, record + 2U, 2048U);
         game.area_prg = mysmb_local_prg;
         game.area_prg_size = MYSMB_LOCAL_PRG_SIZE;
-        game.ppu_control_0 = game.ram[0x778U];
+        game.ppu.ppu_control_0 = game.ram[0x778U];
         slot = game.ram[8U];
         result = record[1];
         switch (record[0]) {

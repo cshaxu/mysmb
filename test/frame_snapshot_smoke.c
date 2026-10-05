@@ -11,19 +11,19 @@ int main(void)
     };
 
     mysmb_game_initialize(&game);
-    game.ppu_mask = 0x06U;
-    game.visible_ppu_mask = 0x1eU;
-    game.visible_ppu_control_0 = 0x93U;
-    game.visible_ppu_name_table = 2U;
-    game.visible_scroll_x = 0xb7U;
-    game.visible_scroll_y = 0x80U;
+    game.ppu.ppu_mask = 0x06U;
+    game.ppu.visible_ppu_mask = 0x1eU;
+    game.ppu.visible_ppu_control_0 = 0x93U;
+    game.ppu.visible_ppu_name_table = 2U;
+    game.ppu.visible_scroll_x = 0xb7U;
+    game.ppu.visible_scroll_y = 0x80U;
     mysmb_game_initialize_name_tables(&game);
     /* InitializeNameTables preserves the caller's NMI high bit: the source
      * ORA/AND result is $90 from the initialized $2000 mirror, not $10. */
-    if (game.ppu_mask != 0x06U || game.ram[0x0778U] != 0x90U ||
-        game.visible_ppu_mask != 0x1eU || game.visible_ppu_control_0 != 0x90U ||
-        game.visible_ppu_name_table != 0U || game.visible_scroll_x != 0U ||
-        game.visible_scroll_y != 0U)
+    if (game.ppu.ppu_mask != 0x06U || game.ram[0x0778U] != 0x90U ||
+        game.ppu.visible_ppu_mask != 0x1eU || game.ppu.visible_ppu_control_0 != 0x90U ||
+        game.ppu.visible_ppu_name_table != 0U || game.ppu.visible_scroll_x != 0U ||
+        game.ppu.visible_scroll_y != 0U)
         return 7;
     mysmb_frame_snapshot_capture(&game, &snapshot);
     if (snapshot.ppu_control_0 != 0x90U || snapshot.ppu_name_table != 0U ||
@@ -31,20 +31,20 @@ int main(void)
         snapshot.ppu_address != 0U) return 8;
     game.frame_number = 42UL;
     game.ram[0x0200U] = 0x12U;
-    game.visible_oam[0U] = 0x34U;
+    game.ppu.visible_oam[0U] = 0x34U;
     game.ram[0x00f1U] = 0x34U;
-    game.name_table[1][0x03ffU] = 0x56U;
-    game.palette[3U] = 0x21U;
-    game.ppu_control_0 = 0x90U;
-    game.ppu_mask = 0x1eU;
-    game.ppu_name_table = 2U;
-    game.scroll_x = 0x40U;
-    game.scroll_y = 0x80U;
-    game.visible_ppu_control_0 = 0x90U;
-    game.visible_ppu_mask = 0x1eU;
-    game.visible_ppu_name_table = 2U;
-    game.visible_scroll_x = 0x40U;
-    game.visible_scroll_y = 0x80U;
+    game.ppu.name_table[1][0x03ffU] = 0x56U;
+    game.ppu.palette[3U] = 0x21U;
+    game.ppu.ppu_control_0 = 0x90U;
+    game.ppu.ppu_mask = 0x1eU;
+    game.ppu.ppu_name_table = 2U;
+    game.ppu.scroll_x = 0x40U;
+    game.ppu.scroll_y = 0x80U;
+    game.ppu.visible_ppu_control_0 = 0x90U;
+    game.ppu.visible_ppu_mask = 0x1eU;
+    game.ppu.visible_ppu_name_table = 2U;
+    game.ppu.visible_scroll_x = 0x40U;
+    game.ppu.visible_scroll_y = 0x80U;
     mysmb_frame_snapshot_capture(&game, &snapshot);
     if (snapshot.sequence != 42UL || snapshot.cpu_ram[0x0200U] != 0x12U ||
         snapshot.oam[0U] != 0x34U || snapshot.audio[0U] != 0x34U ||
@@ -65,12 +65,12 @@ int main(void)
      * source mirror keeps that bit when the NMI restores output. */
     input.buttons2 = 0U;
     input.buttons = 0U;
-    game.ppu_control_0 = 0x90U;
-    game.ppu_mask = 0U;
+    game.ppu.ppu_control_0 = 0x90U;
+    game.ppu.ppu_mask = 0U;
     game.ram[0x0774U] = 0U;
     if (mysmb_game_apply_vram_commands(&game, vertical_vram_command,
             (mysmb_u16)sizeof(vertical_vram_command)) == 0U ||
-        game.ppu_control_0 != 0x94U) return 4;
+        game.ppu.ppu_control_0 != 0x94U) return 4;
     mysmb_game_tick(&game, &input, &frame);
     mysmb_frame_snapshot_capture(&game, &snapshot);
     if (snapshot.ppu_control_0 != 0x94U || snapshot.ppu_mask != 0x1eU ||

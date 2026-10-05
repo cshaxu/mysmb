@@ -129,13 +129,13 @@ int main(void)
     graphics = (mysmb_u16)(mysmb_local_prg[0x0b08U + palette] |
         ((mysmb_u16)mysmb_local_prg[0x0b0cU + palette] << 8U));
     graphics = (mysmb_u16)(graphics - 0x8000U + (mysmb_u16)(metatile & 0x3fU) * 4U);
-    if (game.name_table[0][0x0340U] != mysmb_local_prg[graphics] ||
-        game.name_table[0][0x0341U] != mysmb_local_prg[(mysmb_u16)(graphics + 2U)] ||
-        game.name_table[0][0x0360U] != mysmb_local_prg[(mysmb_u16)(graphics + 1U)] ||
-        game.name_table[0][0x0361U] != mysmb_local_prg[(mysmb_u16)(graphics + 3U)]) return 1;
+    if (game.ppu.name_table[0][0x0340U] != mysmb_local_prg[graphics] ||
+        game.ppu.name_table[0][0x0341U] != mysmb_local_prg[(mysmb_u16)(graphics + 2U)] ||
+        game.ppu.name_table[0][0x0360U] != mysmb_local_prg[(mysmb_u16)(graphics + 1U)] ||
+        game.ppu.name_table[0][0x0361U] != mysmb_local_prg[(mysmb_u16)(graphics + 3U)]) return 1;
     /* Screen task 2 has already committed the ROM-owned top status stream. */
-    if (game.name_table[0][0x0043U] != mysmb_local_prg[0x0755U] ||
-        game.name_table[0][0x0052U] != mysmb_local_prg[0x075dU]) return 1;
+    if (game.ppu.name_table[0][0x0043U] != mysmb_local_prg[0x0755U] ||
+        game.ppu.name_table[0][0x0052U] != mysmb_local_prg[0x075dU]) return 1;
 
     mysmb_area_queue_bottom_status_line(&game);
     if (game.ram[0x0300U] != 20U || game.ram[0x0301U] != 0x20U ||
@@ -154,10 +154,10 @@ int main(void)
     rotation = game.ram[0x06d4U];
     if (mysmb_game_apply_vram_commands(&game, &game.ram[0x0301U], 8U) == 0U) return 1;
     game.ram[0x0300U] = 0U;
-    if (game.ram[0x0300U] != 0U || game.palette[12U] != mysmb_local_prg[0x09d5U] ||
-        game.palette[13U] != mysmb_local_prg[0x09c3U] ||
-        game.palette[14U] != mysmb_local_prg[0x09d7U] ||
-        game.palette[15U] != mysmb_local_prg[0x09d8U] || rotation != 1U) return 1;
+    if (game.ram[0x0300U] != 0U || game.ppu.palette[12U] != mysmb_local_prg[0x09d5U] ||
+        game.ppu.palette[13U] != mysmb_local_prg[0x09c3U] ||
+        game.ppu.palette[14U] != mysmb_local_prg[0x09d7U] ||
+        game.ppu.palette[15U] != mysmb_local_prg[0x09d8U] || rotation != 1U) return 1;
     input.buttons2 = 0U;
     input.buttons = MYSMB_BUTTON_A;
     mysmb_game_tick(&game, &input, &frame);
@@ -224,8 +224,8 @@ int main(void)
         game.ram[0x0303U] != 3U || game.ram[0x0304U] != 3U ||
         game.ram[0x0305U] != 4U || game.ram[0x0306U] != 4U) return 1;
     mysmb_game_tick(&game, &input, &frame);
-    if (game.name_table[0][0x007aU] != 3U || game.name_table[0][0x007bU] != 4U ||
-        game.name_table[0][0x007cU] != 4U) return 1;
+    if (game.ppu.name_table[0][0x007aU] != 3U || game.ppu.name_table[0][0x007bU] != 4U ||
+        game.ppu.name_table[0][0x007cU] != 4U) return 1;
 
     /* TopStatusBarLine reaches WriteGameText, whose source does not call
      * SetVRAMOffset: the command begins at $0301 while $0300 remains zero. */
@@ -297,8 +297,8 @@ int main(void)
         game.ram[0x0300U] != 0U || game.ram[0x0302U] != 0xcdU || game.ram[0x0309U] != 3U ||
         game.ram[0x0314U] != 2U || game.ram[0x0316U] != 4U) return 1;
     if (mysmb_game_apply_vram_commands(&game, &game.ram[0x0301U], 0x0100U) == 0U ||
-        game.name_table[0][0x01d2U] != 3U || game.name_table[0][0x0151U] != 2U ||
-        game.name_table[0][0x0153U] != 4U) return 1;
+        game.ppu.name_table[0][0x01d2U] != 3U || game.ppu.name_table[0][0x0151U] != 2U ||
+        game.ppu.name_table[0][0x0153U] != 4U) return 1;
     /* ROM PutLives uses one digit plus a crown tile once NumberofLives is 9. */
     game.ram[0x0300U] = 0U;
     game.ram[0x075aU] = 9U;
@@ -334,11 +334,11 @@ int main(void)
         game.ram[0x0306U] != mysmb_local_prg[0x05e1U] ||
         game.ram[0x0307U] != mysmb_local_prg[0x05e2U]) return 1;
     if (mysmb_game_apply_vram_commands(&game, &game.ram[0x0301U], 0x0100U) == 0U ||
-        game.palette[0U] != mysmb_local_prg[0x05d0U] ||
-        game.palette[0x11U] != mysmb_local_prg[0x05e0U] ||
-        game.palette[0x12U] != mysmb_local_prg[0x05e1U] ||
-        game.palette[0x13U] != mysmb_local_prg[0x05e2U] ||
-        game.palette[0x10U] != 0U) return 1;
+        game.ppu.palette[0U] != mysmb_local_prg[0x05d0U] ||
+        game.ppu.palette[0x11U] != mysmb_local_prg[0x05e0U] ||
+        game.ppu.palette[0x12U] != mysmb_local_prg[0x05e1U] ||
+        game.ppu.palette[0x13U] != mysmb_local_prg[0x05e2U] ||
+        game.ppu.palette[0x10U] != 0U) return 1;
     game.ram[0x0300U] = 0U;
     if (mysmb_area_sync_player_palette(&game) != 0U || game.ram[0x0300U] != 0U)
         return 1;
@@ -424,7 +424,7 @@ int main(void)
     for (count = 0U; count < 8U; ++count) mysmb_game_tick(&game, &input, &frame);
     if (game.ram[0x0772U] != 2U || game.ram[0x07a0U] != 0x12U ||
         game.ram[0x0774U] != 0U ||
-        game.name_table[0][0x020bU] != mysmb_local_prg[0x0752U +
+        game.ppu.name_table[0][0x020bU] != mysmb_local_prg[0x0752U +
             mysmb_local_prg[0x07feU + 7U] + 3U]) return 1;
 
     /* W1-2's original area stream has the row-13 Warp object at PRG
@@ -446,7 +446,7 @@ int main(void)
     if (mysmb_area_process_object_state(&game) == 0U ||
         game.ram[0x06d6U] != 4U || game.ram[0x0300U] != 0x2cU ||
         mysmb_game_apply_vram_commands(&game, &game.ram[0x0301U], 0x0100U) == 0U ||
-        game.name_table[0][0x0584U] != mysmb_local_prg[0x0752U +
+        game.ppu.name_table[0][0x0584U] != mysmb_local_prg[0x0752U +
             mysmb_local_prg[0x07feU + 8U] + 3U] ||
         game.ram[0x031cU] != mysmb_local_prg[0x07f2U] ||
         game.ram[0x0320U] != mysmb_local_prg[0x07f3U] ||
@@ -467,7 +467,7 @@ int main(void)
         game.ram[0x07a0U] != 7U || game.ram[0x0300U] != 0U ||
         game.ram[0x0301U] != 0x22U) return 1;
     mysmb_game_tick(&game, &input, &frame);
-    if (game.name_table[0][0x020cU] != mysmb_local_prg[0x0752U +
+    if (game.ppu.name_table[0][0x020cU] != mysmb_local_prg[0x0752U +
         mysmb_local_prg[0x07feU + 5U] + 3U]) return 1;
 
     printf("area_pointer=%02x type=%u enemy=%02x%02x area=%02x%02x header=%u/%u/%u objects=%u\n",

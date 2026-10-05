@@ -22,8 +22,8 @@ static const mysmb_u8 mysmb_ppu_master_color[64] = {
 static mysmb_u8 mysmb_ppu_pattern(const struct mysmb_game *game,
                                    mysmb_u16 offset)
 {
-    if (game->chr_data == 0 || offset >= game->chr_data_size) return 0U;
-    return game->chr_data[offset];
+    if (game->ppu.chr_data == 0 || offset >= game->ppu.chr_data_size) return 0U;
+    return game->ppu.chr_data[offset];
 }
 
 static mysmb_u8 mysmb_ppu_background_pixel(const struct mysmb_game *game,
@@ -55,17 +55,17 @@ static mysmb_u8 mysmb_ppu_background_pixel(const struct mysmb_game *game,
     table &= 1U;
     row = (source_y % 240U) / 8U;
     column = (source_x & 0xffU) / 8U;
-    attribute = game->name_table[table][0x03c0U + (row / 4U) * 8U + column / 4U];
+    attribute = game->ppu.name_table[table][0x03c0U + (row / 4U) * 8U + column / 4U];
     palette = (mysmb_u8)((attribute >> (((row & 2U) << 1U) + (column & 2U))) & 3U);
-    pattern = (mysmb_u16)(((game->visible_ppu_control_0 & 0x10U) != 0U ?
-        0x1000U : 0U) + game->name_table[table][row * 32U + column] * 16U +
+    pattern = (mysmb_u16)(((game->ppu.visible_ppu_control_0 & 0x10U) != 0U ?
+        0x1000U : 0U) + game->ppu.name_table[table][row * 32U + column] * 16U +
         (source_y & 7U));
     low = mysmb_ppu_pattern(game, pattern);
     high = mysmb_ppu_pattern(game, (mysmb_u16)(pattern + 8U));
     color = (mysmb_u8)(((low >> (7U - (source_x & 7U))) & 1U) |
                         (((high >> (7U - (source_x & 7U))) & 1U) << 1U));
     *opaque = color == 0U ? 0U : 1U;
-    return game->palette[color == 0U ? 0U : (mysmb_u16)(palette * 4U + color)];
+    return game->ppu.palette[color == 0U ? 0U : (mysmb_u16)(palette * 4U + color)];
 }
 
 void mysmb_ppu_frame_reference(const struct mysmb_game *game,
@@ -91,33 +91,33 @@ void mysmb_ppu_frame_reference(const struct mysmb_game *game,
     /* Source flag zero reaches SkipSprite0 during VBlank, so the entire
      * visible frame uses scene scroll. A synchronized frame retains its
      * fixed top region; never reread the following frame's RAM flag here. */
-    fixed_top_height = game->visible_sprite0_split != 0U ?
+    fixed_top_height = game->ppu.visible_sprite0_split != 0U ?
         MYSMB_PPU_STATUS_BAR_HEIGHT : 0U;
     for (y = 0U; y < MYSMB_SCREEN_HEIGHT; ++y) {
-        scroll_x = y < fixed_top_height ? 0U : game->visible_scroll_x;
-        scroll_y = y < fixed_top_height ? 0U : game->visible_scroll_y;
+        scroll_x = y < fixed_top_height ? 0U : game->ppu.visible_scroll_x;
+        scroll_y = y < fixed_top_height ? 0U : game->ppu.visible_scroll_y;
         for (x = 0U; x < MYSMB_SCREEN_WIDTH; ++x) {
-            if ((game->visible_ppu_mask & 0x08U) != 0U &&
-                (x >= 8U || (game->visible_ppu_mask & 0x02U) != 0U)) {
+            if ((game->ppu.visible_ppu_mask & 0x08U) != 0U &&
+                (x >= 8U || (game->ppu.visible_ppu_mask & 0x02U) != 0U)) {
                 frame->pixels[y * MYSMB_SCREEN_WIDTH + x] =
                     mysmb_ppu_background_pixel(game, x, y, scroll_x, scroll_y,
-                        y < fixed_top_height ? 0U : game->visible_ppu_name_table,
+                        y < fixed_top_height ? 0U : game->ppu.visible_ppu_name_table,
                         &opaque);
             }
-            else frame->pixels[y * MYSMB_SCREEN_WIDTH + x] = game->palette[0U];
+            else frame->pixels[y * MYSMB_SCREEN_WIDTH + x] = game->ppu.palette[0U];
         }
     }
-    if ((game->visible_ppu_mask & 0x10U) == 0U) return;
+    if ((game->ppu.visible_ppu_mask & 0x10U) == 0U) return;
     for (sprite = 64U; sprite != 0U;) {
         --sprite;
-        sprite_y = (mysmb_u16)game->visible_oam[sprite * 4U] + 1U;
-        sprite_x = game->visible_oam[sprite * 4U + 3U];
-        attributes = game->visible_oam[sprite * 4U + 2U];
+        sprite_y = (mysmb_u16)game->ppu.visible_oam[sprite * 4U] + 1U;
+        sprite_x = game->ppu.visible_oam[sprite * 4U + 3U];
+        attributes = game->ppu.visible_oam[sprite * 4U + 2U];
         if (sprite_y >= MYSMB_SCREEN_HEIGHT) continue;
         for (pixel_y = 0U; pixel_y < 8U && sprite_y + pixel_y < MYSMB_SCREEN_HEIGHT;
              ++pixel_y) {
-            pattern = (mysmb_u16)(((game->visible_ppu_control_0 & 0x08U) != 0U ?
-                0x1000U : 0U) + game->visible_oam[sprite * 4U + 1U] * 16U +
+            pattern = (mysmb_u16)(((game->ppu.visible_ppu_control_0 & 0x08U) != 0U ?
+                0x1000U : 0U) + game->ppu.visible_oam[sprite * 4U + 1U] * 16U +
                 ((attributes & 0x80U) != 0U ? 7U - pixel_y : pixel_y));
             low = mysmb_ppu_pattern(game, pattern);
             high = mysmb_ppu_pattern(game, (mysmb_u16)(pattern + 8U));
@@ -129,18 +129,18 @@ void mysmb_ppu_frame_reference(const struct mysmb_game *game,
                 if (color == 0U) continue;
                 y = (mysmb_u16)(sprite_y + pixel_y);
                 x = (mysmb_u16)(sprite_x + pixel_x);
-                if (x < 8U && (game->visible_ppu_mask & 0x04U) == 0U) continue;
+                if (x < 8U && (game->ppu.visible_ppu_mask & 0x04U) == 0U) continue;
                 if ((attributes & 0x20U) != 0U &&
-                    (game->visible_ppu_mask & 0x08U) != 0U &&
-                    (x >= 8U || (game->visible_ppu_mask & 0x02U) != 0U)) {
-                    scroll_x = y < fixed_top_height ? 0U : game->visible_scroll_x;
-                    scroll_y = y < fixed_top_height ? 0U : game->visible_scroll_y;
+                    (game->ppu.visible_ppu_mask & 0x08U) != 0U &&
+                    (x >= 8U || (game->ppu.visible_ppu_mask & 0x02U) != 0U)) {
+                    scroll_x = y < fixed_top_height ? 0U : game->ppu.visible_scroll_x;
+                    scroll_y = y < fixed_top_height ? 0U : game->ppu.visible_scroll_y;
                     (void)mysmb_ppu_background_pixel(game, x, y, scroll_x, scroll_y,
-                        y < fixed_top_height ? 0U : game->visible_ppu_name_table,
+                        y < fixed_top_height ? 0U : game->ppu.visible_ppu_name_table,
                         &opaque);
                     if (opaque != 0U) continue;
                 }
-                frame->pixels[y * MYSMB_SCREEN_WIDTH + x] = game->palette[
+                frame->pixels[y * MYSMB_SCREEN_WIDTH + x] = game->ppu.palette[
                     0x10U + (mysmb_u16)((attributes & 3U) * 4U + color)];
             }
         }

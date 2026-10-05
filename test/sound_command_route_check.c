@@ -70,7 +70,7 @@ int main(int argc,char **argv)
             mysmb_game_step_screen_routine(&game);break;
         case 0x8082U:
             input.buttons=0U;input.buttons2=0U;
-            game.ppu_control_0=game.ram[0x778U];
+            game.ppu.ppu_control_0=game.ram[0x778U];
             game.oam_dma_primed=1U;
             mysmb_game_frame_initialize(&frame);
             mysmb_frame_root_step(&game,&input,&frame);break;

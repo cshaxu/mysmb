@@ -12,7 +12,7 @@ static unsigned int compare_control(const unsigned char *entry,
     memset(&game, 0, sizeof(game));
     memcpy(game.ram, entry, 2048U);
     mysmb_game_bind_area_source(&game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
-    game.ppu_control_0 = game.ram[0x778U];
+    game.ppu.ppu_control_0 = game.ram[0x778U];
     mysmb_player_step(&game, game.ram[0x6fcU]);
     failures = 0U;
     for (address = 8U; address < 2048U; ++address) {

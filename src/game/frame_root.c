@@ -64,8 +64,8 @@ static void mysmb_frame_root_commit_scene_scroll(struct mysmb_game *game);
 static void mysmb_frame_root_restore_nmi_control(struct mysmb_game *game,
                                                  mysmb_u8 saved_control)
 {
-    game->visible_ppu_control_0 = (mysmb_u8)(saved_control | 0x80U);
-    game->visible_ppu_name_table = (mysmb_u8)(saved_control & 3U);
+    game->ppu.visible_ppu_control_0 = (mysmb_u8)(saved_control | 0x80U);
+    game->ppu.visible_ppu_name_table = (mysmb_u8)(saved_control & 3U);
 }
 
 static const mysmb_u8 mysmb_vram_address_high[19] = {
@@ -95,9 +95,9 @@ mysmb_u8 mysmb_frame_root_begin(struct mysmb_game *game,
         game->ram[MYSMB_ROOT_FRAME_COUNTER]++;
     }
     mysmb_game_rotate_pseudorandom(game);
-    game->visible_sprite0_split =
+    game->ppu.visible_sprite0_split =
         game->ram[MYSMB_ROOT_SPRITE0_HIT] != 0U ? 1U : 0U;
-    if (game->visible_sprite0_split != 0U && paused == 0U) {
+    if (game->ppu.visible_sprite0_split != 0U && paused == 0U) {
         /* ROM $814a calls $8223 after DMA, before $814d SpriteShuffler. */
         mysmb_game_move_sprites_offscreen(game);
         mysmb_game_shuffle_sprite_offsets(game);
@@ -217,7 +217,7 @@ void mysmb_frame_root_step(struct mysmb_game *game, const struct mysmb_input *in
 
     paused = mysmb_frame_root_begin(game, input, &mode_before, &task_before);
     /* This is the source PHA after the scroll register writes. */
-    saved_control = game->ppu_control_0;
+    saved_control = game->ppu.ppu_control_0;
     run_title_demo = 0U;
     if (paused != 0U) {
         mysmb_frame_root_restore_nmi_control(game, saved_control);
@@ -417,8 +417,8 @@ void mysmb_game_commit_vram_buffer(struct mysmb_game *game)
      * write before each packet.  Keep that pre-dispatch physical state
      * observable here; the NMI tail later restores the saved control value
      * with d7 enabled. */
-    game->visible_ppu_control_0 = game->ppu_control_0;
-    game->visible_ppu_name_table = (mysmb_u8)(game->ppu_control_0 & 3U);
+    game->ppu.visible_ppu_control_0 = game->ppu.ppu_control_0;
+    game->ppu.visible_ppu_name_table = (mysmb_u8)(game->ppu.ppu_control_0 & 3U);
     /* InitBuffer selects Buffer_Offset[1] only when X is exactly six.  Entry
      * seven transfers $0341 but still clears the ordinary $0300/$0301 header. */
     if (selector == 6U) {
@@ -438,16 +438,16 @@ void mysmb_game_commit_vram_buffer(struct mysmb_game *game)
  * gameplay changes these source fields for the following frame. */
 static void mysmb_frame_root_commit_scene_scroll(struct mysmb_game *game)
 {
-    game->visible_scroll_x = game->ram[MYSMB_ROOT_HORIZONTAL_SCROLL];
-    game->visible_scroll_y = game->ram[MYSMB_ROOT_VERTICAL_SCROLL];
+    game->ppu.visible_scroll_x = game->ram[MYSMB_ROOT_HORIZONTAL_SCROLL];
+    game->ppu.visible_scroll_y = game->ram[MYSMB_ROOT_VERTICAL_SCROLL];
 }
 
 /* ROM InitBuffer $80de-$80e3 reloads the mirror after VRAM/header work.
  * ScreenOff keeps physical $2001 masked until this source-owned phase. */
 void mysmb_game_restore_display_mask(struct mysmb_game *game)
 {
-    game->ppu_mask = game->ram[MYSMB_ROOT_PPU_MASK_MIRROR];
-    game->visible_ppu_mask = game->ppu_mask;
+    game->ppu.ppu_mask = game->ram[MYSMB_ROOT_PPU_MASK_MIRROR];
+    game->ppu.visible_ppu_mask = game->ppu.ppu_mask;
 }
 
 void mysmb_game_commit_display_state(struct mysmb_game *game)
@@ -460,9 +460,9 @@ void mysmb_game_commit_display_state(struct mysmb_game *game)
     /* The source loads $0778,including RAM-only page writes made by
      * SecondaryGameSetup. A cached physical control is from the prior NMI
      * and must never overwrite that next-frame producer. */
-    game->ppu_control_0 = (mysmb_u8)(
+    game->ppu.ppu_control_0 = (mysmb_u8)(
         game->ram[MYSMB_ROOT_PPU_CONTROL_MIRROR] & 0x7fU);
-    game->ram[MYSMB_ROOT_PPU_CONTROL_MIRROR] = game->ppu_control_0;
+    game->ram[MYSMB_ROOT_PPU_CONTROL_MIRROR] = game->ppu.ppu_control_0;
     /* ScreenOff reads the $2001 mirror, never the ColdBoot's earlier direct
      * physical $2001 write.  The first NMI therefore turns physical $06 into
      * the cleared mirror value $00 while DisableScreenFlag remains set. */
@@ -472,10 +472,10 @@ void mysmb_game_commit_display_state(struct mysmb_game *game)
     else
         mask_mirror |= 0x1eU;
     game->ram[MYSMB_ROOT_PPU_MASK_MIRROR] = mask_mirror;
-    game->ppu_mask = (mysmb_u8)(mask_mirror & 0xe7U);
+    game->ppu.ppu_mask = (mysmb_u8)(mask_mirror & 0xe7U);
     /* The original writes these values before OperModeExecutionTree with
      * NMI disabled.  The RTI-equivalent tail restores d7. */
-    game->visible_ppu_control_0 = game->ppu_control_0;
-    game->visible_ppu_mask = game->ppu_mask;
-    game->visible_ppu_name_table = (mysmb_u8)(game->ppu_control_0 & 3U);
+    game->ppu.visible_ppu_control_0 = game->ppu.ppu_control_0;
+    game->ppu.visible_ppu_mask = game->ppu.ppu_mask;
+    game->ppu.visible_ppu_name_table = (mysmb_u8)(game->ppu.ppu_control_0 & 3U);
 }

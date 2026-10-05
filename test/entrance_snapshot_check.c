@@ -20,7 +20,7 @@ int main(int argc,char **argv)
        fgetc(input)!=EOF) {fclose(input);return 66;}
     fclose(input);
     mysmb_game_bind_area_source(&game,mysmb_local_prg,MYSMB_LOCAL_PRG_SIZE);
-    game.ppu_control_0=game.ram[0x778U];
+    game.ppu.ppu_control_0=game.ram[0x778U];
     mysmb_player_finish_normal_entrance(&game);
     failures=0U;
     for(i=8U;i<2048U;++i) {

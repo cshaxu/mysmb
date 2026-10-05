@@ -62,14 +62,14 @@ int main(void)
     mysmb_game_initialize(&game);
     if (mysmb_game_apply_vram_commands(&game, palette_commands,
             (mysmb_u16)sizeof(palette_commands)) == 0U ||
-        game.palette[0U] != 0x11U || game.palette[4U] != 0x15U ||
-        game.palette[8U] != 0x19U || game.palette[12U] != 0x1dU ||
-        game.palette[0x11U] != 0x12U || game.palette[0x12U] != 0x13U ||
-        game.palette[0x13U] != 0x14U || game.palette[0x15U] != 0x16U ||
-        game.palette[0x19U] != 0x1aU || game.palette[0x1dU] != 0x1eU ||
-        game.palette[0x10U] != 0U ||
-        game.palette[0x14U] != 0U || game.palette[0x18U] != 0U ||
-        game.palette[0x1cU] != 0U) {
+        game.ppu.palette[0U] != 0x11U || game.ppu.palette[4U] != 0x15U ||
+        game.ppu.palette[8U] != 0x19U || game.ppu.palette[12U] != 0x1dU ||
+        game.ppu.palette[0x11U] != 0x12U || game.ppu.palette[0x12U] != 0x13U ||
+        game.ppu.palette[0x13U] != 0x14U || game.ppu.palette[0x15U] != 0x16U ||
+        game.ppu.palette[0x19U] != 0x1aU || game.ppu.palette[0x1dU] != 0x1eU ||
+        game.ppu.palette[0x10U] != 0U ||
+        game.ppu.palette[0x14U] != 0U || game.ppu.palette[0x18U] != 0U ||
+        game.ppu.palette[0x1cU] != 0U) {
         return 1;
     }
     mysmb_render_build(&game, &render_frame);
@@ -192,7 +192,7 @@ int main(void)
     mysmb_player_update_scroll(&game);
     if (game.ram[0x0755U] != 0x60U || game.ram[0x0775U] != 1U ||
         game.ram[0x071cU] != 1U || game.ram[0x071aU] != 0U ||
-        game.scroll_x != 1U || game.scroll_y != 0U || game.ppu_name_table != 0U ||
+        game.ppu.scroll_x != 1U || game.ppu.scroll_y != 0U || game.ppu.ppu_name_table != 0U ||
         game.ram[0x071dU] != 0U || game.ram[0x071bU] != 1U ||
         game.ram[0x0795U] != 8U) {
         return 1;
@@ -205,7 +205,7 @@ int main(void)
     mysmb_player_update_scroll(&game);
     if (game.ram[0x0775U] != 2U || game.ram[0x071cU] != 1U ||
         game.ram[0x071aU] != 3U || game.ram[0x071dU] != 0U ||
-        game.scroll_x != 1U || game.ppu_name_table != 1U ||
+        game.ppu.scroll_x != 1U || game.ppu.ppu_name_table != 1U ||
         game.ram[0x071bU] != 4U) {
         return 1;
     }
@@ -898,10 +898,10 @@ int main(void)
 
     if (game.frame_number != 120UL || game.ram[0x07feU] != 0U ||
         game.ram[0x07ffU] != 0xa5U || game.ram[0x015fU] != 0U ||
-        game.name_table[0][0U] != 0x24U ||
-        game.name_table[1][0x03bfU] != 0x24U ||
-        game.name_table[0][0x03c0U] != 0U ||
-        game.name_table[1][0x03ffU] != 0U) {
+        game.ppu.name_table[0][0U] != 0x24U ||
+        game.ppu.name_table[1][0x03bfU] != 0x24U ||
+        game.ppu.name_table[0][0x03c0U] != 0U ||
+        game.ppu.name_table[1][0x03ffU] != 0U) {
         return 1;
     }
 
@@ -917,9 +917,9 @@ int main(void)
 
     if (mysmb_game_apply_title_commands(&game, title_commands,
                                         (mysmb_u16)sizeof(title_commands)) == 0U ||
-        game.name_table[0][0U] != 0x11U || game.name_table[0][1U] != 0x12U ||
-        game.name_table[0][0x21U] != 0x33U ||
-        game.name_table[0][0x41U] != 0x33U) {
+        game.ppu.name_table[0][0U] != 0x11U || game.ppu.name_table[0][1U] != 0x12U ||
+        game.ppu.name_table[0][0x21U] != 0x33U ||
+        game.ppu.name_table[0][0x41U] != 0x33U) {
         return 1;
     }
 
@@ -1087,10 +1087,10 @@ int main(void)
         game.ram[0x0308U] != 2U || game.ram[0x0309U] != 0x59U ||
         game.ram[0x030aU] != 0x5aU || game.ram[0x030bU] != 0U) return 1;
     if (mysmb_game_apply_vram_commands(&game, &game.ram[0x0301U], 11U) == 0U ||
-        game.name_table[0][0x014aU] != 0x57U ||
-        game.name_table[0][0x014bU] != 0x58U ||
-        game.name_table[0][0x016aU] != 0x59U ||
-        game.name_table[0][0x016bU] != 0x5aU) return 1;
+        game.ppu.name_table[0][0x014aU] != 0x57U ||
+        game.ppu.name_table[0][0x014bU] != 0x58U ||
+        game.ppu.name_table[0][0x016aU] != 0x59U ||
+        game.ppu.name_table[0][0x016bU] != 0x5aU) return 1;
     /* PutBlockMetatile discards the carry from ADC #$20 before its ASL/ROL
      * pair.  A high-row source byte must therefore stay in nametable $20,
      * rather than inheriting a C-wide addition carry into $24. */
@@ -1163,13 +1163,13 @@ int main(void)
      * submit the selected list even though VRAM_Buffer2_Offset is zero. */
     game.ram[0x034bU] = 0U;
     mysmb_game_commit_vram_buffer(&game);
-    if (game.name_table[1][0x0104U] != 0x26U ||
-        game.name_table[1][0x0124U] != 0x26U || game.ram[0x0340U] != 0U ||
+    if (game.ppu.name_table[1][0x0104U] != 0x26U ||
+        game.ppu.name_table[1][0x0124U] != 0x26U || game.ram[0x0340U] != 0U ||
         game.ram[0x0341U] != 0U || game.ram[0x0773U] != 0U) return 1;
     if (mysmb_game_apply_vram_commands(&game, &game.ram[0x0301U], 15U) == 0U ||
-        game.name_table[0][0x006dU] != game.ram[0x07edU] ||
-        game.name_table[0][0x006eU] != game.ram[0x07eeU] ||
-        game.name_table[0][0x0062U] != 0x24U) return 1;
+        game.ppu.name_table[0][0x006dU] != game.ram[0x07edU] ||
+        game.ppu.name_table[0][0x006eU] != game.ram[0x07eeU] ||
+        game.ppu.name_table[0][0x0062U] != 0x24U) return 1;
     game.ram[0x0300U] = 0U;
     game.ram[0x0301U] = 0U;
     game.ram[0x075eU] = 99U;
@@ -1504,7 +1504,7 @@ int main(void)
     game.ram[0x0307U] = 4U;
     game.ram[0x0308U] = 0U;
     mysmb_game_tick(&game, &input, &frame);
-    return game.ram[0x0300U] == 0U && game.palette[12U] == 1U &&
-        game.palette[13U] == 2U && game.palette[14U] == 3U &&
-        game.palette[15U] == 4U ? 0 : 1;
+    return game.ram[0x0300U] == 0U && game.ppu.palette[12U] == 1U &&
+        game.ppu.palette[13U] == 2U && game.ppu.palette[14U] == 3U &&
+        game.ppu.palette[15U] == 4U ? 0 : 1;
 }

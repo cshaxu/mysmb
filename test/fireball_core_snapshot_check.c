@@ -84,7 +84,7 @@ int main(int argc,char **argv)
     if(fgetc(input)!=EOF) {fclose(input);return 66;}fclose(input);
 #endif
     game.area_prg=mysmb_local_prg;game.area_prg_size=MYSMB_LOCAL_PRG_SIZE;
-    game.ppu_control_0=game.ram[0x778U];
+    game.ppu.ppu_control_0=game.ram[0x778U];
     mysmb_fireball_step_object(&game,slot);
 #ifdef MYSMB_CALLER_CHECK
     if(child_calls!=child_count) ++failures;

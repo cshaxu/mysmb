@@ -44,16 +44,16 @@ void mysmb_frame_snapshot_capture(const struct mysmb_game *game,
     snapshot->sequence = game->frame_number;
     snapshot->verified_fields = 0U;
     mysmb_frame_snapshot_copy(snapshot->cpu_ram, game->ram, 0x0800U);
-    mysmb_frame_snapshot_copy(snapshot->name_table[0], game->name_table[0], 0x0400U);
-    mysmb_frame_snapshot_copy(snapshot->name_table[1], game->name_table[1], 0x0400U);
-    mysmb_frame_snapshot_copy(snapshot->palette, game->palette, 0x20U);
-    mysmb_frame_snapshot_copy(snapshot->oam, game->visible_oam, 0x0100U);
-    snapshot->ppu_control_0 = game->visible_ppu_control_0;
-    snapshot->ppu_control_1 = game->visible_ppu_control_0;
-    snapshot->ppu_name_table = game->visible_ppu_name_table;
-    snapshot->scroll_x = game->visible_scroll_x;
-    snapshot->scroll_y = game->visible_scroll_y;
-    snapshot->ppu_mask = game->visible_ppu_mask;
+    mysmb_frame_snapshot_copy(snapshot->name_table[0], game->ppu.name_table[0], 0x0400U);
+    mysmb_frame_snapshot_copy(snapshot->name_table[1], game->ppu.name_table[1], 0x0400U);
+    mysmb_frame_snapshot_copy(snapshot->palette, game->ppu.palette, 0x20U);
+    mysmb_frame_snapshot_copy(snapshot->oam, game->ppu.visible_oam, 0x0100U);
+    snapshot->ppu_control_0 = game->ppu.visible_ppu_control_0;
+    snapshot->ppu_control_1 = game->ppu.visible_ppu_control_0;
+    snapshot->ppu_name_table = game->ppu.visible_ppu_name_table;
+    snapshot->scroll_x = game->ppu.visible_scroll_x;
+    snapshot->scroll_y = game->ppu.visible_scroll_y;
+    snapshot->ppu_mask = game->ppu.visible_ppu_mask;
     snapshot->ppu_address = (mysmb_u16)(
         ((mysmb_u16)(snapshot->scroll_y & 7U) << 12U) |
         ((mysmb_u16)(snapshot->ppu_name_table & 3U) << 10U) |

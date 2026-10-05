@@ -2,6 +2,7 @@
 #define MYSMB_GAME_GAME_H
 
 #include "game/presentation/text/observation.h"
+#include "ppu/state.h"
 
 /* This header intentionally uses only C90 language and headers. */
 typedef unsigned char mysmb_u8;
@@ -49,30 +50,9 @@ struct mysmb_game {
     mysmb_u8 startup_phase;
     /* Original CPU RAM $0000-$07ff; OAM is RAM[$0200-$02ff]. */
     mysmb_u8 ram[0x0800U];
-    /* Original PPU name tables $2000-$23ff and $2400-$27ff. */
-    mysmb_u8 name_table[2][0x0400U];
-    /* PPU sprite RAM after the source NMI's $4014 transfer.  CPU RAM
-     * $0200-$02ff remains the following frame's producer backing store. */
-    mysmb_u8 visible_oam[0x0100U];
+    struct mysmb_ppu_state ppu;
+    /* Original NMI startup guard;not a PPU renderer decision. */
     mysmb_u8 oam_dma_primed;
-    /* Translated PPU-visible output state; never a host PPU API. */
-    mysmb_u8 palette[0x20U];
-    mysmb_u8 ppu_control_0;
-    mysmb_u8 ppu_mask;
-    mysmb_u8 ppu_name_table;
-    mysmb_u8 scroll_x;
-    mysmb_u8 scroll_y;
-    /* Physical PPU state committed at the NMI boundary.  The translated
-     * game mutates the mirror/scroll fields during OperModeExecutionTree;
-     * source NMI presents those mutations on the following boundary. */
-    mysmb_u8 visible_ppu_control_0;
-    mysmb_u8 visible_ppu_mask;
-    mysmb_u8 visible_ppu_name_table;
-    mysmb_u8 visible_scroll_x;
-    mysmb_u8 visible_scroll_y;
-    /* Source $8138 selects this frame's split before mode code can change
-     * RAM $0722 for the following NMI. The shared compositor consumes it. */
-    mysmb_u8 visible_sprite0_split;
     /* Portable copies of the ROM's directly-written APU output registers.
      * They are translated game output, not host audio state: adapters may
      * consume them but may not infer or replace their values. */
@@ -84,9 +64,6 @@ struct mysmb_game {
     mysmb_u8 apu_write_count;
     struct mysmb_apu_write apu_writes[MYSMB_APU_WRITE_CAPACITY];
     /* Owner-local NROM data binding; null in ROM-free builds and tests. */
-    /* Immutable owner-local CHR pattern data used by the shared PPU compositor. */
-    const mysmb_u8 *chr_data;
-    mysmb_u16 chr_data_size;
     const mysmb_u8 *area_prg;
     mysmb_u16 area_prg_size;
     /* Owner-local title streams.  The translated title tasks copy these

@@ -35,14 +35,14 @@ int main(void)
      * transfers after ScreenRoutines hands off to SecondaryGameSetup. */
     for (count = 0U; count < 4U; ++count)
         mysmb_game_tick(&game, &input, &frame);
-    if (game.palette[0U] != mysmb_local_prg[0x05d0U] ||
-        game.palette[31U] != mysmb_local_prg[0x0ceaU]) return 1;
+    if (game.ppu.palette[0U] != mysmb_local_prg[0x05d0U] ||
+        game.ppu.palette[31U] != mysmb_local_prg[0x0ceaU]) return 1;
 
     if (mysmb_area_apply_special_palette(&game, 8U) == 0U) return 1;
-    if (game.palette[4U] != mysmb_local_prg[0x0d4fU]) return 1;
-    if (game.palette[0x15U] != mysmb_local_prg[0x0d50U]) return 1;
-    if (game.palette[0x16U] != mysmb_local_prg[0x0d51U]) return 1;
-    if (game.palette[0x17U] != mysmb_local_prg[0x0d52U]) return 1;
+    if (game.ppu.palette[4U] != mysmb_local_prg[0x0d4fU]) return 1;
+    if (game.ppu.palette[0x15U] != mysmb_local_prg[0x0d50U]) return 1;
+    if (game.ppu.palette[0x16U] != mysmb_local_prg[0x0d51U]) return 1;
+    if (game.ppu.palette[0x17U] != mysmb_local_prg[0x0d52U]) return 1;
     if (mysmb_area_apply_special_palette(&game, 12U) != 0U) return 1;
 
     /* Address control is consumed at the next NMI boundary.  Exercise that
@@ -52,28 +52,28 @@ int main(void)
     mysmb_game_bind_area_source(&game, mysmb_local_prg, MYSMB_LOCAL_PRG_SIZE);
     input.buttons2 = 0U;
     input.buttons = 0U;
-    game.palette[4U] = 0U;
+    game.ppu.palette[4U] = 0U;
     game.ram[0x0773U] = 8U;
     mysmb_game_tick(&game, &input, &frame);
-    if (game.palette[4U] != mysmb_local_prg[0x0d4fU] ||
-        game.palette[0x15U] != mysmb_local_prg[0x0d50U] ||
-        game.palette[0x16U] != mysmb_local_prg[0x0d51U] ||
-        game.palette[0x17U] != mysmb_local_prg[0x0d52U] ||
+    if (game.ppu.palette[4U] != mysmb_local_prg[0x0d4fU] ||
+        game.ppu.palette[0x15U] != mysmb_local_prg[0x0d50U] ||
+        game.ppu.palette[0x16U] != mysmb_local_prg[0x0d51U] ||
+        game.ppu.palette[0x17U] != mysmb_local_prg[0x0d52U] ||
         game.ram[0x0773U] != 0U) return 1;
     if (mysmb_area_apply_special_palette(&game, 9U) == 0U) return 1;
     for (index = 0U; index < 0x20U; ++index)
-        day_palette[index] = game.palette[index];
+        day_palette[index] = game.ppu.palette[index];
     if (mysmb_area_apply_special_palette(&game, 10U) == 0U) return 1;
     differs = 0U;
     for (index = 0U; index < 0x20U; ++index) {
-        night_palette[index] = game.palette[index];
+        night_palette[index] = game.ppu.palette[index];
         if (night_palette[index] != day_palette[index]) differs = 1U;
     }
     if (differs == 0U || mysmb_area_apply_special_palette(&game, 11U) == 0U)
         return 1;
     differs = 0U;
     for (index = 0U; index < 0x20U; ++index) {
-        if (game.palette[index] != night_palette[index]) differs = 1U;
+        if (game.ppu.palette[index] != night_palette[index]) differs = 1U;
     }
     return differs != 0U ? 0 : 1;
 }

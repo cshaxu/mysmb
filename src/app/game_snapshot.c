@@ -6,7 +6,7 @@ void mysmb_game_snapshot_fingerprint(const struct mysmb_game *game,
     mysmb_io_u8 *fingerprint)
 {
     mysmb_snapshot_put32(fingerprint,mysmb_snapshot_crc(game->area_prg,game->area_prg_size));
-    mysmb_snapshot_put32(fingerprint+4,mysmb_snapshot_crc(game->chr_data,game->chr_data_size));
+    mysmb_snapshot_put32(fingerprint+4,mysmb_snapshot_crc(game->ppu.chr_data,game->ppu.chr_data_size));
     mysmb_snapshot_put32(fingerprint+8,mysmb_snapshot_crc(game->title_data,game->title_data_size));
     mysmb_snapshot_put32(fingerprint+12,mysmb_snapshot_crc(game->title_icon_data,game->title_icon_data_size));
 }
@@ -19,11 +19,11 @@ int mysmb_game_snapshot_capture(const struct mysmb_game *game,
     mysmb_snapshot_put32(out,game->frame_number);out+=4;
 #define BYTE(field) *out++=game->field
 #define ARRAY(field) memcpy(out,game->field,sizeof(game->field));out+=sizeof(game->field)
-    BYTE(startup_phase);ARRAY(ram);ARRAY(name_table);ARRAY(visible_oam);
-    BYTE(oam_dma_primed);ARRAY(palette);
-    BYTE(ppu_control_0);BYTE(ppu_mask);BYTE(ppu_name_table);BYTE(scroll_x);BYTE(scroll_y);
-    BYTE(visible_ppu_control_0);BYTE(visible_ppu_mask);BYTE(visible_ppu_name_table);
-    BYTE(visible_scroll_x);BYTE(visible_scroll_y);BYTE(visible_sprite0_split);
+    BYTE(startup_phase);ARRAY(ram);ARRAY(ppu.name_table);ARRAY(ppu.visible_oam);
+    BYTE(oam_dma_primed);ARRAY(ppu.palette);
+    BYTE(ppu.ppu_control_0);BYTE(ppu.ppu_mask);BYTE(ppu.ppu_name_table);BYTE(ppu.scroll_x);BYTE(ppu.scroll_y);
+    BYTE(ppu.visible_ppu_control_0);BYTE(ppu.visible_ppu_mask);BYTE(ppu.visible_ppu_name_table);
+    BYTE(ppu.visible_scroll_x);BYTE(ppu.visible_scroll_y);BYTE(ppu.visible_sprite0_split);
     BYTE(apu_delta_counter_load);BYTE(apu_channel_enable);BYTE(apu_frame_counter);
     ARRAY(apu_registers);BYTE(apu_write_count);
     for (i=0U;i<MYSMB_APU_WRITE_CAPACITY;++i) {
@@ -70,11 +70,11 @@ int mysmb_game_snapshot_restore(struct mysmb_game *game,
     game->frame_number=mysmb_snapshot_get32(in);in+=4;
 #define BYTE(field) game->field=*in++
 #define ARRAY(field) memcpy(game->field,in,sizeof(game->field));in+=sizeof(game->field)
-    BYTE(startup_phase);ARRAY(ram);ARRAY(name_table);ARRAY(visible_oam);
-    BYTE(oam_dma_primed);ARRAY(palette);
-    BYTE(ppu_control_0);BYTE(ppu_mask);BYTE(ppu_name_table);BYTE(scroll_x);BYTE(scroll_y);
-    BYTE(visible_ppu_control_0);BYTE(visible_ppu_mask);BYTE(visible_ppu_name_table);
-    BYTE(visible_scroll_x);BYTE(visible_scroll_y);BYTE(visible_sprite0_split);
+    BYTE(startup_phase);ARRAY(ram);ARRAY(ppu.name_table);ARRAY(ppu.visible_oam);
+    BYTE(oam_dma_primed);ARRAY(ppu.palette);
+    BYTE(ppu.ppu_control_0);BYTE(ppu.ppu_mask);BYTE(ppu.ppu_name_table);BYTE(ppu.scroll_x);BYTE(ppu.scroll_y);
+    BYTE(ppu.visible_ppu_control_0);BYTE(ppu.visible_ppu_mask);BYTE(ppu.visible_ppu_name_table);
+    BYTE(ppu.visible_scroll_x);BYTE(ppu.visible_scroll_y);BYTE(ppu.visible_sprite0_split);
     BYTE(apu_delta_counter_load);BYTE(apu_channel_enable);BYTE(apu_frame_counter);
     ARRAY(apu_registers);BYTE(apu_write_count);
     for (i=0U;i<MYSMB_APU_WRITE_CAPACITY;++i) {

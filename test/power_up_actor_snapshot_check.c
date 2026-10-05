@@ -62,7 +62,7 @@ int main(int argc,char **argv)
         if(fread(record,1,4098,input)!=4098) return 66;
         memset(&game,0,sizeof(game));memcpy(game.ram,record+2,2048U);
         game.area_prg=mysmb_local_prg;game.area_prg_size=MYSMB_LOCAL_PRG_SIZE;
-        game.ppu_control_0=game.ram[0x778U];slot=record[1];
+        game.ppu.ppu_control_0=game.ram[0x778U];slot=record[1];
         switch(record[0]) {
         case 1U: mysmb_enemy_move_jumping(&game,slot);break;
         case 2U: mysmb_objects_step_enemy_jump_terrain(&game,slot);break;
@@ -111,7 +111,7 @@ int main(int argc,char **argv)
     if(fgetc(input)!=EOF) {fclose(input);return 66;}fclose(input);
 #endif
     game.area_prg=mysmb_local_prg;game.area_prg_size=MYSMB_LOCAL_PRG_SIZE;
-    game.ppu_control_0=game.ram[0x778U];
+    game.ppu.ppu_control_0=game.ram[0x778U];
     mysmb_objects_step_power_up(&game);
 #ifdef MYSMB_CALLER_CHECK
     if(child_calls!=child_count) ++failures;

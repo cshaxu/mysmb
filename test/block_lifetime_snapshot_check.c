@@ -56,7 +56,7 @@ int main(int argc,char **argv)
         if(fread(record,1,4098,f)!=4098) return 66;
         memset(&g,0,sizeof(g));memcpy(g.ram,record+2U,2048U);
         g.area_prg=mysmb_local_prg;g.area_prg_size=MYSMB_LOCAL_PRG_SIZE;
-        g.ppu_control_0=g.ram[0x778U];before=failures;
+        g.ppu.ppu_control_0=g.ram[0x778U];before=failures;
         switch(record[0]) {
         case 1U: mysmb_world_impose_gravity_block(&g,(mysmb_u8)(record[1]-9U));break;
         case 2U: mysmb_world_move_spr_object_horizontally(&g,record[1]);break;
@@ -96,7 +96,7 @@ int main(int argc,char **argv)
     memset(&g,0,sizeof(g));
     if(fread(g.ram,1,2048,f)!=2048 || fread(expected,1,2048,f)!=2048 || fgetc(f)!=EOF) return 66;
     fclose(f);g.area_prg=mysmb_local_prg;g.area_prg_size=MYSMB_LOCAL_PRG_SIZE;
-    g.ppu_control_0=g.ram[0x778U];
+    g.ppu.ppu_control_0=g.ram[0x778U];
     mysmb_objects_step_block(&g,header[6]);compare(g.ram,expected);
 #ifdef MYSMB_CALLER_CHECK
     if(child_calls!=child_count) ++failures;

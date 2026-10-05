@@ -23,7 +23,7 @@ static void seed(struct mysmb_game *game)
     game->ram[0x755U] = 0x70U;
     game->ram[0x3a1U] = 0U;
     game->ram[0x778U] = 0xa6U;
-    game->ppu_control_0 = 0x19U; /* RAM mirror must be authoritative. */
+    game->ppu.ppu_control_0 = 0x19U; /* RAM mirror must be authoritative. */
     returned_bits = 0U;
     calls = 0U;
 }
@@ -57,7 +57,7 @@ int main(void)
             expected[0]=0U;expected[0x775U]=0U;expected[0x3a1U]=0U;
             expected[0x6ffU]=(mysmb_u8)(cases[i][0]+cases[i][1]);
             if(memcmp(expected,game.ram,sizeof(expected))!=0 ||
-               game.ppu_control_0!=0x19U) return 2;
+               game.ppu.ppu_control_0!=0x19U) return 2;
         }
     }
     /* Direct ScrollScreen must run even for amount zero; cover every page,
@@ -74,9 +74,9 @@ int main(void)
            game.ram[0x778U]!=(mysmb_u8)(0xa6U|((total>>8U)&1U)) ||
            game.ram[0x795U]!=8U || game.ram[0x775U]!=amount ||
            game.ram[0x73dU]!=(mysmb_u8)(0x5aU+amount)) return 3;
-        if(game.ppu_control_0!=game.ram[0x778U] ||
-           game.ppu_name_table!=(game.ram[0x778U]&3U) ||
-           game.visible_ppu_control_0!=0U) return 4;
+        if(game.ppu.ppu_control_0!=game.ram[0x778U] ||
+           game.ppu.ppu_name_table!=(game.ram[0x778U]&3U) ||
+           game.ppu.visible_ppu_control_0!=0U) return 4;
     }
     /* All raw offscreen bytes and controller bytes, including left priority
      * when both sides are indicated; right-edge subtraction must borrow. */

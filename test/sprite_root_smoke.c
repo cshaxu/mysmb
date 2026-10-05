@@ -22,8 +22,8 @@ static int mysmb_sprite_root_case(mysmb_u8 flag, mysmb_u8 pause,
     input.buttons2 = 0U;
     input.buttons = 0U;
     (void)mysmb_frame_root_begin(&game, &input, &mode, &task);
-    if (game.ram[0x0200U] != expected_first || game.visible_scroll_x != 0x34U ||
-        game.visible_scroll_y != 0x56U) return 1;
+    if (game.ram[0x0200U] != expected_first || game.ppu.visible_scroll_x != 0x34U ||
+        game.ppu.visible_scroll_y != 0x56U) return 1;
     for (index = 1U; index < 64U; ++index) {
         if (game.ram[(mysmb_u16)(0x0200U + index * 4U)] !=
             (expected_rest == 0xf8U ? expected_rest : (mysmb_u8)(0x20U + index))) return 1;
@@ -42,7 +42,7 @@ static int mysmb_sprite_entry_case(mysmb_u8 all)
     mysmb_game_power_on(&game);
     for (offset = 0U; offset < 0x0100U; ++offset) {
         game.ram[0x0200U + offset] = (mysmb_u8)(offset ^ 0x5aU);
-        game.visible_oam[offset] = (mysmb_u8)(offset ^ 0xa5U);
+        game.ppu.visible_oam[offset] = (mysmb_u8)(offset ^ 0xa5U);
     }
     if (all != 0U) mysmb_game_move_all_sprites_offscreen(&game);
     else mysmb_game_move_sprites_offscreen(&game);
@@ -51,7 +51,7 @@ static int mysmb_sprite_entry_case(mysmb_u8 all)
         if ((offset & 3U) == 0U && (all != 0U || offset != 0U))
             expected = 0xf8U;
         if (game.ram[0x0200U + offset] != expected ||
-            game.visible_oam[offset] != (mysmb_u8)(offset ^ 0xa5U)) return 1;
+            game.ppu.visible_oam[offset] != (mysmb_u8)(offset ^ 0xa5U)) return 1;
     }
     return 0;
 }

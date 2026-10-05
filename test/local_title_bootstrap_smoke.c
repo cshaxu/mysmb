@@ -10,7 +10,7 @@ static unsigned long mysmb_title_table_hash(const struct mysmb_game *game)
 
     value = 2166136261UL;
     for (index = 0U; index < 0x0400U; ++index) {
-        value ^= (unsigned long)game->name_table[0][index];
+        value ^= (unsigned long)game->ppu.name_table[0][index];
         value *= 16777619UL;
     }
     return value;

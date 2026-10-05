@@ -61,7 +61,7 @@ int main(int argc, char **argv)
         memcpy(expected, record + 2050U, 2048U);
         game.area_prg = mysmb_local_prg;
         game.area_prg_size = MYSMB_LOCAL_PRG_SIZE;
-        game.ppu_control_0 = game.ram[0x778U];
+        game.ppu.ppu_control_0 = game.ram[0x778U];
         failures = 0U;
         printf("child=%u\n", (unsigned int)record[0]);
         if (record[0] == 1U)
@@ -92,7 +92,7 @@ int main(int argc, char **argv)
         fread(expected, 1, 2048, file) != 2048 || fgetc(file) != EOF) return 66;
     fclose(file);
     game.area_prg = mysmb_local_prg; game.area_prg_size = MYSMB_LOCAL_PRG_SIZE;
-    game.ppu_control_0 = game.ram[0x778U];
+    game.ppu.ppu_control_0 = game.ram[0x778U];
     if (header[5] == 1U) mysmb_objects_collect_coin(&game, game.ram[6U], game.ram[2U]);
     else if (header[5] == 2U)
         mysmb_player_handle_axe_metatile(&game, game.ram[6U], game.ram[2U]);

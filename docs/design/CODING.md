@@ -3,7 +3,8 @@
 ## Current And Target Trees
 
 ```text
-src/game/       portable translated logic and original RAM model
+src/game/       portable translated logic and original RAM model (T27 migration)
+src/ppu/        neutral addressed/visible state;compositor migration in active T27
 src/io/         neutral controller/video/audio/text contracts and glyph IDs
 src/app/        public game-to-IO composition glue; no gameplay/device policy
 src/assets/     generated owner-local declarations; never tracked
@@ -77,3 +78,12 @@ Win32 audio snapshot modules marshal host synthesis state arithmetically.
 replacement and device-reset services. Only roots connect these owners.
 
 `game/` cannot include host headers or platform macros. `platform/` cannot mutate game internals. `validate/` is optional at runtime and cannot become the gameplay path. CMake selects `mysmb-win32-x86`, `mysmb-win32-x64`, or later `mysmb-dos16`; compile definitions are permitted only beneath the platform roots. The OpenNT 16-bit C compiler verifies the same core in real-mode large-model mode; the later DOS adapter owns linking the full MZ executable. Modern 32/64-bit compilers run the Win32 product.
+
+## T27 migration checkpoint
+
+PPU storage is one embedded ppu/state object;CPU RAM,source decisions and NMI
+startup guard remain in game until their admitted core move. The DMA primitive
+borrows the original CPU OAM span;its caller keeps commit timing and receipt
+order. app snapshot binds the same numeric fields in the same byte order.
+The game/ppu_frame compositor dependency is temporary until T27 S3;final
+component ownership and remaining moves are in the active T27 proposal.

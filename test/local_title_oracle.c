@@ -32,10 +32,10 @@ int main(void)
                                        (mysmb_u16)(MYSMB_LOCAL_TITLE_ICON_DATA_SIZE - 1U)) == 0U) {
         return 1;
     }
-    hash = fnv1a(game.name_table[0], 0x0400U, 2166136261UL);
-    hash = fnv1a(game.name_table[1], 0x0400U, hash);
+    hash = fnv1a(game.ppu.name_table[0], 0x0400U, 2166136261UL);
+    hash = fnv1a(game.ppu.name_table[1], 0x0400U, hash);
     printf("native_ciram_fnv1a=%08lx\n", hash);
-    hash = fnv1a(game.palette, 0x20U, 2166136261UL);
+    hash = fnv1a(game.ppu.palette, 0x20U, 2166136261UL);
     printf("native_palette_fnv1a=%08lx\n", hash);
     return hash == 0xacd0d644UL ? 0 : 1;
 }

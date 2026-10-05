@@ -282,3 +282,69 @@ cross-width output/state comparison,original DOS16 build and focused far ABI.
 Refresh3products after code change. No scoped difference may be carried into
 S3;S2 closes only with source/write-order and separate operational evidence.
 Original bindings remain local;no new ROM/disassembly or third-party import.
+
+## S2 P2 closure and S3 P1 admission
+
+S2 closes single PPU-state extraction. The embedded ppu/state owns addressed
+nametables,palette,visible OAM,physical/visible register and scroll phases,
+sprite-0 split and immutable CHR binding. Core keeps CPU RAM,NMI/startup guard
+and all translated decisions/write ordering. The sole new primitive copies
+the original256-byte CPU OAM span at the original call point;receipt commit
+still follows it. There is no per-frame state clone or second mutable owner.
+
+Preservation track:all173retained C source bodies normalize identically after
+reversing member qualifications;the only explicit body exception is the DMA
+loop ownership transfer,whose extent/index/source/call order were reviewed.
+Snapshot BYTE/ARRAY order,canonical offsets,resource fingerprint and validation
+before restore are unchanged.128neutral fixtures prove only visible OAM is
+written and source/state remainder stay intact,on x86/x64 and actual OpenNT16
+large-model DOS execution. Existing source-bound NMI/VRAM/mask/scroll/DMA ROM
+receipts remain applicable to unchanged semantic bodies;this is a mechanical
+preservation proof within retained contracts,not new exhaustive ROM replay.
+
+Operational track:79affected targets compile at each Windows width;15focused
+CTest checks each pass,including NMI-parent,bootstrap,nametable/VRAM,PPU,state,
+app/receipt snapshots,text scenes,IO and purity. Presentation checks retain
+2048complete pixel boundary fixtures and1198resource-bound native frames,
+state non-mutation and independent VGA expansion comparisons. Original DOS16
+product builds/links;actual DOSBox product displays640x400,restores an existing
+save,passes paused graphics->text->graphics byte equality and exits to DOS.
+The installed DOSBox config hash is unchanged;dummy SDL isolates device
+correctness from the owner's desktop,and earns no speed/hardware credit.
+
+Similar-issue sweep follows all original PPU-field uses in source/tests/tools,
+including snapshot macros,multiple declared test instances,resource binds and
+producer/visible phases. No unqualified legacy state accesses remain in the
+compiled consumers. The gate now checks the PPU neutral dependency and also
+rejects relocated direct PPU state inspection by platform devices. Compositor
+still includes the game container only as S2's declared transition;S3 removes
+that dependency.77code/test/build files,+700/-647lines including three new
+state/test files;mechanical test consumer coverage explains the larger total
+than the forecast. Local manifests/logs/source-binding proof stay under build.
+
+All42S2 labels listed above retain their accepted scoped state,no deferred
+label or new match. Scope42,expected/actual new[],historical1992/1992,local
+1991/1992nodes and4260/4261feasible controls(raw4342,infeasible81) unchanged.
+S2 retains maintenance custody for these already-complete mapped labels.
+No M2 certificate or real486SX cadence claim. Documentation/node/ledger gates
+must pass before this P is committed.
+
+Three refreshed products:430027/319115/327787bytes(DOS16/x86/x64).
+SHA256 respectively E6E21F9850D844C9A4FC242506F0BB839F0E6E59D4B04871B2065F19031B8DEE,
+96E6B83397F356D1A073BC63926B67AB3B80375030BFB135AEEA488E57090006,
+B064F0DBC2E47F985F2922065756C8DEF8E0F830A6CBDC141914AB9359564C83.
+Owner's all-pending-files directive applies to these three already-tracked
+EXEs as the retained narrow local-commit exception;no ROM/generated source,
+trace,new protected capture or publication is added.
+
+S3 now admits the read-only pixel compositor move to ppu/frame. Exact node
+scope/expected/actual[],new0:these pixel helpers implement the existing PPU
+projection,not translated ROM CPU nodes. S2's state is its predecessor;the
+compositor must consume const mysmb_ppu_state and neutral byte/word/pixel
+contracts only. Preserve all bodies,mask/clipping/priority,pattern bounds,
+scroll/split and pixel bytes;update every call/include/build owner and ensure
+CMake links an independent PPU-frame target. No game internals in PPU,no host
+policy and no state copy. Forecast2moved files,20-35consumer/build files,
+100-250edited lines plus retained-body moves. Verify normalized old/new
+compositor bodies,independent PPU build,full-frame/state/snapshot/text tests,
+original DOS16 far-memory build/run,three products and governance gates.

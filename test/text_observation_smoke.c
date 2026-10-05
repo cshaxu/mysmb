@@ -49,11 +49,11 @@ static void caption_setup(void)
 {
     bind(&observed);observed.startup_phase=4U;
     mysmb_text_observer_enable(&observed,1U);
-    memset(observed.name_table,0x24,sizeof(observed.name_table));
-    memset(observed.name_table[0]+0x3c0U,0,64U);
-    memset(observed.name_table[1]+0x3c0U,0,64U);
-    observed.visible_ppu_mask=0x1eU;observed.ram[0x0779U]=0x1eU;
-    observed.ram[0x0773U]=0U;observed.visible_sprite0_split=1U;
+    memset(observed.ppu.name_table,0x24,sizeof(observed.ppu.name_table));
+    memset(observed.ppu.name_table[0]+0x3c0U,0,64U);
+    memset(observed.ppu.name_table[1]+0x3c0U,0,64U);
+    observed.ppu.visible_ppu_mask=0x1eU;observed.ram[0x0779U]=0x1eU;
+    observed.ram[0x0773U]=0U;observed.ppu.visible_sprite0_split=1U;
 }
 
 static int caption_word(unsigned short row,unsigned short col,const char *word)
@@ -61,7 +61,7 @@ static int caption_word(unsigned short row,unsigned short col,const char *word)
     unsigned short i,x,y;
     for(i=0U;word[i]!='\0';++i) {
         if(word[i]==' ')continue;
-        if(row<4U && observed.visible_sprite0_split) {
+        if(row<4U && observed.ppu.visible_sprite0_split) {
             x=(unsigned short)((col+i)*8UL*80UL/256UL);
             y=(unsigned short)(row*8UL*50UL/240UL);
         } else {
@@ -88,8 +88,8 @@ static int caption_render_restore(void)
     /* These fixtures start with cleared tables and invoke original text
      * producers. Check every committed font token,not selected words. */
     for(row=0U;row<30U;++row)for(col=0U;col<32U;++col) {
-        table=row<4U && observed.visible_sprite0_split?0U:observed.visible_ppu_name_table&1U;
-        tile=observed.name_table[table][row*32U+col];expected=0U;
+        table=row<4U && observed.ppu.visible_sprite0_split?0U:observed.ppu.visible_ppu_name_table&1U;
+        tile=observed.ppu.name_table[table][row*32U+col];expected=0U;
         if(tile<36U)expected=(unsigned char)"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"[tile];
         else if(tile==0x28U)expected='-';
         else if(tile==0x29U)expected='x';
@@ -104,7 +104,7 @@ static int caption_render_restore(void)
         if(checking_title && row>=4U && row<=14U && col>=5U && col<=26U)continue;
         if(expected==0U)fprintf(stderr,"unclassified text token row=%u col=%u tile=%u\n",row,col,tile);
         CHECK(expected!=0U);
-        if(row<4U && observed.visible_sprite0_split) {
+        if(row<4U && observed.ppu.visible_sprite0_split) {
             x=(unsigned short)(col*8UL*80UL/256UL);
             y=(unsigned short)(row*8UL*50UL/240UL);
         } else {
@@ -144,7 +144,7 @@ static int caption_routes(void)
     struct mysmb_frame output;
     /* Original title declaration includes both menu lines,copyright and TOP;
      * combine it with status producers before checking every font token. */
-    caption_setup();observed.visible_sprite0_split=0U;
+    caption_setup();observed.ppu.visible_sprite0_split=0U;
     observed.ram[0x0770U]=0U;observed.ram[0x073cU]=12U;
     mysmb_game_step_screen_routine(&observed);
     mysmb_game_commit_vram_buffer(&observed);
@@ -178,11 +178,11 @@ static int caption_routes(void)
         CHECK(mysmb_text_background_scene_build(&observed,&background,&text,&caption_receipt));
         CHECK(!caption_word(rows[i],cols[i],words[i]));
         mysmb_game_commit_vram_buffer(&observed);
-        observed.visible_ppu_name_table=1U;
+        observed.ppu.visible_ppu_name_table=1U;
         CHECK(caption_render_restore()==0);
         CHECK(caption_word(rows[i],cols[i],words[i]));
         if(i==2U)CHECK(caption_word(16U,5U,"ANOTHER CASTLE!"));
-        memset(observed.name_table[1],0x24,960U);
+        memset(observed.ppu.name_table[1],0x24,960U);
         CHECK(mysmb_text_background_scene_build(&observed,&background,&text,&caption_receipt));
         CHECK(!caption_word(rows[i],cols[i],words[i]));
     }
@@ -193,7 +193,7 @@ static int caption_routes(void)
         observed.ram[0x075cU]=1U;
         CHECK(mysmb_area_queue_game_text(&observed,(unsigned char)i));
         mysmb_game_commit_vram_buffer(&observed);
-        if(i>=4U)observed.visible_ppu_name_table=1U;
+        if(i>=4U)observed.ppu.visible_ppu_name_table=1U;
         CHECK(caption_render_restore()==0);
         if(i==0U) {
             CHECK(caption_word(2U,3U,"LUIGI"));
@@ -211,7 +211,7 @@ static int caption_routes(void)
     observed.ram[0x0770U]=1U;observed.ram[0x0772U]=3U;
     observed.ram[0x0776U]=1U;observed.ram[0x0774U]=0U;
     observed.ram[0x0722U]=0U;observed.ram[0x0778U]=1U;
-    observed.ppu_control_0=1U;observed.visible_sprite0_split=0U;
+    observed.ppu.ppu_control_0=1U;observed.ppu.visible_sprite0_split=0U;
     input.buttons=0U;input.buttons2=0U;
     CHECK(mysmb_text_background_scene_build(&observed,&background,&loaded_text,&caption_receipt));
     mysmb_game_tick(&observed,&input,&output);
@@ -223,7 +223,7 @@ static int caption_routes(void)
         unsigned short lives;
         char world[10],count[5];
         for(lives=1U;lives<=11U;++lives) {
-            caption_setup();observed.visible_sprite0_split=0U;
+            caption_setup();observed.ppu.visible_sprite0_split=0U;
             observed.ram[0x075aU]=(unsigned char)(lives-1U);
             observed.ram[0x075fU]=(unsigned char)(i/4U);
             observed.ram[0x075cU]=(unsigned char)(i%4U);
@@ -327,7 +327,7 @@ static int star_flag_case(void)
 {
     struct mysmb_text_actor_receipt receipt;
     mysmb_game_initialize(&observed);
-    observed.visible_ppu_mask=0x1eU;observed.palette[0x1aU]=0x27U;
+    observed.ppu.visible_ppu_mask=0x1eU;observed.ppu.palette[0x1aU]=0x27U;
     observed.ram[0x0746U]=3U;observed.ram[0x00cfU]=0x72U;
     observed.ram[0x0087U]=80U;observed.ram[0x06e5U]=32U;
     plain=observed;mysmb_text_observer_enable(&observed,1U);
@@ -359,37 +359,37 @@ static int palette_animation_case(void)
 {
     unsigned short i,j,col,row,base,a,found_question,found_coin,colors;
     unsigned char previous,expected;
-    bind(&observed);observed.visible_ppu_mask=0x1eU;
+    bind(&observed);observed.ppu.visible_ppu_mask=0x1eU;
     observed.ram[0x0779U]=0x1eU;observed.ram[0x0773U]=0U;
-    observed.palette[0U]=0x22U;observed.palette[13U]=0x0fU;
-    memset(observed.name_table,0x24,sizeof(observed.name_table));
-    memset(observed.name_table[0]+0x3c0U,0,64U);
-    memset(observed.name_table[1]+0x3c0U,0,64U);
+    observed.ppu.palette[0U]=0x22U;observed.ppu.palette[13U]=0x0fU;
+    memset(observed.ppu.name_table,0x24,sizeof(observed.ppu.name_table));
+    memset(observed.ppu.name_table[0]+0x3c0U,0,64U);
+    memset(observed.ppu.name_table[1]+0x3c0U,0,64U);
     base=(unsigned short)((observed.area_prg[0x0b0bU]|
         ((unsigned short)observed.area_prg[0x0b0fU]<<8U))-0x8000U);
     for(j=0U;j<2U;++j) {
         col=(unsigned short)(j==0U?10U:16U);row=12U;a=(unsigned short)(row*32U+col);
-        observed.name_table[0][a]=observed.area_prg[base+j*8U];
-        observed.name_table[0][a+32U]=observed.area_prg[base+j*8U+1U];
-        observed.name_table[0][a+1U]=observed.area_prg[base+j*8U+2U];
-        observed.name_table[0][a+33U]=observed.area_prg[base+j*8U+3U];
-        observed.name_table[0][0x3c0U+(row/4U)*8U+col/4U]|=
+        observed.ppu.name_table[0][a]=observed.area_prg[base+j*8U];
+        observed.ppu.name_table[0][a+32U]=observed.area_prg[base+j*8U+1U];
+        observed.ppu.name_table[0][a+1U]=observed.area_prg[base+j*8U+2U];
+        observed.ppu.name_table[0][a+33U]=observed.area_prg[base+j*8U+3U];
+        observed.ppu.name_table[0][0x3c0U+(row/4U)*8U+col/4U]|=
             (unsigned char)(3U<<(((row&2U)<<1U)+(col&2U)));
     }
     observed.ram[0x074eU]=1U;plain=observed;colors=0U;
     mysmb_text_observer_enable(&observed,1U);
     for(i=0U;i<12U;++i) {
         observed.ram[0x0009U]=plain.ram[0x0009U]=(unsigned char)(i*8U);
-        previous=observed.palette[13U];
+        previous=observed.ppu.palette[13U];
         mysmb_area_step_palette_rotation(&observed);
         mysmb_area_step_palette_rotation(&plain);
-        CHECK(observed.palette[13U]==previous);
+        CHECK(observed.ppu.palette[13U]==previous);
         mysmb_game_commit_vram_buffer(&observed);mysmb_game_commit_vram_buffer(&plain);
         CHECK(memcmp(&observed,&plain,offsetof(struct mysmb_game,text_observer))==0);
-        CHECK(observed.palette[13U]==observed.area_prg[0x09c3U+i%6U]);
+        CHECK(observed.ppu.palette[13U]==observed.area_prg[0x09c3U+i%6U]);
         before=observed;
         CHECK(mysmb_text_background_scene_build(&observed,&background,&text,&caption_receipt));
-        expected=mysmb_io_color_text16(observed.palette[13U]);
+        expected=mysmb_io_color_text16(observed.ppu.palette[13U]);
         colors|=(unsigned short)(1U<<expected);found_question=found_coin=0U;
         for(j=0U;j<4000U;++j)if(text.cells[j].character=='?' || text.cells[j].character=='$') {
             CHECK(text.cells[j].background==expected);
@@ -418,9 +418,9 @@ static int flag_words_case(void)
     cases=0U;
     for(score=0U;score<5U;++score)for(dx=0U;dx<8U;++dx)
         for(dy=0U;dy<8U;++dy)for(bg=0U;bg<16U;++bg) {
-            mysmb_game_initialize(&observed);observed.visible_ppu_mask=0x1eU;
+            mysmb_game_initialize(&observed);observed.ppu.visible_ppu_mask=0x1eU;
             for(j=0U;j<64U;++j)observed.ram[0x0200U+j*4U]=0xf8U;
-            observed.palette[0x16U]=0x30U;
+            observed.ppu.palette[0x16U]=0x30U;
             observed.ram[0x06e5U]=32U;observed.ram[0x00cfU]=159U;
             observed.ram[0x03aeU]=(unsigned char)(80U+dx);
             observed.ram[0x010dU]=(unsigned char)(95U+dy);
@@ -430,7 +430,7 @@ static int flag_words_case(void)
             mysmb_objects_draw_flagpole_graphics(&plain);
             CHECK(memcmp(&observed,&plain,offsetof(struct mysmb_game,text_observer))==0);
             mysmb_game_submit_oam(&observed);before=observed;
-            x=observed.visible_oam[47U];y=(unsigned short)(observed.visible_oam[44U]+1U);
+            x=observed.ppu.visible_oam[47U];y=(unsigned short)(observed.ppu.visible_oam[44U]+1U);
             first=(unsigned short)(((unsigned long)x*80UL+127UL)/256UL);
             row=(unsigned short)(((unsigned long)y*50UL+119UL)/240UL);
             CHECK(mysmb_text_elements_build(0,0U,(mysmb_io_u8)bg,&text));
@@ -461,7 +461,7 @@ static int misc_case(unsigned char score,unsigned char phase)
     unsigned short i;
     unsigned char family,control;
     mysmb_game_initialize(&observed);
-    observed.visible_ppu_mask=0x1eU;observed.palette[0x1aU]=0x27U;
+    observed.ppu.visible_ppu_mask=0x1eU;observed.ppu.palette[0x1aU]=0x27U;
     observed.ram[0x06f3U]=32U;observed.ram[0x06e5U]=32U;
     observed.ram[0x002aU]=phase;observed.ram[0x0009U]=(unsigned char)(phase*2U);
     observed.ram[0x03b3U]=80U;observed.ram[0x00dbU]=95U;
@@ -496,7 +496,7 @@ static int misc_case(unsigned char score,unsigned char phase)
     else CHECK(text.cells[21U*80U+25U+(phase==1U?1U:0U)].character==
         (phase==0U?'$':'|'));
     if(family==MYSMB_TEXT_OBSERVE_SCORE) {
-        observed.palette[0x1aU]=0x30U;before=observed;
+        observed.ppu.palette[0x1aU]=0x30U;before=observed;
         for(phase=0U;phase<16U;++phase) {
             CHECK(mysmb_text_elements_build(0,0U,phase,&text));
             CHECK(mysmb_text_actor_scene_draw(&observed,&actor_workspace,0,&text,&receipt));
@@ -605,7 +605,7 @@ static int enemy_case(unsigned char id,unsigned char state,unsigned char phase)
     plain.ram[0x03aeU]=80U;plain.ram[0x03b9U]=96U;
     plain.ram[0x036aU]=id==45U?(phase==0U?1U:2U):0U;
     plain.ram[0x070eU]=id==50U?(unsigned char)(phase/4U):0U;
-    plain.visible_ppu_mask=0x1eU;
+    plain.ppu.visible_ppu_mask=0x1eU;
     observed=plain;mysmb_text_observer_enable(&observed,1U);
     enemy_draw(&observed,id);enemy_draw(&plain,id);
     CHECK(memcmp(&observed,&plain,offsetof(struct mysmb_game,text_observer))==0);
@@ -756,11 +756,11 @@ int main(int argc,char **argv)
         background_unknown+=background_receipt.unsupported;
         /* Separate unsupported HUD/title/offscreen tuples from visible
          * running-area gaps. This finite route is not a world census. */
-        if((observed.visible_ppu_mask&8U)!=0U &&
+        if((observed.ppu.visible_ppu_mask&8U)!=0U &&
             mysmb_game_snapshot_running(&observed,&frame1))
             for(j=0U;j<480U;++j) {
-                scene_x=(short)((j%32U)*16U)-(short)observed.visible_scroll_x;
-                scene_y=(short)((j/32U)*16U)-(short)observed.visible_scroll_y;
+                scene_x=(short)((j%32U)*16U)-(short)observed.ppu.visible_scroll_x;
+                scene_y=(short)((j/32U)*16U)-(short)observed.ppu.visible_scroll_y;
                 if(scene_x<256 && scene_x+16>0 && scene_y<240 && scene_y+16>32 &&
                     background.kinds[j]==0U) {
                     visible_unknown_running++;
@@ -771,15 +771,15 @@ int main(int argc,char **argv)
 #endif
         CHECK(mysmb_text_actor_scene_draw(&observed,&actor_workspace,background.opaque,&text,&actor_receipt));
 #ifdef MYSMB_LOCAL_TITLE
-        if(observed.ram[0x0770U]==1U && !observed.visible_sprite0_split &&
-            observed.visible_scroll_x==0U && observed.visible_scroll_y==0U &&
-            (observed.visible_ppu_mask&8U)!=0U &&
-            observed.name_table[0U][10U*32U+11U]==32U &&
-            observed.name_table[0U][14U*32U+15U]==0x29U) {
+        if(observed.ram[0x0770U]==1U && !observed.ppu.visible_sprite0_split &&
+            observed.ppu.visible_scroll_x==0U && observed.ppu.visible_scroll_y==0U &&
+            (observed.ppu.visible_ppu_mask&8U)!=0U &&
+            observed.ppu.name_table[0U][10U*32U+11U]==32U &&
+            observed.ppu.name_table[0U][14U*32U+15U]==0x29U) {
             char world[10]="WORLD 0-0",life[2];
-            world[6]=(char)('0'+observed.name_table[0U][10U*32U+17U]);
-            world[8]=(char)('0'+observed.name_table[0U][10U*32U+19U]);
-            life[0]=(char)('0'+observed.name_table[0U][14U*32U+18U]);life[1]='\0';
+            world[6]=(char)('0'+observed.ppu.name_table[0U][10U*32U+17U]);
+            world[8]=(char)('0'+observed.ppu.name_table[0U][10U*32U+19U]);
+            life[0]=(char)('0'+observed.ppu.name_table[0U][14U*32U+18U]);life[1]='\0';
             CHECK(caption_word(10U,11U,world));
             CHECK(caption_word(14U,15U,"x"));
             CHECK(caption_word(14U,18U,life));
@@ -787,11 +787,11 @@ int main(int argc,char **argv)
         }
 #endif
         unsupported_actors+=actor_receipt.unsupported;
-        if((observed.visible_ppu_mask&0x10U)!=0U &&
+        if((observed.ppu.visible_ppu_mask&0x10U)!=0U &&
             mysmb_game_snapshot_running(&observed,&frame1))
             for(j=1U;j<64U;++j)
-                if(observed.visible_oam[j*4U]<239U &&
-                    observed.visible_oam[j*4U+1U]!=0xfcU &&
+                if(observed.ppu.visible_oam[j*4U]<239U &&
+                    observed.ppu.visible_oam[j*4U+1U]!=0xfcU &&
                     observed.text_observer.visible.owners[j]==0U)
                     unowned_running_sprites++;
         if(preview!=0) {

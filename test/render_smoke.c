@@ -7,7 +7,7 @@ int main(void)
     struct mysmb_render_frame frame;
 
     mysmb_game_initialize(&game);
-    game.name_table[0][0U] = 0x51U;
+    game.ppu.name_table[0][0U] = 0x51U;
     mysmb_render_build(&game, &frame);
     if (frame.command_count != MYSMB_RENDER_TILE_ROWS ||
         frame.commands[0].kind != MYSMB_RENDER_COMMAND_TILE_ROW ||

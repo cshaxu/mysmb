@@ -8,6 +8,13 @@ MySMB is one native product with a portable translated program and separate host
 
 `game/` owns translated routines, original RAM layout, object slots, frame phases, and neutral draw/audio command streams. `assets/` owns generated, owner-local ROM derivatives. `validate/` owns reference-execution comparison through local tools such as `nnes`. `platform/win32` owns the development window, input, audio, and timing; `platform/dos16` later owns BIOS keyboard, PIT, VGA, and sound access. Each target has its own small composition root.
 
+`ppu/state` now owns the single addressed/visible PPU storage and immutable
+CHR binding embedded in the game container. Core retains all original NMI
+control/write decisions and its startup guard. The DMA primitive borrows CPU
+RAM OAM and commits visible bytes at the existing call point;observation commit
+follows as before. T27 S3 removes the transitional game-container dependency
+of the pixel compositor. Its retained proposal owns the remaining migration.
+
 ## Product And Host Boundary
 
 The shared `io/` contract layer has no dependency on `game/` or `platform/`.

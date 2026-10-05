@@ -18,7 +18,7 @@ static int check_unpaused_nmi_order(void)
 
     mysmb_game_power_on(&game);
     mysmb_game_reset(&game);
-    game.ppu_control_0 = 0x95U;
+    game.ppu.ppu_control_0 = 0x95U;
     game.ram[0x0778U] = 0x15U;
     game.ram[0x0779U] = 0x01U;
     game.ram[0x0774U] = 0U;
@@ -47,24 +47,24 @@ static int check_unpaused_nmi_order(void)
 
     (void)mysmb_frame_root_begin(&game, &input, &mode, &task);
 
-    if (game.visible_sprite0_split != 1U) return 10;
+    if (game.ppu.visible_sprite0_split != 1U) return 10;
     game.ram[0x0722U] = 0U;
-    if (game.visible_sprite0_split != 1U) return 11;
+    if (game.ppu.visible_sprite0_split != 1U) return 11;
     /* $4014 observes old OAM before MoveSpritesOffscreen clears slots 1-63. */
-    if (game.visible_oam[0U] != 0x20U || game.visible_oam[4U] != 0x21U ||
+    if (game.ppu.visible_oam[0U] != 0x20U || game.ppu.visible_oam[4U] != 0x21U ||
         game.ram[0x0200U] != 0x20U || game.ram[0x0204U] != 0xf8U) return 1;
     /* UpdateScreen precedes InitBuffer, preserving the packet then clearing it. */
-    if (game.name_table[0U][0U] != 0x29U ||
-        game.name_table[0U][1U] != 0x29U ||
-        game.name_table[0U][2U] != 0x29U || game.ram[0x0300U] != 0U ||
+    if (game.ppu.name_table[0U][0U] != 0x29U ||
+        game.ppu.name_table[0U][1U] != 0x29U ||
+        game.ppu.name_table[0U][2U] != 0x29U || game.ram[0x0300U] != 0U ||
         game.ram[0x0301U] != 0U || game.ram[0x0773U] != 0U) return 2;
     /* At the pre-dispatch boundary, the physical $2000 write retains d7 clear. */
     /* The horizontal VRAM packet clears the $2000 increment bit before
      * WritePPUReg1 restores the mirror and NMI-enable bit at RTI. */
     if (game.ram[0x0778U] != 0x11U || game.ram[0x0779U] != 0x1fU ||
-        game.ppu_mask != 0x1fU || game.visible_ppu_control_0 != 0x11U ||
-        game.visible_ppu_name_table != 1U || game.visible_scroll_x != 0x34U ||
-        game.visible_scroll_y != 0x56U) return 3;
+        game.ppu.ppu_mask != 0x1fU || game.ppu.visible_ppu_control_0 != 0x11U ||
+        game.ppu.visible_ppu_name_table != 1U || game.ppu.visible_scroll_x != 0x34U ||
+        game.ppu.visible_scroll_y != 0x56U) return 3;
     /* SpriteShuffler follows random rotation and overwrites its RAM00 scratch. */
     if (game.ram[0x0009U] != 0x25U || game.ram[0x0780U] != 2U ||
         game.ram[0x0794U] != 4U ||
@@ -111,7 +111,7 @@ static int check_rti_control_restore(void)
 
     mysmb_game_power_on(&game);
     mysmb_game_reset(&game);
-    game.ppu_control_0 = 0x15U;
+    game.ppu.ppu_control_0 = 0x15U;
     game.ram[0x0778U] = 0x15U;
     /* A paused title boundary takes SkipMainOper but still executes the
      * source PLA / ORA #$80 / STA $2000 tail. */
@@ -120,9 +120,9 @@ static int check_rti_control_restore(void)
     input.buttons2 = 0U;
     mysmb_game_frame_initialize(&frame);
     mysmb_frame_root_step(&game, &input, &frame);
-    if (game.visible_sprite0_split != 0U) return 12;
-    if (game.visible_ppu_control_0 != 0x95U ||
-        game.visible_ppu_name_table != 1U) return 7;
+    if (game.ppu.visible_sprite0_split != 0U) return 12;
+    if (game.ppu.visible_ppu_control_0 != 0x95U ||
+        game.ppu.visible_ppu_name_table != 1U) return 7;
     return 0;
 }
 
@@ -146,13 +146,13 @@ static int check_display_mask_phases(void)
                                      (mysmb_u8)(mask | 0x1eU);
             mysmb_game_commit_display_state(&game);
             if (game.ram[0x0779U] != mirror ||
-                game.ppu_mask != (mysmb_u8)(mirror & 0xe7U) ||
-                game.visible_ppu_mask != game.ppu_mask) return 8;
+                game.ppu.ppu_mask != (mysmb_u8)(mirror & 0xe7U) ||
+                game.ppu.visible_ppu_mask != game.ppu.ppu_mask) return 8;
             /* Change the source mirror to prove a reload, not cached restore. */
             game.ram[0x0779U] = (mysmb_u8)(mirror ^ 1U);
             mysmb_game_commit_vram_buffer(&game);
-            if (game.ppu_mask != game.ram[0x0779U] ||
-                game.visible_ppu_mask != game.ppu_mask ||
+            if (game.ppu.ppu_mask != game.ram[0x0779U] ||
+                game.ppu.visible_ppu_mask != game.ppu.ppu_mask ||
                 game.ram[0x0773U] != 0U || game.ram[0x0300U] != 0U ||
                 game.ram[0x0301U] != 0U) return 9;
         }
@@ -173,26 +173,26 @@ static int check_setup_page_handoff(void)
     for(page=0U;page<16U;++page) {
         mysmb_game_initialize(&game);
         old_control=(mysmb_u8)(0x10U|((page&1U)^1U));
-        game.ppu_control_0=old_control;
+        game.ppu.ppu_control_0=old_control;
         game.ram[0x0778U]=old_control;
         game.ram[0x0770U]=1U;game.ram[0x0772U]=2U;
         game.ram[0x071aU]=page;
         mysmb_game_tick(&game,&input,&frame);
         control=(mysmb_u8)(0x10U|(page&1U));
         if(game.ram[0x0778U]!=control ||
-           game.visible_ppu_control_0!=(mysmb_u8)(old_control|0x80U))return 1;
+           game.ppu.visible_ppu_control_0!=(mysmb_u8)(old_control|0x80U))return 1;
         (void)mysmb_frame_root_begin(&game,&input,&mode,&task);
-        if(game.ram[0x0778U]!=control || game.ppu_control_0!=control ||
-           game.visible_ppu_name_table!=(page&1U))return 2;
+        if(game.ram[0x0778U]!=control || game.ppu.ppu_control_0!=control ||
+           game.ppu.visible_ppu_name_table!=(page&1U))return 2;
     }
     /* A RAM-only source write must preserve every control bit except NMI
      * enable,even when the cached register has the opposite value. */
     for(page=0U;page<128U;++page) {
-        game.ppu_control_0=(mysmb_u8)(page^0x7fU);
+        game.ppu.ppu_control_0=(mysmb_u8)(page^0x7fU);
         game.ram[0x0778U]=(mysmb_u8)(page|0x80U);
         mysmb_game_commit_display_state(&game);
-        if(game.ram[0x0778U]!=page || game.ppu_control_0!=page ||
-           game.visible_ppu_name_table!=(page&3U))return 3;
+        if(game.ram[0x0778U]!=page || game.ppu.ppu_control_0!=page ||
+           game.ppu.visible_ppu_name_table!=(page&3U))return 3;
     }
     return 0;
 }
@@ -211,14 +211,14 @@ static int check_packet_control_handoff(void)
         for(mirror=0U;mirror<256U;++mirror) {
             mysmb_game_initialize(&game);
             game.ram[0x0778U]=(mysmb_u8)mirror;
-            game.ppu_control_0=(mysmb_u8)(mirror^0xffU);
+            game.ppu.ppu_control_0=(mysmb_u8)(mirror^0xffU);
             expected=(mysmb_u8)((mirror&0xfbU)|(vertical!=0U?4U:0U));
             if(mysmb_game_apply_vram_commands(&game,commands,5U)==0U)
                 return 1;
             if(game.ram[0x0778U]!=expected ||
-               game.ppu_control_0!=expected ||
-               game.visible_ppu_control_0!=expected ||
-               game.name_table[0][0]!=0x27U)return 2;
+               game.ppu.ppu_control_0!=expected ||
+               game.ppu.visible_ppu_control_0!=expected ||
+               game.ppu.name_table[0][0]!=0x27U)return 2;
         }
     }
     return 0;
@@ -237,23 +237,23 @@ static int check_visible_phase_handoff(void)
         game.oam_dma_primed=1U;
         game.ram[0x073fU]=(mysmb_u8)(17U+phase);
         game.ram[0x0740U]=(mysmb_u8)(23U+phase);
-        game.scroll_x=99U;game.scroll_y=101U;
+        game.ppu.scroll_x=99U;game.ppu.scroll_y=101U;
         game.ram[0x0722U]=phase;
         for(index=0U;index<256U;++index)
             game.ram[0x0200U+index]=(mysmb_u8)(index+phase);
         (void)mysmb_frame_root_begin(&game,&input,&mode,&task);
-        if(game.visible_scroll_x!=17U+phase ||
-           game.visible_scroll_y!=23U+phase ||
-           game.visible_sprite0_split!=phase)return 1;
+        if(game.ppu.visible_scroll_x!=17U+phase ||
+           game.ppu.visible_scroll_y!=23U+phase ||
+           game.ppu.visible_sprite0_split!=phase)return 1;
         for(index=0U;index<256U;++index)
-            if(game.visible_oam[index]!=(mysmb_u8)(index+phase))return 2;
+            if(game.ppu.visible_oam[index]!=(mysmb_u8)(index+phase))return 2;
         game.ram[0x073fU]=88U;game.ram[0x0740U]=89U;
         game.ram[0x0722U]=(mysmb_u8)(phase^1U);
         game.ram[0x0200U]=77U;
-        if(game.visible_scroll_x!=17U+phase ||
-           game.visible_scroll_y!=23U+phase ||
-           game.visible_sprite0_split!=phase ||
-           game.visible_oam[0]!=phase)return 3;
+        if(game.ppu.visible_scroll_x!=17U+phase ||
+           game.ppu.visible_scroll_y!=23U+phase ||
+           game.ppu.visible_sprite0_split!=phase ||
+           game.ppu.visible_oam[0]!=phase)return 3;
     }
     return 0;
 }
@@ -273,7 +273,7 @@ static int check_buffer_palette_handoff(void)
         game.ram[0x0347U]=1U;game.ram[0x0348U]=0x16U;
         game.ram[0x0349U]=0U;
         mysmb_game_commit_vram_buffer(&game);
-        if(game.palette[0]!=0x16U || game.ram[0x0773U]!=0U)return 1;
+        if(game.ppu.palette[0]!=0x16U || game.ram[0x0773U]!=0U)return 1;
         if(selector==6U) {
             if(game.ram[0x0340U]!=0U || game.ram[0x0341U]!=0U ||
                game.ram[0x0300U]!=9U || game.ram[0x0301U]!=0x55U)return 2;

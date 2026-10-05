@@ -69,7 +69,7 @@ void mysmb_render_build(const struct mysmb_game *game,
 
     frame->command_count = 0U;
     for (index = 0U; index < MYSMB_RENDER_TILE_ROWS * MYSMB_RENDER_TILE_COLUMNS;
-         ++index) frame->tile_data[index] = game->name_table[0][index];
+         ++index) frame->tile_data[index] = game->ppu.name_table[0][index];
     for (row = 0U; row < MYSMB_RENDER_TILE_ROWS; ++row) {
         command = &frame->commands[frame->command_count];
         command->kind = MYSMB_RENDER_COMMAND_TILE_ROW;

@@ -12,8 +12,8 @@ static void reset(void)
 {
     memset(&game,0,sizeof(game));memset(&workspace,0,sizeof(workspace));
     memset(&frame,0,sizeof(frame));
-    memset(game.name_table,0x24,sizeof(game.name_table));
-    game.visible_ppu_mask=0x1eU;
+    memset(game.ppu.name_table,0x24,sizeof(game.ppu.name_table));
+    game.ppu.visible_ppu_mask=0x1eU;
 }
 
 static int word(const char *s)
@@ -49,57 +49,57 @@ int main(void)
     game.title_data=title;game.title_data_size=cursor;
     draw();CHECK(!word("SUPER"));
     for(row=4U;row<=14U;++row)for(col=5U;col<=26U;++col)
-        game.name_table[0U][row*32U+col]=0x60U;
+        game.ppu.name_table[0U][row*32U+col]=0x60U;
     draw();CHECK(!word("SUPER")); /* Last overlapping write not committed. */
-    game.name_table[0U][0x85U]=0x61U;
+    game.ppu.name_table[0U][0x85U]=0x61U;
     before=game;draw();CHECK(word("SUPER") && word("MARIO BROS."));
     CHECK(memcmp(&game,&before,sizeof(game))==0);
-    CHECK(game.chr_data==0); /* No bitmap/pattern binding required. */
-    game.name_table[0U][0x85U]=0x24U;draw();CHECK(!word("SUPER"));
-    game.name_table[0U][0x85U]=0x61U;
-    game.visible_ppu_mask=0U;draw();CHECK(!word("SUPER"));
-    game.visible_ppu_mask=0x1eU;game.title_data_size=cursor-1U;
+    CHECK(game.ppu.chr_data==0); /* No bitmap/pattern binding required. */
+    game.ppu.name_table[0U][0x85U]=0x24U;draw();CHECK(!word("SUPER"));
+    game.ppu.name_table[0U][0x85U]=0x61U;
+    game.ppu.visible_ppu_mask=0U;draw();CHECK(!word("SUPER"));
+    game.ppu.visible_ppu_mask=0x1eU;game.title_data_size=cursor-1U;
     draw();CHECK(!word("SUPER"));
-    game.title_data_size=cursor;game.visible_scroll_x=40U;
+    game.title_data_size=cursor;game.ppu.visible_scroll_x=40U;
     draw();CHECK(word("SUPER"));
-    game.visible_scroll_y=200U;draw();CHECK(word("SUPER"));
+    game.ppu.visible_scroll_y=200U;draw();CHECK(word("SUPER"));
 
-    reset();game.name_table[1U][10U*32U+8U]=0xafU;
-    game.name_table[1U][10U*32U+9U]=0x2bU;
-    game.visible_ppu_name_table=1U;game.visible_scroll_x=64U;
+    reset();game.ppu.name_table[1U][10U*32U+8U]=0xafU;
+    game.ppu.name_table[1U][10U*32U+9U]=0x2bU;
+    game.ppu.visible_ppu_name_table=1U;game.ppu.visible_scroll_x=64U;
     draw();CHECK(frame.cells[17U*80U].character=='.');
     CHECK(frame.cells[17U*80U+2U].character=='!');
     CHECK((workspace.opaque[17U*10U]&1U)!=0U);
-    game.name_table[1U][10U*32U+8U]=0x24U;draw();
+    game.ppu.name_table[1U][10U*32U+8U]=0x24U;draw();
     CHECK(frame.cells[17U*80U].character==0U);
 
-    reset();game.name_table[1U][10U*32U+8U]=22U; /* M */
-    game.visible_ppu_name_table=1U;game.visible_scroll_x=64U;
+    reset();game.ppu.name_table[1U][10U*32U+8U]=22U; /* M */
+    game.ppu.visible_ppu_name_table=1U;game.ppu.visible_scroll_x=64U;
     draw();CHECK(frame.cells[17U*80U].character=='M');
     workspace.kinds[5U*32U+4U]=1U;draw();
     CHECK(frame.cells[17U*80U].character==0U);
     workspace.kinds[5U*32U+4U]=0U;
-    game.visible_sprite0_split=1U;game.name_table[0U][2U*32U+3U]=22U;
+    game.ppu.visible_sprite0_split=1U;game.ppu.name_table[0U][2U*32U+3U]=22U;
     draw();CHECK(frame.cells[3U*80U+7U].character=='M');
-    game.visible_scroll_x=96U;draw();
+    game.ppu.visible_scroll_x=96U;draw();
     CHECK(frame.cells[3U*80U+7U].character=='M');
     /* A source-backed caption must stay readable on every presentation
      * background,including a white intermediate-screen palette. */
     for(col=0U;col<64U;++col) {
-        game.palette[0U]=(unsigned char)col;draw();
+        game.ppu.palette[0U]=(unsigned char)col;draw();
         CHECK(frame.cells[3U*80U+7U].foreground!=frame.cells[3U*80U+7U].background);
     }
-    game.visible_ppu_mask=8U;game.visible_scroll_x=64U;draw();
+    game.ppu.visible_ppu_mask=8U;game.ppu.visible_scroll_x=64U;draw();
     CHECK(frame.cells[17U*80U].character==0U); /* Left-edge mask. */
 
     reset();icon[1]=0x22U;icon[2]=0x49U;icon[3]=0x83U;icon[4]=0xceU;
     game.title_icon_data=icon;game.title_icon_data_size=sizeof(icon);
-    game.name_table[0U][18U*32U+9U]=0xceU;
+    game.ppu.name_table[0U][18U*32U+9U]=0xceU;
     before=game;draw();CHECK(frame.cells[30U*80U+22U].character=='(');
     game.ram[0x077aU]=1U;draw();
     CHECK(frame.cells[30U*80U+22U].character=='('); /* Queued selection is not visible. */
-    game.name_table[0U][18U*32U+9U]=0x24U;
-    game.name_table[0U][20U*32U+9U]=0xceU;draw();
+    game.ppu.name_table[0U][18U*32U+9U]=0x24U;
+    game.ppu.name_table[0U][20U*32U+9U]=0xceU;draw();
     CHECK(frame.cells[30U*80U+22U].character==0U);
     CHECK(frame.cells[33U*80U+22U].character=='(');
     game.title_icon_data_size=7U;draw();

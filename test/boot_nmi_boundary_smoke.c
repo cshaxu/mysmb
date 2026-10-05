@@ -10,7 +10,7 @@ int main(void)
     unsigned int index;
 
     mysmb_game_power_on(&game);
-    if (game.visible_ppu_control_0 != 0x10U || game.ppu_control_0 != 0x10U ||
+    if (game.ppu.visible_ppu_control_0 != 0x10U || game.ppu.ppu_control_0 != 0x10U ||
         game.ram[0x0770U] != 0U || game.oam_dma_primed != 0U) return 1;
     mysmb_game_reset(&game);
     if (game.ram[0x0770U] != 0U || game.ram[0x0772U] != 0U ||
@@ -23,8 +23,8 @@ int main(void)
     /* With no owner-local title inputs, retain the fixture fallback while
      * proving that only the NMI root, rather than construction, advances it. */
     if (game.frame_number != 1UL || game.ram[0x0772U] != 1U ||
-        game.visible_oam[0U] != 0xf8U || game.ram[0x0779U] != 0U ||
-        game.ppu_mask != 0U || game.visible_ppu_mask != 0U) return 1;
+        game.ppu.visible_oam[0U] != 0xf8U || game.ram[0x0779U] != 0U ||
+        game.ppu.ppu_mask != 0U || game.ppu.visible_ppu_mask != 0U) return 1;
     /* Source Start preserves a supplied warm RAM image. Poll failures in
      * either VBlank barrier must leave it untouched and never advance NMI. */
     mysmb_game_power_on(&game);
@@ -36,7 +36,7 @@ int main(void)
     memcpy(saved_ram, game.ram, sizeof(saved_ram));
     mysmb_game_begin_startup(&game);
     if (memcmp(saved_ram, game.ram, sizeof(saved_ram)) != 0 ||
-        game.ppu_control_0 != 0x10U) return 2;
+        game.ppu.ppu_control_0 != 0x10U) return 2;
     for (index = 0U; index < 3U; ++index)
         if (mysmb_game_startup_step(&game, 0U) != 0U) return 3;
     if (mysmb_game_startup_step(&game, 1U) != 0U ||

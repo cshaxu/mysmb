@@ -20,12 +20,12 @@ int main(void)
     memset(&first,0x35,sizeof(first));memset(&second,0x96,sizeof(second));
     first.area_prg=resource1;second.area_prg=resource2;
     first.area_prg_size=second.area_prg_size=sizeof(resource1);
-    first.chr_data=second.chr_data=0;first.chr_data_size=second.chr_data_size=0;
+    first.ppu.chr_data=second.ppu.chr_data=0;first.ppu.chr_data_size=second.ppu.chr_data_size=0;
     first.title_data=second.title_data=0;first.title_data_size=second.title_data_size=0;
     first.title_icon_data=second.title_icon_data=0;
     first.title_icon_data_size=second.title_icon_data_size=0;
     first.frame_number=0xabcdef12UL;first.startup_phase=4U;
-    first.oam_dma_primed=first.visible_sprite0_split=1U;
+    first.oam_dma_primed=first.ppu.visible_sprite0_split=1U;
     first.apu_write_count=64U;first.area_command_count=16U;
     for(i=0U;i<64U;++i)first.apu_writes[i].index=(unsigned char)(i%24U);
     mysmb_game_snapshot_fingerprint(&first,fingerprint);

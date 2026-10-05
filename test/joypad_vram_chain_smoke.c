@@ -91,22 +91,22 @@ int main(void)
     if (game.ram[0x06fcU] != (MYSMB_BUTTON_A | MYSMB_BUTTON_LEFT) ||
         game.ram[0x06fdU] != (MYSMB_BUTTON_B | MYSMB_BUTTON_RIGHT)) return 2;
 
-    game.ppu_control_0 = 0x90U;
+    game.ppu.ppu_control_0 = 0x90U;
     game.ram[0x0778U] = 0x90U;
     game.ram[0x0000U] = 0x01U;
     game.ram[0x0001U] = 0x03U;
-    game.visible_scroll_x = 0x66U;
-    game.visible_scroll_y = 0x77U;
+    game.ppu.visible_scroll_x = 0x66U;
+    game.ppu.visible_scroll_y = 0x77U;
     if (mysmb_game_apply_vram_commands(&game, mixed_commands,
             (mysmb_u16)sizeof(mixed_commands)) == 0U) return 3;
-    if (game.name_table[0U][0x003eU] != 0x11U ||
-        game.name_table[0U][0x003fU] != 0x12U ||
-        game.name_table[1U][0x003fU] != 0x33U ||
-        game.name_table[1U][0x005fU] != 0x33U ||
-        game.palette[0U] != 0x2aU || game.ppu_control_0 != 0x90U ||
+    if (game.ppu.name_table[0U][0x003eU] != 0x11U ||
+        game.ppu.name_table[0U][0x003fU] != 0x12U ||
+        game.ppu.name_table[1U][0x003fU] != 0x33U ||
+        game.ppu.name_table[1U][0x005fU] != 0x33U ||
+        game.ppu.palette[0U] != 0x2aU || game.ppu.ppu_control_0 != 0x90U ||
         game.ram[0x0778U] != 0x90U || game.ram[0x0000U] != 0x0eU ||
-        game.ram[0x0001U] != 0x03U || game.visible_ppu_control_0 != 0x90U ||
-        game.visible_scroll_x != 0U || game.visible_scroll_y != 0U) return 4;
+        game.ram[0x0001U] != 0x03U || game.ppu.visible_ppu_control_0 != 0x90U ||
+        game.ppu.visible_scroll_x != 0U || game.ppu.visible_scroll_y != 0U) return 4;
 
     /* The NMI-side selector must route Buffer1 through the same packet
      * interpreter, then clear the source header exactly as InitBuffer does.
@@ -120,9 +120,9 @@ int main(void)
     game.ram[0x0304U] = 0x29U;
     game.ram[0x0305U] = 0U;
     mysmb_game_commit_vram_buffer(&game);
-    if (game.name_table[0U][0U] != 0x29U ||
-        game.name_table[0U][1U] != 0x29U ||
-        game.name_table[0U][2U] != 0x29U ||
+    if (game.ppu.name_table[0U][0U] != 0x29U ||
+        game.ppu.name_table[0U][1U] != 0x29U ||
+        game.ppu.name_table[0U][2U] != 0x29U ||
         game.ram[0x0300U] != 0U || game.ram[0x0301U] != 0U ||
         game.ram[0x0773U] != 0U || game.ram[0x0000U] != 0x05U ||
         game.ram[0x0001U] != 0x03U) return 5;
@@ -137,9 +137,9 @@ int main(void)
     game.ram[0x0306U] = 0x33U;
     game.ram[0x0307U] = 0U;
     mysmb_game_commit_vram_buffer(&game);
-    if (game.name_table[0U][0x0010U] != 0x11U ||
-        game.name_table[0U][0x0030U] != 0x22U ||
-        game.name_table[0U][0x0050U] != 0x33U ||
+    if (game.ppu.name_table[0U][0x0010U] != 0x11U ||
+        game.ppu.name_table[0U][0x0030U] != 0x22U ||
+        game.ppu.name_table[0U][0x0050U] != 0x33U ||
         game.ram[0x0300U] != 0U || game.ram[0x0301U] != 0U ||
         game.ram[0x0773U] != 0U || game.ram[0x0000U] != 0x07U ||
         game.ram[0x0001U] != 0x03U) return 6;
@@ -148,19 +148,19 @@ int main(void)
      * SEC/ADC indirect-pointer carry.  The final d7/d6 header also leaves
      * the physical and mirror $2000 values in vertical/repeat mode. */
     mysmb_game_initialize(&game);
-    game.ppu_control_0 = 0x11U;
+    game.ppu.ppu_control_0 = 0x11U;
     game.ram[0x0778U] = 0x11U;
     game.ram[0x0000U] = 0xfbU;
     game.ram[0x0001U] = 0xffU;
     if (mysmb_game_apply_vram_commands(&game, chained_commands,
             (mysmb_u16)sizeof(chained_commands)) == 0U) return 7;
-    if (game.name_table[0U][0x001fU] != 0x44U ||
-        game.name_table[0U][0x0020U] != 0x55U ||
-        game.name_table[0U][0x0040U] != 0x55U ||
+    if (game.ppu.name_table[0U][0x001fU] != 0x44U ||
+        game.ppu.name_table[0U][0x0020U] != 0x55U ||
+        game.ppu.name_table[0U][0x0040U] != 0x55U ||
         game.ram[0x0000U] != 0x03U || game.ram[0x0001U] != 0U ||
-        game.ppu_control_0 != 0x15U || game.ram[0x0778U] != 0x15U ||
-        game.visible_ppu_control_0 != 0x15U ||
-        game.visible_ppu_name_table != 1U || game.visible_scroll_x != 0U ||
-        game.visible_scroll_y != 0U) return 8;
+        game.ppu.ppu_control_0 != 0x15U || game.ram[0x0778U] != 0x15U ||
+        game.ppu.visible_ppu_control_0 != 0x15U ||
+        game.ppu.visible_ppu_name_table != 1U || game.ppu.visible_scroll_x != 0U ||
+        game.ppu.visible_scroll_y != 0U) return 8;
     return 0;
 }

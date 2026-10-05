@@ -38,7 +38,7 @@ static int check_one(const char *path)
     fclose(file);
     register_failure=0U;
     game.area_prg=mysmb_local_prg;game.area_prg_size=MYSMB_LOCAL_PRG_SIZE;
-    game.ppu_control_0=game.ram[0x778U];
+    game.ppu.ppu_control_0=game.ram[0x778U];
     source.prg=mysmb_local_prg;source.prg_size=MYSMB_LOCAL_PRG_SIZE;
     if(header[2]=='$') mysmb_player_background_collision(&game);
     else if(header[2]=='#') {

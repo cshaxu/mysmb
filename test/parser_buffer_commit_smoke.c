@@ -17,7 +17,7 @@ int main(void)
     game.ram[0x0345U] = 0U;
     game.ram[0x0773U] = 6U;
     mysmb_game_tick(&game, &input, &frame);
-    if (game.name_table[0][0x0080U] != 0x5aU || game.ram[0x0340U] != 0U ||
+    if (game.ppu.name_table[0][0x0080U] != 0x5aU || game.ram[0x0340U] != 0U ||
         game.ram[0x0341U] != 0U || game.ram[0x0773U] != 0U) return 1;
     game.ram[0x0340U] = 4U;
     game.ram[0x0341U] = 0x20U;
@@ -29,7 +29,7 @@ int main(void)
     mysmb_game_tick(&game, &input, &frame);
     /* ROM InitBuffer selects Buffer_Offset[1] only for selector six.  The
      * selector-seven route transfers buffer two, then clears buffer one. */
-    if (game.name_table[0][0x0081U] != 0x5bU || game.ram[0x0340U] != 4U ||
+    if (game.ppu.name_table[0][0x0081U] != 0x5bU || game.ram[0x0340U] != 4U ||
         game.ram[0x0341U] != 0x20U || game.ram[0x0773U] != 0U) return 2;
     return 0;
 }

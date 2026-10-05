@@ -284,19 +284,19 @@ void mysmb_area_refresh_background_page(struct mysmb_game *game,
             if ((mysmb_u16)(tile_offset + 3U) >= game->area_prg_size) continue;
             tile_offset = (mysmb_u16)(4U * 32U + (mysmb_u16)row * 2U * 32U +
                 (mysmb_u16)column * 2U);
-            game->name_table[table][tile_offset] = game->area_prg[(mysmb_u16)(graphics_address +
+            game->ppu.name_table[table][tile_offset] = game->area_prg[(mysmb_u16)(graphics_address +
                 (mysmb_u16)(metatile & 0x3fU) * 4U)];
-            game->name_table[table][(mysmb_u16)(tile_offset + 1U)] = game->area_prg[
+            game->ppu.name_table[table][(mysmb_u16)(tile_offset + 1U)] = game->area_prg[
                 (mysmb_u16)(graphics_address + (mysmb_u16)(metatile & 0x3fU) * 4U + 2U)];
-            game->name_table[table][(mysmb_u16)(tile_offset + 32U)] = game->area_prg[
+            game->ppu.name_table[table][(mysmb_u16)(tile_offset + 32U)] = game->area_prg[
                 (mysmb_u16)(graphics_address + (mysmb_u16)(metatile & 0x3fU) * 4U + 1U)];
-            game->name_table[table][(mysmb_u16)(tile_offset + 33U)] = game->area_prg[
+            game->ppu.name_table[table][(mysmb_u16)(tile_offset + 33U)] = game->area_prg[
                 (mysmb_u16)(graphics_address + (mysmb_u16)(metatile & 0x3fU) * 4U + 3U)];
             attribute_offset = (mysmb_u16)(0x03c0U + ((row >> 1U) + 1U) * 8U +
                 (column >> 1U));
             attribute_shift = (mysmb_u8)(((row & 1U) << 2U) | ((column & 1U) << 1U));
-            game->name_table[table][attribute_offset] = (mysmb_u8)(
-                (game->name_table[table][attribute_offset] &
+            game->ppu.name_table[table][attribute_offset] = (mysmb_u8)(
+                (game->ppu.name_table[table][attribute_offset] &
                 (mysmb_u8)~(0x03U << attribute_shift)) | (palette << attribute_shift));
         }
     }
@@ -510,11 +510,11 @@ mysmb_u8 mysmb_area_sync_player_palette(struct mysmb_game *game)
         game->ram[MYSMB_AREA_BACKGROUND_COLOR] : game->ram[MYSMB_AREA_TYPE];
     if (game->area_prg_size <=
         MYSMB_AREA_BACKGROUND_COLORS + background_index) return 0U;
-    if (game->palette[0U] ==
+    if (game->ppu.palette[0U] ==
         game->area_prg[MYSMB_AREA_BACKGROUND_COLORS + background_index] &&
-        game->palette[0x11U] == game->area_prg[MYSMB_AREA_PLAYER_COLORS + color_offset + 1U] &&
-        game->palette[0x12U] == game->area_prg[MYSMB_AREA_PLAYER_COLORS + color_offset + 2U] &&
-        game->palette[0x13U] == game->area_prg[MYSMB_AREA_PLAYER_COLORS + color_offset + 3U])
+        game->ppu.palette[0x11U] == game->area_prg[MYSMB_AREA_PLAYER_COLORS + color_offset + 1U] &&
+        game->ppu.palette[0x12U] == game->area_prg[MYSMB_AREA_PLAYER_COLORS + color_offset + 2U] &&
+        game->ppu.palette[0x13U] == game->area_prg[MYSMB_AREA_PLAYER_COLORS + color_offset + 3U])
         return 0U;
     return mysmb_area_queue_player_palette(game);
 }
