@@ -23,6 +23,67 @@ They must use the same semantics on DOS16,Win32 and x64. Platform VGA work
 consumes only the neutral indexed frame;it cannot read Mario,enemy,level or
 other gameplay state. Neutral IO and snapshot contracts remain unchanged.
 
+## Owner-approved conventional-memory and playability contract
+
+Owner approves a joint memory/performance evaluation after S2. Conventional
+memory must accommodate the actual DOS product;minimize peak consumption while
+preserving playability. A small measured whole-frame slowdown may be accepted
+for substantial peak-memory savings. Faster rendering alone is not acceptance,
+and a successful allocation in one DOSBox session is not DOS qualification.
+S2 remains historical evidence,not a requirement to retain its32KiB cache.
+
+The owner clarifies two independent hard gates:memory fit permits reliable
+startup and runtime transitions;performance permits normal gameplay. Passing
+one never compensates for failing the other. "Small extra cost" is permitted
+only within the playable performance budget,not as permission for an unplayable
+low-memory build. Before selecting a default,declare the tested runtime,normal
+game-tick/presentation cadence and input-response limits;compare complete-frame
+cost and tail latency against them. Report launch/fit and playability separately.
+A slow but launchable product or a fast but unallocatable product cannot be
+reported as accepted. Physical target-machine proof remains a named M4 gate.
+
+For each candidate publish a paired result under identical inputs and unchanged
+DOSBox settings:minimum loaded bytes,simultaneous live far/near allocations,
+allocator/segment overhead,stack high-water evidence and margins,total peak
+conventional memory,largest required contiguous allocation,smallest measured
+remaining contiguous block,and measurement coverage/unknowns. Count static VGA
+buffers and stack once inside the loaded image;do not count hardware VGA memory
+as conventional RAM. File size,DGROUP headroom and fragmented free totals alone
+cannot establish fit. Report startup,graphics,text,Tab,save/load and shutdown
+lifetime peaks and mandatory-versus-optional allocation/failure behavior.
+
+Pair memory results with warm and cold complete-frame/stage timings,input latency
+and representative populated routes. Repeat comparable runs and distinguish
+noise from small regressions;report absolute time and bytes as well as percent.
+Each candidate records accepted/rejected/deferred,the memory saved versus S1 and
+S2,the time cost,the tested minimum free conventional-memory requirement,and
+remaining host/hardware limits. Prefer lower memory when the measured extra
+cost is small and does not make controls or playability unacceptable. Retain
+nondominated alternatives until integrated results select the default;do not
+add user-facing tuning solely to avoid making that decision. No speed-only
+acceptance rule overrides this owner-approved tradeoff.
+
+Mandatory gates remain exact frame/state/audio/snapshot semantics,full borderless
+640x400 output,every original tick/input operation and reliable allocation,
+switch/load/exit behavior. Optional cache failure must fall back safely without
+displacing required packs. Do not lower detail,drop work,shrink stack without
+peak evidence,assume all640KiB is available,or enlarge/change emulator settings.
+Declare software memory-fit evidence separately from physical486SX cadence and
+DOS-version qualification,which remain M4. Unproved fit or playability is an
+explicit deficit,never a success inferred from compositor timing.
+
+The existing S plan receives these bounded additions,no new T or S numbering:
+
+| S | Added memory/performance decision scope |
+| --- | --- |
+| S3 | Compare decoded occupancy,bitmaps and compact/bounded CHR representations. Include no-cache fallback;prefer avoiding another allocation unless integrated benefit justifies it. Reassess S2's32KiB default against memory saved and whole-frame cost. |
+| S4 | Compare full four-plane buffers with scanline/small-batch conversion and direct contiguous submission. Preserve exact scaling,plane order and mode lifetime;measure memory savings and extra segment/device costs. |
+| S5 | Consider graphics/text workspace lifetime reuse,including Tab/restore and allocation failure;unchanged-region caches must pay for their peak memory as well as checking cost. Inventory snapshot lifetimes before proposing any reduction;do not discard state or recovery buffers speculatively. |
+| S6 | Select the cumulative default from paired peak-memory/frame/input results. Publish required free conventional memory,fit margins,complete-route outcomes and remaining performance/hardware deficits. No memory-fit or playability acceptance without scoped evidence. |
+
+This amendment is governance-only;no product code or EXE changes. S3 remains
+active,scope/expected/actual ROM labels[],new0;all conformance counters unchanged.
+
 ## Opportunities and suggested order
 
 | Priority | Opportunity | Bounded implementation and correctness obligations |
@@ -30,7 +91,7 @@ other gameplay state. Neutral IO and snapshot contracts remain unchanged.
 | 1 | CHR decode cache | Decode bound immutable CHR into palette-independent pixel indices once;share the cache between background and sprites. Preserve bounds/absent-resource behavior,flips and transparency. Rebinding resources invalidates the cache;palette animation uses current palette values,never cached final colors. Evaluate full versus bounded cache using actual DOS memory headroom. |
 | 2 | Background calculation reuse | Prepare the palette once per frame and reuse tile-row/attribute/address calculations where their inputs are identical. Preserve status-bar split,scroll,mirroring,pattern-bank selection and left-edge masks. Do not cache across a changed visible-state input without an explicit invalidation rule. |
 | 3 | Sprite background-occlusion reuse | Retain background opacity information while composing the background;behind-background sprites query that information instead of re-decoding background pixels. Preserve sprite order,transparent pixels,clipping and mask semantics. Select a bounded bit representation after measuring its memory and access cost. |
-| 4 | Repeated stretch-row reuse | In the240-to400-row enlargement,convert each unique source row once per plane and copy duplicate output rows. Preserve the exact current coordinate mapping,all pixels and four32000-byte planes. This reduces repeated conversion,not the required complete output or its video-memory writes. |
+| 4 | Repeated stretch-row reuse | In the240-to400-row enlargement,convert each unique source row once per plane and copy duplicate output rows. Preserve the exact current coordinate mapping,all pixels and four32000-byte output planes;buffer storage may become bounded rows/batches under the approved memory contract. This reduces repeated conversion,not the required complete output or its video-memory writes. |
 | 5 | VGA bulk-transfer optimization | Inspect original OpenNT16 generated copy code;optimize contiguous transfers and unnecessary segment setup within the device owner. Retain four correct plane selections,A000 offsets,far-pointer limits and complete submissions. Any specialized helper remains beneath the platform boundary and is admitted explicitly. |
 | 6 | Unchanged-region reuse | Consider bounded dirty regions or unchanged-frame reuse only after earlier measurements. Account for every relevant PPU input,resource identity and presentation lifetime event. Scrolling,VRAM/palette/OAM/mask changes,mode switches and snapshot restore must rebuild the affected output. Continue every game tick,input and audio operation;reuse pixels only when equality is established. |
 
@@ -85,7 +146,7 @@ on. If measurements change the proposed grouping,amend it before admission.
 
 Closure requires all six opportunities explicitly disposed,accepted changes
 passing both their scoped equality checks and integrated regression,and a
-measured cumulative performance result with unresolved limits visible.
+measured cumulative memory/performance/playability result with unresolved limits visible.
 Any unmet performance obligation has a named receiver before closure;no new
 ROM certification follows from presentation equivalence alone. Exact affected
 labels and zero-credit expectations are registered at admission. Retain the
@@ -354,11 +415,13 @@ contract;T28 remains active,S3 receives the next planned optimization chain.
 
 ## S3 admission: shared sprite-priority occupancy comparison
 
-Compare behind-background occupancy queries using S2 decoded indices with a
-bounded7680-byte opacity bitmap;retain only measured benefit. Preserve raw CHR
+Compare behind-background occupancy queries using decoded indices,compact/bounded
+CHR representations and a bounded7680-byte opacity bitmap;retain measured joint
+memory/performance benefit under the owner-approved contract above. Preserve raw CHR
 index-zero transparency before palette mapping,not final color equality. Scope
 shared ppu/frame/workspace,root storage binding only if needed,and focused tests;
-estimated80-200lines,2-4files. No core or visible PPU/snapshot/text/VGA semantic
+initial estimate80-200lines,2-4files for occupancy. A compact cache may extend
+to150-350lines,4-7files;report the selected representation before code changes. No core or visible PPU/snapshot/text/VGA semantic
 change. Uncached and failed-storage paths must remain exact.
 
 Verify independent full frames,behind/in-front overlap,transparent palette alias,
