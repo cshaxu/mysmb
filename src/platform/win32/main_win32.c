@@ -31,6 +31,8 @@
 static struct mysmb_game g_game;
 static struct mysmb_frame g_frame;
 static struct mysmb_ppu_frame g_ppu_frame;
+static struct mysmb_ppu_frame_workspace g_ppu_workspace;
+static mysmb_io_u8 g_chr_decoded[MYSMB_PPU_CHR_DECODED_BYTES];
 static struct mysmb_io_audio_frame g_audio_frame;
 static struct mysmb_win32_audio_output g_audio_output;
 static struct mysmb_win32_focus_pause g_focus_pause;
@@ -166,7 +168,7 @@ static void mysmb_win32_build_frame(void)
             !mysmb_win32_text_console_present(&g_console,&g_text_frame));
         return;
     }
-    mysmb_ppu_frame_build(&g_game.ppu, &g_ppu_frame);
+    mysmb_ppu_frame_build_cached(&g_game.ppu,&g_ppu_frame,&g_ppu_workspace);
     mysmb_game_io_video(&g_ppu_frame, &video);
     mysmb_win32_draw_gameplay(&video);
 }
@@ -265,6 +267,7 @@ static int mysmb_win32_snapshot_request(HWND window)
 
 static void mysmb_win32_power_on(void)
 {
+    mysmb_ppu_frame_workspace_bind(&g_ppu_workspace,g_chr_decoded);
     mysmb_game_power_on(&g_game);
     mysmb_text_observer_enable(&g_game,1U);
     mysmb_game_frame_initialize(&g_frame);

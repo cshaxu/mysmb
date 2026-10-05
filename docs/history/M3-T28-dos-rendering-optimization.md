@@ -282,3 +282,88 @@ observed improvement and publish the independent plus cumulative result.
 Product-code P builds/tests and refreshes all three EXEs once;scope equality
 failure prevents closure or next-S admission until repaired and rechecked.
 S2 scope[],expectedMatches[],baseline/maximum1992/1992,new0,no ROM promotion.
+
+## S2 P1 closure: optional per-instance decoded CHR cache
+
+Retain a caller-owned32768-byte cache of palette-independent two-bit CHR
+indices. Each complete row uses a single decoded pointer and eight expanded
+loads;partial tiles retain bounded loops. The shared compositor retains its
+uncached entry point and optional-storage fallback. Palette,bank,scroll,split,
+mask,OAM,flips,priority and clipping remain current-frame inputs. No core or
+PPU-state write semantics change. Windows binds static root-owned storage;
+DOS attempts one far allocation on first graphics presentation,after mandatory
+pixels,snapshot and optional text storage are initialized. Failed allocation
+uses the original uncached path and never aborts or repeatedly allocates.
+
+Resource/lifetime sweep:the production CHR binder writes only immutable pointer
+and size;both composition roots bind local immutable program resources. Snapshot
+restore retains those resources. Workspace pointer/size keys detect replacement;
+explicit workspace rebind invalidates same-address replacement/mutable fixtures.
+No hidden shared compositor cache exists. Native synthetic consumers retain the
+uncached API;Windows/DOS graphics consumers use the shared optional workspace.
+Text paths do not read it. Shutdown frees DOS storage;power-on resets Windows
+workspace. Dynamic palette changes never require CHR invalidation because final
+colors are not cached. All identified consumers have these dispositions.
+
+| Candidate | Fixed-config measured disposition |
+| --- | --- |
+| Naive full cache with indexed pixel loop | Reject:about33-37percent slower warm PPU stage despite equal output. |
+| Expanded-row cache prototype alone | Warm PPU reduction12.695-15.597percent;prototype single-instance globals remain local and are not imported. |
+| Frame-local palette staging alone | Reject:3.265-3.592percent slower in the same corpus;reverted. |
+| Palette staging plus per-instance cache | Warm reduction11.028-13.558percent;superseded by the better cache-only implementation. |
+| Final per-instance cache only | Warm PPU ticks ground1009609,water1142572,castle1142567,dense1276422;versus1195923/1330367/1330367/1461802:12.682-15.579percent less stage time. |
+| Final cold first title frame | 1511516versus1195922ticks:26.389percent slower,including first allocation/decode. This is an explicit one-time cost,not a warm speedup. |
+
+Every candidate above uses the same six complete61440-byte corpus outputs and
+10035-byte final snapshot;all match S1. Formal probes compile current root
+layouts/current compositor rather than reusing pre-workspace objects. Normal SDL
+runs on an isolated desktop with installed DOSBox configuration unchanged;
+configuration SHA remains0494236f2308e2e615f428d04e6470db4b0d162c95b51f4e276f1b7e73241917.
+Controlled water/castle/dense cases remain output workloads,not full gameplay
+acceptance. Stage measurements isolate compositor benefit;complete startup/load,
+text cost,nominal cadence and physical486SX performance are not proved here.
+
+Both native widths pass seven focused tests:compositor/reference,boundary and
+cache performance,DOS root,frame snapshot,snapshot continuation,platform purity,
+Windows self-test. The performance matrix covers2048boundary and1198native
+frames,source-state preservation,two independently alternating instances,resource
+replacement,explicit in-place reset,null workspace/storage,and guarded arrays.
+Original DOS compiler/linker passes;four bounded real far-memory cases pass
+independent reference equality,null/truncated/full resources,fallback,guard bytes
+and unchanged state. Both widths pass13private-host startup/input/Tab/snapshot/
+focus/close/shell routes on current products. These are operational proofs and
+carry no new ROM certification credit.
+
+DOS product minimum loaded453568bytes,193segments,max64000,DGROUP49456including
+2048stack,headroom16080. Runtime cache32768is additional far storage,not DGROUP.
+Instrumented normal packs plus cache succeed;after finite workload heap free13104
+and largest DOS block1971paragraphs. Another32768trial fails while7680succeeds:
+there is no unlimited cache budget.458stack-marked bytes remain in the bounded
+lifecycle corpus;all-path/hardware/version qualification remains M4.
+
+Product/test six files,+139/-10;no core/state/snapshot ABI change. Three refreshed
+products:429039/319627/328299bytes for16/32/64. Their neutral fingerprints:
+- mysmb16.exe: `9a4d3dcec7b5cebfe42db1dab04d83fa91feaa5e234d5d01d73a7a4661fbf44d`.
+- mysmb32.exe: `96e4e34a356943bb5c7aba8d41f351e717a1bde96c4c55f9328d60d0601dea80`.
+- mysmb64.exe: `79ffaae8618f98df9b7cc8625b6c7aff8deaf4f92d68a286a71214948dda8d4a`.
+
+All local source/probe/frame/log artifacts stay below ignored build/m3-t28-s2.
+Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261
+feasible controls(raw4342,infeasible81) unchanged. S2 closes its bounded cache
+contract;T28 remains active,S3 receives the next planned optimization chain.
+
+## S3 admission: shared sprite-priority occupancy comparison
+
+Compare behind-background occupancy queries using S2 decoded indices with a
+bounded7680-byte opacity bitmap;retain only measured benefit. Preserve raw CHR
+index-zero transparency before palette mapping,not final color equality. Scope
+shared ppu/frame/workspace,root storage binding only if needed,and focused tests;
+estimated80-200lines,2-4files. No core or visible PPU/snapshot/text/VGA semantic
+change. Uncached and failed-storage paths must remain exact.
+
+Verify independent full frames,behind/in-front overlap,transparent palette alias,
+masks,banks,split,flips,clipping,resource/reset lifetime and real far-memory guards.
+Compare incremental and cumulative fixed-config costs against frozen S1 and
+accepted S2;reject a bitmap if construction/allocation outweighs savings. Product
+changes require all three builds/EXEs and focused native/host checks. Scope[],
+expectedMatches[],baseline/maximum1992/1992,new0,no node custody transfer.

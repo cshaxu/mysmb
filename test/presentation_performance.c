@@ -14,7 +14,10 @@
 #endif
 void mysmb_ppu_frame_reference(const struct mysmb_game *,struct mysmb_ppu_frame *);
 static struct mysmb_game game,before;
-static struct mysmb_ppu_frame actual,reference;
+static struct mysmb_ppu_frame actual,reference,cached;
+static struct mysmb_ppu_frame_workspace cache_workspace,other_workspace;
+static unsigned char cache_store[MYSMB_PPU_CHR_DECODED_BYTES+2U];
+static unsigned char other_store[MYSMB_PPU_CHR_DECODED_BYTES+2U],other_chr[8192];
 static struct mysmb_text_scene_workspace workspace;
 static struct mysmb_io_text_frame text;
 static struct mysmb_io_snapshot snapshot;
@@ -37,6 +40,8 @@ static int compare_frames(unsigned int cases)
 {
     unsigned int n,i,table;
     for(i=0U;i<8192U;++i)chr[i]=random_byte();
+    memset(cache_store,0xa5,sizeof(cache_store));
+    mysmb_ppu_frame_workspace_bind(&cache_workspace,cache_store+1U);
     mysmb_game_initialize(&game);
     for(n=0U;n<cases;++n) {
         game.ppu.chr_data=n%17U==0U?0:chr;
@@ -54,6 +59,9 @@ static int compare_frames(unsigned int cases)
         before=game;
         mysmb_ppu_frame_reference(&game,&reference);
         mysmb_ppu_frame_build(&game.ppu,&actual);
+        mysmb_ppu_frame_build_cached(&game.ppu,&cached,&cache_workspace);
+        if(memcmp(cached.pixels,actual.pixels,sizeof(actual.pixels)))return 9;
+        if(cache_store[0]!=0xa5U || cache_store[MYSMB_PPU_CHR_DECODED_BYTES+1U]!=0xa5U)return 10;
         if(memcmp(&game,&before,sizeof(game)))return 1;
         if(memcmp(actual.pixels,reference.pixels,sizeof(actual.pixels))) {
             for(i=0U;i<sizeof(actual.pixels);++i)
@@ -62,6 +70,38 @@ static int compare_frames(unsigned int cases)
         }
     }
     printf("pixel_equal_cases=%u state_unchanged=1\n",cases);return 0;
+}
+static int cache_lifetimes(void)
+{
+    unsigned int i,n;
+    unsigned char saved;
+    for(i=0U;i<8192U;++i)other_chr[i]=(unsigned char)(chr[i]^0xffU);
+    memset(other_store,0x5a,sizeof(other_store));
+    mysmb_ppu_frame_workspace_bind(&other_workspace,other_store+1U);
+    game.ppu.visible_ppu_mask=0x1eU;
+    for(n=0U;n<6U;++n) {
+        game.ppu.chr_data=n&1U?other_chr:chr;game.ppu.chr_data_size=8192U;
+        mysmb_ppu_frame_build(&game.ppu,&reference);
+        mysmb_ppu_frame_build_cached(&game.ppu,&cached,
+            n&1U?&other_workspace:&cache_workspace);
+        if(memcmp(reference.pixels,cached.pixels,sizeof(cached.pixels)))return 11;
+    }
+    /* Same-pointer mutation starts an explicitly new binding lifetime. */
+    saved=chr[0];chr[0]^=0xffU;game.ppu.chr_data=chr;
+    mysmb_ppu_frame_workspace_bind(&cache_workspace,cache_store+1U);
+    mysmb_ppu_frame_build(&game.ppu,&reference);
+    mysmb_ppu_frame_build_cached(&game.ppu,&cached,&cache_workspace);
+    if(memcmp(reference.pixels,cached.pixels,sizeof(cached.pixels)))return 12;
+    chr[0]=saved;mysmb_ppu_frame_workspace_bind(&cache_workspace,cache_store+1U);
+    mysmb_ppu_frame_workspace_bind(&other_workspace,0);
+    mysmb_ppu_frame_build(&game.ppu,&reference);
+    mysmb_ppu_frame_build_cached(&game.ppu,&cached,&other_workspace);
+    if(memcmp(reference.pixels,cached.pixels,sizeof(cached.pixels)))return 13;
+    mysmb_ppu_frame_build_cached(&game.ppu,&cached,0);
+    if(memcmp(reference.pixels,cached.pixels,sizeof(cached.pixels)))return 14;
+    if(other_store[0]!=0x5aU || other_store[MYSMB_PPU_CHR_DECODED_BYTES+1U]!=0x5aU)return 15;
+    printf("cache_lifetimes=two_instances_reset_resource_fallback guards=pass\n");
+    return 0;
 }
 static void scale_reference(const struct mysmb_io_video_frame *video)
 {
@@ -94,6 +134,7 @@ int main(void)
     int result;
     QueryPerformanceFrequency(&frequency);
     result=compare_frames(2048U);if(result)return result;
+    result=cache_lifetimes();if(result)return result;
     /* Identical densely populated fixture;timing never changes pass/fail. */
     game.ppu.chr_data=chr;game.ppu.chr_data_size=8192U;game.ppu.visible_ppu_mask=0x1eU;
     n=512U;start=stamp();
@@ -104,6 +145,9 @@ int main(void)
     report("dense_reference_graphics",old_time,n);
     report("dense_current_graphics",new_time,n);
     printf("dense_graphics_speedup=%.3f\n",old_time/new_time);
+    start=stamp();
+    for(i=0U;i<n;++i)mysmb_ppu_frame_build_cached(&game.ppu,&cached,&cache_workspace);
+    report("dense_cached_graphics",stamp()-start,n);
     mysmb_vga_frame_initialize(&vga,pages[0],pages[1],pages[2],pages[3]);
     mysmb_game_io_video(&actual,&video);
     if(!compare_scaling(&video))return 7;
@@ -130,7 +174,7 @@ int main(void)
                 (i%50U<10U?MYSMB_BUTTON_A:0U)):0U;input.buttons2=0U;
         start=stamp();mysmb_game_tick(&game,&input,&frame);tick_time+=stamp()-start;
         before=game;
-        start=stamp();mysmb_ppu_frame_build(&game.ppu,&actual);graphics_time+=stamp()-start;
+        start=stamp();mysmb_ppu_frame_build_cached(&game.ppu,&actual,&cache_workspace);graphics_time+=stamp()-start;
         mysmb_ppu_frame_reference(&game,&reference);
         if(memcmp(actual.pixels,reference.pixels,sizeof(actual.pixels)))return 3;
         start=stamp();

@@ -9,6 +9,8 @@ int mysmb_dos16_root_initialize(struct mysmb_dos16_root *root,
 #ifdef MYSMB_DOS16_TARGET
     mysmb_u8 __far *pixels;
 #endif
+    mysmb_ppu_frame_workspace_bind(&root->ppu_workspace,0);
+    root->ppu_cache_attempted=0U;
     root->initialized=0U;
     root->snapshot_store=0;root->reset_output=0;root->reset_context=0;
     root->text_workspace=0;root->text_frame=0;root->set_mode=0;
@@ -21,6 +23,7 @@ int mysmb_dos16_root_initialize(struct mysmb_dos16_root *root,
     pixels=(mysmb_u8 __far *)_fmalloc(MYSMB_IO_VIDEO_PIXELS);
     if (pixels==0) return 0;
     mysmb_ppu_frame_bind_pixels(&root->ppu_frame,pixels);
+
 #endif
     root->hooks=*hooks;
     mysmb_game_power_on(&root->game);
@@ -55,7 +58,16 @@ static void present_current(struct mysmb_dos16_root *root)
         if(!root->set_mode(root->hooks.context,0U))return;
         root->text_mode=0U;
     }
-    mysmb_ppu_frame_build(&root->game.ppu,&root->ppu_frame);
+#ifdef MYSMB_DOS16_TARGET
+    /* Allocate only after normal root/text/snapshot initialization. This
+     * optional buffer must never displace required product storage. */
+    if(!root->ppu_cache_attempted) {
+        root->ppu_cache_attempted=1U;
+        mysmb_ppu_frame_workspace_bind(&root->ppu_workspace,
+            (mysmb_u8 __far *)_fmalloc(MYSMB_PPU_CHR_DECODED_BYTES));
+    }
+#endif
+    mysmb_ppu_frame_build_cached(&root->game.ppu,&root->ppu_frame,&root->ppu_workspace);
     mysmb_game_io_video(&root->ppu_frame,&video);
     root->hooks.present_video(root->hooks.context,&video);
 }
@@ -111,6 +123,8 @@ void mysmb_dos16_root_shutdown(struct mysmb_dos16_root *root)
 {
     if (root->initialized==0U) return;
 #ifdef MYSMB_DOS16_TARGET
+    if(root->ppu_workspace.decoded)_ffree(root->ppu_workspace.decoded);
+    mysmb_ppu_frame_workspace_bind(&root->ppu_workspace,0);
     _ffree(root->ppu_frame.pixels);
     root->ppu_frame.pixels=0;
 #endif

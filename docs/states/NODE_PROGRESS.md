@@ -11,6 +11,13 @@ scoped evidence and track only named unresolved/invalidated clauses.
 Material993 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
+## M3 T28 S2 - optional compositor cache
+
+Scope/expected/actual[],new0;historical1992/1992,local1991/1992 and4260/4261
+feasible controls(raw4342,infeasible81) unchanged. Shared read-only cache changes
+no core or PPU-state semantics;native/reference,far guards and complete frame/
+snapshot comparisons pass. [Bounded results and limits](../history/M3-T28-dos-rendering-optimization.md#s2-p1-closure-optional-per-instance-decoded-chr-cache).
+
 ## M3 T28 S1 - rendering baseline audit
 
 Scope/expected/actual labels[],new0;historical1992/1992,local1991/1992 and

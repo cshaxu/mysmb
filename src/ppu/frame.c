@@ -1,5 +1,29 @@
 #include "ppu/frame.h"
 #include <string.h>
+void mysmb_ppu_frame_workspace_bind(struct mysmb_ppu_frame_workspace *workspace,
+    mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded)
+{
+    workspace->decoded=decoded;workspace->chr=0;
+    workspace->chr_size=0U;workspace->valid=0U;
+}
+static void mysmb_ppu_prepare_chr(const struct mysmb_ppu_state *state,
+    struct mysmb_ppu_frame_workspace *workspace)
+{
+    mysmb_io_u16 row,x,p;
+    mysmb_io_u8 low,high;
+    if(workspace==0 || workspace->decoded==0)return;
+    if(workspace->valid && workspace->chr==state->chr_data &&
+        workspace->chr_size==state->chr_data_size)return;
+    for(row=0U;row<4096U;++row) {
+        p=(mysmb_io_u16)((row/8U)*16U+(row&7U));
+        low=(state->chr_data && p<state->chr_data_size)?state->chr_data[p]:0U;
+        high=(state->chr_data && p+8U<state->chr_data_size)?state->chr_data[p+8U]:0U;
+        for(x=0U;x<8U;++x)workspace->decoded[row*8U+x]=(mysmb_io_u8)(
+            ((low>>(7U-x))&1U)|(((high>>(7U-x))&1U)<<1U));
+    }
+    workspace->chr=state->chr_data;workspace->chr_size=state->chr_data_size;
+    workspace->valid=1U;
+}
 
 #ifdef MYSMB_DOS16_TARGET
 void mysmb_ppu_frame_bind_pixels(struct mysmb_ppu_frame *frame,
@@ -72,12 +96,14 @@ static mysmb_io_u8 mysmb_ppu_background_pixel(const struct mysmb_ppu_state *stat
  * last tiles retain exact scroll,mirroring,CHR bounds and left-edge semantics. */
 static void mysmb_ppu_background_row(const struct mysmb_ppu_state *state,
     mysmb_io_u16 y,mysmb_io_u8 scroll_x,mysmb_io_u8 scroll_y,mysmb_io_u8 name_table,
-    mysmb_io_u8 MYSMB_PPU_FRAME_FAR *out)
+    mysmb_io_u8 MYSMB_PPU_FRAME_FAR *out,
+    const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded_chr)
 {
     mysmb_io_u16 source_y,row,source_x,x,column,table,pattern,count,i;
     mysmb_io_u8 attribute,palette,low,high,color,phase;
     mysmb_io_u8 pixels[MYSMB_PPU_FRAME_WIDTH],colors[16];
     const mysmb_io_u8 *chr;
+    const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded;
     mysmb_io_u16 chr_size,pattern_base;
     /* Palette and row staging are stack-owned. Avoid a far state/pixel access
      * for every output dot; one bounded copy publishes the completed row. */
@@ -101,7 +127,19 @@ static void mysmb_ppu_background_row(const struct mysmb_ppu_state *state,
         palette=(mysmb_io_u8)(palette*4U);
         count=(mysmb_io_u16)(8U-phase);
         if(count>MYSMB_PPU_FRAME_WIDTH-x)count=(mysmb_io_u16)(MYSMB_PPU_FRAME_WIDTH-x);
-        if(count==8U) {
+        if(decoded_chr) {
+            decoded=decoded_chr+(pattern/16U)*64U+(pattern&7U)*8U+phase;
+            if(count==8U) {
+                pixels[x+0U]=colors[palette+decoded[0U]];
+                pixels[x+1U]=colors[palette+decoded[1U]];
+                pixels[x+2U]=colors[palette+decoded[2U]];
+                pixels[x+3U]=colors[palette+decoded[3U]];
+                pixels[x+4U]=colors[palette+decoded[4U]];
+                pixels[x+5U]=colors[palette+decoded[5U]];
+                pixels[x+6U]=colors[palette+decoded[6U]];
+                pixels[x+7U]=colors[palette+decoded[7U]];
+            }else for(i=0U;i<count;++i)pixels[x+i]=colors[palette+decoded[i]];
+        } else if(count==8U) {
             pixels[x+0U]=colors[palette+(((low>>7U)&1U)|((high>>6U)&2U))];
             pixels[x+1U]=colors[palette+(((low>>6U)&1U)|((high>>5U)&2U))];
             pixels[x+2U]=colors[palette+(((low>>5U)&1U)|((high>>4U)&2U))];
@@ -122,8 +160,8 @@ static void mysmb_ppu_background_row(const struct mysmb_ppu_state *state,
     memcpy(out,pixels,MYSMB_PPU_FRAME_WIDTH);
 }
 
-void mysmb_ppu_frame_build(const struct mysmb_ppu_state *state,
-                           struct mysmb_ppu_frame *frame)
+static void mysmb_ppu_frame_build_internal(const struct mysmb_ppu_state *state,
+    struct mysmb_ppu_frame *frame,const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded_chr)
 {
     mysmb_io_u16 x;
     mysmb_io_u16 y;
@@ -153,7 +191,7 @@ void mysmb_ppu_frame_build(const struct mysmb_ppu_state *state,
         if((state->visible_ppu_mask&8U)!=0U)
             mysmb_ppu_background_row(state,y,scroll_x,scroll_y,
                 y<fixed_top_height?0U:state->visible_ppu_name_table,
-                frame->pixels+y*MYSMB_PPU_FRAME_WIDTH);
+                frame->pixels+y*MYSMB_PPU_FRAME_WIDTH,decoded_chr);
         else for(x=0U;x<MYSMB_PPU_FRAME_WIDTH;++x)
             frame->pixels[y*MYSMB_PPU_FRAME_WIDTH+x]=state->palette[0U];
     }
@@ -173,7 +211,9 @@ void mysmb_ppu_frame_build(const struct mysmb_ppu_state *state,
             high = mysmb_ppu_pattern(state, (mysmb_io_u16)(pattern + 8U));
             for (pixel_x = 0U; pixel_x < 8U && sprite_x + pixel_x < MYSMB_PPU_FRAME_WIDTH;
                  ++pixel_x) {
-                color = (mysmb_io_u8)(((low >> ((attributes & 0x40U) != 0U ? pixel_x :
+                if(decoded_chr)color=decoded_chr[(pattern/16U)*64U+(pattern&7U)*8U+
+                    ((attributes&0x40U)?7U-pixel_x:pixel_x)];
+                else color = (mysmb_io_u8)(((low >> ((attributes & 0x40U) != 0U ? pixel_x :
                     7U - pixel_x)) & 1U) | (((high >> ((attributes & 0x40U) != 0U ?
                     pixel_x : 7U - pixel_x)) & 1U) << 1U));
                 if (color == 0U) continue;
@@ -196,4 +236,16 @@ void mysmb_ppu_frame_build(const struct mysmb_ppu_state *state,
         }
     }
     (void)mysmb_ppu_master_color[0];
+}
+
+void mysmb_ppu_frame_build(const struct mysmb_ppu_state *state,
+    struct mysmb_ppu_frame *frame)
+{
+    mysmb_ppu_frame_build_internal(state,frame,0);
+}
+void mysmb_ppu_frame_build_cached(const struct mysmb_ppu_state *state,
+    struct mysmb_ppu_frame *frame,struct mysmb_ppu_frame_workspace *workspace)
+{
+    mysmb_ppu_prepare_chr(state,workspace);
+    mysmb_ppu_frame_build_internal(state,frame,workspace?workspace->decoded:0);
 }

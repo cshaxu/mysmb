@@ -1,23 +1,23 @@
 # Project Status
 
-## M3 T28 S2 Packet
+## M3 T28 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T28 S2 P1; shared PPU background/CHR-cache implementation. |
-| Admission And Approval | Owner authorizes execution. S1 baseline/audit closed;automatically admit the planned S2 under the same mandate. |
-| Objective | Compare shared frame-local background reuse and caller-owned CHR caching against frozen S1 outputs/costs;retain measured improvements only. |
+| Identifier Mode | Continuation: M3 T28 S3 P1; shared sprite-priority occupancy comparison. |
+| Admission And Approval | Owner authorizes execution. S2 optional-cache implementation closed;automatically admit the planned S3 under the same mandate. |
+| Objective | Compare decoded-CHR occupancy queries and bounded opacity storage against S1/S2 outputs and costs;retain measured improvements only. |
 | Non-goals | No core ROM routine/state/timing changes,no emulator settings,no text/VGA redesign,no nominal-cadence or M2/M4 acceptance. |
 | Reference Baseline | Post-T27 source and retained three products;historical1992/1992,local1991/1992 nodes and4260/4261 feasible controls,raw4342/infeasible81. |
 | Candidate Proposal | [T28 retained proposal and audit](../history/M3-T28-dos-rendering-optimization.md). Removed from pending QUEUE on admission. |
-| Files And ABI Surface | Shared ppu/frame cache/workspace,composition-root lifetime binding and focused tests/build membership;estimated150-350lines,4-7files. No core/state/snapshot ABI changes. |
+| Files And ABI Surface | Shared ppu/frame cache/workspace,composition-root lifetime binding and focused tests/build membership;estimated80-200lines,2-4files. No core/state/snapshot ABI changes. |
 | Applicable Rules | README Task Reading Set,EXECUTION,DOCUMENT,ARCHITECTURE,CODING,CONTRIBUTING and source policy. |
 | Verification | Independent complete indexed/reference equality,resource/reset/fallback/two-instance/cache tests,native x86/x64 and DOS16 far-memory builds;S1 fixed-config workload timing,platform purity and three EXEs for every product-code P. |
-| Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0,maximum1992/1992;no custody transfer. S2 owns infrastructure-only implementation;original node custodians unchanged. |
+| Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0,maximum1992/1992;no custody transfer. S3 owns infrastructure-only implementation;original node custodians unchanged. |
 | Asset Needs | Existing owner-local resources/derived products only,local ignored build containment;no new import or redistribution. Prior owner exception for existing tracked EXEs retained;every product-code P refreshes all three,with local probes/resources contained below ignored build. |
 | Reporting Requirements | Before each S owners,scope and estimated size;after each P actual diff,tests/products and total/local counters. Separate static opportunity evidence from measured gains. |
 | Stop Conditions | Pixel/state/snapshot/audio divergence,unbounded memory or cache lifetime,missing fixed-config timing,or proposed core/PPU semantic change prevents advancing the affected optimization. |
-| Exit Criteria | S2 resolves scoped equality/lifetime/memory cases,records measured candidate acceptance/rejection and cumulative cost,refreshes three products for changed code;T exit remains all six dispositions plus integrated proof. |
+| Exit Criteria | S3 resolves scoped occupancy equality/lifetime/memory cases,records measured candidate acceptance/rejection and cumulative cost,refreshes three products for changed code;T exit remains all six dispositions plus integrated proof. |
 | Original Owner Request | Owner authorizes execution after reviewed T28 plan;preserve original ROM and PPU semantics. |
 | Similar-Issue Sweep | Sweep all CHR bindings/frame consumers for immutable lifetime,stale palette/bank/bounds,instance sharing and allocation failure;record every hit and disposition. |
 
@@ -34,7 +34,7 @@
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11/T12/T13/T14/T15/T16/T17/T18 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are427455/318603/327275bytes.
+- Current local DOS16/Win32/x64 products are429039/319627/328299bytes.
   T22 refreshes all three with RAM-authoritative NMI page handoff;T21 coral,T20 titles/tree/fence and T18 timing retained.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
@@ -42,6 +42,14 @@
   full heap/stack peak and hardware/version qualification remain M4.
 
 ## Compact closure status
+
+T28 S2 closes optional per-instance decoded CHR cache;rejected slower palette
+staging/naive cache. Fixed-config warm PPU stage12.682-15.579percent shorter,
+cold first frame26.389percent longer. Both widths7tests/13host groups,DOS16/far
+reference guards,six complete buffers and10035snapshot equality pass. Products
+429039/319627/328299bytes;6product/testfiles,+139/-10,new0. No core semantics or
+M2/M4/cadence qualification. S3 occupancy comparison active,T28 unfinished.
+[Evidence and limits](../history/M3-T28-dos-rendering-optimization.md#s2-p1-closure-optional-per-instance-decoded-chr-cache).
 
 T27 S1-S8 closed:185original file destinations,751functions,143macro entries,
 1996consumer sites and206PPU/receipt sites/four seams reconciled.173original
