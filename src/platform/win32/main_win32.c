@@ -17,6 +17,7 @@
 #include "platform/win32/text_console.h"
 #include "platform/win32/launch.h"
 #include "platform/win32/keyboard.h"
+#include "platform/win32/frame_wait.h"
 #include "game/presentation/text/scene.h"
 
 #ifdef MYSMB_LOCAL_TITLE
@@ -49,6 +50,7 @@ static struct mysmb_io_text_frame g_text_frame;
 static mysmb_io_u8 g_text_mode,g_switching,g_toggle_request,g_text_failed;
 static LARGE_INTEGER g_frequency;
 static LARGE_INTEGER g_last_tick;
+static struct mysmb_win32_frame_wait g_frame_wait;
 static mysmb_u8 g_game_started;
 static mysmb_u8 g_audio_available;
 static mysmb_u8 g_title_paused;
@@ -144,14 +146,14 @@ static unsigned int mysmb_win32_poll_keys(void)
     return mysmb_win32_keyboard_sample(&g_keyboard);
 }
 
-static DWORD mysmb_win32_dib_color(mysmb_u8 color)
-{
-    return (DWORD)mysmb_io_color_rgb(color);
-}
 static void mysmb_win32_draw_gameplay(const struct mysmb_io_video_frame *frame)
 {
+    DWORD palette[64];
     unsigned int index;
-    for(index=0U;index<MYSMB_SCREEN_WIDTH*MYSMB_SCREEN_HEIGHT;++index) g_pixels[index]=mysmb_win32_dib_color(frame->pixels[index]);
+    for(index=0U;index<64U;++index)
+        palette[index]=(DWORD)mysmb_io_color_rgb((mysmb_io_u8)index);
+    for(index=0U;index<MYSMB_SCREEN_WIDTH*MYSMB_SCREEN_HEIGHT;++index)
+        g_pixels[index]=palette[frame->pixels[index]&63U];
 }
 static void mysmb_win32_build_frame(void)
 {
@@ -399,9 +401,8 @@ static void mysmb_win32_step(HWND window)
         elapsed = now.QuadPart - g_last_tick.QuadPart;
     } while (elapsed >= frame_period && steps < 4U);
     mysmb_win32_update_title(window);
-    /* Discard excess wall-clock debt after four logical frames.  This keeps
-     * the message pump responsive instead of attempting an unbounded catch-up. */
-    if (elapsed >= frame_period) g_last_tick = now;
+    /* Retain remaining logical-frame debt. The next batch still returns to
+     * the message pump after at most four updates;no game ticks are dropped. */
     mysmb_win32_build_frame();
     if(!g_text_mode)InvalidateRect(window, NULL, FALSE);
 }
@@ -455,6 +456,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     HWND window;
     MSG message;
     int start_text;
+    unsigned int messages;
 
     (void)previous;
     mysmb_io_control_initialize(&g_control);
@@ -507,10 +509,14 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     g_audio_available = mysmb_win32_audio_open(&g_audio_output) != 0 ? 1U : 0U;
     g_title_paused = 2U;
     mysmb_win32_update_title(window);
+    mysmb_win32_frame_wait_open(&g_frame_wait);
+    QueryPerformanceCounter(&g_last_tick);
 
     for (;;) {
-        while (PeekMessage(&message, NULL, 0U, 0U, PM_REMOVE) != 0) {
+        for(messages=0U;messages<64U &&
+            PeekMessage(&message, NULL, 0U, 0U, PM_REMOVE)!=0;++messages) {
             if (message.message == WM_QUIT) {
+                mysmb_win32_frame_wait_close(&g_frame_wait);
                 return 0;
             }
             TranslateMessage(&message);
@@ -518,6 +524,8 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
         }
         if (g_control.exit_requested!=0U) mysmb_win32_finish_exit(window);
         else mysmb_win32_step(window);
-        Sleep(1U);
+        mysmb_win32_frame_wait_until(&g_frame_wait,
+            g_last_tick.QuadPart+g_frequency.QuadPart/60,
+            g_frequency.QuadPart);
     }
 }

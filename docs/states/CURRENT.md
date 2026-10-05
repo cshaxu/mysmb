@@ -15,14 +15,21 @@
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11/T12/T13/T14/T15/T16/T17 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are364127/448241/464926bytes.
-  T17 S1 refreshes all three with authored object/form roles and spent blocks.
+- Current local DOS16/Win32/x64 products are364127/451327/468010bytes.
+  T18 S1 refreshes all three with equivalent RGB lookup and host deadline waits.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
   pass;seeded presenter equality is explicitly separate. Real486SX speed,
   full heap/stack peak and hardware/version qualification remain M4.
 
 ## Compact closure status
+
+M3 T18 S1 P1 closes reproduced host pacing repairs;T18 S2 stays planned.
+Owned high-resolution/message-aware waits retain tick debt;RGB lookup is equal.
+Both widths10tests/host routes,2048boundary/1198native pixel-state cases,
+DOS16 and DOSBox pass. Audio-on graphics p99 drops32ms to17.8/18.6ms;
+long frames22/24 to0/1. No physical-scanout/RDP/486or whole-ROM claim,new0.
+[T18 S1 evidence](../proposals/m3/window-performance-executable-footprint.md).
 
 M3 T17 S1 P1 closes the all-object/form text design census:17observer families,
 46kinds,101background positions. Confirmed colors/forms/spent-block gaps repaired;
@@ -69,6 +76,3 @@ remain closed;[T12 history](../history/M3-T12-authored-text-detail.md).
 
 M3 T11 semantic text,caption/snapshot/focus/host routes remain closed;
 [T11 history](../history/M3-T11-colored-ascii-text-frame-gameplay.md).
-
-M3 T10 shared snapshot/file/P-O contracts remain closed;
-[T10 history](../history/M3-T10-shared-io-quick-snapshot.md).

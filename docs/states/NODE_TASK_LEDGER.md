@@ -2866,6 +2866,9 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M3 T16 S1 | 0 | 0 | mushroom-text-colors; [record](../../docs/history/M3-T16-mushroom-text-colors.md) |
 | M3 T17 | 0 | - | [record](../../docs/history/M3-T17-text-object-role-audit.md) |
 | M3 T17 S1 | 0 | 0 | text-object-role-audit; [record](../../docs/history/M3-T17-text-object-role-audit.md) |
+| M3 T18 | 0 | - | [record](../../docs/proposals/m3/window-performance-executable-footprint.md) |
+| M3 T18 S1 | 0 | 0 | window-performance; [record](../../docs/proposals/m3/window-performance-executable-footprint.md) |
+| M3 T18 S2 | 0 | 0 | executable-footprint; [record](../../docs/proposals/m3/window-performance-executable-footprint.md) |
 | M3 T2 | 0 | - | [record](../../docs/history/M3-T1-neutral-render-command-seam.md); [record](../../docs/history/M3-T2-win32-command-consumer.md); S not recorded |
 | M3 T3 | 0 | - | [record](../../docs/history/M3-T2-win32-command-consumer.md); [record](../../docs/history/M3-T3-colored-text-frame.md); S not recorded |
 | M3 T4 | 0 | - | [record](../../docs/history/M3-T3-colored-text-frame.md); [record](../../docs/history/M3-T4-vga-indexed-frame.md); S not recorded |
@@ -3803,3 +3806,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T15 S2 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T15-presentation-performance.md) |
 | M3 T16 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T16-mushroom-text-colors.md) |
 | M3 T17 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T17-text-object-role-audit.md) |
+| M3 T18 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/window-performance-executable-footprint.md) |

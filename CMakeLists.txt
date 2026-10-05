@@ -1081,6 +1081,14 @@ if(WIN32)
         mysmb_game_snapshot mysmb_game_io mysmb_text_elements mysmb_io_snapshot user32 gdi32 winmm)
     target_link_libraries(mysmb_win32_snapshot_binding_smoke PRIVATE
         mysmb_game_snapshot mysmb_game_io mysmb_io_color mysmb_text_elements user32 gdi32 winmm)
+    foreach(target mysmb_win32 mysmb_win32_snapshot_binding_smoke mysmb_win32_text_switch_smoke)
+        target_sources(${target} PRIVATE src/platform/win32/frame_wait.c)
+    endforeach()
+    add_executable(mysmb_win32_frame_wait_smoke test/win32_frame_wait_smoke.c
+        src/platform/win32/frame_wait.c)
+    target_include_directories(mysmb_win32_frame_wait_smoke PRIVATE src)
+    target_link_libraries(mysmb_win32_frame_wait_smoke PRIVATE winmm user32)
+    add_test(NAME mysmb.win32-frame-wait-smoke COMMAND mysmb_win32_frame_wait_smoke)
     file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/snapshot-binding-test")
     add_test(NAME mysmb.win32-snapshot-binding-smoke COMMAND mysmb_win32_snapshot_binding_smoke
         "${CMAKE_BINARY_DIR}/snapshot-binding-test")

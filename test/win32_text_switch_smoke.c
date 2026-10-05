@@ -17,6 +17,26 @@ static DWORD saved_pixels[MYSMB_SCREEN_WIDTH*MYSMB_SCREEN_HEIGHT];
 static struct mysmb_io_snapshot expected_snapshot,restored_snapshot;
 static struct mysmb_io_text_frame expected_text;
 static int console_shortcut(HWND window,WORD key,unsigned char down);
+static int presentation_clock_route(HWND window)
+{
+    struct mysmb_io_video_frame video;
+    LARGE_INTEGER before;
+    LONGLONG period;
+    unsigned int i;
+    static unsigned char indices[MYSMB_SCREEN_WIDTH*MYSMB_SCREEN_HEIGHT];
+    for(i=0U;i<sizeof(indices);++i)indices[i]=(unsigned char)i;
+    video.pixels=indices;
+    mysmb_win32_draw_gameplay(&video);
+    for(i=0U;i<sizeof(indices);++i)
+        if(g_pixels[i]!=(DWORD)mysmb_io_color_rgb(indices[i]))return 70;
+    /* A twelve-frame scheduling stall must retain eight frames after one
+     * bounded batch. The former reset-to-now silently removed this debt. */
+    QueryPerformanceCounter(&before);period=g_frequency.QuadPart/60;
+    before.QuadPart-=12*period;g_last_tick=before;
+    mysmb_win32_step(window);
+    if(g_last_tick.QuadPart!=before.QuadPart+4*period)return 71;
+    return 0;
+}
 static void input_only_step(HWND window)
 {
     QueryPerformanceCounter(&g_last_tick);
@@ -251,6 +271,8 @@ int WINAPI WinMain(HINSTANCE instance,HINSTANCE previous,LPSTR command,int show)
         input.buttons=i==120U?MYSMB_BUTTON_START:i>120U?MYSMB_BUTTON_RIGHT:0U;
         input.buttons2=0U;mysmb_game_tick(&g_game,&input,&g_frame);
     }
+    result=presentation_clock_route(window);
+    if(result)return result;
     mysmb_win32_build_frame();
     saved_game=g_game;saved_audio=g_audio_output;
     memcpy(saved_pixels,g_pixels,sizeof(saved_pixels));
