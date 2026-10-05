@@ -89,6 +89,19 @@ static unsigned char decode(const struct mysmb_game *g,unsigned short column,
         if(found!=UNKNOWN && found!=candidate) {*ambiguous=1U;return UNKNOWN;}
         found=candidate;
     }
+    /* Block replacement writes the spent tuple without rewriting attributes.
+     * Its graphic-table group is not its displayed palette selection. */
+    if(found==UNKNOWN) {
+        base=(unsigned short)(g->area_prg[0x0b0bU] |
+            ((unsigned short)g->area_prg[0x0b0fU]<<8U));
+        if(base>=0x8000U) {
+            offset=(unsigned short)(base-0x8000U+16U);
+            if((unsigned long)offset+4UL<=g->area_prg_size) {
+                for(j=0U;j<4U;++j)if(tiles[j]!=g->area_prg[offset+j])break;
+                if(j==4U)found=EMPTY;
+            }
+        }
+    }
     return found;
 }
 

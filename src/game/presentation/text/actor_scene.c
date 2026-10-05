@@ -140,17 +140,27 @@ static int enemy_pose(const struct mysmb_text_observation *item,
     case 53U:e->kind=MYSMB_TEXT_RETAINER;break;
     default:return 0;
     }
+    if(e->kind==MYSMB_TEXT_KOOPA && (g==0x18U || g==0x1eU))
+        e->kind=MYSMB_TEXT_WINGED_KOOPA;
     e->pose=(item->entries[2U]&0x80U)!=0U?MYSMB_TEXT_INVERTED:
         (g==0x06U || g==0x12U || g==0x1eU || g==0x2aU || g==0x36U ||
-         g==0x42U || g==0x4eU || g==0xaeU || g==0xbaU || g==0xc6U ||
+         g==0x42U || g==0x4eU || g==0x96U || g==0xaeU || g==0xbaU || g==0xc6U ||
          g==0xdeU || g==0xe4U)?MYSMB_TEXT_SECOND:0U;
-    if(e->kind==MYSMB_TEXT_SHELL && (g==0x5aU || g==0x60U || g==0x84U))
+    if(e->kind==MYSMB_TEXT_SHELL && (g==0x5aU || g==0x60U ||
+        (item->identity==2U && (g==0x7eU || g==0x84U))))
         e->pose=MYSMB_TEXT_INVERTED;
-    if(e->kind==MYSMB_TEXT_RETAINER && g==0xa2U)e->pose=MYSMB_TEXT_SECOND;
-    if(e->kind==MYSMB_TEXT_SPRING && item->source_size!=24U)e->pose=MYSMB_TEXT_SECOND;
+    if(e->kind==MYSMB_TEXT_SHELL && e->pose!=MYSMB_TEXT_INVERTED &&
+        g==0x6cU)e->pose=MYSMB_TEXT_SECOND;
+    if(e->kind==MYSMB_TEXT_RETAINER && g==0x9cU)e->pose=MYSMB_TEXT_SECOND;
+    if(e->kind==MYSMB_TEXT_SPRING)e->pose=(unsigned char)(item->source_size-24U);
+    if(e->kind==MYSMB_TEXT_HAMMER_BRO && e->pose!=MYSMB_TEXT_INVERTED) {
+        if(g==0xb4U)e->pose=3U;
+        if(g==0xbaU)e->pose=4U;
+    }
     /* Right-column vertical flip is the egg's authored symmetry,not a
      * vertically inverted whole egg. A flat Goomba stays flat. */
-    if(e->kind==MYSMB_TEXT_EGG || e->kind==MYSMB_TEXT_GOOMBA_FLAT)e->pose=0U;
+    if(e->kind==MYSMB_TEXT_EGG)e->pose=g==0x36U?MYSMB_TEXT_SECOND:0U;
+    if(e->kind==MYSMB_TEXT_GOOMBA_FLAT)e->pose=0U;
     return 1;
 }
 
@@ -167,9 +177,12 @@ static int choose(const struct mysmb_game *game,
         e->kind=item->identity==1U?MYSMB_TEXT_FLOWER:
             item->identity==2U?MYSMB_TEXT_STAR:MYSMB_TEXT_MUSHROOM;return 1;
     case MYSMB_TEXT_OBSERVE_FIREBALL:
-    case MYSMB_TEXT_OBSERVE_FIREBAR: e->kind=MYSMB_TEXT_FIREBALL;return 1;
-    case MYSMB_TEXT_OBSERVE_EXPLOSION: e->kind=MYSMB_TEXT_EXPLOSION;return 1;
-    case MYSMB_TEXT_OBSERVE_HAMMER: e->kind=MYSMB_TEXT_HAMMER;return 1;
+    case MYSMB_TEXT_OBSERVE_FIREBAR:
+        e->kind=MYSMB_TEXT_FIREBALL;e->pose=(unsigned char)(item->graphics&1U);return 1;
+    case MYSMB_TEXT_OBSERVE_EXPLOSION:
+        e->kind=MYSMB_TEXT_EXPLOSION;e->pose=item->graphics<3U?item->graphics:2U;return 1;
+    case MYSMB_TEXT_OBSERVE_HAMMER:
+        e->kind=MYSMB_TEXT_HAMMER;e->pose=(unsigned char)(item->graphics&3U);return 1;
     case MYSMB_TEXT_OBSERVE_BLOCK:
         e->kind=item->identity==0xc4U?MYSMB_TEXT_EMPTY_BLOCK:MYSMB_TEXT_BRICK;return 1;
     case MYSMB_TEXT_OBSERVE_FLAME:
@@ -188,6 +201,53 @@ static int choose(const struct mysmb_game *game,
     case MYSMB_TEXT_OBSERVE_STAR_FLAG:e->kind=MYSMB_TEXT_STAR_FLAG;return 1;
     default: return 0;
     }
+}
+
+/* Authored body/detail roles. Source-selected palettes remain per entry;
+ * no tile/pixel census or live object selector runs during presentation. */
+static void actor_colors(const struct mysmb_game *game,unsigned short entry,
+    unsigned short palette,struct mysmb_text_element *e)
+{
+    unsigned char body,detail;
+    body=2U;detail=0U;
+    switch(e->kind) {
+    case MYSMB_TEXT_PLAYER_SMALL:case MYSMB_TEXT_PLAYER_LARGE:
+    case MYSMB_TEXT_LUIGI_SMALL:case MYSMB_TEXT_LUIGI_LARGE:
+        body=entry<2U?1U:entry<4U?2U:entry<6U?1U:3U;detail=3U;break;
+    case MYSMB_TEXT_MUSHROOM:body=entry<2U?3U:2U;detail=1U;break;
+    case MYSMB_TEXT_FLOWER:body=entry<2U?2U:1U;detail=3U;break;
+    case MYSMB_TEXT_STAR:body=3U;detail=1U;break;
+    case MYSMB_TEXT_GOOMBA:body=entry<4U?3U:2U;detail=1U;break;
+    case MYSMB_TEXT_GOOMBA_FLAT:body=3U;detail=1U;break;
+    case MYSMB_TEXT_KOOPA:case MYSMB_TEXT_WINGED_KOOPA:
+        body=entry<4U?3U:1U;detail=2U;break;
+    case MYSMB_TEXT_SHELL:
+        body=1U;detail=2U;break;
+    case MYSMB_TEXT_BEETLE:case MYSMB_TEXT_BULLET:
+        body=1U;detail=2U;break;
+    case MYSMB_TEXT_PIRANHA:body=entry<4U?1U:3U;detail=2U;break;
+    case MYSMB_TEXT_FISH:body=entry<4U?2U:1U;detail=3U;break;
+    case MYSMB_TEXT_HAMMER_BRO:case MYSMB_TEXT_SPINY:case MYSMB_TEXT_EGG:
+    case MYSMB_TEXT_BOWSER_FRONT:case MYSMB_TEXT_BOWSER_REAR:
+        body=1U;detail=3U;break;
+    case MYSMB_TEXT_LAKITU:body=entry<4U?1U:2U;detail=3U;break;
+    case MYSMB_TEXT_FIREBALL:case MYSMB_TEXT_EXPLOSION:
+    case MYSMB_TEXT_PODOBOO:case MYSMB_TEXT_FLAME:
+        body=1U;detail=3U;break;
+    case MYSMB_TEXT_BRICK:case MYSMB_TEXT_EMPTY_BLOCK:case MYSMB_TEXT_CHUNK:
+    case MYSMB_TEXT_HAMMER:case MYSMB_TEXT_PLATFORM:case MYSMB_TEXT_PLATFORM_PART:
+        body=3U;detail=1U;break;
+    case MYSMB_TEXT_VINE:case MYSMB_TEXT_VINE_CAP:case MYSMB_TEXT_VINE_LEAF:
+        body=1U;detail=3U;break;
+    case MYSMB_TEXT_SPRING:body=1U;detail=2U;break;
+    case MYSMB_TEXT_FLAG:case MYSMB_TEXT_STAR_FLAG:body=2U;detail=1U;break;
+    default:break;
+    }
+    e->background=mysmb_io_color_text16(game->palette[0x10U+palette+body]);
+    e->foreground=detail!=0U?
+        mysmb_io_color_text16(game->palette[0x10U+palette+detail]):
+        mysmb_io_color_text_contrast(e->background);
+    if(e->foreground==e->background)e->foreground=mysmb_io_color_text_contrast(e->background);
 }
 
 /* Completed entries retain X even when a row/column's Y is hidden. Unwrap
@@ -310,20 +370,7 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
                 element.y=component_anchor((unsigned short)(game->visible_oam[priority*4U]+1U),50U,240U);
             }
             palette=(unsigned short)((game->visible_oam[priority*4U+2U]&3U)*4U);
-            element.background=mysmb_io_color_text16(game->palette[0x12U+palette]);
-            element.foreground=mysmb_io_color_text_contrast(element.background);
-            if(item->family==MYSMB_TEXT_OBSERVE_POWERUP &&
-                element.kind==MYSMB_TEXT_MUSHROOM) {
-                /* Authored cap/marks/stem roles,not a sampled tile color.
-                 * The committed upper pair carries ink3 cap and ink1 marks;
-                 * the lower pair supplies ink2 stem. Both mushroom identities
-                 * retain their own committed palette and clipping. */
-                element.background=mysmb_io_color_text16(
-                    game->palette[(entry<2U?0x13U:0x12U)+palette]);
-                element.foreground=mysmb_io_color_text16(game->palette[0x11U+palette]);
-                if(element.foreground==element.background)
-                    element.foreground=mysmb_io_color_text_contrast(element.background);
-            }
+            actor_colors(game,entry,palette,&element);
             element.face_left=item->family==MYSMB_TEXT_OBSERVE_VINE?
                 (item->entries[entry*4U+2U]&0x40U)!=0U?1U:0U:
                 (item->facing&2U)!=0U?1U:0U;

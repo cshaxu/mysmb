@@ -13,6 +13,25 @@ static struct mysmb_text_element elements[8];
     fprintf(stderr, "check failed at line %d\n", __LINE__); return 1; \
 } } while (0)
 
+static int distinct_forms(void)
+{
+    static const unsigned char kinds[7]={MYSMB_TEXT_WINGED_KOOPA,MYSMB_TEXT_FIREBALL,
+        MYSMB_TEXT_EXPLOSION,MYSMB_TEXT_SPRING,MYSMB_TEXT_HAMMER_BRO,
+        MYSMB_TEXT_EGG,MYSMB_TEXT_HAMMER};
+    static const unsigned char counts[7]={2U,2U,3U,3U,5U,2U,4U};
+    unsigned short k,a,b;
+    struct mysmb_text_element e;
+    memset(&e,0,sizeof(e));e.x=64;e.y=64;e.foreground=15U;e.background=4U;
+    for(k=0U;k<7U;++k)for(a=0U;a<counts[k];++a)for(b=0U;b<a;++b) {
+        e.kind=kinds[k];e.pose=(unsigned char)a;
+        CHECK(mysmb_text_elements_build(&e,1U,9U,&frame));before=frame;
+        e.pose=(unsigned char)b;
+        CHECK(mysmb_text_elements_build(&e,1U,9U,&frame));
+        CHECK(memcmp(&before,&frame,sizeof(frame))!=0);
+    }
+    return 0;
+}
+
 int main(int argc, char **argv)
 {
     static const char *score_labels[11]={"100","200","400","500","800",
@@ -31,6 +50,7 @@ int main(int argc, char **argv)
     unsigned int last;
     struct mysmb_text_element plain;
     FILE *preview;
+    CHECK(distinct_forms()==0);
 
     /* Exhaustive byte domain and horizontal reflection contract. */
     for(i=0U;i<256U;++i) {
@@ -108,7 +128,11 @@ int main(int argc, char **argv)
     for(i=0U;i<MYSMB_TEXT_KIND_COUNT;++i) {
         elements[0].kind=(mysmb_io_u8)i;elements[0].x=64;elements[0].y=64;
         for(row=0U;row<(i==MYSMB_TEXT_LUIGI_SMALL || i==MYSMB_TEXT_LUIGI_LARGE?
-            MYSMB_TEXT_PLAYER_POSES:i==MYSMB_TEXT_SCORE?11U:i==MYSMB_TEXT_JUMP_COIN?4U:
+            MYSMB_TEXT_PLAYER_POSES:i==MYSMB_TEXT_WINGED_KOOPA?3U:
+            i==MYSMB_TEXT_FIREBALL?2U:i==MYSMB_TEXT_EXPLOSION || i==MYSMB_TEXT_SPRING?3U:
+            i==MYSMB_TEXT_HAMMER_BRO?5U:
+            i==MYSMB_TEXT_HAMMER?4U:
+            i==MYSMB_TEXT_SCORE?11U:i==MYSMB_TEXT_JUMP_COIN?4U:
             i==MYSMB_TEXT_FLAG_SCORE?5U:i>=MYSMB_TEXT_VINE_LEAF?1U:i<2U?MYSMB_TEXT_PLAYER_POSES:
             i==MYSMB_TEXT_GOOMBA || i>=MYSMB_TEXT_GOOMBA_FLAT?3U:1U);++row) {
             elements[0].pose=(mysmb_io_u8)row;

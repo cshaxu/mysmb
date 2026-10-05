@@ -13,16 +13,24 @@
   6/136 groups and42/952 facets closed,130 groups/910 facets pending.
   Material993 partial,not a denominator;two findings/all13 coverage slots open.
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
-- M3 T9/T10/T11/T12/T13/T14/T15/T16 are closed. Remaining M2 verification stays at the
+- M3 T9/T10/T11/T12/T13/T14/T15/T16/T17 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are361995/445966/462144bytes.
-  T16 S1 refreshes all three with shared mushroom text colors.
+- Current local DOS16/Win32/x64 products are364127/448241/464926bytes.
+  T17 S1 refreshes all three with authored object/form roles and spent blocks.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
   pass;seeded presenter equality is explicitly separate. Real486SX speed,
   full heap/stack peak and hardware/version qualification remain M4.
 
 ## Compact closure status
+
+M3 T17 S1 P1 closes the all-object/form text design census:17observer families,
+46kinds,101background positions. Confirmed colors/forms/spent-block gaps repaired;
+354template cases,864enemy cases,power-up palette/latch checks,both-width9tests,
+2048boundary/1198native unchanged indexed frames,final owned host routes,DOS16
+link and DOSBox text round-trip pass. Products refreshed;code/tests7files,
++275/-31lines,new0. No original game/ABI/platform change,no all-game proof.
+[T17 design matrix and closure](../history/M3-T17-text-object-role-audit.md).
 
 M3 T16 S1 P1 closes authored mushroom palette roles:cap ink3,marks ink1,
 stem ink2. All4power-up identities/4palette slots,committed OAM/dynamic palette,

@@ -94,9 +94,23 @@ static int mushroom_colors(void)
         mark=mysmb_io_color_text16(identity==0U?0x16U:0x1aU);
         stem=mysmb_io_color_text16(0x30U);
         CHECK(memcmp(&before,&game,sizeof(game))==0);
-        if(identity==1U || identity==2U) {
+        if(identity==1U) {
             CHECK(frame.cells[20U*80U+27U].background==stem);
-            CHECK(frame.cells[20U*80U+27U].foreground==mysmb_io_color_text_contrast(stem));
+            CHECK(frame.cells[20U*80U+27U].foreground==cap);
+            CHECK(frame.cells[22U*80U+27U].background==mark);
+            game.palette[0x13U+palette*4U]=0x1aU;
+            CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+            CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+            CHECK(frame.cells[20U*80U+27U].foreground==mark);
+            continue;
+        }
+        if(identity==2U) {
+            CHECK(frame.cells[21U*80U+27U].background==cap);
+            CHECK(frame.cells[21U*80U+27U].foreground==mark);
+            game.palette[0x13U+palette*4U]=0x16U;
+            CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+            CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+            CHECK(frame.cells[21U*80U+27U].background==mysmb_io_color_text16(0x16U));
             continue;
         }
         CHECK(cap!=stem && mark!=cap);
@@ -121,12 +135,92 @@ static int mushroom_colors(void)
     return 0;
 }
 
+static int object_forms(void)
+{
+    /* Neutral selected-graphics metadata,not original tile/art bytes. */
+    static const unsigned char forms[][3]={
+        {0U,0x0cU,255U},{0U,0x12U,255U},{0U,0x5aU,255U},{0U,0x66U,255U},
+        {2U,0U,255U},{2U,6U,255U},{2U,0x7eU,255U},{2U,0x84U,255U},
+        {3U,0x0cU,255U},{3U,0x12U,255U},{3U,0x60U,255U},{3U,0x6cU,255U},
+        {5U,0xa8U,255U},{5U,0xaeU,255U},{5U,0xb4U,255U},{5U,0xbaU,255U},
+        {6U,0x54U,255U},{6U,0x8aU,255U},{7U,0x3cU,255U},{7U,0x42U,255U},
+        {8U,0xeaU,255U},{51U,0xeaU,255U},
+        {9U,0x18U,255U},{10U,0x48U,255U},{10U,0x4eU,255U},
+        {11U,0x48U,255U},{11U,0x4eU,255U},{20U,0x48U,255U},{20U,0x4eU,255U},
+        {12U,0xccU,255U},{13U,0xc0U,255U},{13U,0xc6U,255U},
+        {14U,0x18U,255U},{14U,0x1eU,255U},{15U,0x18U,255U},{15U,0x1eU,255U},
+        {16U,0x18U,255U},{16U,0x1eU,255U},{17U,0x90U,255U},{17U,0x96U,255U},
+        {18U,0x24U,255U},{18U,0x2aU,255U},{18U,0x30U,255U},{18U,0x36U,255U},
+        {53U,0x9cU,255U},{53U,0xa2U,255U},
+        {1U,0xd2U,22U},{1U,0xdeU,22U},{1U,0xd8U,23U},{1U,0xe4U,23U},
+        {1U,0xf0U,24U},{1U,0xf6U,25U},{1U,0xfcU,26U},
+        {4U,0x0cU,255U}
+    };
+    struct mysmb_text_actor_receipt receipt;
+    unsigned short n,p,flip,facing,i,c,visible;
+    for(n=0U;n<sizeof(forms)/sizeof(forms[0]);++n)
+    for(p=0U;p<4U;++p)for(flip=0U;flip<2U;++flip)for(facing=1U;facing<3U;++facing) {
+        memset(&game,0,sizeof(game));
+        for(i=0U;i<64U;++i)game.ram[0x0200U+i*4U]=0xf8U;
+        game.visible_ppu_mask=0x1eU;
+        game.palette[0x11U+p*4U]=0x16U;
+        game.palette[0x12U+p*4U]=0x30U;
+        game.palette[0x13U+p*4U]=0x27U;
+        mysmb_text_observer_enable(&game,1U);
+        for(i=0U;i<6U;++i) {
+            sprite((unsigned short)(8U+i),(unsigned char)(80U+(i%2U)*8U),
+                (unsigned char)(95U+(i/2U)*8U));
+            game.ram[0x0202U+(8U+i)*4U]=(unsigned char)(p|(flip!=0U?0x80U:0U));
+        }
+        mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_ENEMY,forms[n][0],0U,
+            forms[n][1],(unsigned char)facing,32U,6U,forms[n][2]);
+        mysmb_game_submit_oam(&game);before=game;
+        CHECK(mysmb_text_elements_build(0,0U,9U,&frame));
+        CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+        CHECK(receipt.unsupported==0U && receipt.drawn==1U);
+        CHECK(memcmp(&before,&game,sizeof(game))==0);
+        visible=0U;
+        for(c=0U;c<4000U;++c)if(frame.cells[c].character!=' ')++visible;
+        CHECK(visible!=0U);
+        if(p==0U && flip==0U && facing==1U) {
+            if(forms[n][0]>=14U && forms[n][0]<=16U) {
+                if(forms[n][1]==0x18U)CHECK(frame.cells[20U*80U+25U].character=='\\');
+                if(forms[n][1]==0x1eU)CHECK(frame.cells[20U*80U+26U].character=='/');
+            }
+            if(forms[n][2]>=24U && forms[n][2]<=26U)
+                CHECK(visible==(forms[n][2]==24U?12U:forms[n][2]==25U?10U:5U));
+            if(forms[n][0]==5U && forms[n][1]==0xb4U)
+                CHECK(frame.cells[22U*80U+29U].character=='>');
+            if(forms[n][0]==5U && forms[n][1]==0xbaU)
+                CHECK(frame.cells[20U*80U+25U].character=='^');
+            if(forms[n][0]==18U && forms[n][1]==0x36U)
+                CHECK(frame.cells[21U*80U+26U].character=='O');
+            if(forms[n][0]==53U)
+                CHECK(frame.cells[20U*80U+27U].character==
+                    (forms[n][1]==0x9cU?'P':'T'));
+        }
+        /* Canonical palette roles must actually occur in the visible art. */
+        if(forms[n][0]==6U || forms[n][0]==13U || forms[n][0]==8U || forms[n][0]==2U) {
+            unsigned char color;
+            color=mysmb_io_color_text16(forms[n][0]==6U?0x27U:0x16U);
+            visible=0U;
+            for(c=0U;c<4000U;++c)if(frame.cells[c].background==color ||
+                frame.cells[c].foreground==color)++visible;
+            CHECK(visible!=0U);
+        }
+    }
+    printf("object forms: %u selected enemy forms x4 palettes x2 vertical/facing states passed\n",
+        (unsigned int)(sizeof(forms)/sizeof(forms[0])));
+    return 0;
+}
+
 int main(void)
 {
     struct mysmb_text_actor_receipt receipt;
     unsigned short i;
     CHECK(dynamic_words()==0);
     CHECK(mushroom_colors()==0);
+    CHECK(object_forms()==0);
     memset(&game,0,sizeof(game));
     for(i=0U;i<64U;++i)game.ram[0x0200U+i*4U]=0xf8U;
     game.visible_ppu_mask=0x1eU;
@@ -190,7 +284,7 @@ int main(void)
     /* Independent chunks and interleaved original entry priority. */
     mysmb_text_observer_enable(&game,1U);
     for(i=0U;i<64U;++i)game.ram[0x0200U+i*4U]=0xf8U;
-    game.palette[0x16U]=0x1aU;
+    game.palette[0x17U]=0x1aU;
     sprite(8U,80U,95U);sprite(9U,120U,95U);sprite(10U,120U,95U);
     mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_CHUNKS,
         0U,0U,0U,1U,32U,3U,0U);

@@ -42,6 +42,28 @@ int main(void)
     game.area_prg=prg;game.area_prg_size=sizeof(prg);
     game.visible_ppu_mask=0x1eU;game.visible_sprite0_split=1U;
     game.palette[0U]=0x22U;game.palette[2U]=0x1aU;game.palette[6U]=0x17U;
+    /* Unique owner-authored spent tuple,independent of table group. */
+    prg[0x1310U]=0x31U;prg[0x1311U]=0x99U;
+    prg[0x1312U]=0x33U;prg[0x1313U]=0x88U;
+    /* The spent graphic remains visible with every inherited attribute.
+     * The source replacement changes tiles,not attribute bytes. */
+    for(g=0U;g<4U;++g) {
+        put(0U,4U,8U,3U,4U);
+        i=0x3c0U+4U*8U+2U;
+        game.name_table[0][i]=(unsigned char)((game.name_table[0][i]&0xfcU)|g);
+        game.palette[g*4U+2U]=0x17U;
+        before=game;
+        CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
+        CHECK(r.unsupported==0U && r.objects==1U);
+        CHECK(frame.cells[27U*80U+20U].character==MYSMB_IO_GLYPH_TOP_LEFT);
+        CHECK(frame.cells[28U*80U+22U].background!=frame.cells[0U].background);
+        CHECK(memcmp(&before,&game,sizeof(game))==0);
+        /* Blank replacement stays blank;hidden blocks are not invented. */
+        game.name_table[0][8U*64U+8U]=game.name_table[0][8U*64U+9U]=0x24U;
+        game.name_table[0][8U*64U+40U]=game.name_table[0][8U*64U+41U]=0x24U;
+        CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
+        CHECK(r.objects==0U);
+    }
     for(row=9U;row<12U;++row) {
         put(0U,6U,row,0U,row==9U?16U:20U);
         put(0U,7U,row,0U,row==9U?17U:21U);

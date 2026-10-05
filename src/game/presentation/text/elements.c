@@ -97,6 +97,31 @@ static const struct mysmb_text_art actors[19][2] = {
     {{"\xda\xc4\xc4\xc4\xbf" "\xb3   \xb3" "\xc0\xc4\xc4\xc4\xd9",5U,3U},{"\xda\xc4\xc4\xc4\xbf" "\xb3   \xb3" "\xc0\xc4\xc4\xc4\xd9",5U,3U}}
 };
 static const struct mysmb_text_art goomba_second={" \xdc\xdb\xdb\xdc" "(o_o)" " /|\\ ",5U,3U};
+static const struct mysmb_text_art winged[2]={
+    {"\\ __/" " /o> " "(###)" " / \\ " "/_ _\\",5U,5U},
+    {" /__\\" " /o> " "(###)" " /|  " "/ \\_ ",5U,5U}
+};
+static const struct mysmb_text_art fire_phases[2]={
+    {"@",1U,1U},{"*",1U,1U}
+};
+static const struct mysmb_text_art explosions[3]={
+    {"   " " * " "   ",3U,3U},
+    {"\\ /" " * " "/ \\",3U,3U},
+    {"\\|/" "-*-" "/|\\",3U,3U}
+};
+static const struct mysmb_text_art springs[3]={
+    {"[===]" " /\\  " "[===]",5U,3U},
+    {"[===]" "[===]",5U,2U},{"[===]",5U,1U}
+};
+static const struct mysmb_text_art hammer_throw[2]={
+    {" _H_ " " /o> " "[##]>" " /|\\ " " / \\ ",5U,5U},
+    {"^_H_ " " /o>>" "[##] " " /|  " "/_ \\ ",5U,5U}
+};
+static const struct mysmb_text_art egg_second={"/^^\\" "(OO)" "\\__/",4U,3U};
+static const struct mysmb_text_art hammers[4]={
+    {"[]" " |",2U,2U},{" |" "==",2U,2U},
+    {"| " "[]",2U,2U},{"==" "| ",2U,2U}
+};
 static const struct mysmb_text_art scenery[15] = {
     { " \xdc\xdb\xdb\xdc" "(o_o)" "/   \\", 5U, 3U },
     { " \xdc\xdb\xdb\xdc" "(o_o)" "  |  ", 5U, 3U },
@@ -119,6 +144,14 @@ static const struct mysmb_text_art scenery[15] = {
 static const struct mysmb_text_art *art_for(
     const struct mysmb_text_element MYSMB_IO_FAR *element)
 {
+    if(element->kind==MYSMB_TEXT_WINGED_KOOPA)return &winged[element->pose==1U?1U:0U];
+    if(element->kind==MYSMB_TEXT_FIREBALL)return &fire_phases[element->pose];
+    if(element->kind==MYSMB_TEXT_EXPLOSION)return &explosions[element->pose];
+    if(element->kind==MYSMB_TEXT_SPRING)return &springs[element->pose];
+    if(element->kind==MYSMB_TEXT_HAMMER_BRO && element->pose>=3U)
+        return &hammer_throw[element->pose-3U];
+    if(element->kind==MYSMB_TEXT_EGG && element->pose==1U)return &egg_second;
+    if(element->kind==MYSMB_TEXT_HAMMER)return &hammers[element->pose];
     if (element->kind == MYSMB_TEXT_PLAYER_SMALL ||
         element->kind == MYSMB_TEXT_LUIGI_SMALL) return &small[element->pose];
     if (element->kind == MYSMB_TEXT_PLAYER_LARGE ||
@@ -156,6 +189,12 @@ static int valid_element(const struct mysmb_text_element MYSMB_IO_FAR *e)
         e->face_left <= 1U && e->foreground <= 15U && e->background <= 15U &&
         (e->kind==MYSMB_TEXT_LUIGI_SMALL || e->kind==MYSMB_TEXT_LUIGI_LARGE ?
             e->pose<MYSMB_TEXT_PLAYER_POSES:
+         e->kind==MYSMB_TEXT_WINGED_KOOPA ? e->pose<=2U:
+         e->kind==MYSMB_TEXT_FIREBALL ? e->pose<2U:
+         e->kind==MYSMB_TEXT_EXPLOSION ? e->pose<3U:
+         e->kind==MYSMB_TEXT_SPRING ? e->pose<3U:
+         e->kind==MYSMB_TEXT_HAMMER_BRO ? e->pose<5U:
+         e->kind==MYSMB_TEXT_HAMMER ? e->pose<4U:
          e->kind==MYSMB_TEXT_STAR_FLAG ? e->pose==0U:
          e->kind==MYSMB_TEXT_SCORE ? e->pose<11U:
          e->kind==MYSMB_TEXT_JUMP_COIN ? e->pose<4U:
@@ -192,8 +231,10 @@ int mysmb_text_element_draw(
         x = project(element->x, 80L, 256L);
         y = project(element->y, 50L, 240L);
         for (row = 0U; row < art->height; ++row) {
-            source_row=(mysmb_io_u16)((element->kind>=MYSMB_TEXT_GOOMBA &&
-                element->kind<MYSMB_TEXT_JUMP_COIN &&
+            source_row=(mysmb_io_u16)(((element->kind==MYSMB_TEXT_WINGED_KOOPA ||
+                (element->kind>=MYSMB_TEXT_GOOMBA && element->kind<MYSMB_TEXT_JUMP_COIN &&
+                 element->kind!=MYSMB_TEXT_EXPLOSION && element->kind!=MYSMB_TEXT_SPRING &&
+                 element->kind!=MYSMB_TEXT_HAMMER)) &&
                 element->pose==MYSMB_TEXT_INVERTED?art->height-1U-row:row)*art->width);
             row_left=0U;row_right=art->width;
             while(row_left<art->width && art->cells[source_row+row_left]==' ')row_left++;
@@ -213,8 +254,10 @@ int mysmb_text_element_draw(
                     (mysmb_io_u16)destination_x,
                     (mysmb_io_u16)destination_y)) continue;
                 if (face_left != 0U) glyph = mirror(glyph);
-                if(element->kind>=MYSMB_TEXT_GOOMBA &&
-                    element->kind<MYSMB_TEXT_JUMP_COIN && element->pose==MYSMB_TEXT_INVERTED) {
+                if((element->kind==MYSMB_TEXT_WINGED_KOOPA ||
+                    (element->kind>=MYSMB_TEXT_GOOMBA && element->kind<MYSMB_TEXT_JUMP_COIN &&
+                     element->kind!=MYSMB_TEXT_EXPLOSION && element->kind!=MYSMB_TEXT_SPRING &&
+                     element->kind!=MYSMB_TEXT_HAMMER)) && element->pose==MYSMB_TEXT_INVERTED) {
                     glyph=mysmb_io_text_glyph_flip(glyph);
                 }
                 cell = (mysmb_io_u16)(destination_y * 80L + destination_x);
