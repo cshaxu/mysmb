@@ -1118,6 +1118,13 @@ if(WIN32)
     set_target_properties(mysmb_win32 PROPERTIES
         OUTPUT_NAME "mysmb-win32-${MYSMB_WIN32_ARCH}"
     )
+    if(CMAKE_C_COMPILER_ID STREQUAL "GNU" AND CMAKE_STRIP)
+        # Remove the non-loaded COFF symbol tail only. Preserve every mapped
+        # section (including CRT debug sections),RVAs and resource bytes.
+        add_custom_command(TARGET mysmb_win32 POST_BUILD
+            COMMAND "${CMAKE_STRIP}" --strip-all "--keep-section=.debug*"
+                "$<TARGET_FILE:mysmb_win32>" VERBATIM)
+    endif()
 endif()
 
 enable_testing()

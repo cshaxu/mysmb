@@ -13,10 +13,10 @@
   6/136 groups and42/952 facets closed,130 groups/910 facets pending.
   Material993 partial,not a denominator;two findings/all13 coverage slots open.
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
-- M3 T9/T10/T11/T12/T13/T14/T15/T16/T17 are closed. Remaining M2 verification stays at the
+- M3 T9/T10/T11/T12/T13/T14/T15/T16/T17/T18 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are364127/451327/468010bytes.
-  T18 S1 refreshes all three with equivalent RGB lookup and host deadline waits.
+- Current local DOS16/Win32/x64 products are364127/311947/319595bytes.
+  T18 S1/S2 refresh all three with host deadline waits and equivalent symbol-tail removal.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
   pass;seeded presenter equality is explicitly separate. Real486SX speed,
@@ -24,12 +24,14 @@
 
 ## Compact closure status
 
-M3 T18 S1 P1 closes reproduced host pacing repairs;T18 S2 stays planned.
-Owned high-resolution/message-aware waits retain tick debt;RGB lookup is equal.
-Both widths10tests/host routes,2048boundary/1198native pixel-state cases,
-DOS16 and DOSBox pass. Audio-on graphics p99 drops32ms to17.8/18.6ms;
-long frames22/24 to0/1. No physical-scanout/RDP/486or whole-ROM claim,new0.
-[T18 S1 evidence](../proposals/m3/window-performance-executable-footprint.md).
+M3 T18 S1/S2 close measured deadline-wait/RGB and disk-footprint repairs.
+Audio-on graphics p99 drops32ms to17.8/18.6ms,long frames22/24to0/1;
+system/audio/console outliers remain explicit. Both widths10tests/host routes,
+2048boundary/1198native equality,DOS16 and byte-bound DOSBox receipts pass.
+Windows files shrink30.9/31.7percent;every mapped section/load field is equal.
+DOS file/minimum-loader footprint retained;physical/RDP/486limits remain.
+S1 code/test/tool7files,+350/-10;S2 build/tool2files,+91/-0,new0.
+[T18 closure and limits](../history/M3-T18-window-performance-executable-footprint.md).
 
 M3 T17 S1 P1 closes the all-object/form text design census:17observer families,
 46kinds,101background positions. Confirmed colors/forms/spent-block gaps repaired;

@@ -182,3 +182,92 @@ Empty node scope/expected/actual,new0. Historical1992/1992,retained local
 nodes1991/1992 and feasible controls4260/4261(raw4342,infeasible81) unchanged.
 M2 certification is still incomplete;S1 performance evidence earns no ROM
 node/edge certification. Prior ledger custody and evidence are preserved.
+
+## S2 P1 Admission
+
+S1 is closed;sequential S2 admitted. Estimated2-4files,60-120lines.
+Retain historical toolchain/embedded contract;no new packer or game change.
+Only proven loader-identical reductions are implemented;memory/startup and
+physical-machine uncertainty remain explicit. Empty scope/new0.
+
+## S2 P1 Review And T18 Closure
+
+S2 implements only non-loaded COFF tail removal in the GNU Windows product
+post-link step. The installed matching strip tool removes symbols while
+explicitly retaining .debug* sections. Ordinary strip-all was rejected:it also
+removed mapped CRT debug sections and changed image/header extents. Retaining
+all sections gives a narrower proof and avoids claiming changed memory layout
+equivalent. Test runners retain symbols for diagnostics. MSVC and the historical
+DOS compiler/linker are unaffected;no dependency or packer was introduced.
+
+The neutral inspection tool compares every section's size,RVA,characteristics
+and full raw hash,entry,machine,image base,stack reserve,all data directories,
+loader characteristics and optional header hash. The optional header excludes
+only checksum;COFF comparison excludes only line/local-symbol-stripped flags.
+Both rebuilt products have no loader differences against retained S1 outputs.
+Import,relocation,exception/TLS,resource,code and data bytes are unchanged.
+This proves the selected removal,not a generic acceptance of arbitrary strip
+operations. No executable or program bytes are written into tracked evidence.
+
+| Product | Before file bytes | After file bytes | Saved | Before/after512-byte cluster allocation |
+| --- | --- | --- | --- | --- |
+| DOS16 | 364127 | 364127 | 0 | 364544/364544 |
+| Win32 | 451327 | 311947 | 139380(30.9percent) | 451584/312320 |
+| Win64 | 468010 | 319595 | 148415(31.7percent) | 468480/320000 |
+
+The cluster size is declared for comparison,not observed filesystem allocation.
+There are no required companion resources;the existing single-file embedded
+contract remains. Windows mapped-image extents remain765952/778240bytes;
+disk savings are not claimed as reduced runtime working set or faster gameplay.
+All section hashes and loader fields are identical,so loader relocation work
+and startup game/audio operations remain identical. No faster-startup claim.
+
+DOS MZ has8704header bytes,2149relocations,355423image-file bytes and no tail.
+Its map reports242276CODE,96768FAR_DATA,15996DATA,66BEGDATA,8CONST,217MSG,
+31144BSS and2048STACK bytes. Loaded classes total355331bytes;the remaining
+92image bytes are segment/alignment slack. BSS/stack are loader memory rather
+than extra file payload. Extra minimum2076paragraphs make a388640-byte minimum
+loader allocation,excluding PSP and dynamic allocations. Maximum-extra65535
+requests available conventional memory through the existing runtime contract.
+The map segment extent is388624bytes;paragraph/header rounding explains the
+different minimum. The merged CRT _TEXT segment is11206bytes;the map does not
+give a reliable exact per-library-member attribution,so none is invented.
+
+No material safe DOS file reduction was established. Removing alignment or
+relocations changes address bindings;turning on historical compiler optimizers
+changes actual game instructions;deduplicating immutable tables needs binding
+and machine-width proofs. These are rejected changes here,not covert future
+obligations or a new whole-ROM audit. No unused program state,text artwork,
+embedded bytes or runtime feature was deleted. No packer was used. Full heap
+and stack peaks,486SX startup/speed and DOS-version qualification stay in the
+existing M4 hardware work;static minimum is not a sufficient-machine claim.
+
+Both widths pass the10integrated focused CTests again and the seven actual
+owned host route groups on the stripped products. Both products retain S1's
+unchanged loaded code/data;earlier2048boundary/1198native frame/state proof
+has no changed renderer dependency to reopen. Original DOS16 rebuilt again;
+its complete product hash is unchanged,so S1's actual DOSBox operational
+receipt binds the final DOS output exactly. All three final local EXEs are
+refreshed and package hashes match build outputs.
+
+S1 cadence rechecks retain477ticks/477frames per8seconds. During concurrent
+builds,x64 text p95/p99 reached19.163/25.227ms with6over25ms intervals;the
+serialized final sample gives20.074/21.204ms with1over25ms. Final graphical
+x64 median/p95/p99 is16.649/18.135/19.509ms,zero over25ms. The text p95 is
+0.074ms above the S1 local20ms target;these records remain visible rather than
+reclassifying every sample as a pass. No loaded-byte or timing-code change
+exists between S1/S2,so there is no introduced pacing regression. Local targets
+are diagnostic observations,not a real-time guarantee under arbitrary host
+load. Persistent coarse graphics waits are repaired;system/audio/console
+scheduling outliers and physical scanout/RDP/486 limits remain explicit.
+
+Actual S2 build/tool scope2files,+91/-0lines. Similar-issue sweep covers both
+GNU product targets,all PE sections and DOS header/map classes. COFF tails are
+removed;debug sections retained;DOS padding/BSS/runtime changes rejected;
+no product-code,resource or ABI change. All raw maps,inventory receipts,trial
+binaries and profiles remain ignored beneath build/m3-t18-s2. Inspection can
+be repeated with tools/Inspect-ExecutableFootprint.py --input plus --compare
+and --output build/...;DOS adds its ignored --map. Empty node scope/expected/
+actual,new0;historical1992/1992,retained local1991/1992nodes and4260/4261feasible
+controls unchanged. M2 certification remains incomplete. S1/S2 and T18 close;
+no successor is automatically admitted by this task.
