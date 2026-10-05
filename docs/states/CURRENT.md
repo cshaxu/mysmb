@@ -1,25 +1,25 @@
 # Project Status
 
-## M3 T28 S3 Packet
+## M3 T28 S4 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T28 S3 P3; occupancy/compact-cache comparison after bounded memory audit. |
-| Admission And Approval | Owner authorizes execution and the joint conventional-memory/playability contract. S2 closed;S3 remains active. |
-| Objective | S1/S2 bounded memory audit completed;compare occupancy and compact/bounded CHR candidates against S1/S2;minimize peak DOS conventional memory while preserving playability,allowing small measured time cost for material memory savings only within the playable budget;memory-fit/startup and performance/playability are independent mandatory gates. |
-| Non-goals | No core ROM routine/state/timing changes,no emulator settings,no text/VGA redesign,no nominal-cadence or M2/M4 acceptance. |
+| Identifier Mode | Continuation: M3 T28 S4 P1; exact stretch-row reuse and bounded VGA storage. |
+| Admission And Approval | Owner authorizes execution and the joint conventional-memory/playability contract. S3 closed;S4 is active. |
+| Objective | Compare four-plane storage with single-plane/row/batch scratch and duplicate-row reuse;preserve every indexed/packed output and full borderless640x400 scanout;measure peak conventional storage and complete output cost;fit and playability remain independent hard gates. |
+| Non-goals | No core ROM routine/state/timing changes,no emulator settings,no text artwork or VGA coordinate/mode changes,no nominal-cadence or M2/M4 acceptance. |
 | Reference Baseline | Post-T27 source and retained three products;historical1992/1992,local1991/1992 nodes and4260/4261 feasible controls,raw4342/infeasible81. |
 | Candidate Proposal | [T28 retained proposal and audit](../history/M3-T28-dos-rendering-optimization.md). Removed from pending QUEUE on admission. |
-| Files And ABI Surface | Shared ppu/frame cache/workspace,composition-root lifetime binding and focused tests/build membership;P2 audit changed2governance files,no product/EXE change. Next occupancy estimate80-200lines,2-4files;compact-cache option150-350lines,4-7files with pre-change report. No core/state/snapshot ABI changes. |
+| Files And ABI Surface | platform/vga frame conversion,DOS device/main composition and focused tests/build membership;estimate4-7files,150-350 changed lines. No core/PPU-state/snapshot ABI changes. |
 | Applicable Rules | README Task Reading Set,EXECUTION,DOCUMENT,ARCHITECTURE,CODING,CONTRIBUTING and source policy. |
 | Verification | Independent complete indexed/reference equality,resource/reset/fallback/two-instance/cache tests,native x86/x64 and DOS16 far-memory builds;S1 fixed-config complete-frame/input timing,simultaneous peak allocations/contiguous free blocks/stack/fallback checks under the proposal memory contract,platform purity and three EXEs for every product-code P. |
-| Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0,maximum1992/1992;no custody transfer. S3 owns infrastructure-only implementation;original node custodians unchanged. |
+| Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0,maximum1992/1992;no custody transfer. S4 owns infrastructure-only implementation;original node custodians unchanged. |
 | Asset Needs | Existing owner-local resources/derived products only,local ignored build containment;no new import or redistribution. Prior owner exception for existing tracked EXEs retained;every product-code P refreshes all three,with local probes/resources contained below ignored build. |
 | Reporting Requirements | Before each S owners,scope and estimated size;after each P actual diff,tests/products and total/local counters. Report absolute peak bytes,contiguous requirements and whole-frame/input costs,accepted tradeoffs and unproved limits;separate opportunity from measured gain. |
 | Stop Conditions | Pixel/state/snapshot/audio divergence,unbounded memory or cache lifetime,unproved required-storage fit,unacceptable playability regression,missing fixed-config timing,or proposed core/PPU semantic change prevents advancing the affected optimization. |
-| Exit Criteria | S3 resolves scoped occupancy equality/lifetime/memory cases,records measured joint memory/performance candidate acceptance/rejection and cumulative cost,refreshes three products for changed code;T exit remains all six dispositions plus integrated proof. |
+| Exit Criteria | S4 resolves exact128000-byte mapping/plane readback/mode lifetime,far guards and measured row/storage candidate dispositions;three products for code changes. T exit remains all six dispositions and integrated joint fit/playability proof. |
 | Original Owner Request | Owner authorizes execution after reviewed T28 plan;preserve original ROM and PPU semantics. |
-| Similar-Issue Sweep | Sweep CHR bindings/frame consumers plus mandatory/optional allocation lifetimes,peak/contiguous fit,fallback,mode/restore coexistence and stale inputs;record every hit and disposition. |
+| Similar-Issue Sweep | Sweep scaled coordinate/duplicate-row consumers,plane/address submissions and storage/mode/restore lifetimes;record every hit and disposition. |
 
 ## Current Technical Baseline
 
@@ -34,7 +34,7 @@
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11/T12/T13/T14/T15/T16/T17/T18 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are429039/319627/328299bytes.
+- Current local DOS16/Win32/x64 products are429295/319627/328299bytes.
   T22 refreshes all three with RAM-authoritative NMI page handoff;T21 coral,T20 titles/tree/fence and T18 timing retained.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
@@ -43,13 +43,14 @@
 
 ## Compact closure status
 
-T28 S3 P2 memory prerequisite audit:instrumented S1/S2 owned conventional peaks
-575632/610160bytes;largest remaining external blocks73440/38912. Four lifecycle
-routes,including real allocation pressure,24complete outputs and final snapshots
-agree;cache fallback works. Graphical/text packs coexist and CRT retains freed
-heap blocks. Exact pristine minimum/full stack/hardware fit and playability are
-not certified. Products unchanged,new0;S3 occupancy/cache decision remains active.
-[Bounded audit and limitations](../history/M3-T28-dos-rendering-optimization.md#s3-p2-audit-result-bounded-conventional-memory-lifecycle-baseline).
+T28 S3 closes compact8KiB raw-index cache/direct opacity and matched near/far
+allocation ownership. Bounded normal peak578176bytes versus S2 610160;external
+largest70896 versus38912. Output-only total cost+1.364-3.749percent versus S2,
+cold total-9.551percent;not playable cadence certification. Both widths7tests/
+13host groups,four DOS ABI cases,four lifetime/fallback routes and paired full
+frames/snapshots pass. Products429295/319627/328299bytes;5files,+84/-33,new0.
+S4 bounded VGA storage/row reuse active;T28 and M2/M4 qualification unfinished.
+[Evidence and limits](../history/M3-T28-dos-rendering-optimization.md#s3-p3-closure-compact-raw-index-cache-and-bounded-opacity-queries).
 
 T28 S2 closes optional per-instance decoded CHR cache;rejected slower palette
 staging/naive cache. Fixed-config warm PPU stage12.682-15.579percent shorter,
@@ -103,22 +104,3 @@ frame145,scroll0,with pipe/stairs/full terrain. Both widths8tests/7host groups,
 2048boundary/1198native comparisons,DOS16/DOSBox pass. Products364801/312971/
 320107bytes;two product/testfiles,+44/-1,no ABI/new node or M2 certification.
 [T22 original source,missing integration clause and route limits](../history/M3-T22-pipe-exit-display-recovery.md).
-
-
-M3 T21 S1/S2 close source ink3 pink coral glyphs on retained water-blue scene
-background. S2 supersedes S1 contrast fill;two files,+6/-6,new0. Both widths
-8focusedtests and controlled water2-2 each2048boundary/1198native comparisons
-pass. Console4000cell readback matches;65pink branches retain blue background9.
-Original DOS16/DOSBox pass;products364785/312971/320107bytes match builds.
-Prior night/snow receipts retained;no game/graphics change or ROM credit.
-[T21 scene evidence and limits](../history/M3-T21-water-snow-text-colors.md).
-
-
-M3 T20 S1/S2/S3 close console title MySMB,DOS diagnostic-banner removal and
-shared tree crown/trunk/fence classification,shape and palette-role repairs.
-S1 both widths5tests,S2 both widths8tests;seven private-host groups each,
-2048boundary/1198native graphics-state equality and actual DOSBox regression
-pass. S3 light fence/brown ground passes resource-bound world5-1 and DOSBox checks.
-Final products364737/312971/320107bytes. S1 code/test/tool4files,+11/-3;
-S2 product/test2files,+76/-6;S3 product/test2files,+8/-6,new0. T19 remains suspended,not repaired.
-[T20 scope,evidence and limits](../history/M3-T20-text-interface-corrections.md).

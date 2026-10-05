@@ -11,6 +11,15 @@ scoped evidence and track only named unresolved/invalidated clauses.
 Material993 is a partial enumerated set;its global denominator is unknown.
 The full current-build node/edge/output/gameplay certificate is **not issued**.
 
+## M3 T28 S3 - compact compositor cache and bounded memory comparison
+
+Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and
+4260/4261feasible controls(raw4342,infeasible81) unchanged. Four bounded DOS
+lifetime/fallback routes,independent full-frame and native/host checks preserve
+scoped semantics;no new ROM or final-certificate credit. S4 infrastructure
+admitted with empty scope;original node custodians unchanged.
+[Results and unresolved qualification](../history/M3-T28-dos-rendering-optimization.md#s3-p3-closure-compact-raw-index-cache-and-bounded-opacity-queries).
+
 ## M3 T28 S2 - optional compositor cache
 
 Scope/expected/actual[],new0;historical1992/1992,local1991/1992 and4260/4261

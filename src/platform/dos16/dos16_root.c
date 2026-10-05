@@ -10,7 +10,7 @@ int mysmb_dos16_root_initialize(struct mysmb_dos16_root *root,
     mysmb_u8 __far *pixels;
 #endif
     mysmb_ppu_frame_workspace_bind(&root->ppu_workspace,0);
-    root->ppu_cache_attempted=0U;
+    root->ppu_cache_attempted=0U;root->ppu_cache_near=0U;
     root->initialized=0U;
     root->snapshot_store=0;root->reset_output=0;root->reset_context=0;
     root->text_workspace=0;root->text_frame=0;root->set_mode=0;
@@ -51,6 +51,10 @@ void mysmb_dos16_root_bind_snapshot(struct mysmb_dos16_root *root,
 static void present_current(struct mysmb_dos16_root *root)
 {
     struct mysmb_io_video_frame video;
+#ifdef MYSMB_DOS16_TARGET
+    mysmb_u8 __near *near_cache;
+    mysmb_u8 __far *decoded;
+#endif
     if(root->text_mode) {
         if(mysmb_text_scene_build(&root->game,root->text_workspace,root->text_frame)) {
             root->present_text(root->hooks.context,root->text_frame);return;
@@ -63,8 +67,13 @@ static void present_current(struct mysmb_dos16_root *root)
      * optional buffer must never displace required product storage. */
     if(!root->ppu_cache_attempted) {
         root->ppu_cache_attempted=1U;
-        mysmb_ppu_frame_workspace_bind(&root->ppu_workspace,
-            (mysmb_u8 __far *)_fmalloc(MYSMB_PPU_CHR_DECODED_BYTES));
+        /* Reuse the primary-block reserve before requesting another DOS block.
+         * Preserve allocation provenance for the matching shutdown operation. */
+        near_cache=(mysmb_u8 __near *)_nmalloc(MYSMB_PPU_CHR_DECODED_BYTES);
+        root->ppu_cache_near=(mysmb_io_u8)(near_cache!=0);
+        decoded=near_cache?(mysmb_u8 __far *)near_cache:
+            (mysmb_u8 __far *)_fmalloc(MYSMB_PPU_CHR_DECODED_BYTES);
+        mysmb_ppu_frame_workspace_bind(&root->ppu_workspace,decoded);
     }
 #endif
     mysmb_ppu_frame_build_cached(&root->game.ppu,&root->ppu_frame,&root->ppu_workspace);
@@ -123,7 +132,11 @@ void mysmb_dos16_root_shutdown(struct mysmb_dos16_root *root)
 {
     if (root->initialized==0U) return;
 #ifdef MYSMB_DOS16_TARGET
-    if(root->ppu_workspace.decoded)_ffree(root->ppu_workspace.decoded);
+    if(root->ppu_workspace.decoded) {
+        if(root->ppu_cache_near)_nfree((mysmb_u8 __near *)root->ppu_workspace.decoded);
+        else _ffree(root->ppu_workspace.decoded);
+    }
+    root->ppu_cache_near=0U;
     mysmb_ppu_frame_workspace_bind(&root->ppu_workspace,0);
     _ffree(root->ppu_frame.pixels);
     root->ppu_frame.pixels=0;

@@ -530,3 +530,140 @@ No gameplay/PPU semantics or three product EXEs changed;two governance files
 carry this audit. Historical1992/1992,local1991/1992nodes and4260/4261feasible
 controls(raw4342,infeasible81),scope/expected/actual[],new0,unchanged. Original
 custody and active S3 remain in place;no successor S is admitted by this audit.
+
+
+## S3 P3 closure: compact raw-index cache and bounded opacity queries
+
+S3 closes its incremental representation/lifetime comparison,not T28 or the
+joint final fit/playability gate. Shared compositor caches8192bytes of packed
+two-bit indices instead of32768;two bytes encode each eight-pixel row. An
+immutable16-entry nibble-spread table bounds cold decode work. Sprite priority
+queries raw background index zero directly,without palette lookup or an extra
+opacity bitmap. Current scroll/split/masks,banks,OAM,flips and palette values
+remain frame inputs. Cache bindings remain per instance;reset/rebind invalidates
+immutable CHR identity/size,including explicit reset after in-place test mutation.
+Null/short resources retain bounded zero reads;allocation failure uses the
+unchanged uncached path. No core routine,PPU storage or snapshot ABI changes.
+
+DOS composition attempts the optional cache only after required packs. It
+first uses the primary-block near-heap reserve,then far heap;the root records
+allocation provenance and matches _nmalloc/_nfree or _fmalloc/_ffree explicitly.
+An automatic review rejected an earlier unmatched near/far release proposal;
+no rejected change was applied. The matched ownership alternative is implemented
+and verified. Windows caller storage shrinks through the same shared size constant.
+No global mutable cache or platform gameplay policy is introduced.
+
+| Candidate | Disposition and paired result |
+| --- | --- |
+| Packed8KiB naive decoder | Rejected in favor of the same-size faster spread/row-staged decoder. |
+| Packed16KiB | Rejected:more memory and slower cold/warm costs than the8KiB alternative. |
+| Per-frame7680-byte opacity bitmap | Rejected:extra memory and substantially slower corpus output,including dense sprites. |
+| Packed8KiB,staged row reads,direct raw opacity | Retained incremental S3 default;S6 must qualify the cumulative product against both fit and playability gates. |
+
+Original compiler/runtime and unchanged installed DOSBox configuration are
+used. Two sequential final runs have identical PIT costs for the paired stages;
+all six61440-byte buffers and10035-byte snapshots equal retained S1/S2 colored
+fixtures. Configuration SHA256 remains
+0494236f2308e2e615f428d04e6470db4b0d162c95b51f4e276f1b7e73241917.
+Private-desktop normal SDL avoids foreground input;no emulator override is used.
+
+| Paired scene | S1 PPU ticks | S2 PPU ticks | S3 PPU ticks | S2 total ticks | S3 total ticks |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| First colored title,cold | 1195922 | 1511516 | 1252314 | 2712451 | 2453373 |
+| Restored ground | 1195923 | 1009609 | 1071430 | 8411815 | 8474104 |
+| Water output fixture | 1330366 | 1142572 | 1229956 | 2331035 | 2418417 |
+| Castle output fixture | 1330367 | 1142567 | 1229956 | 2331028 | 2418417 |
+| Dense64-sprite output fixture | 1461802 | 1276422 | 1310047 | 2464883 | 2498507 |
+
+A PIT tick uses1193182Hz nominal conversion. S3 water/castle/dense composed
+PPU+stretch+device outputs cost about2.027/2.027/2.094seconds in this fixed
+probe environment,versus1.954/1.954/2.066seconds for S2. This is not playable
+cadence acceptance. Cold total is9.551percent shorter;restored-ground total
+is0.740percent longer and includes root/snapshot bookkeeping. The output-only
+water/castle/dense totals are3.749/3.749/1.364percent longer than S2;their PPU
+stages alone are7.648/7.648/2.634percent longer. Warm ground PPU is6.123percent
+longer. S3 remains faster than S1 warm PPU. Do not extrapolate these isolated
+output fixtures to original-game cadence,input responsiveness or486SX speed.
+Normal cadence/input and cumulative acceptance remain S6/M4 obligations.
+
+| Current lifetime route | Owned conventional peak | Minimum external DOS contiguous block | Peak live far / near payload |
+| --- | ---: | ---: | ---: |
+| Normal matched near-first allocation | 578176bytes | 70896bytes | 97436 /8192bytes |
+| Both cache allocators injected to fail | 577728bytes | 71344bytes | 97436 /0bytes |
+| Near reserve exhausted,real far fallback | 586432bytes,includes test near ballast | 62640bytes | 105628 /8192bytes,test ballast |
+| Both heaps under real pressure | 648064bytes,includes deliberate ballast | 1008bytes | 97436 /8192bytes,test ballast |
+
+Normal primary block475568bytes,environment160 and auxiliary reservations
+102448bytes include instrumentation. Compared with bounded S2 peak610160,
+normal S3 is31984bytes lower;observer/layout differences prevent treating that
+as an exact pristine saving. Cache storage itself saves24576bytes;using primary
+reserve avoids an extra cache DOS block in the normal observed route. Compared
+with S1 peak575632,S3 is2544bytes higher. Required pixel/snapshot/text packs
+remain61440/20084/15400bytes;no mandatory storage is displaced. New near-heap
+walking distinguishes payload from the primary reserve already included in MCB
+counts;the earlier far-only payload table was not a total-live-payload claim.
+
+Four routes cover warmed title,restored ground,text,graphics,save/load and
+shutdown. Normal/far routes allocate valid cache;injected and genuine pressure
+routes remain uncached. Each matches all six complete outputs and final snapshot.
+Real pressure reserves the near heap as well as leaving only1008bytes external;
+external pressure alone is insufficient because runtime allocation can reuse
+primary reserves. Final near/far live counts are zero after matching frees and
+ballast cleanup;CRT retains free blocks until exit,as already documented.
+Stack observer marks78/100/76/76bytes untouched,with previous marking margins;
+no stack reduction or pristine/all-route stack certification follows.
+
+Native x86/x64 each pass seven focused tests,including2048 boundary fixtures,
+1198 native-route comparisons,two instances/reset/resource fallback/guards and
+four explicit palette-alias/behind/front/left-mask priority cases. Each actual
+Windows product passes13 private-host startup/input/Tab/snapshot/focus/close
+regression groups. Original DOS far-pointer ABI probe passes four complete
+frames,null/truncated/full/fallback,guards and unchanged state. Current original
+DOS product compiles/links;DGROUP49472,max segment64000,stack2048 and minimum
+loaded image453824bytes are structural checks,not total-runtime requirements.
+
+Three refreshed owner-authorized tracked artifacts are429295/319627/328299bytes:
+
+- DOS16 SHA256 ed8725eb0a9bb56040a1ee522ecde89091ab336214e27cbad3ecf2375413ff14.
+- Win32 SHA256 4629d477cb4ac7df71ea4a28858d9540f1c0599c8abadfd00167262b32d11a01.
+- x64 SHA256 c9a9fa965bb23f16fda27be1b42147b36bddb12d09a47a02cfc6708690fc7d3d.
+
+Owner exception applies only to these existing tracked EXEs,not new protected
+imports or release permission. All compiler/probe/raw-frame/snapshot/report
+outputs stay ignored under build/m3-t28-s3. Five product/test files,+84/-33;
+shared frame representation and root allocation ownership are the only changes.
+Source sweep covers all decoded-row/sprite/opacity consumers,workspace bindings,
+mandatory/optional allocation ordering and shutdown provenance. Every identified
+hit is updated or unchanged by contract;no unresolved scoped output difference.
+Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
+infeasible81) unchanged;scope/expected/actual[],new0,no custody transfer.
+
+S3 bounded comparison is complete;pristine minimum-free threshold,full-stack,
+input/cadence and real DOS/486SX qualification are not. S4 receives full128000-byte
+VGA-plane storage and repeated-row conversion;S5 retains pack-lifetime/reuse
+analysis;S6 receives the cumulative memory/playability default decision.
+
+## S4 admission: exact stretch-row reuse and bounded VGA storage
+
+M3 T28 S4 P1 is admitted automatically under the owner's ongoing execution
+mandate. Owners are platform/vga frame conversion,DOS devices/main composition
+and corresponding focused tests/build membership. Estimate4-7 product/test/build
+files,150-350 changed lines. No original game or PPU state/semantics changes.
+
+Compare four retained32000-byte planes with single-plane,scanline or small-batch
+scratch and repeated-row reuse. Every256x240 source coordinate,full640x400
+borderless scanout,plane/address selection,palette and presenter mode lifetime
+must remain identical. Keep complete output;no frame/tick/input suppression.
+Measure incremental/cumulative memory and complete output costs in the unchanged
+runtime before selecting an alternative. Specialized transfers require actual
+far/segment guards and readback,not just native arithmetic tests.
+
+Entry is the const indexed frame;exit is complete VGA device submission. S3 is
+the accepted representation dependency;S5 consumes resulting lifetime/storage
+facts. Scope/expected/actual ROM labels[];historical1992/1992,local1991/1992 and
+4260/4261feasible controls unchanged,maximum1992/1992,new0. Original receiving
+node custodians are retained. Verification combines independent128000-byte
+packed mapping equality,native/far boundaries,actual plane readback/mode restore,
+focused tests/platform purity and three products for each product-code P.
+Exit requires a documented accepted/rejected bounded-storage and row-reuse
+choice with exact output,state and measured memory/time evidence. T28 remains open.

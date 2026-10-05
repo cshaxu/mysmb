@@ -103,6 +103,33 @@ static int cache_lifetimes(void)
     printf("cache_lifetimes=two_instances_reset_resource_fallback guards=pass\n");
     return 0;
 }
+static int cache_priority_alias(void)
+{
+    unsigned int n;
+    unsigned char saved[5];
+    before=game;
+    saved[0]=chr[0];saved[1]=chr[1];saved[2]=chr[16];saved[3]=chr[9];saved[4]=chr[24];
+    memset(&game,0,sizeof(game));memset(game.ppu.visible_oam,0xffU,256U);
+    game.ppu.chr_data=chr;game.ppu.chr_data_size=8192U;
+    chr[0]=chr[1]=chr[16]=0x80U;chr[9]=chr[24]=0U;
+    game.ppu.visible_oam[0]=0U;game.ppu.visible_oam[1]=1U;
+    game.ppu.visible_oam[3]=0U;game.ppu.palette[0]=game.ppu.palette[1]=5U;
+    game.ppu.palette[0x11U]=7U;
+    mysmb_ppu_frame_workspace_bind(&cache_workspace,cache_store+1U);
+    for(n=0U;n<4U;++n) {
+        game.ppu.visible_ppu_mask=(unsigned char)(n<2U?0x1eU:0x1cU);
+        game.ppu.visible_oam[2]=(unsigned char)(n%2U==0U?0x20U:0U);
+        mysmb_ppu_frame_reference(&game,&reference);
+        mysmb_ppu_frame_build_cached(&game.ppu,&cached,&cache_workspace);
+        if(memcmp(reference.pixels,cached.pixels,sizeof(cached.pixels)))return 16;
+        if(cached.pixels[256U]!=(n==0U?5U:7U))return 17;
+    }
+    chr[0]=saved[0];chr[1]=saved[1];chr[16]=saved[2];chr[9]=saved[3];chr[24]=saved[4];
+    game=before;
+    mysmb_ppu_frame_workspace_bind(&cache_workspace,cache_store+1U);
+    printf("cache_priority_alias=4 cases raw-opacity/mask/front-behind pass\n");
+    return 0;
+}
 static void scale_reference(const struct mysmb_io_video_frame *video)
 {
     unsigned int x,y;
@@ -135,6 +162,7 @@ int main(void)
     QueryPerformanceFrequency(&frequency);
     result=compare_frames(2048U);if(result)return result;
     result=cache_lifetimes();if(result)return result;
+    result=cache_priority_alias();if(result)return result;
     /* Identical densely populated fixture;timing never changes pass/fail. */
     game.ppu.chr_data=chr;game.ppu.chr_data_size=8192U;game.ppu.visible_ppu_mask=0x1eU;
     n=512U;start=stamp();

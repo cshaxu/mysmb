@@ -13,8 +13,9 @@ enum {
 
 #define MYSMB_PPU_FRAME_FAR MYSMB_IO_FAR
 
-#define MYSMB_PPU_CHR_DECODED_BYTES 32768U
-/* Caller-owned optional storage;CHR is immutable until rebind/reset. */
+#define MYSMB_PPU_CHR_DECODED_BYTES 8192U
+/* Caller-owned packed two-bit indices,four pixels per byte.
+ * Each tile row uses two bytes;CHR is immutable until rebind/reset. */
 struct mysmb_ppu_frame_workspace {
     mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded;
     const mysmb_io_u8 *chr;

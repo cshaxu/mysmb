@@ -19,6 +19,7 @@ struct mysmb_dos16_root {
     struct mysmb_ppu_frame ppu_frame;
     struct mysmb_ppu_frame_workspace ppu_workspace;
     mysmb_io_u8 ppu_cache_attempted;
+    mysmb_io_u8 ppu_cache_near;
     struct mysmb_dos16_hooks hooks;
     struct mysmb_io_audio_frame audio_frame;
     mysmb_io_u8 audio_available;
