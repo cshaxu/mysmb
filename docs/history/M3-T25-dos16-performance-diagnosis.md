@@ -4,7 +4,7 @@ The owner reports that the actual DOSBox game is too slow to play. Prior startup
 input and exit probes establish operation, not frame throughput. This task is
 **diagnosis only**: measure the existing DOS16 product and identify the dominant
 cause with reproducible evidence. It does not edit product code, package a new
-EXE or claim a performance repair. [The repair candidate](../proposals/m3/dos16-performance-repair.md)
+EXE or claim a performance repair. [The admitted repair](M3-T26-dos16-playable-performance.md)
 retains follow-up implementation and acceptance.
 
 ## Planned S1 scope and estimate

@@ -2,7 +2,7 @@
 
 **Idle.**
 
-M3 T25 S1 diagnosis closed;repair remains queued.
+M3 T26 S1 performance repair closed;T19 remains suspended,next visual audit queued.
 
 ## Current Technical Baseline
 
@@ -17,7 +17,7 @@ M3 T25 S1 diagnosis closed;repair remains queued.
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11/T12/T13/T14/T15/T16/T17/T18 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are364939/318603/326251bytes.
+- Current local DOS16/Win32/x64 products are365723/319115/327275bytes.
   T22 refreshes all three with RAM-authoritative NMI page handoff;T21 coral,T20 titles/tree/fence and T18 timing retained.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
@@ -25,6 +25,14 @@ M3 T25 S1 diagnosis closed;repair remains queued.
   full heap/stack peak and hardware/version qualification remain M4.
 
 ## Compact closure status
+
+M3 T26 S1 closes bounded DOS background row staging:guest PIT background
+1599.1->1007.3ms default,16.117->10.417ms accelerated;counter-only11->16 and
+1145->1745steps under the same scripts. Both widths14tests,2048boundary and
+1198native comparisons,real DOS128far-frame equality,input/text/snapshot/exit
+pass. Products365723/319115/327275bytes;source/test2files,+70/-6,new0.
+Default DOSBox remains CPU-limited;dynamic/max operation is not physical486
+qualification. [Scope,receipts and limits](../history/M3-T26-dos16-playable-performance.md#s1-closure-and-t26-review).
 
 M3 T24 S4 corrects window/console input gating under unavailable/different
 foreground HWND. Old root rejects both targeted event paths,current accepts.
@@ -84,11 +92,3 @@ Windows files shrink30.9/31.7percent;every mapped section/load field is equal.
 DOS file/minimum-loader footprint retained;physical/RDP/486limits remain.
 S1 code/test/tool7files,+350/-10;S2 build/tool2files,+91/-0,new0.
 [T18 closure and limits](../history/M3-T18-window-performance-executable-footprint.md).
-
-M3 T17 S1 P1 closes the all-object/form text design census:17observer families,
-46kinds,101background positions. Confirmed colors/forms/spent-block gaps repaired;
-354template cases,864enemy cases,power-up palette/latch checks,both-width9tests,
-2048boundary/1198native unchanged indexed frames,final owned host routes,DOS16
-link and DOSBox text round-trip pass. Products refreshed;code/tests7files,
-+275/-31lines,new0. No original game/ABI/platform change,no all-game proof.
-[T17 design matrix and closure](../history/M3-T17-text-object-role-audit.md).

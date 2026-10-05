@@ -1,4 +1,5 @@
 #include "game/ppu_frame.h"
+#include <string.h>
 
 #ifdef MYSMB_DOS16_TARGET
 void mysmb_ppu_frame_bind_pixels(struct mysmb_ppu_frame *frame,
@@ -75,6 +76,15 @@ static void mysmb_ppu_background_row(const struct mysmb_game *game,
 {
     mysmb_u16 source_y,row,source_x,x,column,table,pattern,count,i;
     mysmb_u8 attribute,palette,low,high,color,phase;
+    mysmb_u8 pixels[MYSMB_SCREEN_WIDTH],colors[16];
+    const mysmb_u8 *chr;
+    mysmb_u16 chr_size,pattern_base;
+    /* Palette and row staging are stack-owned. Avoid a far game/pixel access
+     * for every output dot; one bounded copy publishes the completed row. */
+    for(i=0U;i<16U;++i)colors[i]=game->palette[i];
+    colors[4]=colors[8]=colors[12]=colors[0];
+    chr=game->chr_data;chr_size=game->chr_data_size;
+    pattern_base=(game->visible_ppu_control_0&0x10U)?0x1000U:0U;
     source_y=(mysmb_u16)((y+scroll_y)%480U);
     row=(mysmb_u16)((source_y%240U)/8U);
     source_x=scroll_x;x=0U;
@@ -83,22 +93,33 @@ static void mysmb_ppu_background_row(const struct mysmb_game *game,
         column=(mysmb_u16)((source_x&255U)>>3U);
         attribute=game->name_table[table][0x3c0U+(row>>2U)*8U+(column>>2U)];
         palette=(mysmb_u8)((attribute>>(((row&2U)<<1U)+(column&2U)))&3U);
-        pattern=(mysmb_u16)(((game->visible_ppu_control_0&0x10U)?0x1000U:0U)+
+        pattern=(mysmb_u16)(pattern_base+
             game->name_table[table][row*32U+column]*16U+(source_y&7U));
         phase=(mysmb_u8)(source_x&7U);
-        low=(mysmb_u8)(mysmb_ppu_pattern(game,pattern)<<phase);
-        high=(mysmb_u8)(mysmb_ppu_pattern(game,(mysmb_u16)(pattern+8U))<<phase);
+        low=(mysmb_u8)((chr!=0 && pattern<chr_size?chr[pattern]:0U)<<phase);
+        high=(mysmb_u8)((chr!=0 && pattern+8U<chr_size?chr[pattern+8U]:0U)<<phase);
+        palette=(mysmb_u8)(palette*4U);
         count=(mysmb_u16)(8U-phase);
         if(count>MYSMB_SCREEN_WIDTH-x)count=(mysmb_u16)(MYSMB_SCREEN_WIDTH-x);
-        for(i=0U;i<count;++i) {
+        if(count==8U) {
+            pixels[x+0U]=colors[palette+(((low>>7U)&1U)|((high>>6U)&2U))];
+            pixels[x+1U]=colors[palette+(((low>>6U)&1U)|((high>>5U)&2U))];
+            pixels[x+2U]=colors[palette+(((low>>5U)&1U)|((high>>4U)&2U))];
+            pixels[x+3U]=colors[palette+(((low>>4U)&1U)|((high>>3U)&2U))];
+            pixels[x+4U]=colors[palette+(((low>>3U)&1U)|((high>>2U)&2U))];
+            pixels[x+5U]=colors[palette+(((low>>2U)&1U)|((high>>1U)&2U))];
+            pixels[x+6U]=colors[palette+(((low>>1U)&1U)|((high>>0U)&2U))];
+            pixels[x+7U]=colors[palette+((low&1U)|((high<<1U)&2U))];
+        } else for(i=0U;i<count;++i) {
             color=(mysmb_u8)((low>>7U)|((high>>6U)&2U));
-            out[x+i]=game->palette[color?(mysmb_u16)(palette*4U+color):0U];
+            pixels[x+i]=colors[palette+color];
             low=(mysmb_u8)(low<<1U);high=(mysmb_u8)(high<<1U);
         }
         x=(mysmb_u16)(x+count);source_x=(mysmb_u16)((source_x+count)&511U);
     }
     if((game->visible_ppu_mask&2U)==0U)
-        for(x=0U;x<8U;++x)out[x]=game->palette[0U];
+        for(x=0U;x<8U;++x)pixels[x]=colors[0U];
+    memcpy(out,pixels,MYSMB_SCREEN_WIDTH);
 }
 
 void mysmb_ppu_frame_build(const struct mysmb_game *game,
