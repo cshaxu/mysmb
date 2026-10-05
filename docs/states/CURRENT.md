@@ -2,7 +2,7 @@
 
 **Idle.**
 
-M3 T22 S2 P1 closed;T19 remains owner-suspended in the [queue](QUEUE.md).
+T23 closed;owner directs next queue candidate as T24. T19 stays suspended.
 
 ## Current Technical Baseline
 
@@ -17,7 +17,7 @@ M3 T22 S2 P1 closed;T19 remains owner-suspended in the [queue](QUEUE.md).
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11/T12/T13/T14/T15/T16/T17/T18 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are364817/312971/320107bytes.
+- Current local DOS16/Win32/x64 products are364939/312971/320619bytes.
   T22 refreshes all three with RAM-authoritative NMI page handoff;T21 coral,T20 titles/tree/fence and T18 timing retained.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
@@ -25,6 +25,13 @@ M3 T22 S2 P1 closed;T19 remains owner-suspended in the [queue](QUEUE.md).
   full heap/stack peak and hardware/version qualification remain M4.
 
 ## Compact closure status
+
+M3 T23 S1 closes princess/Toad authored details and retainer-only crown
+cell-center anchoring.64palette/form/offset/latch cases,existing864enemy and
+16384word cases pass. Both widths9tests/7host groups,2048boundary/1198native
+graphics/state checks,actual retainer writer->DMA equality,DOS16/DOSBox pass.
+Three products364939/312971/320619bytes;code/test3files,+60/-2,no ABI/new0.
+[Retainer evidence and limits](../history/M3-T23-princess-text-detail.md).
 
 M3 T22 S2 closes bounded H01-H10 handoff review:one packet-header RAM/cache
 source mismatch repaired in game.c;512divergent control cases fail62 before

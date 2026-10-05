@@ -135,6 +135,55 @@ static int mushroom_colors(void)
     return 0;
 }
 
+static int retainer_details(void)
+{
+    struct mysmb_text_actor_receipt receipt;
+    unsigned short form,p,i,c,colors,dy,row;
+    unsigned char red,white,skin;
+    for(form=0U;form<2U;++form)for(p=0U;p<4U;++p)for(dy=0U;dy<8U;++dy) {
+        memset(&game,0,sizeof(game));game.visible_ppu_mask=0x1eU;
+        for(i=0U;i<64U;++i)game.ram[0x0200U+i*4U]=0xf8U;
+        game.palette[0x11U+p*4U]=0x16U;
+        game.palette[0x12U+p*4U]=0x30U;
+        game.palette[0x13U+p*4U]=0x27U;
+        red=mysmb_io_color_text16(0x16U);
+        white=mysmb_io_color_text16(0x30U);
+        skin=mysmb_io_color_text16(0x27U);
+        mysmb_text_observer_enable(&game,1U);
+        for(i=0U;i<6U;++i) {
+            sprite((unsigned short)(8U+i),(unsigned char)(80U+(i%2U)*8U),
+                (unsigned char)(95U+dy+(i/2U)*8U));
+            game.ram[0x0202U+(8U+i)*4U]=(unsigned char)p;
+        }
+        mysmb_text_observer_record(&game,MYSMB_TEXT_OBSERVE_ENEMY,53U,0U,
+            form==0U?0x9cU:0xa2U,1U,32U,6U,255U);
+        mysmb_game_submit_oam(&game);
+        /* Live producer changes must not change the committed retainer. */
+        game.ram[0x0202U+32U]=(unsigned char)((p+1U)&3U);
+        before=game;
+        CHECK(mysmb_text_elements_build(0,0U,0U,&frame));
+        CHECK(mysmb_text_actor_scene_draw(&game,&actor_workspace,0,&frame,&receipt));
+        CHECK(receipt.drawn==1U && receipt.unsupported==0U);
+        CHECK(memcmp(&before,&game,sizeof(game))==0);
+        colors=0U;
+        for(c=0U;c<4000U;++c)if(frame.cells[c].character!=' ') {
+            if(frame.cells[c].background==red)colors|=1U;
+            if(frame.cells[c].background==white)colors|=2U;
+            if(frame.cells[c].foreground==skin)colors|=4U;
+        }
+        if(colors!=7U)fprintf(stderr,"retainer form=%u palette=%u dy=%u roles=%u\n",
+            (unsigned int)form,(unsigned int)p,(unsigned int)dy,(unsigned int)colors);
+        CHECK(colors==7U);
+        row=(unsigned short)(((96U+dy)*50U-120U+239U)/240U);
+        if(form==0U) {
+            CHECK(frame.cells[row*80U+27U].character=='P');
+            CHECK(frame.cells[row*80U+27U].background==red);
+            CHECK(frame.cells[(row+4U)*80U+27U].background==white);
+        } else CHECK(frame.cells[row*80U+27U].character=='T');
+    }
+    return 0;
+}
+
 static int object_forms(void)
 {
     /* Neutral selected-graphics metadata,not original tile/art bytes. */
@@ -220,6 +269,7 @@ int main(void)
     unsigned short i;
     CHECK(dynamic_words()==0);
     CHECK(mushroom_colors()==0);
+    CHECK(retainer_details()==0);
     CHECK(object_forms()==0);
     memset(&game,0,sizeof(game));
     for(i=0U;i<64U;++i)game.ram[0x0200U+i*4U]=0xf8U;

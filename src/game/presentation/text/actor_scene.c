@@ -240,6 +240,10 @@ static void actor_colors(const struct mysmb_game *game,unsigned short entry,
     case MYSMB_TEXT_VINE:case MYSMB_TEXT_VINE_CAP:case MYSMB_TEXT_VINE_LEAF:
         body=1U;detail=3U;break;
     case MYSMB_TEXT_SPRING:body=1U;detail=2U;break;
+    case MYSMB_TEXT_RETAINER:
+        /* Committed castle palette: red hair/cap,skin face,white dress.
+         * Both source-selected retainers keep their own authored silhouette. */
+        body=entry<2U?1U:entry<4U?3U:2U;detail=entry<2U?3U:1U;break;
     case MYSMB_TEXT_FLAG:case MYSMB_TEXT_STAR_FLAG:body=2U;detail=1U;break;
     default:break;
     }
@@ -340,6 +344,10 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
                 if(seen[i]==0U)receipt->unsupported++;
                 seen[i]=1U;continue;
             }
+            /* Keep the retainer's crown on a cell center inside its first
+             * committed sprite row,including fractional vertical anchors. */
+            if(element.kind==MYSMB_TEXT_RETAINER && element.y>=0 && element.y<240)
+                element.y=component_anchor((unsigned short)element.y,50U,240U);
             if(item->family==MYSMB_TEXT_OBSERVE_PLAYER &&
                 (item->identity&MYSMB_TEXT_PLAYER_KICK_FLAG)!=0U &&
                 entry==6U+((item->facing&1U)==0U?1U:0U))
