@@ -238,3 +238,47 @@ S1 source/graph census and interface review continue. Historical1992/1992,
 local nodes1991/1992 and feasible controls4260/4261(raw4342,infeasible81) are
 unchanged;new0. The current receipts establish a source-bound migration
 baseline within the tested contracts,not complete original-game certification.
+
+## S1 P3 closure and S2 P1 admission
+
+S1 closes the bounded migration census:185file destinations,751C function
+definitions,143macros,1996include/build consumer sites,206PPU/receipt member
+sites in14owners and four non-arrow seams are dispositioned in the ignored
+hash-bound manifests. These are C migration inventories,not original-ROM edge
+certification. The one authored-cell filter callback stays in text. No indirect
+ROM dispatch pointer is introduced. Original source bodies and retained ROM
+contracts remain the authority for every later mechanical migration.
+
+One additional test-only helper,mysmb_area_refresh_background_page in area.c,
+has no product caller;S7 must separate it with validation projections while
+retaining its body/test compatibility. It does not replace the translated
+RenderAreaGraphics packet writer. S1's source-bound3builds/14tests per Windows
+width and saved reference sources/products establish the migration baseline.
+No product source changes,no artifact refresh,new0. S1 scope/actual[],no
+unfinished node custody. S2 proceeds under the existing owner approval.
+
+S2 extracts one embedded PPU state with independent neutral byte/word types,
+leaves oam_dma_primed in core,and mechanically qualifies all original PPU
+member accesses. Borrowed const state is the later compositor input;no state
+duplication,per-frame copy or public snapshot-format change. A PPU-owned DMA
+primitive accepts the original256-byte CPU OAM span;core decides its call
+point and commits observation receipts afterwards. Preserve all branches,
+RAM mirrors,write order,resource binds,mask/scroll/split and palette aliases.
+
+Scope is the42existing registry labels in the state-access functions below;
+all incoming locally exact,expected new[],maximum historical1992/1992.
+Ownership is accepted by coordinator under owner-approved component migration,
+with append-only sender-specific events. This is maintenance/migration,not
+a new ROM audit round or promotion. Other accepted labels retain custody.
+
+`Start`, `WBootCheck`, `ColdBoot`, `VRAM_Buffer_Offset`, `NonMaskableInterrupt`, `ScreenOff`, `InitBuffer`, `NoDecTimers`, `PauseSkip`, `Sprite0Clr`, `Sprite0Hit`, `HBlankDelay`, `SkipSprite0`, `SkipMainOper`, `OperModeExecutionTree`, `TitleScreenMode`, `WSelectBufferTemplate`, `RunDemo`, `VictoryMode`, `AutoPlayer`, `InitializeNameTables`, `WriteNTAddr`, `InitNTLoop`, `InitATLoop`, `WriteBufferToScreen`, `SetupWrites`, `GetLength`, `OutputToVRAM`, `RepeatByte`, `UpdateScreen`, `InitScroll`, `WritePPUReg1`, `ScrollHandler`, `ChkNearMid`, `ScrollScreen`, `InitScrlAmt`, `ChkPOffscr`, `KeepOnscr`, `InitPlatScrl`, `X_SubtracterData`, `OffscrJoypadBitsData`, `GetScreenPosition`.
+
+Estimated S2 change:PPU state header/primitive,game container,mechanical source/
+test/tool member qualifications and snapshot macros;300-700changed lines.
+Follow the complete use-site manifest rather than arbitrary edits. Check all
+old accesses and primitive callers,normalize qualifications against saved
+source bodies,run existing NMI/bootstrap/VRAM/snapshot/PPU/text tests and
+cross-width output/state comparison,original DOS16 build and focused far ABI.
+Refresh3products after code change. No scoped difference may be carried into
+S3;S2 closes only with source/write-order and separate operational evidence.
+Original bindings remain local;no new ROM/disassembly or third-party import.
