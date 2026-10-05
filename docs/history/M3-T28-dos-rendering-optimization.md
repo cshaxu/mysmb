@@ -1291,3 +1291,94 @@ alone has no measured runtime gain while CRT retains the complete near segment;
 minimum MZ reduction is insufficient. Do not shrink stack/CRT blocks blindly or
 change emulator settings. Keep progress tied to measured complete output and
 actual DOS reservations;cadence/input gates remain unfulfilled.
+
+## S6 P5 checkpoint: exact full zero-pattern tile row fill
+
+One shared read-only PPU source file adds3lines. When a full cached eight-pixel
+row has both decoded bytes zero,all eight source indices are zero. Local palette
+entries0/4/8/12 already alias the universal background color,so one bounded
+memset fills exactly those eight pixels. Nonzero rows retain all eight lookups;
+partial tiles and uncached paths are unchanged. Sprite opacity/priority,scroll
+split,left masks,state,resource binding,game ticks/audio and snapshot/IO schema
+are unchanged. No dirty-frame approximation,pixel suppression or extra cache.
+The current candidate source matches the contained two-run performance prototype.
+
+The similar-issue sweep covers universal palette aliases,zero/nonzero full rows,
+partial first/last tiles,short/null resources,cache resource/reset and raw sprite
+priority queries. It also identifies an overlooked optimization opportunity:
+the cached sprite path selects decoded pixel values but still performs two
+unused raw pattern reads first. P4's statement that other readers already select
+paths did not prove those reads were skipped. Its scoped output/cost evidence
+remains valid;the remaining sprite-read cost is explicitly received by P6,not
+misrepresented as a ROM logic mismatch or already optimized code.
+
+Both widths pass10focused tests,including independent raw/full renderer checks,
+2048boundary and1198native game-state/output cases,cache lifetime/resource/null/
+short/priority cases,VGA guards,snapshot continuation,clock/pacing and purity.
+Each width passes13new private-desktop host routes for the actual changed Windows
+product and its rebuilt fixtures. The unrelated default-all legacy Cannon Children
+link debt from P4 remains in TODO;these are focused receipts,not all-target proof.
+Original OpenNT16/historical runtime builds the full DOS product without new flags.
+
+Three DOS normal/cache-failure/pressure routes each match five active61440-byte
+frames,640000VGA-plane readback bytes,8000hardware text bytes,12000neutral text
+cells and10035snapshot bytes. Initial mode3returns and all live heap payloads free.
+Normal instrumented peak436528(+64versus P4),minimum contiguous212544,far live82036;
+failure436048/213024/82036;pressure648608includes ballast,largest464. Stack untouched
+76/98/74retains existing bounded evidence;no all-route stack shrink or peak claim.
+
+Two paired fixed-config prototype profiles match all active output frames,twenty
+VGA planes and final snapshots. Complete output-only water/castle/dense cost
+0.649/14.116/13.430percent shorter versus P4;title7.710/load2.742percent shorter,
+text differs by9PIT ticks. PPU stage0.922/20.053/18.697percent shorter for those
+output cases;improvement depends on zero-pattern occupancy. Absolute output-only
+cost remains about1.13-1.31seconds,not accepted normal cadence/input latency.
+No settings,normal SDL,private desktop or physical target qualification change.
+Scoped optimization acceptance does not close the unplayable integrated budget.
+
+The actual formal product also completes the bounded448/416KiBcaller-free routes.
+External observer sees2042/2060samples,two records each,zero bad chains/drops.
+Roomy maximum430224=344000primary+160environment+86064auxiliary,+64versus P4;
+constrained maximum425984=344000+160+81824,unchanged budget-bound total. Observer/
+parent/ballast are excluded,MCB/PSP included. This is sampled occupancy,not
+continuous peak or identical CRT buffering. Reviewed game/text/graphics captures,
+CRC/resource-bound10035-byte saves and Esc result0pass;both saves advance seed
+frame7465to7521with startup4preserved. Input script wall timing is not fixed-tick
+ROM equivalence or playable latency proof. No all-route minimum-free claim.
+
+All three owner-authorized products refreshed after the operational gates:
+
+- mysmb16.exe:303171bytes,SHA256 86372380f7ceaa877f2dd3bdbc40a1d36d2f989e36fcd15fd79bc72b7d26629c.
+- mysmb32.exe:319627bytes,SHA256 d7a4941958fd1a219d4eef11a7228dc9ce869f1b537535b0a71374adc97a36ba.
+- mysmb64.exe:328811bytes,SHA256 c9b7766138d509342baa0ccaacd1449ac14a30b1078677277183d5b790ec4ed7.
+
+Minimum MZ327680(+64),DGROUP49472,headroom16064,stack2048,max segment32768. No
+new heap/workspace. Raw artifacts and tests stay under ignored build/m3-t28-s6.
+Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
+infeasible81),scope/expected/actual[],new0,custody unchanged. S6/T28 remain open
+for actual continuous/full-route peak/stack,nominal cadence/input and integrated
+opportunity dispositions;no M2/M4 certificate or all-input equivalence claim.
+
+## S6 P6 continuation: bounded rowwise-composition memory prototype
+
+Prioritize actual conventional-memory savings rather than another standalone
+sizeof reduction. Investigate a compatible rowwise read-only PPU producer and
+neutral IO/VGA band submission:produce every logical256x240pixel from the same
+immutable state,then stretch the same complete640x400output. Existing full-frame
+Windows APIs and snapshot schema stay supported;no core ROM routine or PPU-state
+representation changes. Text remains authored element presentation,not pixel
+sampling. Its15400-byte working store must be provided independently or reused
+exclusively with bounded graphics bands;do not claim the entire61440pixel pack
+as net savings. The first P6step is contained prototype/design and scope review,
+not an already adopted IO contract or measured gain.
+
+Prove strip clipping,full/partial tiles,sprite flips/offscreen and source priority,
+status split,resource/cache invalidation,all output rows/planes,text/Tab/restore,
+allocation failure and exact snapshots before adopting a producer extension.
+Measure repeated sprite scans and boundary-row duplication as whole-output costs;
+keep full-frame reference/probes for comparison. Do not save memory by dropping
+pixels/ticks,lowering resolution or blindly shrinking the CRT primary block.
+Cached sprite-read omission may be evaluated in the same bounded renderer cohort,
+with independent dispositions. Report affected components/estimated size before
+any production edit;three EXEs remain required for product-code P work. Pixel
+bit-packing/PRG compaction remain unadopted alternatives with P3identity/cost gates.

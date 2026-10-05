@@ -136,6 +136,8 @@ static void mysmb_ppu_background_row(const struct mysmb_ppu_state *state,
             decoded=decoded_chr+(pattern/16U)*16U+(pattern&7U)*2U;
             if(count==8U) {
                 low=decoded[0U];high=decoded[1U];
+                if((low|high)==0U)memset(pixels+x,colors[0U],8U);
+                else {
                 pixels[x+0U]=colors[palette+((low>>0U)&3U)];
                 pixels[x+1U]=colors[palette+((low>>2U)&3U)];
                 pixels[x+2U]=colors[palette+((low>>4U)&3U)];
@@ -144,6 +146,7 @@ static void mysmb_ppu_background_row(const struct mysmb_ppu_state *state,
                 pixels[x+5U]=colors[palette+((high>>2U)&3U)];
                 pixels[x+6U]=colors[palette+((high>>4U)&3U)];
                 pixels[x+7U]=colors[palette+((high>>6U)&3U)];
+                }
             }else for(i=0U;i<count;++i)pixels[x+i]=colors[palette+
                 ((decoded[(phase+i)/4U]>>(((phase+i)%4U)*2U))&3U)];
         } else if(count==8U) {
