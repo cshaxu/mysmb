@@ -1649,3 +1649,85 @@ Historical1992/1992,local1991/1992nodes and4260/4261feasible controls(raw4342,
 infeasible81),scope/expected/actual[],new0,custody unchanged. Three products retain
 P7hashes;no rebuild for this product-code-free diagnostic part. S6/T28 stay open;
 P9receives cumulative stage attribution and the named runtime/stack gaps.
+
+
+## S6 P9 checkpoint: cumulative stage attribution without product edits
+
+A contained stage probe links unchanged P7libraries with diagnostic copies of
+DOS composition/device calls. Ten disjoint accumulators record input,original
+game tick,PPU row production,VGA mapping,VGA transfer,text assembly,text transfer,
+snapshot capture/cache,audio extraction/submission and wait. Per-frame start/end
+brackets exclude post-frame telemetry writes;all logs are emitted after shutdown.
+No source tick,controller operation,presentation,mode or snapshot work is skipped.
+No product file,original ROM routine,PPU state or text artwork changes.
+
+The instrumented root/device modules must replace their original library modules,
+not coexist. A contained library group is rebuilt from the exact P7objects while
+excluding those two modules. Initial duplicate-symbol link attempts are not
+passing evidence;the corrected group builds with original OpenNT16/runtime.
+No formal product library is edited. This avoids mistaking a stale full-frame or
+uninstrumented owner for the timed implementation.
+
+First run records100frames but drops the final two records;accepted only as a
+partial stage comparison. Second run keeps the same100-slot buffer and explicitly
+omits telemetry for ten repeated early title frames. Those game ticks still run.
+It retains92records,zero drops,all selected game/Tab/save/load/exit stages and the
+actual Escape request. Calibration costs105129PIT units for1000clock calls,about
+88microseconds per call including the calibration loop. All selected warm rows
+confirm cacheNear1:the diagnostic storage does not switch the optional CHR cache
+to a slower far or uncached path. The added telemetry is not a product-memory
+measurement or an all-route stack proof.
+
+Both runs have12steady text samples and44/45steady graphical game samples. Their
+stage medians agree within the retained measurement resolution. Each frame's
+non-wait component sum is checked against its outer root-step interval;no nested
+component is double-counted. Ratios below divide component medians by total
+median,not a claim that medians add exactly or every workload has that ratio.
+
+| Scoped steady-state component | Graphics median ms | Text median ms |
+| --- | ---: | ---: |
+| Input | 0.142 | 0.142 |
+| Original game tick | 9.179 | 9.188 |
+| PPU logical row composition | 671.975 | 0 |
+| VGA full-screen plane mapping | 374.365 | 0 |
+| VGA plane transfer | 35.376 | 0 |
+| Authored text scene construction | 0 | 819.287 |
+| Text device transfer | 0 | 65.452 |
+| Snapshot capture/running cache | 30.451 | 30.451 |
+| Audio extraction/unavailable-device submission | 0.906 | 0.906 |
+| Total root step | 1144.329 | 926.078 |
+
+Graphical PPU/mapping/transfer account for approximately58.722/32.715/3.091percent;
+text construction/transfer account for88.469/7.068percent. Original game tick is
+0.802/0.992percent. Wait contributes about0.200ms after those intervals;it is not
+the bottleneck. Graphics has about21.85msunattributed inside the instrumented root
+step,text about0.707ms. Numerous nested graphics clocks also add cost inside their
+brackets:do not subtract the residual alone or call these formal-product FPS.
+P8lower-instrumentation timings remain the overall-cadence evidence. App-request,
+startup and mode/control frames stay in raw records but are excluded from these
+steady-state rows. DOS audible sound remains unavailable;this is no sound-load
+or physical486SXperformance qualification.
+
+Same installed configuration hash,normal SDL and private desktop are retained,
+without cycles/frameskip/video/memory overrides. Both10035-byte saves retain CRC
+and resource binding;the wall-script frame count is not a deterministic ROM route.
+No new M2node/control credit. The configured cadence gate still fails;stage timing
+now shows why renderer-only micro-tuning or changing game logic would be an
+unsupported response to the measured deficit.
+
+The next bounded evaluation targets read-only composition and neutral VGA mapping:
+compare shared-row/four-plane staging against the current repeated far reads,
+using existing15400-byte exclusive storage before considering another allocation.
+Account for near/stack constraints,alias lifetimes,all pixels/planes,clipping,
+mode/load/exit and complete cost. PPU/table and text-construction alternatives need
+separate scoped evidence;no guessed gain or artwork simplification is admitted.
+The owner-deferred ten-row/OAM/raw-read recovery remains TODO. No ROM business
+rewrite,frame/tick suppression,compiler replacement or emulator setting changes.
+This is a prospective contained prototype,not adopted product optimization.
+
+CRT/error-path and all-path stack bounds remain pending alongside failing
+configured cadence/input and M4hardware obligations. Retain P7memory/pixel/native
+receipts;do not restart a whole-project audit. Three products retain P7hashes.
+Historical1992/1992,local1991/1992nodes and4260/4261feasible controls(raw4342,
+infeasible81),scope/expected/actual[],new0,custody unchanged. S6/T28remain open;
+P10continues bounded renderer/mapping evaluation and the named memory/stack gaps.
