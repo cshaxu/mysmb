@@ -926,3 +926,97 @@ failure checks,both widths and original DOS16 remain mandatory;product changes
 refresh three EXEs. Scope/expected/actual[],new0,maximum1992/1992,custody retained.
 S6/T28 exit requires all six dispositions,measured fit and playable-budget proof;
 a failed required clause keeps them open. Physical486SX/DOS versions remain M4.
+
+
+## S6 P1 checkpoint: timer reload sampling and actual-product fit boundary
+
+S6/T28 remain open. One product source file changes,+12/-6:the DOS device timer
+recaptures a complete BIOS/PIT pair when read-back yields zero count,up to four
+attempts. No PIT frequency,IRQ vector,game tick,core/PPU or input/audio semantics
+change. It bounds interrupt-disabled work rather than looping forever. This
+addresses an observed sampled reload boundary,not every hardware timer fault.
+If all four samples are zero,the last bounded sample remains the result;the
+normal test never exhausts retries,so stalled-device behavior is not qualified.
+
+The original50,000-sample actual DOS probe has one backward jump:BIOS927683,
+status182,pending0,count254/phase32641to count0/phase0,delta-32641. This is a
+concrete missing sampling condition in prior short-operation timing evidence.
+A retry prototype has0backwards in50,000samples;expanded250,000samples observes
+10zero recaptures,0retry exhaustion,0backwards,max forward166PIT ticks. These
+samples prove the observed mitigation under unchanged configured DOSBox,not
+universal monotonicity. Integer pure phase tests remain exhaustive over65536
+phases for BIOS mode2/mode3;the decoder itself is unchanged. The read-back and
+mode3 hardware model is cross-checked against the Intel8254datasheet,public
+research reference only,no implementation import:
+[original Intel document](https://www.cs.umb.edu/cs341/Intel8254/I8254PIT.pdf).
+
+Both native widths pass10focused tests including clock,pacing,presentation,
+VGA,root/failure recovery,frame/snapshot continuation,platform purity and product
+self-test. Three actual DOS lifecycle routes match the paired S5reference:
+each640000VGA bytes,five active indexed frames,8000text hardware bytes,12000text
+cell bytes and10035snapshot bytes. Normal owned peak436288,minimum external
+contiguous212784,far live82036;cache-failure435808/213264/82036. Pressure peak
+648608includes ballast,remaining contiguous464;all live payload frees and initial
+mode3returns. Stack untouched76/98/74with unchanged margins,no stack shrink.
+
+The cumulative retained memory census now includes S1/S2 instead of only the
+latest optimization. Comparable bounded normal owned peaks are575632(S1),
+610160(S2),578176(S3),452432(S4),436240(S5),436288(S6instrumented). S1/S2 live far
+97436/130204includes the original independent15400text pack;S2's decoded cache
+adds32768far bytes. S3replaces it with8192near bytes;S4removes126720static VGA
+scratch bytes;S5eliminates15400live text bytes and16416paired reservation bytes.
+Image/probe differences prevent calling these a pristine all-route minimum.
+Static buffers and stack count once in the primary image;VGA hardware memory
+is excluded. Snapshot transaction/recovery is retained,CRT block slack remains
+owned after free until process exit,and pressure ballast is reported separately.
+
+A separately compiled small DOS loader reserves a conventional-memory ballast
+block,then invokes the actual published EXE through DOS EXEC. It never patches
+child memory/code or changes emulator settings. Normal SDL,private desktop,
+finite public-ABI key script and contained BMPs exercise load,movement,Tab both
+directions,save and Esc. Original loader/compiler/runtime remain;local probe
+and all owner-resource outputs stay below ignored build/m3-t28-s6.
+
+| Requested remaining KiB | Observed largest block before EXEC | Actual child result | Scoped outcome |
+| --- | ---: | ---: | --- |
+| 448 | 458736bytes | 0 | Ground/text/graphics captures,save,Esc successful |
+| 416 | 425968bytes | 0 | Same complete scoped actual-product route successful |
+| 415 | 424944bytes | 1 | DOS EXEC succeeds,product returns startup failure |
+| 414 | 423920bytes | 1 | Startup failure |
+| 412 | 421872bytes | 1 | Startup failure |
+| 410 | 419824bytes | 1 | Startup failure |
+| 408 | 417776bytes | 1 | Startup failure |
+
+This bounds the tested caller-free launch/route threshold between424944and425968
+bytes with this environment/loader. It includes child environment/PSP and CRT
+startup behavior;it is not the327424-byte minimum MZ image and not a statement
+that all DOS drivers/versions or every game route fit in416KiB. Lower-budget
+failure is not an out-of-memory emulator crash. Ground/text/graphics captures
+and scripted input/snapshot responses prove operation,not ROM frame equivalence
+or playable input latency. The latter remain unmet integrated S6 clauses.
+
+Three owner-authorized products refreshed,Windows hashes retain prior host
+receipt applicability:
+
+- mysmb16.exe:302911bytes,SHA256 b3d291cb2f22246a802e65e492ba1dabd2d125bf2a337cb0cb3b7a1c88d0bc30.
+- mysmb32.exe:319627bytes,SHA256 4629d477cb4ac7df71ea4a28858d9540f1c0599c8abadfd00167262b32d11a01.
+- mysmb64.exe:328299bytes,SHA256 c9a9fa965bb23f16fda27be1b42147b36bddb12d09a47a02cfc6708690fc7d3d.
+
+DOS MZ327424,DGROUP49456,stack2048,max segment32768. Scope/expected/actual[],
+new0,historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
+infeasible81),custody unchanged. Local snapshot/planes and timer receipts are
+retained through S6. This P does not close S6 or declare fit/playability jointly
+accepted;normal cadence/input-tail,full-route stack/fit and remaining opportunity
+choices still need integrated evidence. No M2/M4 certificate.
+
+## S6 P2 next work: complete-output cost and original-toolchain candidates
+
+Continue the same S. Inspect actual OpenNT16 transfer/compositor cost and missing
+cadence/input budgets;no emulator adjustments or original ROM changes. An ignored
+original-compiler /O1candidate fails during the contract probe with its internal
+buffer/out-of-memory diagnostic,even with short local compiler/source/temp paths.
+All copied compiler helpers retain original bytes and are local toolchain
+experiments,not a new dependency or adopted build. No optimized product or gain
+is claimed. Investigate the generated bulk-transfer path and bounded read-only
+renderer costs before selecting a verified size/speed candidate. Report scope/
+size before any next production edit;retain current products as tested baseline.

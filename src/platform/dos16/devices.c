@@ -33,17 +33,23 @@ static void interrupt far keyboard_interrupt(void)
 static unsigned long timer_stamp(void)
 {
     unsigned short low, high, phase;
+    unsigned int attempt;
     unsigned char status;
     unsigned long ticks;
     volatile unsigned long far *bios_ticks;
     bios_ticks=(volatile unsigned long far *)0x0040006cUL;
     _disable();
-    ticks=*bios_ticks;
-    /* 8254 read-back latches both status and count for channel zero. */
-    outp(0x43,0xc2U);
-    status=(unsigned char)inp(0x40);
-    low=(unsigned short)inp(0x40);
-    high=(unsigned short)inp(0x40);
+    /* A zero reload count at an OUT transition is ambiguous in a sampled
+     * read-back. Recapture the whole BIOS/PIT pair;never change its rate.
+     * Bound interrupt-disabled work even if the device stops advancing. */
+    for(attempt=0U;attempt<4U;++attempt) {
+        ticks=*bios_ticks;
+        outp(0x43,0xc2U);
+        status=(unsigned char)inp(0x40);
+        low=(unsigned short)inp(0x40);
+        high=(unsigned short)inp(0x40);
+        if((low|(high<<8U))!=0U)break;
+    }
     phase=mysmb_dos16_pit_phase(status,(unsigned short)(low|(high<<8U)));
     /* A latched high count plus pending IRQ0 means a wrap not yet reflected
      * in the BIOS count. Leave the timer vector/rate and clock untouched. */

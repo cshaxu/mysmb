@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T28 S6 P1; cumulative memory fit and complete-route performance. |
+| Identifier Mode | Continuation: M3 T28 S6 P2; complete-output cost after timer/fit checkpoint. |
 | Admission And Approval | Owner authorizes execution and the joint conventional-memory/playability contract. S5 closed;S6 is active,with cumulative fit/playability still open. |
 | Objective | Reconcile S1-S5 memory census;verify actual minimum-free launch/runtime fit,stack/lifetimes,normal cadence/input budgets and clock sampling;dispose all six opportunities with fit/playability separate hard gates. |
 | Non-goals | No core ROM routine/state/timing changes,no emulator settings,no text artwork or VGA coordinate/mode changes,no emulator-based physical486SX/DOS-version or M2 certification. |
@@ -23,6 +23,13 @@
 
 ## Current Technical Baseline
 
+- S6 P1 timer recapture:+12/-6,one DOS source file;250000samples,10zero
+  retries,0exhaustion/0backwards. Native widths10tests;three DOS output/snapshot
+  lifecycle routes pass. Actual EXE completes tested416KiBfree route,returns
+  startup failure at415KiB;bounded threshold424944-425968bytes,not all-route fit.
+  S1/S2 memory census reconciled;normal probe peak436288. S6/T28 stay open for
+  cadence/input/stack/full-route proof;P2 cost/candidate investigation active.
+  [Checkpoint and limits](../history/M3-T28-dos-rendering-optimization.md#s6-p1-checkpoint-timer-reload-sampling-and-actual-product-fit-boundary).
 - M2 T70/S17 closed by owner-approved deferred-verification transfer (P153);
   [closure record](../history/M2-T70-deferred-verification-closure.md).
   This is not successful full-game acceptance;M2 certificate remains incomplete.
@@ -34,7 +41,7 @@
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11/T12/T13/T14/T15/T16/T17/T18 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are302879/319627/328299bytes.
+- Current local DOS16/Win32/x64 products are302911/319627/328299bytes.
   T22 refreshes all three with RAM-authoritative NMI page handoff;T21 coral,T20 titles/tree/fence and T18 timing retained.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
