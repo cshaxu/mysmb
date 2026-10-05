@@ -186,6 +186,42 @@ int main(void)
                 g,i,r.unsupported,r.ambiguous);
         CHECK(r.recognized==480U && r.unsupported==0U && r.ambiguous==0U);
     }
+    /* Tree canopy/trunk and fence are distinct source positions,not bushes,
+     * generic stumps or terrain. These tuples are authored fixture data. */
+    memset(game.name_table,0x24,sizeof(game.name_table));
+    memset(game.name_table[0]+0x3c0U,0,64U);
+    memset(game.name_table[1]+0x3c0U,0,64U);
+    game.palette[1U]=0x30U;game.palette[2U]=0x00U;game.palette[3U]=0x0fU;
+    game.palette[5U]=0x36U;game.palette[6U]=0x17U;game.palette[7U]=0x0fU;
+    put(0U,4U,8U,0U,13U);put(0U,4U,9U,0U,15U);
+    put(0U,4U,10U,1U,14U);put(0U,4U,11U,1U,14U);
+    put(0U,8U,9U,0U,14U);put(0U,8U,10U,1U,14U);
+    put(0U,10U,10U,1U,13U);put(0U,11U,10U,1U,13U);
+    put(0U,12U,10U,1U,20U);
+    before=game;
+    CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
+    CHECK(memcmp(&before,&game,sizeof(game))==0);
+    CHECK(r.unsupported==0U && r.objects==6U);
+    CHECK(frame.cells[27U*80U+21U].character=='/');
+    CHECK(frame.cells[29U*80U+22U].background==15U);
+    CHECK(frame.cells[27U*80U+20U].background==frame.cells[0U].background);
+    CHECK(frame.cells[33U*80U+21U].character=='|');
+    CHECK(frame.cells[33U*80U+20U].background==frame.cells[0U].background);
+    CHECK(frame.cells[30U*80U+41U].character=='/');
+    CHECK(frame.cells[33U*80U+50U].character=='|');
+    CHECK(frame.cells[34U*80U+51U].character=='=');
+    CHECK(frame.cells[33U*80U+51U].background==frame.cells[0U].background);
+    CHECK(frame.cells[34U*80U+62U].character==':');
+    /* Dynamic palette changes update the canopy role without copying colors
+     * into the template;fractional scroll must preserve decorative holes. */
+    game.palette[1U]=0x1aU;
+    CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
+    CHECK(frame.cells[29U*80U+22U].background!=15U);
+    game.visible_scroll_x=7U;game.visible_scroll_y=1U;
+    before=game;
+    CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
+    CHECK(memcmp(&before,&game,sizeof(game))==0);
+    CHECK(frame.cells[33U*80U+49U].background==frame.cells[0U].background);
     /* Disabled background produces only the universal color. */
     game.visible_ppu_mask=0U;
     CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));

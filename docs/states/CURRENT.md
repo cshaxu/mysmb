@@ -1,31 +1,9 @@
 # Project Status
 
-**Active: M3 T20 S2.**
+**Idle.**
 
-## M3 T20 S2 Packet
-
-| Field | Required record |
-| --- | --- |
-| Identifier Mode | Continuation M3 T20 S2 P1;S1 closed,T19 suspended. |
-| Admission And Approval | Owner suspends unfinished T19 and admits character-interface fixes. |
-| Objective | TEXT-02:world5-1 tree/fence authored text clarity and source palette/selection diagnosis;TEXT-01 closed. |
-| Non-goals | No audio implementation,new process,gameplay change,indexed graphics redesign or whole-project audit. |
-| Reference Baseline | T18 products;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
-| Candidate Proposal | [Character interface corrections](../proposals/m3/text-interface-corrections.md). |
-| Files And ABI Surface | Shared background_scene/templates and focused tests;2-5files,100-250lines,diagnosis before expanding scope. |
-| Applicable Rules | Execution,Architecture,Coding,Document,source policy and node/task ledger. |
-| Verification | Finite issue cases,similar-form sweep,graphics/state preservation,text tests,purity,applicable native routes;three products if code changes. |
-| Expected Markers | Empty scope/expected/actual,new0,maximum historical1992;no M2 certification. |
-| Asset Needs | Existing owner-local resources for local checks only,no imports/committed derivatives;temporary output below ignored build/m3-t20-s1. |
-| Reporting Requirements | Before edits:issues/components/estimated size;after:dispositions,actual scope,tests/products and unchanged node/edge totals. |
-| Stop Conditions | Game logic/artwork in platform,graphics/game-state regression,unbound source guesses or unrelated audio changes. |
-| Exit Criteria | TEXT-02 tree/fence cases and similar-form sweep,unchanged graphics/game state,native/DOS receipts,three products and gates. |
-| Original Owner Request | Retain audio research/unfinished T19 in queue;admit independent character-interface repair T. |
-| Similar-Issue Sweep | Bound each text defect to related object forms/screens and neutral host submissions;record every hit/disposition. |
-
-T19 S1 is suspended by owner direction,not closed;research and outstanding
-work remain in its [proposal](../proposals/m3/bounded-windows-audio-startup.md)
-and the [queue](QUEUE.md). No audio product repair is claimed.
+T19 S1 remains owner-suspended,not closed;research and remaining work are in
+the [queue](QUEUE.md). T20 character corrections are closed.
 
 ## Current Technical Baseline
 
@@ -40,14 +18,23 @@ and the [queue](QUEUE.md). No audio product repair is claimed.
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11/T12/T13/T14/T15/T16/T17/T18 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are363921/311947/319595bytes.
-  T20 S1 refreshes all three with product-only title/banner cleanup;T18 deadline/symbol-tail changes retained.
+- Current local DOS16/Win32/x64 products are364881/312971/320619bytes.
+  T20 S1/S2 refresh all three with clean titles and shared tree/fence text;T18 deadline/symbol-tail changes retained.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks
   pass;seeded presenter equality is explicitly separate. Real486SX speed,
   full heap/stack peak and hardware/version qualification remain M4.
 
 ## Compact closure status
+
+M3 T20 S1/S2 close console title MySMB,DOS diagnostic-banner removal and
+shared tree crown/trunk/fence classification,shape and palette-role repairs.
+S1 both widths5tests,S2 both widths8tests;seven private-host groups each,
+2048boundary/1198native graphics-state equality and actual DOSBox regression
+pass. Final products364881/312971/320619bytes. S1 code/test/tool4files,+11/-3;
+S2 product/test2files,+76/-6,new0. T19 remains suspended,not repaired.
+[T20 scope,evidence and limits](../history/M3-T20-text-interface-corrections.md).
+
 
 M3 T18 S1/S2 close measured deadline-wait/RGB and disk-footprint repairs.
 Audio-on graphics p99 drops32ms to17.8/18.6ms,long frames22/24to0/1;
@@ -100,6 +87,3 @@ local products refreshed. Empty ROM scope/new0,no remote. Details and limits:
 
 M3 T12 authored glyphs,contours,static/dynamic text and committed-color animation
 remain closed;[T12 history](../history/M3-T12-authored-text-detail.md).
-
-M3 T11 semantic text,caption/snapshot/focus/host routes remain closed;
-[T11 history](../history/M3-T11-colored-ascii-text-frame-gameplay.md).

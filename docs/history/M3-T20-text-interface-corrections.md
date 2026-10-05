@@ -12,7 +12,7 @@ Keep this finite register;do not reopen unrelated accepted receipts.
 | ID | Symptom and binding | Required result | Receiver |
 | --- | --- | --- | --- |
 | TEXT-01 | Console title MySMB text preview - Tab: graphics,literal confirmed in text_console.c. | Title MySMB;no preview/debug/control hints. Audit DOS for analogous host-added labels. | S1 closed |
-| TEXT-02 | Background trees appear as gray columns;fence appears as brick-like raised ground in world5-1 comparison. | Distinct authored canopy/trunk and fence rails/posts,source palette/position retained;shared Windows/DOS design,no collision change. | S2 active |
+| TEXT-02 | Background trees appear as gray columns;fence appears as brick-like raised ground in world5-1 comparison. | Distinct authored canopy/trunk and fence rails/posts,source palette/position retained;shared Windows/DOS design,no collision change. | S2 closed |
 
 S1 entry/exit:console open and Tab re-entry,with DOS display label review.
 Expected edits:text_console.c and applicable title probes,1-3files,under50lines.
@@ -96,3 +96,41 @@ expected/actual empty,maximum historical1992. Acceptance includes tree/fence
 and related forms against terrain,graphics/state equality,both-width focused
 and private-host checks,original DOS16 and three refreshed local products.
 S1 is closed;S2 alone is active,T20 remains open.
+
+## S2 And T20 Closure
+
+TEXT-02 closes in shared background_scene:palette0 positions13-15 now identify
+tree crowns;palette1 position13 identifies fence and14 tree trunk. Generic
+ledge/mushroom stumps retain their existing design. The former bush/stump
+classification merged unrelated decoration and used the wrong canopy ink.
+Reviewed owner-local source tables and CHR palette-role counts bind the crown/
+trunk body to ink1 and outlines to ink3;no pixel-to-text sampler is introduced.
+Fence rails/posts use their source wood/highlight palette roles and retain sky
+between them. Crown round outlines and narrow bark trunks differ from terrain.
+Dynamic palette,partial scroll,short/tall trees,connected rails,decorative gaps
+and ground remain explicitly tested;game state is read-only.
+
+Source/research inputs are the previously admitted owner-local ROM and reviewed
+local disassembly,used only to identify metatile and palette roles. Temporary
+role counts and a neutral synthetic character preview remain below ignored
+build/m3-t20-s2;no new import or protected bytes/art are committed.
+
+Both widths pass eight focused tests and all seven private-host route groups.
+Each width passes2048boundary pixel comparisons and1198native frame/state
+comparisons against the retained graphics compositor. No original logic,
+compositor,observation/snapshot layout or platform artwork was changed.
+Original DOS16 compile/link passes with the historical OLDNAMES warning.
+Actual final DOS product passes the seeded DOSBox graphics/text/Tab/held-Tab/
+snapshot/return and Escape route. That runtime route uses existing gameplay,
+not a claimed DOS world5-1 encounter;tree/fence contracts use the shared
+authored fixture. Physical486 speed and live RDP remain unqualified.
+
+Three local products refreshed and hashes match builds:364881/312971/320619
+bytes. A locked owned x64 asset was stopped under prior owner authorization
+and replaced;initial partial package was not accepted as final delivery.
+S2 product/tests2files,+76/-6lines. S1 product/tests/tool4files,+11/-3lines.
+Both issue-register rows are closed;S1/S2/T20 closed after ledger/docs gates.
+Empty ROM scope/expected/actual,new0;historical1992/1992,retained local1991/1992
+nodes and4260/4261feasible controls(raw4342,infeasible81) unchanged. M2 remains
+incomplete. T19 is suspended with its research and outstanding work in queue;
+it is not automatically resumed by closing this independent character task.

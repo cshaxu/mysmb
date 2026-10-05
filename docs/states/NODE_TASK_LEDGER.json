@@ -8141,14 +8141,14 @@
     {
       "id": "M3 T20",
       "evidence": [
-        "docs/proposals/m3/text-interface-corrections.md"
+        "docs/history/M3-T20-text-interface-corrections.md"
       ],
-      "state": "active",
+      "state": "closed",
       "subtasks": [
         {
           "id": "M3 T20 S1",
           "evidence": [
-            "docs/proposals/m3/text-interface-corrections.md"
+            "docs/history/M3-T20-text-interface-corrections.md"
           ],
           "recordKinds": [
             "bounded-character-interface-corrections"
@@ -8161,14 +8161,14 @@
         {
           "id": "M3 T20 S2",
           "evidence": [
-            "docs/proposals/m3/text-interface-corrections.md"
+            "docs/history/M3-T20-text-interface-corrections.md"
           ],
           "recordKinds": [
             "planned-background-clarity-correction"
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "state": "active",
+          "state": "closed",
           "receipt": "TEXT-02 owner world5-1 tree/fence evidence;not admitted before S1 closure."
         }
       ]
@@ -835083,7 +835083,7 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m3/text-interface-corrections.md",
+      "evidence": "docs/history/M3-T20-text-interface-corrections.md",
       "state": "closed"
     },
     {
@@ -837088,8 +837088,8 @@
       "expectedMatches": [],
       "maximumComplete": 1992,
       "actualMatches": [],
-      "evidence": "docs/proposals/m3/text-interface-corrections.md",
-      "state": "active"
+      "evidence": "docs/history/M3-T20-text-interface-corrections.md",
+      "state": "closed"
     }
   ]
 }
