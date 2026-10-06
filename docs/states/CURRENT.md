@@ -26,6 +26,15 @@
 
 ## Current Technical Baseline
 
+- S8 P1 selects contained combined dirty-row/pair-expansion candidate:
+  full-PPU2.205/2.233/1.510times versus compact baseline,one-tile preparation
+  8.80times;530near bytes/workspace+8DOS bytes.512native states per width,
+  original-DOS rows/2064primitive cases and20balanced local CFGs pass;own
+  row chain510bytes excludes entry/external bodies. No product/EXEchange,
+  adoption/global budget/FPS proof yet. P2integration/fallback/frame costs
+  required;S8active/S9open.
+  [Candidate and limits](../history/M3-T32-rendering-performance-continuation.md#s8-p1-combined-dirty-cache-and-pair-expansion-prototype).
+
 - S7 P4 closes display stage after current integrated budget:counter-only
   graphics405.309ms/steady405.307/dirty458.132;text451.980. PhasePPU61.43%,
   mapping24.80%;one-tile refresh adds about53ms. No product/EXEchange.

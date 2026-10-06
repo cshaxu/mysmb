@@ -332,3 +332,14 @@ expansion under shared PPU/neutral IO/DOS-private bulk ownership. Estimate
 160-300candidate product lines,prototype530byte optional near workspace plus
 small binding fields;no extra far surface. No adoption until exact output,
 current compiler/stack/resident/startup/cost evidence. S9 final gates stay open.
+
+## S8 selected combined candidate
+
+[S8 P1](../../history/M3-T32-rendering-performance-continuation.md#s8-p1-combined-dirty-cache-and-pair-expansion-prototype)
+passes native512state and original-DOS pixel/2064primitive/local-stack checks.
+Controlled full-PPU benefit2.205/2.233/1.510times versus current compact cache,
+530byte optional near workspace,PPU workspace+8DOS bytes. Select combined
+dirty rejection/pair expansion for P2 integration under the existing budget.
+No extra surface or game/PPU semantic change;all DOS execution under dos16.
+Actual product/fallback/global budgets and full-frame benefit remain unproved;
+three EXEs refresh only after product-code adoption. S8/S9 remain unfinished.

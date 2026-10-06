@@ -1726,3 +1726,44 @@ Scope/expected/actual[],new0,historical1992/1992,local1991/1992nodes and
 4260/4261feasible controls(raw4342,infeasible81);fixed M2 certificate unchanged.
 Recipes/source bindings and outputs remain below build/m3-t32-s7/p4;
 new bounded prototypes under build/m3-t32-s8. Global goal remains active.
+
+## S8 P1 combined dirty-cache and pair-expansion prototype
+
+Contained prototype combines bulk unchanged tile/attribute-row rejection with
+optional even-span packed-palette expansion. Snapshot commits after dependent
+updates. Shared PPU owns scroll/split/mask/raw opacity;neutral IO owns530-byte
+palette/pair preparation,DOS-private helper owns execution. Pair lookup retains
+full8-bit colors. Leading odd/trailing single pixels stay with PPU;null/rejected
+encoder retains the portable path. No production source or EXE adoption yet.
+
+Native512states per width/188743680strip/65536000plane bytes,256zero-alias
+and cache mutation/palette/CHR/scroll/guard/source checks pass. Original/AL/Gs
+DOS full-row comparisons pass;2064direct primitive cases cover even0..256,
+high palette bytes,guards and invalid/far-output rejection. Context/output
+must be in the current data segment. Helper preserves ES/BP/SI/DI,keeps DS.
+Word-pair/zero-pair variant selected over single-pair;zero is packed indices,
+not color opacity. Initial illegal BP+BX operand was corrected before any
+accepted DOS run. No toolchain/settings change or copied implementation.
+
+Current compact and raw baseline objects coexist through export renaming only:
+
+| Synthetic full-PPU scene | Compact ticks/3passes | Combined ticks/3passes | Ratio |
+| --- | ---: | ---: | ---: |
+| Uniform background | 1296338 | 587979 | 2.205times |
+| Mixed,fine scroll/split | 1378370 | 617316 | 2.233times |
+| Dense behind sprites | 2254605 | 1493389 | 1.510times |
+
+One-tile20preparations1274302->144816ticks,8.80times (53.40->6.07ms each).
+Warm rebuilds zero;cold1920tile cost remains about1.986seconds. These scoped
+diagnostic costs are not game FPS/reference/fivefold acceptance. Near workspace
+530bytes,PPU workspace28->36DOS bytes;actual product memory effects unproved.
+Twenty local CFGs balance;helper local14/own maximum28,own row chain510bytes
+excluding entry/external bodies versus468previous API. Nested BP save/restore
+and OFFSET jumps are modeled explicitly. No global stack certificate.
+
+Select combined candidate for P2 integration with current product loader/
+resident/stack/IRQ/CRT/fallback/output/frame-budget checks and three refreshed
+EXEs. S8/goal remain active;S9final gates open. Recipes,source hashes,objects,
+listings and scoped receipts stay in build/m3-t32-s8/pairs. Scope/expected/
+actual[],new0,historical1992/1992,local1991/1992nodes,4260/4261feasible controls
+(raw4342,infeasible81);fixed M2 final work unchanged.
