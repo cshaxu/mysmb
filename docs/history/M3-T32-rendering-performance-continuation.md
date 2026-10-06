@@ -911,3 +911,60 @@ runtime/owner material only;no imported source/protected bytes orEXErefresh.
 Scope/expected/actual[],new0,historical1992/1992,local1991/1992nodes,
 4260/4261controls(raw4342,infeasible81). All five gates/goal remain open.
 Documentation/node/diff checks precede commit;fresh S5packet only after direction.
+
+## S4 P8 correction and owner-directed responsibility boundary
+
+Owner approved the S5-S9 plan, then clarified that repairable known issues
+must be fixed in S4; performance work belongs in S5-S8 and S9 is final audit.
+The proposed wholesale five-gate transfer was withdrawn before commit.
+S4 remains the sole active S. No gate is marked passed by transfer and no S5
+admission or node-custody event is retained.
+
+Correct P7's statement that DATA offsets were unchanged: removing saved
+argv-return globals shifts the FP initializer to 3EE6, XP to 3EF2..3EF6 and
+the empty cleanup table to B7F2. Debug 375C and exit 369E stay unchanged.
+Current product bytes confirm null debug/FP hooks, exit 0271 and XP's single
+_flushall callback. The contained validators now read these actual addresses.
+
+Invoke default-flow analysis with both --startup and --app-binary. Omitting
+these flags analyzes only the external-call roots and cannot establish the
+startup/exit joins. Fresh default analysis reaches 63 local entries, all 63
+resolved; the prior 64/64 summary is superseded by this reproducible result.
+The normal-exit generator additionally includes _exit, the loaded XP callback
+and the subsequent fatal-cleanup fallthrough. Its empty-table rule now also
+applies when that cleanup is reached from normal _exit. Fresh analysis reaches
+65 entries, all 65 resolved with no pending local return convention.
+
+These results remain conditional on original callee/DOS register contracts,
+unchanged default hook lifetimes and source table contents. They do not prove
+early 025A override, firmware bodies, other interrupts, kernel transients or
+a global joined stack bound. Retain those named S4 obligations rather than
+promoting conditional counts to a whole-system certificate. No product bug
+or original-ROM semantic change was discovered by this evidence correction.
+
+Recipes remain below ignored build/m3-t32-s4/p7. Run the corrected
+prepare-noargv-default-flow.py, crt-default-hook-flow.py --startup --app-binary,
+prepare-normal-exit-flow.py, then crt-normal-exit-flow.py --startup --app-binary.
+Similar-issue sweep covered shifted runtime data reads, code-address versus
+data-address rebinding, root-selection flags and normal/fatal cleanup joins.
+
+Three EXEs are current S4 P6, verified by SHA256 and unchanged source since
+that product commit: DOS 300725 bytes, x86 311310, x64 324110. Respect the
+owner's latest instruction: no rebuild or publication refresh without new
+product-code changes. Hashes in target order:
+
+- 33413d575a87b31969b5dc6227154a925a09a4e10a73ea35c7598a3e3580c8f7
+- 397ff7af59d5d95368b375989627077abc92997f00050a7cbb5d63e86f81284d
+- 4c7f09da0b5521729fa03f53c3ce793542d0d426c60bd4ed78aa2777faf25f5e
+
+S4 must finish named repairable runtime/memory and evidence defects before
+closure. S5-S8 own measured performance deficits; S9 checks their combined
+acceptance, not a backlog of known repairs. Strict WIN-T19-STARTUP remains a
+failed suspended dependency; changing its ownership requires a visible scope
+decision, not silent resumption. Physical 25 MHz 486SX qualification remains M4.
+No new audit universe or unrelated revalidation is introduced.
+
+Scope/expected/actual empty, new zero. Historical 1992/1992; local 1991/1992
+nodes and 4260/4261 feasible controls (raw 4342, infeasible 81). Full M2
+certification and configured DOS cadence remain incomplete. Documentation,
+node and diff gates precede commit; S4/T32 remain open.

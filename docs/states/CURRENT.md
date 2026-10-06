@@ -5,7 +5,7 @@
 | Field | Required record |
 | --- | --- |
 | Identifier Mode | Continuation: M3 T32 S4 P8; final finite integrated memory/cadence register. |
-| Admission And Approval | Approved T32 integration; S3local color accepted and strict startup gate explicitly received, S4 sole active. |
+| Admission And Approval | Owner approved S5-S9 planning, then required S4 to repair known fixable defects before closure; S4 sole active, no blanket handoff. |
 | Objective | Reconcile final source/products with MEM-S4-01..05, actual cadence/input/memory and existing WIN-T19-STARTUP dependency, without overclaiming partial proof. |
 | Non-goals | No ROM/PPU semantics, lost ticks/frames/rows/colors, helper process, DOSBox settings, toolchain change, unsupported stack shrink or silent resumption of suspended T19. |
 | Reference Baseline | T32 S3 source-bound three products, accepted scoped S1-S3/S4 predecessor receipts; strict Windowsstartup remains failed. |
@@ -23,13 +23,21 @@
 
 ## Current Technical Baseline
 
+- S4 P8: runtime DATA rebind corrected (FP3EE6, XP3EF2..3EF6,
+  empty table B7F2); correct startup/binary flags give default63/63 and
+  normal-exit65/65 conditional local flows, replacing P7's64/64 summary.
+  Product source and three P6EXEs unchanged/current; no refresh required.
+  S4 retains repairable known obligations, S5-S8 address performance, S9
+  audits combined acceptance. Blanket transfer withdrawn; no S5 admission.
+  [Correction and scope](../history/M3-T32-rendering-performance-continuation.md#s4-p8-correction-and-owner-directed-responsibility-boundary).
+
 - T32 S4 P7:current noargv image rebind7472CRTbytes/77aliases;removed
   424-byte parser,852owned functions/current conditional main720/IRQ78.
   Default-hook conditional64/64local flows connected,not lifetime proof.
   __astart05BCcalls owned normal far-return hook,12ephemeral bytes,argv
   persistence0. Product/2048stack/640x400unchanged;five parent gates open.
-  S5-S9planned;explicit five-gate handoff to S9question pending,no approval
-  inferred. [Current startup/CRT binding](../history/M3-T32-rendering-performance-continuation.md#s4-p7-checkpoint-current-noargv-startup-and-crt-binding).
+  S5-S9planned; blanket handoff withdrawn under P8owner clarification.
+  [Current startup/CRT binding](../history/M3-T32-rendering-performance-continuation.md#s4-p7-checkpoint-current-noargv-startup-and-crt-binding).
 - Owner added [T32 S5-S9 DOS graphics performance](../proposals/m3/dos-graphics-nesticle-performance.md)
   as five consecutive planned S tasks after S4, ending with S9 acceptance
   audit. None is admitted; S4 remains the sole active packet, with its

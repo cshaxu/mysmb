@@ -190,6 +190,14 @@ No S overlaps S4 or another active S.
 
 ## Admission and evidence gates
 
+Owner approved this plan, then clarified the boundary: S4 fixes and closes
+its repairable known runtime/memory/evidence defects first. S5-S8 implement
+the measured performance work. S9 is combined final audit, not a receiver for
+unfinished known repairs. The proposed blanket S4 five-gate transfer is
+withdrawn. S4 remains sole active; S5-S9 remain planned. See the
+[S4 P8 correction](../../history/M3-T32-rendering-performance-continuation.md#s4-p8-correction-and-owner-directed-responsibility-boundary).
+Current three products need no refresh without further product-code changes.
+
 Planning may use the retained local benchmark summary. New ROM or third-party
 research requires the relevant active S packet's provenance, license/redistributability,
 purpose, containment and verification record under the source policy.
