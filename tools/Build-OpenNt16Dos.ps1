@@ -113,20 +113,20 @@ try {
     # Isolated text foundation: check the real far-pointer ABI without linking
     # a dormant presentation path into the current graphical product.
     $textElements = Join-Path $SourceRoot 'text/elements.c'
-    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fotext_elements.obj /I $IncludeDirectory $textElements
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fotext_elements.obj /I $IncludeDirectory /I $runtimeIncludeDirectory $textElements
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     $textScene = Join-Path $SourceRoot 'text/actor_scene.c'
-    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fotext_actor_scene.obj /I $IncludeDirectory $textScene
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fotext_actor_scene.obj /I $IncludeDirectory /I $runtimeIncludeDirectory $textScene
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     $textBackground = Join-Path $SourceRoot 'text/background_scene.c'
-    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fotext_background_scene.obj /I $IncludeDirectory $textBackground
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fotext_background_scene.obj /I $IncludeDirectory /I $runtimeIncludeDirectory $textBackground
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     $objects = @()
     $textCaption = Join-Path $SourceRoot 'text/caption_scene.c'
-    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fotext_caption_scene.obj /I $IncludeDirectory $textCaption
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fotext_caption_scene.obj /I $IncludeDirectory /I $runtimeIncludeDirectory $textCaption
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     $textAssembly = Join-Path $SourceRoot 'text/scene.c'
-    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fotext_scene.obj /I $IncludeDirectory $textAssembly
+    & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET /c /Fotext_scene.obj /I $IncludeDirectory /I $runtimeIncludeDirectory $textAssembly
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     foreach ($relativeSource in $sources) {
         $source = Join-Path $SourceRoot $relativeSource

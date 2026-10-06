@@ -1,27 +1,35 @@
 # Project Status
 
-## M3 T31 S5 Packet
+## M3 T31 S6 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T31 S5 P2; evaluate/integrate selected exact text clear after P1 cohort. |
-| Admission And Approval | Approved T31plan;coordinator closes S4by explicit accepted S6integration handoff and admits S5. |
-| Objective | Profile shared text/cell submission and adopt useful exact cell/color optimizations with bounded DOS memory. |
-| Non-goals | No game/PPU semantics,bitmap sampling,information/tick/frame loss,new framebuffer,helper process,Windows UI or DOSBox settings. |
-| Reference Baseline | S3products/source,S4retained conditional proofs;five remaining S4clauses owned by S6. |
-| Candidate Proposal | [T31 plan and handoff](../history/M3-T31-dos-performance-memory-continuation.md). |
-| Files And ABI Surface | src/text scene/background/actor and neutral presenter;estimate0-180product lines after profile,temporary memory quantified,no public ABI fork. |
+| Identifier Mode | Continuation: M3 T31 S6 P1; final integrated memory/cadence acceptance. |
+| Admission And Approval | Approved T31plan;S5closed;S6receiving backlog becomes sole active executor. |
+| Objective | Verify final source-bound product time/input/memory and resolve or explicitly report each MEM-S4-01..05gate. |
+| Non-goals | No ROM game/PPU changes,information/tick/frame loss,helper process,DOSBox settings,toolchain replacement or unproved stack shrink. |
+| Reference Baseline | S5final products/source and applicable S1-S5scoped receipts;five received S4clauses remain unaccepted. |
+| Candidate Proposal | [T31 fixed plan/S6acceptance](../history/M3-T31-dos-performance-memory-continuation.md). |
+| Files And ABI Surface | Neutral diagnostics,actual composition/output bindings;initial0-200diagnostic lines,corrections scoped before changes,no game/ABI fork. |
 | Applicable Rules | README Task Reading Set,EXECUTION,DOCUMENT,ARCHITECTURE,CODING,CONTRIBUTING and source policy. |
-| Verification | Exact whole cell/glyph/color/game-state comparison,both widths,original DOS cost/listings/memory,information/object/scene/Tab/restore routes;three EXEs for adoption. |
+| Verification | Final-build original DOS costs/input/graphics/text/Tab/save/restore/exit,memory/stack/firmware/kernel clauses and source invariant comparisons;three EXEs for product repairs. |
 | Expected Markers | scope/expected/actual[],new0,baseline/max1992/1992;local1991/1992nodes,4260/4261controls,no custody change. |
-| Asset Needs | Existing local owner bindings/comparators only;ignored bounded build outputs,no new import/distribution. |
-| Reporting Requirements | Scope/estimate first;actual source size,cost/memory/cell proof,products,total/local counters;remaining S6acceptance stays visible. |
-| Stop Conditions | Cell/color/state difference,loss of information,unsafe/unbounded memory,unjustified cost regression or semantic change. |
-| Exit Criteria | Candidate cohort adopted/rejected with exact output/cost/memory evidence;adoption has three products/routes;S6receives integration proof. |
-| Original Owner Request | Test,repair and verify performance/memory under approved T31plan. |
-| Similar-Issue Sweep | All captions/HUD/scores,animated colors/poses,water/castle/monochrome,cell ownership/clipping,temporary near/far lifetime and mixed-mode reset. |
+| Asset Needs | Existing owner/runtime/local diagnostic bindings only;ignored bounded build artifacts,no new import/distribution. |
+| Reporting Requirements | Report source/products,time/input/memory and all five resolved/pending clause IDs together;no partial proof as full acceptance. |
+| Stop Conditions | Output/state divergence,unsafe/unbounded probe,invalid ownership/chain,source-binding gap or unsupported bound. |
+| Exit Criteria | Required integrated gates and MEM-S4-01..05proved,or explicit owner-directed receiving transfer;no successful closure with unexplained/open gates. |
+| Original Owner Request | Test,repair and verify memory/performance until the actual requested end state. |
+| Similar-Issue Sweep | Final changed owners,all palette/glyph/pixel paths,startup/runtime/error/restore,near/far/FILE/IRQ/kernel lifetimes,mixed-mode/input cadence. |
 
 ## Current Technical Baseline
+
+- T31 S5 P2closed:exact output doubling+14/-4,permanent test+11,build include
+  correction+5/-5;14focused tests each width and actual Windows routes pass.
+  DOS301881(+32),DGROUP49072/stack2048/page-rounded loader bounds unchanged;
+  actual370route passes,observed378880;369cleanly refuses initialization.
+  Three products301881/311310/324110bytes. S6sole active executor;MEM-S4-01..05remain open,
+  no playable-cadence/global-stack/kernel-peak certificate.
+  [S5 closure/S6 acceptance](../history/M3-T31-dos-performance-memory-continuation.md#s5-p2-closure-integrate-exact-in-output-text-clear).
 
 - T31 S5 P1cohort:three clear variants pass11776full frame cases each width
   and977235-byte original DOS route equality. Doubling selected:whole text

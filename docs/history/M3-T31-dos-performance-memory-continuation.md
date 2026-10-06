@@ -41,7 +41,7 @@ the source policy, with no redistribution or new derivation/import authorized.
    input latency and memory separately. Receive the explicit S4 remaining contract below. A missed cadence remains a failed gate,
    never a playability claim. Physical486SX remains M4 qualification.
 
-S1-S4 are closed; S5 is active. S6 is registered as the receiving integration backlog only,not execution-active. Each S reports scope/size first,
+S1-S5 are closed; S6 is the sole active integration executor and retains the received five-clause backlog. Each S reports scope/size first,
 then exact disposition, evidence and total/local counters. Product-code P refreshes
 three EXEs using original tools; audit/prototype/doc P does not. All diagnostics
 stay below ignored build; no unrelated work is removed. Retain prior scoped proof
@@ -813,3 +813,80 @@ scene integration. S5 stays active. Scope/expected/actual[],new0,custody unchang
 historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342/infeasible81).
 Node/documentation gates precede this audit/prototype P. The accepted S4->S6
 five-clause receiving contract remains open;no T31acceptance or goal completion.
+
+
+## S5 P2 closure: integrate exact in-output text clear
+
+Adopt selected doubling in src/text/elements.c,+14/-4one product source.
+After complete input validation,initialize the first blank cell,then copy only
+already initialized cells into disjoint target spans. Each n<=filled and the
+last span clips to4000cells;no row scratch,heap,persistent cache,artwork/state
+selection or original game/PPUchange. Original data/view ABI and invalid-input
+atomicity remain. Standalone independent11776-case reference per width and
+977235-byte original DOS diagnostic receipts retain exact primitive and route
+outputs;whole text diagnostic3.9103%shorter,no final productFPS claim.
+
+Add11permanent test lines:all4000cells across16sky values,including the final
+non-power-of-two span,retain space and identical foreground/background. Both
+new products pass14focused tests per width(text elements/actor/background/
+caption/observation,PPU/planes,storage/snapshot continuation,performance,purity,
+self-test);rebuild/recheck the element test after adding the permanent guard.
+Actual refreshed Windows binaries passDPIstartup,three native text entries,
+two graphical returns andconsoleEscape. Existing tests exercise authored
+information/score/pose/color paths;do not interpret finite fixtures as a full
+all-level visual gallery or whole-game certification.
+
+Original DOS preflight exposed five text-foundation invocations missing the
+existing runtime include directory. Build-OpenNt16Dos.ps1adds /Ithat directory
+to those five paths(+5/-5),matching the already-correct contract/bridge/regular
+build paths. No compiler/runtime/optimizer change or platform semantics fork.
+The failed include attempt is not acceptance;fixed original build succeeds.
+Diagnostic verification also initially shared its Python exec namespace with
+the retained receipt checker;isolated execution fixes that driver-only error
+before source/artifact equality checks. No product patch arose from it.
+
+DOS product301881bytes(+32),DGROUP49072/headroom16464and2048stack unchanged;
+minimum326000/max342448,page-rounded326192/342640unchanged,full-group max-extra
+3079. Element-build locals8versus baseline2(+6),with added memcpy argument/
+callee residence explicitly received by S6's final affected-join review.
+Actual370KiBroute completesload/input/Tab/text/graphics/save/restore/Escape:
+2023samples,zero invalid/dropped MCBchains,observed peak378880bytes,CRC/resource-
+bound save frame7544versus seed7465. At369EXECsucceeds but child cleanly returns1,
+original save unchanged;tested adjacent memory boundary preserved. Observed
+arena size is budget dependent,not continuous/global peak or universal minimum.
+No DOS playable-cadence or physical486SXacceptance is inferred.
+
+Three refreshed tested assets,with compiled runtime sections retained by strip:
+- mysmb16.exe: 301881bytes; 0d492d0d4cc412db1c2edc13d0429269fffb9e191467d6dc1a175ed661d037bf.
+- mysmb32.exe: 311310bytes; 935ffc5561a150fa64e17d4d08af310ec9409a7273fc88024a5e97da197f1282.
+- mysmb64.exe: 324110bytes; 4b7f8064f9b30c99c5f8fe5a8130502e134a8ed7cc678b5bd5c42d2d4a6d0cfe.
+Source/test/tool actual changes:product+14/-4,test+11,build tool+5/-5. Similar-
+issue sweep:validation-before-clear,all sky/char/color fields,last span and copy
+nonoverlap,source immutability,current cell ABI,all five preflight include paths,
+information/score/pose paths,mixed-mode and constrained memory. No unresolved
+scoped output difference. Raw resources/captures/listings/logs stay ignored in
+build/m3-t31-s5;source-binding ties adopted behavior to the selected prototype.
+
+S5closes;already registered S6receiving role becomes sole active execution under
+the approved plan. S6retains MEM-S4-01..05with no cancellation,promotion or
+claimed completion. T31and the memory/performance goal remain open. Scope/
+expected/actual[],new0,custody unchanged;historical1992/1992,local1991/1992nodes,
+4260/4261controls(raw4342/infeasible81). Required closure/admission/node and
+documentation gates precede commit.
+
+## S6 admission: final integrated memory/cadence acceptance
+
+Start from final S5products and source bindings. Combine original fixed-config
+actual graphics/text/Tab/save/restore/exit costs,input response and conventional
+memory with all five received clauses. Reuse accepted scoped receipts only
+where final source/dependencies still match. Initial estimate0-200neutral
+diagnostic lines;product repair receives a bounded owner and three artifacts.
+No emulator settings,tick/frame skipping,information loss,ROM game/PPU change,
+helper process or stack shrink without proof. Physical486SXremains M4.
+Every MEM-S4clause must have proved conditions or a named explicit remaining
+failure. Missing memory/stack/kernel/firmware proof and missed configured60Hz
+remain required open gates;neither a smaller EXE nor a finite route closes them.
+Report source/product identities,whole-cell/pixel invariants,time/memory and
+all resolved/pending clause IDs together. T31cannot close successfully while
+its required gates are unexplained or open;no goal completion from partial proof.
+ROMscope/expected/actual[],new0,max1992/1992,same local node/control totals.

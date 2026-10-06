@@ -124,6 +124,17 @@ int main(int argc, char **argv)
     CHECK(mysmb_text_elements_build(elements, 1U, 9U, &frame));
     CHECK(frame.cells[3999].character == ' ');
     CHECK(mysmb_text_elements_build(0, 0U, 9U, &frame));
+    /* Blank initialization covers every cell,including the non-power-of-two
+     * final span,and preserves each supported sky foreground/background. */
+    for(row=0U;row<16U;++row) {
+        memset(&frame,0xa5,sizeof(frame));
+        CHECK(mysmb_text_elements_build(0,0U,(mysmb_io_u8)row,&frame));
+        for(column=0U;column<MYSMB_IO_TEXT_CELLS;++column) {
+            CHECK(frame.cells[column].character==' ');
+            CHECK(frame.cells[column].foreground==row);
+            CHECK(frame.cells[column].background==row);
+        }
+    }
     /* Every authored pose/orientation is visible and color-independent. */
     for(i=0U;i<MYSMB_TEXT_KIND_COUNT;++i) {
         elements[0].kind=(mysmb_io_u8)i;elements[0].x=64;elements[0].y=64;
