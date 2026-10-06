@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T28 S6 P10; bounded read-only renderer/VGA mapping prototype; CRT/stack/cadence gaps and deferred row recovery retained. |
+| Identifier Mode | Continuation: M3 T28 S6 P11; selected direct four-plane converter integration and product gates; CRT/stack/cadence gaps retained. |
 | Admission And Approval | Owner authorizes execution and the joint conventional-memory/playability contract. Owner accepts the rowwise memory/performance tradeoff and admits implementation;repeat-row/OAM tuning is deferred to TODO. S5 closed;S6 remains active. |
 | Objective | Reconcile S1-S5 memory census;verify actual minimum-free launch/runtime fit,stack/lifetimes,normal cadence/input budgets and clock sampling;dispose all six opportunities with fit/playability separate hard gates. |
 | Non-goals | No core ROM routine/state/timing changes,no emulator settings,no text artwork or VGA coordinate/mode changes,no emulator-based physical486SX/DOS-version or M2 certification. |
 | Reference Baseline | Post-T27 source and retained three products;historical1992/1992,local1991/1992 nodes and4260/4261 feasible controls,raw4342/infeasible81. |
 | Candidate Proposal | [T28 retained proposal and audit](../history/M3-T28-dos-rendering-optimization.md). Removed from pending QUEUE on admission. |
-| Files And ABI Surface | Integrated DOS root/device timing and memory/performance probes;initial audit0product lines,prospective rowwise integration8-10files/350-550changed lines after prototype/contract review and pre-code report. No core/PPU-state/snapshot schema changes. |
+| Files And ABI Surface | Integrated DOS root/device timing and memory/performance probes;initial audit0product lines,selected four-plane integration3product files plus focused tests,100-220changed lines after pre-code report. No core/PPU-state/snapshot schema changes. |
 | Applicable Rules | README Task Reading Set,EXECUTION,DOCUMENT,ARCHITECTURE,CODING,CONTRIBUTING and source policy. |
 | Verification | Independent128000-byte mapping and actual VGA-plane readback,far guards,mode/restore lifetime,native x86/x64 and original DOS16;fixed-config complete-output/input cost,MCB/near/far peak and contiguous/stack/fallback under the memory contract,platform purity and three EXEs for each product-code P. |
 | Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0,maximum1992/1992;no custody transfer. S6 owns infrastructure-only implementation;original node custodians unchanged. |
@@ -22,6 +22,15 @@
 | Similar-Issue Sweep | Sweep all pixel/text/snapshot/cache consumers and simultaneous lifetimes,resource/mode/restore invalidations and allocation-failure cleanup;record every hit and disposition. |
 
 ## Current Technical Baseline
+
+- S6 P10three four-plane prototypes pass both widths16972800-byte mapping tests
+  and actual DOS five-frame/640000-plane-byte/text/snapshot equality. Reject
+  weak local-output and slower full-row staging;select16-byte/direct-plane
+  candidate:about29.85percent shorter mapping/submission,10.43percent shorter
+  graphics-return route,288fewer instrumented owned bytes,stack pattern72retained.
+  Two selected runs match output. Product source/EXEs unchanged;P11integration
+  still needs formal products/fallback/pressure/host gates. S6/T28remain open.
+  [Measured alternatives and adoption gates](../history/M3-T28-dos-rendering-optimization.md#s6-p10-checkpoint-bounded-four-plane-alternatives-and-selected-prototype).
 
 - S6 P9stage probe retains92records/zero drops after ten declared title-record
   omissions;all original ticks still execute,cacheNear1preserved. Scoped graphics

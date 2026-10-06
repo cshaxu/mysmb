@@ -1731,3 +1731,72 @@ receipts;do not restart a whole-project audit. Three products retain P7hashes.
 Historical1992/1992,local1991/1992nodes and4260/4261feasible controls(raw4342,
 infeasible81),scope/expected/actual[],new0,custody unchanged. S6/T28remain open;
 P10continues bounded renderer/mapping evaluation and the named memory/stack gaps.
+
+
+## S6 P10 checkpoint: bounded four-plane alternatives and selected prototype
+
+Contained prototype only;formal product source and three EXEs remain P7.
+Evaluate the same neutral indexed row band into four contiguous VGA plane bands.
+Each candidate shares the exact floor(x*4/5),floor(y*3/5)mapping,63mask,repeated
+source-row reuse,capacity/band validation and synchronous source lifetime. It
+never receives game,nametable,OAM,CHR or audio state. No changes to PPU composition,
+original control flow,display mode,output size,pixel coverage or input/tick work.
+
+Three alternatives are compared as one bounded cohort:
+
+| Candidate | Storage and measured disposition |
+| --- | --- |
+| Sixteen-byte input plus four local80-byte outputs | Copy one16-byte source group,stage all four rows,then copy them into plane bands. Mapping/submission improves only about0.91percent;whole graphics-return route about0.31percent. Instrumented peak392752(-128versus P7row probe). Reject as too weak for the remaining deficit. |
+| Full256-byte input plus four local80-byte outputs | One source-row copy saves small memcpy calls,but variable-index access costs more with the actual compiler. Mapping/submission about34.95percent slower,whole graphics-return route12.17percent slower. Peak393088(+208). Reject;native intuition is not DOS performance evidence. |
+| Sixteen-byte input and direct four-plane writes | Read each group once,unroll exact per-plane indices,and advance four far output pointers. No320-byte local outputs or256-byte source array. Mapping/submission about29.85percent shorter;whole graphics-return route10.43percent shorter. Peak392592(-288). Select for the subsequent production integration gates,not as completed playability. |
+
+The5120-byte plane band borrows row/text storage after the first2560source bytes.
+It uses existing15400-byte allocation,not an additional far/near heap request.
+The independent1280-byte static scratch is removed in the DOS prototypes. Source
+and destination ranges are disjoint during graphics;authored text owns the whole
+store only while active. Rebuild every band after text/load. Tests use two guard
+bytes around packed scratch;production integration must declare bounds/lifetime
+and require the text pack to fit2560+5120bytes. No output mirror or hidden cache.
+
+Each candidate passes both x86/x64 C90 harnesses across every legal destination
+first row and batch size1through16. Each width compares16972800bytes with the
+retained single-plane implementation and independent coordinate formula,including
+high-bit input masking,all rows/planes,guards and invalid bounds/capacity. This is
+scalar mapping proof,not original-ROM or physical hardware qualification.
+
+Each actual DOS candidate route matches five61440-byte active logical frames,
+640000hardware VGA-plane readback bytes,8000hardware text bytes,12000neutral cells
+and10035snapshot bytes against the retained S5route. Text-phase inactive pixel
+view remains excluded. Mode3restores and observed near/far live payloads free.
+All candidates retain far payload35996bytes and72untouched stack-pattern bytes
+in this route. The unchanged low-water mark does not prove every potential stack
+path safe;it prevents inventing an all-route margin or shrinking the stack.
+
+The selected direct-write candidate repeats under the same unchanged installed
+configuration,normal SDL and private desktop. Same probe bytes,both runs have
+identical active frames,all twenty plane readbacks,text/cells and snapshot bytes.
+Paired timing totals retain about29.85percent mapping/submission reduction. Whole
+instrumented title/load/graphics-return/save/reload route costs decrease roughly
+8.93/1.85/10.43/5.28/1.85percent versus P7row probe. Those totals include route and
+memory census work;not all are render-only frames. Do not use shorter wall time
+or this scoped reduction as a nominal60Hzor actual product-memory claim.
+
+The similar-issue review covers duplicate source reads,local variable indexing,
+far pointer updates,partial bands,last row239,column255,first-row duplicate guards,
+capacity arithmetic,source/destination aliasing,text reuse,resource-independent
+mapping and complete device submissions. All hits have the above explicit
+candidate dispositions. Original compiler/runtime flags are retained;no compiler
+replacement,settings override,frame/tick dropping or artwork change is used.
+
+P11receives production integration of the selected neutral converter and DOS
+composition scratch binding. Expected3product files plus focused test(s),roughly
+100-220changed source/test lines;existing scalar/full-frame APIs remain supported.
+Required gates:independent mapping/guards,actual normal/cache-failure/pressure
+routes and snapshots,formal-product startup/resident fit,stack/lifetimes,Windows
+focused/host regression,original DOS16 and all three refreshed EXEs. No success
+is inferred from the prototype before these integrated results. Deferred row/OAM
+recovery stays TODO;PPU/text major costs and CRT/stack/cadence limits remain open.
+
+Historical1992/1992,local1991/1992nodes and4260/4261feasible controls(raw4342,
+infeasible81),scope/expected/actual[],new0,custody unchanged. No product-code or
+EXE refresh for this prototype-only P. S6/T28remain open.
