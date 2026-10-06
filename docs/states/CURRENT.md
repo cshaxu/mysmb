@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S4 P8; final finite integrated memory/cadence register. |
+| Identifier Mode | Continuation: M3 T32 S4 P9; final finite integrated memory/cadence register. |
 | Admission And Approval | Owner approved S5-S9 planning, then required S4 to repair known fixable defects before closure; S4 sole active, no blanket handoff. |
 | Objective | Reconcile final source/products with MEM-S4-01..05, actual cadence/input/memory and existing WIN-T19-STARTUP dependency, without overclaiming partial proof. |
 | Non-goals | No ROM/PPU semantics, lost ticks/frames/rows/colors, helper process, DOSBox settings, toolchain change, unsupported stack shrink or silent resumption of suspended T19. |
@@ -22,6 +22,13 @@
 | Similar-Issue Sweep | Final changed owner/layout/locals,near/far/CRT/startup/exit/hooks,IRQ/BIOS/DOSkernel paths,graphics/text/mixed-mode/input andexisting T19host readiness condition. |
 
 ## Current Technical Baseline
+
+- S4 P9: default/normal and DIV-installed025A exit domains both65/65
+  conditional local flows; composed CRT maximum142bytes excluding entry,
+  cinit6/envp52or78/exit64/DIV70. Named software exit-target gap resolved;
+  hook/table lifetime, environment allocation, startup stack transition and
+  firmware/kernel/nesting remain unproved. Source/three current EXEs unchanged.
+  [Exit-chain bounds](../history/M3-T32-rendering-performance-continuation.md#s4-p9-checkpoint-normal-and-div-exit-software-chains).
 
 - S4 P8: runtime DATA rebind corrected (FP3EE6, XP3EF2..3EF6,
   empty table B7F2); correct startup/binary flags give default63/63 and

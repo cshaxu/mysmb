@@ -968,3 +968,46 @@ Scope/expected/actual empty, new zero. Historical 1992/1992; local 1991/1992
 nodes and 4260/4261 feasible controls (raw 4342, infeasible 81). Full M2
 certification and configured DOS cadence remain incomplete. Documentation,
 node and diff gates precede commit; S4/T32 remain open.
+
+## S4 P9 checkpoint: normal and DIV exit software chains
+
+Current CRT __cintDIV at 05E2 writes 025A to SS:369E at 05EA, then
+falls through into __amsg_exit. Its indirect call at 0601 is preceded by
+PUSH CS. Thus treating all error calls as default 0271 is insufficient;
+the declared DIV domain must select normal _exit at 06CA instead of fatal
+cleanup 06E1. No product source or machine bytes changed.
+
+Add __cintDIV as an explicit root and run two separate conditional models:
+normal/default cleanup and the DIV-installed 025A override. Both resolve
+65/65 local entries. Recursively compose concrete call depths, near/far entry
+bytes and callee bounds, skipping only checked empty constructor tables and
+already accounted same-frame helpers/generated interrupt thunks. Neither
+model has a recursive CRT chain or unresolved target. The largest conditional
+local CRT bound is 142 bytes excluding its caller's entry.
+
+| Entry | Normal/default domain | DIV override domain | Bound scope |
+| --- | ---: | ---: | --- |
+| __cinit | 6 | 6 | Excludes far entry and DOS service body |
+| __setenvp | 52 | 78 | Includes reached software error/exit chains; excludes far entry and DOS service body |
+| _exit | 64 | 64 | Includes current XP _flushall and following cleanup; excludes far entry and DOS service body |
+| __cintDIV | Not a selected root | 70 | Includes error printing/normal exit; excludes CPU interrupt entry and firmware/nesting |
+
+This resolves the named software exit-target omission in MEM-S4-02. It does
+not prove default debug/FP/table lifetimes under arbitrary memory writes,
+environment allocation domains, __astart's segment/stack transition, other
+interrupt nesting or a whole-system peak. Those remain explicit S4 work,
+not passed receipts and not a S9 repair transfer. Existing configured
+performance failure remains for S5-S8. Strict host startup retains its named
+suspended T19 dependency; no repair claimed or resumption performed.
+
+Contained recipes: prepare-exit-override.py, crt-exit-override-flow.py
+--startup --app-binary, bound-exit-domains.py; current product SHA matches P8.
+The bound excludes BIOS/DOS bodies explicitly and does not mistake an INT's
+six-byte CPU entry for the service's whole stack. Similar-issue sweep covers
+the current direct write to exit target, saved-CS indirect call, normal/fatal
+fallthrough, table iterator callback and near/far child entry accounting.
+
+Expected and actual product changes zero; three EXEs remain current P6 and
+are not rebuilt. Scope/expected/actual empty, new zero; historical1992/1992,
+local1991/1992 nodes and4260/4261 feasible controls(raw4342,infeasible81).
+Documentation/ledger/diff gates validate this checkpoint before commit.
