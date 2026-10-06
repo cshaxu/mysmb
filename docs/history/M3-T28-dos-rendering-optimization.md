@@ -2253,3 +2253,71 @@ nodes,4260/4261feasible controls(raw4342/infeasible81). S6/T28remain open.
 Next P17measures the validation-only receipt zero-tail alternative without bulk
 struct serialization;product memo baseline is retained. Required cadence/input,
 CRT/error/continuous-peak/all-path stack gaps are not discharged by this P.
+
+
+## S6 P17 checkpoint: validation-only zero-tail alternatives
+
+Contained probes use the P16memo baseline and original field-by-field receipt
+serialization. Capture/read_buffer/schema/restore and observer producers remain
+unchanged. Product code/three EXEs remain P16. Two alternatives replace only
+validation work;no native struct-to-wire copy is admitted. Original OpenNT16,
+normal SDL/private desktop and installed DOSBox settings remain unchanged.
+
+| Candidate | Complete-route cost and memory disposition |
+| --- | --- |
+| Per-record memcmp against forty constant zero bytes | Load/text/graphics-return/save/reload0.324/2.260/2.156/0.990/0.335percent shorter. Diagnostic owned392992against393008baseline(-16bytes);far35996 and stack pattern72unchanged. Select for product integration proof:retains validation order and most benefit with the smaller observed footprint. |
+| Whole-tail adjacent-byte equality with zero first byte | Two runs match,load/text/graphics-return/save/reload0.384/2.633/2.497/1.140/0.385percent shorter. Diagnostic owned393088(+80bytes),far35996 and stack72unchanged. No zero pattern is needed but helper/code cost outweighs that storage reduction in this build. Supersede for current adoption:extra0.37percentage-point text gain costs96more observed bytes versus the selected candidate. |
+
+The selected candidate introduces a40-byte constant zero pattern and replaces
+only the original40-byte scalar scan of each unused record with exact memcmp.
+Its lower total diagnostic footprint is measured compiled code/data,not a claim
+that the constant occupies no storage. Active record checks,owner checks,count
+bounds and disabled-receipt validation retain their original order. No new
+heap,resource cache,game/object interpretation or platform branch is added.
+Formal DGROUP/headroom/loaded and resident budgets remain P18adoption gates.
+
+The adjacent candidate is mathematically exact:for a bounded nonempty sequence,
+first byte zero plus every adjacent pair equal proves every byte zero. Read-only
+memcmp operands may overlap;zero count short-circuits before any dereference.
+Count bounds precede tail arithmetic,and zero-length tails may point one past
+valid storage. No extra sentinel may be read. The tested implementation also
+uses this helper for disabled receipts;that change is not selected for adoption.
+
+Each alternative passes11279original-vs-candidate cases on each native width:
+enabled states/counts0through65,full5253capture bytes and guards,immutable game,
+single-byte mutations across enabled records,all5252disabled tail positions,
+255uniform nonzero disabled encodings,and valid/first/last unused-byte checks
+for both buffers at every count0through64. Both widths first passed the retained
+5451case corpus as well. Valid count64has an empty unused tail;count0checks all
+unused records. Invalid canonical inputs remain rejected;wire bytes remain exact.
+These cases do not certify every transactional restore/error path.
+
+Selected DOS route and two adjacent route runs each match977235bytes against
+the freshly linked P16-equivalent codec baseline:five active logical frames,
+twenty VGA plane readbacks,hardware text,neutral cells and10035snapshot bytes.
+All restore mode3and free live near/far payloads. Source/code-only changes are
+isolated in the codec;other probe owners are the same. No extra heap is hidden.
+The underlying snapshot stage counter is uninstrumented and stays zero;cost
+claims are whole-route differences,not that snapshot computation is free.
+These ordinary fixture-local savings are not60Hz or physical486SXqualification.
+
+Similar-issue sweep covers both phase buffers,count/overflow/owner bounds,
+unused first/last bytes,disabled encoding,active source-size/family/OAM fields,
+all read/write/capture paths and zero-pattern lifetime. Original serializer,
+restore and snapshot schema have no changes. No general memcpy layout shortcut.
+
+Local evidence below ignored build/m3-t28-s6:prepare-p17.py,Build-p17base,
+Build-p17memcmp,Build-p17adjacent,Build-p17-extended with x86/x64arguments;
+run-p17base/memcmp/adjacent and verify-p17-cost.py. Native result logs live in
+p17-native. Run-adjacent arguments1and2select diagnostics,not emulator settings.
+P18receives selected per-record validation integration:one product file about
+three changed lines plus a bounded canonical-tail regression extension;three
+products,focused/host/DOS fallback-pressure/populated equality and actual memory
+routes are required before adoption. No product refresh is needed for this
+prototype-only P. Deferred row/OAM work remains TODO.
+
+Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
+infeasible81),scope/expected/actual[],new0,custody unchanged. S6/T28remain open;
+configured cadence/input and CRT/error/continuous peak/all-path stack remain gaps.
+
+Selected codec SHA2569d5a53422c40f282cadd3e981659bb9274430537194ec6028510f8bf6dfaa785.

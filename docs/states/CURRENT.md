@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T28 S6 P17; validation-only receipt cost prototype; CRT/stack/cadence gaps retained. |
+| Identifier Mode | Continuation: M3 T28 S6 P18; selected unused-record validation integration; CRT/stack/cadence gaps retained. |
 | Admission And Approval | Owner authorizes execution and the joint conventional-memory/playability contract. Owner accepts the rowwise memory/performance tradeoff and admits implementation;repeat-row/OAM tuning is deferred to TODO. S5 closed;S6 remains active. |
 | Objective | Reconcile S1-S5 memory census;verify actual minimum-free launch/runtime fit,stack/lifetimes,normal cadence/input budgets and clock sampling;dispose all six opportunities with fit/playability separate hard gates. |
 | Non-goals | No core ROM routine/state/timing changes,no emulator settings,no text artwork or VGA coordinate/mode changes,no emulator-based physical486SX/DOS-version or M2 certification. |
 | Reference Baseline | Post-T27 source and retained three products;historical1992/1992,local1991/1992 nodes and4260/4261 feasible controls,raw4342/infeasible81. |
 | Candidate Proposal | [T28 retained proposal and audit](../history/M3-T28-dos-rendering-optimization.md). Removed from pending QUEUE on admission. |
-| Files And ABI Surface | Read-only receipt zero-tail cost investigation0product lines;contained prototype before adoption. P16 integrated text memo is baseline. No core/PPU-state/snapshot schema or platform-game change. |
+| Files And ABI Surface | Selected per-record zero memcmp validation:one product file about three changed lines plus bounded canonical-tail regression. Preserve field serializer,validation order,core/PPU-state/snapshot schema and platform ownership;formal memory gates required before adoption. |
 | Applicable Rules | README Task Reading Set,EXECUTION,DOCUMENT,ARCHITECTURE,CODING,CONTRIBUTING and source policy. |
 | Verification | Independent128000-byte mapping and actual VGA-plane readback,far guards,mode/restore lifetime,native x86/x64 and original DOS16;fixed-config complete-output/input cost,MCB/near/far peak and contiguous/stack/fallback under the memory contract,platform purity and three EXEs for each product-code P. |
 | Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0,maximum1992/1992;no custody transfer. S6 owns infrastructure-only implementation;original node custodians unchanged. |
@@ -22,6 +22,13 @@
 | Similar-Issue Sweep | Sweep all pixel/text/snapshot/cache consumers and simultaneous lifetimes,resource/mode/restore invalidations and allocation-failure cleanup;record every hit and disposition. |
 
 ## Current Technical Baseline
+
+- S6 P17validation-only prototypes match11279native cases per width and DOS
+  977235bytes. Select per-record zero memcmp:text route2.260percent shorter,
+  diagnostic owned-16bytes. Adjacent whole-tail variant2.633percent shorter
+  but+80bytes,superseded for adoption. No product edit;P16EXEs remain current.
+  P18receives only selected validation change;formal product memory gates apply.
+  [Tradeoff,semantic checks and limits](../history/M3-T28-dos-rendering-optimization.md#s6-p17-checkpoint-validation-only-zero-tail-alternatives).
 
 - S6 P16adopts frame-local shared text memo:2source/testfiles,+43/-2,no heap.
   Both widths14tests/13host groups and128independent scene fixtures pass;
