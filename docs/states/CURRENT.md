@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T31 S6 P1; final integrated memory/cadence acceptance. |
+| Identifier Mode | Continuation: M3 T31 S6 P2; integrate/evaluate private scratch-pointer correction after P1 current cost/cohort. |
 | Admission And Approval | Approved T31plan;S5closed;S6receiving backlog becomes sole active executor. |
 | Objective | Verify final source-bound product time/input/memory and resolve or explicitly report each MEM-S4-01..05gate. |
 | Non-goals | No ROM game/PPU changes,information/tick/frame loss,helper process,DOSBox settings,toolchain replacement or unproved stack shrink. |
 | Reference Baseline | S5final products/source and applicable S1-S5scoped receipts;five received S4clauses remain unaccepted. |
 | Candidate Proposal | [T31 fixed plan/S6acceptance](../history/M3-T31-dos-performance-memory-continuation.md). |
-| Files And ABI Surface | Neutral diagnostics,actual composition/output bindings;initial0-200diagnostic lines,corrections scoped before changes,no game/ABI fork. |
+| Files And ABI Surface | Current-loop diagnostics plus contained src/ppu/frame.c private scratch-pointer representation cohort;estimate20-60candidate lines,no public/game/PPUsemantic fork. Original /ALruntime DS=SScondition and exact output/cost/memory gates before adoption. |
 | Applicable Rules | README Task Reading Set,EXECUTION,DOCUMENT,ARCHITECTURE,CODING,CONTRIBUTING and source policy. |
 | Verification | Final-build original DOS costs/input/graphics/text/Tab/save/restore/exit,memory/stack/firmware/kernel clauses and source invariant comparisons;three EXEs for product repairs. |
 | Expected Markers | scope/expected/actual[],new0,baseline/max1992/1992;local1991/1992nodes,4260/4261controls,no custody change. |
@@ -22,6 +22,14 @@
 | Similar-Issue Sweep | Final changed owners,all palette/glyph/pixel paths,startup/runtime/error/restore,near/far/FILE/IRQ/kernel lifetimes,mixed-mode/input cadence. |
 
 ## Current Technical Baseline
+
+- T31 S6 P1checkpoint:current loop diagnostic712.5786msgraphics/815.5009mstext,
+  cadence fails;PPU/mapping dominate graphics,text assembly89.322%oftext.
+  Near-allcandidate exact512cases both widths and matched DOSroutes;ordinary
+  2.2247%,water/castle/dense5.7031/1.5959/5.9234%,far/rawfallback2.1729/3.1359%
+  shorter,diagnostic-272/-288bytes. Not adopted,three S5products unchanged.
+  S6/MEM-S4-01..05open,no actual playable-cadence/global peak certificate.
+  [Current cost/candidate limits](../history/M3-T31-dos-performance-memory-continuation.md#s6-p1-checkpoint-current-cadence-failure-and-near-pointer-candidate-evidence).
 
 - T31 S5 P2closed:exact output doubling+14/-4,permanent test+11,build include
   correction+5/-5;14focused tests each width and actual Windows routes pass.

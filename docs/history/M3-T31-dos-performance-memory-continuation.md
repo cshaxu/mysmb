@@ -890,3 +890,82 @@ Report source/product identities,whole-cell/pixel invariants,time/memory and
 all resolved/pending clause IDs together. T31cannot close successfully while
 its required gates are unexplained or open;no goal completion from partial proof.
 ROMscope/expected/actual[],new0,max1992/1992,same local node/control totals.
+
+## S6 P1 admitted correction cohort: private scratch-pointer traffic
+
+Current final-source three-owner loop diagnostic retains original compiler,
+runtime and installed DOSBox configuration.143records/no drops,73qualifying
+graphics and14text frames,source-bound owner copies and valid snapshot CRC:
+graphics median712.5786ms(step-only1.4034Hz),text815.5009ms(1.2262Hz),both fail
+nominal16.67ms. PPU457.5253ms/64.207%,mapping197.5792ms/27.727%;text assembly
+728.4220ms/89.322%. Core9.19/9.23msis not the main output bottleneck. Diagnostic
+instrumentation and fixed-config emulation are not final product/hardware FPS.
+No settings,frame/input/work suppression or product change.
+
+Coordinator scopes a bounded output-only corrective prototype in shared
+src/ppu/frame.c,estimate20-60candidate lines. Existing local pixels256and
+caller colors16are stack-owned in the original /ALABI;default far pointer
+accesses repeatedly load segment registers. Prototype explicitly near local
+target/quad/colors pointers only for that original representation. The fixed
+runtime establishes SS=DS=DGROUPbefore main;verify no supported call/lifetime
+violates it. Public state/output/CHR pointers stay far and original rendering
+control/math/palette/opacity/sprite ordering stay unchanged. Native pointer
+representation remains ordinary C. No generic ROM/game translation change.
+Independent512pixel/plane/state cases both widths,original DOS ordinary and
+populated output/cost,raw/cache/failure/clip/split routes and memory/listing
+review gate adoption. Three artifacts only for adopted product code. If any
+pointer/ABI/output assumption fails,reject;do not reinterpret a memory failure
+as a license to weaken semantics. MEM-S4-01..05remain open and source changes
+receive named final dependency rechecks. All prototypes/traces stay below build.
+
+## S6 P1 checkpoint: current cadence failure and near-pointer candidate evidence
+
+Current-source loop probe uses regenerated main/root/devices instrumentation,
+all other original S5objects unchanged,original /AL/Gscompiler/runtime and
+normalSDL/private desktop.256record budget,150seconds/2MiB,143records/no drops;
+10title log omissions affect recording only,not frames/game/input. Snapshot CRC
+valid. The fixed settings result712.5786msgraphics/815.5009mstext is an explicit
+failed diagnostic cadence gate,not final product/hardwareFPS. Graphics PPU64.207%
+and mapping27.727%,text assembly89.322%;core9.19/9.23msdoes not justify rewriting
+original gameplay. No emulator settings or work suppression.
+
+Contained frame-owner pointer cohort changes representation only of local
+pixels target,local quad and caller-stack colors. Public state/output and raw
+CHR pointers stay far;native representations stay ordinary C. Original runtime
+establishes DS=SS=DGROUPand the applicable calling/lifetime contract must retain
+it;do not promote this to arbitrary DOSclients/alternate stack ABI support.
+Native near-all512cases each width compare188743680strip/65536000plane bytes,
+source immutability,guards and invalid requests. Each original DOS ordinary
+variant matches977235pixel/plane/text/snapshot bytes,mode3restore,near/far cleanup
+and unchanged installed settings:
+
+| Variant | Whole ordinary graphics-return change | Diagnostic owned delta |
+| --- | ---: | ---: |
+| Near target only | -0.8509% | -144bytes |
+| Near colors/quad only | -1.4755% | -224bytes |
+| Both | -2.2247% | -272bytes |
+
+Select both for integration evaluation. Fresh matched populated baseline and
+selected runs each match977235bytes;water/castle/dense routes5.7031/1.5959/
+5.9234%shorter,owned-272. Separate matched fallback baselines compare the same
+cache provenance:far cache route2.1729%shorter/owned-288,full cache failure/raw
+3.1359%shorter/owned-272,all977235bytes equal. A preliminary comparison of raw
+against normal cached output correctly matched bytes but its83%cost difference
+was a cache-condition difference,NOT pointer regression;the matched baselines
+replace that cost inference. No extra heap/row buffer. Original row locals
+320versus324;caller56unchanged,private color argument2versus4bytes. DS/near/far
+ownership,split/scroll/palette/opacity/CHRbounds and fallback remain gates before
+product adoption. Do not claim actual product resident saving from probe delta.
+
+Local recipes/results below build/m3-t31-s6:current-source cost generator/probe/
+summary,three near candidates/listings/native references,ordinary/populated and
+matched cache-failure comparators. No adopted product source or EXE change in
+this P. Next P integrates only selected private representation after actual
+product/memory/affected-join gates and refreshes three products if adopted.
+The smaller/faster candidate does not by itself resolve42.8/48.9times nominal
+frame time or physical486SXplayability. MEM-S4-01..05remain received/open;all
+pre-main/fatal/firmware/kernel conditions retain their named proof limits.
+Scope/expected/actual[],new0,custody unchanged;historical1992/1992,local1991/1992
+nodes,4260/4261controls(raw4342/infeasible81). Node/documentation gates precede
+commit. S6/T31/goal remain active,not complete;no queue/S advancement.
+'''
