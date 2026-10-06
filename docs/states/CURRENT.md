@@ -1,25 +1,25 @@
 # Project Status
 
-## M3 T30 S2 Packet
+## M3 T31 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T30 S2 P1;bounded scanline metadata reuse. |
-| Admission And Approval | Owner closes T29 and explicitly admits queue-head performance continuation. |
-| Objective | Reduce repeated tile/attribute/palette resolution across adjacent scanlines,with exact pixels and bounded storage. |
-| Non-goals | No ROM game/PPU-visible semantic changes,new framebuffer,OAM deferred tuning,Windows UI changes or DOSBox settings. |
-| Reference Baseline | Integrated S1 P3products/source and retained exact P24/S1 output comparators;T29 host fixes retained. |
-| Candidate Proposal | [T30 retained plan](../history/M3-T30-ppu-background-performance.md). |
-| Files And ABI Surface | Shared frame/row helpers,estimated100-220product lines;transient128-byte metadata plus keys initially;exact lifetime/fit review before adoption. |
+| Identifier Mode | New: M3 T31 S1 P1; performance/memory continuation. |
+| Admission And Approval | Owner closes T30 and admits next performance task; coordinator receives queue-head acceptance and T30 unfinished clauses. |
+| Objective | Dispose palette/pointer/geometry candidates and adopt only exact, worthwhile background preparation optimization. |
+| Non-goals | No ROM game/PPU-visible changes, new framebuffer, Windows UI, helper process or DOSBox settings changes. |
+| Reference Baseline | T30 S1 P3 source/products; retained S2 prototype comparisons. |
+| Candidate Proposal | [T31 plan and received scope](../history/M3-T31-dos-performance-memory-continuation.md). |
+| Files And ABI Surface | Shared src/ppu/frame.c; estimate20-100 lines,16-100 transient bytes; no public ABI or heap change. |
 | Applicable Rules | README Task Reading Set,EXECUTION,DOCUMENT,ARCHITECTURE,CODING,CONTRIBUTING and source policy. |
-| Verification | Original16-bit listing,native512-case independent pixel/plane guards,raw/cache/edge/split/palette paths,actual fixed-config DOS output,cost and memory;three EXEs for adopted code. |
-| Expected Markers | scope[],expectedMatches[],actualMatches[],new0,baseline/max1992/1992;local1991/1992nodes,4260/4261controls,no custody change. |
-| Asset Needs | Existing local resources and comparators;all prototypes/logs below ignored build;no new imports,existing EXE exception retained. |
-| Reporting Requirements | S owners/scope/size first;P actual diff,gain/memory/evidence/products,total/local counts;no micro-gain as playability acceptance. |
-| Stop Conditions | Pixel/state/opacity divergence,unbounded memory,unsupported pointer assumptions,cost regression or original semantic change. |
-| Exit Criteria | S2 metadata variants disposed with output/cost/fit proof,three products for adoption;no stale-frame reuse or unresolved scoped mismatch. |
-| Original Owner Request | Close current T and admit next performance task. |
-| Similar-Issue Sweep | Cached/raw/first-last/full spans,address/palette/output indexing,far accesses,splits,aliases and guards;follow original read-only output contracts. |
+| Verification | Both-width512-case oracle; original DOS ordinary/populated/raw/failure output, original compiler listing, memory and cost; three EXEs for adoption. |
+| Expected Markers | scope/expected/actual[],new0,baseline/max1992/1992;local1991/1992nodes,4260/4261controls,no custody change. |
+| Asset Needs | Existing owner-local bindings/comparators only; local-only source-policy purpose; all prototypes/logs below ignored build; no import/distribution. |
+| Reporting Requirements | S brief/scope/estimate first; P actual diff,gain/memory,products and total/local counts; no diagnostic timing as FPS. |
+| Stop Conditions | Pixel/state/opacity divergence, stale metadata, unbounded memory, cost regression or original semantic change. |
+| Exit Criteria | Every received candidate adopted/rejected with scoped proof; adopted code has three products and routes; no unresolved production mismatch. |
+| Original Owner Request | Close current T, admit next T, continue performance optimization. |
+| Similar-Issue Sweep | Palette aliases, raw/cache/failure, split/scroll/mirroring, first-last spans, immutable frame/band lifetimes and guards. |
 
 ## Current Technical Baseline
 
@@ -28,7 +28,7 @@
   Actual448/374/373KiBroutes pass,sampled386688/382592/381824bytes(+112).
   Three products refreshed305275/311310/323598bytes;no heap increase,stack2048
   retained. Eight tests per width and final-assets Windows routes pass.
-  No cadence/global peak certificate. S2 bounded metadata reuse is active.
+  No cadence/global peak certificate. T30 closed by owner-directed transfer; T31 S1 receives unfinished candidates.
   [S1 closure/S2 scope](../history/M3-T30-ppu-background-performance.md#s1-p3-closure-shared-blank-span-integration).
 
 - T29 S4 corrective implementation retained after owner rejects the earlier live
@@ -67,6 +67,8 @@
 
 ## Compact closure status
 
+- [T30 closure](../history/M3-T30-ppu-background-performance.md#s2-p1-and-t30-owner-directed-closure): S1 gain retained; S2 candidates and unstarted plane/integration clauses received by T31. No DOS playability acceptance.
+
 - [T29 Win32 usability](../history/M3-T29-win32-usability-regression.md#s3-p1-integrated-closure):
   Owner closes S4/T29 with retained implementation and explicit TODO transfers.
   Earlier scoped receipts remain historical,no new live acceptance or ROM credit.
@@ -85,5 +87,3 @@
   princess/Toad details retained; no ROM certification credit.
 - [T22 display handoff](../history/M3-T22-pipe-exit-display-recovery.md#s2-closure-ten-bounded-contract-dispositions):
   named RAM/PPU handoff repair and scoped first-frame proof retained.
-- [M2 T70 owner-deferred closure](../history/M2-T70-deferred-verification-closure.md):
-  final certificate remains incomplete; finite remaining work stays at queue tail.

@@ -2813,7 +2813,7 @@ verification before adoption, not an assumed multi-fold speed gain.
 | Remaining clause | Accepted pending receiver | Closure condition |
 | --- | --- | --- |
 | Background/plane CPU hotspots and P24 candidate | [Queue-head graphics proposal](M3-T30-ppu-background-performance.md), slots1-4 | independent full output/state equality, current DOS compiled-loop and whole-cost/memory evidence; three products for changed code |
-| CRT/file/error draft and private runtime joins | [Remaining acceptance](../proposals/m3/dos-memory-cadence-remaining-acceptance.md), slot1 | full callback/error/lifetime comparison and footprint, or explicit rejection with retained provider |
+| CRT/file/error draft and private runtime joins | [Remaining acceptance](M3-T31-dos-performance-memory-continuation.md), slot1 | full callback/error/lifetime comparison and footprint, or explicit rejection with retained provider |
 | Continuous peak, contiguous fit, indirect/CRT/interrupt stack | remaining acceptance slot2 | source-bound joins, bounded actual peak/error routes and justified stack/fit contract |
 | Text cost and configured mixed-mode cadence/input | remaining acceptance slots3-4; graphics slot4 reports its own deficit | actual product cost/input plus output/memory proof; failed required gate cannot be called passed |
 | Extra boundary-row/OAM/cached-sprite raw-read tuning | existing TODO optional rowwise item | separate admission; no silent activation |

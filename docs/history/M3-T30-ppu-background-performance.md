@@ -3,7 +3,7 @@
 ## Owner request and status
 
 Owner explicitly admits performance continuation after closing T29. M3 T30
-S1 is sole active implementation chain. Retained queued proposal is moved here;
+S1 was the initial implementation chain; owner-directed closure below owns final status. Retained queued proposal is moved here;
 CURRENT owns execution. Reference code2959c348:Win32 corrective products retained,
 DOS product still T28 P22 byte-identical. This is read-only rendering optimization,
 not whole-game ROM certification. Scope/expected/actual[],new0.
@@ -36,7 +36,7 @@ Static analysis of src/ppu/frame.c and retained product-bound 16-bit listings:
 
 ## Admitted T scope and S plan
 
-S1 is closed;S2 is now admitted. S3-S4 register their bounded scopes on admission.
+S1 is integrated. S2 prototypes and unstarted S3-S4 are disposed or transferred at owner-directed closure below.
 Each S includes implementation,independent comparison,DOS cost/memory review
 and disposition;node-level original semantics stay unchanged.
 
@@ -106,7 +106,7 @@ DOS costs and memory tradeoffs. Implementation closes only with no scoped output
 or state differences and refreshed products. A failed cadence gate remains
 explicit and requires an owner-directed transfer, not a performance-pass claim.
 Full CRT/error/all-path stack/continuous peak, text performance and final mixed
-mode cadence acceptance belong to the [remaining acceptance candidate](../proposals/m3/dos-memory-cadence-remaining-acceptance.md).
+mode cadence acceptance belong to the [remaining acceptance candidate](M3-T31-dos-performance-memory-continuation.md).
 Physical 25MHz486SX/DOS-version qualification remains M4.
 See [T28 retained closure](M3-T28-dos-rendering-optimization.md#s6-p24-owner-directed-closure-and-remaining-work-transfer).
 
@@ -244,3 +244,38 @@ and opacity remain exact;no deferred OAM/boundary-row activation. Native oracle,
 original DOS whole-route equality/cost and actual memory fit gate each candidate.
 Scope/expected/actual[],new0,max1992/1992;same current local node/edge counters.
 S2 registration and admission checks precede code. T30/cadence goal remain open.
+
+## S2 P1 and T30 owner-directed closure
+
+Owner explicitly closes the current T and admits the next performance task.
+S1 integrated products remain the accepted implementation baseline. S2 has
+changed no production code or artifacts. Its bounded native independent
+512-case comparisons pass on both widths for seven contained layouts.
+Five original DOS layouts have retained complete 977235-byte comparisons:
+raw metadata, per-tile palettes, quadrant palettes, raw-fast metadata and
+palette-only. Against S1 ordinary graphics-return, the first four regress
+2.3992/7.9826/3.9662/2.0818 percent and are rejected for adoption.
+Palette-only is 2.6427 percent shorter with diagnostic owned peak393184bytes
+(+32); it is a promising prototype, not an adopted or product-FPS result.
+Pointer metadata has a retained run awaiting full comparison; geometry has
+native proof but no accepted DOS link/run. Neither is credited as an improvement.
+All prototype artifacts remain in ignored build/m3-t30-s2; no new ROM import.
+
+The coordinator accepts the following explicit non-node transfers under owner
+direction to [T31](M3-T31-dos-performance-memory-continuation.md):
+
+| Unfinished clause | Receiving S | Exit contract |
+| --- | --- | --- |
+| S2 palette/pointer/geometry candidate disposition | T31 S1 | Full ordinary/populated/fallback outputs, DOS cost and memory before adoption |
+| Unstarted S3 neutral plane loop | T31 S2 | Exact plane mapping and bounded memory plus measured benefit |
+| Unstarted S4 integrated graphics review | T31 S6 | Actual product cadence/input and memory, explicit failure if target unmet |
+| Queued CRT/file/error and continuous stack/peak | T31 S3-S4 | Contract proof and quantified lifetime/footprint |
+| Queued text/mixed-mode profile | T31 S5 | Preserve every authored cell/color and report independent cost |
+
+S2/T30 close by owner-directed transfer, not successful DOS playability or
+completed S2 adoption. No scoped feasible mismatch is left in production;
+unfinished candidate proof is received above. Products stay S1 P3-bound.
+No three-EXE rebuild is needed for this documentation-only P. Scope/expected/
+actual[], new0, custody unchanged; historical1992/1992, local1991/1992nodes,
+4260/4261feasible controls(raw4342/infeasible81). Full M2 and physical486SX
+certificates remain incomplete and outside this task.
