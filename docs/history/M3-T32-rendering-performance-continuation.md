@@ -592,3 +592,71 @@ product hashes/maps. Raw runtime disassembly remains local/ignored,no new
 import or committed vendor/ROMbytes. Scope/expected/actual[],new0,custody
 unchanged;historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,
 infeasible81). Documentation/node/diff checks precede P2commit;products unchanged.
+
+## S4 P3 checkpoint: fatal nonreturn and saved-BP contracts
+
+The nine retained unresolved entries are not nine product defects. Most were
+stopped by a return-only auditor when allocation/text write errors transferred
+to the CRTfatal chain. Preserve original required behaviors rather than
+silently pretending fatal calls return or omitting their stack consumption.
+Current byte-anchored analysis recognizes INT21AH4C0716as process termination;
+after its reached default __exit06D1there is no caller continuation/cleanup.
+Calls that can either return normally or reach that terminal retain both paths.
+
+Run an explicitly CONDITIONAL model:debug callback high word0,FPinitializer0,
+exit pointer remains loaded0271/default06D1. Verify actual branch operands,
+loaded words and empty constructor/cleanup ranges before using them. This
+model excludes early025Aexit override anddoes NOT prove these globals remain
+unchanged over all runtime paths. Keep original unconditioned flow ledger and
+its nine gaps;never relabel loaded defaults as a lifetime certificate.
+
+Under those named conditions,65reachable local entries/64resolved flows:
+eight of the original nine get their return/terminal convention. Newly reached
+fatal/nullcheck/vector-restoration helpers belong to the existing7896-byte CRT
+region;no source/audit universe expansion. Default fatal06D1has terminal paths,
+not a fabricatedRET. The initial diagnostic limited indirect-exit resolution
+to one nominal entry;tail transfers reach the same05F1call from other entries,
+so resolution is correctly attached to its verified instruction site instead.
+
+| Original pending entry | Conditional current result |
+| --- | --- |
+| __setenvp15F6 | balanced LRET0;6local bytes; preserve saved BP separately from environment scan register |
+| __myalloc1E7E | balanced RET0normal path or default fatal termination;8local bytes |
+| __FF_MSGBANNER13FE | LRET0under null debug hook;4local bytes |
+| fflush0DDA | LRET0return convention connected;16local bytes |
+| write1BAA | LRET0or default fatal;544local maximum includes existing512-byte scratch |
+| fwrite0B12 | LRET0connected;40local bytes |
+| __flsbuf1816 | LRET0connected;22local bytes |
+| fclose077C | LRET0connected;30local bytes |
+| __setargv144E | nonstandard persistent stack return;domain bound remains required |
+
+Local maxima above exclude entry return addresses andcallee/BIOS-DOSservice
+bodies;the analyzer includes explicit INT CPUentry where encountered. They
+are NOT additive stack sizes or composed global bounds. Setenvp's
+15F9pushBP saves its established frame pointer,uses BPfor environment counts/
+heap output,and166CpopBP restores it before166DmovBP,SP. The prior scalar
+model discarded that saved value andreported unknownBP;current instruction-
+checked save/restore yields a balanced normal return. No program change.
+
+Setargv structural contract is now explicit:144E/1452pop the4-byte far return
+into globals3760/3762,1520subtract runtime DXfromSP,15F1jumps through the saved
+far PC. Relative to caller beforeCALL,SP remains lower by DXthrough main.
+It is neither ordinary LRET0nor a callback termination. Required remaining
+domain proof covers decoded pathname length/termination,PSPtail quote/backslash
+paths,argc/vector arithmetic/16-bit wrap andspace before persistent allocation.
+Retained tested22/152/400byte domains remain scoped;no all-path bound inferred.
+
+MEM-S4-01now has current setenvp local save/return andargv return mechanism;
+allocation domains/peak still open.02has conditional error-chain conventions;
+hook lifetimes,early025Aoverride,normal XPflushall iterator andfull exit bounds
+still open.03firmware/nesting,04continuous/kernel/contiguous,and05full stack/
+failed cadence/strict Windowsstartup remain open. Products,2048stack and
+640x400final DOSoutput unchanged. No suspended T19execution or T/Sadvancement.
+
+Contained recipes/receipts:prepare-fatal-contract-flow,current byte-anchored
+crt-default-hook-flow andargv-return-contract under build/m3-t32-s4. Preserve
+unconditioned crt-startup-flow alongside conditional outputs. Next Pproves
+specific lifetime/early-exit/argv domain obligations,not a reset audit of all
+65/851entries. No source/ROM/import/output changes,scope/expected/actual[],new0,
+historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81).
+Five parent gates remain open. Documentation/node/diff checks precede commit.

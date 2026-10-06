@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S4 P3; final finite integrated memory/cadence register. |
+| Identifier Mode | Continuation: M3 T32 S4 P4; final finite integrated memory/cadence register. |
 | Admission And Approval | Approved T32 integration; S3local color accepted and strict startup gate explicitly received, S4 sole active. |
 | Objective | Reconcile final source/products with MEM-S4-01..05, actual cadence/input/memory and existing WIN-T19-STARTUP dependency, without overclaiming partial proof. |
 | Non-goals | No ROM/PPU semantics, lost ticks/frames/rows/colors, helper process, DOSBox settings, toolchain change, unsupported stack shrink or silent resumption of suspended T19. |
@@ -23,6 +23,13 @@
 
 ## Current Technical Baseline
 
+- T32 S4 P3:under explicit unchanged-null-hook/default-exit conditions,
+  8/9prior unresolved CRTentries have normal/terminal conventions;65reachable/
+  64local flows. Defaultfatal06D1terminates;setenvp saved-BP restored. This is
+  CONDITIONAL,not global hook lifetime proof. Setargv144E/15F1persistently
+  subtracts runtime DXandjumps saved far PC;domain/peak bound still open.
+  All five gates/source/products/resolution remain unchanged;P4targets lifetime,
+  early-exit andargv obligations. [Conditional contracts](../history/M3-T32-rendering-performance-continuation.md#s4-p3-checkpoint-fatal-nonreturn-and-saved-bp-contracts).
 - T32 S4 P2:byte-equal current /MAPrelink;7896CRTbytes/78aliases/74anchors
   rebound.54current binary-FILEflows/28CRTcontributions complete,conditional
   source+CRTmain720unchanged,plusentry/top736 EXCLUDES argv/startup/exit/BIOS/
