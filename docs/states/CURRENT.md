@@ -1,28 +1,35 @@
 # Project Status
 
-## M3 T32 S2 Packet
+## M3 T32 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S2 P2; dominant shared PPU background cost. |
-| Admission And Approval | Approved T32 plan; S1 closed, S2 sole active; S4 receiving backlog only. |
-| Objective | Optimize dominant background compositor using generated original compiler evidence and bounded exact-output candidate comparisons. |
-| Non-goals | No game/PPU-visible semantics, lost rows/ticks/frames/colors, helper process, DOSBox settings, toolchain change or unproved stack shrink. |
-| Reference Baseline | T32 S1 source-bound products and retained S1/S6 exact receipts; no graphics changes in S1. |
-| Candidate Proposal | [T32 S2 scope and acceptance](../history/M3-T32-rendering-performance-continuation.md#s2-admission-dominant-shared-ppu-background-loop). |
-| Files And ABI Surface | src/ppu/frame.c frame_build_internal/background_row; selected two row pointers/fixed-index output, estimate35-60 product lines, +8row-local bytes/no caller/public ABI/heap/workspace growth; original near/far contract. Rejected80-byte transient row-copy candidate. |
+| Identifier Mode | Continuation: M3 T32 S3 P1; neutral color mapping and VGA plane cost. |
+| Admission And Approval | Approved T32 plan; S1-S2 closed, S3 sole active; S4 receiving backlog only. |
+| Objective | Reduce neutral color classification and indexed-to-plane submission cost with exact colors/planes and useful time/memory tradeoffs. |
+| Non-goals | No game/PPU/resource semantics, lost ticks/frames/rows/colors, helper process, DOSBox settings, toolchain change or unsupported stack shrink. |
+| Reference Baseline | T32 S2 source-bound three products and retained exact compositor/plane/color contracts. |
+| Candidate Proposal | [T32 S3 scope and acceptance](../history/M3-T32-rendering-performance-continuation.md#s3-admission-neutral-color-mapping-and-plane-submission). |
+| Files And ABI Surface | src/io/color.c and src/platform/vga/vga_frame.c;estimate40-140candidate lines,possible80/320transient stack trial,no new heap/persistent buffer/public ABI by default. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
-| Verification | Original listing/cost, independent512case native indexed output/guards both widths, original DOS ordinary/populated/far/raw fallback; stack/memory and three products on adoption. |
+| Verification | Exhaustive byte-color/contrast and independent plane/scaling/guards both widths; original DOSbytes/cost/listing, memory/actual routes and three products on adoption. |
 | Expected Markers | scope/expected/actual[],new0,baseline/max1992/1992;local1991/1992nodes,4260/4261controls,no custody transfer. |
-| Asset Needs | Existing owner-local ROM/runtime research/build bindings only; protected derivatives/probes remain below build, no new import/distribution. |
-| Reporting Requirements | Candidate disposition, actual source/product delta, scoped cost and resident/stack limits plus total/local counters; no prototype FPS as playability. |
-| Stop Conditions | Output/state divergence, stale binding/lifetime, memory growth preventing startup, unsafe narrowing/ownership or invalid probe. |
-| Exit Criteria | Bounded cohort dispositions and useful selected implementation pass exact-output/build/route/memory gates with three products; repair/reject divergences within S. |
-| Original Owner Request | Continue performance and memory optimization while preserving original ROM/PPU semantics. |
-| Similar-Issue Sweep | Near/far cached quad and raw CHR paths, tile/attribute boundaries, mirroring/scroll/split/masks, palette aliases, blank/full/clipped bands andsprite priority. |
+| Asset Needs | Existing owner-local build/oracle bindings only;new constants derive solely from project-owned neutral palette math,not ROM. Restricted diagnostics remain below build. |
+| Reporting Requirements | Candidate disposition, actual source/product/time/memory delta and stack limits plus total/local counters; no diagnostic FPS as acceptance. |
+| Stop Conditions | Color/tie/scaling/plane divergence, invalid near/far lifetime, startup/stack regression, source-binding gap or invalid probe. |
+| Exit Criteria | Bounded cohort dispositions and useful selected implementation passes exact-output/build/actual-route/memory gates with three products;repair/reject differences within S. |
+| Original Owner Request | Continue performance and memory optimization while preserving original ROM/PPU semantics and balancing DOS resident memory with playability. |
+| Similar-Issue Sweep | All byte indices/ties/contrast, source/output bounds and disjoint lifetime, plane masks/repeated rows/band boundaries, near/far ABI and existing three-target callers. |
 
 ## Current Technical Baseline
 
+- T32 S2 adopted:+20/-17shared PPUlines,512current independent cases each
+  native width/14tests andactual Windowsstartup/Tab/exit pass. DOS301609(+48),
+  native311310/324110bytes;DGROUP49072/2048stackunchanged,rowlocals+8. Logical
+  loader325728/342176,page-rounded326192/342640. Actual370route passes,sampled
+  378720(+48),369clean init refusal. Seeded populated5.6-8.9%saving is not
+  actual product FPS. S3active,S4five memory/cadence clauses remain open.
+  [S2 product closure](../history/M3-T32-rendering-performance-continuation.md#s2-p2-closure-source-bound-background-spanindex-integration).
 - T32 S2 P1cohort:four exact-output candidates,combined selected for product
   evaluation;whole diagnostic phase0/graphics-return7.1629/6.7507%shorter,
   populated water/castle/dense8.8732/5.6143/8.8061%.512native cases each width;
@@ -37,7 +44,7 @@
   369clean init refusal retained. No universal/continuous peak or FPS certificate.
   Diagnostic text16.6194%shorter applies to source-identical seeded route only.
   [S1 source-bound closure](../history/M3-T32-rendering-performance-continuation.md#s1-p2-closure-bounded-authored-object-row-math).
-- T31 closed by owner-directed transfer, not verification success. T32 S2 is
+- T31 closed by owner-directed transfer, not verification success. T32 S3 is
   active; S4 receives all five MEM-S4 gates as backlog only. Actual DOS cadence,
   global stack and continuous/kernel memory remain unproved.
 - Historical T31 S6 P2 products: DOS301705, x86311310, x64324110bytes.

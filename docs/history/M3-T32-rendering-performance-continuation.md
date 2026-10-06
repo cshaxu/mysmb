@@ -61,7 +61,7 @@ when product code changes; they are not release or whole-ROM proof.
    tested startup budgets separately. Unsupported global/physical claims stay
    pending, not passed. Physical486SX qualification stays M4.
 
-S1 is closed; S2 is the sole active executor. S3 is planned, S4 explicitly receives
+S1-S2 are closed; S3 is the sole active executor. S4 explicitly receives
 backlog. Automatic next-S admission requires scoped closure and fresh packet.
 Each S starts with components/scope/size, ends with actual changes, candidate
 dispositions and total/local counters. Product-code P builds/tests/publishes
@@ -239,3 +239,75 @@ remain active;MEM-S4-01..05remain open,S4backlog not executing. scope/expected/
 actual[],new0,custody unchanged,historical1992/1992,local1991/1992nodes,
 4260/4261controls(raw4342,infeasible81). No full-ROM or playability certificate.
 Documentation/node/diff gates precede commit;no S/T/queue advancement.
+
+## S2 P2 closure: source-bound background span/index integration
+
+Adopt combined only in src/ppu/frame.c,+20/-17lines. Borrow two far row
+pointers within immutable PPUstate and refresh at the single256pixel nametable
+boundary; fixed eight-dot target indices remove repeated pointer/packed-byte
+stores. Product tokens equal tested candidate except explanatory comment.
+All fine-scroll/mirroring/attribute/palette/blank/raw/cache/priority semantics
+remain. No game/NMI/state/platform/API edits, heap or workspace growth. Original
+/ALnear scratch ABI remains;row locals328versus320,caller56unchanged. Retain
+2048stack and record affected joins in S4;no unsupported global bound.
+
+Fresh current product source passes independent512cases each native width:
+188743680strip bytes/65536000plane bytes,readonly state,guards andinvalid calls.
+All14focused tests each width pass. Actual stripped Windowsproducts preserve
+compiled runtime sections and pass144DPI768x720startup,three native80x30text
+entries,two graphic returns andEscape. No input/window/system settings changes.
+Source-identical controlled DOSordinary/populated/far/raw receipts each match
+977235bytes. Selected populated graphics phases8.8732/5.6143/8.8061%shorter;
+ordinary graphics-return6.7507%,matched far/raw6.7969/3.4947%. These include
+fixture/device work and do not establish stable actual FPS or60Hzplayability.
+
+Original DOSproduct301609bytes,+48from S1. DGROUP49072/headroom16464,
+stack2048,max-extra3079unchanged. Logical loader bounds325728/342176bytes;
+page-rounded326192/342640versus S1's325680/342128. The48code bytes cross a page
+boundary;rounded loader bounds are not measured resident usage. Actual370KiB
+route passesload,input,Tab,text/graphics,save,restore,Escape;2015samples,no invalid
+or dropped MCBrecords,observed378720bytes(+48from S1). SaveCRC/resource binding
+valid,frame7553versus seed7465;369still loads and refuses initialization with
+result1cleanly,seed save unchanged. Tested budget and observations do not prove
+universal minimum, continuous/kernel peak or all-path stack. NoDOSBoxsettings
+change,normalSDL/private desktop and original toolchain/runtime retained.
+
+Published existing owner-authorized three slots:
+- mysmb16.exe:301609bytes;687a4d1ba622e4102e2f2c69c9eb8035bdf75d0bc9ca1c61374ef69f465a5d9b.
+- mysmb32.exe:311310bytes;b186a136d7caf6286174f086980e6552eb7b61a9d40ee657aba6bf03ffc55e50.
+- mysmb64.exe:324110bytes;8fbb42fee7da37c9b58a359c67a7e9acf56eede6c9204ee3dbcb9e4dfdae0015.
+Local build/m3-t32-s2recipes/logs:Build-Product/Build-Native,verify-current-native,
+strip-products,actual Windowsroutes,run-product-resident/verify-resident,
+source-binding,memory-receipt and cohort comparators. Existing restricted local
+resource binding only,no new imported material or distribution authorization.
+Similar-issue sweep:all row entrances,scroll0..255and masked bank values,
+single-page transition,attribute limits,partial/blank/cache/far/raw paths,
+full/clipped bands,palette aliases,source readonly guards andsprite priorities.
+
+S2closes within its exact-output/product/memory contract. No ROMcredit or
+custody:scope/expected/actual[],new0,historical1992/1992,local1991/1992nodes,
+4260/4261controls(raw4342,infeasible81). T32/goal remain active. S4retains all
+MEM-S4-01..05and latest changed-frame joins;no successful global cadence/stack/
+kernel acceptance. Next approved S3 is sole active;gates precede commit.
+
+## S3 admission: neutral color mapping and plane submission
+
+Owners src/io/color.c andsrc/platform/vga/vga_frame.c only;immutable neutral
+color/index input -> identical text colors/VGAplanes. Estimate40-140candidate
+lines. Start with two bounded cohorts:exact constant color classification versus
+repeated squared-distance arithmetic,and near row-staging versus repeated far
+plane writes. Former derives only from existing project-owned neutral palettes,
+not ROMresources;enumerate every byte input and preserve first-choice ties and
+contrast. Latter may trial80/320transient stack bytes only after source/listing
+review;no new heap,persistent buffer,game/CHR inspection or public ABI by default.
+Reject startup/stack/memory regressions that outweigh speed;original2048stack
+cannot be reduced without proof. Full256x240borderless640x400mapping,rows,masks
+and all colors remain;direct hardware configuration and toolchain stay.
+
+Independent exhaustive color/scaling/plane/guards test both widths plus original
+DOScontrolled bytes,cost,listing/memory andactual route gate adoption. Reuse
+unaffected S1-S2proof within source/dependency limits;no whole-project restart.
+Product-code P rebuilds/tests/publishes three EXEs;prototype P does not.
+S3scope/expected/actual[],new0,baseline/max1992/1992,counters unchanged. S4backlog
+only,not executing. Documentation/node admission/closure checks and diff review
+must pass before S3execution;no new T/queue reordering.

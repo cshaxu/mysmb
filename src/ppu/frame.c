@@ -114,6 +114,7 @@ static void mysmb_ppu_background_row(const struct mysmb_ppu_state *state,
     mysmb_io_u8 attribute,palette,low,high,color,phase,fine_y,row_shift;
     mysmb_io_u8 pixels[MYSMB_PPU_FRAME_WIDTH];
     const mysmb_io_u8 *chr;
+    const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *name_row,*attribute_row;
     mysmb_io_u8 MYSMB_PPU_LOCAL_NEAR *target;
     const mysmb_io_u8 MYSMB_PPU_LOCAL_NEAR *quad;
     const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded=decoded_chr;
@@ -128,11 +129,19 @@ static void mysmb_ppu_background_row(const struct mysmb_ppu_state *state,
     attr_offset=(mysmb_io_u16)(0x3c0U+(row>>2U)*8U);
     fine_y=(mysmb_io_u8)(source_y&7U);row_shift=(mysmb_io_u8)((row&2U)<<1U);
     source_x=scroll_x;x=0U;
+    /* A 256-pixel row crosses this borrowed nametable span at most once. */
+    table=(mysmb_io_u16)(name_table&1U);
+    name_row=state->name_table[table]+row_offset;
+    attribute_row=state->name_table[table]+attr_offset;
     while(x<MYSMB_PPU_FRAME_WIDTH) {
-        table=(mysmb_io_u16)((name_table^((source_x>>8U)&1U))&1U);
+        if(source_x==256U) {
+            table=(mysmb_io_u16)((name_table^((source_x>>8U)&1U))&1U);
+            name_row=state->name_table[table]+row_offset;
+            attribute_row=state->name_table[table]+attr_offset;
+        }
         column=(mysmb_io_u16)((source_x&255U)>>3U);
         pattern=(mysmb_io_u16)(pattern_base+
-            state->name_table[table][row_offset+column]*16U+fine_y);
+            name_row[column]*16U+fine_y);
         phase=(mysmb_io_u8)(source_x&7U);
         count=(mysmb_io_u16)(8U-phase);
         if(count>MYSMB_PPU_FRAME_WIDTH-x)count=(mysmb_io_u16)(MYSMB_PPU_FRAME_WIDTH-x);
@@ -155,26 +164,20 @@ static void mysmb_ppu_background_row(const struct mysmb_ppu_state *state,
         if(blank_count) {
             memset(pixels+blank_start,colors[0U],blank_count);blank_count=0U;
         }
-        attribute=state->name_table[table][attr_offset+(column>>2U)];
+        attribute=attribute_row[column>>2U];
         palette=(mysmb_io_u8)((attribute>>(row_shift+(column&2U)))&3U);
         palette=(mysmb_io_u8)(palette*4U);
         if(decoded_chr) {
             if(count==8U) {
                 target=pixels+x;quad=colors+palette;
-                *target++=quad[low&3U];
-                low=(mysmb_io_u8)(low>>2U);
-                *target++=quad[low&3U];
-                low=(mysmb_io_u8)(low>>2U);
-                *target++=quad[low&3U];
-                low=(mysmb_io_u8)(low>>2U);
-                *target++=quad[low&3U];
-                *target++=quad[high&3U];
-                high=(mysmb_io_u8)(high>>2U);
-                *target++=quad[high&3U];
-                high=(mysmb_io_u8)(high>>2U);
-                *target++=quad[high&3U];
-                high=(mysmb_io_u8)(high>>2U);
-                *target++=quad[high&3U];
+                target[0U]=quad[low&3U];
+                target[1U]=quad[low>>2U&3U];
+                target[2U]=quad[low>>4U&3U];
+                target[3U]=quad[low>>6U&3U];
+                target[4U]=quad[high&3U];
+                target[5U]=quad[high>>2U&3U];
+                target[6U]=quad[high>>4U&3U];
+                target[7U]=quad[high>>6U&3U];
             }else for(i=0U;i<count;++i)pixels[x+i]=colors[palette+
                 ((decoded[(phase+i)/4U]>>(((phase+i)%4U)*2U))&3U)];
         } else if(count==8U) {
