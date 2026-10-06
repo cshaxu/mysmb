@@ -3,6 +3,7 @@
 
 #include "ppu/state.h"
 #include "io/video.h"
+#include "io/palette_pairs.h"
 
 enum {
     /* Source NMI holds scroll at zero until the sprite-0 split. */
@@ -28,9 +29,14 @@ struct mysmb_ppu_frame_workspace {
     mysmb_io_u8 bg_valid,bg_pattern;
     /* Cumulative rebuilt-tile count; diagnostic only, never a cache key. */
     unsigned long bg_tiles;
+    mysmb_io_palette_expand expand;
+    void *expand_context;
 };
 void mysmb_ppu_frame_workspace_bind(struct mysmb_ppu_frame_workspace *workspace,
     mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded);
+
+void mysmb_ppu_frame_expansion_bind(struct mysmb_ppu_frame_workspace *workspace,
+    mysmb_io_palette_expand expand,void *context);
 
 struct mysmb_ppu_frame {
 #ifdef MYSMB_DOS16_TARGET

@@ -2,6 +2,7 @@
 #include <string.h>
 #ifdef MYSMB_DOS16_TARGET
 #include <malloc.h>
+#include "platform/dos16/palette_expand.h"
 #endif
 static int initialize(struct mysmb_dos16_root *root,
     const struct mysmb_dos16_hooks *hooks,mysmb_io_u16 storage_bytes,
@@ -13,6 +14,7 @@ static int initialize(struct mysmb_dos16_root *root,
     mysmb_ppu_frame_workspace_bind(&root->ppu_workspace,0);
     mysmb_ppu_frame_end(&root->ppu_view);
     root->ppu_cache_attempted=0U;root->ppu_cache_near=0U;
+    root->ppu_pairs=0;
     root->initialized=0U;
     root->present_rows=0;root->video_storage_bytes=storage_bytes;
     root->snapshot_store=0;root->reset_output=0;root->reset_context=0;
@@ -82,6 +84,7 @@ static void present_current(struct mysmb_dos16_root *root)
 #ifdef MYSMB_DOS16_TARGET
     mysmb_u8 __near *near_cache;
     mysmb_u8 __far *decoded;
+    struct mysmb_io_palette_pairs __near *pairs;
 #endif
     if(root->text_mode) {
         if(mysmb_text_scene_build(&root->game,root->text_workspace,root->text_frame)) {
@@ -105,6 +108,14 @@ static void present_current(struct mysmb_dos16_root *root)
         mysmb_ppu_frame_background_bind(&root->ppu_workspace,
             (mysmb_u8 __far *)_fmalloc(MYSMB_PPU_BACKGROUND_BYTES),
             MYSMB_PPU_BACKGROUND_BYTES);
+        if(root->ppu_workspace.bg) {
+            pairs=(struct mysmb_io_palette_pairs __near *)_nmalloc(sizeof(*pairs));
+            if(pairs) {
+                pairs->valid=0U;root->ppu_pairs=pairs;
+                mysmb_ppu_frame_expansion_bind(&root->ppu_workspace,
+                    mysmb_dos16_palette_expand,pairs);
+            }
+        }
     }
 #endif
     if(root->present_rows) {
@@ -174,6 +185,8 @@ void mysmb_dos16_root_shutdown(struct mysmb_dos16_root *root)
     if (root->initialized==0U) return;
 #ifdef MYSMB_DOS16_TARGET
     mysmb_ppu_frame_end(&root->ppu_view);
+    if(root->ppu_pairs)_nfree((struct mysmb_io_palette_pairs __near *)root->ppu_pairs);
+    root->ppu_pairs=0;
     if(root->ppu_workspace.bg)_ffree(root->ppu_workspace.bg);
     if(root->ppu_workspace.decoded) {
         if(root->ppu_cache_near)_nfree((mysmb_u8 __near *)root->ppu_workspace.decoded);

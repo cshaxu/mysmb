@@ -1767,3 +1767,55 @@ EXEs. S8/goal remain active;S9final gates open. Recipes,source hashes,objects,
 listings and scoped receipts stay in build/m3-t32-s8/pairs. Scope/expected/
 actual[],new0,historical1992/1992,local1991/1992nodes,4260/4261feasible controls
 (raw4342,infeasible81);fixed M2 final work unchanged.
+
+## S8 P2 integrate optional near pair expansion
+
+Adopt the combined dirty-row/optional even-span cohort. Shared PPU changes
+only read-only projection/cache management;IO owns palette preparation,DOS
+private palette_expand owns segmented execution. Root allocates530near bytes
+only when background cache exists,after required initialization. Allocation
+failure leaves portable expansion;root keeps a separate ownership pointer and
+frees after view end. No new far surface or game logic. Both platform components
+remain isolated;no host execution/import/declaration enters IO.132core object
+outputs retain identical execution records versus previous product.
+
+Native15tests each width pass,including512states and explicit null-context
+encoder rejection/fallback. Actual Windows startup/Tab/text input/Escape pass.
+Original/AL/Gs current object/listing identities match for PPU,pair IO and DOS
+decoder.2064direct primitives and full-row original-DOS fixture equality pass
+with exact current objects.20local CFGs balance;own row chain510bytes excluding
+entry/external bodies,helper local14/own maximum28. No global stack certificate.
+
+Actual DOS product448KiBcached/384KiBfallback restore,D/J,Tab,save/Escape routes
+pass,640x400captures and10035-byte snapshot integrity verified. Observed owned
+451504/387984bytes(+1280),not continuous/global maxima. EXE306085(+1280),
+DGROUP49184(+16),stack2048unchanged;logical loader330240..346576,page-rounded
+330320..346656. Pair data uses existing primary reserve;no new arena block.
+
+Current phase/counter diagnostic includes actual cache preparation and records
+selected expansion. First256-record runs dropped40/55logs as throughput rose;
+excluded from full-route conclusions.320records/31360far diagnostic bytes fit
+one segment;second runs zero drops and all scoped running frames show bg/expand/
+near-cache active. Counter target originally inherited wrong directory,so that
+failed launch is excluded;isolated build path fixed. Product memory is unaffected
+by sampler changes. Binding now names the current formal-build hash,with the
+pre-refresh published asset hash recorded separately. No installed DOSBox change.
+
+Counter graphics300.578ms versus previous405.309ms (diagnostic1.348times,
+25.84%lower cost). Phase graphics315.424ms:PPU153.647,mapping104.004,VGA28.942,
+game9.187,snapshot10.450ms;component medians are not exact additive totals.
+Counter dirty306.413ms,text451.741ms. These wall-timed cohorts are not equal-state
+full-game speed proof. Nominal60Hz/fivefold/reference/physical486 still unproved.
+
+Three existing owner-authorized products refreshed:
+
+| Product | Bytes | SHA-256 |
+| --- | ---: | --- |
+| DOS16 | 306085 | c2c895e7b86ff970018a8a27df4e51bf72110c5428f9ae577a251dfecdb68de2 |
+| Win32 | 315406 | 936cf7b35dcda6b1c0c4403fb96fb8dd7fae8d5cf39ecd3f7aff94a679454b0f |
+| Win64 | 328718 | 2a94125f5f0c545deafd81394e2af4fa3542bb1ac545dfc210aca546482a9481 |
+
+Local recipes/probes/source-product bindings in build/m3-t32-s8/p2. No extra
+third-party/source/fixture import. S8 remains active;global acceptance stays
+open. Scope/expected/actual[],new0,historical1992/1992,local1991/1992nodes and
+4260/4261feasible controls(raw4342,infeasible81);fixed M2 final work unchanged.

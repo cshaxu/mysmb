@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S8 P1; integrated rendering prototype cohort. |
+| Identifier Mode | Continuation: M3 T32 S8 P2; integrate validated cache/expansion cohort and verify three products. |
 | Admission And Approval | Owner-approved consecutive S5-S9 plan and automatic successor;S7 display-stage contract closed by P4;S8 sole active. |
 | Objective | Reduce current dominant rendering cost as one bounded cache/row-output chain while preserving ROM/PPU semantics and memory balance. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
 | Reference Baseline | Current S7 P3products and P4bound phase/counter probes;original tools/2048stack/640x400/two platform components. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | Shared PPU invalidation/row projection,neutral IO packed-palette operations,DOS-private bulk adapter/root binding;estimate160-300candidate product/150-250test lines. Local prototype530byte optional near workspace plus small fields;no adoption before original-DOS cost/memory/output proof. |
+| Files And ABI Surface | Adopt selected shared PPU dirty-row/optional expansion interface,IO palette-pair table,DOS-private palette_expand and explicit near allocation/free in root;native expanded/fallback tests,CMake/original-DOS source lists. Estimate160-300product/50-120test lines. Optional530near bytes after required storage;no new far surface. Diagnostic sampler320records/31360far bytes after256capacity exhausted,unique150second/4MiB captured routes;not product memory. Three EXEs only after exact output/actual memory/routes and bound costs. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
 | Verification | Independent512state native raw/cache/row/palette/priority/source/guard/fallback checks;actual original-DOS exact output/compiler/stack/startup/resident/stage cost and current frame budget;three EXEs after adoption. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
@@ -25,6 +25,15 @@
 
 
 ## Current Technical Baseline
+
+- S8 P2 adopts combined dirty/near-pair expansion with optional530near bytes,
+  no far surface.132core outputs unchanged;15tests per native width,actual
+  Windows/DOS routes,current-object primitive/row/local-stack checks pass.
+  Three EXEs refreshed306085/315406/328718bytes;DOS49184DGROUP/2048stack,
+  observed451504cached/387984fallback bytes(+1280). Zero-drop320record diagnostic
+  counter graphics300.578ms versus405.309 (not equal-state proof);phasePPU153.647,
+  mapping104.004ms.60Hz/fivefold/global memory-stack/reference gates still open.
+  [Integration and limits](../history/M3-T32-rendering-performance-continuation.md#s8-p2-integrate-optional-near-pair-expansion).
 
 - S8 P1 selects contained combined dirty-row/pair-expansion candidate:
   full-PPU2.205/2.233/1.510times versus compact baseline,one-tile preparation

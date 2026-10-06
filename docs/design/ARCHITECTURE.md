@@ -27,6 +27,15 @@ not serialized or shared with original game writers.
 
 ## Product And Host Boundary
 
+PPU rejects unchanged tile/attribute rows in bulk before refreshing dependent
+cache tiles. Optional palette expansion consumes only packed indices,colors
+and bounded spans;PPU retains odd edges,masks,scroll and raw-opacity decisions.
+Neutral IO owns the530-byte pair table. The DOS root optionally borrows near
+heap space and binds its dos16-only decoder after mandatory initialization;
+failure keeps the existing renderer. Root ownership frees the allocation after
+the last view ends,independently of the callback context. Snapshots do not
+serialize this derived table. Win32 continues using the portable projection.
+
 The shared `io/` contract layer has no dependency on `core/`, `ppu/`, `text/`, `validate/` or `platform/`.
 Composition roots connect decoded controller input and compositor output to
 adapters. Video borrows the entire original indexed frame; audio snapshots

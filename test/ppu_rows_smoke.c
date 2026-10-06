@@ -11,6 +11,18 @@ static struct mysmb_ppu_state before;
 static struct mysmb_ppu_frame raw,full;
 static unsigned char chr[8192],decode0[8192],decode1[8192],band[4096+32],plane[1280+32];
 static unsigned char bg0[63520],bg1[63520];
+static struct mysmb_io_palette_pairs pair0,pair1;
+static int expand_portable(void *context,const mysmb_io_u8 *packed,
+    mysmb_io_u8 *pixels,mysmb_io_u16 count,const mysmb_io_u8 *palette)
+{
+    struct mysmb_io_palette_pairs *w=context;
+    mysmb_io_u16 i,pair;
+    if(!w || count>256U || (count&1U))return 0;
+    mysmb_io_palette_pairs_prepare(w,palette);
+    for(i=0U;i<count/2U;++i){pair=w->pairs[packed[i]];
+        pixels[i*2U]=(mysmb_io_u8)pair;pixels[i*2U+1U]=(mysmb_io_u8)(pair>>8U);}
+    return 1;
+}
 static unsigned long seed=19UL,compared=0UL,vga_compared=0UL;
 static unsigned char random_byte(void){seed=(seed*1664525UL+1013904223UL)&0xffffffffUL;return (unsigned char)(seed>>24);}
 static int guards(unsigned char *p,unsigned short n){unsigned short i;for(i=0;i<16;++i)if(p[i]!=0xa5 || p[16U+n+i]!=0xa5)return 0;return 1;}
@@ -31,7 +43,7 @@ static int zero_alias_edges(void)
     chr[16]=0x80U;chr[23]=0x80U;
     state.visible_oam[0]=30U;state.visible_oam[1]=1U;
     state.visible_oam[2]=32U;state.visible_oam[3]=249U;
-    mysmb_ppu_frame_workspace_bind(&workspace,decode0);mysmb_ppu_frame_background_bind(&workspace,bg0,63488U);
+    mysmb_ppu_frame_workspace_bind(&workspace,decode0);mysmb_ppu_frame_expansion_bind(&workspace,expand_portable,&pair0);mysmb_ppu_frame_background_bind(&workspace,bg0,63488U);
     for(scroll=0U;scroll<8U;++scroll)for(mask=0U;mask<32U;++mask){
         state.visible_scroll_x=(unsigned char)scroll;state.visible_ppu_mask=(unsigned char)mask;
         mysmb_ppu_frame_reference(&game,&raw);
@@ -52,7 +64,7 @@ static int slot_invalidation(void)
     for(i=0U;i<8192U;++i)chr[i]=(unsigned char)(i*23U+5U);
     for(i=0U;i<32U;++i)state.palette[i]=(unsigned char)(i*17U+195U);
     state.chr_data=chr;state.chr_data_size=8192U;state.visible_ppu_mask=10U;
-    mysmb_ppu_frame_workspace_bind(&w,decode0);mysmb_ppu_frame_background_bind(&w,bg0+16U,63488U);
+    mysmb_ppu_frame_workspace_bind(&w,decode0);mysmb_ppu_frame_expansion_bind(&w,expand_portable,&pair0);mysmb_ppu_frame_background_bind(&w,bg0+16U,63488U);
     memset(bg0,165,16U);memset(bg0+63504U,165,16U);
     mysmb_ppu_frame_reference(&game,&raw);mysmb_ppu_frame_build_cached(&state,&full,&w);
     if(memcmp(raw.pixels,full.pixels,61440U) || w.bg_tiles!=1920UL)return 21;
@@ -112,7 +124,7 @@ int main(void)
         /* Exercise sprite overlap, flips, priorities and every strip/screen edge. */
         for(i=0;i<64;++i){state.visible_oam[i*4U]=(unsigned char)(i*4U+c);state.visible_oam[i*4U+2U]=(unsigned char)((i%8U)*32U+(i&3U));}
         before=state;
-        mysmb_ppu_frame_workspace_bind(&w0,decode0);mysmb_ppu_frame_workspace_bind(&w1,decode1);mysmb_ppu_frame_background_bind(&w0,bg0,63488U);mysmb_ppu_frame_background_bind(&w1,bg1,63488U);
+        mysmb_ppu_frame_workspace_bind(&w0,decode0);mysmb_ppu_frame_workspace_bind(&w1,decode1);mysmb_ppu_frame_expansion_bind(&w0,expand_portable,&pair0);mysmb_ppu_frame_expansion_bind(&w1,expand_portable,c%17U?&pair1:0);mysmb_ppu_frame_background_bind(&w0,bg0,63488U);mysmb_ppu_frame_background_bind(&w1,bg1,63488U);
         mysmb_ppu_frame_reference(&game,&raw);mysmb_ppu_frame_build_cached(&state,&full,&w0);
         if(memcmp(raw.pixels,full.pixels,61440U)){printf("raw/cache mismatch %u\n",c);return 1;}
         /* Three source-strip sizes, cached and uncached. */
