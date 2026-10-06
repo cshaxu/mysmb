@@ -194,7 +194,7 @@ Owner approved this plan, then clarified the boundary: S4 fixes and closes
 its repairable known runtime/memory/evidence defects first. S5-S8 implement
 the measured performance work. S9 is combined final audit, not a receiver for
 unfinished known repairs. The proposed blanket S4 five-gate transfer is
-withdrawn. S4 remains sole active; S5-S9 remain planned. See the
+withdrawn. S4 was active at P8; current P12 closes its repair stage and admits S5. See the
 [S4 P8 correction](../../history/M3-T32-rendering-performance-continuation.md#s4-p8-correction-and-owner-directed-responsibility-boundary).
 Current three products need no refresh without further product-code changes.
 
@@ -208,3 +208,13 @@ three-product delivery. Every S closure records expected and actual zero
 node/control credit. T32 closure reconciles S4's actual disposition, exact
 source and product identities, meaningful per-phase savings, equal-frame
 comparator, actual DOS playability, and any still-open 486SX qualification (M4).
+
+## Current S5 admission after S4 repair closure
+
+[S4 P12](../../history/M3-T32-rendering-performance-continuation.md#s4-p12-staged-closure-and-s5-admission)
+records the exact division: known envp and evidence defects repaired in S4;
+S5 measures and S6-S8 fix performance; S9 performs the named unproved
+integration checks only. No final gate is passed by handoff. S5 is active,
+S6-S8 planned and S9 holds final audit checks. T19 remains suspended; current
+large-workarea ordinary startup passes without claiming its full repair.
+S5 estimates0product/100-250contained harness lines and no resident growth.

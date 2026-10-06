@@ -1123,3 +1123,76 @@ S4/T32remain active; performance work remains S5-S8, S9combined audit.
 Scope/expected/actual[],new0,historical1992/1992,local1991/1992nodes,
 4260/4261feasible controls(raw4342,infeasible81). Governance/node/diff gates
 precede commit; no full certification is inferred from these tests.
+
+## S4 P12 staged closure and S5 admission
+
+Owner's approved division is binding: fix known repairable defects in S4,
+implement performance in S5-S8, perform combined acceptance in S9. Close S4's
+repair/delivery stage under that instruction. This is not successful closure
+of all five final proof gates and does not close T32 or the goal. No known
+repair is handed to S9; any concrete finding returns to its component owner.
+S9 receives only the explicit unproved acceptance checks listed below.
+
+Bind the current P11 product to its byte-identical original /MAP prototype.
+Current CRT7282bytes/75aliases/71anchors; removed __setenvp and __myalloc.
+Both owned hooks are original far-return0,12ephemeral bytes each; argc/argv/
+envp copies consume zero persistent bytes. Debug/FP null, exit0271 and XP's
+actual current _flushall pointer independently checked. Rebind3016concrete
+instruction sites by retained public anchor/instruction order, checking
+mnemonic and encoded lengths; this mapping alone is not semantic proof.
+Fix the emitted decimal XP target as well as hexadecimal sites before running
+the current conditional flow: default/normal62/62, DIV63/63, no unresolved
+local returns; largest conditional CRT142bytes excluding caller entry.
+Retain original object/source contracts, not stale address-specific receipts.
+
+Both current native products pass the unchanged1500ms first-message gate,
+three owned Tab cycles, actual text input/graphics returns and Escape exit.
+Current host is DPI144/workarea1920x1008, client768x720 and Terminal80x30
+viewport. This differs from the earlier480x839host; those failures remain
+historical condition-specific evidence. No audio code changed and no general
+acquisition/lifetime repair is claimed. Suspended T19 remains queued under
+its original owner; successful ordinary launches do not close that task.
+
+| Register | S4 disposition | Remaining responsibility |
+| --- | --- | --- |
+| MEM-S4-01 | Unused argv cost removed; reproduced dense-env allocation overflow fixed; current hooks/loader and ordinary/dense routes bound | S9 checks supported startup/physical-environment domains and complete phase binding; no known copy defect remains |
+| MEM-S4-02 | Data/site/decimal-target defects corrected; current normal and DIV software joins resolved under explicit conditions | S9 audits callback/table lifetime, alias assumptions and combined error/text/exit applicability |
+| MEM-S4-03 | Owned IRQ78 and retained software contracts remain accepted locally | S9 checks firmware/other-interrupt/exception nesting premises; physical25MHz486SX qualification stays M4 |
+| MEM-S4-04 | Current loader,369pass/368clean refusal and scoped arena observations retained; no universal minimum/peak claim | S9 audits continuous/kernel transient and all-phase contiguous-memory evidence |
+| MEM-S4-05 | Three current products and current-host strict operational routes accepted within their conditions | S5 measures the known configured-cadence deficit; S6-S8 repair performance; S9 integrates joined stack/cadence and named host applicability |
+
+S4's concrete envp/product and validator defects are fixed. Final proof
+conditions above remain OPEN; configured cadence remains FAIL. This named
+division replaces the withdrawn blanket five-gate repair transfer. Accepting
+these checks is coordinator action under the owner's explicit new-plan/S4
+repair/S9-audit direction, not a claim that unknown premises passed.
+
+S5 alone is now admitted. Estimate0product lines/100-250contained harness
+lines/no product resident-memory increase. Pin current EXEs, local reference,
+config/CPU budget, audio/input/resolution/frameskip and actual game/display
+counts. Existing HUD proxies and unequal-resolution measurements do not prove
+a speed ratio. Begin by reconciling retained benchmark dependencies and phase
+measurements; then instrument only missing accounting. Installed DOSBox config
+and640x400default stay unchanged; separate per-run experiments cannot stand
+in for default playability. No new source/runtime import or product helper.
+
+Products remain P11, no code change or refresh in P12. ROM scope/expected/
+actual[],new0,historical1992/1992,local1991/1992nodes and4260/4261feasible
+controls(raw4342,infeasible81). S5 receipt has zero node credit/custody transfer.
+Governance/node/diff gates precede commit. T32 remains open through S9.
+
+## S5 P1 initial dependency inventory
+
+Read-only reconciliation finds six retained comparator trials:five MySMB
+images and one reference image. None uses the current300549-byte DOSproduct;
+the named current-20000trial is301145bytes. Local historical trials also mix
+fixed20000/max cycles and audible/muted output. Keep them as historical leads,
+not current speed or equal-frame acceptance. One reference binary identity
+is present; actual display-submission counts are absent from these receipts.
+No installed config change or new run/source import occurred.
+Next measurement must bind the current per-frame owners and count actual
+game updates/submissions; retained S4 phase timings guide instrumentation
+but do not replace fresh current-output accounting. Reconcile changed startup
+hooks and probe overhead separately from game/PPU/mapping/VGA/cache costs.
+Contained inventory harness30lines,zero product lines/resident changes.
+All three current products stay P11. Expected/actual node/control credit zero.

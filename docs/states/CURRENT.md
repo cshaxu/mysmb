@@ -1,27 +1,35 @@
 # Project Status
 
-## M3 T32 S4 Packet
+## M3 T32 S5 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S4 P11; dense environment startup repair. |
-| Admission And Approval | Owner approved S5-S9 planning, then required S4 to repair known fixable defects before closure; S4 sole active, no blanket handoff. |
-| Objective | Reconcile final source/products with MEM-S4-01..05, actual cadence/input/memory and existing WIN-T19-STARTUP dependency, without overclaiming partial proof. |
-| Non-goals | No ROM/PPU semantics, lost ticks/frames/rows/colors, helper process, DOSBox settings, toolchain change, unsupported stack shrink or silent resumption of suspended T19. |
-| Reference Baseline | T32 S3 source-bound three products, accepted scoped S1-S3/S4 predecessor receipts; strict Windowsstartup remains failed. |
-| Candidate Proposal | [T32 S4 finite register and admission](../history/M3-T32-rendering-performance-continuation.md#s4-admission-final-integrated-finite-memory-and-cadence-register). |
-| Files And ABI Surface | Fix reproduced CRT envp allocation overflow in DOS process_startup; preserve cinit and PSP environment/path. Estimate 10-20 source/build lines and 70-110 build-verifier lines; guarded original AL hooks, controlled output and actual ordinary/dense environment routes; refresh three EXEs after product change. |
+| Identifier Mode | Continuation: M3 T32 S5 P1. |
+| Admission And Approval | Owner approved S5-S9 plan and clarified S4 known repairs/S5-S8 performance/S9 total audit; S4 repair stage closed, S5 sole active. |
+| Objective | Source-bound current phase budget and fair comparator disposition before performance implementation. |
+| Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
+| Reference Baseline | Current three P11 products and scoped S4 receipts; original toolchain/default640x400. |
+| Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
+| Files And ABI Surface | Contained benchmark/probes below ignored build; estimate0product/100-250harness lines, no resident product increase. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
-| Verification | Current source/products, actual originalDOSbudget/startup/runtime/error/restore routes, stack/CRT/firmware/kernel bounds andcadence/input;strict host startup failure remains visible. |
-| Expected Markers | scope/expected/actual[],new0,baseline/max1992/1992;local1991/1992nodes,4260/4261controls,no custody transfer. |
-| Asset Needs | Existing restricted local owner/runtime build/oracle bindings only,no new import/distribution;raw artifacts andprobes below build. |
-| Reporting Requirements | Exact status of each five-clause gate, time/input/memory andsource/product identities plus total/local counts;late host readiness is not passing strict startup. |
-| Stop Conditions | Divergence,unbounded/unsafe probe,invalid lifetime/ownership,source binding gap or unsupported global bound. |
-| Exit Criteria | All required finite gates proved;no successful verification closure while open. Owner-directed explicit transfer may close administratively only. |
-| Original Owner Request | Test, repair andverify memory/performance toward actual playability andlowest practical DOSmemory,without weakening original logic or proof. |
-| Similar-Issue Sweep | Final changed owner/layout/locals,near/far/CRT/startup/exit/hooks,IRQ/BIOS/DOSkernel paths,graphics/text/mixed-mode/input andexisting T19host readiness condition. |
+| Verification | Product/reference/config identity, actual game updates and submissions, route/frameskip/resolution/audio controls; default baseline separate from per-run experiments. |
+| Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
+| Asset Needs | Existing restricted local owner ROM/reference/runtime; timing/output observation only, no code import/redistribution; raw material bounded below build. |
+| Reporting Requirements | Phase costs, counted versus proxy measures, comparator gaps, memory tradeoffs, changed-line estimates/actuals and total/local counters. |
+| Stop Conditions | Unbounded or foreground probe, source binding gap, ownership violation, output divergence or unsupported speed claim. |
+| Exit Criteria | Reproducible current phase budget, measured or explicitly unproved fair comparator, memory costs and bounded S6 implementation decision. |
+| Original Owner Request | Improve actual memory/performance/playability with original ROM semantics; follow approved S5-S9 division after fixing known S4 defects. |
+| Similar-Issue Sweep | Stale binaries/config, display versus game-update counts, frameskip/resolution/audio differences, snapshot cost and probe overhead. |
 
 ## Current Technical Baseline
+
+- P12 ends S4's owner-approved repair/delivery stage; final proof gates are
+  OPEN, not passed by closure. S5 alone active, S6-S8 planned, S9 named final
+  audit checks. Current DOS normal62/62/DIV63/63 conditional flows rebound;
+  current-host strict native routes pass without repairing suspended T19.
+  S5 initial inventory finds6retained trials,zero with current300549-byte
+  DOSproduct;old comparative speed ratios are not current product evidence.
+  [Division and remaining checks](../history/M3-T32-rendering-performance-continuation.md#s4-p12-staged-closure-and-s5-admission).
 
 - S4 P11: fix reproduced dense-environment CRT65546->10allocation overflow
   by omitting unused C envp copy, retaining cinit/physical PSPenvironment/path.
@@ -30,7 +38,7 @@
   save exact to normal P6;369passes/368clean refusal. Native15tests per width,
   runtime sections unchanged;three EXEs refreshed. DOS300549/logical324672/
   341040(-176),page-rounded/ordinary observed peak unchanged. New CRTaddresses
-  need rebinding; other memory/stack/host gates remain open, S4active.
+  need rebinding; other memory/stack/host gates remain open, S4repair stage closed by P12; final gates remain unproved.
   [Repair and product bindings](../history/M3-T32-rendering-performance-continuation.md#s4-p11-repair-dense-environment-crt-allocation-overflow).
 
 - S4 P10: published DOS369KiB route passes with FP/XP observer added,
@@ -64,9 +72,8 @@
   S5-S9planned; blanket handoff withdrawn under P8owner clarification.
   [Current startup/CRT binding](../history/M3-T32-rendering-performance-continuation.md#s4-p7-checkpoint-current-noargv-startup-and-crt-binding).
 - Owner added [T32 S5-S9 DOS graphics performance](../proposals/m3/dos-graphics-nesticle-performance.md)
-  as five consecutive planned S tasks after S4, ending with S9 acceptance
-  audit. None is admitted; S4 remains the sole active packet, with its
-  memory/cadence and Windows-startup gates unchanged.
+  after S4. P12 admits S5 only; S6-S8 planned, S9 combined audit. Final
+  memory/cadence conditions remain explicitly unproved.
 - T32 S4 P6:noargv hook ADOPTED,8platform lines/build+9/-1,normal original
   ALfar-return. Formal DOSexactP5candidate;977235bytes/three369KiBroutes
   reused by full-image identity,368clean init refusal.Persisted argv0;envp/PSP
