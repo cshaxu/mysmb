@@ -2321,3 +2321,71 @@ infeasible81),scope/expected/actual[],new0,custody unchanged. S6/T28remain open;
 configured cadence/input and CRT/error/continuous peak/all-path stack remain gaps.
 
 Selected codec SHA2569d5a53422c40f282cadd3e981659bb9274430537194ec6028510f8bf6dfaa785.
+
+
+## S6 P18 checkpoint: canonical unused-record validation integration
+
+Adopt only the per-record exact memcmpagainst a40-byte constant zero pattern.
+Original active-record checks,owner checks,count limits,disabled-receipt loop,
+field serialization,capture and restore order remain unchanged. No core,PPU-state,
+wire layout,artwork,input/tick change or native struct-to-wire shortcut;no heap
+allocation. Source/test2files,+44/-2. The constant is real storage,not free memory.
+
+Similar-issue sweep covers both receipt phases,all unused record boundaries,
+active family/OAM/sprite fields,count/overflow/owner limits,disabled bytes,
+capture and rollback/restore consumers. Added canonical-contract tests exercise
+13703valid/invalid cases per width:all counts0through64,first/last byte of every
+unused record in both buffers,and every disabled trailing byte. Independent
+original-vs-integrated11279case comparison additionally checks capture bytes,
+guards,unchanged game state,enabled states/counts0through65 and mutations.
+Both widths pass15focused tests including observation and continued snapshot
+routes plus13private-desktop host groups. The observation suite retains its
+1000-step twin/core/frame/pixel checks and immediate/240future-tick restore
+contracts;these finite routes do not credit unobserved original-ROM nodes.
+
+Original OpenNT16/runtime builds full product. MZminimum329120(+16versus P16),
+DGROUP49520(+32)/headroom16016,stack2048,maxsegment32768,191segments.
+File305115(+536)is distinct from loaded minimum and actual runtime occupancy.
+Do not report prototype-16as a product-memory saving without the formal census.
+Optional OLDNAMES lookup warning is retained;compiler/runtime/flags unchanged.
+
+Four actual DOS normal/cache-failure/pressure/populated probes each compare
+977235bytes against their identical P16fixtures:five active61440-byte frames,
+twenty hardware VGA planes,hardware text,neutral cells and10035snapshot bytes.
+Every VGA byte also matches the independent coordinate formula. All live heaps
+free,mode3restores;failure/pressure exercise raw cache fallback. Stack patterns
+72/72/70/64remain bounded receipts,not all-path proof. Far payload35996unchanged.
+Normal diagnostic owned392992(-16versus P16);failure393040,pressure648064includes
+ballast,populated394112. Text-stage costs2.260/2.272/2.272/2.261percent shorter;
+normal graphics-return2.156and save0.990percent shorter. Populated graphical
+fixture costs essentially unchanged;its text phase is ordinary before injected
+PPU mutations. Zero snapshot stage counters are uninstrumented,not free work.
+
+Formal actual448/374KiBcaller-free product routes complete load/input/Tab/text/
+graphics/save/Escape,with CRC/resource-valid10035-byte saves and capture files:
+- 448KiB:sampled386528bytes,2053samples,seed7465to7531.
+- 374KiB:sampled382432bytes,2053samples,seed7465to7531.
+Primary345392and environment160plus auxiliary40976/36880give those maxima;
+formal sampled occupancy is16below P16although minimum-loaded increases16and
+DGROUPincreases32. This illustrates why file,min-loaded and observed occupancy
+must be measured separately. No continuous-peak,all-path stack,physical486SX,
+all-DOS-version or nominal60Hz/input-latency qualification is inferred. Installed
+DOSBox configuration is unchanged;normal SDL/private surfaces remain isolated.
+
+Three existing owner-authorized product artifacts refreshed:
+- mysmb16.exe:305115bytes,SHA256771b21c726c17ab57c4b2ff8e479441590ae2cad27aa61a8c12818580aab504a.
+- mysmb32.exe:320651bytes,SHA256beb301aa1c7fc7729efaaf610d56276b129fa40b6a98b56a861a2400cf0cc00b.
+- mysmb64.exe:329323bytes,SHA256681b45e879cc42c2b34be7884fc40cc360cfcb2be830ab51bde6623db8830a44.
+
+Local P18build/host/diff/device/resident scripts and result summaries remain
+below ignored build/m3-t28-s6. Build-p18-product/native/host/diff,run-p18normal/
+fail/tight/pop,run-p18resident-game448/374and verify-p18-device/resident plus
+check-p18-products bind the evidence. No new probe,ROM,derived data or research
+artifact is tracked. Only the existing three EXEs retain the owner exception.
+
+Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
+infeasible81),scope/expected/actual[],new0,custody unchanged. S6/T28remain open.
+Next P19prioritizes the existing CRT/error/continuous-peak/all-path stack gaps:
+read-only bounded allocation/compiled-stack census,with any contained probe
+specified before use. No further small receipt prototype or deferred row/OAM
+activation. Configured cadence/input deficits remain visible,not discharged.

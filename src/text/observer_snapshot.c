@@ -23,14 +23,14 @@ static void write_buffer(const struct mysmb_text_observation_buffer *buffer,
 
 static int buffer_valid(const unsigned char *in)
 {
+    static const unsigned char zero[RECORD_BYTES]={0};
     unsigned short i,owner,start;
     const unsigned char *item;
     if(in[0]>64U || in[1]>1U)return 0;
     for(i=0U;i<64U;++i) {
         item=in+66U+i*RECORD_BYTES;
         if(i>=in[0]) {
-            for(owner=0U;owner<RECORD_BYTES;++owner)
-                if(item[owner]!=0U)return 0;
+            if(memcmp(item,zero,RECORD_BYTES)!=0)return 0;
         } else if(item[0]<MYSMB_TEXT_OBSERVE_PLAYER ||
             item[0]>MYSMB_TEXT_OBSERVE_STAR_FLAG || (item[5]&3U)!=0U ||
             item[6]==0U || item[6]>8U || item[5]+item[6]*4U>256U)return 0;

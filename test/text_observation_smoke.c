@@ -621,6 +621,47 @@ static int enemy_case(unsigned char id,unsigned char state,unsigned char phase)
     return 0;
 }
 
+/* Canonical unused bytes are part of the snapshot contract,including
+ * every record's first/last byte and the fully absent receipt encoding. */
+static int canonical_tail_case(void)
+{
+    unsigned short count,phase,record,offset,i,base;
+    unsigned long cases=0UL;
+    for(count=0U;count<=64U;++count) {
+        memset(snapshot_wire,0,MYSMB_TEXT_OBSERVER_SNAPSHOT_BYTES);
+        snapshot_wire[0]=1U;
+        for(phase=0U;phase<2U;++phase) {
+            base=(unsigned short)(1U+phase*2626U);
+            snapshot_wire[base]=(unsigned char)count;
+            for(record=0U;record<count;++record) {
+                offset=(unsigned short)(base+66U+record*40U);
+                snapshot_wire[offset]=MYSMB_TEXT_OBSERVE_PLAYER;
+                snapshot_wire[offset+5U]=(unsigned char)(record*4U);
+                snapshot_wire[offset+6U]=1U;
+            }
+        }
+        CHECK(mysmb_text_observer_snapshot_valid(snapshot_wire));++cases;
+        for(phase=0U;phase<2U;++phase)for(record=count;record<64U;++record) {
+            offset=(unsigned short)(1U+phase*2626U+66U+record*40U);
+            snapshot_wire[offset]=1U;
+            CHECK(!mysmb_text_observer_snapshot_valid(snapshot_wire));++cases;
+            snapshot_wire[offset]=0U;snapshot_wire[offset+39U]=128U;
+            CHECK(!mysmb_text_observer_snapshot_valid(snapshot_wire));++cases;
+            snapshot_wire[offset+39U]=0U;
+        }
+        CHECK(mysmb_text_observer_snapshot_valid(snapshot_wire));++cases;
+    }
+    memset(snapshot_wire,0,MYSMB_TEXT_OBSERVER_SNAPSHOT_BYTES);
+    CHECK(mysmb_text_observer_snapshot_valid(snapshot_wire));++cases;
+    for(i=1U;i<MYSMB_TEXT_OBSERVER_SNAPSHOT_BYTES;++i) {
+        snapshot_wire[i]=1U;
+        CHECK(!mysmb_text_observer_snapshot_valid(snapshot_wire));++cases;
+        snapshot_wire[i]=0U;
+    }
+    printf("canonical receipt tails: %lu boundary/absent cases passed\n",cases);
+    return 0;
+}
+
 int main(int argc,char **argv)
 {
     struct mysmb_input input;
@@ -637,6 +678,7 @@ int main(int argc,char **argv)
     static const unsigned char enemy_ids[17]={0U,2U,3U,5U,6U,7U,8U,10U,11U,
         12U,13U,18U,17U,45U,50U,51U,53U};
 
+    CHECK(canonical_tail_case()==0);
     memset(&observed,0,sizeof(observed));
     observed.ram[0x0200U]=100U; observed.ram[0x0201U]=1U;
     observed.ram[0x0203U]=50U;
