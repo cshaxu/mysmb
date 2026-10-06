@@ -214,7 +214,7 @@ comparator, actual DOS playability, and any still-open 486SX qualification (M4).
 [S4 P12](../../history/M3-T32-rendering-performance-continuation.md#s4-p12-staged-closure-and-s5-admission)
 records the exact division: known envp and evidence defects repaired in S4;
 S5 measures and S6-S8 fix performance; S9 performs the named unproved
-integration checks only. No final gate is passed by handoff. S5 is active,
+integration checks only. No final gate is passed by handoff. At P12 S5 was active,
 S6-S8 planned and S9 holds final audit checks. T19 remains suspended; current
 large-workarea ordinary startup passes without claiming its full repair.
 S5 estimates0product/100-250contained harness lines and no resident growth.
@@ -232,3 +232,14 @@ S6's bounded first cohort should test temporary coarse-row span preparation
 (up to198near bytes,zero resident cache) and sprite-row/classification reuse.
 Estimate80-240candidate product lines as before;require original-DOS listing,
 stack/loader audit and byte-exact raw/cached/band output before adoption.
+
+## Current S6 admission
+
+[S5 P3 closure/S6 packet](../../history/M3-T32-rendering-performance-continuation.md#s5-p3-baseline-budget-closure-and-s6-admission)
+closes the baseline phase-budget/comparator-disposition decision contract,
+not the unproved reference/minimum-cycle/full-route acceptance. Those remain
+explicit S9 requirements. S6 is active;S7-S9 planned. S6 first cohort is
+temporary coarse-row span and sprite-work reuse in the shared pure PPU,
+80-240candidate product lines/up to198temporary near bytes/no new resident
+cache absent budget amendment, with exact fallback/output and DOS stack/cost
+checks. Candidate validation must cover the broader scenes before adoption.

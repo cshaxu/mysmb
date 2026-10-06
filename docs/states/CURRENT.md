@@ -1,25 +1,26 @@
 # Project Status
 
-## M3 T32 S5 Packet
+## M3 T32 S6 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S5 P2. |
-| Admission And Approval | Owner approved S5-S9 plan and clarified S4 known repairs/S5-S8 performance/S9 total audit; S4 repair stage closed, S5 sole active. |
-| Objective | Source-bound current phase budget and fair comparator disposition before performance implementation. |
+| Identifier Mode | Continuation: M3 T32 S6 P1. |
+| Admission And Approval | Approved consecutive S5-S9 plan; S5 baseline measurement contract closed with final comparator checks still open; S6 sole active. |
+| Objective | Measure and adopt only byte-exact shared PPU composition candidates with material original-DOS benefit. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
 | Reference Baseline | Current three P11 products and scoped S4 receipts; original toolchain/default640x400. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | Contained benchmark/probes below ignored build; estimate0product/100-250harness lines, no resident product increase. |
+| Files And ABI Surface | src/ppu/frame.c and focused tests;estimate80-240candidate product lines/up to198temporary near bytes;no new resident allocation absent budget amendment. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
-| Verification | Product/reference/config identity, actual game updates and submissions, route/frameskip/resolution/audio controls; default baseline separate from per-run experiments. |
+| Verification | Independent512-state native raw/cache/band output;DOS controlled exact-output/cost scenes and actual routes;compiler stack/loader/arena checks;three EXEs for adopted product-code P. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
 | Asset Needs | Existing restricted local owner ROM/reference/runtime; timing/output observation only, no code import/redistribution; raw material bounded below build. |
-| Reporting Requirements | Phase costs, counted versus proxy measures, comparator gaps, memory tradeoffs, changed-line estimates/actuals and total/local counters. |
+| Reporting Requirements | Candidate and measured whole-step cost, rejected variants, actual code/memory delta, source/products and total/local node counts. |
 | Stop Conditions | Unbounded or foreground probe, source binding gap, ownership violation, output divergence or unsupported speed claim. |
-| Exit Criteria | Reproducible current phase budget, measured or explicitly unproved fair comparator, memory costs and bounded S6 implementation decision. |
+| Exit Criteria | Selected/rejected cohort dispositions with exact indexed output and unchanged game/PPU semantics;measured whole-step benefit and acceptable DOS stack/startup/resident budget;three targets verified after adoption. |
 | Original Owner Request | Improve actual memory/performance/playability with original ROM semantics; follow approved S5-S9 division after fixing known S4 defects. |
-| Similar-Issue Sweep | Stale binaries/config, display versus game-update counts, frameskip/resolution/audio differences, snapshot cost and probe overhead. |
+| Similar-Issue Sweep | Span invalidation at tile-row/HUD/scroll/bank changes;CHR bounds/fallback, sprite flip/priority/clipping, palette values and pointer/stack lifetimes. |
+
 
 ## Current Technical Baseline
 
@@ -32,7 +33,7 @@
   [Counted budget and limits](../history/M3-T32-rendering-performance-continuation.md#s5-p2-current-counted-phase-budget).
 
 - P12 ends S4's owner-approved repair/delivery stage; final proof gates are
-  OPEN, not passed by closure. S5 alone active, S6-S8 planned, S9 named final
+  OPEN, not passed by closure. S5 measurement closed by P3; S6 active, S7-S8 planned, S9 named final
   audit checks. Current DOS normal62/62/DIV63/63 conditional flows rebound;
   current-host strict native routes pass without repairing suspended T19.
   S5 initial inventory finds6retained trials,zero with current300549-byte

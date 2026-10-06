@@ -1249,3 +1249,47 @@ candidate validation and final S9 acceptance, not inferred from this cohort.
 Recipes/count receipts below ignored build/m3-t32-s5;zero product lines,
 no product resident increase or three-EXE refresh. Historical1992/1992,
 local1991/1992nodes,4260/4261feasible controls(raw4342,infeasible81),new0.
+
+## S5 P3 baseline-budget closure and S6 admission
+
+S5's current packet exit is a source-bound phase budget, measured or explicitly
+unproved comparator disposition, memory costs and bounded S6 decision. Those
+deliverables are now present in P1/P2. Close this baseline measurement S;
+do not call the fair reference/minimum-cycle or full-route acceptance passed.
+Those named final-work obligations stay open in S9, whose approved contract
+already requires them. Candidate scroll/dense/death/output coverage belongs
+to S6-S8 validation as well. No claim that the single measured running cohort
+represents every game phase. Default cadence remains FAIL, not repaired by
+changing cycles, resolution, draws or frameskip.
+
+Admit S6 alone under the approved consecutive plan:one shared PPU composition
+cohort in src/ppu/frame.c and focused tests, 80-240candidate product lines.
+First prototype coarse tile-row span preparation and sprite classification/
+decoded-row work together; retain an individual variant only when exact
+output and original-DOS cost/memory justify it. A33entry span representation
+can use198temporary near bytes; no new persistent allocation is authorized
+without a measured budget amendment. Audit actual compiler stack and all
+affected call frames before adoption. Current2048stack,640x400default,
+256x240indexed contract, 64colors and three-platform shared semantics remain.
+
+Entry/exit is const PPU state -> exact indexed full frame or requested rows;
+no translated game/RAM/NMI/OAM/palette mutation. Invalidate temporary span
+work at tile-row, fixed-HUD/scene, scroll/bank transitions; lifetime is one
+const compositor call, not an unchecked cache across game ticks. Preserve
+sprite order/priority, clipping, flip, raw CHR bounds and no-cache fallback.
+Do not encode opacity in final palette colors or mask away input values.
+Optional opacity schemes require a separately checked variant in this cohort.
+
+Verification:independent512-state raw/cache/band cases on x86/x64, guarded
+capacity/edge/split/palette/CHR routes, original-DOS controlled exact-output
+and cost scenes plus actual gameplay before adopted delivery. Compare current
+source/object and memory/stack bindings; require material whole-step benefit,
+not only one inner-loop statistic. No new ROM/source/runtime import, helper
+process or installed DOSBox settings. Product-code P rebuilds/publishes three
+EXEs; prototype/evidence P does not. S9 final checks remain OPEN.
+
+Coordinator admits under the owner's approved S5-S9 plan and automatic
+successor instruction. Scope/expected/actual[],new0;historical1992/1992,
+local1991/1992nodes,4260/4261feasible controls(raw4342,infeasible81). No ROM
+custody event. S5 closes only its stated measurement contract; T32/goal remain
+open. Documentation/node/diff gates precede commit.
