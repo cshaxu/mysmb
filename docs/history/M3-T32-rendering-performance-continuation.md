@@ -723,3 +723,61 @@ runtime/dump/artifacts remain ignored;no third-party/ROM import orEXErefresh.
 scope/expected/actual[],new0,historical1992/1992,local1991/1992nodes,
 4260/4261controls(raw4342,infeasible81). Five parent gates/S4/T32/goal stay open;
 documentation,node anddiff checks precede commit.
+
+## S4 P5 checkpoint: unused DOS argument setup elimination candidate
+
+Rather than only proving a domain for unused CRTargv, evaluate eliminating its
+work. This is a contained host-startup correction cohort,not ROM/game logic or
+an alternate compiler/runtime. Product DOSentry is main(void);160compiled
+owned units have no parsed argc/argv/getenv/environ consumer references.
+Direct linked CRTargc/argv references are only its construction routine and
+five-word main-entry argument pushes. Real DOSpath discovery reads PSP
+environment itself,not argv0. Environment setup andstdio/heap/exit stay original.
+Future consumers of parsed args require re-review;this is not a generic C
+runtime replacement or permission to remove all environment processing.
+
+Own four-line Cprobe _setargv(void)has an empty body. The reserved name is
+deliberately the existing private CRTentry symbol,not a public game API.
+Original /AL/Gs emits normal far return0,2locals andpreserved callee registers;
+link resolves that symbol before the same LLIBCE.LIB. All game/product object
+libraries remain S3bound. CRTargc/argv globals remain initially zero,the DOS
+main ignores incoming values,andthere is no persistent DXallocation or saved-
+PCjump. Original setenvp still executes. No binary patch,stack shrink,DOSBox
+settings,resolution change,new process,resource import orWin32logic change.
+
+Candidate300725bytes(-420from current301145),DGROUP49152/headroom16384/2048stack
+unchanged;logical loader324848/341216(-416/-416),page-rounded325168/341536.
+Original bound3074retained. Not adopted;these are prototype figures,no refreshed
+product orclaimed universal startup minimum. The far-return stub itself uses
+an ephemeral frame;zero below means ZERO PERSISTENT argv rather than zero
+startup stack use. Other constructor/exit/firmware/kernel conditions remain.
+
+Controlled original DOScandidate matches977235bytes against current S3lookup
+baseline:all admitted pixels,planes,text andgame save,including mixed-mode and
+restore. Three separate final-candidate actual369KiBroutes,empty/many/single
+tails,all passload,input,graphics/text/Tab,save/restore/Escape;valid CRC/resource
+binding,zero invalid/dropped MCBrecords,2010timer samples/7records each.
+Current candidate observer rebound to434E DGroup;data offsets unchanged.
+All three observe argc0/argv0,top49150/defaultexit0271/debug0;22/400/152bytes
+of persistent argv are eliminated. This is finite sampled runtime evidence,
+not a whole-lifetime/global-stack certificate. Paths/saves still work through
+unchanged PSP-based discovery. Original product source/three S3EXEs unchanged.
+
+Select noargv for product integration evaluation:removes the unnecessary
+pathname/tail-dependent allocation altogether andsaves linked code/loader
+space. Does not solve envp/cinit peak,callbacks,other IRQ/BIOS/DOSbodies,
+continuous/kernel memory,failed graphics cadence orWindowsaudio startup.
+Required next Pscope amendment:small owned DOSstartup adapter andoriginal
+build linking selection,estimate10-30product/build lines,all three EXEs and
+actual memory/output/operational checks before acceptance. No silent adoption
+from this probe,no change toshared ROM/C behavior orgame input.
+
+Contained recipes/results below build/m3-t32-s4:prepare-noargv/Build-NoArgv,
+original dependency scan,private reserved-symbol listing/map,controlled byte
+comparison andthree independent rebased observer loaders/routes. Any temporary
+verification process remains local;do not restart oraccept a stale yielded
+operation without terminal evidence. Raw local material not committed/imported.
+MEM-S4-01argv cost has an actual elimination candidate,not completed acceptance;
+all five parent gates stay open. S4/T32/goal active,scope/expected/actual[],new0,
+historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81).
+Documentation/admission/diff checks precede commit;no T/S/queue advancement.
