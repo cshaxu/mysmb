@@ -41,7 +41,7 @@ the source policy, with no redistribution or new derivation/import authorized.
    input latency and memory separately. A missed cadence remains a failed gate,
    never a playability claim. Physical486SX remains M4 qualification.
 
-S1 is closed; S2 is active. Later S register at admission. Each S reports scope/size first,
+S1-S2 are closed; S3 is active. Later S register at admission. Each S reports scope/size first,
 then exact disposition, evidence and total/local counters. Product-code P refreshes
 three EXEs using original tools; audit/prototype/doc P does not. All diagnostics
 stay below ignored build; no unrelated work is removed. Retain prior scoped proof
@@ -197,3 +197,84 @@ Independent plane reference/guards and both widths,original DOS ordinary and
 populated exact outputs/cost/memory,three products for adoption. Dispose weaker
 variants explicitly;source equality alone is no speed claim. ROMscope/expected/
 actual[],new0,maximum1992/1992,unchanged local node/edge counters.
+
+## S2 P1 closure: direct shared-color plane conversion
+
+Adopt the direct/shared-color variant in src/platform/vga/vga_frame.c,+28/-23
+one product source. Each16-input group reads source directly and reuses indices
+0/4/8/12as four scalar colors;the existing source/output disjointness contract
+permits this. Remove the16-byte per-group temporary/copy. Exact63mask,all20
+plane outputs,vertical repeats,400-row mapping,capacity/coverage rejection and
+band lifetime stay unchanged. No API,heap,game/CHR/object or PPU-state change.
+Similar-issue sweep covers every group/plane index,all first/last/repeated rows,
+masking all byte values,capacity/address guards,source/output disjoint lifetime,
+far ABI and graphics return;the unchanged single-plane path remains a reference.
+
+Seven bounded variants pass each-width16972800-byte independent formula,
+all valid starting rows and1-16row bands,guards/invalid requests. Every original
+DOS ordinary route matches977235pixel/plane/text/snapshot bytes,exits0/restores
+mode3/frees allocators,with installed settings unchanged. Dispositions versus S1:
+
+| Variant | Conversion change | Whole graphics-return change | Diagnostic owned change | Decision |
+| --- | ---: | ---: | ---: | --- |
+| Direct reads | -16.8833% | -6.0503% | +48bytes | Superseded by shared colors |
+| Pointer chunk32 | +4.8285% | +1.7013% | +128bytes | Reject regression |
+| Pointer chunk64 | -1.9306% | -0.6897% | +128bytes | Reject weaker tradeoff |
+| Pointer chunk128 | -5.3088% | -1.8956% | +128bytes | Reject weaker/larger stack |
+| Indexed chunk32 | +30.8872% | +11.0164% | +224bytes | Reject regression |
+| Indexed chunk64 | +24.1369% | +8.6076% | +224bytes | Reject regression |
+| Direct shared colors | -18.8205% | -6.7135% | +32bytes | Adopt |
+
+The compiler listings explain the failed pointer/index approaches:large-model
+segment reload/index temporaries cost more than saved small calls. Selected
+ordinary repeat reproduces outputs/cost. Water/castle/dense whole routes save
+4.3846/5.9957/3.9528%,conversion about18.8%,each977235bytes identical. Original
+local sizes baseline54,selected46,direct38,pointer76/108/172,indexed variants
+remain larger. Populated patterned unused stack64retains its bounded fixture
+limit. Do not interpret these diagnostic times as productFPS or486SX evidence.
+An incomplete listing driver attempted a nonexistent working directory;its
+failure log was immediately contained below build,then the corrected original
+compiler/listing succeeded. No root temporary or toolchain/flags change remains.
+
+Original DOS product305371bytes(+48),minimum329376/page-rounded329664,
+max345376/page-rounded345664,DGROUP49520/headroom16016,stack2048,max-extra3076
+unchanged. Actual373KiB caller-free route passesload,input,graphics/text/Tab,
+save/restore andEscape:execError0/result0,2018samples,zero bad/dropped chains,
+CRC-valid resource-bound save frame7543versus seed7465. Sampled peak381920bytes,
++48versus S1. This is the new product's tested boundary,not continuous/global
+peak or universal minimum. S1's448/374receipts remain prior-product evidence;
+unchanged allocation design is retained,not claimed as new executable runs.
+S4/S6 still own the broader memory and integrated-cadence acceptance clauses.
+
+Both Windows widths build and pass8focused tests,including independent plane
+mapping,PPU reference/snapshots,purity and product self-test. Both refreshed
+products passactual startup,DPI,three text entries,two returns andconsoleEscape.
+Their runtime sections match S1;file hashes differ with PE packaging metadata.
+Debug stripping preserves the compiled runtime sections. Three refreshed assets
+match tested outputs:
+- mysmb16.exe: 305371bytes; 3aba49feaf7948c02526ac9518a896142661ae1c08e255921d4b5c40fa3edb9e.
+- mysmb32.exe: 310798bytes; cd53d48d0a70ffab8ab92ce469c1e97cab641a4845e3873adc5d0c94149cd2de.
+- mysmb64.exe: 324110bytes; 59e92c2129eb1ea092b56d82bf7645426e8d2ed9ecef81ff9c52318f8545e6be.
+Receipts below ignored build/m3-t31-s2:all variant summaries/listings/native logs,
+populated/repeat-summary,source-binding,product memory-receipt,resident-summary,
+native test logs,owned-console routes and strip/runtime comparison. No new import.
+
+S2 closes;S3 is admitted from the approved T plan. No unresolved scoped difference,
+no ROM credit/custody change:scope/expected/actual[],new0,historical1992/1992,
+local1991/1992nodes,4260/4261controls(raw4342/infeasible81). Configured playable
+cadence,full memory/CRT/text/integration and physical486SX remain unaccepted.
+Closure/admission/node and documentation gates precede commit.
+
+## S3 admission: CRT/file/error lifetime
+
+Entry is the neutral snapshot file-service callback provider;exit complete
+opaque-byte transfer,close/error and descriptor disposition. Owners
+src/platform/file/snapshot_files.c and existing neutral file contracts. Receive
+the retained T28 contained alternative draft only for evaluation,not adoption.
+Estimate0-160product lines after footprint audit;no game-state interpretation,
+snapshot schema/transaction policy change or platform fork. Compare binary bytes,
+append/partial transfers,errors/close/descriptor lifetime,original DOS linked
+footprint and resident memory. Retain stdio unless the alternative proves useful
+and all callbacks remain equivalent. Product-code adoption refreshes three EXEs;
+audit/rejection alone does not. Scope/expected/actual[],new0,maximum1992/1992;
+same local totals. No unbounded full-project re-audit or toolchain substitution.

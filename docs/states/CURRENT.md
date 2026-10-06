@@ -1,33 +1,40 @@
 # Project Status
 
-## M3 T31 S2 Packet
+## M3 T31 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T31 S2 P1; neutral plane loop. |
-| Admission And Approval | Owner-approved T31 plan; S1 closed and coordinator admits S2. |
-| Objective | Reduce tiny far copies and pointer/index work in exact four-plane conversion. |
-| Non-goals | No game/PPU semantic changes, framebuffer, row/frame skipping, Windows UI or DOSBox settings. |
-| Reference Baseline | S1 P2 integrated source/products and independent plane/PPU references. |
-| Candidate Proposal | [T31 plan](../history/M3-T31-dos-performance-memory-continuation.md). |
-| Files And ABI Surface | src/platform/vga/vga_frame.c,independent tests; estimate60-160lines,bounded scratch reviewed before adoption,no ABI/heap growth. |
+| Identifier Mode | Continuation: M3 T31 S3 P1; CRT/file/error lifetime. |
+| Admission And Approval | Owner-approved T31 plan;S2 closed and coordinator admits S3. |
+| Objective | Quantify neutral file provider footprint/lifetime and adopt only a useful equivalent alternative. |
+| Non-goals | No game interpretation,snapshot schema/transaction policy,Windows UI,toolchain or DOSBox settings changes. |
+| Reference Baseline | S2 P1 source/products;retained T28 file-service draft remains unaccepted. |
+| Candidate Proposal | [T31 plan and S3 contract](../history/M3-T31-dos-performance-memory-continuation.md). |
+| Files And ABI Surface | src/platform/file/snapshot_files.c and neutral contracts;estimate0-160product lines after audit,no API/ownership fork. |
 | Applicable Rules | README Task Reading Set,EXECUTION,DOCUMENT,ARCHITECTURE,CODING,CONTRIBUTING and source policy. |
-| Verification | Independent plane mapping/guards both widths,original DOS ordinary/populated whole outputs,cost/listing/stack/memory;three EXEs for adoption. |
+| Verification | Independent binary/append/partial/error/close/descriptor cases,both widths,original DOS linked/resident cost;three EXEs if adopted. |
 | Expected Markers | scope/expected/actual[],new0,baseline/max1992/1992;local1991/1992nodes,4260/4261controls,no custody change. |
-| Asset Needs | Existing owner-local resources/comparators only;local-only source-policy purpose,no new import;all diagnostics below build. |
-| Reporting Requirements | S scope/size first;P actual diff,cost/memory,evidence/products,total/local counts;no diagnostic timing as FPS. |
-| Stop Conditions | Any plane/source/guard divergence,unbounded memory,semantic change or unjustified cost regression. |
-| Exit Criteria | Candidates adopted/rejected with exact output and time/memory proof;adoption has three products and actual routes. |
-| Original Owner Request | Continue performance and memory optimization after T30 closure. |
-| Similar-Issue Sweep | Plane interleave,index masking,scale/repeated rows,first/last bands,capacity/address bounds,far ABI and cleanup. |
+| Asset Needs | Own-source contained draft/neutral vectors;existing local resources only for product builds,all logs below build,no new import. |
+| Reporting Requirements | Scope/size first;actual source diff,callback disposition,footprint/memory,evidence/products,total/local counts. |
+| Stop Conditions | Byte/error/lifetime/descriptor difference,unbounded memory,game-state read or unjustified footprint regression. |
+| Exit Criteria | Current/alternative provider compared and adopted/rejected with callback and memory proof;adoption has three products and routes. |
+| Original Owner Request | Continue performance and memory optimization under approved T31 plan. |
+| Similar-Issue Sweep | Read/write lengths,append/partial/EOF/errors,close/descriptors,allocation ownership and original-runtime linked helpers. |
 
 ## Current Technical Baseline
+
+- T31 S2 P1closed:neutral plane source+28/-23,conversion18.82%shorter;
+  whole ordinary6.7135%,populated4.3846/5.9957/3.9528%shorter,exact outputs.
+  Local stack54->46,no heap/DGROUP growth;actual373KiBroute passes,sampled
+  381920bytes(+48). Three products305371/310798/324110bytes. No DOS cadence/global-peak proof;
+  S3 CRT/file/error evaluation is active.
+  [S2 closure/S3 scope](../history/M3-T31-dos-performance-memory-continuation.md#s2-p1-closure-direct-shared-color-plane-conversion).
 
 - T31 S1 P2closed:shared palette preparation+9/-5,no heap/DGROUP change;
   ordinary diagnostic2.6427%shorter,populated1.7504/2.3721/1.5815%;exact fallback
   and native gates pass. Actual448/374/373KiBroutes pass;sampled386736/382640/381872bytes.
   Three refreshed products305323/310798/324110bytes. No playable-cadence/global peak proof;
-  S2 neutral plane conversion is active.
+  S2 subsequently closed;S3 is active.
   [S1 closure/S2 scope](../history/M3-T31-dos-performance-memory-continuation.md#s1-p2-closure-integrate-call-local-palette-preparation).
 
 - T30 S1 P3closed:+35/-18shared PPU lines,independent output/fallback/repeat

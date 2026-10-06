@@ -79,7 +79,7 @@ int mysmb_vga_frame_build_planes(const struct mysmb_io_video_band *source,
     mysmb_io_u16 capacity)
 {
     mysmb_io_u16 row,group,p,sy,previous=240U,phase,low,high;
-    mysmb_io_u8 input[16];
+    mysmb_io_u8 shared0,shared4,shared8,shared12;
     const mysmb_io_u8 MYSMB_IO_FAR *in;
     mysmb_io_u8 MYSMB_IO_FAR *p0,*p1,*p2,*p3;
     if(!source || !source->pixels || !out || first>=400U || rows>MYSMB_VGA_BATCH_ROWS ||
@@ -97,28 +97,33 @@ int mysmb_vga_frame_build_planes(const struct mysmb_io_video_band *source,
             p0=out+row*80U;p1=out+(rows+row)*80U;
             p2=out+(rows*2U+row)*80U;p3=out+(rows*3U+row)*80U;
             for(group=0U;group<16U;++group){
-                memcpy(input,in,16U);in+=16U;
-                p0[0U]=(mysmb_io_u8)(input[0U]&63U);
-                p0[1U]=(mysmb_io_u8)(input[3U]&63U);
-                p0[2U]=(mysmb_io_u8)(input[6U]&63U);
-                p0[3U]=(mysmb_io_u8)(input[9U]&63U);
-                p0[4U]=(mysmb_io_u8)(input[12U]&63U);
-                p1[0U]=(mysmb_io_u8)(input[0U]&63U);
-                p1[1U]=(mysmb_io_u8)(input[4U]&63U);
-                p1[2U]=(mysmb_io_u8)(input[7U]&63U);
-                p1[3U]=(mysmb_io_u8)(input[10U]&63U);
-                p1[4U]=(mysmb_io_u8)(input[13U]&63U);
-                p2[0U]=(mysmb_io_u8)(input[1U]&63U);
-                p2[1U]=(mysmb_io_u8)(input[4U]&63U);
-                p2[2U]=(mysmb_io_u8)(input[8U]&63U);
-                p2[3U]=(mysmb_io_u8)(input[11U]&63U);
-                p2[4U]=(mysmb_io_u8)(input[14U]&63U);
-                p3[0U]=(mysmb_io_u8)(input[2U]&63U);
-                p3[1U]=(mysmb_io_u8)(input[5U]&63U);
-                p3[2U]=(mysmb_io_u8)(input[8U]&63U);
-                p3[3U]=(mysmb_io_u8)(input[12U]&63U);
-                p3[4U]=(mysmb_io_u8)(input[15U]&63U);
-                p0+=5U;p1+=5U;p2+=5U;p3+=5U;
+                /* Source and output are disjoint. Reuse the four colors that
+                 * occur twice without copying every small source group. */
+                shared0=(mysmb_io_u8)(in[0U]&63U);
+                shared4=(mysmb_io_u8)(in[4U]&63U);
+                shared8=(mysmb_io_u8)(in[8U]&63U);
+                shared12=(mysmb_io_u8)(in[12U]&63U);
+                p0[0U]=shared0;
+                p0[1U]=(mysmb_io_u8)(in[3U]&63U);
+                p0[2U]=(mysmb_io_u8)(in[6U]&63U);
+                p0[3U]=(mysmb_io_u8)(in[9U]&63U);
+                p0[4U]=shared12;
+                p1[0U]=shared0;
+                p1[1U]=shared4;
+                p1[2U]=(mysmb_io_u8)(in[7U]&63U);
+                p1[3U]=(mysmb_io_u8)(in[10U]&63U);
+                p1[4U]=(mysmb_io_u8)(in[13U]&63U);
+                p2[0U]=(mysmb_io_u8)(in[1U]&63U);
+                p2[1U]=shared4;
+                p2[2U]=shared8;
+                p2[3U]=(mysmb_io_u8)(in[11U]&63U);
+                p2[4U]=(mysmb_io_u8)(in[14U]&63U);
+                p3[0U]=(mysmb_io_u8)(in[2U]&63U);
+                p3[1U]=(mysmb_io_u8)(in[5U]&63U);
+                p3[2U]=shared8;
+                p3[3U]=shared12;
+                p3[4U]=(mysmb_io_u8)(in[15U]&63U);
+                p0+=5U;p1+=5U;p2+=5U;p3+=5U;in+=16U;
             }
         }
         previous=sy;phase+=3U;if(phase>=5U){phase-=5U;++sy;}

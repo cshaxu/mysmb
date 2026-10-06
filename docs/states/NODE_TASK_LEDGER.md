@@ -2745,6 +2745,7 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M3 T31 | 0 | - | [record](../../docs/history/M3-T31-dos-performance-memory-continuation.md) |
 | M3 T31 S1 | 0 | 0 | shared-palette-preparation-performance-memory; [record](../../docs/history/M3-T31-dos-performance-memory-continuation.md) |
 | M3 T31 S2 | 0 | 0 | neutral-vga-plane-loop-performance-memory; [record](../../docs/history/M3-T31-dos-performance-memory-continuation.md) |
+| M3 T31 S3 | 0 | 0 | neutral-file-crt-error-lifetime-memory; [record](../../docs/history/M3-T31-dos-performance-memory-continuation.md) |
 | M3 T4 | 0 | - | [record](../../docs/history/M3-T3-colored-text-frame.md); [record](../../docs/history/M3-T4-vga-indexed-frame.md); S not recorded |
 | M3 T5 | 0 | - | [record](../../docs/history/M3-T4-vga-indexed-frame.md); [record](../../docs/history/M3-T5-dos16-composition-root.md); S not recorded |
 | M3 T6 | 0 | - | [record](../../docs/history/M3-T5-dos16-composition-root.md); [record](../../docs/history/M3-T6-opennt-mz-link.md); S not recorded |
@@ -3910,4 +3911,5 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T30 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T30-ppu-background-performance.md) |
 | M3 T30 S2 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T30-ppu-background-performance.md) |
 | M3 T31 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T31-dos-performance-memory-continuation.md) |
-| M3 T31 S2 | 0 | 1992 | none / 0 | none / 0 | active; [record](../../docs/history/M3-T31-dos-performance-memory-continuation.md) |
+| M3 T31 S2 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T31-dos-performance-memory-continuation.md) |
+| M3 T31 S3 | 0 | 1992 | none / 0 | none / 0 | active; [record](../../docs/history/M3-T31-dos-performance-memory-continuation.md) |
