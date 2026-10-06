@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T31 S4 P3; CRT/private/startup and interrupt joins after P2 own-source model. |
+| Identifier Mode | Continuation: M3 T31 S4 P4; reconcile CRT fatal/nonreturn/callback and startup/exit boundaries after P3. |
 | Admission And Approval | Owner-approved T31 plan;S3 closed and coordinator admits S4. |
 | Objective | Reconcile original compiled call/stack paths and actual startup/runtime/error/restore memory with contiguous requirements. |
 | Non-goals | No stack shrink without proof,game/PPU changes,Windows UI,toolchain substitution or DOSBox settings. |
@@ -22,6 +22,13 @@
 | Similar-Issue Sweep | Startup/runtime/error/restore,near/far/FILE ownership,indirect calls,private CRT/interrupt nesting,optional cache failures and current S1-S3 stack owners. |
 
 ## Current Technical Baseline
+
+- T31 S4 P3checkpoint:fixed7896-byte CRT region,53reachable entries/47local
+  flows closed,25/28external names have composed local bounds. fwrite/fclose/
+  fflush depend on six named write/fatal/callback entries. int86local28,write
+  transient buffer<=512/local-before-fatal544;BIOS/kernel/startup exclusions
+  remain. S4 open;2KiBstack and all three products unchanged.
+  [P3 bounds and remaining error chain](../history/M3-T31-dos-performance-memory-continuation.md#s4-p3-checkpoint-current-crt-callreturn-and-local-bounds).
 
 - T31 S4 P2checkpoint:851functions have balanced own-frame CFGs,12switch tables
   and1950call-site live depths;1747own joins/202CRTsites/one legacy exclusion.

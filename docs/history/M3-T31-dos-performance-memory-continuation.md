@@ -474,3 +474,60 @@ Next P starts from these current bindings,not another851-function census.
 Scope/expected/actual[],new0,no custody change;historical1992/1992,local1991/1992
 nodes,4260/4261controls(raw4342/infeasible81). Required node/documentation gates
 precede commit. No T/S closure or successor admission in this checkpoint.
+
+## S4 P3 checkpoint: current CRT call/return and local bounds
+
+No product/source changes. Fixed input remains current7896-byte CRT region,
+the byte-identical relink and1950own call sites;new private-entry discovery is
+within that bound,not another source/ROM audit. Entry-anchored decoding explores
+branches and direct near/far calls,then iterates only proven callee return
+conventions. It stops on an unproved cleanup rather than assuming Ccdecl.
+The current reachable set is53entry starts,47with closed local SP/BP flows;
+28external names represent27addresses.25external names now have composed local
+CRT bounds with no cycle in that closed subset. Remaining names are fwrite,
+fclose and fflush,all dependent on the write/fatal-error chain.
+
+Current instruction review discharges three otherwise misleading boundaries:
+
+- stackavail temporarily pops its own four-byte far return address,computes
+  available space,then pushes the identical return words back. Negative relative
+  depth there is a return-address inspection,not caller-frame underflow.
+- int86 builds an INT/RETFthunk on its own stack and saves/restores BP around it.
+  The 25/26special form discards the extra flags word;normal product vectors use
+  the ordinary form. Include its far-call/CPU-interrupt transient10bytes while
+  excluding the BIOS/DOS handler body. Local composed contribution28bytes.
+- write's newline path selects128or512temporary bytes after stackavail. Use512
+  conservatively. Its near emit helper shares the parent BP;normal RET resumes
+  it,while errors restore the parent's saved SP and jump to the parent epilogue.
+  Do not incorrectly certify that helper as an independent C function. Its
+  current local bound before unresolved fatal handling is544bytes.
+
+The composed,closed local CRT contributions excluding entry return address are:
+memcpy/memcmp8,memset4,fopen62,fread128,fmalloc70,nmalloc56,rename12/remove10,
+int86/ports/vector wrappers and arithmetic conventions as recorded. These
+numbers include proven subordinate local frames and CPU INTentry words where
+modeled,NOT BIOS/DOS internal handler stacks or startup beneath main. No total
+2048-byte safety/shrink conclusion follows. Startup/error/interrupt clauses
+remain required even if the application's FILEmodes are binary.
+
+Six entries still have explicit pending boundaries:fflush,fwrite,fclose,flsbuf,
+write and FF_MSGBANNER. The last exposes the optional runtime debug-message
+callback;the linked initial pointer iszero,but initial zero alone is not a
+lifetime proof. Write's low-stack failure enters runtime fatal reporting and
+termination;do not propagate an assumed normal return through that path.
+Next P reconciles this error/nonreturn chain,its callback residence and the
+startup/exit joins,then retains the declared BIOS/interrupt and continuous-
+allocation obligations. No widening to new source universes.
+
+Local recipes below ignored build/m3-t31-s4:crt-flow.py/crt-flow.json and
+crt-bounds.py/crt-bounds.json,119diagnostic lines. They bind current product
+SHA9c26dcf1b612f4f5b85fc0eab4a289a404c1a2160e8f44f0cbc37caa06085369.
+Unknown SPwrites,unproved callee cleanup,indirect transfers,entry/state budgets
+and regional escapes remain explicit stop conditions. Model-specific thunk/
+shared-frame rules use current instruction addresses,not guessed routine names.
+No runtime bytes/implementation or raw trace is committed. Prior actual routes
+remain valid only within their executable/settings/observer limits;no repeat
+product build for this audit-only P. S4 remains active,three EXEs unchanged.
+Scope/expected/actual[],new0,custody unchanged;historical1992/1992,local1991/1992
+nodes,4260/4261controls(raw4342/infeasible81). Node/documentation gates precede
+commit;no T/S closure or next S admission.
