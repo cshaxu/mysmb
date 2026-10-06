@@ -781,3 +781,67 @@ MEM-S4-01argv cost has an actual elimination candidate,not completed acceptance;
 all five parent gates stay open. S4/T32/goal active,scope/expected/actual[],new0,
 historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81).
 Documentation/admission/diff checks precede commit;no T/S/queue advancement.
+
+## S4 P6 checkpoint: integrate original-ABI DOS noargv hook
+
+Adopt src/platform/dos16/process_startup.c,8lines,private _setargv(void)hook;
+tools/Build-OpenNt16Dos.ps1+9/-1links its explicit object before original LLIBCE.
+Reserved symbol is a narrow original-runtime ABI exception beneath DOSplatform,
+not a game API orimported implementation. Original /AL/Gs compiler emits the
+checked normal FARreturn0,2local bytes andcallee-saved registers. No parsed
+argument consumer in current main(void)/160owned units;PSPexecutable path and
+environment initialization remain. Build guard rejects a changed main signature
+andrequires review of future parsed-argument consumers. It accepts current
+source;post-build addition only guards the compile,no binary semantics change.
+Shared core/PPU/IO/input/ROM andWin32product source unchanged. No lost input,
+new process,settings change,stack shrink orresolution change. The guard does
+not purport to detect arbitrary indirect future consumers;review remains required.
+
+Formal original-toolchain DOSproduct bytes EXACTLY equal the tested P5candidate:
+all977235controlled pixel/plane/text/save bytes andthree actual369KiBempty/
+many/single-tail routes remain current product evidence,not repeated runs.
+No use of old product evidence across different image bytes. Observed argv
+persistence0across all tails,valid CRC/resource-bound save/input/Tab/restore/exit.
+Supplemental actual368KiBexecutes but refuses initialization,result1clean,
+seed save unchanged. Tested startup boundary remains369positive/368negative
+for this fixture,not a universal minimum orhigh-water. The small hook has an
+ephemeral stack frame;zero persistence is not zero startup stack use.
+
+DOSproduct300725bytes(-420),DGROUP49152/headroom16384/2048stackunchanged;
+logical loader324848/341216(-416),page-rounded325168/341536,bound3074retained.
+No new heap/workspace orargument-dependent DXallocation. Own product units
+now include the additional host-only hook;old851software function proof needs
+one explicit hook/current CRTlayout join,not a new ROMnode. Current main's
+parsed argv values are intentionally0because it ignores them.
+
+Fresh both Windows builds pass15focused tests each;packaging preserves runtime
+sections/RVAs. Compared with S3,each current native product's runtime sections
+are byte-identical;header/package identities differ. Retain source-identical
+after-ready Tab/input/exit scope andFAILED strict WIN-T19-STARTUPgate. Do not
+claim fresh strict healthy startup,frame-rate change orsilently resume T19.
+No Windowscode orsystem settings changes. New hook is absent from native targets.
+
+Three refreshed existing owner-authorized slots:
+- mysmb16.exe:300725bytes;33413d575a87b31969b5dc6227154a925a09a4e10a73ea35c7598a3e3580c8f7.
+- mysmb32.exe:311310bytes;397ff7af59d5d95368b375989627077abc92997f00050a7cbb5d63e86f81284d.
+- mysmb64.exe:324110bytes;4c7f09da0b5521729fa03f53c3ce793542d0d426c60bd4ed78aa2777faf25f5e.
+Actual source change8new platform lines/build+9/-1;no game logic orvendor code
+copied. Existing local build/resource/runtime policy retained,no new source
+import ordistribution permission beyond established three artifact slots.
+
+Similar-issue sweep:all owned parsed-argument/environment symbol consumers,
+direct CRTargc/argvuses,main signature/original FARreturn contract,explicit
+library resolution,PSPpath/envp/stdio preservation,no-argument/max-tail input,
+source-identical controlled outputs,loader/near-data/stackandnative isolation.
+Contained build/m3-t32-s4/p6logs:original build/memory/source/candidate identity,
+fresh native15tests,stripping/runtime section equality and368clean refusal;
+P5exact-image routes/dependency proof remain linked current evidence.
+
+MEM-S4-01argument parsing/persistent stack cost is removed in product;the
+previous pathname-dependent argv precondition no longer controls that cost.
+Environment/cinit/exit/hook/firmware/kernel andfull stack/cadence gates still
+remain;rebind changed startup/CRTmap next Pbefore reusing address-specific
+receipts. No blanket claim about startup peak,BIOS/DOS/OEMdomains orplayability.
+S4/T32/goal active;all five parent gates not completely accepted,scope/expected/
+actual[],new0,historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,
+infeasible81). Documentation/node/diff gates precede commit;no T/Sadvancement.

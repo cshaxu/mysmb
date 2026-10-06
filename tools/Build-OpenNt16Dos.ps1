@@ -154,6 +154,14 @@ try {
         throw 'The configured compiler directory lacks lib16.exe.'
     }
     $entryObject = 'platform_dos16_main_dos16.c'
+    # Resolve the private runtime hook explicitly before LLIBCE is searched.
+    $entrySource = Get-Content -Raw -Encoding UTF8 (Join-Path $SourceRoot 'platform/dos16/main_dos16.c')
+    if ($entrySource -notmatch '(?m)^\s*int\s+main\s*\(\s*void\s*\)') {
+        throw 'The DOS startup hook requires main(void); review argument consumers.'
+    }
+    $startupSource = Join-Path $SourceRoot 'platform/dos16/process_startup.c'
+    & $Compiler /nologo /AL /Gs /c /Fomysmb-startup.obj /I $runtimeIncludeDirectory $startupSource
+    if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     $members = @($objects | Where-Object { $_ -ne $entryObject })
     $libraries = @()
     for ($first = 0; $first -lt $members.Count; $first += 16) {
@@ -170,7 +178,7 @@ try {
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
         $libraries += $library
     }
-    $objectLine = ((@($entryObject, 'mysmb-stack.obj') + $libraries) -join "+`n")
+    $objectLine = ((@('mysmb-startup.obj', $entryObject, 'mysmb-stack.obj') + $libraries) -join "+`n")
     @($objectLine, 'mysmb-dos16.exe', 'mysmb-dos16.map', $runtimeLibrary) |
         Set-Content -Encoding Ascii mysmb-dos16.rsp
     # LINK 5.60 reads response-file fields through its interactive input

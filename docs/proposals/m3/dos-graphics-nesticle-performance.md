@@ -67,6 +67,35 @@ before generalizing the gain.
 The reference executable and owner ROM remain local research inputs below
 ignored `build/`; no third-party code or protected data is imported.
 
+Owner-authorized, read-only inspection of the historical source tree at
+`https://github.com/athros/NESticle` (repository `master`, `Source/`) adds an
+architectural lead, not a source-bound proof for the x.xx executable. The tree
+describes itself as a 1997 leak; its `LICENSE` contains only a Bloodlust
+copyright notice and grants no redistribution rights. `Source/MAIN.CPP`
+identifies this tree as version 0.2, whereas the measured owner binary is
+x.xx. No source bytes were imported into MySMB or stored in tracked files.
+The inspection purpose was to identify historical rendering organization and
+compare it with the measured current MySMB phases. Exact-version behavior
+must still be verified from the x.xx executable or observation.
+
+In that 0.2 tree, `Source/NESVIDEO.CPP` and `Source/NESVIDEO.H` show a two-level
+cache: NES pattern bits are decoded into 8x8 byte tiles, while each real
+32x30 nametable has a 256x240 surface whose dirty flags track individual
+tile writes and 4x4-tile attribute effects. `Source/NES.CPP` connects PPU
+name/attribute writes to those flags. Background drawing refreshes only dirty
+tiles and blits clipped scrolling regions from the surfaces; a tile-by-tile
+fallback is present when the active pattern-table mapping differs. The frame
+draws background-behind-sprites, sprites, then foreground-priority background.
+`Source/TILE.ASM` has a flat 32-bit, unclipped 8x8 fast path with two DWORD
+stores per tile row, and `Source/SPRITEBG.ASM` checks an already produced
+destination pixel's encoded opacity before writing a behind-background
+sprite. The palette-index encoding also lets palette changes update the
+display palette rather than recolor all tile pixels. These are conceptual
+comparators only; x.xx may have changed any of them, and MySMB must preserve
+its own exact frame contract. Two full real nametable surfaces would cost
+122,880 bytes before metadata, so a DOS16 adaptation needs an explicit far
+memory and startup budget or a smaller bounded cache.
+
 ## Boundaries
 
 - Keep original translated game logic, RAM/OAM/PPU state transitions, audio
@@ -109,7 +138,10 @@ source size, memory, exact files, and node counts in each admitted S packet.
 2. **S2, dominant PPU composition.** Estimate 80-240 candidate product lines,
    subject to S1 findings, in `src/ppu/` and focused tests. Investigate
    reusable background tile/row work, scroll and dirty-region updates,
-   band-invariant sprite classification and opacity lookup. Existing decoded
+   band-invariant sprite classification and opacity lookup. Measure a
+   palette-slot/opacity intermediate that can test behind-background priority
+   without recomputing the background for each candidate sprite pixel, while
+   preserving the public 256x240 indexed-color contract. Existing decoded
    CHR caching is baseline, not a new gain. Each candidate must beat the
    original DOS compiler's generated cost without unacceptable near/far,
    stack, or resident-memory growth. Verify exact indexed frames and state on

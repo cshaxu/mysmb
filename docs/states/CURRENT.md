@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S4 P6; final finite integrated memory/cadence register. |
+| Identifier Mode | Continuation: M3 T32 S4 P7; final finite integrated memory/cadence register. |
 | Admission And Approval | Approved T32 integration; S3local color accepted and strict startup gate explicitly received, S4 sole active. |
 | Objective | Reconcile final source/products with MEM-S4-01..05, actual cadence/input/memory and existing WIN-T19-STARTUP dependency, without overclaiming partial proof. |
 | Non-goals | No ROM/PPU semantics, lost ticks/frames/rows/colors, helper process, DOSBox settings, toolchain change, unsupported stack shrink or silent resumption of suspended T19. |
 | Reference Baseline | T32 S3 source-bound three products, accepted scoped S1-S3/S4 predecessor receipts; strict Windowsstartup remains failed. |
 | Candidate Proposal | [T32 S4 finite register and admission](../history/M3-T32-rendering-performance-continuation.md#s4-admission-final-integrated-finite-memory-and-cadence-register). |
-| Files And ABI Surface | Selected DOSstartup noargv adapter and tools/Build-OpenNt16Dos.ps1 linking,estimate10-30product/build lines;reserved _setargv private CRTsymbol exception,normal ALfar-return;main(void) ignores args,PSPpath/envp retained. Three EXEs andcurrent output/startup/memory gates before adoption. |
+| Files And ABI Surface | Current noargv product/startup layout rebind andremaining envp/cinit/exit/hooks/firmware/kernel/cadence conditions;0product lines planned before named repair,original private ALhook now adopted. Three EXEs for product repairs. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
 | Verification | Current source/products, actual originalDOSbudget/startup/runtime/error/restore routes, stack/CRT/firmware/kernel bounds andcadence/input;strict host startup failure remains visible. |
 | Expected Markers | scope/expected/actual[],new0,baseline/max1992/1992;local1991/1992nodes,4260/4261controls,no custody transfer. |
@@ -23,6 +23,14 @@
 
 ## Current Technical Baseline
 
+- T32 S4 P6:noargv hook ADOPTED,8platform lines/build+9/-1,normal original
+  ALfar-return. Formal DOSexactP5candidate;977235bytes/three369KiBroutes
+  reused by full-image identity,368clean init refusal.Persisted argv0;envp/PSP
+  path/input preserved. DOS300725(-420),logical324848/341216(-416),DGROUP49152/
+  2048stack unchanged. Native15tests each width/runtime sections equal S3;
+  three products refreshed. Strict Windowsstartup/cadence/global stack remain
+  unaccepted. P7rebinds current changed startup/CRTlayout andremaining premises.
+  [Startup integration](../history/M3-T32-rendering-performance-continuation.md#s4-p6-checkpoint-integrate-original-abi-dos-noargv-hook).
 - T32 S4 P5:noargv prototype selected for integration,not adopted.160owned
   units have no parsed-argument consumers;PSPpath/environment setup retained.
   Original ALempty CRTentry far-returns;argc/argv remain0,persistent argc stack
