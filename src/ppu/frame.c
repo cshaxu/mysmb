@@ -1,5 +1,12 @@
 #include "ppu/frame.h"
 #include <string.h>
+/* Private stack scratch uses the original /AL runtime's SS=DS contract.
+ * Public state/output/resource pointers keep their existing far ABI. */
+#ifdef MYSMB_DOS16_TARGET
+#define MYSMB_PPU_LOCAL_NEAR __near
+#else
+#define MYSMB_PPU_LOCAL_NEAR
+#endif
 void mysmb_ppu_frame_workspace_bind(struct mysmb_ppu_frame_workspace *workspace,
     mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded)
 {
@@ -101,14 +108,14 @@ static void mysmb_ppu_background_row(const struct mysmb_ppu_state *state,
     mysmb_io_u16 y,mysmb_io_u8 scroll_x,mysmb_io_u8 scroll_y,mysmb_io_u8 name_table,
     mysmb_io_u8 MYSMB_PPU_FRAME_FAR *out,
     const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded_chr,
-    const mysmb_io_u8 *colors)
+    const mysmb_io_u8 MYSMB_PPU_LOCAL_NEAR *colors)
 {
     mysmb_io_u16 source_y,row,source_x,x,column,table,pattern,count,i,row_offset,attr_offset;
     mysmb_io_u8 attribute,palette,low,high,color,phase,fine_y,row_shift;
     mysmb_io_u8 pixels[MYSMB_PPU_FRAME_WIDTH];
     const mysmb_io_u8 *chr;
-    mysmb_io_u8 *target;
-    const mysmb_io_u8 *quad;
+    mysmb_io_u8 MYSMB_PPU_LOCAL_NEAR *target;
+    const mysmb_io_u8 MYSMB_PPU_LOCAL_NEAR *quad;
     const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded=decoded_chr;
     mysmb_io_u16 chr_size,pattern_base,blank_start=0U,blank_count=0U;
     /* Palette and row staging are stack-owned. Avoid a far state/pixel access

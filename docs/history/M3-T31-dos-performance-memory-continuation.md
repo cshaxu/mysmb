@@ -969,3 +969,56 @@ Scope/expected/actual[],new0,custody unchanged;historical1992/1992,local1991/199
 nodes,4260/4261controls(raw4342/infeasible81). Node/documentation gates precede
 commit. S6/T31/goal remain active,not complete;no queue/S advancement.
 '''
+
+## S6 P2 checkpoint: integrate original-ABI near stack scratch
+
+Adopt only the selected frame-owner representation in src/ppu/frame.c,+10/-3.
+Private stack target,quad and caller colors become near under MYSMB_DOS16_TARGET;
+native qualifier is empty. Original /ALstartup/calling contract establishes
+SS=DS=DGROUPand preserves it across supported C/IRQcalls. No /Aualternate-stack
+ABI or arbitrary external DOScaller claim. Public state/output/CHR/workspace
+pointers remain far;no game/PPUvisible data/control/math/order or pixel loss.
+No additional heap,workspace,lookup table or framebuffer. Row locals320versus324,
+caller56unchanged,private palette argument2versus4. S6final proof receives these
+exact affected caller/parameter joins;do not reuse old near/far frame offsets.
+
+Selected independent512cases per native width and ordinary/populated/matched
+near/far/raw cache receipts remain current candidate behavior. Adopted source
+normalizes identically to that prototype apart from comments. Both actual
+Windows targets build and pass14focused tests,including full PPU/plane/state,
+caption/score/object/color/background,storage/continuation,purity/performance
+andself-test. Actual stripped products passDPIstartup,three native text entries,
+two graphic returns andconsoleEscape;stripping retains all compiled runtime
+sections. No Windows launch/input/settings change.
+
+Original DOS product301705bytes(-176from S5),not the probe's-272figure. DGROUP
+49072/headroom16464,stack2048and full-group max-extra3079stay unchanged;
+logical minimum325824/max342272,page-rounded326192/342640unchanged. Actual370KiB
+complete route passesload/input/Tab/text/graphics/save/restore/Escape,2033samples,
+zero invalid/dropped MCBchains,observed peak378816bytes,CRC/resource-bound save
+frame7546versus seed7465.369stillEXECsucceeds/child returns1,seed save unchanged.
+Observed arena-dependent peak is not a global/high-water or same-budget universal
+saving certificate;no stack shrink or complete contiguous/hidden-kernel proof.
+
+Three refreshed source-bound tested assets:
+- mysmb16.exe: 301705bytes; 6a99a896f4b86968ca543b756bac44c043b1b90e8c2a48f3a5b062c89967f568.
+- mysmb32.exe: 311310bytes; ffcc56461dde0e95afd0389f02f693ccdb38228ca4d0a549a5062cd904d4a138.
+- mysmb64.exe: 324110bytes; 4f78434c33907e751b5fbbecf4daf7a016b070b2abafca325f5742b7e2334177.
+Receipts below ignored build/m3-t31-s6:original product memory-receipt,native
+test logs,owned-console routes,product-resident-summary/source-binding and
+selected current exact/cost/listing receipts. No ROM/runtime material imported
+or committed beyond the existing owner-authorized artifact slots. Similar-
+issue sweep covers private pointer provenance,lifetime/DS=SS,supported caller
+and IRQpreservation,far cache/raw fallback,full/partial/blank spans,palette
+aliases,split/scroll/opacity/sprite priority,readonly guards and memory bounds.
+
+This is a smaller/faster correction,not S6/T31/goal closure. Pre-correction
+current-source diagnostic712.58/815.50msfailed configured cadence;candidate
+ordinary2.2247%/populated1.5959-5.9234%cannot justify an unmeasured60Hzclaim.
+Next P measures final corrected output bottlenecks and receives further bounded
+corrections if necessary. MEM-S4-01pre-main/argument lifetime,02fatal/exit/hooks,
+03firmware/interrupts,04continuous/kernel/contiguous memory and05final integrated
+cadence/stack remain open with retained partial receipts. Physical486SXand full
+M2certificate remain separate. Scope/expected/actual[],new0,custody unchanged;
+historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342/infeasible81).
+Node/documentation gates precede commit;no T/S/queue advancement.

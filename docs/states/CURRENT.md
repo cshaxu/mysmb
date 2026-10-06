@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T31 S6 P2; integrate/evaluate private scratch-pointer correction after P1 current cost/cohort. |
+| Identifier Mode | Continuation: M3 T31 S6 P3; final corrected bottleneck review and remaining five memory/cadence clauses. |
 | Admission And Approval | Approved T31plan;S5closed;S6receiving backlog becomes sole active executor. |
 | Objective | Verify final source-bound product time/input/memory and resolve or explicitly report each MEM-S4-01..05gate. |
 | Non-goals | No ROM game/PPU changes,information/tick/frame loss,helper process,DOSBox settings,toolchain replacement or unproved stack shrink. |
@@ -22,6 +22,13 @@
 | Similar-Issue Sweep | Final changed owners,all palette/glyph/pixel paths,startup/runtime/error/restore,near/far/FILE/IRQ/kernel lifetimes,mixed-mode/input cadence. |
 
 ## Current Technical Baseline
+
+- T31 S6 P2integrated:private original-ABI near scratch+10/-3,DOS301705bytes
+  (-176),DGROUP49072/2048stack/page-rounded loader bounds unchanged.14tests
+  per native width/actual Windowsroutes pass;370full route/369clean init failure
+  retain boundary,observed378816bytes. Products301705/311310/324110bytes. No actual playable
+  cadence/global stack or kernel peak proof;all MEM-S4-01..05remain open.
+  [P2 adopted correction and limits](../history/M3-T31-dos-performance-memory-continuation.md#s6-p2-checkpoint-integrate-original-abi-near-stack-scratch).
 
 - T31 S6 P1checkpoint:current loop diagnostic712.5786msgraphics/815.5009mstext,
   cadence fails;PPU/mapping dominate graphics,text assembly89.322%oftext.
