@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S8 P11; shared slots/device lifetimes integrated and loader regression repaired; S8 remains active. |
+| Identifier Mode | Continuation: M3 T32 S8 P12; fine-grained fused sinks measured and rejected; S8 remains active. |
 | Admission And Approval | Owner-approved consecutive S5-S9 plan and automatic successor;S7 display-stage contract closed by P4;S8 sole active. |
 | Objective | Reduce current dominant rendering cost as one bounded cache/row-output chain while preserving ROM/PPU semantics and memory balance. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
-| Reference Baseline | Published S8 P9products and bound current phase/counter probes;original tools/2048stack/640x400/two platform components. |
+| Reference Baseline | Published S8 P11products and current phase/counter probes;original tools/2048stack/640x400/two platform components. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | Shared PPU single compositor/canonical and slot views,IO nibble service/explicit palette-source contract,DOS decoder/DAC shadow/root binding,Windows RGB binding;estimate250-450product/100-180test lines.32-byte palette plus bounded descriptors,no extra image cache;production pair table530bytes retired while canonical APIs stay valid. Same opacity/priority/scroll/clip semantics;no game/PPU writer change. Original/native pixels,device mode/reset/restore palettes,actual memory/stack/whole-frame routes and three products before adoption receipt. |
+| Files And ABI Surface | Initially zero product lines;contained PPU neutral packed-span/pixel output sink plus shared IO layout sink,estimate120-240candidate/100-180test lines. No new image allocation;source and existing four-plane band stores remain bounded. PPU retains all clipping/priority/opacity;IO alone owns geometry/format. Compare full fused results against current PPU+mapping,guards,source and original-tool complete-stage cost before selection. Unsupported/raw projection keeps current fallback. Three EXEs only after product adoption. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
 | Verification | Independent512state native raw/cache/row/palette/priority/source/guard/fallback checks;actual original-DOS exact output/compiler/stack/startup/resident/stage cost and current frame budget;three EXEs after adoption. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
@@ -25,6 +25,13 @@
 
 
 ## Current Technical Baseline
+
+- S8 P12 rejects scalar and accelerated fine-grained fused sinks:512native
+  states/65536000bytes per width and original-tool five scenes exact,but
+  accelerated full-stage cost2.447..3.419times current PPU+mapping. No product/
+  EXEchange. Callback/context/range costs outweigh removed copies;coarser
+  transfer requires measurement before adoption. S8/global goals remain open.
+  [Fusion evidence and rejection](../history/M3-T32-rendering-performance-continuation.md#s8-p12-reject-fine-grained-fused-output-sinks).
 
 - S8 P11 adopts one shared canonical/slot compositor,both devices and reset
   palettes;132core identities,15native tests each width,slot/decoder/DAC/local

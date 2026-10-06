@@ -430,3 +430,12 @@ reservation using original PSP-derived heap bounds and far fallbacks. DOS
 EXE+1792bytes,ordinary observed resident-1968bytes,370route unchanged. Current
 counter173.413ms versus178.747ms saves5.334ms,not20ms. Retain speed/memory joint
 gain;nominal60Hz/fivefold and global/reference/hardware gates remain open.
+
+## Fine-grained fusion rejected
+
+[S8 P12](../../history/M3-T32-rendering-performance-continuation.md#s8-p12-reject-fine-grained-fused-output-sinks)
+passes native512state/65536000byte and original-tool five-scene equality,
+but scalar and segment-accelerated fused sinks regress every complete-stage
+scene. Accelerated cost2.447..3.419times current PPU+mapping. Reject both;
+no product or EXE change. Coarser row/tile/band transfer must be measured
+before another output abstraction is adopted. S8 and final gates remain open.

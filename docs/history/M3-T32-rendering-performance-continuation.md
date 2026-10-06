@@ -2196,6 +2196,48 @@ physical486qualification remain unproved. Scope/expected/actual[],new0;
 historical1992/1992,local1991/1992nodes and4260/4261feasible controls
 (raw4342,infeasible81). Full M2 certificate remains incomplete.
 
+## S8 P12 reject fine-grained fused output sinks
+
+Contained prototype sends PPU packed background spans and completed sprite
+pixels to a neutral IO layout sink,avoiding the intermediate logical row.
+PPU retains mask,scroll,split,priority and raw-opacity decisions;IO owns exact
+320x400plane geometry. No game/PPU writer or product source change. No new
+image allocation;row maps use bounded32-byte metadata below ignored
+build/m3-t32-s8/p12. Unsupported uncached projection retains current fallback.
+
+Final native scalar sink passes512states per width and65536000mapped bytes,
+including1..16destination rows,scroll/bank edges,masks,overlap/flips/priority,
+guards and source immutability. Original-tool paired fixture uses the exact
+current P11 PPU object with renamed exports,unchanged execution payload,
+current optimized mapper and DOS packer. Five full-frame scenes match all
+5120-byte band buffers and guards. Complete-stage timing includes row-map
+setup and all callbacks;no work is omitted for a leaf-function speed claim.
+
+| Scene | Current PPU+mapping ticks,three frames | Accelerated fused ticks | Cost ratio |
+| --- | ---: | ---: | ---: |
+| Uniform tiles | 624319 | 1783881 | 2.857 |
+| Mixed/fine scroll/split | 684617 | 2186733 | 3.194 |
+| Dense sprites | 1265780 | 3097093 | 2.447 |
+| Blank background | 267435 | 914336 | 3.419 |
+| Sparse background | 477747 | 1594929 | 3.338 |
+
+Scalar fusion is also slower in every scene,2.794..3.907times baseline.
+The second variant retains shared geometry and binds only DOS segment-once
+packed stores/DWORD fills;exact output passes but the complete stage still
+regresses2.447..3.419times. Listing review finds remaining per-plane callback,
+context/segment and range setup costs. In blank output,removing row-copy work
+does not compensate for those boundaries. Reject both variants;do not add a
+runtime option or unused product abstraction. Both bounded private desktop
+probes exit normally in26.05/23.95seconds with installed settings unchanged.
+
+Next renderer work must evaluate coarser whole-row/tile/band data transfer
+before adopting another callback boundary. This is a measured design
+constraint,not a promise that a coarser variant will win. Existing P11
+source/three EXEs remain current;no refresh required. Scope/expected/actual[],
+new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls
+(raw4342,infeasible81). S8/goal remain active;nominal60Hz/fivefold and global
+memory/stack/reference/hardware qualification remain unproved.
+
 ## S8 P10 palette-slot output prototype and device cost
 
 Prototype emits background/sprite palette-slot indices0..31 plus a32-byte
