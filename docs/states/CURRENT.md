@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S4 P4; final finite integrated memory/cadence register. |
+| Identifier Mode | Continuation: M3 T32 S4 P5; final finite integrated memory/cadence register. |
 | Admission And Approval | Approved T32 integration; S3local color accepted and strict startup gate explicitly received, S4 sole active. |
 | Objective | Reconcile final source/products with MEM-S4-01..05, actual cadence/input/memory and existing WIN-T19-STARTUP dependency, without overclaiming partial proof. |
 | Non-goals | No ROM/PPU semantics, lost ticks/frames/rows/colors, helper process, DOSBox settings, toolchain change, unsupported stack shrink or silent resumption of suspended T19. |
@@ -23,6 +23,13 @@
 
 ## Current Technical Baseline
 
+- T32 S4 P4:declared tail0..126grammar353536states/1726725transitions,
+  persistent argv=(P+D+A+4*(A+1))&FFFE <=(P+388)&FFFE. P<=260would give648,
+  but DOSpathname limit is NOT proved by app's later path[260]. Final369KiB
+  empty/many/one routes pass,observed22/400/152bytes/current49150top andvalid
+  saves. Conditional own+CRT+entry+args+IRQ1462 still EXCLUDES global premises.
+  Parent gates/source/products unchanged;P5follows domain/lifetime premises.
+  [Declared argv domain/current routes](../history/M3-T32-rendering-performance-continuation.md#s4-p4-checkpoint-parameterized-argv-bound-and-current-dos-tail-routes).
 - T32 S4 P3:under explicit unchanged-null-hook/default-exit conditions,
   8/9prior unresolved CRTentries have normal/terminal conventions;65reachable/
   64local flows. Defaultfatal06D1terminates;setenvp saved-BP restored. This is

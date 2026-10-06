@@ -660,3 +660,66 @@ specific lifetime/early-exit/argv domain obligations,not a reset audit of all
 65/851entries. No source/ROM/import/output changes,scope/expected/actual[],new0,
 historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,infeasible81).
 Five parent gates remain open. Documentation/node/diff checks precede commit.
+
+## S4 P4 checkpoint: parameterized argv bound and current DOS tail routes
+
+Current setargv first-pass grammar andallocation instructions rebound by exact
+sites:skip space/tab,terminate NUL/CR,increment argc at token entry,quoted and
+unquoted runs,backslash parity/ADC andfinal vector/terminator additions.
+For pathname bytes P INCLUDING NUL,decoded parameter bytes D andargc A,
+persistent DX=(P+D+A+4*(A+1))&FFFE. This matches its nonstandard saved far-PC
+return;space stays allocated through main,not released by LRET.
+
+Abstract-state exhaustive walk of the declared tail domain lengths0..126:
+ordinary byte,space,tab,quote,backslash;NUL/CRterminate a prefix already covered.
+State(mode,pending slash run,argc) keeps maximum decoded count because larger D
+dominates smaller Dandfinal even-floor is monotone before16-bit wrap.353536
+states/1726725transitions;no string sampling presented as exhaustion. Ordinary
+bytes share the same current comparisons;lookahead/rewind slash runs are charged
+once,quote parity consumes itself andquoted spaces remain decoded data.
+A<=1+ceil(N/2),D<=N;maximum D+5A+4overall N<=126is388. Therefore persistent
+allocation is at most(P+388)&FFFE within a no-wrap,terminated-path domain.
+For CONDITIONAL P<=260,it is648bytes;intermediate arithmetic stays below65536.
+
+This does NOT prove DOSkernel pathname maximum. Appmain has path[260],butits
+post-startup executable_path check cannot constrain CRTwhich runs BEFORE main.
+Do not convert that application capacity into a universal loader assumption.
+Malformed/unbounded environment,larger tail andOS-specific pathname domains
+remain explicit MEM-S4-01requirements. Abstract grammar proof is accompanied
+by independent current real-DOS fixture evidence below,not a replacement for it.
+
+Rebuild retained bounded stack/MCBobserver with current DGROUP4368andrelocated
+globals;original toolchain/installed DOSBoxsettings unchanged,private desktops.
+Run final unmodified product at369KiBfor three command tails,each full input/
+Tab/text/graphics/save/restore/Escape route. Product SHAmatchescurrent asset;
+zero invalid/dropped MCBrecords,2048timer samples and109DOSentries each.
+Current SPtop49150,arg vectors andexit/debug sampled values match predictions:
+
+| Command domain at P13 | argc | Persistent bytes | Main+CRT+entry+argv subtotal | With one owned IRQ9 |
+| --- | ---: | ---: | ---: | ---: |
+| Empty tail | 1 | 22 | 758 | 836 |
+| 126-byte tail of63small arguments | 64 | 400 | 1136 | 1214 |
+| 126-byte tail with one125-byte argument | 2 | 152 | 888 | 966 |
+
+All three save CRC/resource bindings andcontinuation pass,current default
+exit0271/debug0observed. These are finite sampled routes,not whole callback
+lifetime proof. The observer borrows caller stack andis not a global product
+high-water measure. No settings/frame loss orproduct/code/resolution changes.
+For hypothetical P<=260,N<=126andretained binary-FILEmain/owned IRQconditions,
+subtotal720+16+648+78=1462 EXCLUDES pre-main peak,exit/hooks,other IRQ/BIOS/DOS
+bodies andkernel conditions;not a certified2048stack margin.
+
+MEM-S4-01now has a parameterized declared-tail-domain allocation bound,current
+return mechanism andthree source-bound paths;valid pathname/environment domains
+andpre-main peak remain open.02conditional hooks/early-exit/cleanup lifetimes,
+03firmware/nesting,04continuous/kernel/contiguous,and05full stack/failed cadence/
+Windowsstartup remain open. No new source/audit universe ornode credit;no T/S
+advancement orsilently resumed T19. Next Paddresses the missing domain/lifetime
+premises rather than repeating these three paths or the full grammar walk.
+
+Contained build/m3-t32-s4recipes/results:prepare-current-argv-probes,three
+original observer builds/runs,argv-domain-bound andverify-current-argv. Raw
+runtime/dump/artifacts remain ignored;no third-party/ROM import orEXErefresh.
+scope/expected/actual[],new0,historical1992/1992,local1991/1992nodes,
+4260/4261controls(raw4342,infeasible81). Five parent gates/S4/T32/goal stay open;
+documentation,node anddiff checks precede commit.

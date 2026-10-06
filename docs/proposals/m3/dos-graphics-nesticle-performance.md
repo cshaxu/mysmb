@@ -20,8 +20,13 @@ The initial headless comparison used DOSBox 0.74-3 dynamic core at fixed 20000
 cycles, the same owner-local SMB1 content, and no audible output. At 22-34
 seconds after launch the Nesticle HUD timer fell from 360 to 330 (about 60
 game updates per second); the then-current 301609-byte MySMB DOS build fell
-from 398 to 392 (about 12 updates per second). That binary has since been
-replaced; remeasure the admitted source-bound product. The HUD is a game-update proxy, not a displayed
+from 398 to 392 (about 12 updates per second). A repeat with the current
+301145-byte MySMB DOS binary (SHA-256
+`B9624E4BDC7D192E0B9E19B1A36DDD6B941A0E28470D1B0069B63D6E290D1851`)
+and the same DOSBox settings found HUD timer 400 at wall second 16, 398 at
+22, 395 at 28, and 392 at 34: about 10.7 game updates per wall second over
+18 seconds. This is still a stationary early-level scene and the result
+needs repetition with a source/product binding at T admission. The HUD is a game-update proxy, not a displayed
 frame counter. The two executables used different guest video modes: Nesticle
 256x240; MySMB 320x400 logical pixels scanned as 640x400. The comparison
 establishes a real configured-playability gap, not a proven compositor-only
@@ -44,10 +49,21 @@ EXE SHA-256 `224e348e1fd5c11b16ef096ff5607c7c57c49d65fa7e4dbbc9b2a5c9c53e832b`).
 Its bundled README identifies C++/assembly, DOS4GW, 256x240 mode, manual/auto
 frameskip and lack of mid-frame palette changes. A bounded string inspection
 of the owner-supplied binary finds a Settings-menu `Tile caching` toggle.
-This proves the option exists, not that it is enabled by default, what is
-cached, or its share of the speed advantage. MySMB already caches decoded CHR
-rows, so the option is not evidence that MySMB has no tile caching. S1 must
-measure/toggle this and count display submissions before attributing gains.
+An isolated DOSBox GUI check confirms it is checked by default and can be
+unchecked. With the same binary, ROM, 256x240 mode, fixed 20000 cycles,
+`-frameskip 1`, no audible output and scripted start, the checked run's HUD
+timer fell 356->287 from wall seconds 20->38 (69 timer units); unchecked fell
+378->338 (40 units). At 24 game updates per timer unit, this is about 92 vs
+53 updates/second, or 1.73x throughput in the stationary first-level scene.
+This single paired run is preliminary evidence of a cache-option effect on
+game updates, not a measured
+display-frame count or proof of the cache's internal representation. The
+unchecked Nesticle result is about five times the current MySMB update rate
+at this CPU setting, but `-frameskip 1` may submit fewer video frames than
+MySMB; this is not an equal-frame speed ratio. MySMB
+already caches decoded CHR rows, so the option does not imply MySMB has no
+tile caching. S1 must repeat moving/dense routes and count display submissions
+before generalizing the gain.
 The reference executable and owner ROM remain local research inputs below
 ignored `build/`; no third-party code or protected data is imported.
 
