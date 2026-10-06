@@ -2002,3 +2002,59 @@ unaccepted. Next work must address the measured shared PPU/background or
 DOS mapping stage as a bounded chain,not infer game speed from a leaf helper.
 Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes,
 4260/4261feasible controls(raw4342,infeasible81). M2 final certificate unchanged.
+
+## S8 P7 select zero-storage real-mode DWORD bulk cohort
+
+Contained DOS-only candidate changes full uniform-row scan/fill,zero palette
+span scan/fill,and VGA plane copy to DWORD operands. Addressing and segment
+ABI remain16-bit real mode;the existing486SX target supports these instructions.
+No protected mode,new compiler,shared-core flags,game/PPU writer changes or
+new persistent storage. Original8.00x /AL /Gs /Ox /On /Ow /G0 remains on
+render helpers. Explicit reviewed operand-prefix bytes avoid unsupported
+inline-assembler DWORD mnemonics;failed .386 and /G3 experiments are not
+accepted builds. PPU source and shared planar-format owner are unchanged.
+
+Original-DOS5160palette primitive cases verify every even length0..256,
+arbitrary palette bytes,zero/colored/tail spans,guards and invalid rejection.
+Full PPU scenes match raw output.256plane cases compare644800bytes against
+current P5 packing,with source/DS/guard checks. Actual candidate VGA copy body
+passes18length cases including32000bytes,guards and source immutability.
+All source,objects,listings and raw output remain under ignored build/m3-t32-s8/p7.
+
+Same-process whole-packing comparison uses renamed current P5 row object,
+unchanged execution payload and shared planar owner:
+
+| Scene | P5 ticks,three frames | DWORD ticks,three frames | Cost change |
+| --- | ---: | ---: | ---: |
+| Complex rows | 322982 | 322983 | effectively unchanged |
+| Uniform color | 199803 | 123607 | -38.136% |
+| Uniform high-byte color | 199917 | 123450 | -38.249% |
+| Last-pixel mismatch | 323579 | 323580 | effectively unchanged |
+| Sparse rows | 237756 | 184405 | -22.439% |
+
+Paired palette-helper/whole-PPU scenes have smaller mixed results:
+candidate/P5 ticks466577/470472,497816/497685,1098420/1097949,
+245482/250513,342268/341364. These are full PPU costs,not helper-only claims.
+The integrated diagnostic additionally includes the actual VGA copy body.
+Phase graphics204.611ms versus published235.805ms;PPU95.579,mapping62.089,
+VGA17.705ms versus102.604/75.108/28.941ms. Counter-only graphics190.398ms
+versus221.291ms,13.960%less diagnostic cost.277phase and297counter records,
+zero drops,update/submission/25-row-read relationships checked. Scripted
+restore,input,Tab,save and Escape execute on private desktops;normal SDL and
+installed DOSBox settings unchanged. Both diagnostic probes exit normally.
+Wall-timed cohorts differ;this is not same-state whole-game/reference proof.
+
+Select combined cohort for integration,not product or whole-goal acceptance.
+20local listing CFGs balance;synthetic Local Size markers are not physical
+stack bounds. Prefix/shift instructions affect no SP/control target. The
+new copy helper's composed stack and final loader/resident/code binding still
+require current product evidence. Global CRT/IRQ/firmware stack remains open.
+An initial duplicate-object link failed;its owned probe was stopped and is
+excluded. Corrected fixtures replace original helper objects once.
+
+No production code or three EXEs changed. Nominal60Hz/fivefold,full memory/
+stack/reference and physical486 qualification remain unproved;S8 active,
+S9 open. Similar-issue sweep covers odd DWORD tails,zero-length spans,raw
+high-byte masking,last-pixel mismatch,segment lifetime,non-overlap and guards.
+Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and
+4260/4261feasible controls(raw4342,infeasible81);M2 final certificate unchanged.

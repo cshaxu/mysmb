@@ -373,3 +373,14 @@ four other scenes. Both native512state manifests and original-DOS outputs
 pass;no product source or EXE change. Earlier PREVIOUS fixture label compares
 palette expanders,not PPU versions,and is explicitly excluded as speed proof.
 S8 retains measured PPU/background and mapping scope;S9 final gates stay open.
+
+## Real-mode bulk cohort selected for integration
+
+[S8 P7](../../history/M3-T32-rendering-performance-continuation.md#s8-p7-select-zero-storage-real-mode-dword-bulk-cohort)
+selects DOS-only DWORD scan/fill/copy under the existing486SX target and
+original real-mode tools. No added persistent storage;whole packing saves
+38%for uniform rows,22%for sparse rows,complex rows unchanged. Original-DOS
+5160palette/256plane/18copy boundary cases pass. Whole counter diagnostic
+190.398ms versus221.291ms,13.960%less cost,zero drops;not equal-state game
+speed proof. Product integration must bind compiler/stack/loader/resident and
+actual routes,and refresh three EXEs. Nominal60Hz/fivefold and S9gates stay open.
