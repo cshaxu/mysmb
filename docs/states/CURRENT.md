@@ -1,39 +1,35 @@
 # Project Status
 
-## M3 T30 S1 Packet
+## M3 T30 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T30 S1 P2;bounded blank-span cohort,formal adoption pending. |
+| Identifier Mode | Continuation: M3 T30 S2 P1;bounded scanline metadata reuse. |
 | Admission And Approval | Owner closes T29 and explicitly admits queue-head performance continuation. |
-| Objective | Reduce compiled DOS background-row overhead with exact pixels/state;compare variants,cost and memory before adoption. |
+| Objective | Reduce repeated tile/attribute/palette resolution across adjacent scanlines,with exact pixels and bounded storage. |
 | Non-goals | No ROM game/PPU-visible semantic changes,new framebuffer,OAM deferred tuning,Windows UI changes or DOSBox settings. |
-| Reference Baseline | 2959c348 products;DOS T28 P22 unchanged;retained P24 diagnostic comparators. |
+| Reference Baseline | Integrated S1 P3products/source and retained exact P24/S1 output comparators;T29 host fixes retained. |
 | Candidate Proposal | [T30 retained plan](../history/M3-T30-ppu-background-performance.md). |
-| Files And ABI Surface | Shared ppu/frame.c,independent tests;estimated80-180product lines;contained prototypes initially. |
+| Files And ABI Surface | Shared frame/row helpers,estimated100-220product lines;transient128-byte metadata plus keys initially;exact lifetime/fit review before adoption. |
 | Applicable Rules | README Task Reading Set,EXECUTION,DOCUMENT,ARCHITECTURE,CODING,CONTRIBUTING and source policy. |
 | Verification | Original16-bit listing,native512-case independent pixel/plane guards,raw/cache/edge/split/palette paths,actual fixed-config DOS output,cost and memory;three EXEs for adopted code. |
 | Expected Markers | scope[],expectedMatches[],actualMatches[],new0,baseline/max1992/1992;local1991/1992nodes,4260/4261controls,no custody change. |
 | Asset Needs | Existing local resources and comparators;all prototypes/logs below ignored build;no new imports,existing EXE exception retained. |
 | Reporting Requirements | S owners/scope/size first;P actual diff,gain/memory/evidence/products,total/local counts;no micro-gain as playability acceptance. |
 | Stop Conditions | Pixel/state/opacity divergence,unbounded memory,unsupported pointer assumptions,cost regression or original semantic change. |
-| Exit Criteria | S1 variants disposed with compiled/output/cost/memory proof;adoption only with three products;T requires cumulative graphics review and explicit cadence status. |
+| Exit Criteria | S2 metadata variants disposed with output/cost/fit proof,three products for adoption;no stale-frame reuse or unresolved scoped mismatch. |
 | Original Owner Request | Close current T and admit next performance task. |
 | Similar-Issue Sweep | Cached/raw/first-last/full spans,address/palette/output indexing,far accesses,splits,aliases and guards;follow original read-only output contracts. |
 
 ## Current Technical Baseline
 
-- T30 S1 P2 contained blank-span variants:ordinary graphics-return10.5375percent
-  shorter for cursor,10.3241for offset;water/castle/dense cursor4.31/9.97/3.31shorter.
-  Both widths512cases and each DOS977235bytes match. No new heap;diagnostic
-  owned+160/+128bytes,row locals340/332versus320. Cursor selected for formal
-  fit/fallback/repeat evaluation,not adopted or playable-cadence acceptance.
-  Three2959c348products remain;S1/T30active.
-
-- T30 S1 first contained cursor prototype:both-width512-case pixel/plane tests
-  and original DOS16 comparison977235bytes exact;whole graphics-return3.734percent
-  shorter than P24base,diagnostic owned+48bytes. Not adopted or playable-cadence
-  evidence;current three products remain2959c348. S1 cohort continues.
+- T30 S1 P3closed:+35/-18shared PPU lines,independent output/fallback/repeat
+  gates pass;ordinary diagnostic graphics-return10.5375percent shorter.
+  Actual448/374/373KiBroutes pass,sampled386688/382592/381824bytes(+112).
+  Three products refreshed305275/311310/323598bytes;no heap increase,stack2048
+  retained. Eight tests per width and final-assets Windows routes pass.
+  No cadence/global peak certificate. S2 bounded metadata reuse is active.
+  [S1 closure/S2 scope](../history/M3-T30-ppu-background-performance.md#s1-p3-closure-shared-blank-span-integration).
 
 - T29 S4 corrective implementation retained after owner rejects the earlier live
   Tab/Terminal result. Terminal native viewport/RGB/clipping and same-process
@@ -42,7 +38,7 @@
   groups pass;VT parser checks8600cells per width. Owner-directed T29 closure transfers live Restore/visual and parallel fixture
   observation to TODO;no new live acceptance.
   [S4 scope/evidence/limits](../history/M3-T29-win32-usability-regression.md#s4-p1-corrective-implementation-checkpoint).
-- Three products refreshed:305163/310798/323598bytes;DOS hash unchanged.
+- T29 historical products:305163/310798/323598bytes;current S1 products above.
   Win32 code/test/tool/build8files,+311/-44;no game/PPU/DOS logic changes or
   Windows system settings. DPI initial-size repair remains accepted.
 - Current DOS graphics/text diagnostic medians879.420/849.317ms; configured

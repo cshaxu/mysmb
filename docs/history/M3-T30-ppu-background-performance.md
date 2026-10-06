@@ -36,7 +36,7 @@ Static analysis of src/ppu/frame.c and retained product-bound 16-bit listings:
 
 ## Admitted T scope and S plan
 
-S1 is admitted now;S2-S4 are bounded planned slots and register on admission.
+S1 is closed;S2 is now admitted. S3-S4 register their bounded scopes on admission.
 Each S includes implementation,independent comparison,DOS cost/memory review
 and disposition;node-level original semantics stay unchanged.
 
@@ -184,3 +184,63 @@ integration and refreshes three products only if adopted. Local variants,
 original listings and ordinary/populated summaries remain under ignored S1 build.
 Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342/infeasible81),
 scope/expected/actual[],new0,custody unchanged.
+
+
+## S1 P3 closure: shared blank-span integration
+
+Adopt only the selected cursor/invariant/blank-span cohort in src/ppu/frame.c,
++35/-18one product source. Original unsigned address floor becomes equivalent
+mask,row/attribute invariants move out of tile loop,cached eight-pixel writes
+use local cursors,and consecutive raw-index-zero spans flush at nonzero/row end.
+Row never publishes incomplete blanks;left clip and independent sprite opacity
+remain. No new heap/global cache or host branch/game/PPU-visible state change.
+
+Fresh baseline and repeated selected ordinary/populated DOS routes retain
+977235-byte equality and about10.5375percent ordinary graphics-return saving.
+Separate near-failure/far-cache and full-cache-failure/raw paths match the same
+complete outputs and cleanup. These are scoped synthetic/seeded costs,not final
+product FPS or physical486SXqualification. Both native product widths compile
+and pass8focused tests,including independent PPU rows/reference,snapshot
+continuation,VGA mapping,performance,purity and product self-test. Published
+actual Windows products pass startup,DPI,three native text entries,twoTab returns
+and consoleEscape exit. T29 live/parallel observations retain TODO limits.
+
+Original DOS16 product rebuild,map and loader checks pass:305275bytes(+112),
+loaded-image minimum329280/page-rounded329664,max345280/page-rounded345664;
+DGROUP49520,headroom16016,stack2048,max-extra3076unchanged. Product slots run
+actual load/input/Tab/text/graphics/save/Escape at448/374/373KiB caller-free,
+2024samples each,CRC-valid resource-bound save frame7537versus seed7465,
+execError0/result0,zero bad/dropped chains. Sampled maxima386688/382592/381824bytes,
+112above retained baseline;373KiB tested boundary preserved. This is not a global
+minimum,continuous peak or all-path stack certificate. Row locals340(+20) were
+reviewed with retained2048stack;full certification remains queued.
+
+All three refreshed assets bound to compiled outputs:
+- mysmb16.exe305275bytes,5753fb48abe386a21a91ea253c2c887c7b0c58dc095e61a0bfc9708ce70be7e6.
+- mysmb32.exe311310bytes,4b7372f0f00840aadaab342f3874fa12a105b9641fcf51f1c1d1531027cc2f15.
+- mysmb64.exe323598bytes,093d36690b691551ec33c29219e107bb9972d2b1a96af609d19ec00f14499d54.
+Windows retained runtime sections are unchanged by debug stripping. Local
+profiles/resources/listings/diagnostics remain ignored;no new resource import.
+Similar-issue sweep covers cached/raw and clipped/full spans,all blank flush
+boundaries,palette aliases,scroll/mirroring/split/left masks,readonly guards,
+far cache failure,allocator provenance,mode/restore and snapshot output.
+S1 closes with all selected/rejected candidates disposed;no new ROM matches.
+Scope/expected/actual[],historical1992/1992,local1991/1992nodes and4260/4261controls
+(raw4342/infeasible81),custody unchanged. Required gates recorded on closure.
+
+## S2 admission: bounded scanline metadata reuse
+
+Owner-approved T plan advances to S2. Shared PPU frame/row helpers own all work;
+no platform-specific artwork/game read. Estimate100-220product lines. Prototype
+row descriptions of both name-table banks and palette quadrants within one
+immutable frame/band call,initial budget128bytes plus bounded keys. Publish exact
+stack/near/far lifetime and tradeoff before adoption. Prefer transient storage;
+no automatic persistent/heap cache growth. Rebuild at source tile-row/bank/split/
+scroll/binding boundaries as required;never retain stale metadata across frames.
+
+Entry is frame_build_internal to background_row;exit is the identical complete
+row before sprite composition. S1 output owners are the dependency. Source rows
+and opacity remain exact;no deferred OAM/boundary-row activation. Native oracle,
+original DOS whole-route equality/cost and actual memory fit gate each candidate.
+Scope/expected/actual[],new0,max1992/1992;same current local node/edge counters.
+S2 registration and admission checks precede code. T30/cadence goal remain open.
