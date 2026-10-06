@@ -531,3 +531,64 @@ runtime/ROM material stays local/ignored,no new import/distribution. Scope/
 expected/actual[],new0,custody unchanged,historical1992/1992,local1991/1992nodes,
 4260/4261controls(raw4342,infeasible81). Documentation/admission/diff gates
 precede commit;S4/T32/goal remain active andunverified complete.
+
+## S4 P2 checkpoint: current CRT binary joins and exit-data relocation
+
+Generate original /MAPrelink from final S3entry/stack/libraries,apply only the
+same declared loader bound andrequire byte identity with assets/mysmb16.exe.
+Identity passes:301145bytes,original SHA retained. No product/EXEchange or
+compiler/runtime/setting substitution. Default product map has no public
+symbols;attempting to use it as a public map failed andwas corrected by this
+byte-equal relink,not by assuming copied old addresses.
+
+Current actual CRTregion1126..9021,7896bytes;78public aliases/74entry anchors,
+28external names/27entry addresses. Relative public entry addresses unchanged;
+DATAoperands move with the80-byte table,so old linked bytes are not globally
+claimed equal. Fresh decode proves the four arithmetic LRET8cleanup conventions.
+Re-run the retained bounded local-flow algorithm on current bytes:54reachable
+application-binary FILEflows all complete,28named CRTcontributions bounded.
+No unresolved return/argument convention;examples memcpy/memcmp8,fmalloc70,
+nmalloc56,fopen62,fread128,fwrite142,fclose68,fflush38,int8628. These local bounds
+EXCLUDE BIOS/DOSservice bodies,CPUexception/critical-error handlers andstartup.
+The binary FILErestriction is retained explicitly;owned file/provider160-unit
+bindings support it,not runtime text/termination descriptors.
+
+Fresh851function source+current conditional CRTjoin yields main720bytes,
+unchanged from retained application-binary subtotal. Owned IRQ9 remains72+6=78.
+With14main-entry residence and2unused top bytes,subtotal736 EXCLUDES persistent
+argv andpre-main/exit/BIOS/other IRQ/kernel conditions. Retained no-argument
+argv22would give758under its original applicability;not promoted to an all-
+argument/current measured maximum. Stack stays2048andall-path proof remains open.
+
+Current relocated loaded globals verified:debug callback0,alternate-stack
+sentinelFFFFFFFF,default exit offset0271,FPinitializer0. All current own
+objects have no direct references to those hook globals. XI/XCconstructor/
+cleanup tables empty,XPone4-byte entry points tocurrent _flushall. Loaded
+defaults andabsence of own direct references are NOT whole-lifetime proofs.
+Normal _exit06BAanddefault fatal __exit06D1retain distinct cleanup entrances;
+early runtime failure writes025AtoSS:369E,shared termination INT21AH4Cat0716.
+Data-linked operands rechecked after80-byte relocation rather than matching
+stale constants. Return cleanup/data source is now current,not assumed.
+
+Separate startup/termination flow expands to57entries,48locally resolved,
+nine entries explicitly pending:__setenvp15F6,__myalloc1E7E,
+__FF_MSGBANNER13FE,__setargv144E(entry stack rewrite),fflush0DDA,write1BAA,
+fwrite0B12,__flsbuf1816andfclose077C. This excludes no original behavior:
+each unresolved return/stack transition remains required under MEM-S4-01/02.
+Next P focuses these exact startup/exit/callback conditions andtheir data
+lifetimes;do not rerun the already bound851own/54binary-only flow set.
+
+Finite register:MEM-S4-01current layout/entry proof accepted,pre-main/argv
+domains pending;02current binary CRTjoin/loaded exit structure accepted,
+runtime hook/cleanup/text/termination lifetime pending;03owned IRQ78accepted,
+other firmware/nesting pending;04final tested369/370/368andloader observations
+retained,continuous/kernel/contiguous proof pending;05conditional main720
+accepted,full stack andDOScadence FAILstill open,WIN-T19-STARTUPunchanged.
+No successful T32/S4/goal closure andno new audit universe or task admission.
+
+Recipes below ignored build/m3-t32-s4:relink-map/prepare-current-crt,
+fresh CRTentries/flow/bounds/join outputs,current-exit-globals andtheir actual
+product hashes/maps. Raw runtime disassembly remains local/ignored,no new
+import or committed vendor/ROMbytes. Scope/expected/actual[],new0,custody
+unchanged;historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,
+infeasible81). Documentation/node/diff checks precede P2commit;products unchanged.

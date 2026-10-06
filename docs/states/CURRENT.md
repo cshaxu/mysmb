@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S4 P2; final finite integrated memory/cadence register. |
+| Identifier Mode | Continuation: M3 T32 S4 P3; final finite integrated memory/cadence register. |
 | Admission And Approval | Approved T32 integration; S3local color accepted and strict startup gate explicitly received, S4 sole active. |
 | Objective | Reconcile final source/products with MEM-S4-01..05, actual cadence/input/memory and existing WIN-T19-STARTUP dependency, without overclaiming partial proof. |
 | Non-goals | No ROM/PPU semantics, lost ticks/frames/rows/colors, helper process, DOSBox settings, toolchain change, unsupported stack shrink or silent resumption of suspended T19. |
@@ -23,6 +23,13 @@
 
 ## Current Technical Baseline
 
+- T32 S4 P2:byte-equal current /MAPrelink;7896CRTbytes/78aliases/74anchors
+  rebound.54current binary-FILEflows/28CRTcontributions complete,conditional
+  source+CRTmain720unchanged,plusentry/top736 EXCLUDES argv/startup/exit/BIOS/
+  IRQ/kernel. Current relocated globals andXPflushall rechecked;loaded defaults
+  do not prove lifetime. Startup/text/exit57entries has9named pending entries.
+  Five parent gates remain open,products unchanged;P3follows only those joins.
+  [Current CRT/exit checkpoint](../history/M3-T32-rendering-performance-continuation.md#s4-p2-checkpoint-current-crt-binary-joins-and-exit-data-relocation).
 - T32 S4 P1:current diagnostic graphics648.2154/text453.2544ms(-9.0324/
   -44.4201%vsT31 S6),154records0drops;configured cadence FAILS. GraphicsPPU
   393.2317ms,mapping197.5818ms;text assembly366.3590ms. No settings/frame loss.
