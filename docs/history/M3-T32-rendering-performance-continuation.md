@@ -311,3 +311,60 @@ Product-code P rebuilds/tests/publishes three EXEs;prototype P does not.
 S3scope/expected/actual[],new0,baseline/max1992/1992,counters unchanged. S4backlog
 only,not executing. Documentation/node admission/closure checks and diff review
 must pass before S3execution;no new T/queue reordering.
+
+## S3 P1 checkpoint: exact color lookup and rejected plane staging
+
+Compare four candidates against current source:80-byte immutable neutral color
+choices(64nearest+16contrast),80-byte per-plane row staging,320-byte shared row
+staging,and lookup+320staging. All are local prototypes;product source and three
+S2EXEs unchanged. New choices derive only from existing project-owned neutral
+RGB/text palette arithmetic,not ROM bytes. Preserve strict-less-than first-index
+tie selection,index&63 andbackground&15aliases and128000brightness threshold.
+Public RGBfunctions and their64/16colors remain unchanged,no mutable cache.
+
+Each candidate passes all256byte inputs against separately compiled original
+RGB/textRGB/nearest/contrast on both native widths. Each plane candidate passes
+all bandfirst/rows1..16:16972800bytes,width mappings,masks,guards and invalid
+requests,plus existing full-frame projection. Original DOScompiler standalone
+color reference/new lookup also passes all256inputs/four functions under /AL/Gs
+with the original runtime. Same installed DOSBoxsettings,normalSDL/private desktop,
+bounded run andclean exit;no host input/settings/product helper changes.
+
+| Candidate | Whole text phase2 change | Graphics-return phase3 change | Diagnostic owned delta | Relevant original local bytes |
+| --- | ---: | ---: | ---: | --- |
+| Lookup only | -32.4856% | -0.0466% noise | -544 | nearest42->2,contrast18->2 |
+| 80-byte plane staging | -0.0074% noise | +29.8481% slower | -128 | planes8 + staged helper108,versus original planes46 |
+| 320-byte shared staging | +0.0006% noise | +4.9382% slower | +96 | planes364versus46 |
+| Lookup +320staging | -32.4878% | +4.9365% slower | -448 | lookup gains plus rejected364-byte plane frame |
+
+All verified DOScandidate receipts match977235pixel/plane/text/save bytes.
+Plane320conversion stage itself rises from267736to306529ticks(about14.49%),
+so extra copies/helper work outweigh reduced per-dot far addressing.80staging
+also repeats source-plane reads. Reject both staging variants and combination;
+select lookup only for product evaluation. No need to enlarge stack or persistent
+workspace for these losing layouts. Diagnostic owned deltas are not product
+resident savings.80constant bytes may consume DGROUP;evaluate actual loader/
+near-heap/startup alongside code-size andtime gains before adopting.
+
+First diagnostic link failed because forced archive members duplicated explicit
+color/VGAobjects. A previously cloned executable was mistakenly launched after
+that failure;its exact T32S3probe chain was terminated and old run-base-1/
+run-lut-1are excluded,not acceptance evidence. Rebuild only affected local
+archives removing the one old color/VGAmember. Verify every retained member's
+records remain identical apart from librarian-added module-name comments;
+preserve code,data,fixups,externs,publics andother records. Fresh successful links
+precede all run-*-verified-1receipts. No product library/toolchain change.
+The standalone runner requires its exact successful256-input result.
+
+Recipes/receipts under ignored build/m3-t32-s3:prepare-cohort,native tests,
+Build-Cohort,replace-libraries/library-replacement,run/compare verified receipts,
+Build-ColorCheck/reference-color/color_check,cohort source hashes andlistings.
+Palette aliases,ties,contrast,all byte inputs anddynamic source palette consumers
+remain exact;source/output disjointness andsynchronous band lifetime remain.
+Next P integrates selected color lookup only,adds a retained exhaustive color
+contract check andrefreshes three products after actual builds/routes/memory.
+S3/T32/goal active;S4receiving MEM-S4-01..05andlatest affected ABI/locals remains
+backlog. No game/ROM/PPUsemantics,credit or custody changes:scope/expected/
+actual[],new0,historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,
+infeasible81). No gameplay FPS/global-memory/stack certificate. Documentation,
+admission/diff gates precede commit;no S/T/queue advancement.

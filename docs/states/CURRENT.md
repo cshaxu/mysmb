@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S3 P1; neutral color mapping and VGA plane cost. |
+| Identifier Mode | Continuation: M3 T32 S3 P2; neutral color mapping and VGA plane cost. |
 | Admission And Approval | Approved T32 plan; S1-S2 closed, S3 sole active; S4 receiving backlog only. |
 | Objective | Reduce neutral color classification and indexed-to-plane submission cost with exact colors/planes and useful time/memory tradeoffs. |
 | Non-goals | No game/PPU/resource semantics, lost ticks/frames/rows/colors, helper process, DOSBox settings, toolchain change or unsupported stack shrink. |
 | Reference Baseline | T32 S2 source-bound three products and retained exact compositor/plane/color contracts. |
 | Candidate Proposal | [T32 S3 scope and acceptance](../history/M3-T32-rendering-performance-continuation.md#s3-admission-neutral-color-mapping-and-plane-submission). |
-| Files And ABI Surface | src/io/color.c and src/platform/vga/vga_frame.c;estimate40-140candidate lines,possible80/320transient stack trial,no new heap/persistent buffer/public ABI by default. |
+| Files And ABI Surface | Selected src/io/color.c immutable80-byte choices,estimate20-50product lines plus exhaustive contract test;no new heap/public ABI,locals shrink. Both80/320VGAstaging variants rejected; no VGA product change. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
 | Verification | Exhaustive byte-color/contrast and independent plane/scaling/guards both widths; original DOSbytes/cost/listing, memory/actual routes and three products on adoption. |
 | Expected Markers | scope/expected/actual[],new0,baseline/max1992/1992;local1991/1992nodes,4260/4261controls,no custody transfer. |
@@ -23,6 +23,12 @@
 
 ## Current Technical Baseline
 
+- T32 S3 P1:lookup-only selected,all256inputs/four color functions exact on
+  x86/x64 andoriginalDOS16. Whole seeded text step32.4856%shorter,diagnostic
+  owned-544;80constant bytes need actual DGROUP/loader check. Both plane staging
+  variants match16972800native band bytes/977235DOSoutput bytes but regress,
+  rejected. Product source/three S2EXEs unchanged. No actual FPS/peak proof.
+  [Cohort dispositions](../history/M3-T32-rendering-performance-continuation.md#s3-p1-checkpoint-exact-color-lookup-and-rejected-plane-staging).
 - T32 S2 adopted:+20/-17shared PPUlines,512current independent cases each
   native width/14tests andactual Windowsstartup/Tab/exit pass. DOS301609(+48),
   native311310/324110bytes;DGROUP49072/2048stackunchanged,rowlocals+8. Logical
