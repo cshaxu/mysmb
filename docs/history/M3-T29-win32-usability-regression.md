@@ -1,5 +1,12 @@
 # M3 T29: Win32 window and console usability regression
 
+## Current disposition
+
+T29 S1-S3 closed. DPI sizing and valid-device console switching are repaired
+and accepted within the actual x86/x64 host routes below. Live RDP/multi-monitor
+hardware and universal cold-launch latency are not claimed. Remaining DOS
+performance/ROM certification tasks retain their separate queue positions.
+
 ## Admission and owner boundary
 
 Owner admits T29 ahead of pending DOS graphics optimization. Sole active S1
@@ -173,3 +180,31 @@ all three entries/two returns/Escape in about5seconds. Similar early discovery
 misses existed during S1 instrumentation. Cause of the isolated publication
 latency is unproved;retain the failed receipt and do not claim universal cold
 startup latency or live RDP qualification from finite successful routes.
+
+
+## S3 P1 integrated closure
+
+Review binds final assets to S2 product hashes and accepted runtime-section
+metadata stripping proof. Actual final-assets tool passes both widths; x64
+sequential repeat discharges the executed usability route,not a universal
+cold-start timing claim. Five focused tests/thirteen host groups per width
+retain their exact source/product dependencies. Reusing those accepted receipts
+requires no further implementation or unrelated full-project replay.
+
+Source sweep confirms all repair owners are platform/win32 plus neutral test/
+tool logic. Optional HWND/menu/placement operations no longer decide console
+validity;invalid input and existing output failures still reject presentation.
+DPI initial sizes use actual window DPI and correct margins before first show.
+Graphical/text cells,game state,PPU output,DOS input and toolchain are unchanged.
+Three products have reviewed MZ/PE machine/subsystem/hash bindings and original
+DOS16 relink equality;no assets beyond the existing owner exception are added.
+
+S1 diagnosis,S2 repair and S3 integrated audit close. T29's reported window
+shrink and inability to retain text mode have scoped actual-product proof.
+The isolated private-desktop12-second discovery miss is retained in TODO with
+its failed receipt and retry,not erased or described as repaired. Live owner
+RDP and physical multi-monitor DPI checks remain applicability limits.
+Documentation,node admission/closure and reviewed diff checks pass;historical
+1992/1992,local1991/1992nodes and4260/4261feasible controls(raw4342/infeasible81),
+scope/expected/actual[],new0,custody unchanged. Products remain S2 final hashes.
+CURRENT becomes idle;pending PPU/DOS proposals remain unnumbered and unadmitted.

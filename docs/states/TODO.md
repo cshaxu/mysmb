@@ -1,5 +1,14 @@
 # Long-Term Review Ledger
 
+## Host diagnostics
+
+- [ ] **Private-desktop cold-launch publication latency:** T29 records one
+  parallel x64 attempt with no root discovered within12seconds; sequential
+  same-binary retry and accepted size/Tab/input/exit routes pass. Cause unproved;
+  investigate on repeat reproduction or owner startup report,retaining process
+  exit/status and host timing before changing code. No universal startup bound.
+  [Receipt and limits](../history/M3-T29-win32-usability-regression.md#s3-p1-integrated-closure).
+
 ## Translation Debt
 
 - [ ] **Optional rowwise renderer speed recovery:** Owner accepts the bounded

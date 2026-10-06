@@ -3898,4 +3898,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T28 S6 | 0 | 1992 | none / 0 | none / 0 | active; [record](../../docs/history/M3-T28-dos-rendering-optimization.md) |
 | M3 T29 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T29-win32-usability-regression.md) |
 | M3 T29 S2 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T29-win32-usability-regression.md) |
-| M3 T29 S3 | 0 | 1992 | none / 0 | none / 0 | active; [record](../../docs/history/M3-T29-win32-usability-regression.md) |
+| M3 T29 S3 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T29-win32-usability-regression.md) |
