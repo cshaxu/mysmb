@@ -636,3 +636,52 @@ allocator obligations without restarting own-source or binary-FILE analysis.
 Scope/expected/actual[],new0,custody unchanged;historical1992/1992,local1991/1992
 nodes,4260/4261controls(raw4342/infeasible81). Required node/documentation gates
 precede commit;no T/S closure or next S admission.
+
+## S4 P6 checkpoint: maximal command tails and owned keyboard IRQ
+
+No product/source/artifact change. Bounded parent-loader variants supply a
+126-byte DOS command tail:63single-character arguments or one125-character
+argument after the leading space. No executable patch or emulator setting
+change. Actual370KiB source-bound products each complete load/input/Tab/save/
+restore/Escape,valid CRC/resource continuation,normal exit and zero bad/dropped
+MCBchains. Original normalSDL/private desktop,150second/2MiB budgets stay.
+
+| Tail form | argc including program | Persistent argv bytes | Main/CRT/startup subtotal | Plus one owned keyboard IRQ |
+| --- | ---: | ---: | ---: | ---: |
+| 63short arguments | 64 | 400 | 1136 | 1214 |
+| One long argument | 2 | 152 | 888 | 966 |
+
+Each actual route has2032timer samples/88DOS entries. argv/top/exit/debug
+metadata stays coherent in recorded boundaries. These values apply to this
+MYSMB.EXEpathname and command tails,not a universal path/argument certificate.
+The parent passes the tail through the unchanged DOSexec parameter block;
+controller inputs and game business logic remain unchanged.
+
+The keyboard IRQ9 handler's reachable own functions are keyboard_interrupt,
+mysmb_dos16_keyboard_scan and mysmb_io_control_toggle. External leaves are only
+inp/outp. Source-bound compiled flow gives72bytes excluding CPUentry;the hardware
+IP/CS/FLAGS adds6,so the owned handler contribution is78bytes. It handles/ACKs
+the keyboard itself and does not chain the previous keyboard BIOS. The actual
+handler,portable descendant units and linked port leaves contain no STI/POPF
+or enable call;do not attribute another old-BIOS keyboard frame to this owner.
+This does NOT bound IRQ0/timer BIOS,BIOS10,DOS21handlers,critical errors,CPU
+exceptions or interactions with firmware that enables nesting.
+
+The two last-column subtotals intentionally remain conditional:application
+binary-FILEscope and current rank/binding assumptions,plus observed argv and
+one self-contained IRQ9. Pre-main envp/argv peak,other pathnames,normal/fatal
+exit,other interrupt/BIOS/DOS body and kernel-internal memory remain open. No
+1214global-stack conclusion or shrinking2048stack. Observer overhead is not
+formal stack high-water or cadence evidence. Main does not use these arguments,
+but runtime allocation still changes its residence and cannot be omitted.
+
+Local recipes under build/m3-t31-s4:prepare-tails/Build-Tail/loaders/actual runs,
+verify-tails/tail-route-summary,irq-boundary/keyboard-irq-boundary and refreshed
+application-joins,53new neutral script lines plus one output extension. No raw
+ROM/runtime/trace or generated product committed. S4 remains active;next P
+continues the already named pre-main/fatal/exit and platform/allocator clauses.
+Do not restart the fixed own-source/CRT universe or reinterpret these route
+subtotals as completed global acceptance. Scope/expected/actual[],new0,custody
+unchanged;historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342/
+infeasible81). Three S3EXEs unchanged. Required node/documentation gates precede
+commit;no T/S closure or next S admission.

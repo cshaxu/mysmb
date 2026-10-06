@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T31 S4 P6; remaining pre-main/fatal/exit and platform allocation/interrupt obligations after P5. |
+| Identifier Mode | Continuation: M3 T31 S4 P7; remaining pre-main/fatal/exit and firmware/kernel bounds after P6 argument/IRQ evidence. |
 | Admission And Approval | Owner-approved T31 plan;S3 closed and coordinator admits S4. |
 | Objective | Reconcile original compiled call/stack paths and actual startup/runtime/error/restore memory with contiguous requirements. |
 | Non-goals | No stack shrink without proof,game/PPU changes,Windows UI,toolchain substitution or DOSBox settings. |
@@ -22,6 +22,13 @@
 | Similar-Issue Sweep | Startup/runtime/error/restore,near/far/FILE ownership,indirect calls,private CRT/interrupt nesting,optional cache failures and current S1-S3 stack owners. |
 
 ## Current Technical Baseline
+
+- T31 S4 P6checkpoint:two126-byte-tail actual370KiBroutes pass;argv400/152,
+  conditional main/CRT/startup1136/888. Owned IRQ9body72+CPUentry6=78,no prior
+  keyboard BIOSchain or own reenable;combined conditional1214/966 excludes
+  other BIOS/DOS/interrupt/startup-exit/allocator clauses. S4 stays open,
+  products/2048stack unchanged;no global-stack/minimum/cadence certificate.
+  [P6 argument/keyboard evidence](../history/M3-T31-dos-performance-memory-continuation.md#s4-p6-checkpoint-maximal-command-tails-and-owned-keyboard-irq).
 
 - T31 S4 P5checkpoint:current MZ/CRT startup leaves2top bytes and14main entry
   residence;setargv retains stack allocation. Actual370KiBno-argument route
