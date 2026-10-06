@@ -2039,3 +2039,65 @@ TODO. CRT/error/all-path stack and nominal cadence/input remain open.
 Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
 infeasible81),scope/expected/actual[],new0,custody unchanged. S6/T28remain open;
 all new resources/probes/logs/captures are ignored below build.
+
+
+## S6 P14 checkpoint: direct-VRAM alternatives rejected by actual costs
+
+Owner asks whether direct DOS video memory can improve performance. Current
+product already selects VGA planes and memcpywrites A000;S1/P9transfer attribution
+is retained. This part evaluates additional hardware-only alternatives in ignored
+build. Every adapter receives neutral indexed pixels/bands only;no Mario,object,
+level,RAM,OAM or CHR interpretation is added. Formal code and three P13EXEs stay
+unchanged. No configuration,compiler/runtime or logical work suppression.
+
+| Contained alternative | Measured disposition |
+| --- | --- |
+| Exact packed-plane equality then broadcast | Compare each whole plane against plane0;when equal,mask15and one copy write all four planes,then restore mask8. Otherwise retain four submissions. Ordinary mapping/submission0.69-1.23percent slower;populated0.70-2.93percent slower. Complete route changes are positive0.05-0.82percent. Reject:comparison cost consumes transfer savings even when many bands qualify. |
+| Fused single-plane mapping directly to VRAM | Avoid packed scratch submission by selecting a plane and directing existing scalar mapper to A000. Its duplicate-row memcpyreads VRAM,so read-map is explicitly set to the same plane before mapping. Actual output remains exact,but mapping/submission34.49percent slower and graphics-return route10.44percent slower. Reject repeated source traversal/direct-store cost. |
+| Conversion-time exact broadcast hint | Derive equality from each masked16-byte group's exact four-plane index relations,stop checking after a mismatch,and return the hint to the device. Saves the separate whole-plane memcmpbut adds scalar checking in conversion. Ordinary stage10.39-28.79percent slower,populated7.30-41.34percent slower;complete route1.29-11.58percent slower in tested phases. Reject rather than shipping a theoretically attractive shortcut. |
+
+Whole-band broadcast is exercised,not merely compiled:ordinary title2of25bands
+qualify,load/graphics-return/save/reload12of25;water2,castle18and dense4. Hint and
+memcmp eligibility counters agree. The existing last-plane write-mask8is restored
+on the broadcast path. No image is inferred from a hash or approximate equality.
+The fused path's read-map selection is necessary because reads of A000can otherwise
+come from another plane. Setting write-mask alone does not establish correct
+repeated-row copies. Its four real readbacks verify the chosen plane relation.
+
+Five ordinary/populated candidate routes each compare five61440-byte active logical
+frames,640000actual hardware plane bytes,8000hardware text bytes,12000neutral cells
+and10035snapshot bytes against their identical P13fixture. Mode3returns and observed
+live near/far payloads free. No new heap work store is hidden. Instrumented owned
+peaks:ordinary broadcast392976(+368),fused392752(+144),hint393296(+688);populated
+broadcast394112/hint394432against393744baseline. Counters themselves occupy48static
+bytes in broadcast diagnostics. All far payloads35996. Ordinary stack pattern72,
+populated64match their own baselines;these are bounded patterns,not full-route
+stack or formal product residency. Larger code/static overhead is reported even
+for rejected variants.
+
+The conversion hint independently passes x86/x64 C90harnesses over every legal
+first row and1-16batch sizes:16972800output bytes per width,old scalar path and
+coordinate formula,guards and invalid capacity/bounds. Uniform,high-bit-different
+but masked-equal,and varying indexed inputs check that the hint exactly matches
+memcmpof resulting plane bytes. Only nonzero-row valid hint-pointer requests are
+used by this prototype;no new general API is admitted. Hardware readback establishes
+actual broadcast behavior under the unchanged installed DOSBox configuration,
+normal SDL and private desktop. This is not a cycle-accurate real486SXor VGA-board
+speed claim. Large regressions do not justify repeat-until-fast tuning or changing
+cycles/memory/scaler settings.
+
+Similar-issue sweep covers all plane selection/read-map state,destination A000
+bounds,first repeated row,four-plane equality,masked source bits,post-mask,state
+lifetime,mode/Tab/restore,device-only ownership and preserved source/output bytes.
+All variants are explicitly rejected;retain the P11bounded shared conversion
+and bulk hardware submission. PPU/text costs and CRT/error/all-path stack plus
+configured cadence/input deficits remain open. This closes the investigated
+hardware alternatives only,not S6/T28or the broader optimization goal.
+
+Next P15investigates shared presentation/receipt work rather than forcing another
+VRAM variant. Use measured owners and bounded prototypes;preserve original core
+and snapshot wire/rollback contracts,all text/artwork and complete output. Existing
+owner-deferred row/OAM recovery stays TODO. No product edit is implied by this
+read-only audit;all local probes/resources/logs/captures remain below ignored build.
+Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
+infeasible81),scope/expected/actual[],new0,custody unchanged. Products retain P13hashes.
