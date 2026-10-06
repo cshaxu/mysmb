@@ -41,7 +41,7 @@ the source policy, with no redistribution or new derivation/import authorized.
    input latency and memory separately. Receive the explicit S4 remaining contract below. A missed cadence remains a failed gate,
    never a playability claim. Physical486SX remains M4 qualification.
 
-S1-S5 are closed; S6 is the sole active integration executor and retains the received five-clause backlog. Each S reports scope/size first,
+S1-S6 and T31 are closed by the owner-directed transfer below. The five-clause backlog is accepted by T32 S4; it is not verified complete. Each S reports scope/size first,
 then exact disposition, evidence and total/local counters. Product-code P refreshes
 three EXEs using original tools; audit/prototype/doc P does not. All diagnostics
 stay below ignored build; no unrelated work is removed. Retain prior scoped proof
@@ -968,7 +968,6 @@ pre-main/fatal/firmware/kernel conditions retain their named proof limits.
 Scope/expected/actual[],new0,custody unchanged;historical1992/1992,local1991/1992
 nodes,4260/4261controls(raw4342/infeasible81). Node/documentation gates precede
 commit. S6/T31/goal remain active,not complete;no queue/S advancement.
-'''
 
 ## S6 P2 checkpoint: integrate original-ABI near stack scratch
 
@@ -1022,3 +1021,102 @@ cadence/stack remain open with retained partial receipts. Physical486SXand full
 M2certificate remain separate. Scope/expected/actual[],new0,custody unchanged;
 historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342/infeasible81).
 Node/documentation gates precede commit;no T/S/queue advancement.
+
+
+## S6 P3 checkpoint: text-stage attribution and exact object-coordinate cohort
+
+No adopted product/source change. Current-original-object diagnostic splits
+text output while recording every completed frame,normalSDL/private desktop/
+unchanged configuration.13qualifying text frames,146records/no drops,valid
+snapshot CRC. Median step816.4639ms:initialization6.0133,classification72.8162,
+flood/object549.8507,caption72.1910,actor27.8482,text device65.4519ms. Thus
+object/flood67.345%ofstep dominates;classification8.918%cannot explain the whole
+gap. Instrumentation is diagnostic,not actual product or physical486SXFPS.
+
+The source already has one last-classification memo. Compare invocation-local
+near-output/memo representation and capacities4/8/16rather than call it a new
+cache from zero. Keys include all four tiles and attribute palette;immutable
+resource binding holds within the synchronous call. Reset on every build;
+ambiguous early returns are never promoted as known-kind entries. Added state
+remains transient,not a new persistent resource/artwork cache or business path.
+All six cache/math candidates pass396whole background comparisons each native
+width against original builder,including receipt/workspace/frame bytes,source
+immutability,mixed banks/palettes,scroll/clipping/split/left masks,rebind,unknown/
+ambiguous/hidden/spent cases. Original DOSordinary routes each match977235bytes,
+near/far cleanup,mode3restore and installed setting hash unchanged:
+
+| Candidate | Whole text route change | Diagnostic owned delta | Disposition |
+| --- | ---: | ---: | --- |
+| Single memo near pointers | -0.1162% | -32bytes | Defer weak speed candidate |
+| Four-entry memo | -0.8571% | +64bytes | Reject weak memory/speed tradeoff |
+| Eight-entry memo | -1.0312% | +64bytes | Reject weak memory/speed tradeoff |
+| Sixteen-entry memo | -0.4243% | +176bytes | Reject weaker/larger state |
+| Narrow valid-cell coordinate arithmetic | -10.8417% | -192bytes | Lower-footprint alternative |
+| Narrow arithmetic plus row invariants | -16.6194% | -144bytes | Select integration candidate |
+
+Scope refinement to the measured same-owner hotspot changes no authored art.
+At guarded0<=x<80,0<=y<50,centers have numerators<=20352/11880,so unsigned16
+division exactly matches the original positive long division. Keep long
+subtraction against signed short left/top. After dx/dy>=0,their maximum against
+any short input is<=33022/33005,so unsigned16divide16preserves the result before
+the existing bounds/wrapping cast. Cell index<=3999fits16. Original first_cell
+rounding is unchanged. Hoist ycenter/source row/margin only across the inner x
+loop because they depend only on that row;glyph,component membership,ownership,
+foreground/background and clipping still execute in original order. Source
+valid geometry keeps nonzero inset height;do not extend this to arbitrary invalid
+private caller state or use a narrowing cast before the range guards.
+
+Original locals:object58->62(narrow)/64(row),background-build50unchanged in the
+selected math variant. No heap/workspace/row-buffer growth;row candidate's48
+additional diagnostic bytes over narrow buys about5.78percentage points more
+whole-route saving. Larger cache scratch is deliberately not selected.
+Additional matched DOSwater/castle/dense colored+monochrome views and receipts
+compare72030bytes exactly;frame metadata stays local/ignored. Existing baseline
+gallery driver initially expected eight-space flush indentation but the retained
+probe uses six;corrected exact marker before compile/run. No failed driver result
+is treated as product acceptance. These controlled views are not a full visual
+gallery or executable playability proof.
+
+Recipes/receipts below ignored build/m3-t31-s6:current text-phase profile,
+reference-background/memo_check/native matrix,cache/math variant sources,
+listings/DOScomparators,matched view dumps/text-views-summary. No raw ROM,
+runtime/trace import or new product artifact. S6remains active;next P integrates
+selected row math only after current product/font/state/memory gates,then
+refreshes all three EXEs if adopted. No tick/frame/char/color loss,original
+ROMlogic/PPUchanges or emulator settings. The measured small/medium gain still
+does not establish configured60Hz. MEM-S4-01..05remain explicitly open;no S/T/
+goal closure. Scope/expected/actual[],new0,custody unchanged;historical1992/1992,
+local1991/1992nodes,4260/4261controls(raw4342/infeasible81). Required node/
+documentation gates precede commit.
+
+## S6 P3 and T31 owner-directed closure
+
+Owner instructs closure and admission of the next performance T. Coordinator
+closes S6/T31 by accepted transfer, not successful cadence/memory certification.
+Retain S1-S5 and S6 P2 adopted improvements and their exact scoped evidence.
+P3 completes the six-candidate disposition: select object-row for product
+evaluation; defer memo1, reject memo4/8/16 and prefer row over narrow on the
+measured speed/footprint tradeoff. None of these text candidates is adopted yet.
+
+| Remaining obligation | Accepted receiver | Required next evidence |
+| --- | --- | --- |
+| Selected object-row product adoption | T32 S1 | Current source comparison, all three builds/products, operational and memory checks |
+| Dominant graphical PPU background cost | T32 S2 | Bounded measured alternatives, unchanged indexed pixels/opacity/state and original DOS costs |
+| Neutral color mapping cost | T32 S3 | Identical palette/planes and public lifetime, no extra persistent buffer |
+| MEM-S4-01 pre-main/environment/arguments | T32 S4 | Reconcile retained domain-specific startup bounds and missing domains |
+| MEM-S4-02 fatal/exit/hooks | T32 S4 | Retained binary/file proof plus unproved callback/error lifetimes |
+| MEM-S4-03 firmware/interrupts | T32 S4 | Explicit firmware/interrupt applicability and nesting limits; physical qualification remains M4 |
+| MEM-S4-04 continuous/kernel/contiguous memory | T32 S4 | Retained observations plus named unobserved allocation/kernel transitions |
+| MEM-S4-05 final integrated cadence/stack | T32 S4 | Final source-bound time/input/memory with no skipped ticks, settings changes or unsupported stack shrink |
+
+Coordinator accepts these infrastructure receipts under the owner's explicit
+mandate in [T32 plan](M3-T32-rendering-performance-continuation.md). S4 is
+receiving backlog only; S1 is the sole active executor. No ROM-node ownership
+event is needed for empty scope. Historical1992/1992,local1991/1992nodes,
+4260/4261feasible controls(raw4342/infeasible81),expected/actual[],new0.
+Existing M2 certificate debt and queue order remain unchanged.
+
+This P changes governance/evidence only. Product source and all three S6 P2
+EXEs remain unchanged:301705/311310/324110bytes. No playability/global-stack/
+continuous-memory acceptance. Documentation,node admission and closure gates
+and diff review must pass before commit; all local evidence stays under build.
