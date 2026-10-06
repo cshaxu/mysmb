@@ -170,3 +170,72 @@ Scope/expected/actual[],new0,counters unchanged;no game/ROMcontrol custody.
 No emulator settings,helper process or toolchain change. S4receiving backlog
 stays inactive;full goal/T32acceptance remains open. Node/documentation/diff
 gates and semantic review precede S1commit/S2execution.
+
+## S2 P1 checkpoint: pointer and fixed-index background cohort
+
+Original /AL/Gs compiler listing shows repeated per-tile far nametable segment/
+offset arithmetic and per-dot stack stores of postincremented target/shifted
+bytes. Compare four candidates as one cohort against current S1source-bound
+baseline. No product code or EXE change in this P; all sources/objects/dumps
+stay under ignored build/m3-t32-s2. Same original compiler/runtime, normal SDL,
+private desktop and installed DOSBox settings; no helper product process.
+
+Span uses two far row pointers initialized before the loop from name_table&1,
+then refreshed at source_x256. Initial scroll_x is byte0..255; increments cover
+256logical pixels in aligned tile spans,so only that single boundary can occur
+before loop exit. Pointer lifetimes borrow immutable state within one row.
+Table masking, tile indices, attributes, fine scroll and palette lookup remain.
+Indexed output replaces eight target postincrements and destructive packed-byte
+shifts by fixed target0..7and constant shifts/masks. No aliasing word stores,
+alignment assumptions or source pixels lost;partial cached/raw paths retained.
+Combine these two. Fourth candidate copies64tile+16attribute bytes into caller
+stack once per source tile row;no persistent cache/heap, but reject its tradeoff.
+
+| Candidate | Phase0 whole-step diagnostic saving | Graphics-return phase3 saving | Diagnostic owned delta | Row/caller local bytes |
+| --- | ---: | ---: | ---: | ---: |
+| Baseline | 0 | 0 | 0 | 320/56 |
+| Span pointers | 4.1236% | 5.0123% | +128 | 328/56 |
+| Fixed indices | 3.0399% | 1.7614% | -80 | 320/56 |
+| Combined | 7.1629% | 6.7507% | +32 | 328/56 |
+| Row copy | 3.1035% | 1.6361% | +128 | 314/140 |
+
+These seeded steps include device/file/mode work;phase1/5ordinary restore
+steps improve only about0.8%with combined. Never treat the7.16%maximum as
+stable gameplay FPS. Each candidate matches977235pixel/plane/text/save bytes.
+Independent512cases each native width cover188743680strip and65536000plane
+bytes,readonly state,guards and invalid calls. Indexed confirmations retained
+in initial terminal runner output; span/combined/row-copy fresh logs are local.
+Initial span/combined implicit first-loop pointer initialization provoked GCC
+maybe-uninitialized warnings; changed to explicit pre-loop initialization and
+reran both widths before timing. No unresolved warning presented as adoption.
+The row-copy generator initially removed indented marker substrings before
+matching its block; corrected exact line matching before compile/testing. These
+driver failures are not product failures or acceptance evidence.
+
+Selected combined fresh populated water/castle/dense matches977235bytes and
+whole diagnostic phases3/4/5are8.8732/5.6143/8.8061%shorter,owned+48bytes.
+Fresh matched far-cache and allocation-failure/raw baselines use the same
+retained controlled allocator objects,not a cached-versus-uncached cost
+comparison. Both selected runs match977235bytes;their exact costs and original
+cache-pointer/cleanup receipts are in far-combined-summary/raw-combined-summary.
+Both normal3mode restoration and near/far heap cleanup pass,settings unchanged.
+No product resident-saving inference from diagnostic owned deltas.
+
+Select combined for product evaluation:better scoped benefit than either
+component,8additional row-local bytes,no caller/ABI/heap/workspace growth.
+Reject row-copy:78more combined row/caller local bytes plus4private argument
+bytes than baseline,lower benefit;do not spend scarce stack on it. Original
+2048stack retained;affected frame/caller/IRQ/private joins stay part of S4's
+finite pending proof. No game/NMI/PPU-state/control or platform policy changes.
+
+Contained recipes:prepare-cohort,Build-Cohort,native/run/compare scripts;
+prepare-row-copy/Build-RowCopy;prepare-extended retained populated/far/raw
+bindings;record-cohort sources/listings/hashes/costs. State/background masks,
+both nametables,scroll/split,clipped/full/blank rows,palette aliases,CHR near/
+far/raw, sprite opacity/priority and resource rebind remain integration gates.
+Next P integrates only selected combined after source review and actual product
+build/memory/operational checks,refreshing three EXEs if adopted. S2/T32/goal
+remain active;MEM-S4-01..05remain open,S4backlog not executing. scope/expected/
+actual[],new0,custody unchanged,historical1992/1992,local1991/1992nodes,
+4260/4261controls(raw4342,infeasible81). No full-ROM or playability certificate.
+Documentation/node/diff gates precede commit;no S/T/queue advancement.

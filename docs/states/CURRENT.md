@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S2 P1; dominant shared PPU background cost. |
+| Identifier Mode | Continuation: M3 T32 S2 P2; dominant shared PPU background cost. |
 | Admission And Approval | Approved T32 plan; S1 closed, S2 sole active; S4 receiving backlog only. |
 | Objective | Optimize dominant background compositor using generated original compiler evidence and bounded exact-output candidate comparisons. |
 | Non-goals | No game/PPU-visible semantics, lost rows/ticks/frames/colors, helper process, DOSBox settings, toolchain change or unproved stack shrink. |
 | Reference Baseline | T32 S1 source-bound products and retained S1/S6 exact receipts; no graphics changes in S1. |
 | Candidate Proposal | [T32 S2 scope and acceptance](../history/M3-T32-rendering-performance-continuation.md#s2-admission-dominant-shared-ppu-background-loop). |
-| Files And ABI Surface | src/ppu/frame.c frame_build_internal/background_row; estimate60-180 candidate lines, no new heap/cache/full framebuffer by default; original near/far contract. |
+| Files And ABI Surface | src/ppu/frame.c frame_build_internal/background_row; selected two row pointers/fixed-index output, estimate35-60 product lines, +8row-local bytes/no caller/public ABI/heap/workspace growth; original near/far contract. Rejected80-byte transient row-copy candidate. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
 | Verification | Original listing/cost, independent512case native indexed output/guards both widths, original DOS ordinary/populated/far/raw fallback; stack/memory and three products on adoption. |
 | Expected Markers | scope/expected/actual[],new0,baseline/max1992/1992;local1991/1992nodes,4260/4261controls,no custody transfer. |
@@ -23,6 +23,13 @@
 
 ## Current Technical Baseline
 
+- T32 S2 P1cohort:four exact-output candidates,combined selected for product
+  evaluation;whole diagnostic phase0/graphics-return7.1629/6.7507%shorter,
+  populated water/castle/dense8.8732/5.6143/8.8061%.512native cases each width;
+  each DOSordinary/populated/far/raw receipt977235bytes exact.8row-local bytes
+  extra,no heap/workspace;row-copy rejected for weak benefit and stack growth.
+  Source and three S1products unchanged;not actual gameplay FPS or acceptance.
+  [Cohort evidence/limits](../history/M3-T32-rendering-performance-continuation.md#s2-p1-checkpoint-pointer-and-fixed-index-background-cohort).
 - T32 S1 closed:shared text row math+19/-9,396current background comparisons
   and14tests per native width pass; actual Windowsstartup/Tab/exit pass. DOS
   product301561(-144),native311310/324110bytes;DGROUP49072/stack2048unchanged.
