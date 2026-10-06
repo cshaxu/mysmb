@@ -459,3 +459,15 @@ bytes and actual code/loader/resident/stack differences still need integrated
 proof. Owner accepts stable speed-only gains without a20ms floor. Keep shared
 geometry/default execution and host-only physical acceleration;refresh all
 three EXEs only after product adoption. S8/global performance goals remain open.
+
+## Coarse band integration result
+
+[P14 integration](../../history/M3-T32-rendering-performance-continuation.md#s8-p14-integrate-coarse-band-execution-and-publish-three-products)
+adopts shared plans and DOS bulk execution. No new resident buffer;DOS code/
+logical loader+592bytes,ordinary observed resident+512,370route unchanged.
+Fifteen native tests per width,final7079DOS/20register checks,13local CFGs,
+current DAC and actual Windows/DOSroutes pass;three EXEs refreshed. Core132/
+PPU records unchanged;device header-only layout difference reproduced.
+Current counter166.031ms saves7.382ms,mapping54.728ms. Continue measured PPU/
+transfer work;nominal60Hz/fivefold and global/reference/hardware gates remain
+open. Local band chain200bytes is not a whole-program stack bound.

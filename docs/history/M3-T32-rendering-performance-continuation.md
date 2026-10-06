@@ -2196,6 +2196,63 @@ physical486qualification remain unproved. Scope/expected/actual[],new0;
 historical1992/1992,local1991/1992nodes and4260/4261feasible controls
 (raw4342,infeasible81). Full M2 certificate remains incomplete.
 
+## S8 P14 integrate coarse band execution and publish three products
+
+Shared IO owns the exact bounded row plan and both public row/band encoder
+contracts;the portable owner remains available without a host binding.
+DOS alone executes segment/ISA stores and its root binds one call per band.
+Existing row ABI is retained. Product changes+215/-4lines across five owners,
+focused existing VGA test+28lines. No game/PPU source change,new image/cache
+allocation,toolchain/runtime/configuration change or production helper process.
+
+Final three products are304501/316942/329742bytes. DOS code and logical
+minimum/maximum loader bounds increase592bytes;rounded bounds increase512.
+Minimum328736/rounded328864,maximum332832/rounded332960. DGROUP49264 and
+2048stack remain unchanged,196segments/max32768,initial near reserve4096.
+Observed owned peaks446080cached/382560fallback are512bytes above P11;
+controlled370route378880 is unchanged. All three arenas complete restore,
+input,Tab,text/graphics,valid10035-byte save and exit with640x400captures.
+These routes do not establish universal minimum or continuous/global peak.
+
+Fifteen focused native tests pass each width,including exhaustive legal
+first/height band geometry,portable fallback,callback dispatch and invalid/
+zero-size guards. Final original-DOS mapper/encoder objects pass7079cases
+and20DS/ES/BP/SP/SI/DIchecks in four bounded groups. Thirteen local CFGs are
+balanced,including the separate C3 near assembly body. Final local allocations
+are90IO/40encoder bytes;64plan bytes are temporary. Reviewed band chain200bytes
+includes outgoing arguments/returns but excludes incoming entry/arguments,
+root/CRT/IRQ/firmware/global callers. It is not a global stack certificate.
+
+Final OMF census retains161unchanged execution records,including132core and
+PPU. Three source-changed owners are IO layout,DOS encoder and DOS main.
+Unchanged devices source also compiles differently:controlled builds with
+old headers reproduce P11 and current headers reproduce P14. Added neutral
+declarations change original-compiler local/static symbol allocation and
+fixups;all device function frame allocations are unchanged. Current-object
+DAC readback passes initial/same-after-text-graphics/dirty/reset/mode-restore
+cases. This explicit binding replaces the incorrect initial expectation
+that only three object records would differ;it does not silently count the
+fourth object as byte-identical. Actual Windows products pass startup,
+native Terminal80x30clipping,two input/Tab-return cycles and Escape.
+
+Fresh current-source probes retain339counter and320phase records,zero drops;
+every graphics submission reads25bands and every selected running update
+submits once. Counter graphics166.030832ms versus P11 173.412774 saves7.381942ms
+(4.256862%). Phase graphics180.348ms,PPU78.154,mapping54.728,VGAincludingDAC18.062,
+game9.186,snapshot10.449ms. Mapping was62.089ms in P11;the integrated boundary
+cost is included. Prepared paired raster+mapping saves about7.3ms/frame.
+Text counter457.763/phase454.916ms is diagnostic for its current route,not
+an equal-state comparison with P11's different game-frame cohort. Text/core
+source did not change;do not claim a normalized text-speed result.
+
+Three reviewed EXEs occupy the existing owner-authorized assets slots;no
+new protected output is added. No remote is configured;commit locally only.
+Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and
+4260/4261feasible controls(raw4342,infeasible81). S8/goal stay active;nominal
+60Hz/fivefold,equal-state reference/global memory-stack and physical486
+qualification remain unproved. Next work targets remaining measured PPU/
+transfer costs rather than assuming this modest gain achieves playability.
+
 ## S8 P13 coarse band execution prototype
 
 One neutral32-byte row plan covers a bounded1..16-row destination band.

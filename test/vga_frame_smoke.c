@@ -6,12 +6,25 @@ static mysmb_io_u8 pages[4][MYSMB_VGA_PAGE_SIZE+2];
 static mysmb_io_u8 scratch[MYSMB_VGA_PAGE_SIZE+2];
 static unsigned char packed[5120+32],old[1280+32];
 static unsigned char encoded[5120+32];
+static unsigned short band_calls;
 static void row_encoder(const mysmb_io_u8 *source,mysmb_io_u8 *out,
     mysmb_io_u16 stride)
 {
  unsigned short p,x;
  for(p=0U;p<4U;++p)for(x=0U;x<80U;++x)
   out[p*stride+x]=(mysmb_io_u8)(source[(4U*x+p)*4U/5U]&63U);
+}
+static void band_encoder(const mysmb_io_u8 *source,mysmb_io_u8 *out,
+    mysmb_io_u16 stride,mysmb_io_u16 rows,const mysmb_io_u16 *plan)
+{
+ unsigned short row,p;
+ ++band_calls;
+ for(row=0U;row<rows;++row){
+  if(plan[row]==0xffffU){
+   for(p=0U;p<4U;++p)
+    memcpy(out+p*stride+row*80U,out+p*stride+(row-1U)*80U,80U);
+  }else row_encoder(source+plan[row],out+row*80U,stride);
+ }
 }
 static int four_planes(void)
 {
@@ -27,6 +40,12 @@ static int four_planes(void)
   memset(encoded,0xa5,sizeof(encoded));
   if(!mysmb_io_planar_build_planes(&band,first,rows,encoded+16,5120,row_encoder) ||
    memcmp(encoded,packed,sizeof(packed)))return 8;
+  memset(encoded,0xa5,sizeof(encoded));band_calls=0U;
+  if(!mysmb_io_planar_build_band(&band,first,rows,encoded+16,5120,band_encoder) ||
+   band_calls!=1U || memcmp(encoded,packed,sizeof(packed)))return 9;
+  memset(encoded,0xa5,sizeof(encoded));
+  if(!mysmb_io_planar_build_band(&band,first,rows,encoded+16,5120,0) ||
+   memcmp(encoded,packed,sizeof(packed)))return 10;
   for(p=0U;p<4U;++p){
    memset(old,0xa5,sizeof(old));if(!mysmb_vga_frame_build_band(&band,p,first,rows,old+16))return 2;
    if(memcmp(old+16,packed+16+p*rows*80U,rows*80U))return 3;
@@ -42,6 +61,15 @@ static int four_planes(void)
  if(mysmb_vga_frame_build_planes(&band,0,16,packed+16,5120)||mysmb_vga_frame_build_planes(&band,0,17,packed+16,5120))return 6;
  band.first=0;band.rows=10;
  if(mysmb_vga_frame_build_planes(&band,0,16,packed+16,5119))return 7;
+ band_calls=0U;
+ if(mysmb_io_planar_build_band(&band,0,16,packed+16,5119,band_encoder) ||
+  mysmb_io_planar_build_band(&band,0,17,packed+16,5120,band_encoder) ||
+  mysmb_io_planar_build_band(&band,400,1,packed+16,5120,band_encoder))return 11;
+ band.first=1;
+ if(mysmb_io_planar_build_band(&band,0,16,packed+16,5120,band_encoder))return 12;
+ band.first=0;
+ if(!mysmb_io_planar_build_band(&band,0,0,packed+16,5120,band_encoder) ||
+  band_calls!=0U)return 13;
  for(i=0;i<sizeof(packed);++i)if(packed[i]!=0xa5)return 8;
  printf("allFirstRows1to16=1 comparedBytes=%lu guards=1 invalidRejected=1\n",compared);return 0;
 }

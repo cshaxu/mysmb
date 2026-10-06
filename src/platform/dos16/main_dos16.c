@@ -41,9 +41,9 @@ static int present_rows(void *context,const struct mysmb_io_palette_video_source
         source_first=(mysmb_io_u16)(first*3U/5U);
         source_rows=(mysmb_io_u16)((first+MYSMB_VGA_BATCH_ROWS-1U)*3U/5U-source_first+1U);
         if(!source->read_rows(source->context,source_first,source_rows,&band))return 0;
-        if(!mysmb_io_planar_build_planes(&band,first,MYSMB_VGA_BATCH_ROWS,
+        if(!mysmb_io_planar_build_band(&band,first,MYSMB_VGA_BATCH_ROWS,
             plane_pixels,MYSMB_VGA_PAGE_COUNT*MYSMB_VGA_BATCH_SIZE,
-            mysmb_dos16_pack_planar_row))return 0;
+            mysmb_dos16_pack_planar_band))return 0;
         for(plane=0U;plane<MYSMB_VGA_PAGE_COUNT;++plane)
             mysmb_dos16_devices_present_rows(plane,first,MYSMB_VGA_BATCH_ROWS,
                 plane_pixels+plane*MYSMB_VGA_BATCH_SIZE);

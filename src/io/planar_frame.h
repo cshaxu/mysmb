@@ -27,6 +27,16 @@ int mysmb_vga_frame_build_planes(const struct mysmb_io_video_band *source,
  * Null selects the portable owner;callbacks may not change source or metadata. */
 typedef void (*mysmb_io_planar_row_packer)(const mysmb_io_u8 MYSMB_IO_FAR *,
     mysmb_io_u8 MYSMB_IO_FAR *,mysmb_io_u16);
+/* A synchronous band encoder borrows rows<=16 offsets. Each word is a
+ * source byte offset,or 0xffff to copy the preceding destination row.
+ * It receives four rows*80-byte planes and must preserve source/plan.
+ * Null uses the same portable layout implementation. */
+typedef void (*mysmb_io_planar_band_packer)(const mysmb_io_u8 MYSMB_IO_FAR *,
+    mysmb_io_u8 MYSMB_IO_FAR *,mysmb_io_u16,mysmb_io_u16,
+    const mysmb_io_u16 MYSMB_IO_FAR *);
+int mysmb_io_planar_build_band(const struct mysmb_io_video_band *source,
+    mysmb_io_u16 first,mysmb_io_u16 rows,mysmb_io_u8 MYSMB_IO_FAR *out,
+    mysmb_io_u16 capacity,mysmb_io_planar_band_packer packer);
 int mysmb_io_planar_build_planes(const struct mysmb_io_video_band *source,
     mysmb_io_u16 first,mysmb_io_u16 rows,mysmb_io_u8 MYSMB_IO_FAR *out,
     mysmb_io_u16 capacity,mysmb_io_planar_row_packer packer);

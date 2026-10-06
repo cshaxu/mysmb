@@ -86,11 +86,13 @@ void mysmb_vga_frame_build(const struct mysmb_io_video_frame *source,
 
 
 /* One16-byte source group supplies all four exact plane index sequences. */
-int mysmb_io_planar_build_planes(const struct mysmb_io_video_band *source,
+static int build_planes(const struct mysmb_io_video_band *source,
     mysmb_io_u16 first,mysmb_io_u16 rows,mysmb_io_u8 MYSMB_IO_FAR *out,
-    mysmb_io_u16 capacity,mysmb_io_planar_row_packer packer)
+    mysmb_io_u16 capacity,mysmb_io_planar_row_packer packer,
+    mysmb_io_planar_band_packer band_packer)
 {
     mysmb_io_u16 row,group,p,sy,previous=240U,phase,low,high;
+    mysmb_io_u16 plan[MYSMB_VGA_BATCH_ROWS];
     mysmb_io_u8 shared0,shared4,shared8,shared12,uniform;
     const mysmb_io_u8 MYSMB_IO_FAR *in;
     mysmb_io_u8 MYSMB_IO_FAR *p0,*p1,*p2,*p3;
@@ -101,6 +103,16 @@ int mysmb_io_planar_build_planes(const struct mysmb_io_video_band *source,
     low=(mysmb_io_u16)(first*3U/5U);high=(mysmb_io_u16)((first+rows-1U)*3U/5U);
     if(low<source->first || high>=source->first+source->rows)return 0;
     sy=low;phase=(mysmb_io_u16)(first*3U%5U);
+    if(band_packer){
+        for(row=0U;row<rows;++row){
+            plan[row]=sy==previous?0xffffU:
+                (mysmb_io_u16)((sy-source->first)*256U);
+            previous=sy;phase+=3U;
+            if(phase>=5U){phase-=5U;++sy;}
+        }
+        band_packer(source->pixels,out,(mysmb_io_u16)(rows*80U),rows,plan);
+        return 1;
+    }
     for(row=0U;row<rows;++row){
         if(sy==previous){
             for(p=0U;p<4U;++p)memcpy(out+(p*rows+row)*80U,out+(p*rows+row-1U)*80U,80U);
@@ -148,6 +160,16 @@ int mysmb_io_planar_build_planes(const struct mysmb_io_video_band *source,
     }
     return 1;
 }
+
+int mysmb_io_planar_build_planes(const struct mysmb_io_video_band *source,
+    mysmb_io_u16 first,mysmb_io_u16 rows,mysmb_io_u8 MYSMB_IO_FAR *out,
+    mysmb_io_u16 capacity,mysmb_io_planar_row_packer packer)
+{return build_planes(source,first,rows,out,capacity,packer,0);}
+
+int mysmb_io_planar_build_band(const struct mysmb_io_video_band *source,
+    mysmb_io_u16 first,mysmb_io_u16 rows,mysmb_io_u8 MYSMB_IO_FAR *out,
+    mysmb_io_u16 capacity,mysmb_io_planar_band_packer packer)
+{return build_planes(source,first,rows,out,capacity,0,packer);}
 
 int mysmb_vga_frame_build_planes(const struct mysmb_io_video_band *source,
     mysmb_io_u16 first,mysmb_io_u16 rows,mysmb_io_u8 MYSMB_IO_FAR *out,

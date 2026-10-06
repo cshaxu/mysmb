@@ -63,7 +63,11 @@ DAC programming and video memory. DOS devices own physical held-key decoding,
 BIOS mode lifetime and PIT sampling. Only its composition root binds local
 immutable program resources and allocates the shared compositor's exclusive row/text store.
 The VGA packer retains portable C mapping and a DOS-private segment-once row
-helper with identical neutral source/output/capacity semantics. It restores
+helpers with identical neutral source/output/capacity semantics. Shared IO
+also prepares a bounded row-offset plan for one complete band;DOS executes
+that plan in one segment-borrowing call. Portable execution and the existing
+row interface remain available. Plans are synchronous stack scratch,not a
+resident surface or original PPU state. The encoder restores
 segment/index/frame registers,uses the existing band store,and has no game
 state or allocation dependency. This is physical pixel layout,not a PPU writer.
 The DOS root owns a15400-byte exclusive row/text allocation and presenter choice.
