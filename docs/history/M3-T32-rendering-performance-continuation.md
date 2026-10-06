@@ -2196,6 +2196,58 @@ physical486qualification remain unproved. Scope/expected/actual[],new0;
 historical1992/1992,local1991/1992nodes and4260/4261feasible controls
 (raw4342,infeasible81). Full M2 certificate remains incomplete.
 
+## S8 P13 coarse band execution prototype
+
+One neutral32-byte row plan covers a bounded1..16-row destination band.
+Shared IO retains source-row selection and plane geometry;DOS executes the
+whole plan in one call using the existing mixed/uniform row body and DWORD
+repeated-row copies. A second32-byte SS-owned copy permits safe segment
+switching. No new resident image/cache allocation or game/PPU change.
+The contained candidate is191lines,slightly above its100-180line estimate;
+original-tool listing has42/44-byte helper/caller locals. The reviewed own
+chain reaches128bytes including its16-byte outgoing arguments and internal
+near call,excluding incoming entry/arguments and external callers. This is
+not a global stack certificate or a measured product-footprint result.
+
+Native portable execution of the same plan passes18840cases and50918400
+mapped bytes per width:all legal first rows/heights,source bands with leading
+rows,0/255/mixed input bytes,unaligned pointers,guards and source immutability.
+DOS compares the actual bulk object with current P11 mapper/row objects;
+the combined matrix covers7079cases plus20register checks for DS/ES/BP/SP/
+SI/DI on uniform,mixed and repeated paths. Invalid coverage/capacity/height
+requests reject without output mutation;zero-height output remains unchanged.
+
+The first exhaustive explicit DOS guard scan exceeded its150second probe
+budget and was terminated;it is excluded from acceptance. Four bounded
+groups retain the complete matrix rather than reduce checks. Each group
+also repeats five warm raster+mapping and isolated mapping pairs,with exact
+band outputs. Prepared-view/cache work and device submission are outside
+these paired times;neither result is whole-game FPS.
+
+| Warm scene | Raster+mapping saved per frame | Isolated mapping saved per frame |
+| --- | ---: | ---: |
+| Uniform tiles | 7.562..7.565ms | 7.556..7.559ms |
+| Mixed/fine scroll/split | 7.561..7.562ms | 7.560..7.561ms |
+| Dense sprites | 7.560ms | 7.561ms |
+| Blank background | 7.489..7.500ms | 7.595..7.609ms |
+| Sparse background | 7.538..7.558ms | 7.560..7.561ms |
+
+Each pair times three raster+mapping frames and twelve mapping frames using
+the same PIT conversion1193182ticks/second. Four groups exit normally in
+52.81..54.46seconds with installed settings unchanged. Baseline row,planar
+and nibble objects and all three published P11 product hashes remain bound.
+The isolated mapping uses constant prepared input with valid band metadata;
+it diagnoses the removed call/copy boundary rather than game scene pacing.
+
+Owner clarification accepts stable speed-only gains without requiring20ms;
+retain this candidate for product evaluation. No product source or three
+EXE change yet. Product integration must expose the shared neutral plan,
+keep physical execution under dos16,measure actual code/loader/resident and
+stack changes,verify current routes and refresh all three products before
+claiming an adopted improvement. Scope/expected/actual[],new0;historical
+1992/1992,local1991/1992nodes and4260/4261feasible controls(raw4342,infeasible81).
+S8/goal and nominal60Hz/fivefold/global/reference/hardware gates remain open.
+
 ## S8 P12 reject fine-grained fused output sinks
 
 Contained prototype sends PPU packed background spans and completed sprite

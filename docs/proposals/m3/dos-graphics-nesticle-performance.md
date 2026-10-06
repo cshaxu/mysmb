@@ -439,3 +439,23 @@ but scalar and segment-accelerated fused sinks regress every complete-stage
 scene. Accelerated cost2.447..3.419times current PPU+mapping. Reject both;
 no product or EXE change. Coarser row/tile/band transfer must be measured
 before another output abstraction is adopted. S8 and final gates remain open.
+
+## S8 coarse band prototype
+
+P13 evaluates one physical encoding call for a complete bounded band rather
+than one per distinct source row and four copies per repeated row. Shared IO
+still determines exact source-row offsets and plane geometry;DOS bulk code
+only executes that neutral plan. Initial estimate100-180candidate/80-160test
+lines. Prototype needs64temporary plan bytes:32shared and32SS-owned for safe
+segment switching;no new image allocation. Compare exact bytes,
+guards,source immutability and current original-tool mapping plus complete
+PPU+mapping stage before any product adoption. No game/PPU source change.
+
+[P13 evidence](../../history/M3-T32-rendering-performance-continuation.md#s8-p13-coarse-band-execution-prototype)
+selects this candidate for product evaluation:7079DOS/20register and18840
+native cases per width pass;four groups save7.489..7.565ms per warm raster+
+mapping frame. There is no new resident image allocation,but64temporary plan
+bytes and actual code/loader/resident/stack differences still need integrated
+proof. Owner accepts stable speed-only gains without a20ms floor. Keep shared
+geometry/default execution and host-only physical acceleration;refresh all
+three EXEs only after product adoption. S8/global performance goals remain open.

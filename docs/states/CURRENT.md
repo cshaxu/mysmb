@@ -4,15 +4,15 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S8 P12; fine-grained fused sinks measured and rejected; S8 remains active. |
+| Identifier Mode | Continuation: M3 T32 S8 P13; coarse band candidate selected for product evaluation; S8 remains active. |
 | Admission And Approval | Owner-approved consecutive S5-S9 plan and automatic successor;S7 display-stage contract closed by P4;S8 sole active. |
 | Objective | Reduce current dominant rendering cost as one bounded cache/row-output chain while preserving ROM/PPU semantics and memory balance. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
 | Reference Baseline | Published S8 P11products and current phase/counter probes;original tools/2048stack/640x400/two platform components. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | Initially zero product lines;contained PPU neutral packed-span/pixel output sink plus shared IO layout sink,estimate120-240candidate/100-180test lines. No new image allocation;source and existing four-plane band stores remain bounded. PPU retains all clipping/priority/opacity;IO alone owns geometry/format. Compare full fused results against current PPU+mapping,guards,source and original-tool complete-stage cost before selection. Unsupported/raw projection keeps current fallback. Three EXEs only after product adoption. |
+| Files And ABI Surface | Zero product lines;contained shared IO exact band row plan and DOS bulk band execution,initial estimate100-180candidate/80-160test lines. Prototype uses64temporary plan bytes because DOS copies the32-byte neutral plan into SS-owned scratch before changing DS;no new image allocation. Source and existing four-plane band stores remain bounded. PPU unchanged;IO owns geometry/format,DOS only segment/ISA execution. Compare mapping and complete PPU+mapping with current P11,guards,source and original-tool cost before selection. Three EXEs only after product adoption. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
-| Verification | Independent512state native raw/cache/row/palette/priority/source/guard/fallback checks;actual original-DOS exact output/compiler/stack/startup/resident/stage cost and current frame budget;three EXEs after adoption. |
+| Verification | Native18840cases/50918400bytes per width and original-DOS7079cases/20register checks pass. Four bounded groups retain exhaustive guards after one excluded150second timeout;warm raster+mapping saves7.489..7.565ms. Actual integrated compiler/stack/startup/resident/frame-budget proof and three EXEs required after adoption. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
 | Asset Needs | Owner-local x.xx binary and ROM plus historical athros/NESticle0.2 source as conceptual reference only; copyright-only leaked tree grants no redistribution permission. Purpose frame/cache/transfer architecture comparison; raw source/probes only below ignored build, no copying/transliteration into product, exact-version claims require binary evidence. |
 | Reporting Requirements | Candidate and measured whole-step cost, rejected variants, actual code/memory delta, source/products and total/local node counts. |
@@ -25,6 +25,15 @@
 
 
 ## Current Technical Baseline
+
+- S8 P13 selects coarse band execution for product evaluation:7079DOS cases/
+  20register checks and18840native cases per width pass. Four paired groups
+  save7.489..7.565ms per warm raster+mapping frame;device/cache preparation and
+  whole-game speed are outside this comparison. No resident image allocation,
+  but64temporary plan bytes/128own-chain bytes;actual product delta unmeasured.
+  One150second guard-scan timeout excluded and full matrix retained in bounded
+  groups. Product/three EXEs unchanged;S8/global goals remain open.
+  [Candidate and integration gates](../history/M3-T32-rendering-performance-continuation.md#s8-p13-coarse-band-execution-prototype).
 
 - S8 P12 rejects scalar and accelerated fine-grained fused sinks:512native
   states/65536000bytes per width and original-tool five scenes exact,but
