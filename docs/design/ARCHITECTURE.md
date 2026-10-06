@@ -27,14 +27,16 @@ not serialized or shared with original game writers.
 
 ## Product And Host Boundary
 
-PPU rejects unchanged tile/attribute rows in bulk before refreshing dependent
-cache tiles. Optional palette expansion consumes only packed indices,colors
-and bounded spans;PPU retains odd edges,masks,scroll and raw-opacity decisions.
-Neutral IO owns the530-byte pair table. The DOS root optionally borrows near
-heap space and binds its dos16-only decoder after mandatory initialization;
-failure keeps the existing renderer. Root ownership frees the allocation after
-the last view ends,independently of the callback context. Snapshots do not
-serialize this derived table. Win32 continues using the portable projection.
+PPU rejects unchanged tile/attribute rows before refreshing dependent cache
+tiles. One shared compositor exposes canonical master pixels and lossless
+slot pixels with a normalized32-entry master-color table. Both products use
+slot output;IO expands nibbles without a pair-table allocation. PPU retains
+odd edges,masks,scroll and raw-opacity decisions. DOS binds its segment-only
+nibble accelerator;Windows uses the same portable service. Canonical callers
+retain default palette expansion and the optional530-byte lookup cache.
+Derived output tables are not serialized. Physical DAC state is invalidated
+after mode/reset and refreshed before slot pixels;Windows maps the same table
+to RGB. Devices inspect only neutral views.
 
 The shared `io/` contract layer has no dependency on `core/`, `ppu/`, `text/`, `validate/` or `platform/`.
 Composition roots connect decoded controller input and compositor output to
@@ -49,9 +51,10 @@ It copies decoded input and ordered audio,borrows compositor pixels,and never
 reads original RAM,changes game state,or calls a device. Win32's audio adapter
 accepts only the neutral audio frame;its synthesis state remains host-owned.
 
-DOS16 uses the same logical indexed pixels through a synchronous neutral row
-producer;Windows retains the full-frame interface. Shared IO owns the stable
-64-color presentation palette and generic bounded row scaling;VGA owns fixed
+DOS16 uses the same logical slot pixels through a synchronous neutral row
+producer;Windows retains a full-frame view. Shared IO owns the stable64-color
+master RGB lookup and bounded row scaling;each frame supplies its32-entry
+slot-to-master table. VGA owns fixed
 direct256x240-to320x400 enlargement without borders or source-row loss,
 four32000-byte Mode X video planes,submitted from a5120-byte four-plane16row
 band borrowed after the2560-byte source area in the existing15400-byte store,

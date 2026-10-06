@@ -47,6 +47,27 @@ static int palette_expansion_contract(void)
     return 0;
 }
 
+static int nibble_contract(void)
+{
+    mysmb_io_u8 input[132],out[292];mysmb_io_u16 phase,count,i,offset;
+    for(phase=0U;phase<4U;++phase){
+        for(i=0U;i<132U;++i)input[i]=(mysmb_io_u8)(i*17U+phase);
+        for(count=0U;count<=256U;count+=2U){
+            memset(out,165,sizeof(out));offset=(mysmb_io_u16)(16U+phase);
+            if(!mysmb_io_nibble_expand(input+phase,out+offset,count))return 1;
+            for(i=0U;i<count;++i)
+                if(out[offset+i]!=((input[phase+i/2U]>>((i&1U)*4U))&15U))return 2;
+            for(i=0U;i<offset;++i)if(out[i]!=165U)return 3;
+            for(i=(mysmb_io_u16)(offset+count);i<sizeof(out);++i)if(out[i]!=165U)return 4;
+        }
+    }
+    memset(out,165,sizeof(out));
+    if(mysmb_io_nibble_expand(input,out,3U) || mysmb_io_nibble_expand(input,out,258U) ||
+        mysmb_io_nibble_expand(0,out,2U) || mysmb_io_nibble_expand(input,0,2U))return 5;
+    for(i=0U;i<sizeof(out);++i)if(out[i]!=165U)return 6;
+    return 0;
+}
+
 /* Derive the contract from RGB values, independently of stored choices. */
 static int color_contract(void)
 {
@@ -86,6 +107,7 @@ int main(void)
 
     if(color_contract()!=0)return 10;
     if(palette_expansion_contract()!=0)return 11;
+    if(nibble_contract()!=0)return 12;
 
     /* Check the actual game boundary, not only duplicated IO declarations. */
     if (MYSMB_IO_VIDEO_WIDTH != MYSMB_SCREEN_WIDTH ||

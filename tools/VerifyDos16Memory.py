@@ -10,8 +10,15 @@ sys.dont_write_bytecode = True
 root = Path(sys.argv[1]).resolve()
 build = (Path(__file__).resolve().parents[1] / "build").resolve()
 assert root.is_relative_to(build)
-limit_loader = sys.argv[2:] == ["--limit-loader-allocation"]
-assert not sys.argv[2:] or limit_loader, "Unknown option"
+options = sys.argv[2:]
+limit_loader = "--limit-loader-allocation" in options
+reserve = None
+for option in options:
+    if option.startswith("--near-heap-reserve="):
+        reserve = int(option.split("=", 1)[1])
+    else:
+        assert option == "--limit-loader-allocation", "Unknown option"
+assert reserve is None or (0 <= reserve <= 65536 and reserve % 16 == 0)
 program_path = root / "mysmb-dos16.exe"
 program = program_path.read_bytes()
 assert len(program) >= 28, "Truncated MZ header"
@@ -42,21 +49,23 @@ assert stack[0] >= base and stack[2] > 0
 group_bytes = stack[1] + 1 - base
 assert group_bytes <= 65536, "DGROUP exceeds 16-bit offset range"
 assert loaded_minimum >= max(s[1] + (s[2] > 0) for s in segments), "Minimum allocation cannot hold map"
-# The original large-model startup retains a full 64 KiB data-segment arena.
-# Limit only the loader's initial reservation, never that arena or the image.
+# The original startup derives its heap end from the actual PSP allocation,
+# capped at the64KiB near address space. Keep initialized data and stack in
+# minimum; reserve only bounded optional heap space initially.
 loader_bound = (base + 65536 + 15) // 16 - image_paragraphs
 assert minimum <= loader_bound <= 65535, "Invalid full-DGROUP allocation bound"
+requested_bound = loader_bound if reserve is None else min(loader_bound, minimum + reserve // 16)
 previous_maximum = maximum
 if limit_loader:
     assert struct.unpack_from("<H", program, 18)[0] == 0, "Nonzero checksum requires separate policy"
-    assert maximum >= loader_bound, "Existing maximum cannot retain full DGROUP"
-    if maximum != loader_bound:
+    assert maximum >= requested_bound, "Existing maximum below requested allocation"
+    if maximum != requested_bound:
         limited = bytearray(program)
-        struct.pack_into("<H", limited, 12, loader_bound)
+        struct.pack_into("<H", limited, 12, requested_bound)
         assert limited[:12] == program[:12] and limited[14:] == program[14:]
         program_path.write_bytes(limited)
         program = bytes(limited)
-    maximum = loader_bound
+    maximum = requested_bound
 
 receipt = {
     "productBytes": len(program), "productSha256": hashlib.sha256(program).hexdigest(),
@@ -67,7 +76,8 @@ receipt = {
     "dosPageRoundedMinimumLoadedBytes": pages * 512 - header * 16 + minimum * 16,
     "maximumExtraParagraphs": maximum, "previousMaximumExtraParagraphs": previous_maximum,
     "fullDgroupLoaderBoundParagraphs": loader_bound,
-    "loaderBoundSatisfied": maximum == loader_bound,
+    "loaderBoundSatisfied": minimum <= maximum <= loader_bound,
+    "initialNearHeapReserveBytes": (maximum - minimum) * 16,
     "loaderLimitRequested": limit_loader,
     "maximumLoadedBytes": (image_paragraphs + maximum) * 16,
     "dosPageRoundedMaximumLoadedBytes": pages * 512 - header * 16 + maximum * 16,

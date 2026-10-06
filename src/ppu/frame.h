@@ -4,6 +4,7 @@
 #include "ppu/state.h"
 #include "io/video.h"
 #include "io/palette_pairs.h"
+#include "io/palette_expand.h"
 
 enum {
     /* Source NMI holds scroll at zero until the sprite-0 split. */
@@ -16,6 +17,8 @@ enum {
 
 #define MYSMB_PPU_CHR_DECODED_BYTES 8192U
 #define MYSMB_PPU_BACKGROUND_BYTES 63488U
+struct mysmb_ppu_frame;
+struct mysmb_ppu_frame_view;
 /* Caller-owned packed two-bit indices,four pixels per byte.
  * Each tile row uses two bytes;CHR is immutable until rebind/reset. */
 struct mysmb_ppu_frame_workspace {
@@ -31,6 +34,7 @@ struct mysmb_ppu_frame_workspace {
     unsigned long bg_tiles;
     mysmb_io_palette_expand expand;
     void *expand_context;
+    mysmb_io_nibble_expander nibble_expand;
 };
 void mysmb_ppu_frame_workspace_bind(struct mysmb_ppu_frame_workspace *workspace,
     mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded);
@@ -40,6 +44,16 @@ void mysmb_ppu_frame_workspace_bind(struct mysmb_ppu_frame_workspace *workspace,
  * A rejected host span is completed by the same portable implementation. */
 void mysmb_ppu_frame_expansion_bind(struct mysmb_ppu_frame_workspace *workspace,
     mysmb_io_palette_expand expand,void *context);
+void mysmb_ppu_frame_nibble_bind(struct mysmb_ppu_frame_workspace *workspace,
+    mysmb_io_nibble_expander expand);
+/* Slot output and normalized table reconstruct the canonical master pixels. */
+void mysmb_ppu_frame_palette(const struct mysmb_ppu_state *state,
+    mysmb_io_u8 MYSMB_IO_FAR *palette);
+void mysmb_ppu_frame_build_slots_cached(const struct mysmb_ppu_state *state,
+    struct mysmb_ppu_frame *frame,struct mysmb_ppu_frame_workspace *workspace);
+int mysmb_ppu_frame_slot_rows(const struct mysmb_ppu_frame_view *view,
+    mysmb_io_u8 MYSMB_IO_FAR *pixels,mysmb_io_u16 capacity,
+    mysmb_io_u16 first,mysmb_io_u16 rows);
 
 struct mysmb_ppu_frame {
 #ifdef MYSMB_DOS16_TARGET

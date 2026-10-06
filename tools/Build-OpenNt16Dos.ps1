@@ -6,7 +6,8 @@ param(
     [Parameter(Mandatory = $true)][string]$RuntimeDirectory,
     [Parameter(Mandatory = $true)][string]$SourceRoot,
     [string]$RomPath = '',
-    [ValidateSet('None','Safe')][string]$RenderOptimization = 'Safe'
+    [ValidateSet('None','Safe')][string]$RenderOptimization = 'Safe',
+    [ValidateRange(0,65536)][int]$NearHeapReserveBytes = 4096
 )
 
 $toolDirectory = Split-Path -Parent $Compiler
@@ -17,7 +18,7 @@ $runtimeIncludeDirectory = Join-Path (Split-Path -Parent $RuntimeDirectory) 'INC
 $pythonExecutable = (Get-Command python -ErrorAction Stop).Source
 $originalBuildPath = $env:PATH
 $safeRenderSources = @('ppu/frame.c','io/planar_frame.c','io/palette_pairs.c','io/palette_expand.c',
-    'platform/dos16/palette_expand.c','platform/dos16/planar_row.c')
+    'platform/dos16/palette_expand.c','platform/dos16/nibble_expand.c','platform/dos16/planar_row.c')
 $sources = @(
     'core/whirlpool.c',
     'core/cannon.c',
@@ -82,7 +83,7 @@ $sources = @(
     'text/scene.c',
     'app/game_io.c', 'app/game_snapshot.c', 'io/color.c', 'io/palette_pairs.c', 'io/palette_expand.c', 'io/text_glyph.c', 'io/scale.c', 'io/pacing.c', 'io/control.c', 'io/snapshot.c', 'io/snapshot_store.c', 'io/snapshot_keys.c', 'io/file/snapshot_files.c', 'platform/dos16/snapshot_replace.c', 'platform/dos16/keyboard.c', 'platform/dos16/pit_clock.c', 'platform/dos16/devices.c',
     'io/file/executable_path.c', 'platform/dos16/executable_path.c',
-    'io/planar_frame.c', 'platform/dos16/planar_row.c', 'platform/dos16/palette_expand.c', 'platform/dos16/dos16_root.c',
+    'io/planar_frame.c', 'platform/dos16/planar_row.c', 'platform/dos16/palette_expand.c', 'platform/dos16/nibble_expand.c', 'platform/dos16/dos16_root.c',
     'platform/dos16/main_dos16.c'
 )
 if (!(Test-Path -LiteralPath $runtimeLibrary) -or !(Test-Path -LiteralPath $stackObject) -or
@@ -205,9 +206,10 @@ try {
     $linkCommand = '"' + $Linker + '" /nologo /NOE /SEGMENTS:2048 @mysmb-dos16.rsp < NUL'
     & cmd.exe /d /c $linkCommand
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-    # Keep the original full DGROUP reserve without initially taking all free DOS RAM.
+    # Keep initialized DGROUP/stack and the original runtime heap bounds;
+    # optional near allocations may fail and use their existing far fallback.
     $memoryTool = Join-Path $PSScriptRoot 'VerifyDos16Memory.py'
-    & $pythonExecutable $memoryTool (Get-Location).Path --limit-loader-allocation
+    & $pythonExecutable $memoryTool (Get-Location).Path --limit-loader-allocation "--near-heap-reserve=$NearHeapReserveBytes"
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
 }

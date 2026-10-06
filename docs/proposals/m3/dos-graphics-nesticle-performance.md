@@ -419,3 +419,14 @@ in a bounded device probe. No product/EXEchange. Preserve one shared projection
 and the canonical derived API;bind both devices and invalidate physical
 palette shadows on mode/reset/restore. Actual product memory/stack/routes,
 whole-frame cost and three products remain required before adoption.
+
+## Slot views integrated with measured memory tradeoff
+
+[S8 P11](../../history/M3-T32-rendering-performance-continuation.md#s8-p11-integrate-slot-views-and-repair-initial-heap-reservation)
+adopts one shared canonical/slot compositor and both device consumers. DAC
+mode/reset lifetime tests and actual three-platform routes pass;three products
+refreshed. Full-reserve370startup regression is repaired by4KiB initial near
+reservation using original PSP-derived heap bounds and far fallbacks. DOS
+EXE+1792bytes,ordinary observed resident-1968bytes,370route unchanged. Current
+counter173.413ms versus178.747ms saves5.334ms,not20ms. Retain speed/memory joint
+gain;nominal60Hz/fivefold and global/reference/hardware gates remain open.

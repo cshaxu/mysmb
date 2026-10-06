@@ -17,6 +17,7 @@ static unsigned char video_ready;
 static struct mysmb_io_pacing pacing;
 static unsigned char opened;
 static unsigned char text_mode;
+static mysmb_io_u8 palette_shadow[MYSMB_IO_VIDEO_PALETTE_COLORS],palette_valid;
 
 static void interrupt far keyboard_interrupt(void)
 {
@@ -78,6 +79,7 @@ static int try_mode(mysmb_io_u8 text)
     union REGS registers;
     unsigned short i;
     unsigned long rgb;
+    palette_valid=0U;
     if(text) {
         registers.x.ax=0x1202U;registers.x.bx=0x30U;
         int86(0x10,&registers,&registers);
@@ -116,6 +118,20 @@ int mysmb_dos16_devices_mode(mysmb_io_u8 text)
     /* A failed BIOS setup may already have changed the physical mode. */
     video_ready=(unsigned char)try_mode(text_mode);
     return 0;
+}
+void mysmb_dos16_devices_palette(const mysmb_io_u8 MYSMB_IO_FAR *palette)
+{
+    unsigned short i;unsigned long rgb;
+    if(!video_ready || text_mode || !palette)return;
+    for(i=0U;i<MYSMB_IO_VIDEO_PALETTE_COLORS;++i){
+        if(palette_valid && palette_shadow[i]==palette[i])continue;
+        rgb=mysmb_io_color_rgb(palette[i]);outp(0x3c8,i);
+        outp(0x3c9,(unsigned char)((rgb>>18U)&63UL));
+        outp(0x3c9,(unsigned char)((rgb>>10U)&63UL));
+        outp(0x3c9,(unsigned char)((rgb>>2U)&63UL));
+        palette_shadow[i]=palette[i];
+    }
+    palette_valid=1U;
 }
 static void restore_video(void)
 {
@@ -229,6 +245,7 @@ void mysmb_dos16_devices_wait(void)
 }
 void mysmb_dos16_devices_after_load(void)
 {
+    palette_valid=0U;
     _disable();mysmb_dos16_keyboard_after_load(&keyboard);_enable();
     mysmb_io_pacing_initialize(&pacing,timer_stamp(),19886UL);
 }

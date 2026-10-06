@@ -27,6 +27,18 @@ struct mysmb_io_video_source {
         struct mysmb_io_video_band *band);
 };
 
+#define MYSMB_IO_VIDEO_PALETTE_COLORS 32U
+struct mysmb_io_palette_video_frame {
+    const mysmb_io_u8 MYSMB_IO_FAR *pixels;
+    const mysmb_io_u8 MYSMB_IO_FAR *master_colors;
+};
+/* Explicit slot-index view. Entries map slots to original master colors.
+ * Both table and rows are immutable for the complete synchronous present. */
+struct mysmb_io_palette_video_source {
+    struct mysmb_io_video_source rows;
+    const mysmb_io_u8 MYSMB_IO_FAR *master_colors;
+};
+
 /* Authored text output. Character IDs follow io/text_glyph.h;no quantizer. */
 #define MYSMB_IO_TEXT_COLUMNS 80U
 #define MYSMB_IO_TEXT_ROWS 50U

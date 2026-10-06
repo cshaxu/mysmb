@@ -9,6 +9,8 @@ static struct mysmb_game game;
 #define state game.ppu
 static struct mysmb_ppu_state before;
 static struct mysmb_ppu_frame raw,full;
+static struct mysmb_ppu_frame slots;
+static unsigned char slot_band[4096+32],slot_palette[32];
 static unsigned char chr[8192],decode0[8192],decode1[8192],band[4096+32],plane[1280+32];
 static unsigned char bg0[63520],bg1[63520];
 static struct mysmb_io_palette_pairs pair0,pair1;
@@ -127,6 +129,10 @@ int main(void)
         mysmb_ppu_frame_workspace_bind(&w0,decode0);mysmb_ppu_frame_workspace_bind(&w1,decode1);mysmb_ppu_frame_expansion_bind(&w0,expand_portable,&pair0);mysmb_ppu_frame_expansion_bind(&w1,expand_portable,c%17U?&pair1:0);mysmb_ppu_frame_background_bind(&w0,bg0,63488U);mysmb_ppu_frame_background_bind(&w1,bg1,63488U);
         mysmb_ppu_frame_reference(&game,&raw);mysmb_ppu_frame_build_cached(&state,&full,&w0);
         if(memcmp(raw.pixels,full.pixels,61440U)){printf("raw/cache mismatch %u\n",c);return 1;}
+        mysmb_ppu_frame_palette(&state,slot_palette);
+        mysmb_ppu_frame_build_slots_cached(&state,&slots,&w0);
+        for(i=0U;i<61440U;++i)
+            if(slots.pixels[i]>=32U || slot_palette[slots.pixels[i]]!=raw.pixels[i])return 41;
         /* Three source-strip sizes, cached and uncached. */
         for(j=0;j<6;++j){
             if(j<3)mysmb_ppu_frame_begin(&state,&w1,&cached_view);
@@ -137,6 +143,13 @@ int main(void)
                 if(!(j<3?mysmb_ppu_frame_rows(&cached_view,band+16,4096U,first,rows):mysmb_ppu_frame_build_rows_cached(&state,band+16,4096U,first,rows,0)))return 2;
                 if(!guards(band,(unsigned short)(rows*256U)))return 3;
                 if(memcmp(band+16,raw.pixels+first*256U,rows*256U)){printf("strip mismatch %u %u %u\n",c,j,first);return 4;}
+                if(j<3U){
+                    memset(slot_band,165,sizeof(slot_band));
+                    if(!mysmb_ppu_frame_slot_rows(&cached_view,slot_band+16U,4096U,first,rows) ||
+                        !guards(slot_band,(unsigned short)(rows*256U)))return 42;
+                    for(i=0U;i<rows*256U;++i)
+                        if(slot_band[16U+i]>=32U || slot_palette[slot_band[16U+i]]!=raw.pixels[first*256U+i])return 43;
+                }
                 compared+=(unsigned long)rows*256UL;
             }
         }

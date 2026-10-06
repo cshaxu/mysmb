@@ -2251,3 +2251,77 @@ ownership. Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes,
 4260/4261feasible controls(raw4342,infeasible81). S8/goal remain active,
 nominal60Hz/fivefold and global memory/stack/reference/hardware remain open;
 the full M2 certificate remains incomplete.
+
+## S8 P11 integrate slot views and repair initial heap reservation
+
+One shared compositor now provides canonical and explicitly typed slot views.
+Canonical APIs preserve master bytes;slot indices and the normalized32-entry
+table reconstruct them exactly. IO nibble expansion is always available;DOS
+binds the same contract to its segment decoder. Both products use slot output.
+Windows converts the neutral table to RGB;DOS owns only DAC state and refreshes
+it before pixels. Mode attempts and restore invalidate the physical palette
+shadow. No game/PPU writer changes;132core execution identities retained.
+Actual source/build delta+274/-44lines,test+35lines. No extra image cache.
+Product slot paths retire the530-byte pair allocation;legacy canonical paths
+and hooks stay supported. Windows static table530bytes becomes32bytes.
+
+Current build initially failed the previously accepted370KiB route despite
+EXE increase being acceptable to the owner. The enlarged primary block retained
+unused near reserve and prevented mandatory far-store allocation.4KiB initial
+optional near reserve repairs that failure. This changes only MZ e_maxalloc;
+initialized data/stack remain covered by e_minalloc. Current original startup
+bytes derive remaining data paragraphs from the PSP allocated end,cap at4096
+paragraphs and set heap end from that actual size before original resizing.
+The64KiB near address space and original /AL/runtime remain;physical initial
+reservation is no longer unconditionally full. Optional near CHR allocation
+fails safely into far storage. Global heap/firmware domains remain unproved.
+
+4KiB and9KiB variants both pass controlled370KiB startup/play/restore/save/
+Tab/Escape.9KiB enables near CHR again but its bounded partial counter result
+is effectively unchanged;select the lower4KiB reservation. Initial full-reserve
+370/371failures and larger449/385diagnostics are not counted as acceptance;
+final448/384/370routes use the selected exact binary and original settings.
+
+Native15tests per width plus updated IO checks pass.512state canonical/slot
+comparisons per width and another512wide-palette cases preserve pixels/guards/
+source state. Original-DOS current4128decoder cases pass. Exact device-object
+test reads32DAC entries correctly on initial output,unchanged-palette return
+from text,one dirty entry and forced reset. Actual Windows startup/geometry/
+Terminal,input,Tab/Escape pass per width.36owned local CFGs balance;global
+stack/IRQ/firmware remains open. No install setting or foreground automation.
+
+Final actual DOS448/384/370arena routes pass with valid10035-byte saves,
+640x400captures and zero bad chains/drops. Observed owned445568cached and
+382048fallback bytes,each1968below P9;370sample378880unchanged. These are
+bounded observations,not universal peaks/minimum free-memory guarantees.
+EXE303909(+1792),196segments,max32768,DGROUP49264(+80),stack2048unchanged.
+Logical loader328144..332240,page-rounded328352..332448;maximum bound falls
+10624bytes versus P9 while minimum rises1872/1616logical/rounded bytes.
+Initial optional near reserve4096bytes is a startup policy,not a new buffer.
+
+Current whole-frame diagnostic includes palette publication:phase187.545ms,
+PPU78.038/mapping62.089/VGA including DAC18.063ms. Counter173.413ms versus
+178.747ms,5.334ms less(about2.98%).303phase/329counter records,zero drops and
+update/submission/25-row relationships checked. The first320-record counter
+overflowed8records and is excluded from closure;the enlarged512-record probe
+suppresses no work.9KiB partial comparison is only a tier-selection diagnostic.
+No20ms whole-frame claim:prototype raster savings do not equal integrated
+game savings. Owner accepts2KiB for20ms in principle;this change is retained
+for measured speed and lower ordinary resident jointly,not as meeting20ms.
+Nominal60Hz/fivefold/equal-state reference acceptance still FAILS/unproved.
+
+Three existing owner-authorized slots refreshed:
+
+| Product | Bytes | SHA-256 |
+| --- | ---: | --- |
+| DOS16 | 303909 | 42a5c1362975ec80ced29d3603e08a682756b569f49fe590a24ee47731ea12b5 |
+| Win32 | 316942 | 77f20d042585432fb981332958266a618447ae779b7d8a9941a57da6cc26a044 |
+| Win64 | 329742 | ba5f92b9c14d2248dd0bc1a32fc717b20d7e1f95633c359904d3c4f6d39858ca |
+
+Source/object/startup/route receipts and raw probes remain below ignored
+build/m3-t32-s8/p11. Sweep covers canonical coexistence,aliases,slot range,
+nullable acceleration,unaligned/tail decode,palette resets,loader minimum,
+near/far allocation and failed startup. S8/goal stay active with final global
+memory/stack/reference/hardware gates open. Scope/expected/actual[],new0;
+historical1992/1992,local1991/1992nodes,4260/4261feasible controls
+(raw4342,infeasible81). Full M2 certificate remains incomplete.

@@ -103,6 +103,14 @@ Validation projections link only test/recorder targets;no product linkage.
 
 ## Platform component boundary
 
+ppu/frame uses one compositor for canonical and slot views. io/video explicitly
+declares32-entry slot-to-master views;io/palette_expand also owns allocation-free
+nibble expansion. Both products use slot views. DOS nibble assembly/DAC shadow
+and Windows RGB conversion remain host-owned. Mode/reset invalidation is device
+lifetime logic. The DOS loader initially reserves4KiB optional near heap beyond
+initialized data/stack;the original startup derives the actual heap end from
+the PSP allocation,capped at64KiB. Near allocation failure keeps far fallbacks.
+
 io/palette_expand owns the default cached or allocation-free span expansion
 and zero-fill path;ppu/frame always uses it when no host acceleration succeeds.
 io/planar_frame owns the portable uniform-row fill as well as exact geometry.

@@ -34,7 +34,7 @@ static struct mysmb_game g_game;
 static struct mysmb_frame g_frame;
 static struct mysmb_ppu_frame g_ppu_frame;
 static struct mysmb_ppu_frame_workspace g_ppu_workspace;
-static struct mysmb_io_palette_pairs g_palette_pairs;
+static mysmb_io_u8 g_video_palette[MYSMB_IO_VIDEO_PALETTE_COLORS];
 static mysmb_io_u8 g_chr_decoded[MYSMB_PPU_CHR_DECODED_BYTES];
 static mysmb_io_u8 g_background_slots[MYSMB_PPU_BACKGROUND_BYTES];
 static struct mysmb_io_audio_frame g_audio_frame;
@@ -157,26 +157,27 @@ static unsigned int mysmb_win32_poll_keys(void)
     return mysmb_win32_keyboard_sample(&g_keyboard);
 }
 
-static void mysmb_win32_draw_gameplay(const struct mysmb_io_video_frame *frame)
+static void mysmb_win32_draw_gameplay(const struct mysmb_io_palette_video_frame *frame)
 {
-    DWORD palette[64];
+    DWORD palette[MYSMB_IO_VIDEO_PALETTE_COLORS];
     unsigned int index;
-    for(index=0U;index<64U;++index)
-        palette[index]=(DWORD)mysmb_io_color_rgb((mysmb_io_u8)index);
+    for(index=0U;index<MYSMB_IO_VIDEO_PALETTE_COLORS;++index)
+        palette[index]=(DWORD)mysmb_io_color_rgb(frame->master_colors[index]);
     for(index=0U;index<MYSMB_SCREEN_WIDTH*MYSMB_SCREEN_HEIGHT;++index)
-        g_pixels[index]=palette[frame->pixels[index]&63U];
+        g_pixels[index]=palette[frame->pixels[index]];
 }
 static void mysmb_win32_build_frame(void)
 {
-    struct mysmb_io_video_frame video;
+    struct mysmb_io_palette_video_frame video;
 
     if(g_text_mode) {
         g_text_failed=(mysmb_io_u8)(!mysmb_text_scene_build(&g_game,&g_text_workspace,&g_text_frame) ||
             !mysmb_win32_text_console_present(&g_console,&g_text_frame));
         return;
     }
-    mysmb_ppu_frame_build_cached(&g_game.ppu,&g_ppu_frame,&g_ppu_workspace);
-    mysmb_game_io_video(&g_ppu_frame, &video);
+    mysmb_ppu_frame_palette(&g_game.ppu,g_video_palette);
+    mysmb_ppu_frame_build_slots_cached(&g_game.ppu,&g_ppu_frame,&g_ppu_workspace);
+    video.pixels=g_ppu_frame.pixels;video.master_colors=g_video_palette;
     mysmb_win32_draw_gameplay(&video);
 }
 
@@ -312,9 +313,6 @@ static int mysmb_win32_snapshot_request(HWND window)
 static void mysmb_win32_power_on(void)
 {
     mysmb_ppu_frame_workspace_bind(&g_ppu_workspace,g_chr_decoded);
-    g_palette_pairs.valid=0U;
-    mysmb_ppu_frame_expansion_bind(&g_ppu_workspace,
-        mysmb_io_palette_expand_portable,&g_palette_pairs);
     mysmb_ppu_frame_background_bind(&g_ppu_workspace,g_background_slots,
         MYSMB_PPU_BACKGROUND_BYTES);
     mysmb_game_power_on(&g_game);

@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S8 P10; palette-slot prototype selected for integrated evaluation; S8 remains active. |
+| Identifier Mode | Continuation: M3 T32 S8 P11; shared slots/device lifetimes integrated and loader regression repaired; S8 remains active. |
 | Admission And Approval | Owner-approved consecutive S5-S9 plan and automatic successor;S7 display-stage contract closed by P4;S8 sole active. |
 | Objective | Reduce current dominant rendering cost as one bounded cache/row-output chain while preserving ROM/PPU semantics and memory balance. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
 | Reference Baseline | Published S8 P9products and bound current phase/counter probes;original tools/2048stack/640x400/two platform components. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | Initially zero product lines;contained alternative palette-slot output plus32-byte per-frame master-color table,estimate60-140candidate/80-160test lines. Original master-color API remains unchanged in products. Same shared projection,opacity/priority/scroll/clip semantics;no game/PPU writer change. Test slot+table reconstruction against independent canonical pixels including dynamic aliases,then original-tool whole-stage cost and output-device palette lifecycle. No added cache or adopted ABI/device change before evidence;three EXEs only after product adoption. |
+| Files And ABI Surface | Shared PPU single compositor/canonical and slot views,IO nibble service/explicit palette-source contract,DOS decoder/DAC shadow/root binding,Windows RGB binding;estimate250-450product/100-180test lines.32-byte palette plus bounded descriptors,no extra image cache;production pair table530bytes retired while canonical APIs stay valid. Same opacity/priority/scroll/clip semantics;no game/PPU writer change. Original/native pixels,device mode/reset/restore palettes,actual memory/stack/whole-frame routes and three products before adoption receipt. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
 | Verification | Independent512state native raw/cache/row/palette/priority/source/guard/fallback checks;actual original-DOS exact output/compiler/stack/startup/resident/stage cost and current frame budget;three EXEs after adoption. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
@@ -25,6 +25,15 @@
 
 
 ## Current Technical Baseline
+
+- S8 P11 adopts one shared canonical/slot compositor,both devices and reset
+  palettes;132core identities,15native tests each width,slot/decoder/DAC/local
+  CFG and actual448/384/370/Windows routes pass.4KiB initial near reservation
+  repairs370startup failure,original PSP heap bounds/far fallback retained.
+  Three EXEs303909/316942/329742bytes;DOS+1792code,ordinary sampled resident
+  -1968,370unchanged,DGROUP49264/2048stack. Current counter173.413ms saves
+  5.334ms,not20ms;60Hz/fivefold/global memory-stack-reference/hardware open.
+  [Integration,tradeoff and limits](../history/M3-T32-rendering-performance-continuation.md#s8-p11-integrate-slot-views-and-repair-initial-heap-reservation).
 
 - S8 P10 selects separately named palette-slot output for integration
   evaluation:canonical reconstruction512ordinary+512wide states per native

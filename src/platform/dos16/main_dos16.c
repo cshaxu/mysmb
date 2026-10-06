@@ -30,11 +30,13 @@ static void read_input(void *context, struct mysmb_io_input *input)
     (void)context;
     mysmb_dos16_devices_input(input);
 }
-static int present_rows(void *context,const struct mysmb_io_video_source *source)
+static int present_rows(void *context,const struct mysmb_io_palette_video_source *indexed)
 {
     mysmb_io_u16 plane,first,source_first,source_rows;
     struct mysmb_io_video_band band;
+    const struct mysmb_io_video_source *source=&indexed->rows;
     (void)context;
+    mysmb_dos16_devices_palette(indexed->master_colors);
     for(first=0U;first<MYSMB_VGA_HEIGHT;first+=MYSMB_VGA_BATCH_ROWS) {
         source_first=(mysmb_io_u16)(first*3U/5U);
         source_rows=(mysmb_io_u16)((first+MYSMB_VGA_BATCH_ROWS-1U)*3U/5U-source_first+1U);
@@ -72,7 +74,7 @@ static int initialize(void)
     hooks.read_input=read_input;
     hooks.present_video=0;
     hooks.submit_audio=submit_audio;
-    if (!mysmb_dos16_root_initialize_rows(&root,&hooks,
+    if (!mysmb_dos16_root_initialize_palette_rows(&root,&hooks,
         (mysmb_io_u16)sizeof(struct text_storage),present_rows)) return 0;
     /* Graphics source occupies at most2560bytes. A5120-byte four-plane view
      * borrow its unused tail until submission;text owns the whole store later. */

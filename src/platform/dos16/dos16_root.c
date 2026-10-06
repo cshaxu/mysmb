@@ -3,6 +3,7 @@
 #ifdef MYSMB_DOS16_TARGET
 #include <malloc.h>
 #include "platform/dos16/palette_expand.h"
+#include "platform/dos16/nibble_expand.h"
 #endif
 static int initialize(struct mysmb_dos16_root *root,
     const struct mysmb_dos16_hooks *hooks,mysmb_io_u16 storage_bytes,
@@ -17,6 +18,7 @@ static int initialize(struct mysmb_dos16_root *root,
     root->ppu_pairs=0;
     root->initialized=0U;
     root->present_rows=0;root->video_storage_bytes=storage_bytes;
+    root->present_palette_rows=0;
     root->snapshot_store=0;root->reset_output=0;root->reset_context=0;
     root->text_workspace=0;root->text_frame=0;root->set_mode=0;
     root->present_text=0;root->text_mode=0U;
@@ -53,10 +55,29 @@ static int read_rows(void *context,mysmb_io_u16 first,mysmb_io_u16 rows,
     struct mysmb_io_video_band *band)
 {
     struct mysmb_dos16_root *root=(struct mysmb_dos16_root *)context;
-    if(band==0 || !mysmb_ppu_frame_rows(&root->ppu_view,
-        root->ppu_frame.pixels,root->video_storage_bytes,first,rows))return 0;
+    if(band==0)return 0;
+    if(!(root->present_palette_rows?
+        mysmb_ppu_frame_slot_rows(&root->ppu_view,root->ppu_frame.pixels,
+            root->video_storage_bytes,first,rows):
+        mysmb_ppu_frame_rows(&root->ppu_view,root->ppu_frame.pixels,
+            root->video_storage_bytes,first,rows)))return 0;
     band->pixels=root->ppu_frame.pixels;band->first=first;band->rows=rows;
     return 1;
+}
+
+static int present_palette(void *context,const struct mysmb_io_video_source *source)
+{
+    struct mysmb_dos16_root *root=(struct mysmb_dos16_root *)source->context;
+    struct mysmb_io_palette_video_source view;
+    (void)context;view.rows=*source;view.master_colors=root->video_palette;
+    return root->present_palette_rows(root->hooks.context,&view);
+}
+int mysmb_dos16_root_initialize_palette_rows(struct mysmb_dos16_root *root,
+    const struct mysmb_dos16_hooks *hooks,mysmb_io_u16 storage_bytes,
+    int (*present)(void *,const struct mysmb_io_palette_video_source *))
+{
+    if(!present || !initialize(root,hooks,storage_bytes,present_palette))return 0;
+    root->present_palette_rows=present;return 1;
 }
 
 void mysmb_dos16_root_bind_text(struct mysmb_dos16_root *root,
@@ -108,7 +129,9 @@ static void present_current(struct mysmb_dos16_root *root)
         mysmb_ppu_frame_background_bind(&root->ppu_workspace,
             (mysmb_u8 __far *)_fmalloc(MYSMB_PPU_BACKGROUND_BYTES),
             MYSMB_PPU_BACKGROUND_BYTES);
-        if(root->ppu_workspace.bg) {
+        if(root->present_palette_rows){
+            mysmb_ppu_frame_nibble_bind(&root->ppu_workspace,mysmb_dos16_nibble_expand);
+        }else if(root->ppu_workspace.bg) {
             pairs=(struct mysmb_io_palette_pairs __near *)_nmalloc(sizeof(*pairs));
             if(pairs) {
                 pairs->valid=0U;root->ppu_pairs=pairs;
@@ -119,6 +142,8 @@ static void present_current(struct mysmb_dos16_root *root)
     }
 #endif
     if(root->present_rows) {
+        if(root->present_palette_rows)
+            mysmb_ppu_frame_palette(&root->game.ppu,root->video_palette);
         mysmb_ppu_frame_begin(&root->game.ppu,&root->ppu_workspace,&root->ppu_view);
         source.context=root;source.read_rows=read_rows;
         if(!root->present_rows(root->hooks.context,&source)) {
