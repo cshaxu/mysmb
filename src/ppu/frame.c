@@ -224,18 +224,31 @@ static void mysmb_ppu_slot_row(const struct mysmb_ppu_state *s,
     if(!(s->visible_ppu_mask&2U))memset(out,colors[0],8U);
 }
 
+/* Globally invisible prefixes/suffixes have no rows to draw. Interior gaps
+ * retain the original scan;the compositor still consumes descending OAM. */
+static void mysmb_ppu_sprite_range(const struct mysmb_ppu_state *s,
+    mysmb_io_u8 MYSMB_IO_FAR *range)
+{
+    mysmb_io_u16 i;range[0]=range[1]=0U;
+    if(s->visible_ppu_mask&16U)for(i=0U;i<64U;++i)
+        if(s->visible_oam[i*4U]<239U){
+            if(range[1]==0U)range[0]=(mysmb_io_u8)i;
+            range[1]=(mysmb_io_u8)(i+1U);
+        }
+}
 void mysmb_ppu_frame_begin(const struct mysmb_ppu_state *s,
     struct mysmb_ppu_frame_workspace *w,struct mysmb_ppu_frame_view *v)
 {
     if(!v)return;
-    v->active=0U;v->state=0;v->workspace=0;
+    v->active=0U;v->state=0;v->workspace=0;v->sprite_range[0]=v->sprite_range[1]=0U;
     if(!s)return;
     mysmb_ppu_prepare_chr(s,w);mysmb_ppu_slot_prepare(s,w);
+    mysmb_ppu_sprite_range(s,v->sprite_range);
     v->state=s;v->workspace=w;v->active=1U;
 }
 void mysmb_ppu_frame_end(struct mysmb_ppu_frame_view *v)
 {
-    if(v){v->active=0U;v->state=0;v->workspace=0;}
+    if(v){v->active=0U;v->state=0;v->workspace=0;v->sprite_range[0]=v->sprite_range[1]=0U;}
 }
 
 /* Decode once per visible tile row,not once per pixel. The partial first and
@@ -342,7 +355,8 @@ static void mysmb_ppu_frame_build_internal(const struct mysmb_ppu_state *state,
     mysmb_io_u8 MYSMB_PPU_FRAME_FAR *pixels,mysmb_io_u16 first,mysmb_io_u16 rows,
     const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded_chr,
     const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *bg,
-    struct mysmb_ppu_frame_workspace *workspace,mysmb_io_u8 slots)
+    struct mysmb_ppu_frame_workspace *workspace,mysmb_io_u8 slots,
+    mysmb_io_u16 sprite_first,mysmb_io_u16 sprite_last)
 {
     mysmb_io_u8 colors[16];
     mysmb_io_u16 x;
@@ -386,12 +400,12 @@ static void mysmb_ppu_frame_build_internal(const struct mysmb_ppu_state *state,
         else memset(pixels+(y-first)*MYSMB_PPU_FRAME_WIDTH,colors[0U],MYSMB_PPU_FRAME_WIDTH);
     }
     if ((state->visible_ppu_mask & 0x10U) == 0U) return;
-    for (sprite = 64U; sprite != 0U;) {
+    for (sprite = sprite_last; sprite != sprite_first;) {
         --sprite;
         sprite_y = (mysmb_io_u16)state->visible_oam[sprite * 4U] + 1U;
+        if (sprite_y >= first+rows || sprite_y+8U <= first) continue;
         sprite_x = state->visible_oam[sprite * 4U + 3U];
         attributes = state->visible_oam[sprite * 4U + 2U];
-        if (sprite_y >= first+rows || sprite_y+8U <= first) continue;
         for (pixel_y = 0U; pixel_y < 8U && sprite_y + pixel_y < MYSMB_PPU_FRAME_HEIGHT;
              ++pixel_y) {
             if(sprite_y+pixel_y<first || sprite_y+pixel_y>=first+rows)continue;
@@ -437,13 +451,13 @@ static void mysmb_ppu_frame_build_internal(const struct mysmb_ppu_state *state,
 void mysmb_ppu_frame_build(const struct mysmb_ppu_state *state,
     struct mysmb_ppu_frame *frame)
 {
-    mysmb_ppu_frame_build_internal(state,frame->pixels,0U,240U,0,0,0,0U);
+    mysmb_ppu_frame_build_internal(state,frame->pixels,0U,240U,0,0,0,0U,0U,64U);
 }
 void mysmb_ppu_frame_build_cached(const struct mysmb_ppu_state *state,
     struct mysmb_ppu_frame *frame,struct mysmb_ppu_frame_workspace *workspace)
 {
     mysmb_ppu_prepare_chr(state,workspace);mysmb_ppu_slot_prepare(state,workspace);
-    mysmb_ppu_frame_build_internal(state,frame->pixels,0U,240U,workspace?workspace->decoded:0,workspace?workspace->bg:0,workspace,0U);
+    mysmb_ppu_frame_build_internal(state,frame->pixels,0U,240U,workspace?workspace->decoded:0,workspace?workspace->bg:0,workspace,0U,0U,64U);
 }
 
 int mysmb_ppu_frame_build_rows_cached(const struct mysmb_ppu_state *state,
@@ -455,7 +469,7 @@ int mysmb_ppu_frame_build_rows_cached(const struct mysmb_ppu_state *state,
     if(rows==0U)return 1;
     mysmb_ppu_prepare_chr(state,workspace);mysmb_ppu_slot_prepare(state,workspace);
     mysmb_ppu_frame_build_internal(state,pixels,first,rows,
-        workspace?workspace->decoded:0,workspace?workspace->bg:0,workspace,0U);
+        workspace?workspace->decoded:0,workspace?workspace->bg:0,workspace,0U,0U,64U);
     return 1;
 }
 
@@ -465,7 +479,7 @@ int mysmb_ppu_frame_rows(const struct mysmb_ppu_frame_view *v,
 {
     if(!v || !v->active || !v->state || !pixels || first>=240U || rows>240U-first || rows>capacity/256U)return 0;
     if(rows)mysmb_ppu_frame_build_internal(v->state,pixels,first,rows,
-        v->workspace?v->workspace->decoded:0,v->workspace?v->workspace->bg:0,v->workspace,0U);
+        v->workspace?v->workspace->decoded:0,v->workspace?v->workspace->bg:0,v->workspace,0U,v->sprite_range[0],v->sprite_range[1]);
     return 1;
 }
 
@@ -474,7 +488,7 @@ void mysmb_ppu_frame_build_slots_cached(const struct mysmb_ppu_state *s,
 {
     mysmb_ppu_prepare_chr(s,w);mysmb_ppu_slot_prepare(s,w);
     mysmb_ppu_frame_build_internal(s,frame->pixels,0U,240U,
-        w?w->decoded:0,w?w->bg:0,w,1U);
+        w?w->decoded:0,w?w->bg:0,w,1U,0U,64U);
 }
 int mysmb_ppu_frame_slot_rows(const struct mysmb_ppu_frame_view *v,
     mysmb_io_u8 MYSMB_IO_FAR *pixels,mysmb_io_u16 capacity,
@@ -484,6 +498,6 @@ int mysmb_ppu_frame_slot_rows(const struct mysmb_ppu_frame_view *v,
         rows>240U-first || rows>capacity/256U)return 0;
     if(rows)mysmb_ppu_frame_build_internal(v->state,pixels,first,rows,
         v->workspace?v->workspace->decoded:0,v->workspace?v->workspace->bg:0,
-        v->workspace,1U);
+        v->workspace,1U,v->sprite_range[0],v->sprite_range[1]);
     return 1;
 }

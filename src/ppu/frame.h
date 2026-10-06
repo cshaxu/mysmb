@@ -80,6 +80,7 @@ struct mysmb_ppu_frame_view {
     const struct mysmb_ppu_state *state;
     struct mysmb_ppu_frame_workspace *workspace;
     mysmb_io_u8 active;
+    mysmb_io_u8 sprite_range[2];
 };
 void mysmb_ppu_frame_begin(const struct mysmb_ppu_state *state,
     struct mysmb_ppu_frame_workspace *workspace,struct mysmb_ppu_frame_view *view);

@@ -2196,6 +2196,56 @@ physical486qualification remain unproved. Scope/expected/actual[],new0;
 historical1992/1992,local1991/1992nodes and4260/4261feasible controls
 (raw4342,infeasible81). Full M2 certificate remains incomplete.
 
+## S8 P16 integrate shared sprite ranges and publish three products
+
+Product changes are shared ppu/frame.c/frame.h+26/-11lines;focused existing
+row test+31/-1. No core/writer/platform source change,staging/image allocation,
+helper process,toolchain/runtime or installed setting change. Prepared views
+carry two range bytes;full frames retain one ordinary scan. Descending OAM,
+interior gaps,clipping/priority/raw opacity and canonical/slot output remain.
+
+Final listing object matches product PPU execution records.132core and162
+total object records remain unchanged. Three differing objects are PPU,DOS
+root and DOS main;the latter source files are unchanged and compile against
+the altered view layout. Final ten original-DOS scenes reproduce selected
+P15 paired pixel/cost results,including uncached,dense,nonzero starts and
+interior holes. Twenty-three local CFGs balance;owned row444bytes and begin/
+full-slot106/442 exclude incoming entry/arguments,external expanders and
+global root/CRT/IRQ/firmware. This does not establish global stack safety.
+
+Fifteen native tests pass each width. New64endpoint cases compare the last
+visible row with the independent retained pixel oracle,Y238/239 boundaries,
+guards,source immutability and end/null-begin lifetime. Actual Windows
+products pass startup,DPI144/client768x720,native Terminal80x30clipping,
+two input/Tab-return cycles and Escape. Actual DOS448/384/370arenas all pass
+restore/input/Tab/text/graphics/valid10035-byte save/exit with640x400captures,
+zero damaged MCB chains and zero dropped memory observations.
+
+Three products304693/317454/330254bytes occupy existing authorized slots.
+DOS EXE and logical loader bounds+192bytes;rounded loader and ordinary
+observed resident+512. Minimum328928/rounded329376,maximum333024/rounded333472;
+DGROUP49264/stack2048,196segments/max32768 and4096initial near reserve unchanged.
+Observed peaks446592cached/383072fallback versus446080/382560;370route378880
+unchanged. There is no new image/cache allocation;view10to12fits existing
+group rounding. These are controlled observations,not a universal minimum
+or continuous/global/kernel peak certificate.
+
+Fresh counter361/phase333records have zero drops;graphics reads25bands per
+submission and every selected running update submits once. Counter graphics
+156.647100ms versus P14 166.030832 saves9.383732ms(5.651801%). Phase graphics
+170.857ms,PPU68.624 versus78.154,mapping54.736 versus54.728,VGAincludingDAC18.062,
+game9.187,snapshot10.449ms. Text counter457.500/phase460.048ms describes its
+current game-frame cohort only;no normalized text-speed conclusion follows.
+Initial analysis used P11's173.413ms as predecessor;corrected to actual P14
+before acceptance/publication. Whole-game equal-state/reference proof and
+nominal60Hz/fivefold remain unproved despite scoped improvement.
+
+No remote configured;commit locally. Scope/expected/actual[],new0;historical
+1992/1992,local1991/1992nodes and4260/4261feasible controls(raw4342,infeasible81).
+S8/goal remain active for measured rendering reduction;global memory/stack/
+reference/hardware qualification stays open. PPU68.624 and mapping54.736ms
+are still dominant;do not treat candidate adoption as playability acceptance.
+
 ## S8 P15 select two-byte sprite ranges after rejecting index lists
 
 Contained shared PPU cohort first prepares65-byte index lists for an immutable

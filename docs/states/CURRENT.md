@@ -4,15 +4,15 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S8 P15; two-byte sprite-range candidate selected; S8 remains active. |
+| Identifier Mode | Continuation: M3 T32 S8 P16; shared sprite ranges adopted and three products verified; S8 remains active. |
 | Admission And Approval | Owner-approved consecutive S5-S9 plan and automatic successor;S7 display-stage contract closed by P4;S8 sole active. |
 | Objective | Reduce current dominant rendering cost as one bounded cache/row-output chain while preserving ROM/PPU semantics and memory balance. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
-| Reference Baseline | Published S8 P14products and current phase/counter probes;original tools/2048stack/640x400/two platform components. |
+| Reference Baseline | Published S8 P16products and current phase/counter probes;original tools/2048stack/640x400/two platform components. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | Zero product lines;contained shared PPU visible OAM range and deferred metadata reads. Reject65-byte list and staged-array variants;final view adds two bytes,DOS10to12,without image allocation or staging arrays. Prepare once per immutable view;full-frame calls retain one ordinary scan. All clients share one compositor with identical descending order,clipping/opacity/priority. Actual integrated compiler/memory/stack/routes/cost and three EXEs required after adoption. |
+| Files And ABI Surface | Shared PPU frame.c/frame.h only,estimate30-60product/30-60test lines. Two-byte visible range,DOSview10to12;no image allocation or staging arrays. Prepare once per immutable view;full-frame retains one scan. Core/PPU writers/host execution unchanged. Preserve original order/clipping/opacity/priority and bind final compiler objects. Measure actual loader/resident/stack/frame costs and verify three products before publication. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
-| Verification | Native512states/125829120bytes per width pass canonical/slot/full/arbitrary rows,guards,source/lifetime and every nonzero range/single endpoint/interior gap. Ten original-tool paired scenes exact;warm band+mapping saves3.876..10.521ms including preparation,full-frame raster0.153..0.264ms.23local CFGs balanced;row bound444bytes excludes external/entry/global bodies. Product source/EXEs unchanged;integrated/global gates remain open. |
+| Verification | Final PPU object bound;132core/162object execution records unchanged,three expected layout/render owners differ. Fifteen native tests each width including64range endpoints and independent pixel oracle;ten current-object DOS scenes,23local CFGs and actual Windows/DOS448/384/370routes pass. Counter361/phase333records,zero drops,25reads per graphics submission. Current156.647ms diagnostic;three EXEs refreshed. Global memory/stack/reference/hardware gates remain open. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
 | Asset Needs | Owner-local x.xx binary and ROM plus historical athros/NESticle0.2 source as conceptual reference only; copyright-only leaked tree grants no redistribution permission. Purpose frame/cache/transfer architecture comparison; raw source/probes only below ignored build, no copying/transliteration into product, exact-version claims require binary evidence. |
 | Reporting Requirements | Candidate and measured whole-step cost, rejected variants, actual code/memory delta, source/products and total/local node counts. |
@@ -25,6 +25,16 @@
 
 
 ## Current Technical Baseline
+
+- S8 P16 adopts shared two-byte sprite ranges,+26/-11product lines;no new
+  image allocation or platform source change. Fifteen native tests each width,
+  current-object ten scenes/23local CFGs and actual Windows/DOSroutes pass.
+  Core132/162object records unchanged;PPU and two layout-dependent roots differ.
+  Three EXEs304693/317454/330254bytes. DOS+192code/logical loader,+512rounded/
+  ordinary observed resident,370unchanged,DGROUP49264/2048stack unchanged.
+  Counter156.647ms saves9.384ms;phasePPU68.624/mapping54.736ms. S8/goal remain
+  open;not nominal60Hz/fivefold/global/reference/hardware qualification.
+  [Adoption and evidence limits](../history/M3-T32-rendering-performance-continuation.md#s8-p16-integrate-shared-sprite-ranges-and-publish-three-products).
 
 - S8 P15 selects two-byte visible sprite ranges after rejecting list/staging
   regressions. Native512states/125829120bytes per width and ten original-DOS

@@ -28,6 +28,36 @@ static int expand_portable(void *context,const mysmb_io_u8 *packed,
 static unsigned long seed=19UL,compared=0UL,vga_compared=0UL;
 static unsigned char random_byte(void){seed=(seed*1664525UL+1013904223UL)&0xffffffffUL;return (unsigned char)(seed>>24);}
 static int guards(unsigned char *p,unsigned short n){unsigned short i;for(i=0;i<16;++i)if(p[i]!=0xa5 || p[16U+n+i]!=0xa5)return 0;return 1;}
+static int sprite_ranges(void)
+{
+    struct mysmb_ppu_frame_view v;
+    unsigned short i,prefix;
+    memset(&state,0,sizeof(state));memset(chr,0,sizeof(chr));
+    state.chr_data=chr;state.chr_data_size=8192U;
+    state.visible_ppu_mask=20U;state.palette[17]=46U;chr[16]=128U;
+    for(prefix=0U;prefix<64U;++prefix){
+        memset(state.visible_oam,239,256U);
+        state.visible_oam[prefix*4U]=238U;
+        state.visible_oam[prefix*4U+1U]=1U;
+        state.visible_oam[prefix*4U+2U]=0U;
+        state.visible_oam[prefix*4U+3U]=100U;
+        before=state;mysmb_ppu_frame_reference(&game,&raw);
+        mysmb_ppu_frame_begin(&state,0,&v);
+        if(v.sprite_range[0]!=prefix || v.sprite_range[1]!=prefix+1U)return 50;
+        memset(band,165,sizeof(band));
+        if(!mysmb_ppu_frame_rows(&v,band+16U,4096U,232U,8U) ||
+            memcmp(band+16U,raw.pixels+232U*256U,2048U) || !guards(band,2048U))return 51;
+        if(memcmp(&state,&before,sizeof(state)))return 52;
+        mysmb_ppu_frame_end(&v);
+        if(v.active || v.sprite_range[0] || v.sprite_range[1])return 53;
+    }
+    for(i=0U;i<64U;++i)state.visible_oam[i*4U]=239U;
+    mysmb_ppu_frame_begin(&state,0,&v);
+    if(v.sprite_range[0] || v.sprite_range[1])return 54;
+    mysmb_ppu_frame_end(&v);mysmb_ppu_frame_begin(0,0,&v);
+    if(v.active || v.sprite_range[0] || v.sprite_range[1])return 55;
+    return 0;
+}
 static int zero_alias_edges(void)
 {
     struct mysmb_ppu_frame_workspace workspace;
@@ -184,5 +214,5 @@ int main(void)
     if(mysmb_vga_frame_build_band(&view,0,0,16,band+16))return 14;
     for(i=0;i<sizeof(band);++i)if(band[i]!=0xa5)return 11;
     printf("cases=512 stripBytes=%lu planeBytes=%lu sourceImmutable=1 guards=1 invalidRejected=1 seconds=%.3f\n",compared,vga_compared,(double)(clock()-started)/CLOCKS_PER_SEC);
-    {int result=zero_alias_edges();if(result)return result;return slot_invalidation();}
+    {int result=zero_alias_edges();if(result)return result;result=sprite_ranges();if(result)return result;return slot_invalidation();}
 }

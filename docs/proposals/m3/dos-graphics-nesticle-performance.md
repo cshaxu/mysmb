@@ -492,3 +492,14 @@ Native512states per width and ten original-DOS scenes match;warm band-frame
 savings3.876..10.521ms include preparation,full-frame0.153..0.264ms.23local
 CFGs balance. No product/EXEchange;actual integrated code/loader/resident/stack,
 routes and whole-frame benefit plus three products required before adoption.
+
+## Shared sprite range adoption
+
+[P16 integration](../../history/M3-T32-rendering-performance-continuation.md#s8-p16-integrate-shared-sprite-ranges-and-publish-three-products)
+adopts shared range/deferred-read logic,+26/-11product lines,no new image
+allocation/platform source change. Final object/ten DOS scenes/23local CFGs,
+fifteen native tests each width and actual Windows/DOSroutes pass;three EXEs
+refreshed. DOScode/logical loader+192bytes,ordinary observed resident+512,
+370unchanged,DGROUP49264/2048stack unchanged. Current counter156.647ms saves
+9.384ms;PPU68.624/mapping54.736ms remain dominant. Core132unchanged;global
+memory/stack/reference/hardware and nominal60Hz/fivefold gates remain open.

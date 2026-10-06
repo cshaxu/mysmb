@@ -25,6 +25,12 @@ once for all row callbacks while source/workspace remain immutable. Full-frame
 and standalone row calls still prepare independently. Cache state is derived,
 not serialized or shared with original game writers.
 
+A prepared view also records the globally visible OAM range once. It omits
+only invisible prefixes/suffixes;the shared compositor retains descending
+OAM order,interior-gap checks and original clipping/priority/opacity. Full
+frames scan once without this extra preparation. Range metadata belongs to
+the synchronous view,expires at end and is never serialized as game state.
+
 ## Product And Host Boundary
 
 PPU rejects unchanged tile/attribute rows before refreshing dependent cache
