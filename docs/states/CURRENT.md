@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S8 P3; original-compiler render-only code-generation cohort. |
+| Identifier Mode | Continuation: M3 T32 S8 P4; bounded within-presentation expansion reuse prototype. |
 | Admission And Approval | Owner-approved consecutive S5-S9 plan and automatic successor;S7 display-stage contract closed by P4;S8 sole active. |
 | Objective | Reduce current dominant rendering cost as one bounded cache/row-output chain while preserving ROM/PPU semantics and memory balance. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
 | Reference Baseline | Current S7 P3products and P4bound phase/counter probes;original tools/2048stack/640x400/two platform components. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | Zero product source lines initially;contained render-only compiler cohort under build. Compare original/Ox-On-Ow-G0 generation for shared PPU,IO pair preparation and DOS decoder using original AL/Gs ABI,then planar transfer if justified. Core flags/objects unchanged. No alias-free assumption,unsafe opt,new ISA,protected mode or allocation. Bound original-DOS output/primitive/cost/listings and actual memory before selected build-policy adoption;three EXEs after adoption. |
+| Files And ABI Surface | Initially zero product lines;contained bulk rendering cohort,estimate70-160candidate product/80-160test lines. Borrowed-tail memo rejected. Combine complete zero-index expansion and complete uniform-source-row planar fill in DOS-only helpers;zero added allocation/surface/near fields,no sampling/resolution/work loss. Primitive/pixel/source/register/stack and actual memory/frame cost precede joint adoption;three EXEs afterward. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
 | Verification | Independent512state native raw/cache/row/palette/priority/source/guard/fallback checks;actual original-DOS exact output/compiler/stack/startup/resident/stage cost and current frame budget;three EXEs after adoption. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
@@ -25,6 +25,14 @@
 
 
 ## Current Technical Baseline
+
+- S8 P4 rejects borrowed memo (mixed/dense regression),selects zero-storage
+  complete zero-span and guarded uniform-row DOS bulk cohort.5160primitive/
+  256mapping cases pass. Unguarded-combination actual diagnostic221.181ms/
+  235graphics/zero drops versus252.089;guarded actual product still requires
+  integration/cost/memory/stack/routes. No product source/EXEchange. S8active,
+  final nominal60Hz/fivefold/reference/global guarantees still unproved.
+  [Candidates and limits](../history/M3-T32-rendering-performance-continuation.md#s8-p4-reject-memo-and-select-zero-storage-bulk-cohort).
 
 - S8 P3 adopts original safe code generation for five render-only units,
   short process-local compiler PATH;core/IRQ/input/clock/root flags unchanged.

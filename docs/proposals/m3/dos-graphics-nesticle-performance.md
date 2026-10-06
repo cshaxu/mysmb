@@ -353,3 +353,13 @@ records. Process-local short PATH fixes historical optimizer driver overflow;
 no system/compiler change. Actual output/routes and measured footprint support
 adoption,while252.089ms current diagnostic still fails nominal60Hz/fivefold.
 Global stack/reference/continuous memory/physical486 gates stay open.
+
+## Selected zero-storage bulk cohort
+
+[S8 P4](../../history/M3-T32-rendering-performance-continuation.md#s8-p4-reject-memo-and-select-zero-storage-bulk-cohort)
+rejects memo after mixed/dense regressions. Select complete zero-index span
+and guarded uniform-row fills under dos16 only,no added storage or sampling.
+Original-DOS5160primitive/256mapping cases pass. Actual unguarded-combination
+diagnostic221.181ms justifies integration investigation;guarded actual product
+cost/stack/routes and three EXEs still required. No micro variant is adopted
+as a substitute for the unproved full performance target. S8 remains active.

@@ -1820,6 +1820,54 @@ third-party/source/fixture import. S8 remains active;global acceptance stays
 open. Scope/expected/actual[],new0,historical1992/1992,local1991/1992nodes and
 4260/4261feasible controls(raw4342,infeasible81);fixed M2 final work unchanged.
 
+## S8 P4 reject memo and select zero-storage bulk cohort
+
+Initially test two-entry expansion memo,536near context bytes and776borrowed
+far bytes,reset per presentation/palette. Native512-state projection/guards
+pass,but original-DOS warm cost improves7.61%uniform and regresses14.72%mixed/
+6.75%dense. Reject memo;no production ownership/storage/API change. First memo
+route path was reused sequentially by another fixture;original stdout retains
+its exact receipt/cost,not a retained binary identity claim. Future memo/zero
+routes have distinct names;selected paired/actual routes remain independent.
+
+Compare complete zero-index span verification/bulk fill in DOS decoder. Scan
+every packed byte;only allzero indices permit original palette0 word fill.
+No opacity/color assumption or sampling.5160direct original-DOS cases cover
+even0..256,arbitrary palette bytes,zero spans,first/last conflicting bytes,
+guards and rejected count/context/segment cases. Full-row equality passes.
+Exact previous decoder and same current PPU coexist by export renaming only.
+Five paired3pass candidate/previous ticks:470606/478943,497560/494660,
+1097932/1094897,250951/342267(allblank),341803/372540(sparse). Initial actual
+counter-only cohort uses249records/219graphics,238.346ms versus252.089;
+5.45%diagnostic reduction alone is not the requested systemic solution.
+
+Combine verified uniform-source-row planar fill. Boundary-word conflict is an
+early rejection only;eligible rows still scan all256bytes before masked-color
+four-plane word fill. No object inference,frame/row/palette/resolution loss,
+allocation or protected-mode/ISA switch.256mapping cases/644800bytes/guards/
+DS preservation and exact current encoder paired comparison pass. Guarded
+candidate/current3pass ticks322983/321790(mixed),199917/321789(uniformsky),
+199963/321789(high bytes),323580/321789(lastbyte conflict),237770/321789(sparse).
+The first unguarded lastbyte case regressed24%;rejected in favor of guarded
+variant with0.56%case overhead. Compiler/tool/settings stay unchanged.
+
+Actual current-game counter diagnostic replaces only the two bulk helpers,
+not core/input/timing/game state.265records/zero drops,235eligible graphics,
+median221.181ms versus252.089(12.26%lower diagnostic cost). This recorded
+actual route used the unguarded uniform candidate;guarded variant requires
+new actual-product measurement at integration. The boundary guard is not
+credited with an unmeasured full-game result. No equal-state paired/frame-rate/
+60Hz/fivefold/hardware or global-memory-stack claim. Frame update/submission
+counts and25reads per graphic submission reconcile. No work suppression.
+
+Select zero-span plus guarded uniform-row cohort for bounded next-part product
+integration,current-object/register/local-stack/memory/route/cost verification
+and three EXEs. No production source changed in P4;all three P3EXEs remain
+current. No new borrowed memo/context fields survive rejection. S8/goal active;
+S9final gates open. Local recipes/raw protected outputs remain below
+build/m3-t32-s8/p4. Scope/expected/actual[],new0,historical1992/1992,
+local1991/1992nodes,4260/4261feasible controls(raw4342,infeasible81);M2 unchanged.
+
 ## S8 P3 original-compiler safe render generation
 
 Microsoft8.00x local help identifies default disabled optimization and safe
