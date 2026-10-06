@@ -1527,3 +1527,46 @@ Scope/expected/actual[],new0,historical1992/1992,local1991/1992nodes and
 4260/4261feasible controls(raw4342,infeasible81). M2 fixed audit remains
 6/136groups,42/952facets,four final packages pending. Local recipes/receipts
 stay in ignored build/m3-t32-s6/p4;S7 in build/m3-t32-s7.
+
+## S7 P1 segment-once packing prototype
+
+Project-owned DOS-private inline assembly stays below ignored build. The
+validated neutral row helper loads DS source and ES destination once per row,
+packs the exact four80-byte plane sequences with word/byte stores,then restores
+DS/ES. Compiler preserves SI/DI/BP;BX/CX/DX/AX are transient computation
+registers. Ten argument bytes plus four return-address bytes reach a helper
+whose local scratch is2bytes and maximum own stack12bytes. Seven current
+prototype functions have balanced local CFG/returns;helper has no nested call
+or loop stack growth. This is a local compiler contract,not global stack proof.
+Source/destination remain disjoint borrowed spans;no new persistent allocation.
+Source/output segments may differ;stride1..16rows is within1280bytes. Both
+regions stay within the existing single-segment capacity contract.
+
+The source offset table and320x400mapping/masking/math remain unchanged.
+Every output byte still equals source[floor(y*3/5)*256+floor(x*4/5)]&63;
+640x400scanout remains unchanged. Segment setup moves from36LES per16->20
+group to one LDS/one LES per source row,not a new game/PPU code path. Portable
+C fallback remains selected on native builds;legacy interfaces are untouched.
+
+Original/AL/Gs compiler/link pass. Paired DOS runner reuses the current
+published mapper object's code/data/fixups,renaming five exports and one
+internal external-name reference only. Same process compares64cases/155520
+bytes with zero/repeated/end rows,all8-bit source values,guards and DS restore;
+the second run additionally checks source bytes unchanged. Three full-frame
+packing passes use699524/363243ticks and699525/363248ticks:1.92577/1.92575times.
+Default installed DOSBox configuration is unchanged;private desktops only.
+These are controlled complete-packing-stage costs,not full-game/frame cadence.
+
+Native original portable fallback checks all valid first-row and1..16row
+heights:16972800compared bytes per width,guard/invalid rejection pass. No new
+ROM or third-party code/asset import. Initial prototype setup expected five
+OMF names but found the retained sixth internal reference;all six are renamed,
+no code bytes changed. That failed setup produced no accepted/stale run.
+
+P1 selects the segment-once candidate for P2 product integration and actual
+startup/restore/Tab/input/output/exit/memory proof. S7 remains active. Product
+source and all three S6 P3 EXEs are unchanged;no artifact refresh required.
+No global stack/continuous-memory/fivefold speed/playability acceptance.
+Exact recipes,objects,listings and run identities remain below build/m3-t32-s7.
+Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and
+4260/4261feasible controls(raw4342,infeasible81). Fixed M2 final work unchanged.

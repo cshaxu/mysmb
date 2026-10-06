@@ -25,6 +25,14 @@
 
 ## Current Technical Baseline
 
+- S7 P1 selects a local DOS segment-once row-packing candidate:entire packing
+  stage1.92575-1.92577times in two controlled pairs,zero new resident storage,
+  helper local2/own maximum12bytes;seven balanced prototype CFGs. DOS64cases/
+  155520bytes/register/guards/source tests and16972800native bytes per width
+  pass. Product code/three S6 P3EXEs unchanged;P2integration still required.
+  No whole-game/fivefold/global-stack acceptance.
+  [Prototype and limits](../history/M3-T32-rendering-performance-continuation.md#s7-p1-segment-once-packing-prototype).
+
 - S6 P4 closes the compact-cache stage with exact current-object cost and
   local compiler stack evidence:17PPUfunctions balanced;row chain+caller
   arguments482bytes in both versions,external bodies excluded. Final linked

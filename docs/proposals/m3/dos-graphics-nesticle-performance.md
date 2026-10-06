@@ -301,3 +301,12 @@ storage. Estimate80-180candidate product and80-160test/harness lines. First
 prototype segment-once packing,verify exact full/band output and ABI/stack,
 measure whole-stage cost before product adoption. S8/S9 named integration and
 final checks remain planned/open;no fivefold or global-stack acceptance claim.
+
+## S7 selected packing candidate
+
+[S7 P1](../../history/M3-T32-rendering-performance-continuation.md#s7-p1-segment-once-packing-prototype)
+passes original-DOS pixel/register/guard tests and native fallback matrices.
+Controlled entire plane-packing stage is1.926times faster with zero new
+persistent storage;helper own stack12bytes. Select for product integration,
+not acceptance of overall game speed. P2 must bind current product listings,
+refresh all three EXEs and verify actual game/snapshot/presenter/memory routes.
