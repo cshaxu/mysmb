@@ -241,6 +241,7 @@ static void object(const struct mysmb_game *g,
     long x0,y0,x1,y1,x,y;
     unsigned short cell,width,height,source_x,source_y,n;
     long dx,dy;
+    unsigned short center_x,center_y,margin;
     unsigned char c,color,ink;
     x0=first_cell(left,80L,256L);y0=first_cell(top,50L,240L);
     x1=first_cell(right,80L,256L);y1=first_cell(bottom,50L,240L);
@@ -256,16 +257,24 @@ static void object(const struct mysmb_game *g,
         c=mysmb_io_color_text16(g->ppu.palette[palette*4U+3U]);
         if(c!=color)ink=c;
     }
-    for(y=y0;y<y1;++y)for(x=x0;x<x1;++x) {
+    /* Visible centers fit in 16 bits. Keep signed origin differences long
+     * until their nonnegative, short-origin domain has been established. */
+    for(y=y0;y<y1;++y){
+      if(y<0L || y>=50L)continue;
+      center_y=(unsigned short)(((unsigned short)y*240U+120U)/50U);
+      if(g->ppu.visible_sprite0_split!=0U && center_y<32U)continue;
+      dy=(long)center_y-top;if(dy<0L)continue;
+      source_y=(unsigned short)(miny+(unsigned short)dy/16U);if(source_y>=15U)continue;
+      margin=inset(k,(unsigned short)(y-y0),width,height);
+      for(x=x0;x<x1;++x) {
         if(x<0L || x>=80L || y<0L || y>=50L)continue;
-        if(g->ppu.visible_sprite0_split!=0U && (y*240L+120L)/50L<32L)continue;
-        if((g->ppu.visible_ppu_mask&2U)==0U && (x*256L+128L)/80L<8L)continue;
+        center_x=(unsigned short)(((unsigned short)x*256U+128U)/80U);
+        if((g->ppu.visible_ppu_mask&2U)==0U && center_x<8U)continue;
         /* Only members of this connected component own cells. Bounds alone
          * would fill L-shaped pipe gaps or a hollow tree/castle silhouette. */
-        dx=(x*256L+128L)/80L-left;dy=(y*240L+120L)/50L-top;
+        dx=(long)center_x-left;
         if(dx<0L || dy<0L)continue;
-        source_x=(unsigned short)(minx+dx/16L);
-        source_y=(unsigned short)(miny+dy/16L);
+        source_x=(unsigned short)(minx+(unsigned short)dx/16U);
         if(source_x>=32U || source_y>=15U)continue;
         n=(unsigned short)(source_y*32U+source_x);
         if(w->visited[n]!=2U || family(w->kinds[n])!=k || w->palettes[n]!=palette)continue;
@@ -273,10 +282,10 @@ static void object(const struct mysmb_game *g,
         if((k==COIN || k==ROPE || k==FLAG || k==HORIZONTAL_ROPE ||
             k==CHAIN || k==PULLEY || k==PLANT || k==AXE ||
             k==TREE_TRUNK || k==FENCE) && c==' ')continue;
-        if((unsigned short)(x-x0)<inset(k,(unsigned short)(y-y0),width,height) ||
+        if((unsigned short)(x-x0)<margin ||
             (unsigned short)(width-1U-(x-x0))<
-                inset(k,(unsigned short)(y-y0),width,height))continue;
-        cell=(unsigned short)(y*80L+x);
+                margin)continue;
+        cell=(unsigned short)((unsigned short)y*80U+(unsigned short)x);
         w->opaque[cell/8U]|=(unsigned char)(1U<<(cell%8U));
         frame->cells[cell].character=c;
         if(k==PLANT) {
@@ -300,6 +309,7 @@ static void object(const struct mysmb_game *g,
             frame->cells[cell].foreground=ink;
             frame->cells[cell].background=color;
         }
+      }
     }
 }
 

@@ -61,7 +61,7 @@ when product code changes; they are not release or whole-ROM proof.
    tested startup budgets separately. Unsupported global/physical claims stay
    pending, not passed. Physical486SX qualification stays M4.
 
-S1 alone is admitted for execution. S2/S3 are planned, S4 explicitly receives
+S1 is closed; S2 is the sole active executor. S3 is planned, S4 explicitly receives
 backlog. Automatic next-S admission requires scoped closure and fresh packet.
 Each S starts with components/scope/size, ends with actual changes, candidate
 dispositions and total/local counters. Product-code P builds/tests/publishes
@@ -102,3 +102,71 @@ Reproducible contained inputs:build/m3-t31-s6/prepare-object-math.py,
 object-row/background.c,object-row-summary.json,text-phase-summary.json,
 text-views-summary.json and both-width background-matrix logs. Final logs and
 admission evidence go under build/m3-t32-s1. Existing three products unchanged.
+
+## S1 P2 closure: bounded authored object row math
+
+Adopt selected row math only in src/text/background_scene.c,+19/-9lines.
+Private centers use unsigned16-bit multiplication/division after x0..79/y0..49
+guards:maximum center numerators20352/11880; signed short origins retain long
+differences before nonnegative checks and narrow divisions. Maximum nonnegative
+dx/dy33022/33005 fit unsigned16. Original first_cell negative rounding remains.
+Hoist ycenter,source row and pure inset once per row;component membership,
+palette,opacity masks,glyphs,ownership and writes stay unchanged. No public ABI,
+heap,workspace,cache or persistent storage growth. Local object64versus58bytes;
+background-build50unchanged. Do not shrink2048stack or infer a global bound.
+
+Current source tokens equal the selected prototype except comments/whitespace.
+Fresh complete background comparisons396each native width pass; all14focused
+tests each width pass, including text/background/captions/actors,snapshot,
+pixel/plane,performance,purity andself-test. Both actual stripped Windows
+products pass144DPI768x720startup,three native80x30text entries,two graphic
+returns andEscape. Packaging preserves all runtime section bytes/RVAs.
+Retain source-identical DOS977235-byte route and72030-byte colored/monochrome
+water/castle/dense view comparisons. Original diagnostic whole-text saving
+16.6194%is scoped seeded cost,not measured product FPS or configured playability.
+
+Original toolchain actual DOS product301561bytes,-144. DGROUP49072/headroom16464,
+stack2048,max-extra3079unchanged;logical loader minimum325680/max342128bytes,
+page-rounded same values. No dynamic heap in loader estimate. Actual370KiB
+route passesload,input,Tab,text/graphics,save,restore,Escape:2033samples,no invalid
+or dropped MCBrecords,observed378672bytes(-144from preceding same-budget case).
+SaveCRC/resource binding valid,frame7548versus seed7465. Captured text view has
+HUD,cloud/terrain/player and color output; three640x400captures are not exhaustive
+visual proof.369KiB stillEXECsucceeds and returns1cleanly,seed save unchanged.
+Sampled peak and tested startup budgets are not universal/continuous maxima.
+DOSBox settings hash remains unchanged,normalSDL/private desktop,no foreground UI.
+
+Three source-bound products published to existing owner-authorized slots:
+- mysmb16.exe:301561bytes;3e9585b9fe568f2a3e269c1500a5b2b70104793fe463e7ac61b5981b87f15656.
+- mysmb32.exe:311310bytes;391f6679dd9c3d4020d5c41073d55f0e3205ab35c2c66a3b6956f90edcc2630e.
+- mysmb64.exe:324110bytes;1221205990c3d99fe2dda210d8343ad647c0d2169875ea6916f0bcbe7bf8ce80.
+Contained recipes/results below build/m3-t32-s1:Build-Product/Build-Native,
+strip-products,verify-current-native,run-product-resident,verify-resident,
+source binding,memory receipt,native tests andactual Windows routes. Existing
+owner/runtime material only,no new import or redistribution authorization.
+
+Similar-issue sweep covers all private object callers/signed origins/rounding,
+split/left masks,component membership,inset side effects(pure),glyph omissions,
+palette animation andwater/castle/monochrome. No changes to core orplatform.
+S1scope/expected/actual[],new0,custody unchanged,historical1992/1992,local1991/1992
+nodes,4260/4261controls(raw4342,infeasible81). S1closes within its scoped output/
+product/memory contract. Required T32 cadence/global stack/kernel peak acceptance
+remains incomplete in S4(MEM-S4-01..05);not inferred from S1passing.
+
+## S2 admission: dominant shared PPU background loop
+
+S2sole active;receive T32planned graphics cost scope. Owner src/ppu/frame.c,
+frame_build_internal -> background_row -> identical indexed output before
+unchanged sprite composition. Estimate60-180candidate product lines,no new
+full framebuffer/persistent cache/heap by default. Start with generated original
+compiler instruction attribution and a bounded comparison cohort,especially
+cached quad/perpixel far reads and row-invariant tile/address operations.
+Preserve nametable mirroring,scroll/split,left masks,palette/raw opacity,sprites,
+CHR cache allocation failure/raw paths,all bands/rows andreadonly PPU state.
+Candidate timing alone is insufficient:independent512case native reference both
+widths plus original DOSordinary/populated/far/raw outputs,cost andstack/memory
+gate adoption. Product changes rebuild/publish three EXEs;prototype P does not.
+Scope/expected/actual[],new0,counters unchanged;no game/ROMcontrol custody.
+No emulator settings,helper process or toolchain change. S4receiving backlog
+stays inactive;full goal/T32acceptance remains open. Node/documentation/diff
+gates and semantic review precede S1commit/S2execution.

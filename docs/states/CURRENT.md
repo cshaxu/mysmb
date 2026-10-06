@@ -1,40 +1,47 @@
 # Project Status
 
-## M3 T32 S1 Packet
+## M3 T32 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | New: M3 T32 S1 P1; selected text object-coordinate optimization. |
-| Admission And Approval | Owner closes T31 and admits next performance T; coordinator accepts transfers, S1 sole active. |
-| Objective | Integrate selected row-invariant bounded text math with identical cells/receipts and source-bound performance/memory evidence. |
-| Non-goals | No game/PPU semantics, resource/template changes, lost ticks/rows/colors, helper process, DOSBox settings, toolchain replacement or unproved stack shrink. |
-| Reference Baseline | T31 S6 P2 source/products; selected P3 prototype is not adopted. |
-| Candidate Proposal | [T32 fixed S plan and acceptance](../history/M3-T32-rendering-performance-continuation.md). |
-| Files And ABI Surface | src/text/background_scene.c private object math; estimate40-80 lines, no public ABI, heap/cache/workspace growth; current listed locals64versus58. |
+| Identifier Mode | Continuation: M3 T32 S2 P1; dominant shared PPU background cost. |
+| Admission And Approval | Approved T32 plan; S1 closed, S2 sole active; S4 receiving backlog only. |
+| Objective | Optimize dominant background compositor using generated original compiler evidence and bounded exact-output candidate comparisons. |
+| Non-goals | No game/PPU-visible semantics, lost rows/ticks/frames/colors, helper process, DOSBox settings, toolchain change or unproved stack shrink. |
+| Reference Baseline | T32 S1 source-bound products and retained S1/S6 exact receipts; no graphics changes in S1. |
+| Candidate Proposal | [T32 S2 scope and acceptance](../history/M3-T32-rendering-performance-continuation.md#s2-admission-dominant-shared-ppu-background-loop). |
+| Files And ABI Surface | src/ppu/frame.c frame_build_internal/background_row; estimate60-180 candidate lines, no new heap/cache/full framebuffer by default; original near/far contract. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
-| Verification | Source/domain diff, 396 native builder comparisons each width, original DOS exact outputs/views/listing; focused tests, actual memory/mixed-mode route, three EXEs for product changes. |
+| Verification | Original listing/cost, independent512case native indexed output/guards both widths, original DOS ordinary/populated/far/raw fallback; stack/memory and three products on adoption. |
 | Expected Markers | scope/expected/actual[],new0,baseline/max1992/1992;local1991/1992nodes,4260/4261controls,no custody transfer. |
-| Asset Needs | Existing owner-local ROM/runtime research/build binding only, local restricted derivatives/probes below build; no new import/distribution. |
-| Reporting Requirements | Report exact output, product time/memory and actual source/artifact changes plus total/local counters; never prototype FPS as acceptance. |
-| Stop Conditions | Output/state divergence, unsafe coordinate narrowing, growth preventing startup, source binding gap or invalid probe/ownership. |
-| Exit Criteria | Selected implementation passes scoped output, builds, actual routes and memory gates with three products; otherwise repair/reject and document disposition. |
-| Original Owner Request | Close current T, admit next T and continue performance optimization. |
-| Similar-Issue Sweep | Signed origins, first-cell rounding, bounded centers/divisions, split/left masks, inset/membership, palette animation, water/castle/monochrome scenes and readonly state. |
+| Asset Needs | Existing owner-local ROM/runtime research/build bindings only; protected derivatives/probes remain below build, no new import/distribution. |
+| Reporting Requirements | Candidate disposition, actual source/product delta, scoped cost and resident/stack limits plus total/local counters; no prototype FPS as playability. |
+| Stop Conditions | Output/state divergence, stale binding/lifetime, memory growth preventing startup, unsafe narrowing/ownership or invalid probe. |
+| Exit Criteria | Bounded cohort dispositions and useful selected implementation pass exact-output/build/route/memory gates with three products; repair/reject divergences within S. |
+| Original Owner Request | Continue performance and memory optimization while preserving original ROM/PPU semantics. |
+| Similar-Issue Sweep | Near/far cached quad and raw CHR paths, tile/attribute boundaries, mirroring/scroll/split/masks, palette aliases, blank/full/clipped bands andsprite priority. |
 
 ## Current Technical Baseline
 
-- T31 closed by owner-directed transfer, not verification success. T32 S1 is
+- T32 S1 closed:shared text row math+19/-9,396current background comparisons
+  and14tests per native width pass; actual Windowsstartup/Tab/exit pass. DOS
+  product301561(-144),native311310/324110bytes;DGROUP49072/stack2048unchanged.
+  Loader bounds325680/342128bytes;actual370route passes,sampled378672(-144),
+  369clean init refusal retained. No universal/continuous peak or FPS certificate.
+  Diagnostic text16.6194%shorter applies to source-identical seeded route only.
+  [S1 source-bound closure](../history/M3-T32-rendering-performance-continuation.md#s1-p2-closure-bounded-authored-object-row-math).
+- T31 closed by owner-directed transfer, not verification success. T32 S2 is
   active; S4 receives all five MEM-S4 gates as backlog only. Actual DOS cadence,
   global stack and continuous/kernel memory remain unproved.
-- Current three T31 S6 P2 products: DOS301705, x86311310, x64324110bytes.
+- Historical T31 S6 P2 products: DOS301705, x86311310, x64324110bytes.
   Private original-ABI PPU scratch+10/-3, DOS-176bytes; no heap/DGROUP/stack
   increase. DGROUP49072, stack2048, page-rounded loader326192/342640bytes.
   Actual370KiB full route passes,369cleanly refuses initialization; observed
   peak378816bytes is not a global maximum or universal minimum.
 - T31 final text prototype:816.46ms diagnostic step, object/flood549.85ms;
   selected row math16.6194%shorter whole text,diagnostic owned-144bytes.
-  Native396cases per width and DOS977235+72030bytes exact; no product adoption
-  yet. Larger recognition caches rejected for weak benefit/memory growth.
+  Native396cases per width and DOS977235+72030bytes exact; adopted by S1
+  under the scoped closure above. Larger recognition caches rejected for weak benefit/memory growth.
 - Graphics diagnostic712.58ms:PPU457.53ms(64.21%),mapping197.58ms(27.73%).
   Configured playability fails; unchanged DOSBox/settings/original tools.
   Physical25MHz486SX qualification remains M4.
