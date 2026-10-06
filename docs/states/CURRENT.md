@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S4 P1; final finite integrated memory/cadence register. |
+| Identifier Mode | Continuation: M3 T32 S4 P2; final finite integrated memory/cadence register. |
 | Admission And Approval | Approved T32 integration; S3local color accepted and strict startup gate explicitly received, S4 sole active. |
 | Objective | Reconcile final source/products with MEM-S4-01..05, actual cadence/input/memory and existing WIN-T19-STARTUP dependency, without overclaiming partial proof. |
 | Non-goals | No ROM/PPU semantics, lost ticks/frames/rows/colors, helper process, DOSBox settings, toolchain change, unsupported stack shrink or silent resumption of suspended T19. |
@@ -23,6 +23,15 @@
 
 ## Current Technical Baseline
 
+- T32 S4 P1:current diagnostic graphics648.2154/text453.2544ms(-9.0324/
+  -44.4201%vsT31 S6),154records0drops;configured cadence FAILS. GraphicsPPU
+  393.2317ms,mapping197.5818ms;text assembly366.3590ms. No settings/frame loss.
+- Final160units:156all execution records unchanged,four known changed owners.
+ 31current CFGs balanced,851functions retained;own-only main690/IRQ78unchanged.
+ Current SP49150/top49152/main residence14,own+startup706 EXCLUDES CRT/argv/
+ firmware/kernel. All MEM-S4-01..05OPEN;strict Windowsstartup failure retained.
+ Source/three S3products unchanged;P2follows current CRT/data andnamed joins.
+  [Final cost/binding gate table](../history/M3-T32-rendering-performance-continuation.md#s4-finite-gate-status-after-p1).
 - T32 S3adopted:shared color+13/-18,IOcontract+32,verifier+32/-3;15tests
   per width pass andoriginalDOS256-input proof retained. DOS301145(-464),
   DGROUP49152(+80),2048stack;logical325264/341632. Actual369/370full routes

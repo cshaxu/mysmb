@@ -451,3 +451,83 @@ visible bounded scope amendment andthree EXEs;unrelated suspended T19repair
 is not automatically resumed. Current source/product hashes bind the register.
 scope/expected/actual[],new0,counters unchanged;documentation/admission/closure
 checks andsemantic review precede execution,one active packet only.
+
+## S4 P1 checkpoint: final current costs and affected stack bindings
+
+Bind current S3products/source;no product repair or EXErefresh in this P.
+Regenerate low-observation current-loop main/root/device instrumentation from
+current owners;all other160-unit product objects/libraries use final S3build.
+Originalcompiler/runtime andinstalled DOSBoxsettings unchanged,normalSDLon
+private desktop.154records/zero drops,10title logs skipped only(no game/draw
+skip),81qualifying graphics and25text steps;CRC/resource-bound save valid.
+Clock1000reads cost88.1039ms,so numbers are diagnostics,not formal product FPS.
+
+| Current diagnostic | Final median | T31 S6 baseline | Reduction |
+| --- | ---: | ---: | ---: |
+| Graphics step | 648.2154ms | 712.5786ms | 9.0324% |
+| Text step | 453.2544ms | 815.5009ms | 44.4201% |
+
+Current graphicsPPU393.2317ms(60.6637%),mapping197.5818ms(30.4809%),VGA28.8070ms;
+game9.1771ms,snapshotcache10.4494ms. Text assembly366.3590ms(80.8286%),device
+65.4527ms,game9.1864ms. Step-only rates1.543/2.206Hz;38.894/27.196times nominal
+16.67ms. Gains are genuine within fixture;configured cadence gate FAILS.
+Do not turn the improved startup memory boundary or nominal Win32speed into
+DOSplayability. Physical25MHz486SXqualification remains M4.
+
+Rebind final160compiled units against retained T31 S4software proof:156retain
+all execution records,including data/segments/publics/fixups/externs,not only
+source names. Exactly four changed owners:io/color,ppu/frame,text/background_scene,
+text/elements. Original compiler regenerates31affected function listings and
+binds their code/fixups/externs to final product objects. No functions added or
+removed;851total functions.31fresh CFGs have balanced returns/call-site depths,
+no unsupported stack effect;820unchanged function proofs retained.
+
+| Affected function | Old/current locals | New/removed call effect |
+| --- | ---: | --- |
+| io/color nearest | 42/2 | removes multiply/shift andRGBcallee |
+| io/color contrast | 18/2 | removes multiply/shift andtextRGBcallee |
+| PPU background_row | 324/328 | no new callee;private colors argument remains current near ABI |
+| text background object | 58/64 | removes longdivide/multiply/shift calls |
+| text elements build | 4/8 | adds memcpy;current CRT contribution still needs final runtime join |
+
+Own-source recomposition851functions,1744own edges/180CRTsites resolved by name;
+retained two source-ranked cycles and23indirect target bindings apply. Main
+own-only bound690unchanged,owned keyboardIRQ72+CPUentry6=78unchanged. External
+names classify edges only;old CRTaddresses/bounds are NOT a current linked-CRT
+certificate. No global stack bound inferred from these totals.
+
+Rebind current MZ/stack/startup relocation:declared stack2048,begin47104,
+top49152,stabilized SS=DGROUP/SP49150,2unused top bytes. Startup opcodes and
+five argument pushes preserved;their linked data operands shift80with neutral
+tables,main call remains identical.14main-entry residence+2top+690own=706,
+explicitly EXCLUDES CRTcallee/private helpers,pre-main/env/argv peak andpersistent
+argv,exit/hooks,BIOS/DOS/IRQnesting andkernel allocation peaks. This is not the
+old758conditional combined proof anddoes not replace it with a smaller claim.
+Initial driver incorrectly assumed CRTaddress0;actual mapped base1126and
+link-patched global offsets are checked before accepting current layout.
+
+## S4 finite gate status after P1
+
+| Gate | Accepted current or retained clauses | Still required / present failure |
+| --- | --- | --- |
+| MEM-S4-01 | current MZ/SP/main residence;retained declared argument-domain receipts | pre-main/cinit/envp/argv maximum andall admitted pathname/tail domains;final bindings |
+| MEM-S4-02 | unchanged own exit/file owners;retained normal/fatal/error receipts | current linked CRT/data/global callback lifetime andfull fatal/cleanup joins |
+| MEM-S4-03 | unchanged owned IRQ9body/targets andCPUentry78 | firmware/DOS/BIOSbodies,other IRQ/exception/critical-error nesting;physical domain stays M4 |
+| MEM-S4-04 | final369/370pass,368clean refusal;current loader/DGROUP;sampled memory/source identities | continuous allocation/kernel transients andall-phase contiguous requirements;sampled maxima are insufficient |
+| MEM-S4-05 | current851function/31changed CFG/own690proof;three products/native15tests/DOSroutes;after-ready WindowsTab/input/exit | configured DOScadence FAILS;full joined stack andstrict WIN-T19-STARTUP FAILS;T19remains owner-suspended |
+
+All five parent gates remain OPEN;P1closes concrete rebinding subclauses only.
+Next P follows affected current CRT/startup/exit joins andnamed missing memory
+conditions,not a new851function/whole-ROM audit. Material repairs require scope
+amendment/three products. No T/S/queue advancement or silently resumed T19.
+The existing queue-head resolution-matched Nesticle candidate remains unnumbered,
+unadmitted andrequires T32reconciliation. Its benchmark/cycle/mode proposals
+do not authorize settings orresolution changes in active T32.
+
+Local build/m3-t32-s4recipes/evidence:prepare-current-cost/Build-Cost/run/analyze,
+rebind-current,Build-Listings,verify-changed-listings,changed-callflow,
+join-own,current-startup-layout andtheir source/layout/cost summaries. Raw
+runtime/ROM material stays local/ignored,no new import/distribution. Scope/
+expected/actual[],new0,custody unchanged,historical1992/1992,local1991/1992nodes,
+4260/4261controls(raw4342,infeasible81). Documentation/admission/diff gates
+precede commit;S4/T32/goal remain active andunverified complete.
