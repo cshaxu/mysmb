@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T28 S6 P11; selected direct four-plane converter integration and product gates; CRT/stack/cadence gaps retained. |
+| Identifier Mode | Continuation: M3 T28 S6 P12; contained read-only PPU cost evaluation after four-plane adoption; CRT/stack/cadence gaps retained. |
 | Admission And Approval | Owner authorizes execution and the joint conventional-memory/playability contract. Owner accepts the rowwise memory/performance tradeoff and admits implementation;repeat-row/OAM tuning is deferred to TODO. S5 closed;S6 remains active. |
 | Objective | Reconcile S1-S5 memory census;verify actual minimum-free launch/runtime fit,stack/lifetimes,normal cadence/input budgets and clock sampling;dispose all six opportunities with fit/playability separate hard gates. |
 | Non-goals | No core ROM routine/state/timing changes,no emulator settings,no text artwork or VGA coordinate/mode changes,no emulator-based physical486SX/DOS-version or M2 certification. |
@@ -22,6 +22,14 @@
 | Similar-Issue Sweep | Sweep all pixel/text/snapshot/cache consumers and simultaneous lifetimes,resource/mode/restore invalidations and allocation-failure cleanup;record every hit and disposition. |
 
 ## Current Technical Baseline
+
+- S6 P11direct four-plane converter adopted:4source/testfiles,+103/-9,no heap
+  added. Both widths11tests/13host routes and three actual DOS device/fallback/
+  pressure comparisons pass. Formal448/374KiBgame/Tab/save/Esc runs sample
+  386240/382144bytes,272below P7. Mapping/submission about29.85percent shorter,
+  graphics-return route10.43percent shorter;not nominal cadence acceptance.
+  Three products refreshed;Windows hashes unchanged. S6/T28remain open.
+  [Integrated output,memory and proof limits](../history/M3-T28-dos-rendering-optimization.md#s6-p11-checkpoint-direct-four-plane-product-integration).
 
 - S6 P10three four-plane prototypes pass both widths16972800-byte mapping tests
   and actual DOS five-frame/640000-plane-byte/text/snapshot equality. Reject
@@ -85,7 +93,7 @@
   Final packages2/6 closed,material/pixels/routes/snapshot pending.
 - M3 T9/T10/T11/T12/T13/T14/T15/T16/T17/T18 are closed. Remaining M2 verification stays at the
   [queue](QUEUE.md) tail. Text presentation earns zero ROM certification credit.
-- Current local DOS16/Win32/x64 products are304547/320139/328811bytes.
+- Current local DOS16/Win32/x64 products are304275/320139/328811bytes.
   T22 refreshes all three with RAM-authoritative NMI page handoff;T21 coral,T20 titles/tree/fence and T18 timing retained.
 - T11-DOS-COLD-INPUT-P12 is reconciled as a historical incident not reproduced,
   cause unknown,no claimed repair. Historical/current unseeded input checks

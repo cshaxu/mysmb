@@ -72,3 +72,56 @@ void mysmb_vga_frame_build(const struct mysmb_io_video_frame *source,
     for(plane=0U;plane<4U;++plane)
         mysmb_vga_frame_build_rows(source,plane,0U,400U,frame->pages[plane]);
 }
+
+/* One16-byte source group supplies all four exact plane index sequences. */
+int mysmb_vga_frame_build_planes(const struct mysmb_io_video_band *source,
+    mysmb_io_u16 first,mysmb_io_u16 rows,mysmb_io_u8 MYSMB_IO_FAR *out,
+    mysmb_io_u16 capacity)
+{
+    mysmb_io_u16 row,group,p,sy,previous=240U,phase,low,high;
+    mysmb_io_u8 input[16];
+    const mysmb_io_u8 MYSMB_IO_FAR *in;
+    mysmb_io_u8 MYSMB_IO_FAR *p0,*p1,*p2,*p3;
+    if(!source || !source->pixels || !out || first>=400U || rows>MYSMB_VGA_BATCH_ROWS ||
+        rows>400U-first || rows>capacity/320U || source->first>=240U ||
+        source->rows>240U-source->first)return 0;
+    if(rows==0U)return 1;
+    low=(mysmb_io_u16)(first*3U/5U);high=(mysmb_io_u16)((first+rows-1U)*3U/5U);
+    if(low<source->first || high>=source->first+source->rows)return 0;
+    sy=low;phase=(mysmb_io_u16)(first*3U%5U);
+    for(row=0U;row<rows;++row){
+        if(sy==previous){
+            for(p=0U;p<4U;++p)memcpy(out+(p*rows+row)*80U,out+(p*rows+row-1U)*80U,80U);
+        }else{
+            in=source->pixels+(sy-source->first)*256U;
+            p0=out+row*80U;p1=out+(rows+row)*80U;
+            p2=out+(rows*2U+row)*80U;p3=out+(rows*3U+row)*80U;
+            for(group=0U;group<16U;++group){
+                memcpy(input,in,16U);in+=16U;
+                p0[0U]=(mysmb_io_u8)(input[0U]&63U);
+                p0[1U]=(mysmb_io_u8)(input[3U]&63U);
+                p0[2U]=(mysmb_io_u8)(input[6U]&63U);
+                p0[3U]=(mysmb_io_u8)(input[9U]&63U);
+                p0[4U]=(mysmb_io_u8)(input[12U]&63U);
+                p1[0U]=(mysmb_io_u8)(input[0U]&63U);
+                p1[1U]=(mysmb_io_u8)(input[4U]&63U);
+                p1[2U]=(mysmb_io_u8)(input[7U]&63U);
+                p1[3U]=(mysmb_io_u8)(input[10U]&63U);
+                p1[4U]=(mysmb_io_u8)(input[13U]&63U);
+                p2[0U]=(mysmb_io_u8)(input[1U]&63U);
+                p2[1U]=(mysmb_io_u8)(input[4U]&63U);
+                p2[2U]=(mysmb_io_u8)(input[8U]&63U);
+                p2[3U]=(mysmb_io_u8)(input[11U]&63U);
+                p2[4U]=(mysmb_io_u8)(input[14U]&63U);
+                p3[0U]=(mysmb_io_u8)(input[2U]&63U);
+                p3[1U]=(mysmb_io_u8)(input[5U]&63U);
+                p3[2U]=(mysmb_io_u8)(input[8U]&63U);
+                p3[3U]=(mysmb_io_u8)(input[12U]&63U);
+                p3[4U]=(mysmb_io_u8)(input[15U]&63U);
+                p0+=5U;p1+=5U;p2+=5U;p3+=5U;
+            }
+        }
+        previous=sy;phase+=3U;if(phase>=5U){phase-=5U;++sy;}
+    }
+    return 1;
+}

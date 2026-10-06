@@ -1800,3 +1800,87 @@ recovery stays TODO;PPU/text major costs and CRT/stack/cadence limits remain ope
 Historical1992/1992,local1991/1992nodes and4260/4261feasible controls(raw4342,
 infeasible81),scope/expected/actual[],new0,custody unchanged. No product-code or
 EXE refresh for this prototype-only P. S6/T28remain open.
+
+
+## S6 P11 checkpoint: direct four-plane product integration
+
+Adopt the P10selected converter in the neutral VGA owner. It reads one16-byte
+source group into a local16-byte array and writes the four exact plane patterns
+directly. Rows use the same coordinate formula,63mask,source-span/capacity checks
+and duplicate-row copies. Existing scalar/full-frame interfaces remain supported.
+No core,PPU-state/composition,authored artwork,snapshot schema,tick,input or source
+sound change. Device receives only pixels,plane and row offsets.
+
+DOS composition borrows a5120-byte output band at offset2560in its existing15400-
+byte exclusive text/pixel store. The compile-time fit condition covers7680bytes.
+The separate1280-byte static scratch is removed. Source and packed output never
+overlap;the four planes submit before the next source rebuild. Text owns the full
+store only while active;graphics regenerates source/output after mode/load.
+There is no new allocator,process,retained output mirror or cache. Root initializer,
+matching near/far ownership,required snapshot storage and error cleanup remain.
+
+Similar-issue sweep covers all DOS scratch consumers/initialization/shutdown,
+source/output ranges,old API consumers,partial bands,first duplicate row,column255,
+last source239,capacity overflow/invalid spans,mode/restore alias lifetimes and
+fallback/pressure. VGA source includes neutral IO only;game/resource binding stays
+in the composition root. All original logical pixels and full640x400output remain.
+Actual product/test diff4files,+103/-9,including3product files and one focused test;
+architecture authority is updated separately. No ROM-node implementation credit.
+
+Both widths pass11focused tests,including retained2048boundary/1198native scene
+checks,snapshots,purity,clock/pacing and the expanded production VGA test. It checks
+all legal first rows and1-16row sizes:16972800bytes against the old single-plane
+path and independent coordinates,guards,high-bit masking and invalid spans/
+capacity. Each width's current product passes13private-desktop host routes.
+A migrated test's stale array name is repaired before passing results;initial
+compile failures are excluded. A header comment is clarified and focused builds
+rerun;the actual Windows product hashes remain identical to the tested products.
+The unrelated default-all legacy harness debt remains outside this proof.
+
+Original OpenNT16/historical runtime builds the formal DOS product with unchanged
+flags. Final main source is recompiled/relinked after a comment clarification;
+product hash remains the same. Existing conversion/optional OLDNAMES lookup
+warnings persist. MZminimum328800(-272versus P7),DGROUP49488/headroom16048,
+stack2048,max segment32768. File304275bytes(-272);no dynamic heap or PSP/environment
+is included in the minimum MZ figure.
+
+Three production-converter DOS normal/cache-failure/near-far-pressure routes each
+match five61440-byte active frames,640000hardware VGA bytes,8000hardware text bytes,
+12000neutral text-cell bytes and10035snapshot bytes against retained S5. Mode3
+restores;observed live near/far payloads free. Cache allocated/valid1/1in normal,
+0/0in failure and pressure confirms actual raw fallback. Instrumented owned peaks
+392576/392624/648064(last includes ballast),largest minima256496/256448/1008bytes,
+far payload35996. Stack patterns72/72/70are bounded observations,not an all-route
+margin. A pressure probe's duplicated C90declarations are repaired before these
+passes;its failed build is excluded. No full-frame temporary heap hides the reuse.
+
+Formal actual products under448/374KiBcaller-free budgets both complete game,
+load,Tab/text/graphics,save and Escape. External observer takes2048samples each,
+one change record,zero bad chains/drops. Sampled owned386240/382144bytes equals
+345104primary+160environment+40976/36880auxiliary. Both are272below P7;roomy
+comparison to P5saves43984bytes. No continuous peak or all-route minimum claim.
+Reviewed captures and CRC/resource-valid10035-byte saves advance seed7465to7523
+with startup4retained. Different wall-script frame totals reflect cadence,not
+original-ROM equivalence or measured all-key latency. Configuration hash unchanged.
+
+Production-converter normal route retains the P10timing gain:about29.85percent
+shorter mapping/submission;whole title/load/graphics-return/save/reload totals
+8.93/1.85/10.43/5.28/1.85percent shorter versus P7. These are same-fixture,
+instrumented route measurements,not formal-product FPS or a physical486SXclaim.
+P10paired output/timing evidence remains applicable to the matching converter;
+P9larger PPU/text costs and the configured cadence/input deficit are unresolved.
+
+Three owner-authorized existing product files are refreshed from current builds:
+
+- mysmb16.exe:304275bytes,SHA256 546d2b5d51f49f38a2847edc1c0f556c970bfe347f1e36055cf248667dfdb8c4.
+- mysmb32.exe:320139bytes,SHA256 a1be524024fd48de068ad4b20bf175e22698a7cd993ea587bd5c442de671c835.
+- mysmb64.exe:328811bytes,SHA256 66ab9c17df3b0afb3c644ff0b6e73ad91353095fc723bbf77103211bbfe333cc.
+
+Windows bytes/hashes are unchanged after rebuild;its renderer does not select
+this DOS presenter. All new probes/resources/logs/captures stay ignored in build.
+Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
+infeasible81),scope/expected/actual[],new0,custody unchanged. S6/T28stay open for
+CRT/error-path and all-path stack bounds,remaining populated/cadence/input costs
+and integrated opportunity disposition. Extra row/OAM recovery remains TODO.
+P12first investigates the measured read-only PPU cost with contained prototypes;
+no original-game rewrite,settings changes or promised speedup.

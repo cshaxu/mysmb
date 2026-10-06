@@ -17,4 +17,9 @@ void mysmb_vga_frame_build_rows(const struct mysmb_io_video_frame *source,
 int mysmb_vga_frame_build_band(const struct mysmb_io_video_band *source,
     mysmb_io_u16 plane,mysmb_io_u16 first,mysmb_io_u16 rows,
     mysmb_io_u8 MYSMB_VGA_FAR *pixels);
+/* Packs four plane bands,each rows*80bytes. Caller supplies rows*320bytes;
+ * source/output ranges must not overlap. Consume source before its next rebuild. */
+int mysmb_vga_frame_build_planes(const struct mysmb_io_video_band *source,
+    mysmb_io_u16 first,mysmb_io_u16 rows,mysmb_io_u8 MYSMB_IO_FAR *out,
+    mysmb_io_u16 capacity);
 #endif

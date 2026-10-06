@@ -17,10 +17,10 @@ struct text_storage {
     struct mysmb_text_scene_workspace workspace;
     struct mysmb_io_text_frame frame;
 };
-typedef char text_storage_fits_band[sizeof(struct text_storage)>=2560U &&
+typedef char text_storage_fits_band[sizeof(struct text_storage)>=2560U+MYSMB_VGA_PAGE_COUNT*MYSMB_VGA_BATCH_SIZE &&
     sizeof(struct text_storage)<=MYSMB_IO_VIDEO_PIXELS?1:-1];
 static struct text_storage MYSMB_IO_FAR *text_storage;
-static mysmb_io_u8 MYSMB_IO_FAR plane_pixels[MYSMB_VGA_BATCH_SIZE];
+static mysmb_io_u8 MYSMB_IO_FAR *plane_pixels;
 
 static void read_input(void *context, struct mysmb_io_input *input)
 {
@@ -36,11 +36,11 @@ static int present_rows(void *context,const struct mysmb_io_video_source *source
         source_first=(mysmb_io_u16)(first*3U/5U);
         source_rows=(mysmb_io_u16)((first+MYSMB_VGA_BATCH_ROWS-1U)*3U/5U-source_first+1U);
         if(!source->read_rows(source->context,source_first,source_rows,&band))return 0;
-        for(plane=0U;plane<MYSMB_VGA_PAGE_COUNT;++plane) {
-            if(!mysmb_vga_frame_build_band(&band,plane,first,
-                MYSMB_VGA_BATCH_ROWS,plane_pixels))return 0;
-            mysmb_dos16_devices_present_rows(plane,first,MYSMB_VGA_BATCH_ROWS,plane_pixels);
-        }
+        if(!mysmb_vga_frame_build_planes(&band,first,MYSMB_VGA_BATCH_ROWS,
+            plane_pixels,MYSMB_VGA_PAGE_COUNT*MYSMB_VGA_BATCH_SIZE))return 0;
+        for(plane=0U;plane<MYSMB_VGA_PAGE_COUNT;++plane)
+            mysmb_dos16_devices_present_rows(plane,first,MYSMB_VGA_BATCH_ROWS,
+                plane_pixels+plane*MYSMB_VGA_BATCH_SIZE);
     }
     return 1;
 }
@@ -68,6 +68,9 @@ int main(void)
     hooks.submit_audio=submit_audio;
     if (!mysmb_dos16_root_initialize_rows(&root,&hooks,
         (mysmb_io_u16)sizeof(struct text_storage),present_rows)) return 1;
+    /* Graphics source occupies at most2560bytes. A5120-byte four-plane view
+     * borrow its unused tail until submission;text owns the whole store later. */
+    plane_pixels=root.ppu_frame.pixels+2560U;
     snapshot_store=(struct mysmb_snapshot_store *)_fmalloc(sizeof(*snapshot_store));
     if(snapshot_store==0) {mysmb_dos16_root_shutdown(&root);return 1;}
 #ifdef MYSMB_LOCAL_TITLE
@@ -97,6 +100,6 @@ int main(void)
     mysmb_dos16_devices_close();
     mysmb_dos16_root_shutdown(&root);
     _ffree(snapshot_store);
-    text_storage=0;
+    text_storage=0;plane_pixels=0;
     return 0;
 }

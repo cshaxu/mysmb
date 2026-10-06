@@ -34,7 +34,8 @@ DOS16 uses the same logical indexed pixels through a synchronous neutral row
 producer;Windows retains the full-frame interface. Shared IO owns the stable
 64-color presentation palette and generic bounded row scaling;VGA owns fixed
 direct256x240-to320x400 enlargement without borders or source-row loss,
-four32000-byte Mode X video planes,submitted from1280-byte16row scratch,
+four32000-byte Mode X video planes,submitted from a5120-byte four-plane16row
+band borrowed after the2560-byte source area in the existing15400-byte store,
 640x400 scanout,
 DAC programming and video memory. DOS devices own physical held-key decoding,
 BIOS mode lifetime and PIT sampling. Only its composition root binds local
