@@ -2699,3 +2699,76 @@ initially;no product adapter change before equivalence and size/performance
 review. Game/core/PPU/schema/Win32stdio remain unchanged. Allocation/error/private
 CRT/interrupt and cadence/input gaps are not discharged by the header bound;
 no stack shrink or deferred row/OAM activation.
+
+
+## S6 P23 checkpoint: owner-requested current DOS playability costs
+
+Owner asks whether DOS is now playable and whether direct VRAM saves more
+memory/copy cost. Prior file-provider preparation remains contained and untested;
+priority shifts to current actual-loop attribution. No product code/three P22
+EXEs change. Current platform main/root/device instrumentation is regenerated
+from latest source;all other modules come from P22libraries. Main retains P20
+startup lifetime and current four-plane converter;do not benchmark old scalar
+mapping or old PPU/text code and call it current performance.
+
+Diagnostic200far records preserve near-cache reserve.150seconds/2MiBlogs,
+unchanged installed DOSBox configuration,normal SDL/private desktop,all original
+work/input/ticks retained. Ten declared title-log omissions skip logging only.
+First100-record run loses23tail records and is not complete-route evidence;
+capacity-only repair repeats it. Final123records,zero drops,ten title-log skips,
+clock1000calls88.105ms;all selected rows have cacheNear1. Filters require loaded
+frame>=7465,after=before+1,requests0and the named presenter.60graphics/13text
+running samples have these median step costs:
+
+| Current diagnostic stage | Graphics ms | Text ms |
+| --- | --- | --- |
+| Logical game update | 9.183 | 9.181 |
+| Shared PPU pixel generation | 572.288 | 0 |
+| Full-frame enlargement/plane conversion | 249.597 | 0 |
+| Direct A000submission | 28.808 | 0 |
+| Authored text assembly | 0 | 762.520 |
+| Hardware text submission | 0 | 65.453 |
+| Snapshot/cache work | 10.449 | 10.449 |
+| Whole step | 879.420 | 849.317 |
+
+Individual component medians need not sum exactly to whole-step median. Input
+about0.142ms,audio extraction0.906ms,wait0.200ms. Step-only rates are1.137/1.177
+per second,not host refresh FPS or formal-product/physical486SXbenchmark.
+PITperiod19886(about16.67ms)is exceeded52.77/50.96times. Diagnostic clock writes
+and extra far records add overhead;they do not explain this order-of-magnitude
+deficit. The CRC-valid save and actual lifecycle exit remain operational proof,
+not playable cadence. Current configured DOS playability gate explicitly fails.
+Windows passing routes cannot substitute for DOS speed or hardware qualification.
+
+Graphics PPU65.08percent and conversion28.38percent account for about93.46percent
+of the step;direct VRAM3.28percent is small. Current adapter already selects planes
+and copies A000directly. Retain P14rejection of fused VRAM mapping(34.49percent
+slower stage/10.44percent slower route). Even removing the entire current measured
+submission cannot recover more than roughly29ms of879ms in this scenario.
+
+DOS has no128000-byte RAM output image:source band<=2560and four-plane band5120
+borrow the15400-byte exclusive text/graphics store. Text frame/workspace requires
+that store even if graphics staging disappears. No claim that another direct
+store removes15400required bytes or fixes software decoding/scaling. Game RAM,
+transaction store and immutable assets cannot simply live in VGA memory.
+
+Similar-issue sweep covers current converter/root lifetime/library bindings,
+logging-only omissions/capacity,near cache,step/frame filters,requests,presenter,
+clock overhead and stage boundaries. No source logic,PPU state/artwork,frame
+suppression,emulator tuning or raw screenshot publication. Current inputs are
+fixture-local;no final ROM credit or global FPS inference. Local scripts
+prepare-p23-cost,Build-p23-cost,run-p23cost2and analyze-p23-cost.py plus final
+p23-current-cost-summary.json remain ignored below build. File-provider draft
+p23-rawhas no compiled/behavior/size acceptance and is not a delivered adapter.
+
+P24receives measured shared graphics hotspots:contained row/nametable/attribute
+loop-invariant and near-span work in the read-only PPU compositor,plus conversion
+alternatives within existing storage. Preserve full output,scroll/split,raw opacity,
+palette aliases,cache failure and platform-neutral input;compare exact pixels/
+planes and complete costs before adoption. No game-core logic,extra framebuffer,
+resolution loss,frame skipping or silent deferred row/OAM activation. Keep the
+unfinished file-provider matrix in this S's retained work;it is not closed or
+substituted for the measured graphics priority. CRT/error/interrupt/peak evidence
+and configured cadence/input remain explicit gaps.
+Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
+infeasible81),scope/expected/actual[],new0,custody unchanged. S6/T28remain open.
