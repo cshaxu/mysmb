@@ -25,26 +25,21 @@ unsigned long mysmb_io_color_text_rgb(mysmb_io_u8 index)
 
 mysmb_io_u8 mysmb_io_color_text16(mysmb_io_u8 index)
 {
-    unsigned long rgb,text,distance,best;
-    long r,g,b;
-    mysmb_io_u8 i,choice;
-    rgb=mysmb_io_color_rgb(index); best=0xffffffffUL; choice=0U;
-    for(i=0U;i<16U;++i) {
-        text=text_palette[i];
-        r=(long)((rgb>>16U)&255UL)-(long)((text>>16U)&255UL);
-        g=(long)((rgb>>8U)&255UL)-(long)((text>>8U)&255UL);
-        b=(long)(rgb&255UL)-(long)(text&255UL);
-        distance=(unsigned long)(r*r+g*g+b*b);
-        if(distance<best) {best=distance;choice=i;}
-    }
-    return choice;
+    /* Exact nearest entries for the immutable neutral palettes above.
+     * The exhaustive IO contract checks aliases and first-entry ties. */
+    static const mysmb_io_u8 choices[64] = {
+        8U,1U,1U,1U,8U,4U,0U,0U,0U,0U,0U,0U,0U,0U,0U,0U,
+        7U,1U,9U,9U,5U,5U,4U,6U,8U,2U,2U,2U,3U,0U,0U,0U,
+        15U,9U,9U,13U,13U,13U,12U,6U,6U,10U,10U,10U,3U,8U,0U,0U,
+        15U,7U,7U,7U,15U,7U,7U,7U,7U,7U,7U,7U,7U,7U,0U,0U
+    };
+    return choices[index&63U];
 }
 
 mysmb_io_u8 mysmb_io_color_text_contrast(mysmb_io_u8 background)
 {
-    unsigned long rgb,brightness;
-    rgb=mysmb_io_color_text_rgb(background);
-    brightness=((rgb>>16U)&255UL)*299UL+((rgb>>8U)&255UL)*587UL+
-        (rgb&255UL)*114UL;
-    return brightness>=128000UL?0U:15U;
+    static const mysmb_io_u8 choices[16] = {
+        15U,15U,15U,15U,15U,15U,15U,0U,15U,15U,0U,0U,0U,0U,0U,0U
+    };
+    return choices[background&15U];
 }

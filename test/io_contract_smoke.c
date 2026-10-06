@@ -1,3 +1,4 @@
+#include "io/color.h"
 #include "io/input.h"
 #include "io/control.h"
 #include "io/video.h"
@@ -7,6 +8,35 @@
 static mysmb_io_u8 MYSMB_IO_FAR pixels[MYSMB_IO_VIDEO_PIXELS];
 static struct mysmb_io_text_frame text_frame;
 
+/* Derive the contract from RGB values, independently of stored choices. */
+static int color_contract(void)
+{
+    unsigned short index,i,choice;
+    unsigned long rgb,text,best,distance,brightness;
+    long r,g,b;
+    for(index=0U;index<256U;++index) {
+        rgb=mysmb_io_color_rgb((mysmb_io_u8)index);
+        best=0xffffffffUL;choice=0U;
+        for(i=0U;i<16U;++i) {
+            text=mysmb_io_color_text_rgb((mysmb_io_u8)i);
+            r=(long)((rgb>>16U)&255UL)-(long)((text>>16U)&255UL);
+            g=(long)((rgb>>8U)&255UL)-(long)((text>>8U)&255UL);
+            b=(long)(rgb&255UL)-(long)(text&255UL);
+            distance=(unsigned long)(r*r+g*g+b*b);
+            if(distance<best) {best=distance;choice=i;}
+        }
+        if(mysmb_io_color_text16((mysmb_io_u8)index)!=choice)return 1;
+        text=mysmb_io_color_text_rgb((mysmb_io_u8)index);
+        brightness=((text>>16U)&255UL)*299UL+((text>>8U)&255UL)*587UL+
+            (text&255UL)*114UL;
+        if(mysmb_io_color_text_contrast((mysmb_io_u8)index)!=
+            (brightness>=128000UL?0U:15U))return 2;
+        if(rgb!=mysmb_io_color_rgb((mysmb_io_u8)(index&63U)) ||
+            text!=mysmb_io_color_text_rgb((mysmb_io_u8)(index&15U)))return 3;
+    }
+    return 0;
+}
+
 int main(void)
 {
     struct mysmb_io_input input;
@@ -14,6 +44,8 @@ int main(void)
     struct mysmb_io_video_frame video;
     struct mysmb_io_audio_frame audio;
     mysmb_io_u16 offset;
+
+    if(color_contract()!=0)return 10;
 
     /* Check the actual game boundary, not only duplicated IO declarations. */
     if (MYSMB_IO_VIDEO_WIDTH != MYSMB_SCREEN_WIDTH ||

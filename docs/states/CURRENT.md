@@ -1,28 +1,39 @@
 # Project Status
 
-## M3 T32 S3 Packet
+## M3 T32 S4 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S3 P2; neutral color mapping and VGA plane cost. |
-| Admission And Approval | Approved T32 plan; S1-S2 closed, S3 sole active; S4 receiving backlog only. |
-| Objective | Reduce neutral color classification and indexed-to-plane submission cost with exact colors/planes and useful time/memory tradeoffs. |
-| Non-goals | No game/PPU/resource semantics, lost ticks/frames/rows/colors, helper process, DOSBox settings, toolchain change or unsupported stack shrink. |
-| Reference Baseline | T32 S2 source-bound three products and retained exact compositor/plane/color contracts. |
-| Candidate Proposal | [T32 S3 scope and acceptance](../history/M3-T32-rendering-performance-continuation.md#s3-admission-neutral-color-mapping-and-plane-submission). |
-| Files And ABI Surface | Selected src/io/color.c immutable80-byte choices,estimate20-50product lines plus exhaustive contract test;no new heap/public ABI,locals shrink. Both80/320VGAstaging variants rejected; no VGA product change. |
+| Identifier Mode | Continuation: M3 T32 S4 P1; final finite integrated memory/cadence register. |
+| Admission And Approval | Approved T32 integration; S3local color accepted and strict startup gate explicitly received, S4 sole active. |
+| Objective | Reconcile final source/products with MEM-S4-01..05, actual cadence/input/memory and existing WIN-T19-STARTUP dependency, without overclaiming partial proof. |
+| Non-goals | No ROM/PPU semantics, lost ticks/frames/rows/colors, helper process, DOSBox settings, toolchain change, unsupported stack shrink or silent resumption of suspended T19. |
+| Reference Baseline | T32 S3 source-bound three products, accepted scoped S1-S3/S4 predecessor receipts; strict Windowsstartup remains failed. |
+| Candidate Proposal | [T32 S4 finite register and admission](../history/M3-T32-rendering-performance-continuation.md#s4-admission-final-integrated-finite-memory-and-cadence-register). |
+| Files And ABI Surface | Initial0-200harness lines below build;source-bound listings/layout/current-loop diagnostics and affected CRT/near/far/IRQ joins;product repairs need explicit amendment/three EXEs. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
-| Verification | Exhaustive byte-color/contrast and independent plane/scaling/guards both widths; original DOSbytes/cost/listing, memory/actual routes and three products on adoption. |
+| Verification | Current source/products, actual originalDOSbudget/startup/runtime/error/restore routes, stack/CRT/firmware/kernel bounds andcadence/input;strict host startup failure remains visible. |
 | Expected Markers | scope/expected/actual[],new0,baseline/max1992/1992;local1991/1992nodes,4260/4261controls,no custody transfer. |
-| Asset Needs | Existing owner-local build/oracle bindings only;new constants derive solely from project-owned neutral palette math,not ROM. Restricted diagnostics remain below build. |
-| Reporting Requirements | Candidate disposition, actual source/product/time/memory delta and stack limits plus total/local counters; no diagnostic FPS as acceptance. |
-| Stop Conditions | Color/tie/scaling/plane divergence, invalid near/far lifetime, startup/stack regression, source-binding gap or invalid probe. |
-| Exit Criteria | Bounded cohort dispositions and useful selected implementation passes exact-output/build/actual-route/memory gates with three products;repair/reject differences within S. |
-| Original Owner Request | Continue performance and memory optimization while preserving original ROM/PPU semantics and balancing DOS resident memory with playability. |
-| Similar-Issue Sweep | All byte indices/ties/contrast, source/output bounds and disjoint lifetime, plane masks/repeated rows/band boundaries, near/far ABI and existing three-target callers. |
+| Asset Needs | Existing restricted local owner/runtime build/oracle bindings only,no new import/distribution;raw artifacts andprobes below build. |
+| Reporting Requirements | Exact status of each five-clause gate, time/input/memory andsource/product identities plus total/local counts;late host readiness is not passing strict startup. |
+| Stop Conditions | Divergence,unbounded/unsafe probe,invalid lifetime/ownership,source binding gap or unsupported global bound. |
+| Exit Criteria | All required finite gates proved;no successful verification closure while open. Owner-directed explicit transfer may close administratively only. |
+| Original Owner Request | Test, repair andverify memory/performance toward actual playability andlowest practical DOSmemory,without weakening original logic or proof. |
+| Similar-Issue Sweep | Final changed owner/layout/locals,near/far/CRT/startup/exit/hooks,IRQ/BIOS/DOSkernel paths,graphics/text/mixed-mode/input andexisting T19host readiness condition. |
 
 ## Current Technical Baseline
 
+- T32 S3adopted:shared color+13/-18,IOcontract+32,verifier+32/-3;15tests
+  per width pass andoriginalDOS256-input proof retained. DOS301145(-464),
+  DGROUP49152(+80),2048stack;logical325264/341632. Actual369/370full routes
+  pass,368clean init refusal.370sampled378432(-288),primary-544/auxiliary+256;
+  369sampled377856. Scoped text diagnostic32.5%saving,not actual FPS.
+- Strict Windowsstartup fails old/new under current480x839work area/RDP context.
+  Correct geometry448x420atDPI144;after10.23/10.21seconds,both new products
+  passTab/input/exit withnative31x30viewport. Late readiness is not repaired
+  startup;MEM-S4-05/WIN-T19-STARTUP records suspended T19dependency. S3closed
+  by explicit integration handoff;T32/goal not verified complete.
+  [S3 acceptance/handoff](../history/M3-T32-rendering-performance-continuation.md#s3-p2-color-acceptance-and-s4-integration-handoff).
 - T32 S3 P1:lookup-only selected,all256inputs/four color functions exact on
   x86/x64 andoriginalDOS16. Whole seeded text step32.4856%shorter,diagnostic
   owned-544;80constant bytes need actual DGROUP/loader check. Both plane staging
@@ -50,8 +61,8 @@
   369clean init refusal retained. No universal/continuous peak or FPS certificate.
   Diagnostic text16.6194%shorter applies to source-identical seeded route only.
   [S1 source-bound closure](../history/M3-T32-rendering-performance-continuation.md#s1-p2-closure-bounded-authored-object-row-math).
-- T31 closed by owner-directed transfer, not verification success. T32 S3 is
-  active; S4 receives all five MEM-S4 gates as backlog only. Actual DOS cadence,
+- T31 closed by owner-directed transfer, not verification success. T32 S4 is
+  active and executes the five MEM-S4 gates and named host dependency. Actual DOS cadence,
   global stack and continuous/kernel memory remain unproved.
 - Historical T31 S6 P2 products: DOS301705, x86311310, x64324110bytes.
   Private original-ABI PPU scratch+10/-3, DOS-176bytes; no heap/DGROUP/stack

@@ -61,7 +61,7 @@ when product code changes; they are not release or whole-ROM proof.
    tested startup budgets separately. Unsupported global/physical claims stay
    pending, not passed. Physical486SX qualification stays M4.
 
-S1-S2 are closed; S3 is the sole active executor. S4 explicitly receives
+S1-S3 are closed; S3 pending host-startup acceptance is explicitly received by S4 below. S4 is the sole active integration executor and receives
 backlog. Automatic next-S admission requires scoped closure and fresh packet.
 Each S starts with components/scope/size, ends with actual changes, candidate
 dispositions and total/local counters. Product-code P builds/tests/publishes
@@ -368,3 +368,86 @@ backlog. No game/ROM/PPUsemantics,credit or custody changes:scope/expected/
 actual[],new0,historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,
 infeasible81). No gameplay FPS/global-memory/stack certificate. Documentation,
 admission/diff gates precede commit;no S/T/queue advancement.
+
+## S3 P2 color acceptance and S4 integration handoff
+
+Adopt lookup only in src/io/color.c,+13/-18lines,80constant neutral bytes.
+Public RGBvalues/functions and byte/alias/tie/contrast semantics unchanged.
+No platform macro,game/PPU/resource logic,heap,mutable cache or API changes.
+Nearest/contrast locals42/18->2/2under original /ALcompiler. Existing property
+test io_contract_smoke adds32lines:compute nearest RGB andbrightness from the
+neutral palette for all256inputs,including aliases andlowest-index ties.
+Product tokens equal native/DOSexhaustively verified prototype except comments.
+Seeded whole text32.4856%shorter and977235matched output bytes remain scoped
+diagnostics,not actual gameplay FPS. VGAstaging is rejected;no VGAproduct edits.
+
+Both native builds pass15focused tests,including new exhaustive IOcontract.
+Original DOS301145bytes(-464),DGROUP49152(+80)/headroom16384,stack2048unchanged.
+Logical loader325264/341632(-464/-544),page-rounded325680/342048;max-extra3074
+maintains full-DGROUPbound. Actual370and369KiBroutes passinput,Tab,text/graphics,
+save,restore,Escape;both valid CRC/resource-bound saves frame7563versus seed7465.
+Samples1858/1859,zero invalid/dropped MCBrecords.370observed378432(-288against
+S2):primary341904(-544)but auxiliary36368(+256),so do NOT call observed total
+saving544.369observed377856;368loads but returns1cleanly before play,seed save
+unchanged. Tested positive boundary improves370->369within this fixture,not a
+universal minimum. No continuous/kernel/global-stack certificate or settings change.
+
+Windows actual host validation discovers two separate conditions. Current
+physical work area480x839,DPI144cannot fit requested768x720;old andnew products
+both correctly clamp to448x420by retained16:15geometry. Fix verifier only,
+tools/Verify-Win32OwnedConsole.py,+32/-3:expected DPIrequest bounded by actual
+work/margins andwait for initial show. Keep strict1500msmessage responsiveness.
+No product window/system setting edits or forced test geometry.
+
+Strict initial message gate STILL FAILS for current x86/x64 andprior S2x64.
+Window is shown before unchanged audio_open andmessage loop. Separate bounded
+readiness observation records10.229/10.206seconds for current x86/x64;after
+readiness,both pass three native31x30clipped text entries,two graphic returns,
+input andEscape. These later routes are valid scoped operational evidence;
+longer observation is NOT a repaired/passing startup responsiveness gate.
+Attach this recurrence to the already retained
+[suspended T19audio task](../proposals/m3/bounded-windows-audio-startup.md).
+No new global audit/finding universe or silent resumption of T19.
+
+Publish existing owner-authorized products with explicit startup limitation:
+- mysmb16.exe:301145bytes;b9624e4bdc7d192e0b9e19b1a36ddd6b941a0e28470d1b0069b63d6e290d1851.
+- mysmb32.exe:311310bytes;b2598401c1a9f164517dc62ee9ea6cfe8a2697af566fedb4c9c569ea601102bd.
+- mysmb64.exe:324110bytes;6ce56e66b7385bba015aacadd2d9e08ac9fcf65933ba09b3272dd9044d5aa149.
+Stripping preserves runtime sections/RVAs. Local recipes/logs under
+build/m3-t32-s3:integrate/prepare-product,Build-Product/Build-Native,original
+color check,strip,actual resident/CRC/source bindings,old/new startup observations
+and corrected work-area verifier. No raw resource/code import or distribution
+permission beyond established local bindings and three authorized slots.
+
+Similar-issue sweep covers all color-byte inputs,aliases,ties,brightness,
+readonly palettes/dynamic callers andunchanged RGBtables;new tables' near-data
+cost andcaller/CRT stack reductions. Host sweep separates work-area clamp from
+startup readiness by prior/current products,not by discarding failing checks.
+
+Coordinator accepts S3's pending strict Windowsstartup condition into approved
+S4final integration as MEM-S4-05/WIN-T19-STARTUP. Local color/output/build/DOS
+memory acceptance is complete;S3 closes by this explicit integration handoff,
+NOT fully healthy host-startup acceptance. T19 remains owner-suspended andin
+the queue;S4records this dependency andmay not silently repair/resume it.
+S4sole active,all five MEM-S4clauses remain required/open,including newest
+data/layout/local joins andfinal actual cadence. T32/goal remain active.
+scope/expected/actual[],new0,historical1992/1992,local1991/1992nodes,
+4260/4261controls(raw4342,infeasible81),no node custody change. Gates precede commit.
+
+## S4 admission: final integrated finite memory and cadence register
+
+S4now sole executor of approved integration scope. Required IDs remain
+MEM-S4-01startup/environment/argument domains;02fatal/exit/hook lifetimes;
+03firmware/interrupt joins;04continuous/kernel/contiguous memory;05final
+source-bound cadence/stack/input,including explicit existing WIN-T19-STARTUP
+host dependency. No successful T32verification closure with unexplained gates.
+Retain accepted scoped source/CRT/error/arena/IRQ9receipts andupdate only affected
+S1-S3bindings/locals/layout. No census restart,source universe growth or credit.
+Estimate0-200harness lines initially;original2048stack,tools/settings andshared
+ROM/PPUsemantics remain. Measure current low-observation graphics/text costs,
+reported input/time andactual budget/error/restore paths;separate diagnostics
+from actual products andphysical486SX M4qualification. Needed repairs require
+visible bounded scope amendment andthree EXEs;unrelated suspended T19repair
+is not automatically resumed. Current source/product hashes bind the register.
+scope/expected/actual[],new0,counters unchanged;documentation/admission/closure
+checks andsemantic review precede execution,one active packet only.

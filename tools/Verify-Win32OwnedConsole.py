@@ -19,11 +19,38 @@ u.IsWindowVisible.argtypes = [w.HWND]
 u.GetWindowLongW.argtypes = [w.HWND,c.c_int]
 u.GetParent.argtypes = [w.HWND]
 u.GetParent.restype = w.HWND
+u.MonitorFromWindow.argtypes = [w.HWND,w.DWORD]
+u.MonitorFromWindow.restype = w.HANDLE
 k.AttachConsole.argtypes = [w.DWORD]
 k.GetProcessId.argtypes = [w.HANDLE]
 k.GetConsoleWindow.restype = w.HWND
 k.CreateFileW.argtypes = [w.LPCWSTR,w.DWORD,w.DWORD,c.c_void_p,w.DWORD,w.DWORD,w.HANDLE]
 k.CreateFileW.restype = w.HANDLE
+
+class Monitor(c.Structure):
+    _fields_ = [("size",w.DWORD),("screen",w.RECT),("work",w.RECT),("flags",w.DWORD)]
+
+u.GetMonitorInfoW.argtypes = [w.HANDLE,c.POINTER(Monitor)]
+
+def initial_units(hwnd,dpi):
+    """Honor the DPI request within the documented 16:15 work-area limit."""
+    monitor=Monitor();monitor.size=c.sizeof(monitor)
+    host.require(u.GetMonitorInfoW(u.MonitorFromWindow(hwnd,2),c.byref(monitor)),"Window monitor")
+    margins=w.RECT();style=u.GetWindowLongW(hwnd,-16)&0xffffffff
+    ex=u.GetWindowLongW(hwnd,-20)&0xffffffff
+    adjust=getattr(u,"AdjustWindowRectExForDpi",None)
+    if adjust:
+        adjust.argtypes=[c.POINTER(w.RECT),w.DWORD,w.BOOL,w.DWORD,w.UINT]
+        host.require(adjust(c.byref(margins),style,False,ex,dpi),"DPI window margins")
+    else:
+        u.AdjustWindowRectEx.argtypes=[c.POINTER(w.RECT),w.DWORD,w.BOOL,w.DWORD]
+        host.require(u.AdjustWindowRectEx(c.byref(margins),style,False,ex),"Window margins")
+    width=monitor.work.right-monitor.work.left
+    height=monitor.work.bottom-monitor.work.top
+    fit=max(1,min((width-margins.right+margins.left)//16,
+                  (height-margins.bottom+margins.top)//15))
+    wanted=(32*dpi+48)//96
+    return min(wanted,fit),[width,height],[wanted*16,wanted*15]
 
 class Coord(c.Structure):
     _fields_ = [("x",w.SHORT),("y",w.SHORT)]
@@ -73,10 +100,12 @@ def main():
             False,0x10,None,str(output),c.byref(info),c.byref(process)),"Owned product")
         k.CloseHandle(process.thread)
         root=wait_for(lambda:next((x for x in host.windows(desktop) if x[1]==process.pid and x[2]=="MySMBWindow"),None),"Product root",12)
-        hwnd=root[0];rect=w.RECT();u.GetClientRect(hwnd,c.byref(rect))
-        dpi=u.GetDpiForWindow(hwnd);units=(32*dpi+48)//96
+        hwnd=root[0];rect=w.RECT()
+        wait_for(lambda:bool(u.IsWindowVisible(hwnd)),"Product initial show",12)
+        host.require(u.GetClientRect(hwnd,c.byref(rect)),"Initial client rectangle")
+        dpi=u.GetDpiForWindow(hwnd);units,work,wanted=initial_units(hwnd,dpi)
         host.require((rect.right,rect.bottom)==(units*16,units*15),"DPI-scaled initial client")
-        rows.append(dict(route="startup",dpi=dpi,client=[rect.right,rect.bottom]))
+        rows.append(dict(route="startup",dpi=dpi,client=[rect.right,rect.bottom],workArea=work,requestedClient=wanted))
         def message(kind,key=0):
             result=c.c_size_t()
             host.require(u.SendMessageTimeoutW(hwnd,kind,key,0,2,1500,c.byref(result)),"Root message responsiveness")
