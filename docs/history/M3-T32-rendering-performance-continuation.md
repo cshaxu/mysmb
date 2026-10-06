@@ -2195,3 +2195,59 @@ S8/goal remain active:nominal60Hz/fivefold,global memory/stack/reference and
 physical486qualification remain unproved. Scope/expected/actual[],new0;
 historical1992/1992,local1991/1992nodes and4260/4261feasible controls
 (raw4342,infeasible81). Full M2 certificate remains incomplete.
+
+## S8 P10 palette-slot output prototype and device cost
+
+Prototype emits background/sprite palette-slot indices0..31 plus a32-byte
+master-color table. It changes only the read-only projection representation,
+not game/PPU writes,priority,raw opacity,scroll,split or clipping. Products
+retain the canonical master-color API. Slot functions are separately named
+below ignored build/m3-t32-s8/p10;no product source or EXE change.
+
+Reconstruction normalizes background aliases4/8/12to0 and uses the original
+palette entries. Each native width passes512independent states and another
+512with full8-bit palette values,188743680strip/65536000plane bytes per run,
+source immutability,guards and invalid requests. Original-DOS4128unaligned
+decoder cases cover even lengths0..256,zero/nonzero nibbles and output guards.
+Five full-band scenes reconstruct exactly against current P9 and raw pixels.
+20local listing CFGs balance;global stack/IRQ/firmware remains unproved.
+
+Same-process original-tool full-PPU timing excludes reconstruction/device
+mapping explicitly;the current P9 paired object is pinned by its execution
+identity rather than the older P8 object accidentally reused in the first run.
+That first timing is superseded as a current-baseline claim. An initial
+byte-at-a-time candidate regressed in sparse rows;the bounded word/dword
+scan/fill and two-byte decode variant removes that regression:
+
+| Scene | P9 ticks,three frames | Slot ticks,three frames | Raster cost reduction |
+| --- | ---: | ---: | ---: |
+| Uniform tiles | 423536 | 325816 | 23.072% |
+| Mixed tiles/fine scroll/split | 455187 | 363222 | 20.204% |
+| Dense behind-background sprites | 1055247 | 942266 | 10.707% |
+| Blank background | 201517 | 145596 | 27.750% |
+| Sparse background | 298313 | 271944 | 8.839% |
+
+Device-only Mode13DAC test writes the same six-bit RGB conversion as DOS,
+then reads all32entries back exactly.100full-table updates cost297007PITticks,
+2.489ms per frame;100single-entry dirty updates including32-byte comparison
+cost35298ticks,0.296ms per frame. This is a bounded standalone device cost,
+not integrated frame speed or proof of transition lifetime. Private desktop,
+normal SDL,unchanged installed DOSBox settings;final probe exits normally
+in90.38seconds. No production helper process or new research input.
+
+Select for integrated evaluation:existing63488-byte background storage stays,
+the530-byte pair cache is unnecessary for the slot path,and the palette view
+needs32bytes plus bounded descriptor fields. Actual linked/resident/stack
+deltas remain unmeasured. Win32 must map slots through the neutral table;
+DOS must invalidate its DAC shadow after any mode/reset/restore and publish
+the current table before pixels. One shared implementation must retain the
+canonical API as a derived view without duplicating ROM logic. Acceptance
+still requires both native devices,actual DOS routes and three EXEs after
+adoption. No resolved gate is inferred from this prototype.
+
+Similar-issue sweep covers raw/master palette aliasing,transparent/behind
+sprites,zero spans,unaligned/tail decode,source immutability and mode/palette
+ownership. Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes,
+4260/4261feasible controls(raw4342,infeasible81). S8/goal remain active,
+nominal60Hz/fivefold and global memory/stack/reference/hardware remain open;
+the full M2 certificate remains incomplete.

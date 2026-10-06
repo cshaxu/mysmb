@@ -407,3 +407,15 @@ operations remain under dos16. Three products and actual routes pass. DOS
 code/ordinary sampled resident+64bytes,no new buffer;Windows table530bytes.
 Current diagnostic178.747ms versus190.398ms is not nominal60Hz/fivefold proof.
 S8/S9 final performance and global memory/stack/reference gates remain open.
+
+## Palette-slot representation selected for evaluation
+
+[S8 P10](../../history/M3-T32-rendering-performance-continuation.md#s8-p10-palette-slot-output-prototype-and-device-cost)
+selects a separately named slot+32-byte palette view for integrated evaluation.
+Canonical pixel reconstruction passes512ordinary and512wide-palette states
+per native width,original-DOS4128decoder cases and five full-band scenes.
+Raster cost falls8.839-27.750%;full/one-dirty DAC updates cost2.489/0.296ms
+in a bounded device probe. No product/EXEchange. Preserve one shared projection
+and the canonical derived API;bind both devices and invalidate physical
+palette shadows on mode/reset/restore. Actual product memory/stack/routes,
+whole-frame cost and three products remain required before adoption.

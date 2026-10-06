@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S8 P9; shared-default optimization audit/integration complete; S8 remains active. |
+| Identifier Mode | Continuation: M3 T32 S8 P10; palette-slot prototype selected for integrated evaluation; S8 remains active. |
 | Admission And Approval | Owner-approved consecutive S5-S9 plan and automatic successor;S7 display-stage contract closed by P4;S8 sole active. |
 | Objective | Reduce current dominant rendering cost as one bounded cache/row-output chain while preserving ROM/PPU semantics and memory balance. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
-| Reference Baseline | Published S8 P8products and source-bound P7phase/counter probes;original tools/2048stack/640x400/two platform components. |
+| Reference Baseline | Published S8 P9products and bound current phase/counter probes;original tools/2048stack/640x400/two platform components. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | Owner extends scope to all shareable rendering optimizations:shared PPU default direct-span path,IO portable palette expansion/zero-fill/uniform-row fill,Windows service binding,DOS far-output acceleration and build lists;estimate180-260product/100-180test lines. Expansion always available without cache allocation;host callbacks are acceleration overrides. Existing neutral FAR contract retained,rejection selects shared implementation. DOS adds no persistent storage;Windows binding one530-byte pair table. Original tools/model/flags;game/PPU semantics unchanged. Independent native/current DOS pixel,far-span/guard/segment,stack,whole-stage and actual routes;refresh three EXEs. |
+| Files And ABI Surface | Initially zero product lines;contained alternative palette-slot output plus32-byte per-frame master-color table,estimate60-140candidate/80-160test lines. Original master-color API remains unchanged in products. Same shared projection,opacity/priority/scroll/clip semantics;no game/PPU writer change. Test slot+table reconstruction against independent canonical pixels including dynamic aliases,then original-tool whole-stage cost and output-device palette lifecycle. No added cache or adopted ABI/device change before evidence;three EXEs only after product adoption. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
 | Verification | Independent512state native raw/cache/row/palette/priority/source/guard/fallback checks;actual original-DOS exact output/compiler/stack/startup/resident/stage cost and current frame budget;three EXEs after adoption. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
@@ -25,6 +25,16 @@
 
 
 ## Current Technical Baseline
+
+- S8 P10 selects separately named palette-slot output for integration
+  evaluation:canonical reconstruction512ordinary+512wide states per native
+  width,4128DOSdecoder cases and five bands exact. Raster cost-8.839..27.750%;
+  standalone full/one-dirty DAC2.489/0.296ms. Existing background cache retained,
+  slot path avoids530-byte pair table and needs32-byte palette descriptor;
+  actual product delta/lifetimes/whole-frame benefit unmeasured. No product/
+  EXEchange;both-device integration and three products required. S8active,
+  final performance/global memory-stack-reference/hardware gates open.
+  [Representation evidence and limits](../history/M3-T32-rendering-performance-continuation.md#s8-p10-palette-slot-output-prototype-and-device-cost).
 
 - S8 P9 closes two shareable gaps after eight rendering/three host-group
   ownership checks:mandatory shared palette/zero-span expansion and portable
