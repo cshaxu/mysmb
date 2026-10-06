@@ -363,3 +363,13 @@ Original-DOS5160primitive/256mapping cases pass. Actual unguarded-combination
 diagnostic221.181ms justifies integration investigation;guarded actual product
 cost/stack/routes and three EXEs still required. No micro variant is adopted
 as a substitute for the unproved full performance target. S8 remains active.
+
+## Sprite-row cohort disposition
+
+[S8 P6](../../history/M3-T32-rendering-performance-continuation.md#s8-p6-reject-sprite-row-candidate-after-corrected-paired-measurement)
+rejects row decode/palette/opacity adoption:paired current-P5 PPU comparison
+finds5.031%less cost only for dense sprites and0.346-0.688%regressions in
+four other scenes. Both native512state manifests and original-DOS outputs
+pass;no product source or EXE change. Earlier PREVIOUS fixture label compares
+palette expanders,not PPU versions,and is explicitly excluded as speed proof.
+S8 retains measured PPU/background and mapping scope;S9 final gates stay open.

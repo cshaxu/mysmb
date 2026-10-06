@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S8 P5; integrate zero-storage guarded bulk-rendering cohort. |
+| Identifier Mode | Continuation: M3 T32 S8 P6; sprite-row candidate measured and rejected; S8 remains active. |
 | Admission And Approval | Owner-approved consecutive S5-S9 plan and automatic successor;S7 display-stage contract closed by P4;S8 sole active. |
 | Objective | Reduce current dominant rendering cost as one bounded cache/row-output chain while preserving ROM/PPU semantics and memory balance. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
 | Reference Baseline | Current S7 P3products and P4bound phase/counter probes;original tools/2048stack/640x400/two platform components. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | Adopt verified zero-span/guarded-uniform fills in dos16/palette_expand.c and dos16/planar_row.c only,estimate50-90product lines. No allocation/schema/ROM/PPU/source/viewport change. Verify full current product records,register/local stack,primitive/source/color/capacity and actual routes/frame budget;three EXEs refreshed afterward. |
+| Files And ABI Surface | Initially zero product lines;contained shared PPU sprite-row decode/palette/opacity prototype,estimate70-150candidate product/50-120test lines. About12row-local bytes plus bounded scalar mask/query fields;zero persistent allocation,frame/OAM order/CHR/flip/priority/clip semantics unchanged. Original/native independent pixel tests and DOS stage/code/stack budgets before adoption;three EXEs after adoption. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
 | Verification | Independent512state native raw/cache/row/palette/priority/source/guard/fallback checks;actual original-DOS exact output/compiler/stack/startup/resident/stage cost and current frame budget;three EXEs after adoption. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
@@ -25,6 +25,13 @@
 
 
 ## Current Technical Baseline
+
+- S8 P6 rejects sprite-row decode/palette/opacity candidate after corrected
+  same-process comparison with published P5 PPU:5.031%less dense-sprite cost,
+  four scene regressions0.346-0.688%. Native512states per width and original
+  DOS output comparisons pass. PREVIOUS label compares palette expanders,
+  not PPU versions. No product/EXEchange;whole-goal gates remain open.
+  [Paired evidence and disposition](../history/M3-T32-rendering-performance-continuation.md#s8-p6-reject-sprite-row-candidate-after-corrected-paired-measurement).
 
 - S8 P5 adopts50DOS-only guarded bulk helper lines,no new storage/ABI/PPU/
   game change;132core records unchanged.15tests per native width,current-object

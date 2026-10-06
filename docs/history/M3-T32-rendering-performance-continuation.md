@@ -1962,3 +1962,43 @@ new protected fixture. Local recipes/listings/current objects/run identities
 below build/m3-t32-s8/p3. S8/goal remain active;global certification unchanged.
 Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and
 4260/4261feasible controls(raw4342,infeasible81);fixed M2 final work unchanged.
+
+## S8 P6 reject sprite-row candidate after corrected paired measurement
+
+Contained shared PPU candidate decodes each sprite row once, copies its four
+palette entries after band clipping, and computes cached background opacity
+as an eight-bit row mask. Transparent rows skip pixel traversal. No persistent
+allocation or product source change; host execution stays under dos16/win32.
+
+Final native candidate passes 512 independent states per width:188743680
+strip bytes and65536000 plane bytes,source immutability,guards and invalid
+input rejection. Original8.00x DOS fixture passes5160primitive cases and
+five full-band scenes against the independent raw path and published P5 PPU.
+
+Measurement correction:the earlier PREVIOUS label switches only palette
+expansion;it is not a previous PPU comparison. Do not use that label as sprite
+optimization evidence. Corrected fixture links the exact published P5 PPU
+execution object with renamed public symbols,unchanged execution payload,
+same current helper,identical scene input and one process. Local binding,
+recipe and receipts remain under ignored build/m3-t32-s8/p6.
+
+| Scene | Published P5 ticks,three frames | Candidate ticks,three frames | Cost change |
+| --- | ---: | ---: | ---: |
+| Uniform tiles | 470582 | 472435 | +0.394% |
+| Mixed tiles/fine scroll/split | 497687 | 499409 | +0.346% |
+| Dense behind-background sprites | 1097787 | 1042546 | -5.031% |
+| Blank background | 251065 | 251939 | +0.348% |
+| Sparse background | 341348 | 343697 | +0.688% |
+
+Reject adoption:one synthetic sprite-heavy benefit with four regressions
+does not justify added complexity or establish substantial whole-frame gain.
+No product code changed;three published P5 EXEs remain current. Installed
+DOSBox configuration unchanged;normal SDL runs on a private owned desktop.
+The probe ends normally in43.71seconds. No extra gameplay or foreground process.
+
+S8 remains active. Current whole-frame diagnostic221.291ms and nominal60Hz,
+fivefold comparison,global memory/stack and physical486 qualification remain
+unaccepted. Next work must address the measured shared PPU/background or
+DOS mapping stage as a bounded chain,not infer game speed from a leaf helper.
+Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes,
+4260/4261feasible controls(raw4342,infeasible81). M2 final certificate unchanged.
