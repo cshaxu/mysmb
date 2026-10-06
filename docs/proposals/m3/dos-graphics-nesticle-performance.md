@@ -503,3 +503,15 @@ refreshed. DOScode/logical loader+192bytes,ordinary observed resident+512,
 370unchanged,DGROUP49264/2048stack unchanged. Current counter156.647ms saves
 9.384ms;PPU68.624/mapping54.736ms remain dominant. Core132unchanged;global
 memory/stack/reference/hardware and nominal60Hz/fivefold gates remain open.
+
+## Contiguous plane DWORD packing candidate
+
+[P17 selection](../../history/M3-T32-rendering-performance-continuation.md#s8-p17-select-macro-unrolled-dword-plane-packing)
+compares looped/expanded/macro DWORD cohorts under DOS-only physical execution;
+shared IO geometry/plan and PPU/core stay unchanged. Final238-line macro body
+repairs the uniform long-jump regression.7079cases/20register checks,64actual
+DWORD masks/ES stores and2local CFGs pass. Four paired groups improve every
+scene;about22.7ms mixed mapping gain for2138candidate code bytes,zero new
+buffer/heap. Product code/EXEs unchanged. Actual integrated code/loader/
+resident/stack/routes/counters and three products required before adoption.
+Global/nominal60Hz/fivefold/reference/hardware qualification remains open.

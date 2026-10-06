@@ -4,15 +4,15 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S8 P16; shared sprite ranges adopted and three products verified; S8 remains active. |
+| Identifier Mode | Continuation: M3 T32 S8 P17; macro-unrolled DWORD plane candidate selected; S8 remains active. |
 | Admission And Approval | Owner-approved consecutive S5-S9 plan and automatic successor;S7 display-stage contract closed by P4;S8 sole active. |
 | Objective | Reduce current dominant rendering cost as one bounded cache/row-output chain while preserving ROM/PPU semantics and memory balance. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
 | Reference Baseline | Published S8 P16products and current phase/counter probes;original tools/2048stack/640x400/two platform components. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | Shared PPU frame.c/frame.h only,estimate30-60product/30-60test lines. Two-byte visible range,DOSview10to12;no image allocation or staging arrays. Prepare once per immutable view;full-frame retains one scan. Core/PPU writers/host execution unchanged. Preserve original order/clipping/opacity/priority and bind final compiler objects. Measure actual loader/resident/stack/frame costs and verify three products before publication. |
+| Files And ABI Surface | Zero product lines;selected contained238-line DOS-private band encoder,shared IO plan/geometry unchanged.32-input/10-output groups,contiguous planes,bounded macro unrolling/DWORD stores,uniform early near return. No new buffer/heap/ABI;64indices,unaligned/guard/register/source contracts preserved. Candidate code2524versus386bytes,+2138before integration. Actual code/loader/resident/stack/routes/cost and three EXEs required after adoption. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
-| Verification | Final PPU object bound;132core/162object execution records unchanged,three expected layout/render owners differ. Fifteen native tests each width including64range endpoints and independent pixel oracle;ten current-object DOS scenes,23local CFGs and actual Windows/DOS448/384/370routes pass. Counter361/phase333records,zero drops,25reads per graphics submission. Current156.647ms diagnostic;three EXEs refreshed. Global memory/stack/reference/hardware gates remain open. |
+| Verification | Original-tool7079byte/guard/source/unaligned/band cases and20register checks pass. Four paired groups all faster:complete mapping0.067..22.674ms and raster+mapping0.079..22.675ms saved per frame.64actual DWORD masks/ES stores verified,2local CFGs balanced. P16 product/EXEs unchanged;integrated/global gates remain open. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
 | Asset Needs | Owner-local x.xx binary and ROM plus historical athros/NESticle0.2 source as conceptual reference only; copyright-only leaked tree grants no redistribution permission. Purpose frame/cache/transfer architecture comparison; raw source/probes only below ignored build, no copying/transliteration into product, exact-version claims require binary evidence. |
 | Reporting Requirements | Candidate and measured whole-step cost, rejected variants, actual code/memory delta, source/products and total/local node counts. |
@@ -25,6 +25,14 @@
 
 
 ## Current Technical Baseline
+
+- S8 P17 selects macro-unrolled plane DWORD packing:7079DOS cases/20register
+  checks,64actual DWORD masks/ES stores and2local CFGs pass. Four paired groups
+  improve mapping0.067..22.674ms and raster+mapping0.079..22.675ms/frame;
+  uniform regression repaired by early near return.238candidate lines,
+  code+2138before integration,no new buffer/heap. P16 source/products unchanged;
+  actual product footprint/frame/routes and global qualification pending.
+  [Selection and measured limits](../history/M3-T32-rendering-performance-continuation.md#s8-p17-select-macro-unrolled-dword-plane-packing).
 
 - S8 P16 adopts shared two-byte sprite ranges,+26/-11product lines;no new
   image allocation or platform source change. Fifteen native tests each width,

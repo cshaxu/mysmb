@@ -2196,6 +2196,58 @@ physical486qualification remain unproved. Scope/expected/actual[],new0;
 historical1992/1992,local1991/1992nodes and4260/4261feasible controls
 (raw4342,infeasible81). Full M2 certificate remains incomplete.
 
+## S8 P17 select macro-unrolled DWORD plane packing
+
+Contained DOS-private encoder consumes the unchanged shared IO row plan.
+It packs32logical input bytes into10bytes per plane,writing two DWORDs and
+one WORD instead of small scattered stores. Process each entire plane
+contiguously;bounded unrolling removes mixed-row group/pointer loops. Every
+byte retains the original&63semantics. No new buffer/heap/ABI,resolution,
+color,frame,sampling,core,PPU or shared geometry change. No product code yet.
+
+Initial looping variant passes output but delivers about11.3ms mixed mapping
+benefit with a tiny uniform regression. Expanded variant improves mixed
+mapping about22.7ms but retains the uniform long-jump cost. Final variant
+returns directly from the uniform near body,removing that regression. Inline
+assembly macros preserve exact DWORD emission while reducing generated
+1272-line expansion to238readable candidate lines,within120-300estimate.
+All candidates remain below ignored build;no unused product option is added.
+
+Final original-tool7079cases cover legal first/heights,all-byte/mixed/uniform
+source,unaligned pointers,all output guards,source immutability and invalid/
+zero-size rejection. TwentyDS/ES/BP/SP/SI/DIchecks pass. Four bounded groups
+also repeat five whole raster+mapping and isolated mapping pairs against
+exact current P16 PPU/IO/DOS objects,with equal buffers. Complete-stage costs
+include shared plan/callback work;leaf store counts are not speed evidence.
+The isolated mapping keeps constant prepared source with valid band metadata;
+it is not an equal-state whole-game comparison. PPU prepared/cache work and
+device submission are outside these paired raster+mapping times.
+
+| Scene | Raster+mapping saved per frame | Isolated mapping saved per frame |
+| --- | ---: | ---: |
+| Uniform tiles | 19.942..19.943ms | 18.154..18.162ms |
+| Mixed/fine scroll/split | 22.672..22.675ms | 22.673ms |
+| Dense sprites | 22.673..22.675ms | 22.673..22.674ms |
+| Blank background | 0.079..0.092ms | 0.067..0.087ms |
+| Sparse background | 11.206..11.222ms | 22.673..22.674ms |
+
+Selected object CODE2524bytes versus current band body386,+2138before
+integration. Actual64operand-size DWORD masks and64ES DWORD stores are
+verified in OMF execution bytes;USE16 addressing remains. Two local CFGs
+balance,including the separate C3 near body. No global stack proof follows.
+Final four private-desktop probes exit normally in49.46..51.38seconds;
+installed configuration remains unchanged. Current three P16 EXE hashes are
+unchanged. No refresh required for prototype-only work.
+
+Select final macro/uniform-return candidate for product evaluation. Owner
+accepts approximately2KiB for measured20ms;this isolated stage supports a
+2138-byte/approximately22.7ms mixed-case trade,not an actual whole-product
+footprint/FPS guarantee. Integration must measure actual code/loader/resident,
+stack and full-frame routes,counters,and publish all three products. Scope/
+expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261
+feasible controls(raw4342,infeasible81). S8/goal and nominal60Hz/fivefold/
+global memory-stack/reference/hardware qualification remain open.
+
 ## S8 P16 integrate shared sprite ranges and publish three products
 
 Product changes are shared ppu/frame.c/frame.h+26/-11lines;focused existing
