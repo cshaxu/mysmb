@@ -162,6 +162,10 @@ try {
     $startupSource = Join-Path $SourceRoot 'platform/dos16/process_startup.c'
     & $Compiler /nologo /AL /Gs /c /Fomysmb-startup.obj /I $runtimeIncludeDirectory $startupSource
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+    # C vectors are omitted; physical DOS environment and cinit are retained.
+    $consumerTool = Join-Path $PSScriptRoot 'VerifyDos16StartupConsumers.py'
+    & python $consumerTool @objects 'mysmb-startup.obj'
+    if ($LASTEXITCODE -ne 0) { throw 'DOS CRT vector consumer review required.' }
     $members = @($objects | Where-Object { $_ -ne $entryObject })
     $libraries = @()
     for ($first = 0; $first -lt $members.Count; $first += 16) {

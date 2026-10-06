@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S4 P10; final finite integrated memory/cadence register. |
+| Identifier Mode | Continuation: M3 T32 S4 P11; dense environment startup repair. |
 | Admission And Approval | Owner approved S5-S9 planning, then required S4 to repair known fixable defects before closure; S4 sole active, no blanket handoff. |
 | Objective | Reconcile final source/products with MEM-S4-01..05, actual cadence/input/memory and existing WIN-T19-STARTUP dependency, without overclaiming partial proof. |
 | Non-goals | No ROM/PPU semantics, lost ticks/frames/rows/colors, helper process, DOSBox settings, toolchain change, unsupported stack shrink or silent resumption of suspended T19. |
 | Reference Baseline | T32 S3 source-bound three products, accepted scoped S1-S3/S4 predecessor receipts; strict Windowsstartup remains failed. |
 | Candidate Proposal | [T32 S4 finite register and admission](../history/M3-T32-rendering-performance-continuation.md#s4-admission-final-integrated-finite-memory-and-cadence-register). |
-| Files And ABI Surface | Current noargv product/startup layout rebind andremaining envp/cinit/exit/hooks/firmware/kernel/cadence conditions;0product lines planned before named repair,original private ALhook now adopted. Three EXEs for product repairs. |
+| Files And ABI Surface | Fix reproduced CRT envp allocation overflow in DOS process_startup; preserve cinit and PSP environment/path. Estimate 10-20 source/build lines and 70-110 build-verifier lines; guarded original AL hooks, controlled output and actual ordinary/dense environment routes; refresh three EXEs after product change. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
 | Verification | Current source/products, actual originalDOSbudget/startup/runtime/error/restore routes, stack/CRT/firmware/kernel bounds andcadence/input;strict host startup failure remains visible. |
 | Expected Markers | scope/expected/actual[],new0,baseline/max1992/1992;local1991/1992nodes,4260/4261controls,no custody transfer. |
@@ -22,6 +22,16 @@
 | Similar-Issue Sweep | Final changed owner/layout/locals,near/far/CRT/startup/exit/hooks,IRQ/BIOS/DOSkernel paths,graphics/text/mixed-mode/input andexisting T19host readiness condition. |
 
 ## Current Technical Baseline
+
+- S4 P11: fix reproduced dense-environment CRT65546->10allocation overflow
+  by omitting unused C envp copy, retaining cinit/physical PSPenvironment/path.
+  Build gate163objects/zero consumers; actual getenv/environ negative objects
+  rejected. Formal DOS equals tested candidate; dense448route three captures/
+  save exact to normal P6;369passes/368clean refusal. Native15tests per width,
+  runtime sections unchanged;three EXEs refreshed. DOS300549/logical324672/
+  341040(-176),page-rounded/ordinary observed peak unchanged. New CRTaddresses
+  need rebinding; other memory/stack/host gates remain open, S4active.
+  [Repair and product bindings](../history/M3-T32-rendering-performance-continuation.md#s4-p11-repair-dense-environment-crt-allocation-overflow).
 
 - S4 P10: published DOS369KiB route passes with FP/XP observer added,
   2024timer/84DOS-entry observations,7events/no drops;three captures/save

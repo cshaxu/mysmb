@@ -1054,3 +1054,72 @@ EXEs unchanged/current. Node scope/expected/actual[],new0; historical1992/1992,
 local1991/1992nodes,4260/4261feasible controls(raw4342,infeasible81).
 S4 remains active; runtime/all-phase memory conditions remain named open,
 performance repair belongs to S5-S8 and S9 remains final audit.
+
+## S4 P11 repair: dense environment CRT allocation overflow
+
+Use a contained synthetic environment with9363terminated NAME= strings and
+a final NUL:28090bytes, no ROM/third-party input. Current __setenvp calculates
+aligned string bytes28090 plus37456pointer bytes:65546. Its16-bit request
+wraps to10 before __myalloc; the subsequent vector/string stores still copy
+the full count. Source-bound arithmetic identifies an underallocation and
+out-of-range writes, not an original-ROM game-rule change.
+
+At unchanged448KiB caller budget/default DOSBox configuration, the published
+P6image does not reach graphics or return from EXEC before the bounded scripted
+DOSBox quit; FIT contains only the pre-EXEC record. Its verifier fails for
+missing return evidence. Do not classify DOSBox's eventual exit as game success.
+The isolated noenv candidate completes the same dense-environment route,
+2043timer/74DOS-entry samples,4events/no drops or invalid chains. Three
+captures and resource-bound CRC-valid save are byte-identical to the retained
+normal P6route. Actual observed external environment28192bytes remains;
+owned peak410480bytes applies to this larger-environment fixture only.
+
+Adopt an original /AL empty _setenvp hook in platform/dos16/process_startup.c.
+It removes only the unused C vector/string copy. __cinit, inherited descriptor
+setup, actual PSP environment and executable-path discovery remain. Current
+main(void) and160retained owned units have no vector consumers. The new build
+gate checks163compiled objects, including generated-resource/link entry units,
+for argv/envp/environment API external references:zero hits. Real original-
+compiler getenv and environ consumer objects are correctly rejected. Future
+consumers require explicit ABI review; no silently broken environment API.
+The private reserved hook remains a narrow DOS-runtime ABI exception.
+
+Formal full original-toolchain DOSbuild is byte-identical to the tested
+candidate. Both hooks have original far-return0/2local/6saved-register frames,
+12ephemeral bytes including entry, zero persistent C-vector allocation.
+Stack2048, DGROUP49152 and640x400output unchanged. Actual369normal route
+passes; formal368EXEC succeeds then returns1cleanly without changing seed save.
+No new universal minimum, whole-system peak or hardware FPS claim.
+P10's noenv deferral is superseded by this concrete correctness defect and
+the new source-bound dense-route output evidence, not a speculative speed gain.
+
+Native x86/x64 freshly build and each pass15focused tests, including platform
+purity. Stripping preserves runtime sections; those sections are also identical
+to the preceding published native products. Retain scoped after-ready behavior
+and the failed strict WIN-T19-STARTUP dependency; no Windowsaudio repair claim.
+Three owner-authorized product slots refreshed together:
+
+| Target | Bytes | SHA256 |
+| --- | ---: | --- |
+| mysmb16.exe | 300549 | 122669c5818ad939402c51a59676dd658ea6e4d3817e2b57dc50c4eec08415f6 |
+| mysmb32.exe | 311310 | cc4fd97d081651532960c590e766c7b19ec9ddc687cafd0c3bde42824c76044c |
+| mysmb64.exe | 324110 | aaf48b47ac47e600ae70c6cb7ecae1de6035c9da79be8625cb0d02edea947720 |
+
+DOS EXE/logical loader shrink176bytes to324672/341040; page-rounded
+325168/341536unchanged. Ordinary fixture owned peak377856unchanged; do not
+present176file bytes as176resident bytes. Actual source/build change+9/-4
+and+4/-0; new consumer verifier67lines. No shared game/PPU/input code changes,
+settings changes, product helper or imported implementation. Raw material,
+recipes, failed-control record and proofs remain below ignored build.
+
+Similar-issue sweep:both omitted vector capabilities and all163owned-link
+external records; actual16-bit count/size arithmetic, private ALreturn/entry,
+retained cinit/PSP/file path, ordinary/dense environments, insufficient-memory
+refusal, save integrity, exact captured output and native isolation. The
+named envp copying/allocation defect is closed in MEM-S4-01. Current address-
+specific CRT evidence needs binding to the new image before reuse; firmware,
+kernel/continuous memory, joined stack and strict host startup remain open.
+S4/T32remain active; performance work remains S5-S8, S9combined audit.
+Scope/expected/actual[],new0,historical1992/1992,local1991/1992nodes,
+4260/4261feasible controls(raw4342,infeasible81). Governance/node/diff gates
+precede commit; no full certification is inferred from these tests.
