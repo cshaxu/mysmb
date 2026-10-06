@@ -1,3 +1,4 @@
+#include "platform/win32/snapshot_replace.h"
 #include "io/text_glyph.h"
 #include <windows.h>
 #include <string.h>

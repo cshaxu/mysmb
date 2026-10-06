@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S7 P2; integrate validated segment-once plane packing and refresh three products. |
+| Identifier Mode | Continuation: M3 T32 S7 P3; owner-directed platform component cleanup. |
 | Admission And Approval | Owner-approved S5-S9 consecutive plan and automatic successor instruction;S6 compact-cache contract closed by P4;S7 sole active. |
 | Objective | Reduce systemic DOS scaling/plane-packing/transfer overhead with exact output and no added resident storage. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
 | Reference Baseline | Current S6 P3 products and unchanged mapper;original toolchain/2048stack/640x400. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | platform/vga/vga_frame.c only:validated DOS-private row helper and conditional selection,portable C fallback unchanged;estimate80-100product lines. No public ABI/core/PPU/device-mode change or new persistent allocation. Current-product compiler/stack/output/cost and actual DOS/Windows routes;three EXEs refreshed. |
+| Files And ABI Surface | Owner requires only dos16/win32 beneath platform. Move shared planar packing and file services to IO, isolate DOS row helper and platform declarations under dos16/win32, move retired sampler to validate;update includes/CMake/DOS source lists/boundary gate. Estimate80-140new glue/declaration/test lines plus mechanical file moves. No game/PPU semantic or storage change;three products refreshed. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
 | Verification | Native full/band/plane math/guard tests and actual original-DOS exact output;segment/register/stack listing audit;whole mapping/submission cost and actual product routes;three EXEs after adoption. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
@@ -24,6 +24,16 @@
 
 
 ## Current Technical Baseline
+
+- S7 P3 enforces platform dos16/win32 only:shared planar/file services in
+  IO,DOS row assembly/declarations under dos16,retired sampler under validate.
+  Architecture gate/four negative cases and15+3tests per native width pass;
+  actual Windows/DOS routes pass.134core/PPU execution records unchanged.
+  Selected backend pixels exact;packing cost+0.35953%,EXE/resident+528bytes,
+  no new buffer.Three EXEs refreshed304805/314894/328206bytes;DOS49168DGROUP/
+  2048stack unchanged,observed450224cached/386704fallback bytes.Whole-goal
+  gates remain open;S7 active.
+  [Ownership fix and evidence](../history/M3-T32-rendering-performance-continuation.md#s7-p3-owner-directed-two-component-platform-layout).
 
 - S7 P2 adopts81platform VGA lines for segment-once DOS row packing;no
   core/PPU/public ABI or resident-storage change. Product-bound mapping1.92575

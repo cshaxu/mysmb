@@ -1,10 +1,13 @@
+#include "platform/dos16/planar_row.h"
+#include "platform/dos16/executable_path.h"
+#include "platform/dos16/snapshot_replace.h"
 #include "platform/dos16/dos16_root.h"
 #include "platform/dos16/devices.h"
 #include "core/area.h"
 #include <stdio.h>
 #include <malloc.h>
-#include "platform/file/snapshot_files.h"
-#include "platform/file/executable_path.h"
+#include "io/file/snapshot_files.h"
+#include "io/file/executable_path.h"
 #ifdef MYSMB_LOCAL_TITLE
 #include "smb1_local_rom.h"
 #include "smb1_local_title.h"
@@ -36,8 +39,9 @@ static int present_rows(void *context,const struct mysmb_io_video_source *source
         source_first=(mysmb_io_u16)(first*3U/5U);
         source_rows=(mysmb_io_u16)((first+MYSMB_VGA_BATCH_ROWS-1U)*3U/5U-source_first+1U);
         if(!source->read_rows(source->context,source_first,source_rows,&band))return 0;
-        if(!mysmb_vga_frame_build_planes(&band,first,MYSMB_VGA_BATCH_ROWS,
-            plane_pixels,MYSMB_VGA_PAGE_COUNT*MYSMB_VGA_BATCH_SIZE))return 0;
+        if(!mysmb_io_planar_build_planes(&band,first,MYSMB_VGA_BATCH_ROWS,
+            plane_pixels,MYSMB_VGA_PAGE_COUNT*MYSMB_VGA_BATCH_SIZE,
+            mysmb_dos16_pack_planar_row))return 0;
         for(plane=0U;plane<MYSMB_VGA_PAGE_COUNT;++plane)
             mysmb_dos16_devices_present_rows(plane,first,MYSMB_VGA_BATCH_ROWS,
                 plane_pixels+plane*MYSMB_VGA_BATCH_SIZE);

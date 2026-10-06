@@ -158,3 +158,14 @@ helper process belongs to that thread.
 Text has an immutable core-state consumer dependency;core calls only its own
 observation producer/commit API. App snapshot explicitly links text snapshot
 encoding. Neither text scenes nor their codec are members of the core library.
+
+## Platform component boundary
+
+Only dos16 and win32 are children of platform. Shared planar pixel layout is
+io/planar_frame;it knows only neutral pixels,dimensions,capacity and an optional
+synchronous row encoder. The DOS root supplies its private dos16/planar_row
+encoder. Shared IO imports no host declaration or assembly. File/path services
+are io/file with portable stdio;replacement and executable discovery stay in
+the appropriate host,whose declarations are host-owned. The retired pixel
+sampler is validate/text_frame and links only to tests. No compatibility copy
+or forwarding directory remains at the old platform locations.

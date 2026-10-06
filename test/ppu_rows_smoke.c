@@ -1,6 +1,6 @@
 #include "core/game.h"
 #include "ppu/frame.h"
-#include "platform/vga/vga_frame.h"
+#include "io/planar_frame.h"
 #include <stdio.h>
 #include <string.h>
 #include <time.h>

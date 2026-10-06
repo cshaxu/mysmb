@@ -1,5 +1,6 @@
+#include "platform/win32/snapshot_replace.h"
 #include "io/snapshot_store.h"
-#include "platform/file/snapshot_files.h"
+#include "io/file/snapshot_files.h"
 #include <stdio.h>
 #include <string.h>
 #include <limits.h>

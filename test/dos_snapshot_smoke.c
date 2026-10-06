@@ -1,9 +1,11 @@
+#include "platform/win32/snapshot_replace.h"
+#include "platform/dos16/snapshot_replace.h"
 #include <stdio.h>
 #include <string.h>
 #include "platform/dos16/dos16_root.h"
 #include "platform/dos16/keyboard.h"
-#include "platform/file/snapshot_files.h"
-#include "platform/file/executable_path.h"
+#include "io/file/snapshot_files.h"
+#include "io/file/executable_path.h"
 #include "core/area.h"
 #ifdef MYSMB_LOCAL_TITLE
 #include "smb1_local_rom.h"

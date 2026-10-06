@@ -1,5 +1,5 @@
-#ifndef MYSMB_PLATFORM_VGA_FRAME_H
-#define MYSMB_PLATFORM_VGA_FRAME_H
+#ifndef MYSMB_IO_PLANAR_FRAME_H
+#define MYSMB_IO_PLANAR_FRAME_H
 #include "io/video.h"
 #define MYSMB_VGA_FAR MYSMB_IO_FAR
 enum { MYSMB_VGA_WIDTH=320, MYSMB_VGA_HEIGHT=400, MYSMB_VGA_PAGE_COUNT=4, MYSMB_VGA_PAGE_SIZE=32000, MYSMB_VGA_BATCH_ROWS=16, MYSMB_VGA_BATCH_SIZE=1280 };
@@ -22,4 +22,12 @@ int mysmb_vga_frame_build_band(const struct mysmb_io_video_band *source,
 int mysmb_vga_frame_build_planes(const struct mysmb_io_video_band *source,
     mysmb_io_u16 first,mysmb_io_u16 rows,mysmb_io_u8 MYSMB_IO_FAR *out,
     mysmb_io_u16 capacity);
+/* Optional synchronous row encoder receives exactly256source bytes and four
+ * disjoint80-byte output spans separated by stride. It restores caller state.
+ * Null selects the portable owner;callbacks may not change source or metadata. */
+typedef void (*mysmb_io_planar_row_packer)(const mysmb_io_u8 MYSMB_IO_FAR *,
+    mysmb_io_u8 MYSMB_IO_FAR *,mysmb_io_u16);
+int mysmb_io_planar_build_planes(const struct mysmb_io_video_band *source,
+    mysmb_io_u16 first,mysmb_io_u16 rows,mysmb_io_u8 MYSMB_IO_FAR *out,
+    mysmb_io_u16 capacity,mysmb_io_planar_row_packer packer);
 #endif

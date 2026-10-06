@@ -6,7 +6,7 @@
 #include "core/area.h"
 #include "app/game_snapshot.h"
 #include "text/scene.h"
-#include "platform/vga/vga_frame.h"
+#include "io/planar_frame.h"
 #include "io/scale.h"
 #ifdef MYSMB_LOCAL_TITLE
 #include "smb1_local_rom.h"

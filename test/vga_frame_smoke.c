@@ -1,10 +1,18 @@
-#include "platform/vga/vga_frame.h"
+#include "io/planar_frame.h"
 #include <stdio.h>
 #include <string.h>
 static mysmb_io_u8 pixels[MYSMB_IO_VIDEO_PIXELS];
 static mysmb_io_u8 pages[4][MYSMB_VGA_PAGE_SIZE+2];
 static mysmb_io_u8 scratch[MYSMB_VGA_PAGE_SIZE+2];
 static unsigned char packed[5120+32],old[1280+32];
+static unsigned char encoded[5120+32];
+static void row_encoder(const mysmb_io_u8 *source,mysmb_io_u8 *out,
+    mysmb_io_u16 stride)
+{
+ unsigned short p,x;
+ for(p=0U;p<4U;++p)for(x=0U;x<80U;++x)
+  out[p*stride+x]=(mysmb_io_u8)(source[(4U*x+p)*4U/5U]&63U);
+}
 static int four_planes(void)
 {
  struct mysmb_io_video_band band;unsigned short first,rows,p,x,y,sy,sx,i;
@@ -16,6 +24,9 @@ static int four_planes(void)
   band.pixels=pixels+band.first*256U;
   memset(packed,0xa5,sizeof(packed));
   if(!mysmb_vga_frame_build_planes(&band,first,rows,packed+16,5120))return 1;
+  memset(encoded,0xa5,sizeof(encoded));
+  if(!mysmb_io_planar_build_planes(&band,first,rows,encoded+16,5120,row_encoder) ||
+   memcmp(encoded,packed,sizeof(packed)))return 8;
   for(p=0U;p<4U;++p){
    memset(old,0xa5,sizeof(old));if(!mysmb_vga_frame_build_band(&band,p,first,rows,old+16))return 2;
    if(memcmp(old+16,packed+16+p*rows*80U,rows*80U))return 3;

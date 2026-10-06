@@ -310,3 +310,14 @@ Controlled entire plane-packing stage is1.926times faster with zero new
 persistent storage;helper own stack12bytes. Select for product integration,
 not acceptance of overall game speed. P2 must bind current product listings,
 refresh all three EXEs and verify actual game/snapshot/presenter/memory routes.
+
+## Owner-directed platform layout
+
+[S7 P3](../../history/M3-T32-rendering-performance-continuation.md#s7-p3-owner-directed-two-component-platform-layout)
+implements the owner's stricter boundary:platform has only dos16/win32;
+shared formats/services are IO and the retired sampler is validation-only.
+DOS-private row execution is supplied explicitly by the composition root,
+without an IO-to-platform dependency. Component,host-import and declaration
+guards prevent recurrence. Original game/PPU state and output semantics stay
+unchanged;the measured0.36%packing overhead is retained as integration cost,
+not hidden by another performance claim. S8/S9 obligations remain open.

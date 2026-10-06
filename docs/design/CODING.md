@@ -23,7 +23,9 @@ Translated files use subsystem names, not arbitrary ROM addresses. Every transla
 
 ## Source Organization
 
-`io/` includes its own contract headers and portable C90 `string.h` memory operations. These standard operations add no game or device dependency. It owns decoded two-port input,
+`io/` includes its own contract headers and portable C90 `string.h` memory operations;
+the contained `io/file` service also uses portable `stdio.h`. These standard
+operations add no game or device dependency. It owns decoded two-port input,
 a borrowed read-only256x240indexed frame or synchronous bounded row producer,
 an owned ordered audio snapshot,
 and authored 80x50 text cells. Selected glyph IDs and their Unicode/reflection
@@ -50,7 +52,7 @@ opaque presentation extension. Full source entries retain stable anchors even
 after partial overwrite. Legacy schema1 lacks those receipts and invalidates
 them on restore while retaining the destination's observation preference.
 The DOS transaction workspace uses a bounded far-heap allocation. The dormant
-`platform/text` pixel sampler is not used by this module.
+`validate/text_frame` pixel sampler is not used by this module.
 
 Background text assembly exports authored-cell occupancy in its2900-byte
 caller-owned far workspace. Actors use a separate500-byte far claim map and
@@ -79,7 +81,7 @@ physical adapters may buffer events but do not decide application termination.
 staged transactions,last-running cache and shortcut edges. Fixed-width program
 bytes remain opaque to IO. `app/game_snapshot` marshals public game fields;
 Win32 audio snapshot modules marshal host synthesis state arithmetically.
-`platform/file` provides stdio services;each host supplies executable-path,
+`io/file` provides stdio services;each host supplies executable-path,
 replacement and device-reset services. Only roots connect these owners.
 
 `core/` cannot include host headers or platform macros. `platform/` cannot mutate game internals. `validate/` is linked only by tests and recorders;it is absent from products. CMake selects `mysmb-win32-x86`, `mysmb-win32-x64`, or `mysmb-dos16`; compile definitions are permitted only beneath the platform roots. The OpenNT 16-bit C compiler verifies the same core in real-mode large-model mode; the later DOS adapter owns linking the full MZ executable. Modern 32/64-bit compilers run the Win32 product.
@@ -98,3 +100,14 @@ receipt encoding belong to text;render/frame/page projections belong to validate
 S6 separates core observation receipts from text scene/snapshot consumers.
 Core links only PPU storage;app snapshot links the independent text codec.
 Validation projections link only test/recorder targets;no product linkage.
+
+## Platform component boundary
+
+Only dos16 and win32 are children of platform. Shared planar pixel layout is
+io/planar_frame;it knows only neutral pixels,dimensions,capacity and an optional
+synchronous row encoder. The DOS root supplies its private dos16/planar_row
+encoder. Shared IO imports no host declaration or assembly. File/path services
+are io/file with portable stdio;replacement and executable discovery stay in
+the appropriate host,whose declarations are host-owned. The retired pixel
+sampler is validate/text_frame and links only to tests. No compatibility copy
+or forwarding directory remains at the old platform locations.

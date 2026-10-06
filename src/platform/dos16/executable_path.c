@@ -1,4 +1,5 @@
-#include "platform/file/executable_path.h"
+#include "platform/dos16/executable_path.h"
+#include "io/file/executable_path.h"
 #include <dos.h>
 int mysmb_dos16_executable_path(char *path,mysmb_io_u16 capacity)
 {

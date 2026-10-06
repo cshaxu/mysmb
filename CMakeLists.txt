@@ -101,7 +101,7 @@ add_executable(mysmb_io_snapshot_smoke test/io_snapshot_smoke.c
 target_link_libraries(mysmb_io_snapshot_smoke PRIVATE mysmb_io_snapshot)
 add_test(NAME mysmb.io-snapshot-smoke COMMAND mysmb_io_snapshot_smoke)
 add_executable(mysmb_snapshot_storage_smoke test/snapshot_storage_smoke.c
-    src/platform/file/snapshot_files.c src/platform/win32/snapshot_replace.c)
+    src/io/file/snapshot_files.c src/platform/win32/snapshot_replace.c)
 target_link_libraries(mysmb_snapshot_storage_smoke PRIVATE mysmb_io_snapshot)
 file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/snapshot-storage-test")
 add_test(NAME mysmb.snapshot-storage-smoke COMMAND mysmb_snapshot_storage_smoke
@@ -625,7 +625,7 @@ target_link_libraries(mysmb_sound_square2_music_snapshot_check PRIVATE mysmb_cor
 add_executable(mysmb_end_to_end_smoke test/end_to_end_smoke.c)
 target_link_libraries(mysmb_end_to_end_smoke PRIVATE mysmb_core)
 add_executable(mysmb_ppu_rows_smoke test/ppu_rows_smoke.c test/ppu_frame_reference.c)
-target_link_libraries(mysmb_ppu_rows_smoke PRIVATE mysmb_ppu_frame mysmb_vga_frame)
+target_link_libraries(mysmb_ppu_rows_smoke PRIVATE mysmb_ppu_frame mysmb_io_planar_frame)
 add_test(NAME mysmb.ppu-rows-smoke COMMAND mysmb_ppu_rows_smoke)
 add_executable(mysmb_ppu_frame_smoke test/ppu_frame_smoke.c)
 target_link_libraries(mysmb_ppu_frame_smoke PRIVATE mysmb_core mysmb_ppu_frame)
@@ -696,16 +696,16 @@ add_executable(mysmb_text_caption_scene_smoke test/text_caption_scene_smoke.c)
 target_link_libraries(mysmb_text_caption_scene_smoke PRIVATE mysmb_text_elements)
 add_test(NAME mysmb.text-caption-scene-smoke COMMAND mysmb_text_caption_scene_smoke)
 
-add_library(mysmb_text_frame STATIC src/platform/text/text_frame.c)
-target_include_directories(mysmb_text_frame PUBLIC src)
-target_link_libraries(mysmb_text_frame PUBLIC mysmb_ppu_frame)
+add_library(mysmb_validate_text_frame STATIC src/validate/text_frame.c)
+target_include_directories(mysmb_validate_text_frame PUBLIC src)
+target_link_libraries(mysmb_validate_text_frame PUBLIC mysmb_ppu_frame)
 add_executable(mysmb_text_frame_smoke test/text_frame_smoke.c)
-target_link_libraries(mysmb_text_frame_smoke PRIVATE mysmb_text_frame)
-add_library(mysmb_vga_frame STATIC src/platform/vga/vga_frame.c)
-target_include_directories(mysmb_vga_frame PUBLIC src)
-target_link_libraries(mysmb_vga_frame PUBLIC mysmb_io_color)
+target_link_libraries(mysmb_text_frame_smoke PRIVATE mysmb_validate_text_frame)
+add_library(mysmb_io_planar_frame STATIC src/io/planar_frame.c)
+target_include_directories(mysmb_io_planar_frame PUBLIC src)
+target_link_libraries(mysmb_io_planar_frame PUBLIC mysmb_io_color)
 add_executable(mysmb_vga_frame_smoke test/vga_frame_smoke.c)
-target_link_libraries(mysmb_vga_frame_smoke PRIVATE mysmb_vga_frame)
+target_link_libraries(mysmb_vga_frame_smoke PRIVATE mysmb_io_planar_frame)
 add_library(mysmb_dos16_root STATIC src/platform/dos16/dos16_root.c src/platform/dos16/keyboard.c src/platform/dos16/pit_clock.c)
 target_include_directories(mysmb_dos16_root PUBLIC src)
 target_link_libraries(mysmb_dos16_root PUBLIC mysmb_core mysmb_game_io mysmb_io_color mysmb_game_snapshot mysmb_text_elements)
@@ -715,7 +715,7 @@ add_test(NAME mysmb.dos16-clock-smoke COMMAND mysmb_dos16_clock_smoke)
 add_executable(mysmb_dos16_root_smoke test/dos16_root_smoke.c)
 target_link_libraries(mysmb_dos16_root_smoke PRIVATE mysmb_dos16_root)
 add_executable(mysmb_dos_snapshot_smoke test/dos_snapshot_smoke.c
-    src/platform/file/snapshot_files.c src/platform/file/executable_path.c
+    src/io/file/snapshot_files.c src/io/file/executable_path.c
     src/platform/win32/snapshot_replace.c src/platform/dos16/snapshot_replace.c)
 target_link_libraries(mysmb_dos_snapshot_smoke PRIVATE mysmb_dos16_root)
 file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/dos-snapshot-test")
@@ -998,13 +998,13 @@ if(MYSMB_OPENNT_CL16)
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/platform/vga/vga_frame.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/io/planar_frame.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
             -Compiler "${MYSMB_OPENNT_CL16}"
             -IncludeDirectory "${CMAKE_CURRENT_SOURCE_DIR}/src"
-            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/platform/text/text_frame.c"
+            -Source "${CMAKE_CURRENT_SOURCE_DIR}/src/validate/text_frame.c"
             -OutputDirectory "${MYSMB_OPENNT_OUTPUT_DIR}"
         COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File
             "${CMAKE_CURRENT_SOURCE_DIR}/tools/Build-OpenNt16Core.ps1"
@@ -1036,7 +1036,7 @@ if(WIN32)
     add_executable(mysmb_presentation_performance
         test/presentation_performance.c test/ppu_frame_reference.c)
     target_link_libraries(mysmb_presentation_performance PRIVATE
-        mysmb_game_snapshot mysmb_game_io mysmb_text_elements mysmb_vga_frame)
+        mysmb_game_snapshot mysmb_game_io mysmb_text_elements mysmb_io_planar_frame)
     add_test(NAME mysmb.presentation-performance COMMAND mysmb_presentation_performance)
     add_executable(mysmb_win32_terminal_present_smoke
         test/win32_terminal_present_smoke.c src/platform/win32/launch.c)
@@ -1071,14 +1071,14 @@ if(WIN32)
         src/platform/win32/text_console.c src/platform/win32/launch.c
         src/platform/win32/keyboard.c)
     target_link_libraries(mysmb_win32 PRIVATE mysmb_core mysmb_game_io mysmb_io_color user32 gdi32 winmm)
-    target_sources(mysmb_win32 PRIVATE src/platform/file/snapshot_files.c
+    target_sources(mysmb_win32 PRIVATE src/io/file/snapshot_files.c
         src/platform/win32/snapshot_replace.c src/platform/win32/audio_snapshot.c
         src/platform/win32/audio_snapshot_real.c)
     target_link_libraries(mysmb_win32 PRIVATE mysmb_game_snapshot mysmb_io_snapshot mysmb_text_elements)
     add_executable(mysmb_win32_snapshot_binding_smoke
         test/win32_snapshot_binding_smoke.c src/platform/win32/audio_output.c
         src/platform/win32/audio_renderer.c src/platform/win32/focus_pause.c
-        src/platform/file/snapshot_files.c src/platform/win32/snapshot_replace.c
+        src/io/file/snapshot_files.c src/platform/win32/snapshot_replace.c
         src/platform/win32/audio_snapshot.c src/platform/win32/audio_snapshot_real.c
         src/platform/win32/text_console.c src/platform/win32/launch.c
         src/platform/win32/keyboard.c)
@@ -1086,7 +1086,7 @@ if(WIN32)
         test/win32_text_switch_smoke.c src/platform/win32/audio_output.c
         src/platform/win32/audio_renderer.c src/platform/win32/focus_pause.c
         src/platform/win32/text_console.c src/platform/win32/launch.c
-        src/platform/win32/keyboard.c src/platform/file/snapshot_files.c
+        src/platform/win32/keyboard.c src/io/file/snapshot_files.c
         src/platform/win32/snapshot_replace.c src/platform/win32/audio_snapshot.c
         src/platform/win32/audio_snapshot_real.c)
     target_link_libraries(mysmb_win32_text_switch_smoke PRIVATE

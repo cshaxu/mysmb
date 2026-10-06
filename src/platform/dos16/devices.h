@@ -2,7 +2,7 @@
 #define MYSMB_DOS16_DEVICES_H
 #include "io/input.h"
 #include "io/audio.h"
-#include "platform/vga/vga_frame.h"
+#include "io/planar_frame.h"
 int mysmb_dos16_devices_open(void);
 void mysmb_dos16_devices_close(void);
 void mysmb_dos16_devices_input(struct mysmb_io_input *input);

@@ -1,3 +1,4 @@
+#include "platform/win32/snapshot_replace.h"
 #include <windows.h>
 #include <string.h>
 
@@ -5,7 +6,7 @@
 #include "app/game_snapshot.h"
 #include "io/snapshot_store.h"
 #include "io/snapshot_keys.h"
-#include "platform/file/snapshot_files.h"
+#include "io/file/snapshot_files.h"
 #include "platform/win32/audio_snapshot.h"
 #include "io/color.h"
 #include "io/control.h"

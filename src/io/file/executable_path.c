@@ -1,4 +1,4 @@
-#include "platform/file/executable_path.h"
+#include "io/file/executable_path.h"
 int mysmb_file_executable_directory(const char *path,char *directory,
     mysmb_io_u16 capacity)
 {

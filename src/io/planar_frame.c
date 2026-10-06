@@ -1,4 +1,4 @@
-#include "platform/vga/vga_frame.h"
+#include "io/planar_frame.h"
 #include <string.h>
 void mysmb_vga_frame_initialize(struct mysmb_vga_frame *frame,
     mysmb_io_u8 MYSMB_VGA_FAR *p0, mysmb_io_u8 MYSMB_VGA_FAR *p1,
@@ -73,87 +73,12 @@ void mysmb_vga_frame_build(const struct mysmb_io_video_frame *source,
         mysmb_vga_frame_build_rows(source,plane,0U,400U,frame->pages[plane]);
 }
 
-#ifdef MYSMB_DOS16_TARGET
-/* Neutral row packing:borrow source/destination segments once, restore them
- * before returning to C. Plane stride is bounded by the validated caller. */
-static void pack_row(const mysmb_io_u8 MYSMB_IO_FAR *source,
-    mysmb_io_u8 MYSMB_IO_FAR *pixels,mysmb_io_u16 stride)
-{
-    _asm {
-        push ds
-        push es
-        lds si,source
-        les di,pixels
-        mov bx,stride
-        mov dx,bx
-        add dx,bx
-        add dx,bx
-        mov cx,16
-plane_group:
-        mov al,[si+0]
-        mov ah,[si+3]
-        and ax,3f3fh
-        mov es:[di+0],ax
-        mov al,[si+6]
-        mov ah,[si+9]
-        and ax,3f3fh
-        mov es:[di+2],ax
-        mov al,[si+12]
-        and al,3fh
-        mov es:[di+4],al
-        add di,bx
-        mov al,[si+0]
-        mov ah,[si+4]
-        and ax,3f3fh
-        mov es:[di+0],ax
-        mov al,[si+7]
-        mov ah,[si+10]
-        and ax,3f3fh
-        mov es:[di+2],ax
-        mov al,[si+13]
-        and al,3fh
-        mov es:[di+4],al
-        add di,bx
-        mov al,[si+1]
-        mov ah,[si+4]
-        and ax,3f3fh
-        mov es:[di+0],ax
-        mov al,[si+8]
-        mov ah,[si+11]
-        and ax,3f3fh
-        mov es:[di+2],ax
-        mov al,[si+14]
-        and al,3fh
-        mov es:[di+4],al
-        add di,bx
-        mov al,[si+2]
-        mov ah,[si+5]
-        and ax,3f3fh
-        mov es:[di+0],ax
-        mov al,[si+8]
-        mov ah,[si+12]
-        and ax,3f3fh
-        mov es:[di+2],ax
-        mov al,[si+15]
-        and al,3fh
-        mov es:[di+4],al
-        sub di,dx
-        add di,5
-        add si,16
-        dec cx
-        jz plane_done
-        jmp plane_group
-plane_done:
-        pop es
-        pop ds
-    }
-}
-#endif
+
 
 /* One16-byte source group supplies all four exact plane index sequences. */
-int mysmb_vga_frame_build_planes(const struct mysmb_io_video_band *source,
+int mysmb_io_planar_build_planes(const struct mysmb_io_video_band *source,
     mysmb_io_u16 first,mysmb_io_u16 rows,mysmb_io_u8 MYSMB_IO_FAR *out,
-    mysmb_io_u16 capacity)
+    mysmb_io_u16 capacity,mysmb_io_planar_row_packer packer)
 {
     mysmb_io_u16 row,group,p,sy,previous=240U,phase,low,high;
     mysmb_io_u8 shared0,shared4,shared8,shared12;
@@ -173,41 +98,47 @@ int mysmb_vga_frame_build_planes(const struct mysmb_io_video_band *source,
             in=source->pixels+(sy-source->first)*256U;
             p0=out+row*80U;p1=out+(rows+row)*80U;
             p2=out+(rows*2U+row)*80U;p3=out+(rows*3U+row)*80U;
-#ifdef MYSMB_DOS16_TARGET
-            pack_row(in,p0,(mysmb_io_u16)(rows*80U));
-#else
-            for(group=0U;group<16U;++group){
-                /* Source and output are disjoint. Reuse the four colors that
-                 * occur twice without copying every small source group. */
-                shared0=(mysmb_io_u8)(in[0U]&63U);
-                shared4=(mysmb_io_u8)(in[4U]&63U);
-                shared8=(mysmb_io_u8)(in[8U]&63U);
-                shared12=(mysmb_io_u8)(in[12U]&63U);
-                p0[0U]=shared0;
-                p0[1U]=(mysmb_io_u8)(in[3U]&63U);
-                p0[2U]=(mysmb_io_u8)(in[6U]&63U);
-                p0[3U]=(mysmb_io_u8)(in[9U]&63U);
-                p0[4U]=shared12;
-                p1[0U]=shared0;
-                p1[1U]=shared4;
-                p1[2U]=(mysmb_io_u8)(in[7U]&63U);
-                p1[3U]=(mysmb_io_u8)(in[10U]&63U);
-                p1[4U]=(mysmb_io_u8)(in[13U]&63U);
-                p2[0U]=(mysmb_io_u8)(in[1U]&63U);
-                p2[1U]=shared4;
-                p2[2U]=shared8;
-                p2[3U]=(mysmb_io_u8)(in[11U]&63U);
-                p2[4U]=(mysmb_io_u8)(in[14U]&63U);
-                p3[0U]=(mysmb_io_u8)(in[2U]&63U);
-                p3[1U]=(mysmb_io_u8)(in[5U]&63U);
-                p3[2U]=shared8;
-                p3[3U]=shared12;
-                p3[4U]=(mysmb_io_u8)(in[15U]&63U);
-                p0+=5U;p1+=5U;p2+=5U;p3+=5U;in+=16U;
+            if(packer)packer(in,p0,(mysmb_io_u16)(rows*80U));
+            else {
+                for(group=0U;group<16U;++group){
+                    /* Source and output are disjoint. Reuse the four colors that
+                     * occur twice without copying every small source group. */
+                    shared0=(mysmb_io_u8)(in[0U]&63U);
+                    shared4=(mysmb_io_u8)(in[4U]&63U);
+                    shared8=(mysmb_io_u8)(in[8U]&63U);
+                    shared12=(mysmb_io_u8)(in[12U]&63U);
+                    p0[0U]=shared0;
+                    p0[1U]=(mysmb_io_u8)(in[3U]&63U);
+                    p0[2U]=(mysmb_io_u8)(in[6U]&63U);
+                    p0[3U]=(mysmb_io_u8)(in[9U]&63U);
+                    p0[4U]=shared12;
+                    p1[0U]=shared0;
+                    p1[1U]=shared4;
+                    p1[2U]=(mysmb_io_u8)(in[7U]&63U);
+                    p1[3U]=(mysmb_io_u8)(in[10U]&63U);
+                    p1[4U]=(mysmb_io_u8)(in[13U]&63U);
+                    p2[0U]=(mysmb_io_u8)(in[1U]&63U);
+                    p2[1U]=shared4;
+                    p2[2U]=shared8;
+                    p2[3U]=(mysmb_io_u8)(in[11U]&63U);
+                    p2[4U]=(mysmb_io_u8)(in[14U]&63U);
+                    p3[0U]=(mysmb_io_u8)(in[2U]&63U);
+                    p3[1U]=(mysmb_io_u8)(in[5U]&63U);
+                    p3[2U]=shared8;
+                    p3[3U]=shared12;
+                    p3[4U]=(mysmb_io_u8)(in[15U]&63U);
+                    p0+=5U;p1+=5U;p2+=5U;p3+=5U;in+=16U;
+                }
             }
-#endif
         }
         previous=sy;phase+=3U;if(phase>=5U){phase-=5U;++sy;}
     }
     return 1;
+}
+
+int mysmb_vga_frame_build_planes(const struct mysmb_io_video_band *source,
+    mysmb_io_u16 first,mysmb_io_u16 rows,mysmb_io_u8 MYSMB_IO_FAR *out,
+    mysmb_io_u16 capacity)
+{
+    return mysmb_io_planar_build_planes(source,first,rows,out,capacity,0);
 }

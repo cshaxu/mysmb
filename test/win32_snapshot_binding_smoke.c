@@ -1,3 +1,4 @@
+#include "platform/win32/snapshot_replace.h"
 #include <windows.h>
 #include <stdio.h>
 static HWND owned_window;

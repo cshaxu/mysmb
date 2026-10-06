@@ -1615,3 +1615,55 @@ acceptance does not close S8/S9 whole-game/reference/transition/global memory/
 stack/hardware obligations. Scope/expected/actual[],new0,historical1992/1992,
 local1991/1992nodes,4260/4261feasible controls(raw4342,infeasible81);M2 final
 certificate unchanged6/136groups,42/952facets,four packages pending.
+
+## S7 P3 owner-directed two-component platform layout
+
+Owner requires platform to contain only dos16 and win32. Remove file,text,vga
+children entirely. Shared file/path services move to io/file;host replacement
+and executable-discovery declarations move into the appropriate platform
+headers. Portable plane mapping moves to io/planar_frame;DOS assembly is
+platform/dos16/planar_row. DOS composition explicitly supplies the neutral
+synchronous row encoder;IO has no platform selection/import/assembly. Legacy
+public mapping interfaces retain portable behavior. Retired80x25pixel sampler
+moves to validate/text_frame and remains test-only. CMake owner targets,
+original-DOS source lists,all source/test/tool includes and current design
+authorities are reconciled;historical source-location receipts remain history.
+
+Architecture gate enforces exactly two platform components,no cross-host API
+imports,no host declarations/assembly in IO;portable stdio is allowed only for
+io/file. Synthetic negative checks reject a third component,IO assembly,IO
+host declaration and cross-host include. No dummy source is placed in the
+repository's production directories;all fixtures below ignored build.
+
+Both native widths pass15existing focused tests plus three moved-file/path/
+retired-sampler/snapshot-binding tests. The complete first-row/1..16height
+plane matrix additionally compares the optional row encoder with the portable
+owner byte-for-byte. The Windows text-switch fixture is rebuilt but not a
+registered CTest;actual product startup/Tab/text input/Escape routes pass on
+private desktops. DOS actual448KiBcached/384KiBfallback restore,D/J,Tab,save/
+exit and all640x400captures/10035-byte snapshot integrity pass. No installed
+DOSBox configuration or foreground desktop change.134core/PPU object outputs
+have identical execution records to P2;no original game/PPU semantics change.
+
+Actual selected IO+DOS product objects are linked against the previous fast
+mapper:64cases/155520bytes,source/DS/guard equality passes. Three-frame
+packing363249->364555ticks(+0.35953%cost),not a whole-game speed result.
+Explicit component separation costs528EXE/resident bytes,no persistent buffer.
+Observed owned450224cached/386704fallback;sampling is not a global maximum.
+Original/AL/Gs compile/link:193segments,max32768,DGROUP49168/stack2048unchanged;
+logical loader328944..345296,page-rounded329280..345632. Global memory/stack,
+whole-game/reference/physical486qualification remains unproved S8/S9 work.
+
+Three existing owner-authorized products refreshed:
+
+| Product | Bytes | SHA-256 |
+| --- | ---: | --- |
+| DOS16 | 304805 | dbb554cc1b6275a5b7fb6b3e1c6d78cbd293ac0d612e3f0b4f31f5d5dc2691f7 |
+| Win32 | 314894 | 576f134262432f671147fd13c649fab6773048156188f57e912a3df86a9d84f9 |
+| Win64 | 328206 | 9777faa28df309bb17d6d31b4cdfbf3c20114c231c274fc65e757e71f213f3fa |
+
+Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and
+4260/4261feasible controls(raw4342,infeasible81),M2 certificate counters
+unchanged. No new third-party/protected fixture import. Reproducible local
+build/test/negative/cost/source-product receipts below build/m3-t32-s7/p3.
+S7 and the memory/performance goal remain active beyond this ownership fix.

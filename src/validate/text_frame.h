@@ -1,5 +1,5 @@
-#ifndef MYSMB_PLATFORM_TEXT_FRAME_H
-#define MYSMB_PLATFORM_TEXT_FRAME_H
+#ifndef MYSMB_VALIDATE_TEXT_FRAME_H
+#define MYSMB_VALIDATE_TEXT_FRAME_H
 #include "ppu/frame.h"
 enum { MYSMB_TEXT_COLUMNS = 80, MYSMB_TEXT_ROWS = 25 };
 struct mysmb_text_cell { mysmb_io_u8 character; mysmb_io_u8 color; };

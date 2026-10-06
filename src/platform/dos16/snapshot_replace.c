@@ -1,4 +1,5 @@
-#include "platform/file/snapshot_files.h"
+#include "platform/dos16/snapshot_replace.h"
+#include "io/file/snapshot_files.h"
 #include <stdio.h>
 #include <errno.h>
 #include <stdlib.h>
