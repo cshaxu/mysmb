@@ -1819,3 +1819,56 @@ Local recipes/probes/source-product bindings in build/m3-t32-s8/p2. No extra
 third-party/source/fixture import. S8 remains active;global acceptance stays
 open. Scope/expected/actual[],new0,historical1992/1992,local1991/1992nodes and
 4260/4261feasible controls(raw4342,infeasible81);fixed M2 final work unchanged.
+
+## S8 P3 original-compiler safe render generation
+
+Microsoft8.00x local help identifies default disabled optimization and safe
+/Ox set. Compare original tool /Ox /On /Ow /G0 on exactly five render units:
+ppu/frame,io/planar_frame,io/palette_pairs,dos16/palette_expand,dos16/planar_row.
+No /Oa alias-free assumption,/Oz unsafe optimization,/G3 ISA change,protected
+mode or new compiler. Core/IRQ/clock/input/root/startup flags unchanged.
+132core object outputs have identical execution records. Production code
+changes only build policy,not original game or presentation algorithms.
+
+Initial optimized invocation hit historical driver's command buffer even on
+a tiny C function. Controlled process-local PATH reduction from2326characters
+to original tools/System32 fixes optimization and ordinary compilation. System
+PATH/compiler/DOSBox settings unchanged. Build resolves Python before reducing
+PATH and restores inherited PATH in finally. Failed attempts produce no accepted
+stale runs. Safe/None build option retains explicit original-generator comparison.
+
+Five optimized listing/OMF execution identities match current product. Original
+DOS2064primitive/full-row and64planar-case/155520-byte checks pass. PPU warm
+synthetic ticks478992/494218/1094823 versus prior587979/617316/1493389;
+planar321783versus363243ticks. Scoped stage results are not whole-game proof.
+Optimizer local calls use PUSH CS plus near CALL/far return;listing adapter
+models transient IP and consumed CS,comments,width qualifiers and BP saves.
+20local CFGs balance with no unknown paths;synthetic Local Size marker is
+not a physical frame-size certificate. Global stack/CRT/IRQ/firmware unproved.
+
+Native15tests per width and actual Windows startup/Tab/text input/Escape pass.
+Actual DOS448/384/370KiBlargest-arena restored gameplay,D/J,Tab,save/Escape,
+640x400captures and10035-byte integrity pass. Observed owned447280/383760/
+378880bytes;cached/fallback ordinary routes4224bytes below previous.370pass
+is a controlled route,not universal minimum/free-memory or all-input guarantee.
+Arena chains/drops zero;no frame/work suppression. Current phase/counter probes
+record all restored-eligible frames with320bounded records while counting every
+update/submission. Initial title recording is omitted explicitly,not gameplay.
+Current full diagnostic budget is retained locally;counter graphics252.089ms
+versus300.578ms,1.192diagnostic ratio/16.13%cost reduction. Different wall-timed
+cohorts are not equal-state paired speed acceptance. Nominal60Hz/fivefold FAILS.
+
+DOS301861bytes(-4224),DGROUP49184/2048stackunchanged;logical loader326016..
+342352,page-rounded326224..342560. No new allocation. Three products refreshed:
+
+| Product | Bytes | SHA-256 |
+| --- | ---: | --- |
+| DOS16 | 301861 | 42703d131d7abc08046e31a65c8b35f777b9ae9f070dfc144cc2cdd8291fcf88 |
+| Win32 | 315406 | fc07bba9ca31d4c298372bbb86629134110be4b3eafbfe0449984cdd7f96267a |
+| Win64 | 328718 | e684962f900c8194ebb379336a781b0fcceb1e9aee9b47006000fd4d5e0e5d00 |
+
+Only existing owner-authorized slots refreshed. No imported implementation or
+new protected fixture. Local recipes/listings/current objects/run identities
+below build/m3-t32-s8/p3. S8/goal remain active;global certification unchanged.
+Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and
+4260/4261feasible controls(raw4342,infeasible81);fixed M2 final work unchanged.

@@ -5,7 +5,8 @@ param(
     [Parameter(Mandatory = $true)][string]$OutputDirectory,
     [Parameter(Mandatory = $true)][string]$RuntimeDirectory,
     [Parameter(Mandatory = $true)][string]$SourceRoot,
-    [string]$RomPath = ''
+    [string]$RomPath = '',
+    [ValidateSet('None','Safe')][string]$RenderOptimization = 'Safe'
 )
 
 $toolDirectory = Split-Path -Parent $Compiler
@@ -13,6 +14,10 @@ $librarian = Join-Path $toolDirectory 'lib16.exe'
 $runtimeLibrary = Join-Path $RuntimeDirectory 'LLIBCE.LIB'
 $stackObject = Join-Path $RuntimeDirectory 'LVARSTCK.OBJ'
 $runtimeIncludeDirectory = Join-Path (Split-Path -Parent $RuntimeDirectory) 'INC'
+$pythonExecutable = (Get-Command python -ErrorAction Stop).Source
+$originalBuildPath = $env:PATH
+$safeRenderSources = @('ppu/frame.c','io/planar_frame.c','io/palette_pairs.c',
+    'platform/dos16/palette_expand.c','platform/dos16/planar_row.c')
 $sources = @(
     'core/whirlpool.c',
     'core/cannon.c',
@@ -101,7 +106,9 @@ if ($RomPath -ne '') {
 }
 Push-Location $OutputDirectory
 try {
-    $env:PATH = $toolDirectory + ';' + $env:PATH
+    # The historical optimizer driver overflows its command buffer with a long
+    # inherited PATH, even for a tiny C function. This is process-local only.
+    $env:PATH = $toolDirectory + ';' + (Join-Path $env:SystemRoot 'System32')
     # Compile the neutral contract probe with the real far-pointer ABI too.
     # It is not linked into the product and supplies no ROM or device data.
     $ioContractProbe = Join-Path (Split-Path -Parent $SourceRoot) 'test/io_contract_smoke.c'
@@ -134,7 +141,13 @@ try {
         # source-relative stem so core/enemy/movement.c and
         # core/world/movement.c cannot overwrite one another.
         $object = ($relativeSource -replace '[\\/]', '_' -replace '\.c`$', '.obj')
-        & $Compiler /nologo /AL /Gs /D MYSMB_DOS16_TARGET @resourceDefines /c /Fo$object /I $IncludeDirectory /I $runtimeIncludeDirectory @resourceIncludes $source
+        $renderFlags = @()
+        if ($RenderOptimization -eq 'Safe' -and $relativeSource -in $safeRenderSources) {
+            # Keep aliasing and machine-width behavior conservative. No core,
+            # IRQ, clock, input, root or startup source enters this whitelist.
+            $renderFlags = @('/Ox','/On','/Ow','/G0')
+        }
+        & $Compiler /nologo /AL /Gs @renderFlags /D MYSMB_DOS16_TARGET @resourceDefines /c /Fo$object /I $IncludeDirectory /I $runtimeIncludeDirectory @resourceIncludes $source
         if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
         $objects += $object
     }
@@ -164,7 +177,7 @@ try {
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     # C vectors are omitted; physical DOS environment and cinit are retained.
     $consumerTool = Join-Path $PSScriptRoot 'VerifyDos16StartupConsumers.py'
-    & python $consumerTool @objects 'mysmb-startup.obj'
+    & $pythonExecutable $consumerTool @objects 'mysmb-startup.obj'
     if ($LASTEXITCODE -ne 0) { throw 'DOS CRT vector consumer review required.' }
     $members = @($objects | Where-Object { $_ -ne $entryObject })
     $libraries = @()
@@ -194,10 +207,11 @@ try {
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
     # Keep the original full DGROUP reserve without initially taking all free DOS RAM.
     $memoryTool = Join-Path $PSScriptRoot 'VerifyDos16Memory.py'
-    & python $memoryTool (Get-Location).Path --limit-loader-allocation
+    & $pythonExecutable $memoryTool (Get-Location).Path --limit-loader-allocation
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
 }
 finally {
+    $env:PATH = $originalBuildPath
     Pop-Location
 }

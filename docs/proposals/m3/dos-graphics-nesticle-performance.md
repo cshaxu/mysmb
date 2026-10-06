@@ -343,3 +343,13 @@ dirty rejection/pair expansion for P2 integration under the existing budget.
 No extra surface or game/PPU semantic change;all DOS execution under dos16.
 Actual product/fallback/global budgets and full-frame benefit remain unproved;
 three EXEs refresh only after product-code adoption. S8/S9 remain unfinished.
+
+## Current safe rendering build policy
+
+[S8 P3](../../history/M3-T32-rendering-performance-continuation.md#s8-p3-original-compiler-safe-render-generation)
+selects original8.00x safe optimization only for five rendering units. Core,
+IRQ,input,clock,roots and startup retain original flags and core execution
+records. Process-local short PATH fixes historical optimizer driver overflow;
+no system/compiler change. Actual output/routes and measured footprint support
+adoption,while252.089ms current diagnostic still fails nominal60Hz/fivefold.
+Global stack/reference/continuous memory/physical486 gates stay open.

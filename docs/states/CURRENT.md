@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S8 P2; integrate validated cache/expansion cohort and verify three products. |
+| Identifier Mode | Continuation: M3 T32 S8 P3; original-compiler render-only code-generation cohort. |
 | Admission And Approval | Owner-approved consecutive S5-S9 plan and automatic successor;S7 display-stage contract closed by P4;S8 sole active. |
 | Objective | Reduce current dominant rendering cost as one bounded cache/row-output chain while preserving ROM/PPU semantics and memory balance. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
 | Reference Baseline | Current S7 P3products and P4bound phase/counter probes;original tools/2048stack/640x400/two platform components. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | Adopt selected shared PPU dirty-row/optional expansion interface,IO palette-pair table,DOS-private palette_expand and explicit near allocation/free in root;native expanded/fallback tests,CMake/original-DOS source lists. Estimate160-300product/50-120test lines. Optional530near bytes after required storage;no new far surface. Diagnostic sampler320records/31360far bytes after256capacity exhausted,unique150second/4MiB captured routes;not product memory. Three EXEs only after exact output/actual memory/routes and bound costs. |
+| Files And ABI Surface | Zero product source lines initially;contained render-only compiler cohort under build. Compare original/Ox-On-Ow-G0 generation for shared PPU,IO pair preparation and DOS decoder using original AL/Gs ABI,then planar transfer if justified. Core flags/objects unchanged. No alias-free assumption,unsafe opt,new ISA,protected mode or allocation. Bound original-DOS output/primitive/cost/listings and actual memory before selected build-policy adoption;three EXEs after adoption. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
 | Verification | Independent512state native raw/cache/row/palette/priority/source/guard/fallback checks;actual original-DOS exact output/compiler/stack/startup/resident/stage cost and current frame budget;three EXEs after adoption. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
@@ -25,6 +25,16 @@
 
 
 ## Current Technical Baseline
+
+- S8 P3 adopts original safe code generation for five render-only units,
+  short process-local compiler PATH;core/IRQ/input/clock/root flags unchanged.
+  132core records identical,15tests per native width/current-object output/
+  primitive/local-CFG and actual Windows/DOS routes pass. Three EXEs refreshed
+  301861/315406/328718bytes;DOScode/observedordinary resident-4224bytes,
+  49184DGROUP/2048stack unchanged. Controlled370KiBroute passes,not universal
+  minimum. Counter graphics252.089ms versus300.578;nominal60Hz/fivefold and
+  global certification remain unproved. S8active.
+  [Safe policy and evidence](../history/M3-T32-rendering-performance-continuation.md#s8-p3-original-compiler-safe-render-generation).
 
 - S8 P2 adopts combined dirty/near-pair expansion with optional530near bytes,
   no far surface.132core outputs unchanged;15tests per native width,actual
