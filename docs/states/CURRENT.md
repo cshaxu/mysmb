@@ -1,15 +1,35 @@
 # Project Status
 
-**Idle.**
+## M3 T29 S1 Packet
 
-M3 T28 S6 P24 and T28 are closed by explicit owner-directed remaining-work
-transfer. No new T is admitted. Queue head is the
-[shared PPU/background optimization proposal](../proposals/m3/ppu-background-inner-loop-optimization.md).
-[Remaining DOS acceptance](../proposals/m3/dos-memory-cadence-remaining-acceptance.md)
-receives the other named S6 obligations. This closure is not DOS performance,
-complete memory/stack or M2 certification acceptance.
+| Field | Required record |
+| --- | --- |
+| Identifier Mode | New: M3 T29 S1 P1; bounded Win32 usability diagnosis. |
+| Admission And Approval | Owner explicitly admits T29 and requests diagnosis of window shrink and Tab hang before queued DOS work. |
+| Objective | Verify last-good/first-bad product provenance and reproduce actual window/console lifecycle failures; locate causes and missing coverage. |
+| Non-goals | No game/PPU/DOS logic, emulator settings or product helper processes; no source-causality claim from artifact commit alone. |
+| Reference Baseline | cf85c7a0 and retained P22 products; reported dfc13a21 to41d161e3 binary boundary; historical1992/1992,local1991/1992nodes,4260/4261controls. |
+| Candidate Proposal | [T29 retained proposal](../history/M3-T29-win32-usability-regression.md). |
+| Files And ABI Surface | S1 history/binary/source review and ignored neutral actual-product probes,estimated100-200lines; S2 receives repair. |
+| Applicable Rules | README Task Reading Set,EXECUTION,DOCUMENT,ARCHITECTURE,CODING,CONTRIBUTING and source policy. |
+| Verification | Private-desktop actual-product client rectangles, responsiveness and Tab traces; original source/PE hashes/subsystem provenance; focused existing host receipts with blind spots identified. |
+| Expected Markers | scope[],expectedMatches[],actualMatches[],new0,maximum1992/1992;no node custody change. |
+| Asset Needs | Existing local owner products only; no new import; ignored build probes/logs only,existing tracked EXE exception retained for later code P. |
+| Reporting Requirements | S scope/components/size before execution; findings/evidence and actual diff after P; total/local node/edge counts and test limitations. |
+| Stop Conditions | Unbounded process/log, foreground interference, unreviewed imports, original game/PPU changes or unbound historical causality. |
+| Exit Criteria | S1 records exact binary/source boundary, actual reproduction or explicit limitation and receiving S2 repair scope; T requires both-width actual usability proof. |
+| Original Owner Request | Admit T29 to diagnose small Win32 window and Tab console freeze using reported good/bad products. |
+| Similar-Issue Sweep | Startup and WM_SIZE/DPI geometry, owned/borrowed console acquisition/close, hidden root focus, Tab requests, API blocking and test coverage. |
 
 ## Current Technical Baseline
+
+- T29 S1 diagnosis:150percent DPI physical client last-good768x720 versus
+  first-bad/current512x480; fixed physical initial dimensions after DPI-awareness
+  activation explain measured shrink. Owner256x224 not reproduced. Local console
+  trace finds optional menu1401fatal gate and independent HWND-invalid fallback;
+  no indefinite deadlock proved. S2 receives host-capability/device-validity and
+  DPI repair. Product source/EXEs unchanged;T29 remains active.
+  [Evidence and limits](../history/M3-T29-win32-usability-regression.md#s1-p1-diagnosis-checkpoint).
 
 - Three P22 products retained: DOS305163, x86320651, x64329323bytes; no code/EXE
   refresh for this documentation-only closure. DOS SHA256
