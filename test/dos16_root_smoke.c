@@ -162,6 +162,8 @@ int main(void)
     hooks.submit_audio=audio;
     if (mysmb_dos16_root_initialize(&root,0)!=0) return 5;
     if (!mysmb_dos16_root_initialize(&root,&hooks)) return 6;
+    /* Startup descriptors may expire before the first frame. */
+    memset(&hooks,0,sizeof(hooks));
     if(root.text_mode!=0U)return 18;
     mysmb_dos16_root_step(&root); mysmb_dos16_root_step(&root);
     if (root.game.frame_number!=0UL || host.calls!=0U) return 7;

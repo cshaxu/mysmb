@@ -2479,3 +2479,64 @@ nodes,4260/4261feasible controls(raw4342/infeasible81). S6/T28remain open.
 Pending clauses are named:callback/CRT/interrupt stack joins,allocation-service
 continuous peak and error routes,configured cadence/input. No whole-ROM audit
 restart,aggregate certificate or silent deferred row/OAM activation.
+
+
+## S6 P20 checkpoint: startup scratch expires before the game loop
+
+Move the existing DOS composition startup into a static initializer. Caller
+maps initializer failure to the original exit1;startup statements/order,resource
+binding,optional file setup,cleanup and the complete loop/exit suffix normalize
+identically to P18. No shared game/PPU/IO/wire/artwork change,new allocation/global
+scratch or stack-size reduction. Source/test2files,+14/-4. root hook lifetime
+regression clears the caller descriptor after initialization and then executes
+input/audio/video/exit;copied callbacks remain valid. File directory/services
+already copy their values into persistent owners,no startup pointer is retained.
+
+Compiler listing binds exactly to the new product root object;159other owned
+units retain equal CODE/fixup/extern records. mainlocals570to2,saved prologue6
+unchanged;initializerlocals570. Gameplay root frame falls576to8bytes. Startup
+has the additional caller frame8and far return4,so its own-chain cost grows12;
+no complete stack-safety inference follows. Existing2048stack,DGROUP49520and
+headroom16016remain. DOS file305163/minimum329168each+48versus P18;this change
+improves runtime stack margin,not allocated conventional-memory size or FPS.
+
+Both widths15focused tests/13private-host groups pass;Windows binary hashes
+remain P18. Actual new DOS product448/374/373KiBcaller-free routes pass startup,
+input/load,Tab/text/graphics,save and Escape with valid resource/CRC snapshots
+and three captures. Required resources and callback lifetimes survive initializer
+return. Installed configuration/SDL/private protocol unchanged. Sampled maxima:
+- 448KiB:386576bytes,2053samples,seed7465to7531.
+- 374KiB:382480bytes,2053samples,seed7465to7531.
+- 373KiB:381712bytes,2053samples,seed7465to7531.
+373KiBshows auxiliary35856to36112(+256)around file activity;primary345440and
+environment160remain.372KiBactually executes then returns1without completing the
+route;not a successful run and no exact failure-site claim is added. This brackets
+this fixture's whole-KiBbudget at372failure/373success,not a universal gameplay
+minimum or continuous peak.448/374sampled bytes increase48versus P18. No stack
+shrinking,nominal cadence or hardware/version acceptance is claimed.
+
+Similar-issue sweep checks all startup error returns,hook/file/directory copy
+lifetimes,static callback anchors,shared storage views,allocation/free provenance,
+resource binding and shutdown suffix.159unchanged compiled owners preserve P18
+pixel/plane/text/snapshot and cache-failure/pressure receipts within their existing
+fixtures;four unmodified producer probes were rebuilt but not rerun or counted as
+new runtime evidence. Actual composition runs are used for the changed lifetime.
+This avoids repeating unaffected render work while retaining the required joins.
+
+Three existing owner-authorized product artifacts refreshed:
+- mysmb16.exe:305163bytes,SHA256886f48abccaef2d450f8e375f0fdb5d671ad4289a87abceb3c13266ff3f623cd.
+- mysmb32.exe:320651bytes,SHA256beb301aa1c7fc7729efaaf610d56276b129fa40b6a98b56a861a2400cf0cc00b.
+- mysmb64.exe:329323bytes,SHA256681b45e879cc42c2b34be7884fc40cc360cfcb2be830ab51bde6623db8830a44.
+
+Local build/native/host scripts,root listing and source normalization,compiled
+binding checks,resident448/374/373/372and verification summaries remain below
+ignored build/m3-t28-s6. verify-p20-bindings.py and verify-p20-resident/lower.py
+bind changed/unchanged owners and actual child results;check-p20-products.py
+binds three products. No new ROM,derived source,probe binary or raw trace tracked.
+
+Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
+infeasible81),scope/expected/actual[],new0,custody unchanged. S6/T28remain open.
+P21receives bounded allocation-event/CRT/interrupt stack evidence for existing
+remaining clauses;no stack shrinking before proof. Retain P20startup/runtime
+tradeoff and P18render gains. Cadence/input gaps and deferred row/OAM TODOremain
+explicit;no whole-ROM audit restart or final certificate follows.

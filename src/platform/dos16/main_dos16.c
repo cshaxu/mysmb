@@ -57,7 +57,9 @@ static int set_mode(void *context,mysmb_io_u8 text)
 {(void)context;return mysmb_dos16_devices_mode(text);}
 static void present_text(void *context,const struct mysmb_io_text_frame MYSMB_IO_FAR *frame)
 {(void)context;mysmb_dos16_devices_text(frame);}
-int main(void)
+/* Startup scratch expires before the game loop and its render/file calls.
+ * The root/store copy hooks and file services;directory bytes are copied. */
+static int initialize(void)
 {
     struct mysmb_dos16_hooks hooks;
     struct mysmb_snapshot_files files;
@@ -67,12 +69,12 @@ int main(void)
     hooks.present_video=0;
     hooks.submit_audio=submit_audio;
     if (!mysmb_dos16_root_initialize_rows(&root,&hooks,
-        (mysmb_io_u16)sizeof(struct text_storage),present_rows)) return 1;
+        (mysmb_io_u16)sizeof(struct text_storage),present_rows)) return 0;
     /* Graphics source occupies at most2560bytes. A5120-byte four-plane view
      * borrow its unused tail until submission;text owns the whole store later. */
     plane_pixels=root.ppu_frame.pixels+2560U;
     snapshot_store=(struct mysmb_snapshot_store *)_fmalloc(sizeof(*snapshot_store));
-    if(snapshot_store==0) {mysmb_dos16_root_shutdown(&root);return 1;}
+    if(snapshot_store==0) {mysmb_dos16_root_shutdown(&root);return 0;}
 #ifdef MYSMB_LOCAL_TITLE
     mysmb_game_bind_area_source(&root.game,mysmb_local_prg,MYSMB_LOCAL_PRG_SIZE);
     mysmb_game_bind_chr_source(&root.game,mysmb_local_chr,MYSMB_LOCAL_CHR_SIZE);
@@ -86,13 +88,19 @@ int main(void)
         mysmb_snapshot_store_initialize(snapshot_store,&files))
         mysmb_dos16_root_bind_snapshot(&root,snapshot_store,reset_output,0);
     if(!mysmb_dos16_devices_open()) {
-        mysmb_dos16_root_shutdown(&root);_ffree(snapshot_store);return 1;
+        mysmb_dos16_root_shutdown(&root);_ffree(snapshot_store);return 0;
     }
     /* Synchronous presenters are exclusive. Graphics rebuilds every band on
      * return from text;only the root owns and frees this shared allocation. */
     text_storage=(struct text_storage MYSMB_IO_FAR *)root.ppu_frame.pixels;
     mysmb_dos16_root_bind_text(&root,&text_storage->workspace,
         &text_storage->frame,set_mode,present_text);
+    return 1;
+}
+
+int main(void)
+{
+    if(!initialize())return 1;
     while (root.control.exit_requested==0U) {
         mysmb_dos16_root_step(&root);
         if (root.control.exit_requested==0U) mysmb_dos16_devices_wait();
