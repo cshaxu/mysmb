@@ -2101,3 +2101,87 @@ owner-deferred row/OAM recovery stays TODO. No product edit is implied by this
 read-only audit;all local probes/resources/logs/captures remain below ignored build.
 Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
 infeasible81),scope/expected/actual[],new0,custody unchanged. Products retain P13hashes.
+
+
+## S6 P15 checkpoint: bounded text classification and receipt prototypes
+
+P15 measures shared read-only presentation/receipt costs in ignored build only.
+No product source,artwork,core RAM,PPU state,wire schema or three P13EXEs change.
+Original DOS16 compiler/runtime,installed DOSBox configuration,normal SDL and
+private desktop remain unchanged. Diagnostic route settings select telemetry,
+not emulator CPU/video/memory overrides. The text scene is fully rebuilt.
+
+Stage attribution in the diagnostic baseline:background943947PIT ticks versus
+actors33726;background is96.55percent of those two text construction stages.
+These are fixture-local totals,not general FPS or physical486SX measurements.
+
+| Contained alternative | Result and disposition |
+| --- | --- |
+| Bulk observation record copy | Byte-identical tested records;complete-route change at most0.004percent. Reject for negligible benefit and avoid binding wire bytes to native struct layout. |
+| Bulk copy plus zero-tail memcmp | Text route2.13percent shorter,graphics-return2.20percent shorter;load/save/reload0.32/1.03/0.34percent shorter. Retain as provisional evidence,not adoption:bulk/layout coupling is unnecessary and a validation-only final candidate needs its own comparison. |
+| Wrapper frame-local visual memo | Text route5.82percent shorter but repeats source reads on every miss and adds more code. Superseded by integrated decoder. |
+| Integrated frame-local visual memo | Text route6.0349percent shorter in two runs,background943947to876255ticks;actors33726to33727. Select for production integration proof;not yet product acceptance. |
+
+Integrated memo holds seven unsigned bytes:valid,palette,four metatile bytes and
+visual class. It lives in the scene builder's stack and is invalidated on every
+build. The decoder reads the original nametable/attribute once,checks an exact
+key after the blank fast path,and otherwise executes the original complete table
+search and spent-block fallback. Only a completed nonambiguous result is cached;
+invalid pointers and conflicting aliases keep the original early return. Caller
+state/resource bindings are immutable during this synchronous build. Palette and
+all four bytes are part of the key;coordinates are irrelevant to this pure visual
+classification. No persistent ROM cache,allocation,workspace increase,caption,
+object grouping,geometry,color,priority,opacity or gameplay change is introduced.
+
+Two selected DOS runs each compare28files/977235bytes against the same diagnostic
+baseline:five active logical frames,twenty actual VGA planes,hardware text,neutral
+cells and10035-byte snapshot. Inactive text-mode logical frame is not counted.
+Both outputs and probe hashes agree,restore mode3and free live heaps. Diagnostic
+owned maximum393120against392848baseline(+272bytes),near payload8192/far35996
+unchanged,patterned unused stack72in both;these do not establish formal product
+residency,continuous peak or all-path stack bounds. Graphics-return/save/reload
+cost changes are -0.0451/-0.0416/+0.0056percent,negligible fixture-local variation.
+Stage6is not instrumented in this probe;its recorded zero is not zero snapshot
+cost. Snapshot claims derive from exact byte comparison,not those zero counters.
+
+Both native widths pass existing background/caption/actor smoke suites for both
+memo prototypes. Independent integrated-vs-original comparisons cover128synthetic
+resource/PPU fixtures per width and1536000text-cell bytes,full receipt structs,
+500-byte opacity and unchanged game state. Fixtures include palette changes,
+repeated tuples,blank tiles,conflicting visual aliases,two nametables,scroll and
+layer-mask variations;resource contents change between calls to exercise reset.
+This proves those fixtures,not an exhaustive original-ROM route matrix.
+
+Both receipt prototypes pass5451cases each on each native width:enabled states,
+producer/visible counts0through65,poisoned unused source records,full5253encoded
+bytes,guards,immutable game state and5253single-byte validation mutations against
+the original codec. A file-scope struct-size assertion protects the bulk prototype.
+It was moved from local scope after DOS trials solely to remove a native warning;
+no execution logic changes,final native checks pass. This is not a final proposed
+wire-layout change or proof of all restore/error paths.
+
+Similar-issue sweep covers all decode exits,key/palette/resource lifetime,
+ambiguous/spent/blank tuples,grouping/caption/opaque consumers and both receipt
+phases/counts/unused records. No core or platform game logic is introduced. P16
+receives only the integrated text classification memo,plus project-owned focused
+regressions:estimate one product file about20changed lines and a bounded test
+extension. Before adoption require three products,focused/host tests,DOS normal,
+cache-failure/pressure and populated-scene comparisons,actual output/snapshot
+checks and product memory census. Receipt codec adoption is excluded until its
+validation-only variant is measured separately. Extra row/OAM tuning stays TODO.
+
+Scope/expected/actual[],new0,custody unchanged. Historical1992/1992,local1991/1992
+nodes,4260/4261feasible controls(raw4342,infeasible81). S6/T28remain open;
+configured cadence/input,CRT/error/continuous peak and all-path stack remain
+required gaps. No global ROM certification or playable60Hz claim follows.
+
+P15 local reproduction remains below ignored build/m3-t28-s6:run-textmemo2.py
+with arguments1and2,verify-p15-repeat.py,Build-memo-diff.ps1,
+Build-memo-native.ps1 and Build-receipt-native.ps1 with x86/x64arguments.
+The retained source is textmemo2/background.c,SHA256
+fde9a4d3533de0fea86230a63d6c0ebd688c14a95fcea52b555aed634ab5a0c6;
+DOS probe SHA25633dbfc3accfb7d27cdfb97975090364cea2ba2da1f11cd78f826b39ee5056868.
+Summaries p15-repeat-summary.json,p15-memo2-cost-summary.json and
+p15-receipt-cost-summary.json bind the measured fixtures;native result logs
+remain in textmemo2,memodiff and receiptcheck-native. These files are local
+investigation receipts,not shipped assets or global certification evidence.
