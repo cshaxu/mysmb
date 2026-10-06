@@ -57,10 +57,22 @@ static void log_file(void *context,const char *name,int error)
 {
     char filename[260];
     FILE *file;
+    char line[15U+sizeof(unsigned)*3U+2U],digits[sizeof(unsigned)*3U];
+    unsigned magnitude,n,length;
     if (!path(context,name,filename)) return;
     file=fopen(filename,"ab");
     if (file==0) return;
-    (void)fprintf(file,"snapshot error %d\n",error);
+    /* Unsigned magnitude also handles the minimum signed int. Keep the same
+     * binary append bytes without linking a general-purpose formatter. */
+    memcpy(line,"snapshot error ",15U);
+    length=15U;
+    magnitude=error<0 ? 0U-(unsigned)error : (unsigned)error;
+    if(error<0)line[length++]='-';
+    n=0U;
+    do {digits[n++]=(char)('0'+magnitude%10U);magnitude/=10U;}while(magnitude);
+    while(n!=0U)line[length++]=digits[--n];
+    line[length++]='\n';
+    (void)fwrite(line,1U,length,file);
     (void)fclose(file);
 }
 int mysmb_file_storage_initialize(struct mysmb_file_storage *storage,

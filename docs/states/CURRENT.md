@@ -1,33 +1,40 @@
 # Project Status
 
-## M3 T31 S3 Packet
+## M3 T31 S4 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T31 S3 P1; CRT/file/error lifetime. |
-| Admission And Approval | Owner-approved T31 plan;S2 closed and coordinator admits S3. |
-| Objective | Quantify neutral file provider footprint/lifetime and adopt only a useful equivalent alternative. |
-| Non-goals | No game interpretation,snapshot schema/transaction policy,Windows UI,toolchain or DOSBox settings changes. |
-| Reference Baseline | S2 P1 source/products;retained T28 file-service draft remains unaccepted. |
-| Candidate Proposal | [T31 plan and S3 contract](../history/M3-T31-dos-performance-memory-continuation.md). |
-| Files And ABI Surface | src/platform/file/snapshot_files.c and neutral contracts;estimate0-160product lines after audit,no API/ownership fork. |
+| Identifier Mode | Continuation: M3 T31 S4 P1; stack/continuous memory acceptance. |
+| Admission And Approval | Owner-approved T31 plan;S3 closed and coordinator admits S4. |
+| Objective | Reconcile original compiled call/stack paths and actual startup/runtime/error/restore memory with contiguous requirements. |
+| Non-goals | No stack shrink without proof,game/PPU changes,Windows UI,toolchain substitution or DOSBox settings. |
+| Reference Baseline | S3 P1 source/products;retained T28 census/CRT/interrupt evidence and current S1-S3 receipts. |
+| Candidate Proposal | [T31 plan and S4 contract](../history/M3-T31-dos-performance-memory-continuation.md). |
+| Files And ABI Surface | Neutral diagnostic tools/loader/listings;estimate0-200harness lines initially,no product ABI change. |
 | Applicable Rules | README Task Reading Set,EXECUTION,DOCUMENT,ARCHITECTURE,CODING,CONTRIBUTING and source policy. |
-| Verification | Independent binary/append/partial/error/close/descriptor cases,both widths,original DOS linked/resident cost;three EXEs if adopted. |
+| Verification | Source-bound original16-bit CODE/fixups,indirect/CRT/interrupt joins,normal/constrained startup/runtime/error/restore occupancy and continuity;three EXEs for product repairs. |
 | Expected Markers | scope/expected/actual[],new0,baseline/max1992/1992;local1991/1992nodes,4260/4261controls,no custody change. |
-| Asset Needs | Own-source contained draft/neutral vectors;existing local resources only for product builds,all logs below build,no new import. |
-| Reporting Requirements | Scope/size first;actual source diff,callback disposition,footprint/memory,evidence/products,total/local counts. |
-| Stop Conditions | Byte/error/lifetime/descriptor difference,unbounded memory,game-state read or unjustified footprint regression. |
-| Exit Criteria | Current/alternative provider compared and adopted/rejected with callback and memory proof;adoption has three products and routes. |
-| Original Owner Request | Continue performance and memory optimization under approved T31 plan. |
-| Similar-Issue Sweep | Read/write lengths,append/partial/EOF/errors,close/descriptors,allocation ownership and original-runtime linked helpers. |
+| Asset Needs | Existing original-runtime/resource bindings for local diagnostics only;ignored bounded build outputs,no new import/distribution. |
+| Reporting Requirements | Scope/size first;name proved/pending stack/memory clauses,actual diff/evidence/products,total/local counts. |
+| Stop Conditions | Unsourced call/stack assumption,unbounded probe,invalid memory chain or semantic change;do not promote sampled evidence to continuous proof. |
+| Exit Criteria | All scoped lifetime/call/stack/contiguity clauses proved or explicitly received elsewhere;remaining required gaps stay open. |
+| Original Owner Request | Test,repair and verify memory/performance under approved T31 plan. |
+| Similar-Issue Sweep | Startup/runtime/error/restore,near/far/FILE ownership,indirect calls,private CRT/interrupt nesting,optional cache failures and current S1-S3 stack owners. |
 
 ## Current Technical Baseline
+
+- T31 S3 P1closed:FILEprovider behavior retained;error format+13/-1,
+  permanent test+35;DOS product3522bytes smaller,DGROUP49072/headroom16464,
+  minimum325968/max342416,stack2048retained(logger locals+38pending joined proof).
+  Actual370/371KiBroutes pass,sampled378880/379728bytes;not global minimum/peak.
+  Three products301849/311310/324110bytes;S4 stack/continuous memory acceptance active.
+  [S3 closure/S4 scope](../history/M3-T31-dos-performance-memory-continuation.md#s3-p1-closure-remove-general-formatting-from-snapshot-error-logging).
 
 - T31 S2 P1closed:neutral plane source+28/-23,conversion18.82%shorter;
   whole ordinary6.7135%,populated4.3846/5.9957/3.9528%shorter,exact outputs.
   Local stack54->46,no heap/DGROUP growth;actual373KiBroute passes,sampled
   381920bytes(+48). Three products305371/310798/324110bytes. No DOS cadence/global-peak proof;
-  S3 CRT/file/error evaluation is active.
+  S3 subsequently closed;S4 is active.
   [S2 closure/S3 scope](../history/M3-T31-dos-performance-memory-continuation.md#s2-p1-closure-direct-shared-color-plane-conversion).
 
 - T31 S1 P2closed:shared palette preparation+9/-5,no heap/DGROUP change;
@@ -66,7 +73,7 @@
   DOS15400-byte exclusive graphics/text store, source band<=2560 and plane
   band5120, full256x240 source stretched borderlessly to640x400. Original ROM
   logic/PPU-visible state retained by scoped receipts.
-- Loader max bound3076paragraphs, DGROUP49520/headroom16016 and2048stack.
+- Historical T28 loader max bound3076paragraphs,DGROUP49520/headroom16016 and2048stack;current S3 bounds above.
   P22 observed startup boundary maximum386576 versus original458752bytes;
   stable occupancy unchanged.373KiB caller-free fixture passes,372fails;
   not a universal minimum. CRT/error, continuous peak and all-path stack remain

@@ -41,7 +41,7 @@ the source policy, with no redistribution or new derivation/import authorized.
    input latency and memory separately. A missed cadence remains a failed gate,
    never a playability claim. Physical486SX remains M4 qualification.
 
-S1-S2 are closed; S3 is active. Later S register at admission. Each S reports scope/size first,
+S1-S3 are closed; S4 is active. Later S register at admission. Each S reports scope/size first,
 then exact disposition, evidence and total/local counters. Product-code P refreshes
 three EXEs using original tools; audit/prototype/doc P does not. All diagnostics
 stay below ignored build; no unrelated work is removed. Retain prior scoped proof
@@ -278,3 +278,82 @@ footprint and resident memory. Retain stdio unless the alternative proves useful
 and all callbacks remain equivalent. Product-code adoption refreshes three EXEs;
 audit/rejection alone does not. Scope/expected/actual[],new0,maximum1992/1992;
 same local totals. No unbounded full-project re-audit or toolchain substitution.
+
+## S3 P1 closure: remove general formatting from snapshot error logging
+
+Reject the retained raw DOS provider. Actual original-runtime comparison finds
+bad write to a read-only handle fails in both,but the following zero-count read
+is false with stdio's retained error flag and true with raw DOS status alone.
+The draft never entered products. Its extra17context slots also require a public
+storage-layout change;do not treat that unaccepted prototype as an equivalent
+replacement or pursue size acceptance after its failed callback gate.
+
+Adopt a narrower same-contract optimization in the admitted file owner:
+src/platform/file/snapshot_files.c,+13/-1. Keep allFILEopen/read/write/close,
+path/replace/remove and buffering behavior. Log still opens binary append and
+closes;build the identical decimal line and fwrite it instead of fprintf.
+Unsigned magnitude handlesINT_MINwithout signed overflow;3*sizeof(unsigned)
+digits and prefix/sign/newline storage cover the supported16/32-bit ints.
+Storage layout/API stay264DOS/x86,272x64. No schema,transaction policy,game/
+PPU state,platform fork or import. Error codes remain neutral metadata.
+
+Independent stdio reference versus candidate passes both native widths and
+original DOS:10035binary bytes including0/1a/ff,zero transfers,partial/EOF,
+bad modes/sticky errors,forced-close failure,200open/close lifetimes,replace/
+remove,path bounds,missing-directory silent logging and9appended integer cases
+includingINT_MIN/MAX. Logs match174DOS/184native bytes. Permanent snapshot
+storage smoke adds35test lines comparing complete append output to independent
+fprintf,not reproducing the formatter algorithm. Both widths pass9focused
+tests;the updated storage test is rebuilt/rechecked after adding that guard.
+DOS harness includes the explicit rejected-raw witness and closes normally.
+An initial batch lacked explicit exit and reached its60second budget after
+successful callback output;fresh fixed run exits in2.64seconds. First prototype
+regroup omitted its resource member and did not link;corrected exact grouping
+includes it. These are contained driver failures,not accepted product runs.
+
+Original source-bound DOS product301849bytes(-3522),DGROUP49072(-448),headroom16464,
+stack2048retained;minimum325968/page-rounded326192,max342416/page-rounded342640,
+full-DGROUP max-extra3079. Original logger locals266->304(+38);removed general
+formatter's joined stack is not yet certified. S4 explicitly receives this
+error path together with retained CRT/interrupt/indirect bounds;do not shrink
+stack or claim the increased local array proves a lower global stack peak.
+FILEbuffer allocation remains512where used;no buffering/acknowledgement change.
+
+Actual371/370KiB caller-free products both passload,input,Tab,text/graphics,
+save/restore/Escape withCRC/resource-bound save frame7543versus seed7465,zero
+bad/dropped chains andexecError0/result0. Samples2033/2031,observed maxima379728/378880bytes.
+Arena size depends on caller free memory;these differing-budget observations
+are not a same-budget measured saving or continuous/global peak certificate.
+370is the lowest newly tested successful route,not a universal minimum;S4
+owns lower-bound/failure and all-path acceptance. S2's373receipt remains prior
+source evidence. No product cadence improvement is claimed for dormant logging.
+Fresh Windows products passstartup,DPI,three text entries,two returns andEscape;
+debug stripping preserves runtime sections. Three tested assets:
+- mysmb16.exe: 301849bytes; 9c26dcf1b612f4f5b85fc0eab4a289a404c1a2160e8f44f0cbc37caa06085369.
+- mysmb32.exe: 311310bytes; b47c868f95bc712cb35fa4a69059c16852f6c95420d3b069cef806c5bacd8c0a.
+- mysmb64.exe: 324110bytes; 965c03681704830f1f2cfcf841b1d2e7d81a1fd09bedaec95eace24b168b68ff.
+Receipts remain below ignored build/m3-t31-s3:provider check/reference/candidate,
+native results,DOSrun2/receipt,footprint/listing,source-bound product memory,
+resident summary,9focused/storage tests,owned-console and strip receipts.
+Similar-issue sweep covers every file callback/path and production formatting
+use in this owner,integer extrema/byte append/error/descriptor cleanup and
+new local stack cost. No unresolved scoped production difference.
+
+S3 closes and S4 is admitted under the approved plan. ROMscope/expected/actual[],
+new0,no custody change;historical1992/1992,local1991/1992nodes,4260/4261controls
+(raw4342/infeasible81). Full CRT/stack/continuous memory,text/integrated cadence,
+physical486SX and M2 final certification remain unaccepted. Closure/admission,
+node and documentation gates precede commit.
+
+## S4 admission: stack and continuous memory acceptance
+
+Receive the retained T28 sourceCODE/fixup census and indirect/private-CRT/
+interrupt joins plus current S1 palette,S2 plane and S3logger changes. Owners
+neutral diagnostic tools/loader and relevant original compiled listings;
+estimate0-200harness lines initially,no product stack shrink or game change.
+Reconcile callable paths and liveness,measure startup/runtime/error/restore
+peaks and contiguous requirements under normal/constrained memory. Distinguish
+loader bound,sampled occupancy,continuous peak and complete-feature lower bound.
+Current370/371passes are route receipts,not a global certificate. A missing
+clause stays named and open until proved or explicitly owner-transferred.
+ROMscope/expected/actual[],new0,max1992/1992,same local node/control totals.

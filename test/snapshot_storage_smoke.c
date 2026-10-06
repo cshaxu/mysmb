@@ -2,6 +2,7 @@
 #include "platform/file/snapshot_files.h"
 #include <stdio.h>
 #include <string.h>
+#include <limits.h>
 
 static struct mysmb_snapshot_store store;
 static struct mysmb_io_snapshot state,live;
@@ -57,6 +58,39 @@ static void fake_log(void *ctx,const char *name,int error)
     (void)ctx;
     if (!strcmp(name,"mysmb.log") && (error==10 || error==11)) logs++;
     /* No callback failure can recurse into this log sink. */
+}
+static int log_values(struct mysmb_snapshot_files *files,const char *directory)
+{
+    const int values[9]={0,1,-1,10,11,32767,-32767,INT_MIN,INT_MAX};
+    char expected_path[300],actual_path[300];
+    FILE *expected,*actual;
+    unsigned int i;
+    int a,b,ok;
+    sprintf(expected_path,"%s/format.expected",directory);
+    sprintf(actual_path,"%s/format.log",directory);
+    files->remove(files->context,"format.log");
+    expected=fopen(expected_path,"wb");
+    if(!expected)return 0;
+    for(i=0U;i<9U;++i) {
+        if(fprintf(expected,"snapshot error %d\n",values[i])<0) {
+            (void)fclose(expected);(void)remove(expected_path);return 0;
+        }
+        files->log(files->context,"format.log",values[i]);
+    }
+    if(fclose(expected)!=0){(void)remove(expected_path);return 0;}
+    expected=fopen(expected_path,"rb");actual=fopen(actual_path,"rb");
+    if(!expected||!actual) {
+        if(expected)(void)fclose(expected);
+        if(actual)(void)fclose(actual);
+        (void)remove(expected_path);(void)remove(actual_path);return 0;
+    }
+    ok=1;
+    do {a=fgetc(expected);b=fgetc(actual);if(a!=b){ok=0;break;}}while(a!=EOF);
+    if(ferror(expected)||ferror(actual))ok=0;
+    if(fclose(expected)!=0)ok=0;
+    if(fclose(actual)!=0)ok=0;
+    (void)remove(expected_path);(void)remove(actual_path);
+    return ok;
 }
 int main(int argc,char **argv)
 {
@@ -125,6 +159,7 @@ int main(int argc,char **argv)
     if (!file) return 17;i=0U;while (fgetc(file)!=EOF) ++i;(void)fclose(file);
     if (i==0U) return 18;
     (void)remove(path);
+    if(!log_values(&files,argv[1]))return 22;
     /* A missing directory makes both save and log fail silently. */
     sprintf(path,"%s/nonexistent",argv[1]);
     if (!mysmb_file_storage_initialize(&disk,path,mysmb_win32_snapshot_replace,
