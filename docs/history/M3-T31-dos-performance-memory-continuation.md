@@ -418,3 +418,59 @@ current-build set rather than restarting the160-unit census. Scope/expected/
 actual[],new0,custody unchanged;historical1992/1992,local1991/1992nodes and
 4260/4261controls(raw4342/infeasible81). Node/admission and documentation gates
 are required. Product code0,three S3 EXEs unchanged;no T/S successor admission.
+
+## S4 P2 checkpoint: call-site liveness and bounded own-source joins
+
+Product/source/artifacts remain unchanged. Current compiler-listing CFG now
+tracks pushes/pops,local reservation,BP/SP restoration,branches and calls for
+all851functions. Twelve compiler switch jump tables are expanded from their
+explicit DWtargets,not guessed from source function order. All reachable
+returns balance the function's own stack and no unsupported stack transition
+remains in this model.1950call sites each have one consistent live caller-depth
+value;this includes parameters and prologue/local storage,not just LocalSize.
+
+Current CRT entry anchors are decoded separately at74public addresses. This
+avoids linear objdump's padding-byte alignment issue at the unsigned-division
+entry. Four compiler arithmetic names use linked LRET8rather than Ccdecl
+cleanup0;their return conventions are recorded from current entry-anchored
+bytes before caller depth propagation. Their private/helper stack remains a
+different proof obligation. No runtime disassembly or vendor code is committed.
+
+The graph joins1747own-source edges,202CRTcall sites and one excluded legacy
+video callback. Local symbols resolve within their owner first;external public
+targets use the current map. No unresolved own target remains. Two cycles get
+explicit source-hash-bound conservative visit limits:
+
+- Checkpoint/init-frenzy/bullet-cheep:the spawned ID8/10/11falls outside frenzy
+  aliases18/20-23before checkpoint reentry,and its timer is32. No second complete
+  circuit;permit up to two member visits in the conservative path model.
+- Enemy stream/loop commands:page-record reentry sets page-select0->1. A loopback
+  can reset it once,but clears the loop-command flag before reentry. The next
+  page record cannot cause another loopback reset;permit at most three member
+  visits. Other successors return. This uses well-defined current product
+  state/call conditions,not arbitrary API inputs or new ROM-equivalence credit.
+
+Under those recorded conditions the largest project-code-only contribution
+from main is690bytes excluding its entry frame. It deliberately assigns no
+callee body cost to CRT and excludes CRT startup beneath main and CPU/BIOS/
+interrupt frames. It is therefore NOT an upper bound for the full2KiBstack and
+does not authorize shrinking it. Joined own paths may include conservative
+infeasible branch combinations;they are not observed gameplay traces.
+
+Contained recipes/receipts below build/m3-t31-s4:callflow.py and functions/summary,
+crt-entries.py/current entry instructions/callee-pop-proof,indirect-targets,
+source-bound cycle-ranks and own-joins/crt-call-sites. Model rejects unknown SP
+writes,unresolved jumps/targets,unbalanced returns and state-budget overflow;
+cycles are reported before ranks apply. No repeated product build/route needed
+for this audit-only P. The previous service-memory receipts remain scoped to
+their actual executable/settings. Temporary implementation of this analysis
+adds164local script lines;tracked changes are evidence/packet only.
+
+S4 remains active. Remaining finite joins:28CRTnames and reachable private
+helpers including successful/error/startup/exit paths;startup-to-main residence;
+BIOS/interrupt nesting;and the existing allocation-continuity/kernel-transient
+clauses.1950caller states and project-only690do not close those obligations.
+Next P starts from these current bindings,not another851-function census.
+Scope/expected/actual[],new0,no custody change;historical1992/1992,local1991/1992
+nodes,4260/4261controls(raw4342/infeasible81). Required node/documentation gates
+precede commit. No T/S closure or successor admission in this checkpoint.

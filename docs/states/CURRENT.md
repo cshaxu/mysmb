@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T31 S4 P2; join current call/stack and allocation bounds after P1 checkpoint. |
+| Identifier Mode | Continuation: M3 T31 S4 P3; CRT/private/startup and interrupt joins after P2 own-source model. |
 | Admission And Approval | Owner-approved T31 plan;S3 closed and coordinator admits S4. |
 | Objective | Reconcile original compiled call/stack paths and actual startup/runtime/error/restore memory with contiguous requirements. |
 | Non-goals | No stack shrink without proof,game/PPU changes,Windows UI,toolchain substitution or DOSBox settings. |
@@ -22,6 +22,13 @@
 | Similar-Issue Sweep | Startup/runtime/error/restore,near/far/FILE ownership,indirect calls,private CRT/interrupt nesting,optional cache failures and current S1-S3 stack owners. |
 
 ## Current Technical Baseline
+
+- T31 S4 P2checkpoint:851functions have balanced own-frame CFGs,12switch tables
+  and1950call-site live depths;1747own joins/202CRTsites/one legacy exclusion.
+  Two source-ranked cycles bounded;own-source-only main contribution690bytes,
+  excludes CRT/startup/interrupts and is not a total stack bound.2KiBretained.
+  S4 open;28CRTentry/private joins and prior memory/interrupt clauses remain.
+  [P2 proof and limits](../history/M3-T31-dos-performance-memory-continuation.md#s4-p2-checkpoint-call-site-liveness-and-bounded-own-source-joins).
 
 - T31 S4 P1checkpoint:160units rebound(156retained/4refreshed),851compiled
   functions,23indirect sites mapped,28CRTextern entries resolved in byte-equal
