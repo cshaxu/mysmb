@@ -1011,3 +1011,46 @@ Expected and actual product changes zero; three EXEs remain current P6 and
 are not rebuilt. Scope/expected/actual empty, new zero; historical1992/1992,
 local1991/1992 nodes and4260/4261 feasible controls(raw4342,infeasible81).
 Documentation/ledger/diff gates validate this checkpoint before commit.
+
+## S4 P10 checkpoint: current hook observations and unused envp candidate
+
+Re-run the published P6 DOS EXE at the unchanged 369 KiB fixture budget,
+original compiler and installed DOSBox configuration on a private desktop.
+Extend the read-only timer/DOS-entry observer to FP hook 3EE6 and relocated
+XP callback 3EF2. All 2024 timer samples/84 DOS entries produce seven valid
+events, zero invalid arena chains and zero dropped records. At recorded
+boundaries debug/FP remain null, exit remains 0271 and XP equals the actual
+load-relocated _flushall pointer. Argc/argv remain absent, stabilized SP49150.
+Actual game, Tab text/graphics, snapshot restore/save and Escape exit pass.
+All three captures and the CRC-valid resource-bound save are byte-identical
+to the retained P6 route. Graphical capture is the expected 640x400 scene.
+Observed owned peak remains377856bytes with160bytes external environment.
+This closes the missing observed FP/XP fields for that route, not continuous
+write/kernel observation or universal hook lifetime.
+
+Also evaluate a contained unused-envp prototype: preserve __cinit, physical
+PSP environment and executable-path discovery, replace only the unused CRT
+environment-vector copy with an original-ABI empty hook. Existing owned-unit
+consumer inspection is the hypothesis basis, not final adoption evidence.
+No product source or published EXE changed. Candidate links successfully,
+EXE300549(-176), logical loader324672/341040(-176), page-rounded loader
+325168/341536unchanged, DGROUP49152/stack2048unchanged.
+
+Actual candidate369KiB route returns normally, seven valid events/2036timer
+samples/83DOS entries, no dropped/invalid chains. Primary shrinks176bytes,
+but peak auxiliary grows176bytes, leaving the same377856owned peak. Ground
+capture matches; later text/graphics and save differ (44savebytes, including
+CRC). Wall-timed routes are not a deterministic equal-update comparison, so
+do not infer a game-logic fault or exact output from these differences.
+The candidate is NOT adopted: no measured page-rounded/owned-peak reduction
+in this fixture and no controlled equal-state output proof. Keep current
+__setenvp product behavior while reconciling its named memory domain.
+
+Contained hook-observer-summary.json and noenv-product memory receipt retain
+the source/product/config bindings; run-hook and run-noenv are terminal,
+not restarted on observation timeout. No settings, helper process, source
+import or default resolution change. Actual product lines0, published three
+EXEs unchanged/current. Node scope/expected/actual[],new0; historical1992/1992,
+local1991/1992nodes,4260/4261feasible controls(raw4342,infeasible81).
+S4 remains active; runtime/all-phase memory conditions remain named open,
+performance repair belongs to S5-S8 and S9 remains final audit.
