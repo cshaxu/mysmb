@@ -50,6 +50,10 @@ band borrowed after the2560-byte source area in the existing15400-byte store,
 DAC programming and video memory. DOS devices own physical held-key decoding,
 BIOS mode lifetime and PIT sampling. Only its composition root binds local
 immutable program resources and allocates the shared compositor's exclusive row/text store.
+The VGA packer retains portable C mapping and a DOS-private segment-once row
+helper with identical neutral source/output/capacity semantics. It restores
+segment/index/frame registers,uses the existing band store,and has no game
+state or allocation dependency. This is physical pixel layout,not a PPU writer.
 The DOS root owns a15400-byte exclusive row/text allocation and presenter choice.
 Each16destination-row band requests at most10logical source rows/2560bytes
 from the same const PPU compositor;all four VGA planes consume it before reuse.

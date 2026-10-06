@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S7 P1; prototype segment-efficient DOS plane packing/transfer. |
+| Identifier Mode | Continuation: M3 T32 S7 P2; integrate validated segment-once plane packing and refresh three products. |
 | Admission And Approval | Owner-approved S5-S9 consecutive plan and automatic successor instruction;S6 compact-cache contract closed by P4;S7 sole active. |
 | Objective | Reduce systemic DOS scaling/plane-packing/transfer overhead with exact output and no added resident storage. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
 | Reference Baseline | Current S6 P3 products and unchanged mapper;original toolchain/2048stack/640x400. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | platform/vga/vga_frame.c and DOS-private neutral helper if justified;focused tests/original-DOS prototypes;estimate80-180candidate product and80-160test/harness lines. No core/PPU changes or new persistent allocation. |
+| Files And ABI Surface | platform/vga/vga_frame.c only:validated DOS-private row helper and conditional selection,portable C fallback unchanged;estimate80-100product lines. No public ABI/core/PPU/device-mode change or new persistent allocation. Current-product compiler/stack/output/cost and actual DOS/Windows routes;three EXEs refreshed. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
 | Verification | Native full/band/plane math/guard tests and actual original-DOS exact output;segment/register/stack listing audit;whole mapping/submission cost and actual product routes;three EXEs after adoption. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
@@ -24,6 +24,16 @@
 
 
 ## Current Technical Baseline
+
+- S7 P2 adopts81platform VGA lines for segment-once DOS row packing;no
+  core/PPU/public ABI or resident-storage change. Product-bound mapping1.92575
+  times;seven local CFGs balanced/helper own12bytes.171object outputs compare,
+  only VGA differs;native runtime sections unchanged.15tests per width and
+  actual Windows/DOS restore/input/Tab/save/exit pass. Observed DOS owned
+  449696cached/386176fallback bytes(-208);370clean refusal.Three EXEs refreshed
+  304277/314894/328206bytes;49168DGROUP/2048stack unchanged.Whole-game/fivefold/
+  global-memory-stack qualification remains open;S7 active.
+  [Product verification and limits](../history/M3-T32-rendering-performance-continuation.md#s7-p2-integrate-and-deliver-segment-once-packing).
 
 - S7 P1 selects a local DOS segment-once row-packing candidate:entire packing
   stage1.92575-1.92577times in two controlled pairs,zero new resident storage,

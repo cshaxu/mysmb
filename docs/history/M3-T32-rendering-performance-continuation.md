@@ -1570,3 +1570,48 @@ No global stack/continuous-memory/fivefold speed/playability acceptance.
 Exact recipes,objects,listings and run identities remain below build/m3-t32-s7.
 Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and
 4260/4261feasible controls(raw4342,infeasible81). Fixed M2 final work unchanged.
+
+## S7 P2 integrate and deliver segment-once packing
+
+Adopt81platform/vga lines:private DOS row helper and compile-time selection;
+portable C fallback/public ABI unchanged. No core/PPU/root/input/device-mode
+changes or new persistent buffer. Register/stack/capacity/color/source alias
+sweep retains P1 proof;product-bound original compiler listing matches the
+linked VGA object's execution records. All seven local CFGs balance;helper
+local2/own maximum12bytes,arguments10/far return4. IRQ source/prologue still
+preserves incoming DS/ES and establishes its own data segment;no handler
+changes. Global IRQ/kernel/CRT stack proof remains open,not inferred here.
+
+171directory object outputs compared to S6 P3;only the VGA mapper's execution
+records differ. This count includes auxiliary probes,not a linked-unit claim.
+Native runtime sections remain identical;rebuild/strip/actual startup/Tab/input/
+Escape checks pass on both widths,plus15focused tests each. Exact product
+mapper/P3 baseline paired runner passes64cases/155520bytes,DS/guard/source
+checks:699525vs363248ticks for three full mapping passes,1.92575times. This
+is complete-packing-stage evidence,not actual whole-game/FPS acceptance.
+
+Actual original-DOS products pass restored gameplay,D/J,Tab text/graphics,
+save/Escape routes in448KiB(cache enabled) and384KiB(fallback) arenas.
+Observed owned peaks449696/386176bytes,each208below S6 P3;370returns clean
+initialization refusal. Arena chains/drops remain zero,all three640x400
+captures and changed10035-byte snapshots are valid. Installed DOSBox
+configuration/scanout remain unchanged;all UI on private desktops. Observer
+STACKMETA zeros do not prove stack usage. Sampling is not a global maximum.
+
+DOS EXE304277bytes(-208),DGROUP49168/stack2048unchanged;logical loader
+328416..344768,page-rounded328768..345120unchanged. Three products refreshed:
+
+| Product | Bytes | SHA-256 |
+| --- | ---: | --- |
+| DOS16 | 304277 | 14fedb007d624aa0466f7a417a4643d9dd3542db157836bcc84590c4729f8471 |
+| Win32 | 314894 | e799387472eec2f173f82477435b75cb24dbe40b5b2198196af432a6ba6781e2 |
+| Win64 | 328206 | a9fdb14f25678f4cdd482da23ebe478f0eb8910e58b5da1fffb6faff92671428 |
+
+Only owner-authorized existing product slots are refreshed. Native hash
+changes do not imply runtime changes;section comparison passes. No imported
+implementation or protected fixture enters tracked source/evidence. Local
+recipes/listings/probes in build/m3-t32-s7/p2. S7/goal remain active;stage
+acceptance does not close S8/S9 whole-game/reference/transition/global memory/
+stack/hardware obligations. Scope/expected/actual[],new0,historical1992/1992,
+local1991/1992nodes,4260/4261feasible controls(raw4342,infeasible81);M2 final
+certificate unchanged6/136groups,42/952facets,four packages pending.

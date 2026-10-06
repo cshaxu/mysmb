@@ -73,6 +73,83 @@ void mysmb_vga_frame_build(const struct mysmb_io_video_frame *source,
         mysmb_vga_frame_build_rows(source,plane,0U,400U,frame->pages[plane]);
 }
 
+#ifdef MYSMB_DOS16_TARGET
+/* Neutral row packing:borrow source/destination segments once, restore them
+ * before returning to C. Plane stride is bounded by the validated caller. */
+static void pack_row(const mysmb_io_u8 MYSMB_IO_FAR *source,
+    mysmb_io_u8 MYSMB_IO_FAR *pixels,mysmb_io_u16 stride)
+{
+    _asm {
+        push ds
+        push es
+        lds si,source
+        les di,pixels
+        mov bx,stride
+        mov dx,bx
+        add dx,bx
+        add dx,bx
+        mov cx,16
+plane_group:
+        mov al,[si+0]
+        mov ah,[si+3]
+        and ax,3f3fh
+        mov es:[di+0],ax
+        mov al,[si+6]
+        mov ah,[si+9]
+        and ax,3f3fh
+        mov es:[di+2],ax
+        mov al,[si+12]
+        and al,3fh
+        mov es:[di+4],al
+        add di,bx
+        mov al,[si+0]
+        mov ah,[si+4]
+        and ax,3f3fh
+        mov es:[di+0],ax
+        mov al,[si+7]
+        mov ah,[si+10]
+        and ax,3f3fh
+        mov es:[di+2],ax
+        mov al,[si+13]
+        and al,3fh
+        mov es:[di+4],al
+        add di,bx
+        mov al,[si+1]
+        mov ah,[si+4]
+        and ax,3f3fh
+        mov es:[di+0],ax
+        mov al,[si+8]
+        mov ah,[si+11]
+        and ax,3f3fh
+        mov es:[di+2],ax
+        mov al,[si+14]
+        and al,3fh
+        mov es:[di+4],al
+        add di,bx
+        mov al,[si+2]
+        mov ah,[si+5]
+        and ax,3f3fh
+        mov es:[di+0],ax
+        mov al,[si+8]
+        mov ah,[si+12]
+        and ax,3f3fh
+        mov es:[di+2],ax
+        mov al,[si+15]
+        and al,3fh
+        mov es:[di+4],al
+        sub di,dx
+        add di,5
+        add si,16
+        dec cx
+        jz plane_done
+        jmp plane_group
+plane_done:
+        pop es
+        pop ds
+    }
+}
+#endif
+
 /* One16-byte source group supplies all four exact plane index sequences. */
 int mysmb_vga_frame_build_planes(const struct mysmb_io_video_band *source,
     mysmb_io_u16 first,mysmb_io_u16 rows,mysmb_io_u8 MYSMB_IO_FAR *out,
@@ -96,6 +173,9 @@ int mysmb_vga_frame_build_planes(const struct mysmb_io_video_band *source,
             in=source->pixels+(sy-source->first)*256U;
             p0=out+row*80U;p1=out+(rows+row)*80U;
             p2=out+(rows*2U+row)*80U;p3=out+(rows*3U+row)*80U;
+#ifdef MYSMB_DOS16_TARGET
+            pack_row(in,p0,(mysmb_io_u16)(rows*80U));
+#else
             for(group=0U;group<16U;++group){
                 /* Source and output are disjoint. Reuse the four colors that
                  * occur twice without copying every small source group. */
@@ -125,6 +205,7 @@ int mysmb_vga_frame_build_planes(const struct mysmb_io_video_band *source,
                 p3[4U]=(mysmb_io_u8)(in[15U]&63U);
                 p0+=5U;p1+=5U;p2+=5U;p3+=5U;in+=16U;
             }
+#endif
         }
         previous=sy;phase+=3U;if(phase>=5U){phase-=5U;++sy;}
     }
