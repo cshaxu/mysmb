@@ -1884,3 +1884,78 @@ CRT/error-path and all-path stack bounds,remaining populated/cadence/input costs
 and integrated opportunity disposition. Extra row/OAM recovery remains TODO.
 P12first investigates the measured read-only PPU cost with contained prototypes;
 no original-game rewrite,settings changes or promised speedup.
+
+
+## S6 P12 checkpoint: bounded PPU zero-row and disabled-layer alternatives
+
+Contained PPU prototypes only;formal product code/three EXEs stay at P11. Preserve
+all original RAM/ticks,input/audio,PPU state,resource/cache ownership,snapshot
+schema and artwork. The background compositor is a pure const-state projection;
+attribute reads may be avoided only when raw decoded indices prove the universal
+background result. Opacity queries still use original raw indices,not output color.
+
+| Candidate | Measured scope and disposition |
+| --- | --- |
+| Cached row prefill | Fill256local pixels once,then skip8pixel zero fills. Ordinary graphics-return route7.64percent shorter,no instrumented owned increase. Valid but superseded by the more selective candidate below. |
+| Row prefill plus early zero-row attribute skip | Ordinary route16.11percent shorter,castle16.18percent shorter,but water4.23percent and no-zero-row-eligibility64sprite workload7.20percent slower. Instrumented owned+192bytes. Reject the occupancy-dependent regression;do not publish only its best case. |
+| Single cached fetch plus bounded zero-span fill/attribute skip | Compute count once,read both packed bytes once;if both zero,fill exactly count pixels and advance without palette/attribute lookup. Nonzero and uncached paths retain complete output. Final ordinary graphics-return9.88percent shorter,water1.16percent shorter,castle9.63percent shorter;no-zero-row workload0.22percent slower. Instrumented owned+48bytes,no new heap. Select this balanced candidate for product gates. |
+| Disabled-background bulk fill | Replace256individual far writes per row with the same palette0memset. Existing enabled-layer route has no gain,as expected. Explicit disabled-background/64sprite output fixture39.65percent shorter and instrumented owned16bytes lower. Select the disjoint disabled-layer optimization with explicit coverage,not a general frame-speed claim. |
+
+Each initial candidate and the final single-fetch variant passes x86/x64 C90
+comparison against the retained independent per-pixel reference:512cases,
+188743680cached/uncached strip bytes and65536000VGA-plane bytes per width. Scroll,
+status split,palette aliases,resource null/short/rebind,partial clipping,masks,
+sprite flips/priority,guards and invalid spans remain covered. No state mutation.
+A compiler may-uninitialized warning in the intermediate separated branches is
+resolved by a mutually exclusive raw/cached initialization and explicit decoded
+view initialization. Final native builds pass without that warning. Intermediate
+warning-stopped helper calls are not passing tests;no product warning is hidden.
+
+All ordinary candidate DOS routes compare five61440-byte active logical frames,
+640000actual VGA plane bytes,8000hardware text bytes,12000neutral cells and10035-
+byte snapshot bytes against retained S5. Initial mode3restores and observed live
+near/far payloads free. No new allocation beyond the retained row/text,transaction
+and optional cache stores. Ordinary final single-fetch peak392624versus392576,
+far payload35996,stack pattern72. This is an instrumented comparison,not formal
+product resident memory or all-route stack qualification.
+
+Additional paired output-only fixtures use current four-plane conversion and
+identical water/castle preparation. The final populated route compares the same
+five frames,twenty complete planes,text and snapshot bytes. Its final dense case
+uses an immutable source tile whose eight rows each have nonzero low|high and
+fills both960-entry nametables;64sprites remain active. This removes zero-row
+skip eligibility,not a claim that every individual pixel is opaque or that this
+is a reachable original game state. Only output-fixture PPU fields are changed;
+no source resources or game functions are rewritten. Populated final owned
+393744(+48),stack pattern64matching its baseline;no inferred extra global margin.
+
+The disabled-layer pair preserves visible64sprites and masks out only background
+for its explicit final fixture. All logical pixels/planes and final snapshots
+compare with its own identical baseline. That fixture exercises bulk background
+initialization before normal sprite composition,including behind-background
+flags when background is disabled. Other enabled-layer phases retain zero gain.
+No timing benefit is attributed to an unexecuted branch.
+
+Repeat the selected single-fetch source after explicit pointer initialization:
+ordinary title/load/graphics-return/save/reload changes about-5.28/-1.57/-9.88/
+-4.64/-1.58percent;populated title/load/water/castle/no-zero-row changes about
+-5.28/-1.57/-1.16/-9.63/+0.22percent. Exact frames/planes/text/snapshot equality
+and source fingerprints bind those final runs;older pre-initialization results
+are retained separately. No settings change,compiler replacement,frame/tick
+suppression or array/stack-size reduction. All probes remain ignored in build.
+
+Similar-issue sweep covers full/partial zero patterns,all universal aliases,
+left-edge mask,raw fallback,nonzero row cost,rebind/reset,pure read ordering and
+sprite opacity independently of RGB. Single-fetch and disabled-layer changes
+are disjoint paths;P13must verify their combined product rather than infer all
+integration from separate prototypes. Expected1PPU source plus focused test
+coverage,about50-140changed lines. Require native broad comparison/purity/host,
+original DOS16,actual normal/failure/pressure/pixel/snapshot routes,formal product
+fit and three refreshed EXEs. CRT/error-path,all-path stack and configured
+cadence/input deficits remain;this scoped gain is not playable60Hzacceptance.
+Extra row/OAM recovery remains TODO;no original ROM business rewrite.
+
+Historical1992/1992,local1991/1992nodes and4260/4261feasible controls(raw4342,
+infeasible81),scope/expected/actual[],new0,custody unchanged. Product hashes stay
+P11;no refresh for this prototype-only part. S6/T28remain open,P13receives selected
+combined read-only PPU integration and the mandatory product gates.
