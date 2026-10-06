@@ -1,11 +1,12 @@
-# Shared PPU background and DOS plane-loop optimization
+# M3 T30: shared PPU background and DOS plane-loop optimization
 
 ## Owner request and status
 
-Owner requests this static-analysis plan as the first queue candidate and
-closes T28 by explicit remaining-work transfer. Unnumbered, not admitted;
-allocate the next ascending M3 T only upon admission. This proposal owns the
-bounded graphics implementation, not whole-game ROM certification.
+Owner explicitly admits performance continuation after closing T29. M3 T30
+S1 is sole active implementation chain. Retained queued proposal is moved here;
+CURRENT owns execution. Reference code2959c348:Win32 corrective products retained,
+DOS product still T28 P22 byte-identical. This is read-only rendering optimization,
+not whole-game ROM certification. Scope/expected/actual[],new0.
 
 ## Baseline and concrete costs
 
@@ -33,28 +34,28 @@ Static analysis of src/ppu/frame.c and retained product-bound 16-bit listings:
 - Sprite cached/raw duplication and per-pixel background opacity lookup exist,
   but deferred OAM/raw-read/boundary-row tuning retains its TODO admission path.
 
-## Proposed S scopes
+## Admitted T scope and S plan
 
-These are proposal slots; actual S identifiers and estimated sizes are
-published at admission. Each implementation slot includes its own scoped
-comparison, repairs and re-audit, rather than a separate paperwork S.
+S1 is admitted now;S2-S4 are bounded planned slots and register on admission.
+Each S includes implementation,independent comparison,DOS cost/memory review
+and disposition;node-level original semantics stay unchanged.
 
-1. Compact background loop. Owner src/ppu/frame.c and independent frame tests.
+1. S1 compact background loop. Owner src/ppu/frame.c and independent frame tests.
    Separate cached full-tile spans from clipped edges and raw fallback;
    strength-reduce unsigned arithmetic, prepare row invariants once, reduce
    far-pointer reloads and stack traffic. Estimate 80-180 product lines.
    Inspect original compiler output; no blind optimizer/toolchain substitution.
-2. Tile metadata reuse. Shared read-only PPU owner, frame-local bounded row
+2. S2 tile metadata reuse. Shared read-only PPU owner, frame-local bounded row
    descriptors for tile/attribute/palette/base, reused across applicable source
    scanlines. Estimate 100-220 product lines and a few hundred scratch bytes;
    publish exact stack/near/far/lifetime layout before adoption. Invalidate at
    tile-row, name-table, scroll/split and source-state boundaries. Assess merging
    continuous blank spans, preserving every clipped and nonblank pixel.
-3. Neutral four-plane loop. Owner src/platform/vga/vga_frame.c, existing neutral
+3. S3 neutral four-plane loop. Owner src/platform/vga/vga_frame.c, existing neutral
    video contracts and independent mapping tests. Estimate 60-160 product lines;
    reduce tiny copies/pointer reconstruction within existing band storage.
    No gameplay/CHR/object interpretation in the platform layer.
-4. Integrated graphics review. Compare cumulative output and actual product
+4. S4 integrated graphics review. Compare cumulative output and actual product
    frame/input costs, memory and original compiled hot loops. Retain only
    candidates with justified whole-route speed/memory tradeoffs. Report whether
    fixed-config nominal 60Hz is reached. If it fails, name the remaining measured
@@ -104,6 +105,42 @@ DOS costs and memory tradeoffs. Implementation closes only with no scoped output
 or state differences and refreshed products. A failed cadence gate remains
 explicit and requires an owner-directed transfer, not a performance-pass claim.
 Full CRT/error/all-path stack/continuous peak, text performance and final mixed
-mode cadence acceptance belong to the [remaining acceptance candidate](dos-memory-cadence-remaining-acceptance.md).
+mode cadence acceptance belong to the [remaining acceptance candidate](../proposals/m3/dos-memory-cadence-remaining-acceptance.md).
 Physical 25MHz486SX/DOS-version qualification remains M4.
-See [T28 retained closure](../../history/M3-T28-dos-rendering-optimization.md#s6-p24-owner-directed-closure-and-remaining-work-transfer).
+See [T28 retained closure](M3-T28-dos-rendering-optimization.md#s6-p24-owner-directed-closure-and-remaining-work-transfer).
+
+
+## S1 admission
+
+Owner src/ppu/frame.c and independent pixel/plane reference tests;estimate80-180
+product lines. Begin with contained cached span/address/palette/output-pointer
+variants;retain raw fallback and partial edges. Original16-bit listing binds
+instruction claims. Native512-case equality plus actual fixed-config DOS output/
+whole-route comparison precedes adoption. No new cache/framebuffer or deferred
+OAM tuning;no assumptions that fewer C lines mean faster code. Current admitted
+node baseline1992,total1992,scope/expected[],max1992;current local counts remain
+1991/1992and4260/4261. Every adopted code P refreshes three products and reports
+memory tradeoff;prototype-only P keeps them unchanged.
+
+
+## S1 P1 first contained comparison
+
+Prototype combines retained row-offset strength reduction with full cached-span
+palette/output cursors and destructive two-bit extraction. No product source
+change. Both widths independent512-case tests compare188743680strip bytes and
+65536000plane bytes;guards,source immutability,invalid requests and raw/cache/
+edge/split/alias paths pass. Original16-bit owner compiles/links.
+Fixed-config normal SDL/private-desktop DOS route matches977235bytes of frame,
+planes,text,cells and save;mode3restored,near/far storage freed. Installed config
+hash unchanged. Whole return-to-graphics stage7cost is3.734percent shorter than
+retained P24base,roughly0.2percentage points better than offset-only candidate.
+Diagnostic owned393040versus392992(+48bytes),patterned unused stack72retained;
+this is not actual product resident acceptance. Stage3is plane conversion,not
+PPU;do not misattribute that unchanged stage to background gains.
+
+Candidate remains contained,not adopted. Narrow gain does not discharge DOS
+playability. Continue the S1 compiled-loop cohort before integration;original
+fallback/full output/low-memory constraints remain. Three2959c348products and
+ROM counters unchanged. Local reproduction:ignored native.py,Build-Compact.ps1,
+run-compact.py and compact-summary.json under S1 build containment. No protected
+trace/code/binary is committed. S1/T30remain active.

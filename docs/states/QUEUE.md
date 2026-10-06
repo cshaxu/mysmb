@@ -9,8 +9,7 @@ and in the generated [node/task ledger](NODE_TASK_LEDGER.md).
 
 ## DOS graphics optimization and remaining acceptance
 
-1. [Shared PPU background and DOS plane-loop optimization](../proposals/m3/ppu-background-inner-loop-optimization.md) - owner-requested queue head; compact compiled loops, bounded tile metadata reuse, blank spans and neutral conversion, with pixel/state equality and whole-route memory/performance review. Unnumbered, not admitted.
-2. [Remaining DOS memory and cadence acceptance](../proposals/m3/dos-memory-cadence-remaining-acceptance.md) - receives unfinished CRT/file/error, stack/continuous peak, text and integrated cadence/input obligations after graphics work. Unnumbered, not admitted; current DOS playability is unaccepted.
+1. [Remaining DOS memory and cadence acceptance](../proposals/m3/dos-memory-cadence-remaining-acceptance.md) - receives unfinished CRT/file/error, stack/continuous peak, text and integrated cadence/input obligations after graphics work. Unnumbered, not admitted; current DOS playability is unaccepted.
 
 ## Text object and state visual audit
 

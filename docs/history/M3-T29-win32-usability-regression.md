@@ -301,3 +301,16 @@ parallel fixture-isolation observation. Buffer/encoded-stream proof does not
 certify the real Terminal window. DPI acceptance remains retained. Historical
 1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342/infeasible81),
 scope/expected/actual[],new0,custody unchanged. Documentation/node gates required.
+
+
+## S4 P2 owner-directed closure
+
+Owner explicitly closes T29 and resumes performance work. Accepted S4 products,
+DPI repair,native Terminal viewport/RGB/clipping and classic console scope remain.
+This instruction is not a new live Restore/visual test receipt. Unobserved live
+Restore/visual applicability and the parallel borrowed-fixture classification
+observation transfer to the existing host-diagnostics TODO admission path.
+No new ROM-node custody;S4/T29 closed by owner-directed remaining-work transfer.
+Products remain2959c348;scope/expected/actual[],new0,historical1992/1992,
+local1991/1992nodes and4260/4261controls(raw4342/infeasible81). No code or rebuild
+for this closure/admission P. Pending PPU candidate is now admitted as T30.

@@ -2,7 +2,7 @@
 
 ## Status and received obligations
 
-Unnumbered pending candidate, directly after the shared PPU optimization.
+Unnumbered pending candidate, queued after active T30 shared PPU optimization.
 Coordinator receives T28 S6 unfinished infrastructure obligations under the
 owner's explicit closure/queue instruction. No ROM-node custody transfer.
 This is the finite remaining acceptance scope, not a new project-wide audit.

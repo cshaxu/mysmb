@@ -1,34 +1,39 @@
 # Project Status
 
-## M3 T29 S4 Packet
+## M3 T30 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Corrective: M3 T29 S4 P1;owner live Tab hang after DPI repair. |
-| Admission And Approval | Owner reports graphical window remains visible and unresponsive after Tab;latest T29 reopens under existing repair mandate. |
-| Objective | Classic80x50 versus native Terminal viewport with owner-approved clipping;repair resize/output and keep root responsive during acquisition. |
-| Non-goals | No game/PPU/DOS changes,product helper process,Windows settings,foreground control or emulator settings. |
-| Reference Baseline | eb916555 products;retained S2/S3 private-route proof does not discharge live hang. |
-| Candidate Proposal | [T29 corrective record](../history/M3-T29-win32-usability-regression.md#s4-corrective-admission-owner-live-tab-hang). |
-| Files And ABI Surface | Win32 console/root lifecycle,neutral VT output and same-process device thread;estimated180-300platform lines plus focused tests. |
+| Identifier Mode | New: M3 T30 S1 P1;compact background inner loop. |
+| Admission And Approval | Owner closes T29 and explicitly admits queue-head performance continuation. |
+| Objective | Reduce compiled DOS background-row overhead with exact pixels/state;compare variants,cost and memory before adoption. |
+| Non-goals | No ROM game/PPU-visible semantic changes,new framebuffer,OAM deferred tuning,Windows UI changes or DOSBox settings. |
+| Reference Baseline | 2959c348 products;DOS T28 P22 unchanged;retained P24 diagnostic comparators. |
+| Candidate Proposal | [T30 retained plan](../history/M3-T30-ppu-background-performance.md). |
+| Files And ABI Surface | Shared ppu/frame.c,independent tests;estimated80-180product lines;contained prototypes initially. |
 | Applicable Rules | README Task Reading Set,EXECUTION,DOCUMENT,ARCHITECTURE,CODING,CONTRIBUTING and source policy. |
-| Verification | Live wait-chain/stack read-only evidence;bounded reproduction,corrective actual-route comparison,focused tests,original DOS16 and three products. |
-| Expected Markers | scope[],expectedMatches[],actualMatches[],new0,maximum1992/1992;no custody change. |
-| Asset Needs | Existing owner process/resources only;ignored build diagnostics60seconds/32MiB maximum;prefer neutral wait metadata,no new imports. |
-| Reporting Requirements | Scope/size before code;actual diff,failed/passed evidence,products and total/local node/edge counts after commit. |
-| Stop Conditions | Foreground interference,unbounded trace/dump,unreviewed import or game/PPU change. |
-| Exit Criteria | Identified live blocking path repaired and equivalent scoped real acquisition/join tested,no unresolved scoped hang;three products/gates pass. |
-| Original Owner Request | Window size works but Tab still freezes;repair immediately under T29. |
-| Similar-Issue Sweep | Alloc/attach,font/geometry/menu calls,root cross-thread joins,window messages and input/output transitions;reconcile private-test blind spots. |
+| Verification | Original16-bit listing,native512-case independent pixel/plane guards,raw/cache/edge/split/palette paths,actual fixed-config DOS output,cost and memory;three EXEs for adopted code. |
+| Expected Markers | scope[],expectedMatches[],actualMatches[],new0,baseline/max1992/1992;local1991/1992nodes,4260/4261controls,no custody change. |
+| Asset Needs | Existing local resources and comparators;all prototypes/logs below ignored build;no new imports,existing EXE exception retained. |
+| Reporting Requirements | S owners/scope/size first;P actual diff,gain/memory/evidence/products,total/local counts;no micro-gain as playability acceptance. |
+| Stop Conditions | Pixel/state/opacity divergence,unbounded memory,unsupported pointer assumptions,cost regression or original semantic change. |
+| Exit Criteria | S1 variants disposed with compiled/output/cost/memory proof;adoption only with three products;T requires cumulative graphics review and explicit cadence status. |
+| Original Owner Request | Close current T and admit next performance task. |
+| Similar-Issue Sweep | Cached/raw/first-last/full spans,address/palette/output indexing,far accesses,splits,aliases and guards;follow original read-only output contracts. |
 
 ## Current Technical Baseline
 
-- T29 S4 corrective implementation active after owner rejects the earlier live
+- T30 S1 first contained cursor prototype:both-width512-case pixel/plane tests
+  and original DOS16 comparison977235bytes exact;whole graphics-return3.734percent
+  shorter than P24base,diagnostic owned+48bytes. Not adopted or playable-cadence
+  evidence;current three products remain2959c348. S1 cohort continues.
+
+- T29 S4 corrective implementation retained after owner rejects the earlier live
   Tab/Terminal result. Terminal native viewport/RGB/clipping and same-process
   fresh acquisition implemented;classic80x50and shell attach/release retained.
   Both-width actual native80x30entries/Tab/exit,5focused and sequential13host
-  groups pass;VT parser checks8600cells per width. Live Restore/visual result and
-  observed parallel borrowed-fixture classification remain pending in S4.
+  groups pass;VT parser checks8600cells per width. Owner-directed T29 closure transfers live Restore/visual and parallel fixture
+  observation to TODO;no new live acceptance.
   [S4 scope/evidence/limits](../history/M3-T29-win32-usability-regression.md#s4-p1-corrective-implementation-checkpoint).
 - Three products refreshed:305163/310798/323598bytes;DOS hash unchanged.
   Win32 code/test/tool/build8files,+311/-44;no game/PPU/DOS logic changes or
@@ -60,9 +65,8 @@
 ## Compact closure status
 
 - [T29 Win32 usability](../history/M3-T29-win32-usability-regression.md#s3-p1-integrated-closure):
-  DPI repair retained;owner live failure reopens S4 for Terminal viewport
-  and acquisition correction. Earlier scoped receipts remain historical,not
-  successful live Terminal acceptance. No ROM-node credit.
+  Owner closes S4/T29 with retained implementation and explicit TODO transfers.
+  Earlier scoped receipts remain historical,no new live acceptance or ROM credit.
 
 - [T28 closure](../history/M3-T28-dos-rendering-optimization.md#s6-p24-owner-directed-closure-and-remaining-work-transfer):
   accepted memory/loader/output improvements retained; graphics work and remaining

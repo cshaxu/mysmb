@@ -9,6 +9,13 @@
   exit/status and host timing before changing code. No universal startup bound.
   [Receipt and limits](../history/M3-T29-win32-usability-regression.md#s3-p1-integrated-closure).
 
+- [ ] **T29 remaining host applicability:** Owner closes T29 after S4 and
+  resumes performance. Retain unobserved live Terminal Restore/visual outcome
+  and parallel borrowed-fixture result80 versus sequential passes. Reopen only
+  on a named reproduction;capture source/product,process/shell/desktop and view
+  conditions before modifying code. No new whole-project audit or acceptance
+  inferred from closure. [Transfer](../history/M3-T29-win32-usability-regression.md#s4-p2-owner-directed-closure).
+
 ## Translation Debt
 
 - [ ] **Optional rowwise renderer speed recovery:** Owner accepts the bounded
