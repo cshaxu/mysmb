@@ -38,10 +38,10 @@ the source policy, with no redistribution or new derivation/import authorized.
    and memory; no bitmap quantization or information loss.
 6. S6 actual-product integrated review. Combine accepted changes, source-bound
    three products, graphics/text/Tab/save/restore/exit; report configured60Hz,
-   input latency and memory separately. A missed cadence remains a failed gate,
+   input latency and memory separately. Receive the explicit S4 remaining contract below. A missed cadence remains a failed gate,
    never a playability claim. Physical486SX remains M4 qualification.
 
-S1-S3 are closed; S4 is active. Later S register at admission. Each S reports scope/size first,
+S1-S4 are closed; S5 is active. S6 is registered as the receiving integration backlog only,not execution-active. Each S reports scope/size first,
 then exact disposition, evidence and total/local counters. Product-code P refreshes
 three EXEs using original tools; audit/prototype/doc P does not. All diagnostics
 stay below ignored build; no unrelated work is removed. Retain prior scoped proof
@@ -724,3 +724,92 @@ without resetting own-source,binary-FILE,argument or keyboard proofs.
 Scope/expected/actual[],new0,custody unchanged;historical1992/1992,local1991/1992
 nodes,4260/4261controls(raw4342/infeasible81). Three S3EXEs unchanged. Required
 node/documentation gates precede commit;no T/S closure or next S admission.
+
+
+## S4 P8 integration handoff and S5 admission
+
+Coordinator reviews S4against its explicit exit clause:scoped clauses proved
+or explicitly received elsewhere. Under the approved T31plan,the integration
+review receives the remaining contract before S4closes. This is a same-T
+technical handoff,not milestone/task success,owner-directed cancellation or
+permission to omit verification. S6is registered as receipt/backlog only;S5is
+the sole active executor. No ROM-label custody transfer because scope is empty.
+
+S4retains accepted scoped original compiler/image bindings,current own/CRT
+conditional paths,argument/IRQ9receipts,actual370success/369application failure/
+318loader failure,and file-error routes. Products and2048stack stay unchanged.
+No all-path stack/continuous peak/cadence/physical486SXcertificate is claimed.
+The coordinator explicitly accepts these unchanged receiving clauses in S6:
+
+| ID | Unfinished contract | S6 receiving scope and closing evidence |
+| --- | --- | --- |
+| MEM-S4-01 | Pre-main cinit/envp/argv peak and path/argument domains | Current final-build startup joins,allocation success/failure and persistent argv residence;do not substitute observed22/400bytes for all inputs |
+| MEM-S4-02 | Normal/fatal exit,debug/FP hook lifetime and callback iterator | Source/image producer conditions,nonreturn distinction and closed cleanup/error paths;initial pointer zero alone is insufficient |
+| MEM-S4-03 | BIOS10/DOS21body,IRQ0/BIOS1c,exceptions/critical-error nesting | Named current platform assumptions and applicable proof;real target-specific firmware qualification remains M4,never inferred from IRQ9only |
+| MEM-S4-04 | Continuous allocation/kernel transitions and contiguous requirements | Reconcile boundaries/static loader with runtime/error/restore coverage and any hidden transient upper bound;18Hz/pre-service observations alone are not continuous proof |
+| MEM-S4-05 | Final integrated stack/memory and playable cadence | Bind all accepted optimizations to final three products;retain2048stack unless the full relevant bound is proven;report memory and configured60Hz/input separately |
+
+S6cannot close successfully with these five clauses unexplained/open. Physical
+M4qualification cannot be represented as complete by this handoff. Discovery
+of a concrete unsafe stack/allocation issue stops affected implementation and
+receives a bounded corrective owner;no game/PPU semantics change to force a pass.
+This preserves the full goal while allowing independent text work to advance.
+
+S4closes by this accepted integration handoff,not verification completion.
+S5entry shared text scene/background/actor assembly to neutral cell submission;
+owners src/text and neutral presenter only. Estimate0-180product lines after
+profile. Compare identical cells/glyphs/foreground/background and underlying
+game state,including title/info/HUD/floating score,animated objects,water/castle/
+monochrome and Tab/restore. No bitmap sampling,tick/frame skipping,omitted text,
+new framebuffer,helper process or DOSBox-setting changes. Measure original
+DOS hot-loop cost and conventional memory/stack tradeoff before adoption.
+Product-code P refreshes three EXEs;prototype/audit P does not. S4conditional
+proofs apply only where dependencies remain unchanged;S6rechecks affected joins.
+Scope/expected/actual[],new0,historical1992/1992,local1991/1992nodes,4260/4261
+controls(raw4342/infeasible81),custody unchanged. Required ledger/admission,
+closure,node and documentation gates precede commit. No T31closure.
+
+## S5 P1 checkpoint: exact text clear cohort
+
+First bounded cohort changes only local prototypes of text_elements_build's
+blank-frame initialization. Rendering/validation/templates,source selection,
+captions and game state remain baseline. Compare8-cell chunk,80-cell row and
+in-output doubling. The doubling copy maintains initialized equal cells and
+uses n<=filled,so source/destination ranges never overlap;4000cells and16-bit
+byte counts fit the current three-byte cell ABI. No heap/persistent framebuffer.
+
+Independent original-source reference versus each candidate passes11776full
+frame cases per native width(kind/pose/sky combinations),141312000compared frame
+bytes each,source immutability,guards and invalid-request preservation. Valid
+and rejected poses are both compared;this matrix alone is not a complete state
+gallery or final title/score/mixed-mode qualification. Fix a diagnostic-only
+misleading indentation warning before subsequent use. No product source changed.
+
+Original DOS /AL/Gs cohort links exact retained S2owner diagnostic,with only
+the element object replaced. Text/game/PPU bodies outside that member are the
+same;the older diagnostic file logger is not a claim about current S3product
+memory. Each ordinary route matches977235pixel/plane/text/snapshot bytes,
+normalSDL/private desktop,installed settings unchanged,mode3restore and full
+near/far cleanup:
+
+| Candidate | Whole text route change | Diagnostic owned delta | Element-build local bytes | Disposition |
+| --- | ---: | ---: | ---: | --- |
+| 8cell chunk | -2.8514% | +48bytes | 30 | Weaker than doubling |
+| 80cell row | -3.7666% | +48bytes | 246 | Weaker/larger transient than doubling |
+| Doubling | -3.9103% | +32bytes | 8 | Select for integration evaluation |
+
+Graphics differences are below0.1%in this fixture;no graphic/cadence improvement
+claimed. These are contained diagnostic costs,not actual productFPS or486SX.
+Patterned unused stack72in selected run retains its fixture-only limit. No
+global stack certificate is inferred;S6owns final affected source/stack joins.
+Current three S3products remain unchanged. Next P integrates the small selected
+candidate only after applicable text/caption/actor/state tests and actual DOS
+memory/mixed-mode gates,then refreshes all three products if adopted.
+
+Contained recipes under build/m3-t31-s5:reference-elements/clear-check/native
+drivers,three exact original-compiler listings/cohort links,comparators and
+variant summaries. Primitive/full-route receipts do not replace final mixed
+scene integration. S5 stays active. Scope/expected/actual[],new0,custody unchanged;
+historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342/infeasible81).
+Node/documentation gates precede this audit/prototype P. The accepted S4->S6
+five-clause receiving contract remains open;no T31acceptance or goal completion.
