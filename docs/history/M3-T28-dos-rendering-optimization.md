@@ -2540,3 +2540,91 @@ P21receives bounded allocation-event/CRT/interrupt stack evidence for existing
 remaining clauses;no stack shrinking before proof. Retain P20startup/runtime
 tradeoff and P18render gains. Cadence/input gaps and deferred row/OAM TODOremain
 explicit;no whole-ROM audit restart or final certificate follows.
+
+
+## S6 P21 checkpoint: product-bound CRT and startup allocation events
+
+Read-only P21uses the existing owner-local historical compiler/runtime,license
+and redistributability not newly qualified;no implementation is imported. Raw
+runtime CODE/entry listings stay ignored below build. The isolated /MAPrelink
+is byte-identical to P20product(SHA886f48abccaef2d450f8e375f0fdb5d671ad4289a87abceb3c13266ff3f623cd).
+29previous external symbols resolve in its linked runtime region11050bytes.
+79public addresses are decoded independently;not all public labels are functions.
+Initial linear decoding misaligned after embedded data;discard its affected
+prefix interpretation. Restart from exact symbol addresses before inspecting
+entry prefixes/call targets. Private/internal paths still require control-flow
+review;this is not a completed29routine stack certificate.
+
+Linked CRT __getbufrequests512bytes from far mallocand falls back to aone-byte
+buffer on failure. This is actual linked-code evidence rather than BUFSIZheader
+inference;the fallback can make file IO expensive under pressure. __outputuses
+a10-byte request through the runtime stack checker;this excludes callers,
+private helpers and saved registers. Runtime allocation uses DOS48/4Aservices,
+and startup resizes the original primary block. Arithmetic/IO wrappers and
+interrupt/BIOS joins are still separate obligations. Archive metadata confirms
+DOS open/close/read/write and setvbufexports in the existing210877-byte runtime;
+no source or implementation copy. A later direct DOS file-service candidate
+could remove stdio buffering/formatting dependencies,with full byte/error/close/
+append/partial-transfer compatibility proof first;no gain or adoption claimed.
+
+Named missing condition in P18/P20FIT receipts:18Hzsamples started after CRT
+startup trimming and therefore did not see the earlier DOS-loader reservation.
+MZmaximum-extra is65535;the CRT later clips its data-segment span to4096paragraphs.
+Map-derived safe candidate retains that full64KiBDGROUParena,setting maximum
+extra to3076paragraphs(minimum2076,image18497paragraphs). No smaller near arena,
+stack or cache reserve. The affected owner is build/load metadata,ROM scope[].
+Impact is unnecessary temporary use of caller-free memory before game startup,
+not a new gameplay defect or lower mandatory stable-resident requirement.
+
+Declared contained external observer hooks INT21and1c,walks bounded512MCBheaders,
+records up to256changes and delegates original vectors. No DOS/stdio/allocation
+inside callbacks;all output is after restoration.150seconds per route/2MiBlogs,
+normal SDL/private desktop and unchanged installed DOSBox configuration. It
+observes DOS-service boundaries plus timer samples,not hidden kernel-internal
+transients. Observer code/data live in the parent;its interrupt frame temporarily
+uses caller stack,so do not use it as formal stack-high-water or cadence evidence.
+No raw game RAM is logged. Observed chain/errors/drops are explicit gates.
+
+Clone changes only bytes12/13,MZmax-extra65535to3076;checksum field is zero and
+all other bytes,loaded image and resource identity are identical. Paired448KiB
+actual original/capped routes pass load/input/Tab/text/graphics/save/Escape with
+exactly equal10035-byte save and three captures. Both record2055timer samples,
+74DOS calls,four changes,zero bad chains/drops. Service-boundary ownership:
+
+| Phase | Original bytes | Capped bytes |
+| --- | --- | --- |
+| Initial loader primary plus environment | 458752 | 346096 |
+| After CRT trim | 345600 | 345600 |
+| After required presenter | 361040 | 361040 |
+| After required transaction arena | 386576 | 386576 |
+
+Boundary maximum458752to386576,saving72176bytes(70.484375KiB)in this route.
+Stable residence unchanged;no FPS or universal minimum claim. Initial capped
+primary345936is496above byte-image prediction345440;this matches the496difference
+between byte-paragraph and full512-page image rounding. That is an inference,
+not a portable exact-loader-size guarantee. Retain full64KiBbound;do not shave
+those496bytes without cross-loader proof. Whole-KiB373pass/372failure belongs
+to unmodified P20;the capped low-budget route remains an adoption requirement.
+
+Similar-issue sweep covers MZminimum/maximum/checksum,image identity,DGROUP/
+stack/near reserve,CRT trim,all direct syscall hooks/vector restoration,MCB
+owner/environment/auxiliary accounting,drops/bounds and file-buffer fallback.
+This resolves the named sampling blind spot for the measured startup route;
+not all-phase/all-path CRT/kernel peak or interrupt stack certification.
+
+P22receives build-metadata adoption of the map-derived MZmax-extra bound:extend
+the DOS build/verification owner and synthetic malformed/boundary/idempotence
+checks,then build/validate three products. Preserve minimum/checksum policy,
+image bytes,64KiBarena and original toolchain;report byte-image and page-rounded
+estimates separately. Require nonhooked actual373/374/448and the startup-failure
+boundary plus external-event verification before adoption. No core/PPU/source
+logic change,no emulator tuning,stack shrinking or deferred row/OAM activation.
+
+Local ignored reproduction:prepare-p21-map/extract-p21-crt/restart-p21-entries,
+inspect-p21-runtime-exports/inspect-p21-mz,prepare-p21-loader.py and external
+original/capped448routes plus verify-p21-loader.py. CRTCODE<16KiB,entry listings
+<512KiB;all records/hash manifests remain below build/m3-t28-s6. Probe-only P21
+leaves three P20products unchanged. Cleanup remains S6's responsibility.
+Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
+infeasible81),scope/expected/actual[],new0,custody unchanged. S6/T28remain open;
+private CRT paths,interrupt/kernel bounds,error routes and cadence/input remain.
