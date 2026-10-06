@@ -253,6 +253,37 @@ int main(void)
     before=game;original=frame;game.area_prg_size=0U;
     CHECK(!mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
     CHECK(memcmp(&frame,&original,sizeof(frame))==0);
+    /* Repeated keys must retain palette identity and reset between builds.
+     * Use authored table tuples,including a resource change with unchanged
+     * nametables and an ambiguous alias;no source artwork is needed. */
+    game.area_prg_size=sizeof(prg);game.ppu.visible_ppu_mask=0x1eU;
+    game.ppu.visible_scroll_x=game.ppu.visible_scroll_y=0U;
+    memset(game.ppu.name_table,0x24,sizeof(game.ppu.name_table));
+    memset(game.ppu.name_table[0]+0x3c0U,0,64U);
+    memset(game.ppu.name_table[1]+0x3c0U,0,64U);
+    for(row=0U;row<15U;++row)for(i=0U;i<32U;++i)
+        put((unsigned short)(i/16U),(unsigned short)(i%16U),row,0U,5U);
+    before=game;
+    CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
+    CHECK(r.recognized==480U && r.ambiguous==0U && r.unsupported==0U);
+    CHECK(memcmp(&before,&game,sizeof(game))==0);
+    for(i=1U;i<480U;++i)CHECK(workspace.kinds[i]==workspace.kinds[0U]);
+    /* Identical tuples in different palette tables can mean different art. */
+    put(0U,1U,0U,1U,5U);
+    CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
+    CHECK(workspace.kinds[0U]!=workspace.kinds[1U]);
+    put(0U,1U,0U,0U,5U);
+    /* Invalidate the source binding's old meaning between synchronous calls. */
+    for(j=0U;j<4U;++j)prg[0x1014U+j]=0U;
+    CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
+    CHECK(r.unsupported==480U && r.ambiguous==0U);
+    for(j=0U;j<4U;++j)prg[0x1014U+j]=(unsigned char)(0x54U+j);
+    for(j=0U;j<4U;++j)prg[0x1008U+j]=prg[0x1014U+j];
+    CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
+    CHECK(r.ambiguous==480U && r.unsupported==480U);
+    for(j=0U;j<4U;++j)prg[0x1008U+j]=(unsigned char)(0x48U+j);
+    CHECK(mysmb_text_background_scene_build(&game,&workspace,&frame,&r));
+    CHECK(r.recognized==480U && r.unsupported==0U && r.ambiguous==0U);
     puts("semantic background: grouped pipe/fill/alias/hidden/HUD/scroll/read-only passed");
     return 0;
 }

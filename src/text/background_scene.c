@@ -61,9 +61,12 @@ static unsigned char kind(unsigned short group,unsigned short index)
     return UNKNOWN;
 }
 
+/* One exact visual classification per build; never retained across frames.
+ * The resource binding is immutable during the synchronous scene build. */
+struct frame_memo {unsigned char valid,palette,tiles[4],kind;};
 static unsigned char decode(const struct mysmb_game *g,unsigned short column,
     unsigned short row,unsigned char table,unsigned char *palette,
-    unsigned char *ambiguous)
+    unsigned char *ambiguous,struct frame_memo *memo)
 {
     static const unsigned char counts[4]={39U,46U,10U,6U};
     unsigned short tile_row,tile_col,a,base,index,j,offset;
@@ -77,6 +80,9 @@ static unsigned char decode(const struct mysmb_game *g,unsigned short column,
     *ambiguous=0U;
     if(tiles[0]==0x24U && tiles[1]==0x24U &&
         tiles[2]==0x24U && tiles[3]==0x24U)return BLANK;
+    if(memo->valid && memo->palette==*palette && tiles[0]==memo->tiles[0] &&
+        tiles[1]==memo->tiles[1] && tiles[2]==memo->tiles[2] && tiles[3]==memo->tiles[3])
+        return memo->kind;
     base=(unsigned short)(g->area_prg[0x0b08U+*palette] |
         ((unsigned short)g->area_prg[0x0b0cU+*palette]<<8U));
     if(base<0x8000U)return UNKNOWN;
@@ -104,6 +110,8 @@ static unsigned char decode(const struct mysmb_game *g,unsigned short column,
             }
         }
     }
+    memo->valid=1U;memo->palette=*palette;memo->kind=found;
+    memo->tiles[0]=tiles[0];memo->tiles[1]=tiles[1];memo->tiles[2]=tiles[2];memo->tiles[3]=tiles[3];
     return found;
 }
 
@@ -303,6 +311,8 @@ int mysmb_text_background_scene_build(const struct mysmb_game *g,
     unsigned short i,row,col,head,tail,n,minx,maxx,miny,maxy;
     unsigned char p,k,ambiguous,table,cap;
     short left,top,right,bottom;
+    struct frame_memo memo;
+    memo.valid=0U;
     if(g==0 || w==0 || frame==0 || receipt==0 || g->area_prg==0 ||
         g->area_prg_size<0x0b10U)return 0;
     receipt->recognized=receipt->unsupported=receipt->ambiguous=0U;
@@ -312,7 +322,7 @@ int mysmb_text_background_scene_build(const struct mysmb_game *g,
     if((g->ppu.visible_ppu_mask&8U)==0U)return 1;
     for(i=0U;i<480U;++i) {
         row=i/32U;col=i%32U;table=(unsigned char)((col/16U)^(g->ppu.visible_ppu_name_table&1U));
-        k=decode(g,col%16U,row,table,&p,&ambiguous);
+        k=decode(g,col%16U,row,table,&p,&ambiguous,&memo);
         w->kinds[i]=k;w->palettes[i]=p;w->visited[i]=0U;
         if(ambiguous!=0U)receipt->ambiguous++;
         if(k==UNKNOWN)receipt->unsupported++;else receipt->recognized++;

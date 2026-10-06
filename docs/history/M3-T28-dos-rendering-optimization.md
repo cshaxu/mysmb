@@ -2185,3 +2185,71 @@ Summaries p15-repeat-summary.json,p15-memo2-cost-summary.json and
 p15-receipt-cost-summary.json bind the measured fixtures;native result logs
 remain in textmemo2,memodiff and receiptcheck-native. These files are local
 investigation receipts,not shipped assets or global certification evidence.
+
+
+## S6 P16 checkpoint: integrated frame-local text classification
+
+Adopt only the selected exact frame-local classification memo in shared text
+background assembly. Seven unsigned bytes live on the builder stack;all keys
+include palette and four tile bytes,reset on every build. Original blank,
+invalid-table,conflicting-alias and spent-tuple fallback semantics remain.
+No gameplay/state/PPU-state/tick/observer/wire/artwork/host input change,no new
+heap or persistent cache. Actual product/test diff2files,+43/-2.
+
+Similar-issue sweep covers every decode return,key and palette identity,
+resource lifetime,ambiguous/unknown/blank/spent branches,readonly state and
+opaque/caption/grouping consumers. Added regressions populate480repeated tuples,
+change one palette-table identity,change the resource table with unchanged
+nametables,and introduce/remove a conflicting alias between builds. Original
+source inputs must remain unchanged;no fixture copies protected artwork.
+Both widths pass14focused tests including background/caption/actors,pixel/row,
+VGA/clock/root/snapshot,purity and product self-test,plus13private-desktop host
+routes each. Integrated source independently matches128synthetic fixtures and
+1536000cell bytes per width,full receipts/opacity/game-state checks.
+
+Original OpenNT DOS16/runtime builds full product. Existing optional OLDNAMES
+lookup warning remains;no compiler or flag replacement. MZminimum329104bytes,
+DGROUP49488/headroom16048,stack2048,maxsegment32768. Product file and minimum
+increase272bytes;no runtime work allocation is added.
+
+Four contained DOS routes(normal,cache failure,pressure,populated PPU fixtures)
+each match977235bytes:five active logical frames,twenty actual VGA planes,
+hardware text,neutral cells and10035snapshot bytes. Independent coordinate
+formula checks every hardware byte. All free live heaps and restore mode3;
+raw cache fallback runs in failure/pressure routes. Complete text stage is
+6.0367/6.0392/6.0402/6.0370percent shorter,ordinary graphics-return/save/reload
+-0.0451/-0.0416/+0.0056percent changes are negligible. Populated PPU mutations
+occur in the graphical phases;this is not distinct water/castle text timing.
+Stack patterns72/72/70/64are bounded observations. Ordinary diagnostic owned
+393008,populated394128,far payload35996;pressure648064includes intentional
+ballast and must not be called product residency. Library regrouping failures
+from duplicate owners are rejected attempts;final probes exclude explicitly
+replaced modules and all output checks pass.
+
+Formal product448/374KiBcaller-free game/load/input/Tab/save/Escape routes pass:
+- 448KiB:sampled386544bytes,2049samples,seed7465to7529;CRC/resource-valid save and three capture files.
+- 374KiB:sampled382448bytes,2049samples,seed7465to7529;CRC/resource-valid save and three capture files.
+Sampling is not continuous peak or all-path stack proof. Primary345408and
+environment160bytes plus auxiliary40976/36880give the recorded maxima;each is
+272above P13. Reviewed448KiBtext/returned graphics captures preserve the scene.
+Installed configuration hash/settings remain unchanged;normal SDL private
+surfaces never switch the owner's desktop. Routes do not certify physical486SX,
+all DOS versions,nominal60Hz or input-latency budgets.
+
+Three existing owner-authorized product artifacts refreshed and verified:
+- mysmb16.exe:304579bytes,SHA2563c78b95adf78e7124f1d9a0cdae2ca8d804540b581a029acd7def621257f5cc5.
+- mysmb32.exe:320139bytes,SHA25677b8d1100be2f2d8b4a7b2f3f791d01df3edab41d515ab447b9447207cab9785.
+- mysmb64.exe:329323bytes,SHA2566ddcf579b4809602e8f679e740cae4f86ea17e3eff6a63850d0054574c940f06.
+
+Local reproduction scripts Build-p16-product/native/host/diff and run-p16normal,
+run-p16fail,run-p16tight,run-p16pop plus run-p16resident-game with448/374are retained
+below ignored build/m3-t28-s6. verify-p16-device.py,verify-p16-resident.py and
+check-p16-products.py bind result summaries and product hashes. No new resource,
+trace,generated source or probe binary is tracked. Only the three previously
+owner-authorized EXEs are retained under their existing exception.
+
+Scope/expected/actual[],new0,custody unchanged;historical1992/1992,local1991/1992
+nodes,4260/4261feasible controls(raw4342/infeasible81). S6/T28remain open.
+Next P17measures the validation-only receipt zero-tail alternative without bulk
+struct serialization;product memo baseline is retained. Required cadence/input,
+CRT/error/continuous-peak/all-path stack gaps are not discharged by this P.
