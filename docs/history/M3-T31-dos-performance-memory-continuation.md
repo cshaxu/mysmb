@@ -357,3 +357,64 @@ loader bound,sampled occupancy,continuous peak and complete-feature lower bound.
 Current370/371passes are route receipts,not a global certificate. A missing
 clause stays named and open until proved or explicitly owner-transferred.
 ROMscope/expected/actual[],new0,max1992/1992,same local node/control totals.
+
+## S4 P1 checkpoint: current execution bindings and service-boundary memory
+
+Audit/probe only,no product changes or artifact refresh. Current original16-bit
+execution-record comparison binds160own-source units:156retain exact segment/
+public/external/CODE/data/fixup records,while main,frame,VGA and file provider
+are refreshed. Their listings match current CODE/fixups/externs. The census has
+851compiled functions,not ROM inventory nodes;initialize570locals now expires
+before main2locals and the game loop. Palette row324,logger304 and all other
+current frames are recorded without treating locals as complete stack bounds.
+Source/object/listing hashes and inherited proof apply to the actual S3build.
+
+An isolated original /MAPrelink,with the same map-derived loader cap,is byte-
+identical to current mysmb16.exe. Its CRT region7896bytes resolves all28external
+entry names used by own-source calls;removed fprintf is absent from that set.
+Private helper,tail/return and argument/register joins still require review.
+All23indirect sites across8functions have product-specific source targets or
+the legacy present_video exclusion from the initialized row-presenter invariant.
+The target ledger records synchronous row/read hooks,FILE callbacks,reset/mode/
+audio/text hooks and visible_cell/null filter. It is a source-layout mapping,
+not joined-stack certification and not a claim about arbitrary public clients.
+
+Reuse the retained external INT21/1c observer with explicit failures if either
+bounded512MCB traversal cannot reach a terminal chain;record capacity256events,
+150seconds/2MiB per route. No DOS/stdio/allocation inside handlers. Observer
+still borrows caller interrupt stack and samples before DOS services plus timer;
+do not use it for formal stack high-water,cadence or hidden kernel transients.
+Actual current product448/370KiB routes passload/input/Tab/save/exit and CRC/
+resource-bound continuation,with original installed DOSBox hash unchanged:
+
+| Caller free | DOS entries / timer samples | Changes / bad / dropped | Startup owned | Maximum observed at boundaries |
+| --- | --- | --- | ---: | ---: |
+| 448KiB | 74 / 2020 | 4 / 0 / 0 | 343072bytes | 383824bytes |
+| 370KiB | 88 / 2002 | 6 / 0 / 0 | 343072bytes | 378880bytes |
+
+The first primary block is342912bytes,then CRT trims224to342688before later
+allocations. Page-rounded MZmax342640+PSP256+MCB16+observed environment160
+predicts343072exactly. This reconciles the known timer-only startup blind spot;
+it is not a new production leak. The different steady maxima reflect different
+arena budgets. No all-path/continuous/kernel peak or universal minimum inferred.
+
+Contained receipts/recipes below ignored build/m3-t31-s4:current-bindings,
+binding-delta,stack-bindings/frames/summary,indirect-targets,current-map byte-
+equal CRT boundary,service-summary,product-resident-summary and source-bound
+observer/listings. About203local script lines plus two observer traversal guards
+replace a broad recompile with156retained bindings. An initial OMF checksum
+check did not account for the frozen compiler's zero-checksum records;the parser
+retains those as unchecked and verifies nonzero checksums. An initial memory
+tool invocation expected its canonical filename;the contained relink is copied
+to that filename before the normal loader gate and byte comparison. Neither
+failed attempt is acceptance. No raw runtime code/ROM/trace is committed.
+
+S4 remains active. The fixed remaining joins are:call-site argument/prologue
+liveness;23indirect-site target joins;28external entries plus reachable private
+CRT/tail/arithmetic helpers;BIOS/interrupt nesting;startup/runtime/error/restore
+allocation continuity and kernel-transient bounds. Static entry resolution and
+finite route snapshots do not discharge these obligations. Next P joins this
+current-build set rather than restarting the160-unit census. Scope/expected/
+actual[],new0,custody unchanged;historical1992/1992,local1991/1992nodes and
+4260/4261controls(raw4342/infeasible81). Node/admission and documentation gates
+are required. Product code0,three S3 EXEs unchanged;no T/S successor admission.

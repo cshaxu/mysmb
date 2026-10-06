@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T31 S4 P1; stack/continuous memory acceptance. |
+| Identifier Mode | Continuation: M3 T31 S4 P2; join current call/stack and allocation bounds after P1 checkpoint. |
 | Admission And Approval | Owner-approved T31 plan;S3 closed and coordinator admits S4. |
 | Objective | Reconcile original compiled call/stack paths and actual startup/runtime/error/restore memory with contiguous requirements. |
 | Non-goals | No stack shrink without proof,game/PPU changes,Windows UI,toolchain substitution or DOSBox settings. |
@@ -22,6 +22,13 @@
 | Similar-Issue Sweep | Startup/runtime/error/restore,near/far/FILE ownership,indirect calls,private CRT/interrupt nesting,optional cache failures and current S1-S3 stack owners. |
 
 ## Current Technical Baseline
+
+- T31 S4 P1checkpoint:160units rebound(156retained/4refreshed),851compiled
+  functions,23indirect sites mapped,28CRTextern entries resolved in byte-equal
+  current relink. Service/timer routes448/370pass;startup343072matches page-
+  rounded loader/PSP/MCB/environment model,then224-byte CRTtrim. Max observations
+  383824/378880;no all-path stack/kernel-continuous peak proof. S4 remains active.
+  [Evidence and fixed pending joins](../history/M3-T31-dos-performance-memory-continuation.md#s4-p1-checkpoint-current-execution-bindings-and-service-boundary-memory).
 
 - T31 S3 P1closed:FILEprovider behavior retained;error format+13/-1,
   permanent test+35;DOS product3522bytes smaller,DGROUP49072/headroom16464,
