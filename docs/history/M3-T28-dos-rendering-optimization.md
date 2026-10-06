@@ -2389,3 +2389,93 @@ Next P19prioritizes the existing CRT/error/continuous-peak/all-path stack gaps:
 read-only bounded allocation/compiled-stack census,with any contained probe
 specified before use. No further small receipt prototype or deferred row/OAM
 activation. Configured cadence/input deficits remain visible,not discharged.
+
+
+## S6 P19 checkpoint: product-bound allocation and compiled-frame census
+
+Read-only P19binds current P18products to allocation and stack facts. No product
+source or three EXEs change,no new original-ROM node audit. Existing owner-local
+OpenNT16/compiler plus historical runtime remain the reviewed local build tools;
+project-owned C is compiled with original flags plus diagnostic listing output.
+No third-party source is imported,no redistribution qualification is inferred.
+Raw listings/objects remain ignored below build;tracked evidence is neutral
+metadata only. Bound160product-owned units,less than8MiBlistings/2MiBobjects;
+source/object hashes and output counts are retained. Cleanup belongs to S6when
+these bounded inputs are no longer needed. Generated resource-only units and
+runtime binary implementation are excluded from the owned-frame census.
+
+160own compilation units regenerate successfully. Comparing each original and
+listing object proves equal CODE segment definitions/bytes,fixup records and
+external definitions for160/160;source and object hashes bind each comparison.
+Thus listing frame sizes belong to current compiled owners,not a different
+compiler/optimization model.850Local-Size entries are extracted. These are C
+compiled entries,not850ROM nodes or new conformance matches.
+
+| Current compiled function | Local bytes | Saved prologue bytes | Interpretation |
+| --- | --- | --- | --- |
+| DOS composition main | 570 | 6 | Includes two260-byte startup path buffers and local hook/file structs;its frame persists throughout the loop. |
+| File replace callback | 526 | 6 | Two260-byte paths coexist during replace;called after the pending file is closed. |
+| Shared PPU background row | 320 | 6 | Caller-owned row/opacity work must be counted in graphical call depth. |
+| File open callback | 266 | 6 | One260-byte path plus local FILE pointer. |
+| File error logger | 266 | 6 | One260-byte path;stdio/formatting stack is additional. |
+| File remove callback | 262 | 6 | One260-byte path. |
+| Shared text actor scene | 158 | 6 | Read-only actor assembly,not a platform gameplay function. |
+
+These columns exclude arguments,return addresses,callee frames,CRT and hardware
+interrupt entries. Never sum unrelated functions or present the largest local
+frame as the complete stack bound.8functions contain23indirect call sites;
+29external symbols remain unresolved by the own-source census,including memory,
+stdio,arithmetic and DOS/device services. Callback targets and interrupt/BIOS
+stack joins must be reconciled before all-path acceptance. The keyboard ISR has
+its own compiled save/local sequence in addition to CPU interrupt frame and
+callee work. Retained probe pattern72/70/64belongs to those instrumented routes;
+it is not high-water proof for the different formal-product main.
+
+Allocation sweep across the linked product owners finds four explicit sites:
+required15400-byte exclusive presenter and20084-byte transaction store;optional
+8192-byte cache first near,then far. Required far payload35484;observed file
+buffer adds512to35996when cache is near. A successful far cache can add8192;
+optional failure retains raw rendering. These are payload bounds,not MCB/CRT
+allocator block bounds. No allocator call is found in shared core/PPU/text/IO.
+The historical stdio header declares512-byte BUFSIZand20stream slots;that header
+alone does not prove runtime allocation or a complete CRT upper bound.
+
+The production file callbacks have two fopenowners:save/load and error logger.
+Source-order review finds at most one application-owned FILE live:save closes
+before replace/remove/log;load closes before decode/error log;open/encode failures
+have no open handle. close_file calls fcloseeven if fflushfails. No product
+stdout/stderr printing owner is found;the only fprintfis the snapshot log.
+Executable path reads the existing PSP environment and copies into supplied
+buffers;directory/file-service initialization copies the directory and callbacks
+into persistent owners. No startup path pointer is retained. These source facts
+reduce pending cases but do not prove hidden runtime/DOS scratch or allocator
+continuous peaks. The external FIT observer is periodic and can miss short-lived
+blocks;its sampled maxima remain accepted within that limitation.
+
+The specific actionable lifetime defect is startup-only main scratch retaining
+520path bytes during every frame,save/load,render and keyboard interruption.
+P20receives a composition-root startup lifetime refactor:move existing startup
+sequence into an initializer,return before the main loop,keep all existing calls/
+cleanup/resource binding order. Local hooks/files are copied by the receiving
+root/store,and directory bytes are copied by file storage;retain those ownership
+proofs. Do not replace stack scratch with globals or a new allocation. Estimate
+one root file about20-30structural changed lines,plus a focused owner/lifetime
+check if needed. Verify actual compiled startup/loop frames,code/state/output,
+three products,normal/failure/pressure paths and formal448/374KiBmemory routes.
+Do not shrink the2048-byte stack or claim total memory savings until startup,
+CRT,error and interrupt bounds are proved. Startup adds one wrapper call,so its
+peak must also be measured rather than inferred from the smaller loop frame.
+
+Local reproduction:prepare-p19-listings.py,Build-p19-listings.ps1,
+verify-p19-bindings.py,analyze-p19-stack.py and bound-p19-output.py under ignored
+build/m3-t28-s6. p19-source-bindings/object-bindings/stack-frames/stack-summary
+JSON bind850entries to160units. One exploratory compiler help request hung;only
+that explicitly identified help process was stopped. Listing compilation with
+normal tool paths succeeds;no toolchain replacement or product evidence credit
+comes from the failed help request. No new program-input trace is generated.
+
+Scope/expected/actual[],new0,custody unchanged;historical1992/1992,local1991/1992
+nodes,4260/4261feasible controls(raw4342/infeasible81). S6/T28remain open.
+Pending clauses are named:callback/CRT/interrupt stack joins,allocation-service
+continuous peak and error routes,configured cadence/input. No whole-ROM audit
+restart,aggregate certificate or silent deferred row/OAM activation.
