@@ -3934,4 +3934,5 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T32 S3 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T32-rendering-performance-continuation.md) |
 | M3 T32 S4 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T32-rendering-performance-continuation.md) |
 | M3 T32 S5 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T32-rendering-performance-continuation.md) |
-| M3 T32 S6 | 0 | 1992 | none / 0 | none / 0 | active; [record](../../docs/history/M3-T32-rendering-performance-continuation.md) |
+| M3 T32 S6 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T32-rendering-performance-continuation.md) |
+| M3 T32 S7 | 0 | 1992 | none / 0 | none / 0 | active; [record](../../docs/history/M3-T32-rendering-performance-continuation.md) |

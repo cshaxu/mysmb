@@ -1468,3 +1468,62 @@ Recipes/logs/output identities are in ignored build/m3-t32-s6/p3.
 Scope/expected/actual[],new0,historical1992/1992,local1991/1992nodes,
 4260/4261feasible controls(raw4342,infeasible81);fixed M2 certificate remains
 6/136groups and42/952facets with four final packages pending.
+
+## S6 P4 bound cost/stack evidence and scoped closure
+
+The current original-compiler listing object's execution records match the
+published DOS product object's OMF segment/external/public/data/fixup records.
+The current DOS root listing is similarly bound and confirms14argument bytes
+at its prepared-row call versus the former18-byte ABI. Current PPU17functions
+have balanced local control-flow/returns. Original-source baseline10functions
+provide the comparator;not a replacement global linked-runtime certificate.
+Own row chain excluding entry/external bodies is468bytes versus464;adding
+the root's row-call arguments gives482in both. Cached row scratch296bytes
+versus fallback328;frame internal56,prepare local52/own composed96. External
+memcpy/memset/memcmp bodies, CRT/startup, IRQ and firmware/kernel remain outside
+this local proof. It establishes the changed-compositor stack budget, not a
+global2048-byte stack certificate. No current local CFG mismatch remains.
+
+The first temporary-source compile produced different execution records and
+is excluded from published-product claims. Rebuilding with the full product
+invocation/source location restores exact binding. A long baseline command
+hit the historical wrapper's argument buffer;shortened commands work. No
+toolchain/settings change or failed/stale benchmark is accepted.
+
+The final cost runner links the exact published PPU object and exact P11
+baseline object in one process. Only five baseline public symbols are renamed
+in OMF for coexistence;no baseline code/data/fixup bytes change. DOS output
+comparisons pass with current constants/palette/scroll/split/behind-sprite
+cases, same installed DOSBox configuration. Three-pass baseline/cache ticks:
+2072455/1296338,2265234/1378367,3332270/2254604;ratios1.599/1.643/1.478.
+Cold1920tiles2369351ticks,changed1912tiles2327338,steady608/zero rebuilds.
+These remain controlled PPU costs,not full-game FPS or equal-framex.xx speed.
+
+S6 closes its bounded cache architecture/adoption contract:variants disposed,
+owner-approved memory tier selected,pixel/invalidation/lifetime/fallback
+verified,current compiler cost/local stack bound,actual startup/resident routes
+and three delivered products. No product code changed in P4;P3's three EXEs
+remain current. The already named S8/S9 integration/transition/cadence/global
+stack/continuous-memory/reference/hardware checks remain OPEN. Closure does
+not assert fivefold speed or complete the goal. No unfinished ROM custody.
+
+Admit S7 alone under the approved consecutive plan. Entry neutral indexed
+source rows -> exact320x400four-plane packed output -> unchanged640x400VGA
+scanout. Main lead is repeated far pointer segment loads:36LES per16->20
+group/144000perframe in the retained mapper. Prototype explicit segment-once
+packing under platform/vga and/or a DOS-private neutral helper;retain portable
+C fallback,all64colors/full source rows and legacy interfaces. Do not change
+core/PPU writers,cache tier,640x400default,toolchain,installed DOSBox settings,
+frame cadence or production process count. No new persistent allocation.
+
+Estimate80-180candidate product lines and80-160focused test/harness lines;
+prototype first,inspect register/far-pointer/stack ownership,verify every plane
+and strip against existing math on native and original DOS,then measure whole
+mapping/submission cost and actual scenes. An adopted product-code P must
+rebuild,verify and publish all three EXEs. S7 fixes its own known failures
+before closure;S9 is final audit only. S8/S9 remain planned,queue unchanged.
+No third-party code copied;retained conceptual comparison/source policy applies.
+Scope/expected/actual[],new0,historical1992/1992,local1991/1992nodes and
+4260/4261feasible controls(raw4342,infeasible81). M2 fixed audit remains
+6/136groups,42/952facets,four final packages pending. Local recipes/receipts
+stay in ignored build/m3-t32-s6/p4;S7 in build/m3-t32-s7.

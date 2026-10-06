@@ -290,3 +290,14 @@ acceptance scope. The140304-byte byte-surface comparison remains unadopted.
 Neither the compact benchmark nor these routes establish fivefold whole-game
 speed, global stack bounds or physical486qualification;those named gates
 remain with S8/S9. S7 retains segment-efficient VGA packing/transfer scope.
+
+## Current S7 admission after scoped S6 closure
+
+[S6 P4 closure/S7 packet](../../history/M3-T32-rendering-performance-continuation.md#s6-p4-bound-coststack-evidence-and-scoped-closure)
+closes the owner-approved compact-cache contract with product-bound compiler
+and cost evidence. S7 alone is active:segment-efficient320x400plane packing/
+transfer with unchanged640x400scanout,portable fallback and zero new resident
+storage. Estimate80-180candidate product and80-160test/harness lines. First
+prototype segment-once packing,verify exact full/band output and ABI/stack,
+measure whole-stage cost before product adoption. S8/S9 named integration and
+final checks remain planned/open;no fivefold or global-stack acceptance claim.

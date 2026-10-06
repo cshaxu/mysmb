@@ -1,28 +1,37 @@
 # Project Status
 
-## M3 T32 S6 Packet
+## M3 T32 S7 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S6 P3; owner-approved compact-cache product integration. |
-| Admission And Approval | Owner explicitly approves compact63488-byte cache adoption; approved consecutive S5-S9 plan; S5 baseline measurement contract closed with final comparator checks still open; S6 sole active. |
-| Objective | Test systemic composed-background/representation architectures against exact output and actual DOS memory/cost;no micro-optimization adoption as substitute for the multi-fold target. |
+| Identifier Mode | Continuation: M3 T32 S7 P1; prototype segment-efficient DOS plane packing/transfer. |
+| Admission And Approval | Owner-approved S5-S9 consecutive plan and automatic successor instruction;S6 compact-cache contract closed by P4;S7 sole active. |
+| Objective | Reduce systemic DOS scaling/plane-packing/transfer overhead with exact output and no added resident storage. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
-| Reference Baseline | Current three P11 products and scoped S4 receipts; original toolchain/default640x400. |
+| Reference Baseline | Current S6 P3 products and unchanged mapper;original toolchain/2048stack/640x400. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | Shared PPU workspace/background slots and synchronous prepared view, DOS and Win32 composition allocation/binding, PPU exact-output tests; estimate250-350 product lines plus80-120 test lines. Optional63488-byte DOS far allocation after required storage, graceful uncached fallback; Windows static storage. No core or device mapping changes. |
+| Files And ABI Surface | platform/vga/vga_frame.c and DOS-private neutral helper if justified;focused tests/original-DOS prototypes;estimate80-180candidate product and80-160test/harness lines. No core/PPU changes or new persistent allocation. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
-| Verification | Independent512-state native raw/cache/band output;DOS controlled exact-output/cost scenes and actual routes;compiler stack/loader/arena checks;three EXEs for adopted product-code P. |
+| Verification | Native full/band/plane math/guard tests and actual original-DOS exact output;segment/register/stack listing audit;whole mapping/submission cost and actual product routes;three EXEs after adoption. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
 | Asset Needs | Owner-local x.xx binary and ROM plus historical athros/NESticle0.2 source as conceptual reference only; copyright-only leaked tree grants no redistribution permission. Purpose frame/cache/transfer architecture comparison; raw source/probes only below ignored build, no copying/transliteration into product, exact-version claims require binary evidence. |
 | Reporting Requirements | Candidate and measured whole-step cost, rejected variants, actual code/memory delta, source/products and total/local node counts. |
 | Stop Conditions | Unbounded or foreground probe, source binding gap, ownership violation, output divergence or unsupported speed claim. |
-| Exit Criteria | Systemic pipeline/memory tradeoff established, then architectural candidates meet exact output, original-toolchain/startup/resident/stack budgets;multi-fold target stays open until integrated evidence;three EXEs after adoption. |
+| Exit Criteria | Segment-efficient candidate selected/rejected by exact output,current compiler/register/stack/memory proof and measured stage/system cost;three platforms verified after adoption. Whole-game/reference/global-stack gates remain named S8/S9 work. |
 | Original Owner Request | Improve actual memory/performance/playability with original ROM semantics; follow approved S5-S9 division after fixing known S4 defects. |
-| Similar-Issue Sweep | Span invalidation at tile-row/HUD/scroll/bank changes;CHR bounds/fallback, sprite flip/priority/clipping, palette values and pointer/stack lifetimes. |
+| Similar-Issue Sweep | All band sizes/plane offsets, source/output capacity, row duplication, color masking, source/output alias contract, DS/ES/BP preservation and fallback. |
+
 
 
 ## Current Technical Baseline
+
+- S6 P4 closes the compact-cache stage with exact current-object cost and
+  local compiler stack evidence:17PPUfunctions balanced;row chain+caller
+  arguments482bytes in both versions,external bodies excluded. Final linked
+  object diagnostic confirms1.478-1.643PPU ratio;no product change/EXErefresh.
+  S7 alone active for segment-efficient VGA packing/transfer;S8/S9 remain
+  planned with whole-game/global-stack/continuous-memory gates unproved.
+  [Scoped closure and admission](../history/M3-T32-rendering-performance-continuation.md#s6-p4-bound-coststack-evidence-and-scoped-closure).
 
 - S6 P3 owner-approved63488-byte background-slot cache adopted in shared PPU;
   roots allocate/bind and DOS25bands share one prepared view. Native15tests
@@ -51,7 +60,7 @@
   [Counted budget and limits](../history/M3-T32-rendering-performance-continuation.md#s5-p2-current-counted-phase-budget).
 
 - P12 ends S4's owner-approved repair/delivery stage; final proof gates are
-  OPEN, not passed by closure. S5 measurement closed by P3; S6 active, S7-S8 planned, S9 named final
+  OPEN, not passed by closure. S5 measurement closed by P3; S6 compact stage closed;S7 active,S8 planned, S9 named final
   audit checks. Current DOS normal62/62/DIV63/63 conditional flows rebound;
   current-host strict native routes pass without repairing suspended T19.
   S5 initial inventory finds6retained trials,zero with current300549-byte
