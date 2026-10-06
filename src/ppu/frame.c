@@ -1,5 +1,6 @@
 #include "ppu/frame.h"
 #include <string.h>
+#include "io/palette_expand.h"
 /* Private stack scratch uses the original /AL runtime's SS=DS contract.
  * Public state/output/resource pointers keep their existing far ABI. */
 #ifdef MYSMB_DOS16_TARGET
@@ -11,12 +12,12 @@ void mysmb_ppu_frame_workspace_bind(struct mysmb_ppu_frame_workspace *workspace,
     mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded)
 {
     workspace->decoded=decoded;workspace->chr=0;
-    workspace->chr_size=0U;workspace->valid=0U;workspace->bg=0;workspace->bg_valid=0U;workspace->expand=0;workspace->expand_context=0;
+    workspace->chr_size=0U;workspace->valid=0U;workspace->bg=0;workspace->bg_valid=0U;workspace->expand=mysmb_io_palette_expand_portable;workspace->expand_context=0;
 }
 void mysmb_ppu_frame_expansion_bind(struct mysmb_ppu_frame_workspace *w,
     mysmb_io_palette_expand expand,void *context)
 {
-    if(w){w->expand=expand;w->expand_context=context;}
+    if(w){w->expand=expand?expand:mysmb_io_palette_expand_portable;w->expand_context=context;}
 }
 static void mysmb_ppu_prepare_chr(const struct mysmb_ppu_state *state,
     struct mysmb_ppu_frame_workspace *workspace)
@@ -182,67 +183,35 @@ static mysmb_io_u8 mysmb_ppu_slot_at(
     p=(mysmb_io_u16)(2048U+t*30720U+(sy%240U)*128U+((sx&255U)>>1U));
     pair=bg[p];return (mysmb_io_u8)((pair>>((sx&1U)*4U))&15U);
 }
+/* Shared expansion always publishes the complete row directly.
+ * An unavailable host accelerator selects the portable span implementation. */
 static void mysmb_ppu_slot_row(const struct mysmb_ppu_state *s,
     const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *bg,mysmb_io_u16 y,
     mysmb_io_u8 sx,mysmb_io_u8 sy,mysmb_io_u8 nt,
     mysmb_io_u8 MYSMB_PPU_FRAME_FAR *out,
     const mysmb_io_u8 MYSMB_PPU_LOCAL_NEAR *colors,
-    struct mysmb_ppu_frame_workspace *workspace)
+    struct mysmb_ppu_frame_workspace *w)
 {
-    mysmb_io_u8 pixels[256],v0,v1,v2,v3;
-    mysmb_io_u16 x=0U,source_x=sx,source_y,t,stop,count,blank=0U,blank_start=0U;
+    mysmb_io_u16 x=0U,source_x=sx,source_y,t,count,even;
     const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *in;
-    mysmb_io_u8 MYSMB_PPU_LOCAL_NEAR *target;
+
     source_y=(mysmb_io_u16)(((y+sy)%480U)%240U);
-    while(x<256U) {
+    while(x<256U){
         t=(mysmb_io_u16)((nt^(source_x>>8U))&1U);
         in=bg+2048U+t*30720U+source_y*128U+((source_x&255U)>>1U);
-        if(source_x&1U) {
-            if(blank){memset(pixels+blank_start,colors[0],blank);blank=0U;}
-            pixels[x++]=colors[*in>>4U];++source_x;++in;
-            if((source_x&255U)==0U)continue;
-        }
+        if(source_x&1U){out[x++]=colors[*in>>4U];++source_x;continue;}
         count=(mysmb_io_u16)(256U-(source_x&255U));
         if(count>256U-x)count=(mysmb_io_u16)(256U-x);
-        stop=(mysmb_io_u16)(x+count);
-        if(workspace && workspace->expand && count>=2U &&
-            workspace->expand(workspace->expand_context,in,pixels+x,
-                (mysmb_io_u16)(count&0xfffeU),colors)) {
-            count=(mysmb_io_u16)(count&0xfffeU);
-            in+=count/2U;x+=count;source_x+=count;
-        }
-        while(x+8U<=stop) {
-            v0=in[0];v1=in[1];v2=in[2];v3=in[3];in+=4U;
-            if((v0|v1|v2|v3)==0U) {
-                if(!blank)blank_start=x;blank=(mysmb_io_u16)(blank+8U);
-            } else {
-                if(blank){memset(pixels+blank_start,colors[0],blank);blank=0U;}
-                target=pixels+x;
-                target[0]=colors[v0&15U];target[1]=colors[v0>>4U];
-                target[2]=colors[v1&15U];target[3]=colors[v1>>4U];
-                target[4]=colors[v2&15U];target[5]=colors[v2>>4U];
-                target[6]=colors[v3&15U];target[7]=colors[v3>>4U];
-            }
-            x+=8U;source_x+=8U;
-        }
-        while(x+2U<=stop) {
-            v0=*in++;
-            if(!v0){if(!blank)blank_start=x;blank+=2U;}
-            else {
-                if(blank){memset(pixels+blank_start,colors[0],blank);blank=0U;}
-                pixels[x]=colors[v0&15U];pixels[x+1U]=colors[v0>>4U];
-            }
-            x+=2U;source_x+=2U;
-        }
-        if(x<stop) {
-            if(blank){memset(pixels+blank_start,colors[0],blank);blank=0U;}
-            pixels[x++]=colors[*in&15U];++source_x;
-        }
+        even=(mysmb_io_u16)(count&0xfffeU);
+        if(even && (!w || !w->expand ||
+            !w->expand(w->expand_context,in,out+x,even,colors)))
+            (void)mysmb_io_palette_expand_portable(0,in,out+x,even,colors);
+        x+=even;source_x+=even;
+        if(count&1U){out[x++]=colors[in[even/2U]&15U];++source_x;}
     }
-    if(blank)memset(pixels+blank_start,colors[0],blank);
-    if(!(s->visible_ppu_mask&2U))memset(pixels,colors[0],8U);
-    memcpy(out,pixels,256U);
+    if(!(s->visible_ppu_mask&2U))memset(out,colors[0],8U);
 }
+
 void mysmb_ppu_frame_begin(const struct mysmb_ppu_state *s,
     struct mysmb_ppu_frame_workspace *w,struct mysmb_ppu_frame_view *v)
 {

@@ -170,6 +170,14 @@ encoding. Neither text scenes nor their codec are members of the core library.
 
 ## Platform component boundary
 
+Shared PPU packed rows use io/palette_expand by default on every target;
+expansion remains available without a pair-table allocation. Host callbacks
+provide only equivalent acceleration;rejection retries the portable service
+for the same span. Shared IO owns palette lookup,zero-span bulk fill and the
+portable uniform-row planar shortcut. Windows binds a shared pair table;
+DOS segment/ISA/VGA operations remain in dos16. No platform selects gameplay
+or original PPU state semantics through this capability.
+
 Only dos16 and win32 are children of platform. Shared planar pixel layout is
 io/planar_frame;it knows only neutral pixels,dimensions,capacity and an optional
 synchronous row encoder. The DOS root supplies its private dos16/planar_row

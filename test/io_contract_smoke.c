@@ -4,9 +4,48 @@
 #include "io/video.h"
 #include "io/audio.h"
 #include "core/game.h"
+#include "io/palette_expand.h"
+#include <string.h>
 
 static mysmb_io_u8 MYSMB_IO_FAR pixels[MYSMB_IO_VIDEO_PIXELS];
 static struct mysmb_io_text_frame text_frame;
+
+static int palette_expansion_contract(void)
+{
+    struct mysmb_io_palette_pairs pairs,before;
+    mysmb_io_u8 packed[132],colors[16],out[292];
+    mysmb_io_u16 palette,phase,count,mode,i,offset;
+    memset(&pairs,0,sizeof(pairs));
+    for(palette=0U;palette<8U;++palette){
+        for(i=0U;i<16U;++i)colors[i]=(mysmb_io_u8)(palette*31U+i*19U+107U);
+        for(phase=0U;phase<5U;++phase){
+            for(i=0U;i<132U;++i)packed[i]=(mysmb_io_u8)(i*17U+palette*7U);
+            if(phase>=2U){memset(packed,0,sizeof(packed));
+                if(phase==3U)packed[127U]=240U;
+                if(phase==4U)packed[0U]=15U;}
+            for(count=0U;count<=256U;count+=2U)for(mode=0U;mode<2U;++mode){
+                offset=(mysmb_io_u16)(16U+(phase&3U));
+                memset(out,165,sizeof(out));
+                if(!mysmb_io_palette_expand_portable(mode?&pairs:0,
+                    packed,out+offset,count,colors))return 1;
+                for(i=0U;i<count;++i)
+                    if(out[offset+i]!=colors[(packed[i/2U]>>((i&1U)*4U))&15U])return 2;
+                for(i=0U;i<offset;++i)if(out[i]!=165U)return 3;
+                for(i=(mysmb_io_u16)(offset+count);i<sizeof(out);++i)
+                    if(out[i]!=165U)return 4;
+            }
+        }
+    }
+    before=pairs;memset(out,165,sizeof(out));
+    if(mysmb_io_palette_expand_portable(&pairs,packed,out,3U,colors) ||
+        mysmb_io_palette_expand_portable(&pairs,packed,out,258U,colors) ||
+        mysmb_io_palette_expand_portable(&pairs,0,out,2U,colors) ||
+        mysmb_io_palette_expand_portable(&pairs,packed,0,2U,colors) ||
+        mysmb_io_palette_expand_portable(&pairs,packed,out,2U,0))return 5;
+    if(memcmp(&before,&pairs,sizeof(pairs)))return 6;
+    for(i=0U;i<sizeof(out);++i)if(out[i]!=165U)return 7;
+    return 0;
+}
 
 /* Derive the contract from RGB values, independently of stored choices. */
 static int color_contract(void)
@@ -46,6 +85,7 @@ int main(void)
     mysmb_io_u16 offset;
 
     if(color_contract()!=0)return 10;
+    if(palette_expansion_contract()!=0)return 11;
 
     /* Check the actual game boundary, not only duplicated IO declarations. */
     if (MYSMB_IO_VIDEO_WIDTH != MYSMB_SCREEN_WIDTH ||

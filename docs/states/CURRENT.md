@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S8 P8; selected DOS bulk cohort integrated and three products refreshed; S8 remains active. |
+| Identifier Mode | Continuation: M3 T32 S8 P9; shared-default optimization audit/integration complete; S8 remains active. |
 | Admission And Approval | Owner-approved consecutive S5-S9 plan and automatic successor;S7 display-stage contract closed by P4;S8 sole active. |
 | Objective | Reduce current dominant rendering cost as one bounded cache/row-output chain while preserving ROM/PPU semantics and memory balance. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
-| Reference Baseline | Published S8 P5products and selected P7bound phase/counter probes;original tools/2048stack/640x400/two platform components. |
+| Reference Baseline | Published S8 P8products and source-bound P7phase/counter probes;original tools/2048stack/640x400/two platform components. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | DOS-private planar_row,palette_expand and devices bulk scan/fill/copy integration,estimate60-100product lines. Target already486SX;explicit386 DWORD instructions in16-bit real mode only,original compiler/model/flags unchanged. No persistent allocation,public ABI,game/PPU semantics or shared-core ISA change. Current object/output/register/local-stack/loader/resident and actual host routes required;refresh three EXEs. |
+| Files And ABI Surface | Owner extends scope to all shareable rendering optimizations:shared PPU default direct-span path,IO portable palette expansion/zero-fill/uniform-row fill,Windows service binding,DOS far-output acceleration and build lists;estimate180-260product/100-180test lines. Expansion always available without cache allocation;host callbacks are acceleration overrides. Existing neutral FAR contract retained,rejection selects shared implementation. DOS adds no persistent storage;Windows binding one530-byte pair table. Original tools/model/flags;game/PPU semantics unchanged. Independent native/current DOS pixel,far-span/guard/segment,stack,whole-stage and actual routes;refresh three EXEs. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
 | Verification | Independent512state native raw/cache/row/palette/priority/source/guard/fallback checks;actual original-DOS exact output/compiler/stack/startup/resident/stage cost and current frame budget;three EXEs after adoption. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
@@ -25,6 +25,16 @@
 
 
 ## Current Technical Baseline
+
+- S8 P9 closes two shareable gaps after eight rendering/three host-group
+  ownership checks:mandatory shared palette/zero-span expansion and portable
+  uniform-row fill. No table allocation required;Windows binding530bytes,
+  DOS no new buffer.132core identities,15native tests per width,current DOS
+  byte/guard/local-CFG and actual Windows/DOS448/384/370routes pass. Three
+  EXEs302117/315406/328718bytes;ordinary DOSsample+64,370unchanged,DGROUP/
+  2048stack unchanged. Current counter178.747ms(-6.119%);60Hz/fivefold and
+  global memory-stack-reference/hardware gates remain open.
+  [Shared ownership and evidence](../history/M3-T32-rendering-performance-continuation.md#s8-p9-shared-default-expansion-and-optimization-ownership-sweep).
 
 - S8 P8 adopts DOS-only DWORD bulk scan/fill/copy,+73/-6product lines,no
   new buffer/ABI/game/PPU change.132core identities,15native tests per width,

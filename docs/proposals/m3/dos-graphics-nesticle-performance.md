@@ -394,3 +394,16 @@ ordinary sampled resident+96bytes,no new buffer,DGROUP49184/2048stack unchanged,
 rounded loader unchanged. Source/execution binding retains P7 bounded190.398ms
 diagnostic;no fresh whole-product speed certificate. S8 remains active with
 nominal60Hz/fivefold and S9global memory/stack/reference gates open.
+
+## Owner-directed shared optimization integration
+
+[S8 P9](../../history/M3-T32-rendering-performance-continuation.md#s8-p9-shared-default-expansion-and-optimization-ownership-sweep)
+audits eight rendering families and three host ABI/storage groups. Two gaps
+are repaired:palette expansion/zero fill now has an always-available shared
+default,and portable planar mapping includes uniform-row fill. No cached pair
+allocation is needed for correctness or availability;host callbacks are only
+acceleration overrides. Windows binds the shared service;DOS segment/ISA/VGA
+operations remain under dos16. Three products and actual routes pass. DOS
+code/ordinary sampled resident+64bytes,no new buffer;Windows table530bytes.
+Current diagnostic178.747ms versus190.398ms is not nominal60Hz/fivefold proof.
+S8/S9 final performance and global memory/stack/reference gates remain open.

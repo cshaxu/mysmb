@@ -2111,3 +2111,87 @@ memory,reference performance and physical486qualification remain S9/M4 gates.
 S8/goal remain active. Scope/expected/actual[],new0;historical1992/1992,
 local1991/1992nodes,4260/4261feasible controls(raw4342,infeasible81).
 M2 final certificate is unchanged and incomplete.
+
+## S8 P9 shared default expansion and optimization ownership sweep
+
+Owner requires Windows/DOS to share every portable optimization and removes
+the optional expansion feature. Audit covers eight rendering families and
+three host-specific implementation/lifetime groups. Two portable families
+had incomplete integration;the table below records both repairs and retained
+owners. These are implementation families,not ROM-node progress counters.
+
+| Family | Current owner and disposition |
+| --- | --- |
+| CHR row decode | PPU;already shared by all targets |
+| Packed background slots/raw opacity | PPU;already shared |
+| Dirty tile/attribute/CHR rejection | PPU;already shared |
+| Palette-span expansion and zero-span fill | IO;DOS-only binding gap repaired,portable default always available |
+| Uniform-row planar fill | IO;DOS-only shortcut gap repaired in the portable mapping path |
+| Exact scaling and repeated-row reuse | IO;already shared neutral format services |
+| RGB/text color lookup | IO;already shared |
+| Authored text row/element projection | text;already shared |
+| Segment/ISA/VGA transfer | dos16 physical acceleration;portable format results remain shared |
+| MZ/CRT/FILE startup and DOS allocation | dos16/compiler physical ABI;portable file/snapshot services already IO |
+| Exclusive band/text storage | Neutral synchronous IO lifetime shared;DOS allocation and Windows retained painting storage follow host lifetimes |
+
+Shared PPU now binds the portable IO expander by default. Null binding restores
+that service. Host acceleration rejection retries the same shared span,even
+after partial writes. No cached pair table is required for expansion;null
+context performs direct palette lookup. Cached pairs remain a memory/performance
+choice,not an enable/disable feature. Complete zero spans use shared bulk fill.
+Successful packed-row output no longer stages/copies a256-byte row. The old
+staged packed-row implementation is removed;raw CHR fallback remains exact.
+Actual product/build source+111/-74lines,test+40lines;no game source change.
+Windows binds the common service with one530-byte table. DOS uses its near
+table/segment accelerator under the same neutral contract;no new DOS buffer.
+No host import or assembly enters IO/PPU. Platform has only dos16/win32.
+
+Current DOS render/IO objects bind the final executable;132core execution
+identities unchanged. Original tools/model/flags retained,with the new neutral
+render unit included in the existing safe render whitelist.30local CFGs balance,
+but global CRT/IRQ/firmware stack remains unproved. Independent512state native
+pixel/guard/source tests per width pass;37928injected partial-write rejections
+per width recover exactly. The IO contract adds10320cached/uncached,unaligned,
+zero/colored/tail cases and invalid-request output/cache immutability checks.
+Original-DOS5160input cases cover near/far hardware output and shared cached/
+uncached output;256plane cases/644800bytes include the new portable uniform
+path,plus18unchanged copy boundary cases.15native tests per width pass.
+
+Same-process full-PPU P8/candidate ticks for three frames are466553/423495,
+498415/454758,1098365/1055270,245441/201124,342550/298545;all five scenes
+match raw pixels. PREVIOUS switches only the helper under the new compositor,
+not the P8 PPU,and is excluded as a prior-PPU speed claim. Synthetic native
+stage comparisons with equally optimized old/new sources also match all five
+scenes and show improvements;these do not qualify whole-game speed.
+
+Current bound diagnostic:counter graphics178.747ms versus190.398ms(-6.119%),
+phase192.535ms,PPU83.361/mapping62.048/VGA17.705ms.293phase/316counter
+records,zero drops;update/submission/25-row-read relationships retained.
+Wall-timed cohorts differ;no equal-state whole-game/fivefold acceptance.
+Actual Windows startup/geometry/Terminal,input,Tab return/Escape pass per
+width. Actual DOS448/384/370arena restore,D/J,Tab,save/Escape passes,with
+640x400captures and valid10035-byte saves. Installed settings unchanged.
+
+DOS302117bytes(+64),DGROUP49184/2048stack unchanged. Logical loader326272..
+342608(+64),page-rounded326736..343072(+512,page-boundary effect). Observed
+owned447536cached/384016fallback(+64)/378880370route(unchanged);these samples
+are not universal peaks or minimum free-memory proof. Windows table adds530
+static bytes;no DOS persistent storage increase. Existing owner-authorized
+three product slots refreshed:
+
+| Product | Bytes | SHA-256 |
+| --- | ---: | --- |
+| DOS16 | 302117 | 8cbbf732fa50ee031edbab78aa524e6d9212d5b5c6e807b4254386175f520629 |
+| Win32 | 315406 | d5bf4db46b69c99557491704ce90d7388c9f6d090665713ae82b190ef8303884 |
+| Win64 | 328718 | 84f675670ec8c18c108d715190d4d50096425cade665c7550817ec6bd254c1d5 |
+
+Recipes,objects,raw output and source-product receipt are below ignored
+build/m3-t32-s8/p9. Initial missing neutral link dependency and duplicate
+prototype library member were repaired;failed links supply no accepted runs.
+Similar-issue sweep covers root/service binding,allocation-free operation,
+partial override rejection,unaligned spans,tails,raw palette bytes,uniform
+false positives,segment restore and presentation/snapshot lifetime.
+S8/goal remain active:nominal60Hz/fivefold,global memory/stack/reference and
+physical486qualification remain unproved. Scope/expected/actual[],new0;
+historical1992/1992,local1991/1992nodes and4260/4261feasible controls
+(raw4342,infeasible81). Full M2 certificate remains incomplete.

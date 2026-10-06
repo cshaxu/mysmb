@@ -35,6 +35,9 @@ struct mysmb_ppu_frame_workspace {
 void mysmb_ppu_frame_workspace_bind(struct mysmb_ppu_frame_workspace *workspace,
     mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded);
 
+/* Portable expansion is the default,including an allocation-free lookup path.
+ * Null restores that service; host overrides are only acceleration capabilities.
+ * A rejected host span is completed by the same portable implementation. */
 void mysmb_ppu_frame_expansion_bind(struct mysmb_ppu_frame_workspace *workspace,
     mysmb_io_palette_expand expand,void *context);
 

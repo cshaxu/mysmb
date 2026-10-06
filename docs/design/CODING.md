@@ -103,6 +103,12 @@ Validation projections link only test/recorder targets;no product linkage.
 
 ## Platform component boundary
 
+io/palette_expand owns the default cached or allocation-free span expansion
+and zero-fill path;ppu/frame always uses it when no host acceleration succeeds.
+io/planar_frame owns the portable uniform-row fill as well as exact geometry.
+Host assembly is an equivalent encoder under the neutral span contract,not a
+separate feature path. Windows and DOS composition bind the same capabilities.
+
 Only dos16 and win32 are children of platform. Shared planar pixel layout is
 io/planar_frame;it knows only neutral pixels,dimensions,capacity and an optional
 synchronous row encoder. The DOS root supplies its private dos16/planar_row

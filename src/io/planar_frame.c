@@ -7,6 +7,16 @@ void mysmb_vga_frame_initialize(struct mysmb_vga_frame *frame,
     frame->pages[0]=p0; frame->pages[1]=p1;
     frame->pages[2]=p2; frame->pages[3]=p3;
 }
+/* A complete uniform input row permits exact bulk output on every host. */
+static int uniform_row(const mysmb_io_u8 MYSMB_IO_FAR *in,
+    mysmb_io_u8 *color)
+{
+    mysmb_io_u16 i;
+    mysmb_io_u8 c=in[0U];
+    if(in[1U]!=c || in[254U]!=c || in[255U]!=c)return 0;
+    for(i=2U;i<254U;++i)if(in[i]!=c)return 0;
+    *color=(mysmb_io_u8)(c&63U);return 1;
+}
 static void build_rows(const mysmb_io_u8 MYSMB_IO_FAR *source,
     mysmb_io_u16 source_first,
     mysmb_io_u16 plane,mysmb_io_u16 first,mysmb_io_u16 rows,
@@ -81,7 +91,7 @@ int mysmb_io_planar_build_planes(const struct mysmb_io_video_band *source,
     mysmb_io_u16 capacity,mysmb_io_planar_row_packer packer)
 {
     mysmb_io_u16 row,group,p,sy,previous=240U,phase,low,high;
-    mysmb_io_u8 shared0,shared4,shared8,shared12;
+    mysmb_io_u8 shared0,shared4,shared8,shared12,uniform;
     const mysmb_io_u8 MYSMB_IO_FAR *in;
     mysmb_io_u8 MYSMB_IO_FAR *p0,*p1,*p2,*p3;
     if(!source || !source->pixels || !out || first>=400U || rows>MYSMB_VGA_BATCH_ROWS ||
@@ -99,7 +109,10 @@ int mysmb_io_planar_build_planes(const struct mysmb_io_video_band *source,
             p0=out+row*80U;p1=out+(rows+row)*80U;
             p2=out+(rows*2U+row)*80U;p3=out+(rows*3U+row)*80U;
             if(packer)packer(in,p0,(mysmb_io_u16)(rows*80U));
-            else {
+            else if(uniform_row(in,&uniform)){
+                memset(p0,uniform,80U);memset(p1,uniform,80U);
+                memset(p2,uniform,80U);memset(p3,uniform,80U);
+            }else {
                 for(group=0U;group<16U;++group){
                     /* Source and output are disjoint. Reuse the four colors that
                      * occur twice without copying every small source group. */

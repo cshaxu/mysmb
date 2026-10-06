@@ -7,20 +7,25 @@ int mysmb_dos16_palette_expand(void *context,const mysmb_io_u8 far *packed,
     const mysmb_io_u8 far *palette)
 {
     struct mysmb_io_palette_pairs near *w;
-    mysmb_io_u16 data_segment,table_offset,out_offset,zero_pair,last;
-    _asm {mov data_segment,ds}
+    mysmb_io_u16 data_segment,stack_segment,table_offset,zero_pair,last;
+    _asm {mov data_segment,ds
+          mov stack_segment,ss}
     if(!context || !packed || !pixels || count>256U || (count&1U) ||
-        FP_SEG(context)!=data_segment || FP_SEG(pixels)!=data_segment)return 0;
+        FP_SEG(context)!=data_segment || stack_segment!=data_segment)return 0;
     w=(struct mysmb_io_palette_pairs near *)context;
     mysmb_io_palette_pairs_prepare(w,palette);
-    table_offset=(mysmb_io_u16)w->pairs;out_offset=FP_OFF(pixels);
+    table_offset=(mysmb_io_u16)w->pairs;
     zero_pair=w->pairs[0];
     _asm {
         push bp
+        push ds
         push es
-        les si,packed
-        mov di,out_offset
+        lds si,packed
+        les di,pixels
         mov bx,di
+        push es
+        push ds
+        pop es
         mov di,si
         xor ax,ax
         mov cx,count
@@ -38,12 +43,10 @@ int mysmb_dos16_palette_expand(void *context,const mysmb_io_u8 far *packed,
 scan_bytes:
         repe scasb
 scan_done:
-        jnz span_mixed
-        mov di,bx
-        push es
-        push ds
         pop es
-        mov ax,zero_pair
+        mov di,bx
+        jnz span_mixed
+        mov ax,ss:zero_pair
         mov cx,count
         shr cx,1
         test cx,1
@@ -62,42 +65,42 @@ scan_done:
 fill_words:
         rep stosw
 fill_done:
-        pop es
         jmp pairs_done
 span_mixed:
         mov di,bx
-        mov dx,table_offset
+        mov dx,ss:table_offset
         mov cx,count
         shr cx,1
         shr cx,1
         mov bp,zero_pair
         jcxz pairs_done
 pairs_next:
-        mov ax,es:[si]
+        mov ax,[si]
         or ax,ax
         jnz pairs_colored
-        mov [di],bp
-        mov [di+2],bp
+        mov es:[di],bp
+        mov es:[di+2],bp
         jmp pairs_advance
 pairs_colored:
         mov bl,al
         xor bh,bh
         shl bx,1
         add bx,dx
-        mov bx,[bx]
-        mov [di],bx
+        mov bx,ss:[bx]
+        mov es:[di],bx
         mov bl,ah
         xor bh,bh
         shl bx,1
         add bx,dx
-        mov ax,[bx]
-        mov [di+2],ax
+        mov ax,ss:[bx]
+        mov es:[di+2],ax
 pairs_advance:
         add si,2
         add di,4
         loop pairs_next
 pairs_done:
         pop es
+        pop ds
         pop bp
     }
     if(count&2U){

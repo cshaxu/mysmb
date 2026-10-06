@@ -13,6 +13,7 @@
 #include "core/area.h"
 #include "core/game.h"
 #include "ppu/frame.h"
+#include "io/palette_expand.h"
 #include "platform/win32/audio_output.h"
 #include "platform/win32/focus_pause.h"
 #include "platform/win32/text_console.h"
@@ -33,6 +34,7 @@ static struct mysmb_game g_game;
 static struct mysmb_frame g_frame;
 static struct mysmb_ppu_frame g_ppu_frame;
 static struct mysmb_ppu_frame_workspace g_ppu_workspace;
+static struct mysmb_io_palette_pairs g_palette_pairs;
 static mysmb_io_u8 g_chr_decoded[MYSMB_PPU_CHR_DECODED_BYTES];
 static mysmb_io_u8 g_background_slots[MYSMB_PPU_BACKGROUND_BYTES];
 static struct mysmb_io_audio_frame g_audio_frame;
@@ -310,6 +312,9 @@ static int mysmb_win32_snapshot_request(HWND window)
 static void mysmb_win32_power_on(void)
 {
     mysmb_ppu_frame_workspace_bind(&g_ppu_workspace,g_chr_decoded);
+    g_palette_pairs.valid=0U;
+    mysmb_ppu_frame_expansion_bind(&g_ppu_workspace,
+        mysmb_io_palette_expand_portable,&g_palette_pairs);
     mysmb_ppu_frame_background_bind(&g_ppu_workspace,g_background_slots,
         MYSMB_PPU_BACKGROUND_BYTES);
     mysmb_game_power_on(&g_game);
