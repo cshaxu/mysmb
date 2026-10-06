@@ -1,29 +1,38 @@
 # Project Status
 
-## M3 T32 S7 Packet
+## M3 T32 S8 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S7 P3; owner-directed platform component cleanup. |
-| Admission And Approval | Owner-approved S5-S9 consecutive plan and automatic successor instruction;S6 compact-cache contract closed by P4;S7 sole active. |
-| Objective | Reduce systemic DOS scaling/plane-packing/transfer overhead with exact output and no added resident storage. |
+| Identifier Mode | Continuation: M3 T32 S8 P1; integrated rendering prototype cohort. |
+| Admission And Approval | Owner-approved consecutive S5-S9 plan and automatic successor;S7 display-stage contract closed by P4;S8 sole active. |
+| Objective | Reduce current dominant rendering cost as one bounded cache/row-output chain while preserving ROM/PPU semantics and memory balance. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
-| Reference Baseline | Current S6 P3 products and unchanged mapper;original toolchain/2048stack/640x400. |
+| Reference Baseline | Current S7 P3products and P4bound phase/counter probes;original tools/2048stack/640x400/two platform components. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | Owner requires only dos16/win32 beneath platform. Move shared planar packing and file services to IO, isolate DOS row helper and platform declarations under dos16/win32, move retired sampler to validate;update includes/CMake/DOS source lists/boundary gate. Estimate80-140new glue/declaration/test lines plus mechanical file moves. No game/PPU semantic or storage change;three products refreshed. |
+| Files And ABI Surface | Shared PPU invalidation/row projection,neutral IO packed-palette operations,DOS-private bulk adapter/root binding;estimate160-300candidate product/150-250test lines. Local prototype530byte optional near workspace plus small fields;no adoption before original-DOS cost/memory/output proof. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
-| Verification | Native full/band/plane math/guard tests and actual original-DOS exact output;segment/register/stack listing audit;whole mapping/submission cost and actual product routes;three EXEs after adoption. |
+| Verification | Independent512state native raw/cache/row/palette/priority/source/guard/fallback checks;actual original-DOS exact output/compiler/stack/startup/resident/stage cost and current frame budget;three EXEs after adoption. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
 | Asset Needs | Owner-local x.xx binary and ROM plus historical athros/NESticle0.2 source as conceptual reference only; copyright-only leaked tree grants no redistribution permission. Purpose frame/cache/transfer architecture comparison; raw source/probes only below ignored build, no copying/transliteration into product, exact-version claims require binary evidence. |
 | Reporting Requirements | Candidate and measured whole-step cost, rejected variants, actual code/memory delta, source/products and total/local node counts. |
 | Stop Conditions | Unbounded or foreground probe, source binding gap, ownership violation, output divergence or unsupported speed claim. |
-| Exit Criteria | Segment-efficient candidate selected/rejected by exact output,current compiler/register/stack/memory proof and measured stage/system cost;three platforms verified after adoption. Whole-game/reference/global-stack gates remain named S8/S9 work. |
+| Exit Criteria | Integrated candidate selected/rejected by exact semantics/output,current compiler/cost/memory evidence and actual routes;known defects repaired,three platforms after adoption. S9 final reference/global-stack/continuous-memory gates remain unproved. |
 | Original Owner Request | Improve actual memory/performance/playability with original ROM semantics; follow approved S5-S9 division after fixing known S4 defects. |
-| Similar-Issue Sweep | All band sizes/plane offsets, source/output capacity, row duplication, color masking, source/output alias contract, DS/ES/BP preservation and fallback. |
+| Similar-Issue Sweep | Dirty tile/attribute/CHR/scroll/HUD/restore invalidation,palette aliases/arbitrary bytes,odd packed spans,raw opacity,near/far ownership,lifetime/capacity/allocation fallback. |
+
 
 
 
 ## Current Technical Baseline
+
+- S7 P4 closes display stage after current integrated budget:counter-only
+  graphics405.309ms/steady405.307/dirty458.132;text451.980. PhasePPU61.43%,
+  mapping24.80%;one-tile refresh adds about53ms. No product/EXEchange.
+  Nominal60Hz/fivefold target still FAILS. S8sole active for cache/row-output
+  cohort with530byte local prototype workspace budget;not adoption. S9final
+  memory/stack/reference/hardware gates open.
+  [Budget and admission](../history/M3-T32-rendering-performance-continuation.md#s7-p4-current-integrated-budget-and-scoped-closure).
 
 - S7 P3 enforces platform dos16/win32 only:shared planar/file services in
   IO,DOS row assembly/declarations under dos16,retired sampler under validate.

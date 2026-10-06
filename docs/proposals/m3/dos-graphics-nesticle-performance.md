@@ -321,3 +321,14 @@ without an IO-to-platform dependency. Component,host-import and declaration
 guards prevent recurrence. Original game/PPU state and output semantics stay
 unchanged;the measured0.36%packing overhead is retained as integration cost,
 not hidden by another performance claim. S8/S9 obligations remain open.
+
+## Current S8 admission
+
+[S7 P4 budget/closure](../../history/M3-T32-rendering-performance-continuation.md#s7-p4-current-integrated-budget-and-scoped-closure)
+records current counter-only405.309ms graphics and unresolved60Hz/fivefold
+target. S7 display stage closes;S8 alone is active for integrated rendering
+reduction. First cohort combines dirty-cache rejection and packed palette-pair
+expansion under shared PPU/neutral IO/DOS-private bulk ownership. Estimate
+160-300candidate product lines,prototype530byte optional near workspace plus
+small binding fields;no extra far surface. No adoption until exact output,
+current compiler/stack/resident/startup/cost evidence. S9 final gates stay open.

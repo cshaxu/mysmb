@@ -1667,3 +1667,62 @@ Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and
 unchanged. No new third-party/protected fixture import. Reproducible local
 build/test/negative/cost/source-product receipts below build/m3-t32-s7/p3.
 S7 and the memory/performance goal remain active beyond this ownership fix.
+
+## S7 P4 current integrated budget and scoped closure
+
+Current three platform owners regenerated with bounded instrumentation;
+all other objects are exact current-product library members. Current game/
+PPU/IO/DOS row encoder unchanged. Cache begin preparation is included in PPU
+phase,not missed between25row callbacks. Diagnostic sampler256far records
+about24KiB,not product memory. First link failed on a nested PowerShell JSON
+array;fixed recipe flattens object names,no stale failed build accepted.
+Each unique private-desktop route bounds150seconds/4MiB captured output;
+installed DOSBox settings and all game/work/presenter/input behavior retained.
+
+Phase probe227records/zero drops:233updates,208graphics,26text,5200row reads.
+Restore adds one presentation. Counter-only235records/zero drops retains
+actual tick/submission counters with no per-stage clocks. Successful graph
+submissions require25reads;one completed game update produces one selected
+presentation. Phase running graphics125frames median419.402ms;steady120frames
+same,dirty5frames472.669ms,each one rebuilt tile. Phase medians PPU257.645,
+mapping104.008,VGA28.942,game9.181,snapshot10.450ms. Median component values
+are not additive exact per-frame totals. PPU61.43%,mapping24.80%,VGA6.90%.
+
+Counter-only running graphics131frames405.309ms;steady125frames405.307ms,
+dirty6frames458.132ms. Text25frames451.980ms remains unchanged. Counter-only
+reduces phase-clock overhead;it is still an instrumented diagnostic,not actual
+product FPS. Prior S5counter634.259ms/current405.309ms suggests36.10%lower
+cost/1.565throughput in comparable running cohorts,not equal-state paired
+end-to-end proof. Nominal60Hz/fivefold acceptance FAILS;physical486 unqualified.
+One-tile preparation costs about53ms from scanning unchanged cache entries.
+This finite finding belongs to S8's already planned integrated reduction.
+
+S7 closes its display-stage contract:segment-efficient candidate adopted,
+exact/native/original-DOS/register/local-stack/product routes verified,
+ownership correction delivered,whole-stage and current system budget recorded.
+No P4product change;three P3EXEs remain current. This closure does not complete
+T32/goal or pass S8/S9 whole-game/reference/transition/global memory/stack gates.
+
+Admit S8 alone under the approved consecutive plan. Focus one shared rendering
+chain:frame begin/background invalidation -> palette-slot row expansion ->
+unchanged indexed output. First compare row/block-level dirty rejection and
+generic packed4-bit palette-pair expansion,with explicit DOS-private bulk
+operations if justified. Shared PPU retains all source/scroll/priority/mask/
+opacity/control semantics;IO sees only bytes/colors/capacity,platform sees no
+game/PPU state. Keep two platform components and no target execution in IO.
+
+Estimate160-300candidate product lines plus150-250contained tests. Local
+prototype budget permits a530-byte pair/palette workspace plus small bind
+fields,preferably optional near storage within existing reserve;no extra far
+surface or full-frame buffer. This is comparison budget,not adoption. Actual
+code/load/resident/stack and original-toolchain cost decide retention;failure
+must retain the original output path. Pair colors preserve arbitrary8-bit
+values. Require512independent native states,source/cache/guard/restore/palette/
+bank/scroll/priority and actual DOS exact output,then whole-stage/current-frame
+cost. Adopted product code refreshes all three EXEs. No140304-byte tier or
+sampling/artwork/game rewrite. S8 repairs its own findings before closure;
+S9 remains final audit. Source/research containment/queue unchanged.
+Scope/expected/actual[],new0,historical1992/1992,local1991/1992nodes and
+4260/4261feasible controls(raw4342,infeasible81);fixed M2 certificate unchanged.
+Recipes/source bindings and outputs remain below build/m3-t32-s7/p4;
+new bounded prototypes under build/m3-t32-s8. Global goal remains active.
