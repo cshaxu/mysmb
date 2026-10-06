@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T28 S6 P22; DOS loader allocation-bound adoption; remaining CRT/stack/cadence gates retained. |
+| Identifier Mode | Continuation: M3 T28 S6 P23; contained DOS file-service evaluation; remaining allocation/stack/cadence gates retained. |
 | Admission And Approval | Owner authorizes execution and the joint conventional-memory/playability contract. Owner accepts the rowwise memory/performance tradeoff and admits implementation;repeat-row/OAM tuning is deferred to TODO. S5 closed;S6 remains active. |
 | Objective | Reconcile S1-S5 memory census;verify actual minimum-free launch/runtime fit,stack/lifetimes,normal cadence/input budgets and clock sampling;dispose all six opportunities with fit/playability separate hard gates. |
 | Non-goals | No core ROM routine/state/timing changes,no emulator settings,no text artwork or VGA coordinate/mode changes,no emulator-based physical486SX/DOS-version or M2 certification. |
 | Reference Baseline | Post-T27 source and retained three products;historical1992/1992,local1991/1992 nodes and4260/4261 feasible controls,raw4342/infeasible81. |
 | Candidate Proposal | [T28 retained proposal and audit](../history/M3-T28-dos-rendering-optimization.md). Removed from pending QUEUE on admission. |
-| Files And ABI Surface | DOS build/verification metadata:map-derived MZmax-extra bound,synthetic boundary/malformed/idempotence tests. Preserve minimum/checksum policy,loaded image,full64KiBDGROUParena and original flags;three products plus actual nonhooked/event routes required. No core/PPU/wire/artwork change or stack shrinking. |
+| Files And ABI Surface | Contained DOS file-service prototype0product lines initially;neutral callback byte/error/partial/close/append equivalence and per-context descriptor lifetime plus linked footprint/memory/cost before adoption. Existing owner-local runtime exports only,no implementation import. Core/PPU/wire/artwork/Win32stdio/stack size unchanged. |
 | Applicable Rules | README Task Reading Set,EXECUTION,DOCUMENT,ARCHITECTURE,CODING,CONTRIBUTING and source policy. |
 | Verification | Independent128000-byte mapping and actual VGA-plane readback,far guards,mode/restore lifetime,native x86/x64 and original DOS16;fixed-config complete-output/input cost,MCB/near/far peak and contiguous/stack/fallback under the memory contract,platform purity and three EXEs for each product-code P. |
 | Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0,maximum1992/1992;no custody transfer. S6 owns infrastructure-only implementation;original node custodians unchanged. |
@@ -22,6 +22,14 @@
 | Similar-Issue Sweep | Sweep all pixel/text/snapshot/cache consumers and simultaneous lifetimes,resource/mode/restore invalidations and allocation-failure cleanup;record every hit and disposition. |
 
 ## Current Technical Baseline
+
+- S6 P22DOS build now limits MZmax-extra to map-derived3076,full64KiBarena.
+  Tool/test3files,+82/-6;17neutral cases/idempotence and relative-output build
+  pass. Only product bytes12/13change;image exact,P21startup peak evidence retained
+ 458752to386576. Nonhooked448/374/373pass,372exit1;stable occupancy unchanged.
+  Three products refreshed,Windows unchanged. P23evaluates DOS file-service
+  footprint without touching game semantics;stack/cadence gaps remain.
+  [Build adoption,scope and measured limits](../history/M3-T28-dos-rendering-optimization.md#s6-p22-checkpoint-bounded-dos-loader-reservation-in-the-build).
 
 - S6 P21CRT mapping29external symbols and exact P20relink;512-byte file buffer
   with one-byte failure fallback confirmed. External DOS-service observer finds

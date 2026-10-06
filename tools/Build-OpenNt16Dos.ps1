@@ -180,6 +180,11 @@ try {
     $linkCommand = '"' + $Linker + '" /nologo /NOE /SEGMENTS:2048 @mysmb-dos16.rsp < NUL'
     & cmd.exe /d /c $linkCommand
     if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+    # Keep the original full DGROUP reserve without initially taking all free DOS RAM.
+    $memoryTool = Join-Path $PSScriptRoot 'VerifyDos16Memory.py'
+    & python $memoryTool (Get-Location).Path --limit-loader-allocation
+    if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
 }
 finally {
     Pop-Location

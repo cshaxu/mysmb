@@ -2628,3 +2628,74 @@ leaves three P20products unchanged. Cleanup remains S6's responsibility.
 Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
 infeasible81),scope/expected/actual[],new0,custody unchanged. S6/T28remain open;
 private CRT paths,interrupt/kernel bounds,error routes and cadence/input remain.
+
+
+## S6 P22 checkpoint: bounded DOS loader reservation in the build
+
+The DOS builder invokes the existing MZ/map owner after linking with explicit
+loader-limit mode. Validate all header/map/minimum/full-DGROUP bounds before any
+mutation;reject nonzero checksum policy and an existing maximum below the full
+arena. Change only the maximum-extra word,retain all other bytes and loaded image.
+Repeated invocation is byte-idempotent. Default verifier remains read-only and
+reports byte-paragraph/page-rounded minimum and maximum estimates separately;
+neither is the complete resident/heap peak. Source/tool/test3files,+82/-6;no
+shared game,PPU,platform gameplay,wire,artwork,stack or compiler-flag change.
+
+17neutral MZ/map cases plus idempotence pass:existing segment/group/header/length
+checks,zero pages,invalid last-page count,minimum above arena/inconsistent map,
+nonzero checksum,too-small maximum,truncation and malformed map. Rejected inputs
+retain every EXEbyte. A successful synthetic limit retains the entire image and
+all header bytes except12/13. Absolute and relative-output full DOS builds of
+final scripts produce identical bounded products. The postlink call uses the
+actual output directory,avoiding a doubled relative path after Push-Location.
+
+Formal output is byte-identical to P21capped prototype:only original bytes12/13
+change from65535to3076.191segments,maxsegment32768,DGROUP49520/headroom16016,
+stack2048,file305163remain. Byte-image minimum329168,page-rounded329664;
+maximum345168/345664respectively excludes PSP/MCB/environment/far heap. Full
+64KiBDGROUParena is retained. Loaded-image SHA256
+ af36e2b238dc8448f22434ade32dabfc2a42522039d64e344af142e85c82ffda.
+
+Both native widths15focused tests/13host groups pass;Windows bytes remain P20.
+The exact unchanged P21prototype/event-observer dependencies justify retaining
+its measured startup boundary maximum458752to386576(-72176bytes);no duplicate
+hooked route is presented as new evidence. Ordinary code/image remains identical,
+including protected resource binding;no new node conformance is inferred.
+
+Actual new product without the DOS-service hook completes448/374/373KiB
+load/input/Tab/text/graphics/save/Escape routes,resource/CRC-valid saves and captures:
+- 448KiB:sampled386576bytes,2053samples,seed7465to7531.
+- 374KiB:sampled382480bytes,2053samples,seed7465to7531.
+- 373KiB:sampled381712bytes,2053samples,seed7465to7531.
+372KiBexecutes then exits1before completion,as P20;not accepted as gameplay.
+Stable sampled occupancy is unchanged;373pass/372failure remains fixture-local.
+This adoption removes needless startup reservation,not required stable storage.
+No continuous kernel-internal peak,all-path stack,physical486SX/DOS-version,
+nominal60Hz or input-latency certification. Installed DOSBox configuration,
+normal SDL/private desktop and original toolchain remain unchanged.
+
+Similar-issue sweep covers all product build entry/relative output paths,MZ
+length/min/max/checksum,image integrity,map ranges/zero segments/full data arena,
+mutation/rejection/idempotence and existing publisher/receipt consumers. All
+metadata is neutral;local generated data/probe outputs remain below ignored build.
+Three existing owner-authorized product artifacts refreshed:
+- mysmb16.exe:305163bytes,SHA256f0a281bf630431853d489e20fdabf7d622dc5f119133f9026c5f94423895ad6a.
+- mysmb32.exe:320651bytes,SHA256beb301aa1c7fc7729efaaf610d56276b129fa40b6a98b56a861a2400cf0cc00b.
+- mysmb64.exe:329323bytes,SHA256681b45e879cc42c2b34be7884fc40cc360cfcb2be830ab51bde6623db8830a44.
+
+Reproduce with original DOS builder and VerifyDos16Memory.py explicit limit
+mode,test/test_dos16_memory_receipt.py,and ignored P22native/host/product,
+relative-output,image-binding/resident/lower-bound checks. P21event evidence is
+retained by exact prototype/product hash. No new ROM/probe/derived-source commit.
+Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
+infeasible81),scope/expected/actual[],new0,custody unchanged. S6/T28remain open.
+
+P23receives a contained DOS file-service evaluation to remove avoidable stdio
+buffer/formatting dependencies:preserve the neutral file callback contract and
+byte/error/partial-transfer/close/append behavior,own descriptor lifetime per
+storage context and compare linked footprint/actual memory/cost. Existing
+historical DOS exports only,no vendor implementation import. Prototype-only
+initially;no product adapter change before equivalence and size/performance
+review. Game/core/PPU/schema/Win32stdio remain unchanged. Allocation/error/private
+CRT/interrupt and cadence/input gaps are not discharged by the header bound;
+no stack shrink or deferred row/OAM activation.
