@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S5 P1. |
+| Identifier Mode | Continuation: M3 T32 S5 P2. |
 | Admission And Approval | Owner approved S5-S9 plan and clarified S4 known repairs/S5-S8 performance/S9 total audit; S4 repair stage closed, S5 sole active. |
 | Objective | Source-bound current phase budget and fair comparator disposition before performance implementation. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
@@ -22,6 +22,14 @@
 | Similar-Issue Sweep | Stale binaries/config, display versus game-update counts, frameskip/resolution/audio differences, snapshot cost and probe overhead. |
 
 ## Current Technical Baseline
+
+- S5 P2:current-owner default-config phase probe counts173updates/148graphics/
+  26text submissions;counter-only177/152/26. Every selected running update
+  submits once;restore adds one presentation. Counter-only graphics634.259/
+  text452.101ms;phase shares PPU60.64%,mapping30.47%,snapshot1.61%. No formal
+  FPS/reference claim. Bounded S6lead:198temporary near-byte span metadata,
+  original semantics/stack/output validation required. Product code/EXEs unchanged.
+  [Counted budget and limits](../history/M3-T32-rendering-performance-continuation.md#s5-p2-current-counted-phase-budget).
 
 - P12 ends S4's owner-approved repair/delivery stage; final proof gates are
   OPEN, not passed by closure. S5 alone active, S6-S8 planned, S9 named final

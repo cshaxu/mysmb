@@ -1196,3 +1196,56 @@ but do not replace fresh current-output accounting. Reconcile changed startup
 hooks and probe overhead separately from game/PPU/mapping/VGA/cache costs.
 Contained inventory harness30lines,zero product lines/resident changes.
 All three current products stay P11. Expected/actual node/control credit zero.
+
+## S5 P2 current counted phase budget
+
+Rebuild the contained diagnostic from current main/root/devices owners and
+the actual P11objects, including both startup hooks. Count reached game tick
+calls and completed VGA/text writes, not HUD timer changes. Installed DOSBox
+config hash remains0494236f2308e2e615f428d04e6470db4b0d162c95b51f4e276f1b7e73241917;
+no setting or product code changed. The private-desktop scripted route covers
+title, restore, ordinary play/movement, graphics/text switching, save and exit.
+It does not establish dense/scroll/death route thresholds or a reference ratio.
+
+Full phase probe:173updates,148graphical/26text submissions,3700successful
+row reads;167records,zero drops,10title logs skipped without dropping updates
+or drawing. Restore produces one extra presentation without a game update.
+Selected running cohorts:81graphics and25text updates, each exactly one
+completed presentation. Graphics median648.462ms:PPU393.232(60.64%),mapping
+197.582(30.47%),VGA28.941,game9.181,snapshot10.446. Text453.254ms:assembly
+366.358(80.83%),device65.454,game9.186,snapshot10.446.
+
+Repeat with phase timer calls removed, retaining update/submission counters:
+177updates,152graphics/26text,3800row reads;171records/zero drops. Selected
+84graphics/25text updates each submit once. Counter-only medians634.259/
+452.101ms. Observed full-versus-control difference14.203ms(2.19%)graphics and
+1.153ms(0.25%)text; wall-timed routes have different update counts, so this
+is an observed instrumentation control, not a matched-state causal speedup.
+Both remain far over16.67ms; do not publish diagnostic Hz as formal product FPS.
+Both runs exit normally with source-bound CRC-valid saves and unchanged config.
+
+Static current-source workload explains a bounded S6 lead:25bands rebuild
+250source rows for240logical rows. At scrollY0,50coarse tile-row groups still
+repeat8000horizontal span calculations; preparing32spans per group would
+reduce that setup work to1600, not the whole frame cost by five times. An
+initial33entry temporary span descriptor can fit198near bytes with no new
+resident cache. Evaluate DOS-generated code, stack and exact raw/cached output
+before adoption. Existing CHR decoding is baseline, not a new optimization.
+Avoid per-sprite raw CHR reads when decoded rows already provide the values,
+and defer out-of-band sprite attributes until after vertical rejection.
+
+S6 decision:one bounded PPU candidate cohort,not repeated single-line repairs:
+temporary coarse-row span preparation plus sprite-row/classification costs.
+Keep each candidate only with measured material benefit and no unacceptable
+startup/resident/stack cost. Retain existing scroll/split/mirroring,palette,
+clipping,priority and fallback behavior. Optional opacity representations
+need independent proof; never infer background opacity from final RGB color.
+
+The reference's actual submission counts and equal-route/minimum-cycle
+thresholds remain unproved. The only retained reference comparison used
+different resolution/frameskip and stale MySMB products. No faster-than-
+reference claim is accepted. Broader route matrices are required during
+candidate validation and final S9 acceptance, not inferred from this cohort.
+Recipes/count receipts below ignored build/m3-t32-s5;zero product lines,
+no product resident increase or three-EXE refresh. Historical1992/1992,
+local1991/1992nodes,4260/4261feasible controls(raw4342,infeasible81),new0.

@@ -218,3 +218,17 @@ integration checks only. No final gate is passed by handoff. S5 is active,
 S6-S8 planned and S9 holds final audit checks. T19 remains suspended; current
 large-workarea ordinary startup passes without claiming its full repair.
 S5 estimates0product/100-250contained harness lines and no resident growth.
+
+## S5 current measurement and S6 candidate boundary
+
+[S5 P2 counted measurement](../../history/M3-T32-rendering-performance-continuation.md#s5-p2-current-counted-phase-budget)
+binds the current product owners/objects and separates actual update calls
+from completed submissions. Default-config counter-only running graphics/
+text medians are634.259/452.101ms;instrumented phase shares put graphics PPU/
+mapping at60.64%/30.47%,snapshot1.61%. These are diagnostic budgets,not product
+FPS or reference-speed acceptance. Broader dense/scroll/death and fair
+equal-submission reference thresholds remain explicit final-work obligations.
+S6's bounded first cohort should test temporary coarse-row span preparation
+(up to198near bytes,zero resident cache) and sprite-row/classification reuse.
+Estimate80-240candidate product lines as before;require original-DOS listing,
+stack/loader audit and byte-exact raw/cached/band output before adoption.
