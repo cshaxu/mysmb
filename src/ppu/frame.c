@@ -106,7 +106,7 @@ static void mysmb_ppu_background_row(const struct mysmb_ppu_state *state,
     mysmb_io_u8 attribute,palette,low,high,color,phase;
     mysmb_io_u8 pixels[MYSMB_PPU_FRAME_WIDTH],colors[16];
     const mysmb_io_u8 *chr;
-    const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded;
+    const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded=decoded_chr;
     mysmb_io_u16 chr_size,pattern_base;
     /* Palette and row staging are stack-owned. Avoid a far state/pixel access
      * for every output dot; one bounded copy publishes the completed row. */
@@ -120,24 +120,31 @@ static void mysmb_ppu_background_row(const struct mysmb_ppu_state *state,
     while(x<MYSMB_PPU_FRAME_WIDTH) {
         table=(mysmb_io_u16)((name_table^((source_x>>8U)&1U))&1U);
         column=(mysmb_io_u16)((source_x&255U)>>3U);
-        attribute=state->name_table[table][0x3c0U+(row>>2U)*8U+(column>>2U)];
-        palette=(mysmb_io_u8)((attribute>>(((row&2U)<<1U)+(column&2U)))&3U);
         pattern=(mysmb_io_u16)(pattern_base+
             state->name_table[table][row*32U+column]*16U+(source_y&7U));
         phase=(mysmb_io_u8)(source_x&7U);
-        if(decoded_chr==0) {
-            low=(mysmb_io_u8)((chr!=0 && pattern<chr_size?chr[pattern]:0U)<<phase);
-            high=(mysmb_io_u8)((chr!=0 && pattern+8U<chr_size?chr[pattern+8U]:0U)<<phase);
-        }
-        palette=(mysmb_io_u8)(palette*4U);
         count=(mysmb_io_u16)(8U-phase);
         if(count>MYSMB_PPU_FRAME_WIDTH-x)count=(mysmb_io_u16)(MYSMB_PPU_FRAME_WIDTH-x);
         if(decoded_chr) {
             decoded=decoded_chr+(pattern/16U)*16U+(pattern&7U)*2U;
+            low=decoded[0U];high=decoded[1U];
+            /* Index zero ignores the attribute palette;opacity remains a
+             * separate raw-index query. Fill only this clipped span. */
+            if((low|high)==0U) {
+                memset(pixels+x,colors[0U],count);
+                x=(mysmb_io_u16)(x+count);source_x=(mysmb_io_u16)((source_x+count)&511U);
+                continue;
+            }
+        }
+        else {
+            low=(mysmb_io_u8)((chr!=0 && pattern<chr_size?chr[pattern]:0U)<<phase);
+            high=(mysmb_io_u8)((chr!=0 && pattern+8U<chr_size?chr[pattern+8U]:0U)<<phase);
+        }
+        attribute=state->name_table[table][0x3c0U+(row>>2U)*8U+(column>>2U)];
+        palette=(mysmb_io_u8)((attribute>>(((row&2U)<<1U)+(column&2U)))&3U);
+        palette=(mysmb_io_u8)(palette*4U);
+        if(decoded_chr) {
             if(count==8U) {
-                low=decoded[0U];high=decoded[1U];
-                if((low|high)==0U)memset(pixels+x,colors[0U],8U);
-                else {
                 pixels[x+0U]=colors[palette+((low>>0U)&3U)];
                 pixels[x+1U]=colors[palette+((low>>2U)&3U)];
                 pixels[x+2U]=colors[palette+((low>>4U)&3U)];
@@ -146,7 +153,6 @@ static void mysmb_ppu_background_row(const struct mysmb_ppu_state *state,
                 pixels[x+5U]=colors[palette+((high>>2U)&3U)];
                 pixels[x+6U]=colors[palette+((high>>4U)&3U)];
                 pixels[x+7U]=colors[palette+((high>>6U)&3U)];
-                }
             }else for(i=0U;i<count;++i)pixels[x+i]=colors[palette+
                 ((decoded[(phase+i)/4U]>>(((phase+i)%4U)*2U))&3U)];
         } else if(count==8U) {
@@ -203,8 +209,7 @@ static void mysmb_ppu_frame_build_internal(const struct mysmb_ppu_state *state,
             mysmb_ppu_background_row(state,y,scroll_x,scroll_y,
                 y<fixed_top_height?0U:state->visible_ppu_name_table,
                 pixels+(y-first)*MYSMB_PPU_FRAME_WIDTH,decoded_chr);
-        else for(x=0U;x<MYSMB_PPU_FRAME_WIDTH;++x)
-            pixels[(y-first)*MYSMB_PPU_FRAME_WIDTH+x]=state->palette[0U];
+        else memset(pixels+(y-first)*MYSMB_PPU_FRAME_WIDTH,state->palette[0U],MYSMB_PPU_FRAME_WIDTH);
     }
     if ((state->visible_ppu_mask & 0x10U) == 0U) return;
     for (sprite = 64U; sprite != 0U;) {

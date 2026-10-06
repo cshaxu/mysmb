@@ -1959,3 +1959,83 @@ Historical1992/1992,local1991/1992nodes and4260/4261feasible controls(raw4342,
 infeasible81),scope/expected/actual[],new0,custody unchanged. Product hashes stay
 P11;no refresh for this prototype-only part. S6/T28remain open,P13receives selected
 combined read-only PPU integration and the mandatory product gates.
+
+
+## S6 P13 checkpoint: combined shared PPU product adoption
+
+Adopt the selected single-fetch zero-span and disabled-background bulk-fill
+changes in one shared const PPU compositor. Packed raw bytes are read once;zero
+spans fill exactly their clipped count with universal palette0before advancing.
+Attributes are read only when they can affect color. Nonzero/raw paths remain
+complete;opacity still queries raw indices independently. Disabled background
+uses the same per-row palette0memset before unchanged sprite composition.
+No core/original ROM control,PPU-state,snapshot ABI,artwork,input/tick or audio
+change;no new cache,heap allocation,pixel/tick suppression or emulator settings.
+Actual source/test diff2files,+48/-14.
+
+Similar-issue sweep covers zero/partial spans,all universal aliases,source page/
+scroll/status split,both mask layers,behind-background opacity,sprite order,
+raw resource bounds,null/short/rebind/reset and uncached fallback. Count advances
+are positive and bounded to256;zero skip never derives opacity from final color.
+A new256-case deterministic test varies eight fine scroll phases/all32masks with
+nonzero alias palette slots and attributes,plus a behind-background sprite
+crossing the fixed/scrolled split at the right edge. It compares full and clipped
+cached output to independent per-pixel reference,with guards. Existing512cases,
+188743680strip bytes/65536000plane bytes and2048boundary/1198native frame/state
+checks remain. Both widths pass11focused tests and13private-desktop host routes
+on the rebuilt product,including input/Tab/snapshot/focus/console lifetimes.
+
+Original OpenNT16/runtime builds the full product with unchanged flags. Existing
+integral-conversion/optional OLDNAMES lookup warnings remain. MZminimum328832,
+DGROUP49488/headroom16048,stack2048,max segment32768. File304307and loaded minimum
+increase32bytes versus P11;this is not a new runtime work buffer. No compiler
+replacement or obsolete emulator runtime is substituted.
+
+Three actual DOS normal/cache-failure/near-far-pressure routes each match five
+61440-byte active frames,640000hardware plane bytes,8000hardware text bytes,
+12000neutral cells and10035snapshot bytes against retained S5. Mode3restores and
+observed live near/far payloads free. Instrumented owned392608/392656/648064(last
+includes ballast),far payload35996,largest minima256464/256416/1008bytes. Stack
+patterns72/72/70remain bounded observations only. Cache failure/pressure use raw
+fallback. Combined code,not merely separate prototypes,passes these lifetimes.
+
+Paired populated water/castle/no-zero-row64sprite and disabled-background64sprite
+fixtures also compare all five active frames/twenty planes,text and snapshots.
+Current output-only total changes versus their identical P11baselines:water
+-1.157percent,castle-9.633percent,no-zero-row+0.218percent;disabled background
+-39.650percent. Ordinary graphics-return retains about9.88percent reduction.
+These fixtures deliberately set PPU display fields and are not whole-game ROM
+routes. The small measured dense cost is retained honestly;no worst-case gain
+claim. Larger PPU/text/cadence and M4hardware/sound deficits are still unresolved.
+
+Formal actual448/374KiBcaller-free routes complete game/load,Tab/text/graphics,
+save and Escape. Observer takes2046samples each,one record,zero bad chains/drops;
+sampled386272/382176=345136primary+160environment+40976/36880auxiliary bytes,
+32above P11. Reviewed captures and CRC/resource-valid10035-byte saves advance
+seed7465to7528with startup4. Samples are not a continuous peak and wall-script
+frame counts are not fixed-tick equivalence/input-latency certification.
+Installed configuration identity is unchanged;normal/private host protocols
+are retained. MZ/file size and a successful374KiBroute do not qualify all DOS
+versions or the physical25MHz486SXtarget.
+
+Three owner-authorized existing products refreshed from current builds:
+
+- mysmb16.exe:304307bytes,SHA256 d5771bf983e3baf77efa8e3637e1d72a86e20c7e11350d6a3486d22f24ff9c5c.
+- mysmb32.exe:320139bytes,SHA256 d5a691def78183dcf48d83b31a331561ebee25773008b6a2599c7eeb59f0664e.
+- mysmb64.exe:328811bytes,SHA256 b17a65cc5850ffe0c789516207331f6d93514bde6018ab9f2e750958ec17f11b.
+
+Owner asks about direct DOS video-memory optimization during this part. Current
+DOS device already writes A000directly with plane mask and memcpy;its source
+initialization also selects mask15for all four planes. P14receives a contained
+hardware-only experiment:when neutral plane bytes are exactly identical,compare
+one all-plane masked write with four independent submissions;otherwise retain
+the exact existing path. Compare any fused mapping/write alternative by complete
+cost,not assumed removal of copies. Never import game/object knowledge into the
+adapter or assume physical-hardware timing from DOSBox. All source pixels,plane
+selection,mode/Tab/restore/snapshot semantics remain mandatory. This experiment
+is not yet production code or an accepted gain;deferred row/OAM recovery stays
+TODO. CRT/error/all-path stack and nominal cadence/input remain open.
+
+Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
+infeasible81),scope/expected/actual[],new0,custody unchanged. S6/T28remain open;
+all new resources/probes/logs/captures are ignored below build.

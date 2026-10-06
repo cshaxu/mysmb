@@ -13,6 +13,35 @@ static unsigned char chr[8192],decode0[8192],decode1[8192],band[4096+32],plane[1
 static unsigned long seed=19UL,compared=0UL,vga_compared=0UL;
 static unsigned char random_byte(void){seed=(seed*1664525UL+1013904223UL)&0xffffffffUL;return (unsigned char)(seed>>24);}
 static int guards(unsigned char *p,unsigned short n){unsigned short i;for(i=0;i<16;++i)if(p[i]!=0xa5 || p[16U+n+i]!=0xa5)return 0;return 1;}
+static int zero_alias_edges(void)
+{
+    struct mysmb_ppu_frame_workspace workspace;
+    unsigned short scroll,mask,i;
+    memset(&state,0,sizeof(state));memset(chr,0,sizeof(chr));
+    memset(state.name_table[0]+960U,255,64U);
+    memset(state.name_table[1]+960U,255,64U);
+    memset(state.visible_oam,255,256U);
+    state.chr_data=chr;state.chr_data_size=8192U;
+    for(i=0U;i<32U;++i)state.palette[i]=(unsigned char)(i+17U);
+    state.palette[0]=15U;state.palette[17]=48U;
+    state.visible_sprite0_split=1U;
+    /* A behind-background sprite spans the fixed/scrolled split;background
+     * tile zero remains transparent despite nonzero palette aliases/attrs. */
+    chr[16]=0x80U;chr[23]=0x80U;
+    state.visible_oam[0]=30U;state.visible_oam[1]=1U;
+    state.visible_oam[2]=32U;state.visible_oam[3]=249U;
+    mysmb_ppu_frame_workspace_bind(&workspace,decode0);
+    for(scroll=0U;scroll<8U;++scroll)for(mask=0U;mask<32U;++mask){
+        state.visible_scroll_x=(unsigned char)scroll;state.visible_ppu_mask=(unsigned char)mask;
+        mysmb_ppu_frame_reference(&game,&raw);
+        mysmb_ppu_frame_build_cached(&state,&full,&workspace);
+        if(memcmp(raw.pixels,full.pixels,61440U))return 15;
+        memset(band,165,sizeof(band));
+        if(!mysmb_ppu_frame_build_rows_cached(&state,band+16,4096U,31U,8U,&workspace) ||
+            memcmp(band+16,raw.pixels+31U*256U,2048U) || !guards(band,2048U))return 16;
+    }
+    return 0;
+}
 int main(void)
 {
     struct mysmb_ppu_frame_workspace w0,w1;
@@ -77,5 +106,5 @@ int main(void)
     if(mysmb_vga_frame_build_band(&view,0,0,16,band+16))return 14;
     for(i=0;i<sizeof(band);++i)if(band[i]!=0xa5)return 11;
     printf("cases=512 stripBytes=%lu planeBytes=%lu sourceImmutable=1 guards=1 invalidRejected=1 seconds=%.3f\n",compared,vga_compared,(double)(clock()-started)/CLOCKS_PER_SEC);
-    return 0;
+    return zero_alias_edges();
 }
