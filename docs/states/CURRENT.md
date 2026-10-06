@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S8 P7; DOS bulk operand-width candidate selected; product integration pending. |
+| Identifier Mode | Continuation: M3 T32 S8 P8; selected DOS bulk cohort integrated and three products refreshed; S8 remains active. |
 | Admission And Approval | Owner-approved consecutive S5-S9 plan and automatic successor;S7 display-stage contract closed by P4;S8 sole active. |
 | Objective | Reduce current dominant rendering cost as one bounded cache/row-output chain while preserving ROM/PPU semantics and memory balance. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
-| Reference Baseline | Current S7 P3products and P4bound phase/counter probes;original tools/2048stack/640x400/two platform components. |
+| Reference Baseline | Published S8 P5products and selected P7bound phase/counter probes;original tools/2048stack/640x400/two platform components. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | Initially zero product lines;contained DOS-private bulk scan/fill/copy operand-width prototype,estimate40-100candidate product/50-100test lines. Target already486SX;explicit386 DWORD instructions in16-bit real mode only,original compiler/model/flags unchanged. No persistent allocation,game/PPU semantics or shared-core ISA change. Original-DOS exact output,register/stack/code and whole-stage cost before adoption;three EXEs after adoption. |
+| Files And ABI Surface | DOS-private planar_row,palette_expand and devices bulk scan/fill/copy integration,estimate60-100product lines. Target already486SX;explicit386 DWORD instructions in16-bit real mode only,original compiler/model/flags unchanged. No persistent allocation,public ABI,game/PPU semantics or shared-core ISA change. Current object/output/register/local-stack/loader/resident and actual host routes required;refresh three EXEs. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
 | Verification | Independent512state native raw/cache/row/palette/priority/source/guard/fallback checks;actual original-DOS exact output/compiler/stack/startup/resident/stage cost and current frame budget;three EXEs after adoption. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
@@ -25,6 +25,15 @@
 
 
 ## Current Technical Baseline
+
+- S8 P8 adopts DOS-only DWORD bulk scan/fill/copy,+73/-6product lines,no
+  new buffer/ABI/game/PPU change.132core identities,15native tests per width,
+  current-object primitives/mapping/copy/local-CFG and actual Windows/DOS
+  448/384/370routes pass. Three EXEs302053/315406/328718bytes;DOSordinary
+  sampled resident+96,370unchanged,DGROUP49184/2048stack and rounded loader
+  unchanged. Bound P7counter190.398ms is diagnostic,not new whole-game proof;
+  nominal60Hz/fivefold/global memory-stack-reference remain open.
+  [Integration and limits](../history/M3-T32-rendering-performance-continuation.md#s8-p8-integrate-and-publish-real-mode-dword-bulk-rendering).
 
 - S8 P7 selects zero-storage DOS real-mode DWORD scan/fill/copy candidate:
   original-DOS5160palette/256plane/18copy checks pass;uniform packing-38%,

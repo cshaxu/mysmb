@@ -2058,3 +2058,56 @@ S9 open. Similar-issue sweep covers odd DWORD tails,zero-length spans,raw
 high-byte masking,last-pixel mismatch,segment lifetime,non-overlap and guards.
 Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and
 4260/4261feasible controls(raw4342,infeasible81);M2 final certificate unchanged.
+
+## S8 P8 integrate and publish real-mode DWORD bulk rendering
+
+Selected P7 cohort is adopted in exactly three DOS host owners:planar_row,
+palette_expand and devices. Product source+73/-6lines;public ABI,shared IO,
+PPU/game writers and immutable resources unchanged. Host addressing remains
+USE16 with reviewed DWORD operand prefixes;original8.00x compiler/model and
+flags retained. No new persistent buffer,heap request or ownership lifetime.
+Only dos16/win32 remain beneath platform;purity gate passes.
+
+Current source recompiles match final product render/device execution objects;
+132core objects retain P5 execution identities. Current row/palette execution
+records match selected P7 after excluding only segment-name records;the
+36-byte copy body is byte-identical to the tested diagnostic body. This binds
+P7 bounded diagnostic evidence to the adopted helpers,not a fresh whole-product
+speed qualification. Counter190.398ms versus P5 221.291ms,13.960%less diagnostic
+cost;nominal60Hz/fivefold and equal-state reference proof still fail/remain open.
+
+Current-object original-DOS5160palette primitive cases,256mapping cases/
+644800bytes and18copy boundary cases pass. Native15tests per width pass;
+actual private Windows startup,DPI geometry,Terminal output,input,Tab return
+and Escape pass for both products. Windows non-debug runtime sections are
+identical to P5.21local CFGs balance;copy own maximum12bytes plus10caller
+argument and4far-entry bytes. This is not a global or interrupt stack bound.
+
+Actual published DOS candidate passes448/384/370KiBlargest-arena routes,
+including restore,D/J,Tab graphics/text,save,Escape and640x400captures.
+All saves have10035bytes and valid integrity;arena chains/drops zero.
+Observed owned447472cached/383952fallback/378880370route bytes:ordinary
+routes+96,370unchanged. Samples do not establish universal peaks or minimum
+free-memory requirements. Installed DOSBox configuration is unchanged.
+No foreground interaction or production helper process is introduced.
+
+DOS EXE302053bytes(+96),195segments,max32768,DGROUP49184/stack2048 unchanged.
+Logical loader326208..342544bytes(+96),page-rounded326224..342560unchanged.
+Dynamic heap is excluded from loader figures and separately sampled above.
+Three existing owner-authorized product slots refreshed:
+
+| Product | Bytes | SHA-256 |
+| --- | ---: | --- |
+| DOS16 | 302053 | 3083f9a12bc27e72157df7dce9e284b59bedf906c03802803f0daa779660a7a6 |
+| Win32 | 315406 | 818bbe162b61fe39dcd9a404e086703e0cdf966567d95f3c34c5cdf3bd2a1395 |
+| Win64 | 328718 | 5f005a0abd7c31f7108a4224aa3a2d98526d31258baeef9b3fb7b4f3b4900fa8 |
+
+Recipes,listings,raw tests and source-product binding remain below ignored
+build/m3-t32-s8/p8. Similar-issue sweep retains full-byte palette masking,
+zero and non-DWORD tails,last-pixel uniform rejection,segment/register restore,
+non-overlap,capacity and snapshot/presenter lifetime checks. Global firmware/
+IRQ/CRT stack,including upper-register lifetime with DWORD operations,continuous
+memory,reference performance and physical486qualification remain S9/M4 gates.
+S8/goal remain active. Scope/expected/actual[],new0;historical1992/1992,
+local1991/1992nodes,4260/4261feasible controls(raw4342,infeasible81).
+M2 final certificate is unchanged and incomplete.

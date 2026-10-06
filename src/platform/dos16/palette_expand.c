@@ -1,6 +1,7 @@
 #include "platform/dos16/palette_expand.h"
 #include <dos.h>
-/* Platform-private implementation; palette preparation is neutral IO. */
+/* 486SX real-mode DWORD bulk operations; addressing remains USE16.
+ * Platform-private implementation; palette preparation is neutral IO. */
 int mysmb_dos16_palette_expand(void *context,const mysmb_io_u8 far *packed,
     mysmb_io_u8 far *pixels,mysmb_io_u16 count,
     const mysmb_io_u8 far *palette)
@@ -25,7 +26,18 @@ int mysmb_dos16_palette_expand(void *context,const mysmb_io_u8 far *packed,
         mov cx,count
         shr cx,1
         cld
+        test cx,3
+        jnz scan_bytes
+        shr cx,1
+        shr cx,1
+        _emit 0x66
+        xor ax,ax
+        _emit 0x66
+        repe scasw
+        jmp scan_done
+scan_bytes:
         repe scasb
+scan_done:
         jnz span_mixed
         mov di,bx
         push es
@@ -34,7 +46,22 @@ int mysmb_dos16_palette_expand(void *context,const mysmb_io_u8 far *packed,
         mov ax,zero_pair
         mov cx,count
         shr cx,1
+        test cx,1
+        jnz fill_words
+        mov dx,ax
+        /* SHL EAX,16: explicit operand size in a USE16 segment. */
+        _emit 0x66
+        _emit 0xc1
+        _emit 0xe0
+        _emit 0x10
+        mov ax,dx
+        shr cx,1
+        _emit 0x66
         rep stosw
+        jmp fill_done
+fill_words:
+        rep stosw
+fill_done:
         pop es
         jmp pairs_done
 span_mixed:

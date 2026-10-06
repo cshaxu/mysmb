@@ -172,6 +172,28 @@ void mysmb_dos16_devices_input(struct mysmb_io_input *input)
     _enable();
 }
 
+/* All validated plane transfers contain a multiple of four bytes.
+ * USE16 addressing, DWORD operands only; original DOS segment ABI retained. */
+static void copy_plane_dwords(unsigned char far *video,
+    const unsigned char far *pixels,unsigned short count)
+{
+    _asm {
+        push ds
+        push es
+        lds si,pixels
+        les di,video
+        mov cx,count
+        shr cx,1
+        shr cx,1
+        cld
+        _emit 0x66
+        rep movsw
+        pop es
+        pop ds
+    }
+}
+
+
 void mysmb_dos16_devices_present_rows(mysmb_io_u16 plane,
     mysmb_io_u16 first,mysmb_io_u16 rows,
     const mysmb_io_u8 MYSMB_VGA_FAR *pixels)
@@ -181,7 +203,7 @@ void mysmb_dos16_devices_present_rows(mysmb_io_u16 plane,
     video=(unsigned char far *)0xa0000000UL;
     /* Select the independent plane at A000;copy remains within both segments. */
     vga_register(0x3c4,2,(unsigned char)(1U<<plane));
-    memcpy(video+first*80U,pixels,rows*80U);
+    copy_plane_dwords(video+first*80U,pixels,rows*80U);
 }
 void mysmb_dos16_devices_present(const struct mysmb_vga_frame *frame)
 {

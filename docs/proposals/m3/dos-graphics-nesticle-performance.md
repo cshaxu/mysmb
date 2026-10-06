@@ -384,3 +384,13 @@ original real-mode tools. No added persistent storage;whole packing saves
 190.398ms versus221.291ms,13.960%less cost,zero drops;not equal-state game
 speed proof. Product integration must bind compiler/stack/loader/resident and
 actual routes,and refresh three EXEs. Nominal60Hz/fivefold and S9gates stay open.
+
+## Bulk cohort integrated
+
+[S8 P8](../../history/M3-T32-rendering-performance-continuation.md#s8-p8-integrate-and-publish-real-mode-dword-bulk-rendering)
+adopts three DOS-only owners+73/-6lines. Current-object output/local-CFG and
+actual Windows/DOS448/384/370routes pass;three EXEs refreshed. DOS code and
+ordinary sampled resident+96bytes,no new buffer,DGROUP49184/2048stack unchanged,
+rounded loader unchanged. Source/execution binding retains P7 bounded190.398ms
+diagnostic;no fresh whole-product speed certificate. S8 remains active with
+nominal60Hz/fivefold and S9global memory/stack/reference gates open.
