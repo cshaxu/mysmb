@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S4 P7; final finite integrated memory/cadence register. |
+| Identifier Mode | Continuation: M3 T32 S4 P8; final finite integrated memory/cadence register. |
 | Admission And Approval | Approved T32 integration; S3local color accepted and strict startup gate explicitly received, S4 sole active. |
 | Objective | Reconcile final source/products with MEM-S4-01..05, actual cadence/input/memory and existing WIN-T19-STARTUP dependency, without overclaiming partial proof. |
 | Non-goals | No ROM/PPU semantics, lost ticks/frames/rows/colors, helper process, DOSBox settings, toolchain change, unsupported stack shrink or silent resumption of suspended T19. |
@@ -23,6 +23,17 @@
 
 ## Current Technical Baseline
 
+- T32 S4 P7:current noargv image rebind7472CRTbytes/77aliases;removed
+  424-byte parser,852owned functions/current conditional main720/IRQ78.
+  Default-hook conditional64/64local flows connected,not lifetime proof.
+  __astart05BCcalls owned normal far-return hook,12ephemeral bytes,argv
+  persistence0. Product/2048stack/640x400unchanged;five parent gates open.
+  S5-S9planned;explicit five-gate handoff to S9question pending,no approval
+  inferred. [Current startup/CRT binding](../history/M3-T32-rendering-performance-continuation.md#s4-p7-checkpoint-current-noargv-startup-and-crt-binding).
+- Owner added [T32 S5-S9 DOS graphics performance](../proposals/m3/dos-graphics-nesticle-performance.md)
+  as five consecutive planned S tasks after S4, ending with S9 acceptance
+  audit. None is admitted; S4 remains the sole active packet, with its
+  memory/cadence and Windows-startup gates unchanged.
 - T32 S4 P6:noargv hook ADOPTED,8platform lines/build+9/-1,normal original
   ALfar-return. Formal DOSexactP5candidate;977235bytes/three369KiBroutes
   reused by full-image identity,368clean init refusal.Persisted argv0;envp/PSP

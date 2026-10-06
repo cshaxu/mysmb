@@ -1,9 +1,14 @@
-# DOS graphics performance beyond Nesticle
+# M3 T32 S5-S9 proposal: DOS graphics performance beyond Nesticle
 
-Owner-requested queue-head M3 T candidate. It is unnumbered and not admitted;
-`states/CURRENT.md` remains the sole active packet. This candidate follows the
-active T32 work. It receives no unfinished T32 S scope by implication: admission
-must reconcile T32's actual closure or explicit transfer first.
+Owner-directed continuation within the current M3 T32, divided into five
+consecutive S tasks, S5 through S9. None is admitted; `states/CURRENT.md`
+retains S4 as the sole active packet. S5 follows S4 only after its actual
+closure or an explicit owner-directed transfer with named receiving
+obligations. Each later S follows the preceding S's scoped closure and a fresh
+packet. These S tasks add a comparative graphics-performance gate to T32;
+they do not retroactively weaken or close S4's five memory/cadence clauses or
+the suspended Windows startup dependency. This is not a separate queue T and
+receives no new T identifier.
 
 ## Objective and measured starting point
 
@@ -20,13 +25,14 @@ The initial headless comparison used DOSBox 0.74-3 dynamic core at fixed 20000
 cycles, the same owner-local SMB1 content, and no audible output. At 22-34
 seconds after launch the Nesticle HUD timer fell from 360 to 330 (about 60
 game updates per second); the then-current 301609-byte MySMB DOS build fell
-from 398 to 392 (about 12 updates per second). A repeat with the current
-301145-byte MySMB DOS binary (SHA-256
+from 398 to 392 (about 12 updates per second). A repeat with the then-current
+301145-byte S3 MySMB DOS binary (SHA-256
 `B9624E4BDC7D192E0B9E19B1A36DDD6B941A0E28470D1B0069B63D6E290D1851`)
 and the same DOSBox settings found HUD timer 400 at wall second 16, 398 at
 22, 395 at 28, and 392 at 34: about 10.7 game updates per wall second over
-18 seconds. This is still a stationary early-level scene and the result
-needs repetition with a source/product binding at T admission. The HUD is a game-update proxy, not a displayed
+18 seconds. That S3 binary has since been superseded by the S4 P6 DOS build
+(300725 bytes); the comparison must be repeated against the S5 admission
+product. This is still a stationary early-level scene. The HUD is a game-update proxy, not a displayed
 frame counter. The two executables used different guest video modes: Nesticle
 256x240; MySMB 320x400 logical pixels scanned as 640x400. The comparison
 establishes a real configured-playability gap, not a proven compositor-only
@@ -58,11 +64,11 @@ timer fell 356->287 from wall seconds 20->38 (69 timer units); unchecked fell
 This single paired run is preliminary evidence of a cache-option effect on
 game updates, not a measured
 display-frame count or proof of the cache's internal representation. The
-unchecked Nesticle result is about five times the current MySMB update rate
+unchecked Nesticle result was about five times that S3 MySMB update rate
 at this CPU setting, but `-frameskip 1` may submit fewer video frames than
 MySMB; this is not an equal-frame speed ratio. MySMB
 already caches decoded CHR rows, so the option does not imply MySMB has no
-tile caching. S1 must repeat moving/dense routes and count display submissions
+tile caching. S5 must repeat moving/dense routes and count display submissions
 before generalizing the gain.
 The reference executable and owner ROM remain local research inputs below
 ignored `build/`; no third-party code or protected data is imported.
@@ -96,7 +102,7 @@ its own exact frame contract. Two full real nametable surfaces would cost
 122,880 bytes before metadata, so a DOS16 adaptation needs an explicit far
 memory and startup budget or a smaller bounded cache.
 
-## Boundaries
+## Boundaries for S5-S9
 
 - Keep original translated game logic, RAM/OAM/PPU state transitions, audio
   commands, input timing, sprite priority, masks, scroll, palette and frame
@@ -106,23 +112,26 @@ memory and startup budget or a smaller bounded cache.
   video contract. A 256x240 VGA presentation may be prototyped to make the
   comparison resolution-matched, provided the current 640x400 presentation
   remains available until the owner reviews the display tradeoff. A mode or
-  toolchain change is not silently charged to active T32.
+  toolchain change is not silently charged to active S4.
 - Preserve Win32 x86/x64 behavior and buildability, DOS memory/startup limits,
   2048-byte stack unless independently proved otherwise, and platform/IO/PPU
   ownership. No new ROM, third-party source, bundled DOS4GW, helper process,
   undocumented protected fixture, or committed derived image/EXE.
-- This is an M3 presentation/performance candidate, not M2 certification.
+- These are M3 T32 presentation/performance S tasks, not M2 certification.
   Expected ROM-node labels and control relations are `[]`; expected new node
-  and control credit is zero in every proposed S. At admission, copy current
+  and control credit is zero for each of S5-S9. At each admission, copy current
   historical/current counters and register this zero-credit responsibility in
   the node/task ledger without transferring node custody.
 
-## Proposed S decomposition
+## Proposed consecutive S tasks
 
-The labels below are planning slots, not allocated identifiers. Re-estimate
-source size, memory, exact files, and node counts in each admitted S packet.
+S5-S9 are planned identifiers within T32, not completed or simultaneously
+admitted work. Each S receives its own packet, source-size and memory estimate,
+exact files, tests and P breakdown at admission. The successor may be amended
+when the preceding measurement changes the best implementation boundary.
+No S overlaps S4 or another active S.
 
-1. **S1, comparable benchmark and bottleneck receipt.** Estimate 0 product
+1. **S5, comparable benchmark and bottleneck receipt.** Estimate 0 product
    lines and 100-250 contained probe/harness lines. Pin both EXE hashes,
    owner-local ROM identity, DOSBox version/core/settings, sound/input route,
    guest resolution, actual submitted frame counts, game updates, and
@@ -135,8 +144,8 @@ source size, memory, exact files, and node counts in each admitted S packet.
    captures/traces below ignored `build/`, delete raw
    protected images after bounded analysis. Decision: a reproducible phase
    budget and fair comparator before accepting a speed claim.
-2. **S2, dominant PPU composition.** Estimate 80-240 candidate product lines,
-   subject to S1 findings, in `src/ppu/` and focused tests. Investigate
+2. **S6, dominant PPU composition.** Estimate 80-240 candidate product lines,
+   subject to S5 findings, in `src/ppu/` and focused tests. Investigate
    reusable background tile/row work, scroll and dirty-region updates,
    band-invariant sprite classification and opacity lookup. Measure a
    palette-slot/opacity intermediate that can test behind-background priority
@@ -147,7 +156,7 @@ source size, memory, exact files, and node counts in each admitted S packet.
    stack, or resident-memory growth. Verify exact indexed frames and state on
    title, split/status, scrolling, palette, sprite priority, dense, and
    fallback routes; reject a cache if its invalidation cannot be proved.
-3. **S3, DOS display path.** Estimate 60-180 candidate product lines in
+3. **S7, DOS display path.** Estimate 60-180 candidate product lines in
    `src/platform/dos16/`, VGA presentation and their IO adapter, plus focused
    tests. Compare existing 320x400 plane packing and a resolution-matched
    256x240 VGA route with exact palette/indexed pixels. Count VRAM bytes,
@@ -155,8 +164,8 @@ source size, memory, exact files, and node counts in each admitted S packet.
    peak memory. Preserve the existing mode pending owner display review;
    choose a product default only with an explicit, measurable presentation
    decision. Do not attribute removed scaling cost to a PPU speedup.
-4. **S4, integrated 16-bit cost reduction.** Estimate 40-160 candidate product
-   lines only where S1-S3 profiles still show a material deficit. Inspect
+4. **S8, integrated 16-bit cost reduction.** Estimate 40-160 candidate product
+   lines only where S5-S7 profiles still show a material deficit. Inspect
    original DOS compiler listings, far-pointer and call traffic, render
    buffer lifetimes, and any measured per-frame snapshot overhead. Compare
    bounded loop/data-layout variants under the
@@ -164,25 +173,30 @@ source size, memory, exact files, and node counts in each admitted S packet.
    requires its own explicit scope decision; it is not a substitute for
    meeting the DOS16 target. Keep any demonstrably beneficial candidate only
    after exact-output and three-product verification.
-5. **S5, fair acceptance and closure.** Estimate 0-150 contained harness lines,
-   no product changes unless a failing candidate returns to its owning S.
+5. **S9, final acceptance audit and T32 closure.** This is the original
+   proposal's fifth and last stage. Estimate 0-150 contained audit/harness
+   lines and zero product lines. A finding returns to its owning S for repair;
+   S9 does not implement fixes or claim their acceptance without rerunning the
+   affected audit.
    Rebuild/refresh DOS16, Win32 x86 and x64 after adopted product changes.
    Run the pinned repeated workload matrix, count game updates and actual
    display submissions, compare representative exact output and user-visible
    pacing, find both minimum sustained-60/60 cycle thresholds, and report
-   confidence intervals, peak startup/resident/stack evidence and all rejected
-   approaches. Verify real DOSBox play with input and scene changes. The
+   confidence intervals, source/product bindings, peak startup/resident/stack
+   evidence, S4's remaining named gates and all rejected approaches. Verify
+   real DOSBox play with input and scene changes. The
    owner may review a resolution/display default separately. Do not close as
    "faster than Nesticle" unless the measured equal-frame threshold is lower.
 
 ## Admission and evidence gates
 
 Planning may use the retained local benchmark summary. New ROM or third-party
-research requires the active packet's provenance, license/redistributability,
+research requires the relevant active S packet's provenance, license/redistributability,
 purpose, containment and verification record under the source policy.
-Benchmark captures and binaries remain ignored and local. Each implementation
-S names exact components, estimated and actual changed lines, memory budget,
+Benchmark captures and binaries remain ignored and local. Each S admission
+names exact components, estimated and actual changed lines, memory budget,
 zero node-label scope, analogous defect sweep, focused byte/output cases and
-three-product delivery. T closure reconciles T32's transfer, exact source and
-product identities, meaningful per-phase savings, equal-frame comparator,
-actual DOS playability, and any still-open 486SX qualification (M4).
+three-product delivery. Every S closure records expected and actual zero
+node/control credit. T32 closure reconciles S4's actual disposition, exact
+source and product identities, meaningful per-phase savings, equal-frame
+comparator, actual DOS playability, and any still-open 486SX qualification (M4).

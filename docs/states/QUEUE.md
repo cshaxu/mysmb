@@ -7,10 +7,6 @@ a task ledger, or a record of completed work. Active work is recorded only in
 [CURRENT.md](CURRENT.md); closed tasks remain in their proposal/history record
 and in the generated [node/task ledger](NODE_TASK_LEDGER.md).
 
-## DOS graphics performance beyond Nesticle
-
-1. [Resolution-matched DOS16 graphics performance](../proposals/m3/dos-graphics-nesticle-performance.md) - owner-requested queue head; benchmark equal game/display frames and optimize the PPU and VGA path until MySMB needs fewer fixed DOSBox cycles than DOS Nesticle for sustained 60/60 across representative scenes. Five planned S slots; unnumbered, not admitted. Reconcile active T32 before admission.
-
 ## Text object and state visual audit
 
 1. [All text shapes/colors and complete state gallery](../proposals/m3/text-object-state-visual-audit.md) - owner-requested visual-audit candidate after DOS16 playability;enumerate every current character/object/state,color and scene variant,publish labeled text-mode galleries for visual review,then record and repair owner-approved designs by bounded cohorts. Unnumbered,not admitted;active work is recorded only in CURRENT.

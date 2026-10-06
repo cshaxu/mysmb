@@ -62,7 +62,15 @@ when product code changes; they are not release or whole-ROM proof.
    pending, not passed. Physical486SX qualification stays M4.
 
 S1-S3 are closed; S3 pending host-startup acceptance is explicitly received by S4 below. S4 is the sole active integration executor and receives
-backlog. Automatic next-S admission requires scoped closure and fresh packet.
+backlog. The owner has since added [S5-S9, resolution-matched DOS graphics performance](../proposals/m3/dos-graphics-nesticle-performance.md) to this same T32.
+These are five consecutive S tasks: S5 baseline/comparator, S6 PPU, S7 DOS
+display, S8 residual 16-bit cost, and S9 final acceptance audit. S9 receives
+the original proposal's last-stage closure work and does no product repair.
+None is active or separately queued. S4's five clauses and suspended Windows
+startup dependency retain their existing status and cannot be silently
+transferred. Automatic next-S admission requires scoped S4 closure or explicit
+owner-directed transfer and a fresh S5 packet; each later S requires its
+predecessor's closure and its own fresh packet. T32 does not close before S9.
 Each S starts with components/scope/size, ends with actual changes, candidate
 dispositions and total/local counters. Product-code P builds/tests/publishes
 DOS16/x86/x64; evidence-only P does not regenerate them. No remote exists.
@@ -79,10 +87,11 @@ Retain original limits; new concrete findings require visible scope amendments.
 Each adopted candidate must preserve output/state and improve a useful measured
 time/memory tradeoff under unchanged tools/settings. Pure probes are not product
 FPS. T closure joins selected source/build identities, all S output proofs,
-actual routes and explicit status of every received ID. Required open gates
+actual routes, S9's equal-frame audit and explicit status of every received ID. Required open gates
 prevent successful verification closure; only explicit owner-directed receiving
-transfer may close administratively. No arbitrary numerical performance promise
-or whole-game bug-absence inference from finite tests.
+transfer may close administratively. The owner-requested S5-S9 comparison is an
+explicit target, not a result inferred from the earlier T32 probes. Do not infer
+whole-game bug absence from finite tests.
 
 All S scopes/expected/actual ROM labels are[],new0,baseline/max1992/1992.
 Historical1992/1992,local1991/1992nodes and4260/4261feasible controls(raw4342,
@@ -845,3 +854,60 @@ receipts. No blanket claim about startup peak,BIOS/DOS/OEMdomains orplayability.
 S4/T32/goal active;all five parent gates not completely accepted,scope/expected/
 actual[],new0,historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342,
 infeasible81). Documentation/node/diff gates precede commit;no T/Sadvancement.
+
+## S4 P7 checkpoint: current noargv startup and CRT binding
+
+Bind current P6published DOSimage to byte-identical original /MAPcandidate.
+Runtime _TEXTnow1142..8613,7472bytes. Original argv144E..15F5routine424bytes
+is absent;owned15-byte hook/alignment precedes the image.77retained CRTpublic
+aliases/73entry anchors rebased,old aliases differ only by removed setargv.
+Before deleted routine,entry/site addresses move+16;after it,-408. Check all
+public names/addresses before rebasing concrete flow sites;DATAoffsets remain
+unchanged. The initial broad address rewrite also changed a Windowsprocess
+flag;restrict rewrite to the actual CRTaddress interval before any accepted
+decode/run. No product code ortool flags changed by this diagnostic correction.
+
+Fresh original arithmetic return anchors still LRET8;current binary-FILE54
+local flows and28CRTcontributions rechecked at new addresses,their bytes
+unchanged. Add owned empty hook to retained own graph:852owned functions,
+conditional main+current binary-FILECRT720,ownedIRQ72+CPUentry6=78,no unresolved
+owned call target. This is not whole-system stack proof;body/service/other IRQ/
+startup/exit qualifiers remain. One platform hook adds no ROMnode/custody credit.
+
+Loaded current debug/FPglobals remain0,exit0271. Rebase the explicit default-
+hook/error-flow conditions rather than replay old raw addresses:64reachable
+local flows/64connected under those declared conditions,no remaining argv
+stack-rewrite entry. Runtime setenvp still executes;hook lifetime/early025A
+override/normal XPiterator are NOT accepted merely from loaded defaults.
+Do not call64/64a global runtime orM2certificate.
+
+Current caller is __astart05BC ->own hook0000:0000,not __cinit. Direct current
+instruction scan caught the incorrect initial caller guess before accepting a
+join. Before this call,normal __cinit and __setenvp return balanced;SSpush/DS
+pop has net0relative to stabilizedSP. Owned machine bytes match compiledhook:
+BP/SI/DI saved6+local2+far entry4=12ephemeral bytes,normal far-return0,
+no persistent argv. No argument/path tail affects this frame. Loader/code
+memory savings andP5/P6real369/368bound/output/input/snapshot evidence retained.
+
+Current parent status:MEM-S4-01argv-dependent allocation removed/entry12bound
+accepted;envp/cinit/full supported domains andpeak still open.02conditional
+default runtime flow accepted,hook lifetimes/early-exit/cleanup still open.
+03ownedIRQ78accepted,other firmware/nesting open.04loader/startup fixture
+boundaries accepted,continuous/kernel/contiguous proof open.05main720accepted,
+full stack andconfigured graphics/text cadence FAILremain open,strict existing
+WIN-T19-STARTUPstill FAIL/SUSPENDED.2048stack/640x400output/products unchanged.
+
+The owner's added S5-S9plan stays planned,not admitted;S4sole active. It creates
+a dependency issue if S4must pass final cadence before admitting the S tasks
+intended to repair that cadence. Coordinator requested explicit owner direction
+for named five-gate handoff to S9under CURRENT/Execution closure authority.
+No pending question is treated as approval;no silent gate transfer/closure,
+registry/admission change orresumed T19. Until directed,retain S4scope.
+
+Recipes/results below ignored build/m3-t32-s4/p7:current-map extraction,
+address-rebind/current CRTentries/flow/bounds,default-hook conditions,owned
+startup byte/return join and852function application join. Existing restricted
+runtime/owner material only;no imported source/protected bytes orEXErefresh.
+Scope/expected/actual[],new0,historical1992/1992,local1991/1992nodes,
+4260/4261controls(raw4342,infeasible81). All five gates/goal remain open.
+Documentation/node/diff checks precede commit;fresh S5packet only after direction.
