@@ -531,3 +531,56 @@ product build for this audit-only P. S4 remains active,three EXEs unchanged.
 Scope/expected/actual[],new0,custody unchanged;historical1992/1992,local1991/1992
 nodes,4260/4261controls(raw4342/infeasible81). Node/documentation gates precede
 commit;no T/S closure or next S admission.
+
+## S4 P4 checkpoint: binary FILE joins, exit globals and actual error routes
+
+Product/source/artifacts remain unchanged. Split the existing fixed CRT analysis
+into all-mode and application-binary conditions rather than assuming a normal
+return from a fatal path. The file owner uses rb/wb/ab throughout. Under that
+explicit descriptor-mode condition,write's text/newline branch is excluded at
+its current linked flag test;54reachable CRT entries have closed local flows,
+and all28external names have conditional composed contributions. fwrite142,
+fclose68 and fflush38join the prior25names. This is not an unconditional28/28
+CRT certificate:runtime stderr/fatal text and startup/exit remain separate.
+The joined current own/conditional-CRT contribution from main is720bytes,
+including570-byte startup scratch and fmalloc70on its largest conservative
+path. Exclude main's entry/startup residence,BIOS/DOS body and interrupt nesting;
+720does not authorize shrinking2048stack. The all-mode53/47model remains retained
+with its six explicit error/fatal boundaries rather than overwritten as complete.
+
+Read linked data and map rather than infer callback defaults:adbgmsg begins
+zero,aaltstkovr isFFFFFFFFsentinel,exit_rtn begins0271(__exit),and the one4-byte
+XPentry9a1e4600resolves to flushall. Normal _exit runs cleanup iteration;default
+fatal __exit enters the later path. An early runtime-failure instruction sets
+exit_rtn025a(_exit),so initial target alone is not an all-phase nonreturn proof.
+No own-source object directly references these hook symbols. Initial zero and
+symbol-reference absence are recorded prerequisites,not a complete indirect/
+initializer lifetime proof. An initial zero-sentinel assumption was rejected
+by the actual image bytes and corrected;no production change followed it.
+
+Actual unchanged product,normalSDL/private desktop and unchanged installed
+DOSBox configuration runs two bounded error routes with INT21/1c observation:
+
+| Route | Caller free | DOS entries / timer samples | Result |
+| --- | --- | --- | --- |
+| Pending save path is a directory | 448KiB | 57 / 2032 | One exact binary snapshot error10line;original save unchanged;normal exit |
+| Pending save and log paths are directories | 370KiB | 63 / 2032 | Silent log failure,no recursive logger,original save unchanged;normal exit |
+
+Both retain original snapshot bytes/CRC and product/resource binding,Tab and
+graphical/text captures,execError0/result0,zero bad/dropped MCBchains. Budgets
+150seconds/2MiB each;no emulator setting,ROM/game/PPU or stack alteration.
+These exercise application file-create failure and logger failure. They do NOT
+force CRT low-stack fatal termination,BIOS nest depth,hidden kernel peaks or
+disk partial-write failure. Observer overhead still excludes cadence/stack
+high-water certification. Preserve these distinctions in the remaining ledger.
+
+Local receipts below ignored build/m3-t31-s4:crt-binary-flow/bounds,application-
+joins,exit-global-boundary,error-route-summary and source-bound save-error/
+save-log-error runs. Three new neutral preparation/check scripts35lines plus
+conditional switches in existing analyzers. No raw image/runtime/trace import
+or commit. S4 remains active;next P reconciles initializers/hook residence,
+normal/fatal exit and startup below main,then the retained BIOS/interrupt and
+allocation-continuity clauses. No restart of the851own-source/7896-byte universe.
+Scope/expected/actual[],new0,no custody change;historical1992/1992,local1991/1992
+nodes,4260/4261controls(raw4342/infeasible81). Three S3products unchanged.
+Node/documentation gates precede commit;no S/T closure or successor admission.

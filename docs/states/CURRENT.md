@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T31 S4 P4; reconcile CRT fatal/nonreturn/callback and startup/exit boundaries after P3. |
+| Identifier Mode | Continuation: M3 T31 S4 P5; startup/exit/hook lifetime joins after P4 conditional FILE/error evidence. |
 | Admission And Approval | Owner-approved T31 plan;S3 closed and coordinator admits S4. |
 | Objective | Reconcile original compiled call/stack paths and actual startup/runtime/error/restore memory with contiguous requirements. |
 | Non-goals | No stack shrink without proof,game/PPU changes,Windows UI,toolchain substitution or DOSBox settings. |
@@ -22,6 +22,14 @@
 | Similar-Issue Sweep | Startup/runtime/error/restore,near/far/FILE ownership,indirect calls,private CRT/interrupt nesting,optional cache failures and current S1-S3 stack owners. |
 
 ## Current Technical Baseline
+
+- T31 S4 P4checkpoint:binary-application condition closes54CRTlocal flows and
+  28external contributions;joined own/CRTmain720bytes excludes startup beneath
+  main,BIOS/DOS body and interrupts. All-mode fatal boundaries remain open.
+  Actual save-create failure448/log-failure370routes pass,save unchanged,one
+  expected log or silent failure. Loaded exit/debug/XPdefaults recorded without
+  inferring lifetime proof. S4 open;2048stack and products unchanged.
+  [P4 conditional bounds/error scope](../history/M3-T31-dos-performance-memory-continuation.md#s4-p4-checkpoint-binary-file-joins-exit-globals-and-actual-error-routes).
 
 - T31 S4 P3checkpoint:fixed7896-byte CRT region,53reachable entries/47local
   flows closed,25/28external names have composed local bounds. fwrite/fclose/
