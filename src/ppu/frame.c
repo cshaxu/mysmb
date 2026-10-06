@@ -100,11 +100,12 @@ static void mysmb_ppu_background_opaque(const struct mysmb_ppu_state *state,
 static void mysmb_ppu_background_row(const struct mysmb_ppu_state *state,
     mysmb_io_u16 y,mysmb_io_u8 scroll_x,mysmb_io_u8 scroll_y,mysmb_io_u8 name_table,
     mysmb_io_u8 MYSMB_PPU_FRAME_FAR *out,
-    const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded_chr)
+    const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded_chr,
+    const mysmb_io_u8 *colors)
 {
     mysmb_io_u16 source_y,row,source_x,x,column,table,pattern,count,i,row_offset,attr_offset;
     mysmb_io_u8 attribute,palette,low,high,color,phase,fine_y,row_shift;
-    mysmb_io_u8 pixels[MYSMB_PPU_FRAME_WIDTH],colors[16];
+    mysmb_io_u8 pixels[MYSMB_PPU_FRAME_WIDTH];
     const mysmb_io_u8 *chr;
     mysmb_io_u8 *target;
     const mysmb_io_u8 *quad;
@@ -112,8 +113,6 @@ static void mysmb_ppu_background_row(const struct mysmb_ppu_state *state,
     mysmb_io_u16 chr_size,pattern_base,blank_start=0U,blank_count=0U;
     /* Palette and row staging are stack-owned. Avoid a far state/pixel access
      * for every output dot; one bounded copy publishes the completed row. */
-    for(i=0U;i<16U;++i)colors[i]=state->palette[i];
-    colors[4]=colors[8]=colors[12]=colors[0];
     chr=state->chr_data;chr_size=state->chr_data_size;
     pattern_base=(state->visible_ppu_control_0&0x10U)?0x1000U:0U;
     source_y=(mysmb_io_u16)((y+scroll_y)%480U);
@@ -197,6 +196,7 @@ static void mysmb_ppu_frame_build_internal(const struct mysmb_ppu_state *state,
     mysmb_io_u8 MYSMB_PPU_FRAME_FAR *pixels,mysmb_io_u16 first,mysmb_io_u16 rows,
     const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded_chr)
 {
+    mysmb_io_u8 colors[16];
     mysmb_io_u16 x;
     mysmb_io_u16 y;
     mysmb_io_u16 sprite;
@@ -217,6 +217,10 @@ static void mysmb_ppu_frame_build_internal(const struct mysmb_ppu_state *state,
     /* Source flag zero reaches SkipSprite0 during VBlank, so the entire
      * visible frame uses scene scroll. A synchronized frame retains its
      * fixed top region; never reread the following frame's RAM flag here. */
+    /* One immutable frame/band call shares its background palette across rows.
+     * Rebuild on every call; sprite colors still read their original entries. */
+    memcpy(colors,state->palette,16U);
+    colors[4]=colors[8]=colors[12]=colors[0];
     fixed_top_height = state->visible_sprite0_split != 0U ?
         MYSMB_PPU_STATUS_BAR_HEIGHT : 0U;
     for (y = first; y < first+rows; ++y) {
@@ -225,7 +229,7 @@ static void mysmb_ppu_frame_build_internal(const struct mysmb_ppu_state *state,
         if((state->visible_ppu_mask&8U)!=0U)
             mysmb_ppu_background_row(state,y,scroll_x,scroll_y,
                 y<fixed_top_height?0U:state->visible_ppu_name_table,
-                pixels+(y-first)*MYSMB_PPU_FRAME_WIDTH,decoded_chr);
+                pixels+(y-first)*MYSMB_PPU_FRAME_WIDTH,decoded_chr,colors);
         else memset(pixels+(y-first)*MYSMB_PPU_FRAME_WIDTH,state->palette[0U],MYSMB_PPU_FRAME_WIDTH);
     }
     if ((state->visible_ppu_mask & 0x10U) == 0U) return;

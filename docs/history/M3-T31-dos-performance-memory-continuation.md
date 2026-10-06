@@ -41,7 +41,7 @@ the source policy, with no redistribution or new derivation/import authorized.
    input latency and memory separately. A missed cadence remains a failed gate,
    never a playability claim. Physical486SX remains M4 qualification.
 
-Only S1 is active. Later S register at admission. Each S reports scope/size first,
+S1 is closed; S2 is active. Later S register at admission. Each S reports scope/size first,
 then exact disposition, evidence and total/local counters. Product-code P refreshes
 three EXEs using original tools; audit/prototype/doc P does not. All diagnostics
 stay below ignored build; no unrelated work is removed. Retain prior scoped proof
@@ -132,3 +132,68 @@ are still required. Source/product diff0;three EXEs remain T30 S1-bound. No new
 ROM credit or custody;expected/actual[],historical1992/1992,local1991/1992nodes,
 4260/4261feasible controls(raw4342/infeasible81). Ledger/closure/admission and
 documentation gates pass;existing node custody/events/prior runs are unchanged.
+
+## S1 P2 closure: integrate call-local palette preparation
+
+Adopt only palette-only in shared src/ppu/frame.c,+9/-5one product source.
+The immutable synchronous frame/band call prepares its16background entries
+once,normalizes aliases4/8/12to0,and passes them to each row. No persistent cache,
+allocation,API change or core/game/PPU-state mutation. Sprite palette/raw opacity
+and disabled-background fill remain original. Refresh on every call covers
+palette animation,scroll/split and graphics returns without stale reuse.
+Similar-issue sweep:all background palette consumers,aliases,raw/cache/failed
+allocation,full/clipped/blank spans,scroll/mirroring/split/left masks,CHR bounds,
+sprite priority and immutable-state/guard checks. Existing independent512case
+proof is retained for byte-identical candidate behavior;new both-width products
+also pass8focused tests including reference rows/frame,snapshot continuation,
+VGA mapping,performance,purity and self-test.
+
+Seven received layouts are disposed:four eager metadata variants regress2-8%
+and are rejected;pointer metadata costs+304diagnostic bytes for0.8379%ordinary
+saving and is rejected;geometry saves2.6745%versus palette-only2.6427%while adding
+16more loaded bytes and extra control complexity,so reject that marginal variant.
+Selected water/castle/dense routes save1.7504/2.3721/1.5815%,977235output bytes
+identical. Near-allocation failure/far cache and complete cache failure/raw
+routes each match977235bytes,restoremode3and release all allocations. Original
+compiler listings have row324/caller56locals versus S1 row340/caller40;
+combined locals380unchanged,additional far color argument remains bounded.
+Patterned unused stack72in both failure fixtures;these are fixture-local checks,
+not all-path stack certification. No optimizer/toolchain/settings change.
+
+Original DOS product:305323bytes(+48),DGROUP49520/headroom16016,stack2048,
+max-extra3076unchanged;minimum329328/page-rounded329664,max345328/page-rounded345664.
+Actual448/374/373KiB caller-free products passload,input,Tab,text/graphics,save,
+restore/Escape with CRC-valid resource-bound snapshots,zero bad/dropped chains
+and cleanup. Sampled maxima386736/382640/381872bytes(+48versus prior bound receipts);373KiB
+tested boundary retained. These are observed route maxima,not continuous/global
+peaks or universal minimum. Windows source-bound stripped products retain all
+runtime sections and passstartup DPI,three native text entries,two returns and
+consoleEscapeexit. T29 live/parallel observations retain their separate limits.
+All three assets match tested outputs:
+- mysmb16.exe: 305323bytes; 44c74edf277de0c202dca029bfee94ea3c3c2fedf70f30bff46a9a021e35f781.
+- mysmb32.exe: 310798bytes; 0d74197b357418471902daaacf11d6cb76ddcbc0b6e456d554efd6920f25462c.
+- mysmb64.exe: 324110bytes; cde9a5f182b60562ec280ce5c2d08b98d1411243bffcf3952004c1dd0897f5ab.
+Retained receipts are below ignored build/m3-t31-s1,including geometry-summary,
+cache-far/cache-absent-summary,product-native-tests by width,DOS memory-receipt,
+product-resident-summary,owned-console by width and product-win-strip.
+
+S1 closes with no unresolved scoped candidate or production mismatch;S2 is
+automatically admitted under the approved T31 plan. Configured DOS playable
+cadence,continuous peak,CRT/error/full-stack and text/integration clauses remain
+the named later S responsibilities. No physical486SX or whole-game acceptance.
+Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342/infeasible81),
+scope/expected/actual[],new0,custody unchanged. Closure/admission and governance
+checks are required before commit.
+
+## S2 admission: neutral VGA plane conversion
+
+Owner-approved plan advances to S2;entry mysmb_vga_frame_build_planes,
+exit identical four plane bytes in existing bounded5120-byteband. Dependency
+is immutable neutral indexed source from closed S1. Estimate60-160product lines;
+investigate fewer tiny far memcpy calls and reduced pointer/index reconstruction
+within the existing store. Publish transient stack and compiled-memory cost;
+no new heap,framebuffer,source-row/frame skipping or game/CHR interpretation.
+Independent plane reference/guards and both widths,original DOS ordinary and
+populated exact outputs/cost/memory,three products for adoption. Dispose weaker
+variants explicitly;source equality alone is no speed claim. ROMscope/expected/
+actual[],new0,maximum1992/1992,unchanged local node/edge counters.
