@@ -9,6 +9,36 @@ void mysmb_dos16_pack_planar_row(const mysmb_io_u8 MYSMB_IO_FAR *source,
         push es
         lds si,source
         les di,pixels
+        mov bx,di
+        mov ax,[si]
+        cmp al,ah
+        jne row_mixed
+        cmp [si+254],ax
+        jne row_mixed
+        push es
+        push ds
+        pop es
+        mov di,si
+        mov al,[si]
+        mov cx,256
+        cld
+        repe scasb
+        pop es
+        mov di,bx
+        jnz row_mixed
+        and al,3fh
+        mov ah,al
+        mov bx,stride
+        sub bx,80
+        mov dx,4
+row_uniform:
+        mov cx,40
+        rep stosw
+        add di,bx
+        dec dx
+        jnz row_uniform
+        jmp plane_done
+row_mixed:
         mov bx,stride
         mov dx,bx
         add dx,bx

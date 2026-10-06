@@ -1868,6 +1868,48 @@ S9final gates open. Local recipes/raw protected outputs remain below
 build/m3-t32-s8/p4. Scope/expected/actual[],new0,historical1992/1992,
 local1991/1992nodes,4260/4261feasible controls(raw4342,infeasible81);M2 unchanged.
 
+## S8 P5 integrate guarded bulk rendering
+
+Adopt50DOS-only helper lines:zero-index full-span verification/fill and uniform
+raw-color full-row verification/four-plane fill. Boundary conflicts reject
+early;eligible spans/rows still inspect every byte. No sampled inference,
+game logic,PPU/IO schema,storage,near fields,allocation,viewport/palette or
+work/cadence change. Memo remains rejected/unadopted. Existing safe flags and
+two-component platform boundary retained;132core execution records unchanged.
+
+Current product listing/OMF records bind both helpers and shared render units.
+20local CFGs balance;global IRQ/CRT/kernel stack certificate remains unproved.
+Exact current code passes5160DOS primitives (zero/first/last conflicts,full
+colors,counts/rejected contexts/segments/guards) and256mapping cases/644800
+bytes against previous encoder. Whole PPU/plane results remain exact. Native
+15tests per width and actual Windows startup/Tab/text input/Escape pass.
+
+Actual DOS product448/384/370KiBarena routes restore,exercise D/J,switch
+text/graphics,save and exit successfully.640x400captures/10035-byte integrity,
+no bad arena chains/drops. Observed owned447376/383856/378880bytes;ordinary
+routes+96code bytes,370route peak unchanged. No universal minimum/global peak
+claim. DOS301957(+96),DGROUP49184/2048stackunchanged;logical loader326112..
+342448,page-rounded326224..342560unchanged. Installed DOSBox untouched.
+
+Current guarded product counter diagnostic221.291ms versus252.089ms,
+12.22%lower cohort cost;phase/counter logs zero drops and expansion active.
+Different wall-timed frame cohorts are not equal-state paired/actual hardware
+FPS proof. Nominal60Hz/fivefold/global acceptance still fails/unproved.
+No work/update/submission suppression. Both helpers adopted as one cohort.
+
+Three owner-authorized existing products refreshed:
+
+| Product | Bytes | SHA-256 |
+| --- | ---: | --- |
+| DOS16 | 301957 | 7f83d78a8d014b82d77d102d12e9a4dbdc39c4216c0b427d40c44bf849bd703f |
+| Win32 | 315406 | 6485b5fa858a46abc79732a9eb5194b2c2aaa1b490c2eb3a7eee0b112e6da6fb |
+| Win64 | 328718 | 90c091b093549415c531eb89697916e6a8caf6416773b9a9eb84ea1555b5e25c |
+
+Local recipes/source-product/budget/route receipts in build/m3-t32-s8/p5;
+no new protected fixture or third-party implementation. S8/goal remain active;
+S9final gates open. Scope/expected/actual[],new0;historical1992/1992,
+local1991/1992nodes,4260/4261feasible controls(raw4342,infeasible81);M2 unchanged.
+
 ## S8 P3 original-compiler safe render generation
 
 Microsoft8.00x local help identifies default disabled optimization and safe

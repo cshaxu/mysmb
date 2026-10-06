@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S8 P4; bounded within-presentation expansion reuse prototype. |
+| Identifier Mode | Continuation: M3 T32 S8 P5; integrate zero-storage guarded bulk-rendering cohort. |
 | Admission And Approval | Owner-approved consecutive S5-S9 plan and automatic successor;S7 display-stage contract closed by P4;S8 sole active. |
 | Objective | Reduce current dominant rendering cost as one bounded cache/row-output chain while preserving ROM/PPU semantics and memory balance. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
 | Reference Baseline | Current S7 P3products and P4bound phase/counter probes;original tools/2048stack/640x400/two platform components. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | Initially zero product lines;contained bulk rendering cohort,estimate70-160candidate product/80-160test lines. Borrowed-tail memo rejected. Combine complete zero-index expansion and complete uniform-source-row planar fill in DOS-only helpers;zero added allocation/surface/near fields,no sampling/resolution/work loss. Primitive/pixel/source/register/stack and actual memory/frame cost precede joint adoption;three EXEs afterward. |
+| Files And ABI Surface | Adopt verified zero-span/guarded-uniform fills in dos16/palette_expand.c and dos16/planar_row.c only,estimate50-90product lines. No allocation/schema/ROM/PPU/source/viewport change. Verify full current product records,register/local stack,primitive/source/color/capacity and actual routes/frame budget;three EXEs refreshed afterward. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
 | Verification | Independent512state native raw/cache/row/palette/priority/source/guard/fallback checks;actual original-DOS exact output/compiler/stack/startup/resident/stage cost and current frame budget;three EXEs after adoption. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
@@ -25,6 +25,15 @@
 
 
 ## Current Technical Baseline
+
+- S8 P5 adopts50DOS-only guarded bulk helper lines,no new storage/ABI/PPU/
+  game change;132core records unchanged.15tests per native width,current-object
+  5160primitive/256mapping/local-CFG and actual Windows/DOS routes pass.
+  Three EXEs refreshed301957/315406/328718bytes;DGROUP49184/2048stack unchanged,
+  observed447376cached/383856fallback/378880370route bytes. Counter diagnostic
+  221.291ms versus252.089,not equal-state proof;nominal60Hz/fivefold/global
+  memory-stack-reference qualification still open. S8active.
+  [Bulk integration and limits](../history/M3-T32-rendering-performance-continuation.md#s8-p5-integrate-guarded-bulk-rendering).
 
 - S8 P4 rejects borrowed memo (mixed/dense regression),selects zero-storage
   complete zero-span and guarded uniform-row DOS bulk cohort.5160primitive/

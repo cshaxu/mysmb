@@ -19,6 +19,26 @@ int mysmb_dos16_palette_expand(void *context,const mysmb_io_u8 far *packed,
         push es
         les si,packed
         mov di,out_offset
+        mov bx,di
+        mov di,si
+        xor ax,ax
+        mov cx,count
+        shr cx,1
+        cld
+        repe scasb
+        jnz span_mixed
+        mov di,bx
+        push es
+        push ds
+        pop es
+        mov ax,zero_pair
+        mov cx,count
+        shr cx,1
+        rep stosw
+        pop es
+        jmp pairs_done
+span_mixed:
+        mov di,bx
         mov dx,table_offset
         mov cx,count
         shr cx,1
