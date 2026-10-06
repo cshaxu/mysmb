@@ -584,3 +584,55 @@ allocation-continuity clauses. No restart of the851own-source/7896-byte universe
 Scope/expected/actual[],new0,no custody change;historical1992/1992,local1991/1992
 nodes,4260/4261controls(raw4342/infeasible81). Three S3products unchanged.
 Node/documentation gates precede commit;no S/T closure or successor admission.
+
+## S4 P5 checkpoint: startup residence and persistent argv allocation
+
+No product/source change. Current MZSS4f14/SP0800,map STACKstart4f140/size0800
+and DGROUP4399bind the same2048-byte allocated stack. Linked astartswitches
+SS toDGROUP,addsB7AEtoSPand aligns it to49070,two bytes below allocated top49072.
+The fixed pre-main call sequence pushes five words(10bytes) and a4-byte far
+return address. Thus main's existing conditional720requires16additional bytes
+before accounting for argv or other unproved paths;736is only that subtotal.
+
+Do not miss setargv's non-Creturn:it pops its far return words into globals,
+reserves DXbytes directly onSS:SP,stores the resulting argv pointer and jumps
+to the saved continuation. Its vector and strings persist while main executes.
+This is distinct from a temporary callee frame;main(void) does not eliminate
+it. Setenvp instead uses a heap allocator,while preserving its caller BP;its
+allocation-failure/fatal path remains a pending startup join. Main's normal
+residence alone cannot cover either pre-main peak or arbitrary command tails.
+
+Map/image startup and exit facts:XI/XIF/XC/XCFtables are empty;XPcontains one
+4-byte flushall target. FPinitializer startsnull. These byte/size facts prevent
+invented constructor targets,not an all-lifetime proof. Cinit's conditional
+local flow under the recorded null-FP/empty-constructor state has balanced
+return;setargv's persistent SPchange and setenvp's fatal allocator path remain
+explicit in the startup analyzer. Other descriptor modes retain earlier CRT
+fatal boundaries. No overwritten unconditional certificate.
+
+A read-only extension of the external observer records only current CRTargc,
+argv/topSPand exit/debug metadata,not game RAM. Current product370KiBroute,
+normalSDL/private desktop/unchanged installed configuration passes with2022
+timer samples,88DOS entries,7changes and zero invalid/dropped chains. After
+argvsetup argc1,topSP49070/argv49048 show22retained bytes. Exit target0271and
+debug pointerzero remain stable in the observed service/timer records. Original
+resource-bound save advances with valid CRC and normal exit. This is not a
+continuous callback-lifetime or formal stack-watermark proof;observer overhead
+still uses caller stack.150second/2MiB budget retained,no application mutation.
+
+For this actual no-argument MYSMB.EXEfixture,conditional main/CRT720+startup
+residence14+unused top2+argv22=758bytes. State the exclusions together:pre-main
+envp/argv peak,different command tails/executable pathnames,normal/fatal exit,
+BIOS/DOS body and hardware IRQnesting,and hidden allocator/kernel transients.
+No global758bound or permission to reduce2048stack follows.
+
+Contained receipts/recipes under build/m3-t31-s4:startup-layout and startup-
+flow,prepare-stackmeta/Build-Stackmeta/source-bound stackmeta-loader,
+run-stackmeta-370 and stackmeta-summary. Original init/layout instructions and
+globals are read locally only;no vendor implementation/data is imported into
+products or committed. Product code0,three S3EXEs unchanged. S4 stays active;
+next P resolves the retained startup/fatal/exit joins and the existing platform/
+allocator obligations without restarting own-source or binary-FILE analysis.
+Scope/expected/actual[],new0,custody unchanged;historical1992/1992,local1991/1992
+nodes,4260/4261controls(raw4342/infeasible81). Required node/documentation gates
+precede commit;no T/S closure or next S admission.
