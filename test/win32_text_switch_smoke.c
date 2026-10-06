@@ -92,6 +92,10 @@ static int geometry_route(HINSTANCE instance)
     window=CreateWindow("MySMBTextSwitchProbe","geometry",WS_OVERLAPPEDWINDOW,
         30,30,initial.right-initial.left,initial.bottom-initial.top,NULL,NULL,instance,NULL);
     if(!window)return 90;
+    if(!mysmb_win32_initial_client(window))return 130;
+    GetClientRect(window,&client);
+    w=MulDiv(32,(int)mysmb_win32_window_dpi(window),96);
+    if(client.right!=w*16 || client.bottom!=w*15)return 131;
     for(dpi=96U;dpi<=192U;dpi+=48U) {
         mysmb_win32_window_margins(window,dpi,&margins);
         for(edge=WMSZ_LEFT;edge<=WMSZ_BOTTOMRIGHT;++edge) {
@@ -510,6 +514,14 @@ static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command
                 (g_text_frame.cells[i].background<<4U)))return 8;
     glyph_frame=g_text_frame;
     for(i=0U;i<16U;++i)glyph_frame.cells[i].character=glyph_ids[i];
+    {
+        HANDLE input=g_console.input;
+        int accepted;
+        g_console.input=INVALID_HANDLE_VALUE;
+        accepted=mysmb_win32_text_console_present(&g_console,&glyph_frame);
+        g_console.input=input;
+        if(accepted)return 132;
+    }
     if(!mysmb_win32_text_console_present(&g_console,&glyph_frame))return 46;
     view.Left=view.Top=0;view.Right=79;view.Bottom=49;
     if(!ReadConsoleOutputW(g_console.output,cells,size,origin,&view))return 47;

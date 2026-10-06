@@ -60,14 +60,16 @@ int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console,
             FILE_SHARE_READ|FILE_SHARE_WRITE,NULL,OPEN_EXISTING,0U,NULL);
         console->shell_title=(WCHAR *)HeapAlloc(GetProcessHeap(),HEAP_ZERO_MEMORY,
             65536UL*sizeof(WCHAR));
+        ZeroMemory(&console->shell_placement,sizeof(console->shell_placement));
         console->shell_placement.length=sizeof(console->shell_placement);
         if(console->shell_output==INVALID_HANDLE_VALUE || !console->shell_title ||
             !GetConsoleMode(console->input,&console->shell_input_mode) ||
-            !GetWindowPlacement(console->window,&console->shell_placement) ||
             !GetConsoleScreenBufferInfo(console->shell_output,&console->shell_info)) {
             mysmb_win32_text_console_close(console);return 0;
         }
         console->mode_saved=1U;
+        /* A pseudoconsole may expose a non-window notification handle. */
+        (void)GetWindowPlacement(console->window,&console->shell_placement);
         (void)GetConsoleTitleW(console->shell_title,65536U);
         console->output=CreateConsoleScreenBuffer(GENERIC_READ|GENERIC_WRITE,
             FILE_SHARE_READ|FILE_SHARE_WRITE,NULL,CONSOLE_TEXTMODE_BUFFER,NULL);
@@ -104,7 +106,7 @@ int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console,
         !SetConsoleActiveScreenBuffer(console->output)) {
         mysmb_win32_text_console_close(console);return 0;
     }
-    if(console->window==NULL || !GetConsoleMode(console->input,&mode) ||
+    if(!GetConsoleMode(console->input,&mode) ||
         !SetConsoleMode(console->input,(mode|ENABLE_EXTENDED_FLAGS|ENABLE_WINDOW_INPUT)&
             ~(ENABLE_QUICK_EDIT_MODE|ENABLE_LINE_INPUT|ENABLE_ECHO_INPUT|
                 ENABLE_PROCESSED_INPUT|ENABLE_VIRTUAL_TERMINAL_INPUT)) ||
@@ -117,9 +119,10 @@ int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console,
     (void)SetConsoleCursorInfo(console->output,&cursor);
     (void)SetConsoleTitleA("MySMB");
     /* Close requests the same root-owned exit as Escape and the GUI button. */
-    if(!console->borrowed && EnableMenuItem(GetSystemMenu(console->window,FALSE),SC_CLOSE,
-        MF_BYCOMMAND|MF_ENABLED)==(UINT)-1) {
-        mysmb_win32_text_console_close(console);return 0;
+    if(!console->borrowed) {
+        HMENU menu=GetSystemMenu(console->window,FALSE);
+        /* Decoration is optional; console input/output defines device health. */
+        if(menu)(void)EnableMenuItem(menu,SC_CLOSE,MF_BYCOMMAND|MF_ENABLED);
     }
     console->focused=1U;
     return 1;
@@ -133,7 +136,8 @@ void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console)
         if(console->mode_saved) {
             (void)SetConsoleMode(console->input,console->shell_input_mode);
             (void)SetConsoleTitleW(console->shell_title);
-            (void)SetWindowPlacement(console->window,&console->shell_placement);
+            if(console->shell_placement.showCmd!=0U)
+                (void)SetWindowPlacement(console->window,&console->shell_placement);
             /* Host pixel placement can round a restored cell view down a row.
              * Restore its original cell rectangle explicitly after placement. */
             {
@@ -201,9 +205,11 @@ int mysmb_win32_text_console_present(struct mysmb_win32_text_console *console,
 {
     unsigned short i;
     int geometry;
+    DWORD input_mode;
     COORD size,origin;
     SMALL_RECT view;
-    if(!console->opened || frame==0)return 0;
+    if(!console->opened || frame==0 ||
+        !GetConsoleMode(console->input,&input_mode))return 0;
     for(i=0U;i<MYSMB_IO_TEXT_CELLS;++i) {
         console->cells[i].Char.UnicodeChar=(WCHAR)mysmb_io_text_glyph_unicode(frame->cells[i].character);
         if(console->cells[i].Char.UnicodeChar==0U)return 0;

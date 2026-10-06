@@ -100,3 +100,76 @@ Admission/node ledger and documentation gates pass;scope/expected/actual[],new0,
 historical1992/1992,local1991/1992nodes and4260/4261feasible controls(raw4342,
 infeasible81) unchanged. S1 diagnosis retained;T29 remains active and unclosed.
 Three P22 products unchanged;no code-only build or successful repair claim.
+
+
+## S1 closure and S2 admission
+
+Owner requests immediate repair. S1 diagnosis closes with named DPI/menu/HWND
+findings above and explicit host/RDP limits. S2 accepts the Win32-only repair;
+50-100platform lines plus150-250neutral actual-product probe lines estimated.
+DPI initial client follows the window DPI;console handles/output define device
+health,optional menu/window capabilities do not invalidate working cells/input.
+Borrowed shell geometry is restored only when that window capability was saved.
+Actual product x86/x64 cycles and original DOS16 build plus three EXEs required.
+ROM scope/expected/actual[],new0;no game/PPU/text/DOS behavior change.
+
+
+## S2 P1 closure and S3 admission
+
+DPI initial client is built from96-DPI scale2 units using actual window DPI and
+DPI-aware non-client margins. Initial creation/size normalization is guarded
+until this rectangle is installed. At144DPI actual product clients are768x720
+on both widths; subsequent Tab returns retain that size. DPI query zero falls
+back to96. Existing aspect/maximize/restore/edge-drag tests remain passing.
+
+Console acquisition now requires working devices and buffer geometry,not an
+optional system menu or HWND existence. Borrowed placement is captured/restored
+only when available,with cleared saved storage;input mode/title/cell view restore
+remain mandatory. Frame presentation rejects invalid input handles and retains
+existing output/geometry error recovery. Menu capability no longer closes a
+valid console;root fallback is driven by actual presentation failure. No worker,
+extra product process,game/PPU/text content or DOS behavior change.
+
+Actual source diff:Win32 main+21/-3,text_console+13/-7,test+12/-0;new neutral
+actual-product tool122lines. Four source/test/tool files,+168/-10. Similar-issue
+sweep covers initial/minimized/restored/DPI rectangles,optional owned menu and
+borrowed placement,root HWND-loss inference,input/output rejection,control-close
+and shell buffer/font/title/input ownership. No remaining scoped source hit.
+
+Both widths final source builds/link pass,5focused tests pass and13host route
+groups pass including embedded DPI/invalid-input tests,owned/borrowed settings,
+Unicode/focus/snapshot recovery,other/CMD/PowerShell/pwsh launch and actual CMD
+CONIN Tab -> window Tab -> console Escape -> waiting prompt -> usable shell.
+New actual-product tool verifies three text entries/two graphical returns,
+4000-cell readback on each entry,80x50 buffers,preserved size,responsive root and
+console Escape exit0. This also passes on the final assets binaries.
+
+Original DOS16 compiler/linker rebuild and MZ/map check pass;DOS file305163bytes,
+SHA256f0a281bf630431853d489e20fdabf7d622dc5f119133f9026c5f94423895ad6a
+remains identical. Final Windows packaging removes COFF/debug metadata;all
+retained runtime section RVAs/data are unchanged from tested linked products,
+removed sections are debug-only. Final assets actual-product routes recheck them:
+- mysmb32.exe308238bytes,SHA2567f51518be2fd9f992d953d8ded8114ee77adb64b20ab303e15182654a9babdde.
+- mysmb64.exe320526bytes,SHA256687b01bcde43e57e1f1d5616d4c06a3e3cecb5b9681a71168aeef9b6c11ea975.
+All three published files are bound to the compiled outputs. No new imported
+resource or committed diagnostic binary;logs/prototypes stay ignored below build.
+
+S2 closes;S3 accepts integrated review of these exact bindings,scope/purity,
+retained route applicability and final documentation/node gates. S3 is audit-only,
+estimated15-35neutral record lines,no new implementation or broad test rerun.
+Live owner RDP and physical multi-monitor DPI dragging remain unobserved;the
+host/device checks are scoped operational acceptance,not hardware/global ROM
+certification. Synchronous console allocation retains host startup cost;no
+indefinite hang occurs in passing actual routes. Configured DOS speed remains
+unaccepted and queued separately.
+Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342/infeasible81),
+scope/expected/actual[],new0,custody unchanged.
+
+
+Final bounded-tool check: x86 passes;one parallel x64 attempt misses root-window
+publication within12seconds and is terminated by its cleanup. No text/Tab route
+is credited from that attempt. Immediate sequential same-binary retry completes
+all three entries/two returns/Escape in about5seconds. Similar early discovery
+misses existed during S1 instrumentation. Cause of the isolated publication
+latency is unproved;retain the failed receipt and do not claim universal cold
+startup latency or live RDP qualification from finite successful routes.

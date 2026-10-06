@@ -116,6 +116,13 @@ re-executing a selector. Schema1 remains readable with absent receipts and
 therefore cannot promise immediate restored text. DOS allocates its transaction
 workspace on the far heap;platform code owns memory lifetime,not receipt logic.
 
+Windows initial client scale is expressed in96-DPI units and multiplied by
+the actual window DPI,with matching non-client margins before first show.
+Console health belongs to input/output devices;an optional host HWND/menu or
+placement capability is not a device-validity requirement. Genuine handle or
+presentation failure retains recovery;borrowed host placement is restored only
+when successfully captured.
+
 Windows graphical geometry scales the unchanged indexed frame to the full
 client area. Native sizing constrains16:15client units,with non-client and
 DPI margins;minimum,maximized,restored and programmatic sizes share that

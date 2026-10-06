@@ -337,7 +337,8 @@ static UINT mysmb_win32_window_dpi(HWND window)
 {
     typedef UINT (WINAPI *dpi_fn)(HWND);
     dpi_fn fn=(dpi_fn)GetProcAddress(GetModuleHandleA("user32.dll"),"GetDpiForWindow");
-    return fn?fn(window):96U;
+    UINT dpi=fn?fn(window):96U;
+    return dpi?dpi:96U;
 }
 static void mysmb_win32_window_margins(HWND window,UINT dpi,RECT *margins)
 {
@@ -349,6 +350,18 @@ static void mysmb_win32_window_margins(HWND window,UINT dpi,RECT *margins)
     SetRect(margins,0,0,0,0);
     if(fn)fn(margins,style,FALSE,ex,dpi);
     else AdjustWindowRectEx(margins,style,FALSE,ex);
+}
+/* Initial scale is in 96-DPI units, matching the former system-scaled view. */
+static int mysmb_win32_initial_client(HWND window)
+{
+    RECT margins;
+    UINT dpi=mysmb_win32_window_dpi(window);
+    int units=MulDiv(MYSMB_SCREEN_WIDTH*MYSMB_SCALE/16,(int)dpi,96);
+    if(units<1)units=1;
+    mysmb_win32_window_margins(window,dpi,&margins);
+    return SetWindowPos(window,NULL,0,0,units*16+margins.right-margins.left,
+        units*15+margins.bottom-margins.top,
+        SWP_NOMOVE|SWP_NOZORDER|SWP_NOACTIVATE)!=0;
 }
 static int mysmb_win32_geometry_units(int width,int height,int by_height)
 {
@@ -442,7 +455,7 @@ static void mysmb_win32_step(HWND window)
     int event_kind;
     unsigned char pressed;
 
-    if(g_text_mode && (g_text_failed || !IsWindow(g_console.window)))
+    if(g_text_mode && g_text_failed)
         mysmb_win32_switch_presenter(window,1);
     for(events=0U;events<64U && g_text_mode &&
         (event_kind=mysmb_win32_text_console_key(&g_console,&key,&scan,&pressed));++events) {
@@ -605,13 +618,18 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     mysmb_win32_snapshot_initialize();
     SetRect(&initial,0,0,MYSMB_SCREEN_WIDTH*MYSMB_SCALE,MYSMB_SCREEN_HEIGHT*MYSMB_SCALE);
     AdjustWindowRectEx(&initial,WS_OVERLAPPEDWINDOW,FALSE,0U);
+    g_geometry_adjusting=1;
     window = CreateWindow(MYSMB_CLASS_NAME, "MySMB", WS_OVERLAPPEDWINDOW,
                           CW_USEDEFAULT, CW_USEDEFAULT,
                           initial.right-initial.left,initial.bottom-initial.top,
                           NULL, NULL, instance, NULL);
     if (window == NULL) {
-        return 1;
+        g_geometry_adjusting=0;return 1;
     }
+    if(!mysmb_win32_initial_client(window)) {
+        g_geometry_adjusting=0;DestroyWindow(window);return 1;
+    }
+    g_geometry_adjusting=0;
     if(start_text)mysmb_win32_switch_presenter(window,0);
     if(g_text_mode) {
         ShowWindow(g_console.window,show);

@@ -1,41 +1,36 @@
 # Project Status
 
-## M3 T29 S1 Packet
+## M3 T29 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | New: M3 T29 S1 P1; bounded Win32 usability diagnosis. |
+| Identifier Mode | Continuation: M3 T29 S3 P1; integrated final product review. |
 | Admission And Approval | Owner explicitly admits T29 and requests diagnosis of window shrink and Tab hang before queued DOS work. |
-| Objective | Verify last-good/first-bad product provenance and reproduce actual window/console lifecycle failures; locate causes and missing coverage. |
+| Objective | Review exact final products,Win32-only ownership,accepted actual routes and required closure gates. |
 | Non-goals | No game/PPU/DOS logic, emulator settings or product helper processes; no source-causality claim from artifact commit alone. |
 | Reference Baseline | cf85c7a0 and retained P22 products; reported dfc13a21 to41d161e3 binary boundary; historical1992/1992,local1991/1992nodes,4260/4261controls. |
 | Candidate Proposal | [T29 retained proposal](../history/M3-T29-win32-usability-regression.md). |
-| Files And ABI Surface | S1 history/binary/source review and ignored neutral actual-product probes,estimated100-200lines; S2 receives repair. |
+| Files And ABI Surface | Audit-only final source/product/evidence bindings;estimated15-35neutral record lines,no implementation. |
 | Applicable Rules | README Task Reading Set,EXECUTION,DOCUMENT,ARCHITECTURE,CODING,CONTRIBUTING and source policy. |
-| Verification | Private-desktop actual-product client rectangles, responsiveness and Tab traces; original source/PE hashes/subsystem provenance; focused existing host receipts with blind spots identified. |
+| Verification | Actual x86/x64 product DPI rectangles,owned/borrowed console output/input/Tab/exit;focused host tests and original DOS16 build;refresh three products. |
 | Expected Markers | scope[],expectedMatches[],actualMatches[],new0,maximum1992/1992;no node custody change. |
 | Asset Needs | Existing local owner products only; no new import; ignored build probes/logs only,existing tracked EXE exception retained for later code P. |
 | Reporting Requirements | S scope/components/size before execution; findings/evidence and actual diff after P; total/local node/edge counts and test limitations. |
 | Stop Conditions | Unbounded process/log, foreground interference, unreviewed imports, original game/PPU changes or unbound historical causality. |
-| Exit Criteria | S1 records exact binary/source boundary, actual reproduction or explicit limitation and receiving S2 repair scope; T requires both-width actual usability proof. |
+| Exit Criteria | All T29 requirements accounted for,exact final product routes accepted,scope/purity and governance checks pass;retain live RDP limits. |
 | Original Owner Request | Admit T29 to diagnose small Win32 window and Tab console freeze using reported good/bad products. |
 | Similar-Issue Sweep | Startup and WM_SIZE/DPI geometry, owned/borrowed console acquisition/close, hidden root focus, Tab requests, API blocking and test coverage. |
 
 ## Current Technical Baseline
 
-- T29 S1 diagnosis:150percent DPI physical client last-good768x720 versus
-  first-bad/current512x480; fixed physical initial dimensions after DPI-awareness
-  activation explain measured shrink. Owner256x224 not reproduced. Local console
-  trace finds optional menu1401fatal gate and independent HWND-invalid fallback;
-  no indefinite deadlock proved. S2 receives host-capability/device-validity and
-  DPI repair. Product source/EXEs unchanged;T29 remains active.
-  [Evidence and limits](../history/M3-T29-win32-usability-regression.md#s1-p1-diagnosis-checkpoint).
-
-- Three P22 products retained: DOS305163, x86320651, x64329323bytes; no code/EXE
-  refresh for this documentation-only closure. DOS SHA256
-  f0a281bf630431853d489e20fdabf7d622dc5f119133f9026c5f94423895ad6a;
-  x86 beb301aa1c7fc7729efaaf610d56276b129fa40b6a98b56a861a2400cf0cc00b;
-  x64 681b45e879cc42c2b34be7884fc40cc360cfcb2be830ab51bde6623db8830a44.
+- T29 S2 repairs initial DPI size and optional console host capabilities. Both
+  widths final assets startup768x720at144DPI,three80x50text entries,twoTab returns
+  and consoleEscape exit0 pass;5focused tests/13host groups per width pass.
+  S3 final audit active;live RDP/multi-monitor hardware remains unobserved.
+  [S2 evidence](../history/M3-T29-win32-usability-regression.md#s2-p1-closure-and-s3-admission).
+- Three products refreshed:305163/308238/320526bytes. DOS hash unchanged;
+  Windows hashes and exact final asset route bindings are in the T29 record.
+  Source/test/tool4files,+168/-10;zero shared game/PPU/DOS changes.
 - Current DOS graphics/text diagnostic medians879.420/849.317ms; configured
   playability fails. Graphics PPU65.08percent, conversion28.38, direct VGA3.28;
   P24 loaded-route background about91.76percent of PPU. Actual physical486SX
