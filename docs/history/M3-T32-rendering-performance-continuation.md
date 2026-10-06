@@ -1293,3 +1293,69 @@ successor instruction. Scope/expected/actual[],new0;historical1992/1992,
 local1991/1992nodes,4260/4261feasible controls(raw4342,infeasible81). No ROM
 custody event. S5 closes only its stated measurement contract; T32/goal remain
 open. Documentation/node/diff gates precede commit.
+
+## S6 P1 systemic comparison and rejected incremental direction
+
+Owner explicitly stops the small-percentage optimization strategy and asks
+for a systemic comparison with NESticle's multi-fold advantage. All five
+initial prototypes remain local and unadopted. Each passed512independent
+native states per width and1,161,555controlled DOS output bytes. Temporary
+span preparation regresses ordinary PPU cost2.68%;combined improves ordinary/
+dense-background/dense-sprite PPU2.18/8.28/8.89%;lazy4.35/2.29/5.19%;sprites
+4.85/2.06/5.05%;coordinate variant4.87/2.07/5.19%. These compositor-only
+single paired cases do not address the owner's gap. No micro-optimization
+is selected for product integration.
+
+Direct read-only inspection binds athros/NESticle master Source files and
+their directory blob identities below ignored build. MAIN.CPP identifies0.2;
+owner binary/README identifyx.xx. LICENSE is only a Bloodlust copyright notice,
+no redistribution grant. No source is copied/transliterated into MySMB;
+retain conceptual architecture and neutral metadata. No exactx.xx claim.
+
+| Axis | Direct historical reference evidence | Current MySMB consequence |
+| --- | --- | --- |
+| Cache level | NESVIDEO.CPP199-255/H107-140 retain composed256x240 surfaces; writes mark dirty tiles/attribute regions | Workspace retains only8192decoded CHR bytes;unchanged backgrounds are recomposed every frame |
+| Scroll | NESVIDEO.CPP363-419 clips/blits cached regions, with pattern-bank fallback | 25callbacks rebuild250source rows/8000tile-row spans and scan64sprites per band |
+| Pixel meaning | TILE.ASM keeps palette-slot/raw-color information;SPRITEBG.ASM tests destination information;palette refresh changes display slots | Flattened master-color bytes lose opacity/slot identity;behind sprites re-decode background opacity |
+| Transfer | TILE.ASM flat486 path uses two DWORD stores per8pixel row | Original/AL mapper16source->20destination loop has36LES instructions;4000groups execute144000segment loads per frame |
+| Payload | Ownerx.xx configuration requests256x240;README also lists other modes | Required320x400ModeX/640x400scanout writes128000plane bytes vs61440native indexed pixels,2.083times payload |
+
+References:[video/cache](https://github.com/athros/NESticle/blob/master/Source/NESVIDEO.CPP),
+[write invalidation](https://github.com/athros/NESticle/blob/master/Source/NESVIDEO.H),
+[tile assembly](https://github.com/athros/NESticle/blob/master/Source/TILE.ASM),
+[sprite priority](https://github.com/athros/NESticle/blob/master/Source/SPRITEBG.ASM).
+These are structural findings, not measured attribution forx.xx. Do not copy
+reference clipping/palette/timing limitations into the faithful PPU contract.
+
+Current648.462ms diagnostic has393.232PPU/197.582mapping/game9.181ms.
+With other costs fixed, fivefold needs total129.692ms, leaving about72.044ms
+for PPU+mapping vs590.813:87.81%less time, about8.2times faster there.
+Deleting game work alone buys1.014times;mapping alone1.438times;PPU alone
+2.541times. These are approximate budget-model limits from scoped medians,
+not hardware promises. Both major stages need architectural change.
+
+Revised existing S6-S8 direction, no new identifiers:
+
+- S6:cache composed nametable information across frames, refresh changes once
+  per frame, preserve opacity/palette slots through composition. Keep CPU/RAM/
+  NMI/OAM/palette writers unchanged;detect changes at the const PPU consumer
+  boundary. An explicit prepared-frame lifetime avoids25cache validations.
+- Compare memory tiers. Two8-bit surfaces cost122880bytes before metadata;
+  four-bit background slots cost61440plus2048source bytes, about62KiB before
+  control fields. This compact form is a design lead, not implemented or
+  accepted. Prototype real DOS allocation/startup/stack/fallback costs first.
+- S7:bounded bulk scaling/packing/transfer with segment setup outside inner
+  loops;word/DWORD-capable DOS paths only if original tools support them.
+  Evaluate staging fusion. Preserve640x400, colors/rows and neutral output;
+  device code receives pixels, never game objects or PPU business decisions.
+- S8:integrated speed/conventional-memory balance. A remaining multi-fold
+  deficit triggers a pipeline revision, not more tiny repairs as closure.
+  Equal-frame reference/representative-route thresholds remain S9requirements.
+
+No product/source/EXE/settings change. An earlier failed harness compile
+launched a stale control;it lacks new RENDER markers and is excluded. Corrected
+supervision stops on build failure and checks new marker/image bindings.
+Accepted runs are terminal, outputs/save exact and installed config unchanged;
+102observed stack-pattern bytes unused is a fixture result, not global proof.
+S6/T32/goal active;scope/expected/actual[],new0,historical1992/1992,
+local1991/1992nodes,4260/4261feasible controls(raw4342,infeasible81).

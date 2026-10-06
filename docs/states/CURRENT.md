@@ -6,23 +6,31 @@
 | --- | --- |
 | Identifier Mode | Continuation: M3 T32 S6 P1. |
 | Admission And Approval | Approved consecutive S5-S9 plan; S5 baseline measurement contract closed with final comparator checks still open; S6 sole active. |
-| Objective | Measure and adopt only byte-exact shared PPU composition candidates with material original-DOS benefit. |
+| Objective | Owner redirects S6 to systemic frame-pipeline comparison with NESticle; stop incremental prototype adoption and identify architectural causes of the multi-fold gap before implementation. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
 | Reference Baseline | Current three P11 products and scoped S4 receipts; original toolchain/default640x400. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | src/ppu/frame.c and focused tests;estimate80-240candidate product lines/up to198temporary near bytes;no new resident allocation absent budget amendment. |
+| Files And ABI Surface | Read-only comparison of core update, PPU cache/composition and VGA output; preserve completed prototype evidence, zero product changes until a systemic plan is recorded; memory budget amendments explicit. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
 | Verification | Independent512-state native raw/cache/band output;DOS controlled exact-output/cost scenes and actual routes;compiler stack/loader/arena checks;three EXEs for adopted product-code P. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
-| Asset Needs | Existing restricted local owner ROM/reference/runtime; timing/output observation only, no code import/redistribution; raw material bounded below build. |
+| Asset Needs | Owner-local x.xx binary and ROM plus historical athros/NESticle0.2 source as conceptual reference only; copyright-only leaked tree grants no redistribution permission. Purpose frame/cache/transfer architecture comparison; raw source/probes only below ignored build, no copying/transliteration into product, exact-version claims require binary evidence. |
 | Reporting Requirements | Candidate and measured whole-step cost, rejected variants, actual code/memory delta, source/products and total/local node counts. |
 | Stop Conditions | Unbounded or foreground probe, source binding gap, ownership violation, output divergence or unsupported speed claim. |
-| Exit Criteria | Selected/rejected cohort dispositions with exact indexed output and unchanged game/PPU semantics;measured whole-step benefit and acceptable DOS stack/startup/resident budget;three targets verified after adoption. |
+| Exit Criteria | Systemic pipeline/memory tradeoff established, then architectural candidates meet exact output, original-toolchain/startup/resident/stack budgets;multi-fold target stays open until integrated evidence;three EXEs after adoption. |
 | Original Owner Request | Improve actual memory/performance/playability with original ROM semantics; follow approved S5-S9 division after fixing known S4 defects. |
 | Similar-Issue Sweep | Span invalidation at tile-row/HUD/scroll/bank changes;CHR bounds/fallback, sprite flip/priority/clipping, palette values and pointer/stack lifetimes. |
 
 
 ## Current Technical Baseline
+
+- S6 P1:owner stops micro-optimization adoption. Five exact-output prototypes
+  remain local/unadopted;direct0.2reference confirms composed background cache,
+  dirty-tile refresh,palette-slot/opacity pixels and flat DWORD stores. Current
+  mapper36LES per16->20group/144000perframe. Fivefold budget needs about87.8%
+  less PPU+mapping time. S6persistent cache,S7bulk transfer,S8integrated budget;
+  no game/product/resolution/toolchain/installed settings change.
+  [Systemic comparison](../history/M3-T32-rendering-performance-continuation.md#s6-p1-systemic-comparison-and-rejected-incremental-direction).
 
 - S5 P2:current-owner default-config phase probe counts173updates/148graphics/
   26text submissions;counter-only177/152/26. Every selected running update

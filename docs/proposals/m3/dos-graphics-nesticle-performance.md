@@ -243,3 +243,25 @@ temporary coarse-row span and sprite-work reuse in the shared pure PPU,
 80-240candidate product lines/up to198temporary near bytes/no new resident
 cache absent budget amendment, with exact fallback/output and DOS stack/cost
 checks. Candidate validation must cover the broader scenes before adoption.
+
+## Owner-directed systemic revision of S6-S8
+
+Owner rejects incremental single-digit-percentage optimization.
+[S6 P1 comparison](../../history/M3-T32-rendering-performance-continuation.md#s6-p1-systemic-comparison-and-rejected-incremental-direction)
+records cache/representation/assembly differences and an approximate87.8%
+PPU+mapping reduction needed for fivefold overall at fixed other costs.
+Initial prototypes stay unadopted. This section supersedes the temporary-span/
+sprite cohort as the implementation direction.
+
+S6 investigates persistent composed-background caching, once-per-frame
+invalidation and opacity/palette-slot representation under the shared PPU.
+Original CPU/game/PPU writers and timing remain untouched. Compare122880-byte
+full surfaces with approximately63488-byte compact slot/source storage and
+smaller alternatives;no resident storage adoption without measured original
+DOS startup/heap/stack/output proof. New memory estimates require explicit
+prototype budget amendments before use, not silent allocation.
+S7 owns bulk segment-efficient scaling/packing/device transfer at640x400;
+S8 owns integrated system-level speed/memory acceptance. No toolchain or
+protected-mode switch, helper process, crop, lost frame, reduced color or
+copied implementation substitutes for DOS16. S9 remains final audit;source
+comparison alone proves neither equal-framex.xx performance nor ROM semantics.
