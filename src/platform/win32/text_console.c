@@ -30,6 +30,8 @@ int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console,
     unsigned int i;
     unsigned long rgb;
     DWORD processes[2];
+    char host_class[32];
+    DWORD output_mode;
     if(console->opened)return 1;
     if(!owner)return 0;
     if(GetConsoleWindow()!=NULL) {
@@ -52,6 +54,11 @@ int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console,
     console->input=CreateFileA("CONIN$",GENERIC_READ|GENERIC_WRITE,
         FILE_SHARE_READ|FILE_SHARE_WRITE,NULL,OPEN_EXISTING,0U,NULL);
     console->window=GetConsoleWindow();
+    host_class[0]=0;
+    (void)GetClassNameA(console->window,host_class,sizeof(host_class));
+    console->terminal=(unsigned char)(lstrcmpA(host_class,"ConsoleWindowClass")!=0 ||
+        (GetWindowLongPtr(console->window,GWL_STYLE)&WS_CAPTION)!=WS_CAPTION ||
+        GetParent(console->window)==HWND_MESSAGE);
     if(console->input==INVALID_HANDLE_VALUE) {
         mysmb_win32_text_console_close(console);return 0;
     }
@@ -78,42 +85,56 @@ int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console,
     if(console->output==INVALID_HANDLE_VALUE) {
         mysmb_win32_text_console_close(console);return 0;
     }
-    ZeroMemory(&font,sizeof(font));font.cbSize=sizeof(font);
-    font.dwFontSize.X=8;font.dwFontSize.Y=8;font.FontWeight=FW_NORMAL;
-    lstrcpyW(font.FaceName,L"Consolas");
-    (void)SetCurrentConsoleFontEx(console->output,FALSE,&font);
-    /* A small remote/headless desktop may not fit fifty rows at eight pixels.
-     * Adapt only the device font;the shared frame and buffer stay80x50. */
-    for(i=7U;i>=4U;--i) {
-        COORD maximum;
-        maximum=GetLargestConsoleWindowSize(console->output);
-        if(maximum.X>=80 && maximum.Y>=50)break;
-        font.dwFontSize.X=0;font.dwFontSize.Y=(SHORT)i;
+    if(!console->terminal) {
+        ZeroMemory(&font,sizeof(font));font.cbSize=sizeof(font);
+        font.dwFontSize.X=8;font.dwFontSize.Y=8;font.FontWeight=FW_NORMAL;
+        lstrcpyW(font.FaceName,L"Consolas");
         (void)SetCurrentConsoleFontEx(console->output,FALSE,&font);
+        /* A small remote/headless desktop may not fit fifty rows at eight pixels.
+         * Adapt only the device font;the shared frame and buffer stay80x50. */
+        for(i=7U;i>=4U;--i) {
+            COORD maximum;
+            maximum=GetLargestConsoleWindowSize(console->output);
+            if(maximum.X>=80 && maximum.Y>=50)break;
+            font.dwFontSize.X=0;font.dwFontSize.Y=(SHORT)i;
+            (void)SetCurrentConsoleFontEx(console->output,FALSE,&font);
+        }
     }
     tiny.Left=tiny.Top=tiny.Right=tiny.Bottom=0;
     size.X=80;size.Y=50;
     view.Left=view.Top=0;view.Right=79;view.Bottom=49;
-    ZeroMemory(&info,sizeof(info));info.cbSize=sizeof(info);
-    if(!GetConsoleScreenBufferInfoEx(console->output,&info)) {
-        mysmb_win32_text_console_close(console);return 0;
+    if(!console->terminal) {
+        ZeroMemory(&info,sizeof(info));info.cbSize=sizeof(info);
+        if(!GetConsoleScreenBufferInfoEx(console->output,&info)) {
+            mysmb_win32_text_console_close(console);return 0;
+        }
+        for(i=0U;i<16U;++i) {
+            rgb=mysmb_io_color_text_rgb((mysmb_io_u8)i);
+            info.ColorTable[i]=RGB((rgb>>16U)&255UL,(rgb>>8U)&255UL,rgb&255UL);
+        }
+        if(!SetConsoleScreenBufferInfoEx(console->output,&info)) {
+            mysmb_win32_text_console_close(console);return 0;
+        }
     }
-    for(i=0U;i<16U;++i) {
-        rgb=mysmb_io_color_text_rgb((mysmb_io_u8)i);
-        info.ColorTable[i]=RGB((rgb>>16U)&255UL,(rgb>>8U)&255UL,rgb&255UL);
-    }
-    if(!SetConsoleScreenBufferInfoEx(console->output,&info) ||
-        !SetConsoleActiveScreenBuffer(console->output)) {
+    if(!SetConsoleActiveScreenBuffer(console->output)) {
         mysmb_win32_text_console_close(console);return 0;
     }
     if(!GetConsoleMode(console->input,&mode) ||
         !SetConsoleMode(console->input,(mode|ENABLE_EXTENDED_FLAGS|ENABLE_WINDOW_INPUT)&
             ~(ENABLE_QUICK_EDIT_MODE|ENABLE_LINE_INPUT|ENABLE_ECHO_INPUT|
                 ENABLE_PROCESSED_INPUT|ENABLE_VIRTUAL_TERMINAL_INPUT)) ||
-        !SetConsoleWindowInfo(console->output,TRUE,&tiny) ||
-        !SetConsoleScreenBufferSize(console->output,size) ||
-        !SetConsoleWindowInfo(console->output,TRUE,&view)) {
+        (!console->terminal && (!SetConsoleWindowInfo(console->output,TRUE,&tiny) ||
+            !SetConsoleScreenBufferSize(console->output,size) ||
+            !SetConsoleWindowInfo(console->output,TRUE,&view)))) {
         mysmb_win32_text_console_close(console);return 0;
+    }
+    if(console->terminal) {
+        console->terminal_output=(WCHAR *)HeapAlloc(GetProcessHeap(),0U,
+            (MYSMB_IO_TEXT_CELLS*48U+1024U)*sizeof(WCHAR));
+        if(!console->terminal_output || !GetConsoleMode(console->output,&output_mode) ||
+            !SetConsoleMode(console->output,output_mode|0x0001U|0x0004U|0x0008U)) {
+            mysmb_win32_text_console_close(console);return 0;
+        }
     }
     cursor.dwSize=1;cursor.bVisible=FALSE;
     (void)SetConsoleCursorInfo(console->output,&cursor);
@@ -140,7 +161,7 @@ void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console)
                 (void)SetWindowPlacement(console->window,&console->shell_placement);
             /* Host pixel placement can round a restored cell view down a row.
              * Restore its original cell rectangle explicitly after placement. */
-            {
+            if(!console->terminal) {
                 SMALL_RECT tiny={0,0,0,0};
                 /* Host pixel rounding may also grow a narrow shell buffer. */
                 (void)SetConsoleWindowInfo(console->shell_output,TRUE,&tiny);
@@ -157,6 +178,8 @@ void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console)
     if(console->shell_output && console->shell_output!=INVALID_HANDLE_VALUE)
         CloseHandle(console->shell_output);
     if(console->shell_title)HeapFree(GetProcessHeap(),0U,console->shell_title);
+    if(console->terminal_output)HeapFree(GetProcessHeap(),0U,console->terminal_output);
+    console->terminal_output=NULL;console->terminal=0U;
     /* During host close,detaching/unregistering can hand termination back to
      * the default handler before the CRT exit. Leave attachment teardown to
      * process exit;ordinary Tab/recovery detaches immediately. */
@@ -200,6 +223,50 @@ static int mysmb_win32_console_geometry(struct mysmb_win32_text_console *console
     if(error!=ERROR_INVALID_PARAMETER || ++console->geometry_pending>120U)return 0;
     return 2;
 }
+/* Terminal owns its font and viewport. Emit exact neutral RGB cells only in
+ * the current visible region; never resize the user's terminal during a frame. */
+static int mysmb_win32_terminal_present(struct mysmb_win32_text_console *console,
+    const struct mysmb_io_text_frame *frame)
+{
+    CONSOLE_SCREEN_BUFFER_INFO info;
+    WCHAR *out=console->terminal_output,sequence[96];
+    DWORD written;
+    unsigned int width,height,x,y,count=0U,length;
+    int foreground=-1,background=-1;
+    unsigned long fg,bg;
+    WCHAR glyph;
+    const struct mysmb_io_text_cell *cell;
+    if(!out || !GetConsoleScreenBufferInfo(console->output,&info))return 0;
+    width=(unsigned int)(info.srWindow.Right-info.srWindow.Left+1);
+    height=(unsigned int)(info.srWindow.Bottom-info.srWindow.Top+1);
+    if(width>80U)width=80U;
+    if(height>50U)height=50U;
+    if(!width || !height)return 1;
+    lstrcpyW(out,L"\x1b[?25l");count=6U;
+    for(y=0U;y<height;++y) {
+        length=(unsigned int)wsprintfW(sequence,L"\x1b[%u;1H",y+1U);
+        CopyMemory(out+count,sequence,length*sizeof(WCHAR));count+=length;
+        for(x=0U;x<width;++x) {
+            cell=&frame->cells[y*80U+x];
+            if(foreground!=(int)(cell->foreground&15U) ||
+                background!=(int)(cell->background&15U)) {
+                foreground=cell->foreground&15U;background=cell->background&15U;
+                fg=mysmb_io_color_text_rgb((mysmb_io_u8)foreground);
+                bg=mysmb_io_color_text_rgb((mysmb_io_u8)background);
+                length=(unsigned int)wsprintfW(sequence,
+                    L"\x1b[38;2;%u;%u;%u;48;2;%u;%u;%um",
+                    (unsigned int)((fg>>16U)&255U),(unsigned int)((fg>>8U)&255U),
+                    (unsigned int)(fg&255U),(unsigned int)((bg>>16U)&255U),
+                    (unsigned int)((bg>>8U)&255U),(unsigned int)(bg&255U));
+                CopyMemory(out+count,sequence,length*sizeof(WCHAR));count+=length;
+            }
+            glyph=(WCHAR)mysmb_io_text_glyph_unicode(cell->character);
+            if(!glyph)return 0;
+            out[count++]=glyph;
+        }
+    }
+    return WriteConsoleW(console->output,out,count,&written,NULL) && written==count;
+}
 int mysmb_win32_text_console_present(struct mysmb_win32_text_console *console,
     const struct mysmb_io_text_frame *frame)
 {
@@ -210,6 +277,7 @@ int mysmb_win32_text_console_present(struct mysmb_win32_text_console *console,
     SMALL_RECT view;
     if(!console->opened || frame==0 ||
         !GetConsoleMode(console->input,&input_mode))return 0;
+    if(console->terminal)return mysmb_win32_terminal_present(console,frame);
     for(i=0U;i<MYSMB_IO_TEXT_CELLS;++i) {
         console->cells[i].Char.UnicodeChar=(WCHAR)mysmb_io_text_glyph_unicode(frame->cells[i].character);
         if(console->cells[i].Char.UnicodeChar==0U)return 0;

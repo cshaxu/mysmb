@@ -181,6 +181,17 @@ static void input_only_step(HWND window)
      * consume more than one second;real debt is tested separately above. */
     g_last_tick.QuadPart+=g_frequency.QuadPart*60;
     mysmb_win32_step(window);
+    /* Real asynchronous device work must complete before inspecting its state. */
+    {
+        DWORD deadline=GetTickCount()+8000U;
+        MSG message;
+        while(g_console_thread && (LONG)(GetTickCount()-deadline)<0L) {
+            while(PeekMessage(&message,NULL,0U,0U,PM_REMOVE)) {
+                TranslateMessage(&message);DispatchMessage(&message);
+            }
+            mysmb_win32_console_complete(window);Sleep(1U);
+        }
+    }
 }
 static int input_record(WORD key,WORD scan,int down)
 {
@@ -451,7 +462,22 @@ static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command
         result=event_input_route(window);if(result)return result;
         for(i=0U;i<3U;++i) {
             mysmb_win32_switch_presenter(window,0);
-            if(!g_text_mode || !g_console.borrowed)return 80;
+            if(!g_text_mode || !g_console.borrowed) {
+                char cwd[MAX_PATH];
+                DWORD count,ids[64],error=GetLastError();
+                FILE *file;
+                count=GetConsoleProcessList(ids,64U);
+                if(GetCurrentDirectoryA(MAX_PATH,cwd) && strstr(cwd,"\\build\\")) {
+                    file=fopen("state-80.log","w");
+                    if(file) {
+                        fprintf(file,"cycle=%u text=%u borrowed=%u opened=%u terminal=%u thread=%d error=%lu processes=%lu\n",
+                            i,g_text_mode,g_console.borrowed,g_console.opened,g_console.terminal,
+                            g_console_thread!=NULL,(unsigned long)error,(unsigned long)count);
+                        fclose(file);
+                    }
+                }
+                return 80;
+            }
             if(parent && parent!=g_console.window)return 81;
             parent=g_console.window;owned_focus=parent;
             result=console_restore_route();if(result)return result;

@@ -46,6 +46,9 @@ static mysmb_io_u8 g_snapshot_fingerprint[16];
 static mysmb_io_u8 g_snapshot_ready;
 static mysmb_io_u8 g_snapshot_requests;
 static struct mysmb_win32_text_console g_console;
+static struct mysmb_win32_text_console g_console_job;
+static HANDLE g_console_thread;
+static HDESK g_console_desktop;
 static struct mysmb_win32_keyboard g_keyboard;
 static struct mysmb_text_scene_workspace g_text_workspace;
 static struct mysmb_io_text_frame g_text_frame;
@@ -102,7 +105,7 @@ static int mysmb_win32_key_event(HWND window,WORD key,WORD scan,
     unsigned char pressed)
 {
     int kind;
-    if(!mysmb_win32_presenter_focused(window))return 0;
+    if(pressed && !mysmb_win32_presenter_focused(window))return 0;
     kind=mysmb_win32_keyboard_event(&g_keyboard,key,scan,pressed);
     if(!kind)return 0;
     if(kind==1)mysmb_win32_shortcut(window,key,pressed);
@@ -173,6 +176,41 @@ static void mysmb_win32_build_frame(void)
     mysmb_win32_draw_gameplay(&video);
 }
 
+/* Host allocation can wait on an external terminal. The device thread owns
+ * only its pending console; the root keeps pumping while it is acquired. */
+static DWORD WINAPI mysmb_win32_console_job(void *owner)
+{
+    (void)SetThreadDesktop(g_console_desktop);
+    return mysmb_win32_text_console_open(&g_console_job,(HWND)owner)?1U:0U;
+}
+static void mysmb_win32_console_begin(HWND window)
+{
+    if(g_console_thread)return;
+    g_switching=1U;
+    mysmb_win32_keyboard_clear_game(&g_keyboard);
+    ZeroMemory(&g_console_job,sizeof(g_console_job));
+    g_console_desktop=GetThreadDesktop(GetCurrentThreadId());
+    g_console_thread=CreateThread(NULL,0U,mysmb_win32_console_job,window,0U,NULL);
+    if(!g_console_thread)g_switching=0U;
+}
+static void mysmb_win32_console_complete(HWND window)
+{
+    DWORD result;
+    if(!g_console_thread || WaitForSingleObject(g_console_thread,0U)!=WAIT_OBJECT_0)return;
+    result=0U;(void)GetExitCodeThread(g_console_thread,&result);
+    CloseHandle(g_console_thread);g_console_thread=NULL;
+    if(result!=0U) {
+        g_console=g_console_job;ZeroMemory(&g_console_job,sizeof(g_console_job));
+        g_text_mode=1U;ShowWindow(window,SW_HIDE);
+        if(!g_console.terminal) {
+            ShowWindow(g_console.window,SW_SHOW);SetForegroundWindow(g_console.window);
+        }
+    }
+    g_switching=0U;g_text_failed=0U;
+    mysmb_win32_build_frame();
+    if(!g_text_mode)InvalidateRect(window,NULL,FALSE);
+}
+
 /* Only the root chooses a presenter; device code receives neutral cells.
  * Internal focus transfer never enters the game's auto-pause input path. */
 static void mysmb_win32_switch_presenter(HWND window,int activate)
@@ -184,8 +222,10 @@ static void mysmb_win32_switch_presenter(HWND window,int activate)
             g_text_mode=1U;
             if(activate) {
                 ShowWindow(window,SW_HIDE);
-                ShowWindow(g_console.window,SW_SHOW);
-                SetForegroundWindow(g_console.window);
+                if(!g_console.terminal) {
+                    ShowWindow(g_console.window,SW_SHOW);
+                    SetForegroundWindow(g_console.window);
+                }
             }
         }
     } else {
@@ -455,15 +495,19 @@ static void mysmb_win32_step(HWND window)
     int event_kind;
     unsigned char pressed;
 
-    if(g_text_mode && g_text_failed)
+    mysmb_win32_console_complete(window);
+    if(g_text_mode && g_text_failed && !g_console_thread)
         mysmb_win32_switch_presenter(window,1);
     for(events=0U;events<64U && g_text_mode &&
         (event_kind=mysmb_win32_text_console_key(&g_console,&key,&scan,&pressed));++events) {
         if(event_kind==2 && !pressed)mysmb_win32_release_keys();
         else if(event_kind==1)mysmb_win32_key_event(window,key,scan,pressed);
     }
-    if(g_toggle_request) {
-        g_toggle_request=0U;mysmb_win32_switch_presenter(window,1);
+    if(g_toggle_request && !g_console_thread) {
+        g_toggle_request=0U;
+        if(g_text_mode || mysmb_win32_start_in_text())
+            mysmb_win32_switch_presenter(window,1);
+        else mysmb_win32_console_begin(window);
     }
     decoded.buttons=0U;decoded.buttons2=0U;decoded.requests=0U;
     mysmb_io_control_input(&g_control,&decoded);
@@ -480,7 +524,7 @@ static void mysmb_win32_step(HWND window)
     }
     g_game_started = 1U;
 
-    if (g_focus_pause.focused != 0U && !mysmb_win32_presenter_focused(window)) {
+    if (!g_switching && g_focus_pause.focused != 0U && !mysmb_win32_presenter_focused(window)) {
         mysmb_win32_release_keys();
         mysmb_win32_focus_pause_lost(&g_focus_pause, g_game_started, &g_game);
     }
@@ -632,8 +676,10 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     g_geometry_adjusting=0;
     if(start_text)mysmb_win32_switch_presenter(window,0);
     if(g_text_mode) {
-        ShowWindow(g_console.window,show);
-        SetForegroundWindow(g_console.window);
+        if(!g_console.terminal) {
+            ShowWindow(g_console.window,show);
+            SetForegroundWindow(g_console.window);
+        }
     } else {
         ShowWindow(window, show);
         UpdateWindow(window);

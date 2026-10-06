@@ -81,8 +81,9 @@ Loss,presenter changes and snapshot restore clear stale game keys. A valid
 subsequent console down needs no gain record. Tab/P/O/Escape retain their shared
 application-request owners. No original game routine handles host input.
 The console owns explicit input/output device handles and requests key records,
-not terminal escape-sequence input. Device font size may shrink to fit its
-unchanged80x50 shared frame on a small desktop;no artwork or game state changes.
+not terminal escape-sequence input. Classic device font size may shrink to fit its unchanged80x50 shared frame.
+Terminal devices retain native font/viewport,emit neutral RGB glyphs and clip
+only presentation beyond that viewport under owner approval.
 
 Shared IO declares selected one-cell CP437-compatible glyph IDs,with unchanged
 ASCII letters/digits and three-byte cells. Authored scene owners choose borders
@@ -128,11 +129,17 @@ client area. Native sizing constrains16:15client units,with non-client and
 DPI margins;minimum,maximized,restored and programmatic sizes share that
 device owner. Zero-sized clients skip drawing;no crop or letterbox owner.
 
-Console geometry belongs to the Windows device. A restored host repairs the
+Classic console geometry belongs to the Windows device. Restore repairs its
 80x50buffer/view before presenting;maximized font remains unchanged. A bounded
 in-flight clipped write defers a frame,while genuine handle loss keeps recovery.
-Borrowed shutdown restores the original shell cell view after pixel placement,
-so host rounding cannot silently remove a row. No geometry changes game state.
+Borrowed shutdown restores the original shell view when a real window exists.
+Terminal notification/message-only handles do not expose classic geometry;
+Terminal output follows native visible dimensions without font/window/palette
+resizing calls. Explicit RGB/glyph output preserves neutral cell colors.
+Fresh owned console acquisition runs on a device-only thread bound to the root
+desktop;the root continues pumping without a blocking join. Existing shell
+attachment and release retain the established path. No game state or product
+helper process belongs to that thread.
 
 Text has an immutable core-state consumer dependency;core calls only its own
 observation producer/commit API. App snapshot explicitly links text snapshot

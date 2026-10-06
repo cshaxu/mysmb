@@ -160,9 +160,8 @@ def main():
             handles.append(handle)
             completed(handle)
             launch = command(product)
-            if source in ("powershell", "pwsh"):
-                launch = ('%s.exe -NoProfile -Command "Start-Process -FilePath \'%s\' '
-                          '-Wait; exit 0"' % (source, product))
+            # Native shell invocation waits for this console product. Start-Process
+            # -Wait also waits for OS terminal descendants and is a different contract.
             handle = start(launch, name, output, flags)
             handles.append(handle)
             deadline, root, console = time.monotonic() + 8, None, None

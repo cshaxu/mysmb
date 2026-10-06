@@ -28,3 +28,8 @@ Windows restores active synthesis state for Windows-originated saves. DOS
 replacement has a documented delete/rename interruption window. The
 [T10 acceptance record](../history/M3-T10-shared-io-quick-snapshot.md#t10-acceptance-matrix)
 records scoped evidence and limitations.
+
+Windows Terminal keeps its native font and window size. On Restore the device
+redraws the currently visible portion of the shared80x50scene;owner accepts
+clipping beyond this viewport. Classic console retains its80x50restored view.
+No Windows default-terminal setting is changed by the product.

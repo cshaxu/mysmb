@@ -1,20 +1,38 @@
 # Project Status
 
-**Idle.**
+## M3 T29 S4 Packet
 
-M3 T29 S1-S3 closed after the scoped Win32 DPI/console usability repair.
-No next T admitted;[QUEUE](QUEUE.md) retains the PPU optimization first.
+| Field | Required record |
+| --- | --- |
+| Identifier Mode | Corrective: M3 T29 S4 P1;owner live Tab hang after DPI repair. |
+| Admission And Approval | Owner reports graphical window remains visible and unresponsive after Tab;latest T29 reopens under existing repair mandate. |
+| Objective | Classic80x50 versus native Terminal viewport with owner-approved clipping;repair resize/output and keep root responsive during acquisition. |
+| Non-goals | No game/PPU/DOS changes,product helper process,Windows settings,foreground control or emulator settings. |
+| Reference Baseline | eb916555 products;retained S2/S3 private-route proof does not discharge live hang. |
+| Candidate Proposal | [T29 corrective record](../history/M3-T29-win32-usability-regression.md#s4-corrective-admission-owner-live-tab-hang). |
+| Files And ABI Surface | Win32 console/root lifecycle,neutral VT output and same-process device thread;estimated180-300platform lines plus focused tests. |
+| Applicable Rules | README Task Reading Set,EXECUTION,DOCUMENT,ARCHITECTURE,CODING,CONTRIBUTING and source policy. |
+| Verification | Live wait-chain/stack read-only evidence;bounded reproduction,corrective actual-route comparison,focused tests,original DOS16 and three products. |
+| Expected Markers | scope[],expectedMatches[],actualMatches[],new0,maximum1992/1992;no custody change. |
+| Asset Needs | Existing owner process/resources only;ignored build diagnostics60seconds/32MiB maximum;prefer neutral wait metadata,no new imports. |
+| Reporting Requirements | Scope/size before code;actual diff,failed/passed evidence,products and total/local node/edge counts after commit. |
+| Stop Conditions | Foreground interference,unbounded trace/dump,unreviewed import or game/PPU change. |
+| Exit Criteria | Identified live blocking path repaired and equivalent scoped real acquisition/join tested,no unresolved scoped hang;three products/gates pass. |
+| Original Owner Request | Window size works but Tab still freezes;repair immediately under T29. |
+| Similar-Issue Sweep | Alloc/attach,font/geometry/menu calls,root cross-thread joins,window messages and input/output transitions;reconcile private-test blind spots. |
 
 ## Current Technical Baseline
 
-- T29 S2 repairs initial DPI size and optional console host capabilities. Both
-  widths final assets startup768x720at144DPI,three80x50text entries,twoTab returns
-  and consoleEscape exit0 pass;5focused tests/13host groups per width pass.
-  T29 scoped closure accepted;live RDP/multi-monitor hardware remains unobserved.
-  [S2 evidence](../history/M3-T29-win32-usability-regression.md#s2-p1-closure-and-s3-admission).
-- Three products refreshed:305163/308238/320526bytes. DOS hash unchanged;
-  Windows hashes and exact final asset route bindings are in the T29 record.
-  Source/test/tool4files,+168/-10;zero shared game/PPU/DOS changes.
+- T29 S4 corrective implementation active after owner rejects the earlier live
+  Tab/Terminal result. Terminal native viewport/RGB/clipping and same-process
+  fresh acquisition implemented;classic80x50and shell attach/release retained.
+  Both-width actual native80x30entries/Tab/exit,5focused and sequential13host
+  groups pass;VT parser checks8600cells per width. Live Restore/visual result and
+  observed parallel borrowed-fixture classification remain pending in S4.
+  [S4 scope/evidence/limits](../history/M3-T29-win32-usability-regression.md#s4-p1-corrective-implementation-checkpoint).
+- Three products refreshed:305163/310798/323598bytes;DOS hash unchanged.
+  Win32 code/test/tool/build8files,+311/-44;no game/PPU/DOS logic changes or
+  Windows system settings. DPI initial-size repair remains accepted.
 - Current DOS graphics/text diagnostic medians879.420/849.317ms; configured
   playability fails. Graphics PPU65.08percent, conversion28.38, direct VGA3.28;
   P24 loaded-route background about91.76percent of PPU. Actual physical486SX
@@ -42,9 +60,9 @@ No next T admitted;[QUEUE](QUEUE.md) retains the PPU optimization first.
 ## Compact closure status
 
 - [T29 Win32 usability](../history/M3-T29-win32-usability-regression.md#s3-p1-integrated-closure):
-  DPI initial client and handle-based console lifetime repaired;both widths
-  actual size/text/Tab/input/exit and shell routes pass. Three EXEs refreshed;
-  isolated cold-publication observation retained in TODO. No ROM-node credit.
+  DPI repair retained;owner live failure reopens S4 for Terminal viewport
+  and acquisition correction. Earlier scoped receipts remain historical,not
+  successful live Terminal acceptance. No ROM-node credit.
 
 - [T28 closure](../history/M3-T28-dos-rendering-optimization.md#s6-p24-owner-directed-closure-and-remaining-work-transfer):
   accepted memory/loader/output improvements retained; graphics work and remaining

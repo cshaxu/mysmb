@@ -208,3 +208,96 @@ Documentation,node admission/closure and reviewed diff checks pass;historical
 1992/1992,local1991/1992nodes and4260/4261feasible controls(raw4342/infeasible81),
 scope/expected/actual[],new0,custody unchanged. Products remain S2 final hashes.
 CURRENT becomes idle;pending PPU/DOS proposals remain unnumbered and unadmitted.
+
+
+## S4 corrective admission: owner live Tab hang
+
+Owner confirms the DPI size repair but Tab still hangs with graphical window
+visible and unresponsive. Reopen latest T29,allocate S4;previous private-desktop
+routes retain their scoped results but do not discharge this live-path failure.
+Read the retained owner product process wait chain/stack without activating or
+terminating its window,then repair the identified Win32-only acquisition/join.
+S4 owns diagnosis,repair/re-audit and required three products before closure.
+Estimate60-180platform lines plus bounded neutral diagnostic/test logic;revise
+with root cause. No original game/PPU/DOS changes or production helper process.
+Temporary diagnostics under ignored build,60second/32MiB cap per local dump;
+prefer wait-chain metadata without a memory dump. Live process must be preserved
+until evidence is captured;owner's existing EXE replacement permission retained.
+ROM scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and
+4260/4261feasible controls(raw4342/infeasible81),custody unchanged.
+
+
+### S4 owner amendment: native Terminal view and bounded root responsiveness
+
+Owner denies changing Windows default terminal settings. Owner now explicitly
+accepts Windows Terminal restoring its own text viewport; cells beyond it may
+be clipped. Classic console retains80x50. Preserve complete authored frame in
+shared text;clipping is strictly device presentation. Keep console subsystem
+and CMD wait/reuse contract;GUI-only clone was diagnostic,not an adopted product.
+
+S4 receives host-capability split:classic font/geometry versus native Terminal
+viewport,explicit neutral RGB output for Terminal,and asynchronous acquisition
+on one device thread in the same process. Worker touches no game/PPU/text logic;
+root pumps messages during host startup. No helper/game process or system setting.
+Revised estimate180-300platform lines plus focused tests/tool changes. Validate
+pending-open exit,classic maximize/Restore,native clipped writes and resize,
+color/glyph output,input/Tab/CMD and three builds before acceptance.
+
+Primary Microsoft API/Terminal documentation is local research only,no source
+import: [font API](https://learn.microsoft.com/en-us/windows/console/setcurrentconsolefontex)
+explicitly has no VT equivalent; [default terminal](https://learn.microsoft.com/en-us/windows/terminal/customize-settings/startup)
+is account-wide policy; [VT sequences](https://learn.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences)
+define cursor and RGB SGR output. Screenshot establishes Windows Terminal;
+virtual buffer readback alone never certifies actual host font/view/colors.
+
+
+### S4 P1 corrective implementation checkpoint
+
+Owner accepts native Terminal Restore sizes and clipped off-viewport cells.
+Classify a classic console only by real ConsoleWindowClass,caption style and
+non-message-only parent. Classic font/palette/80x50repair remain;Terminal skips
+those geometry-changing APIs and writes one bounded Unicode/RGB VT stream in
+its current viewport. Shared frame remains4000cells;visible30-row fixture writes
+2400cells. Heap staging is bounded386048bytes,Windows Terminal only,freed on
+close/failure;classic and DOS add no corresponding allocation.
+
+Only fresh owned acquisition moves to a same-process device thread/root-desktop
+context. Root pumps during allocation,joins by zero-time poll and transfers
+ownership on completion. Existing shell attach/release remains established;
+control-key releases clear state through focus transfer. No production helper
+process,registry/default-terminal change,game/PPU/text artwork/schema/DOS change.
+
+Product source three files+149/-34;test/tool/build five files+162/-10,combined
++311/-44. Independent VT parser checks every glyph and RGB across40x15,80x50,
+120x60viewports(8600visible cells per width),oversize clamping and invalid input
+rejection. Both widths pass,with no diagnostic code in products. Actual final
+assets retain144DPI768x720clients,three native80x30text entries,twoTab returns,
+responsive root during acquisition and consoleEscape exit0. Pending-transfer
+root close passes. Original DOS16 relink/map proof yields identical305163bytes.
+Five focused tests per width and sequential13host groups pass:classic Restore,
+borrowed buffer/settings,Unicode/snapshot/focus recovery,direct CMD/PowerShell/
+pwsh,other launches and interactive CMD Tab/Escape/wait/prompt.
+
+Tests now wait boundedly for asynchronous acquisition and compare native visible
+cells,not an assumed4000-cell host view. PowerShell route uses normal native '&'
+invocation;Start-Process -Wait waits OS descendants after the game exits and is
+not credited as direct-shell completion. Old failed receipts remain in build.
+Parallel borrowed-root fixtures have also produced result80(owned classification
+instead of borrowed);sequential final receipts pass. Cause of that parallel
+isolation observation is unproved and remains received by S4,not silently passed.
+A two-way asynchronous release candidate was discarded;accepted production keeps
+shell release in the existing root path. No newly numbered validation round.
+
+Final products refreshed and source/output hashes bound:
+- mysmb16.exe305163bytes,f0a281bf630431853d489e20fdabf7d622dc5f119133f9026c5f94423895ad6a.
+- mysmb32.exe310798bytes,862bdc61bbeb47ccdc770c56a845a2ff882d97a79b6c5bb6ea851819e6b9a2d5.
+- mysmb64.exe323598bytes,c9c4d7dda51523fc86fab252b4b653138c0be8dc8544fa601592663113c5596f.
+Stripping removes debug metadata only;retained runtime sections are exact to
+linked products. Final-assets owned routes pass. Temporary prototypes,diagnostic
+objects/failed runs stay ignored;no protected image/data/probe is committed.
+
+S4/T29 remain active for owner live Terminal Restore/visual result and the named
+parallel fixture-isolation observation. Buffer/encoded-stream proof does not
+certify the real Terminal window. DPI acceptance remains retained. Historical
+1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342/infeasible81),
+scope/expected/actual[],new0,custody unchanged. Documentation/node gates required.

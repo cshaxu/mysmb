@@ -16,8 +16,12 @@ u.GetClientRect.argtypes = [w.HWND, c.POINTER(w.RECT)]
 u.GetDpiForWindow.argtypes = [w.HWND]
 u.GetDpiForWindow.restype = w.UINT
 u.IsWindowVisible.argtypes = [w.HWND]
+u.GetWindowLongW.argtypes = [w.HWND,c.c_int]
+u.GetParent.argtypes = [w.HWND]
+u.GetParent.restype = w.HWND
 k.AttachConsole.argtypes = [w.DWORD]
 k.GetProcessId.argtypes = [w.HANDLE]
+k.GetConsoleWindow.restype = w.HWND
 k.CreateFileW.argtypes = [w.LPCWSTR,w.DWORD,w.DWORD,c.c_void_p,w.DWORD,w.DWORD,w.HANDLE]
 k.CreateFileW.restype = w.HANDLE
 
@@ -53,6 +57,7 @@ def main():
     args=argparse.ArgumentParser(description=__doc__)
     args.add_argument("--product",type=Path,required=True)
     args.add_argument("--output",type=Path,required=True)
+    args.add_argument("--pending-exit",action="store_true")
     a=args.parse_args();output=a.output.resolve()
     host.require("build" in output.parts,"Ignored build output required")
     output.mkdir(parents=True,exist_ok=True)
@@ -78,9 +83,21 @@ def main():
         def event(key,down):
             r=Record();r.kind=1;r.key=Key(down,1,key,15 if key==9 else 1,"\0",0)
             written=w.DWORD();host.require(k.WriteConsoleInputW(handles[0],c.byref(r),1,c.byref(written)) and written.value==1,"Owned console event")
+        if a.pending_exit:
+            message(7);message(0x100,9);time.sleep(.05);message(0)
+            message(0x10)
+            host.require(k.WaitForSingleObject(process.handle,8000)==0,"Exit during console transfer")
+            code=w.DWORD();k.GetExitCodeProcess(process.handle,c.byref(code))
+            host.require(code.value==0,"Pending-transfer exit status")
+            rows.append(dict(route="pending-transfer/root-close",exitCode=0))
+            print(json.dumps(rows));return
         for cycle in range(3):
             message(7);message(0x100,9)
-            wait_for(lambda:not u.IsWindowVisible(hwnd),"Tab did not retain text mode")
+            def switched():
+                if not u.IsWindowVisible(hwnd):return True
+                message(0)
+                return False
+            wait_for(switched,"Tab did not retain text mode")
             k.FreeConsole();host.require(k.AttachConsole(process.pid),"Attach owned test console")
             for device in ("CONIN$","CONOUT$"):
                 h=k.CreateFileW(device,0xc0000000,3,None,3,0,None)
@@ -90,10 +107,20 @@ def main():
                 time.sleep(.15);message(0)
                 host.require(not u.IsWindowVisible(hwnd),"Unexpected graphics fallback")
                 state=Buffer();host.require(k.GetConsoleScreenBufferInfo(handles[1],c.byref(state)),"Output state")
-                host.require(state.size.x==80 and state.size.y==50,"80x50 buffer")
-                cells=(Cell*4000)();view=Small(0,0,79,49)
-                host.require(k.ReadConsoleOutputW(handles[1],cells,Coord(80,50),Coord(0,0),c.byref(view)),"Actual authored output readback")
-                host.require(any(x.character not in (" ","\0") for x in cells),"Text content missing")
+                kind=c.create_unicode_buffer(80)
+                u.GetClassNameW(k.GetConsoleWindow(),kind,80)
+                classic=kind.value=="ConsoleWindowClass" and (u.GetWindowLongW(k.GetConsoleWindow(),-16)&0xc00000)==0xc00000 and u.GetParent(k.GetConsoleWindow())!=c.c_void_p(-3).value
+                if classic:host.require(state.size.x==80 and state.size.y==50,"Classic80x50 buffer")
+                width=min(80,state.view.right-state.view.left+1)
+                height=min(50,state.view.bottom-state.view.top+1)
+                host.require(width>0 and height>0,"Visible text viewport")
+                cells=(Cell*(width*height))()
+                def read_content():
+                    view=Small(state.view.left,state.view.top,state.view.left+width-1,state.view.top+height-1)
+                    host.require(k.ReadConsoleOutputW(handles[1],cells,Coord(width,height),Coord(0,0),c.byref(view)),"Actual authored output readback")
+                    return any(x.character not in (" ","\0") for x in cells)
+                wait_for(read_content,"Text content missing",3)
+                rows.append(dict(route="classic" if classic else "native-Terminal",visibleCells=width*height,viewport=[width,height]))
                 event(9,False)
                 if cycle==2:
                     event(27,True)
@@ -104,7 +131,7 @@ def main():
                     message(0x101,9);message(0)
                     u.GetClientRect(hwnd,c.byref(rect))
                     host.require((rect.right,rect.bottom)==(units*16,units*15),"Graphics size changed across Tab")
-                rows.append(dict(route="owned-text-input-return" if cycle<2 else "owned-text-Escape",cycle=cycle,cells=4000))
+                rows.append(dict(route="owned-text-input-return" if cycle<2 else "owned-text-Escape",cycle=cycle))
             finally:
                 for h in handles:k.CloseHandle(h)
                 handles.clear();k.FreeConsole()

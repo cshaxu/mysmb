@@ -1038,6 +1038,11 @@ if(WIN32)
     target_link_libraries(mysmb_presentation_performance PRIVATE
         mysmb_game_snapshot mysmb_game_io mysmb_text_elements mysmb_vga_frame)
     add_test(NAME mysmb.presentation-performance COMMAND mysmb_presentation_performance)
+    add_executable(mysmb_win32_terminal_present_smoke
+        test/win32_terminal_present_smoke.c src/platform/win32/launch.c)
+    target_link_libraries(mysmb_win32_terminal_present_smoke PRIVATE mysmb_io_color user32)
+    add_test(NAME mysmb.win32-terminal-present-smoke COMMAND mysmb_win32_terminal_present_smoke)
+
     add_executable(mysmb_win32_keyboard_smoke
         test/win32_keyboard_smoke.c src/platform/win32/keyboard.c)
     target_include_directories(mysmb_win32_keyboard_smoke PRIVATE src)
