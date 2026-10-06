@@ -4,13 +4,13 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S6 P1. |
+| Identifier Mode | Continuation: M3 T32 S6 P2; compact persistent-background prototype. |
 | Admission And Approval | Approved consecutive S5-S9 plan; S5 baseline measurement contract closed with final comparator checks still open; S6 sole active. |
-| Objective | Owner redirects S6 to systemic frame-pipeline comparison with NESticle; stop incremental prototype adoption and identify architectural causes of the multi-fold gap before implementation. |
+| Objective | Test systemic composed-background/representation architectures against exact output and actual DOS memory/cost;no micro-optimization adoption as substitute for the multi-fold target. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
 | Reference Baseline | Current three P11 products and scoped S4 receipts; original toolchain/default640x400. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | Read-only comparison of core update, PPU cache/composition and VGA output; preserve completed prototype evidence, zero product changes until a systemic plan is recorded; memory budget amendments explicit. |
+| Files And ABI Surface | Contained shared-PPU prototype/header/tests below build; estimate250-400prototype lines,63488borrowed cache bytes plus small workspace/view fields, existing8192CHR cache optional. No product allocation/adoption yet; measure DOS startup, steady/cold cost and fallback before selection. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
 | Verification | Independent512-state native raw/cache/band output;DOS controlled exact-output/cost scenes and actual routes;compiler stack/loader/arena checks;three EXEs for adopted product-code P. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
@@ -23,6 +23,13 @@
 
 
 ## Current Technical Baseline
+
+- S6 P2:local63488-byte slot/source cache passes512native states per width,
+  mutation/lifetime/guards and DOS pixel comparisons. Warm PPU1.478-1.643times,
+  cold1920tiles1.986seconds;not product memory/FPS acceptance. No adoption or
+  EXErefresh. Next local byte-surface/raw-opacity tier140304bytes before small
+  fields;actual startup/memory tradeoff required. Game/2048stack/640x400unchanged.
+  [Compact cache and limits](../history/M3-T32-rendering-performance-continuation.md#s6-p2-compact-persistent-background-prototype).
 
 - S6 P1:owner stops micro-optimization adoption. Five exact-output prototypes
   remain local/unadopted;direct0.2reference confirms composed background cache,

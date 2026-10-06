@@ -1359,3 +1359,48 @@ Accepted runs are terminal, outputs/save exact and installed config unchanged;
 102observed stack-pattern bytes unused is a fixture result, not global proof.
 S6/T32/goal active;scope/expected/actual[],new0,historical1992/1992,
 local1991/1992nodes,4260/4261feasible controls(raw4342,infeasible81).
+
+## S6 P2 compact persistent-background prototype
+
+Project-owned implementation stays below ignored build. Two nametables use
+61440packed slot bytes plus2048source snapshot bytes:63488borrowed bytes.
+DOSworkspace28bytes vs original12,prepared view10bytes;existing8192CHR cache
+separate/optional. Refresh only changed tiles/attribute regions, keyed by
+immutable CHR pointer/size and pattern bank. Palette/scroll/HUD changes reuse
+slots and map current colors. Prepared const-state batch has explicit begin/
+end;standalone calls validate independently. Original state is never written.
+
+Both native widths pass512independent states/256zero-alias cases, full/raw/
+cache/bands/planes, source immutability and guards. Additional cases prove
+cold1920tiles,steady0,one tile1,attribute16,palette/scroll/HUD0,pattern/resource
+changes1920,ended-view rejection,short-cache fallback and cache bounds. Bulk
+row reading initially failed scroll255at a nametable edge;corrected table
+switch passes the same test. Arbitrary palette bytes remain exact, not masked.
+
+Original/AL/Gs DOS compile and real DOSBox diagnostic pass with installed
+settings unchanged. Probe allocates63488cache and two4096output bands and
+compares requested pixels with a separately compiled baseline. Three warm
+passes update0tiles. This allocation is not full-product startup proof.
+
+| Synthetic case | Baseline ticks/3passes | Cache ticks/3passes | PPU ratio |
+| --- | ---: | ---: | ---: |
+| Uniform tile | 2072454 | 1296338 | 1.599times |
+| Mixed tiles,fine scroll/HUD | 2265234 | 1378369 | 1.643times |
+| Same background,dense behind sprites | 3332270 | 2254603 | 1.478times |
+
+Cold1920tiles2369346PIT ticks is1.986seconds;changed1912tiles2327333ticks.
+Unchanged preparation uses one2048-byte comparison (614ticks in the sampled
+third case). These are single diagnostic pairs, not game FPS/hardware proof.
+Pixel output is exact but cache memory/cold cost are material. Fivefold target
+is unmet;no product adoption or EXErefresh. S6/T32/goal remain active.
+
+The compact representation still unpacks/maps all rows. Next compare directly
+copyable master-color byte surfaces with separate raw opacity. Two122880-byte
+surfaces plus15360opacity/2048source/16palette bytes total140304before small
+fields. This is an explicit local prototype budget lead, not product adoption.
+It requires palette-group/universal-color invalidation, bounded far blocks,
+actual conventional-memory/startup/fallback and cold/steady/transition proof;
+compare smaller tiers as well. Original game/2048stack/640x400stay unchanged.
+Recipes/logs remain below build/m3-t32-s6/slot;no imported implementation.
+Scope/expected/actual[],new0,historical1992/1992,local1991/1992nodes,
+4260/4261feasible controls(raw4342,infeasible81).

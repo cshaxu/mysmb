@@ -265,3 +265,16 @@ S8 owns integrated system-level speed/memory acceptance. No toolchain or
 protected-mode switch, helper process, crop, lost frame, reduced color or
 copied implementation substitutes for DOS16. S9 remains final audit;source
 comparison alone proves neither equal-framex.xx performance nor ROM semantics.
+
+## S6 compact-cache result and next memory tier
+
+[S6 P2](../../history/M3-T32-rendering-performance-continuation.md#s6-p2-compact-persistent-background-prototype)
+implements63488-byte packed slot/source caching only below build. Native
+512-state/mutation/lifetime/guard and original-DOS pixel tests pass; warm PPU
+ratios1.478-1.643, cold1920tiles1.986seconds at unchanged diagnostic settings.
+No fivefold/full-product memory/playability acceptance;EXEs remain P11.
+Next local budget may compare122880master-color bytes plus15360raw opacity,
+2048source and16palette bytes (140304before small fields), palette-group and
+universal-color invalidation, and separately bounded far blocks. Test actual
+DOS startup/resident/fallback and cold/steady/transition costs before adoption;
+retain compact/smaller tiers in the tradeoff. No source timing/state changes.
