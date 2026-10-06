@@ -685,3 +685,42 @@ subtotals as completed global acceptance. Scope/expected/actual[],new0,custody
 unchanged;historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342/
 infeasible81). Three S3EXEs unchanged. Required node/documentation gates precede
 commit;no T/S closure or next S admission.
+## S4 P7 checkpoint: adjacent memory failure and exit-path structure
+
+No product/source/artifact change. Actual current product/service-observer
+negative routes under unchanged normalSDL/private desktop/configuration:
+
+| Caller free | Before EXEC largest | EXEC / child result | Outcome |
+| --- | ---: | --- | --- |
+| 369KiB | 377840bytes | 0 / 1 | DOS loads child;application initialization exits normally with1 |
+| 318KiB | 325616bytes | 1 / 8 | DOS rejects EXEC before child execution |
+
+Both runs finish in about2-3seconds,preserve original snapshot bytes and have
+zero bad/dropped MCBchains.369records30DOS entries/four changes,while318records
+two entries/no child-owned changes. At369the largest observed auxiliary arena
+is35008bytes:the mandatory15400row/text store plus20084snapshot workspace alone
+requires35484before allocator headers/buffers. Current initialize explicitly
+shuts down/returns0when snapshot allocation fails;main then returns1. This is
+consistent with the observed clean application failure,not CRT fatal/loader
+failure or a hang. The source-bound370full-route receipts establish an adjacent
+tested success/failure boundary for this environment,not a universal minimum.
+
+Current exit structure is recorded from exact entry instructions and image
+table contents. Normal exit enters06ba,runs an emptyB7A6range and the one XP
+flushall entry. Default fatal target is06d1,the later exit path with empty3EAA
+ranges. They share INT21AH4Cat0716and terminate the child rather than return
+as Ccallees. Early runtime failure at05daoverrides exit_rtn to025a(normal exit).
+Do not collapse these phases or propagate an assumed return from amsg_exit.
+Iterator/register residence,optional debug/FP hook lifetime and cleanup frames
+are still pending;the terminal service location is not their stack proof.
+
+Local receipts below ignored build/m3-t31-s4:run-low-memory-369/318,
+low-memory-summary/verify-low-memory,exit-structure and current source/image
+bindings. Two new checks about28lines plus the reused bounded driver. No product
+patch,stack reduction,emulator-setting change,ROM/runtime import or raw-data
+commit. No repeat of positive ordinary routes was needed. S4 stays active;
+next P continues the finite pre-main/fatal/exit and platform/allocator clauses,
+without resetting own-source,binary-FILE,argument or keyboard proofs.
+Scope/expected/actual[],new0,custody unchanged;historical1992/1992,local1991/1992
+nodes,4260/4261controls(raw4342/infeasible81). Three S3EXEs unchanged. Required
+node/documentation gates precede commit;no T/S closure or next S admission.
