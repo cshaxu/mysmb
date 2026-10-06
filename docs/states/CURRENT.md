@@ -4,7 +4,7 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | New: M3 T30 S1 P1;compact background inner loop. |
+| Identifier Mode | Continuation: M3 T30 S1 P2;bounded blank-span cohort,formal adoption pending. |
 | Admission And Approval | Owner closes T29 and explicitly admits queue-head performance continuation. |
 | Objective | Reduce compiled DOS background-row overhead with exact pixels/state;compare variants,cost and memory before adoption. |
 | Non-goals | No ROM game/PPU-visible semantic changes,new framebuffer,OAM deferred tuning,Windows UI changes or DOSBox settings. |
@@ -22,6 +22,13 @@
 | Similar-Issue Sweep | Cached/raw/first-last/full spans,address/palette/output indexing,far accesses,splits,aliases and guards;follow original read-only output contracts. |
 
 ## Current Technical Baseline
+
+- T30 S1 P2 contained blank-span variants:ordinary graphics-return10.5375percent
+  shorter for cursor,10.3241for offset;water/castle/dense cursor4.31/9.97/3.31shorter.
+  Both widths512cases and each DOS977235bytes match. No new heap;diagnostic
+  owned+160/+128bytes,row locals340/332versus320. Cursor selected for formal
+  fit/fallback/repeat evaluation,not adopted or playable-cadence acceptance.
+  Three2959c348products remain;S1/T30active.
 
 - T30 S1 first contained cursor prototype:both-width512-case pixel/plane tests
   and original DOS16 comparison977235bytes exact;whole graphics-return3.734percent

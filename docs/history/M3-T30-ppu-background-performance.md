@@ -44,13 +44,14 @@ and disposition;node-level original semantics stay unchanged.
    Separate cached full-tile spans from clipped edges and raw fallback;
    strength-reduce unsigned arithmetic, prepare row invariants once, reduce
    far-pointer reloads and stack traffic. Estimate 80-180 product lines.
-   Inspect original compiler output; no blind optimizer/toolchain substitution.
+   Include bounded intra-row blank-span consolidation;inspect original compiler
+   output;no blind optimizer/toolchain substitution.
 2. S2 tile metadata reuse. Shared read-only PPU owner, frame-local bounded row
    descriptors for tile/attribute/palette/base, reused across applicable source
    scanlines. Estimate 100-220 product lines and a few hundred scratch bytes;
    publish exact stack/near/far/lifetime layout before adoption. Invalidate at
-   tile-row, name-table, scroll/split and source-state boundaries. Assess merging
-   continuous blank spans, preserving every clipped and nonblank pixel.
+   tile-row, name-table, scroll/split and source-state boundaries. Intra-row blank consolidation belongs to S1;this S owns cross-scanline metadata
+   reuse, preserving every clipped and nonblank pixel.
 3. S3 neutral four-plane loop. Owner src/platform/vga/vga_frame.c, existing neutral
    video contracts and independent mapping tests. Estimate 60-160 product lines;
    reduce tiny copies/pointer reconstruction within existing band storage.
@@ -144,3 +145,42 @@ fallback/full output/low-memory constraints remain. Three2959c348products and
 ROM counters unchanged. Local reproduction:ignored native.py,Build-Compact.ps1,
 run-compact.py and compact-summary.json under S1 build containment. No protected
 trace/code/binary is committed. S1/T30remain active.
+
+
+## S1 P2 bounded blank-span cohort
+
+Coordinator refines the planned boundary:intra-row blank consolidation belongs
+to S1 compact spans;S2 retains cross-scanline metadata reuse. No ROM custody.
+Two contained variants aggregate adjacent cached zero spans and flush before
+nonzero pixels or row end. Raw fallback,source scroll/partial boundaries,left
+mask,transparent aliases and separate raw-opacity queries remain unchanged.
+No extra heap or framebuffer;only bounded row counters and the prior pointers.
+
+Both variants pass native independent512cases on each width,188743680strip and
+65536000plane bytes,guards/source immutability/invalid requests. Original DOS16
+runs each match977235bytes in ordinary and populated routes;near/far freed and
+mode3restored,installed DOSBox hash unchanged. Ordinary return-to-graphics:
+- blank cursor:10.5375percent shorter than P24base,diagnostic owned+160bytes.
+- blank offset:10.3241percent shorter,diagnostic owned+128bytes.
+Populated water/castle/dense routes respectively:
+- cursor:4.3107/9.9668/3.3099percent shorter.
+- offset:3.5798/9.7805/2.5387percent shorter.
+Ordinary patterned unused stack72,populated64 retain their fixture-local bounds;
+these are not universal stack/high-water certification. Listings from the exact
+owner use original flags/runtime:row locals340(cursor)/332(offset),baseline320.
+Row-size increments include prior invariants and temporary compiler storage.
+An initially incomplete listing command stalled;only its verified driver was
+ended and the retained successful explicit-filename/tool/runtime recipe used.
+No compiler flag or toolchain change. Protected child termination was denied;
+no unrelated process was touched or represented as a successful kill.
+
+Select cursor for formal integration evaluation:32additional diagnostic owned
+bytes over offset buys roughly0.73-0.77percentage points in populated water/dense
+routes,with unchanged heap payload. Offset remains the lower-footprint alternative.
+Do not adopt until repeat selected output/cost and actual product memory/fallback/
+stack gates pass. Original game/PPU-visible state and three products unchanged.
+No claimed DOS playability;S1/T30remain active. Next S1 P evaluates selected
+integration and refreshes three products only if adopted. Local variants,
+original listings and ordinary/populated summaries remain under ignored S1 build.
+Historical1992/1992,local1991/1992nodes,4260/4261controls(raw4342/infeasible81),
+scope/expected/actual[],new0,custody unchanged.
