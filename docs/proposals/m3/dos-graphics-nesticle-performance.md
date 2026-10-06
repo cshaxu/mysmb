@@ -471,3 +471,24 @@ PPU records unchanged;device header-only layout difference reproduced.
 Current counter166.031ms saves7.382ms,mapping54.728ms. Continue measured PPU/
 transfer work;nominal60Hz/fivefold and global/reference/hardware gates remain
 open. Local band chain200bytes is not a whole-program stack bound.
+
+## S8 prepared sprite cohort prototype
+
+P15 compares one immutable-view classification of visible OAM indices with
+the existing64-item scan repeated for every band.65view bytes before padding,
+no new image allocation;retain descending priority and all clipping/opacity
+decisions. Full-frame/row/canonical/slot consumers share one compositor.
+Estimate40-100candidate/80-160test lines. Compare current P14 output,guards,
+source/lifetime/OAM boundaries and whole-frame costs including preparation,
+especially dense sprites and full-frame clients. Reject a cohort with material
+regressions;product integration/memory/stack/routes and three EXEs remain
+required before adoption. No translated core or PPU state-writer change.
+
+[P15 selection](../../history/M3-T32-rendering-performance-continuation.md#s8-p15-select-two-byte-sprite-ranges-after-rejecting-index-lists)
+rejects index-list and staged-metadata regressions. Final two-byte view range
+omits only globally invisible prefixes/suffixes;original descending scan
+handles interior gaps. Full-frame callers avoid duplicate classification.
+Native512states per width and ten original-DOS scenes match;warm band-frame
+savings3.876..10.521ms include preparation,full-frame0.153..0.264ms.23local
+CFGs balance. No product/EXEchange;actual integrated code/loader/resident/stack,
+routes and whole-frame benefit plus three products required before adoption.

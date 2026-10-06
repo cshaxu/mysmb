@@ -4,15 +4,15 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S8 P14; coarse band execution adopted and three products verified; S8 remains active. |
+| Identifier Mode | Continuation: M3 T32 S8 P15; two-byte sprite-range candidate selected; S8 remains active. |
 | Admission And Approval | Owner-approved consecutive S5-S9 plan and automatic successor;S7 display-stage contract closed by P4;S8 sole active. |
 | Objective | Reduce current dominant rendering cost as one bounded cache/row-output chain while preserving ROM/PPU semantics and memory balance. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
 | Reference Baseline | Published S8 P14products and current phase/counter probes;original tools/2048stack/640x400/two platform components. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | Integrate shared IO band encoder/row plan,DOS planar execution and root binding;estimate180-250product/60-100test lines. Retain existing row ABI and portable execution;no new resident image allocation. At most64temporary plan bytes plus bounded locals;actual DOS listing/loader/resident and complete-stage cost required. Core/PPU source unchanged;shared IO owns geometry,DOS only segment/ISA execution. Refresh three EXEs after verification. |
+| Files And ABI Surface | Zero product lines;contained shared PPU visible OAM range and deferred metadata reads. Reject65-byte list and staged-array variants;final view adds two bytes,DOS10to12,without image allocation or staging arrays. Prepare once per immutable view;full-frame calls retain one ordinary scan. All clients share one compositor with identical descending order,clipping/opacity/priority. Actual integrated compiler/memory/stack/routes/cost and three EXEs required after adoption. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
-| Verification | Fifteen native tests each width,current DOS7079cases/20register checks,13local CFGs,current DAC and actual Windows/DOS448/384/370routes pass.132core and PPU execution records unchanged;device header-only compilation difference reproduced and frame allocations unchanged. Counter339/phase320records,zero drops,25reads per graphics submission;166.031ms current diagnostic. Three EXEs refreshed. Global stack/reference/continuous-memory/hardware gates remain open. |
+| Verification | Native512states/125829120bytes per width pass canonical/slot/full/arbitrary rows,guards,source/lifetime and every nonzero range/single endpoint/interior gap. Ten original-tool paired scenes exact;warm band+mapping saves3.876..10.521ms including preparation,full-frame raster0.153..0.264ms.23local CFGs balanced;row bound444bytes excludes external/entry/global bodies. Product source/EXEs unchanged;integrated/global gates remain open. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
 | Asset Needs | Owner-local x.xx binary and ROM plus historical athros/NESticle0.2 source as conceptual reference only; copyright-only leaked tree grants no redistribution permission. Purpose frame/cache/transfer architecture comparison; raw source/probes only below ignored build, no copying/transliteration into product, exact-version claims require binary evidence. |
 | Reporting Requirements | Candidate and measured whole-step cost, rejected variants, actual code/memory delta, source/products and total/local node counts. |
@@ -25,6 +25,15 @@
 
 
 ## Current Technical Baseline
+
+- S8 P15 selects two-byte visible sprite ranges after rejecting list/staging
+  regressions. Native512states/125829120bytes per width and ten original-DOS
+  scenes match;source/guards/lifetime/nonzero endpoints/gaps/uncached covered.
+  All paired warm band+mapping scenes improve3.876..10.521ms/frame,including
+  range preparation;full-frame0.153..0.264ms. DOSview10to12,23balanced local
+  CFGs,row own bound444excludes external bodies. Product/EXEs unchanged;
+  adoption,actual footprint/frame benefit and global qualification pending.
+  [Selection and rejected variants](../history/M3-T32-rendering-performance-continuation.md#s8-p15-select-two-byte-sprite-ranges-after-rejecting-index-lists).
 
 - S8 P14 adopts shared IO band plans and DOS bulk execution,+215/-4product
   lines,no new resident buffer. Fifteen native tests each width/current DOS

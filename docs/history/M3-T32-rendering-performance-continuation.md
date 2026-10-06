@@ -2196,6 +2196,64 @@ physical486qualification remain unproved. Scope/expected/actual[],new0;
 historical1992/1992,local1991/1992nodes and4260/4261feasible controls
 (raw4342,infeasible81). Full M2 certificate remains incomplete.
 
+## S8 P15 select two-byte sprite ranges after rejecting index lists
+
+Contained shared PPU cohort first prepares65-byte index lists for an immutable
+view. It preserves pixels,but original-DOS dense band frames regress about
+4.1ms. Second variant stages OAM/list/palette arrays near the stack,336extra
+array bytes plus scalars;dense-priority band/full-frame still regresses about
+3.2/1.25ms. Reject both;neither is product code or an optional runtime path.
+First native canonical prepared rows retained fallback iteration;this was
+corrected before later native receipts and is not claimed as list-path proof.
+
+Final candidate records only the first/one-past-last globally visible OAM
+indices. Raw Y>=239 cannot draw because the unchanged compositor uses Y+1
+and clips at240. Invisible prefixes/suffixes are omitted;interior gaps retain
+the ordinary descending scan and every original row/X/left-mask/opacity/
+priority decision. X/attribute reads move after row rejection. Full-frame
+builders use the ordinary0..64range without redundant classification;
+prepared row views classify once. All use the same compositor,no host fork.
+No staging/image allocation. DOSview10to12bytes;final integrated footprint
+and caller ABI/stack/source binding still need verification before adoption.
+
+Final native512states/125829120bytes per width compare canonical and slot
+full frames and arbitrary1..16row segments with current P14 source. Cases
+include null/short CHR,decoded/background-cache fallbacks,wide palette bytes,
+scroll/masks/flips/priority,Y238/239,all64nonzero starting ranges,single
+endpoints and interior holes. Guards/source immutability and end/null-begin
+lifetime pass. Final original-DOS object compares ten scenes byte-for-byte
+with renamed current P14 PPU exports and unchanged P14 decoder/planar objects.
+Each paired time includes begin/preparation once per full frame and three
+frames;warm cache state is explicit,not a cold-refresh or whole-game proof.
+
+| Scene | Warm band raster+mapping saving per frame | Full-frame raster saving |
+| --- | ---: | ---: |
+| Uniform tiles | 10.446ms | 0.154ms |
+| Mixed/fine scroll/split | 10.521ms | 0.153ms |
+| Dense behind-background sprites | 3.876ms | 0.264ms |
+| Blank background | 10.445ms | 0.164ms |
+| Sparse background | 10.476ms | 0.156ms |
+| Dense foreground sprites | 3.921ms | 0.222ms |
+| Eight foreground sprites | 9.579ms | 0.214ms |
+| No background cache | 10.449ms | 0.167ms |
+| Nonzero starting range | 7.119ms | 0.225ms |
+| Visible endpoints/interior gaps | 3.918ms | 0.168ms |
+
+Final bounded private-desktop probe exits normally in31.93seconds,installed
+settings unchanged. All compared scenes improve;single-frame classification
+is avoided because it has no reuse benefit. Twenty-three local CFGs balance;
+owned begin/row/full-slot chains106/444/442bytes exclude incoming entry/
+arguments,host expander bodies and global root/CRT/IRQ/firmware. This does
+not close global stack or actual product memory/playability requirements.
+
+Select final range/deferred-read candidate for integration under S8. P14
+source/three EXE hashes remain current;no artifact refresh for prototype-only
+work. Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and
+4260/4261feasible controls(raw4342,infeasible81). S8/goal stay active;whole
+product gain,nominal60Hz/fivefold/reference/global memory-stack/hardware
+qualification remain unproved. Integration must bind the current compiler,
+measure actual footprint/routes/frame costs and publish all three products.
+
 ## S8 P14 integrate coarse band execution and publish three products
 
 Shared IO owns the exact bounded row plan and both public row/band encoder
