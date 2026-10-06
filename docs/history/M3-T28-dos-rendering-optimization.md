@@ -1,5 +1,13 @@
 # M3 T28: DOS rendering optimization without ROM logic changes
 
+## Current disposition
+
+Closed by explicit owner-directed remaining-work transfer at S6 P24.
+S1-S5 and adopted S6 implementations retain their scoped evidence. S6 and T28
+are administratively closed; configured DOS playability, complete memory/stack
+proof and M4 qualification are not passed. No product code or EXE changes in
+this closure. The finite receivers and evidence limits are recorded below.
+
 ## Owner request and queue position
 
 Place the six discussed optimization opportunities second in the queue,after
@@ -2772,3 +2780,54 @@ substituted for the measured graphics priority. CRT/error/interrupt/peak evidenc
 and configured cadence/input remain explicit gaps.
 Historical1992/1992,local1991/1992nodes,4260/4261feasible controls(raw4342,
 infeasible81),scope/expected/actual[],new0,custody unchanged. S6/T28remain open.
+
+
+## S6 P24 owner-directed closure and remaining-work transfer
+
+Owner requests the PPU static-analysis plan at queue head and closes current
+T28. Coordinator accepts the following pending proposal receivers; they remain
+unnumbered until admission. This explicit closure disposition supersedes the
+historical S6-open checkpoints and does not waive failed required acceptance.
+
+P24 contained variants compare977235bytes of frames, VGA planes, text/cells
+and save data per matched DOS route. Native x86/x64 independent512-case tests
+compare188743680strip bytes and65536000plane bytes with guards, immutable source
+and invalid-request rejection. Offset-only candidate shortens the ordinary
+return-to-graphics route3.524percent; water/castle/dense populated routes about
+3.275/3.066/3.146percent, diagnostic owned+32bytes. Pointer-array/zero8/palette
+pairs are weaker and not selected. None is adopted product source.
+A separate measurement-only layer split records background about91.762percent
+of PPU cost in loaded graphics; instrumentation adds about1.063percent to that
+route and includes no diagnostic dump work. These scoped routes are not general
+FPS, exhaustive ROM acceptance or a physical486SX speed claim.
+
+Static compiled findings: retained original compiler listing emits DIV plus
+four shifts for (pattern/16)*16, repeated far-pointer loads for cached bytes,
+and scalar pixel expressions repeatedly calculate addresses and spill locals.
+Background metadata is re-resolved per scanline; empty tiles issue tiny far
+memset calls. Neutral conversion issues tiny copies/scalar plane stores.
+Already implemented CHR caching/tile-row composition/direct A000 writes are
+not new opportunities. Static findings require current compiled/whole-cost
+verification before adoption, not an assumed multi-fold speed gain.
+
+| Remaining clause | Accepted pending receiver | Closure condition |
+| --- | --- | --- |
+| Background/plane CPU hotspots and P24 candidate | [Queue-head graphics proposal](../proposals/m3/ppu-background-inner-loop-optimization.md), slots1-4 | independent full output/state equality, current DOS compiled-loop and whole-cost/memory evidence; three products for changed code |
+| CRT/file/error draft and private runtime joins | [Remaining acceptance](../proposals/m3/dos-memory-cadence-remaining-acceptance.md), slot1 | full callback/error/lifetime comparison and footprint, or explicit rejection with retained provider |
+| Continuous peak, contiguous fit, indirect/CRT/interrupt stack | remaining acceptance slot2 | source-bound joins, bounded actual peak/error routes and justified stack/fit contract |
+| Text cost and configured mixed-mode cadence/input | remaining acceptance slots3-4; graphics slot4 reports its own deficit | actual product cost/input plus output/memory proof; failed required gate cannot be called passed |
+| Extra boundary-row/OAM/cached-sprite raw-read tuning | existing TODO optional rowwise item | separate admission; no silent activation |
+| Physical486SX and DOS-version qualification | M4 roadmap | real target qualification, not DOSBox substitution |
+
+P22 three products remain305163/320651/329323bytes with retained hashes.
+No rebuild is required for documentation/prototype-only closure. Configured
+DOS graphics/text median879.420/849.317ms from P23 remains a failed cadence
+receipt. Existing loader-bound and scoped low-memory lifecycle proof remains
+accepted within its fixtures; full peak/all-path stack proof remains pending.
+
+ROM scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and
+4260/4261feasible controls(raw4342/infeasible81). No node custodians change and
+no final M2 certificate credit. Evidence/prototypes remain ignored below build;
+no ROM, derived source, screenshots or new probe binary is committed.
+Documentation/ledger/admission checks and reviewed diff are the closure gates.
+CURRENT becomes idle; queue-head admission requires a separate execution step.

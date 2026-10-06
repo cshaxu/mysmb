@@ -7,6 +7,11 @@ a task ledger, or a record of completed work. Active work is recorded only in
 [CURRENT.md](CURRENT.md); closed tasks remain in their proposal/history record
 and in the generated [node/task ledger](NODE_TASK_LEDGER.md).
 
+## DOS graphics optimization and remaining acceptance
+
+1. [Shared PPU background and DOS plane-loop optimization](../proposals/m3/ppu-background-inner-loop-optimization.md) - owner-requested queue head; compact compiled loops, bounded tile metadata reuse, blank spans and neutral conversion, with pixel/state equality and whole-route memory/performance review. Unnumbered, not admitted.
+2. [Remaining DOS memory and cadence acceptance](../proposals/m3/dos-memory-cadence-remaining-acceptance.md) - receives unfinished CRT/file/error, stack/continuous peak, text and integrated cadence/input obligations after graphics work. Unnumbered, not admitted; current DOS playability is unaccepted.
+
 ## Text object and state visual audit
 
 1. [All text shapes/colors and complete state gallery](../proposals/m3/text-object-state-visual-audit.md) - owner-requested visual-audit candidate after DOS16 playability;enumerate every current character/object/state,color and scene variant,publish labeled text-mode galleries for visual review,then record and repair owner-approved designs by bounded cohorts. Unnumbered,not admitted;active work is recorded only in CURRENT.
