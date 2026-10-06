@@ -11,6 +11,7 @@ static int initialize(struct mysmb_dos16_root *root,
     mysmb_u8 __far *pixels;
 #endif
     mysmb_ppu_frame_workspace_bind(&root->ppu_workspace,0);
+    mysmb_ppu_frame_end(&root->ppu_view);
     root->ppu_cache_attempted=0U;root->ppu_cache_near=0U;
     root->initialized=0U;
     root->present_rows=0;root->video_storage_bytes=storage_bytes;
@@ -50,9 +51,8 @@ static int read_rows(void *context,mysmb_io_u16 first,mysmb_io_u16 rows,
     struct mysmb_io_video_band *band)
 {
     struct mysmb_dos16_root *root=(struct mysmb_dos16_root *)context;
-    if(band==0 || !mysmb_ppu_frame_build_rows_cached(&root->game.ppu,
-        root->ppu_frame.pixels,root->video_storage_bytes,first,rows,
-        &root->ppu_workspace))return 0;
+    if(band==0 || !mysmb_ppu_frame_rows(&root->ppu_view,
+        root->ppu_frame.pixels,root->video_storage_bytes,first,rows))return 0;
     band->pixels=root->ppu_frame.pixels;band->first=first;band->rows=rows;
     return 1;
 }
@@ -102,14 +102,19 @@ static void present_current(struct mysmb_dos16_root *root)
         decoded=near_cache?(mysmb_u8 __far *)near_cache:
             (mysmb_u8 __far *)_fmalloc(MYSMB_PPU_CHR_DECODED_BYTES);
         mysmb_ppu_frame_workspace_bind(&root->ppu_workspace,decoded);
+        mysmb_ppu_frame_background_bind(&root->ppu_workspace,
+            (mysmb_u8 __far *)_fmalloc(MYSMB_PPU_BACKGROUND_BYTES),
+            MYSMB_PPU_BACKGROUND_BYTES);
     }
 #endif
     if(root->present_rows) {
+        mysmb_ppu_frame_begin(&root->game.ppu,&root->ppu_workspace,&root->ppu_view);
         source.context=root;source.read_rows=read_rows;
         if(!root->present_rows(root->hooks.context,&source)) {
             failure.buttons=0U;failure.buttons2=0U;failure.requests=MYSMB_IO_REQUEST_EXIT;
             mysmb_io_control_input(&root->control,&failure);
         }
+        mysmb_ppu_frame_end(&root->ppu_view);
         return;
     }
     mysmb_ppu_frame_build_cached(&root->game.ppu,&root->ppu_frame,&root->ppu_workspace);
@@ -168,6 +173,8 @@ void mysmb_dos16_root_shutdown(struct mysmb_dos16_root *root)
 {
     if (root->initialized==0U) return;
 #ifdef MYSMB_DOS16_TARGET
+    mysmb_ppu_frame_end(&root->ppu_view);
+    if(root->ppu_workspace.bg)_ffree(root->ppu_workspace.bg);
     if(root->ppu_workspace.decoded) {
         if(root->ppu_cache_near)_nfree((mysmb_u8 __near *)root->ppu_workspace.decoded);
         else _ffree(root->ppu_workspace.decoded);

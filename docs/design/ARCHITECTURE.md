@@ -15,6 +15,16 @@ RAM OAM and commits visible bytes at the existing call point;observation commit
 follows as before. The independent ppu/frame compositor now borrows const PPU state and has no
 game-container dependency. The read-only compositor is separate from CPU decisions and host devices.
 
+The shared compositor can borrow63488bytes for two packed background
+palette-slot surfaces and their2048-byte nametable snapshot. It alone owns
+tile/attribute/resource invalidation and raw opacity;current palette and
+scroll are applied when output is composed. Roots only allocate/bind storage.
+DOS attempts this optional far allocation after mandatory initialization;
+failure retains the original renderer. A synchronous begin/end view prepares
+once for all row callbacks while source/workspace remain immutable. Full-frame
+and standalone row calls still prepare independently. Cache state is derived,
+not serialized or shared with original game writers.
+
 ## Product And Host Boundary
 
 The shared `io/` contract layer has no dependency on `core/`, `ppu/`, `text/`, `validate/` or `platform/`.

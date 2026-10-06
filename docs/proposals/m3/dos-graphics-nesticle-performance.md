@@ -278,3 +278,15 @@ Next local budget may compare122880master-color bytes plus15360raw opacity,
 universal-color invalidation, and separately bounded far blocks. Test actual
 DOS startup/resident/fallback and cold/steady/transition costs before adoption;
 retain compact/smaller tiers in the tradeoff. No source timing/state changes.
+
+## Approved compact adoption
+
+Owner approves the63488-byte compact tier and its measured warm PPU benefit.
+[S6 P3](../../history/M3-T32-rendering-performance-continuation.md#s6-p3-owner-approved-compact-cache-adoption)
+integrates it in shared PPU with optional DOS allocation and uncached fallback,
+plus explicit synchronous prepared views. Product startup/input/restore/Tab/
+save/exit, actual conventional-memory observations and three builds are its
+acceptance scope. The140304-byte byte-surface comparison remains unadopted.
+Neither the compact benchmark nor these routes establish fivefold whole-game
+speed, global stack bounds or physical486qualification;those named gates
+remain with S8/S9. S7 retains segment-efficient VGA packing/transfer scope.

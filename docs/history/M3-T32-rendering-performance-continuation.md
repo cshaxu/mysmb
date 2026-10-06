@@ -1404,3 +1404,67 @@ compare smaller tiers as well. Original game/2048stack/640x400stay unchanged.
 Recipes/logs remain below build/m3-t32-s6/slot;no imported implementation.
 Scope/expected/actual[],new0,historical1992/1992,local1991/1992nodes,
 4260/4261feasible controls(raw4342,infeasible81).
+
+## S6 P3 owner-approved compact-cache adoption
+
+Owner explicitly accepts the63488-byte compact cache and measured warm PPU
+benefit. Shared PPU owns packed palette slots, source snapshot/invalidation
+and raw opacity. DOS/Windows roots only allocate/bind;the DOS prepared view
+ends after the synchronous25-band presentation, including failure. Mandatory
+root/text/snapshot/device initialization precedes optional allocation. Matching
+far free runs at shutdown;failure falls back without changing game state.
+Windows uses static cache storage. No core/writer/tick/device-mapper change.
+
+Production change shared PPU+190/-11, DOS composition+11/-3, Windows+3;
+tests+57/-4. Review scope includes tile and attribute updates, all fine scroll
+values/nametable crossing, sprite priority/flips/clipping, universal palette
+aliases, arbitrary palette bytes, pattern bank/CHR bounds/null/short resources,
+restore/state changes, cache allocation failure and ended-view lifetime.
+All production call sites bind through roots or the standalone legacy APIs;
+there is no host-owned invalidation or serialized cache. No scope transfer or
+ROM-node promotion. The scroll255prototype correction remains covered.
+
+Native15tests per width pass, including independent512-state row comparisons
+(188743680strip/65536000plane bytes per width),256zero-alias cases and cache
+mutation/count/guard/fallback checks. Final rows add null-workspace prepared
+fallback and null-state rejection. Actual Windows startup, three owned-console
+Tab/input routes and Escape pass on private desktops. Strip preserves PE
+runtime sections;subsystem and machine types are verified.
+
+Original/AL/Gs product build passes,192segments/max32768bytes;DGROUP49168,
+stack2048. DOS EXE304485bytes(+3936);logical loader328624..344976,
+page-rounded328768..345120. These bounds exclude dynamic heap. Actual product
+DOSBox routes use unchanged installed configuration and private desktops:
+448KiB available passes with observed owned449904bytes;384KiB passes with
+386384bytes and cache allocation fallback;370KiB returns clean init failure.
+Cache adds63520arena bytes (63488payload+32management) in the same product.
+The fallback floor is not unchanged:compiled code/root/heap layout growth
+also costs memory. Prior377856observed peak is not a universal bound. Both
+successful routes restore, exercise D/J, switch text/graphics,save and exit;
+three640x400captures and valid changed10035-byte snapshots are retained locally.
+Arena observers avoid stale CRT offsets;STACKMETA zeros are not stack proof.
+Their samples show no bad chains/drops, not continuous/kernel maxima.
+
+Products refreshed in the three existing owner-authorized slots:
+
+| Product | Bytes | SHA-256 |
+| --- | ---: | --- |
+| DOS16 | 304485 | bfddd77d941d5932cbb329e37b22bcab81563d988e28c13dd279f044a41bc2fe |
+| Win32 | 314894 | 4e51f68b48a38c5182b5305832a8b28a1f22f0edb993d85c737ac601b4fe8652 |
+| Win64 | 328206 | 523f0159df62ad97c3a81f39260388e71dab25fde284df376fdabb0609a5864a |
+
+Warm compact PPU1.478..1.643times is the retained controlled prototype result,
+not actual full-game FPS. Cold1920-tile1.986second diagnostic remains a material
+cost;transition/cadence/global stack/continuous memory and physical486 checks
+are unproved. An optional extra listing probe stalled and was stopped;it is
+excluded as evidence. The complete original-toolchain product build passed.
+The140304-byte byte-surface comparison passes native/DOS pixel checks and
+shows warm synthetic ratios11.002/11.103/3.060;it is NOT adopted or a product
+speed claim. No new third-party implementation enters the repository.
+
+S6/T32/goal remain active;system-level acceptance has not been declared.
+S7's144000segment-load VGA mapping issue remains the next architectural lead.
+Recipes/logs/output identities are in ignored build/m3-t32-s6/p3.
+Scope/expected/actual[],new0,historical1992/1992,local1991/1992nodes,
+4260/4261feasible controls(raw4342,infeasible81);fixed M2 certificate remains
+6/136groups and42/952facets with four final packages pending.

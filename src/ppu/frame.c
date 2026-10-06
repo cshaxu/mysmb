@@ -11,7 +11,7 @@ void mysmb_ppu_frame_workspace_bind(struct mysmb_ppu_frame_workspace *workspace,
     mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded)
 {
     workspace->decoded=decoded;workspace->chr=0;
-    workspace->chr_size=0U;workspace->valid=0U;
+    workspace->chr_size=0U;workspace->valid=0U;workspace->bg=0;workspace->bg_valid=0U;
 }
 static void mysmb_ppu_prepare_chr(const struct mysmb_ppu_state *state,
     struct mysmb_ppu_frame_workspace *workspace)
@@ -100,6 +100,141 @@ static void mysmb_ppu_background_opaque(const struct mysmb_ppu_state *state,
                         (((high >> (7U - (source_x & 7U))) & 1U) << 1U));
     }
     *opaque = color == 0U ? 0U : 1U;
+}
+
+/* Persistent palette slots retain raw opacity independently of display color.
+ * Snapshot all attribute bytes only after their dependent tiles are updated. */
+void mysmb_ppu_frame_background_bind(struct mysmb_ppu_frame_workspace *w,
+    mysmb_io_u8 MYSMB_PPU_FRAME_FAR *storage,mysmb_io_u16 capacity)
+{
+    if(!w)return;
+    w->bg=capacity>=MYSMB_PPU_BACKGROUND_BYTES?storage:0;w->bg_valid=0U;
+    w->bg_chr=0;w->bg_size=0U;w->bg_pattern=0U;w->bg_tiles=0UL;
+}
+static void mysmb_ppu_slot_prepare(const struct mysmb_ppu_state *s,
+    struct mysmb_ppu_frame_workspace *w)
+{
+    mysmb_io_u16 t,ty,tx,a,ai,base,fy,p,dest,i,decoded_offset;
+    mysmb_io_u8 tile,attr,pal,lo,hi,c0,c1;
+    mysmb_io_u8 MYSMB_PPU_FRAME_FAR *old,*image;
+    int all;
+    if(!w || !w->bg)return;
+    all=!w->bg_valid || w->bg_chr!=s->chr_data || w->bg_size!=s->chr_data_size ||
+        w->bg_pattern!=(s->visible_ppu_control_0&16U);
+    if(!all && memcmp(w->bg,s->name_table,2048U)==0)return;
+    base=(s->visible_ppu_control_0&16U)?4096U:0U;
+    old=w->bg;image=w->bg+2048U;
+    for(t=0U;t<2U;++t)for(ty=0U;ty<30U;++ty)for(tx=0U;tx<32U;++tx) {
+        a=(mysmb_io_u16)(ty*32U+tx);
+        ai=(mysmb_io_u16)(960U+(ty>>2U)*8U+(tx>>2U));
+        tile=s->name_table[t][a];attr=s->name_table[t][ai];
+        if(!all && old[t*1024U+a]==tile && old[t*1024U+ai]==attr)continue;
+        ++w->bg_tiles;
+        pal=(mysmb_io_u8)(((attr>>(((ty&2U)<<1U)+(tx&2U)))&3U)*4U);
+        for(fy=0U;fy<8U;++fy) {
+            p=(mysmb_io_u16)(base+tile*16U+fy);
+            dest=(mysmb_io_u16)(t*30720U+(ty*8U+fy)*128U+tx*4U);
+            if(w->decoded) {
+                decoded_offset=(mysmb_io_u16)(base+tile*16U+fy*2U);
+                lo=w->decoded[decoded_offset];hi=w->decoded[decoded_offset+1U];
+            } else {
+                lo=mysmb_ppu_pattern(s,p);hi=mysmb_ppu_pattern(s,(mysmb_io_u16)(p+8U));
+            }
+            for(i=0U;i<4U;++i) {
+                if(w->decoded) {
+                    c0=(mysmb_io_u8)(((i<2U?lo:hi)>>((i&1U)*4U))&3U);
+                    c1=(mysmb_io_u8)(((i<2U?lo:hi)>>((i&1U)*4U+2U))&3U);
+                } else {
+                    c0=(mysmb_io_u8)(((lo>>(7U-i*2U))&1U)|(((hi>>(7U-i*2U))&1U)<<1U));
+                    c1=(mysmb_io_u8)(((lo>>(6U-i*2U))&1U)|(((hi>>(6U-i*2U))&1U)<<1U));
+                }
+                if(c0)c0=(mysmb_io_u8)(c0+pal);
+                if(c1)c1=(mysmb_io_u8)(c1+pal);
+                image[dest+i]=(mysmb_io_u8)(c0|(c1<<4U));
+            }
+        }
+    }
+    memcpy(old,s->name_table,2048U);
+    w->bg_valid=1U;w->bg_chr=s->chr_data;w->bg_size=s->chr_data_size;
+    w->bg_pattern=(mysmb_io_u8)(s->visible_ppu_control_0&16U);
+}
+static mysmb_io_u8 mysmb_ppu_slot_at(
+    const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *bg,mysmb_io_u16 x,mysmb_io_u16 y,
+    mysmb_io_u8 scroll_x,mysmb_io_u8 scroll_y,mysmb_io_u8 name)
+{
+    mysmb_io_u16 sx,sy,t,p;
+    mysmb_io_u8 pair;
+    sx=(mysmb_io_u16)(x+scroll_x);sy=(mysmb_io_u16)((y+scroll_y)%480U);
+    t=(mysmb_io_u16)((name^(sx>>8U))&1U);
+    p=(mysmb_io_u16)(2048U+t*30720U+(sy%240U)*128U+((sx&255U)>>1U));
+    pair=bg[p];return (mysmb_io_u8)((pair>>((sx&1U)*4U))&15U);
+}
+static void mysmb_ppu_slot_row(const struct mysmb_ppu_state *s,
+    const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *bg,mysmb_io_u16 y,
+    mysmb_io_u8 sx,mysmb_io_u8 sy,mysmb_io_u8 nt,
+    mysmb_io_u8 MYSMB_PPU_FRAME_FAR *out,
+    const mysmb_io_u8 MYSMB_PPU_LOCAL_NEAR *colors)
+{
+    mysmb_io_u8 pixels[256],v0,v1,v2,v3;
+    mysmb_io_u16 x=0U,source_x=sx,source_y,t,stop,count,blank=0U,blank_start=0U;
+    const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *in;
+    mysmb_io_u8 MYSMB_PPU_LOCAL_NEAR *target;
+    source_y=(mysmb_io_u16)(((y+sy)%480U)%240U);
+    while(x<256U) {
+        t=(mysmb_io_u16)((nt^(source_x>>8U))&1U);
+        in=bg+2048U+t*30720U+source_y*128U+((source_x&255U)>>1U);
+        if(source_x&1U) {
+            if(blank){memset(pixels+blank_start,colors[0],blank);blank=0U;}
+            pixels[x++]=colors[*in>>4U];++source_x;++in;
+            if((source_x&255U)==0U)continue;
+        }
+        count=(mysmb_io_u16)(256U-(source_x&255U));
+        if(count>256U-x)count=(mysmb_io_u16)(256U-x);
+        stop=(mysmb_io_u16)(x+count);
+        while(x+8U<=stop) {
+            v0=in[0];v1=in[1];v2=in[2];v3=in[3];in+=4U;
+            if((v0|v1|v2|v3)==0U) {
+                if(!blank)blank_start=x;blank=(mysmb_io_u16)(blank+8U);
+            } else {
+                if(blank){memset(pixels+blank_start,colors[0],blank);blank=0U;}
+                target=pixels+x;
+                target[0]=colors[v0&15U];target[1]=colors[v0>>4U];
+                target[2]=colors[v1&15U];target[3]=colors[v1>>4U];
+                target[4]=colors[v2&15U];target[5]=colors[v2>>4U];
+                target[6]=colors[v3&15U];target[7]=colors[v3>>4U];
+            }
+            x+=8U;source_x+=8U;
+        }
+        while(x+2U<=stop) {
+            v0=*in++;
+            if(!v0){if(!blank)blank_start=x;blank+=2U;}
+            else {
+                if(blank){memset(pixels+blank_start,colors[0],blank);blank=0U;}
+                pixels[x]=colors[v0&15U];pixels[x+1U]=colors[v0>>4U];
+            }
+            x+=2U;source_x+=2U;
+        }
+        if(x<stop) {
+            if(blank){memset(pixels+blank_start,colors[0],blank);blank=0U;}
+            pixels[x++]=colors[*in&15U];++source_x;
+        }
+    }
+    if(blank)memset(pixels+blank_start,colors[0],blank);
+    if(!(s->visible_ppu_mask&2U))memset(pixels,colors[0],8U);
+    memcpy(out,pixels,256U);
+}
+void mysmb_ppu_frame_begin(const struct mysmb_ppu_state *s,
+    struct mysmb_ppu_frame_workspace *w,struct mysmb_ppu_frame_view *v)
+{
+    if(!v)return;
+    v->active=0U;v->state=0;v->workspace=0;
+    if(!s)return;
+    mysmb_ppu_prepare_chr(s,w);mysmb_ppu_slot_prepare(s,w);
+    v->state=s;v->workspace=w;v->active=1U;
+}
+void mysmb_ppu_frame_end(struct mysmb_ppu_frame_view *v)
+{
+    if(v){v->active=0U;v->state=0;v->workspace=0;}
 }
 
 /* Decode once per visible tile row,not once per pixel. The partial first and
@@ -204,7 +339,8 @@ static void mysmb_ppu_background_row(const struct mysmb_ppu_state *state,
 
 static void mysmb_ppu_frame_build_internal(const struct mysmb_ppu_state *state,
     mysmb_io_u8 MYSMB_PPU_FRAME_FAR *pixels,mysmb_io_u16 first,mysmb_io_u16 rows,
-    const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded_chr)
+    const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded_chr,
+    const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *bg)
 {
     mysmb_io_u8 colors[16];
     mysmb_io_u16 x;
@@ -236,7 +372,11 @@ static void mysmb_ppu_frame_build_internal(const struct mysmb_ppu_state *state,
     for (y = first; y < first+rows; ++y) {
         scroll_x = y < fixed_top_height ? 0U : state->visible_scroll_x;
         scroll_y = y < fixed_top_height ? 0U : state->visible_scroll_y;
-        if((state->visible_ppu_mask&8U)!=0U)
+        if(bg && (state->visible_ppu_mask&8U)!=0U)
+            mysmb_ppu_slot_row(state,bg,y,scroll_x,scroll_y,
+                y<fixed_top_height?0U:state->visible_ppu_name_table,
+                pixels+(y-first)*256U,colors);
+        else if((state->visible_ppu_mask&8U)!=0U)
             mysmb_ppu_background_row(state,y,scroll_x,scroll_y,
                 y<fixed_top_height?0U:state->visible_ppu_name_table,
                 pixels+(y-first)*MYSMB_PPU_FRAME_WIDTH,decoded_chr,colors);
@@ -276,9 +416,10 @@ static void mysmb_ppu_frame_build_internal(const struct mysmb_ppu_state *state,
                     (x >= 8U || (state->visible_ppu_mask & 0x02U) != 0U)) {
                     scroll_x = y < fixed_top_height ? 0U : state->visible_scroll_x;
                     scroll_y = y < fixed_top_height ? 0U : state->visible_scroll_y;
-                    mysmb_ppu_background_opaque(state, x, y, scroll_x, scroll_y,
-                        y < fixed_top_height ? 0U : state->visible_ppu_name_table,
-                        &opaque,decoded_chr);
+                    if(bg)opaque=(mysmb_io_u8)((mysmb_ppu_slot_at(bg,x,y,scroll_x,scroll_y,
+                        y<fixed_top_height?0U:state->visible_ppu_name_table)&3U)!=0U);
+                    else mysmb_ppu_background_opaque(state,x,y,scroll_x,scroll_y,
+                        y<fixed_top_height?0U:state->visible_ppu_name_table,&opaque,decoded_chr);
                     if (opaque != 0U) continue;
                 }
                 pixels[(y-first) * MYSMB_PPU_FRAME_WIDTH + x] = state->palette[
@@ -292,13 +433,13 @@ static void mysmb_ppu_frame_build_internal(const struct mysmb_ppu_state *state,
 void mysmb_ppu_frame_build(const struct mysmb_ppu_state *state,
     struct mysmb_ppu_frame *frame)
 {
-    mysmb_ppu_frame_build_internal(state,frame->pixels,0U,240U,0);
+    mysmb_ppu_frame_build_internal(state,frame->pixels,0U,240U,0,0);
 }
 void mysmb_ppu_frame_build_cached(const struct mysmb_ppu_state *state,
     struct mysmb_ppu_frame *frame,struct mysmb_ppu_frame_workspace *workspace)
 {
-    mysmb_ppu_prepare_chr(state,workspace);
-    mysmb_ppu_frame_build_internal(state,frame->pixels,0U,240U,workspace?workspace->decoded:0);
+    mysmb_ppu_prepare_chr(state,workspace);mysmb_ppu_slot_prepare(state,workspace);
+    mysmb_ppu_frame_build_internal(state,frame->pixels,0U,240U,workspace?workspace->decoded:0,workspace?workspace->bg:0);
 }
 
 int mysmb_ppu_frame_build_rows_cached(const struct mysmb_ppu_state *state,
@@ -308,8 +449,18 @@ int mysmb_ppu_frame_build_rows_cached(const struct mysmb_ppu_state *state,
     if(state==0 || pixels==0 || first>=240U || rows>240U-first ||
         rows>capacity/MYSMB_PPU_FRAME_WIDTH)return 0;
     if(rows==0U)return 1;
-    mysmb_ppu_prepare_chr(state,workspace);
+    mysmb_ppu_prepare_chr(state,workspace);mysmb_ppu_slot_prepare(state,workspace);
     mysmb_ppu_frame_build_internal(state,pixels,first,rows,
-        workspace?workspace->decoded:0);
+        workspace?workspace->decoded:0,workspace?workspace->bg:0);
+    return 1;
+}
+
+int mysmb_ppu_frame_rows(const struct mysmb_ppu_frame_view *v,
+    mysmb_io_u8 MYSMB_PPU_FRAME_FAR *pixels,mysmb_io_u16 capacity,
+    mysmb_io_u16 first,mysmb_io_u16 rows)
+{
+    if(!v || !v->active || !v->state || !pixels || first>=240U || rows>240U-first || rows>capacity/256U)return 0;
+    if(rows)mysmb_ppu_frame_build_internal(v->state,pixels,first,rows,
+        v->workspace?v->workspace->decoded:0,v->workspace?v->workspace->bg:0);
     return 1;
 }
