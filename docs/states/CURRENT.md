@@ -96,6 +96,11 @@ explicitly in TODO rather than asserted complete.
   and free-without-DOS-release require retained-segment/reuse accounting,not
   payload-only claims. No product change;all four fixed gates remain open.
   [Boundaries](../history/M3-T34-native-vga-performance-proposal.md#s3-p11-combined-runtime-and-allocator-boundaries).
+- T34 S3 P12runs two original-tool/CRT DOS heap/file reuse cohorts,1000loops
+  each,zero failures. MCB samples stay249264/249376bytes respectively,including
+  after-free retention. These are harness observations,not product memory
+  figures or a global bound. No setting/product change;four gates stay open.
+  [Reuse](../history/M3-T34-native-vga-performance-proposal.md#s3-p12-repeated-buffer-and-file-reuse-probe).
 
 - T33 S2 P12delivers default80x25on all three products;50-row code/art and
   interfaces remain. Shared semantic compact art/palette/layout owns output;

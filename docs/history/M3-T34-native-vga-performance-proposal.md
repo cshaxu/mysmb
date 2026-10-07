@@ -809,3 +809,43 @@ hashes are unchanged. Raw machine data/tools stay ignored below build;only
 neutral conclusions are tracked. Scope/expected/actual[],new0;historical
 1992/1992,local1991/1992nodes and4260/4261feasible controls(raw4342,infeasible81)
 unchanged. All four fixed gate families remain open;S3/T34remain active.
+
+### S3 P12 Repeated Buffer And File Reuse Probe
+
+Verification-only. Build a contained DOS harness with the original /AL /Gs
+compiler,2048-byte stack,existing empty startup hooks and the same historical
+CRT library hash as P3. It holds five far allocations of15532,20084,8192,
+63488and61440bytes,then repeats1000times:allocate/free512bytes,open a binary
+file,write513bytes and close. A second cohort first opens/writes/closes a
+file before allocating those five persistent blocks. No protected game data
+or game routines are needed. This is an allocator/stdio probe,not a product
+substitute or real486SX performance measurement.
+
+At each sample the harness walks the DOS MCB chain and sums current-PSP-owned
+paragraphs including MCB overhead. The packed MCB layout is checked at compile
+time in the second build. Both cohorts report1000completed iterations and
+zero allocation/file/stability failures. In the fixed-first cohort,baseline,
+first/last iteration,observed peak and after-free samples all equal249264bytes.
+In the file-first cohort they all equal249376bytes. These absolute figures
+include the smaller harness image and its different DGROUP/heap layout;they
+must not be quoted as MySMB memory usage. Product near-first decoded-cache
+fallback and low-memory failure branches are not exercised by these cohorts.
+
+The unchanged observations support reuse of the temporary buffer after the
+fixed allocations;the post-free samples corroborate retained DOS blocks.
+The static allocator review explains why:it tests/coalesces free block tags
+and searches existing segment chains before expansion. A reusable sufficiently
+large far block can satisfy the next equal-sized request without a new DOS
+allocation. This scoped invariant does not establish all startup placement,
+near-fallback,fragmentation or global segment-capacity bounds. No global
+memory gate is closed from two finite successful cohorts.
+
+Cold probe SHA5e034897dd0f91f00b0b1c636370248d3df57eba416fc4a4c5122c89343d6e7e;
+file-first SHA1eca41f50de93540acc7ffba9f74b4a09b7a79910d0e79b80036d2583339b913.
+Stock DOSBox configuration SHA remains
+0494236f2308e2e615f428d04e6470db4b0d162c95b51f4e276f1b7e73241917.
+SDL dummy output avoids foreground use;no CPU/core/resolution setting changes.
+Harnesses,receipts and raw runtime material remain ignored below build.
+No product/source/EXE changes,scope/expected/actual[],new0. Historical1992/1992,
+local1991/1992nodes and4260/4261feasible controls(raw4342,infeasible81)remain
+unchanged. S3/T34stay active with the same four original gate families.
