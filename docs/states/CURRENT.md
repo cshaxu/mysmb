@@ -30,6 +30,12 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P17reviews all24indirect sites in the P16bound changed-unit listings:
+  23current constructor targets and one inactive legacy presenter. Copied
+  file/hook lifetimes and pacing-only clock adapter are reconciled;transitive
+  stack/service gates remain open. No code/product/node-credit change.
+  [Callback receipt](../history/M3-T34-native-vga-performance-proposal.md#s3-p17-current-callback-constructor-review).
+
 - T34 S3 P16rebinds the six P15changed DOS source objects and resolves72local
   own-stack paths with balanced returns;save/load maxima68/74bytes. No large
   snapshot buffer moved to stack. Callee/indirect/service overlays and the four

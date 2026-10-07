@@ -1194,3 +1194,28 @@ Owner directs cache decisions by marginal benefit,prefer smaller memory when
 benefits are similar,and requests the complete current optional-cache list.
 The P14 six-combination matrix remains the measured basis;no new allocation
 policy or cutoff is installed by this audit.
+
+### S3 P17 Current Callback Constructor Review
+
+Audit only. Review all24indirect call operands in the P16bound six-unit
+compiler listings against current constructors and source lifetimes. Eleven
+store sites bind to seven validated file services;one main presenter site
+binds to the root read_rows wrapper;the twelve root sites bind to input,
+audio,mode,text,row/palette presentation,reset,clock and logging callbacks.
+Twenty-three sites are active;the legacy present_video site is inactive
+because the current main supplies null and selects row presentation.
+
+The file initializer copies directory bytes into static storage;the store
+copies the validated service table before startup scratch expires. Root hooks
+are copied likewise. The new clock callback is bound to the main adapter and
+uses the root reset context (null in current production);it resets pacing
+only,without altering held keys,pending exit or ROM pause state. Save/load
+calls remain synchronous before GameTick;no callback retains staging for
+later asynchronous use. Failed load scratch is recaptured on the next save.
+
+Evidence below ignored build/m3-t34-s3:p17-callback-bind.py and JSON receipt
+with24source/listing site mappings and source hashes. This is constructor
+target/lifetime evidence,not a complete ABI or transitive-stack proof. Nested
+file replacement/compositor callbacks,callee depths and external service
+overlays retain separate obligations. No code,EXE or ROM-credit change;
+all four original gates remain open.
