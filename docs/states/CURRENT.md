@@ -1,30 +1,38 @@
 # Project Status
 
-## M3 T32 S8 Packet
+## M3 T32 S9 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S8 P21; shared nibble lookup adopted and three products verified; S8 remains active. |
-| Admission And Approval | Owner-approved consecutive S5-S9 plan and automatic successor;S7 display-stage contract closed by P4;S8 sole active. |
-| Objective | Reduce current dominant rendering cost as one bounded cache/row-output chain while preserving ROM/PPU semantics and memory balance. |
-| Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
-| Reference Baseline | Published S8 P21products and current phase/counter probes;original tools/2048stack/640x400/two platform components. |
-| Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | Shared IO palette_expand.c/header plus DOS nibble_expand.c,estimate80-150product/20-60test lines.512immutable lookup bytes,portable pair memcpy;no image allocation. DOS colored spans save FLAGS/CLI/GS and restore them,at most128indexed table reads with no calls while masked. GS/high index state is private to that bounded interval;zero path unchanged. Core/PPU/PIT/IRQ handler source unchanged. Bind final objects and validate IF/register/source/guards/actual memory/stack/routes/frame costs before three-EXE publication. |
+| Identifier Mode | Continuation: M3 T32 S9 P1; native-resolution VGA research and design; sole active S. |
+| Admission And Approval | Owner explicitly closes S8, transfers remaining opportunities to S10 and admits S9 for NESticle-style256x240 output. |
+| Objective | Eliminate software scaling using native256x240 VGA output and hardware scan repetition; preserve entire source frame, allow side black borders and qualify height filling. |
+| Non-goals | No ROM/PPU semantic changes, skipped frames, DOS4GW, toolchain or installed DOSBox setting changes, helper process or Win32 rendering change. |
+| Reference Baseline | S8 P21 published products; counter137.665ms,PPU59.677/mapping44.716/VGA18.062ms diagnostics;2048stack and original tools. |
+| Candidate Proposal | [Performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). S10 accepts unfinished S8 candidates and former S9 final gates. |
+| Files And ABI Surface | Initially zero product lines. Estimate150-300product lines in dos16 device/mode/physical planar kernel and main-dos16 root; neutral IO geometry only if reusable. Existing15400-byte store, no full-frame allocation. P1 reference/design then bounded original-DOS prototype. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
-| Verification | Final-object20160primitive invocations/10080data cases restore IF0/1 and GS/DS/ES/BP/SP/SI/DI;source/guards/rejection pass.161objects including132core/PPU unchanged;two IO/decoder source owners plus two header-dependent root objects differ. Fifteen native tests each width and expanded IO table retest/actual Windows/DOS448/384/370routes pass. Counter401/phase368records,zero drops,25reads per graphics submission. Current137.665ms diagnostic;three EXEs refreshed. Global IRQ/NMI/memory/stack/reference/hardware gates remain open. |
-| Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
-| Asset Needs | Owner-local x.xx binary and ROM plus historical athros/NESticle0.2 source as conceptual reference only; copyright-only leaked tree grants no redistribution permission. Purpose frame/cache/transfer architecture comparison; raw source/probes only below ignored build, no copying/transliteration into product, exact-version claims require binary evidence. |
-| Reporting Requirements | Candidate and measured whole-step cost, rejected variants, actual code/memory delta, source/products and total/local node counts. |
-| Stop Conditions | Unbounded or foreground probe, source binding gap, ownership violation, output divergence or unsupported speed claim. |
-| Exit Criteria | Integrated candidate selected/rejected by exact semantics/output,current compiler/cost/memory evidence and actual routes;known defects repaired,three platforms after adoption. S9 final reference/global-stack/continuous-memory gates remain unproved. |
-| Original Owner Request | Improve actual memory/performance/playability with original ROM semantics; follow approved S5-S9 division after fixing known S4 defects. |
-| Similar-Issue Sweep | Dirty tile/attribute/CHR/scroll/HUD/restore invalidation,palette aliases/arbitrary bytes,odd packed spans,raw opacity,near/far ownership,lifetime/capacity/allocation fallback. |
-
-
-
+| Verification | Reference parameter-to-mode binding; all61440source pixels/colors/priority/split intact, plane bytes/guards/registers/mode timing. Actual DOS startup,input,Tab,text return,P/O,exit and restored mode; current compiler,memory/stack and stage cost. Three products after product adoption; LCD height fill requires real hardware. |
+| Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls(raw4342,infeasible81). |
+| Asset Needs | Owner-local ROM/x.xx binary and historical athros/NESticle0.2 source at public master, copyright-only/no redistribution grant. Purpose parameter/video timing read-only comparison, no copying/transliteration. Raw reference/probes only below ignored build. Pin downloaded source identity; exactx.xx claims require binary evidence. |
+| Reporting Requirements | Mode parameter route, measured timing/pixel payload/cost/memory, changed components/lines, three products after adoption and unchanged node totals; no unmeasured full-screen or FPS claim. |
+| Stop Conditions | Foreground/unbounded probe, output loss, unsafe ownership, configuration change, source import or unsupported speed claim. |
+| Exit Criteria | Native mode selected or rejected with complete-frame/route/cost/memory proof; adopted code publishes three EXEs. S10 retains global memory/stack/reference/cadence acceptance; M4 physical486SX separate. |
+| Original Owner Request | Inspect NESticle256240 launch settings and optimize MySMB;close S8,transfer remaining opportunities to S10,admit S9 specifically for this output optimization. |
+| Similar-Issue Sweep | Mode registers/pitch/plane offset,all240rows,edge pixels,Hud split,palette lifetime,Tab/P/O rebuild,restore old mode,allocation fallback and hardware-dependent panel behavior. |
 
 ## Current Technical Baseline
+
+- S8 is closed by owner-directed transfer;P21 products retained. S10 accepts
+  unfinished coordinate/row/fusion/snapshot/byte-cache candidates and former
+  final S9 gates. No performance/global certification follows from closure.
+- S9 P1 confirms historical launch parsing and archive mode intent,with0.2
+  commented256x240 versus measuredx.xx kept distinct. Independent real-mode
+  pattern probe writes61440pixels with zero readback errors;512x480scanout,
+  zero2x2replication differences and mode3restore pass with unchanged DOSBox
+  settings. No product change;real game/routes/cost/LCD acceptance pending.
+  [Native-mode probe](../history/M3-T32-rendering-performance-continuation.md#s9-p1-reference-route-and-independent-native-mode-probe).
+
 
 - S8 P21 adopts shared512-byte nibble pairs/portable copies,DOS colored
   lookup with bounded FLAGS/CLI/GS save-restore,+61/-20product lines. Final

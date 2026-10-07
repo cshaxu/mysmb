@@ -1,14 +1,10 @@
 # M3 T32 S5-S9 proposal: DOS graphics performance beyond Nesticle
 
-Owner-directed continuation within the current M3 T32, divided into five
-consecutive S tasks, S5 through S9. None is admitted; `states/CURRENT.md`
-retains S4 as the sole active packet. S5 follows S4 only after its actual
-closure or an explicit owner-directed transfer with named receiving
-obligations. Each later S follows the preceding S's scoped closure and a fresh
-packet. These S tasks add a comparative graphics-performance gate to T32;
-they do not retroactively weaken or close S4's five memory/cadence clauses or
-the suspended Windows startup dependency. This is not a separate queue T and
-receives no new T identifier.
+Owner-directed continuation within M3 T32. S5-S7 retain their scoped closures;
+S8 closes by owner-directed transfer with P21 products retained. S9 is now
+native-resolution VGA output, not the former final audit. S10 receives all
+remaining S8 optimization candidates and the former S9 final acceptance gates.
+Only CURRENT admits work; S10 is planned and cannot execute concurrently.
 
 ## Objective and measured starting point
 
@@ -173,20 +169,37 @@ No S overlaps S4 or another active S.
    requires its own explicit scope decision; it is not a substitute for
    meeting the DOS16 target. Keep any demonstrably beneficial candidate only
    after exact-output and three-product verification.
-5. **S9, final acceptance audit and T32 closure.** This is the original
-   proposal's fifth and last stage. Estimate 0-150 contained audit/harness
-   lines and zero product lines. A finding returns to its owning S for repair;
-   S9 does not implement fixes or claim their acceptance without rerunning the
-   affected audit.
-   Rebuild/refresh DOS16, Win32 x86 and x64 after adopted product changes.
-   Run the pinned repeated workload matrix, count game updates and actual
-   display submissions, compare representative exact output and user-visible
-   pacing, find both minimum sustained-60/60 cycle thresholds, and report
-   confidence intervals, source/product bindings, peak startup/resident/stack
-   evidence, S4's remaining named gates and all rejected approaches. Verify
-   real DOSBox play with input and scene changes. The
-   owner may review a resolution/display default separately. Do not close as
-   "faster than Nesticle" unless the measured equal-frame threshold is lower.
+5. **S9, native-resolution DOS VGA output.** Owner explicitly admits this
+   replacement scope. Inspect the historical NESticle 256x240 parameter route,
+   mode timing and scanout concept without copying third-party code. Prefer a
+   256x240 native framebuffer VGA mode if supported; compare 320x240 with
+   centered 256x240 and static side borders if necessary. Preserve all pixels,
+   colors, original frame order and split semantics; permit side black borders
+   and hardware scan repetition. Height filling on a fixed LCD panel is a
+   hardware-dependent qualification, not promised from DOSBox alone. No
+   software 240-to400 scaling, game logic changes, DOS4GW or installed emulator
+   configuration changes. Estimated150-300 product lines in dos16 devices,
+   physical planar encoding and DOS composition root, plus neutral IO layout
+   only if reusable. Existing15400-byte store suffices; no new full frame.
+   P1 records reference route/mode design and admission; P2 prototypes original
+   DOS timing, exact output and bounded transfer; adoption follows measured
+   results with three refreshed EXEs, startup/input/Tab/P/O/exit routes and
+   mode-restore checks. Reject pixel loss, wrong geometry or hidden frameskip.
+6. **S10, remaining optimization and final acceptance.** Planned receiver
+   accepted by coordinator under the owner's explicit transfer instruction:
+   bounded coordinate folding (unfinished S8 P22 fixture, no selected product),
+   whole-row sprite/opacity composition, coarse expansion/packing fusion,
+   duplicate snapshot capture/cache copies, and byte-background cache (+60KiB;
+   CHR byte expansion separately +24KiB). Each candidate is selected/rejected
+   using complete-stage cost, memory and exact output, not microbenchmarks
+   alone. Preserve rejected S8 row masks, fine callback fusion and metadata
+   staging as rejected; do not retry without materially different evidence.
+   After candidate dispositions, perform the former S9 final audit: equal-game-
+   update/display-submission reference matrix, sustained cadence thresholds,
+   source/product bindings, global memory/stack/IRQ/NMI and S4 named gates.
+   Physical486SX remains M4. No speed, playability or whole-ROM certification
+   follows from S8 transfer closure. Known regressions are repaired before
+   S10 closure. Empty ROM-node scope, expected and actual match credit.
 
 ## Admission and evidence gates
 
@@ -562,3 +575,18 @@ EXEs refreshed. DOS EXE/loader/ordinary sampled resident+512bytes,no image
 allocation,370unchanged,DGROUP49264/2048stack unchanged. Counter137.665ms saves
 8.988ms,PPU59.677/mapping44.716ms. Actual gain is9ms,not prototype20ms. Global
 IRQ/NMI/memory-stack/reference/hardware and nominal60Hz/fivefold remain open.
+
+## Owner amendment: S8 transfer closure and S9 admission
+
+The latest owner instruction supersedes earlier references in this retained
+proposal to S9 as final audit. That role now belongs to planned S10. S8 P21
+is the unchanged source/product baseline:counter137.665ms,phasePPU59.677ms,
+mapping44.716ms,VGA18.062ms;these are diagnostics,not fair NESticle FPS.
+S8 P22's coordinate prototype compiled only its candidate,not its fixture;
+no completion or adoption is inferred. S9 is the sole active S.
+
+S9 P1 independent mode feasibility passes:61440VRAM pixels read back exactly,
+512x480scanout repeats each source pixel2x2,mode3restored,installed settings
+unchanged. No real-game or physical-panel/full-height acceptance yet. P21
+products retained; next work removes resampling from the actual DOS presenter
+using direct native-plane packing and existing shared storage.

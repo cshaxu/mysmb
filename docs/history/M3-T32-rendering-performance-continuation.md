@@ -2873,3 +2873,45 @@ near/far allocation and failed startup. S8/goal stay active with final global
 memory/stack/reference/hardware gates open. Scope/expected/actual[],new0;
 historical1992/1992,local1991/1992nodes,4260/4261feasible controls
 (raw4342,infeasible81). Full M2 certificate remains incomplete.
+
+## S8 P22 owner-directed closure and S9 native-mode admission
+
+Owner explicitly closes S8 and transfers remaining opportunities to S10.
+P21 published products and accepted scoped proofs remain unchanged. P22
+bounded coordinate prototype is unfinished:original-tool candidate compiled,
+fixture compilation failed due to harness-renamed structure types. No product
+source or EXE changed and no performance benefit is credited. Candidate and
+all other remaining row-composition/fusion/snapshot/byte-cache work are
+accepted by planned S10. The former S9 final gates also move to S10;they remain
+open. S8 closure is a transfer,not playability/reference/global certification.
+
+S9 P1 admits native256x240 VGA display under the owner's allowed side borders,
+height-filling intent and original16-bit tools. Source research is conceptual
+only;historical0.2 source is not an exactx.xx binary implementation receipt.
+No ROM custody or new match credit;scope/expected/actual[]. Historical1992/1992,
+local1991/1992nodes and4260/4261feasible controls(raw4342,infeasible81) unchanged.
+
+### S9 P1 reference route and independent native-mode probe
+
+Owner-local x.xx README confirms `-res <xw> <yw>` and non-VESA256x240
+availability. Historical COMMAND.CPP option_res parses two numbers into
+SCREENX/SCREENY. The NESSRC.ZIP archive includes DOS/DOS.CPP and MODEX.CPP;
+its0.2 DOS dispatcher enables256x224,while256x240 timing/function are
+commented out. Do not claim this archived source executes the measuredx.xx
+route. NESSRC archive SHA2566566fd69e876eea85b211183ddf10bdc0d12b085da5875618e6f72a632036bb0;
+all archive/source bytes remain ignored,read-only conceptual research.
+
+Independent original-tool16-bit test derives256columns/240stored rows,
+64bytes/plane-row,480display scanlines with repeated rows and25.175MHz/
+800-dot/525-line timing. No third-party code/table is copied into product.
+Actual normal-SDL/private-desktop DOSBox run writes/reads all61440pixels:
+zero VRAM mismatch,512x480capture,zero2x2replication mismatch,normal exit0,
+BIOS text mode3restored. Installed configuration SHA unchanged. This is a
+pattern/mode feasibility proof,not game output,physical LCD filling,whole-
+frame performance or product acceptance. Three P21products unchanged.
+
+Next admitted S9 work binds native output to real game slot rows with direct
+four-plane deinterleaving,removing all256-to320/240-to400resampling. Existing
+15400-byte store can hold8source rows plus four8row plane spans;no new frame
+allocation. Validate current game source/canonical palette,all240rows,split,
+scroll/priority,Tab/P/O/mode reset and three-product delivery before adoption.
