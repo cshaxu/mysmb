@@ -537,3 +537,17 @@ Background/terrain,information scenes/score sprites and remaining player
 poses are still outside this batch;do not call the full46-kind review closed.
 Protected panels/raw fixtures and local tools remain in ignored build. No
 product change or three-EXE refresh is required for this design-only P.
+
+P11 owner finds R31-R33 spring proposals unsatisfactory and requests stronger
+object-specific character/foreground accents across the generally promising
+batch. This is feedback,not approval of all53cases. Spring V2 preserves red
+end plates and source-gold diagonal/curved coil characters on scene-colored
+interior;white vertical highlights are used only from the original palette.
+Extended,intermediate and compressed profiles have distinct heights. Thin
+plate half-blocks replace the bulky opaque white/red tube interpretation.
+The spring panel remains pending owner review. Other accent opportunities
+are shell pattern,fish eye/tail,Bill eye/casing,Piranha mouth/teeth,Bro hand,
+Lakitu goggles/cloud,retainer face/dress and effect centers. Add only useful
+source-aligned landmarks with a legitimate two-color cell;do not uniformly
+outline every mass or silently promote unseen refinements to accepted art.
+Retained current50and all formal products remain unchanged.
