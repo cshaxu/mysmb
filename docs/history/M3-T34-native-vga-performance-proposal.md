@@ -539,6 +539,45 @@ local balance count is deliberately not an all-path whole-program result.
 Four original gates remain unproved;S3/T34/goal stay active. New ROM credit0;
 historical1992/1992,local1991/1992nodes and4260/4261feasible controls unchanged.
 
+### S3 P7 State Guards Resolve The Two Abstract Cycles
+
+Verification-only;no core/ROM/product edits. The frenzy back edge changes the
+same slot's identifier to8or10/11before checkpoint reentry. Those identifiers
+are disjoint from frenzy selectors18and20..23. The second checkpoint therefore
+cannot take the same frenzy edge again. Maximum simultaneous checkpoint frames
+on this cycle is2,not an unbounded recursive chain. Timer/duplicate-slot exits
+only reduce the depth.
+
+The stream page-select back edge requires selector0and increments it to1before
+calling loop commands again. A matched loop command clears its command flag
+before entering stream. An unmatched or inhibited command does not change
+the match/inhibition inputs,and the page-select record changes only enemy
+stream/page state before immediate reentry. Reentered loop handling therefore
+cannot reset the selector via loopback before its next stream call. Maximum
+simultaneous loop-command and stream frames are each2. Offset+2alone would
+not prove this because the original offset wraps at8bits;the selector/command
+guards are the actual depth argument.
+
+Diagnostic wrappers around unchanged project function bodies count real call
+depth while preserving normal return behavior. Synthetic,project-owned inputs
+cover20480frenzy combinations(area type,world,random,zero/nonzero timer,five
+ordinary slots)and4096stream combinations(all256offsets,selector,matched/wrong
+loop and inhibition). Maxima checkpoint2/loop2/stream2support the source proof.
+The byte filter is correctly exercised at RAM06dd;the earlier06d1address was
+an unused fixture mistake and is not counted as filter coverage. These tests
+are C nesting evidence,not independent ROM-equivalence classification.
+
+The whole-source model now keys memoization by remaining bounded-entry counts,
+not function name alone. Interior frenzy nodes revisited under a different
+count are distinct states;no additional unreviewed cycle remains in that
+model. Its1178memo states still leave28external runtime symbols plus startup,
+firmware and IRQ/NMI overlay unknown. Main686/root_step664known-source
+contributions remain partial and do not certify2048-byte total stack safety.
+Original global-memory/reference/hardware gates likewise are unchanged.
+New ROM credit0;historical1992/1992,local1991/1992nodes and4260/4261controls
+unchanged. Listings,wrapper sources/logs remain ignored;neutral conclusions
+only are tracked. S3/T34/goal remain active,with no EXE refresh needed.
+
 ### S3 P5 Constructor-Bound Indirect Calls
 
 Read-only verification. Original /AL offset metadata matches every previously

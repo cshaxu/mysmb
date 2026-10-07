@@ -66,9 +66,14 @@ explicitly in TODO rather than asserted complete.
 - T34 S3 P6binds all168project source objects and catalogs897Cfunctions,
   2064direct/30indirect call sites. Current constructor-bound subgraph reaches
   784functions;the legacy internal-RET parser limitation is outside it. Two
-  symbolic cycles need guard/progress bounds and28runtime symbols remain;
+  symbolic cycle guards are resolved by P7;28runtime symbols remain;
   no global stack/IRQ proof or ROM-node promotion.
   [Census](../history/M3-T34-native-vga-performance-proposal.md#s3-p6-current-product-wide-source-stack-census).
+- T34 S3 P7resolves the two symbolic-cycle guards:checkpoint reentry uses
+  non-frenzy IDs;page-select/loop-command state prevents immediate repeat.
+  Both nesting bounds2are supported by20480frenzy/4096stream Ccases. No core
+  edits or ROM classification change. Full runtime/firmware/global stack and
+  other original gates remain open;[guards](../history/M3-T34-native-vga-performance-proposal.md#s3-p7-state-guards-resolve-the-two-abstract-cycles).
 
 - T33 S2 P12delivers default80x25on all three products;50-row code/art and
   interfaces remain. Shared semantic compact art/palette/layout owns output;
