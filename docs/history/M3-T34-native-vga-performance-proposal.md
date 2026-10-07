@@ -769,3 +769,43 @@ ignored. Neutral conclusions only tracked. Scope/expected/actual[],new0;
 historical1992/1992,local1991/1992nodes and4260/4261feasible controls unchanged
 (raw4342,infeasible81). S3/T34remain active;no global2048-byte or physical
 486SX certificate is issued.
+
+### S3 P11 Combined Runtime And Allocator Boundaries
+
+Verification-only, no product change. Combine the retained constructor-bound
+source graph with P8 leaves, P9 wrappers and P10 current binary-file entries.
+Include hardware interrupt entry bytes at each reviewed service boundary and
+propagate the unknown DOS/BIOS body as an unresolved dependency. The model has
+1206 memoized contexts and no unreviewed abstract cycle. It does not promote
+an unresolved service to a zero-cost leaf or a completed global bound.
+
+The known contribution is720bytes at main and676bytes at a standalone
+root_step entry. The linked CRT retains five pushed argument words and a
+four-byte FAR return while main executes, adding14bytes:the known main-chain
+contribution is734bytes. This remains a partial model,not an environment-
+inclusive upper bound or proof that the2048-byte stack is sufficient. Startup
+failure/exit,service bodies and IRQ/NMI overlays remain separately required.
+
+The current linked runtime initializes its heap-growth preference to8192bytes.
+Its expansion loop tries smaller granularities when an expansion cannot fit;
+8192is not a mandatory allocation size for every request. Far free only sets
+the reusable-block flag and returns;it does not invoke DOS block release.
+Therefore169248application-requested bytes cannot be equated with an owned
+MCB peak, nor can close/free be assumed to shrink that peak. Bound retained
+segments, growth attempts and reuse of the single temporary file buffer next.
+Do not change the original runtime or its preference solely for a score.
+
+Current startup uses the existing empty argument/environment-copy hooks.
+The cinit initialization-table ranges are empty and its optional early
+initialization callback count is zero in this product. These facts exclude
+those ordinary startup allocation paths only;DOS environment ownership,
+inherited descriptors and failure/exit behavior are not certified by them.
+The retained arena maxima bind their older product hashes,not the current
+P1 EXE. Preserve their documented applicability instead of silently rebinding.
+
+An executable-hash-bound receipt checks the initialized growth value, free
+instructions, main call/push sequence and combined model. Three local product
+hashes are unchanged. Raw machine data/tools stay ignored below build;only
+neutral conclusions are tracked. Scope/expected/actual[],new0;historical
+1992/1992,local1991/1992nodes and4260/4261feasible controls(raw4342,infeasible81)
+unchanged. All four fixed gate families remain open;S3/T34remain active.

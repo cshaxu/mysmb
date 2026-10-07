@@ -90,6 +90,12 @@ explicitly in TODO rather than asserted complete.
   caller binding;general text/dynamic-stack/fatal paths are not certified.
   DOS/BIOS bodies,startup,IRQ/NMI and all four fixed gates remain open.
   No source/EXE change;[receipt](../history/M3-T34-native-vga-performance-proposal.md#s3-p10-current-binary-file-runtime-contributions).
+- T34 S3 P11combines current source/runtime contributions:720bytes at main,
+  734including the retained14-byte CRT main-entry frame;standalone root_step676.
+  DOS/BIOS internal depths remain unknown. Linked heap-growth preference8192
+  and free-without-DOS-release require retained-segment/reuse accounting,not
+  payload-only claims. No product change;all four fixed gates remain open.
+  [Boundaries](../history/M3-T34-native-vga-performance-proposal.md#s3-p11-combined-runtime-and-allocator-boundaries).
 
 - T33 S2 P12delivers default80x25on all three products;50-row code/art and
   interfaces remain. Shared semantic compact art/palette/layout owns output;
