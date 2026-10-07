@@ -408,3 +408,13 @@ Native fixtures do not independently certify original-ROM logic equivalence.
 
 P2 creates local review panels and this catalogue only. Existing 80x50 source,
 product EXEs, original game state and node/control classifications are unchanged.
+
+P3 owner review rejects the initial Mario draft's invented bright-yellow
+skin/detail color. All eight local comparison drafts now bind cap,skin and
+lower-body roles to the fixture's original palette through the existing
+shared text-color mapping. No contrast-driven hue substitution is accepted.
+The owner requires maximum visual fidelity,including color placement and
+relative area,not merely recognizable poses. V2 removes the invented yellow;
+shape,16-color approximation and overall likeness remain pending review.
+Existing 80x50 and products remain untouched. The original draft stays as
+superseded local visual evidence,not an accepted design.
