@@ -184,3 +184,139 @@ handles do not certify Terminal UI glyph aspect or its physical caption. That
 observation is retained by name in TODO,not asserted passed and not a new
 whole-project audit. Owner-directed closure supersedes the earlier wait-for-
 owner lifecycle instruction;no human visual result is inferred.
+
+## S2 corrective reopening and 80x25 design
+
+Owner reopens the latest closed T33 at S2. S1 engineering receipts remain
+historical. S2 P1 is current-source analysis and design only; the active packet
+is CURRENT. No product code or EXE is changed by this P.
+
+The owner accepts both latest-code GUI diagnostic 05 products, but rejects
+console diagnostic 06 with detached allocation manifest. Both diagnostics
+can pass device input and geometry readback; 06 still fails visible fit.
+Neither virtualized 80x50 readback nor changing to 25 rows proves physical
+Terminal fit, startup latency or caption Restore. Retain these as separate
+acceptance clauses. Console subsystem remains a design preference; no helper
+process or system setting is authorized as its workaround.
+
+### Frozen source census and boundary
+
+At source baseline 358beff9, elements.c contains 129 stored template entries
+in 17 declarations, representing 46 presentation kinds. Small and large
+player tables each have 17 pose entries; Luigi reuses their artwork. This is
+a storage census, not the number of reachable kind/pose/palette combinations.
+Background shapes are procedural and captions are separate consumers.
+
+| Template declaration | Entries |
+| --- | ---: |
+| small / large | 17 / 17 |
+| parts / flag_scores / jump_coins / scores | 3 / 5 / 4 / 11 |
+| star_flag / actors / goomba_second / winged | 1 / 38 / 1 / 2 |
+| fire_phases / explosions / springs / hammer_throw | 2 / 3 / 3 / 2 |
+| egg_second / hammers / scenery | 1 / 4 / 15 |
+
+All 129 entries require an explicit keep/redesign verdict. One-row scores,
+fireballs and platforms can retain useful glyphs; multi-row art requires
+compact redesign. Review every kind and state, not just Mario. Record aliases,
+inversion, facing, clipped emergence and palette phases separately from art
+storage. The queued full object/state gallery is retained; do not silently
+claim that this table discharges that larger visual-review contract.
+
+### Proposed shared layout
+
+- Owner amendment: retain existing 80x50 code/artwork as a supported profile.
+  Add 80x25 as default on all three targets, without a selection switch yet.
+  Both consume the same immutable observations. Shared text owns the layout
+  and art bank; hosts receive neutral dimensions/cells, never artwork policy.
+  Reuse traversal/priority only where retained-profile equivalence is proven.
+- Use an 80x25, 2000-cell neutral output for the new default. Preserve the
+  whole 256x240 logical scene: X maps at 3.2 source pixels/cell, Y at 9.6.
+  No bottom-half truncation, row dropping or conversion from an 80x50 bitmap.
+- With approximately 1:2 physical cells, this grid has approximately the
+  source aspect ratio. Font metrics are a host capability, not guaranteed.
+  Win32 requests a normal approximately 8x16 cell only when supported; DOS
+  uses its normal VGA 80x25 text mode. Unsupported host resizing retains
+  responsive clipping without claiming the full view is visible.
+- HUD has two information rows within the top approximately three scene
+  rows. Preserve score, coins, world and timer; the lower scene uses the
+  source's existing fixed/scroll split. Do not change original scroll writes.
+- Small characters target roughly 5x2 cells; large characters roughly 5x3
+  or 5x4, with crouch and defeat variants. Anchor footprints/heads to source
+  bounds and check subcell vertical phases; never introduce gameplay motion.
+  A 16-pixel terrain block spans one or two rows by its phase, about five
+  columns. Pipes, steps and connected silhouettes need continuous boundaries.
+- Captions must extract recognized information runs and lay out distinct
+  source lines in distinct output rows. Directly projecting 30 tile rows
+  into 25 can overwrite adjacent lines. Preserve all title/menu, lives,
+  time-up, game-over, warp and ending words, including dynamic digits and
+  floating scores. Reflow text using declared source bounds and scene output,
+  not game-mode decisions or rerunning translated routines.
+- Preserve committed palette changes, foreground/background distinction,
+  OAM order, behind-background priority, visibility and clipping. A cell
+  still has one glyph/foreground/background: fewer vertical details are an
+  explicit design trade-off, not grounds to discard text or object states.
+
+### Component inventory and migration cohorts
+
+These are bounded implementation cohorts, not newly allocated S identifiers.
+S2 is the active design S; later admission allocates actual receiving S.
+
+| Cohort | Owners and expected scale | Required result |
+| --- | --- | --- |
+| Shared geometry and information | io/video.h; text/elements, actor_scene, background_scene and caption_scene; shared tests, about 200-400 changed lines initially | One dimension contract and safe signed projection; 250-byte opacity/claim masks; complete non-overlapping information text; no host-specific scene |
+| Compact actor and effect art | text/elements and actor_scene, about 300-600 changed lines | Verdicts for 129 stored entries and source-selected state aliases; redesigned multi-row poses, palette roles, anchors and clipping; readable retainers and scores |
+| Procedural scenery | text/background_scene and caption_scene, about 150-350 changed lines | Pipes, terrain, scenery and all connected forms audited at 25 rows, distinct fence/coral colors, foreground/background and small components preserved |
+| Host integration and acceptance | platform/win32/text_console and platform/dos16/devices plus roots/tests, about 150-300 changed lines | 2000-cell output, correct DOS font/mode checks, borrowed-shell restoration, graphics/Tab/input/Restore, actual visible fit and console-startup defect disposition |
+
+Estimates overlap and are planning ranges, not additive promised patch sizes.
+Product changes refresh all three local EXEs using the existing toolchains;
+pure design P1 does not. Retain accepted 05 and existing 80x50 products as
+ignored comparison artifacts, and retain the 80x50 source profile in the
+product. Separate compact/legacy art banks use shared observation contracts;
+do not duplicate game state, observers or host-specific scene engines.
+No changes belong in translated core, PPU writers or original observation
+selectors. Snapshot receipts retain source decisions rather than cell arrays;
+check their consumers and old-save compatibility before declaring invariance.
+
+### Memory and performance estimate
+
+The three-byte neutral frame shrinks from 12000 to 6000 bytes. Background
+opacity and actor claim masks shrink from 500 to 250 bytes each. With the
+other work arrays unchanged, the combined text frame/workspace is estimated
+to shrink from 15400 to 8900 bytes, saving 6500 bytes. DOS currently shares
+this storage with the 7680-byte graphical band requirement, which still fits;
+confirm compiler sizeof/alignment and actual allocation before publishing a
+memory result. These savings require selected-profile allocation rather than
+reserving the largest frame or both frames; retaining 80x50 code alone must
+not be reported as 6500 bytes saved. Account for both art banks' resident code
+and data overhead. VGA text writes shrink from 8000 to 4000 bytes; Win32 output
+visits half as many cells. These are work/storage bounds, not a measured 2x
+FPS improvement; game ticks and graphical work remain unchanged.
+
+### Acceptance and remaining clauses
+
+1. Freeze and account for all 129 template entries, 46 kinds, procedural
+   background families and information scenes. Enumerate reachable state
+   variants in the gallery rather than multiplying arbitrary combinations.
+2. Validate captions by exact expected strings and non-overlap, including
+   every dynamic score. Validate geometry through all relevant anchor phases,
+   partial emergence, inversion, mirroring, connected pipes and scene edges.
+3. Compare shared x86/x64 cell outputs and retain DOS16 build compatibility;
+   test rendering is read-only and graphical/state/snapshot output unchanged.
+   Also compare retained 80x50 cells/colors with the source baseline, including
+   captions, actor poses and connected backgrounds. No legacy regression is
+   accepted merely because the new default looks satisfactory.
+4. Exercise fresh and borrowed consoles, RDP-compatible input, repeated Tab,
+   close/Escape and maximize/Restore. Use actual visual acceptance for all
+   80x25 cells when claimed. Do not promote API readback to visual proof.
+5. Resolve console-subsystem startup/Tab behavior independently. If a host
+   ignores requested size/font, record its actual limit; 80x25 is not itself
+   a fix for console allocation or delegation. Keep the known-good 05 path
+   available as the isolated comparison, not a disguised shell-wait solution.
+
+S2 P1 completes admission and this analysis. S2/T33 are still active; there is
+no implementation or full visual closure. Empty ROM scope/forecast/credit;
+historical mapping 1992/1992, local 1991/1992 nodes and 4260/4261 feasible
+controls (raw 4342, infeasible 81) are unchanged. Full M2 certification remains
+separate and incomplete. Source census and diagnostics stay under ignored
+build; only neutral conclusions are tracked.
