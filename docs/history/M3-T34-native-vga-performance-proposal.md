@@ -1549,6 +1549,31 @@ Evidence below ignored build/m3-t34-s3:run-p20-current384,
 run-p20-current448,run-p20-current500,p20-final-memory.json,
 verify-p20-final.py and the parameterized route runner.
 
+### S3 P35 Current Application Allocation-Surface Rebinding
+
+Rebind the project-owned allocation statement from P20 to P31 rather than
+silently carrying an older product identity forward. The production `src/`
+diff from P20's commit774b0a13 to current P31 contains only `ppu/frame.c`;
+its nine added/four removed lines select an already bound decoded sprite row
+and contain no allocator or file-service call. The DOS allocation owners and
+their matched shutdown paths remain exactly `main_dos16.c` and
+`dos16_root.c`;the shared binary snapshot service remains in
+`io/file/snapshot_files.c`.
+
+The current project request bound therefore remains mandatory15532-byte
+text/row storage plus10048-byte transaction store, optional63488-byte first
+background store, one exclusive8192-byte decoded CHR store and61440-byte byte
+background upgrade, with at most one512-byte stream buffer:159212 bytes.
+Palette pairs are not selected by the current palette-row root. Current P34
+routes independently bind the same P31 executable at384/448/500KiB.
+
+This proves only the application allocation surface stayed unchanged. It does
+not bound CRT metadata, retained free blocks, loader/environment, DOS service
+allocation or fragmentation, and so cannot close the global conventional
+memory gate. Product source/artifacts are unchanged;ROM credit remains zero.
+Evidence below ignored build/m3-t34-s3:p20-final-memory.json,
+run-p20-current384,run-p20-current448 and run-p20-current500.
+
 ### S3 P24 Current Startup And Exit Dispatcher Binding
 
 Audit only. Current loaded bytes confirm the two unused argument/environment

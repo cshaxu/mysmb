@@ -30,6 +30,12 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P35 rebinds the P20 project-owned allocation surface to P31: the
+  only production source change since P20 is the PPU read-path edit, with no
+  allocator or file-service owner change. The 159212B application-request
+  bound remains current; CRT, loader, DOS and fragmentation remain external
+  and unproved. [Allocation-surface receipt](../history/M3-T34-native-vga-performance-proposal.md#s3-p35-current-application-allocation-surface-rebinding).
+
 - T34 S3 P34 rebinds the P31 DOS product to stock-configuration 384/448/500KiB
   memory routes. Each completes load, input, text/graphics, P/O and exit with
   a valid save; observed owned maxima are 373856/437408/498880B. This proves
