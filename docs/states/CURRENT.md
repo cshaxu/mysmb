@@ -30,6 +30,13 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P27 combines only current application-owned stack evidence: 734-byte
+  foreground path plus the 78-byte IRQ9 path is 812 bytes of the configured
+  2048-byte DOS stack, leaving 1236 bytes unallocated by this accounting.
+  DOS/BIOS/NMI/firmware bodies and nesting remain excluded, so this is not a
+  global-stack certificate or product change.
+  [Application budget](../history/M3-T34-native-vga-performance-proposal.md#s3-p27-current-application-stack-budget).
+
 - T34 S3 P26 binds the current IRQ9 keyboard path: its longest local branch is
   72 bytes, plus the six-byte hardware FLAGS/CS/IP entry frame, for a known
   78-byte application-side contribution. It directly acknowledges the PIC and

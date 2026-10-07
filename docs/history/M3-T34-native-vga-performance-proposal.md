@@ -1368,6 +1368,27 @@ and no-BIOS-chain condition. NMI/firmware, other DOS/BIOS interrupt services
 and interrupt-nesting policy remain external. Product source/EXEs unchanged;
 ROM credit0;all four original gates remain open.
 
+### S3 P27 Current Application Stack Budget
+
+Audit only. Combine the already current-byte-bound foreground path with the
+current IRQ9 application handler without silently adding an external service
+depth. The main path contributes720 bytes plus its retained14-byte startup
+frame, or734 bytes. IRQ9 can interrupt that path and contributes78 bytes
+including its hardware entry frame. The configured DOS stack is2048 bytes, so
+the known combined application contribution is812 bytes and1236 bytes remain
+unallocated by this accounting.
+
+This is a capacity accounting result, not a global maximum: DOS/BIOS/NMI and
+firmware bodies, their interrupt policy and any nesting inside them remain
+explicitly excluded. It does establish that the project-owned main and
+keyboard paths do not by themselves consume the configured stack. No product
+source/EXE changes or ROM credit are implied;all four original gates remain
+open.
+
+Evidence below ignored build/m3-t34-s3:check-p27-application-stack-budget.py
+and p27-application-stack-budget.json bind the current product SHA, MAP-derived
+2048-byte stack, P23 foreground contribution and P26 IRQ9 contribution.
+
 ### S3 P24 Current Startup And Exit Dispatcher Binding
 
 Audit only. Current loaded bytes confirm the two unused argument/environment
