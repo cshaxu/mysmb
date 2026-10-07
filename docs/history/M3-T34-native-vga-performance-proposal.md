@@ -1491,6 +1491,22 @@ Evidence below ignored build/m3-t34-s3:final-tests-x86.log,
 final-tests-x64.log,dos16-single-workspace,run-p20-final384,
 p20-final-memory.json,mysmb32.exe,mysmb64.exe and product-win-strip.json.
 
+### S3 P32 Sprite-Loop Invariant-Hoist Rejection
+
+Review the next adjacent shared-compositor candidate: hoisting a sprite tile
+base from its eight rows and a row Y coordinate from its eight pixels. The
+candidate preserved the Windows exact-pixel suite on both widths, but the
+original DOS compiler grew the executable from324873 to324905 bytes. It
+removes only two small arithmetic expressions outside the existing per-pixel
+composition, priority and output work;it does not reduce the dominant work
+or any allocation. The candidate is therefore rejected and reverted rather
+than exchanged for code size or presented as a measurable performance gain.
+
+P31 remains the current source/product baseline. No artifact refresh or
+ROM-node/control credit follows from a rejected candidate. Evidence remains
+below ignored build/m3-t34-s3:final-tests-x86.log,final-tests-x64.log and
+dos16-single-workspace.
+
 ### S3 P24 Current Startup And Exit Dispatcher Binding
 
 Audit only. Current loaded bytes confirm the two unused argument/environment
