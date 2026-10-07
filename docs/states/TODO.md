@@ -2,6 +2,18 @@
 
 ## Host diagnostics
 
+- [ ] **HOST-T33-VISUAL,physical Terminal applicability:** T33engineering
+  closure retains default Terminal80x50device/4000glyph readback and input/
+  Tab/exit proof;actual classic caption/150%DPIcapture passes. Physical
+  Terminal glyph aspect and live caption behavior are not certified by a
+  private notification HWND;100%/200%physical runs were unavailable without
+  changing desktop settings. Owner permits native Restore size/excess-cell
+  clipping. Reopen only on a named visible regression or a safe isolated real
+  Terminal surface;reuse scoped proofs,do not repeat a whole-ROM audit.
+  Admission path:bounded host presentation candidate with exact affected
+  source/host/DPI conditions. [Closure](../history/M3-T33-windows-console-fit.md#s1-p3-and-t33-owner-directed-engineering-closure).
+
+
 - [ ] **Private-desktop cold-launch publication latency:** T29 records one
   parallel x64 attempt with no root discovered within12seconds; sequential
   same-binary retry and accepted size/Tab/input/exit routes pass. Cause unproved;

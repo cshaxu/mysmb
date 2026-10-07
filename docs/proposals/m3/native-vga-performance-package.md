@@ -1,6 +1,6 @@
 # Native VGA Output And DOS Performance Package
 
-Owner-requested new unnumbered T candidate, originally inserted second and now pending queue head while T33 executes. Not admitted.
+Owner-requested new unnumbered T candidate, originally inserted second and now pending queue head after T33 closure. Not admitted.
 This packages the former T32 S9 native-output work, planned S10 optimization
 work and its final-audit role as three sequential S slots. There was no
 previously allocated T32 S11. At admission allocate the next ascending T and

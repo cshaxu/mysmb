@@ -1,11 +1,11 @@
 # Windows Text Console Fit And Restore
 
-Admitted M3 T33 S1 under explicit owner implementation/build/test/commit
-instruction. Current packet owns execution;the owner will perform actual
-visible Terminal/Console Host verification after delivery. T32 remains
-suspended and the new performance package remains queued. Four delivery
-cohorts below are combined into one bounded S with capability/lifecycle tests,
-three products and a pending owner visual gate.
+Archived M3 T33 proposal. Owner directs autonomous completion through
+closure after P2;original admission and delivery stages below are retained
+as history. The final P3contract accepts the owner's earlier allowance for
+Terminal Restore to retain native size and clip excess cells. Engineering
+closure is not a claim of every Terminal/DPI physical visual result. Named
+remaining physical-observation applicability is in TODO;no new active task.
 
 ## Problem And Owner Contract
 
@@ -163,7 +163,7 @@ committed and products published. Owner verification is pending;T33/S1remain
 active and full visual closure is not claimed. Classic actual caption Restore
 reports80x50/8x8. Current Terminal ignores the font request and retains80x30;
 full-scene/physical glyph/Terminal caption acceptance remains explicitly open.
-[Implementation evidence](../../history/M3-T33-windows-console-fit.md#s1-p1-implementation-and-delivery-awaiting-owner-visual-verification).
+[Implementation evidence](M3-T33-windows-console-fit.md#s1-p1-implementation-and-delivery-awaiting-owner-visual-verification).
 
 ## T33 S1 P2 geometry correction
 
@@ -172,4 +172,15 @@ Same-host neutral and actual product probes now observe80x50after restoring
 one optional all-device entry request;borrowed restoration and rollback pass.
 Do not infer physical font geometry from readback. The earlier80x30delivery
 state is historical;P2products supersede it. Owner live visual/Restore review
-remains pending. [Correction](../../history/M3-T33-windows-console-fit.md#s1-p2-restore-the-actual-t24-geometry-contract).
+remains pending. [Correction](M3-T33-windows-console-fit.md#s1-p2-restore-the-actual-t24-geometry-contract).
+
+## Final closure boundary
+
+T33 S1 P3closes entry/Restore fit,transient recovery,full accepted-view glyph
+fidelity,keyboard/presenter/shell lifetime and three-product delivery. Actual
+classic caption and physical capture pass at150%DPI;default Terminal device
+readback is80x50and actual product Tab/input/exit passes. Private notification
+handles do not certify Terminal UI glyph aspect or its physical caption. That
+observation is retained by name in TODO,not asserted passed and not a new
+whole-project audit. Owner-directed closure supersedes the earlier wait-for-
+owner lifecycle instruction;no human visual result is inferred.

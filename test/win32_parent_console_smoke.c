@@ -13,6 +13,81 @@ static BOOL probe_view(HANDLE output,BOOL absolute,const SMALL_RECT *view)
 #undef SetConsoleWindowInfo
 static struct mysmb_win32_text_console device;
 static struct mysmb_io_text_frame frame;
+static CHAR_INFO rendered[4000];
+/* Neutral fixture capture only;no ROM/game pixels enter this test. */
+static int capture_window(HWND window,const char *diagnostic)
+{
+    RECT rect;
+    typedef HANDLE (WINAPI *set_dpi_context)(HANDLE);
+    set_dpi_context set_context;
+    HANDLE old_context=NULL;
+    HDC screen,memory;
+    HBITMAP bitmap;
+    HGDIOBJ previous;
+    BITMAPINFO info;
+    BITMAPFILEHEADER header;
+    unsigned char *pixels;
+    unsigned long bytes;
+    FILE *file;
+    char path[1024];
+    int ok=0;
+    if(strlen(diagnostic)>1000U)return 0;
+    /* PrintWindow draws physical pixels;avoid a DPI-virtualized capture crop. */
+    set_context=(set_dpi_context)GetProcAddress(GetModuleHandleA("user32.dll"),"SetThreadDpiAwarenessContext");
+    if(set_context)old_context=set_context((HANDLE)(LONG_PTR)-4);
+    if(!GetWindowRect(window,&rect) || rect.right<=rect.left || rect.bottom<=rect.top) {
+        if(old_context)set_context(old_context);return 0;
+    }
+    ZeroMemory(&info,sizeof(info));info.bmiHeader.biSize=sizeof(BITMAPINFOHEADER);
+    info.bmiHeader.biWidth=rect.right-rect.left;info.bmiHeader.biHeight=rect.bottom-rect.top;
+    info.bmiHeader.biPlanes=1;info.bmiHeader.biBitCount=32;info.bmiHeader.biCompression=BI_RGB;
+    bytes=(unsigned long)info.bmiHeader.biWidth*(unsigned long)info.bmiHeader.biHeight*4UL;
+    if(bytes>16000000UL){if(old_context)set_context(old_context);return 0;}
+    pixels=(unsigned char *)HeapAlloc(GetProcessHeap(),0,bytes);
+    if(!pixels){if(old_context)set_context(old_context);return 0;}
+    screen=GetDC(window);memory=CreateCompatibleDC(screen);
+    bitmap=CreateCompatibleBitmap(screen,info.bmiHeader.biWidth,info.bmiHeader.biHeight);
+    previous=SelectObject(memory,bitmap);
+    if(PrintWindow(window,memory,0U) &&
+        GetDIBits(memory,bitmap,0,(UINT)info.bmiHeader.biHeight,pixels,&info,DIB_RGB_COLORS)) {
+        ZeroMemory(&header,sizeof(header));header.bfType=0x4d42U;
+        header.bfOffBits=sizeof(header)+sizeof(BITMAPINFOHEADER);header.bfSize=header.bfOffBits+bytes;
+        sprintf(path,"%s.bmp",diagnostic);file=fopen(path,"wb");
+        if(file){ok=fwrite(&header,1,sizeof(header),file)==sizeof(header) &&
+            fwrite(&info.bmiHeader,1,sizeof(BITMAPINFOHEADER),file)==sizeof(BITMAPINFOHEADER) &&
+            fwrite(pixels,1,bytes,file)==bytes;fclose(file);}
+    }
+    SelectObject(memory,previous);DeleteObject(bitmap);DeleteDC(memory);
+    ReleaseDC(window,screen);HeapFree(GetProcessHeap(),0,pixels);
+    if(old_context)set_context(old_context);return ok;
+}
+static unsigned int checked_cells;
+static int check_frame(void)
+{
+    COORD size={80,50},origin={0,0};
+    SMALL_RECT view={0,0,79,49};
+    CONSOLE_SCREEN_BUFFER_INFO info;
+    unsigned int i,x,y,width,height;
+    if(!GetConsoleScreenBufferInfo(device.output,&info))return 0;
+    width=(unsigned int)(info.srWindow.Right-info.srWindow.Left+1);
+    height=(unsigned int)(info.srWindow.Bottom-info.srWindow.Top+1);
+    if(width>80U)width=80U;if(height>50U)height=50U;
+    if(!width || !height)return 0;
+    view.Right=(SHORT)(width-1U);view.Bottom=(SHORT)(height-1U);
+    if(!ReadConsoleOutputW(device.output,rendered,size,origin,&view))return 0;
+    if(view.Left!=0 || view.Top!=0 || view.Right!=(SHORT)(width-1U) || view.Bottom!=(SHORT)(height-1U))return 0;
+    for(y=0;y<height;++y)for(x=0;x<width;++x) {
+        WCHAR expected;
+        i=y*80U+x;expected=(WCHAR)frame.cells[i].character;
+        if(expected==0xdaU)expected=0x250cU;
+        if(expected==0xbfU)expected=0x2510U;
+        if(expected==0xc0U)expected=0x2514U;
+        if(expected==0xd9U)expected=0x2518U;
+        if(rendered[i].Char.UnicodeChar!=expected)return 0;
+    }
+    checked_cells=width*height;
+    return 1;
+}
 int main(int argc,char **argv)
 {
     HANDLE input,output;
@@ -52,14 +127,21 @@ int main(int argc,char **argv)
     owner=CreateWindowA("STATIC","owned lifecycle probe",0,0,0,0,0,NULL,NULL,GetModuleHandle(NULL),NULL);
     if(!owner)return 4;
     for(i=0;i<4000;i++) {
-        frame.cells[i].character='X';frame.cells[i].foreground=15;frame.cells[i].background=1;
+        frame.cells[i].character=(unsigned char)('!'+i%90U);frame.cells[i].foreground=(unsigned char)(i%16U);frame.cells[i].background=1;
     }
+    frame.cells[0].character=0xdaU;frame.cells[79].character=0xbfU;
+    frame.cells[3920].character=0xc0U;frame.cells[3999].character=0xd9U;
     for(cycle=0;cycle<4;cycle++) {
         fail_view=cycle==3;
         {
             /* An optional geometry failure keeps valid input/output usable. */
             if(!mysmb_win32_text_console_open(&device,owner) || !device.borrowed ||
                 device.window!=GetConsoleWindow() || !mysmb_win32_text_console_present(&device,&frame))return 6;
+            if(!check_frame() || (device.geometry_usable && checked_cells!=4000U))return 21;
+            {
+                FILE *log=fopen(argv[1],"a");
+                if(log){fprintf(log,"cycle%u glyphs=%u exact geometry=%u\n",cycle,checked_cells,device.geometry_usable);fclose(log);}
+            }
             if(cycle==0 && device.window_usable) {
                 unsigned int phase,wait;
                 for(phase=0;phase<2;++phase) {
@@ -74,7 +156,9 @@ int main(int argc,char **argv)
                         if(mysmb_win32_text_console_present(&device,&frame)==MYSMB_WIN32_CONSOLE_LOST)return 19;
                         Sleep(20U);
                     }
+                    if(!check_frame())return 22;
                 }
+                if(!capture_window(device.window,argv[1]))return 23;
                 {
                     CONSOLE_SCREEN_BUFFER_INFO fitted;
                     FILE *log;

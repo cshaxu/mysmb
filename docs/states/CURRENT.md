@@ -1,28 +1,16 @@
 # Project Status
 
-## M3 T33 S1 Packet
+**Idle.**
 
-| Field | Required record |
-| --- | --- |
-| Identifier Mode | New: M3 T33 S1 P2;restored T24 geometry delivered;awaiting owner visual verification;sole active S. |
-| Admission And Approval | Owner admits queue head and subsequently requests continuation;evaluate remaining Terminal fit,retain final owner visual gate. |
-| Objective | Attempt8x8font and80x50buffer/view independently on all console devices;capability-based fit and stable presenter through maximize/Restore. |
-| Non-goals | No game/PPU/DOS semantics,global terminal settings,profile changes,helper process or separate graphical text clone. |
-| Reference Baseline | Published T32 S8 P21 products;previous T29 acquisition/native VT retained;source-bound current console behavior. |
-| Candidate Proposal | [Console fit proposal](../proposals/m3/windows-console-adaptive-text.md). |
-| Files And ABI Surface | Same-host T24 sequence succeeds120x30to80x50and restores120x30;CSI did not establish50rows. Adopt one optional entry geometry attempt on all outputs,estimate20-40Win32device lines plus tests;restore borrowed geometry after success,no per-frame forced resize or game changes. |
-| Applicable Rules | Task Reading Set,EXECUTION,DOCUMENT,ARCHITECTURE,CODING,CONTRIBUTING and source policy. |
-| Verification | Capability matrix including no-effect fonts,temporary resize/partial writes,true loss;actual owned/borrowed console routes,x86/x64 tests and original DOS compile. Visible Terminal/Restore/font quality waits for owner verification. |
-| Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls(raw4342,infeasible81). |
-| Asset Needs | Existing owner-local ROM remains local build input. Microsoft Terminal official1.23release/PR17721 and MIT upstream source for read-only CSI resize semantics;no source copying,settings changes or dependencies. Pin local research metadata below ignored build. |
-| Reporting Requirements | Attempt/effective capabilities,resize status,actual code delta,three hashes/tests and explicit owner visual gate;node/edge totals unchanged. |
-| Stop Conditions | Global settings/foreground interference,gameplay changes,unbounded resize loop or unsupported visual-success claim. |
-| Exit Criteria | Scoped code/tests/build/delivery complete and committed;hold current task for owner visual verification,do not auto-admit queue successor. |
-| Original Owner Request | Admit first queued task,implement well,compile,test,commit,then wait for owner verification. |
-| Similar-Issue Sweep | All terminal flag uses,open optional geometry,classic and VT writes,partial/no-view/minimize/Restore,borrowed font/palette/geometry restoration and genuine device loss. |
+T33 is closed under the owner completion mandate. The queue head is the
+[native VGA/performance package](../proposals/m3/native-vga-performance-package.md),
+not admitted. T32/S9remain suspended.
 
 ## Current Technical Baseline
 
+- T33closed by owner-directed engineering acceptance. P3entry/Restore share
+  bounded rollback/retry;actual classic capture and4000glyph checks pass.
+  [Closure](../history/M3-T33-windows-console-fit.md#s1-p3-and-t33-owner-directed-engineering-closure).
 - T33 S1 P2 restores the T24one-time80x50geometry sequence independently of
   HWND availability,+31/-10Win32device/header lines. Same-host neutral probe
   and actual x86/x64products report80x50;rollback/borrowed restoration and
@@ -30,8 +18,8 @@
   [Correction](../history/M3-T33-windows-console-fit.md#s1-p2-restore-the-actual-t24-geometry-contract).
 - T29classified Terminal and skipped working geometry;P1restored font but
   still gated geometry on a real HWND. P2corrects that unsupported inference.
-  No per-frame forced Terminal resize. Owner glyph/live Restore verification
-  remains pending;T33/S1active,no automatic next admission.
+  No per-frame forced Terminal resize. Terminal physical glyph/live caption applicability
+  is retained in TODO;no all-host visual certification or next admission.
 - Published products:DOS307349B,x86318478B,x64331790B. DOS DGROUP49264,
   stack2048,loader331584..335680logical bytes unchanged. Global stack/memory
   proof and physical25MHz486SX playability remain unqualified.
@@ -52,5 +40,5 @@
 - [T32 retained checkpoints](../history/M3-T32-rendering-performance-continuation.md):
   S8transfer closure stands;T32/S9suspended by owner queue packaging.
 - [T29 retained host work](../history/M3-T29-win32-usability-regression.md):
-  asynchronous acquisition and native RGB retained;T33receives fit/Restore.
+  asynchronous acquisition and native RGB retained;T33fit/Restore repair closes.
 - T19Windows audio startup remains separately suspended in the queue.

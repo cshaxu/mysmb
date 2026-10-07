@@ -118,3 +118,52 @@ uses and optional partial failures. HWND capability now governs only actual
 window operations;device geometry is tested directly. P1full-view limitation
 is superseded for measured device viewport,not silently relabeled visual
 acceptance. T33/S1remain active awaiting owner verification;no queue advance.
+
+## S1 P3 and T33 owner-directed engineering closure
+
+Owner explicitly requests work through closure. Final repair+22/-18product
+lines removes the second raw Restore size sequence:entry and settled classic
+Restore share the same rollback-safe device operation. A reproduced first-
+request fault left a1x1view despite valid handles. One additional bounded
+attempt now recovers;two persistent failures roll back to the prior view,
+never an infinite/per-frame Terminal sizing loop. Later successful geometry
+updates the borrowed-restoration capability. Core/PPU/text/IO/DOS unchanged.
+
+Current-source capability fixtures pass both widths,including transient
+recovery and two-failure rollback,partial writes and genuine device loss.
+Final native18/18each width passes. Current actual default/classic/maximized
+parent fixtures perform four entry/exit cycles each width;all accepted views
+compare4000independently expected glyphs,including four Unicode corners,
+exactly. Caption maximize/Restore remains responsive;final classic view80x50,
+font8x8logical. Shell font,input,title,cursor,buffer and geometry restored.
+An intermediate fixture linker failure is excluded;supervision now stops on
+failed compilation before execution and current-source fixtures are bound.
+
+Neutral real Console Host captures after caption Restore are visually checked:
+all80columns/50rows and corner glyphs visible. At150%DPI,the complete physical
+capture is982x656;an earlier655x438capture was cropped by DPI virtualization
+in the harness,not by the product. Capture temporarily selects thread DPI
+awareness and restores it. Neutral captures contain no ROM assets and remain
+ignored. Only current successful captures/fixtures are closure evidence.
+
+Actual final products retain768x720graphics at144DPI;three text entries each
+read80x50/4000cells,two Tab returns and Escape exit0. Owned and borrowed
+lifetimes pass. Installed/default terminal settings and user desktop untouched;
+no production helper process. Original DOS rebuild remains byte-identical,
+DGROUP49264/stack2048 unchanged.
+
+Final existing assets:DOS307349B/SHA
+33e6bbd39273d0c99e214026b66655d66ffb548bd0336d96daa38614b80ae1e2;
+x86318478B/SHA02fbe39d8dea4a74da395b8884e11ee8d534087ad60035cce8c5d7854ab6f90b;
+x64331790B/SHA773a39d6fa55f890d83e03b2ff0aa05cba9f625772342b4823dc6c65336cc954.
+No further EXE build is needed for the documentation closure;source/product
+receipts bind these exact final outputs. New ROM-node/control credit0;
+historical1992/1992,local1991/1992nodes and4260/4261feasible controls unchanged.
+
+S1/T33close under the latest owner mandate and earlier permitted native
+Terminal Restore size/clipping contract. This is tested engineering closure,
+not full physical Terminal/all-DPI visual certification. Terminal physical
+font/live caption observation is retained as HOST-T33-VISUAL in TODO;no user
+validation is invented and no M2/global performance claim is made. The
+original proposal is archived alongside this record. CURRENT is idle;
+remaining performance package is queue head,not automatically admitted.

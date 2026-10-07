@@ -27,7 +27,7 @@ static BOOL probe_client(HWND window,LPRECT rect)
 static BOOL set_view(HANDLE output,BOOL absolute,const SMALL_RECT *view)
 {(void)output;(void)absolute;++window_calls;if(geometry_effect){buffer.srWindow=*view;return TRUE;}SetLastError(ERROR_INVALID_PARAMETER);return FALSE;}
 static BOOL set_size(HANDLE output,COORD size)
-{(void)output;if(fail_buffer_once){fail_buffer_once=0;return FALSE;}if(geometry_effect){buffer.dwSize=size;return TRUE;}return FALSE;}
+{(void)output;if(fail_buffer_once && size.X==80 && size.Y==50){--fail_buffer_once;return FALSE;}if(geometry_effect){buffer.dwSize=size;return TRUE;}return FALSE;}
 #define IsIconic iconic
 #define IsZoomed zoom
 #define GetClientRect probe_client
@@ -83,9 +83,11 @@ int main(void)
   device.window_usable=0;geometry_effect=1;
   CHECK(mysmb_win32_console_size(&device,target,&view));
   buffer.dwSize.X=120;buffer.dwSize.Y=30;
-  buffer.srWindow.Right=119;buffer.srWindow.Bottom=29;fail_buffer_once=1;
+  buffer.srWindow.Right=119;buffer.srWindow.Bottom=29;fail_buffer_once=2;
   CHECK(!mysmb_win32_console_size(&device,target,&view));
   CHECK(buffer.dwSize.X==120 && buffer.dwSize.Y==30 && buffer.srWindow.Right==119 && buffer.srWindow.Bottom==29);
+  fail_buffer_once=1;CHECK(mysmb_win32_console_size(&device,target,&view));
+  CHECK(buffer.dwSize.X==80 && buffer.dwSize.Y==50 && buffer.srWindow.Right==79 && buffer.srWindow.Bottom==49);
   geometry_effect=0;CHECK(!mysmb_win32_console_size(&device,target,&view));
   buffer.srWindow=view;buffer.dwSize=target;window_calls=0;
  }

@@ -67,21 +67,27 @@ static unsigned char mysmb_win32_console_size(struct mysmb_win32_text_console *c
     SMALL_RECT tiny={0,0,0,0};
     CONSOLE_SCREEN_BUFFER_INFO before,info;
     if(!GetConsoleScreenBufferInfo(console->output,&before))return 0U;
-    if(SetConsoleWindowInfo(console->output,TRUE,&tiny) &&
-        SetConsoleScreenBufferSize(console->output,size) &&
-        SetConsoleWindowInfo(console->output,TRUE,view) &&
-        GetConsoleScreenBufferInfo(console->output,&info) &&
-        info.dwSize.X==size.X && info.dwSize.Y==size.Y &&
-        info.srWindow.Left==view->Left && info.srWindow.Top==view->Top &&
-        info.srWindow.Right==view->Right && info.srWindow.Bottom==view->Bottom) {
-        console->observed_view.X=(SHORT)(info.srWindow.Right-info.srWindow.Left+1);
-        console->observed_view.Y=(SHORT)(info.srWindow.Bottom-info.srWindow.Top+1);
-        return 1U;
+    {
+        unsigned int attempt;
+        /* A settled host can race one optional request. Retry once only. */
+        for(attempt=0U;attempt<2U;++attempt) {
+            if(SetConsoleWindowInfo(console->output,TRUE,&tiny) &&
+                SetConsoleScreenBufferSize(console->output,size) &&
+                SetConsoleWindowInfo(console->output,TRUE,view) &&
+                GetConsoleScreenBufferInfo(console->output,&info) &&
+                info.dwSize.X==size.X && info.dwSize.Y==size.Y &&
+                info.srWindow.Left==view->Left && info.srWindow.Top==view->Top &&
+                info.srWindow.Right==view->Right && info.srWindow.Bottom==view->Bottom) {
+                console->observed_view.X=(SHORT)(info.srWindow.Right-info.srWindow.Left+1);
+                console->observed_view.Y=(SHORT)(info.srWindow.Bottom-info.srWindow.Top+1);
+                return 1U;
+            }
+            /* Optional partial failure must not leave the temporary1x1view. */
+            (void)SetConsoleWindowInfo(console->output,TRUE,&tiny);
+            (void)SetConsoleScreenBufferSize(console->output,before.dwSize);
+            (void)SetConsoleWindowInfo(console->output,TRUE,&before.srWindow);
+        }
     }
-    /* Optional partial failure must not leave the temporary1x1view behind. */
-    (void)SetConsoleWindowInfo(console->output,TRUE,&tiny);
-    (void)SetConsoleScreenBufferSize(console->output,before.dwSize);
-    (void)SetConsoleWindowInfo(console->output,TRUE,&before.srWindow);
     return 0U;
 }
 int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console,
@@ -242,7 +248,7 @@ static int mysmb_win32_console_geometry(struct mysmb_win32_text_console *console
 {
     CONSOLE_SCREEN_BUFFER_INFO info;
     COORD size,visible;
-    SMALL_RECT tiny={0,0,0,0},view={0,0,79,49};
+    SMALL_RECT view={0,0,79,49};
     DWORD now=GetTickCount();
     if(!GetConsoleScreenBufferInfo(console->output,&info))return MYSMB_WIN32_CONSOLE_DEFER;
     if(console->window_usable && IsIconic(console->window))return MYSMB_WIN32_CONSOLE_DEFER;
@@ -257,9 +263,7 @@ static int mysmb_win32_console_geometry(struct mysmb_win32_text_console *console
         mysmb_win32_console_fit(console,0U);
         if(console->window_usable && !IsZoomed(console->window)) {
             size.X=80;size.Y=50;
-            (void)SetConsoleWindowInfo(console->output,TRUE,&tiny);
-            (void)SetConsoleScreenBufferSize(console->output,size);
-            (void)SetConsoleWindowInfo(console->output,TRUE,&view);
+            if(mysmb_win32_console_size(console,size,&view))console->geometry_usable=1U;
         }
     }
     return MYSMB_WIN32_CONSOLE_READY;

@@ -8,7 +8,7 @@ a task ledger, or a record of completed work. Active work is recorded only in
 and in the generated [node/task ledger](NODE_TASK_LEDGER.md).
 
 
-1. [Native VGA output,remaining optimization and combined acceptance](../proposals/m3/native-vga-performance-package.md) - owner-requested performance package,next pending candidate after active T33;new unnumbered T with planned S1 native256x240hardware scanout,S2 finite performance/memory cohorts,S3 combined acceptance. Retains suspended T32 S9 evidence and planned S10 backlog;not admitted.
+1. [Native VGA output,remaining optimization and combined acceptance](../proposals/m3/native-vga-performance-package.md) - owner-requested performance package,pending queue-head candidate;new unnumbered T with planned S1 native256x240hardware scanout,S2 finite performance/memory cohorts,S3 combined acceptance. Retains suspended T32 S9 evidence and planned S10 backlog;not admitted.
 
 2. [All text shapes/colors and complete state gallery](../proposals/m3/text-object-state-visual-audit.md) - owner-requested visual-audit candidate after DOS16 playability;enumerate every current character/object/state,color and scene variant,publish labeled text-mode galleries for visual review,then record and repair owner-approved designs by bounded cohorts. Unnumbered,not admitted;active work is recorded only in CURRENT.
 
