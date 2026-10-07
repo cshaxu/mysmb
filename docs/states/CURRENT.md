@@ -101,6 +101,11 @@ explicitly in TODO rather than asserted complete.
   after-free retention. These are harness observations,not product memory
   figures or a global bound. No setting/product change;four gates stay open.
   [Reuse](../history/M3-T34-native-vga-performance-proposal.md#s3-p12-repeated-buffer-and-file-reuse-probe).
+- T34 S3 P13binds current DOS SHA to actual384/544KiB arena routes:startup,
+  P/O,Tab,Escape,save CRC and output dimensions pass;observed393216/526048bytes.
+  High sample splits351728primary+160environment+174160auxiliary;low includes
+  transient expansion. These are route observations,not global bounds or
+  repeated512/448KiB proofs. [Endpoints](../history/M3-T34-native-vga-performance-proposal.md#s3-p13-current-product-memory-arena-endpoints).
 
 - T33 S2 P12delivers default80x25on all three products;50-row code/art and
   interfaces remain. Shared semantic compact art/palette/layout owns output;

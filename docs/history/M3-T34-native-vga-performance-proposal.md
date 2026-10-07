@@ -849,3 +849,42 @@ Harnesses,receipts and raw runtime material remain ignored below build.
 No product/source/EXE changes,scope/expected/actual[],new0. Historical1992/1992,
 local1991/1992nodes and4260/4261feasible controls(raw4342,infeasible81)remain
 unchanged. S3/T34stay active with the same four original gate families.
+
+### S3 P13 Current Product Memory-Arena Endpoints
+
+Verification-only. Repeat the retained384and544KiB parent-arena fixtures with
+the actual current DOS product SHA
+1eab4debc224b675d1d7c433aeb911d507c6add7f2fb874c5290492b660c152f.
+Prior arena receipts remain bound to their older binary. Do not silently
+replace their identity or claim that this repeats the512/448KiB cohorts.
+The two current runs use independent hidden SDL-dummy DOSBox instances and
+unchanged stock configuration. Parallel elapsed times are not used as
+performance measurements or an equal-budget reference comparison.
+
+Both parent fixtures report execError0,result0,badChains0,dropped0 and current
+product hashes. Each has four512x480graphics captures,640x400text and restored
+exit captures. The10035-byte schema2save has a valid CRC and absent DOS audio
+state;completed saved frames are7492and7641respectively. No pending file or
+error log remains. These observations bind startup,load/save,Tab and Escape
+to the current product within the declared fixture,not all input/transition
+paths or physical hardware. Native pixel equivalence keeps its existing
+scoped receipts;capture dimensions alone do not establish pixel equality.
+
+Current observed owned maxima are393216bytes at384KiB and526048bytes at544KiB.
+The higher fixture's final sample separates351728primary bytes,160environment
+bytes and174160auxiliary bytes across five owned MCBs(primary,environment and
+three auxiliary blocks). Primary351728equals the page-rounded351456loader
+envelope plus256PSP and16MCB bytes. Auxiliary capacity includes CRT headers,
+paragraph rounding and retained slack;it is not the169248requested-payload
+bound. The lower route includes a transient auxiliary expansion and later
+returns to392864owned bytes,so stable post-file samples alone would miss its
+393216peak. Do not use an after-close sample as a global peak proof.
+
+These current endpoints corroborate the retained operational cache/fallback
+evidence and narrow the product-identity gap. All startup placement,near/far
+failure/resizing and service/firmware clauses remain required for global
+memory/stack acceptance. No new product defect or justified product change
+is established by these runs. No code/EXE refresh,ROM credit or whole-ROM
+certificate. Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes
+and4260/4261feasible controls(raw4342,infeasible81)unchanged. Raw fixtures,
+captures and scripts stay ignored;four fixed gate families remain open.
