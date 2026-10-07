@@ -30,6 +30,12 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P20binds final DOS SHA to384/448/500KiBarena launch,P/O,Tab and exit
+  receipts;observed maxima373856/437408/498880bytes. Current requested heap
+  upper bound159212bytes excludes loader/CRT/fragmentation/external services;
+  no global-peak certification. No code/products changed;four original gates
+  remain open. [Current memory receipt](../history/M3-T34-native-vga-performance-proposal.md#s3-p20-final-product-low-memory-routes-and-payload-bound).
+
 - T34 S3 P19measures a forced full background rebuild stress route:with8KiB
   CHR1312.501ms/step versus1614.275without,saving301.774diagnostic ms.
   Each of13samples rebuilds1920tiles;paired final state CRC agrees. Rejected

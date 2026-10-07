@@ -1281,3 +1281,35 @@ failed long windows,completed short windows and result.json remain below
 ignored build/m3-t34-s3/cold-cache;analyze-p19-short.py checks13samples per
 variant,allocation flags,frame advancement and paired final CRC. Product
 source/EXEs unchanged;new ROM credit0;four original gates remain open.
+
+### S3 P20 Final Product Low-Memory Routes And Payload Bound
+
+Audit/runtime only;no product change. Repeat384/448KiBarena routes using the
+final P15clock-corrected DOS SHA30741023c54daea38f6d4efcf8ef1ce201ce509eda442ae48988d6db4d64f726.
+Combine them with the retained final500KiBroute;do not relabel the older
+pre-clock receipts. Each current-hash route has execError0,result0,badChains0,
+dropped0,successful script exit,valid schema2save CRC,no pending/log file and
+expected native512x480/text640x400capture dimensions. Scripted key,save/load
+and Tab operations are covered,not every possible input or visual pixel.
+
+| Conventional arena KiB | Maximum sampled owned DOS bytes |
+| --- | --- |
+| 384 | 373856 |
+| 448 | 437408 |
+| 500 | 498880 |
+
+Current production allocation-site review yields mandatory15532text/row plus
+10048store bytes,optional63488background+8192CHR+61440byte upgrade,and at most
+one512-byte stdio data buffer:159212application-requested heap bytes. CHR near
+and far success are exclusive;cache attempts occur once. The530-byte palette
+pair branch is not selected by the current palette-row constructor. Core,
+text,app and shared PPU have no additional allocator calls;P/O stream through
+the same staging and do not request another snapshot. This bound replaces
+the older169248payload figure for current source only. It excludes loaded
+code/static data,environment,CRT metadata/retained segments,fragmentation and
+external startup/services;it does not certify global DOS memory.
+
+Evidence below ignored build/m3-t34-s3:Run-p20-final384/448.ps1,their separate
+run directories,verify-p20-final.py and p20-final-memory.json. The verifier
+also checks current product/config hashes and retained final500output. All
+four original gates remain open;ROM node/control credit0.
