@@ -493,3 +493,48 @@ Five persistent requests sum168736B,matching the measured occupied far-heap
 payload in the byte-cache diagnostic;allocator-reserved space remains distinct.
 Historical1992/1992,local1991/1992nodes and4260/4261feasible controls unchanged,
 new0. S3/T34/goal remain active;no hardware answer or result is inferred.
+
+### S3 P4 Current Compiler Stack Listings And Interrupt Boundary
+
+Verification-only:original /AL compiler reproduces eight current units with
+the exact product flags,including the safe renderer optimization whitelist.
+Code/data/fixup records match each current product object;only debug/listing
+metadata differ. Units are PPU frame,DOS main/root/devices/keyboard/nibble
+expansion,neutral snapshot and application control. No core/ROM code import,
+product edit or EXE refresh. Listings,objects and analyzer receipts stay local.
+
+Local CFG analysis covers85functions and resolves their own stack balance and
+return depths under their declared call ABI. Constant branches/loops and
+switch tables are traversed with a bounded state register;GS PUSH/POP emitted
+as split DB bytes are normalized. Semicolon annotations in optimized immediate
+operands are parsed as comments. Maximum live caller-owned bytes:initialize596,
+background row312,frame internal96,slot-cache prepare92,ordinary present48.
+These omit each callee's own nested work and IRQ/firmware overlay;they cannot
+be compared directly with the2048-byte whole-program stack as a full proof.
+Thirteen indirect call sites still need target/callee-depth reconciliation.
+
+Current installed keyboard handler has34caller-owned bytes at its deepest
+call and balanced IRET restoration. Scan has22at its control-toggle call;
+toggle owns8. With FAR returns and the6-byte hardware entry frame,the reviewed
+keyboard/control branch sums78bytes;port I/O leaves are smaller. Current linked
+inp/outp bodies preserve BP and return FAR without argument popping. This
+bounded branch is not a proof of every foreground frame plus BIOS/NMI nesting.
+The handler's original register-save prologue and installed IRQ vector remain
+unchanged;the exit repair modifies only pending app state under the existing
+interrupt-disabled reset transaction.
+
+Native VRAM REP MOVSD uses USE16addresses/counts,balanced DS/ES saves and
+12caller-owned bytes;it makes no nested call. Retained nibble acceleration
+owns14bytes,makes no call and brackets its GS/32-bit indexed lookup with saved
+FLAGS,CLI,saved/restored GS and POPF. The unmasked uniform path and normal
+16-bit keyboard handler retain their distinct register/NMI applicability
+requirements;CLI does not mask NMI. No global IRQ/NMI,firmware or all-context
+stack certification is inferred from these local facts.
+
+Runtime multiply/divide return windows are diagnostic only and not used to
+promote the global stack gate. The inspected eight units call shift helpers,
+not those four callee-pop arithmetic entries. Their leaf/helper depths and
+remaining core/runtime calls still belong to global reconciliation. The85/85
+local balance count is deliberately not an all-path whole-program result.
+Four original gates remain unproved;S3/T34/goal stay active. New ROM credit0;
+historical1992/1992,local1991/1992nodes and4260/4261feasible controls unchanged.

@@ -51,6 +51,12 @@ explicitly in TODO rather than asserted complete.
   bindings confirm512-byte buffering. This excludes allocator/loader/CRT/DOS
   reservations and therefore does not certify total memory/global peak.
   Product unchanged;[bound](../history/M3-T34-native-vga-performance-proposal.md#s3-p3-application-payload-bound-and-crt-binding).
+- T34 S3 P4binds eight compiler listings to identical product code/data/fixups;
+  85local functions have balanced own stack paths. Maxima596initialize/
+  312background-row bytes and a78-byte reviewed keyboard/control branch are
+  partial bounds,not the full2048-byte stack proof. Thirteen indirect sites,
+  whole foreground/core/runtime chains and firmware/NMI remain explicit.
+  No product change,[receipt](../history/M3-T34-native-vga-performance-proposal.md#s3-p4-current-compiler-stack-listings-and-interrupt-boundary).
 
 - T33 S2 P12delivers default80x25on all three products;50-row code/art and
   interfaces remain. Shared semantic compact art/palette/layout owns output;
