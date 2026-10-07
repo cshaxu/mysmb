@@ -1507,6 +1507,24 @@ ROM-node/control credit follows from a rejected candidate. Evidence remains
 below ignored build/m3-t34-s3:final-tests-x86.log,final-tests-x64.log and
 dos16-single-workspace.
 
+### S3 P33 Row-Band Sprite-Range Rejection
+
+The rowwise DOS source presenter invokes the shared compositor in fifteen
+sixteen-row bands, so a view-local OAM interval per band was evaluated. Exact
+band/full-frame pixels, OAM ordering, clipping, split/priority cases, both
+Windows suites and the unchanged-stock DOSBox route all passed. The original
+DOS build, however, grew from324873 to325241 bytes and DGROUP from31440 to
+31472 bytes.
+
+A paired host diagnostic initially suggested a large benefit, but three
+repeat samples measured only about one to two percent difference in the
+row-band compositor. That host result is neither stable enough nor a 486
+measurement, and does not justify the 368-byte code plus32-byte DGROUP cost.
+The candidate and its temporary diagnostic are reverted;P31 remains the
+current source/product baseline. No artifact refresh or ROM-node/control
+credit follows. Evidence remains below ignored build/m3-t34-s3:final-tests-
+x86.log,final-tests-x64.log,dos16-single-workspace and run-p20-final384.
+
 ### S3 P24 Current Startup And Exit Dispatcher Binding
 
 Audit only. Current loaded bytes confirm the two unused argument/environment
