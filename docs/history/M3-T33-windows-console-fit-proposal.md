@@ -429,3 +429,9 @@ the middle column still consumes the unchanged 80x50 cell buffer.
 Pose review must compare limb landmarks,direction,spacing and negative space,
 not just the action label. V3 is pending owner review;no product adoption,
 ROM-node promotion or 80x50 source change occurs.
+
+P5 owner identifies the source's raised,right-side shoe pointing upward.
+V4 moves that shoe above the left foot in both run1 and jump,using an upright
+half-block and diagonal bent leg over the scene background rather than a
+horizontal arrow or a second grounded shoe. This is a pending compact-art
+proposal,not a verified product repair;existing source/EXEs remain unchanged.
