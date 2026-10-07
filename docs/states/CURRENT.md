@@ -84,6 +84,12 @@ explicitly in TODO rather than asserted complete.
   service entry before unknown BIOS depth. Seven nested allocator/file entries
   plus DOS/BIOS/firmware/startup/IRQ/NMI clauses remain,not zero-cost leaves.
   [Wrappers](../history/M3-T34-native-vga-performance-proposal.md#s3-p9-dosbios-service-wrapper-contributions).
+- T34 S3 P10models the seven remaining allocator/file internal contributions
+  for current binary streams:64/50/64/34/56/122/136bytes,balanced returns.
+  The linked descriptor test excludes text conversion only under rb/wb/ab
+  caller binding;general text/dynamic-stack/fatal paths are not certified.
+  DOS/BIOS bodies,startup,IRQ/NMI and all four fixed gates remain open.
+  No source/EXE change;[receipt](../history/M3-T34-native-vga-performance-proposal.md#s3-p10-current-binary-file-runtime-contributions).
 
 - T33 S2 P12delivers default80x25on all three products;50-row code/art and
   interfaces remain. Shared semantic compact art/palette/layout owns output;

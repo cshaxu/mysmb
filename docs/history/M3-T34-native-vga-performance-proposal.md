@@ -722,3 +722,50 @@ with2048as a completed upper bound. Four original global/reference/physical
 gates remain open. New ROM credit0;historical1992/1992,local1991/1992nodes and
 4260/4261feasible controls unchanged. Source listings/raw metadata stay ignored;
 only this neutral evidence is tracked. S3/T34/goal remain active.
+
+### S3 P10 Current Binary-File Runtime Contributions
+
+Verification-only. Follow private near/FAR callees from the seven remaining
+allocator/file entries in the current linked MZ. The decoder is anchored at
+71 public entries; reachable fall-through must be byte-contiguous. Resolve
+the allocator's private early-return jump separately. Return-address kinds,
+argument cleanup and BP restoration are checked; interrupt service bodies
+remain unknown rather than being assigned zero stack cost.
+
+| Entry | Modeled internal peak bytes, excluding root return address |
+| --- | --- |
+| fmalloc | 64 |
+| nmalloc | 50 |
+| fclose | 64 |
+| fflush | 34 |
+| fopen | 56 |
+| fread | 122 |
+| fwrite | 136 |
+
+These are conditional contributions for the current composition,not total
+process bounds. Each modeled return balances at depth0 with argument-pop0.
+The current file service opens only rb,wb and ab streams. The actual runtime
+mode parser maps b to the binary open flag;the descriptor's text flag remains
+clear. Therefore the write routine's text-conversion branch is excluded at
+its explicit descriptor test. This is a reviewed caller condition,not blanket
+removal of a failing path. Binary error/short-write branches remain included.
+
+The generic text branch reserves128or512dynamic stack bytes and contains
+saved-SP restoration plus fatal-exit/debug callbacks. Its general bound is
+not established by this receipt. The verifier also distinguishes SP reads
+from writes and rejects an unmodeled saved-SP restore. Those are analysis
+tool corrections beneath ignored build,not product fixes.
+
+Existing free-buffer evidence still applies:stream-owned buffering is freed
+and fields cleared at close;the shared service calls fclose even when an
+explicit fflush fails. Reopening can reuse a released stream and allocator
+block;this does not prove fragmentation,allocator metadata or a global DOS
+memory peak. DOS services,BIOS,firmware,NMI and pre-main startup contributions
+remain outside these internal figures. The four fixed gate families stay open.
+
+Current product hashes match the P1 delivery;no product/source change and no
+artifact refresh. Raw runtime bytes,listings and analysis scripts remain
+ignored. Neutral conclusions only tracked. Scope/expected/actual[],new0;
+historical1992/1992,local1991/1992nodes and4260/4261feasible controls unchanged
+(raw4342,infeasible81). S3/T34remain active;no global2048-byte or physical
+486SX certificate is issued.
