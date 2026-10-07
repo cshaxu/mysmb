@@ -1219,3 +1219,31 @@ target/lifetime evidence,not a complete ABI or transitive-stack proof. Nested
 file replacement/compositor callbacks,callee depths and external service
 overlays retain separate obligations. No code,EXE or ROM-credit change;
 all four original gates remain open.
+
+### S3 P18 Conditional CHR Cost On Retained Transition Seeds
+
+Test-only local probes;no product source change. Clone the current P15packed
+diagnostic and suppress only decoded-CHR allocation in its paired variant.
+Original16-bit compiler/linker and stock DOSBox configuration are retained.
+Two controller-generated checkpoints (AREA and EXIT) each run both variants;
+61normal-step samples follow warmup/load. Allocation flags confirm packed
+background,no byte upgrade,and the intended presence/absence of CHR.
+
+| Seed | With8KiB CHR median ms | Without CHR median ms | CHR saving ms | Rebuilt tiles in measured window |
+| --- | --- | --- | --- | --- |
+| AREA | 95.898 | 95.554 | -0.344 | 4 |
+| EXIT | 97.199 | 96.463 | -0.736 | 0 |
+
+Each step advances one game frame;paired final states agree:AREA frame997,
+payload CRC4240562589;EXIT frame1400,CRC3441348231. This is state equality,
+not independent pixel equality. Both route pairs exit successfully with
+unchanged configuration hash. Runs are finite diagnostic observations,not
+physical cadence or equal-budget reference qualification. Small timing
+differences are not established regressions without repeated cohorts.
+
+The warm windows do not exercise sustained scroll/rebuild storms or prove
+sprite-density coverage. Retain the P14canonical pixel tests and source
+contract;do not infer an all-scenes CHR-removal decision from these timings.
+Evidence and generator/analyzer stay below ignored build/m3-t34-s3/scene-cache
+and build/m3-t34-s3. The8KiBcache remains unchanged pending owner strategy and
+the named cold/rebuild coverage gap. No new ROM credit or gate closure.

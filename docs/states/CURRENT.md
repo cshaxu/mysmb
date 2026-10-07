@@ -30,6 +30,13 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P18adds paired packed/packed-without-CHR diagnostic runs from AREA
+  and EXIT checkpoints. Each61-step pair has equal final state CRC;8KiBCHR
+  shows no benefit here(0.344/0.736ms slower medians). Warm windows rebuild
+  only4/0tiles,so cold/sustained-scroll and sprite-density coverage remain
+  explicit. No product/cache-policy change or gate/node promotion.
+  [Conditional costs](../history/M3-T34-native-vga-performance-proposal.md#s3-p18-conditional-chr-cost-on-retained-transition-seeds).
+
 - T34 S3 P17reviews all24indirect sites in the P16bound changed-unit listings:
   23current constructor targets and one inactive legacy presenter. Copied
   file/hook lifetimes and pacing-only clock adapter are reconciled;transitive
