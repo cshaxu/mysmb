@@ -20,7 +20,7 @@ struct text_storage {
     struct mysmb_text_scene_workspace workspace;
     struct mysmb_io_text_frame frame;
 };
-typedef char text_storage_fits_band[sizeof(struct text_storage)>=2560U+MYSMB_VGA_PAGE_COUNT*MYSMB_VGA_BATCH_SIZE &&
+typedef char text_storage_fits_band[sizeof(struct text_storage)>=8192U &&
     sizeof(struct text_storage)<=MYSMB_IO_VIDEO_PIXELS?1:-1];
 static struct text_storage MYSMB_IO_FAR *text_storage;
 static mysmb_io_u8 MYSMB_IO_FAR *plane_pixels;
@@ -32,21 +32,18 @@ static void read_input(void *context, struct mysmb_io_input *input)
 }
 static int present_rows(void *context,const struct mysmb_io_palette_video_source *indexed)
 {
-    mysmb_io_u16 plane,first,source_first,source_rows;
+    mysmb_io_u16 plane,first;
     struct mysmb_io_video_band band;
     const struct mysmb_io_video_source *source=&indexed->rows;
     (void)context;
     mysmb_dos16_devices_palette(indexed->master_colors);
-    for(first=0U;first<MYSMB_VGA_HEIGHT;first+=MYSMB_VGA_BATCH_ROWS) {
-        source_first=(mysmb_io_u16)(first*3U/5U);
-        source_rows=(mysmb_io_u16)((first+MYSMB_VGA_BATCH_ROWS-1U)*3U/5U-source_first+1U);
-        if(!source->read_rows(source->context,source_first,source_rows,&band))return 0;
-        if(!mysmb_io_planar_build_band(&band,first,MYSMB_VGA_BATCH_ROWS,
-            plane_pixels,MYSMB_VGA_PAGE_COUNT*MYSMB_VGA_BATCH_SIZE,
-            mysmb_dos16_pack_planar_band))return 0;
+    for(first=0U;first<MYSMB_PLANAR_NATIVE_HEIGHT;first+=MYSMB_VGA_BATCH_ROWS) {
+        if(!source->read_rows(source->context,first,MYSMB_VGA_BATCH_ROWS,&band))return 0;
+        if(!mysmb_io_planar_native_band(&band,plane_pixels,
+            MYSMB_PLANAR_NATIVE_BAND_BYTES,mysmb_dos16_pack_native_band))return 0;
         for(plane=0U;plane<MYSMB_VGA_PAGE_COUNT;++plane)
             mysmb_dos16_devices_present_rows(plane,first,MYSMB_VGA_BATCH_ROWS,
-                plane_pixels+plane*MYSMB_VGA_BATCH_SIZE);
+                plane_pixels+plane*MYSMB_VGA_BATCH_ROWS*MYSMB_PLANAR_NATIVE_PITCH);
     }
     return 1;
 }
@@ -76,9 +73,9 @@ static int initialize(void)
     hooks.submit_audio=submit_audio;
     if (!mysmb_dos16_root_initialize_palette_rows(&root,&hooks,
         (mysmb_io_u16)sizeof(struct text_storage),present_rows)) return 0;
-    /* Graphics source occupies at most2560bytes. A5120-byte four-plane view
+    /* Graphics source occupies4096bytes. A4096-byte four-plane view
      * borrow its unused tail until submission;text owns the whole store later. */
-    plane_pixels=root.ppu_frame.pixels+2560U;
+    plane_pixels=root.ppu_frame.pixels+4096U;
     snapshot_store=(struct mysmb_snapshot_store *)_fmalloc(sizeof(*snapshot_store));
     if(snapshot_store==0) {mysmb_dos16_root_shutdown(&root);return 0;}
 #ifdef MYSMB_LOCAL_TITLE

@@ -26,6 +26,40 @@ static void band_encoder(const mysmb_io_u8 *source,mysmb_io_u8 *out,
   }else row_encoder(source+plan[row],out+row*80U,stride);
  }
 }
+static void native_encoder(const mysmb_io_u8 *source,mysmb_io_u8 *out,
+    mysmb_io_u16 stride,mysmb_io_u16 rows,const mysmb_io_u16 *plan)
+{
+ unsigned short row,p,x;
+ ++band_calls;
+ for(row=0U;row<rows;++row)for(p=0U;p<4U;++p)for(x=0U;x<64U;++x)
+  out[p*stride+row*64U+x]=(mysmb_io_u8)(source[plan[row]+x*4U+p]&63U);
+}
+static int native_planes(void)
+{
+ struct mysmb_io_video_band band;unsigned short first,rows,p,x,y,i;
+ unsigned long count=0UL;
+ for(rows=1U;rows<=16U;++rows)for(first=0U;first+rows<=240U;++first){
+  band.first=first;band.rows=rows;band.pixels=pixels+first*256U;
+  memset(packed,0xa5,sizeof(packed));memset(encoded,0xa5,sizeof(encoded));
+  band_calls=0;
+  if(!mysmb_io_planar_native_band(&band,packed+16,rows*256U,0) ||
+   !mysmb_io_planar_native_band(&band,encoded+16,rows*256U,native_encoder) ||
+   band_calls!=1 || memcmp(packed,encoded,sizeof(packed)))return 20;
+  for(p=0U;p<4U;++p)for(y=0U;y<rows;++y)for(x=0U;x<64U;++x){
+   if(packed[16U+(p*rows+y)*64U+x]!=(pixels[(first+y)*256U+x*4U+p]&63U))return 21;
+   ++count;
+  }
+  for(i=0U;i<16U;++i)if(packed[i]!=0xa5 || packed[16U+rows*256U+i]!=0xa5)return 22;
+ }
+ band.first=0;band.rows=16;band.pixels=pixels;band_calls=0;
+ if(mysmb_io_planar_native_band(&band,packed,4095,native_encoder))return 23;
+ band.rows=17;if(mysmb_io_planar_native_band(&band,packed,5120,native_encoder))return 24;
+ band.rows=1;band.first=240;if(mysmb_io_planar_native_band(&band,packed,5120,native_encoder))return 25;
+ band.first=239;band.rows=2;if(mysmb_io_planar_native_band(&band,packed,5120,native_encoder))return 26;
+ band.rows=0;if(mysmb_io_planar_native_band(&band,packed,5120,native_encoder) || band_calls)return 27;
+ printf("native256x240 allBands1to16 comparedBytes=%lu guards=1 invalidRejected=1\n",count);
+ return 0;
+}
 static int four_planes(void)
 {
  struct mysmb_io_video_band band;unsigned short first,rows,p,x,y,sy,sx,i;
@@ -106,5 +140,6 @@ int main(void)
     mysmb_vga_frame_build_rows(&source,4U,0U,1U,scratch+1);
     mysmb_vga_frame_build_rows(&source,0U,399U,2U,scratch+1);
     if(scratch[1]!=0xa5U)return 5;
-    return four_planes();
+    if(four_planes())return 10;
+    return native_planes();
 }

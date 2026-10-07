@@ -1,5 +1,26 @@
 #include "io/planar_frame.h"
 #include <string.h>
+int mysmb_io_planar_native_band(const struct mysmb_io_video_band *source,
+    mysmb_io_u8 MYSMB_IO_FAR *out,mysmb_io_u16 capacity,
+    mysmb_io_planar_band_packer packer)
+{
+    mysmb_io_u16 row,x,p,stride;
+    mysmb_io_u16 plan[MYSMB_VGA_BATCH_ROWS];
+    const mysmb_io_u8 MYSMB_IO_FAR *in;
+    if(!source || !source->pixels || !out || !source->rows ||
+        source->rows>MYSMB_VGA_BATCH_ROWS || source->first>=240U ||
+        source->rows>240U-source->first || source->rows>capacity/256U)return 0;
+    stride=(mysmb_io_u16)(source->rows*64U);
+    if(packer) {
+        for(row=0U;row<source->rows;++row)plan[row]=(mysmb_io_u16)(row*256U);
+        packer(source->pixels,out,stride,source->rows,plan);
+    }else for(row=0U;row<source->rows;++row) {
+        in=source->pixels+row*256U;
+        for(x=0U;x<64U;++x)for(p=0U;p<4U;++p)
+            out[p*stride+row*64U+x]=(mysmb_io_u8)(in[x*4U+p]&63U);
+    }
+    return 1;
+}
 void mysmb_vga_frame_initialize(struct mysmb_vga_frame *frame,
     mysmb_io_u8 MYSMB_VGA_FAR *p0, mysmb_io_u8 MYSMB_VGA_FAR *p1,
     mysmb_io_u8 MYSMB_VGA_FAR *p2, mysmb_io_u8 MYSMB_VGA_FAR *p3)

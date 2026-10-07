@@ -144,6 +144,101 @@ plane_done:
     _asm mov ah,[si+b] \
     _asm and ax,3f3fh \
     _asm mov es:[di+dst],ax
+/* Native plane output:no scaling or repeated rows. Fixed word gathers
+ * advance each plane sequentially;avoid per-group addressing/32-bit shifts.
+ * The bounded code expansion trades instructions for no extra RAM. */
+void mysmb_dos16_pack_native_band(const mysmb_io_u8 MYSMB_IO_FAR *source,
+    mysmb_io_u8 MYSMB_IO_FAR *pixels,mysmb_io_u16 stride,mysmb_io_u16 rows,
+    const mysmb_io_u16 MYSMB_IO_FAR *plan)
+{
+    mysmb_io_u16 left,row_start;
+    (void)plan;left=rows;
+    _asm {
+        push ds
+        push es
+        lds si,source
+        les di,pixels
+        mov row_start,di
+        mov bx,stride
+native_next:
+        mov di,row_start
+        PACK_TWO(0,0,4) PACK_TWO(2,8,12)
+        PACK_TWO(4,16,20) PACK_TWO(6,24,28)
+        PACK_TWO(8,32,36) PACK_TWO(10,40,44)
+        PACK_TWO(12,48,52) PACK_TWO(14,56,60)
+        PACK_TWO(16,64,68) PACK_TWO(18,72,76)
+        PACK_TWO(20,80,84) PACK_TWO(22,88,92)
+        PACK_TWO(24,96,100) PACK_TWO(26,104,108)
+        PACK_TWO(28,112,116) PACK_TWO(30,120,124)
+        PACK_TWO(32,128,132) PACK_TWO(34,136,140)
+        PACK_TWO(36,144,148) PACK_TWO(38,152,156)
+        PACK_TWO(40,160,164) PACK_TWO(42,168,172)
+        PACK_TWO(44,176,180) PACK_TWO(46,184,188)
+        PACK_TWO(48,192,196) PACK_TWO(50,200,204)
+        PACK_TWO(52,208,212) PACK_TWO(54,216,220)
+        PACK_TWO(56,224,228) PACK_TWO(58,232,236)
+        PACK_TWO(60,240,244) PACK_TWO(62,248,252)
+        add di,bx
+        PACK_TWO(0,1,5) PACK_TWO(2,9,13)
+        PACK_TWO(4,17,21) PACK_TWO(6,25,29)
+        PACK_TWO(8,33,37) PACK_TWO(10,41,45)
+        PACK_TWO(12,49,53) PACK_TWO(14,57,61)
+        PACK_TWO(16,65,69) PACK_TWO(18,73,77)
+        PACK_TWO(20,81,85) PACK_TWO(22,89,93)
+        PACK_TWO(24,97,101) PACK_TWO(26,105,109)
+        PACK_TWO(28,113,117) PACK_TWO(30,121,125)
+        PACK_TWO(32,129,133) PACK_TWO(34,137,141)
+        PACK_TWO(36,145,149) PACK_TWO(38,153,157)
+        PACK_TWO(40,161,165) PACK_TWO(42,169,173)
+        PACK_TWO(44,177,181) PACK_TWO(46,185,189)
+        PACK_TWO(48,193,197) PACK_TWO(50,201,205)
+        PACK_TWO(52,209,213) PACK_TWO(54,217,221)
+        PACK_TWO(56,225,229) PACK_TWO(58,233,237)
+        PACK_TWO(60,241,245) PACK_TWO(62,249,253)
+        add di,bx
+        PACK_TWO(0,2,6) PACK_TWO(2,10,14)
+        PACK_TWO(4,18,22) PACK_TWO(6,26,30)
+        PACK_TWO(8,34,38) PACK_TWO(10,42,46)
+        PACK_TWO(12,50,54) PACK_TWO(14,58,62)
+        PACK_TWO(16,66,70) PACK_TWO(18,74,78)
+        PACK_TWO(20,82,86) PACK_TWO(22,90,94)
+        PACK_TWO(24,98,102) PACK_TWO(26,106,110)
+        PACK_TWO(28,114,118) PACK_TWO(30,122,126)
+        PACK_TWO(32,130,134) PACK_TWO(34,138,142)
+        PACK_TWO(36,146,150) PACK_TWO(38,154,158)
+        PACK_TWO(40,162,166) PACK_TWO(42,170,174)
+        PACK_TWO(44,178,182) PACK_TWO(46,186,190)
+        PACK_TWO(48,194,198) PACK_TWO(50,202,206)
+        PACK_TWO(52,210,214) PACK_TWO(54,218,222)
+        PACK_TWO(56,226,230) PACK_TWO(58,234,238)
+        PACK_TWO(60,242,246) PACK_TWO(62,250,254)
+        add di,bx
+        PACK_TWO(0,3,7) PACK_TWO(2,11,15)
+        PACK_TWO(4,19,23) PACK_TWO(6,27,31)
+        PACK_TWO(8,35,39) PACK_TWO(10,43,47)
+        PACK_TWO(12,51,55) PACK_TWO(14,59,63)
+        PACK_TWO(16,67,71) PACK_TWO(18,75,79)
+        PACK_TWO(20,83,87) PACK_TWO(22,91,95)
+        PACK_TWO(24,99,103) PACK_TWO(26,107,111)
+        PACK_TWO(28,115,119) PACK_TWO(30,123,127)
+        PACK_TWO(32,131,135) PACK_TWO(34,139,143)
+        PACK_TWO(36,147,151) PACK_TWO(38,155,159)
+        PACK_TWO(40,163,167) PACK_TWO(42,171,175)
+        PACK_TWO(44,179,183) PACK_TWO(46,187,191)
+        PACK_TWO(48,195,199) PACK_TWO(50,203,207)
+        PACK_TWO(52,211,215) PACK_TWO(54,219,223)
+        PACK_TWO(56,227,231) PACK_TWO(58,235,239)
+        PACK_TWO(60,243,247) PACK_TWO(62,251,255)
+        add si,256
+        add row_start,64
+        dec left
+        jz native_done
+        jmp native_next
+native_done:
+        pop es
+        pop ds
+    }
+}
 /* One validated band plan is copied to SS before borrowing source DS. */
 void mysmb_dos16_pack_planar_band(const mysmb_io_u8 MYSMB_IO_FAR *source,mysmb_io_u8 MYSMB_IO_FAR *pixels,
     mysmb_io_u16 stride,mysmb_io_u16 rows,const mysmb_io_u16 MYSMB_IO_FAR *plan)

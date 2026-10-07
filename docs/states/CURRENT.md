@@ -1,30 +1,30 @@
 # Project Status
 
-**Active: M3 T34 S1, native VGA output.**
+**Active: M3 T34 S2, performance and memory cohorts.**
 
-## M3 T34 S1 Packet
+## M3 T34 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | New; T33 S2/T33 closed by owner acceptance; allocate next ascending T34, start S1. |
+| Identifier Mode | Continuation; S1 native adoption closed; S2 active under owner instruction to execute T34 through closure. |
 | Admission And Approval | Owner reports delivered text successful and explicitly requests T closure and next queue admission; queue-head native VGA/performance package admitted. |
-| Objective | Adopt native256x240 DOS VGA plane output with hardware scan repetition,eliminating software resampling while preserving61440pixels and original PPU semantics. |
+| Objective | Resolve finite six-candidate performance/memory register;prototype shared byte background cache with bounded low-memory fallback,adopt only measured gains with unchanged semantics. |
 | Non-goals | No game/PPU decision changes,DOS4GW,new driver,helper process,frameskip,emulator settings changes,text redesign or whole-ROM certification. |
-| Reference Baseline | Source f7ff2b2f; accepted local products DOS320681B,x86330766B,x64346126B. Current DGROUP51472B/stack2048B; hashes and loader bound in proposal. Reprofile current source; retained T32 costs are historical. |
-| Candidate Proposal | [Admitted T34 plan and S1 baseline](../history/M3-T34-native-vga-performance-proposal.md#t34-s1-p1-admission-and-current-baseline). |
-| Files And ABI Surface | platform/dos16 devices,plane encoder and root;neutral reusable IO only if required;scoped VGA/input/runtime tests and original build tools. Estimate150-300product lines,no new full-frame allocation,reuse15532-byte exclusive workspace. |
+| Reference Baseline | S1 source/delivery bound in proposal; local products DOS323049B,x86330766B,x64346126B. Current DGROUP51472B/stack2048B; hashes and loader bound in proposal. Reprofile current source; retained T32 costs are historical. |
+| Candidate Proposal | [Admitted T34 plan and S1 baseline](../history/M3-T34-native-vga-performance-proposal.md#t34-s2-p1-admissionfinite-performance-and-memory-cohorts). |
+| Files And ABI Surface | neutral PPU/IO representation and composition roots;scoped packed/byte/canonical/fallback tests and original builds. Estimate150-300product lines;byte background candidate net61440B only if measured gain and allocation fallback qualify. |
 | Applicable Rules | Execution,Documentation,Architecture,Coding,source policy;System Architecture and Source Layout. |
 | Verification | Exact61440source-to-VRAM pixels/palette/edges,HUD split/scroll/priority,cache/fallback,mode restoration and Tab;actual DOS input/transition routes,Windows regression,original16-bit compiler/link/segment/stack/loader and before/after stage costs;three local products on code change. |
 | Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0;historical1992/1992,local1991/1992nodes,4260/4261feasible controls unchanged(raw4342,infeasible81). |
 | Asset Needs | Existing owner-local SMB1 ROM is Nintendo material without redistribution grant;read-only for local embedded builds and bounded runtime probes. Existing NESticle conceptual research is copyright-only:do not copy code/mode tables or import. Generated data,captures,traces/products remain local;neutral evidence only tracked. No fresh third-party research/import in P1 admission. |
 | Reporting Requirements | Before every S report objective,components/code and memory estimates;after report actual changes,scoped results,candidate dispositions and total/local node/edge counts. Do not infer hardware cadence/LCD filling from emulator captures. |
 | Stop Conditions | Pixel/priority/split loss,core mutation,installed-setting change,new unbounded audit,unmeasured full-frame allocation or unsupported timing requires redesign within the admitted scope. |
-| Exit Criteria | Source-bound native adoption correct and operational with fixed verification and three products,or measured rejection naming unresolved display requirements. S2 admitted only after scoped S1 closure;physical486SX qualification stays M4. |
+| Exit Criteria | Source-bound native adoption correct and operational with fixed verification and three products,or measured rejection naming unresolved display requirements. S2 closes when all six candidates have measured selected/rejected/not-applicable disposition and adopted changes pass scoped tests;S3 then admitted. Physical486SX qualification stays M4. |
 | Original Owner Request | Close successful T33 and admit next queued task;retain native-resolution VGA/performance plan. |
 | Similar-Issue Sweep | Review all DOS graphics coordinate/row/plane constants,palette invalidation,mode/text switch/reset and output submissions;retained50/new25 text and Win32 presentation must not regress. |
 
 T34 plan:S1 native output;S2 finite performance/memory register after reprofile;
-S3 combined acceptance. Only S1 active. T32/S9 remains suspended;T19 audio
+S3 combined acceptance. Only S2 active. T32/S9 remains suspended;T19 audio
 and M2 final certification remain queued. T33 broader gallery debt is recorded
 explicitly in TODO rather than asserted complete.
 
@@ -61,7 +61,7 @@ explicitly in TODO rather than asserted complete.
   VGA/performance/acceptance work is the
   [admitted T34 package](../history/M3-T34-native-vga-performance-proposal.md).
   Its original-tool pattern probe retains61440exact pixels/512x480hardware
-  replication;no game-mode adoption yet.
+  replication;S1 now adopts this native path in the actual game.
 - Historical1992/1992,local1991/1992nodes and4260/4261feasible controls
   (raw4342,infeasible81),new0. Full M2certificate remains incomplete:
   10691sites/4171accesses,6/136groups and42/952facets accepted;

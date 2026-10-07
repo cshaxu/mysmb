@@ -168,3 +168,60 @@ S1/S2/S3 each have empty ROM scope/expected/actual sets. Only S1 has a current
 admission/run record; successor admission follows scoped closure. Historical
 1992/1992,local1991/1992nodes and4260/4261feasible controls remain unchanged,
 raw4342/infeasible81,new0. Full M2 certification stays separately queued.
+
+## T34 S1 P2 Native Adoption And S1 Closure
+
+Native256x240production output replaces the scaled DOS path. Shared IO
+validates/deinterleaves identity rows;DOS word gathers borrow segments once
+and VGA transfers64-byte plane rows. Original game/PPU sources are unchanged.
+Remove the unused scaled-frame device API rather than reinterpret its stride.
+No new resident surface:4096source+4096plane bytes reuse15532-byte text storage.
+Production delta155added/28removed lines across seven IO/DOS files;tests add
+native band/guard/invalid coverage and an original-tool synthetic VRAM probe.
+
+Both Windows widths20focused checks pass. Every legal first/1..16row band
+is compared against independent identity indexing with guard/invalid checks.
+Original DOS assembly/device readback matches61440pixels,with two text/graphics
+round trips and BIOS mode3restoration. Actual local game capture is512x480,
+every2x2pixel group equal;all240source rows retained. Native61fixed-input steps
+from the same saved frame7466..7527each advance once and submit once,15band
+reads versus25previously. This route exercises native snapshot load/ordinary
+play;broader physical input/transition acceptance is consolidated in S3.
+
+Same stock-config paired stage diagnostics:median step151.258to135.240ms,
+10.590%lower;PPU59.550to55.194ms,mapping44.576to44.178ms,VGA18.062to9.839ms.
+These are instrumented emulated PIT costs,not hardware FPS or a fair NESticle
+speed ratio. Initial native group-pointer prototype was rejected in favor of
+continuous word gathers;remaining mapping cost is recorded for S2.
+
+Original compiler/link/memory checks pass:EXE323049B,DGROUP51472B including
+2048stack,14064headroom;logical loader346320..350416B,excluding dynamic heap.
+Current products DOS SHA8b6ba8641fa1543bf2306f721e312a4f253d1c4c0b1aea50faca0369ef7f7307,
+x86330766B/SHA5745bf218caa476e617047a09d528c46ee3d62a14298c2cde2591157c42aab6d,
+x64346126B/SHA8285224cae199c03f20bc54ffca9ab4c89c6b86ea98de3a278462371831a82c2.
+All three are refreshed locally;no protected products committed. Stock DOSBox
+configuration hash unchanged;no CPU/core/resolution setting changed.
+
+Similar-issue sweep covers DOS timing,pitch/plane offsets,batch source limits,
+graphics/text/reset/palette lifetime and the unused legacy-frame device API.
+Shared retained scaling API remains tested;Win32 and accepted text art are
+unchanged. Native mode proof and runtime entry transfer bind current sources.
+S1 engineering adoption closes;no physical LCD/486SX or whole-ROM certificate.
+New ROM credit0;historical1992/1992,local1991/1992nodes,4260/4261feasible
+controls(raw4342,infeasible81)unchanged. S2 is admitted automatically.
+
+## T34 S2 P1 Admission:Finite Performance And Memory Cohorts
+
+Reprofile confirms remaining PPU and mapping costs dominate. Evaluate the six
+registered candidates exactly once at bounded cohort level. Prototype byte
+background surfaces with net61440B extra only if allocator fallback and
+complete-stage cost justify adoption;share representation across all targets.
+Also evaluate bounded coordinate folding,whole-row sprite/opacity work,
+composition fusion,snapshot duplicate copies,and byte CHR independently.
+No automatic bundling,unbounded new audit or speculative speed promise.
+Estimate150-300production lines across neutral PPU/IO and composition roots,
+plus focused packed/byte/canonical/cached/fallback tests. DOS host output stays
+native;game logic/state serialization and PPU writer semantics are untouched.
+Memory accounting covers baseline/extra cache/fallback loader and resident
+allocations;each adopted change builds/tests/refreshes all three products.
+Empty ROM scope/forecast;successor S3 is not yet admitted.

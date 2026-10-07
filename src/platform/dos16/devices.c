@@ -63,19 +63,29 @@ static unsigned long timer_stamp(void)
     return (ticks<<16U)+phase;
 }
 
-/* Keep BIOS mode13h timing;unchain memory and expose all400 scanlines.
- * One plane row is80bytes;byte addressing avoids DWORD scanout strides. */
+/* Independent native256x240 timing:25.175MHz,800dots/525lines,approximately
+ * 60Hz. VGA repeats each stored row twice;64bytes/plane row,no resampling.
+ * BIOS13h supplies initial graphics/attribute state;restore uses original mode. */
 static void vga_register(unsigned short port,unsigned char index,unsigned char value)
 { outp(port,index);outp((unsigned short)(port+1U),value); }
-static void vga_400_rows(void)
+static void vga_native_rows(void)
 {
-    unsigned char scan;
+    unsigned char protect;
+    vga_register(0x3c4,0,1);
+    outp(0x3c2,0xe3);
     vga_register(0x3c4,4,6);
-    outp(0x3d4,9);scan=(unsigned char)inp(0x3d5);
-    vga_register(0x3d4,9,(unsigned char)(scan&0xe0U));
+    outp(0x3d4,17);protect=(unsigned char)inp(0x3d5);
+    vga_register(0x3d4,17,(unsigned char)(protect&0x7fU));
+    vga_register(0x3d4,1,63);vga_register(0x3d4,2,64);
+    vga_register(0x3d4,6,13);vga_register(0x3d4,7,62);
+    vga_register(0x3d4,9,65);
+    vga_register(0x3d4,16,234);vga_register(0x3d4,17,44);
+    vga_register(0x3d4,18,223);vga_register(0x3d4,19,32);
     vga_register(0x3d4,20,0);
+    vga_register(0x3d4,21,231);vga_register(0x3d4,22,6);
     vga_register(0x3d4,23,0xe3);
     vga_register(0x3c4,2,15);
+    vga_register(0x3c4,0,3);
 }
 static int try_mode(mysmb_io_u8 text)
 {
@@ -103,7 +113,7 @@ static int try_mode(mysmb_io_u8 text)
     int86(0x10,&registers,&registers);
     registers.h.ah=0x0fU;int86(0x10,&registers,&registers);
     if(registers.h.al!=0x13U)return 0;
-    vga_400_rows();
+    vga_native_rows();
     outp(0x3c8,0U);
     for (i=0U;i<64U;++i) {
         rgb=mysmb_io_color_rgb((mysmb_io_u8)i);
@@ -219,17 +229,11 @@ void mysmb_dos16_devices_present_rows(mysmb_io_u16 plane,
     const mysmb_io_u8 MYSMB_VGA_FAR *pixels)
 {
     unsigned char far *video;
-    if(!video_ready || text_mode || plane>=MYSMB_VGA_PAGE_COUNT || pixels==0 || first>=400U || rows>400U-first)return;
+    if(!video_ready || text_mode || plane>=MYSMB_VGA_PAGE_COUNT || pixels==0 || first>=240U || rows>240U-first)return;
     video=(unsigned char far *)0xa0000000UL;
     /* Select the independent plane at A000;copy remains within both segments. */
     vga_register(0x3c4,2,(unsigned char)(1U<<plane));
-    copy_plane_dwords(video+first*80U,pixels,rows*80U);
-}
-void mysmb_dos16_devices_present(const struct mysmb_vga_frame *frame)
-{
-    mysmb_io_u16 page;
-    for(page=0U;page<MYSMB_VGA_PAGE_COUNT;++page)
-        mysmb_dos16_devices_present_rows(page,0U,400U,frame->pages[page]);
+    copy_plane_dwords(video+first*64U,pixels,rows*64U);
 }
 void mysmb_dos16_devices_text(const struct mysmb_io_text_frame MYSMB_IO_FAR *frame)
 {

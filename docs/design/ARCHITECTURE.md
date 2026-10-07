@@ -65,10 +65,10 @@ DOS16 uses the same logical slot pixels through a synchronous neutral row
 producer;Windows retains a full-frame view. Shared IO owns the stable64-color
 master RGB lookup and bounded row scaling;each frame supplies its32-entry
 slot-to-master table. VGA owns fixed
-direct256x240-to320x400 enlargement without borders or source-row loss,
-four32000-byte Mode X video planes,submitted from a5120-byte four-plane16row
-band borrowed after the2560-byte source area in the exclusive text/row store,
-640x400 scanout,
+native256x240output without source-row loss,four15360-byte VGA planes,
+submitted from a4096-byte four-plane16row band borrowed after the4096-byte
+source area in the exclusive text/row store. Hardware scan repetition gives
+512x480scanout;physical LCD filling is a separate display qualification.
 DAC programming and video memory. DOS devices own physical held-key decoding,
 BIOS mode lifetime and PIT sampling. Only its composition root binds local
 immutable program resources and allocates the shared compositor's exclusive row/text store.
