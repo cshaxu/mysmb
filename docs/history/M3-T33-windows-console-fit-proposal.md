@@ -478,3 +478,36 @@ Every cell remains a two-color glyph;all four flower/star phases are rendered
 in the supplementary panel. Emergence/partial clipping and alternate scene
 palettes remain separate pending review cases. No new product code,ROM
 equivalence credit or published EXE is introduced by this design P.
+
+### P9 accepted item designs and remaining batch
+
+Owner accepts the reviewed item gallery: I01-I10,including both new50/new25
+profiles and all four displayed flower/star palette phases. Partial emergence
+and scene-specific variants still require placement/visibility checks;
+do not report this visual acceptance as product adoption or ROM proof.
+Together with M06-M08,this is13accepted controlled-state review IDs,not13ROM
+nodes or all player/item states. No new product code is changed.
+
+Owner requests one remaining batch rather than repeated single-family turns.
+The complete46-kind catalogue above owns the identities and detailed state
+scope. The grouped remainder and proposed visual decisions are:
+
+| Review cohort | Remaining scope | Proposed visual emphasis |
+| --- | --- | --- |
+| Player variants | Small Mario;large/fire poses beyond the three accepted cases;Luigi sizes/poses;growth,swim,climb,skid,crouch,throw,death and palette variants | Reuse accepted masses/accents;each actual source pose changes limb landmarks,not merely its label |
+| Coins and blocks | Coin/jump-coin phases;question/hidden/spent blocks;bump and shatter | Rotating gold silhouettes,literal question mark,solid visible spent block,colored fragments |
+| Common enemies | Goomba walk/flat/inverted;red/green/dark Koopa;winged Koopa;shell movement/revival/inversion;Beetle | Cap/eyes/feet,shell-color identity,wings and separate defeat silhouettes |
+| Water/flying enemies | Bloober,fish/flying fish,Bullet Bill | Tentacle/fin/tail silhouettes,eyes and source-facing nose |
+| Special enemies | Piranha,Hammer Bro,Lakitu,Spiny/egg,Podoboo | Mouth/head/stem,helmet/throwing arm,goggles/cloud,spikes,flame contours |
+| Boss and retainers | Bowser front/rear and flame;Toad/Princess | Joined shell/body/head,opening mouth,flame direction;cap versus hair/crown/dress and face |
+| Projectiles/effects | Fireball phases,explosion stages,firebar segments,hammer orientations,chunks,bubbles | Distinct small color masses;character marks only clarify motion/outline |
+| Connected dynamic objects | Vine/cap/leaves,platform/parts,spring stages,flag/star-flag | Continuous colored spans,source component positions and compressed spring states |
+| Information sprites | Floating scores,flag scores,1UP | Preserve exact readable text over the current scene;never replace with blocks |
+| Background objects | Pipes/orientations,ground/stairs/bricks,clouds/bushes/hills,water/coral,tree/fence/ledges,castle/cannon,rope/pulley/chain/axe/flags | Foreground/background distinction,continuous boundaries,source colors;pink coral over water and light fence separate from ground |
+| Information scenes | HUD,title/menu,lives,time-up,game-over,warp,ending/world-select | All source information and dynamic digits retained without line collisions |
+
+Each future batch panel retains the four-column format and stable case IDs.
+Accepted designs remain reference anchors;the remainder is pending actual
+visual review. Design-pattern approval cannot silently approve unseen cases
+or hardware palette/input/geometry behavior. Keep native/gameplay fixtures
+distinct from descriptor-only proposals. Existing50code stays unchanged.
