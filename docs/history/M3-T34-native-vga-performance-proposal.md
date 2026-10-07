@@ -1525,6 +1525,30 @@ current source/product baseline. No artifact refresh or ROM-node/control
 credit follows. Evidence remains below ignored build/m3-t34-s3:final-tests-
 x86.log,final-tests-x64.log,dos16-single-workspace and run-p20-final384.
 
+### S3 P34 Current Memory-Tier Route Revalidation
+
+Rebind the accepted P31 DOS16 product, SHA256
+c879892da49982c933b61fb8da3837f0808422cb9b3a734d4334f712661052bb, to
+unchanged-stock-configuration 384,448 and500KiB routes. Every route completes
+the same title/load, WSAD/JK, Shift, Tab text/graphics, P/O and Escape
+lifecycle, emits its captures, validates the10035-byte save and exits normally.
+The configuration hash remains
+0494236f2308e2e615f428d04e6470db4b0d162c95b51f4e276f1b7e73241917 with no
+CPU or resolution tuning.
+
+Maximum observed owned bytes are373856 at384KiB,437408 at448KiB and498880 at
+500KiB. The staged increases agree with the source's mandatory-first,
+optional-cache allocation order and demonstrate that the current product
+continues to run through low-memory fallback and progressively richer optional
+tiers. They do not enumerate CRT,loader,fragmentation or external-service
+paths, so neither a global conventional-memory peak nor a physical-performance
+claim follows. Product source and artifacts are unchanged;ROM credit remains
+zero and all four global/reference/physical gates remain open.
+
+Evidence below ignored build/m3-t34-s3:run-p20-current384,
+run-p20-current448,run-p20-current500,p20-final-memory.json,
+verify-p20-final.py and the parameterized route runner.
+
 ### S3 P24 Current Startup And Exit Dispatcher Binding
 
 Audit only. Current loaded bytes confirm the two unused argument/environment

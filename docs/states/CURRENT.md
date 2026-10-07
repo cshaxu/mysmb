@@ -30,6 +30,12 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P34 rebinds the P31 DOS product to stock-configuration 384/448/500KiB
+  memory routes. Each completes load, input, text/graphics, P/O and exit with
+  a valid save; observed owned maxima are 373856/437408/498880B. This proves
+  current tier fallback and lifecycle behavior only, not a global DOS-memory
+  peak or physical performance result. [Tier receipt](../history/M3-T34-native-vga-performance-proposal.md#s3-p34-current-memory-tier-route-revalidation).
+
 - T34 S3 P31 removes two dead raw-CHR reads from the already decoded sprite
   compositor branch. The raw reads now occur only in the unchanged fallback;
   all pixel decisions stay shared. Both Windows suites and the stock-config
