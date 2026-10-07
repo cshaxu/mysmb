@@ -151,13 +151,18 @@ submits the same IDs to its BIOS font slots. Neither host chooses game artwork.
 
 ROM material enters only at an admitted local build/research boundary. The normal native product embeds only locally generated owner material and is not a tracked or distributed output.
 
-Shared `io/snapshot` owns fixed bytes,integrity/resource checks and a
-last-running-boundary cache. Program-state bytes are opaque;composition owns
-field binding and running eligibility. The codec validates canonical numeric
+Shared `io/snapshot` owns fixed bytes and integrity/resource checks. Product
+roots keep no persistent frame/pause snapshot cache. Program-state bytes are
+opaque;composition owns field binding and gameplay eligibility. The codec validates canonical numeric
 records with integers only. Win32 audio adapters convert host double values
 arithmetically;DOS need not link floating-point code to read the same format.
-`io/snapshot_store` owns staging,complete-write/close-before-replace and silent
-error logging through file-service hooks. `app/game_snapshot` explicitly binds
+`io/snapshot_store` owns one transaction snapshot,streams a small header and
+payload through complete-write/close-before-replace services,and logs failures
+silently. Failed loads may dirty scratch but never publish it to live state.
+P captures current running or paused gameplay only on request;O validates
+before restoring. Synchronous I/O stops application ticks and rebases host
+timing without changing source pause flags or clearing held keys on save.
+Paused files restore their actual paused state. `app/game_snapshot` explicitly binds
 all mutable game fields,preserves immutable resource pointers and decides
 completed-running eligibility. Physical P/O edges and executable-directory
 discovery belong to host adapters;roots commit validated game/audio candidates,

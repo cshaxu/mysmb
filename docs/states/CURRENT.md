@@ -12,8 +12,8 @@
 | Non-goals | No game/PPU decision changes,DOS4GW,new driver,helper process,frameskip,emulator settings changes,text redesign or whole-ROM certification. |
 | Reference Baseline | S2 source/delivery bound in proposal; local products DOS323945B,x86331278B,x64347150B. Current DGROUP51472B/stack2048B; hashes and loader bound in proposal. Reprofile current source; retained T32 costs are historical. |
 | Candidate Proposal | [Admitted T34 plan and S1 baseline](../history/M3-T34-native-vga-performance-proposal.md#t34-s3-p1-combined-acceptance-admission). |
-| Files And ABI Surface | Frozen S2 products and host/PPU/snapshot dependencies;Scoped S3 amendment:preserve DOS pending exit during after-load reset,2-4product lines plus focused keyboard/root regression. S3 P14implements the owner's adaptive cache instruction by prioritizing packed background before decoded CHR in DOS optional allocation,about10product lines plus focused raw-CHR/packed pixel coverage;rebuild/test/publish all three EXEs and repeat memory tiers. It also corrects the existing qualification helper's obsolete controls/provenance and ignored-build containment. No core/PPU writer/ABI change;other verification stays frozen. |
-| Applicable Rules | Execution,Documentation,Architecture,Coding,source policy;System Architecture and Source Layout. |
+| Files And ABI Surface | S3 P15shared io/snapshot codec/store,app snapshot policy,host roots/clock adapters and focused tests implement owner's single-workspace synchronous P/O consolidation. Remove product frame/pause cache instances and wire buffer;capture current paused/running state only on P. Core/PPU writers and file format unchanged. Three EXEs rebuilt/tested/refreshed. All project-owned spaces above4KiB audited;new cache cutoffs/combination policies remain proposals per owner direction. |
+| Applicable Rules | Execution,Documentation,Architecture,Coding,source policy;System Architecture and Source Layout. Owner-directed continuation covers shared io/snapshot codec/store streaming,app snapshot marshalling,host roots/clock adapters and focused tests for on-demand P;150-250product-line estimate,all three EXEs refreshed on product changes. Then audit every project-owned space above4KiB and record allocation/use policy;no core/PPU writer changes. |
 | Verification | Exact61440source-to-VRAM pixels/palette/edges,HUD split/scroll/priority,cache/fallback,mode restoration and Tab;actual DOS input/transition routes,Windows regression,original16-bit compiler/link/segment/stack/loader and before/after stage costs;three local products on code change. |
 | Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0;historical1992/1992,local1991/1992nodes,4260/4261feasible controls unchanged(raw4342,infeasible81). |
 | Asset Needs | Existing owner-local SMB1 ROM remains local without redistribution grant;read-only builds/runtime probes. Retained NESticle research is conceptual only,no code/table import. S3 P3 inspects the already-linked historical Microsoft DOS C runtime library/header read-only to establish allocation/stdio bounds;copyright material has no redistribution grant. Owner-installed original toolchain is the provenance;neutral symbols/hashes/conclusions only tracked,extracted members/logs stay ignored below build. No runtime replacement,patching or third-party source import. |
@@ -29,6 +29,17 @@ and M2 final certification remain queued. T33 broader gallery debt is recorded
 explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
+
+- T34 S3 P15delivers one10048-byte DOS/x86transaction store(x6410080),no
+  frame/pause snapshot cache or spare,and no per-frame capture. P synchronously
+  dumps current running/paused state;O validates before restore and preserves
+  the saved pause state. Header36streams separately;schema1/2remain compatible.
+  Normal diagnostic medians packed77.162/byte57.314ms versus85.999/66.196;
+  requested snapshot storage reduces30068bytes and observed full-cache owned
+  memory526080to498880. Three final local EXEs refreshed,each Windows width23
+  checks and isolated text snapshot route pass. Full host fixture131is explicit
+  TODO;all four original global/reference/physical gates remain open.
+  [Delivery,large-space census and proposed policies](../history/M3-T34-native-vga-performance-proposal.md#s3-p15-single-workspace-on-demand-io).
 
 - T34 S1/S2deliver native chain4scanout,shared byte-slot cache with packed/no-cache
   fallback,bounded Y folding and transactional snapshot publication. Fixed61step

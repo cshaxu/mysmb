@@ -351,14 +351,11 @@ static int text_snapshot_route(HWND window,const char *directory)
         mysmb_game_tick(&g_game,&input,&g_frame);
         mysmb_game_io_audio(&g_game,&g_audio_frame);
         mysmb_win32_audio_submit(&g_audio_output,&g_audio_frame);
-        mysmb_win32_snapshot_capture();
-        if(g_snapshot_cache.valid &&
+        if(mysmb_game_snapshot_available(&g_game,&g_frame) &&
             mysmb_game_pause_input_state(&g_game)==MYSMB_PAUSE_INPUT_READY)break;
     }
     if(i==1200U)return 31;
     g_game_started=1U;
-    expected_snapshot=*mysmb_snapshot_cache_current(&g_snapshot_cache);
-    saved_audio=g_audio_output;
     mysmb_win32_switch_presenter(window,0);
     if(!g_text_mode)return 32;
     ShowWindow(g_console.window,SW_HIDE);owned_focus=g_console.window;
@@ -378,6 +375,10 @@ static int text_snapshot_route(HWND window,const char *directory)
     g_last_tick.QuadPart=now.QuadPart-g_frequency.QuadPart/60;
     mysmb_win32_step(window);
     if(!mysmb_game_is_paused(&g_game) || g_focus_pause.pending)return 33;
+    if(!mysmb_game_snapshot_capture(&g_game,&expected_snapshot,g_snapshot_fingerprint) ||
+        !mysmb_win32_audio_capture(&g_audio_output.renderer,
+            expected_snapshot.payload+MYSMB_SNAPSHOT_CORE_BYTES))return 31;
+    saved_audio=g_audio_output;expected_text=g_text_frame;
     owned_focus=g_console.window;
     if(!console_shortcut(window,'P',1U))return 34;
     mysmb_win32_snapshot_request(window);
@@ -385,7 +386,7 @@ static int text_snapshot_route(HWND window,const char *directory)
     if(!console_shortcut(window,'O',1U) ||
         !mysmb_win32_snapshot_request(window))return 36;
     if(!g_text_mode || !g_console.opened || g_text_failed ||
-        mysmb_game_is_paused(&g_game))return 37;
+        !mysmb_game_is_paused(&g_game))return 37;
     if(!mysmb_game_snapshot_capture(&g_game,&restored_snapshot,g_snapshot_fingerprint) ||
         !mysmb_win32_audio_capture(&g_audio_output.renderer,
             restored_snapshot.payload+MYSMB_SNAPSHOT_CORE_BYTES) ||

@@ -21,14 +21,14 @@ struct mysmb_snapshot_files {
 };
 struct mysmb_snapshot_store {
     struct mysmb_snapshot_files files;
-    mysmb_io_u8 wire[MYSMB_SNAPSHOT_FILE_BYTES+1U];
     struct mysmb_io_snapshot staging;
 };
 int mysmb_snapshot_store_initialize(struct mysmb_snapshot_store *store,
     const struct mysmb_snapshot_files *files);
 int mysmb_snapshot_save(struct mysmb_snapshot_store *store,
     const struct mysmb_io_snapshot *snapshot);
-/* A successful result borrows staging until the next operation. */
+/* Staging is scratch:the next operation invalidates a borrowed result,even on
+ * failure. Only a successful load may be committed to live game state. */
 const struct mysmb_io_snapshot *mysmb_snapshot_load(
     struct mysmb_snapshot_store *store,const mysmb_io_u8 *fingerprint);
 #endif

@@ -10,6 +10,7 @@ void mysmb_dos16_devices_input(struct mysmb_io_input *input);
 int mysmb_dos16_devices_present_band(const struct mysmb_io_video_band *band);
 void mysmb_dos16_devices_wait(void);
 void mysmb_dos16_devices_after_load(void);
+void mysmb_dos16_devices_resume_clock(void);
 int mysmb_dos16_devices_mode(mysmb_io_u8 text);
 void mysmb_dos16_devices_palette(const mysmb_io_u8 MYSMB_IO_FAR *palette);
 void mysmb_dos16_devices_text(const struct mysmb_io_text_frame MYSMB_IO_FAR *frame);

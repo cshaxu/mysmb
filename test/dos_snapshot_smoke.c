@@ -18,7 +18,7 @@ static struct mysmb_io_text_frame text;
 static struct mysmb_snapshot_store store;
 static struct mysmb_file_storage storage;
 static struct mysmb_io_snapshot expected,actual;
-struct host {unsigned int presents,resets,texts,modes;mysmb_io_u8 buttons,requests,fail;};
+struct host {unsigned int presents,resets,texts,modes,clocks;mysmb_io_u8 buttons,requests,fail;};
 static void input(void *context,struct mysmb_io_input *out)
 {
     struct host *host=(struct host *)context;
@@ -28,6 +28,7 @@ static void input(void *context,struct mysmb_io_input *out)
 static void present(void *context,const struct mysmb_io_video_frame *frame)
 {if(frame->pixels)++((struct host *)context)->presents;}
 static void reset(void *context){++((struct host *)context)->resets;}
+static void resume_clock(void *context){++((struct host *)context)->clocks;}
 static int mode(void *context,mysmb_io_u8 value)
 {struct host *h=(struct host *)context;(void)value;++h->modes;return !h->fail;}
 static void text_present(void *context,const struct mysmb_io_text_frame MYSMB_IO_FAR *frame)
@@ -74,12 +75,15 @@ int main(int argc,char **argv)
     if(!mysmb_file_storage_initialize(&storage,argv[1],mysmb_win32_snapshot_replace,&files) ||
         !mysmb_snapshot_store_initialize(&store,&files))return 8;
     mysmb_dos16_root_bind_snapshot(&root,&store,reset,&host);
+    mysmb_dos16_root_bind_clock(&root,resume_clock);
+    memset(&expected,0xa5,sizeof(expected));store.staging=expected;
     mysmb_dos16_root_bind_text(&root,&workspace,&text,mode,text_present);
-    for(i=0U;i<1200U && !root.snapshot_cache.valid;++i){
+    for(i=0U;i<1200U && !mysmb_game_snapshot_running(&root.game,&root.game_frame);++i){
         host.buttons=i==100U?MYSMB_IO_BUTTON_START:0U;
         mysmb_dos16_root_step(&root);
     }
-    if(!root.snapshot_cache.valid)return 9;
+    if(!mysmb_game_snapshot_running(&root.game,&root.game_frame) ||
+        memcmp(&store.staging,&expected,sizeof(expected)))return 9;
     /* Identical ticks with/without text switching keep the whole game and
      * ordered audio output identical. Failure keeps the previous presenter. */
     twin=root;twin.snapshot_store=0;memset(&twin_host,0,sizeof(twin_host));
@@ -98,8 +102,11 @@ int main(int argc,char **argv)
     host.fail=0U;
     host.buttons=0U;
     for(i=0U;i<100U;++i)mysmb_dos16_root_step(&root);
-    expected=*mysmb_snapshot_cache_current(&root.snapshot_cache);
+    if(!mysmb_game_snapshot_capture(&root.game,&expected,root.snapshot_fingerprint))return 19;
+    memset(expected.payload+MYSMB_SNAPSHOT_CORE_BYTES,0,MYSMB_SNAPSHOT_AUDIO_BYTES);
+    i=(unsigned int)root.game.frame_number;
     host.requests=MYSMB_IO_REQUEST_SAVE;mysmb_dos16_root_step(&root);
+    if(root.game.frame_number!=i || host.clocks!=1U)return 22;
     for(i=0U;i<50U;++i)mysmb_dos16_root_step(&root);
     host.requests=MYSMB_IO_REQUEST_LOAD;mysmb_dos16_root_step(&root);
     if(host.resets!=1U || mysmb_game_is_paused(&root.game) || root.text_mode!=1U)return 10;

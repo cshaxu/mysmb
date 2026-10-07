@@ -12,4 +12,8 @@ int mysmb_game_snapshot_valid(const struct mysmb_game *game,
     const struct mysmb_io_snapshot *snapshot);
 mysmb_io_u8 mysmb_game_snapshot_running(const struct mysmb_game *game,
     const struct mysmb_frame *frame);
+/* A paused gameplay boundary is also a valid current-state snapshot. */
+mysmb_io_u8 mysmb_game_snapshot_available(const struct mysmb_game *game,
+    const struct mysmb_frame *frame);
+void mysmb_game_snapshot_resume_frame(const struct mysmb_game *game,struct mysmb_frame *frame);
 #endif

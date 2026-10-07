@@ -89,7 +89,9 @@ original meaning. Roots consume the shared exit latch before advancing a tick;
 physical adapters may buffer events but do not decide application termination.
 
 `io/snapshot`, `snapshot_store` and `snapshot_keys` own portable file bytes,
-staged transactions,last-running cache and shortcut edges. Fixed-width program
+one staged transaction and shortcut edges. Product roots capture only on P;
+legacy cache APIs remain compatible but have no product storage instance.
+Header/payload streaming removes the full-file wire buffer. Fixed-width program
 bytes remain opaque to IO. `app/game_snapshot` marshals public game fields;
 Win32 audio snapshot modules marshal host synthesis state arithmetically.
 `io/file` provides stdio services;each host supplies executable-path,

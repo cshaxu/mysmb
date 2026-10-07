@@ -13,6 +13,13 @@
 
 ## Host diagnostics
 
+- [ ] **HOST-TEXT-FIXTURE-131:** The full current text-switch fixture exits at
+  its initial-client geometry assertion131 on the isolated host,before the
+  changed snapshot route. Direct reuse of that snapshot/text/audio route passes
+  both widths. Review the fixture's DPI/fit expectation in a bounded host task;
+  this is not complete geometry acceptance.
+  [Evidence](../history/M3-T34-native-vga-performance-proposal.md#s3-p15-single-workspace-on-demand-io).
+
 - [ ] **HOST-T33-VISUAL,physical Terminal applicability:** T33engineering
   closure retains default Terminal80x50device/4000glyph readback and input/
   Tab/exit proof;actual classic caption/150%DPIcapture passes. Physical

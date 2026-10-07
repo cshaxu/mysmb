@@ -25,9 +25,12 @@ The Win32 adapter supplies the development window and normal graphical/full-scre
 
 ## Quick Snapshot
 
-P saves one running frame to `mysmb.sav` beside the executable;O loads and
-resumes immediately,including from the title screen. While paused,P saves
-the last completed running frame. Each press is handled once and never enters
+P synchronously captures the current gameplay state to `mysmb.sav` beside the
+executable;O validates and restores it,including from the title screen.
+Paused saves preserve the actual pause state;Enter resumes a restored paused
+game through its original control path. Application ticks stop during I/O,
+without changing the original pause flag. No per-frame snapshot is maintained.
+Each press is handled once and never enters
 the controller stream. Failures are silent and append best-effort diagnostics
 to `mysmb.log`;`mysmb.tmp` is the pending slot. Files remain local user data.
 All three targets share the format. DOS currently has no audio renderer/output;

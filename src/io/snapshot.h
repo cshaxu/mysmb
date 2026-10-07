@@ -48,6 +48,12 @@ int mysmb_snapshot_encode(const struct mysmb_io_snapshot *snapshot,
     mysmb_io_u8 *file, mysmb_io_u16 size);
 int mysmb_snapshot_decode(const mysmb_io_u8 *file, mysmb_io_u16 size,
     const mysmb_io_u8 *fingerprint, struct mysmb_io_snapshot *snapshot);
+/* Split codec for synchronous streaming;checks never modify payload storage. */
+int mysmb_snapshot_encode_header(const struct mysmb_io_snapshot *snapshot,
+    mysmb_io_u8 *header);
+mysmb_io_u16 mysmb_snapshot_header_payload(const mysmb_io_u8 *header);
+int mysmb_snapshot_check_parts(const mysmb_io_u8 *header,
+    const mysmb_io_u8 *payload,mysmb_io_u16 size,const mysmb_io_u8 *fingerprint);
 
 void mysmb_snapshot_cache_initialize(struct mysmb_io_snapshot_cache *cache);
 /* Two persistent caller-owned slots:write the inactive one,then publish only

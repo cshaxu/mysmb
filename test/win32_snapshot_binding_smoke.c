@@ -46,7 +46,7 @@ int main(int argc,char **argv)
     mysmb_win32_focus_pause_gained(&g_focus_pause);
     mysmb_win32_window_proc(owned_window,WM_KEYDOWN,'P',0);
     mysmb_win32_snapshot_request(owned_window);
-    if(mysmb_snapshot_cache_current(&g_snapshot_cache)!=0)return 6;
+    memset(&expected,0xa5,sizeof(expected));g_snapshot_store.staging=expected;
     mysmb_win32_window_proc(owned_window,WM_KEYUP,'P',0);
     mysmb_win32_audio_renderer_initialize(&g_audio_output.renderer);
     input.buttons2=0U;
@@ -54,19 +54,19 @@ int main(int argc,char **argv)
         if(!mysmb_game_startup_step(&g_game,1U))continue;
         input.buttons=i==100U?MYSMB_BUTTON_START:0U;
         mysmb_game_tick(&g_game,&input,&g_frame);
-        mysmb_win32_snapshot_capture();
-        if(g_snapshot_cache.valid)break;
+        if(mysmb_game_snapshot_running(&g_game,&g_frame))break;
     }
-    if(!g_snapshot_cache.valid)return 7;
-    expected=*mysmb_snapshot_cache_current(&g_snapshot_cache);
-    /* A paused save must use the last running cache,not paused mutable RAM. */
+    if(!mysmb_game_snapshot_running(&g_game,&g_frame) ||
+        memcmp(&g_snapshot_store.staging,&expected,sizeof(expected)))return 7;
+    /* The single workspace captures the actual paused state only on P. */
     input.buttons=MYSMB_BUTTON_START;
     for(i=0U;i<80U && !mysmb_game_is_paused(&g_game);++i){
         input.buttons=i%2U?0U:MYSMB_BUTTON_START;
-        mysmb_game_tick(&g_game,&input,&g_frame);mysmb_win32_snapshot_capture();
-        if(!mysmb_game_is_paused(&g_game))expected=*mysmb_snapshot_cache_current(&g_snapshot_cache);
+        mysmb_game_tick(&g_game,&input,&g_frame);
     }
     if(!mysmb_game_is_paused(&g_game))return 8;
+    if(!mysmb_game_snapshot_capture(&g_game,&expected,g_snapshot_fingerprint) ||
+        !mysmb_win32_audio_capture(&g_audio_output.renderer,expected.payload+MYSMB_SNAPSHOT_CORE_BYTES))return 6;
     mysmb_win32_window_proc(owned_window,WM_KEYDOWN,'P',0);
     mysmb_win32_snapshot_request(owned_window);
     sprintf(path,"%s/mysmb.sav",argv[1]);file=fopen(path,"rb");
@@ -79,20 +79,20 @@ int main(int argc,char **argv)
     mysmb_win32_window_proc(owned_window,WM_KEYUP,'P',0);
     mysmb_win32_power_on();g_audio_output.next=7U;g_audio_output.queued[0]=1U;
     mysmb_win32_window_proc(owned_window,WM_KEYDOWN,'O',0);
-    if(!mysmb_win32_snapshot_request(owned_window) || mysmb_game_is_paused(&g_game) ||
+    if(!mysmb_win32_snapshot_request(owned_window) || !mysmb_game_is_paused(&g_game) ||
         !g_game_started || g_audio_output.next || g_audio_output.queued[0])return 11;
     mysmb_game_snapshot_capture(&g_game,&actual,g_snapshot_fingerprint);
     mysmb_win32_audio_capture(&g_audio_output.renderer,actual.payload+MYSMB_SNAPSHOT_CORE_BYTES);
     if(memcmp(&expected,&actual,sizeof(actual)))return 12;
     mysmb_win32_window_proc(owned_window,WM_KEYDOWN,'O',0x40000000L);
     if(g_snapshot_requests)return 13;
-    /* A real read-only destination rejects replacement. The prior valid
-     * slot,live state,window title and clock remain unchanged. */
+    /* A read-only destination preserves prior file/live state/title.
+     * Synchronous I/O rebases timing instead of accumulating catch-up debt. */
     if(!SetFileAttributesA(path,FILE_ATTRIBUTE_READONLY))return 15;
-    ((struct mysmb_io_snapshot *)mysmb_snapshot_cache_current(&g_snapshot_cache))->payload[0]^=1U;
     clock_before=g_last_tick;GetWindowTextA(owned_window,title_before,sizeof(title_before));
     mysmb_win32_window_proc(owned_window,WM_KEYDOWN,'P',0);
-    if(mysmb_win32_snapshot_request(owned_window))return 16;
+    if(!mysmb_win32_snapshot_request(owned_window) || g_last_tick.QuadPart<clock_before.QuadPart)return 16;
+    clock_before=g_last_tick;
     file=fopen(path,"rb");if(!file)return 17;
     i=(unsigned int)fread(wire,1,sizeof(wire),file);fclose(file);
     if(i!=sizeof(wire) || mysmb_snapshot_decode(wire,sizeof(wire),g_snapshot_fingerprint,&actual) ||
@@ -107,7 +107,15 @@ int main(int argc,char **argv)
     mysmb_win32_audio_capture(&g_audio_output.renderer,actual.payload+MYSMB_SNAPSHOT_CORE_BYTES);
     GetWindowTextA(owned_window,title_after,sizeof(title_after));
     if(memcmp(&expected,&actual,sizeof(actual)) || strcmp(title_before,title_after) ||
-        g_last_tick.QuadPart!=clock_before.QuadPart)return 23;
+        g_last_tick.QuadPart<clock_before.QuadPart)return 23;
+    /* Failed loading may dirty scratch;the next paused P must recapture live. */
+    mysmb_win32_window_proc(owned_window,WM_KEYUP,'P',0);
+    mysmb_win32_window_proc(owned_window,WM_KEYDOWN,'P',0);
+    if(!mysmb_win32_snapshot_request(owned_window))return 27;
+    file=fopen(path,"rb");if(!file)return 28;
+    i=(unsigned int)fread(wire,1,sizeof(wire),file);fclose(file);
+    if(i!=sizeof(wire) || mysmb_snapshot_decode(wire,sizeof(wire),g_snapshot_fingerprint,&actual) ||
+        memcmp(&expected,&actual,sizeof(actual)))return 29;
     remove(path);
     mysmb_win32_window_proc(owned_window,WM_KEYUP,'O',0);
     mysmb_win32_window_proc(owned_window,WM_KEYDOWN,'O',0);

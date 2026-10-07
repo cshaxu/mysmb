@@ -43,13 +43,14 @@ unsigned long mysmb_snapshot_crc(const mysmb_io_u8 *bytes, mysmb_io_u16 size)
     for (i=0U;i<size;++i) crc=crc_add(crc,bytes[i]);
     return crc^0xffffffffUL;
 }
-static unsigned long file_crc(const mysmb_io_u8 *file,mysmb_io_u16 size)
+static unsigned long parts_crc(const mysmb_io_u8 *header,
+    const mysmb_io_u8 *payload,mysmb_io_u16 size)
 {
     unsigned long crc;
     mysmb_io_u16 i;
     crc=0xffffffffUL;
-    for (i=0U;i<size;++i)
-        if (i<32U || i>=36U) crc=crc_add(crc,file[i]);
+    for (i=0U;i<32U;++i) crc=crc_add(crc,header[i]);
+    for (i=0U;i<size;++i) crc=crc_add(crc,payload[i]);
     return crc^0xffffffffUL;
 }
 int mysmb_snapshot_real_valid(const mysmb_io_u8 *bytes)
@@ -85,38 +86,61 @@ static int payload_valid(const mysmb_io_u8 *payload)
             i*MYSMB_SNAPSHOT_REAL_BYTES)) return 0;
     return 1;
 }
-int mysmb_snapshot_encode(const struct mysmb_io_snapshot *snapshot,
-    mysmb_io_u8 *file, mysmb_io_u16 size)
+int mysmb_snapshot_encode_header(const struct mysmb_io_snapshot *snapshot,
+    mysmb_io_u8 *file)
 {
-    if (size!=MYSMB_SNAPSHOT_FILE_BYTES || !payload_valid(snapshot->payload))
+    if (!payload_valid(snapshot->payload))
         return MYSMB_SNAPSHOT_INVALID;
     memcpy(file,snapshot_magic,8U);
     mysmb_snapshot_put16(file+8,2U);
     mysmb_snapshot_put16(file+10,2U);
     mysmb_snapshot_put32(file+12,MYSMB_SNAPSHOT_PAYLOAD_BYTES);
     memcpy(file+16,snapshot->fingerprint,16U);
-    memcpy(file+MYSMB_SNAPSHOT_HEADER_BYTES,snapshot->payload,
-        MYSMB_SNAPSHOT_PAYLOAD_BYTES);
-    mysmb_snapshot_put32(file+32,file_crc(file,size));
+    mysmb_snapshot_put32(file+32,parts_crc(file,snapshot->payload,
+        MYSMB_SNAPSHOT_PAYLOAD_BYTES));
+    return MYSMB_SNAPSHOT_OK;
+}
+mysmb_io_u16 mysmb_snapshot_header_payload(const mysmb_io_u8 *file)
+{
+    mysmb_io_u16 version,payload;
+    version=mysmb_snapshot_get16(file+8);
+    if(version!=1U && version!=2U)return 0U;
+    payload=version==2U?MYSMB_SNAPSHOT_PAYLOAD_BYTES:MYSMB_SNAPSHOT_PRESENTATION_OFFSET;
+    if(memcmp(file,snapshot_magic,8U)!=0 ||
+        mysmb_snapshot_get16(file+10)!=version ||
+        mysmb_snapshot_get32(file+12)!=payload)return 0U;
+    return payload;
+}
+int mysmb_snapshot_check_parts(const mysmb_io_u8 *file,
+    const mysmb_io_u8 *payload,mysmb_io_u16 size,const mysmb_io_u8 *fingerprint)
+{
+    if(!size || mysmb_snapshot_header_payload(file)!=size)return MYSMB_SNAPSHOT_INVALID;
+    if(parts_crc(file,payload,size)!=mysmb_snapshot_get32(file+32))return MYSMB_SNAPSHOT_INTEGRITY;
+    if(memcmp(file+16,fingerprint,16U)!=0)return MYSMB_SNAPSHOT_RESOURCE;
+    if(!payload_valid(payload))return MYSMB_SNAPSHOT_INVALID;
+    return MYSMB_SNAPSHOT_OK;
+}
+int mysmb_snapshot_encode(const struct mysmb_io_snapshot *snapshot,
+    mysmb_io_u8 *file, mysmb_io_u16 size)
+{
+    int result;
+    if(size!=MYSMB_SNAPSHOT_FILE_BYTES)return MYSMB_SNAPSHOT_INVALID;
+    result=mysmb_snapshot_encode_header(snapshot,file);
+    if(result!=MYSMB_SNAPSHOT_OK)return result;
+    memcpy(file+MYSMB_SNAPSHOT_HEADER_BYTES,snapshot->payload,MYSMB_SNAPSHOT_PAYLOAD_BYTES);
     return MYSMB_SNAPSHOT_OK;
 }
 int mysmb_snapshot_decode(const mysmb_io_u8 *file, mysmb_io_u16 size,
     const mysmb_io_u8 *fingerprint, struct mysmb_io_snapshot *snapshot)
 {
     mysmb_io_u16 payload,version;
+    int result;
     if (size!=MYSMB_SNAPSHOT_FILE_BYTES && size!=MYSMB_SNAPSHOT_LEGACY_FILE_BYTES)
         return MYSMB_SNAPSHOT_INVALID;
     version=size==MYSMB_SNAPSHOT_FILE_BYTES?2U:1U;
     payload=(mysmb_io_u16)(size-MYSMB_SNAPSHOT_HEADER_BYTES);
-    if (memcmp(file,snapshot_magic,8U)!=0 ||
-        mysmb_snapshot_get16(file+8)!=version || mysmb_snapshot_get16(file+10)!=version ||
-        mysmb_snapshot_get32(file+12)!=payload)
-        return MYSMB_SNAPSHOT_INVALID;
-    if (file_crc(file,size)!=mysmb_snapshot_get32(file+32))
-        return MYSMB_SNAPSHOT_INTEGRITY;
-    if (memcmp(file+16,fingerprint,16U)!=0) return MYSMB_SNAPSHOT_RESOURCE;
-    if (!payload_valid(file+MYSMB_SNAPSHOT_HEADER_BYTES))
-        return MYSMB_SNAPSHOT_INVALID;
+    result=mysmb_snapshot_check_parts(file,file+MYSMB_SNAPSHOT_HEADER_BYTES,payload,fingerprint);
+    if(result!=MYSMB_SNAPSHOT_OK)return result;
     memcpy(snapshot->fingerprint,file+16,16U);
     memcpy(snapshot->payload,file+MYSMB_SNAPSHOT_HEADER_BYTES,
         payload);

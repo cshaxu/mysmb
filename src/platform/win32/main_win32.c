@@ -42,8 +42,6 @@ static struct mysmb_io_audio_frame g_audio_frame;
 static struct mysmb_win32_audio_output g_audio_output;
 static struct mysmb_win32_focus_pause g_focus_pause;
 static struct mysmb_io_control g_control;
-static struct mysmb_io_snapshot g_snapshot;
-static struct mysmb_io_snapshot_cache g_snapshot_cache;
 static struct mysmb_snapshot_store g_snapshot_store;
 static struct mysmb_file_storage g_snapshot_files;
 static struct mysmb_snapshot_keys g_snapshot_keys;
@@ -253,7 +251,6 @@ static void mysmb_win32_snapshot_initialize(void)
     struct mysmb_snapshot_files files;
     g_snapshot_ready=0U;g_snapshot_requests=0U;
     mysmb_snapshot_keys_reset(&g_snapshot_keys);
-    mysmb_snapshot_cache_initialize(&g_snapshot_cache);
     mysmb_game_snapshot_fingerprint(&g_game,g_snapshot_fingerprint);
     count=GetModuleFileNameA(NULL,directory,sizeof(directory));
     if (count==0U || count>=sizeof(directory)) return;
@@ -264,15 +261,14 @@ static void mysmb_win32_snapshot_initialize(void)
         mysmb_win32_snapshot_replace,&files) &&
         mysmb_snapshot_store_initialize(&g_snapshot_store,&files)) g_snapshot_ready=1U;
 }
-static void mysmb_win32_snapshot_capture(void)
+static int mysmb_win32_snapshot_capture(void)
 {
     struct mysmb_io_snapshot *staged;
-    if (!mysmb_game_snapshot_running(&g_game,&g_frame)) return;
-    staged=mysmb_snapshot_cache_staging(&g_snapshot_cache,&g_snapshot);
-    if (mysmb_game_snapshot_capture(&g_game,staged,g_snapshot_fingerprint) &&
+    if (!g_snapshot_ready || !mysmb_game_snapshot_available(&g_game,&g_frame)) return 0;
+    staged=&g_snapshot_store.staging;
+    return mysmb_game_snapshot_capture(&g_game,staged,g_snapshot_fingerprint) &&
         mysmb_win32_audio_capture(&g_audio_output.renderer,
-            staged->payload+MYSMB_SNAPSHOT_CORE_BYTES))
-        mysmb_snapshot_cache_publish(&g_snapshot_cache,staged);
+            staged->payload+MYSMB_SNAPSHOT_CORE_BYTES);
 }
 static int mysmb_win32_snapshot_request(HWND window)
 {
@@ -284,6 +280,7 @@ static int mysmb_win32_snapshot_request(HWND window)
         return 0;
     if ((requests&MYSMB_IO_REQUEST_LOAD)!=0U) {
         candidate=mysmb_snapshot_load(&g_snapshot_store,g_snapshot_fingerprint);
+        QueryPerformanceCounter(&g_last_tick);
         if (!candidate) return 0;
         if (!mysmb_game_snapshot_valid(&g_game,candidate) ||
             !mysmb_win32_audio_restore(&audio,
@@ -295,21 +292,24 @@ static int mysmb_win32_snapshot_request(HWND window)
         }
         (void)mysmb_game_snapshot_restore(&g_game,candidate);
         g_audio_output.renderer=audio;
-        mysmb_snapshot_cache_update(&g_snapshot_cache,candidate,1U);
         mysmb_snapshot_keys_reset(&g_snapshot_keys);
         mysmb_win32_keyboard_clear_game(&g_keyboard);
         mysmb_win32_focus_pause_initialize(&g_focus_pause);
         mysmb_win32_focus_pause_gained(&g_focus_pause);
-        mysmb_game_frame_initialize(&g_frame);
+        mysmb_game_snapshot_resume_frame(&g_game,&g_frame);
         g_game_started=1U;
         QueryPerformanceCounter(&g_last_tick);
         mysmb_win32_build_frame();mysmb_win32_update_title(window);
         InvalidateRect(window,NULL,FALSE);
         return 1;
     }
-    if ((requests&MYSMB_IO_REQUEST_SAVE)!=0U)
-        (void)mysmb_snapshot_save(&g_snapshot_store,
-            mysmb_snapshot_cache_current(&g_snapshot_cache));
+    if ((requests&MYSMB_IO_REQUEST_SAVE)!=0U) {
+        candidate=0;
+        if(mysmb_win32_snapshot_capture())candidate=&g_snapshot_store.staging;
+        (void)mysmb_snapshot_save(&g_snapshot_store,candidate);
+        QueryPerformanceCounter(&g_last_tick);
+        return 1;
+    }
     return 0;
 }
 
@@ -554,7 +554,6 @@ static void mysmb_win32_step(HWND window)
         mysmb_win32_focus_pause_after_tick(&g_focus_pause, &g_game);
         mysmb_game_io_audio(&g_game, &g_audio_frame);
         mysmb_win32_audio_submit(&g_audio_output, &g_audio_frame);
-        mysmb_win32_snapshot_capture();
         ++steps;
         elapsed = now.QuadPart - g_last_tick.QuadPart;
     } while (elapsed >= frame_period && steps < 4U);

@@ -1028,3 +1028,144 @@ caches. Capture failure,short I/O,bad/trailing/legacy files,resource mismatch,
 paused P and load/exit must preserve their declared transaction contracts.
 Build/test/publish all three products on code change,then remeasure normal
 and P-request steps separately. This plan is not completed implementation.
+
+### S3 P15 Single Workspace On-Demand IO
+
+Owner supersedes the P14continuation's pause-boundary cache and cutoff plan:
+merge all snapshot work into one buffer,capture current state only on P,
+allow synchronous I/O,audit every space above4KiB,and discuss allocation
+strategies before installing new cache thresholds. No500KiB cutoff/query
+module is retained. P14's existing allocation-failure fallback remains.
+
+#### Adopted Snapshot Lifetime
+
+One store contains a10015-byte snapshot and file-service hooks:sizeof10048
+on DOS16/x86,10080on x64. The10036-byte file image,independent10015-byte spare
+and10020/10024-byte frame/pause cache instances are removed from products.
+Generic cache APIs remain compatible but no product instance allocates them.
+No snapshot is captured or published during ordinary ticks or pause entry.
+
+P synchronously captures current gameplay,including true paused state,into
+that buffer;the codec produces a36-byte stack header and streams header/body.
+Complete writes,close-before-replace and pending-file cleanup remain. O reads
+the bounded header/body into the same scratch,checks exact length/trailing EOF,
+version,CRC,resource fingerprint and canonical audio fields before publishing
+a candidate to composition. Original-ROM/game/text field validation remains
+in app/text consumers before game restore. Failed reads can dirty scratch,
+not live state;the next P recaptures all state. No destructive restore/rollback
+or second disk pass is used. The generic contiguous decoder still leaves its
+output intact on rejection. Both schemas retain their exact file formats.
+
+Application ticks stop during synchronous requests. Save rebases timing
+without clearing held input;load rebases even on a failed file operation.
+Successful load retains the existing device/input/audio reset owners.
+No Start input or original pause flag is changed for I/O. Paused saves now
+restore their actual pause state,per the owner's complete-current-state
+instruction;Enter resumes through the original control path. This explicitly
+supersedes the earlier paused-P last-running-frame policy,not a ROM rewrite.
+
+#### Verification And Costs
+
+Both Windows widths pass23focused checks. Transaction tests cover partial
+17-byte writes/23-byte reads,open/read/write/close/replace failures,short and
+trailing files,corruption and legacy EOF-versus-error. Failed commits preserve
+live state;paused P after a dirty failed load writes a fresh valid snapshot.
+Normal-step tests leave a poisoned scratch unchanged;P advances no game frame
+and invokes clock reset. Both widths' direct isolated text snapshot route
+passes console shortcuts,focus pause,current paused restore,scene equality,
+60audio-continuation buffers and presenter return. The full host fixture
+stops earlier at unrelated geometry assertion131;it is not reported passed
+and has a named TODO. Only the changed snapshot route is discharged here.
+
+Original /AL compiler/link passes,DGROUP31440including2048stack;logical loader
+328112..332208,page-rounded328352..332448bytes. These are structural envelopes,
+not complete heap/IRQ bounds. Three actual pre-final-clock-fix DOS arenas
+384/448/500KiB show peaks373856/437408/498880bytes;all pass P/O,Tab,native/text
+capture dimensions,save CRC and exit. The final clock-only binary repeats
+the500KiBroute. Retain the other two receipts' exact earlier hashes rather
+than silently relabeling them. No emulator configuration changes.
+
+Same61-step source route,one update/submission and15row reads each,ends at
+frame7527with snapshotCRC1900518261. Fresh final capture occurs outside timing.
+Packed step median85.999to77.162ms(mean89.347to80.497);byte66.196to57.314ms
+(mean67.406to58.512). Savings8.838/8.882median ms;per-frame snapshot stage is
+zero. PPU medians remain55.715/35.872ms. These are diagnostic PIT costs,not
+physical486SX rates or an equal-budget reference result. A separate P request
+keeps frame7527fixed while synchronously saving;its1225689PIT ticks are about
+1027ms on this fixture,not a physical disk-latency promise. DOS truncates that
+probe's long receipt filename to8.3;the actual receipt is explicitly read.
+
+Before P15,DOS root30276/store20084bytes;now root10244/store10048. Requested
+application storage is reduced30068bytes(about29.4KiB). The root includes the
+game and must not be added to its members again. Full-cache observed owned
+memory526080to498880saves27200bytes(26.56KiB);new code and allocator/segment
+rounding explain why the request saving differs. With all pixel caches,
+application heap payload is158700,plus a possible512stdio buffer,not a global
+DOS peak. Root/time/header changes invalidate automatic reuse of the previous
+product-wide stack hash;existing partial receipts remain within their limits.
+
+No core/PPU writer changes,new ROM credit0. Historical1992/1992,local1991/1992
+nodes and4260/4261feasible controls(raw4342,infeasible81)unchanged. All four
+original global/reference/physical gate families remain unresolved.
+
+#### Complete Project-Owned Large-Space Census And Policies
+
+Scope is current product-owned heap/static/reserved space above4096bytes,
+not diagnostic/test buffers. Allocation-site sweep covers all source malloc,
+near/far malloc,HeapAlloc,VirtualAlloc,DIB and thread creation entries;ABI
+sizeof and DOS MAP/Windows PE reconcile static containers and load regions.
+Children/aliases below are explanatory and never counted twice. External
+CRT/OS/driver internal reservations are opaque named dependencies,not zero.
+
+| Space | Bytes / shape | Current use and allocation policy | Strategy status |
+| --- | --- | --- | --- |
+| DOS root | 10244 | Static;includes9902game and small IO/device composition state. | Adopted:no snapshot slots;retain original state. |
+| Game container | DOS9902,x869912,x649944 | DOS inside root;Windows separate static game. CPU2048and PPU2354/2356/2368are members. | Mandatory;do not add children or remove original state. |
+| Text observer | 5253,two2626records plus enable | Member of game,source draw receipts for semantic text. | Functional;preserve source/visible phases. Not a pixel cache. |
+| Single IO store | DOS/x8610048,x6410080 | DOS far before optional caches;Windows static.10015snapshot plus service hooks. | Adopted:one transaction scratch;valid only after complete check. |
+| DOS text/row store | 15532 | One far allocation,12132text frame plus3400scene scratch;graphics4096rows alias it. | Adopted exclusive reuse;retain50-row capacity and25-row default. |
+| Windows neutral text frame | 12132 | Static4000three-byte cells plus palette/layout.3400scene scratch is separate and below cutoff. | Current;layout-sized allocation is a proposal,not removal of50-row support. |
+| CHR decode | 8192,4096rows times2bytes | DOS near-or-far one optional block;Windows static. | Existing behavior retained;combination priority awaits discussion. |
+| Background first | 63488 | DOS optional far,Windows static.2048source snapshot plus61440image bytes. | Packed baseline retained;byte mode reuses this block. |
+| Background second | 61440,256x240 | DOS optional far after first,Windows static. | Extra60KiB;failure retains packed. New cutoff deferred. |
+| Windows indexed frame | 61440,256x240 | Static final palette-slot surface;DOS has no full-frame allocation. | Functional;possible exclusive text/frame storage proposal. |
+| Windows DWORD frame | 245760,256x240x4 | Static RGB DIB submission pixels. | Current;direct indexed DIB is a proposal requiring color/DPI/presentation proof. |
+| Console objects | x8616372,x6416408,each of two | Main console and acquisition job each contain16000CHAR_INFObytes. | Current;separate device acquisition from presentation cells is proposed. |
+| VT output string | 386048,193024WCHAR | Heap only when VT output succeeds;released on close. | Proposed:selected-row sizing or bounded streaming;must measure extra writes before adoption. |
+| Borrowed shell title | 131072,65536WCHAR | Heap only for borrowed host;released after restoration. | Proposed:bounded growth preserving full title;no truncated restoration. |
+| Windows PCM/output | samples11760,8x735x2;whole x8612224/x6412352 | Static audio queue/renderer. DOS has no equivalent renderer allocation. | Current;queue changes need underrun/latency evidence and separate audio ownership. |
+| Main/console thread stacks | PE2097152reserve,4096initial commit per thread | Windows address reservation;job stack exists during console acquisition only. | Not2MiBphysical RAM by assumption;measure actual commitment before reducing. DOS stack2048is below cutoff. |
+| Immutable PRG/CHR | 32768far PRG and8192CHR | Owner-local compiled read-only resources,not acceleration caches. | Retain;table-only pruning needs proven source address domains,not guessed unused bytes. |
+| Other read-only art/tables | Within DATA/CONST pools | Individual project art/table entries below4KiB;aggregate pools remain in loader accounting. | Retain accepted art;no duplicate cache allocation. |
+| DOS load regions | CODE263286,FAR_DATA33280,DATA18200,BSS10898plus small classes/alignment | Current MAP load pool;13CODEsegments above4KiB plus PRG/DATA/BSS regions. | Keep separate from heap;CODE is the main footprint,not a framebuffer. Compiler/unused-code optimization remains proposed. |
+| OS console/GDI/audio/CRT allocations | Implementation-owned size unknown | Handle APIs and allocator metadata/retained blocks. | Track as external,never infer all-process memory from explicit payloads. |
+| Legacy snapshot/cache and full-frame interfaces | No current product cache instance;legacy DOS full-frame call can request61440 | Retained API/test compatibility,not additional current allocations. | No product cost counted;require explicit admission before selecting another path. |
+
+The adopted ordering reserves mandatory IO/text storage first;P14 packed
+background-first behavior remains. Proposed strategies in this table are not
+new allocation rules. In particular no500KiB threshold,CHR removal,layout
+shrink,queue reduction,thread-stack change or resource pruning is installed.
+The six-cache conditional cost matrix in P14 remains the basis for owner
+discussion,not an all-scenes ranking. This finite census does not close the
+global conventional-memory or stack/firmware gate.
+
+#### P15 Final Product Binding
+
+Final DOS324873bytes,SHA
+30741023c54daea38f6d4efcf8ef1ce201ce509eda442ae48988d6db4d64f726;
+x86331790bytes,SHA
+f27bc9de503a26c503b01517c552c9ccdae2e1c3b5038478dcd98bd76f52cabc;
+x64347662bytes,SHA
+ad859df5d6d08ce10d7359a1b0e3c76099c5bdd9d1750e9c6187e628966dd1a1.
+Final DOS loaded-image SHA
+aa6111356c261d909cde3f29ae0a681618db9a96dbb40582a5252b969b1968fd.
+All three local asset paths are refreshed;no protected EXE is staged.
+The final500KiBactual route confirms successful launch/load/save/Tab/Escape,
+unchanged configuration and current product identity. Other pre-final
+receipts retain the declared clock-only applicability limit.
+
+Actual reviewed source delta is154added/77removed product lines across12files;
+tests50added/31removed across four files,plus architecture/UX/evidence updates.
+The temporary DOS budget-query source/header,root cutoff field and cutoff
+tests were withdrawn completely;no surviving build-list change. Core/PPU
+writer diffs remain empty. Governance and whitespace gates pass before commit.

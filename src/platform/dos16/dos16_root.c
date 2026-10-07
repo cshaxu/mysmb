@@ -19,10 +19,9 @@ static int initialize(struct mysmb_dos16_root *root,
     root->initialized=0U;
     root->present_rows=0;root->video_storage_bytes=storage_bytes;
     root->present_palette_rows=0;
-    root->snapshot_store=0;root->reset_output=0;root->reset_context=0;
+    root->snapshot_store=0;root->reset_output=0;root->reset_context=0;root->resume_clock=0;
     root->text_workspace=0;root->text_frame=0;root->set_mode=0;
     root->present_text=0;root->text_mode=0U;
-    mysmb_snapshot_cache_initialize(&root->snapshot_cache);
     mysmb_io_control_initialize(&root->control);
     root->audio_available=MYSMB_IO_AUDIO_UNAVAILABLE;
     if (hooks==0 || hooks->read_input==0 ||
@@ -168,32 +167,46 @@ static void present_current(struct mysmb_dos16_root *root)
     mysmb_game_io_video(&root->ppu_frame,&video);
     root->hooks.present_video(root->hooks.context,&video);
 }
+static int capture_snapshot(struct mysmb_dos16_root *root)
+{
+    struct mysmb_io_snapshot *staged;
+    if(!root->snapshot_store || !mysmb_game_snapshot_available(&root->game,&root->game_frame))return 0;
+    staged=&root->snapshot_store->staging;
+    if(!mysmb_game_snapshot_capture(&root->game,staged,root->snapshot_fingerprint))return 0;
+    memset(staged->payload+MYSMB_SNAPSHOT_CORE_BYTES,0,MYSMB_SNAPSHOT_AUDIO_BYTES);
+    return 1;
+}
+void mysmb_dos16_root_bind_clock(struct mysmb_dos16_root *root,void (*resume)(void *))
+{root->resume_clock=resume;}
 static int snapshot_request(struct mysmb_dos16_root *root,mysmb_io_u8 requests)
 {
     const struct mysmb_io_snapshot *candidate;
     if(!root->snapshot_store)return 0;
     if(requests&MYSMB_IO_REQUEST_LOAD){
         candidate=mysmb_snapshot_load(root->snapshot_store,root->snapshot_fingerprint);
+        if(root->resume_clock)root->resume_clock(root->reset_context);
         if(!candidate)return 0;
         if(!mysmb_game_snapshot_restore(&root->game,candidate)){
             root->snapshot_store->files.log(root->snapshot_store->files.context,
                 "mysmb.log",MYSMB_SNAPSHOT_LOAD_ERROR);return 0;
         }
-        mysmb_snapshot_cache_update(&root->snapshot_cache,candidate,1U);
-        mysmb_game_frame_initialize(&root->game_frame);
+        mysmb_game_snapshot_resume_frame(&root->game,&root->game_frame);
         if(root->reset_output)root->reset_output(root->reset_context);
         present_current(root);return 1;
     }
-    if(requests&MYSMB_IO_REQUEST_SAVE)
-        (void)mysmb_snapshot_save(root->snapshot_store,
-            mysmb_snapshot_cache_current(&root->snapshot_cache));
+    if(requests&MYSMB_IO_REQUEST_SAVE) {
+        candidate=0;
+        if(capture_snapshot(root))candidate=&root->snapshot_store->staging;
+        (void)mysmb_snapshot_save(root->snapshot_store,candidate);
+        if(root->resume_clock)root->resume_clock(root->reset_context);
+        return 1;
+    }
     return 0;
 }
 void mysmb_dos16_root_step(struct mysmb_dos16_root *root)
 {
     struct mysmb_io_input decoded;
     struct mysmb_input input;
-    struct mysmb_io_snapshot *staged;
     if (root->initialized==0U || root->control.exit_requested!=0U) return;
     decoded.requests=0U;
     root->hooks.read_input(root->hooks.context,&decoded);
@@ -210,13 +223,6 @@ void mysmb_dos16_root_step(struct mysmb_dos16_root *root)
     mysmb_game_io_audio(&root->game,&root->audio_frame);
     if (root->hooks.submit_audio!=0)
         root->audio_available=root->hooks.submit_audio(root->hooks.context,&root->audio_frame);
-    staged=mysmb_snapshot_cache_staging(&root->snapshot_cache,&root->snapshot);
-    if(root->snapshot_store && mysmb_game_snapshot_running(&root->game,&root->game_frame) &&
-        mysmb_game_snapshot_capture(&root->game,staged,root->snapshot_fingerprint)){
-        /* There is no DOS audio renderer. Never claim preserved PCM history. */
-        memset(staged->payload+MYSMB_SNAPSHOT_CORE_BYTES,0,MYSMB_SNAPSHOT_AUDIO_BYTES);
-        mysmb_snapshot_cache_publish(&root->snapshot_cache,staged);
-    }
 }
 void mysmb_dos16_root_shutdown(struct mysmb_dos16_root *root)
 {

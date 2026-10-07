@@ -97,3 +97,17 @@ mysmb_io_u8 mysmb_game_snapshot_running(const struct mysmb_game *game,
     return (mysmb_io_u8)(frame->operating_mode==1U &&
         frame->operating_mode_task==3U && !mysmb_game_is_paused(game));
 }
+mysmb_io_u8 mysmb_game_snapshot_available(const struct mysmb_game *game,
+    const struct mysmb_frame *frame)
+{
+    (void)game;
+    return (mysmb_io_u8)(frame->operating_mode==1U && frame->operating_mode_task==3U);
+}
+void mysmb_game_snapshot_resume_frame(const struct mysmb_game *game,struct mysmb_frame *frame)
+{
+    struct mysmb_checkpoint checkpoint;
+    mysmb_game_checkpoint(game,&checkpoint);
+    mysmb_game_frame_initialize(frame);
+    frame->operating_mode=checkpoint.operating_mode;
+    frame->operating_mode_task=checkpoint.operating_mode_task;
+}

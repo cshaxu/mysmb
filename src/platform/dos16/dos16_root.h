@@ -27,11 +27,10 @@ struct mysmb_dos16_root {
     mysmb_io_u8 audio_available;
     mysmb_io_u8 initialized;
     struct mysmb_snapshot_store *snapshot_store;
-    struct mysmb_io_snapshot_cache snapshot_cache;
-    struct mysmb_io_snapshot snapshot;
     mysmb_io_u8 snapshot_fingerprint[16];
     void (*reset_output)(void *context);
     void *reset_context;
+    void (*resume_clock)(void *);
     struct mysmb_text_scene_workspace MYSMB_IO_FAR *text_workspace;
     struct mysmb_io_text_frame MYSMB_IO_FAR *text_frame;
     int (*set_mode)(void *,mysmb_io_u8);
@@ -53,6 +52,7 @@ int mysmb_dos16_root_initialize_palette_rows(struct mysmb_dos16_root *root,
     const struct mysmb_dos16_hooks *hooks,mysmb_io_u16 storage_bytes,
     int (*present)(void *,const struct mysmb_io_palette_video_source *));
 void mysmb_dos16_root_step(struct mysmb_dos16_root *root);
+void mysmb_dos16_root_bind_clock(struct mysmb_dos16_root *root,void (*resume)(void *));
 void mysmb_dos16_root_shutdown(struct mysmb_dos16_root *root);
 void mysmb_dos16_root_bind_snapshot(struct mysmb_dos16_root *root,
     struct mysmb_snapshot_store *store,void (*reset_output)(void *),void *context);

@@ -51,6 +51,8 @@ static void reset_output(void *context)
 {
     (void)context;mysmb_dos16_devices_after_load();
 }
+static void resume_clock(void *context)
+{(void)context;mysmb_dos16_devices_resume_clock();}
 static int set_mode(void *context,mysmb_io_u8 text)
 {(void)context;return mysmb_dos16_devices_mode(text);}
 static void present_text(void *context,const struct mysmb_io_text_frame MYSMB_IO_FAR *frame)
@@ -68,6 +70,7 @@ static int initialize(void)
     hooks.submit_audio=submit_audio;
     if (!mysmb_dos16_root_initialize_palette_rows(&root,&hooks,
         (mysmb_io_u16)sizeof(struct text_storage),present_rows)) return 0;
+    mysmb_dos16_root_bind_clock(&root,resume_clock);
     /* Graphics borrows4096bytes and submits them directly;text owns the
      * complete shared store later. No scaled or planar scratch is needed. */
     snapshot_store=(struct mysmb_snapshot_store *)_fmalloc(sizeof(*snapshot_store));

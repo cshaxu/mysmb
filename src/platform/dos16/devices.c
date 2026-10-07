@@ -277,6 +277,8 @@ void mysmb_dos16_devices_after_load(void)
     _disable();mysmb_dos16_keyboard_after_load(&keyboard);_enable();
     mysmb_io_pacing_initialize(&pacing,timer_stamp(),19886UL);
 }
+void mysmb_dos16_devices_resume_clock(void)
+{mysmb_io_pacing_initialize(&pacing,timer_stamp(),19886UL);}
 
 mysmb_io_u8 mysmb_dos16_devices_audio(const struct mysmb_io_audio_frame *frame)
 {
