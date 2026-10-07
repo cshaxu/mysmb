@@ -382,7 +382,7 @@ neither rejected retry nor stale product receipts are called final acceptance.
 | Input,exit and snapshot lifecycle | Scoped pass | Actual controlled host routes,transaction/paused-save/failure tests,old/fixed exit regression and confirmed fresh-game repeat. |
 | Available-memory startup/fallback | Scoped pass | Four actual arenas and owned-block observations;global requirement not inferred. |
 | Performance cohorts | Diagnostic pass | Fixed61steps,151.258to66.182ms,2.285xratio;no hardware FPS/reference claim. |
-| Death/area/pipe operational matrix | Incomplete | Fresh ordinary play/scroll observed;explicit named transition routes still need bound receipts rather than inferred coverage. |
+| Death/area/pipe operational matrix | Scoped pass | Six controller-generated entry checkpoints loaded by the actual current DOS EXE;named lifecycle,mode,snapshot and native pixel receipts below. No original-ROM replay or all-input claim. |
 | Global conventional-memory peak | Unproved | Reconcile all allocation phases/stdio/near/far failure branches;sampled maxima alone insufficient. |
 | Global stack/IRQ/NMI applicability | Unproved | Retain local CFG/register proofs;prove source/runtime/firmware bounds or record owner-accepted qualification boundary. |
 | Equal-budget NESticle reference | Unproved | Resolution,frameskip,audio,guest CPU budget and frame/submission accounting bound to the same comparison;auto budgets are not equal by assumption. |
@@ -393,3 +393,44 @@ candidate round. S3/T34 stay active until the gates reconcile under the existing
 proposal closure rule. Owner instruction to execute through closure does not
 itself supply missing evidence. New ROM credit0;historical1992/1992,local
 1991/1992nodes and4260/4261feasible controls(raw4342,infeasible81)unchanged.
+
+### S3 P2 Six Named Transition Routes
+
+Verification-only delivery;no product/source/harness ABI change and no rebuild
+or EXE refresh required. The native route generator uses ordinary controller
+input and bound owner-local resources,starting from normal power-on. It never
+patches ROM,program counters or RAM to create a transition. One no-jump route
+produces death/respawn;one running/jumping route enters the1-1bonus pipe and a
+walking underground route reaches its side exit. Controller tuning is fixture
+discovery,not a game implementation change. Wrong auto-climb selector was
+discarded:upward pipe exit is source engine7with entrance2,not engine1.
+
+Generated checkpoints and the six actual current DOS executions bind product
+SHA1eab4debc224b675d1d7c433aeb911d507c6add7f2fb874c5290492b660c152f.
+The stock configuration hash remains unchanged;no CPU/core/resolution tuning.
+Input helpers/captures/seeds/temporary generator and receipts remain ignored
+below build. Parallel runs are functional checks,not performance measurements.
+
+| Case | Natural entry | Actual current-product result |
+| --- | --- | --- |
+| DEATH | Frame404,engine11,lives2 | Death progresses;last running save frame612/engine6 retained before level reset. Later captured intermediate shows two remaining displayed lives. Do not infer a new running frame from that prior cache. |
+| RESPAWN | Frame613,engine0/task0,lives1 | Frame967,engine8,lives1,ground Y176;normal play resumes after life reduction. |
+| ENTER | Frame862,engine3,area pointer194 | Frame1161,engine8,pointer165,Y176;vertical entry completes into underground area. |
+| AREA | Frame935,engine7,entrance1,pointer165 | Frame1262,engine8,entrance0,pointer165,Y176;new-area initialization/entry completes. |
+| SIDE | Frame1153,engine2,pointer165 | Frame1454,engine8,pointer194,Y144;side exit returns to surface. |
+| EXIT | Frame1338,engine7,entrance2,Y240 | Frame1593,engine8,entrance0,Y144;upward emergence returns normal control. |
+
+Each route has four native512x480captures with every2x2group identical,a
+640x400text capture and restored BIOS text exit. All saves are10035bytes with
+valid schema/CRC and no pending/error file. Records establish source-bound
+presentation/snapshot/lifecycle operation only:shared C generated the inputs,
+so this is not an independent original-ROM oracle or full-game certification.
+Retained pixel/reference/guard evidence remains necessary for cache semantics.
+No update is made to node/control equivalence dispositions.
+
+The fixed remaining register now has six scoped/diagnostic passes and four
+unproved gates:global memory,global stack/IRQ/NMI,equal-budget reference and
+physical486SX/VGA/LCD. No denominator expansion,new T or new audit round.
+The physical test entry question is pending;no permission or result is inferred
+from elapsed time. S3/T34 and the active goal remain open. This P records
+neutral evidence only;three local products remain exactly P1's tested hashes.

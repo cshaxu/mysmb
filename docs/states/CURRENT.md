@@ -39,6 +39,12 @@ explicitly in TODO rather than asserted complete.
   stack2048. Four retained memory arenas observe526048/464576/401056/393216B,
   not global peaks. S3/T34remain active with the
   [fixed remaining gates](../history/M3-T34-native-vga-performance-proposal.md#fixed-s3-remaining-gate-register).
+- T34 S3 P2adds six actual DOS lifecycle routes from controller-generated
+  checkpoints:death,respawn,vertical entry,new area,side exit and upward exit.
+  Snapshot fields/native2x2captures,text round trips and exit pass;no code or
+  EXE change,new ROM credit0. Four original gates remain unproved:global memory,
+  stack/IRQ/NMI,equal-budget reference and physical486SX/VGA/LCD. No T closure.
+  [Receipts](../history/M3-T34-native-vga-performance-proposal.md#s3-p2-six-named-transition-routes).
 
 - T33 S2 P12delivers default80x25on all three products;50-row code/art and
   interfaces remain. Shared semantic compact art/palette/layout owns output;
