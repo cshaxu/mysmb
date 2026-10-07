@@ -2196,6 +2196,58 @@ physical486qualification remain unproved. Scope/expected/actual[],new0;
 historical1992/1992,local1991/1992nodes and4260/4261feasible controls
 (raw4342,infeasible81). Full M2 certificate remains incomplete.
 
+## S8 P18 integrate DWORD plane packing and publish three products
+
+Only platform/dos16/planar_row.c changes,+123/-57lines. Bounded macros encode
+two DWORD/one WORD stores per32-input/10-output group,each plane contiguous;
+uniform rows return directly from the near body. Shared IO geometry/plan,
+existing row ABI,core,PPU and Windows sources stay unchanged. No new buffer,
+heap allocation,sampling,color/frame/resolution reduction,helper process,
+toolchain/runtime or installed configuration change.
+
+Final original-tool object binds the listing and byte/register fixture.
+164execution records remain identical,including132core and PPU;only the
+DOS row encoder differs.7079cases/20DS/ES/BP/SP/SI/DIchecks pass in four groups,
+including arbitrary band first/heights,wide input bytes,unaligned pointers,
+source immutability,guards and invalid/zero-size rejection. Final object
+contains64actual DWORD masks and64operand-size/ES stores withUSE16 addressing.
+Three local CFGs balance,including legacy row and C3 near body. Band locals40,
+shared plan90locals and64temporary plan bytes remain;owned packing chain200
+excludes incoming entry/arguments and global root/CRT/IRQ/firmware. This is
+not a global stack certificate. All five paired scene costs reproduce P17.
+
+Fifteen focused native tests pass each width. Actual Windows products pass
+DPI144/client768x720startup,Terminal80x30clipping,two input/Tab-return cycles
+and Escape. Actual DOS448/384/370routes pass restore,input,text/graphics,
+Tab,valid10035-byte save and exit;all captures640x400,zero damaged MCB chains
+or dropped memory observations. Parallel route probes are operational checks;
+counter/phase game measurements run separately afterward.
+
+Three EXEs306837/317454/330254bytes occupy existing owner-authorized slots.
+DOScode/logical loader+2144bytes;rounded loader/ordinary observed resident
++2048. Minimum331072/rounded331424,maximum335168/rounded335520;DGROUP49264/
+stack2048,196segments/max32768 and4096initial near reserve unchanged. Observed
+448640cached/385120fallback versus446592/383072;370route378880 unchanged.
+No new image/cache allocation. These controlled observations do not prove
+universal minimum,continuous peak or kernel/firmware memory requirements.
+
+Fresh counter382/phase354records have zero drops;every selected running
+update submits once and every graphical submission reads25bands. Counter
+graphics146.652397ms versus P16 156.647100 saves9.994703ms(6.380395%). Phase
+graphics160.836ms,PPU68.645,mapping44.706versus54.736,VGAincludingDAC18.063,
+game9.191,snapshot10.449ms. Text counter458.516/phase458.965ms describes its
+current route only. No equal-state whole-game/reference or normalized text
+speed conclusion follows. Actual mixed/sparse game rows save about10ms,
+not the isolated mixed prototype's22.7ms;the difference is explicitly kept
+in the tradeoff rather than reported as a guaranteed20ms product gain.
+
+Adopt the measured approximately2KiBresident/10ms current-route gain under
+owner approval of speed/memory balance and no20ms floor. No remote;commit
+locally. Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes
+and4260/4261feasible controls(raw4342,infeasible81). S8/goal remain active:
+146.652ms still misses nominal60Hz/fivefold/global memory-stack/reference/
+hardware qualification. PPU68.645 and mapping44.706ms remain dominant.
+
 ## S8 P17 select macro-unrolled DWORD plane packing
 
 Contained DOS-private encoder consumes the unchanged shared IO row plan.

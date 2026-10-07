@@ -76,6 +76,10 @@ row interface remain available. Plans are synchronous stack scratch,not a
 resident surface or original PPU state. The encoder restores
 segment/index/frame registers,uses the existing band store,and has no game
 state or allocation dependency. This is physical pixel layout,not a PPU writer.
+The DOS mixed-band encoder writes each plane contiguously using bounded
+32-input/10-output macro groups,two DWORD stores and one WORD store. It keeps
+USE16 addressing,all64indices and the same portable IO plan;no image allocation
+or game state is introduced by the physical store optimization.
 The DOS root owns a15400-byte exclusive row/text allocation and presenter choice.
 Each16destination-row band requests at most10logical source rows/2560bytes
 from the same const PPU compositor;all four VGA planes consume it before reuse.

@@ -515,3 +515,15 @@ scene;about22.7ms mixed mapping gain for2138candidate code bytes,zero new
 buffer/heap. Product code/EXEs unchanged. Actual integrated code/loader/
 resident/stack/routes/counters and three products required before adoption.
 Global/nominal60Hz/fivefold/reference/hardware qualification remains open.
+
+## Contiguous DWORD packing adoption
+
+[P18 integration](../../history/M3-T32-rendering-performance-continuation.md#s8-p18-integrate-dword-plane-packing-and-publish-three-products)
+adopts the DOS-only physical encoder,+123/-57lines. No new buffer/heap;shared
+IO/PPU/core unchanged.164object identities,current7079cases/20register checks,
+64DWORD masks/stores,3local CFGs and fifteen native tests each width/actual
+Windows/DOSroutes pass;three EXEs refreshed. DOScode/logical loader+2144bytes,
+ordinary observed resident+2048,370unchanged,DGROUP49264/2048stack unchanged.
+Current counter146.652ms saves9.995ms,mapping44.706ms. Actual product gain is
+about10ms,not22.7ms;record the smaller real-game tradeoff. No20ms floor is
+inferred from the owner's sufficient example. S8/global targets remain open.

@@ -4,15 +4,15 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S8 P17; macro-unrolled DWORD plane candidate selected; S8 remains active. |
+| Identifier Mode | Continuation: M3 T32 S8 P18; DWORD packing adopted and three products verified; S8 remains active. |
 | Admission And Approval | Owner-approved consecutive S5-S9 plan and automatic successor;S7 display-stage contract closed by P4;S8 sole active. |
 | Objective | Reduce current dominant rendering cost as one bounded cache/row-output chain while preserving ROM/PPU semantics and memory balance. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
-| Reference Baseline | Published S8 P16products and current phase/counter probes;original tools/2048stack/640x400/two platform components. |
+| Reference Baseline | Published S8 P18products and current phase/counter probes;original tools/2048stack/640x400/two platform components. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | Zero product lines;selected contained238-line DOS-private band encoder,shared IO plan/geometry unchanged.32-input/10-output groups,contiguous planes,bounded macro unrolling/DWORD stores,uniform early near return. No new buffer/heap/ABI;64indices,unaligned/guard/register/source contracts preserved. Candidate code2524versus386bytes,+2138before integration. Actual code/loader/resident/stack/routes/cost and three EXEs required after adoption. |
+| Files And ABI Surface | DOS-private planar_row.c only,estimate150-260changed product lines,reuse existing current-object matrix. Contiguous DWORD packing/shared IO geometry and ABI unchanged;no new buffer/heap. Preserve64indices,guards,unaligned/register/source contracts. Core/PPU/Win32 source unchanged. Bind final objects and verify actual code/loader/resident/stack/routes/frame cost before publishing three EXEs. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
-| Verification | Original-tool7079byte/guard/source/unaligned/band cases and20register checks pass. Four paired groups all faster:complete mapping0.067..22.674ms and raster+mapping0.079..22.675ms saved per frame.64actual DWORD masks/ES stores verified,2local CFGs balanced. P16 product/EXEs unchanged;integrated/global gates remain open. |
+| Verification | Final-object7079cases/20register checks,64DWORD masks/stores and3local CFGs pass.164objects including132core/PPU unchanged;only DOS row encoder differs. Fifteen native tests each width and actual Windows/DOS448/384/370routes pass. Counter382/phase354records,zero drops,25reads per graphics submission. Current146.652ms diagnostic;three EXEs refreshed. Global memory/stack/reference/hardware gates remain open. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
 | Asset Needs | Owner-local x.xx binary and ROM plus historical athros/NESticle0.2 source as conceptual reference only; copyright-only leaked tree grants no redistribution permission. Purpose frame/cache/transfer architecture comparison; raw source/probes only below ignored build, no copying/transliteration into product, exact-version claims require binary evidence. |
 | Reporting Requirements | Candidate and measured whole-step cost, rejected variants, actual code/memory delta, source/products and total/local node counts. |
@@ -25,6 +25,15 @@
 
 
 ## Current Technical Baseline
+
+- S8 P18 adopts DOS-only contiguous DWORD packing,+123/-57product lines;
+  shared IO/PPU/core unchanged.164object identities,final7079cases/20register/
+  64DWORD/3local-CFG and fifteen native tests each width/actual routes pass.
+  Three EXEs306837/317454/330254bytes;DOS+2144code/logical loader,+2048rounded/
+  ordinary observed resident,370unchanged,DGROUP49264/2048stack unchanged.
+  Counter146.652ms saves9.995ms,mapping44.706versus54.736ms;actual gain is
+  smaller than22.7ms mixed prototype. No new buffer/heap;S8/global goals open.
+  [Integrated tradeoff and limits](../history/M3-T32-rendering-performance-continuation.md#s8-p18-integrate-dword-plane-packing-and-publish-three-products).
 
 - S8 P17 selects macro-unrolled plane DWORD packing:7079DOS cases/20register
   checks,64actual DWORD masks/ES stores and2local CFGs pass. Four paired groups
