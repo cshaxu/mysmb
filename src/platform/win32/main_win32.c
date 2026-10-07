@@ -172,7 +172,7 @@ static void mysmb_win32_build_frame(void)
 
     if(g_text_mode) {
         g_text_failed=(mysmb_io_u8)(!mysmb_text_scene_build(&g_game,&g_text_workspace,&g_text_frame) ||
-            !mysmb_win32_text_console_present(&g_console,&g_text_frame));
+            mysmb_win32_text_console_present(&g_console,&g_text_frame)==MYSMB_WIN32_CONSOLE_LOST);
         return;
     }
     mysmb_ppu_frame_palette(&g_game.ppu,g_video_palette);
@@ -207,7 +207,7 @@ static void mysmb_win32_console_complete(HWND window)
     if(result!=0U) {
         g_console=g_console_job;ZeroMemory(&g_console_job,sizeof(g_console_job));
         g_text_mode=1U;ShowWindow(window,SW_HIDE);
-        if(!g_console.terminal) {
+        if(g_console.window_usable) {
             ShowWindow(g_console.window,SW_SHOW);SetForegroundWindow(g_console.window);
         }
     }
@@ -227,7 +227,7 @@ static void mysmb_win32_switch_presenter(HWND window,int activate)
             g_text_mode=1U;
             if(activate) {
                 ShowWindow(window,SW_HIDE);
-                if(!g_console.terminal) {
+                if(g_console.window_usable) {
                     ShowWindow(g_console.window,SW_SHOW);
                     SetForegroundWindow(g_console.window);
                 }
@@ -683,7 +683,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE previous, LPSTR command, int sh
     g_geometry_adjusting=0;
     if(start_text)mysmb_win32_switch_presenter(window,0);
     if(g_text_mode) {
-        if(!g_console.terminal) {
+        if(g_console.window_usable) {
             ShowWindow(g_console.window,show);
             SetForegroundWindow(g_console.window);
         }

@@ -125,9 +125,14 @@ Loss,presenter changes and snapshot restore clear stale game keys. A valid
 subsequent console down needs no gain record. Tab/P/O/Escape retain their shared
 application-request owners. No original game routine handles host input.
 The console owns explicit input/output device handles and requests key records,
-not terminal escape-sequence input. Classic device font size may shrink to fit its unchanged80x50 shared frame.
-Terminal devices retain native font/viewport,emit neutral RGB glyphs and clip
-only presentation beyond that viewport under owner approval.
+not terminal escape-sequence input. All console outputs receive the same8x8font request and bounded settled
+fit. Effective font/window changes are optional capabilities;no class-name
+flag owns device policy. A usable visible host window alone enables activation
+and optional restored geometry. VT-capable outputs receive neutral RGB glyphs;
+unsupported font requests retain their native viewport and known clipping.
+Ready/defer/lost separates resize/partial writes from genuine device failure.
+Borrowed shell fonts are explicitly restored. Full Terminal80x50and physical
+glyph acceptance remain pending owner verification.
 
 Shared IO declares selected one-cell CP437-compatible glyph IDs,with unchanged
 ASCII letters/digits and three-byte cells. Authored scene owners choose borders
@@ -173,9 +178,10 @@ client area. Native sizing constrains16:15client units,with non-client and
 DPI margins;minimum,maximized,restored and programmatic sizes share that
 device owner. Zero-sized clients skip drawing;no crop or letterbox owner.
 
-Classic console geometry belongs to the Windows device. Restore repairs its
-80x50buffer/view before presenting;maximized font remains unchanged. A bounded
-in-flight clipped write defers a frame,while genuine handle loss keeps recovery.
+Console geometry belongs to the Windows device. Settled Restore attempts its
+80x50buffer/view where an actual host window is available;fit requests grow
+only to8x8. In-flight clipping or unsupported optional geometry defers drawing
+without a presenter switch;genuine handle loss keeps recovery.
 Borrowed shutdown restores the original shell view when a real window exists.
 Terminal notification/message-only handles do not expose classic geometry;
 Terminal output follows native visible dimensions without font/window/palette

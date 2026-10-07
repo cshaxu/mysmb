@@ -56,11 +56,39 @@ int main(int argc,char **argv)
     }
     for(cycle=0;cycle<4;cycle++) {
         fail_view=cycle==3;
-        if(cycle==3) {
-            if(mysmb_win32_text_console_open(&device,owner))return 5;
-        } else {
+        {
+            /* An optional geometry failure keeps valid input/output usable. */
             if(!mysmb_win32_text_console_open(&device,owner) || !device.borrowed ||
                 device.window!=GetConsoleWindow() || !mysmb_win32_text_console_present(&device,&frame))return 6;
+            if(cycle==0 && device.window_usable) {
+                unsigned int phase,wait;
+                for(phase=0;phase<2;++phase) {
+                    if(!PostMessage(device.window,WM_SYSCOMMAND,
+                        phase==0?SC_MAXIMIZE:SC_RESTORE,0))return 17;
+                    for(wait=0;wait<80;++wait) {
+                        if((IsZoomed(device.window)!=0)==(phase==0))break;
+                        Sleep(25U);
+                    }
+                    if(wait==80)return 18;
+                    for(wait=0;wait<20;++wait) {
+                        if(mysmb_win32_text_console_present(&device,&frame)==MYSMB_WIN32_CONSOLE_LOST)return 19;
+                        Sleep(20U);
+                    }
+                }
+                {
+                    CONSOLE_SCREEN_BUFFER_INFO fitted;
+                    FILE *log;
+                    if(!GetConsoleScreenBufferInfo(device.output,&fitted))return 20;
+                    log=fopen(argv[1],"a");
+                    if(log) {
+                        fprintf(log,"caption-maximize-Restore passed;view=%dx%d font=%dx%d\n",
+                            fitted.srWindow.Right-fitted.srWindow.Left+1,
+                            fitted.srWindow.Bottom-fitted.srWindow.Top+1,
+                            device.effective_font.dwFontSize.X,device.effective_font.dwFontSize.Y);
+                        fclose(log);
+                    }
+                }
+            }
             mysmb_win32_text_console_close(&device);
         }
         /* Closing a borrowed device detaches only this process. */

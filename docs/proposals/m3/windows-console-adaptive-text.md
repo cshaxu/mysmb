@@ -1,10 +1,11 @@
 # Windows Text Console Fit And Restore
 
-Owner-requested queue-head candidate. The owner has moved remaining T32
-performance work into the second queue candidate; T32 is suspended and
-CURRENT is idle. This proposal is not admitted and has no allocated T/S
-identifier. At admission compare the then-current source and baseline before
-assigning work.
+Admitted M3 T33 S1 under explicit owner implementation/build/test/commit
+instruction. Current packet owns execution;the owner will perform actual
+visible Terminal/Console Host verification after delivery. T32 remains
+suspended and the new performance package remains queued. Four delivery
+cohorts below are combined into one bounded S with capability/lifecycle tests,
+three products and a pending owner visual gate.
 
 ## Problem And Owner Contract
 
@@ -154,3 +155,12 @@ remaining limits; no API success flag alone counts as visual acceptance.
 This host-presentation task expects no ROM-node or control-edge credit:
 scope/expected/actual are empty, new credit zero, with the then-current ledger
 totals recorded at admission. No source material is imported.
+
+## T33 S1 P1 delivered state
+
+Implementation,three builds,focused/native and actual host-device tests are
+committed and products published. Owner verification is pending;T33/S1remain
+active and full visual closure is not claimed. Classic actual caption Restore
+reports80x50/8x8. Current Terminal ignores the font request and retains80x30;
+full-scene/physical glyph/Terminal caption acceptance remains explicitly open.
+[Implementation evidence](../../history/M3-T33-windows-console-fit.md#s1-p1-implementation-and-delivery-awaiting-owner-visual-verification).
