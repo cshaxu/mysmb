@@ -30,6 +30,12 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P25resolves normal flushall under current FILE ownership:untouched
+  standard streams take no-output paths,private files clear active flags on
+  close including errors. Conditional own+nested contribution26bytes,no write
+  or allocation. Abnormal/fatal exit and external service/interrupt gates remain;
+  no product change. [Normal-exit condition](../history/M3-T34-native-vga-performance-proposal.md#s3-p25-normal-exit-stream-ownership-condition).
+
 - T34 S3 P24binds current no-copy startup hooks,disabled early dynamic init,
   empty cinit tables and14-byte retained main-entry frame(known total734).
   Actual exit table selects flushall;unpruned dynamic/text/error paths remain

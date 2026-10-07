@@ -1368,6 +1368,34 @@ p24-startup-receipt.json,check-p24-flushall.py and
 rtl-private-current/flushall-cfg.json. Product source/EXEs unchanged;ROM credit0.
 All four original global/reference/physical gates remain open.
 
+### S3 P25 Normal Exit Stream Ownership Condition
+
+Audit only. Resolve the normal flushall condition left by P24 without claiming
+its general-purpose CFG safe. Current initialized20FILE slots have five
+active standard streams and fifteen unused slots. Current production source
+does not read/write standard streams,change their buffering or reopen them.
+For the untouched standard streams,fflush's mode/buffer tests take the
+no-output path. Private fopen uses only the other slots;getstream first
+clears the flag,and openfile publishes its active flag only after successful
+open. Its failure path leaves the slot inactive.
+
+Source ownership review confirms every successful snapshot/log open is
+synchronously closed. Current fclose's shared return clears the active flag
+even when flushing/closing reports failure. Thus private slots are inactive
+at ordinary main return. No asynchronous callback retains an open FILE.
+These conditions exclude write/text-conversion/allocation paths from normal
+flushall:own10bytes plus argument4,far return4 and no-output fflush own8,
+total26bytes before caller frames. This conditional bound does not replace
+the unpruned84-byte incomplete model for abnormal/fatal paths.
+
+Evidence below ignored build/m3-t34-s3:check-p25-normal-flush.py and
+p25-normal-flush.json bind initialized FILE data,current instruction predicates,
+source ownership and the absence of standard-stream consumers. The existing
+P20normal-exit routes supply separate operational corroboration. New stream
+writers,unclosed owners or memory corruption invalidate this condition;no
+all-abnormal-input assertion. Startup failure/fatal exit,DOS/BIOS and IRQ/NMI
+clauses remain open. Product/EXEs unchanged;ROM credit0.
+
 ### S3 P22 Current Linked CRT Leaf Rebinding
 
 Audit only. Relink current production objects using the original linker with
