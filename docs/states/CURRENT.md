@@ -30,6 +30,12 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P22relinks current objects to loaded-image-identical public MAP and
+  rechecks16CRTleaf symbols/15addresses from current EXE bytes. Depths and
+  argument pops agree with retained proof;current known main/root_step totals
+  720/704bytes exclude12nested/service entries,startup and interrupts. No code
+  change or global-stack closure. [CRT binding](../history/M3-T34-native-vga-performance-proposal.md#s3-p22-current-linked-crt-leaf-rebinding).
+
 - T34 S3 P21rebinds all168current project objects:161retained,seven refreshed
   (including file services). Census908functions/32indirect sites;787entry-
   reachable functions have balanced own-stack paths. Source-only contributions

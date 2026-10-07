@@ -1344,3 +1344,26 @@ prepare-p21-listings.py,merge-p21-stack.py,stack-p21listings and
 stack-current/bindings.json,local-cfg.json,callback-bindings.json,
 guarded-chain.json,merge-receipt.json. All four original gates remain open;
 ROM node/control credit0.
+
+### S3 P22 Current Linked CRT Leaf Rebinding
+
+Audit only. Relink current production objects using the original linker with
+public MAP output and verify loaded-image bytes identical to final P15EXE.
+Runtime segment/offset locations have shifted;old raw offsets are not used.
+The current external-symbol set remains28. Public-anchored current-byte CFGs
+prove16leaf symbols at15addresses balanced,with the same own depths and
+argument-pop contracts as P8. Arithmetic helper argument-pop8remains valid.
+
+Merge only these current-byte-proven leaf depths into the P21current project
+model. Known contributions are720bytes from main and704from root_step;no
+global stack assertion. The twelve remaining entries are dos_getvect,
+dos_setvect,fmalloc,nmalloc,fclose,fflush,fopen,fread,fwrite,int86,remove and
+rename (linked names retain their ordinary C underscores in receipts).
+Prior wrapper/nested-service analysis remains historical until current
+dependencies are rebound. Startup,external DOS/BIOS bodies and IRQ/NMI overlays
+are still excluded;all four original gates remain open.
+
+Evidence below ignored build/m3-t34-s3:crt-current-map.ps1,crt-current,
+rebind-p22-rtl.py,rtl-current/census.json,leaf-bounds.json,rebind-receipt.json,
+merge-p22-leaves.py and stack-current/guarded-chain-with-rtl-leaves.json.
+No product source/EXE changes;ROM node/control credit0.
