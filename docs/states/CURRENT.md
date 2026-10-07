@@ -30,6 +30,13 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P16rebinds the six P15changed DOS source objects and resolves72local
+  own-stack paths with balanced returns;save/load maxima68/74bytes. No large
+  snapshot buffer moved to stack. Callee/indirect/service overlays and the four
+  original gates remain open;source/products unchanged. Cache policy awaits
+  owner decision using conditional marginal costs,with smaller memory preferred
+  for similar benefit. [Scoped receipt](../history/M3-T34-native-vga-performance-proposal.md#s3-p16-post-consolidation-local-stack-binding).
+
 - T34 S3 P15delivers one10048-byte DOS/x86transaction store(x6410080),no
   frame/pause snapshot cache or spare,and no per-frame capture. P synchronously
   dumps current running/paused state;O validates before restore and preserves

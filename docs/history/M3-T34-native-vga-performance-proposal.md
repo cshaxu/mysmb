@@ -1169,3 +1169,28 @@ tests50added/31removed across four files,plus architecture/UX/evidence updates.
 The temporary DOS budget-query source/header,root cutoff field and cutoff
 tests were withdrawn completely;no surviving build-list change. Core/PPU
 writer diffs remain empty. Governance and whitespace gates pass before commit.
+
+### S3 P16 Post-Consolidation Local Stack Binding
+
+Audit only;no source or product change. Re-run the P15 binding and local CFG
+tools under ignored build/m3-t34-s3. Six changed source units (app snapshot,
+shared snapshot codec/store,DOS main/root/devices) have identical code,data
+and fixup records to the final P15 production objects. All72listed functions
+have resolved own-stack paths and balanced returns. This is a local bound;
+callee depths and asynchronous service overlays are excluded.
+
+The current own maxima are596bytes for initialize,74for snapshot_load,68for
+snapshot_save,52for present_current and40for snapshot validation/video mode
+setup. The single-workspace change therefore does not move the removed
+snapshot buffers onto the2048-byte stack. The36-byte header and bounded
+streaming helpers explain the save/load local contributions. The24indirect
+call sites still require current constructor/callee integration;older global
+stack sums are not silently promoted to current-product certification.
+
+Evidence:stack-p15/bindings.json,stack-p15/local-cfg.json and re-run logs
+p16-stack-bind.log/p16-stack-cfg.log below build/m3-t34-s3. No ROM node or
+edge credit;all four original global/reference/physical gates remain open.
+Owner directs cache decisions by marginal benefit,prefer smaller memory when
+benefits are similar,and requests the complete current optional-cache list.
+The P14 six-combination matrix remains the measured basis;no new allocation
+policy or cutoff is installed by this audit.
