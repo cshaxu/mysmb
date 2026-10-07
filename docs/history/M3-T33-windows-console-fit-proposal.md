@@ -452,3 +452,13 @@ adoption. The previews do not prove that current devices already support the
 proposed palette. Do not change global Terminal settings or call a hardcoded
 standard palette faithful. Both new art banks and palette binding require
 review;the retained 80x50 source and all products remain unchanged.
+
+P7 owner requests ordinary character accents on the accepted color-mass
+direction. V7 retains the mass silhouettes and adds cap mark/brim,eye,
+moustache/back-head edge,overall straps/buttons,fist and upturned-shoe marks
+where uniform cells allow them. A mark replaces a uniform cell only,keeping
+one foreground/background pair;no third-color overlay over a half-block is
+pretended representable. Original/current columns remain unchanged. New50
+has more landmark cells than new25;both are still pending visual review and
+native palette integration. All three four-column states render locally;
+no product or ROM logic change occurs.
