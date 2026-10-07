@@ -30,6 +30,21 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P41 keeps the owner-directed B/A/C cache policy but makes the DOS16
+  root ask DOS for the current largest conventional block before attempting
+  C's 61,440-byte far allocation. When that block cannot fit C, the root
+  retains the already selected B/A combination without making a guaranteed
+  failing far-heap request; a later allocation may still fail normally after
+  a positive preflight. This is DOS16 allocation policy only: shared PPU,
+  pixels, cache formats, game decisions and Windows allocation stay unchanged.
+  OpenNT CL16 compiled the current source, local LINK 3.65 in private DOSBox
+  linked the rebuilt objects to a 325,113-byte MZ, and its MAP has fourteen
+  nonempty code segments with a largest bucket of 58,312 bytes. A private
+  DOSBox smoke route reached title, Enter, D+J, Escape and normal DOS return.
+  Windows x86/x64 keyboard, focus-pause and DOS-root smoke tests pass. The
+  original fallback-tier matrix remains open; this receipt does not claim an
+  intermediate-memory result or physical performance.
+
 - T34 S3 P39 applies the owner-directed DOS16 optional-cache order without
   changing shared PPU or game decisions: request B (the 63,488-byte packed
   background tier), then A (the 8,192-byte decoded-CHR tier); request C (the

@@ -1,9 +1,23 @@
 #include "platform/dos16/dos16_root.h"
 #include <string.h>
 #ifdef MYSMB_DOS16_TARGET
+#include <dos.h>
 #include <malloc.h>
 #include "platform/dos16/palette_expand.h"
 #include "platform/dos16/nibble_expand.h"
+
+/* AH=48h reports the largest available conventional block in BX when the
+ * deliberately impossible FFFFh-paragraph request fails. This avoids a
+ * costly far-heap scan for C when B+A already leave too little contiguous
+ * storage. It does not reserve memory and a later allocation may still fail. */
+static int optional_far_block_fits(mysmb_io_u16 bytes)
+{
+    union REGS input,output;
+    unsigned short paragraphs=(unsigned short)((bytes+15U)/16U);
+    memset(&input,0,sizeof(input));input.h.ah=0x48U;input.x.bx=0xffffU;
+    intdos(&input,&output);
+    return output.x.bx>=paragraphs;
+}
 #endif
 static int initialize(struct mysmb_dos16_root *root,
     const struct mysmb_dos16_hooks *hooks,mysmb_io_u16 storage_bytes,
@@ -136,7 +150,8 @@ static void present_current(struct mysmb_dos16_root *root)
          * compact background tier and decoded CHR tier were retained.  If
          * decoded CHR fails, preserve the compact tier and do not spend a
          * second background block. */
-        if(root->ppu_workspace.bg && decoded)
+        if(root->ppu_workspace.bg && decoded &&
+            optional_far_block_fits(MYSMB_PPU_BACKGROUND_SECOND_BYTES))
             mysmb_ppu_frame_background_byte_bind(&root->ppu_workspace,
                 root->ppu_workspace.bg,MYSMB_PPU_BACKGROUND_BYTES,
                 (mysmb_u8 __far *)_fmalloc(MYSMB_PPU_BACKGROUND_SECOND_BYTES),

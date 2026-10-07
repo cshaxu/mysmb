@@ -1815,3 +1815,30 @@ equivalence or physical performance evidence.
 This route is ready for the remaining P39 fallback-memory matrix and ordinary
 three-product packaging; it does not by itself close those conditions or add
 a third-party runtime dependency.
+
+### S3 P41 DOS16 Optional-C Allocation Preflight
+
+The B/A/C policy retains its prescribed order: B is requested first, A second,
+and C only after both are retained. The DOS16 root now uses the standard DOS
+allocation query form of `AH=48h` with an intentionally impossible request to
+read the largest available conventional block before it asks its far heap for
+C's 61,440-byte byte-background cache. If that maximum cannot fit C, the root
+does not make an allocation known to fail; it keeps the already selected B/A
+state. A positive preflight reserves nothing and preserves the ordinary
+allocation failure fallback, so fragmentation between query and allocation is
+still handled by the existing allocator result.
+
+This change is confined to the DOS16 composition root. It neither selects a
+different PPU/game result nor changes pixels, cache formats, Windows behavior
+or the B/A/C allocation order. OpenNT CL16 compiled the resulting source. The
+same generated objects were prepared as bounded code buckets and linked by the
+installed Microsoft LINK 3.65 inside a private DOSBox configuration. The
+325,113-byte MZ MAP has fourteen nonempty CODE segments; the largest is 58,312
+bytes, below the 64 KiB old-linker ceiling. A short private DOSBox smoke route
+reached title, Enter, D+J, Escape and a normal DOS return. Focused keyboard,
+focus-pause and DOS-root tests passed in both Windows widths.
+
+The 384 KiB fallback observation remains B unavailable then A retained. This
+preflight does not invent an intermediate-memory result, close the 416/448 KiB
+matrix, or establish a physical performance result. Generated compiler,
+linker, MAP and DOSBox receipts remain below ignored `build/m3-t34-s3`.
