@@ -1855,10 +1855,10 @@ decisions, cache bytes and Windows paths untouched.
 The current LINK3.65 product completed unchanged-configuration FIT routes at
 384KiB and448KiB with title/input and normal Escape return. Neither route's
 allocation log contains B's63,488-byte block;both therefore take the B-fail to
-A path. At416KiB, the observed post-initialization available bound is below B
-and proves the same B impossibility, but the complete product did not reach its
-SDL input loop inside the automated30-second observation window. It remains an
-open operational route rather than a passing receipt. The current500KiB direct
-cache diagnostic retains B+A and not C. Both Windows widths passed focused
+A path. The416KiB direct cache probe records
+`decoded=1,packed=0,byteCache=0`, independently proving the same B-fail to A
+selection. Its matching current-product FIT route reaches title capture and
+normal Escape return, so416KiB is no longer an open operational route. The
+current500KiB direct cache diagnostic retains B+A and not C. Both Windows widths passed focused
 keyboard,focus-pause and DOS-root smoke suites. The evidence does not claim a
 physical cadence result or close the remaining runtime/memory qualification.

@@ -36,11 +36,9 @@ explicitly in TODO rather than asserted complete.
   retaining the specified B/A/C selection order and fallbacks. The current
   product completes the unchanged-configuration FIT routes at 384 KiB and
   448 KiB, including Escape and normal DOS return; both show no B-sized
-  allocation, so B falls through to A. The 416 KiB allocator upper bound
-  likewise cannot fit B, but its complete product route did not reach input
-  within the automation's 30-second limit and remains an open operational
-  condition. The current 500 KiB direct cache diagnostic retains B+A and not
-  C. Both Windows-width focused suites pass; no shared PPU/game change.
+  allocation, so B falls through to A. The 416 KiB direct cache probe likewise records `decoded=1,packed=0,byteCache=0`; its current
+  product FIT route now reaches title capture and normal Escape return. The
+  current 500 KiB direct cache diagnostic retains B+A and not C. Both Windows-width focused suites pass; no shared PPU/game change.
 
 - T34 S3 P41 keeps the owner-directed B/A/C cache policy but makes the DOS16
   root ask DOS for the current largest conventional block before attempting
