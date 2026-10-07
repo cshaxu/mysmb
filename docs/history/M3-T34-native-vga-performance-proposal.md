@@ -1,10 +1,9 @@
 # Native VGA Output And DOS Performance Package
 
-Owner-requested new unnumbered T candidate, originally inserted second and now pending queue head after T33 closure. Not admitted.
+Admitted M3 T34 after owner acceptance and closure of T33. S1 is active; S2/S3 are planned successors, not concurrently admitted.
 This packages the former T32 S9 native-output work, planned S10 optimization
 work and its final-audit role as three sequential S slots. There was no
-previously allocated T32 S11. At admission allocate the next ascending T and
-start S1; never reuse T32 S9/S10 identifiers. T32 and S9 remain suspended,
+previously allocated T32 S11. Admission allocates T34 and starts S1; never reuse T32 S9/S10 identifiers. T32 and S9 remain suspended,
 not certified complete. Their receipts are retained and reusable only within
 recorded dependencies; this package owns the queued remaining-work plan.
 
@@ -30,7 +29,7 @@ and artifacts at admission rather than rebuilding solely to repeat receipts.
 The retained S9 P1 mode prototype uses original16-bit tools:61440VRAM pixels
 read back exactly,512x480scanout repeats each source pixel2x2,BIOS mode3
 restored. No product code changed and no real-game/LCD/cost acceptance yet.
-[Retained evidence](../../history/M3-T32-rendering-performance-continuation.md#s9-p1-reference-route-and-independent-native-mode-probe).
+[Retained evidence](M3-T32-rendering-performance-continuation.md#s9-p1-reference-route-and-independent-native-mode-probe).
 
 ## Planned S1: Native-resolution VGA Output
 
@@ -38,7 +37,7 @@ Entry: current const PPU slot-row producer. Exit: correctly timed VGA scanout
 and restored prior BIOS display mode. Estimated150-300product lines in
 platform/dos16 devices,physical plane encoder and composition root;neutral
 IO layout only where reusable. No core/state-writer change or new full-frame
-allocation. Reuse the existing15400-byte exclusive row/text storage.
+allocation. Reuse the current15532-byte exclusive row/text storage; do not revert the accepted T33 text layout.
 
 - Reuse pinned NESticle parameter/mode research as conceptual guidance.
   Native256x240 is preferred; compare320x240with static side borders only if
@@ -137,3 +136,35 @@ All three S slots have scope[],expectedMatches[],actualMatches[],new0. Retain
 historical1992/1992 and local1991/1992nodes,4260/4261feasible controls
 (raw4342,infeasible81);no ROM-node custody moves with this infrastructure plan.
 The deferred M2 certificate stays in its separate queue-tail proposal.
+
+## T34 S1 P1 Admission And Current Baseline
+
+Owner accepts T33's delivered text presentation and directs admission of the
+queue head. Source baseline is f7ff2b2f; this admission changes documentation
+only. Current local products bind DOS320681B/SHA
+96178bbc6ded32956a6c871f9964614abd9a8c52b1798db5d6b51c0f549343bf,
+x86330766B/SHA3a4aada18d064e9d954240cd73cf9d691c5cdad84a2b1bcd87ce9550a4c37d58,
+x64346126B/SHAcfb5b288d2b47a35a396617b64a9507592f20bd51e5dfa80371fc1d02829f8e8.
+DOS DGROUP51472B includes2048B stack; logical loader343952..348048B excludes
+dynamic allocations. Retained T32 costs are historical diagnostic measurements,
+not a measurement of this baseline. Keep working products until native adoption
+passes. Shared text defaults80x25; legacy80x50 and accepted Tab behavior remain.
+
+S1 begins with review of current row-to-plane ownership and the retained mode
+prototype,then one bounded implementation and source-to-VRAM verification.
+Expected150-300product lines in platform/dos16 devices/encoder/root,plus scoped
+tests. Expected no new full-frame buffer; actual loader/resident deltas must be
+measured. Neutral reusable changes belong in IO,not a third platform component.
+No core/PPU decision changes. Actual scope expansion requires a visible amendment.
+
+Fixed S1 acceptance:61440pixels,all240rows/palette slots and edge coordinates;
+HUD split,scroll and priority;cache/fallback;mode restoration and graphics/text
+switching;actual DOS input/transition routes;Windows regression;original16-bit
+compiler/link/segment/stack/loader;before/after stage costs and three products.
+DOSBox stock settings stay unchanged. Hardware scan repetition does not prove
+owner LCD height filling or physical486SX cadence. Preserve those distinctions.
+
+S1/S2/S3 each have empty ROM scope/expected/actual sets. Only S1 has a current
+admission/run record; successor admission follows scoped closure. Historical
+1992/1992,local1991/1992nodes and4260/4261feasible controls remain unchanged,
+raw4342/infeasible81,new0. Full M2 certification stays separately queued.

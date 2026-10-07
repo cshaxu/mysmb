@@ -167,3 +167,28 @@ font/live caption observation is retained as HOST-T33-VISUAL in TODO;no user
 validation is invented and no M2/global performance claim is made. The
 original proposal is archived alongside this record. CURRENT is idle;
 remaining performance package is queue head,not automatically admitted.
+
+## S2 Owner Acceptance And T33 Closure
+
+Owner reports the delivered result perfect/successful and explicitly closes
+T33,then requests the next queue task. Accept default80x25 and retained80x50,
+white information text,question marks,source-bound colors,spring highlights
+and distinct running phases under the observed play conditions. Source
+delivery is f7ff2b2f,32files,+846/-119lines; three current local product hashes
+and sizes are bound in the T34 admission record. Each Windows width20checks,
+53legacy byte-identical cells,1200read-only native frames,actual Tab/CMD routes
+and original DOS build/stock-config startup/text/input/exit evidence are retained.
+This documentation closure rebuilds no EXE and changes no product code.
+
+S2/T33 close by owner-directed acceptance. The transferred complete-gallery
+contract was not exhaustively reviewed:53remaining-object fixture cases and
+approved player/power-up groups are retained,not a complete reachable-state
+census. Its unresolved full pose/background/information inventory remains
+explicitly deferred as TEXT-GALLERY-REMAINDER in TODO under this closure
+mandate. Do not call unreviewed rows visually approved. Physical host/all-DPI
+and486SX qualification likewise are not inferred from owner acceptance.
+
+No ROM-node custody changes or promotions. Historical1992/1992,local1991/1992
+nodes and4260/4261feasible controls,raw4342/infeasible81,new0. M2 final
+certification remains incomplete. T34 S1 receives only native VGA work; no
+character redesign or whole-ROM audit is folded into its scope.

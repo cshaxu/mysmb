@@ -2,7 +2,7 @@
 
 Retained T32 plan and historical checkpoints. Owner has suspended T32/S9
 and packaged all remaining native-output,optimization and final-acceptance
-work into the new unnumbered [second queue candidate](native-vga-performance-package.md).
+work into the admitted [T34 package](../../history/M3-T34-native-vga-performance-proposal.md).
 That proposal owns future execution planning;this file preserves predecessor
 scope and receipts only. S8 transfer closure stands;S9 P1 is not implementation
 closure. Planned S10 is superseded;no T32 S11 was allocated. No active S.

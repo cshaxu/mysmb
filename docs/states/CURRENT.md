@@ -1,33 +1,32 @@
 # Project Status
 
-**Active: M3 T33 S2, corrective reopening.**
+**Active: M3 T34 S1, native VGA output.**
 
-## M3 T33 S2 Packet
+## M3 T34 S1 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Corrective; latest closed T33 reopened, S1 closure retained, S2 active. |
-| Admission And Approval | Owner explicitly requests reopening T33 at S2 and redesigned 80x25 text; retain intact 80x50 alongside the new default 80x25 profile, with no selection switch yet. |
-| Objective | P12 owner authorizes implementation of default shared80x25 with retained80x50;adopt reviewed color-mass/character art,including spring side highlights,and publish three local EXEs for owner play testing. |
-| Non-goals | No game/PPU changes,bitmap sampling,helper process,global Terminal settings,user-facing layout switch or claim that25rows alone fixes allocation/Tab latency. |
-| Reference Baseline | Current source at 358beff9; owner accepts diagnostic 05 on both widths and rejects 06 physical 80x50 display. API readback is not physical acceptance. |
-| Candidate Proposal | [T33 retained proposal, S2 amendment](../history/M3-T33-windows-console-fit-proposal.md#s2-corrective-reopening-and-80x25-design). |
-| Files And ABI Surface | io/video neutral layout/palette metadata;text shared compact artwork,actor/background/caption/scene layout;Win32/DOS text devices and composition roots;CMake/DOS source list;focused tests. Retain50-row interfaces/art. Expected800-1200lines;translated core and original state ABI untouched. |
-| Applicable Rules | Execution, Architecture, Coding, Documentation and source policy; System Architecture and Source Layout. All temporary census/probe outputs remain under ignored build. |
-| Verification | Legacy50-row regression;compact artwork/color/pose and all caption coverage;read-only state,priority/clipping,snapshot and graphics invariance;x86/x64 focused tests/native Tab/input/exit;originalDOS16 compiler/link/memory checks;three local products. Device probes do not replace owner visible/play acceptance. |
-| Expected Markers | Empty ROM scope/expected matches; historical 1992/1992, local 1991/1992 nodes and 4260/4261 feasible controls remain unchanged. |
-| Asset Needs | Existing owner-local SMB1 iNES/reviewed disassembly are read-only Nintendo material without a redistribution grant. P2-P11owner-requested local review panels remain under ignored build. P12uses the same admitted revision for embedded local Win32/DOS builds and stock DOSBox diagnostics;generated resource declarations,raw captures and traces remain local/ignored. Only project-authored compact art and neutral records are tracked;protected products are not staged. Header/PRG/CHR bounds and palette/OAM bindings are verified;native fixtures are not original-ROM replay proof. |
-| Reporting Requirements | Report planned components/size, inventory totals, proposed layout and all pending implementation/physical-host clauses; distinguish cell geometry from physical display. |
-| Stop Conditions | Any proposed game-state mutation, original selector re-execution, information loss, unsupported host guarantee or unbounded state inventory requires visible redesign. |
-| Exit Criteria | Default80x25 runs through shared scene logic on all targets,retained50passes regression,scoped tests/builds and three products delivered;report remaining visual/host clauses. T33 stays open pending owner play acceptance. |
-| Original Owner Request | Reopen T33 as S2; assess 80x25 and redraw elements; preserve 80x50 code, add default 80x25, allow a selection switch later. |
-| Similar-Issue Sweep | Scan shared layout constants, literal projection/row limits, template heights, occupancy masks, captions, DOS BIOS font/rows, Windows font/viewport/output and snapshot consumers; account for each owner. |
+| Identifier Mode | New; T33 S2/T33 closed by owner acceptance; allocate next ascending T34, start S1. |
+| Admission And Approval | Owner reports delivered text successful and explicitly requests T closure and next queue admission; queue-head native VGA/performance package admitted. |
+| Objective | Adopt native256x240 DOS VGA plane output with hardware scan repetition,eliminating software resampling while preserving61440pixels and original PPU semantics. |
+| Non-goals | No game/PPU decision changes,DOS4GW,new driver,helper process,frameskip,emulator settings changes,text redesign or whole-ROM certification. |
+| Reference Baseline | Source f7ff2b2f; accepted local products DOS320681B,x86330766B,x64346126B. Current DGROUP51472B/stack2048B; hashes and loader bound in proposal. Reprofile current source; retained T32 costs are historical. |
+| Candidate Proposal | [Admitted T34 plan and S1 baseline](../history/M3-T34-native-vga-performance-proposal.md#t34-s1-p1-admission-and-current-baseline). |
+| Files And ABI Surface | platform/dos16 devices,plane encoder and root;neutral reusable IO only if required;scoped VGA/input/runtime tests and original build tools. Estimate150-300product lines,no new full-frame allocation,reuse15532-byte exclusive workspace. |
+| Applicable Rules | Execution,Documentation,Architecture,Coding,source policy;System Architecture and Source Layout. |
+| Verification | Exact61440source-to-VRAM pixels/palette/edges,HUD split/scroll/priority,cache/fallback,mode restoration and Tab;actual DOS input/transition routes,Windows regression,original16-bit compiler/link/segment/stack/loader and before/after stage costs;three local products on code change. |
+| Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0;historical1992/1992,local1991/1992nodes,4260/4261feasible controls unchanged(raw4342,infeasible81). |
+| Asset Needs | Existing owner-local SMB1 ROM is Nintendo material without redistribution grant;read-only for local embedded builds and bounded runtime probes. Existing NESticle conceptual research is copyright-only:do not copy code/mode tables or import. Generated data,captures,traces/products remain local;neutral evidence only tracked. No fresh third-party research/import in P1 admission. |
+| Reporting Requirements | Before every S report objective,components/code and memory estimates;after report actual changes,scoped results,candidate dispositions and total/local node/edge counts. Do not infer hardware cadence/LCD filling from emulator captures. |
+| Stop Conditions | Pixel/priority/split loss,core mutation,installed-setting change,new unbounded audit,unmeasured full-frame allocation or unsupported timing requires redesign within the admitted scope. |
+| Exit Criteria | Source-bound native adoption correct and operational with fixed verification and three products,or measured rejection naming unresolved display requirements. S2 admitted only after scoped S1 closure;physical486SX qualification stays M4. |
+| Original Owner Request | Close successful T33 and admit next queued task;retain native-resolution VGA/performance plan. |
+| Similar-Issue Sweep | Review all DOS graphics coordinate/row/plane constants,palette invalidation,mode/text switch/reset and output submissions;retained50/new25 text and Win32 presentation must not regress. |
 
-Queue head remains the unadmitted native VGA/performance package. T32/S9
-remain suspended. The owner withdrew the separate complete object/state gallery
-queue candidate and transferred its still-unreviewed coverage to T33's task-level
-scope; S2's admitted implementation and owner play acceptance remain distinct
-from the later complete-gallery review.
+T34 plan:S1 native output;S2 finite performance/memory register after reprofile;
+S3 combined acceptance. Only S1 active. T32/S9 remains suspended;T19 audio
+and M2 final certification remain queued. T33 broader gallery debt is recorded
+explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
@@ -39,8 +38,8 @@ from the later complete-gallery review.
 - Each Windows width20checks passes;53legacy cell cases byte-identical,
   1200native frames read-only,owned and interactiveCMD Tab/input/exit pass.
   DOS original build/link/memory and stock-config startup/text/Enter/exit pass.
-  Products:16-bit320681B,32-bit330766B,64-bit346126B. S2and T33remain active
-  pending owner play/physical display review and the transferred gallery scope.
+  Products:16-bit320681B,32-bit330766B,64-bit346126B. Owner accepts S2and closes T33;unreviewed gallery
+  and broader host applicability remain explicit TODO clauses.
 
 - T33closed by owner-directed engineering acceptance. P3entry/Restore share
   bounded rollback/retry;actual classic capture and4000glyph checks pass.
@@ -54,13 +53,13 @@ from the later complete-gallery review.
   still gated geometry on a real HWND. P2corrects that unsupported inference.
   No per-frame forced Terminal resize. Terminal physical glyph/live caption applicability
   is retained in TODO;no all-host visual certification or next admission.
-- Published products:DOS307349B,x86318478B,x64331790B. DOS DGROUP49264,
-  stack2048,loader331584..335680logical bytes unchanged. Global stack/memory
+- Historical S1 products:DOS307349B,x86318478B,x64331790B. DOS DGROUP49264,
+  stack2048,loader331584..335680logical bytes at that closure. Global stack/memory
   proof and physical25MHz486SX playability remain unqualified.
 - T32/S9suspended. S8P21counter137.665ms,PPU59.677/mapping44.716/VGA18.062ms
   are diagnostic costs,not hardware FPS/fair reference proof. Remaining native
-  VGA/performance/acceptance work is the queued
-  [performance package](../proposals/m3/native-vga-performance-package.md).
+  VGA/performance/acceptance work is the
+  [admitted T34 package](../history/M3-T34-native-vga-performance-proposal.md).
   Its original-tool pattern probe retains61440exact pixels/512x480hardware
   replication;no game-mode adoption yet.
 - Historical1992/1992,local1991/1992nodes and4260/4261feasible controls

@@ -43,7 +43,6 @@ transfer existing ownership or allocate a numeric T.
 | fireball-bubble-timer-warp-deferred | 0 | not decomposed here | [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md); T20 unfinished nodes await their source-order T32/T33 successors, not T21. |
 | t22-nmi-ppu-deferred | 0 | not decomposed here | [record](../../docs/proposals/m2/t21-t49-source-order-recovery.md); T21 closure found that the boot root and queued NMI/PPU nodes share the first-NMI ownership boundary; pending source-order T22 admission. |
 | remaining-current-certification | 0 | not decomposed here | [record](../../docs/proposals/m2/remaining-current-certification.md); Owner-approved transfer of unfinished T70/S17 verification to queue tail;maintenance node receivers unchanged. |
-| native-vga-performance-package | 0 | not decomposed here | [record](../../docs/proposals/m3/native-vga-performance-package.md); Owner-requested second queue candidate;new T native output,remaining optimization and final acceptance;zero ROM custody. |
 
 ## Every node
 
@@ -2764,6 +2763,8 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M3 T33 | 0 | - | [record](../../docs/history/M3-T33-windows-console-fit.md); [record](../../docs/history/M3-T33-windows-console-fit-proposal.md) |
 | M3 T33 S1 | 0 | 0 | windows-console-fit; [record](../../docs/history/M3-T33-windows-console-fit.md); [record](../../docs/history/M3-T33-windows-console-fit-proposal.md) |
 | M3 T33 S2 | 0 | 0 | owner-approved-corrective-80x25-design; [record](../../docs/history/M3-T33-windows-console-fit-proposal.md) |
+| M3 T34 | 0 | - | [record](../../docs/history/M3-T34-native-vga-performance-proposal.md) |
+| M3 T34 S1 | 0 | 0 | owner-approved-native-vga-admission; [record](../../docs/history/M3-T34-native-vga-performance-proposal.md) |
 | M3 T4 | 0 | - | [record](../../docs/history/M3-T3-colored-text-frame.md); [record](../../docs/history/M3-T4-vga-indexed-frame.md); S not recorded |
 | M3 T5 | 0 | - | [record](../../docs/history/M3-T4-vga-indexed-frame.md); [record](../../docs/history/M3-T5-dos16-composition-root.md); S not recorded |
 | M3 T6 | 0 | - | [record](../../docs/history/M3-T5-dos16-composition-root.md); [record](../../docs/history/M3-T6-opennt-mz-link.md); S not recorded |
@@ -3944,4 +3945,5 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T32 S8 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T32-rendering-performance-continuation.md) |
 | M3 T32 S9 | 0 | 1992 | none / 0 | none / 0 | suspended; [record](../../docs/history/M3-T32-rendering-performance-continuation.md) |
 | M3 T33 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T33-windows-console-fit.md) |
-| M3 T33 S2 | 0 | 1992 | none / 0 | none / 0 | active; [record](../../docs/history/M3-T33-windows-console-fit-proposal.md) |
+| M3 T33 S2 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T33-windows-console-fit-proposal.md) |
+| M3 T34 S1 | 0 | 1992 | none / 0 | none / 0 | active; [record](../../docs/history/M3-T34-native-vga-performance-proposal.md) |

@@ -113,3 +113,11 @@ approved/repaired designs,remaining explicitly accepted deferrals and gallery
 links. Do not call the task complete merely because images were generated or
 old tests passed. Historical and current ROM node/control counts remain
 separate from this visual-design checklist.
+
+## Owner-Directed Closure Disposition
+
+Owner accepts delivered T33 text and explicitly closes the task. Unreviewed
+full-gallery obligations are retained as TEXT-GALLERY-REMAINDER in TODO;
+this is a deferred contract,not an assertion of complete visual review.
+Reuse approved scoped artwork and fixtures if a later bounded gallery task
+is requested. [Closure](M3-T33-windows-console-fit.md#s2-owner-acceptance-and-t33-closure).

@@ -1,5 +1,16 @@
 # Long-Term Review Ledger
 
+## Text presentation
+
+- [ ] **TEXT-GALLERY-REMAINDER:** Owner accepts the default80x25 delivery and
+  closes T33. The transferred full-gallery census/review is still incomplete;
+  unreviewed player poses,background combinations,information scenes and
+  visibility/color variants are not marked approved. Preserve accepted art
+  and53legacy comparisons. Admission path:a later owner-requested bounded
+  presentation gallery task using the retained [finite contract](../history/M3-T33-text-gallery-transferred-proposal.md)
+  and [closure](../history/M3-T33-windows-console-fit.md#s2-owner-acceptance-and-t33-closure).
+  This is not T34 performance work or additional ROM-certification credit.
+
 ## Host diagnostics
 
 - [ ] **HOST-T33-VISUAL,physical Terminal applicability:** T33engineering
