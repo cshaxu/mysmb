@@ -320,3 +320,91 @@ historical mapping 1992/1992, local 1991/1992 nodes and 4260/4261 feasible
 controls (raw 4342, infeasible 81) are unchanged. Full M2 certification remains
 separate and incomplete. Source census and diagnostics stay under ignored
 build; only neutral conclusions are tracked.
+
+### S2 P2 complete sprite review catalogue
+
+Owner requires three columns for every reviewed state: original pixel state,
+current 80x50 colored character output, proposed 80x25 colored character art.
+No candidate is adopted before its visual decision. All rows below are
+pending, with suggested compact cell footprints, not approved dimensions.
+Cell footprints are nominal: connected spans and source clipping vary.
+
+| Kind ID | Object | State/color review | Compact proposal |
+| --- | --- | --- | --- |
+| 0 | Small Mario | All 17 player pose slots, left/right, normal/invincible and blink visibility | 5x2; distinguish face/cap, arms and foot phase |
+| 1 | Large/fire Mario | Same pose slots, crouch, growth transition, mixed throw/kick components and palette changes | 5x4, crouch 5x2; cap/face/torso/legs |
+| 2 | Goomba | Both walk phases, inversion, brown/scene palette | 5x2; colored cap, eyes and alternate feet |
+| 3 | Growth / 1UP mushroom | Both item identities, emergence, palette | 5x2; spotted colored cap and light stalk |
+| 4 | Moving brick/block | Bump displacement, active palette, clipping | 5x1 or 5x2 by phase; clear filled boundary |
+| 5 | Coin | Static element alias, rotation/color variants where observed | 2x1 or 2x2; round/thin face |
+| 6 | Pipe element | Legacy standalone template and scene pipe aliases | Variable width/height; continuous lip and shaft |
+| 7 | Fire flower | Emergence, rotating palette, stem/body contrast | 5x2; flower head over green stem |
+| 8 | Star | Rotating palette, partial visibility | 4x2; pointed outline and face |
+| 9 | Player fireball | Two glyph phases, clipping | 1x1; alternating colored @ / * |
+| 10 | Explosion | Three source phases | 1x1 then 3x1/3x2 burst |
+| 11 | Hammer | Four orientations | 2x1/2x2; head and handle distinct |
+| 12 | Brick chunk | Independently positioned fragments | 1x1; source-colored filled chip |
+| 13 | Vine | Growing span, source components | 1-2 columns, variable height; alternating leaves |
+| 14 | Platform | Full moving span, source widths | Variable width x1; single continuous top |
+| 15 | Flag | Pole/cloth separation, descending/partial visibility | Cloth about 4x2; pole stays continuous |
+| 16 | Bubble | Source positions, clipping | 1x1; light hollow circle on water |
+| 17 | Flattened Goomba | Defeat flattening; distinct from inversion | 5x1; low brown cap |
+| 18 | Shell | Turtle/beetle palettes, stationary/moving/revival/inverted visuals | 5x1/5x2; shell rim and revival face |
+| 19 | Koopa | Red/green/dark source palettes, walk phases, inversion | 5x3; head, colored shell, alternating feet |
+| 20 | Beetle | Walk phases, inverted defeat; shell uses kind 18 | 5x2; dark dome, eyes and feet |
+| 21 | Bloober | Both selected phases and inversion | 5x2/5x3; mantle and contracting tentacles |
+| 22 | Bullet Bill | Dedicated/ordinary producer aliases, facing | 5x2; nose, eye and casing |
+| 23 | Fish / flying fish | Source fish identities/palettes, phases, inversion | 5x2; eye, tail and fin |
+| 24 | Podoboo | Rising/falling and inverted source appearance | 3x2; flame outline |
+| 25 | Piranha plant | Two mouth phases, partial emergence/retraction | 5x3; head, teeth and stem |
+| 26 | Hammer Bro | Walk phases, two throws, inversion | 5x3; helmet, shell, arm and feet |
+| 27 | Spiny | Walk phases, inversion | 5x2; spikes and alternating feet |
+| 28 | Spiny egg | Two source graphics; symmetry is not whole-object inversion | 4x2; spikes and rounded egg |
+| 29 | Lakitu | Two selected phases, cloud/body palette separation | 5x3; goggles above cloud |
+| 30 | Bowser front | Both phases, source-facing/inversion handling | 5x3; head, mouth and forelegs |
+| 31 | Bowser rear | Both phases, source join with front | 5x3; shell, tail and hindlegs |
+| 32 | Bowser flame | Two source-selected phases | 7x1; pointed animated streak |
+| 33 | Toad / Princess | Separate selected templates and castle palette roles | Toad 5x2/3, Princess 5x3; face and dress/cap must remain distinct |
+| 34 | Spring | Three compression states | 5x2, 5x1 plus compressed mark |
+| 35 | Spent block | Visible after use, source palette and displacement | 5x1/2; solid outlined block, never blank |
+| 36 | Vine leaf | Individual positioned segment | 2x1; green leaf next to stem |
+| 37 | Vine cap | Top component | 2x1; cap and stem |
+| 38 | Platform part | Per-component priority/clipping in whole span | About 3x1; preserve continuous span |
+| 39 | Flag score | Five literal score strings | 3-4x1; preserve readable digits, never mirror |
+| 40 | Jump coin | Four rotation phases | 2x1/2; gold round/thin variants |
+| 41 | Floating score | Eleven values including 1UP | 3-4x1; preserve exact text and contrast |
+| 42 | Star flag | Separate star-flag source identity | 5x2; patterned cloth |
+| 43 | Small Luigi | Same 17 pose slots, distinct identity/palette | Small-Mario geometry with own colors/mark |
+| 44 | Large/fire Luigi | Large poses, crouch, partial throw/kick and palettes | Large-Mario geometry with own colors/mark |
+| 45 | Winged Koopa | Red/green/dark source palettes, both wing phases, inversion | 5x3; distinguish wings from ordinary shell |
+
+This accounts for all 46 current presentation kinds. Identity variants such
+as Toad/Princess and growth/1UP are separate review cases inside their kinds.
+Do not invent visible animation for different gameplay states that genuinely
+share source graphics. Player pose slots are stand, run1, jump, skid, swim1,
+climb1, crouch, throw, dead, run2, run3, swim2, swim3, climb2, swim-kick1,
+swim-kick2, swim-kick3; aliases/unreachable slots must be recorded explicitly.
+Palette/color changes, left/right, inversion, partial visibility and joins
+are reviewed where source output supports them, not a blind Cartesian product.
+
+Review order: players; mushrooms/flower/star/coins; common ground enemies and
+shells; winged/water enemies; plant/Lakitu/Spiny/Bro; Bowser/flame/firebar;
+retainers; projectiles/effects; connected components and information sprites.
+Firebar is a producer family rendered through repeated fireball components,
+not a missing new kind. Background-only question/hidden blocks, ground,
+stairs, scenery and all caption scenes have a separate procedural review;
+they are not NES actor sprites even though they are visible game objects.
+
+Each review case records stable ID, source-selected graphics/OAM/palette,
+fixture provenance, both old/new cells, nominal size, color roles, aliases and
+owner decision: pending / accept / revise. Current first panel has eight
+controlled Mario cases (small stand, three runs, jump; large stand, run1,
+jump). Pixel reference decodes original local CHR using native OAM and
+original PlayerColors. The middle column is actual existing renderer output,
+including any clipping defect; it is not a cleaned-up template illustration.
+The right column is a hand-authored draft with explicit colors, not sampling.
+Enlarged cell-buffer panels are not screenshots or Terminal fit evidence.
+Native fixtures do not independently certify original-ROM logic equivalence.
+
+P2 creates local review panels and this catalogue only. Existing 80x50 source,
+product EXEs, original game state and node/control classifications are unchanged.
