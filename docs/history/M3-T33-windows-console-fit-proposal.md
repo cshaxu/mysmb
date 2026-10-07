@@ -462,3 +462,19 @@ pretended representable. Original/current columns remain unchanged. New50
 has more landmark cells than new25;both are still pending visual review and
 native palette integration. All three four-column states render locally;
 no product or ROM logic change occurs.
+
+P8 owner explicitly accepts V7's reviewed large-Mario stand/run1/jump
+designs (M06,M07,M08),both new50/new25. This is visual design acceptance,
+not native palette integration or approval of all other player poses.
+The next group contains ten source-bound item cases: I01 growth mushroom,
+I02 1UP,I03-I06 flower palette phases,I07-I10 star palette phases. All are
+pending owner review. Native DrawPowerUp/OAM and the original ground-palette
+command provide reference colors;the unchanged text renderer supplies the
+current50 column. Local fixture checks observe one drawn actor and zero
+unsupported cases for each of ten states. New50 uses5x4cells,new25 uses5x2;
+semantic masses distinguish mushroom cap/spots/stalk,flower outer rim/inner
+ring/core from its independently colored stem,and star outline/eye marks.
+Every cell remains a two-color glyph;all four flower/star phases are rendered
+in the supplementary panel. Emergence/partial clipping and alternate scene
+palettes remain separate pending review cases. No new product code,ROM
+equivalence credit or published EXE is introduced by this design P.
