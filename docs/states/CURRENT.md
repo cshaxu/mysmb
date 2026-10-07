@@ -12,7 +12,7 @@
 | Non-goals | No game/PPU decision changes,DOS4GW,new driver,helper process,frameskip,emulator settings changes,text redesign or whole-ROM certification. |
 | Reference Baseline | S2 source/delivery bound in proposal; local products DOS323945B,x86331278B,x64347150B. Current DGROUP51472B/stack2048B; hashes and loader bound in proposal. Reprofile current source; retained T32 costs are historical. |
 | Candidate Proposal | [Admitted T34 plan and S1 baseline](../history/M3-T34-native-vga-performance-proposal.md#t34-s3-p1-combined-acceptance-admission). |
-| Files And ABI Surface | Frozen S2 products and host/PPU/snapshot dependencies;verification-only0product lines,100-250contained harness/analysis lines if needed. Repair only named failures after visible implementation amendment. |
+| Files And ABI Surface | Frozen S2 products and host/PPU/snapshot dependencies;Scoped S3 amendment:preserve DOS pending exit during after-load reset,2-4product lines plus focused keyboard/root regression. Rebuild/test/publish all three EXEs and repeat failed fresh route. Other verification stays frozen. |
 | Applicable Rules | Execution,Documentation,Architecture,Coding,source policy;System Architecture and Source Layout. |
 | Verification | Exact61440source-to-VRAM pixels/palette/edges,HUD split/scroll/priority,cache/fallback,mode restoration and Tab;actual DOS input/transition routes,Windows regression,original16-bit compiler/link/segment/stack/loader and before/after stage costs;three local products on code change. |
 | Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0;historical1992/1992,local1991/1992nodes,4260/4261feasible controls unchanged(raw4342,infeasible81). |
@@ -29,6 +29,16 @@ and M2 final certification remain queued. T33 broader gallery debt is recorded
 explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
+
+- T34 S1/S2deliver native chain4scanout,shared byte-slot cache with packed/no-cache
+  fallback,bounded Y folding and transactional snapshot publication. Fixed61step
+  diagnostic151.258to66.182ms,2.285xratio;not hardware FPS or fair reference proof.
+  S3repairs pending Escape lost during load;both widths23checks pass,original
+  DOS tools and confirmed fresh-game/host routes pass. Current products
+  DOS323977B,x86331278B,x64347150B;logical loader347248..351344B,DGROUP51472,
+  stack2048. Four retained memory arenas observe526048/464576/401056/393216B,
+  not global peaks. S3/T34remain active with the
+  [fixed remaining gates](../history/M3-T34-native-vga-performance-proposal.md#fixed-s3-remaining-gate-register).
 
 - T33 S2 P12delivers default80x25on all three products;50-row code/art and
   interfaces remain. Shared semantic compact art/palette/layout owns output;

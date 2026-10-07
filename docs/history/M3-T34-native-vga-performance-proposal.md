@@ -176,7 +176,7 @@ validates/deinterleaves identity rows;DOS word gathers borrow segments once
 and VGA transfers64-byte plane rows. Original game/PPU sources are unchanged.
 Remove the unused scaled-frame device API rather than reinterpret its stride.
 No new resident surface:4096source+4096plane bytes reuse15532-byte text storage.
-Production delta155added/28removed lines across seven IO/DOS files;tests add
+Production delta156added/28removed lines across seven IO/DOS files;tests add
 native band/guard/invalid coverage and an original-tool synthetic VRAM probe.
 
 Both Windows widths20focused checks pass. Every legal first/1..16row band
@@ -283,7 +283,7 @@ current capability flag and active snapshot accessor. It builds;its legacy
 50-row physical assumptions are not claimed as current25-row runtime proof.
 Actual-product host probes are consolidated in S3 instead.
 
-Production delta123added/49removed lines across nine IO/PPU/host files;
+Production delta115added/49removed lines across nine IO/PPU/host files;
 new byte-state test adds86lines plus scoped snapshot/device/API fixture updates.
 All three local products refreshed: DOS323945B/SHA
 95fae439137c19cc603924c768151fe2f32e83dd31a8f4e4d55a01e8d40923e9,
@@ -313,3 +313,83 @@ Review retained S4 stack/IRQ/startup evidence applicability and fair-reference
 constraint without changing installed emulator settings. Do not claim whole-ROM
 or physical486SX qualification from these tests. S3 closure requires the
 proposal's final gate reconciliation,not only a ledger validator pass.
+
+### S3 P1 Scoped Implementation Amendment:Exit During Load
+
+The actual fresh-game route starts,scrolls,jumps and switches text correctly,
+but an Escape pressed during expensive load validation is lost:the DOS
+after-load keyboard reset clears pending application exit along with stale
+controller input. Earlier routes sent Escape after validation and missed this
+window. S3 receives this concrete host-input lifecycle repair before closure;
+role changes from audit to implementation,still empty ROM scope. Preserve
+pending exit through after-load reset while retaining original held P/O/Tab
+repeat guards and controller clearing. Expected2-4DOS lines plus a regression
+case in the existing DOS root/keyboard harness. Windows clear-game already
+excludes application keys and its exit latch is outside loaded game state.
+No game logic or file schema change. Rebuild/test/publish three EXEs and rerun
+the same failed fresh-game route;do not substitute a delayed-key workaround.
+
+### S3 P1 Exit Repair And Current Combined Evidence
+
+DOS reset now preserves only pending application exit while clearing controller
+state and retaining held P/O/Tab guards. Production+4/-1lines;root regression
+adds9lines. Controlled old code returns failure1,fixed code0. Windows source
+already clears only game keys and holds exit outside loaded state;no change.
+Both widths23checks pass with the added regression;original DOS build/link/
+memory passes. No core or addressed PPU-state writer changed.
+
+Actual fresh-game route demonstrates title/start,normal level,scroll,jump,
+text/graphics switching,valid10035-byte save/load and BIOS3exit. Load remains
+at49seconds and Escape at53seconds. One early-Enter retry stayed at title,
+produced no save and is rejected as insufficient evidence. Confirmed retry
+starts after observed readiness;it enters the actual level and exits. This
+does not convert startup time into a universal bound or assert all-input proof.
+Native512x480graphics,text640x400,source2x2repetition and palette/priority
+proofs retained within their source dependencies. Both actual Windows products
+pass three text entries,two Tab returns and Escape;interactive CMD input,
+waiting and shell restoration pass. Physical Terminal/all-DPI claims remain
+separate from notification-handle geometry.
+
+Actual unchanged S2 product runs under available-memory arenas544/512/448/384KiB
+execute and return0,MCB chains valid,no dropped sampler records. Observed owned
+maxima526048/464576/401056/393216B. These respectively show byte,packed,
+decoded-only and no-cache fallbacks;the last arena samples a brief allocation
+at its limit before releasing it. They are route observations,not global peaks
+or universally minimal launch requirements. A600KiB request exceeds the parent
+fixture's available arena and never launches the child;it is rejected as a
+fixture constraint,not counted as product pass/failure. Native text/graphics,
+save/load and exit work in the accepted arenas. No installed DOSBox settings
+are changed. Keyboard repair adds32logical loaded bytes,but leaves page-rounded
+loader allocation,DGROUP and all dynamic allocation sizes unchanged;retained
+arena evidence proves those dependencies only,not the patched IRQ window.
+
+Final local products: DOS323977B/SHA
+1eab4debc224b675d1d7c433aeb911d507c6add7f2fb874c5290492b660c152f,
+x86331278B/SHA710d0670ffe19fa70522d505d786407fd686cef06774c06820867c4e1dd8a1f3,
+x64347150B/SHAa6cf857b7d045b6d80cc509652cd94e411a13f5d85daedaba93a7588085d0c08.
+Logical DOS loader347248..351344B,page-rounded347360..351456B,DGROUP51472,
+stack2048,headroom14064. EXEs refreshed under assets,not staged. Similar-issue
+sweep covers both hosts'after-load/reset paths,held shortcuts and application
+exit ownership. The earlier fresh-route missing exit is repaired and rechecked;
+neither rejected retry nor stale product receipts are called final acceptance.
+
+### Fixed S3 Remaining Gate Register
+
+| Gate | Current disposition | Required evidence before full closure |
+| --- | --- | --- |
+| Changed-source game/PPU preservation | Scoped pass | No game/state-writer diff;independent pixel,slot,guard/read-only proofs retained. Not full ROM certification. |
+| Native output/current products | Pass | Original tools,current hashes,61440VRAM readback,512x480scanout,mode round trips and both Windows widths. |
+| Input,exit and snapshot lifecycle | Scoped pass | Actual controlled host routes,transaction/paused-save/failure tests,old/fixed exit regression and confirmed fresh-game repeat. |
+| Available-memory startup/fallback | Scoped pass | Four actual arenas and owned-block observations;global requirement not inferred. |
+| Performance cohorts | Diagnostic pass | Fixed61steps,151.258to66.182ms,2.285xratio;no hardware FPS/reference claim. |
+| Death/area/pipe operational matrix | Incomplete | Fresh ordinary play/scroll observed;explicit named transition routes still need bound receipts rather than inferred coverage. |
+| Global conventional-memory peak | Unproved | Reconcile all allocation phases/stdio/near/far failure branches;sampled maxima alone insufficient. |
+| Global stack/IRQ/NMI applicability | Unproved | Retain local CFG/register proofs;prove source/runtime/firmware bounds or record owner-accepted qualification boundary. |
+| Equal-budget NESticle reference | Unproved | Resolution,frameskip,audio,guest CPU budget and frame/submission accounting bound to the same comparison;auto budgets are not equal by assumption. |
+| Physical25MHz486SX/VGA/LCD cadence | Unproved | Actual target/hardware evidence;DOSBox screenshots and PIT diagnostics cannot discharge it. |
+
+This is the remaining original S3 contract,not another whole-ROM audit or new
+candidate round. S3/T34 stay active until the gates reconcile under the existing
+proposal closure rule. Owner instruction to execute through closure does not
+itself supply missing evidence. New ROM credit0;historical1992/1992,local
+1991/1992nodes and4260/4261feasible controls(raw4342,infeasible81)unchanged.

@@ -45,13 +45,16 @@ void mysmb_dos16_keyboard_scan(struct mysmb_dos16_keyboard *keyboard,
 }
 void mysmb_dos16_keyboard_after_load(struct mysmb_dos16_keyboard *keyboard)
 {
-    mysmb_io_u8 save,load,tab;
+    mysmb_io_u8 save,load,tab,exit;
     save=keyboard->down[0x19U];load=keyboard->down[0x18U];
     tab=keyboard->down[0x0fU];
+    exit=(mysmb_io_u8)(keyboard->pending_requests&MYSMB_IO_REQUEST_EXIT);
     mysmb_dos16_keyboard_initialize(keyboard);
     /* Held shortcut make repeats stay blocked until the physical break. */
     keyboard->down[0x19U]=save;keyboard->down[0x18U]=load;
     keyboard->down[0x0fU]=tab;keyboard->shortcuts.toggle_held=tab;
+    /* Application exit is not stale controller state;retain it across load. */
+    keyboard->pending_requests=exit;
 }
 
 void mysmb_dos16_keyboard_input(struct mysmb_dos16_keyboard *keyboard,
