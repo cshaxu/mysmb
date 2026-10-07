@@ -1866,3 +1866,26 @@ Thus509KiB is the current product's lowest measured complete-cache tier and
 512KiB its rounded safe tier. Both Windows widths passed focused
 keyboard,focus-pause and DOS-root smoke suites. The evidence does not claim a
 physical cadence result or close the remaining runtime/memory qualification.
+
+### S3 P43 DOS16 Text/Snapshot Far-Store Consolidation
+
+The DOS composition root now owns one far `runtime_storage`:the existing
+15,532-byte exclusive text/row store occupies its prefix and the current
+10,048-byte on-demand snapshot store its suffix. The row presenter writes
+only the pre-existing 4,096-byte prefix during graphics presentation;text is
+rebuilt before text presentation and cannot overlap the snapshot suffix. Thus
+the change removes one DOS far-allocation lifetime without changing shared
+game/PPU decisions,snapshot bytes,or Windows ownership.
+
+A small original-compiler/DOS-runtime allocator probe ran each allocation
+shape in a separate DOS process under unchanged DOSBox settings. The split
+15,532+10,048-byte shape increased its PSP-owned MCB total by32,784 bytes;
+the one25,580-byte shape increased it by25,616 bytes. The measured allocator
+gain is therefore7,168 bytes. This supersedes an earlier speculative15KiB
+claim. The original16-bit compiler compiled every current product object and
+LINK3.65 linked the current MZ successfully;both Windows widths pass focused
+keyboard,focus-pause and DOS-root smoke suites. A complete DOS product
+interactive P/O/title/exit receipt remains pending:the present batch product
+runner does not emit its child receipt even for the unchanged P42 control,so
+compilation and the allocator probe are not presented as that operational
+proof.

@@ -30,6 +30,18 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P43 consolidates the DOS16 text/row store and the single on-demand
+  snapshot store into one root-owned far allocation. A same-runtime,
+  separate-process DOS allocator probe measures 32,784B for split 15,532B
+  plus 10,048B requests and 25,616B for the combined 25,580B request: a
+  7,168B realized reduction. The graphics row writer remains confined to the
+  existing 4,096B prefix;the snapshot suffix,shared PPU/game behavior,
+  snapshot format and Win32 code are unchanged. The full current source
+  compiles and links through the original16-bit/compiler LINK3.65 route and
+  both Windows-width focused suites pass. Product interactive DOS P/O/title/
+  exit evidence remains pending because the current batch runner fails to
+  emit a child receipt for the unchanged P42 control as well.
+
 - T34 S3 P42 extends the same DOS16 largest-block preflight to B, the
   63,488-byte compact background tier. A block that DOS proves cannot fit B
   now goes directly to A, avoiding a futile fragmented far-heap walk while

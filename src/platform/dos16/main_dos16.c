@@ -20,8 +20,18 @@ struct text_storage {
     struct mysmb_text_scene_workspace workspace;
     struct mysmb_io_text_frame frame;
 };
+/* Graphics borrows only the prefix of this root-owned allocation.  The
+ * snapshot store begins after the exclusive text/row storage, so graphics
+ * row submission cannot overwrite a pending save/load transaction. */
+struct runtime_storage {
+    struct text_storage text;
+    struct mysmb_snapshot_store snapshot;
+};
 typedef char text_storage_fits_band[sizeof(struct text_storage)>=8192U &&
     sizeof(struct text_storage)<=MYSMB_IO_VIDEO_PIXELS?1:-1];
+typedef char runtime_storage_fits_band[
+    sizeof(struct runtime_storage)<=MYSMB_IO_VIDEO_PIXELS?1:-1];
+static struct runtime_storage MYSMB_IO_FAR *runtime_storage;
 static struct text_storage MYSMB_IO_FAR *text_storage;
 
 static void read_input(void *context, struct mysmb_io_input *input)
@@ -69,12 +79,14 @@ static int initialize(void)
     hooks.present_video=0;
     hooks.submit_audio=submit_audio;
     if (!mysmb_dos16_root_initialize_palette_rows(&root,&hooks,
-        (mysmb_io_u16)sizeof(struct text_storage),present_rows)) return 0;
+        (mysmb_io_u16)sizeof(struct runtime_storage),present_rows)) return 0;
     mysmb_dos16_root_bind_clock(&root,resume_clock);
-    /* Graphics borrows4096bytes and submits them directly;text owns the
-     * complete shared store later. No scaled or planar scratch is needed. */
-    snapshot_store=(struct mysmb_snapshot_store *)_fmalloc(sizeof(*snapshot_store));
-    if(snapshot_store==0) {mysmb_dos16_root_shutdown(&root);return 0;}
+    /* Graphics borrows4096 bytes and submits them directly.  Text and the
+     * single on-demand snapshot transaction occupy disjoint suffixes of the
+     * same required root allocation; no scaled or planar scratch is needed. */
+    runtime_storage=(struct runtime_storage MYSMB_IO_FAR *)root.ppu_frame.pixels;
+    text_storage=&runtime_storage->text;
+    snapshot_store=&runtime_storage->snapshot;
 #ifdef MYSMB_LOCAL_TITLE
     mysmb_game_bind_area_source(&root.game,mysmb_local_prg,MYSMB_LOCAL_PRG_SIZE);
     mysmb_game_bind_chr_source(&root.game,mysmb_local_chr,MYSMB_LOCAL_CHR_SIZE);
@@ -88,11 +100,11 @@ static int initialize(void)
         mysmb_snapshot_store_initialize(snapshot_store,&files))
         mysmb_dos16_root_bind_snapshot(&root,snapshot_store,reset_output,0);
     if(!mysmb_dos16_devices_open()) {
-        mysmb_dos16_root_shutdown(&root);_ffree(snapshot_store);return 0;
+        mysmb_dos16_root_shutdown(&root);
+        runtime_storage=0;text_storage=0;snapshot_store=0;return 0;
     }
     /* Synchronous presenters are exclusive. Graphics rebuilds every band on
      * return from text;only the root owns and frees this shared allocation. */
-    text_storage=(struct text_storage MYSMB_IO_FAR *)root.ppu_frame.pixels;
     mysmb_dos16_root_bind_text(&root,&text_storage->workspace,
         &text_storage->frame,set_mode,present_text);
     return 1;
@@ -107,7 +119,6 @@ int main(void)
     }
     mysmb_dos16_devices_close();
     mysmb_dos16_root_shutdown(&root);
-    _ffree(snapshot_store);
-    text_storage=0;
+    runtime_storage=0;text_storage=0;snapshot_store=0;
     return 0;
 }
