@@ -1,7 +1,7 @@
 #include <windows.h>
 #include <stdio.h>
 #include "platform/win32/text_console.h"
-static int lost,query_fail,partial,font_effect,font_calls,write_error,minimized,zoomed,window_calls;
+static int lost,query_fail,partial,font_effect,font_calls,write_error,minimized,zoomed,window_calls,geometry_effect,fail_buffer_once;
 static DWORD clock_value;
 static CONSOLE_SCREEN_BUFFER_INFO buffer;
 static CONSOLE_FONT_INFOEX effective;
@@ -10,7 +10,7 @@ static BOOL mode_probe(HANDLE h,LPDWORD mode)
 static BOOL buffer_probe(HANDLE h,PCONSOLE_SCREEN_BUFFER_INFO out)
 {(void)h;if(query_fail)return FALSE;*out=buffer;return TRUE;}
 static BOOL font_set(HANDLE h,BOOL maximum,PCONSOLE_FONT_INFOEX font)
-{(void)h;(void)maximum;++font_calls,write_error,minimized,zoomed,window_calls;if(font_effect)effective=*font;return TRUE;}
+{(void)h;(void)maximum;++font_calls;if(font_effect)effective=*font;return TRUE;}
 static BOOL font_get(HANDLE h,BOOL maximum,PCONSOLE_FONT_INFOEX font)
 {(void)h;(void)maximum;*font=effective;return TRUE;}
 static COORD largest(HANDLE h)
@@ -25,9 +25,9 @@ static BOOL zoom(HWND window){(void)window;return zoomed;}
 static BOOL probe_client(HWND window,LPRECT rect)
 {(void)window;rect->left=rect->top=0;rect->right=640;rect->bottom=400;return TRUE;}
 static BOOL set_view(HANDLE output,BOOL absolute,const SMALL_RECT *view)
-{(void)output;(void)absolute;(void)view;++window_calls;SetLastError(ERROR_INVALID_PARAMETER);return FALSE;}
+{(void)output;(void)absolute;++window_calls;if(geometry_effect){buffer.srWindow=*view;return TRUE;}SetLastError(ERROR_INVALID_PARAMETER);return FALSE;}
 static BOOL set_size(HANDLE output,COORD size)
-{(void)output;(void)size;return FALSE;}
+{(void)output;if(fail_buffer_once){fail_buffer_once=0;return FALSE;}if(geometry_effect){buffer.dwSize=size;return TRUE;}return FALSE;}
 #define IsIconic iconic
 #define IsZoomed zoom
 #define GetClientRect probe_client
@@ -71,12 +71,23 @@ int main(void)
   query_fail=0;lost=1;CHECK(mysmb_win32_text_console_present(&device,&scene)==MYSMB_WIN32_CONSOLE_LOST);
   lost=0;buffer.srWindow.Bottom=29;clock_value=100;
   CHECK(mysmb_win32_text_console_present(&device,&scene)==MYSMB_WIN32_CONSOLE_READY);
-  i=(unsigned)font_calls,write_error,minimized,zoomed,window_calls;clock_value=200;
+  i=(unsigned)font_calls,write_error,minimized,zoomed,window_calls,geometry_effect,fail_buffer_once;clock_value=200;
   CHECK(mysmb_win32_text_console_present(&device,&scene)==MYSMB_WIN32_CONSOLE_READY);
   CHECK(font_calls==(int)i);clock_value=300;
   CHECK(mysmb_win32_text_console_present(&device,&scene)==MYSMB_WIN32_CONSOLE_READY);
   CHECK(font_calls==(int)i+1);
   buffer.srWindow.Bottom=49;clock_value=500;
+ }
+ /* A notification/no-window host can still accept real buffer geometry. */
+ {COORD target={80,50};SMALL_RECT view={0,0,79,49};
+  device.window_usable=0;geometry_effect=1;
+  CHECK(mysmb_win32_console_size(&device,target,&view));
+  buffer.dwSize.X=120;buffer.dwSize.Y=30;
+  buffer.srWindow.Right=119;buffer.srWindow.Bottom=29;fail_buffer_once=1;
+  CHECK(!mysmb_win32_console_size(&device,target,&view));
+  CHECK(buffer.dwSize.X==120 && buffer.dwSize.Y==30 && buffer.srWindow.Right==119 && buffer.srWindow.Bottom==29);
+  geometry_effect=0;CHECK(!mysmb_win32_console_size(&device,target,&view));
+  buffer.srWindow=view;buffer.dwSize=target;window_calls=0;
  }
  /* Equivalent visible-window capabilities use the same fit/write policy.
   * Optional failed view changes through maximize/Restore never lose a device. */

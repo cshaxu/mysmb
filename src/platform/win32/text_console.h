@@ -10,7 +10,7 @@ struct mysmb_win32_text_console {
     WINDOWPLACEMENT shell_placement;
     CONSOLE_SCREEN_BUFFER_INFO shell_info;
     HWND window;
-    unsigned char opened,borrowed,mode_saved,focused,window_usable,vt_output,font_changed;
+    unsigned char opened,borrowed,mode_saved,focused,window_usable,vt_output,font_changed,geometry_usable;
     CONSOLE_FONT_INFOEX shell_font,effective_font;
     COORD observed_view;
     unsigned short output_failures;

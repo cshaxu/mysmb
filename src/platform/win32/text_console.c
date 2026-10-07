@@ -58,11 +58,37 @@ static void mysmb_win32_console_fit(struct mysmb_win32_text_console *console,
     }
     console->fit_changed_at=GetTickCount();
 }
+/* Probe device operations themselves,not the availability of a host HWND.
+ * One optional entry attempt restores the former80x50contract on ConPTY too.
+ * Never repeat this sequence per frame on a non-window host. */
+static unsigned char mysmb_win32_console_size(struct mysmb_win32_text_console *console,
+    COORD size,const SMALL_RECT *view)
+{
+    SMALL_RECT tiny={0,0,0,0};
+    CONSOLE_SCREEN_BUFFER_INFO before,info;
+    if(!GetConsoleScreenBufferInfo(console->output,&before))return 0U;
+    if(SetConsoleWindowInfo(console->output,TRUE,&tiny) &&
+        SetConsoleScreenBufferSize(console->output,size) &&
+        SetConsoleWindowInfo(console->output,TRUE,view) &&
+        GetConsoleScreenBufferInfo(console->output,&info) &&
+        info.dwSize.X==size.X && info.dwSize.Y==size.Y &&
+        info.srWindow.Left==view->Left && info.srWindow.Top==view->Top &&
+        info.srWindow.Right==view->Right && info.srWindow.Bottom==view->Bottom) {
+        console->observed_view.X=(SHORT)(info.srWindow.Right-info.srWindow.Left+1);
+        console->observed_view.Y=(SHORT)(info.srWindow.Bottom-info.srWindow.Top+1);
+        return 1U;
+    }
+    /* Optional partial failure must not leave the temporary1x1view behind. */
+    (void)SetConsoleWindowInfo(console->output,TRUE,&tiny);
+    (void)SetConsoleScreenBufferSize(console->output,before.dwSize);
+    (void)SetConsoleWindowInfo(console->output,TRUE,&before.srWindow);
+    return 0U;
+}
 int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console,
     HWND owner)
 {
     COORD size;
-    SMALL_RECT tiny,view;
+    SMALL_RECT view;
     CONSOLE_CURSOR_INFO cursor;
     DWORD mode;
     CONSOLE_SCREEN_BUFFER_INFOEX info;
@@ -123,7 +149,6 @@ int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console,
     if(console->output==INVALID_HANDLE_VALUE) {
         mysmb_win32_text_console_close(console);return 0;
     }
-    tiny.Left=tiny.Top=tiny.Right=tiny.Bottom=0;
     size.X=80;size.Y=50;
     view.Left=view.Top=0;view.Right=79;view.Bottom=49;
     if(GetConsoleMode(console->output,&output_mode) &&
@@ -152,11 +177,7 @@ int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console,
     /* Font request is attempted on every output buffer. API success may be
      * virtualized;effective physical glyph geometry still needs visual proof. */
     mysmb_win32_console_fit(console,1U);
-    if(console->window_usable) {
-        (void)SetConsoleWindowInfo(console->output,TRUE,&tiny);
-        (void)SetConsoleScreenBufferSize(console->output,size);
-        (void)SetConsoleWindowInfo(console->output,TRUE,&view);
-    }
+    console->geometry_usable=mysmb_win32_console_size(console,size,&view);
     cursor.dwSize=1;cursor.bVisible=FALSE;
     (void)SetConsoleCursorInfo(console->output,&cursor);
     (void)SetConsoleTitleA("MySMB");
@@ -184,7 +205,7 @@ void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console)
                 (void)SetWindowPlacement(console->window,&console->shell_placement);
             /* Host pixel placement can round a restored cell view down a row.
              * Restore its original cell rectangle explicitly after placement. */
-            if(console->window_usable) {
+            if(console->geometry_usable) {
                 SMALL_RECT tiny={0,0,0,0};
                 /* Host pixel rounding may also grow a narrow shell buffer. */
                 (void)SetConsoleWindowInfo(console->shell_output,TRUE,&tiny);
@@ -202,7 +223,7 @@ void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console)
         CloseHandle(console->shell_output);
     if(console->shell_title)HeapFree(GetProcessHeap(),0U,console->shell_title);
     if(console->terminal_output)HeapFree(GetProcessHeap(),0U,console->terminal_output);
-    console->terminal_output=NULL;console->vt_output=console->window_usable=console->font_changed=0U;
+    console->terminal_output=NULL;console->vt_output=console->window_usable=console->font_changed=console->geometry_usable=0U;
     /* During host close,detaching/unregistering can hand termination back to
      * the default handler before the CRT exit. Leave attachment teardown to
      * process exit;ordinary Tab/recovery detaches immediately. */

@@ -164,3 +164,12 @@ active and full visual closure is not claimed. Classic actual caption Restore
 reports80x50/8x8. Current Terminal ignores the font request and retains80x30;
 full-scene/physical glyph/Terminal caption acceptance remains explicitly open.
 [Implementation evidence](../../history/M3-T33-windows-console-fit.md#s1-p1-implementation-and-delivery-awaiting-owner-visual-verification).
+
+## T33 S1 P2 geometry correction
+
+P1's HWND-gated entry geometry omitted a working T24operation sequence.
+Same-host neutral and actual product probes now observe80x50after restoring
+one optional all-device entry request;borrowed restoration and rollback pass.
+Do not infer physical font geometry from readback. The earlier80x30delivery
+state is historical;P2products supersede it. Owner live visual/Restore review
+remains pending. [Correction](../../history/M3-T33-windows-console-fit.md#s1-p2-restore-the-actual-t24-geometry-contract).

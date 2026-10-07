@@ -129,7 +129,11 @@ not terminal escape-sequence input. All console outputs receive the same8x8font 
 fit. Effective font/window changes are optional capabilities;no class-name
 flag owns device policy. A usable visible host window alone enables activation
 and optional restored geometry. VT-capable outputs receive neutral RGB glyphs;
-unsupported font requests retain their native viewport and known clipping.
+font and geometry support are independent. Every device receives one optional
+80x50entry size/view request even without a real HWND;partial unsupported
+requests restore prior geometry. Successful geometry is read back and retained
+for borrowed-shell restoration. Non-window hosts are never forcibly resized
+per frame;unsupported requests retain responsive viewport clipping.
 Ready/defer/lost separates resize/partial writes from genuine device failure.
 Borrowed shell fonts are explicitly restored. Full Terminal80x50and physical
 glyph acceptance remain pending owner verification.

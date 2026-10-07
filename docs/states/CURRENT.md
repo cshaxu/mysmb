@@ -4,17 +4,17 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | New: M3 T33 S1 P1;Win32 console fit/lifetime delivered;waiting for owner visual verification;sole active S. |
-| Admission And Approval | Owner admits queue head,requests repair,three EXEs,tests,local commit and wait for owner verification. |
-| Objective | Attempt8x8font on all console devices;capability-based fit and stable text presenter through maximize/Restore. |
+| Identifier Mode | New: M3 T33 S1 P2;restored T24 geometry delivered;awaiting owner visual verification;sole active S. |
+| Admission And Approval | Owner admits queue head and subsequently requests continuation;evaluate remaining Terminal fit,retain final owner visual gate. |
+| Objective | Attempt8x8font and80x50buffer/view independently on all console devices;capability-based fit and stable presenter through maximize/Restore. |
 | Non-goals | No game/PPU/DOS semantics,global terminal settings,profile changes,helper process or separate graphical text clone. |
 | Reference Baseline | Published T32 S8 P21 products;previous T29 acquisition/native VT retained;source-bound current console behavior. |
 | Candidate Proposal | [Console fit proposal](../proposals/m3/windows-console-adaptive-text.md). |
-| Files And ABI Surface | Win32 text_console.c/header,main_win32.c and focused tests;estimate150-250product lines. Ready/defer/lost result,explicit host capabilities and bounded settled fit. No shared game changes. |
+| Files And ABI Surface | Same-host T24 sequence succeeds120x30to80x50and restores120x30;CSI did not establish50rows. Adopt one optional entry geometry attempt on all outputs,estimate20-40Win32device lines plus tests;restore borrowed geometry after success,no per-frame forced resize or game changes. |
 | Applicable Rules | Task Reading Set,EXECUTION,DOCUMENT,ARCHITECTURE,CODING,CONTRIBUTING and source policy. |
 | Verification | Capability matrix including no-effect fonts,temporary resize/partial writes,true loss;actual owned/borrowed console routes,x86/x64 tests and original DOS compile. Visible Terminal/Restore/font quality waits for owner verification. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls(raw4342,infeasible81). |
-| Asset Needs | Existing owner-local ROM for unchanged three-target builds only;local protected assets retained,raw build/probes below ignored build;no third-party source import. |
+| Asset Needs | Existing owner-local ROM remains local build input. Microsoft Terminal official1.23release/PR17721 and MIT upstream source for read-only CSI resize semantics;no source copying,settings changes or dependencies. Pin local research metadata below ignored build. |
 | Reporting Requirements | Attempt/effective capabilities,resize status,actual code delta,three hashes/tests and explicit owner visual gate;node/edge totals unchanged. |
 | Stop Conditions | Global settings/foreground interference,gameplay changes,unbounded resize loop or unsupported visual-success claim. |
 | Exit Criteria | Scoped code/tests/build/delivery complete and committed;hold current task for owner visual verification,do not auto-admit queue successor. |
@@ -23,15 +23,16 @@
 
 ## Current Technical Baseline
 
-- T33 S1 P1:+134/-95product lines,Win32-only capability fit and ready/defer/lost
-  lifecycle. x86/x6418tests each pass;actual classic caption Restore80x50/8x8,
-  borrowed font/input/title/cursor/buffer restoration and product Tab/Escape
-  routes pass. Three existing EXEs refreshed;DOS byte-identical to P21.
-  [Delivery](../history/M3-T33-windows-console-fit.md#s1-p1-implementation-and-delivery-awaiting-owner-visual-verification).
-- Current Terminal font request is ineffective;80x30viewport preserved,not
-  complete80x50. Physical glyph quality and live Terminal caption Restore
-  await owner verification. T33/S1remain active;no automatic next admission.
-- Published products:DOS307349B,x86317966B,x64330766B. DOS DGROUP49264,
+- T33 S1 P2 restores the T24one-time80x50geometry sequence independently of
+  HWND availability,+31/-10Win32device/header lines. Same-host neutral probe
+  and actual x86/x64products report80x50;rollback/borrowed restoration and
+  each width18tests pass. Fonts still have separate physical acceptance.
+  [Correction](../history/M3-T33-windows-console-fit.md#s1-p2-restore-the-actual-t24-geometry-contract).
+- T29classified Terminal and skipped working geometry;P1restored font but
+  still gated geometry on a real HWND. P2corrects that unsupported inference.
+  No per-frame forced Terminal resize. Owner glyph/live Restore verification
+  remains pending;T33/S1active,no automatic next admission.
+- Published products:DOS307349B,x86318478B,x64331790B. DOS DGROUP49264,
   stack2048,loader331584..335680logical bytes unchanged. Global stack/memory
   proof and physical25MHz486SX playability remain unqualified.
 - T32/S9suspended. S8P21counter137.665ms,PPU59.677/mapping44.716/VGA18.062ms

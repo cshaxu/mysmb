@@ -69,3 +69,52 @@ borrowed close and test error-exit branch inspected. Every production hit is
 changed within the one console-device owner;no parallel fit/game policy.
 Historical1992/1992,local1991/1992nodes and4260/4261feasible controls unchanged,
 new0. Scoped host tests do not complete the deferred M2certificate.
+
+## S1 P2 restore the actual T24 geometry contract
+
+Owner questions why T24worked. Static source comparison finds T24
+f03e1b72always attempts8x8font,80x50buffer and80x50view;T29 S4
+2959c348classifies Terminal and skips font/geometry,clipping to native view.
+P1 restores font attempts but still incorrectly gates initial geometry on
+window_usable. A notification HWND is not evidence that buffer/view operations
+are unsupported. Earlier attribution to Terminal alone was premature.
+
+Same-host isolated neutral probe reproduces the T24sequence:game starts
+120x30;shrink view,set80x50buffer,set80x50view all succeed,error0;observed
+80x50and original shell120x30restored. Installed Terminal1.24.12741.0.
+Separate CSI8;50;80tprobe does not establish50rows in this context,so is not
+adopted. Microsoft official1.23release and PR17721 describe conditional
+single-tab/pane,non-fullscreen resizing;not font control. MIT source/patch is
+read-only under ignored build,no source imported. Patch SHA256
+33d54297991e9e628d7794a5ee17bc171daed4d0b48d1f61eda13e375ba0b5bf.
+
+Product+31/-10lines in the same Win32device/header:one optional entry geometry
+attempt regardless of host HWND;read back actual buffer/view,retain independent
+geometry_usable. If partially unsupported,restore pre-attempt size/view so no
+1x1view remains. Borrowed-shell geometry restoration follows the demonstrated
+device capability. Real-window activation/minimize/Restore remains separately
+window-owned;no per-frame forced resizing on a notification host. Shared game,
+PPU,IO,text,DOS and root source unchanged. No new helper process or settings.
+
+Two widths18/18native tests pass. Current capability fixture additionally
+covers no-window accepted geometry and rollback after tiny-view/buffer failure;
+all prior transient/device-loss/minimize/Restore tests pass. Actual final x86/
+x64product probes each read80x50/4000cells on three text entries,retain768x720
+at144DPI,return through Tab twice and exit0through Escape. Default and explicit
+classic borrowed-parent fixtures pass shell font/input/title/cursor/view/error
+restoration. Physical Terminal glyph shape/live caption behavior still awaits
+owner review;80x50device readback alone is not physical-display certification.
+
+Three existing assets refreshed. DOS original-tool rebuild remains identical
+307349B/SHA33e6bbd39273d0c99e214026b66655d66ffb548bd0336d96daa38614b80ae1e2;
+x86318478B/SHA77da36ae51f70cf9da9c6d62757c03f4565f28a6a6dcbe7dcfe335b685c639f9;
+x64331790B/SHA2c30c56b2c819272814f2e636da61e8ea8e99c5ad4c9c9c87b76ec728c53503c.
+Windows file deltas+512/+1024B,no DOS memory change. Source/product hashes
+bind the final probe receipts;runtime PE sections survive debug stripping.
+Historical1992/1992,local1991/1992nodes and4260/4261controls unchanged,new0.
+
+Similar-issue sweep:entry geometry,borrowed restoration,all window_usable
+uses and optional partial failures. HWND capability now governs only actual
+window operations;device geometry is tested directly. P1full-view limitation
+is superseded for measured device viewport,not silently relabeled visual
+acceptance. T33/S1remain active awaiting owner verification;no queue advance.
