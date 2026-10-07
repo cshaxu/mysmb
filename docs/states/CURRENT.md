@@ -30,6 +30,12 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P24binds current no-copy startup hooks,disabled early dynamic init,
+  empty cinit tables and14-byte retained main-entry frame(known total734).
+  Actual exit table selects flushall;unpruned dynamic/text/error paths remain
+  unresolved,so its partial84-byte result is not a bound. No product change
+  or global certification. [Startup/exit receipt](../history/M3-T34-native-vga-performance-proposal.md#s3-p24-current-startup-and-exit-dispatcher-binding).
+
 - T34 S3 P23rebinds all12remaining nested CRT/service wrapper entries to current
   EXE bytes;seven binary-stream/allocator CFGs balance and wrapper depths
   agree. Current project+CRTknown contributions720/704bytes exclude external

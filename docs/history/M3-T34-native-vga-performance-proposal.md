@@ -1345,6 +1345,29 @@ stack-current/bindings.json,local-cfg.json,callback-bindings.json,
 guarded-chain.json,merge-receipt.json. All four original gates remain open;
 ROM node/control credit0.
 
+### S3 P24 Current Startup And Exit Dispatcher Binding
+
+Audit only. Current loaded bytes confirm the two unused argument/environment
+copy hooks use balanced large-model no-op bodies;no copying/allocation call
+is introduced there. The current cinit early dynamic-hook count is zero and
+both initialization dispatch ranges are empty. Five retained words plus the
+far main return contribute14bytes at main entry;combined with P23the known
+contribution is734bytes. This excludes startup-before-stack-reset and service
+bodies and does not certify the whole stack.
+
+The first exit dispatch range is empty;the second contains the actual
+flushall handler. Its unpruned nested CFG has unresolved dynamic-SP,text/error
+and fatal-handler paths. The84-byte modeled partial contribution is expressly
+not an upper bound and is not included as a proven exit result. The existing
+startup/exit clause must reconcile current stream flags/buffer lifetimes or
+bound those paths;this names a prior pending condition,not a new audit round.
+No application edit is justified by this missing evidence alone.
+
+Evidence below ignored build/m3-t34-s3:check-p24-startup.py,
+p24-startup-receipt.json,check-p24-flushall.py and
+rtl-private-current/flushall-cfg.json. Product source/EXEs unchanged;ROM credit0.
+All four original global/reference/physical gates remain open.
+
 ### S3 P22 Current Linked CRT Leaf Rebinding
 
 Audit only. Relink current production objects using the original linker with
