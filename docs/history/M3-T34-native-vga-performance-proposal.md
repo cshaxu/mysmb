@@ -434,3 +434,62 @@ physical486SX/VGA/LCD. No denominator expansion,new T or new audit round.
 The physical test entry question is pending;no permission or result is inferred
 from elapsed time. S3/T34 and the active goal remain open. This P records
 neutral evidence only;three local products remain exactly P1's tested hashes.
+
+### S3 P3 Allocation-Bound Inspection Admission
+
+Read-only verification of the current DOS composition allocation graph and
+its already-linked historical Microsoft C runtime. The owner-installed
+original16-bit compiler/runtime is the existing build provenance;library and
+headers are copyright inputs with no redistribution grant. Inspect allocator/
+stdio symbols,object relocation/immediate constants and current link bindings
+to determine which runtime reservations remain unknown. Do not patch/import
+runtime code or turn an observation into a global bound. All extracted members,
+metadata/logs remain under ignored build;tracked evidence is neutral.
+No product code change/EXE rebuild is planned. This discharges only the named
+global-memory gate where evidence supports it;stack/reference/hardware gates
+retain their separate original scope. No new ROM-node credit or T/S allocation.
+
+### S3 P3 Application Payload Bound And CRT Binding
+
+Read-only relink with public map reproduces the current loaded image byte for
+byte:SHAfb717e0c869c426b752fdb0ab9c520ec4087f0a8cc8d37c9a979279b1d6fd68d.
+No actual product is replaced by this diagnostic image. Historical runtime
+library SHA5a1b1f376b59a029fd60dcdb3bcb1f1f350786e1442b09529590aac0c81f156f
+binds the inspected members. Public map aliases malloc/fmalloc at0040:0A25;
+getbuf at0040:1802and freebuf at0040:1358. Header BUFSIZ512agrees with the
+linked allocation immediate512. The successful-buffer path owns512bytes;
+allocation failure selects a stream-owned one-byte fallback. Freebuf releases
+the owned buffer and clears its pointer/ownership fields. No runtime bytes,
+disassembly or protected material are tracked.
+
+| Allocation payload | Maximum bytes | Ownership/lifetime |
+| --- | --- | --- |
+| Exclusive text/row store | 15532 | Required once before device/loop;freed on initialization failure/shutdown. |
+| Snapshot wire/staging store | 20084 | Required once;shared codec/load/save reuse it;freed at exit/failure. |
+| Decoded CHR | 8192 | One optional near OR far allocation;matching allocator frees it. |
+| First background store | 63488 | One optional allocation;failure preserves uncached output. |
+| Second background store | 61440 | Attempt only after first success;failure preserves packed output. |
+| Current stdio data buffer | 512 | At most one file stream in current save/load/log paths;close precedes replacement/error logging. |
+
+Mandatory application payload35616B;optional persistent payload133120B;
+temporary stdio payload512B. Total requested payload bound169248B. This is
+not a total DOS-memory bound:initialized image/PSP/environment,allocator header
+alignment/paragraph rounding,free-block fragmentation/coalescing,startup/CRT
+and DOS transient reservations still require reconciliation. The near530-byte
+palette-pair allocation belongs to the canonical non-slot root interface;
+current production binds palette rows and cannot take that branch. Ordinary
+frames allocate no application storage after the one-shot cache attempts;
+all transitions reuse those allocations. Repeated file actions reuse/close
+streams,but full allocator-reserved growth is not yet proved from that fact.
+
+The169248payload bound and sampled526048owned bytes are separate quantities.
+Global conventional-memory peak stays unproved. This verification-only P
+changes0product lines and refreshes0EXEs;all three current hashes stay P1's.
+Original /AL compiler metadata confirms text storage15532,snapshot store20084,
+snapshot10015,file-service table32,snapshot cache10020and PPU workspace44bytes.
+The store includes callback pointers,the extra file sentinel byte and16-bit
+ABI alignment;it is not just the sum of the two serialized payload arrays.
+Five persistent requests sum168736B,matching the measured occupied far-heap
+payload in the byte-cache diagnostic;allocator-reserved space remains distinct.
+Historical1992/1992,local1991/1992nodes and4260/4261feasible controls unchanged,
+new0. S3/T34/goal remain active;no hardware answer or result is inferred.

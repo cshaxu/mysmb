@@ -16,7 +16,7 @@
 | Applicable Rules | Execution,Documentation,Architecture,Coding,source policy;System Architecture and Source Layout. |
 | Verification | Exact61440source-to-VRAM pixels/palette/edges,HUD split/scroll/priority,cache/fallback,mode restoration and Tab;actual DOS input/transition routes,Windows regression,original16-bit compiler/link/segment/stack/loader and before/after stage costs;three local products on code change. |
 | Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0;historical1992/1992,local1991/1992nodes,4260/4261feasible controls unchanged(raw4342,infeasible81). |
-| Asset Needs | Existing owner-local SMB1 ROM is Nintendo material without redistribution grant;read-only for local embedded builds and bounded runtime probes. Existing NESticle conceptual research is copyright-only:do not copy code/mode tables or import. Generated data,captures,traces/products remain local;neutral evidence only tracked. No fresh third-party research/import in P1 admission. |
+| Asset Needs | Existing owner-local SMB1 ROM remains local without redistribution grant;read-only builds/runtime probes. Retained NESticle research is conceptual only,no code/table import. S3 P3 inspects the already-linked historical Microsoft DOS C runtime library/header read-only to establish allocation/stdio bounds;copyright material has no redistribution grant. Owner-installed original toolchain is the provenance;neutral symbols/hashes/conclusions only tracked,extracted members/logs stay ignored below build. No runtime replacement,patching or third-party source import. |
 | Reporting Requirements | Before every S report objective,components/code and memory estimates;after report actual changes,scoped results,candidate dispositions and total/local node/edge counts. Do not infer hardware cadence/LCD filling from emulator captures. |
 | Stop Conditions | Pixel/priority/split loss,core mutation,installed-setting change,new unbounded audit,unmeasured full-frame allocation or unsupported timing requires redesign within the admitted scope. |
 | Exit Criteria | Combined current-source/product receipts show no scoped regression;claimed performance/memory gates supported,all unqualified global/reference/cadence clauses explicitly reconciled under proposal contract. No inferred physical486SX or whole-ROM certification. |
@@ -45,6 +45,12 @@ explicitly in TODO rather than asserted complete.
   EXE change,new ROM credit0. Four original gates remain unproved:global memory,
   stack/IRQ/NMI,equal-budget reference and physical486SX/VGA/LCD. No T closure.
   [Receipts](../history/M3-T34-native-vga-performance-proposal.md#s3-p2-six-named-transition-routes).
+- T34 S3 P3bounds current application-requested heap payload at169248B:
+  required35616,optional persistent133120,one temporary stdio buffer512.
+  A mapped relink is loaded-image identical;historical CRT allocation/close
+  bindings confirm512-byte buffering. This excludes allocator/loader/CRT/DOS
+  reservations and therefore does not certify total memory/global peak.
+  Product unchanged;[bound](../history/M3-T34-native-vga-performance-proposal.md#s3-p3-application-payload-bound-and-crt-binding).
 
 - T33 S2 P12delivers default80x25on all three products;50-row code/art and
   interfaces remain. Shared semantic compact art/palette/layout owns output;
