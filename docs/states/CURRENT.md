@@ -1,29 +1,18 @@
 # Project Status
 
-## M3 T32 S9 Packet
+**Idle.**
 
-| Field | Required record |
-| --- | --- |
-| Identifier Mode | Continuation: M3 T32 S9 P1; native-resolution VGA research and design; sole active S. |
-| Admission And Approval | Owner explicitly closes S8, transfers remaining opportunities to S10 and admits S9 for NESticle-style256x240 output. |
-| Objective | Eliminate software scaling using native256x240 VGA output and hardware scan repetition; preserve entire source frame, allow side black borders and qualify height filling. |
-| Non-goals | No ROM/PPU semantic changes, skipped frames, DOS4GW, toolchain or installed DOSBox setting changes, helper process or Win32 rendering change. |
-| Reference Baseline | S8 P21 published products; counter137.665ms,PPU59.677/mapping44.716/VGA18.062ms diagnostics;2048stack and original tools. |
-| Candidate Proposal | [Performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). S10 accepts unfinished S8 candidates and former S9 final gates. |
-| Files And ABI Surface | Initially zero product lines. Estimate150-300product lines in dos16 device/mode/physical planar kernel and main-dos16 root; neutral IO geometry only if reusable. Existing15400-byte store, no full-frame allocation. P1 reference/design then bounded original-DOS prototype. |
-| Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
-| Verification | Reference parameter-to-mode binding; all61440source pixels/colors/priority/split intact, plane bytes/guards/registers/mode timing. Actual DOS startup,input,Tab,text return,P/O,exit and restored mode; current compiler,memory/stack and stage cost. Three products after product adoption; LCD height fill requires real hardware. |
-| Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls(raw4342,infeasible81). |
-| Asset Needs | Owner-local ROM/x.xx binary and historical athros/NESticle0.2 source at public master, copyright-only/no redistribution grant. Purpose parameter/video timing read-only comparison, no copying/transliteration. Raw reference/probes only below ignored build. Pin downloaded source identity; exactx.xx claims require binary evidence. |
-| Reporting Requirements | Mode parameter route, measured timing/pixel payload/cost/memory, changed components/lines, three products after adoption and unchanged node totals; no unmeasured full-screen or FPS claim. |
-| Stop Conditions | Foreground/unbounded probe, output loss, unsafe ownership, configuration change, source import or unsupported speed claim. |
-| Exit Criteria | Native mode selected or rejected with complete-frame/route/cost/memory proof; adopted code publishes three EXEs. S10 retains global memory/stack/reference/cadence acceptance; M4 physical486SX separate. |
-| Original Owner Request | Inspect NESticle256240 launch settings and optimize MySMB;close S8,transfer remaining opportunities to S10,admit S9 specifically for this output optimization. |
-| Similar-Issue Sweep | Mode registers/pitch/plane offset,all240rows,edge pixels,Hud split,palette lifetime,Tab/P/O rebuild,restore old mode,allocation fallback and hardware-dependent panel behavior. |
+Owner moved the remaining performance scope to the second queue candidate,
+[Native VGA and DOS performance package](../proposals/m3/native-vga-performance-package.md).
+T32 and its unfinished S9 are suspended,not verified complete;allocated IDs
+and P1 receipts are retained. Planned T32 S10 is superseded by the queued
+package. No T32 S11 was allocated. A future new T starts S1 and contains
+S1native output,S2remaining optimization,S3combined acceptance. No new T is
+allocated or admitted by queue insertion; queue head remains Windows text fit.
 
 ## Current Technical Baseline
 
-- S8 is closed by owner-directed transfer;P21 products retained. S10 accepts
+- S8 is closed by owner-directed transfer;P21 products retained. The queued performance package accepts
   unfinished coordinate/row/fusion/snapshot/byte-cache candidates and former
   final S9 gates. No performance/global certification follows from closure.
 - S9 P1 confirms historical launch parsing and archive mode intent,with0.2

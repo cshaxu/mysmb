@@ -1,9 +1,10 @@
 # Windows Text Console Fit And Restore
 
-Owner-requested queue-head candidate for the next task after active M3 T32
-finishes. This proposal is not admitted and has no allocated T/S identifier.
-Do not interrupt T32 or change its active packet. At admission, compare this
-proposal with the then-current source and baseline before assigning work.
+Owner-requested queue-head candidate. The owner has moved remaining T32
+performance work into the second queue candidate; T32 is suspended and
+CURRENT is idle. This proposal is not admitted and has no allocated T/S
+identifier. At admission compare the then-current source and baseline before
+assigning work.
 
 ## Problem And Owner Contract
 

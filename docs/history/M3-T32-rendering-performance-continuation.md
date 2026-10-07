@@ -2915,3 +2915,18 @@ four-plane deinterleaving,removing all256-to320/240-to400resampling. Existing
 15400-byte store can hold8source rows plus four8row plane spans;no new frame
 allocation. Validate current game source/canonical palette,all240rows,split,
 scroll/priority,Tab/P/O/mode reset and three-product delivery before adoption.
+
+## S9 P2 owner-directed queue packaging and suspension
+
+Owner requests native output,remaining optimization and final acceptance as
+one new performance T candidate at queue position2. Existing record had S9
+active and S10planned with audit bundled;no S11 allocated. New proposal splits
+those three roles into future S1/S2/S3,without inventing a T number or recycling
+T32 IDs. T32 and unfinished S9 are suspended,not closed;S10planned scope is
+superseded by the package. Coordinator accepts the queued backlog under this
+owner instruction;no ROM custody transfer. CURRENT is idle pending admission.
+
+P21products and S9 P1independent mode receipts retained unchanged. No product
+code or EXE changes. Historical1992/1992,local1991/1992nodes and4260/4261
+feasible controls remain unchanged. Global/reference/cadence/physical gates
+are explicitly retained in the new proposal;no success claim from packaging.

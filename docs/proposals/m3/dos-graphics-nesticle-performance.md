@@ -1,10 +1,11 @@
 # M3 T32 S5-S9 proposal: DOS graphics performance beyond Nesticle
 
-Owner-directed continuation within M3 T32. S5-S7 retain their scoped closures;
-S8 closes by owner-directed transfer with P21 products retained. S9 is now
-native-resolution VGA output, not the former final audit. S10 receives all
-remaining S8 optimization candidates and the former S9 final acceptance gates.
-Only CURRENT admits work; S10 is planned and cannot execute concurrently.
+Retained T32 plan and historical checkpoints. Owner has suspended T32/S9
+and packaged all remaining native-output,optimization and final-acceptance
+work into the new unnumbered [second queue candidate](native-vga-performance-package.md).
+That proposal owns future execution planning;this file preserves predecessor
+scope and receipts only. S8 transfer closure stands;S9 P1 is not implementation
+closure. Planned S10 is superseded;no T32 S11 was allocated. No active S.
 
 ## Objective and measured starting point
 
