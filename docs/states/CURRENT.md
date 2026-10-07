@@ -30,6 +30,13 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P37 prepares a current P31 physical-DOS handoff package: a local
+  helper rejects non-MZ input, copies matching EXE/MAP identities and emits a
+  structured physical-observation form. The M4 protocol now names Tab rather
+  than the obsolete F1 switch. No physical host was run and the global memory,
+  stack/IRQ/NMI, reference and 25MHz486SX/VGA/LCD gates remain open. [Packet
+  receipt](../history/M3-T34-native-vga-performance-proposal.md#s3-p37-physical-qualification-packet-readiness).
+
 - T34 S3 P36 confirms the equal-budget NESticle gate remains unavailable to
   this task: no owner-local x.xx reference executable is currently accessible,
   while retained observations use mismatched resolution/frameskip and an

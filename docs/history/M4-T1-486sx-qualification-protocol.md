@@ -35,8 +35,8 @@ claim before a 25MHz 486SX test run.
 2. Hold Right through the native title-to-play route.  Record title transfer,
    entrance completion, and held-Right checkpoint state using the same
    neutral checkpoints as M2 T8.
-3. Press F1.  Confirm that the 80x25 colored-object view has full background
-   fill and object glyph overlays.  Press F1 again and confirm VGA return.
+3. Press Tab. Confirm that the 80x25 colored-object view has full background
+   fill and object glyph overlays. Press Tab again and confirm VGA return.
 4. Repeat the route three times.  Record elapsed wall-clock time for a fixed
    600-frame window, input latency observations, mode-switch outcome, and
    any halt, corruption, or reset.
@@ -49,4 +49,3 @@ The completed physical report must include the above host facts, three route
 outcomes, bounded timing samples, observed keyboard behavior, both display
 modes, and the exact executable build identity.  Absence of a physical host
 is a missing observation, not a failed or successful qualification.
-

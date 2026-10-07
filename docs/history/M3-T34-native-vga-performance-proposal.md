@@ -1597,6 +1597,22 @@ other global memory, stack/IRQ/NMI and physical486SX/VGA/LCD gates also remain
 open. Evidence is the retained comparison contract and current task artifact
 inventory;no local paths or third-party bytes are tracked.
 
+### S3 P37 Physical Qualification Packet Readiness
+
+The physical qualification helper now rejects non-MZ input, records the
+executable/map hashes, sizes, MZ relocation count and header length, and
+generates a structured `RESULT.TXT` beside the local executable and map copy.
+The result form requires the exact host, boot, display and media facts plus
+three gameplay routes, all specified controls, three 600-frame samples and
+visual/cadence observations. The M4 protocol's obsolete F1 instruction now
+matches the current Tab mode-switch contract.
+
+This is only a reproducible handoff package. It neither performs a physical
+run nor establishes a global memory peak, stack/IRQ/NMI bound, equal-budget
+reference comparison or 25MHz486SX/VGA/LCD cadence. Product source and EXEs
+are unchanged;ROM credit remains zero and all four gates remain open. The
+local package and its copied executable/map stay below ignored `build/`.
+
 ### S3 P24 Current Startup And Exit Dispatcher Binding
 
 Audit only. Current loaded bytes confirm the two unused argument/environment
