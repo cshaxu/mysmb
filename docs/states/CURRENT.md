@@ -33,13 +33,14 @@ explicitly in TODO rather than asserted complete.
 - T34 S3 P42 extends the same DOS16 largest-block preflight to B, the
   63,488-byte compact background tier. A block that DOS proves cannot fit B
   now goes directly to A, avoiding a futile fragmented far-heap walk while
-  retaining the specified B/A/C selection order and fallbacks. The direct cache
-  diagnostic matrix now records 384 KiB=A only, 416 KiB=A only, 448 KiB=B+A,
-  and 500 KiB=B+A+C. The 384/416/448 current-product FIT routes complete
-  title/input and normal Escape return; the 500 KiB probe itself also returns
-  normally. Full-product memory logs that stop before cache allocation are not
-  used to classify a cache tier. Both Windows-width focused suites pass; no
-  shared PPU/game change.
+  retaining the specified B/A/C selection order and fallbacks. The direct
+  diagnostic has separate, smaller platform setup and is retained only as an
+  allocator probe. Current-product FIT boundary routes prove 508 KiB reaches
+  the B allocation but cannot retain C, while 509 KiB reaches a second
+  61,472-byte background allocation, captures title and exits normally. Since
+  C is requested only after A and B both succeed, 509 KiB is the current
+  product's minimum observed A+B+C threshold; 512 KiB is its rounded safe
+  tier. Both Windows-width focused suites pass; no shared PPU/game change.
 
 - T34 S3 P41 keeps the owner-directed B/A/C cache policy but makes the DOS16
   root ask DOS for the current largest conventional block before attempting

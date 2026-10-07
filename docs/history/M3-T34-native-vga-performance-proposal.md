@@ -1852,14 +1852,17 @@ still decides success. Thus the owner-selected order remains B, then A, then C;
 the change removes only a request known to fail, and leaves shared PPU/game
 decisions, cache bytes and Windows paths untouched.
 
-The P42 direct diagnostic now has one identical probe shape at every requested
-arena:384KiB reports `decoded=1,packed=0,byteCache=0`;416KiB reports the same;
-448KiB reports `decoded=1,packed=1,byteCache=0`;and500KiB reports
-`decoded=1,packed=1,byteCache=1`. Thus the observed policy ladder is A, A,
-B+A, B+A+C. The 384/416/448 current LINK3.65 product FIT routes independently
-complete title/input and normal Escape return, while the500KiB diagnostic also
-returns normally. Earlier full-product allocation samples ended before the
-cache allocation and therefore cannot classify a tier. Both Windows widths
-passed focused keyboard,focus-pause and DOS-root smoke suites. The evidence
-does not claim a physical cadence result or close the remaining runtime/memory
-qualification.
+The direct root diagnostic has a deliberately smaller platform setup and is
+therefore an allocator-policy probe rather than a product-tier certificate. Its
+384/416/448/500KiB observations remain A,A,B+A,B+A+C for that probe. The
+current product instead establishes its threshold with adjacent FIT routes:
+at508KiB it captures title and returns normally after its B-sized63,520-byte
+allocation but without C;at509KiB it captures title and returns normally with
+both the B-sized63,520-byte allocation and a second61,472-byte allocation.
+The C call is guarded by successful B and decoded-A pointers, so this proves
+A+B+C at509KiB. The observed owned maximum is520,656 bytes against a521,216
+byte 509KiB cap;the508KiB cap is520,192 bytes and cannot fit that allocation.
+Thus509KiB is the current product's lowest measured complete-cache tier and
+512KiB its rounded safe tier. Both Windows widths passed focused
+keyboard,focus-pause and DOS-root smoke suites. The evidence does not claim a
+physical cadence result or close the remaining runtime/memory qualification.
