@@ -2196,6 +2196,64 @@ physical486qualification remain unproved. Scope/expected/actual[],new0;
 historical1992/1992,local1991/1992nodes and4260/4261feasible controls
 (raw4342,infeasible81). Full M2 certificate remains incomplete.
 
+## S8 P19 reject transparent-row metadata after dirty-cache verification
+
+Contained shared PPU prototype adds60workspace bytes for480known-zero row
+bits. A full rebuild initializes bits;nonzero tile rows clear them. The row
+consumer fills background color only if every sampled horizontal table row
+is proven transparent. Palette changes retain raw-zero meaning;scroll and
+sprite clipping/priority/opacity remain in the same compositor. No product
+source change or image allocation. No new runtime option is adopted.
+
+First clear-only variant is semantically conservative,but rows erased after
+nonzero content cannot regain fast-path classification. Original-DOS ordinary
+scenes regress around2ms;only fresh-bound blank scenes improve around6ms.
+Second variant uses existing decoded/raw bitplanes to avoid per-pixel ORs and
+recovers affected rows after removal. It scans only candidate dirty rows not
+already proven zero and without newly written nonzero tiles;cached bytes must
+all be zero before a bit is restored. Correct recovery does not remove the
+per-row metadata/query overhead for nonblank scenes.
+
+Final native evidence per width512states/125829120bytes matches current P18
+canonical/slot/full/arbitrary-row output,source/guards/lifetime and cache
+fallbacks. Additional128same-workspace mutation states cover transparency
+to nonzero,removal,attributes,palette,scroll/bank mirroring and rebinding.
+Every claimed zero row is checked against all128cached bytes;return-to-blank
+rows recover the expected bits. Those passes establish scoped correctness,
+not favorable performance or whole-ROM/global certification.
+
+Final original-tool ten paired scenes match every band/full-frame byte with
+current P18 PPU exports and unchanged physical encoder objects. Warm paired
+band raster+mapping includes begin/preparation;full-frame API cost is timed
+separately. No background-refresh cold-cost or whole-game claim is made.
+
+| Scene | Band raster+mapping saving | Full-frame raster saving |
+| --- | ---: | ---: |
+| Uniform tile content | -1.570ms | -1.359ms |
+| Mixed/fine scroll/split | -2.294ms | -2.300ms |
+| Dense behind-background sprites | -2.285ms | -2.168ms |
+| Blank background | 6.256ms | 6.078ms |
+| Sparse background | 1.827ms | 1.731ms |
+| Dense foreground on blank background | 6.095ms | 6.063ms |
+| Eight foreground sprites | 6.043ms | 6.031ms |
+| No background cache | -0.036ms | -0.002ms |
+| Nonzero sprite range | 6.123ms | 5.888ms |
+| Visible endpoints/interior gaps | 6.038ms | 5.762ms |
+
+Reject both variants:complex-scene regressions outweigh the blank-only gain
+and extra permanent metadata. Do not introduce a selectable slow path or
+special game-scene rule. Initial/final private probes exit normally in32.42/
+31.78seconds with installed settings unchanged. Product source and all three
+P18 EXE hashes remain unchanged;no refresh required. No further compiler/
+global-stack/product-memory audit is claimed for rejected unused code.
+
+Future PPU/transfer candidates must demonstrate improvement in complete
+mixed/dense as well as blank stages. Source/guards/dirty-lifetime checks are
+retained as their acceptance boundary;correct pixels alone do not justify
+adoption. Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes
+and4260/4261feasible controls(raw4342,infeasible81). S8/goal and nominal60Hz/
+fivefold/global memory-stack/reference/hardware qualification remain open.
+
 ## S8 P18 integrate DWORD plane packing and publish three products
 
 Only platform/dos16/planar_row.c changes,+123/-57lines. Bounded macros encode

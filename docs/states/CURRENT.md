@@ -4,15 +4,15 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S8 P18; DWORD packing adopted and three products verified; S8 remains active. |
+| Identifier Mode | Continuation: M3 T32 S8 P19; transparent-row metadata rejected; S8 remains active. |
 | Admission And Approval | Owner-approved consecutive S5-S9 plan and automatic successor;S7 display-stage contract closed by P4;S8 sole active. |
 | Objective | Reduce current dominant rendering cost as one bounded cache/row-output chain while preserving ROM/PPU semantics and memory balance. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
 | Reference Baseline | Published S8 P18products and current phase/counter probes;original tools/2048stack/640x400/two platform components. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | DOS-private planar_row.c only,estimate150-260changed product lines,reuse existing current-object matrix. Contiguous DWORD packing/shared IO geometry and ABI unchanged;no new buffer/heap. Preserve64indices,guards,unaligned/register/source contracts. Core/PPU/Win32 source unchanged. Bind final objects and verify actual code/loader/resident/stack/routes/frame cost before publishing three EXEs. |
+| Files And ABI Surface | Zero product lines;two contained60-byte transparent-row metadata variants rejected. Conservative clear-only flags preserve output but lose recovered transparency;dirty-row recovery fixes reuse. Both add complex-scene row-query costs. No production cache/ABI/flag/interface added;P18 source/three EXEs unchanged. Subsequent PPU/transfer work must improve complete mixed/dense stages,not only zero backgrounds. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
-| Verification | Final-object7079cases/20register checks,64DWORD masks/stores and3local CFGs pass.164objects including132core/PPU unchanged;only DOS row encoder differs. Fifteen native tests each width and actual Windows/DOS448/384/370routes pass. Counter382/phase354records,zero drops,25reads per graphics submission. Current146.652ms diagnostic;three EXEs refreshed. Global memory/stack/reference/hardware gates remain open. |
+| Verification | Each native width512states/125829120bytes plus128dirty-cache states pass. Known-zero bits directly checked against every cached byte;removal/rebinding recovery tested. Ten current-P18 original-DOS paired scenes exact,but mixed/dense-priority stages regress1.57..2.29ms while blank stages save about6ms. Reject both;no product/EXEchange or global qualification. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
 | Asset Needs | Owner-local x.xx binary and ROM plus historical athros/NESticle0.2 source as conceptual reference only; copyright-only leaked tree grants no redistribution permission. Purpose frame/cache/transfer architecture comparison; raw source/probes only below ignored build, no copying/transliteration into product, exact-version claims require binary evidence. |
 | Reporting Requirements | Candidate and measured whole-step cost, rejected variants, actual code/memory delta, source/products and total/local node counts. |
@@ -25,6 +25,14 @@
 
 
 ## Current Technical Baseline
+
+- S8 P19 rejects both60-byte transparent-row cohorts:512native states/
+  125829120bytes plus128dirty-cache states per width and ten original-DOS
+  scenes match,including zero/nonzero/removal/rebind/scroll/palette/opacity.
+  Recovery fixes conservative flag reuse but mixed/dense-priority cost still
+  increases1.57..2.29ms;blank-background benefit about6ms is insufficient.
+  No product/EXEchange. P18 remains current;S8/global goals remain open.
+  [Rejected variants and next constraint](../history/M3-T32-rendering-performance-continuation.md#s8-p19-reject-transparent-row-metadata-after-dirty-cache-verification).
 
 - S8 P18 adopts DOS-only contiguous DWORD packing,+123/-57product lines;
   shared IO/PPU/core unchanged.164object identities,final7079cases/20register/

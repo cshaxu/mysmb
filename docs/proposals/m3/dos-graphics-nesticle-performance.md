@@ -527,3 +527,14 @@ ordinary observed resident+2048,370unchanged,DGROUP49264/2048stack unchanged.
 Current counter146.652ms saves9.995ms,mapping44.706ms. Actual product gain is
 about10ms,not22.7ms;record the smaller real-game tradeoff. No20ms floor is
 inferred from the owner's sufficient example. S8/global targets remain open.
+
+## Transparent-row cohort rejected
+
+[P19 evaluation](../../history/M3-T32-rendering-performance-continuation.md#s8-p19-reject-transparent-row-metadata-after-dirty-cache-verification)
+tests conservative and recoverable60-byte zero-row masks in shared PPU.
+Both preserve pixels;512native states/125829120bytes plus128dirty-cache
+states each width and ten original-DOS scenes pass. Recovery handles removal/
+rebinding,but complex stages still regress1.57..2.29ms while blank-only gains
+about6ms. Reject both,no product/EXEchange. Next PPU/transfer candidates must
+improve complete mixed/dense stages with source/guard/cache-lifetime proof;
+do not adopt a scene-specific switch or infer speed from zero-span savings.
