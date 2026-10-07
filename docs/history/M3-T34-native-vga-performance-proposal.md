@@ -1842,3 +1842,23 @@ The 384 KiB fallback observation remains B unavailable then A retained. This
 preflight does not invent an intermediate-memory result, close the 416/448 KiB
 matrix, or establish a physical performance result. Generated compiler,
 linker, MAP and DOSBox receipts remain below ignored `build/m3-t34-s3`.
+
+### S3 P42 DOS16 Optional-B Allocation Preflight
+
+The same largest-block query now also precedes B's63,488-byte compact
+background allocation. When DOS reports no contiguous block large enough for
+B, the root moves directly to A; when it can fit B, the ordinary far allocation
+still decides success. Thus the owner-selected order remains B, then A, then C;
+the change removes only a request known to fail, and leaves shared PPU/game
+decisions, cache bytes and Windows paths untouched.
+
+The current LINK3.65 product completed unchanged-configuration FIT routes at
+384KiB and448KiB with title/input and normal Escape return. Neither route's
+allocation log contains B's63,488-byte block;both therefore take the B-fail to
+A path. At416KiB, the observed post-initialization available bound is below B
+and proves the same B impossibility, but the complete product did not reach its
+SDL input loop inside the automated30-second observation window. It remains an
+open operational route rather than a passing receipt. The current500KiB direct
+cache diagnostic retains B+A and not C. Both Windows widths passed focused
+keyboard,focus-pause and DOS-root smoke suites. The evidence does not claim a
+physical cadence result or close the remaining runtime/memory qualification.

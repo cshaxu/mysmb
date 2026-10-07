@@ -30,6 +30,18 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P42 extends the same DOS16 largest-block preflight to B, the
+  63,488-byte compact background tier. A block that DOS proves cannot fit B
+  now goes directly to A, avoiding a futile fragmented far-heap walk while
+  retaining the specified B/A/C selection order and fallbacks. The current
+  product completes the unchanged-configuration FIT routes at 384 KiB and
+  448 KiB, including Escape and normal DOS return; both show no B-sized
+  allocation, so B falls through to A. The 416 KiB allocator upper bound
+  likewise cannot fit B, but its complete product route did not reach input
+  within the automation's 30-second limit and remains an open operational
+  condition. The current 500 KiB direct cache diagnostic retains B+A and not
+  C. Both Windows-width focused suites pass; no shared PPU/game change.
+
 - T34 S3 P41 keeps the owner-directed B/A/C cache policy but makes the DOS16
   root ask DOS for the current largest conventional block before attempting
   C's 61,440-byte far allocation. When that block cannot fit C, the root

@@ -135,7 +135,10 @@ static void present_current(struct mysmb_dos16_root *root)
         root->ppu_cache_attempted=1U;
         /* Preserve the compact background tier before spending memory on CHR.
          * The shared compositor supports packed backgrounds with raw CHR. */
-        background=(mysmb_u8 __far *)_fmalloc(MYSMB_PPU_BACKGROUND_BYTES);
+        /* Do not make the compact tier walk a fragmented far heap when DOS
+         * already reports that no single conventional block can fit it. */
+        background=optional_far_block_fits(MYSMB_PPU_BACKGROUND_BYTES) ?
+            (mysmb_u8 __far *)_fmalloc(MYSMB_PPU_BACKGROUND_BYTES) : 0;
         /* Reuse the primary-block reserve before requesting another DOS block.
          * Preserve allocation provenance for the matching shutdown operation. */
         near_cache=(mysmb_u8 __near *)_nmalloc(MYSMB_PPU_CHR_DECODED_BYTES);
