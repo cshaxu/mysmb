@@ -50,6 +50,9 @@ static int palette_expansion_contract(void)
 static int nibble_contract(void)
 {
     mysmb_io_u8 input[132],out[292];mysmb_io_u16 phase,count,i,offset;
+    for(i=0U;i<256U;++i)
+        if(mysmb_io_nibble_pairs[i*2U]!=(i&15U) ||
+            mysmb_io_nibble_pairs[i*2U+1U]!=(i>>4U))return 7;
     for(phase=0U;phase<4U;++phase){
         for(i=0U;i<132U;++i)input[i]=(mysmb_io_u8)(i*17U+phase);
         for(count=0U;count<=256U;count+=2U){

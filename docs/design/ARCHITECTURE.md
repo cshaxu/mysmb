@@ -37,9 +37,13 @@ PPU rejects unchanged tile/attribute rows before refreshing dependent cache
 tiles. One shared compositor exposes canonical master pixels and lossless
 slot pixels with a normalized32-entry master-color table. Both products use
 slot output;IO expands nibbles without a pair-table allocation. PPU retains
-odd edges,masks,scroll and raw-opacity decisions. DOS binds its segment-only
+odd edges,masks,scroll and raw-opacity decisions. DOS binds its host-only
 nibble accelerator;Windows uses the same portable service. Canonical callers
 retain default palette expansion and the optional530-byte lookup cache.
+The neutral IO decoder owns512immutable low/high nibble pair bytes and uses
+pair copies on all targets. DOS accelerates colored spans with equivalent
+GS/indexed loads in real mode;the bounded RAM-only span saves/restores FLAGS
+and GS,keeping its temporary index state outside maskable IRQ execution.
 Derived output tables are not serialized. Physical DAC state is invalidated
 after mode/reset and refreshed before slot pixels;Windows maps the same table
 to RGB. Devices inspect only neutral views.

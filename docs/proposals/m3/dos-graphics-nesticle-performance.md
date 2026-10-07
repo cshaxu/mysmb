@@ -550,3 +550,15 @@ regressions retained. Fair-O2 native costs improve nonblank,zero absolute
 regression<=0.0022ms/frame;initial library comparison excluded. No product/
 EXEchange. Actual memory/code/full-product cost and GS/upper-register IRQ/
 global stack review plus three-platform publication required before adoption.
+
+## Shared nibble table adoption
+
+[P21 integration](../../history/M3-T32-rendering-performance-continuation.md#s8-p21-integrate-shared-nibble-table-with-bounded-interrupt-state)
+adopts shared512-byte pairs/portable copies and equivalent DOS lookup,+61/-20
+product lines. Bounded colored span saves/restores IF/GS;20160invocations,
+source/guard/register/ISA/local-CFG checks and fifteen tests each width+IO
+retest/actual Windows/DOSroutes pass. Core132/PPU identities unchanged;three
+EXEs refreshed. DOS EXE/loader/ordinary sampled resident+512bytes,no image
+allocation,370unchanged,DGROUP49264/2048stack unchanged. Counter137.665ms saves
+8.988ms,PPU59.677/mapping44.716ms. Actual gain is9ms,not prototype20ms. Global
+IRQ/NMI/memory-stack/reference/hardware and nominal60Hz/fivefold remain open.

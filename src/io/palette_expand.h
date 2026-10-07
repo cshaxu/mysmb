@@ -1,6 +1,8 @@
 #ifndef MYSMB_IO_PALETTE_EXPAND_H
 #define MYSMB_IO_PALETTE_EXPAND_H
 #include "io/palette_pairs.h"
+/* Pair bytes are ordered low nibble then high nibble on every host. */
+extern const mysmb_io_u8 MYSMB_IO_FAR mysmb_io_nibble_pairs[512];
 typedef int (*mysmb_io_nibble_expander)(const mysmb_io_u8 MYSMB_IO_FAR *,
     mysmb_io_u8 MYSMB_IO_FAR *,mysmb_io_u16);
 /* Lossless low/high nibble expansion,without interpreting a color palette. */

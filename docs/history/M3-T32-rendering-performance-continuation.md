@@ -2196,6 +2196,67 @@ physical486qualification remain unproved. Scope/expected/actual[],new0;
 historical1992/1992,local1991/1992nodes and4260/4261feasible controls
 (raw4342,infeasible81). Full M2 certificate remains incomplete.
 
+## S8 P21 integrate shared nibble table with bounded interrupt state
+
+Neutral IO owns512immutable pair bytes and the portable memcpy expansion;
+DOS source supplies only equivalent segment/index execution. Changes+61/-20
+product lines across IO implementation/header and DOS decoder;IO test+3.
+Core,PPU,PIT,IRQ handler and root sources stay unchanged. No image allocation,
+mode switch,toolchain/runtime/configuration change or product helper process.
+
+New colored lookup temporarily uses GS/upper index bits. Own keyboard IRQ
+source does not use GS;BIOS IRQ0 remains untouched. Instead of assuming
+firmware preserves temporary high bits,final colored span saves FLAGS,CLI,
+GS and restores GS/FLAGS before the common return. Validated count<=256means
+at most128table reads,64pair iterations plus a possible tail,no calls while
+masked. Source/destination/table are RAM. Incoming IF0or1is restored;PIT
+frequency and logical updates do not change. The zero path keeps its old
+behavior. This contains the new maskable-IRQ exposure;it does not prove NMI,
+all pre-existing upper-register,firmware or global-stack domains.
+
+Final object-bound10080data cases invoke the decoder twice,20160total,
+covering IF0/IF1,all256values at selected lengths,all even0..256counts for
+eight values,four alignments,source/guards/rejections and GS/DS/ES/BP/SP/SI/DI.
+Current ten-scene full/band output equals P18 with final lookup;important
+mixed/dense pairs retain about20ms savings including masking overhead,
+while small other-path variations are kept. Byte review verifies three
+GS/address-size loads,paired GS saves and bounded FLAGS/CLI path. Emitted
+0F A8/A9are counted as real stack operations;one local CFG balances,own
+maximum14bytes unchanged. Final512pair bytes are independently checked.
+
+161execution records remain unchanged,including132core and PPU. Differing
+objects are IO/DOS decoder plus unchanged-source DOS root/main compiled
+against the new neutral declaration. Final rendered objects match current
+compiler listings. Fifteen native tests pass each width;explicit latest
+IO-table retest also passes both widths after test addition. Actual Windows
+products pass startup,DPI144/client768x720,Terminal80x30clipping,two input/
+Tab-return cycles and Escape. Actual DOS448/384/370arenas pass restore,input,
+Tab,text/graphics,valid10035-byte save and exit with640x400captures,zero MCB
+damage/dropped observations. Final primitive probe exits24.70seconds.
+
+Three reviewed products307349/317966/330766bytes occupy existing authorized
+slots. DOS EXE/logical/rounded loader+512bytes. Minimum331584/rounded331936,
+maximum335680/rounded336032. Read-only table adds one far segment:197total,
+max32768;DGROUP49264/stack2048 and4096initial near reserve unchanged. Observed
+449152cached/385632fallback versus448640/385120,+512;370route378880unchanged.
+No image/cache heap added. Those controlled routes do not prove universal
+minimum,continuous/global peak or physical486qualification.
+
+Fresh counter401/phase368records have zero drops;every selected running
+update submits once and every graphical submission reads25bands. Counter
+graphics137.664665ms versus P18 146.652397 saves8.987732ms(6.128595%). Phase
+graphics151.914ms,PPU59.677versus68.645,mapping44.716,VGAincludingDAC18.062,
+game9.341,snapshot10.451ms. Text counter458.212/phase459.173ms is current
+route evidence,not a normalized comparison. Actual whole-product gain is
+about9ms,not the prototype mixed-stage20ms. Core/PPU identities and output
+tests justify this projection change,not an exhaustive ROM certificate.
+
+No remote;commit locally. Scope/expected/actual[],new0;historical1992/1992,
+local1991/1992nodes and4260/4261feasible controls(raw4342,infeasible81). S8/
+goal remain active.137.665ms still misses nominal60Hz/fivefold/global IRQ/
+NMI/memory-stack/reference/hardware qualification;PPU59.677 and mapping
+44.716ms remain dominant. Current lookup adoption does not close those gates.
+
 ## S8 P20 select shared nibble table with conditional GS lookup
 
 Contained neutral IO owns512immutable bytes:for each input0..255,the two

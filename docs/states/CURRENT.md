@@ -4,15 +4,15 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S8 P20; shared nibble lookup selected for integration; S8 remains active. |
+| Identifier Mode | Continuation: M3 T32 S8 P21; shared nibble lookup adopted and three products verified; S8 remains active. |
 | Admission And Approval | Owner-approved consecutive S5-S9 plan and automatic successor;S7 display-stage contract closed by P4;S8 sole active. |
 | Objective | Reduce current dominant rendering cost as one bounded cache/row-output chain while preserving ROM/PPU semantics and memory balance. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
-| Reference Baseline | Published S8 P18products and current phase/counter probes;original tools/2048stack/640x400/two platform components. |
+| Reference Baseline | Published S8 P21products and current phase/counter probes;original tools/2048stack/640x400/two platform components. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | Zero product lines;selected shared IO512-byte immutable nibble table and portable pair memcpy,DOS-only segment/ISA execution. GS setup occurs only for colored spans;USE16 mode retained and GS/DS/ES/BP/SI/DI restored. Decoder198code bytes,local own maximum14;no image allocation. Core/PPU unchanged. Actual integrated code/loader/resident/IRQ-upper-register/stack/routes/full-frame benefit and three EXEs required before adoption. |
+| Files And ABI Surface | Shared IO palette_expand.c/header plus DOS nibble_expand.c,estimate80-150product/20-60test lines.512immutable lookup bytes,portable pair memcpy;no image allocation. DOS colored spans save FLAGS/CLI/GS and restore them,at most128indexed table reads with no calls while masked. GS/high index state is private to that bounded interval;zero path unchanged. Core/PPU/PIT/IRQ handler source unchanged. Bind final objects and validate IF/register/source/guards/actual memory/stack/routes/frame costs before three-EXE publication. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
-| Verification | DOS10080primitive cases including all256values/even lengths/unaligned/source/guards/rejection/GS registers pass. Native512states/125829120bytes per width match. Ten DOS complete-stage pairs repeated;mixed/dense-priority saving about20.2ms,other near-zero costs explicitly retained. Same-O2 native8192frame pairs improve nonblank,zero absolute regression<=0.0022ms/frame;initial unfair library comparison excluded. One local CFG/GS opcode proof pass. Product/EXEs unchanged;global gates open. |
+| Verification | Final-object20160primitive invocations/10080data cases restore IF0/1 and GS/DS/ES/BP/SP/SI/DI;source/guards/rejection pass.161objects including132core/PPU unchanged;two IO/decoder source owners plus two header-dependent root objects differ. Fifteen native tests each width and expanded IO table retest/actual Windows/DOS448/384/370routes pass. Counter401/phase368records,zero drops,25reads per graphics submission. Current137.665ms diagnostic;three EXEs refreshed. Global IRQ/NMI/memory/stack/reference/hardware gates remain open. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
 | Asset Needs | Owner-local x.xx binary and ROM plus historical athros/NESticle0.2 source as conceptual reference only; copyright-only leaked tree grants no redistribution permission. Purpose frame/cache/transfer architecture comparison; raw source/probes only below ignored build, no copying/transliteration into product, exact-version claims require binary evidence. |
 | Reporting Requirements | Candidate and measured whole-step cost, rejected variants, actual code/memory delta, source/products and total/local node counts. |
@@ -25,6 +25,16 @@
 
 
 ## Current Technical Baseline
+
+- S8 P21 adopts shared512-byte nibble pairs/portable copies,DOS colored
+  lookup with bounded FLAGS/CLI/GS save-restore,+61/-20product lines. Final
+  20160IF/register invocations,source/guards/one local CFG/ISA proof,fifteen
+  tests each width+IO retest and actual Windows/DOSroutes pass.161objects/
+  core132/PPU unchanged;three EXEs307349/317966/330766bytes. DOS+512EXE/loader/
+  ordinary sampled resident,370unchanged,DGROUP49264/2048stack unchanged.
+  Counter137.665ms saves8.988ms,PPU59.677/mapping44.716ms. Global IRQ/NMI/
+  memory-stack/reference/hardware and nominal60Hz/fivefold remain open.
+  [Integrated lookup and bounded IRQ review](../history/M3-T32-rendering-performance-continuation.md#s8-p21-integrate-shared-nibble-table-with-bounded-interrupt-state).
 
 - S8 P20 selects shared512-byte nibble lookup;DOS GS/indexing only on colored
   spans,portable pair memcpy.10080DOS GS/other-register/guard/source cases and
