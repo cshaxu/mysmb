@@ -435,3 +435,20 @@ V4 moves that shoe above the left foot in both run1 and jump,using an upright
 half-block and diagonal bent leg over the scene background rather than a
 horizontal arrow or a second grounded shoe. This is a pending compact-art
 proposal,not a verified product repair;existing source/EXEs remain unchanged.
+
+P6 owner corrects the design method: colored masses carry the principal
+silhouette and pose;ordinary characters supply only landmarks/edge details.
+The review format is now four columns: original graphics,current 80x50,new
+80x50,new 80x25. Current output remains the unchanged native cell receipt;
+both new columns are pending hand-authored designs,not adopted products.
+Large stand/run1/jump have separate semantic mass grids:5x7cells for the new
+50-row art and5x4cells for25rows. Each cell is uniform or a two-color half
+block;one eye detail uses an otherwise uniform skin cell. No pixel sampler
+creates these grids. Color roles use the original source palette exactly in
+the preview,avoiding the standard16-color mapper's gray approximation to
+dark brown. This exposes a new acceptance clause:the neutral text palette
+and DOS/Win32 device bindings must support these colors consistently before
+adoption. The previews do not prove that current devices already support the
+proposed palette. Do not change global Terminal settings or call a hardcoded
+standard palette faithful. Both new art banks and palette binding require
+review;the retained 80x50 source and all products remain unchanged.
