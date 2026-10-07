@@ -1389,6 +1389,25 @@ Evidence below ignored build/m3-t34-s3:check-p27-application-stack-budget.py
 and p27-application-stack-budget.json bind the current product SHA, MAP-derived
 2048-byte stack, P23 foreground contribution and P26 IRQ9 contribution.
 
+### S3 P28 Current Host Presentation Remeasurement
+
+Run the current x86 and x64 presentation executable after the on-demand
+snapshot delivery. Both variants pass2048 exact pixel/reference comparisons,
+cache lifetime and priority guards, and1198 native-route frames including
+text/graphics workspace alias checks. Dense cached graphics measure339.524us
+per host frame on x86 and282.393us on x64;the current VGA scale stage measures
+106.560us and98.791us respectively. The retained in-probe snapshot exercise
+measures4.322us/4.168us per host frame, but production no longer captures a
+snapshot every frame.
+
+These measurements describe the current Windows-host harness only. They do
+not establish a before/after DOS comparison, 486SX cadence, physical VGA/LCD
+behavior or an equal-budget reference result. Product source and EXEs are
+unchanged;all four original gates remain open and ROM credit is zero.
+
+Evidence below ignored build/m3-t34-s3:p28-presentation-x86.log and
+p28-presentation-x64.log.
+
 ### S3 P24 Current Startup And Exit Dispatcher Binding
 
 Audit only. Current loaded bytes confirm the two unused argument/environment

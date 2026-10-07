@@ -30,6 +30,12 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P28 reruns the current x86/x64 presentation probe: 2048 pixel-equal
+  cases, cache-lifetime/priority guards and 1198 native routes pass on both.
+  Current cached graphics are 339.524us (x86) and 282.393us (x64) per dense
+  host frame; host timing is descriptive only, not a DOS or 486 claim. No
+  product change. [Current presentation receipt](../history/M3-T34-native-vga-performance-proposal.md#s3-p28-current-host-presentation-remeasurement).
+
 - T34 S3 P27 combines only current application-owned stack evidence: 734-byte
   foreground path plus the 78-byte IRQ9 path is 812 bytes of the configured
   2048-byte DOS stack, leaving 1236 bytes unallocated by this accounting.
