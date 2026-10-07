@@ -30,6 +30,13 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P21rebinds all168current project objects:161retained,seven refreshed
+  (including file services). Census908functions/32indirect sites;787entry-
+  reachable functions have balanced own-stack paths. Source-only contributions
+  main708/root_step692bytes exclude runtime/startup/service/interrupt depths;
+  no global stack certification. Product unchanged;four original gates open.
+  [Current call model](../history/M3-T34-native-vga-performance-proposal.md#s3-p21-current-project-wide-stack-evidence-rebinding).
+
 - T34 S3 P20binds final DOS SHA to384/448/500KiBarena launch,P/O,Tab and exit
   receipts;observed maxima373856/437408/498880bytes. Current requested heap
   upper bound159212bytes excludes loader/CRT/fragmentation/external services;

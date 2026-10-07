@@ -1313,3 +1313,34 @@ Evidence below ignored build/m3-t34-s3:Run-p20-final384/448.ps1,their separate
 run directories,verify-p20-final.py and p20-final-memory.json. The verifier
 also checks current product/config hashes and retained final500output. All
 four original gates remain open;ROM node/control credit0.
+
+### S3 P21 Current Project-Wide Stack Evidence Rebinding
+
+Audit only;no product change. Compare code/data/fixup records of all168current
+production source objects to retained compiler listings. Beyond the P16six
+units,io/file/snapshot_files.c also differs from P6;compile and bind that
+single unit with original flags. Reuse161unchanged units and replace seven
+changed listings. The differing file service uses the already delivered
+bounded log formatter;this is an evidence update,not another code repair.
+
+The current merged census contains908functions and32indirect call sites.
+Current constructor bindings reconcile every site,including the file-storage
+replacement callback whose operand/call offset remains unchanged. Entry
+reachability includes787functions,all with resolved balanced own paths. The
+retained legacy planar internal-return limitation is outside this reachable
+set. Retained core cycle guards are reused only after their production object
+records match;no new recursion assumption is introduced.
+
+Project-source contributions alone are708bytes from main and692from root_step.
+The maximal chain is main/root_step/snapshot_request/snapshot_save/
+replace_file/path. These sums exclude CRT callee depths,retained startup,
+DOS/BIOS service bodies,IRQ/NMI overlays and firmware;they are not a complete
+2048-byte-stack certification. Older runtime-inclusive sums are not rebound
+implicitly. No current-source unclassified local path was found;external
+integration obligations remain explicit.
+
+Evidence below ignored build/m3-t34-s3:Build-P21File.ps1,
+prepare-p21-listings.py,merge-p21-stack.py,stack-p21listings and
+stack-current/bindings.json,local-cfg.json,callback-bindings.json,
+guarded-chain.json,merge-receipt.json. All four original gates remain open;
+ROM node/control credit0.
