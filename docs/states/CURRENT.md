@@ -30,6 +30,13 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P36 confirms the equal-budget NESticle gate remains unavailable to
+  this task: no owner-local x.xx reference executable is currently accessible,
+  while retained observations use mismatched resolution/frameskip and an
+  older MySMB product. Historical 0.2 source is conceptual only. The gate
+  needs the owner binary plus an explicit equal route/accounting matrix;
+  no performance conclusion follows. [Reference disposition](../history/M3-T34-native-vga-performance-proposal.md#s3-p36-equal-budget-reference-availability-disposition).
+
 - T34 S3 P35 rebinds the P20 project-owned allocation surface to P31: the
   only production source change since P20 is the PPU read-path edit, with no
   allocator or file-service owner change. The 159212B application-request

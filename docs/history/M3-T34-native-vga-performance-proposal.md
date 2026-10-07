@@ -1574,6 +1574,29 @@ memory gate. Product source/artifacts are unchanged;ROM credit remains zero.
 Evidence below ignored build/m3-t34-s3:p20-final-memory.json,
 run-p20-current384,run-p20-current448 and run-p20-current500.
 
+### S3 P36 Equal-Budget Reference Availability Disposition
+
+Review the retained NESticle comparison contract against the current task
+environment. The owner-local x.xx reference executable required by that
+contract is not currently accessible. The retained result cannot be promoted:
+it used a stale MySMB product and differs in resolution/frameskip, while the
+historical public0.2 source is copyright-only conceptual material and cannot
+prove x.xx binary behavior. No executable, source or installed setting is
+changed by this review.
+
+The equal-budget gate therefore remains explicitly unproved. Reopening it
+requires the owner-local reference binary and a fixed matrix which binds both
+products' hashes, same guest CPU budget, resolution, frameskip, sound/input
+route, actual game-update count and actual submitted-display-frame count
+across title, ordinary scrolling, dense sprites, death and area transition
+routes. Until that material exists, old fivefold observations are historical
+context only and cannot be compared to current P31 performance.
+
+Product source/artifacts and ROM-node/control accounting are unchanged. The
+other global memory, stack/IRQ/NMI and physical486SX/VGA/LCD gates also remain
+open. Evidence is the retained comparison contract and current task artifact
+inventory;no local paths or third-party bytes are tracked.
+
 ### S3 P24 Current Startup And Exit Dispatcher Binding
 
 Audit only. Current loaded bytes confirm the two unused argument/environment
