@@ -418,3 +418,14 @@ relative area,not merely recognizable poses. V2 removes the invented yellow;
 shape,16-color approximation and overall likeness remain pending review.
 Existing 80x50 and products remain untouched. The original draft stays as
 superseded local visual evidence,not an accepted design.
+
+P4 owner review rejects compact run1's narrow leg spread and jump's missing
+raised fist/separate feet. V3 redraws run1 with left/right feet separated by
+a scene-background cell; jump has an explicit skin-colored lower-half-block
+fist in the upper-right cell,raised arm and separately bent feet. Colors
+remain source-palette-derived. The preview renderer now draws CP437 half/full
+blocks as exact cell rectangles rather than font-dependent symbol outlines;
+the middle column still consumes the unchanged 80x50 cell buffer.
+Pose review must compare limb landmarks,direction,spacing and negative space,
+not just the action label. V3 is pending owner review;no product adoption,
+ROM-node promotion or 80x50 source change occurs.
