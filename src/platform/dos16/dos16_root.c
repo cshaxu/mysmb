@@ -105,6 +105,7 @@ static void present_current(struct mysmb_dos16_root *root)
 #ifdef MYSMB_DOS16_TARGET
     mysmb_u8 __near *near_cache;
     mysmb_u8 __far *decoded;
+    mysmb_u8 __far *background;
     struct mysmb_io_palette_pairs __near *pairs;
 #endif
     if(root->text_mode) {
@@ -119,6 +120,9 @@ static void present_current(struct mysmb_dos16_root *root)
      * optional buffer must never displace required product storage. */
     if(!root->ppu_cache_attempted) {
         root->ppu_cache_attempted=1U;
+        /* Preserve the compact background tier before spending memory on CHR.
+         * The shared compositor supports packed backgrounds with raw CHR. */
+        background=(mysmb_u8 __far *)_fmalloc(MYSMB_PPU_BACKGROUND_BYTES);
         /* Reuse the primary-block reserve before requesting another DOS block.
          * Preserve allocation provenance for the matching shutdown operation. */
         near_cache=(mysmb_u8 __near *)_nmalloc(MYSMB_PPU_CHR_DECODED_BYTES);
@@ -127,7 +131,7 @@ static void present_current(struct mysmb_dos16_root *root)
             (mysmb_u8 __far *)_fmalloc(MYSMB_PPU_CHR_DECODED_BYTES);
         mysmb_ppu_frame_workspace_bind(&root->ppu_workspace,decoded);
         mysmb_ppu_frame_background_bind(&root->ppu_workspace,
-            (mysmb_u8 __far *)_fmalloc(MYSMB_PPU_BACKGROUND_BYTES),
+            background,
             MYSMB_PPU_BACKGROUND_BYTES);
         /* One additional optional plane:failure retains packed storage.
          * Mandatory text/snapshot/device allocations have already succeeded. */

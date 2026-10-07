@@ -2,12 +2,13 @@
 #include <stdio.h>
 #include <string.h>
 static struct mysmb_ppu_state state,before;
-static struct mysmb_ppu_frame reference,packed,bytes;
-static struct mysmb_ppu_frame_workspace pw,bw;
+static struct mysmb_ppu_frame reference,packed,bytes,raw_packed;
+static struct mysmb_ppu_frame_workspace pw,bw,rw;
 static unsigned char chr[8192],decode[8192],decode2[8192];
 static unsigned char first[MYSMB_PPU_BACKGROUND_BYTES+2];
 static unsigned char second[MYSMB_PPU_BACKGROUND_SECOND_BYTES+2];
 static unsigned char packed_store[MYSMB_PPU_BACKGROUND_BYTES];
+static unsigned char raw_store[MYSMB_PPU_BACKGROUND_BYTES];
 static unsigned char rows[4096],palette[32];
 static unsigned long seed=1UL;
 static unsigned char random_byte(void)
@@ -22,6 +23,8 @@ int main(void)
     mysmb_ppu_frame_workspace_bind(&pw,decode);
     mysmb_ppu_frame_workspace_bind(&bw,decode2);
     mysmb_ppu_frame_background_bind(&pw,packed_store,sizeof(packed_store));
+    mysmb_ppu_frame_workspace_bind(&rw,0);
+    mysmb_ppu_frame_background_bind(&rw,raw_store,sizeof(raw_store));
     mysmb_ppu_frame_background_byte_bind(&bw,first+1,MYSMB_PPU_BACKGROUND_BYTES,
         second+1,MYSMB_PPU_BACKGROUND_SECOND_BYTES);
     CHECK(bw.bg_second==second+1);
@@ -42,8 +45,10 @@ int main(void)
         mysmb_ppu_frame_build(&state,&reference);
         mysmb_ppu_frame_build_cached(&state,&packed,&pw);
         mysmb_ppu_frame_build_cached(&state,&bytes,&bw);
+        mysmb_ppu_frame_build_cached(&state,&raw_packed,&rw);
         CHECK(!memcmp(reference.pixels,packed.pixels,sizeof(reference.pixels)));
         CHECK(!memcmp(reference.pixels,bytes.pixels,sizeof(reference.pixels)));
+        CHECK(!memcmp(reference.pixels,raw_packed.pixels,sizeof(reference.pixels)));
         mysmb_ppu_frame_palette(&state,palette);
         mysmb_ppu_frame_begin(&state,&bw,&view);
         for(y=0U;y<240U;y+=16U){

@@ -888,3 +888,143 @@ is established by these runs. No code/EXE refresh,ROM credit or whole-ROM
 certificate. Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes
 and4260/4261feasible controls(raw4342,infeasible81)unchanged. Raw fixtures,
 captures and scripts stay ignored;four fixed gate families remain open.
+
+### S3 P14 Cache Inventory, Priority And Controlled Costs
+
+Owner requests all large caches/workspaces and marginal costs,automatic
+lower-memory cache tiers,and synchronous on-demand P saving. This part first
+delivers DOS packed-background priority and its measurements. On-demand
+snapshot/streaming work remains explicitly unfinished below;do not describe
+the current products as having removed per-frame capture.
+
+Only DOS composition allocation order changes:request the63488-byte packed
+background before the8192-byte optional CHR buffer;retain second-allocation
+failure as packed output. No game/PPU writer,codec or input decision changes.
+The previous448KiB route spent its optional capacity on CHR and lacked a
+background cache. Current448KiB retains packed background without decoded CHR.
+This is a reviewed fallback-priority repair,not a new game behavior.
+
+Original /AL sizeof metadata identifies every current DOS cache/work block
+above4096bytes. Static members and combined allocations are distinguished:
+
+| DOS block | Bytes | Purpose / residency |
+| --- | --- | --- |
+| Decoded CHR | 8192 | Optional derived tile indices;near or far,never both. |
+| First background allocation | 63488 | Optional2048-byte nametable snapshot plus two30720-byte packed surfaces;byte mode reuses its61440image bytes as one surface. |
+| Second background allocation | 61440 | Optional second256x240byte surface;adds60KiB over packed mode,total124928background bytes. |
+| Recent-running snapshot cache | 10020 | Static root member,10015snapshot bytes plus management. |
+| Snapshot spare | 10015 | Static root member,alternates capture/publication with the cache. |
+| Snapshot file transaction store | 20084 | Far allocation:10036wire bytes,10015staging and file-service/padding bytes. Do not add its children again. |
+| Exclusive text/row store | 15532 | Far allocation:12132text-frame plus3400scene workspace;4096graphics row bytes borrow this allocation. |
+| Text decision observer | 5253 | Static game member:two2626-byte producer/visible receipts plus enable byte. |
+
+The last five rows total60904bytes,mostly snapshot/text functionality rather
+than optional pixel acceleration. Static cache/spare/observer bytes already
+belong to the primary block and must not be added to the total again. The old
+full61440-byte DOS pixel frame and scaled/planar scratch are not additional
+current allocations. Immutable ROM resources and code are not caches.
+
+Windows additionally owns a61440-byte indexed frame,245760-byte DWORD frame,
+two16000-byte CHAR_INFOarrays,11760PCM sample bytes across eight buffers,
+and a12132-byte neutral text frame. Its VT allocation requests386048bytes
+and borrowed shell-title allocation131072bytes. These Windows-only buffers,
+their structure overhead and OS allocations do not consume DOS conventional
+memory. Shared background/snapshot/observer blocks retain their own owners.
+
+Seven contained original-tool cohorts use current source/libraries,one fixed
+controller route,64steps with three warm-up samples omitted,and unchanged
+stock DOSBox settings. Six cache combinations plus copy-publication control
+complete61samples,one update/submission and15row reads per sample. Each ends
+at frame7527with snapshotCRC1900518261;all actual allocation flags match the
+intended combinations. Current raw-CHR/packed pixels additionally match the
+canonical compositor across512generated states on both Windows widths.
+
+| Optional cache combination | Payload KiB | Median step ms | Mean step ms | Median PPU ms |
+| --- | --- | --- | --- | --- |
+| None | 0 | 557.285 | 561.041 | 527.003 |
+| CHR only | 8 | 272.830 | 275.571 | 242.544 |
+| Packed background only | 62 | 85.614 | 88.999 | 55.330 |
+| Packed background plus CHR | 70 | 85.999 | 89.347 | 55.722 |
+| Byte background only | 122 | 65.801 | 67.021 | 35.480 |
+| Byte background plus CHR | 130 | 66.196 | 67.406 | 35.871 |
+
+Marginal median costs are conditional,not additive:CHR alone saves284.455ms
+relative to no cache;packed-only saves471.671ms relative to no cache. Adding
+CHR after packed/byte background shows no benefit on this route(0.386/0.396ms
+slower),not proof that CHR is useless in every scene. Extra60KiB saves19.813ms
+without CHR or19.803ms with it. Earlier86.002/66.182figures were61-sample
+medians,not arithmetic means. Neither table qualifies physical486SX FPS or
+an equal-budget NESticle ratio.
+
+Copy-publication control retains the same130KiB pixel caches and existing
+snapshot buffers:median step67.846ms versus66.196no-copy;median snapshot stage
+10.443versus8.771ms. The publication optimization saves about1.672ms in that
+stage with no additional buffer. Per-frame capture itself still costs8.771ms;
+the owner's on-demand instruction targets that larger remaining expense.
+Snapshot/text functional blocks have no separately established acceleration
+delta;do not fabricate per-block milliseconds for them.
+
+First no-background runs hit the28-second probe deadline and were rejected;
+only probe deadlines were extended for the repeat,not emulator settings or
+the64-step workload. DOS shell IF redirection creates an empty fail marker
+even when the condition is false;reject nonempty failure content,not mere
+file existence. Original compiler drivers stalled with long TMP paths;only
+the six verified owned processes were stopped,and short distinct ignored-build
+TMP paths allowed all cohort builds to complete. No product workaround or
+runtime replacement follows from those harness issues.
+
+Current product DOS323993bytes,SHA
+76842453b6742e40c316ff28baf3eeb66abbad56e22cace9ca4f104f81419c59;
+x86331278bytes,SHA
+1f2edd1999a3cadfc3fbe96bf49ffb9beae99cc3450d2a065ac828084f55e981;
+x64347150bytes,SHA
+aa1a89ac8665b4cb28b9d4c1621b22fb99f3861484c3c3fe9a556bf749fc6044.
+Both Windows widths pass23focused checks. Original DOS compile/link/memory
+passes:D GROUP51472,stack2048,logical loader347264..351360,page-rounded
+347360..351456bytes. Actual current448/544KiB routes pass startup,P/O,Tab,
+save CRC and exit;observed owned peaks456384/526080bytes. The higher sample
+is32bytes above the preceding product because reordered allocations have an
+extra far segment/header;no global peak inference. Prior product-wide stack
+and runtime receipts keep their dependency/hash limits,not an automatic
+global bound for this changed DOS root.
+
+Qualification helper correction removes stale Arrow/Z/X/F1instructions and
+the false no-derived-resource claim,uses current controls/native presentation
+and enforces ignored-build output containment. Generated current EXE copy is
+byte-identical;outside-build output is rejected before creation. Similar-issue
+sweep finds the older historical M4protocol with legacy instructions;retain
+it as historical and stop routing current packages to it. No authority or
+installed setting is changed by a package preparation.
+
+Tracked diff:5added/1removed DOS lines,7added/2removed focused-test lines,
+17added/4removed helper lines,plus neutral governance. Three local EXEs are
+refreshed,never staged. Scope/expected/actual[],new0;historical1992/1992,
+local1991/1992nodes and4260/4261controls(raw4342,infeasible81)unchanged. Four
+fixed gate families and the newly directed snapshot work remain open.
+
+#### Owner-Directed On-Demand Snapshot Continuation
+
+Next bounded corrective segment in this same active S:normal play must not
+capture/publish a snapshot every tick. P may synchronously capture,validate,
+write the pending file in pieces,close and replace before resuming. Rebase
+host timing so synchronous I/O does not become catch-up gameplay;preserve
+held input and pending exit. Keep existing paused-P last-running semantics
+with an entry-boundary capture rather than continuous capture. All original
+game/PPU decisions remain unchanged and shared across targets.
+
+Eliminate the full-file wire allocation through shared IO streaming while
+retaining complete validation before any loaded game state is committed.
+Reuse existing transaction staging and remove redundant independent snapshot
+storage where the audited lifetimes permit. Expected request reduction is
+about20KiB under preserved paused-save semantics,not an established DOS MCB
+reduction. Source roles:io codec/store,app snapshot marshalling,host roots and
+clock adapters;no original core/PPU writer changes. Estimate150-250product
+lines plus focused transaction/paused-boundary/clock tests;measure actual diff.
+
+After reduced base memory changes allocation thresholds,recheck the owner's
+policy that four-hundred-KiB budgets stay on packed/lower cache tiers even if
+the byte allocation could fit;keep required P/O storage ahead of optional
+caches. Capture failure,short I/O,bad/trailing/legacy files,resource mismatch,
+paused P and load/exit must preserve their declared transaction contracts.
+Build/test/publish all three products on code change,then remeasure normal
+and P-request steps separately. This plan is not completed implementation.

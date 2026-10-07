@@ -8,11 +8,11 @@
 | --- | --- |
 | Identifier Mode | Continuation; S1/S2 engineering deliveries closed; S3 combined acceptance active under owner instruction to execute T34 through closure. |
 | Admission And Approval | Owner reports delivered text successful and explicitly requests T closure and next queue admission; queue-head native VGA/performance package admitted. |
-| Objective | Bind current products to combined Windows/DOS runtime,input,snapshot and bounded-memory acceptance;reconcile remaining reference/global/physical clauses honestly. |
+| Objective | Bind current products to combined Windows/DOS runtime,input,snapshot and bounded-memory acceptance;implement owner-directed cache tiers and synchronous on-demand P saving,then reconcile remaining reference/global/physical clauses honestly. |
 | Non-goals | No game/PPU decision changes,DOS4GW,new driver,helper process,frameskip,emulator settings changes,text redesign or whole-ROM certification. |
 | Reference Baseline | S2 source/delivery bound in proposal; local products DOS323945B,x86331278B,x64347150B. Current DGROUP51472B/stack2048B; hashes and loader bound in proposal. Reprofile current source; retained T32 costs are historical. |
 | Candidate Proposal | [Admitted T34 plan and S1 baseline](../history/M3-T34-native-vga-performance-proposal.md#t34-s3-p1-combined-acceptance-admission). |
-| Files And ABI Surface | Frozen S2 products and host/PPU/snapshot dependencies;Scoped S3 amendment:preserve DOS pending exit during after-load reset,2-4product lines plus focused keyboard/root regression. Rebuild/test/publish all three EXEs and repeat failed fresh route. Other verification stays frozen. |
+| Files And ABI Surface | Frozen S2 products and host/PPU/snapshot dependencies;Scoped S3 amendment:preserve DOS pending exit during after-load reset,2-4product lines plus focused keyboard/root regression. S3 P14implements the owner's adaptive cache instruction by prioritizing packed background before decoded CHR in DOS optional allocation,about10product lines plus focused raw-CHR/packed pixel coverage;rebuild/test/publish all three EXEs and repeat memory tiers. It also corrects the existing qualification helper's obsolete controls/provenance and ignored-build containment. No core/PPU writer/ABI change;other verification stays frozen. |
 | Applicable Rules | Execution,Documentation,Architecture,Coding,source policy;System Architecture and Source Layout. |
 | Verification | Exact61440source-to-VRAM pixels/palette/edges,HUD split/scroll/priority,cache/fallback,mode restoration and Tab;actual DOS input/transition routes,Windows regression,original16-bit compiler/link/segment/stack/loader and before/after stage costs;three local products on code change. |
 | Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0;historical1992/1992,local1991/1992nodes,4260/4261feasible controls unchanged(raw4342,infeasible81). |
@@ -106,6 +106,12 @@ explicitly in TODO rather than asserted complete.
   High sample splits351728primary+160environment+174160auxiliary;low includes
   transient expansion. These are route observations,not global bounds or
   repeated512/448KiB proofs. [Endpoints](../history/M3-T34-native-vga-performance-proposal.md#s3-p13-current-product-memory-arena-endpoints).
+- T34 S3 P14prioritizes packed background before CHR:448KiB now retains packed
+  output;current448/544routes observe456384/526080bytes and pass P/O/Tab/exit.
+  Both widths23checks and512raw-CHR/packed pixel states pass;three local EXEs
+  refreshed,DOS323993bytes. Six-cache costs and all large buffers are recorded;
+  per-frame snapshot capture still costs8.771diagnostic ms and remains in code.
+  [Delivery and next snapshot segment](../history/M3-T34-native-vga-performance-proposal.md#s3-p14-cache-inventory-priority-and-controlled-costs).
 
 - T33 S2 P12delivers default80x25on all three products;50-row code/art and
   interfaces remain. Shared semantic compact art/palette/layout owns output;
