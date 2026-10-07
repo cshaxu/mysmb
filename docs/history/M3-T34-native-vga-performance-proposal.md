@@ -1753,13 +1753,25 @@ global-DOS-memory or physical-performance claim. Generated route receipts stay
 below ignored build/m3-t34-s3; ROM node/control credit is zero.
 
 The current source-order receipt records B at the first optional allocation,
-A immediately after it, and C behind the `bg && decoded` guard. The new LINK
-3.65 product completes the unchanged 384KiB FIT route, including load, input,
-text/graphics switch, P/O and exit; its observed owned peak is393216bytes.
-The current 448/500KiB FIT reruns remain pending because this restricted
-session cannot read the owner's DOSBox configuration file. They must be run
-under that unchanged configuration; a private configuration may not substitute
-for those stock-route receipts.
+A immediately after it, and C behind the `bg && decoded` guard. An
+allocation-only diagnostic assembled from the current OpenNT objects and the
+current root ran through the unchanged owner DOSBox configuration at384KiB.
+Its FIT result is `execError0 result0` and its root-owned receipt is
+`decoded=1,packed=0,byteCache=0`: B was unavailable, then A was retained,
+and C was not requested. This is the first actual fallback observation, not
+an inference from the source order.
+
+The same diagnostic can retain `decoded=1,packed=1,byteCache=1` when launched
+without the FIT memory arena; that private-configuration feasibility run does
+not qualify as a stock memory receipt. Under the unchanged owner configuration,
+the 416/448KiB FIT routes have not written FIT's post-exec result. The prior
+500KiB child did return `execError0 result0`, but that first diagnostic opened
+its report file only after cache allocation and thus could not report retained
+tiers. These routes therefore establish neither B-only nor A+B nor A+B+C
+behavior. The configuration hash remained
+`0494236F2308E2E615F428D04E6470DB4B0D162C95B51F4E276F1B7E73241917`; the
+unresolved route must be diagnosed before P39 can close. A private
+configuration may not substitute for those stock-route receipts.
 
 The owner-installed OpenNT `link16.exe` is currently rejected by the Windows
 loader before link input is processed. P39 may therefore run one ignored-tree

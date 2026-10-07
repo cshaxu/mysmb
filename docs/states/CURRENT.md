@@ -37,6 +37,13 @@ explicitly in TODO rather than asserted complete.
   Thus B failure falls back to A alone when possible; A failure after B
   retains B alone; C failure retains A+B. Three products require rebuilding
   and the memory-route matrix must prove that no fallback skips this order.
+  Its actual unchanged-configuration 384KiB FIT receipt now records
+  `decoded=1,packed=0,byteCache=0`: B was unavailable and A was retained.
+  An allocation-only current-object probe can retain all three tiers with
+  unrestricted conventional memory. The 416/448KiB FIT routes have not
+  emitted a post-exec result; the prior 500KiB child did return, but its old
+  probe opened its report file too late to observe tiers. All three remain
+  unresolved rather than evidence for any intermediate tier.
   Because the owner-installed fixed-base OpenNT `link16.exe` is presently
   rejected by the Windows loader before it can link, P39 may perform a
   build-only, ignored-directory feasibility probe with a local historical
