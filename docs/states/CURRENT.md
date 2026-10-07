@@ -57,6 +57,12 @@ explicitly in TODO rather than asserted complete.
   partial bounds,not the full2048-byte stack proof. Thirteen indirect sites,
   whole foreground/core/runtime chains and firmware/NMI remain explicit.
   No product change,[receipt](../history/M3-T34-native-vga-performance-proposal.md#s3-p4-current-compiler-stack-listings-and-interrupt-boundary).
+- T34 S3 P5binds the13reported indirect sites plus their file-replacement
+  callee's existing callback. Fourteen sites reviewed,two current-production
+  inactive;all active targets have local receipts. Eleven source units match
+  current objects,97local paths balance. Known-component674/598/650-byte
+  contributions omit external depths and do not certify global stack.
+  [Binding](../history/M3-T34-native-vga-performance-proposal.md#s3-p5-constructor-bound-indirect-calls).
 
 - T33 S2 P12delivers default80x25on all three products;50-row code/art and
   interfaces remain. Shared semantic compact art/palette/layout owns output;

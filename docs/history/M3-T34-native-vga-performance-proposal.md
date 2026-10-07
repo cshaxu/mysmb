@@ -538,3 +538,45 @@ remaining core/runtime calls still belong to global reconciliation. The85/85
 local balance count is deliberately not an all-path whole-program result.
 Four original gates remain unproved;S3/T34/goal stay active. New ROM credit0;
 historical1992/1992,local1991/1992nodes and4260/4261feasible controls unchanged.
+
+### S3 P5 Constructor-Bound Indirect Calls
+
+Read-only verification. Original /AL offset metadata matches every previously
+reported13indirect instruction's field offset. Current DOS constructor binds
+11active sites;two generic interface branches are not used by production.
+Following file replacement reaches one further existing indirect call,so the
+review covers14sites in the known-component call chain. This is a callee-chain
+expansion,not a new source-universe/candidate round or original-ROM edge count.
+
+| Caller field / byte offset | Current target / disposition |
+| --- | --- |
+| workspace.nibble_expand /40 | DOS nibble expander;active packed fallback. |
+| workspace.expand /32 | Portable palette expansion;canonical non-slot interface,not current DOS slot path. |
+| source.read_rows /4 | DOS root read_rows. |
+| root.present_palette_rows /30240 | Main native-band presenter. |
+| root.set_mode /30224(two sites) | Main set_mode wrapper. |
+| root.present_text /30228 | Main present_text wrapper. |
+| root.present_rows /30236 | Palette-source bridge in root. |
+| hooks.present_video /9986 | Explicit null;full-frame interface branch not current production. |
+| store.files.log /28 | Shared file-service log_file. |
+| root.reset_output /30208 | Main reset_output wrapper. |
+| hooks.read_input /9982 | Main physical-input wrapper. |
+| hooks.submit_audio /9990 | Main audio capability wrapper. |
+| file_storage.replace /260 | DOS remove/rename replacement adapter. |
+
+All active targets now have local listing receipts. Expanded11unit compilation
+matches current code/data/fixups;97local functions have balanced own paths.
+Shared file replacement owns540bytes because it stages two260-byte paths;
+its downstream runtime calls remain part of global analysis. Constructors,
+slot-row selection,null guards and snapshot binding determine applicability;
+loaded snapshots do not serialize/replace these host callback tables.
+This binding claim applies to the current composition,not arbitrary API users.
+
+Known-component call contributions model674bytes for initialization,
+598for presentation and650for root_step's reviewed subgraph. These are partial
+models with missing external callee depths explicitly listed;they are neither
+lower bounds on all-input behavior nor complete upper bounds. Text/core,
+codec/stdio/runtime and firmware overlay still require full reconciliation.
+No2048-byte safety conclusion follows from these figures. No product code,
+EXE,game/PPU writer or equivalence disposition changes. Four original gates
+remain open;new ROM credit0 and historical/local totals unchanged.
