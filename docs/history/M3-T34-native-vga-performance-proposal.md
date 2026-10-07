@@ -1345,6 +1345,29 @@ stack-current/bindings.json,local-cfg.json,callback-bindings.json,
 guarded-chain.json,merge-receipt.json. All four original gates remain open;
 ROM node/control credit0.
 
+### S3 P26 Current Keyboard IRQ9 Application Contribution
+
+Audit only. The current keyboard installation replaces IRQ9 while its device
+is open and restores the saved vector before normal return. Its interrupt
+handler reads the scan byte, updates the bounded project keyboard state, sends
+a direct PIC EOI and never chains the saved BIOS keyboard handler. Current
+compiler listings give the longest branch as keyboard_interrupt,
+keyboard_scan and io_control_toggle: 72 bytes including the C/CRT leaf calls,
+plus the six-byte hardware FLAGS/CS/IP entry frame, for a 78-byte known
+application-side IRQ9 contribution.
+
+The handler has no allocation, stdio, game tick, PPU or file-callback path.
+The current input reader disables interrupts only while copying or clearing
+the small keyboard state; it does not assert NMI or establish an arbitrary
+firmware nesting policy. This receipt closes the previously unbound project
+keyboard contribution, not the global interrupt-stack gate.
+
+Evidence below ignored build/m3-t34-s3:check-p26-keyboard-irq.py and
+p26-keyboard-irq.json bind the current product hash, handler CFG, direct EOI
+and no-BIOS-chain condition. NMI/firmware, other DOS/BIOS interrupt services
+and interrupt-nesting policy remain external. Product source/EXEs unchanged;
+ROM credit0;all four original gates remain open.
+
 ### S3 P24 Current Startup And Exit Dispatcher Binding
 
 Audit only. Current loaded bytes confirm the two unused argument/environment

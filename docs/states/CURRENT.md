@@ -30,6 +30,13 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P26 binds the current IRQ9 keyboard path: its longest local branch is
+  72 bytes, plus the six-byte hardware FLAGS/CS/IP entry frame, for a known
+  78-byte application-side contribution. It directly acknowledges the PIC and
+  never chains BIOS keyboard code. NMI, firmware and other service nesting
+  remain outside this contribution; no global-stack closure or product change.
+  [IRQ9 receipt](../history/M3-T34-native-vga-performance-proposal.md#s3-p26-current-keyboard-irq9-application-contribution).
+
 - T34 S3 P25resolves normal flushall under current FILE ownership:untouched
   standard streams take no-output paths,private files clear active flags on
   close including errors. Conditional own+nested contribution26bytes,no write
