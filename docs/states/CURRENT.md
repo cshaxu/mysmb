@@ -30,6 +30,13 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P19measures a forced full background rebuild stress route:with8KiB
+  CHR1312.501ms/step versus1614.275without,saving301.774diagnostic ms.
+  Each of13samples rebuilds1920tiles;paired final state CRC agrees. Rejected
+  truncated long windows remain explicit. This is stress cost,not normal FPS;
+  CHR cannot be treated as redundant from warm-only results. No product/policy
+  change or gate closure. [Stress receipt](../history/M3-T34-native-vga-performance-proposal.md#s3-p19-forced-background-rebuild-chr-stress-comparison).
+
 - T34 S3 P18adds paired packed/packed-without-CHR diagnostic runs from AREA
   and EXIT checkpoints. Each61-step pair has equal final state CRC;8KiBCHR
   shows no benefit here(0.344/0.736ms slower medians). Warm windows rebuild

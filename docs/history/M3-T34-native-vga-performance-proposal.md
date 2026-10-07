@@ -1247,3 +1247,37 @@ contract;do not infer an all-scenes CHR-removal decision from these timings.
 Evidence and generator/analyzer stay below ignored build/m3-t34-s3/scene-cache
 and build/m3-t34-s3. The8KiBcache remains unchanged pending owner strategy and
 the named cold/rebuild coverage gap. No new ROM credit or gate closure.
+
+### S3 P19 Forced Background Rebuild CHR Stress Comparison
+
+Test-only diagnostic,not normal gameplay cadence. Current source review
+identifies decoded CHR consumers in background rebuilding,uncached background
+rows,sprite pixel extraction and uncached background-opacity checks. Cached
+background opacity instead reads the retained slot surfaces. Thus warm
+background timings cannot alone justify removing decoded CHR.
+
+Paired original-tool probes retain AREA input/state and packed background;
+the probe clears only derived bg_valid before each timed step. Both rebuild
+1920tiles per step. The initial64-step windows reached the55000ms script quit
+without complete exit/final records;reject them. Rebuilt16-step probes use
+separate output directories,retain13samples after warmup and complete normally.
+Configuration hash is unchanged;no CPU/core/resolution adjustment.
+
+| Variant | Median step ms | Mean step ms | Median PPU ms | Measured rebuilt tiles |
+| --- | --- | --- | --- | --- |
+| Packed plus8KiB CHR | 1312.501 | 1312.555 | 1291.440 | 24960 |
+| Packed without CHR | 1614.275 | 1614.324 | 1593.210 | 24960 |
+
+The additional8KiB saves301.774diagnostic ms per forced full rebuild. Both
+finish frame949with payload CRC3147582427. These finite state receipts do not
+independently prove pixel equality,all sprite densities,normal transition
+latency,physical FPS or equal-budget reference performance. Source cache
+semantics and retained canonical pixel tests remain separate evidence.
+
+The result changes the decision basis:CHR is not established redundant when
+background storage exists. Warm cost and rebuild latency must both appear in
+the owner cache strategy;no new strategy is installed here. Probe scripts,
+failed long windows,completed short windows and result.json remain below
+ignored build/m3-t34-s3/cold-cache;analyze-p19-short.py checks13samples per
+variant,allocation flags,frame advancement and paired final CRC. Product
+source/EXEs unchanged;new ROM credit0;four original gates remain open.
