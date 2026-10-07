@@ -578,6 +578,36 @@ New ROM credit0;historical1992/1992,local1991/1992nodes and4260/4261controls
 unchanged. Listings,wrapper sources/logs remain ignored;neutral conclusions
 only are tracked. S3/T34/goal remain active,with no EXE refresh needed.
 
+### S3 P8 Linked Runtime Leaf Depths
+
+Verification-only;inspect actual P1DOS MZ bytes with the current public map,
+not source prototypes or a different CRT build. All28external entry symbols
+are anchored;public-anchor windows are not assumed to be complete routines
+when calls,service transfers or cross-window branches remain. Runtime/raw
+disassembly stays ignored below build under the existing local-only policy.
+
+Sixteen symbols at15unique addresses have complete leaf CFGs in their anchored
+windows:all local stack paths balance and return depth0. Byte comparison/copy
+own8bytes,fill4,port input/output2,strlen2,near/far free2;shift and CLI/STI
+entries own0. Long signed divide owns8,unsigned divide6,multiply2. Their FAR
+returns pop8argument bytes for multiply/divide and0for the other reviewed
+leaves. This anchors the arithmetic cleanup assumption used in source CFGs.
+Aliases count separately as imported symbols,but not as extra implementations.
+
+The state-guarded source model incorporates these leaf costs. Twelve external
+symbols still need deeper/runtime-service bounds:dos_getvect,dos_setvect,
+fmalloc,nmalloc,fclose,fflush,fopen,fread,fwrite,int86,remove,rename. A window
+containing INT21or a shared tail without a local return is explicitly not a
+zero-cost leaf. BIOS/DOS interrupt services and NMI overlay remain outside
+ordinary caller-owned stack accounting. No full2048-byte conclusion follows.
+
+Source code/current three EXEs remain unchanged;current product SHA
+1eab4debc224b675d1d7c433aeb911d507c6add7f2fb874c5290492b660c152f binds the
+runtime extraction. Known leaf receipts narrow the existing global-stack gate,
+not a new acceptance round or ROM node promotion. Four original gates remain
+open;historical1992/1992,local1991/1992nodes and4260/4261controls unchanged,
+new0. S3/T34/goal remain active.
+
 ### S3 P5 Constructor-Bound Indirect Calls
 
 Read-only verification. Original /AL offset metadata matches every previously

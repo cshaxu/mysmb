@@ -74,6 +74,11 @@ explicitly in TODO rather than asserted complete.
   Both nesting bounds2are supported by20480frenzy/4096stream Ccases. No core
   edits or ROM classification change. Full runtime/firmware/global stack and
   other original gates remain open;[guards](../history/M3-T34-native-vga-performance-proposal.md#s3-p7-state-guards-resolve-the-two-abstract-cycles).
+- T34 S3 P8anchors28runtime entry symbols to current MZ bytes;16symbols at
+  15addresses have balanced leaf CFGs and bounded own depths. Arithmetic
+  argument-pop8is confirmed. Twelve runtime/service entries and firmware/
+  startup/IRQ/NMI overlay remain unproved;no global stack certification.
+  No code/EXE change,[leaves](../history/M3-T34-native-vga-performance-proposal.md#s3-p8-linked-runtime-leaf-depths).
 
 - T33 S2 P12delivers default80x25on all three products;50-row code/art and
   interfaces remain. Shared semantic compact art/palette/layout owns output;
