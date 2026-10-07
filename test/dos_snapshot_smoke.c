@@ -98,7 +98,7 @@ int main(int argc,char **argv)
     host.fail=0U;
     host.buttons=0U;
     for(i=0U;i<100U;++i)mysmb_dos16_root_step(&root);
-    expected=root.snapshot_cache.last_running;
+    expected=*mysmb_snapshot_cache_current(&root.snapshot_cache);
     host.requests=MYSMB_IO_REQUEST_SAVE;mysmb_dos16_root_step(&root);
     for(i=0U;i<50U;++i)mysmb_dos16_root_step(&root);
     host.requests=MYSMB_IO_REQUEST_LOAD;mysmb_dos16_root_step(&root);

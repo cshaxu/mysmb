@@ -126,18 +126,29 @@ int mysmb_snapshot_decode(const mysmb_io_u8 *file, mysmb_io_u16 size,
 }
 void mysmb_snapshot_cache_initialize(struct mysmb_io_snapshot_cache *cache)
 {
-    cache->valid=0U;
+    cache->valid=0U;cache->published=0;
+}
+struct mysmb_io_snapshot *mysmb_snapshot_cache_staging(struct mysmb_io_snapshot_cache *cache,
+    struct mysmb_io_snapshot *spare)
+{
+    return cache->published==spare?&cache->last_running:spare;
+}
+void mysmb_snapshot_cache_publish(struct mysmb_io_snapshot_cache *cache,
+    struct mysmb_io_snapshot *completed)
+{
+    cache->published=completed;cache->valid=1U;
 }
 void mysmb_snapshot_cache_update(struct mysmb_io_snapshot_cache *cache,
     const struct mysmb_io_snapshot *snapshot, mysmb_io_u8 running_boundary)
 {
     if (running_boundary!=0U) {
         cache->last_running=*snapshot;
+        cache->published=0;
         cache->valid=1U;
     }
 }
 const struct mysmb_io_snapshot *mysmb_snapshot_cache_current(
     const struct mysmb_io_snapshot_cache *cache)
 {
-    return cache->valid!=0U ? &cache->last_running:0;
+    return cache->valid!=0U ? (cache->published?cache->published:&cache->last_running):0;
 }

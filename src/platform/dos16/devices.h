@@ -6,10 +6,8 @@
 int mysmb_dos16_devices_open(void);
 void mysmb_dos16_devices_close(void);
 void mysmb_dos16_devices_input(struct mysmb_io_input *input);
-/* Native256x240 plane rows,pitch64;does not accept the legacy scaled frame. */
-void mysmb_dos16_devices_present_rows(mysmb_io_u16 plane,
-    mysmb_io_u16 first,mysmb_io_u16 rows,
-    const mysmb_io_u8 MYSMB_VGA_FAR *pixels);
+/* Native256x240 chain4 row-major view;never accepts a scaled/plane frame. */
+int mysmb_dos16_devices_present_band(const struct mysmb_io_video_band *band);
 void mysmb_dos16_devices_wait(void);
 void mysmb_dos16_devices_after_load(void);
 int mysmb_dos16_devices_mode(mysmb_io_u8 text);

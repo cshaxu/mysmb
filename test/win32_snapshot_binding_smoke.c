@@ -64,7 +64,7 @@ int main(int argc,char **argv)
     for(i=0U;i<80U && !mysmb_game_is_paused(&g_game);++i){
         input.buttons=i%2U?0U:MYSMB_BUTTON_START;
         mysmb_game_tick(&g_game,&input,&g_frame);mysmb_win32_snapshot_capture();
-        if(!mysmb_game_is_paused(&g_game))expected=g_snapshot_cache.last_running;
+        if(!mysmb_game_is_paused(&g_game))expected=*mysmb_snapshot_cache_current(&g_snapshot_cache);
     }
     if(!mysmb_game_is_paused(&g_game))return 8;
     mysmb_win32_window_proc(owned_window,WM_KEYDOWN,'P',0);
@@ -89,7 +89,7 @@ int main(int argc,char **argv)
     /* A real read-only destination rejects replacement. The prior valid
      * slot,live state,window title and clock remain unchanged. */
     if(!SetFileAttributesA(path,FILE_ATTRIBUTE_READONLY))return 15;
-    g_snapshot_cache.last_running.payload[0]^=1U;
+    ((struct mysmb_io_snapshot *)mysmb_snapshot_cache_current(&g_snapshot_cache))->payload[0]^=1U;
     clock_before=g_last_tick;GetWindowTextA(owned_window,title_before,sizeof(title_before));
     mysmb_win32_window_proc(owned_window,WM_KEYDOWN,'P',0);
     if(mysmb_win32_snapshot_request(owned_window))return 16;

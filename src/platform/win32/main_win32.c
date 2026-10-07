@@ -37,6 +37,7 @@ static struct mysmb_ppu_frame_workspace g_ppu_workspace;
 static mysmb_io_u8 g_video_palette[MYSMB_IO_VIDEO_PALETTE_COLORS];
 static mysmb_io_u8 g_chr_decoded[MYSMB_PPU_CHR_DECODED_BYTES];
 static mysmb_io_u8 g_background_slots[MYSMB_PPU_BACKGROUND_BYTES];
+static mysmb_io_u8 g_background_second[MYSMB_PPU_BACKGROUND_SECOND_BYTES];
 static struct mysmb_io_audio_frame g_audio_frame;
 static struct mysmb_win32_audio_output g_audio_output;
 static struct mysmb_win32_focus_pause g_focus_pause;
@@ -265,11 +266,13 @@ static void mysmb_win32_snapshot_initialize(void)
 }
 static void mysmb_win32_snapshot_capture(void)
 {
+    struct mysmb_io_snapshot *staged;
     if (!mysmb_game_snapshot_running(&g_game,&g_frame)) return;
-    if (mysmb_game_snapshot_capture(&g_game,&g_snapshot,g_snapshot_fingerprint) &&
+    staged=mysmb_snapshot_cache_staging(&g_snapshot_cache,&g_snapshot);
+    if (mysmb_game_snapshot_capture(&g_game,staged,g_snapshot_fingerprint) &&
         mysmb_win32_audio_capture(&g_audio_output.renderer,
-            g_snapshot.payload+MYSMB_SNAPSHOT_CORE_BYTES))
-        mysmb_snapshot_cache_update(&g_snapshot_cache,&g_snapshot,1U);
+            staged->payload+MYSMB_SNAPSHOT_CORE_BYTES))
+        mysmb_snapshot_cache_publish(&g_snapshot_cache,staged);
 }
 static int mysmb_win32_snapshot_request(HWND window)
 {
@@ -313,8 +316,8 @@ static int mysmb_win32_snapshot_request(HWND window)
 static void mysmb_win32_power_on(void)
 {
     mysmb_ppu_frame_workspace_bind(&g_ppu_workspace,g_chr_decoded);
-    mysmb_ppu_frame_background_bind(&g_ppu_workspace,g_background_slots,
-        MYSMB_PPU_BACKGROUND_BYTES);
+    mysmb_ppu_frame_background_byte_bind(&g_ppu_workspace,g_background_slots,
+        MYSMB_PPU_BACKGROUND_BYTES,g_background_second,MYSMB_PPU_BACKGROUND_SECOND_BYTES);
     mysmb_game_power_on(&g_game);
     mysmb_text_observer_enable(&g_game,1U);
     mysmb_game_frame_initialize(&g_frame);

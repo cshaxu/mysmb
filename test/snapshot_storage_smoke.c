@@ -7,6 +7,33 @@
 
 static struct mysmb_snapshot_store store;
 static struct mysmb_io_snapshot state,live;
+static int publication(void)
+{
+    static struct mysmb_io_snapshot_cache cache;
+    static struct mysmb_io_snapshot spare,loaded;
+    struct mysmb_io_snapshot *staged;
+    mysmb_snapshot_cache_initialize(&cache);
+    if(mysmb_snapshot_cache_current(&cache))return 1;
+    staged=mysmb_snapshot_cache_staging(&cache,&spare);
+    memset(staged,0x31,sizeof(*staged));mysmb_snapshot_cache_publish(&cache,staged);
+    if(mysmb_snapshot_cache_current(&cache)!=&spare)return 2;
+    staged=mysmb_snapshot_cache_staging(&cache,&spare);
+    memset(staged,0x72,sizeof(*staged)); /* Simulated failure:do not publish. */
+    if(mysmb_snapshot_cache_current(&cache)->payload[0]!=0x31U)return 3;
+    mysmb_snapshot_cache_publish(&cache,staged);
+    if(mysmb_snapshot_cache_current(&cache)!=&cache.last_running)return 4;
+    memset(&loaded,0x19,sizeof(loaded));
+    mysmb_snapshot_cache_update(&cache,&loaded,1U);
+    if(memcmp(mysmb_snapshot_cache_current(&cache),&loaded,sizeof(loaded)))return 5;
+    staged=mysmb_snapshot_cache_staging(&cache,&spare);
+    memset(staged,0xa2,sizeof(*staged));
+    if(mysmb_snapshot_cache_current(&cache)->payload[0]!=0x19U)return 6;
+    mysmb_snapshot_cache_publish(&cache,staged);
+    if(mysmb_snapshot_cache_current(&cache)->payload[0]!=0xa2U)return 7;
+    mysmb_snapshot_cache_update(&cache,&loaded,0U);
+    if(mysmb_snapshot_cache_current(&cache)->payload[0]!=0xa2U)return 8;
+    return 0;
+}
 static mysmb_io_u8 pending[MYSMB_SNAPSHOT_FILE_BYTES+1U],final_file[MYSMB_SNAPSHOT_FILE_BYTES+1U],prior[MYSMB_SNAPSHOT_FILE_BYTES+1U];
 static unsigned int pending_size,final_size,offset,write_calls,logs,removed;
 static int fault;
@@ -102,6 +129,7 @@ int main(int argc,char **argv)
     char path[300];
     FILE *file;
     if (argc!=2) return 1;
+    if(publication())return 23;
     memset(&state,0,sizeof(state));state.payload[0]=23U;
     files.context=0;files.open=fake_open;files.read=fake_read;files.write=fake_write;
     files.close=fake_close;files.replace=fake_replace;files.remove=fake_remove;

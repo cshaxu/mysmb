@@ -21,7 +21,7 @@ retain a visible question mark even at one/two rows tall.
 
 ## Host Resources
 
-The Win32 adapter supplies the development window and normal graphical/full-screen presentation. DOS uses native256x240 VGA plane output with hardware scan repetition,observed as512x480scanout. All61440source pixels are preserved without software resampling. Physical LCD height filling and side borders depend on the display hardware. DOS owns physical keyboard input and PIT pacing;nominal gameplay cadence remains unqualified and there is currently no DOS audio renderer. NTVDM64 is not the accepted DOS graphics validation platform;the486SX remains the physical graphics and performance qualification target.
+The Win32 adapter supplies the development window and normal graphical/full-screen presentation. DOS uses native256x240 VGA chain4 output with hardware scan repetition,observed as512x480scanout. All61440source pixels are preserved without software resampling or an intermediate plane copy. Physical LCD height filling and side borders depend on the display hardware. DOS owns physical keyboard input and PIT pacing;nominal gameplay cadence remains unqualified and there is currently no DOS audio renderer. NTVDM64 is not the accepted DOS graphics validation platform;the486SX remains the physical graphics and performance qualification target.
 
 ## Quick Snapshot
 

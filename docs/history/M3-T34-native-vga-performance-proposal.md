@@ -225,3 +225,91 @@ native;game logic/state serialization and PPU writer semantics are untouched.
 Memory accounting covers baseline/extra cache/fallback loader and resident
 allocations;each adopted change builds/tests/refreshes all three products.
 Empty ROM scope/forecast;successor S3 is not yet admitted.
+
+S2 fusion prototype finding:256x240fits the VGA chain4 aperture(61440bytes).
+The project-owned original-tool mode probe changes only sequencer chain4 and
+CRTC address units under the same timing. Linear VRAM readback61440pixels
+matches,BIOS3restores,and scanout is512x480. This is a concrete implementation
+of the registered composition/output fusion candidate:device submits the
+unchanged borrowed row view directly. Expected20-40host lines replace the
+plane submission path and remove scratch usage;no extra resident buffer.
+Current pure byte background prototype is shared;retain packed fallback.
+Measure adopted/fallback variants with the same source-bound finite route
+before selecting either. No new reference-source import or performance claim.
+
+## T34 S2 P1 Finite Cohort Delivery And S2 Closure
+
+Selected shared byte-slot background cache replaces per-frame nibble expansion
+with row copies. Two segment-bounded borrowed stores use124928bytes versus
+63488packed;DOS secondary-allocation failure keeps packed storage,first failure
+keeps uncached output. Both Windows widths use the same byte representation.
+Shared bounded Y folding removes division within the proven0..494sum domain.
+DOS chain4 directly consumes unchanged row views;no plane or scale scratch.
+Neutral snapshot publication alternates two existing persistent buffers after
+successful game/audio capture,removing the duplicate10015-byte copy. Failed
+staging retains the current snapshot;load/copy-update resets the cache owner.
+No snapshot schema,game decision,PPU writer or device-input meaning changes.
+
+| Registered candidate | Final disposition | Cost,memory and correctness basis |
+| --- | --- | --- |
+| Bounded coordinate folding | Selected | Exact bounded subtraction;no allocation;included in final paired cost and independent reference-frame regressions. No separate speed claim. |
+| Whole-row sprite/opacity composition | Rejected for this delivery | Keep source OAM priority,clipping and opacity scalar path;native16row bands already hoist visible-range/preparation. No separately proven faster sprite redesign;remaining measured PPU35.872ms is a stage bound,not a promised gain. |
+| Coarse composition/output fusion | Selected | Chain4 removes measured44.178ms plane stage,retains61440pixels/512x480scanout;no extra RAM. |
+| Snapshot capture/cache copies | Selected | Existing buffers swap publication;stage10.449to8.771ms,no extra snapshot allocation;failure/load/paused-save semantics tested. |
+| Byte background cache | Selected | Same chain4route86.002packed to66.182byte ms;extra61440heap bytes,61472owned DOS bytes measured. Missing allocation retains exact fallback. |
+| Byte CHR cache | Rejected for this delivery | Separate24576B extra,not bundled. Warm background uses its derived surfaces and source decoded8192-byte CHR remains;no demonstrated separate complete-stage gain justifying this memory cost. No speculative estimate or acceptance claim. |
+
+All six candidates now have final dispositions;rejected designs are not
+advertised as tested fast implementations. Current native byte61step median
+66.182ms versus scaled baseline151.258ms,2.285xratio/56.246%less time,PPU35.872,
+VGA7.329,snapshot8.771ms. Packed fallback86.002ms. Fixed source frames7466..7527
+advance once and submit once,15reads each;both final encoded snapshot CRC
+1900518261matches. This finite route is diagnostic,not full ROM proof,hardware
+FPS or a fair NESticle comparison. No emulator setting changes.
+
+Instrumented steady owned DOS blocks540864byte/479392packed,heap-used
+168736/107296bytes. These include the same diagnostic image overhead;they are
+not the product's exact startup/peak requirement. Actual loader347216..351312B,
+page-rounded347360..351456B,DGROUP51472with2048stack,14064headroom;EXE323945B.
+Global stack high-water/IRQ/real hardware applicability remains for S3 review.
+
+Each Windows width23focused tests passes,including512byte/packed/canonical
+state cases,source-read-only,slot output,guards,cache invalidation/fallback,
+independent frame reference,retained text,snapshot continuation,paused-save,
+load/file failures and platform purity. Synthetic DOS current chain4device
+readback61440matches with two text round trips and BIOS3restoration. Additional
+legacy whole-UI harness API compile drift is repaired:neutral palette frame,
+current capability flag and active snapshot accessor. It builds;its legacy
+50-row physical assumptions are not claimed as current25-row runtime proof.
+Actual-product host probes are consolidated in S3 instead.
+
+Production delta123added/49removed lines across nine IO/PPU/host files;
+new byte-state test adds86lines plus scoped snapshot/device/API fixture updates.
+All three local products refreshed: DOS323945B/SHA
+95fae439137c19cc603924c768151fe2f32e83dd31a8f4e4d55a01e8d40923e9,
+x86331278B/SHA5d6f0c5ba19efe03e8cb6971da07b16bf65b59b17e6f30535782b848a15819a3,
+x64347150B/SHA0064b34ee1abce0741b11babe65ce61c0b4e8c0415bb193da4dabe1db7e4ef1f.
+Source/game and device boundaries reviewed;protected binaries stay local.
+
+Similar-issue sweep:all packed-address/read/opacity owners now select byte or
+packed consistently;binding/invalidation/cold CHR/attribute/palette and
+allocation/shutdown ownership checked. Snapshot capture consumers use the
+published accessor;failure does not commit,load restores cache-owned storage.
+DOS source/band/mode boundaries remove legacy-pitch ambiguity;no platform
+game logic introduced. No unresolved scoped correctness difference found.
+S2 closes and S3 admits;ROM credit0,historical1992/1992,local1991/1992nodes,
+4260/4261feasible controls(raw4342,infeasible81)unchanged.
+
+## T34 S3 P1 Combined Acceptance Admission
+
+Verification-only successor under owner-authorized execution. Product source
+and hashes above are frozen unless a concrete scoped failure needs repair.
+Estimated0product lines,100-250contained harness/analysis lines if needed;
+no EXE refresh absent product changes. Bind actual Windows Tab/CMD/input/exit
+and DOS startup,graphics/text/graphics,input/save/load/exit to current products;
+reuse pixel/state/guard proofs within dependencies. Exercise bounded available
+memory arenas and name unobserved route/global/physical clauses explicitly.
+Review retained S4 stack/IRQ/startup evidence applicability and fair-reference
+constraint without changing installed emulator settings. Do not claim whole-ROM
+or physical486SX qualification from these tests. S3 closure requires the
+proposal's final gate reconciliation,not only a ledger validator pass.

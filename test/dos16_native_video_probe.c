@@ -37,17 +37,11 @@ int main(void)
         for(y=0U;y<rows;++y)for(x=0U;x<256U;++x)
             storage[y*256U+x]=pattern(x,(unsigned short)(first+y));
         band.pixels=storage;band.first=first;band.rows=rows;
-        if(!mysmb_io_planar_native_band(&band,storage+4096U,4096U,
-            mysmb_dos16_pack_native_band))return 5;
-        for(p=0U;p<4U;++p)
-            mysmb_dos16_devices_present_rows(p,first,rows,storage+4096U+p*1024U);
+        if(!mysmb_dos16_devices_present_band(&band))return 5;
     }
-    for(p=0U;p<4U;++p){
-        outp(0x3ce,4U);outp(0x3cf,p);
-        for(y=0U;y<240U;++y)for(x=0U;x<64U;++x){
-            if(video[y*64U+x]!=pattern((unsigned short)(x*4U+p),y))++bad;
-            ++compared;
-        }
+    for(y=0U;y<240U;++y)for(x=0U;x<256U;++x){
+        if(video[y*256U+x]!=pattern(x,y))++bad;
+        ++compared;
     }
     mysmb_dos16_devices_close();
     r.h.ah=15U;int86(16,&r,&r);restored=r.h.al;

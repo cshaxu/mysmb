@@ -31,6 +31,7 @@ struct mysmb_io_snapshot {
 struct mysmb_io_snapshot_cache {
     mysmb_io_u8 valid;
     struct mysmb_io_snapshot last_running;
+    struct mysmb_io_snapshot *published;
 };
 
 void mysmb_snapshot_put16(mysmb_io_u8 *bytes, mysmb_io_u16 value);
@@ -49,6 +50,13 @@ int mysmb_snapshot_decode(const mysmb_io_u8 *file, mysmb_io_u16 size,
     const mysmb_io_u8 *fingerprint, struct mysmb_io_snapshot *snapshot);
 
 void mysmb_snapshot_cache_initialize(struct mysmb_io_snapshot_cache *cache);
+/* Two persistent caller-owned slots:write the inactive one,then publish only
+ * after every capture stage succeeds. Failed staging leaves current intact.
+ * Copy-update/load resets publication to the cache-owned slot. */
+struct mysmb_io_snapshot *mysmb_snapshot_cache_staging(struct mysmb_io_snapshot_cache *cache,
+    struct mysmb_io_snapshot *spare);
+void mysmb_snapshot_cache_publish(struct mysmb_io_snapshot_cache *cache,
+    struct mysmb_io_snapshot *completed);
 /* running_boundary is supplied by composition; IO knows no game modes. */
 void mysmb_snapshot_cache_update(struct mysmb_io_snapshot_cache *cache,
     const struct mysmb_io_snapshot *snapshot, mysmb_io_u8 running_boundary);

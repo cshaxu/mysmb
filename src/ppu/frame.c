@@ -1,6 +1,10 @@
 #include "ppu/frame.h"
 #include <string.h>
 #include "io/palette_expand.h"
+/* Internal visible Y<=239 plus byte scroll<=255 gives at most494.
+ * Bounded subtraction preserves the exact modulo domain without division. */
+#define FOLD_240(value) do { if((value)>=240U)(value)-=240U; \
+    if((value)>=240U)(value)-=240U; } while(0)
 /* Private stack scratch uses the original /AL runtime's SS=DS contract.
  * Public state/output/resource pointers keep their existing far ABI. */
 #ifdef MYSMB_DOS16_TARGET
@@ -12,7 +16,7 @@ void mysmb_ppu_frame_workspace_bind(struct mysmb_ppu_frame_workspace *workspace,
     mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded)
 {
     workspace->decoded=decoded;workspace->chr=0;
-    workspace->chr_size=0U;workspace->valid=0U;workspace->bg=0;workspace->bg_valid=0U;workspace->expand=mysmb_io_palette_expand_portable;workspace->expand_context=0;workspace->nibble_expand=mysmb_io_nibble_expand;
+    workspace->chr_size=0U;workspace->valid=0U;workspace->bg=0;workspace->bg_second=0;workspace->bg_valid=0U;workspace->expand=mysmb_io_palette_expand_portable;workspace->expand_context=0;workspace->nibble_expand=mysmb_io_nibble_expand;
 }
 void mysmb_ppu_frame_expansion_bind(struct mysmb_ppu_frame_workspace *w,
     mysmb_io_palette_expand expand,void *context)
@@ -95,13 +99,14 @@ static void mysmb_ppu_background_opaque(const struct mysmb_ppu_state *state,
     mysmb_io_u8 color;
 
     source_x = (mysmb_io_u16)((screen_x + scroll_x) & 0x01ffU);
-    source_y = (mysmb_io_u16)((screen_y + scroll_y) % 480U);
+    source_y = (mysmb_io_u16)(screen_y + scroll_y);
+    if(source_y>=480U)source_y-=480U;
     table = (mysmb_io_u16)(name_table & 3U);
     if (source_x >= 256U) table ^= 1U;
     if (source_y >= 240U) table ^= 2U;
     /* SMB1 vertical mirroring: logical 0/2 and 1/3 share CIRAM. */
     table &= 1U;
-    row = (source_y % 240U) / 8U;
+    row=source_y;FOLD_240(row);row>>=3U;
     column = (source_x & 0xffU) / 8U;
     pattern = (mysmb_io_u16)(((state->visible_ppu_control_0 & 0x10U) != 0U ?
         0x1000U : 0U) + state->name_table[table][row * 32U + column] * 16U +
@@ -123,8 +128,16 @@ void mysmb_ppu_frame_background_bind(struct mysmb_ppu_frame_workspace *w,
     mysmb_io_u8 MYSMB_PPU_FRAME_FAR *storage,mysmb_io_u16 capacity)
 {
     if(!w)return;
-    w->bg=capacity>=MYSMB_PPU_BACKGROUND_BYTES?storage:0;w->bg_valid=0U;
+    w->bg=capacity>=MYSMB_PPU_BACKGROUND_BYTES?storage:0;w->bg_second=0;w->bg_valid=0U;
     w->bg_chr=0;w->bg_size=0U;w->bg_pattern=0U;w->bg_tiles=0UL;
+}
+void mysmb_ppu_frame_background_byte_bind(struct mysmb_ppu_frame_workspace *w,
+    mysmb_io_u8 MYSMB_PPU_FRAME_FAR *first,mysmb_io_u16 first_capacity,
+    mysmb_io_u8 MYSMB_PPU_FRAME_FAR *second,mysmb_io_u16 second_capacity)
+{
+    mysmb_ppu_frame_background_bind(w,first,first_capacity);
+    if(w && w->bg && second && second_capacity>=MYSMB_PPU_BACKGROUND_SECOND_BYTES)
+        w->bg_second=second;
 }
 static void mysmb_ppu_slot_prepare(const struct mysmb_ppu_state *s,
     struct mysmb_ppu_frame_workspace *w)
@@ -155,7 +168,10 @@ static void mysmb_ppu_slot_prepare(const struct mysmb_ppu_state *s,
         pal=(mysmb_io_u8)(((attr>>(((ty&2U)<<1U)+(tx&2U)))&3U)*4U);
         for(fy=0U;fy<8U;++fy) {
             p=(mysmb_io_u16)(base+tile*16U+fy);
-            dest=(mysmb_io_u16)(t*30720U+(ty*8U+fy)*128U+tx*4U);
+            if(w->bg_second) {
+                image=t?w->bg_second:w->bg+2048U;
+                dest=(mysmb_io_u16)((ty*8U+fy)*256U+tx*8U);
+            }else dest=(mysmb_io_u16)(t*30720U+(ty*8U+fy)*128U+tx*4U);
             if(w->decoded) {
                 decoded_offset=(mysmb_io_u16)(base+tile*16U+fy*2U);
                 lo=w->decoded[decoded_offset];hi=w->decoded[decoded_offset+1U];
@@ -172,7 +188,9 @@ static void mysmb_ppu_slot_prepare(const struct mysmb_ppu_state *s,
                 }
                 if(c0)c0=(mysmb_io_u8)(c0+pal);
                 if(c1)c1=(mysmb_io_u8)(c1+pal);
-                image[dest+i]=(mysmb_io_u8)(c0|(c1<<4U));
+                if(w->bg_second) {
+                    image[dest+i*2U]=c0;image[dest+i*2U+1U]=c1;
+                }else image[dest+i]=(mysmb_io_u8)(c0|(c1<<4U));
             }
         }
         }
@@ -182,14 +200,16 @@ static void mysmb_ppu_slot_prepare(const struct mysmb_ppu_state *s,
     w->bg_pattern=(mysmb_io_u8)(s->visible_ppu_control_0&16U);
 }
 static mysmb_io_u8 mysmb_ppu_slot_at(
-    const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *bg,mysmb_io_u16 x,mysmb_io_u16 y,
+    const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *bg,
+    const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *second,mysmb_io_u16 x,mysmb_io_u16 y,
     mysmb_io_u8 scroll_x,mysmb_io_u8 scroll_y,mysmb_io_u8 name)
 {
     mysmb_io_u16 sx,sy,t,p;
     mysmb_io_u8 pair;
-    sx=(mysmb_io_u16)(x+scroll_x);sy=(mysmb_io_u16)((y+scroll_y)%480U);
+    sx=(mysmb_io_u16)(x+scroll_x);sy=(mysmb_io_u16)(y+scroll_y);FOLD_240(sy);
     t=(mysmb_io_u16)((name^(sx>>8U))&1U);
-    p=(mysmb_io_u16)(2048U+t*30720U+(sy%240U)*128U+((sx&255U)>>1U));
+    if(second)return (t?second:bg+2048U)[sy*256U+(sx&255U)];
+    p=(mysmb_io_u16)(2048U+t*30720U+sy*128U+((sx&255U)>>1U));
     pair=bg[p];return (mysmb_io_u8)((pair>>((sx&1U)*4U))&15U);
 }
 /* Shared expansion always publishes the complete row directly.
@@ -204,7 +224,20 @@ static void mysmb_ppu_slot_row(const struct mysmb_ppu_state *s,
     mysmb_io_u16 x=0U,source_x=sx,source_y,t,count,even;
     const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *in;
 
-    source_y=(mysmb_io_u16)(((y+sy)%480U)%240U);
+    source_y=(mysmb_io_u16)(y+sy);FOLD_240(source_y);
+    if(w && w->bg_second) {
+        while(x<256U) {
+            t=(mysmb_io_u16)((nt^(source_x>>8U))&1U);
+            in=(t?w->bg_second:bg+2048U)+source_y*256U+(source_x&255U);
+            count=(mysmb_io_u16)(256U-(source_x&255U));
+            if(count>256U-x)count=(mysmb_io_u16)(256U-x);
+            if(slots)memcpy(out+x,in,count);
+            else for(even=0U;even<count;++even)out[x+even]=colors[in[even]];
+            source_x=(mysmb_io_u16)(source_x+count);x=(mysmb_io_u16)(x+count);
+        }
+        if((s->visible_ppu_mask&2U)==0U)memset(out,colors[0U],8U);
+        return;
+    }
     while(x<256U){
         t=(mysmb_io_u16)((nt^(source_x>>8U))&1U);
         in=bg+2048U+t*30720U+source_y*128U+((source_x&255U)>>1U);
@@ -272,8 +305,9 @@ static void mysmb_ppu_background_row(const struct mysmb_ppu_state *state,
      * for every output dot; one bounded copy publishes the completed row. */
     chr=state->chr_data;chr_size=state->chr_data_size;
     pattern_base=(state->visible_ppu_control_0&0x10U)?0x1000U:0U;
-    source_y=(mysmb_io_u16)((y+scroll_y)%480U);
-    row=(mysmb_io_u16)((source_y%240U)/8U);
+    source_y=(mysmb_io_u16)(y+scroll_y);
+    if(source_y>=480U)source_y-=480U;
+    row=source_y;FOLD_240(row);row>>=3U;
     row_offset=(mysmb_io_u16)(row*32U);
     attr_offset=(mysmb_io_u16)(0x3c0U+(row>>2U)*8U);
     fine_y=(mysmb_io_u8)(source_y&7U);row_shift=(mysmb_io_u8)((row&2U)<<1U);
@@ -433,7 +467,7 @@ static void mysmb_ppu_frame_build_internal(const struct mysmb_ppu_state *state,
                     (x >= 8U || (state->visible_ppu_mask & 0x02U) != 0U)) {
                     scroll_x = y < fixed_top_height ? 0U : state->visible_scroll_x;
                     scroll_y = y < fixed_top_height ? 0U : state->visible_scroll_y;
-                    if(bg)opaque=(mysmb_io_u8)((mysmb_ppu_slot_at(bg,x,y,scroll_x,scroll_y,
+                    if(bg)opaque=(mysmb_io_u8)((mysmb_ppu_slot_at(bg,workspace?workspace->bg_second:0,x,y,scroll_x,scroll_y,
                         y<fixed_top_height?0U:state->visible_ppu_name_table)&3U)!=0U);
                     else mysmb_ppu_background_opaque(state,x,y,scroll_x,scroll_y,
                         y<fixed_top_height?0U:state->visible_ppu_name_table,&opaque,decoded_chr);

@@ -64,7 +64,7 @@ static unsigned long timer_stamp(void)
 }
 
 /* Independent native256x240 timing:25.175MHz,800dots/525lines,approximately
- * 60Hz. VGA repeats each stored row twice;64bytes/plane row,no resampling.
+ * 60Hz. VGA repeats each stored row twice;chain4 exposes61440linear bytes.
  * BIOS13h supplies initial graphics/attribute state;restore uses original mode. */
 static void vga_register(unsigned short port,unsigned char index,unsigned char value)
 { outp(port,index);outp((unsigned short)(port+1U),value); }
@@ -73,7 +73,7 @@ static void vga_native_rows(void)
     unsigned char protect;
     vga_register(0x3c4,0,1);
     outp(0x3c2,0xe3);
-    vga_register(0x3c4,4,6);
+    vga_register(0x3c4,4,14);
     outp(0x3d4,17);protect=(unsigned char)inp(0x3d5);
     vga_register(0x3d4,17,(unsigned char)(protect&0x7fU));
     vga_register(0x3d4,1,63);vga_register(0x3d4,2,64);
@@ -81,9 +81,9 @@ static void vga_native_rows(void)
     vga_register(0x3d4,9,65);
     vga_register(0x3d4,16,234);vga_register(0x3d4,17,44);
     vga_register(0x3d4,18,223);vga_register(0x3d4,19,32);
-    vga_register(0x3d4,20,0);
+    vga_register(0x3d4,20,64);
     vga_register(0x3d4,21,231);vga_register(0x3d4,22,6);
-    vga_register(0x3d4,23,0xe3);
+    vga_register(0x3d4,23,0xa3);
     vga_register(0x3c4,2,15);
     vga_register(0x3c4,0,3);
 }
@@ -224,16 +224,16 @@ static void copy_plane_dwords(unsigned char far *video,
 }
 
 
-void mysmb_dos16_devices_present_rows(mysmb_io_u16 plane,
-    mysmb_io_u16 first,mysmb_io_u16 rows,
-    const mysmb_io_u8 MYSMB_VGA_FAR *pixels)
+int mysmb_dos16_devices_present_band(const struct mysmb_io_video_band *band)
 {
     unsigned char far *video;
-    if(!video_ready || text_mode || plane>=MYSMB_VGA_PAGE_COUNT || pixels==0 || first>=240U || rows>240U-first)return;
+    if(!video_ready || text_mode || !band || !band->pixels || !band->rows ||
+        band->first>=240U || band->rows>16U || band->rows>240U-band->first)return 0;
     video=(unsigned char far *)0xa0000000UL;
-    /* Select the independent plane at A000;copy remains within both segments. */
-    vga_register(0x3c4,2,(unsigned char)(1U<<plane));
-    copy_plane_dwords(video+first*64U,pixels,rows*64U);
+    /* Chain4 handles the plane selector/address from each CPU byte address.
+     * Every band fits both segments;last source pixel is A000:EFFF. */
+    copy_plane_dwords(video+band->first*256U,band->pixels,band->rows*256U);
+    return 1;
 }
 void mysmb_dos16_devices_text(const struct mysmb_io_text_frame MYSMB_IO_FAR *frame)
 {

@@ -132,9 +132,9 @@ Only dos16 and win32 are children of platform. Shared planar pixel layout is
 io/planar_frame;it knows only neutral pixels,dimensions,capacity and an optional
 synchronous row encoder. The DOS root supplies its private dos16/planar_row
 encoder. Native bands deinterleave256x240identity coordinates into64-byte plane
-rows;the retained scaled layout is separate and cannot be passed to the native
-device. Graphics borrows4096source and4096plane bytes inside the existing
-15532-byte text/row store. Shared IO imports no host declaration or assembly. File/path services
+rows;the retained scaled/plane layouts are separate from the production native
+chain4 device. Graphics borrows4096source bytes inside the existing15532-byte
+text/row store and submits directly. Shared IO imports no host declaration or assembly. File/path services
 are io/file with portable stdio;replacement and executable discovery stay in
 the appropriate host,whose declarations are host-owned. The retired pixel
 sampler is validate/text_frame and links only to tests. No compatibility copy

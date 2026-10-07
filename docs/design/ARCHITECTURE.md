@@ -16,7 +16,9 @@ follows as before. The independent ppu/frame compositor now borrows const PPU st
 game-container dependency. The read-only compositor is separate from CPU decisions and host devices.
 
 The shared compositor can borrow63488bytes for two packed background
-palette-slot surfaces and their2048-byte nametable snapshot. It alone owns
+palette-slot surfaces and their2048-byte nametable snapshot. A second61440-byte
+allocation selects byte-slot surfaces(total124928bytes),on both Windows widths
+and DOS. DOS allocation failure retains packed or uncached output. It alone owns
 tile/attribute/resource invalidation and raw opacity;current palette and
 scroll are applied when output is composed. Roots only allocate/bind storage.
 DOS attempts this optional far allocation after mandatory initialization;
@@ -65,9 +67,9 @@ DOS16 uses the same logical slot pixels through a synchronous neutral row
 producer;Windows retains a full-frame view. Shared IO owns the stable64-color
 master RGB lookup and bounded row scaling;each frame supplies its32-entry
 slot-to-master table. VGA owns fixed
-native256x240output without source-row loss,four15360-byte VGA planes,
-submitted from a4096-byte four-plane16row band borrowed after the4096-byte
-source area in the exclusive text/row store. Hardware scan repetition gives
+native256x240output without source-row loss. Chain4 exposes the complete
+61440-byte VGA aperture;the4096-byte borrowed16row source is submitted
+directly,without planar scratch or resampling. Hardware scan repetition gives
 512x480scanout;physical LCD filling is a separate display qualification.
 DAC programming and video memory. DOS devices own physical held-key decoding,
 BIOS mode lifetime and PIT sampling. Only its composition root binds local

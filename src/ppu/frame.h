@@ -17,6 +17,7 @@ enum {
 
 #define MYSMB_PPU_CHR_DECODED_BYTES 8192U
 #define MYSMB_PPU_BACKGROUND_BYTES 63488U
+#define MYSMB_PPU_BACKGROUND_SECOND_BYTES 61440U
 struct mysmb_ppu_frame;
 struct mysmb_ppu_frame_view;
 /* Caller-owned packed two-bit indices,four pixels per byte.
@@ -27,6 +28,8 @@ struct mysmb_ppu_frame_workspace {
     mysmb_io_u16 chr_size;
     mysmb_io_u8 valid;
     mysmb_io_u8 MYSMB_PPU_FRAME_FAR *bg;
+    /* Non-null selects two byte-slot surfaces;null retains packed fallback. */
+    mysmb_io_u8 MYSMB_PPU_FRAME_FAR *bg_second;
     const mysmb_io_u8 *bg_chr;
     mysmb_io_u16 bg_size;
     mysmb_io_u8 bg_valid,bg_pattern;
@@ -72,6 +75,11 @@ void mysmb_ppu_frame_bind_pixels(struct mysmb_ppu_frame *frame,
  * CHR bytes remain immutable until workspace rebind, as for decoded storage. */
 void mysmb_ppu_frame_background_bind(struct mysmb_ppu_frame_workspace *workspace,
     mysmb_io_u8 MYSMB_PPU_FRAME_FAR *storage,mysmb_io_u16 capacity);
+/* First:2048snapshot+61440slots;second:61440slots. Both borrowed and segment
+ * bounded. Rebind invalidates derived data;null second selects packed first. */
+void mysmb_ppu_frame_background_byte_bind(struct mysmb_ppu_frame_workspace *workspace,
+    mysmb_io_u8 MYSMB_PPU_FRAME_FAR *first,mysmb_io_u16 first_capacity,
+    mysmb_io_u8 MYSMB_PPU_FRAME_FAR *second,mysmb_io_u16 second_capacity);
 
 /* One synchronous presentation borrows an immutable source and workspace.
  * Do not mutate/rebind either between begin and end; no view escapes the call.

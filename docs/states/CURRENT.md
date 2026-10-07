@@ -1,30 +1,30 @@
 # Project Status
 
-**Active: M3 T34 S2, performance and memory cohorts.**
+**Active: M3 T34 S3, combined acceptance.**
 
-## M3 T34 S2 Packet
+## M3 T34 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation; S1 native adoption closed; S2 active under owner instruction to execute T34 through closure. |
+| Identifier Mode | Continuation; S1/S2 engineering deliveries closed; S3 combined acceptance active under owner instruction to execute T34 through closure. |
 | Admission And Approval | Owner reports delivered text successful and explicitly requests T closure and next queue admission; queue-head native VGA/performance package admitted. |
-| Objective | Resolve finite six-candidate performance/memory register;prototype shared byte background cache with bounded low-memory fallback,adopt only measured gains with unchanged semantics. |
+| Objective | Bind current products to combined Windows/DOS runtime,input,snapshot and bounded-memory acceptance;reconcile remaining reference/global/physical clauses honestly. |
 | Non-goals | No game/PPU decision changes,DOS4GW,new driver,helper process,frameskip,emulator settings changes,text redesign or whole-ROM certification. |
-| Reference Baseline | S1 source/delivery bound in proposal; local products DOS323049B,x86330766B,x64346126B. Current DGROUP51472B/stack2048B; hashes and loader bound in proposal. Reprofile current source; retained T32 costs are historical. |
-| Candidate Proposal | [Admitted T34 plan and S1 baseline](../history/M3-T34-native-vga-performance-proposal.md#t34-s2-p1-admissionfinite-performance-and-memory-cohorts). |
-| Files And ABI Surface | neutral PPU/IO representation and composition roots;scoped packed/byte/canonical/fallback tests and original builds. Estimate150-300product lines;byte background candidate net61440B only if measured gain and allocation fallback qualify. |
+| Reference Baseline | S2 source/delivery bound in proposal; local products DOS323945B,x86331278B,x64347150B. Current DGROUP51472B/stack2048B; hashes and loader bound in proposal. Reprofile current source; retained T32 costs are historical. |
+| Candidate Proposal | [Admitted T34 plan and S1 baseline](../history/M3-T34-native-vga-performance-proposal.md#t34-s3-p1-combined-acceptance-admission). |
+| Files And ABI Surface | Frozen S2 products and host/PPU/snapshot dependencies;verification-only0product lines,100-250contained harness/analysis lines if needed. Repair only named failures after visible implementation amendment. |
 | Applicable Rules | Execution,Documentation,Architecture,Coding,source policy;System Architecture and Source Layout. |
 | Verification | Exact61440source-to-VRAM pixels/palette/edges,HUD split/scroll/priority,cache/fallback,mode restoration and Tab;actual DOS input/transition routes,Windows regression,original16-bit compiler/link/segment/stack/loader and before/after stage costs;three local products on code change. |
 | Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0;historical1992/1992,local1991/1992nodes,4260/4261feasible controls unchanged(raw4342,infeasible81). |
 | Asset Needs | Existing owner-local SMB1 ROM is Nintendo material without redistribution grant;read-only for local embedded builds and bounded runtime probes. Existing NESticle conceptual research is copyright-only:do not copy code/mode tables or import. Generated data,captures,traces/products remain local;neutral evidence only tracked. No fresh third-party research/import in P1 admission. |
 | Reporting Requirements | Before every S report objective,components/code and memory estimates;after report actual changes,scoped results,candidate dispositions and total/local node/edge counts. Do not infer hardware cadence/LCD filling from emulator captures. |
 | Stop Conditions | Pixel/priority/split loss,core mutation,installed-setting change,new unbounded audit,unmeasured full-frame allocation or unsupported timing requires redesign within the admitted scope. |
-| Exit Criteria | Source-bound native adoption correct and operational with fixed verification and three products,or measured rejection naming unresolved display requirements. S2 closes when all six candidates have measured selected/rejected/not-applicable disposition and adopted changes pass scoped tests;S3 then admitted. Physical486SX qualification stays M4. |
+| Exit Criteria | Combined current-source/product receipts show no scoped regression;claimed performance/memory gates supported,all unqualified global/reference/cadence clauses explicitly reconciled under proposal contract. No inferred physical486SX or whole-ROM certification. |
 | Original Owner Request | Close successful T33 and admit next queued task;retain native-resolution VGA/performance plan. |
 | Similar-Issue Sweep | Review all DOS graphics coordinate/row/plane constants,palette invalidation,mode/text switch/reset and output submissions;retained50/new25 text and Win32 presentation must not regress. |
 
 T34 plan:S1 native output;S2 finite performance/memory register after reprofile;
-S3 combined acceptance. Only S2 active. T32/S9 remains suspended;T19 audio
+S3 combined acceptance. Only S3 active. T32/S9 remains suspended;T19 audio
 and M2 final certification remain queued. T33 broader gallery debt is recorded
 explicitly in TODO rather than asserted complete.
 

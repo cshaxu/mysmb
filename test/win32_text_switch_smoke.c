@@ -157,16 +157,18 @@ static int geometry_route(HINSTANCE instance)
 
 static int presentation_clock_route(HWND window)
 {
-    struct mysmb_io_video_frame video;
+    struct mysmb_io_palette_video_frame video;
     LARGE_INTEGER before;
     LONGLONG period;
     unsigned int i;
     static unsigned char indices[MYSMB_SCREEN_WIDTH*MYSMB_SCREEN_HEIGHT];
-    for(i=0U;i<sizeof(indices);++i)indices[i]=(unsigned char)i;
-    video.pixels=indices;
+    unsigned char palette[32];
+    for(i=0U;i<32U;++i)palette[i]=(unsigned char)((i*7U)&63U);
+    for(i=0U;i<sizeof(indices);++i)indices[i]=(unsigned char)(i&31U);
+    video.pixels=indices;video.master_colors=palette;
     mysmb_win32_draw_gameplay(&video);
     for(i=0U;i<sizeof(indices);++i)
-        if(g_pixels[i]!=(DWORD)mysmb_io_color_rgb(indices[i]))return 70;
+        if(g_pixels[i]!=(DWORD)mysmb_io_color_rgb(palette[indices[i]]))return 70;
     /* A twelve-frame scheduling stall must retain eight frames after one
      * bounded batch. The former reset-to-now silently removed this debt. */
     QueryPerformanceCounter(&before);period=g_frequency.QuadPart/60;
@@ -355,7 +357,7 @@ static int text_snapshot_route(HWND window,const char *directory)
     }
     if(i==1200U)return 31;
     g_game_started=1U;
-    expected_snapshot=g_snapshot_cache.last_running;
+    expected_snapshot=*mysmb_snapshot_cache_current(&g_snapshot_cache);
     saved_audio=g_audio_output;
     mysmb_win32_switch_presenter(window,0);
     if(!g_text_mode)return 32;
@@ -472,7 +474,7 @@ static int mysmb_fixture_run(HINSTANCE instance,HINSTANCE previous,LPSTR command
                     file=fopen("state-80.log","w");
                     if(file) {
                         fprintf(file,"cycle=%u text=%u borrowed=%u opened=%u terminal=%u thread=%d error=%lu processes=%lu\n",
-                            i,g_text_mode,g_console.borrowed,g_console.opened,g_console.terminal,
+                            i,g_text_mode,g_console.borrowed,g_console.opened,g_console.vt_output,
                             g_console_thread!=NULL,(unsigned long)error,(unsigned long)count);
                         fclose(file);
                     }

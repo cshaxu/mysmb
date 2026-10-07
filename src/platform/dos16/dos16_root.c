@@ -129,6 +129,13 @@ static void present_current(struct mysmb_dos16_root *root)
         mysmb_ppu_frame_background_bind(&root->ppu_workspace,
             (mysmb_u8 __far *)_fmalloc(MYSMB_PPU_BACKGROUND_BYTES),
             MYSMB_PPU_BACKGROUND_BYTES);
+        /* One additional optional plane:failure retains packed storage.
+         * Mandatory text/snapshot/device allocations have already succeeded. */
+        if(root->ppu_workspace.bg)
+            mysmb_ppu_frame_background_byte_bind(&root->ppu_workspace,
+                root->ppu_workspace.bg,MYSMB_PPU_BACKGROUND_BYTES,
+                (mysmb_u8 __far *)_fmalloc(MYSMB_PPU_BACKGROUND_SECOND_BYTES),
+                MYSMB_PPU_BACKGROUND_SECOND_BYTES);
         if(root->present_palette_rows){
             mysmb_ppu_frame_nibble_bind(&root->ppu_workspace,mysmb_dos16_nibble_expand);
         }else if(root->ppu_workspace.bg) {
@@ -182,6 +189,7 @@ void mysmb_dos16_root_step(struct mysmb_dos16_root *root)
 {
     struct mysmb_io_input decoded;
     struct mysmb_input input;
+    struct mysmb_io_snapshot *staged;
     if (root->initialized==0U || root->control.exit_requested!=0U) return;
     decoded.requests=0U;
     root->hooks.read_input(root->hooks.context,&decoded);
@@ -198,11 +206,12 @@ void mysmb_dos16_root_step(struct mysmb_dos16_root *root)
     mysmb_game_io_audio(&root->game,&root->audio_frame);
     if (root->hooks.submit_audio!=0)
         root->audio_available=root->hooks.submit_audio(root->hooks.context,&root->audio_frame);
+    staged=mysmb_snapshot_cache_staging(&root->snapshot_cache,&root->snapshot);
     if(root->snapshot_store && mysmb_game_snapshot_running(&root->game,&root->game_frame) &&
-        mysmb_game_snapshot_capture(&root->game,&root->snapshot,root->snapshot_fingerprint)){
+        mysmb_game_snapshot_capture(&root->game,staged,root->snapshot_fingerprint)){
         /* There is no DOS audio renderer. Never claim preserved PCM history. */
-        memset(root->snapshot.payload+MYSMB_SNAPSHOT_CORE_BYTES,0,MYSMB_SNAPSHOT_AUDIO_BYTES);
-        mysmb_snapshot_cache_update(&root->snapshot_cache,&root->snapshot,1U);
+        memset(staged->payload+MYSMB_SNAPSHOT_CORE_BYTES,0,MYSMB_SNAPSHOT_AUDIO_BYTES);
+        mysmb_snapshot_cache_publish(&root->snapshot_cache,staged);
     }
 }
 void mysmb_dos16_root_shutdown(struct mysmb_dos16_root *root)
@@ -212,6 +221,7 @@ void mysmb_dos16_root_shutdown(struct mysmb_dos16_root *root)
     mysmb_ppu_frame_end(&root->ppu_view);
     if(root->ppu_pairs)_nfree((struct mysmb_io_palette_pairs __near *)root->ppu_pairs);
     root->ppu_pairs=0;
+    if(root->ppu_workspace.bg_second)_ffree(root->ppu_workspace.bg_second);
     if(root->ppu_workspace.bg)_ffree(root->ppu_workspace.bg);
     if(root->ppu_workspace.decoded) {
         if(root->ppu_cache_near)_nfree((mysmb_u8 __near *)root->ppu_workspace.decoded);
