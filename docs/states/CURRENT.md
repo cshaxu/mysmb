@@ -4,15 +4,15 @@
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation: M3 T32 S8 P19; transparent-row metadata rejected; S8 remains active. |
+| Identifier Mode | Continuation: M3 T32 S8 P20; shared nibble lookup selected for integration; S8 remains active. |
 | Admission And Approval | Owner-approved consecutive S5-S9 plan and automatic successor;S7 display-stage contract closed by P4;S8 sole active. |
 | Objective | Reduce current dominant rendering cost as one bounded cache/row-output chain while preserving ROM/PPU semantics and memory balance. |
 | Non-goals | No game/PPU semantics changes, lost frames, installed DOSBox config changes, toolchain change, helper process or T19 resumption. |
 | Reference Baseline | Published S8 P18products and current phase/counter probes;original tools/2048stack/640x400/two platform components. |
 | Candidate Proposal | [S5-S9 performance plan](../proposals/m3/dos-graphics-nesticle-performance.md). |
-| Files And ABI Surface | Zero product lines;two contained60-byte transparent-row metadata variants rejected. Conservative clear-only flags preserve output but lose recovered transparency;dirty-row recovery fixes reuse. Both add complex-scene row-query costs. No production cache/ABI/flag/interface added;P18 source/three EXEs unchanged. Subsequent PPU/transfer work must improve complete mixed/dense stages,not only zero backgrounds. |
+| Files And ABI Surface | Zero product lines;selected shared IO512-byte immutable nibble table and portable pair memcpy,DOS-only segment/ISA execution. GS setup occurs only for colored spans;USE16 mode retained and GS/DS/ES/BP/SI/DI restored. Decoder198code bytes,local own maximum14;no image allocation. Core/PPU unchanged. Actual integrated code/loader/resident/IRQ-upper-register/stack/routes/full-frame benefit and three EXEs required before adoption. |
 | Applicable Rules | README Task Reading Set, EXECUTION, DOCUMENT, ARCHITECTURE, CODING, CONTRIBUTING and source policy. |
-| Verification | Each native width512states/125829120bytes plus128dirty-cache states pass. Known-zero bits directly checked against every cached byte;removal/rebinding recovery tested. Ten current-P18 original-DOS paired scenes exact,but mixed/dense-priority stages regress1.57..2.29ms while blank stages save about6ms. Reject both;no product/EXEchange or global qualification. |
+| Verification | DOS10080primitive cases including all256values/even lengths/unaligned/source/guards/rejection/GS registers pass. Native512states/125829120bytes per width match. Ten DOS complete-stage pairs repeated;mixed/dense-priority saving about20.2ms,other near-zero costs explicitly retained. Same-O2 native8192frame pairs improve nonblank,zero absolute regression<=0.0022ms/frame;initial unfair library comparison excluded. One local CFG/GS opcode proof pass. Product/EXEs unchanged;global gates open. |
 | Expected Markers | Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261feasible controls. |
 | Asset Needs | Owner-local x.xx binary and ROM plus historical athros/NESticle0.2 source as conceptual reference only; copyright-only leaked tree grants no redistribution permission. Purpose frame/cache/transfer architecture comparison; raw source/probes only below ignored build, no copying/transliteration into product, exact-version claims require binary evidence. |
 | Reporting Requirements | Candidate and measured whole-step cost, rejected variants, actual code/memory delta, source/products and total/local node counts. |
@@ -25,6 +25,15 @@
 
 
 ## Current Technical Baseline
+
+- S8 P20 selects shared512-byte nibble lookup;DOS GS/indexing only on colored
+  spans,portable pair memcpy.10080DOS GS/other-register/guard/source cases and
+  512native states/125829120bytes each width pass. Repeated ten-scene DOS pairs
+  save about20.2ms mixed/dense-priority stages;small other-path regressions
+  retained. Fair-O2 native nonblank improves,zero regression<=0.0022ms/frame;
+  initial unfair baseline excluded. Decoder198bytes/local14;actual footprint/
+  IRQ/global/product benefit unmeasured. P18products unchanged,S8/goal open.
+  [Selection and pending integration](../history/M3-T32-rendering-performance-continuation.md#s8-p20-select-shared-nibble-table-with-conditional-gs-lookup).
 
 - S8 P19 rejects both60-byte transparent-row cohorts:512native states/
   125829120bytes plus128dirty-cache states per width and ten original-DOS

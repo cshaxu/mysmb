@@ -2196,6 +2196,72 @@ physical486qualification remain unproved. Scope/expected/actual[],new0;
 historical1992/1992,local1991/1992nodes and4260/4261feasible controls
 (raw4342,infeasible81). Full M2 certificate remains incomplete.
 
+## S8 P20 select shared nibble table with conditional GS lookup
+
+Contained neutral IO owns512immutable bytes:for each input0..255,the two
+bytes are low/high nibbles. They are project-derived arithmetic constants,
+not ROM material. Portable C copies the pair without word-endian assumptions.
+DOS alone supplies equivalent physical lookup using GS and32-bit indexed
+address calculation in aUSE16 real-mode segment,target386/486 ISA. No image
+allocation,core/PPU change,mode switch,toolchain or installed setting change.
+
+Initial decoder performs table/GS setup even for zero spans;it matches pixels
+but adds about1ms to blank stages. Final version obtains table SEG/OFFSET
+only inside the colored branch and restores GS before the common return.
+Zero scan/fill keeps the existing path. A first draft table base was overwritten
+by scan remainder DX;corrected before the first accepted probe. No product
+source or EXE uses the intermediate variant.
+
+Final original-DOS10080cases cover all256packed values at selected lengths,
+all even0..256lengths for eight values,four source/output alignments,guards,
+source immutability and invalid/null/odd/oversize requests. DS/ES/BP/SP/SI/DI
+and GS are checked for each successful case. Native512states/125829120bytes
+per width compare current P18 canonical/slot/full/arbitrary-row output with
+the portable lookup bound to the same compositor,including resources,
+cache fallbacks,scroll,masks,priority,source and lifetime boundaries.
+
+Current P18 PPU/IO/physical objects and original decoder are used in paired
+DOS stages;only the candidate decoder/table differ. Ten exact scenes are
+timed twice with three full frames per pair,including begin/preparation.
+Table512bytes,decoder CODE198bytes. Actual three GS/address-size indexed
+loads,one GS push/pop and MOV GS are verified. The listing stack model
+explicitly treats emitted0F A8/A9as2-byte pushes/pops;one local CFG balances,
+own maximum14bytes. Caller restore tests do not prove IRQ/firmware upper-
+register or global stack domains;those require integrated review.
+
+| Scene | Warm band raster+mapping saving | Full-frame raster saving |
+| --- | ---: | ---: |
+| Uniform tile content | 18.293ms | 17.509ms |
+| Mixed/fine scroll/split | 20.722ms | 19.760ms |
+| Dense behind-background sprites | 20.735ms | 19.896ms |
+| Blank background | 0.192ms | 0.120ms |
+| Sparse background | 10.171ms | 9.740ms |
+| Dense foreground on blank background | -0.008ms | 0.120ms |
+| Eight foreground sprites | 0.013ms | 0.099ms |
+| No background cache | -0.030ms | -0.001ms |
+| Nonzero sprite range | 0.040ms | -0.004ms |
+| Visible endpoints/interior gaps | 0.013ms | -0.088ms |
+
+Native cost first compared a freshly optimized candidate with an existing
+library decoder;its apparent multiple is excluded. Corrected pairs compile
+both old/new portable services and the same PPU atO2,8192frames per scene.
+Nonblank total ticks improve:x86 246to207/240to203/385to314,x64 256to172/
+220to184/353to306. Zero ticks116to119/x86 and80to98/x64 regress at most
+0.002197ms/frame. CLOCK1000resolution and parallel host scheduling limit
+precision;these are contained costs,not product FPS or a universal speedup.
+Both scalar correctness and the actual Windows product need integrated proof.
+
+Final private DOS primitive probe exits24.27seconds,stage probes31.02/31.42,
+settings unchanged. Select conditional lookup for integration:important
+nonblank stages improve while small zero/fallback differences are reported,
+not omitted. Actual code/loader/resident and full-product benefit remain
+unmeasured. Existing P18source/three EXE hashes unchanged;no refresh required.
+Scope/expected/actual[],new0;historical1992/1992,local1991/1992nodes and4260/4261
+feasible controls(raw4342,infeasible81). S8/goal and nominal60Hz/fivefold/global
+memory-stack/reference/hardware qualification remain open. Integration must
+review GS/upper-register interrupt exposure,bind final objects,validate all
+three actual products and measure the real memory/performance tradeoff.
+
 ## S8 P19 reject transparent-row metadata after dirty-cache verification
 
 Contained shared PPU prototype adds60workspace bytes for480known-zero row

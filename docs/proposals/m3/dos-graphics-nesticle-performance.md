@@ -538,3 +538,15 @@ rebinding,but complex stages still regress1.57..2.29ms while blank-only gains
 about6ms. Reject both,no product/EXEchange. Next PPU/transfer candidates must
 improve complete mixed/dense stages with source/guard/cache-lifetime proof;
 do not adopt a scene-specific switch or infer speed from zero-span savings.
+
+## Shared nibble table selected
+
+[P20 evidence](../../history/M3-T32-rendering-performance-continuation.md#s8-p20-select-shared-nibble-table-with-conditional-gs-lookup)
+selects neutral512-byte immutable nibble pairs,portable pair memcpy and DOS
+GS/address-size lookup only for colored spans.10080DOSprimitive/register
+cases and512native states/125829120bytes each width pass. Repeated ten-scene
+complete DOS stages improve important nonblank costs around20ms;small other
+regressions retained. Fair-O2 native costs improve nonblank,zero absolute
+regression<=0.0022ms/frame;initial library comparison excluded. No product/
+EXEchange. Actual memory/code/full-product cost and GS/upper-register IRQ/
+global stack review plus three-platform publication required before adoption.
