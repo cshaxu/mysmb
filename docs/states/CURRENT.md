@@ -63,6 +63,12 @@ explicitly in TODO rather than asserted complete.
   current objects,97local paths balance. Known-component674/598/650-byte
   contributions omit external depths and do not certify global stack.
   [Binding](../history/M3-T34-native-vga-performance-proposal.md#s3-p5-constructor-bound-indirect-calls).
+- T34 S3 P6binds all168project source objects and catalogs897Cfunctions,
+  2064direct/30indirect call sites. Current constructor-bound subgraph reaches
+  784functions;the legacy internal-RET parser limitation is outside it. Two
+  symbolic cycles need guard/progress bounds and28runtime symbols remain;
+  no global stack/IRQ proof or ROM-node promotion.
+  [Census](../history/M3-T34-native-vga-performance-proposal.md#s3-p6-current-product-wide-source-stack-census).
 
 - T33 S2 P12delivers default80x25on all three products;50-row code/art and
   interfaces remain. Shared semantic compact art/palette/layout owns output;

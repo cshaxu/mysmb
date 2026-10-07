@@ -580,3 +580,45 @@ codec/stdio/runtime and firmware overlay still require full reconciliation.
 No2048-byte safety conclusion follows from these figures. No product code,
 EXE,game/PPU writer or equivalence disposition changes. Four original gates
 remain open;new ROM credit0 and historical/local totals unchanged.
+
+### S3 P6 Current Product-Wide Source Stack Census
+
+Verification-only. Extract the fixed168project-source units from the actual
+original-tool product build list,including startup hooks;exclude generated
+owner resource arrays from function analysis. Recompile157previously unbound
+units with identical defines/flags and reuse11verified listing units. All168
+code/data/fixup records match current objects. No product code/binary changes,
+no original-ROM certification or second source-universe audit is inferred.
+
+The compiler census has897Cfunctions,2064direct call sites and30indirect sites.
+These are compiler implementation counts,not the1992ROM-node or control-edge
+denominators. Local abstract stack paths balance for896functions. The one
+remaining model limitation is legacy pack_planar_band's local near subroutine
+and near RET;it is not classified as a product bug. Constructor-bound symbolic
+entry reachability excludes it because current chain4output calls no plane
+encoder. The source model reaches784functions,with no unresolved local-stack
+problem in that current-entry subgraph. Branches are overapproximated;this is
+not execution coverage/all-input proof.
+
+All30indirect sites are accounted for:retain14previous bindings,bind11shared
+save/load file-table sites,two authored-text filters to actor visible_cell,
+and classify three legacy planar encoder capabilities as non-production.
+Current25-row output uses compact art;retained50-row interfaces remain intact.
+Global-call depth still needs external runtime and firmware costs even after
+these targets are known. Callback review does not silently classify old API
+clients as current production.
+
+The expanded symbolic model finds two cycles requiring state-guard review:
+CheckpointEnemyID -> frenzy -> bullet/cheep producer -> CheckpointEnemyID,and
+ProcLoopCommand -> stream process -> ProcLoopCommand. They are abstract call
+cycles,not proven unbounded recursion or defects. Check identifiers/stream
+progress before assigning finite nesting;no core rewrite is authorized here.
+Twenty-eight external runtime symbols remain separately indexed. Startup
+before main and BIOS/NMI overlay are not included in the source graph.
+
+Known-source contributions model686bytes at main and664at root_step,with
+external costs and cycle guards still missing;do not compare these figures
+with2048as a completed upper bound. Four original global/reference/physical
+gates remain open. New ROM credit0;historical1992/1992,local1991/1992nodes and
+4260/4261feasible controls unchanged. Source listings/raw metadata stay ignored;
+only this neutral evidence is tracked. S3/T34/goal remain active.
