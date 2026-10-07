@@ -1852,13 +1852,14 @@ still decides success. Thus the owner-selected order remains B, then A, then C;
 the change removes only a request known to fail, and leaves shared PPU/game
 decisions, cache bytes and Windows paths untouched.
 
-The current LINK3.65 product completed unchanged-configuration FIT routes at
-384KiB and448KiB with title/input and normal Escape return. Neither route's
-allocation log contains B's63,488-byte block;both therefore take the B-fail to
-A path. The416KiB direct cache probe records
-`decoded=1,packed=0,byteCache=0`, independently proving the same B-fail to A
-selection. Its matching current-product FIT route reaches title capture and
-normal Escape return, so416KiB is no longer an open operational route. The
-current500KiB direct cache diagnostic retains B+A and not C. Both Windows widths passed focused
-keyboard,focus-pause and DOS-root smoke suites. The evidence does not claim a
-physical cadence result or close the remaining runtime/memory qualification.
+The P42 direct diagnostic now has one identical probe shape at every requested
+arena:384KiB reports `decoded=1,packed=0,byteCache=0`;416KiB reports the same;
+448KiB reports `decoded=1,packed=1,byteCache=0`;and500KiB reports
+`decoded=1,packed=1,byteCache=1`. Thus the observed policy ladder is A, A,
+B+A, B+A+C. The 384/416/448 current LINK3.65 product FIT routes independently
+complete title/input and normal Escape return, while the500KiB diagnostic also
+returns normally. Earlier full-product allocation samples ended before the
+cache allocation and therefore cannot classify a tier. Both Windows widths
+passed focused keyboard,focus-pause and DOS-root smoke suites. The evidence
+does not claim a physical cadence result or close the remaining runtime/memory
+qualification.
