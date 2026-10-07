@@ -30,6 +30,13 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P30 accepts a zero-cache shared PPU hot-path repair: bind each
+  decoded sprite CHR row once rather than reconstructing its far offset for
+  every sprite pixel. Exact pixel/cache tests and both Windows suites pass;
+  the DOS16 product passes the stock-config 384KiB route. DOS code grows 16B,
+  while DGROUP, the 2048B stack and runtime allocations are unchanged. Three
+  local EXEs refreshed. [Sprite-row receipt](../history/M3-T34-native-vga-performance-proposal.md#s3-p30-decoded-sprite-row-binding).
+
 - T34 S3 P29 reruns the actual DOS16 product under the unchanged stock DOSBox
   configuration at 384KiB and 448KiB. Both complete title/load, WSAD/JK,
   Tab text/graphics, P/O and Escape routes with captures and normal exit;

@@ -409,6 +409,7 @@ static void mysmb_ppu_frame_build_internal(const struct mysmb_ppu_state *state,
     mysmb_io_u8 opaque;
     mysmb_io_u8 scroll_x;
     mysmb_io_u8 scroll_y;
+    const mysmb_io_u8 MYSMB_PPU_FRAME_FAR *decoded_sprite_row;
 
     /* Source flag zero reaches SkipSprite0 during VBlank, so the entire
      * visible frame uses scene scroll. A synchronized frame retains its
@@ -448,12 +449,14 @@ static void mysmb_ppu_frame_build_internal(const struct mysmb_ppu_state *state,
                 ((attributes & 0x80U) != 0U ? 7U - pixel_y : pixel_y));
             low = mysmb_ppu_pattern(state, pattern);
             high = mysmb_ppu_pattern(state, (mysmb_io_u16)(pattern + 8U));
+            decoded_sprite_row=decoded_chr?
+                decoded_chr+(pattern&0xfff0U)+(pattern&7U)*2U:0;
             for (pixel_x = 0U; pixel_x < 8U && sprite_x + pixel_x < MYSMB_PPU_FRAME_WIDTH;
                  ++pixel_x) {
                 if(decoded_chr) {
                     color=(mysmb_io_u8)((attributes&0x40U)?7U-pixel_x:pixel_x);
-                    color=(mysmb_io_u8)((decoded_chr[(pattern/16U)*16U+
-                        (pattern&7U)*2U+color/4U]>>((color%4U)*2U))&3U);
+                    color=(mysmb_io_u8)((decoded_sprite_row[color>>2U]>>
+                        ((color&3U)*2U))&3U);
                 }
                 else color = (mysmb_io_u8)(((low >> ((attributes & 0x40U) != 0U ? pixel_x :
                     7U - pixel_x)) & 1U) | (((high >> ((attributes & 0x40U) != 0U ?

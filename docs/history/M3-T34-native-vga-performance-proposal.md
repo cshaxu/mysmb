@@ -1425,6 +1425,45 @@ are unchanged;all four original gates remain open and ROM credit is zero.
 Evidence below ignored build/m3-t34-s3:run-p20-final384 and
 run-p20-final448, including their receipts, captures and probe logs.
 
+### S3 P30 Decoded Sprite-Row Binding
+
+The shared PPU decoded-sprite path previously reconstructed the same far CHR
+row base for every one of the row's eight pixels. Bind that decoded row once
+per sprite row, then retain the existing flip, two-bit extraction, clipping,
+left-edge, priority and palette decisions for each pixel. The change adds no
+cache, heap allocation, platform branch, game-state write or PPU-visible
+semantic decision.
+
+Controlled x86 host samples in the same build tree place the dense cached
+graphics median at254.331us per frame for the candidate versus335.529us for
+the reverted baseline;the native-route graphics median is180.781us versus
+188.684us. Host scheduling remains noisy and these numbers are diagnostic,
+not DOS or486 performance claims. The original DOS compiler emits the same
+60-byte local frame for the internal compositor;the linked DOS EXE grows16
+bytes while DGROUP,2048-byte stack and allocation policy remain unchanged.
+
+Both x86/x64 established23-test suites pass,including2048 pixel/reference
+cases,PPU row/cache cases and platform-purity checks. The original-tool DOS
+product passes the unchanged-stock-config384KiB title/load,input,Tab,P/O and
+Escape route. Windows packaging strips only debug material and verifies
+runtime sections byte-identical before the local x86/x64 products are
+refreshed. Current local artifact hashes are DOS16
+c148870ddbc2550f1c4892e5b37f5d1a05d1de7a6612b386490c7f40df26f65f,
+x86 ed9d946d53759b9b00f30870a775f7b587246288308d7a27423d6152b92932e9
+and x64 2283bbdaf16c83cc291a98ea628006fbfee27c39031a0a14c8a250a6c655bfee.
+
+Similar decoded-CHR uses were reviewed. Background rows already bind their
+decoded source per tile;background-opacity lookup is only a behind-sprite
+priority query and has no repeated row base suitable for this binding. No
+additional production hit shares the repeated eight-pixel far-row pattern.
+ROM credit remains zero;all four original global/reference/physical gates
+remain open.
+
+Evidence below ignored build/m3-t34-s3:p30-candidate-x86-samples.txt,
+p30-baseline-x86-samples.txt,p30-ppu-frame.cod,final-tests-x86.log,
+final-tests-x64.log,dos16-single-workspace,mysmb32.exe,mysmb64.exe,
+product-win-strip.json and run-p20-final384.
+
 ### S3 P24 Current Startup And Exit Dispatcher Binding
 
 Audit only. Current loaded bytes confirm the two unused argument/environment
