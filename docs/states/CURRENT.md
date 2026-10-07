@@ -30,6 +30,13 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P23rebinds all12remaining nested CRT/service wrapper entries to current
+  EXE bytes;seven binary-stream/allocator CFGs balance and wrapper depths
+  agree. Current project+CRTknown contributions720/704bytes exclude external
+  service bodies,startup/exit and IRQ/NMI/firmware. Project/CRTrebinding is
+  complete;global stack gate is not. No product change.
+  [Runtime integration](../history/M3-T34-native-vga-performance-proposal.md#s3-p23-current-nested-crt-and-service-wrapper-integration).
+
 - T34 S3 P22relinks current objects to loaded-image-identical public MAP and
   rechecks16CRTleaf symbols/15addresses from current EXE bytes. Depths and
   argument pops agree with retained proof;current known main/root_step totals

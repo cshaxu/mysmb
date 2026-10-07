@@ -1367,3 +1367,32 @@ Evidence below ignored build/m3-t34-s3:crt-current-map.ps1,crt-current,
 rebind-p22-rtl.py,rtl-current/census.json,leaf-bounds.json,rebind-receipt.json,
 merge-p22-leaves.py and stack-current/guarded-chain-with-rtl-leaves.json.
 No product source/EXE changes;ROM node/control credit0.
+
+### S3 P23 Current Nested CRT And Service Wrapper Integration
+
+Audit only;current byte analysis completes the twelve-entry rebinding left
+by P22. Decode current runtime private/public anchors,repair the already
+known instruction-boundary gap at its current address and rerun seven nested
+allocator/binary-stream CFGs. Own-plus-nested contributions remain64/50/
+64/34/56/122/136bytes respectively for fmalloc,nmalloc,fclose,fflush,fopen,
+fread and fwrite. Returns balance;no internal undecoded path remains under
+the admitted binary-stream condition. The current descriptor flag test and
+rb/wb/ab caller bindings retain that condition,not general text-mode proof.
+
+Recheck getvect,setvect,remove and rename wrappers with shared error tails.
+The int86window is instruction-identical after explicit near/far code-address
+rebasing;retain its22-byte wrapper/28-byte BIOS-entry contribution. No DOS or
+BIOS internal body is treated as zero. Merge current leaves,nested entries,
+wrappers and hardware service-entry frames with P21project callbacks.
+Known contributions remain main720/root_step704bytes,with delegated unknown
+DOS/BIOS service bodies rather than unresolved project/CRT callees.
+
+This completes current binding of the previously reviewed project/CRT
+contributions. Remaining global stack clauses are before-main/exit,
+DOS/BIOS bodies and IRQ/NMI/firmware overlays;they cannot be discharged by
+repeating application CFG audits. All four original gates remain open.
+Evidence below ignored build/m3-t34-s3:rebind-p23-nested.py,
+rebind-p23-wrappers.py,rtl-private-current/nested-binary-cfg.json,
+rtl-current/service-bounds.json,nested-service-rebind.json and
+stack-current/guarded-chain-with-runtime.json. Product source/EXEs unchanged;
+ROM node/control credit0.
