@@ -511,3 +511,29 @@ Accepted designs remain reference anchors;the remainder is pending actual
 visual review. Design-pattern approval cannot silently approve unseen cases
 or hardware palette/input/geometry behavior. Keep native/gameplay fixtures
 distinct from descriptor-only proposals. Existing50code stays unchanged.
+
+P10 produces the remaining dynamic-element batch:53controlled native source
+states R01-R53,with nine four-column pages and a local browsable index. It
+covers Goomba walk/flat/inversion;green/red Koopa and winged forms;colored
+and inverted shells;Beetle/Bloober/fish/Bill;plant mouth phases;Bro walk/throw;
+Lakitu/Spiny/egg/Podoboo;Toad/Princess;three spring stages;Bowser front/rear;
+two fireball phases,three explosions,four hammer angles,two flames;vine,
+small/large platforms,brick/spent block,fragments and six firebar components.
+Native fixtures report52single-actor cases and one six-component firebar
+case,with zero unsupported observations. The reference is native OAM with
+original CHR and explicit ground/water/castle/Bowser palette bindings,not an
+independent original-ROM gameplay replay. New art is independently authored
+semantic color masses plus representable character landmarks.
+
+Review before publication catches and corrects proposal eye marks placed on
+feet,missing pose distinctions,incorrect effect-core hue and disconnected
+small-platform spans. Current50is not repaired:the flat-Goomba fixture has
+no visible character cells despite a recognized receipt,and its panel labels
+that limitation. This needs a named clipping/anchor follow-up before product
+adoption;no finding expands ROM certification credit. Each panel is bounded
+to its column and has a content-dependent row height;fragments use a bounded
+controlled spatial fixture. All53designs are pending owner review.
+Background/terrain,information scenes/score sprites and remaining player
+poses are still outside this batch;do not call the full46-kind review closed.
+Protected panels/raw fixtures and local tools remain in ignored build. No
+product change or three-EXE refresh is required for this design-only P.
