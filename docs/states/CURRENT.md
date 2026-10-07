@@ -79,6 +79,11 @@ explicitly in TODO rather than asserted complete.
   argument-pop8is confirmed. Twelve runtime/service entries and firmware/
   startup/IRQ/NMI overlay remain unproved;no global stack certification.
   No code/EXE change,[leaves](../history/M3-T34-native-vga-performance-proposal.md#s3-p8-linked-runtime-leaf-depths).
+- T34 S3 P9bounds five DOS/BIOS wrappers'own contributions(2/4/4/6/22bytes),
+  including remove/rename shared tails. INT10gateway contributes28bytes at
+  service entry before unknown BIOS depth. Seven nested allocator/file entries
+  plus DOS/BIOS/firmware/startup/IRQ/NMI clauses remain,not zero-cost leaves.
+  [Wrappers](../history/M3-T34-native-vga-performance-proposal.md#s3-p9-dosbios-service-wrapper-contributions).
 
 - T33 S2 P12delivers default80x25on all three products;50-row code/art and
   interfaces remain. Shared semantic compact art/palette/layout owns output;

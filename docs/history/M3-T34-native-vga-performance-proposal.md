@@ -608,6 +608,37 @@ not a new acceptance round or ROM node promotion. Four original gates remain
 open;historical1992/1992,local1991/1992nodes and4260/4261controls unchanged,
 new0. S3/T34/goal remain active.
 
+### S3 P9 DOS/BIOS Service Wrapper Contributions
+
+Verification-only;actual current MZ windows and shared-tail targets are bound
+to the same product/map as P8. Get-vector/set-vector wrappers own2/4bytes;
+remove/rename own4/6bytes. Their INT21hardware entry adds6bytes before the
+unknown DOS service body. Remove/rename tail-jump to the common result path,
+not a missing return. Its error branch calls the no-stack inner mapper via
+a2-byte near return address,then restores the inherited BP frame and returns
+FAR. Wrapper CFGs balance conditional on the service returning the original
+SP. DOS/BIOS bodies are not silently assigned zero cost.
+
+Current int86calls all request INT10. Its own pushes/local staging peak22bytes.
+The generated normal thunk has a4-byte FAR return plus6-byte INTentry frame;
+at the BIOS entry the wrapper/thunk/hardware contribution is28bytes. The
+error path's private mapper is included in this wrapper analysis. Special
+INT25/26flag-discard paths are not used by the current composition;arbitrary
+interrupt-number API clients are outside this applicability statement.
+No BIOS internal,firmware/NMI or whole-program2048-byte bound is inferred.
+
+This resolves caller-owned contributions for five of the twelve P8service
+entries,while preserving their delegated service-depth clauses. Seven runtime
+entries remain without complete nested contributions:fmalloc,nmalloc,fclose,
+fflush,fopen,fread,fwrite. The16leaf symbols and5wrappers must not be described
+as21complete environment-inclusive bounds. Startup before main and IRQ/NMI
+overlay likewise remain. Four original gate families stay open.
+
+No product code or EXE changes;all three tested P1hashes retained. Neutral
+conclusions only tracked,raw runtime bytes/disassembly remain ignored. ROM
+credit0;historical1992/1992,local1991/1992nodes and4260/4261controls unchanged.
+S3/T34/goal remain active pending the unresolved original requirements.
+
 ### S3 P5 Constructor-Bound Indirect Calls
 
 Read-only verification. Original /AL offset metadata matches every previously
