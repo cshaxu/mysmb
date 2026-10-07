@@ -153,7 +153,12 @@ int main(void)
     text_frame.cells[3999U].character = ' ';
     text_frame.cells[3999U].foreground = 15U;
     text_frame.cells[3999U].background = 1U;
-    if (sizeof(text_frame) != 12000U || sizeof(input) != 3U) return 5;
+    if (sizeof(text_frame.cells) != 12000U || sizeof(input) != 3U) return 5;
+    text_frame.rows=25U;
+    if(MYSMB_IO_TEXT_FRAME_ROWS(&text_frame)!=25U ||
+        MYSMB_IO_TEXT_FRAME_CELLS(&text_frame)!=2000U)return 5;
+    text_frame.rows=50U;
+    if(MYSMB_IO_TEXT_FRAME_CELLS(&text_frame)!=4000U)return 5;
 
     /* Preserve repeated timer-high writes: each can retrigger a channel. */
     audio.write_count = 2U;

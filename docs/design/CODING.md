@@ -28,7 +28,9 @@ the contained `io/file` service also uses portable `stdio.h`. These standard
 operations add no game or device dependency. It owns decoded two-port input,
 a borrowed read-only256x240indexed frame or synchronous bounded row producer,
 an owned ordered audio snapshot,
-and authored 80x50 text cells. Selected glyph IDs and their Unicode/reflection
+and selected80x25/retained80x50text cells. Cells remain three bytes;the neutral
+frame retains4000-cell capacity and adds selected rows and a16-entry RGB
+palette with a source-color map. Selected glyph IDs and their Unicode/reflection
 mapping live in io/text_glyph. It contains no game state, ROM data, host API,
 audio synthesis, or text quantizer. Shared color lookup and indexed row scaling
 consume only the neutral video contract. Its sole target-dependent representation
@@ -42,7 +44,8 @@ the neutral IO text frame; it has no RAM/OAM/resource or host dependency.
 S2 adds optional per-instance source-decision observations and DMA latching
 under core/observation,plus read-only actor/background/HUD
 assembly. Both roots enable observations and bind an early Tab text preview.
-DOS allocates15400bytes for exclusive authored text or bounded pixel rows;
+DOS allocates the full text frame/workspace capacity for exclusive authored
+text or bounded pixel rows (15532bytes after layout/palette metadata);
 only the active synchronous presenter view is valid,and every graphical band
 rebuilds after text. Neutral row views retain absolute logical coordinates and
 expire before the next producer call;the legacy full-frame path stays supported. Windows uses a real console.
@@ -53,6 +56,14 @@ after partial overwrite. Legacy schema1 lacks those receipts and invalidates
 them on restore while retaining the destination's observation preference.
 The DOS transaction workspace uses a bounded far-heap allocation. The dormant
 `validate/text_frame` pixel sampler is not used by this module.
+
+`text/compact_elements` is the independently authored25-row art bank;
+`text/elements` retains the50-row bank. Shared actor/background/caption traversal
+uses the selected layout. `text/layout` owns frame initialization and source
+palette binding;hosts consume neutral RGB/cells only. At most16palette colors
+are resident:additional source hues use the nearest admitted RGB entry.
+Compact source-rectangle projection preserves committed OAM ownership and
+partial visibility without decoding CHR or executing a game selector.
 
 Background text assembly exports authored-cell occupancy in its2900-byte
 caller-owned far workspace. Actors use a separate500-byte far claim map and

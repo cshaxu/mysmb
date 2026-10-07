@@ -22,6 +22,21 @@ unsigned long mysmb_io_color_text_rgb(mysmb_io_u8 index)
 {
     return text_palette[index&15U];
 }
+mysmb_io_u8 mysmb_io_color_text_nearest(unsigned long rgb)
+{
+    unsigned short i,best;
+    long r,g,b;
+    unsigned long d,minimum;
+    minimum=0xffffffffUL;best=0U;
+    for(i=0U;i<16U;++i) {
+        r=(long)((rgb>>16U)&255UL)-(long)((text_palette[i]>>16U)&255UL);
+        g=(long)((rgb>>8U)&255UL)-(long)((text_palette[i]>>8U)&255UL);
+        b=(long)(rgb&255UL)-(long)(text_palette[i]&255UL);
+        d=(unsigned long)(r*r+g*g+b*b);
+        if(d<minimum){minimum=d;best=i;}
+    }
+    return (mysmb_io_u8)best;
+}
 
 mysmb_io_u8 mysmb_io_color_text16(mysmb_io_u8 index)
 {

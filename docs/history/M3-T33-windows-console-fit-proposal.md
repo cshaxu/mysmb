@@ -219,8 +219,10 @@ All 129 entries require an explicit keep/redesign verdict. One-row scores,
 fireballs and platforms can retain useful glyphs; multi-row art requires
 compact redesign. Review every kind and state, not just Mario. Record aliases,
 inversion, facing, clipped emergence and palette phases separately from art
-storage. The queued full object/state gallery is retained; do not silently
-claim that this table discharges that larger visual-review contract.
+storage. The owner's withdrawn standalone [full object/state gallery contract](M3-T33-text-gallery-transferred-proposal.md)
+is now received by T33 at task level. This table and S2's bounded implementation
+do not discharge its complete manifest, gallery, per-state review and disposition;
+plan remaining cohorts through later admitted S work before T33 closure.
 
 ### Proposed shared layout
 
@@ -551,3 +553,96 @@ Lakitu goggles/cloud,retainer face/dress and effect centers. Add only useful
 source-aligned landmarks with a legitimate two-color cell;do not uniformly
 outline every mass or silently promote unseen refinements to accepted art.
 Retained current50and all formal products remain unchanged.
+
+### S2 P12 implementation and local play-test delivery
+
+Owner authorizes implementation and requests the spring's original white
+side highlights. Default text is now80x25on DOS16/Win32/x64. The legacy50-row
+interface/artwork remains;no user-facing layout selector is introduced.
+Shared text owns compact semantic art,palette binding,projection,priority and
+captions. Hosts own font/mode,neutral RGB submission and console lifetime.
+No translated core/PPU source changes or ROM-node/control credit occur.
+
+The neutral frame retains4000-cell capacity for50-row compatibility,with
+selected rows,16RGB colors and a64-entry color map. Default output consumes
+2000cells;retained capacity means this delivery does not claim6000bytes of
+resident storage savings. Source colors exceeding16unique resident entries
+use nearest RGB fallback. Windows VT uses explicit RGB;classic palettes are
+programmed where supported with standard-color fallback otherwise. DOS VGA
+programs the same neutral palette and uses16-pixel text font for25rows.
+Old50-row construction initializes the original standard palette.
+
+Compact projection uses source object bounds and committed ownership rather
+than requiring each coarse cell center to land inside an8-pixel sprite.
+This retains small components and partial ownership,with the same background
+priority masks. Caption lines that collide after projection receive distinct
+available rows. Information sprites remain literal words. Spring three-state
+art includes white side blocks and gold wire accents;source-selected palette
+phases remain live. Unreviewed scene/pose details remain subject to the
+transferred complete-gallery contract and owner play review.
+
+The owner flags black blue-sky lettering and missing question marks during
+implementation. RGB-distance contrast incorrectly favored black on blue;
+custom contrast now keeps light information text on blue/dark scenes. A
+one/two-row block was entirely classified as border,so its question mark
+could never execute;compact information marks now precede that edge decision.
+Tests cover16vertical phases,blue-sky white ink and adjacent caption lines.
+Actual native game captures show white HUD and visible question marks.
+
+Further owner play feedback exposes two presentation omissions. The Windows
+VT writer still interpreted custom palette slots through the standard16
+palette, producing wrong colors. It now emits the frame's explicit RGB
+foreground/background and resets SGR before output;the capability test checks
+actual emitted bytes for custom and retained legacy colors. The compact
+player selector also aliased three running poses to one artwork. Each small
+and large Mario/Luigi running phase now has distinct limbs,including both
+facing directions. Original source pose selection,animation timing,movement
+and game/PPU state remain untouched. Native source-selected three-frame
+comparisons cover all four player/size identities and both directions.
+The similar-issue sweep includes the retained50-row selector,other compact
+pose families,VT and classic palette submission,and DOS neutral palette output.
+The53legacy cases remain byte-identical;no further palette-owner omission
+is identified within this sweep. Physical-host and broader gallery acceptance
+remain pending rather than being inferred from these tests.
+
+Verification:
+
+- Each Windows width passes20focused checks:compact/legacy text,IO,PPU,row
+  output,snapshot,keyboard,launch,console capability,DOS root,purity and native
+  self-test. The strengthened compact case additionally passes110kind/pose
+  proposals,64RGB fallback cases,palette/capacity/read-only and16question-block
+  phases. A borrowed-frame regression exposed uninitialized metadata padding;
+  deterministic metadata initialization fixes it without removing the test.
+- All53retained legacy actor cell buffers remain byte-identical. Actual
+  compact fixtures have53nonblank outputs. A1200-frame native title/gameplay
+  route checks renderer read-only state and exports six local cell captures.
+  This is operational evidence,not independent original-ROM equivalence.
+- Both actual stripped Windows products retain identical non-debug PE sections
+  to their builds and pass three text entries,two Tab returns and Escape on a
+  private desktop. Current host reports80x25/2000cells. Notification handles
+  do not prove Terminal physical font/caption behavior;owner acceptance stays
+  open. Interactive CMD waits,reuses text,accepts Tab both ways and resumes
+  shell input after exit on both widths,without a helper process.
+- Original OpenNT DOS16 compiler/linker and memory checks pass:EXE320681B,
+  DGROUP51472including2048stack,14064headroom,logical loader343952..348048B
+  excluding dynamic allocations. No hardware performance/stack-high-water
+  qualification is inferred. Stock DOSBox configuration hash is unchanged;
+  no CPU/core/resolution tuning. Actual product enters25-row text,accepts
+  Enter into the world/lives screen and Escape returns to DOS. Slow stock
+  startup required delayed input;no gameplay-speed qualification is claimed.
+
+Local products:mysmb16.exe320681B,mysmb32.exe330766B,mysmb64.exe346126B.
+They are delivered under assets for owner testing;protected derived products
+remain local under the current source policy. Neutral receipts/logs/probes
+and images remain below ignored build. Source/documentation submission does
+not stage these existing tracked binaries.
+
+S2 remains active awaiting owner play feedback;T33 is not closed. The broader
+complete state/background/information gallery remains a task-level obligation.
+Reviewed delivery spans32source/test/build/document files,approximately
+842added and119removed lines before this size note;production changes are
+under the neutral IO/text owners and the two host components. No game or PPU
+implementation file is changed. The gallery proposal transfer is preserved.
+Historical mapping1992/1992,local1991/1992nodes and4260/4261feasible controls
+(raw4342,infeasible81) are unchanged,new credit0. Full M2certification remains
+incomplete. No remote is configured;source commits are local.

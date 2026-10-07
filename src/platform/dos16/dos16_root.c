@@ -108,7 +108,7 @@ static void present_current(struct mysmb_dos16_root *root)
     struct mysmb_io_palette_pairs __near *pairs;
 #endif
     if(root->text_mode) {
-        if(mysmb_text_scene_build(&root->game,root->text_workspace,root->text_frame)) {
+        if(mysmb_text_scene_build_profile(&root->game,root->text_workspace,root->text_frame,25U)) {
             root->present_text(root->hooks.context,root->text_frame);return;
         }
         if(!root->set_mode(root->hooks.context,0U))return;

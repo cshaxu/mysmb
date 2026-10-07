@@ -67,7 +67,7 @@ master RGB lookup and bounded row scaling;each frame supplies its32-entry
 slot-to-master table. VGA owns fixed
 direct256x240-to320x400 enlargement without borders or source-row loss,
 four32000-byte Mode X video planes,submitted from a5120-byte four-plane16row
-band borrowed after the2560-byte source area in the existing15400-byte store,
+band borrowed after the2560-byte source area in the exclusive text/row store,
 640x400 scanout,
 DAC programming and video memory. DOS devices own physical held-key decoding,
 BIOS mode lifetime and PIT sampling. Only its composition root binds local
@@ -84,13 +84,14 @@ The DOS mixed-band encoder writes each plane contiguously using bounded
 32-input/10-output macro groups,two DWORD stores and one WORD store. It keeps
 USE16 addressing,all64indices and the same portable IO plan;no image allocation
 or game state is introduced by the physical store optimization.
-The DOS root owns a15400-byte exclusive row/text allocation and presenter choice.
+The DOS root owns the capacity-backed exclusive row/text allocation (15532
+bytes with dual-layout/palette metadata) and presenter choice.
 Each16destination-row band requests at most10logical source rows/2560bytes
 from the same const PPU compositor;all four VGA planes consume it before reuse.
 Text uses the same store while active;every graphical band rebuilds on return.
 The legacy full-frame initialization/hook layout remains supported. Neutral IO
 declares the synchronous producer lifetime;devices never see PPU/game state. Snapshot transaction/recovery storage stays separate;VGA
-devices accept neutral cells in80x50 mode. Mode changes retain keyboard/clock
+devices accept neutral cells in default80x25or retained80x50mode. Mode changes retain keyboard/clock
 state,and the same shared game scene is used by the Windows console preview.
 
 Application requests are separate from both NES controller ports. Shared
@@ -125,12 +126,13 @@ Loss,presenter changes and snapshot restore clear stale game keys. A valid
 subsequent console down needs no gain record. Tab/P/O/Escape retain their shared
 application-request owners. No original game routine handles host input.
 The console owns explicit input/output device handles and requests key records,
-not terminal escape-sequence input. All console outputs receive the same8x8font request and bounded settled
+not terminal escape-sequence input. Console outputs request8x16for25rows and
+8x8for the retained50rows,with bounded settled
 fit. Effective font/window changes are optional capabilities;no class-name
 flag owns device policy. A usable visible host window alone enables activation
 and optional restored geometry. VT-capable outputs receive neutral RGB glyphs;
 font and geometry support are independent. Every device receives one optional
-80x50entry size/view request even without a real HWND;partial unsupported
+selected80x25/80x50entry size/view request even without a real HWND;partial unsupported
 requests restore prior geometry. Successful geometry is read back and retained
 for borrowed-shell restoration. Non-window hosts are never forcibly resized
 per frame;unsupported requests retain responsive viewport clipping.
@@ -183,8 +185,8 @@ DPI margins;minimum,maximized,restored and programmatic sizes share that
 device owner. Zero-sized clients skip drawing;no crop or letterbox owner.
 
 Console geometry belongs to the Windows device. Settled Restore attempts its
-80x50buffer/view where an actual host window is available;fit requests grow
-only to8x8. In-flight clipping or unsupported optional geometry defers drawing
+selected buffer/view where an actual host window is available;fit requests
+remain bounded by its layout's requested cell geometry. In-flight clipping or unsupported optional geometry defers drawing
 without a presenter switch;genuine handle loss keeps recovery.
 Borrowed shutdown restores the original shell view when a real window exists.
 Terminal notification/message-only handles do not expose classic geometry;

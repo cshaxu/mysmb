@@ -1,5 +1,6 @@
 #include "text/caption_scene.h"
 #include "io/color.h"
+#include "text/layout.h"
 
 static unsigned char character(unsigned char tile)
 {
@@ -28,11 +29,11 @@ static int cell(const struct mysmb_game *g,
     unsigned char c,unsigned char bg)
 {
     unsigned short i;
-    if(x<0L || x>=80L || y<0L || y>=50L)return 0;
+    if(x<0L || x>=80L || y<0L || y>=(long)MYSMB_IO_TEXT_FRAME_ROWS(frame))return 0;
     if((g->ppu.visible_ppu_mask&2U)==0U && (x*256L+128L)/80L<8L)return 0;
     i=(unsigned short)(y*80L+x);
     frame->cells[i].character=c;
-    frame->cells[i].foreground=mysmb_io_color_text_contrast(bg);
+    frame->cells[i].foreground=mysmb_text_contrast(frame,bg);
     frame->cells[i].background=bg;
     w->opaque[i/8U]|=(unsigned char)(1U<<(i%8U));return 1;
 }
@@ -83,7 +84,7 @@ static void sign_line(const struct mysmb_game *g,
     const char *text,unsigned char bg)
 {
     unsigned short length,i;
-    if(g->ppu.visible_sprite0_split && (y*240L+120L)/50L<32L)return;
+    if(g->ppu.visible_sprite0_split && (y*240L+120L)/(long)MYSMB_IO_TEXT_FRAME_ROWS(frame)<32L)return;
     for(length=0U;text[length]!='\0';++length){}
     left+=(right-left-length)/2L;
     for(i=0U;i<length;++i)(void)cell(g,w,frame,left+i,y,(unsigned char)text[i],bg);
@@ -102,12 +103,12 @@ static int title_sign(const struct mysmb_game *g,
     right=first((short)(216-(short)g->ppu.visible_scroll_x),80L,256L);
     if((g->ppu.visible_ppu_name_table&1U)!=0U){left+=80L;right+=80L;}
     attribute=g->ppu.name_table[0U][0x3c9U];palette=(unsigned char)(attribute&3U);
-    bg=mysmb_io_color_text16(g->ppu.palette[palette*4U+2U]);
+    bg=mysmb_text_color(frame,g->ppu.palette[palette*4U+2U]);
     for(part=0U;part<2U;++part) {
-    top=first((short)(32-(short)g->ppu.visible_scroll_y+part*240U),50L,240L);
-    bottom=first((short)(120-(short)g->ppu.visible_scroll_y+part*240U),50L,240L);
+    top=first((short)(32-(short)g->ppu.visible_scroll_y+part*240U),(long)MYSMB_IO_TEXT_FRAME_ROWS(frame),240L);
+    bottom=first((short)(120-(short)g->ppu.visible_scroll_y+part*240U),(long)MYSMB_IO_TEXT_FRAME_ROWS(frame),240L);
     for(y=top;y<bottom;++y)for(x=left;x<right;++x) {
-        if(g->ppu.visible_sprite0_split && (y*240L+120L)/50L<32L)continue;
+        if(g->ppu.visible_sprite0_split && (y*240L+120L)/(long)MYSMB_IO_TEXT_FRAME_ROWS(frame)<32L)continue;
         c=y==top || y+1L==bottom?'-':x==left || x+1L==right?'|':' ';
         if((y==top || y+1L==bottom) && (x==left || x+1L==right))c='+';
         (void)cell(g,w,frame,x,y,c,bg);
@@ -136,13 +137,17 @@ unsigned short mysmb_text_caption_scene_draw(const struct mysmb_game *g,
     struct mysmb_text_background_workspace MYSMB_IO_FAR *w,
     struct mysmb_io_text_frame MYSMB_IO_FAR *frame)
 {
-    unsigned short row,col,table,offset,n,drawn,part;
+    unsigned short row,col,table,offset,n,drawn,part,j;
+    short line_rows[30];
+    unsigned char used_rows[25];
     unsigned char tile,c,bg;
     int sign;
     short px,py;
     long x,y;
     if((g->ppu.visible_ppu_mask&8U)==0U)return 0U;
-    drawn=0U;sign=title_sign(g,w,frame);bg=mysmb_io_color_text16(g->ppu.palette[0U]);
+    drawn=0U;sign=title_sign(g,w,frame);bg=mysmb_text_color(frame,g->ppu.palette[0U]);
+    for(j=0U;j<30U;++j)line_rows[j]=-1;
+    for(j=0U;j<25U;++j)used_rows[j]=0U;
     for(row=0U;row<30U;++row)for(col=0U;col<64U;++col) {
         table=(unsigned short)((col/32U)^(g->ppu.visible_ppu_name_table&1U));
         offset=(unsigned short)(row*32U+col%32U);
@@ -155,26 +160,38 @@ unsigned short mysmb_text_caption_scene_draw(const struct mysmb_game *g,
         px=(short)(col*8U)-(short)g->ppu.visible_scroll_x;
         py=(short)(row*8U)-(short)g->ppu.visible_scroll_y;
         for(part=0U;part<2U;++part) {
-            x=first(px,80L,256L);y=first((short)(py+part*240U),50L,240L);
-            if(g->ppu.visible_sprite0_split && (y*240L+120L)/50L<32L)continue;
+            x=first(px,80L,256L);y=first((short)(py+part*240U),(long)MYSMB_IO_TEXT_FRAME_ROWS(frame),240L);
+            if(g->ppu.visible_sprite0_split && (y*240L+120L)/(long)MYSMB_IO_TEXT_FRAME_ROWS(frame)<32L)continue;
             if(menu_token(g,table,offset,tile)) {
                 drawn+=(unsigned short)cell(g,w,frame,x,y,'(',bg);
                 if(((x+1L)*256L+128L)/80L<(long)px+8L)
                     drawn+=(unsigned short)cell(g,w,frame,x+1L,y,')',bg);
-                if(((y+1L)*240L+120L)/50L<(long)py+part*240L+8L) {
+                if(((y+1L)*240L+120L)/(long)MYSMB_IO_TEXT_FRAME_ROWS(frame)<(long)py+part*240L+8L) {
                     drawn+=(unsigned short)cell(g,w,frame,x,y+1L,'/',bg);
                     if(((x+1L)*256L+128L)/80L<(long)px+8L)
                         drawn+=(unsigned short)cell(g,w,frame,x+1L,y+1L,'\\',bg);
                 }
             } else {
                 c=character(tile);if(c==0U)continue;
+                if(frame->rows==25U && y>=0L && y<25L) {
+                    if(line_rows[row]<0) {
+                        j=(unsigned short)y;
+                        while(j<25U && used_rows[j])++j;
+                        if(j==25U) {
+                            j=(unsigned short)y;
+                            while(j>0U && used_rows[j])--j;
+                        }
+                        if(used_rows[j]==0U){line_rows[row]=(short)j;used_rows[j]=1U;}
+                    }
+                    if(line_rows[row]>=0)y=line_rows[row];
+                }
                 drawn+=(unsigned short)cell(g,w,frame,x,y,c,bg);
             }
         }
     }
     if(g->ppu.visible_sprite0_split)for(row=0U;row<4U;++row)for(col=0U;col<32U;++col) {
         c=character(g->ppu.name_table[0U][row*32U+col]);if(c==0U)continue;
-        x=col*8UL*80UL/256UL;y=row*8UL*50UL/240UL;
+        x=col*8UL*80UL/256UL;y=row*8UL*(unsigned long)MYSMB_IO_TEXT_FRAME_ROWS(frame)/240UL;
         drawn+=(unsigned short)cell(g,w,frame,x,y,c,bg);
     }
     return drawn;

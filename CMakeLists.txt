@@ -677,11 +677,15 @@ target_link_libraries(mysmb_bloober_oam_smoke PRIVATE mysmb_core)
 add_executable(mysmb_podoboo_oam_smoke test/podoboo_oam_smoke.c)
 target_link_libraries(mysmb_podoboo_oam_smoke PRIVATE mysmb_core)
 add_library(mysmb_text_elements STATIC src/text/elements.c
+    src/text/compact_elements.c src/text/layout.c
     src/text/actor_scene.c
     src/text/background_scene.c
     src/text/caption_scene.c
     src/text/scene.c)
 target_include_directories(mysmb_text_elements PUBLIC src)
+add_executable(mysmb_text_compact_scene_smoke test/text_compact_scene_smoke.c)
+target_link_libraries(mysmb_text_compact_scene_smoke PRIVATE mysmb_text_elements)
+add_test(NAME mysmb.text-compact-scene-smoke COMMAND mysmb_text_compact_scene_smoke)
 target_link_libraries(mysmb_text_elements PUBLIC mysmb_core mysmb_io_color)
 target_link_libraries(mysmb_text_observation_smoke PRIVATE mysmb_text_elements)
 add_executable(mysmb_text_elements_smoke test/text_elements_smoke.c)

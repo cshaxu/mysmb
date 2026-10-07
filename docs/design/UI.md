@@ -10,7 +10,14 @@ The later DOS graphical product targets a 25 MHz 486SX. MS-DOS 5.0 is the requir
 
 ## Text Presentation
 
-The text product uses an 80×50 colored character scene. It draws known game objects and their states using cells, outlines, and glyph detail; it is not a luminance-to-ASCII filter. Tab switches between graphics and text over the same running game state on DOS16 and Windows. Shared glyph IDs include ASCII text and selected CP437-compatible details.
+The text product defaults to an 80x25 colored character scene. The retained
+80x50 interface and artwork remain available for regression and a future
+selection switch;there is no new user-facing switch yet. Shared text owners
+draw semantic color masses with character landmarks from committed object
+observations,not a bitmap sampler. Tab switches graphics/text over the same
+game state on DOS16 and Windows. ASCII information and selected CP437 details
+remain shared. Blue/dark scenes keep light information text;question blocks
+retain a visible question mark even at one/two rows tall.
 
 ## Host Resources
 
@@ -30,6 +37,8 @@ replacement has a documented delete/rename interruption window. The
 records scoped evidence and limitations.
 
 Windows Terminal keeps its native font and window size. On Restore the device
-redraws the currently visible portion of the shared80x50scene;owner accepts
-clipping beyond this viewport. Classic console retains its80x50restored view.
+redraws the visible portion of the selected scene;owner accepts clipping
+beyond this viewport. Classic console requests the selected80x25view
+(80x50through the retained interface). Palette and font acceptance are
+separate from buffer readback and remain subject to owner play testing.
 No Windows default-terminal setting is changed by the product.

@@ -78,7 +78,7 @@ $sources = @(
     'ppu/frame.c', 'core/status.c',
     'core/observation.c',
     'text/observer_snapshot.c',
-    'text/elements.c', 'text/actor_scene.c',
+    'text/elements.c', 'text/compact_elements.c', 'text/layout.c', 'text/actor_scene.c',
     'text/background_scene.c', 'text/caption_scene.c',
     'text/scene.c',
     'app/game_io.c', 'app/game_snapshot.c', 'io/color.c', 'io/palette_pairs.c', 'io/palette_expand.c', 'io/text_glyph.c', 'io/scale.c', 'io/pacing.c', 'io/control.c', 'io/snapshot.c', 'io/snapshot_store.c', 'io/snapshot_keys.c', 'io/file/snapshot_files.c', 'platform/dos16/snapshot_replace.c', 'platform/dos16/keyboard.c', 'platform/dos16/pit_clock.c', 'platform/dos16/devices.c',

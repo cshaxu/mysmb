@@ -52,6 +52,15 @@ struct mysmb_io_text_cell {
 
 struct mysmb_io_text_frame {
     struct mysmb_io_text_cell cells[MYSMB_IO_TEXT_CELLS];
+    /* Retained capacity supports both layouts;only selected rows are output.
+     * Palette entries are neutral RGB,not host attributes or game state. */
+    mysmb_io_u16 rows;
+    mysmb_io_u8 source_colors;
+    unsigned long colors[16];
+    mysmb_io_u8 master_map[64];
 };
+
+#define MYSMB_IO_TEXT_FRAME_ROWS(f) ((f)->rows==25U?25U:50U)
+#define MYSMB_IO_TEXT_FRAME_CELLS(f) (80U*MYSMB_IO_TEXT_FRAME_ROWS(f))
 
 #endif

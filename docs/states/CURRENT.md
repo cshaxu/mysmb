@@ -8,26 +8,39 @@
 | --- | --- |
 | Identifier Mode | Corrective; latest closed T33 reopened, S1 closure retained, S2 active. |
 | Admission And Approval | Owner explicitly requests reopening T33 at S2 and redesigned 80x25 text; retain intact 80x50 alongside the new default 80x25 profile, with no selection switch yet. |
-| Objective | Establish a bounded shared default-80x25 design with retained 80x50 compatibility, complete template/consumer census, migration cohorts and visual acceptance; retain console-subsystem regression findings. |
-| Non-goals | No product-code change in this design P; no game/PPU changes, bitmap sampling, helper process, global Terminal settings or claim that 25 rows alone fixes console allocation/Tab latency. |
+| Objective | P12 owner authorizes implementation of default shared80x25 with retained80x50;adopt reviewed color-mass/character art,including spring side highlights,and publish three local EXEs for owner play testing. |
+| Non-goals | No game/PPU changes,bitmap sampling,helper process,global Terminal settings,user-facing layout switch or claim that25rows alone fixes allocation/Tab latency. |
 | Reference Baseline | Current source at 358beff9; owner accepts diagnostic 05 on both widths and rejects 06 physical 80x50 display. API readback is not physical acceptance. |
 | Candidate Proposal | [T33 retained proposal, S2 amendment](../history/M3-T33-windows-console-fit-proposal.md#s2-corrective-reopening-and-80x25-design). |
-| Files And ABI Surface | Planning records and node/task ledger only in this P. Future shared io/video and text element/actor/background/caption owners, both device adapters and focused tests are inventoried, not yet modified. |
+| Files And ABI Surface | io/video neutral layout/palette metadata;text shared compact artwork,actor/background/caption/scene layout;Win32/DOS text devices and composition roots;CMake/DOS source list;focused tests. Retain50-row interfaces/art. Expected800-1200lines;translated core and original state ABI untouched. |
 | Applicable Rules | Execution, Architecture, Coding, Documentation and source policy; System Architecture and Source Layout. All temporary census/probe outputs remain under ignored build. |
-| Verification | Current-source template census, fixed-dimension consumer search, caption collision and storage analysis; node admission and documentation gates. Future adoption needs shared text fidelity, graphics/state invariance, three products and actual-host visual/input/Restore proof. |
+| Verification | Legacy50-row regression;compact artwork/color/pose and all caption coverage;read-only state,priority/clipping,snapshot and graphics invariance;x86/x64 focused tests/native Tab/input/exit;originalDOS16 compiler/link/memory checks;three local products. Device probes do not replace owner visible/play acceptance. |
 | Expected Markers | Empty ROM scope/expected matches; historical 1992/1992, local 1991/1992 nodes and 4260/4261 feasible controls remain unchanged. |
-| Asset Needs | P2 owner requests pixel/current-80x50/proposed-80x25 comparison. Existing owner-local SMB1 iNES and reviewed local disassembly are read-only Nintendo reference material without a redistribution grant. Decoded images stay in ignored build; explicit owner-requested local display overrides the policy attachment restriction only for these review panels. No protected bytes are committed or imported into product code. Check header/PRG/CHR bounds and palette/OAM provenance; distinguish controlled native fixtures from gameplay captures. |
+| Asset Needs | Existing owner-local SMB1 iNES/reviewed disassembly are read-only Nintendo material without a redistribution grant. P2-P11owner-requested local review panels remain under ignored build. P12uses the same admitted revision for embedded local Win32/DOS builds and stock DOSBox diagnostics;generated resource declarations,raw captures and traces remain local/ignored. Only project-authored compact art and neutral records are tracked;protected products are not staged. Header/PRG/CHR bounds and palette/OAM bindings are verified;native fixtures are not original-ROM replay proof. |
 | Reporting Requirements | Report planned components/size, inventory totals, proposed layout and all pending implementation/physical-host clauses; distinguish cell geometry from physical display. |
 | Stop Conditions | Any proposed game-state mutation, original selector re-execution, information loss, unsupported host guarantee or unbounded state inventory requires visible redesign. |
-| Exit Criteria | Complete reproducible current-source census, all affected owners and text-preservation risks named, bounded implementation plan and acceptance matrix recorded. S2 remains active until its admitted design review is resolved; this P does not close T33. |
+| Exit Criteria | Default80x25 runs through shared scene logic on all targets,retained50passes regression,scoped tests/builds and three products delivered;report remaining visual/host clauses. T33 stays open pending owner play acceptance. |
 | Original Owner Request | Reopen T33 as S2; assess 80x25 and redraw elements; preserve 80x50 code, add default 80x25, allow a selection switch later. |
 | Similar-Issue Sweep | Scan shared layout constants, literal projection/row limits, template heights, occupancy masks, captions, DOS BIOS font/rows, Windows font/viewport/output and snapshot consumers; account for each owner. |
 
 Queue head remains the unadmitted native VGA/performance package. T32/S9
-remain suspended; the existing complete object/state gallery candidate is
-retained and must be reconciled with any approved 80x25 implementation scope.
+remain suspended. The owner withdrew the separate complete object/state gallery
+queue candidate and transferred its still-unreviewed coverage to T33's task-level
+scope; S2's admitted implementation and owner play acceptance remain distinct
+from the later complete-gallery review.
 
 ## Current Technical Baseline
+
+- T33 S2 P12delivers default80x25on all three products;50-row code/art and
+  interfaces remain. Shared semantic compact art/palette/layout owns output;
+  hosts only adapt devices. White HUD,question marks and spring white edges
+  are retained. Core/PPU code unchanged;ROM credit0.
+  [Delivery](../history/M3-T33-windows-console-fit-proposal.md#s2-p12-implementation-and-local-play-test-delivery).
+- Each Windows width20checks passes;53legacy cell cases byte-identical,
+  1200native frames read-only,owned and interactiveCMD Tab/input/exit pass.
+  DOS original build/link/memory and stock-config startup/text/Enter/exit pass.
+  Products:16-bit320681B,32-bit330766B,64-bit346126B. S2and T33remain active
+  pending owner play/physical display review and the transferred gallery scope.
 
 - T33closed by owner-directed engineering acceptance. P3entry/Restore share
   bounded rollback/retry;actual classic capture and4000glyph checks pass.

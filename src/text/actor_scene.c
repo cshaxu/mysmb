@@ -1,5 +1,7 @@
 #include "text/actor_scene.h"
 #include "io/color.h"
+#include "text/layout.h"
+#include "text/compact_elements.h"
 
 struct actor_clip {
     const struct mysmb_game *game;
@@ -8,6 +10,8 @@ struct actor_clip {
     unsigned char behind;
     struct mysmb_text_actor_workspace MYSMB_IO_FAR *workspace;
     const unsigned char MYSMB_IO_FAR *background;
+    const struct mysmb_text_element *element;
+    unsigned short rows,columns,height,source_width,source_height;
 };
 
 /* Place a tiny component on the first cell whose center lies inside its
@@ -29,7 +33,20 @@ static int visible_cell(const void MYSMB_IO_FAR *context,
     unsigned char bit;
     clip=(const struct actor_clip *)context;
     x=(unsigned short)(((unsigned long)column*256UL+128UL)/80UL);
-    y=(unsigned short)(((unsigned long)row*240UL+120UL)/50UL);
+    y=(unsigned short)(((unsigned long)row*240UL+120UL)/clip->rows);
+    if(clip->rows==25U) {
+        long left,top,c,r,px,py;
+        px=(long)clip->element->x*80L;
+        py=(long)clip->element->y*25L;
+        left=px<0L?-((-px+255L)/256L):px/256L;
+        top=py<0L?-((-py+239L)/240L):py/240L;
+        c=(long)column-left;r=(long)row-top;
+        if(c<0L || r<0L || c>=clip->columns || r>=clip->height)return 0;
+        px=clip->element->x+(c*clip->source_width+clip->source_width/2U)/clip->columns;
+        py=clip->element->y+(r*clip->source_height+clip->source_height/2U)/clip->height;
+        if(py<0L || py>=240L)return 0;
+        x=(unsigned short)(px&255L);y=(unsigned short)py;
+    }
     if(x<8U && (clip->game->ppu.visible_ppu_mask&4U)==0U)return 0;
     for(i=0U;i<clip->item->sprites;++i) {
         if((clip->mask&(1U<<i))==0U)continue;
@@ -100,9 +117,9 @@ static void platform_span(const struct mysmb_text_element *element,
     unsigned char c;
     first=(unsigned short)((unsigned long)element->x*80UL/256UL);
     last=(unsigned short)(((unsigned long)(item->entries[entry*4U+3U]+8U)*80UL-129UL)/256UL);
-    row=(unsigned short)((unsigned long)element->y*50UL/240UL);
+    row=(unsigned short)((unsigned long)element->y*clip->rows/240UL);
     columns=item->identity==0U?3U:6U;
-    if(row>=50U)return;
+    if(row>=clip->rows)return;
     for(column=first;column<=last && column<80U;++column) {
         if(!visible_cell(clip,column,row))continue;
         c=column==first && entry%columns==0U?'[':
@@ -205,7 +222,8 @@ static int choose(const struct mysmb_game *game,
 
 /* Authored body/detail roles. Source-selected palettes remain per entry;
  * no tile/pixel census or live object selector runs during presentation. */
-static void actor_colors(const struct mysmb_game *game,unsigned short entry,
+static void actor_colors(const struct mysmb_game *game,
+    const struct mysmb_io_text_frame MYSMB_IO_FAR *frame,unsigned short entry,
     unsigned short palette,struct mysmb_text_element *e)
 {
     unsigned char body,detail;
@@ -247,11 +265,11 @@ static void actor_colors(const struct mysmb_game *game,unsigned short entry,
     case MYSMB_TEXT_FLAG:case MYSMB_TEXT_STAR_FLAG:body=2U;detail=1U;break;
     default:break;
     }
-    e->background=mysmb_io_color_text16(game->ppu.palette[0x10U+palette+body]);
+    e->background=mysmb_text_color(frame,game->ppu.palette[0x10U+palette+body]);
     e->foreground=detail!=0U?
-        mysmb_io_color_text16(game->ppu.palette[0x10U+palette+detail]):
-        mysmb_io_color_text_contrast(e->background);
-    if(e->foreground==e->background)e->foreground=mysmb_io_color_text_contrast(e->background);
+        mysmb_text_color(frame,game->ppu.palette[0x10U+palette+detail]):
+        mysmb_text_contrast(frame,e->background);
+    if(e->foreground==e->background)e->foreground=mysmb_text_contrast(frame,e->background);
 }
 
 /* Completed entries retain X even when a row/column's Y is hidden. Unwrap
@@ -297,7 +315,8 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
     struct mysmb_text_element element;
     struct mysmb_text_observation selected;
     struct actor_clip clip;
-    unsigned short priority,i,palette,entry,begin,end;
+    unsigned short priority,i,palette,entry,begin,end,j,bottom,right;
+    unsigned char colors[3];
     short anchor_x;
     unsigned char mask,seen[64];
     if(game==0 || workspace==0 || frame==0 || receipt==0 || game->text_observer.enabled!=1U ||
@@ -332,7 +351,7 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
                 if(element.x>=0 && element.x<256)
                     element.x=component_anchor((unsigned short)element.x,80U,256U);
                 if(element.y>=0 && element.y<240)
-                    element.y=component_anchor((unsigned short)element.y,50U,240U);
+                    element.y=component_anchor((unsigned short)element.y,(unsigned short)MYSMB_IO_TEXT_FRAME_ROWS(frame),240U);
             }
             selected=*item;
             if(item->family==MYSMB_TEXT_OBSERVE_PLAYER && entry>=6U &&
@@ -347,7 +366,7 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
             /* Keep the retainer's crown on a cell center inside its first
              * committed sprite row,including fractional vertical anchors. */
             if(element.kind==MYSMB_TEXT_RETAINER && element.y>=0 && element.y<240)
-                element.y=component_anchor((unsigned short)element.y,50U,240U);
+                element.y=component_anchor((unsigned short)element.y,(unsigned short)MYSMB_IO_TEXT_FRAME_ROWS(frame),240U);
             if(item->family==MYSMB_TEXT_OBSERVE_PLAYER &&
                 (item->identity&MYSMB_TEXT_PLAYER_KICK_FLAG)!=0U &&
                 entry==6U+((item->facing&1U)==0U?1U:0U))
@@ -359,7 +378,7 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
                 if(element.x>=0 && element.x<256)
                     element.x=component_anchor((unsigned short)element.x,80U,256U);
                 if(element.y>=0 && element.y<240)
-                    element.y=component_anchor((unsigned short)element.y,50U,240U);
+                    element.y=component_anchor((unsigned short)element.y,(unsigned short)MYSMB_IO_TEXT_FRAME_ROWS(frame),240U);
             }
             if(item->family==MYSMB_TEXT_OBSERVE_VINE) {
                 element.kind=item->entries[entry*4U+1U]==0xe0U?
@@ -375,26 +394,51 @@ int mysmb_text_actor_scene_draw(const struct mysmb_game *game,
                 item->family==MYSMB_TEXT_OBSERVE_VINE ||
                 item->family==MYSMB_TEXT_OBSERVE_PLATFORM) {
                 element.x=component_anchor(game->ppu.visible_oam[priority*4U+3U],80U,256U);
-                element.y=component_anchor((unsigned short)(game->ppu.visible_oam[priority*4U]+1U),50U,240U);
+                element.y=component_anchor((unsigned short)(game->ppu.visible_oam[priority*4U]+1U),(unsigned short)MYSMB_IO_TEXT_FRAME_ROWS(frame),240U);
             }
             palette=(unsigned short)((game->ppu.visible_oam[priority*4U+2U]&3U)*4U);
-            actor_colors(game,entry,palette,&element);
+            actor_colors(game,frame,entry,palette,&element);
             element.face_left=item->family==MYSMB_TEXT_OBSERVE_VINE?
                 (item->entries[entry*4U+2U]&0x40U)!=0U?1U:0U:
                 (item->facing&2U)!=0U?1U:0U;
             clip.game=game;clip.item=item;clip.mask=mask;
+            clip.rows=(unsigned short)MYSMB_IO_TEXT_FRAME_ROWS(frame);
+            clip.element=&element;clip.source_width=8U;clip.source_height=8U;
+            mysmb_text_compact_size(&element,&clip.columns,&clip.height);
+            if(item->family==MYSMB_TEXT_OBSERVE_PLAYER || item->family==MYSMB_TEXT_OBSERVE_ENEMY ||
+                item->family==MYSMB_TEXT_OBSERVE_POWERUP || item->family==MYSMB_TEXT_OBSERVE_BLOCK ||
+                item->family==MYSMB_TEXT_OBSERVE_SCORE || item->family==MYSMB_TEXT_OBSERVE_COIN ||
+                item->family==MYSMB_TEXT_OBSERVE_FLAG || item->family==MYSMB_TEXT_OBSERVE_EXPLOSION ||
+                item->family==MYSMB_TEXT_OBSERVE_HAMMER) {
+                bottom=(unsigned short)element.y;right=(unsigned short)element.x;
+                for(j=begin;j<end;++j) {
+                    if(item->entries[j*4U+1U]==0xfcU || item->entries[j*4U]>=239U)continue;
+                    if(item->entries[j*4U]+9U>bottom)bottom=(unsigned short)(item->entries[j*4U]+9U);
+                    if(item->entries[j*4U+3U]+8U>right)right=(unsigned short)(item->entries[j*4U+3U]+8U);
+                }
+                if(bottom>element.y)clip.source_height=(unsigned short)(bottom-element.y);
+                if(right>element.x && right-element.x<=32)clip.source_width=(unsigned short)(right-element.x);
+                if(item->family==MYSMB_TEXT_OBSERVE_PLAYER || item->family==MYSMB_TEXT_OBSERVE_ENEMY ||
+                    item->family==MYSMB_TEXT_OBSERVE_POWERUP || item->family==MYSMB_TEXT_OBSERVE_BLOCK)
+                    clip.source_width=16U;
+            }
+            for(j=0U;j<3U;++j)colors[j]=mysmb_text_color(frame,game->ppu.palette[0x11U+palette+j]);
             clip.workspace=workspace;clip.background=background_opaque;
             clip.behind=(unsigned char)(game->ppu.visible_oam[priority*4U+2U]&0x20U);
             if(item->family==MYSMB_TEXT_OBSERVE_PLATFORM)
                 platform_span(&element,item,entry,&clip,frame);
             else {
-                if(!mysmb_text_element_draw(&element,frame,visible_cell,&clip))return 0;
+                if(frame->rows==25U) {
+                    if(!mysmb_text_compact_draw(&element,colors,frame,visible_cell,&clip))return 0;
+                } else if(!mysmb_text_element_draw(&element,frame,visible_cell,&clip))return 0;
                 /* OAM X is byte-wrapped; its completed entries can occupy both
                  * screen edges. Clipping still uses each original entry. */
                 anchor_x=element.x;
                 if(anchor_x<0 || anchor_x>232) {
                     element.x=(short)(anchor_x+(anchor_x<0?256:-256));
-                    if(!mysmb_text_element_draw(&element,frame,visible_cell,&clip))return 0;
+                    if(frame->rows==25U) {
+                        if(!mysmb_text_compact_draw(&element,colors,frame,visible_cell,&clip))return 0;
+                    } else if(!mysmb_text_element_draw(&element,frame,visible_cell,&clip))return 0;
                 }
             }
             if(seen[i]==0U)receipt->drawn++;

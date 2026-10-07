@@ -171,7 +171,7 @@ static void mysmb_win32_build_frame(void)
     struct mysmb_io_palette_video_frame video;
 
     if(g_text_mode) {
-        g_text_failed=(mysmb_io_u8)(!mysmb_text_scene_build(&g_game,&g_text_workspace,&g_text_frame) ||
+        g_text_failed=(mysmb_io_u8)(!mysmb_text_scene_build_profile(&g_game,&g_text_workspace,&g_text_frame,25U) ||
             mysmb_win32_text_console_present(&g_console,&g_text_frame)==MYSMB_WIN32_CONSOLE_LOST);
         return;
     }
@@ -186,7 +186,7 @@ static void mysmb_win32_build_frame(void)
 static DWORD WINAPI mysmb_win32_console_job(void *owner)
 {
     (void)SetThreadDesktop(g_console_desktop);
-    return mysmb_win32_text_console_open(&g_console_job,(HWND)owner)?1U:0U;
+    return mysmb_win32_text_console_open_profile(&g_console_job,(HWND)owner,25U)?1U:0U;
 }
 static void mysmb_win32_console_begin(HWND window)
 {
@@ -223,7 +223,7 @@ static void mysmb_win32_switch_presenter(HWND window,int activate)
     g_switching=1U;
     mysmb_win32_keyboard_clear_game(&g_keyboard);
     if(!g_text_mode) {
-        if(mysmb_win32_text_console_open(&g_console,window)) {
+        if(mysmb_win32_text_console_open_profile(&g_console,window,25U)) {
             g_text_mode=1U;
             if(activate) {
                 ShowWindow(window,SW_HIDE);

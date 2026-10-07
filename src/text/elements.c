@@ -1,6 +1,7 @@
 #include "text/elements.h"
 #include "io/text_glyph.h"
 #include "io/color.h"
+#include "text/layout.h"
 #include <string.h>
 
 /* Project-authored whole-element art. Spaces are transparent. No CHR bytes,
@@ -295,20 +296,7 @@ int mysmb_text_elements_build(
     if (frame == 0 || sky > 15U || count > MYSMB_TEXT_ELEMENT_CAPACITY ||
         (count != 0U && elements == 0)) return 0;
     for (i=0U;i<count;++i) if (!valid_element(&elements[i])) return 0;
-    {
-        mysmb_io_u16 filled=1U,n;
-        frame->cells[0].character=' ';
-        frame->cells[0].foreground=sky;
-        frame->cells[0].background=sky;
-        /* Copy only initialized cells into disjoint output ranges. The last
-         * span is clipped because the frame contains4000cells,not a power of2. */
-        while(filled<MYSMB_IO_TEXT_CELLS){
-            n=filled;
-            if(n>MYSMB_IO_TEXT_CELLS-filled)n=(mysmb_io_u16)(MYSMB_IO_TEXT_CELLS-filled);
-            memcpy(frame->cells+filled,frame->cells,n*sizeof(frame->cells[0]));
-            filled=(mysmb_io_u16)(filled+n);
-        }
-    }
+    mysmb_text_frame_initialize(frame,sky,50U,0);
     for (i=0U;i<count;++i)
         (void)mysmb_text_element_draw(&elements[i],frame,0,0);
     return 1;

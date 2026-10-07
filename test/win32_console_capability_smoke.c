@@ -1,10 +1,12 @@
 #include <windows.h>
 #include <stdio.h>
+#include <wchar.h>
 #include "platform/win32/text_console.h"
 static int lost,query_fail,partial,font_effect,font_calls,write_error,minimized,zoomed,window_calls,geometry_effect,fail_buffer_once;
 static DWORD clock_value;
 static CONSOLE_SCREEN_BUFFER_INFO buffer;
 static CONSOLE_FONT_INFOEX effective;
+static WCHAR vt_prefix[512];
 static BOOL mode_probe(HANDLE h,LPDWORD mode)
 {if(lost && h==(HANDLE)2)return FALSE;*mode=7;return TRUE;}
 static BOOL buffer_probe(HANDLE h,PCONSOLE_SCREEN_BUFFER_INFO out)
@@ -17,7 +19,7 @@ static COORD largest(HANDLE h)
 {COORD size={80,50};(void)h;return size;}
 static DWORD probe_clock(void){return clock_value;}
 static BOOL vt_write(HANDLE h,const VOID *data,DWORD count,LPDWORD written,LPVOID reserved)
-{(void)h;(void)data;(void)reserved;if(write_error){SetLastError((DWORD)write_error);return FALSE;}*written=partial?count-1:count;return TRUE;}
+{DWORD n=count<511U?count:511U;(void)h;(void)reserved;if(write_error){SetLastError((DWORD)write_error);return FALSE;}CopyMemory(vt_prefix,data,n*sizeof(WCHAR));vt_prefix[n]=0;*written=partial?count-1:count;return TRUE;}
 static BOOL cell_write(HANDLE h,const CHAR_INFO *cells,COORD size,COORD origin,PSMALL_RECT view)
 {(void)h;(void)cells;(void)size;(void)origin;if(write_error){SetLastError((DWORD)write_error);return FALSE;}if(partial)view->Bottom=20;return TRUE;}
 static BOOL iconic(HWND window){(void)window;return minimized;}
@@ -105,5 +107,18 @@ int main(void)
  for(i=0;i<119;++i)CHECK(mysmb_win32_text_console_present(&device,&scene)==MYSMB_WIN32_CONSOLE_DEFER);
  CHECK(mysmb_win32_text_console_present(&device,&scene)==MYSMB_WIN32_CONSOLE_LOST);
  write_error=0;CHECK(mysmb_win32_text_console_present(&device,&scene)==MYSMB_WIN32_CONSOLE_READY);
+ /* Actual VT bytes must use the frame's RGB palette,not reinterpret source
+  * slots as canonical colors. Also remove inherited reverse attributes. */
+ device.window_usable=0;device.vt_output=1;device.rows=25;
+ buffer.dwSize.Y=25;buffer.srWindow.Bottom=24;
+ scene.rows=25;scene.source_colors=1;scene.colors[0]=0x787cecUL;scene.colors[2]=0xeceeeeUL;
+ for(i=0;i<2000;++i){scene.cells[i].foreground=2;scene.cells[i].background=0;}
+ CHECK(mysmb_win32_text_console_present(&device,&scene)==MYSMB_WIN32_CONSOLE_READY);
+ CHECK(wcsncmp(vt_prefix,L"\x1b[0m",4)==0);
+ CHECK(wcsstr(vt_prefix,L"38;2;236;238;238;48;2;120;124;236m")!=0);
+ scene.source_colors=0;
+ for(i=0;i<2000;++i){scene.cells[i].foreground=15;scene.cells[i].background=9;}
+ CHECK(mysmb_win32_text_console_present(&device,&scene)==MYSMB_WIN32_CONSOLE_READY);
+ CHECK(wcsstr(vt_prefix,L"38;2;255;255;255;48;2;85;85;255m")!=0);
  puts("console capabilities: font/no-effect,settled resize,partial/defer and real handle loss passed");return 0;
 }

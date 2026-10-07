@@ -17,6 +17,9 @@ static unsigned char video_ready;
 static struct mysmb_io_pacing pacing;
 static unsigned char opened;
 static unsigned char text_mode;
+static unsigned short text_rows=25U;
+static unsigned char text_palette_valid;
+static unsigned long text_colors[16];
 static mysmb_io_u8 palette_shadow[MYSMB_IO_VIDEO_PALETTE_COLORS],palette_valid;
 
 static void interrupt far keyboard_interrupt(void)
@@ -80,11 +83,12 @@ static int try_mode(mysmb_io_u8 text)
     unsigned short i;
     unsigned long rgb;
     palette_valid=0U;
+    text_palette_valid=0U;
     if(text) {
         registers.x.ax=0x1202U;registers.x.bx=0x30U;
         int86(0x10,&registers,&registers);
         registers.x.ax=3U;int86(0x10,&registers,&registers);
-        registers.x.ax=0x1112U;registers.x.bx=0U;
+        registers.x.ax=text_rows==50U?0x1112U:0x1114U;registers.x.bx=0U;
         int86(0x10,&registers,&registers);
         registers.x.ax=0x1003U;registers.x.bx=0U;
         int86(0x10,&registers,&registers);
@@ -92,7 +96,7 @@ static int try_mode(mysmb_io_u8 text)
         int86(0x10,&registers,&registers);
         registers.h.ah=0x0fU;int86(0x10,&registers,&registers);
         return registers.h.al==3U && registers.h.ah==80U &&
-            *(volatile unsigned char far *)0x00400084UL==49U;
+            *(volatile unsigned char far *)0x00400084UL==(unsigned char)(text_rows-1U);
     }
     registers.h.ah=0U;
     registers.h.al=0x13U;
@@ -230,10 +234,30 @@ void mysmb_dos16_devices_present(const struct mysmb_vga_frame *frame)
 void mysmb_dos16_devices_text(const struct mysmb_io_text_frame MYSMB_IO_FAR *frame)
 {
     unsigned short i;
+    unsigned char changed;
     volatile unsigned short far *video;
     if(!video_ready || !text_mode || !frame)return;
+    if(text_rows!=MYSMB_IO_TEXT_FRAME_ROWS(frame)) {
+        text_rows=(unsigned short)MYSMB_IO_TEXT_FRAME_ROWS(frame);
+        if(!try_mode(1U))return;
+        text_palette_valid=0U;
+    }
+    changed=(unsigned char)(text_palette_valid==0U);
+    for(i=0U;i<16U;++i)if(text_colors[i]!=frame->colors[i])changed=1U;
+    if(changed) {
+        for(i=0U;i<16U;++i) {
+            /* Neutral slot numbers are independent of VGA's BIOS palette. */
+            (void)inp(0x3da);outp(0x3c0,i);outp(0x3c0,i);
+            outp(0x3c8,i);
+            outp(0x3c9,(unsigned short)((frame->colors[i]>>18U)&63UL));
+            outp(0x3c9,(unsigned short)((frame->colors[i]>>10U)&63UL));
+            outp(0x3c9,(unsigned short)((frame->colors[i]>>2U)&63UL));
+            text_colors[i]=frame->colors[i];
+        }
+        (void)inp(0x3da);outp(0x3c0,0x20U);text_palette_valid=1U;
+    }
     video=(volatile unsigned short far *)0xb8000000UL;
-    for(i=0U;i<MYSMB_IO_TEXT_CELLS;++i)
+    for(i=0U;i<MYSMB_IO_TEXT_FRAME_CELLS(frame);++i)
         video[i]=(unsigned short)(frame->cells[i].character|
             ((unsigned short)(frame->cells[i].foreground&15U)<<8U)|
             ((unsigned short)(frame->cells[i].background&15U)<<12U));

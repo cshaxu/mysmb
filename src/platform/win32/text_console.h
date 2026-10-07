@@ -17,10 +17,16 @@ struct mysmb_win32_text_console {
     DWORD fit_changed_at;
     WCHAR *terminal_output;
     unsigned short geometry_pending;
+    unsigned short rows;
+    unsigned char colors_valid;
+    unsigned long colors[16];
+    unsigned char fallback_colors[16];
     CHAR_INFO cells[MYSMB_IO_TEXT_CELLS];
 };
 int mysmb_win32_text_console_open(struct mysmb_win32_text_console *console,
     HWND owner);
+int mysmb_win32_text_console_open_profile(struct mysmb_win32_text_console *console,
+    HWND owner,unsigned short rows);
 void mysmb_win32_text_console_close(struct mysmb_win32_text_console *console);
 enum mysmb_win32_console_result {
     MYSMB_WIN32_CONSOLE_LOST=0, MYSMB_WIN32_CONSOLE_READY=1,
