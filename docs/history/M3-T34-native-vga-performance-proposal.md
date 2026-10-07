@@ -1464,6 +1464,33 @@ p30-baseline-x86-samples.txt,p30-ppu-frame.cod,final-tests-x86.log,
 final-tests-x64.log,dos16-single-workspace,mysmb32.exe,mysmb64.exe,
 product-win-strip.json and run-p20-final384.
 
+### S3 P31 Decoded Sprite Dead-Read Removal
+
+When the shared compositor has a decoded CHR source, its two raw pattern-row
+fetches are dead: the existing decoded-row path supplies both pixel planes.
+Move those reads into the unchanged no-decoded-CHR fallback, retaining the
+same row offset, flip, clipping, priority, palette and output rules. This is
+not a cache, heap, platform or game-state change.
+
+Both current x86 and x64 23-test suites pass, including the 2048 exact
+pixel/reference cases, PPU row/cache checks and platform-purity checks. The
+original DOS compiler/linker returns the DOS executable to 324873 bytes;
+DGROUP remains 31440 bytes, configured stack remains 2048 bytes and runtime
+allocation policy is unchanged. The current DOS product passes the unchanged
+stock-config 384KiB title/load, WSAD/JK, Tab, P/O and Escape route; the
+receipt binds product SHA256
+c879892da49982c933b61fb8da3837f0808422cb9b3a734d4334f712661052bb and
+configuration SHA256
+0494236f2308e2e615f428d04e6470db4b0d162c95b51f4e276f1b7e73241917.
+
+The elimination is static and restores sixteen bytes of DOS code relative to
+P30. Host timing was not used to claim a quantitative P31 speed result.
+ROM credit remains zero; all four global/reference/physical gates remain open.
+
+Evidence below ignored build/m3-t34-s3:final-tests-x86.log,
+final-tests-x64.log,dos16-single-workspace,run-p20-final384,
+p20-final-memory.json,mysmb32.exe,mysmb64.exe and product-win-strip.json.
+
 ### S3 P24 Current Startup And Exit Dispatcher Binding
 
 Audit only. Current loaded bytes confirm the two unused argument/environment

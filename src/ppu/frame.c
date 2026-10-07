@@ -447,10 +447,12 @@ static void mysmb_ppu_frame_build_internal(const struct mysmb_ppu_state *state,
             pattern = (mysmb_io_u16)(((state->visible_ppu_control_0 & 0x08U) != 0U ?
                 0x1000U : 0U) + state->visible_oam[sprite * 4U + 1U] * 16U +
                 ((attributes & 0x80U) != 0U ? 7U - pixel_y : pixel_y));
-            low = mysmb_ppu_pattern(state, pattern);
-            high = mysmb_ppu_pattern(state, (mysmb_io_u16)(pattern + 8U));
-            decoded_sprite_row=decoded_chr?
-                decoded_chr+(pattern&0xfff0U)+(pattern&7U)*2U:0;
+            if(decoded_chr)
+                decoded_sprite_row=decoded_chr+(pattern&0xfff0U)+(pattern&7U)*2U;
+            else {
+                low = mysmb_ppu_pattern(state, pattern);
+                high = mysmb_ppu_pattern(state, (mysmb_io_u16)(pattern + 8U));
+            }
             for (pixel_x = 0U; pixel_x < 8U && sprite_x + pixel_x < MYSMB_PPU_FRAME_WIDTH;
                  ++pixel_x) {
                 if(decoded_chr) {

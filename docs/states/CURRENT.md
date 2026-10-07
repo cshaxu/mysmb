@@ -30,6 +30,12 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P31 removes two dead raw-CHR reads from the already decoded sprite
+  compositor branch. The raw reads now occur only in the unchanged fallback;
+  all pixel decisions stay shared. Both Windows suites and the stock-config
+  384KiB DOS route pass. DOS returns to the P29 324873B size with unchanged
+  DGROUP, stack and allocation policy. [Dead-read receipt](../history/M3-T34-native-vga-performance-proposal.md#s3-p31-decoded-sprite-dead-read-removal).
+
 - T34 S3 P30 accepts a zero-cache shared PPU hot-path repair: bind each
   decoded sprite CHR row once rather than reconstructing its far offset for
   every sprite pixel. Exact pixel/cache tests and both Windows suites pass;
