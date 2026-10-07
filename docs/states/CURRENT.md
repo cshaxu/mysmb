@@ -30,6 +30,20 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P39 applies the owner-directed DOS16 optional-cache order without
+  changing shared PPU or game decisions: request B (the 63,488-byte packed
+  background tier), then A (the 8,192-byte decoded-CHR tier); request C (the
+  61,440-byte byte-background upgrade) only when both B and A succeeded.
+  Thus B failure falls back to A alone when possible; A failure after B
+  retains B alone; C failure retains A+B. Three products require rebuilding
+  and the memory-route matrix must prove that no fallback skips this order.
+  Because the owner-installed fixed-base OpenNT `link16.exe` is presently
+  rejected by the Windows loader before it can link, P39 may perform a
+  build-only, ignored-directory feasibility probe with a local historical
+  Microsoft DOS segmented linker against the same OpenNT-generated OMF
+  objects and runtime library. It is not a product dependency or a toolchain
+  replacement unless its output and limits are separately reviewed.
+
 - T34 S3 P38 restores the local equal-budget reference inputs: the owner ZIP
   and its embedded x.xx EXE match retained hashes, and DOS4GW1.97 launches
   the reference at 256x240/no sound under unchanged DOSBox settings. This
@@ -307,3 +321,14 @@ explicitly in TODO rather than asserted complete.
 - [T29 retained host work](../history/M3-T29-win32-usability-regression.md):
   asynchronous acquisition and native RGB retained;T33fit/Restore repair closes.
 - T19Windows audio startup remains separately suspended in the queue.
+
+- T34 S3 P40 establishes a bounded DOS16 linker route while the
+  host refuses the fixed-base OpenNT LINK16 image: OpenNT CL16 objects are
+  copied only below ignored build, their code-segment names are bucketed into
+  the existing 11 libraries, and owner-local Microsoft LINK 3.65 runs inside
+  a private DOSBox configuration.  It emits a 324889-byte MZ from the current
+  startup/main/stack and passes title/input/Escape plus snapshot save/load
+  routes. The adapter reduces 1,068 raw OMF records to 13 bounded code
+  buckets without changing data/far-data records; its current 512x480-aware
+  receipts pass. This is a candidate DOS artifact producer, pending the P39
+  cache fallback matrix and normal three-product packaging.

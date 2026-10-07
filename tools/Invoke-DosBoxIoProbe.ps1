@@ -63,19 +63,19 @@ echo MYSMB_EXIT_OK>exit.ok
 27000 key 106 1
 29000 capture right-run.bmp 0
 29100 key 107 1
-29800 capture jump.bmp 0
-30200 key 107 0
-31000 key 106 0
-31000 key 100 0
-33000 capture before-left.bmp 0
-33100 key 97 1
-37100 key 97 0
-47000 capture release.bmp 0
-50000 capture stopped.bmp 0
-52000 key 27 1
-52500 key 27 0
-54000 capture exit.bmp 0
-56000 quit 0 0
+33000 capture jump.bmp 0
+35000 key 107 0
+35500 key 106 0
+35500 key 100 0
+36000 key 97 1
+36600 key 97 0
+38000 capture before-left.bmp 0
+39000 capture release.bmp 0
+42000 capture stopped.bmp 0
+44000 key 27 1
+44500 key 27 0
+46000 capture exit.bmp 0
+48000 quit 0 0
 '@ | Set-Content -LiteralPath (Join-Path $output 'input.script') -Encoding ascii
 if($TextSwitch) {
 @'

@@ -6,6 +6,7 @@ param(
     [Parameter(Mandatory = $true)][string]$RuntimeDirectory,
     [Parameter(Mandatory = $true)][string]$SourceRoot,
     [string]$RomPath = '',
+    [switch]$CompileOnly,
     [ValidateSet('None','Safe')][string]$RenderOptimization = 'Safe',
     [ValidateRange(0,65536)][int]$NearHeapReserveBytes = 4096
 )
@@ -199,6 +200,9 @@ try {
     $objectLine = ((@('mysmb-startup.obj', $entryObject, 'mysmb-stack.obj') + $libraries) -join "+`n")
     @($objectLine, 'mysmb-dos16.exe', 'mysmb-dos16.map', $runtimeLibrary) |
         Set-Content -Encoding Ascii mysmb-dos16.rsp
+    if ($CompileOnly) {
+        return
+    }
     # LINK 5.60 reads response-file fields through its interactive input
     # parser.  Redirecting stdin to NUL supplies the required terminal EOF;
     # otherwise the linker waits after the final library name.  Its segment

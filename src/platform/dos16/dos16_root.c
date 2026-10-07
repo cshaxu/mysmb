@@ -132,9 +132,11 @@ static void present_current(struct mysmb_dos16_root *root)
         mysmb_ppu_frame_background_bind(&root->ppu_workspace,
             background,
             MYSMB_PPU_BACKGROUND_BYTES);
-        /* One additional optional plane:failure retains packed storage.
-         * Mandatory text/snapshot/device allocations have already succeeded. */
-        if(root->ppu_workspace.bg)
+        /* The byte-background upgrade is permitted only after both the
+         * compact background tier and decoded CHR tier were retained.  If
+         * decoded CHR fails, preserve the compact tier and do not spend a
+         * second background block. */
+        if(root->ppu_workspace.bg && decoded)
             mysmb_ppu_frame_background_byte_bind(&root->ppu_workspace,
                 root->ppu_workspace.bg,MYSMB_PPU_BACKGROUND_BYTES,
                 (mysmb_u8 __far *)_fmalloc(MYSMB_PPU_BACKGROUND_SECOND_BYTES),

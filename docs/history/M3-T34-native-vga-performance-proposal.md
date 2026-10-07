@@ -1733,3 +1733,73 @@ rebind-p23-wrappers.py,rtl-private-current/nested-binary-cfg.json,
 rtl-current/service-bounds.json,nested-service-rebind.json and
 stack-current/guarded-chain-with-runtime.json. Product source/EXEs unchanged;
 ROM node/control credit0.
+
+### S3 P39 Owner-Directed DOS16 Cache-Tier Ordering
+
+This implementation packet narrows only the DOS16 composition-root optional
+allocation order. It requests B, the 63,488-byte packed background tier,
+before A, the 8,192-byte decoded-CHR tier. When B fails, it tries A and stops;
+when B succeeds, it tries A, and requests C, the 61,440-byte byte-background
+upgrade, only if A also succeeded. Thus C failure retains A+B, while A failure
+after B retains B alone. The guard is local to `dos16_root.c`; shared PPU
+selection, game logic, Windows allocation, cache formats and source pixels do
+not change.
+
+Admission evidence is the source-order and allocation-guard review plus the
+existing low/mid/high DOS memory routes. Closure requires rebuilt DOS16,
+Win32 x86 and Win32 x64 local products, focused cache/fallback verification,
+and a route matrix that records each observed retained tier without making a
+global-DOS-memory or physical-performance claim. Generated route receipts stay
+below ignored build/m3-t34-s3; ROM node/control credit is zero.
+
+The current source-order receipt records B at the first optional allocation,
+A immediately after it, and C behind the `bg && decoded` guard. The new LINK
+3.65 product completes the unchanged 384KiB FIT route, including load, input,
+text/graphics switch, P/O and exit; its observed owned peak is393216bytes.
+The current 448/500KiB FIT reruns remain pending because this restricted
+session cannot read the owner's DOSBox configuration file. They must be run
+under that unchanged configuration; a private configuration may not substitute
+for those stock-route receipts.
+
+The owner-installed OpenNT `link16.exe` is currently rejected by the Windows
+loader before link input is processed. P39 may therefore run one ignored-tree
+feasibility probe with a local historical Microsoft DOS segmented linker,
+using the same OpenNT-generated OMF objects and runtime library. This is a
+build-host diagnostic only: it adds no product dependency, changes no DOSBox
+setting, and cannot replace the admitted linker without a separate output,
+format, segment-limit and runtime review.
+
+### S3 P40 Historical DOS LINK 3.65 Segment-Reduction Feasibility
+
+The current Windows host cannot load the fixed-base OpenNT LINK16 image.  The
+admitted local feasibility probe therefore retained OpenNT CL16 object output
+and used the owner-local historical Microsoft DOS LINK 3.65 inside a private
+DOSBox configuration.  The first unmodified OMF attempt stopped at the old
+linker's segment limit.  The probe copied 170 generated object modules below
+`build/`, renamed only each module's `*_TEXT` OMF segment into its existing
+11 bounded library buckets (largest code bucket 58,304 bytes), rebuilt the
+same group libraries with the installed OpenNT librarian, and linked with
+LINK's documented `/NOE` duplicate-library policy.  DATA, CONST, BSS, FAR
+resource-data, source bytes, and all game/PPU decisions remained unmodified.
+
+LINK 3.65 then emitted a 324,889-byte MZ from the current startup/main/stack,
+11 group libraries, and LLIBCE.  The tracked parameterized adapter retains
+OpenNT CL16 for compilation, creates private rewritten OMF/library copies,
+invokes LINK 3.65 in DOSBox, checks `LINK.DON`, MZ magic, and emits a normal
+`mysmb-dos16.exe`/MAP pair below the selected build directory.  The resulting
+MAP contains 11 library code buckets plus two direct entry buckets; all are
+below the 64KiB old-linker code-segment ceiling.  Original DATA, CONST, BSS,
+FAR_DATA and relocation records remain separate.
+
+Actual DOSBox routes reached title, start, right/run, left/release/stop, K
+input edge, Escape exit and return to DOS.  The updated receipt recognizes
+the current 512x480 native 2x scanout as well as historical 640x400 captures;
+it no longer rejects a valid current product before behavior is checked.
+The deterministic DOS keyboard smoke separately proves scan `$25` maps to A.
+A snapshot route wrote and CRC-validated the 10,035-byte schema-2 file and
+restored the saved frame.  These are route and build-host results, not ROM
+equivalence or physical performance evidence.
+
+This route is ready for the remaining P39 fallback-memory matrix and ordinary
+three-product packaging; it does not by itself close those conditions or add
+a third-party runtime dependency.

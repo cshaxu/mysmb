@@ -6,7 +6,7 @@ import sys
 import zlib
 from pathlib import Path
 sys.dont_write_bytecode = True
-from VerifyDosBoxIoReceipt import pixels
+from VerifyDosBoxIoReceipt import game_bounds, pixels
 
 
 def verify(folder):
@@ -26,7 +26,8 @@ def verify(folder):
     positions = {}
     for name in ['saved', 'moved', 'loaded']:
         image = pixels(folder / (name + '.bmp'))
-        points = [(x, y) for y in range(60, 348) for x in range(640)
+        top, bottom = game_bounds(image, name)
+        points = [(x, y) for y in range(top, bottom) for x in range(len(image[0]))
                   if image[y][x] == (152, 32, 32)]
         assert len(points) >= 20, (name, 'player missing')
         positions[name] = [min(x for x, _ in points), min(y for _, y in points),
