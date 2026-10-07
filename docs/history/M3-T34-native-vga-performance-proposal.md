@@ -1408,6 +1408,23 @@ unchanged;all four original gates remain open and ROM credit is zero.
 Evidence below ignored build/m3-t34-s3:p28-presentation-x86.log and
 p28-presentation-x64.log.
 
+### S3 P29 Current DOS Cache-Tier Route Revalidation
+
+Rerun the actual current DOS16 product with the stock DOSBox configuration at
+both384KiB and448KiB loader quotas. Both runs bind the same product SHA and
+the unchanged configuration SHA. The injected route captures title, loaded,
+text, graphics, reloaded and exit surfaces;it exercises WSAD, J/K, Enter,
+both Shift keys, Tab, P/O and Escape before normal exit. The capture probe
+reports success for every capture and exit receipt.
+
+This revalidates functional fallback/cache-tier behavior after the current
+memory and stack work. It deliberately makes no DOSBox timing, 486SX
+performance, physical scanout or global-memory claim. Product source and EXEs
+are unchanged;all four original gates remain open and ROM credit is zero.
+
+Evidence below ignored build/m3-t34-s3:run-p20-final384 and
+run-p20-final448, including their receipts, captures and probe logs.
+
 ### S3 P24 Current Startup And Exit Dispatcher Binding
 
 Audit only. Current loaded bytes confirm the two unused argument/environment

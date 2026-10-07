@@ -30,6 +30,13 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P29 reruns the actual DOS16 product under the unchanged stock DOSBox
+  configuration at 384KiB and 448KiB. Both complete title/load, WSAD/JK,
+  Tab text/graphics, P/O and Escape routes with captures and normal exit;
+  product/config hashes match the current accepted receipt. This confirms
+  functional cache-tier behavior, not 486 performance. No product change.
+  [DOS route receipt](../history/M3-T34-native-vga-performance-proposal.md#s3-p29-current-dos-cache-tier-route-revalidation).
+
 - T34 S3 P28 reruns the current x86/x64 presentation probe: 2048 pixel-equal
   cases, cache-lifetime/priority guards and 1198 native routes pass on both.
   Current cached graphics are 339.524us (x86) and 282.393us (x64) per dense
