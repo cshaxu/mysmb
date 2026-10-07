@@ -16,7 +16,7 @@
 | Applicable Rules | Execution,Documentation,Architecture,Coding,source policy;System Architecture and Source Layout. Owner-directed continuation covers shared io/snapshot codec/store streaming,app snapshot marshalling,host roots/clock adapters and focused tests for on-demand P;150-250product-line estimate,all three EXEs refreshed on product changes. Then audit every project-owned space above4KiB and record allocation/use policy;no core/PPU writer changes. |
 | Verification | Exact61440source-to-VRAM pixels/palette/edges,HUD split/scroll/priority,cache/fallback,mode restoration and Tab;actual DOS input/transition routes,Windows regression,original16-bit compiler/link/segment/stack/loader and before/after stage costs;three local products on code change. |
 | Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0;historical1992/1992,local1991/1992nodes,4260/4261feasible controls unchanged(raw4342,infeasible81). |
-| Asset Needs | Existing owner-local SMB1 ROM remains local without redistribution grant;read-only builds/runtime probes. Retained NESticle research is conceptual only,no code/table import. S3 P3 inspects the already-linked historical Microsoft DOS C runtime library/header read-only to establish allocation/stdio bounds;copyright material has no redistribution grant. Owner-installed original toolchain is the provenance;neutral symbols/hashes/conclusions only tracked,extracted members/logs stay ignored below build. No runtime replacement,patching or third-party source import. |
+| Asset Needs | Existing owner-local SMB1 ROM remains local without redistribution grant;read-only builds/runtime probes. S3 P38 restores the owner-supplied NESticle x.xx ZIP and external DOS4GW1.97 as local comparison inputs only;no code/table import,product linkage or redistribution. S3 P3 inspects the already-linked historical Microsoft DOS C runtime library/header read-only to establish allocation/stdio bounds;copyright material has no redistribution grant. Owner-installed original toolchain is the provenance;neutral symbols/hashes/conclusions only tracked,extracted members/logs stay ignored below build. No runtime replacement,patching or third-party source import. |
 | Reporting Requirements | Before every S report objective,components/code and memory estimates;after report actual changes,scoped results,candidate dispositions and total/local node/edge counts. Do not infer hardware cadence/LCD filling from emulator captures. |
 | Stop Conditions | Pixel/priority/split loss,core mutation,installed-setting change,new unbounded audit,unmeasured full-frame allocation or unsupported timing requires redesign within the admitted scope. |
 | Exit Criteria | Combined current-source/product receipts show no scoped regression;claimed performance/memory gates supported,all unqualified global/reference/cadence clauses explicitly reconciled under proposal contract. No inferred physical486SX or whole-ROM certification. |
@@ -29,6 +29,13 @@ and M2 final certification remain queued. T33 broader gallery debt is recorded
 explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
+
+- T34 S3 P38 restores the local equal-budget reference inputs: the owner ZIP
+  and its embedded x.xx EXE match retained hashes, and DOS4GW1.97 launches
+  the reference at 256x240/no sound under unchanged DOSBox settings. This
+  supersedes P36's missing-file finding only; a controlled equal-route,
+  frameskip/submission-accounted comparison remains required. No product,
+  ROM-node or control-edge change. [Reference recovery](../history/M3-T34-native-vga-performance-proposal.md#s3-p38-reference-artifact-recovery-and-launch-probe).
 
 - T34 S3 P37 prepares a current P31 physical-DOS handoff package: a local
   helper rejects non-MZ input, copies matching EXE/MAP identities and emits a

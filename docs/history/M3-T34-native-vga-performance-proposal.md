@@ -1613,6 +1613,24 @@ reference comparison or 25MHz486SX/VGA/LCD cadence. Product source and EXEs
 are unchanged;ROM credit remains zero and all four gates remain open. The
 local package and its copied executable/map stay below ignored `build/`.
 
+### S3 P38 Reference Artifact Recovery And Launch Probe
+
+The owner-supplied NESticle x.xx ZIP is again available as a local comparison
+input. Its retained ZIP hash is`00f5b3fa3a8ba3e23d86d8feae36ec3684b43495aa62b63864e816b022c8fb47`;
+the embedded executable is400571bytes and matches
+`224e348e1fd5c11b16ef096ff5607c7c57c49d65fa7e4dbbc9b2a5c9c53e832b`.
+The external DOS4GW1.97 selected for the local reference has hash
+`b8265123ac8a189637448618409ef3ecd2e9f3e1a47062c685a02240f688dec1`.
+
+Under the existing DOSBox settings, the reference remains alive after an
+eight-second `256x240`,no-sound launch probe with that extender. This replaces
+P36's missing-reference-artifact condition. It is not an equal-budget result:
+the probe does not establish frameskip policy,game-update count,submitted
+display-frame count,transition coverage or an equivalent MySMB route. The
+third-party ZIP,EXE and extender remain outside the repository;no code,table,
+runtime or product linkage is imported. Product source/artifacts and ROM
+credit remain unchanged.
+
 ### S3 P24 Current Startup And Exit Dispatcher Binding
 
 Audit only. Current loaded bytes confirm the two unused argument/environment
