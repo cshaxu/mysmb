@@ -2018,3 +2018,42 @@ samples average 18,368 PIT ticks (about 15.394ms), compared with P47 buffered
 A+B+C's 24,441 ticks (about 20.484ms), a 5.090ms/24.85% reduction. These are
 DOSBox diagnostics only and do not establish physical 486SX cadence or an
 equal-budget reference ratio.
+
+### S3 P58 Direct Five-State Publication Matrix
+
+P58 repeats P47's five logical optional-cache topologies after P48, using one
+freshly initialized DOS16 root per topology, the current direct `A000:` band
+path and the same title-frame route.  Each topology reaches its intended
+borrowed-workspace pointers before measurement.  The first two frames after
+that topology is selected warm its derived output; the following eighteen
+frames are timed from palette submission through all fifteen row reads and
+`present_band` calls.  Input, translated game tick, audio, pacing and the
+cache-preparation work performed before the presenter are outside this narrow
+publication interval.
+
+| State | A decoded CHR | B packed background | C byte background | Mean PIT ticks | DOSBox descriptive time |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| none | 0 | 0 | 0 | 18,258 | 15.30ms |
+| A | 1 | 0 | 0 | 20,431 | 17.12ms |
+| B | 0 | 1 | 0 | 20,623 | 17.28ms |
+| A+B | 1 | 1 | 0 | 20,623 | 17.28ms |
+| A+B+C | 1 | 1 | 1 | 20,626 | 17.29ms |
+
+The two independent runs are byte-for-byte identical in their timing receipt.
+This confirms the direct presenter has no cache-topology-specific full-frame
+copy: all five forms publish in a 15.30--17.29ms DOSBox interval.  It does
+not rank the caches for whole-frame cost, because their expensive preparation
+is deliberately outside this interval; that requires a separate full-step
+profile.  P47's buffered control remains 20.32--20.48ms, and P48's stable
+A+B+C direct receipt remains 15.394ms.  Differences among fixtures are not a
+physical 486SX cadence claim.
+
+The owner-local NESticle x.xx README and executable were rechecked.  It has
+`-frameskip`, `-vsync`, and a visual FPS option, but exposes neither a
+noninteractive frame counter nor a publisher-stage timer.  Under the same
+256x240/no-sound startup route it can establish launch and picture behavior,
+but no instrumented internal per-frame publication duration.  Host wall-clock
+or DOSBox SDL timing would measure the host/emulator layer rather than
+NESticle's publisher, so it is explicitly not used as a comparison number.
+The equal-budget reference-performance gate therefore remains open rather
+than receiving a fabricated ratio.

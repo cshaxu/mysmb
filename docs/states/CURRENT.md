@@ -28,6 +28,16 @@ S3 combined acceptance. Only S3 active. T32/S9 remains suspended;T19 audio
 and M2 final certification remain queued. T33 broader gallery debt is recorded
 explicitly in TODO rather than asserted complete.
 
+- T34 S3 P58 repeats the five P47 cache topologies on P48’s direct VGA path,
+  with a fresh root per topology and two warm-up plus eighteen measured title
+  frames. The presenter interval (palette through fifteen row submissions,
+  excluding tick, pacing and pre-present cache preparation) is: none 18,258
+  PIT ticks/15.30ms; A 20,431/17.12ms; B 20,623/17.28ms; A+B
+  20,623/17.28ms; A+B+C 20,626/17.29ms. Two runs are identical. Thus no
+  cache topology carries a hidden second full-frame VGA copy. This narrow
+  metric cannot rank whole-step cache cost. NESticle x.xx can be route-tested
+  at 256x240/no-sound but has no noninteractive publisher timer, so no
+  fabricated reference ratio is claimed.
 ## Current Technical Baseline
 
 - T34 S3 P47 closes the five-state controlled cache-topology matrix with
