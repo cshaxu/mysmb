@@ -30,6 +30,21 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P44 restores the product DOSBox receipt chain and binds the current
+  cache boundary to the P43 product. At 384KiB, the full route reaches title,
+  input, graphics/text switch, synchronous P/O and Escape return. The product
+  MCB trace at 501KiB retains root plus B (compact background) and A, but has
+  no C allocation; at 502KiB it additionally retains C. C is requested only
+  after both A and B exist, therefore 502KiB is the current observed A+B+C
+  threshold and 501KiB the adjacent observed A+B-only route. The remaining
+  low-memory matrix still needs an explicit A-only/no-cache product receipt
+  and a controlled B-only allocation-failure receipt; neither is inferred
+  from the adjacent thresholds. The owner-suggested 20ms "do not build while
+  publishing" candidate is rejected for the current architecture: publication
+  is synchronous before the next root step, the existing period is about
+  16.67ms, and skipping game ticks would change ROM-frame/input/timer
+  semantics. No DOSBox setting changed.
+
 - T34 S3 P43 consolidates the DOS16 text/row store and the single on-demand
   snapshot store into one root-owned far allocation. A same-runtime,
   separate-process DOS allocator probe measures 32,784B for split 15,532B
@@ -39,8 +54,7 @@ explicitly in TODO rather than asserted complete.
   snapshot format and Win32 code are unchanged. The full current source
   compiles and links through the original16-bit/compiler LINK3.65 route and
   both Windows-width focused suites pass. Product interactive DOS P/O/title/
-  exit evidence remains pending because the current batch runner fails to
-  emit a child receipt for the unchanged P42 control as well.
+  exit evidence is supplied by P44.
 
 - T34 S3 P42 extends the same DOS16 largest-block preflight to B, the
   63,488-byte compact background tier. A block that DOS proves cannot fit B

@@ -1889,3 +1889,44 @@ interactive P/O/title/exit receipt remains pending:the present batch product
 runner does not emit its child receipt even for the unchanged P42 control,so
 compilation and the allocator probe are not presented as that operational
 proof.
+
+### S3 P44 Product Receipt Recovery And Cache-Boundary Matrix
+
+The P43 product route initially produced no child receipt even for an
+unchanged historical control. The cause was the stage-local SDL input/capture
+proxy, not the DOS executable: that stage carried a different reduced proxy
+from the established full-input route. Rebuilding the stage from the known
+full proxy and retaining the owner configuration unchanged restores the
+product route. This is runner repair only; no product source, ROM-derived
+data, DOSBox setting, timing, or cache policy changes.
+
+At the current P43 DOS product SHA
+`841b8cf2b9e77454fa47570d52ca86a7d0d689b8cb3af741d8a0e2556bf61973`, the
+384KiB route completes title, Enter, movement inputs, Tab graphics/text/graphics,
+P/O, reload and Escape return. The P43 stage retains its raw receipt below
+`build/m3-t34-s3/p43-product384-fullproxy`; its config hash is unchanged.
+
+The adjacent bounded allocation routes establish two real product states:
+
+| Requested arena | Observed optional state | MCB evidence |
+| --- | --- | --- |
+| 501KiB | A+B, no C | root `25616B` plus B reaches `89136B` auxiliary; no C block |
+| 502KiB | A+B+C | a further C block raises auxiliary allocation to `150608B` |
+
+C is requested only when B and A are both non-null. Therefore the C block at
+502KiB proves A+B+C, while 501KiB is the adjacent A+B-only product route.
+The matrix is not closed: a current A-only/no-cache route and a controlled
+B-only (B succeeds, A fails) route remain required. The latter cannot be
+reliably selected by total-arena size alone because A is a near-heap request
+and B is a separate far DOS block; it requires a bounded allocation-failure
+fixture. No global memory or physical-performance claim follows.
+
+The owner proposed eliding a new frame when a prior frame has not completed
+within a 20ms window. Static review rejects that change for this product:
+`mysmb_dos16_root_step` calls game tick then synchronous presentation, and
+only after both return does `mysmb_dos16_devices_wait` apply the current
+approximately 16.67ms cadence. There is no in-flight frame to supersede.
+Changing the period to 20ms would run the game at about 50Hz; skipping root
+steps would change original frame, input and timer semantics. A future
+asynchronous presentation design would need its own ownership and cadence
+contract; it is outside T34 and is not an optimization adopted here.
