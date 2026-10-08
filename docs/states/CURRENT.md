@@ -38,6 +38,11 @@ explicitly in TODO rather than asserted complete.
   metric cannot rank whole-step cache cost. NESticle x.xx can be route-tested
   at 256x240/no-sound but has no noninteractive publisher timer, so no
   fabricated reference ratio is claimed.
+- T34 S3 P60 reconciles cache evidence by route: P14’s accepted ordinary-game
+  matrix supports B first, then A, then C; P59’s title rebuild cost does not
+  justify deleting any global tier. A build-only x64 live-game probe confirms
+  all five cache forms remain pixel-identical but cannot infer DOS16 timing.
+  A+B+C is 133,120B/130KiB; B+C is 124,928B/122KiB.
 - T34 S3 P59 adds a reproducible whole-step title matrix to P58’s narrow
   publisher numbers: none 30,907 PIT ticks/25.90ms; A 30,912/25.91ms; B
   142,845/119.72ms; A+B 121,894/102.16ms; A+B+C 123,975/103.90ms. It

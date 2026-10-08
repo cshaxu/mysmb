@@ -2084,3 +2084,38 @@ exceeded its bounded 55-second no-settings-change run and produced no child
 receipt, so it is explicitly unaccepted rather than treated as a failure of a
 cache form.  A game-route measurement is required before changing the B/A/C
 policy.
+
+### S3 P60 Cache Decision Reconciliation
+
+The current cache decision must use routes with their actual scopes rather
+than treating a single title, host, or publication result as global. P14 is
+the accepted DOS16 game-route matrix: it uses the translated game route after
+warm-up, measures 61 valid samples for each topology, confirms the intended
+optional allocation flags, and checks output against the canonical compositor.
+Its composition results remain applicable after P48 because P48 changes only
+the DOS16 RAM-to-VGA submission; it does not change PPU cache formats,
+invalidation, source pixels, game decisions, or the derived-output owner.
+
+P59 is a later current-direct-path title measurement. Its B/C regression is
+real for the title route because visible title state is rebuilt continuously.
+It cannot override P14's ordinary-game result. Conversely, the P14 game
+route cannot promise a title improvement. The retained P60 build-only x64
+probe boots the local game to operating mode 1/task 3 and verifies pixel
+identity for A, B, A+B, A+B+C, and none before timing its stable PPU state.
+Modern x64 shows no useful stable-frame cache gain (about 1.52--1.88us per
+frame), which is expected to differ from USE16/DOS memory and instruction
+costs and is not used to rank DOS tiers.
+
+The accepted decision is therefore unchanged:
+
+| Optional tier | Bytes | Retained decision | Evidence scope |
+| --- | ---: | --- | --- |
+| A decoded CHR | 8,192 | Retain as the small fallback after B fails. | P14 game route saves 284.455ms versus none when alone; dense-sprite benefit remains separately established. |
+| B packed background | 63,488 | First optional request. | P14 game route saves 471.671ms median versus none. |
+| C byte-background upgrade | 61,440 | Request only after B and A; retain A+B if it fails. | P14 game route saves 19.803ms after A+B; P59 title route can reject it locally through normal fallback only, never by deleting it. |
+
+Thus no global withdrawal of A+B+C is justified. The three cache payloads
+sum to 133,120 bytes (130KiB), while B+C alone is 124,928 bytes (122KiB).
+The existing B -> A -> C allocation/fallback policy remains the current
+bounded-memory and playable-DOS balance. P60 changes no product source or
+EXE; its local probe and generated objects remain ignored below `build/`.
