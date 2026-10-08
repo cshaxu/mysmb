@@ -3950,4 +3950,4 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T33 S2 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T33-windows-console-fit-proposal.md) |
 | M3 T34 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T34-native-vga-performance-proposal.md) |
 | M3 T34 S2 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T34-native-vga-performance-proposal.md) |
-| M3 T34 S3 | 0 | 1992 | none / 0 | none / 0 | active; [record](../../docs/history/M3-T34-native-vga-performance-proposal.md) |
+| M3 T34 S3 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T34-native-vga-performance-proposal.md) |

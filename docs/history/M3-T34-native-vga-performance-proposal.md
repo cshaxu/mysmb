@@ -2123,3 +2123,37 @@ sum to 133,120 bytes (130KiB), while B+C alone is 124,928 bytes (122KiB).
 The existing B -> A -> C allocation/fallback policy remains the current
 bounded-memory and playable-DOS balance. P60 changes no product source or
 EXE; its local probe and generated objects remain ignored below `build/`.
+
+### S3 P62 NESticle Comparison Disposition And S3 Closure
+
+The owner requested a direct comparison with the supplied NESticle x.xx
+binary before closing S3. The local comparison route was rechecked without
+reading or writing the owner source location: the retained local copy starts
+SMB1 under DOSBox at `-res 256 240 -nosound -hidegui -run SMB1.NES`, with the
+same temporary `vgaonly`, no-sound, `cycles=auto` route used for the MySMB
+launch receipt. It produces title and post-Enter captures, so reference
+availability and picture startup are established.
+
+It does not produce a defensible performance ratio. The binary exposes
+configurable `-frameskip` and `-vsync` controls and a visual FPS display, but
+no script-readable game-frame counter or publisher-stage timer. Its retained
+automated Enter input also exits this version before a bounded game-frame
+receipt. Host wall time and DOSBox SDL timing would include host/emulator
+scheduling and cannot measure NESticle's internal presentation cost. No
+DOSBox setting, product source, cache topology, ROM-derived input, or product
+artifact changed for this review.
+
+The current measured MySMB facts remain route-scoped: direct VGA publication
+is 15.30--17.29ms across the five cache states in P58; initial title
+construction is 25.90ms without B/C and 102.16--119.72ms while B/C caches are
+built in P59; P14's accepted ordinary-game matrix remains the decision basis
+for retaining B -> A -> C. None is an equal-budget NESticle result or a
+physical 25MHz 486SX cadence claim. In particular, no evidence supports a
+claim that NESticle is five times faster or that MySMB is faster.
+
+S3 closes with zero ROM scope, expected matches and actual matches. Its
+operational and memory/cache acceptance is complete; no code changed, so no
+product rebuild is required. The equal-budget reference ratio, global
+memory/stack/IRQ/NMI qualification, and physical 486SX/VGA/LCD observation
+remain named T34 task-level gates awaiting owner disposition rather than being
+silently treated as passed.

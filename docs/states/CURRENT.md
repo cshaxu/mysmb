@@ -1,14 +1,14 @@
 # Project Status
 
-**Active: M3 T34 S3, combined acceptance.**
+**No active S. M3 T34 S3 combined acceptance is closed; T34 awaits an owner decision on its remaining qualification gates.**
 
 ## M3 T34 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation; S1/S2 engineering deliveries closed; S3 combined acceptance active under owner instruction to execute T34 through closure. |
+| Identifier Mode | Continuation closure; S1/S2 engineering deliveries and S3 combined acceptance are closed. T34 itself remains open only for an owner disposition of the named qualification gates. |
 | Admission And Approval | Owner reports delivered text successful and explicitly requests T closure and next queue admission; queue-head native VGA/performance package admitted. |
-| Objective | Bind current products to combined Windows/DOS runtime,input,snapshot and bounded-memory acceptance;implement owner-directed cache tiers and synchronous on-demand P saving,then reconcile remaining reference/global/physical clauses honestly. |
+| Objective | Bind current products to combined Windows/DOS runtime,input,snapshot and bounded-memory acceptance; implement owner-directed cache tiers and synchronous on-demand P saving; record the reference/global/physical limits honestly. |
 | Non-goals | No game/PPU decision changes,DOS4GW,new driver,helper process,frameskip,emulator settings changes,text redesign or whole-ROM certification. |
 | Reference Baseline | S2 source/delivery bound in proposal; local products DOS323945B,x86331278B,x64347150B. Current DGROUP51472B/stack2048B; hashes and loader bound in proposal. Reprofile current source; retained T32 costs are historical. |
 | Candidate Proposal | [Admitted T34 plan and S1 baseline](../history/M3-T34-native-vga-performance-proposal.md#t34-s3-p1-combined-acceptance-admission). |
@@ -19,14 +19,15 @@
 | Asset Needs | Existing owner-local SMB1 ROM remains local without redistribution grant;read-only builds/runtime probes. S3 P38 restores the owner-supplied NESticle x.xx ZIP and external DOS4GW1.97 as local comparison inputs only;no code/table import,product linkage or redistribution. S3 P3 inspects the already-linked historical Microsoft DOS C runtime library/header read-only to establish allocation/stdio bounds;copyright material has no redistribution grant. Owner-installed original toolchain is the provenance;neutral symbols/hashes/conclusions only tracked,extracted members/logs stay ignored below build. No runtime replacement,patching or third-party source import. |
 | Reporting Requirements | Before every S report objective,components/code and memory estimates;after report actual changes,scoped results,candidate dispositions and total/local node/edge counts. Do not infer hardware cadence/LCD filling from emulator captures. |
 | Stop Conditions | Pixel/priority/split loss,core mutation,installed-setting change,new unbounded audit,unmeasured full-frame allocation or unsupported timing requires redesign within the admitted scope. |
-| Exit Criteria | Combined current-source/product receipts show no scoped regression;claimed performance/memory gates supported,all unqualified global/reference/cadence clauses explicitly reconciled under proposal contract. No inferred physical486SX or whole-ROM certification. |
+| Exit Criteria | Scoped acceptance closed by owner instruction after P62. Current-source/product receipts show no scoped regression; the equal-budget reference, global and physical-486SX clauses remain explicitly unproved rather than inferred. |
 | Original Owner Request | Close successful T33 and admit next queued task;retain native-resolution VGA/performance plan. |
 | Similar-Issue Sweep | Review all DOS graphics coordinate/row/plane constants,palette invalidation,mode/text switch/reset and output submissions;retained50/new25 text and Win32 presentation must not regress. |
 
 T34 plan:S1 native output;S2 finite performance/memory register after reprofile;
-S3 combined acceptance. Only S3 active. T32/S9 remains suspended;T19 audio
-and M2 final certification remain queued. T33 broader gallery debt is recorded
-explicitly in TODO rather than asserted complete.
+S3 combined acceptance is closed. T32/S9 remains suspended; T19 audio and M2
+final certification remain queued. T33 broader gallery debt is recorded
+explicitly in TODO rather than asserted complete. T34 has no active successor;
+its named qualification gates await an owner task-level disposition.
 
 - T34 S3 P58 repeats the five P47 cache topologies on P48’s direct VGA path,
   with a fresh root per topology and two warm-up plus eighteen measured title
@@ -50,6 +51,13 @@ explicitly in TODO rather than asserted complete.
   but excludes pacing/audio. This identifies B/C title-construction cost, not a
   globally valid cache-removal decision: a bounded Start-to-level route timed
   out without a child receipt and remains open.
+- T34 S3 P62 closes this S after a final owner-requested NESticle comparison
+  review. The owner-local x.xx binary launches at 256x240/no-sound under the
+  same temporary DOSBox route, but exposes neither a script-readable frame
+  count nor a publisher-stage timer. Its configurable frameskip/vsync and
+  visual-only FPS display prevent a defensible ratio. The retained MySMB
+  DOSBox figures are therefore descriptive route measurements, not a claimed
+  NESticle comparison or physical-486SX cadence result.
 ## Current Technical Baseline
 
 - T34 S3 P47 closes the five-state controlled cache-topology matrix with
