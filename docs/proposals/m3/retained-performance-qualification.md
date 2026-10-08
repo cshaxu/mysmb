@@ -344,3 +344,34 @@ row order, split-wrap handling, palette slots, viewport coordinates and final
 A000 bytes.  It changes no game or PPU code.  The candidate is expected to
 remove roughly 124 of 128 HUD commit plane selections per frame; its actual
 PIT effect and physical byte oracle remain future acceptance criteria.
+
+### NESticle-inspired opportunity register, ranked by return on cost
+
+The ranking below is deliberately based on the live work census rather than
+on the historical program's age, implementation language or a final image
+comparison.  “Memory” is additional conventional memory; VRAM reuse is stated
+separately.  All compatible entries retain the shared PPU frame view and can
+live entirely in `platform/dos16`.
+
+| rank | opportunity | expected result | memory | implementation / semantic risk | disposition |
+| ---: | --- | --- | ---: | --- | --- |
+| 1 | Batch each HUD plane once, then copy its 32 rows as spans. | Removes about 124 of 128 HUD plane selections/frame and collapses 128 small copy setups into 4–8 spans. | 0 | Low / none: identical selected bytes and destination order within each plane. | First candidate. |
+| 2 | Batch sprite-repair writes by VGA plane rather than by tile. | The live route repairs 12 tiles/frame; changes its approximate 48 plane selections to 4 while retaining the same 768 bytes. | 0 | Low / none: changed background tiles do not overlap within a plane. | Bundle with rank 1 only if the physical oracle remains simple. |
+| 3 | Precompute viewport-relative plane offsets for HUD and 8-by-8 repair cells. | Removes repeated far address arithmetic and wrap branches from fixed HUD and repair loops. | 1–4KiB table, or 0 with a small per-frame row table. | Low / none if generated from the existing viewport formulas. | Candidate after 1–2; qualify separately to identify its value. |
+| 4 | Pre-pack each collected sprite into its four plane lanes and carry its transparency mask. | Removes repeated slot indexing, per-pixel plane selection math and many transparency branches; five active sprite tiles/frame make this a secondary improvement. | 0 if replacing the current 64-byte sprite copy; otherwise up to 4KiB. | Low–medium: must preserve OAM order, clipping and transparent-slot behavior. | Candidate after the HUD path. |
+| 5 | Retain an already packed HUD image keyed by its PPU-selected 32 rows and palette slots. | Skips HUD PPU extraction/packing when text is unchanged; does not remove the required physical HUD write. | about 8KiB unless existing transient storage can be safely repurposed. | Medium: cache invalidation must include title/status digits, palette and mode/split changes. | Conditional: measure CPU preparation after ranks 1–2. |
+| 6 | Generate a changed background tile’s 64 slots once, then distribute its four plane lanes. | Avoids four equivalent PPU tile queries for an invalidated cache tile; valuable during area construction, negligible in the steady sample (4.3B/frame). | 0 | Low / none. | Startup/load smoothness candidate, not frame-rate first. |
+| 7 | Use a dedicated 16-bit assembly bulk writer for the now-contiguous HUD spans. | Can improve rank 1’s remaining far-copy overhead with `rep movs`/careful segment setup. | 0 | Medium implementation / none if byte oracle is exact. | Only after the C/inline-assembly batched version is measured; do not hand-write assembly preemptively. |
+| 8 | RAM composition surface followed by one linear VGA copy. | Mirrors the historical shape and eliminates visible intermediate A000 writes. | 61,440B plus metadata. | Medium–high: a page-wide composition rewrite. | **Rejected as tested:** with current composition it cost 11.983ms versus 6.971ms for direct split A000. Revisit only if ranks 1–7 first remove the current fine-grained composition. |
+| 9 | Double-buffer/page-handoff or retrace presentation. | May remove tearing/flicker, but is primarily presentation quality, not CPU throughput. | at least about 120KiB for two full indexed surfaces; current 512x480 retained VRAM cache consumes nearly all VGA memory. | High: memory budget and device timing. | Deferred; no evidence it is the fastest route. |
+| 10 | Dirty cached nametables, palette-slot retention, decoded patterns. | Avoids static-world regeneration. | Already allocated by the selected shared/retained route. | None. | **Already present**; do not duplicate. |
+| 11 | Suppress sprite redraw. | Would reduce work superficially. | 0 | Unacceptable: violates current OAM state and visible semantics. | Rejected. |
+| 12 | Frameskip or decouple publication cadence. | Makes an overloaded machine appear smoother. | 0 | Unacceptable: changes observed cadence. | Rejected. |
+| 13 | Port MySMB to DOS4GW / flat 32-bit runtime. | Could reduce pointer and loop overhead. | Material runtime and memory cost; loses real-mode DOS16 target. | Architectural incompatibility. | Rejected. |
+| 14 | Rewrite shared ROM core for host-specific addressing. | The source-matched profile places core near 12% of the old route; it cannot explain the present device work. | uncertain | High semantic-regression risk. | Rejected as the first performance path. |
+
+Ranks 1–4 are the complete near-term compatible set derived from the observed
+NESticle difference: make the same pixels through contiguous plane work,
+without changing the game/PPU owner.  Ranks 5–7 are conditional refinements;
+ranks 8–14 are retained as explicit non-default decisions so they cannot
+reappear as unmeasured “obvious” optimizations.
