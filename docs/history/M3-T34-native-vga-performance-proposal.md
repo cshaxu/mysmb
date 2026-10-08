@@ -2074,16 +2074,19 @@ the reproducible eighteen-frame means are:
 | A+B | 121,894 | 102.16ms |
 | A+B+C | 123,975 | 103.90ms |
 
-A second independent execution produced the same receipt.  The title route
-therefore shows no measurable whole-step benefit from A and a substantial
-background-cache rebuild cost for B/C under its continually changing visible
-state.  This is not enough to remove any cache from the product: it is one
-route, whereas ordinary-level movement/dense-sprite routes have not yet been
-captured by this fixture.  The attempted Start-to-level automated DOS route
-exceeded its bounded 55-second no-settings-change run and produced no child
-receipt, so it is explicitly unaccepted rather than treated as a failure of a
-cache form.  A game-route measurement is required before changing the B/A/C
-policy.
+A second independent execution produced the same receipt. The sampled interval
+begins during title construction, so it measures initial title-screen build
+rather than a stable title idle loop. It shows no measurable whole-step benefit
+from A and a substantial B/C rebuild cost while large name-table changes are
+arriving. P61 traces the same startup: the first cache build touches 1,920
+tiles; later construction bursts touch 952, 104 and 480 tiles; after title task
+three begins, subsequent frames rebuild zero background tiles. Thus P59 must
+not be read as a permanent-title cache regression or as a reason to remove a
+cache. It remains a route-specific transitional measurement. The attempted
+Start-to-level automated DOS route exceeded its bounded 55-second
+no-settings-change run and produced no child receipt, so it is explicitly
+unaccepted rather than treated as a failure of a cache form. P14's accepted
+game-route matrix remains the decision evidence for B/A/C retention.
 
 ### S3 P60 Cache Decision Reconciliation
 
@@ -2096,9 +2099,10 @@ Its composition results remain applicable after P48 because P48 changes only
 the DOS16 RAM-to-VGA submission; it does not change PPU cache formats,
 invalidation, source pixels, game decisions, or the derived-output owner.
 
-P59 is a later current-direct-path title measurement. Its B/C regression is
-real for the title route because visible title state is rebuilt continuously.
-It cannot override P14's ordinary-game result. Conversely, the P14 game
+P59 is a later current-direct-path initial-title-construction measurement. Its
+B/C regression is real while large name-table changes arrive. P61 shows that
+stable title task three has no background tile rebuilds. It cannot override
+P14's ordinary-game result. Conversely, the P14 game
 route cannot promise a title improvement. The retained P60 build-only x64
 probe boots the local game to operating mode 1/task 3 and verifies pixel
 identity for A, B, A+B, A+B+C, and none before timing its stable PPU state.
@@ -2112,7 +2116,7 @@ The accepted decision is therefore unchanged:
 | --- | ---: | --- | --- |
 | A decoded CHR | 8,192 | Retain as the small fallback after B fails. | P14 game route saves 284.455ms versus none when alone; dense-sprite benefit remains separately established. |
 | B packed background | 63,488 | First optional request. | P14 game route saves 471.671ms median versus none. |
-| C byte-background upgrade | 61,440 | Request only after B and A; retain A+B if it fails. | P14 game route saves 19.803ms after A+B; P59 title route can reject it locally through normal fallback only, never by deleting it. |
+| C byte-background upgrade | 61,440 | Request only after B and A; retain A+B if it fails. | P14 game route saves 19.803ms after A+B; P59 only identifies a transient construction cost, never a global deletion case. |
 
 Thus no global withdrawal of A+B+C is justified. The three cache payloads
 sum to 133,120 bytes (130KiB), while B+C alone is 124,928 bytes (122KiB).

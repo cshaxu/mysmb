@@ -47,7 +47,7 @@ explicitly in TODO rather than asserted complete.
   publisher numbers: none 30,907 PIT ticks/25.90ms; A 30,912/25.91ms; B
   142,845/119.72ms; A+B 121,894/102.16ms; A+B+C 123,975/103.90ms. It
   includes tick, PPU preparation/rebuild, composition and direct publication
-  but excludes pacing/audio. This identifies B/C title rebuild cost, not a
+  but excludes pacing/audio. This identifies B/C title-construction cost, not a
   globally valid cache-removal decision: a bounded Start-to-level route timed
   out without a child receipt and remains open.
 ## Current Technical Baseline
