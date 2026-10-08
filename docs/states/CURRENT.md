@@ -1,73 +1,37 @@
 # Project Status
 
-**Active: M3 T39 S1. Contained historical NESticle source build/run qualification for retained-presentation performance research.**
+**Active: M3 T39 S2. DOS16 retained fixed-HUD plane-batching implementation.**
 
-## M3 T39 S1 Packet
+## M3 T39 S2 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | New M3 performance-qualification task; zero-ROM audit. |
-| Admission And Approval | Owner requested inspection of the historical 1997 NESticle source and authorized local build/probe containment under `build/`. |
-| Objective | Build the identified historical source locally under ignored `build/`, run an isolated standard-VGA benchmark harness assembled from its CPU/PPU/video sources with the owner-local SMB input in a temporary DOSBox session, then run an independent pure-DOS16 physical-output microbenchmark against the current MySMB slot-copy owner. Identify concrete cache, composition, transfer and cadence mechanisms against the selected MySMB DOS16 retained presenter. |
-| Non-goals | No MySMB product code or artifact change; no core/PPU policy or ROM-logic change; no persistent DOSBox setting; no third-party binary/source/runtime import, source transliteration, redistribution, or product dependency. |
-| Reference Baseline | T38 S10 selected Chain-4: 39,026 PIT ticks (32.71ms); T38 S18 exact retained presenter with 260-frame physical oracle. Owner reports NESticle visually stable at the same visible DOSBox 3000-cycle setting. |
-| Candidate Proposal | [Retained presentation performance qualification](../proposals/m3/retained-performance-qualification.md). |
-| Files And ABI Surface | Ignored `build/m3-t39-s1/` only for archive copy, source extraction, temporary compatible toolchain, build, DOSBox commands and probes. The microbenchmark may copy the current physical-output owner and test it against a private RAM destination, but changes no tracked product source or ABI; tracked output is limited to neutral research conclusions in the proposal/history. |
+| Identifier Mode | Continuation of M3 T39 after its closed zero-ROM S1 research step. |
+| Admission And Approval | Owner explicitly approved four ordered S tasks: HUD plane batching, multi-stage census, evidence-led sprite-repair decision, then buffered-composition re-evaluation. This packet admits their first implementation step only. |
+| Objective | Replace the DOS16 retained fixed-HUD one-line-at-a-time VGA plane selection with an equivalent plane-batched physical writer. Preserve every shared-PPU input, retained viewport calculation, slot choice, final A000 byte and cadence. |
+| Non-goals | No translated ROM/core/PPU/text/Win32 change; no new frame buffer, page flip, retrace policy, frameskip, helper process, DOS4GW dependency or persistent DOSBox configuration change. S2 does not decide sprite repair or buffered composition. |
+| Reference Baseline | T38 S18 selected retained presenter passed a 260-frame physical oracle. T39 S1's 60-frame normal-game census measured 16,384 fixed HUD A000 bytes and 128 HUD plane selections per frame within 200.1 total plane selections/frame. The historical source receipt is directional only. |
+| Candidate Proposal | [Retained presentation performance qualification](../proposals/m3/retained-performance-qualification.md#s2----fixed-hud-plane-batching). |
+| Files And ABI Surface | Production scope is `src/platform/dos16/devices.c` and its existing DOS16-focused test/build support only. Private timing/oracle fixtures, ROM input, captures and logs remain below ignored `build/`. No public ABI or shared component surface changes. |
 | Applicable Rules | Execution, Documentation, Architecture, Coding and source policy. |
-| Verification | Archive/source identity receipt; dependency inventory; contained build attempt using a temporary toolchain; temporary DOSBox launch with the owner-local SMB input; only after successful launch, bounded local timing probes. The independent DOS16 probes use identical deterministic 256x240 slot rows, compare final output bytes for each candidate, and attribute repeated samples using the BIOS-owned PIT without changing its rate. A detached shared-PPU composition probe failed to produce a valid DOS16 receipt and is explicitly excluded; the next measurement must repair the source-matched no-readback product fixture before separating `frame_begin`, rows and presenter intervals. |
-| Expected Markers | ROM scope[], expectedMatches[], actualMatches[], new0; historical1992/1992, local1991/1992,4260/4261 feasible controls unchanged(raw4342,infeasible81). |
-| Asset Needs | Owner-provided historical NESticle binary archive and public historical source revision, both local-only and unredistributable research inputs; owner-local SMB ROM used only as an ignored DOSBox runtime input. |
-| Reporting Requirements | State exact archive/version identity locally; distinguish source facts, probe observations and inferences; list compatible, conditional and rejected design ideas with affected MySMB owner and anticipated cost/memory impact. |
-| Stop Conditions | Missing/unidentified source dependency after an evidenced compatible-toolchain attempt; source redistribution ambiguity; any requirement to import third-party code/runtime into MySMB, alter core semantics, modify persistent DOSBox settings, or reduce observable frame/update work. |
-| Exit Criteria | A bounded source/probe report identifies the actual reference render path and leaves a ranked, independently implementable MySMB candidate list or a defensible no-change result. |
-| Original Owner Request | Determine why historical NESticle has stable, smooth DOS presentation while MySMB visibly refreshes/flickers, and find lawful, compatible performance mechanisms. |
-| Similar-Issue Sweep | Existing public 0.2 observations, owner-local x.xx executable receipts, MySMB PPU/frame composition, DOS Chain-4/retained device and text presenter boundaries. |
+| Verification | Before/after fixed-3000 PIT receipt from a source-matched product fixture; existing/expanded retained A000 physical oracle across the accepted route; focused DOS16 tests/link, Win32 x86/x64 regressions and platform-purity scan. Refresh local 16/32/64 artifacts only if product source changes. |
+| Expected Markers | ROM scope[], expectedMatches[], actualMatches[], new0; historical 1992/1992; current local 1991/1992 and 4260/4261 feasible controls (raw 4342, infeasible 81) unchanged. |
+| Asset Needs | Existing owner-local generated runtime input and ignored DOSBox temporary session only; no new third-party source, runtime, asset or persistent tool configuration. |
+| Reporting Requirements | Report exact changed owner/files, before/after plane-selection and PIT measurements, exact-oracle result, all artifact build results and S2's actual source size. Report S3--S5 as planned dependencies, not completed work. |
+| Stop Conditions | Any shared-PPU/ROM-state effect, changed final A000 byte/device end state, unsupported toolchain/runtime requirement, inadequate source-matched timing fixture or no measurable benefit. Revert/reject the candidate rather than mask it through cadence changes. |
+| Exit Criteria | A reviewed plane-batched HUD path or explicit rejection, with exact physical-output evidence and an evidence-backed handoff to S3. |
+| Original Owner Request | Apply the highest-return NESticle-inspired work first, measure different game phases before choosing sprite repair, and leave double buffering/background composition until the earlier evidence exists. |
+| Similar-Issue Sweep | Fixed HUD restore/commit, retained background repair, sprite repair/draw, VGA map-plane selection, viewport wrapping, text/graphics presenter boundaries and direct-visible A000 writes. |
 
 ## Current Technical Baseline
 
 - The selected DOS product is T38 S18 current-background sprite-union presentation; its 260-frame physical oracle was exact.
-- T38 S10's fixed-3000 diagnostic baseline is 39,026 PIT ticks (32.71ms); the `cycles=max` interval is diagnostic only.
-- T39 S1 is read-only research. It changes no product code, ROM-state accounting or selected presenter.
+- T39 S1 closed as read-only comparative research. It found that the historical source's background cache and per-frame sprite redraw do not justify a core rewrite or suppressed sprites; its flat 32-bit RAM composition is not importable into real-mode DOS16.
+- A contained DOS16 test rejected the naive 61,440-byte RAM composition surface: 11.983ms/frame versus 6.971ms/frame for the direct split-A000 control. This is not a ban on all later anti-tearing designs, only on repeating that unmodified layout.
+- S2 changes only DOS16 physical write grouping. S3, S4 and S5 are admitted in the proposal sequence but are not active until S2 closes.
 
-## T39 S1 Research Checkpoint
+## Recent Closure Summaries
 
-The local research result is recorded in the active proposal. The historical
-source confirms dirty cached nametables, palette-slot retention, full moving
-sprite redraw and flat-32-bit assembly. A contained Open Watcom/DOS4GW
-build now runs 1,200 owner-local SMB frames through a standard-VGA Mode 13h
-harness at fixed 3,000 DOSBox cycles in 20.92 seconds (17.4ms/frame). The
-harness retains the historical CPU/PPU/pattern/sprite code but substitutes a
-small direct ROM launcher, generic palette and Mode 13h sink because the
-public package lacks GUI and VESA dependencies; it is a directional
-performance receipt, not an x.xx-binary equivalence claim. Current MySMB
-writes transient overlay bytes directly to visible A000, making visible
-intermediate updates a concrete device-only flicker candidate. No source,
-artifact or ROM accounting changed.
+### T39 S1 -- comparative source and work-census research
 
-The independent DOS16 physical-output probe has now rejected a single
-61,440-byte RAM staging surface as a speed candidate: with the copied current
-slot-copy owner and identical final A000 bytes, its fixed-3000 cost was
-11.983ms/frame versus 6.971ms/frame for the split direct-A000 form. A small
-address table recovered only 0.169ms/frame of that extra cost. This confines
-the next performance investigation to composition/cache work, rather than a
-RAM compose-and-copy rewrite; it does not establish a 16-versus-32-bit cause.
-
-The S1 source comparison has now ruled out the simpler explanation that
-NESticle merely avoids moving sprites or that word size alone explains the
-gap. Its DOS source redraws sprites every frame, but uses contiguous RAM
-composition and one final Mode-13 bulk transfer. MySMB's selected retained
-path instead maintains a 512-by-480 unchained VGA cache and performs fixed-HUD
-restore/repack, tile repair and per-plane sprite stores directly in visible
-VRAM. This both explains the observed transient flicker and identifies the
-next measurement: live counts for HUD, damage, sprite repair and VGA-plane
-work before selecting one narrowly scoped DOS16 physical-inner-loop candidate.
-
-The S1 private product-root work census now provides that selection.  After a
-60-frame warm-up, 60 normal `OperMode=1/Task=3` frames performed 16,384 fixed
-HUD A000-byte writes per frame, 12 sprite-repair tiles and 148 direct sprite
-bytes per frame, but only 4.3 changed-background bytes per frame.  They also
-performed 200.1 VGA plane selections per frame, of which the current HUD
-commit alone causes 128 by selecting the same plane once per line.  The next
-candidate is therefore a bounded `platform/dos16` plane-batched HUD commit;
-it retains identical shared PPU inputs and final physical pixels, and must be
-accepted by PIT and physical-output evidence before selection.
+S1 remained local-only and changed no product source, artifacts or ROM accounting. Its product-root 60-frame normal-game census found the retained background almost idle (4.3 changed-background A000 bytes/frame), while fixed HUD restore plus commit wrote 16,384 bytes/frame and the HUD commit alone selected VGA planes 128 times/frame. This justifies S2's bounded physical writer change. The full research receipt and opportunity ranking are retained in the [T39 proposal](../proposals/m3/retained-performance-qualification.md).

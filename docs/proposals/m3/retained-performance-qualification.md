@@ -34,10 +34,10 @@ claims and binary-version claims remain distinct.
 | S | bounded owner | completion condition |
 | --- | --- | --- |
 | S1 | Read-only source/probe comparison of the owner-provided historical NESticle video pipeline and MySMB's selected retained presenter. | Archive/version receipt; concrete render/cache/transfer findings; a compatible/rejected opportunity matrix; zero product edits. |
-| S2 | Rebuild a no-readback PIT fixture from selected product source and time the post-Start route at `core=normal`, `cycles=fixed 3000`. | Same source/presenter identity as the selected MZ; a separate prior 260-frame physical oracle; comparable root-step delta against T38 S10's 39,026 ticks. |
-| S3 | Attribute retained graphics only if S2 still exceeds the 16.67ms frame budget. | One named >=20% owner and one bounded candidate, or explicit no-change rejection. |
-| S4 | Attribute DOS and Win32 text paths separately; test at most one exact changed-cell or batched-output improvement. | Exact neutral cells, colors, request order and text-mode lifecycle. |
-| S5 | Package and target-era qualification. | Current x86/x64/DOS16 artifacts, DOS memory/stack receipt, and explicitly limited 486-class or calibrated run receipt. |
+| S2 | Batch the retained fixed-HUD commit by VGA plane in `platform/dos16`; restore and packed byte ownership remain unchanged. | Exact retained-A000 oracle, shared-PPU/ROM-state regression, PIT measurement and refreshed three artifacts if source changes. |
+| S3 | Extend the source-matched physical-work census across title, normal gameplay, transition, dense-sprite and underwater/castle routes. | One reproducible census matrix with HUD, repair, sprite, cache and plane-selection counts; no product-policy change. |
+| S4 | Use S2 timing and S3 workload evidence to decide whether sprite-repair plane batching clears its measured threshold; implement it only if it does. | Recorded accept/reject decision; if accepted, exact A000 oracle, PIT evidence and refreshed artifacts; if rejected, no speculative source edit. |
+| S5 | Re-evaluate a back-buffer or background-composition design only after S2--S4, against the measured retained route and conventional-memory budget. | Explicit feasible/rejected decision with final-pixel, memory and cadence constraints; no unmeasured RAM-surface rewrite. |
 
 The prior private `cycles=max` result remains diagnostic only. It cannot be
 compared with fixed-3000 evidence. S1 does not reopen S18 exactness, change game/PPU policy, reduce cadence,
@@ -45,6 +45,78 @@ skip frames, change output dimensions, introduce DOS4GW or a 32-bit DOS
 dependency into MySMB, add a helper process, or alter a persistent DOSBox
 configuration. DOS4GW may exist only inside the ignored third-party build/run
 containment needed to establish the historical comparison.
+
+## Owner-approved S2--S5 admission plan
+
+The owner selected the four candidate steps below in this order.  They are
+separate S tasks because each has a distinct evidence question and a later
+choice depends on the prior result.  They retain zero ROM nodes and zero
+control edges: the translated core, shared PPU state, PPU frame view, game
+cadence and final visible frame are all outside their edit authority.
+
+### S2 -- fixed HUD plane batching
+
+- **Owner and likely change:** `src/platform/dos16/devices.c` only.  Replace
+  the current one-line-at-a-time plane selection in `retained_hud_rows` with
+  a plane-selected outer loop that writes the same 32 rows.  It may reuse
+  existing 8KiB HUD buffers but may not allocate a new resident frame surface.
+- **Expected size:** one DOS16 source owner and its focused test/probe support;
+  approximately 40--100 changed source lines, before evidence files below
+  ignored `build/`.
+- **Acceptance:** compare all retained A000 bytes and VGA end state on the
+  existing 260-frame physical route; retain shared-PPU inputs and exact
+  x86/x64 behavior; measure a fixed-3000 PIT delta.  A source change refreshes
+  `mysmb16.exe`, `mysmb32.exe` and `mysmb64.exe` locally.
+- **Stop/transfer:** a byte or device-state difference, or no defensible
+  measurement fixture, rejects the source change and transfers the unresolved
+  performance question to S5; it must not be hidden by altered cadence.
+
+### S3 -- multi-stage work census
+
+- **Owner and likely change:** ignored source-matched DOS16 probe/instrumented
+  fixture under `build/` and neutral proposal evidence only; no product source
+  change is planned.
+- **Expected size:** no tracked C change; one census table covering stable
+  title, normal gameplay, screen/pipe or area transition, a dense-sprite
+  sequence, and a water or castle scene if their routes are reproducible.
+- **Acceptance:** every row identifies warm-up, sample frame count, game mode
+  and task, plus HUD restore/commit bytes, changed background bytes,
+  repair-tile bytes, active OAM tiles, nontransparent sprite bytes and plane
+  selections.  Unreachable categories are recorded as such, not replaced with
+  synthetic claims.
+- **Stop/transfer:** if a named game phase cannot be reached reproducibly, the
+  census states that limit; S4 may decide only from observed routes and cannot
+  claim a global sprite result.
+
+### S4 -- sprite-repair decision and conditional batching
+
+- **Owner and likely change:** `src/platform/dos16/devices.c`, specifically
+  the retained repair path, only after S2 and S3 show a material residual
+  plane-selection or time cost.  No shared PPU/compositor or core edit is in
+  scope.
+- **Decision rule:** accept implementation only when the measured residual
+  work and a bounded design can plausibly remove at least 20 percent of the
+  remaining DOS16 presenter interval without additional resident memory; else
+  document a rejection.
+- **Acceptance if implemented:** preserve tile traversal, viewport wrapping,
+  slot selection and final A000 bytes; pass fixed-cycle PIT comparison,
+  physical oracle and target builds; refresh all three local artifacts.
+- **Acceptance if rejected:** preserve the current source and record the
+  actual counts/timing that make the return insufficient.
+
+### S5 -- buffered-composition feasibility re-evaluation
+
+- **Owner and likely change:** initially read-only device/memory design work.
+  No product source change is admitted by this S merely to repeat the rejected
+  61,440-byte staging experiment.
+- **Question:** after plane batching, can a distinct visible-page, retrace
+  handoff or compact background-composition arrangement remove transient A000
+  updates while remaining within the owner's roughly 500KiB conventional-memory
+  preference and preserving every presentation tick?
+- **Acceptance:** exact memory accounting, VGA-memory/page feasibility,
+  final-pixel equivalence boundary and fixed-cycle comparison against S2/S4.
+  It may recommend one later implementation S or reject the design; neither
+  outcome changes shared game/PPU behavior.
 ## S1 research result: historical NESticle video pipeline
 
 S1 inspected two strictly local-only inputs below ignored build output: the

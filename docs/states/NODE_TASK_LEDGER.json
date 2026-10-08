@@ -9346,7 +9346,7 @@
       "subtasks": [
         {
           "id": "M3 T39 S1",
-          "state": "active",
+          "state": "closed",
           "evidence": [
             "docs/proposals/m3/retained-performance-qualification.md"
           ],
@@ -9355,7 +9355,59 @@
           ],
           "canReceive": false,
           "admissionRole": "audit",
-          "technicalReceipt": "Admitted: local-only historical NESticle source/probe review; zero ROM scope and no product dependency."
+          "technicalReceipt": "Closed: local-only historical NESticle source/probe review; zero ROM scope and no product dependency."
+        },
+        {
+          "id": "M3 T39 S2",
+          "state": "active",
+          "evidence": [
+            "docs/proposals/m3/retained-performance-qualification.md"
+          ],
+          "recordKinds": [
+            "dos16-fixed-hud-plane-batching"
+          ],
+          "canReceive": false,
+          "admissionRole": "implementation",
+          "technicalReceipt": "Admitted: platform/dos16 fixed-HUD physical plane batching; zero ROM scope and no shared PPU/core change."
+        },
+        {
+          "id": "M3 T39 S3",
+          "state": "planned",
+          "evidence": [
+            "docs/proposals/m3/retained-performance-qualification.md"
+          ],
+          "recordKinds": [
+            "multi-stage-retained-work-census"
+          ],
+          "canReceive": false,
+          "admissionRole": "audit",
+          "technicalReceipt": "Planned: source-matched physical-work census across reproducible game phases; zero ROM scope."
+        },
+        {
+          "id": "M3 T39 S4",
+          "state": "planned",
+          "evidence": [
+            "docs/proposals/m3/retained-performance-qualification.md"
+          ],
+          "recordKinds": [
+            "sprite-repair-plane-batching-decision"
+          ],
+          "canReceive": false,
+          "admissionRole": "implementation",
+          "technicalReceipt": "Planned: evidence-led sprite-repair batching decision with no shared PPU/core change."
+        },
+        {
+          "id": "M3 T39 S5",
+          "state": "planned",
+          "evidence": [
+            "docs/proposals/m3/retained-performance-qualification.md"
+          ],
+          "recordKinds": [
+            "buffered-composition-feasibility"
+          ],
+          "canReceive": false,
+          "admissionRole": "audit",
+          "technicalReceipt": "Planned: presentation-only buffered-composition feasibility decision after measured batching results."
         }
       ]
     }
@@ -998504,6 +998556,18 @@
       ],
       "baseline": 1992,
       "maximumComplete": 1992,
+      "state": "active",
+      "evidence": "docs/proposals/m3/retained-performance-qualification.md"
+    },
+    {
+      "subtask": "M3 T39 S2",
+      "kind": "implementation",
+      "scope": [],
+      "expectedMatches": [],
+      "actualMatches": [],
+      "incomingComplete": [],
+      "baseline": 0,
+      "maximumComplete": 0,
       "state": "active",
       "evidence": "docs/proposals/m3/retained-performance-qualification.md"
     }
