@@ -2322,3 +2322,32 @@ change.  If it does, S6 completes the ordinary x86/x64 focused tests and the
 DOS16 build/package route before any refreshed artifacts are reported.  This
 task has zero ROM scope, expected matches and actual matches; it cannot alter
 the historic 1992/1992 node or 4260/4261 feasible-control counts.
+
+### S6 P1 Band-Local OAM Schedule Feasibility Result
+
+The proposed 120-byte schedule cannot remove the existing loop at the stated
+bound.  A 15-by-64-bit membership map fits in 120 bytes, but composition
+would still inspect all 64 bits for every band.  It replaces each current
+sprite-Y range check with a membership-bit check and does not eliminate the
+outer work it was intended to remove.
+
+An iteration schedule that actually skips nonintersecting sprites must retain
+an ordered sprite index for each band.  A visible eight-pixel sprite can cross
+two 16-row bands.  Consequently the legal worst case is 128 membership
+entries, plus at least fifteen band counts or sixteen offsets: at least 143
+bytes before alignment and frame-view integration.  More importantly, it
+must be rebuilt from all 64 OAM entries every source frame, while the current
+global range is already calculated once and normally keeps the inner loop
+bounded.  The schedule only removes at most the remaining band rejection
+tests; it does not remove background composition, visible sprite pixels,
+priority opacity queries, or the exact 61,440-byte output.
+
+S6 therefore rejects the candidate before product implementation.  It would
+exceed its stated storage bound for a real iterator and has no credible
+material composition-stage saving to justify a larger allocation or more
+complexity.  No shared PPU source, test, platform code, executable, ROM node,
+control edge, cache allocation or configuration changed.  T34 has no further
+finite PPU candidate from the S5 comparison: the compatible high-value
+direct-VGA strategy is already present, and the remaining reference options
+conflict with the product contract or have been explicitly deferred pending a
+new profile-backed proposal.
