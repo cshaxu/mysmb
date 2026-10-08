@@ -1,27 +1,6 @@
 # Project Status
 
-**Active: M3 T36 S1, whole-pipeline performance assessment.**
-
-## M3 T36 S1 Packet
-
-| Field | Required record |
-| --- | --- |
-| Identifier Mode | New owner-approved zero-ROM audit after closed T35. |
-| Admission And Approval | Owner directs a comprehensive measurement of shared core, PPU, DOS presentation and Win32 presentation to locate worthwhile optimization opportunities. |
-| Objective | Attribute current frame cost to input/control, game tick, PPU preparation/composition, palette/device publication, audio handoff and pacing; produce a finite, evidence-backed optimization register. |
-| Non-goals | No translated-game behavior change, no DOS-specific core path, no platform presentation policy change, no cache-policy change, no frameskip, no persistent DOSBox setting change and no unmeasured performance claim. |
-| Reference Baseline | T34 direct VGA removes a measured duplicate copy; T35 rejects a slower scanline-OAM schedule. Existing DOSBox PIT receipts are descriptive only and are not 486SX qualification. |
-| Candidate Proposal | [M3 T36 whole-pipeline profile](../history/M3-T36-whole-pipeline-profile.md). |
-| Files And ABI Surface | Expected 200--350 lines of profile/test support or no tracked source if existing diagnostics suffice. Any product code remains unchanged; profile artifacts stay below ignored `build/`. |
-| Applicable Rules | Execution,Documentation,Architecture,Coding and source policy; System Architecture and Source Layout. Core remains one portable C90 owner; platforms expose only timing/presentation adapters. |
-| Verification | Validate stage boundaries against existing root order; use PIT for DOS16 where available; retain host measurements only as host evidence; repeat bounded samples; audit every candidate for output/state equivalence and memory cost. |
-| Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0;historical1992/1992,local1991/1992nodes,4260/4261feasible controls unchanged(raw4342,infeasible81). |
-| Asset Needs | None. Project-owned instrumentation and ignored receipts only. |
-| Reporting Requirements | Report stage definitions, route limits, measured cost, uncertainty and each candidate's owner/memory/semantic disposition; include total/local node and edge counters. |
-| Stop Conditions | Reject any route that conflates host scheduling with target timing, mutates product behavior, depends on untracked owner assets, or cannot isolate a stage. |
-| Exit Criteria | A finite stage-cost report and candidate register exist, with each accepted opportunity assigned to a bounded successor implementation task or explicitly rejected/deferred. |
-| Original Owner Request | The owner asks for a comprehensive assessment of core, drawing and display efficiency to identify real optimization opportunities without allowing core divergence. |
-| Similar-Issue Sweep | Trace all frame-root phases and both graphical platforms; distinguish shared computation from DOS physical output, Win32 presentation, audio and intentional pacing. |
+**Idle.**
 
 ## Current Technical Baseline
 
