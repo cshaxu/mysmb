@@ -175,6 +175,48 @@ and this probe only rules out a device-side staging shortcut. Future work must
 measure and reduce exact shared composition/cache work, or separately qualify
 a presentation-only anti-tearing path, without importing DOS4GW, changing
 frame cadence, or changing the PPU result.
+
+### S1 contained shared-PPU composition attribution
+
+The next private probe reuses the current shared `ppu/frame.c` and current
+DOS16 slot copier, with no game-core call and no source edit. It will build
+one deterministic PPU state and compare complete 61,440-byte slot output to
+the portable frame builder before timing four distinct conditions: stable
+cached background with no visible sprites; the same state with dense visible
+OAM; exactly one changed nametable tile per frame; and full cache
+invalidation. Each condition measures `frame_begin` separately from all
+fifteen 16-row `slot_rows` calls. This isolates cache preparation, row
+selection/copy and sprite overlay cost without claiming that the synthetic
+state distribution is a live-level profile.
+
+#### Result: detached composition probe discarded
+
+The private probe did compile and link the current `ppu/frame.c`, palette
+helpers and DOS slot copier through the normal large-model toolchain.  It was
+not allowed to contribute a timing result: even after reducing its frame count
+and removing its unused reference surface, the minimal MZ did not return to
+DOSBox `autoexec` or produce a non-empty receipt.  Its independently allocated
+large far-workspace layout is therefore not a trustworthy representation of
+the product root.  The attempted probe and all of its files remain ignored
+below `build/m3-t39-s1/`; none of its elapsed time, including the deliberately
+pathological full-background rebuild, is evidence about MySMB performance.
+
+This is a useful containment result rather than a performance result.  The
+authoritative numbers remain the source-matched T38 receipts: the current
+shared game tick was 4,096 PIT ticks (about 3.43ms) in the matched route,
+below the 20% threshold, while PPU row production was 21,129 ticks and the
+pre-retained selected route's sprite traversal/opacity/overlay was 11,910
+ticks.  Together with the accepted physical-output probe, this preserves the
+ranking: do not add a RAM surface; do not fork game core for DOS; and do not
+infer a 16-versus-32-bit cause from this failed harness.
+
+The next valid measurement must repair the earlier **source-matched,
+no-readback retained-product fixture** rather than construct another detached
+PPU executable.  It must use the product root's existing far allocations and
+selected presenter, record the same post-Start fixed-3000 route, and first
+prove that its timing-only instrumented path reaches the fixture completion
+marker.  Only then may it separate product-root, `frame_begin`, row production
+and presenter intervals.
 ### Contained Mode 13h runtime receipt
 
 The public 0.2 source package was buildable only after an **ignored, local-only
