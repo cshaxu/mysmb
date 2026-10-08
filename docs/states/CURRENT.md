@@ -1,8 +1,27 @@
 # Project Status
 
-**Idle.**
+**Active: M3 T35 S1, scanline OAM composition experiment.**
 
-T34 S1--S6 are closed. The next admitted task must come from the queue.
+## M3 T35 S1 Packet
+
+| Field | Required record |
+| --- | --- |
+| Identifier Mode | New owner-approved bounded performance experiment after closed T34. |
+| Admission And Approval | Owner permits up to roughly 10KiB additional memory when it can demonstrably improve shared PPU performance; S1 uses no more than 1,024 bytes for a scanline OAM schedule. |
+| Objective | Replace repeated per-band sprite intersection scans with an immutable scanline-index schedule while preserving every PPU output pixel and all OAM ordering semantics. |
+| Non-goals | No game/ROM logic change, no PPU-visible semantic change, no cache-policy change, no frameskip, no display-mode change, no platform-specific presentation logic, and no third-party import. |
+| Reference Baseline | Current frame composition scans a global visible OAM range for each requested strip and tests each sprite against that strip before iterating pixel rows. T34's direct VGA work remains unchanged and is excluded from this experiment. |
+| Candidate Proposal | [M3 T35 scanline OAM schedule](../history/M3-T35-scanline-oam-schedule.md). |
+| Files And ABI Surface | Expected shared changes only: `src/ppu/frame.c`, `src/ppu/frame.h`, focused PPU tests and registration. Estimate 150--260 C lines and at most 1,024 bytes of view/workspace state; all product changes may be removed if the timing gate fails. |
+| Applicable Rules | Execution,Documentation,Architecture,Coding and source policy; System Architecture and Source Layout. PPU owns the schedule; `io`, DOS16 and Win32 remain passive consumers. |
+| Verification | Exact 61,440-pixel comparison over randomized frames and strip boundaries; OAM order/sprite-0/priority guards; dense-sprite shared-compositor timing excluding publication; focused x86/x64 PPU tests; DOS16 build/link, purity review and three products only if code is retained. |
+| Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0;historical1992/1992,local1991/1992nodes,4260/4261feasible controls unchanged(raw4342,infeasible81). |
+| Asset Needs | None. Project-owned PPU test state and ignored measurements only. |
+| Reporting Requirements | Before implementation report candidate components, 1,024-byte limit and estimated 150--260 lines; after report exact-frame status, timing, retained bytes/lines, test/build result and total/local node/edge counters. |
+| Stop Conditions | Remove the change if any output differs, OAM semantics are not proven, state exceeds 1,024 bytes, or dense-sprite composition savings are not material and reproducible. |
+| Exit Criteria | The schedule is rejected with measured evidence, or retained with exact-frame proof, focused x86/x64 regressions, DOS16 build/link, platform-purity review and refreshed three target artifacts. |
+| Original Owner Request | The owner permits approximately 10KiB extra memory if it can really improve PPU performance and directs implementation of the scanline-table experiment. |
+| Similar-Issue Sweep | Examine all PPU entry points: full-frame, cached frame, row strips and slot rows; preserve arbitrary strip boundaries, OAM descending order, clipping, flips, priority and sprite-0 split behavior. |
 
 ## Current Technical Baseline
 
