@@ -119,15 +119,21 @@ exit
         $env:SDL_VIDEODRIVER = $savedVideo
         $env:SDL_AUDIODRIVER = $savedAudio
     }
-    if (!(Test-Path -LiteralPath 'LINK.DON') -or
-        [IO.File]::ReadAllText('LINK.DON').Trim() -ne '0' -or
-        !(Test-Path -LiteralPath 'MYSMB.EXE')) {
+    # DOSBox may restore the caller's working directory while the host waits.
+    # Validate the staged artifacts by absolute path rather than relying on
+    # the transient Push-Location above.
+    $linkDone = Join-Path $stage 'LINK.DON'
+    $linkedExe = Join-Path $stage 'MYSMB.EXE'
+    $linkedMap = Join-Path $stage 'MYSMB.MAP'
+    if (!(Test-Path -LiteralPath $linkDone) -or
+        [IO.File]::ReadAllText($linkDone).Trim() -ne '0' -or
+        !(Test-Path -LiteralPath $linkedExe)) {
         throw 'DOS LINK did not produce a successful executable.'
     }
-    $header = [IO.File]::ReadAllBytes((Join-Path $stage 'MYSMB.EXE'))[0..1]
+    $header = [IO.File]::ReadAllBytes($linkedExe)[0..1]
     if ($header[0] -ne 0x4d -or $header[1] -ne 0x5a) { throw 'DOS LINK output is not MZ.' }
-    Copy-Item -LiteralPath 'MYSMB.EXE' -Destination (Join-Path $output 'mysmb-dos16.exe') -Force
-    Copy-Item -LiteralPath 'MYSMB.MAP' -Destination (Join-Path $output 'mysmb-dos16.map') -Force
+    Copy-Item -LiteralPath $linkedExe -Destination (Join-Path $output 'mysmb-dos16.exe') -Force
+    Copy-Item -LiteralPath $linkedMap -Destination (Join-Path $output 'mysmb-dos16.map') -Force
 }
 finally {
     Pop-Location

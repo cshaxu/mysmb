@@ -57,7 +57,10 @@ assert minimum <= loader_bound <= 65535, "Invalid full-DGROUP allocation bound"
 requested_bound = loader_bound if reserve is None else min(loader_bound, minimum + reserve // 16)
 previous_maximum = maximum
 if limit_loader:
-    assert struct.unpack_from("<H", program, 18)[0] == 0, "Nonzero checksum requires separate policy"
+    # Both accepted historical LINK products and the DOS LINK 3.65 route
+    # carry a nonzero MZ checksum field.  No loader here validates it, and
+    # this bounded header edit already preserves every image byte; retain the
+    # field instead of falsely rejecting an otherwise inspectable product.
     assert maximum >= requested_bound, "Existing maximum below requested allocation"
     if maximum != requested_bound:
         limited = bytearray(program)

@@ -2774,6 +2774,28 @@ claim the whole slice was completed. Future IDs are added here on admission.
 | M3 T35 S1 | 0 | 0 | scanline-oam-composition-experiment; [record](../../docs/history/M3-T35-scanline-oam-schedule.md) |
 | M3 T36 | 0 | - | [record](../../docs/history/M3-T36-whole-pipeline-profile.md) |
 | M3 T36 S1 | 0 | 0 | whole-pipeline-performance-profile; [record](../../docs/history/M3-T36-whole-pipeline-profile.md) |
+| M3 T37 | 0 | - | [record](../../docs/history/M3-T37-nesticle-dosbox-reference.md) |
+| M3 T37 S1 | 0 | 0 | third-party-reference-launch; [record](../../docs/history/M3-T37-nesticle-dosbox-reference.md) |
+| M3 T38 | 0 | - | [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S1 | 0 | 0 | fixed-cycle-dos16-frame-profile; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S2 | 0 | 0 | byte-background-span-copy-accelerator; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S3 | 0 | 0 | shared-oam-band-schedule-accelerator; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S4 | 0 | 0 | gameplay-route-ppu-attribution; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S5 | 0 | 0 | dos16-native-vga-surface-feasibility; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S6 | 0 | 0 | neutral-ppu-background-damage-contract; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S7 | 0 | 0 | dos16-retained-background-viewport; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S8 | 0 | 0 | dos16-retained-overlay-composition; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S9 | 0 | 0 | selected-chain4-attribution; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S10 | 0 | 0 | selected-chain4-physical-store; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S11 | 0 | 0 | dos16-retained-physical-output-v2; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S12 | 0 | 0 | dos16-retained-sprite-restoration-and-batching; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S13 | 0 | 0 | shared-ppu-sprite-composition-reduction; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S14 | 0 | 0 | dos16-full-band-ram-staging-feasibility; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S15 | 0 | 0 | dos16-sparse-current-sprite-publication-feasibility; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S16 | 0 | 0 | portable-root-core-hot-path-attribution; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S17 | 0 | 0 | dos16-retained-overlay-software-reconstruction; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S18 | 0 | 0 | dos16-current-background-sprite-union-reconstruction; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S19 | 0 | 0 | selected-retained-product-timing-and-packaging; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
 | M3 T4 | 0 | - | [record](../../docs/history/M3-T3-colored-text-frame.md); [record](../../docs/history/M3-T4-vga-indexed-frame.md); S not recorded |
 | M3 T5 | 0 | - | [record](../../docs/history/M3-T4-vga-indexed-frame.md); [record](../../docs/history/M3-T5-dos16-composition-root.md); S not recorded |
 | M3 T6 | 0 | - | [record](../../docs/history/M3-T5-dos16-composition-root.md); [record](../../docs/history/M3-T6-opennt-mz-link.md); S not recorded |
@@ -3963,3 +3985,21 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T34 S6 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T34-native-vga-performance-proposal.md) |
 | M3 T35 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T35-scanline-oam-schedule.md) |
 | M3 T36 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T36-whole-pipeline-profile.md) |
+| M3 T37 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T37-nesticle-dosbox-reference.md) |
+| M3 T38 S1 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S2 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S3 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S4 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S5 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S6 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S7 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S8 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S9 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S10 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S11 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S12 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S13 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S16 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S17 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S18 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
+| M3 T38 S19 | 0 | 1992 | none / 0 | none / 0 | transferred; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |

@@ -52,6 +52,12 @@ static int present_rows(void *context,const struct mysmb_io_palette_video_source
     }
     return 1;
 }
+static int present_retained(void *context,const struct mysmb_ppu_frame_view *view,
+    const mysmb_io_u8 MYSMB_IO_FAR *palette)
+{
+    (void)context;mysmb_dos16_devices_palette(palette);
+    return mysmb_dos16_devices_retained_frame(view);
+}
 static mysmb_io_u8 submit_audio(void *context, const struct mysmb_io_audio_frame *frame)
 {
     (void)context;
@@ -103,6 +109,10 @@ static int initialize(void)
         mysmb_dos16_root_shutdown(&root);
         runtime_storage=0;text_storage=0;snapshot_store=0;return 0;
     }
+    /* S18's current-background sprite-union presenter passed physical VGA
+     * readback before it is selected here. The root retains Chain-4 as the
+     * synchronous fallback if this device-only presenter declines a frame. */
+    mysmb_dos16_root_bind_retained(&root,present_retained);
     /* Synchronous presenters are exclusive. Graphics rebuilds every band on
      * return from text;only the root owns and frees this shared allocation. */
     mysmb_dos16_root_bind_text(&root,&text_storage->workspace,

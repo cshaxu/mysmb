@@ -6,6 +6,7 @@
 #include "platform/dos16/devices.h"
 #include "platform/dos16/palette_expand.h"
 #include "platform/dos16/nibble_expand.h"
+#include "platform/dos16/slot_copy.h"
 
 /* AH=48h reports the largest available conventional block in BX when the
  * deliberately impossible FFFFh-paragraph request fails. This avoids a
@@ -34,6 +35,7 @@ static int initialize(struct mysmb_dos16_root *root,
     root->initialized=0U;
     root->present_rows=0;root->video_storage_bytes=storage_bytes;
     root->present_palette_rows=0;
+    root->present_retained=0;
     root->snapshot_store=0;root->reset_output=0;root->reset_context=0;root->resume_clock=0;
     root->text_workspace=0;root->text_frame=0;root->set_mode=0;
     root->present_text=0;root->text_mode=0U;
@@ -111,6 +113,12 @@ int mysmb_dos16_root_initialize_palette_rows(struct mysmb_dos16_root *root,
     if(!present || !initialize(root,hooks,storage_bytes,present_palette))return 0;
     root->present_palette_rows=present;return 1;
 }
+void mysmb_dos16_root_bind_retained(struct mysmb_dos16_root *root,
+    int (*present)(void *,const struct mysmb_ppu_frame_view *,
+        const mysmb_io_u8 MYSMB_IO_FAR *))
+{
+    if(root)root->present_retained=present;
+}
 
 void mysmb_dos16_root_bind_text(struct mysmb_dos16_root *root,
     struct mysmb_text_scene_workspace MYSMB_IO_FAR *workspace,
@@ -180,6 +188,7 @@ static void present_current(struct mysmb_dos16_root *root)
                 MYSMB_PPU_BACKGROUND_SECOND_BYTES);
         if(root->present_palette_rows){
             mysmb_ppu_frame_nibble_bind(&root->ppu_workspace,mysmb_dos16_nibble_expand);
+            mysmb_ppu_frame_slot_rows_bind(&root->ppu_workspace,mysmb_dos16_slot_rows_copy);
         }else if(root->ppu_workspace.bg) {
             pairs=(struct mysmb_io_palette_pairs __near *)_nmalloc(sizeof(*pairs));
             if(pairs) {
@@ -194,6 +203,10 @@ static void present_current(struct mysmb_dos16_root *root)
         if(root->present_palette_rows)
             mysmb_ppu_frame_palette(&root->game.ppu,root->video_palette);
         mysmb_ppu_frame_begin(&root->game.ppu,&root->ppu_workspace,&root->ppu_view);
+        if(root->present_retained && root->present_retained(root->hooks.context,
+            &root->ppu_view,root->video_palette)) {
+            mysmb_ppu_frame_end(&root->ppu_view);return;
+        }
         source.context=root;source.read_rows=read_rows;
         if(!root->present_rows(root->hooks.context,&source)) {
             failure.buttons=0U;failure.buttons2=0U;failure.requests=MYSMB_IO_REQUEST_EXIT;

@@ -11,9 +11,33 @@ static unsigned char packed_store[MYSMB_PPU_BACKGROUND_BYTES];
 static unsigned char raw_store[MYSMB_PPU_BACKGROUND_BYTES];
 static unsigned char rows[4096],palette[32];
 static unsigned long seed=1UL;
+static unsigned long copied=0UL;
 static unsigned char random_byte(void)
 {seed=(seed*1664525UL+1013904223UL)&0xffffffffUL;return (unsigned char)(seed>>24U);}
 #define CHECK(c) do {if(!(c)){printf("line%d\n",__LINE__);return 1;}}while(0)
+static int copy_slots(const mysmb_io_u8 *first,const mysmb_io_u8 *second,
+    mysmb_io_u8 *destination,mysmb_io_u16 first_count,mysmb_io_u16 second_count,
+    mysmb_io_u16 count)
+{
+    mysmb_io_u16 row;
+    if(!first || !destination || !count || count>16U || first_count+second_count!=256U ||
+        (second_count && !second))return 0;
+    for(row=0U;row<count;++row) {
+        memcpy(destination+row*256U,first+row*256U,first_count);
+        if(second_count)memcpy(destination+row*256U+first_count,
+            second+row*256U,second_count);
+    }
+    copied+=(unsigned long)count*256UL;
+    return 1;
+}
+static int reject_slots(const mysmb_io_u8 *first,const mysmb_io_u8 *second,
+    mysmb_io_u8 *destination,mysmb_io_u16 first_count,mysmb_io_u16 second_count,
+    mysmb_io_u16 count)
+{
+    (void)first;(void)second;(void)destination;(void)first_count;
+    (void)second_count;(void)count;
+    return 0;
+}
 int main(void)
 {
     unsigned short n,i,t,y,x,count;
@@ -28,6 +52,7 @@ int main(void)
     mysmb_ppu_frame_background_byte_bind(&bw,first+1,MYSMB_PPU_BACKGROUND_BYTES,
         second+1,MYSMB_PPU_BACKGROUND_SECOND_BYTES);
     CHECK(bw.bg_second==second+1);
+    mysmb_ppu_frame_slot_rows_bind(&bw,copy_slots);
     memset(&state,0,sizeof(state));
     for(n=0U;n<512U;++n){
         state.chr_data=n%17U?chr:0;
@@ -62,6 +87,10 @@ int main(void)
         CHECK(first[0]==0xa5 && first[sizeof(first)-1]==0xa5);
         CHECK(second[0]==0xa5 && second[sizeof(second)-1]==0xa5);
     }
+    CHECK(copied!=0UL);
+    mysmb_ppu_frame_slot_rows_bind(&bw,reject_slots);
+    mysmb_ppu_frame_build_cached(&state,&bytes,&bw);
+    CHECK(!memcmp(reference.pixels,bytes.pixels,sizeof(reference.pixels)));
     /* Low-memory/invalid secondary must use the intact packed implementation. */
     mysmb_ppu_frame_background_byte_bind(&bw,first+1,MYSMB_PPU_BACKGROUND_BYTES,0,0);
     CHECK(!bw.bg_second);
@@ -73,6 +102,6 @@ int main(void)
     CHECK(!bw.bg && !bw.bg_second);
     mysmb_ppu_frame_build_cached(&state,&bytes,&bw);
     CHECK(!memcmp(reference.pixels,bytes.pixels,sizeof(reference.pixels)));
-    puts("states512 canonical-packed-byte=equal slots=equal guards=1 fallback=1 readonly=1");
+    puts("states512 canonical-packed-byte=equal slots=equal guards=1 fallback=1 slot-copy=1 readonly=1");
     return 0;
 }
