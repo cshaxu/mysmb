@@ -189,6 +189,49 @@ status. It identifies direct-visible VRAM updates as a separate presentation
 quality question, but does not yet establish the cost, hardware feasibility or
 correctness of a page-flipped MySMB device path.
 
+
+### S2 result -- accepted fixed-HUD plane batching
+
+S2 implemented a contained `src/platform/dos16/devices.c` candidate that selected
+each of the four VGA planes once while committing all 32 fixed-HUD rows. Its
+layout model covered both name-table choices and every horizontal origin: 512
+cases produced identical final A000 bytes while reducing modeled HUD plane
+selections from 128 to 4. A source-matched real-mode MZ before/after fixture
+then exercised 258 retained frames at DOSBox `core=auto`, `cycles=fixed 3000`;
+232 frames had `fixed_top` set. The measured final forty-frame presenter
+interval regressed from **306,673** to **309,925** PIT ticks/frame (+1.06%).
+The total root interval likewise changed from 319,560 to 322,811 ticks/frame.
+Both routes completed with the fixture's existing exact marker
+`exact1 bad0 firststep0`.
+
+The lower plane-selection count is not itself an acceptance. Assembly inspection
+identified the first regression's direct cause: its batch helper accepted
+`slots` as a far pointer, so every one of the 8,192 HUD-byte extractions loaded
+a segment and used `es:[bx]`. The removed 124 plane-select operations did not
+repay that cost.
+
+The accepted replacement leaves the raw `retained_hud_slots` extraction in
+`retained_hud_rows`, where it already had known-good DOS16 data access, and
+moves only `vga_retained_plane` outside that caller's 32-row loop. It therefore
+preserves the original row extraction, scratch-buffer and byte-copy order while
+reducing the commit selections from 128 to 4. A matched private 60-frame route
+measured its final 40 frames after the Start/right+B transition. Both versions
+completed frame 58 with 32 fixed-HUD frames and the existing route marker
+`exact1 bad0 firststep0`; presenter time improved from **344,869** to
+**338,395** PIT ticks/frame (**-1.88%**), and root-step time from **412,730**
+to **406,215** (**-1.58%**). The 512-case final-A000 layout model remains
+exact. A prior apparent early termination was traced to the test host cleaning
+up a detached DOSBox process at its command timeout, not a DOS candidate fault.
+
+The accepted change is confined to `platform/dos16`; it does not alter ROM
+state, shared game/PPU logic, cadence, output dimensions or persistent DOSBox
+configuration. The DOS MZ and both existing Win32 product targets rebuilt and
+the three local artifacts were refreshed. A full current Win32 CTest rebuild
+is separately blocked by pre-existing `test/win32_terminal_present_smoke.c`
+using the absent `mysmb_win32_text_console.terminal` member; that test is
+outside this DOS16 S and was not changed. S3 remains planned and is not
+admitted.
+
 ## Memory/performance decision
 
 The owner accepts ordinary DOS memory use up to approximately **500KiB** when

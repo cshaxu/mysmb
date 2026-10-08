@@ -256,21 +256,6 @@ static void retained_hud_write_plane(const struct retained_viewport *view,
             source+first_count,second_count);
     }
 }
-static void retained_hud_write_line(const struct retained_viewport *view,
-    mysmb_io_u8 plane,mysmb_io_u16 y,const mysmb_io_u8 MYSMB_IO_FAR *source)
-{
-    volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
-    mysmb_io_u16 offset,first_count,second_count,physical;
-    mysmb_io_u8 first=retained_sprite_plane_first(view,0U,plane);
-    physical=(mysmb_io_u16)view->table*256U+view->x+first;
-    if(physical>=512U)physical=(mysmb_io_u16)(physical-512U);
-    offset=(mysmb_io_u16)(physical>>2U);
-    first_count=(mysmb_io_u16)(128U-offset);if(first_count>64U)first_count=64U;
-    second_count=(mysmb_io_u16)(64U-first_count);
-    vga_retained_plane(plane);
-    copy_plane_bytes((unsigned char far *)video+y*128U+offset,source,first_count);
-    if(second_count)copy_plane_bytes((unsigned char far *)video+y*128U,source+first_count,second_count);
-}
 static void retained_restore_hud(void)
 {
     mysmb_io_u8 plane;
@@ -289,14 +274,25 @@ static int retained_hud_rows(const struct mysmb_ppu_frame_view *view,
     if(!mysmb_ppu_frame_scene_rows(view,retained_hud_slots,sizeof(retained_hud_slots),0U,32U))return 0;
     retained_hud_pack(viewport,retained_hud_slots,retained_hud);
     if(!mysmb_ppu_frame_background_rows(view,retained_hud_slots,sizeof(retained_hud_slots),0U,32U))return 0;
-    /* One line is packed and committed before the scratch is reused.  This
-     * avoids aliasing the raw 256-byte rows with their planar layout. */
+    /* One line is packed and committed before the scratch is reused.  Select
+     * the VGA plane once per 32-row HUD pass; slot extraction stays in this
+     * original caller, avoiding a DOS large-model far-slot helper. */
     for(plane=0U;plane<4U;++plane) {
         mysmb_io_u16 y,i;
         mysmb_io_u8 first=retained_sprite_plane_first(viewport,0U,plane);
+        vga_retained_plane(plane);
         for(y=0U;y<32U;++y) {
+            volatile unsigned char far *video=(volatile unsigned char far *)0xa0000000UL;
+            mysmb_io_u16 offset,first_count,second_count,physical;
             for(i=0U;i<64U;++i)retained_hud_line[i]=retained_hud_slots[y*256U+first+i*4U];
-            retained_hud_write_line(viewport,plane,y,retained_hud_line);
+            physical=(mysmb_io_u16)viewport->table*256U+viewport->x+first;
+            if(physical>=512U)physical=(mysmb_io_u16)(physical-512U);
+            offset=(mysmb_io_u16)(physical>>2U);
+            first_count=(mysmb_io_u16)(128U-offset);if(first_count>64U)first_count=64U;
+            second_count=(mysmb_io_u16)(64U-first_count);
+            copy_plane_bytes((unsigned char far *)video+y*128U+offset,retained_hud_line,first_count);
+            if(second_count)copy_plane_bytes((unsigned char far *)video+y*128U,
+                retained_hud_line+first_count,second_count);
         }
     }
     retained_hud_view=*viewport;retained_hud_valid=1U;return 1;

@@ -9368,7 +9368,7 @@
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "technicalReceipt": "Admitted: platform/dos16 fixed-HUD physical plane batching; zero ROM scope and no shared PPU/core change."
+          "technicalReceipt": "Accepted DOS16-only HUD batching: far-pointer candidate regressed (306673 -> 309925 ticks/frame), but caller-local plane batching passed 512 exact layout cases and matched 60-frame PIT (presenter 344869 -> 338395; root 412730 -> 406215; 32 fixed-HUD frames). Shared game/PPU unchanged."
         },
         {
           "id": "M3 T39 S3",
@@ -9381,7 +9381,7 @@
           ],
           "canReceive": false,
           "admissionRole": "audit",
-          "technicalReceipt": "Planned: source-matched physical-work census across reproducible game phases; zero ROM scope."
+          "technicalReceipt": "Planned only: do not admit until the owner approves after S2 root-cause analysis."
         },
         {
           "id": "M3 T39 S4",
