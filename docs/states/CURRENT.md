@@ -30,6 +30,19 @@ explicitly in TODO rather than asserted complete.
 
 ## Current Technical Baseline
 
+- T34 S3 P47 closes the five-state controlled cache-topology matrix with
+  current-root test fixtures below `build/`: none, A-only, B-only, A+B and
+  A+B+C each reach their asserted pointer state after normal root steps. A
+  stable sixteen-frame native-VGA measurement separates publication from
+  composition: the fixed palette-plus-15-band submission costs 24,240--24,441
+  PIT ticks (about 20.32--20.48ms) in all five states. Therefore A/B/C reduce
+  composition work but do not reduce the fixed 61,440-byte VGA submission;
+  this descriptor is DOSBox-only and is not a 486SX cadence claim. The
+  restored owner NESticle binary starts at 256x240/no-sound under the same
+  unmodified persistent DOSBox configuration, but its noninteractive title
+  route has no game-frame accounting and Enter terminates it, so no fair
+  reference ratio is claimed.
+
 - T34 S3 P44 restores the product DOSBox receipt chain and binds the current
   cache boundary to the P43 product. At 384KiB, the full route reaches title,
   input, graphics/text switch, synchronous P/O and Escape return. The product

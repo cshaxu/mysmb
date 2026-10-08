@@ -1942,3 +1942,40 @@ observed for the current root. Its MCB record includes the same rounded
 25,616-byte root block. This closes the A-only ambiguity from P44 but does
 not establish zero-cache or B-only; B-only still requires controlled failure
 of the distinct near-heap A allocation after B succeeds.
+
+### S3 P47 Five-State Cache Topology And Publication Measurement
+
+P47 adds an ignored, current-root test fixture for the five cache outcomes.
+It retains the P43 25,580-byte root allocation and native 256x240 palette-row
+submission path, but controls only optional allocation outcomes.  In
+particular, the B-only fixture forces the separate A allocation to fail only
+after B is retained; the none fixture forces the optional requests to fail.
+They test fallback topology and presentation safety, not a claim that a
+particular conventional-memory size naturally chooses those states.
+
+After two warm-up frames, each fixture submitted sixteen complete graphical
+frames through the actual DOS16 palette and fifteen-band VGA publisher:
+
+| State | Observed pointers | Mean publication PIT ticks | Approximate DOSBox time |
+| --- | --- | ---: | ---: |
+| none | A=0, B=0, C=0 | 24,247 | 20.32ms |
+| A | A=1, B=0, C=0 | 24,240 | 20.32ms |
+| B | A=0, B=1, C=0 | 24,439 | 20.48ms |
+| A+B | A=1, B=1, C=0 | 24,439 | 20.48ms |
+| A+B+C | A=1, B=1, C=1 | 24,441 | 20.48ms |
+
+The timing begins immediately before palette submission and ends after the
+fifteenth `present_band`; pacing/wait time and PPU composition are excluded.
+The close agreement is expected because every state copies the same 61,440
+bytes to VGA. Thus the A/B/C policy remains valuable for composition work and
+memory-aware fallback, but cannot repair this publication bottleneck. These
+are DOSBox PIT observations only, not a physical 25MHz 486SX FPS or cadence
+claim.
+
+The owner-provided NESticle executable was also run locally at `-res 256 240
+-nosound -hidegui -run SMB1.NES` with the persistent DOSBox configuration
+hash unchanged. Its initial static title route captured successfully. The
+proxy-driven Enter edge terminates the reference before a game-frame route is
+available, and the binary exposes no internal publisher accounting. It is
+therefore evidence of reference availability and startup only; it supplies no
+equal-budget speed ratio or submission-time comparison.
