@@ -38,6 +38,13 @@ explicitly in TODO rather than asserted complete.
   metric cannot rank whole-step cache cost. NESticle x.xx can be route-tested
   at 256x240/no-sound but has no noninteractive publisher timer, so no
   fabricated reference ratio is claimed.
+- T34 S3 P59 adds a reproducible whole-step title matrix to P58’s narrow
+  publisher numbers: none 30,907 PIT ticks/25.90ms; A 30,912/25.91ms; B
+  142,845/119.72ms; A+B 121,894/102.16ms; A+B+C 123,975/103.90ms. It
+  includes tick, PPU preparation/rebuild, composition and direct publication
+  but excludes pacing/audio. This identifies B/C title rebuild cost, not a
+  globally valid cache-removal decision: a bounded Start-to-level route timed
+  out without a child receipt and remains open.
 ## Current Technical Baseline
 
 - T34 S3 P47 closes the five-state controlled cache-topology matrix with

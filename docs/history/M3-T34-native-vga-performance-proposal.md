@@ -2057,3 +2057,30 @@ or DOSBox SDL timing would measure the host/emulator layer rather than
 NESticle's publisher, so it is explicitly not used as a comparison number.
 The equal-budget reference-performance gate therefore remains open rather
 than receiving a fabricated ratio.
+
+### S3 P59 Title Whole-Step Cache Matrix
+
+The P58 fixture also measures the enclosing `root_step` for the same five
+fresh-root title routes.  It therefore includes translated tick, PPU
+preparation/rebuild, row composition and direct VGA publication, while still
+excluding host pacing/wait and audio.  After the two measured warm-up frames,
+the reproducible eighteen-frame means are:
+
+| State | Mean whole-step PIT ticks | DOSBox descriptive time |
+| --- | ---: | ---: |
+| none | 30,907 | 25.90ms |
+| A | 30,912 | 25.91ms |
+| B | 142,845 | 119.72ms |
+| A+B | 121,894 | 102.16ms |
+| A+B+C | 123,975 | 103.90ms |
+
+A second independent execution produced the same receipt.  The title route
+therefore shows no measurable whole-step benefit from A and a substantial
+background-cache rebuild cost for B/C under its continually changing visible
+state.  This is not enough to remove any cache from the product: it is one
+route, whereas ordinary-level movement/dense-sprite routes have not yet been
+captured by this fixture.  The attempted Start-to-level automated DOS route
+exceeded its bounded 55-second no-settings-change run and produced no child
+receipt, so it is explicitly unaccepted rather than treated as a failure of a
+cache form.  A game-route measurement is required before changing the B/A/C
+policy.
