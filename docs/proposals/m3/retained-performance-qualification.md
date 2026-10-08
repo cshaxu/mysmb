@@ -490,3 +490,57 @@ NESticle difference: make the same pixels through contiguous plane work,
 without changing the game/PPU owner.  Ranks 5–7 are conditional refinements;
 ranks 8–14 are retained as explicit non-default decisions so they cannot
 reappear as unmeasured “obvious” optimizations.
+
+### S3 work census (in progress)
+
+This private probe uses only the normal title-to-game Start input; it never
+writes translated RAM or substitutes a scene. It counts physical device work,
+not elapsed time. The title and transition/steady routes were collected at a
+private fixed 12,000-cycle DOSBox setting solely to bound host runtime; counter
+values are independent of that setting and are not PIT timing evidence.
+
+| route | receipt state | sampled frames | HUD restore / frame | HUD commit / frame | changed background / frame | repair tiles / frame | repair bytes / frame | OAM tiles / frame | sprite bytes / frame | plane selections / frame |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| title startup | `OperMode=0, Task=1` | 15 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| Start transition | `OperMode=1, Task=1` | 66 | 124 | 0 | 3,724 | 7.8 | 500 | 3.9 | 139 | 46.9 |
+| steady normal play | `OperMode=1, Task=3` | 68 after five-frame warm-up | 8,192 | 8,192 | 7.5 | 12 | 768 | 5 | 148 | 76.1 |
+
+The zero title row means only that startup had not selected the retained
+presenter. It is not a claim that title rendering is free. The transition is
+background-heavy; steady play is fixed-HUD-heavy. The stable route confirms
+the S1 work units after S2: the HUD still writes 16,384 bytes per frame, while
+background invalidation remains almost idle.
+
+The S2 fixed-HUD change already removed roughly 124 plane selects per steady
+frame for a measured 1.88 percent presenter improvement. The remaining
+steady repair-path plane-select budget is about 48 selects/frame (twelve tiles
+by four planes), with another roughly 20 for five sprite tiles. Even a perfect
+repair-plane batching change cannot plausibly meet S4's predeclared 20 percent
+residual-presenter threshold. S3 therefore supplies an evidence-led rejection
+basis for that speculative implementation, rather than a further micro-edit.
+
+The admitted Start-only input route does not reproducibly reach a dense-sprite,
+underwater, or castle scene within this probe. Those rows remain unavailable;
+no RAM-seeded substitute was used. The current S3 results are sufficient for
+the S4 repair-batching decision but not a general claim about every game area.
+
+### S4 decision -- reject sprite-repair plane batching
+
+**Decision: reject; no product source or executable changes.**
+
+S3's steady route has about twelve repair tiles per frame, so its repair
+writer selects a VGA plane about 48 times. Five sprite tiles add about 20
+more selections. S2 removed approximately 124 fixed-HUD selections per steady
+frame while preserving all bytes and yielded only a 1.88 percent presenter
+improvement. Treating that observed result as linearly scalable gives an
+optimistic upper bound of `(48 + 20) / 124 * 1.88 = 1.03` percent for making
+both remaining classes free. A repair-only change is bounded near 0.73 percent.
+
+Those bounds are generous: they assume no added collection, sorting, packing,
+or far-pointer overhead. The candidate also leaves the steady path's 16,384
+fixed-HUD bytes, 768 repair bytes and roughly 148 sprite bytes untouched. It
+therefore cannot satisfy S4's required plausible 20-percent residual-presenter
+reduction. No implementation, byte oracle, target rebuild or executable
+refresh is justified. The next owner is S5's separate buffered-composition
+feasibility decision; it may not revive the rejected 61,440-byte naive RAM
+surface without a new measured cost model.
