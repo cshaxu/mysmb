@@ -1,32 +1,30 @@
 # Project Status
 
-**Active: M3 T39 S2. DOS16 retained fixed-HUD plane-batching root-cause analysis.**
+**Active: M3 T39 S3. DOS16 multi-stage retained-presentation work census.**
 
-## M3 T39 S2 Packet
+## M3 T39 S3 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Continuation of M3 T39 after closed S1 research. S2 has an accepted DOS16-only physical-writer implementation awaiting ordinary S closure. |
-| Admission And Approval | Owner approved the four ordered S tasks, then explicitly directed that S3 must not be entered until the S2 regression has been analysed. |
-| Objective | Explain the measured regression of the plane-batched fixed-HUD candidate and decide whether a different bounded S2 implementation remains justified. |
-| Scope | `src/platform/dos16/devices.c` only for rejected/probed candidates plus ignored source-matched fixtures and proposal evidence. No shared PPU/core, ROM, text, Win32, cadence, DOSBox persistent configuration, buffer or page-flip change. |
-| Non-goals | Do not admit S3; do not treat a reduction in plane selections as a proxy for speed; do not change shared PPU/core, frame cadence, display dimensions, or persistent DOSBox configuration. |
-| Measured fact | At fixed `core=auto`, `cycles=fixed 3000`, the first source-matched real-mode candidate regressed presenter time: 306,673→309,925 PIT ticks/frame (+1.06%). The accepted caller-local version completed the matched 60-frame route with 32 fixed-HUD frames: presenter 344,869→338,395 PIT ticks/frame (-1.88%), root 412,730→406,215 (-1.58%). |
-| Reference Baseline | T38 S18 selected retained presenter; S1 census found 16,384 fixed-HUD A000 bytes/frame and 128 HUD plane selections/frame. The S2 candidate is compared against that same retained route. |
-| Candidate Proposal | [Retained presentation performance qualification](../proposals/m3/retained-performance-qualification.md#s2----fixed-hud-plane-batching). |
-| Files And ABI Surface | Product candidate scope remains `src/platform/dos16/devices.c`; private probes remain below ignored `build/`. No public ABI change. |
+| Identifier Mode | Continuation of M3 T39 after closed S2 implementation commit `7cd1b4a2`. |
+| Admission And Approval | Owner approved the ordered S1–S5 performance sequence and, after S2 analysis, directed continuation. |
+| Objective | Measure the selected retained presenter across reproducible title, normal gameplay, transition, dense-sprite, and water/castle routes, then identify the dominant physical work by phase. |
+| Scope | Ignored product-root DOS16 fixtures, probe/instrumentation and proposal evidence only. No tracked C product edit is planned. |
+| Non-goals | Do not modify shared game/PPU logic, DOS cadence, dimensions, buffer policy, persistent DOSBox configuration or enter S4 before the census result. |
+| Reference Baseline | S2’s accepted fixed-HUD writer reduces selections to four per commit and saves 1.88% presenter PIT on its matched route. S1’s normal-game sample has 16,384 fixed-HUD A000 bytes/frame, 12 repair tiles/frame and about 200 plane selections/frame. |
+| Candidate Proposal | [Retained presentation performance qualification](../proposals/m3/retained-performance-qualification.md#s3----multi-stage-work-census). |
+| Files And ABI Surface | Private copies below ignored `build/m3-t39-s3/`; no public or product-source ABI change. |
 | Applicable Rules | Execution, Documentation, Architecture, Coding and source policy. |
 | Expected Markers | ROM scope[], expectedMatches[], actualMatches[], new0; historical 1992/1992 unchanged. |
-| Asset Needs | Existing owner-local generated runtime input and ignored temporary DOSBox sessions only. |
-| Stop Conditions | Any final-A000/device-state difference, unsupported toolchain, or no measured improvement rejects the candidate rather than changing cadence. |
-| Verification | Compare generated 16-bit assembly and instruction/data-access cost of the old/new HUD paths; retain the exact 512-case final-A000 layout model; any new candidate requires same route PIT and existing physical-output contract. |
-| Exit Criteria | A causal account backed by code-generation evidence, byte-layout and route evidence, three target builds and documented closure. S3 remains planned until the owner admits it. |
+| Asset Needs | Existing owner-local generated runtime input, ROM and temporary DOSBox sessions only. |
+| Stop Conditions | A named route that cannot be reached reproducibly is reported as unavailable; it must not be replaced with synthetic data or a product behavior change. |
+| Verification | For each route record warm-up/sample frames, operating mode/task, HUD restore/commit bytes, changed background bytes, repair tiles/bytes, OAM tiles, sprite bytes and plane selections. Check counter reset and deterministic route receipt. |
+| Exit Criteria | One reproducible census matrix, route limitations and a quantified S4 decision basis. No product executable refresh unless product code changes. |
 | ROM scope | `[]`; zero nodes and zero control edges. Historical markers unchanged. |
-| Reporting | Report why reduced plane writes failed to improve time, exact affected instruction/data paths, and whether there is a viable S2 successor. |
-| Reporting Requirements | Report before/after PIT, fixed-HUD frame count, assembly-level causal evidence, byte-layout result, code/artifact status and the explicit S3 admission state. |
+| Reporting | Report each observed route’s per-frame work, the phase that dominates, missing routes and the resulting candidate/rejection criteria for S4. |
+| Reporting Requirements | State route count, frame count, retained-mode status, counter categories, code/artifact status and explicit S4 admission state. |
 | Original Owner Request | Improve DOS16 speed through evidence-led work; prioritize HUD batching, then phase census, then sprite repair decision and only then composition buffering. |
-| Similar-Issue Sweep | Fixed HUD restore/commit, plane selection, far/near slot extraction, retained background repair and sprite presentation. |
-
+| Similar-Issue Sweep | Title, normal game, transition, dense OAM, water/castle retained presentation, HUD, cache, repair and sprite paths. |
 ## Current Technical Baseline
 
 - The selected DOS product is T38 S18 current-background sprite-union presentation; its 260-frame physical oracle was exact.

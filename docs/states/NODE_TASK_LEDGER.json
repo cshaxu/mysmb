@@ -9359,7 +9359,7 @@
         },
         {
           "id": "M3 T39 S2",
-          "state": "active",
+          "state": "closed",
           "evidence": [
             "docs/proposals/m3/retained-performance-qualification.md"
           ],
@@ -9368,11 +9368,11 @@
           ],
           "canReceive": false,
           "admissionRole": "implementation",
-          "technicalReceipt": "Accepted DOS16-only HUD batching: far-pointer candidate regressed (306673 -> 309925 ticks/frame), but caller-local plane batching passed 512 exact layout cases and matched 60-frame PIT (presenter 344869 -> 338395; root 412730 -> 406215; 32 fixed-HUD frames). Shared game/PPU unchanged."
+          "technicalReceipt": "Closed in commit 7cd1b4a2: DOS16-only caller-local HUD batching; 512 exact layout cases and 60-frame PIT presenter 344869 -> 338395, root 412730 -> 406215; shared game/PPU unchanged."
         },
         {
           "id": "M3 T39 S3",
-          "state": "planned",
+          "state": "active",
           "evidence": [
             "docs/proposals/m3/retained-performance-qualification.md"
           ],
@@ -9381,7 +9381,7 @@
           ],
           "canReceive": false,
           "admissionRole": "audit",
-          "technicalReceipt": "Planned only: do not admit until the owner approves after S2 root-cause analysis."
+          "technicalReceipt": "Active: owner-approved multi-stage retained-presentation physical-work census; zero ROM scope and no product source change planned."
         },
         {
           "id": "M3 T39 S4",
@@ -998562,6 +998562,18 @@
     {
       "subtask": "M3 T39 S2",
       "kind": "implementation",
+      "scope": [],
+      "expectedMatches": [],
+      "actualMatches": [],
+      "incomingComplete": [],
+      "baseline": 0,
+      "maximumComplete": 0,
+      "state": "closed",
+      "evidence": "docs/proposals/m3/retained-performance-qualification.md"
+    },
+    {
+      "subtask": "M3 T39 S3",
+      "kind": "audit",
       "scope": [],
       "expectedMatches": [],
       "actualMatches": [],

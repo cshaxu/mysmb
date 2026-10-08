@@ -4010,4 +4010,5 @@ are not reconstructed as historical promises. Exact scope arrays are in JSON.
 | M3 T38 S18 | 0 | 1992 | none / 0 | none / 0 | closed; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
 | M3 T38 S19 | 0 | 1992 | none / 0 | none / 0 | transferred; [record](../../docs/history/M3-T38-fixed-cycle-dos16-profile.md) |
 | M3 T39 S1 | 0 | 1992 | none / 0 | none / 0 | active; [record](../../docs/proposals/m3/retained-performance-qualification.md) |
-| M3 T39 S2 | 0 | 0 | none / 0 | none / 0 | active; [record](../../docs/proposals/m3/retained-performance-qualification.md) |
+| M3 T39 S2 | 0 | 0 | none / 0 | none / 0 | closed; [record](../../docs/proposals/m3/retained-performance-qualification.md) |
+| M3 T39 S3 | 0 | 0 | none / 0 | none / 0 | active; [record](../../docs/proposals/m3/retained-performance-qualification.md) |
