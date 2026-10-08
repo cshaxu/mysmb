@@ -1,61 +1,32 @@
 # Project Status
 
-**Active: M3 T34 S4, DOS16 text-color compatibility repair.**
+**Active: M3 T34 S5, NESticle PPU-strategy comparative audit.**
 
-## M3 T34 S4 Packet
+## M3 T34 S5 Packet
 
 | Field | Required record |
 | --- | --- |
-| Identifier Mode | Corrective continuation; S3 remains closed. S4 is admitted from the owner-reported run16 text-color failure. |
-| Admission And Approval | Owner reports that run16/NTVDM text mode shows wrong colors while graphical mode is correct, and directs investigation and repair. |
-| Objective | Make DOS text presentation use portable standard VGA attributes so run16 text colors correspond to the authored neutral RGB meaning. |
-| Non-goals | No game/PPU/text-scene decision change, DAC behavior change in graphical mode, DOSBox configuration change, new runtime, helper process, or ROM-node certification. |
-| Reference Baseline | S2 source/delivery bound in proposal; local products DOS323945B,x86331278B,x64347150B. Current DGROUP51472B/stack2048B; hashes and loader bound in proposal. Reprofile current source; retained T32 costs are historical. |
-| Candidate Proposal | [Admitted T34 plan and S1 baseline](../history/M3-T34-native-vga-performance-proposal.md#t34-s3-p1-combined-acceptance-admission). |
-| Files And ABI Surface | `src/platform/dos16/devices.c` and DOS16 device probes only; expected 35-60 product lines and one focused regression. Text attributes will derive from the neutral text-frame RGB palette through the existing shared color mapper; graphics DAC programming remains separate. |
-| Applicable Rules | Execution,Documentation,Architecture,Coding,source policy;System Architecture and Source Layout. The DOS16 device may adapt neutral colors but may not change text scene, PPU, core, app or ROM behavior. |
-| Verification | Test all sixteen arbitrary text-slot RGB mappings against the standard VGA attribute result; compile/link DOS16; run focused x86/x64 suites; verify DOS graphics/text/graphics mode transitions and run16 text-mode capture. Refresh three local products after source change. |
+| Identifier Mode | Comparative audit continuation after closed S4; S5 is owner-directed and read-only. |
+| Admission And Approval | Owner accepts S4 and directs a comparison of NESticle's PPU/display strategy to identify further MySMB performance opportunities. |
+| Objective | Establish a bounded, evidence-backed strategy comparison: work decomposition, dirty/update policy, pixel format/expansion, cache representation, and VGA publication path; classify each resulting MySMB candidate by shared or DOS-only ownership, expected cost, memory impact and ROM/PPU-semantic risk. |
+| Non-goals | No implementation, third-party source/code/table import, runtime dependency, DOS4GW/new driver, helper process, DOSBox setting change, ROM-node certification, or unmeasured performance claim. |
+| Reference Baseline | S4 owner acceptance: run16 text colors now work through standard VGA attributes; current DOS product 324953B. Existing S3 P48/P58/P59/P60 measurements remain route-scoped, and the NESticle performance ratio remains unproved. |
+| Candidate Proposal | [T34 native-VGA proposal](../history/M3-T34-native-vga-performance-proposal.md#s5-admission-nesticle-ppu-strategy-comparative-audit). |
+| Files And ABI Surface | Read-only inspection of retained local reference material below ignored `build/` plus current `src/ppu/`, `src/io/`, `src/platform/dos16/` and their tests. Expected product change: 0 lines, 0 bytes. |
+| Applicable Rules | Execution,Documentation,Architecture,Coding,source policy;System Architecture and Source Layout. Reference material is conceptual comparison evidence only and cannot be imported or linked. |
+| Verification | Reproduce the current PPU cost inventory; hash/list any local reference inputs without tracking them; review strategy evidence against current source and existing receipts; publish a finite candidate table with explicit accept/defer/reject disposition. No product build is required unless source changes. |
 | Expected Markers | ROM scope[],expectedMatches[],actualMatches[],new0;historical1992/1992,local1991/1992nodes,4260/4261feasible controls unchanged(raw4342,infeasible81). |
-| Asset Needs | Existing owner-local SMB1 ROM remains local without redistribution grant;read-only builds/runtime probes. S3 P38 restores the owner-supplied NESticle x.xx ZIP and external DOS4GW1.97 as local comparison inputs only;no code/table import,product linkage or redistribution. S3 P3 inspects the already-linked historical Microsoft DOS C runtime library/header read-only to establish allocation/stdio bounds;copyright material has no redistribution grant. Owner-installed original toolchain is the provenance;neutral symbols/hashes/conclusions only tracked,extracted members/logs stay ignored below build. No runtime replacement,patching or third-party source import. |
+| Asset Needs | The owner-supplied NESticle archive is read-only conceptual comparison material. It may only be copied into ignored `build/` from the already retained local MySMB reference input; no extraction/import from external locations, product linkage or redistribution. Owner-local SMB1 ROM remains local. |
 | Reporting Requirements | Before every S report objective,components/code and memory estimates;after report actual changes,scoped results,candidate dispositions and total/local node/edge counts. Do not infer hardware cadence/LCD filling from emulator captures. |
-| Stop Conditions | Any shared scene/game/PPU change, graphics DAC regression, or a text mapping that is not testable from neutral RGB requires redesign. |
-| Exit Criteria | Standard attribute mapping is device-tested, all three products build, graphical mode remains unchanged, and a run16 text-mode capture no longer depends on text DAC redefinition. |
-| Original Owner Request | Close successful T33 and admit next queued task;retain native-resolution VGA/performance plan. |
-| Similar-Issue Sweep | Review all DOS graphics coordinate/row/plane constants,palette invalidation,mode/text switch/reset and output submissions;retained50/new25 text and Win32 presentation must not regress. |
+| Stop Conditions | Any candidate requiring reference-code import, changing original PPU/game semantics, unbounded memory, or an unsupported hardware assumption is rejected or deferred rather than implemented. |
+| Exit Criteria | A complete comparison matrix and finite next-S implementation plan exist, with each candidate tied to current source ownership and measurement method. |
+| Original Owner Request | Close S4, then admit S5 to compare NESticle PPU strategy and find further performance work. |
+| Similar-Issue Sweep | Compare update granularity, tile/attribute invalidation, palette expansion, sprite composition, staging/copy surfaces, VGA display mode and presentation cadence; distinguish shared optimizations from DOS-only physical output. |
 
-T34 S1/S2/S3 are closed. S4 is a bounded run16 corrective repair. T32/S9
+T34 S1/S2/S3/S4 are closed. S5 is a bounded comparative audit. T32/S9
 remains suspended; T19 audio and M2 final certification remain queued. T33
 broader gallery debt is recorded explicitly in TODO rather than asserted complete.
 
-- T34 S3 P58 repeats the five P47 cache topologies on P48’s direct VGA path,
-  with a fresh root per topology and two warm-up plus eighteen measured title
-  frames. The presenter interval (palette through fifteen row submissions,
-  excluding tick, pacing and pre-present cache preparation) is: none 18,258
-  PIT ticks/15.30ms; A 20,431/17.12ms; B 20,623/17.28ms; A+B
-  20,623/17.28ms; A+B+C 20,626/17.29ms. Two runs are identical. Thus no
-  cache topology carries a hidden second full-frame VGA copy. This narrow
-  metric cannot rank whole-step cache cost. NESticle x.xx can be route-tested
-  at 256x240/no-sound but has no noninteractive publisher timer, so no
-  fabricated reference ratio is claimed.
-- T34 S3 P60 reconciles cache evidence by route: P14’s accepted ordinary-game
-  matrix supports B first, then A, then C; P59’s title rebuild cost does not
-  justify deleting any global tier. A build-only x64 live-game probe confirms
-  all five cache forms remain pixel-identical but cannot infer DOS16 timing.
-  A+B+C is 133,120B/130KiB; B+C is 124,928B/122KiB.
-- T34 S3 P59 adds a reproducible whole-step title matrix to P58’s narrow
-  publisher numbers: none 30,907 PIT ticks/25.90ms; A 30,912/25.91ms; B
-  142,845/119.72ms; A+B 121,894/102.16ms; A+B+C 123,975/103.90ms. It
-  includes tick, PPU preparation/rebuild, composition and direct publication
-  but excludes pacing/audio. This identifies B/C title-construction cost, not a
-  globally valid cache-removal decision: a bounded Start-to-level route timed
-  out without a child receipt and remains open.
-- T34 S3 P62 closes this S after a final owner-requested NESticle comparison
-  review. The owner-local x.xx binary launches at 256x240/no-sound under the
-  same temporary DOSBox route, but exposes neither a script-readable frame
-  count nor a publisher-stage timer. Its configurable frameskip/vsync and
-  visual-only FPS display prevent a defensible ratio. The retained MySMB
-  DOSBox figures are therefore descriptive route measurements, not a claimed
-  NESticle comparison or physical-486SX cadence result.
 ## Current Technical Baseline
 
 - T34 S3 P47 closes the five-state controlled cache-topology matrix with

@@ -2205,3 +2205,36 @@ helper still invokes the 16-bit linker directly from 64-bit Windows, which
 Windows rejects.  The production product was linked through the established
 temporary DOSBox route; a run16 visual capture remains the final
 host-specific acceptance step.  No ROM node or control edge changed.
+
+### S4 Closure: run16 Text-Color Compatibility
+
+The owner retested the rebuilt DOS16 product under run16/NTVDM and accepted
+the text-mode colors.  The repair is therefore closed: text output now uses
+standard VGA attributes, graphical output remains on its separate DAC path,
+and no core, PPU, scene, ROM node or control edge changed.  S4 completes with
+zero scoped/expected/actual ROM labels; the historical node total remains
+1992/1992 and the local evidence counters remain 1991/1992 nodes and
+4260/4261 feasible controls (raw 4342, infeasible 81).
+
+### S5 Admission: NESticle PPU-Strategy Comparative Audit
+
+The owner directs a new read-only audit of the retained owner-supplied
+NESticle reference against the current MySMB PPU and DOS presentation paths.
+The purpose is to identify finite, measurable optimizations after the current
+direct-VGA work, not to claim a speed ratio or recreate the reference.
+
+S5 will compare five bounded dimensions: update granularity and dirty policy;
+pixel and palette representation; background/sprite composition order and
+cache lifetime; staging/copy surfaces; and VGA mode/submission cadence.  Each
+candidate will identify its MySMB owner (`ppu`, `io`, or `platform/dos16`),
+whether it can be shared by Windows, expected memory and timing effect, proof
+route, and a disposition of accept, defer or reject.  It has zero ROM scope,
+expected matches and actual matches, so no M2 conformance number can change.
+
+The reference ZIP/executable may be examined only as owner-local conceptual
+material below ignored `build/`; no source, binary, table, symbol, runtime
+dependency, DOS4GW component or configuration is imported into MySMB.  No
+source or product change is authorized by this audit alone.  Its exit is a
+complete candidate matrix and a successor implementation plan whose each
+proposal preserves original PPU/game semantics and has a bounded measurement
+method.
