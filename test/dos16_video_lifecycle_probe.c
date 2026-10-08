@@ -33,6 +33,7 @@ int main(void)
     union REGS r;
     void (interrupt far *vector)();
     unsigned short i,cursor,seen,value,facing,bg,j;
+    unsigned char foreground,background;
     struct mysmb_io_input input;
     FILE *receipt;
     r.x.ax=3U;int86(0x10,&r,&r);
@@ -58,10 +59,19 @@ int main(void)
         glyph_frame.cells[i].character=' ';
         glyph_frame.cells[i].foreground=15U;glyph_frame.cells[i].background=1U;
     }
+    for(i=0U;i<16U;++i)
+        glyph_frame.colors[i]=mysmb_io_color_text_rgb((unsigned char)i);
+    glyph_frame.colors[0]=0x001e74UL;
+    glyph_frame.colors[1]=0xecb4b0UL;
+    glyph_frame.colors[2]=0x4cd020UL;
+    glyph_frame.colors[3]=0xe454ecUL;
     for(i=0U;i<16U;++i)glyph_frame.cells[i].character=glyph_ids[i];
     mysmb_dos16_devices_text(&glyph_frame);
     text=(volatile unsigned short far *)0xb8000000UL;
-    for(i=0U;i<16U;++i)if(text[i]!=(0x1f00U|glyph_ids[i]))return fail(14);
+    foreground=mysmb_io_color_text_nearest(glyph_frame.colors[15U]);
+    background=mysmb_io_color_text_nearest(glyph_frame.colors[1U]);
+    for(i=0U;i<16U;++i)if(text[i]!=((unsigned short)glyph_ids[i]|(
+        (unsigned short)foreground<<8U)|((unsigned short)background<<12U)))return fail(14);
     word.x=word.y=0;word.foreground=15U;word.background=15U;
     for(value=0U;value<16U;++value)for(facing=0U;facing<2U;++facing)
         for(bg=1U;bg<=15U;bg+=14U) {
@@ -70,8 +80,11 @@ int main(void)
             word.face_left=(unsigned char)facing;
             if(!mysmb_text_elements_build(&word,1U,(unsigned char)bg,&glyph_frame))return fail(15);
             mysmb_dos16_devices_text(&glyph_frame);
+            foreground=mysmb_io_color_text_nearest(glyph_frame.colors[15U]);
+            background=mysmb_io_color_text_nearest(glyph_frame.colors[(unsigned char)bg]);
             for(j=0U;words[value][j]!='\0';++j)
-                if(text[j]!=((bg==15U?0xf000U:0x1f00U)|(unsigned char)words[value][j]))return fail(16);
+                if(text[j]!=((unsigned short)words[value][j]|(
+                    (unsigned short)foreground<<8U)|((unsigned short)background<<12U)))return fail(16);
         }
     *(volatile unsigned short far *)0xb8000000UL=0x1f58U;
     if(!mysmb_dos16_devices_mode(1U) ||

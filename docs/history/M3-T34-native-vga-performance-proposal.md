@@ -2157,3 +2157,51 @@ product rebuild is required. The equal-budget reference ratio, global
 memory/stack/IRQ/NMI qualification, and physical 486SX/VGA/LCD observation
 remain named T34 task-level gates awaiting owner disposition rather than being
 silently treated as passed.
+
+### S4 Admission: run16 DOS Text Attribute Compatibility
+
+The owner reports that the current DOS product's graphical mode is normal in
+run16/NTVDM on Windows 11, while its text presentation has incorrect colors.
+The current DOS16 device writes semantic cell nibbles directly to `B800:` and
+reprograms the text attribute-controller/DAC slots with arbitrary NES-derived
+RGB. The reported run16 result shows the raw standard DOS colors instead,
+which establishes that this text host does not honor the custom text DAC
+mapping even though its graphics DAC path is functional.
+
+S4 owns only `platform/dos16` text output. It will map each neutral text
+frame foreground/background RGB entry to the existing canonical 16-color VGA
+palette and write those standard attribute nibbles, without changing text
+art, scene composition, game state, PPU state, graphics DAC submission, or
+any DOSBox setting. The expected implementation is 35--60 product lines plus
+one focused device regression. It has zero ROM scope, expected matches and
+actual matches. Acceptance requires exhaustive sixteen-slot attribute
+mapping, DOS16 compile/link, focused Windows suites, mode round trips, a
+run16 text capture, and refreshed local products.
+
+### S4 P1 Standard-Attribute Implementation And Build Receipt
+
+`platform/dos16/devices.c` now reduces each of the sixteen neutral RGB frame
+slots through the existing shared `mysmb_io_color_text_nearest` mapper before
+writing `B800:` attributes.  It no longer programs the text
+attribute-controller or text DAC.  Therefore a host that exposes only the
+BIOS standard 16-color attributes, including the reported run16 environment,
+receives the intended nearest standard VGA foreground and background colors.
+The graphical mode DAC path is unchanged.
+
+The focused DOS device probe now uses deliberately non-standard neutral RGB
+slots and verifies the resulting words in `B800:` against the canonical
+mapper, including the 64 authored score-word forms.  The historical CL16
+compiler cannot compile this particular function with a new automatic
+16-byte palette array (it exhausts its own internal buffer); the identical
+device-owned table is therefore static storage.  That is a 16-byte DOS16
+device allocation, not game or PPU state.
+
+OpenNT CL16 compiled the complete product and the historical Microsoft LINK
+3.65 linked the resulting DOS MZ successfully: `mysmb-dos16.exe` is
+324,953 bytes.  The focused x86 and x64 suites pass six of six in each build:
+IO color contract, keyboard, focus pause, PPU frame, PPU byte-background and
+DOS root.  The current device-probe source compiles; its legacy host-link
+helper still invokes the 16-bit linker directly from 64-bit Windows, which
+Windows rejects.  The production product was linked through the established
+temporary DOSBox route; a run16 visual capture remains the final
+host-specific acceptance step.  No ROM node or control edge changed.
