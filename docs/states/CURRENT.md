@@ -61,3 +61,13 @@ restore/repack, tile repair and per-plane sprite stores directly in visible
 VRAM. This both explains the observed transient flicker and identifies the
 next measurement: live counts for HUD, damage, sprite repair and VGA-plane
 work before selecting one narrowly scoped DOS16 physical-inner-loop candidate.
+
+The S1 private product-root work census now provides that selection.  After a
+60-frame warm-up, 60 normal `OperMode=1/Task=3` frames performed 16,384 fixed
+HUD A000-byte writes per frame, 12 sprite-repair tiles and 148 direct sprite
+bytes per frame, but only 4.3 changed-background bytes per frame.  They also
+performed 200.1 VGA plane selections per frame, of which the current HUD
+commit alone causes 128 by selecting the same plane once per line.  The next
+candidate is therefore a bounded `platform/dos16` plane-batched HUD commit;
+it retains identical shared PPU inputs and final physical pixels, and must be
+accepted by PIT and physical-output evidence before selection.

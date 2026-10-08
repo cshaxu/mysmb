@@ -306,3 +306,41 @@ counts are still unmeasured, but these fixed units show why a small number of
 sprites can cost materially more than their pixel count suggests on a 486:
 the work is split across byte stores, far address calculations and VGA
 sequencer changes rather than one linear memory stream.
+
+#### Result: source-matched live work census
+
+The previous detached fixture was not reused.  A private product-root build
+instead sent one Start only when the translated title state reported
+`OperMode=0, Task=3`, then confirmed normal game execution at `OperMode=1,
+Task=3`.  It warmed for 60 game frames, reset only private physical-work
+counters, then collected 60 further game frames at temporary fixed 3,000
+cycle DOSBox settings.  Its main and DOS device source were private ignored
+copies; optimization was deliberately disabled because this is a count receipt
+and does not contribute a timing result.
+
+| retained physical work over 60 steady gameplay frames | total | average/frame |
+| --- | ---: | ---: |
+| fixed-HUD restore A000 bytes | 491,520 | 8,192 |
+| fixed-HUD commit A000 bytes | 491,520 | 8,192 |
+| changed cached-background A000 bytes | 256 | 4.3 |
+| sprite-repair tiles | 720 | 12 |
+| sprite-repair A000 bytes | 46,080 | 768 |
+| active OAM tiles | 300 | 5 |
+| nontransparent sprite A000 bytes | 8,880 | 148 |
+| VGA map-plane selections | 12,008 | 200.1 |
+
+The static background cache is therefore working: it was almost idle in the
+steady sample.  Sprite drawing is not the primary physical byte volume either.
+The dominating fixed work is the HUD's 16,384 A000 bytes every frame.  Source
+inspection explains the exceptionally high plane count: `retained_hud_rows`
+issues a HUD line write for each of 32 rows in each of four planes, and the
+line helper selects the VGA plane itself.  That creates **128 HUD plane
+selections per frame**, before sprite repair, sprite writes and restore.
+
+This makes the first implementation candidate precise and limited: introduce
+a DOS16-only plane-batched HUD commit that selects each plane once and writes
+all of its 32 already PPU-selected rows.  It must preserve the existing source
+row order, split-wrap handling, palette slots, viewport coordinates and final
+A000 bytes.  It changes no game or PPU code.  The candidate is expected to
+remove roughly 124 of 128 HUD commit plane selections per frame; its actual
+PIT effect and physical byte oracle remain future acceptance criteria.
